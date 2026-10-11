@@ -17,7 +17,7 @@ assert.equal(y.jobs.collect.steps[0].with['persist-credentials'],false);
 assert.ok(y.jobs.collect.if.includes('head_repository.full_name == github.repository'));
 assert.ok(y.jobs.collect.steps.some(s=>String(s.run).includes('agent-evidence-run-gate.mjs')));
 assert.ok(y.jobs.collect.steps.some(s=>String(s.run).includes('agent-trusted-evidence.mjs')));
-assert.equal(y.jobs.collect['timeout-minutes'],6);
+assert.equal(y.jobs.collect['timeout-minutes'],8);
 const handoff=y.jobs.collect.steps.find(s=>String(s.run).includes('agent-operational-investigation-handoff.mjs'));
 assert.ok(handoff && handoff.if.includes("steps.gate.outputs.purpose == 'diagnosis'"));
 assert.ok(handoff.if.includes("steps.gate.outputs.ready == 'true'"));
@@ -37,3 +37,5 @@ assert.throws(()=>summarizeInvestigation({...fake,authorization:{...deny,codeWri
 
 assert.ok(!/pull_request_target|issues: write|contents: write|GEMINI_API_KEY/.test(raw));
 console.log('Read-only monitoring workflow: complete producer, idea-only skip, least privilege and no autonomous writes passed.');
+
+await import('./verify-evidence-ci-wait.mjs');
