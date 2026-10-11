@@ -28,7 +28,7 @@ export function verifyOfflineOwnerReceipt({receipt,signature,publicKey,expected,
   for(const field of ["candidateId","baseSha","headSha","evidenceDigest","generation"])
     assert.ok(Object.hasOwn(expected,field) && receipt[field]===expected[field],"Receipt binding mismatch");
   assert.ok(typeof signature==="string" && /^[a-f0-9]{128}$/.test(signature),"Malformed signature");
-  const key=createPublicKey(publicKey);
+  const key=publicKey?.type==="public" ? publicKey : createPublicKey(publicKey);
   assert.equal(key.asymmetricKeyType,"ed25519","Ed25519 public key required");
   const bytes=Buffer.from(signature,"hex");
   assert.ok(verify(null,message,key,bytes),"Invalid owner signature");

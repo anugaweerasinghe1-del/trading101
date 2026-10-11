@@ -51,8 +51,8 @@ export async function verifyPostgresControls(env=process.env) {
     await a.unsafe('BEGIN');assert.equal((await claim(a)).reason,'CLAIMED');
     const waiting=claim(b,other,'manual','LAYOUT_OVERFLOW');await locked(bPid);await a.unsafe('COMMIT');
     assert.equal((await waiting).reason,'ACTIVE_CANDIDATE');
-    const generation=Number((await a.unsafe('SELECT generation FROM tradehq_repair_control.policy'))[0].generation);
-    const signed=offlineOwnerFixture({candidateId:id,baseSha:base,headSha:head,evidenceDigest:digest,generation});
+    const receiptGeneration=Number((await a.unsafe('SELECT generation FROM tradehq_repair_control.policy'))[0].generation);
+    const signed=offlineOwnerFixture({candidateId:id,baseSha:base,headSha:head,evidenceDigest:digest,generation:receiptGeneration});
     approvalDigest=signed.approvalDigest;approvalExpiry=signed.expiresAt;
     assert.equal((await a.unsafe("SELECT count(*)::int AS count FROM tradehq_repair_control.candidates WHERE status IN ('claimed','validated','approved')"))[0].count,1);
     assert.equal((await review(a,'validate')).reason,'VALIDATED');
