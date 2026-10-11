@@ -158,7 +158,18 @@ async function main(){
     await devtools.send("Network.enable");
     await devtools.send("Network.setBlockedURLs",{urls:["https://*","wss://*"]});
     await devtools.send("Emulation.setDeviceMetricsOverride",{width:1440,height:900,deviceScaleFactor:1,mobile:false});
-    await devtools.send("Page.navigate",{url:origin+"/auth"});
+    // CDP navigation commands acknowledge the request before the old document
+    // disappears. Never let an assertion against that old DOM satisfy a wait.
+    let navigation=0;
+    const loadDocument=async(url)=>{
+      const marker=String(++navigation);
+      await devtools.evaluate("globalThis.__tradehqFixtureDocument="+JSON.stringify(marker));
+      if(url)await devtools.send("Page.navigate",{url});
+      else await devtools.send("Page.reload",{ignoreCache:true});
+      await wait(()=>devtools.evaluate("globalThis.__tradehqFixtureDocument!=="+JSON.stringify(marker)+
+        " && document.readyState==='complete'"),"new document after "+(url?new URL(url).pathname:"reload"));
+    };
+    await loadDocument(origin+"/auth");
     await wait(()=>devtools.evaluate("!!(document.querySelector('input[type=email]')&&document.querySelector('input[type=password]'))"),"real TradeHQ login form");
     const submit=(mail,pass)=>{
       const values=[mail,pass];
@@ -179,20 +190,20 @@ async function main(){
     await wait(()=>devtools.evaluate("location.pathname==='/trader/me'"),"authenticated profile redirect");
     await wait(()=>portfolioInitialized>=1,"isolated account portfolio initialization");
     // Reload verifies a real persisted SDK session, with no second login grant.
-    await devtools.send("Page.reload",{ignoreCache:true});
+    await loadDocument();
     await wait(()=>devtools.evaluate("!!document.querySelector('[aria-label=\"Account menu\"]')"),"session restored after reload");
     assert.equal(approved,1,"Reload must restore the session without another password grant");
     // Exercise the real account menu and Supabase local sign-out request.
-    await devtools.evaluate("(()=>{const e=document.querySelector('[aria-label=\"Account menu\"]');e.dispatchEvent(new PointerEvent('pointerdown',{bubbles:true,button:0,ctrlKey:false}));return true;})()");
+    await devtools.evaluate("(()=>{const e=document.querySelector('[aria-label=\"Account menu\"]');if(!e)throw Error('Restored account menu missing');e.dispatchEvent(new PointerEvent('pointerdown',{bubbles:true,button:0,ctrlKey:false}));return true;})()");
     await wait(()=>devtools.evaluate("[...document.querySelectorAll('[role=menuitem]')].some(e=>e.textContent.trim()==='Sign out')"),"account sign-out menu");
     await devtools.evaluate("[...document.querySelectorAll('[role=menuitem]')].find(e=>e.textContent.trim()==='Sign out').click()");
     await wait(()=>logouts===1,"fixture backend sign-out");
     await wait(()=>devtools.evaluate("!document.querySelector('[aria-label=\"Account menu\"]')"),"signed-out UI");
-    await devtools.send("Page.reload",{ignoreCache:true});
+    await loadDocument();
     await wait(()=>devtools.evaluate("!!document.querySelector('a[href=\"/auth\"]') && !document.querySelector('[aria-label=\"Account menu\"]')"),"no session resurrection after reload");
     // Find the actual configured SDK key; seed an expired test session and
     // prove its rejected refresh returns to the signed-out interface.
-    await devtools.send("Page.navigate",{url:origin+"/auth"});
+    await loadDocument(origin+"/auth");
     await wait(()=>devtools.evaluate("!!document.querySelector('input[type=email]')"),"auth form for refresh test");
     await wait(()=>devtools.evaluate("!!document.querySelector('button[type=submit]') && !document.querySelector('button[type=submit]').disabled"),"login UI ready for submission");
     await submit(EMAIL,PASSWORD);
@@ -201,14 +212,14 @@ async function main(){
     const authKey=await devtools.evaluate("Object.keys(localStorage).find(k=>k.startsWith('sb-')&&k.endsWith('-auth-token'))");
     assert.ok(authKey,"SDK persisted auth storage key missing");
     await devtools.evaluate("(()=>{const k="+JSON.stringify(authKey)+";const s=JSON.parse(localStorage.getItem(k));s.expires_at=1;localStorage.setItem(k,JSON.stringify(s));})()");
-    await devtools.send("Page.reload",{ignoreCache:true});
+    await loadDocument();
     await wait(()=>refreshRejected>=1,"rejected expired refresh token");
     await wait(()=>devtools.evaluate("!document.querySelector('[aria-label=\"Account menu\"]') && !!document.querySelector('a[href=\"/auth\"]')"),"expired session signed out");
     assert.equal(await devtools.evaluate("localStorage.getItem("+JSON.stringify(authKey)+")"),null,"Rejected refresh must clear persisted credentials");
 
     // Daily Practice: actual built UI writes an answer snapshot, resumes after
     // reload, completes ten questions and preserves one calendar-day streak.
-    await devtools.send("Page.navigate",{url:origin+"/daily"});
+    await loadDocument(origin+"/daily");
     const dailyReady=()=>devtools.evaluate("!!document.querySelector('#deeper-practice') && [...document.querySelectorAll('#deeper-practice button')].some(e=>e.textContent.includes('Start case study'))");
     await wait(dailyReady,"Daily case study");
     await wait(()=>dailyReads>=1,"read-only Daily bank request");
@@ -226,7 +237,7 @@ async function main(){
       await wait(async()=>((await stored())?.answers.length===i+1),"persisted Daily answer "+(i+1));
       if(i===0){
         const before=await stored();
-        await devtools.send("Page.reload",{ignoreCache:true});
+        await loadDocument();
         await wait(()=>devtools.evaluate("[...document.querySelectorAll('#deeper-practice button')].some(e=>e.textContent.includes('Continue case study'))"),"saved Daily resume control");
         assert.deepEqual(await stored(),before,"Reload must preserve the exact exercise and original answer");
         await dailyClick("Continue case study"); // UI selects the first unanswered question
@@ -236,7 +247,7 @@ async function main(){
     const complete=await stored();assert.equal(complete.answers.length,10);assert.ok(complete.answers.every(a=>a===0));
     const streakKey=await devtools.evaluate("Object.keys(localStorage).find(k=>{try{const v=JSON.parse(localStorage.getItem(k));return v && v.totalCompleted===1 && Array.isArray(v.history)}catch{return false}})");
     assert.ok(streakKey,"Daily completion must persist one streak entry");
-    await devtools.send("Page.reload",{ignoreCache:true});
+    await loadDocument();
     await wait(()=>devtools.evaluate("[...document.querySelectorAll('#deeper-practice button')].some(e=>e.textContent.includes('Review case study'))"),"completed case restored");
     assert.deepEqual(await stored(),complete,"Completed answers cannot be rewritten by reload");
     await dailyClick("Review case study");
