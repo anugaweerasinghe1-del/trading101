@@ -45,3 +45,5 @@ console.log("Public failure recurrence, fresh-run evidence, restricted categorie
 // Offline Stage 2 review tests run in the existing credential-free CI check.
 await import("./verify-repair-review.mjs");
 await import("./agent-repair-control-prototype.test.mjs");
+
+await import("./verify-repair-control-postgres-guard.test.mjs");
