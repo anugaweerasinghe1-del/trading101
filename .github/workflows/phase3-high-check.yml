@@ -30,6 +30,10 @@ jobs:
         with:
           node-version: 20
           cache: npm
+      - name: Independently verify live protected main and required CI identities
+        run: node scripts/verify-live-main-protection.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
       - run: npm ci
       - run: node scripts/verify-ci-validation.mjs
       - run: node scripts/verify-ai-agents.mjs
