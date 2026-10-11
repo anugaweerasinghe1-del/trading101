@@ -50,3 +50,8 @@ Sources: https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-work
 ## Independent follow-up review
 
 The evaluator now requires numeric GitHub Actions/Cloudflare App IDs, the registered Phase 3 workflow and repository IDs, and checks completing within the current attempt. Pages evidence must identify the exact Cloudflare account, project and deployment UUID. Adversarial fixtures cover same-named impostors, changed account/project/deployment, incomplete identity and checks finishing outside the attempt. This remains a read-only display; it does not verify provider environment, grant owner approval or resolve Worker dependencies. See `docs/release-recovery-runbook.md` for the separate release and recovery gates.
+
+
+## Trusted HTTP preview verification
+
+The PR-only compatibility step now reads public GitHub records without credentials, binds the immutable Pages URL to the Cloudflare App's exact-head check and exact account/project/deployment UUID, probes 12 public routes, and re-reads deployment identity. It verifies response statuses, live noindex headers and production canonicals for public authored routes. No sign-in, trade, form submission, provider/account changes or production deployment occur. Pending Pages gets at most six checks with 10-second waits; auth/quota errors are not retried. Missing, ambiguous, stale, redirected, mismatched or failed evidence stops the gate. Push/main builds do not mistake production for a preview. Tests intercept GETs and demonstrate failures; remote PR validation supplies actual HTTP evidence. A successful probe still does not prove provider dashboard environment, Worker dependencies, quota or authenticated flows.

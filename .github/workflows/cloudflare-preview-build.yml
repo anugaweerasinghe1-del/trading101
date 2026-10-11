@@ -47,3 +47,9 @@ jobs:
         run: |
           node --check scripts/prepare-cloudflare.mjs
           node --input-type=module -e 'import { readFileSync } from "node:fs"; const routes=JSON.parse(readFileSync("dist/_routes.json","utf8")); if (routes.include.includes("/*") || !routes.include.includes("/courses/*")) process.exit(1); const shell=readFileSync("dist/404.html","utf8"); if (!shell.includes("noindex, follow") || shell.includes("rel=\"canonical\"")) process.exit(1);'
+
+      - name: Verify trusted exact-head Pages preview HTTP and SEO
+        if: ${{ github.event_name == 'pull_request' }}
+        run: node scripts/verify-exact-pages-preview.mjs
+        env:
+          VALIDATION_SHA: ${{ inputs.validation_sha || github.sha }}

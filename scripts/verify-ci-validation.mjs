@@ -77,3 +77,5 @@ try {
   assert.equal(existsSync(output), false, "A moved proposal must not publish verification outputs.");
 } finally { rmSync(fixture, { recursive: true, force: true }); }
 console.log("CI gates: ordinary/docs/bot trigger contracts, exact checkout, both essential outcomes, malformed/missing/stale bindings and least privilege passed. Live bot approval remains external.");
+
+await import("./verify-exact-pages-preview.test.mjs");
