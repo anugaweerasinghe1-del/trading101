@@ -56,8 +56,12 @@ if (process.argv.includes("--self-test")) {
     [{ path: "src/pages/About.tsx", add: 60, del: 60 }], "-old\n+new"), /Large/);
   console.log("AI proposal scope tests passed.");
 } else if (process.argv[1] && process.argv[1].endsWith("verify-ai-pr-scope.mjs")) {
-  // GitHub Actions checks out the isolated branch with fetch-depth: 0.
-  const base = "origin/main...HEAD";
+  // Both ends must be immutable, supplied by the trusted proposal job.
+  const baseSha = process.env.TRADEHQ_BASE_SHA, headSha = process.env.TRADEHQ_HEAD_SHA;
+  assert.ok(/^[a-f0-9]{40}$/.test(baseSha || "") && /^[a-f0-9]{40}$/.test(headSha || ""), "Missing immutable proposal base/head.");
+  assert.equal(git(["rev-parse", "HEAD"]), headSha, "Checkout is not the proposed commit.");
+  git(["merge-base", "--is-ancestor", baseSha, headSha]);
+  const base = baseSha + "..." + headSha;
   const files = git(["diff", "--name-only", base, "--"]).split("\n").filter(Boolean);
   const numstat = git(["diff", "--numstat", base, "--"]).split("\n").filter(Boolean).map(row => {
     const [added, deleted, ...name] = row.split("\t");

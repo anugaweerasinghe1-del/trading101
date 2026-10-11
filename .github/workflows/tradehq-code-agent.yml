@@ -23,6 +23,8 @@ jobs:
       issues: write
     outputs:
       branch: ${{ steps.assistant.outputs.branch }}
+      head_sha: ${{ steps.assistant.outputs.head_sha }}
+      base_sha: ${{ steps.assistant.outputs.base_sha }}
       pr_created: ${{ steps.assistant.outputs.pr_created }}
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -50,15 +52,22 @@ jobs:
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
-          ref: ${{ needs.propose.outputs.branch }}
+          ref: ${{ needs.propose.outputs.head_sha }}
           fetch-depth: 0
           persist-credentials: false
+      - name: Reject missing or mismatched immutable proposal commit
+        run: node scripts/ci-validation-gate.mjs --checkout
+        env:
+          VALIDATION_SHA: ${{ needs.propose.outputs.head_sha }}
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: '20'
           cache: npm
       - name: Independently reject unsafe or oversized AI source patches
         run: node scripts/verify-ai-pr-scope.mjs
+        env:
+          TRADEHQ_BASE_SHA: ${{ needs.propose.outputs.base_sha }}
+          TRADEHQ_HEAD_SHA: ${{ needs.propose.outputs.head_sha }}
       - run: npm ci
       - name: Check backend invariants without production credentials
         run: npm run verify:backend
