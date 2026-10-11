@@ -61,6 +61,20 @@ export async function verifyPostgresControls(env=process.env) {
     // Transaction rollback must undo an uncommitted owner transition.
     await a.unsafe('BEGIN');await stop(a,true);await a.unsafe('ROLLBACK');
     assert.equal((await observer.unsafe('SELECT stopped FROM tradehq_repair_control.policy'))[0].stopped,false);
+    // Real PostgreSQL recovery after an interrupted lease remains owner-only and replay-safe.
+    await a.unsafe("UPDATE tradehq_repair_control.candidates SET claimed_at=claimed_at-interval '25 hours',lease_until=lease_until-interval '25 hours'");
+    assert.equal((await claim(a,other,'manual','LAYOUT_OVERFLOW')).reason,'CLAIMED');
+    const generation=(await a.unsafe("SELECT generation FROM tradehq_repair_control.policy WHERE id=true"))[0].generation;
+    const recover=async (client,proof=digest,gen=generation)=>(await client.unsafe(
+      'SELECT tradehq_repair_control.recover_expired($1,$2,$3,$4) AS r',[other,base,proof,gen]))[0].r;
+    assert.equal((await recover(a)).reason,'LEASE_NOT_EXPIRED');
+    assert.equal((await recover(b,'d'.repeat(64))).reason,'INVALID_EVIDENCE');
+    assert.equal((await recover(b,digest,Number(generation)+1)).reason,'INVALID_EVIDENCE');
+    await a.unsafe("UPDATE tradehq_repair_control.candidates SET claimed_at=claimed_at-interval '31 minutes',lease_until=lease_until-interval '31 minutes' WHERE id=$1",[other]);
+    assert.equal((await recover(b)).reason,'LEASE_EXPIRED');
+    assert.equal((await recover(a)).reason,'LEASE_NOT_EXPIRED');
+    assert.equal((await claim(a,other,'manual','LAYOUT_OVERFLOW')).reason,'DUPLICATE');
+    assert.equal((await a.unsafe("SELECT status FROM tradehq_repair_control.candidates WHERE id=$1",[other]))[0].status,'stopped');
     for(const role of ['anon','authenticated','service_role']){
       await b.unsafe('SET ROLE '+role);
       await assert.rejects(b.unsafe('SELECT tradehq_repair_control.set_stop(false)'),/permission denied/);
