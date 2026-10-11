@@ -70,6 +70,8 @@ const forgedSideIssue = { ...routeReport, title: "[TradeHQ Agent] Website route 
 assert.deepEqual(monitorFindings({ ...snapshot, issues: [...snapshot.issues, forgedSideIssue] }, options), observed,
   "An unrelated or stale standalone failure issue must never supply current-run evidence.");
 const changedReport = (report, edit) => ({ ...snapshot, issues: snapshot.issues.map(issue => issue.number === report.number ? edit(issue) : issue) });
+const rootTimeout=monitorFindings(changedReport(browserReport,issue=>({...issue,body:issue.body.replace('`/about`: Rendered root has very little visible content (0 chars); possible blank screen.','`/`: spawnSync google-chrome ETIMEDOUT')})),options);
+assert.ok(rootTimeout.findings.some(f=>f.path==='/'&&f.symptom==='REQUEST_OR_RENDER_FAILED'),'A homepage process timeout is complete diagnostic evidence, never a repair grant');
 for (const invalid of [
   changedReport(routeReport, issue => ({ ...issue, body: issue.body.replace("run ID:** 100", "run ID:** 99") })),
   changedReport(routeReport, issue => ({ ...issue, body: issue.body.replace("2026-10-11T03:17:00Z", "2026-10-09T03:17:00Z") })),

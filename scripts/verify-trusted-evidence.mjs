@@ -184,12 +184,12 @@ for (const mutate of [x => { x.actions[0].pull_requests = []; }, x => { x.action
 }
 
 // Typed failure evidence is read-only, complete and bound to the actual failed job.
-function failedFixture(source = "route", reason = "HTTP 429") {
+function failedFixture(source = "route", reason = "HTTP 429", path = "/about") {
   const x = fixture(), i = source === "route" ? 0 : 1;
   x.run.conclusion = "failure"; x.jobs[i].conclusion = "failure";
   x.reports[i].body = x.reports[i].body.replace(source === "route" ? "**Failed URLs:** 0" : "**Potential failures:** 0",
     source === "route" ? "**Failed URLs:** 1" : "**Potential failures:** 1")
-    + (source === "route" ? "\n- /about: " : "\n- `/about`: ") + reason;
+    + (source === "route" ? "\n- "+path+": " : "\n- `"+path+"`: ") + reason;
   x.logs[i] = "2026-10-11T05:04:00.0000000Z " + ATTESTATION_PREFIX + JSON.stringify(makeAttestation(source,x.reports[i].body,x.reports[i],
     { GITHUB_REPOSITORY:EVIDENCE_REPOSITORY,GITHUB_REPOSITORY_ID:String(EVIDENCE_REPOSITORY_ID),GITHUB_RUN_ID:String(runId),GITHUB_RUN_ATTEMPT:"2",GITHUB_SHA:monitorSha }));
   return x;
@@ -205,6 +205,14 @@ for (const source of ["route", "browser"]) {
   assert.ok(Object.values(failed.diagnosis.authorization).every(x => x === false));
   assert.ok(!/PRIVATE_(?:TOKEN|REPORT|LOG)_SENTINEL/.test(JSON.stringify(failed)));
 }
+f=failedFixture('browser','spawnSync google-chrome ETIMEDOUT','/');
+await assert.rejects(collectTrustedEvidence({...options,reader:readerFor(f)}));
+const rootFailure=await collectTrustedEvidence({...options,purpose:'diagnosis',reader:readerFor(f)});
+assert.equal(rootFailure.diagnosis.items[0].path,'/');
+assert.equal(rootFailure.diagnosis.items[0].category,'PROBE_OR_DELIVERY_FAILURE');
+assert.equal(rootFailure.diagnosis.items[0].rootCauseVerified,false);
+assert.equal(rootFailure.diagnosis.items[0].proposalAllowed,false);
+assert.ok(Object.values(rootFailure.authorization).every(v=>v===false));
 for (const mutate of [
   x => { x.run.conclusion = "success"; }, x => { x.jobs[0].conclusion = "success"; },
   x => { x.jobs[0].conclusion = "cancelled"; }, x => { x.logs[0] = ""; },
