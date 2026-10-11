@@ -60,3 +60,7 @@ console.log(evidenceCheck.stdout.trim());
 const trustedCheck = spawnSync(process.execPath, ["scripts/verify-trusted-evidence.mjs"], { encoding: "utf8" });
 assert.equal(trustedCheck.status, 0, "Trusted evidence regression: " + trustedCheck.stdout + trustedCheck.stderr);
 console.log(trustedCheck.stdout.trim());
+
+const gateTest = spawnSync(process.execPath, ['scripts/verify-evidence-cycle.mjs'], { encoding: 'utf8' });
+assert.equal(gateTest.status, 0, 'Read-only evidence cycle regression: '+gateTest.stdout+gateTest.stderr);
+console.log(gateTest.stdout.trim());
