@@ -9,7 +9,12 @@ export function dailyFixtureControlUrl(env){
 export async function createDailyPostgresFixture(env=process.env){
   assert.equal(env.TRADEHQ_DAILY_POSTGRES_TEST,'explicit-ci-fixture','Explicit Daily fixture opt-in required');
   const control=dailyFixtureControlUrl(env);
-  const options={max:1,prepare:false,connect_timeout:5,onnotice:()=>{}};
+  const options={max:1,prepare:false,connect_timeout:5,onnotice:()=>{},
+    // Fixture net.http_post returns bigint 1; values in this bounded test are
+    // small and must match PGlite's numeric semantics, not arbitrary int8 data.
+    types:{bigint:{to:20,from:[20],serialize:value=>String(value),parse:value=>{
+      const n=Number(value);assert.ok(Number.isSafeInteger(n),'Unsafe fixture bigint');return n;
+    }}}};
   const admin=postgres(control,options);
   let client;
   try{

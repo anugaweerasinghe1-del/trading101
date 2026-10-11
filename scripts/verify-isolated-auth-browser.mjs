@@ -49,7 +49,10 @@ function cdpConnection(ws){
     },
     async evaluate(expression){
       const x=await this.send("Runtime.evaluate",{expression,returnByValue:true,awaitPromise:true});
-      if(x.exceptionDetails)throw Error("Browser JavaScript assertion failed");
+      if(x.exceptionDetails){
+        const reason=String(x.exceptionDetails.exception?.description||x.exceptionDetails.text||'Unknown browser exception').split('\n')[0].slice(0,180);
+        throw Error("Browser JavaScript assertion failed: "+reason);
+      }
       return x.result?.value;
     },
     close(){ws.close();for(const t of pending.values())clearTimeout(t.timeout);pending.clear();}
@@ -237,7 +240,7 @@ async function main(){
     await wait(()=>devtools.evaluate("[...document.querySelectorAll('#deeper-practice button')].some(e=>e.textContent.includes('Review case study'))"),"completed case restored");
     assert.deepEqual(await stored(),complete,"Completed answers cannot be rewritten by reload");
     await dailyClick("Review case study");
-    assert.equal(await devtools.evaluate("document.querySelector('#case-study-content fieldset').disabled"),true,"Reviewed answers must be locked");
+    await wait(()=>devtools.evaluate("!!document.querySelector('#case-study-content fieldset') && document.querySelector('#case-study-content fieldset').disabled"),"completed review opened with locked answers");
     await devtools.evaluate("document.querySelector('article button:not([disabled])').click()");
     await wait(()=>devtools.evaluate("document.querySelector('article').textContent.includes('Decision Review')"),"quick scenario completion");
     assert.equal(await devtools.evaluate("JSON.parse(localStorage.getItem("+JSON.stringify(streakKey)+")).totalCompleted"),1,"Quick and deeper completion must not double-count the day");
