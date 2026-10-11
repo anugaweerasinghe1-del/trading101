@@ -47,7 +47,7 @@ CREATE INDEX candidate_frequency ON tradehq_repair_control.candidates(claimed_at
 CREATE TABLE tradehq_repair_control.audit (
  day date NOT NULL, code text NOT NULL CHECK(code IN ('STOPPED','MISSING_STATE','INVALID_SCOPE',
   'INVALID_EVIDENCE','DUPLICATE','ACTIVE_CANDIDATE','RATE_LIMIT','CLAIMED','VALIDATED',
-  'VALIDATION_REJECTED','APPROVED','APPROVAL_REJECTED','REVIEW_CHECK_BLOCKED','OWNER_STOP','OWNER_RESUME')),
+  'VALIDATION_REJECTED','APPROVED','APPROVAL_REJECTED','REVIEW_CHECK_BLOCKED','OWNER_STOP','OWNER_RESUME','LEASE_NOT_EXPIRED','LEASE_EXPIRED')),
  count integer NOT NULL DEFAULT 1 CHECK(count BETWEEN 1 AND 10000),
  truncated boolean NOT NULL DEFAULT false,
  first_at timestamptz NOT NULL DEFAULT clock_timestamp(),
@@ -150,6 +150,33 @@ BEGIN
  END IF;
  RETURN tradehq_repair_control.event(CASE WHEN p_action='check' THEN 'REVIEW_CHECK_BLOCKED' ELSE 'APPROVAL_REJECTED' END);
 END $$;
+
+-- Owner-operated, fail-closed recovery of an interrupted/expired claim.
+-- No fresh claim, validation, approval or release is issued by this transition.
+-- A stale caller cannot clear a newer generation, candidate or evidence binding.
+CREATE FUNCTION tradehq_repair_control.recover_expired(
+ p_id text,p_base text,p_digest text,p_generation bigint) RETURNS jsonb
+LANGUAGE plpgsql SECURITY INVOKER SET search_path='' AS $
+DECLARE policy tradehq_repair_control.policy; candidate tradehq_repair_control.candidates; stamp timestamptz;
+BEGIN
+ SELECT * INTO policy FROM tradehq_repair_control.policy WHERE id FOR UPDATE;
+ IF NOT FOUND THEN RETURN tradehq_repair_control.event('MISSING_STATE'); END IF;
+ IF policy.stopped THEN RETURN tradehq_repair_control.event('STOPPED'); END IF;
+ SELECT * INTO candidate FROM tradehq_repair_control.candidates WHERE id=p_id FOR UPDATE;
+ IF NOT FOUND THEN RETURN tradehq_repair_control.event('INVALID_EVIDENCE'); END IF;
+ IF p_generation IS DISTINCT FROM policy.generation
+  OR candidate.generation IS DISTINCT FROM policy.generation
+  OR p_base IS DISTINCT FROM candidate.base_sha
+  OR p_digest IS DISTINCT FROM candidate.evidence_digest THEN
+  RETURN tradehq_repair_control.event('INVALID_EVIDENCE');
+ END IF;
+ stamp:=clock_timestamp();
+ IF candidate.status NOT IN ('claimed','validated','approved') OR candidate.lease_until>stamp THEN
+  RETURN tradehq_repair_control.event('LEASE_NOT_EXPIRED');
+ END IF;
+ UPDATE tradehq_repair_control.candidates SET status='stopped',approval_expires=NULL WHERE id=p_id;
+ RETURN tradehq_repair_control.event('LEASE_EXPIRED')||jsonb_build_object('recovered',true);
+END $;
 
 -- No grants, public RPCs, SECURITY DEFINER, new role or existing permission expansion.
 REVOKE ALL ON ALL FUNCTIONS IN SCHEMA tradehq_repair_control FROM PUBLIC,anon,authenticated,service_role;
