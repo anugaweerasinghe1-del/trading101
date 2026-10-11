@@ -10,15 +10,28 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  phase3:
+    name: TradeHQ Phase 3 tests
     runs-on: ubuntu-latest
+    timeout-minutes: 25
+    outputs:
+      validated_sha: ${{ steps.binding.outputs.validated_sha }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - name: Verify immutable checkout
+        id: binding
+        run: node scripts/ci-validation-gate.mjs --checkout
+        env:
+          VALIDATION_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
       - run: npm ci
+      - run: node scripts/verify-ci-validation.mjs
       - run: node scripts/verify-ai-agents.mjs
       - run: node scripts/verify-gemini-models.mjs
       - run: node scripts/verify-agent-monitor-ideas.mjs
@@ -39,3 +52,26 @@ jobs:
       - run: npm run build
       - run: node scripts/verify-course-node.mjs
       - run: node --import tsx scripts/verify-cloudflare-courses-root.ts
+
+  cloudflare:
+    name: TradeHQ Cloudflare compatibility
+    uses: ./.github/workflows/cloudflare-preview-build.yml
+    with:
+      validation_sha: ${{ github.event.pull_request.head.sha || github.sha }}
+
+  validation:
+    name: TradeHQ Required validation
+    needs: [phase3, cloudflare]
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - name: Require successful essential jobs on the same commit
+        run: node scripts/ci-validation-gate.mjs
+        env:
+          VALIDATION_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+          VALIDATION_NEEDS: ${{ toJSON(needs) }}
