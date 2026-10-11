@@ -29,7 +29,13 @@ export async function createDailyPostgresFixture(env=process.env){
         const source=sql.replace(/^CREATE ROLE anon; CREATE ROLE authenticated; CREATE ROLE service_role BYPASSRLS;/,'');
         return client.unsafe(source);
       },
-      async query(sql,args=[]){return {rows:await client.unsafe(sql,args)}} ,
+      async query(sql,args=[]){
+        // postgres.js serializes JSONB parameters itself. Convert the existing
+        // PGlite fixture's JSON text to objects once instead of double-encoding.
+        const bound=args.map((value,i)=>new RegExp('\\$'+(i+1)+'::jsonb\\b').test(sql)&&typeof value==='string'
+          ? client.json(JSON.parse(value)) : value);
+        return {rows:await client.unsafe(sql,bound)};
+      } ,
       async close(){await client.end({timeout:2})},
     };
   }catch(error){if(client)await client.end({timeout:1});throw error}
