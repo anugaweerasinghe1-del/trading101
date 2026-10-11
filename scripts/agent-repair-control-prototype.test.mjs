@@ -76,7 +76,7 @@ try {
   assert.equal((await recover()).reason,"LEASE_NOT_EXPIRED");
   assert.equal((await recover(other,base,"d".repeat(64))).reason,"INVALID_EVIDENCE");
   assert.equal((await recover(other,base,digest,Number(gen)+1)).reason,"INVALID_EVIDENCE");
-  assert.equal((await recover(id)).reason,"LEASE_NOT_EXPIRED");
+  assert.equal((await recover(id)).reason,"INVALID_EVIDENCE","Stopped old-generation claims cannot be revived");
   await db.query("UPDATE tradehq_repair_control.candidates SET claimed_at=claimed_at-interval '31 minutes', lease_until=lease_until-interval '31 minutes' WHERE id=$1",[other]);
   assert.equal((await recover()).reason,"LEASE_EXPIRED");
   assert.equal((await recover()).reason,"LEASE_NOT_EXPIRED");
