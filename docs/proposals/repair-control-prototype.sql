@@ -156,7 +156,7 @@ END $$;
 -- A stale caller cannot clear a newer generation, candidate or evidence binding.
 CREATE FUNCTION tradehq_repair_control.recover_expired(
  p_id text,p_base text,p_digest text,p_generation bigint) RETURNS jsonb
-LANGUAGE plpgsql SECURITY INVOKER SET search_path='' AS $
+LANGUAGE plpgsql SECURITY INVOKER SET search_path='' AS $recovery$
 DECLARE policy tradehq_repair_control.policy; candidate tradehq_repair_control.candidates; stamp timestamptz;
 BEGIN
  SELECT * INTO policy FROM tradehq_repair_control.policy WHERE id FOR UPDATE;
@@ -176,7 +176,7 @@ BEGIN
  END IF;
  UPDATE tradehq_repair_control.candidates SET status='stopped',approval_expires=NULL WHERE id=p_id;
  RETURN tradehq_repair_control.event('LEASE_EXPIRED')||jsonb_build_object('recovered',true);
-END $;
+END $recovery$;
 
 -- No grants, public RPCs, SECURITY DEFINER, new role or existing permission expansion.
 REVOKE ALL ON ALL FUNCTIONS IN SCHEMA tradehq_repair_control FROM PUBLIC,anon,authenticated,service_role;
