@@ -91,6 +91,13 @@ export function previousState(body) {
   } catch { return { runId: "", streaks: {} }; }
 }
 export function nextState(prior, findings, currentRun) {
+  if(!/^[1-9][0-9]*$/.test(currentRun)||!Number.isSafeInteger(Number(currentRun))
+    ||(prior.runId&&(!/^[1-9][0-9]*$/.test(prior.runId)||!Number.isSafeInteger(Number(prior.runId)))))
+    throw Error("Invalid recurrence run identity");
+  // A historical rerun must not increment a newer run's stored streak or clear
+  // its candidate. Ordered GitHub run IDs keep this bounded state fail-closed.
+  if(prior.runId&&Number(currentRun)<Number(prior.runId))
+    throw Error("Older monitoring run cannot replay recurrence");
   if (prior.runId === currentRun) return prior; // rerunning a job is NOT another independent observation
   const streaks = {};
   for (const item of findings) {
