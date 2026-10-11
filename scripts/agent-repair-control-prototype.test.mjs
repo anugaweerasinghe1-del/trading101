@@ -68,6 +68,24 @@ try {
   // Offline clock fixture: move the completed/stopped historical claim beyond the window.
   await db.exec("UPDATE tradehq_repair_control.candidates SET claimed_at=claimed_at-interval '25 hours',lease_until=lease_until-interval '25 hours'");
   assert.equal((await claim(other,"manual","LAYOUT_OVERFLOW")).reason, "CLAIMED");
+  // Owner-operated recovery must not clear an unexpired, mismatched or stopped claim.
+  const gen=(await db.query("SELECT generation FROM tradehq_repair_control.policy WHERE id=true")).rows[0].generation;
+  const recover=async(candidate=other,baseline=base,proof=digest,generation=gen)=>
+    (await db.query("SELECT tradehq_repair_control.recover_expired($1,$2,$3,$4) AS r",
+      [candidate,baseline,proof,generation])).rows[0].r;
+  assert.equal((await recover()).reason,"LEASE_NOT_EXPIRED");
+  assert.equal((await recover(other,base,"d".repeat(64))).reason,"INVALID_EVIDENCE");
+  assert.equal((await recover(other,base,digest,Number(gen)+1)).reason,"INVALID_EVIDENCE");
+  assert.equal((await recover(id)).reason,"LEASE_NOT_EXPIRED");
+  await db.query("UPDATE tradehq_repair_control.candidates SET claimed_at=claimed_at-interval '31 minutes', lease_until=lease_until-interval '31 minutes' WHERE id=$1",[other]);
+  assert.equal((await recover()).reason,"LEASE_EXPIRED");
+  assert.equal((await recover()).reason,"LEASE_NOT_EXPIRED");
+  assert.equal((await db.query("SELECT status FROM tradehq_repair_control.candidates WHERE id=$1",[other])).rows[0].status,"stopped");
+  assert.equal((await db.query("SELECT count(*)::int AS n FROM tradehq_repair_control.candidates")).rows[0].n,2,"Recovery retains durable attempt history");
+  assert.equal((await claim(other,"manual","LAYOUT_OVERFLOW")).reason,"DUPLICATE","Recovery cannot reset fingerprint history");
+  await db.exec("SELECT tradehq_repair_control.set_stop(true)");
+  assert.equal((await recover()).reason,"STOPPED");
+  await db.exec("SELECT tradehq_repair_control.set_stop(false)");
   await db.exec("UPDATE tradehq_repair_control.audit SET count=10000 WHERE code='DUPLICATE'");
   await claim();
   assert.equal((await db.query("SELECT count,truncated FROM tradehq_repair_control.audit WHERE code='DUPLICATE'")).rows[0].truncated, true);
