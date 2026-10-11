@@ -170,6 +170,7 @@ async function main(){
     await wait(()=>rejected===1,"negative Supabase login verification");
     assert.equal(await devtools.evaluate("location.pathname"),"/auth",
       "Invalid password must never enter an authenticated route");
+    await wait(()=>devtools.evaluate("!!document.querySelector('button[type=submit]') && !document.querySelector('button[type=submit]').disabled"),"login UI ready for submission");
     await submit(EMAIL,PASSWORD);
     await wait(()=>approved===1,"positive Supabase fixture login");
     await wait(()=>devtools.evaluate("location.pathname==='/trader/me'"),"authenticated profile redirect");
@@ -190,6 +191,7 @@ async function main(){
     // prove its rejected refresh returns to the signed-out interface.
     await devtools.send("Page.navigate",{url:origin+"/auth"});
     await wait(()=>devtools.evaluate("!!document.querySelector('input[type=email]')"),"auth form for refresh test");
+    await wait(()=>devtools.evaluate("!!document.querySelector('button[type=submit]') && !document.querySelector('button[type=submit]').disabled"),"login UI ready for submission");
     await submit(EMAIL,PASSWORD);
     await wait(()=>approved===2,"second independent fixture login");
     await wait(()=>devtools.evaluate("location.pathname==='/trader/me'"),"second profile navigation");
