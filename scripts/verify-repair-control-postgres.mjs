@@ -61,6 +61,8 @@ export async function verifyPostgresControls(env=process.env) {
     // Transaction rollback must undo an uncommitted owner transition.
     await a.unsafe('BEGIN');await stop(a,true);await a.unsafe('ROLLBACK');
     assert.equal((await observer.unsafe('SELECT stopped FROM tradehq_repair_control.policy'))[0].stopped,false);
+    assert.deepEqual((await observer.unsafe('SELECT generation,stopped FROM tradehq_repair_control.policy_log ORDER BY seq')).map(r=>[Number(r.generation),r.stopped]),
+      [[0,true],[1,false],[2,true],[3,false]],'Stop/resume transitions are durable, ordered and rollback-atomic across sessions');
     // Real PostgreSQL recovery after an interrupted lease remains owner-only and replay-safe.
     await a.unsafe("UPDATE tradehq_repair_control.candidates SET claimed_at=claimed_at-interval '25 hours',lease_until=lease_until-interval '25 hours'");
     assert.equal((await claim(a,other,'manual','LAYOUT_OVERFLOW')).reason,'CLAIMED');
@@ -81,6 +83,7 @@ export async function verifyPostgresControls(env=process.env) {
       await b.unsafe('SET ROLE '+role);
       await assert.rejects(b.unsafe('SELECT tradehq_repair_control.set_stop(false)'),/permission denied/);
       await assert.rejects(b.unsafe('SELECT * FROM tradehq_repair_control.candidates'),/permission denied/);
+      await assert.rejects(b.unsafe('SELECT * FROM tradehq_repair_control.policy_log'),/permission denied/);
       await assert.rejects(b.unsafe('SELECT * FROM tradehq_repair_control.transition_log'),/permission denied/);
       await b.unsafe('RESET ROLE');
     }
