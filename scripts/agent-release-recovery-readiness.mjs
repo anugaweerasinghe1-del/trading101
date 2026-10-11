@@ -95,16 +95,31 @@ async function collect(sha,token){
   assert.ok(Array.isArray(statuses.statuses)&&statuses.statuses.length<=100,"Incomplete status history");
   return {checks:checks.check_runs,statuses:statuses.statuses};
 }
-async function checkPublicRoute(path){
-  const controller=AbortSignal.timeout(14000);
-  const r=await fetch("https://www.thetradehq.com"+path,{
-    redirect:"error",signal:controller,headers:{"User-Agent":"TradeHQ-release-sampler/1.0"}});
-  assert.equal(r.status,200,"Public route unavailable: "+path);
-  const contentType=r.headers.get("content-type")||"";
-  assert.ok(contentType.includes("text/html"),"Public route returned non-HTML");
-  const body=await r.text();
-  assert.ok(body.includes("<title")&&body.includes("TradeHQ")&&body.length>2000,
-    "Public route did not return an authored TradeHQ page");
+export async function checkPublicRoute(path,fetcher=fetch){
+  assert.ok(/^\/[a-z-]*$/.test(path),"Only reviewed public routes are allowed");
+  const origin="https://www.thetradehq.com";
+  let target=new URL(origin+path);
+  for(let redirects=0;redirects<3;redirects++){
+    const response=await fetcher(target.toString(),{
+      redirect:"manual",signal:AbortSignal.timeout(14000),
+      headers:{"User-Agent":"TradeHQ-release-sampler/1.0"}});
+    if([301,302,307,308].includes(response.status)){
+      const next=new URL(response.headers.get("location")||"",target);
+      assert.ok(next.origin===origin && !next.search && !next.hash
+        && (next.pathname===path || next.pathname===path+"/"),
+        "Public route redirected outside its approved same-origin canonical path: "+path);
+      target=next;
+      continue;
+    }
+    assert.equal(response.status,200,"Public route unavailable: "+path);
+    const contentType=response.headers.get("content-type")||"";
+    assert.ok(contentType.includes("text/html"),"Public route returned non-HTML: "+path);
+    const body=await response.text();
+    assert.ok(body.includes("<title")&&body.includes("TradeHQ")&&body.length>2000,
+      "Public route did not return authored TradeHQ HTML: "+path);
+    return;
+  }
+  throw Error("Too many public route redirects: "+path);
 }
 async function run(){
   assert.equal(process.env.GITHUB_REPOSITORY,REPO,"Unexpected repository");
@@ -139,5 +154,6 @@ async function run(){
   console.log("PUBLIC_RELEASE_ROUTES_PASS 5");
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
-  run().catch(()=>{console.error("Release/recovery evidence NOT VERIFIED. Do not release or rollback based on this report.");process.exitCode=1;});
+  run().catch(error=>{const reason=String(error?.message||"Unknown check failure").replace(/\s+/g," ").slice(0,170);
+    console.error("Release/recovery NOT VERIFIED: "+reason+". Do not release or rollback based on this report.");process.exitCode=1;});
 }
