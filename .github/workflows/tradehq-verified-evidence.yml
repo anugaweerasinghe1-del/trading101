@@ -1,0 +1,43 @@
+name: TradeHQ Trusted Evidence Cycle
+on:
+  workflow_run:
+    workflows: [TradeHQ Agents]
+    types: [completed]
+    branches: [main]
+permissions:
+  contents: read
+  actions: read
+  checks: read
+  issues: read
+jobs:
+  collect:
+    if: ${{ github.event.workflow_run.head_repository.full_name == github.repository && github.event.workflow_run.head_branch == 'main' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Classify completed monitoring jobs
+        id: gate
+        run: node scripts/agent-evidence-run-gate.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          MONITOR_RUN_ID: ${{ github.event.workflow_run.id }}
+          MONITOR_EVENT: ${{ github.event.workflow_run.event }}
+      - name: Validate exact run, attestation, CI and Pages evidence
+        if: ${{ steps.gate.outputs.ready == 'true' }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ github.event.workflow_run.id }}
+          MONITOR_SHA: ${{ github.event.workflow_run.head_sha }}
+          MAIN_SHA: ${{ github.sha }}
+          PURPOSE: ${{ steps.gate.outputs.purpose }}
+        run: >-
+          node scripts/agent-trusted-evidence.mjs
+          --run "$RUN_ID" --monitor-sha "$MONITOR_SHA"
+          --main "$MAIN_SHA" --purpose "$PURPOSE"
