@@ -31,6 +31,17 @@ export function assessBrowserHtml(path, html) {
   if(path==="/daily"&&!/daily/i.test(text)) return "Daily practice page did not render expected content.";
   return null;
 }
+// One process-timeout retry may sample the route again, but a visible
+// application failure, blank page or nonzero process exit is never retried.
+// The caller shares a single retry allowance across the entire twelve-route run.
+export function probeBrowserRoute(path,run,{retryAllowed=false}={}) {
+  const failure=result=>result.error?.message || (result.status!==0?"Chrome exit "+result.status:assessBrowserHtml(path,result.stdout));
+  const first=run();
+  if(first.error?.code!=="ETIMEDOUT" || !retryAllowed)
+    return {failure:failure(first),retried:false,recovered:false};
+  const second=run(),lastFailure=failure(second);
+  return {failure:lastFailure,retried:true,recovered:!lastFailure};
+}
 function commandExists(command) {
   const result = spawnSync("which", [command], {encoding:"utf8", timeout:2500});
   return result.status===0;
@@ -53,29 +64,42 @@ export async function main() {
   const chrome=["google-chrome","google-chrome-stable","chromium","chromium-browser"].find(commandExists);
   if(!chrome) throw Error("Chrome is not available on this runner. Browser smoke coverage could not be verified.");
   const failures=[];
+  const retries=[];
   const started=new Date().toISOString();
   for(const route of routes){
-    const dir=mkdtempSync(join(tmpdir(),"tradehq-browser-"));
-    try {
+    const run=()=>{
+      const dir=mkdtempSync(join(tmpdir(),"tradehq-browser-"));
+      let result;
+      try {
       const url=new URL(route,origin).toString();
-      const result=spawnSync(chrome,[
+      result=spawnSync(chrome,[
         "--headless=new","--no-sandbox","--disable-gpu","--disable-dev-shm-usage",
         "--disable-background-networking","--disable-extensions","--no-first-run",
         "--hide-scrollbars","--virtual-time-budget=6500",
         "--window-size=1280,900","--user-data-dir="+dir,"--dump-dom",url,
-      ],{encoding:"utf8",timeout:30000,maxBuffer:8*1024*1024});
-      const failure=result.error?.message || (result.status!==0?"Chrome exit "+result.status:assessBrowserHtml(route,result.stdout));
-      if(failure) failures.push({route,reason:failure.slice(0,150)});
-    }finally { if(existsSync(dir)) rmSync(dir,{recursive:true,force:true}); }
+      ],{encoding:"utf8",timeout:30000,killSignal:"SIGKILL",detached:true,maxBuffer:8*1024*1024});
+      return result;
+      }finally {
+        // Each attempt owns a dedicated process group and fresh profile. Stop
+        // surviving Chrome children before deleting profile files or retrying.
+        if(result?.pid){try{process.kill(-result.pid,"SIGKILL")}catch(error){if(error.code!=="ESRCH")throw error}}
+        if(existsSync(dir))rmSync(dir,{recursive:true,force:true,maxRetries:12,retryDelay:150});
+      }
+    };
+    const probe=probeBrowserRoute(route,run,{retryAllowed:retries.length===0});
+    if(probe.retried)retries.push({route,recovered:probe.recovered});
+    if(probe.failure)failures.push({route,reason:probe.failure.slice(0,150)});
   }
   const issues=await github("GET","/issues?state=open&per_page=100");
   const body=[
     "## Public browser-smoke checks", "**Checked at (UTC):** "+started, "**GitHub run ID:** "+(process.env.GITHUB_RUN_ID||"unavailable"),
     "**Checked routes:** "+routes.length, "**Potential failures:** "+failures.length,
     "**Browser:** "+chrome,
+    "**Browser process retries:** "+retries.length+" (maximum one for this entire run)",
     "Checks real browser rendering for public pages, visible error banners, and locked admin landing pages.",
     "Does NOT authenticate, submit forms, test trading, or prove every feature works.",
     failures.length?"### Flagged routes\n"+failures.map(x=>"- \`"+x.route+"\`: "+x.reason).join("\n"):"No potential rendering failures on these sampled public routes.",
+    retries.length?"### Browser process retry observations\n"+retries.map(x=>"- Browser process timeout at `"+x.route+"`; one fresh-process probe "+(x.recovered?"passed":"also failed")+". This does not establish the original timeout's cause.").join("\n"):"No browser-process timeout retries were used.",
     "\nRead-only; nothing changed on production. Public report; no personal data or credentials.",
   ].join("\n\n");
   const persisted = await upsert(issues,title,body);

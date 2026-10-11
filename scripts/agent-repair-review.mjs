@@ -115,7 +115,7 @@ function symptom(reason) {
   if (/No HTML title/i.test(reason)) return "MISSING_TITLE";
   if (/blank screen|very little visible content|React root element/i.test(reason)) return "BLANK_ROOT";
   if (/application\/API error|API returned 429/i.test(reason)) return "VISIBLE_ERROR";
-  if (/timed out|failed|Chrome exit|Chrome did not return HTML/i.test(reason)) return "REQUEST_OR_RENDER_FAILED";
+  if (/timed out|\bETIMEDOUT\b|failed|Chrome exit|Chrome did not return HTML/i.test(reason)) return "REQUEST_OR_RENDER_FAILED";
   return "UNCLASSIFIED";
 }
 /** Reuse recurrence parsing, but read failures ONLY from the same-run summary
@@ -150,7 +150,7 @@ export function monitorFindings(snapshot, { now = Date.now() } = {}) {
     { ...reports[1], title: BROWSER_FAILURES },
   ], String(snapshot.runId));
   const routeRecords = [...reports[0].body.matchAll(/^- (\/[^\s:]*): ([^\r\n]+)$/gm)];
-  const browserRecords = [...reports[1].body.matchAll(/^- `(\/[^\s`]+)`: ([^\r\n]+)$/gm)];
+  const browserRecords = [...reports[1].body.matchAll(/^- `(\/[^\s`]*)`: ([^\r\n]+)$/gm)];
   if (routeRecords.length !== failures.routeCount || browserRecords.length !== failures.browserCount
     || failures.records.length !== routeRecords.length + browserRecords.length) {
     throw Error("Incomplete or truncated same-run evidence; manual investigation required.");
