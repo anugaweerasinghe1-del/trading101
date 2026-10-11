@@ -90,7 +90,7 @@ const healthy = { ...snapshot, issues: snapshot.issues.map(issue => ({ ...issue,
   body: issue.body.split("\n\n")[0].replace(/(Failed URLs|Potential failures):\*\* 1/, "$1:** 0") })) };
 assert.equal(monitorFindings(healthy, options).findings.length, 0, "Healthy reports do not manufacture a repair.");
 const duplicateLines = changedReport(routeReport, issue => ({ ...issue, body: issue.body.replace("Failed URLs:** 1", "Failed URLs:** 2") + "\n- /about: HTTP 404" }));
-assert.equal(monitorFindings(duplicateLines, options).findings.length, 2, "Same-run duplicate lines do not multiply candidates.");
+assert.throws(() => monitorFindings(duplicateLines, options), /Duplicate/, "Ambiguous duplicate findings are rejected before recurrence or repair review.");
 const truncated = changedReport(routeReport, issue => ({ ...issue, body: issue.body.replace("Failed URLs:** 1", "Failed URLs:** 36").split("### Failed checks")[0]
   + Array.from({ length: 36 }, (_, index) => `\n- /page-${index}: HTTP 404`).join("") }));
 assert.throws(() => monitorFindings(truncated, options), /Incomplete or truncated/);

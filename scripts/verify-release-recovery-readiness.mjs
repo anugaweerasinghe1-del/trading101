@@ -73,3 +73,5 @@ await assert.rejects(checkPublicRoute("/daily",async()=>page(200,"application/js
 await assert.rejects(checkPublicRoute("/daily",async()=>({status:200,headers:{get:()=>"text/html"},text:async()=>"<html><title>Unknown</title></html>"})),/authored TradeHQ HTML/);
 
 console.log("Release/recovery readiness offline regression passed: exact provider/app/deploy SHA bindings, prior known-good candidate, missing/failing/duplicate/stale evidence denied, rollback/approval never authorized.");
+
+await import('./verify-recovery-preflight.mjs');
