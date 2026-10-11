@@ -82,6 +82,8 @@ export async function verifyOfflineOwnerAdapter({authenticateOwner,readControlSt
     && identityToken!==undefined,"Missing independently configured offline authentication boundary");
   assert.ok(expected && sha.test(expected.baseSha||"") && sha.test(expected.headSha||"")
     && digest.test(expected.evidenceDigest||""),"Invalid immutable expected binding");
+  assert.ok(typeof expected.ownerId==="string" && expected.ownerId===registeredOwnerId
+    && typeof expected.approvalId==="string","Owner/approval identity must be in signed binding");
   const principal=await authenticateOwner(identityToken);
   assert.ok(principal && principal.authenticated===true && principal.id===registeredOwnerId
     && principal.testOnly===true,"Unverified or unauthorized owner identity");
@@ -91,7 +93,9 @@ export async function verifyOfflineOwnerAdapter({authenticateOwner,readControlSt
     && state.leaseUntil<=now+30*60_000,"Stopped, stale, missing or changed durable control state");
   const accepted=verifyOfflineOwnerReceipt({receipt,signature,publicKey,expected,now});
   assert.ok(Date.parse(accepted.expiresAt)<=state.leaseUntil,"Approval exceeds repair lease");
+  assert.equal(accepted.ownerId,principal.id,"Owner receipt identity differs from verified principal");
   return {schema:"tradehq-offline-owner-adapter-v1",candidateId:accepted.candidateId,
+    approvalId:accepted.approvalId,ownerId:accepted.ownerId,
     evidenceDigest:accepted.evidenceDigest,receiptDigest:accepted.approvalDigest,
     status:"PENDING_OWNER_ONLY_DURABLE_RECORD",authorization:noAuthority(),
     limitations:["Test identity callback only; no production IdP, key registration or approved database role.",

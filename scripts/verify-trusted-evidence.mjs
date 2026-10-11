@@ -282,6 +282,146 @@ await assert.rejects(collectOfflineRepairReview({ ...options, now:now+31*60*60_0
 await assert.rejects(collectOfflineRepairReview({...options,reader:readerFor(fixture()),changes:[{},{}]}));
 console.log("Offline pipeline: attested evidence -> deterministic diagnosis -> risk review -> blocked, bounded owner-investigation manifest; no PR, AI or source write.");
 
+
+// A fully isolated end-to-end POSITIVE fixture. This deliberately DOES NOT
+// demonstrate any real deployed layout fault, owner, PR, user or provider usage.
+// Real attested GET fixture -> diagnosis HIGH -> independent simulated reproduction
+// -> narrowed source classification -> disposable SQL -> verified test owner
+// -> standalone Git commit -> immutable PR-equivalent JSON manifest.
+const {createOfflineSupabaseOwnerVerifier}=await import("./agent-owner-supabase-auth-offline.mjs");
+const {buildOfflineReviewArtifact}=await import("./agent-repair-immutable-offline.mjs");
+const {verifyOfflineOwnerAdapter}=await import("./agent-repair-pipeline-offline.mjs");
+const {ownerReceiptBytes}=await import("./agent-owner-approval-offline.mjs");
+const {generateKeyPairSync,sign}=await import("node:crypto");
+const {mkdtempSync,mkdirSync,writeFileSync,rmSync}=await import("node:fs");
+const {tmpdir}=await import("node:os");
+const {join}=await import("node:path");
+const {execFileSync}=await import("node:child_process");
+
+const syntheticBefore='export default function About(){ return <h1 className="text-3xl mb-4">Safe sample</h1> }';
+const syntheticAfter=syntheticBefore.replace("mb-4","mb-6");
+const syntheticChange={path:"src/pages/About.tsx",status:"modified",before:syntheticBefore,after:syntheticAfter};
+const fixtureReview=await collectOfflineRepairReview({...options,reader:readerFor(failedFixture("browser","LAYOUT_OVERFLOW")),
+  changes:[syntheticChange]});
+assert.equal(fixtureReview.cases.length,1);
+const fixtureCase=fixtureReview.cases[0];
+assert.equal(fixtureCase.symptom,"LAYOUT_OVERFLOW");
+assert.equal(fixtureCase.scopeRisk,"LOW");
+assert.equal(fixtureCase.repairRisk,"HIGH");
+const simulatedSpacingOk=text=>Number(/mb-(\d+)/.exec(text)?.[1])>=6;
+const reproduction={isolatedFixture:true,beforeFailed:!simulatedSpacingOk(syntheticBefore),
+  afterPassed:simulatedSpacingOk(syntheticAfter),rootCause:"fixture-vertical-spacing"};
+assert.equal(reproduction.beforeFailed,true);assert.equal(reproduction.afterPassed,true);
+
+const tempRepo=mkdtempSync(join(tmpdir(),"tradehq-isolated-repair-git-"));
+const demoDb=new PGlite();
+try{
+  const env={...process.env,GIT_CONFIG_NOSYSTEM:"1",GIT_CONFIG_GLOBAL:"/dev/null",
+    GIT_AUTHOR_DATE:"2026-10-11T06:00:00Z",GIT_COMMITTER_DATE:"2026-10-11T06:00:00Z"};
+  const git=(...args)=>execFileSync("git",args,{cwd:tempRepo,env,encoding:"utf8"}).trim();
+  const file=join(tempRepo,"src/pages/About.tsx");
+  mkdirSync(join(tempRepo,"src/pages"),{recursive:true});
+  git("init","-q");
+  writeFileSync(file,syntheticBefore);
+  git("add","src/pages/About.tsx");
+  git("-c","user.name=TradeHQ Disposable Fixture","-c","user.email=fixture@example.invalid",
+    "commit","-qm","Synthetic pre-fix fixture");
+  const isolatedBaseSha=git("rev-parse","HEAD");
+  writeFileSync(file,syntheticAfter);
+  git("add","src/pages/About.tsx");
+  git("-c","user.name=TradeHQ Disposable Fixture","-c","user.email=fixture@example.invalid",
+    "commit","-qm","Synthetic isolated layout-only repair");
+  const isolatedHeadSha=git("rev-parse","HEAD");
+  const paths=git("show","--pretty=format:","--name-only","HEAD").split("\n").filter(Boolean);
+  const isolatedGit={baseSha:isolatedBaseSha,headSha:isolatedHeadSha,
+    changedPaths:paths,diffCheckPassed:git("diff","--check","HEAD^","HEAD")===""};
+  assert.deepEqual(paths,["src/pages/About.tsx"]);
+  assert.notEqual(isolatedBaseSha,isolatedHeadSha);
+  assert.equal(git("show","HEAD:src/pages/About.tsx"),syntheticAfter);
+  await demoDb.exec("CREATE ROLE anon;CREATE ROLE authenticated;CREATE ROLE service_role BYPASSRLS;");
+  await demoDb.exec("SET tradehq.offline_control_prototype='explicit-local-test';");
+  await demoDb.exec(readFileSync("docs/proposals/repair-control-prototype.sql","utf8"));
+  const base=fixtureCase.baseSha,evidence=fixtureCase.evidenceDigest,id=fixtureCase.candidateId;
+  const claim=async risk=>(await demoDb.query(
+    "SELECT tradehq_repair_control.claim($1,$2,$3,$4,$5,clock_timestamp(),$6) AS r",
+    [id,fixtureCase.source,fixtureCase.symptom,base,evidence,risk])).rows[0].r;
+  assert.equal((await claim("LOW")).reason,"STOPPED");
+  await demoDb.exec("SELECT tradehq_repair_control.set_stop(false)");
+  assert.equal((await claim("HIGH")).reason,"INVALID_SCOPE");
+  assert.equal((await claim("LOW")).reason,"CLAIMED");
+  assert.equal((await claim("LOW")).reason,"DUPLICATE");
+  const row=(await demoDb.query(
+    "SELECT generation,lease_until FROM tradehq_repair_control.candidates WHERE id=$1",[id])).rows[0];
+  const generation=Number(row.generation);
+  const leaseUntil=new Date(row.lease_until).getTime();
+  const ownerId="fixture-owner-identity";
+  const principalVerifier=createOfflineSupabaseOwnerVerifier({
+    registeredOwnerId:ownerId,
+    getUser:async accessToken=>accessToken==="fixture-verified-bearer-session"
+      ?{data:{user:{id:ownerId,aud:"authenticated",is_anonymous:false}},error:null}
+      :{data:{user:null},error:{message:"invalid fixture session"}},
+    authorizeExistingAdmin:async (credential,id)=>credential==="fixture-admin-key"&&id===ownerId,
+  });
+  await assert.rejects(principalVerifier({accessToken:"invalid-bearer-session",adminCredential:"fixture-admin-key"}));
+  await assert.rejects(principalVerifier({accessToken:"fixture-verified-bearer-session",adminCredential:"incorrect-admin-key"}));
+  await assert.rejects(principalVerifier({accessToken:"fixture-verified-bearer-session",adminCredential:""}));
+  const verifyPrincipal=async credential=>principalVerifier({
+    accessToken:credential,adminCredential:"fixture-admin-key"});
+  const {publicKey,privateKey}=generateKeyPairSync("ed25519");
+  const clock=Date.now();
+  const ownerBinding={candidateId:id,ownerId,approvalId:"approval-v1-"+"f".repeat(24),
+    baseSha:base,headSha:isolatedHeadSha,evidenceDigest:evidence,generation};
+  const receipt={schema:"tradehq-owner-approval-v1",decision:"approve",...ownerBinding,
+    issuedAt:new Date(clock).toISOString(),expiresAt:new Date(clock+120000).toISOString()};
+  const signature=sign(null,ownerReceiptBytes(receipt),privateKey).toString("hex");
+  const adapterArgs={authenticateOwner:verifyPrincipal,
+    readControlState:async()=>({stopped:false,generation,leaseUntil}),
+    identityToken:"fixture-verified-bearer-session",registeredOwnerId:ownerId,
+    publicKey,receipt,signature,expected:ownerBinding,now:clock};
+  const authorized=await verifyOfflineOwnerAdapter(adapterArgs);
+  assert.equal(authorized.approvalId,ownerBinding.approvalId);
+  assert.equal(authorized.ownerId,ownerId);
+  await assert.rejects(verifyOfflineOwnerAdapter({...adapterArgs,identityToken:"invalid-bearer-session"}));
+  await assert.rejects(verifyOfflineOwnerAdapter({...adapterArgs,
+    readControlState:async()=>({stopped:true,generation,leaseUntil})}));
+  const reviewSql=async(action,hash=authorized.receiptDigest)=>(await demoDb.query(
+    "SELECT tradehq_repair_control.review($1,$2,$3,$4,$5,$6,$7) AS r",
+    [action,id,isolatedHeadSha,base,evidence,receipt.expiresAt,hash])).rows[0].r;
+  assert.equal((await reviewSql("approve")).reason,"APPROVAL_REJECTED","Cannot approve before independent proposal validation");
+  assert.equal((await reviewSql("validate")).reason,"VALIDATED");
+  assert.equal((await reviewSql("approve",null)).reason,"APPROVAL_REJECTED");
+  assert.equal((await reviewSql("approve")).reason,"APPROVED");
+  assert.equal((await reviewSql("approve")).reason,"APPROVAL_REJECTED","The same approval cannot be submitted again");
+  assert.equal((await reviewSql("check","0".repeat(64))).reason,"REVIEW_CHECK_BLOCKED");
+  const sqlApproval=await reviewSql("check");
+  assert.equal(sqlApproval.reviewValid,true);
+  const artifact=buildOfflineReviewArtifact({
+    verifiedCase:fixtureCase,change:syntheticChange,reproduction,isolatedGit,
+    ownerReceipt:authorized,sqlApproval,
+    independentTests:{passed:true,exactHeadSha:isolatedHeadSha}
+  });
+  assert.match(artifact.manifestSha256,/^[a-f0-9]{64}$/);
+  assert.equal(artifact.draftPrCreated,false);
+  assert.ok(Object.values(artifact.authorization).every(x=>x===false));
+  assert.throws(()=>buildOfflineReviewArtifact({
+    verifiedCase:fixtureCase,change:{...syntheticChange,path:"src/pages/Auth.tsx"},
+    reproduction,isolatedGit,ownerReceipt:authorized,sqlApproval,
+    independentTests:{passed:true,exactHeadSha:isolatedHeadSha}}));
+  assert.throws(()=>buildOfflineReviewArtifact({
+    verifiedCase:fixtureCase,change:syntheticChange,reproduction,isolatedGit,ownerReceipt:authorized,
+    sqlApproval,independentTests:{passed:false,exactHeadSha:isolatedHeadSha}}));
+  assert.throws(()=>buildOfflineReviewArtifact({
+    verifiedCase:fixtureCase,change:syntheticChange,reproduction,isolatedGit,ownerReceipt:authorized,
+    sqlApproval,independentTests:{passed:true,exactHeadSha:isolatedBaseSha}}));
+  const log=(await demoDb.query("SELECT code FROM tradehq_repair_control.transition_log ORDER BY seq")).rows.map(r=>r.code);
+  assert.deepEqual(log,["CLAIMED","VALIDATED","APPROVED"]);
+  await demoDb.exec("SELECT tradehq_repair_control.set_stop(true)");
+  assert.equal((await reviewSql("check")).reason,"STOPPED","Emergency stop must revoke previous check");
+  console.log("Synthetic end-to-end: attested monitor fixture -> reproduced layout sample -> LOW source gate -> isolated Git exact head "+
+    isolatedHeadSha+" -> separately verified Supabase/admin fixture owner -> durable claim/approval -> immutable offline manifest "+
+    artifact.manifestSha256+"; stopped after review; no GitHub PR, production write or Gemini.");
+}finally{await demoDb.close();rmSync(tempRepo,{recursive:true,force:true});}
+
 // Exercise real pagination, including completeness, gaps, changed totals and origin leakage.
 const entries = Array.from({ length: 205 }, (_, i) => ({ id: i + 1 }));
 const pageReader = (mutate = (page, data, headers) => ({ data, headers })) => createGithubEvidenceReader({ now: () => now, fetchImpl: async url => {
