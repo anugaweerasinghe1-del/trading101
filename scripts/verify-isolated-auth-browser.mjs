@@ -63,7 +63,7 @@ async function main(){
   assert.ok(chrome,"Real Chromium unavailable: do not claim this browser test passed");
   const temp=mkdtempSync(join(tmpdir(),"tradehq-isolated-auth-"));
   const dist=join(temp,"dist"),profile=join(temp,"chrome");
-  let server,browser,devtools;let attempts=0,approved=0,rejected=0,dataWrites=0,portfolioInitialized=0;
+  let server,browser,devtools;let attempts=0,approved=0,rejected=0,dataWrites=0,portfolioInitialized=0,logouts=0,refreshRejected=0,dailyReads=0;
   try{
     server=createServer((req,res)=>{
       const parsed=new URL(req.url||"/","http://localhost");
@@ -86,13 +86,24 @@ async function main(){
             expires_at:epoch+3600,refresh_token:"fixture-refresh-token",user:USER});
         });return;
       }
+      if(route==="/auth/v1/token" && req.method==="POST" && parsed.searchParams.get("grant_type")==="refresh_token"){
+        refreshRejected++;return json(400,{error:"invalid_grant",error_description:"Refresh token expired"});
+      }
+      if(route==="/auth/v1/logout" && req.method==="POST"){
+        if(req.headers.authorization!=="Bearer "+JWT)return json(401,{error:"invalid_token"});
+        logouts++;res.writeHead(204);res.end();return;
+      }
       if(route==="/auth/v1/user")
         return req.headers.authorization==="Bearer "+JWT?json(200,USER):json(401,{error:"invalid_token"});
       if(route.startsWith("/auth/v1/"))return json(403,{error:"blocked_fixture_auth"});
       if(route==="/rest/v1/rpc/initialize_practice_portfolio" && req.method==="POST"){
+        if(req.headers.authorization!=="Bearer "+JWT)return json(401,{error:"invalid_token"});
         portfolioInitialized++;
         return json(200,{trades:[],cash:100000,ranked:false,cycle_id:"fixture",
           updated_at:new Date().toISOString(),positions:[]});
+      }
+      if(route==="/rest/v1/rpc/get_daily_practice_bank" && req.method==="POST"){
+        dailyReads++;return json(200,null); // real authored fallback, never an AI call
       }
       if(route.startsWith("/rest/v1/")){
         if(!["GET","HEAD"].includes(req.method||"")){dataWrites++;return json(403,{error:"fixture_never_mutates"})}
@@ -141,6 +152,9 @@ async function main(){
     });
     devtools=cdpConnection(ws);
     await devtools.send("Page.enable");await devtools.send("Runtime.enable");
+    await devtools.send("Network.enable");
+    await devtools.send("Network.setBlockedURLs",{urls:["https://*","wss://*"]});
+    await devtools.send("Emulation.setDeviceMetricsOverride",{width:1440,height:900,deviceScaleFactor:1,mobile:false});
     await devtools.send("Page.navigate",{url:origin+"/auth"});
     await wait(()=>devtools.evaluate("!!(document.querySelector('input[type=email]')&&document.querySelector('input[type=password]'))"),"real TradeHQ login form");
     const submit=(mail,pass)=>{
@@ -160,9 +174,74 @@ async function main(){
     await wait(()=>approved===1,"positive Supabase fixture login");
     await wait(()=>devtools.evaluate("location.pathname==='/trader/me'"),"authenticated profile redirect");
     await wait(()=>portfolioInitialized>=1,"isolated account portfolio initialization");
-    assert.equal(attempts,2,"Both negative and positive real UI attempts required");
+    // Reload verifies a real persisted SDK session, with no second login grant.
+    await devtools.send("Page.reload",{ignoreCache:true});
+    await wait(()=>devtools.evaluate("!!document.querySelector('[aria-label=\"Account menu\"]')"),"session restored after reload");
+    assert.equal(approved,1,"Reload must restore the session without another password grant");
+    // Exercise the real account menu and Supabase local sign-out request.
+    await devtools.evaluate("(()=>{const e=document.querySelector('[aria-label=\"Account menu\"]');e.dispatchEvent(new PointerEvent('pointerdown',{bubbles:true,button:0,ctrlKey:false}));return true;})()");
+    await wait(()=>devtools.evaluate("[...document.querySelectorAll('[role=menuitem]')].some(e=>e.textContent.trim()==='Sign out')"),"account sign-out menu");
+    await devtools.evaluate("[...document.querySelectorAll('[role=menuitem]')].find(e=>e.textContent.trim()==='Sign out').click()");
+    await wait(()=>logouts===1,"fixture backend sign-out");
+    await wait(()=>devtools.evaluate("!document.querySelector('[aria-label=\"Account menu\"]')"),"signed-out UI");
+    await devtools.send("Page.reload",{ignoreCache:true});
+    await wait(()=>devtools.evaluate("!!document.querySelector('a[href=\"/auth\"]') && !document.querySelector('[aria-label=\"Account menu\"]')"),"no session resurrection after reload");
+    // Find the actual configured SDK key; seed an expired test session and
+    // prove its rejected refresh returns to the signed-out interface.
+    await devtools.send("Page.navigate",{url:origin+"/auth"});
+    await wait(()=>devtools.evaluate("!!document.querySelector('input[type=email]')"),"auth form for refresh test");
+    await submit(EMAIL,PASSWORD);
+    await wait(()=>approved===2,"second independent fixture login");
+    await wait(()=>devtools.evaluate("location.pathname==='/trader/me'"),"second profile navigation");
+    const authKey=await devtools.evaluate("Object.keys(localStorage).find(k=>k.startsWith('sb-')&&k.endsWith('-auth-token'))");
+    assert.ok(authKey,"SDK persisted auth storage key missing");
+    await devtools.evaluate("(()=>{const k="+JSON.stringify(authKey)+";const s=JSON.parse(localStorage.getItem(k));s.expires_at=1;localStorage.setItem(k,JSON.stringify(s));})()");
+    await devtools.send("Page.reload",{ignoreCache:true});
+    await wait(()=>refreshRejected>=1,"rejected expired refresh token");
+    await wait(()=>devtools.evaluate("!document.querySelector('[aria-label=\"Account menu\"]') && !!document.querySelector('a[href=\"/auth\"]')"),"expired session signed out");
+    assert.equal(await devtools.evaluate("localStorage.getItem("+JSON.stringify(authKey)+")"),null,"Rejected refresh must clear persisted credentials");
+
+    // Daily Practice: actual built UI writes an answer snapshot, resumes after
+    // reload, completes ten questions and preserves one calendar-day streak.
+    await devtools.send("Page.navigate",{url:origin+"/daily"});
+    const dailyReady=()=>devtools.evaluate("!!document.querySelector('#deeper-practice') && [...document.querySelectorAll('#deeper-practice button')].some(e=>e.textContent.includes('Start case study'))");
+    await wait(dailyReady,"Daily case study");
+    await wait(()=>dailyReads>=1,"read-only Daily bank request");
+    const dailyClick=async text=>{
+      const expression="(()=>{const e=[...document.querySelectorAll('#deeper-practice button')].find(e=>e.textContent.trim()==="+JSON.stringify(text)+"&&!e.disabled);if(!e)throw Error('Daily button missing');e.click();return true;})()";
+      return devtools.evaluate(expression);
+    };
+    const stored=()=>devtools.evaluate("JSON.parse(localStorage.getItem('tradehq:deeper-practice:v1')||'[]')[0]");
+    await dailyClick("Start case study");
+    for(let i=0;i<10;i++){
+      await wait(()=>devtools.evaluate("document.querySelector('#case-study-content fieldset legend') && document.querySelector('#case-study-content').textContent.includes('Question "+(i+1)+" of 10')"),"Daily question "+(i+1));
+      await devtools.evaluate("document.querySelector('#case-study-content input[type=radio]').click()");
+      await wait(()=>devtools.evaluate("[...document.querySelectorAll('#deeper-practice button')].some(e=>e.textContent.trim()==='Check answer'&&!e.disabled)"),"answer selection");
+      await dailyClick("Check answer");
+      await wait(async()=>((await stored())?.answers.length===i+1),"persisted Daily answer "+(i+1));
+      if(i===0){
+        const before=await stored();
+        await devtools.send("Page.reload",{ignoreCache:true});
+        await wait(()=>devtools.evaluate("[...document.querySelectorAll('#deeper-practice button')].some(e=>e.textContent.includes('Continue case study'))"),"saved Daily resume control");
+        assert.deepEqual(await stored(),before,"Reload must preserve the exact exercise and original answer");
+        await dailyClick("Continue case study"); // UI selects the first unanswered question
+      }else if(i<9){await dailyClick("Next question");}
+    }
+    await wait(()=>devtools.evaluate("document.querySelector('#deeper-practice').textContent.includes('Case complete')"),"completed case score");
+    const complete=await stored();assert.equal(complete.answers.length,10);assert.ok(complete.answers.every(a=>a===0));
+    const streakKey=await devtools.evaluate("Object.keys(localStorage).find(k=>{try{const v=JSON.parse(localStorage.getItem(k));return v && v.totalCompleted===1 && Array.isArray(v.history)}catch{return false}})");
+    assert.ok(streakKey,"Daily completion must persist one streak entry");
+    await devtools.send("Page.reload",{ignoreCache:true});
+    await wait(()=>devtools.evaluate("[...document.querySelectorAll('#deeper-practice button')].some(e=>e.textContent.includes('Review case study'))"),"completed case restored");
+    assert.deepEqual(await stored(),complete,"Completed answers cannot be rewritten by reload");
+    await dailyClick("Review case study");
+    assert.equal(await devtools.evaluate("document.querySelector('#case-study-content fieldset').disabled"),true,"Reviewed answers must be locked");
+    await devtools.evaluate("document.querySelector('article button:not([disabled])').click()");
+    await wait(()=>devtools.evaluate("document.querySelector('article').textContent.includes('Decision Review')"),"quick scenario completion");
+    assert.equal(await devtools.evaluate("JSON.parse(localStorage.getItem("+JSON.stringify(streakKey)+")).totalCompleted"),1,"Quick and deeper completion must not double-count the day");
+    assert.equal(attempts,3,"Both negative and positive real UI attempts required");
     assert.equal(dataWrites,0,"No profile/trade/portfolio writes permitted, even to fixture");
-    console.log("ISOLATED_AUTH_BROWSER_PASS: actual built TradeHQ login in real Chromium; negative password refused; fake Supabase grant accepted; authenticated profile navigation observed; isolated account initialization executed; zero non-allowlisted backend writes; zero real provider calls.");
+    console.log("ISOLATED_AUTH_BROWSER_PASS: reload persistence; real UI sign-out; no resurrected session; expired refresh rejected; ten Daily answers persisted/resumed/locked; one streak per day; actual built TradeHQ login in real Chromium; negative password refused; fake Supabase grant accepted; authenticated profile navigation observed; isolated account initialization executed; zero non-allowlisted backend writes; zero real provider calls.");
   }finally{
     // Wait for Chrome to exit before deleting its still-active profile files.
     // Otherwise a successful browser assertion can randomly fail on ENOTEMPTY.
