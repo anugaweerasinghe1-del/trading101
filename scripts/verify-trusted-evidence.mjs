@@ -245,6 +245,30 @@ assert.equal(offline.cases[0].draftManifest.draftPrCreated,false);
 assert.match(offline.cases[0].evidenceDigest,/^[a-f0-9]{64}$/);
 assert.ok(Object.values(offline.authorization).every(v=>v===false));
 assert.ok(!JSON.stringify(offline).includes("PRIVATE_"));
+
+const { PGlite }=await import("@electric-sql/pglite");
+const { readFileSync }=await import("node:fs");
+const simulatedDb=new PGlite();
+try {
+  await simulatedDb.exec("CREATE ROLE anon; CREATE ROLE authenticated; CREATE ROLE service_role BYPASSRLS;");
+  await simulatedDb.exec("SET tradehq.offline_control_prototype='explicit-local-test';");
+  await simulatedDb.exec(readFileSync("docs/proposals/repair-control-prototype.sql","utf8"));
+  const candidate=offline.cases[0];
+  const sqlClaim=async()=>(
+    await simulatedDb.query(
+      "SELECT tradehq_repair_control.claim($1,$2,$3,$4,$5,clock_timestamp(),$6) AS r",
+      [candidate.candidateId,candidate.source,candidate.symptom,candidate.baseSha,
+        candidate.evidenceDigest,candidate.repairRisk])).rows[0].r;
+  assert.equal((await sqlClaim()).reason,"STOPPED","Real offline database must begin disabled");
+  await simulatedDb.exec("SELECT tradehq_repair_control.set_stop(false)");
+  assert.equal((await sqlClaim()).reason,"INVALID_SCOPE",
+    "A verified public symptom with unknown root cause is not an eligible LOW repair");
+  const n=(await simulatedDb.query("SELECT count(*)::int AS n FROM tradehq_repair_control.candidates")).rows[0].n;
+  assert.equal(n,0,"No repaired candidate should persist from a simulated browser incident");
+  assert.equal((await simulatedDb.query("SELECT count(*)::int AS n FROM tradehq_repair_control.audit WHERE code='INVALID_SCOPE'")).rows[0].n,1);
+} finally { await simulatedDb.close(); }
+console.log("Offline integration: real attested fixture -> deterministic diagnosis -> HIGH risk -> default-stopped/invalid-scope PostgreSQL denial; zero candidate writes.");
+
 const replica=await collectOfflineRepairReview({ ...options, reader:readerFor(failedFixture("browser","Rendered root has very little visible content (0 chars)")) });
 assert.equal(replica.cases[0].evidenceDigest,offline.cases[0].evidenceDigest,"Deterministic bound evidence identity");
 const changed=failedFixture("browser","Rendered root has very little visible content (0 chars)");
