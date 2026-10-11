@@ -70,6 +70,6 @@ for(const badLocation of ["https://attacker.example/daily/","/trade","/daily/?sk
 await assert.rejects(checkPublicRoute("/daily",async()=>redirect("/daily/")),/Too many/);
 await assert.rejects(checkPublicRoute("/daily",async()=>page(500)),/unavailable/);
 await assert.rejects(checkPublicRoute("/daily",async()=>page(200,"application/json")),/non-HTML/);
-await assert.rejects(checkPublicRoute("/api",async()=>page(200,"text/html")),/authored TradeHQ HTML/);
+await assert.rejects(checkPublicRoute("/daily",async()=>({status:200,headers:{get:()=>"text/html"},text:async()=>"<html><title>Unknown</title></html>"})),/authored TradeHQ HTML/);
 
 console.log("Release/recovery readiness offline regression passed: exact provider/app/deploy SHA bindings, prior known-good candidate, missing/failing/duplicate/stale evidence denied, rollback/approval never authorized.");
