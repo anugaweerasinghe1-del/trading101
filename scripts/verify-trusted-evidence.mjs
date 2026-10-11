@@ -401,6 +401,9 @@ try{
     independentTests:{passed:true,exactHeadSha:isolatedHeadSha}
   });
   assert.match(artifact.manifestSha256,/^[a-f0-9]{64}$/);
+  assert.ok(!/fixture-admin-key|fixture-verified-bearer-session|BEGIN PRIVATE KEY/.test(JSON.stringify(artifact)),
+    "The review artifact must not reveal credential or signing material");
+  console.log("TRADEHQ_OFFLINE_PR_ARTIFACT_V1 "+JSON.stringify(artifact));
   assert.equal(artifact.draftPrCreated,false);
   assert.ok(Object.values(artifact.authorization).every(x=>x===false));
   assert.throws(()=>buildOfflineReviewArtifact({
