@@ -86,6 +86,8 @@ try {
   await db.exec("SELECT tradehq_repair_control.set_stop(true)");
   assert.equal((await recover()).reason,"STOPPED");
   await db.exec("SELECT tradehq_repair_control.set_stop(false)");
+  assert.deepEqual((await db.query("SELECT code FROM tradehq_repair_control.transition_log ORDER BY seq")).rows.map(r=>r.code),
+    ["CLAIMED","VALIDATED","APPROVED","CLAIMED","LEASE_EXPIRED"],"Only accepted transitions may be recorded");
   await db.exec("UPDATE tradehq_repair_control.audit SET count=10000 WHERE code='DUPLICATE'");
   await claim();
   assert.equal((await db.query("SELECT count,truncated FROM tradehq_repair_control.audit WHERE code='DUPLICATE'")).rows[0].truncated, true);
@@ -93,6 +95,7 @@ try {
   for (const role of ["anon","authenticated","service_role"]) {
     await db.exec("SET ROLE " + role);
     await assert.rejects(db.query("SELECT * FROM tradehq_repair_control.policy"), /permission denied/);
+    await assert.rejects(db.query("SELECT * FROM tradehq_repair_control.transition_log"), /permission denied/);
     await assert.rejects(db.query("SELECT tradehq_repair_control.set_stop(false)"), /permission denied/);
     await db.exec("RESET ROLE");
   }

@@ -75,10 +75,13 @@ export async function verifyPostgresControls(env=process.env) {
     assert.equal((await recover(a)).reason,'LEASE_NOT_EXPIRED');
     assert.equal((await claim(a,other,'manual','LAYOUT_OVERFLOW')).reason,'DUPLICATE');
     assert.equal((await a.unsafe("SELECT status FROM tradehq_repair_control.candidates WHERE id=$1",[other]))[0].status,'stopped');
+    assert.deepEqual((await a.unsafe('SELECT code FROM tradehq_repair_control.transition_log ORDER BY seq')).map(r=>r.code),
+      ['CLAIMED','VALIDATED','APPROVED','CLAIMED','LEASE_EXPIRED'],'Durable audit must be identical across sessions');
     for(const role of ['anon','authenticated','service_role']){
       await b.unsafe('SET ROLE '+role);
       await assert.rejects(b.unsafe('SELECT tradehq_repair_control.set_stop(false)'),/permission denied/);
       await assert.rejects(b.unsafe('SELECT * FROM tradehq_repair_control.candidates'),/permission denied/);
+      await assert.rejects(b.unsafe('SELECT * FROM tradehq_repair_control.transition_log'),/permission denied/);
       await b.unsafe('RESET ROLE');
     }
     console.log('PASS disposable PostgreSQL 17: distinct-session row-lock waiting, one active candidate, stop/review serialization, replay/frequency persistence, transaction rollback and denied app roles. No production connection or release authority.');

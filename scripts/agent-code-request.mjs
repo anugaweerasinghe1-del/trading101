@@ -129,13 +129,18 @@ async function main() {
   if (process.env.GITHUB_SHA && baseSha !== process.env.GITHUB_SHA) throw new Error("Main branch changed during drafting. Request a fresh proposal to prevent stale-file overwrites.");
   const branch = "ai/issue-" + issueNumber;
   await github("POST", "/git/refs", { ref: "refs/heads/" + branch, sha: baseSha });
+  let headSha;
   for (const edit of changes) {
     const originalSha = await github("GET", "/contents/" + edit.path + "?ref=" + encodeURIComponent(branch));
-    await github("PUT", "/contents/" + edit.path, {
+    const written = await github("PUT", "/contents/" + edit.path, {
       message: "AI proposal for request #" + issueNumber + ": " + edit.path,
       branch, sha: originalSha.sha, content: Buffer.from(edit.content, "utf8").toString("base64"),
     });
+    headSha = written.commit?.sha;
   }
+  if (!/^[0-9a-f]{40}$/.test(headSha || "")) throw new Error("Could not verify the proposed commit.");
+  const proposedRef = await github("GET", "/git/ref/heads/" + branch);
+  if (proposedRef.object?.sha !== headSha) throw new Error("Proposal branch changed during drafting; independent verification stopped.");
   const title = "AI proposal: " + request.replace(/\s+/g, " ").slice(0, 65);
   const prBody = [
     "Closes #" + issueNumber,
@@ -158,7 +163,7 @@ async function main() {
     prUrl = "https://github.com/" + repo + "/compare/main..." + branch;
   }
   if (process.env.GITHUB_OUTPUT) await fs.appendFile(process.env.GITHUB_OUTPUT,
-    "branch=" + branch + "\npr_created=" + String(prCreated) + "\n");
+    "branch=" + branch + "\nhead_sha=" + headSha + "\nbase_sha=" + baseSha + "\npr_created=" + String(prCreated) + "\n");
   await comment("AI proposed edits on an isolated branch. Review here: " + prUrl +
     (prCreated ? "\n\nDraft PR created successfully; human review required." :
     "\n\n⚠️ Automatic draft PR creation failed: " + prError +

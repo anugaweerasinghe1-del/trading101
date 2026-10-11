@@ -9,6 +9,7 @@ import { mkdtempSync, rmSync, existsSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { emitMonitorAttestation } from "./monitor-attestation.mjs";
 const origin = process.env.TRADEHQ_SCAN_ORIGIN || "https://www.thetradehq.com";
 const repo = process.env.GITHUB_REPOSITORY || "anugaweerasinghe1-del/trading101";
 const token = process.env.GITHUB_TOKEN;
@@ -77,7 +78,7 @@ export async function main() {
     failures.length?"### Flagged routes\n"+failures.map(x=>"- \`"+x.route+"\`: "+x.reason).join("\n"):"No potential rendering failures on these sampled public routes.",
     "\nRead-only; nothing changed on production. Public report; no personal data or credentials.",
   ].join("\n\n");
-  await upsert(issues,title,body);
+  const persisted = await upsert(issues,title,body);
   const old=issues.find(x=>!x.pull_request&&x.title===failuresTitle);
   if(failures.length){
     await upsert(issues,failuresTitle,body);
@@ -87,6 +88,7 @@ export async function main() {
     await github("PATCH","/issues/"+old.number,{state:"closed",state_reason:"completed"});
   }
   console.log("Chrome public pages checked: "+routes.length+"; findings: "+failures.length);
+  emitMonitorAttestation("browser",body,persisted);
 }
 if(process.argv[1]&&fileURLToPath(import.meta.url)===resolve(process.argv[1])){
   main().catch(e=>{console.error(e.message);process.exitCode=1;});
