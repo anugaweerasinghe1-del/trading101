@@ -11,7 +11,7 @@ const options = { runId, monitorSha, mainSha, now };
 const json = (body, headers = {}, status = 200) => new Response(JSON.stringify(body), { status, headers });
 function fixture() {
   const repo = { id: EVIDENCE_REPOSITORY_ID, full_name: EVIDENCE_REPOSITORY, private: false };
-  const run = { id: runId, head_sha: monitorSha, path: ".github/workflows/tradehq-agents.yml",
+  const run = { id: runId, head_sha: monitorSha, path: ".github/workflows/tradehq-agents.yml", workflow_id: 379806172,
     head_branch: "main", repository: repo, head_repository: repo, event: "schedule", run_attempt: 2,
     status: "completed", conclusion: "success", run_started_at: "2026-10-11T05:00:00Z", updated_at: "2026-10-11T05:06:00Z" };
   const reports = ["route", "browser"].map((source, i) => ({
@@ -32,7 +32,7 @@ function fixture() {
   const checks = [{ id: 300, head_sha: mainSha, name: "Cloudflare Pages", app: { id: 85455, slug: "cloudflare-workers-and-pages" },
     status: "completed", conclusion: "success", started_at: "2026-10-11T05:10:00Z", completed_at: "2026-10-11T05:15:00Z",
     external_id: "12345678-1234-1234-1234-123456789012",
-    details_url: "https://dash.cloudflare.com/?to=/account/pages/view/tradehq-preview/12345678-1234-1234-1234-123456789012" }];
+    details_url: "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/12345678-1234-1234-1234-123456789012" }];
   checks.push({ ...checks[0], id: 301, name: "Workers Builds: thetradehq", conclusion: "failure" });
   for (const [i,name] of ["TradeHQ Phase 3 tests", "TradeHQ Cloudflare compatibility / Cloudflare build and SEO", "TradeHQ Required validation"].entries()) {
     checks.push({ id: 310+i, name, head_sha: mainSha, app: { id: 15368, slug: "github-actions" },
@@ -93,6 +93,7 @@ const attacks = [
   x => { x.repo.id++; },
   x => { x.repo.private = true; },
   x => { x.run.path = ".github/workflows/untrusted.yml"; },
+  x => { x.run.workflow_id++; },
   x => { x.run.event = "pull_request"; },
   x => { x.run.head_branch = "feature"; },
   x => { x.run.head_sha = mainSha; },
@@ -182,6 +183,48 @@ for (const mutate of [x => { x.actions[0].pull_requests = []; }, x => { x.action
   await assert.rejects(collectTrustedEvidence({ ...options, targetSha: "c".repeat(40), prNumber: 999, reader: readerFor(f) }));
 }
 
+// Typed failure evidence is read-only, complete and bound to the actual failed job.
+function failedFixture(source = "route", reason = "HTTP 429") {
+  const x = fixture(), i = source === "route" ? 0 : 1;
+  x.run.conclusion = "failure"; x.jobs[i].conclusion = "failure";
+  x.reports[i].body = x.reports[i].body.replace(source === "route" ? "**Failed URLs:** 0" : "**Potential failures:** 0",
+    source === "route" ? "**Failed URLs:** 1" : "**Potential failures:** 1")
+    + (source === "route" ? "\n- /about: " : "\n- `/about`: ") + reason;
+  x.logs[i] = "2026-10-11T05:04:00.0000000Z " + ATTESTATION_PREFIX + JSON.stringify(makeAttestation(source,x.reports[i].body,x.reports[i],
+    { GITHUB_REPOSITORY:EVIDENCE_REPOSITORY,GITHUB_REPOSITORY_ID:String(EVIDENCE_REPOSITORY_ID),GITHUB_RUN_ID:String(runId),GITHUB_RUN_ATTEMPT:"2",GITHUB_SHA:monitorSha }));
+  return x;
+}
+for (const source of ["route", "browser"]) {
+  f = failedFixture(source);
+  await assert.rejects(collectTrustedEvidence({ ...options, reader: readerFor(f) }));
+  const failed = await collectTrustedEvidence({ ...options, purpose: "diagnosis", reader: readerFor(f) });
+  assert.equal(failed.monitoring.conclusion, "failure");
+  assert.equal(failed.diagnosis.items[0].category, "RATE_LIMIT_RESPONSE");
+  assert.equal(failed.diagnosis.items[0].proposalAllowed, false);
+  assert.ok(Object.values(failed.authorization).every(x => x === false));
+  assert.ok(Object.values(failed.diagnosis.authorization).every(x => x === false));
+  assert.ok(!/PRIVATE_(?:TOKEN|REPORT|LOG)_SENTINEL/.test(JSON.stringify(failed)));
+}
+for (const mutate of [
+  x => { x.run.conclusion = "success"; }, x => { x.jobs[0].conclusion = "success"; },
+  x => { x.jobs[0].conclusion = "cancelled"; }, x => { x.logs[0] = ""; },
+  x => { x.reports[0].body += "\n- /trade: HTTP 500"; },
+  x => { x.checks[0].conclusion = "failure"; }, x => { x.actions[0].conclusion = "failure"; },
+  x => { x.run.run_started_at = "2026-10-11T05:00:01Z"; },
+]) { f = failedFixture(); mutate(f); await assert.rejects(collectTrustedEvidence({ ...options, purpose: "diagnosis", reader: readerFor(f) })); }
+await assert.rejects(collectTrustedEvidence({ ...options, purpose: "repair", reader: readerFor(fixture()) }));
+f = fixture(); f.run.conclusion = "failure";
+await assert.rejects(collectTrustedEvidence({ ...options, purpose: "diagnosis", reader: readerFor(f) }), /conflicts/);
+const { diagnosePublicFindings } = await import("./agent-repair-diagnosis.mjs");
+const { candidateId } = await import("./agent-repair-review.mjs");
+for (const [path, symptom] of [["/auth","BLANK_ROOT"],["/trade","HTTP_429"],["/portfolio","VISIBLE_ERROR"],["/admin/ai","MISSING_TITLE"],["/courses","BUNDLE_UNAVAILABLE"],["/daily","REQUEST_OR_RENDER_FAILED"],["/reviews","UNCLASSIFIED"],["/leaderboard","HTTP_500"]]) {
+  const finding = { path, source: "browser", symptom }; finding.id = candidateId(finding);
+  const result = diagnosePublicFindings([finding]);
+  assert.equal(result.items[0].protectedRoute, true); assert.equal(result.items[0].risk, "HIGH");
+  assert.equal(result.items[0].rootCauseVerified, false); assert.equal(result.items[0].proposalAllowed, false);
+  assert.throws(() => diagnosePublicFindings([{ ...finding, id: "edited" }]));
+  assert.throws(() => diagnosePublicFindings([finding,finding]));
+}
 // Exercise real pagination, including completeness, gaps, changed totals and origin leakage.
 const entries = Array.from({ length: 205 }, (_, i) => ({ id: i + 1 }));
 const pageReader = (mutate = (page, data, headers) => ({ data, headers })) => createGithubEvidenceReader({ now: () => now, fetchImpl: async url => {

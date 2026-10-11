@@ -6,6 +6,7 @@ import assert from "node:assert/strict";
 import { pathToFileURL } from "node:url";
 import { createGithubEvidenceReader, EVIDENCE_REPOSITORY, EVIDENCE_REPOSITORY_ID } from "./github-evidence-reader.mjs";
 import { REPORT_TITLES, ATTESTATION_PREFIX, bodyDigest, isoTime, positiveId, immutableSha, reportFields } from "./monitor-attestation.mjs";
+import { diagnosePublicFindings } from "./agent-repair-diagnosis.mjs";
 import { monitorFindings } from "./agent-repair-review.mjs";
 
 const workflowPath = ".github/workflows/tradehq-agents.yml";
@@ -35,10 +36,12 @@ function reportsFrom(issues) {
   }
   return reports;
 }
-function bindReport(source, issue, job, logs, run, now, expectedRoutes) {
-  assert.ok(job.status === "completed" && job.conclusion === "success"
+function bindReport(source, issue, job, logs, run, now, expectedRoutes, purpose) {
+  assert.ok(job.status === "completed" && ["success", "failure"].includes(job.conclusion)
     && job.run_id === run.id && job.head_sha === run.head_sha, "Failed, incomplete or mismatched monitor job.");
   const [start, end] = interval(job.started_at, job.completed_at, now);
+  assert.ok(start >= isoTime(run.run_started_at) && end <= isoTime(run.updated_at) + 1000,
+    "Monitor job is outside the current run attempt.");
   const records = [];
   for (const line of logs.split("\n")) {
     const at = line.indexOf(ATTESTATION_PREFIX);
@@ -60,12 +63,13 @@ function bindReport(source, issue, job, logs, run, now, expectedRoutes) {
     && a.bodySha256 === bodyDigest(issue.body) && a.observedAt === f.observedAt && a.runId === f.runId
     && a.checked === f.checked && a.failed === f.failed, "Tampered, edited, conflicting or mismatched report evidence.");
   assert.equal(f.checked, source === "route" ? expectedRoutes : 12, "Monitoring coverage differs from the reviewed inventory.");
-  assert.equal(f.failed, 0, "Failed monitor evidence cannot authorize downstream automation.");
+  assert.equal(job.conclusion, f.failed > 0 ? "failure" : "success", "Report outcome contradicts monitor job.");
+  if (purpose === "healthy") assert.equal(f.failed, 0, "Failed monitor evidence cannot authorize downstream automation.");
   const observed = isoTime(f.observedAt), updated = isoTime(issue.updated_at);
   assert.ok(observed >= start && observed <= end + 1000 && updated >= observed - 1000 && updated <= end + 1000,
     "Report was edited outside producing job.");
   return { source, issueId: issue.id, issueNumber: issue.number, updatedAt: issue.updated_at,
-    bodySha256: a.bodySha256, observedAt: a.observedAt, checked: a.checked, failed: a.failed, jobId: job.id };
+    bodySha256: a.bodySha256, observedAt: a.observedAt, checked: a.checked, failed: a.failed, jobId: job.id, conclusion: job.conclusion };
 }
 function same(before, after, message) { assert.equal(JSON.stringify(after), JSON.stringify(before), message); }
 function providerChecks(checks, sha, now) {
@@ -78,7 +82,8 @@ function providerChecks(checks, sha, now) {
   const url = new URL(pages.details_url);
   const resource = url.searchParams.get("to") || url.pathname;
   assert.ok(url.origin === "https://dash.cloudflare.com"
-    && resource.endsWith("/pages/view/tradehq-preview/" + pages.external_id), "Pages deployment identity mismatch.");
+    && !url.username && !url.password && !url.hash
+    && resource === "/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/" + pages.external_id, "Pages deployment identity mismatch.");
   const workers = trusted.filter(x => x.name.startsWith("Workers Builds:"));
   return { pages: { checkId: pages.id, headSha: sha, deploymentId: pages.external_id, conclusion: "success",
     environment: "not_verified_by_provider_dashboard" },
@@ -86,7 +91,8 @@ function providerChecks(checks, sha, now) {
     workerDependenciesVerified: false };
 }
 export async function collectTrustedEvidence({ runId, monitorSha, mainSha, targetSha = mainSha, prNumber,
-  expectedRoutes = 352, reader = createGithubEvidenceReader(), now = Date.now() }) {
+  expectedRoutes = 352, purpose = "healthy", reader = createGithubEvidenceReader(), now = Date.now() }) {
+  assert.ok(["healthy", "diagnosis"].includes(purpose), "Unknown evidence purpose.");
   positiveId(runId); immutableSha(monitorSha); immutableSha(mainSha); immutableSha(targetSha);
   assert.ok(Number.isFinite(now) && Number.isInteger(expectedRoutes) && expectedRoutes > 0 && expectedRoutes <= 400, "Invalid reviewed coverage/time.");
   const repo = await reader.get("");
@@ -101,10 +107,10 @@ export async function collectTrustedEvidence({ runId, monitorSha, mainSha, targe
       && pr.head?.repo?.id === repo.id && pr.base?.repo?.id === repo.id, "Proposal head/base/repository mismatch.");
   }
   const run = await reader.get("/actions/runs/" + runId);
-  assert.ok(run.id === runId && run.head_sha === monitorSha && run.path === workflowPath && run.head_branch === "main"
+  assert.ok(run.id === runId && run.head_sha === monitorSha && run.path === workflowPath && run.workflow_id === 379806172 && run.head_branch === "main"
     && run.repository?.id === repo.id && run.head_repository?.id === repo.id
     && ["push", "schedule", "workflow_dispatch"].includes(run.event)
-    && run.status === "completed" && run.conclusion === "success", "Untrusted, failed or incomplete monitoring run.");
+    && run.status === "completed" && (purpose === "healthy" ? run.conclusion === "success" : ["success", "failure"].includes(run.conclusion)), "Untrusted, failed or incomplete monitoring run.");
   positiveId(run.run_attempt);
   interval(run.run_started_at, run.updated_at, now);
   const ancestry = await reader.get("/compare/" + monitorSha + "..." + mainSha);
@@ -118,8 +124,10 @@ export async function collectTrustedEvidence({ runId, monitorSha, mainSha, targe
     const matches = jobs.filter(x => x.name === jobName);
     assert.equal(matches.length, 1, "Missing or ambiguous monitor job.");
     const issue = reports.find(x => x.title === REPORT_TITLES[source]);
-    bound.push(bindReport(source, issue, matches[0], await reader.logs(matches[0].id), run, now, expectedRoutes));
+    bound.push(bindReport(source, issue, matches[0], await reader.logs(matches[0].id), run, now, expectedRoutes, purpose));
   }
+  assert.equal(run.conclusion, bound.some(report => report.failed > 0) ? "failure" : "success",
+    "Monitoring run outcome conflicts with complete attested reports.");
   const findings = monitorFindings({ runId: String(runId), issues: reports }, { now });
   const checksPath = "/commits/" + targetSha + "/check-runs?filter=latest";
   const checks = await reader.list(checksPath, "check_runs");
@@ -172,9 +180,10 @@ export async function collectTrustedEvidence({ runId, monitorSha, mainSha, targe
   same(checks, await reader.list(checksPath, "check_runs"), "Provider checks changed during evidence collection.");
   same(actions, await reader.list(actionsPath, "workflow_runs"), "CI changed during evidence collection.");
   if (pr) same(pr, await reader.get("/pulls/" + prNumber), "Proposal changed during evidence collection.");
-  return { schema: "tradehq-trusted-evidence-v1", collectedAt: new Date(now).toISOString(), repositoryId: repo.id,
+  return { schema: "tradehq-trusted-evidence-v1", purpose, collectedAt: new Date(now).toISOString(), repositoryId: repo.id,
     repository: EVIDENCE_REPOSITORY, mainSha, targetSha, monitoring: { workflow: workflowPath,
-      runId, attempt: run.run_attempt, headSha: monitorSha, reports: bound, findings: findings.findings },
+      runId, attempt: run.run_attempt, headSha: monitorSha, conclusion: run.conclusion, reports: bound, findings: findings.findings },
+    diagnosis: purpose === "diagnosis" ? diagnosePublicFindings(findings.findings) : null,
     githubActions: ci, cloudflare: provider, apiRequests: reader.requestCount(),
     authorization: { codeWrites: false, modelCalls: false, ownerApproval: false, merge: false, productionRelease: false },
     limitations: ["Public monitoring only; no authenticated regression proof.", "Snapshot must be revalidated before any future side effect.",
@@ -188,11 +197,11 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     assert.ok(pairs.length % 2 === 0, "Expected named evidence arguments.");
     const options = {};
     for (let i = 0; i < pairs.length; i += 2) {
-      assert.ok(["--run", "--monitor-sha", "--main", "--target", "--pr"].includes(pairs[i]) && !(pairs[i] in options), "Unknown/duplicate evidence argument.");
+      assert.ok(["--run", "--monitor-sha", "--main", "--target", "--pr", "--purpose"].includes(pairs[i]) && !(pairs[i] in options), "Unknown/duplicate evidence argument.");
       options[pairs[i]] = pairs[i + 1];
     }
     const packet = await collectTrustedEvidence({ runId: positiveId(options["--run"]), monitorSha: options["--monitor-sha"],
-      mainSha: options["--main"], targetSha: options["--target"] || options["--main"],
+      purpose: options["--purpose"] || "healthy", mainSha: options["--main"], targetSha: options["--target"] || options["--main"],
       prNumber: options["--pr"] ? positiveId(options["--pr"]) : undefined });
     console.log(JSON.stringify(packet, null, 2));
   } catch {
