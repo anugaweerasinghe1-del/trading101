@@ -106,6 +106,9 @@ export function candidateId(finding) {
   return "repair-v1-" + createHash("sha256").update(JSON.stringify([finding.source, path, finding.symptom])).digest("hex").slice(0, 24);
 }
 function symptom(reason) {
+  // Exact structured layout signal from an attested synthetic test only. Existing
+  // public browsers do not currently emit it, and diagnosis still defaults HIGH.
+  if (reason === "LAYOUT_OVERFLOW") return "LAYOUT_OVERFLOW";
   if (/Production JS bundle/i.test(reason)) return "BUNDLE_UNAVAILABLE";
   const http = reason.match(/\bHTTP ([45][0-9]{2})\b/);
   if (http) return "HTTP_" + http[1];
