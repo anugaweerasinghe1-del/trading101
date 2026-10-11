@@ -1,4 +1,5 @@
 import { uniqueRoutes } from "./routes.ts";
+import { emitMonitorAttestation } from "./monitor-attestation.mjs";
 const origin="https://www.thetradehq.com";
 const repository=process.env.GITHUB_REPOSITORY||"anugaweerasinghe1-del/trading101";
 const token=process.env.GITHUB_TOKEN;
@@ -61,7 +62,8 @@ async function main(){
    "No production edits, secrets or personal data."
  ].join("\n\n");
  const previous=issues.find(item=>!item.pull_request&&item.title===reportTitle);
- if(previous)await api("PATCH","/issues/"+previous.number,{body:report});
- else await api("POST","/issues",{title:reportTitle,body:report});
+ const persisted=previous?await api("PATCH","/issues/"+previous.number,{body:report}):
+   await api("POST","/issues",{title:reportTitle,body:report});
+ emitMonitorAttestation("route",report,persisted);
 }
 main().catch(e=>{console.error(e.message);process.exitCode=1});

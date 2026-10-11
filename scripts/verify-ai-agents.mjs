@@ -57,3 +57,6 @@ console.log("TradeHQ AI agent syntax, transfer owner, independent safety scope, 
 const evidenceCheck = spawnSync(process.execPath, ["--import", "tsx", "scripts/verify-ai-release-evidence.ts"], { encoding: "utf8" });
 assert.equal(evidenceCheck.status, 0, "AI release evidence regression: " + evidenceCheck.stdout + evidenceCheck.stderr);
 console.log(evidenceCheck.stdout.trim());
+const trustedCheck = spawnSync(process.execPath, ["scripts/verify-trusted-evidence.mjs"], { encoding: "utf8" });
+assert.equal(trustedCheck.status, 0, "Trusted evidence regression: " + trustedCheck.stdout + trustedCheck.stderr);
+console.log(trustedCheck.stdout.trim());
