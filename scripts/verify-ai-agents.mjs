@@ -14,6 +14,10 @@ for (const file of scripts) {
   const result = spawnSync(process.execPath, ["--check", file], { encoding: "utf8" });
   assert.equal(result.status, 0, file + " syntax failed: " + result.stderr);
 }
+const prewrite = spawnSync(process.execPath, ["scripts/verify-agent-code-preflight.mjs"], { encoding: "utf8" });
+assert.equal(prewrite.status, 0, "Pre-write model-scope regression: "+prewrite.stdout+prewrite.stderr);
+console.log(prewrite.stdout.trim());
+
 const scopeCheck = spawnSync(process.execPath, ["scripts/verify-ai-pr-scope.mjs", "--self-test"], { encoding: "utf8" });
 assert.equal(scopeCheck.status, 0, "AI scope-check regression: " + scopeCheck.stdout + scopeCheck.stderr);
 const dashboard = readFileSync("src/pages/AdminDashboard.tsx", "utf8");

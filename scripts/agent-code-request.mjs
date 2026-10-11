@@ -7,6 +7,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { requestGeminiJson } from "./gemini-free-models.mjs";
+import { inspectAiCandidate } from "./agent-code-preflight.mjs";
 const repo = process.env.GITHUB_REPOSITORY || "anugaweerasinghe1-del/trading101";
 const token = process.env.GITHUB_TOKEN;
 const apiKey = process.env.GEMINI_API_KEY;
@@ -123,6 +124,10 @@ async function main() {
       throw new Error("AI output changed too much of a file or failed preservation checks: " + edit.path);
     }
   }
+  // Fail closed BEFORE any GitHub branch, blob or PR write. The proposal
+  // must also pass independent exact-commit validation after creation.
+  const preflight = inspectAiCandidate(originals, changes);
+  if (preflight.checkedFiles !== changes.length) throw new Error("Independent pre-write scope mismatch.");
   const mainRef = await github("GET", "/git/ref/heads/main");
   const baseSha = mainRef.object?.sha;
   if (!/^[0-9a-f]{40}$/.test(baseSha || "")) throw new Error("Could not verify main branch commit.");
