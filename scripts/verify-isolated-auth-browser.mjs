@@ -88,6 +88,9 @@ async function main(){
       if(route==="/auth/v1/user")
         return req.headers.authorization==="Bearer "+JWT?json(200,USER):json(401,{error:"invalid_token"});
       if(route.startsWith("/auth/v1/"))return json(403,{error:"blocked_fixture_auth"});
+      if(route==="/rest/v1/rpc/initialize_practice_portfolio" && req.method==="POST")
+        return json(200,{trades:[],cash:100000,ranked:false,cycle_id:"fixture",
+          updated_at:new Date().toISOString(),positions:[]});
       if(route.startsWith("/rest/v1/")){
         if(!["GET","HEAD"].includes(req.method||"")){dataWrites++;return json(403,{error:"fixture_never_mutates"})}
         if(route==="/rest/v1/profiles")
@@ -155,7 +158,7 @@ async function main(){
     await wait(()=>devtools.evaluate("location.pathname==='/trader/me'"),"authenticated profile redirect");
     assert.equal(attempts,2,"Both negative and positive real UI attempts required");
     assert.equal(dataWrites,0,"No profile/trade/portfolio writes permitted, even to fixture");
-    console.log("ISOLATED_AUTH_BROWSER_PASS: actual built TradeHQ login in real Chromium; negative password refused; fake Supabase grant accepted; authenticated profile navigation observed; zero backend user-data writes; zero real provider calls.");
+    console.log("ISOLATED_AUTH_BROWSER_PASS: actual built TradeHQ login in real Chromium; negative password refused; fake Supabase grant accepted; authenticated profile navigation observed; zero non-allowlisted backend writes; zero real provider calls.");
   }finally{
     devtools?.close();browser?.kill("SIGKILL");
     if(server)await new Promise(resolve=>server.close(resolve));
