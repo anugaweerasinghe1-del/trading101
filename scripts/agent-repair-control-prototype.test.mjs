@@ -58,6 +58,7 @@ try {
   assert.equal((await review("approve",head,base,digest,approvalExpiry,null)).reason,"APPROVAL_REJECTED");
   assert.equal((await review("approve",head,base,digest,approvalExpiry,"invalid")).reason,"APPROVAL_REJECTED");
   assert.equal((await review("approve")).reason, "APPROVED");
+  assert.equal((await review("approve")).reason,"APPROVAL_REJECTED","Replayed approval must never re-authorize an attempt");
   assert.equal((await review("check",head,base,digest,approvalExpiry,"d".repeat(64))).reason,"REVIEW_CHECK_BLOCKED");
   assert.equal((await db.query("SELECT approval_digest FROM tradehq_repair_control.transition_log WHERE code=$1",["APPROVED"])).rows[0].approval_digest,approvalDigest);
   assert.equal((await review("check")).reviewValid, true);

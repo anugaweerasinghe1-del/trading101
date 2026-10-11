@@ -25,4 +25,40 @@ export function offlineOwnerFixture(binding,now=Date.now()){
 }
 offlineOwnerFixture({candidateId:"repair-v1-"+"a".repeat(24),baseSha:"a".repeat(40),
   headSha:"b".repeat(40),evidenceDigest:"c".repeat(64),generation:1});
+
+// Test the future identity/database adapter seam without any real owner credentials,
+// provider, SQL installation or operational write permission.
+const { verifyOfflineOwnerAdapter } = await import("./agent-repair-pipeline-offline.mjs");
+const { publicKey, privateKey }=generateKeyPairSync("ed25519");
+const clock=Date.now();
+const binding={candidateId:"repair-v1-"+"e".repeat(24),baseSha:"a".repeat(40),
+  headSha:"b".repeat(40),evidenceDigest:"c".repeat(64),generation:9};
+const receipt={schema:"tradehq-owner-approval-v1",decision:"approve",...binding,
+  issuedAt:new Date(clock).toISOString(),expiresAt:new Date(clock+300000).toISOString()};
+const signature=sign(null,ownerReceiptBytes(receipt),privateKey).toString("hex");
+let authCalls=0,stateCalls=0;
+const ownerFixture={
+  authenticateOwner:async token=>{authCalls++;return token==="private-fixture-token"
+    ?{id:"registered-fixture-owner",authenticated:true,testOnly:true}:null;},
+  readControlState:async()=>{stateCalls++;return{stopped:false,generation:9,leaseUntil:clock+600000};},
+  identityToken:"private-fixture-token",registeredOwnerId:"registered-fixture-owner",
+  publicKey,receipt,signature,expected:binding,now:clock,
+};
+const adapter=await verifyOfflineOwnerAdapter(ownerFixture);
+assert.equal(adapter.receiptDigest.length,64);
+assert.ok(Object.values(adapter.authorization).every(x=>x===false));
+assert.equal(adapter.status,"PENDING_OWNER_ONLY_DURABLE_RECORD");
+assert.equal(authCalls,1);assert.equal(stateCalls,1);
+for(const changed of [
+  {identityToken:"forged"}, {registeredOwnerId:"impostor"},
+  {authenticateOwner:undefined}, {readControlState:undefined},
+  {readControlState:async()=>({stopped:true,generation:9,leaseUntil:clock+600000})},
+  {readControlState:async()=>({stopped:false,generation:10,leaseUntil:clock+600000})},
+  {readControlState:async()=>({stopped:false,generation:9,leaseUntil:clock-1})},
+  {receipt:{...receipt,headSha:"d".repeat(40)}}, {receipt:{...receipt,evidenceDigest:"d".repeat(64)}},
+  {signature:"0".repeat(128)},{expected:{...binding,generation:10}},
+  {now:clock+300001}
+])await assert.rejects(verifyOfflineOwnerAdapter({...ownerFixture,...changed}));
+console.log("Offline owner adapter: missing/forged identity, stopped/changed generation, expired lease, changed commits/evidence and forged signatures denied; no database or source writes.");
+
 console.log("Ed25519 offline owner receipt: exact binding, signer, issue time, expiry and tampering rejected; no write authority.");

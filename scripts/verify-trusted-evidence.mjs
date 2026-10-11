@@ -225,6 +225,39 @@ for (const [path, symptom] of [["/auth","BLANK_ROOT"],["/trade","HTTP_429"],["/p
   assert.throws(() => diagnosePublicFindings([{ ...finding, id: "edited" }]));
   assert.throws(() => diagnosePublicFindings([finding,finding]));
 }
+
+// End-to-end offline handoff: genuine mock GET responses go through the real
+// trusted collector before deterministic diagnosis and independent risk review.
+const { collectOfflineRepairReview } = await import("./agent-repair-pipeline-offline.mjs");
+let offline = await collectOfflineRepairReview({ ...options, reader:readerFor(fixture()) });
+assert.equal(offline.status,"NO_VERIFIED_INCIDENT");
+assert.deepEqual(offline.cases,[]);
+const benignBefore='export default function About(){return <h1 className="text-4xl mb-4">About</h1>}';
+const benignAfter=benignBefore.replace("text-4xl","text-3xl");
+f=failedFixture("browser","Rendered root has very little visible content (0 chars)");
+offline=await collectOfflineRepairReview({ ...options, reader:readerFor(f),
+  changes:[{path:"src/pages/About.tsx",status:"modified",before:benignBefore,after:benignAfter}] });
+assert.equal(offline.cases.length,1);
+assert.equal(offline.cases[0].symptom,"BLANK_ROOT");
+assert.equal(offline.cases[0].scopeRisk,"LOW");
+assert.equal(offline.cases[0].repairRisk,"HIGH","A visually safe change cannot prove the root cause");
+assert.equal(offline.cases[0].draftManifest.draftPrCreated,false);
+assert.match(offline.cases[0].evidenceDigest,/^[a-f0-9]{64}$/);
+assert.ok(Object.values(offline.authorization).every(v=>v===false));
+assert.ok(!JSON.stringify(offline).includes("PRIVATE_"));
+const replica=await collectOfflineRepairReview({ ...options, reader:readerFor(failedFixture("browser","Rendered root has very little visible content (0 chars)")) });
+assert.equal(replica.cases[0].evidenceDigest,offline.cases[0].evidenceDigest,"Deterministic bound evidence identity");
+const changed=failedFixture("browser","Rendered root has very little visible content (0 chars)");
+changed.reports[1].body+="\nEdited by an untrusted actor";
+await assert.rejects(collectOfflineRepairReview({ ...options, reader:readerFor(changed) }));
+const absent=failedFixture("browser","Rendered root has very little visible content (0 chars)");
+absent.logs[1]="";
+await assert.rejects(collectOfflineRepairReview({ ...options, reader:readerFor(absent) }));
+await assert.rejects(collectOfflineRepairReview({ ...options, now:now+31*60*60_000,
+  reader:readerFor(failedFixture("browser","Rendered root has very little visible content (0 chars)")) }));
+await assert.rejects(collectOfflineRepairReview({...options,reader:readerFor(fixture()),changes:[{},{}]}));
+console.log("Offline pipeline: attested evidence -> deterministic diagnosis -> risk review -> blocked, bounded owner-investigation manifest; no PR, AI or source write.");
+
 // Exercise real pagination, including completeness, gaps, changed totals and origin leakage.
 const entries = Array.from({ length: 205 }, (_, i) => ({ id: i + 1 }));
 const pageReader = (mutate = (page, data, headers) => ({ data, headers })) => createGithubEvidenceReader({ now: () => now, fetchImpl: async url => {
