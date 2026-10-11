@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import postgres from 'postgres';
 import { readFileSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
+import { offlineOwnerFixture } from './verify-owner-approval-offline.mjs';
 export function disposableControlUrl(env) {
   assert.equal(env.TRADEHQ_DISPOSABLE_CONTROL_TEST,'explicit-ci-fixture','Disposable fixture opt-in required.');
   const url=new URL(env.TRADEHQ_CONTROL_TEST_URL || '');
@@ -17,10 +18,11 @@ export async function verifyPostgresControls(env=process.env) {
   let a=postgres(url,options),b=postgres(url,options),observer=postgres(url,options);
   const clients=()=>[a,b,observer];
   const id='repair-v1-'+'a'.repeat(24),other='repair-v1-'+'b'.repeat(24),base='a'.repeat(40),head='b'.repeat(40),digest='c'.repeat(64);
+  let approvalDigest=null,approvalExpiry=new Date(Date.now()+60000).toISOString();
   const claim=async(client,candidate=id,source='browser',symptom='HEADING_READABILITY')=>(await client.unsafe(
     'SELECT tradehq_repair_control.claim($1,$2,$3,$4,$5,clock_timestamp(),$6) AS r',[candidate,source,symptom,base,digest,'LOW']))[0].r;
-  const review=async(client,action,sha=head)=>(await client.unsafe(
-    "SELECT tradehq_repair_control.review($1,$2,$3,$4,$5,clock_timestamp()+interval '1 minute') AS r",[action,id,sha,base,digest]))[0].r;
+  const review=async(client,action,sha=head,receiptHash=approvalDigest)=>(await client.unsafe(
+    "SELECT tradehq_repair_control.review($1,$2,$3,$4,$5,$6,$7) AS r",[action,id,sha,base,digest,approvalExpiry,receiptHash]))[0].r;
   const stop=async(client,value)=>(await client.unsafe('SELECT tradehq_repair_control.set_stop($1) AS r',[value]))[0].r;
   const locked=async(pid)=>{
     const deadline=Date.now()+4000;
@@ -49,8 +51,15 @@ export async function verifyPostgresControls(env=process.env) {
     await a.unsafe('BEGIN');assert.equal((await claim(a)).reason,'CLAIMED');
     const waiting=claim(b,other,'manual','LAYOUT_OVERFLOW');await locked(bPid);await a.unsafe('COMMIT');
     assert.equal((await waiting).reason,'ACTIVE_CANDIDATE');
+    const generation=Number((await a.unsafe('SELECT generation FROM tradehq_repair_control.policy'))[0].generation);
+    const signed=offlineOwnerFixture({candidateId:id,baseSha:base,headSha:head,evidenceDigest:digest,generation});
+    approvalDigest=signed.approvalDigest;approvalExpiry=signed.expiresAt;
     assert.equal((await a.unsafe("SELECT count(*)::int AS count FROM tradehq_repair_control.candidates WHERE status IN ('claimed','validated','approved')"))[0].count,1);
-    assert.equal((await review(a,'validate')).reason,'VALIDATED');assert.equal((await review(a,'approve')).reason,'APPROVED');
+    assert.equal((await review(a,'validate')).reason,'VALIDATED');
+    assert.equal((await review(a,'approve',head,null)).reason,'APPROVAL_REJECTED');
+    assert.equal((await review(a,'approve')).reason,'APPROVED');
+    assert.equal((await review(b,'check',head,'d'.repeat(64))).reason,'REVIEW_CHECK_BLOCKED');
+    assert.equal((await a.unsafe("SELECT approval_digest FROM tradehq_repair_control.transition_log WHERE code='APPROVED'"))[0].approval_digest,approvalDigest);
     assert.equal((await review(b,'check')).reviewValid,true);
     // Stop takes the same lock; once committed, independent review cannot revive consent.
     await a.unsafe('BEGIN');assert.equal((await stop(a,true)).reason,'OWNER_STOP');

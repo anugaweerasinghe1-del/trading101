@@ -44,9 +44,10 @@ CREATE TABLE tradehq_repair_control.candidates (
  validated_at timestamptz,
  approved_at timestamptz,
  approval_expires timestamptz,
+ approval_digest text CHECK(approval_digest IS NULL OR approval_digest ~ '^[a-f0-9]{64}$'),
  CHECK(lease_until>claimed_at AND lease_until<=claimed_at+interval '30 minutes'),
  CHECK(status NOT IN ('validated','approved') OR (head_sha IS NOT NULL AND validated_at IS NOT NULL)),
- CHECK(status<>'approved' OR (approved_at IS NOT NULL AND approval_expires IS NOT NULL))
+ CHECK(status<>'approved' OR (approved_at IS NOT NULL AND approval_expires IS NOT NULL AND approval_digest IS NOT NULL))
 );
 -- Constraint protects the invariant independently of procedural checks.
 CREATE UNIQUE INDEX one_active_candidate ON tradehq_repair_control.candidates((true))
@@ -73,6 +74,7 @@ CREATE TABLE tradehq_repair_control.transition_log (
  base_sha text NOT NULL CHECK(base_sha ~ '^[a-f0-9]{40}$'),
  head_sha text CHECK(head_sha IS NULL OR head_sha ~ '^[a-f0-9]{40}$'),
  evidence_digest text NOT NULL CHECK(evidence_digest ~ '^[a-f0-9]{64}$'),
+ approval_digest text CHECK(approval_digest IS NULL OR approval_digest ~ '^[a-f0-9]{64}$'),
  generation bigint NOT NULL CHECK(generation>=0),
  happened_at timestamptz NOT NULL DEFAULT clock_timestamp()
 );
@@ -97,12 +99,13 @@ END $$;
 
 -- Accepted changes and their audit records share the database transaction.
 CREATE FUNCTION tradehq_repair_control.record_transition(
- p_code text,p_id text,p_base text,p_head text,p_digest text,p_generation bigint) RETURNS void
+ p_code text,p_id text,p_base text,p_head text,p_digest text,p_generation bigint,
+ p_approval_digest text DEFAULT NULL) RETURNS void
 LANGUAGE plpgsql SECURITY INVOKER SET search_path='' AS $trans$
 BEGIN
  INSERT INTO tradehq_repair_control.transition_log
- (code,candidate_id,base_sha,head_sha,evidence_digest,generation)
- VALUES(p_code,p_id,p_base,p_head,p_digest,p_generation);
+ (code,candidate_id,base_sha,head_sha,evidence_digest,generation,approval_digest)
+ VALUES(p_code,p_id,p_base,p_head,p_digest,p_generation,p_approval_digest);
 END $trans$;
 
 CREATE FUNCTION tradehq_repair_control.set_stop(p_stopped boolean) RETURNS jsonb
@@ -155,7 +158,7 @@ END $$;
 
 -- These transitions record owner-operated reviews, not external CI truth or release authority.
 CREATE FUNCTION tradehq_repair_control.review(p_action text,p_id text,p_head text,p_base text,
- p_digest text,p_expires timestamptz DEFAULT NULL) RETURNS jsonb
+ p_digest text,p_expires timestamptz DEFAULT NULL,p_receipt_digest text DEFAULT NULL) RETURNS jsonb
 LANGUAGE plpgsql SECURITY INVOKER SET search_path='' AS $$
 DECLARE policy tradehq_repair_control.policy; candidate tradehq_repair_control.candidates;
  stamp timestamptz; ok boolean;
@@ -180,12 +183,14 @@ BEGIN
   RETURN tradehq_repair_control.event('VALIDATED');
  ELSIF p_action='approve' AND candidate.status='validated' AND candidate.head_sha=p_head
   AND p_expires IS NOT NULL AND isfinite(p_expires) AND p_expires>stamp
-  AND p_expires<=least(stamp+interval '30 minutes',candidate.lease_until) THEN
-  UPDATE tradehq_repair_control.candidates SET status='approved',approved_at=stamp,approval_expires=p_expires WHERE id=p_id;
-  PERFORM tradehq_repair_control.record_transition('APPROVED',p_id,p_base,p_head,p_digest,policy.generation);
+  AND p_expires<=least(stamp+interval '30 minutes',candidate.lease_until)
+  AND p_receipt_digest ~ '^[a-f0-9]{64}$' THEN
+  UPDATE tradehq_repair_control.candidates SET status='approved',approved_at=stamp,
+   approval_expires=p_expires,approval_digest=p_receipt_digest WHERE id=p_id;
+  PERFORM tradehq_repair_control.record_transition('APPROVED',p_id,p_base,p_head,p_digest,policy.generation,p_receipt_digest);
   RETURN tradehq_repair_control.event('APPROVED');
  ELSIF p_action='check' AND candidate.status='approved' AND candidate.head_sha=p_head
-  AND candidate.approval_expires>stamp THEN
+  AND candidate.approval_expires>stamp AND p_receipt_digest IS NOT DISTINCT FROM candidate.approval_digest THEN
   RETURN jsonb_build_object('reviewValid',true,'productionRelease',false,'codeWrites',false);
  END IF;
  RETURN tradehq_repair_control.event(CASE WHEN p_action='check' THEN 'REVIEW_CHECK_BLOCKED' ELSE 'APPROVAL_REJECTED' END);

@@ -4,19 +4,21 @@ import { PGlite } from "@electric-sql/pglite";
 import { readFileSync, mkdtempSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { offlineOwnerFixture } from "./verify-owner-approval-offline.mjs";
 const sql = readFileSync("docs/proposals/repair-control-prototype.sql", "utf8");
 assert.doesNotMatch(sql.replace(/--[^\n]*/g, ""), /SECURITY DEFINER|CREATE ROLE|CREATE EXTENSION|GRANT\s/i);
 const dir = mkdtempSync(join(tmpdir(), "tradehq-control-store-"));
 let db = new PGlite(dir);
 const id = "repair-v1-" + "a".repeat(24), other = "repair-v1-" + "b".repeat(24);
 const base = "a".repeat(40), head = "b".repeat(40), digest = "c".repeat(64);
+let approvalDigest=null,approvalExpiry=new Date(Date.now()+60000).toISOString();
 async function claim(candidate = id, source = "browser", symptom = "HEADING_READABILITY", risk = "LOW", observed = new Date().toISOString()) {
   return (await db.query("SELECT tradehq_repair_control.claim($1,$2,$3,$4,$5,$6,$7) AS r",
     [candidate,source,symptom,base,digest,observed,risk])).rows[0].r;
 }
-async function review(action, sha = head, baseline = base, proof = digest, expires = new Date(Date.now() + 60_000).toISOString()) {
-  return (await db.query("SELECT tradehq_repair_control.review($1,$2,$3,$4,$5,$6) AS r",
-    [action,id,sha,baseline,proof,expires])).rows[0].r;
+async function review(action, sha = head, baseline = base, proof = digest, expires = approvalExpiry, receiptHash = approvalDigest) {
+  return (await db.query("SELECT tradehq_repair_control.review($1,$2,$3,$4,$5,$6,$7) AS r",
+    [action,id,sha,baseline,proof,expires,receiptHash])).rows[0].r;
 }
 try {
   await db.exec("CREATE ROLE anon; CREATE ROLE authenticated; CREATE ROLE service_role BYPASSRLS;");
@@ -38,6 +40,9 @@ try {
   const claims = await Promise.all([claim(), claim(other,"manual","LAYOUT_OVERFLOW")]);
   assert.equal(claims.filter(x => x.claimed).length, 1);
   assert.equal(claims[1].reason, "ACTIVE_CANDIDATE");
+  const generation=Number((await db.query("SELECT generation FROM tradehq_repair_control.policy")).rows[0].generation);
+  const signed=offlineOwnerFixture({candidateId:id,baseSha:base,headSha:head,evidenceDigest:digest,generation});
+  approvalDigest=signed.approvalDigest;approvalExpiry=signed.expiresAt;
   await assert.rejects(db.query(`INSERT INTO tradehq_repair_control.candidates
     (id,fingerprint,source,symptom,base_sha,evidence_digest,generation,status,claimed_at,lease_until)
     SELECT $1,$2,'manual','LAYOUT_OVERFLOW',base_sha,evidence_digest,generation,status,claimed_at,lease_until
@@ -50,10 +55,15 @@ try {
   assert.equal((await review("validate","d".repeat(40))).reason, "APPROVAL_REJECTED");
   assert.equal((await review("approve","d".repeat(40))).reason, "APPROVAL_REJECTED");
   assert.equal((await review("approve",head,base,digest,"2099-01-01T00:00:00Z")).reason, "APPROVAL_REJECTED");
+  assert.equal((await review("approve",head,base,digest,approvalExpiry,null)).reason,"APPROVAL_REJECTED");
+  assert.equal((await review("approve",head,base,digest,approvalExpiry,"invalid")).reason,"APPROVAL_REJECTED");
   assert.equal((await review("approve")).reason, "APPROVED");
+  assert.equal((await review("check",head,base,digest,approvalExpiry,"d".repeat(64))).reason,"REVIEW_CHECK_BLOCKED");
+  assert.equal((await db.query("SELECT approval_digest FROM tradehq_repair_control.transition_log WHERE code=$1",["APPROVED"])).rows[0].approval_digest,approvalDigest);
   assert.equal((await review("check")).reviewValid, true);
   assert.equal((await review("check")).productionRelease, false);
   assert.equal((await review("check","d".repeat(40))).reason, "REVIEW_CHECK_BLOCKED");
+  assert.equal((await db.query("SELECT approval_digest FROM tradehq_repair_control.candidates WHERE id=$1",[id])).rows[0].approval_digest,approvalDigest);
   await db.close(); db = new PGlite(dir);
   assert.equal((await review("check")).reviewValid, true, "Exact approval survives a local store restart.");
   assert.equal((await claim()).reason, "DUPLICATE", "Attempt history survives restart.");
