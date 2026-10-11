@@ -46,3 +46,10 @@ jobs:
         env:
           TRADEHQ_DISPOSABLE_CONTROL_TEST: explicit-ci-fixture
           TRADEHQ_CONTROL_TEST_URL: postgres://tradehq_test:tradehq_ci_only@127.0.0.1:5432/tradehq_control_test
+      - run: node scripts/verify-daily-postgres-guard.mjs
+      - name: Demonstrate full Daily bank lifecycle in isolated PostgreSQL 17
+        run: node --import tsx scripts/verify-daily-practice.ts
+        env:
+          TRADEHQ_DAILY_POSTGRES_TEST: explicit-ci-fixture
+          TRADEHQ_DISPOSABLE_CONTROL_TEST: explicit-ci-fixture
+          TRADEHQ_CONTROL_TEST_URL: postgres://tradehq_test:tradehq_ci_only@127.0.0.1:5432/tradehq_control_test
