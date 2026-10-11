@@ -44,3 +44,11 @@ jobs:
           node scripts/agent-trusted-evidence.mjs
           --run "$RUN_ID" --monitor-sha "$MONITOR_SHA"
           --main "$MAIN_SHA" --purpose "$PURPOSE"
+      - name: Produce bounded read-only incident investigation handoff
+        if: ${{ steps.gate.outputs.ready == 'true' && steps.gate.outputs.purpose == 'diagnosis' }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          MONITOR_RUN_ID: ${{ github.event.workflow_run.id }}
+          MONITOR_SHA: ${{ github.event.workflow_run.head_sha }}
+          MAIN_SHA: ${{ github.sha }}
+        run: node scripts/agent-operational-investigation-handoff.mjs
