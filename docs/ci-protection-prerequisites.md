@@ -46,3 +46,7 @@ Test settings using an unmerged disposable draft with missing, failed, pending, 
 Production remains baseline main. Local gate and release-evidence tests are recorded in the PR. Remote exact-head CI, Pages deployment ID, preview routes/headers and unresolved Worker outcome are recorded in the draft PR body after verification. No production protection or release has been activated. The initial maturity baseline remains 17/42; an unmerged implementation does not establish operational enforcement.
 
 Sources: https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows and https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/troubleshooting-required-status-checks .
+
+## Independent follow-up review
+
+The evaluator now requires numeric GitHub Actions/Cloudflare App IDs, the registered Phase 3 workflow and repository IDs, and checks completing within the current attempt. Pages evidence must identify the exact Cloudflare account, project and deployment UUID. Adversarial fixtures cover same-named impostors, changed account/project/deployment, incomplete identity and checks finishing outside the attempt. This remains a read-only display; it does not verify provider environment, grant owner approval or resolve Worker dependencies. See `docs/release-recovery-runbook.md` for the separate release and recovery gates.
