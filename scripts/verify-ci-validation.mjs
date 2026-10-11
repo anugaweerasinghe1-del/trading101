@@ -48,6 +48,13 @@ assert.equal(cf.jobs.compatibility.steps[0].with.ref, "${{ inputs.validation_sha
 const names = [phase.jobs.phase3.name, phase.jobs.validation.name, cf.jobs.compatibility.name];
 assert.equal(new Set(names).size, names.length);
 assert.ok(names.every(x => x !== "build"));
+const protectionStep=phase.jobs.phase3.steps.find(x=>x.name==="Independently verify live protected main and required CI identities");
+assert.ok(protectionStep && protectionStep.run==="node scripts/verify-live-main-protection.mjs");
+assert.equal(protectionStep.env.GITHUB_TOKEN,"${{ github.token }}");
+assert.deepEqual(phase.permissions,{contents:"read"});
+const protectionCases=spawnSync(process.execPath,["scripts/verify-live-main-protection.test.mjs"],{encoding:"utf8"});
+assert.equal(protectionCases.status,0,"Live main protection fixture failure: "+protectionCases.stdout+protectionCases.stderr);
+console.log(protectionCases.stdout.trim());
 const localSha = execFileSync("git", ["rev-parse", "HEAD"], { encoding: "utf8" }).trim();
 const run = (env, args = []) => spawnSync(process.execPath, ["scripts/ci-validation-gate.mjs", ...args], { encoding: "utf8", env: { ...process.env, GITHUB_OUTPUT: "", ...env } });
 assert.equal(run({ VALIDATION_SHA: localSha }, ["--checkout"]).status, 0);
