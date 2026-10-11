@@ -10,6 +10,7 @@ import { mkdtempSync, readFileSync, existsSync, rmSync, statSync } from "node:fs
 import { tmpdir } from "node:os";
 import { join, resolve, extname, sep } from "node:path";
 import { setTimeout as sleep } from "node:timers/promises";
+import { once } from "node:events";
 
 const USER_ID="bd1ca419-139b-4170-ac64-a99e0076f123";
 const EMAIL="tradehq-browser-fixture@example.invalid";
@@ -163,9 +164,16 @@ async function main(){
     assert.equal(dataWrites,0,"No profile/trade/portfolio writes permitted, even to fixture");
     console.log("ISOLATED_AUTH_BROWSER_PASS: actual built TradeHQ login in real Chromium; negative password refused; fake Supabase grant accepted; authenticated profile navigation observed; isolated account initialization executed; zero non-allowlisted backend writes; zero real provider calls.");
   }finally{
-    devtools?.close();browser?.kill("SIGKILL");
+    // Wait for Chrome to exit before deleting its still-active profile files.
+    // Otherwise a successful browser assertion can randomly fail on ENOTEMPTY.
+    devtools?.close();
+    if(browser && browser.exitCode===null && browser.signalCode===null){
+      const exited=once(browser,"exit").catch(()=>undefined);
+      browser.kill("SIGKILL");
+      await Promise.race([exited,sleep(2500)]);
+    }
     if(server)await new Promise(resolve=>server.close(resolve));
-    rmSync(temp,{recursive:true,force:true,maxRetries:2});
+    rmSync(temp,{recursive:true,force:true,maxRetries:12,retryDelay:200});
   }
 }
 main().catch(e=>{console.error("Isolated auth-browser regression FAILED: "+String(e.message||e).slice(0,700));process.exitCode=1;});
