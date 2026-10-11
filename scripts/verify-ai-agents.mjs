@@ -61,6 +61,13 @@ const trustedCheck = spawnSync(process.execPath, ["scripts/verify-trusted-eviden
 assert.equal(trustedCheck.status, 0, "Trusted evidence regression: " + trustedCheck.stdout + trustedCheck.stderr);
 console.log(trustedCheck.stdout.trim());
 
+const ownerApprovalCheck = spawnSync(process.execPath, ['scripts/verify-repair-approval-server.mjs'], { encoding: 'utf8' });
+assert.equal(ownerApprovalCheck.status, 0, 'Repair approval server regression: '+ownerApprovalCheck.stdout+ownerApprovalCheck.stderr);
+console.log(ownerApprovalCheck.stdout.trim());
+const syntheticDraftCheck = spawnSync(process.execPath, ['scripts/verify-synthetic-draft-pr.mjs'], { encoding: 'utf8' });
+assert.equal(syntheticDraftCheck.status, 0, 'Synthetic draft PR regression: '+syntheticDraftCheck.stdout+syntheticDraftCheck.stderr);
+console.log(syntheticDraftCheck.stdout.trim());
+
 const gateTest = spawnSync(process.execPath, ['scripts/verify-evidence-cycle.mjs'], { encoding: 'utf8' });
 assert.equal(gateTest.status, 0, 'Read-only evidence cycle regression: '+gateTest.stdout+gateTest.stderr);
 console.log(gateTest.stdout.trim());
