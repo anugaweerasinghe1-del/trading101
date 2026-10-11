@@ -10,6 +10,7 @@ import { mkdtempSync, readFileSync, existsSync, rmSync, statSync } from "node:fs
 import { tmpdir } from "node:os";
 import { join, resolve, extname, sep } from "node:path";
 import { setTimeout as sleep } from "node:timers/promises";
+import { once } from "node:events";
 
 const USER_ID="bd1ca419-139b-4170-ac64-a99e0076f123";
 const EMAIL="tradehq-browser-fixture@example.invalid";
@@ -125,7 +126,7 @@ async function main(){
       "--disable-dev-shm-usage","--disable-background-networking","--disable-extensions",
       "--no-first-run","--remote-allow-origins=*","--remote-debugging-port=0",
       "--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE localhost, EXCLUDE 127.0.0.1",
-      "--user-data-dir="+profile,"about:blank"],{stdio:"ignore"});
+      "--user-data-dir="+profile,"about:blank"],{stdio:"ignore",detached:true});
     const port=await wait(()=>{
       const file=join(profile,"DevToolsActivePort");
       return existsSync(file)?readFileSync(file,"utf8").split("\n")[0]:null;
@@ -163,9 +164,26 @@ async function main(){
     assert.equal(dataWrites,0,"No profile/trade/portfolio writes permitted, even to fixture");
     console.log("ISOLATED_AUTH_BROWSER_PASS: actual built TradeHQ login in real Chromium; negative password refused; fake Supabase grant accepted; authenticated profile navigation observed; isolated account initialization executed; zero non-allowlisted backend writes; zero real provider calls.");
   }finally{
-    devtools?.close();browser?.kill("SIGKILL");
+    // Wait for Chrome to exit before deleting its still-active profile files.
+    // Otherwise a successful browser assertion can randomly fail on ENOTEMPTY.
+    devtools?.close();
+    if(browser?.pid){
+      // Chrome launches child renderers. Kill this dedicated process group,
+      // not only the launcher, so no profile writers survive fixture teardown.
+      const exited=browser.exitCode===null && browser.signalCode===null
+        ? once(browser,"exit").catch(()=>undefined) : Promise.resolve();
+      try{process.kill(-browser.pid,"SIGKILL");}
+      catch(error){if(error.code!=="ESRCH")throw error;}
+      await Promise.race([exited,sleep(2500)]);
+    }
     if(server)await new Promise(resolve=>server.close(resolve));
-    rmSync(temp,{recursive:true,force:true,maxRetries:2});
+    // Cleanup must finish, but transient Chrome profile locks may need retries.
+    let cleaned=false;
+    for(let attempt=0;attempt<12;attempt++){
+      try{rmSync(temp,{recursive:true,force:true,maxRetries:2,retryDelay:150});cleaned=true;break;}
+      catch(error){if(!["ENOTEMPTY","EBUSY","EPERM"].includes(error.code))throw error;await sleep(250);}
+    }
+    if(!cleaned)throw Error("Isolated Chrome profile cleanup did not finish");
   }
 }
 main().catch(e=>{console.error("Isolated auth-browser regression FAILED: "+String(e.message||e).slice(0,700));process.exitCode=1;});

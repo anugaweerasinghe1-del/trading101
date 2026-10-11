@@ -36,6 +36,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
       - run: npm ci
       - run: node scripts/verify-ci-validation.mjs
+      - run: node scripts/verify-release-recovery-readiness.mjs
       - run: node scripts/verify-ai-agents.mjs
       - run: node scripts/verify-gemini-models.mjs
       - run: node scripts/verify-agent-monitor-ideas.mjs
@@ -79,3 +80,27 @@ jobs:
         env:
           VALIDATION_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
           VALIDATION_NEEDS: ${{ toJSON(needs) }}
+
+  release-readiness:
+    name: TradeHQ Release & Recovery Readiness (read only)
+    # Do not run for PR previews. This records completed main release evidence.
+    needs: [validation]
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && needs.validation.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+      checks: read
+      statuses: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Confirm current/prior provider statuses and public routes
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/agent-release-recovery-readiness.mjs
