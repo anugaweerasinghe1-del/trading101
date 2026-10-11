@@ -60,8 +60,15 @@ const fixture = mkdtempSync(join(tmpdir(), "tradehq-proposal-binding-"));
 try {
   mkdirSync(join(fixture, "src/pages"), { recursive: true });
   mkdirSync(join(fixture, "src/components"), { recursive: true });
-  writeFileSync(join(fixture, "src/pages/About.tsx"),
-    'export default function About() { return <main><h1 className="mb-4">About our educational paper trading simulator</h1></main>; }');
+  // Keep the safe fixture multi-line: a one-line export/JSX replacement would
+  // correctly be refused by the production mechanical source-scope checker.
+  writeFileSync(join(fixture, "src/pages/About.tsx"), [
+    "export default function About() {",
+    "  return <main>",
+    '    <h1 className="mb-4">About our educational paper trading simulator</h1>',
+    "  </main>;",
+    "}",
+  ].join("\n"));
   const output = join(fixture, "output");
   const args = ["--import", resolve("scripts/fixtures/proposal-binding.mjs"), resolve("scripts/agent-code-request.mjs")];
   const env = { ...process.env, GITHUB_REPOSITORY: "anugaweerasinghe1-del/trading101", GITHUB_SHA: sha,
