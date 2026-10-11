@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { verifyReleaseWitness } from "./agent-release-recovery-readiness.mjs";
+import { verifyReleaseWitness, checkPublicRoute } from "./agent-release-recovery-readiness.mjs";
 const MAIN="a".repeat(40), PRIOR="b".repeat(40);
 const UUID="6830d3c4-5e05-4bea-a46d-4941dc0d11ab";
 const OLD="21ea7e49-4ee5-44b7-85d0-1dd4f3bd9077";
@@ -50,4 +50,26 @@ for(const edit of bad){
   const input=sample();edit(input);assert.throws(()=>verifyReleaseWitness(input));
 }
 assert.throws(()=>verifyReleaseWitness({}));
+// Pages may canonicalize /daily to /daily/. Permit ONLY this same-origin
+// redirect; reject external host, unrelated path, unbounded hops and non-HTML.
+const html="<html><head><title>TradeHQ Daily</title></head><body>"+
+  "Safe authored TradeHQ site content. ".repeat(100)+"</body></html>";
+const redirect=(location)=>({status:308,headers:{get:()=>location}});
+const page=(status=200,type="text/html; charset=utf-8")=>({
+  status,headers:{get:()=>type},text:async()=>html
+});
+const seen=[];
+await checkPublicRoute("/daily",async url=>{
+  seen.push(url);
+  return seen.length===1?redirect("/daily/"):page();
+});
+assert.deepEqual(seen,["https://www.thetradehq.com/daily","https://www.thetradehq.com/daily/"]);
+for(const badLocation of ["https://attacker.example/daily/","/trade","/daily/?skip=1","/admin"]){
+  await assert.rejects(checkPublicRoute("/daily",async()=>redirect(badLocation)),/redirected outside/);
+}
+await assert.rejects(checkPublicRoute("/daily",async()=>redirect("/daily/")),/Too many/);
+await assert.rejects(checkPublicRoute("/daily",async()=>page(500)),/unavailable/);
+await assert.rejects(checkPublicRoute("/daily",async()=>page(200,"application/json")),/non-HTML/);
+await assert.rejects(checkPublicRoute("/api",async()=>page(200,"text/html")),/authored TradeHQ HTML/);
+
 console.log("Release/recovery readiness offline regression passed: exact provider/app/deploy SHA bindings, prior known-good candidate, missing/failing/duplicate/stale evidence denied, rollback/approval never authorized.");
