@@ -1,0 +1,28 @@
+name: TradeHQ Native Owner PR Review Evidence
+on:
+  pull_request_review:
+    types: [submitted]
+permissions:
+  contents: read
+  pull-requests: read
+jobs:
+  review:
+    name: TradeHQ owner review evidence (read only)
+    if: ${{ github.event.review.state == 'approved' && github.event.review.user.login == github.repository_owner && github.event.pull_request.user.login == 'github-actions[bot]' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+      - name: Verify native owner approval and current bot proposal head
+        run: node scripts/agent-owner-pr-review.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
