@@ -14,9 +14,20 @@ const low = classifyRepairScope([change]);
 assert.equal(low.risk, "LOW", "The exact demonstrated #95 heading adjustment belongs to the narrow presentation scope.");
 assert.equal(classifyRepairScope([{ ...change, after: before.replace("mb-4", "mb-6") }]).risk, "LOW");
 const currentAbout = readFileSync("src/pages/About.tsx", "utf8");
-assert.equal(classifyRepairScope([{ ...change, before: currentAbout,
-  after: currentAbout.replace('className="text-4xl font-bold mb-4"', 'className="text-3xl sm:text-4xl font-bold mb-4"') }]).risk, "LOW",
-  "The actual current About source also passes the demonstrated one-line scope.");
+function oneHeadingSpacingEdit(source) {
+  const headings=[...source.matchAll(/<h1\s+className="([^"]+)"/g)];
+  assert.equal(headings.length,1,"Current-source fixture needs one authored heading");
+  assert.ok(headings[0][1].split(/\s+/).includes("mb-4"),"Current heading spacing fixture missing");
+  return source.replace(headings[0][0],headings[0][0].replace(/\bmb-4\b/,"mb-6"));
+}
+// Do not assume #95's resize is still unapplied. Test a genuine spacing diff
+// for both original and already-responsive headings; no-op still fails HIGH.
+for(const source of [before,after,currentAbout]) {
+  const edited=oneHeadingSpacingEdit(source);
+  assert.notEqual(edited,source,"A positive scope fixture must actually change source");
+  assert.equal(classifyRepairScope([{...change,before:source,after:edited}]).risk,"LOW");
+  assert.equal(classifyRepairScope([{...change,before:source,after:source}]).risk,"HIGH");
+}
 
 // Every protected category and unknown path stays outside a model's write grant.
 for (const path of ["src/pages/Auth.tsx", "src/pages/AdminDashboard.tsx", "src/pages/Portfolio.tsx",
