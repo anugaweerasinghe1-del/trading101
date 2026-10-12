@@ -72,6 +72,25 @@ export function verifyOwnerPrReview({event,repository,pullRequest,reviews,env,no
     && live.state==="APPROVED" && live.commit_id===pr.head.sha
     && live.submitted_at===approval.submitted_at,
     "Owner approval was dismissed, changed or is no longer current");
+  const seen=new Set();
+  for (const item of reviews) {
+    assert.ok(Number.isSafeInteger(item?.id) && item.id>0 && !seen.has(item.id),
+      "Duplicate or malformed GitHub review history");
+    seen.add(item.id);
+    // A later submitted owner review invalidates this event even when GitHub
+    // retains the earlier record as APPROVED. Review comments and pending
+    // drafts do not grant authority; reject ambiguous owner history too.
+    if (item.user?.id===OWNER.id || item.user?.login===OWNER.login) {
+      assert.ok(item.user.id===OWNER.id && item.user.login===OWNER.login,
+        "Conflicting owner identity in review history");
+      if (item.state==="PENDING") continue;
+      const submitted=clockTime(item.submitted_at);
+      assert.ok(submitted<=now+30000,
+        "Future-dated owner review history");
+      assert.ok(item.id===live.id || (submitted<=issued && item.id<live.id),
+        "Owner approval was superseded by a later review");
+    }
+  }
   const witness={
     schema:"tradehq-native-owner-pr-review-v1",
     repositoryId:REPO_ID,prNumber:pr.number,reviewId:approval.id,
@@ -96,19 +115,34 @@ async function github(endpoint,token) {
   assert.ok(Buffer.byteLength(raw)<600000,"Owner review evidence unexpectedly large");
   return JSON.parse(raw);
 }
+export async function collectOwnerPrReview({event,env,read,now=Date.now()}) {
+  assert.equal(typeof read,"function","Independent bounded GitHub reader required");
+  assert.ok(Number.isSafeInteger(event.number)&&event.number>0,"GitHub PR review number required");
+  const [repository,pullRequest,reviews]=await Promise.all([
+    read(""),
+    read("/pulls/"+event.number),
+    read("/pulls/"+event.number+"/reviews?per_page=100"),
+  ]);
+  const proof=verifyOwnerPrReview({event,repository,pullRequest,reviews,env,now});
+  // Re-read after history collection. A changed head, dismissal or new review
+  // during the first reads must not produce a successful witness.
+  const [currentPr,currentReviews]=await Promise.all([
+    read("/pulls/"+event.number),
+    read("/pulls/"+event.number+"/reviews?per_page=100"),
+  ]);
+  const currentProof=verifyOwnerPrReview({event,repository,
+    pullRequest:currentPr,reviews:currentReviews,env,now});
+  assert.equal(currentProof.sha256,proof.sha256,"Approval binding changed during verification");
+  return currentProof;
+}
 async function main(){
   const env=process.env;
   assert.ok(typeof env.GITHUB_EVENT_PATH==="string"&&env.GITHUB_EVENT_PATH.length>0
     && typeof env.GITHUB_TOKEN==="string"&&env.GITHUB_TOKEN.length>=20,
     "GitHub Actions event and read-only token required");
   const event=JSON.parse(await readFile(env.GITHUB_EVENT_PATH,"utf8"));
-  assert.ok(Number.isSafeInteger(event.number)&&event.number>0,"GitHub PR review number required");
-  const [repository,pullRequest,reviews]=await Promise.all([
-    github("",env.GITHUB_TOKEN),
-    github("/pulls/"+event.number,env.GITHUB_TOKEN),
-    github("/pulls/"+event.number+"/reviews?per_page=100",env.GITHUB_TOKEN),
-  ]);
-  const proof=verifyOwnerPrReview({event,repository,pullRequest,reviews,env});
+  const proof=await collectOwnerPrReview({event,env,
+    read:endpoint=>github(endpoint,env.GITHUB_TOKEN)});
   console.log("TRADEHQ_OWNER_PR_REVIEW_EVIDENCE_V1 "+JSON.stringify(proof));
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
