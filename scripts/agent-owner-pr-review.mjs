@@ -48,12 +48,15 @@ export function verifyOwnerPrReview({event,repository,pullRequest,reviews,env,no
     && initial?.number===pr.number
     && (event.number===undefined || event.number===pr.number)
     && initial.id===pr.id && pr.id>0
+    && initial.user?.id===BOT.id && initial.user?.login===BOT.login
     && pr.state==="open" && pr.merged_at===null
     && pr.draft===false
     && pr.user?.id===BOT.id && pr.user?.login===BOT.login,
     "Review must belong to a currently open, ready-for-review bot PR");
   assert.ok(pr.base?.ref==="main" && pr.base.repo?.id===REPO_ID
     && pr.head?.repo?.id===REPO_ID
+    && initial.base?.ref===pr.base.ref && initial.base?.repo?.id===REPO_ID
+    && initial.head?.repo?.id===REPO_ID
     && /^ai\/issue-[1-9][0-9]{0,9}$/.test(pr.head?.ref||"")
     && SHA.test(pr.head?.sha||"") && initial.head?.sha===pr.head.sha
     && initial.head.ref===pr.head.ref,
