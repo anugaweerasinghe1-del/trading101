@@ -9,23 +9,40 @@ import { createHash } from "node:crypto";
 import { collectOfflineRepairReview } from "./agent-repair-pipeline-offline.mjs";
 
 export function summarizeInvestigation(packet) {
+  const denyKeys=["codeWrites","modelCalls","ownerApproval","merge","productionRelease"];
+  const denied=value=>value && Object.keys(value).length===denyKeys.length
+    && denyKeys.every(key=>value[key]===false);
   assert.ok(packet?.schema === "tradehq-offline-repair-review-v1"
-    && Array.isArray(packet.cases) && packet.authorization
-    && Object.values(packet.authorization).every(v => v === false),
+    && Array.isArray(packet.cases) && packet.cases.length<=42
+    && denied(packet.authorization)
+    && Number.isSafeInteger(packet.producer?.runId) && packet.producer.runId>0
+    && /^[a-f0-9]{40}$/.test(packet.producer.monitorSha||"")
+    && /^[a-f0-9]{40}$/.test(packet.producer.targetSha||"")
+    && packet.status===(packet.cases.length?"OWNER_INVESTIGATION_REQUIRED":"NO_VERIFIED_INCIDENT"),
     "Verified read-only investigation packet required");
+  const seen=new Set();
   const cases = packet.cases.map(item => {
     assert.ok(item.status === "OWNER_INVESTIGATION_REQUIRED"
       && item.rootCauseVerified === false && item.repairRisk === "HIGH"
       && item.draftManifest?.draftPrCreated === false
-      && item.authorization && Object.values(item.authorization).every(v => v === false),
+      && denied(item.authorization)
+      && /^repair-v1-[a-f0-9]{24}$/.test(item.candidateId||"")
+      && !seen.has(item.candidateId)
+      && /^\/(?:[A-Za-z0-9._-]+\/?)*$/.test(item.path||"")
+      && !item.path.startsWith("//")
+      && !item.path.split("/").some(part=>part==="."||part==="..")
+      && item.path.length<=180
+      && /^[A-Z][A-Z0-9_]{0,63}$/.test(item.symptom||"")
+      && /^[a-f0-9]{64}$/.test(item.evidenceDigest||""),
       "No diagnosis may grant repair or PR authority");
+    seen.add(item.candidateId);
     return {candidateId:item.candidateId, path:item.path, symptom:item.symptom,
       evidenceDigest:item.evidenceDigest, status:item.status};
   });
   const summary = {schema:"tradehq-operational-investigation-handoff-v1",
     monitorRunId:packet.producer.runId, monitorSha:packet.producer.monitorSha,
     targetSha:packet.producer.targetSha, status:packet.status, cases,
-    ownerReviewRequired:true, draftPrCreated:false,
+    ownerReviewRequired:cases.length>0, draftPrCreated:false,
     authorization:{codeWrites:false, modelCalls:false, ownerApproval:false,
       draftPrCreation:false, merge:false, productionRelease:false}};
   return {...summary, sha256:createHash("sha256").update(JSON.stringify(summary)).digest("hex")};

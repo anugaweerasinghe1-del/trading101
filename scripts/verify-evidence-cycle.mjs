@@ -19,8 +19,7 @@ assert.ok(y.jobs.collect.steps.some(s=>String(s.run).includes('agent-evidence-ru
 assert.ok(y.jobs.collect.steps.some(s=>String(s.run).includes('agent-trusted-evidence.mjs')));
 assert.equal(y.jobs.collect['timeout-minutes'],8);
 const handoff=y.jobs.collect.steps.find(s=>String(s.run).includes('agent-operational-investigation-handoff.mjs'));
-assert.ok(handoff && handoff.if.includes("steps.gate.outputs.purpose == 'diagnosis'"));
-assert.ok(handoff.if.includes("steps.gate.outputs.ready == 'true'"));
+assert.equal(handoff.if,"${{ steps.gate.outputs.ready == 'true' }}");
 const deny={codeWrites:false,modelCalls:false,ownerApproval:false,merge:false,productionRelease:false};
 const fake={schema:'tradehq-offline-repair-review-v1',status:'OWNER_INVESTIGATION_REQUIRED',
   producer:{runId:123,monitorSha:'a'.repeat(40),targetSha:'b'.repeat(40)},
@@ -34,6 +33,31 @@ assert.equal(summary.ownerReviewRequired,true);
 assert.ok(Object.values(summary.authorization).every(v=>v===false));
 assert.throws(()=>summarizeInvestigation({...fake,cases:[{...fake.cases[0],rootCauseVerified:true}]}));
 assert.throws(()=>summarizeInvestigation({...fake,authorization:{...deny,codeWrites:true}}));
+const healthy=summarizeInvestigation({...fake,cases:[],status:'NO_VERIFIED_INCIDENT'});
+assert.equal(healthy.ownerReviewRequired,false);
+assert.equal(healthy.status,'NO_VERIFIED_INCIDENT');
+assert.deepEqual(healthy.cases,[]);
+assert.ok(Object.values(healthy.authorization).every(v=>v===false));
+for(const mutate of [
+  x=>x.authorization={},
+  x=>delete x.authorization.merge,
+  x=>x.authorization.unexpected=false,
+  x=>x.producer.runId='123',
+  x=>x.producer.monitorSha='not-a-sha',
+  x=>x.producer.targetSha='not-a-sha',
+  x=>x.status='NO_VERIFIED_INCIDENT',
+  x=>x.cases[0].authorization={},
+  x=>x.cases[0].path='/../auth',
+  x=>x.cases[0].path='//untrusted.example',
+  x=>x.cases[0].candidateId='forged',
+  x=>x.cases[0].evidenceDigest='missing',
+  x=>x.cases[0].symptom='<script>',
+  x=>x.cases.push(structuredClone(x.cases[0])),
+]){
+  const input=structuredClone(fake);mutate(input);
+  assert.throws(()=>summarizeInvestigation(input));
+}
+assert.throws(()=>summarizeInvestigation({...fake,cases:[]}));
 
 assert.ok(!/pull_request_target|issues: write|contents: write|GEMINI_API_KEY/.test(raw));
 console.log('Read-only monitoring workflow: complete producer, idea-only skip, least privilege and no autonomous writes passed.');
