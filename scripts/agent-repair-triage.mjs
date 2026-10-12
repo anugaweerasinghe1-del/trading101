@@ -5,55 +5,74 @@
  */
 import { fileURLToPath } from "node:url";
 import { resolve } from "node:path";
+import { createHash } from "node:crypto";
 
 const TITLE = "[TradeHQ Repair Candidate] Repeated public check failures";
 const MARKER = "tradehq-triage-state-v1";
 const routeTitle = "[TradeHQ Agent] Daily route report";
-const routeFailureTitle = "[TradeHQ Agent] Website route failures";
 const browserTitle = "[TradeHQ Agent] Browser smoke report";
-const browserFailureTitle = "[TradeHQ Agent] Browser smoke failures";
 const repo = process.env.GITHUB_REPOSITORY || "anugaweerasinghe1-del/trading101";
 const token = process.env.GITHUB_TOKEN;
 const runId = String(process.env.GITHUB_RUN_ID || "");
 
 function extractRunId(body) {
-  return String(body || "").match(/^\*\*GitHub run ID:\*\*\s*(\d+)$/m)?.[1] || "";
+  const lines=String(body||"").split("\n").filter(x=>x.startsWith("**GitHub run ID:**"));
+  return lines.length===1 ? lines[0].match(/^\*\*GitHub run ID:\*\* ([1-9][0-9]*)$/)?.[1]||"" : "";
 }
 function count(body, label) {
-  const line = String(body || "").split("\n").find(x => x.startsWith("**" + label + ":** "));
-  if (!line) return null;
+  const lines = String(body || "").split("\n").filter(x => x.startsWith("**" + label + ":**"));
+  if (lines.length!==1 || !/^(0|[1-9][0-9]*)$/.test(lines[0].split(":** ")[1]||"")) return null;
+  const line=lines[0];
   const n = Number(line.split(":** ")[1]);
   return Number.isSafeInteger(n) && n >= 0 ? n : null;
 }
 export function readFailures(issues, currentRun) {
-  if (!/^\d+$/.test(currentRun)) throw Error("Missing GitHub Actions run ID.");
-  const find = title => issues.find(x => !x.pull_request && x.title === title && x.state === "open" && x.user?.login === "github-actions[bot]");
-  const routes = find(routeTitle), browser = find(browserTitle);
-  if (!routes || !browser || extractRunId(routes.body) !== currentRun || extractRunId(browser.body) !== currentRun) {
-    throw Error("Fresh reports from BOTH independent monitors are missing. No recurrence or success inferred.");
-  }
-  const routeCount = count(routes.body, "Failed URLs");
-  const browserCount = count(browser.body, "Potential failures");
-  if (routeCount === null || browserCount === null) throw Error("Monitor totals missing; no candidate issued.");
-  if (routeCount > 0 && !find(routeFailureTitle)) throw Error("Route failures were reported without the evidence issue.");
-  if (browserCount > 0 && !find(browserFailureTitle)) throw Error("Browser failures were reported without the evidence issue.");
-  const records = [];
-  if (routeCount) {
-    const body = String(find(routeFailureTitle).body || "");
-    for (const m of body.matchAll(/^- (\/[^\s:]*): ([^\r\n]+)$/gm)) {
-      records.push({ key: "route:" + m[1], path: m[1], reason: m[2].slice(0, 130), source: "route" });
+  if (!/^[1-9][0-9]*$/.test(currentRun) || !Array.isArray(issues)) throw Error("Missing GitHub Actions run ID or complete issues.");
+  const find = title => {
+    const matches=issues.filter(x => !x.pull_request && x.title===title && x.state==="open" && x.user?.login==="github-actions[bot]");
+    if(matches.length!==1)throw Error("Fresh reports from BOTH independent monitors must be unambiguous.");
+    return matches[0];
+  };
+  const routes=find(routeTitle),browser=find(browserTitle);
+  if(extractRunId(routes.body)!==currentRun||extractRunId(browser.body)!==currentRun)
+    throw Error("Fresh reports from BOTH independent monitors are missing.");
+  const routeCount=count(routes.body,"Failed URLs"),browserCount=count(browser.body,"Potential failures");
+  if(routeCount===null||browserCount===null)throw Error("Monitor totals missing; no candidate issued.");
+  // Use findings inside the exact-run primary reports. An older failure issue
+  // is no longer accepted as a substitute for current observations.
+  const records=[];
+  for(const [source,report,total,pattern,limit] of [
+    ["route",routes,routeCount,/^- (\/[^\s:]*): ([^\r\n]+)$/gm,30],
+    ["browser",browser,browserCount,/^- `([^`\s]+)`: ([^\r\n]+)$/gm,12],
+  ]){
+    const findings=[...String(report.body||"").matchAll(pattern)];
+    if(total>limit||findings.length!==total)throw Error("Incomplete or truncated exact-run failure evidence; owner investigation required.");
+    const seen=new Set();
+    for(const match of findings){
+      const path=match[1],reason=match[2];
+      if(!path.startsWith("/")||path.length>250||/[<>\x00-\x1f]/.test(path+reason)||reason.length>300||seen.has(path))
+        throw Error("Duplicate or malformed exact-run findings.");
+      seen.add(path);
+      // Changing symptom on the same path resets recurrence; reruns never add it.
+      const fingerprint=createHash("sha256").update(JSON.stringify([source,path,reason])).digest("hex").slice(0,16);
+      records.push({key:source+":"+path+":"+fingerprint,path,reason,source});
     }
   }
-  if (browserCount) {
-    const body = String(find(browserFailureTitle).body || "");
-    for (const m of body.matchAll(/^- \`(\/[^\s\`]+)\`: ([^\r\n]+)$/gm)) {
-      records.push({ key: "browser:" + m[1], path: m[1], reason: m[2].slice(0, 130), source: "browser" });
+  return {records,routeCount,browserCount};
+}
+export async function collectIssuePages(state,read){
+  if(!["open","all"].includes(state)||typeof read!=="function")throw Error("Invalid bounded issue reader");
+  const rows=[],seen=new Set();
+  for(let page=1;page<=4;page++){
+    const items=await read("/issues?state="+state+"&per_page=100&page="+page);
+    if(!Array.isArray(items)||items.length>100)throw Error("Invalid issue page");
+    for(const item of items){
+      if(!Number.isSafeInteger(item.id)||seen.has(item.id))throw Error("Ambiguous or changing issue pagination");
+      seen.add(item.id);rows.push(item);
     }
+    if(items.length<100)return rows;
   }
-  if ((routeCount && !records.some(x => x.source === "route")) || (browserCount && !records.some(x => x.source === "browser"))) {
-    throw Error("Positive failure totals lack actionable route evidence; investigation required.");
-  }
-  return { records: records.slice(0, 35), routeCount, browserCount };
+  throw Error("Incomplete issue history; bounded triage stopped without writes");
 }
 export function severity(item) {
   // A high priority for owner inspection never authorizes edits to financial/auth paths.
@@ -72,6 +91,13 @@ export function previousState(body) {
   } catch { return { runId: "", streaks: {} }; }
 }
 export function nextState(prior, findings, currentRun) {
+  if(!/^[1-9][0-9]*$/.test(currentRun)||!Number.isSafeInteger(Number(currentRun))
+    ||(prior.runId&&(!/^[1-9][0-9]*$/.test(prior.runId)||!Number.isSafeInteger(Number(prior.runId)))))
+    throw Error("Invalid recurrence run identity");
+  // A historical rerun must not increment a newer run's stored streak or clear
+  // its candidate. Ordered GitHub run IDs keep this bounded state fail-closed.
+  if(prior.runId&&Number(currentRun)<Number(prior.runId))
+    throw Error("Older monitoring run cannot replay recurrence");
   if (prior.runId === currentRun) return prior; // rerunning a job is NOT another independent observation
   const streaks = {};
   for (const item of findings) {
@@ -91,11 +117,16 @@ async function github(method, endpoint, body) {
   return r.json();
 }
 async function main() {
-  const open = await github("GET", "/issues?state=open&per_page=100");
+  const open = await collectIssuePages("open",path=>github("GET",path));
   const { records, routeCount, browserCount } = readFailures(open, runId);
-  const all = await github("GET", "/issues?state=all&per_page=100");
+  const all = await collectIssuePages("all",path=>github("GET",path));
   const existing = all.find(x => !x.pull_request && x.title === TITLE && x.user?.login === "github-actions[bot]");
   const state = nextState(previousState(existing?.body), records, runId);
+  console.log("TRADEHQ_RECURRENCE_WITNESS_V1 "+JSON.stringify({runId,
+    reportDigests:open.filter(x=>[routeTitle,browserTitle].includes(x.title)).map(x=>({id:x.id,sha256:createHash("sha256").update(x.body).digest("hex")})),
+    findings:records.length,repeated:records.filter(x=>state.streaks[x.key]>=2).length,
+    stateDigest:createHash("sha256").update(JSON.stringify(state)).digest("hex"),
+    authorization:{sourceWrites:false,modelCalls:false,merge:false,productionRelease:false}}));
   if (!records.length) {
     if (existing?.state === "open") {
       await github("PATCH", "/issues/" + existing.number, {

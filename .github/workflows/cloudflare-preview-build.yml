@@ -1,37 +1,45 @@
 name: Cloudflare Pages preview build
 
 on:
-  pull_request:
-    paths:
-      - "src/**"
-      - ".github/workflows/tradehq-code-agent.yml"
-      - "scripts/agent-*.mjs"
-      - "scripts/verify-ai-pr-scope.mjs"
-      - "scripts/verify-ai-agents.mjs"
-      - "functions/**"
-      - "scripts/prepare-cloudflare.mjs"
-      - "scripts/verify-cloudflare-seo.mjs"
-      - "scripts/smoke-cloudflare-preview.mjs"
-      - "package.json"
-      - "docs/cloudflare-preview-migration.md"
-      - ".github/workflows/cloudflare-preview-build.yml"
+  # Called exactly once by Phase 3 for every main PR, including docs and bot PRs.
+  workflow_call:
+    inputs:
+      validation_sha:
+        required: true
+        type: string
+    outputs:
+      validated_sha:
+        value: ${{ jobs.compatibility.outputs.validated_sha }}
   workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  build:
+  compatibility:
+    name: Cloudflare build and SEO
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    outputs:
+      validated_sha: ${{ steps.binding.outputs.validated_sha }}
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ inputs.validation_sha || github.sha }}
+          persist-credentials: false
+      - name: Verify immutable checkout
+        id: binding
+        run: node scripts/ci-validation-gate.mjs --checkout
+        env:
+          VALIDATION_SHA: ${{ inputs.validation_sha || github.sha }}
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: "22"
           cache: npm
       - run: npm ci
       - run: npm run build:cloudflare
+      - name: Verify isolated authenticated browser flow (no production accounts)
+        run: node scripts/verify-isolated-auth-browser.mjs
       - run: node --import tsx scripts/verify-cloudflare-courses-root.ts
       - name: Verify staging and production SEO headers offline
         run: node scripts/verify-cloudflare-seo.mjs
@@ -41,3 +49,9 @@ jobs:
         run: |
           node --check scripts/prepare-cloudflare.mjs
           node --input-type=module -e 'import { readFileSync } from "node:fs"; const routes=JSON.parse(readFileSync("dist/_routes.json","utf8")); if (routes.include.includes("/*") || !routes.include.includes("/courses/*")) process.exit(1); const shell=readFileSync("dist/404.html","utf8"); if (!shell.includes("noindex, follow") || shell.includes("rel=\"canonical\"")) process.exit(1);'
+
+      - name: Verify trusted exact-head Pages preview HTTP and SEO
+        if: ${{ github.event_name == 'pull_request' }}
+        run: node scripts/verify-exact-pages-preview.mjs
+        env:
+          VALIDATION_SHA: ${{ inputs.validation_sha || github.sha }}

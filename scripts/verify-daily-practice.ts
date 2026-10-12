@@ -70,7 +70,9 @@ await assert.rejects(generatePractice(claim, (async (url, init) => { if (String(
 assert.equal(limitedCalls, 1);
 await assert.rejects(generatePractice(claim, (async () => new Response('', { status: 503 })) as typeof fetch), /No AI request/);
 
-const db = new PGlite();
+const db = process.env.TRADEHQ_DAILY_POSTGRES_TEST === 'explicit-ci-fixture'
+ ? await (await import('./daily-postgres-fixture.mjs')).createDailyPostgresFixture()
+ : new PGlite();
 try {
  await db.exec(`CREATE ROLE anon; CREATE ROLE authenticated; CREATE ROLE service_role BYPASSRLS;
  CREATE SCHEMA tradehq_private; GRANT USAGE ON SCHEMA tradehq_private TO service_role;
@@ -134,5 +136,5 @@ try {
  assert.equal(await query('SELECT public.request_daily_practice(false) AS v'), 1);
  assert.equal(await query('SELECT attempts AS v FROM tradehq_private.daily_practice_state'), 0);
  assert.equal((await db.query('SELECT * FROM public.daily_practice_batches')).rows.length, 2);
- console.log('PASS Daily: 50 unique cases/500 questions, date rotation, frozen attempts, storage failures, owner review/revision guards, private drafts, future banks, five resumable parts, token replay rejection, cooldown, attempt cap and no paid fallback.');
+ console.log((process.env.TRADEHQ_DAILY_POSTGRES_TEST === 'explicit-ci-fixture' ? 'REAL_POSTGRES_DAILY_PASS: ' : '') + 'PASS Daily: 50 unique cases/500 questions, date rotation, frozen attempts, storage failures, owner review/revision guards, private drafts, future banks, five resumable parts, token replay rejection, cooldown, attempt cap and no paid fallback.');
 } finally { await db.close(); }
