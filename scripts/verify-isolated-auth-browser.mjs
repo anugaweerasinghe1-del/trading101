@@ -11,6 +11,7 @@ import { tmpdir } from "node:os";
 import { join, resolve, extname, sep } from "node:path";
 import { setTimeout as sleep } from "node:timers/promises";
 import { once } from "node:events";
+import {waitForChromePort} from "./isolated-chrome-startup.mjs";
 
 const USER_ID="bd1ca419-139b-4170-ac64-a99e0076f123";
 const EMAIL="tradehq-browser-fixture@example.invalid";
@@ -141,10 +142,13 @@ async function main(){
       "--no-first-run","--remote-allow-origins=*","--remote-debugging-port=0",
       "--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE localhost, EXCLUDE 127.0.0.1",
       "--user-data-dir="+profile,"about:blank"],{stdio:"ignore",detached:true});
-    const port=await wait(()=>{
+    let launchError=null;
+    browser.once("error",error=>{launchError=error;});
+    const port=await waitForChromePort({readPort:()=>{
       const file=join(profile,"DevToolsActivePort");
       return existsSync(file)?readFileSync(file,"utf8").split("\n")[0]:null;
-    },"Chrome debugging port");
+    },processState:()=>({exitCode:browser.exitCode,signalCode:browser.signalCode}),
+      launchError:()=>launchError,delay:sleep});
     const tabs=await (await fetch("http://127.0.0.1:"+port+"/json/list")).json();
     const tab=tabs.find(x=>x.type==="page");
     assert.ok(tab?.webSocketDebuggerUrl,"Chromium debugging tab unavailable");
