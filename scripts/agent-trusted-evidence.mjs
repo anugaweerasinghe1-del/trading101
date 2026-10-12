@@ -135,7 +135,7 @@ export async function collectTrustedEvidence({ runId, monitorSha, mainSha, targe
   const actionsPath = "/actions/runs?head_sha=" + targetSha;
   const actions = await reader.list(actionsPath, "workflow_runs");
   assert.ok(actions.some(x => x.path === ".github/workflows/phase3-high-check.yml"), "Normal Phase 3 evidence missing.");
-  const ci = [];
+  const ci = [], ciJobSnapshots = [];
   for (const path of ciWorkflows.keys()) {
     const latest = actions.filter(x => x.path === path).sort((a, b) => b.id - a.id || b.run_attempt - a.run_attempt)[0];
     if (!latest) continue; // Reusable Cloudflare jobs share the Phase 3 run after #98.
@@ -146,6 +146,11 @@ export async function collectTrustedEvidence({ runId, monitorSha, mainSha, targe
       && latest.head_repository?.id === repo.id && ["push","pull_request","workflow_dispatch"].includes(latest.event),
       "Target CI workflow/repository identity mismatch.");
     const [start, end] = interval(latest.run_started_at, latest.updated_at, now, ciAge);
+    // A failed-jobs rerun retains successful jobs from an earlier attempt.
+    // Membership must come from GitHub's effective latest-job collection,
+    // never from widening timestamps or accepting another run's check suite.
+    const created = isoTime(latest.created_at);
+    assert.ok(created <= start && created >= now - ciAge, "CI creation time is stale or inconsistent.");
     const checkIds = [];
     if (path === ".github/workflows/phase3-high-check.yml") {
       assert.equal(latest.event, pr ? "pull_request" : "push", "Normal CI event mismatch.");
@@ -155,6 +160,9 @@ export async function collectTrustedEvidence({ runId, monitorSha, mainSha, targe
         assert.equal(matches?.length, 1, "Normal CI PR binding missing or ambiguous.");
       } else assert.equal(latest.head_branch, "main", "Normal main CI branch mismatch.");
       positiveId(latest.check_suite_id);
+      const jobsPath = "/actions/runs/" + latest.id + "/jobs?filter=latest";
+      const effectiveJobs = await reader.list(jobsPath, "jobs");
+      ciJobSnapshots.push({ path: jobsPath, jobs: effectiveJobs });
       for (const name of requiredChecks) {
         const matches = checks.filter(x => x.name === name);
         assert.equal(matches.length, 1, "Missing or ambiguous required CI check.");
@@ -163,8 +171,19 @@ export async function collectTrustedEvidence({ runId, monitorSha, mainSha, targe
           && check.check_suite?.id === latest.check_suite_id && check.status === "completed" && check.conclusion === "success",
           "Required CI identity, suite or outcome mismatch.");
         const [checkStart, checkEnd] = interval(check.started_at, check.completed_at, now, ciAge);
-        assert.ok(checkStart >= start && checkEnd <= end + 1000, "Required check does not belong to the current CI attempt.");
-        checkIds.push({ name, checkId: check.id });
+        const jobMatches = effectiveJobs.filter(x => x.name === name);
+        assert.equal(jobMatches.length, 1, "Missing or ambiguous effective CI job.");
+        const job = jobMatches[0]; positiveId(job.id);
+        assert.ok(job.run_id === latest.id && job.head_sha === targetSha
+          && job.status === "completed" && job.conclusion === "success"
+          && job.check_run_url === "https://api.github.com/repos/" + EVIDENCE_REPOSITORY + "/check-runs/" + check.id,
+          "Required CI check is not bound to the effective successful job.");
+        const [jobStart, jobEnd] = interval(job.started_at, job.completed_at, now, ciAge);
+        assert.ok(checkStart >= created && checkEnd <= end + 1000
+          && jobStart >= created && jobEnd <= end + 1000
+          && Math.abs(checkStart - jobStart) <= 1000 && Math.abs(checkEnd - jobEnd) <= 1000,
+          "Required check/job times are outside the immutable CI run.");
+        checkIds.push({ name, checkId: check.id, jobId: job.id });
       }
     }
     ci.push({ runId: latest.id, attempt: latest.run_attempt, workflow: path, workflowId: latest.workflow_id,
@@ -179,6 +198,9 @@ export async function collectTrustedEvidence({ runId, monitorSha, mainSha, targe
   same(reports, reportsFrom(await reader.list("/issues?state=open", null)), "Reports changed during evidence collection.");
   same(checks, await reader.list(checksPath, "check_runs"), "Provider checks changed during evidence collection.");
   same(actions, await reader.list(actionsPath, "workflow_runs"), "CI changed during evidence collection.");
+  for (const snapshot of ciJobSnapshots) {
+    same(snapshot.jobs, await reader.list(snapshot.path, "jobs"), "Effective CI jobs changed during evidence collection.");
+  }
   if (pr) same(pr, await reader.get("/pulls/" + prNumber), "Proposal changed during evidence collection.");
   return { schema: "tradehq-trusted-evidence-v1", purpose, collectedAt: new Date(now).toISOString(), repositoryId: repo.id,
     repository: EVIDENCE_REPOSITORY, mainSha, targetSha, monitoring: { workflow: workflowPath,
