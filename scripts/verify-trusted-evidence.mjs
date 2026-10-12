@@ -254,6 +254,43 @@ assert.match(offline.cases[0].evidenceDigest,/^[a-f0-9]{64}$/);
 assert.ok(Object.values(offline.authorization).every(v=>v===false));
 assert.ok(!JSON.stringify(offline).includes("PRIVATE_"));
 
+// Integrated failed-producer -> independently verified report/logs and CI
+// -> deterministic diagnosis -> HIGH-risk review -> final owner handoff.
+// This is an ISOLATED, deliberately failing fixture, not a real site outage.
+const {summarizeInvestigation}=await import("./agent-operational-investigation-handoff.mjs");
+const incidentHandoff=summarizeInvestigation(offline);
+assert.equal(incidentHandoff.schema,"tradehq-operational-investigation-handoff-v1");
+assert.equal(incidentHandoff.status,"OWNER_INVESTIGATION_REQUIRED");
+assert.equal(incidentHandoff.monitorRunId,runId);
+assert.equal(incidentHandoff.monitorSha,monitorSha);
+assert.equal(incidentHandoff.targetSha,mainSha);
+assert.equal(incidentHandoff.ownerReviewRequired,true);
+assert.equal(incidentHandoff.draftPrCreated,false);
+assert.equal(incidentHandoff.cases.length,1);
+assert.equal(incidentHandoff.cases[0].candidateId,offline.cases[0].candidateId);
+assert.equal(incidentHandoff.cases[0].evidenceDigest,offline.cases[0].evidenceDigest);
+assert.equal(incidentHandoff.cases[0].symptom,"BLANK_ROOT");
+assert.ok(Object.values(incidentHandoff.authorization).every(v=>v===false));
+assert.match(incidentHandoff.sha256,/^[a-f0-9]{64}$/);
+const healthyHandoff=summarizeInvestigation(await collectOfflineRepairReview({
+  ...options,reader:readerFor(fixture())
+}));
+assert.equal(healthyHandoff.status,"NO_VERIFIED_INCIDENT");
+assert.equal(healthyHandoff.ownerReviewRequired,false);
+assert.equal(healthyHandoff.cases.length,0);
+for(const mutate of [
+  x=>x.cases[0].rootCauseVerified=true,
+  x=>x.cases[0].repairRisk="LOW",
+  x=>x.cases[0].draftManifest.draftPrCreated=true,
+  x=>x.authorization.merge=true,
+  x=>x.cases[0].authorization.codeWrites=true,
+]){
+  const forged=structuredClone(offline);
+  mutate(forged);
+  assert.throws(()=>summarizeInvestigation(forged));
+}
+console.log("ISOLATED_FAILURE_HANDOFF_PASS: attested failed browser -> verified diagnosis -> HIGH-risk owner handoff, no model/source/merge/release permission.");
+
 const { PGlite }=await import("@electric-sql/pglite");
 const { readFileSync }=await import("node:fs");
 const simulatedDb=new PGlite();
