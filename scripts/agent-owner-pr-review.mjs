@@ -45,7 +45,8 @@ export function verifyOwnerPrReview({event,repository,pullRequest,reviews,env,no
     "Only GitHub native owner-approved PR reviews count");
   const pr=pullRequest,initial=event.pull_request,approval=event.review;
   assert.ok(Number.isSafeInteger(pr.number) && pr.number>0
-    && event.number===pr.number && initial?.number===pr.number
+    && initial?.number===pr.number
+    && (event.number===undefined || event.number===pr.number)
     && initial.id===pr.id && pr.id>0
     && pr.state==="open" && pr.merged_at===null
     && pr.draft===false
@@ -117,18 +118,21 @@ async function github(endpoint,token) {
 }
 export async function collectOwnerPrReview({event,env,read,now=Date.now()}) {
   assert.equal(typeof read,"function","Independent bounded GitHub reader required");
-  assert.ok(Number.isSafeInteger(event.number)&&event.number>0,"GitHub PR review number required");
+  // Native pull_request_review payloads carry the number on pull_request.
+  // A top-level number belongs to other event shapes and is not required.
+  const number=event?.pull_request?.number;
+  assert.ok(Number.isSafeInteger(number)&&number>0,"GitHub PR review number required");
   const [repository,pullRequest,reviews]=await Promise.all([
     read(""),
-    read("/pulls/"+event.number),
-    read("/pulls/"+event.number+"/reviews?per_page=100"),
+    read("/pulls/"+number),
+    read("/pulls/"+number+"/reviews?per_page=100"),
   ]);
   const proof=verifyOwnerPrReview({event,repository,pullRequest,reviews,env,now});
   // Re-read after history collection. A changed head, dismissal or new review
   // during the first reads must not produce a successful witness.
   const [currentPr,currentReviews]=await Promise.all([
-    read("/pulls/"+event.number),
-    read("/pulls/"+event.number+"/reviews?per_page=100"),
+    read("/pulls/"+number),
+    read("/pulls/"+number+"/reviews?per_page=100"),
   ]);
   const currentProof=verifyOwnerPrReview({event,repository,
     pullRequest:currentPr,reviews:currentReviews,env,now});

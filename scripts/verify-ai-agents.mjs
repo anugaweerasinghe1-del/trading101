@@ -11,6 +11,9 @@ const scripts = [
   "scripts/agent-feature-inventory.mjs",
   "scripts/verify-ai-pr-scope.mjs",
 ];
+const startup=spawnSync(process.execPath,["scripts/verify-isolated-chrome-startup.mjs"],{encoding:"utf8"});
+assert.equal(startup.status,0,"Isolated Chrome startup guard failed: "+startup.stdout+startup.stderr);
+console.log(startup.stdout.trim());
 for (const file of scripts) {
   const result = spawnSync(process.execPath, ["--check", file], { encoding: "utf8" });
   assert.equal(result.status, 0, file + " syntax failed: " + result.stderr);

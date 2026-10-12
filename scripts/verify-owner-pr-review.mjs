@@ -12,7 +12,8 @@ const review={id:777777,commit_id:sha,state:"approved",user:owner,
 const env={GITHUB_EVENT_NAME:"pull_request_review",GITHUB_REPOSITORY:repo.full_name,
   GITHUB_REPOSITORY_ID:String(repo.id),GITHUB_ACTOR:owner.login,GITHUB_ACTOR_ID:String(owner.id),
   GITHUB_RUN_ID:"38159990011",GITHUB_RUN_ATTEMPT:"1"};
-const event={action:"submitted",review,pull_request:pr,number:pr.number,
+// Match GitHub/Octokit's submitted review schema: there is no top-level number.
+const event={action:"submitted",review,pull_request:pr,
   repository:repo,sender:owner};
 const fixture=()=>({event:structuredClone(event),repository:structuredClone(repo),
   pullRequest:structuredClone(pr),reviews:[{...structuredClone(review),state:"APPROVED"}],
@@ -50,6 +51,9 @@ for(const mutate of [
   x=>x.pullRequest.user.id=owner.id,
   x=>x.pullRequest.number=19,
   x=>x.pullRequest.id=1010,
+  x=>x.event.number=19,
+  x=>delete x.event.pull_request.number,
+  x=>x.event.pull_request.number="95",
   x=>x.reviews[0].state="DISMISSED",
   x=>x.reviews[0].user.id=0,
   x=>x.reviews[0].commit_id="b".repeat(40),
