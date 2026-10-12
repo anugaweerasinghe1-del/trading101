@@ -10,6 +10,7 @@ on:
       - scripts/agent-browser-smoke.mjs
       - scripts/agent-repair-triage.mjs
       - scripts/agent-operational-investigation-handoff.mjs
+      - scripts/verify-isolated-auth-browser.mjs
       - src/pages/AdminDashboard.tsx
       - src/pages/AdminAIAssistant.tsx
   schedule:
