@@ -9,6 +9,7 @@ on:
       - scripts/agent-monitor.mjs
       - scripts/agent-browser-smoke.mjs
       - scripts/agent-repair-triage.mjs
+      - scripts/agent-operational-investigation-handoff.mjs
       - src/pages/AdminDashboard.tsx
       - src/pages/AdminAIAssistant.tsx
   schedule:
