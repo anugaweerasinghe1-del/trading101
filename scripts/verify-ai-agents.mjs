@@ -18,6 +18,10 @@ const prewrite = spawnSync(process.execPath, ["scripts/verify-agent-code-preflig
 assert.equal(prewrite.status, 0, "Pre-write model-scope regression: "+prewrite.stdout+prewrite.stderr);
 console.log(prewrite.stdout.trim());
 
+const ownerProof = spawnSync(process.execPath, ["scripts/verify-owner-request-gate.mjs"], { encoding: "utf8" });
+assert.equal(ownerProof.status, 0, "Owner proposal gate failed: "+ownerProof.stdout+ownerProof.stderr);
+console.log(ownerProof.stdout.trim());
+
 const scopeCheck = spawnSync(process.execPath, ["scripts/verify-ai-pr-scope.mjs", "--self-test"], { encoding: "utf8" });
 assert.equal(scopeCheck.status, 0, "AI scope-check regression: " + scopeCheck.stdout + scopeCheck.stderr);
 const dashboard = readFileSync("src/pages/AdminDashboard.tsx", "utf8");
@@ -48,6 +52,10 @@ assert.match(workflow, /verify-cloudflare-courses-root\.ts/);
 assert.match(workflow, /TRADEHQ_CLOUDFLARE_LIVE: '0'/);
 assert.match(workflow, /fetch-depth: 0/);
 assert.match(agent, /pr_created=/);
+assert.match(agent, /validateOwnerCodeRequest/);
+assert.match(agent, /assertUnchangedOwnerIssue/);
+assert.match(agent, /collectOwnerIssueHistory/);
+assert.match(agent, /GITHUB_EVENT_PATH/);
 assert.doesNotMatch(workflow, /merge_pull_request|gh pr merge|pull_request_target/);
 assert.match(agent, /\/git\/refs/);
 assert.match(agent, /draft: true/);
