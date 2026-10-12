@@ -10,6 +10,7 @@ import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { pathToFileURL } from "node:url";
 import { setTimeout as sleep } from "node:timers/promises";
+import { collectVercelProductionEvidence, assertVercelProductionEvidence } from './vercel-production-evidence.mjs';
 const REPO="anugaweerasinghe1-del/trading101";
 const SHA=/^[a-f0-9]{40}$/;
 const UUID=/^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$/;
@@ -25,7 +26,7 @@ function one(list, predicate, why) {
   assert.equal(matches.length,1,why+" must be unambiguous");
   return matches[0];
 }
-export function verifyReleaseWitness({head,commit,checks,statuses,previousChecks,previousStatuses}){
+export function verifyReleaseWitness({head,commit,checks,statuses,previousChecks,previousStatuses,vercelProvider}){
   assert.ok(head && SHA.test(head.commit?.sha||"") && head.protected===true,
     "Exact protected main identity required");
   const sha=head.commit.sha;
@@ -60,20 +61,37 @@ export function verifyReleaseWitness({head,commit,checks,statuses,previousChecks
       && !url.search && !url.hash, "Vercel commit signal is not successful on known project");
     return {statusId:v.id,targetUrl:url.toString()};
   }
-  const currentVercel=findVercel(statuses), priorVercel=findVercel(previousStatuses);
+  let currentVercel;
+  if(vercelProvider){
+    assertVercelProductionEvidence(vercelProvider,sha);
+    const signals=statuses.filter(x=>x.context==='Vercel');
+    assert.ok(signals.length===0 || (signals.length===1 && signals[0].state==='pending'),
+      'Provider evidence cannot override failed, duplicate or contradictory GitHub Vercel statuses');
+    if(signals.length){
+      const target=new URL(signals[0].target_url||'https://invalid.invalid');
+      assert.ok(target.origin==='https://vercel.com'
+        && /^\/venomog\/trading101\/[A-Za-z0-9_-]+$/.test(target.pathname)
+        && !target.search && !target.hash,'Untrusted pending Vercel status');
+    }
+    currentVercel={statusId:null,source:'authenticated_vercel_api',deploymentId:vercelProvider.deploymentId};
+  }else currentVercel={...findVercel(statuses),source:'github_commit_status'};
+  const priorVercel=findVercel(previousStatuses);
   const report={
     schema:"tradehq-release-recovery-readiness-v1",currentSha:sha,
     priorSha:prior,
     cloudflare:{project:"tradehq-preview",currentCheckId:pages.id,
       currentDeploymentId:pages.external_id,previousCheckId:previousPages.id,
       previousDeploymentId:previousPages.external_id},
-    vercel:{currentStatusId:currentVercel.statusId,previousStatusId:priorVercel.statusId},
+    vercel:{currentStatusId:currentVercel.statusId,previousStatusId:priorVercel.statusId,
+      currentEvidenceSource:currentVercel.source,currentDeploymentId:currentVercel.deploymentId||null},
     requiredCheckCount:REQUIRED.length,
     candidateStatus:"PREVIOUS_SUCCESSFUL_COMMIT_ONLY",
     providerRollbackEligible:false,rollbackPerformed:false,ownerApproval:false,
     productionReleaseAuthorized:false,
     limitations:["GitHub App checks do not verify Cloudflare dashboard production environment or rollback eligibility.",
-      "Vercel status is GitHub-reported; direct Vercel account access is not established.",
+      currentVercel.source==='authenticated_vercel_api'
+        ? "Direct Vercel evidence confirms the active production alias; it does not authorize a release or rollback."
+        : "Vercel status is GitHub-reported; direct Vercel account access is not established.",
       "Code rollback cannot reverse Supabase migrations or provider settings."]
   };
   return {...report,sha256:createHash("sha256").update(JSON.stringify(report)).digest("hex")};
@@ -121,6 +139,41 @@ export async function checkPublicRoute(path,fetcher=fetch){
   }
   throw Error("Too many public route redirects: "+path);
 }
+export async function waitForReleaseWitness(readWitness, {
+  attempts=25, pauseMs=30000, pause=sleep, now=Date.now, readVercel,
+}={}){
+  assert.ok(typeof readWitness==='function' && Number.isSafeInteger(attempts)
+    && attempts>=1 && attempts<=25 && Number.isSafeInteger(pauseMs)
+    && pauseMs>=0 && pauseMs<=30000, 'Invalid bounded release wait');
+  const deadline=now()+12*60_000;
+  for(let attempt=0;attempt<attempts;attempt++){
+    assert.ok(now()<=deadline,'Release evidence time budget exhausted');
+    // Network/authentication failures are not retried. Only a successfully read
+    // but incomplete witness can wait; the complete trust gate runs every time.
+    const witness=await readWitness();
+    assert.ok(now()<=deadline,'Release evidence time budget exhausted');
+    try { return verifyReleaseWitness(witness); }
+    catch(error){
+      const signals=witness.statuses?.filter(x=>x.context==='Vercel');
+      let delayed=signals?.length===0
+        && /^Vercel commit status must be unambiguous(?:\n|$)/.test(error.message);
+      if(signals?.length===1 && signals[0].state==='pending'
+        && error.message==='Vercel commit signal is not successful on known project'){
+        const url=new URL(signals[0].target_url||'https://invalid.invalid');
+        delayed=url.origin==='https://vercel.com'
+          && /^\/venomog\/trading101\/[A-Za-z0-9_-]+$/.test(url.pathname)
+          && !url.search && !url.hash;
+      }
+      if(!delayed) throw error;
+      if(readVercel){
+        const vercelProvider=await readVercel();
+        return verifyReleaseWitness({...witness,vercelProvider});
+      }
+      if(attempt===attempts-1 || now()+pauseMs>deadline) throw error;
+      await pause(pauseMs);
+    }
+  }
+}
 async function run(){
   assert.equal(process.env.GITHUB_REPOSITORY,REPO,"Unexpected repository");
   const sha=process.env.GITHUB_SHA,token=process.env.GITHUB_TOKEN;
@@ -131,20 +184,15 @@ async function run(){
   assert.ok(Array.isArray(commit.parents)&&commit.parents.length===1,"Unrecognized parent history");
   const previous=commit.parents[0].sha;
   const previousProof=await collect(previous,token);
-  let report;
-  for(let attempt=0;attempt<18;attempt++){
+  const report=await waitForReleaseWitness(async()=>{
+    const currentHead=await github('/branches/main',token);
+    assert.equal(currentHead.commit?.sha,sha,'Main changed while waiting; stale release rejected');
     const current=await collect(sha,token);
-    try {
-      report=verifyReleaseWitness({head,commit,checks:current.checks,
+    return {head:currentHead,commit,checks:current.checks,
         statuses:current.statuses,previousChecks:previousProof.checks,
-        previousStatuses:previousProof.statuses});
-      break;
-    }catch(error) {
-      if(attempt===17)throw error;
-      // Allow Cloudflare + Vercel to finish naturally, without provider writes.
-      await sleep(12000);
-    }
-  }
+        previousStatuses:previousProof.statuses};
+  },{readVercel:process.env.TRADEHQ_VERCEL_VERIFY_TOKEN
+    ? ()=>collectVercelProductionEvidence({sha,token:process.env.TRADEHQ_VERCEL_VERIFY_TOKEN}) : undefined});
   for(const path of ["/","/trade","/courses","/auth","/daily"]){
     await checkPublicRoute(path);
   }

@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { verifyReleaseWitness, checkPublicRoute } from "./agent-release-recovery-readiness.mjs";
+import { verifyReleaseWitness, checkPublicRoute, waitForReleaseWitness } from "./agent-release-recovery-readiness.mjs";
 const MAIN="a".repeat(40), PRIOR="b".repeat(40);
 const UUID="6830d3c4-5e05-4bea-a46d-4941dc0d11ab";
 const OLD="21ea7e49-4ee5-44b7-85d0-1dd4f3bd9077";
@@ -50,6 +50,54 @@ for(const edit of bad){
   const input=sample();edit(input);assert.throws(()=>verifyReleaseWitness(input));
 }
 assert.throws(()=>verifyReleaseWitness({}));
+let reads=0, pauses=0;
+const delayed=await waitForReleaseWitness(async()=>{
+  reads++; const input=sample(); if(reads<3)input.statuses=[]; return input;
+},{pause:async ms=>{assert.equal(ms,30000);pauses++;}});
+assert.equal(delayed.currentSha,MAIN);assert.equal(reads,3);assert.equal(pauses,2);
+reads=0;
+await assert.rejects(waitForReleaseWitness(async()=>{reads++;const x=sample();x.statuses=[];return x;},
+  {attempts:3,pause:async()=>{}}),/unambiguous/);
+assert.equal(reads,3);
+for(const edit of bad){
+  const edited=sample();edit(edited);
+  if(edited.statuses[0]?.state==='pending')continue;
+  reads=0;
+  await assert.rejects(waitForReleaseWitness(async()=>{reads++;const x=sample();edit(x);return x;},
+    {pause:async()=>{throw Error('Invalid evidence must not wait');}}));
+  assert.equal(reads,1,'Failed/forged/ambiguous evidence must stop immediately');
+}
+reads=0;
+await assert.rejects(waitForReleaseWitness(async()=>{reads++;throw Error('HTTP 403');},
+  {pause:async()=>{throw Error('Network errors must not retry');}}),/HTTP 403/);
+assert.equal(reads,1);
+for(const attempts of [0,26,1.5])await assert.rejects(waitForReleaseWitness(async()=>sample(),{attempts}));
+let clock=0;
+await assert.rejects(waitForReleaseWitness(async()=>{clock=12*60_000+1;return sample();},
+  {now:()=>clock,pause:async()=>{}}),/time budget/);
+reads=0;
+await waitForReleaseWitness(async()=>{reads++;const x=sample();if(reads===1)x.statuses[0].state='pending';return x;},
+  {pause:async()=>{}});
+assert.equal(reads,2);
+const {collectVercelProductionEvidence}=await import('./vercel-production-evidence.mjs');
+const providerData={id:'dpl_ProviderFixture91',name:'trading101',projectId:'prj_PjOhFr0eppPg8hZQhdeBwTniZWOy',
+  target:'production',readyState:'READY',source:'git',alias:['thetradehq.com'],createdAt:Date.now()-1000,
+  meta:{githubCommitRef:'main',githubCommitSha:MAIN,githubOrg:'anugaweerasinghe1-del',githubRepo:'trading101'}};
+const provider=()=>collectVercelProductionEvidence({sha:MAIN,token:'PRIVATE_TOKEN_SENTINEL',
+  fetchImpl:async()=>new Response(JSON.stringify(providerData))});
+const noStatus=sample();noStatus.statuses=[];
+const direct=await waitForReleaseWitness(async()=>noStatus,{readVercel:provider,pause:async()=>{throw Error('API proof should resolve delay');}});
+assert.equal(direct.vercel.currentEvidenceSource,'authenticated_vercel_api');
+assert.equal(direct.vercel.currentStatusId,null);
+assert.equal(direct.vercel.currentDeploymentId,providerData.id);
+assert.equal(direct.productionReleaseAuthorized,false);
+for(const edit of [x=>x.statuses[0].state='failure',x=>x.checks[0].conclusion='failure',x=>x.statuses.push(vercel())]){
+  const x=sample();edit(x);let apiCalls=0;
+  await assert.rejects(waitForReleaseWitness(async()=>x,{readVercel:async()=>{apiCalls++;return provider();}}));
+  assert.equal(apiCalls,0,'Provider fallback must not override failing/ambiguous evidence');
+}
+await assert.rejects(waitForReleaseWitness(async()=>noStatus,{readVercel:async()=>({schema:'forged',commitSha:MAIN})}),/imported JSON/);
+await import('./verify-vercel-production-evidence.mjs');
 // Pages may canonicalize /daily to /daily/. Permit ONLY this same-origin
 // redirect; reject external host, unrelated path, unbounded hops and non-HTML.
 const html="<html><head><title>TradeHQ Daily</title></head><body>"+

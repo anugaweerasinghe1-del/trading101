@@ -10,6 +10,10 @@ on:
       - scripts/agent-browser-smoke.mjs
       - scripts/agent-repair-triage.mjs
       - scripts/agent-operational-investigation-handoff.mjs
+      - scripts/agent-trusted-evidence.mjs
+      - scripts/agent-release-recovery-readiness.mjs
+      - scripts/vercel-production-evidence.mjs
+      - .github/workflows/tradehq-verified-evidence.yml
       - scripts/verify-isolated-auth-browser.mjs
       - src/pages/AdminDashboard.tsx
       - src/pages/AdminAIAssistant.tsx

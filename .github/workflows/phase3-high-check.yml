@@ -87,7 +87,7 @@ jobs:
     needs: [validation]
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && needs.validation.result == 'success' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 15
     permissions:
       contents: read
       checks: read
@@ -103,4 +103,5 @@ jobs:
       - name: Confirm current/prior provider statuses and public routes
         env:
           GITHUB_TOKEN: ${{ github.token }}
+          TRADEHQ_VERCEL_VERIFY_TOKEN: ${{ secrets.TRADEHQ_VERCEL_VERIFY_TOKEN }}
         run: node scripts/agent-release-recovery-readiness.mjs
