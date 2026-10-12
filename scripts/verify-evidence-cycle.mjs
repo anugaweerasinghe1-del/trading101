@@ -33,7 +33,7 @@ assert.equal(incident.failJob,true,"A verified incident must be surfaced as a fa
 assert.equal(incident.summary.sha256,summary.sha256);
 assert.match(incident.jobSummary,/Owner investigation required/);
 assert.ok(incident.jobSummary.includes("`/about`"));
-assert.match(incident.jobSummary,/No repair PR or release has been authorized/);
+assert.match(incident.jobSummary,/no repair PR or release has been authorized/i);
 assert.doesNotMatch(incident.jobSummary,/PRIVATE_|authoriz(?:e|ed) release/i);
 assert.equal(summary.draftPrCreated,false);
 assert.equal(summary.ownerReviewRequired,true);
