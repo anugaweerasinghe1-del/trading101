@@ -1,10 +1,12 @@
 /**
  * READ-ONLY operational handoff. Re-collects trusted monitor evidence before
- * emitting a human-investigation packet; never requests write permissions.
+ * emitting a human-investigation packet; never requests GitHub write permissions.
+ * A verified incident makes the evidence job FAIL visibly, without repairing.
  * This is NOT owner approval, a validated root cause, or a repair PR.
  */
 import assert from "node:assert/strict";
 import { pathToFileURL } from "node:url";
+import { appendFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { collectOfflineRepairReview } from "./agent-repair-pipeline-offline.mjs";
 
@@ -48,6 +50,42 @@ export function summarizeInvestigation(packet) {
   return {...summary, sha256:createHash("sha256").update(JSON.stringify(summary)).digest("hex")};
 }
 
+/**
+ * Present ONLY summary fields admitted by summarizeInvestigation. The GitHub
+ * job summary is local runner output, not a GitHub API/production write.
+ * Deliberately fail an incident-bearing job so a real verified incident can
+ * never appear as a healthy green evidence run.
+ */
+export function investigationOutcome(packet) {
+  const summary=summarizeInvestigation(packet);
+  const attention=summary.ownerReviewRequired;
+  const lines=[
+    "## TradeHQ trusted monitoring — "+(attention?"Owner investigation required":"No verified incident"),
+    "",
+    "- Producer: [GitHub Actions run #"+summary.monitorRunId+
+      "](https://github.com/anugaweerasinghe1-del/trading101/actions/runs/"+summary.monitorRunId+")",
+    "- Monitored commit: `"+summary.monitorSha+"`",
+    "- Verified main commit: `"+summary.targetSha+"`",
+    "- Verified findings: **"+summary.cases.length+"**",
+    "- Automatic code changes, model calls, merging and releases: **not authorized**",
+    ""
+  ];
+  if(attention) {
+    lines.push("| Public route | Symptom | Evidence ID |",
+      "| --- | --- | --- |");
+    for(const item of summary.cases)
+      lines.push("| `"+item.path+"` | `"+item.symptom+"` | `"+item.candidateId+"` |");
+    lines.push("","**Action:** Investigate and independently reproduce the observed symptom. "+
+      "The root cause remains unverified; no repair PR or release has been authorized.");
+  } else {
+    lines.push("Both required monitor reports were independently verified; no incident diagnosis was requested.");
+  }
+  lines.push("","Evidence fingerprint: `"+summary.sha256+"`");
+  const jobSummary=lines.join("\n")+"\n";
+  assert.ok(jobSummary.length<16000,"Bounded GitHub job summary required");
+  return {summary,jobSummary,failJob:attention};
+}
+
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   try {
     assert.equal(process.argv.length, 2, "No CLI arguments accepted");
@@ -58,8 +96,14 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     const packet=await collectOfflineRepairReview({
       runId:Number(MONITOR_RUN_ID),monitorSha:MONITOR_SHA,mainSha:MAIN_SHA
     });
-    const summary=summarizeInvestigation(packet);
+    const {summary,jobSummary,failJob}=investigationOutcome(packet);
     console.log("TRADEHQ_READONLY_INCIDENT_HANDOFF_V1 "+JSON.stringify(summary));
+    if(process.env.GITHUB_STEP_SUMMARY)
+      appendFileSync(process.env.GITHUB_STEP_SUMMARY,jobSummary,"utf8");
+    if(failJob) {
+      console.error("Verified public monitoring incident requires owner investigation. No repair or release permitted.");
+      process.exitCode=1;
+    }
   } catch {
     console.error("Read-only incident handoff rejected: verification, source identity or freshness missing.");
     process.exitCode=1;
