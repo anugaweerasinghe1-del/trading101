@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import YAML from 'yaml';
-import { summarizeInvestigation } from './agent-operational-investigation-handoff.mjs';
+import { summarizeInvestigation, investigationOutcome } from './agent-operational-investigation-handoff.mjs';
 import { classify } from './agent-evidence-run-gate.mjs';
 const j=(name,conclusion)=>({name,status:'completed',conclusion});
 assert.deepEqual(classify([j('scan','success'),j('browser','success')],'push'),{ready:true,purpose:'healthy'});
@@ -28,12 +28,24 @@ const fake={schema:'tradehq-offline-repair-review-v1',status:'OWNER_INVESTIGATIO
     status:'OWNER_INVESTIGATION_REQUIRED',rootCauseVerified:false,repairRisk:'HIGH',
     draftManifest:{draftPrCreated:false},authorization:deny}]};
 const summary=summarizeInvestigation(fake);
+const incident=investigationOutcome(fake);
+assert.equal(incident.failJob,true,"A verified incident must be surfaced as a failing evidence run");
+assert.equal(incident.summary.sha256,summary.sha256);
+assert.match(incident.jobSummary,/Owner investigation required/);
+assert.match(incident.jobSummary,/\\/about/);
+assert.match(incident.jobSummary,/No repair PR or release has been authorized/);
+assert.doesNotMatch(incident.jobSummary,/PRIVATE_|authoriz(?:e|ed) release/i);
 assert.equal(summary.draftPrCreated,false);
 assert.equal(summary.ownerReviewRequired,true);
 assert.ok(Object.values(summary.authorization).every(v=>v===false));
 assert.throws(()=>summarizeInvestigation({...fake,cases:[{...fake.cases[0],rootCauseVerified:true}]}));
 assert.throws(()=>summarizeInvestigation({...fake,authorization:{...deny,codeWrites:true}}));
-const healthy=summarizeInvestigation({...fake,cases:[],status:'NO_VERIFIED_INCIDENT'});
+const healthyPacket={...fake,cases:[],status:'NO_VERIFIED_INCIDENT'};
+const healthy=summarizeInvestigation(healthyPacket);
+const healthyOutcome=investigationOutcome(healthyPacket);
+assert.equal(healthyOutcome.failJob,false,"A verified healthy cycle must remain green");
+assert.match(healthyOutcome.jobSummary,/No verified incident/);
+assert.doesNotMatch(healthyOutcome.jobSummary,/\| Public route \| Symptom/);
 assert.equal(healthy.ownerReviewRequired,false);
 assert.equal(healthy.status,'NO_VERIFIED_INCIDENT');
 assert.deepEqual(healthy.cases,[]);
@@ -56,8 +68,10 @@ for(const mutate of [
 ]){
   const input=structuredClone(fake);mutate(input);
   assert.throws(()=>summarizeInvestigation(input));
+  assert.throws(()=>investigationOutcome(input));
 }
 assert.throws(()=>summarizeInvestigation({...fake,cases:[]}));
+assert.throws(()=>investigationOutcome({...fake,cases:[]}));
 
 assert.ok(!/pull_request_target|issues: write|contents: write|GEMINI_API_KEY/.test(raw));
 console.log('Read-only monitoring workflow: complete producer, idea-only skip, least privilege and no autonomous writes passed.');
