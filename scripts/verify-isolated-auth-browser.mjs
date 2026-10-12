@@ -25,6 +25,12 @@ const USER={id:USER_ID,aud:"authenticated",role:"authenticated",email:EMAIL,
 const MIME={".html":"text/html; charset=utf-8",".js":"application/javascript; charset=utf-8",
   ".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".json":"application/json",
   ".png":"image/png",".woff2":"font/woff2",".ico":"image/x-icon"};
+// Use the actual authored bank, parsed as JSON rather than executing TS.
+// Its visible reviewer proves the bank response reached the compiled UI.
+const bankSource=readFileSync("src/lib/dailyPracticeBank.ts","utf8");
+const bankMatch=bankSource.match(/export const starterPracticeBank: DailyBatch = (\{[\s\S]*\});\s*$/);
+assert.ok(bankMatch,"Authored Daily bank JSON fixture unavailable");
+const fixtureBank={...JSON.parse(bankMatch[1]),reviewer:"Isolated browser fixture"};
 const wait=async(check,label,ms=14000)=>{
   const start=Date.now();
   while(Date.now()-start<ms){try{const x=await check();if(x)return x;}catch{}await sleep(150);}
@@ -107,7 +113,10 @@ async function main(){
           updated_at:new Date().toISOString(),positions:[]});
       }
       if(route==="/rest/v1/rpc/get_daily_practice_bank" && req.method==="POST"){
-        dailyReads++;return json(200,null); // real authored fallback, never an AI call
+        dailyReads++;
+        // Request arrival is not query hydration. Exercise a deliberately late
+        // real-bank response; selection must wait for its visible UI state.
+        setTimeout(()=>json(200,fixtureBank),200);return;
       }
       if(route.startsWith("/rest/v1/")){
         if(!["GET","HEAD"].includes(req.method||"")){dataWrites++;return json(403,{error:"fixture_never_mutates"})}
@@ -225,8 +234,14 @@ async function main(){
     // reload, completes ten questions and preserves one calendar-day streak.
     await loadDocument(origin+"/daily");
     const dailyReady=()=>devtools.evaluate("!!document.querySelector('#deeper-practice') && [...document.querySelectorAll('#deeper-practice button')].some(e=>e.textContent.includes('Start case study'))");
+    const dailyBankReady=async()=>{
+      await wait(()=>devtools.evaluate("document.querySelector('#deeper-practice')?.textContent.includes('Bank reviewed by Isolated browser fixture.')"),"authored Daily bank rendered");
+      // Allow passive bank-change effects to finish before a user selection.
+      await devtools.evaluate("new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve(true))))");
+    };
     await wait(dailyReady,"Daily case study");
     await wait(()=>dailyReads>=1,"read-only Daily bank request");
+    await dailyBankReady();
     const dailyClick=async text=>{
       const expression="(()=>{const e=[...document.querySelectorAll('#deeper-practice button')].find(e=>e.textContent.trim()==="+JSON.stringify(text)+"&&!e.disabled);if(!e)throw Error('Daily button missing');e.click();return true;})()";
       return devtools.evaluate(expression);
@@ -242,6 +257,7 @@ async function main(){
       if(i===0){
         const before=await stored();
         await loadDocument();
+        await dailyBankReady();
         await wait(()=>devtools.evaluate("[...document.querySelectorAll('#deeper-practice button')].some(e=>e.textContent.includes('Continue case study'))"),"saved Daily resume control");
         assert.deepEqual(await stored(),before,"Reload must preserve the exact exercise and original answer");
         await dailyClick("Continue case study"); // UI selects the first unanswered question
@@ -252,6 +268,7 @@ async function main(){
     const streakKey=await devtools.evaluate("Object.keys(localStorage).find(k=>{try{const v=JSON.parse(localStorage.getItem(k));return v && v.totalCompleted===1 && Array.isArray(v.history)}catch{return false}})");
     assert.ok(streakKey,"Daily completion must persist one streak entry");
     await loadDocument();
+    await dailyBankReady();
     await wait(()=>devtools.evaluate("[...document.querySelectorAll('#deeper-practice button')].some(e=>e.textContent.includes('Review case study'))"),"completed case restored");
     assert.deepEqual(await stored(),complete,"Completed answers cannot be rewritten by reload");
     await dailyClick("Review case study");
