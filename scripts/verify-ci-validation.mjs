@@ -76,11 +76,21 @@ try {
     "  </main>;",
     "}",
   ].join("\n"));
+  const owner = {login:"anugaweerasinghe1-del",id:297117529};
+  const repo = {id:1130435580,full_name:"anugaweerasinghe1-del/trading101",owner,default_branch:"main"};
+  const issue = {id:78787878,number:999,title:"[TradeHQ Code Request]",
+    body:"Improve only the About heading spacing in this disposable offline fixture.",
+    user:owner,state:"open",created_at:new Date().toISOString()};
+  const eventFile=join(fixture,"owner-issue-event.json");
+  writeFileSync(eventFile,JSON.stringify({action:"opened",sender:owner,repository:repo,issue}));
   const output = join(fixture, "output");
   const args = ["--import", resolve("scripts/fixtures/proposal-binding.mjs"), resolve("scripts/agent-code-request.mjs")];
-  const env = { ...process.env, GITHUB_REPOSITORY: "anugaweerasinghe1-del/trading101", GITHUB_SHA: sha,
-    GITHUB_TOKEN: "offline-dummy", GEMINI_API_KEY: "offline-dummy", GEMINI_AGENT_MODEL: "gemini-3.5-flash-lite",
-    TRADEHQ_ISSUE_NUMBER: "999", GITHUB_OUTPUT: output };
+  const env = { ...process.env, GITHUB_REPOSITORY: repo.full_name, GITHUB_REPOSITORY_ID: String(repo.id),
+    GITHUB_ACTOR:owner.login,GITHUB_ACTOR_ID:String(owner.id),GITHUB_EVENT_NAME:"issues",
+    GITHUB_REF:"refs/heads/main",GITHUB_RUN_ATTEMPT:"1",GITHUB_RUN_ID:"38159990011",
+    GITHUB_EVENT_PATH:eventFile,GITHUB_SHA:sha,
+    GITHUB_TOKEN:"offline-dummy",GEMINI_API_KEY:"offline-dummy",GEMINI_AGENT_MODEL:"gemini-3.5-flash-lite",
+    TRADEHQ_ISSUE_NUMBER:"999",GITHUB_OUTPUT:output };
   const success = spawnSync(process.execPath, args, { cwd: fixture, env, encoding: "utf8", timeout: 10_000 });
   assert.equal(success.status, 0, success.stderr);
   assert.match(readFileSync(output, "utf8"), new RegExp("head_sha=" + "b".repeat(40) + "\\nbase_sha=" + sha));
@@ -89,6 +99,14 @@ try {
   assert.notEqual(moved.status, 0);
   assert.match(moved.stderr, /branch changed during drafting/);
   assert.equal(existsSync(output), false, "A moved proposal must not publish verification outputs.");
+  const changedIssue = spawnSync(process.execPath, args, { cwd: fixture, env:{...env,MOCK_ISSUE_CHANGED:"1"}, encoding:"utf8",timeout:10_000 });
+  assert.notEqual(changedIssue.status,0);
+  assert.match(changedIssue.stderr,/Owner request edited, closed, moved|source base changed/);
+  assert.equal(existsSync(output),false,"An edited owner request must never publish proposal outputs.");
+  const forgedActor = spawnSync(process.execPath,args,{cwd:fixture,env:{...env,GITHUB_ACTOR_ID:"1"},encoding:"utf8",timeout:10_000});
+  assert.notEqual(forgedActor.status,0);
+  assert.match(forgedActor.stderr,/owner-only GitHub Actions|owner request/i);
+  assert.equal(existsSync(output),false,"A forged actor may not make a proposal.");
 } finally { rmSync(fixture, { recursive: true, force: true }); }
 console.log("CI gates: ordinary/docs/bot trigger contracts, exact checkout, both essential outcomes, malformed/missing/stale bindings and least privilege passed. Live bot approval remains external.");
 

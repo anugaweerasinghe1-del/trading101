@@ -8,6 +8,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { requestGeminiJson } from "./gemini-free-models.mjs";
 import { inspectAiCandidate } from "./agent-code-preflight.mjs";
+import { validateOwnerCodeRequest, assertUnchangedOwnerIssue, collectOwnerIssueHistory } from "./agent-owner-request-gate.mjs";
 const repo = process.env.GITHUB_REPOSITORY || "anugaweerasinghe1-del/trading101";
 const token = process.env.GITHUB_TOKEN;
 const apiKey = process.env.GEMINI_API_KEY;
@@ -79,7 +80,16 @@ async function main() {
   if (issue.user?.login !== owner || issue.title?.trim() !== prefix || issue.pull_request || issue.state !== "open") {
     throw new Error("Only open requests submitted by the repository owner under the exact Code Request title are processed.");
   }
-  const request = String(issue.body || "").trim();
+  // Independently bind GitHub webhook actor, immutable issue body, real repo
+  // owner numeric ID and a bounded 24-hour request budget BEFORE any model call.
+  if (!process.env.GITHUB_EVENT_PATH) throw new Error("Verified GitHub issue webhook missing.");
+  const event = JSON.parse(await fs.readFile(process.env.GITHUB_EVENT_PATH, "utf8"));
+  const repository = await github("GET", "");
+  const history = await collectOwnerIssueHistory(endpoint => github("GET", endpoint));
+  const ownerAdmission = validateOwnerCodeRequest({
+    event, liveIssue: issue, repository, env: process.env, issueHistory: history,
+  });
+  const request = String(ownerAdmission.body || "").trim();
   if (request.length < 20 || request.length > MAX_BODY) throw new Error("Describe a specific request in 20–2500 characters.");
   // Public GitHub issues are intentional: never accept or publish credentials, private information or user data.
   if (/-----BEGIN [A-Z ]*PRIVATE KEY-----|gh[pousr]_|github_pat_|sb_secret_|AIza[0-9A-Za-z_-]{30,}/i.test(request)) throw new Error("Possible credential detected. Remove secrets from the public issue.");
@@ -132,6 +142,9 @@ async function main() {
   const baseSha = mainRef.object?.sha;
   if (!/^[0-9a-f]{40}$/.test(baseSha || "")) throw new Error("Could not verify main branch commit.");
   if (process.env.GITHUB_SHA && baseSha !== process.env.GITHUB_SHA) throw new Error("Main branch changed during drafting. Request a fresh proposal to prevent stale-file overwrites.");
+  // The same owner issue may be edited or closed while Gemini responds. Recheck
+  // its original contents and exact main SHA immediately before source writes.
+  assertUnchangedOwnerIssue(ownerAdmission, await github("GET", "/issues/" + issueNumber), baseSha);
   const branch = "ai/issue-" + issueNumber;
   await github("POST", "/git/refs", { ref: "refs/heads/" + branch, sha: baseSha });
   let headSha;
