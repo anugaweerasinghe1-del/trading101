@@ -42,8 +42,8 @@ function fixture() {
   const actions = [{ id: 400, path: ".github/workflows/phase3-high-check.yml", head_sha: mainSha,
     workflow_id: 368399831, repository: repo, head_repository: repo, check_suite_id: 500,
     event: "push", head_branch: "main", pull_requests: [],
-    status: "completed", conclusion: "success", run_attempt: 1, run_started_at: "2026-10-11T05:10:00Z", updated_at: "2026-10-11T05:20:00Z" }];
-  return { repo, run, reports, jobs, logs, checks, actions, calls: [], seen: new Map(), mutate: null };
+    status: "completed", conclusion: "success", run_attempt: 1, created_at: "2026-10-11T05:10:00Z", run_started_at: "2026-10-11T05:10:00Z", updated_at: "2026-10-11T05:20:00Z" }];
+  return { repo, run, reports, jobs, logs, checks, actions, calls: [], seen: new Map(), mutate: null, ciJobsMutate: null };
 }
 function readerFor(f) {
   return createGithubEvidenceReader({ token: "PRIVATE_TOKEN_SENTINEL", now: () => now, fetchImpl: async (url, request) => {
@@ -59,6 +59,14 @@ function readerFor(f) {
     else if (path.startsWith("/compare/")) data = { status: "ahead", base_commit: { sha: monitorSha }, merge_base_commit: { sha: monitorSha } };
     else if (path === "/issues") data = f.reports;
     else if (path.endsWith("/attempts/2/jobs")) data = { total_count: f.jobs.length, jobs: f.jobs };
+    else if (path === "/actions/runs/400/jobs") {
+      let ciJobs = f.checks.filter(x => x.app.id === 15368).map(x => ({ id: x.id + 1000, name: x.name,
+        run_id: f.actions[0].id, head_sha: f.actions[0].head_sha, status: "completed", conclusion: "success",
+        check_run_url: root + "/check-runs/" + (310 + ["TradeHQ Phase 3 tests", "TradeHQ Cloudflare compatibility / Cloudflare build and SEO", "TradeHQ Required validation"].indexOf(x.name)),
+        started_at: "2026-10-11T05:11:00Z", completed_at: "2026-10-11T05:19:00Z" }));
+      if (f.ciJobsMutate) ciJobs = f.ciJobsMutate(ciJobs, seen);
+      data = { total_count: ciJobs.length, jobs: ciJobs };
+    }
     else if (path === "/actions/jobs/200/logs") return new Response(f.logs[0]);
     else if (path === "/actions/jobs/201/logs") return new Response(f.logs[1]);
     else if (path.includes("/check-runs")) data = { total_count: f.checks.length, check_runs: f.checks };
@@ -79,6 +87,39 @@ assert.equal(packet.githubActions[0].checks.length, 3, "Reusable Cloudflare evid
 assert.deepEqual(Object.values(packet.authorization), [false, false, false, false, false]);
 assert.ok(!/PRIVATE_(?:TOKEN|REPORT|LOG)_SENTINEL/.test(JSON.stringify(packet)));
 assert.ok(f.calls.every(x => x.startsWith(root)));
+// PR #125: only release readiness was rerun; required successes were retained.
+// GitHub updates run_started_at, but the effective jobs still bind these checks
+// to the exact same immutable run. Rerun timestamps cannot prove membership.
+f = fixture(); f.actions[0].run_attempt = 2;
+f.actions[0].run_started_at = "2026-10-11T05:19:30Z";
+const retained = await collectTrustedEvidence({ ...options, reader: readerFor(f) });
+assert.equal(retained.githubActions[0].attempt, 2);
+assert.equal(retained.githubActions[0].checks.length, 3);
+assert.ok(retained.githubActions[0].checks.every(x => Number.isSafeInteger(x.jobId)));
+for (const mutate of [
+  jobs => { jobs.pop(); return jobs; },
+  jobs => [...jobs, { ...jobs[0], id: 9999 }],
+  jobs => { jobs[0].run_id++; return jobs; },
+  jobs => { jobs[0].head_sha = monitorSha; return jobs; },
+  jobs => { jobs[0].check_run_url = root + "/check-runs/9999"; return jobs; },
+  jobs => { jobs[0].conclusion = "failure"; return jobs; },
+  jobs => { jobs[0].conclusion = "skipped"; return jobs; },
+  jobs => { jobs[0].status = "in_progress"; return jobs; },
+  jobs => { jobs[0].started_at = "2026-10-11T05:10:00Z"; return jobs; },
+  jobs => { jobs[0].completed_at = "2026-10-11T05:20:01Z"; return jobs; },
+]) {
+  f = fixture(); f.actions[0].run_attempt = 2;
+  f.actions[0].run_started_at = "2026-10-11T05:19:30Z";
+  f.ciJobsMutate = mutate;
+  await assert.rejects(collectTrustedEvidence({ ...options, reader: readerFor(f) }));
+}
+f = fixture();
+f.ciJobsMutate = (jobs, seen) => { if (seen > 1) jobs[0].id += 100; return jobs; };
+await assert.rejects(collectTrustedEvidence({ ...options, reader: readerFor(f) }), /jobs changed/);
+for (const created of [undefined, "bad", "2026-10-10T04:00:00Z", "2026-10-11T05:10:01Z"]) {
+  f = fixture(); f.actions[0].created_at = created;
+  await assert.rejects(collectTrustedEvidence({ ...options, reader: readerFor(f) }));
+}
 // GitHub job/issue times have second precision; a real console record can include fractions.
 f = fixture();
 f.jobs[0].completed_at = "2026-10-11T05:01:00Z";
@@ -138,7 +179,7 @@ const attacks = [
   x => { x.actions[0].event = "pull_request_target"; },
   x => { x.actions[0].head_branch = "feature"; },
   x => { x.actions[0].check_suite_id++; },
-  x => { x.actions[0].run_started_at = "2026-10-11T05:12:00Z"; },
+  x => { x.actions[0].created_at = "2026-10-11T05:12:00Z"; },
   x => { x.checks.pop(); },
   x => { x.checks.push({ ...x.checks[2], id: 999 }); },
   x => { x.checks[2].app.id++; },
