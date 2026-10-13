@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import YAML from 'yaml';
-import { summarizeInvestigation, investigationOutcome } from './agent-operational-investigation-handoff.mjs';
+import { summarizeInvestigation, investigationOutcome, investigationAdvice, investigationLearning } from './agent-operational-investigation-handoff.mjs';
 import { classify } from './agent-evidence-run-gate.mjs';
 const j=(name,conclusion)=>({name,status:'completed',conclusion});
 assert.deepEqual(classify([j('scan','success'),j('browser','success')],'push'),{ready:true,purpose:'healthy'});
@@ -50,6 +50,29 @@ assert.equal(healthy.ownerReviewRequired,false);
 assert.equal(healthy.status,'NO_VERIFIED_INCIDENT');
 assert.deepEqual(healthy.cases,[]);
 assert.ok(Object.values(healthy.authorization).every(v=>v===false));
+// The real handoff's automatic trainer runs without touching diagnosis or
+// restoring a failed action. Synthetic feedback stays explicitly unverified.
+const clock=Date.parse('2026-10-13T12:00:00.000Z');
+const history={schema:'tradehq-incident-feedback-v1',confirmedRepairOutcomes:0,memory:{version:1,records:[]}};
+assert.equal(investigationLearning(fake,history,clock).status,'ABSTAIN_INSUFFICIENT_HISTORY');
+assert.throws(()=>investigationLearning(fake,{...history,confirmedRepairOutcomes:1},clock));
+const learningPacket={...fake,cases:[{...fake.cases[0],path:'/',symptom:'BLANK_ROOT'}]};
+const learningBefore=structuredClone(learningPacket);
+const learningActions=['INSPECT_BROWSER_RENDER_EVIDENCE','INSPECT_PUBLIC_ASSET_EVIDENCE'];
+const learningHistory={...history,memory:{version:1,records:Array.from({length:40},(_,i)=>learningActions.map((action,j)=>({
+  runId:String(100+i),sha:'a'.repeat(40),category:'BLANK_ROOT',route:'/',action,
+  observedAt:new Date(Date.parse('2026-10-10T00:00:00.000Z')+i*3600_000).toISOString(),
+  outcome:j?'reported_success':'reported_failed'}))).flat()}};
+const fixedAdvice=investigationAdvice(learningPacket,learningHistory,clock);
+const shadow=investigationLearning(learningPacket,learningHistory,clock);
+assert.equal(shadow.status,'SHADOW_MODEL_TRAINED');
+assert.equal(shadow.estimates.length,1);
+assert.equal(shadow.estimates[0].action,learningActions[1]);
+assert.ok(!shadow.estimates.some(x=>x.action===learningActions[0]),'Training cannot restore a failed investigation');
+assert.ok(Object.values(shadow.authorization).every(v=>v===false));
+assert.equal(shadow.confirmedRepairOutcomes,0);
+assert.deepEqual(investigationAdvice(learningPacket,learningHistory,clock),fixedAdvice);
+assert.deepEqual(learningPacket,learningBefore,'Training cannot mutate verified findings or risk');
 for(const mutate of [
   x=>x.authorization={},
   x=>delete x.authorization.merge,
