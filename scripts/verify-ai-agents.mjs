@@ -125,3 +125,6 @@ console.log(ownerControlTest.stdout.trim());
 const stoppedInstallTest = spawnSync(process.execPath, ['scripts/verify-stopped-control-installation.mjs'], { encoding: 'utf8' });
 assert.equal(stoppedInstallTest.status, 0, 'Stopped control installation regression: '+stoppedInstallTest.stdout+stoppedInstallTest.stderr);
 console.log(stoppedInstallTest.stdout.trim());
+const workloadIdentityTest = spawnSync(process.execPath, ['scripts/verify-github-workload-identity.mjs'], { encoding: 'utf8' });
+assert.equal(workloadIdentityTest.status, 0, 'Disabled workload identity regression: '+workloadIdentityTest.stdout+workloadIdentityTest.stderr);
+console.log(workloadIdentityTest.stdout.trim());
