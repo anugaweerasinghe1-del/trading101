@@ -73,7 +73,9 @@ async function main(){
   assert.ok(chrome,"Real Chromium unavailable: do not claim this browser test passed");
   const temp=mkdtempSync(join(tmpdir(),"tradehq-isolated-auth-"));
   const dist=join(temp,"dist"),profile=join(temp,"chrome");
-  let server,browser,devtools;let attempts=0,approved=0,rejected=0,dataWrites=0,portfolioInitialized=0,logouts=0,refreshRejected=0,dailyReads=0;
+  let server,browser,devtools;let attempts=0,approved=0,rejected=0,dataWrites=0,portfolioInitialized=0,logouts=0,refreshRejected=0,dailyReads=0,adminChatRequests=0;
+  const ADMIN_FIXTURE_KEY='isolated-admin-fixture-only';
+  const chatDraft='Improve About page mobile spacing while preserving every existing sentence and link.';
   try{
     server=createServer((req,res)=>{
       const parsed=new URL(req.url||"/","http://localhost");
@@ -82,6 +84,18 @@ async function main(){
         res.writeHead(status,{"Content-Type":"application/json","Cache-Control":"no-store"});
         res.end(JSON.stringify(body));
       };
+      if(route==='/functions/v1/admin-courses' && req.method==='POST'){
+        return req.headers['x-admin-key']===ADMIN_FIXTURE_KEY?json(200,{data:{}}):json(401,{error:'fixture_admin_denied'});
+      }
+      if(route==='/functions/v1/admin-agent-chat' && req.method==='POST'){
+        if(req.headers['x-admin-key']!==ADMIN_FIXTURE_KEY)return json(401,{error:'fixture_admin_denied'});
+        adminChatRequests++;
+        if(adminChatRequests===1)return json(503,{code:'PILOT_PAUSED',error:'Fixture pilot paused'});
+        const output={reply:'<img src=x onerror="window.__modelHtmlExecuted=true">',draftRequest:chatDraft,mode:'READ_ONLY_PILOT',claim:'UNVERIFIED_SUGGESTION',rootCauseVerified:false,historyAvailable:false,authorization:{codeWrites:false,modelTools:false,merge:false,productionRelease:false}};
+        if(adminChatRequests===3)output.authorization.merge=true;
+        if(adminChatRequests===4){setTimeout(()=>json(200,output),500);return;}
+        return json(200,output);
+      }
       if(route==="/auth/v1/token" && req.method==="POST" &&
         parsed.searchParams.get("grant_type")==="password"){
         attempts++;let content="";
@@ -278,6 +292,32 @@ async function main(){
     assert.equal(await devtools.evaluate("JSON.parse(localStorage.getItem("+JSON.stringify(streakKey)+")).totalCompleted"),1,"Quick and deeper completion must not double-count the day");
     assert.equal(attempts,3,"Both negative and positive real UI attempts required");
     assert.equal(dataWrites,0,"No profile/trade/portfolio writes permitted, even to fixture");
+    // Actual compiled admin chat: paused mode, escaped suggestions, explicit draft
+    // transfer, forged authority rejection, and late response after lock.
+    await loadDocument(origin+'/admin/ai');
+    const adminClick=async text=>devtools.evaluate("(()=>{const e=[...document.querySelectorAll('button')].find(e=>e.textContent.trim()==="+JSON.stringify(text)+"&&!e.disabled);if(!e)throw Error('Admin button missing');e.click();return true})()");
+    const adminInput=async(selector,value)=>devtools.evaluate("(()=>{const e=document.querySelector("+JSON.stringify(selector)+");if(!e)throw Error('Admin input missing');const proto=e.tagName==='TEXTAREA'?HTMLTextAreaElement.prototype:HTMLInputElement.prototype;Object.getOwnPropertyDescriptor(proto,'value').set.call(e,"+JSON.stringify(value)+");e.dispatchEvent(new Event('input',{bubbles:true}));return true})()");
+    const openChat=async()=>{await adminClick('Assistant pilot');await wait(()=>devtools.evaluate("document.body.textContent.includes('Admin assistant · pilot')"),'admin pilot tab');};
+    const askChat=async()=>{await adminInput('textarea','Help me draft a mobile spacing improvement for the About page.');await wait(()=>devtools.evaluate("[...document.querySelectorAll('button')].some(e=>e.textContent.trim()==='Ask assistant'&&!e.disabled)"),'chat input accepted');await adminClick('Ask assistant');};
+    await wait(()=>devtools.evaluate("!!document.querySelector('input[aria-label=\"Admin master key\"]')"),'admin key input');
+    await adminInput('input[aria-label="Admin master key"]',ADMIN_FIXTURE_KEY);await adminClick('Unlock AI workspace');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Assistant pilot')"),'admin workspace unlocked');
+    await openChat();await askChat();
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Chat is unavailable, paused')"),'paused chat is visible');
+    await askChat();await wait(()=>devtools.evaluate("document.body.textContent.includes('Unverified suggestion')"),'unverified reply rendered');
+    assert.equal(await devtools.evaluate("window.__modelHtmlExecuted===true"),false,'Model HTML cannot execute');
+    assert.equal(await devtools.evaluate("document.querySelectorAll('img[src=x]').length"),0,'Model reply must remain plain text');
+    await adminClick('Use as request draft');
+    await wait(()=>devtools.evaluate("document.querySelector('textarea')?.value==="+JSON.stringify(chatDraft)),'draft transferred only after owner click');
+    await openChat();await askChat();
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('assistant response could not be validated')"),'forged merge authority rejected');
+    await askChat();await wait(()=>adminChatRequests===4,'pending chat request');await adminClick('Lock');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Private admin access')"),'workspace locked');
+    await sleep(650);
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('Unverified suggestion')"),false,'Late reply cannot revive locked workspace');
+    assert.equal(await devtools.evaluate("Object.values(localStorage).some(x=>x.includes("+JSON.stringify(ADMIN_FIXTURE_KEY)+"))"),false,'Admin key cannot be persisted');
+    assert.equal(adminChatRequests,4);assert.equal(dataWrites,0);
+    console.log('ISOLATED_ADMIN_CHAT_BROWSER_PASS: paused pilot, literal model text, owner-click draft transfer, forged authority denial and late-response lock isolation; fixture only; no real provider calls.');
     console.log("ISOLATED_AUTH_BROWSER_PASS: reload persistence; real UI sign-out; no resurrected session; expired refresh rejected; ten Daily answers persisted/resumed/locked; one streak per day; actual built TradeHQ login in real Chromium; negative password refused; fake Supabase grant accepted; authenticated profile navigation observed; isolated account initialization executed; zero non-allowlisted backend writes; zero real provider calls.");
   }finally{
     // Wait for Chrome to exit before deleting its still-active profile files.
