@@ -75,6 +75,7 @@ async function main(){
   const dist=join(temp,"dist"),profile=join(temp,"chrome");
   let server,browser,devtools;let attempts=0,approved=0,rejected=0,dataWrites=0,portfolioInitialized=0,logouts=0,refreshRejected=0,dailyReads=0,adminChatRequests=0;
   const ADMIN_FIXTURE_KEY='isolated-admin-fixture-only';
+  const repairRequests={status:0,stop:0};
   const chatDraft='Improve About page mobile spacing while preserving every existing sentence and link.';
   try{
     server=createServer((req,res)=>{
@@ -95,6 +96,22 @@ async function main(){
         if(adminChatRequests===3)output.authorization.merge=true;
         if(adminChatRequests===4){setTimeout(()=>json(200,output),500);return;}
         return json(200,output);
+      }
+      if(route==='/functions/v1/repair-owner-control' && req.method==='POST'){
+        if(req.headers['x-admin-key']!==ADMIN_FIXTURE_KEY || req.headers.authorization!=='Bearer '+JWT)return json(401,{code:'OWNER_REQUIRED'});
+        let content='';req.on('data',chunk=>{content+=chunk;});
+        req.on('end',()=>{
+          let input;try{input=JSON.parse(content);}catch{return json(400,{code:'INVALID_ACTION'});}
+          if(!['status','stop'].includes(input.action)||Object.keys(input).length!==1)return json(400,{code:'INVALID_ACTION'});
+          const action=input.action;repairRequests[action]++;
+          const value={code:action==='stop'?'DURABLE_STOP_CONFIRMED':'CONTROL_STATUS',mode:'OWNER_STOP_ONLY',
+            stopped:action==='stop',generation:action==='stop'?3:2,activeCandidates:action==='stop'?0:1,
+            authorization:{codeWrites:false,modelCalls:false,merge:false,productionRelease:false}};
+          if(action==='status'&&repairRequests.status===1)return json(503,{code:'CONTROL_PAUSED'});
+          if(action==='status'&&repairRequests.status===2)value.authorization.merge=true;
+          if((action==='status'&&repairRequests.status===3)||(action==='stop'&&repairRequests.stop===3)){setTimeout(()=>json(200,value),500);return;}
+          return json(200,value);
+        });return;
       }
       if(route==="/auth/v1/token" && req.method==="POST" &&
         parsed.searchParams.get("grant_type")==="password"){
@@ -302,6 +319,34 @@ async function main(){
     await wait(()=>devtools.evaluate("!!document.querySelector('input[aria-label=\"Admin master key\"]')"),'admin key input');
     await adminInput('input[aria-label="Admin master key"]',ADMIN_FIXTURE_KEY);await adminClick('Unlock AI workspace');
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Assistant pilot')"),'admin workspace unlocked');
+    await adminClick('Stop repairs');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Sign in with the registered owner account')"),'signed-out repair control denial');
+    assert.deepEqual(repairRequests,{status:0,stop:0},'No repair API call without a bearer session');
+    await loadDocument(origin+'/auth');
+    await wait(()=>devtools.evaluate("!!document.querySelector('button[type=submit]')&&!document.querySelector('button[type=submit]').disabled"),'owner fixture sign-in ready');
+    await submit(EMAIL,PASSWORD);await wait(()=>approved===3,'owner fixture sign-in');
+    await wait(()=>devtools.evaluate("location.pathname==='/trader/me'"),'owner fixture navigation');
+    await loadDocument(origin+'/admin/ai');
+    await wait(()=>devtools.evaluate("!!document.querySelector('input[aria-label=\"Admin master key\"]')"),'owner controls admin input');
+    await adminInput('input[aria-label="Admin master key"]',ADMIN_FIXTURE_KEY);await adminClick('Unlock AI workspace');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Repair controls')"),'owner control panel');
+    await adminClick('Check repair status');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('A stop has not been confirmed')"),'paused controls not advertised as stopped');
+    await adminClick('Stop repairs');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Stop confirmed by the server.')"),'durable stop acknowledgement');
+    await adminClick('Check repair status');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('A stop has not been confirmed')"),'forged repair authority rejected');
+    await adminClick('Check repair status');await wait(()=>repairRequests.status===3,'delayed status request');
+    await adminClick('Stop repairs');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Stop confirmed by the server.')"),'stop interrupts pending status');
+    await sleep(650);
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('Repairs are stopped.')"),true,'Late stale status cannot overwrite a confirmed stop');
+    await adminClick('Stop repairs');await wait(()=>repairRequests.stop===3,'pending owner stop');await adminClick('Lock');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Private admin access')"),'owner stop workspace locked');await sleep(650);
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('Stop confirmed by the server.')"),false,'Late stop cannot revive locked workspace');
+    await adminInput('input[aria-label="Admin master key"]',ADMIN_FIXTURE_KEY);await adminClick('Unlock AI workspace');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Assistant pilot')"),'admin workspace reopened for chat');
+    console.log('ISOLATED_REPAIR_OWNER_BROWSER_PASS: signed-out denial, paused/unverified status, explicit durable stop, forged authority rejection, stop interrupts pending status and late-response lock isolation. Fixture only.');
     await openChat();await askChat();
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Chat is unavailable, paused')"),'paused chat is visible');
     await askChat();await wait(()=>devtools.evaluate("document.body.textContent.includes('Unverified suggestion')"),'unverified reply rendered');

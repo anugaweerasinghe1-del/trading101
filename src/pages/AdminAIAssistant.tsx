@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { summarizeReleaseEvidence, type ReleaseCheck, type ReleaseRun } from "@/lib/aiReleaseEvidence";
 import { supabase } from "@/integrations/supabase/client";
 import AdminChatPilot from "@/components/AdminChatPilot";
+import AdminRepairControls from "@/components/AdminRepairControls";
 import { Bot, CheckCircle2, Code2, ExternalLink, GitPullRequest, KeyRound, Lock, MessageSquare, ShieldCheck, Sparkles } from "lucide-react";
 
 type GithubIssue = { number: number; title: string; html_url: string; created_at: string; state: string; user?: { login: string }; pull_request?: unknown };
@@ -159,6 +160,7 @@ export default function AdminAIAssistant() {
           <p className="text-sm text-muted-foreground">The coding agent may edit at most two existing approved frontend files in each request. It cannot change admin credentials, database tables, server functions, GitHub workflows or package dependencies. Its separate test job has no Gemini secret or write access. All pull requests require your review and a deliberate merge before they can reach production. The AI cannot authorize itself; use GitHub to close/reject proposals without merging. AI-created PRs may not trigger a separate GitHub pull-request workflow when using GitHub's built-in token. Inspect the agent's independent verify job, then require full current-branch checks AND a successful Cloudflare Pages preview before any merge.</p>
           <div className="flex flex-wrap gap-4 text-sm"><Link to="/admin" className="text-primary hover:underline">Return to admin dashboard</Link><a href={gitRoot+"/pulls"} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Review all pull requests ↗</a></div>
         </section>
+        <AdminRepairControls adminKey={key} />
       </>}
     </div>
   </main>;
