@@ -29,13 +29,17 @@ export function upgradePractice(progress: PracticeProgress, bank: DailyBatch): P
   const next = { ...progress, exercise, bankId: bank.id };
   return canExtendPractice(progress, next) ? next : progress;
 }
-/** Keep a completed/longer attempt from another tab; bounded local history, no account sync. */
+/** Preserve the first recorded answers and case snapshot across tabs; no account sync. */
 export function savePractice(progress: PracticeProgress, storage?: Pick<Storage, 'getItem' | 'setItem'>) {
   try {
     const raw: unknown = JSON.parse((storage ?? globalThis.localStorage).getItem(KEY) ?? '[]');
     const rows = Array.isArray(raw) ? raw.filter(validProgress) : [];
     const old = rows.find(p => p.date === progress.date);
-    const next = old && !canExtendPractice(old, progress) && (old.bankId !== progress.bankId || old.answers.length > progress.answers.length) ? old : progress;
+    const conflicts = old && !canExtendPractice(old, progress) && (
+      old.bankId !== progress.bankId || JSON.stringify(old.exercise) !== JSON.stringify(progress.exercise)
+      || old.answers.some((answer, i) => progress.answers[i] !== answer)
+    );
+    const next = conflicts ? old : progress;
     (storage ?? globalThis.localStorage).setItem(KEY, JSON.stringify([next, ...rows.filter(p => p.date !== next.date)].slice(0, 60)));
     return { progress: next, saved: true };
   } catch { return { progress, saved: false }; }

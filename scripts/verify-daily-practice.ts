@@ -18,6 +18,14 @@ const memory = new Map<string, string>(), storage = { getItem: (k: string) => me
 let progress = newPractice(bank, '2026-10-09'); progress.answers = [1, 2, 0]; savePractice(progress, storage);
 assert.equal(savePractice({ ...progress, answers: [1] }, storage).progress.answers.length, 3);
 assert.equal(savePractice({ ...progress, bankId: 'another', exercise: bank.exercises[1] }, storage).progress.bankId, bank.id);
+// Two tabs can submit different answers before either receives the storage event.
+// The first recorded answer remains authoritative even if the stale tab is longer.
+assert.deepEqual(savePractice({ ...progress, answers: [0, 2, 0] }, storage).progress.answers, [1, 2, 0]);
+assert.deepEqual(savePractice({ ...progress, answers: [0, 2, 0, 1] }, storage).progress.answers, [1, 2, 0]);
+assert.deepEqual(savePractice({ ...progress, answers: [1, 2, 0, 1] }, storage).progress.answers, [1, 2, 0, 1]);
+const changedSnapshot = { ...progress.exercise, scenario: progress.exercise.scenario + ' A revised case.' };
+assert.deepEqual(savePractice({ ...progress, exercise: changedSnapshot, answers: [1, 2, 0, 1] }, storage).progress.exercise, progress.exercise);
+memory.clear(); savePractice(progress, storage);
 assert.equal(readPractice('2026-10-10', storage), null);
 assert.equal(readPractice('2026-10-09', { getItem: () => '{broken' }), null);
 assert.equal(savePractice(progress, { ...storage, setItem: () => { throw new Error('blocked'); } }).saved, false);
