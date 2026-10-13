@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { collectIncidentFeedback, FEEDBACK_PREFIX, FEEDBACK_TITLE, recommendForVerifiedFinding } from './agent-incident-feedback.mjs';
+import { collectIncidentFeedback, FEEDBACK_PREFIX, FEEDBACK_TITLE, FEEDBACK_HISTORY_LIMITS, recommendForVerifiedFinding } from './agent-incident-feedback.mjs';
+import { trainIncidentOutcomeModel, LEARNING_LIMITS } from './agent-incident-learning.mjs';
 import { createGithubEvidenceReader, EVIDENCE_REPOSITORY, EVIDENCE_REPOSITORY_ID } from './github-evidence-reader.mjs';
 
 const now=Date.parse('2026-10-13T10:00:00.000Z'), sha='a'.repeat(40), mainSha='b'.repeat(40);
@@ -8,13 +9,13 @@ const root='https://api.github.com/repos/'+EVIDENCE_REPOSITORY;
 const owner={id:297117529,login:'anugaweerasinghe1-del',type:'User'};
 const deny={codeWrites:false,modelCalls:false,ownerApproval:false,draftPrCreation:false,merge:false,productionRelease:false};
 function fixture(symptom='BLANK_ROOT') {
-  const repo={id:EVIDENCE_REPOSITORY_ID,full_name:EVIDENCE_REPOSITORY,private:false,owner};
+  const repo={id:EVIDENCE_REPOSITORY_ID,full_name:EVIDENCE_REPOSITORY,private:false,owner:structuredClone(owner)};
   const finding={candidateId:'repair-v1-'+'c'.repeat(24),path:'/',symptom,evidenceDigest:'d'.repeat(64),status:'OWNER_INVESTIGATION_REQUIRED'};
   const body={schema:'tradehq-operational-investigation-handoff-v1',monitorRunId:10,monitorSha:sha,targetSha:sha,
     status:'OWNER_INVESTIGATION_REQUIRED',cases:[finding],ownerReviewRequired:true,draftPrCreated:false,authorization:deny};
   const record={...body,sha256:createHash('sha256').update(JSON.stringify(body)).digest('hex')};
   const run={id:20,workflow_id:381133473,path:'.github/workflows/tradehq-verified-evidence.yml',event:'workflow_run',
-    repository:repo,head_repository:repo,head_branch:'main',head_sha:sha,run_attempt:1,status:'completed',conclusion:'failure',
+    repository:structuredClone(repo),head_repository:structuredClone(repo),head_branch:'main',head_sha:sha,run_attempt:1,status:'completed',conclusion:'failure',
     run_started_at:'2026-10-12T09:00:00Z',updated_at:'2026-10-12T09:02:00Z'};
   const job={id:30,name:'collect',run_id:20,head_sha:sha,status:'completed',conclusion:'failure',
     started_at:'2026-10-12T09:00:00Z',completed_at:'2026-10-12T09:01:00Z',
@@ -115,5 +116,50 @@ for(const [i,mutate] of rejectionCases.entries()) {const f=fixture(); mutate(f);
 const dynamic=recommendForVerifiedFinding({runId:99,sha:mainSha,symptom:'BLANK_ROOT',path:'/courses/slug'},{version:1,records:[]},now);
 assert.equal(dynamic.status,'ABSTAIN_ROUTE_OUTSIDE_MEMORY_SCHEMA');
 assert.deepEqual(dynamic.recommendations,[]);
+// Integration capacity: authenticating complete native histories must admit
+// enough distinct monitor runs to reach the trainer's unchanged minimum.
+assert.ok(FEEDBACK_HISTORY_LIMITS.runs>=LEARNING_LIMITS.minimumRuns);
+for (const maxRequests of [0,-1,97,NaN,Infinity]) assert.throws(()=>createGithubEvidenceReader({maxRequests}));
+const seed=fixture(),historyRuns=new Map(),historyJobs=new Map(),nativeComments=[];
+for(let i=0;i<LEARNING_LIMITS.minimumRuns;i++) {
+  const run=structuredClone(seed.run),job=structuredClone(seed.job),record=structuredClone(seed.record);
+  run.id=20+i;job.id=30+i;job.run_id=run.id;record.monitorRunId=10+i;
+  const {sha256,...body}=record;
+  record.sha256=createHash('sha256').update(JSON.stringify(body)).digest('hex');
+  const logs='2026-10-12T09:00:30.000Z TRADEHQ_READONLY_INCIDENT_HANDOFF_V1 '+JSON.stringify(record);
+  historyRuns.set(run.id,{run,job,logs});historyJobs.set(job.id,logs);
+  for (const [j,action] of ['INSPECT_BROWSER_RENDER_EVIDENCE','INSPECT_PUBLIC_ASSET_EVIDENCE'].entries()) {
+    const at=new Date(Date.parse('2026-10-12T09:03:00.000Z')+i*3600_000).toISOString();
+    nativeComments.push({...seed.comments[0],id:40+i*2+j,created_at:at,updated_at:at,
+      body:FEEDBACK_PREFIX+JSON.stringify({...seed.feedback,evidenceRunId:run.id,jobId:job.id,
+        monitorRunId:record.monitorRunId,action,outcome:j?'reported_success':'reported_failed'})});
+  }
+}
+const capacityReader=createGithubEvidenceReader({token:'PRIVATE_TOKEN_SENTINEL',now:()=>now,
+  maxRequests:FEEDBACK_HISTORY_LIMITS.requests,fetchImpl:async(url,request)=>{
+    assert.equal(request.method,'GET');assert.equal(request.redirect,'manual');assert.ok(url.startsWith(root));
+    const path=new URL(url).pathname.slice(new URL(root).pathname.length);
+    let data;
+    if(path==='')data=seed.repo;
+    else if(path==='/branches/main')data=seed.main;
+    else if(path==='/issues')data=[seed.issue];
+    else if(path==='/issues/60')data=seed.issue;
+    else if(path==='/issues/60/comments')data=nativeComments;
+    else if(path.startsWith('/compare/'))data={status:'ahead',base_commit:{sha},merge_base_commit:{sha}};
+    else if(/^\/actions\/runs\/\d+$/.test(path))data=historyRuns.get(Number(path.split('/').at(-1)))?.run;
+    else if(/^\/actions\/runs\/\d+\/attempts\/1\/jobs$/.test(path))data={total_count:1,jobs:[historyRuns.get(Number(path.split('/')[3]))?.job]};
+    else if(/^\/actions\/jobs\/\d+\/logs$/.test(path))return new Response(historyJobs.get(Number(path.split('/')[3])));
+    else throw Error('Unexpected capacity fixture request');
+    return new Response(JSON.stringify(data));
+  }});
+const collected=await collectIncidentFeedback({mainSha,reader:capacityReader,now});
+const learned=trainIncidentOutcomeModel({memoryJson:JSON.stringify(collected.memory),now:new Date(now).toISOString()});
+assert.equal(learned.status,'SHADOW_MODEL_TRAINED','Real reader limits must allow the minimum training dataset');
+assert.equal(learned.distinctRuns,10);
+assert.ok(capacityReader.requestCount()>50 && capacityReader.requestCount()<=FEEDBACK_HISTORY_LIMITS.requests);
+assert.equal(learned.confirmedRepairOutcomes,0);
+assert.ok(Object.values(learned.authorization).every(v=>v===false));
+console.log(JSON.stringify({dataset:'SYNTHETIC_AUTHENTICATED_HISTORY_TO_TRAINER',nativeRuns:10,
+  readRequests:capacityReader.requestCount(),trainingStatus:learned.status,productionAccuracyEstablished:false}));
 console.log(JSON.stringify({dataset:'ISOLATED_SYNTHETIC_GITHUB_REPLAYS',scenarios:4,repeatedFailedRecommendations:repeats,adversarialCases:rejectionCases.length,confirmedRepairOutcomes:0,modelCalls:0,productionWrites:0}));
 console.log('Authenticated history, owner-reported feedback, immutable bindings, replay suppression and no-authority boundaries passed.');

@@ -39,8 +39,12 @@ category and route for thirty days and applies a twenty-four-hour attempt
 cooldown. A report of success receives no ranking boost. Unsupported symptoms
 and dynamic routes abstain. All suppressed choices produce abstention.
 
-The journal is bounded to 100 comments, 100 records, 64 KiB of memory and six
-referenced evidence runs. Exceeding bounds fails explicitly; it does not silently
+The journal is bounded to 100 comments, 100 records, 64 KiB of memory and twelve
+referenced evidence runs, with a dedicated maximum of 96 read requests. The
+collector's default remains 50 requests; history retains the same two-minute
+deadline, response limits and complete re-reads. This lets the trainer reach its
+ten-distinct-run minimum without lowering that minimum. Exceeding bounds fails
+explicitly; it does not silently
 drop negative feedback. Native comment and run timestamps control retention.
 Full bounded pagination and re-reads detect report edits, reruns and branch
 movement during collection. Historical job logs must remain available; repository

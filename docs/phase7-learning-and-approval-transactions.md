@@ -36,6 +36,15 @@ unsupported context, single-class/no-benefit abstention and rejection of importe
 model objects. This demonstrates training mechanics, **not production accuracy**.
 No representative independently verified repair-outcome dataset exists yet.
 
+A final integration review caught a collector/trainer capacity mismatch before
+release: the reader's six-run cap could never reach the trainer's ten-run minimum.
+History now admits at most twelve referenced runs and 96 read requests; the base
+evidence reader retains its fifty-request default and all existing time/response
+bounds. A new end-to-end native-API transport fixture authenticates ten histories,
+performs complete re-reads in 67 requests and successfully trains the shadow model.
+Training thresholds were not lowered. The fixture also isolates repository/owner
+objects between adversarial cases so earlier mutations cannot mask later checks.
+
 ## Atomic approval adapter
 
 `createRepairApprovalTransaction` implements the existing server approval

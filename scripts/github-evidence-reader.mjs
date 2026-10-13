@@ -24,11 +24,12 @@ async function boundedText(response, limit) {
   return Buffer.concat(chunks).toString("utf8");
 }
 
-export function createGithubEvidenceReader({ fetchImpl = fetch, token = process.env.GITHUB_TOKEN, now = Date.now } = {}) {
+export function createGithubEvidenceReader({ fetchImpl = fetch, token = process.env.GITHUB_TOKEN, now = Date.now, maxRequests = 50 } = {}) {
+  assert.ok(Number.isSafeInteger(maxRequests) && maxRequests >= 1 && maxRequests <= 96, "Invalid bounded evidence request budget.");
   let requests = 0;
   const deadline = now() + 120_000;
   async function request(url, authenticated = true) {
-    assert.ok(++requests <= 50 && now() <= deadline, "Evidence request/time budget exhausted.");
+    assert.ok(++requests <= maxRequests && now() <= deadline, "Evidence request/time budget exhausted.");
     const headers = { Accept: "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28" };
     if (authenticated && token) headers.Authorization = "Bearer " + token;
     // Credentials never follow redirects or appear in URLs, errors or packets.

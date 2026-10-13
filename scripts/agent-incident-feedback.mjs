@@ -9,6 +9,7 @@ import { parseIncidentMemory, recommendIncidentInvestigation } from './agent-inc
 
 export const FEEDBACK_TITLE = '[TradeHQ Agent] Investigation feedback';
 export const FEEDBACK_PREFIX = 'TRADEHQ_INVESTIGATION_FEEDBACK_V1 ';
+export const FEEDBACK_HISTORY_LIMITS = Object.freeze({ runs: 12, requests: 96 });
 const HANDOFF_PREFIX = 'TRADEHQ_READONLY_INCIDENT_HANDOFF_V1 ';
 const DAY = 86_400_000;
 const ID = value => Number.isSafeInteger(value) && value > 0;
@@ -97,7 +98,7 @@ function handoffFromLogs(logs, job) {
   return record;
 }
 
-export async function collectIncidentFeedback({mainSha, reader=createGithubEvidenceReader(), now=Date.now()}) {
+export async function collectIncidentFeedback({mainSha, reader=createGithubEvidenceReader({maxRequests:FEEDBACK_HISTORY_LIMITS.requests}), now=Date.now()}) {
   assert.ok(SHA(mainSha) && Number.isFinite(now) && now >= 0, 'Invalid history coordinates');
   const repo=await reader.get('');
   assert.ok(repo.id === EVIDENCE_REPOSITORY_ID && repo.full_name === EVIDENCE_REPOSITORY && repo.private === false
@@ -114,7 +115,7 @@ export async function collectIncidentFeedback({mainSha, reader=createGithubEvide
   const comments=await reader.list('/issues/'+issue.number+'/comments',null);
   assert.ok(comments.length <= 100, 'Feedback journal exceeds retention bounds');
   const entries=comments.map(c=>feedback(c,repo.owner,now)).filter(Boolean);
-  assert.ok(new Set(entries.map(x=>x.evidenceRunId)).size <= 6, 'History verification exceeds bounded run budget');
+  assert.ok(new Set(entries.map(x=>x.evidenceRunId)).size <= FEEDBACK_HISTORY_LIMITS.runs, 'History verification exceeds bounded run budget');
   const histories=new Map(), sources=[], records=[], reread=[];
   for (const entry of entries) {
     if (!histories.has(entry.evidenceRunId)) {
