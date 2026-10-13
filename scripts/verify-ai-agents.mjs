@@ -104,3 +104,6 @@ console.log(gateTest.stdout.trim());
 const memoryTest = spawnSync(process.execPath, ['scripts/verify-incident-memory.mjs'], { encoding: 'utf8' });
 assert.equal(memoryTest.status, 0, 'Offline incident-memory regression: '+memoryTest.stdout+memoryTest.stderr);
 console.log(memoryTest.stdout.trim());
+const adminChatTest = spawnSync(process.execPath, ['--import', 'tsx', 'scripts/verify-admin-agent-chat.ts'], { encoding: 'utf8' });
+assert.equal(adminChatTest.status, 0, 'Admin chat pilot regression: '+adminChatTest.stdout+adminChatTest.stderr);
+console.log(adminChatTest.stdout.trim());

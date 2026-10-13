@@ -27,6 +27,11 @@ verify_jwt = false
 # Owner master key and server rate limiting are checked before any database access.
 verify_jwt = false
 
+[functions.admin-agent-chat]
+# Same custom owner-master-key authentication as existing admin endpoints.
+# Publishable client keys are not JWTs; handler authentication is mandatory.
+verify_jwt = false
+
 [functions.generate-course-draft]
 # Expiring, single-use scheduler token; claim RPC is service-role-only.
 verify_jwt = false

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { summarizeReleaseEvidence, type ReleaseCheck, type ReleaseRun } from "@/lib/aiReleaseEvidence";
 import { supabase } from "@/integrations/supabase/client";
+import AdminChatPilot from "@/components/AdminChatPilot";
 import { Bot, CheckCircle2, Code2, ExternalLink, GitPullRequest, KeyRound, Lock, MessageSquare, ShieldCheck, Sparkles } from "lucide-react";
 
 type GithubIssue = { number: number; title: string; html_url: string; created_at: string; state: string; user?: { login: string }; pull_request?: unknown };
@@ -25,7 +26,7 @@ export default function AdminAIAssistant() {
   const [checks, setChecks] = useState<Record<number, PrChecks>>({});
   const [githubError, setGithubError] = useState("");
   const [githubCheckedAt, setGithubCheckedAt] = useState<Date | null>(null);
-  const [tab, setTab] = useState<"requests" | "ideas">("requests");
+  const [tab, setTab] = useState<"requests" | "ideas" | "chat">("requests");
   const verify = async (event: React.FormEvent) => {
     event.preventDefault(); setChecking(true); setError("");
     try {
@@ -108,13 +109,14 @@ export default function AdminAIAssistant() {
         <button disabled={checking} className="rounded-xl bg-primary text-primary-foreground px-4 py-3 text-sm w-full disabled:opacity-50">{checking ? "Checking…" : "Unlock AI workspace"}</button>
       </form> : <>
         <div className="flex flex-wrap gap-2">
+          <button type="button" className={"rounded-xl border px-4 py-2 text-sm "+(tab==="chat"?"border-primary/50 bg-primary/10":"border-border")} onClick={() => setTab("chat")}><MessageSquare className="w-4 h-4 inline mr-2"/>Assistant pilot</button>
           <button type="button" className={"rounded-xl border px-4 py-2 text-sm "+(tab==="requests"?"border-primary/50 bg-primary/10":"border-border")} onClick={() => setTab("requests")}><Code2 className="w-4 h-4 inline mr-2"/>AI code requests</button>
           <button type="button" className={"rounded-xl border px-4 py-2 text-sm "+(tab==="ideas"?"border-primary/50 bg-primary/10":"border-border")} onClick={() => setTab("ideas")}><Sparkles className="w-4 h-4 inline mr-2"/>Monthly ideas</button>
           <button type="button" className="ml-auto px-3 py-2 text-sm text-primary hover:underline" onClick={() => void refresh()}>Refresh activity</button>
         </div>
         {githubError && <p role="status" className="rounded-xl border border-amber-500/30 p-3 text-sm text-amber-400">{githubError} These records may be stale or incomplete.</p>}
         {githubCheckedAt && <p className="text-xs text-muted-foreground">GitHub data checked {githubCheckedAt.toLocaleString()}. Changes and approvals occur directly on GitHub.</p>}
-        {tab==="requests" ? <>
+        {tab==="chat" ? <AdminChatPilot adminKey={key} onDraft={draft => { setPrompt(draft); setTab("requests"); }} /> : tab==="requests" ? <>
           <section className={borderCard+" space-y-4"}>
             <div className="flex items-center gap-3"><Bot className="w-6 h-6 text-primary"/><h2 className="text-xl font-semibold">Tell Gemini what to improve</h2></div>
             <p className="text-sm text-muted-foreground">Describe a specific frontend change. The next step opens a prefilled GitHub issue for you to submit. The AI then proposes a code change on a separate branch and runs isolated checks. Nothing merges automatically.</p>
