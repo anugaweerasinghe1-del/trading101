@@ -23,6 +23,18 @@ INSERT INTO tradehq_repair_control.registered_owner(id,owner_id)
 ALTER TABLE tradehq_repair_control.registered_owner ENABLE ROW LEVEL SECURITY;
 REVOKE ALL ON tradehq_repair_control.registered_owner FROM PUBLIC,anon,authenticated,service_role;
 
+-- Internal server configuration read only; never returned to the browser.
+CREATE FUNCTION public.tradehq_repair_registered_owner() RETURNS uuid
+LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
+DECLARE v_owner uuid;
+BEGIN
+ SELECT r.owner_id INTO v_owner FROM tradehq_repair_control.registered_owner r
+  JOIN auth.users u ON u.id=r.owner_id WHERE r.id
+  AND u.email_confirmed_at IS NOT NULL AND u.is_anonymous IS NOT TRUE;
+ IF v_owner IS NULL THEN RAISE EXCEPTION 'Registered owner unavailable'; END IF;
+ RETURN v_owner;
+END $$;
+
 CREATE FUNCTION public.tradehq_repair_owner_status(p_owner uuid) RETURNS jsonb
 LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$
 DECLARE v_state jsonb;
@@ -55,3 +67,5 @@ REVOKE ALL ON FUNCTION public.tradehq_repair_owner_status(uuid) FROM PUBLIC,anon
 REVOKE ALL ON FUNCTION public.tradehq_repair_owner_stop(uuid) FROM PUBLIC,anon,authenticated;
 GRANT EXECUTE ON FUNCTION public.tradehq_repair_owner_status(uuid) TO service_role;
 GRANT EXECUTE ON FUNCTION public.tradehq_repair_owner_stop(uuid) TO service_role;
+REVOKE ALL ON FUNCTION public.tradehq_repair_registered_owner() FROM PUBLIC,anon,authenticated;
+GRANT EXECUTE ON FUNCTION public.tradehq_repair_registered_owner() TO service_role;

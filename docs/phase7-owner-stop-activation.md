@@ -3,10 +3,11 @@
 This release prepares a real Supabase Edge endpoint and admin desk stop/status UI.
 It does not install SQL, configure a production owner, deploy an Edge Function or
 start a repair worker. The endpoint denies operations unless its explicit
-`owner-stop-only-v1` mode and independently registered owner UUID are configured.
+`owner-stop-only-v1` code mode and independently registered database owner UUID
+are available. A missing approved installation/registration denies operation.
 
 The owner's selected account was found in the existing production project's
-Auth records with its email confirmed. Its UUID is private configuration, never
+Auth records with its email confirmed. Its UUID is private database configuration, never
 in this repository or a browser permission flag. Every endpoint request verifies
 the bearer session through `supabase.auth.getUser(token)` and separately checks
 the existing administrator master key. Anonymous, unconfirmed, different-owner,
@@ -44,8 +45,9 @@ account; transferring/deleting the binding requires a separately reviewed change
 The policy starts stopped at generation zero with no claims or approvals.
 
 All private tables/functions remain denied to PUBLIC, anon, authenticated and
-service_role. RLS stays enabled. Only two new public SECURITY DEFINER functions
-are callable by the existing service_role: owner status and owner stop. Both use
+service_role. RLS stays enabled. Only three new public SECURITY DEFINER functions
+are callable by the existing service_role: an internal owner configuration read,
+owner status and owner stop. All use
 an empty search path, fully qualified objects and the independently registered
 UUID. The runtime supplies the verified UUID internally, never a client-selected
 identity. The trusted server service credential can invoke these functions; its
@@ -57,8 +59,9 @@ does not increment generation or clear consumed attempts/quota history.
 
 The separate owner approval must identify this tested code head, the generated
 SQL artifact for the selected verified account, the existing Supabase project
-`cbdktpjgczhthflspqjb`, deployment of `repair-owner-control`, and configuration of
-`TRADEHQ_REPAIR_OWNER_ID` plus `TRADEHQ_REPAIR_CONTROL_MODE=owner-stop-only-v1`.
+`cbdktpjgczhthflspqjb`, and deployment of `repair-owner-control` in stop-only mode.
+The server reads its owner UUID from the private installed binding after validating
+the master key. No additional environment secret/configuration step is needed.
 It must explicitly exclude starting a worker, production repair claims, new
 credentials, model calls and autonomous merge/deploy. The existing admin key and
 server service key are reused through secure server configuration, never read or

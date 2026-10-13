@@ -3,7 +3,7 @@ type Principal = { id?: string; aud?: string; is_anonymous?: boolean; email_conf
 type ControlState = { stopped: boolean; generation: number; activeCandidates: number };
 type Options = {
   getMode: () => string | undefined;
-  getOwnerId: () => string | undefined;
+  getOwnerId: () => string | undefined | Promise<string | undefined>;
   getAdminKey: () => string | undefined;
   getUser: (token: string) => Promise<{ data?: { user?: Principal | null }; error?: unknown }>;
   status: (ownerId: string) => Promise<unknown>;
@@ -57,10 +57,11 @@ export function createRepairOwnerControl(options: Options) {
     if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers });
     if (req.method !== 'POST') return response({ code: 'METHOD' }, 405);
     try {
-      const ownerId = options.getOwnerId();
-      if (options.getMode() !== 'owner-stop-only-v1' || !uuid.test(ownerId ?? '') || !options.getAdminKey()) return response({ code: 'CONTROL_PAUSED' }, 503);
+      if (options.getMode() !== 'owner-stop-only-v1' || !options.getAdminKey()) return response({ code: 'CONTROL_PAUSED' }, 503);
       // Invalid master keys never reach Supabase Auth or the database.
       if (!equalKey(options.getAdminKey(), req.headers.get('x-admin-key'))) return response({ code: 'OWNER_REQUIRED' }, 401);
+      const ownerId = await options.getOwnerId();
+      if (!uuid.test(ownerId ?? '')) return response({ code: 'CONTROL_PAUSED' }, 503);
       const bearer = req.headers.get('authorization');
       if (!bearer?.startsWith('Bearer ') || bearer.length < 23 || bearer.length > 8200) return response({ code: 'OWNER_REQUIRED' }, 401);
       let action: 'status' | 'stop';

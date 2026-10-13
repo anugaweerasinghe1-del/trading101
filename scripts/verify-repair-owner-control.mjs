@@ -56,5 +56,9 @@ const uncertain=fixture({stop:async()=>{throw Error('private-sentinel');}});cons
 assert.equal(lost.status,503);assert.ok(!(await lost.text()).includes('private-sentinel'));
 const source=readFileSync('supabase/functions/repair-owner-control/index.ts','utf8');
 assert.match(source,/server\.auth\.getUser\(token\)/);assert.doesNotMatch(source,/getSession|\.from\(|console\.|getClaims/);
-assert.match(source,/tradehq_repair_owner_stop/);assert.match(source,/TRADEHQ_REPAIR_OWNER_ID/);
+assert.match(source,/tradehq_repair_owner_stop/);assert.match(source,/server\.rpc\('tradehq_repair_registered_owner'\)/);
+const missingRegistration=fixture({getOwnerId:async()=>{throw Error('private-sentinel');}});
+assert.equal((await missingRegistration.handler(req('stop'))).status,503);assert.equal(missingRegistration.calls.stop,0);
+const guardedRegistry=fixture({getOwnerId:async()=>{throw Error('Registry must not be queried with wrong key');}});
+assert.equal((await guardedRegistry.handler(req('stop',{},'wrong'))).status,401);
 console.log('OWNER_CONTROL_HTTP_PASS: server owner/session + independent admin key, exact stop/status actions, default pause, uncertain stop denial, bounded body, private output and emergency stop during status-budget outage. Isolated credentials, no production requests.');

@@ -13,8 +13,14 @@ async function control(functionName: 'tradehq_repair_owner_status' | 'tradehq_re
   return data;
 }
 Deno.serve(createRepairOwnerControl({
-  getMode: () => Deno.env.get('TRADEHQ_REPAIR_CONTROL_MODE'),
-  getOwnerId: () => Deno.env.get('TRADEHQ_REPAIR_OWNER_ID'),
+  // Explicit owner-stop-only code mode. Missing approved SQL/owner binding denies
+  // operation; no additional secret or browser-selected UUID can enable it.
+  getMode: () => 'owner-stop-only-v1',
+  getOwnerId: async () => {
+    const { data, error } = await server.rpc('tradehq_repair_registered_owner');
+    if (error || typeof data !== 'string') throw Error('CONTROL_REGISTRATION');
+    return data;
+  },
   getAdminKey: () => Deno.env.get('ADMIN_MASTER_KEY'),
   getUser: token => server.auth.getUser(token),
   status: ownerId => control('tradehq_repair_owner_status', ownerId),

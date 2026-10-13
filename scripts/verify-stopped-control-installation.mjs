@@ -28,7 +28,11 @@ await assert.rejects(()=>status('service_role',other),/Registered owner required
 for(const role of ['anon','authenticated']) {
   await assert.rejects(()=>status(role),/permission denied/);
   await db.exec('SET ROLE '+role);await assert.rejects(db.query('SELECT public.tradehq_repair_owner_stop($1::uuid)',[owner]),/permission denied/);await db.exec('RESET ROLE');
+  await db.exec('SET ROLE '+role);await assert.rejects(db.query('SELECT public.tradehq_repair_registered_owner()'),/permission denied/);await db.exec('RESET ROLE');
 }
+await db.exec('SET ROLE service_role');
+assert.equal((await db.query('SELECT public.tradehq_repair_registered_owner() AS id')).rows[0].id,owner);
+await db.exec('RESET ROLE');
 for(const role of ['anon','authenticated','service_role']) {
   await db.exec('SET ROLE '+role);
   await assert.rejects(db.query('SELECT * FROM tradehq_repair_control.registered_owner'),/permission denied/);
