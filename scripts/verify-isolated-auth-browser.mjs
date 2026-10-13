@@ -281,6 +281,9 @@ async function main(){
     };
     const stored=()=>devtools.evaluate("JSON.parse(localStorage.getItem('tradehq:deeper-practice:v1')||'[]')[0]");
     await dailyClick("Start case study");
+    // Represent another tab's committed first answer before its storage event
+    // reaches this tab. This tab's rendered state still has no answers.
+    await devtools.evaluate("(()=>{const bank="+JSON.stringify(fixtureBank)+";const now=new Date();const date=now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0');const n=Math.floor((Date.parse(date)-Date.parse(bank.effectiveFrom))/86400000);const exercise=bank.exercises[((n%bank.exercises.length)+bank.exercises.length)%bank.exercises.length];localStorage.setItem('tradehq:deeper-practice:v1',JSON.stringify([{date,bankId:bank.id,exercise,answers:[1],reflection:''}]));return true;})()");
     for(let i=0;i<10;i++){
       await wait(()=>devtools.evaluate("document.querySelector('#case-study-content fieldset legend') && document.querySelector('#case-study-content').textContent.includes('Question "+(i+1)+" of 10')"),"Daily question "+(i+1));
       await devtools.evaluate("document.querySelector('#case-study-content input[type=radio]').click()");
@@ -289,6 +292,7 @@ async function main(){
       await wait(async()=>((await stored())?.answers.length===i+1),"persisted Daily answer "+(i+1));
       if(i===0){
         const before=await stored();
+        assert.deepEqual(before.answers,[1],"Stale rendered tab must not replace another tab's original answer with its own zero pick");
         await loadDocument();
         await dailyBankReady();
         await wait(()=>devtools.evaluate("[...document.querySelectorAll('#deeper-practice button')].some(e=>e.textContent.includes('Continue case study'))"),"saved Daily resume control");
@@ -297,7 +301,7 @@ async function main(){
       }else if(i<9){await dailyClick("Next question");}
     }
     await wait(()=>devtools.evaluate("document.querySelector('#deeper-practice').textContent.includes('Case complete')"),"completed case score");
-    const complete=await stored();assert.equal(complete.answers.length,10);assert.ok(complete.answers.every(a=>a===0));
+    const complete=await stored();assert.equal(complete.answers.length,10);assert.equal(complete.answers[0],1);assert.ok(complete.answers.slice(1).every(a=>a===0));
     const streakKey=await devtools.evaluate("Object.keys(localStorage).find(k=>{try{const v=JSON.parse(localStorage.getItem(k));return v && v.totalCompleted===1 && Array.isArray(v.history)}catch{return false}})");
     assert.ok(streakKey,"Daily completion must persist one streak entry");
     await loadDocument();
