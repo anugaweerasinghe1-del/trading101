@@ -31,7 +31,7 @@ assert.equal((await wrong.handler(req('stop',{},key,'tiny'))).status,401);
 for(const user of [{id:other,aud:'authenticated',email_confirmed_at:'yes'},
   {id:owner,aud:'anon',email_confirmed_at:'yes'},{id:owner,aud:'authenticated',is_anonymous:true,email_confirmed_at:'yes'},
   {id:owner,aud:'authenticated'},null]) {
-  const f=fixture({getUser:async()=>({data:{user}})});assert.equal((await f.handler(req('stop'))).status,401);assert.equal(f.calls.stop,0);
+  const f=fixture({getUser:async()=>({data:{user}})});assert.equal((await f.handler(req('stop'))).status,user?403:401);assert.equal(f.calls.stop,0);
 }
 const invalidAuth=fixture({getUser:async()=>({data:{user:{id:owner,aud:'authenticated',email_confirmed_at:'yes'}},error:Error('private-sentinel')})});
 assert.equal((await invalidAuth.handler(req('stop'))).status,401);assert.equal(invalidAuth.calls.stop,0);
@@ -55,10 +55,29 @@ for(const state of [null,{stopped:true,generation:1},{stopped:false,generation:2
 const uncertain=fixture({stop:async()=>{throw Error('private-sentinel');}});const lost=await uncertain.handler(req('stop'));
 assert.equal(lost.status,503);assert.ok(!(await lost.text()).includes('private-sentinel'));
 const source=readFileSync('supabase/functions/repair-owner-control/index.ts','utf8');
-assert.match(source,/server\.auth\.getUser\(token\)/);assert.doesNotMatch(source,/getSession|\.from\(|console\.|getClaims/);
+assert.match(source,/server\.auth\.getUser\(token\)/);assert.doesNotMatch(source,/getSession|\.from\(|getClaims/);
 assert.match(source,/tradehq_repair_owner_stop/);assert.match(source,/server\.rpc\('tradehq_repair_registered_owner'\)/);
 const missingRegistration=fixture({getOwnerId:async()=>{throw Error('private-sentinel');}});
 assert.equal((await missingRegistration.handler(req('stop'))).status,503);assert.equal(missingRegistration.calls.stop,0);
 const guardedRegistry=fixture({getOwnerId:async()=>{throw Error('Registry must not be queried with wrong key');}});
 assert.equal((await guardedRegistry.handler(req('stop',{},'wrong'))).status,401);
+// The existing endpoints support the actual configured key without a 24-char
+// minimum. A new owner boundary must retain that contract plus verified Auth.
+const existingKey='legacy-admin-key';
+const compatible=fixture({getAdminKey:()=>existingKey});
+assert.equal((await compatible.handler(req('stop',{},existingKey))).status,200);
+assert.equal(compatible.calls.auth,1);assert.equal(compatible.calls.stop,1);
+const wrongExisting=fixture({getAdminKey:()=>existingKey});
+const deniedExisting=await wrongExisting.handler(req('stop',{},'wrong-existing-key'));
+assert.equal(deniedExisting.status,401);assert.equal((await deniedExisting.json()).code,'ADMIN_KEY_REQUIRED');assert.equal(wrongExisting.calls.auth,0);
+const wrongPrincipal=fixture({getAdminKey:()=>existingKey,getUser:async()=>({data:{user:{id:other,aud:'authenticated',email_confirmed_at:'yes'}}})});
+const deniedPrincipal=await wrongPrincipal.handler(req('stop',{},existingKey));
+assert.equal(deniedPrincipal.status,403);assert.equal((await deniedPrincipal.json()).code,'OWNER_ACCOUNT_REQUIRED');assert.equal(wrongPrincipal.calls.stop,0);
+const notices=[];
+const observed=fixture({reportDenial:(code,status)=>notices.push({code,status})});
+assert.equal((await observed.handler(req('stop',{},'wrong'))).status,401);
+assert.deepEqual(notices,[{code:'ADMIN_KEY_REQUIRED',status:401}]);
+assert.ok(!JSON.stringify(notices).includes(key) && !JSON.stringify(notices).includes(token) && !JSON.stringify(notices).includes(owner));
+const loggerFault=fixture({reportDenial:()=>{throw Error('private-sentinel');}});
+assert.equal((await loggerFault.handler(req('stop',{},'wrong'))).status,401);
 console.log('OWNER_CONTROL_HTTP_PASS: server owner/session + independent admin key, exact stop/status actions, default pause, uncertain stop denial, bounded body, private output and emergency stop during status-budget outage. Isolated credentials, no production requests.');

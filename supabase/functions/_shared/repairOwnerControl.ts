@@ -9,11 +9,14 @@ type Options = {
   status: (ownerId: string) => Promise<unknown>;
   stop: (ownerId: string) => Promise<unknown>;
   allowStatus: (ownerId: string) => Promise<boolean>;
+  reportDenial?: (code: string, status: number) => void;
 };
 const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const authorization = Object.freeze({ codeWrites: false, modelCalls: false, merge: false, productionRelease: false });
 function equalKey(a: string | undefined, b: string | null) {
-  if (!a || !b || a.length < 24 || a.length > 4096 || a.length !== b.length) return false;
+  // Match the existing administrator authentication contract; this endpoint
+  // must not silently impose a key rotation/length rule on an already valid key.
+  if (!a || !b || a.length > 4096 || a.length !== b.length) return false;
   let difference = 0;
   for (let i = 0; i < a.length; i++) difference |= a.charCodeAt(i) ^ b.charCodeAt(i);
   return difference === 0;
@@ -52,23 +55,30 @@ export function createRepairOwnerControl(options: Options) {
     'Access-Control-Allow-Headers': 'authorization, apikey, content-type, x-admin-key, x-client-info',
     'Access-Control-Allow-Methods': 'POST, OPTIONS', 'Content-Type': 'application/json', 'Cache-Control': 'no-store',
   };
-  const response = (body: unknown, status = 200) => new Response(JSON.stringify(body), { status, headers });
+  const response = (body: { code?: string; [key: string]: unknown }, status = 200) => {
+    if (status >= 400 && body.code) {
+      // Only fixed server codes, never caller payloads, tokens, keys or identities.
+      try { options.reportDenial?.(body.code, status); } catch { /* Logging cannot change authentication. */ }
+    }
+    return new Response(JSON.stringify(body), { status, headers });
+  };
   return async (req: Request): Promise<Response> => {
     if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers });
     if (req.method !== 'POST') return response({ code: 'METHOD' }, 405);
     try {
       if (options.getMode() !== 'owner-stop-only-v1' || !options.getAdminKey()) return response({ code: 'CONTROL_PAUSED' }, 503);
       // Invalid master keys never reach Supabase Auth or the database.
-      if (!equalKey(options.getAdminKey(), req.headers.get('x-admin-key'))) return response({ code: 'OWNER_REQUIRED' }, 401);
+      if (!equalKey(options.getAdminKey(), req.headers.get('x-admin-key'))) return response({ code: 'ADMIN_KEY_REQUIRED' }, 401);
       const ownerId = await options.getOwnerId();
       if (!uuid.test(ownerId ?? '')) return response({ code: 'CONTROL_PAUSED' }, 503);
       const bearer = req.headers.get('authorization');
-      if (!bearer?.startsWith('Bearer ') || bearer.length < 23 || bearer.length > 8200) return response({ code: 'OWNER_REQUIRED' }, 401);
+      if (!bearer?.startsWith('Bearer ') || bearer.length < 23 || bearer.length > 8200) return response({ code: 'OWNER_SESSION_REQUIRED' }, 401);
       let action: 'status' | 'stop';
       try { action = await readAction(req); } catch { return response({ code: 'INVALID_ACTION' }, 400); }
       // The runtime wires this to supabase.auth.getUser(token), never getSession/JWT parsing.
       const session = await options.getUser(bearer.slice(7)); const user = session.data?.user;
-      if (session.error || user?.id !== ownerId || user?.aud !== 'authenticated' || user.is_anonymous === true || !user.email_confirmed_at) return response({ code: 'OWNER_REQUIRED' }, 401);
+      if (session.error || !user) return response({ code: 'OWNER_SESSION_REQUIRED' }, 401);
+      if (user.id !== ownerId || user.aud !== 'authenticated' || user.is_anonymous === true || !user.email_confirmed_at) return response({ code: 'OWNER_ACCOUNT_REQUIRED' }, 403);
       // Emergency stop deliberately does not depend on the status rate limiter.
       if (action === 'status' && !await options.allowStatus(ownerId!)) return response({ code: 'STATUS_LIMIT' }, 429);
       const state = controlState(await (action === 'stop' ? options.stop(ownerId!) : options.status(ownerId!)));
