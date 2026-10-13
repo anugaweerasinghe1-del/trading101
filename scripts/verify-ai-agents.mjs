@@ -101,3 +101,6 @@ console.log(syntheticDraftCheck.stdout.trim());
 const gateTest = spawnSync(process.execPath, ['scripts/verify-evidence-cycle.mjs'], { encoding: 'utf8' });
 assert.equal(gateTest.status, 0, 'Read-only evidence cycle regression: '+gateTest.stdout+gateTest.stderr);
 console.log(gateTest.stdout.trim());
+const memoryTest = spawnSync(process.execPath, ['scripts/verify-incident-memory.mjs'], { encoding: 'utf8' });
+assert.equal(memoryTest.status, 0, 'Offline incident-memory regression: '+memoryTest.stdout+memoryTest.stderr);
+console.log(memoryTest.stdout.trim());
