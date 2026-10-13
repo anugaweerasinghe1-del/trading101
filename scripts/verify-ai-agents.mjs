@@ -128,3 +128,6 @@ console.log(stoppedInstallTest.stdout.trim());
 const workloadIdentityTest = spawnSync(process.execPath, ['scripts/verify-github-workload-identity.mjs'], { encoding: 'utf8' });
 assert.equal(workloadIdentityTest.status, 0, 'Disabled workload identity regression: '+workloadIdentityTest.stdout+workloadIdentityTest.stderr);
 console.log(workloadIdentityTest.stdout.trim());
+const workloadProbeTest = spawnSync(process.execPath, ['scripts/verify-workload-probe.mjs'], { encoding: 'utf8' });
+assert.equal(workloadProbeTest.status, 0, 'Read-only identity probe regression: '+workloadProbeTest.stdout+workloadProbeTest.stderr);
+console.log(workloadProbeTest.stdout.trim());

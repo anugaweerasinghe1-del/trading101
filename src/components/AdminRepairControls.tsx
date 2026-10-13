@@ -37,7 +37,14 @@ export default function AdminRepairControls({ adminKey }: { adminKey: string }) 
             authorization: 'Bearer ' + data.session.access_token, 'x-admin-key': adminKey },
           body: JSON.stringify({ action }),
         });
-        if (!response.ok) throw Error('UNAVAILABLE');
+        if (!response.ok) {
+          let denied: { code?: string } | null = null;
+          try { denied = await response.json(); } catch { /* Uncertain reply remains unavailable. */ }
+          if (response.status === 401 && denied?.code === 'ADMIN_KEY_REQUIRED') throw Error('ADMIN_KEY');
+          if ((response.status === 401 && denied?.code === 'OWNER_SESSION_REQUIRED')
+            || (response.status === 403 && denied?.code === 'OWNER_ACCOUNT_REQUIRED')) throw Error('SIGN_IN');
+          throw Error('UNAVAILABLE');
+        }
         const value = await response.json();
         const expected = action === 'stop' ? 'DURABLE_STOP_CONFIRMED' : 'CONTROL_STATUS';
         if (value?.code !== expected || value.mode !== 'OWNER_STOP_ONLY' || typeof value.stopped !== 'boolean'
@@ -56,8 +63,10 @@ export default function AdminRepairControls({ adminKey }: { adminKey: string }) 
       }
     } catch (error) {
       if (active.current && request.current === controller) {
-        setState(null); setMessage(error instanceof Error && error.message === 'SIGN_IN'
+        const reason = error instanceof Error ? error.message : '';
+        setState(null); setMessage(reason === 'SIGN_IN'
           ? 'Sign in with the registered owner account, then try again.'
+          : reason === 'ADMIN_KEY' ? 'The administrator key could not be verified. Lock and unlock the desk with your current key, then try again.'
           : 'Repair controls are unavailable or paused. A stop has not been confirmed. You can retry Stop repairs or check status.');
       }
     } finally {

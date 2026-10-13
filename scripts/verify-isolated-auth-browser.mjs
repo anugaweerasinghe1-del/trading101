@@ -109,6 +109,8 @@ async function main(){
             authorization:{codeWrites:false,modelCalls:false,merge:false,productionRelease:false}};
           if(action==='status'&&repairRequests.status===1)return json(503,{code:'CONTROL_PAUSED'});
           if(action==='status'&&repairRequests.status===2)value.authorization.merge=true;
+          if(action==='status'&&repairRequests.status===4)return json(403,{code:'OWNER_ACCOUNT_REQUIRED'});
+          if(action==='status'&&repairRequests.status===5)return json(401,{code:'ADMIN_KEY_REQUIRED'});
           if((action==='status'&&repairRequests.status===3)||(action==='stop'&&repairRequests.stop===3)){setTimeout(()=>json(200,value),500);return;}
           return json(200,value);
         });return;
@@ -346,6 +348,10 @@ async function main(){
     assert.equal(await devtools.evaluate("document.body.textContent.includes('Stop confirmed by the server.')"),false,'Late stop cannot revive locked workspace');
     await adminInput('input[aria-label="Admin master key"]',ADMIN_FIXTURE_KEY);await adminClick('Unlock AI workspace');
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Assistant pilot')"),'admin workspace reopened for chat');
+    await adminClick('Check repair status');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Sign in with the registered owner account')"),'actual owner-session denial is actionable');
+    await adminClick('Check repair status');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('The administrator key could not be verified')"),'actual key denial is distinct from paused controls');
     console.log('ISOLATED_REPAIR_OWNER_BROWSER_PASS: signed-out denial, paused/unverified status, explicit durable stop, forged authority rejection, stop interrupts pending status and late-response lock isolation. Fixture only.');
     await openChat();await askChat();
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Chat is unavailable, paused')"),'paused chat is visible');

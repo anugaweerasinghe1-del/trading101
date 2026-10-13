@@ -51,7 +51,8 @@ async function bounded(action) {
   })]);} finally {clearTimeout(timer);}
 }
 export function createGitHubWorkloadVerifier({readGitHub,fetcher=fetch,clock=Date.now,activationMode='disabled'}={}) {
-  assert.equal(activationMode,'identity-only-fixture','Live workload trust has not been activated');
+  assert.ok(['identity-only-fixture','live-read-only-identity'].includes(activationMode),
+    'Workload identity is disabled; no repair authority exists');
   assert.ok(typeof readGitHub==='function' && typeof fetcher==='function' && typeof clock==='function');
   return async function verifyJob(token) {
     try {

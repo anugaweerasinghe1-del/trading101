@@ -2,9 +2,15 @@
 
 The installed owner-control plane remains stopped. This server-only library is
 preparation for authenticating a future repair job without installing another
-long-lived service key in GitHub. It does not mint a token, deploy a route, grant
-GitHub id-token permission, change database grants or start a worker. The factory
-is disabled by default and currently permits only identity-only-fixture mode.
+long-lived service key in GitHub. The verifier does not deploy a route, change
+database grants or start a worker. Its factory is disabled by default; explicit
+identity-only-fixture or live-read-only-identity modes verify provenance only.
+This proposal adds a real token probe to the existing trusted-evidence collector.
+Only that job receives id-token:write; its contents/actions/checks/issues scopes
+remain read-only. No existing permission has changed until this draft is approved
+and released. The job can mint a short-lived identity token; this proposal adds no
+resource trust binding and grants it no authority in TradeHQ's installed owner
+controls or repair/database/code-write/release paths.
 
 The verifier uses native WebCrypto RSA signature verification and fetches signing
 keys only from GitHub's fixed HTTPS issuer/JWKS address. Token-provided key URLs,
@@ -50,12 +56,31 @@ The fixture generates real disposable RSA keys in process, cryptographically
 signs sample tokens and exercises 56 adversarial cases: signatures, algorithms,
 key URLs/ambiguity, times, subject/IDs, fork/PR/ref/workflow/runner metadata,
 run/attempt/check identity, pagination, main change and imported/expired principals.
-Keys, claims and GitHub transport responses are isolated fixtures. No actual
-GitHub OIDC token or live issuer acceptance has been demonstrated. Activation
-requires an owner-approved protected-main job permission/endpoint/control change
-and successful real minted-token verification before any proposal action.
+Keys, claims and GitHub transport responses are isolated fixtures. The separate
+probe fixture verifies actual signatures across the mint/key/metadata transport,
+separate credential origins, denied PR/fork/foreign URL/unavailable/oversized
+sources and private output. No actual GitHub OIDC token or live issuer acceptance
+has been demonstrated before release. The owner must approve this final tested
+protected-main job permission change before the real probe can execute.
+
+The probe accepts only the runner-provided HTTPS actions.githubusercontent.com
+token service with no credentials/foreign port/fragment in its URL. It passes the
+existing request token only to that service, and the existing read-only GitHub
+API token only to fixed repository metadata paths. Neither goes to public JWKS.
+Mint/body sizes and deadlines are bounded; raw tokens/credentials/claims and
+exceptions are never output. Diagnostics report required claim types only.
+The output explicitly says VERIFIED or BLOCKED, and every authority flag is false.
+A failed optional probe does not break existing read-only monitoring or loosen
+any trust check. Workflow success is therefore not proof of identity acceptance:
+the exact-run native log must contain a VERIFIED probe report, and that proof
+does not authorize any future action. No retries or fallback credentials exist.
+
+Actual worker/endpoint/control installation, atomic replay consumption, source
+reproduction, independent validation and owner release rules require a separate
+tested activation change after genuine minted-token acceptance is established.
 
 Primary contract checked on 13 October 2026:
 https://docs.github.com/en/actions/reference/security/oidc . GitHub documents both
 subject formats and the immutable-ID rollout beginning July 2026. Existing
-workflow permissions were inspected and remain unchanged by this proposal.
+workflow permissions were inspected; only the job-scoped token-minting permission
+above is proposed, with all resource-write permissions remaining absent.
