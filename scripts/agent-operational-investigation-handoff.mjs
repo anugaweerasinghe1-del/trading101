@@ -10,6 +10,30 @@ import { appendFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { collectOfflineRepairReview } from "./agent-repair-pipeline-offline.mjs";
 import { collectIncidentFeedback, recommendForVerifiedFinding } from "./agent-incident-feedback.mjs";
+import { trainIncidentOutcomeModel, predictReportedOutcome } from "./agent-incident-learning.mjs";
+
+export function investigationLearning(packet, history, now=Date.now()) {
+  summarizeInvestigation(packet);
+  assert.ok(history?.schema === 'tradehq-incident-feedback-v1'
+    && history.confirmedRepairOutcomes === 0, 'Unverified feedback must not acquire repair authority');
+  const clock=new Date(now).toISOString();
+  const model=trainIncidentOutcomeModel({memoryJson:JSON.stringify(history.memory),now:clock});
+  const estimates=[];
+  if(model.status === 'SHADOW_MODEL_TRAINED') {
+    for(const item of packet.cases) {
+      const advice=recommendForVerifiedFinding({runId:packet.producer.runId,sha:packet.producer.monitorSha,
+        symptom:item.symptom,path:item.path},history.memory,now);
+      for(const suggestion of advice.recommendations) estimates.push({candidateId:item.candidateId,
+        ...predictReportedOutcome({model,incident:advice.incident,action:suggestion.action,now:clock})});
+    }
+  }
+  // Fixed-rule suppressions remain authoritative for advice. Training never
+  // restores a suppressed action, changes risk or influences release decisions.
+  return {schema:'tradehq-operational-shadow-learning-v1',status:model.status,
+    records:model.records,distinctRuns:model.distinctRuns,dataDigest:model.dataDigest,
+    modelDigest:model.modelDigest || null,evaluation:model.evaluation || null,
+    outcomeTrust:model.dataTrust,estimates,confirmedRepairOutcomes:0,authorization:model.authorization};
+}
 
 // Recompute advice from fixed fields in the re-collected packet. History only
 // suppresses investigations; it cannot alter findings or grant repair authority.
@@ -117,8 +141,10 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     // owner journal is an explicit empty-history bootstrap, never invented data.
     const history=await collectIncidentFeedback({mainSha:MAIN_SHA});
     const advice=investigationAdvice(packet,history);
+    const learning=investigationLearning(packet,history);
     console.log("TRADEHQ_READONLY_INCIDENT_HANDOFF_V1 "+JSON.stringify(summary));
     console.log("TRADEHQ_INCIDENT_INVESTIGATION_ADVICE_V1 "+JSON.stringify(advice));
+    console.log("TRADEHQ_INCIDENT_SHADOW_LEARNING_V1 "+JSON.stringify(learning));
     if(process.env.GITHUB_STEP_SUMMARY)
       appendFileSync(process.env.GITHUB_STEP_SUMMARY,jobSummary+
         '\n### Investigation history\n\n'+

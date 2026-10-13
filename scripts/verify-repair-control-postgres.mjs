@@ -4,6 +4,7 @@ import postgres from 'postgres';
 import { readFileSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 import { offlineOwnerFixture } from './verify-owner-approval-offline.mjs';
+import { createRepairApprovalTransaction } from './agent-repair-approval-transaction.mjs';
 export function disposableControlUrl(env) {
   assert.equal(env.TRADEHQ_DISPOSABLE_CONTROL_TEST,'explicit-ci-fixture','Disposable fixture opt-in required.');
   const url=new URL(env.TRADEHQ_CONTROL_TEST_URL || '');
@@ -44,6 +45,7 @@ export async function verifyPostgresControls(env=process.env) {
     const sql=readFileSync('docs/proposals/repair-control-prototype.sql','utf8');
     await assert.rejects(a.unsafe(sql),/explicit local test context/);await a.unsafe('ROLLBACK');
     await a.unsafe("SET tradehq.offline_control_prototype='explicit-local-test';");await a.unsafe(sql);
+    await a.unsafe(readFileSync('docs/proposals/repair-approval-receipts.sql','utf8'));
     assert.equal((await claim(a)).reason,'STOPPED');await stop(a,false);
     const bPid=(await b.unsafe('SELECT pg_backend_pid() AS pid'))[0].pid;
     const aPid=(await a.unsafe('SELECT pg_backend_pid() AS pid'))[0].pid;assert.notEqual(aPid,bPid);
@@ -94,9 +96,41 @@ export async function verifyPostgresControls(env=process.env) {
       await assert.rejects(b.unsafe('SELECT * FROM tradehq_repair_control.candidates'),/permission denied/);
       await assert.rejects(b.unsafe('SELECT * FROM tradehq_repair_control.policy_log'),/permission denied/);
       await assert.rejects(b.unsafe('SELECT * FROM tradehq_repair_control.transition_log'),/permission denied/);
+      await assert.rejects(b.unsafe('SELECT * FROM tradehq_repair_control.approval_receipts'),/permission denied/);
       await b.unsafe('RESET ROLE');
     }
+    // Exercise the new transaction adapter over a real independent connection.
+    const transactionDb={transaction:callback=>b.begin(tx=>callback({query:async(query,params)=>({rows:await tx.unsafe(query,params)})}))};
+    const commit=createRepairApprovalTransaction({database:transactionDb,activationMode:'disposable-fixture'});
+    const blockedId='repair-v1-'+'d'.repeat(24);
+    await a.unsafe("UPDATE tradehq_repair_control.candidates SET claimed_at=claimed_at-interval '25 hours',lease_until=lease_until-interval '25 hours'");
+    assert.equal((await claim(a,blockedId,'browser','LAYOUT_OVERFLOW')).reason,'CLAIMED');
+    const makeBinding=async(candidate)=>{
+      const generation=Number((await a.unsafe('SELECT generation FROM tradehq_repair_control.policy'))[0].generation);
+      const signed=offlineOwnerFixture({candidateId:candidate,ownerId:'c1700000-1111-4111-8111-000000000001',
+        baseSha:base,headSha:head,evidenceDigest:digest,generation});
+      return {candidateId:candidate,ownerId:signed.ownerId,approvalId:signed.approvalId,
+        baseSha:base,headSha:head,evidenceDigest:digest,generation,
+        receiptDigest:signed.approvalDigest,expiresAt:signed.expiresAt};
+    };
+    const blockedBinding=await makeBinding(blockedId);
+    await a.unsafe('BEGIN');await stop(a,true);
+    // Attach a rejection observer before releasing the lock to avoid an
+    // unhandled promise rejection masking the actual serialization result.
+    const waitingApproval=commit(blockedBinding).then(()=>({accepted:true}),()=>({accepted:false}));
+    await locked(bPid);await a.unsafe('COMMIT');assert.equal((await waitingApproval).accepted,false);
+    assert.equal((await observer.unsafe('SELECT count(*)::int AS n FROM tradehq_repair_control.approval_receipts'))[0].n,0);
+    await stop(a,false);
+    await a.unsafe("UPDATE tradehq_repair_control.candidates SET claimed_at=claimed_at-interval '25 hours',lease_until=lease_until-interval '25 hours'");
+    const acceptedId='repair-v1-'+'e'.repeat(24);
+    assert.equal((await claim(a,acceptedId,'manual','HEADING_READABILITY')).reason,'CLAIMED');
+    const binding=await makeBinding(acceptedId);
+    const ack=await commit(binding);
+    assert.equal(ack.committed,true);assert.ok(Object.values(ack.authorization).every(x=>x===false));
+    await assert.rejects(()=>commit(binding),'The real database rejects receipt replay');
+    assert.equal((await observer.unsafe('SELECT count(*)::int AS n FROM tradehq_repair_control.approval_receipts'))[0].n,1);
     console.log('PASS disposable PostgreSQL 17: distinct-session row-lock waiting, one active candidate, stop/review serialization, replay/frequency persistence, transaction rollback and denied app roles. No production connection or release authority.');
+    console.log('PASS signed approval transaction adapter: actual policy-lock wait, stop-winning race, rollback/no receipt, accepted atomic approval and durable replay rejection.');
   } finally {
     await Promise.allSettled(clients().map(async client=>{await client.unsafe('ROLLBACK');}));
     await Promise.allSettled(clients().map(client=>client.end({timeout:1})));
