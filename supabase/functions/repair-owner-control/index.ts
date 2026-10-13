@@ -26,4 +26,5 @@ Deno.serve(createRepairOwnerControl({
   status: ownerId => control('tradehq_repair_owner_status', ownerId),
   stop: ownerId => control('tradehq_repair_owner_stop', ownerId),
   allowStatus: ownerId => allow(ownerId, 'repair-owner-status', 60, 20),
+  reportDenial: (code, status) => console.info(JSON.stringify({ event: 'tradehq-owner-control-denied-v1', code, status })),
 }));
