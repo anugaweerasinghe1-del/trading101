@@ -7,9 +7,11 @@ globalThis.fetch = async (url, options = {}) => {
   const method = options.method || "GET";
   let data;
   if (url.startsWith("https://generativelanguage.googleapis.com/")) {
+    if (options.redirect !== 'error') throw Error('Offline proposal must reject provider redirects');
     const value = ++gemini === 1 ? { paths: ["src/pages/About.tsx"] }
       : { changes: [{ path: "src/pages/About.tsx", content: readFileSync("src/pages/About.tsx", "utf8").replace("mb-4", "mb-3 sm:mb-4") }] };
     data = { candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify(value) }] } }] };
+    return new Response(JSON.stringify(data), { status: 200 });
   } else if (url.startsWith("https://api.github.com/repos/anugaweerasinghe1-del/trading101")) {
     if (url.endsWith("/issues/999")) {
       data = {...snapshot().issue};
