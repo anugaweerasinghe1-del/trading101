@@ -7,6 +7,24 @@ import { generateCourse, courseReferences } from "../supabase/functions/_shared/
 import { checkCourseDemand } from "../supabase/functions/_shared/courseDemandCheck.ts";
 import { renderApprovedCourse } from "../src/lib/courseHtml.ts";
 import { sharedQuote } from "../supabase/functions/_shared/sharedQuote.ts";
+import { readCoursePublicationHistory } from "../src/lib/coursePublicationHistory.ts";
+
+const noticeNow = Date.parse('2026-10-14T00:00:00Z');
+const seenPublication = 'published-course:2026-10-09T15:45:01.003475+00:00';
+for (const raw of [null, 'null', '[]', 'true', '42', '"stored string"', '{broken']) {
+  assert.deepEqual(readCoursePublicationHistory(raw, noticeNow), {}, 'Malformed browser history must recover');
+}
+assert.deepEqual(readCoursePublicationHistory(JSON.stringify({
+  [seenPublication]: true,
+  'not-a-publication': true,
+  'stale-course:2026-09-01T00:00:00Z': true,
+  'future-course:2027-01-01T00:00:00Z': true,
+  'unseen-course:2026-10-09T00:00:00Z': false,
+  'invalid-value:2026-10-09T00:00:00Z': 'true',
+}), noticeNow), { [seenPublication]: true }, 'Valid revision markers survive alongside corrupt entries');
+assert.equal(Object.keys(readCoursePublicationHistory(JSON.stringify(Object.fromEntries(
+  Array.from({ length: 180 }, (_, i) => ['course-' + i + ':2026-10-09T00:00:00Z', true])
+)), noticeNow)).length, 150, 'Stored announcement history stays bounded');
 
 // Test-only fixture; never inserted into production or published.
 const document: CourseDocument = {

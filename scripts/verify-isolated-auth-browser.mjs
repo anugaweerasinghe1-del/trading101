@@ -74,6 +74,9 @@ async function main(){
   const temp=mkdtempSync(join(tmpdir(),"tradehq-isolated-auth-"));
   const dist=join(temp,"dist"),profile=join(temp,"chrome");
   let server,browser,devtools;let attempts=0,approved=0,rejected=0,dataWrites=0,portfolioInitialized=0,logouts=0,refreshRejected=0,dailyReads=0,adminChatRequests=0;
+  let showPublications=false,publicationReads=0;
+  const rejectedWrites=[];
+  const publications=[{slug:'isolated-publication',published_at:new Date().toISOString(),title:'Isolated course announcement'}];
   const ADMIN_FIXTURE_KEY='isolated-admin-fixture-only';
   const repairRequests={status:0,stop:0};
   const chatDraft='Improve About page mobile spacing while preserving every existing sentence and link.';
@@ -151,8 +154,12 @@ async function main(){
         // real-bank response; selection must wait for its visible UI state.
         setTimeout(()=>json(200,fixtureBank),200);return;
       }
+      if(route==='/rest/v1/rpc/get_published_course_catalog' && req.method==='POST')return json(200,[]);
       if(route.startsWith("/rest/v1/")){
-        if(!["GET","HEAD"].includes(req.method||"")){dataWrites++;return json(403,{error:"fixture_never_mutates"})}
+        if(!["GET","HEAD"].includes(req.method||"")){dataWrites++;rejectedWrites.push(route);return json(403,{error:"fixture_never_mutates"})}
+        if(route==='/rest/v1/published_courses' && parsed.searchParams.get('select')?.includes('published_at')){
+          publicationReads++;return json(200,showPublications?publications:[]);
+        }
         if(route==="/rest/v1/profiles")
           return json(200,[{id:USER_ID,username:"isolated",country:null,bio:null,is_public:false}]);
         return json(200,[]);
@@ -373,6 +380,26 @@ async function main(){
     assert.equal(await devtools.evaluate("Object.values(localStorage).some(x=>x.includes("+JSON.stringify(ADMIN_FIXTURE_KEY)+"))"),false,'Admin key cannot be persisted');
     assert.equal(adminChatRequests,4);assert.equal(dataWrites,0);
     console.log('ISOLATED_ADMIN_CHAT_BROWSER_PASS: paused pilot, literal model text, owner-click draft transfer, forged authority denial and late-response lock isolation; fixture only; no real provider calls.');
+    // Actual compiled announcements must recover from valid JSON of the wrong
+    // shape, retain revision markers across reload and avoid replay on focus.
+    showPublications=true;
+    const noticeKey='tradehq-seen-course-publications-v1';
+    const noticeCount=()=>devtools.evaluate("document.querySelectorAll('button[aria-label^=\"Open new course: \"]').length");
+    await devtools.evaluate('localStorage.setItem('+JSON.stringify(noticeKey)+',\'null\')');
+    await loadDocument(origin+'/courses');
+    await wait(async()=>await noticeCount()===1,'announcement recovered from null history');
+    const seen=await devtools.evaluate('JSON.parse(localStorage.getItem('+JSON.stringify(noticeKey)+'))');
+    assert.equal(seen[publications[0].slug+':'+publications[0].published_at],true);
+    const beforeReload=publicationReads;await loadDocument();
+    await wait(()=>publicationReads>beforeReload,'announcement publication read after reload');
+    await sleep(250);assert.equal(await noticeCount(),0,'Seen publication cannot replay after reload');
+    const beforeFocus=publicationReads;await devtools.evaluate("window.dispatchEvent(new Event('focus'))");
+    await wait(()=>publicationReads>beforeFocus,'announcement recheck on focus');
+    await sleep(250);assert.equal(await noticeCount(),0,'Seen publication cannot replay on focus');
+    await devtools.evaluate('localStorage.setItem('+JSON.stringify(noticeKey)+',\'[]\')');
+    await loadDocument();await wait(async()=>await noticeCount()===1,'announcement recovered from array history');
+    assert.equal(dataWrites,0,'Unexpected fixture writes: '+rejectedWrites.join(', '));
+    console.log('ISOLATED_COURSE_NOTICES_BROWSER_PASS: malformed null/array history recovered, seen revision persisted, reload/focus deduplicated; fixture only.');
     console.log("ISOLATED_AUTH_BROWSER_PASS: reload persistence; real UI sign-out; no resurrected session; expired refresh rejected; ten Daily answers persisted/resumed/locked; one streak per day; actual built TradeHQ login in real Chromium; negative password refused; fake Supabase grant accepted; authenticated profile navigation observed; isolated account initialization executed; zero non-allowlisted backend writes; zero real provider calls.");
   }finally{
     // Wait for Chrome to exit before deleting its still-active profile files.
