@@ -104,4 +104,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
           TRADEHQ_VERCEL_VERIFY_TOKEN: ${{ secrets.TRADEHQ_VERCEL_VERIFY_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: node scripts/agent-release-recovery-readiness.mjs

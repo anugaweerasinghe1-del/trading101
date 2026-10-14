@@ -7,6 +7,7 @@
  * authenticated login, or Vercel scope ownership. Never rolls back anything.
  */
 import assert from "node:assert/strict";
+import { collectCloudflareAccountEvidence } from './cloudflare-account-evidence.mjs';
 import { createHash } from "node:crypto";
 import { pathToFileURL } from "node:url";
 import { setTimeout as sleep } from "node:timers/promises";
@@ -200,6 +201,11 @@ async function run(){
     "Main changed during release witness; no valid readiness claim");
   console.log("TRADEHQ_RELEASE_RECOVERY_READINESS_V1 "+JSON.stringify(report));
   console.log("PUBLIC_RELEASE_ROUTES_PASS 5");
+  if(process.env.CLOUDFLARE_API_TOKEN){
+    const cloudflare=await collectCloudflareAccountEvidence({sha,token:process.env.CLOUDFLARE_API_TOKEN});
+    assert.equal((await github('/branches/main',token)).commit?.sha,sha,'Main changed during Cloudflare account verification');
+    console.log('TRADEHQ_CLOUDFLARE_ACCOUNT_OBSERVATION_V1 '+JSON.stringify(cloudflare));
+  }else console.log('CLOUDFLARE_ACCOUNT_OBSERVATION_NOT_CONFIGURED');
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
   run().catch(error=>{const reason=String(error?.message||"Unknown check failure").replace(/\s+/g," ").slice(0,170);
