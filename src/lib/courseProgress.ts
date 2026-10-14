@@ -23,24 +23,54 @@ export interface CourseProgressState {
 }
 
 const KEY = "tradehq_course_progress_v1";
+const emptyTrack = (): TrackProgress => ({ lessons: Object.create(null) });
 
 const empty = (): CourseProgressState => ({
   v: 1,
-  tracks: {},
+  tracks: Object.create(null),
   updatedAt: new Date(0).toISOString(),
 });
 
+function record(value: unknown): value is Record<string, unknown> {
+  return value !== null && typeof value === 'object' && !Array.isArray(value);
+}
+function timestamp(value: unknown): value is string {
+  return typeof value === 'string' && Number.isFinite(Date.parse(value));
+}
+
+/** Recover malformed fragments without discarding other valid saved progress. */
+export function parseCourseProgress(raw: string | null): CourseProgressState {
+  try {
+    if (!raw) return empty();
+    const parsed: unknown = JSON.parse(raw);
+    if (!record(parsed) || parsed.v !== 1 || !record(parsed.tracks)) return empty();
+    const state = empty();
+    state.updatedAt = timestamp(parsed.updatedAt) ? parsed.updatedAt : state.updatedAt;
+    for (const [track, value] of Object.entries(parsed.tracks)) {
+      if (!record(value)) continue;
+      const progress = emptyTrack();
+      if (record(value.lessons)) for (const [lesson, item] of Object.entries(value.lessons)) {
+        if (!record(item) || typeof item.status !== 'string' || !['not-started', 'in-progress', 'completed'].includes(item.status)) continue;
+        const row: LessonProgress = { status: item.status as LessonProgress['status'] };
+        if (typeof item.score === 'number' && Number.isInteger(item.score) && item.score >= 0) row.score = item.score;
+        if (timestamp(item.completedAt)) row.completedAt = item.completedAt;
+        if (typeof item.scrolledPct === 'number' && Number.isFinite(item.scrolledPct) && item.scrolledPct >= 0 && item.scrolledPct <= 100) row.scrolledPct = item.scrolledPct;
+        progress.lessons[lesson] = row;
+      }
+      if (timestamp(value.badgeEarnedAt)) progress.badgeEarnedAt = value.badgeEarnedAt;
+      state.tracks[track] = progress;
+    }
+    if (record(parsed.lastLesson) && typeof parsed.lastLesson.track === 'string' && typeof parsed.lastLesson.lesson === 'string' && timestamp(parsed.lastLesson.at)) {
+      state.lastLesson = { track: parsed.lastLesson.track, lesson: parsed.lastLesson.lesson, at: parsed.lastLesson.at };
+    }
+    return state;
+  } catch { return empty(); }
+}
+
 export function loadProgress(): CourseProgressState {
   if (typeof window === "undefined") return empty();
-  try {
-    const raw = localStorage.getItem(KEY);
-    if (!raw) return empty();
-    const parsed = JSON.parse(raw) as CourseProgressState;
-    if (parsed.v !== 1) return empty();
-    return parsed;
-  } catch {
-    return empty();
-  }
+  try { return parseCourseProgress(localStorage.getItem(KEY)); }
+  catch { return empty(); }
 }
 
 function save(state: CourseProgressState) {
@@ -53,7 +83,7 @@ function save(state: CourseProgressState) {
 
 export function markLessonStarted(track: string, lesson: string) {
   const s = loadProgress();
-  s.tracks[track] ??= { lessons: {} };
+  s.tracks[track] ??= emptyTrack();
   const l = s.tracks[track].lessons[lesson];
   if (!l || l.status === "not-started") {
     s.tracks[track].lessons[lesson] = { status: "in-progress" };
@@ -64,7 +94,7 @@ export function markLessonStarted(track: string, lesson: string) {
 
 export function markLessonCompleted(track: string, lesson: string, score: number) {
   const s = loadProgress();
-  s.tracks[track] ??= { lessons: {} };
+  s.tracks[track] ??= emptyTrack();
   s.tracks[track].lessons[lesson] = {
     status: "completed",
     score,
@@ -76,7 +106,7 @@ export function markLessonCompleted(track: string, lesson: string, score: number
 
 export function awardBadge(track: string) {
   const s = loadProgress();
-  s.tracks[track] ??= { lessons: {} };
+  s.tracks[track] ??= emptyTrack();
   if (!s.tracks[track].badgeEarnedAt) {
     s.tracks[track].badgeEarnedAt = new Date().toISOString();
     save(s);
@@ -84,7 +114,7 @@ export function awardBadge(track: string) {
 }
 
 export function getTrackProgress(track: string): TrackProgress {
-  return loadProgress().tracks[track] ?? { lessons: {} };
+  return loadProgress().tracks[track] ?? emptyTrack();
 }
 
 export function isLessonCompleted(track: string, lesson: string): boolean {
