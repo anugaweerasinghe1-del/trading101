@@ -75,6 +75,8 @@ async function main(){
   const dist=join(temp,"dist"),profile=join(temp,"chrome");
   let server,browser,devtools;let attempts=0,approved=0,rejected=0,dataWrites=0,portfolioInitialized=0,logouts=0,refreshRejected=0,dailyReads=0,adminChatRequests=0;
   let showPublications=false,publicationReads=0;
+  let holdLearnModule=true;
+  const releaseLearnModules=[];
   const rejectedWrites=[];
   const publications=[{slug:'isolated-publication',published_at:new Date().toISOString(),title:'Isolated course announcement'}];
   const ADMIN_FIXTURE_KEY='isolated-admin-fixture-only';
@@ -173,8 +175,14 @@ async function main(){
         if(pathname.startsWith("/assets/")){res.writeHead(404);res.end();return;}
         file=join(dist,"index.html");
       }
-      res.writeHead(200,{"Content-Type":MIME[extname(file)]||"application/octet-stream"});
-      res.end(readFileSync(file));
+      const serve=()=>{
+        res.writeHead(200,{"Content-Type":MIME[extname(file)]||"application/octet-stream"});
+        res.end(readFileSync(file));
+      };
+      if(holdLearnModule && /^\/assets\/Learn-[^.]+\.js$/.test(pathname)){
+        releaseLearnModules.push(serve);return;
+      }
+      serve();
     });
     await new Promise((resolve,reject)=>{
       server.once("error",reject);server.listen(0,"127.0.0.1",resolve);
@@ -222,6 +230,15 @@ async function main(){
       await wait(()=>devtools.evaluate("globalThis.__tradehqFixtureDocument!=="+JSON.stringify(marker)+
         " && document.readyState==='complete'"),"new document after "+(url?new URL(url).pathname:"reload"));
     };
+    // Hold only the compiled lazy route module. A slow connection must leave
+    // a visible, accessible loading screen and then resolve to actual Learn.
+    await devtools.send("Page.navigate",{url:origin+"/learn"});
+    await wait(()=>releaseLearnModules.length===1,"held lazy Learn module");
+    await wait(()=>devtools.evaluate("document.querySelector('[role=status]')?.textContent.includes('Loading your page')"),"visible route loading status",3000);
+    assert.ok(await devtools.evaluate("document.querySelector('#root')?.innerText.length>60"),"Pending route must not leave a blank root");
+    holdLearnModule=false;releaseLearnModules.splice(0).forEach(release=>release());
+    await wait(()=>devtools.evaluate("[...document.querySelectorAll('h1')].some(e=>e.textContent.includes('Learn Trading')) && !document.querySelector('[data-route-loading]')"),"Learn after delayed module release");
+    console.log("ISOLATED_ROUTE_LOADING_PASS: actual compiled Learn module held; visible accessible loading; actual Learn rendered after release.");
     await loadDocument(origin+"/auth");
     await wait(()=>devtools.evaluate("!!(document.querySelector('input[type=email]')&&document.querySelector('input[type=password]'))"),"real TradeHQ login form");
     const submit=(mail,pass)=>{
@@ -422,6 +439,7 @@ async function main(){
     console.log('ISOLATED_COURSE_PROGRESS_BROWSER_PASS: null tracks, null lessons and invalid lesson rows recovered; valid unrelated completion/badge retained after real lesson save and reload; fixture only.');
     console.log("ISOLATED_AUTH_BROWSER_PASS: reload persistence; real UI sign-out; no resurrected session; expired refresh rejected; ten Daily answers persisted/resumed/locked; one streak per day; actual built TradeHQ login in real Chromium; negative password refused; fake Supabase grant accepted; authenticated profile navigation observed; isolated account initialization executed; zero non-allowlisted backend writes; zero real provider calls.");
   }finally{
+    holdLearnModule=false;releaseLearnModules.splice(0).forEach(release=>release());
     // Wait for Chrome to exit before deleting its still-active profile files.
     // Otherwise a successful browser assertion can randomly fail on ENOTEMPTY.
     devtools?.close();

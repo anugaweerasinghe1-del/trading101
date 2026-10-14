@@ -77,7 +77,17 @@ function AnimatedRoutes() {
   }, [location.pathname]);
 
   return (
-    <Suspense fallback={<div className="min-h-screen bg-background" />}>
+    <Suspense fallback={
+      <main data-route-loading aria-busy="true" className="min-h-screen bg-background flex items-center justify-center px-6">
+        <div className="max-w-md text-center">
+          <div role="status" aria-live="polite">
+            <h1 className="text-2xl font-semibold text-foreground">Loading your page</h1>
+            <p className="mt-3 text-muted-foreground">Your TradeHQ page is on its way. Please wait a moment while we get it ready.</p>
+          </div>
+          <a href="/" className="mt-6 inline-block text-primary underline underline-offset-4">Return to TradeHQ home</a>
+        </div>
+      </main>
+    }>
       <PageTransition key={location.pathname}>
         <Routes location={location}>
           <Route path="/" element={<Index />} />
