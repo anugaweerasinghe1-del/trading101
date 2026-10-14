@@ -3,7 +3,7 @@ export interface PracticeProgress { date: string; bankId: string; exercise: Dail
 const KEY = 'tradehq:deeper-practice:v1';
 export function validProgress(value: unknown): value is PracticeProgress {
   const p = value as PracticeProgress;
-  return !!p && typeof p === 'object' && p.date === practiceDate(new Date(p.date + 'T12:00:00'))
+  return !!p && typeof p === 'object' && typeof p.date === 'string' && p.date === practiceDate(new Date(p.date + 'T12:00:00'))
     && typeof p.bankId === 'string' && validateExercises([p.exercise], 1).length === 0
     && Array.isArray(p.answers) && p.answers.length <= p.exercise.questions.length && p.answers.every(a => Number.isInteger(a) && a >= 0 && a <= 2)
     && typeof p.reflection === 'string' && p.reflection.length <= 1500;
