@@ -7,6 +7,8 @@ import { recordChallenge, getStreak, hasPlayedQuickToday, getTodayChallenge } fr
 import { newPractice, readPractice, savePractice, upgradePractice, validProgress } from '../src/lib/dailyPracticeProgress.ts';
 import { createCourseAdminHandler } from '../supabase/functions/_shared/courseAdmin.ts';
 import { generatePractice } from '../supabase/functions/_shared/dailyPracticeGenerator.ts';
+import { readGenerationResponse, GENERATION_READ_LIMITS } from '../supabase/functions/_shared/courseGenerator.ts';
+import { createServer } from 'node:http';
 assert.ok(validateBatch(bank)); assert.equal(new Set(bank.exercises.map(e => e.id)).size, 50);
 assert.equal(new Set(bank.exercises.flatMap(e => e.questions.map(q => q.prompt))).size, 500);
 for (const bad of [null, {}, { ...bank, effectiveFrom: '2026-02-30' }, { ...bank, exercises: [null] }, { ...bank, exercises: bank.exercises.map((e, i) => i ? e : { ...e, title: 23 }) }]) assert.equal(validateBatch(bad), false);
@@ -80,7 +82,7 @@ const chunk = (part: number) => bank.exercises.slice(0, 10).map((e, i) => ({ ...
 let calls = 0;
 const claim = { lease: id, effectiveFrom: '2026-12-09', apiKey: 'test-only', model: 'gemini-3.5-flash', exercises: [], existing: [] };
 const fetcher = (async (url: string | URL | Request, init?: RequestInit) => {
- if (String(url).includes('generativelanguage')) { calls++; assert.ok(!String(url).includes(claim.apiKey));
+ if (String(url).includes('generativelanguage')) { calls++; assert.ok(!String(url).includes(claim.apiKey)); assert.equal(init?.redirect, 'error');
   const b = JSON.parse(String(init?.body)); assert.ok(b.generationConfig.responseJsonSchema); assert.equal(b.contents.length, 1);
   return new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: JSON.stringify({ exercises: chunk(0) }) }] } }] })); }
  return new Response('<main>' + 'Trusted test reference. '.repeat(120) + '</main>', { headers: { 'Content-Type': 'text/html' } });
@@ -90,6 +92,44 @@ await assert.rejects(generatePractice({ ...claim, existing: chunk(0) }, fetcher)
 let limitedCalls = 0;
 await assert.rejects(generatePractice(claim, (async (url, init) => { if (String(url).includes('generativelanguage')) { limitedCalls++; return new Response('', { status: 429 }); } return fetcher(url, init); }) as typeof fetch), /Free Gemini quota/);
 assert.equal(limitedCalls, 1);
+let canceledOversize=false;
+const oversized = new Response(new ReadableStream({start(controller) { controller.enqueue(new Uint8Array(5)); },cancel() { canceledOversize=true; }}));
+await assert.rejects(readGenerationResponse(oversized, 4, 1000), /byte limit/);
+assert.equal(canceledOversize, true, 'Oversized producer must be canceled');
+let canceledStall=false;
+const stalled = new Response(new ReadableStream({start(controller) { controller.enqueue(new TextEncoder().encode('{')); },cancel() { canceledStall=true; return new Promise<void>(()=>{}); }}));
+await assert.rejects(readGenerationResponse(stalled, 100, 20), /read deadline/);
+assert.equal(canceledStall, true, 'Stalled producer is canceled without awaiting hung cancellation');
+assert.equal(await readGenerationResponse(new Response(new ReadableStream({start(c) { c.enqueue(new Uint8Array([0xc3])); c.enqueue(new Uint8Array([0xa9])); c.close(); }})), 2, 1000), 'é');
+await assert.rejects(readGenerationResponse(new Response(new Uint8Array([0xc3,0x28])), 2, 1000), /UTF-8/);
+for (const bad of [new Response(new Uint8Array(GENERATION_READ_LIMITS.providerBytes+1)), new Response('{provider-private-fixture'), new Response('', {status:302})]) {
+ let providerAttempts=0;
+ await assert.rejects(generatePractice(claim, (async (url, init) => {
+  if (String(url).includes('generativelanguage')) {providerAttempts++;assert.equal(init?.redirect,'error');return bad;}
+  return fetcher(url,init);
+ }) as typeof fetch), /byte limit|invalid response|HTTP 302/);
+ assert.equal(providerAttempts,1,'Unsafe response must not retry or fall back');
+}
+let oversizeSourceProviderCalls=0;
+await assert.rejects(generatePractice(claim, (async url => {
+ if(String(url).includes('generativelanguage')){oversizeSourceProviderCalls++;throw Error('Provider must not run');}
+ return new Response(new Uint8Array(GENERATION_READ_LIMITS.sourceBytes+1),{headers:{'Content-Type':'text/html'}});
+}) as typeof fetch),/No AI request/);
+assert.equal(oversizeSourceProviderCalls,0);
+// Real loopback HTTP proves a redirect cannot forward even a disposable key.
+let redirectRequests=0, redirectedRequests=0;
+const redirectServer=createServer((req,res)=>{
+ if(req.url==='/start'){redirectRequests++;assert.equal(req.headers['x-goog-api-key'],claim.apiKey);res.writeHead(302,{Location:'/unexpected'});}
+ else {redirectedRequests++;res.writeHead(200);}
+ res.end();
+});
+await new Promise<void>(resolve=>redirectServer.listen(0,'127.0.0.1',resolve));
+try {
+ const address=redirectServer.address();assert.ok(address&&typeof address==='object');
+ await assert.rejects(generatePractice(claim,(async(url,init)=>String(url).includes('generativelanguage')
+  ? fetch('http://127.0.0.1:'+address.port+'/start',init):fetcher(url,init)) as typeof fetch),/fetch failed/);
+ assert.equal(redirectRequests,1);assert.equal(redirectedRequests,0,'Redirect destination must never receive a request or provider key');
+} finally {await new Promise<void>(resolve=>redirectServer.close(()=>resolve()));}
 await assert.rejects(generatePractice(claim, (async () => new Response('', { status: 503 })) as typeof fetch), /No AI request/);
 
 const db = process.env.TRADEHQ_DAILY_POSTGRES_TEST === 'explicit-ci-fixture'
