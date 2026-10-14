@@ -4,6 +4,7 @@ import { toast } from "sonner";
 import { BookOpen, X } from "lucide-react";
 import { createClient } from "@supabase/supabase-js";
 import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY } from "@/integrations/supabase/config";
+import { readCoursePublicationHistory } from "@/lib/coursePublicationHistory";
 const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, { auth: { persistSession: false, autoRefreshToken: false } });
 
 type PublishedCourse = { slug: string; published_at: string; title: string | null };
@@ -26,11 +27,11 @@ export function CoursePublicationNotices() {
           .gte("published_at", cutoff).order("published_at", { ascending: true }).limit(20);
         if (!active || error || !Array.isArray(data)) return;
         let seen: Record<string, boolean> = {};
-        try { seen = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}") as Record<string, boolean>; }
+        try { seen = readCoursePublicationHistory(localStorage.getItem(STORAGE_KEY)); }
         catch { seen = {}; }
         for (const course of data as PublishedCourse[]) {
           const marker = course.slug + ":" + course.published_at;
-          if (!course.slug || !course.published_at || seen[marker] || sessionSeen.current.has(marker)) continue;
+          if (!course.slug || !course.published_at || seen[marker] === true || sessionSeen.current.has(marker)) continue;
           sessionSeen.current.add(marker);
           seen[marker] = true;
           const title = typeof course.title === "string" ? course.title.trim() : "A new course";
@@ -43,11 +44,7 @@ export function CoursePublicationNotices() {
           </div>, { duration: 10000, position: "top-right" });
         }
         // Limit storage growth without replaying recent notices.
-        const recent = Object.entries(seen).filter(([marker]) => {
-          const stamp = marker.substring(marker.indexOf(":") + 1);
-          return Date.now() - Date.parse(stamp) < 30 * 86400000 || !Number.isFinite(Date.parse(stamp));
-        });
-        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(Object.fromEntries(recent.slice(-150)))); } catch { /* Private-browsing mode: session deduplication still works. */ }
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(Object.fromEntries(Object.entries(seen).slice(-150)))); } catch { /* Private-browsing mode: session deduplication still works. */ }
       } finally { checking.current = false; }
     };
     void check();
