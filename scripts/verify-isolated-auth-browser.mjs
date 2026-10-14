@@ -327,4 +327,121 @@ async function main(){
     // transfer, forged authority rejection, and late response after lock.
     await loadDocument(origin+'/admin/ai');
     const adminClick=async text=>devtools.evaluate("(()=>{const e=[...document.querySelectorAll('button')].find(e=>e.textContent.trim()==="+JSON.stringify(text)+"&&!e.disabled);if(!e)throw Error('Admin button missing');e.click();return true})()");
-    const adminInput=async(selector,value)=>devtools.evaluate("(()=>{const e=document.querySelector("+JSON.stringify(selector)+");if(!e)throw Error('Admin input missing');const proto=e.tagName==='TEXTAREA'?HTMLTextAreaElement.prototype:HTMLInputElement.pr
+    const adminInput=async(selector,value)=>devtools.evaluate("(()=>{const e=document.querySelector("+JSON.stringify(selector)+");if(!e)throw Error('Admin input missing');const proto=e.tagName==='TEXTAREA'?HTMLTextAreaElement.prototype:HTMLInputElement.prototype;Object.getOwnPropertyDescriptor(proto,'value').set.call(e,"+JSON.stringify(value)+");e.dispatchEvent(new Event('input',{bubbles:true}));return true})()");
+    const openChat=async()=>{await adminClick('Assistant pilot');await wait(()=>devtools.evaluate("document.body.textContent.includes('Admin assistant · pilot')"),'admin pilot tab');};
+    const askChat=async()=>{await adminInput('textarea','Help me draft a mobile spacing improvement for the About page.');await wait(()=>devtools.evaluate("[...document.querySelectorAll('button')].some(e=>e.textContent.trim()==='Ask assistant'&&!e.disabled)"),'chat input accepted');await adminClick('Ask assistant');};
+    await wait(()=>devtools.evaluate("!!document.querySelector('input[aria-label=\"Admin master key\"]')"),'admin key input');
+    await adminInput('input[aria-label="Admin master key"]',ADMIN_FIXTURE_KEY);await adminClick('Unlock AI workspace');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Assistant pilot')"),'admin workspace unlocked');
+    await adminClick('Stop repairs');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Sign in with the registered owner account')"),'signed-out repair control denial');
+    assert.deepEqual(repairRequests,{status:0,stop:0},'No repair API call without a bearer session');
+    await loadDocument(origin+'/auth');
+    await wait(()=>devtools.evaluate("!!document.querySelector('button[type=submit]')&&!document.querySelector('button[type=submit]').disabled"),'owner fixture sign-in ready');
+    await submit(EMAIL,PASSWORD);await wait(()=>approved===3,'owner fixture sign-in');
+    await wait(()=>devtools.evaluate("location.pathname==='/trader/me'"),'owner fixture navigation');
+    await loadDocument(origin+'/admin/ai');
+    await wait(()=>devtools.evaluate("!!document.querySelector('input[aria-label=\"Admin master key\"]')"),'owner controls admin input');
+    await adminInput('input[aria-label="Admin master key"]',ADMIN_FIXTURE_KEY);await adminClick('Unlock AI workspace');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Repair controls')"),'owner control panel');
+    await adminClick('Check repair status');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('A stop has not been confirmed')"),'paused controls not advertised as stopped');
+    await adminClick('Stop repairs');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Stop confirmed by the server.')"),'durable stop acknowledgement');
+    await adminClick('Check repair status');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('A stop has not been confirmed')"),'forged repair authority rejected');
+    await adminClick('Check repair status');await wait(()=>repairRequests.status===3,'delayed status request');
+    await adminClick('Stop repairs');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Stop confirmed by the server.')"),'stop interrupts pending status');
+    await sleep(650);
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('Repairs are stopped.')"),true,'Late stale status cannot overwrite a confirmed stop');
+    await adminClick('Stop repairs');await wait(()=>repairRequests.stop===3,'pending owner stop');await adminClick('Lock');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Private admin access')"),'owner stop workspace locked');await sleep(650);
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('Stop confirmed by the server.')"),false,'Late stop cannot revive locked workspace');
+    await adminInput('input[aria-label="Admin master key"]',ADMIN_FIXTURE_KEY);await adminClick('Unlock AI workspace');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Assistant pilot')"),'admin workspace reopened for chat');
+    await adminClick('Check repair status');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Sign in with the registered owner account')"),'actual owner-session denial is actionable');
+    await adminClick('Check repair status');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('The administrator key could not be verified')"),'actual key denial is distinct from paused controls');
+    console.log('ISOLATED_REPAIR_OWNER_BROWSER_PASS: signed-out denial, paused/unverified status, explicit durable stop, forged authority rejection, stop interrupts pending status and late-response lock isolation. Fixture only.');
+    await openChat();await askChat();
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Chat is unavailable, paused')"),'paused chat is visible');
+    await askChat();await wait(()=>devtools.evaluate("document.body.textContent.includes('Unverified suggestion')"),'unverified reply rendered');
+    assert.equal(await devtools.evaluate("window.__modelHtmlExecuted===true"),false,'Model HTML cannot execute');
+    assert.equal(await devtools.evaluate("document.querySelectorAll('img[src=x]').length"),0,'Model reply must remain plain text');
+    await adminClick('Use as request draft');
+    await wait(()=>devtools.evaluate("document.querySelector('textarea')?.value==="+JSON.stringify(chatDraft)),'draft transferred only after owner click');
+    await openChat();await askChat();
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('assistant response could not be validated')"),'forged merge authority rejected');
+    await askChat();await wait(()=>adminChatRequests===4,'pending chat request');await adminClick('Lock');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Private admin access')"),'workspace locked');
+    await sleep(650);
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('Unverified suggestion')"),false,'Late reply cannot revive locked workspace');
+    assert.equal(await devtools.evaluate("Object.values(localStorage).some(x=>x.includes("+JSON.stringify(ADMIN_FIXTURE_KEY)+"))"),false,'Admin key cannot be persisted');
+    assert.equal(adminChatRequests,4);assert.equal(dataWrites,0);
+    console.log('ISOLATED_ADMIN_CHAT_BROWSER_PASS: paused pilot, literal model text, owner-click draft transfer, forged authority denial and late-response lock isolation; fixture only; no real provider calls.');
+    // Actual compiled announcements must recover from valid JSON of the wrong
+    // shape, retain revision markers across reload and avoid replay on focus.
+    showPublications=true;
+    const noticeKey='tradehq-seen-course-publications-v1';
+    const noticeCount=()=>devtools.evaluate("document.querySelectorAll('button[aria-label^=\"Open new course: \"]').length");
+    await devtools.evaluate('localStorage.setItem('+JSON.stringify(noticeKey)+',\'null\')');
+    await loadDocument(origin+'/courses');
+    await wait(async()=>await noticeCount()===1,'announcement recovered from null history');
+    const seen=await devtools.evaluate('JSON.parse(localStorage.getItem('+JSON.stringify(noticeKey)+'))');
+    assert.equal(seen[publications[0].slug+':'+publications[0].published_at],true);
+    const beforeReload=publicationReads;await loadDocument();
+    await wait(()=>publicationReads>beforeReload,'announcement publication read after reload');
+    await sleep(250);assert.equal(await noticeCount(),0,'Seen publication cannot replay after reload');
+    const beforeFocus=publicationReads;await devtools.evaluate("window.dispatchEvent(new Event('focus'))");
+    await wait(()=>publicationReads>beforeFocus,'announcement recheck on focus');
+    await sleep(250);assert.equal(await noticeCount(),0,'Seen publication cannot replay on focus');
+    await devtools.evaluate('localStorage.setItem('+JSON.stringify(noticeKey)+',\'[]\')');
+    await loadDocument();await wait(async()=>await noticeCount()===1,'announcement recovered from array history');
+    assert.equal(dataWrites,0,'Unexpected fixture writes: '+rejectedWrites.join(', '));
+    console.log('ISOLATED_COURSE_NOTICES_BROWSER_PASS: malformed null/array history recovered, seen revision persisted, reload/focus deduplicated; fixture only.');
+    const progressKey='tradehq_course_progress_v1';
+    const coursePath='/courses/options-trading-fundamentals';
+    const savedLesson={status:'completed',score:4,completedAt:'2026-10-09T15:45:01Z'};
+    const retainedTrack={lessons:{retained:savedLesson},badgeEarnedAt:'2026-10-09T15:46:01Z'};
+    for(const tracks of [null,{'options-trading-fundamentals':{lessons:null},retained:retainedTrack},{'options-trading-fundamentals':{lessons:{invalid:null}},retained:retainedTrack}]){
+      await devtools.evaluate('localStorage.setItem('+JSON.stringify(progressKey)+','+JSON.stringify(JSON.stringify({v:1,tracks,updatedAt:'2026-10-09T15:45:01Z'}))+')');
+      await loadDocument(origin+coursePath);
+      await wait(()=>devtools.evaluate("[...document.querySelectorAll('h1')].some(x=>x.textContent.includes('Options Trading Fundamentals'))"),'course renders despite malformed progress');
+      const link=await devtools.evaluate("[...document.querySelectorAll('main a')].find(x=>x.getAttribute('href')?.startsWith('/courses/options-trading-fundamentals/'))?.getAttribute('href')");
+      assert.ok(link,'Actual course lesson link missing');await loadDocument(origin+link);
+      await wait(()=>devtools.evaluate("[...document.querySelectorAll('button')].some(x=>x.textContent.includes('Submit & complete lesson'))"),'lesson mounts and saves recovered progress');
+      const after=await devtools.evaluate('JSON.parse(localStorage.getItem('+JSON.stringify(progressKey)+'))');
+      assert.ok(Object.values(after.tracks['options-trading-fundamentals'].lessons).some(x=>x.status==='in-progress'));
+      if(tracks)assert.deepEqual(after.tracks.retained,retainedTrack,'Valid unrelated completed lesson and badge must survive recovery save');
+      await loadDocument();
+      await wait(()=>devtools.evaluate("[...document.querySelectorAll('button')].some(x=>x.textContent.includes('Submit & complete lesson'))"),'recovered lesson survives reload');
+    }
+    assert.equal(dataWrites,0);
+    console.log('ISOLATED_COURSE_PROGRESS_BROWSER_PASS: null tracks, null lessons and invalid lesson rows recovered; valid unrelated completion/badge retained after real lesson save and reload; fixture only.');
+    console.log("ISOLATED_AUTH_BROWSER_PASS: reload persistence; real UI sign-out; no resurrected session; expired refresh rejected; ten Daily answers persisted/resumed/locked; one streak per day; actual built TradeHQ login in real Chromium; negative password refused; fake Supabase grant accepted; authenticated profile navigation observed; isolated account initialization executed; zero non-allowlisted backend writes; zero real provider calls.");
+  }finally{
+    // Wait for Chrome to exit before deleting its still-active profile files.
+    // Otherwise a successful browser assertion can randomly fail on ENOTEMPTY.
+    devtools?.close();
+    if(browser?.pid){
+      // Chrome launches child renderers. Kill this dedicated process group,
+      // not only the launcher, so no profile writers survive fixture teardown.
+      const exited=browser.exitCode===null && browser.signalCode===null
+        ? once(browser,"exit").catch(()=>undefined) : Promise.resolve();
+      try{process.kill(-browser.pid,"SIGKILL");}
+      catch(error){if(error.code!=="ESRCH")throw error;}
+      await Promise.race([exited,sleep(2500)]);
+    }
+    if(server)await new Promise(resolve=>server.close(resolve));
+    // Cleanup must finish, but transient Chrome profile locks may need retries.
+    let cleaned=false;
+    for(let attempt=0;attempt<12;attempt++){
+      try{rmSync(temp,{recursive:true,force:true,maxRetries:2,retryDelay:150});cleaned=true;break;}
+      catch(error){if(!["ENOTEMPTY","EBUSY","EPERM"].includes(error.code))throw error;await sleep(250);}
+    }
+    if(!cleaned)throw Error("Isolated Chrome profile cleanup did not finish");
+  }
+}
+main().catch(e=>{console.error("Isolated auth-browser regression FAILED: "+String(e.message||e).slice(0,700));process.exitCode=1;});
