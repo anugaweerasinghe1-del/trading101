@@ -8,6 +8,32 @@ import { checkCourseDemand } from "../supabase/functions/_shared/courseDemandChe
 import { renderApprovedCourse } from "../src/lib/courseHtml.ts";
 import { sharedQuote } from "../supabase/functions/_shared/sharedQuote.ts";
 import { readCoursePublicationHistory } from "../src/lib/coursePublicationHistory.ts";
+import { parseCourseProgress } from "../src/lib/courseProgress.ts";
+
+for (const raw of [null, 'null', '[]', '42', '{broken', '{"v":2,"tracks":{}}', '{"v":1,"tracks":null}', '{"v":1,"tracks":[]}']) {
+  assert.equal(Object.keys(parseCourseProgress(raw).tracks).length, 0, 'Malformed progress must recover without a render crash');
+}
+const completedLesson = { status: 'completed', score: 4, completedAt: '2026-10-09T15:45:01Z', scrolledPct: 100 };
+const recovered = parseCourseProgress(JSON.stringify({ v: 1, updatedAt: 'bad date', tracks: {
+  good: { lessons: { completed: completedLesson, broken: null, badStatus: { status: 'unknown' }, arrayStatus: { status: ['completed'] }, objectStatus: { status: { toString: 'completed' } }, badScore: { status: 'in-progress', score: '4', scrolledPct: -1 } }, badgeEarnedAt: '2026-10-09T15:46:01Z' },
+  broken: null, noLessons: { lessons: null }, arrayLessons: { lessons: [] },
+}, lastLesson: { track: 'good', lesson: 'completed', at: '2026-10-09T15:45:01Z' } }));
+assert.deepEqual(recovered.tracks.good.lessons.completed, completedLesson, 'Valid saved score and completion survive nearby corruption');
+assert.equal(recovered.tracks.good.badgeEarnedAt, '2026-10-09T15:46:01Z');
+assert.deepEqual(recovered.lastLesson, { track: 'good', lesson: 'completed', at: '2026-10-09T15:45:01Z' });
+assert.equal(recovered.tracks.good.lessons.broken, undefined);
+assert.equal(recovered.tracks.good.lessons.badStatus, undefined);
+assert.equal(recovered.tracks.good.lessons.arrayStatus, undefined);
+assert.equal(recovered.tracks.good.lessons.objectStatus, undefined);
+assert.deepEqual(recovered.tracks.good.lessons.badScore, { status: 'in-progress' });
+assert.equal(Object.keys(recovered.tracks.noLessons.lessons).length, 0);
+assert.equal(Object.keys(recovered.tracks.arrayLessons.lessons).length, 0);
+assert.equal(recovered.updatedAt, new Date(0).toISOString());
+const reserved = parseCourseProgress('{"v":1,"tracks":{"__proto__":{"lessons":{"constructor":{"status":"completed","score":4}}}}}');
+assert.equal(Object.getPrototypeOf(reserved.tracks), null, 'Stored track keys cannot inherit prototype properties');
+assert.equal(Object.getPrototypeOf(reserved.tracks.__proto__.lessons), null);
+assert.equal(reserved.tracks.__proto__.lessons.constructor.status, 'completed');
+assert.equal(Object.hasOwn(parseCourseProgress('{"v":1,"tracks":{}}').tracks, 'constructor'), false);
 
 const noticeNow = Date.parse('2026-10-14T00:00:00Z');
 const seenPublication = 'published-course:2026-10-09T15:45:01.003475+00:00';
