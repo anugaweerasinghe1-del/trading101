@@ -4,7 +4,7 @@ import { PGlite } from '@electric-sql/pglite';
 import { starterPracticeBank as bank } from '../src/lib/dailyPracticeBank.ts';
 import { exerciseForDate, validateBatch, validateExercises, type DailyExercise } from '../supabase/functions/_shared/dailyPractice.ts';
 import { recordChallenge, getStreak, hasPlayedQuickToday, getTodayChallenge } from '../src/lib/dailyChallenge.ts';
-import { newPractice, readPractice, savePractice, upgradePractice } from '../src/lib/dailyPracticeProgress.ts';
+import { newPractice, readPractice, savePractice, upgradePractice, validProgress } from '../src/lib/dailyPracticeProgress.ts';
 import { createCourseAdminHandler } from '../supabase/functions/_shared/courseAdmin.ts';
 import { generatePractice } from '../supabase/functions/_shared/dailyPracticeGenerator.ts';
 assert.ok(validateBatch(bank)); assert.equal(new Set(bank.exercises.map(e => e.id)).size, 50);
@@ -29,6 +29,20 @@ memory.clear(); savePractice(progress, storage);
 assert.equal(readPractice('2026-10-10', storage), null);
 assert.equal(readPractice('2026-10-09', { getItem: () => '{broken' }), null);
 assert.equal(savePractice(progress, { ...storage, setItem: () => { throw new Error('blocked'); } }).saved, false);
+// One malformed date must not make valid neighboring attempts unreadable.
+for (const date of [null, 42, [], {}, { toString: 'invalid' }, { toString: null, valueOf: 'invalid' }]) {
+  assert.doesNotThrow(() => validProgress({ date }));
+  assert.equal(validProgress({ date }), false);
+}
+const neighbor = { ...newPractice(bank, '2026-10-10'), answers: [2] };
+storage.setItem('tradehq:deeper-practice:v1', JSON.stringify([{ date: { toString: 'invalid' } }, progress, neighbor]));
+assert.deepEqual(readPractice('2026-10-09', storage), progress, 'A damaged row must not hide the valid saved attempt');
+const recoveredSave = savePractice({ ...progress, answers: [1, 2, 0, 1] }, storage);
+assert.equal(recoveredSave.saved, true, 'Cleanup must still save the extended valid attempt');
+assert.deepEqual(recoveredSave.progress.answers, [1, 2, 0, 1]);
+assert.deepEqual(readPractice('2026-10-10', storage), neighbor, 'Other valid dates and original answers remain intact');
+assert.ok(JSON.parse(storage.getItem('tradehq:deeper-practice:v1')!).every(validProgress));
+memory.clear();
 // Only an exact preserved three-question prefix may be extended, with old answers retained.
 const legacy = { ...progress, bankId: 'authored-2026-10', exercise: { ...bank.exercises[0], questions: bank.exercises[0].questions.slice(0,3) } };
 const upgraded = upgradePractice(legacy, bank);
