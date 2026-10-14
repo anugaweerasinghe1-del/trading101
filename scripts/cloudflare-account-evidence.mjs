@@ -36,17 +36,22 @@ export async function collectCloudflareAccountEvidence({sha,token,fetchImpl=fetc
   const started=now(),observedAt=new Date(started).toISOString();let requests=0;
   async function read(path,{query}={}){
     assert.ok(++requests<=LIMITS.requests && now()-started<LIMITS.totalMs,'Cloudflare evidence request/time budget');
-    assert.ok(path.startsWith('/accounts/'+ACCOUNT+'/')||path==='/graphql'||path==='/user/tokens/verify','Unexpected Cloudflare evidence destination');
+    assert.ok(path.startsWith('/accounts/'+ACCOUNT+'/')||path==='/graphql','Unexpected Cloudflare evidence destination');
     let response;
     try{response=await fetchImpl(BASE+path,{method:query?'POST':'GET',redirect:'error',
       headers:{Authorization:'Bearer '+token,Accept:'application/json',...(query?{'Content-Type':'application/json'}:{})},
       ...(query?{body:JSON.stringify({query})}:{}),signal:AbortSignal.timeout(15000)});}
     catch{throw Error('Cloudflare evidence transport unavailable');}
-    if(response.status!==200){void response.body?.cancel().catch(()=>{});throw Error('Cloudflare evidence access denied or unavailable');}
+    if(response.status!==200){
+      let code=null;
+      try{const body=await json(response);if(Number.isSafeInteger(body.errors?.[0]?.code))code=body.errors[0].code;}catch{}
+      const phase=path.endsWith('/tokens/verify')?'account token verification':path.endsWith('/subscriptions')?'billing':path==='/graphql'?'analytics':'Pages';
+      throw Error('Cloudflare '+phase+' unavailable (HTTP '+response.status+(code===null?'':'; code '+code)+').');
+    }
     try{return await json(response);}
     catch{throw Error('Cloudflare evidence response invalid or exceeded bounds');}
   }
-  const identity=await read('/user/tokens/verify');
+  const identity=await read('/accounts/'+ACCOUNT+'/tokens/verify');
   assert.ok(identity.success===true && identity.result?.status==='active','Cloudflare read token inactive');
   const project=await read('/accounts/'+ACCOUNT+'/pages/projects/'+PROJECT);
   assert.ok(project.success===true && project.result?.name===PROJECT && project.result.production_branch==='main','Cloudflare project/main binding invalid');

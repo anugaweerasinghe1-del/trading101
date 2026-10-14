@@ -139,7 +139,7 @@ const cloudFetch=(modify=()=>{})=>async (url,init)=>{
   cloudRequests.push(url);assert.equal(init.headers.Authorization,'Bearer '+cloudToken);assert.equal(init.redirect,'error');
   assert.ok(url.startsWith('https://api.cloudflare.com/client/v4/'));
   let body;
-  if(url.endsWith('/user/tokens/verify'))body={success:true,result:{status:'active',id:leak}};
+  if(url.endsWith('/tokens/verify'))body={success:true,result:{status:'active',id:leak}};
   else if(url.endsWith('/pages/projects/tradehq-preview'))body=structuredClone(cloudProject);
   else if(url.includes('/deployments?'))body={success:true,result:[cloudDeployment(MAIN,UUID),cloudDeployment(PRIOR,OLD)]};
   else if(url.endsWith('/subscriptions'))body={success:true,result:[{price:0,frequency:'monthly',rate_plan:{id:'workers_free'},payment_source:{email:leak}}]};
@@ -150,11 +150,12 @@ const cloudFetch=(modify=()=>{})=>async (url,init)=>{
 };
 const cloud=await collectCloudflareAccountEvidence({sha:MAIN,token:cloudToken,fetchImpl:cloudFetch(),now:()=>Date.parse('2026-10-14T14:00:00Z')});
 assert.equal(cloudRequests.length,5);assert.equal(cloud.activeProduction.sha,MAIN);assert.equal(cloud.previousSuccessfulProduction.sha,PRIOR);
+assert.equal(cloudRequests[0],'https://api.cloudflare.com/client/v4/accounts/01087d56e4cb7b728a7a9ddbcb12b9bb/tokens/verify','Account-owned tokens must use their account verification endpoint');
 assert.equal(cloud.usage.projectRequests,31);assert.equal(cloud.quotaHeadroomVerified,false);assert.equal(cloud.rollbackPerformed,false);
 assert.ok(Object.values(cloud.authorization).every(v=>v===false));
 for(const value of [cloudToken,leak,'payment_source','env_vars'])assert.ok(!JSON.stringify(cloud).includes(value));
 for(const modify of [
- (b,u)=>{if(u.endsWith('/user/tokens/verify'))b.result.status='disabled';},
+ (b,u)=>{if(u.endsWith('/tokens/verify'))b.result.status='disabled';},
  (b,u)=>{if(u.endsWith('/pages/projects/tradehq-preview'))b.result.canonical_deployment.deployment_trigger.metadata.commit_hash=PRIOR;},
  (b,u)=>{if(u.endsWith('/pages/projects/tradehq-preview'))b.result.canonical_deployment.environment='preview';},
  (b,u)=>{if(u.endsWith('/pages/projects/tradehq-preview'))b.result.canonical_deployment.project_id='wrong';},
@@ -164,7 +165,7 @@ for(const modify of [
  (b,u)=>{if(u.endsWith('/graphql'))b.data.viewer.accounts[0].pages[0].sum.requests=-1;},
 ])await assert.rejects(collectCloudflareAccountEvidence({sha:MAIN,token:cloudToken,fetchImpl:cloudFetch(modify)}));
 cloudRequests=[];
-await assert.rejects(collectCloudflareAccountEvidence({sha:MAIN,token:cloudToken,fetchImpl:async()=>{cloudRequests.push(1);return new Response(leak,{status:403});}}),/access denied/);
+await assert.rejects(collectCloudflareAccountEvidence({sha:MAIN,token:cloudToken,fetchImpl:async()=>{cloudRequests.push(1);return new Response(JSON.stringify({errors:[{code:10000,message:leak}]}),{status:403});}}),error=>/HTTP 403; code 10000/.test(error.message)&&!error.message.includes(leak));
 assert.equal(cloudRequests.length,1,'Unauthorized credentials must not retry');
 await assert.rejects(collectCloudflareAccountEvidence({sha:MAIN,token:cloudToken,fetchImpl:async()=>{throw Error(cloudToken);}}),error=>!error.message.includes(cloudToken));
 await assert.rejects(collectCloudflareAccountEvidence({sha:MAIN,token:cloudToken,fetchImpl:async()=>new Response(new Uint8Array(2097153))}),/exceeded bounds/);
