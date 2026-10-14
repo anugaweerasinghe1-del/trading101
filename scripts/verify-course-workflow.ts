@@ -3,7 +3,7 @@ import { readFileSync, readdirSync } from "node:fs";
 import { PGlite } from "@electric-sql/pglite";
 import { courseCovers, lessonWordCount, validateCourseDocument, type CourseDocument } from "../supabase/functions/_shared/courseDocument.ts";
 import { createCourseAdminHandler } from "../supabase/functions/_shared/courseAdmin.ts";
-import { generateCourse, courseReferences } from "../supabase/functions/_shared/courseGenerator.ts";
+import { generateCourse, courseReferences, GENERATION_READ_LIMITS } from "../supabase/functions/_shared/courseGenerator.ts";
 import { checkCourseDemand } from "../supabase/functions/_shared/courseDemandCheck.ts";
 import { renderApprovedCourse } from "../src/lib/courseHtml.ts";
 import { sharedQuote } from "../supabase/functions/_shared/sharedQuote.ts";
@@ -126,6 +126,7 @@ const claim = { lease: "test", period: "2026-10", slot: 1, apiKey: "test-free-ke
   gscProperty: "", gscCredentials: null, topicRequests: ["Price snapshots"], existing: [] };
 const fetcher = (async (url: string | URL | Request, init?: RequestInit) => {
   if (String(url).includes("generativelanguage")) {
+    assert.equal(init?.redirect, 'error');
     aiCalls++; assert.ok(!String(url).includes(claim.apiKey));
     const prompt = JSON.parse(JSON.parse(String(init!.body)).contents[0].parts[0].text);
     assert.equal(prompt.covers.length, 4);
@@ -142,6 +143,14 @@ assert.equal(aiCalls, 1);
 const limited = (async (url: string | URL | Request, init?: RequestInit) => String(url).includes("generativelanguage")
   ? new Response("", { status: 429 }) : fetcher(url, init)) as typeof fetch;
 await assert.rejects(generateCourse(claim, limited), /Free AI quota exhausted/);
+for (const bad of [new Response(new Uint8Array(GENERATION_READ_LIMITS.providerBytes+1)), new Response('{provider-private-fixture'), new Response('', {status:302})]) {
+  let providerAttempts=0;
+  await assert.rejects(generateCourse(claim, (async (url, init) => {
+    if(String(url).includes('generativelanguage')) {providerAttempts++;assert.equal(init?.redirect,'error');return bad;}
+    return fetcher(url,init);
+  }) as typeof fetch), /byte limit|invalid response|HTTP 302/);
+  assert.equal(providerAttempts,1,'Rejected response must not retry or fall back');
+}
 
 const testKeys = await crypto.subtle.generateKey({ name: "RSASSA-PKCS1-v1_5", modulusLength: 2048,
   publicExponent: new Uint8Array([1, 0, 1]), hash: "SHA-256" }, true, ["sign", "verify"]);

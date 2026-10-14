@@ -12,6 +12,39 @@ export const courseReferences = [
 ];
 const stringSchema = { type: "string" };
 const stringArray = { type: "array", items: stringSchema };
+export const GENERATION_READ_LIMITS = Object.freeze({ sourceBytes: 1048576, providerBytes: 2097152, sourceReadMs: 8000, providerReadMs: 10000 });
+export async function readGenerationResponse(response: Response, maxBytes: number, timeoutMs: number): Promise<string> {
+  if (!response.body) return '';
+  const reader = response.body.getReader(), chunks: Uint8Array[] = [];
+  let size = 0;
+  const deadline = Date.now() + timeoutMs;
+  try {
+    for (;;) {
+      const remaining = deadline - Date.now();
+      if (remaining <= 0) throw Error('Generation response exceeded its read deadline.');
+      let timer: ReturnType<typeof setTimeout> | undefined;
+      let part: ReadableStreamReadResult<Uint8Array>;
+      try {
+        part = await Promise.race([reader.read(), new Promise<never>((_, reject) => {
+          timer = setTimeout(() => reject(Error('Generation response exceeded its read deadline.')), remaining);
+        })]);
+      } finally { clearTimeout(timer); }
+      if (part.done) break;
+      size += part.value.byteLength;
+      if (size > maxBytes) throw Error('Generation response exceeded its byte limit.');
+      chunks.push(part.value);
+    }
+    const bytes = new Uint8Array(size); let offset = 0;
+    for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.byteLength; }
+    try { return new TextDecoder('utf-8', { fatal: true }).decode(bytes); }
+    catch { throw Error('Generation response is not valid UTF-8.'); }
+  } finally {
+    // Cancellation is best effort: a stalled producer must not hold cleanup
+    // beyond the read deadline or retain the Edge worker's generation lease.
+    void reader.cancel().catch(() => {});
+    reader.releaseLock();
+  }
+}
 function schema(properties: Record<string, unknown>) {
   return { type: "object", properties, required: Object.keys(properties), additionalProperties: false };
 }
@@ -68,8 +101,11 @@ export async function googleSearchDemand(credentials: Record<string, string>, pr
 export async function readCourseReferences(fetcher = fetch) {
   const results = await Promise.allSettled(courseReferences.map(async source => {
     const response = await fetcher(source.url, { signal: AbortSignal.timeout(8000), redirect: "error" });
-    if (!response.ok || !response.headers.get("content-type")?.includes("text/html")) throw new Error("Source unavailable");
-    const raw = await response.text();
+    if (!response.ok || !response.headers.get("content-type")?.includes("text/html")) {
+      void response.body?.cancel().catch(() => {});
+      throw new Error("Source unavailable");
+    }
+    const raw = await readGenerationResponse(response, GENERATION_READ_LIMITS.sourceBytes, GENERATION_READ_LIMITS.sourceReadMs);
     const main = raw.match(/<(?:main|article)\b[^>]*>([\s\S]*?)<\/(?:main|article)>/i)?.[1] ?? raw;
     const clean = main.slice(0, 300000).replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
       .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
@@ -122,7 +158,7 @@ export async function generateCourse(claim: GenerationClaim, fetcher = fetch) {
     ],
   };
   const response = await fetcher("https://generativelanguage.googleapis.com/v1beta/models/" + encodeURIComponent(claim.model) + ":generateContent", {
-    method: "POST", headers: { "Content-Type": "application/json", "x-goog-api-key": claim.apiKey },
+    method: "POST", redirect: "error", headers: { "Content-Type": "application/json", "x-goog-api-key": claim.apiKey },
     body: JSON.stringify({
       contents: [{ role: "user", parts: [{ text: JSON.stringify(request) }] }],
       generationConfig: { responseMimeType: "application/json", responseJsonSchema: createCourseJsonSchema(references.map(r => r.url)),
@@ -130,9 +166,15 @@ export async function generateCourse(claim: GenerationClaim, fetcher = fetch) {
     }), signal: AbortSignal.timeout(95000),
   });
   // No paid fallback, quota workaround or automatic model change.
-  if (response.status === 429) throw new Error("Free AI quota exhausted. Generation paused; no paid fallback was used.");
-  if (!response.ok) throw new Error("AI provider rejected generation (HTTP " + response.status + "). Check the free API key and model.");
-  const output = await response.json();
+  if (!response.ok) {
+    void response.body?.cancel().catch(() => {});
+    if (response.status === 429) throw new Error("Free AI quota exhausted. Generation paused; no paid fallback was used.");
+    throw new Error("AI provider rejected generation (HTTP " + response.status + "). Check the free API key and model.");
+  }
+  const rawOutput = await readGenerationResponse(response, GENERATION_READ_LIMITS.providerBytes, GENERATION_READ_LIMITS.providerReadMs);
+  let output;
+  try { output = JSON.parse(rawOutput); }
+  catch { throw new Error("AI provider returned an invalid response. No course was published."); }
   const content = output.candidates?.[0]?.content?.parts?.filter((p: { thought?: boolean }) => !p.thought).map((p: { text?: string }) => p.text ?? "").join("") ?? "";
   let document: CourseDocument;
   try { document = JSON.parse(content); } catch {
