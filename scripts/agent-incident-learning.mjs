@@ -7,7 +7,8 @@ import { createHash } from 'node:crypto';
 import { parseIncidentMemory, recommendIncidentInvestigation } from './agent-incident-memory.mjs';
 
 export const LEARNING_LIMITS = Object.freeze({records:100,minimumRuns:10,minimumTrainingRuns:8,
-  epochs:250,step:0.4,regularization:0.01,retentionDays:30});
+  epochs:250,step:0.4,regularization:0.01,retentionDays:30,
+  classificationThreshold:0.5,maximumFalsePositiveRate:0.1,maximumFeatureShift:0.25});
 const DAY=86_400_000;
 const models=new WeakMap();
 const deny=()=>Object.freeze({codeWrites:false,modelCalls:false,ownerApproval:false,merge:false,productionRelease:false});
@@ -71,6 +72,37 @@ function loss(rows,predict) {
     return sum-(label(row)*Math.log(p)+(1-label(row))*Math.log(1-p));
   },0)/rows.length;
 }
+function heldOutQuality(rows,predict) {
+  let truePositive=0,falsePositive=0,trueNegative=0,falseNegative=0,brierScore=0;
+  const bins=Array.from({length:5},()=>({count:0,predicted:0,observed:0}));
+  for(const row of rows) {
+    const p=predict(row),actual=label(row),positive=p>=LEARNING_LIMITS.classificationThreshold;
+    if(positive){if(actual)truePositive++;else falsePositive++;}
+    else if(actual)falseNegative++;else trueNegative++;
+    brierScore+=(p-actual)**2;
+    const bin=bins[Math.min(4,Math.floor(p*5))];bin.count++;bin.predicted+=p;bin.observed+=actual;
+  }
+  const positives=truePositive+falseNegative,negatives=trueNegative+falsePositive;
+  return {target:'REPORTED_UNSUCCESSFUL_OUTCOME',threshold:LEARNING_LIMITS.classificationThreshold,
+    truePositive,falsePositive,trueNegative,falseNegative,positives,negatives,
+    falsePositiveRate:negatives?falsePositive/negatives:null,
+    falseNegativeRate:positives?falseNegative/positives:null,
+    brierScore:brierScore/rows.length,
+    expectedCalibrationError:bins.reduce((sum,b)=>sum+(b.count?Math.abs(b.predicted-b.observed):0),0)/rows.length,
+    calibrationBins:5,calibrationEstablished:false};
+}
+function featureDrift(train,test) {
+  const dimensions={};
+  for(const field of ['category','route','action']) {
+    const counts=rows=>{const map=new Map();for(const r of rows)map.set(r[field],(map.get(r[field])||0)+1);return map;};
+    const a=counts(train),b=counts(test),values=new Set([...a.keys(),...b.keys()]);
+    const totalVariation=[...values].reduce((n,v)=>n+Math.abs((a.get(v)||0)/train.length-(b.get(v)||0)/test.length),0)/2;
+    const unseenFraction=[...b].filter(([v])=>!a.has(v)).reduce((n,[,count])=>n+count,0)/test.length;
+    dimensions[field]={totalVariation,unseenFraction};
+  }
+  return {method:'CATEGORICAL_TOTAL_VARIATION',maximumShift:LEARNING_LIMITS.maximumFeatureShift,dimensions,
+    detected:Object.values(dimensions).some(d=>d.unseenFraction>0||d.totalVariation>LEARNING_LIMITS.maximumFeatureShift)};
+}
 function freezeDeep(value) {
   if (value && typeof value==='object') {for (const child of Object.values(value)) freezeDeep(child); Object.freeze(value);}
   return value;
@@ -96,15 +128,23 @@ export function trainIncidentOutcomeModel({memoryJson,now}) {
   const evaluation={split:'PURGED_CHRONOLOGICAL_DISTINCT_RUNS',cutoff,purgedRuns,
     trainingRecords:train.length,heldOutRecords:test.length,trainingRuns:new Set(train.map(r=>r.runId)).size,
     heldOutRuns:new Set(test.map(r=>r.runId)).size,baselineLogLoss,modelLogLoss,
-    improvement:baselineLogLoss-modelLogLoss,productionAccuracyEstablished:false};
+    improvement:baselineLogLoss-modelLogLoss,productionAccuracyEstablished:false,
+    classification:heldOutQuality(test,r=>probability(evaluationModel,r)),featureDrift:featureDrift(train,test)};
+  if(evaluation.featureDrift.detected)
+    return freezeDeep({...common,status:'ABSTAIN_FEATURE_DRIFT',evaluation});
   if (!(Number.isFinite(modelLogLoss) && modelLogLoss<baselineLogLoss-0.01))
     return freezeDeep({...common,status:'ABSTAIN_NO_HELD_OUT_BENEFIT',evaluation});
+  // Better average loss can conceal bad false-positive behavior in a minority
+  // class. This gate describes reported outcomes, never verified repair success.
+  if(evaluation.classification.falsePositiveRate>LEARNING_LIMITS.maximumFalsePositiveRate)
+    return freezeDeep({...common,status:'ABSTAIN_FALSE_POSITIVE_RATE',evaluation});
   const fitted=fit(records);
   const learned={features:fitted.dictionary,weights:fitted.weights};
   const result=freezeDeep({...common,status:'SHADOW_MODEL_TRAINED',evaluation,
     learned,modelDigest:hash({schema:common.schema,dataDigest:common.dataDigest,learned}),
     limitations:['Labels report investigations; they do not verify fixes.',
-      'Held-out benefit is on this dataset only; repair authority and live accuracy remain unproven.']});
+      'Held-out benefit is on this dataset only; repair authority and live accuracy remain unproven.',
+      'Scores are uncalibrated; small non-random reported-outcome samples do not establish population error rates.']});
   models.set(result,{...fitted,records,trainedAt:Date.parse(now)});
   return result;
 }
@@ -121,5 +161,8 @@ export function predictReportedOutcome({model,incident,action,now}) {
     status:unseen?'ABSTAIN_UNSEEN_CONTEXT':'UNVERIFIED_SHADOW_ESTIMATE',
     action,reportedFailureProbability:unseen?null:probability(fitted,{...incident,action}),
     supportingReports:support.length,dataTrust:'OWNER_REPORTED_UNVERIFIED',
+    confidence:{calibrationEstablished:false,supportingDistinctRuns:new Set(support.map(r=>r.runId)).size,
+      heldOutRuns:model.evaluation.heldOutRuns,heldOutNegativeReports:model.evaluation.classification.negatives,
+      heldOutFalsePositiveRate:model.evaluation.classification.falsePositiveRate},
     rootCauseVerified:false,confirmedRepairOutcomes:0,authorization:deny()});
 }
