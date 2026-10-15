@@ -81,6 +81,7 @@ async function main(){
   const publications=[{slug:'isolated-publication',published_at:new Date().toISOString(),title:'Isolated course announcement'}];
   const ADMIN_FIXTURE_KEY='isolated-admin-fixture-only';
   let dailyGenerationRequests=0;
+  let dailyDrafts=[],dailyEditorialWrites=0;
   let dailyStatus={enabled:false,nextDue:'2026-12-09',prepareAfter:'2026-12-02',completed:20,attempts:2,
     retryAfter:new Date(Date.now()+3600000).toISOString(),lastError:'Gemini rejected generation (HTTP 503). Check free-tier settings.',
     lastStarted:'2026-10-14T16:14:30Z',lastFinished:'2026-10-14T16:14:33Z',
@@ -100,9 +101,10 @@ async function main(){
         let content='';req.on('data',chunk=>{content+=chunk;});
         req.on('end',()=>{
           let body;try{body=JSON.parse(content);}catch{return json(400,{error:'fixture_invalid_json'});}
-          if(body.action==='daily-list')return json(200,{data:[]});
+          if(body.action==='daily-list')return json(200,{data:dailyDrafts});
           if(body.action==='daily-status')return json(200,{data:dailyStatus});
           if(body.action==='daily-generate'){dailyGenerationRequests++;return json(200,{data:null});}
+          if(['daily-save','daily-publish','daily-reject'].includes(body.action)){dailyEditorialWrites++;return json(409,{error:'No editorial mutation permitted in this read-only fixture'});}
           return json(200,{data:{}});
         });return;
       }
@@ -477,6 +479,34 @@ async function main(){
     assert.equal(dailyGenerationRequests,1);
     assert.equal(dataWrites,0);
     console.log('ISOLATED_DAILY_GENERATION_READINESS_PASS: paused/cooldown/cap/recent-start controls blocked; saved part counts visible; only an explicit eligible click requested generation; zero real provider calls.');
+    // Review triage uses actual compiled components and existing private-list data.
+    // Deliberate duplicate wording here is a fixture, never a real AI draft.
+    const reviewDocument=structuredClone(fixtureBank);
+    reviewDocument.exercises[1].scenario=reviewDocument.exercises[0].scenario;
+    reviewDocument.exercises[1].questions[1].prompt=reviewDocument.exercises[1].questions[0].prompt;
+    reviewDocument.exercises[1].questions[2].explanation=reviewDocument.exercises[1].questions[0].explanation;
+    dailyDrafts=[{id:'fixture-review-draft',status:'draft',revision:1,document:reviewDocument},
+      {id:'fixture-approved-bank',status:'published',revision:2,document:fixtureBank},
+      {id:'fixture-rejected-bank',status:'rejected',revision:3,document:{...fixtureBank,effectiveFrom:'2026-12-09'}}];
+    const documentsBefore=JSON.stringify(dailyDrafts);
+    await refreshDaily();
+    await wait(()=>devtools.evaluate("document.querySelectorAll('aside button').length===3"),'Daily bank review queue loaded');
+    await devtools.evaluate("document.querySelector('aside button').click()");
+    await wait(()=>devtools.evaluate("document.querySelector('[aria-label=\"Editorial review overview\"]')?.textContent.includes('50 exercises · 500 scored questions')"),'Daily editorial coverage');
+    assert.equal(await devtools.evaluate("document.querySelector('[aria-label=\"Editorial review overview\"]').textContent.includes('do not verify facts, calculations')"),true);
+    assert.equal(await devtools.evaluate("document.querySelector('[aria-label=\"Editorial review overview\"]').textContent.includes('reuses the explanation')"),true);
+    await devtools.evaluate("[...document.querySelectorAll('[aria-label=\"Editorial review overview\"] button')].find(e=>e.textContent.startsWith('Inspect exercise 2:')).click()");
+    await wait(()=>devtools.evaluate("document.querySelector('[aria-label=\"Exercise review\"] h2')?.textContent==="+JSON.stringify(reviewDocument.exercises[1].title)), 'Flag opens the correct answer/explanation preview');
+    assert.equal(await devtools.evaluate("document.activeElement?.getAttribute('aria-label')"),'Exercise review','Keyboard focus follows review jump');
+    assert.equal(await devtools.evaluate("document.querySelector('[aria-label=\"Exercise review\"]').textContent.includes('— correct')"),true);
+    for(const status of ['draft','published','rejected']){
+      await devtools.evaluate("(()=>{const e=document.querySelector('aside select');e.value="+JSON.stringify(status)+";e.dispatchEvent(new Event('change',{bubbles:true}));return true})()");
+      await wait(()=>devtools.evaluate("document.querySelectorAll('aside button').length===1"),'Daily queue filter '+status);
+      assert.equal(await devtools.evaluate("document.querySelector('aside button').textContent.includes("+JSON.stringify(status==='draft'?'Awaiting review':status==='published'?'Approved':'rejected')+")"),true);
+    }
+    assert.equal(JSON.stringify(dailyDrafts),documentsBefore,'Review and filtering cannot edit draft documents');
+    assert.equal(dailyEditorialWrites,0);assert.equal(dailyGenerationRequests,1,'Review must not request regeneration');
+    console.log('ISOLATED_DAILY_EDITORIAL_REVIEW_PASS: 50-case/500-question overview, duplicate-case/question/explanation triage, correct preview/focus, three queue filters; zero editorial mutations or extra generation requests. Fixture only.');
     console.log('ISOLATED_COURSE_PROGRESS_BROWSER_PASS: null tracks, null lessons and invalid lesson rows recovered; valid unrelated completion/badge retained after real lesson save and reload; fixture only.');
     console.log("ISOLATED_AUTH_BROWSER_PASS: reload persistence; real UI sign-out; no resurrected session; expired refresh rejected; ten Daily answers persisted/resumed/locked; one streak per day; actual built TradeHQ login in real Chromium; negative password refused; fake Supabase grant accepted; authenticated profile navigation observed; isolated account initialization executed; zero non-allowlisted backend writes; zero real provider calls.");
   }finally{

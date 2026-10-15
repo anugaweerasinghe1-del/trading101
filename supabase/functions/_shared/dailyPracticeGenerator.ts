@@ -1,4 +1,5 @@
 import { DAILY_CATEGORIES, normalized, validateExercises, type DailyExercise } from './dailyPractice.ts';
+import { hasRepeatedPracticeCase } from './dailyPracticeReview.ts';
 import { readCourseReferences, readGenerationResponse, GENERATION_READ_LIMITS } from './courseGenerator.ts';
 export interface PracticeClaim {
   lease: string; effectiveFrom: string; apiKey: string; model: string;
@@ -56,13 +57,11 @@ export async function generatePractice(claim: PracticeClaim, fetcher = fetch) {
   catch { throw new Error('Gemini returned incomplete output. No content was published.'); }
   const errors = validateExercises(items, 10, 10);
   if (errors.length) throw new Error('Daily validation failed: ' + errors.slice(0, 2).join(' '));
-  const urls = new Set(references.map(r => r.url)), titles = new Set(previous.map(e => normalized(e.title)));
+  const urls = new Set(references.map(r => r.url));
   const prompts = new Set(previous.flatMap(e => e.questions.map(q => normalized(q.prompt))));
-  const words = (s: string) => new Set(normalized(s).split(' ').filter(w => w.length > 3));
-  const similar = (a: string, b: string) => { const x = words(a), y = words(b); return [...x].filter(w => y.has(w)).length / Math.max(x.size, y.size, 1) > 0.72; };
   if (items.some(e => e.sources.some(s => !urls.has(s.url)))) throw new Error('Daily sources did not match the verified references.');
   if (DAILY_CATEGORIES.some(c => items.filter(e => e.category === c).length !== 2)) throw new Error('Daily batch needs two different cases in each category.');
-  if (items.some(e => titles.has(normalized(e.title)) || e.questions.some(q => prompts.has(normalized(q.prompt))) || previous.some(p => similar(e.scenario, p.scenario)))) throw new Error('Daily content repeats an existing exercise. Edit or regenerate before approval.');
+  if (hasRepeatedPracticeCase(items, previous) || items.some(e => e.questions.some(q => prompts.has(normalized(q.prompt))))) throw new Error('Daily content repeats an exercise in this part or an existing bank. Edit or regenerate before approval.');
   return { exercises: items, research: { model: claim.model, generatedAt: new Date().toISOString(), aiAssisted: true,
     sources: references.map(({ label, url, checkedAt }) => ({ label, url, checkedAt })),
     checks: ['Structure, lengths, source allowlist, answer bounds and repetition checks passed.', 'Owner must review facts, originality, arithmetic and answer agreement before publishing.'] } };
