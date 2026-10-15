@@ -80,6 +80,11 @@ async function main(){
   const rejectedWrites=[];
   const publications=[{slug:'isolated-publication',published_at:new Date().toISOString(),title:'Isolated course announcement'}];
   const ADMIN_FIXTURE_KEY='isolated-admin-fixture-only';
+  let dailyGenerationRequests=0;
+  let dailyStatus={enabled:false,nextDue:'2026-12-09',prepareAfter:'2026-12-02',completed:20,attempts:2,
+    retryAfter:new Date(Date.now()+3600000).toISOString(),lastError:'Gemini rejected generation (HTTP 503). Check free-tier settings.',
+    lastStarted:'2026-10-14T16:14:30Z',lastFinished:'2026-10-14T16:14:33Z',
+    freeConfirmed:true,hasApiKey:true,model:'gemini-3.5-flash'};
   const repairRequests={status:0,stop:0};
   const chatDraft='Improve About page mobile spacing while preserving every existing sentence and link.';
   try{
@@ -91,7 +96,15 @@ async function main(){
         res.end(JSON.stringify(body));
       };
       if(route==='/functions/v1/admin-courses' && req.method==='POST'){
-        return req.headers['x-admin-key']===ADMIN_FIXTURE_KEY?json(200,{data:{}}):json(401,{error:'fixture_admin_denied'});
+        if(req.headers['x-admin-key']!==ADMIN_FIXTURE_KEY)return json(401,{error:'fixture_admin_denied'});
+        let content='';req.on('data',chunk=>{content+=chunk;});
+        req.on('end',()=>{
+          let body;try{body=JSON.parse(content);}catch{return json(400,{error:'fixture_invalid_json'});}
+          if(body.action==='daily-list')return json(200,{data:[]});
+          if(body.action==='daily-status')return json(200,{data:dailyStatus});
+          if(body.action==='daily-generate'){dailyGenerationRequests++;return json(200,{data:null});}
+          return json(200,{data:{}});
+        });return;
       }
       if(route==='/functions/v1/admin-agent-chat' && req.method==='POST'){
         if(req.headers['x-admin-key']!==ADMIN_FIXTURE_KEY)return json(401,{error:'fixture_admin_denied'});
@@ -435,7 +448,35 @@ async function main(){
       await loadDocument();
       await wait(()=>devtools.evaluate("[...document.querySelectorAll('button')].some(x=>x.textContent.includes('Submit & complete lesson'))"),'recovered lesson survives reload');
     }
+    // The real administration UI must never send a generation request while
+    // paused, cooling down, at its cap or inside the server's two-minute gap.
+    // These statuses are isolated fixtures, never production generation proof.
+    await loadDocument(origin+'/admin/daily');
+    await wait(()=>devtools.evaluate("!!document.querySelector('main form input[type=password]')"),'Daily admin unlock');
+    await devtools.evaluate("(()=>{const e=document.querySelector('main form input[type=password]');Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(e,"+JSON.stringify(ADMIN_FIXTURE_KEY)+");e.dispatchEvent(new Event('input',{bubbles:true}));document.querySelector('main form button').click();return true;})()");
+    const generationButton="[...document.querySelectorAll('main button')].find(e=>e.textContent==='Prepare next part now')";
+    const checkBlocked=async message=>{
+      await wait(()=>devtools.evaluate('document.querySelector("main").textContent.includes('+JSON.stringify(message)+')'),'Daily readiness: '+message);
+      assert.equal(await devtools.evaluate('!!('+generationButton+')?.disabled'),true);
+      await devtools.evaluate('('+generationButton+').click()');
+      assert.equal(dailyGenerationRequests,0);
+    };
+    const refreshDaily=()=>devtools.evaluate("[...document.querySelectorAll('main button')].find(e=>e.textContent==='Refresh').click()");
+    await checkBlocked('Generation is paused');
+    assert.equal(await devtools.evaluate('document.querySelector("main").textContent.includes("20/50 exercises saved · 2/5 parts completed")'),true);
+    dailyStatus={...dailyStatus,enabled:true};await refreshDaily();await checkBlocked('Cooling down');
+    assert.equal(await devtools.evaluate('document.querySelector("main").textContent.includes("does not establish quota exhaustion")'),true);
+    dailyStatus={...dailyStatus,attempts:3,retryAfter:null};await refreshDaily();await checkBlocked('three-attempt limit');
+    dailyStatus={...dailyStatus,attempts:2,lastStarted:new Date().toISOString()};await refreshDaily();await checkBlocked('A part started recently');
+    dailyStatus={...dailyStatus,lastStarted:null};await refreshDaily();
+    await wait(()=>devtools.evaluate('!!('+generationButton+') && !('+generationButton+').disabled'),'Daily manual request available');
+    assert.equal(dailyGenerationRequests,0,'Status reads must never automatically request generation');
+    await devtools.evaluate('('+generationButton+').click()');
+    await wait(()=>dailyGenerationRequests===1,'one explicit isolated Daily generation request');
+    await wait(()=>devtools.evaluate('!('+generationButton+').disabled'),'Daily request finished');
+    assert.equal(dailyGenerationRequests,1);
     assert.equal(dataWrites,0);
+    console.log('ISOLATED_DAILY_GENERATION_READINESS_PASS: paused/cooldown/cap/recent-start controls blocked; saved part counts visible; only an explicit eligible click requested generation; zero real provider calls.');
     console.log('ISOLATED_COURSE_PROGRESS_BROWSER_PASS: null tracks, null lessons and invalid lesson rows recovered; valid unrelated completion/badge retained after real lesson save and reload; fixture only.');
     console.log("ISOLATED_AUTH_BROWSER_PASS: reload persistence; real UI sign-out; no resurrected session; expired refresh rejected; ten Daily answers persisted/resumed/locked; one streak per day; actual built TradeHQ login in real Chromium; negative password refused; fake Supabase grant accepted; authenticated profile navigation observed; isolated account initialization executed; zero non-allowlisted backend writes; zero real provider calls.");
   }finally{
