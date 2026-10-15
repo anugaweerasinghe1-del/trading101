@@ -267,7 +267,22 @@ try {
   assert.equal(lease.slot, 1); assert.equal(lease.apiKey, ready.apiKey);
   assert.equal((await db.query<{ value: unknown }>("select public.claim_course_generation($1) as value", [token])).rows[0].value, null);
   await db.query("select public.finish_course_generation($1,NULL,NULL,'Free AI quota exhausted')", [lease.lease]);
+  // The pause is per slot. On/after the 15th the independent second slot is
+  // eligible, so isolate slot 1's cooldown by exhausting slot 2 in a rollback-
+  // only fixture transaction. Do not change production scheduling or its clock.
+  await db.exec('BEGIN');
+  await db.exec("INSERT INTO tradehq_private.course_generation_runs(period,slot,attempts,status) SELECT to_char(clock_timestamp() AT TIME ZONE 'Asia/Colombo','YYYY-MM'),2,3,'paused'");
   assert.equal((await db.query<{ value: number | null }>("select public.request_course_generation() as value")).rows[0].value, null);
+  await db.exec('ROLLBACK');
+  // Separately check the scheduler's real second-slot boundary, then undo only
+  // this disposable observation so the existing manual-retry lifecycle follows.
+  await db.exec('BEGIN');
+  const day = (await db.query<{ day: number }>("select extract(day FROM clock_timestamp() AT TIME ZONE 'Asia/Colombo')::int as day")).rows[0].day;
+  const automatic = (await db.query<{ value: number | null }>("select public.request_course_generation() as value")).rows[0].value;
+  assert.equal(automatic, day >= 15 ? 1 : null);
+  if (day >= 15) assert.equal((await db.query<{ slot: number }>("select pending_slot as slot from tradehq_private.course_generation_state")).rows[0].slot, 2);
+  assert.equal((await db.query<{ attempts: number }>("select attempts from tradehq_private.course_generation_runs where slot=1")).rows[0].attempts, 1);
+  await db.exec('ROLLBACK');
   await db.query("select public.request_course_generation(true)");
   const retryToken = (await db.query<{ token: string }>("select pending_token as token from tradehq_private.course_generation_state")).rows[0].token;
   const retry = (await db.query<{ value: { lease: string } }>("select public.claim_course_generation($1) as value", [retryToken])).rows[0].value;
