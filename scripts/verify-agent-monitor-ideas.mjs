@@ -15,6 +15,9 @@ assert.equal(hasObviousDuplicate({title:"Accessible keyboard-navigation guide",u
 const valid = html=>'<html><head><title>Test</title></head><body><div id="root"><main><h1>TradeHQ site</h1><p>'+html+'</p></main></div></body></html>';
 assert.equal(assessBrowserHtml("/",valid("A sufficiently detailed site renders here and includes educational explanations and plenty of useful information.")),null);
 assert.match(assessBrowserHtml("/","<html><body><div id=\"root\"></div></body></html>"),/very little/);
+const unhydrated=valid('<div id="prerender-seo">Static educational fallback with enough text to appear healthy even though no application code has executed.</div>');
+assert.match(assessBrowserHtml('/learn',unhydrated),/hydration was not verified/);
+assert.match(assessBrowserHtml('/learn',unhydrated.replace('id="prerender-seo"',"id='prerender-seo'")),/hydration was not verified/);
 assert.match(assessBrowserHtml("/learn",valid('<main data-route-loading="" role="status">Loading your page. Your TradeHQ page is on its way. Please wait a moment while we get it ready.</main>')),/still loading/);
 assert.match(assessBrowserHtml("/admin",valid("Completely unrelated heading with educational explanations long enough to pass the basic content check.")),/Admin landing/);
 assert.match(assessBrowserHtml("/",valid("Something went wrong and API returned 429, an important public error")),/error is visibly/);
@@ -23,7 +26,7 @@ const timeout={status:null,error:{code:'ETIMEDOUT',message:'spawnSync google-chr
 let calls=0;
 assert.deepEqual(probeBrowserRoute('/',()=>++calls===1?timeout:healthy,{retryAllowed:true}),{failure:null,retried:true,recovered:true});
 assert.equal(calls,2);
-for(const result of [{status:0,stdout:valid('API returned 429, an important visible public error with sufficiently detailed text.')},{status:0,stdout:'<html><body><div id="root"></div></body></html>'},{status:1,stdout:''},{status:null,error:{code:'ENOENT',message:'Chrome missing'}}]){
+for(const result of [{status:0,stdout:unhydrated},{status:0,stdout:valid('API returned 429, an important visible public error with sufficiently detailed text.')},{status:0,stdout:'<html><body><div id="root"></div></body></html>'},{status:1,stdout:''},{status:null,error:{code:'ENOENT',message:'Chrome missing'}}]){
   calls=0;const probe=probeBrowserRoute('/',()=>{calls++;return result},{retryAllowed:true});
   assert.ok(probe.failure);assert.equal(probe.retried,false);assert.equal(calls,1,'Application/unknown process failures must not be hidden by retries');
 }
