@@ -84,3 +84,22 @@ https://docs.github.com/en/actions/reference/security/oidc . GitHub documents bo
 subject formats and the immutable-ID rollout beginning July 2026. Existing
 workflow permissions were inspected; only the job-scoped token-minting permission
 above is proposed, with all resource-write permissions remaining absent.
+
+## Phase 8 prerequisite refresh — 15 October 2026
+
+This draft now includes released main `db4691bdef81764512ff6207a1250a09d61c02a6`.
+Its native readiness job `116194470232` confirms canonical Cloudflare production
+`4be52b3c-8150-41a0-a0f1-894ce7fa3423`, production/main/success for that SHA.
+Vercel active production is READY as `dpl_7Rk81woGq7qHZQUTrDE3URLjyYjH`.
+Main CI, disposable PostgreSQL, public routes/browser and monitoring passed.
+The existing stopped control plane and recorded owner-stop demonstration remain;
+this refresh does not reset or reinstall it. New process-death recovery and
+shadow-quality safeguards are inherited from main, not duplicated in this draft.
+
+The proposed functional identity code and token permission remain unchanged.
+Fresh final-head checks and both previews must pass after this merge. Separate
+owner approval of that exact final head is still required before release of the
+job-scoped `id-token: write` permission. This approval would authorize only the
+read-only identity probe; it would not activate a production repair worker,
+install a database trust binding, approve a repair or authorize an autonomous
+merge/release. No real token acceptance or new rubric point is claimed here.
