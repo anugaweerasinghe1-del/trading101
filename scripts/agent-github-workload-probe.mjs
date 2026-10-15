@@ -34,7 +34,7 @@ export async function probeGitHubWorkload({env,fetcher=fetch,clock=Date.now}) {
     try {
       const part=minted.value.split('.')[1];assert.ok(part?.length<=20480);
       const untrusted=JSON.parse(Buffer.from(part,'base64url').toString('utf8'));
-      requiredClaims=Object.fromEntries(['check_run_id','run_id','run_attempt','workflow_sha','sha'].map(name=>[name,typeof untrusted?.[name]]));
+      requiredClaims=Object.fromEntries(['check_run_id','run_id','run_attempt','workflow_sha','sha','job_workflow_ref','job_workflow_sha'].map(name=>[name,typeof untrusted?.[name]]));
     } catch {requiredClaims=null;}
     const verifier=createGitHubWorkloadVerifier({activationMode:'live-read-only-identity',fetcher,clock,
       readGitHub:async(path,{signal})=>{
