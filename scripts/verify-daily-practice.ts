@@ -7,6 +7,7 @@ import { recordChallenge, getStreak, hasPlayedQuickToday, getTodayChallenge } fr
 import { newPractice, readPractice, savePractice, upgradePractice, validProgress } from '../src/lib/dailyPracticeProgress.ts';
 import { createCourseAdminHandler } from '../supabase/functions/_shared/courseAdmin.ts';
 import { generatePractice } from '../supabase/functions/_shared/dailyPracticeGenerator.ts';
+import { hasRepeatedPracticeCase, reviewPracticeExercises } from '../supabase/functions/_shared/dailyPracticeReview.ts';
 import { readGenerationResponse, GENERATION_READ_LIMITS } from '../supabase/functions/_shared/courseGenerator.ts';
 import { createServer } from 'node:http';
 import { dailyGenerationReadiness, type DailyGenerationStatus } from '../src/lib/dailyGenerationStatus.ts';
@@ -102,6 +103,31 @@ const fetcher = (async (url: string | URL | Request, init?: RequestInit) => {
 }) as typeof fetch;
 assert.equal((await generatePractice(claim, fetcher)).exercises.length, 10); assert.equal(calls, 1);
 await assert.rejects(generatePractice({ ...claim, existing: chunk(0) }, fetcher), /repeats/);
+// Distinct IDs, titles and prompts must not hide copied scenarios in the SAME response.
+for (const reworded of [false, true]) {
+ const repeated = chunk(0);
+ repeated[1].scenario = repeated[0].scenario + (reworded ? ' The account holder now compares the same exposure once more.' : '');
+ let attempts = 0;
+ await assert.rejects(generatePractice(claim, (async (url, init) => {
+  if (!String(url).includes('generativelanguage')) return fetcher(url, init);
+  attempts++;
+  return new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: JSON.stringify({ exercises: repeated }) }] } }] }));
+ }) as typeof fetch), /repeats an exercise in this part/);
+ assert.equal(attempts, 1, 'Rejected quality must not trigger another model request');
+}
+assert.equal(hasRepeatedPracticeCase(chunk(0)), false);
+assert.equal(hasRepeatedPracticeCase(chunk(0), [chunk(0)[0]]), true);
+const reviewFixture = chunk(0), unmodified = JSON.stringify(reviewFixture);
+assert.ok(!reviewPracticeExercises(reviewFixture).some(finding => finding.kind === 'similar-case'));
+assert.equal(JSON.stringify(reviewFixture), unmodified, 'Editorial triage is read-only');
+reviewFixture[1].scenario = reviewFixture[0].scenario;
+reviewFixture[1].questions[1].prompt = reviewFixture[1].questions[0].prompt;
+reviewFixture[1].questions[2].explanation = reviewFixture[1].questions[0].explanation;
+const findings = reviewPracticeExercises(reviewFixture);
+assert.ok(findings.some(f => f.kind === 'similar-case' && f.exerciseIndex === 1 && f.relatedExerciseIndex === 0));
+assert.ok(findings.some(f => f.kind === 'similar-question' && f.questionIndex === 1 && f.relatedQuestionIndex === 0));
+assert.ok(findings.some(f => f.kind === 'repeated-explanation' && f.questionIndex === 2 && f.relatedQuestionIndex === 0));
+assert.deepEqual(reviewPracticeExercises([]), []);
 let limitedCalls = 0;
 await assert.rejects(generatePractice(claim, (async (url, init) => { if (String(url).includes('generativelanguage')) { limitedCalls++; return new Response('', { status: 429 }); } return fetcher(url, init); }) as typeof fetch), /Free Gemini quota/);
 assert.equal(limitedCalls, 1);
