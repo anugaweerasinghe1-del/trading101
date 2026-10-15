@@ -82,10 +82,11 @@ const invalidQuiz = structuredClone(document); invalidQuiz.lessons[0].quiz[0].co
 assert.ok(validateCourseDocument(invalidQuiz).length > 0);
 
 let writes = 0;
+const summaryReads: boolean[] = [];
 const handler = createCourseAdminHandler({
   getKey: () => "test-owner-key", rateLimit: async () => true,
   store: {
-    list: async () => [], save: async () => { writes++; return {}; }, publish: async () => { writes++; return {}; },
+    list: async (summary = false) => { summaryReads.push(summary); return []; }, save: async () => { writes++; return {}; }, publish: async () => { writes++; return {}; },
     reject: async () => { writes++; return {}; }, settings: async () => ({}), configure: async () => ({}), run: async () => 1,
   },
 });
@@ -94,6 +95,11 @@ const request = (body: unknown, key = "test-owner-key") => new Request("https://
 });
 assert.equal((await handler(request({ action: "save", document }, "wrong"))).status, 401);
 assert.equal(writes, 0);
+assert.equal((await handler(request({ action: "list", summary: true }, "wrong"))).status, 401);
+assert.deepEqual(summaryReads, [], 'Summary reads use the same verified master key');
+assert.equal((await handler(request({ action: "list", summary: true }))).status, 200);
+assert.equal((await handler(request({ action: "list" }))).status, 200);
+assert.deepEqual(summaryReads, [true, false], 'Dashboard metadata and full editor reads stay distinct');
 assert.equal((await handler(request({ action: "publish", id: "12345678-1234-1234-1234-123456789012", revision: 1, reviewer: "Owner", reviewed: false }))).status, 400);
 assert.equal(writes, 0);
 assert.equal((await handler(request({ action: "save", document }))).status, 200);

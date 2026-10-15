@@ -2,13 +2,14 @@ import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { supabase } from "@/integrations/supabase/client";
+import { AutomationInbox, type EditorialQueueRow } from "@/components/admin/AutomationInbox";
 import { Activity, BookOpen, Bot, CalendarCheck, CheckCircle2, ExternalLink, Lock, MessageSquare, RefreshCw, ShieldCheck, Sparkles, Wrench } from "lucide-react";
 
 type Course = { id: string; status: string; document?: { title?: string }; updated_at?: string };
-type DailyStatus = { enabled?: boolean; nextDue?: string; prepareAfter?: string; completed?: number; attempts?: number; lastStarted?: string | null; lastFinished?: string | null; lastError?: string | null; model?: string; hasApiKey?: boolean; freeConfirmed?: boolean };
+type DailyStatus = { enabled?: boolean; nextDue?: string; prepareAfter?: string; completed?: number; attempts?: number; retryAfter?: string | null; lastStarted?: string | null; lastFinished?: string | null; lastError?: string | null; model?: string; hasApiKey?: boolean; freeConfirmed?: boolean };
 type CourseStatus = { enabled?: boolean; model?: string; lastStarted?: string | null; lastFinished?: string | null; runs?: Array<{ status?: string; last_error?: string | null; period?: string; slot?: number }> };
 type AgentIssue = { id: number; title: string; html_url: string; created_at: string; state: string; body?: string | null; pull_request?: unknown };
-type Run = { id: number; status: string; conclusion: string | null; html_url: string; created_at: string; updated_at?: string };
+type Run = { id: number; status: string; conclusion: string | null; html_url: string; created_at: string; updated_at?: string; head_sha?: string };
 type Proposal = { number: number; title: string; html_url: string; draft: boolean; created_at: string };
 type AgentJob = { id: number; runId: number; workflow: string; name: string; status: string; conclusion: string | null; html_url: string; started_at: string };
 type DeployCheck = { name: string; status: string; conclusion: string | null; details_url: string };
@@ -21,6 +22,7 @@ export default function AdminDashboard() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [courses, setCourses] = useState<Course[] | null>(null);
+  const [dailyBanks, setDailyBanks] = useState<EditorialQueueRow[] | null>(null);
   const [deskWarnings, setDeskWarnings] = useState<string[]>([]);
   const [daily, setDaily] = useState<DailyStatus | null>(null);
   const [courseStatus, setCourseStatus] = useState<CourseStatus | null>(null);
@@ -28,6 +30,7 @@ export default function AdminDashboard() {
   const [issues, setIssues] = useState<AgentIssue[]>([]);
   const [run, setRun] = useState<Run | null>(null);
   const [codeRun, setCodeRun] = useState<Run | null>(null);
+  const [collectorRun, setCollectorRun] = useState<Run | null>(null);
   const [previousSuccess, setPreviousSuccess] = useState<Run | null>(null);
   const [previousFailure, setPreviousFailure] = useState<Run | null>(null);
   const [previousCodeFailure, setPreviousCodeFailure] = useState<Run | null>(null);
@@ -37,9 +40,9 @@ export default function AdminDashboard() {
   const [jobHistory, setJobHistory] = useState<AgentJob[]>([]);
   const [jobHistoryError, setJobHistoryError] = useState("");
   const [deploymentChecks, setDeploymentChecks] = useState<{ pages: DeployCheck | null; worker: DeployCheck | null; error: string } | null>(null);
-  const adminCall = useCallback(async (action: string) => {
+  const adminCall = useCallback(async (action: string, payload: Record<string, unknown> = {}) => {
     const { data, error: callError } = await supabase.functions.invoke("admin-courses", {
-      body: { action }, headers: { "x-admin-key": key },
+      body: { ...payload, action }, headers: { "x-admin-key": key },
     });
     if (callError || data?.error) throw new Error(data?.error || "Admin verification failed.");
     return data.data;
@@ -50,15 +53,18 @@ export default function AdminDashboard() {
     const settings = await adminCall("settings");
     if (!settings) throw new Error("Administrator verification failed.");
     setCourseStatus(settings);
-    const [drafts, practice, result] = await Promise.allSettled([
-      adminCall("list"), adminCall("daily-status"),
+    const [drafts, practice, result, banks] = await Promise.allSettled([
+      adminCall("list", { summary: true }), adminCall("daily-status"),
       supabase.functions.invoke("admin-reviews", { body: { action: "list" }, headers: { "x-admin-key": key } }),
+      adminCall("daily-list", { summary: true }),
     ]);
     const warnings: string[] = [];
     if (drafts.status === "fulfilled" && Array.isArray(drafts.value)) setCourses(drafts.value);
     else { setCourses(null); warnings.push("Course drafts are temporarily unavailable."); }
     if (practice.status === "fulfilled" && practice.value) setDaily(practice.value);
     else { setDaily(null); warnings.push("Daily Practice status is temporarily unavailable."); }
+    if (banks.status === "fulfilled" && Array.isArray(banks.value)) setDailyBanks(banks.value);
+    else { setDailyBanks(null); warnings.push("Daily bank review queue is temporarily unavailable."); }
     if (result.status === "fulfilled" && !result.value.error && !result.value.data?.error &&
         Array.isArray(result.value.data?.data)) setReviews(result.value.data.data.length);
     else { setReviews(null); warnings.push("Review moderation status is temporarily unavailable."); }
@@ -73,10 +79,11 @@ export default function AdminDashboard() {
       base + "/actions/workflows/tradehq-agents.yml/runs?per_page=10",
       base + "/actions/workflows/tradehq-code-agent.yml/runs?per_page=10",
       base + "/pulls?state=open&per_page=50",
+      base + "/actions/workflows/tradehq-verified-evidence.yml/runs?per_page=1",
     ];
     try {
       const responses = await Promise.all(targets.map(url => fetch(url, { headers: { Accept: "application/vnd.github+json" } })));
-      const failures = responses.map((response, i) => response.ok ? "" : ["issue reports", "monitor runs", "coding runs", "approval PRs"][i] + " HTTP " + response.status).filter(Boolean);
+      const failures = responses.map((response, i) => response.ok ? "" : ["issue reports", "monitor runs", "coding runs", "approval PRs", "trusted collector"][i] + " HTTP " + response.status).filter(Boolean);
       const values = await Promise.all(responses.map(response => response.ok ? response.json() : Promise.resolve(null)));
       if (Array.isArray(values[0])) setIssues(values[0].filter((i: AgentIssue) => !i.pull_request && /^\[TradeHQ (Agent|Ideas)\]/.test(i.title)));
       if (Array.isArray(values[1]?.workflow_runs)) {
@@ -91,6 +98,8 @@ export default function AdminDashboard() {
         setPreviousCodeFailure(history.find(item => item.conclusion === "failure") ?? null);
       }
       if (Array.isArray(values[3])) setProposals((values[3] as Proposal[]).filter(item => /^AI (smoke-test |proposal:)/i.test(item.title)));
+      if (Array.isArray(values[4]?.workflow_runs)) setCollectorRun(values[4].workflow_runs[0] ?? null);
+      else setCollectorRun(null);
       // Read only recent jobs and label sampled history honestly. Never infer that a green run means every function works.
       const recent = [
         ...(Array.isArray(values[1]?.workflow_runs) ? (values[1].workflow_runs as Run[]).slice(0, 2).map(r => ({ run: r, workflow: "Website monitor" })) : []),
@@ -136,6 +145,12 @@ export default function AdminDashboard() {
     catch (failure) { setError(failure instanceof Error ? failure.message : "Could not open dashboard."); }
     finally { setBusy(false); }
   };
+  const refreshDashboard = async () => {
+    setBusy(true); setError("");
+    try { await Promise.all([refresh(), loadAgents()]); }
+    catch { setError("Dashboard refresh failed. Previous data may be stale; open the relevant desk to verify."); }
+    finally { setBusy(false); }
+  };
   useEffect(() => {
     if (!unlocked) return;
     const interval = window.setInterval(() => {
@@ -151,7 +166,7 @@ export default function AdminDashboard() {
     <div className="mx-auto max-w-6xl space-y-7">
       <header className="flex flex-wrap items-center justify-between gap-4">
         <div><p className="text-xs tracking-[0.2em] text-primary uppercase mb-2">TradeHQ · private workspace</p><h1 className="text-3xl font-semibold">Admin dashboard</h1><p className="text-sm text-muted-foreground mt-2">Editorial controls, community moderation, automated checks and proposed improvements in one place.</p></div>
-        <div className="flex gap-3">{unlocked && <button type="button" onClick={() => { setUnlocked(false); setKey(""); setCourses(null); setDeskWarnings([]); setDaily(null); setCourseStatus(null); setReviews(null); setIssues([]); setRun(null); setCodeRun(null); setPreviousSuccess(null); setPreviousFailure(null); setPreviousCodeFailure(null); setProposals([]); setAgentError(""); setLastGitHubChecked(null); setJobHistory([]); setJobHistoryError(""); setDeploymentChecks(null); }} className="rounded-xl border border-border px-4 py-2 flex items-center gap-2 text-sm"><Lock className="w-4 h-4"/> Lock</button>}<Link to="/" className={linkStyle}>View website <ExternalLink className="h-3 w-3"/></Link></div>
+        <div className="flex gap-3">{unlocked && <button type="button" onClick={() => { setUnlocked(false); setKey(""); setCourses(null); setDailyBanks(null); setDeskWarnings([]); setDaily(null); setCourseStatus(null); setReviews(null); setIssues([]); setRun(null); setCodeRun(null); setCollectorRun(null); setPreviousSuccess(null); setPreviousFailure(null); setPreviousCodeFailure(null); setProposals([]); setAgentError(""); setLastGitHubChecked(null); setJobHistory([]); setJobHistoryError(""); setDeploymentChecks(null); }} className="rounded-xl border border-border px-4 py-2 flex items-center gap-2 text-sm"><Lock className="w-4 h-4"/> Lock</button>}<Link to="/" className={linkStyle}>View website <ExternalLink className="h-3 w-3"/></Link></div>
       </header>
       {!unlocked ? <form onSubmit={unlock} className="max-w-md rounded-2xl border border-border bg-card p-6 space-y-5">
         <div className="flex gap-3 items-center"><ShieldCheck className="w-6 h-6 text-primary"/><h2 className="font-semibold">Verify administrator access</h2></div>
@@ -162,13 +177,16 @@ export default function AdminDashboard() {
       </form> : <>
         {error && <p role="alert" className="text-sm text-amber-400">{error}</p>}
         {deskWarnings.length > 0 && <div role="status" className="rounded-xl border border-amber-500/30 px-4 py-3 text-sm text-amber-400"><strong>Some admin services are unavailable.</strong> {deskWarnings.join(" ")} Verified services remain accessible.</div>}
-        <div className="flex flex-wrap justify-between gap-3 items-center"><h2 className="text-lg font-semibold">Operations overview</h2><button type="button" disabled={busy} className="text-sm border border-border rounded-xl px-4 py-2 flex items-center gap-2 disabled:opacity-40" onClick={() => { setBusy(true); setError(""); void Promise.all([refresh(),loadAgents()]).catch(() => setError("Admin verification failed. Check your key or refresh.")).finally(() => setBusy(false)); }}><RefreshCw className="w-4 h-4"/> Refresh</button></div>
+        <div className="flex flex-wrap justify-between gap-3 items-center"><h2 className="text-lg font-semibold">Operations overview</h2><button type="button" disabled={busy} className="text-sm border border-border rounded-xl px-4 py-2 flex items-center gap-2 disabled:opacity-40" onClick={() => void refreshDashboard()}><RefreshCw className="w-4 h-4"/> Refresh</button></div>
+        <AutomationInbox courses={courses} dailyBanks={dailyBanks} daily={daily}
+          failedCourseRuns={courseStatus?.runs?.filter(item => item.status === 'paused' && item.last_error).length ?? 0}
+          findingCount={agentFindings.length} proposalCount={proposals.length} githubAvailable={!agentError && !!lastGitHubChecked} />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <section className={card}><BookOpen className="w-6 h-6 text-primary"/><h3 className="font-semibold">Courses</h3><p className="text-2xl font-semibold">{courses === null ? "—" : courses.filter(c => c.status === "draft").length} <span className="text-sm font-normal text-muted-foreground">drafts awaiting review</span></p><p className="text-xs text-muted-foreground">Generation: {courseStatus ? (courseStatus.enabled ? "enabled" : "paused") : "unavailable"} · {courseStatus?.model || "unknown"}</p><Link className={linkStyle} to="/admin/courses">Manage drafts and approvals →</Link></section>
           <section className={card}><CalendarCheck className="w-6 h-6 text-primary"/><h3 className="font-semibold">Daily practice</h3><p className="text-2xl font-semibold">{daily ? (daily.completed ?? 0) + "/50" : "—"} <span className="text-sm font-normal text-muted-foreground">next bank ready</span></p><p className="text-xs text-muted-foreground">{daily ? (daily.enabled ? "Schedule enabled" : "Schedule paused") : "Schedule unavailable"} · Next due {daily?.nextDue || "unknown"}</p>{daily?.lastError && <p className="text-xs text-amber-400">{daily.lastError}</p>}<Link className={linkStyle} to="/admin/daily">Review questions and schedule →</Link></section>
           <section className={card}><MessageSquare className="w-6 h-6 text-primary"/><h3 className="font-semibold">Community reviews</h3><p className="text-2xl font-semibold">{reviews ?? "—"} <span className="text-sm font-normal text-muted-foreground">reviews in moderation desk</span></p><Link className={linkStyle} to="/admin/reviews">Reply, feature or moderate →</Link></section>
         </div>
-        <section className={card}>
+        <section id="monitor-findings" tabIndex={-1} className={card}>
           <div className="flex gap-3 items-center"><Activity className="w-5 h-5 text-primary"/><h2 className="font-semibold">Automated website checks</h2></div>
           <p className="text-sm text-muted-foreground">Read-only GitHub Actions checks inspect public routes, deployed assets and a sample of pages in headless Chrome. Status reports show what was checked and when; no agent logs in, places trades or edits production.</p>
           <p className="text-sm">{run ? <>Latest run: <strong>{run.conclusion || run.status}</strong> · {new Date(run.created_at).toLocaleString()}</> : "No monitoring workflow status could be verified from GitHub."}</p>
@@ -232,8 +250,16 @@ export default function AdminDashboard() {
               <Link className={linkStyle} to="/admin/daily">Inspect bank and settings →</Link>
             </div>
           </div>
-          <h3 className="text-sm font-semibold">Pending human code approvals</h3>
-          {agentError ? <p className="text-sm text-muted-foreground">Queue may be incomplete while GitHub API reporting is unavailable.</p> : proposals.length ? <div className="space-y-2">{proposals.map(pr => <a key={pr.number} href={pr.html_url} target="_blank" rel="noopener noreferrer" className="block rounded-xl border border-border px-4 py-3 text-sm hover:border-primary/40">#{pr.number} {pr.title} <span className="text-xs text-muted-foreground">· {pr.draft ? "Draft, review required" : "Open, review required"} · Open PR ↗</span></a>)}</div> : <p className="text-sm text-muted-foreground">No matching open AI proposals returned.</p>}
+          <div className="rounded-xl border border-border p-4 space-y-2">
+            <h3 className="font-semibold text-sm">Independent repair review and learning evidence</h3>
+            <p className="text-sm">Latest collector workflow: <strong>{collectorRun ? collectorRun.conclusion || collectorRun.status : 'Unavailable'}</strong></p>
+            {collectorRun && <p className="text-xs text-muted-foreground">{new Date(collectorRun.created_at).toLocaleString()}{collectorRun.head_sha ? ' · Commit ' + collectorRun.head_sha.slice(0, 12) : ''}</p>}
+            <p className="text-xs text-muted-foreground">Open the collector evidence for its identity result, incident handoff, learning abstention and confirmed outcomes. Workflow success alone does not prove training or a successful repair.</p>
+            <a className={linkStyle} href={collectorRun?.html_url || ('https://github.com/' + repo + '/actions/workflows/tradehq-verified-evidence.yml')} target="_blank" rel="noopener noreferrer">Inspect independent evidence ↗</a>
+            <Link className={linkStyle} to="/admin/ai">Owner repair controls →</Link>
+          </div>
+          <h3 className="text-sm font-semibold">Open AI code proposals</h3>
+          {agentError ? <p className="text-sm text-muted-foreground">Queue may be incomplete while GitHub API reporting is unavailable.</p> : proposals.length ? <div className="space-y-2">{proposals.map(pr => <a key={pr.number} href={pr.html_url} target="_blank" rel="noopener noreferrer" className="block rounded-xl border border-border px-4 py-3 text-sm hover:border-primary/40">#{pr.number} {pr.title} <span className="text-xs text-muted-foreground">· {pr.draft ? "Draft" : "Open"} · Inspect recorded owner decision and exact-commit checks ↗</span></a>)}</div> : <p className="text-sm text-muted-foreground">No matching open AI proposals returned.</p>}
           <p className="text-xs text-muted-foreground">No automatic merges, production deployments, sensitive database changes or privileged agent repairs are enabled by this dashboard.</p>
         </section>
         <section className={card}>

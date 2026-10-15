@@ -3,7 +3,7 @@ import { validateCourseDocument } from "./courseDocument.ts";
 
 export interface CourseAdminStore {
   daily?: (action: string, body: Record<string, unknown>) => Promise<unknown>;
-  list: () => Promise<unknown[]>;
+  list: (summary?: boolean) => Promise<unknown[]>;
   save: (id: string | null, revision: number | null, document: unknown) => Promise<unknown>;
   publish: (id: string, revision: number, reviewer: string) => Promise<unknown>;
   reject: (id: string, revision: number) => Promise<unknown>;
@@ -44,7 +44,7 @@ export function createCourseAdminHandler(options: {
         }
         return response({ data: await options.store.daily(body.action, body) });
       }
-      if (body.action === "list") return response({ data: await options.store.list() });
+      if (body.action === "list") return response({ data: await options.store.list(body.summary === true) });
       if (body.action === "settings") return response({ data: await options.store.settings() });
       if (body.action === "configure") return response({ data: await options.store.configure(body.settings) });
       if (body.action === "generate") return response({ data: await options.store.run() });

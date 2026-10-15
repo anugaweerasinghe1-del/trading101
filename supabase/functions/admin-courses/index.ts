@@ -17,7 +17,8 @@ Deno.serve(createCourseAdminHandler({
   store: {
     async daily(action, body) {
       if (action === "daily-list") {
-        const { data, error } = await client.from("daily_practice_drafts").select("id,effective_from,revision,status,document,research,updated_at").order("effective_from", { ascending: false }).limit(24);
+        const fields = body.summary === true ? "id,effective_from,revision,status,updated_at" : "id,effective_from,revision,status,document,research,updated_at";
+        const { data, error } = await client.from("daily_practice_drafts").select(fields).order("effective_from", { ascending: false }).limit(24);
         if (error) throw error; return data ?? [];
       }
       if (action === "daily-status") return rpc("daily_practice_status", {});
@@ -35,9 +36,10 @@ Deno.serve(createCourseAdminHandler({
     settings: () => rpc("course_generation_status", {}),
     configure: settings => rpc("configure_course_generation", { p_settings: settings }),
     run: () => rpc("request_course_generation", { p_force: true }),
-    async list() {
+    async list(summary = false) {
+      const fields = summary ? "id,status,revision,published_revision,created_at,updated_at,reviewed_at" : "id,status,revision,published_revision,document,research,created_at,updated_at,reviewed_at";
       const { data, error } = await client.from("course_drafts")
-        .select("id,status,revision,published_revision,document,research,created_at,updated_at,reviewed_at")
+        .select(fields)
         .order("created_at", { ascending: false }).limit(200);
       if (error) throw error;
       return data ?? [];

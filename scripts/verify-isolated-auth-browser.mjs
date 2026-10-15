@@ -82,6 +82,8 @@ async function main(){
   const ADMIN_FIXTURE_KEY='isolated-admin-fixture-only';
   let dailyGenerationRequests=0;
   let dailyDrafts=[],dailyEditorialWrites=0;
+  let dashboardFixture=false,dailyQueueUnavailable=false,dashboardSettingsUnavailable=false;
+  let dashboardMetadataRequests=0;
   let dailyStatus={enabled:false,nextDue:'2026-12-09',prepareAfter:'2026-12-02',completed:20,attempts:2,
     retryAfter:new Date(Date.now()+3600000).toISOString(),lastError:'Gemini rejected generation (HTTP 503). Check free-tier settings.',
     lastStarted:'2026-10-14T16:14:30Z',lastFinished:'2026-10-14T16:14:33Z',
@@ -101,12 +103,22 @@ async function main(){
         let content='';req.on('data',chunk=>{content+=chunk;});
         req.on('end',()=>{
           let body;try{body=JSON.parse(content);}catch{return json(400,{error:'fixture_invalid_json'});}
-          if(body.action==='daily-list')return json(200,{data:dailyDrafts});
+          if(dashboardFixture && ['list','daily-list'].includes(body.action)){assert.equal(body.summary,true,'Dashboard must request metadata without full documents');dashboardMetadataRequests++;}
+          if(dashboardFixture && body.action==='settings')return dashboardSettingsUnavailable
+            ? json(503,{error:'Fixture settings unavailable'})
+            : json(200,{data:{enabled:true,model:'fixture-only',runs:[{period:'2026-10-01',slot:1,status:'paused',last_error:'Fixture HTTP503'}]}});
+          if(dashboardFixture && body.action==='list')return json(200,{data:[{id:'course-fixture-1',status:'draft'},{id:'course-fixture-2',status:'draft'},{id:'course-fixture-3',status:'published'}]});
+          if(dashboardFixture && dailyQueueUnavailable && body.action==='daily-list')return json(503,{error:'Fixture Daily inbox unavailable'});
+          if(body.action==='daily-list')return json(200,{data:body.summary===true?dailyDrafts.map(({document,research,...metadata})=>metadata):dailyDrafts});
           if(body.action==='daily-status')return json(200,{data:dailyStatus});
           if(body.action==='daily-generate'){dailyGenerationRequests++;return json(200,{data:null});}
           if(['daily-save','daily-publish','daily-reject'].includes(body.action)){dailyEditorialWrites++;return json(409,{error:'No editorial mutation permitted in this read-only fixture'});}
           return json(200,{data:{}});
         });return;
+      }
+      if(route==='/functions/v1/admin-reviews' && req.method==='POST'){
+        if(req.headers['x-admin-key']!==ADMIN_FIXTURE_KEY)return json(401,{error:'fixture_admin_denied'});
+        return json(200,{data:[]});
       }
       if(route==='/functions/v1/admin-agent-chat' && req.method==='POST'){
         if(req.headers['x-admin-key']!==ADMIN_FIXTURE_KEY)return json(401,{error:'fixture_admin_denied'});
@@ -507,6 +519,51 @@ async function main(){
     assert.equal(JSON.stringify(dailyDrafts),documentsBefore,'Review and filtering cannot edit draft documents');
     assert.equal(dailyEditorialWrites,0);assert.equal(dailyGenerationRequests,1,'Review must not request regeneration');
     console.log('ISOLATED_DAILY_EDITORIAL_REVIEW_PASS: 50-case/500-question overview, duplicate-case/question/explanation triage, correct preview/focus, three queue filters; zero editorial mutations or extra generation requests. Fixture only.');
+    // The compiled dashboard consumes existing desks and bounded GitHub reads.
+    // GitHub responses are intercepted in this fixture document; HTTPS remains blocked.
+    dashboardFixture=true;dailyStatus={...dailyStatus,retryAfter:new Date(Date.now()+3600000).toISOString()};
+    await devtools.send('Page.addScriptToEvaluateOnNewDocument',{source:`(()=>{
+      const original=window.fetch;
+      window.fetch=async(input,init)=>{
+        const url=String(input);if(!url.startsWith('https://api.github.com/repos/anugaweerasinghe1-del/trading101/'))return original(input,init);
+        if(window.__fixtureGitHubUnavailable)return new Response('{}',{status:503,headers:{'Content-Type':'application/json'}});
+        const run={id:700,status:'completed',conclusion:'success',html_url:'https://github.com/anugaweerasinghe1-del/trading101/actions/runs/700',created_at:new Date().toISOString(),head_sha:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'};
+        const data=url.includes('/issues?')?[{id:900,title:'[TradeHQ Agent] Fixture browser failures',state:'open',created_at:new Date().toISOString(),html_url:'https://github.com/anugaweerasinghe1-del/trading101/issues/900'}]
+          :url.includes('/pulls?')?[{number:901,title:'AI proposal: isolated fixture',draft:false,created_at:new Date().toISOString(),html_url:'https://github.com/anugaweerasinghe1-del/trading101/pull/901'}]
+          :url.includes('/jobs?')?{jobs:[]}:url.includes('/check-runs?')?{check_runs:[]}:{workflow_runs:[run]};
+        return new Response(JSON.stringify(data),{status:200,headers:{'Content-Type':'application/json'}});
+      };
+    })()`});
+    await loadDocument(origin+'/admin');
+    await wait(()=>devtools.evaluate("!!document.querySelector('main form input[type=password]')"),'Dashboard master key');
+    await adminInput('main form input[type=password]',ADMIN_FIXTURE_KEY);await adminClick('Open dashboard');
+    const inbox="document.querySelector('[aria-label=\"Automation work queue\"]')";
+    const refreshInbox=async()=>{
+      await wait(()=>devtools.evaluate("[...document.querySelectorAll('button')].some(e=>e.textContent.trim()==='Refresh'&&!e.disabled)"),'Dashboard refresh idle');
+      await adminClick('Refresh');
+    };
+    await wait(()=>devtools.evaluate(inbox+"?.textContent.includes('1 open AI code proposal')"),'Unified live-source work queue');
+    for(const text of ['2 course drafts awaiting review','1 daily bank draft awaiting review','1 course generation failure','1 open monitoring finding','Cooldown ends'])assert.equal(await devtools.evaluate(inbox+'.textContent.includes('+JSON.stringify(text)+')'),true,text);
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('Commit aaaaaaaaaaaa')"),true,'Collector evidence shows the sampled immutable commit');
+    assert.equal(await devtools.evaluate("[..."+inbox+".querySelectorAll('a')].every(link=>['/admin/courses','/admin/daily','/admin/ai'].includes(link.getAttribute('href')))"),true);
+    await adminClick('Inspect monitoring evidence ↓');
+    assert.equal(await devtools.evaluate('document.activeElement.id'),'monitor-findings','Finding action focuses its actual evidence without reloading the private desk');
+    dailyStatus={...dailyStatus,attempts:3};await refreshInbox();
+    await wait(()=>devtools.evaluate(inbox+".textContent.includes('three-attempt limit')"),'Attempt cap takes precedence over cooldown');
+    assert.equal(await devtools.evaluate(inbox+".textContent.includes('Cooldown ends')"),false);
+    dailyStatus={...dailyStatus,attempts:2};await devtools.evaluate('window.__fixtureGitHubUnavailable=true');await refreshInbox();
+    await wait(()=>devtools.evaluate(inbox+".textContent.includes('Agent findings and code queue unavailable')"),'GitHub outage is not an empty queue');
+    assert.equal(await devtools.evaluate(inbox+".textContent.includes('1 open AI code proposal')"),false);
+    await devtools.evaluate('window.__fixtureGitHubUnavailable=false');
+    dailyQueueUnavailable=true;await refreshInbox();
+    await wait(()=>devtools.evaluate(inbox+"?.textContent.includes('Daily bank review queue unavailable')"),'One unavailable desk remains unknown');
+    assert.equal(await devtools.evaluate(inbox+".textContent.includes('2 course drafts awaiting review')"),true,'Course review remains accessible during a Daily outage');
+    dashboardSettingsUnavailable=true;await refreshInbox();
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Previous data may be stale')"),'Failed refresh discloses stale snapshot');
+    assert.equal(dailyEditorialWrites,0);assert.equal(dailyGenerationRequests,1);assert.ok(dashboardMetadataRequests>=6);
+    await adminClick('Lock');
+    assert.equal(await devtools.evaluate('!!'+inbox),false,'Lock removes private inbox');
+    console.log('ISOLATED_AUTOMATION_INBOX_PASS: compiled dashboard combines editorial drafts, failures, cooldown, open findings and proposals; collector evidence linked to commit; partial outage stays unknown; stale refresh disclosed; zero mutations. Fixture only.');
     console.log('ISOLATED_COURSE_PROGRESS_BROWSER_PASS: null tracks, null lessons and invalid lesson rows recovered; valid unrelated completion/badge retained after real lesson save and reload; fixture only.');
     console.log("ISOLATED_AUTH_BROWSER_PASS: reload persistence; real UI sign-out; no resurrected session; expired refresh rejected; ten Daily answers persisted/resumed/locked; one streak per day; actual built TradeHQ login in real Chromium; negative password refused; fake Supabase grant accepted; authenticated profile navigation observed; isolated account initialization executed; zero non-allowlisted backend writes; zero real provider calls.");
   }finally{
