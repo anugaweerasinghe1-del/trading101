@@ -11,6 +11,12 @@ for(const arr of [[j('scan','success')],[j('scan','success'),j('browser','skippe
 assert.throws(()=>classify([j('scan','skipped'),j('browser','skipped')],'push'));
 const raw=readFileSync('.github/workflows/tradehq-verified-evidence.yml','utf8');const y=YAML.parse(raw);
 assert.deepEqual(y.permissions,{contents:'read',actions:'read',checks:'read',issues:'read'});
+assert.deepEqual(y.jobs.collect.permissions,{contents:'read',actions:'read',checks:'read',issues:'read','id-token':'write'});
+const identityProbe=y.jobs.collect.steps.find(step=>step.id==='workload_identity');
+assert.ok(identityProbe && identityProbe['continue-on-error']===true);
+assert.equal(identityProbe.if,"${{ steps.gate.outputs.ready == 'true' }}");
+assert.equal(identityProbe.run,'node scripts/agent-github-workload-probe.mjs');
+assert.deepEqual(identityProbe.env,{GITHUB_TOKEN:'${{ github.token }}'});
 assert.deepEqual(y.on.workflow_run,{workflows:['TradeHQ Agents'],types:['completed'],branches:['main']});
 assert.equal(y.jobs.collect.steps[0].with.ref,'${{ github.sha }}');
 assert.equal(y.jobs.collect.steps[0].with['persist-credentials'],false);

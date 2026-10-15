@@ -14,6 +14,13 @@ jobs:
     if: ${{ github.event.workflow_run.head_repository.full_name == github.repository && github.event.workflow_run.head_branch == 'main' }}
     runs-on: ubuntu-latest
     timeout-minutes: 8
+    permissions:
+      contents: read
+      actions: read
+      checks: read
+      issues: read
+      # Read-only identity probe; this mints a short-lived job token, not write access.
+      id-token: write
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
@@ -50,6 +57,15 @@ jobs:
           node scripts/agent-trusted-evidence.mjs
           --run "$RUN_ID" --monitor-sha "$MONITOR_SHA"
           --main "$MAIN_SHA" --purpose "$PURPOSE"
+      - name: Observe real short-lived GitHub job identity without repair authority
+        id: workload_identity
+        if: ${{ steps.gate.outputs.ready == 'true' }}
+        # A blocked identity probe must not disable existing read-only monitoring.
+        # Its explicit VERIFIED/BLOCKED report is separate from job success.
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/agent-github-workload-probe.mjs
       - name: Record bounded read-only incident or no-incident handoff
         if: ${{ steps.gate.outputs.ready == 'true' }}
         env:
