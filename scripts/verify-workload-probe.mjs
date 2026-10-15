@@ -64,4 +64,15 @@ assert.equal(scoped.status,'BLOCKED');assert.deepEqual(scoped.diagnostic,{stage:
 const injected=await probeGitHubWorkload({env,fetcher:transport({injectedError:true}).fetcher,clock:()=>now});
 assert.equal(injected.status,'BLOCKED');assert.deepEqual(injected.diagnostic,{stage:'NATIVE_READS',failedChecks:[]});
 for(const r of [scoped,injected])for(const secret of [privateToken,'private-subject-sentinel','private-error-sentinel','private-stage-sentinel','private-check-sentinel',env.GITHUB_TOKEN,env.ACTIONS_ID_TOKEN_REQUEST_TOKEN])assert.ok(!JSON.stringify(r).includes(secret));
+for(const fields of [{job_workflow_ref:repo+'/'+path+'@refs/heads/main'},
+  {job_workflow_ref:repo+'/'+path+'@refs/heads/main',job_workflow_sha:sha},
+  {job_workflow_ref:'private-workflow-sentinel',job_workflow_sha:sha}]) {
+  const message=b64({alg:'RS256',typ:'JWT',kid:'fixture-key-1'})+'.'+b64({...claims,...fields});
+  const value=message+'.'+Buffer.from(await crypto.subtle.sign('RSASSA-PKCS1-v1_5',pair.privateKey,new TextEncoder().encode(message))).toString('base64url');
+  const observed=await probeGitHubWorkload({env,fetcher:transport({mintedToken:value}).fetcher,clock:()=>now});
+  const expected=fields.job_workflow_ref==='private-workflow-sentinel'?'BLOCKED':'VERIFIED';
+  assert.equal(observed.status,expected);assert.equal(observed.requiredClaimTypes.job_workflow_ref,'string');
+  if(expected==='BLOCKED')assert.deepEqual(observed.diagnostic,{stage:'CLAIM_SCOPE',failedChecks:['jobWorkflowBinding']});
+  for(const secret of [value,'private-workflow-sentinel'])assert.ok(!JSON.stringify(observed).includes(secret));
+}
 console.log('WORKLOAD_PROBE_PASS: isolated actual signed token plus read-only native-shaped metadata, separate credential origins, denied fork/event/foreign URL/oversized/unavailable sources and private output. No real GitHub token was minted.');

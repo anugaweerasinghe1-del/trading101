@@ -86,6 +86,13 @@ export function createGitHubWorkloadVerifier({readGitHub,fetcher=fetch,clock=Dat
         new TextEncoder().encode(pieces[0]+'.'+pieces[1])),true,'Invalid job signature');
       stage='TOKEN_TIME';validTime(claims,clock(),checks);
       stage='CLAIM_SCOPE';
+      const ownWorkflow=REPO+'/'+WORKFLOW+'@refs/heads/main';
+      const hasJobRef=Object.hasOwn(claims,'job_workflow_ref'),hasJobSha=Object.hasOwn(claims,'job_workflow_sha');
+      // Optional job claims can attest this exact collector. They cannot select
+      // another reusable workflow, revision or source. A SHA alone is ambiguous.
+      const jobWorkflowBinding=hasJobRef
+        ? claims.job_workflow_ref===ownWorkflow&&(!hasJobSha||claims.job_workflow_sha===claims.sha)
+        : !hasJobSha;
       checks({issuer:claims.iss===ISSUER,audience:claims.aud===AUDIENCE,subject:subjects.has(claims.sub),
         repository:claims.repository===REPO,repositoryId:claims.repository_id===String(REPO_ID),
         owner:claims.repository_owner==='anugaweerasinghe1-del',ownerId:claims.repository_owner_id===String(OWNER_ID),
@@ -93,7 +100,7 @@ export function createGitHubWorkloadVerifier({readGitHub,fetcher=fetch,clock=Dat
         event:claims.event_name==='workflow_run',runner:claims.runner_environment==='github-hosted',
         workflowRef:claims.workflow_ref===REPO+'/'+WORKFLOW+'@refs/heads/main',
         sourceSha:SHA.test(claims.sha||''),workflowSha:claims.workflow_sha===claims.sha,
-        noReusableWorkflow:!('job_workflow_ref' in claims)&&!('job_workflow_sha' in claims),
+        jobWorkflowBinding,
         tokenId:typeof claims.jti==='string'&&/^[A-Za-z0-9_-]{16,128}$/.test(claims.jti)});
       stage='CLAIM_IDS';
       const runId=id(claims.run_id),attempt=id(claims.run_attempt),checkId=id(claims.check_run_id);
