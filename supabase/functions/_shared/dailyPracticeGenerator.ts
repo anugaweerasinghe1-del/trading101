@@ -40,7 +40,7 @@ export async function generatePractice(claim: PracticeClaim, fetcher = fetch) {
   const response = await fetcher('https://generativelanguage.googleapis.com/v1beta/models/' + encodeURIComponent(claim.model) + ':generateContent', {
     method: 'POST', redirect: 'error', headers: { 'Content-Type': 'application/json', 'x-goog-api-key': claim.apiKey },
     body: JSON.stringify({ contents: [{ role: 'user', parts: [{ text: JSON.stringify(request) }] }],
-      generationConfig: { responseMimeType: 'application/json', responseJsonSchema: schema, maxOutputTokens: 32768, thinkingConfig: { thinkingLevel: 'low' } } }), signal: AbortSignal.timeout(95000),
+      generationConfig: { responseMimeType: 'application/json', responseJsonSchema: schema, maxOutputTokens: 32768, thinkingConfig: { thinkingLevel: 'LOW' } } }), signal: AbortSignal.timeout(95000),
   });
   // Standard free-tier API only. No Batch API, alternate provider or paid fallback.
   if (!response.ok) {

@@ -162,7 +162,7 @@ export async function generateCourse(claim: GenerationClaim, fetcher = fetch) {
     body: JSON.stringify({
       contents: [{ role: "user", parts: [{ text: JSON.stringify(request) }] }],
       generationConfig: { responseMimeType: "application/json", responseJsonSchema: createCourseJsonSchema(references.map(r => r.url)),
-        maxOutputTokens: 32768, thinkingConfig: { thinkingLevel: "low" } },
+        maxOutputTokens: 32768, thinkingConfig: { thinkingLevel: "LOW" } },
     }), signal: AbortSignal.timeout(95000),
   });
   // No paid fallback, quota workaround or automatic model change.
