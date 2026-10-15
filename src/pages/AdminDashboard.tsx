@@ -227,7 +227,7 @@ export default function AdminDashboard() {
             <div className="rounded-xl border border-border p-4 space-y-2">
               <h4 className="text-sm font-semibold">Daily question-bank regeneration</h4>
               <p className="text-xs text-muted-foreground">Status: {daily ? (daily.enabled ? "Enabled" : "Paused") : "Unavailable"} · Next preparation: {daily?.prepareAfter || "Not reported"} · Next due: {daily?.nextDue || "Not reported"}</p>
-              <p className="text-xs text-muted-foreground">Current cycle: {daily ? (daily.completed ?? "?") + "/50 batches, " + (daily.attempts ?? "?") + " attempts" : "Unavailable"} · Last completed attempt: {daily?.lastFinished ? new Date(daily.lastFinished).toLocaleString() : "Not reported"}</p>
+              <p className="text-xs text-muted-foreground">Current cycle: {daily ? (daily.completed ?? "?") + "/50 exercises, " + (daily.attempts ?? "?") + " attempts" : "Unavailable"} · Last completed attempt: {daily?.lastFinished ? new Date(daily.lastFinished).toLocaleString() : "Not reported"}</p>
               {daily?.lastError && <p className="text-xs text-amber-400">{daily.lastError}</p>}
               <Link className={linkStyle} to="/admin/daily">Inspect bank and settings →</Link>
             </div>

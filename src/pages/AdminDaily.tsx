@@ -4,10 +4,12 @@ import { Helmet } from 'react-helmet-async';
 import { toast } from 'sonner';
 import { supabase } from '@/integrations/supabase/client';
 import { PracticeEditor } from '@/components/daily/PracticeEditor';
+import { GenerationReadiness } from '@/components/daily/GenerationReadiness';
+import type { DailyGenerationStatus } from '@/lib/dailyGenerationStatus';
 import { PracticeVisual } from '@/components/DailyPractice';
 import { validateBatch, validateExercises, type DailyBatch } from '../../supabase/functions/_shared/dailyPractice';
 interface Draft { id: string; status: string; revision: number; document: DailyBatch; research?: { method?: string; checks?: string[] } }
-interface Status { enabled: boolean; nextDue: string; prepareAfter: string; completed: number; attempts: number; retryAfter?: string; lastError?: string; freeConfirmed: boolean; hasApiKey: boolean; model: string }
+type Status = DailyGenerationStatus;
 const button = 'rounded-xl border border-white/15 px-4 py-2 text-sm disabled:opacity-40';
 export default function AdminDaily() {
   const [key, setKey] = useState(''), [unlocked, setUnlocked] = useState(false), [busy, setBusy] = useState(false);
@@ -57,11 +59,7 @@ export default function AdminDaily() {
     </form> : <>
       {status && <section className="border border-white/10 rounded-2xl p-5 space-y-3"><div className="flex flex-wrap justify-between gap-4"><h2 className="font-semibold">Generation schedule</h2><button disabled={busy} className={button} onClick={() => void run(async () => { setStatus(await call('configure', { enabled: !status.enabled })); })}>{status.enabled ? 'Pause generation' : 'Enable generation'}</button></div>
         <p className="text-sm text-muted-foreground leading-relaxed">{status.enabled ? 'Enabled' : 'Paused'} · next bank starts {status.nextDue}. Preparation begins {status.prepareAfter}. Daily checks run at 09:15 Sri Lanka time. Each case has ten scored questions and a final takeaway. One standard Gemini request writes ten cases; five successful parts make a bank. Completed months use no AI requests.</p>
-        <p className="text-sm">Current part progress: {status.completed}/50 · {status.attempts}/3 attempts for this part · {status.model}</p>
-        <p className="text-sm text-muted-foreground">Uses the free-tier key in <Link to="/admin/courses" className="text-primary underline">course settings</Link>. Keep billing disabled. Quota failures pause for 24 hours; after three failed attempts this part pauses until the next two-month preparation cycle. There is no paid fallback. Existing approved practice continues until another bank is approved.</p>
-        {(!status.hasApiKey || !status.freeConfirmed) && <p className="text-amber-400 text-sm">Complete free-tier setup in course settings before generation can run.</p>}
-        {status.lastError && <p role="alert" className="text-amber-400 text-sm">{status.lastError}{status.retryAfter ? ` Retry after ${new Date(status.retryAfter).toLocaleString()}.` : ''}</p>}
-        <div className="flex gap-3 flex-wrap"><button className={button} disabled={busy || !status.hasApiKey || !status.freeConfirmed || status.attempts >= 3 || !!status.retryAfter && Date.parse(status.retryAfter) > Date.now()} onClick={() => void run(async () => { const queued = await call('generate'); await load(); toast.message(queued ? 'Next part queued. Refresh in about two minutes.' : 'Nothing queued: another request, cooldown or attempt cap is active.'); })}>Prepare next part now</button><button className={button} disabled={busy} onClick={() => void run(async () => { await load(); })}>Refresh</button></div>
+        <GenerationReadiness status={status} busy={busy} onGenerate={() => void run(async () => { const queued = await call('generate'); await load(); toast.message(queued ? 'Next part queued. Refresh in about two minutes.' : 'Nothing queued: another request, cooldown or attempt cap is active.'); })} onRefresh={() => void run(async () => { await load(); })} />
       </section>}
       <div className="grid md:grid-cols-[230px_1fr] gap-6"><aside className="space-y-2"><h2 className="text-sm font-semibold mb-3">Banks</h2>{rows.map(row => <button key={row.id} className={`w-full text-left rounded-xl border p-3 ${selected?.id === row.id ? 'border-primary/40 bg-primary/5' : 'border-white/10'}`} onClick={() => choose(row)}><span className="block text-sm">{row.document.effectiveFrom}</span><span className="text-xs text-muted-foreground">{row.status} · revision {row.revision}</span></button>)}</aside>
       {doc && e && <section className="min-w-0 space-y-5"><div className="flex flex-wrap gap-3 items-end"><label className="text-sm">Start date<input type="date" value={doc.effectiveFrom} className="block mt-2 p-2 rounded-lg border border-white/15 bg-background" onChange={v => { setDoc({ ...doc, effectiveFrom: v.target.value }); setReviewed(false); }} /></label><button className={button} onClick={() => setPreview(!preview)}>{preview ? 'Edit exercise' : 'Preview exercise'}</button></div>
