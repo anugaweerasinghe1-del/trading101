@@ -10,7 +10,7 @@ import { appendFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { collectOfflineRepairReview } from "./agent-repair-pipeline-offline.mjs";
 import { collectIncidentFeedback, recommendForVerifiedFinding } from "./agent-incident-feedback.mjs";
-import { trainIncidentOutcomeModel, predictReportedOutcome } from "./agent-incident-learning.mjs";
+import { trainIncidentOutcomeModel, predictReportedOutcome, LEARNING_LIMITS } from "./agent-incident-learning.mjs";
 
 export function investigationLearning(packet, history, now=Date.now()) {
   summarizeInvestigation(packet);
@@ -32,6 +32,8 @@ export function investigationLearning(packet, history, now=Date.now()) {
   return {schema:'tradehq-operational-shadow-learning-v1',status:model.status,
     records:model.records,distinctRuns:model.distinctRuns,dataDigest:model.dataDigest,
     modelDigest:model.modelDigest || null,evaluation:model.evaluation || null,
+    qualityPolicy:{maximumHeldOutFalsePositiveRate:LEARNING_LIMITS.maximumFalsePositiveRate,
+      maximumFeatureShift:LEARNING_LIMITS.maximumFeatureShift,calibrationEstablished:false},
     outcomeTrust:model.dataTrust,estimates,confirmedRepairOutcomes:0,authorization:model.authorization};
 }
 
