@@ -5,6 +5,7 @@ import { readFileSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 import { offlineOwnerFixture } from './verify-owner-approval-offline.mjs';
 import { createRepairApprovalTransaction } from './agent-repair-approval-transaction.mjs';
+import { createDisposableWorkerFixture } from './repair-worker-crash-fixture.mjs';
 export function disposableControlUrl(env) {
   assert.equal(env.TRADEHQ_DISPOSABLE_CONTROL_TEST,'explicit-ci-fixture','Disposable fixture opt-in required.');
   const url=new URL(env.TRADEHQ_CONTROL_TEST_URL || '');
@@ -18,7 +19,9 @@ export async function verifyPostgresControls(env=process.env) {
   const options={max:1,prepare:false,connect_timeout:5,idle_timeout:0,onnotice:()=>{}};
   let a=postgres(url,options),b=postgres(url,options),observer=postgres(url,options);
   const clients=()=>[a,b,observer];
-  const id='repair-v1-'+'a'.repeat(24),other='repair-v1-'+'b'.repeat(24),base='a'.repeat(40),head='b'.repeat(40),digest='c'.repeat(64);
+  const id='repair-v1-'+'a'.repeat(24),other='repair-v1-'+'b'.repeat(24),head='b'.repeat(40),digest='c'.repeat(64);
+  const workerFixture=createDisposableWorkerFixture({env,candidateId:id,evidenceDigest:digest});
+  const base=workerFixture.baseSha;
   let approvalDigest=null,approvalExpiry=new Date(Date.now()+60000).toISOString();
   const claim=async(client,candidate=id,source='browser',symptom='HEADING_READABILITY')=>(await client.unsafe(
     'SELECT tradehq_repair_control.claim($1,$2,$3,$4,$5,clock_timestamp(),$6) AS r',[candidate,source,symptom,base,digest,'LOW']))[0].r;
@@ -47,10 +50,32 @@ export async function verifyPostgresControls(env=process.env) {
     await a.unsafe("SET tradehq.offline_control_prototype='explicit-local-test';");await a.unsafe(sql);
     await a.unsafe(readFileSync('docs/proposals/repair-approval-receipts.sql','utf8'));
     assert.equal((await claim(a)).reason,'STOPPED');await stop(a,false);
+    // Kill a real runner process while its SQL claim is still uncommitted.
+    // Neither an attempt nor its accepted-transition audit may survive.
+    const interrupted=workerFixture.start('uncommitted');
+    await interrupted.waitFor('SESSION');await interrupted.waitFor('CLAIM_UNCOMMITTED');
+    assert.equal((await observer.unsafe('SELECT count(*)::int AS n FROM tradehq_repair_control.candidates'))[0].n,0);
+    await interrupted.kill();
+    // Waiting for the policy lock also proves the dead connection released it.
+    await a.unsafe('BEGIN');await a.unsafe('SELECT id FROM tradehq_repair_control.policy FOR UPDATE');await a.unsafe('COMMIT');
+    assert.equal((await observer.unsafe('SELECT count(*)::int AS n FROM tradehq_repair_control.candidates'))[0].n,0);
+    assert.equal((await observer.unsafe('SELECT count(*)::int AS n FROM tradehq_repair_control.transition_log'))[0].n,0);
+    assert.equal((await observer.unsafe("SELECT count(*)::int AS n FROM tradehq_repair_control.audit WHERE code='CLAIMED'"))[0].n,0);
+    // The same candidate can now make its first committed claim. Kill the actual
+    // runner after it creates/re-reads a real isolated Git commit, before checks
+    // or publication. Its attempt must remain consumed across process restart.
+    const committed=workerFixture.start('committed');
+    await committed.waitFor('SESSION');const ready=await committed.waitFor('ISOLATED_COMMIT_READY');
+    workerFixture.verifyCommit(ready.headSha);await committed.kill();workerFixture.assertUnpublished();
+    const reconnect=workerFixture.start('reconnect');
+    await reconnect.waitFor('RECONNECT_DENIED');await reconnect.kill();workerFixture.assertUnpublished();
+    assert.deepEqual((await observer.unsafe('SELECT status,attempts FROM tradehq_repair_control.candidates WHERE id=$1',[id]))[0],
+      {status:'claimed',attempts:1},'Committed attempt survives actual process death and replay denial');
+    console.log('WORKER_CRASH_POSTGRES_PASS: actual SIGKILL before SQL commit leaves no candidate/audit; SIGKILL after committed claim and isolated Git commit retains one attempt; a fresh runner process denies replay with zero draft publication attempts. Incident/reproduction/GitHub evidence is synthetic; production worker remains disabled.');
     const bPid=(await b.unsafe('SELECT pg_backend_pid() AS pid'))[0].pid;
     const aPid=(await a.unsafe('SELECT pg_backend_pid() AS pid'))[0].pid;assert.notEqual(aPid,bPid);
     // The observer proves the second session really waits, rather than one client queue.
-    await a.unsafe('BEGIN');assert.equal((await claim(a)).reason,'CLAIMED');
+    await a.unsafe('BEGIN');await a.unsafe('SELECT id FROM tradehq_repair_control.policy FOR UPDATE');
     const waiting=claim(b,other,'manual','LAYOUT_OVERFLOW');await locked(bPid);await a.unsafe('COMMIT');
     assert.equal((await waiting).reason,'ACTIVE_CANDIDATE');
     const receiptGeneration=Number((await a.unsafe('SELECT generation FROM tradehq_repair_control.policy'))[0].generation);
@@ -66,6 +91,8 @@ export async function verifyPostgresControls(env=process.env) {
     // Stop takes the same lock; once committed, independent review cannot revive consent.
     await a.unsafe('BEGIN');assert.equal((await stop(a,true)).reason,'OWNER_STOP');
     const stoppedReview=review(b,'check');await locked(bPid);await a.unsafe('COMMIT');assert.equal((await stoppedReview).reason,'STOPPED');
+    const stoppedReconnect=workerFixture.start('reconnect');
+    await stoppedReconnect.waitFor('RECONNECT_DENIED');await stoppedReconnect.kill();workerFixture.assertUnpublished();
     await stop(a,false);assert.equal((await review(b,'check')).reason,'INVALID_EVIDENCE');
     assert.equal((await claim(b)).reason,'DUPLICATE');assert.equal((await claim(b,other,'manual','LAYOUT_OVERFLOW')).reason,'RATE_LIMIT');
     await a.end();a=postgres(url,options);assert.equal((await claim(a)).reason,'DUPLICATE','Attempt history survives independent client restart.');
@@ -132,6 +159,7 @@ export async function verifyPostgresControls(env=process.env) {
     console.log('PASS disposable PostgreSQL 17: distinct-session row-lock waiting, one active candidate, stop/review serialization, replay/frequency persistence, transaction rollback and denied app roles. No production connection or release authority.');
     console.log('PASS signed approval transaction adapter: actual policy-lock wait, stop-winning race, rollback/no receipt, accepted atomic approval and durable replay rejection.');
   } finally {
+    await workerFixture.close();
     await Promise.allSettled(clients().map(async client=>{await client.unsafe('ROLLBACK');}));
     await Promise.allSettled(clients().map(client=>client.end({timeout:1})));
   }

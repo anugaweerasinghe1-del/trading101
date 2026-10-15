@@ -4,9 +4,11 @@ import { PGlite } from '@electric-sql/pglite';
 import { starterPracticeBank as bank } from '../src/lib/dailyPracticeBank.ts';
 import { exerciseForDate, validateBatch, validateExercises, type DailyExercise } from '../supabase/functions/_shared/dailyPractice.ts';
 import { recordChallenge, getStreak, hasPlayedQuickToday, getTodayChallenge } from '../src/lib/dailyChallenge.ts';
-import { newPractice, readPractice, savePractice, upgradePractice } from '../src/lib/dailyPracticeProgress.ts';
+import { newPractice, readPractice, savePractice, upgradePractice, validProgress } from '../src/lib/dailyPracticeProgress.ts';
 import { createCourseAdminHandler } from '../supabase/functions/_shared/courseAdmin.ts';
 import { generatePractice } from '../supabase/functions/_shared/dailyPracticeGenerator.ts';
+import { readGenerationResponse, GENERATION_READ_LIMITS } from '../supabase/functions/_shared/courseGenerator.ts';
+import { createServer } from 'node:http';
 assert.ok(validateBatch(bank)); assert.equal(new Set(bank.exercises.map(e => e.id)).size, 50);
 assert.equal(new Set(bank.exercises.flatMap(e => e.questions.map(q => q.prompt))).size, 500);
 for (const bad of [null, {}, { ...bank, effectiveFrom: '2026-02-30' }, { ...bank, exercises: [null] }, { ...bank, exercises: bank.exercises.map((e, i) => i ? e : { ...e, title: 23 }) }]) assert.equal(validateBatch(bad), false);
@@ -18,9 +20,31 @@ const memory = new Map<string, string>(), storage = { getItem: (k: string) => me
 let progress = newPractice(bank, '2026-10-09'); progress.answers = [1, 2, 0]; savePractice(progress, storage);
 assert.equal(savePractice({ ...progress, answers: [1] }, storage).progress.answers.length, 3);
 assert.equal(savePractice({ ...progress, bankId: 'another', exercise: bank.exercises[1] }, storage).progress.bankId, bank.id);
+// Two tabs can submit different answers before either receives the storage event.
+// The first recorded answer remains authoritative even if the stale tab is longer.
+assert.deepEqual(savePractice({ ...progress, answers: [0, 2, 0] }, storage).progress.answers, [1, 2, 0]);
+assert.deepEqual(savePractice({ ...progress, answers: [0, 2, 0, 1] }, storage).progress.answers, [1, 2, 0]);
+assert.deepEqual(savePractice({ ...progress, answers: [1, 2, 0, 1] }, storage).progress.answers, [1, 2, 0, 1]);
+const changedSnapshot = { ...progress.exercise, scenario: progress.exercise.scenario + ' A revised case.' };
+assert.deepEqual(savePractice({ ...progress, exercise: changedSnapshot, answers: [1, 2, 0, 1] }, storage).progress.exercise, progress.exercise);
+memory.clear(); savePractice(progress, storage);
 assert.equal(readPractice('2026-10-10', storage), null);
 assert.equal(readPractice('2026-10-09', { getItem: () => '{broken' }), null);
 assert.equal(savePractice(progress, { ...storage, setItem: () => { throw new Error('blocked'); } }).saved, false);
+// One malformed date must not make valid neighboring attempts unreadable.
+for (const date of [null, 42, [], {}, { toString: 'invalid' }, { toString: null, valueOf: 'invalid' }]) {
+  assert.doesNotThrow(() => validProgress({ date }));
+  assert.equal(validProgress({ date }), false);
+}
+const neighbor = { ...newPractice(bank, '2026-10-10'), answers: [2] };
+storage.setItem('tradehq:deeper-practice:v1', JSON.stringify([{ date: { toString: 'invalid' } }, progress, neighbor]));
+assert.deepEqual(readPractice('2026-10-09', storage), progress, 'A damaged row must not hide the valid saved attempt');
+const recoveredSave = savePractice({ ...progress, answers: [1, 2, 0, 1] }, storage);
+assert.equal(recoveredSave.saved, true, 'Cleanup must still save the extended valid attempt');
+assert.deepEqual(recoveredSave.progress.answers, [1, 2, 0, 1]);
+assert.deepEqual(readPractice('2026-10-10', storage), neighbor, 'Other valid dates and original answers remain intact');
+assert.ok(JSON.parse(storage.getItem('tradehq:deeper-practice:v1')!).every(validProgress));
+memory.clear();
 // Only an exact preserved three-question prefix may be extended, with old answers retained.
 const legacy = { ...progress, bankId: 'authored-2026-10', exercise: { ...bank.exercises[0], questions: bank.exercises[0].questions.slice(0,3) } };
 const upgraded = upgradePractice(legacy, bank);
@@ -58,7 +82,7 @@ const chunk = (part: number) => bank.exercises.slice(0, 10).map((e, i) => ({ ...
 let calls = 0;
 const claim = { lease: id, effectiveFrom: '2026-12-09', apiKey: 'test-only', model: 'gemini-3.5-flash', exercises: [], existing: [] };
 const fetcher = (async (url: string | URL | Request, init?: RequestInit) => {
- if (String(url).includes('generativelanguage')) { calls++; assert.ok(!String(url).includes(claim.apiKey));
+ if (String(url).includes('generativelanguage')) { calls++; assert.ok(!String(url).includes(claim.apiKey)); assert.equal(init?.redirect, 'error');
   const b = JSON.parse(String(init?.body)); assert.ok(b.generationConfig.responseJsonSchema); assert.equal(b.contents.length, 1);
   return new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: JSON.stringify({ exercises: chunk(0) }) }] } }] })); }
  return new Response('<main>' + 'Trusted test reference. '.repeat(120) + '</main>', { headers: { 'Content-Type': 'text/html' } });
@@ -68,6 +92,44 @@ await assert.rejects(generatePractice({ ...claim, existing: chunk(0) }, fetcher)
 let limitedCalls = 0;
 await assert.rejects(generatePractice(claim, (async (url, init) => { if (String(url).includes('generativelanguage')) { limitedCalls++; return new Response('', { status: 429 }); } return fetcher(url, init); }) as typeof fetch), /Free Gemini quota/);
 assert.equal(limitedCalls, 1);
+let canceledOversize=false;
+const oversized = new Response(new ReadableStream({start(controller) { controller.enqueue(new Uint8Array(5)); },cancel() { canceledOversize=true; }}));
+await assert.rejects(readGenerationResponse(oversized, 4, 1000), /byte limit/);
+assert.equal(canceledOversize, true, 'Oversized producer must be canceled');
+let canceledStall=false;
+const stalled = new Response(new ReadableStream({start(controller) { controller.enqueue(new TextEncoder().encode('{')); },cancel() { canceledStall=true; return new Promise<void>(()=>{}); }}));
+await assert.rejects(readGenerationResponse(stalled, 100, 20), /read deadline/);
+assert.equal(canceledStall, true, 'Stalled producer is canceled without awaiting hung cancellation');
+assert.equal(await readGenerationResponse(new Response(new ReadableStream({start(c) { c.enqueue(new Uint8Array([0xc3])); c.enqueue(new Uint8Array([0xa9])); c.close(); }})), 2, 1000), 'é');
+await assert.rejects(readGenerationResponse(new Response(new Uint8Array([0xc3,0x28])), 2, 1000), /UTF-8/);
+for (const bad of [new Response(new Uint8Array(GENERATION_READ_LIMITS.providerBytes+1)), new Response('{provider-private-fixture'), new Response('', {status:302})]) {
+ let providerAttempts=0;
+ await assert.rejects(generatePractice(claim, (async (url, init) => {
+  if (String(url).includes('generativelanguage')) {providerAttempts++;assert.equal(init?.redirect,'error');return bad;}
+  return fetcher(url,init);
+ }) as typeof fetch), /byte limit|invalid response|HTTP 302/);
+ assert.equal(providerAttempts,1,'Unsafe response must not retry or fall back');
+}
+let oversizeSourceProviderCalls=0;
+await assert.rejects(generatePractice(claim, (async url => {
+ if(String(url).includes('generativelanguage')){oversizeSourceProviderCalls++;throw Error('Provider must not run');}
+ return new Response(new Uint8Array(GENERATION_READ_LIMITS.sourceBytes+1),{headers:{'Content-Type':'text/html'}});
+}) as typeof fetch),/No AI request/);
+assert.equal(oversizeSourceProviderCalls,0);
+// Real loopback HTTP proves a redirect cannot forward even a disposable key.
+let redirectRequests=0, redirectedRequests=0;
+const redirectServer=createServer((req,res)=>{
+ if(req.url==='/start'){redirectRequests++;assert.equal(req.headers['x-goog-api-key'],claim.apiKey);res.writeHead(302,{Location:'/unexpected'});}
+ else {redirectedRequests++;res.writeHead(200);}
+ res.end();
+});
+await new Promise<void>(resolve=>redirectServer.listen(0,'127.0.0.1',resolve));
+try {
+ const address=redirectServer.address();assert.ok(address&&typeof address==='object');
+ await assert.rejects(generatePractice(claim,(async(url,init)=>String(url).includes('generativelanguage')
+  ? fetch('http://127.0.0.1:'+address.port+'/start',init):fetcher(url,init)) as typeof fetch),/fetch failed/);
+ assert.equal(redirectRequests,1);assert.equal(redirectedRequests,0,'Redirect destination must never receive a request or provider key');
+} finally {await new Promise<void>(resolve=>redirectServer.close(()=>resolve()));}
 await assert.rejects(generatePractice(claim, (async () => new Response('', { status: 503 })) as typeof fetch), /No AI request/);
 
 const db = process.env.TRADEHQ_DAILY_POSTGRES_TEST === 'explicit-ci-fixture'

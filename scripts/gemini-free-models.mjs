@@ -9,12 +9,55 @@ export const FREE_FLASH_LITE_MODELS = Object.freeze([
   "gemini-3.1-flash-lite",
 ]);
 
+const MAX_RESPONSE_BYTES = 2 * 1024 * 1024;
+const RESPONSE_ERRORS = new Set([
+  'Gemini response body unavailable; workflow stopped safely.',
+  'Gemini response deadline exceeded; no retry or fallback.',
+  'Gemini response byte limit exceeded; no retry or fallback.',
+  'Gemini response UTF-8 invalid; no retry or fallback.',
+  'Gemini response envelope invalid; no retry or fallback.',
+]);
+async function readPayload(response, signal) {
+  if (!response.body) throw Error('Gemini response body unavailable; workflow stopped safely.');
+  const reader = response.body.getReader(), chunks = []; let size = 0;
+  let rejectDeadline;
+  const deadline = new Promise((_, reject) => { rejectDeadline = reject; });
+  const abort = () => rejectDeadline(Error('Gemini response deadline exceeded; no retry or fallback.'));
+  signal.addEventListener('abort', abort, { once: true });
+  if (signal.aborted) abort();
+  try {
+    for (;;) {
+      const part = await Promise.race([reader.read(), deadline]);
+      if (part.done) break;
+      size += part.value.byteLength;
+      if (size > MAX_RESPONSE_BYTES) throw Error('Gemini response byte limit exceeded; no retry or fallback.');
+      chunks.push(part.value);
+    }
+    const bytes = new Uint8Array(size); let offset = 0;
+    for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.byteLength; }
+    let raw;
+    try { raw = new TextDecoder('utf-8', { fatal: true }).decode(bytes); }
+    catch { throw Error('Gemini response UTF-8 invalid; no retry or fallback.'); }
+    try {
+      const value = JSON.parse(raw);
+      if (!value || typeof value !== 'object' || Array.isArray(value)) throw Error();
+      return value;
+    }
+    catch { throw Error('Gemini response envelope invalid; no retry or fallback.'); }
+  } finally {
+    signal.removeEventListener('abort', abort);
+    void reader.cancel().catch(() => {});
+    reader.releaseLock();
+  }
+}
+
 export async function requestGeminiJson({
   apiKey, prompt, preferredModel = FREE_FLASH_LITE_MODELS[0],
   temperature = 0.25, maxOutputTokens = 4096, timeoutMs = 45000,
   fetchImpl = globalThis.fetch,
 }) {
   if (!apiKey) throw Error("GEMINI_API_KEY is not configured.");
+  if (!Number.isSafeInteger(timeoutMs) || timeoutMs < 1 || timeoutMs > 120000) throw Error('Bounded Gemini request deadline required.');
   if (!FREE_FLASH_LITE_MODELS.includes(preferredModel)) {
     throw Error("Requested Gemini model is not in TradeHQ's free-tier Flash-Lite allowlist: " + String(preferredModel).slice(0, 80));
   }
@@ -27,12 +70,12 @@ export async function requestGeminiJson({
     while (true) {
       const controller = new AbortController();
       const timer = setTimeout(() => controller.abort(), timeoutMs);
-      let response;
+      let response, payload;
       try {
         response = await fetchImpl(
           "https://generativelanguage.googleapis.com/v1beta/models/" + encodeURIComponent(model) + ":generateContent",
           {
-            method: "POST", signal: controller.signal,
+            method: "POST", redirect: "error", signal: controller.signal,
             headers: { "x-goog-api-key": apiKey, "content-type": "application/json" },
             body: JSON.stringify({
               contents: [{ role: "user", parts: [{
@@ -46,11 +89,15 @@ export async function requestGeminiJson({
             }),
           },
         );
+        if (response.ok) payload = await readPayload(response, controller.signal);
       } catch (error) {
-        if (error?.name === "AbortError") throw Error("Gemini request timed out for " + model + ". No other model was charged.");
-        throw Error("Gemini request failed for " + model + ": " + (error?.message || "Network error"));
+        // Transport errors can contain request data; retain only fixed application codes.
+        if (controller.signal.aborted) throw Error("Gemini request timed out for " + model + ". No retry or fallback.");
+        if (RESPONSE_ERRORS.has(error?.message)) throw Error(error.message);
+        throw Error("Gemini request failed for " + model + ". No retry or fallback.");
       } finally {
         clearTimeout(timer);
+        if (response && !response.ok) void response.body?.cancel().catch(() => {});
       }
       if (response.status === 404) {
         unavailable.push(model);
@@ -62,11 +109,11 @@ export async function requestGeminiJson({
         if (response.status === 403 || response.status === 401) throw Error("Gemini key/project authorization failed (" + response.status + ") for " + model + ". No fallback.");
         throw Error("Gemini HTTP " + response.status + " for " + model + ". Workflow stopped safely.");
       }
-      const payload = await response.json();
       const candidate = payload.candidates?.[0];
       if (candidate?.finishReason === "MAX_TOKENS") throw Error("Gemini hit output token limit for " + model + "; no changes were published.");
       if (candidate?.finishReason && candidate.finishReason !== "STOP") {
-        throw Error("Gemini stopped with " + String(candidate.finishReason).slice(0, 50) + " for " + model + "; no changes were published.");
+        const reason = ['SAFETY', 'RECITATION', 'LANGUAGE', 'BLOCKLIST', 'PROHIBITED_CONTENT', 'SPII', 'MALFORMED_FUNCTION_CALL', 'OTHER'].includes(candidate.finishReason) ? candidate.finishReason : 'UNKNOWN';
+        throw Error("Gemini stopped with " + reason + " for " + model + "; no changes were published.");
       }
       const raw = candidate?.content?.parts?.map(part => part.text || "").join("").trim() || "";
       let value;

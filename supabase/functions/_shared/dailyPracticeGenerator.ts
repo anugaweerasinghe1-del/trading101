@@ -1,5 +1,5 @@
 import { DAILY_CATEGORIES, normalized, validateExercises, type DailyExercise } from './dailyPractice.ts';
-import { readCourseReferences } from './courseGenerator.ts';
+import { readCourseReferences, readGenerationResponse, GENERATION_READ_LIMITS } from './courseGenerator.ts';
 export interface PracticeClaim {
   lease: string; effectiveFrom: string; apiKey: string; model: string;
   exercises: DailyExercise[]; existing: Pick<DailyExercise, 'title' | 'scenario' | 'questions'>[];
@@ -37,14 +37,20 @@ export async function generatePractice(claim: PracticeClaim, fetcher = fetch) {
     reflection: str, reflectionGuide: str, sources: { type: 'array', minItems: 1, maxItems: 4, items: obj({ label: str, url: { ...str, enum: references.map(s => s.url) } }) },
   }) } });
   const response = await fetcher('https://generativelanguage.googleapis.com/v1beta/models/' + encodeURIComponent(claim.model) + ':generateContent', {
-    method: 'POST', headers: { 'Content-Type': 'application/json', 'x-goog-api-key': claim.apiKey },
+    method: 'POST', redirect: 'error', headers: { 'Content-Type': 'application/json', 'x-goog-api-key': claim.apiKey },
     body: JSON.stringify({ contents: [{ role: 'user', parts: [{ text: JSON.stringify(request) }] }],
       generationConfig: { responseMimeType: 'application/json', responseJsonSchema: schema, maxOutputTokens: 32768, thinkingConfig: { thinkingLevel: 'low' } } }), signal: AbortSignal.timeout(95000),
   });
   // Standard free-tier API only. No Batch API, alternate provider or paid fallback.
-  if (response.status === 429) throw new Error('Free Gemini quota exhausted. Paused for 24 hours; no paid fallback.');
-  if (!response.ok) throw new Error('Gemini rejected generation (HTTP ' + response.status + '). Check free-tier settings.');
-  const output = await response.json();
+  if (!response.ok) {
+    void response.body?.cancel().catch(() => {});
+    if (response.status === 429) throw new Error('Free Gemini quota exhausted. Paused for 24 hours; no paid fallback.');
+    throw new Error('Gemini rejected generation (HTTP ' + response.status + '). Check free-tier settings.');
+  }
+  const rawOutput = await readGenerationResponse(response, GENERATION_READ_LIMITS.providerBytes, GENERATION_READ_LIMITS.providerReadMs);
+  let output;
+  try { output = JSON.parse(rawOutput); }
+  catch { throw new Error('Gemini returned an invalid response. No content was published.'); }
   let items: DailyExercise[];
   try { items = JSON.parse(output.candidates?.[0]?.content?.parts?.filter((p: { thought?: boolean }) => !p.thought).map((p: { text?: string }) => p.text ?? '').join('') ?? '').exercises; }
   catch { throw new Error('Gemini returned incomplete output. No content was published.'); }

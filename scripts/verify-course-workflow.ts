@@ -3,10 +3,54 @@ import { readFileSync, readdirSync } from "node:fs";
 import { PGlite } from "@electric-sql/pglite";
 import { courseCovers, lessonWordCount, validateCourseDocument, type CourseDocument } from "../supabase/functions/_shared/courseDocument.ts";
 import { createCourseAdminHandler } from "../supabase/functions/_shared/courseAdmin.ts";
-import { generateCourse, courseReferences } from "../supabase/functions/_shared/courseGenerator.ts";
+import { generateCourse, courseReferences, GENERATION_READ_LIMITS } from "../supabase/functions/_shared/courseGenerator.ts";
 import { checkCourseDemand } from "../supabase/functions/_shared/courseDemandCheck.ts";
 import { renderApprovedCourse } from "../src/lib/courseHtml.ts";
 import { sharedQuote } from "../supabase/functions/_shared/sharedQuote.ts";
+import { readCoursePublicationHistory } from "../src/lib/coursePublicationHistory.ts";
+import { parseCourseProgress } from "../src/lib/courseProgress.ts";
+
+for (const raw of [null, 'null', '[]', '42', '{broken', '{"v":2,"tracks":{}}', '{"v":1,"tracks":null}', '{"v":1,"tracks":[]}']) {
+  assert.equal(Object.keys(parseCourseProgress(raw).tracks).length, 0, 'Malformed progress must recover without a render crash');
+}
+const completedLesson = { status: 'completed', score: 4, completedAt: '2026-10-09T15:45:01Z', scrolledPct: 100 };
+const recovered = parseCourseProgress(JSON.stringify({ v: 1, updatedAt: 'bad date', tracks: {
+  good: { lessons: { completed: completedLesson, broken: null, badStatus: { status: 'unknown' }, arrayStatus: { status: ['completed'] }, objectStatus: { status: { toString: 'completed' } }, badScore: { status: 'in-progress', score: '4', scrolledPct: -1 } }, badgeEarnedAt: '2026-10-09T15:46:01Z' },
+  broken: null, noLessons: { lessons: null }, arrayLessons: { lessons: [] },
+}, lastLesson: { track: 'good', lesson: 'completed', at: '2026-10-09T15:45:01Z' } }));
+assert.deepEqual(recovered.tracks.good.lessons.completed, completedLesson, 'Valid saved score and completion survive nearby corruption');
+assert.equal(recovered.tracks.good.badgeEarnedAt, '2026-10-09T15:46:01Z');
+assert.deepEqual(recovered.lastLesson, { track: 'good', lesson: 'completed', at: '2026-10-09T15:45:01Z' });
+assert.equal(recovered.tracks.good.lessons.broken, undefined);
+assert.equal(recovered.tracks.good.lessons.badStatus, undefined);
+assert.equal(recovered.tracks.good.lessons.arrayStatus, undefined);
+assert.equal(recovered.tracks.good.lessons.objectStatus, undefined);
+assert.deepEqual(recovered.tracks.good.lessons.badScore, { status: 'in-progress' });
+assert.equal(Object.keys(recovered.tracks.noLessons.lessons).length, 0);
+assert.equal(Object.keys(recovered.tracks.arrayLessons.lessons).length, 0);
+assert.equal(recovered.updatedAt, new Date(0).toISOString());
+const reserved = parseCourseProgress('{"v":1,"tracks":{"__proto__":{"lessons":{"constructor":{"status":"completed","score":4}}}}}');
+assert.equal(Object.getPrototypeOf(reserved.tracks), null, 'Stored track keys cannot inherit prototype properties');
+assert.equal(Object.getPrototypeOf(reserved.tracks.__proto__.lessons), null);
+assert.equal(reserved.tracks.__proto__.lessons.constructor.status, 'completed');
+assert.equal(Object.hasOwn(parseCourseProgress('{"v":1,"tracks":{}}').tracks, 'constructor'), false);
+
+const noticeNow = Date.parse('2026-10-14T00:00:00Z');
+const seenPublication = 'published-course:2026-10-09T15:45:01.003475+00:00';
+for (const raw of [null, 'null', '[]', 'true', '42', '"stored string"', '{broken']) {
+  assert.deepEqual(readCoursePublicationHistory(raw, noticeNow), {}, 'Malformed browser history must recover');
+}
+assert.deepEqual(readCoursePublicationHistory(JSON.stringify({
+  [seenPublication]: true,
+  'not-a-publication': true,
+  'stale-course:2026-09-01T00:00:00Z': true,
+  'future-course:2027-01-01T00:00:00Z': true,
+  'unseen-course:2026-10-09T00:00:00Z': false,
+  'invalid-value:2026-10-09T00:00:00Z': 'true',
+}), noticeNow), { [seenPublication]: true }, 'Valid revision markers survive alongside corrupt entries');
+assert.equal(Object.keys(readCoursePublicationHistory(JSON.stringify(Object.fromEntries(
+  Array.from({ length: 180 }, (_, i) => ['course-' + i + ':2026-10-09T00:00:00Z', true])
+)), noticeNow)).length, 150, 'Stored announcement history stays bounded');
 
 // Test-only fixture; never inserted into production or published.
 const document: CourseDocument = {
@@ -82,6 +126,7 @@ const claim = { lease: "test", period: "2026-10", slot: 1, apiKey: "test-free-ke
   gscProperty: "", gscCredentials: null, topicRequests: ["Price snapshots"], existing: [] };
 const fetcher = (async (url: string | URL | Request, init?: RequestInit) => {
   if (String(url).includes("generativelanguage")) {
+    assert.equal(init?.redirect, 'error');
     aiCalls++; assert.ok(!String(url).includes(claim.apiKey));
     const prompt = JSON.parse(JSON.parse(String(init!.body)).contents[0].parts[0].text);
     assert.equal(prompt.covers.length, 4);
@@ -98,6 +143,14 @@ assert.equal(aiCalls, 1);
 const limited = (async (url: string | URL | Request, init?: RequestInit) => String(url).includes("generativelanguage")
   ? new Response("", { status: 429 }) : fetcher(url, init)) as typeof fetch;
 await assert.rejects(generateCourse(claim, limited), /Free AI quota exhausted/);
+for (const bad of [new Response(new Uint8Array(GENERATION_READ_LIMITS.providerBytes+1)), new Response('{provider-private-fixture'), new Response('', {status:302})]) {
+  let providerAttempts=0;
+  await assert.rejects(generateCourse(claim, (async (url, init) => {
+    if(String(url).includes('generativelanguage')) {providerAttempts++;assert.equal(init?.redirect,'error');return bad;}
+    return fetcher(url,init);
+  }) as typeof fetch), /byte limit|invalid response|HTTP 302/);
+  assert.equal(providerAttempts,1,'Rejected response must not retry or fall back');
+}
 
 const testKeys = await crypto.subtle.generateKey({ name: "RSASSA-PKCS1-v1_5", modulusLength: 2048,
   publicExponent: new Uint8Array([1, 0, 1]), hash: "SHA-256" }, true, ["sign", "verify"]);
@@ -214,7 +267,22 @@ try {
   assert.equal(lease.slot, 1); assert.equal(lease.apiKey, ready.apiKey);
   assert.equal((await db.query<{ value: unknown }>("select public.claim_course_generation($1) as value", [token])).rows[0].value, null);
   await db.query("select public.finish_course_generation($1,NULL,NULL,'Free AI quota exhausted')", [lease.lease]);
+  // The pause is per slot. On/after the 15th the independent second slot is
+  // eligible, so isolate slot 1's cooldown by exhausting slot 2 in a rollback-
+  // only fixture transaction. Do not change production scheduling or its clock.
+  await db.exec('BEGIN');
+  await db.exec("INSERT INTO tradehq_private.course_generation_runs(period,slot,attempts,status) SELECT to_char(clock_timestamp() AT TIME ZONE 'Asia/Colombo','YYYY-MM'),2,3,'paused'");
   assert.equal((await db.query<{ value: number | null }>("select public.request_course_generation() as value")).rows[0].value, null);
+  await db.exec('ROLLBACK');
+  // Separately check the scheduler's real second-slot boundary, then undo only
+  // this disposable observation so the existing manual-retry lifecycle follows.
+  await db.exec('BEGIN');
+  const day = (await db.query<{ day: number }>("select extract(day FROM clock_timestamp() AT TIME ZONE 'Asia/Colombo')::int as day")).rows[0].day;
+  const automatic = (await db.query<{ value: number | null }>("select public.request_course_generation() as value")).rows[0].value;
+  assert.equal(automatic, day >= 15 ? 1 : null);
+  if (day >= 15) assert.equal((await db.query<{ slot: number }>("select pending_slot as slot from tradehq_private.course_generation_state")).rows[0].slot, 2);
+  assert.equal((await db.query<{ attempts: number }>("select attempts from tradehq_private.course_generation_runs where slot=1")).rows[0].attempts, 1);
+  await db.exec('ROLLBACK');
   await db.query("select public.request_course_generation(true)");
   const retryToken = (await db.query<{ token: string }>("select pending_token as token from tradehq_private.course_generation_state")).rows[0].token;
   const retry = (await db.query<{ value: { lease: string } }>("select public.claim_course_generation($1) as value", [retryToken])).rows[0].value;

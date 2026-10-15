@@ -74,6 +74,11 @@ async function main(){
   const temp=mkdtempSync(join(tmpdir(),"tradehq-isolated-auth-"));
   const dist=join(temp,"dist"),profile=join(temp,"chrome");
   let server,browser,devtools;let attempts=0,approved=0,rejected=0,dataWrites=0,portfolioInitialized=0,logouts=0,refreshRejected=0,dailyReads=0,adminChatRequests=0;
+  let showPublications=false,publicationReads=0;
+  let holdLearnModule=true;
+  const releaseLearnModules=[];
+  const rejectedWrites=[];
+  const publications=[{slug:'isolated-publication',published_at:new Date().toISOString(),title:'Isolated course announcement'}];
   const ADMIN_FIXTURE_KEY='isolated-admin-fixture-only';
   const repairRequests={status:0,stop:0};
   const chatDraft='Improve About page mobile spacing while preserving every existing sentence and link.';
@@ -151,8 +156,12 @@ async function main(){
         // real-bank response; selection must wait for its visible UI state.
         setTimeout(()=>json(200,fixtureBank),200);return;
       }
+      if(route==='/rest/v1/rpc/get_published_course_catalog' && req.method==='POST')return json(200,[]);
       if(route.startsWith("/rest/v1/")){
-        if(!["GET","HEAD"].includes(req.method||"")){dataWrites++;return json(403,{error:"fixture_never_mutates"})}
+        if(!["GET","HEAD"].includes(req.method||"")){dataWrites++;rejectedWrites.push(route);return json(403,{error:"fixture_never_mutates"})}
+        if(route==='/rest/v1/published_courses' && parsed.searchParams.get('select')?.includes('published_at')){
+          publicationReads++;return json(200,showPublications?publications:[]);
+        }
         if(route==="/rest/v1/profiles")
           return json(200,[{id:USER_ID,username:"isolated",country:null,bio:null,is_public:false}]);
         return json(200,[]);
@@ -166,8 +175,14 @@ async function main(){
         if(pathname.startsWith("/assets/")){res.writeHead(404);res.end();return;}
         file=join(dist,"index.html");
       }
-      res.writeHead(200,{"Content-Type":MIME[extname(file)]||"application/octet-stream"});
-      res.end(readFileSync(file));
+      const serve=()=>{
+        res.writeHead(200,{"Content-Type":MIME[extname(file)]||"application/octet-stream"});
+        res.end(readFileSync(file));
+      };
+      if(holdLearnModule && /^\/assets\/Learn-[^.]+\.js$/.test(pathname)){
+        releaseLearnModules.push(serve);return;
+      }
+      serve();
     });
     await new Promise((resolve,reject)=>{
       server.once("error",reject);server.listen(0,"127.0.0.1",resolve);
@@ -215,6 +230,15 @@ async function main(){
       await wait(()=>devtools.evaluate("globalThis.__tradehqFixtureDocument!=="+JSON.stringify(marker)+
         " && document.readyState==='complete'"),"new document after "+(url?new URL(url).pathname:"reload"));
     };
+    // Hold only the compiled lazy route module. A slow connection must leave
+    // a visible, accessible loading screen and then resolve to actual Learn.
+    await devtools.send("Page.navigate",{url:origin+"/learn"});
+    await wait(()=>releaseLearnModules.length===1,"held lazy Learn module");
+    await wait(()=>devtools.evaluate("document.querySelector('[role=status]')?.textContent.includes('Loading your page')"),"visible route loading status",3000);
+    assert.ok(await devtools.evaluate("document.querySelector('#root')?.innerText.length>60"),"Pending route must not leave a blank root");
+    holdLearnModule=false;releaseLearnModules.splice(0).forEach(release=>release());
+    await wait(()=>devtools.evaluate("[...document.querySelectorAll('h1')].some(e=>e.textContent.includes('Learn Trading')) && !document.querySelector('[data-route-loading]')"),"Learn after delayed module release");
+    console.log("ISOLATED_ROUTE_LOADING_PASS: actual compiled Learn module held; visible accessible loading; actual Learn rendered after release.");
     await loadDocument(origin+"/auth");
     await wait(()=>devtools.evaluate("!!(document.querySelector('input[type=email]')&&document.querySelector('input[type=password]'))"),"real TradeHQ login form");
     const submit=(mail,pass)=>{
@@ -279,8 +303,11 @@ async function main(){
       const expression="(()=>{const e=[...document.querySelectorAll('#deeper-practice button')].find(e=>e.textContent.trim()==="+JSON.stringify(text)+"&&!e.disabled);if(!e)throw Error('Daily button missing');e.click();return true;})()";
       return devtools.evaluate(expression);
     };
-    const stored=()=>devtools.evaluate("JSON.parse(localStorage.getItem('tradehq:deeper-practice:v1')||'[]')[0]");
+    const stored=()=>devtools.evaluate("JSON.parse(localStorage.getItem('tradehq:deeper-practice:v1')||'[]').find(p=>typeof p.date==='string'&&Array.isArray(p.answers))");
     await dailyClick("Start case study");
+    // Represent another tab's committed first answer before its storage event
+    // reaches this tab. This tab's rendered state still has no answers.
+    await devtools.evaluate("(()=>{const bank="+JSON.stringify(fixtureBank)+";const now=new Date();const date=now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0');const n=Math.floor((Date.parse(date)-Date.parse(bank.effectiveFrom))/86400000);const exercise=bank.exercises[((n%bank.exercises.length)+bank.exercises.length)%bank.exercises.length];localStorage.setItem('tradehq:deeper-practice:v1',JSON.stringify([{date,bankId:bank.id,exercise,answers:[1],reflection:''}]));return true;})()");
     for(let i=0;i<10;i++){
       await wait(()=>devtools.evaluate("document.querySelector('#case-study-content fieldset legend') && document.querySelector('#case-study-content').textContent.includes('Question "+(i+1)+" of 10')"),"Daily question "+(i+1));
       await devtools.evaluate("document.querySelector('#case-study-content input[type=radio]').click()");
@@ -289,6 +316,8 @@ async function main(){
       await wait(async()=>((await stored())?.answers.length===i+1),"persisted Daily answer "+(i+1));
       if(i===0){
         const before=await stored();
+        assert.deepEqual(before.answers,[1],"Stale rendered tab must not replace another tab's original answer with its own zero pick");
+        await devtools.evaluate("(()=>{const key='tradehq:deeper-practice:v1';const rows=JSON.parse(localStorage.getItem(key));localStorage.setItem(key,JSON.stringify([{date:{toString:'invalid'}},...rows]));return true;})()");
         await loadDocument();
         await dailyBankReady();
         await wait(()=>devtools.evaluate("[...document.querySelectorAll('#deeper-practice button')].some(e=>e.textContent.includes('Continue case study'))"),"saved Daily resume control");
@@ -297,7 +326,7 @@ async function main(){
       }else if(i<9){await dailyClick("Next question");}
     }
     await wait(()=>devtools.evaluate("document.querySelector('#deeper-practice').textContent.includes('Case complete')"),"completed case score");
-    const complete=await stored();assert.equal(complete.answers.length,10);assert.ok(complete.answers.every(a=>a===0));
+    const complete=await stored();assert.equal(complete.answers.length,10);assert.equal(complete.answers[0],1);assert.ok(complete.answers.slice(1).every(a=>a===0));
     const streakKey=await devtools.evaluate("Object.keys(localStorage).find(k=>{try{const v=JSON.parse(localStorage.getItem(k));return v && v.totalCompleted===1 && Array.isArray(v.history)}catch{return false}})");
     assert.ok(streakKey,"Daily completion must persist one streak entry");
     await loadDocument();
@@ -369,8 +398,48 @@ async function main(){
     assert.equal(await devtools.evaluate("Object.values(localStorage).some(x=>x.includes("+JSON.stringify(ADMIN_FIXTURE_KEY)+"))"),false,'Admin key cannot be persisted');
     assert.equal(adminChatRequests,4);assert.equal(dataWrites,0);
     console.log('ISOLATED_ADMIN_CHAT_BROWSER_PASS: paused pilot, literal model text, owner-click draft transfer, forged authority denial and late-response lock isolation; fixture only; no real provider calls.');
+    // Actual compiled announcements must recover from valid JSON of the wrong
+    // shape, retain revision markers across reload and avoid replay on focus.
+    showPublications=true;
+    const noticeKey='tradehq-seen-course-publications-v1';
+    const noticeCount=()=>devtools.evaluate("document.querySelectorAll('button[aria-label^=\"Open new course: \"]').length");
+    await devtools.evaluate('localStorage.setItem('+JSON.stringify(noticeKey)+',\'null\')');
+    await loadDocument(origin+'/courses');
+    await wait(async()=>await noticeCount()===1,'announcement recovered from null history');
+    const seen=await devtools.evaluate('JSON.parse(localStorage.getItem('+JSON.stringify(noticeKey)+'))');
+    assert.equal(seen[publications[0].slug+':'+publications[0].published_at],true);
+    const beforeReload=publicationReads;await loadDocument();
+    await wait(()=>publicationReads>beforeReload,'announcement publication read after reload');
+    await sleep(250);assert.equal(await noticeCount(),0,'Seen publication cannot replay after reload');
+    const beforeFocus=publicationReads;await devtools.evaluate("window.dispatchEvent(new Event('focus'))");
+    await wait(()=>publicationReads>beforeFocus,'announcement recheck on focus');
+    await sleep(250);assert.equal(await noticeCount(),0,'Seen publication cannot replay on focus');
+    await devtools.evaluate('localStorage.setItem('+JSON.stringify(noticeKey)+',\'[]\')');
+    await loadDocument();await wait(async()=>await noticeCount()===1,'announcement recovered from array history');
+    assert.equal(dataWrites,0,'Unexpected fixture writes: '+rejectedWrites.join(', '));
+    console.log('ISOLATED_COURSE_NOTICES_BROWSER_PASS: malformed null/array history recovered, seen revision persisted, reload/focus deduplicated; fixture only.');
+    const progressKey='tradehq_course_progress_v1';
+    const coursePath='/courses/options-trading-fundamentals';
+    const savedLesson={status:'completed',score:4,completedAt:'2026-10-09T15:45:01Z'};
+    const retainedTrack={lessons:{retained:savedLesson},badgeEarnedAt:'2026-10-09T15:46:01Z'};
+    for(const tracks of [null,{'options-trading-fundamentals':{lessons:null},retained:retainedTrack},{'options-trading-fundamentals':{lessons:{invalid:null}},retained:retainedTrack}]){
+      await devtools.evaluate('localStorage.setItem('+JSON.stringify(progressKey)+','+JSON.stringify(JSON.stringify({v:1,tracks,updatedAt:'2026-10-09T15:45:01Z'}))+')');
+      await loadDocument(origin+coursePath);
+      await wait(()=>devtools.evaluate("[...document.querySelectorAll('h1')].some(x=>x.textContent.includes('Options Trading Fundamentals'))"),'course renders despite malformed progress');
+      const link=await devtools.evaluate("[...document.querySelectorAll('main a')].find(x=>x.getAttribute('href')?.startsWith('/courses/options-trading-fundamentals/'))?.getAttribute('href')");
+      assert.ok(link,'Actual course lesson link missing');await loadDocument(origin+link);
+      await wait(()=>devtools.evaluate("[...document.querySelectorAll('button')].some(x=>x.textContent.includes('Submit & complete lesson'))"),'lesson mounts and saves recovered progress');
+      const after=await devtools.evaluate('JSON.parse(localStorage.getItem('+JSON.stringify(progressKey)+'))');
+      assert.ok(Object.values(after.tracks['options-trading-fundamentals'].lessons).some(x=>x.status==='in-progress'));
+      if(tracks)assert.deepEqual(after.tracks.retained,retainedTrack,'Valid unrelated completed lesson and badge must survive recovery save');
+      await loadDocument();
+      await wait(()=>devtools.evaluate("[...document.querySelectorAll('button')].some(x=>x.textContent.includes('Submit & complete lesson'))"),'recovered lesson survives reload');
+    }
+    assert.equal(dataWrites,0);
+    console.log('ISOLATED_COURSE_PROGRESS_BROWSER_PASS: null tracks, null lessons and invalid lesson rows recovered; valid unrelated completion/badge retained after real lesson save and reload; fixture only.');
     console.log("ISOLATED_AUTH_BROWSER_PASS: reload persistence; real UI sign-out; no resurrected session; expired refresh rejected; ten Daily answers persisted/resumed/locked; one streak per day; actual built TradeHQ login in real Chromium; negative password refused; fake Supabase grant accepted; authenticated profile navigation observed; isolated account initialization executed; zero non-allowlisted backend writes; zero real provider calls.");
   }finally{
+    holdLearnModule=false;releaseLearnModules.splice(0).forEach(release=>release());
     // Wait for Chrome to exit before deleting its still-active profile files.
     // Otherwise a successful browser assertion can randomly fail on ENOTEMPTY.
     devtools?.close();

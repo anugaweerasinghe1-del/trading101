@@ -15,6 +15,7 @@ assert.equal(hasObviousDuplicate({title:"Accessible keyboard-navigation guide",u
 const valid = html=>'<html><head><title>Test</title></head><body><div id="root"><main><h1>TradeHQ site</h1><p>'+html+'</p></main></div></body></html>';
 assert.equal(assessBrowserHtml("/",valid("A sufficiently detailed site renders here and includes educational explanations and plenty of useful information.")),null);
 assert.match(assessBrowserHtml("/","<html><body><div id=\"root\"></div></body></html>"),/very little/);
+assert.match(assessBrowserHtml("/learn",valid('<main data-route-loading="" role="status">Loading your page. Your TradeHQ page is on its way. Please wait a moment while we get it ready.</main>')),/still loading/);
 assert.match(assessBrowserHtml("/admin",valid("Completely unrelated heading with educational explanations long enough to pass the basic content check.")),/Admin landing/);
 assert.match(assessBrowserHtml("/",valid("Something went wrong and API returned 429, an important public error")),/error is visibly/);
 const healthy={status:0,stdout:valid('A sufficiently detailed site renders here and includes educational explanations and plenty of useful information.')};

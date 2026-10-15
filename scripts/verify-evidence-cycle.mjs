@@ -79,6 +79,17 @@ assert.ok(Object.values(shadow.authorization).every(v=>v===false));
 assert.equal(shadow.confirmedRepairOutcomes,0);
 assert.deepEqual(investigationAdvice(learningPacket,learningHistory,clock),fixedAdvice);
 assert.deepEqual(learningPacket,learningBefore,'Training cannot mutate verified findings or risk');
+const degradedHistory=structuredClone(learningHistory);
+degradedHistory.memory.records=degradedHistory.memory.records.map(r=>({...r,
+  outcome:r.action===learningActions[0]&&Number(r.runId)>=132&&Number(r.runId)<135?'reported_success':r.outcome}));
+const degradedAdvice=investigationAdvice(learningPacket,degradedHistory,clock);
+const degraded=investigationLearning(learningPacket,degradedHistory,clock);
+assert.equal(degraded.status,'ABSTAIN_FALSE_POSITIVE_RATE');assert.equal(degraded.modelDigest,null);
+assert.deepEqual(degraded.estimates,[]);assert.equal(degraded.qualityPolicy.maximumHeldOutFalsePositiveRate,0.1);
+assert.equal(degraded.qualityPolicy.calibrationEstablished,false);
+assert.deepEqual(investigationAdvice(learningPacket,degradedHistory,clock),degradedAdvice,
+  'A degraded shadow model falls back to exactly the same deterministic advice');
+assert.deepEqual(learningPacket,learningBefore);assert.ok(Object.values(degraded.authorization).every(v=>v===false));
 for(const mutate of [
   x=>x.authorization={},
   x=>delete x.authorization.merge,
