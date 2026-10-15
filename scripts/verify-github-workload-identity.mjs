@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { webcrypto } from 'node:crypto';
-import { createGitHubWorkloadVerifier,assertCurrentGitHubJob } from './agent-github-workload-identity.mjs';
+import { createGitHubWorkloadVerifier,assertCurrentGitHubJob,githubIdentityRejectionDiagnostic } from './agent-github-workload-identity.mjs';
 const crypto=globalThis.crypto||webcrypto,now=Date.parse('2026-10-13T13:44:00Z'),at=now/1000;
 const repo='anugaweerasinghe1-del/trading101',path='.github/workflows/tradehq-verified-evidence.yml',sha='a'.repeat(40);
 const pair=await crypto.subtle.generateKey({name:'RSASSA-PKCS1-v1_5',modulusLength:2048,publicExponent:new Uint8Array([1,0,1]),hash:'SHA-256'},true,['sign','verify']);
@@ -44,8 +44,21 @@ const immutable=await fixture().verify(await signed({...claims,sub:'repo:anugawe
 assert.equal(immutable.repositoryId,1130435580,'Both documented subject formats retain immutable ID enforcement');
 let rejected=0;
 async function deny(token,f=fixture()) {
-  await assert.rejects(()=>f.verify(token),error=>error.message==='Workload identity rejected; no repair or release authority granted');rejected++;return f;
+  await assert.rejects(()=>f.verify(token),error=>{
+    assert.equal(error.message,'Workload identity rejected; no repair or release authority granted');
+    const diagnostic=githubIdentityRejectionDiagnostic(error);
+    assert.ok(Object.isFrozen(diagnostic)&&Object.isFrozen(diagnostic.failedChecks));
+    assert.match(diagnostic.stage,/^[A-Z_]+$/);
+    assert.ok(!JSON.stringify(diagnostic).includes(token));return true;
+  });rejected++;return f;
 }
+assert.equal(githubIdentityRejectionDiagnostic(Object.assign(Error('private-sentinel'),{stage:'TOKEN_FORMAT'})),null,
+  'Only this verifier can brand a safe diagnostic');
+const privateScopeToken=await signed({...claims,sub:'private-subject-sentinel',repository_owner:'private-owner-sentinel'});
+await assert.rejects(()=>fixture().verify(privateScopeToken),error=>{
+  assert.deepEqual(githubIdentityRejectionDiagnostic(error),{stage:'CLAIM_SCOPE',failedChecks:['subject','owner']});
+  assert.ok(!JSON.stringify(githubIdentityRejectionDiagnostic(error)).includes('sentinel'));return true;
+});
 for(const change of [{iss:'https://attacker.invalid'},{aud:['tradehq-repair-identity-v1']},{sub:'repo:'+repo+':pull_request'},
   {repository:'attacker/trading101'},{repository_id:'1'},{repository_owner_id:'1'},{repository_owner:'attacker'},{repository_visibility:'private'},
   {ref:'refs/heads/feature'},{ref_type:'tag'},{event_name:'pull_request_target'},{event_name:'pull_request'},{runner_environment:'self-hosted'},

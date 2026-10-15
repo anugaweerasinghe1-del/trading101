@@ -1,7 +1,7 @@
 /** Protected-main read-only identity probe. No DB, proposal, model, permission update or release. */
 import assert from 'node:assert/strict';
 import { pathToFileURL } from 'node:url';
-import { createGitHubWorkloadVerifier,assertCurrentGitHubJob } from './agent-github-workload-identity.mjs';
+import { createGitHubWorkloadVerifier,assertCurrentGitHubJob,githubIdentityRejectionDiagnostic } from './agent-github-workload-identity.mjs';
 const REPO='anugaweerasinghe1-del/trading101',AUDIENCE='tradehq-repair-identity-v1';
 const AUTHORITY=Object.freeze({codeWrites:false,ownerApproval:false,merge:false,productionRelease:false});
 async function getJson(fetcher,url,headers,cap,signal) {
@@ -48,9 +48,9 @@ export async function probeGitHubWorkload({env,fetcher=fetch,clock=Date.now}) {
     return Object.freeze({schema:'tradehq-github-identity-probe-v1',status:'VERIFIED',mode:'READ_ONLY',
       runId:principal.runId,attempt:principal.attempt,checkId:principal.checkId,mainSha:principal.mainSha,
       expiresAt:principal.expiresAt,requiredClaimTypes:requiredClaims,authorization:AUTHORITY});
-  } catch {
+  } catch (error) {
     return Object.freeze({schema:'tradehq-github-identity-probe-v1',status:'BLOCKED',mode:'READ_ONLY',
-      requiredClaimTypes:requiredClaims,authorization:AUTHORITY});
+      requiredClaimTypes:requiredClaims,diagnostic:githubIdentityRejectionDiagnostic(error),authorization:AUTHORITY});
   }
 }
 if(process.argv[1] && import.meta.url===pathToFileURL(process.argv[1]).href) {
