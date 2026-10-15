@@ -21,6 +21,8 @@ export function assessBrowserHtml(path, html) {
   // Pages contain prerendered content: a real Chrome pass must still locate the hydrated root.
   const root = html.match(/<div[^>]*\bid=["']root["'][^>]*>([\s\S]*?)<\/body>/i);
   if(!root) return "React root element was not found.";
+  if(/<[^>]*\bid=["']prerender-seo["']/i.test(root[1]))
+    return "Application hydration was not verified; the static prerendered fallback remains.";
   if(/<[^>]*\bdata-route-loading(?:\s|=|>)/i.test(root[1]))
     return "Page is still loading; route content was not verified.";
   const text = root[1].replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi," ")
