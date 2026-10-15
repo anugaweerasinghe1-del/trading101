@@ -40,6 +40,8 @@ jobs:
       - run: npm run build:cloudflare
       - name: Verify isolated authenticated browser flow (no production accounts)
         run: node scripts/verify-isolated-auth-browser.mjs
+      - name: Verify read-only incident follow-up against isolated pages
+        run: node scripts/verify-browser-investigation.mjs
       - run: node --import tsx scripts/verify-cloudflare-courses-root.ts
       - name: Verify staging and production SEO headers offline
         run: node scripts/verify-cloudflare-seo.mjs

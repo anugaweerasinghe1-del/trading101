@@ -11,6 +11,7 @@ import { createHash } from "node:crypto";
 import { collectOfflineRepairReview } from "./agent-repair-pipeline-offline.mjs";
 import { collectIncidentFeedback, recommendForVerifiedFinding } from "./agent-incident-feedback.mjs";
 import { trainIncidentOutcomeModel, predictReportedOutcome, LEARNING_LIMITS } from "./agent-incident-learning.mjs";
+import { observePublicIncidentRoutes } from './agent-browser-investigation.mjs';
 
 export function investigationLearning(packet, history, now=Date.now()) {
   summarizeInvestigation(packet);
@@ -92,6 +93,13 @@ export function summarizeInvestigation(packet) {
   return {...summary, sha256:createHash("sha256").update(JSON.stringify(summary)).digest("hex")};
 }
 
+export async function investigationBrowserFollowup(packet,options) {
+  const summary=summarizeInvestigation(packet);
+  const followup=await observePublicIncidentRoutes([...new Set(packet.cases
+    .filter(item=>item.symptom==='BLANK_ROOT').map(item=>item.path))],options);
+  return {...followup,monitorRunId:summary.monitorRunId,mainSha:summary.targetSha};
+}
+
 /**
  * Present ONLY summary fields admitted by summarizeInvestigation. The GitHub
  * job summary is local runner output, not a GitHub API/production write.
@@ -147,13 +155,20 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     console.log("TRADEHQ_READONLY_INCIDENT_HANDOFF_V1 "+JSON.stringify(summary));
     console.log("TRADEHQ_INCIDENT_INVESTIGATION_ADVICE_V1 "+JSON.stringify(advice));
     console.log("TRADEHQ_INCIDENT_SHADOW_LEARNING_V1 "+JSON.stringify(learning));
+    // Current read-only observations never clear an original finding, change
+    // risk/authorization, become training outcomes, or make this job healthy.
+    const followup=await investigationBrowserFollowup(packet);
+    console.log('TRADEHQ_READONLY_BROWSER_FOLLOWUP_V1 '+JSON.stringify(followup));
     if(process.env.GITHUB_STEP_SUMMARY)
       appendFileSync(process.env.GITHUB_STEP_SUMMARY,jobSummary+
         '\n### Investigation history\n\n'+
         'History: `'+history.status+'`. Reported feedback is unverified; confirmed repair outcomes: **0**.\n\n'+
         advice.items.map(item=>'Route `'+(item.incident?.route || 'outside fixed memory schema')+'`: `'+item.status+'`. '+
           'Suggestions: '+item.recommendations.map(r=>'`'+r.action+'`').join(', ')+'. '+
-          'Suppressed: '+item.suppressed.map(r=>'`'+r.action+'` ('+r.reason+')').join(', ')+'.').join('\n\n')+'\n',"utf8");
+          'Suppressed: '+item.suppressed.map(r=>'`'+r.action+'` ('+r.reason+')').join(', ')+'.').join('\n\n')+
+        '\n\n### Current read-only browser follow-up\n\n'+
+        followup.observations.map(item=>'Route `'+item.route+'`: `'+item.status+'`.').join('\n\n')+
+        '\n\nUninspected routes: '+followup.omittedRoutes+'. These observations do not clear the original incident or verify its cause/a repair.\n',"utf8");
     if(failJob) {
       console.error("Verified public monitoring incident requires owner investigation. No repair or release permitted.");
       process.exitCode=1;
