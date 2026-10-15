@@ -6,6 +6,7 @@ import { pathToFileURL } from 'node:url';
 import { offlineOwnerFixture } from './verify-owner-approval-offline.mjs';
 import { createRepairApprovalTransaction } from './agent-repair-approval-transaction.mjs';
 import { createDisposableWorkerFixture } from './repair-worker-crash-fixture.mjs';
+import { verifyWorkloadClaimPostgres } from './verify-workload-claim-postgres.mjs';
 export function disposableControlUrl(env) {
   assert.equal(env.TRADEHQ_DISPOSABLE_CONTROL_TEST,'explicit-ci-fixture','Disposable fixture opt-in required.');
   const url=new URL(env.TRADEHQ_CONTROL_TEST_URL || '');
@@ -158,6 +159,7 @@ export async function verifyPostgresControls(env=process.env) {
     assert.equal((await observer.unsafe('SELECT count(*)::int AS n FROM tradehq_repair_control.approval_receipts'))[0].n,1);
     console.log('PASS disposable PostgreSQL 17: distinct-session row-lock waiting, one active candidate, stop/review serialization, replay/frequency persistence, transaction rollback and denied app roles. No production connection or release authority.');
     console.log('PASS signed approval transaction adapter: actual policy-lock wait, stop-winning race, rollback/no receipt, accepted atomic approval and durable replay rejection.');
+    await verifyWorkloadClaimPostgres({a,b,observer,connect:()=>postgres(url,options),base});
   } finally {
     await workerFixture.close();
     await Promise.allSettled(clients().map(async client=>{await client.unsafe('ROLLBACK');}));
