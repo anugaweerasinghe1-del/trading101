@@ -27,7 +27,8 @@ assert.ok(first.reportedFailureProbability>0.8 && second.reportedFailureProbabil
 assert.ok(Object.values(first.authorization).every(v=>v===false));
 assert.equal(first.rootCauseVerified,false);
 assert.equal(first.confidence.calibrationEstablished,false);
-assert.equal(first.confidence.supportingDistinctRuns,40);
+assert.equal(first.confidence.supportingDistinctRuns,32);
+assert.equal(model.evaluation.fittedOn,'TRAINING_PARTITION_ONLY');
 assert.equal(predictReportedOutcome({model,incident:{...target,route:'/about'},action:actions[0],now}).status,'ABSTAIN_UNSEEN_CONTEXT');
 assert.deepEqual(train(),model,'Identical retained data trains deterministically');
 assert.deepEqual(train([...records,records[0]]),model,'Duplicate rows cannot increase evidence weight');
@@ -60,6 +61,17 @@ const changedMix=train(records.map(r=>({...r,route:Number(r.runId)>=116?'/about'
 assert.equal(changedMix.status,'ABSTAIN_FEATURE_DRIFT');
 assert.equal(changedMix.evaluation.featureDrift.dimensions.route.unseenFraction,0);
 assert.equal(changedMix.evaluation.featureDrift.dimensions.route.totalVariation,0.5);
+// If a held-out label changes but still passes the quality gates, it may change
+// evaluation/data provenance, never the evaluated model's training weights.
+const fifty=Array.from({length:50},(_,i)=>actions.map((action,j)=>({...target,runId:String(100+i),action,
+  observedAt:new Date(Date.parse('2026-10-10T00:00:00.000Z')+i*3600_000).toISOString(),
+  outcome:j?'reported_success':'reported_failed'}))).flat();
+const heldOutA=train(fifty),heldOutB=train(fifty.map(r=>({...r,
+  outcome:r.runId==='140'&&r.action===actions[0]?'reported_success':r.outcome})));
+assert.equal(heldOutA.status,'SHADOW_MODEL_TRAINED');assert.equal(heldOutB.status,'SHADOW_MODEL_TRAINED');
+assert.equal(heldOutB.evaluation.classification.falsePositiveRate,1/11);
+assert.deepEqual(heldOutA.learned,heldOutB.learned,'Held-out labels cannot enter the emitted weights');
+assert.notEqual(heldOutA.dataDigest,heldOutB.dataDigest);
 const leaking=records.map(r=>({...r,observedAt:Number(r.runId)<132 && r.action===actions[1] ? '2026-10-12T11:00:00.000Z':r.observedAt}));
 assert.equal(train(leaking).status,'ABSTAIN_INSUFFICIENT_TEMPORAL_SPLIT','Late labels on training runs must be purged');
 const later=[...records,{...records[0],runId:'1',observedAt:'2026-08-01T00:00:00.000Z'}];

@@ -128,7 +128,7 @@ export function trainIncidentOutcomeModel({memoryJson,now}) {
   const evaluation={split:'PURGED_CHRONOLOGICAL_DISTINCT_RUNS',cutoff,purgedRuns,
     trainingRecords:train.length,heldOutRecords:test.length,trainingRuns:new Set(train.map(r=>r.runId)).size,
     heldOutRuns:new Set(test.map(r=>r.runId)).size,baselineLogLoss,modelLogLoss,
-    improvement:baselineLogLoss-modelLogLoss,productionAccuracyEstablished:false,
+    improvement:baselineLogLoss-modelLogLoss,productionAccuracyEstablished:false,fittedOn:'TRAINING_PARTITION_ONLY',
     classification:heldOutQuality(test,r=>probability(evaluationModel,r)),featureDrift:featureDrift(train,test)};
   if(evaluation.featureDrift.detected)
     return freezeDeep({...common,status:'ABSTAIN_FEATURE_DRIFT',evaluation});
@@ -138,14 +138,16 @@ export function trainIncidentOutcomeModel({memoryJson,now}) {
   // class. This gate describes reported outcomes, never verified repair success.
   if(evaluation.classification.falsePositiveRate>LEARNING_LIMITS.maximumFalsePositiveRate)
     return freezeDeep({...common,status:'ABSTAIN_FALSE_POSITIVE_RATE',evaluation});
-  const fitted=fit(records);
+  // Keep precisely the evaluated weights. Refitting on held-out labels would
+  // make the quality report describe a different model from the one emitted.
+  const fitted=evaluationModel;
   const learned={features:fitted.dictionary,weights:fitted.weights};
   const result=freezeDeep({...common,status:'SHADOW_MODEL_TRAINED',evaluation,
     learned,modelDigest:hash({schema:common.schema,dataDigest:common.dataDigest,learned}),
     limitations:['Labels report investigations; they do not verify fixes.',
       'Held-out benefit is on this dataset only; repair authority and live accuracy remain unproven.',
       'Scores are uncalibrated; small non-random reported-outcome samples do not establish population error rates.']});
-  models.set(result,{...fitted,records,trainedAt:Date.parse(now)});
+  models.set(result,{...fitted,records:train,trainedAt:Date.parse(now)});
   return result;
 }
 export function predictReportedOutcome({model,incident,action,now}) {

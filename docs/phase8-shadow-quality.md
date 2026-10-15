@@ -27,7 +27,10 @@ features only, not every possible kind of operational drift.
 
 The existing minimum ten distinct runs, eight training runs, whole-run temporal
 holdout, late-label purge, thirty-day retention, deduplication and all authority
-denials remain. A rejected shadow model emits no estimates; the existing fixed
+denials remain. The emitted weights are now exactly the evaluated training-only
+weights; there is no subsequent refit on held-out labels. A separate regression
+changes a held-out label within the acceptance bounds and proves that only
+evaluation/provenance changes, not learned weights. A rejected model emits no estimates; the existing fixed
 investigation advice, suppressions, findings and risk remain identical. The
 native monitoring handoff reports the quality policy even while history is
 insufficient. No new provider call, dataset source, user telemetry, role, database
