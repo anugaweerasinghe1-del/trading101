@@ -42,6 +42,11 @@ assert.throws(()=>assertCurrentGitHubJob(principal,{mainSha:'b'.repeat(40),clock
 assert.throws(()=>assertCurrentGitHubJob(principal,{mainSha:sha,clock:()=>now+60001}));
 const immutable=await fixture().verify(await signed({...claims,sub:'repo:anugaweerasinghe1-del@297117529/trading101@1130435580:ref:refs/heads/main'}));
 assert.equal(immutable.repositoryId,1130435580,'Both documented subject formats retain immutable ID enforcement');
+// Published GitHub example: iat1632493567, nbf1632492967, exp1632493867.
+// These are public protocol example offsets, not a captured production token.
+const documentedTime=await fixture().verify(await signed({...claims,nbf:at-600}));
+assert.equal(documentedTime.expiresAt,now+60000,'Earlier not-before never extends the local issued-at freshness limit');
+assert.throws(()=>assertCurrentGitHubJob(documentedTime,{mainSha:sha,clock:()=>now+60000}));
 let rejected=0;
 async function deny(token,f=fixture()) {
   await assert.rejects(()=>f.verify(token),error=>{
@@ -59,11 +64,16 @@ await assert.rejects(()=>fixture().verify(privateScopeToken),error=>{
   assert.deepEqual(githubIdentityRejectionDiagnostic(error),{stage:'CLAIM_SCOPE',failedChecks:['subject','owner']});
   assert.ok(!JSON.stringify(githubIdentityRejectionDiagnostic(error)).includes('sentinel'));return true;
 });
+const earlyNotBefore=await signed({...claims,nbf:at-601});
+await assert.rejects(()=>fixture().verify(earlyNotBefore),error=>{
+  assert.deepEqual(githubIdentityRejectionDiagnostic(error),{stage:'TOKEN_TIME',failedChecks:['notBeforeSkew']});return true;
+});
 for(const change of [{iss:'https://attacker.invalid'},{aud:['tradehq-repair-identity-v1']},{sub:'repo:'+repo+':pull_request'},
   {repository:'attacker/trading101'},{repository_id:'1'},{repository_owner_id:'1'},{repository_owner:'attacker'},{repository_visibility:'private'},
   {ref:'refs/heads/feature'},{ref_type:'tag'},{event_name:'pull_request_target'},{event_name:'pull_request'},{runner_environment:'self-hosted'},
   {workflow_ref:repo+'/.github/workflows/other.yml@refs/heads/main'},{workflow_sha:'b'.repeat(40)},
-  {job_workflow_ref:repo+'/'+path+'@refs/heads/main'},{iat:at-60},{iat:at-61},{iat:at+1},{nbf:at+1},{exp:at},{exp:at+901},
+  {job_workflow_ref:repo+'/'+path+'@refs/heads/main'},{iat:at-60},{iat:at-61},{iat:at+1},{nbf:at+1},{nbf:at-601},
+  {nbf:at-600.5},{nbf:String(at-600)},{iat:at-60,nbf:at-600},{exp:at},{exp:at+901},
   {jti:'tiny'},{run_attempt:'0'},{run_id:'9007199254740992'},{check_run_id:'0'}]) {
   const f=await deny(await signed({...claims,...change}));assert.equal(f.reads.length,0,'Out-of-scope signed claim cannot query repo metadata');
 }

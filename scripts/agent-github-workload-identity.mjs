@@ -29,11 +29,14 @@ const id=value=>{
   assert.ok(typeof value==='string' && /^[1-9][0-9]{0,15}$/.test(value));
   const parsed=Number(value);assert.ok(Number.isSafeInteger(parsed));return parsed;
 };
-function validTime(claims,now) {
+function validTime(claims,now,checks) {
   const at=Math.floor(now/1000);
-  assert.ok(Number.isFinite(now) && ['iat','nbf','exp'].every(name=>Number.isSafeInteger(claims[name]))
-    && claims.iat<=at && claims.iat>at-60 && claims.nbf<=at && claims.nbf>=claims.iat-30
-    && claims.exp>at && claims.exp>claims.iat && claims.exp<=claims.iat+900,'Stale or invalid job token');
+  checks({finiteClock:Number.isFinite(now),integerTimes:['iat','nbf','exp'].every(name=>Number.isSafeInteger(claims[name])),
+    issuedAtNotFuture:claims.iat<=at,issuedAtFresh:claims.iat>at-60,notBeforeReached:claims.nbf<=at,
+    // GitHub's documented token has nbf ten minutes before iat. Freshness is
+    // independently enforced against iat; an earlier nbf cannot extend it.
+    notBeforeSkew:claims.nbf>=claims.iat-600,unexpired:claims.exp>at,
+    expiryAfterIssuance:claims.exp>claims.iat,boundedLifetime:claims.exp<=claims.iat+900});
 }
 async function boundedJson(fetcher,url,signal) {
   const response=await fetcher(url,{method:'GET',redirect:'error',signal});
@@ -81,7 +84,7 @@ export function createGitHubWorkloadVerifier({readGitHub,fetcher=fetch,clock=Dat
       stage='SIGNATURE';
       assert.equal(await crypto.subtle.verify('RSASSA-PKCS1-v1_5',key,signature,
         new TextEncoder().encode(pieces[0]+'.'+pieces[1])),true,'Invalid job signature');
-      stage='TOKEN_TIME';validTime(claims,clock());
+      stage='TOKEN_TIME';validTime(claims,clock(),checks);
       stage='CLAIM_SCOPE';
       checks({issuer:claims.iss===ISSUER,audience:claims.aud===AUDIENCE,subject:subjects.has(claims.sub),
         repository:claims.repository===REPO,repositoryId:claims.repository_id===String(REPO_ID),
@@ -120,7 +123,7 @@ export function createGitHubWorkloadVerifier({readGitHub,fetcher=fetch,clock=Dat
       stage='MAIN_RECHECK';
       const latest=await read('/branches/main');assert.ok(latest.protected===true && latest.commit?.sha===claims.sha,'Main changed during identity verification');
       stage='TOKEN_TIME_RECHECK';
-      validTime(claims,clock());
+      validTime(claims,clock(),checks);
       const tokenDigest=Buffer.from(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(ISSUER+'\n'+claims.jti))).toString('hex');
       const principal=Object.freeze({schema:'tradehq-github-job-principal-v1',repositoryId:REPO_ID,
         workflowId:WORKFLOW_ID,runId,attempt,checkId,mainSha:claims.sha,expiresAt:Math.min(claims.exp,claims.iat+60)*1000,
