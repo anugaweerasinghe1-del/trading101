@@ -7,7 +7,9 @@ const REPO='anugaweerasinghe1-del/trading101',OWNER_ID=297117529,REPO_ID=1130435
 const WORKFLOW='.github/workflows/tradehq-verified-evidence.yml',WORKFLOW_ID=381133473;
 const ISSUER='https://token.actions.githubusercontent.com';
 const JWKS=ISSUER+'/.well-known/jwks',AUDIENCE='tradehq-repair-identity-v1';
-const SHA=/^[a-f0-9]{40}$/,verified=new WeakSet();
+const SHA=/^[a-f0-9]{40}$/,verified=new WeakSet(),rejections=new WeakMap();
+// Private error branding: transports cannot inject diagnostics or claim values.
+export function githubIdentityRejectionDiagnostic(error) { return rejections.get(error)||null; }
 const deny=Object.freeze({codeWrites:false,ownerApproval:false,merge:false,productionRelease:false});
 const subjects=new Set([
   `repo:${REPO}:ref:refs/heads/main`,
@@ -55,6 +57,11 @@ export function createGitHubWorkloadVerifier({readGitHub,fetcher=fetch,clock=Dat
     'Workload identity is disabled; no repair authority exists');
   assert.ok(typeof readGitHub==='function' && typeof fetcher==='function' && typeof clock==='function');
   return async function verifyJob(token) {
+    let stage='TOKEN_FORMAT',failedChecks=[];
+    function checks(values) {
+      failedChecks=Object.entries(values).filter(([,passed])=>!passed).map(([name])=>name);
+      assert.equal(failedChecks.length,0,'Identity binding rejected');
+    }
     try {
       assert.ok(typeof token==='string' && token.length<=22000);
       const pieces=token.split('.');assert.equal(pieces.length,3);
@@ -63,6 +70,7 @@ export function createGitHubWorkloadVerifier({readGitHub,fetcher=fetch,clock=Dat
         && /^[A-Za-z0-9_-]{1,128}$/.test(header.kid)
         && Object.keys(header).every(name=>['alg','typ','kid','x5t'].includes(name)),'Unsupported JOSE header');
       // Only the fixed GitHub issuer is queried. Token key URLs/JWKs/algorithms cannot select a provider.
+      stage='SIGNING_KEYS';
       const keys=await bounded(signal=>boundedJson(fetcher,JWKS,signal));
       assert.ok(Array.isArray(keys.keys) && keys.keys.length>=1 && keys.keys.length<=16);
       const selected=keys.keys.filter(key=>key.kid===header.kid);assert.equal(selected.length,1,'Ambiguous signing key');
@@ -70,31 +78,38 @@ export function createGitHubWorkloadVerifier({readGitHub,fetcher=fetch,clock=Dat
         && bytes(jwk.n,512).length>=256 && jwk.e==='AQAB' && !jwk.d,'Invalid public signing key');
       const key=await crypto.subtle.importKey('jwk',{kty:'RSA',n:jwk.n,e:jwk.e,alg:'RS256',ext:true},
         {name:'RSASSA-PKCS1-v1_5',hash:'SHA-256'},false,['verify']);
+      stage='SIGNATURE';
       assert.equal(await crypto.subtle.verify('RSASSA-PKCS1-v1_5',key,signature,
         new TextEncoder().encode(pieces[0]+'.'+pieces[1])),true,'Invalid job signature');
-      validTime(claims,clock());
-      assert.ok(claims.iss===ISSUER && claims.aud===AUDIENCE && subjects.has(claims.sub)
-        && claims.repository===REPO && claims.repository_id===String(REPO_ID)
-        && claims.repository_owner==='anugaweerasinghe1-del' && claims.repository_owner_id===String(OWNER_ID)
-        && claims.repository_visibility==='public' && claims.ref==='refs/heads/main' && claims.ref_type==='branch'
-        && claims.event_name==='workflow_run' && claims.runner_environment==='github-hosted'
-        && claims.workflow_ref===REPO+'/'+WORKFLOW+'@refs/heads/main'
-        && SHA.test(claims.sha||'') && claims.workflow_sha===claims.sha
-        && !('job_workflow_ref' in claims) && !('job_workflow_sha' in claims)
-        && typeof claims.jti==='string' && /^[A-Za-z0-9_-]{16,128}$/.test(claims.jti),'Job scope is not the trusted main collector');
+      stage='TOKEN_TIME';validTime(claims,clock());
+      stage='CLAIM_SCOPE';
+      checks({issuer:claims.iss===ISSUER,audience:claims.aud===AUDIENCE,subject:subjects.has(claims.sub),
+        repository:claims.repository===REPO,repositoryId:claims.repository_id===String(REPO_ID),
+        owner:claims.repository_owner==='anugaweerasinghe1-del',ownerId:claims.repository_owner_id===String(OWNER_ID),
+        visibility:claims.repository_visibility==='public',ref:claims.ref==='refs/heads/main',refType:claims.ref_type==='branch',
+        event:claims.event_name==='workflow_run',runner:claims.runner_environment==='github-hosted',
+        workflowRef:claims.workflow_ref===REPO+'/'+WORKFLOW+'@refs/heads/main',
+        sourceSha:SHA.test(claims.sha||''),workflowSha:claims.workflow_sha===claims.sha,
+        noReusableWorkflow:!('job_workflow_ref' in claims)&&!('job_workflow_sha' in claims),
+        tokenId:typeof claims.jti==='string'&&/^[A-Za-z0-9_-]{16,128}$/.test(claims.jti)});
+      stage='CLAIM_IDS';
       const runId=id(claims.run_id),attempt=id(claims.run_attempt),checkId=id(claims.check_run_id);
       assert.ok(attempt<=100);
       const read=path=>bounded(signal=>readGitHub(path,{signal}));
+      stage='NATIVE_READS';
       const [main,run,jobs]=await Promise.all([
         read('/branches/main'),read('/actions/runs/'+runId),
         read('/actions/runs/'+runId+'/attempts/'+attempt+'/jobs?per_page=20'),
       ]);
+      stage='MAIN_BINDING';
       assert.ok(main.name==='main' && main.protected===true && main.commit?.sha===claims.sha);
+      stage='RUN_BINDING';
       assert.ok(run.id===runId && run.run_attempt===attempt && run.workflow_id===WORKFLOW_ID
         && run.path===WORKFLOW && run.head_sha===claims.sha && run.head_branch==='main'
         && run.event==='workflow_run' && run.status==='in_progress'
         && run.repository?.id===REPO_ID && run.repository.owner?.id===OWNER_ID
         && run.head_repository?.id===REPO_ID,'Independent current workflow identity differs');
+      stage='JOB_BINDING';
       assert.ok(Number.isSafeInteger(jobs.total_count) && jobs.total_count>=1 && jobs.total_count<=20
         && Array.isArray(jobs.jobs) && jobs.jobs.length===jobs.total_count,'Incomplete current attempt jobs');
       const match=jobs.jobs.filter(job=>job.check_run_url===`https://api.github.com/repos/${REPO}/check-runs/${checkId}`);
@@ -102,13 +117,19 @@ export function createGitHubWorkloadVerifier({readGitHub,fetcher=fetch,clock=Dat
       const job=match[0];assert.ok(job.name==='collect' && job.run_id===runId && job.head_sha===claims.sha
         && job.status==='in_progress' && Number.isFinite(Date.parse(job.started_at))
         && Date.parse(job.started_at)<=claims.iat*1000,'Actual collector job is not running');
+      stage='MAIN_RECHECK';
       const latest=await read('/branches/main');assert.ok(latest.protected===true && latest.commit?.sha===claims.sha,'Main changed during identity verification');
+      stage='TOKEN_TIME_RECHECK';
       validTime(claims,clock());
       const tokenDigest=Buffer.from(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(ISSUER+'\n'+claims.jti))).toString('hex');
       const principal=Object.freeze({schema:'tradehq-github-job-principal-v1',repositoryId:REPO_ID,
         workflowId:WORKFLOW_ID,runId,attempt,checkId,mainSha:claims.sha,expiresAt:Math.min(claims.exp,claims.iat+60)*1000,
         tokenDigest,authorization:deny});verified.add(principal);return principal;
-    } catch {throw Error('Workload identity rejected; no repair or release authority granted');}
+    } catch {
+      const error=Error('Workload identity rejected; no repair or release authority granted');
+      rejections.set(error,Object.freeze({stage,failedChecks:Object.freeze([...failedChecks])}));
+      throw error;
+    }
   };
 }
 export function assertCurrentGitHubJob(principal,{mainSha,clock=Date.now}={}) {

@@ -15,7 +15,7 @@ const token=message+'.'+Buffer.from(await crypto.subtle.sign('RSASSA-PKCS1-v1_5'
 const env={GITHUB_REPOSITORY:repo,GITHUB_REF:'refs/heads/main',GITHUB_EVENT_NAME:'workflow_run',GITHUB_SHA:sha,
   GITHUB_TOKEN:'disposable-github-api-credential-123',ACTIONS_ID_TOKEN_REQUEST_TOKEN:'disposable-oidc-request-credential-123',
   ACTIONS_ID_TOKEN_REQUEST_URL:'https://pipelines.actions.githubusercontent.com/fixture/idtoken?api-version=2.0'};
-function transport({fail='',oversized=false,exfil=false}={}) {
+function transport({fail='',oversized=false,exfil=false,mintedToken=token,injectedError=false}={}) {
   const calls=[];
   const fetcher=async(url,options)=>{
     calls.push(url);assert.equal(options.method,'GET');assert.equal(options.redirect,'error');assert.ok(options.signal);
@@ -23,10 +23,11 @@ function transport({fail='',oversized=false,exfil=false}={}) {
     if(endpoint.hostname==='pipelines.actions.githubusercontent.com') {
       assert.equal(endpoint.searchParams.get('audience'),'tradehq-repair-identity-v1');
       assert.equal(options.headers.Authorization,'Bearer '+env.ACTIONS_ID_TOKEN_REQUEST_TOKEN);
-      response={value:exfil?'private-sentinel':token};
+      response={value:exfil?'private-sentinel':mintedToken};
     } else if(endpoint.hostname==='token.actions.githubusercontent.com') {
       assert.equal(options.headers,undefined,'No job/API credential goes to public JWKS');response={keys:[key]};
     } else {
+      if(injectedError)throw Object.assign(Error('private-error-sentinel'),{stage:'private-stage-sentinel',failedChecks:['private-check-sentinel']});
       assert.equal(endpoint.origin,'https://api.github.com');assert.equal(options.headers.Authorization,'Bearer '+env.GITHUB_TOKEN);
       assert.ok(endpoint.pathname.startsWith('/repos/'+repo+'/'));
       if(endpoint.pathname.endsWith('/branches/main'))response={name:'main',protected:true,commit:{sha}};
@@ -56,4 +57,11 @@ for(const options of [{fail:'pipelines.actions.githubusercontent.com'},{fail:'to
   const f=transport(options),r=await probeGitHubWorkload({env,fetcher:f.fetcher,clock:()=>now});
   assert.equal(r.status,'BLOCKED');assert.ok(!JSON.stringify(r).includes('private-sentinel'));
 }
+const privateMessage=b64({alg:'RS256',typ:'JWT',kid:'fixture-key-1'})+'.'+b64({...claims,sub:'private-subject-sentinel'});
+const privateToken=privateMessage+'.'+Buffer.from(await crypto.subtle.sign('RSASSA-PKCS1-v1_5',pair.privateKey,new TextEncoder().encode(privateMessage))).toString('base64url');
+const scoped=await probeGitHubWorkload({env,fetcher:transport({mintedToken:privateToken}).fetcher,clock:()=>now});
+assert.equal(scoped.status,'BLOCKED');assert.deepEqual(scoped.diagnostic,{stage:'CLAIM_SCOPE',failedChecks:['subject']});
+const injected=await probeGitHubWorkload({env,fetcher:transport({injectedError:true}).fetcher,clock:()=>now});
+assert.equal(injected.status,'BLOCKED');assert.deepEqual(injected.diagnostic,{stage:'NATIVE_READS',failedChecks:[]});
+for(const r of [scoped,injected])for(const secret of [privateToken,'private-subject-sentinel','private-error-sentinel','private-stage-sentinel','private-check-sentinel',env.GITHUB_TOKEN,env.ACTIONS_ID_TOKEN_REQUEST_TOKEN])assert.ok(!JSON.stringify(r).includes(secret));
 console.log('WORKLOAD_PROBE_PASS: isolated actual signed token plus read-only native-shaped metadata, separate credential origins, denied fork/event/foreign URL/oversized/unavailable sources and private output. No real GitHub token was minted.');
