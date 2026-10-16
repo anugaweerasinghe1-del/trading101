@@ -29,6 +29,11 @@ async function body(req: Request) {
 function fields(value: Record<string,unknown>,allowed: string[]) {
  if(Object.keys(value).sort().join('|')!==allowed.sort().join('|'))throw Error('INVALID_REQUEST');
 }
+function nativeValidation(jobs: Record<string,any>): string|null {
+ if(!Number.isInteger(jobs.total_count)||jobs.total_count<1||jobs.total_count>20||!Array.isArray(jobs.jobs)||jobs.jobs.length!==jobs.total_count)return null;
+ const checks=jobs.jobs.filter((j: any)=>j.name==='Admin code independent validation');
+ return checks.length===1&&checks[0].status==='completed'&&['success','failure','cancelled','skipped','timed_out'].includes(checks[0].conclusion)?(checks[0].conclusion==='cancelled'?'canceled':checks[0].conclusion):null;
+}
 export function createAdminCodeQueue(options: Options) {
  const headers={'Content-Type':'application/json','Cache-Control':'no-store','Access-Control-Allow-Origin':'https://www.thetradehq.com',
   'Access-Control-Allow-Headers':'authorization,apikey,content-type,x-admin-key,x-client-info,x-github-oidc','Access-Control-Allow-Methods':'POST, OPTIONS'};
@@ -44,6 +49,22 @@ export function createAdminCodeQueue(options: Options) {
     try{job=await options.verifyWorker(req.headers.get('x-github-oidc')??'');}catch{return reply({code:'WORKER_IDENTITY_REQUIRED'},401);}
     if(input.action==='worker-claim'){
      fields(input,['action']);if(job.jobName!=='Admin code queue worker')throw Error('INVALID_REQUEST');
+     // Recover bookkeeping after a lost result callback. All facts come from the
+     // stored claim and the original native run, never the current worker body.
+     const pending=await options.rpc('pending-results',null,{}) as {id:string;run_id:number;base_sha:string;head_sha:string}[];
+     if(!Array.isArray(pending)||pending.length>10)throw Error('VALIDATION_UNAVAILABLE');
+     for(const item of pending){
+      const original=await options.readGitHub('/actions/runs/'+item.run_id);
+      if(original.id!==item.run_id||original.workflow_id!==380190833||original.path!=='.github/workflows/tradehq-code-agent.yml'
+       ||original.head_sha!==item.base_sha||original.head_branch!=='main'||original.repository?.id!==1130435580
+       ||original.head_repository?.id!==1130435580)throw Error('VALIDATION_UNAVAILABLE');
+      if(original.status!=='completed')continue;
+      const history=await options.readGitHub('/actions/runs/'+item.run_id+'/attempts/1/jobs?per_page=20');
+      const outcome=nativeValidation(history);
+      if(!outcome)throw Error('VALIDATION_UNAVAILABLE');
+      await options.rpc('validation',null,{id:item.id,runId:item.run_id,baseSha:item.base_sha,headSha:item.head_sha,
+       status:outcome==='success'?'verified':'validation_failed',nativeConclusion:outcome,reconciled:true});
+     }
      return reply({data:await options.rpc('claim',null,{runId:job.runId,baseSha:job.mainSha})});
     }
     if(input.action==='worker-finish'){
@@ -68,11 +89,9 @@ export function createAdminCodeQueue(options: Options) {
      fields(input,['action','id','headSha']);
      if(job.jobName!=='Admin code queue result'||!uuid.test(input.id)||!sha.test(input.headSha))throw Error('INVALID_REQUEST');
      const jobs=await options.readGitHub('/actions/runs/'+job.runId+'/attempts/1/jobs?per_page=20');
-     if(!Number.isInteger(jobs.total_count)||jobs.total_count>20||jobs.jobs?.length!==jobs.total_count)throw Error('VALIDATION_UNAVAILABLE');
-     const checks=jobs.jobs.filter((j: any)=>j.name==='Admin code independent validation');
-     if(checks.length!==1||checks[0].status!=='completed'||!['success','failure','canceled','skipped','timed_out'].includes(checks[0].conclusion))throw Error('VALIDATION_UNAVAILABLE');
+     const outcome=nativeValidation(jobs);if(!outcome)throw Error('VALIDATION_UNAVAILABLE');
      return reply({data:await options.rpc('validation',null,{id:input.id,runId:job.runId,baseSha:job.mainSha,headSha:input.headSha,
-      nativeConclusion:checks[0].conclusion,status:checks[0].conclusion==='success'?'verified':'validation_failed'})});
+      nativeConclusion:outcome,status:outcome==='success'?'verified':'validation_failed'})});
     }
     throw Error('INVALID_REQUEST');
    }
