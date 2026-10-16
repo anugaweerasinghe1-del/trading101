@@ -49,15 +49,15 @@ const dispatches:any[]=[];
 await preparePublication({claim,github:read,mainSha:base,ready:async()=>{prDraft=false;},dispatch:async(...x:any[])=>{dispatches.push(x);}});
 assert.deepEqual(dispatches,[['phase3-high-check.yml','ai/admin-'+id],['repair-control-postgres.yml','ai/admin-'+id]]);
 // The preview implementation must read exact authenticated provider evidence; no caller success flag.
-const cfId='6830d3c4-5e05-4bea-a46d-4941dc0d11ab',vId='dpl_PublicationFixture';let badPreview=false,providerReads=0;
+const cfId='6830d3c4-5e05-4bea-a46d-4941dc0d11ab',vId='dpl_PublicationFixture';let badPreview=false,badVercel=false,providerReads=0;
 const previews=()=>publicationPreviews({head,branch:'ai/admin-'+id,github:read,cloudflareToken:'fixture-existing-read-token',vercelToken:'fixture-existing-read-token',pages:async()=>({deploymentId:cfId}),fetcher:async(url:string)=>{
  providerReads++;let value;
  if(url.includes('cloudflare'))value={success:true,result:{id:cfId,project_name:'tradehq-preview',environment:badPreview?'production':'preview',latest_stage:{status:'success'},deployment_trigger:{metadata:{commit_hash:head,branch:'ai/admin-'+id}}}};
  else if(url.includes('/v6/'))value={deployments:[{uid:vId,state:'READY',target:null,created:1,meta:{githubCommitSha:head,githubCommitRef:'ai/admin-'+id}}]};
- else value={id:vId,name:'trading101',projectId:'prj_PjOhFr0eppPg8hZQhdeBwTniZWOy',target:null,readyState:'READY',source:'git',meta:{githubCommitSha:head,githubCommitRef:'ai/admin-'+id,githubRepo:'trading101',githubOrg:'anugaweerasinghe1-del'}};
+ else value={id:vId,name:'trading101',projectId:'prj_PjOhFr0eppPg8hZQhdeBwTniZWOy',target:badVercel?undefined:null,readyState:'READY',source:'git',meta:{githubCommitSha:head,githubCommitRef:'ai/admin-'+id,githubRepo:'trading101',githubOrg:'anugaweerasinghe1-del'}};
  return new Response(JSON.stringify(value));
  }});
-assert.equal((await previews()).vercel,vId);assert.equal(providerReads,4);badPreview=true;await assert.rejects(previews(),/Exact Cloudflare preview/);badPreview=false;
+assert.equal((await previews()).vercel,vId);assert.equal(providerReads,4);badPreview=true;await assert.rejects(previews(),/Exact Cloudflare preview/);badPreview=false;badVercel=true;await assert.rejects(previews(),/Exact Vercel preview/);badVercel=false;
 untrusted=true;assert.equal(await publicationChecks(read,head),false);untrusted=false;
 job='Admin code publication';probeSuccess=false;assert.equal((await call('worker-publication-authorize',{id,headSha:head},'worker')).code,'VALIDATION_UNAVAILABLE');probeSuccess=true;
 let writes=0;
@@ -74,6 +74,13 @@ production=true;runId=102;assert.equal((await call('worker-publication-claim',{}
 const history=(await call('list')).data;assert.equal(history.publications[0].state,'published');
 for(const event of ['OWNER_PUBLICATION_APPROVED','PUBLICATION_CLAIMED','PUBLICATION_GATES_CONFIRMED','PUBLICATION_MERGE_CONFIRMED','PUBLICATION_RELEASE_CHECKS_REQUESTED','PUBLICATION_PRODUCTION_CONFIRMED'])assert.equal(history.events.filter((e:any)=>e.event===event).length,1,event);
 assert.equal(writes,1,'Reconciliation cannot repeat a merge');
+let movedWrites=0;
+await assert.rejects(mergePublication({claim,mainSha:base,queue:async()=>({}),github:async(path:string,method='GET')=>{
+ if(method!=='GET'){movedWrites++;throw Error('Unexpected merge write');}
+ if(path==='/branches/main')return {protected:true,commit:{sha:merged}};
+ return {...await read('/pulls/999'),merged:false,state:'open',base:{ref:'main',sha:base,repo:{id:1130435580}}};
+}}),/Main or approved head changed/);assert.equal(movedWrites,0);
+
 for(const role of ['anon','authenticated','service_role']){await db.exec('SET ROLE '+role);await assert.rejects(db.query('SELECT * FROM tradehq_automation.code_publications'));await db.exec('RESET ROLE');}
 const workflow=YAML.parse(readFileSync('.github/workflows/tradehq-code-agent.yml','utf8'));
 assert.deepEqual(workflow.jobs['admin-publication-previews'].permissions,{contents:'read',actions:'read',checks:'read'});

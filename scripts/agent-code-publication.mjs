@@ -43,12 +43,12 @@ export async function publicationPreviews({head,branch,github,cloudflareToken,ve
  const team='team_fjZ5ggg0P43MsYFSIHbeHAAO',project='prj_PjOhFr0eppPg8hZQhdeBwTniZWOy';
  const list=await readProvider('https://api.vercel.com/v6/deployments?teamId='+team+'&projectId='+project+'&sha='+head+'&target=preview&limit=20',vercelToken,fetcher);
  assert.ok(Array.isArray(list.deployments)&&list.deployments.length<=20);
- const candidates=list.deployments.filter(v=>v.meta?.githubCommitSha===head&&v.meta.githubCommitRef===branch&&v.state==='READY'&&v.target!=='production').sort((a,b)=>b.created-a.created);
+ const candidates=list.deployments.filter(v=>v.meta?.githubCommitSha===head&&v.meta.githubCommitRef===branch&&v.state==='READY'&&(v.target===null||v.target==='preview')).sort((a,b)=>b.created-a.created);
  assert.ok(candidates.length>0,'READY Vercel preview required');const id=candidates[0].uid??candidates[0].id;assert.match(id,/^dpl_[A-Za-z0-9]+$/);
  for(let i=0;i<2;i++){
   const v=await readProvider('https://api.vercel.com/v13/deployments/'+id+'?teamId='+team+'&withGitRepoInfo=true',vercelToken,fetcher);
-  assert.ok(v.id===id&&(v.projectId===project||v.project?.id===project)&&(!v.ownerId||v.ownerId===team)&&v.name==='trading101'&&v.source==='git'
-   &&v.target!=='production'&&v.readyState==='READY'&&v.meta?.githubCommitSha===head&&v.meta.githubCommitRef===branch&&v.meta.githubRepo==='trading101'&&v.meta.githubOrg==='anugaweerasinghe1-del','Exact Vercel preview identity required');
+  assert.ok(v.id===id&&(v.projectId===project||v.project?.id===project)&&(!v.projectId||v.projectId===project)&&(!v.project||v.project.id===project)&&(!v.ownerId||v.ownerId===team)&&v.name==='trading101'&&v.source==='git'
+   &&(v.target===null||v.target==='preview')&&v.readyState==='READY'&&v.meta?.githubCommitSha===head&&v.meta.githubCommitRef===branch&&v.meta.githubRepo==='trading101'&&v.meta.githubOrg==='anugaweerasinghe1-del','Exact Vercel preview identity required');
  }
  assert.ok(await publicationChecks(github,head),'Preview CI changed');
  return {cloudflare:cf.deploymentId,vercel:id,head};
