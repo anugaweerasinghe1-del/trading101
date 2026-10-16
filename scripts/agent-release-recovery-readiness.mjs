@@ -37,8 +37,39 @@ export function verifyReleaseWitness({head,commit,checks,statuses,previousChecks
   assert.ok(SHA.test(prior||"") && prior!==sha,"Previous main release SHA unavailable");
   assert.ok(Array.isArray(checks)&&Array.isArray(statuses)&&Array.isArray(previousChecks)&&Array.isArray(previousStatuses),
     "Complete current and recovery candidate evidence required");
+  // Multiple main workflow dispatches create distinct check suites for the SAME
+  // immutable SHA. Trust the newest completed required-validation suite, not an
+  // arbitrary successful check selected from an earlier workflow run.
+  const ciChecks=checks.filter(x=>REQUIRED.includes(x.name));
+  let selectedChecks=checks;
+  if(ciChecks.length>REQUIRED.length){
+    const validations=ciChecks.filter(x=>x.name===REQUIRED[2]);
+    assert.ok(validations.length>0,'Required validation check missing');
+    assert.ok(ciChecks.every(x=>Number.isSafeInteger(x.id)&&x.id>0
+      &&Number.isSafeInteger(x.check_suite?.id)&&x.check_suite.id>0),
+      'Multiple CI runs require native check-suite identities');
+    validations.sort((a,b)=>b.id-a.id);
+    const newest=validations[0];
+    const suite=newest.check_suite.id;
+    // Refuse to fall back while a newer workflow is still running. This only
+    // discards *older* suites; duplicate jobs in the selected suite still fail.
+    assert.ok(ciChecks.every(x=>x.check_suite.id===suite||x.id<newest.id),
+      'A newer CI check is pending; do not accept an older workflow');
+    const run=new URL(newest.details_url||'https://invalid.invalid');
+    assert.ok(run.origin==='https://github.com'
+      && new RegExp('^/anugaweerasinghe1-del/trading101/actions/runs/[1-9][0-9]*/job/[1-9][0-9]*$').test(run.pathname)
+      && !run.search&&!run.hash,'Newest validation workflow identity invalid');
+    const runPath=run.pathname.split('/job/')[0];
+    selectedChecks=ciChecks.filter(x=>x.check_suite.id===suite);
+    assert.equal(selectedChecks.length,REQUIRED.length,'Latest workflow must contain all three CI checks');
+    for(const c of selectedChecks){
+      const url=new URL(c.details_url||'https://invalid.invalid');
+      assert.ok(url.origin==='https://github.com'&&url.pathname===runPath+'/job/'+c.id
+        && !url.search&&!url.hash,'Selected CI check belongs to another workflow run');
+    }
+  }
   for(const name of REQUIRED){
-    const c=one(checks,x=>x.name===name,"Required CI check "+name);
+    const c=one(selectedChecks,x=>x.name===name,"Required CI check "+name);
     assert.ok(c.head_sha===sha && c.status==="completed"&&c.conclusion==="success"
       &&c.app?.id===15368&&c.app?.slug==="github-actions", "Missing trusted successful CI check");
   }

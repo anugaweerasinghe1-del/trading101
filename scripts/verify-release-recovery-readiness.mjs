@@ -25,6 +25,26 @@ assert.equal(proof.providerRollbackEligible,false);
 assert.equal(proof.rollbackPerformed,false);
 assert.equal(proof.productionReleaseAuthorized,false);
 assert.ok(/^[a-f0-9]{64}$/.test(proof.sha256));
+// Production may have multiple valid manual CI dispatches for one exact main SHA.
+// Select one complete native workflow suite, never mix jobs from different runs.
+const suiteChecks=(runId,suiteId,firstId)=>required.map((name,i)=>({
+  id:firstId+i,name,head_sha:MAIN,status:'completed',conclusion:'success',
+  check_suite:{id:suiteId},app:{id:15368,slug:'github-actions'},
+  details_url:'https://github.com/anugaweerasinghe1-del/trading101/actions/runs/'+runId+'/job/'+(firstId+i)
+}));
+const historical=suiteChecks(700,900,100),latest=suiteChecks(701,901,200);
+const withSuites=()=>{const x=sample();x.checks=[...latest.map(c=>structuredClone(c)),...historical.map(c=>structuredClone(c)),cf(MAIN,UUID)];return x;};
+assert.equal(verifyReleaseWitness(withSuites()).requiredCheckCount,3,'Multiple successful CI runs are valid when latest complete suite is trusted');
+for(const change of [
+  x=>{x.checks[0].conclusion='failure';},
+  x=>{x.checks[0].head_sha=PRIOR;},
+  x=>{x.checks[1].app.id=42;},
+  x=>{x.checks[2].details_url='https://github.com/other/repo/actions/runs/701/job/202';},
+  x=>{x.checks[2].check_suite.id=900;},
+  x=>{x.checks.push(structuredClone(x.checks[0]));},
+  x=>{x.checks.push({...x.checks[0],id:500,details_url:'https://github.com/anugaweerasinghe1-del/trading101/actions/runs/702/job/500',check_suite:{id:902}});},
+  x=>{x.checks[1].status='queued';}
+]){const x=withSuites();change(x);assert.throws(()=>verifyReleaseWitness(x));}
 const bad=[
   x=>x.head.protected=false,
   x=>x.head.commit.sha="c".repeat(40),
