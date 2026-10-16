@@ -161,6 +161,21 @@ await assert.rejects(generateCourse(claim, (async (url, init) => {
   return true;
 });
 assert.equal(rejectedCalls, 1, "Provider rejection must not cause an extra request");
+let messageOnlyAttempts = 0;
+await assert.rejects(generateCourse(claim, (async (url, init) => {
+ if (String(url).includes("generativelanguage")) {
+  messageOnlyAttempts++; assert.equal(init?.redirect, "error");
+  return new Response(JSON.stringify({ error: { status: "INVALID_ARGUMENT",
+   message: "Unknown name thinkingLevel in generationConfig; private-credentials-must-never-escape" } }), { status: 400 });
+ }
+ return fetcher(url, init);
+}) as typeof fetch), (error: unknown) => {
+ assert.ok(error instanceof Error);
+ assert.match(error.message, /HTTP 400; INVALID_ARGUMENT; thinkingLevel/);
+ assert.doesNotMatch(error.message, /private-credentials-must-never-escape/);
+ return true;
+});
+assert.equal(messageOnlyAttempts, 1, "Message-only provider rejection must not retry");
 const limited = (async (url: string | URL | Request, init?: RequestInit) => String(url).includes("generativelanguage")
   ? new Response("", { status: 429 }) : fetcher(url, init)) as typeof fetch;
 await assert.rejects(generateCourse(claim, limited), /Free AI quota exhausted/);
