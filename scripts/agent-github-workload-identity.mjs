@@ -128,7 +128,7 @@ export function createGitHubWorkloadVerifier({readGitHub,fetcher=fetch,clock=Dat
         && Array.isArray(jobs.jobs) && jobs.jobs.length===jobs.total_count,'Incomplete current attempt jobs');
       const match=jobs.jobs.filter(job=>job.check_run_url===`https://api.github.com/repos/${REPO}/check-runs/${checkId}`);
       assert.equal(match.length,1);
-      const job=match[0];assert.ok((adminQueue?['Admin code queue worker','Admin code queue result'].includes(job.name):job.name==='collect') && job.run_id===runId && job.head_sha===claims.sha
+      const job=match[0];assert.ok((adminQueue?['Admin code queue worker','Admin code queue result','Admin code publication'].includes(job.name):job.name==='collect') && job.run_id===runId && job.head_sha===claims.sha
         && job.status==='in_progress' && Number.isFinite(Date.parse(job.started_at))
         && Date.parse(job.started_at)<=claims.iat*1000,'Actual collector job is not running');
       stage='MAIN_RECHECK';

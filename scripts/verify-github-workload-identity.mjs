@@ -130,4 +130,8 @@ await assert.rejects(queueFixture(s=>{s.main.protected=false;}).verify(await sig
 await assert.rejects(queueFixture().verify(await signed({...queueClaims,job_workflow_ref:repo+'/other.yml@refs/heads/main'})));
 const reported=await queueFixture(s=>{s.jobs.jobs[0].name='Admin code queue result';}).verify(await signed(queueClaims));
 assert.equal(reported.jobName,'Admin code queue result');
+const publisher=await queueFixture(s=>{s.jobs.jobs[0].name='Admin code publication';}).verify(await signed(queueClaims));
+assert.equal(publisher.jobName,'Admin code publication');
+await assert.rejects(queueFixture(s=>{s.jobs.jobs[0].name='Admin code publication previews';}).verify(await signed(queueClaims)));
+
 console.log('ADMIN_QUEUE_IDENTITY_PASS: signed audience/workflow/job separation, protected current main, first-attempt-only, hostile/reusable workflow and PR rejection; no persistent worker credential.');

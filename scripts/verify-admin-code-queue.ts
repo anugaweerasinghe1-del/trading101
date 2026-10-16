@@ -13,6 +13,7 @@ await db.exec(readFileSync('supabase/migrations/20261016092040_admin_code_queue.
 await db.exec(readFileSync('supabase/migrations/20261016100921_native_code_learning.sql','utf8'));
 await db.exec(readFileSync('supabase/migrations/20261016102258_code_worker_recovery.sql','utf8'));
 await db.exec(readFileSync('supabase/migrations/20261016110754_admin_proposal_review.sql','utf8'));
+await db.exec(readFileSync('supabase/migrations/20261016135218_admin_code_publication.sql','utf8'));
 let userId=owner,jobName='Admin code queue worker',worker=true,rpcs=0;
 let proposalState='open',proposalHead=head,missingPatch=false;
 let validation='success',workerRunId=runId,nativeBase=sha,nativeStatus='completed';

@@ -90,7 +90,7 @@ async function main(){
     freeConfirmed:true,hasApiKey:true,model:'gemini-3.5-flash'};
   const repairRequests={status:0,stop:0};
   const chatDraft='Improve About page mobile spacing while preserving every existing sentence and link.';
-  let codeQueueRows=[],codeQueueEvents=[],codeQueueReviews=[],codeQueueWrites=0;
+  let codeQueueRows=[],codeQueueEvents=[],codeQueueReviews=[],codeQueuePublications=[],codeQueueWrites=0;
   try{
     server=createServer((req,res)=>{
       const parsed=new URL(req.url||"/","http://localhost");
@@ -125,14 +125,20 @@ async function main(){
         if(req.headers['x-admin-key']!==ADMIN_FIXTURE_KEY||req.headers.authorization!=='Bearer '+JWT)return json(401,{code:'OWNER_SESSION_REQUIRED'});
         let content='';req.on('data',x=>{content+=x;});req.on('end',()=>{
           const input=JSON.parse(content);
-          if(input.action==='list')return json(200,{data:{requests:codeQueueRows,events:codeQueueEvents,reviews:codeQueueReviews,learning:{state:'COLLECTING_NATIVE_RESULTS',outcomes:0,files:[]},learningDecisions:[],workerRuns:[{run_id:38886251817,status:'idle',first_seen_at:new Date().toISOString(),updated_at:new Date().toISOString()}]}});
+          if(input.action==='list')return json(200,{data:{requests:codeQueueRows,events:codeQueueEvents,reviews:codeQueueReviews,publications:codeQueuePublications,learning:{state:'COLLECTING_NATIVE_RESULTS',outcomes:0,files:[]},learningDecisions:[],workerRuns:[{run_id:38886251817,status:'idle',first_seen_at:new Date().toISOString(),updated_at:new Date().toISOString()}]}});
           if(input.action==='submit'){
             const found=codeQueueRows.find(x=>x.request_key===input.requestKey);if(found)return json(200,{data:found});
             codeQueueWrites++;const row={id:'a1700000-1111-4111-8111-000000000009',prompt:input.prompt,request_key:input.requestKey,status:'queued',created_at:new Date().toISOString(),updated_at:new Date().toISOString(),run_id:null,head_sha:null,pr_number:null,result_code:null};
             codeQueueRows=[row];codeQueueEvents=[{id:1,request_id:row.id,at:row.created_at,event:'OWNER_REQUEST_QUEUED'}];return json(200,{data:row});
           }
           if(input.action==='review')return json(200,{data:{id:input.id,headSha:input.headSha,files:[{path:'src/pages/About.tsx',patch:'@@ -1 +1 @@\n-About\n+<img src=x onerror="window.__proposalHtmlExecuted=true">',additions:1,deletions:1}],receipt:{request_id:input.id,view_id:'a1700000-1111-4111-8111-000000000010',decision:null}}});
+          if(input.action==='approve'){
+            assert.equal(input.headSha,'b'.repeat(40));assert.equal(input.viewId,'a1700000-1111-4111-8111-000000000010');
+            codeQueueWrites++;codeQueuePublications=[{request_id:input.id,state:'approved',head_sha:input.headSha,run_id:null}];
+            codeQueueEvents.push({id:4,request_id:input.id,at:new Date().toISOString(),event:'OWNER_PUBLICATION_APPROVED'});return json(200,{data:codeQueuePublications[0]});
+          }
           if(input.action==='reject'){
+
             codeQueueWrites++;codeQueueReviews=[{request_id:input.id,view_id:input.viewId,decision:'rejected',close_state:'pending',close_run_id:null}];
             codeQueueEvents.push({id:3,request_id:input.id,at:new Date().toISOString(),event:'OWNER_PROPOSAL_REJECTED'});return json(200,{data:codeQueueReviews[0]});
           }
@@ -432,6 +438,18 @@ async function main(){
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Waiting for the worker to close the GitHub draft')"),'durable owner decline rendered without falsely claiming closure');
     assert.equal(codeQueueWrites,3);
     console.log('ISOLATED_ADMIN_PROPOSAL_REVIEW_BROWSER_PASS: compiled admin diff, inert patch HTML, exact receipt decline and pending closure acknowledgement. Loopback fixtures; no real proposal/model action.');
+    codeQueueReviews=[];await adminClick('Refresh coding activity');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Review proposal in admin')"),'separate publication fixture loaded');
+    await adminClick('Review proposal in admin');
+    await wait(()=>devtools.evaluate("!!document.querySelector('[aria-label=\"Proposal code review\"] pre')"),'publication diff loaded');
+    await adminClick('Approve and publish this exact code');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Publication approved · Waiting for the worker')"),'approval saved without falsely claiming publication');
+    assert.equal(codeQueueWrites,4);
+    codeQueuePublications[0].state='merged';await adminClick('Refresh coding activity');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Merged; production verification pending')"),'merge remains distinct from production confirmation');
+    codeQueuePublications[0].state='published';await adminClick('Refresh coding activity');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Production confirmed on both providers')"),'independent publication confirmation rendered');
+    console.log('ISOLATED_ADMIN_PUBLICATION_BROWSER_PASS: actual compiled exact-receipt approval, durable waiting state, separate merge and production confirmation. Loopback fixture; no owner approval or live merge.');
     await adminClick('Check repair status');
     await wait(()=>devtools.evaluate("document.body.textContent.includes('A stop has not been confirmed')"),'paused controls not advertised as stopped');
     await adminClick('Stop repairs');

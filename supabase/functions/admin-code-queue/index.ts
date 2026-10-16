@@ -4,7 +4,7 @@ import {allow} from '../_shared/rateLimit.ts';
 import {createGitHubWorkloadVerifier} from '../../../scripts/agent-github-workload-identity.mjs';
 const server=createClient(Deno.env.get('SUPABASE_URL')!,Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!,{auth:{persistSession:false,autoRefreshToken:false}});
 async function readGitHub(path: string) {
- if(!/^\/(?:branches\/main|actions\/runs\/\d+(?:\/attempts\/\d+\/jobs\?per_page=20)?|pulls\/\d+(?:\/files\?per_page=3)?)$/.test(path))throw Error('GITHUB_SCOPE');
+ if(!/^\/(?:commits\/[a-f0-9]{40}(?:\/check-runs\?per_page=100)?|actions\/runs\?head_sha=[a-f0-9]{40}&per_page=100|branches\/main|actions\/runs\/\d+(?:\/attempts\/\d+\/jobs\?per_page=20)?|pulls\/\d+(?:\/files\?per_page=3)?)$/.test(path))throw Error('GITHUB_SCOPE');
  const r=await fetch('https://api.github.com/repos/anugaweerasinghe1-del/trading101'+path,{redirect:'error',signal:AbortSignal.timeout(10000),headers:{Accept:'application/vnd.github+json','User-Agent':'TradeHQ-admin-code-queue'}});
  if(r.status!==200)throw Error('GITHUB_UNAVAILABLE');
  const text=await r.text();if(text.length>524288)throw Error('GITHUB_RESPONSE');return JSON.parse(text);
@@ -16,5 +16,5 @@ Deno.serve(createAdminCodeQueue({
  getUser:async token=>{const {data,error}=await server.auth.getUser(token);return error?null:data.user;},
  verifyWorker,readGitHub,allow,
  rpc:async(action,owner,payload)=>{const {data,error}=await server.rpc('tradehq_admin_code_queue',{p_action:action,p_owner:owner,p_data:payload});
-  if(error){const code=['REQUEST_KEY_CONFLICT','REQUEST_ALREADY_ACTIVE','DAILY_CODE_LIMIT','REQUEST_NOT_QUEUED','INVALID_TRANSITION','WORKER_BINDING','REVIEW_NOT_READY','REVIEW_EXPIRED','PROPOSAL_NOT_VERIFIED'].find(c=>error.message===c);throw Error(code??'QUEUE_DATABASE');}return data;},
+  if(error){const code=['REQUEST_KEY_CONFLICT','REQUEST_ALREADY_ACTIVE','DAILY_CODE_LIMIT','REQUEST_NOT_QUEUED','INVALID_TRANSITION','WORKER_BINDING','REVIEW_NOT_READY','REVIEW_EXPIRED','PROPOSAL_NOT_VERIFIED','PUBLICATION_ALREADY_APPROVED'].find(c=>error.message===c);throw Error(code??'QUEUE_DATABASE');}return data;},
 }));
