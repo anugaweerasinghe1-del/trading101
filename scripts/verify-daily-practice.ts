@@ -144,6 +144,21 @@ await assert.rejects(generatePractice(claim, (async (url, init) => {
  return true;
 });
 assert.equal(rejectedCalls, 1, 'Provider rejection must never retry');
+let messageOnlyAttempts = 0;
+await assert.rejects(generatePractice(claim, (async (url, init) => {
+ if (String(url).includes('generativelanguage')) {
+  messageOnlyAttempts++; assert.equal(init?.redirect, 'error');
+  return new Response(JSON.stringify({ error: { status: 'INVALID_ARGUMENT',
+   message: 'Invalid JSON payload: unknown field generationConfig.responseJsonSchema; private-prompt-DO-NOT-EMIT' } }), { status: 400 });
+ }
+ return fetcher(url, init);
+}) as typeof fetch), (error: unknown) => {
+ assert.ok(error instanceof Error);
+ assert.match(error.message, /HTTP 400; INVALID_ARGUMENT; responseJsonSchema/);
+ assert.doesNotMatch(error.message, /private-prompt-DO-NOT-EMIT/);
+ return true;
+});
+assert.equal(messageOnlyAttempts, 1, 'Message-only provider rejection must not retry');
 let limitedCalls = 0;
 await assert.rejects(generatePractice(claim, (async (url, init) => { if (String(url).includes('generativelanguage')) { limitedCalls++; return new Response('', { status: 429 }); } return fetcher(url, init); }) as typeof fetch), /Free Gemini quota/);
 assert.equal(limitedCalls, 1);
