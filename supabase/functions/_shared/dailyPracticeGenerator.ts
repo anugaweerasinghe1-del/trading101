@@ -65,7 +65,16 @@ export async function generatePractice(claim: PracticeClaim, fetcher = fetch) {
   if (items.some(e => e.sources.some(s => !urls.has(s.url)))) throw new Error('Daily sources did not match the verified references.');
   if (DAILY_CATEGORIES.some(c => items.filter(e => e.category === c).length !== 2)) throw new Error('Daily batch needs two different cases in each category.');
   if (hasRepeatedPracticeCase(items, previous) || items.some(e => e.questions.some(q => prompts.has(normalized(q.prompt))))) throw new Error('Daily content repeats an exercise in this part or an existing bank. Edit or regenerate before approval.');
+  // Provider usage applies only to this successful ten-exercise part. Earlier parts
+  // are not included in the final draft's research record; never report a cycle total.
+  const usage = output.usageMetadata;
+  const tokenCount = (value: unknown) => typeof value === 'number' && Number.isSafeInteger(value) && value >= 0 ? value : null;
+  const recordedUsage = usage && typeof usage === 'object' && !Array.isArray(usage)
+    ? { scope: 'this_generated_part_only', part: claim.exercises.length / 10 + 1,
+      inputTokens: tokenCount(usage.promptTokenCount), outputTokens: tokenCount(usage.candidatesTokenCount),
+      totalTokens: tokenCount(usage.totalTokenCount) } : null;
   return { exercises: items, research: { model: claim.model, generatedAt: new Date().toISOString(), aiAssisted: true,
+    usage: recordedUsage,
     sources: references.map(({ label, url, checkedAt }) => ({ label, url, checkedAt })),
     checks: ['Structure, lengths, source allowlist, answer bounds and repetition checks passed.', 'Owner must review facts, originality, arithmetic and answer agreement before publishing.'] } };
 }
