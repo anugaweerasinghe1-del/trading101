@@ -17,7 +17,7 @@ try{
  await a.unsafe(`CREATE SCHEMA auth;CREATE TABLE auth.users(id uuid PRIMARY KEY);INSERT INTO auth.users VALUES('${owner}');
  CREATE FUNCTION public.tradehq_repair_registered_owner() RETURNS uuid LANGUAGE sql AS $$SELECT '${owner}'::uuid$$;`);
  await a.unsafe(readFileSync('supabase/migrations/20261016092040_admin_code_queue.sql','utf8'));
- const rpc=async(client,action,who,data)=>(await client.unsafe('SELECT public.tradehq_admin_code_queue($1,$2,$3::jsonb) AS r',[action,who,JSON.stringify(data)]))[0].r;
+ const rpc=async(client,action,who,data)=>(await client.unsafe('SELECT public.tradehq_admin_code_queue($1,$2,$3::jsonb) AS r',[action,who,data]))[0].r;
  const item=await rpc(a,'submit',owner,{requestKey:'b1700000-1111-4111-8111-000000000001',prompt:'Improve the About heading spacing while preserving every sentence and link.'});
  await a.unsafe('BEGIN');const claimed=await rpc(a,'claim',null,{runId:1,baseSha:base});assert.equal(claimed.id,item.id);
  const pid=(await b.unsafe('SELECT pg_backend_pid() AS pid'))[0].pid;
