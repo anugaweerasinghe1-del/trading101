@@ -46,10 +46,11 @@ async function main(){
  const request=await queue('worker-claim');
  if(!request){console.log('No queued owner code request; zero model calls.');return;}
  assert.match(request.id,/^[a-f0-9-]{36}$/);assert.equal(request.status,'claimed');assert.equal(request.base_sha,env.GITHUB_SHA);
+ assert.equal(request.learning?.version,'native-ci-memory-v1','Durable learning decision required');
  appendFileSync(env.GITHUB_OUTPUT,'request_id='+request.id+'\n');
  let result;
  try{
-  result=await buildFrontendProposal({request:request.prompt,branch:'ai/admin-'+request.id,expectedBase:env.GITHUB_SHA,
+  result=await buildFrontendProposal({request:request.prompt,learning:request.learning,branch:'ai/admin-'+request.id,expectedBase:env.GITHUB_SHA,
    recheck:async base=>{const current=await github('/branches/main');assert.ok(current.protected&&current.commit.sha===base,'Main changed');},
    report:async()=>{},
   });

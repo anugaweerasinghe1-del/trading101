@@ -125,7 +125,7 @@ async function main(){
         if(req.headers['x-admin-key']!==ADMIN_FIXTURE_KEY||req.headers.authorization!=='Bearer '+JWT)return json(401,{code:'OWNER_SESSION_REQUIRED'});
         let content='';req.on('data',x=>{content+=x;});req.on('end',()=>{
           const input=JSON.parse(content);
-          if(input.action==='list')return json(200,{data:{requests:codeQueueRows,events:codeQueueEvents}});
+          if(input.action==='list')return json(200,{data:{requests:codeQueueRows,events:codeQueueEvents,learning:{state:'COLLECTING_NATIVE_RESULTS',outcomes:0,files:[]},learningDecisions:[]}});
           if(input.action==='submit'){
             const found=codeQueueRows.find(x=>x.request_key===input.requestKey);if(found)return json(200,{data:found});
             codeQueueWrites++;const row={id:'a1700000-1111-4111-8111-000000000009',prompt:input.prompt,request_key:input.requestKey,status:'queued',created_at:new Date().toISOString(),updated_at:new Date().toISOString(),run_id:null,head_sha:null,pr_number:null,result_code:null};
@@ -404,6 +404,7 @@ async function main(){
     await adminInput('input[aria-label="Admin master key"]',ADMIN_FIXTURE_KEY);await adminClick('Unlock AI workspace');
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Repair controls')"),'owner control panel');
     await wait(()=>devtools.evaluate("document.querySelector('[aria-label=\"Website coding queue\"]').textContent.includes('No website coding requests')"),'server code queue loaded');
+    await wait(()=>devtools.evaluate("document.querySelector('[aria-label=\"Code agent learning\"]').textContent.includes('Collecting results')"),'truthful empty learning state');
     await adminInput('[aria-label="Website coding queue"] textarea',chatDraft);
     await adminClick('Submit to coding agent');
     await wait(()=>devtools.evaluate("document.querySelector('[aria-label=\"Website coding queue\"]').textContent.includes('OWNER REQUEST QUEUED')"),'owner request and durable activity rendered');

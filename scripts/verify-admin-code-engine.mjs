@@ -34,6 +34,6 @@ try{
  assert.equal(Buffer.from(writes[1].body.content,'base64').toString(),after);assert.equal(writes[2].body.draft,true);
  assert.ok(!JSON.stringify(writes).includes('fixture-provider-only'));assert.ok(!JSON.stringify(writes).includes('NaN'));
  writes=[];changedBase=true;await assert.rejects(buildFrontendProposal(args),/Main branch changed/);assert.equal(writes.length,0);
- changedBase=false;unsafe=true;await assert.rejects(buildFrontendProposal(args),/event handlers|logic/);assert.equal(writes.length,0);
+ changedBase=false;const paused=await buildFrontendProposal({...args,learning:{version:'native-ci-memory-v1',files:[],pausedPaths:['src/pages/About.tsx']}});assert.equal(paused.status,'no_change');assert.equal(writes.length,0,'Learned file pause prevents writes despite model selection');modelCalls=0;unsafe=true;await assert.rejects(buildFrontendProposal(args),/event handlers|logic/);assert.equal(writes.length,0);
  console.log('ADMIN_CODE_ENGINE_PASS: actual shared model-to-isolated-proposal engine with disposable source and mocked transport; exact bytes/head, immutable-main race and unsafe change rejection before writes. No live provider or GitHub action.');
 }finally{globalThis.fetch=originalFetch;process.chdir(originalCwd);rmSync(directory,{recursive:true,force:true});}

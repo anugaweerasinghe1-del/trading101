@@ -99,13 +99,18 @@ async function main() {
 }
 
 /** Shared engine; callers must independently authenticate admission before invoking it. */
-export async function buildFrontendProposal({request,branch,expectedBase,recheck,report=comment}) {
+export async function buildFrontendProposal({request,branch,expectedBase,recheck,report=comment,learning}) {
   if(!/^(?:ai\/issue-[1-9][0-9]*|ai\/admin-[a-f0-9-]{36})$/.test(branch)||!/^([a-f0-9]{40})$/.test(expectedBase)||typeof recheck!=="function")throw Error("Immutable proposal context required");
-  const candidates = (await collect(path.join(root, "src/pages"))).concat(await collect(path.join(root, "src/components"))).sort();
+  if(learning && (learning.version!=='native-ci-memory-v1'||!Array.isArray(learning.pausedPaths)||!Array.isArray(learning.files)))throw Error('Invalid native learning context');
+  const paused=new Set(learning?.pausedPaths??[]);
+  const candidates = (await collect(path.join(root, "src/pages"))).concat(await collect(path.join(root, "src/components"))).sort().filter(file=>!paused.has(file));
+  if(!candidates.length)return {status:"no_change",resultCode:"NO_SAFE_CHANGE"};
   const selection = await generate([
     "You are TradeHQ's cautious frontend engineer. Choose at most TWO existing files from the EXACT candidate list.",
     "The website is a free educational paper trading simulator (no real money).",
     "Request from repository owner: " + request,
+    "Some files may be paused after repeated independent CI failures. Decline if the request needs an unavailable file; never substitute an unrelated file.",
+    "Recent native CI evidence (historical validation only, not task correctness): " + JSON.stringify(learning?.files??[]),
     "Allowed existing TSX files: " + JSON.stringify(candidates),
     "Return JSON ONLY: {\"paths\":[\"one/existing/path.tsx\"],\"reason\":\"short explanation\"}.",
     "Prefer to decline complex, risky, unclear or cross-system requests by returning an empty paths array.",
