@@ -497,7 +497,9 @@ async function main(){
     reviewDocument.exercises[1].scenario=reviewDocument.exercises[0].scenario;
     reviewDocument.exercises[1].questions[1].prompt=reviewDocument.exercises[1].questions[0].prompt;
     reviewDocument.exercises[1].questions[2].explanation=reviewDocument.exercises[1].questions[0].explanation;
-    dailyDrafts=[{id:'fixture-review-draft',status:'draft',revision:1,document:reviewDocument},
+    dailyDrafts=[{id:'fixture-review-draft',status:'draft',revision:1,document:reviewDocument,
+      research:{model:'gemini-3.5-flash-lite', usage:{inputTokens:123,outputTokens:456,totalTokens:579},
+        checks:['Structure checks passed; owner must review accuracy before publication.']}},
       {id:'fixture-approved-bank',status:'published',revision:2,document:fixtureBank},
       {id:'fixture-rejected-bank',status:'rejected',revision:3,document:{...fixtureBank,effectiveFrom:'2026-12-09'}}];
     const documentsBefore=JSON.stringify(dailyDrafts);
@@ -505,6 +507,10 @@ async function main(){
     await wait(()=>devtools.evaluate("document.querySelectorAll('aside button').length===3"),'Daily bank review queue loaded');
     await devtools.evaluate("document.querySelector('aside button').click()");
     await wait(()=>devtools.evaluate("document.querySelector('[aria-label=\"Editorial review overview\"]')?.textContent.includes('50 exercises · 500 scored questions')"),'Daily editorial coverage');
+    await wait(()=>devtools.evaluate("document.querySelector('[aria-label=\"Daily generation provenance\"]')?.textContent.includes('final successful 10-case part only')"),'Scoped provider usage visible to Daily editor');
+    assert.equal(await devtools.evaluate("document.querySelector('[aria-label=\"Daily generation provenance\"]').textContent.includes('input 123 · output 456 · total 579')"),true);
+    assert.equal(await devtools.evaluate("document.querySelector('[aria-label=\"Daily generation provenance\"]').textContent.includes('not the five-part cycle total, live remaining quota')"),true);
+    assert.equal(await devtools.evaluate("document.querySelector('[aria-label=\"Generator checks, not owner approval\"]').textContent.includes('owner must review accuracy')"),true);
     assert.equal(await devtools.evaluate("document.querySelector('[aria-label=\"Editorial review overview\"]').textContent.includes('do not verify facts, calculations')"),true);
     assert.equal(await devtools.evaluate("document.querySelector('[aria-label=\"Editorial review overview\"]').textContent.includes('reuses the explanation')"),true);
     await devtools.evaluate("[...document.querySelectorAll('[aria-label=\"Editorial review overview\"] button')].find(e=>e.textContent.startsWith('Inspect exercise 2:')).click()");
