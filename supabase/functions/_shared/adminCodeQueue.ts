@@ -49,13 +49,20 @@ export function createAdminCodeQueue(options: Options) {
     if(input.action==='worker-finish'){
      fields(input,['action','id','status','headSha','prNumber','resultCode']);
      if(job.jobName!=='Admin code queue worker'||!uuid.test(input.id)||!['proposed','no_change','failed'].includes(input.status))throw Error('INVALID_REQUEST');
+     let verifiedFiles: string[]|undefined;
      if(input.status==='proposed'){
       if(!sha.test(input.headSha)||!Number.isSafeInteger(input.prNumber)||input.prNumber<1)throw Error('INVALID_REQUEST');
       const pr=await options.readGitHub('/pulls/'+input.prNumber);
       if(pr.user?.login!=='github-actions[bot]'||pr.user?.id!==41898282||pr.state!=='open'||pr.draft!==true||pr.base?.ref!=='main'
        ||pr.head?.ref!=='ai/admin-'+input.id||pr.head?.sha!==input.headSha||pr.head?.repo?.id!==1130435580)throw Error('PROPOSAL_NOT_VERIFIED');
+      const files=await options.readGitHub('/pulls/'+input.prNumber+'/files?per_page=3');
+      if(!Array.isArray(files)||files.length<1||files.length>2||pr.changed_files!==files.length
+       ||files.some((f: any)=>f.status!=='modified'||typeof f.filename!=='string'||!/^src\/(pages|components)\/[A-Za-z0-9_/-]+\.tsx$/.test(f.filename)||f.filename.includes('..')||f.filename.includes('//')))throw Error('PROPOSAL_NOT_VERIFIED');
+      const current=await options.readGitHub('/pulls/'+input.prNumber);
+      if(current.head?.sha!==input.headSha||current.state!=='open'||current.draft!==true)throw Error('PROPOSAL_NOT_VERIFIED');
+      verifiedFiles=files.map((f: any)=>f.filename);
      }else if(input.headSha!==null||input.prNumber!==null)throw Error('INVALID_REQUEST');
-     return reply({data:await options.rpc('finish',null,{...input,runId:job.runId,baseSha:job.mainSha})});
+     return reply({data:await options.rpc('finish',null,{...input,verifiedFiles,runId:job.runId,baseSha:job.mainSha})});
     }
     if(input.action==='worker-validation'){
      fields(input,['action','id','headSha']);
@@ -65,7 +72,7 @@ export function createAdminCodeQueue(options: Options) {
      const checks=jobs.jobs.filter((j: any)=>j.name==='Admin code independent validation');
      if(checks.length!==1||checks[0].status!=='completed'||!['success','failure','canceled','skipped','timed_out'].includes(checks[0].conclusion))throw Error('VALIDATION_UNAVAILABLE');
      return reply({data:await options.rpc('validation',null,{id:input.id,runId:job.runId,baseSha:job.mainSha,headSha:input.headSha,
-      status:checks[0].conclusion==='success'?'verified':'validation_failed'})});
+      nativeConclusion:checks[0].conclusion,status:checks[0].conclusion==='success'?'verified':'validation_failed'})});
     }
     throw Error('INVALID_REQUEST');
    }

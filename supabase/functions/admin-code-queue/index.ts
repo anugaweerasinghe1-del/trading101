@@ -4,7 +4,7 @@ import {allow} from '../_shared/rateLimit.ts';
 import {createGitHubWorkloadVerifier} from '../../../scripts/agent-github-workload-identity.mjs';
 const server=createClient(Deno.env.get('SUPABASE_URL')!,Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!,{auth:{persistSession:false,autoRefreshToken:false}});
 async function readGitHub(path: string) {
- if(!/^\/(?:branches\/main|actions\/runs\/\d+(?:\/attempts\/\d+\/jobs\?per_page=20)?|pulls\/\d+)$/.test(path))throw Error('GITHUB_SCOPE');
+ if(!/^\/(?:branches\/main|actions\/runs\/\d+(?:\/attempts\/\d+\/jobs\?per_page=20)?|pulls\/\d+(?:\/files\?per_page=3)?)$/.test(path))throw Error('GITHUB_SCOPE');
  const r=await fetch('https://api.github.com/repos/anugaweerasinghe1-del/trading101'+path,{redirect:'error',signal:AbortSignal.timeout(10000),headers:{Accept:'application/vnd.github+json','User-Agent':'TradeHQ-admin-code-queue'}});
  if(r.status!==200)throw Error('GITHUB_UNAVAILABLE');
  const text=await r.text();if(text.length>524288)throw Error('GITHUB_RESPONSE');return JSON.parse(text);

@@ -9,6 +9,7 @@ await db.exec(`CREATE ROLE anon;CREATE ROLE authenticated;CREATE ROLE service_ro
  CREATE TABLE auth.users(id uuid PRIMARY KEY);INSERT INTO auth.users VALUES('${owner}');
  CREATE FUNCTION public.tradehq_repair_registered_owner() RETURNS uuid LANGUAGE sql AS $$SELECT '${owner}'::uuid$$;`);
 await db.exec(readFileSync('supabase/migrations/20261016092040_admin_code_queue.sql','utf8'));
+await db.exec(readFileSync('supabase/migrations/20261016100921_native_code_learning.sql','utf8'));
 let userId=owner,jobName='Admin code queue worker',worker=true,rpcs=0;
 let validation='success';
 const rpc=async(action:string,who:string|null,data:Record<string,unknown>)=>{
@@ -17,7 +18,7 @@ const rpc=async(action:string,who:string|null,data:Record<string,unknown>)=>{
 const handler=createAdminCodeQueue({getKey:()=>key,getOwner:async()=>owner,
  getUser:async token=>token==='fixture-owner-session'?{id:userId,aud:'authenticated',email_confirmed_at:'2026-10-01'}:null,
  verifyWorker:async token=>{if(!worker||token!=='signed-fixture')throw Error();return {runId,mainSha:sha,jobName};},rpc,allow:async()=>true,
- readGitHub:async path=>path.startsWith('/pulls/')?{user:{login:'github-actions[bot]',id:41898282},state:'open',draft:true,base:{ref:'main'},head:{ref:'ai/admin-'+request.id,sha:head,repo:{id:1130435580}}}
+ readGitHub:async path=>path.includes('/files?')?[{filename:'src/pages/About.tsx',status:'modified'}]:path.startsWith('/pulls/')?{changed_files:1,user:{login:'github-actions[bot]',id:41898282},state:'open',draft:true,base:{ref:'main'},head:{ref:'ai/admin-'+request.id,sha:head,repo:{id:1130435580}}}
  :{total_count:1,jobs:[{name:'Admin code independent validation',status:'completed',conclusion:validation}]},
 });
 async function call(data:unknown,{admin=key,token='fixture-owner-session',oidc=''}={}){
@@ -44,7 +45,8 @@ assert.equal((await call({action:'worker-validation',id:request.id,headSha:'c'.r
 assert.equal((await call({action:'worker-validation',id:request.id,headSha:head},{oidc:'signed-fixture'})).body.data.status,'verified');
 assert.equal((await call({...payload,requestKey:crypto.randomUUID()})).body.code,'DAILY_CODE_LIMIT');
 const listed=(await call({action:'list'})).body.data;
-assert.deepEqual(listed.events.map((x:{event:string})=>x.event).reverse(),['OWNER_REQUEST_QUEUED','WORKER_CLAIMED','PROPOSAL_CREATED','INDEPENDENT_CHECKS_PASSED']);
+assert.deepEqual(listed.events.map((x:{event:string})=>x.event).reverse(),['OWNER_REQUEST_QUEUED','WORKER_CLAIMED','LEARNING_CONTEXT_APPLIED','PROPOSAL_CREATED','INDEPENDENT_CHECKS_PASSED']);
+assert.equal(listed.learning.outcomes,1);assert.equal(listed.learning.files[0].passes,1);assert.equal(listed.learningDecisions[0].context.outcomes,0);
 assert.ok(!JSON.stringify(listed).includes('fixture-owner-session'));assert.ok(!JSON.stringify(listed).includes(key));
 for(const role of ['anon','authenticated','service_role']){
  await db.exec('SET ROLE '+role);
@@ -52,5 +54,22 @@ for(const role of ['anon','authenticated','service_role']){
  await db.exec('RESET ROLE');
 }
 await db.exec('SET ROLE anon');await assert.rejects(db.query("SELECT public.tradehq_admin_code_queue('list',NULL,'{}')"));await db.exec('RESET ROLE');
+// Independent fixture outcomes exercise adaptation, reset and expiry without provider calls.
+for(let i=0;i<3;i++){
+ const id=crypto.randomUUID();
+ await db.query(`INSERT INTO tradehq_automation.code_requests(id,owner_id,request_key,prompt,status,run_id,base_sha,head_sha,pr_number)
+ VALUES($1,$2,$3,'Disposable validation failure fixture','validation_failed',$4,$5,$6,166)`,[id,owner,crypto.randomUUID(),runId+i+1,sha,head]);
+ await db.query(`INSERT INTO tradehq_automation.code_validation_memory(request_id,files,conclusion,observed_at) VALUES($1,'["src/pages/About.tsx"]','failure',clock_timestamp())`,[id]);
+}
+let memory=(await call({action:'list'})).body.data.learning;
+assert.equal(memory.outcomes,4);assert.deepEqual(memory.pausedPaths,['src/pages/About.tsx']);
+assert.equal(memory.files[0].smoothedFailureRate,0.6667);
+await db.query("UPDATE tradehq_automation.code_validation_memory SET observed_at=clock_timestamp()+interval '1 second' WHERE request_id=$1",[request.id]);
+assert.deepEqual((await call({action:'list'})).body.data.learning.pausedPaths,[],'A later passing result clears the consecutive-failure pause');
+// Canceled checks cannot become a negative training label.
+await db.exec("UPDATE tradehq_automation.code_validation_memory SET conclusion='canceled' WHERE conclusion='failure'");
+memory=(await call({action:'list'})).body.data.learning;assert.equal(memory.outcomes,1);assert.deepEqual(memory.pausedPaths,[]);
+await db.exec("UPDATE tradehq_automation.code_validation_memory SET observed_at=now()-interval '31 days'");
+assert.equal((await call({action:'list'})).body.data.learning.outcomes,0);
 await db.close();
 console.log('ADMIN_CODE_QUEUE_PASS: real SQL lifecycle, duplicate/lost-response idempotency, concurrent claim replay denial, owner/session denial, independent native-result binding and durable event history. Provider/job identities are fixtures; no live model or GitHub write.');

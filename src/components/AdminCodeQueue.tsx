@@ -3,12 +3,15 @@ import {Link} from 'react-router-dom';
 import {supabase} from '@/integrations/supabase/client';
 import {SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY} from '@/integrations/supabase/config';
 type Row={id:string;prompt:string;status:string;created_at:string;updated_at:string;run_id:number|null;head_sha:string|null;pr_number:number|null;result_code:string|null};
+type Learning={state:string;outcomes:number;files:{path:string;samples:number;passes:number;failures:number;paused:boolean}[]};
+type Decision={request_id:string;context:Learning};
 type Event={id:number;request_id:string;at:string;event:string;run_id:number|null};
 const messages:Record<string,string>={OWNER_SESSION_REQUIRED:'Sign in with the registered owner account to use the coding queue.',ADMIN_KEY_REQUIRED:'The administrator key could not be verified.',
  DAILY_CODE_LIMIT:'The coding queue has used its request allowance for the last 24 hours.',REQUEST_ALREADY_ACTIVE:'A code request is already waiting or running. Review it before submitting another.',
  INVALID_REQUEST:'Use 20–2500 characters without credentials, contact details or private records.',REQUEST_NOT_QUEUED:'This request has already started and cannot be canceled here.'};
 export default function AdminCodeQueue({adminKey,initialPrompt=''}:{adminKey:string;initialPrompt?:string}){
  const [prompt,setPrompt]=useState(initialPrompt),[rows,setRows]=useState<Row[]>([]),[events,setEvents]=useState<Event[]>([]);
+ const [learning,setLearning]=useState<Learning|null>(null),[decisions,setDecisions]=useState<Decision[]>([]);
  const [busy,setBusy]=useState(false),[message,setMessage]=useState(''),[checked,setChecked]=useState<Date|null>(null);
  const active=useRef(true),pending=useRef(false),requestKey=useRef(crypto.randomUUID());
  const call=useCallback(async(action:string,payload:Record<string,unknown>={})=>{
@@ -20,7 +23,7 @@ export default function AdminCodeQueue({adminKey,initialPrompt=''}:{adminKey:str
  },[adminKey]);
  const load=useCallback(async()=>{
   const data=await call('list');if(!Array.isArray(data?.requests)||!Array.isArray(data?.events))throw Error('Coding history is unavailable.');
-  if(active.current){setRows(data.requests);setEvents(data.events);setChecked(new Date());}
+  if(active.current){setRows(data.requests);setEvents(data.events);setLearning(data.learning??null);setDecisions(data.learningDecisions??[]);setChecked(new Date());}
  },[call]);
  useEffect(()=>{active.current=true;void load().catch(e=>{if(active.current)setMessage(e.message);});
   const timer=window.setInterval(()=>{if(!pending.current&&document.visibilityState!=='hidden')void load().catch(e=>{if(active.current)setMessage(e.message);});},60000);
@@ -42,10 +45,16 @@ export default function AdminCodeQueue({adminKey,initialPrompt=''}:{adminKey:str
   </form>
   {message&&<p role="status" className="text-sm text-amber-400">{message}</p>}
   {checked&&<p className="text-xs text-muted-foreground">Last checked {checked.toLocaleString()}. Requests and events are stored on the server. Proposed code requires review before publication.</p>}
+  {learning&&<aside aria-label="Code agent learning" className="rounded-xl border border-border p-4 space-y-2">
+   <h3 className="text-sm font-semibold">Learning from independent tests</h3>
+   <p className="text-xs text-muted-foreground">{learning.outcomes} completed validation outcomes in the last 30 days. {learning.outcomes===0?'Collecting results; no learned file restrictions yet.':'The agent uses recent file results when selecting changes. Three consecutive failed validations pause a file until a later pass or expiry.'} These results measure test outcomes; they do not establish that a requested change is correct or that a production issue was repaired.</p>
+   {learning.files.map(file=><p key={file.path} className="text-xs break-all">{file.path} · {file.passes} passed / {file.failures} failed{file.paused?' · Paused for automatic selection':''}</p>)}
+  </aside>}
   <div className="space-y-3">{rows.map(row=><article key={row.id} className="rounded-xl border border-border p-4 space-y-2">
    <p className="text-sm font-medium">{row.prompt}</p><p className="text-xs text-muted-foreground">{row.status.replace(/_/g,' ')} · {new Date(row.updated_at).toLocaleString()}{row.result_code?' · '+row.result_code.replace(/_/g,' '):''}</p>
    <div className="flex gap-4 text-sm">{row.pr_number&&<a target="_blank" rel="noopener noreferrer" className="text-primary" href={'https://github.com/anugaweerasinghe1-del/trading101/pull/'+row.pr_number}>Review code proposal #{row.pr_number} ↗</a>}{row.run_id&&<a target="_blank" rel="noopener noreferrer" className="text-primary" href={'https://github.com/anugaweerasinghe1-del/trading101/actions/runs/'+row.run_id}>Worker and tests ↗</a>}
     {row.status==='queued'&&<button disabled={busy} onClick={()=>void run(async()=>{await call('cancel',{id:row.id});await load();})}>Cancel queued request</button>}</div>
+   {decisions.filter(d=>d.request_id===row.id).map(d=><p key={d.request_id} className="text-xs text-muted-foreground">Recorded learning decision: {d.context.outcomes} prior native outcomes; {d.context.files.filter(f=>f.paused).length} files paused.</p>)}
    <ol className="text-xs text-muted-foreground space-y-1" aria-label="Recorded code activity">{events.filter(e=>e.request_id===row.id).slice(0,12).map(e=><li key={e.id}>{new Date(e.at).toLocaleString()} · {e.event.replace(/_/g,' ')}</li>)}</ol>
   </article>)}</div>
   {checked&&!rows.length&&<p className="text-sm text-muted-foreground">No website coding requests have been saved yet.</p>}
