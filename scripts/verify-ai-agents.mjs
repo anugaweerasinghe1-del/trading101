@@ -5,6 +5,7 @@ import YAML from "yaml";
 
 const scripts = [
   "scripts/agent-admin-code-worker.mjs",
+  "scripts/agent-code-review.mjs",
   "scripts/agent-code-request.mjs",
   "scripts/agent-monthly-ideas.mjs",
   "scripts/agent-monitor.mjs",

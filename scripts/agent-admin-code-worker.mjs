@@ -2,13 +2,14 @@
 import assert from 'node:assert/strict';
 import {appendFileSync} from 'node:fs';
 import {buildFrontendProposal} from './agent-code-request.mjs';
+import {processRejectedProposal} from './agent-code-review.mjs';
 import {collectOwnerIssueHistory} from './agent-owner-request-gate.mjs';
 const repo='anugaweerasinghe1-del/trading101';
 const endpoint='https://cbdktpjgczhthflspqjb.supabase.co/functions/v1/admin-code-queue';
 const env=process.env;
-async function github(path){
- const r=await fetch('https://api.github.com/repos/'+repo+path,{redirect:'error',signal:AbortSignal.timeout(15000),
-  headers:{Authorization:'Bearer '+env.GITHUB_TOKEN,Accept:'application/vnd.github+json'}});
+async function github(path,method='GET',body){
+ const r=await fetch('https://api.github.com/repos/'+repo+path,{method,body:body===undefined?undefined:JSON.stringify(body),redirect:'error',signal:AbortSignal.timeout(15000),
+  headers:{Authorization:'Bearer '+env.GITHUB_TOKEN,Accept:'application/vnd.github+json','Content-Type':'application/json'}});
  assert.equal(r.status,200,'GitHub context unavailable');return r.json();
 }
 async function queue(action,payload={}){
@@ -38,6 +39,8 @@ async function main(){
  }
  // Check current protected main and shared existing issue budget before consuming a queue item.
  const main=await github('/branches/main');assert.ok(main.protected&&main.commit.sha===env.GITHUB_SHA,'Main changed');
+ const review=await processRejectedProposal({queue,github,mainSha:env.GITHUB_SHA});
+ console.log('Owner proposal review: '+review.status+'.');
  const history=await collectOwnerIssueHistory(github);
  if(history.some(x=>!x.pull_request&&x.user?.id===297117529&&x.title==='[TradeHQ Code Request]'
   &&Date.parse(x.created_at)>Date.now()-86400000)){
