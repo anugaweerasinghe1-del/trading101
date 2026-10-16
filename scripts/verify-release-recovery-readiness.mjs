@@ -172,6 +172,6 @@ await assert.rejects(collectCloudflareAccountEvidence({sha:MAIN,token:cloudToken
 console.log('CLOUDFLARE_READONLY_ACCOUNT_FIXTURE_PASS: exact production identity, bounded history/usage, token and private fields omitted, denied/redirect/oversized/truncated evidence cannot authorize quota or rollback.');
 const workflow=readFileSync('.github/workflows/phase3-high-check.yml','utf8');
 const secretBinding='CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}';
-assert.equal(workflow.split(secretBinding).length-1,1,'Account secret must have exactly one main-only binding');
+assert.equal(workflow.split(secretBinding).length-1,2,'Account secret must have only the two main-only observer bindings');
 const accountJob=workflow.slice(workflow.indexOf('  release-readiness:'));
 assert.ok(accountJob.includes(secretBinding) && accountJob.includes("(github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main' && needs.validation.result == 'success'"), 'Provider secret is restricted to successfully validated protected main, never PR execution');

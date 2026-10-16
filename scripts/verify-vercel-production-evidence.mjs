@@ -56,6 +56,20 @@ assert.ok(job.if.includes("github.event_name == 'push'") && job.if.includes("git
 assert.deepEqual(job.permissions,{contents:'read',checks:'read',statuses:'read'});
 assert.equal(job['timeout-minutes'],15);
 assert.equal(job.steps.filter(s=>s.env?.TRADEHQ_VERCEL_VERIFY_TOKEN).length,1);
-for(const [name,other] of Object.entries(workflow.jobs))if(name!=='release-readiness')
+for(const [name,other] of Object.entries(workflow.jobs))if(!['release-readiness','release-signals'].includes(name))
   assert.ok(!(other.steps||[]).some(s=>s.env?.TRADEHQ_VERCEL_VERIFY_TOKEN));
 console.log('Vercel production observer: fixed-origin GETs, exact active alias/project/SHA, READY production, races, imported/stale proof, size/time limits, secret omission and main-only credential scope passed. No live credential or provider call used.');
+
+const signals=workflow.jobs['release-signals'];
+assert.equal(signals.if, "${{ (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main' && needs.validation.result == 'success' }}");
+assert.deepEqual(signals.permissions,{contents:'read',checks:'read',statuses:'read'});
+assert.equal(signals.steps[0].with.ref,'${{ github.sha }}');
+const presence=signals.steps.filter(s=>s.env?.TRADEHQ_VERCEL_VERIFY_TOKEN);
+assert.equal(presence.length,1);
+assert.equal(presence[0].id,'native');
+assert.ok(!presence[0].run.includes('fetch(') && !presence[0].run.includes('exec('));
+assert.ok(presence[0].run.includes('NOT CONFIGURED'));
+assert.ok(job.needs.includes('release-signals'));
+assert.ok(job.if.includes("needs.release-signals.outputs.native_configured == 'true'"));
+assert.ok(job.steps.some(s=>s.run?.includes('Native provider verification credentials required')));
+assert.notEqual(signals.name,job.name,'Limited status evidence must not satisfy the deployed publication check name');
