@@ -58,3 +58,8 @@ jobs:
           TRADEHQ_DAILY_POSTGRES_TEST: explicit-ci-fixture
           TRADEHQ_DISPOSABLE_CONTROL_TEST: explicit-ci-fixture
           TRADEHQ_CONTROL_TEST_URL: postgres://tradehq_test:tradehq_ci_only@127.0.0.1:5432/tradehq_control_test
+      - name: Verify the admin code queue with real concurrent worker connections
+        run: node scripts/verify-admin-code-queue-postgres.mjs
+        env:
+          TRADEHQ_DISPOSABLE_CONTROL_TEST: explicit-ci-fixture
+          TRADEHQ_CONTROL_TEST_URL: postgres://tradehq_test:tradehq_ci_only@127.0.0.1:5432/tradehq_control_test
