@@ -90,7 +90,7 @@ async function main(){
     freeConfirmed:true,hasApiKey:true,model:'gemini-3.5-flash'};
   const repairRequests={status:0,stop:0};
   const chatDraft='Improve About page mobile spacing while preserving every existing sentence and link.';
-  let codeQueueRows=[],codeQueueEvents=[],codeQueueWrites=0;
+  let codeQueueRows=[],codeQueueEvents=[],codeQueueReviews=[],codeQueueWrites=0;
   try{
     server=createServer((req,res)=>{
       const parsed=new URL(req.url||"/","http://localhost");
@@ -125,11 +125,16 @@ async function main(){
         if(req.headers['x-admin-key']!==ADMIN_FIXTURE_KEY||req.headers.authorization!=='Bearer '+JWT)return json(401,{code:'OWNER_SESSION_REQUIRED'});
         let content='';req.on('data',x=>{content+=x;});req.on('end',()=>{
           const input=JSON.parse(content);
-          if(input.action==='list')return json(200,{data:{requests:codeQueueRows,events:codeQueueEvents,learning:{state:'COLLECTING_NATIVE_RESULTS',outcomes:0,files:[]},learningDecisions:[],workerRuns:[{run_id:38886251817,status:'idle',first_seen_at:new Date().toISOString(),updated_at:new Date().toISOString()}]}});
+          if(input.action==='list')return json(200,{data:{requests:codeQueueRows,events:codeQueueEvents,reviews:codeQueueReviews,learning:{state:'COLLECTING_NATIVE_RESULTS',outcomes:0,files:[]},learningDecisions:[],workerRuns:[{run_id:38886251817,status:'idle',first_seen_at:new Date().toISOString(),updated_at:new Date().toISOString()}]}});
           if(input.action==='submit'){
             const found=codeQueueRows.find(x=>x.request_key===input.requestKey);if(found)return json(200,{data:found});
             codeQueueWrites++;const row={id:'a1700000-1111-4111-8111-000000000009',prompt:input.prompt,request_key:input.requestKey,status:'queued',created_at:new Date().toISOString(),updated_at:new Date().toISOString(),run_id:null,head_sha:null,pr_number:null,result_code:null};
             codeQueueRows=[row];codeQueueEvents=[{id:1,request_id:row.id,at:row.created_at,event:'OWNER_REQUEST_QUEUED'}];return json(200,{data:row});
+          }
+          if(input.action==='review')return json(200,{data:{id:input.id,headSha:input.headSha,files:[{path:'src/pages/About.tsx',patch:'@@ -1 +1 @@\n-About\n+<img src=x onerror="window.__proposalHtmlExecuted=true">',additions:1,deletions:1}],receipt:{request_id:input.id,view_id:'a1700000-1111-4111-8111-000000000010',decision:null}}});
+          if(input.action==='reject'){
+            codeQueueWrites++;codeQueueReviews=[{request_id:input.id,view_id:input.viewId,decision:'rejected',close_state:'pending',close_run_id:null}];
+            codeQueueEvents.push({id:3,request_id:input.id,at:new Date().toISOString(),event:'OWNER_PROPOSAL_REJECTED'});return json(200,{data:codeQueueReviews[0]});
           }
           if(input.action==='cancel'&&codeQueueRows[0]?.id===input.id){codeQueueWrites++;codeQueueRows[0].status='canceled';codeQueueEvents.push({id:2,request_id:input.id,at:new Date().toISOString(),event:'OWNER_REQUEST_CANCELED'});return json(200,{data:codeQueueRows[0]});}
           return json(400,{code:'INVALID_REQUEST'});
@@ -416,6 +421,17 @@ async function main(){
     await wait(()=>devtools.evaluate("document.querySelector('[aria-label=\"Website coding queue\"]').textContent.includes('OWNER REQUEST CANCELED')"),'cancellation recorded');
     assert.equal(codeQueueWrites,2);
     console.log('ISOLATED_ADMIN_CODE_QUEUE_BROWSER_PASS: actual compiled owner form submits directly, retries one request identity, renders server audit and cancels queued work. Loopback only; no real code or provider action.');
+    codeQueueRows[0]={...codeQueueRows[0],status:'verified',head_sha:'b'.repeat(40),pr_number:168};
+    await adminClick('Refresh coding activity');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Review proposal in admin')"),'reviewable proposal loaded');
+    await adminClick('Review proposal in admin');
+    await wait(()=>devtools.evaluate("!!document.querySelector('[aria-label=\"Proposal code review\"] pre')"),'exact code diff rendered');
+    assert.equal(await devtools.evaluate("!!document.querySelector('[aria-label=\"Proposal code review\"] img')"),false,'Patch markup must render as text');
+    assert.equal(await devtools.evaluate("window.__proposalHtmlExecuted===true"),false);
+    await adminClick('Decline this code proposal');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Waiting for the worker to close the GitHub draft')"),'durable owner decline rendered without falsely claiming closure');
+    assert.equal(codeQueueWrites,3);
+    console.log('ISOLATED_ADMIN_PROPOSAL_REVIEW_BROWSER_PASS: compiled admin diff, inert patch HTML, exact receipt decline and pending closure acknowledgement. Loopback fixtures; no real proposal/model action.');
     await adminClick('Check repair status');
     await wait(()=>devtools.evaluate("document.body.textContent.includes('A stop has not been confirmed')"),'paused controls not advertised as stopped');
     await adminClick('Stop repairs');

@@ -34,6 +34,10 @@ function nativeValidation(jobs: Record<string,any>): string|null {
  const checks=jobs.jobs.filter((j: any)=>j.name==='Admin code independent validation');
  return checks.length===1&&checks[0].status==='completed'&&['success','failure','cancelled','skipped','timed_out'].includes(checks[0].conclusion)?(checks[0].conclusion==='cancelled'?'canceled':checks[0].conclusion):null;
 }
+function proposalMatches(pr: Record<string,any>,id: string,head: string) {
+ return pr.user?.login==='github-actions[bot]'&&pr.user?.id===41898282&&pr.draft===true&&pr.base?.ref==='main'
+  &&pr.head?.ref==='ai/admin-'+id&&pr.head?.sha===head&&pr.head?.repo?.id===1130435580;
+}
 export function createAdminCodeQueue(options: Options) {
  const headers={'Content-Type':'application/json','Cache-Control':'no-store','Access-Control-Allow-Origin':'https://www.thetradehq.com',
   'Access-Control-Allow-Headers':'authorization,apikey,content-type,x-admin-key,x-client-info,x-github-oidc','Access-Control-Allow-Methods':'POST, OPTIONS'};
@@ -47,6 +51,21 @@ export function createAdminCodeQueue(options: Options) {
    if(input.action.startsWith('worker-')){
     let job: Job;
     try{job=await options.verifyWorker(req.headers.get('x-github-oidc')??'');}catch{return reply({code:'WORKER_IDENTITY_REQUIRED'},401);}
+    if(input.action==='worker-review-claim'){
+     fields(input,['action']);if(job.jobName!=='Admin code queue worker')throw Error('INVALID_REQUEST');
+     return reply({data:await options.rpc('close-claim',null,{runId:job.runId})});
+    }
+    if(input.action==='worker-review-result'){
+     fields(input,['action','id','headSha','prNumber']);
+     if(job.jobName!=='Admin code queue worker'||!uuid.test(input.id)||!sha.test(input.headSha)||!Number.isSafeInteger(input.prNumber)||input.prNumber<1)throw Error('INVALID_REQUEST');
+     // Resolve the PR number from durable server state, not the worker body.
+     const r=await options.rpc('review-request',await options.getOwner(),{id:input.id,headSha:input.headSha}) as Record<string,any>;
+     if(r.pr_number!==input.prNumber)throw Error('PROPOSAL_NOT_VERIFIED');
+     const pr=await options.readGitHub('/pulls/'+r.pr_number),matches=proposalMatches(pr,input.id,input.headSha);
+     const closed=matches&&pr.state==='closed'&&pr.merged===false;
+     return reply({data:await options.rpc('close-finish',null,{id:input.id,headSha:input.headSha,runId:job.runId,
+      closeState:closed?'closed':'blocked',closeCode:closed?'GITHUB_CLOSED_CONFIRMED':matches?'CLOSE_NOT_CONFIRMED':'PROPOSAL_CHANGED'})});
+    }
     if(input.action==='worker-claim'){
      fields(input,['action']);if(job.jobName!=='Admin code queue worker')throw Error('INVALID_REQUEST');
      // Recover bookkeeping after a lost result callback. All facts come from the
@@ -99,6 +118,24 @@ export function createAdminCodeQueue(options: Options) {
    const auth=req.headers.get('authorization');if(!auth?.startsWith('Bearer '))return reply({code:'OWNER_SESSION_REQUIRED'},401);
    const [owner,user]=await Promise.all([options.getOwner(),options.getUser(auth.slice(7))]);
    if(!user||user.id!==owner||user.aud!=='authenticated'||user.is_anonymous===true||!user.email_confirmed_at)return reply({code:'OWNER_SESSION_REQUIRED'},403);
+   if(input.action==='review'||input.action==='reject'){
+    fields(input,input.action==='review'?['action','id','headSha']:['action','id','headSha','viewId']);
+    if(!uuid.test(input.id)||!sha.test(input.headSha)||(input.action==='reject'&&!uuid.test(input.viewId)))throw Error('INVALID_REQUEST');
+    const row=await options.rpc('review-request',owner,{id:input.id,headSha:input.headSha}) as Record<string,any>;
+    const pr=await options.readGitHub('/pulls/'+row.pr_number);
+    if(!proposalMatches(pr,input.id,input.headSha)||pr.state!=='open')throw Error('PROPOSAL_NOT_VERIFIED');
+    if(input.action==='reject')return reply({data:await options.rpc('reject-proposal',owner,{id:input.id,headSha:input.headSha,viewId:input.viewId})});
+    const files=await options.readGitHub('/pulls/'+row.pr_number+'/files?per_page=3');
+    if(!Array.isArray(files)||files.length<1||files.length>2||pr.changed_files!==files.length
+     ||files.some((f: any)=>f.status!=='modified'||!/^src\/(pages|components)\/[A-Za-z0-9_/-]+\.tsx$/.test(f.filename)||f.filename.includes('..')
+      ||typeof f.patch!=='string'||f.patch.length>24000))throw Error('REVIEW_DIFF_UNAVAILABLE');
+    const diff=files.map((f: any)=>({path:f.filename,patch:f.patch,additions:f.additions,deletions:f.deletions}));
+    const current=await options.readGitHub('/pulls/'+row.pr_number);
+    if(!proposalMatches(current,input.id,input.headSha)||current.state!=='open')throw Error('PROPOSAL_NOT_VERIFIED');
+    const digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(JSON.stringify(diff))))).map(x=>x.toString(16).padStart(2,'0')).join('');
+    const receipt=await options.rpc('review-view',owner,{id:input.id,headSha:input.headSha,patchDigest:digest});
+    return reply({data:{id:input.id,headSha:input.headSha,files:diff,receipt}});
+   }
    if(input.action==='list'){fields(input,['action']);return reply({data:await options.rpc('list',owner,{})});}
    if(input.action==='submit'){
     fields(input,['action','requestKey','prompt']);
@@ -109,7 +146,7 @@ export function createAdminCodeQueue(options: Options) {
    if(input.action==='cancel'){fields(input,['action','id']);if(!uuid.test(input.id))throw Error('INVALID_REQUEST');return reply({data:await options.rpc('cancel',owner,{id:input.id})});}
    throw Error('INVALID_REQUEST');
   }catch(error){
-   const known=['INVALID_REQUEST','REQUEST_KEY_CONFLICT','REQUEST_ALREADY_ACTIVE','DAILY_CODE_LIMIT','REQUEST_NOT_QUEUED','INVALID_TRANSITION','WORKER_BINDING','PROPOSAL_NOT_VERIFIED','VALIDATION_UNAVAILABLE'];
+   const known=['INVALID_REQUEST','REQUEST_KEY_CONFLICT','REQUEST_ALREADY_ACTIVE','DAILY_CODE_LIMIT','REQUEST_NOT_QUEUED','INVALID_TRANSITION','WORKER_BINDING','PROPOSAL_NOT_VERIFIED','VALIDATION_UNAVAILABLE','REVIEW_NOT_READY','REVIEW_EXPIRED','REVIEW_DIFF_UNAVAILABLE'];
    const code=error instanceof Error&&known.includes(error.message)?error.message:'QUEUE_UNAVAILABLE';
    return reply({code},code==='INVALID_REQUEST'?400:409);
   }

@@ -16,5 +16,5 @@ Deno.serve(createAdminCodeQueue({
  getUser:async token=>{const {data,error}=await server.auth.getUser(token);return error?null:data.user;},
  verifyWorker,readGitHub,allow,
  rpc:async(action,owner,payload)=>{const {data,error}=await server.rpc('tradehq_admin_code_queue',{p_action:action,p_owner:owner,p_data:payload});
-  if(error){const code=['REQUEST_KEY_CONFLICT','REQUEST_ALREADY_ACTIVE','DAILY_CODE_LIMIT','REQUEST_NOT_QUEUED','INVALID_TRANSITION','WORKER_BINDING'].find(c=>error.message===c);throw Error(code??'QUEUE_DATABASE');}return data;},
+  if(error){const code=['REQUEST_KEY_CONFLICT','REQUEST_ALREADY_ACTIVE','DAILY_CODE_LIMIT','REQUEST_NOT_QUEUED','INVALID_TRANSITION','WORKER_BINDING','REVIEW_NOT_READY','REVIEW_EXPIRED','PROPOSAL_NOT_VERIFIED'].find(c=>error.message===c);throw Error(code??'QUEUE_DATABASE');}return data;},
 }));

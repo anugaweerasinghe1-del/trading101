@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {PGlite} from '@electric-sql/pglite';
+import {processRejectedProposal} from './agent-code-review.mjs';
 import {createAdminCodeQueue} from '../supabase/functions/_shared/adminCodeQueue.ts';
 const owner='a1700000-1111-4111-8111-000000000001',other='b1700000-1111-4111-8111-000000000001';
 const key='fixture-admin-only',sha='a'.repeat(40),head='b'.repeat(40),runId=388900001;
@@ -11,7 +12,9 @@ await db.exec(`CREATE ROLE anon;CREATE ROLE authenticated;CREATE ROLE service_ro
 await db.exec(readFileSync('supabase/migrations/20261016092040_admin_code_queue.sql','utf8'));
 await db.exec(readFileSync('supabase/migrations/20261016100921_native_code_learning.sql','utf8'));
 await db.exec(readFileSync('supabase/migrations/20261016102258_code_worker_recovery.sql','utf8'));
+await db.exec(readFileSync('supabase/migrations/20261016110754_admin_proposal_review.sql','utf8'));
 let userId=owner,jobName='Admin code queue worker',worker=true,rpcs=0;
+let proposalState='open',proposalHead=head,missingPatch=false;
 let validation='success',workerRunId=runId,nativeBase=sha,nativeStatus='completed';
 const rpc=async(action:string,who:string|null,data:Record<string,unknown>)=>{
  rpcs++;const r=await db.query<{data:unknown}>('SELECT public.tradehq_admin_code_queue($1,$2,$3::jsonb) AS data',[action,who,JSON.stringify(data)]);return r.rows[0].data;
@@ -19,7 +22,7 @@ const rpc=async(action:string,who:string|null,data:Record<string,unknown>)=>{
 const handler=createAdminCodeQueue({getKey:()=>key,getOwner:async()=>owner,
  getUser:async token=>token==='fixture-owner-session'?{id:userId,aud:'authenticated',email_confirmed_at:'2026-10-01'}:null,
  verifyWorker:async token=>{if(!worker||token!=='signed-fixture')throw Error();return {runId:workerRunId,mainSha:sha,jobName};},rpc,allow:async()=>true,
- readGitHub:async path=>/^\/actions\/runs\/\d+$/.test(path)?{id:Number(path.split('/').at(-1)),workflow_id:380190833,path:'.github/workflows/tradehq-code-agent.yml',head_sha:nativeBase,head_branch:'main',status:nativeStatus,repository:{id:1130435580},head_repository:{id:1130435580}}:path.includes('/files?')?[{filename:'src/pages/About.tsx',status:'modified'}]:path.startsWith('/pulls/')?{changed_files:1,user:{login:'github-actions[bot]',id:41898282},state:'open',draft:true,base:{ref:'main'},head:{ref:'ai/admin-'+request.id,sha:head,repo:{id:1130435580}}}
+ readGitHub:async path=>/^\/actions\/runs\/\d+$/.test(path)?{id:Number(path.split('/').at(-1)),workflow_id:380190833,path:'.github/workflows/tradehq-code-agent.yml',head_sha:nativeBase,head_branch:'main',status:nativeStatus,repository:{id:1130435580},head_repository:{id:1130435580}}:path.includes('/files?')?[{filename:'src/pages/About.tsx',status:'modified',patch:missingPatch?undefined:'@@ -1 +1 @@\n-<h1>About</h1>\n+<h1 className="text-3xl">About</h1>',additions:1,deletions:1}]:path.startsWith('/pulls/')?{changed_files:1,user:{login:'github-actions[bot]',id:41898282},state:proposalState,merged:false,draft:true,base:{ref:'main'},head:{ref:'ai/admin-'+request.id,sha:proposalHead,repo:{id:1130435580}}}
  :{total_count:1,jobs:[{name:'Admin code independent validation',status:'completed',conclusion:validation}]},
 });
 async function call(data:unknown,{admin=key,token='fixture-owner-session',oidc=''}={}){
@@ -49,6 +52,45 @@ const listed=(await call({action:'list'})).body.data;
 assert.deepEqual(listed.events.map((x:{event:string})=>x.event).reverse(),['OWNER_REQUEST_QUEUED','WORKER_CLAIMED','LEARNING_CONTEXT_APPLIED','PROPOSAL_CREATED','INDEPENDENT_CHECKS_PASSED']);
 assert.equal(listed.learning.outcomes,1);assert.equal(listed.learning.files[0].passes,1);assert.equal(listed.learningDecisions[0].context.outcomes,0);
 assert.ok(!JSON.stringify(listed).includes('fixture-owner-session'));assert.ok(!JSON.stringify(listed).includes(key));
+// Real owner review receipt and native worker closure, with isolated GitHub transport.
+assert.equal((await call({action:'reject',id:request.id,headSha:head,viewId:crypto.randomUUID()})).body.code,'REVIEW_EXPIRED');
+missingPatch=true;assert.equal((await call({action:'review',id:request.id,headSha:head})).body.code,'REVIEW_DIFF_UNAVAILABLE');missingPatch=false;
+let viewed=(await call({action:'review',id:request.id,headSha:head})).body.data;
+assert.equal(viewed.files[0].path,'src/pages/About.tsx');assert.equal(viewed.receipt.patch_digest.length,64);
+await db.exec("UPDATE tradehq_automation.code_reviews SET viewed_at=now()-interval '11 minutes'");
+assert.equal((await call({action:'reject',id:request.id,headSha:head,viewId:viewed.receipt.view_id})).body.code,'REVIEW_EXPIRED');
+viewed=(await call({action:'review',id:request.id,headSha:head})).body.data;
+proposalHead='c'.repeat(40);assert.equal((await call({action:'reject',id:request.id,headSha:head,viewId:viewed.receipt.view_id})).body.code,'PROPOSAL_NOT_VERIFIED');proposalHead=head;
+const decline={action:'reject',id:request.id,headSha:head,viewId:viewed.receipt.view_id};
+assert.equal((await call(decline)).body.data.close_state,'pending');assert.equal((await call(decline)).body.data.close_state,'pending');
+jobName='Admin code queue worker';workerRunId=runId+50;let closeWrites=0;
+const nativeQueue=async(action:string,payload={})=>{const r=await call({action,...payload},{oidc:'signed-fixture'});assert.equal(r.status,200,JSON.stringify(r.body));return r.body.data;};
+const nativeGitHub=async(path:string,method='GET',payload?:unknown)=>{
+ if(path==='/branches/main')return {protected:true,commit:{sha}};
+ if(method==='PATCH'){assert.equal(path,'/pulls/165');assert.deepEqual(payload,{state:'closed'});closeWrites++;proposalState='closed';throw Error('Fixture lost response after successful closure');}
+ return {user:{login:'github-actions[bot]',id:41898282},draft:true,state:proposalState,base:{ref:'main'},head:{ref:'ai/admin-'+request.id,sha:head,repo:{id:1130435580}}};
+};
+assert.equal((await processRejectedProposal({queue:nativeQueue,github:nativeGitHub,mainSha:sha})).status,'closed');
+assert.equal(closeWrites,1);assert.equal((await processRejectedProposal({queue:nativeQueue,github:nativeGitHub,mainSha:sha})).status,'idle');
+const reviewHistory=(await call({action:'list'})).body.data;
+assert.equal(reviewHistory.reviews[0].close_state,'closed');
+assert.equal(reviewHistory.events.filter((e: any)=>e.event==='OWNER_PROPOSAL_REJECTED').length,1);
+assert.equal(reviewHistory.events.filter((e: any)=>e.event==='GITHUB_CLOSED_CONFIRMED').length,1);
+assert.equal(reviewHistory.learning.outcomes,1,'Owner decline must preserve the real validation label');
+for(const scenario of ['stale','already-closed','main-changed']){
+ let writes=0;const payloads: any[]=[];
+ const result=processRejectedProposal({mainSha:sha,queue:async(action:string,payload:unknown)=>{
+  if(action==='worker-review-claim')return {request_id:request.id,head_sha:head,pr_number:165};
+  payloads.push(payload);return {close_state:scenario==='stale'?'blocked':'closed'};
+ },github:async(path:string,method='GET')=>{
+  if(method!=='GET'){writes++;throw Error('Unexpected write');}
+  if(path==='/branches/main')return {protected:true,commit:{sha:'c'.repeat(40)}};
+  return {user:{login:'github-actions[bot]',id:41898282},draft:true,state:scenario==='already-closed'?'closed':'open',base:{ref:'main'},head:{ref:'ai/admin-'+request.id,sha:scenario==='stale'?'c'.repeat(40):head,repo:{id:1130435580}}};
+ }});
+ if(scenario==='main-changed')await assert.rejects(result,/Main changed/);else assert.equal((await result).status,scenario==='stale'?'blocked':'closed');
+ assert.equal(writes,0);assert.equal(payloads.length,scenario==='main-changed'?0:1);
+}
+console.log('ADMIN_PROPOSAL_REVIEW_PASS: exact diff receipt, expiry/stale-head denial, idempotent owner decline, real worker helper closes only the bound draft, lost-response recovery and independently confirmed closure. Disposable SQL/GitHub fixtures; zero real model or GitHub writes.');
 for(const role of ['anon','authenticated','service_role']){
  await db.exec('SET ROLE '+role);
  await assert.rejects(db.query('SELECT * FROM tradehq_automation.code_requests'));
