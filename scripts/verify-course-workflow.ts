@@ -148,6 +148,34 @@ const generated = await generateCourse(claim, fetcher);
 assert.equal(generated.research.method, "Owner topic requests"); assert.equal(aiCalls, 1);
 await assert.rejects(generateCourse({ ...claim, topicRequests: [] }, fetcher), /Connect Search Console/);
 assert.equal(aiCalls, 1);
+const rejectedFixture = JSON.stringify({ error: { status: "INVALID_ARGUMENT", message: "provider-private-test-value",
+  details: [{ fieldViolations: [{ field: "generationConfig.thinkingConfig.thinkingLevel", description: "provider-private-test-value" }] }] } });
+let rejectedCalls = 0;
+await assert.rejects(generateCourse(claim, (async (url, init) => {
+  if (String(url).includes("generativelanguage")) { rejectedCalls++; assert.equal(init?.redirect, "error"); return new Response(rejectedFixture, { status: 400 }); }
+  return fetcher(url, init);
+}) as typeof fetch), (error: unknown) => {
+  assert.ok(error instanceof Error);
+  assert.match(error.message, /HTTP 400; INVALID_ARGUMENT; thinkingLevel/);
+  assert.doesNotMatch(error.message, /provider-private-test-value/);
+  return true;
+});
+assert.equal(rejectedCalls, 1, "Provider rejection must not cause an extra request");
+let messageOnlyAttempts = 0;
+await assert.rejects(generateCourse(claim, (async (url, init) => {
+ if (String(url).includes("generativelanguage")) {
+  messageOnlyAttempts++; assert.equal(init?.redirect, "error");
+  return new Response(JSON.stringify({ error: { status: "INVALID_ARGUMENT",
+   message: "Unknown name thinkingLevel in generationConfig; private-credentials-must-never-escape" } }), { status: 400 });
+ }
+ return fetcher(url, init);
+}) as typeof fetch), (error: unknown) => {
+ assert.ok(error instanceof Error);
+ assert.match(error.message, /HTTP 400; INVALID_ARGUMENT; thinkingLevel/);
+ assert.doesNotMatch(error.message, /private-credentials-must-never-escape/);
+ return true;
+});
+assert.equal(messageOnlyAttempts, 1, "Message-only provider rejection must not retry");
 const limited = (async (url: string | URL | Request, init?: RequestInit) => String(url).includes("generativelanguage")
   ? new Response("", { status: 429 }) : fetcher(url, init)) as typeof fetch;
 await assert.rejects(generateCourse(claim, limited), /Free AI quota exhausted/);

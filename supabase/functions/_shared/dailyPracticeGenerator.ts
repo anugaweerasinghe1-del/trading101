@@ -1,6 +1,6 @@
 import { DAILY_CATEGORIES, normalized, validateExercises, type DailyExercise } from './dailyPractice.ts';
 import { hasRepeatedPracticeCase } from './dailyPracticeReview.ts';
-import { readCourseReferences, readGenerationResponse, GENERATION_READ_LIMITS } from './courseGenerator.ts';
+import { readCourseReferences, readGenerationResponse, GENERATION_READ_LIMITS, safeGeminiRejectionDetails } from './courseGenerator.ts';
 export interface PracticeClaim {
   lease: string; effectiveFrom: string; apiKey: string; model: string;
   exercises: DailyExercise[]; existing: Pick<DailyExercise, 'title' | 'scenario' | 'questions'>[];
@@ -44,9 +44,12 @@ export async function generatePractice(claim: PracticeClaim, fetcher = fetch) {
   });
   // Standard free-tier API only. No Batch API, alternate provider or paid fallback.
   if (!response.ok) {
-    void response.body?.cancel().catch(() => {});
-    if (response.status === 429) throw new Error('Free Gemini quota exhausted. Paused for 24 hours; no paid fallback.');
-    throw new Error('Gemini rejected generation (HTTP ' + response.status + '). Check free-tier settings.');
+    if (response.status === 429) {
+      void response.body?.cancel().catch(() => {});
+      throw new Error('Free Gemini quota exhausted. Paused for 24 hours; no paid fallback.');
+    }
+    const details = await safeGeminiRejectionDetails(response);
+    throw new Error('Gemini rejected generation (HTTP ' + response.status + (details ? '; ' + details : '') + '). Check free-tier settings.');
   }
   const rawOutput = await readGenerationResponse(response, GENERATION_READ_LIMITS.providerBytes, GENERATION_READ_LIMITS.providerReadMs);
   let output;

@@ -45,6 +45,41 @@ export async function readGenerationResponse(response: Response, maxBytes: numbe
     reader.releaseLock();
   }
 }
+/**
+ * A rejected provider response is untrusted. Retain only allowlisted error codes
+ * and generation-config field names; never persist provider messages, prompt
+ * fragments, API keys, request bodies or arbitrary descriptions.
+ * Malformed, slow and oversized bodies fall back to status-only errors.
+ */
+export async function safeGeminiRejectionDetails(response: Response): Promise<string> {
+  let status = '', field = '';
+  try {
+    const raw = await readGenerationResponse(response, 8192, 1200);
+    const error = JSON.parse(raw)?.error;
+    const codes = ['INVALID_ARGUMENT', 'FAILED_PRECONDITION', 'PERMISSION_DENIED', 'UNAUTHENTICATED', 'NOT_FOUND', 'RESOURCE_EXHAUSTED'];
+    if (codes.includes(error?.status)) status = error.status;
+    const hints = ['thinkingLevel', 'responseJsonSchema', 'responseMimeType', 'maxOutputTokens'];
+    for (const detail of Array.isArray(error?.details) ? error.details : []) {
+      for (const violation of Array.isArray(detail?.fieldViolations) ? detail.fieldViolations : []) {
+        const path = violation?.field;
+        if (typeof path !== 'string' || path.length > 180) continue;
+        const known = hints.find(hint => path === hint || path.endsWith('.' + hint));
+        if (known) { field = known; break; }
+      }
+      if (field) break;
+    }
+    // The REST API may supply only error.message (without fieldViolations).
+    // Classify four fixed config identifiers in memory; never echo the message.
+    if (!field && typeof error?.message === 'string' && error.message.length <= 4096) {
+      const candidate = error.message.match(/\b(thinkingLevel|responseJsonSchema|responseMimeType|maxOutputTokens)\b/i)?.[1];
+      field = hints.find(hint => hint.toLowerCase() === candidate?.toLowerCase()) ?? '';
+    }
+  } catch {
+    // Never echo an unknown provider payload even when parsing or reading fails.
+  }
+  return [status, field].filter(Boolean).join('; ');
+}
+
 function schema(properties: Record<string, unknown>) {
   return { type: "object", properties, required: Object.keys(properties), additionalProperties: false };
 }
@@ -167,9 +202,12 @@ export async function generateCourse(claim: GenerationClaim, fetcher = fetch) {
   });
   // No paid fallback, quota workaround or automatic model change.
   if (!response.ok) {
-    void response.body?.cancel().catch(() => {});
-    if (response.status === 429) throw new Error("Free AI quota exhausted. Generation paused; no paid fallback was used.");
-    throw new Error("AI provider rejected generation (HTTP " + response.status + "). Check the free API key and model.");
+    if (response.status === 429) {
+      void response.body?.cancel().catch(() => {});
+      throw new Error("Free AI quota exhausted. Generation paused; no paid fallback was used.");
+    }
+    const details = await safeGeminiRejectionDetails(response);
+    throw new Error("AI provider rejected generation (HTTP " + response.status + (details ? "; " + details : "") + "). Check the free API key and model.");
   }
   const rawOutput = await readGenerationResponse(response, GENERATION_READ_LIMITS.providerBytes, GENERATION_READ_LIMITS.providerReadMs);
   let output;
