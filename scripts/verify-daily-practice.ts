@@ -130,6 +130,20 @@ assert.ok(findings.some(f => f.kind === 'similar-case' && f.exerciseIndex === 1 
 assert.ok(findings.some(f => f.kind === 'similar-question' && f.questionIndex === 1 && f.relatedQuestionIndex === 0));
 assert.ok(findings.some(f => f.kind === 'repeated-explanation' && f.questionIndex === 2 && f.relatedQuestionIndex === 0));
 assert.deepEqual(reviewPracticeExercises([]), []);
+const rejectedFixture = JSON.stringify({ error: { status: 'INVALID_ARGUMENT', message: 'private-provider-detail-must-never-escape',
+  details: [{ fieldViolations: [{ field: 'generationConfig.responseJsonSchema',
+    description: 'private-provider-detail-must-never-escape' }] }] } });
+let rejectedCalls = 0;
+await assert.rejects(generatePractice(claim, (async (url, init) => {
+ if (String(url).includes('generativelanguage')) { rejectedCalls++; assert.equal(init?.redirect, 'error'); return new Response(rejectedFixture, { status: 400 }); }
+ return fetcher(url, init);
+}) as typeof fetch), (err: unknown) => {
+ assert.ok(err instanceof Error);
+ assert.match(err.message, /HTTP 400; INVALID_ARGUMENT; responseJsonSchema/);
+ assert.doesNotMatch(err.message, /private-provider-detail/);
+ return true;
+});
+assert.equal(rejectedCalls, 1, 'Provider rejection must never retry');
 let limitedCalls = 0;
 await assert.rejects(generatePractice(claim, (async (url, init) => { if (String(url).includes('generativelanguage')) { limitedCalls++; return new Response('', { status: 429 }); } return fetcher(url, init); }) as typeof fetch), /Free Gemini quota/);
 assert.equal(limitedCalls, 1);
