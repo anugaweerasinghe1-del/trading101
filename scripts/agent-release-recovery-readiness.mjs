@@ -201,6 +201,10 @@ async function run(){
     "Main changed during release witness; no valid readiness claim");
   console.log("TRADEHQ_RELEASE_RECOVERY_READINESS_V1 "+JSON.stringify(report));
   console.log("PUBLIC_RELEASE_ROUTES_PASS 5");
+  if(process.env.TRADEHQ_VERCEL_VERIFY_TOKEN){
+    const activeVercel=await collectVercelProductionEvidence({sha,token:process.env.TRADEHQ_VERCEL_VERIFY_TOKEN});
+    console.log('TRADEHQ_VERCEL_ACTIVE_PRODUCTION_CONFIRMED '+JSON.stringify(activeVercel));
+  }
   if(process.env.CLOUDFLARE_API_TOKEN){
     const cloudflare=await collectCloudflareAccountEvidence({sha,token:process.env.CLOUDFLARE_API_TOKEN});
     assert.equal((await github('/branches/main',token)).commit?.sha,sha,'Main changed during Cloudflare account verification');

@@ -20,6 +20,7 @@ try{
  await a.unsafe(readFileSync('supabase/migrations/20261016100921_native_code_learning.sql','utf8'));
 await a.unsafe(readFileSync('supabase/migrations/20261016102258_code_worker_recovery.sql','utf8'));
 await a.unsafe(readFileSync('supabase/migrations/20261016110754_admin_proposal_review.sql','utf8'));
+await a.unsafe(readFileSync('supabase/migrations/20261016135218_admin_code_publication.sql','utf8'));
  const rpc=async(client,action,who,data)=>(await client.unsafe('SELECT public.tradehq_admin_code_queue($1,$2,$3::jsonb) AS r',[action,who,data]))[0].r;
  const item=await rpc(a,'submit',owner,{requestKey:'b1700000-1111-4111-8111-000000000001',prompt:'Improve the About heading spacing while preserving every sentence and link.'});
  await a.unsafe('BEGIN');const claimed=await rpc(a,'claim',null,{runId:1,baseSha:base});assert.equal(claimed.id,item.id);assert.equal(claimed.learning.outcomes,0);
@@ -48,11 +49,30 @@ await a.unsafe(readFileSync('supabase/migrations/20261016110754_admin_proposal_r
  assert.equal(await rpc(b,'close-claim',null,{runId:100}),null);
  assert.equal((await observer.unsafe("SELECT count(*)::int AS n FROM tradehq_automation.code_events WHERE event='GITHUB_CLOSED_CONFIRMED'"))[0].n,1);
  console.log('ADMIN_PROPOSAL_REVIEW_POSTGRES_PASS: actual separate-session close-claim lock, one closure receipt/event and replay denial. Disposable database, no real GitHub action.');
+ // Distinct-session approval and publication claims use the same real database lock.
+ const publishId='d1700000-1111-4111-8111-000000000001',publishHead='c'.repeat(40);
+ await a.unsafe(`INSERT INTO tradehq_automation.code_requests(id,owner_id,request_key,prompt,status,run_id,base_sha,head_sha,pr_number) VALUES($1,$2,$3,'Disposable publication concurrency fixture','verified',300,$4,$5,999)`,[publishId,owner,'e1700000-1111-4111-8111-000000000001',base,publishHead]);
+ const publishView=await rpc(a,'review-view',owner,{id:publishId,headSha:publishHead,patchDigest:'e'.repeat(64)});
+ const approve={id:publishId,headSha:publishHead,baseSha:base,viewId:publishView.view_id};
+ await a.unsafe('BEGIN');assert.equal((await rpc(a,'approve-proposal',owner,approve)).state,'approved');
+ const approveWaiting=rpc(b,'approve-proposal',owner,approve);await a.unsafe('COMMIT');assert.equal((await approveWaiting).state,'approved');
+ await a.unsafe('BEGIN');assert.equal((await rpc(a,'publication-claim',null,{runId:301,baseSha:base})).request_id,publishId);
+ const publicationPid=(await b.unsafe('SELECT pg_backend_pid() AS pid'))[0].pid;
+ const publicationWaiting=rpc(b,'publication-claim',null,{runId:302,baseSha:base});
+ let publicationBlocked=false;const publicationDeadline=Date.now()+4000;
+ while(Date.now()<publicationDeadline){if((await observer.unsafe('SELECT wait_event_type FROM pg_stat_activity WHERE pid=$1',[publicationPid]))[0]?.wait_event_type==='Lock'){publicationBlocked=true;break;}await new Promise(r=>setTimeout(r,25));}
+ assert.ok(publicationBlocked,'Publication workers must really serialize');await a.unsafe('COMMIT');assert.equal(await publicationWaiting,null);
+ const authorization={id:publishId,headSha:publishHead,baseSha:base,runId:301};
+ assert.equal((await rpc(a,'publication-authorize',null,authorization)).state,'merging');
+ await assert.rejects(rpc(b,'publication-authorize',null,authorization),/WORKER_BINDING/);
+ assert.equal((await observer.unsafe("SELECT count(*)::int AS n FROM tradehq_automation.code_events WHERE event='OWNER_PUBLICATION_APPROVED'"))[0].n,1);
+ assert.equal((await observer.unsafe("SELECT count(*)::int AS n FROM tradehq_automation.code_events WHERE event='PUBLICATION_GATES_CONFIRMED'"))[0].n,1);
+ console.log('ADMIN_CODE_PUBLICATION_POSTGRES_PASS: independent-session approval idempotency and actual publication claim lock; one consumed merge authorization and one audit event. Disposable SQL only.');
  // An audit write failure rolls back the request as well, without consuming a phantom row.
  await a.unsafe("UPDATE tradehq_automation.code_requests SET status='failed',created_at=created_at-interval '25 hours';");
  await a.unsafe("CREATE FUNCTION tradehq_automation.fixture_audit_failure() RETURNS trigger LANGUAGE plpgsql AS $$BEGIN RAISE EXCEPTION 'fixture audit fault'; END$$;CREATE TRIGGER fixture_audit_fault BEFORE INSERT ON tradehq_automation.code_events FOR EACH ROW EXECUTE FUNCTION tradehq_automation.fixture_audit_failure();");
  await assert.rejects(rpc(a,'submit',owner,{requestKey:'c1700000-1111-4111-8111-000000000001',prompt:'Preserve all content and improve the existing heading layout.'}),/fixture audit fault/);
- assert.equal((await observer.unsafe('SELECT count(*)::int AS n FROM tradehq_automation.code_requests'))[0].n,1);
+ assert.equal((await observer.unsafe('SELECT count(*)::int AS n FROM tradehq_automation.code_requests'))[0].n,2);
  console.log('ADMIN_CODE_QUEUE_POSTGRES_PASS: actual independent worker lock wait, one committed claim/event, reconnect replay denial and atomic request/audit rollback. Disposable database; no provider call.');
 }finally{
  await Promise.allSettled([a,b,observer].filter(Boolean).map(async client=>{await client.unsafe('ROLLBACK');await client.end({timeout:1});}));

@@ -174,4 +174,4 @@ const workflow=readFileSync('.github/workflows/phase3-high-check.yml','utf8');
 const secretBinding='CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}';
 assert.equal(workflow.split(secretBinding).length-1,1,'Account secret must have exactly one main-only binding');
 const accountJob=workflow.slice(workflow.indexOf('  release-readiness:'));
-assert.ok(accountJob.includes(secretBinding) && accountJob.includes("github.event_name == 'push' && github.ref == 'refs/heads/main' && needs.validation.result == 'success'"), 'Provider secret is restricted to successfully validated protected main, never PR execution');
+assert.ok(accountJob.includes(secretBinding) && accountJob.includes("(github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main' && needs.validation.result == 'success'"), 'Provider secret is restricted to successfully validated protected main, never PR execution');

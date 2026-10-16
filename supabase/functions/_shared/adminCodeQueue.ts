@@ -1,3 +1,4 @@
+import {handlePublication} from './codePublication.ts';
 type User = {id?: string; aud?: string; is_anonymous?: boolean; email_confirmed_at?: string};
 type Job = {runId: number; mainSha: string; jobName: string};
 type Options = {
@@ -51,6 +52,7 @@ export function createAdminCodeQueue(options: Options) {
    if(input.action.startsWith('worker-')){
     let job: Job;
     try{job=await options.verifyWorker(req.headers.get('x-github-oidc')??'');}catch{return reply({code:'WORKER_IDENTITY_REQUIRED'},401);}
+    if(['worker-publication-claim','worker-publication-authorize'].includes(input.action))return reply({data:await handlePublication(input,job,null,options)});
     if(input.action==='worker-review-claim'){
      fields(input,['action']);if(job.jobName!=='Admin code queue worker')throw Error('INVALID_REQUEST');
      return reply({data:await options.rpc('close-claim',null,{runId:job.runId})});
@@ -118,6 +120,7 @@ export function createAdminCodeQueue(options: Options) {
    const auth=req.headers.get('authorization');if(!auth?.startsWith('Bearer '))return reply({code:'OWNER_SESSION_REQUIRED'},401);
    const [owner,user]=await Promise.all([options.getOwner(),options.getUser(auth.slice(7))]);
    if(!user||user.id!==owner||user.aud!=='authenticated'||user.is_anonymous===true||!user.email_confirmed_at)return reply({code:'OWNER_SESSION_REQUIRED'},403);
+   if(input.action==='approve')return reply({data:await handlePublication(input,null,owner,options)});
    if(input.action==='review'||input.action==='reject'){
     fields(input,input.action==='review'?['action','id','headSha']:['action','id','headSha','viewId']);
     if(!uuid.test(input.id)||!sha.test(input.headSha)||(input.action==='reject'&&!uuid.test(input.viewId)))throw Error('INVALID_REQUEST');
@@ -146,7 +149,7 @@ export function createAdminCodeQueue(options: Options) {
    if(input.action==='cancel'){fields(input,['action','id']);if(!uuid.test(input.id))throw Error('INVALID_REQUEST');return reply({data:await options.rpc('cancel',owner,{id:input.id})});}
    throw Error('INVALID_REQUEST');
   }catch(error){
-   const known=['INVALID_REQUEST','REQUEST_KEY_CONFLICT','REQUEST_ALREADY_ACTIVE','DAILY_CODE_LIMIT','REQUEST_NOT_QUEUED','INVALID_TRANSITION','WORKER_BINDING','PROPOSAL_NOT_VERIFIED','VALIDATION_UNAVAILABLE','REVIEW_NOT_READY','REVIEW_EXPIRED','REVIEW_DIFF_UNAVAILABLE'];
+   const known=['INVALID_REQUEST','REQUEST_KEY_CONFLICT','REQUEST_ALREADY_ACTIVE','DAILY_CODE_LIMIT','REQUEST_NOT_QUEUED','INVALID_TRANSITION','WORKER_BINDING','PROPOSAL_NOT_VERIFIED','VALIDATION_UNAVAILABLE','REVIEW_NOT_READY','REVIEW_EXPIRED','REVIEW_DIFF_UNAVAILABLE','PUBLICATION_ALREADY_APPROVED'];
    const code=error instanceof Error&&known.includes(error.message)?error.message:'QUEUE_UNAVAILABLE';
    return reply({code},code==='INVALID_REQUEST'?400:409);
   }

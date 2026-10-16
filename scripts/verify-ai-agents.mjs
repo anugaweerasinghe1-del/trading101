@@ -6,6 +6,8 @@ import YAML from "yaml";
 const scripts = [
   "scripts/agent-admin-code-worker.mjs",
   "scripts/agent-code-review.mjs",
+  "scripts/agent-code-publication.mjs",
+  "scripts/admin-code-client.mjs",
   "scripts/agent-code-request.mjs",
   "scripts/agent-monthly-ideas.mjs",
   "scripts/agent-monitor.mjs",
@@ -139,3 +141,5 @@ console.log(workloadIdentityTest.stdout.trim());
 const workloadProbeTest = spawnSync(process.execPath, ['scripts/verify-workload-probe.mjs'], { encoding: 'utf8' });
 assert.equal(workloadProbeTest.status, 0, 'Read-only identity probe regression: '+workloadProbeTest.stdout+workloadProbeTest.stderr);
 console.log(workloadProbeTest.stdout.trim());
+
+const publication=spawnSync(process.execPath,['--import','tsx','scripts/verify-code-publication.ts'],{encoding:'utf8'});assert.equal(publication.status,0,publication.stdout+publication.stderr);console.log(publication.stdout.trim());

@@ -4,32 +4,9 @@ import {appendFileSync} from 'node:fs';
 import {buildFrontendProposal} from './agent-code-request.mjs';
 import {processRejectedProposal} from './agent-code-review.mjs';
 import {collectOwnerIssueHistory} from './agent-owner-request-gate.mjs';
-const repo='anugaweerasinghe1-del/trading101';
-const endpoint='https://cbdktpjgczhthflspqjb.supabase.co/functions/v1/admin-code-queue';
+import {github,queue,context} from './admin-code-client.mjs';
+import {preparePublication} from './agent-code-publication.mjs';
 const env=process.env;
-async function github(path,method='GET',body){
- const r=await fetch('https://api.github.com/repos/'+repo+path,{method,body:body===undefined?undefined:JSON.stringify(body),redirect:'error',signal:AbortSignal.timeout(15000),
-  headers:{Authorization:'Bearer '+env.GITHUB_TOKEN,Accept:'application/vnd.github+json','Content-Type':'application/json'}});
- assert.equal(r.status,200,'GitHub context unavailable');return r.json();
-}
-async function queue(action,payload={}){
- // Mint a fresh, audience-bound identity per operation. Never log the token.
- const target=new URL(env.ACTIONS_ID_TOKEN_REQUEST_URL);assert.equal(target.protocol,'https:');
- assert.ok(target.hostname.endsWith('.actions.githubusercontent.com'));
- target.searchParams.set('audience','tradehq-admin-code-queue-v1');
- const auth=await fetch(target,{redirect:'error',signal:AbortSignal.timeout(10000),headers:{Authorization:'Bearer '+env.ACTIONS_ID_TOKEN_REQUEST_TOKEN}});
- assert.equal(auth.status,200,'GitHub job identity unavailable');const {value}=await auth.json();
- assert.ok(typeof value==='string'&&value.length<22000);
- const r=await fetch(endpoint,{method:'POST',redirect:'error',signal:AbortSignal.timeout(30000),
-  headers:{'content-type':'application/json','x-github-oidc':value},body:JSON.stringify({action,...payload})});
- const result=await r.json();assert.equal(r.status,200,'Queue operation unavailable: '+String(result.code||'UNKNOWN').slice(0,60));return result.data;
-}
-function context(){
- assert.equal(env.GITHUB_REPOSITORY,repo);assert.equal(env.GITHUB_REPOSITORY_ID,'1130435580');
- assert.equal(env.GITHUB_REF,'refs/heads/main');assert.equal(env.GITHUB_RUN_ATTEMPT,'1');
- assert.ok(['schedule','workflow_dispatch'].includes(env.GITHUB_EVENT_NAME));
- assert.match(env.GITHUB_SHA||'',/^[a-f0-9]{40}$/);assert.ok(env.GITHUB_TOKEN&&env.ACTIONS_ID_TOKEN_REQUEST_TOKEN);
-}
 async function main(){
  context();
  if(env.TRADEHQ_QUEUE_REPORT==='1'){
@@ -39,6 +16,21 @@ async function main(){
  }
  // Check current protected main and shared existing issue budget before consuming a queue item.
  const main=await github('/branches/main');assert.ok(main.protected&&main.commit.sha===env.GITHUB_SHA,'Main changed');
+ const publication=await queue('worker-publication-claim');
+ const dispatch=async(workflow,ref)=>github('/actions/workflows/'+workflow+'/dispatches','POST',{ref});
+ if(publication?.releaseSha){
+  assert.equal(publication.releaseSha,env.GITHUB_SHA);
+  await dispatch('phase3-high-check.yml','main');await dispatch('repair-control-postgres.yml','main');
+  console.log('Post-merge release checks requested; production confirmation remains pending.');return;
+ }
+ if(publication){
+  const result=await preparePublication({claim:publication,github,mainSha:env.GITHUB_SHA,dispatch,ready:async nodeId=>{
+   const r=await fetch('https://api.github.com/graphql',{method:'POST',redirect:'error',signal:AbortSignal.timeout(15000),headers:{Authorization:'Bearer '+env.GITHUB_TOKEN,'content-type':'application/json'},body:JSON.stringify({query:'mutation($id:ID!){markPullRequestReadyForReview(input:{pullRequestId:$id}){pullRequest{id isDraft}}}',variables:{id:nodeId}})});
+   assert.equal(r.status,200);const data=await r.json();assert.ok(!data.errors&&data.data?.markPullRequestReadyForReview?.pullRequest?.isDraft===false);
+  }});
+  appendFileSync(env.GITHUB_OUTPUT,'publication_id='+result.id+'\npublication_head='+result.head+'\npublication_pr='+result.pr+'\n');
+  console.log('Exact owner-approved proposal prepared for native publication checks; zero model calls.');return;
+ }
  const review=await processRejectedProposal({queue,github,mainSha:env.GITHUB_SHA});
  console.log('Owner proposal review: '+review.status+'.');
  const history=await collectOwnerIssueHistory(github);

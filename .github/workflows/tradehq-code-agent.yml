@@ -119,8 +119,12 @@ jobs:
       contents: write
       pull-requests: write
       issues: read
+      actions: write
       id-token: write
     outputs:
+      publication_id: ${{ steps.worker.outputs.publication_id }}
+      publication_head: ${{ steps.worker.outputs.publication_head }}
+      publication_pr: ${{ steps.worker.outputs.publication_pr }}
       request_id: ${{ steps.worker.outputs.request_id }}
       head_sha: ${{ steps.worker.outputs.head_sha }}
       base_sha: ${{ steps.worker.outputs.base_sha }}
@@ -134,7 +138,7 @@ jobs:
           node-version: '22'
       - name: Process one owner request without a persistent service credential
         id: worker
-        run: node scripts/agent-admin-code-worker.mjs
+        run: node --experimental-strip-types scripts/agent-admin-code-worker.mjs
         env:
           GITHUB_TOKEN: ${{ github.token }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -189,9 +193,64 @@ jobs:
         with:
           node-version: '22'
       - name: Record independently observed validation in the admin history
-        run: node scripts/agent-admin-code-worker.mjs
+        run: node --experimental-strip-types scripts/agent-admin-code-worker.mjs
         env:
           GITHUB_TOKEN: ${{ github.token }}
           TRADEHQ_QUEUE_REPORT: '1'
           QUEUE_REQUEST_ID: ${{ needs.admin-queue.outputs.request_id }}
           QUEUE_HEAD_SHA: ${{ needs.admin-queue.outputs.head_sha }}
+
+  admin-publication-previews:
+    name: Admin code publication previews
+    needs: admin-queue
+    if: needs.admin-queue.outputs.publication_head != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    permissions:
+      contents: read
+      actions: read
+      checks: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Independently check exact-head protected CI, disposable PostgreSQL and both native previews
+        run: node --experimental-strip-types scripts/agent-code-publication.mjs --probe
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          PUBLICATION_ID: ${{ needs.admin-queue.outputs.publication_id }}
+          PUBLICATION_HEAD: ${{ needs.admin-queue.outputs.publication_head }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          TRADEHQ_VERCEL_VERIFY_TOKEN: ${{ secrets.TRADEHQ_VERCEL_VERIFY_TOKEN }}
+
+  admin-publication:
+    name: Admin code publication
+    needs: [admin-queue, admin-publication-previews]
+    if: needs.admin-publication-previews.result == 'success' && needs.admin-queue.outputs.publication_head != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    permissions:
+      contents: write
+      pull-requests: write
+      actions: read
+      checks: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Redeem the owner approval once and request an exact-head protected squash merge
+        run: node --experimental-strip-types scripts/agent-code-publication.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          PUBLICATION_ID: ${{ needs.admin-queue.outputs.publication_id }}
+          PUBLICATION_HEAD: ${{ needs.admin-queue.outputs.publication_head }}
+          PUBLICATION_PR: ${{ needs.admin-queue.outputs.publication_pr }}
