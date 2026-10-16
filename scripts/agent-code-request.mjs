@@ -6,6 +6,7 @@
  */
 import fs from "node:fs/promises";
 import path from "node:path";
+import {pathToFileURL} from "node:url";
 import { requestGeminiJson } from "./gemini-free-models.mjs";
 import { inspectAiCandidate } from "./agent-code-preflight.mjs";
 import { validateOwnerCodeRequest, assertUnchangedOwnerIssue, collectOwnerIssueHistory } from "./agent-owner-request-gate.mjs";
@@ -93,6 +94,13 @@ async function main() {
   if (request.length < 20 || request.length > MAX_BODY) throw new Error("Describe a specific request in 20–2500 characters.");
   // Public GitHub issues are intentional: never accept or publish credentials, private information or user data.
   if (/-----BEGIN [A-Z ]*PRIVATE KEY-----|gh[pousr]_|github_pat_|sb_secret_|AIza[0-9A-Za-z_-]{30,}/i.test(request)) throw new Error("Possible credential detected. Remove secrets from the public issue.");
+  return buildFrontendProposal({request,branch:"ai/issue-"+issueNumber,expectedBase:ownerAdmission.baseSha,
+    recheck:async base=>assertUnchangedOwnerIssue(ownerAdmission,await github("GET","/issues/"+issueNumber),base)});
+}
+
+/** Shared engine; callers must independently authenticate admission before invoking it. */
+export async function buildFrontendProposal({request,branch,expectedBase,recheck,report=comment}) {
+  if(!/^(?:ai\/issue-[1-9][0-9]*|ai\/admin-[a-f0-9-]{36})$/.test(branch)||!/^([a-f0-9]{40})$/.test(expectedBase)||typeof recheck!=="function")throw Error("Immutable proposal context required");
   const candidates = (await collect(path.join(root, "src/pages"))).concat(await collect(path.join(root, "src/components"))).sort();
   const selection = await generate([
     "You are TradeHQ's cautious frontend engineer. Choose at most TWO existing files from the EXACT candidate list.",
@@ -105,8 +113,8 @@ async function main() {
   ].join("\n"), 500);
   const chosen = selection.paths;
   if (!Array.isArray(chosen) || !chosen.length || chosen.length > MAX_FILES || chosen.some(f => !candidates.includes(f)) || new Set(chosen).size !== chosen.length) {
-    await comment("I couldn't safely select one or two eligible frontend files. No code was changed. Please narrow the request or use normal engineering review.");
-    return;
+    await report("I couldn't safely select one or two eligible frontend files. No code was changed. Please narrow the request or use normal engineering review.");
+    return {status:"no_change",resultCode:"NO_SAFE_CHANGE"};
   }
   const originals = await Promise.all(chosen.map(async file => {
     const content = await fs.readFile(path.join(root, file), "utf8");
@@ -126,7 +134,7 @@ async function main() {
   const edits = answer.changes;
   if (!Array.isArray(edits) || edits.length !== originals.length || edits.some(c => !chosen.includes(c.path) || typeof c.content !== "string")) throw new Error("AI response did not exactly match the selected files.");
   const changes = edits.filter(edit => originals.find(x => x.path === edit.path)?.content !== edit.content);
-  if (!changes.length) { await comment("Gemini determined no safe change was necessary. No branch was created."); return; }
+  if (!changes.length) { await report("Gemini determined no safe change was necessary. No branch was created."); return {status:"no_change",resultCode:"NO_SAFE_CHANGE"}; }
   for (const edit of changes) {
     const original = originals.find(x => x.path === edit.path).content;
     if (edit.content.length < original.length * 0.65 || edit.content.length > original.length * 1.7 ||
@@ -141,17 +149,16 @@ async function main() {
   const mainRef = await github("GET", "/git/ref/heads/main");
   const baseSha = mainRef.object?.sha;
   if (!/^[0-9a-f]{40}$/.test(baseSha || "")) throw new Error("Could not verify main branch commit.");
-  if (process.env.GITHUB_SHA && baseSha !== process.env.GITHUB_SHA) throw new Error("Main branch changed during drafting. Request a fresh proposal to prevent stale-file overwrites.");
+  if (baseSha !== expectedBase) throw new Error("Main branch changed during drafting. Request a fresh proposal to prevent stale-file overwrites.");
   // The same owner issue may be edited or closed while Gemini responds. Recheck
   // its original contents and exact main SHA immediately before source writes.
-  assertUnchangedOwnerIssue(ownerAdmission, await github("GET", "/issues/" + issueNumber), baseSha);
-  const branch = "ai/issue-" + issueNumber;
+  await recheck(baseSha);
   await github("POST", "/git/refs", { ref: "refs/heads/" + branch, sha: baseSha });
   let headSha;
   for (const edit of changes) {
     const originalSha = await github("GET", "/contents/" + edit.path + "?ref=" + encodeURIComponent(branch));
     const written = await github("PUT", "/contents/" + edit.path, {
-      message: "AI proposal for request #" + issueNumber + ": " + edit.path,
+      message: (Number.isInteger(issueNumber)?"AI proposal for request #"+issueNumber:"Admin code proposal") + ": " + edit.path,
       branch, sha: originalSha.sha, content: Buffer.from(edit.content, "utf8").toString("base64"),
     });
     headSha = written.commit?.sha;
@@ -161,7 +168,7 @@ async function main() {
   if (proposedRef.object?.sha !== headSha) throw new Error("Proposal branch changed during drafting; independent verification stopped.");
   const title = "AI proposal: " + request.replace(/\s+/g, " ").slice(0, 65);
   const prBody = [
-    "Closes #" + issueNumber,
+    issueNumber ? "Closes #" + issueNumber : "Submitted from the TradeHQ owner administration desk.",
     "### Proposed change", String(answer.summary || "Frontend update").slice(0, 1200),
     "### Files", changes.map(x => "- " + x.path).join("\n"),
     "### Safety",
@@ -171,10 +178,10 @@ async function main() {
     "- Automated tests are launched in a separate read-only job without AI credentials.",
     "- The owner must review all code, security implications, AdSense/YMYL claims, and tests before merging.",
   ].join("\n\n");
-  let prUrl, prCreated = false, prError = "";
+  let prUrl, prNumber = null, prCreated = false, prError = "";
   try {
     const pr = await github("POST", "/pulls", { title, head: branch, base: "main", body: prBody, draft: true });
-    prUrl = pr.html_url;
+    prUrl = pr.html_url; prNumber=pr.number;
     prCreated = true;
   } catch (error) {
     prError = error instanceof Error ? error.message.slice(0,250) : "Unknown GitHub PR permission error";
@@ -182,17 +189,21 @@ async function main() {
   }
   if (process.env.GITHUB_OUTPUT) await fs.appendFile(process.env.GITHUB_OUTPUT,
     "branch=" + branch + "\nhead_sha=" + headSha + "\nbase_sha=" + baseSha + "\npr_created=" + String(prCreated) + "\n");
-  await comment("AI proposed edits on an isolated branch. Review here: " + prUrl +
+  await report("AI proposed edits on an isolated branch. Review here: " + prUrl +
     (prCreated ? "\n\nDraft PR created successfully; human review required." :
     "\n\n⚠️ Automatic draft PR creation failed: " + prError +
     "\nRepository owner: check Settings → Actions → General → Workflow permissions → Allow GitHub Actions to create pull requests.") +
     "\nNo changes were merged or deployed. Check the separate read-only validation job.");
   console.log("AI edited " + changes.length + " file(s); draft PR created: " + prCreated + ". " + prUrl);
+  return {status:prCreated?"proposed":"failed",resultCode:prCreated?"PROPOSAL_CREATED":"PROVIDER_OR_SCOPE_STOP",headSha:prCreated?headSha:null,prNumber};
 }
+if (process.argv[1] && import.meta.url===pathToFileURL(process.argv[1]).href) {
 try { await main(); }
 catch(error) {
   const message = error instanceof Error ? error.message : "Unknown agent failure";
   console.error("Agent stopped safely:", message);
   try { await comment("AI coding request paused. No automatic production changes. Reason: " + message.slice(0, 1000)); } catch { /* Logging was already attempted. */ }
   process.exitCode = 1;
+}
+
 }

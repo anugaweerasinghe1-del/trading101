@@ -56,7 +56,11 @@ async function bounded(action) {
   })]);} finally {clearTimeout(timer);}
 }
 export function createGitHubWorkloadVerifier({readGitHub,fetcher=fetch,clock=Date.now,activationMode='disabled'}={}) {
-  assert.ok(['identity-only-fixture','live-read-only-identity'].includes(activationMode),
+  const adminQueue=activationMode==='live-admin-code-queue';
+  const workflow=adminQueue?'.github/workflows/tradehq-code-agent.yml':WORKFLOW;
+  const workflowId=adminQueue?380190833:WORKFLOW_ID;
+  const audience=adminQueue?'tradehq-admin-code-queue-v1':AUDIENCE;
+  assert.ok(['identity-only-fixture','live-read-only-identity','live-admin-code-queue'].includes(activationMode),
     'Workload identity is disabled; no repair authority exists');
   assert.ok(typeof readGitHub==='function' && typeof fetcher==='function' && typeof clock==='function');
   return async function verifyJob(token) {
@@ -86,25 +90,25 @@ export function createGitHubWorkloadVerifier({readGitHub,fetcher=fetch,clock=Dat
         new TextEncoder().encode(pieces[0]+'.'+pieces[1])),true,'Invalid job signature');
       stage='TOKEN_TIME';validTime(claims,clock(),checks);
       stage='CLAIM_SCOPE';
-      const ownWorkflow=REPO+'/'+WORKFLOW+'@refs/heads/main';
+      const ownWorkflow=REPO+'/'+workflow+'@refs/heads/main';
       const hasJobRef=Object.hasOwn(claims,'job_workflow_ref'),hasJobSha=Object.hasOwn(claims,'job_workflow_sha');
       // Optional job claims can attest this exact collector. They cannot select
       // another reusable workflow, revision or source. A SHA alone is ambiguous.
       const jobWorkflowBinding=hasJobRef
         ? claims.job_workflow_ref===ownWorkflow&&(!hasJobSha||claims.job_workflow_sha===claims.sha)
         : !hasJobSha;
-      checks({issuer:claims.iss===ISSUER,audience:claims.aud===AUDIENCE,subject:subjects.has(claims.sub),
+      checks({issuer:claims.iss===ISSUER,audience:claims.aud===audience,subject:subjects.has(claims.sub),
         repository:claims.repository===REPO,repositoryId:claims.repository_id===String(REPO_ID),
         owner:claims.repository_owner==='anugaweerasinghe1-del',ownerId:claims.repository_owner_id===String(OWNER_ID),
         visibility:claims.repository_visibility==='public',ref:claims.ref==='refs/heads/main',refType:claims.ref_type==='branch',
-        event:claims.event_name==='workflow_run',runner:claims.runner_environment==='github-hosted',
-        workflowRef:claims.workflow_ref===REPO+'/'+WORKFLOW+'@refs/heads/main',
+        event:adminQueue?['schedule','workflow_dispatch'].includes(claims.event_name):claims.event_name==='workflow_run',runner:claims.runner_environment==='github-hosted',
+        workflowRef:claims.workflow_ref===ownWorkflow,
         sourceSha:SHA.test(claims.sha||''),workflowSha:claims.workflow_sha===claims.sha,
         jobWorkflowBinding,
         tokenId:typeof claims.jti==='string'&&/^[A-Za-z0-9_-]{16,128}$/.test(claims.jti)});
       stage='CLAIM_IDS';
       const runId=id(claims.run_id),attempt=id(claims.run_attempt),checkId=id(claims.check_run_id);
-      assert.ok(attempt<=100);
+      assert.ok(adminQueue?attempt===1:attempt<=100);
       const read=path=>bounded(signal=>readGitHub(path,{signal}));
       stage='NATIVE_READS';
       const [main,run,jobs]=await Promise.all([
@@ -114,9 +118,9 @@ export function createGitHubWorkloadVerifier({readGitHub,fetcher=fetch,clock=Dat
       stage='MAIN_BINDING';
       assert.ok(main.name==='main' && main.protected===true && main.commit?.sha===claims.sha);
       stage='RUN_BINDING';
-      assert.ok(run.id===runId && run.run_attempt===attempt && run.workflow_id===WORKFLOW_ID
-        && run.path===WORKFLOW && run.head_sha===claims.sha && run.head_branch==='main'
-        && run.event==='workflow_run' && run.status==='in_progress'
+      assert.ok(run.id===runId && run.run_attempt===attempt && run.workflow_id===workflowId
+        && run.path===workflow && run.head_sha===claims.sha && run.head_branch==='main'
+        && run.event===claims.event_name && run.status==='in_progress'
         && run.repository?.id===REPO_ID && run.repository.owner?.id===OWNER_ID
         && run.head_repository?.id===REPO_ID,'Independent current workflow identity differs');
       stage='JOB_BINDING';
@@ -124,7 +128,7 @@ export function createGitHubWorkloadVerifier({readGitHub,fetcher=fetch,clock=Dat
         && Array.isArray(jobs.jobs) && jobs.jobs.length===jobs.total_count,'Incomplete current attempt jobs');
       const match=jobs.jobs.filter(job=>job.check_run_url===`https://api.github.com/repos/${REPO}/check-runs/${checkId}`);
       assert.equal(match.length,1);
-      const job=match[0];assert.ok(job.name==='collect' && job.run_id===runId && job.head_sha===claims.sha
+      const job=match[0];assert.ok((adminQueue?['Admin code queue worker','Admin code queue result'].includes(job.name):job.name==='collect') && job.run_id===runId && job.head_sha===claims.sha
         && job.status==='in_progress' && Number.isFinite(Date.parse(job.started_at))
         && Date.parse(job.started_at)<=claims.iat*1000,'Actual collector job is not running');
       stage='MAIN_RECHECK';
@@ -133,7 +137,7 @@ export function createGitHubWorkloadVerifier({readGitHub,fetcher=fetch,clock=Dat
       validTime(claims,clock(),checks);
       const tokenDigest=Buffer.from(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(ISSUER+'\n'+claims.jti))).toString('hex');
       const principal=Object.freeze({schema:'tradehq-github-job-principal-v1',repositoryId:REPO_ID,
-        workflowId:WORKFLOW_ID,runId,attempt,checkId,mainSha:claims.sha,expiresAt:Math.min(claims.exp,claims.iat+60)*1000,
+        workflowId,runId,attempt,checkId,mainSha:claims.sha,jobName:job.name,expiresAt:Math.min(claims.exp,claims.iat+60)*1000,
         tokenDigest,authorization:deny});verified.add(principal);return principal;
     } catch {
       const error=Error('Workload identity rejected; no repair or release authority granted');
