@@ -134,7 +134,9 @@ const fetcher = (async (url: string | URL | Request, init?: RequestInit) => {
   if (String(url).includes("generativelanguage")) {
     assert.equal(init?.redirect, 'error');
     aiCalls++; assert.ok(!String(url).includes(claim.apiKey));
-    const prompt = JSON.parse(JSON.parse(String(init!.body)).contents[0].parts[0].text);
+    const request = JSON.parse(String(init!.body));
+    assert.equal(request.generationConfig.thinkingConfig.thinkingLevel, 'LOW');
+    const prompt = JSON.parse(request.contents[0].parts[0].text);
     assert.equal(prompt.covers.length, 4);
     assert.ok(prompt.style.some((s: string) => s.includes("TradeHQ")));
     assert.equal((init!.headers as Record<string, string>)["x-goog-api-key"], claim.apiKey);

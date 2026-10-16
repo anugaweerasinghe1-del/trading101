@@ -31,7 +31,7 @@ for (let i = 0; i < 50; i++) assert.equal(exerciseForDate(bank, new Date(Date.UT
 assert.equal(exerciseForDate(bank, '2026-11-28').id, bank.exercises[0].id);
 assert.equal(exerciseForDate(bank, '2026-10-08').id, bank.exercises[49].id);
 const memory = new Map<string, string>(), storage = { getItem: (k: string) => memory.get(k) ?? null, setItem: (k: string, v: string) => { memory.set(k, v); } };
-let progress = newPractice(bank, '2026-10-09'); progress.answers = [1, 2, 0]; savePractice(progress, storage);
+const progress = newPractice(bank, '2026-10-09'); progress.answers = [1, 2, 0]; savePractice(progress, storage);
 assert.equal(savePractice({ ...progress, answers: [1] }, storage).progress.answers.length, 3);
 assert.equal(savePractice({ ...progress, bankId: 'another', exercise: bank.exercises[1] }, storage).progress.bankId, bank.id);
 // Two tabs can submit different answers before either receives the storage event.
@@ -98,6 +98,8 @@ const claim = { lease: id, effectiveFrom: '2026-12-09', apiKey: 'test-only', mod
 const fetcher = (async (url: string | URL | Request, init?: RequestInit) => {
  if (String(url).includes('generativelanguage')) { calls++; assert.ok(!String(url).includes(claim.apiKey)); assert.equal(init?.redirect, 'error');
   const b = JSON.parse(String(init?.body)); assert.ok(b.generationConfig.responseJsonSchema); assert.equal(b.contents.length, 1);
+  // Google's direct REST ThinkingLevel enum uses uppercase names.
+  assert.equal(b.generationConfig.thinkingConfig.thinkingLevel, 'LOW');
   return new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: JSON.stringify({ exercises: chunk(0) }) }] } }] })); }
  return new Response('<main>' + 'Trusted test reference. '.repeat(120) + '</main>', { headers: { 'Content-Type': 'text/html' } });
 }) as typeof fetch;
