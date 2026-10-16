@@ -57,7 +57,7 @@ export function verifyReleaseWitness({head,commit,checks,statuses,previousChecks
       'A newer CI check is pending; do not accept an older workflow');
     const run=new URL(newest.details_url||'https://invalid.invalid');
     assert.ok(run.origin==='https://github.com'
-      && /^\\/anugaweerasinghe1-del\\/trading101\\/actions\\/runs\\/[1-9][0-9]*\\/job\\/[1-9][0-9]*$/.test(run.pathname)
+      && new RegExp('^/anugaweerasinghe1-del/trading101/actions/runs/[1-9][0-9]*/job/[1-9][0-9]*$').test(run.pathname)
       && !run.search&&!run.hash,'Newest validation workflow identity invalid');
     const runPath=run.pathname.split('/job/')[0];
     selectedChecks=ciChecks.filter(x=>x.check_suite.id===suite);
