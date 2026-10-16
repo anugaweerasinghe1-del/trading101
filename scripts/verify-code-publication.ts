@@ -11,7 +11,7 @@ await db.exec(`CREATE ROLE anon;CREATE ROLE authenticated;CREATE ROLE service_ro
 for(const file of ['20261016092040_admin_code_queue','20261016100921_native_code_learning','20261016102258_code_worker_recovery','20261016110754_admin_proposal_review','20261016135218_admin_code_publication'])await db.exec(readFileSync('supabase/migrations/'+file+'.sql','utf8'));
 await db.query(`INSERT INTO tradehq_automation.code_requests(id,owner_id,request_key,prompt,status,run_id,base_sha,head_sha,pr_number) VALUES($1,$2,$3,'Disposable approved publication fixture','verified',1,$4,$5,999)`,[id,owner,crypto.randomUUID(),base,head]);
 const rpc=async(action:string,who:string|null,data:unknown)=>(await db.query<{r:any}>('SELECT public.tradehq_admin_code_queue($1,$2,$3::jsonb) AS r',[action,who,JSON.stringify(data)])).rows[0].r;
-let current=base,prHead=head,prDraft=true,prMerged=false,job='Admin code queue worker',runId=100,probeSuccess=true,nativeStatus='in_progress',production=false,untrusted=false;
+let current=base,prHead=head,prDraft=true,prMerged=false,job='Admin code queue worker',runId=100,probeSuccess=true,nativeStatus='in_progress',production=false,untrusted=false,nativeConclusion='success';
 const date=new Date(Date.now()-1000).toISOString();
 const read=async(path:string):Promise<any>=>{
  if(path==='/branches/main')return {protected:true,commit:{sha:current}};
@@ -26,7 +26,7 @@ const read=async(path:string):Promise<any>=>{
  if(path.startsWith('/actions/runs?'))return {total_count:2,workflow_runs:[{id:200,path:'.github/workflows/phase3-high-check.yml',workflow_id:368399831,head_sha:target,repository:{id:1130435580},head_repository:{id:1130435580},event:'workflow_dispatch',run_attempt:1,status:'completed',conclusion:'success',check_suite_id:200,run_started_at:date,updated_at:date},{id:201,path:'.github/workflows/repair-control-postgres.yml',workflow_id:381063243,head_sha:target,repository:{id:1130435580},head_repository:{id:1130435580},event:'workflow_dispatch',run_attempt:1,status:'completed',conclusion:'success',check_suite_id:201,run_started_at:date,updated_at:date}]};
  if(path.includes('/check-runs?')){
   const names=['TradeHQ Phase 3 tests','TradeHQ Cloudflare compatibility / Cloudflare build and SEO','TradeHQ Required validation',...(production?['TradeHQ Release & Recovery Readiness (read only)']:[])];
-  return {total_count:names.length,check_runs:names.map(name=>({name,head_sha:target,app:{id:untrusted?1:15368,slug:'github-actions'},check_suite:{id:200},status:'completed',conclusion:'success',started_at:date,completed_at:date}))};
+  return {total_count:names.length,check_runs:names.map(name=>({name,head_sha:target,app:{id:untrusted?1:15368,slug:'github-actions'},check_suite:{id:200},status:'completed',conclusion:name==='TradeHQ Release & Recovery Readiness (read only)'?nativeConclusion:'success',started_at:date,completed_at:date}))};
  }
  throw Error('Unexpected fixture read '+path);
 };
@@ -70,7 +70,11 @@ job='Admin code queue worker';runId=101;nativeStatus='completed';
 const release=(await call('worker-publication-claim',{},'worker')).data;assert.equal(release.releaseSha,merged);
 assert.equal((await call('list')).data.publications[0].state,'merged','A merge is not production success');
 assert.equal((await call('worker-publication-claim',{},'worker')).data,null,'Release dispatch is consumed once');
-production=true;runId=102;assert.equal((await call('worker-publication-claim',{},'worker')).data,null);
+production=true;
+for(const conclusion of ['skipped','failure','cancelled']){
+ nativeConclusion=conclusion;assert.equal(await publicationChecks(read,merged,{production:true}),false,'Limited release signals cannot confirm production without successful native readiness');
+}
+nativeConclusion='success';runId=102;assert.equal((await call('worker-publication-claim',{},'worker')).data,null);
 const history=(await call('list')).data;assert.equal(history.publications[0].state,'published');
 for(const event of ['OWNER_PUBLICATION_APPROVED','PUBLICATION_CLAIMED','PUBLICATION_GATES_CONFIRMED','PUBLICATION_MERGE_CONFIRMED','PUBLICATION_RELEASE_CHECKS_REQUESTED','PUBLICATION_PRODUCTION_CONFIRMED'])assert.equal(history.events.filter((e:any)=>e.event===event).length,1,event);
 assert.equal(writes,1,'Reconciliation cannot repeat a merge');
