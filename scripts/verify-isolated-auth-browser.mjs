@@ -509,7 +509,8 @@ async function main(){
     assert.equal(await devtools.evaluate("document.querySelector('[aria-label=\"Editorial review overview\"]').textContent.includes('reuses the explanation')"),true);
     await devtools.evaluate("[...document.querySelectorAll('[aria-label=\"Editorial review overview\"] button')].find(e=>e.textContent.startsWith('Inspect exercise 2:')).click()");
     await wait(()=>devtools.evaluate("document.querySelector('[aria-label=\"Exercise review\"] h2')?.textContent==="+JSON.stringify(reviewDocument.exercises[1].title)), 'Flag opens the correct answer/explanation preview');
-    assert.equal(await devtools.evaluate("document.activeElement?.getAttribute('aria-label')"),'Exercise review','Keyboard focus follows review jump');
+    // The editor moves focus in requestAnimationFrame after its React update.
+    await wait(()=>devtools.evaluate("document.activeElement?.getAttribute('aria-label')==='Exercise review'"),'Keyboard focus follows review jump');
     assert.equal(await devtools.evaluate("document.querySelector('[aria-label=\"Exercise review\"]').textContent.includes('— correct')"),true);
     for(const status of ['draft','published','rejected']){
       await devtools.evaluate("(()=>{const e=document.querySelector('aside select');e.value="+JSON.stringify(status)+";e.dispatchEvent(new Event('change',{bubbles:true}));return true})()");
