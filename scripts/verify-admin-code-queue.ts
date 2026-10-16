@@ -10,15 +10,16 @@ await db.exec(`CREATE ROLE anon;CREATE ROLE authenticated;CREATE ROLE service_ro
  CREATE FUNCTION public.tradehq_repair_registered_owner() RETURNS uuid LANGUAGE sql AS $$SELECT '${owner}'::uuid$$;`);
 await db.exec(readFileSync('supabase/migrations/20261016092040_admin_code_queue.sql','utf8'));
 await db.exec(readFileSync('supabase/migrations/20261016100921_native_code_learning.sql','utf8'));
+await db.exec(readFileSync('supabase/migrations/20261016102258_code_worker_recovery.sql','utf8'));
 let userId=owner,jobName='Admin code queue worker',worker=true,rpcs=0;
-let validation='success';
+let validation='success',workerRunId=runId,nativeBase=sha,nativeStatus='completed';
 const rpc=async(action:string,who:string|null,data:Record<string,unknown>)=>{
  rpcs++;const r=await db.query<{data:unknown}>('SELECT public.tradehq_admin_code_queue($1,$2,$3::jsonb) AS data',[action,who,JSON.stringify(data)]);return r.rows[0].data;
 };
 const handler=createAdminCodeQueue({getKey:()=>key,getOwner:async()=>owner,
  getUser:async token=>token==='fixture-owner-session'?{id:userId,aud:'authenticated',email_confirmed_at:'2026-10-01'}:null,
- verifyWorker:async token=>{if(!worker||token!=='signed-fixture')throw Error();return {runId,mainSha:sha,jobName};},rpc,allow:async()=>true,
- readGitHub:async path=>path.includes('/files?')?[{filename:'src/pages/About.tsx',status:'modified'}]:path.startsWith('/pulls/')?{changed_files:1,user:{login:'github-actions[bot]',id:41898282},state:'open',draft:true,base:{ref:'main'},head:{ref:'ai/admin-'+request.id,sha:head,repo:{id:1130435580}}}
+ verifyWorker:async token=>{if(!worker||token!=='signed-fixture')throw Error();return {runId:workerRunId,mainSha:sha,jobName};},rpc,allow:async()=>true,
+ readGitHub:async path=>/^\/actions\/runs\/\d+$/.test(path)?{id:Number(path.split('/').at(-1)),workflow_id:380190833,path:'.github/workflows/tradehq-code-agent.yml',head_sha:nativeBase,head_branch:'main',status:nativeStatus,repository:{id:1130435580},head_repository:{id:1130435580}}:path.includes('/files?')?[{filename:'src/pages/About.tsx',status:'modified'}]:path.startsWith('/pulls/')?{changed_files:1,user:{login:'github-actions[bot]',id:41898282},state:'open',draft:true,base:{ref:'main'},head:{ref:'ai/admin-'+request.id,sha:head,repo:{id:1130435580}}}
  :{total_count:1,jobs:[{name:'Admin code independent validation',status:'completed',conclusion:validation}]},
 });
 async function call(data:unknown,{admin=key,token='fixture-owner-session',oidc=''}={}){
@@ -71,5 +72,36 @@ await db.exec("UPDATE tradehq_automation.code_validation_memory SET conclusion='
 memory=(await call({action:'list'})).body.data.learning;assert.equal(memory.outcomes,1);assert.deepEqual(memory.pausedPaths,[]);
 await db.exec("UPDATE tradehq_automation.code_validation_memory SET observed_at=now()-interval '31 days'");
 assert.equal((await call({action:'list'})).body.data.learning.outcomes,0);
+const orphanId=crypto.randomUUID(),orphanRun=runId+100;
+await db.query(`INSERT INTO tradehq_automation.code_requests(id,owner_id,request_key,prompt,status,run_id,base_sha,head_sha,pr_number)
+ VALUES($1,$2,$3,'Disposable interrupted result callback fixture','proposed',$4,$5,$6,166)`,[orphanId,owner,crypto.randomUUID(),orphanRun,sha,head]);
+await db.query(`INSERT INTO tradehq_automation.code_validation_memory(request_id,files) VALUES($1,'["src/pages/About.tsx"]')`,[orphanId]);
+await db.query(`INSERT INTO tradehq_automation.code_worker_runs(run_id,base_sha,request_id,status) VALUES($1,$2,$3,'proposed')`,[orphanRun,sha,orphanId]);
+jobName='Admin code queue worker';workerRunId=orphanRun+1;nativeBase='c'.repeat(40);
+assert.equal((await call({action:'worker-claim'},{oidc:'signed-fixture'})).body.code,'VALIDATION_UNAVAILABLE','Foreign original head cannot unblock a proposal');
+nativeBase=sha;nativeStatus='in_progress';
+assert.equal((await call({action:'worker-claim'},{oidc:'signed-fixture'})).body.data,null);
+assert.equal((await call({action:'list'})).body.data.requests.find((r: any)=>r.id===orphanId).status,'proposed','Active validation is not guessed');
+nativeStatus='completed';workerRunId++;
+assert.equal((await call({action:'worker-claim'},{oidc:'signed-fixture'})).body.data,null);
+let recovered=(await call({action:'list'})).body.data;
+assert.equal(recovered.requests.find((r: any)=>r.id===orphanId).status,'verified');
+assert.equal(recovered.workerRuns.find((r: any)=>r.run_id===orphanRun).status,'verified');
+assert.equal(recovered.workerRuns.find((r: any)=>r.run_id===workerRunId).status,'idle');
+assert.equal(recovered.learning.outcomes,1,'Only the independently recovered outcome enters current memory');
+assert.equal(recovered.events.filter((e: any)=>e.request_id===orphanId&&e.event==='NATIVE_RESULT_RECONCILED').length,1);
+workerRunId++;await call({action:'worker-claim'},{oidc:'signed-fixture'});
+recovered=(await call({action:'list'})).body.data;
+assert.equal(recovered.events.filter((e: any)=>e.request_id===orphanId&&e.event==='NATIVE_RESULT_RECONCILED').length,1,'Recovery is idempotent; the request is never re-executed');
+const canceledId=crypto.randomUUID(),canceledRun=orphanRun+20;
+await db.query(`INSERT INTO tradehq_automation.code_requests(id,owner_id,request_key,prompt,status,run_id,base_sha,head_sha,pr_number)
+ VALUES($1,$2,$3,'Disposable cancelled native validation fixture','proposed',$4,$5,$6,167)`,[canceledId,owner,crypto.randomUUID(),canceledRun,sha,head]);
+await db.query(`INSERT INTO tradehq_automation.code_validation_memory(request_id,files) VALUES($1,'["src/pages/About.tsx"]')`,[canceledId]);
+validation='cancelled';workerRunId++;
+assert.equal((await call({action:'worker-claim'},{oidc:'signed-fixture'})).status,200,'GitHub double-l cancelled conclusion is understood');
+recovered=(await call({action:'list'})).body.data;
+assert.equal(recovered.requests.find((r: any)=>r.id===canceledId).status,'validation_failed');
+assert.equal(recovered.learning.outcomes,1,'Canceled validations unblock the queue but are not learning failures');
 await db.close();
+console.log('ADMIN_CODE_RECOVERY_PASS: interrupted callback reconciled from the original native run, wrong-head and unfinished runs denied, one recovered label/event, idle check-ins and no request replay. Isolated SQL/native transport fixtures only.');
 console.log('ADMIN_CODE_QUEUE_PASS: real SQL lifecycle, duplicate/lost-response idempotency, concurrent claim replay denial, owner/session denial, independent native-result binding and durable event history. Provider/job identities are fixtures; no live model or GitHub write.');

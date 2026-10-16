@@ -18,6 +18,7 @@ try{
  CREATE FUNCTION public.tradehq_repair_registered_owner() RETURNS uuid LANGUAGE sql AS $$SELECT '${owner}'::uuid$$;`);
  await a.unsafe(readFileSync('supabase/migrations/20261016092040_admin_code_queue.sql','utf8'));
  await a.unsafe(readFileSync('supabase/migrations/20261016100921_native_code_learning.sql','utf8'));
+await a.unsafe(readFileSync('supabase/migrations/20261016102258_code_worker_recovery.sql','utf8'));
  const rpc=async(client,action,who,data)=>(await client.unsafe('SELECT public.tradehq_admin_code_queue($1,$2,$3::jsonb) AS r',[action,who,data]))[0].r;
  const item=await rpc(a,'submit',owner,{requestKey:'b1700000-1111-4111-8111-000000000001',prompt:'Improve the About heading spacing while preserving every sentence and link.'});
  await a.unsafe('BEGIN');const claimed=await rpc(a,'claim',null,{runId:1,baseSha:base});assert.equal(claimed.id,item.id);assert.equal(claimed.learning.outcomes,0);
@@ -30,6 +31,8 @@ try{
  await b.end();b=postgres(url.href,opts);assert.equal(await rpc(b,'claim',null,{runId:1,baseSha:base}),null,'Restart/replay cannot reclaim');
  assert.equal((await observer.unsafe("SELECT count(*)::int AS n FROM tradehq_automation.code_events WHERE event='WORKER_CLAIMED'"))[0].n,1);
  assert.equal((await observer.unsafe('SELECT count(*)::int AS n FROM tradehq_automation.code_learning_decisions'))[0].n,1);
+ assert.equal((await observer.unsafe("SELECT count(*)::int AS n FROM tradehq_automation.code_worker_runs WHERE status='claimed'"))[0].n,1);
+ assert.equal((await observer.unsafe("SELECT count(*)::int AS n FROM tradehq_automation.code_worker_runs WHERE status='idle'"))[0].n,1);
  // An audit write failure rolls back the request as well, without consuming a phantom row.
  await a.unsafe("UPDATE tradehq_automation.code_requests SET status='failed',created_at=created_at-interval '25 hours';");
  await a.unsafe("CREATE FUNCTION tradehq_automation.fixture_audit_failure() RETURNS trigger LANGUAGE plpgsql AS $$BEGIN RAISE EXCEPTION 'fixture audit fault'; END$$;CREATE TRIGGER fixture_audit_fault BEFORE INSERT ON tradehq_automation.code_events FOR EACH ROW EXECUTE FUNCTION tradehq_automation.fixture_audit_failure();");
