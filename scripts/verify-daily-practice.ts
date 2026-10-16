@@ -100,10 +100,14 @@ const fetcher = (async (url: string | URL | Request, init?: RequestInit) => {
   const b = JSON.parse(String(init?.body)); assert.ok(b.generationConfig.responseJsonSchema); assert.equal(b.contents.length, 1);
   // Google's direct REST ThinkingLevel enum uses uppercase names.
   assert.equal(b.generationConfig.thinkingConfig.thinkingLevel, 'LOW');
-  return new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: JSON.stringify({ exercises: chunk(0) }) }] } }] })); }
+  return new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: JSON.stringify({ exercises: chunk(0) }) }] } }],
+    usageMetadata: { promptTokenCount: 512, candidatesTokenCount: 2048, totalTokenCount: 2560 } })); }
  return new Response('<main>' + 'Trusted test reference. '.repeat(120) + '</main>', { headers: { 'Content-Type': 'text/html' } });
 }) as typeof fetch;
-assert.equal((await generatePractice(claim, fetcher)).exercises.length, 10); assert.equal(calls, 1);
+const observedPart = await generatePractice(claim, fetcher);
+assert.equal(observedPart.exercises.length, 10); assert.equal(calls, 1);
+assert.deepEqual(observedPart.research.usage, { scope: 'this_generated_part_only', part: 1,
+  inputTokens: 512, outputTokens: 2048, totalTokens: 2560 });
 await assert.rejects(generatePractice({ ...claim, existing: chunk(0) }, fetcher), /repeats/);
 // Distinct IDs, titles and prompts must not hide copied scenarios in the SAME response.
 for (const reworded of [false, true]) {
