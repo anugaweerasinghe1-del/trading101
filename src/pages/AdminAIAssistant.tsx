@@ -5,6 +5,7 @@ import { summarizeReleaseEvidence, type ReleaseCheck, type ReleaseRun } from "@/
 import { supabase } from "@/integrations/supabase/client";
 import AdminChatPilot from "@/components/AdminChatPilot";
 import AdminRepairControls from "@/components/AdminRepairControls";
+import AdminCodeQueue from "@/components/AdminCodeQueue";
 import { Bot, CheckCircle2, Code2, ExternalLink, GitPullRequest, KeyRound, Lock, MessageSquare, ShieldCheck, Sparkles } from "lucide-react";
 
 type GithubIssue = { number: number; title: string; html_url: string; created_at: string; state: string; user?: { login: string }; pull_request?: unknown };
@@ -118,8 +119,10 @@ export default function AdminAIAssistant() {
         {githubError && <p role="status" className="rounded-xl border border-amber-500/30 p-3 text-sm text-amber-400">{githubError} These records may be stale or incomplete.</p>}
         {githubCheckedAt && <p className="text-xs text-muted-foreground">GitHub data checked {githubCheckedAt.toLocaleString()}. Changes and approvals occur directly on GitHub.</p>}
         {tab==="chat" ? <AdminChatPilot adminKey={key} onDraft={draft => { setPrompt(draft); setTab("requests"); }} /> : tab==="requests" ? <>
-          <section className={borderCard+" space-y-4"}>
-            <div className="flex items-center gap-3"><Bot className="w-6 h-6 text-primary"/><h2 className="text-xl font-semibold">Tell Gemini what to improve</h2></div>
+          <AdminCodeQueue adminKey={key} initialPrompt={prompt} />
+          <details className={borderCard+" space-y-4"}>
+            <summary className="cursor-pointer font-semibold">Use the GitHub request fallback</summary>
+            <div className="flex items-center gap-3"><Bot className="w-6 h-6 text-primary"/><h2 className="text-xl font-semibold">Open a code request on GitHub</h2></div>
             <p className="text-sm text-muted-foreground">Describe a specific frontend change. The next step opens a prefilled GitHub issue for you to submit. The AI then proposes a code change on a separate branch and runs isolated checks. Nothing merges automatically.</p>
             <label className="block space-y-2 text-sm"><span>Change request (20–2500 characters)</span>
               <textarea rows={5} maxLength={2500} placeholder="Example: Improve the spacing and hierarchy of the About page on mobile while preserving all existing content and links." value={prompt} onChange={e=>setPrompt(e.target.value)} className="w-full resize-y bg-background border border-border rounded-xl p-4 leading-relaxed"/>
@@ -129,7 +132,7 @@ export default function AdminAIAssistant() {
               <a href={canSend?issueUrl:undefined} onClick={e=>{if(!canSend)e.preventDefault();}} target="_blank" rel="noopener noreferrer" aria-disabled={!canSend} className={"rounded-xl px-5 py-3 text-sm font-medium inline-flex items-center gap-2 "+(canSend?"bg-primary text-primary-foreground":"bg-muted text-muted-foreground pointer-events-none")}>Continue securely on GitHub <ExternalLink className="w-4 h-4"/></a>
             </div>
             <p className="text-xs text-amber-500"><strong>GitHub issues are public.</strong> Never include API keys, passwords, personal information, account records, or private logs. Gemini is disabled until the repository's free-tier API-key secret is configured. GitHub may also require permission to let Actions create pull requests.</p>
-          </section>
+          </details>
           <section className={borderCard+" space-y-4"}>
             <div className="flex items-center gap-3"><GitPullRequest className="w-5 h-5 text-primary"/><h2 className="font-semibold">Pending AI code proposals</h2></div>
             {prs.length === 0 ? <p className="text-sm text-muted-foreground">{githubError ? "Approval queue cannot be verified." : "No open AI pull requests returned."}</p> : prs.map(pr => <div key={pr.number} className="rounded-xl border border-border p-3 text-sm space-y-2">

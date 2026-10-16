@@ -90,6 +90,7 @@ async function main(){
     freeConfirmed:true,hasApiKey:true,model:'gemini-3.5-flash'};
   const repairRequests={status:0,stop:0};
   const chatDraft='Improve About page mobile spacing while preserving every existing sentence and link.';
+  let codeQueueRows=[],codeQueueEvents=[],codeQueueWrites=0;
   try{
     server=createServer((req,res)=>{
       const parsed=new URL(req.url||"/","http://localhost");
@@ -119,6 +120,20 @@ async function main(){
       if(route==='/functions/v1/admin-reviews' && req.method==='POST'){
         if(req.headers['x-admin-key']!==ADMIN_FIXTURE_KEY)return json(401,{error:'fixture_admin_denied'});
         return json(200,{data:[]});
+      }
+      if(route==='/functions/v1/admin-code-queue' && req.method==='POST'){
+        if(req.headers['x-admin-key']!==ADMIN_FIXTURE_KEY||req.headers.authorization!=='Bearer '+JWT)return json(401,{code:'OWNER_SESSION_REQUIRED'});
+        let content='';req.on('data',x=>{content+=x;});req.on('end',()=>{
+          const input=JSON.parse(content);
+          if(input.action==='list')return json(200,{data:{requests:codeQueueRows,events:codeQueueEvents}});
+          if(input.action==='submit'){
+            const found=codeQueueRows.find(x=>x.request_key===input.requestKey);if(found)return json(200,{data:found});
+            codeQueueWrites++;const row={id:'a1700000-1111-4111-8111-000000000009',prompt:input.prompt,request_key:input.requestKey,status:'queued',created_at:new Date().toISOString(),updated_at:new Date().toISOString(),run_id:null,head_sha:null,pr_number:null,result_code:null};
+            codeQueueRows=[row];codeQueueEvents=[{id:1,request_id:row.id,at:row.created_at,event:'OWNER_REQUEST_QUEUED'}];return json(200,{data:row});
+          }
+          if(input.action==='cancel'&&codeQueueRows[0]?.id===input.id){codeQueueWrites++;codeQueueRows[0].status='canceled';codeQueueEvents.push({id:2,request_id:input.id,at:new Date().toISOString(),event:'OWNER_REQUEST_CANCELED'});return json(200,{data:codeQueueRows[0]});}
+          return json(400,{code:'INVALID_REQUEST'});
+        });return;
       }
       if(route==='/functions/v1/admin-agent-chat' && req.method==='POST'){
         if(req.headers['x-admin-key']!==ADMIN_FIXTURE_KEY)return json(401,{error:'fixture_admin_denied'});
@@ -388,6 +403,16 @@ async function main(){
     await wait(()=>devtools.evaluate("!!document.querySelector('input[aria-label=\"Admin master key\"]')"),'owner controls admin input');
     await adminInput('input[aria-label="Admin master key"]',ADMIN_FIXTURE_KEY);await adminClick('Unlock AI workspace');
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Repair controls')"),'owner control panel');
+    await wait(()=>devtools.evaluate("document.querySelector('[aria-label=\"Website coding queue\"]').textContent.includes('No website coding requests')"),'server code queue loaded');
+    await adminInput('[aria-label="Website coding queue"] textarea',chatDraft);
+    await adminClick('Submit to coding agent');
+    await wait(()=>devtools.evaluate("document.querySelector('[aria-label=\"Website coding queue\"]').textContent.includes('OWNER REQUEST QUEUED')"),'owner request and durable activity rendered');
+    await adminClick('Submit to coding agent');await wait(()=>devtools.evaluate("!document.querySelector('[aria-label=\"Website coding queue\"] button').disabled"),'idempotent submit finished');
+    assert.equal(codeQueueWrites,1,'A deliberate duplicate click must keep the same request key');
+    await adminClick('Cancel queued request');
+    await wait(()=>devtools.evaluate("document.querySelector('[aria-label=\"Website coding queue\"]').textContent.includes('OWNER REQUEST CANCELED')"),'cancellation recorded');
+    assert.equal(codeQueueWrites,2);
+    console.log('ISOLATED_ADMIN_CODE_QUEUE_BROWSER_PASS: actual compiled owner form submits directly, retries one request identity, renders server audit and cancels queued work. Loopback only; no real code or provider action.');
     await adminClick('Check repair status');
     await wait(()=>devtools.evaluate("document.body.textContent.includes('A stop has not been confirmed')"),'paused controls not advertised as stopped');
     await adminClick('Stop repairs');

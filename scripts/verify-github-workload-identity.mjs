@@ -15,7 +15,7 @@ async function signed(payload=claims,header={alg:'RS256',typ:'JWT',kid:'fixture-
   const text=encode(header)+'.'+encode(payload);
   return text+'.'+Buffer.from(await crypto.subtle.sign('RSASSA-PKCS1-v1_5',pair.privateKey,new TextEncoder().encode(text))).toString('base64url');
 }
-function fixture({keys={keys:[publicKey]},mutate=()=>{},clock=()=>now,fetchStatus=200}={}) {
+function fixture({keys={keys:[publicKey]},mutate=()=>{},clock=()=>now,fetchStatus=200,admin=false}={}) {
   const reads=[],calls=[];
   const main={name:'main',protected:true,commit:{sha}};
   const run={id:38404898111,run_attempt:1,workflow_id:381133473,path,head_sha:sha,head_branch:'main',event:'workflow_run',status:'in_progress',
@@ -23,7 +23,7 @@ function fixture({keys={keys:[publicKey]},mutate=()=>{},clock=()=>now,fetchStatu
   const jobs={total_count:1,jobs:[{name:'collect',run_id:38404898111,head_sha:sha,status:'in_progress',started_at:new Date(now-30000).toISOString(),
     check_run_url:'https://api.github.com/repos/'+repo+'/check-runs/115321838458'}]};
   mutate({main,run,jobs});
-  const verify=createGitHubWorkloadVerifier({activationMode:'identity-only-fixture',clock,
+  const verify=createGitHubWorkloadVerifier({activationMode:admin?'live-admin-code-queue':'identity-only-fixture',clock,
     fetcher:async(url,options)=>{calls.push(url);assert.equal(url,'https://token.actions.githubusercontent.com/.well-known/jwks');assert.equal(options.redirect,'error');assert.ok(options.signal);return new Response(JSON.stringify(keys),{status:fetchStatus});},
     readGitHub:async(url,options)=>{reads.push(url);assert.ok(options.signal);if(url==='/branches/main')return structuredClone(main);
       if(url==='/actions/runs/38404898111')return structuredClone(run);
@@ -112,3 +112,22 @@ const changed=createGitHubWorkloadVerifier({activationMode:'identity-only-fixtur
   }});
 await assert.rejects(()=>changed(token));rejected++;
 console.log('GITHUB_WORKLOAD_IDENTITY_PASS: actual disposable RSA signatures, fixed GitHub key origin, current immutable repo/workflow/job/main bindings, time/algorithm/key/claim/metadata rejection ('+rejected+' cases), private token omission and unimportable short-lived principal. Default disabled; no real OIDC token, credential, endpoint or write authority.');
+
+// Separate, explicit authority boundary for the owner-submitted admin queue.
+const queuePath='.github/workflows/tradehq-code-agent.yml';
+const queueClaims={...claims,aud:'tradehq-admin-code-queue-v1',event_name:'schedule',workflow_ref:repo+'/'+queuePath+'@refs/heads/main'};
+function queueFixture(change=()=>{}) {
+ return fixture({admin:true,mutate:s=>{s.run.workflow_id=380190833;s.run.path=queuePath;s.run.event='schedule';s.jobs.jobs[0].name='Admin code queue worker';change(s);}});
+}
+const queued=await queueFixture().verify(await signed(queueClaims));
+assert.equal(queued.jobName,'Admin code queue worker');assert.equal(queued.workflowId,380190833);
+await assert.rejects(fixture().verify(await signed(queueClaims)));
+await assert.rejects(queueFixture().verify(await signed(claims)));
+await assert.rejects(queueFixture().verify(await signed({...queueClaims,event_name:'pull_request'})));
+await assert.rejects(queueFixture().verify(await signed({...queueClaims,run_attempt:'2'})));
+await assert.rejects(queueFixture(s=>{s.jobs.jobs[0].name='untrusted-job';}).verify(await signed(queueClaims)));
+await assert.rejects(queueFixture(s=>{s.main.protected=false;}).verify(await signed(queueClaims)));
+await assert.rejects(queueFixture().verify(await signed({...queueClaims,job_workflow_ref:repo+'/other.yml@refs/heads/main'})));
+const reported=await queueFixture(s=>{s.jobs.jobs[0].name='Admin code queue result';}).verify(await signed(queueClaims));
+assert.equal(reported.jobName,'Admin code queue result');
+console.log('ADMIN_QUEUE_IDENTITY_PASS: signed audience/workflow/job separation, protected current main, first-attempt-only, hostile/reusable workflow and PR rejection; no persistent worker credential.');

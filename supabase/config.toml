@@ -1,5 +1,9 @@
 project_id = "cbdktpjgczhthflspqjb"
 
+[functions.admin-code-queue]
+# Independently verifies the owner session+master key or a signed GitHub workload.
+verify_jwt = false
+
 [functions.market-analysis]
 verify_jwt = true
 

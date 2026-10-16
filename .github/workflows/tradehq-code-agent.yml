@@ -3,6 +3,9 @@ name: TradeHQ AI Code Proposals
 on:
   issues:
     types: [opened]
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -14,7 +17,7 @@ concurrency:
 jobs:
   propose:
     # Public issues are untrusted. Only the exact repository owner can request AI code proposals.
-    if: github.event.issue.user.login == github.repository_owner && github.event.issue.title == '[TradeHQ Code Request]' && !github.event.issue.pull_request
+    if: github.event_name == 'issues' && github.event.issue.user.login == github.repository_owner && github.event.issue.title == '[TradeHQ Code Request]' && !github.event.issue.pull_request
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
@@ -106,3 +109,89 @@ jobs:
             exit 1
           fi
           echo "Draft PR creation and independent validation verified. Production remains unchanged until owner review."
+
+  admin-queue:
+    name: Admin code queue worker
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && github.actor == github.repository_owner))
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: read
+      id-token: write
+    outputs:
+      request_id: ${{ steps.worker.outputs.request_id }}
+      head_sha: ${{ steps.worker.outputs.head_sha }}
+      base_sha: ${{ steps.worker.outputs.base_sha }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Process one owner request without a persistent service credential
+        id: worker
+        run: node scripts/agent-admin-code-worker.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_AGENT_MODEL: gemini-3.5-flash-lite
+
+  admin-validate:
+    name: Admin code independent validation
+    needs: admin-queue
+    if: needs.admin-queue.outputs.head_sha != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ needs.admin-queue.outputs.head_sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+          cache: npm
+      - run: node scripts/verify-ai-pr-scope.mjs
+        env:
+          TRADEHQ_BASE_SHA: ${{ needs.admin-queue.outputs.base_sha }}
+          TRADEHQ_HEAD_SHA: ${{ needs.admin-queue.outputs.head_sha }}
+      - run: npm ci
+      - run: npx tsc --noEmit -p tsconfig.app.json
+      - run: npm run verify:backend
+      - run: node --import tsx scripts/verify-course-workflow.ts
+      - run: node --import tsx scripts/verify-daily-practice.ts
+      - run: npm run build:cloudflare
+        env:
+          TRADEHQ_CLOUDFLARE_LIVE: '0'
+
+  admin-result:
+    name: Admin code queue result
+    needs: [admin-queue, admin-validate]
+    if: always() && needs.admin-queue.outputs.head_sha != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Record independently observed validation in the admin history
+        run: node scripts/agent-admin-code-worker.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          TRADEHQ_QUEUE_REPORT: '1'
+          QUEUE_REQUEST_ID: ${{ needs.admin-queue.outputs.request_id }}
+          QUEUE_HEAD_SHA: ${{ needs.admin-queue.outputs.head_sha }}

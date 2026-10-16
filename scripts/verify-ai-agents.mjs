@@ -4,6 +4,7 @@ import assert from "node:assert/strict";
 import YAML from "yaml";
 
 const scripts = [
+  "scripts/agent-admin-code-worker.mjs",
   "scripts/agent-code-request.mjs",
   "scripts/agent-monthly-ideas.mjs",
   "scripts/agent-monitor.mjs",
@@ -119,6 +120,12 @@ console.log(constrainedRunnerTest.stdout.trim());
 const adminChatTest = spawnSync(process.execPath, ['--import', 'tsx', 'scripts/verify-admin-agent-chat.ts'], { encoding: 'utf8' });
 assert.equal(adminChatTest.status, 0, 'Admin chat pilot regression: '+adminChatTest.stdout+adminChatTest.stderr);
 console.log(adminChatTest.stdout.trim());
+const codeQueueTest=spawnSync(process.execPath,['--import','tsx','scripts/verify-admin-code-queue.ts'],{encoding:'utf8'});
+assert.equal(codeQueueTest.status,0,'Admin coding queue regression: '+codeQueueTest.stdout+codeQueueTest.stderr);
+console.log(codeQueueTest.stdout.trim());
+const codeEngineTest=spawnSync(process.execPath,['scripts/verify-admin-code-engine.mjs'],{encoding:'utf8'});
+assert.equal(codeEngineTest.status,0,'Shared coding engine regression: '+codeEngineTest.stdout+codeEngineTest.stderr);
+console.log(codeEngineTest.stdout.trim());
 const ownerControlTest = spawnSync(process.execPath, ['--import', 'tsx', 'scripts/verify-repair-owner-control.mjs'], { encoding: 'utf8' });
 assert.equal(ownerControlTest.status, 0, 'Owner stop HTTP regression: '+ownerControlTest.stdout+ownerControlTest.stderr);
 console.log(ownerControlTest.stdout.trim());
