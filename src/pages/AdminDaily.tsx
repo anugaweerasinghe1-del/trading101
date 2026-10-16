@@ -9,7 +9,13 @@ import { PracticeReviewSummary } from '@/components/daily/PracticeReviewSummary'
 import type { DailyGenerationStatus } from '@/lib/dailyGenerationStatus';
 import { PracticeVisual } from '@/components/DailyPractice';
 import { validateBatch, validateExercises, type DailyBatch } from '../../supabase/functions/_shared/dailyPractice';
-interface Draft { id: string; status: string; revision: number; document: DailyBatch; research?: { method?: string; checks?: string[] } }
+interface Draft {
+  id: string; status: string; revision: number; document: DailyBatch;
+  research?: {
+    method?: string; model?: string; generatedAt?: string; checks?: string[];
+    usage?: { inputTokens?: number | null; outputTokens?: number | null; totalTokens?: number | null } | null;
+  };
+}
 type Status = DailyGenerationStatus;
 const button = 'rounded-xl border border-white/15 px-4 py-2 text-sm disabled:opacity-40';
 export default function AdminDaily() {
@@ -70,6 +76,13 @@ export default function AdminDaily() {
         {!rows.some(row => filter === 'all' || row.status === filter) && <p className="text-sm text-muted-foreground py-3">No banks in this view. Previously approved practice stays available.</p>}</aside>
       {doc && e && <section className="min-w-0 space-y-5">
         <PracticeReviewSummary exercises={doc.exercises} onInspect={exerciseIndex => { setIndex(exerciseIndex); setPreview(true); requestAnimationFrame(() => { exercisePanel.current?.scrollIntoView({ block: 'start' }); exercisePanel.current?.focus({ preventScroll: true }); }); }} />
+        {selected?.research && (selected.research.model || selected.research.usage || selected.research.checks?.length) ? <aside aria-label="Daily generation provenance" className="rounded-xl border border-white/10 bg-card/50 p-4 space-y-2 text-xs text-muted-foreground">
+          <h2 className="font-semibold text-sm text-foreground">Generation evidence for editorial review</h2>
+          {selected.research.model && <p>Recorded model: {selected.research.model}</p>}
+          {selected.research.usage && <p>Provider-reported tokens for the final successful 10-case part only: input {selected.research.usage.inputTokens ?? 'not reported'} · output {selected.research.usage.outputTokens ?? 'not reported'} · total {selected.research.usage.totalTokens ?? 'not reported'}.</p>}
+          {selected.research.usage && <p>These counts are not the five-part cycle total, live remaining quota, or proof of free-tier eligibility.</p>}
+          {selected.research.checks?.length ? <ul className="list-disc pl-5 space-y-1" aria-label="Generator checks, not owner approval">{selected.research.checks.map((check, i) => <li key={i}>{check}</li>)}</ul> : null}
+        </aside> : null}
         <section ref={exercisePanel} tabIndex={-1} aria-label="Exercise review" className="space-y-5 scroll-mt-5"><div className="flex flex-wrap gap-3 items-end"><label className="text-sm">Start date<input type="date" value={doc.effectiveFrom} className="block mt-2 p-2 rounded-lg border border-white/15 bg-background" onChange={v => { setDoc({ ...doc, effectiveFrom: v.target.value }); setReviewed(false); }} /></label><button className={button} onClick={() => setPreview(!preview)}>{preview ? 'Edit exercise' : 'Preview exercise'}</button></div>
         <label className="block text-sm">Exercise<select className="block mt-2 w-full bg-background rounded-xl border border-white/15 p-3" value={index} onChange={v => setIndex(Number(v.target.value))}>{doc.exercises.map((ex, i) => <option value={i} key={ex.id}>{i + 1}. {ex.title}</option>)}</select></label>
         {preview ? <article className="rounded-2xl border border-white/10 p-5 space-y-4"><h2 className="text-xl font-bold">{e.title}</h2><p className="text-sm leading-relaxed">{e.scenario}</p><PracticeVisual exercise={e} />{e.questions.map((q, i) => <div key={i} className="border-t border-white/10 pt-4 space-y-2"><h3 className="font-medium text-sm">{i + 1}. {q.prompt}</h3><ul className="space-y-1 text-sm">{q.options.map((o, n) => <li key={n} className={n === q.correctAnswer ? 'text-primary' : 'text-muted-foreground'}>{n + 1}. {o}{n === q.correctAnswer ? ' — correct' : ''}</li>)}</ul><p className="text-sm leading-relaxed text-muted-foreground">{q.explanation}</p></div>)}<h3 className="font-medium text-sm">{e.reflection}</h3><p className="text-sm text-muted-foreground leading-relaxed">{e.reflectionGuide}</p>{e.sources.map(s => <a key={s.url} className="block text-primary text-xs underline" href={s.url} target="_blank" rel="noopener noreferrer">{s.label}</a>)}</article>
