@@ -68,6 +68,12 @@ export async function safeGeminiRejectionDetails(response: Response): Promise<st
       }
       if (field) break;
     }
+    // The REST API may supply only error.message (without fieldViolations).
+    // Classify four fixed config identifiers in memory; never echo the message.
+    if (!field && typeof error?.message === 'string' && error.message.length <= 4096) {
+      const candidate = error.message.match(/\b(thinkingLevel|responseJsonSchema|responseMimeType|maxOutputTokens)\b/i)?.[1];
+      field = hints.find(hint => hint.toLowerCase() === candidate?.toLowerCase()) ?? '';
+    }
   } catch {
     // Never echo an unknown provider payload even when parsing or reading fails.
   }
