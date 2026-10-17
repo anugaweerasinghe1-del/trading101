@@ -3,6 +3,7 @@ import { allow, clientIp } from "../_shared/rateLimit.ts";
 import { coinQuote } from "../_shared/providerQuotes.ts";
 import { CRYPTO_ID_MAP, COMMODITY_MAP, fetchCryptoData, fetchCryptoCandles, fetchStockData, fetchForexData, type MarketData, type CandleData, type DataProvenance } from "../_shared/marketProviders.ts";
 import { cachePrice, readSharedCryptoQuote } from "../_shared/priceCache.ts";
+import { readTraditionalQuote } from "../_shared/traditionalQuoteCache.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -104,9 +105,13 @@ Deno.serve(async (req) => {
         servedSharedQuote = !!data;
         if (!data) data = await fetchCryptoData(assetId);
       } else if (assetType === 'stock' || assetType === 'etf') {
-        data = await fetchStockData(assetId);
+        data = await readTraditionalQuote(assetId, "Polygon") ?? await readTraditionalQuote(assetId, "Alpha Vantage");
+        servedSharedQuote = !!data;
+        if (!data) data = await fetchStockData(assetId);
       } else if (assetType === 'forex') {
-        data = await fetchForexData(assetId);
+        data = await readTraditionalQuote(assetId, "Alpha Vantage");
+        servedSharedQuote = !!data;
+        if (!data) data = await fetchForexData(assetId);
       } else if (assetType === 'commodity') {
         if (COMMODITY_MAP[assetId]) {
           const coinId = COMMODITY_MAP[assetId];
