@@ -131,6 +131,12 @@ export async function fetchCryptoCandles(assetId: string, days: number = 1): Pro
   } catch { return []; }
 }
 
+/** A placeholder demo key is not an authenticated provider budget. Skip unsupported upstream requests. */
+export function configuredAlphaVantageKey(value: string | null | undefined): string | null {
+  const key = value?.trim();
+  return key && key.toLowerCase() !== 'demo' ? key : null;
+}
+
 export async function fetchStockData(assetId: string): Promise<MarketData | null> {
   const symbol = STOCK_SYMBOLS[assetId];
   if (!symbol) return null;
@@ -153,7 +159,8 @@ export async function fetchStockData(assetId: string): Promise<MarketData | null
   }
 
   // Alpha Vantage fallback
-  const avKey = Deno.env.get('ALPHA_VANTAGE_API_KEY') || 'demo';
+  const avKey = configuredAlphaVantageKey(Deno.env.get('ALPHA_VANTAGE_API_KEY'));
+  if (!avKey) return null;
   try {
     const response = await fetch(
       `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${avKey}`,
@@ -175,7 +182,8 @@ export async function fetchForexData(assetId: string): Promise<MarketData | null
   const pair = FOREX_PAIRS[assetId];
   if (!pair) return null;
 
-  const avKey = Deno.env.get('ALPHA_VANTAGE_API_KEY') || 'demo';
+  const avKey = configuredAlphaVantageKey(Deno.env.get('ALPHA_VANTAGE_API_KEY'));
+  if (!avKey) return null;
   try {
     const response = await fetch(
       `https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=${pair.from}&to_currency=${pair.to}&apikey=${avKey}`,
