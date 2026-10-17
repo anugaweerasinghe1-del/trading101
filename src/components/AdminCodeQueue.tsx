@@ -8,6 +8,7 @@ type Review={request_id:string;view_id:string;decision:string|null;close_state:s
 type Publication={request_id:string;state:string;head_sha:string;merge_sha:string|null;run_id:number|null;release_run_id?:number|null;result_code:string|null};
 type Diff={id:string;headSha:string;files:{path:string;patch:string;additions:number;deletions:number}[];receipt:Review};
 type WorkerRun={run_id:number;status:string;first_seen_at:string;updated_at:string};
+type PrLifecycle={state:'open'|'closed'|'merged';headSha:string;checkedAt:number};
 type Decision={request_id:string;context:Learning};
 type Event={id:number;request_id:string;at:string;event:string;run_id:number|null};
 const messages:Record<string,string>={OWNER_SESSION_REQUIRED:'Sign in with the registered owner account to use the coding queue.',ADMIN_KEY_REQUIRED:'The administrator key could not be verified.',
@@ -17,6 +18,8 @@ export default function AdminCodeQueue({adminKey,initialPrompt=''}:{adminKey:str
  const [prompt,setPrompt]=useState(initialPrompt),[rows,setRows]=useState<Row[]>([]),[events,setEvents]=useState<Event[]>([]);
  const [learning,setLearning]=useState<Learning|null>(null),[decisions,setDecisions]=useState<Decision[]>([]);
  const [workerRuns,setWorkerRuns]=useState<WorkerRun[]>([]);
+ const [prStates,setPrStates]=useState<Record<number,PrLifecycle>>({});
+ const prCache=useRef<Record<number,PrLifecycle>>({});
  const [publications,setPublications]=useState<Publication[]>([]);
  const [reviews,setReviews]=useState<Review[]>([]),[diff,setDiff]=useState<Diff|null>(null);
  const [busy,setBusy]=useState(false),[message,setMessage]=useState(''),[checked,setChecked]=useState<Date|null>(null);
@@ -36,6 +39,36 @@ export default function AdminCodeQueue({adminKey,initialPrompt=''}:{adminKey:str
   const timer=window.setInterval(()=>{if(!pending.current&&document.visibilityState!=='hidden')void load().catch(e=>{if(active.current)setMessage(e.message);});},60000);
   return()=>{active.current=false;window.clearInterval(timer);};
  },[load]);
+ // Display-only GitHub observation: an owner may have merged or closed a draft
+ // outside admin. Never turn this public response into a publication receipt.
+ useEffect(()=>{
+  const candidates=rows.filter(row=>row.pr_number&&row.head_sha&&['verified','validation_failed'].includes(row.status)).slice(0,3);
+  if(!candidates.length)return;
+  let canceled=false;
+  void (async()=>{
+   for(const row of candidates){
+    const number=row.pr_number!;
+    const cached=prCache.current[number];
+    if(cached&&cached.headSha===row.head_sha&&(cached.state!=='open'||Date.now()-cached.checkedAt<15*60_000))continue;
+    try{
+     const response=await fetch('https://api.github.com/repos/anugaweerasinghe1-del/trading101/pulls/'+number,
+      {headers:{Accept:'application/vnd.github+json'},signal:AbortSignal.timeout(10000)});
+     if(!response.ok)continue;
+     const pr=await response.json() as {number?:number;state?:string;merged_at?:string|null;head?:{sha?:string}};
+     if(pr.number!==number||pr.head?.sha!==row.head_sha||!['open','closed'].includes(pr.state??''))continue;
+     const state:PrLifecycle['state']=pr.state==='open'?'open':pr.merged_at?'merged':'closed';
+     prCache.current[number]={state,headSha:row.head_sha!,checkedAt:Date.now()};
+     if(!canceled)setPrStates({...prCache.current});
+    }catch{/* If GitHub cannot be reached, keep the status unknown; the server remains authoritative. */}
+   }
+  })();
+  return()=>{canceled=true;};
+ },[rows]);
+ const externallyClosed=(row:Row)=>{
+  if(!row.pr_number||!row.head_sha)return null;
+  const match=prStates[row.pr_number];
+  return match&&match.headSha===row.head_sha&&match.state!=='open'?match.state:null;
+ };
  const run=async(work:()=>Promise<void>)=>{if(pending.current)return;pending.current=true;setBusy(true);setMessage('');
   try{await work();}catch(e){if(active.current)setMessage(e instanceof Error?e.message:'Action unavailable.');}
   finally{pending.current=false;if(active.current)setBusy(false);}
@@ -68,7 +101,8 @@ export default function AdminCodeQueue({adminKey,initialPrompt=''}:{adminKey:str
    <div className="flex gap-4 text-sm">{row.pr_number&&<a target="_blank" rel="noopener noreferrer" className="text-primary" href={'https://github.com/anugaweerasinghe1-del/trading101/pull/'+row.pr_number}>Review code proposal #{row.pr_number} ↗</a>}{row.run_id&&<a target="_blank" rel="noopener noreferrer" className="text-primary" href={'https://github.com/anugaweerasinghe1-del/trading101/actions/runs/'+row.run_id}>Worker and tests ↗</a>}
     {row.status==='queued'&&<button disabled={busy} onClick={()=>void run(async()=>{await call('cancel',{id:row.id});await load();})}>Cancel queued request</button>}</div>
    {decisions.filter(d=>d.request_id===row.id).map(d=><p key={d.request_id} className="text-xs text-muted-foreground">Recorded learning decision: {d.context.outcomes} prior native outcomes; {d.context.files.filter(f=>f.paused).length} files paused.</p>)}
-   {row.head_sha&&['verified','validation_failed'].includes(row.status)&&!reviews.find(r=>r.request_id===row.id)?.decision&&!publications.some(p=>p.request_id===row.id)&&<button type="button" disabled={busy} className="text-sm text-primary" onClick={()=>void run(async()=>{const result=await call('review',{id:row.id,headSha:row.head_sha});if(active.current)setDiff(result);})}>Review proposal in admin</button>}
+   {externallyClosed(row)&&<p role="status" className="text-xs text-amber-400">GitHub confirms this exact proposal was {externallyClosed(row)==='merged'?'merged manually':'closed'} outside the admin publication workflow. No admin publication receipt has been recorded; this does not count as automated production confirmation.</p>}
+   {row.head_sha&&['verified','validation_failed'].includes(row.status)&&!externallyClosed(row)&&!reviews.find(r=>r.request_id===row.id)?.decision&&!publications.some(p=>p.request_id===row.id)&&<button type="button" disabled={busy} className="text-sm text-primary" onClick={()=>void run(async()=>{const result=await call('review',{id:row.id,headSha:row.head_sha});if(active.current)setDiff(result);})}>Review proposal in admin</button>}
    {publications.filter(p=>p.request_id===row.id).map(p=><p key={p.request_id} className="text-xs text-muted-foreground">Publication approved · {p.state==='published'?'Production confirmed on both providers':p.state==='merged'?'Merged; production verification pending':p.state==='blocked'?'Blocked; inspect the proposal and worker before requesting a new change':p.state==='merging'?'Merge authorized; awaiting independent confirmation':p.state==='claimed'?'Worker is validating the exact proposal and previews':'Waiting for the worker'}.{p.result_code?' '+p.result_code.replace(/_/g,' ')+'.':''} {p.run_id&&<a className="text-primary" target="_blank" rel="noopener noreferrer" href={'https://github.com/anugaweerasinghe1-del/trading101/actions/runs/'+p.run_id}>Publication worker ↗</a>} {p.release_run_id&&<a className="text-primary" target="_blank" rel="noopener noreferrer" href={'https://github.com/anugaweerasinghe1-del/trading101/actions/runs/'+p.release_run_id}>Release checks worker ↗</a>}</p>)}
    {reviews.filter(r=>r.request_id===row.id&&r.decision).map(review=><p key={review.request_id} className="text-xs text-muted-foreground">You declined this proposal · {review.close_state==='closed'?'GitHub draft closure confirmed':review.close_state==='blocked'?'Closure could not be confirmed; inspect the GitHub proposal':review.close_state==='claimed'?'Worker is checking the GitHub draft':'Waiting for the worker to close the GitHub draft'}. {review.close_run_id&&<a className="text-primary" target="_blank" rel="noopener noreferrer" href={'https://github.com/anugaweerasinghe1-del/trading101/actions/runs/'+review.close_run_id}>Closure worker ↗</a>}</p>)}
    {diff?.id===row.id&&<section aria-label="Proposal code review" className="rounded-xl border border-border p-4 space-y-3">
