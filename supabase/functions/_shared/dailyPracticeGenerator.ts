@@ -6,7 +6,8 @@ export interface PracticeClaim {
   exercises: DailyExercise[]; existing: Pick<DailyExercise, 'title' | 'scenario' | 'questions'>[];
 }
 const str = { type: 'string' };
-const obj = (properties: Record<string, unknown>) => ({ type: 'object', properties, required: Object.keys(properties), additionalProperties: false });
+// Keep the provider schema small; enforce all structural and editorial constraints locally.
+const obj = (properties: Record<string, unknown>) => ({ type: 'object', properties, required: Object.keys(properties) });
 export async function generatePractice(claim: PracticeClaim, fetcher = fetch) {
   if (!claim.apiKey) throw new Error('Add a free Gemini API key in course settings.');
   if (!['gemini-3.5-flash', 'gemini-3.5-flash-lite'].includes(claim.model)) throw new Error('Choose a supported free-tier model in course settings.');
@@ -31,11 +32,11 @@ export async function generatePractice(claim: PracticeClaim, fetcher = fetch) {
       'Return only the structured object. Unique hyphenated IDs include the period and part; keep all titles and prompts distinct from every previous item. No reviewer metadata: owner approval happens separately.',
     ],
   };
-  const schema = obj({ exercises: { type: 'array', minItems: 10, maxItems: 10, items: obj({
+  const schema = obj({ exercises: { type: 'array', items: obj({
     id: str, title: str, category: { ...str, enum: [...DAILY_CATEGORIES] }, scenario: str,
-    visual: obj({ caption: str, unit: str, bars: { type: 'array', minItems: 2, maxItems: 6, items: obj({ label: str, value: { type: 'number', minimum: 0, maximum: 1e9 } }) } }),
-    questions: { type: 'array', minItems: 10, maxItems: 10, items: obj({ prompt: str, options: { type: 'array', minItems: 3, maxItems: 3, items: str }, correctAnswer: { type: 'integer', minimum: 0, maximum: 2 }, explanation: str }) },
-    reflection: str, reflectionGuide: str, sources: { type: 'array', minItems: 1, maxItems: 4, items: obj({ label: str, url: { ...str, enum: references.map(s => s.url) } }) },
+    visual: obj({ caption: str, unit: str, bars: { type: 'array', items: obj({ label: str, value: { type: 'number' } }) } }),
+    questions: { type: 'array', items: obj({ prompt: str, options: { type: 'array', items: str }, correctAnswer: { type: 'integer' }, explanation: str }) },
+    reflection: str, reflectionGuide: str, sources: { type: 'array', items: obj({ label: str, url: str }) },
   }) } });
   const response = await fetcher('https://generativelanguage.googleapis.com/v1beta/models/' + encodeURIComponent(claim.model) + ':generateContent', {
     method: 'POST', redirect: 'error', headers: { 'Content-Type': 'application/json', 'x-goog-api-key': claim.apiKey },
