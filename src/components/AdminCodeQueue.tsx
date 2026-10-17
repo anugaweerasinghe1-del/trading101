@@ -49,7 +49,7 @@ export default function AdminCodeQueue({adminKey,initialPrompt=''}:{adminKey:str
    for(const row of candidates){
     const number=row.pr_number!;
     const cached=prCache.current[number];
-    if(cached&&cached.headSha===row.head_sha&&(cached.state!=='open'||Date.now()-cached.checkedAt<15*60_000))continue;
+    if(cached&&cached.headSha===row.head_sha&&(cached.state==='merged'||Date.now()-cached.checkedAt<15*60_000))continue;
     try{
      const response=await fetch('https://api.github.com/repos/anugaweerasinghe1-del/trading101/pulls/'+number,
       {headers:{Accept:'application/vnd.github+json'},signal:AbortSignal.timeout(10000)});
