@@ -10,7 +10,8 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, { auth: { 
 type PublishedCourse = { slug: string; published_at: string; title: string | null };
 const STORAGE_KEY = "tradehq-seen-course-publications-v1";
 const RECENT_DAYS = 7;
-const RECHECK_MS = 45000;
+// Published courses arrive only a few times per month; avoid polling every 45 seconds.
+const RECHECK_MS = 5 * 60 * 1000;
 export function CoursePublicationNotices() {
   const navigate = useNavigate();
   const checking = useRef(false);
@@ -51,7 +52,8 @@ export function CoursePublicationNotices() {
     const timer = window.setInterval(() => void check(), RECHECK_MS);
     const onFocus = () => void check();
     window.addEventListener("focus", onFocus);
-    return () => { active = false; window.clearInterval(timer); window.removeEventListener("focus", onFocus); };
+    document.addEventListener("visibilitychange", onFocus);
+    return () => { active = false; window.clearInterval(timer); window.removeEventListener("focus", onFocus); document.removeEventListener("visibilitychange", onFocus); };
   }, [navigate]);
   return null;
 }
