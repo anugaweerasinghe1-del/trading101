@@ -117,7 +117,7 @@ function renderHead(r: RouteMeta, template: string, body: string, page: Publishe
   }
 
   html = html.replace(/<link\s+rel=["']canonical["'][^>]*>\s*/gi, "");
-  html = html.replace(/<\/head>/i, `  <link rel="canonical" href="${url}" />\n  </head>`);
+  html = html.replace(/<\/head>/i, `  <link rel="canonical" href="${url}" data-static-head />\n  </head>`);
 
   html = html.replace(
     /<meta\s[^>]*property=["']og:url["'][^>]*>/i,

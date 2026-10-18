@@ -19,7 +19,7 @@ createRoot(document.getElementById("root")!).render(
 requestAnimationFrame(() => {
   requestAnimationFrame(() => {
     document.head
-      .querySelectorAll("meta[data-static-head]")
+      .querySelectorAll("meta[data-static-head], link[data-static-head]")
       .forEach((el) => el.remove());
   });
 });
