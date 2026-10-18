@@ -1,0 +1,3180 @@
+{
+  "schema": "tradehq-approved-release-inspection-v1",
+  "release_sha": "88c1b418aba784984bef74ed15d7ede9beb99e61",
+  "merged_pr": 183,
+  "observed_on": "2026-10-18",
+  "verdict": "NOT READY TO REAPPLY",
+  "static_urls": [
+    {
+      "url": "https://www.thetradehq.com/",
+      "production_url": "https://www.thetradehq.com/",
+      "checked_at": "2026-10-18T14:29:38Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/"
+      ],
+      "h1": 1,
+      "title": "TradeHQ \u2014 Free Paper Trading Simulator | $100K Virtual Cash (No Signup)",
+      "publisher_path": "/",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/trade",
+      "production_url": "https://www.thetradehq.com/trade",
+      "checked_at": "2026-10-18T14:29:38Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/trade"
+      ],
+      "h1": 1,
+      "title": "Paper Trade 170 Assets \u2014 Free Simulator | TradeHQ",
+      "publisher_path": "/trade",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/markets",
+      "production_url": "https://www.thetradehq.com/markets",
+      "checked_at": "2026-10-18T14:29:38Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/markets"
+      ],
+      "h1": 1,
+      "title": "Practice Markets \u2014 Stocks, Crypto, ETFs, Forex | TradeHQ",
+      "publisher_path": "/markets",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/portfolio",
+      "production_url": "https://www.thetradehq.com/portfolio",
+      "checked_at": "2026-10-18T14:29:38Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/portfolio"
+      ],
+      "h1": 1,
+      "title": "Your Practice Portfolio \u2014 Positions, P&amp;L, Analytics | TradeHQ",
+      "publisher_path": "/portfolio",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/learn",
+      "production_url": "https://www.thetradehq.com/learn",
+      "checked_at": "2026-10-18T14:29:38Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/learn"
+      ],
+      "h1": 1,
+      "title": "Learn to Trade \u2014 Free Lessons, Guides &amp; Glossary | TradeHQ",
+      "publisher_path": "/learn",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/learn-trading-guide",
+      "production_url": "https://www.thetradehq.com/learn-trading-guide",
+      "checked_at": "2026-10-18T14:29:38Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/learn-trading-guide"
+      ],
+      "h1": 1,
+      "title": "Complete Beginner Trading Guide | TradeHQ",
+      "publisher_path": "/learn-trading-guide",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/leaderboard",
+      "production_url": "https://www.thetradehq.com/leaderboard",
+      "checked_at": "2026-10-18T14:29:38Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/leaderboard"
+      ],
+      "h1": 1,
+      "title": "Trader Leaderboard \u2014 Top Practice Portfolios | TradeHQ",
+      "publisher_path": "/leaderboard",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/ai-mentor",
+      "production_url": "https://www.thetradehq.com/ai-mentor",
+      "checked_at": "2026-10-18T14:29:38Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/ai-mentor"
+      ],
+      "h1": 1,
+      "title": "AI Trading Mentor \u2014 Free Practice Coach | TradeHQ",
+      "publisher_path": "/ai-mentor",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/daily",
+      "production_url": "https://www.thetradehq.com/daily",
+      "checked_at": "2026-10-18T14:29:38Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/daily"
+      ],
+      "h1": 1,
+      "title": "Daily Trading Challenge \u2014 Build Your Streak | TradeHQ",
+      "publisher_path": "/daily",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/reviews",
+      "production_url": "https://www.thetradehq.com/reviews",
+      "checked_at": "2026-10-18T14:29:38Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/reviews"
+      ],
+      "h1": 1,
+      "title": "TradeHQ Reviews \u2014 What Traders Are Saying | TradeHQ",
+      "publisher_path": "/reviews",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/roadmap",
+      "production_url": "https://www.thetradehq.com/roadmap",
+      "checked_at": "2026-10-18T14:29:47Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/roadmap"
+      ],
+      "h1": 1,
+      "title": "TradeHQ Roadmap \u2014 What's Shipping Next | TradeHQ",
+      "publisher_path": "/roadmap",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/about",
+      "production_url": "https://www.thetradehq.com/about",
+      "checked_at": "2026-10-18T14:29:47Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/about"
+      ],
+      "h1": 1,
+      "title": "About TradeHQ \u2014 Built by Anuga Weerasinghe | TradeHQ",
+      "publisher_path": "/about",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/contact",
+      "production_url": "https://www.thetradehq.com/contact",
+      "checked_at": "2026-10-18T14:29:47Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/contact"
+      ],
+      "h1": 1,
+      "title": "Contact TradeHQ | TradeHQ",
+      "publisher_path": "/contact",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/challenge",
+      "production_url": "https://www.thetradehq.com/challenge",
+      "checked_at": "2026-10-18T14:29:47Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/challenge"
+      ],
+      "h1": 1,
+      "title": "Challenge a Friend \u2014 30-Day $100,000 Practice Duel | TradeHQ",
+      "publisher_path": "/challenge",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/privacy",
+      "production_url": "https://www.thetradehq.com/privacy",
+      "checked_at": "2026-10-18T14:29:47Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/privacy"
+      ],
+      "h1": 1,
+      "title": "Privacy Policy | TradeHQ",
+      "publisher_path": "/privacy",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/terms",
+      "production_url": "https://www.thetradehq.com/terms",
+      "checked_at": "2026-10-18T14:29:47Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/terms"
+      ],
+      "h1": 1,
+      "title": "Terms of Service | TradeHQ",
+      "publisher_path": "/terms",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/btc",
+      "production_url": "https://www.thetradehq.com/trade/btc",
+      "checked_at": "2026-10-18T14:29:47Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/trade/btc"
+      ],
+      "h1": 1,
+      "title": "Paper Trade Bitcoin (BTC) Free \u2014 $100,000 Simulator | TradeHQ",
+      "publisher_path": "/trade/btc",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/eth",
+      "production_url": "https://www.thetradehq.com/trade/eth",
+      "checked_at": "2026-10-18T14:29:47Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/trade/eth"
+      ],
+      "h1": 1,
+      "title": "Paper Trade Ethereum (ETH) Free \u2014 $100,000 Simulator | TradeHQ",
+      "publisher_path": "/trade/eth",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/sol",
+      "production_url": "https://www.thetradehq.com/trade/sol",
+      "checked_at": "2026-10-18T14:29:47Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/trade/sol"
+      ],
+      "h1": 1,
+      "title": "Paper Trade Solana (SOL) Free \u2014 $100,000 Simulator | TradeHQ",
+      "publisher_path": "/trade/sol",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/bnb",
+      "production_url": "https://www.thetradehq.com/trade/bnb",
+      "checked_at": "2026-10-18T14:29:47Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/trade/bnb"
+      ],
+      "h1": 1,
+      "title": "Paper Trade BNB (BNB) Free \u2014 $100,000 Simulator | TradeHQ",
+      "publisher_path": "/trade/bnb",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/xrp",
+      "production_url": "https://www.thetradehq.com/trade/xrp",
+      "checked_at": "2026-10-18T14:29:55Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/trade/xrp"
+      ],
+      "h1": 1,
+      "title": "Paper Trade XRP (XRP) Free \u2014 $100,000 Simulator | TradeHQ",
+      "publisher_path": "/trade/xrp",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/aapl",
+      "production_url": "https://www.thetradehq.com/trade/aapl",
+      "checked_at": "2026-10-18T14:29:55Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/trade/aapl"
+      ],
+      "h1": 1,
+      "title": "Paper Trade Apple Inc. (AAPL) Free \u2014 $100,000 Simulator | TradeHQ",
+      "publisher_path": "/trade/aapl",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/msft",
+      "production_url": "https://www.thetradehq.com/trade/msft",
+      "checked_at": "2026-10-18T14:29:55Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/trade/msft"
+      ],
+      "h1": 1,
+      "title": "Paper Trade Microsoft Corporation (MSFT) Free \u2014 $100,000 Simulator | TradeHQ",
+      "publisher_path": "/trade/msft",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/googl",
+      "production_url": "https://www.thetradehq.com/trade/googl",
+      "checked_at": "2026-10-18T14:29:55Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/trade/googl"
+      ],
+      "h1": 1,
+      "title": "Paper Trade Alphabet Inc. (GOOGL) Free \u2014 $100,000 Simulator | TradeHQ",
+      "publisher_path": "/trade/googl",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/amzn",
+      "production_url": "https://www.thetradehq.com/trade/amzn",
+      "checked_at": "2026-10-18T14:29:55Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/trade/amzn"
+      ],
+      "h1": 1,
+      "title": "Paper Trade Amazon.com Inc. (AMZN) Free \u2014 $100,000 Simulator | TradeHQ",
+      "publisher_path": "/trade/amzn",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/nvda",
+      "production_url": "https://www.thetradehq.com/trade/nvda",
+      "checked_at": "2026-10-18T14:29:55Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/trade/nvda"
+      ],
+      "h1": 1,
+      "title": "Paper Trade NVIDIA Corporation (NVDA) Free \u2014 $100,000 Simulator | TradeHQ",
+      "publisher_path": "/trade/nvda",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/tsla",
+      "production_url": "https://www.thetradehq.com/trade/tsla",
+      "checked_at": "2026-10-18T14:29:55Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/trade/tsla"
+      ],
+      "h1": 1,
+      "title": "Paper Trade Tesla Inc. (TSLA) Free \u2014 $100,000 Simulator | TradeHQ",
+      "publisher_path": "/trade/tsla",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/meta",
+      "production_url": "https://www.thetradehq.com/trade/meta",
+      "checked_at": "2026-10-18T14:29:55Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/trade/meta"
+      ],
+      "h1": 1,
+      "title": "Paper Trade Meta Platforms Inc. (META) Free \u2014 $100,000 Simulator | TradeHQ",
+      "publisher_path": "/trade/meta",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/spy",
+      "production_url": "https://www.thetradehq.com/trade/spy",
+      "checked_at": "2026-10-18T14:29:55Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/trade/spy"
+      ],
+      "h1": 1,
+      "title": "Paper Trade SPDR S&amp;P 500 ETF (SPY) Free \u2014 $100,000 Simulator | TradeHQ",
+      "publisher_path": "/trade/spy",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/qqq",
+      "production_url": "https://www.thetradehq.com/trade/qqq",
+      "checked_at": "2026-10-18T14:29:55Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/trade/qqq"
+      ],
+      "h1": 1,
+      "title": "Paper Trade Invesco QQQ Trust (QQQ) Free \u2014 $100,000 Simulator | TradeHQ",
+      "publisher_path": "/trade/qqq",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/eurusd",
+      "production_url": "https://www.thetradehq.com/trade/eurusd",
+      "checked_at": "2026-10-18T14:30:02Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/trade/eurusd"
+      ],
+      "h1": 1,
+      "title": "Paper Trade Euro / US Dollar (EUR/USD) Free \u2014 $100,000 Simulator | TradeHQ",
+      "publisher_path": "/trade/eurusd",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/gbpusd",
+      "production_url": "https://www.thetradehq.com/trade/gbpusd",
+      "checked_at": "2026-10-18T14:30:02Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/trade/gbpusd"
+      ],
+      "h1": 1,
+      "title": "Paper Trade British Pound / US Dollar (GBP/USD) Free \u2014 $100,000 Simulator | TradeHQ",
+      "publisher_path": "/trade/gbpusd",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/gold",
+      "production_url": "https://www.thetradehq.com/trade/gold",
+      "checked_at": "2026-10-18T14:30:02Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/trade/gold"
+      ],
+      "h1": 1,
+      "title": "Paper Trade Gold (XAU) Free \u2014 $100,000 Simulator | TradeHQ",
+      "publisher_path": "/trade/gold",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/oil",
+      "production_url": "https://www.thetradehq.com/trade/oil",
+      "checked_at": "2026-10-18T14:30:02Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/trade/oil"
+      ],
+      "h1": 1,
+      "title": "Paper Trade Crude Oil WTI (WTI) Free \u2014 $100,000 Simulator | TradeHQ",
+      "publisher_path": "/trade/oil",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki",
+      "production_url": "https://www.thetradehq.com/wiki",
+      "checked_at": "2026-10-18T14:30:03Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki"
+      ],
+      "h1": 1,
+      "title": "Trading Glossary \u2014 Every Term Explained | TradeHQ Wiki",
+      "publisher_path": "/wiki",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/short-squeeze",
+      "production_url": "https://www.thetradehq.com/wiki/short-squeeze",
+      "checked_at": "2026-10-18T14:30:03Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/short-squeeze"
+      ],
+      "h1": 1,
+      "title": "Short Squeeze \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/short-squeeze",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/golden-cross",
+      "production_url": "https://www.thetradehq.com/wiki/golden-cross",
+      "checked_at": "2026-10-18T14:30:03Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/golden-cross"
+      ],
+      "h1": 1,
+      "title": "Golden Cross \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/golden-cross",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/death-cross",
+      "production_url": "https://www.thetradehq.com/wiki/death-cross",
+      "checked_at": "2026-10-18T14:30:03Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/death-cross"
+      ],
+      "h1": 1,
+      "title": "Death Cross \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/death-cross",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/liquidation-cascade",
+      "production_url": "https://www.thetradehq.com/wiki/liquidation-cascade",
+      "checked_at": "2026-10-18T14:30:03Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/liquidation-cascade"
+      ],
+      "h1": 1,
+      "title": "Liquidation Cascade \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/liquidation-cascade",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/fibonacci-retracement",
+      "production_url": "https://www.thetradehq.com/wiki/fibonacci-retracement",
+      "checked_at": "2026-10-18T14:30:03Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/fibonacci-retracement"
+      ],
+      "h1": 1,
+      "title": "Fibonacci Retracement \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/fibonacci-retracement",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/rsi-divergence",
+      "production_url": "https://www.thetradehq.com/wiki/rsi-divergence",
+      "checked_at": "2026-10-18T14:30:09Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/rsi-divergence"
+      ],
+      "h1": 1,
+      "title": "RSI Divergence \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/rsi-divergence",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/macd-histogram",
+      "production_url": "https://www.thetradehq.com/wiki/macd-histogram",
+      "checked_at": "2026-10-18T14:30:09Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/macd-histogram"
+      ],
+      "h1": 1,
+      "title": "MACD Histogram \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/macd-histogram",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/bollinger-band-squeeze",
+      "production_url": "https://www.thetradehq.com/wiki/bollinger-band-squeeze",
+      "checked_at": "2026-10-18T14:30:09Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/bollinger-band-squeeze"
+      ],
+      "h1": 1,
+      "title": "Bollinger Band Squeeze \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/bollinger-band-squeeze",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/order-block",
+      "production_url": "https://www.thetradehq.com/wiki/order-block",
+      "checked_at": "2026-10-18T14:30:09Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/order-block"
+      ],
+      "h1": 1,
+      "title": "Order Block \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/order-block",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/fair-value-gap",
+      "production_url": "https://www.thetradehq.com/wiki/fair-value-gap",
+      "checked_at": "2026-10-18T14:30:09Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/fair-value-gap"
+      ],
+      "h1": 1,
+      "title": "Fair Value Gap (FVG) \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/fair-value-gap",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/bull-trap",
+      "production_url": "https://www.thetradehq.com/wiki/bull-trap",
+      "checked_at": "2026-10-18T14:30:09Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/bull-trap"
+      ],
+      "h1": 1,
+      "title": "Bull Trap \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/bull-trap",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/bear-trap",
+      "production_url": "https://www.thetradehq.com/wiki/bear-trap",
+      "checked_at": "2026-10-18T14:30:09Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/bear-trap"
+      ],
+      "h1": 1,
+      "title": "Bear Trap \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/bear-trap",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/whale-manipulation",
+      "production_url": "https://www.thetradehq.com/wiki/whale-manipulation",
+      "checked_at": "2026-10-18T14:30:09Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/whale-manipulation"
+      ],
+      "h1": 1,
+      "title": "Whale Manipulation \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/whale-manipulation",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/support-and-resistance",
+      "production_url": "https://www.thetradehq.com/wiki/support-and-resistance",
+      "checked_at": "2026-10-18T14:30:09Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/support-and-resistance"
+      ],
+      "h1": 1,
+      "title": "Support and Resistance \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/support-and-resistance",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/candlestick-patterns",
+      "production_url": "https://www.thetradehq.com/wiki/candlestick-patterns",
+      "checked_at": "2026-10-18T14:30:09Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/candlestick-patterns"
+      ],
+      "h1": 1,
+      "title": "Candlestick Patterns \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/candlestick-patterns",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/head-and-shoulders",
+      "production_url": "https://www.thetradehq.com/wiki/head-and-shoulders",
+      "checked_at": "2026-10-18T14:30:16Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/head-and-shoulders"
+      ],
+      "h1": 1,
+      "title": "Head and Shoulders \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/head-and-shoulders",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/double-bottom",
+      "production_url": "https://www.thetradehq.com/wiki/double-bottom",
+      "checked_at": "2026-10-18T14:30:16Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/double-bottom"
+      ],
+      "h1": 1,
+      "title": "Double Bottom \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/double-bottom",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/macd",
+      "production_url": "https://www.thetradehq.com/wiki/macd",
+      "checked_at": "2026-10-18T14:30:16Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/macd"
+      ],
+      "h1": 1,
+      "title": "Moving Average Convergence Divergence \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/macd",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/limit-order-vs-market-order",
+      "production_url": "https://www.thetradehq.com/wiki/limit-order-vs-market-order",
+      "checked_at": "2026-10-18T14:30:16Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/limit-order-vs-market-order"
+      ],
+      "h1": 1,
+      "title": "Limit Order vs Market Order \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/limit-order-vs-market-order",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/stop-loss-hunting",
+      "production_url": "https://www.thetradehq.com/wiki/stop-loss-hunting",
+      "checked_at": "2026-10-18T14:30:16Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/stop-loss-hunting"
+      ],
+      "h1": 1,
+      "title": "Stop Loss Hunting \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/stop-loss-hunting",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/leverage-trading",
+      "production_url": "https://www.thetradehq.com/wiki/leverage-trading",
+      "checked_at": "2026-10-18T14:30:17Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/leverage-trading"
+      ],
+      "h1": 1,
+      "title": "Leverage Trading \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/leverage-trading",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/fomo",
+      "production_url": "https://www.thetradehq.com/wiki/fomo",
+      "checked_at": "2026-10-18T14:30:17Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/fomo"
+      ],
+      "h1": 1,
+      "title": "FOMO (Fear of Missing Out) \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/fomo",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/fud",
+      "production_url": "https://www.thetradehq.com/wiki/fud",
+      "checked_at": "2026-10-18T14:30:17Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/fud"
+      ],
+      "h1": 1,
+      "title": "FUD (Fear, Uncertainty, Doubt) \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/fud",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/hodl-strategy",
+      "production_url": "https://www.thetradehq.com/wiki/hodl-strategy",
+      "checked_at": "2026-10-18T14:30:17Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/hodl-strategy"
+      ],
+      "h1": 1,
+      "title": "HODL Strategy \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/hodl-strategy",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/satoshi-nakamoto",
+      "production_url": "https://www.thetradehq.com/wiki/satoshi-nakamoto",
+      "checked_at": "2026-10-18T14:30:17Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/satoshi-nakamoto"
+      ],
+      "h1": 1,
+      "title": "Satoshi Nakamoto \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/satoshi-nakamoto",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/margin-call",
+      "production_url": "https://www.thetradehq.com/wiki/margin-call",
+      "checked_at": "2026-10-18T14:30:24Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/margin-call"
+      ],
+      "h1": 1,
+      "title": "Margin Call \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/margin-call",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/liquidation-price",
+      "production_url": "https://www.thetradehq.com/wiki/liquidation-price",
+      "checked_at": "2026-10-18T14:30:24Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/liquidation-price"
+      ],
+      "h1": 1,
+      "title": "Liquidation Price \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/liquidation-price",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/dollar-cost-averaging",
+      "production_url": "https://www.thetradehq.com/wiki/dollar-cost-averaging",
+      "checked_at": "2026-10-18T14:30:24Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/dollar-cost-averaging"
+      ],
+      "h1": 1,
+      "title": "Dollar Cost Averaging \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/dollar-cost-averaging",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/swing-trading",
+      "production_url": "https://www.thetradehq.com/wiki/swing-trading",
+      "checked_at": "2026-10-18T14:30:24Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/swing-trading"
+      ],
+      "h1": 1,
+      "title": "Swing Trading \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/swing-trading",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/day-trading",
+      "production_url": "https://www.thetradehq.com/wiki/day-trading",
+      "checked_at": "2026-10-18T14:30:24Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/day-trading"
+      ],
+      "h1": 1,
+      "title": "Day Trading \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/day-trading",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/scalping",
+      "production_url": "https://www.thetradehq.com/wiki/scalping",
+      "checked_at": "2026-10-18T14:30:24Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/scalping"
+      ],
+      "h1": 1,
+      "title": "Scalping \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/scalping",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/volume-profile",
+      "production_url": "https://www.thetradehq.com/wiki/volume-profile",
+      "checked_at": "2026-10-18T14:30:24Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/volume-profile"
+      ],
+      "h1": 1,
+      "title": "Volume Profile \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/volume-profile",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/vwap",
+      "production_url": "https://www.thetradehq.com/wiki/vwap",
+      "checked_at": "2026-10-18T14:30:24Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/vwap"
+      ],
+      "h1": 1,
+      "title": "VWAP \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/vwap",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/ichimoku-cloud",
+      "production_url": "https://www.thetradehq.com/wiki/ichimoku-cloud",
+      "checked_at": "2026-10-18T14:30:24Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/ichimoku-cloud"
+      ],
+      "h1": 1,
+      "title": "Ichimoku Cloud \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/ichimoku-cloud",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/elliott-wave-theory",
+      "production_url": "https://www.thetradehq.com/wiki/elliott-wave-theory",
+      "checked_at": "2026-10-18T14:30:24Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/elliott-wave-theory"
+      ],
+      "h1": 1,
+      "title": "Elliott Wave Theory \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/elliott-wave-theory",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/wyckoff-method",
+      "production_url": "https://www.thetradehq.com/wiki/wyckoff-method",
+      "checked_at": "2026-10-18T14:30:32Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/wyckoff-method"
+      ],
+      "h1": 1,
+      "title": "Wyckoff Method \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/wyckoff-method",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/market-maker",
+      "production_url": "https://www.thetradehq.com/wiki/market-maker",
+      "checked_at": "2026-10-18T14:30:32Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/market-maker"
+      ],
+      "h1": 1,
+      "title": "Market Maker \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/market-maker",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/dark-pool",
+      "production_url": "https://www.thetradehq.com/wiki/dark-pool",
+      "checked_at": "2026-10-18T14:30:32Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/dark-pool"
+      ],
+      "h1": 1,
+      "title": "Dark Pool \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/dark-pool",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/slippage",
+      "production_url": "https://www.thetradehq.com/wiki/slippage",
+      "checked_at": "2026-10-18T14:30:32Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/slippage"
+      ],
+      "h1": 1,
+      "title": "Slippage \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/slippage",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/impermanent-loss",
+      "production_url": "https://www.thetradehq.com/wiki/impermanent-loss",
+      "checked_at": "2026-10-18T14:30:32Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/impermanent-loss"
+      ],
+      "h1": 1,
+      "title": "Impermanent Loss \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/impermanent-loss",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/yield-farming",
+      "production_url": "https://www.thetradehq.com/wiki/yield-farming",
+      "checked_at": "2026-10-18T14:30:32Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/yield-farming"
+      ],
+      "h1": 1,
+      "title": "Yield Farming \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/yield-farming",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/flash-crash",
+      "production_url": "https://www.thetradehq.com/wiki/flash-crash",
+      "checked_at": "2026-10-18T14:30:32Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/flash-crash"
+      ],
+      "h1": 1,
+      "title": "Flash Crash \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/flash-crash",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/circuit-breaker",
+      "production_url": "https://www.thetradehq.com/wiki/circuit-breaker",
+      "checked_at": "2026-10-18T14:30:32Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/circuit-breaker"
+      ],
+      "h1": 1,
+      "title": "Circuit Breaker \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/circuit-breaker",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/pump-and-dump",
+      "production_url": "https://www.thetradehq.com/wiki/pump-and-dump",
+      "checked_at": "2026-10-18T14:30:32Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/pump-and-dump"
+      ],
+      "h1": 1,
+      "title": "Pump and Dump \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/pump-and-dump",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/paper-trading",
+      "production_url": "https://www.thetradehq.com/wiki/paper-trading",
+      "checked_at": "2026-10-18T14:30:32Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/paper-trading"
+      ],
+      "h1": 1,
+      "title": "Paper Trading \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/paper-trading",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/risk-reward-ratio",
+      "production_url": "https://www.thetradehq.com/wiki/risk-reward-ratio",
+      "checked_at": "2026-10-18T14:30:39Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/risk-reward-ratio"
+      ],
+      "h1": 1,
+      "title": "Risk-Reward Ratio \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/risk-reward-ratio",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/drawdown",
+      "production_url": "https://www.thetradehq.com/wiki/drawdown",
+      "checked_at": "2026-10-18T14:30:39Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/drawdown"
+      ],
+      "h1": 1,
+      "title": "Drawdown \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/drawdown",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/backtesting",
+      "production_url": "https://www.thetradehq.com/wiki/backtesting",
+      "checked_at": "2026-10-18T14:30:39Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/backtesting"
+      ],
+      "h1": 1,
+      "title": "Backtesting \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/backtesting",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/correlation-trading",
+      "production_url": "https://www.thetradehq.com/wiki/correlation-trading",
+      "checked_at": "2026-10-18T14:30:39Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/wiki/correlation-trading"
+      ],
+      "h1": 1,
+      "title": "Correlation Trading \u2014 Definition, Example &amp; How to Trade It | TradeHQ Wiki",
+      "publisher_path": "/wiki/correlation-trading",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/article/what-is-paper-trading",
+      "production_url": "https://www.thetradehq.com/learn/article/what-is-paper-trading",
+      "checked_at": "2026-10-18T14:30:39Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/learn/article/what-is-paper-trading"
+      ],
+      "h1": 1,
+      "title": "What Is Paper Trading? Practice, Uses and Limitations | TradeHQ Learn",
+      "publisher_path": "/learn/article/what-is-paper-trading",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/article/how-to-read-stock-charts",
+      "production_url": "https://www.thetradehq.com/learn/article/how-to-read-stock-charts",
+      "checked_at": "2026-10-18T14:30:39Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/learn/article/how-to-read-stock-charts"
+      ],
+      "h1": 1,
+      "title": "How to Read a Stock Chart: A Beginner's Guide | TradeHQ Learn",
+      "publisher_path": "/learn/article/how-to-read-stock-charts",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/article/crypto-vs-stocks",
+      "production_url": "https://www.thetradehq.com/learn/article/crypto-vs-stocks",
+      "checked_at": "2026-10-18T14:30:39Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/learn/article/crypto-vs-stocks"
+      ],
+      "h1": 1,
+      "title": "Crypto vs Stocks: Which Should You Practice Trading First? | TradeHQ Learn",
+      "publisher_path": "/learn/article/crypto-vs-stocks",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/article/trading-strategies-for-beginners",
+      "production_url": "https://www.thetradehq.com/learn/article/trading-strategies-for-beginners",
+      "checked_at": "2026-10-18T14:30:39Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/learn/article/trading-strategies-for-beginners"
+      ],
+      "h1": 1,
+      "title": "5 Trading Strategy Hypotheses to Study with Virtual Cash | TradeHQ Learn",
+      "publisher_path": "/learn/article/trading-strategies-for-beginners",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/article/stock-market-index-etfs",
+      "production_url": "https://www.thetradehq.com/learn/article/stock-market-index-etfs",
+      "checked_at": "2026-10-18T14:30:39Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/learn/article/stock-market-index-etfs"
+      ],
+      "h1": 1,
+      "title": "What Is a Stock Market Index and How Do ETFs Work? | TradeHQ Learn",
+      "publisher_path": "/learn/article/stock-market-index-etfs",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/article/how-to-build-a-portfolio",
+      "production_url": "https://www.thetradehq.com/learn/article/how-to-build-a-portfolio",
+      "checked_at": "2026-10-18T14:30:39Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/learn/article/how-to-build-a-portfolio"
+      ],
+      "h1": 1,
+      "title": "How to Build a Balanced Virtual Portfolio from Scratch | TradeHQ Learn",
+      "publisher_path": "/learn/article/how-to-build-a-portfolio",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/article/risk-management-in-trading",
+      "production_url": "https://www.thetradehq.com/learn/article/risk-management-in-trading",
+      "checked_at": "2026-10-18T14:30:47Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/learn/article/risk-management-in-trading"
+      ],
+      "h1": 1,
+      "title": "What Is Risk Management in Trading? The Complete Beginner's Guide | TradeHQ Learn",
+      "publisher_path": "/learn/article/risk-management-in-trading",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/article/market-orders-vs-limit-orders",
+      "production_url": "https://www.thetradehq.com/learn/article/market-orders-vs-limit-orders",
+      "checked_at": "2026-10-18T14:30:47Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/learn/article/market-orders-vs-limit-orders"
+      ],
+      "h1": 1,
+      "title": "Market Orders vs Limit Orders: Which Should You Use and When? | TradeHQ Learn",
+      "publisher_path": "/learn/article/market-orders-vs-limit-orders",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/article/technical-indicators-rsi-macd-moving-averages",
+      "production_url": "https://www.thetradehq.com/learn/article/technical-indicators-rsi-macd-moving-averages",
+      "checked_at": "2026-10-18T14:30:47Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/learn/article/technical-indicators-rsi-macd-moving-averages"
+      ],
+      "h1": 1,
+      "title": "How to Use Technical Indicators: RSI, MACD, and Moving Averages Explained | TradeHQ Learn",
+      "publisher_path": "/learn/article/technical-indicators-rsi-macd-moving-averages",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/compare/bitcoin-vs-ethereum",
+      "production_url": "https://www.thetradehq.com/compare/bitcoin-vs-ethereum",
+      "checked_at": "2026-10-18T14:30:47Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/compare/bitcoin-vs-ethereum"
+      ],
+      "h1": 1,
+      "title": "Bitcoin vs Ethereum \u2014 Key Differences Explained | TradeHQ",
+      "publisher_path": "/compare/bitcoin-vs-ethereum",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/compare/tesla-vs-nvidia",
+      "production_url": "https://www.thetradehq.com/compare/tesla-vs-nvidia",
+      "checked_at": "2026-10-18T14:30:47Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/compare/tesla-vs-nvidia"
+      ],
+      "h1": 1,
+      "title": "Tesla vs Nvidia \u2014 Key Differences Explained | TradeHQ",
+      "publisher_path": "/compare/tesla-vs-nvidia",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/compare/bitcoin-vs-gold",
+      "production_url": "https://www.thetradehq.com/compare/bitcoin-vs-gold",
+      "checked_at": "2026-10-18T14:30:47Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/compare/bitcoin-vs-gold"
+      ],
+      "h1": 1,
+      "title": "Bitcoin vs Gold \u2014 Key Differences Explained | TradeHQ",
+      "publisher_path": "/compare/bitcoin-vs-gold",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/compare/apple-vs-microsoft",
+      "production_url": "https://www.thetradehq.com/compare/apple-vs-microsoft",
+      "checked_at": "2026-10-18T14:30:47Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/compare/apple-vs-microsoft"
+      ],
+      "h1": 1,
+      "title": "Apple vs Microsoft \u2014 Key Differences Explained | TradeHQ",
+      "publisher_path": "/compare/apple-vs-microsoft",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/compare/ethereum-vs-solana",
+      "production_url": "https://www.thetradehq.com/compare/ethereum-vs-solana",
+      "checked_at": "2026-10-18T14:30:47Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/compare/ethereum-vs-solana"
+      ],
+      "h1": 1,
+      "title": "Ethereum vs Solana \u2014 Key Differences Explained | TradeHQ",
+      "publisher_path": "/compare/ethereum-vs-solana",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/compare/stocks-vs-crypto",
+      "production_url": "https://www.thetradehq.com/compare/stocks-vs-crypto",
+      "checked_at": "2026-10-18T14:30:47Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/compare/stocks-vs-crypto"
+      ],
+      "h1": 1,
+      "title": "Stocks vs Crypto \u2014 Key Differences Explained | TradeHQ",
+      "publisher_path": "/compare/stocks-vs-crypto",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/compare/nvidia-vs-amd",
+      "production_url": "https://www.thetradehq.com/compare/nvidia-vs-amd",
+      "checked_at": "2026-10-18T14:30:47Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/compare/nvidia-vs-amd"
+      ],
+      "h1": 1,
+      "title": "Nvidia vs Amd \u2014 Key Differences Explained | TradeHQ",
+      "publisher_path": "/compare/nvidia-vs-amd",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/compare/forex-vs-stocks",
+      "production_url": "https://www.thetradehq.com/compare/forex-vs-stocks",
+      "checked_at": "2026-10-18T14:30:55Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/compare/forex-vs-stocks"
+      ],
+      "h1": 1,
+      "title": "Forex vs Stocks \u2014 Key Differences Explained | TradeHQ",
+      "publisher_path": "/compare/forex-vs-stocks",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/compare",
+      "production_url": "https://www.thetradehq.com/compare",
+      "checked_at": "2026-10-18T14:30:55Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/compare"
+      ],
+      "h1": 1,
+      "title": "Compare Assets \u2014 Head-to-Head Trading Guides | TradeHQ",
+      "publisher_path": "/compare",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/how-to-trade/btc",
+      "production_url": "https://www.thetradehq.com/how-to-trade/btc",
+      "checked_at": "2026-10-18T14:30:55Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/how-to-trade/btc"
+      ],
+      "h1": 1,
+      "title": "How to Trade Bitcoin \u2014 Step-by-Step Guide | TradeHQ",
+      "publisher_path": "/how-to-trade/btc",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/how-to-trade/eth",
+      "production_url": "https://www.thetradehq.com/how-to-trade/eth",
+      "checked_at": "2026-10-18T14:30:55Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/how-to-trade/eth"
+      ],
+      "h1": 1,
+      "title": "How to Trade Ethereum \u2014 Step-by-Step Guide | TradeHQ",
+      "publisher_path": "/how-to-trade/eth",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/how-to-trade/tsla",
+      "production_url": "https://www.thetradehq.com/how-to-trade/tsla",
+      "checked_at": "2026-10-18T14:30:55Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/how-to-trade/tsla"
+      ],
+      "h1": 1,
+      "title": "How to Trade Tesla \u2014 Step-by-Step Guide | TradeHQ",
+      "publisher_path": "/how-to-trade/tsla",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/how-to-trade/nvda",
+      "production_url": "https://www.thetradehq.com/how-to-trade/nvda",
+      "checked_at": "2026-10-18T14:30:55Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/how-to-trade/nvda"
+      ],
+      "h1": 1,
+      "title": "How to Trade Nvidia \u2014 Step-by-Step Guide | TradeHQ",
+      "publisher_path": "/how-to-trade/nvda",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/how-to-trade/spy",
+      "production_url": "https://www.thetradehq.com/how-to-trade/spy",
+      "checked_at": "2026-10-18T14:30:55Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/how-to-trade/spy"
+      ],
+      "h1": 1,
+      "title": "How to Trade S&amp;P 500 ETF \u2014 Step-by-Step Guide | TradeHQ",
+      "publisher_path": "/how-to-trade/spy",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/how-to-trade/sol",
+      "production_url": "https://www.thetradehq.com/how-to-trade/sol",
+      "checked_at": "2026-10-18T14:30:55Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/how-to-trade/sol"
+      ],
+      "h1": 1,
+      "title": "How to Trade Solana \u2014 Step-by-Step Guide | TradeHQ",
+      "publisher_path": "/how-to-trade/sol",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/how-to-trade",
+      "production_url": "https://www.thetradehq.com/how-to-trade",
+      "checked_at": "2026-10-18T14:30:55Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/how-to-trade"
+      ],
+      "h1": 1,
+      "title": "How to Trade \u2014 Step-by-Step Asset Guides | TradeHQ",
+      "publisher_path": "/how-to-trade",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/strategy/scalping",
+      "production_url": "https://www.thetradehq.com/strategy/scalping",
+      "checked_at": "2026-10-18T14:30:55Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/strategy/scalping"
+      ],
+      "h1": 1,
+      "title": "Scalping \u2014 Strategy Guide | TradeHQ",
+      "publisher_path": "/strategy/scalping",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/strategy/swing-trading",
+      "production_url": "https://www.thetradehq.com/strategy/swing-trading",
+      "checked_at": "2026-10-18T14:31:04Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/strategy/swing-trading"
+      ],
+      "h1": 1,
+      "title": "Swing Trading \u2014 Strategy Guide | TradeHQ",
+      "publisher_path": "/strategy/swing-trading",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/strategy/day-trading",
+      "production_url": "https://www.thetradehq.com/strategy/day-trading",
+      "checked_at": "2026-10-18T14:31:04Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/strategy/day-trading"
+      ],
+      "h1": 1,
+      "title": "Day Trading \u2014 Strategy Guide | TradeHQ",
+      "publisher_path": "/strategy/day-trading",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/strategy/dca-dollar-cost-averaging",
+      "production_url": "https://www.thetradehq.com/strategy/dca-dollar-cost-averaging",
+      "checked_at": "2026-10-18T14:31:04Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/strategy/dca-dollar-cost-averaging"
+      ],
+      "h1": 1,
+      "title": "Dollar-Cost Averaging (DCA) \u2014 Strategy Guide | TradeHQ",
+      "publisher_path": "/strategy/dca-dollar-cost-averaging",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/strategy/rsi-strategy",
+      "production_url": "https://www.thetradehq.com/strategy/rsi-strategy",
+      "checked_at": "2026-10-18T14:31:04Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/strategy/rsi-strategy"
+      ],
+      "h1": 1,
+      "title": "RSI Mean-Reversion \u2014 Strategy Guide | TradeHQ",
+      "publisher_path": "/strategy/rsi-strategy",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/strategy/macd-strategy",
+      "production_url": "https://www.thetradehq.com/strategy/macd-strategy",
+      "checked_at": "2026-10-18T14:31:04Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/strategy/macd-strategy"
+      ],
+      "h1": 1,
+      "title": "MACD Crossover \u2014 Strategy Guide | TradeHQ",
+      "publisher_path": "/strategy/macd-strategy",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/strategy",
+      "production_url": "https://www.thetradehq.com/strategy",
+      "checked_at": "2026-10-18T14:31:04Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/strategy"
+      ],
+      "h1": 1,
+      "title": "Trading Strategies \u2014 Free Guides &amp; Simulator | TradeHQ",
+      "publisher_path": "/strategy",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/courses",
+      "production_url": "https://www.thetradehq.com/courses",
+      "checked_at": "2026-10-18T14:31:04Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/courses"
+      ],
+      "h1": 1,
+      "title": "Free Trading Courses \u2014 Options, Futures, Macro &amp; Psychology | TradeHQ",
+      "publisher_path": "/courses",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/options-trading-fundamentals",
+      "production_url": "https://www.thetradehq.com/courses/options-trading-fundamentals",
+      "checked_at": "2026-10-18T14:31:04Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/courses/options-trading-fundamentals"
+      ],
+      "h1": 1,
+      "title": "Options Trading Fundamentals \u2014 Free Trading Course | TradeHQ",
+      "publisher_path": "/courses/options-trading-fundamentals",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/options-trading-fundamentals/what-is-an-option",
+      "production_url": "https://www.thetradehq.com/courses/options-trading-fundamentals/what-is-an-option",
+      "checked_at": "2026-10-18T14:31:04Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/courses/options-trading-fundamentals/what-is-an-option"
+      ],
+      "h1": 1,
+      "title": "What Is an Option? Calls &amp; Puts Explained \u2014 Options Trading Fundamentals | TradeHQ",
+      "publisher_path": "/courses/options-trading-fundamentals/what-is-an-option",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+      "production_url": "https://www.thetradehq.com/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+      "checked_at": "2026-10-18T14:31:04Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega"
+      ],
+      "h1": 1,
+      "title": "The Greeks \u2014 Delta, Gamma, Theta &amp; Vega \u2014 Options Trading Fundamentals | TradeHQ",
+      "publisher_path": "/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/options-trading-fundamentals/defined-risk-spreads",
+      "production_url": "https://www.thetradehq.com/courses/options-trading-fundamentals/defined-risk-spreads",
+      "checked_at": "2026-10-18T14:31:12Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/courses/options-trading-fundamentals/defined-risk-spreads"
+      ],
+      "h1": 1,
+      "title": "Defined-Risk Spreads \u2014 Verticals &amp; Iron Condors \u2014 Options Trading Fundamentals | TradeHQ",
+      "publisher_path": "/courses/options-trading-fundamentals/defined-risk-spreads",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/options-trading-fundamentals/implied-volatility-and-earnings",
+      "production_url": "https://www.thetradehq.com/courses/options-trading-fundamentals/implied-volatility-and-earnings",
+      "checked_at": "2026-10-18T14:31:12Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/courses/options-trading-fundamentals/implied-volatility-and-earnings"
+      ],
+      "h1": 1,
+      "title": "Implied Volatility &amp; Trading Around Earnings \u2014 Options Trading Fundamentals | TradeHQ",
+      "publisher_path": "/courses/options-trading-fundamentals/implied-volatility-and-earnings",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/options-trading-fundamentals/options-risk-management",
+      "production_url": "https://www.thetradehq.com/courses/options-trading-fundamentals/options-risk-management",
+      "checked_at": "2026-10-18T14:31:12Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/courses/options-trading-fundamentals/options-risk-management"
+      ],
+      "h1": 1,
+      "title": "Options Risk Management \u2014 Sizing, Rolling &amp; Cutting Losses \u2014 Options Trading Fundamentals | TradeHQ",
+      "publisher_path": "/courses/options-trading-fundamentals/options-risk-management",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/futures-and-derivatives",
+      "production_url": "https://www.thetradehq.com/courses/futures-and-derivatives",
+      "checked_at": "2026-10-18T14:31:12Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/courses/futures-and-derivatives"
+      ],
+      "h1": 1,
+      "title": "Futures &amp; Derivatives \u2014 Free Trading Course | TradeHQ",
+      "publisher_path": "/courses/futures-and-derivatives",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/futures-and-derivatives/what-is-a-futures-contract",
+      "production_url": "https://www.thetradehq.com/courses/futures-and-derivatives/what-is-a-futures-contract",
+      "checked_at": "2026-10-18T14:31:12Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/courses/futures-and-derivatives/what-is-a-futures-contract"
+      ],
+      "h1": 1,
+      "title": "What Is a Futures Contract? \u2014 Futures &amp; Derivatives | TradeHQ",
+      "publisher_path": "/courses/futures-and-derivatives/what-is-a-futures-contract",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/futures-and-derivatives/margin-and-leverage-in-futures",
+      "production_url": "https://www.thetradehq.com/courses/futures-and-derivatives/margin-and-leverage-in-futures",
+      "checked_at": "2026-10-18T14:31:12Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/courses/futures-and-derivatives/margin-and-leverage-in-futures"
+      ],
+      "h1": 1,
+      "title": "Margin &amp; Leverage in Futures \u2014 Futures &amp; Derivatives | TradeHQ",
+      "publisher_path": "/courses/futures-and-derivatives/margin-and-leverage-in-futures",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/futures-and-derivatives/contango-and-backwardation",
+      "production_url": "https://www.thetradehq.com/courses/futures-and-derivatives/contango-and-backwardation",
+      "checked_at": "2026-10-18T14:31:12Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/courses/futures-and-derivatives/contango-and-backwardation"
+      ],
+      "h1": 1,
+      "title": "Contango &amp; Backwardation \u2014 Term Structure Explained \u2014 Futures &amp; Derivatives | TradeHQ",
+      "publisher_path": "/courses/futures-and-derivatives/contango-and-backwardation",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/futures-and-derivatives/hedging-with-futures",
+      "production_url": "https://www.thetradehq.com/courses/futures-and-derivatives/hedging-with-futures",
+      "checked_at": "2026-10-18T14:31:12Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/courses/futures-and-derivatives/hedging-with-futures"
+      ],
+      "h1": 1,
+      "title": "Hedging with Futures \u2014 The Original Use Case \u2014 Futures &amp; Derivatives | TradeHQ",
+      "publisher_path": "/courses/futures-and-derivatives/hedging-with-futures",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/futures-and-derivatives/micro-futures-for-beginners",
+      "production_url": "https://www.thetradehq.com/courses/futures-and-derivatives/micro-futures-for-beginners",
+      "checked_at": "2026-10-18T14:31:12Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/courses/futures-and-derivatives/micro-futures-for-beginners"
+      ],
+      "h1": 1,
+      "title": "Micro Futures \u2014 Contract Size and Risk \u2014 Futures &amp; Derivatives | TradeHQ",
+      "publisher_path": "/courses/futures-and-derivatives/micro-futures-for-beginners",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/macro-reading-for-traders",
+      "production_url": "https://www.thetradehq.com/courses/macro-reading-for-traders",
+      "checked_at": "2026-10-18T14:31:12Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/courses/macro-reading-for-traders"
+      ],
+      "h1": 1,
+      "title": "Macro Reading for Traders \u2014 Free Trading Course | TradeHQ",
+      "publisher_path": "/courses/macro-reading-for-traders",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/macro-reading-for-traders/reading-cpi-and-inflation",
+      "production_url": "https://www.thetradehq.com/courses/macro-reading-for-traders/reading-cpi-and-inflation",
+      "checked_at": "2026-10-18T14:31:19Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/courses/macro-reading-for-traders/reading-cpi-and-inflation"
+      ],
+      "h1": 1,
+      "title": "Reading CPI and Inflation Data \u2014 Macro Reading for Traders | TradeHQ",
+      "publisher_path": "/courses/macro-reading-for-traders/reading-cpi-and-inflation",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/macro-reading-for-traders/the-fed-and-fomc-cycle",
+      "production_url": "https://www.thetradehq.com/courses/macro-reading-for-traders/the-fed-and-fomc-cycle",
+      "checked_at": "2026-10-18T14:31:20Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/courses/macro-reading-for-traders/the-fed-and-fomc-cycle"
+      ],
+      "h1": 1,
+      "title": "The Fed &amp; FOMC Cycle \u2014 How Rates Get Set \u2014 Macro Reading for Traders | TradeHQ",
+      "publisher_path": "/courses/macro-reading-for-traders/the-fed-and-fomc-cycle",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/macro-reading-for-traders/the-yield-curve-and-recession",
+      "production_url": "https://www.thetradehq.com/courses/macro-reading-for-traders/the-yield-curve-and-recession",
+      "checked_at": "2026-10-18T14:31:20Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/courses/macro-reading-for-traders/the-yield-curve-and-recession"
+      ],
+      "h1": 1,
+      "title": "The Yield Curve and Recession-Risk Research \u2014 Macro Reading for Traders | TradeHQ",
+      "publisher_path": "/courses/macro-reading-for-traders/the-yield-curve-and-recession",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/macro-reading-for-traders/the-dollar-index-dxy",
+      "production_url": "https://www.thetradehq.com/courses/macro-reading-for-traders/the-dollar-index-dxy",
+      "checked_at": "2026-10-18T14:31:20Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/courses/macro-reading-for-traders/the-dollar-index-dxy"
+      ],
+      "h1": 1,
+      "title": "The Dollar Index (DXY) \u2014 Reading Currency Context \u2014 Macro Reading for Traders | TradeHQ",
+      "publisher_path": "/courses/macro-reading-for-traders/the-dollar-index-dxy",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/macro-reading-for-traders/putting-macro-signals-together",
+      "production_url": "https://www.thetradehq.com/courses/macro-reading-for-traders/putting-macro-signals-together",
+      "checked_at": "2026-10-18T14:31:20Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/courses/macro-reading-for-traders/putting-macro-signals-together"
+      ],
+      "h1": 1,
+      "title": "Putting It Together \u2014 A Macro Dashboard for Traders \u2014 Macro Reading for Traders | TradeHQ",
+      "publisher_path": "/courses/macro-reading-for-traders/putting-macro-signals-together",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/trading-psychology-mastery",
+      "production_url": "https://www.thetradehq.com/courses/trading-psychology-mastery",
+      "checked_at": "2026-10-18T14:31:20Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/courses/trading-psychology-mastery"
+      ],
+      "h1": 1,
+      "title": "Trading Decisions and Behaviour \u2014 Free Trading Course | TradeHQ",
+      "publisher_path": "/courses/trading-psychology-mastery",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/trading-psychology-mastery/cognitive-biases-in-trading",
+      "production_url": "https://www.thetradehq.com/courses/trading-psychology-mastery/cognitive-biases-in-trading",
+      "checked_at": "2026-10-18T14:31:20Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/courses/trading-psychology-mastery/cognitive-biases-in-trading"
+      ],
+      "h1": 1,
+      "title": "Cognitive Biases in Trading Decisions \u2014 Trading Decisions and Behaviour | TradeHQ",
+      "publisher_path": "/courses/trading-psychology-mastery/cognitive-biases-in-trading",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/trading-psychology-mastery/revenge-trading-and-tilt",
+      "production_url": "https://www.thetradehq.com/courses/trading-psychology-mastery/revenge-trading-and-tilt",
+      "checked_at": "2026-10-18T14:31:20Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/courses/trading-psychology-mastery/revenge-trading-and-tilt"
+      ],
+      "h1": 1,
+      "title": "Revenge Trading &amp; Tilt \u2014 Recognising Unplanned Decisions \u2014 Trading Decisions and Behaviour | TradeHQ",
+      "publisher_path": "/courses/trading-psychology-mastery/revenge-trading-and-tilt",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/trading-psychology-mastery/the-trading-journal",
+      "production_url": "https://www.thetradehq.com/courses/trading-psychology-mastery/the-trading-journal",
+      "checked_at": "2026-10-18T14:31:20Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/courses/trading-psychology-mastery/the-trading-journal"
+      ],
+      "h1": 1,
+      "title": "A Trading Journal: Observations and Limits \u2014 Trading Decisions and Behaviour | TradeHQ",
+      "publisher_path": "/courses/trading-psychology-mastery/the-trading-journal",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/trading-psychology-mastery/discipline-and-daily-rituals",
+      "production_url": "https://www.thetradehq.com/courses/trading-psychology-mastery/discipline-and-daily-rituals",
+      "checked_at": "2026-10-18T14:31:20Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/courses/trading-psychology-mastery/discipline-and-daily-rituals"
+      ],
+      "h1": 1,
+      "title": "Optional Checklists for Practice Sessions \u2014 Trading Decisions and Behaviour | TradeHQ",
+      "publisher_path": "/courses/trading-psychology-mastery/discipline-and-daily-rituals",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/trading-psychology-mastery/handling-drawdowns",
+      "production_url": "https://www.thetradehq.com/courses/trading-psychology-mastery/handling-drawdowns",
+      "checked_at": "2026-10-18T14:31:28Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/courses/trading-psychology-mastery/handling-drawdowns"
+      ],
+      "h1": 1,
+      "title": "Understanding Drawdowns in a Simulation \u2014 Trading Decisions and Behaviour | TradeHQ",
+      "publisher_path": "/courses/trading-psychology-mastery/handling-drawdowns",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/country",
+      "production_url": "https://www.thetradehq.com/learn/country",
+      "checked_at": "2026-10-18T14:31:28Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/learn/country"
+      ],
+      "h1": 1,
+      "title": "Country Guides \u2014 Learn Trading Locally | TradeHQ",
+      "publisher_path": "/learn/country",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/country/sri-lanka",
+      "production_url": "https://www.thetradehq.com/learn/country/sri-lanka",
+      "checked_at": "2026-10-18T14:31:28Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/learn/country/sri-lanka"
+      ],
+      "h1": 1,
+      "title": "Learn Trading in Sri Lanka \u2014 Free Guide for Sri Lanka Students | TradeHQ",
+      "publisher_path": "/learn/country/sri-lanka",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/country/india",
+      "production_url": "https://www.thetradehq.com/learn/country/india",
+      "checked_at": "2026-10-18T14:31:28Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/learn/country/india"
+      ],
+      "h1": 1,
+      "title": "Learn Trading in India \u2014 Free Guide for India Students | TradeHQ",
+      "publisher_path": "/learn/country/india",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/country/philippines",
+      "production_url": "https://www.thetradehq.com/learn/country/philippines",
+      "checked_at": "2026-10-18T14:31:28Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/learn/country/philippines"
+      ],
+      "h1": 1,
+      "title": "Learn Trading in Philippines \u2014 Free Guide for Philippines Students | TradeHQ",
+      "publisher_path": "/learn/country/philippines",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/country/pakistan",
+      "production_url": "https://www.thetradehq.com/learn/country/pakistan",
+      "checked_at": "2026-10-18T14:31:28Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/learn/country/pakistan"
+      ],
+      "h1": 1,
+      "title": "Learn Trading in Pakistan \u2014 Free Guide for Pakistan Students | TradeHQ",
+      "publisher_path": "/learn/country/pakistan",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/country/nigeria",
+      "production_url": "https://www.thetradehq.com/learn/country/nigeria",
+      "checked_at": "2026-10-18T14:31:28Z",
+      "status": 200,
+      "robots_header": null,
+      "canonicals": [
+        "https://www.thetradehq.com/learn/country/nigeria"
+      ],
+      "h1": 1,
+      "title": "Learn Trading in Nigeria \u2014 Free Guide for Nigeria Students | TradeHQ",
+      "publisher_path": "/learn/country/nigeria",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "scripts": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254",
+        "/assets/index-bND5OzeL.js"
+      ]
+    }
+  ],
+  "additional_native_course_browser_observations": [
+    {
+      "url": "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation",
+      "method": "Cloud browser, hydrated production DOM",
+      "canonical": [
+        "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation"
+      ],
+      "h1_count": 1,
+      "horizontal_overflow": false,
+      "viewport_scope": "existing desktop viewport only",
+      "observed_on": "2026-10-18",
+      "independent_financial_review": false
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/exchange-tickers-and-price-aggregation",
+      "method": "Cloud browser, hydrated production DOM",
+      "canonical": [
+        "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/exchange-tickers-and-price-aggregation"
+      ],
+      "h1_count": 1,
+      "horizontal_overflow": false,
+      "viewport_scope": "existing desktop viewport only",
+      "observed_on": "2026-10-18",
+      "independent_financial_review": false
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/api-delays-and-portfolio-valuation",
+      "method": "Cloud browser, hydrated production DOM",
+      "canonical": [
+        "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/api-delays-and-portfolio-valuation"
+      ],
+      "h1_count": 1,
+      "horizontal_overflow": false,
+      "viewport_scope": "existing desktop viewport only",
+      "observed_on": "2026-10-18",
+      "independent_financial_review": false
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/portfolio-rebalancing-and-cash-drag",
+      "method": "Cloud browser, hydrated production DOM",
+      "canonical": [
+        "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/portfolio-rebalancing-and-cash-drag"
+      ],
+      "h1_count": 1,
+      "horizontal_overflow": false,
+      "viewport_scope": "existing desktop viewport only",
+      "observed_on": "2026-10-18",
+      "independent_financial_review": false
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/diversification-and-position-sizing",
+      "method": "Cloud browser, hydrated production DOM",
+      "canonical": [
+        "https://www.thetradehq.com/courses/diversification-and-position-sizing"
+      ],
+      "h1_count": 1,
+      "horizontal_overflow": false,
+      "viewport_scope": "existing desktop viewport only",
+      "observed_on": "2026-10-18",
+      "independent_financial_review": false
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/diversification-and-position-sizing/foundations-of-asset-allocation",
+      "method": "Cloud browser, hydrated production DOM",
+      "canonical": [
+        "https://www.thetradehq.com/courses/diversification-and-position-sizing/foundations-of-asset-allocation"
+      ],
+      "h1_count": 1,
+      "horizontal_overflow": false,
+      "viewport_scope": "existing desktop viewport only",
+      "observed_on": "2026-10-18",
+      "independent_financial_review": false
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/diversification-and-position-sizing/managing-concentration-risk",
+      "method": "Cloud browser, hydrated production DOM",
+      "canonical": [
+        "https://www.thetradehq.com/courses/diversification-and-position-sizing/managing-concentration-risk"
+      ],
+      "h1_count": 1,
+      "horizontal_overflow": false,
+      "viewport_scope": "existing desktop viewport only",
+      "observed_on": "2026-10-18",
+      "independent_financial_review": false
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash",
+      "method": "Cloud browser, hydrated production DOM",
+      "canonical": [
+        "https://www.thetradehq.com/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash"
+      ],
+      "h1_count": 1,
+      "horizontal_overflow": false,
+      "viewport_scope": "existing desktop viewport only",
+      "observed_on": "2026-10-18",
+      "independent_financial_review": false
+    }
+  ],
+  "raw_http_samples": [
+    {
+      "url": "https://www.thetradehq.com/how-to-trade/sol",
+      "status": 200,
+      "final_url": "https://www.thetradehq.com/how-to-trade/sol",
+      "robots_header": null,
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "canonical": [
+        "https://www.thetradehq.com/how-to-trade/sol"
+      ],
+      "h1": 1,
+      "obsolete_sol": false,
+      "fee_corrected": false
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/fomo/?release-check=183",
+      "status": 200,
+      "final_url": "https://www.thetradehq.com/wiki/fomo?release-check=183",
+      "robots_header": null,
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "canonical": [
+        "https://www.thetradehq.com/wiki/fomo"
+      ],
+      "h1": 1,
+      "obsolete_sol": false,
+      "fee_corrected": false
+    },
+    {
+      "url": "https://www.thetradehq.com/adsense-release-missing-183",
+      "status": 404
+    },
+    {
+      "url": "https://www.thetradehq.com/trade",
+      "status": 200,
+      "final_url": "https://www.thetradehq.com/trade",
+      "robots_header": null,
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "canonical": [
+        "https://www.thetradehq.com/trade"
+      ],
+      "h1": 1,
+      "obsolete_sol": false,
+      "fee_corrected": false
+    },
+    {
+      "url": "https://thetradehq.com/wiki/fomo",
+      "status": 200,
+      "final_url": "https://www.thetradehq.com/wiki/fomo",
+      "robots_header": null,
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ],
+      "canonical": [
+        "https://www.thetradehq.com/wiki/fomo"
+      ],
+      "h1": 1,
+      "obsolete_sol": false,
+      "fee_corrected": false
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash",
+      "status": 200,
+      "final_url": "https://www.thetradehq.com/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash",
+      "robots_header": null,
+      "robots_meta": [
+        "index, follow"
+      ],
+      "canonical": [
+        "https://www.thetradehq.com/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash"
+      ],
+      "h1": 1,
+      "obsolete_sol": false,
+      "fee_corrected": true
+    }
+  ],
+  "ci": {
+    "run_id": 39136103283,
+    "required_validation": "success",
+    "strict_release_readiness": "success",
+    "chromium_visits": 620,
+    "chromium_scope": "155 compiled URLs at desktop/mobile with JavaScript off/on; isolated native-course fixtures, not 620 production browser visits"
+  },
+  "limits": [
+    "No fresh GSC inspection or AdSense submission.",
+    "No production authentication or portfolio write was performed.",
+    "No certification of all financial claims, accessibility or field Core Web Vitals.",
+    "Ad account eligibility, regional CMP operation and Auto Ads exclusions remain unverified."
+  ],
+  "robots_samples": [
+    {
+      "url": "https://www.thetradehq.com/sectors/ai-tech",
+      "status": 200,
+      "robots_header": null,
+      "robots_meta": [
+        "noindex, follow"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/ada",
+      "status": 200,
+      "robots_header": null,
+      "robots_meta": [
+        "noindex, follow"
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/admin",
+      "status": 200,
+      "robots_header": null,
+      "robots_meta": [
+        "noindex, follow"
+      ]
+    },
+    {
+      "url": "https://270b96e9.tradehq-preview.pages.dev/wiki/fomo",
+      "status": 200,
+      "robots_header": "noindex",
+      "robots_meta": [
+        "index, follow, max-image-preview:large, max-snippet:-1"
+      ]
+    }
+  ],
+  "hydrated_catalog_counts": {
+    "tracks": 6,
+    "lessons": 26,
+    "scope": "after the public catalog query completed"
+  }
+}
