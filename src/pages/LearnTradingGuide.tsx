@@ -67,7 +67,7 @@ const LearnTradingGuide = () => {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "TechArticle",
-    "headline": "Beginner Trading Guide",
+    "headline": "Beginner Trading Practice Guide",
     "description": "Study order mechanics, risk examples and simulator limitations using virtual cash.",
     "author": { "@type": "Organization", "name": "TradeHQ" },
     "image": `${DOMAIN}/og-image.jpg`
@@ -91,7 +91,7 @@ const LearnTradingGuide = () => {
   return (
     <>
       <Helmet>
-        <title>Learn Trading Strategy | Free Educational Guide for Beginners</title>
+        <title>Beginner Trading Practice Guide | TradeHQ</title>
         <meta name="description" content="Study market mechanics, decision-making and hypothetical portfolio calculations with virtual cash. Simulated results do not predict investment outcomes." />
         <link rel="canonical" href={`${DOMAIN}/learn-trading-guide`} />
         <meta name="robots" content="index, follow" />
@@ -107,20 +107,20 @@ const LearnTradingGuide = () => {
           <div className="container mx-auto px-6 text-center relative z-10">
             <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}>
               <Badge className="bg-emerald-500/10 text-emerald-400 border-emerald-500/20 px-3 py-1 text-[10px] uppercase tracking-[0.2em] font-bold mb-6">
-                Institutional Grade Education
+                Virtual Learning and Reference Notes
               </Badge>
             </motion.div>
             
             <h1 className="text-3xl md:text-5xl font-black mb-6 tracking-tight text-white leading-tight uppercase italic">
-              Practice with <span className="text-emerald-500">$100K Virtual Cash</span>
+              Beginner Trading <span className="text-emerald-500">Practice Guide</span>
             </h1>
 
             <p className="text-base md:text-lg text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed">
-              Explore market concepts, AI-assisted learning tools, and Bitcoin scaling topics 
-              using our high-fidelity simulator. No capital required.
+              Study virtual market orders, fee arithmetic and ways to review your assumptions. 
+              The $100K practice balance is simulated; no real-money orders are placed here.
             </p>
 
-            <Link to="/trade/BTC">
+            <Link to="/trade/btc">
               <Button size="lg" className="h-12 bg-profit hover:bg-profit/90 text-profit-foreground font-bold px-10 rounded-xl transition-all shadow-glow-profit">
                 LAUNCH TERMINAL <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
@@ -179,7 +179,7 @@ const LearnTradingGuide = () => {
                   <Target className="text-emerald-500 w-4 h-4" />
                   <h2 className="text-xs uppercase tracking-widest font-black text-slate-500">Curriculum</h2>
                 </div>
-                <h3 className="text-xl font-bold text-white tracking-tight">AI-Assisted Trading Foundations</h3>
+                <h3 className="text-xl font-bold text-white tracking-tight">Practice Fundamentals</h3>
               </div>
 
               <Card className="p-6 bg-white/[0.02] border-white/5 rounded-2xl backdrop-blur-md shadow-2xl">
@@ -199,7 +199,7 @@ const LearnTradingGuide = () => {
                       <Shield className="w-5 h-5 text-emerald-400" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-black text-white uppercase tracking-tight mb-1">Risk Architecture</h4>
+                      <h4 className="text-sm font-black text-white uppercase tracking-tight mb-1">Hypothetical Loss Scenarios</h4>
                       <p className="text-xs text-slate-400 leading-relaxed">Compare hypothetical loss budgets and price shocks. A one-percent example is a worksheet input, not a universal risk rule.</p>
                     </div>
                   </div>
@@ -216,7 +216,7 @@ const LearnTradingGuide = () => {
               <div className="space-y-2 mb-6">
                 <div className="flex items-center gap-2">
                   <LineChart className="text-emerald-500 w-4 h-4" />
-                  <h2 className="text-xs uppercase tracking-widest font-black text-slate-500">Strategy Projections</h2>
+                  <h2 className="text-xs uppercase tracking-widest font-black text-slate-500">Hypothetical Calculations</h2>
                 </div>
                 <h3 className="text-xl font-bold text-white tracking-tight">Compound Growth Simulator</h3>
               </div>
@@ -343,7 +343,7 @@ const LearnTradingGuide = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
               {[
-                { icon: Globe, title: "170 Assets", desc: "Equities, Crypto & Tokenized Securities." },
+                { icon: Globe, title: "170 Assets", desc: "Stocks, crypto, ETFs, forex and commodities." },
                 { icon: Shield, title: "Virtual Money Only", desc: "Practice losses do not spend real cash." },
                 { icon: Zap, title: "Practice Ready", desc: "Built around simulator exercises and guided learning." }
               ].map((f, i) => (
@@ -359,7 +359,7 @@ const LearnTradingGuide = () => {
           </section>
 
           <div className="mt-6 pt-4 border-t border-white/5 text-center">
-            <SocialShare title="I'm learning AI-assisted trading on TradeHQ! 🚀" description="Learning market concepts with a free $100K simulator" variant="compact" />
+            <SocialShare title="I'm studying market mechanics with TradeHQ's virtual simulator" description="Learning market concepts with a free $100K simulator" variant="compact" />
           </div>
           <EducationalDisclaimer variant="footer" className="mb-10" />
         </main>
