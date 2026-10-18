@@ -24,7 +24,7 @@ export const ASSET_NOTES: Record<string, AssetNote> = {
   },
   eth: {
     why: "Ethereum is a programmable network, so its price reflects both speculation and demand for block space used by applications. Practising on it teaches you how a platform asset differs from a pure store-of-value narrative.",
-    watch: "Network upgrades, staking participation and fee activity are recurring themes in Ethereum news. Its price also frequently tracks Bitcoin's direction with a larger percentage swing, which is worth noticing before you assume a move is Ethereum-specific.",
+    watch: "Network upgrades, staking participation and fee activity are recurring themes in Ethereum news. Compare ETH and BTC over matching dated observations; neither their direction nor relative volatility has a fixed relationship.",
     gap: "Real Ethereum transactions require gas fees that vary with network congestion, and staking locks capital in ways a simulator cannot represent. Treat practice results as evidence about your decision process, not your expected returns.",
     checklist: [
       "Compare the day's ETH move with BTC's before deciding the cause is Ethereum news.",
@@ -64,7 +64,7 @@ export const ASSET_NOTES: Record<string, AssetNote> = {
   },
   nvda: {
     why: "NVIDIA's chips sit at the centre of AI and data-centre demand, so its share price has become a bellwether for the whole AI theme. That makes it a useful case study in how expectations, not just results, drive a stock.",
-    watch: "Quarterly earnings and forward guidance produce its largest scheduled moves. Large technology customers' capital-spending plans and export restrictions on advanced chips are other frequently cited drivers.",
+    watch: "Quarterly earnings and forward guidance are scheduled company-information sources; they do not determine the next price move. Large technology customers' capital-spending plans and export restrictions on advanced chips are other frequently cited drivers.",
     gap: "Real earnings-night gaps can open far beyond a stop. A worksheet can compare hypothetical pre-report and post-report prices with several chosen exposures. Generated practice history does not reproduce a real earnings event.",
     checklist: [
       "Find the next earnings date and decide whether you will hold through it.",
@@ -83,7 +83,7 @@ export const ASSET_NOTES: Record<string, AssetNote> = {
     ],
   },
   tsla: {
-    why: "Tesla is one of the most debated stocks on any market, with unusually large daily swings for a company of its size. Practising here teaches you how sentiment and narrative can dominate fundamentals over short periods.",
+    why: "Tesla provides an example for separating vehicle deliveries, revenue, margins and a company narrative. Those measures need not change together, and a simulated price shock does not reproduce an actual announcement.",
     watch: "Quarterly delivery figures, earnings, margins and public statements from its chief executive all tend to move the price. Competition in electric vehicles and progress on autonomy are recurring debates.",
     gap: "Tesla's volatility makes real stops prone to slippage, and social-media sentiment can make holding a losing position harder than it looks on a practice screen.",
     checklist: [
@@ -104,8 +104,8 @@ export const ASSET_NOTES: Record<string, AssetNote> = {
   },
   msft: {
     why: "Microsoft combines enterprise software, cloud infrastructure and other businesses. Recurring contracts provide a useful contrast with one-off sales, but they do not establish lower share-price risk. A practice worksheet can compare different holding periods and valuation assumptions.",
-    watch: "Azure cloud growth, enterprise software subscriptions and its investments in AI are the recurring themes in its results. Because it is heavily weighted in major indices, index flows also influence it.",
-    gap: "Steadier stocks can tempt learners into oversized positions. In real accounts, concentration in one name is a risk even when that company is large and profitable.",
+    watch: "Azure cloud growth, enterprise software subscriptions and its investments in AI are the recurring themes in its results. Check dated fund holdings before estimating Microsoft exposure through an index fund.",
+    gap: "A familiar company can still create a concentrated position. In real accounts, concentration in one name is a risk even when that company is large and profitable.",
     checklist: [
       "Compare MSFT's monthly move with the S&P 500 to see how much is market-wide.",
       "Note the date of its next quarterly report.",
@@ -114,7 +114,7 @@ export const ASSET_NOTES: Record<string, AssetNote> = {
   },
   googl: {
     why: "Alphabet earns most of its revenue from search and YouTube advertising, with a growing cloud business alongside. It shows how a company's main revenue engine shapes how the market reacts to news.",
-    watch: "Advertising growth, cloud profitability, regulatory cases and competition in AI-assisted search are the topics most coverage focuses on. Alphabet also has two share classes, GOOGL and GOOG, which differ mainly in voting rights.",
+    watch: "Advertising growth, cloud profitability, regulatory cases and competition in AI-assisted search are the topics most coverage focuses on. The listed GOOGL and GOOG tickers represent different share classes; check the company documents for voting rights.",
     gap: "Regulatory headlines can arrive without warning in the real market. A simulator cannot reproduce the uncertainty of waiting on a court decision.",
     checklist: [
       "Note which share class you are practising with and why.",
@@ -125,7 +125,7 @@ export const ASSET_NOTES: Record<string, AssetNote> = {
   meta: {
     why: "Meta owns Facebook, Instagram and WhatsApp and is primarily an advertising business, with large spending on AI and virtual-reality projects. Its history includes both steep declines and strong recoveries, which makes it instructive for studying drawdowns.",
     watch: "User engagement, advertising pricing, capital-expenditure plans and spending on its Reality Labs division are the recurring themes in its reports.",
-    gap: "Holding a real position through a large drawdown is far harder than watching one in practice. Use this chart's history to ask honestly whether you would have held.",
+    gap: "Holding a real position through a large drawdown is far harder than watching one in practice. Use separately sourced historical observations for a real drawdown study; generated chart history does not reproduce Meta’s market record.",
     checklist: [
       "Look at the stock's largest drawdown in the past few years and note how long recovery took.",
       "Check the next earnings date and any spending guidance updates.",
@@ -134,7 +134,7 @@ export const ASSET_NOTES: Record<string, AssetNote> = {
   },
   spy: {
     why: "SPY tracks the S&P 500, which covers roughly 500 large US companies. Practising on it teaches you how the broad market behaves without the noise of a single company's news.",
-    watch: "Interest-rate decisions, inflation data, employment reports and the earnings of its largest holdings move the index most. Because large technology companies carry heavy weights, a few names can drive a big share of daily moves.",
+    watch: "Interest-rate decisions, inflation, employment data and company results are research topics; no ranking of their price effects is established here. Because large technology companies carry heavy weights, a few names can drive a big share of daily moves.",
     gap: "Index funds charge a small annual expense ratio and real trading involves a bid-ask spread, both of which a simulator ignores. Over long holding periods, costs matter.",
     checklist: [
       "Check the economic calendar for inflation or interest-rate announcements.",
@@ -143,7 +143,7 @@ export const ASSET_NOTES: Record<string, AssetNote> = {
     ],
   },
   qqq: {
-    why: "QQQ tracks the Nasdaq-100, a technology-heavy index of large non-financial companies. Comparing it with SPY shows how much of the market's movement comes from technology.",
+    why: "QQQ tracks the Nasdaq-100, a technology-heavy index of large non-financial companies. Compare dated holdings with SPY to study differences in fund concentration; a return difference alone cannot isolate technology’s contribution.",
     watch: "Interest-rate expectations matter a great deal here because growth companies are sensitive to discount rates. The earnings of its biggest holdings also have an outsized effect.",
     gap: "Its concentration in a few large technology stocks means it can fall faster than broader indices. Holding through such a period in real money tests patience in ways practice cannot.",
     checklist: [
@@ -173,7 +173,7 @@ export const ASSET_NOTES: Record<string, AssetNote> = {
     ],
   },
   eurusd: {
-    why: "EUR/USD is the most traded currency pair in the world, pairing the euro against the US dollar. Practising here teaches you how interest-rate differences between two central banks drive exchange rates.",
+    why: "EUR/USD quotes dollars per euro. The pair offers a worksheet for separating exchange-rate arithmetic from hypotheses about ECB and Federal Reserve policy; policy differences alone do not determine a future rate.",
     watch: "Decisions and statements from the European Central Bank and the US Federal Reserve, along with inflation and employment data from both regions, are the main drivers.",
     gap: "Retail forex is commonly traded with high leverage, which can magnify losses quickly. TradeHQ does not implement leverage. Express a chosen hypothetical price move in account currency and distinguish this spot practice from a leveraged real account.",
     checklist: [

@@ -149,6 +149,11 @@ const WikiTerm = () => {
             </p>
           </Card>
 
+          {!!term.sources?.length && <section className="mt-6" aria-label="Primary references">
+            <h2 className="text-lg font-semibold">References</h2>
+            <ul className="list-disc pl-5">{term.sources.map(source => <li key={source.href}><a className="text-primary underline" href={source.href}>{source.label}</a></li>)}</ul>
+          </section>}
+
           {/* Pro Tip Box */}
           <Card className="mt-4 p-6 md:p-8 bg-primary/[0.04] border-primary/20 rounded-2xl">
             <div className="flex items-center gap-2 mb-3">

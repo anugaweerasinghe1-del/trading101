@@ -450,6 +450,7 @@ export interface Strategy {
   steps: string[];
   example: string;
   successRate: string;
+  sources?: { href: string; label: string }[];
   depth: StrategyDepth;
 }
 
@@ -463,186 +464,198 @@ export interface StrategyDepth {
 
 export const STRATEGIES: Strategy[] = [
   {
-    slug: "scalping",
-    name: "Scalping",
-    oneLiner: "Capturing small price moves on the 1-5 minute timeframe.",
-    bestFor: "Traders with fast execution, low latency and tight spreads. Liquid markets like SPY, BTC, ES futures.",
-    worstFor: "Beginners, anyone on slow internet, or anyone trading wide-spread alts.",
-    steps: [
-      "Pick one liquid instrument and trade only that for 30 days.",
-      "Use 1-min + 5-min charts; ignore higher timeframes for entries.",
-      "Choose a small predefined practice risk budget and keep it consistent while you collect enough trades to review the results.",
-      "Use a predefined session stop in the simulator if repeated losses are affecting decision quality, and review the session before continuing.",
-      "Review every trade nightly — most edge comes from cutting bad setups, not adding new ones.",
+    "slug": "scalping",
+    "name": "Scalping",
+    "oneLiner": "Capturing small price moves on the 1-5 minute timeframe.",
+    "bestFor": "A study of how spreads, fees and latency affect short-horizon calculations; not a suitability recommendation.",
+    "worstFor": "Simplified fills and generated candles do not reproduce order-book priority, partial fills or intraday liquidity.",
+    "steps": [
+      "Choose one instrument and explicitly fictional entry, exit and cost inputs for a short-horizon worksheet.",
+      "State the chart interval and whether the observations are provider history or generated practice candles.",
+      "Calculate the effect of a worse fill and a wider spread before comparing gains and losses.",
+      "Record all selected cases, including unfavorable ones. TradeHQ supports manual market orders; planned stops are worksheet assumptions."
     ],
-    example: "Hypothetical worksheet, not an observed trade: Long BTC at $95,120 with stop $95,080, target $95,210 — risking $40 to make $90.",
-    successRate: "No universal win rate applies. Track your own simulated win rate, payoff ratio, costs and drawdown over a sufficiently large sample.",
-    depth: {
-      context:
-        "Scalping exists because order books are noisy. Market makers quote a bid and an ask, and between those two prices there is a constant tug-of-war as large orders get worked into the book. A scalper is not predicting where an asset will be next month — they are trying to be on the right side of the next few hundred ticks and get out before the noise reverses. That makes execution quality, not analysis, the main variable: a 2-tick worse fill on a 10-tick target destroys a third of the trade's expected value.",
-      regime:
-        "Scalping works best when the spread is one tick wide and volume is heavy — US equity index products in the first hour, BTC and ETH during US/Europe overlap, EUR/USD around the London open. It fails in thin overnight sessions, in low-volume altcoins where the spread can be 0.3% (three times a typical target), and around scheduled events such as CPI or FOMC where the book empties out seconds before the print.",
-      mistakes: [
-        "Trading a wide-spread instrument. If the spread is 0.2% and your target is 0.15%, the position is negative-expectancy before you click.",
-        "Increasing size after a losing streak to 'get it back'. Scalping produces long strings of small losses by design; size changes turn a normal drawdown into a blow-up.",
-        "Holding a scalp that goes against you and calling it a swing trade. That is a different plan with a different stop, and switching mid-trade means you have no plan at all.",
+    "example": "Hypothetical worksheet, not an observed trade: Long BTC at $95,120 with stop $95,080, target $95,210 — risking $40 to make $90. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.",
+    "successRate": "No universal win rate applies. Track your own simulated win rate, payoff ratio, costs and drawdown over a sufficiently large sample.",
+    "depth": {
+      "context": "Scalping describes attempts to capture small changes over short intervals. Because the intended price change is small, a spread, fee or execution delay can form a large part of the result. A two-tick cost is 20% of a ten-tick gross target, but that ratio does not establish expected profit: win frequency, adverse outcomes and all costs would also be needed.",
+      "regime": "Liquidity and spreads vary by venue, instrument, session and event. A small spread observed in one period is not a permanent property or a reliable profit opportunity. Compare observations over stated dates rather than assign universally favorable trading hours.",
+      "mistakes": [
+        "Comparing a gross target with a result after fees as if they were the same measure.",
+        "Treating a generated candle as evidence of an actual order-book fill.",
+        "Changing size or exit assumptions after seeing the result and combining the changed rule with the original sample."
       ],
-      math:
-        "Hypothetical arithmetic, not observed performance: fixed realized 57% wins at 1.5R and 43% losses at 1R give 0.57×1.5−0.43=0.425R per trade. An assumed 0.25% of $100,000 is $250, giving $106.25 gross expectancy per trade. Twenty trades imply $2,125 gross expectancy; twenty $3 round trips cost $60, about 2.82% of that amount. Actual gains, fills and costs can differ.",
+      "math": "Hypothetical arithmetic, not observed performance: fixed realized 57% wins at 1.5R and 43% losses at 1R give 0.57×1.5−0.43=0.425R per trade. An assumed 0.25% of $100,000 is $250, giving $106.25 gross expectancy per trade. Twenty trades imply $2,125 gross expectancy; twenty $3 round trips cost $60, about 2.82% of that amount. Actual gains, fills and costs can differ."
     },
+    "sources": [
+      {
+        "href": "https://www.finra.org/investors/insights/frequent-intraday-trading",
+        "label": "FINRA — frequent intraday trading risks and mechanics"
+      }
+    ]
   },
   {
-    slug: "swing-trading",
-    name: "Swing Trading",
-    oneLiner: "Holding positions 2-10 days to capture intermediate moves.",
-    bestFor: "People with day jobs. Patient traders who can check charts twice a day.",
-    worstFor: "Anyone who panics during overnight gaps.",
-    steps: [
-      "Use the daily chart to find the trend.",
-      "Use the 4-hour chart for entries on pullbacks.",
-      "Choose and document a hypothetical risk amount for the worksheet; no percentage is universally suitable.",
-      "Compare chosen exit distances with a stated volatility calculation; a 1.5x ATR setting is an example, not a validated default.",
-      "Test fixed exits, partial exits and trailing exits separately so you can compare how each rule behaves in simulation.",
+    "slug": "swing-trading",
+    "name": "Swing Trading",
+    "oneLiner": "Holding positions 2-10 days to capture intermediate moves.",
+    "bestFor": "A worksheet comparing multi-day observation windows and overnight exposure; no work schedule establishes suitability.",
+    "worstFor": "Manual review leaves exposure between observations, and an intended exit can be crossed by a gap.",
+    "steps": [
+      "Define a multi-day observation window without implying that a holding period predicts a return.",
+      "Record a hypothetical entry, quantity and exit assumption before examining later observations.",
+      "Compare different gap sizes and exit distances, including an unfilled or worse-than-planned exit.",
+      "Keep fixed, partial and trailing exit rules in separate conceptual comparisons. TradeHQ does not place automatic stops."
     ],
-    example: "Hypothetical worksheet, not an observed trade: Bought NVDA at $145 after a pullback, stop $138, target $165 — risked $7 to make $20.",
-    successRate: "Performance depends on market regime, entry/exit rules, costs and sample size. Use the simulator to measure your own distribution of outcomes.",
-    depth: {
-      context:
-        "Swing trading sits between day trading and investing: positions are held long enough for a thesis to play out, short enough that a single position is never a life decision. A scheduled review can fit some learners’ routines, but holdings remain exposed between observations and suitability cannot be inferred from employment status. The trade-off is overnight risk — earnings, macro prints and weekend headlines all move price while your stop cannot protect you at the exact level you set.",
-      regime:
-        "It performs when a market is trending on the daily chart with regular pullbacks: think large-cap tech in an uptrend, or a major FX pair in a sustained rate-differential move. It performs badly in tight, headline-driven chop where every pullback becomes a reversal, and around earnings, where a single gap can exceed several planned stops.",
-      mistakes: [
-        "Treating a round-number exit or a volatility multiple as guaranteed protection. Compare alternative distances and include gaps and costs.",
-        "Holding through earnings on a full-size position because 'it should beat'. Compare several explicitly hypothetical exposures and gap outcomes before reviewing the original thesis.",
-        "Adding to a losing swing. Averaging down converts a defined-risk trade into an undefined one, and can increase exposure while the original thesis weakens.",
+    "example": "Hypothetical worksheet, not an observed trade: Bought NVDA at $145 after a pullback, stop $138, target $165 — risked $7 to make $20. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.",
+    "successRate": "Performance depends on market regime, entry/exit rules, costs and sample size. Use the simulator to measure your own distribution of outcomes.",
+    "depth": {
+      "context": "Swing trading sits between day trading and investing: positions are held long enough for a thesis to play out, short enough that a single position is never a life decision. A scheduled review can fit some learners’ routines, but holdings remain exposed between observations and suitability cannot be inferred from employment status. The trade-off is overnight risk — earnings, macro prints and weekend headlines all move price while your stop cannot protect you at the exact level you set.",
+      "regime": "An apparent trend or pullback is a description of selected past data. A later continuation and a reversal are both possible. Earnings and other announcements can introduce overnight gaps; a planned exit does not guarantee a fill at that price.",
+      "mistakes": [
+        "Treating a round-number exit or volatility multiple as guaranteed loss protection.",
+        "Assuming favorable earnings or a company narrative determines the next opening price.",
+        "Adding to a position while reporting results as though exposure had stayed fixed."
       ],
-      math:
-        "Hypothetical arithmetic: fixed realized 47% wins at 2R and 53% losses at 1R give 0.41R gross expectancy per trade. With an arbitrary $1,000 practice loss amount, that is $410 before costs. These assumed inputs do not establish performance. Losing-run probabilities require a sample length and independence assumption; no particular run is guaranteed or universally normal.",
+      "math": "Hypothetical arithmetic: fixed realized 47% wins at 2R and 53% losses at 1R give 0.41R gross expectancy per trade. With an arbitrary $1,000 practice loss amount, that is $410 before costs. These assumed inputs do not establish performance. Losing-run probabilities require a sample length and independence assumption; no particular run is guaranteed or universally normal."
     },
+    "sources": [
+      {
+        "href": "https://www.finra.org/investors/insights/frequent-intraday-trading",
+        "label": "FINRA — frequent intraday trading risks and mechanics"
+      }
+    ]
   },
   {
-    slug: "day-trading",
-    name: "Day Trading",
-    oneLiner: "Opening and closing all positions within a single session.",
-    bestFor: "Full-time traders. Anyone who has at least 3 hours of focused screen time.",
-    worstFor: "Learners whose schedule cannot support the chosen observation window.",
-    steps: [
-      "Define a session window for the worksheet and compare its actual volume, spreads and events with other windows.",
-      "Use the 5-min chart with VWAP.",
-      "Use a deliberately small and consistent simulated risk budget, and set a session limit that you can evaluate afterwards.",
-      "Close everything before the close — no overnight exposure.",
-      "End every day with a journal entry: what worked, what didn't, what to cut tomorrow.",
+    "slug": "day-trading",
+    "name": "Day Trading",
+    "oneLiner": "Opening and closing all positions within a single session.",
+    "bestFor": "A study of same-session accounting and transaction costs, rather than a recommendation for full-time activity.",
+    "worstFor": "Repeated orders add costs and operational demands. Closing by a chosen time is an assumption that can fail during a halt or outage.",
+    "steps": [
+      "Define a hypothetical session window and identify the relevant venue and calendar.",
+      "State an entry and exit rule in advance, using only calculations available in the chosen data source.",
+      "Calculate how repeated fees and worse fills change the same gross price outcome.",
+      "Record whether the hypothetical exit occurred. Do not assume an outage or trading halt permits a closing transaction."
     ],
-    example: "Hypothetical worksheet, not an observed trade: Long SPY at VWAP reclaim, stop below VWAP, target the day's prior high.",
-    successRate: "There is no dependable universal win-rate range. Evaluate the method by expectancy, drawdown, costs and consistency across a larger sample.",
-    depth: {
-      context:
-        "Day trading concentrates a whole trading career into single sessions. Because everything is closed by the bell there is no overnight gap risk, but there is also no time for a thesis to recover — the market either agrees with you within hours or it does not. Activity and execution conditions vary across assets, sessions and events. Compare a dated sample instead of assuming that one universally best hour establishes an edge.",
-      regime:
-        "Good days have a clear opening drive, expanding range and volume above the recent average. Bad days are narrow, overlapping and volume-starved — typically the sessions before a major holiday or the day before a central-bank decision, when institutions stand aside. Learning to recognise a no-trade day is worth more than any additional indicator.",
-      mistakes: [
-        "Trading the midday lull out of boredom. Range contracts, stops get hit by noise, and the day's profit from the open is handed back.",
-        "Using a fixed dollar stop instead of a structural one. The stop should sit where the idea is wrong — below VWAP, below the opening range — not at an arbitrary loss you find comfortable.",
-        "Ignoring the daily loss limit. Two full stops in a session is a signal to close the platform; a third is almost always emotional rather than analytical.",
+    "example": "Hypothetical worksheet, not an observed trade: Long SPY at VWAP reclaim, stop below VWAP, target the day's prior high. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.",
+    "successRate": "There is no dependable universal win-rate range. Evaluate the method by expectancy, drawdown, costs and consistency across a larger sample.",
+    "depth": {
+      "context": "Day trading usually means opening and closing positions within the same trading day. If a position is fully closed, it has no later overnight exposure, but an intended close is not guaranteed during a halt, outage or loss of liquidity. A short holding period does not make a position low risk. Frequency, costs, execution and behavior all affect the outcome.",
+      "regime": "Ranges, spreads and traded volumes differ across sessions and events. Selecting only sessions that later looked favorable creates selection bias. A meaningful comparison records its dates, includes unfavorable cases and uses information available before each hypothetical decision.",
+      "mistakes": [
+        "Assuming a particular hour or chart pattern guarantees a favorable range.",
+        "Presenting an intended stop or session loss threshold as an enforced maximum loss.",
+        "Inferring a trader’s emotional state or the next outcome from the number of recent losing trades."
       ],
-      math:
-        "Hypothetical arithmetic: fixed realized 52% wins at 1.5R and 48% losses at 1R give 0.30R gross expectancy. An arbitrary 0.5% of $100,000 is $500, so expectancy is $150 per trade and $750 across five trades before costs. This is an input-based worksheet, not observed returns or a slippage estimate.",
+      "math": "Hypothetical arithmetic: fixed realized 52% wins at 1.5R and 48% losses at 1R give 0.30R gross expectancy. An arbitrary 0.5% of $100,000 is $500, so expectancy is $150 per trade and $750 across five trades before costs. This is an input-based worksheet, not observed returns or a slippage estimate."
     },
+    "sources": [
+      {
+        "href": "https://www.finra.org/investors/insights/frequent-intraday-trading",
+        "label": "FINRA — frequent intraday trading risks and mechanics"
+      }
+    ]
   },
   {
-    slug: "dca-dollar-cost-averaging",
-    name: "Dollar-Cost Averaging (DCA)",
-    oneLiner: "Buying a fixed amount on a fixed schedule, regardless of price.",
-    bestFor: "Long-term investors, beginners, anyone who can't predict the market (i.e. everyone).",
-    worstFor: "Active traders who think they can time bottoms.",
-    steps: [
-      "Pick one or two long-term assets (e.g. SPY, BTC).",
-      "Decide an amount you can commit weekly or monthly.",
-      "Buy it on the same day every period — no exceptions.",
-      "Never sell on red days; rebalance once a year at most.",
-      "Track total return on TradeHQ's portfolio analytics to see compounding in action.",
+    "slug": "dca-dollar-cost-averaging",
+    "name": "Dollar-Cost Averaging (DCA)",
+    "oneLiner": "Buying a fixed amount on a fixed schedule, regardless of price.",
+    "bestFor": "A comparison of equal scheduled contributions with other cash-flow schedules; suitability depends on the person and asset.",
+    "worstFor": "Repeated buying does not prevent permanent loss, concentration or the need to retain money for essential expenses.",
+    "steps": [
+      "Choose a fictional contribution amount, dates and asset for an arithmetic worksheet.",
+      "For each date, divide the assumed contribution by the hypothetical unit price, including stated costs.",
+      "Compare the same total funds under a different schedule while stating when the funds were available.",
+      "Record total contributions, units and ending value. No “never sell” instruction or return guarantee follows from the exercise."
     ],
-    example: "Hypothetical schedule: $100 contributed to a selected practice asset each Friday. Record purchase dates, prices and units; no outperformance percentage is established.",
-    successRate: "Execution can be measured separately from investment performance: track whether the scheduled contribution was made as planned, without treating adherence as a guarantee of returns.",
-    depth: {
-      context:
-        "Dollar-cost averaging removes the hardest variable in investing: timing. By committing a fixed amount on a fixed schedule you automatically buy more units when prices are low and fewer when they are high, and you never have to form a view about the next three months. A comparison with a lump sum depends on when funds become available, the market path, costs and dates. A fixed schedule does not guarantee better returns or continued participation during a drawdown.",
-      regime:
-        "It is designed for broad, diversified, long-lived assets — a total-market or S&P 500 index fund, and for those who accept the volatility, a small allocation to a major crypto asset. It is not designed for single stocks, leveraged products, or anything that can go to zero, because averaging into a permanently impaired asset just buys more of a losing position.",
-      mistakes: [
-        "Pausing contributions during a crash. That is precisely when the schedule is buying the cheapest units; stopping converts a mechanical plan into market timing.",
-        "DCA-ing into a single speculative name and calling it investing. Repeated purchases do not establish that an asset will recover. Diversified indexes can also decline over an observation period.",
-        "Checking the balance daily. The plan works on a horizon of years; daily monitoring only increases the chance of abandoning it.",
+    "example": "Hypothetical schedule: $100 contributed to a selected practice asset each Friday. Record purchase dates, prices and units; no outperformance percentage is established. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.",
+    "successRate": "Execution can be measured separately from investment performance: track whether the scheduled contribution was made as planned, without treating adherence as a guarantee of returns.",
+    "depth": {
+      "context": "Dollar-cost averaging removes the hardest variable in investing: timing. By committing a fixed amount on a fixed schedule you automatically buy more units when prices are low and fewer when they are high, and you never have to form a view about the next three months. A comparison with a lump sum depends on when funds become available, the market path, costs and dates. A fixed schedule does not guarantee better returns or continued participation during a drawdown.",
+      "regime": "Scheduled contributions change purchase timing and units acquired. Their comparison with a lump sum depends on the market path, costs and when cash becomes available. A rising, falling or permanently impaired asset can produce different results. No contribution schedule makes a speculative asset safe or guarantees a lower average cost.",
+      "mistakes": [
+        "Treating a fixed contribution plan as an instruction to continue investing money needed for essential expenses.",
+        "Assuming repeated purchases guarantee recovery after a permanent impairment.",
+        "Comparing schedules with different cash availability or excluding fees and withdrawals."
       ],
-      math:
-        "Hypothetical calculation: $500 deposited at each month end for twenty years with an assumed nominal annual rate of 8%, compounded monthly, gives $500×((1+0.08/12)^240−1)/(0.08/12), about $294,510. Contributions total $120,000. The rate is an arbitrary positive-growth assumption rather than a forecast; fees, taxes, varying returns and contribution timing change the result.",
+      "math": "Hypothetical calculation: $500 deposited at each month end for twenty years with an assumed nominal annual rate of 8%, compounded monthly, gives $500×((1+0.08/12)^240−1)/(0.08/12), about $294,510. Contributions total $120,000. The rate is an arbitrary positive-growth assumption rather than a forecast; fees, taxes, varying returns and contribution timing change the result."
     },
+    "sources": [
+      {
+        "href": "https://www.investor.gov/introduction-investing/investing-basics/glossary/dollar-cost-averaging",
+        "label": "SEC Investor.gov — Dollar-cost averaging"
+      }
+    ]
   },
   {
-    slug: "rsi-strategy",
-    name: "RSI Mean-Reversion",
-    oneLiner: "Buying oversold dips and selling overbought spikes using RSI(14).",
-    bestFor: "Range-bound markets, large-cap stocks, and major crypto pairs.",
-    worstFor: "Strong trends — RSI stays overbought/oversold for weeks and you'll get run over.",
-    steps: [
-      "Add RSI(14) to your chart.",
-      "Wait for RSI < 30 (oversold) or > 70 (overbought).",
-      "Confirm with a candlestick reversal pattern on the same bar.",
-      "Enter, stop just beyond the reversal candle, target the 20 EMA.",
-      "Skip the trade in obvious strong-trend regimes — check the 50/200 EMA first.",
+    "slug": "rsi-strategy",
+    "name": "RSI Mean-Reversion",
+    "oneLiner": "A conceptual comparison of RSI thresholds and later price observations.",
+    "bestFor": "Studying how the same oscillator threshold behaves in different historical samples.",
+    "worstFor": "An extreme reading can persist. Neither a threshold nor a second chart pattern proves a reversal.",
+    "steps": [
+      "Specify a standard RSI calculation and interval using a source that supplies the necessary historical prices.",
+      "Mark the conventional 30 and 70 thresholds as descriptions, then record all observations meeting them.",
+      "Compare later continuation and reversal cases under the same sampling and cost assumptions.",
+      "Treat entry and exit choices as separate hypothetical rules. TradeHQ’s RSI-style practice value is not a standard historical RSI calculation."
     ],
-    example: "Hypothetical worksheet, not an observed trade: BTC RSI dips to 26 at $92K with a bullish engulfing — buy, stop $91K, target $94K.",
-    successRate: "RSI-based results can vary sharply by market regime and rule set. Test the same rules in ranging and trending periods rather than relying on a fixed win-rate claim.",
-    depth: {
-      context:
-        "RSI, published by J. Welles Wilder in 1978, measures the ratio of average gains to average losses over a lookback window, normally 14 periods, and scales it from 0 to 100. Mean-reversion traders use it as a stretch gauge: a reading under 30 says recent selling has been unusually one-sided, which in a range-bound market often precedes a bounce. Crucially, RSI says nothing about direction — it describes how price got here, not where it goes next.",
-      regime:
-        "The method only makes sense in a market that is oscillating around a value area: a large-cap stock consolidating after a run, a major FX pair inside a monthly range, BTC chopping between well-defined levels. In a strong trend RSI can hold above 70 for weeks, and every 'overbought' short is a loss. Check the 50 and 200 EMA relationship first: if they are widely separated and sloping, this is a trend regime and mean reversion should be skipped.",
-      mistakes: [
-        "Taking the signal without confirmation. RSI under 30 alone is not an entry; wait for the reversal candle or a reclaim of a prior level so there is a defined place to be wrong.",
-        "Shorting an overbought reading in an uptrend. This is the single most expensive misuse of the indicator, and it feels most compelling exactly when it is most dangerous.",
-        "Tuning the lookback until history looks profitable. An RSI(9) that backtests beautifully on one asset and one year is usually curve-fitting, not an edge.",
+    "example": "Hypothetical worksheet, not an observed trade: BTC RSI dips to 26 at $92K with a bullish engulfing — buy, stop $91K, target $94K. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.",
+    "successRate": "RSI-based results can vary sharply by market regime and rule set. Test the same rules in ranging and trending periods rather than relying on a fixed win-rate claim.",
+    "depth": {
+      "context": "RSI compares smoothed recent gains and losses over a selected lookback and scales the result between zero and 100. Fourteen periods is a common setting; the interval must also be stated. Conventional threshold labels describe the calculation. They do not establish that an asset is mispriced or that a price reversal must follow.",
+      "regime": "RSI can remain extreme during a sustained move or cross its thresholds repeatedly. Comparing samples labeled trending and ranging requires a rule for those labels that does not use future information. A second indicator shares price inputs and is not necessarily independent confirmation.",
+      "mistakes": [
+        "Treating an oscillator threshold as a mandatory buy or sell instruction.",
+        "Assuming a candlestick pattern proves a reversal or that simulated volume validates it.",
+        "Selecting lookbacks after seeing profitable historical outcomes without testing a separate sample."
       ],
-      math:
-        "Hypothetical comparison: fixed realized 57% wins at 1.2R and 43% losses at 1R give 0.254R gross expectancy. Changing only the assumed win rate to 32% gives 0.32×1.2−0.68=−0.296R. These chosen inputs do not establish the observed profitability of ranging or trending markets; costs and actual fills must also be considered.",
+      "math": "Hypothetical comparison: fixed realized 57% wins at 1.2R and 43% losses at 1R give 0.254R gross expectancy. Changing only the assumed win rate to 32% gives 0.32×1.2−0.68=−0.296R. These chosen inputs do not establish the observed profitability of ranging or trending markets; costs and actual fills must also be considered."
     },
+    "sources": [
+      {
+        "href": "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/RSI",
+        "label": "Fidelity — indicator definition and limits"
+      }
+    ]
   },
   {
-    slug: "macd-strategy",
-    name: "MACD Crossover",
-    oneLiner: "Trading the signal-line cross on the MACD indicator.",
-    bestFor: "Trend-following on the daily timeframe.",
-    worstFor: "Choppy markets — you'll whipsaw and bleed.",
-    steps: [
-      "Add MACD (12, 26, 9) to the daily chart.",
-      "Wait for the MACD line to cross above the signal line above the zero line for longs (below for shorts).",
-      "Enter on the next day's open.",
-      "Stop below the last swing low.",
-      "Exit when MACD crosses back.",
+    "slug": "macd-strategy",
+    "name": "MACD Crossover",
+    "oneLiner": "Trading the signal-line cross on the MACD indicator.",
+    "bestFor": "Studying differences between moving averages, signal-line crossings and alternative exit assumptions.",
+    "worstFor": "Lag and repeated crossings can create unfavorable hypothetical outcomes; no market regime guarantees performance.",
+    "steps": [
+      "Specify the price series, interval and EMA calculation; 12, 26 and 9 are conventional settings, not validated defaults.",
+      "Record each selected signal-line crossing without discarding later unfavorable cases.",
+      "Choose fictional entry and exit assumptions before calculating results, including a case where price moves before entry.",
+      "Compare costs and alternative rules in a worksheet. TradeHQ does not provide a MACD overlay or genuine short selling."
     ],
-    example: "Hypothetical worksheet, not an observed trade: NVDA MACD crosses up at $130 with stop $124 — held for 6 weeks to $165.",
-    successRate: "MACD results vary by timeframe, market and exit rule. Track payoff distribution and drawdown instead of assuming a fixed win-rate range.",
-    depth: {
-      context:
-        "MACD subtracts a 26-period exponential moving average from a 12-period average and compares the result with a 9-period signal line. These historical inputs create lag. A crossover can persist or reverse; the calculation does not establish a win rate, profitability or how many false starts a rule filters.",
-      regime:
-        "It performs in markets that trend persistently on the daily chart — index ETFs, mega-cap equities, major commodities in a supply cycle. It performs badly in range-bound conditions, where the signal line crosses back and forth and each whipsaw costs a full stop. A rule restricting long crosses to prices above a 200-day average is another hypothesis to compare, not a verified improvement.",
-      mistakes: [
-        "Trading every cross. The outcome depends on the sample, costs and exit rules; no location accounts for the bulk of losses in every backtest.",
-        "Exiting winners at a fixed target. A fixed target changes realized payoff sizes. Compare that rule with another exit under the same data and costs instead of assuming an edge.",
-        "Reading histogram divergence as a reversal signal. Divergence is common and frequently resolves by the trend simply continuing after a pause.",
+    "example": "Hypothetical worksheet, not an observed trade: NVDA MACD crosses up at $130 with stop $124 — held for 6 weeks to $165. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.",
+    "successRate": "MACD results vary by timeframe, market and exit rule. Track payoff distribution and drawdown instead of assuming a fixed win-rate range.",
+    "depth": {
+      "context": "MACD subtracts a 26-period exponential moving average from a 12-period average and compares the result with a 9-period signal line. These historical inputs create lag. A crossover can persist or reverse; the calculation does not establish a win rate, profitability or how many false starts a rule filters.",
+      "regime": "A sustained historical move and a sideways sample can produce different numbers of crossovers. That observation does not prove a universally favorable asset class or timeframe. A filter based on a longer average is another rule to test with the same data and costs, rather than an established improvement.",
+      "mistakes": [
+        "Reporting only favorable crossings while excluding costly reversals.",
+        "Treating a planned reward-to-risk ratio as a realized payoff.",
+        "Assuming histogram divergence establishes a reversal or a profitable trade."
       ],
-      math:
-        "Hypothetical arithmetic: fixed realized 43% wins at 2.5R and 57% losses at 1R give 0.505R gross expectancy before costs. A planned reward-to-risk ratio is not the realized payoff. Losing-run probabilities depend on sample length, independence and the assumed win rate; a six-to-eight-loss run is not a universally expected outcome.",
+      "math": "Hypothetical arithmetic: fixed realized 43% wins at 2.5R and 57% losses at 1R give 0.505R gross expectancy before costs. A planned reward-to-risk ratio is not the realized payoff. Losing-run probabilities depend on sample length, independence and the assumed win rate; a six-to-eight-loss run is not a universally expected outcome."
     },
-  },
+    "sources": [
+      {
+        "href": "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/macd",
+        "label": "Fidelity — indicator definition and limits"
+      }
+    ]
+  }
 ];
 
 export const COUNTRY_PAGES = [
-  { slug: "sri-lanka", country: "Sri Lanka", currency: "LKR", note: "Practise in USD with $100K virtual cash — no LKR conversion or capital-control friction." },
-  { slug: "india", country: "India", currency: "INR", note: "Learn US-market mechanics before opening a real GIFT-City or LRS-routed account." },
-  { slug: "philippines", country: "Philippines", currency: "PHP", note: "Build a track record on practice equity before committing pesos to a live broker." },
-  { slug: "nigeria", country: "Nigeria", currency: "NGN", note: "Master order flow without FX friction — the lessons transfer to any naira-denominated broker later." },
+  { slug: "sri-lanka", country: "Sri Lanka", currency: "LKR", note: "Practise with USD-labelled virtual cash; this does not establish permission for a real foreign-currency transfer." },
+  { slug: "india", country: "India", currency: "INR", note: "Study virtual order mechanics; real overseas access and remittance eligibility require current official checks." },
+  { slug: "philippines", country: "Philippines", currency: "PHP", note: "Study virtual accounting in a worksheet; a practice record does not establish live-trading readiness." },
+  { slug: "nigeria", country: "Nigeria", currency: "NGN", note: "Study virtual order mechanics; real venues, currency conversion, permissions and costs differ." },
   { slug: "pakistan", country: "Pakistan", currency: "PKR", note: "Educational practice only — perfect for students before PSX or international broker accounts." },
 ];
 

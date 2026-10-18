@@ -8,6 +8,7 @@ import { loadSiteData } from "./loadData";
 import { STATIC_COPY, DISCLAIMER } from "./staticCopy";
 import { EXTRA_SECTIONS } from "./staticCopyExtra";
 import { ASSET_NOTES } from "./assetNotes";
+import { ASSET_REFERENCES } from "../src/lib/assetReferences";
 
 export interface PageSection {
   h: string;
@@ -210,6 +211,7 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
         },
       ],
       links: [
+        ...(g.sources || []),
         ...related.map((r: string) => ({ href: `/wiki/${r}`, label: bySlug.get(r)!.term })),
         { href: "/about", label: "Publisher and editorial approach" },
         { href: "/wiki", label: "Full glossary index" },
@@ -275,6 +277,7 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
       map.set(`/courses/${t.slug}/${l.slug}`, {
         sections: [
           { h: "Summary", p: [l.summary] },
+          ...(l.sourceCheck ? [{ h: "Source-check scope", p: [`Source check: ${l.sourceCheck.date}. ${l.sourceCheck.scope}`] }] : []),
           ...groupLessonBody(l.body),
           { h: "Key takeaways", list: l.keyTakeaways },
           {
@@ -465,8 +468,8 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
       sections: [
         { h: "What it is", p: [s.oneLiner, s.depth.context] },
         { h: "Market conditions that matter", p: [s.depth.regime] },
-        { h: "Best suited to", p: [s.bestFor] },
-        { h: "Badly suited to", p: [s.worstFor] },
+        { h: "Study context", p: [s.bestFor] },
+        { h: "Limitations", p: [s.worstFor] },
         { h: "The steps", list: s.steps },
         { h: "Worked example", p: [s.example] },
         { h: "The numbers behind it", p: [s.depth.math] },
@@ -481,6 +484,7 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
         },
       ],
       links: [
+        ...(s.sources || []),
         { href: "/strategy", label: "All strategies" },
         { href: "/wiki", label: "Glossary" },
         { href: "/trade", label: "Practice desk" },
@@ -495,7 +499,7 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
       {
         h: "Localised learning guides",
         p: [
-          "These guides explain how someone in a specific country actually reaches global markets: which regulator supervises brokers there, which local exchange exists, how much starting capital is realistic in local currency, and which assets are worth following while learning. They are educational context, not advice, and they do not rank or recommend brokers.",
+          "These guides identify local regulatory sources and offer hypothetical country-specific currency and market worksheets. They explain why residency, provider permissions, tax rules and foreign-exchange requirements need separate checks. A simulator does not establish real-market access, and the guides do not recommend brokers or a real-money starting amount.",
         ],
       },
       {
@@ -527,11 +531,12 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
     map.set(`/learn/country/${c.slug}`, {
       sections: [
         { h: `Trading from ${c.country}`, p: [c.intro] },
+        { h: "Publisher and source-check scope", p: [`Published by TradeHQ; site creator: Anuga Weerasinghe. Regulatory source check: ${c.sourceCheck.date}. ${c.sourceCheck.scope}`] },
         { h: "Why practise first", p: [c.whyPractice] },
         { h: "How market access works here", p: [c.marketAccess] },
-        { h: "Regulation", p: [`Brokers serving ${c.country} residents are supervised by the ${c.regulator.name} (${c.regulator.url}). Check any broker's licence with the regulator directly before sending money.`] },
+        { h: "Regulation", p: [`For securities regulation and intermediary information, consult ${c.regulator.name}. Registration for one activity does not establish that every product, overseas service or funding route is permitted. Use the official sources below for the applicable rules.`] },
         { h: "Broker types used locally", list: c.brokers },
-        { h: "Realistic starting capital", p: [c.startingCapital] },
+        { h: "Starting capital and eligibility", p: [c.startingCapital] },
         { h: "Locally relevant assets to follow", list: c.localAssets },
         { h: "A three-month practice plan", p: [c.practicePlan] },
         { h: "Tax", p: [`${c.taxNote} This is general information, not tax advice — confirm your own position with a qualified local professional.`] },
@@ -539,6 +544,7 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
         { h: "Questions people in this country ask", list: c.faqs.map((f: any) => `${f.q} — ${f.a}`) },
       ],
       links: [
+        ...c.sources,
         { href: "/learn/country", label: "All country guides" },
         { href: "/learn-trading-guide", label: "Beginner guide" },
         { href: "/courses", label: "Structured courses" },
@@ -552,6 +558,7 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
       sections: [
         { h: "Publisher and editorial transparency", p: ["Published by TradeHQ. Site creator: Anuga Weerasinghe. This page has no recorded editorial review date; the About page explains the site's editorial approach."] },
         { h: "Summary", p: [a.summary] },
+        ...(a.sourceCheck ? [{ h: "Source-check scope", p: [`Source check: ${a.sourceCheck.date}. ${a.sourceCheck.scope}`] }] : []),
         ...a.sections.map((s: any) => ({ h: s.heading, p: s.paragraphs })),
         { h: "Practise what you just read", p: [`Apply this in the simulator with ${BALANCE} in virtual cash. ${DISCLAIMER}`] },
       ],
@@ -571,7 +578,7 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
     if (!c) continue;
     const f = faqs[a.id] || [];
     const stats = Object.entries(c.stats || {})
-      .filter(([, v]) => v !== "live_sourced_at_runtime")
+      .filter(([k, v]) => k !== "source" && v !== "live_sourced_at_runtime")
       .map(([k, v]) => `${humanise(k)}: ${v}`);
     map.set(`/trade/${a.id}`, {
       sections: [
@@ -579,6 +586,7 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
         ...(TYPE_GUIDE[a.type] ? [] : [{ h: `${c.category} as an asset class`, p: [intros[a.type] || ""] }]),
         ...(stats.length ? [{ h: "Reference facts", list: stats }] : []),
         { h: "How to practise it here", p: [c.strategy] },
+        ...(ASSET_REFERENCES[a.id] ? [{ h: "Asset-specific worksheet (hypothetical)", p: [ASSET_REFERENCES[a.id].exercise] }] : []),
         ...(ASSET_NOTES[a.id]
           ? [
               { h: `Why learners study ${a.name}`, p: [ASSET_NOTES[a.id].why] },
@@ -602,13 +610,14 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
         {
           h: `A practice checklist for ${a.name}`,
           list: [
-            ...(TYPE_CHECKLIST[a.type] || TYPE_CHECKLIST.stock),
+            ...(ASSET_NOTES[a.id]?.checklist || TYPE_CHECKLIST[a.type] || TYPE_CHECKLIST.stock),
             `Read the ${a.name} sections above and look up any term here you cannot define out loud. ${DISCLAIMER}`,
           ],
         },
 
       ],
       links: [
+        ...(ASSET_REFERENCES[a.id] ? [{ href: ASSET_REFERENCES[a.id].href, label: ASSET_REFERENCES[a.id].label }] : []),
         ...(howtoSyms.has(a.id) ? [{ href: `/how-to-trade/${a.id}`, label: `How to trade ${a.name}` }] : []),
         { href: "/markets", label: "All markets" },
         { href: "/wiki", label: "Glossary" },

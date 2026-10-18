@@ -1,5 +1,7 @@
 export interface CountryGuide {
   slug: string;
+  sourceCheck: { date: string; scope: string };
+  sources: { label: string; href: string }[];
   country: string;
   flag: string;
   currency: string;
@@ -24,6 +26,8 @@ export interface CountryGuide {
 export const COUNTRY_GUIDES: CountryGuide[] = [
   {
     slug: "sri-lanka",
+    sourceCheck: { date: "2026-10-18", scope: "Linked regulator or registry information; no verification of individual eligibility, tax rates or remittance permission. No professional legal or financial review." },
+    sources: [{"label": "SEC Sri Lanka — rules and licensing", "href": "https://www.sec.gov.lk/"}],
     country: "Sri Lanka",
     flag: "🇱🇰",
     currency: "LKR",
@@ -49,10 +53,10 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
       "The All Share Price Index and the S&P SL20 as a daily read on local sentiment",
       "USD/LKR, because it silently determines the rupee value of any foreign asset you hold",
       "Brent crude and global rice and wheat prices, which feed directly into local inflation",
-      "US large-cap technology, which is what most locally available international platforms actually offer",
+      "US company reporting, studied independently of whether a particular overseas brokerage route is available",
     ],
     practicePlan:
-      "A workable first quarter: in month one, complete the Trading Psychology track and place no more than three simulated trades a week, writing down the reason for each before you know the result. In month two, add the Macro Reading track and start following the CBSL policy announcements alongside US CPI releases, noting how USD/LKR reacts. In month three, run a single strategy consistently for thirty days and review the drawdown rather than the return. Because US market hours fall late in the Sri Lankan evening, schedule observations and use supported manual market orders; record intended exits in a paper worksheet instead of trying to trade live after midnight.",
+      "Optional study worksheet: choose a dated USD/LKR observation and a fictional USD 100 asset value. Translate it into rupees at that rate, then at a hypothetical stronger and weaker rupee rate, keeping the asset value unchanged. Next change the asset value while keeping the rate fixed. This separates currency translation from asset returns. It does not establish that an overseas account or outward transfer is legally available. Use an official authority and your financial institution for those eligibility questions.",
     faqs: [
       { q: "What should Sri Lankan users know about regulation?", a: "TradeHQ is an educational simulator and does not execute real-money trades. Financial-market rules can change, so for questions about investing, brokerage access or local regulation, check current guidance from the Securities and Exchange Commission of Sri Lanka and other relevant authorities." },
       { q: "Can I convert my paper gains to real money?", a: "No. Paper trades are simulated only. Real-money trading uses separate regulated providers, and eligibility or account requirements should be checked with the relevant regulator and provider." },
@@ -61,6 +65,8 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
   },
   {
     slug: "india",
+    sourceCheck: { date: "2026-10-18", scope: "Linked regulator or registry information; no verification of individual eligibility, tax rates or remittance permission. No professional legal or financial review." },
+    sources: [{"label": "SEBI — official rules and intermediary information", "href": "https://www.sebi.gov.in/"}, {"label": "SEBI — equity-derivatives study, FY22–FY24 (September 2024)", "href": "https://www.sebi.gov.in/reports-and-statistics/research/sep-2024/study-analysis-of-profits-and-losses-in-the-equity-derivatives-segment-fy22-fy24-_86905.html"}, {"label": "RBI — official foreign-exchange and remittance guidance", "href": "https://www.rbi.org.in/"}],
     country: "India",
     flag: "🇮🇳",
     currency: "INR",
@@ -68,7 +74,7 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
     intro:
       "TradeHQ provides a free paper-trading environment for people in India who want to learn market mechanics before considering any real-money account. Current broker, tax and remittance rules should always be checked with official Indian sources.",
     whyPractice:
-      "SEBI has published research showing high loss rates among individual traders in equity derivatives. Paper trading can be one way to learn market mechanics before considering any real-money activity, but it does not guarantee better live results.",
+      "SEBI's September 2024 study reported that 93% of the individual equity-derivatives traders studied incurred losses over FY22–FY24. That historical derivatives sample is not a loss rate for all investors or a prediction for a later period. Virtual practice can illustrate mechanics but cannot guarantee better live results.",
     regulator: { name: "Securities and Exchange Board of India (SEBI)", url: "https://www.sebi.gov.in/" },
     brokers: ["Stock brokers listed in SEBI's current recognised-intermediary registry — verify registration status with SEBI before relying on any provider"],
     taxNote:
@@ -86,7 +92,7 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
       "US technology large-caps, widely followed by Indian retail investors through international platforms",
     ],
     practicePlan:
-      "Suggested first quarter: month one on Trading Psychology, as one way to study decision-making under uncertainty. Month two on Macro Reading, paying attention to how RBI policy and US rate expectations jointly move the rupee. Month three on a single documented strategy with several explicitly hypothetical position sizes per simulated trade, reviewed at the end against a simple index hold. Indian market hours overlap comfortably with the working day, so the discipline challenge is usually overtrading rather than sleep.",
+      "Optional study worksheet: read the linked SEBI FY22–FY24 derivatives study and record its population, dates and definition of loss. Compare a virtual share purchase with the leverage and contract obligations discussed in the futures course. Do not apply the study percentage to every investor, cash-equity holder or later period. Use the journal to distinguish observed sample results from an individual prediction; successful simulation does not validate a real-money strategy.",
     faqs: [
       { q: "Is TradeHQ SEBI-registered?", a: "TradeHQ is a free educational simulator and does not execute trades or hold client funds. For the activities and entities that require SEBI registration, use SEBI's current rules and recognised-intermediary registry." },
       { q: "Can I paper trade Indian stocks like Reliance or TCS?", a: "The current TradeHQ catalogue focuses on US and global tickers. Indian-listed tickers are planned but not yet live." },
@@ -95,6 +101,8 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
   },
   {
     slug: "philippines",
+    sourceCheck: { date: "2026-10-18", scope: "Linked regulator or registry information; no verification of individual eligibility, tax rates or remittance permission. No professional legal or financial review." },
+    sources: [{"label": "Philippine SEC — eRAMP capital-market participants", "href": "https://eramp.sec.gov.ph/capital-market-participants"}],
     country: "Philippines",
     flag: "🇵🇭",
     currency: "PHP",
@@ -120,7 +128,7 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
       "US large-caps, the most common first international exposure for Filipino investors",
     ],
     practicePlan:
-      "First quarter: month one on Trading Psychology and a simple journal habit. Month two on Macro Reading, tracking how Fed decisions move USD/PHP and therefore the peso value of remittances and imported goods. Month three on consistency — a documented setup and a chosen hypothetical size over a stated practice sample, then a written review. If a market schedule conflicts with school or work, recorded examples can be studied without treating a particular timeframe as a universal recommendation.",
+      "Optional study worksheet: assume a fictional USD 100 remittance and choose two hypothetical PHP-per-USD rates. Calculate the peso receipt under each before fees. Then add an explicit fee assumption and compare the net receipts. This separates currency translation and transaction costs from an investment return. It does not forecast USD/PHP or establish a bank or brokerage route. Select a study schedule that fits school or work rather than following a foreign market overnight.",
     faqs: [
       { q: "Do I need to register with SEC Philippines to use TradeHQ?", a: "TradeHQ is a free educational simulator with no real-money trades. For account eligibility or activities that require registration, check current Philippine SEC rules and the provider involved." },
       { q: "Can Filipino students under 18 use TradeHQ?", a: "TradeHQ is a simulated educational site and does not execute real-money trades. Eligibility for a real brokerage account depends on the provider and applicable rules, so check current official/provider requirements rather than relying on this guide." },
@@ -128,6 +136,8 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
   },
   {
     slug: "pakistan",
+    sourceCheck: { date: "2026-10-18", scope: "Linked regulator or registry information; no verification of individual eligibility, tax rates or remittance permission. No professional legal or financial review." },
+    sources: [{"label": "SECP — capital-market licensing", "href": "https://www.secp.gov.pk/licensing/capital-markets/"}],
     country: "Pakistan",
     flag: "🇵🇰",
     currency: "PKR",
@@ -156,7 +166,7 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
       "Global oil prices, given their outsized effect on the Pakistani import bill",
     ],
     practicePlan:
-      "First quarter: begin with Trading Psychology, then move to Macro Reading with attention to how SBP policy decisions and oil prices interact with the rupee. In month three, run thirty simulated trades on one setup with fixed risk and review the largest drawdown rather than the best trade. Because international sessions run late locally, plan trades in advance on the daily chart rather than watching intraday.",
+      "Optional study worksheet: assume a fictional dollar-priced oil import and two hypothetical PKR-per-USD rates. Calculate the rupee cost with the dollar oil price fixed, then change the oil price while holding the exchange rate constant. This isolates two arithmetic effects rather than predicting inflation or policy. Compare the assumptions with separately dated official observations and record any differences. The exercise does not establish permission to open or fund a foreign-market account.",
     faqs: [
       { q: "Can I use TradeHQ without a Pakistani bank account?", a: "Yes. TradeHQ never asks for any payment or bank details — it is 100% free and simulated." },
       { q: "Do you cover PSX-listed shares?", a: "Not yet. The current catalogue focuses on US and global tickers. Local coverage is on the roadmap." },
@@ -164,6 +174,8 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
   },
   {
     slug: "nigeria",
+    sourceCheck: { date: "2026-10-18", scope: "Linked regulator or registry information; no verification of individual eligibility, tax rates or remittance permission. No professional legal or financial review." },
+    sources: [{"label": "SEC Nigeria — registered operator search", "href": "https://sec.gov.ng/for-investors/find-a-registered-operator/"}, {"label": "SEC Nigeria — unregistered online investment schemes notice", "href": "https://sec.gov.ng/for-investors/keep-track-of-circulars/public-notice-unregistered-online-investment-schemes/"}],
     country: "Nigeria",
     flag: "🇳🇬",
     currency: "NGN",
@@ -192,7 +204,7 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
       "US large-cap equities, the most common international exposure available locally",
     ],
     practicePlan:
-      "First quarter: month one on Trading Psychology with a written journal. Month two on Macro Reading, following how oil prices and CBN policy feed into the naira and into local inflation. Month three on repetition — one documented strategy and several hypothetical sizes over a stated practice sample, then an honest review of the worst stretch rather than the best week. The US session opens in the Nigerian afternoon, which makes live practice more feasible here than in most of the other guides.",
+      "Optional study worksheet: model a fictional USD 100 oil receipt at two hypothetical NGN-per-USD rates. Next hold the rate fixed and change the dollar receipt. Compare currency translation with a change in export proceeds. Local inflation, production volumes, fiscal decisions and costs introduce further effects, so the worksheet cannot forecast the naira or a listed company. Keep a virtual stock-order exercise separate from any real account or funding decision.",
     faqs: [
       { q: "Is TradeHQ accessible from Nigeria?", a: "Yes. TradeHQ is a global free website. No signup, no payment, no geo-restriction." },
       { q: "Can I trade NGX-listed stocks here?", a: "Not yet. Current coverage focuses on US and global tickers." },

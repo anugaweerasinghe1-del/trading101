@@ -4,7 +4,7 @@ const items = [
   "170 assets available",
   "100% free",
   "No signup required",
-  "Real market simulation",
+  "Market-style simulation",
   "$100K virtual cash",
   "Educational mentor included",
   "Stocks, ETFs & crypto",

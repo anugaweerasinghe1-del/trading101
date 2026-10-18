@@ -15,7 +15,7 @@ export default function Strategy() {
   const s = STRATEGIES.find((x) => x.slug === slug);
   if (!s) return <NotFound />;
 
-  const title = `${s.name} Strategy — How It Works, When to Use It | TradeHQ`;
+  const title = `${s.name} Strategy — Examples and Limitations | TradeHQ`;
   const description = `${s.name}: ${s.oneLiner} Example rules, limitations and a hypothetical worked example. Practise it free with $100K virtual cash. (Educational simulation only — not financial advice.)`;
   const url = `${SITE_DOMAIN}/strategy/${s.slug}`;
 
@@ -32,7 +32,7 @@ export default function Strategy() {
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "HowTo",
-          name: `${s.name} trading strategy`,
+          name: `${s.name} educational worksheet`,
           description: s.oneLiner,
           step: s.steps.map((st, i) => ({ "@type": "HowToStep", position: i + 1, text: st })),
         })}</script>
@@ -50,23 +50,23 @@ export default function Strategy() {
 
           <AIAnswerBlock
             question={`What is the ${s.name} trading strategy and does it work?`}
-            answer={`${s.name}: ${s.oneLiner} ${s.successRate} Best for ${s.bestFor.toLowerCase()} Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)`}
+            answer={`${s.name}: ${s.oneLiner} ${s.successRate} Study context: ${s.bestFor} Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)`}
             className="mb-6"
           />
 
           <div className="grid md:grid-cols-2 gap-4 mb-6">
             <Card className="p-5 border-emerald-500/20">
-              <h3 className="text-sm font-semibold text-emerald-400 mb-2">Best for</h3>
+              <h3 className="text-sm font-semibold text-emerald-400 mb-2">Study context</h3>
               <p className="text-sm">{s.bestFor}</p>
             </Card>
             <Card className="p-5 border-rose-500/20">
-              <h3 className="text-sm font-semibold text-rose-400 mb-2">Worst for</h3>
+              <h3 className="text-sm font-semibold text-rose-400 mb-2">Limitations</h3>
               <p className="text-sm">{s.worstFor}</p>
             </Card>
           </div>
 
           <Card className="p-6 mb-6">
-            <h2 className="text-2xl font-semibold mb-4">The rules</h2>
+            <h2 className="text-2xl font-semibold mb-4">Hypothetical study steps</h2>
             <ol className="space-y-4">
               {s.steps.map((step, i) => (
                 <li key={i} className="flex gap-4">
@@ -89,12 +89,12 @@ export default function Strategy() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold mb-3">When it works and when it fails</h2>
+              <h2 className="text-2xl font-semibold mb-3">Sample and market limitations</h2>
               <p className="text-sm leading-relaxed text-muted-foreground">{s.depth.regime}</p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-semibold mb-3">The three mistakes that ruin it</h2>
+              <h2 className="text-2xl font-semibold mb-3">Interpretation pitfalls</h2>
               <ul className="space-y-3">
                 {s.depth.mistakes.map((m, i) => (
                   <li key={i} className="text-sm leading-relaxed text-muted-foreground flex gap-3">
@@ -121,6 +121,11 @@ export default function Strategy() {
             <p className="mt-2 text-xs text-muted-foreground/70 italic">(Educational simulation only — not financial advice.)</p>
           </Card>
 
+          <section className="mb-8" aria-label="Primary references">
+            <h2 className="text-xl font-semibold mb-3">References</h2>
+            <ul className="list-disc pl-5">{s.sources?.map(source => <li key={source.href}><a className="text-primary underline" href={source.href}>{source.label}</a></li>)}</ul>
+          </section>
+
           <section className="mb-10">
             <h2 className="text-xl font-semibold mb-3">More strategies</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
@@ -138,8 +143,8 @@ export default function Strategy() {
             ]}
             faqs={[
               { question: `Does ${s.name} actually work?`, answer: s.successRate },
-              { question: `What's the best market for ${s.name}?`, answer: s.bestFor },
-              { question: `Can I practise ${s.name} for free?`, answer: `Yes — TradeHQ's $100K practice account is the right place to test ${s.name} before risking real money.` },
+              { question: `What context does this ${s.name} worksheet examine?`, answer: s.bestFor },
+              { question: `Can I practise ${s.name} for free?`, answer: `Yes — TradeHQ supplies virtual order and accounting practice. Some ${s.name} calculations require a separate worksheet or data source.` },
             ]}
             faqHeading={`${s.name} FAQ`}
           />
@@ -164,7 +169,7 @@ export function StrategyIndex() {
         <Navigation />
         <main className="flex-1 container mx-auto px-4 pt-24 pb-12 max-w-5xl">
           <h1 className="text-4xl font-bold mb-2">Trading Strategies</h1>
-          <p className="text-muted-foreground mb-8">Pick one. Master it on the practice account before risking real capital.</p>
+          <p className="text-muted-foreground mb-8">Compare conceptual methods, assumptions and limitations. Simulation does not establish readiness for real trading.</p>
 
           <section className="mb-10 space-y-4 max-w-3xl">
             <p className="text-sm leading-relaxed text-muted-foreground">

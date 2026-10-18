@@ -15,6 +15,7 @@ export interface CourseLesson {
   title: string;
   summary: string;
   readingMinutes: number;
+  sourceCheck?: { date: string; scope: string };
   body: string[];
   keyTakeaways: string[];
   sources: { label: string; url: string }[];
@@ -75,36 +76,37 @@ const optionsTrack: CourseTrack = {
       slug: "what-is-an-option",
       title: "What Is an Option? Calls & Puts Explained",
       summary:
-        "An option is a contract that gives you the right — but not the obligation — to buy or sell 100 shares at a set price by a set date.",
+        "A stock option gives its buyer a contractual right; contract size, exercise style and settlement terms determine what that right involves.",
       readingMinutes: 8,
       body: [
         "## The core definition",
-        "An option is a standardised contract, listed on a regulated exchange such as the Cboe, that gives its buyer the right — but not the obligation — to buy (a call) or sell (a put) 100 shares of an underlying stock at a fixed strike price, on or before a specified expiration date. The buyer pays a one-time premium up front for that right. The seller (the writer) collects the premium and takes on the corresponding obligation.",
+        "This lesson focuses on standard unadjusted US equity options, which generally cover 100 shares. A call gives its buyer a right to buy and a put a right to sell at the strike under the contract terms. American-style options can be exercised before expiry; European-style options have a different exercise schedule. Adjusted contracts and cash-settled index options can have different deliverables. The writer takes the corresponding obligation. Read the specific contract and OCC risk disclosure rather than assume every option is identical.",
         "Because one contract controls 100 shares, a call option quoted at $2.50 actually costs $250 to buy. That single number embeds four separate ideas: the direction you expect (up for calls, down for puts), how far you expect the move to go (the strike), how much time you're giving it (the expiration), and how much volatility the market currently prices in.",
         "## Why options exist",
-        "Options were originally created as a hedging tool. A pension fund that owned $50 million of an index could buy put options as portfolio insurance — capping downside for a known premium the same way you cap car-accident cost with an insurance policy. Individual traders now use them for the same three reasons: hedging existing positions, generating income by selling premium against shares they own (covered calls), or making a defined-risk directional bet without tying up the full cost of the shares.",
+        "A share holder can buy a put to offset some losses below its strike during the option term, at the cost of its premium. A covered call adds premium income but limits upside and retains substantial share-price risk. These examples illustrate different payoffs; neither is a guaranteed return or a universally suitable position.",
         "## A simple worked example",
-        "Imagine Apple trades at $180 and you buy one 30-day $185 call for $3.00 ($300 total). Three things can happen. If Apple closes above $188 on expiration, you're profitable — the intrinsic value of the call exceeds what you paid. If it closes between $185 and $188 you're partially in-the-money but net negative. If it closes at or below $185, the call expires worthless and you lose the full $300 — but nothing more. That capped, known-in-advance loss is the defining feature that makes options different from margin or leverage.",
+        "Imagine Apple trades at $180 and you buy one 30-day $185 call for $3.00 ($300 total). Three things can happen. If Apple closes above $188 on expiration, you're profitable — the intrinsic value of the call exceeds what you paid. If it closes between $185 and $188 you're partially in-the-money but net negative. If it closes at or below $185, the call expires worthless and you lose the full $300 — but nothing more. These are hypothetical expiration payoffs before costs for the purchased option alone. Exercise can create a stock position with separate funding and market risk. Short options have different obligations, and an uncovered short call can have unlimited loss.",
         "## What you can practise on TradeHQ",
         "TradeHQ supports spot instruments, including shares and ETFs, with $100,000 virtual capital. It does not model option strikes, expirations or premiums. Use this lesson's worked examples to calculate hypothetical contract payoffs on paper; buying an underlying share in the simulator is a different transaction from buying an option on it.",
         "> Options are contracts, not shares. You are trading a right that decays with time.",
         DISC,
       ],
       keyTakeaways: [
-        "One option contract = 100 shares of the underlying.",
+        "A standard unadjusted US equity option generally covers 100 shares; adjusted and other contracts can differ.",
         "Calls profit if the stock rises above strike + premium; puts profit if it falls below strike − premium.",
-        "The maximum a long option buyer can lose is the premium paid — nothing more.",
-        "Options were originally invented for hedging, not speculation.",
+        "A purchased option held without exercise can lose its premium plus costs; exercise can create a separate underlying position and obligations.",
+        "Options can be used for hedging and speculation; their risk depends on the position and contract.",
       ],
       sources: [
-        { label: "SEC — Investor Bulletin: Options", url: "https://www.sec.gov/investor/alerts/ib_options.pdf" },
+        { label: "OCC — Characteristics and Risks of Standardized Options", url: "https://www.theocc.com/company-information/documents-and-archives/options-disclosure-document" },
+        { label: "OIC — Options Basics", url: "https://www.optionseducation.org/optionsoverview/options-basics" },
         { label: "Cboe Options Institute", url: "https://www.cboe.com/education/" },
       ],
       quiz: [
-        { question: "How many shares does one standard US equity option contract control?", options: ["10", "50", "100", "1,000"], correctAnswer: 2, explanation: "US-listed equity options are standardised at 100 shares per contract." },
-        { question: "What is the maximum loss for someone who buys (goes long) a single call option?", options: ["Unlimited", "The strike price × 100", "The premium paid", "The stock price × 100"], correctAnswer: 2, explanation: "A long option buyer can only lose the premium paid." },
+        { question: "How many shares does one standard US equity option contract control?", options: ["10", "50", "100", "1,000"], correctAnswer: 2, explanation: "A standard unadjusted US equity option generally covers 100 shares. Adjusted deliverables and other option types differ." },
+        { question: "What is the maximum loss for someone who buys (goes long) a single call option?", options: ["Unlimited", "The strike price × 100", "The premium paid", "The stock price × 100"], correctAnswer: 2, explanation: "For the purchased option alone before exercise and costs, loss is limited to the premium. Exercise can create a separate position." },
         { question: "A call option gives the buyer the right to:", options: ["Sell shares at the strike price", "Buy shares at the strike price", "Short the stock", "Receive dividends"], correctAnswer: 1, explanation: "Call = right to buy. Put = right to sell." },
-        { question: "Why were listed options originally created?", options: ["Speculation", "Tax shelters", "Hedging existing positions", "High-frequency trading"], correctAnswer: 2, explanation: "Options were invented as a hedging tool, similar to insurance." },
+        { question: "Buying a protective put alongside shares is an example of:", options: ["Eliminating every cost", "A guaranteed gain", "Hedging downside exposure", "Avoiding contract terms"], correctAnswer: 2, explanation: "A put can offset some downside below its strike, but the premium, expiry and other terms matter." },
       ],
     },
     {
@@ -115,32 +117,34 @@ const optionsTrack: CourseTrack = {
       readingMinutes: 10,
       body: [
         "## Why Greeks matter",
-        "The price of an option changes for four separable reasons: the underlying stock moves (delta), the rate at which delta itself changes (gamma), time passes (theta), and implied volatility shifts (vega). The Greeks are just the partial derivatives of the Black-Scholes pricing formula — but you don't need the calculus to use them. You need to know which Greek dominates your position at each point in time.",
+        "Greeks are model-based sensitivities to inputs, holding other inputs fixed. Delta describes underlying-price sensitivity; gamma describes a change in delta; theta describes time sensitivity; vega describes implied-volatility sensitivity. Interest rates and dividends can also matter. Finite market moves need not equal a first-order estimate, and different pricing models can produce different values.",
         "## Delta — directional exposure",
-        "Delta is the expected change in the option's price for a $1 move in the underlying. An at-the-money call has a delta near 0.50 — meaning if the stock rises $1, the call rises about $0.50. Delta also approximates the probability the option expires in-the-money, which is why traders use 30-delta and 15-delta strikes as shorthand for likelihood.",
+        "A delta of 0.50 per share describes an approximate $0.50 option-price change for a $1 underlying move, with other inputs held fixed. For a 100-share contract that is about $50, before gamma and other effects. Some traders use delta as a rough probability shorthand, but it is not a calibrated real-world probability and need not match the model probability of finishing in the money.",
         "## Gamma — how fast delta changes",
-        "Gamma is highest for at-the-money options close to expiration. It's what makes gamma-squeeze headlines during meme-stock rallies: dealers who sold calls have to hedge more and more aggressively as delta climbs, buying the underlying and pushing price further up.",
+        "Gamma measures how delta changes as the underlying moves. It is often relatively large near the strike close to expiry, depending on volatility and other inputs. Dealer hedging can affect demand, but a chart or open-interest figure alone does not establish dealer positions, required hedges or the cause of a price move.",
         "## Theta — the ticking clock",
-        "Theta is time decay, expressed as dollars lost per day. A 30-day at-the-money call might lose $5 per day and $12 per day in its final week. Long options are constantly bleeding theta; short options collect it. This is why option sellers can profit even when the stock barely moves.",
+        "Theta estimates an option value change as time passes under a model, holding other inputs fixed. State whether the quote is per share or per contract and whether a calendar or trading-day convention is used. Purchased options commonly have negative theta, but realised profit also depends on price, volatility and costs. Selling premium is not a guaranteed collection of that estimate.",
         "## Vega — volatility sensitivity",
-        "Vega measures how much the option's price changes for a one-point move in implied volatility. Before an earnings report, IV rips higher and every option — call and put — gets more expensive. After earnings, IV collapses (\"IV crush\") and even a correct directional bet can lose money if you paid for inflated volatility going in.",
+        "Vega estimates sensitivity to a one-percentage-point change in implied volatility, with other inputs held fixed. Implied volatility can change around earnings, but it need not rise before every release or fall afterwards. A long option can lose despite a favorable underlying move if time decay and a volatility decline offset that move.",
         "> Every option position is really four separate bets: on direction, on the speed of that direction, on time, and on volatility.",
         DISC,
       ],
       keyTakeaways: [
-        "Delta ≈ how much the option moves per $1 stock move (and roughly = probability of finishing ITM).",
+        "Delta estimates underlying-price sensitivity, not a guaranteed payoff or real-world event probability.",
         "Gamma is highest at-the-money and near expiration.",
-        "Theta bleeds long options daily; sellers collect it.",
-        "Vega spikes before earnings and collapses immediately after (\"IV crush\").",
+        "Theta is a model sensitivity; other price changes can offset or exceed it.",
+        "Vega measures volatility sensitivity; a change in implied volatility is a different quantity.",
       ],
       sources: [
-        { label: "Investopedia — Option Greeks", url: "https://www.investopedia.com/trading/getting-to-know-the-greeks/" },
+        { label: "OIC — Delta", url: "https://www.optionseducation.org/advancedconcepts/delta" },
+        { label: "OIC — Theta", url: "https://www.optionseducation.org/advancedconcepts/theta" },
+        { label: "OIC — Vega", url: "https://www.optionseducation.org/advancedconcepts/vega" },
         { label: "Cboe — The Greeks", url: "https://www.cboe.com/education/tools/" },
       ],
       quiz: [
-        { question: "What does theta measure?", options: ["Directional exposure", "Time decay per day", "Volatility sensitivity", "Interest-rate risk"], correctAnswer: 1, explanation: "Theta is the dollar amount an option loses per day from time decay." },
-        { question: "An at-the-money 30-day call option has a delta close to:", options: ["0.10", "0.30", "0.50", "0.90"], correctAnswer: 2, explanation: "ATM options have deltas near 0.50 — a roughly 50/50 chance of finishing ITM." },
-        { question: "'IV crush' typically happens:", options: ["Right before earnings", "Right after earnings", "On Fed decision day", "At market open"], correctAnswer: 1, explanation: "IV inflates before earnings and collapses immediately after the release." },
+        { question: "What does theta measure?", options: ["Directional exposure", "Time decay per day", "Volatility sensitivity", "Interest-rate risk"], correctAnswer: 1, explanation: "Theta is a model estimate of time sensitivity with other inputs held fixed; units and time conventions must be stated." },
+        { question: "In the lesson example, a 0.50 delta and a $1 underlying rise imply approximately what change per option share, before other effects?", options: ["$0.10", "$0.30", "$0.50", "$0.90"], correctAnswer: 2, explanation: "0.50 × $1 = $0.50 per share, holding other inputs fixed; this is not an event probability." },
+        { question: "'IV crush' typically happens:", options: ["Right before earnings", "Right after earnings", "On Fed decision day", "At market open"], correctAnswer: 1, explanation: "A post-announcement drop in implied volatility is often called IV crush; it is not inevitable after every release." },
         { question: "Which Greek measures the rate of change of delta?", options: ["Vega", "Theta", "Gamma", "Rho"], correctAnswer: 2, explanation: "Gamma tells you how quickly delta itself changes." },
       ],
     },
@@ -185,29 +189,29 @@ const optionsTrack: CourseTrack = {
     {
       slug: "implied-volatility-and-earnings",
       title: "Implied Volatility & Trading Around Earnings",
-      summary: "IV is the market's forward-looking volatility forecast — and the single biggest driver of option prices.",
+      summary: "Implied volatility is a model-implied input derived from option prices, with limits as a forecast of realised volatility.",
       readingMinutes: 8,
       body: [
         "## What implied volatility actually is",
-        "Implied volatility (IV) is the volatility figure that, plugged into an option pricing model, would produce the option's current market price. It is not a prediction any single person makes — it emerges from the aggregate bids and offers of every participant. Rising IV means the market collectively expects bigger moves; falling IV means it expects calmer conditions.",
+        "Implied volatility (IV) is the volatility figure that, plugged into an option pricing model, would produce the option's current market price. It is not a prediction any single person makes — it emerges from the aggregate bids and offers of every participant. Changes can reflect expected uncertainty, demand for protection and risk premiums. IV is model-dependent and need not equal later realised volatility.",
         "## IV rank vs IV percentile",
-        "The raw IV number is meaningless without context. IV rank compares today's IV to the highest and lowest reading of the last 12 months on a 0-100 scale. IV percentile tells you what fraction of the last year the stock traded below today's IV. Rule of thumb: sell premium when IV rank > 50, buy premium when IV rank < 30.",
+        "The raw IV number is meaningless without context. IV rank compares today's IV to the highest and lowest reading of the last 12 months on a 0-100 scale. IV percentile tells you what fraction of the last year the stock traded below today's IV. Neither an IV-rank threshold nor an IV-percentile threshold establishes a buy or sell rule. Compare the chosen lookback, option expiry, price source and costs before interpreting either measure.",
         "## The earnings trap",
         "Implied volatility often rises before earnings and can fall sharply afterwards. A trader can be directionally correct and still lose on a long option if the volatility drop and time decay outweigh the price move.",
-        "## A safer earnings play",
+        "## Comparing hypothetical earnings payoffs",
         "In a paper worksheet, compare hypothetical long-premium and defined-risk premium-selling structures around earnings to see how direction, implied volatility and the size of the actual move interact. TradeHQ does not price these structures. Avoid treating volatility selling as inherently safer; short premium can carry substantial risk.",
         "## Practice loop",
         "For a historical study, record dated option quotes and implied-volatility observations from an options-data source before and after an earnings announcement. Keep the expiry, strike and data methodology consistent, and record price changes as well as volatility changes. TradeHQ does not supply an options chain or IV-rank data. A small sample can illustrate mechanisms without establishing a reliable trading edge.",
         DISC,
       ],
       keyTakeaways: [
-        "IV is the market's forward volatility forecast, not any one trader's prediction.",
+        "IV is inferred from option prices under a model; it can differ from future realised volatility.",
         "IV rank contextualises today's IV against the last 12 months.",
         "IV crush after earnings can turn a correct directional bet into a loss.",
         "Elevated implied volatility changes the payoff profile of premium-selling strategies, but higher premiums also reflect higher expected uncertainty and risk.",
       ],
       sources: [
-        { label: "CME — Implied Volatility", url: "https://www.cmegroup.com/education/courses/introduction-to-options/measures-of-implied-volatility.html" },
+        { label: "OIC — Vega and implied volatility sensitivity", url: "https://www.optionseducation.org/advancedconcepts/vega" },
         { label: "Investopedia — IV", url: "https://www.investopedia.com/terms/i/iv.asp" },
       ],
       quiz: [
@@ -242,8 +246,8 @@ const optionsTrack: CourseTrack = {
         "Test predefined exits in simulation rather than treating one threshold as universal.",
       ],
       sources: [
-        { label: "FINRA — Options Risk", url: "https://www.finra.org/investors/insights/options" },
-        { label: "SEC — Options Trading Alert", url: "https://www.sec.gov/oiea/investor-alerts-bulletins/ia_optionstrading.html" },
+        { label: "OCC — Options Risk Disclosure", url: "https://www.theocc.com/company-information/documents-and-archives/options-disclosure-document" },
+        { label: "OIC — Options Basics", url: "https://www.optionseducation.org/optionsoverview/options-basics" },
       ],
       quiz: [
         { question: "Why define a risk budget before a simulated options trade?", options: ["To guarantee profit", "To control the potential effect of one loss", "To predict volatility", "To avoid all drawdowns"], correctAnswer: 1, explanation: "A predefined risk budget limits how much one trade can affect the practice account; there is no universal percentage that fits every trader or strategy." },
@@ -276,7 +280,7 @@ const futuresTrack: CourseTrack = {
   progression:
     "The sequence starts with contract specifications, then margin and leverage. Term structure follows to explain differences between delivery prices and rolling exposure. Hedging introduces basis risk, and micro contracts illustrate smaller multipliers. No contract size is universally suitable, and losses are not limited to the margin deposit.",
   notFor:
-    "This track does not teach day-trading systems, scalping methods or any approach that relies on high leverage to produce results. It does not cover crypto perpetual contracts, which have different funding mechanics. If your interest is in maximising position size on a small account, the honest answer from this material is that the approach has a poor survival rate.",
+    "This track does not teach day-trading systems, scalping methods or any approach that relies on high leverage to produce results. It does not cover crypto perpetual contracts, which have different funding mechanics. High notional exposure relative to account equity magnifies losses; this track does not establish a measured survival rate or a suitable real-money leverage level.",
   lessons: [
     {
       slug: "what-is-a-futures-contract",
@@ -301,8 +305,9 @@ const futuresTrack: CourseTrack = {
         "Every contract has a spec sheet — always read it.",
       ],
       sources: [
-        { label: "CFTC — Futures 101", url: "https://www.cftc.gov/LearnAndProtect/EducationCenter/CFTCBasics/index.htm" },
-        { label: "CME — Introduction to Futures", url: "https://www.cmegroup.com/education/courses/introduction-to-futures.html" },
+        { label: "CME — Futures introduction and participant roles", url: "https://www.cmegroup.com/education/courses/introduction-to-futures" },
+        { label: "CME — Introduction to Futures", url: "https://www.cmegroup.com/education/courses/introduction-to-futures" },
+        { label: "CME — E-mini S&P 500 contract specifications", url: "https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contractSpecs.html" },
         { label: "CME — Clearing safeguards", url: "https://www.cmegroup.com/solutions/risk-management/financial-safeguards.html" },
         { label: "CME — Position limits overview", url: "https://www.cmegroup.com/education/courses/market-regulation/position-limits/position-limits-overview" },
       ],
@@ -353,7 +358,7 @@ const futuresTrack: CourseTrack = {
       readingMinutes: 9,
       body: [
         "## Term structure — the futures curve",
-        "For any commodity there are typically 6-24 listed futures expirations. Plot each expiration's price on a graph and you get the term structure. When further-dated contracts trade above nearer ones, the curve is in contango. When they trade below, it's in backwardation.",
+        "A futures curve compares quoted prices across the delivery dates available for a specified contract family and observation time. The number of listed expirations varies by product and exchange. Later delivery priced above nearer delivery is commonly called contango; the reverse comparison is backwardation. State which dates are being compared rather than assume the entire curve has one slope.",
         "## Why contango happens",
         "Carrying costs such as storage, insurance and financing can contribute to higher prices for later delivery. A simplified example with $4 of carrying costs may illustrate that relationship, but convenience yield, constraints and market conditions also matter; there is no universal $4 premium or default curve.",
         "## Why backwardation happens",
@@ -371,7 +376,7 @@ const futuresTrack: CourseTrack = {
         "The curve shows delivery prices, not the identity or positioning of participants.",
       ],
       sources: [
-        { label: "CME — Contango/Backwardation", url: "https://www.cmegroup.com/education/courses/introduction-to-crude-oil/contango-and-backwardation.html" },
+        { label: "CME — Contango/Backwardation", url: "https://www.cmegroup.com/education/courses/introduction-to-precious-metals/what-is-contango-and-backwardation" },
         { label: "FRED — WTI", url: "https://fred.stlouisfed.org/series/DCOILWTICO" },
       ],
       quiz: [
@@ -388,28 +393,28 @@ const futuresTrack: CourseTrack = {
       readingMinutes: 8,
       body: [
         "## The airline case study",
-        "An airline burning 200 million gallons of jet fuel a year has a huge exposure to crude oil prices. By buying crude oil futures for delivery over the next 12 months, it can effectively lock in today's price. If oil rips higher, the futures profit offsets the higher physical fuel cost.",
+        "Hypothetical cross-hedge: an airline with future jet-fuel costs considers a crude-oil futures position. Rising futures prices could offset part of a higher fuel bill, but jet fuel and crude oil are different products, the hedge quantity and delivery dates may not match, and margins can require cash before the fuel purchase. It is not a lock on the airline’s complete fuel cost.",
         "## The farmer case study",
-        "A corn farmer plants in May and won't harvest until September. By selling corn futures for September delivery in May, the farmer locks in the price today. If corn falls between May and September, the futures gain offsets the lower cash sale.",
+        "Hypothetical producer hedge: a farmer expecting to sell corn later takes a short futures position in a chosen contract month. A fall in the futures price could produce a gain offsetting part of a lower cash sale price. The final result also depends on local basis, quantity, crop yield, contract terms and costs. The futures entry price is not a guarantee of the final net farm receipt.",
         "## Portfolio hedging with equity index futures",
         "In a hypothetical worksheet, $50 million divided by $250,000 of contract notional gives 200 contracts. That arithmetic assumes one-for-one exposure; actual hedge sizing also depends on portfolio beta, basis risk and contract specifications. It does not guarantee full neutralisation or establish trading volume.",
         "## The hedge is never perfect",
-        "Basis risk (difference between futures and physical price) always exists. Jet fuel is not crude oil. A specific corn variety is not the generic contract. Portfolio betas drift. Hedges reduce risk — they never eliminate it.",
+        "Basis risk concerns changes in the relationship between the hedged exposure and the futures price. A hedge can reduce one exposure while introducing margin liquidity, execution and operational risks. Its effectiveness depends on the products, quantities, dates and outcome being measured; neither complete protection nor a fixed amount of risk reduction follows from the label hedge.",
         DISC,
       ],
       keyTakeaways: [
-        "Hedging is the original purpose of futures.",
+        "Hedging uses a position to offset a specified exposure; it need not eliminate every risk.",
         "Producers sell; consumers buy.",
         "Equity funds hedge beta by shorting index futures.",
-        "Basis risk means hedges reduce — never eliminate — risk.",
+        "Basis changes, cash-flow needs and mismatched quantities can affect a hedge.",
       ],
       sources: [
-        { label: "CME — Hedging", url: "https://www.cmegroup.com/education/courses/hedging-with-futures.html" },
-        { label: "USDA — Farm Risk", url: "https://www.usda.gov/topics/farming/risk-management" },
+        { label: "CME — Hedging", url: "https://www.cmegroup.com/education/courses/introduction-to-futures" },
+        { label: "CME — Hedgers and futures mechanics", url: "https://www.cmegroup.com/education/courses/introduction-to-futures" },
       ],
       quiz: [
-        { question: "A wheat farmer worried about price drop should:", options: ["Buy wheat futures", "Sell wheat futures", "Buy corn futures", "Buy S&P"], correctAnswer: 1, explanation: "Sell to lock in today's price." },
-        { question: "Airline hedging vs crude rally should:", options: ["Sell crude futures", "Buy crude futures", "Buy S&P", "Do nothing"], correctAnswer: 1, explanation: "Buying futures profits if crude rises." },
+        { question: "Which conceptual futures direction offsets some exposure to a falling wheat sale price?", options: ["Buy wheat futures", "Sell wheat futures", "Buy corn futures", "Buy S&P"], correctAnswer: 1, explanation: "A short wheat future can gain when its futures price falls, but basis, quantity and costs affect the combined result." },
+        { question: "Which conceptual crude futures position gains if its futures price rises?", options: ["Sell crude futures", "Buy crude futures", "Buy S&P", "Do nothing"], correctAnswer: 1, explanation: "Buying futures profits if crude rises." },
         { question: "Basis risk is:", options: ["Exchange default", "Futures vs physical don't move perfectly together", "Rate risk", "FX risk"], correctAnswer: 1, explanation: "Basis fluctuates." },
         { question: "Hedge $50M with $250K notional contracts →", options: ["20", "200", "500", "1,000"], correctAnswer: 1, explanation: "$50M / $250K = 200." },
       ],
@@ -475,7 +480,7 @@ const macroTrack: CourseTrack = {
     {
       slug: "reading-cpi-and-inflation",
       title: "Reading CPI — The Number That Moves Every Market",
-      summary: "CPI is the most-watched macro release on the calendar — the reason every trader sits on the same clock at 8:30 AM ET.",
+      summary: "CPI measures selected consumer-price changes. Read the release, its definitions and components without assuming a predictable market response.",
       readingMinutes: 8,
       body: [
         "## What CPI actually measures",
@@ -483,15 +488,15 @@ const macroTrack: CourseTrack = {
         "## The release mechanics",
         "Check the current BLS release calendar for CPI timing; scheduled releases are generally at 8:30 AM Eastern. Market reactions depend on expectations and other information. No fixed first-minute percentage move or single class of participant is established by this lesson.",
         "## Consensus, surprise and market reaction",
-        "Every economist submits a forecast. The median is consensus. If actual > consensus, it's a hot print — bond yields typically rise, dollar strengthens, equities can either sell off (rate fear dominant) or rally (growth optimism dominant). Which reaction dominates depends on the regime — this is why context matters more than the number itself.",
+        "A consensus figure is an aggregation of a particular survey’s forecasts, not the view of every economist. Record the provider, collection time and aggregation method before comparing it with the release. The difference is often called a surprise, but its sign alone cannot determine yields, exchange rates or share returns; expectations, revisions and other information can also matter.",
         "## The three-layer read",
-        "A pro macro trader reads a CPI print in three passes. Layer 1: headline vs consensus. Layer 2: core vs consensus (Fed cares about core). Layer 3: the underlying components — shelter, services ex-shelter, goods — because a hot headline driven by used cars is very different from a hot headline driven by services inflation.",
+        "For a study worksheet, compare the reported headline and core changes with a specifically identified expectation, then inspect the component contributions and measurement period. Headline and core answer different questions. The Fed’s stated longer-run target uses PCE inflation rather than either CPI measure, and policy considers more than one statistic.",
         DISC,
       ],
       keyTakeaways: [
-        "CPI drops 8:30 AM ET on a set mid-month day.",
-        "Core CPI matters more to the Fed.",
-        "Surprise vs consensus drives the reaction.",
+        "Use the current BLS release calendar; releases are generally scheduled at 8:30 AM Eastern.",
+        "Core CPI excludes food and energy; the FOMC’s longer-run inflation target uses PCE.",
+        "A release-versus-survey difference is context, not a deterministic market signal.",
         "Read the underlying components.",
       ],
       sources: [
@@ -502,7 +507,7 @@ const macroTrack: CourseTrack = {
         { question: "The Fed's 2% longer-run inflation goal is measured using:", options: ["Headline CPI", "Core CPI", "PCE price index", "PPI"], correctAnswer: 2, explanation: "The FOMC states its 2% longer-run inflation goal in terms of the annual change in the PCE price index." },
         { question: "CPI is released at:", options: ["8:00 AM ET", "8:30 AM ET", "10:00 AM ET", "2:00 PM ET"], correctAnswer: 1, explanation: "8:30 AM Eastern." },
         { question: "Why core over headline?", options: ["Core is higher", "Food/energy too volatile to signal trend", "Headline not reported", "Only economists care"], correctAnswer: 1, explanation: "Stripping volatile components isolates trend." },
-        { question: "Initial market impulse to CPI driven by:", options: ["Retail", "Algorithmic reactions to surprise", "Fed statements", "Treasury"], correctAnswer: 1, explanation: "Algos react in microseconds." },
+        { question: "A CPI result above one survey’s median forecast establishes:", options: ["The next stock return", "A difference from that specified forecast", "A guaranteed rate increase", "Which participant moved the market"], correctAnswer: 1, explanation: "A forecast difference alone does not identify market participants or determine the next price move." },
       ],
     },
     {
@@ -551,7 +556,7 @@ const macroTrack: CourseTrack = {
         "## Why inversion signals recession",
         "An inverted curve can reflect expectations for slower growth, lower future policy rates, or changing term premia. Historically, commonly watched Treasury-curve inversions have often preceded US recessions, but the lead time varies and the relationship is not a deterministic forecast.",
         "## The 10Y-2Y vs 10Y-3M",
-        "The New York Fed's preferred recession-probability model uses the 10-year minus 3-month spread. The 10Y-2Y is the more commonly quoted spread in financial media. Both have strong historical track records, though they invert at slightly different times.",
+        "The linked New York Fed model uses the ten-year minus three-month Treasury yield spread to estimate a probability for a stated future horizon. The ten-year minus two-year spread is a different series. Model probabilities depend on the model and sample and are not certain outcomes; the two spreads need not invert on the same date.",
         "## Trading around the curve",
         "The curve is a slow-moving macro indicator. Treat it as one piece of economic context rather than as an intraday timing tool or an automatic instruction to change a portfolio.",
         DISC,
@@ -570,7 +575,7 @@ const macroTrack: CourseTrack = {
         { question: "Inverted curve =", options: ["Short < long", "Short > long", "Flat", "Negative yields"], correctAnswer: 1, explanation: "Short-term exceeds long-term." },
         { question: "NY Fed's preferred recession spread:", options: ["10Y-2Y", "10Y-3M", "30Y-5Y", "2Y-Fed Funds"], correctAnswer: 1, explanation: "10Y-3M used in official model." },
         { question: "What is the safest interpretation of a yield-curve inversion?", options: ["It guarantees a recession", "It is one historical recession-risk indicator with uncertain timing", "It predicts the exact market bottom", "It only matters for day traders"], correctAnswer: 1, explanation: "Yield-curve inversion is informative context, but it is not a guaranteed or precisely timed forecast." },
-        { question: "Curve is best used for:", options: ["Intraday timing", "Regime positioning", "Options pricing", "FX"], correctAnswer: 1, explanation: "Moves slowly — regime indicator." },
+        { question: "The yield curve by itself provides:", options: ["An exact entry time", "A dated description of yields across maturities", "Guaranteed equity returns", "One required asset allocation"], correctAnswer: 1, explanation: "A curve describes relative yields; any forecast requires additional assumptions and remains uncertain." },
       ],
     },
     {
@@ -615,33 +620,35 @@ const macroTrack: CourseTrack = {
     {
       slug: "putting-macro-signals-together",
       title: "Putting It Together — A Macro Dashboard for Traders",
-      summary: "Individual macro variables are noisy. Together they form regimes — and regimes are what actually matter for positioning.",
+      summary: "Compare growth, inflation and financial indicators in a documented worksheet, without treating a regime label as a trading instruction.",
       readingMinutes: 8,
+      sourceCheck: { date: "2026-10-18", scope: "FRED, BEA GDP and BLS CPI source definitions; no investment-performance validation or professional review." },
       body: [
         "## The four-quadrant regime framework",
-        "Bridgewater's classic framework splits macro into four regimes based on the intersection of growth (rising/falling) and inflation (rising/falling). Rising growth + rising inflation favours commodities and equities. Falling growth + rising inflation (stagflation) favours gold and cash. Rising growth + falling inflation is the goldilocks regime — best for equities. Falling growth + falling inflation favours long-duration bonds.",
+        "A four-quadrant worksheet can classify selected observations by whether growth and inflation are rising or falling. Define the measures first: real GDP growth, a survey measure and a monthly release are not interchangeable, and inflation levels differ from changes in the inflation rate. A quadrant is a descriptive simplification, not an asset-allocation rule. Interest rates, starting valuations, supply shocks and expectations can produce different asset returns within the same label.",
         "## Building a personal dashboard",
         "FRED provides economic time series and links to their sources and releases. Start a practice dashboard by selecting a few series relevant to a specific question, then record each series' units, frequency, observation date and release date. Check revisions and definitions before comparing values. A dashboard is an aid to study; no measured percentage of useful information or advantage over other traders is established here.",
         "## The weekly ritual",
-        "Every Sunday, log the week's readings: DXY level, 10Y yield, 10Y-2Y spread, VIX, WTI crude, gold, S&P 500. Note which quadrant we're in. Compare to last week. You'll build regime intuition faster than reading any single article.",
+        "For a hypothetical study, choose a review date and record selected yields, exchange rates and price indices. Keep observation dates separate from release dates: GDP is not measured weekly, and later revisions can change the growth story. Record what was actually available at the time. Comparing a later revised series with an earlier trading decision can introduce look-ahead bias.",
         "## Don't over-trade macro",
-        "Macro regimes shift over weeks and months, not minutes. Use the framework for position sizing and asset allocation, not for entry timing.",
+        "A macro label cannot determine an appropriate position size or entry time. Scheduled releases can affect prices quickly even when the underlying economic series changes slowly. Compare alternative explanations and unfavorable cases; a dashboard neither proves causation nor guarantees investment outcomes.",
         DISC,
       ],
       keyTakeaways: [
-        "Growth × inflation defines four macro regimes.",
+        "Growth and inflation can form a four-quadrant descriptive worksheet if the measures are defined.",
         "Record the source, units and dates of each economic series; check revisions before comparisons.",
-        "A weekly log builds intuition fast.",
-        "Use macro for allocation, not intraday timing.",
+        "A dated log separates observations from releases and later revisions.",
+        "A regime label is not a position-sizing, allocation or timing instruction.",
       ],
       sources: [
         { label: "FRED", url: "https://fred.stlouisfed.org/" },
         { label: "BEA — GDP", url: "https://www.bea.gov/data/gdp/gross-domestic-product" },
+        { label: "BLS — Consumer Price Index", url: "https://www.bls.gov/cpi/" },
       ],
       quiz: [
-        { question: "Bridgewater framework splits by:", options: ["Rates + unemployment", "Growth × inflation direction", "GDP + CPI levels", "Stocks + bonds"], correctAnswer: 1, explanation: "Four quadrants." },
+        { question: "The descriptive worksheet in this lesson classifies:", options: ["Guaranteed returns", "Selected growth and inflation directions", "Correct trade sizes", "Future prices"], correctAnswer: 1, explanation: "The selected measures define a description, not a forecast." },
         { question: "Stagflation =", options: ["Growth up + inflation up", "Growth up + inflation down", "Growth down + inflation up", "Growth down + inflation down"], correctAnswer: 2, explanation: "Weak growth + high inflation." },
-        { question: "Macro regimes best used for:", options: ["Scalping", "Sizing + allocation", "Option strikes", "Backtesting"], correctAnswer: 1, explanation: "Slow-moving." },
+        { question: "Why record release dates as well as observation dates?", options: ["To guarantee a profit", "To know what information was available at the decision time", "To remove market risk", "To predict every revision"], correctAnswer: 1, explanation: "Later releases and revisions must not be treated as knowledge available earlier." },
         { question: "Which resource is the St. Louis Fed’s economic-data database?", options: ["Bloomberg", "Reuters Eikon", "FRED", "Cap IQ"], correctAnswer: 2, explanation: "St Louis Fed's free database." },
       ],
     },
@@ -734,7 +741,7 @@ const psychologyTrack: CourseTrack = {
       ],
       sources: [
         { label: "TradeHQ — Revenge Trading Blocker", url: "/portfolio" },
-        { label: "Investopedia — Emotional Investing", url: "https://www.investopedia.com/terms/e/emotional-investing.asp" },
+        { label: "Kahneman and Tversky — decision-making under uncertainty", url: "https://doi.org/10.1007/BF00122574" },
       ],
       quiz: [
         { question: "Tilt is:", options: ["A strategy", "Emotional state driving reckless trades", "A chart pattern", "A fee"], correctAnswer: 1, explanation: "Post-loss unplanned oversized trading." },
@@ -769,7 +776,7 @@ const psychologyTrack: CourseTrack = {
       ],
       sources: [
         { label: "TradeHQ — Ghost Journal", url: "/portfolio" },
-        { label: "Investopedia — Expectancy", url: "https://www.investopedia.com/terms/e/expectancy.asp" },
+        { label: "TradeHQ — portfolio measures and limitations", url: "/portfolio" },
       ],
       quiz: [
         { question: "What does a sample of 100 trades establish by itself?", options: ["A guaranteed edge", "Nothing conclusive without considering selection, costs and dependence", "A universal maximum drawdown", "Future profitability"], correctAnswer: 1, explanation: "A trade count alone does not establish reliability; the sample and assumptions matter." },
@@ -785,15 +792,15 @@ const psychologyTrack: CourseTrack = {
       readingMinutes: 8,
       body: [
         "## The pre-market ritual",
-        "Professional traders don't wing it. A tight 30-minute pre-market routine typically includes: check overnight news, mark key levels on the day's watchlist (3-5 tickers max), review the economic calendar for the day's macro releases, and set the day's risk budget (dollar max loss).",
+        "An example preparation worksheet can record selected news, chart levels, release times and a hypothetical loss budget. Choose a duration and watchlist size that suit the exercise. No 30-minute routine or ticker count is established here as a professional standard or a source of higher returns.",
         "## The mid-session discipline check",
-        "Every hour, one 60-second gut check: Am I following my plan? Have I taken any trade outside my rulebook today? Am I within my risk budget? If all three are green, keep trading. If any is red, close the platform for the day.",
+        "At a chosen review interval, compare intended and actual decisions. Record any rule change and its reason, including a decision to pause. Following a checklist is not a reason to continue trading and cannot guarantee the planned loss limit.",
         "## The post-close review",
         "Twenty minutes at the end of each session: log every trade in the journal, tag the setup, note the emotion, and screenshot the chart at entry. Fast enough to sustain daily; deep enough to compound insight weekly.",
         "## The weekly ritual",
-        "Every Friday close, calculate the week's per-setup expectancy, note the biggest emotional violation (there always is one), and set the next week's single behavioural goal (e.g. 'no trades in the first 15 minutes').",
-        "## Streaks are edge",
-        "Every day you follow the process is a rep. TradeHQ's daily challenge and streak system exists specifically to convert intention into habit.",
+        "For a periodic review, compare planned and actual actions and identify any discrepancy. Do not assume a rule violation occurred if the record shows none. Short-sample expectancy is descriptive and may change; a behavioral goal does not prove an investment edge.",
+        "## Streaks record participation",
+        "TradeHQ streaks record participation under the feature's rules. They do not measure skill, validate a strategy or establish that frequent trading is appropriate. A learner can study without placing an order.",
         DISC,
       ],
       keyTakeaways: [
@@ -804,7 +811,7 @@ const psychologyTrack: CourseTrack = {
       ],
       sources: [
         { label: "TradeHQ — Daily Challenge", url: "/daily" },
-        { label: "Investopedia — Trading Discipline", url: "https://www.investopedia.com/articles/trading/04/031604.asp" },
+        { label: "TradeHQ — Daily Practice and Participation", url: "/daily" },
       ],
       quiz: [
         { question: "Tight pre-market routine typically takes:", options: ["5 min", "30 min", "2 hr", "The whole morning"], correctAnswer: 1, explanation: "About 30 minutes." },
@@ -839,7 +846,7 @@ const psychologyTrack: CourseTrack = {
       ],
       sources: [
         { label: "Investopedia — Behavioural Finance", url: "https://www.investopedia.com/terms/b/behavioralfinance.asp" },
-        { label: "SEC — Risk Management", url: "https://www.sec.gov/reportspubs/investor-publications/investorpubsinwsmgmthtm.html" },
+        { label: "OCC — Contract and exercise risk disclosure", url: "https://www.theocc.com/company-information/documents-and-archives/options-disclosure-document" },
       ],
       quiz: [
         { question: "Why can't win rate and payoff ratio alone determine drawdown?", options: ["Drawdown is random noise only", "Position size and dependence between trades also matter", "Drawdown only depends on fees", "They always determine it exactly"], correctAnswer: 1, explanation: "Position risk and the sequence/dependence of outcomes affect drawdown." },
