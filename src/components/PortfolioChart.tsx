@@ -35,7 +35,7 @@ export function PortfolioChart() {
   return (
     <Card className="p-6 bg-card/50 backdrop-blur-sm">
       <div className="mb-6">
-        <div className="flex items-center justify-between mb-2">
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
           <h3 className="text-lg font-semibold">Practice Portfolio History</h3>
           <Button
             variant="outline"
@@ -48,7 +48,7 @@ export function PortfolioChart() {
           </Button>
         </div>
         <p className="text-xs text-muted-foreground mb-3">Local practice snapshots may include generated hourly backfill between visits. This is not observed market history; the reference line does not execute a stop order.</p>
-        <div className="flex items-baseline gap-3">
+        <div className="flex flex-wrap items-baseline gap-3">
           <span className="text-3xl font-bold">${currentValue.toFixed(2)}</span>
           <span className={cn(
             "font-semibold flex items-center gap-1",

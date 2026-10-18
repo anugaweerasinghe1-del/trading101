@@ -524,6 +524,7 @@ export default function TradeAsset() {
               <MinimalistOrderPanel
                 asset={selectedAsset}
                 availableCash={portfolio.cash}
+                portfolio={portfolio}
                 onTrade={handleTrade}
               />
               
@@ -596,6 +597,7 @@ export default function TradeAsset() {
             <MobileOrderDrawer
               asset={selectedAsset}
               availableCash={portfolio.cash}
+              portfolio={portfolio}
               onTrade={handleTrade}
             />
           </div>

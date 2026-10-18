@@ -57,7 +57,107 @@
       "destination": "/api/course?track=:track"
     },
     {
-      "source": "/(.*)",
+      "source": "/auth",
+      "destination": "/app-shell.html"
+    },
+    {
+      "source": "/reset-password",
+      "destination": "/app-shell.html"
+    },
+    {
+      "source": "/trader/:username",
+      "destination": "/app-shell.html"
+    },
+    {
+      "source": "/challenge/:code",
+      "destination": "/app-shell.html"
+    },
+    {
+      "source": "/trade/BTC",
+      "destination": "/trade/btc/index.html"
+    },
+    {
+      "source": "/trade/usdc",
+      "destination": "/app-shell.html"
+    },
+    {
+      "source": "/trade/usdt",
+      "destination": "/app-shell.html"
+    },
+    {
+      "source": "/trade/dai",
+      "destination": "/app-shell.html"
+    },
+    {
+      "source": "/trade/trx",
+      "destination": "/app-shell.html"
+    },
+    {
+      "source": "/trade/bch",
+      "destination": "/app-shell.html"
+    },
+    {
+      "source": "/trade/ton",
+      "destination": "/app-shell.html"
+    },
+    {
+      "source": "/trade/etc",
+      "destination": "/app-shell.html"
+    },
+    {
+      "source": "/trade/xmr",
+      "destination": "/app-shell.html"
+    },
+    {
+      "source": "/trade/aave",
+      "destination": "/app-shell.html"
+    },
+    {
+      "source": "/trade/grt",
+      "destination": "/app-shell.html"
+    },
+    {
+      "source": "/trade/ldo",
+      "destination": "/app-shell.html"
+    },
+    {
+      "source": "/trade/rune",
+      "destination": "/app-shell.html"
+    },
+    {
+      "source": "/trade/kas",
+      "destination": "/app-shell.html"
+    },
+    {
+      "source": "/trade/stx",
+      "destination": "/app-shell.html"
+    },
+    {
+      "source": "/trade/imx",
+      "destination": "/app-shell.html"
+    },
+    {
+      "source": "/trade/render",
+      "destination": "/app-shell.html"
+    },
+    {
+      "source": "/trade/pepe",
+      "destination": "/app-shell.html"
+    },
+    {
+      "source": "/trade/bonk",
+      "destination": "/app-shell.html"
+    },
+    {
+      "source": "/trade/wld",
+      "destination": "/app-shell.html"
+    },
+    {
+      "source": "/trade/pol",
+      "destination": "/app-shell.html"
+    },
+    {
+      "source": "/trade/tao",
       "destination": "/app-shell.html"
     }
   ],
@@ -65,5 +165,42 @@
     "api/course.ts": {
       "includeFiles": "dist/**/*.html"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/learn/how-to-read-stock-charts",
+      "destination": "/learn/article/how-to-read-stock-charts",
+      "permanent": true
+    },
+    {
+      "source": "/learn/trading-strategies-for-beginners",
+      "destination": "/learn/article/trading-strategies-for-beginners",
+      "permanent": true
+    },
+    {
+      "source": "/learn/what-is-paper-trading",
+      "destination": "/learn/article/what-is-paper-trading",
+      "permanent": true
+    },
+    {
+      "source": "/learn/how-to-build-a-portfolio",
+      "destination": "/learn/article/how-to-build-a-portfolio",
+      "permanent": true
+    },
+    {
+      "source": "/learn/crypto-vs-stocks",
+      "destination": "/learn/article/crypto-vs-stocks",
+      "permanent": true
+    },
+    {
+      "source": "/learn/stock-market-index-etfs",
+      "destination": "/learn/article/stock-market-index-etfs",
+      "permanent": true
+    },
+    {
+      "source": "/learn/risk-management-in-trading",
+      "destination": "/learn/article/risk-management-in-trading",
+      "permanent": true
+    }
+  ]
 }

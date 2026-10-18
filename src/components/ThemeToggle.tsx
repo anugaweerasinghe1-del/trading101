@@ -25,6 +25,7 @@ export function ThemeToggle() {
       variant="ghost"
       size="icon"
       onClick={toggleTheme}
+      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
       className="rounded-full"
     >
       {theme === 'dark' ? (
