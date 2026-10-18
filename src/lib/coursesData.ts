@@ -227,9 +227,9 @@ const optionsTrack: CourseTrack = {
       summary: "Options losses can be amplified by position size, leverage, volatility and time decay. This lesson measures those risks using hypothetical contract examples.",
       readingMinutes: 9,
       body: [
-        "## The 1% rule for defined-risk trades",
+        "## Illustrative 1% budget for a defined-risk worksheet",
         "For simulation, choose a small predefined risk budget before entering a position and compare how different limits affect drawdown. For example, 1% of a $100,000 practice account is $1,000. This is an educational parameter, not a universal real-money rule.",
-        "## The 3x rule for undefined-risk trades",
+        "## Testing a hypothetical loss multiplier",
         "Naked puts and short strangles can create losses far larger than the premium collected. In a paper worksheet, model adverse moves explicitly and compare the resulting losses with a hypothetical risk budget rather than relying on one fixed multiplier. TradeHQ does not execute these option positions.",
         "## Rolling — extending, not doubling down",
         "Rolling means closing an existing option and opening another with a different expiry and sometimes a different strike. A credit or debit alone does not determine whether the adjustment makes sense; compare the new maximum loss, break-even points, time remaining and total capital at risk in a worked example. Rolling options is not supported by TradeHQ's order engine.",
@@ -389,7 +389,7 @@ const futuresTrack: CourseTrack = {
     {
       slug: "hedging-with-futures",
       title: "Hedging with Futures — The Original Use Case",
-      summary: "Hedging is why futures exist. Airlines hedge fuel; farmers hedge harvests; funds hedge equity beta.",
+      summary: "Hedging is one use of futures. Airlines may hedge fuel, producers may hedge output, and funds may hedge equity beta.",
       readingMinutes: 8,
       body: [
         "## The airline case study",
@@ -459,13 +459,13 @@ const macroTrack: CourseTrack = {
   title: "Macro Reading for Traders",
   tagline: "CPI, the Fed, the yield curve and the dollar — how the pieces connect.",
   description:
-    "A trader-focused tour of the macro variables that move markets — inflation prints, central-bank policy, the yield curve, and the dollar index — with a concrete playbook for reading them together.",
+    "An introduction to CPI releases, central-bank decisions, Treasury yields and the dollar index, with exercises for separating observed data from uncertain market interpretations.",
   hero: macroHero,
   level: "Intermediate",
   badge: { name: "Macro Reading Completion", description: "Awarded after completing every lesson in the Macro Reading for Traders track." },
   outcomes: [
     "Read a CPI release and identify which component drove the surprise, rather than reacting to the headline number.",
-    "Explain how the Fed's policy cycle is set and why the market's expectation matters more than the decision itself.",
+    "Explain how FOMC decisions are announced and why published expectations and other information may influence different market reactions.",
     "Interpret the shape of the yield curve and describe what a flattening or inversion has historically signalled.",
     "Connect dollar strength to the behaviour of commodities, emerging markets and large exporters.",
     "Combine several macro signals into one written view instead of trading each release in isolation.",
@@ -479,7 +479,7 @@ const macroTrack: CourseTrack = {
   lessons: [
     {
       slug: "reading-cpi-and-inflation",
-      title: "Reading CPI — The Number That Moves Every Market",
+      title: "Reading CPI and Inflation Data",
       summary: "CPI measures selected consumer-price changes. Read the release, its definitions and components without assuming a predictable market response.",
       readingMinutes: 8,
       body: [
@@ -547,7 +547,7 @@ const macroTrack: CourseTrack = {
     },
     {
       slug: "the-yield-curve-and-recession",
-      title: "The Yield Curve — The Bond Market's Recession Alarm",
+      title: "The Yield Curve and Recession-Risk Research",
       summary: "Yield-curve inversion has historically been associated with elevated US recession risk, but timing varies and the signal is not a standalone forecast.",
       readingMinutes: 8,
       body: [
