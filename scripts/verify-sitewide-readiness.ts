@@ -61,6 +61,9 @@ for (const term of data.tradingGlossary) {
   for (const reference of worksheet.references) assert.ok(page.links.some(link => link.href === reference.href), term.slug + ": reference missing");
   for (const related of term.relatedTerms) assert.ok(manifest.has("/wiki/" + related), term.slug + ": broken related term " + related);
 }
+for (const route of routes.filter(route => /^(\/wiki\/|\/learn\/article\/|\/courses\/[^/]+\/)/.test(route.path))) {
+  assert.ok(content.get(route.path)?.links.some(link => link.href.startsWith("https://")), route.path + ": clickable external reference required");
+}
 // Independently recompute the educational examples and test adverse cases.
 const near = (actual: number, expected: number, tolerance = 0.005) => assert.ok(Math.abs(actual - expected) < tolerance, `${actual} != ${expected}`);
 near((100 / 10 + 100 / 8 + 100 / 12) * 12 - 300, 70);

@@ -10,6 +10,7 @@ import { EXTRA_SECTIONS } from "./staticCopyExtra";
 import { ASSET_NOTES } from "./assetNotes";
 import { ASSET_REFERENCES } from "../src/lib/assetReferences";
 import { GLOSSARY_WORKSHEETS } from "../src/lib/glossaryWorksheets";
+import { ARTICLE_REFERENCES } from "../src/lib/articleReferences";
 
 export interface PageSection {
   h: string;
@@ -296,6 +297,7 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
           },
         ],
         links: [
+          ...(l.sources || []).map((source: {url: string; label: string}) => ({ href: source.url, label: source.label })),
           ...(prev ? [{ href: `/courses/${t.slug}/${prev.slug}`, label: `Previous: ${prev.title}` }] : []),
           ...(next ? [{ href: `/courses/${t.slug}/${next.slug}`, label: `Next: ${next.title}` }] : []),
           { href: `/courses/${t.slug}`, label: t.title },
@@ -563,7 +565,7 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
         ...a.sections.map((s: any) => ({ h: s.heading, p: s.paragraphs })),
         { h: "Practise what you just read", p: [`Apply this in the simulator with ${BALANCE} in virtual cash. ${DISCLAIMER}`] },
       ],
-      links: [...(a.relatedLinks || []).map((l: any) => ({ href: l.href, label: l.label })), { href: "/about", label: "Publisher and editorial approach" }, { href: "/learn", label: "All learn articles" }],
+      links: [...(ARTICLE_REFERENCES[a.slug] || []), ...(a.relatedLinks || []).map((l: any) => ({ href: l.href, label: l.label })), { href: "/about", label: "Publisher and editorial approach" }, { href: "/learn", label: "All learn articles" }],
     });
   }
 

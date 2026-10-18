@@ -10,7 +10,7 @@ const temporary = mkdtempSync(join(tmpdir(), "tradehq-course-node-"));
 try {
   const config = JSON.parse(readFileSync("tsconfig.json", "utf8"));
   const options = ts.convertCompilerOptionsFromJson(config.compilerOptions, process.cwd()).options;
-  const modules = ["api/course.ts", "api/course-sitemap.ts", "src/lib/courseHtml.ts", "supabase/functions/_shared/courseDocument.ts"];
+  const modules = ["api/course.ts", "api/course-sitemap.ts", "src/lib/courseHtml.ts", "src/lib/courseEditorialCorrections.ts", "supabase/functions/_shared/courseDocument.ts"];
   for (const file of modules) {
     const output = ts.transpileModule(readFileSync(file, "utf8"), { compilerOptions: options, fileName: file }).outputText;
     const target = join(temporary, file.replace(/\.ts$/, ".js"));

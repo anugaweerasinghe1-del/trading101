@@ -15,6 +15,7 @@ for (const row of rows) {
     const bootstrap = JSON.parse(html.match(/id="approved-course-bootstrap" type="application\/json">([\s\S]*?)<\/script>/)![1]);
     assert.deepEqual(bootstrap, candidate, "SSR and interactive bootstrap must share corrected copy");
     assert.equal((html.match(/rel="canonical"/g) || []).length, 1);
+    assert.match(html, /rel="canonical"[^>]*data-static-head/, "Initial native canonical must be retired when Helmet paints");
     assert.ok(!/establish your target weight perfectly|achieving your target allocation perfectly|distribution perfectly/.test(html), lesson.slug);
     for (const question of lesson.quiz) assert.ok(!question.options[question.correctAnswer].includes("undervalued"), lesson.slug + ": underweight is not undervalued");
   }

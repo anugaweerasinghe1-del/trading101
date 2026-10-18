@@ -30,10 +30,10 @@ export function renderApprovedCourse(shell: string, doc: CourseDocument, lessonS
   } : { "@context": "https://schema.org", "@type": "Course", name: doc.title, description: doc.description,
     url, inLanguage: "en", provider: { "@type": "Organization", name: "TradeHQ", url: domain } };
   const safeJson = (value: unknown) => JSON.stringify(value).replace(/</g, "\\u003c");
-  const head = "<title>" + esc(title) + '</title><meta name="description" content="' + esc(description.slice(0, 155)) + '">'
-    + '<meta data-static-head name="robots" content="index, follow"><link rel="canonical" href="' + esc(url) + '">'
-    + '<meta property="og:title" content="' + esc(title) + '"><meta property="og:description" content="' + esc(description.slice(0, 155)) + '">'
-    + '<meta property="og:url" content="' + esc(url) + '"><script type="application/ld+json">' + safeJson(structured) + "</script>";
+  const head = "<title>" + esc(title) + '</title><meta data-static-head name="description" content="' + esc(description.slice(0, 155)) + '">'
+    + '<meta data-static-head name="robots" content="index, follow"><link rel="canonical" href="' + esc(url) + '" data-static-head>'
+    + '<meta data-static-head property="og:title" content="' + esc(title) + '"><meta data-static-head property="og:description" content="' + esc(description.slice(0, 155)) + '">'
+    + '<meta data-static-head property="og:url" content="' + esc(url) + '"><script type="application/ld+json">' + safeJson(structured) + "</script>";
   return shell.replace(/<title>[\s\S]*?<\/title>/i, "").replace(/<meta\b[^>]*(?:name=["'](?:description|robots)["']|property=["']og:[^"']+["'])[^>]*>/gi, "")
     .replace(/<link\b[^>]*rel=["']canonical["'][^>]*>/gi, "").replace(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi, "").replace(/<\/head>/i, head + "</head>")
     .replace(/<div\s+id=["']root["']>\s*<\/div>/i, '<div id="root">' + article + "</div>")
