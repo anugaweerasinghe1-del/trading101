@@ -292,6 +292,29 @@ async function main(){
     holdLearnModule=false;releaseLearnModules.splice(0).forEach(release=>release());
     await wait(()=>devtools.evaluate("[...document.querySelectorAll('h1')].some(e=>e.textContent.includes('Learn Trading')) && !document.querySelector('[data-route-loading]')"),"Learn after delayed module release");
     console.log("ISOLATED_ROUTE_LOADING_PASS: actual compiled Learn module held; visible accessible loading; actual Learn rendered after release.");
+    // Exercise real guest order controls before the fixture signs in. No
+    // production data or provider is reachable from this loopback browser.
+    await loadDocument(origin+"/trade/btc");
+    await wait(()=>devtools.evaluate("!!document.querySelector('input[aria-label=\"Amount in BTC\"]')"),"guest asset order panel");
+    const guestClick=label=>devtools.evaluate("(()=>{const b=[...document.querySelectorAll('button')].find(e=>e.textContent.trim()==="+JSON.stringify(label)+");if(!b||b.disabled)return false;b.click();return true})()");
+    const guestAmount=()=>devtools.evaluate("(()=>{const e=document.querySelector('input[aria-label=\"Amount in BTC\"]');Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(e,'0.001');e.dispatchEvent(new Event('input',{bubbles:true}));})()");
+    await guestAmount();await wait(()=>guestClick('Buy BTC'),'enabled guest buy');
+    await wait(()=>devtools.evaluate("JSON.parse(localStorage.getItem('tradehq_portfolio')||'{}').trades?.length===1"),'guest buy saved');
+    const guestBuy=await devtools.evaluate("JSON.parse(localStorage.getItem('tradehq_portfolio'))");
+    assert.equal(guestBuy.positions[0].quantity,0.001);
+    assert.ok(Math.abs(guestBuy.cash-(100000-guestBuy.trades[0].total))<1e-7);
+    assert.ok(Math.abs(guestBuy.trades[0].total-guestBuy.trades[0].price*0.001*1.001)<1e-7);
+    await wait(()=>devtools.evaluate("document.querySelector('input[aria-label=\"Amount in BTC\"]').value===''"),'guest form cleared');
+    await sleep(1100);await guestClick('Sell');await guestAmount();
+    await wait(()=>guestClick('Sell BTC'),'enabled guest sell with current holdings');
+    await wait(()=>devtools.evaluate("JSON.parse(localStorage.getItem('tradehq_portfolio')||'{}').trades?.length===2"),'guest sell saved');
+    const guestSold=await devtools.evaluate("JSON.parse(localStorage.getItem('tradehq_portfolio'))");
+    assert.equal(guestSold.positions.length,0);
+    assert.ok(Math.abs(guestSold.cash-(guestBuy.cash+guestSold.trades[0].total))<1e-7);
+    await loadDocument();
+    assert.equal(await devtools.evaluate("JSON.parse(localStorage.getItem('tradehq_portfolio')).trades.length"),2);
+    await devtools.evaluate("localStorage.removeItem('tradehq_portfolio')");
+    console.log('ISOLATED_GUEST_ORDER_PASS: actual compiled asset-page buy/sell, holdings, fee arithmetic and reload persistence; loopback only.');
     await loadDocument(origin+"/auth");
     await wait(()=>devtools.evaluate("!!(document.querySelector('input[type=email]')&&document.querySelector('input[type=password]'))"),"real TradeHQ login form");
     const submit=(mail,pass)=>{
