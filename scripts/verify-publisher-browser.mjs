@@ -96,6 +96,10 @@ try {
   }
   console.log(`PASS real Chromium: ${checked} compiled route visits (${routes.length} URLs × desktop/mobile × JS on/off), canonical/H1/content parity and overflow. Native courses use read-only published fixtures, not production services.`);
 } finally {
-  socket?.close(); browser?.kill("SIGKILL"); server.closeAllConnections(); await new Promise(resolveDone => server.close(resolveDone));
-  rmSync(temp, { recursive: true, force: true });
+  socket?.close();
+  if (browser && browser.exitCode === null && browser.signalCode === null) {
+    const exited = once(browser, "exit"); browser.kill("SIGKILL"); await exited;
+  }
+  server.closeAllConnections(); await new Promise(resolveDone => server.close(resolveDone));
+  rmSync(temp, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
 }
