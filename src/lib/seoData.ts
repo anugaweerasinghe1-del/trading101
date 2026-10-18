@@ -411,30 +411,30 @@ export const HOWTO_ASSETS: HowToAsset[] = [
     "name": "SOL",
     "fullName": "Solana",
     "type": "crypto",
-    "whyTrade": "Solana is a blockchain network and SOL is its native token. A TradeHQ holding is a simulated token-price exposure; it does not validate transactions or reproduce staking, network outages or token custody.",
+    "whyTrade": "SOL is Solana's native token, while Solana is the network on which SOL is used for transaction fees. Learning to read a SOL price quote is not the same as transferring SOL on-chain, staking tokens or trading a derivatives contract. TradeHQ offers a virtual spot-price practice exercise only.",
     "steps": [
-      "Verify the provider asset identifier, source and observation timestamp; do not turn missing data into zero.",
-      "Visit /trade/sol and read the quote and chart data-status labels; they may have different provenance.",
-      "Choose hypothetical quantity and price assumptions, then calculate position value and the 0.1% practice fee before submitting a market order.",
-      "Record the reason for the exercise and any intended manual exit. TradeHQ does not place resting limit or stop orders or open short positions.",
-      "Reconstruct quantity, asset identifier, price source and observation time before interpreting gains or losses. If there was a timeout or fallback, state what was known and what remained unavailable. Include fees only for actual recorded virtual transactions; quote refreshes do not buy or sell your SOL units."
+      "Identify the instrument before doing any arithmetic: SOL is the token, a SOL/USD quote is a price per token, and an exchange venue's quoted price may differ from a separate source. Record the quote currency, source and observation time.",
+      "Choose a hypothetical dollar budget and SOL unit price. Divide budget by unit price to calculate units, then add the simulator's stated 0.1% virtual order fee to estimate cash required. Use amounts solely for the worksheet, not as a recommended allocation.",
+      "On /trade/sol, inspect the quoted spot price and any data-status label. Submit a virtual market order only if you want to practise the supported interaction; there is no resting limit, stop, short or staking order in TradeHQ.",
+      "Write two different exit-price scenarios before reading a later quote. Calculate gross profit or loss as units times the change in dollars per SOL; subtract hypothetical buy and sell transaction fees separately.",
+      "Review what the exercise could and could not show: quote observation versus actual fill, changes in SOL value versus whole-portfolio return, and missing real-world exchange costs, spread, slippage and custody."
     ],
-    "beginnerTip": "Check the explicit provider asset identifier rather than trusting a ticker match. A short symbol can be reused by unrelated projects. The correct arithmetic with another project’s price still produces a wrong portfolio value.",
-    "risk": "Project identity, market price and network operation are different inputs. An unavailable price request does not establish a network outage, and a network incident does not guarantee a particular rebound. A provider observation can also be stale even when successfully fetched. Preserve these distinctions when describing a paper result.",
-    "studentNote": "Use SOL as a case for distinguishing data availability from asset performance. A practice portfolio update needs a valid mapped observation; it is not a blockchain transfer and does not create a real wallet balance. Local access and legal questions should be checked with current official information outside the worksheet.",
+    "beginnerTip": "Spot SOL exposure is a claim about token-price changes, not a share in Solana Labs or a claim to network revenue. Network transaction fees paid in SOL, token-staking mechanics and the cost of buying or selling SOL on an exchange are distinct concepts. The TradeHQ spot simulation does not perform blockchain transactions or staking.",
+    "risk": "SOL's token price can move rapidly in either direction. Exchange liquidity, order size, spread and execution terms affect an actual fill; network reliability and token supply information do not predict the next price. In a simulator, a displayed mark and a later virtual fill may not recreate exchange execution or custody risk. Never equate a hypothetical outcome with achievable returns.",
+    "studentNote": "This example is entirely virtual and does not require a wallet, real funds or access to an exchange. Laws and access conditions vary by jurisdiction; a financial-education worksheet is not confirmation that a venue or product is available locally.",
     "drivers": [
-      "Network activity, reported reliability incidents and published supply schedules describe different aspects of the ecosystem. Their effect on an exchange price is uncertain. Verify dated claims instead of inferring a predictable price response.",
-      "Compare a dated primary description of Solana with the practice chart. A simulated movement is not evidence that a particular news item changed the real market price."
+      "Read Solana's primary documentation to distinguish network transaction processing and fee mechanics from exchange spot trading. Usage and technology changes may matter to market participants, but they do not determine a particular SOL price or return.",
+      "Compare two dated, clearly identified price observations before calculating a percentage change. Network or ecosystem news may coincide with price movements without demonstrating that it caused them."
     ],
-    "firstTrade": "Take a hypothetical holding of 25 SOL units. A valid provider observation of $100 gives a $2,500 mark. If a later request times out, it supplies no new price; converting the empty response to zero would fabricate a $2,500 loss. Retain the last valid observation with its age and failure label until usable data arrives. If the supported mapping instead uses a fixed simulator fallback, label that fixed input plainly. Neither case means the real market stopped moving. This worksheet is about data handling, not a claim about present network availability.",
-    "timing": "Compare the provider observation time, page fetch time and any separate network-status evidence. Do not substitute one timestamp for another. The chart may use provider history or synthetic candles, so use its label before connecting a displayed movement with a real network event or application-usage claim.",
+    "firstTrade": "Hypothetical example, not live market data: suppose SOL is $125 and the practice order is 40 SOL. The gross purchase value is 40 × $125 = $5,000; a 0.1% virtual buy fee is $5. If the later assumed price is $130, gross marked value is 40 × $130 = $5,200 and the gross change is $200. A hypothetical sale at $130 with a further 0.1% simulator fee of $5.20 would make the round-trip result $189.80 before any costs not simulated. If SOL instead fell to $115, the holding would be worth $4,600: a $400 gross decline before fees. These are chosen numbers, not a forecast or a liquidity guarantee.",
+    "timing": "Digital-asset venues may operate around the clock, but 24/7 access does not mean identical liquidity at every moment. Compare source timestamp, spreads and event conditions when studying external market data. TradeHQ's chart can be sourced differently from its quote; inspect the data labels and avoid treating a chart candle as proof that a real-world market order would fill at that exact price.",
     "mistakes": [
-      "Matching a reused ticker without checking the provider identifier.",
-      "Treating a timeout as a zero quote.",
-      "Labelling a fixed fallback as a fresh real-market observation.",
-      "Calling a price-request error evidence of a blockchain incident."
+      "Confusing an exchange SOL price with the on-chain fee for sending a Solana transaction.",
+      "Using a marked portfolio value as if it were a guaranteed executable sale price.",
+      "Ignoring the second virtual fee when calculating a hypothetical round trip.",
+      "Assuming network usage or a technical announcement guarantees token-price appreciation."
     ],
-    "review": "Reconstruct quantity, asset identifier, price source and observation time before interpreting gains or losses. If there was a timeout or fallback, state what was known and what remained unavailable. Include fees only for actual recorded virtual transactions; quote refreshes do not buy or sell your SOL units."
+    "review": "Record the hypothetical buy and sell prices, quantity, both virtual fees, source timestamps and portfolio allocation. Separate token return from total-account return and note which slippage, spread and custody costs the simulation omits. Try a lower exit-price case as well as a higher one to test the same arithmetic."
   }
 ];
 
@@ -559,34 +559,35 @@ export const STRATEGIES: Strategy[] = [
   {
     "slug": "dca-dollar-cost-averaging",
     "name": "Dollar-Cost Averaging (DCA)",
-    "oneLiner": "Buying a fixed amount on a fixed schedule, regardless of price.",
-    "bestFor": "A comparison of equal scheduled contributions with other cash-flow schedules; suitability depends on the person and asset.",
-    "worstFor": "Repeated buying does not prevent permanent loss, concentration or the need to retain money for essential expenses.",
+    "oneLiner": "Investing equal amounts on a predetermined schedule rather than selecting each purchase date based on a price prediction.",
+    "bestFor": "A classroom comparison of repeated contributions and lump-sum purchase schedules, with equal total funding and clearly stated cash-availability dates.",
+    "worstFor": "DCA does not prevent loss, make an unsafe investment suitable, or outperform a lump sum consistently; transaction fees can accumulate.",
     "steps": [
-      "Choose a fictional contribution amount, dates and asset for an arithmetic worksheet.",
-      "For each date, divide the assumed contribution by the hypothetical unit price, including stated costs.",
-      "Compare the same total funds under a different schedule while stating when the funds were available.",
-      "Record total contributions, units and ending value. No “never sell” instruction or return guarantee follows from the exercise."
+      "Choose an entirely hypothetical instrument, a purchase calendar and a fixed cash contribution.",
+      "At each assumed date, divide the contribution by the unit price to calculate units. If fees apply, subtract the fee from the cash available for units.",
+      "Add contributions and units, then calculate average cost per unit as total purchase cost divided by units acquired; this is a historical accounting figure, not a future-value estimate.",
+      "Compare the final market value against total contributions at the same end date, using a separate scenario where the full amount was available from the start.",
+      "Discuss access to funds, costs, permanent-loss risk and what would happen if purchases stopped early; no schedule guarantees a profit."
     ],
-    "example": "Hypothetical schedule: $100 contributed to a selected practice asset each Friday. Record purchase dates, prices and units; no outperformance percentage is established. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.",
-    "successRate": "Execution can be measured separately from investment performance: track whether the scheduled contribution was made as planned, without treating adherence as a guarantee of returns.",
+    "example": "Hypothetical fee-free worksheet: contribute $100 when the unit prices are $10, $8 and $12. The purchases acquire 10, 12.5 and about 8.333 units respectively, or about 30.833 units for $300. At the final $12 price they are worth approximately $370, a $70 unrealized gain before any costs. A $300 lump sum at the initial $10 price, if all funds had been available then, buys 30 units worth $360 at the end. This one invented path cannot establish which schedule performs better generally.",
+    "successRate": "Measure adherence to a schedule separately from returns. Outcomes depend on the path of prices, fee terms, what was purchased and when cash was actually available.",
     "depth": {
-      "context": "Dollar-cost averaging removes the hardest variable in investing: timing. By committing a fixed amount on a fixed schedule you automatically buy more units when prices are low and fewer when they are high, and you never have to form a view about the next three months. A comparison with a lump sum depends on when funds become available, the market path, costs and dates. A fixed schedule does not guarantee better returns or continued participation during a drawdown.",
-      "regime": "Scheduled contributions change purchase timing and units acquired. Their comparison with a lump sum depends on the market path, costs and when cash becomes available. A rising, falling or permanently impaired asset can produce different results. No contribution schedule makes a speculative asset safe or guarantees a lower average cost.",
+      "context": "Dollar-cost averaging describes a recurring cash-flow rule, not a method that removes market timing risk. The schedule reduces decisions about individual purchase dates, but entry prices and the investment's ultimate value remain uncertain. It is particularly important to distinguish gradual access to savings from choosing to hold already-available cash for later purchases.",
+      "regime": "In a steadily rising example market, earlier investment of already-available cash can outperform staggered entries because more units participate in the rise. On a falling path, staggered purchases can sometimes produce a lower average entry price, but both schedules can lose money. Any comparison must use the same asset, end date, fees and funding assumptions; cherry-picked price paths are not evidence of expected performance.",
       "mistakes": [
-        "Treating a fixed contribution plan as an instruction to continue investing money needed for essential expenses.",
-        "Assuming repeated purchases guarantee recovery after a permanent impairment.",
-        "Comparing schedules with different cash availability or excluding fees and withdrawals."
+        "Describing DCA as a guarantee of a lower average entry price or positive returns.",
+        "Comparing a lump sum invested on day one with periodic savings that were not available on day one.",
+        "Overlooking transaction fees, uninvested cash and the possibility of permanent impairment."
       ],
-      "math": "Hypothetical calculation: $500 deposited at each month end for twenty years with an assumed nominal annual rate of 8%, compounded monthly, gives $500×((1+0.08/12)^240−1)/(0.08/12), about $294,510. Contributions total $120,000. The rate is an arbitrary positive-growth assumption rather than a forecast; fees, taxes, varying returns and contribution timing change the result."
+      "math": "In the fee-free three-date example, unit total = $100/$10 + $100/$8 + $100/$12 = approximately 30.8333 units. Historical average cash paid per unit = $300/30.8333 = approximately $9.73. At a final quoted $12, marked value ≈ $370 and gain ≈ $70. An alternative $300 lump sum at $10 acquires 30 units with marked value $360. Change the price sequence and the comparison may reverse; no realistic return estimate is implied."
     },
     "sources": [
       {
         "href": "https://www.investor.gov/introduction-investing/investing-basics/glossary/dollar-cost-averaging",
-        "label": "SEC Investor.gov — Dollar-cost averaging"
+        "label": "U.S. SEC Investor.gov — Dollar-Cost Averaging"
       }
     ]
-  },
+  }
   {
     "slug": "rsi-strategy",
     "name": "RSI Mean-Reversion",
