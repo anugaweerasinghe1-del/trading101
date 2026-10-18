@@ -29,3 +29,6 @@ assert.match(shortSqueeze.description, /short|squeeze/i);
 assert.ok(shortSqueeze.description.length > 80, "short-squeeze description must not be truncated at an apostrophe");
 assert.ok(routes.find(r => r.path === "/trade/pep")?.noindex);
 console.log(`PASS publisher content equivalence: ${checked} indexable snapshots and navigation payloads; utility exclusion and short-squeeze metadata`);
+
+// Exercise the deployed fallback handler and hosting rules against this actual build.
+await import("./verify-public-fallbacks");

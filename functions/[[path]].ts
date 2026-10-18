@@ -1,3 +1,5 @@
+import { isClientFallbackRoute } from "../src/lib/clientFallbackRoutes";
+
 /**
  * Cloudflare Pages dynamic SPA fallback for explicitly listed client routes.
  * Prerendered routes take priority; unknown routes stay 404 + noindex.
@@ -22,7 +24,7 @@ export async function onRequestGet({ request, env }: PagesContext): Promise<Resp
     });
   }
   return new Response(await shellResponse.text(), {
-    status: 200,
+    status: isClientFallbackRoute(pathname) ? 200 : 404,
     headers: {
       "Content-Type": "text/html; charset=utf-8",
       "Cache-Control": "no-store",
