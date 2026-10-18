@@ -59,7 +59,7 @@ const WHY_TRUST = [
 
 const HOW_IT_WORKS = [
   { step: "1", title: "Pick a track", body: "Choose the topic that matches your level. Beginners typically start with Trading Psychology or Macro Reading." },
-  { step: "2", title: "Read the lesson", body: "Each lesson is 8–14 minutes. Written in plain English with real examples and printed sources." },
+  { step: "2", title: "Read the lesson", body: "Check each lesson’s reading-time estimate. Read the worked examples, assumptions and linked sources at your own pace." },
   { step: "3", title: "Take the quiz", body: "A 4–6 question knowledge check. Explanations for every answer — you learn from mistakes." },
   { step: "4", title: "Work through an example", body: "Practise supported spot trades with virtual cash. For options and futures, calculate hypothetical contract payoffs and margin changes in a worksheet." },
   { step: "5", title: "Earn the badge", body: "Complete every lesson in a track to earn a permanent completion badge on your practice profile." },
@@ -387,17 +387,18 @@ export default function Courses() {
                 About the author
               </h2>
               <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                All TradeHQ courses are written and reviewed by{" "}
+                TradeHQ course material is maintained by{" "}
                 <Link to="/about" className="text-emerald-400 hover:underline">
                   Anuga Weerasinghe
                 </Link>
                 , the creator of TradeHQ. TradeHQ is a free educational simulator built for
                 self-directed learners — especially students in emerging markets — who want to
-                understand how markets really work before ever risking real money.
+                explore market concepts through hypothetical examples.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Every lesson displays its public sources (SEC, CFTC, FRED, CME Group, Investopedia). If you spot an
-                error, please <Link to="/contact" className="text-emerald-400 hover:underline">contact us</Link> — reported corrections are reviewed before publication.
+                AI-assisted additions identify their preparation and owner publication review on the course page.
+                This review does not imply independent financial-professional verification. Lessons link their
+                public sources for the scope described. If you spot an error, please <Link to="/contact" className="text-emerald-400 hover:underline">contact us</Link> — reported corrections are reviewed before publication.
               </p>
             </Card>
           </section>
@@ -411,7 +412,7 @@ export default function Courses() {
               <div className="space-y-2 text-sm text-muted-foreground leading-relaxed">
                 <p>
                   Trading real financial instruments involves substantial risk of loss and is not
-                  suitable for every investor. The majority of retail traders lose money over time.
+                  suitable for every investor.
                   Nothing on TradeHQ constitutes a recommendation to buy or sell any security.
                 </p>
                 <p>

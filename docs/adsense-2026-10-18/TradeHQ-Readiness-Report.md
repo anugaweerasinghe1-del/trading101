@@ -1,10 +1,36 @@
 # TradeHQ AdSense remediation — 18 October 2026
 
-**NOT READY TO REAPPLY.** Reviewable changes are in [PR #183](https://github.com/anugaweerasinghe1-del/trading101/pull/183). Production has not been changed by this session. An approved release and production verification, current account/consent checks, and the limits described below remain part of the application gate. Google’s exact rejection reason is unknown.
+**NOT READY TO REAPPLY.** The owner approved and [PR #183](https://github.com/anugaweerasinghe1-del/trading101/pull/183) was squash-merged as `88c1b418aba784984bef74ed15d7ede9beb99e61`. Both production providers and the public pages are verified below. Remaining editorial/source-fit work, fresh Search Console evidence and applicable account/consent checks still prevent a readiness claim. Google’s exact rejection reason is unknown.
 
 The main implementation baseline was `3d3531957a46235ffed8e8544f066ef7b7c7074e`, which already includes #178–182. The website implementation candidate is `41392b795c81471bdf7211efadc1da3642ec61cc`, tree `9b5d53ec8fab9521fc51a4e973309fc527e5d358`. The uploaded GitHub tree exactly matches the local implementation tree. Later commits record evidence, improve browser-fixture cleanup, and derive the Daily metadata counts directly from the authored bank (50 cases with ten questions each). Consult the PR for current CI results; this report does not treat pending CI as passed.
 
-## Inventory and evidence
+## Approved production verification
+
+Evidence observed on 18 October 2026 is in [production observations](TradeHQ-Production-Verification.json) and [native provider evidence](TradeHQ-Production-Provider-Evidence.json). These are historical observations of release `88c1b41`, not continuing monitoring.
+
+| Check | Result |
+|---|---|
+| Owner-approved merge | PR #183 merged; repository permits squash/rebase, not merge commits. |
+| Required checks on merged SHA | Phase 3, Cloudflare compatibility/SEO, required validation, disposable PostgreSQL controls, release signals and strict release/recovery readiness all succeeded. [Main run](https://github.com/anugaweerasinghe1-del/trading101/actions/runs/39136103283). |
+| Cloudflare native production | Active successful main deployment `270b96e9-443b-4b8c-a067-c587ff62ea63`, exact merged SHA. |
+| Vercel native production | READY production deployment `dpl_FkrdwyMvRWY9w9xqjXQDNrr8vzpj`, project `trading101`, exact merged SHA; active alias `thetradehq.com`. |
+| Every supplied URL | 147/147 HTTP 200 without redirect; one matching canonical and H1, indexable robots metadata and no `noindex` response header. Main script asset `/assets/index-bND5OzeL.js` was consistent. |
+| Additional published course URLs | 8/8 hydrated browser observations: matching single canonical, single H1, content rendered and no horizontal overflow in the inspected desktop viewport. The native rebalancing lesson also returned raw HTTP 200 with the corrected fee example. |
+| Critical behavior | Live SOL no longer contains the obsolete timeout text. FOMO exposes the distinct worksheet and scoped source. Daily says ten questions. The loaded catalog shows six tracks and 26 lessons. Native fee examples include $39,990 cash and $99,990 total. |
+| Alias and error samples | `/wiki/fomo/?release-check=183` normalized to the no-slash URL while preserving the query; an unknown path returned 404. The apex-domain sample redirected to the www canonical URL. |
+| Browser CI | Merged SHA also passed 620 compiled Chromium visits; these are desktop/mobile and JavaScript on/off fixture tests, not 620 production visits. |
+| Exclusion samples | `/sectors/ai-tech`, `/trade/ada` and `/admin` retain `noindex, follow`; the immutable Pages release URL retains its `noindex` response header. These are samples, not a new 202-URL production crawl. |
+| Observation limits | No production sign-in, transaction or administrative write. Existing isolated CI covers those regressions. Provider analytics reported zero sampled account errors in its month-to-date window; this is not a zero-error certification or field-performance measurement. |
+
+The initial command-line probes received 403 responses. Subsequent owner-labelled read-only requests completed the entire 147-URL crawl and the browser rendered all inspected pages. The earlier client responses are not evidence of a public outage.
+
+Continued manual review of the hydrated `/courses` hub found three residual issues: a universal 8–14 minute reading-time claim contradicted a five-minute lesson, authorship wording obscured AI assistance, and a generic majority-retail-loss assertion lacked a defined population, period or supporting source. A separate follow-up candidate removes those claims and links the wording to each lesson’s estimate and displayed preparation/review scope. **That follow-up is not part of released `88c1b41`.**
+
+A targeted source-fit check opened the two linked Investor.gov allocation/rebalancing pages and CoinGecko’s methodology and simple-price documentation. The Investor.gov pages support allocation, diversification and restoring weights; the guide expressly discusses fees and tax consequences. They do not establish TradeHQ’s numerical inputs or predict returns. CoinGecko’s methodology describes aggregation and outlier filtering; its API documentation describes optional freshness fields. They do not certify TradeHQ’s current backend configuration. These checks support the cited concepts for the six native lessons; they are not a page-by-page professional financial review or a source-quality guarantee.
+
+Sources checked: [Investor.gov guide](https://www.investor.gov/additional-resources/general-resources/publications-research/info-sheets/beginners-guide-asset), [Investor.gov allocation](https://www.investor.gov/introduction-investing/getting-started/asset-allocation), [CoinGecko methodology](https://www.coingecko.com/en/methodology), [CoinGecko simple-price reference](https://docs.coingecko.com/reference/simple-price).
+
+## Inventory and evidence (pre-release baseline)
 
 | Inventory | Accounted for |
 |---|---:|
@@ -17,7 +43,7 @@ The main implementation baseline was `3d3531957a46235ffed8e8544f066ef7b7c7074e`,
 | Bundled courses and lessons | 4 tracks / 20 lessons |
 | Additional published courses and lessons | 2 tracks / 6 lessons |
 
-Every supplied URL was fetched individually: all 147 returned HTTP 200 after redirects. For 92, the final trailing-slash URL differed from the no-slash canonical. This is a technical signal conflict, not proof of an AdSense policy violation. The raw live SOL page still contained the old timeout/debugging text during inspection even though #182 had already repaired the source. A successful commit or host build is insufficient evidence that a particular public response has received that revision.
+Every supplied URL was fetched individually: all 147 returned HTTP 200 after redirects. For 92, the final trailing-slash URL differed from the no-slash canonical. This is a technical signal conflict, not proof of an AdSense policy violation. The pre-release raw live SOL page still contained the old timeout/debugging text during inspection even though #182 had already repaired the source. A successful commit or host build is insufficient evidence that a particular public response has received that revision.
 
 An additional HTTP inspection of immutable preview `949098c8` (implementation commit `41392b7`) checked every supplied URL: **147/147 returned 200 without a redirect, exactly one production canonical, exactly one H1 and a preview `noindex` header.** Each result is attached to its URL ledger row. This verifies Cloudflare’s actual flat-file serving behavior, separately from the browser fixtures.
 
@@ -58,11 +84,11 @@ For example, a $10,000 sale with a 0.1% fee raises $9,990, not $10,000. A portfo
 | Routes and links | 349 metadata/robots fixtures, exact 147-URL static sitemap, 713 internal publisher links, 49 unique exercises, duplicate-paragraph checks and independent numerical examples. |
 | Cloudflare serving | 348 non-root static-route fixtures, slash redirects with query preservation, preview noindex and missing-route 404 fixtures. Existing course-root/header checks remain available. |
 | Published courses | Both recorded documents pass the existing publication validator after correction; six lesson render/bootstrap pairs, unchanged-input checks, idempotence and preservation of later edits pass. |
-| Native Node packaging | The isolated ESM test includes the new editorial helper. The first CI attempt exposed its missing fixture-module entry; that entry has been repaired and must pass on the final head. |
+| Native Node packaging | The isolated ESM test includes the new editorial helper. The first CI attempt exposed its missing fixture-module entry; that entry was repaired and passes on the final head and merged SHA. |
 | TypeScript | Application type-check passes. |
 | Lint | Whole-repository lint fails: 96 errors and 26 warnings, compared with 97 errors and 26 warnings on untouched main. This is existing debt, not a passed global lint result. Scoped lint for the new browser/reference changes passes. |
 | Browser preview | On the initial candidate preview, SOL rendered the rewritten guide, one hydrated canonical and one H1 with no horizontal overflow in the inspected desktop viewport. The native rebalancing lesson rendered corrected fees and quiz wording. Inspection then exposed a duplicated hydrated canonical on native courses; the final candidate repairs it. On preview 949098c8, browser inspection confirmed a single hydrated native-course canonical, the corrected fee text, and the new FOMO worksheet with its source scope and no horizontal overflow in the inspected desktop viewport. |
-| Complete browser regression | Added a real-Chromium CI check for 155 editorial URLs × 360px/1280px × JavaScript off/on: 620 visits. It verifies initial/hydrated content, one H1, one canonical and horizontal overflow. HTTPS services are fulfilled with isolated fixtures, not production accounts. The first run completed all 620 assertions successfully, then its temporary-profile cleanup failed with ENOTEMPTY. Cleanup now waits for Chromium to exit and uses bounded deletion retries; the final required CI job must still be green. |
+| Complete browser regression | Added a real-Chromium CI check for 155 editorial URLs × 360px/1280px × JavaScript off/on: 620 visits. It verifies initial/hydrated content, one H1, one canonical and horizontal overflow. HTTPS services are fulfilled with isolated fixtures, not production accounts. The first run completed all 620 assertions successfully, then its temporary-profile cleanup failed with ENOTEMPTY. Cleanup now waits for Chromium to exit and uses bounded deletion retries; the final-head and merged-SHA required jobs now pass, including cleanup. |
 | Local browser limit | No local Chromium binary was available and its download did not produce a valid archive. The cloud browser cannot reach the local loopback server. These attempts are not passing browser tests. |
 
 Structural checks do not validate every financial claim, establish originality to Google’s satisfaction, certify accessibility, measure field Core Web Vitals or prove a strategy profitable. The ledger separates measured facts from editorial judgement. General/background references are labelled as such; they are not presented as proof of a pattern’s predictive efficacy. No fabricated professional reviewer, qualification or source-check date was introduced.
@@ -78,16 +104,16 @@ No production sign-in, portfolio transaction, admin approval, AdSense action or 
 | [People-first and trustworthy content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content) | Distinct exercises, qualified claims and transparent publisher information improve the candidate. Complete source-fit judgement cannot be replaced with reference-count tests. |
 | [Privacy disclosures](https://support.google.com/publisherpolicies/answer/10437794) | Existing shared privacy disclosures and Google partner links are retained. This session did not certify the owner’s actual advertising configuration. |
 | [Regional certified CMP requirements](https://support.google.com/adsense/answer/13554116) | A script or privacy-choice link does not prove a published regional message works. Adult account holder must confirm applicable operation and records before serving relevant ads. |
-| [Canonical consistency](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls) | Code and fixtures repaired; exact preview and approved-production behavior must be verified. Google-selected canonical requires current Search Console evidence. |
+| [Canonical consistency](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls) | Code and fixtures repaired; exact preview and approved-production serving are verified. Google-selected canonical still requires current Search Console evidence. |
 | Account eligibility | Do not infer account-holder age from the site creator. Google requires an eligible adult account holder; no bypass is proposed. |
 | Ad placement | Existing manual-inventory default-denial checks remain. Account-level Auto Ads exclusions and actual ad-filled desktop/mobile screens are unverified. A utility-route `noindex` tag alone does not govern ad placement. |
 
 ## Reapplication gate
 
-1. Review PR #183 and obtain green required checks for its exact final head, including the new browser run. No merge is authorized by this report.
-2. After explicit owner approval, deploy and verify the repaired production pages, source links, native course metadata, aliases, 404s and existing user flows. The live crawl’s obsolete SOL response must no longer be served.
+1. **Completed for #183:** owner approval, merge, exact-head checks and all required merged-SHA checks. The separate residual course-hub candidate still needs review and release.
+2. **Production checks completed within the scope above:** all supplied URLs, native course rendering, critical copy, source links, aliases and 404 sample. The obsolete SOL response is gone. Authenticated/portfolio flows have isolated CI evidence, not a fresh production-account test.
 3. Check the applicable CMP message and account-level ad placement/exclusions with the eligible account holder. Do not enable ads merely to make the application look complete.
 4. Inspect refreshed GSC information and canonical selection. Follow [TradeHQ-Recrawl-Actions.md](TradeHQ-Recrawl-Actions.md); preserve intentional exclusions. No fixed waiting period or indexing request guarantees approval.
 5. Use the [full URL ledger](TradeHQ-URL-Remediation-Ledger.json) and [compact URL index](TradeHQ-URL-Index.md) to finish any unresolved source-fit, functional or accessibility findings. No row is silently omitted or represented as a completed manual financial review.
 
-The defensible verdict remains **NOT READY TO REAPPLY** until these gates are satisfied. This is an implementation handoff, not an approval prediction.
+The defensible verdict remains **NOT READY TO REAPPLY** until these gates are satisfied. The approved implementation is live; the remaining gates do not predict Google’s approval outcome.
