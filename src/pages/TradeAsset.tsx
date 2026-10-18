@@ -565,7 +565,7 @@ export default function TradeAsset() {
           {selectedAsset && (
             <section className="mt-8 p-6 bg-white/[0.02] backdrop-blur-xl rounded-2xl border border-white/[0.06]">
               <h2 className="text-lg font-bold text-foreground mb-4 tracking-tight">
-                {selectedAsset.symbol} Simulated Market Analysis — Educational Overview
+                {selectedAsset.symbol} Practice Instrument — Scope and Limitations
               </h2>
               <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
                 {generateMarketOutlook(selectedAsset).split('\n\n').map((paragraph, index) => (

@@ -16,6 +16,7 @@ import { ConsentBanner } from "@/components/ConsentBanner";
 import { CoursePublicationNotices } from "@/components/courses/CoursePublicationNotices";
 
 import Index from "./pages/Index";
+import { RoutePublisherNotes } from "./components/RoutePublisherNotes";
 
 const Trade = lazy(() => import("./pages/Trade"));
 const TradeAsset = lazy(() => import("./pages/TradeAsset"));
@@ -180,6 +181,7 @@ const App = () => (
         <BrowserRouter>
           <AuthProvider>
             <AnimatedRoutes />
+            <RoutePublisherNotes />
             <MobileBottomNav />
             <BackgroundMusic />
             <PushNotificationPrompt />

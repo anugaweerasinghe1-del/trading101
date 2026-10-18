@@ -6,8 +6,8 @@
  *   - <title>, <meta name="description">, canonical, og:*, twitter:*
  *   - <meta name="robots"> (noindex for low-value programmatic routes)
  *   - a full, route-specific article inside #root — real headings,
- *     paragraphs, lists and internal links — so crawlers (and AdSense)
- *     see substantive content before any JavaScript executes.
+ *     paragraphs, lists and internal links — for visitors with or without JavaScript. The same component
+ *     remains visible below the interactive application after React starts.
  *
  * Hosting serves the file on the filesystem first, so /wiki/macd resolves
  * to dist/wiki/macd/index.html — no server, no runtime SSR.
@@ -18,7 +18,9 @@ import * as path from "path";
 import { fileURLToPath } from "url";
 import { uniqueRoutes, DOMAIN, type RouteMeta } from "./routes";
 import { buildContentMap, type PageContent } from "./content";
-import { DISCLAIMER } from "./staticCopy";
+import React from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+import { PublisherNotes, type PublisherPage } from "../src/components/PublisherNotes";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.resolve(__dirname, "..", "dist");
@@ -64,40 +66,18 @@ function linkList(links: { href: string; label: string }[]): string {
 }
 
 function renderBody(r: RouteMeta, content: PageContent | undefined): string {
-  const sections = (content?.sections || [])
-    .map((s) => {
-      const paras = (s.p || [])
-        .filter(Boolean)
-        .map((p) => `<p style="line-height:1.7;margin:0 0 14px;color:#c8ccd4;">${esc(p)}</p>`)
-        .join("");
-      const list = s.list && s.list.length
-        ? `<ul style="line-height:1.7;color:#c8ccd4;margin:0 0 16px;padding-left:20px;">${s.list
-            .filter(Boolean)
-            .map((li) => `<li style="margin-bottom:6px;">${esc(li)}</li>`)
-            .join("")}</ul>`
-        : "";
-      if (!paras && !list) return "";
-      return `<section><h2 style="font-size:1.3rem;margin:28px 0 12px;color:#f2f4f8;">${esc(s.h)}</h2>${paras}${list}</section>`;
-    })
-    .join("");
+  const page = publisherPage(r, content);
+  const notes = page ? renderToStaticMarkup(React.createElement(PublisherNotes, { page })) : "";
+  return `<div id="prerender-seo" style="background:#0A0A0F;color:#e6e7ea;font-family:Inter,system-ui,sans-serif;padding:24px;">
+    <nav aria-label="Main"><ul style="display:flex;flex-wrap:wrap;gap:14px;list-style:none;padding:0;">${linkList(NAV)}</ul></nav>
+    <main><h1>${esc(r.h1)}</h1>${notes || `<p>${esc(r.summary)}</p>`}</main>
+    <footer><ul style="display:flex;flex-wrap:wrap;gap:14px;list-style:none;padding:0;">${linkList(FOOTER)}</ul></footer>
+  </div>`;
+}
 
-  const related = content?.links?.length
-    ? `<nav aria-label="Related pages"><h2 style="font-size:1.3rem;margin:28px 0 12px;color:#f2f4f8;">Related pages</h2><ul style="line-height:1.8;padding-left:20px;">${linkList(content.links)}</ul></nav>`
-    : "";
-
-  return `<div id="prerender-seo" style="min-height:100vh;background:#0A0A0F;color:#e6e7ea;font-family:Inter,system-ui,sans-serif;padding:40px 24px;">
-  <div style="max-width:820px;margin:0 auto;">
-    <nav aria-label="Main"><ul style="list-style:none;display:flex;flex-wrap:wrap;gap:14px;padding:0;margin:0 0 32px;">${linkList(NAV)}</ul></nav>
-    <main>
-      <h1 style="font-size:2rem;line-height:1.2;margin:0 0 16px;">${esc(r.h1)}</h1>
-      <p style="font-size:1.05rem;line-height:1.7;color:#a8adb6;margin:0 0 8px;">${esc(r.summary)}</p>
-      ${sections}
-      ${related}
-      <p style="font-size:0.8rem;color:#8b9099;margin-top:32px;">${esc(DISCLAIMER)} TradeHQ is a free educational paper-trading simulator. No real money is traded and no content here is a recommendation.</p>
-    </main>
-    <footer><ul style="list-style:none;display:flex;flex-wrap:wrap;gap:14px;padding:0;margin:32px 0 0;">${linkList(FOOTER)}</ul></footer>
-  </div>
-</div>`;
+function publisherPage(r: RouteMeta, content: PageContent | undefined): PublisherPage | null {
+  if (r.noindex || !content) return null;
+  return { path: r.path, heading: r.h1, summary: r.summary, ...content };
 }
 
 function wordCount(html: string): number {
@@ -109,7 +89,7 @@ function wordCount(html: string): number {
     .filter(Boolean).length;
 }
 
-function renderHead(r: RouteMeta, template: string, body: string): string {
+function renderHead(r: RouteMeta, template: string, body: string, page: PublisherPage | null): string {
   const url = `${DOMAIN}${r.path === "/" ? "/" : r.path}`;
   const title = esc(r.title);
   const desc = esc(r.description);
@@ -162,6 +142,10 @@ function renderHead(r: RouteMeta, template: string, body: string): string {
 
   html = html.replace(/<div\s+id=["']root["']><\/div>/i, `<div id="root">${body}</div>`);
 
+  if (page) {
+    const json = JSON.stringify(page).replace(/</g, "\\u003c");
+    html = html.replace(/<\/body>/i, `<script id="publisher-notes-data" type="application/json">${json}</script></body>`);
+  }
   return html;
 }
 
@@ -196,10 +180,16 @@ async function main() {
     if (!content && !r.noindex) missing.push(r.path);
 
     const body = renderBody(r, content);
+    const page = publisherPage(r, content);
+    if (page) {
+      const jsonDir = path.join(DIST, "publisher-notes", r.path.slice(1));
+      fs.mkdirSync(jsonDir, { recursive: true });
+      fs.writeFileSync(path.join(jsonDir, "index.json"), JSON.stringify(page));
+    }
     const words = wordCount(body);
     if (!r.noindex && words < MIN_WORDS) thin.push({ path: r.path, words });
 
-    const html = renderHead(r, shell, body);
+    const html = renderHead(r, shell, body, page);
 
     const outDir = r.path === "/" ? DIST : path.join(DIST, r.path);
     fs.mkdirSync(outDir, { recursive: true });
