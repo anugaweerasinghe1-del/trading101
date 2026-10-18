@@ -587,7 +587,7 @@ export const STRATEGIES: Strategy[] = [
         "label": "U.S. SEC Investor.gov — Dollar-Cost Averaging"
       }
     ]
-  }
+  },
   {
     "slug": "rsi-strategy",
     "name": "RSI Mean-Reversion",
