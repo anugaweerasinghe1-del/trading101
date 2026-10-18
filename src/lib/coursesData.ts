@@ -836,7 +836,7 @@ const psychologyTrack: CourseTrack = {
             "explanation": "Sample design, costs, dependence and uncertainty matter."
           }
         ]
-      }
+      },
     {
         "slug": "discipline-and-daily-rituals",
         "title": "Optional Checklists for Practice Sessions",
@@ -923,7 +923,7 @@ const psychologyTrack: CourseTrack = {
             "explanation": "Participation is not an investment-performance measure."
           }
         ]
-      }
+      },
     {
         "slug": "handling-drawdowns",
         "title": "Understanding Drawdowns in a Simulation",
@@ -1010,7 +1010,7 @@ const psychologyTrack: CourseTrack = {
             "explanation": "A finance calculation is not a medical assessment."
           }
         ]
-      }
+      },
   ],
 };
 
