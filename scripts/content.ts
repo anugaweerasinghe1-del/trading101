@@ -439,6 +439,13 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
       },
       { h: "Strategies covered", list: strategies.map((s) => `${s.name} — ${s.oneLiner}`) },
       {
+        h: "A simple comparison before choosing a worksheet",
+        p: [
+          "Consider two different teaching questions: a fixed $100 contribution made at three specified dates is a cash-flow exercise, whereas recording a MACD crossing on three observations is an indicator-definition exercise. They do not use the same denominator or imply comparable expected returns. For the contribution exercise, list total cash added and total units; for an indicator exercise, state the source, price interval and calculation before counting any signals.",
+          "Neither example needs a live trade. The choice of an exercise should follow the concept being studied, not a claim that a holding period or indicator offers a better outcome. Any comparison of observed results needs consistent date ranges, costs, valuation conventions and a clear statement that a selected sample cannot verify future performance.",
+        ],
+      },
+      {
         h: "What a strategy is, and what it is not",
         p: [
           "A trading rule describes a testable set of conditions and assumptions. Dollar-cost averaging is different: it schedules contributions, without requiring an active entry or exit signal. The site presents these methods for comparison, not as advice about which method is suitable for a person.",
@@ -501,6 +508,13 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
         p: [
           "Rules for accessing financial services, exchanging currency, and reporting taxable gains can differ by jurisdiction and change over time. These guides point readers to local regulators rather than deciding eligibility, recommending a brokerage or prescribing how much real money to invest.",
           "Treat regulatory summaries as starting points for verification, not current legal advice. Read the relevant authority's latest publications and check the date of any rule before relying on it.",
+        ],
+      },
+      {
+        h: "Source-check worksheet for local rules",
+        p: [
+          "Before interpreting a country-specific statement, record the regulator's name, the exact dated document, the instrument being discussed and the scope of its rules. A rule about domestic exchange-listed equities may not apply to an overseas crypto exchange, an ETF or a simulated order. This is especially important when older blog posts repeat rules that have since changed.",
+          "TradeHQ cannot confirm any person's eligibility or give legal or tax clearance. The country guides therefore illustrate where to look, rather than deciding whether a broker, remittance, asset or tax treatment is permitted today.",
         ],
       },
       {
