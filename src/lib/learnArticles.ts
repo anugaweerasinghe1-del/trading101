@@ -23,8 +23,8 @@ export const LEARN_ARTICLES: LearnArticle[] = [
   {
     slug: "what-is-paper-trading",
     title: "What Is Paper Trading? Practice, Uses and Limitations",
-    summary: "Paper trading lets you practice buying and selling stocks, crypto, and other assets using virtual money — so you can learn without losing a cent.",
-    metaDescription: "Learn what paper trading is and how virtual practice works. Practice with $100,000 virtual cash on TradeHQ — no signup, no risk.",
+    summary: "Paper trading uses virtual money to explore order placement, portfolio arithmetic and record-keeping. It avoids real-money trades, but cannot reproduce all live-market costs or risks.",
+    metaDescription: "Learn how paper trading works with $100,000 in virtual cash on TradeHQ. Practice orders are simulated; real-market costs and outcomes can differ.",
     readTime: "5 min read",
     sections: [
       {
@@ -32,7 +32,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
         paragraphs: [
           "Paper trading is the practice of simulating trades without using real money. Instead of risking your hard-earned savings, you use virtual currency to buy and sell stocks, ETFs, cryptocurrencies, and other financial instruments. The term dates back to a time when aspiring traders would literally write their hypothetical trades on paper to track performance.",
           "Today, paper trading is usually done digitally through simulated platforms. It can help beginners practise order entry, chart reading, record-keeping, and portfolio mechanics without risking real money. It is one practical way to learn how markets work, but it cannot reproduce every part of live trading, especially slippage, liquidity constraints, and the emotions attached to real losses.",
-          "On TradeHQ, every user starts with $100,000 in virtual cash. You can trade 170 assets including blue-chip stocks like Apple (AAPL), cryptocurrencies like Bitcoin (BTC), ETFs like SPY, forex pairs, and commodities like gold. Every trade you make is tracked, giving you a realistic portfolio experience."
+          "On TradeHQ, every user starts with $100,000 in virtual cash. You can trade 170 assets including blue-chip stocks like Apple (AAPL), cryptocurrencies like Bitcoin (BTC), ETFs like SPY, forex pairs, and commodities like gold. Practice orders and resulting positions appear in the simulator's records, subject to its stated guest and account-data limitations. This is not a brokerage execution record."
         ]
       },
       {
@@ -62,8 +62,8 @@ export const LEARN_ARTICLES: LearnArticle[] = [
   {
     slug: "how-to-read-stock-charts",
     title: "How to Read a Stock Chart: A Beginner's Guide",
-    summary: "Stock charts are the language of the market. Learn how to read candlestick patterns, identify trends, and use indicators to make smarter trades.",
-    metaDescription: "Learn how to read stock charts like a pro. Understand candlesticks, support and resistance, volume, and key indicators. Free guide on TradeHQ.",
+    summary: "Learn to describe candlesticks, historical price movements and common indicator calculations without assuming that a recognizable pattern predicts returns.",
+    metaDescription: "Learn chart-reading basics, including candles, volume, support and resistance, and why technical indicators cannot guarantee future prices.",
     readTime: "6 min read",
     sections: [
       {
@@ -86,8 +86,8 @@ export const LEARN_ARTICLES: LearnArticle[] = [
         heading: "Key Technical Indicators for Beginners",
         paragraphs: [
           "Moving averages smooth a specified historical price series. A 50-period average crossing above a 200-period average is commonly called a golden cross; the reverse is a death cross. These lagging descriptions can change repeatedly and do not guarantee useful entry or exit timing.",
-          "The Relative Strength Index (RSI) measures momentum on a scale of 0 to 100. An RSI above 70 suggests the asset is overbought (potentially due for a pullback), while below 30 suggests it's oversold (potentially due for a bounce). MACD (Moving Average Convergence Divergence) is another momentum indicator that shows the relationship between two moving averages.",
-          "Practice reading charts on TradeHQ by opening any asset page — for example, NVIDIA (NVDA) or Ethereum (ETH). Study the candlestick patterns, identify support and resistance levels, and watch how indicators confirm or contradict price action. The more charts you study, the better your pattern recognition becomes."
+          "The Relative Strength Index (RSI) measures momentum on a scale of 0 to 100. Under common RSI settings, values above 70 are often labelled overbought and below 30 oversold. Those conventional labels are descriptions, not evidence that a reversal is imminent or certain. MACD (Moving Average Convergence Divergence) is another momentum indicator that shows the relationship between two moving averages.",
+          "Practice reading charts on TradeHQ by opening any asset page — for example, NVIDIA (NVDA) or Ethereum (ETH). Identify the chosen candle shapes and levels, recording the source, time interval and calculation settings. Compare cases where a labelled pattern is followed by continuation as well as reversal; observations on generated practice charts cannot validate historical predictive accuracy."
         ]
       }
     ],
@@ -298,7 +298,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
     slug: "market-orders-vs-limit-orders",
     title: "Market Orders vs Limit Orders: Which Should You Use and When?",
     summary: "Understanding order types is essential before placing your first trade. Learn the difference between market and limit orders, and when to use each one.",
-    metaDescription: "Market orders vs limit orders explained for beginners. Learn about slippage, fill guarantees, and when to use each order type. Practice free on TradeHQ.",
+    metaDescription: "Compare market and limit orders, price uncertainty, slippage and unfilled orders. TradeHQ simulates market orders only; limit orders are explained conceptually.",
     readTime: "5 min read",
     sections: [
       {
@@ -312,8 +312,8 @@ export const LEARN_ARTICLES: LearnArticle[] = [
       {
         heading: "What Is a Limit Order?",
         paragraphs: [
-          "A limit order lets you set the exact price at which you want to buy or sell. A buy limit order executes only at your specified price or lower; a sell limit order executes only at your specified price or higher. Unlike market orders, limit orders give you price control but don't guarantee execution.",
-          "For example, if Bitcoin is trading at $68,000 and you want to buy at $65,000, you place a buy limit order at $65,000. If the market reaches that level, the order becomes eligible to fill, subject to available liquidity and order priority. If it never reaches $65,000, the order remains open until you cancel it or it expires.",
+          "A limit order specifies the highest acceptable price for a buy or the lowest acceptable price for a sale; an execution may occur at a better price. A buy limit order executes only at your specified price or lower; a sell limit order executes only at your specified price or higher. Unlike market orders, limit orders give you price control but don't guarantee execution.",
+          "In a hypothetical example, suppose Bitcoin is quoted at $68,000 while a buy limit is set at $65,000. If the market reaches that level, the order becomes eligible to fill, subject to available liquidity and order priority. If it never reaches $65,000, the order remains open until you cancel it or it expires.",
           "Limit orders can be useful when price control matters more than immediate execution. They are commonly used for planned entries and exits, but the trade-off is that the order may not fill at all, or may fill only partially, if there is not enough matching liquidity."
         ]
       },
@@ -327,7 +327,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
       }
     ],
     relatedLinks: [
-      { href: "/trade/nvda", label: "Practice order types on NVIDIA (NVDA)" },
+      { href: "/trade/nvda", label: "Practice a simulated market order on NVIDIA (NVDA)" },
       { href: "/trade/sol", label: "Practice market orders on Solana (SOL)" },
       { href: "/learn/article/risk-management-in-trading", label: "Risk management guide" },
       { href: "/wiki/limit-order-vs-market-order", label: "Glossary: Limit vs Market Order" },
