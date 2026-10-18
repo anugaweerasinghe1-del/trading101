@@ -751,9 +751,9 @@ const psychologyTrack: CourseTrack = {
       ],
     },
     {
-        "slug": "the-trading-journal",
-        "title": "A Trading Journal: Observations and Limits",
-        "summary": "Use a decision record to review assumptions without claiming it proves profitable skill.",
+        slug: "the-trading-journal",
+        title: "A Trading Journal: Observations and Limits",
+        summary: "Use a decision record to review assumptions without claiming it proves profitable skill.",
         "readingMinutes": 8,
         "sourceCheck": {
           "date": "2026-10-18",
@@ -838,9 +838,9 @@ const psychologyTrack: CourseTrack = {
         ]
       },
     {
-        "slug": "discipline-and-daily-rituals",
-        "title": "Optional Checklists for Practice Sessions",
-        "summary": "Prepare and review educational exercises without prescribing a professional routine or profitable outcome.",
+        slug: "discipline-and-daily-rituals",
+        title: "Optional Checklists for Practice Sessions",
+        summary: "Prepare and review educational exercises without prescribing a professional routine or profitable outcome.",
         "readingMinutes": 8,
         "sourceCheck": {
           "date": "2026-10-18",
@@ -925,9 +925,9 @@ const psychologyTrack: CourseTrack = {
         ]
       },
     {
-        "slug": "handling-drawdowns",
-        "title": "Understanding Drawdowns in a Simulation",
-        "summary": "Calculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions.",
+        slug: "handling-drawdowns",
+        title: "Understanding Drawdowns in a Simulation",
+        summary: "Calculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions.",
         "readingMinutes": 8,
         "sourceCheck": {
           "date": "2026-10-18",
