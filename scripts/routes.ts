@@ -231,10 +231,10 @@ export function buildRoutes(): RouteMeta[] {
 
   routes.push({
     path: "/learn-trading-guide",
-    title: "Complete Beginner Trading Guide | TradeHQ",
-    description: `The full beginner's trading guide. Learn how markets work, how to place orders and how to manage risk — then practice with ${BALANCE} virtual cash.`,
-    h1: "The Complete Beginner Trading Guide",
-    summary: `A single long-form guide that walks a complete beginner from zero to placing their first informed trade. Covers order types, chart reading, risk sizing, and psychology. Practice everything with ${BALANCE} in virtual cash on the free simulator.`,
+    title: "Beginner Trading Practice Guide | TradeHQ",
+    description: `Study simulated market orders, fees, price observations and record-keeping, with ${BALANCE} in virtual practice funds. Not a complete investing course.`,
+    h1: "Beginner Trading Practice Guide",
+    summary: `An introduction to the virtual practice dashboard, order mechanics and a worked buy/sell-fee example. Links to longer courses and reference material; ${BALANCE} is simulated money, not an investment account.`,
     priority: "0.9",
     changefreq: "weekly",
   });
