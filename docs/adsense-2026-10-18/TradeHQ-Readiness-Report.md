@@ -24,7 +24,7 @@ Evidence observed on 18 October 2026 is in [production observations](TradeHQ-Pro
 
 The initial command-line probes received 403 responses. Subsequent owner-labelled read-only requests completed the entire 147-URL crawl and the browser rendered all inspected pages. The earlier client responses are not evidence of a public outage.
 
-Continued manual review of the hydrated `/courses` hub found three residual issues: a universal 8–14 minute reading-time claim contradicted a five-minute lesson, authorship wording obscured AI assistance, and a generic majority-retail-loss assertion lacked a defined population, period or supporting source. A separate follow-up candidate removes those claims and links the wording to each lesson’s estimate and displayed preparation/review scope. **That follow-up is not part of released `88c1b41`.**
+Continued manual review of the hydrated `/courses` hub found three residual issues: a universal 8–14 minute reading-time claim contradicted a five-minute lesson, authorship wording obscured AI assistance, and a generic majority-retail-loss assertion lacked a defined population, period or supporting source. [Follow-up #184](https://github.com/anugaweerasinghe1-del/trading101/pull/184) removed those claims and was subsequently merged as `b2fd49d7`. This is a later change, not part of the historical production inspection of release `88c1b41` documented above.
 
 A targeted source-fit check opened the two linked Investor.gov allocation/rebalancing pages and CoinGecko’s methodology and simple-price documentation. The Investor.gov pages support allocation, diversification and restoring weights; the guide expressly discusses fees and tax consequences. They do not establish TradeHQ’s numerical inputs or predict returns. CoinGecko’s methodology describes aggregation and outlier filtering; its API documentation describes optional freshness fields. They do not certify TradeHQ’s current backend configuration. These checks support the cited concepts for the six native lessons; they are not a page-by-page professional financial review or a source-quality guarantee.
 
@@ -110,10 +110,17 @@ No production sign-in, portfolio transaction, admin approval, AdSense action or 
 
 ## Reapplication gate
 
-1. **Completed for #183:** owner approval, merge, exact-head checks and all required merged-SHA checks. The separate residual course-hub candidate still needs review and release.
+1. **Completed for #183:** owner approval, merge, exact-head checks and all required merged-SHA checks. Follow-up #184 was later merged; this document's original 147-URL and eight-course release evidence remains scoped to #183 and must not be assigned to a later commit.
 2. **Production checks completed within the scope above:** all supplied URLs, native course rendering, critical copy, source links, aliases and 404 sample. The obsolete SOL response is gone. Authenticated/portfolio flows have isolated CI evidence, not a fresh production-account test.
 3. Check the applicable CMP message and account-level ad placement/exclusions with the eligible account holder. Do not enable ads merely to make the application look complete.
 4. Inspect refreshed GSC information and canonical selection. Follow [TradeHQ-Recrawl-Actions.md](TradeHQ-Recrawl-Actions.md); preserve intentional exclusions. No fixed waiting period or indexing request guarantees approval.
 5. Use the [full URL ledger](TradeHQ-URL-Remediation-Ledger.json) and [compact URL index](TradeHQ-URL-Index.md) to finish any unresolved source-fit, functional or accessibility findings. No row is silently omitted or represented as a completed manual financial review.
 
-The defensible verdict remains **NOT READY TO REAPPLY** until these gates are satisfied. The approved implementation is live; the remaining gates do not predict Google’s approval outcome.
+## Continuation record (18 October 2026, later than the original release snapshot)
+
+- [PR #184](https://github.com/anugaweerasinghe1-del/trading101/pull/184) is merged as `b2fd49d7`; the earlier #183 production observations cannot certify that later release.
+- [PR #185](https://github.com/anugaweerasinghe1-del/trading101/pull/185) is merged as `1d079a14`. The exact PR head passed Phase 3, Cloudflare build/SEO, required validation and disposable PostgreSQL checks. Vercel separately reported its `1d079a14` production deployment READY; **Cloudflare production and refreshed URL checks for this newer SHA were not yet recorded in this report**.
+- [PR #186](https://github.com/anugaweerasinghe1-del/trading101/pull/186) subsequently passed exact-head Phase 3, Cloudflare build/SEO, required validation, disposable PostgreSQL and provider preview checks and merged as `a083c868`. Its changes qualify statements across three learning articles and add regression tests. This record does not assert an independently verified production release of that newer SHA.
+- Reconciled the eight published-course ledger rows to remove historical 'approve/deploy/verify' next steps already evidenced for release #183. All 155 indexable rows retain a partial editorial/source-fit verdict rather than a fabricated clearance. Current Search Console results, eligibility of the account holder, consent message operation and account-level Auto Ads restrictions still need explicit checks.
+
+The defensible verdict remains **NOT READY TO REAPPLY** until the open gates are satisfied. No readiness rating predicts Google's approval outcome.
