@@ -107,12 +107,12 @@ export default function HowToTrade() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-3">A realistic first practice trade</h2>
+            <h2 className="text-2xl font-semibold mb-3">Worked hypothetical practice example</h2>
             <p className="text-sm leading-relaxed text-muted-foreground">{asset.firstTrade}</p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-3">When to trade it — and when not to</h2>
+            <h2 className="text-2xl font-semibold mb-3">Market sessions and observation limitations</h2>
             <p className="text-sm leading-relaxed text-muted-foreground">{asset.timing}</p>
           </section>
 
@@ -172,6 +172,23 @@ export default function HowToTrade() {
             ]}
             faqHeading={`${asset.fullName} FAQ`}
           />
+          {asset.sources && asset.sources.length > 0 && (
+            <section aria-label="Sources and further reading" className="mb-8">
+              <h2 className="text-2xl font-semibold mb-3">Primary sources and further reading</h2>
+              <p className="text-sm text-muted-foreground mb-3">
+                Sources explain the instrument or market structure, not hypothetical returns.
+                Always review dates and distinguish real exchange costs from the simulator.
+              </p>
+              <ul className="space-y-2 text-sm">
+                {asset.sources.map((source) => (
+                  <li key={source.href}>
+                    <a href={source.href} target="_blank" rel="noopener noreferrer"
+                       className="text-emerald-400 hover:underline">{source.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
         </main>
         <MegaFooter />
       </div>
