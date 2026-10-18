@@ -422,10 +422,7 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
         { href: `/trade/${h.symbol}`, label: `${h.fullName} practice page` },
         { href: "/how-to-trade", label: "All asset guides" },
         { href: "/strategy", label: "Strategy guides" },
-        ...(h.symbol === "eth" ? [
-          { href: "https://ethereum.org/what-is-ether/", label: "Ethereum.org: ether" },
-          { href: "https://ethereum.org/gas/", label: "Ethereum.org: gas and fees" },
-        ] : []),
+        ...(h.sources || []),
       ],
     });
   }
