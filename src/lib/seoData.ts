@@ -253,6 +253,7 @@ export interface HowToAsset {
   timing: string;           // sessions / liquidity / when to avoid
   mistakes: string[];       // instrument-specific beginner mistakes
   review: string;           // how to review the trade afterwards
+  sources?: { href: string; label: string }[]; // relevant first-party documents
 }
 
 export const HOWTO_ASSETS: HowToAsset[] = [
@@ -267,7 +268,7 @@ export const HOWTO_ASSETS: HowToAsset[] = [
       "Visit /trade/btc and read the quote and chart data-status labels; they may have different provenance.",
       "Choose hypothetical quantity and price assumptions, then calculate position value and the 0.1% practice fee before submitting a market order.",
       "Record the reason for the exercise and any intended manual exit. TradeHQ does not place resting limit or stop orders or open short positions.",
-      "Write the position’s percentage move, dollar change and whole-account return on separate lines. Recompute allocation using the new total. Then reconcile fees and inspect observation age. This review prevents a profitable asset move from being mistaken for an equally large account return, and preserves unfavorable as well as favorable cases."
+      "Create a second BTC price scenario with the same unit count so gross holding return and total-account return can be compared."
     ],
     "beginnerTip": "Begin with the difference between coin return and account return. A hypothetical 10% BTC rise applied to a $10,000 holding adds $1,000 before costs, while an otherwise cash-only $100,000 account rises only 1%. The same headline percentage can therefore describe a much larger asset move than portfolio move.",
     "risk": "BTC price risk and quote-data risk are distinct. A correctly identified asset can still have an older provider observation; a recent page fetch does not make that observation current. A small BTC weight can limit its contribution to one assumed account move, but it cannot prevent the holding from losing value. Real execution is not reproduced by a paper mark.",
@@ -284,7 +285,13 @@ export const HOWTO_ASSETS: HowToAsset[] = [
       "Calling an aggregate provider mark a reserved exchange fill.",
       "Ignoring both buy and sell fees in the result."
     ],
-    "review": "Write the position’s percentage move, dollar change and whole-account return on separate lines. Recompute allocation using the new total. Then reconcile fees and inspect observation age. This review prevents a profitable asset move from being mistaken for an equally large account return, and preserves unfavorable as well as favorable cases."
+    "review": "Write the position’s percentage move, dollar change and whole-account return on separate lines. Recompute allocation using the new total. Then reconcile fees and inspect observation age. This review prevents a profitable asset move from being mistaken for an equally large account return, and preserves unfavorable as well as favorable cases.",
+    "sources": [
+      {
+        "href": "https://bitcoin.org/en/bitcoin-paper",
+        "label": "Bitcoin — original protocol paper"
+      }
+    ]
   },
   {
     "symbol": "eth",
@@ -297,7 +304,7 @@ export const HOWTO_ASSETS: HowToAsset[] = [
       "Visit /trade/eth and read the quote and chart data-status labels; they may have different provenance.",
       "Choose hypothetical quantity and price assumptions, then calculate position value and the 0.1% practice fee before submitting a market order.",
       "Record the reason for the exercise and any intended manual exit. TradeHQ does not place resting limit or stop orders or open short positions.",
-      "After the exercise, reconcile ETH units, notional cost, simulator fee and cash separately. If the quote moves $100 per ETH and you own 2 ETH, the gross marked change is $200. A gas-charge discussion belongs in a separate network worksheet. Check that neither staking income nor a wallet transfer was invented in the virtual ledger."
+      "Separate the virtual spot transaction fee from any Solana- or Ethereum-style on-chain network charge, which the simulator does not execute."
     ],
     "beginnerTip": "Separate the network from the currency: Ethereum is the system, while ETH is the unit whose price you see. A lower price per coin than BTC does not by itself mean ETH is cheaper in valuation terms.",
     "risk": "Network fees, staking mechanics and ETH market-price exposure are different risks and activities. TradeHQ illustrates only the supported virtual spot accounting; it does not stake ETH, transfer coins or pay staking rewards. A correct network explanation cannot establish which direction the market price will move. Include the actual simulator fees when assessing a paper outcome.",
@@ -314,7 +321,17 @@ export const HOWTO_ASSETS: HowToAsset[] = [
       "Comparing whole-coin prices as if they establish relative business valuation.",
       "Mixing dollar loss with loss per ETH unit."
     ],
-    "review": "After the exercise, reconcile ETH units, notional cost, simulator fee and cash separately. If the quote moves $100 per ETH and you own 2 ETH, the gross marked change is $200. A gas-charge discussion belongs in a separate network worksheet. Check that neither staking income nor a wallet transfer was invented in the virtual ledger."
+    "review": "After the exercise, reconcile ETH units, notional cost, simulator fee and cash separately. If the quote moves $100 per ETH and you own 2 ETH, the gross marked change is $200. A gas-charge discussion belongs in a separate network worksheet. Check that neither staking income nor a wallet transfer was invented in the virtual ledger.",
+    "sources": [
+      {
+        "href": "https://ethereum.org/what-is-ether/",
+        "label": "Ethereum.org — ether and the Ethereum network"
+      },
+      {
+        "href": "https://ethereum.org/gas/",
+        "label": "Ethereum.org — transaction gas"
+      }
+    ]
   },
   {
     "symbol": "tsla",
@@ -327,7 +344,7 @@ export const HOWTO_ASSETS: HowToAsset[] = [
       "Visit /trade/tsla and read the quote and chart data-status labels; they may have different provenance.",
       "Choose hypothetical quantity and price assumptions, then calculate position value and the 0.1% practice fee before submitting a market order.",
       "Record the reason for the exercise and any intended manual exit. TradeHQ does not place resting limit or stop orders or open short positions.",
-      "Compare the original thesis with the information actually available before the exercise. Did you mean delivery volume, revenue or margins? Reconstruct shares, assumed entry, observed mark and fees. Keep the gap case even if it contradicts the intended exit, and do not rewrite a winning trade’s reason after seeing its result."
+      "Record an alternative next-session opening price in the worksheet to show how an overnight gap can differ from an intended exit."
     ],
     "beginnerTip": "Read deliveries, revenue and profit margins as separate measurements. A hypothetical rise in units delivered does not imply the same rise in revenue, because prices and product mix can change. A stock-price reaction also depends on expectations that a short headline may omit.",
     "risk": "An event-sensitive stock worksheet should distinguish a chosen exit threshold from the next observed price. A gap can cross the threshold, and a journal note is not an automated order. Delivery growth alone cannot validate a price target. The simulator does not reproduce real opening-auction fills, shareholder rights or options exposure.",
@@ -344,7 +361,13 @@ export const HOWTO_ASSETS: HowToAsset[] = [
       "Deleting a gap case because it exceeded the chosen worksheet loss.",
       "Inventing a report-based reason after seeing the stock movement."
     ],
-    "review": "Compare the original thesis with the information actually available before the exercise. Did you mean delivery volume, revenue or margins? Reconstruct shares, assumed entry, observed mark and fees. Keep the gap case even if it contradicts the intended exit, and do not rewrite a winning trade’s reason after seeing its result."
+    "review": "Compare the original thesis with the information actually available before the exercise. Did you mean delivery volume, revenue or margins? Reconstruct shares, assumed entry, observed mark and fees. Keep the gap case even if it contradicts the intended exit, and do not rewrite a winning trade’s reason after seeing its result.",
+    "sources": [
+      {
+        "href": "https://ir.tesla.com/",
+        "label": "Tesla investor relations — filings and earnings"
+      }
+    ]
   },
   {
     "symbol": "nvda",
@@ -357,7 +380,7 @@ export const HOWTO_ASSETS: HowToAsset[] = [
       "Visit /trade/nvda and read the quote and chart data-status labels; they may have different provenance.",
       "Choose hypothetical quantity and price assumptions, then calculate position value and the 0.1% practice fee before submitting a market order.",
       "Record the reason for the exercise and any intended manual exit. TradeHQ does not place resting limit or stop orders or open short positions.",
-      "Review both the direct holding and any assumed fund overlap. Record whether fund weights were actual dated inputs or deliberately hypothetical. Recompute the account denominator after price changes, and separate operating metrics from share-price results. The goal is a reproducible exposure explanation, not a claim that two technology labels imply diversification."
+      "Compare direct NVIDIA shares with a hypothetical dated ETF allocation to identify potential overlap before interpreting a percentage change."
     ],
     "beginnerTip": "Separate company operating measures from the share-price return. A hypothetical 20% sales increase and a 5% stock decline can coexist when expectations, costs or guidance differ. The price observation alone does not tell you which explanation is correct.",
     "risk": "Direct NVDA shares can overlap a technology or broad-market fund you also hold. Row count is therefore an incomplete diversification measure. Inspect actual fund weights and their dates before computing look-through exposure. Company sales growth and diversification labels do not guarantee protection from losses or a positive share-price response.",
@@ -374,7 +397,13 @@ export const HOWTO_ASSETS: HowToAsset[] = [
       "Assuming a sales-growth percentage dictates the stock-return percentage.",
       "Inferring fair value from the nominal price of one share."
     ],
-    "review": "Review both the direct holding and any assumed fund overlap. Record whether fund weights were actual dated inputs or deliberately hypothetical. Recompute the account denominator after price changes, and separate operating metrics from share-price results. The goal is a reproducible exposure explanation, not a claim that two technology labels imply diversification."
+    "review": "Review both the direct holding and any assumed fund overlap. Record whether fund weights were actual dated inputs or deliberately hypothetical. Recompute the account denominator after price changes, and separate operating metrics from share-price results. The goal is a reproducible exposure explanation, not a claim that two technology labels imply diversification.",
+    "sources": [
+      {
+        "href": "https://investor.nvidia.com/",
+        "label": "NVIDIA investor relations — company reports"
+      }
+    ]
   },
   {
     "symbol": "spy",
@@ -387,7 +416,7 @@ export const HOWTO_ASSETS: HowToAsset[] = [
       "Visit /trade/spy and read the quote and chart data-status labels; they may have different provenance.",
       "Choose hypothetical quantity and price assumptions, then calculate position value and the 0.1% practice fee before submitting a market order.",
       "Record the reason for the exercise and any intended manual exit. TradeHQ does not place resting limit or stop orders or open short positions.",
-      "Review units, the marked price and whole-account exposure separately. Explain how the $100 holding loss becomes a much smaller account percentage because most of this worksheet is cash. Include fees and note any distribution or expense mechanics excluded from the simulator rather than silently inventing cash entries."
+      "Label how the ETF's distribution and operating costs are outside the simplified practice order, and calculate exposure against total account value."
     ],
     "beginnerTip": "An ETF unit represents fund exposure; it is not a direct account row for each constituent company. Nominal share price also differs from the dollars you hold. Twenty $50 units and two $500 units both make $1,000 positions before fees.",
     "risk": "A broad fund can reduce exposure to one company while remaining exposed to market losses and overlap with direct stocks. Diversification is not immunity. Actual fund constituents and weights require dated disclosures, and a fixed index name does not establish that every constituent contributes equally to your result.",
@@ -404,7 +433,13 @@ export const HOWTO_ASSETS: HowToAsset[] = [
       "Ignoring overlap between the fund and separately held company shares.",
       "Inventing a cash distribution that the simulator did not record."
     ],
-    "review": "Review units, the marked price and whole-account exposure separately. Explain how the $100 holding loss becomes a much smaller account percentage because most of this worksheet is cash. Include fees and note any distribution or expense mechanics excluded from the simulator rather than silently inventing cash entries."
+    "review": "Review units, the marked price and whole-account exposure separately. Explain how the $100 holding loss becomes a much smaller account percentage because most of this worksheet is cash. Include fees and note any distribution or expense mechanics excluded from the simulator rather than silently inventing cash entries.",
+    "sources": [
+      {
+        "href": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-funds-etfs",
+        "label": "SEC Investor.gov — exchange-traded funds"
+      }
+    ]
   },
   {
     "symbol": "sol",
@@ -434,7 +469,17 @@ export const HOWTO_ASSETS: HowToAsset[] = [
       "Ignoring the second virtual fee when calculating a hypothetical round trip.",
       "Assuming network usage or a technical announcement guarantees token-price appreciation."
     ],
-    "review": "Record the hypothetical buy and sell prices, quantity, both virtual fees, source timestamps and portfolio allocation. Separate token return from total-account return and note which slippage, spread and custody costs the simulation omits. Try a lower exit-price case as well as a higher one to test the same arithmetic."
+    "review": "Record the hypothetical buy and sell prices, quantity, both virtual fees, source timestamps and portfolio allocation. Separate token return from total-account return and note which slippage, spread and custody costs the simulation omits. Try a lower exit-price case as well as a higher one to test the same arithmetic.",
+    "sources": [
+      {
+        "href": "https://solana.com/docs/core/fees",
+        "label": "Solana — on-chain fees (distinct from an exchange trading fee)"
+      },
+      {
+        "href": "https://solana.com/docs/references/terminology",
+        "label": "Solana — network terminology"
+      }
+    ]
   }
 ];
 
