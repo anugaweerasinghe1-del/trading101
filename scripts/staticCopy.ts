@@ -197,32 +197,40 @@ export const STATIC_COPY: Record<string, PageContent> = {
   "/learn-trading-guide": {
     sections: [
       {
-        h: "What this guide covers",
+        h: "What this page actually provides",
         p: [
-          "This is the single long-form starting point on TradeHQ. It walks a complete beginner from not knowing what a bid-ask spread is through to placing a first practice trade with a written plan. It is deliberately sequential: markets and participants, instruments, order types, chart reading, risk sizing, journaling, and then the psychology that decides whether any of it survives contact with a losing streak.",
+          "This page is a starting map and interactive practice dashboard, not a complete textbook or independently tested trading course. It introduces quote reading, simulated market orders, fees and reviewing hypothetical outcomes. Use the linked structured courses for deeper explanations of instruments, order types and portfolio concepts. The exercises illustrate arithmetic and questions to ask, not a profitable strategy.",
         ],
       },
       {
-        h: "The parts most beginners skip",
+        h: "Four checks for a virtual practice exercise",
         list: [
-          "Position sizing: how much of the account a single idea is allowed to cost you if you are wrong.",
-          "Exit planning: where the trade is invalidated, decided before entry rather than during a loss.",
-          "Record keeping: a journal entry per trade, because memory rewrites losing trades into bad luck.",
-          "Sample size: judging a method over dozens of trades instead of the last three.",
+          "Exposure: quantify the share of virtual cash used and calculate what a chosen adverse price change would do to the holding.",
+          "Exit assumptions: write down both a higher and a lower hypothetical sale price. TradeHQ does not support resting limit or stop orders.",
+          "Observation quality: record the quote source, timestamp, asset and quote currency. A generated chart need not reproduce traded market history.",
+          "Review: retain the original assumptions, both virtual fees and alternative outcomes. One or ten practice results do not establish a repeatable advantage.",
         ],
       },
       {
-        h: "How to use it with the simulator",
+        h: "Worked example: virtual shares, fees and two outcomes",
         p: [
-          "Use the $100,000 virtual practice account to explore the market-order, position-sizing and portfolio concepts supported by the simulator. Limit and stop orders are educational concepts in the guide; they cannot currently be placed on TradeHQ. Study those sections as explanations of real-market mechanics rather than instructions for an available simulator feature.",
+          "Assume a purely hypothetical purchase of ten shares at $50 each. The gross cost is $500 and a 0.1% virtual purchase fee is $0.50, so the total cash used is $500.50. If the assumed sale price is $46, the gross proceeds are $460 and a 0.1% virtual sale fee is $0.46; net proceeds are $459.54. Compared with the original $500.50 cost, the round trip produces a loss of $40.96.",
+          "For the same ten shares, a separate hypothetical sale at $54 yields $540 gross, less a $0.54 virtual sale fee, or $539.46 net. Subtract the $500.50 initial cost to get a gain of $38.96. These prices are invented, not a forecast or observed fills. Actual transactions can involve spreads, slippage, taxes and other costs not captured here.",
+        ],
+      },
+      {
+        h: "What this simulator cannot teach by itself",
+        p: [
+          "TradeHQ offers virtual market orders, not real brokerage transactions, short positions or resting limit/stop orders. Even when a displayed quote comes from an external provider, a simulated fill does not establish that the same price or liquidity would be available on an exchange.",
+          "Use the structured courses and linked sources to check concepts rather than treating a synthetic sentiment label, an indicator, or a hypothetical growth calculator as a verified trading signal. Practice outcomes do not predict real-money results.",
         ],
       },
     ],
     links: [
-      { href: "/courses", label: "Structured courses" },
-      { href: "/wiki", label: "Glossary" },
-      { href: "/strategy", label: "Strategy guides" },
-      { href: "/trade", label: "Practice desk" },
+      { href: "/courses", label: "Structured courses and quizzes" },
+      { href: "/wiki", label: "Glossary: order terms and market mechanics" },
+      { href: "/strategy", label: "Strategy concepts and limits" },
+      { href: "/trade", label: "Virtual practice desk" },
     ],
   },
 
