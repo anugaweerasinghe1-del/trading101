@@ -1100,7 +1100,8 @@
       "confirmed_adsense_policy_violation": false,
       "rejection_cause": "Unknown; Google exact reason not supplied",
       "original_issue": [
-        "Live redirect target disagrees with declared no-slash canonical."
+        "Live redirect target disagrees with declared no-slash canonical.",
+        "The old summary stated three linked questions although the authored bank has ten per case."
       ],
       "supporting_evidence": {
         "live_status_after_redirects": 200,
@@ -1124,7 +1125,7 @@
         "candidate_canonical": "https://www.thetradehq.com/daily",
         "candidate_robots": "index, follow, max-image-preview:large, max-snippet:-1",
         "candidate_h1_count": 1,
-        "candidate_description": "A quick daily scenario plus 8–12 minute case study with visuals, three linked questions and worked answers. Learn from 50 rotating exercises for free.",
+        "candidate_description": "A quick daily scenario plus 8–12 minute case study with visuals, 10 linked questions and worked answers. Learn from 50 rotating exercises for free.",
         "candidate_external_references": [],
         "candidate_content_changed_from_main": false,
         "preview": {
@@ -1139,7 +1140,8 @@
           "h1": 1,
           "title": "Daily Trading Challenge — Build Your Streak | TradeHQ",
           "publisher_path": "/daily"
-        }
+        },
+        "candidate_summary": "Practise a quick scenario or go deeper with a hypothetical case, labelled visual, 10 linked questions and worked explanations. 50 exercises rotate; new banks are prepared every two months and wait for owner approval. Answers stay on this browser."
       },
       "relevant_guidance": [
         "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
@@ -1152,12 +1154,15 @@
         "functions/[[path]].ts",
         "functions/courses/[[path]].ts",
         "scripts/prepare-cloudflare.mjs",
+        "scripts/routes.ts",
+        "scripts/verify-sitewide-readiness.ts",
         "src/components/PublisherNotes.tsx",
         "vercel.json"
       ],
       "exact_fix_implemented": [
         "Cloudflare output uses route.html instead of route/index.html; dynamic Functions normalize slash aliases; Vercel explicitly uses no trailing slash.",
-        "Visible publisher identity and explicit limits of review; no fabricated qualifications or new review date."
+        "Visible publisher identity and explicit limits of review; no fabricated qualifications or new review date.",
+        "Question and case counts now derive from the authored bank; regression check compares metadata with every exercise."
       ],
       "tests_performed": [
         "349-route metadata/robots/sitemap regression",

@@ -2,7 +2,7 @@
 
 **NOT READY TO REAPPLY.** Reviewable changes are in [PR #183](https://github.com/anugaweerasinghe1-del/trading101/pull/183). Production has not been changed by this session. An approved release and production verification, current account/consent checks, and the limits described below remain part of the application gate. Google’s exact rejection reason is unknown.
 
-The main implementation baseline was `3d3531957a46235ffed8e8544f066ef7b7c7074e`, which already includes #178–182. The website implementation candidate is `41392b795c81471bdf7211efadc1da3642ec61cc`, tree `9b5d53ec8fab9521fc51a4e973309fc527e5d358`. The uploaded GitHub tree exactly matches the local implementation tree. Later commits record evidence and improve browser-fixture cleanup without changing the website implementation. Consult the PR for current CI results; this report does not treat pending CI as passed.
+The main implementation baseline was `3d3531957a46235ffed8e8544f066ef7b7c7074e`, which already includes #178–182. The website implementation candidate is `41392b795c81471bdf7211efadc1da3642ec61cc`, tree `9b5d53ec8fab9521fc51a4e973309fc527e5d358`. The uploaded GitHub tree exactly matches the local implementation tree. Later commits record evidence, improve browser-fixture cleanup, and derive the Daily metadata counts directly from the authored bank (50 cases with ten questions each). Consult the PR for current CI results; this report does not treat pending CI as passed.
 
 ## Inventory and evidence
 
@@ -39,6 +39,7 @@ The additional course URLs returned 403 to the programmatic client. The browser 
 | Prerendered course sources were plain text | All 20 bundled lessons expose their source URLs as clickable anchors, shared by initial HTML and SPA payloads. |
 | Most learning articles linked only internally | Added scoped background/primary references to all nine articles, shared between the page and publisher notes. |
 | Glossary hub linked only 24 entries in its initial HTML | Links all 49. Metadata counts derive from the actual array. |
+| Daily metadata retained a three-question summary despite ten questions per case | Counts now derive from the authored bank, with a regression check. |
 | Static course notes appeared to describe the complete live inventory | Explicitly distinguish bundled inventory from additional approved live courses. |
 | Two native courses retained fee-free “perfect” rebalancing and misleading quiz language | 41 expected-text display corrections, shared by server HTML, bootstrap data and client query results. They preserve later owner edits and leave source records untouched. |
 | Native course canonical survived alongside Helmet’s hydrated canonical | Native head metadata uses the existing static-head retirement mechanism. Initial and hydrated canonicals are tested. |

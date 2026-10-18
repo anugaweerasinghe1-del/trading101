@@ -6,6 +6,7 @@ import { buildContentMap } from "./content";
 import { loadSiteData } from "./loadData";
 import { GLOSSARY_WORKSHEETS } from "../src/lib/glossaryWorksheets";
 import { isClientFallbackRoute } from "../src/lib/clientFallbackRoutes";
+import { starterPracticeBank } from "../src/lib/dailyPracticeBank";
 
 const routes = uniqueRoutes();
 const manifest = new Map(routes.map(route => [route.path, route]));
@@ -80,6 +81,11 @@ for (const track of data.courseTracks) for (const lesson of track.lessons) for (
   assert.ok(!/surfaces real edge|preferred recession spread|Consistent P&L comes/.test(JSON.stringify(quiz)), lesson.slug + ": unsupported quiz claim");
 }
 assert.ok(content.get("/learn")?.sections.length);
+const questionCount = starterPracticeBank.exercises[0].questions.length;
+assert.ok(starterPracticeBank.exercises.every(exercise => exercise.questions.length === questionCount), "Daily metadata requires a uniform authored question count");
+for (const copy of [manifest.get("/daily")!.description, manifest.get("/daily")!.summary]) {
+  assert.ok(copy.includes(`${questionCount} linked questions`) && copy.includes(String(starterPracticeBank.exercises.length)), "Daily count must match the authored bank");
+}
 assert.ok(readFileSync("scripts/routes.ts", "utf8").includes("${tradingGlossary.length}-term"), "Glossary count must derive from data");
 const result = { routes: routes.length, sitemapURLs: urls.length, intentionallyNoindex: routes.length - urls.length, internalLinks, worksheets: data.tradingGlossary.length, calculations: 9, checks: "PASS", scope: "compiled metadata, content graph, duplicate paragraphs, reference presence, quiz structure and known numerical examples; not financial-source validation or browser proof" };
 if (process.env.TRADEHQ_VERIFICATION_OUTPUT) writeFileSync(process.env.TRADEHQ_VERIFICATION_OUTPUT, JSON.stringify(result, null, 2));
