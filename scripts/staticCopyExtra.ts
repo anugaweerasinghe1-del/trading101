@@ -50,8 +50,8 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
     {
       h: "Reading a market list without being misled",
       p: [
-        "A percentage change tells you almost nothing on its own. A 3% day is unremarkable for a small-cap crypto asset and extraordinary for a major currency pair, because each instrument has its own normal range of movement. Before reacting to a mover, learn what a typical day looks like for that instrument.",
-        "Volume matters as much as price. A move on thin volume often reverses; a move on heavy volume more often marks a genuine shift in who wants to own the asset. Neither is a signal to trade — both are context.",
+        "A percentage move needs a clearly stated interval, observation source and comparison sample. A 3% move can have different meanings for different instruments and periods; it is not a permanent volatility category. Generated practice changes do not establish a real-market daily range.",
+        "Volume describes trading activity when it is supplied by a valid market-data source. It does not establish the identity or intentions of buyers and sellers, or prove that a price move will continue or reverse. Simulated or unavailable volume cannot confirm an actual market event.",
       ],
     },
     {
@@ -89,8 +89,8 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
     {
       h: "What a realistic learning timeline looks like",
       p: [
-        "Vocabulary and mechanics take a few weeks. Reading a chart without inventing patterns takes a few months. Consistent execution of a written plan under stress takes longer than most people expect, and many never get there — which is itself information worth having before committing money.",
-        "Nobody can promise you a timeline to profitability, and anyone who does is selling something. What the material here can do is remove the avoidable mistakes: wrong sizing, no exit plan, no records, and trading instruments you cannot explain.",
+        "Learning timelines differ with prior knowledge, study time and the task being practised. A calendar duration does not establish proficiency or investment readiness. Set an observable learning goal, such as explaining an order fill or reproducing a fee calculation, and record which parts remain uncertain.",
+        "Nobody can promise you a timeline to profitability, and anyone who does is selling something. The material offers questions about position-size arithmetic, exit assumptions, record-keeping and instrument mechanics; completing it cannot guarantee that mistakes disappear.",
       ],
     },
     {

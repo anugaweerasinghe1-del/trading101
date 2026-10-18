@@ -282,7 +282,7 @@ export const SEED_ASSET_IDS = [
 export const ASSET_CONTENT: Record<string, AssetContent> = {
   // ===== CRYPTOCURRENCIES =====
   btc: {
-    whatIs: "Digital Gold. A decentralized store of value with a capped supply of 21 million coins. Bitcoin is the world's first and most widely adopted cryptocurrency, pioneering blockchain technology and peer-to-peer digital transactions.",
+    whatIs: "Bitcoin is a peer-to-peer payment network whose native asset is BTC. Its proof-of-work protocol has a scheduled issuance limit of 21 million coins under the current consensus rules. A fixed issuance schedule does not guarantee purchasing power or investment returns.",
     strategy: "Educational example: Simulate a HODL approach or test swing trades around long-term moving averages. Practice identifying key support/resistance levels at psychological price points. (Educational simulation only — not financial advice.)",
     category: "Cryptocurrency",
     keywords: ["Bitcoin trading", "BTC simulator", "crypto practice", "digital gold", "store of value", "blockchain"],
@@ -296,7 +296,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     sectorPillar: "crypto-defi"
   },
   eth: {
-    whatIs: "The foundation for DeFi and smart contracts. Ethereum powers thousands of decentralized applications, NFT marketplaces, and layer-2 scaling solutions. Its transition to Proof of Stake made it more energy-efficient.",
+    whatIs: "ETH is the native asset of Ethereum. It pays transaction fees and can be staked in its proof-of-stake system. Smart contracts run applications on the network; using an application, holding ETH and staking ETH involve different risks.",
     strategy: "Compare ETH and BTC percentage changes over the same stated period. Network activity and gas fees provide context, but do not establish price direction or a leading signal. Educational simulation only; not financial advice.",
     category: "Cryptocurrency",
     keywords: ["Ethereum trading", "ETH simulator", "smart contracts", "DeFi", "Web3", "staking"],
@@ -309,7 +309,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     sectorPillar: "crypto-defi"
   },
   sol: {
-    whatIs: "A high-performance blockchain built for mass adoption with sub-second finality and minimal transaction costs. Solana hosts a growing ecosystem of DeFi, NFTs, and consumer applications competing with Ethereum.",
+    whatIs: "SOL is the native asset of Solana, a blockchain used to execute transactions and smart-contract applications. Network fees, staking and transaction processing are distinct from the token price; technical capacity does not establish investment value.",
     strategy: "Compare hypothetical price changes with reports of network usage and reliability. Throughput or congestion alone does not establish an entry or a price forecast. Educational simulation only; not financial advice.",
     category: "Cryptocurrency",
     keywords: ["Solana trading", "SOL practice", "fast blockchain", "high TPS", "DeFi"],
@@ -321,8 +321,8 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   xrp: {
-    whatIs: "XRP is the digital asset native to the XRP Ledger, designed for fast, low-cost cross-border payments. Ripple Labs uses it to facilitate international money transfers between financial institutions worldwide.",
-    strategy: "XRP is known for sharp moves on regulatory news. Practice managing position size and setting news-based alerts to simulate real-world reaction trading. (Educational simulation only — not financial advice.)",
+    whatIs: "XRP is the native asset of the XRP Ledger. The ledger supports payments and other transactions through its own consensus process. Owning XRP does not give ownership in Ripple, and developments at a company are different from changes to an open network.",
+    strategy: "For a worksheet, calculate the effect of opposite hypothetical XRP price shocks on equal dollar exposures. A headline does not determine the next price move. (Educational simulation only — not financial advice.)",
     category: "Cryptocurrency",
     keywords: ["XRP trading", "Ripple practice", "cross-border payments", "XRPL"],
     stats: {
@@ -333,7 +333,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   bnb: {
-    whatIs: "BNB is the native token of the Binance ecosystem, powering the BNB Chain and providing trading fee discounts on the world's largest crypto exchange. It's used for DeFi, payments, and token burns.",
+    whatIs: "BNB is used within the BNB Chain ecosystem, including transaction-fee and staking-related functions. Network usage, exchange services and token supply mechanisms are different research topics. Holding a token does not confer company ownership.",
     strategy: "Separate exchange activity, token supply changes and regulatory announcements when studying BNB. A platform update does not prove accumulation or a future rally. Educational simulation only; not financial advice.",
     category: "Cryptocurrency",
     keywords: ["BNB trading", "Binance coin", "exchange token", "BNB Chain"],
@@ -347,7 +347,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
 
   // ===== TECHNOLOGY STOCKS =====
   nvda: {
-    whatIs: "The undisputed leader in AI computing and GPUs. NVIDIA powers data centers, gaming, autonomous vehicles, and generative AI models. Its chips are essential infrastructure for the AI revolution.",
+    whatIs: "NVIDIA develops accelerated-computing hardware and software, including GPUs used in data centres and gaming. Its reports distinguish businesses and markets; product demand and reported revenue are different from the price investors pay for a share.",
     strategy: "Compare earnings, chip demand and spending assumptions with alternative outcomes in a practice journal. An RSI reading or news narrative does not establish an entry or a guaranteed trend. Educational simulation only; not financial advice.",
     category: "Technology Stock",
     keywords: ["NVIDIA stock trading", "NVDA simulator", "AI chips", "GPU", "data centers", "semiconductor"],
@@ -359,7 +359,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   aapl: {
-    whatIs: "Apple Inc. is the world's most valuable company, known for the iPhone, Mac, iPad, and its rapidly growing services ecosystem. It commands premium pricing and fierce customer loyalty across all product lines.",
+    whatIs: "Apple designs products including iPhone, Mac and iPad and provides related services. Its financial reports separate product and services revenue. Changes in revenue, margins and valuation expectations can have different implications for a share price.",
     strategy: "Compare revenue, guidance and product expectations with what was known before an earnings release. A buy-the-rumour narrative is a hypothesis that can fail. Educational simulation only; not financial advice.",
     category: "Technology Stock",
     keywords: ["Apple stock trading", "AAPL simulator", "tech stocks", "iPhone", "services"],
@@ -371,7 +371,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   msft: {
-    whatIs: "A technology giant leading in cloud computing (Azure), enterprise software (Office 365), and AI development (Copilot, OpenAI partnership). Microsoft's diversified business model provides stability and growth.",
+    whatIs: "Microsoft provides software, cloud services and devices. Azure and Microsoft 365 illustrate different revenue sources within the company. A diversified business does not guarantee stable earnings or a stable share price.",
     strategy: "Compare cloud revenue, expenses and enterprise software demand in reported results. Relative volatility changes across observation periods and does not make a stock suitable for every beginner. Educational simulation only; not financial advice.",
     category: "Technology Stock",
     keywords: ["Microsoft stock trading", "MSFT practice", "cloud computing", "Azure", "enterprise AI"],
@@ -383,7 +383,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   amzn: {
-    whatIs: "The global leader in e-commerce and cloud computing (AWS), with expanding ventures into healthcare, streaming (Prime Video), logistics, and advertising. AWS alone generates the majority of Amazon's profits.",
+    whatIs: "Amazon operates online and physical stores, advertising services and Amazon Web Services, among other activities. Its segment reporting helps distinguish sales from operating income; the contribution of each segment changes over reporting periods.",
     strategy: "Practice calculating risk-reward around earnings reports and Prime Day events. Monitor AWS growth and advertising revenue as key performance indicators. (Educational simulation only — not financial advice.)",
     category: "Technology Stock",
     keywords: ["Amazon stock trading", "AMZN practice", "e-commerce giant", "AWS", "cloud computing"],
@@ -395,7 +395,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   googl: {
-    whatIs: "Alphabet, the parent company of Google, dominates search, digital advertising, YouTube, and cloud services. Its AI investments (Gemini, DeepMind) position it as a leader in the next computing paradigm.",
+    whatIs: "Alphabet is the parent company of Google. Its reporting distinguishes Google Services, Google Cloud and Other Bets. Advertising, cloud revenue and investment spending are separate inputs to company research; product popularity is not a price forecast.",
     strategy: "Compare advertising revenue and cloud results with expectations before considering how an announcement could affect price. Positive product news need not produce a breakout. Educational simulation only; not financial advice.",
     category: "Technology Stock",
     keywords: ["Google stock trading", "GOOGL simulator", "search advertising", "AI", "YouTube"],
@@ -407,7 +407,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   meta: {
-    whatIs: "Owner of Facebook, Instagram, WhatsApp, and Threads—the world's largest social media platforms. Meta is investing heavily in AI infrastructure and mixed reality (Quest headsets, Ray-Ban Meta glasses).",
+    whatIs: "Meta operates services including Facebook, Instagram and WhatsApp and reports its Family of Apps and Reality Labs activities. Advertising revenue and investment spending are different accounting measures. User activity alone does not determine share value.",
     strategy: "Practice correlating ad revenue metrics and user growth with price action during earnings. Monitor Reels engagement and AI ad targeting improvements. (Educational simulation only — not financial advice.)",
     category: "Technology Stock",
     keywords: ["Meta stock trading", "META simulator", "social media", "VR", "advertising", "AI"],
@@ -433,7 +433,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
 
   // ===== ETFs =====
   spy: {
-    whatIs: "The world's most traded ETF, tracking the S&P 500 index—500 of America's largest public companies. SPY is the benchmark for U.S. equity performance and a cornerstone of passive investing strategies.",
+    whatIs: "SPY is an exchange-traded fund that seeks to track the S&P 500 Index before expenses. It holds a portfolio of securities, rather than a direct claim on the index itself. Fund holdings, weights, expenses and tracking differences should be checked in issuer documents.",
     strategy: "Compare the index composition and practice return with individual holdings over a defined period. Volume or options data alone does not reveal institutional intentions. Educational simulation only; not financial advice.",
     category: "ETF",
     keywords: ["SPY ETF trading", "S&P 500 practice", "index fund", "benchmark", "passive investing"],
@@ -447,7 +447,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
 
   // ===== COMMODITIES =====
   oil: {
-    whatIs: "Crude Oil (WTI) is the primary energy commodity and a global inflation indicator. Oil prices affect transportation, manufacturing, and consumer costs worldwide. It trades on geopolitical news and inventory data.",
+    whatIs: "West Texas Intermediate (WTI) is a crude-oil benchmark. Oil is refined into petroleum products, and supply, inventories, refining and consumption are different parts of its market. TradeHQ uses a simplified WTI-labelled practice instrument and does not execute a deliverable oil contract.",
     strategy: "Analyze price action around OPEC+ meetings, EIA inventory reports, and geopolitical tensions. Practice understanding supply-demand dynamics. (Educational simulation only — not financial advice.)",
     category: "Commodity",
     keywords: ["oil trading", "WTI practice", "crude oil", "energy", "OPEC"],
@@ -461,7 +461,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
 
   // ===== FOREX =====
   gbpusd: {
-    whatIs: "The 'Cable' pair, representing the exchange rate between the British Pound Sterling and US Dollar. Named after the transatlantic telegraph cable, it's one of the most liquid and volatile major currency pairs.",
+    whatIs: "GBP/USD expresses the number of US dollars per pound sterling. A pound-based receipt translated into dollars changes with this quotation. Reference exchange rates, actual dealing rates and a simulator price serve different purposes.",
     strategy: "Compare Bank of England and Federal Reserve policy expectations and write down alternative currency responses. London/New York session overlaps change with daylight-saving schedules and do not guarantee liquidity or profitable timing. Educational simulation only; not financial advice.",
     category: "Forex",
     keywords: ["GBP/USD trading", "Cable practice", "British Pound", "forex major", "currency trading"],
@@ -559,7 +559,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   tsla: {
-    whatIs: "Tesla Inc. is the world's most valuable automaker, leading in electric vehicles, energy storage, and AI-powered autonomous driving. Known for high volatility driven by CEO Elon Musk's statements.",
+    whatIs: "Tesla produces electric vehicles and energy-generation and storage products. Its reports distinguish automotive and energy activities. Vehicle deliveries, selling prices, costs and margins answer different questions; delivery growth alone does not determine profit or share returns.",
     strategy: "Compare how hypothetical position sizes change gains and losses during a price shock. No fixed five-percent allocation is appropriate for every account or objective. Educational simulation only; not financial advice.",
     category: "Technology Stock",
     keywords: ["Tesla stock trading", "TSLA practice", "electric vehicles", "EV stocks"],
@@ -643,7 +643,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   qqq: {
-    whatIs: "Tracks the Nasdaq-100 index, heavily weighted toward technology stocks including Apple, Microsoft, NVIDIA, and Amazon. Provides concentrated tech exposure for growth-focused investors.",
+    whatIs: "QQQ seeks to track the Nasdaq-100 Index before expenses. The index covers large non-financial companies listed on Nasdaq and is not a technology-only index. Holdings and weights change, so concentration should be checked in the current issuer documents.",
     strategy: "Compare fund concentration and percentage changes with SPY over a stated period. A relative-price ratio describes that sample rather than certifying risk appetite or direction. Educational simulation only; not financial advice.",
     category: "ETF",
     keywords: ["QQQ ETF trading", "Nasdaq practice", "tech ETF", "growth stocks"],
@@ -703,8 +703,8 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   eurusd: {
-    whatIs: "EUR/USD is the world's most traded currency pair, representing the exchange rate between the Euro and US Dollar. Its trading share depends on the survey period and measure used.",
-    strategy: "EUR/USD moves on ECB and Fed policy divergence. Practice correlating central bank speeches with currency movements to master fundamental analysis. (Educational simulation only — not financial advice.)",
+    whatIs: "EUR/USD expresses the number of US dollars per euro. A rise from 1.10 to 1.12 means the euro buys more dollars in that quotation. An ECB reference rate is a published reference observation, not a guaranteed executable broker quote.",
+    strategy: "EUR/USD moves on ECB and Fed policy divergence. Compare dated ECB and Federal Reserve releases with separately sourced exchange-rate observations. A coincident move does not establish causation. (Educational simulation only — not financial advice.)",
     category: "Forex",
     keywords: ["EUR/USD trading", "forex practice", "currency pair", "euro dollar"],
     stats: {
@@ -751,7 +751,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   gold: {
-    whatIs: "Gold is a precious metal used in jewellery, industry and reserves. Gold is used to hedge against inflation, currency devaluation, and geopolitical uncertainty. Central banks hold it as a reserve asset.",
+    whatIs: "Gold is a precious metal used in jewellery, industry and official reserves. Physical gold, a gold fund and a gold futures contract create different ownership, cost and settlement exposures. TradeHQ uses a simplified gold-labelled practice instrument.",
     strategy: "Educational example: Analyze gold price action during periods of high CPI data, Fed policy shifts, or stock market volatility. Focus on real yields as a key driver. (Educational simulation only — not financial advice.)",
     category: "Commodity",
     keywords: ["gold trading", "XAU practice", "precious metals", "safe haven", "inflation hedge"],

@@ -66,8 +66,14 @@ export default function CountryGuide() {
           <AIAnswerBlock
             className="mb-10"
             question={`Is TradeHQ suitable for ${guide.country} traders?`}
-            answer={`Yes. TradeHQ is a free educational trading simulator accessible from ${guide.country} with no signup, no payment and no geo-restriction. TradeHQ is a virtual practice tool, not a broker, and does not execute real trades. This page does not determine your legal eligibility or a provider’s regulatory status. Every account starts with $100,000 in virtual cash so you can learn how markets work before opening a real ${guide.currency} account. Educational simulation only — not financial advice.`}
+            answer={`Yes. TradeHQ is a free educational trading simulator accessible from ${guide.country} with no required signup or payment. TradeHQ is a virtual practice tool, not a broker, and does not execute real trades. This page does not determine your legal eligibility or a provider’s regulatory status. Every account starts with $100,000 in virtual cash for an educational worksheet; access does not establish eligibility for a real account. Educational simulation only — not financial advice.`}
           />
+
+          <section className="mb-10 text-sm text-muted-foreground" aria-label="Publisher and regulatory references">
+            <p>Published by TradeHQ. Site creator: Anuga Weerasinghe. Regulatory source check: {guide.sourceCheck.date}.</p>
+            <p>{guide.sourceCheck.scope}</p>
+            <ul className="list-disc pl-5 mt-3">{guide.sources.map(source => <li key={source.href}><a className="underline text-primary" href={source.href}>{source.label}</a></li>)}</ul>
+          </section>
 
           <section className="grid md:grid-cols-2 gap-4 mb-10">
             <Card className="p-5 bg-white/[0.02] border-white/10">

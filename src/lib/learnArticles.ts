@@ -14,6 +14,7 @@ export interface LearnArticle {
   summary: string;
   metaDescription: string;
   readTime: string;
+  sourceCheck?: { date: string; scope: string };
   sections: LearnArticleSection[];
   relatedLinks: LearnArticleLink[];
 }
@@ -334,8 +335,9 @@ export const LEARN_ARTICLES: LearnArticle[] = [
   },
   {
     slug: "technical-indicators-rsi-macd-moving-averages",
+    sourceCheck: { date: "2026-10-18", scope: "RSI, MACD and moving-average definitions compared with the linked Fidelity guides; no predictive-performance or professional review claimed." },
     title: "How to Use Technical Indicators: RSI, MACD, and Moving Averages Explained",
-    summary: "Technical indicators help traders identify trends, momentum, and potential reversals. Master the three most popular indicators used by professionals worldwide.",
+    summary: "RSI, MACD and moving averages describe selected price observations. Learn their calculations, conventional interpretations and limits, then compare hypothetical examples without treating a signal as a trade recommendation.",
     metaDescription: "Learn how to use RSI, MACD, and Moving Averages for trading. Understand overbought/oversold signals, crossovers, and trend confirmation. Free practice on TradeHQ.",
     readTime: "7 min read",
     sections: [
@@ -359,14 +361,17 @@ export const LEARN_ARTICLES: LearnArticle[] = [
         heading: "MACD: Combining Trend and Momentum Signals",
         paragraphs: [
           "The Moving Average Convergence Divergence (MACD) is a versatile indicator that shows the relationship between two exponential moving averages — typically the 12-period and 26-period EMAs. The MACD line is the difference between these two EMAs, and the signal line is a 9-period EMA of the MACD line. The histogram shows the gap between them.",
-          "The classic MACD signal is the crossover: when the MACD line crosses above the signal line, it's bullish; when it crosses below, it's bearish. The histogram makes these crossovers easy to spot — bars turning from negative to positive indicate building bullish momentum. Crossovers can reverse in both trending and sideways samples; performance depends on the rules, period, costs and comparison used.",
+          "A positive histogram means the MACD line is above its signal line; a negative histogram means it is below. Those relationships are often called bullish and bearish respectively, but describe the selected calculations rather than the next price move. Crossovers can reverse in both trending and sideways samples; performance depends on the rules, period, costs and comparison used.",
           "Combining indicators creates another hypothesis to evaluate, rather than guaranteeing the best results. Define each calculation, interval and decision rule, then compare against a simple baseline with the same costs and sample. TradeHQ does not provide a MACD chart overlay; journal examples are conceptual."
         ]
       }
     ],
     relatedLinks: [
+      { href: "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/RSI", label: "Fidelity — RSI definition and limitations" },
+      { href: "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/macd", label: "Fidelity — MACD calculation" },
+      { href: "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/sma", label: "Fidelity — simple moving average" },
       { href: "/trade/eth", label: "Practice indicators on Ethereum (ETH)" },
-      { href: "/trade/nvda", label: "Analyze NVIDIA (NVDA) with RSI & MACD" },
+      { href: "/trade/nvda", label: "NVDA practice workspace — indicator examples are conceptual" },
       { href: "/wiki/macd", label: "Glossary: MACD explained" },
       { href: "/wiki/rsi-divergence", label: "Glossary: RSI Divergence" },
     ],

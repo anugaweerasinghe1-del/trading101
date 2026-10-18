@@ -92,7 +92,7 @@ const LearnTradingGuide = () => {
     <>
       <Helmet>
         <title>Learn Trading Strategy | Free Educational Guide for Beginners</title>
-        <meta name="description" content="From Pips to Portfolio management, master the art of trading. Our structured guides cover technical analysis, success psychology, and market mechanics for future-proof traders." />
+        <meta name="description" content="Study market mechanics, decision-making and hypothetical portfolio calculations with virtual cash. Simulated results do not predict investment outcomes." />
         <link rel="canonical" href={`${DOMAIN}/learn-trading-guide`} />
         <meta name="robots" content="index, follow" />
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
@@ -189,8 +189,8 @@ const LearnTradingGuide = () => {
                       <Zap className="w-5 h-5 text-emerald-400" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-black text-white uppercase tracking-tight mb-1">Algorithmic Edge</h4>
-                      <p className="text-xs text-slate-400 leading-relaxed">Analyze market sentiment and price action using AI models to filter noise from actual opportunities.</p>
+                      <h4 className="text-sm font-black text-white uppercase tracking-tight mb-1">AI-Assisted Explanations</h4>
+                      <p className="text-xs text-slate-400 leading-relaxed">Study labelled educational explanations. AI and rule-based responses can be incomplete and do not identify investment opportunities.</p>
                     </div>
                   </div>
 
@@ -200,7 +200,7 @@ const LearnTradingGuide = () => {
                     </div>
                     <div>
                       <h4 className="text-sm font-black text-white uppercase tracking-tight mb-1">Risk Architecture</h4>
-                      <p className="text-xs text-slate-400 leading-relaxed">Master the 1% risk rule. Protect your virtual $100K balance as if it were your last dollar.</p>
+                      <p className="text-xs text-slate-400 leading-relaxed">Compare hypothetical loss budgets and price shocks. A one-percent example is a worksheet input, not a universal risk rule.</p>
                     </div>
                   </div>
                 </div>
