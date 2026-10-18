@@ -6,11 +6,11 @@
  */
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { HOWTO_ASSETS, STRATEGIES } from "../src/lib/seoData";
-import { courseTracks } from "../src/lib/coursesData";
+import { loadSiteData } from "./loadData";
 import { uniqueRoutes } from "./routes";
 import { buildContentMap } from "./content";
 
+const { HOWTO_ASSETS, STRATEGIES, courseTracks } = await loadSiteData();
 const routes = uniqueRoutes();
 const map = await buildContentMap();
 const audited = [
