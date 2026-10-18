@@ -3,7 +3,7 @@
  * The real static route HTML remains intact; only selected dynamic URLs
  * invoke Pages Functions. Never rewrite unknown URLs to the SEO homepage.
  */
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, readdirSync, unlinkSync } from "node:fs";
 import { resolve } from "node:path";
 
 const dir = resolve(process.cwd(), "dist");
@@ -15,6 +15,25 @@ if (!/name=["']robots["'][^>]*content=["']noindex, follow["']/.test(shell)
   throw new Error("Fallback must be noindex with no canonical.");
 }
 writeFileSync(resolve(dir, "404.html"), shell, "utf8");
+
+// Pages serves folder/index.html at /folder/ but file.html at /file.
+// Our sitemap, React routes and canonical tags all use extensionless URLs
+// without a trailing slash. Flatten route indexes AFTER the ordinary build
+// checks; keep publisher-notes JSON and the Vercel build layout untouched.
+// https://developers.cloudflare.com/pages/configuration/serving-pages/
+function flattenRoutes(folder) {
+  for (const entry of readdirSync(folder, { withFileTypes: true })) {
+    if (!entry.isDirectory() || entry.name === "publisher-notes") continue;
+    const child = resolve(folder, entry.name);
+    flattenRoutes(child);
+    const index = resolve(child, "index.html");
+    if (existsSync(index)) {
+      writeFileSync(child + ".html", readFileSync(index));
+      unlinkSync(index);
+    }
+  }
+}
+flattenRoutes(dir);
 
 // A staging pages.dev *production* deployment is not necessarily a preview URL.
 // Make every staging static page explicitly noindex by default. Removing this

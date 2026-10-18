@@ -106,7 +106,7 @@ export default function Strategy() {
             </div>
 
             <Card className="p-6">
-              <h2 className="text-xl font-semibold mb-3">The expectancy maths</h2>
+              <h2 className="text-xl font-semibold mb-3">Worked arithmetic</h2>
               <p className="text-sm leading-relaxed text-muted-foreground">{s.depth.math}</p>
               <p className="mt-3 text-xs text-muted-foreground/70 italic">
                 Figures are illustrative teaching examples, not projections of your results.

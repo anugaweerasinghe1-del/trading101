@@ -4,6 +4,7 @@ import { Navigation } from "@/components/Navigation";
 import { MegaFooter } from "@/components/MegaFooter";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { tradingGlossary } from "@/lib/tradingGlossary";
+import { GLOSSARY_WORKSHEETS } from "@/lib/glossaryWorksheets";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -21,6 +22,7 @@ function firstCompleteSentence(text: string): string {
 const WikiTerm = () => {
   const { slug } = useParams<{ slug: string }>();
   const term = tradingGlossary.find((t) => t.slug === slug);
+  const worksheet = slug ? GLOSSARY_WORKSHEETS[slug] : undefined;
 
   if (!term) return <NotFound />;
 
@@ -32,7 +34,7 @@ const WikiTerm = () => {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": `What is ${term.term}? | Trading Concept Guide | TradeHQ`,
-    "description": `Master ${term.term} in under ${term.readTime}. ${term.definition}`,
+    "description": `${term.definition}`,
     "author": { "@type": "Organization", "name": "TradeHQ" },
     "publisher": {
       "@type": "Organization",
@@ -68,7 +70,7 @@ const WikiTerm = () => {
 
   const handleWhatsAppShare = () => {
     const text = encodeURIComponent(
-      `I just mastered "${term.term}" on TradeHQ! 🚀📈 Learn it here: ${DOMAIN}/wiki/${term.slug}`
+      `I am learning about "${term.term}" on TradeHQ! 🚀📈 Learn it here: ${DOMAIN}/wiki/${term.slug}`
     );
     window.open(`https://wa.me/?text=${text}`, "_blank", "noopener,noreferrer");
   };
@@ -187,6 +189,14 @@ const WikiTerm = () => {
             <p className="text-sm text-foreground/80 leading-relaxed italic">{term.studentPerspective}</p>
           </Card>
 
+          {worksheet && <section className="mt-6 space-y-3" aria-label="Worked glossary exercise">
+            <h2 className="text-lg font-bold">Worked exercise and its limits</h2>
+            <p className="text-sm leading-relaxed">{worksheet.exercise}</p>
+            <h3 className="font-semibold">References and scope</h3>
+            <ul className="list-disc pl-5 space-y-2">{worksheet.references.map(reference => <li key={reference.href}>
+              <a className="text-primary underline" href={reference.href}>{reference.label}</a>
+            </li>)}</ul>
+          </section>}
           {/* Simulator CTA */}
           <Card className="mt-6 p-6 bg-card border-border rounded-2xl">
             <div className="flex items-center gap-3 mb-3">
@@ -194,9 +204,9 @@ const WikiTerm = () => {
               <h3 className="text-sm font-bold text-foreground">Apply This in the Simulator</h3>
             </div>
             <p className="text-xs text-muted-foreground mb-4">
-              Practice identifying {term.term.toLowerCase()} patterns with $100,000 in virtual capital. Virtual practice only; data may be provider-sourced, delayed or simulated.
+              Use the worksheet below to examine {term.term.toLowerCase()}. Some concepts require external data or paper calculations; TradeHQ does not implement every indicator, order type or contract.
             </p>
-            <Link to="/trade/BTC">
+            <Link to="/trade/btc">
               <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-lg">
                 Open Simulator <ArrowRight className="ml-2 w-3 h-3" />
               </Button>

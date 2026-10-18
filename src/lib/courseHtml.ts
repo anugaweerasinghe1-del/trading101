@@ -1,15 +1,17 @@
 import { validateCourseDocument, type CourseDocument } from "../../supabase/functions/_shared/courseDocument.js";
+import { applyCourseEditorialCorrections } from "./courseEditorialCorrections.js";
 
 export const escapeCourseHtml = (value: string) => String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 const domain = "https://www.thetradehq.com";
 export function renderApprovedCourse(shell: string, doc: CourseDocument, lessonSlug?: string) {
   if (validateCourseDocument(doc, true).length) throw new Error("Invalid published course.");
+  doc = applyCourseEditorialCorrections(doc);
   const lesson = lessonSlug ? doc.lessons.find(l => l.slug === lessonSlug) : undefined;
   if (lessonSlug && !lesson) return null;
   const esc = escapeCourseHtml, title = (lesson?.title ?? doc.title) + " | TradeHQ";
   const description = lesson?.summary ?? doc.description;
   const url = domain + "/courses/" + doc.slug + (lesson ? "/" + lesson.slug : "");
-  const editorial = doc.editorial ? '<p style="color:#9ca3af">Prepared with AI assistance · Reviewed by ' + esc(doc.editorial.reviewer)
+  const editorial = doc.editorial ? '<p style="color:#9ca3af">Prepared with AI assistance · Publication review recorded by ' + esc(doc.editorial.reviewer)
     + ' · ' + esc(doc.editorial.reviewedAt.slice(0, 10)) + "</p>" : "";
   const list = (items: string[]) => "<ul>" + items.map(i => "<li>" + esc(i) + "</li>").join("") + "</ul>";
   const body = lesson

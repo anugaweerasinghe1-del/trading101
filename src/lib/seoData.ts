@@ -229,7 +229,7 @@ export const COMPARE_PAIRS: ComparePair[] = [
     ],
     worksheet: "Choose a named pair such as EUR/USD and a named equity such as AAPL from the practice terminal. Write dollars per euro and dollars per share next to their hypothetical prices, then calculate quantity times price using those units. Apply positive and negative price changes without leverage. Keep company distributions, currency conversion costs and real venue execution in separate fields when they are excluded from the exercise.",
     sources: [
-      { label: "TradeHQ: order mechanics and execution limits", href: "/learn/market-orders-vs-limit-orders" },
+      { label: "TradeHQ: order mechanics and execution limits", href: "/learn/article/market-orders-vs-limit-orders" },
       { label: "Investor.gov: stocks and ownership", href: "https://www.investor.gov/introduction-investing/investing-basics/investment-products/stocks" },
     ],
   },
@@ -554,7 +554,7 @@ export const STRATEGIES: Strategy[] = [
     "example": "Hypothetical worksheet, not an observed trade: Bought NVDA at $145 after a pullback, stop $138, target $165 — risked $7 to make $20. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.",
     "successRate": "Performance depends on market regime, entry/exit rules, costs and sample size. Use the simulator to measure your own distribution of outcomes.",
     "depth": {
-      "context": "Swing trading sits between day trading and investing: positions are held long enough for a thesis to play out, short enough that a single position is never a life decision. A scheduled review can fit some learners’ routines, but holdings remain exposed between observations and suitability cannot be inferred from employment status. The trade-off is overnight risk — earnings, macro prints and weekend headlines all move price while your stop cannot protect you at the exact level you set.",
+      "context": "Swing trading describes positions held across sessions, often over days or weeks. The label does not determine a suitable position size or make the decision less consequential. A scheduled review can fit some learners’ routines, but holdings remain exposed between observations and suitability cannot be inferred from employment status. The trade-off is overnight risk — earnings, macro prints and weekend headlines all move price while your stop cannot protect you at the exact level you set.",
       "regime": "An apparent trend or pullback is a description of selected past data. A later continuation and a reversal are both possible. Earnings and other announcements can introduce overnight gaps; a planned exit does not guarantee a fill at that price.",
       "mistakes": [
         "Treating a round-number exit or volatility multiple as guaranteed loss protection.",

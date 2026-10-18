@@ -9,6 +9,7 @@ import { STATIC_COPY, DISCLAIMER } from "./staticCopy";
 import { EXTRA_SECTIONS } from "./staticCopyExtra";
 import { ASSET_NOTES } from "./assetNotes";
 import { ASSET_REFERENCES } from "../src/lib/assetReferences";
+import { GLOSSARY_WORKSHEETS } from "../src/lib/glossaryWorksheets";
 
 export interface PageSection {
   h: string;
@@ -191,7 +192,7 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
         ],
       },
     ],
-    links: glossary.slice(0, 24).map((g) => ({ href: `/wiki/${g.slug}`, label: g.term })),
+    links: glossary.map((g) => ({ href: `/wiki/${g.slug}`, label: g.term })),
   });
 
   for (const g of glossary) {
@@ -203,15 +204,11 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
         { h: "In depth", p: splitParagraphs(g.expertDefinition) },
         { h: "Key points", list: g.keyPoints },
         { h: "Why it matters when you are learning", p: [g.studentPerspective] },
-        {
-          h: `Practising ${g.term} on the simulator`,
-          p: [
-            glossaryPractice(g),
-          ],
-        },
+        { h: "Worked exercise and its limits", p: [GLOSSARY_WORKSHEETS[g.slug]?.exercise || ""] },
       ],
       links: [
         ...(g.sources || []),
+        ...(GLOSSARY_WORKSHEETS[g.slug]?.references || []),
         ...related.map((r: string) => ({ href: `/wiki/${r}`, label: bySlug.get(r)!.term })),
         { href: "/about", label: "Publisher and editorial approach" },
         { href: "/wiki", label: "Full glossary index" },
@@ -225,9 +222,9 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
   map.set("/courses", {
     sections: [
       {
-        h: `${tracks.length} structured tracks, ${tracks.reduce((total, track) => total + track.lessons.length, 0)} lessons`,
+        h: `${tracks.length} bundled tracks, ${tracks.reduce((total, track) => total + track.lessons.length, 0)} bundled lessons`,
         p: [
-          "Courses on TradeHQ are sequential tracks, not a pile of articles. Each track states what you will be able to do at the end, what you need to know first, how the lessons build on one another, and who the track is not suitable for. Every lesson ends with key takeaways, cited sources and a short quiz, and each completed track awards a badge.",
+          "These notes describe the bundled course inventory. Additional approved courses may appear in the live catalogue and its separate course sitemap. Courses on TradeHQ are sequential tracks. Each track states what you will be able to do at the end, what you need to know first, how the lessons build on one another, and who the track is not suitable for. Every lesson ends with key takeaways, cited sources and a short quiz, and each completed track awards a badge.",
         ],
       },
       ...tracks.map((t) => ({
@@ -478,7 +475,7 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
         { h: "Worked example", p: [s.example] },
         { h: "The numbers behind it", p: [s.depth.math] },
         { h: "How it fails", list: s.depth.mistakes },
-        { h: "Scope and source limitations", p: [s.worstFor, DISCLAIMER] },
+        { h: "Scope and source limitations", p: [s.successRate, DISCLAIMER] },
       ],
       links: [
         ...(s.sources || []),
@@ -667,21 +664,4 @@ function groupLessonBody(body: string[]): PageSection[] {
   }
   if (current) sections.push(current);
   return sections.filter((s) => (s.p || []).length > 0);
-}
-
-/**
- * Closing "how to practise this" paragraph for a glossary term. Written
- * per category so 49 glossary pages do not end with one identical block.
- */
-function glossaryPractice(g: any): string {
-  // Built from the term's own key points so each page stays specific without
-  // turning glossary copy into a trading instruction.
-  const t = g.term;
-  const kp: string[] = (g.keyPoints || []).map((k: string) => String(k).replace(/\.$/, ""));
-  if (!kp.length) {
-    return `Use the simulator only to observe how ${t} appears in context; the glossary entry explains the concept rather than recommending a trade. ${DISCLAIMER}`;
-  }
-  const second = kp[1] ? ` A second feature to compare is: ${kp[1]}.` : "";
-  const third = kp[2] ? ` A third feature to note is: ${kp[2]}.` : "";
-  return `Use the simulator as an observation exercise for ${t}. The main feature to identify is: ${kp[0]}.${second}${third} The presence of the concept is not a prediction or a trade signal. ${DISCLAIMER}`;
 }

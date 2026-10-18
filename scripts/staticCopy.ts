@@ -105,7 +105,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
         list: [
           "Start with something you already understand as a customer or user — a retailer, an index ETF, or a currency you have actually spent.",
           "Prefer liquid, well-covered instruments. Thin instruments punish beginners with wide spreads and erratic prices.",
-          "Trade one instrument for a month before adding a second. Depth beats breadth when you are learning.",
+          "Choose a manageable set of instruments and record what each exercise tests. No fixed study period establishes competence.",
           "Read the instrument's guide page before the first practice order so you know what typically moves it.",
         ],
       },
@@ -113,7 +113,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
         h: "Asset classes explained briefly",
         list: [
           "Stocks: fractional ownership of a listed company; move on earnings, guidance, sector rotation and rates.",
-          "ETFs: baskets that track an index or theme; usually less volatile than any single holding inside them.",
+          "ETFs: funds with stated holdings and objectives. Diversification, concentration, leverage and product structure affect risk.",
           "Crypto: 24/7 markets with no closing bell, high volatility and a strong link to overall market liquidity.",
           "Forex: relative pricing of two currencies; driven by rate differentials, inflation prints and risk appetite.",
           "Commodities: physical goods with supply-and-demand and seasonality effects that equities do not have.",
@@ -140,9 +140,9 @@ export const STATIC_COPY: Record<string, PageContent> = {
       {
         h: "How to read your own numbers honestly",
         list: [
-          "A high win rate with a terrible average loss is a losing system. Compare average win to average loss before celebrating.",
-          "Maximum drawdown is the number that decides whether you could have stuck with the approach in real life.",
-          "Fewer than about thirty trades is not a sample. Do not draw conclusions from a good week.",
+          "Compare win rate, average realized win, average realized loss and costs together. A high win rate alone does not establish a positive result.",
+          "Maximum drawdown describes a selected peak-to-trough decline. It does not measure every risk or predict your response to a real loss.",
+          "A short run is an observation, not proof of a repeatable advantage. Selection, dependence, costs and changing conditions matter; no fixed trade count establishes an edge.",
           "If one position drives most of the return, you learned about that position, not about your method.",
         ],
       },
@@ -173,8 +173,8 @@ export const STATIC_COPY: Record<string, PageContent> = {
         h: "A suggested order for complete beginners",
         list: [
           "Read the complete beginner guide end to end so the vocabulary stops being a barrier.",
-          "Work through the trading psychology course — most beginner losses are behavioural, not analytical.",
-          "Add the macro reading course so market-wide moves stop looking random.",
+          "Use the trading psychology course to examine records, decisions and bias; it does not assign a universal cause to beginner losses.",
+          "Use the macro course to read releases and distinguish observed information from uncertain explanations of price changes.",
           "Only then take options or futures, which are leveraged and unforgiving of gaps in the basics.",
           "Keep the glossary open in a second tab and look up every unfamiliar term as it appears.",
         ],

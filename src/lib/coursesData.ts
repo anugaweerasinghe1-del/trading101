@@ -131,7 +131,7 @@ const optionsTrack: CourseTrack = {
       ],
       keyTakeaways: [
         "Delta estimates underlying-price sensitivity, not a guaranteed payoff or real-world event probability.",
-        "Gamma is highest at-the-money and near expiration.",
+        "Gamma is often relatively large near the strike close to expiration; volatility and other model inputs also matter.",
         "Theta is a model sensitivity; other price changes can offset or exceed it.",
         "Vega measures volatility sensitivity; a change in implied volatility is a different quantity.",
       ],
@@ -253,7 +253,7 @@ const optionsTrack: CourseTrack = {
         { question: "Why define a risk budget before a simulated options trade?", options: ["To guarantee profit", "To control the potential effect of one loss", "To predict volatility", "To avoid all drawdowns"], correctAnswer: 1, explanation: "A predefined risk budget limits how much one trade can affect the practice account; there is no universal percentage that fits every trader or strategy." },
         { question: "What should be compared when evaluating a roll?", options: ["Only whether it creates a credit", "Only the new expiry", "The new risk, break-even points, cost and time remaining", "Nothing — rolling is always better"], correctAnswer: 2, explanation: "A roll changes several dimensions of the position, so the full risk profile matters more than credit versus debit alone." },
         { question: "What is the best way to evaluate an exit rule in TradeHQ?", options: ["Assume one percentage always works", "Test it across a sample and compare drawdown and average loss", "Change the rule after every loss", "Ignore position size"], correctAnswer: 1, explanation: "Testing the same rule across a meaningful sample is more informative than treating one threshold as universally correct." },
-        { question: "Why journal every trade?", options: ["Tax only", "Identify your edge and leaks", "Required by regulators", "Boosts win rate automatically"], correctAnswer: 1, explanation: "Journaling surfaces real edge and recurring mistakes." },
+        { question: "Why journal every trade?", options: ["Tax only", "Review recorded assumptions and mistakes", "Required by regulators", "Boosts win rate automatically"], correctAnswer: 1, explanation: "A journal records assumptions and observed mistakes. It does not prove a statistical edge or predict future profits." },
       ],
     },
   ],
@@ -321,7 +321,7 @@ const futuresTrack: CourseTrack = {
     {
       slug: "margin-and-leverage-in-futures",
       title: "Margin & Leverage in Futures",
-      summary: "Futures margin is a performance bond, not a loan — and it's why one bad trade can wipe out an account overnight.",
+      summary: "Futures margin is collateral for contract obligations. Losses and variation-margin demands can exceed an initial margin deposit.",
       readingMinutes: 8,
       body: [
         "## Margin is not what you think",
@@ -473,7 +473,7 @@ const macroTrack: CourseTrack = {
   prerequisites:
     "No economics background is assumed. You should know what an interest rate is and be willing to read a data release rather than a summary of it. Each lesson links to the primary source — the statistical agency or the central bank itself — so you can check every figure yourself.",
   progression:
-    "Inflation comes first because it is the input that determines policy. The Fed lesson then shows how that input becomes an interest-rate decision, and the yield-curve lesson shows how the bond market prices the entire expected path of those decisions. The dollar lesson adds the international transmission channel, which is where the effect reaches commodities and emerging markets. The final lesson is synthesis: how to hold four signals at once and write a single view you can be wrong about in a measurable way.",
+    "Start by reading CPI definitions and component changes. The Fed lesson then distinguishes policy announcements from expectations; inflation is one input among several. The yield-curve lesson compares maturities and model limitations. The dollar lesson considers currency translation and exposures without assuming a fixed price response. The final exercise compares several observations and alternative explanations.",
   notFor:
     "This is not a macroeconomic forecasting course and it will not tell you where rates or inflation are going. It does not cover trading around releases with leverage, which is a specialist activity with execution risks that reading cannot prepare you for. If you want a directional call on the economy, no honest course can give you one.",
   lessons: [
@@ -564,7 +564,7 @@ const macroTrack: CourseTrack = {
       keyTakeaways: [
         "The yield curve is normally upward-sloping.",
         "Inversions have historically been associated with elevated recession risk, with timing that varies across cycles.",
-        "10Y-3M is the NY Fed's preferred spread.",
+        "The linked NY Fed recession model uses the ten-year minus three-month Treasury yield spread.",
         "Use the curve as one macro indicator alongside other evidence.",
       ],
       sources: [
@@ -573,7 +573,7 @@ const macroTrack: CourseTrack = {
       ],
       quiz: [
         { question: "Inverted curve =", options: ["Short < long", "Short > long", "Flat", "Negative yields"], correctAnswer: 1, explanation: "Short-term exceeds long-term." },
-        { question: "NY Fed's preferred recession spread:", options: ["10Y-2Y", "10Y-3M", "30Y-5Y", "2Y-Fed Funds"], correctAnswer: 1, explanation: "10Y-3M used in official model." },
+        { question: "Which spread does the linked NY Fed recession model use?", options: ["10Y-2Y", "10Y-3M", "30Y-5Y", "2Y-Fed Funds"], correctAnswer: 1, explanation: "10Y-3M used in official model." },
         { question: "What is the safest interpretation of a yield-curve inversion?", options: ["It guarantees a recession", "It is one historical recession-risk indicator with uncertain timing", "It predicts the exact market bottom", "It only matters for day traders"], correctAnswer: 1, explanation: "Yield-curve inversion is informative context, but it is not a guaranteed or precisely timed forecast." },
         { question: "The yield curve by itself provides:", options: ["An exact entry time", "A dated description of yields across maturities", "Guaranteed equity returns", "One required asset allocation"], correctAnswer: 1, explanation: "A curve describes relative yields; any forecast requires additional assumptions and remains uncertain." },
       ],

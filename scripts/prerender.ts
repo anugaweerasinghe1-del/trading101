@@ -25,8 +25,7 @@ import { PublisherNotes, type PublisherPage } from "../src/components/PublisherN
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.resolve(__dirname, "..", "dist");
 
-/** Minimum rendered words in the static body of an indexable page. */
-const MIN_WORDS = 450;
+// Word counts are diagnostics, not a reason to add filler to an authored page.
 
 function esc(s: string): string {
   return String(s)
@@ -161,7 +160,7 @@ async function main() {
   const routes = uniqueRoutes();
   const canonicals = new Map<string, string>();
   const bodyHashes = new Map<string, string>();
-  const thin: { path: string; words: number }[] = [];
+
   const missing: string[] = [];
   // Non-manifest routes must not inherit the indexable homepage fallback.
   // This shell also supports account/profile routes without indexing private UI.
@@ -187,7 +186,7 @@ async function main() {
       fs.writeFileSync(path.join(jsonDir, "index.json"), JSON.stringify(page));
     }
     const words = wordCount(body);
-    if (!r.noindex && words < MIN_WORDS) thin.push({ path: r.path, words });
+
 
     const html = renderHead(r, shell, body, page);
 
@@ -235,12 +234,7 @@ async function main() {
     console.error(`✖ ${missing.length} indexable routes have no static content: ${missing.slice(0, 12).join(", ")}`);
     process.exit(1);
   }
-  if (thin.length) {
-    console.error(`✖ ${thin.length} indexable routes below ${MIN_WORDS} words:`);
-    for (const t of thin.slice(0, 20)) console.error(`   ${t.path} — ${t.words} words`);
-    process.exit(1);
-  }
-  console.log(`✅ Every indexable route renders ≥ ${MIN_WORDS} words of unique static content`);
+  console.log("✅ Every indexable route has authored content; no arbitrary minimum word count");
 }
 
 main();

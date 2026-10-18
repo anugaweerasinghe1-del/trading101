@@ -29,12 +29,16 @@ function servedStaticHtml(html: string, response: Response, hostname: string) {
 }
 export async function onRequestGet({ request, env }: PagesContext): Promise<Response> {
   const url = new URL(request.url);
+  if (url.pathname.endsWith("/")) {
+    url.pathname = url.pathname.replace(/\/+$/, "");
+    return Response.redirect(url.href, 308);
+  }
   const parts = url.pathname.split("/").filter(Boolean);
   const valid = (v: string | undefined) => !!v && v.length <= 80 && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(v);
   // Cloudflare's optional /courses/[[path]] catch-all also matches /courses itself.
   // Serve its prerendered listing directly rather than treating it as a missing course slug.
   if (parts.length === 1 && parts[0] === "courses") {
-    const staticResponse = await env.ASSETS.fetch(new Request(new URL("/courses/", url)));
+    const staticResponse = await env.ASSETS.fetch(new Request(new URL("/courses", url)));
     if (staticResponse.ok && staticResponse.headers.get("content-type")?.includes("text/html")) {
       const html = await staticResponse.text();
       if (html.includes('<link rel="canonical" href="https://www.thetradehq.com/courses"')) {
@@ -49,7 +53,7 @@ export async function onRequestGet({ request, env }: PagesContext): Promise<Resp
   }
   const path = "/" + parts.join("/");
   // Preserve existing authored courses' exact prerendered HTML and metadata.
-  const staticResponse = await env.ASSETS.fetch(new Request(new URL(path + "/", url)));
+  const staticResponse = await env.ASSETS.fetch(new Request(new URL(path, url)));
   if (staticResponse.ok && staticResponse.headers.get("content-type")?.includes("text/html")) {
     const html = await staticResponse.text();
     if (html.includes('<link rel="canonical" href="https://www.thetradehq.com' + path + '"')) {

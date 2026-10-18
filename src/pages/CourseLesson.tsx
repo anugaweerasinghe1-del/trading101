@@ -157,7 +157,7 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
           <p className="text-base text-muted-foreground mb-4">{lesson.summary}</p>
 
           <div className="text-xs text-muted-foreground mb-6">
-            {track.editorial ? <>Prepared with AI assistance · Reviewed by <span className="text-foreground font-medium">{track.editorial.reviewer}</span> · {new Date(track.editorial.reviewedAt).toLocaleDateString("en-GB")}</> : <>By <span className="text-foreground font-medium">{AUTHOR}</span></>}
+            {track.editorial ? <>Prepared with AI assistance · Publication review recorded by <span className="text-foreground font-medium">{track.editorial.reviewer}</span> · {new Date(track.editorial.reviewedAt).toLocaleDateString("en-GB")}</> : <>By <span className="text-foreground font-medium">{AUTHOR}</span></>}
           </div>
 
           <div className="rounded-2xl overflow-hidden mb-8 bg-black aspect-[16/9]">
