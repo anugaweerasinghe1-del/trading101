@@ -14,6 +14,7 @@ export function PublisherNotes({ page }: { page: PublisherPage }) {
       style={{ maxWidth: 820, margin: "0 auto", padding: "40px 24px 100px", color: "hsl(var(--foreground, 220 10% 80%))", lineHeight: 1.7, overflowWrap: "anywhere" }}>
       <h2 style={{ fontSize: "1.6rem", color: "hsl(var(--foreground, 220 10% 96%))" }}>Learning notes: {page.heading}</h2>
       <p>{page.summary}</p>
+      <p style={{ fontSize: "0.875rem" }}>Published by TradeHQ, created by Anuga Weerasinghe. <a href="/about" style={{ textDecoration: "underline" }}>Publisher background and editorial approach</a>. No independent professional review is claimed; any recorded source-check scope appears on the page.</p>
       {page.sections.map((section, i) => (
         <section key={i}>
           <h3 style={{ fontSize: "1.2rem", margin: "28px 0 12px", color: "hsl(var(--foreground, 220 10% 96%))" }}>{section.h}</h3>

@@ -8,7 +8,7 @@ assert.ok(!config.rewrites.some(rule => rule.source === "/(.*)"), "Unknown Verce
 const manifest = new Set(uniqueRoutes().map(route => route.path));
 const env = { ASSETS: { async fetch(request: Request) {
   const pathname = new URL(request.url).pathname.replace(/\/$/, "");
-  const file = pathname === "/app-shell" ? "dist/app-shell.html" : `dist${pathname}/index.html`;
+  const file = pathname === "/app-shell" ? "dist/app-shell.html" : (existsSync(`dist${pathname}.html`) ? `dist${pathname}.html` : `dist${pathname}/index.html`);
   return existsSync(file) ? new Response(readFileSync(file, "utf8"), { headers: { "content-type": "text/html" } }) : new Response("Missing", { status: 404 });
 } } };
 for (const asset of ASSETS) {

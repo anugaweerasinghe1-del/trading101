@@ -1,15 +1,17 @@
 import { validateCourseDocument, type CourseDocument } from "../../supabase/functions/_shared/courseDocument.js";
+import { applyCourseEditorialCorrections } from "./courseEditorialCorrections.js";
 
 export const escapeCourseHtml = (value: string) => String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 const domain = "https://www.thetradehq.com";
 export function renderApprovedCourse(shell: string, doc: CourseDocument, lessonSlug?: string) {
   if (validateCourseDocument(doc, true).length) throw new Error("Invalid published course.");
+  doc = applyCourseEditorialCorrections(doc);
   const lesson = lessonSlug ? doc.lessons.find(l => l.slug === lessonSlug) : undefined;
   if (lessonSlug && !lesson) return null;
   const esc = escapeCourseHtml, title = (lesson?.title ?? doc.title) + " | TradeHQ";
   const description = lesson?.summary ?? doc.description;
   const url = domain + "/courses/" + doc.slug + (lesson ? "/" + lesson.slug : "");
-  const editorial = doc.editorial ? '<p style="color:#9ca3af">Prepared with AI assistance · Reviewed by ' + esc(doc.editorial.reviewer)
+  const editorial = doc.editorial ? '<p style="color:#9ca3af">Prepared with AI assistance · Publication review recorded by ' + esc(doc.editorial.reviewer)
     + ' · ' + esc(doc.editorial.reviewedAt.slice(0, 10)) + "</p>" : "";
   const list = (items: string[]) => "<ul>" + items.map(i => "<li>" + esc(i) + "</li>").join("") + "</ul>";
   const body = lesson
@@ -28,10 +30,10 @@ export function renderApprovedCourse(shell: string, doc: CourseDocument, lessonS
   } : { "@context": "https://schema.org", "@type": "Course", name: doc.title, description: doc.description,
     url, inLanguage: "en", provider: { "@type": "Organization", name: "TradeHQ", url: domain } };
   const safeJson = (value: unknown) => JSON.stringify(value).replace(/</g, "\\u003c");
-  const head = "<title>" + esc(title) + '</title><meta name="description" content="' + esc(description.slice(0, 155)) + '">'
-    + '<meta data-static-head name="robots" content="index, follow"><link rel="canonical" href="' + esc(url) + '">'
-    + '<meta property="og:title" content="' + esc(title) + '"><meta property="og:description" content="' + esc(description.slice(0, 155)) + '">'
-    + '<meta property="og:url" content="' + esc(url) + '"><script type="application/ld+json">' + safeJson(structured) + "</script>";
+  const head = "<title>" + esc(title) + '</title><meta data-static-head name="description" content="' + esc(description.slice(0, 155)) + '">'
+    + '<meta data-static-head name="robots" content="index, follow"><link rel="canonical" href="' + esc(url) + '" data-static-head>'
+    + '<meta data-static-head property="og:title" content="' + esc(title) + '"><meta data-static-head property="og:description" content="' + esc(description.slice(0, 155)) + '">'
+    + '<meta data-static-head property="og:url" content="' + esc(url) + '"><script type="application/ld+json">' + safeJson(structured) + "</script>";
   return shell.replace(/<title>[\s\S]*?<\/title>/i, "").replace(/<meta\b[^>]*(?:name=["'](?:description|robots)["']|property=["']og:[^"']+["'])[^>]*>/gi, "")
     .replace(/<link\b[^>]*rel=["']canonical["'][^>]*>/gi, "").replace(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi, "").replace(/<\/head>/i, head + "</head>")
     .replace(/<div\s+id=["']root["']>\s*<\/div>/i, '<div id="root">' + article + "</div>")

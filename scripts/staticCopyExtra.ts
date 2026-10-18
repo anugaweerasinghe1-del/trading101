@@ -40,7 +40,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
     {
       h: "A practice routine that actually builds skill",
       p: [
-        "Trade less than you think you should. A beginner placing thirty trades a day learns nothing except how to click; a beginner placing three trades a week with a written thesis and a written exit learns something from every one of them.",
+        "Choose an exercise with a stated question, record the assumptions before placing orders and review the result afterwards. Transaction count alone does not measure learning or validate a strategy.",
         "Every session should end with the same three questions written down: did I size this the way I said I would, did I exit where I said I would, and would I take this trade again knowing only what I knew at entry? Answering those honestly over a few months does more for results than any indicator.",
       ],
     },

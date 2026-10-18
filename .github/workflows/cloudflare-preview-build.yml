@@ -38,6 +38,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build:cloudflare
+      - name: Verify all editorial routes on desktop and mobile with and without JavaScript
+        run: node --import tsx scripts/verify-publisher-browser.mjs
       - name: Verify isolated authenticated browser flow (no production accounts)
         run: node scripts/verify-isolated-auth-browser.mjs
       - name: Verify read-only incident follow-up against isolated pages

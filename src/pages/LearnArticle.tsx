@@ -5,6 +5,7 @@ import { Navigation } from "@/components/Navigation";
 import { MegaFooter } from "@/components/MegaFooter";
 import { ArrowRight, Home, ChevronRight, Clock, BookOpen } from "lucide-react";
 import { LEARN_ARTICLES } from "@/lib/learnArticles";
+import { ARTICLE_REFERENCES } from "@/lib/articleReferences";
 import { SEOSection } from "@/components/SEOSection";
 import { ContextualLinks } from "@/components/ContextualLinks";
 
@@ -25,6 +26,7 @@ export default function LearnArticle() {
     return <NotFound />;
   }
 
+  const resources = [...(ARTICLE_REFERENCES[article.slug] || []), ...article.relatedLinks];
   const articleUrl = `${DOMAIN}/learn/article/${article.slug}`;
 
   const breadcrumbSchema = {
@@ -115,11 +117,11 @@ export default function LearnArticle() {
                 ))}
               </div>
 
-              {article.relatedLinks.length > 0 && (
+              {resources.length > 0 && (
                 <section className="mt-12 border-t border-white/[0.08] pt-8">
-                  <h3 className="text-xl font-semibold mb-4">Related Resources</h3>
+                  <h3 className="text-xl font-semibold mb-4">Sources and Related Resources</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {article.relatedLinks.map((link) => (
+                    {resources.map((link) => (
                       <Link key={link.href} to={normalizeLearnHref(link.href)} className="rounded-2xl border border-white/[0.08] bg-card/40 px-4 py-3 text-sm font-medium text-foreground transition-all hover:border-primary/30 hover:text-primary">
                         <span className="inline-flex items-center gap-2">{link.label}<ArrowRight className="w-4 h-4" /></span>
                       </Link>

@@ -16,6 +16,7 @@ import { tradingGlossary } from "../src/lib/tradingGlossary";
 import { LEARN_ARTICLES } from "../src/lib/learnArticles";
 import { lessonData } from "../src/lib/lessonData";
 import { COMPARE_PAIRS, HOWTO_ASSETS, STRATEGIES } from "../src/lib/seoData";
+import { starterPracticeBank } from "../src/lib/dailyPracticeBank";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -223,7 +224,7 @@ export function buildRoutes(): RouteMeta[] {
     title: "Learn to Trade — Free Lessons, Guides & Glossary | TradeHQ",
     description: `Free trading lessons, glossary, and step-by-step guides for beginners. Learn stocks, crypto and technical analysis, then practice with ${BALANCE} virtual cash.`,
     h1: "Learn to Trade",
-    summary: `Structured lessons, a 50-term glossary, and long-form guides on stocks, crypto, ETFs and technical analysis. Every concept links to a matching practice trade on the free simulator.`,
+    summary: `Structured lessons, a ${tradingGlossary.length}-term glossary, and long-form guides on stocks, crypto, ETFs and technical analysis. Every concept links to a matching practice trade on the free simulator.`,
     priority: "0.9",
     changefreq: "weekly",
   });
@@ -261,9 +262,9 @@ export function buildRoutes(): RouteMeta[] {
   routes.push({
     path: "/daily",
     title: "Daily Trading Challenge — Build Your Streak | TradeHQ",
-    description: "A quick daily scenario plus 8–12 minute case study with visuals, ten questions and worked answers. Learn from 50 rotating exercises for free.",
+    description: `A quick daily scenario plus 8–12 minute case study with visuals, ${starterPracticeBank.exercises[0].questions.length} linked questions and worked answers. Learn from ${starterPracticeBank.exercises.length} rotating exercises for free.`,
     h1: "Daily Trading Challenge",
-    summary: "Practise a quick scenario or go deeper with a hypothetical case, labelled visual, three linked questions and worked explanations. Fifty exercises rotate; new banks are prepared every two months and wait for owner approval. Answers stay on this browser.",
+    summary: `Practise a quick scenario or go deeper with a hypothetical case, labelled visual, ${starterPracticeBank.exercises[0].questions.length} linked questions and worked explanations. ${starterPracticeBank.exercises.length} exercises rotate; new banks are prepared every two months and wait for owner approval. Answers stay on this browser.`,
     priority: "0.9",
     changefreq: "daily",
   });

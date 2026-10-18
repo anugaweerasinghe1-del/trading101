@@ -67,8 +67,8 @@ const LearnTradingGuide = () => {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "TechArticle",
-    "headline": "AI-Assisted Trading for Beginners: Educational Guide",
-    "description": "Master AI-assisted trading, Bitcoin Layer 2, and risk management with a free $100K simulator.",
+    "headline": "Beginner Trading Guide",
+    "description": "Study order mechanics, risk examples and simulator limitations using virtual cash.",
     "author": { "@type": "Organization", "name": "TradeHQ" },
     "image": `${DOMAIN}/og-image.jpg`
   };

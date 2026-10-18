@@ -10,10 +10,10 @@ function makeContext(url: string, missingListing = false) {
     const p = new URL(input.url).pathname;
     requested.push(p);
     if (missingListing) return new Response("Missing static course listing", { status: 404 });
-    if (p === "/courses/") return new Response(canonical("/courses"), {
+    if (p === "/courses") return new Response(canonical("/courses"), {
       status: 200, headers: { "content-type": "text/html; charset=utf-8" },
     });
-    if (p === "/courses/example-course/") return new Response(canonical("/courses/example-course"), {
+    if (p === "/courses/example-course") return new Response(canonical("/courses/example-course"), {
       status: 200, headers: { "content-type": "text/html; charset=utf-8" },
     });
     return new Response("Not found", { status: 404 });
@@ -25,10 +25,10 @@ async function get(url: string, missingListing = false) {
   const response = await onRequestGet(context);
   return { response, requested, body: await response.text() };
 }
-for (const path of ["/courses", "/courses/"]) {
+for (const path of ["/courses"]) {
   const p = await get("https://www.thetradehq.com" + path);
   assert.equal(p.response.status, 200, "Course listing must not be handled as invalid slug");
-  assert.deepEqual(p.requested, ["/courses/"]);
+  assert.deepEqual(p.requested, ["/courses"]);
   assert.match(p.body, /rel="canonical" href="https:\/\/www.thetradehq.com\/courses"/);
   assert.match(p.body, /id="root"/);
   assert.ok(!p.response.headers.has("X-Robots-Tag"), "Production authored listing should retain indexability");
@@ -47,3 +47,7 @@ const invalid = await get("https://www.thetradehq.com/courses/NOT-A-SLUG");
 assert.equal(invalid.response.status, 404, "Invalid dynamic slugs still reject");
 assert.deepEqual(invalid.requested, [], "Invalid slugs must not touch backing assets or database");
 console.log("Cloudflare Pages course root, authored slug, preview noindex, missing assets and invalid slug tests passed.");
+
+const slash = await get("https://www.thetradehq.com/courses/?ref=test");
+assert.equal(slash.response.status, 308);
+assert.equal(slash.response.headers.get("Location"), "https://www.thetradehq.com/courses?ref=test");
