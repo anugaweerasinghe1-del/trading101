@@ -28,6 +28,19 @@ const shortSqueeze = routes.find(r => r.path === "/wiki/short-squeeze")!;
 assert.match(shortSqueeze.description, /short|squeeze/i);
 assert.ok(shortSqueeze.description.length > 80, "short-squeeze description must not be truncated at an apostrophe");
 assert.ok(routes.find(r => r.path === "/trade/pep")?.noindex);
+const beginnerGuide = routes.find(r => r.path === "/learn-trading-guide")!;
+assert.equal(beginnerGuide.h1, "Beginner Trading Practice Guide");
+assert.doesNotMatch(beginnerGuide.summary, /single long-form|complete beginner|first informed trade/i);
+const guideHtml = readFileSync("dist/learn-trading-guide/index.html", "utf8");
+assert.match(guideHtml, /loss of \$40\.96/, "guide should show fee-aware downside arithmetic");
+assert.match(guideHtml, /gain of \$38\.96/, "guide should include an alternative outcome");
+assert.doesNotMatch(guideHtml, /single long-form|This sample calculation/, "remove misleading or unfinished guide claims");
+assert.equal(Math.round(((460 - 0.46) - (500 + 0.50)) * 100), -4096);
+assert.equal(Math.round(((540 - 0.54) - (500 + 0.50)) * 100), 3896);
+const guideClient = readFileSync("src/pages/LearnTradingGuide.tsx", "utf8");
+assert.match(guideClient, /Beginner Trading Practice Guide/);
+assert.doesNotMatch(guideClient, /Institutional Grade Education|high-fidelity simulator|Bitcoin scaling topics/, "remove unsupported promises from hydrated UI");
+
 console.log(`PASS publisher content equivalence: ${checked} indexable snapshots and navigation payloads; utility exclusion and short-squeeze metadata`);
 
 // Exercise the deployed fallback handler and hosting rules against this actual build.
