@@ -88,14 +88,14 @@ export function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden xl:flex min-w-0 overflow-x-auto items-center gap-1">
             {navItems.map((item) => (
               <Link key={item.to} to={item.to}>
                 <Button
                   variant="ghost"
                   size="sm"
                   className={cn(
-                    "h-9 px-4 text-sm font-medium rounded-xl transition-all duration-300",
+                    "h-9 px-2 text-sm font-medium rounded-xl transition-all duration-300",
                     location.pathname === item.to
                       ? "bg-primary/10 text-primary"
                       : "text-muted-foreground hover:text-foreground hover:bg-white/[0.05]"
@@ -131,7 +131,7 @@ export function Navigation() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center gap-2">
+          <div className="flex xl:hidden items-center gap-2">
             <StreakBadge />
             <ThemeToggle />
             <Button
@@ -154,7 +154,7 @@ export function Navigation() {
     {createPortal(
     <div
       className={cn(
-        "md:hidden fixed inset-0 z-[80] transition-opacity duration-300",
+        "xl:hidden fixed inset-0 overflow-hidden z-[80] transition-opacity duration-300",
         mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
       )}
       aria-hidden={!mobileMenuOpen}

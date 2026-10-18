@@ -170,7 +170,7 @@ const LearnTradingGuide = () => {
           </div>
 
           {/* --- Grid Layout: SEO Content + Functional Tools --- */}
-          <div className="grid lg:grid-cols-12 gap-6 items-stretch max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch max-w-7xl mx-auto">
             
             {/* Left: SEO Narrative & Progress (40%) */}
             <section className="lg:col-span-5 space-y-6">

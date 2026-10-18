@@ -9,7 +9,7 @@
     "prebuild": "tsx scripts/generate-sitemap.ts",
     "build": "vite build",
     "build:cloudflare": "npm run build && node scripts/prepare-cloudflare.mjs",
-    "postbuild": "tsx scripts/prerender.ts && tsx scripts/generate-sitemap.ts && node scripts/verify-seo.mjs",
+    "postbuild": "tsx scripts/prerender.ts && tsx scripts/generate-sitemap.ts && node scripts/verify-seo.mjs && node --import tsx scripts/verify-publisher-content.ts",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",

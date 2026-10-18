@@ -21,6 +21,10 @@
   ],
   "rewrites": [
     {
+      "source": "/publisher-notes/:path*",
+      "destination": "/publisher-notes/:path*"
+    },
+    {
       "source": "/sitemap.xml",
       "destination": "/sitemap.xml"
     },

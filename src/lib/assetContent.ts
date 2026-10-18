@@ -923,37 +923,12 @@ export function generateAssetMetaDescription(asset: Asset): string {
   return truncateMetaDescription(description, 155);
 }
 
-// Generate 300+ word Market Strategic Outlook for SEO content
+// Explain the available exercise without generating interchangeable market analysis.
 export function generateMarketOutlook(asset: Asset): string {
   const content = ASSET_CONTENT[asset.id];
-  const typeLabel = asset.type === 'crypto' ? 'cryptocurrency'
-    : asset.type === 'etf' ? 'ETF'
-    : asset.type === 'forex' ? 'currency pair'
-    : asset.type;
-
-  // Introduction paragraph
-  const intro = `${asset.name} (${asset.symbol}) is a ${content?.category || typeLabel} example available for virtual practice. As global markets continue to evolve with technological advancement and shifting macroeconomic conditions, understanding ${asset.symbol}'s price dynamics becomes increasingly important for traders seeking to develop their skills.`;
-
-  // Fundamentals paragraph
-  const fundamentals = content?.whatIs
-    ? `${content.whatIs} This foundational understanding helps traders contextualize price movements and identify potential catalysts for volatility.`
-    : `${asset.name} is available for practice trading in the TradeHQ simulator. Understanding the fundamental drivers of this asset helps traders make more informed decisions about entry and exit points.`;
-
-  // Strategy paragraph
-  const strategy = content?.strategy
-    ? content.strategy
-    : `Develop your ${asset.symbol} trading strategy by analyzing chart patterns, support and resistance levels, and market sentiment indicators. Compare multiple timeframes and record where their descriptions disagree. Technical analysis can be used as one way to describe price behaviour, but it does not guarantee better outcomes; compare any method against a simple baseline in the simulator.`;
-
-  // Risk management paragraph
-  const riskManagement = `Risk management is a useful part of a ${asset.symbol} simulation. Compare several position sizes and predefined exit rules, and record how each choice changes drawdown and portfolio volatility. Treat percentage limits as test settings rather than universal real-money rules.`;
-
-  // Practice advice paragraph
-  const practiceAdvice = `TradeHQ provides $100,000 in virtual capital to practise ${asset.symbol} trading. Use the simulator to test a written process, learn order mechanics, and review results over a larger sample. Paper trading can help with practice, but it cannot reproduce every feature of live execution or the emotions attached to real losses.`;
-
-  // Educational disclaimer paragraph
-  const disclaimer = `This analysis is for educational purposes only. Past simulated performance does not guarantee future results. Market conditions can change rapidly, and all trading involves risk of loss. Always conduct your own research and consult a qualified financial advisor before making investment decisions. TradeHQ uses virtual money for practice; simulated results do not establish readiness for real trading.`;
-
-  return `${intro}\n\n${fundamentals}\n\n${strategy}\n\n${riskManagement}\n\n${practiceAdvice}\n\n${disclaimer}`;
+  return content
+    ? `${content.whatIs}\n\n${content.strategy}\n\nThis is an educational practice instrument. Quotes and generated charts have separate source labels; a practice price is not evidence of an actual market event.`
+    : `${asset.name} (${asset.symbol}) is available for a virtual order-entry exercise. TradeHQ has not published asset-specific research for this instrument.\n\nCompare the arithmetic of a hypothetical price rise and fall, including the displayed simulated fee. No order reaches a brokerage or exchange. Do not infer company fundamentals, a market forecast or real execution quality from generated practice data.`;
 }
 
 // Get asset content or generate fallback
