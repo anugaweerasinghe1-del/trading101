@@ -27,11 +27,11 @@ import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 const DOMAIN = "https://www.thetradehq.com";
 
 const LEARNING_OUTCOMES = [
-  "Read an options chain, understand strike/expiry and price defined-risk spreads with confidence",
-  "Explain how futures margin, contango and backwardation work — and when a spot ETF is safer",
-  "Translate CPI, Fed decisions, the yield curve and DXY moves into a tradable market view",
-  "Recognise your own emotional biases (FOMO, revenge, overconfidence) before they cost money",
-  "Design a written trading plan with position sizing, risk-per-trade and a journaling routine",
+  "Explain options-chain fields and calculate hypothetical defined-risk spread payoffs",
+  "Explain futures margin, contango and backwardation using contract worksheets",
+  "Identify economic releases and describe limits of interpreting market reactions",
+  "Examine cognitive biases through fictional decision records without diagnosing individuals",
+  "Compare hypothetical sizing assumptions and optional review records",
 ];
 
 const WHY_TRUST = [
@@ -42,13 +42,13 @@ const WHY_TRUST = [
   },
   {
     icon: FileText,
-    title: "Every claim sourced",
-    body: "Statistics and definitions cite public sources: SEC, CFTC, Investopedia, FRED and CME Group. Sources are printed at the bottom of every lesson.",
+    title: "Sources and limitations",
+    body: "Each authored lesson has a source list. Sources support specified definitions and examples, not claims about returns. Always check a source date for time-sensitive financial rules.",
   },
   {
     icon: Users,
-    title: "Reviewed before publication",
-    body: "Courses are maintained by Anuga Weerasinghe, TradeHQ's creator. New AI-assisted courses are reviewed before publication, with the reviewer and review date shown on each lesson.",
+    title: "Publisher and review process",
+    body: "TradeHQ identifies its creator and maintains course material for educational purposes. AI-assisted additions require an owner publication review; this does not imply an independent financial-professional endorsement.",
   },
   {
     icon: Award,
@@ -76,7 +76,7 @@ const FAQ = [
   },
   {
     q: "Do I need prior trading experience?",
-    a: "No. Every track starts at fundamentals. If you have never placed a trade, start with 'Trading Psychology Mastery' or the first lesson of 'Options Trading Fundamentals'.",
+    a: "No. Every track starts at fundamentals. A new learner can start with 'Trading Decisions and Behaviour' or the first lesson of 'Options Trading Fundamentals'.",
   },
   {
     q: "How long does a track take?",

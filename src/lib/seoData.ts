@@ -253,6 +253,7 @@ export interface HowToAsset {
   timing: string;           // sessions / liquidity / when to avoid
   mistakes: string[];       // instrument-specific beginner mistakes
   review: string;           // how to review the trade afterwards
+  sources?: { href: string; label: string }[]; // relevant first-party documents
 }
 
 export const HOWTO_ASSETS: HowToAsset[] = [
@@ -267,7 +268,7 @@ export const HOWTO_ASSETS: HowToAsset[] = [
       "Visit /trade/btc and read the quote and chart data-status labels; they may have different provenance.",
       "Choose hypothetical quantity and price assumptions, then calculate position value and the 0.1% practice fee before submitting a market order.",
       "Record the reason for the exercise and any intended manual exit. TradeHQ does not place resting limit or stop orders or open short positions.",
-      "Write the position’s percentage move, dollar change and whole-account return on separate lines. Recompute allocation using the new total. Then reconcile fees and inspect observation age. This review prevents a profitable asset move from being mistaken for an equally large account return, and preserves unfavorable as well as favorable cases."
+      "Create a second BTC price scenario with the same unit count so gross holding return and total-account return can be compared."
     ],
     "beginnerTip": "Begin with the difference between coin return and account return. A hypothetical 10% BTC rise applied to a $10,000 holding adds $1,000 before costs, while an otherwise cash-only $100,000 account rises only 1%. The same headline percentage can therefore describe a much larger asset move than portfolio move.",
     "risk": "BTC price risk and quote-data risk are distinct. A correctly identified asset can still have an older provider observation; a recent page fetch does not make that observation current. A small BTC weight can limit its contribution to one assumed account move, but it cannot prevent the holding from losing value. Real execution is not reproduced by a paper mark.",
@@ -284,7 +285,13 @@ export const HOWTO_ASSETS: HowToAsset[] = [
       "Calling an aggregate provider mark a reserved exchange fill.",
       "Ignoring both buy and sell fees in the result."
     ],
-    "review": "Write the position’s percentage move, dollar change and whole-account return on separate lines. Recompute allocation using the new total. Then reconcile fees and inspect observation age. This review prevents a profitable asset move from being mistaken for an equally large account return, and preserves unfavorable as well as favorable cases."
+    "review": "Write the position’s percentage move, dollar change and whole-account return on separate lines. Recompute allocation using the new total. Then reconcile fees and inspect observation age. This review prevents a profitable asset move from being mistaken for an equally large account return, and preserves unfavorable as well as favorable cases.",
+    "sources": [
+      {
+        "href": "https://bitcoin.org/en/bitcoin-paper",
+        "label": "Bitcoin — original protocol paper"
+      }
+    ]
   },
   {
     "symbol": "eth",
@@ -297,7 +304,7 @@ export const HOWTO_ASSETS: HowToAsset[] = [
       "Visit /trade/eth and read the quote and chart data-status labels; they may have different provenance.",
       "Choose hypothetical quantity and price assumptions, then calculate position value and the 0.1% practice fee before submitting a market order.",
       "Record the reason for the exercise and any intended manual exit. TradeHQ does not place resting limit or stop orders or open short positions.",
-      "After the exercise, reconcile ETH units, notional cost, simulator fee and cash separately. If the quote moves $100 per ETH and you own 2 ETH, the gross marked change is $200. A gas-charge discussion belongs in a separate network worksheet. Check that neither staking income nor a wallet transfer was invented in the virtual ledger."
+      "Separate the virtual spot transaction fee from any Solana- or Ethereum-style on-chain network charge, which the simulator does not execute."
     ],
     "beginnerTip": "Separate the network from the currency: Ethereum is the system, while ETH is the unit whose price you see. A lower price per coin than BTC does not by itself mean ETH is cheaper in valuation terms.",
     "risk": "Network fees, staking mechanics and ETH market-price exposure are different risks and activities. TradeHQ illustrates only the supported virtual spot accounting; it does not stake ETH, transfer coins or pay staking rewards. A correct network explanation cannot establish which direction the market price will move. Include the actual simulator fees when assessing a paper outcome.",
@@ -314,7 +321,17 @@ export const HOWTO_ASSETS: HowToAsset[] = [
       "Comparing whole-coin prices as if they establish relative business valuation.",
       "Mixing dollar loss with loss per ETH unit."
     ],
-    "review": "After the exercise, reconcile ETH units, notional cost, simulator fee and cash separately. If the quote moves $100 per ETH and you own 2 ETH, the gross marked change is $200. A gas-charge discussion belongs in a separate network worksheet. Check that neither staking income nor a wallet transfer was invented in the virtual ledger."
+    "review": "After the exercise, reconcile ETH units, notional cost, simulator fee and cash separately. If the quote moves $100 per ETH and you own 2 ETH, the gross marked change is $200. A gas-charge discussion belongs in a separate network worksheet. Check that neither staking income nor a wallet transfer was invented in the virtual ledger.",
+    "sources": [
+      {
+        "href": "https://ethereum.org/what-is-ether/",
+        "label": "Ethereum.org — ether and the Ethereum network"
+      },
+      {
+        "href": "https://ethereum.org/gas/",
+        "label": "Ethereum.org — transaction gas"
+      }
+    ]
   },
   {
     "symbol": "tsla",
@@ -327,7 +344,7 @@ export const HOWTO_ASSETS: HowToAsset[] = [
       "Visit /trade/tsla and read the quote and chart data-status labels; they may have different provenance.",
       "Choose hypothetical quantity and price assumptions, then calculate position value and the 0.1% practice fee before submitting a market order.",
       "Record the reason for the exercise and any intended manual exit. TradeHQ does not place resting limit or stop orders or open short positions.",
-      "Compare the original thesis with the information actually available before the exercise. Did you mean delivery volume, revenue or margins? Reconstruct shares, assumed entry, observed mark and fees. Keep the gap case even if it contradicts the intended exit, and do not rewrite a winning trade’s reason after seeing its result."
+      "Record an alternative next-session opening price in the worksheet to show how an overnight gap can differ from an intended exit."
     ],
     "beginnerTip": "Read deliveries, revenue and profit margins as separate measurements. A hypothetical rise in units delivered does not imply the same rise in revenue, because prices and product mix can change. A stock-price reaction also depends on expectations that a short headline may omit.",
     "risk": "An event-sensitive stock worksheet should distinguish a chosen exit threshold from the next observed price. A gap can cross the threshold, and a journal note is not an automated order. Delivery growth alone cannot validate a price target. The simulator does not reproduce real opening-auction fills, shareholder rights or options exposure.",
@@ -344,7 +361,13 @@ export const HOWTO_ASSETS: HowToAsset[] = [
       "Deleting a gap case because it exceeded the chosen worksheet loss.",
       "Inventing a report-based reason after seeing the stock movement."
     ],
-    "review": "Compare the original thesis with the information actually available before the exercise. Did you mean delivery volume, revenue or margins? Reconstruct shares, assumed entry, observed mark and fees. Keep the gap case even if it contradicts the intended exit, and do not rewrite a winning trade’s reason after seeing its result."
+    "review": "Compare the original thesis with the information actually available before the exercise. Did you mean delivery volume, revenue or margins? Reconstruct shares, assumed entry, observed mark and fees. Keep the gap case even if it contradicts the intended exit, and do not rewrite a winning trade’s reason after seeing its result.",
+    "sources": [
+      {
+        "href": "https://ir.tesla.com/",
+        "label": "Tesla investor relations — filings and earnings"
+      }
+    ]
   },
   {
     "symbol": "nvda",
@@ -357,7 +380,7 @@ export const HOWTO_ASSETS: HowToAsset[] = [
       "Visit /trade/nvda and read the quote and chart data-status labels; they may have different provenance.",
       "Choose hypothetical quantity and price assumptions, then calculate position value and the 0.1% practice fee before submitting a market order.",
       "Record the reason for the exercise and any intended manual exit. TradeHQ does not place resting limit or stop orders or open short positions.",
-      "Review both the direct holding and any assumed fund overlap. Record whether fund weights were actual dated inputs or deliberately hypothetical. Recompute the account denominator after price changes, and separate operating metrics from share-price results. The goal is a reproducible exposure explanation, not a claim that two technology labels imply diversification."
+      "Compare direct NVIDIA shares with a hypothetical dated ETF allocation to identify potential overlap before interpreting a percentage change."
     ],
     "beginnerTip": "Separate company operating measures from the share-price return. A hypothetical 20% sales increase and a 5% stock decline can coexist when expectations, costs or guidance differ. The price observation alone does not tell you which explanation is correct.",
     "risk": "Direct NVDA shares can overlap a technology or broad-market fund you also hold. Row count is therefore an incomplete diversification measure. Inspect actual fund weights and their dates before computing look-through exposure. Company sales growth and diversification labels do not guarantee protection from losses or a positive share-price response.",
@@ -374,7 +397,13 @@ export const HOWTO_ASSETS: HowToAsset[] = [
       "Assuming a sales-growth percentage dictates the stock-return percentage.",
       "Inferring fair value from the nominal price of one share."
     ],
-    "review": "Review both the direct holding and any assumed fund overlap. Record whether fund weights were actual dated inputs or deliberately hypothetical. Recompute the account denominator after price changes, and separate operating metrics from share-price results. The goal is a reproducible exposure explanation, not a claim that two technology labels imply diversification."
+    "review": "Review both the direct holding and any assumed fund overlap. Record whether fund weights were actual dated inputs or deliberately hypothetical. Recompute the account denominator after price changes, and separate operating metrics from share-price results. The goal is a reproducible exposure explanation, not a claim that two technology labels imply diversification.",
+    "sources": [
+      {
+        "href": "https://investor.nvidia.com/",
+        "label": "NVIDIA investor relations — company reports"
+      }
+    ]
   },
   {
     "symbol": "spy",
@@ -387,7 +416,7 @@ export const HOWTO_ASSETS: HowToAsset[] = [
       "Visit /trade/spy and read the quote and chart data-status labels; they may have different provenance.",
       "Choose hypothetical quantity and price assumptions, then calculate position value and the 0.1% practice fee before submitting a market order.",
       "Record the reason for the exercise and any intended manual exit. TradeHQ does not place resting limit or stop orders or open short positions.",
-      "Review units, the marked price and whole-account exposure separately. Explain how the $100 holding loss becomes a much smaller account percentage because most of this worksheet is cash. Include fees and note any distribution or expense mechanics excluded from the simulator rather than silently inventing cash entries."
+      "Label how the ETF's distribution and operating costs are outside the simplified practice order, and calculate exposure against total account value."
     ],
     "beginnerTip": "An ETF unit represents fund exposure; it is not a direct account row for each constituent company. Nominal share price also differs from the dollars you hold. Twenty $50 units and two $500 units both make $1,000 positions before fees.",
     "risk": "A broad fund can reduce exposure to one company while remaining exposed to market losses and overlap with direct stocks. Diversification is not immunity. Actual fund constituents and weights require dated disclosures, and a fixed index name does not establish that every constituent contributes equally to your result.",
@@ -404,37 +433,53 @@ export const HOWTO_ASSETS: HowToAsset[] = [
       "Ignoring overlap between the fund and separately held company shares.",
       "Inventing a cash distribution that the simulator did not record."
     ],
-    "review": "Review units, the marked price and whole-account exposure separately. Explain how the $100 holding loss becomes a much smaller account percentage because most of this worksheet is cash. Include fees and note any distribution or expense mechanics excluded from the simulator rather than silently inventing cash entries."
+    "review": "Review units, the marked price and whole-account exposure separately. Explain how the $100 holding loss becomes a much smaller account percentage because most of this worksheet is cash. Include fees and note any distribution or expense mechanics excluded from the simulator rather than silently inventing cash entries.",
+    "sources": [
+      {
+        "href": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-funds-etfs",
+        "label": "SEC Investor.gov — exchange-traded funds"
+      }
+    ]
   },
   {
     "symbol": "sol",
     "name": "SOL",
     "fullName": "Solana",
     "type": "crypto",
-    "whyTrade": "Solana is a blockchain network and SOL is its native token. A TradeHQ holding is a simulated token-price exposure; it does not validate transactions or reproduce staking, network outages or token custody.",
+    "whyTrade": "SOL is Solana's native token, while Solana is the network on which SOL is used for transaction fees. Learning to read a SOL price quote is not the same as transferring SOL on-chain, staking tokens or trading a derivatives contract. TradeHQ offers a virtual spot-price practice exercise only.",
     "steps": [
-      "Verify the provider asset identifier, source and observation timestamp; do not turn missing data into zero.",
-      "Visit /trade/sol and read the quote and chart data-status labels; they may have different provenance.",
-      "Choose hypothetical quantity and price assumptions, then calculate position value and the 0.1% practice fee before submitting a market order.",
-      "Record the reason for the exercise and any intended manual exit. TradeHQ does not place resting limit or stop orders or open short positions.",
-      "Reconstruct quantity, asset identifier, price source and observation time before interpreting gains or losses. If there was a timeout or fallback, state what was known and what remained unavailable. Include fees only for actual recorded virtual transactions; quote refreshes do not buy or sell your SOL units."
+      "Identify the instrument before doing any arithmetic: SOL is the token, a SOL/USD quote is a price per token, and an exchange venue's quoted price may differ from a separate source. Record the quote currency, source and observation time.",
+      "Choose a hypothetical dollar budget and SOL unit price. Divide budget by unit price to calculate units, then add the simulator's stated 0.1% virtual order fee to estimate cash required. Use amounts solely for the worksheet, not as a recommended allocation.",
+      "On /trade/sol, inspect the quoted spot price and any data-status label. Submit a virtual market order only if you want to practise the supported interaction; there is no resting limit, stop, short or staking order in TradeHQ.",
+      "Write two different exit-price scenarios before reading a later quote. Calculate gross profit or loss as units times the change in dollars per SOL; subtract hypothetical buy and sell transaction fees separately.",
+      "Review what the exercise could and could not show: quote observation versus actual fill, changes in SOL value versus whole-portfolio return, and missing real-world exchange costs, spread, slippage and custody."
     ],
-    "beginnerTip": "Check the explicit provider asset identifier rather than trusting a ticker match. A short symbol can be reused by unrelated projects. The correct arithmetic with another project’s price still produces a wrong portfolio value.",
-    "risk": "Project identity, market price and network operation are different inputs. An unavailable price request does not establish a network outage, and a network incident does not guarantee a particular rebound. A provider observation can also be stale even when successfully fetched. Preserve these distinctions when describing a paper result.",
-    "studentNote": "Use SOL as a case for distinguishing data availability from asset performance. A practice portfolio update needs a valid mapped observation; it is not a blockchain transfer and does not create a real wallet balance. Local access and legal questions should be checked with current official information outside the worksheet.",
+    "beginnerTip": "Spot SOL exposure is a claim about token-price changes, not a share in Solana Labs or a claim to network revenue. Network transaction fees paid in SOL, token-staking mechanics and the cost of buying or selling SOL on an exchange are distinct concepts. The TradeHQ spot simulation does not perform blockchain transactions or staking.",
+    "risk": "SOL's token price can move rapidly in either direction. Exchange liquidity, order size, spread and execution terms affect an actual fill; network reliability and token supply information do not predict the next price. In a simulator, a displayed mark and a later virtual fill may not recreate exchange execution or custody risk. Never equate a hypothetical outcome with achievable returns.",
+    "studentNote": "This example is entirely virtual and does not require a wallet, real funds or access to an exchange. Laws and access conditions vary by jurisdiction; a financial-education worksheet is not confirmation that a venue or product is available locally.",
     "drivers": [
-      "Network activity, reported reliability incidents and published supply schedules describe different aspects of the ecosystem. Their effect on an exchange price is uncertain. Verify dated claims instead of inferring a predictable price response.",
-      "Compare a dated primary description of Solana with the practice chart. A simulated movement is not evidence that a particular news item changed the real market price."
+      "Read Solana's primary documentation to distinguish network transaction processing and fee mechanics from exchange spot trading. Usage and technology changes may matter to market participants, but they do not determine a particular SOL price or return.",
+      "Compare two dated, clearly identified price observations before calculating a percentage change. Network or ecosystem news may coincide with price movements without demonstrating that it caused them."
     ],
-    "firstTrade": "Take a hypothetical holding of 25 SOL units. A valid provider observation of $100 gives a $2,500 mark. If a later request times out, it supplies no new price; converting the empty response to zero would fabricate a $2,500 loss. Retain the last valid observation with its age and failure label until usable data arrives. If the supported mapping instead uses a fixed simulator fallback, label that fixed input plainly. Neither case means the real market stopped moving. This worksheet is about data handling, not a claim about present network availability.",
-    "timing": "Compare the provider observation time, page fetch time and any separate network-status evidence. Do not substitute one timestamp for another. The chart may use provider history or synthetic candles, so use its label before connecting a displayed movement with a real network event or application-usage claim.",
+    "firstTrade": "Hypothetical example, not live market data: suppose SOL is $125 and the practice order is 40 SOL. The gross purchase value is 40 × $125 = $5,000; a 0.1% virtual buy fee is $5. If the later assumed price is $130, gross marked value is 40 × $130 = $5,200 and the gross change is $200. A hypothetical sale at $130 with a further 0.1% simulator fee of $5.20 would make the round-trip result $189.80 before any costs not simulated. If SOL instead fell to $115, the holding would be worth $4,600: a $400 gross decline before fees. These are chosen numbers, not a forecast or a liquidity guarantee.",
+    "timing": "Digital-asset venues may operate around the clock, but 24/7 access does not mean identical liquidity at every moment. Compare source timestamp, spreads and event conditions when studying external market data. TradeHQ's chart can be sourced differently from its quote; inspect the data labels and avoid treating a chart candle as proof that a real-world market order would fill at that exact price.",
     "mistakes": [
-      "Matching a reused ticker without checking the provider identifier.",
-      "Treating a timeout as a zero quote.",
-      "Labelling a fixed fallback as a fresh real-market observation.",
-      "Calling a price-request error evidence of a blockchain incident."
+      "Confusing an exchange SOL price with the on-chain fee for sending a Solana transaction.",
+      "Using a marked portfolio value as if it were a guaranteed executable sale price.",
+      "Ignoring the second virtual fee when calculating a hypothetical round trip.",
+      "Assuming network usage or a technical announcement guarantees token-price appreciation."
     ],
-    "review": "Reconstruct quantity, asset identifier, price source and observation time before interpreting gains or losses. If there was a timeout or fallback, state what was known and what remained unavailable. Include fees only for actual recorded virtual transactions; quote refreshes do not buy or sell your SOL units."
+    "review": "Record the hypothetical buy and sell prices, quantity, both virtual fees, source timestamps and portfolio allocation. Separate token return from total-account return and note which slippage, spread and custody costs the simulation omits. Try a lower exit-price case as well as a higher one to test the same arithmetic.",
+    "sources": [
+      {
+        "href": "https://solana.com/docs/core/fees",
+        "label": "Solana — on-chain fees (distinct from an exchange trading fee)"
+      },
+      {
+        "href": "https://solana.com/docs/references/terminology",
+        "label": "Solana — network terminology"
+      }
+    ]
   }
 ];
 
@@ -559,31 +604,32 @@ export const STRATEGIES: Strategy[] = [
   {
     "slug": "dca-dollar-cost-averaging",
     "name": "Dollar-Cost Averaging (DCA)",
-    "oneLiner": "Buying a fixed amount on a fixed schedule, regardless of price.",
-    "bestFor": "A comparison of equal scheduled contributions with other cash-flow schedules; suitability depends on the person and asset.",
-    "worstFor": "Repeated buying does not prevent permanent loss, concentration or the need to retain money for essential expenses.",
+    "oneLiner": "Investing equal amounts on a predetermined schedule rather than selecting each purchase date based on a price prediction.",
+    "bestFor": "A classroom comparison of repeated contributions and lump-sum purchase schedules, with equal total funding and clearly stated cash-availability dates.",
+    "worstFor": "DCA does not prevent loss, make an unsafe investment suitable, or outperform a lump sum consistently; transaction fees can accumulate.",
     "steps": [
-      "Choose a fictional contribution amount, dates and asset for an arithmetic worksheet.",
-      "For each date, divide the assumed contribution by the hypothetical unit price, including stated costs.",
-      "Compare the same total funds under a different schedule while stating when the funds were available.",
-      "Record total contributions, units and ending value. No “never sell” instruction or return guarantee follows from the exercise."
+      "Choose an entirely hypothetical instrument, a purchase calendar and a fixed cash contribution.",
+      "At each assumed date, divide the contribution by the unit price to calculate units. If fees apply, subtract the fee from the cash available for units.",
+      "Add contributions and units, then calculate average cost per unit as total purchase cost divided by units acquired; this is a historical accounting figure, not a future-value estimate.",
+      "Compare the final market value against total contributions at the same end date, using a separate scenario where the full amount was available from the start.",
+      "Discuss access to funds, costs, permanent-loss risk and what would happen if purchases stopped early; no schedule guarantees a profit."
     ],
-    "example": "Hypothetical schedule: $100 contributed to a selected practice asset each Friday. Record purchase dates, prices and units; no outperformance percentage is established. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.",
-    "successRate": "Execution can be measured separately from investment performance: track whether the scheduled contribution was made as planned, without treating adherence as a guarantee of returns.",
+    "example": "Hypothetical fee-free worksheet: contribute $100 when the unit prices are $10, $8 and $12. The purchases acquire 10, 12.5 and about 8.333 units respectively, or about 30.833 units for $300. At the final $12 price they are worth approximately $370, a $70 unrealized gain before any costs. A $300 lump sum at the initial $10 price, if all funds had been available then, buys 30 units worth $360 at the end. This one invented path cannot establish which schedule performs better generally.",
+    "successRate": "Measure adherence to a schedule separately from returns. Outcomes depend on the path of prices, fee terms, what was purchased and when cash was actually available.",
     "depth": {
-      "context": "Dollar-cost averaging removes the hardest variable in investing: timing. By committing a fixed amount on a fixed schedule you automatically buy more units when prices are low and fewer when they are high, and you never have to form a view about the next three months. A comparison with a lump sum depends on when funds become available, the market path, costs and dates. A fixed schedule does not guarantee better returns or continued participation during a drawdown.",
-      "regime": "Scheduled contributions change purchase timing and units acquired. Their comparison with a lump sum depends on the market path, costs and when cash becomes available. A rising, falling or permanently impaired asset can produce different results. No contribution schedule makes a speculative asset safe or guarantees a lower average cost.",
+      "context": "Dollar-cost averaging describes a recurring cash-flow rule, not a method that removes market timing risk. The schedule reduces decisions about individual purchase dates, but entry prices and the investment's ultimate value remain uncertain. It is particularly important to distinguish gradual access to savings from choosing to hold already-available cash for later purchases.",
+      "regime": "In a steadily rising example market, earlier investment of already-available cash can outperform staggered entries because more units participate in the rise. On a falling path, staggered purchases can sometimes produce a lower average entry price, but both schedules can lose money. Any comparison must use the same asset, end date, fees and funding assumptions; cherry-picked price paths are not evidence of expected performance.",
       "mistakes": [
-        "Treating a fixed contribution plan as an instruction to continue investing money needed for essential expenses.",
-        "Assuming repeated purchases guarantee recovery after a permanent impairment.",
-        "Comparing schedules with different cash availability or excluding fees and withdrawals."
+        "Describing DCA as a guarantee of a lower average entry price or positive returns.",
+        "Comparing a lump sum invested on day one with periodic savings that were not available on day one.",
+        "Overlooking transaction fees, uninvested cash and the possibility of permanent impairment."
       ],
-      "math": "Hypothetical calculation: $500 deposited at each month end for twenty years with an assumed nominal annual rate of 8%, compounded monthly, gives $500×((1+0.08/12)^240−1)/(0.08/12), about $294,510. Contributions total $120,000. The rate is an arbitrary positive-growth assumption rather than a forecast; fees, taxes, varying returns and contribution timing change the result."
+      "math": "In the fee-free three-date example, unit total = $100/$10 + $100/$8 + $100/$12 = approximately 30.8333 units. Historical average cash paid per unit = $300/30.8333 = approximately $9.73. At a final quoted $12, marked value ≈ $370 and gain ≈ $70. An alternative $300 lump sum at $10 acquires 30 units with marked value $360. Change the price sequence and the comparison may reverse; no realistic return estimate is implied."
     },
     "sources": [
       {
         "href": "https://www.investor.gov/introduction-investing/investing-basics/glossary/dollar-cost-averaging",
-        "label": "SEC Investor.gov — Dollar-cost averaging"
+        "label": "U.S. SEC Investor.gov — Dollar-Cost Averaging"
       }
     ]
   },
@@ -634,7 +680,7 @@ export const STRATEGIES: Strategy[] = [
     "successRate": "MACD results vary by timeframe, market and exit rule. Track payoff distribution and drawdown instead of assuming a fixed win-rate range.",
     "depth": {
       "context": "MACD subtracts a 26-period exponential moving average from a 12-period average and compares the result with a 9-period signal line. These historical inputs create lag. A crossover can persist or reverse; the calculation does not establish a win rate, profitability or how many false starts a rule filters.",
-      "regime": "A sustained historical move and a sideways sample can produce different numbers of crossovers. That observation does not prove a universally favorable asset class or timeframe. A filter based on a longer average is another rule to test with the same data and costs, rather than an established improvement.",
+      "regime": "A sustained historical move and a sideways sample can produce different numbers of crossovers. That observation does not prove a universally favorable asset class or timeframe. A filter based on a longer average is another rule to test with the same data and costs, rather than an established improvement. For a concrete comparison, label a five-bar sequence of hypothetical MACD values and identify exactly which bar produces a crossover rather than drawing a line after seeing the outcome. Record whether the signal was calculated at bar close or while the bar was still forming; that difference can alter whether a crossing appears at all. Because the indicator is derived from closing prices, it contains no information about bid-ask spreads, execution priority or transaction fees.",
       "mistakes": [
         "Reporting only favorable crossings while excluding costly reversals.",
         "Treating a planned reward-to-risk ratio as a realized payoff.",

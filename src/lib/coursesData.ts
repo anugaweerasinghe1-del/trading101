@@ -227,9 +227,9 @@ const optionsTrack: CourseTrack = {
       summary: "Options losses can be amplified by position size, leverage, volatility and time decay. This lesson measures those risks using hypothetical contract examples.",
       readingMinutes: 9,
       body: [
-        "## The 1% rule for defined-risk trades",
+        "## Illustrative 1% budget for a defined-risk worksheet",
         "For simulation, choose a small predefined risk budget before entering a position and compare how different limits affect drawdown. For example, 1% of a $100,000 practice account is $1,000. This is an educational parameter, not a universal real-money rule.",
-        "## The 3x rule for undefined-risk trades",
+        "## Testing a hypothetical loss multiplier",
         "Naked puts and short strangles can create losses far larger than the premium collected. In a paper worksheet, model adverse moves explicitly and compare the resulting losses with a hypothetical risk budget rather than relying on one fixed multiplier. TradeHQ does not execute these option positions.",
         "## Rolling — extending, not doubling down",
         "Rolling means closing an existing option and opening another with a different expiry and sometimes a different strike. A credit or debit alone does not determine whether the adjustment makes sense; compare the new maximum loss, break-even points, time remaining and total capital at risk in a worked example. Rolling options is not supported by TradeHQ's order engine.",
@@ -389,7 +389,7 @@ const futuresTrack: CourseTrack = {
     {
       slug: "hedging-with-futures",
       title: "Hedging with Futures — The Original Use Case",
-      summary: "Hedging is why futures exist. Airlines hedge fuel; farmers hedge harvests; funds hedge equity beta.",
+      summary: "Hedging is one use of futures. Airlines may hedge fuel, producers may hedge output, and funds may hedge equity beta.",
       readingMinutes: 8,
       body: [
         "## The airline case study",
@@ -459,13 +459,13 @@ const macroTrack: CourseTrack = {
   title: "Macro Reading for Traders",
   tagline: "CPI, the Fed, the yield curve and the dollar — how the pieces connect.",
   description:
-    "A trader-focused tour of the macro variables that move markets — inflation prints, central-bank policy, the yield curve, and the dollar index — with a concrete playbook for reading them together.",
+    "An introduction to CPI releases, central-bank decisions, Treasury yields and the dollar index, with exercises for separating observed data from uncertain market interpretations.",
   hero: macroHero,
   level: "Intermediate",
   badge: { name: "Macro Reading Completion", description: "Awarded after completing every lesson in the Macro Reading for Traders track." },
   outcomes: [
     "Read a CPI release and identify which component drove the surprise, rather than reacting to the headline number.",
-    "Explain how the Fed's policy cycle is set and why the market's expectation matters more than the decision itself.",
+    "Explain how FOMC decisions are announced and why published expectations and other information may influence different market reactions.",
     "Interpret the shape of the yield curve and describe what a flattening or inversion has historically signalled.",
     "Connect dollar strength to the behaviour of commodities, emerging markets and large exporters.",
     "Combine several macro signals into one written view instead of trading each release in isolation.",
@@ -479,7 +479,7 @@ const macroTrack: CourseTrack = {
   lessons: [
     {
       slug: "reading-cpi-and-inflation",
-      title: "Reading CPI — The Number That Moves Every Market",
+      title: "Reading CPI and Inflation Data",
       summary: "CPI measures selected consumer-price changes. Read the release, its definitions and components without assuming a predictable market response.",
       readingMinutes: 8,
       body: [
@@ -547,7 +547,7 @@ const macroTrack: CourseTrack = {
     },
     {
       slug: "the-yield-curve-and-recession",
-      title: "The Yield Curve — The Bond Market's Recession Alarm",
+      title: "The Yield Curve and Recession-Risk Research",
       summary: "Yield-curve inversion has historically been associated with elevated US recession risk, but timing varies and the signal is not a standalone forecast.",
       readingMinutes: 8,
       body: [
@@ -657,24 +657,24 @@ const macroTrack: CourseTrack = {
 
 const psychologyTrack: CourseTrack = {
   slug: "trading-psychology-mastery",
-  title: "Trading Psychology Mastery",
-  tagline: "Biases, tilt, discipline — the mental game that decides the P&L game.",
+  title: "Trading Decisions and Behaviour",
+  tagline: "Understand decision biases, review assumptions and practise reflective exercises.",
   description:
-    "The most sophisticated system in the world fails if the trader running it is emotionally compromised. This track teaches the cognitive biases, emotional dysregulation patterns, and concrete rituals professional traders use to stay in the game.",
+    "This educational track examines research on decision biases alongside fictional trading examples. It introduces optional records and checklists that can support reflection, without claiming professional consensus or a link to profitable performance.",
   hero: psychologyHero,
   level: "Beginner",
   badge: { name: "Trading Psychology Completion", description: "Awarded after completing every lesson in the Trading Psychology Mastery track." },
   outcomes: [
     "Name the specific biases most likely to affect your own decisions, with an example from your own trade log.",
-    "Recognise the physical and behavioural signs of tilt early enough to stop trading.",
-    "Keep a trade journal that records reasoning before the outcome is known, which is the only version that is useful.",
-    "Follow a written pre-market and post-market routine that does not depend on motivation.",
+    "Recognise when a fictional trading scenario invites an impulsive decision and consider alternatives including not trading.",
+    "Keep a record of assumptions before evaluating a hypothetical outcome; compare facts with interpretations.",
+    "Create an optional preparation and review checklist with no fixed time requirement.",
     "Distinguish between a losing trade that followed the plan and a winning trade that broke it.",
   ],
   prerequisites:
-    "None. This is the recommended starting track for anyone new, and the most useful one to revisit after a losing streak. Having a handful of practice trades already logged makes the exercises concrete, but you can start with an empty journal.",
+    "No previous trading is required. All exercises can be completed with made-up data and virtual observations, without real transactions.",
   progression:
-    "The track begins with biases because you cannot correct a pattern you cannot name. Tilt and revenge trading follow, since those are the acute failures that turn a manageable drawdown into a serious one. The journal lesson then supplies the instrument for observing both, and the final lesson turns those observations into daily rituals — the point where the material stops being knowledge and becomes behaviour.",
+    "The sequence explores possible decision biases, reactions to an outcome, a journal as an observation record, optional checklists and portfolio-drawdown arithmetic. It does not constitute psychological assessment or a tested method for earning returns.",
   notFor:
     "This track does not address clinical mental health, gambling addiction or financial distress, and it is not a substitute for professional support. If trading is causing you real financial or psychological harm, please speak to a qualified professional rather than reading another lesson on discipline.",
   lessons: [
@@ -751,110 +751,266 @@ const psychologyTrack: CourseTrack = {
       ],
     },
     {
-      slug: "the-trading-journal",
-      title: "The Trading Journal — Turning Data Into Edge",
-      summary: "The journal is the single highest-leverage tool a trader has.",
-      readingMinutes: 8,
-      body: [
-        "## Why the journal is non-negotiable",
-        "Trading is a game of statistical edge over many trades. Without a journal, you cannot compute your win rate, average winner, average loser, expectancy, or the sub-conditions under which your strategy actually works. You are literally trading blind.",
-        "## What to log for every trade",
-        "Example journal fields: date, ticker, direction, entry, exit, position size, planned loss assumption, reason for the exercise, setup label and emotion at entry. A planned exit does not guarantee a maximum loss. These ten fields are a suggested worksheet structure, not a required count or a timed performance standard.",
-        "## The weekly review",
-        "During a review, group recorded trades by the rule used and compare realized results after costs. Some groups may have different outcomes, but a small or selected sample can mislead. Record exceptions and unfavorable results before changing the rules; a better recent average does not establish that larger future positions are justified.",
-        "## Ghost journaling",
-        "TradeHQ records simulated fills in trade history. Your reasoning, assumptions and review notes still need to be entered by you; an automatic fill record does not document why a decision was made.",
-        "## Sample size and uncertainty",
-        "A larger sample can reduce noise, but there is no universal trade count that proves an edge. Under a simple independent model with a 55% win probability over 100 trades, the chance of at least one 10-loss run is about 1.7%, while a 15-loss run is about 0.03%; real trades may not be independent or identically distributed.",
-        DISC,
-      ],
-      keyTakeaways: [
-        "Without a journal you can't compute your edge.",
-        "The ten-field journal is an example structure; useful detail depends on the exercise.",
-        "Weekly per-setup review reveals real P&L drivers.",
-        "There is no universal trade count that establishes a reliable edge.",
-      ],
-      sources: [
-        { label: "TradeHQ — Ghost Journal", url: "/portfolio" },
-        { label: "TradeHQ — portfolio measures and limitations", url: "/portfolio" },
-      ],
-      quiz: [
-        { question: "What does a sample of 100 trades establish by itself?", options: ["A guaranteed edge", "Nothing conclusive without considering selection, costs and dependence", "A universal maximum drawdown", "Future profitability"], correctAnswer: 1, explanation: "A trade count alone does not establish reliability; the sample and assumptions matter." },
-        { question: "Most useful weekly review action:", options: ["Read news", "Sort by setup + per-setup expectancy", "Add indicators", "Trade more"], correctAnswer: 1, explanation: "Reveals which setups drive P&L." },
-        { question: "How many fields are in this lesson's example journal worksheet?", options: ["1 field", "10 fields", "50 fields", "100 fields"], correctAnswer: 1, explanation: "The example uses ten fields; this is a teaching choice, not a universal requirement." },
-        { question: "Under an independent 55%-win model over 100 trades, the chance of at least one 15-loss run is closest to:", options: ["0.03%", "3%", "15%", "55%"], correctAnswer: 0, explanation: "The probability is about 0.030% under that specific independent-trade model. Real trading outcomes need not satisfy those assumptions." },
-      ],
-    },
+        slug: "the-trading-journal",
+        title: "A Trading Journal: Observations and Limits",
+        summary: "Use a decision record to review assumptions without claiming it proves profitable skill.",
+        "readingMinutes": 8,
+        "sourceCheck": {
+          "date": "2026-10-18",
+          "scope": "Editorial check of simulator limitations and referenced U.S. regulator materials; not an expert certification."
+        },
+        "body": [
+          "## What a trading journal can document",
+          "A journal is a dated record of choices and the information available when they were made. It may help a learner explain why a simulated transaction was entered and how that reasoning changed. A record by itself does not establish a statistical edge, explain the causes of profits or predict future returns.",
+          "## Separate a fill record from an interpretation",
+          "TradeHQ stores virtual transactions in portfolio history. The user can separately record a hypothesis, alternate explanation, observation time and what would disconfirm the hypothesis. A price marker on a practice chart is not an independent confirmation that a real exchange would execute at that price.",
+          "## Example: reconcile a practice purchase",
+          "Suppose a hypothetical order buys 2 units at $100 each. At a stated 0.1% virtual buy fee, recorded cash decreases by $200.20; the holding has a $200 gross marked value at that price. A later displayed price of $105 would value the 2 units at $210 and show a $10 gross price change. A later hypothetical sale would have additional fees. The exercise is about distinguishing gross and net arithmetic, not a claim about an asset.",
+          "## Fields worth recording",
+          "Possible fields include date and timezone, ticker and instrument type, quantity, observed source and quote age, virtual order price, transaction fee, original question, alternative explanation, and planned review criterion. More columns are not automatically better; use only what serves the learning question.",
+          "## Review observations, not imagined causes",
+          "Grouping past results may reveal a calculation error or a difference between chosen samples. It does not establish that the labels in a journal caused those outcomes. Record unfavorable cases and changes in rules, and avoid interpreting a convenient short sample as proof of a repeatable method.",
+          "## Sample-size limits",
+          "No fixed number such as 30 or 100 decisions proves reliability. Market conditions and dependence between observations matter, as do selection bias, virtual fill assumptions and transaction costs. A journal supports transparent accounting; it does not license larger real-money positions.",
+          DISC
+        ],
+        "keyTakeaways": [
+          "A journal is a record, not proof of an investment edge.",
+          "Distinguish virtual transactions, observed price marks, interpretation and hypothetical future fills.",
+          "Use dated assumptions and include unfavorable observations when reviewing a sample.",
+          "No universal trade count validates future performance."
+        ],
+        "sources": [
+          {
+            "label": "SEC Investor.gov — transaction record-keeping",
+            "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/broker-dealers-record-keeping-requirements"
+          },
+          {
+            "label": "FINRA — account statements and trade confirmations",
+            "url": "https://www.finra.org/sites/default/files/2020-12/understanding-brokerage-account-statements-and-trade-confirmations.pdf"
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What does a journal prove on its own?",
+            "options": [
+              "A profitable edge",
+              "Why the market moved",
+              "What observations and assumptions were recorded",
+              "A future win rate"
+            ],
+            "correctAnswer": 2,
+            "explanation": "The journal documents information; it does not prove causation or future returns."
+          },
+          {
+            "question": "In a hypothetical 2-unit order at $100 with a 0.1% buy fee, what cash is spent?",
+            "options": [
+              "$200",
+              "$200.20",
+              "$210",
+              "$0.20"
+            ],
+            "correctAnswer": 1,
+            "explanation": "The $200 notional plus 0.1%, or $0.20, is $200.20."
+          },
+          {
+            "question": "Which sample should a review include?",
+            "options": [
+              "Only gains",
+              "Only days with stable prices",
+              "Only large positions",
+              "Favorable and unfavorable cases under recorded rules"
+            ],
+            "correctAnswer": 3,
+            "explanation": "Selecting only attractive cases makes the summary misleading."
+          },
+          {
+            "question": "Does 30 recorded trades establish a reliable strategy?",
+            "options": [
+              "No universal sample count can do that",
+              "Yes, always",
+              "Only with a journal",
+              "Only if there were no losing trades"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Sample design, costs, dependence and uncertainty matter."
+          }
+        ]
+      },
     {
-      slug: "discipline-and-daily-rituals",
-      title: "Discipline & Daily Rituals — The Professional's Routine",
-      summary: "Consistent P&L comes from consistent process.",
-      readingMinutes: 8,
-      body: [
-        "## The pre-market ritual",
-        "An example preparation worksheet can record selected news, chart levels, release times and a hypothetical loss budget. Choose a duration and watchlist size that suit the exercise. No 30-minute routine or ticker count is established here as a professional standard or a source of higher returns.",
-        "## The mid-session discipline check",
-        "At a chosen review interval, compare intended and actual decisions. Record any rule change and its reason, including a decision to pause. Following a checklist is not a reason to continue trading and cannot guarantee the planned loss limit.",
-        "## The post-close review",
-        "Twenty minutes at the end of each session: log every trade in the journal, tag the setup, note the emotion, and screenshot the chart at entry. Fast enough to sustain daily; deep enough to compound insight weekly.",
-        "## The weekly ritual",
-        "For a periodic review, compare planned and actual actions and identify any discrepancy. Do not assume a rule violation occurred if the record shows none. Short-sample expectancy is descriptive and may change; a behavioral goal does not prove an investment edge.",
-        "## Streaks record participation",
-        "TradeHQ streaks record participation under the feature's rules. They do not measure skill, validate a strategy or establish that frequent trading is appropriate. A learner can study without placing an order.",
-        DISC,
-      ],
-      keyTakeaways: [
-        "Pre-market: news, levels, calendar, risk budget — 30 minutes.",
-        "Hourly 60-second plan/rules/risk check.",
-        "Post-close: 20-minute journal + tag + screenshot.",
-        "Weekly: per-setup expectancy + one behavioural goal.",
-      ],
-      sources: [
-        { label: "TradeHQ — Daily Challenge", url: "/daily" },
-        { label: "TradeHQ — Daily Practice and Participation", url: "/daily" },
-      ],
-      quiz: [
-        { question: "Tight pre-market routine typically takes:", options: ["5 min", "30 min", "2 hr", "The whole morning"], correctAnswer: 1, explanation: "About 30 minutes." },
-        { question: "Hourly discipline check ~", options: ["10 min", "60 sec", "30 min", "5 min"], correctAnswer: 1, explanation: "60-second gut check." },
-        { question: "Most important part of post-close review:", options: ["Watching news", "Logging + tagging + screenshotting each trade", "After-hours trading", "Reading books"], correctAnswer: 1, explanation: "The journal loop compounds insight." },
-        { question: "Weekly goals should focus on:", options: ["Profit targets", "One behavioural improvement", "New indicators", "New brokers"], correctAnswer: 1, explanation: "One behavioural goal per week." },
-      ],
-    },
+        slug: "discipline-and-daily-rituals",
+        title: "Optional Checklists for Practice Sessions",
+        summary: "Prepare and review educational exercises without prescribing a professional routine or profitable outcome.",
+        "readingMinutes": 8,
+        "sourceCheck": {
+          "date": "2026-10-18",
+          "scope": "Reviewed claimed routine durations and simulator limitations; no duration treated as an empirically validated standard."
+        },
+        "body": [
+          "## A checklist is an organisational tool",
+          "A checklist may help a learner remember what an exercise is meant to test. It is not a proven method for increasing financial returns and there is no universal pre-market, hourly or end-of-day schedule suitable for everyone.",
+          "## Before a virtual exercise",
+          "Write a narrow objective: for example, calculate a trade fee from an assumed price and quantity, or distinguish a spot quote from a futures-contract example. Record whether the numbers come from dated market observations or are invented for teaching. It is fine to spend a session learning without placing an order.",
+          "## During the exercise",
+          "If the original question changes, note the change rather than silently replacing earlier assumptions. A learner can pause or end an exercise at any point. TradeHQ places manual market orders in supported spot instruments; writing a stop or a take-profit on a checklist does not create one.",
+          "## After the exercise",
+          "Compare original assumptions with the observed virtual result. For example, 10 units at a hypothetical $50 price have $500 notional; a 0.1% virtual transaction fee would be $0.50. Ask whether transaction costs were included and whether a later price is comparable by timestamp and source.",
+          "## Design your own review cadence",
+          "Some learners may prefer a short end-of-session note; others may periodically review multiple examples. Neither 30-minute preparation nor a 60-second hourly check nor a 20-minute closing ritual is a professional standard established by this course. The quantity of time spent does not prove better decision quality.",
+          "## Distinguish participation from outcomes",
+          "Completing a quiz or maintaining an educational streak reflects participation under feature rules. It does not validate a trading system, require frequent trading or establish higher expected returns.",
+          DISC
+        ],
+        "keyTakeaways": [
+          "Use a checklist only when it assists a defined educational question.",
+          "Any duration, time of day or review frequency is optional.",
+          "Record how prices, assumptions and fees were obtained.",
+          "Completing a routine does not imply profitability or the need to trade."
+        ],
+        "sources": [
+          {
+            "label": "SEC Investor.gov — risk",
+            "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/risk"
+          },
+          {
+            "label": "TradeHQ — virtual practice desk",
+            "url": "/trade"
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What duration must a pre-session checklist have?",
+            "options": [
+              "Exactly 30 minutes",
+              "An hour",
+              "No universal duration",
+              "Exactly five minutes"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Checklists are optional learning tools, not a timed professional standard."
+          },
+          {
+            "question": "Does a written stop price create a resting order in TradeHQ?",
+            "options": [
+              "No, virtual orders are manual market orders",
+              "Yes, always",
+              "Only after 20 minutes",
+              "Only with an options contract"
+            ],
+            "correctAnswer": 0,
+            "explanation": "A worksheet assumption is not an executable resting order."
+          },
+          {
+            "question": "Why record source and observation time?",
+            "options": [
+              "It guarantees a fill",
+              "It can clarify which information was available",
+              "It proves market direction",
+              "It increases expected profit"
+            ],
+            "correctAnswer": 1,
+            "explanation": "A source timestamp helps interpret an observed price without promising any outcome."
+          },
+          {
+            "question": "What does a learning streak measure?",
+            "options": [
+              "Trading expertise",
+              "Future profit",
+              "Low drawdown",
+              "Participation under the feature's rules"
+            ],
+            "correctAnswer": 3,
+            "explanation": "Participation is not an investment-performance measure."
+          }
+        ]
+      },
     {
-      slug: "handling-drawdowns",
-      title: "Handling Drawdowns — How Pros Stay Sane When It's Ugly",
-      summary: "Every trader experiences drawdown. Pros don't self-destruct during it.",
-      readingMinutes: 8,
-      body: [
-        "## Drawdown is math, not failure",
-        "Win rate and payoff ratio alone do not determine drawdown; position risk and dependence between trades also matter. Under a simple independent 55%-win model over 100 trades, an 8-loss run occurs at least once about 8.4% of the time, while a 15-loss run is about 0.03%. Translate any losing run into drawdown only after stating the risk-per-trade model.",
-        "## The size-down protocol",
-        "There is no universal drawdown percentage that dictates one correct response. In a simulation, define in advance how position size or participation would change after a drawdown, then evaluate that rule separately instead of presenting a 10%/50% threshold as a law.",
-        "## The rulebook lock",
-        "Changing a strategy during a drawdown can make it harder to tell whether later results came from the original method or the change. In a simulation, record any change as a separate test so the two periods are not mixed together.",
-        "## The physical toll",
-        "Drawdown produces measurable cortisol elevation, sleep disruption, and irritability. Take it seriously: exercise, sleep 8 hours, get outside daily.",
-        "## The long game",
-        "A drawdown should be interpreted using the assumptions of the simulation: position size, sequence of outcomes, costs and dependence between trades all affect the result. No single percentage or personal feeling is a universal position-sizing test.",
-        DISC,
-      ],
-      keyTakeaways: [
-        "Win rate and payoff ratio alone do not determine drawdown.",
-        "A fixed drawdown threshold does not imply one universally correct size change.",
-        "Separate strategy changes from the original test so results remain interpretable.",
-        "Position size and outcome dependence must be stated before translating losing runs into drawdown.",
-      ],
-      sources: [
-        { label: "Investopedia — Behavioural Finance", url: "https://www.investopedia.com/terms/b/behavioralfinance.asp" },
-        { label: "OCC — Contract and exercise risk disclosure", url: "https://www.theocc.com/company-information/documents-and-archives/options-disclosure-document" },
-      ],
-      quiz: [
-        { question: "Why can't win rate and payoff ratio alone determine drawdown?", options: ["Drawdown is random noise only", "Position size and dependence between trades also matter", "Drawdown only depends on fees", "They always determine it exactly"], correctAnswer: 1, explanation: "Position risk and the sequence/dependence of outcomes affect drawdown." },
-        { question: "What should a simulation do with a drawdown rule?", options: ["Treat one percentage as universal", "Define the rule and its assumptions before evaluating it", "Change the rule after every loss", "Ignore position size"], correctAnswer: 1, explanation: "A rule can be tested only when its assumptions are stated consistently." },
-        { question: "Why record a strategy change as a separate test?", options: ["To make the chart longer", "To avoid mixing results from different methods", "To guarantee recovery", "To increase the win rate"], correctAnswer: 1, explanation: "Separating tests makes the results easier to interpret." },
-        { question: "What must be stated before converting a losing run into drawdown?", options: ["Only the ticker", "The position-risk model and relevant assumptions", "The trader's age", "The screen size"], correctAnswer: 1, explanation: "Drawdown depends on how much is exposed and on the outcome assumptions." },
-      ],
-    },
+        slug: "handling-drawdowns",
+        title: "Understanding Drawdowns in a Simulation",
+        summary: "Calculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions.",
+        "readingMinutes": 8,
+        "sourceCheck": {
+          "date": "2026-10-18",
+          "scope": "Checked arithmetic and removed unsupported physical-health and professional-behaviour claims."
+        },
+        "body": [
+          "## What drawdown actually measures",
+          "A drawdown compares a portfolio's value with an earlier peak, using the same measurement basis. If an illustrative virtual portfolio peaks at $100,000 and later marks at $90,000, the peak-to-trough drawdown is ($100,000 - $90,000) / $100,000 = 10%. This number describes a past decline, not the probability of a future loss.",
+          "## A different denominator for recovery",
+          "Moving from $90,000 back to $100,000 requires $10,000 / $90,000, or approximately 11.11% growth, not 10%. A 20% decline from $100,000 to $80,000 requires a 25% gain to return to the same previous peak. This asymmetry is simple arithmetic; it does not prescribe a trading strategy.",
+          "## The effect of sizing assumptions",
+          "The same assumed asset movement can produce different portfolio-level changes depending on allocation. In a fee-free illustration, a 20% drop in an asset that is 10% of a $100,000 portfolio contributes approximately a 2% portfolio decline if everything else stays constant. Concentration, other holdings, fees and timing can change the observed result.",
+          "## Sequence and measurement matter",
+          "Drawdown depends on the path of account values, not only the first and final price. Specify whether account values include fees, deposits or withdrawals, and whether valuations are current or delayed. A sequence built from generated practice candles is not an observed market drawdown.",
+          "## Testing changes to a fictional rule",
+          "A learner may compare two explicitly hypothetical size schedules after a recorded decline. Define each rule before looking at its result; document any change so a revised rule is not mixed with the original sample. No fixed 10%, 20% or other threshold is universally suitable.",
+          "## Scope of this lesson",
+          "A portfolio decline cannot be used to diagnose stress, sleep, hormones or mental-health conditions. This lesson teaches virtual portfolio arithmetic and uncertainty, not healthcare guidance or advice about recovering real financial losses.",
+          DISC
+        ],
+        "keyTakeaways": [
+          "Drawdown is measured from a previous peak, with a clear valuation basis.",
+          "Recovering from a decline requires calculating the gain on the reduced base.",
+          "Allocation, costs and price sequence affect portfolio-level outcomes.",
+          "No particular drawdown threshold or response is universally validated."
+        ],
+        "sources": [
+          {
+            "label": "SEC Investor.gov — risk",
+            "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/risk"
+          },
+          {
+            "label": "SEC Investor.gov — past-performance limitations",
+            "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/mutual-funds-past-performance"
+          }
+        ],
+        "quiz": [
+          {
+            "question": "A virtual portfolio falls from $100,000 to $90,000. Its peak-to-trough drawdown is:",
+            "options": [
+              "5%",
+              "10%",
+              "11.11%",
+              "90%"
+            ],
+            "correctAnswer": 1,
+            "explanation": "$10,000 divided by the $100,000 peak is 10%."
+          },
+          {
+            "question": "How much growth returns $90,000 to $100,000?",
+            "options": [
+              "10%",
+              "1%",
+              "20%",
+              "About 11.11%"
+            ],
+            "correctAnswer": 3,
+            "explanation": "The $10,000 recovery is divided by the lower $90,000 balance."
+          },
+          {
+            "question": "What determines portfolio impact from an asset loss?",
+            "options": [
+              "Allocation and the asset's movement, among other factors",
+              "Only the ticker",
+              "Only the price per unit",
+              "The lesson completion badge"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Position weight affects the portfolio-level change."
+          },
+          {
+            "question": "Can a drawdown percentage diagnose a health condition?",
+            "options": [
+              "Yes",
+              "Only after 30 trades",
+              "No",
+              "Only for experienced traders"
+            ],
+            "correctAnswer": 2,
+            "explanation": "A finance calculation is not a medical assessment."
+          }
+        ]
+      },
   ],
 };
 

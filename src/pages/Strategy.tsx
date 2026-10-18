@@ -173,30 +173,21 @@ export function StrategyIndex() {
 
           <section className="mb-10 space-y-4 max-w-3xl">
             <p className="text-sm leading-relaxed text-muted-foreground">
-              A trading strategy is nothing more than a written set of conditions that tells you what to
-              buy or sell, how much to risk, where you are wrong, and when you are finished. Everything
-              else — indicators, chart colours, news feeds — is decoration. The six methods below cover
-              the realistic range of holding periods available to a retail participant, from seconds
-              (scalping) to decades (dollar-cost averaging), and each page states the rules, the market
-              conditions the method needs, the mistakes that break it, and the expectancy maths in numbers
-              rather than adjectives.
+              These six pages explain different concepts: short-horizon price observations,
+              multi-day holding periods, indicator calculations and scheduled contributions.
+              The questions and costs differ, so their illustrations are not comparable
+              measures of proven profitability or suitability.
             </p>
             <p className="text-sm leading-relaxed text-muted-foreground">
-              Choosing between them is mostly a question of time, not intelligence. If you can watch a
-              screen for three uninterrupted hours, day trading and scalping are open to you; if you can
-              check charts twice a day, swing trading fits; if you can only act once a month, dollar-cost
-              averaging into a diversified index is the honest answer. Picking a method your schedule
-              cannot support is the most common reason beginners lose money, because the method is
-              abandoned mid-trade rather than executed.
+              A study worksheet should record the instrument, assumed prices, source dates,
+              costs and limitations before comparing outcomes. A hypothetical sample cannot
+              establish a reliable win rate or expected financial return. No specific number
+              of trades is a universal statistical test.
             </p>
             <p className="text-sm leading-relaxed text-muted-foreground">
-              Review a defined sample and record costs, realized gains and losses and the rules used.
-              A losing run depends on sample length and assumptions; a 45% win rate alone does not
-              establish how often five or six losses occur. Thirty selected trades do not validate a
-              method. Separate observations used to design the rules from those used to evaluate them.
-            </p>
-            <p className="text-xs text-muted-foreground/70 italic">
-              (Educational simulation only — not financial advice.)
+              TradeHQ supports simplified virtual spot market orders. Resting stop and limit
+              orders, short positions, options and futures execution are not available.
+              DCA is a contribution schedule rather than an active order-entry strategy.
             </p>
           </section>
 
