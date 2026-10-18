@@ -19,6 +19,8 @@ The main implementation baseline was `3d3531957a46235ffed8e8544f066ef7b7c7074e`,
 
 Every supplied URL was fetched individually: all 147 returned HTTP 200 after redirects. For 92, the final trailing-slash URL differed from the no-slash canonical. This is a technical signal conflict, not proof of an AdSense policy violation. The raw live SOL page still contained the old timeout/debugging text during inspection even though #182 had already repaired the source. A successful commit or host build is insufficient evidence that a particular public response has received that revision.
 
+An additional HTTP inspection of immutable preview `949098c8` (implementation commit `41392b7`) checked every supplied URL: **147/147 returned 200 without a redirect, exactly one production canonical, exactly one H1 and a preview `noindex` header.** Each result is attached to its URL ledger row. This verifies Cloudflare’s actual flat-file serving behavior, separately from the browser fixtures.
+
 The six supplied GSC exports reconcile to 208 indexed, 58 noindex, 32 alternative canonical, 20 discovered but not indexed, two redirects and one crawled but not indexed. These are historical export classifications, not a new Search Console inspection. The seven priority URLs all returned 200 in this crawl. The `1970-01-01` export value is a placeholder, not a real crawl date.
 
 The additional course URLs returned 403 to the programmatic client. The browser rendered the published courses successfully, and a read-only query of the public published-course view supplied both documents for inspection and isolated fixtures. No database record, permission, account or publication state was changed. Do not describe the programmatic 403 as a public outage.
