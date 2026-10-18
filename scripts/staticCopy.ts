@@ -5,6 +5,7 @@
  */
 
 import type { PageContent } from "./content";
+import { PRIVACY_SECTIONS, PRIVACY_REFERENCES } from "../src/lib/privacyCopy";
 
 const D = "Educational simulation only — not financial advice.";
 
@@ -450,34 +451,8 @@ export const STATIC_COPY: Record<string, PageContent> = {
   },
 
   "/privacy": {
-    sections: [
-      {
-        h: "Summary of what we store",
-        p: [
-          "Guest practice cash, positions and trade history stay in your browser. Supabase stores account cash, positions and server-recorded orders with execution prices, fees, time and simulated results. These records restore across devices when available. A first browser import stores an unranked cash/position snapshot; a fresh ranked cycle archives the previous account snapshot privately. Earlier guest history, journals, watchlists, course progress and streaks remain browser-held.",
-          "Review likes store your account ID and review ID to prevent duplicate likes. Only totals are public. Owner replies are public; reviews removed from public view remain in the private admin panel for restoration.",
-          "Clearing site data removes browser-held records but does not delete a portfolio already synced to your account. Optional accounts, public profiles, reviews and duels also store the data needed for those features on our backend. Contact the maintainer for an account-data or deletion request.",
-        ],
-      },
-      {
-        h: "What we do not do",
-        list: [
-          "We do not sell personal data.",
-          "Advertising and analytics can use cookies or similar identifiers after the applicable consent choice; see the privacy policy for provider and opt-out details.",
-          "We do not ask for financial account details, because there is nothing to fund.",
-        ],
-      },
-      {
-        h: "Your choices",
-        p: [
-          "You can use nearly all of TradeHQ without an account. Where an account exists, you can request deletion through the contact page. The full policy text, including cookies and third-party processors, is on this page below.",
-        ],
-      },
-    ],
-    links: [
-      { href: "/terms", label: "Terms of service" },
-      { href: "/contact", label: "Contact us" },
-    ],
+    sections: PRIVACY_SECTIONS.map(section => ({ h: section.title, p: section.content.split("\n\n") })),
+    links: [...PRIVACY_REFERENCES, { href: "/terms", label: "Terms of service" }, { href: "/contact", label: "Contact TradeHQ" }],
   },
 
   "/terms": {

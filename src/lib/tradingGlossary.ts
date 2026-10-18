@@ -10,6 +10,7 @@ export interface GlossaryTerm {
   keyPoints: [string, string, string];
   studentPerspective: string;
   relatedTerms: string[];
+  sources?: { href: string; label: string }[];
 }
 
 export const tradingGlossary: GlossaryTerm[] = [
@@ -58,10 +59,10 @@ export const tradingGlossary: GlossaryTerm[] = [
     category: "Technical Analysis",
     keyPoints: [
       "50-day MA crossing below the 200-day MA triggers the signal",
-      "Historically preceded major market downturns like 2008 and 2020",
+      "A description of selected historical prices, not a validated prediction of a downturn",
       "Compare price and volume observations without assuming confirmation predicts returns"
     ],
-    studentPerspective: "Recognizing a death cross early can help you protect your portfolio by reducing risk before a potential downturn accelerates.",
+    studentPerspective: "Mark when the selected averages cross, then compare later continuations and reversals. Recognising a historical crossover does not guarantee protection from a future decline.",
     relatedTerms: ["golden-cross", "rsi-divergence", "stop-loss-hunting"]
   },
   {
@@ -78,7 +79,7 @@ export const tradingGlossary: GlossaryTerm[] = [
       "Can liquidate billions in positions within minutes",
       "Often creates wicking patterns on candlestick charts"
     ],
-    studentPerspective: "Understanding liquidation cascades teaches you why proper position sizing and stop losses are non-negotiable when using leverage.",
+    studentPerspective: "Compare a hypothetical price shock with documented margin rules. A cascade label does not establish exact liquidation levels. TradeHQ does not implement leveraged positions or margin calls.",
     relatedTerms: ["leverage-trading", "stop-loss-hunting", "whale-manipulation"]
   },
   {
@@ -129,7 +130,7 @@ export const tradingGlossary: GlossaryTerm[] = [
       "Growing bars = accelerating momentum in that direction",
       "Histogram divergence describes historical observations, not a reversal forecast"
     ],
-    studentPerspective: "The MACD histogram turns abstract momentum data into a visual tool you can read at a glance. It's essential for timing entries and exits.",
+    studentPerspective: "Reproduce the difference between a MACD line and its signal line before interpreting the bars. This describes calculated observations, not a reliable entry or exit time.",
     relatedTerms: ["macd", "rsi-divergence", "golden-cross"]
   },
   {
@@ -146,7 +147,7 @@ export const tradingGlossary: GlossaryTerm[] = [
       "A break outside a band is an observation that can continue or reverse",
       "Volume provides another observation, without validating a future move"
     ],
-    studentPerspective: "The Bollinger squeeze is like a coiled spring — tight bands mean energy is building. Learning to spot squeezes helps you catch big moves early.",
+    studentPerspective: "Compare the bandwidth over a stated sample. Narrow bands describe recent price dispersion, without storing physical energy or identifying the next move’s size or direction.",
     relatedTerms: ["rsi-divergence", "support-and-resistance", "candlestick-patterns"]
   },
   {
@@ -197,7 +198,7 @@ export const tradingGlossary: GlossaryTerm[] = [
       "Common at psychological levels and previous all-time highs",
       "Confirmed when price closes back below the broken resistance"
     ],
-    studentPerspective: "Learning to identify bull traps saves you from chasing breakouts. Wait for confirmation before entering — patience pays.",
+    studentPerspective: "Record both a breakout and its later reversal using fixed definitions. A confirmation filter changes the rule being tested; it cannot remove every failed signal.",
     relatedTerms: ["bear-trap", "support-and-resistance", "stop-loss-hunting"]
   },
   {
@@ -214,7 +215,7 @@ export const tradingGlossary: GlossaryTerm[] = [
       "Can cross intended exit levels; a price pattern does not establish deliberate intent",
       "A rebound can occur, but its size and cause are not established by this label"
     ],
-    studentPerspective: "Bear traps teach you that breakdowns can be deceptive. Waiting for a candle close below support helps avoid false signals.",
+    studentPerspective: "Define the chosen support level before reviewing the later candles. A close below that level can still be followed by a recovery; waiting is not guaranteed protection.",
     relatedTerms: ["bull-trap", "short-squeeze", "support-and-resistance"]
   },
   {
@@ -231,7 +232,7 @@ export const tradingGlossary: GlossaryTerm[] = [
       "More prevalent in less regulated markets like cryptocurrency",
       "On-chain analytics can track whale wallet movements in crypto"
     ],
-    studentPerspective: "Understanding whale tactics helps you avoid being the 'exit liquidity.' Watch for unusual volume spikes and order book imbalances.",
+    studentPerspective: "Separate an observed transfer or order-book change from a claim about motive. Unusual size alone does not prove manipulation or identify a profitable response.",
     relatedTerms: ["liquidation-cascade", "stop-loss-hunting", "order-block"]
   },
   {
@@ -248,7 +249,7 @@ export const tradingGlossary: GlossaryTerm[] = [
       "Some chart frameworks relabel a crossed level; the next reaction remains uncertain",
       "Record the selected touches, interval and volume without ranking a level as reliably strongest"
     ],
-    studentPerspective: "Support and resistance is the bedrock of all chart analysis. Master this before anything else — every other pattern builds on it.",
+    studentPerspective: "Draw zones from specified price observations and compare alternative anchors. These are chart descriptions rather than floors, ceilings or a required first trading method.",
     relatedTerms: ["fibonacci-retracement", "order-block", "candlestick-patterns"]
   },
   {
@@ -299,7 +300,7 @@ export const tradingGlossary: GlossaryTerm[] = [
       "Confirmed when price breaks above the neckline (middle peak)",
       "RSI divergence is another historical observation, not independent proof of a profitable reversal"
     ],
-    studentPerspective: "The double bottom is beginner-friendly and appears frequently. It's a great pattern to build your initial trading confidence around.",
+    studentPerspective: "Identify the two lows and the intervening high under fixed rules, including failed examples. A familiar pattern does not establish a beginner’s readiness or confidence level.",
     relatedTerms: ["head-and-shoulders", "support-and-resistance", "bull-trap"]
   },
   {
@@ -323,7 +324,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     slug: "limit-order-vs-market-order",
     term: "Limit Order vs Market Order",
     definition: "Market orders seek prompt execution at available prices. Limit orders set a price boundary and may remain unfilled. Choosing an order type involves a trade-off between execution priority and price control.",
-    expertDefinition: "Understanding the distinction between limit orders and market orders is foundational trading knowledge that directly impacts execution quality, slippage costs, and long-term profitability. These are the two most basic order types available on any exchange or trading platform, and choosing the right one for each situation is a skill that separates profitable traders from those who hemorrhage money through poor execution. A market order requests execution at available prices. Its fill price and completion depend on liquidity and market conditions. The disadvantage is that you have no control over the execution price. In liquid markets with tight bid-ask spreads (like SPY or BTC/USDT on major exchanges), the difference between expected and actual execution price is typically minimal. However, in volatile or illiquid markets, market orders can experience significant slippage — executing at a substantially worse price than the last traded price. During fast moves or thin liquidity, a market-order fill can differ substantially from the price visible before submission. A limit order specifies the exact price at which you are willing to buy or sell. A buy limit order will only execute at the limit price or lower; a sell limit order will only execute at the limit price or higher. The advantage is price certainty — you control exactly what price you pay or receive. The disadvantage is that the order may never fill if the market doesn't reach your specified price. Order choice depends on execution priorities and market conditions; no universal usage share is established here. The savings from avoiding slippage compound significantly over hundreds or thousands of trades. A trader who saves an average of $0.05 per share on a 1,000-share trade saves $50 per trade — across 500 trades per year, that's $25,000 in preserved capital from execution quality alone. Additional order types build on these basics: stop orders (trigger a market order when a specific price is reached), stop-limit orders (trigger a limit order at a specific price), trailing stops (automatically adjust the stop price as the market moves in your favor), and iceberg orders (display only a fraction of the total order size to avoid signaling large positions to the market).",
+    expertDefinition: "Understanding the distinction between limit orders and market orders is foundational trading knowledge that directly impacts execution quality, slippage costs, and long-term profitability. These are the two most basic order types available on any exchange or trading platform, and their priority and fill conditions answer different questions. No order type guarantees a particular price and a completed fill in every market condition. A market order requests execution at available prices. Its fill price and completion depend on liquidity and market conditions. The disadvantage is that you have no control over the execution price. In liquid markets with tight bid-ask spreads (like SPY or BTC/USDT on major exchanges), the difference between expected and actual execution price is typically minimal. However, in volatile or illiquid markets, market orders can experience significant slippage — executing at a substantially worse price than the last traded price. During fast moves or thin liquidity, a market-order fill can differ substantially from the price visible before submission. A limit order specifies the exact price at which you are willing to buy or sell. A buy limit order will only execute at the limit price or lower; a sell limit order will only execute at the limit price or higher. The advantage is price certainty — you control exactly what price you pay or receive. The disadvantage is that the order may never fill if the market doesn't reach your specified price. Order choice depends on execution priorities and market conditions; no universal usage share is established here. The savings from avoiding slippage compound significantly over hundreds or thousands of trades. A trader who saves an average of $0.05 per share on a 1,000-share trade saves $50 per trade — across 500 trades per year, that's $25,000 in preserved capital from execution quality alone. Additional order types build on these basics: stop orders (trigger a market order when a specific price is reached), stop-limit orders (trigger a limit order at a specific price), trailing stops (automatically adjust the stop price as the market moves in your favor), and iceberg orders (display only a fraction of the total order size to avoid signaling large positions to the market).",
     proTip: "Compare price control with execution uncertainty. A market order prioritises execution at available prices; a limit order sets a price boundary but may not fill. TradeHQ currently executes market practice orders only.",
     difficulty: "Novice",
     readTime: "3 min",
@@ -357,7 +358,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     slug: "leverage-trading",
     term: "Leverage Trading",
     definition: "Control a larger market position with borrowed funds or margin. At 10x leverage, $1,000 of margin controls roughly $10,000 of exposure. Leverage amplifies both gains and losses.",
-    expertDefinition: "Leverage trading is the practice of using borrowed capital from a broker or exchange to open positions larger than your account balance would normally permit. The leverage ratio — expressed as 2x, 5x, 10x, 50x, or even 125x — represents how many times your position size is multiplied relative to your deposited margin (collateral). For example, with $1,000 of margin and 10x leverage, you control roughly a $10,000 position. A 10% move in the position is about $1,000 before fees, financing, and any platform-specific liquidation rules, so relatively small market moves can have very large effects on the margin posted. This asymmetric risk profile makes leverage the most powerful and dangerous tool available to traders. The mathematics of leverage are straightforward but their implications are devastating for the unprepared. Your liquidation price — the level at which losses consume your margin and the exchange forcibly closes your position — is directly determined by your leverage ratio. These tight liquidation levels explain why high-leverage positions are so frequently liquidated and why liquidation cascades occur. Leverage availability varies dramatically across markets and regulatory jurisdictions. In the United States, equity margins are governed by Regulation T and FINRA rules, typically allowing 2x leverage for retail investors. European regulations (ESMA) cap retail forex leverage at 30x and crypto at 2x. In contrast, offshore crypto exchanges like Bybit offer up to 100x leverage on perpetual futures contracts, and some decentralized platforms offer even higher ratios. Because leverage magnifies both profits and losses, the maximum leverage offered by a platform should not be treated as a recommendation. In a simulator, it is more useful to compare how different leverage levels change drawdown, liquidation distance, and sensitivity to small price moves. Real-world margin rules and liquidation mechanics vary by product, broker, and jurisdiction.",
+    expertDefinition: "Leverage describes notional exposure relative to the equity or collateral supporting it. A hypothetical $1,000 margin amount supporting $10,000 exposure gives a 10-to-one ratio. A 10% adverse price move on that exposure is $1,000 before costs, but this is not a liquidation formula. Initial and maintenance requirements, eligible collateral, other positions, fees and venue rules all matter. A loan-funded share purchase differs from a futures performance bond or a perpetual contract. Product eligibility and maximum permitted exposure vary by jurisdiction, customer category, broker and instrument. An advertised maximum is neither permission for a particular user nor a recommendation. TradeHQ’s ordinary spot practice orders do not borrow money or reproduce a leveraged account. A worksheet can compare price shocks, account equity and cash-flow demands while keeping legal eligibility and actual margin terms as separate questions. Hypothetical worksheet: an account with $1,500 equity and $10,000 exposure loses $300 on a 3% adverse move before fees. Equity becomes $1,200. The initial exposure-to-account-equity ratio was about 6.67, even if only $1,000 had been labelled posted margin. This is why the denominator and eligible collateral must be stated; no exchange liquidation threshold is supplied by that arithmetic.",
     proTip: "Compare notional exposure with posted margin and calculate hypothetical gains and losses before costs. Maintenance margin, funding, fees and venue rules affect liquidation; leverage alone is insufficient.",
     difficulty: "Intermediate",
     readTime: "5 min",
@@ -367,7 +368,8 @@ export const tradingGlossary: GlossaryTerm[] = [
       "Liquidation occurs when losses exceed your margin deposit",
       "No universal professional leverage limit is established here"
     ],
-    studentPerspective: "Leverage is the most dangerous tool in trading. Master position sizing and risk management on a simulator before ever using leverage with real funds.",
+    studentPerspective: "Use a hypothetical exposure-to-equity calculation to compare gains and losses. TradeHQ does not implement leverage, and completing the exercise does not establish suitability for a real margin account.",
+    sources: [{ href: "https://www.cmegroup.com/education/courses/introduction-to-futures/margin-know-what-is-needed", label: "CME — futures margin mechanics (distinct from a stock loan)" }],
     relatedTerms: ["liquidation-cascade", "stop-loss-hunting", "limit-order-vs-market-order"]
   },
   {
@@ -384,7 +386,7 @@ export const tradingGlossary: GlossaryTerm[] = [
       "Emotion alone does not establish where a market top is or a measured loss probability",
       "Combat FOMO with pre-defined trading plans and alerts"
     ],
-    studentPerspective: "Every trader experiences FOMO. The difference between amateurs and professionals is that pros have systems to override emotional impulses.",
+    studentPerspective: "Compare the recorded reason for a virtual decision with the information available at that time. The exercise does not diagnose a person or distinguish professionals from amateurs.",
     relatedTerms: ["fud", "bull-trap", "hodl-strategy"]
   },
   {
@@ -401,7 +403,7 @@ export const tradingGlossary: GlossaryTerm[] = [
       "Often spread on social media to trigger panic selling",
       "Always verify FUD claims through official sources before reacting"
     ],
-    studentPerspective: "FUD is a test of your conviction. If your thesis is based on fundamentals, short-term FUD becomes a buying opportunity rather than a reason to panic.",
+    studentPerspective: "Check a negative claim’s original source and date. A concern can be material, mistaken or uncertain; a prior thesis does not turn every adverse report into a buying opportunity.",
     relatedTerms: ["fomo", "whale-manipulation", "bear-trap"]
   },
   {
@@ -418,7 +420,7 @@ export const tradingGlossary: GlossaryTerm[] = [
       "Fewer transactions may reduce trading costs while price and timing risks remain",
       "Requires strong conviction and tolerance for drawdowns"
     ],
-    studentPerspective: "Holding through declines can include permanent loss; no outperformance over active strategies is established here. It teaches patience and removes emotional decision-making.",
+    studentPerspective: "Compare a hypothetical holding period with an exit case, including permanent loss. Holding longer does not remove emotional decisions or guarantee a recovery.",
     relatedTerms: ["fomo", "fud", "dollar-cost-averaging"]
   },
   {
@@ -453,14 +455,14 @@ export const tradingGlossary: GlossaryTerm[] = [
       "Failure to deposit additional funds results in forced liquidation",
       "Multiple simultaneous margin calls can amplify market crashes"
     ],
-    studentPerspective: "A margin call is a warning sign that you've taken on too much risk. Learning to avoid them is essential before using any leverage.",
+    studentPerspective: "Read the relevant maintenance and liquidation terms. A margin call can require action quickly, and no lesson or alert guarantees time to respond. TradeHQ has no margin accounts.",
     relatedTerms: ["leverage-trading", "liquidation-cascade", "stop-loss-hunting"]
   },
   {
     slug: "liquidation-price",
     term: "Liquidation Price",
     definition: "A liquidation price is an estimate of the level at which a leveraged position may be closed under a platform's margin rules. Collateral, fees, other positions and the pricing method can change that estimate.",
-    expertDefinition: "The liquidation price is the specific price level at which a leveraged trading position will be automatically closed by the exchange or broker because the trader's margin (collateral) is no longer sufficient to cover the unrealized losses on the position. Understanding how to calculate and manage your liquidation price is arguably the single most important risk management skill for any trader using leverage. For a long position, the liquidation price is below the entry price; for a short position, it is above the entry price. The distance between your entry price and liquidation price is inversely proportional to your leverage. This mathematical relationship makes high-leverage positions extremely fragile — even normal market volatility can trigger liquidation. The exact liquidation price calculation varies by exchange and includes factors beyond simple leverage: maintenance margin requirements, funding rates for perpetual contracts, and whether the exchange uses mark price (an average across multiple exchanges) or last traded price for liquidation calculations. Mark price liquidation is designed to prevent manipulation-induced liquidations caused by wicks on a single exchange. Cross-margin and isolated margin modes significantly affect liquidation dynamics. In isolated margin mode, only the margin allocated to a specific position is at risk — if that position is liquidated, the rest of your account is unaffected. In cross-margin mode, your entire account balance serves as collateral for all positions, meaning a losing position can consume the profits from winning positions before being liquidated.",
+    expertDefinition: "The liquidation price is the specific price level at which a leveraged trading position will be automatically closed by the exchange or broker because the trader's margin (collateral) is no longer sufficient to cover the unrealized losses on the position. Understanding how to calculate and manage your liquidation price is arguably the single most important risk management skill for any trader using leverage. For a long position, the liquidation price is below the entry price; for a short position, it is above the entry price. The distance between your entry price and liquidation price is inversely proportional to your leverage. This mathematical relationship makes high-leverage positions extremely fragile — even normal market volatility can trigger liquidation. The exact liquidation price calculation varies by exchange and includes factors beyond simple leverage: maintenance margin requirements, funding rates for perpetual contracts, and whether the exchange uses mark price (an average across multiple exchanges) or last traded price for liquidation calculations. Mark price liquidation is designed to prevent manipulation-induced liquidations caused by wicks on a single exchange. Cross-margin and isolated margin modes significantly affect liquidation dynamics. In an isolated-margin arrangement, collateral is allocated to a position under the venue’s rules. Do not infer a guaranteed cap on every account obligation; fees, gaps and the customer agreement also matter. In a cross-margin arrangement, collateral eligible under the venue’s account rules can support more than one position, meaning a losing position can consume the profits from winning positions before being liquidated.",
     proTip: "Use the venue's documented formula and include maintenance margin, fees and funding. The reciprocal of leverage is only a simplified margin-loss illustration, not an exact liquidation price.",
     difficulty: "Intermediate",
     readTime: "4 min",
@@ -470,7 +472,7 @@ export const tradingGlossary: GlossaryTerm[] = [
       "Isolated-margin treatment depends on the platform rules; it is not a universal loss guarantee",
       "Mark price vs last price affects when liquidation triggers"
     ],
-    studentPerspective: "Knowing your exact liquidation price before entering a trade is non-negotiable. If you can't calculate it, you're gambling — not trading.",
+    studentPerspective: "Compare the inputs in a venue’s documented estimate rather than treating one displayed price as fixed. Margin requirements and other positions can change the result.",
     relatedTerms: ["leverage-trading", "margin-call", "liquidation-cascade"]
   },
   {
@@ -487,7 +489,7 @@ export const tradingGlossary: GlossaryTerm[] = [
       "Buys more when prices are low, less when high — averaging down",
       "A schedule defines purchase timing without eliminating emotion or guaranteeing a better result"
     ],
-    studentPerspective: "DCA is the strategy that works while you sleep. Compare a contribution schedule with a lump-sum example over the same price sequence, including unfavorable outcomes. No outperformance percentage is established here.",
+    studentPerspective: "Calculate units bought under equal contributions at different hypothetical prices. Compare the same total cash over the same dates; a schedule does not establish a better return.",
     relatedTerms: ["hodl-strategy", "fomo", "risk-reward-ratio"]
   },
   {
@@ -504,7 +506,7 @@ export const tradingGlossary: GlossaryTerm[] = [
       "Primary timeframes: daily and 4-hour charts",
       "Time requirements vary with the process and instruments; no universal daily schedule is established"
     ],
-    studentPerspective: "Swing trading is the sweet spot for most beginners — enough action to learn quickly, but enough time to think and plan without pressure.",
+    studentPerspective: "Compare a multi-day holding window with a shorter one, including gaps between observations. No holding period is a universal best starting method for beginners.",
     relatedTerms: ["day-trading", "scalping", "support-and-resistance"]
   },
   {
@@ -528,7 +530,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     slug: "scalping",
     term: "Scalping",
     definition: "Ultra-short-term trading capturing tiny price movements (seconds to minutes). Requires low-latency execution, tight spreads, and relentless discipline.",
-    expertDefinition: "Scalping is an ultra-high-frequency trading style where traders aim to profit from very small price movements — typically a few cents on stocks or a few ticks on futures — by entering and exiting positions within seconds to minutes. Scalpers execute dozens to hundreds of trades per session, accumulating small profits that compound into meaningful returns through sheer volume. The strategy demands the lowest-latency execution infrastructure, the tightest possible bid-ask spreads, the lowest commissions, and an extraordinarily disciplined mindset. Scalpers typically use the order book (Level 2 data), time and sales (the tape), and very short-term charts (1-minute or tick charts) to identify micro-opportunities. Common scalping setups include order flow imbalances (when buy orders significantly outnumber sell orders at a price level), support/resistance bounces on the 1-minute chart, and opening range breakouts during the first 15 minutes of the trading session. Commission costs are the critical variable in scalping profitability. Because each trade captures only a few cents per share, commission and spread costs represent a significant percentage of gross profits. Scalpers typically require direct market access (DMA), per-share commission structures (rather than per-trade), and accounts with exchanges or brokers that offer maker-taker rebates.",
+    expertDefinition: "Scalping is an ultra-high-frequency trading style where traders aim to profit from very small price movements — typically a few cents on stocks or a few ticks on futures — by entering and exiting positions within seconds to minutes. Scalpers execute dozens to hundreds of trades per session, accumulating small profits that compound into meaningful returns through sheer volume. The strategy demands the lowest-latency execution infrastructure, the tightest possible bid-ask spreads, the lowest commissions, and an extraordinarily disciplined mindset. Scalpers typically use the order book (Level 2 data), time and sales (the tape), and very short-term charts (1-minute or tick charts) to identify micro-opportunities. Common scalping setups include order flow imbalances (when buy orders significantly outnumber sell orders at a price level), support/resistance bounces on the 1-minute chart, and opening range breakouts during the first 15 minutes of the trading session. Commissions, spreads, slippage and execution delays can each be material relative to a small gross price target. Because each trade captures only a few cents per share, commission and spread costs represent a significant percentage of gross profits. Scalpers typically require direct market access (DMA), per-share commission structures (rather than per-trade), and accounts with exchanges or brokers that offer maker-taker rebates.",
     proTip: "Calculate spread, fees and slippage relative to the hypothetical gross gain. Profitability depends on both the size and frequency of wins and losses; a universal win-rate threshold is insufficient.",
     difficulty: "Pro",
     readTime: "4 min",
@@ -538,7 +540,7 @@ export const tradingGlossary: GlossaryTerm[] = [
       "Requires extremely low latency, tight spreads, and low commissions",
       "Break-even win rate depends on realized win and loss amounts plus costs"
     ],
-    studentPerspective: "Scalping is the Formula 1 of trading — thrilling but unforgiving. Master slower styles first; scalping rewards only the most disciplined traders.",
+    studentPerspective: "Compare a small hypothetical gross price change with spreads, fees and worse fills. Discipline alone cannot remove execution risk or establish an investment edge.",
     relatedTerms: ["day-trading", "swing-trading", "limit-order-vs-market-order"]
   },
   {
@@ -562,7 +564,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     slug: "vwap",
     term: "VWAP",
     definition: "VWAP is the average observed trading price weighted by volume over a stated period. Price above or below it describes the sample; the relationship alone does not establish future direction.",
-    expertDefinition: "VWAP — Volume Weighted Average Price — is a trading benchmark that represents the average price at which an asset has traded throughout the day, weighted by volume at each price level. Unlike a simple moving average that gives equal weight to each price point, VWAP gives more weight to prices where more shares or contracts were traded, making it a more accurate measure of the 'true average price' paid by market participants during a session. VWAP is calculated by summing the product of price and volume for each transaction, then dividing by the total cumulative volume. The formula produces a smooth line on an intraday chart that represents where the average buyer and seller transacted. Its primary use among institutional traders is as a benchmark for execution quality — a buy execution below VWAP is considered favorable because the institution paid less than the average market participant, while a buy above VWAP is considered unfavorable. Retail traders use VWAP as a dynamic support/resistance level and as a trend filter. Some chart users label price above VWAP bullish. An aggregate volume-weighted average does not reveal individual entry prices, costs or how many participants are profitable. When price is below VWAP, the intraday trend is bearish. Mean reversion strategies look to buy when price dips below VWAP and sell when it rises above, based on the expectation that price tends to oscillate around this average. Anchored VWAP is a more advanced variation where the trader selects a specific starting point (such as an earnings release, a significant low, or the beginning of a trend) and calculates VWAP from that anchor point forward.",
+    expertDefinition: "VWAP — Volume Weighted Average Price — is a trading benchmark that represents the average price at which an asset has traded throughout the day, weighted by volume at each price level. Unlike a simple moving average that gives equal weight to each price point, VWAP gives more weight to prices where more shares or contracts were traded, making it a more accurate measure of the 'true average price' paid by market participants during a session. VWAP is calculated by summing the product of price and volume for each transaction, then dividing by the total cumulative volume. The formula produces a smooth line on an intraday chart that represents where the average buyer and seller transacted. Its primary use among institutional traders is as a benchmark for execution quality — a buy execution below VWAP is considered favorable because the institution paid less than the average market participant, while a buy above VWAP is considered unfavorable. Retail traders use VWAP as a dynamic support/resistance level and as a trend filter. Some chart users label price above VWAP bullish. An aggregate volume-weighted average does not reveal individual entry prices, costs or how many participants are profitable. Price below VWAP means the current price is below that selected volume-weighted average; it does not determine the next move. A mean-reversion worksheet can compare hypothetical crossings with continuation and reversal cases, including costs, instead of treating either side as an entry instruction. Anchored VWAP is a more advanced variation where the trader selects a specific starting point (such as an earnings release, a significant low, or the beginning of a trend) and calculates VWAP from that anchor point forward.",
     proTip: "Recalculate the volume-weighted average for the chosen session or anchor. VWAP is a historical benchmark; price crossing it does not prove future support, resistance or profitability.",
     difficulty: "Intermediate",
     readTime: "4 min",
@@ -589,7 +591,7 @@ export const tradingGlossary: GlossaryTerm[] = [
       "The Cloud (Kumo) provides dynamic, future-projected support/resistance",
       "Component alignment describes related calculations without proving predictive strength"
     ],
-    studentPerspective: "Ichimoku looks complex but provides the most complete single-indicator view of any market. Learning it gives you a framework that replaces 3-4 separate indicators.",
+    studentPerspective: "Identify each lookback and plotting offset. A line displayed ahead of the current candle is calculated from historical prices, rather than knowledge of future support or resistance.",
     relatedTerms: ["support-and-resistance", "golden-cross", "macd"]
   },
   {
@@ -640,7 +642,7 @@ export const tradingGlossary: GlossaryTerm[] = [
       "Profit from the bid-ask spread between buy and sell prices",
       "AMMs on decentralized exchanges use algorithms instead of human market makers"
     ],
-    studentPerspective: "Understanding market makers helps you see that the spread isn't random — it reflects real-time risk assessment by the most sophisticated players in the market.",
+    studentPerspective: "Compare quoted bid and ask prices with actual executions. Spread changes can have multiple explanations and do not establish a participant’s intent or sophistication.",
     relatedTerms: ["limit-order-vs-market-order", "whale-manipulation", "slippage"]
   },
   {
@@ -674,7 +676,7 @@ export const tradingGlossary: GlossaryTerm[] = [
       "Worse during high volatility and low liquidity conditions",
       "Limit prices constrain eligible fills but do not ensure execution; market fills can differ from a quote"
     ],
-    studentPerspective: "Slippage is a hidden cost that eats into your profits. Even small amounts compound over hundreds of trades — use limit orders to control it.",
+    studentPerspective: "Compare expected and weighted-average fill prices, with fees stated separately. A limit price can constrain execution but may leave the order unfilled; neither order type removes every risk.",
     relatedTerms: ["limit-order-vs-market-order", "market-maker", "leverage-trading"]
   },
   {
@@ -691,7 +693,7 @@ export const tradingGlossary: GlossaryTerm[] = [
       "Increases as the price ratio of paired tokens diverges from deposit ratio",
       "Only 'realized' upon withdrawal — can reverse if prices converge"
     ],
-    studentPerspective: "Impermanent loss is the hidden cost of DeFi yield farming. Understanding it prevents you from being lured by high APY numbers that don't account for the IL you're absorbing.",
+    studentPerspective: "Compare liquidity provision with holding the same initial assets under a stated pool model. Fees, incentives and price changes all matter, alongside contract and withdrawal risks.",
     relatedTerms: ["yield-farming", "slippage", "market-maker"]
   },
   {
@@ -725,14 +727,14 @@ export const tradingGlossary: GlossaryTerm[] = [
       "Caused by algorithmic cascades, large erroneous orders, or liquidity gaps",
       "Flash crash of May 2010 saw the Dow drop ~1,000 points in minutes"
     ],
-    studentPerspective: "Flash crashes are terrifying in real-time but educational in hindsight. They teach the importance of limit orders, proper stop placement, and the danger of market orders during volatility.",
+    studentPerspective: "Use separately dated records to compare the price path and available liquidity. A sharp decline need not recover, and intended stops or limits do not guarantee execution.",
     relatedTerms: ["liquidation-cascade", "circuit-breaker", "slippage"]
   },
   {
     slug: "circuit-breaker",
     term: "Circuit Breaker",
-    definition: "Automatic trading halts triggered when a market index falls beyond preset thresholds (7%, 13%, 20%). Designed to prevent panic-driven crashes.",
-    expertDefinition: "Circuit breakers are regulatory mechanisms that automatically halt trading across an entire exchange or in individual securities when prices decline by predetermined percentages within a single trading session. Implemented to prevent panic-driven cascading sell-offs, circuit breakers provide a 'cooling off' period that allows market participants to digest information, reassess positions, and restore orderly market functioning. In the United States, market-wide circuit breakers were first introduced after the stock market crash of October 19, 1987 (Black Monday), when the Dow Jones fell 22.6% in a single day. The current system, updated in 2013, uses the S&P 500 as the reference index with three threshold levels: Level 1 (7% decline) triggers a 15-minute trading halt if triggered before 3:25 PM ET. Level 2 (13% decline) triggers another 15-minute halt if triggered before 3:25 PM ET. Level 3 (20% decline) halts trading for the remainder of the day regardless of when it's triggered. These percentages are calculated from the previous day's closing price. Level 1 and Level 2 halts can each only be triggered once per day. Individual stock circuit breakers, known as Limit Up-Limit Down (LULD), prevent trades from occurring outside of specified price bands that are recalculated every 5 minutes. The bands are typically 5-10% from the reference price for large-cap stocks and wider for smaller or more volatile issues. Cryptocurrency markets notably lack circuit breakers, which is one reason why crypto experiences more extreme flash crashes and volatility events. Some crypto exchanges have implemented their own versions — Binance has a 'cooling-off period' feature and BitMEX has historically paused trading during extreme events — but there is no industry-wide standard. The absence of circuit breakers in 24/7 crypto markets means that liquidation cascades can run unchecked during low-liquidity periods.",
+    definition: "A rule-defined trading pause. US market-wide thresholds use S&P 500 declines of 7%, 13% and 20%, with time-of-day conditions; individual-security and other-market rules differ.",
+    expertDefinition: "Circuit breakers are rule-defined trading pauses. In the US market-wide example described by NYSE, declines from the previous S&P 500 close trigger three levels: 7%, 13% and 20%. In a regular session, a Level 1 or Level 2 event before 3:25 p.m. Eastern leads to a fifteen-minute halt; those levels at or after that time do not halt trading. Level 3 ends trading for the day. Check the current exchange rules and special-session arrangements rather than applying this example to every venue. Individual-security Limit Up-Limit Down rules are separate from a market-wide halt: price bands and pauses depend on the applicable plan. Neither mechanism guarantees an exit price or prevents losses, and a reopening can occur at a different price. Other markets and asset types can have different controls. For a hypothetical comparison, distinguish a 7% S&P 500 decline early in a regular session from the same decline after 3:25 p.m., then compare a Level 3 event. These are rule-reading exercises; TradeHQ does not execute exchange orders or reproduce every halt and reopening condition.",
     proTip: "Check the current exchange rules and time-of-day conditions before analysing a halt. The halt mechanism does not predict the direction of trading after reopening.",
     difficulty: "Intermediate",
     readTime: "4 min",
@@ -742,7 +744,8 @@ export const tradingGlossary: GlossaryTerm[] = [
       "Individual stock halts (LULD) prevent trades outside price bands",
       "Crypto markets lack circuit breakers — contributing to extreme volatility"
     ],
-    studentPerspective: "Circuit breakers are your safety net in regulated markets. Understanding when they trigger helps you stay calm during crashes and prepare for post-halt opportunities.",
+    studentPerspective: "Read the current venue rules and distinguish a market-wide halt from an individual-security pause. A halt does not prevent every loss or establish a post-reopening opportunity.",
+    sources: [{ href: "https://www.nyse.com/network/article/nyse-increases-resiliancy-during-extreme-volatility", label: "NYSE — market-wide circuit breakers and LULD" }, { href: "https://www.luldplan.com/", label: "US Limit Up-Limit Down plan" }],
     relatedTerms: ["flash-crash", "liquidation-cascade", "stop-loss-hunting"]
   },
   {
@@ -766,7 +769,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     slug: "paper-trading",
     term: "Paper Trading",
     definition: "Simulated trading with virtual money to study order mechanics and compare ideas. TradeHQ provides $100K virtual cash; practice outcomes do not predict real returns.",
-    expertDefinition: "Paper trading — also known as simulated trading or virtual trading — is the practice of executing trades using a simulated trading environment with virtual capital, allowing traders to practice strategies, test ideas, and develop skills without risking real money. The term originates from the pre-digital era when aspiring traders would track hypothetical trades on paper, recording entries, exits, and profits or losses by hand. Modern paper trading is conducted through sophisticated simulators that replicate real market conditions, including live price feeds, order book dynamics, and realistic execution. Paper trading serves multiple essential functions in a trader's development. For beginners, it provides an environment with virtual money to learn platform mechanics, order types, chart reading, and basic strategy execution. For intermediate traders, it enables strategy backtesting and forward testing — running a new strategy through real-time market conditions before committing capital. For advanced traders, it offers a sandbox for testing parameter changes, new markets, or radical strategy modifications without affecting their live portfolio. The limitations of paper trading are important to acknowledge. The most significant is the absence of emotional impact — because no real money is at risk, paper trading does not replicate the psychological pressure of live trading. Decisions are easier to make rationally when losses don't affect your bank account. Many traders who perform excellently in simulation struggle when transitioning to live trading because fear, greed, and loss aversion change their decision-making. Additionally, paper trading may not accurately simulate execution quality — real markets include slippage, partial fills, and liquidity constraints that simulators may not replicate.",
+    expertDefinition: "Paper trading — also known as simulated trading or virtual trading — is the practice of executing trades using a simulated trading environment with virtual capital, allowing traders to practice strategies, test ideas, and develop skills without risking real money. The term originates from the pre-digital era when aspiring traders would track hypothetical trades on paper, recording entries, exits, and profits or losses by hand. Modern simulators differ in their pricing and execution models. Some use provider quotes, while others generate practice prices. Order-book priority, partial fills, costs and market access may not be represented; TradeHQ labels quote and chart provenance separately. Paper trading serves multiple essential functions in a trader's development. For beginners, it provides an environment with virtual money to learn platform mechanics, order types, chart reading, and basic strategy execution. For intermediate traders, it enables strategy backtesting and forward testing — running a new strategy through real-time market conditions before committing capital. For advanced traders, it offers a sandbox for testing parameter changes, new markets, or radical strategy modifications without affecting their live portfolio. The limitations of paper trading are important to acknowledge. The most significant is the absence of emotional impact — because no real money is at risk, paper trading does not replicate the psychological pressure of live trading. Decisions are easier to make rationally when losses don't affect your bank account. Many traders who perform excellently in simulation struggle when transitioning to live trading because fear, greed, and loss aversion change their decision-making. Additionally, paper trading may not accurately simulate execution quality — real markets include slippage, partial fills, and liquidity constraints that simulators may not replicate.",
     proTip: "Use a journal to record assumptions, costs and decisions in a simulation. Practice can reveal mistakes, but no minimum duration or trade count establishes readiness for real-money trading.",
     difficulty: "Novice",
     readTime: "3 min",
@@ -776,14 +779,14 @@ export const tradingGlossary: GlossaryTerm[] = [
       "Essential practice stage before committing real capital",
       "Limitation: doesn't replicate the emotional pressure of real trading"
     ],
-    studentPerspective: "Paper trading is your training ground. Every professional athlete practices before competing — trading is no different. The TradeHQ simulator gives you $100K to learn with.",
+    studentPerspective: "Use virtual cash to study order mechanics and record assumptions. The experience differs from real liquidity, brokerage obligations and the consequences of losing actual savings.",
     relatedTerms: ["day-trading", "swing-trading", "risk-reward-ratio"]
   },
   {
     slug: "risk-reward-ratio",
     term: "Risk-Reward Ratio",
     definition: "The risk-reward ratio compares a trade's planned loss with its planned gain. A 1:3 ratio means a planned $1 loss for a potential $3 gain; it does not guarantee those fills or establish a universal professional minimum.",
-    expertDefinition: "The risk-reward ratio (R:R or RRR) is a measurement that compares the potential loss on a trade (from entry to stop loss) against the potential gain (from entry to take profit target). Expressed as a ratio like 1:2 or 1:3, it quantifies the trade's payoff structure before entry, enabling traders to make mathematically informed decisions about which trades are worth taking. A 1:2 risk-reward ratio means that for every dollar risked, two dollars of profit are targeted. A 1:3 ratio means three dollars of potential profit for each dollar of risk. This simple metric is one of the most important concepts in trading because it directly determines the win rate required for long-term profitability. For fixed realised payoffs before costs, a 1:1 ratio breaks even at 50% wins; profitability requires more than 50%. Planned exits do not ensure those realised payoffs. With fixed realized +2R/−1R before costs, the exact break-even rate is one third; profitability requires a higher rate. At 1:3 with fixed realised gains and losses, a win rate above 25% is required before costs; exactly 25% breaks even. This mathematical reality means that traders with mediocre win rates can still be highly profitable if their average winners are significantly larger than their average losers — a concept known as positive expectancy. A chosen planned payoff ratio is not a universal fund rule or evidence of positive realised expectancy. The calculation is straightforward: divide the distance to your take-profit target by the distance to your stop loss. If your stop loss is $5 below entry and your target is $15 above entry, the R:R is 1:3.",
+    expertDefinition: "The risk-reward ratio (R:R or RRR) is a measurement that compares the potential loss on a trade (from entry to stop loss) against the potential gain (from entry to take profit target). Expressed as a ratio like 1:2 or 1:3, it quantifies the trade's payoff structure before entry, enabling traders to make mathematically informed decisions about which trades are worth taking. A 1:2 risk-reward ratio means that for every dollar risked, two dollars of profit are targeted. A 1:3 ratio means three dollars of potential profit for each dollar of risk. A planned ratio describes selected entry and exit assumptions. A break-even calculation requires realised payoff sizes and costs; the planned ratio alone does not determine profitability. For fixed realised payoffs before costs, a 1:1 ratio breaks even at 50% wins; profitability requires more than 50%. Planned exits do not ensure those realised payoffs. With fixed realized +2R/−1R before costs, the exact break-even rate is one third; profitability requires a higher rate. At 1:3 with fixed realised gains and losses, a win rate above 25% is required before costs; exactly 25% breaks even. Under stated fixed-payoff assumptions, expected value combines the frequency and size of gains and losses. Costs and dependence also matter, and an estimate from one historical sample does not establish a future positive expectancy. A chosen planned payoff ratio is not a universal fund rule or evidence of positive realised expectancy. The calculation is straightforward: divide the distance to your take-profit target by the distance to your stop loss. If your stop loss is $5 below entry and your target is $15 above entry, the R:R is 1:3.",
     proTip: "Compare planned risk and reward with realised outcomes and costs. A positive average in one sample can be luck or overfitting; a ratio alone does not prove an edge.",
     difficulty: "Novice",
     readTime: "3 min",
@@ -793,7 +796,7 @@ export const tradingGlossary: GlossaryTerm[] = [
       "With fixed realized +3R/−1R before costs, 25% wins breaks even; profitability requires more",
       "A planned ratio is not a universal professional minimum or evidence of positive expectancy"
     ],
-    studentPerspective: "Risk-reward ratio is the math that separates gambling from trading. Every trade should have the math in your favor BEFORE you enter.",
+    studentPerspective: "Calculate the planned ratio, then compare it with realised gains, losses and costs. A favorable planned ratio is not proof that the outcomes will match it.",
     relatedTerms: ["stop-loss-hunting", "leverage-trading", "drawdown"]
   },
   {
@@ -817,7 +820,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     slug: "backtesting",
     term: "Backtesting",
     definition: "Testing a strategy against historical data to evaluate its hypothetical performance. Essential for validation but subject to curve-fitting and survivorship bias.",
-    expertDefinition: "Backtesting is the process of evaluating a trading strategy by applying its rules to historical market data to determine how it would have performed in the past. This retrospective analysis generates simulated trade results — including win rate, average return, maximum drawdown, Sharpe ratio, and total profitability — that help traders assess whether a strategy has a quantifiable edge worth deploying with real capital. The backtesting process involves defining strict entry and exit rules, applying them systematically to historical price data (often spanning 5-20 years), and analyzing the resulting simulated performance statistics. Professional-grade backtesting accounts for transaction costs (commissions, spreads, slippage), position sizing rules, and capital constraints. Tools range from simple spreadsheet-based analysis to sophisticated platforms like QuantConnect, Backtrader (Python), TradingView's Pine Script, and institutional platforms like Bloomberg's backtesting engine. However, backtesting has significant limitations that traders must understand. Curve fitting (or over-optimization) is the most dangerous pitfall — adjusting strategy parameters until they perfectly fit historical data, producing impressive backtest results that don't translate to live performance because they've been tailored to the specific noise patterns of the past rather than capturing genuine market phenomena. Look-ahead bias (using future information unavailable at the time of the simulated trade), survivorship bias (testing only on stocks that still exist, ignoring those that went bankrupt), and selection bias (only backtesting strategies that visually appear to work on a chart) further compromise results.",
+    expertDefinition: "Backtesting is the process of evaluating a trading strategy by applying its rules to historical market data to determine how it would have performed in the past. This retrospective analysis generates simulated trade results — including win rate, average return, maximum drawdown, Sharpe ratio, and total profitability — that describe the chosen data and assumptions. Selection bias, overfitting, omitted costs and changing conditions can make later results differ; a backtest does not establish suitability for deployment with real capital. The backtesting process involves defining strict entry and exit rules, applying them systematically to historical price data (often spanning 5-20 years), and analyzing the resulting simulated performance statistics. Professional-grade backtesting accounts for transaction costs (commissions, spreads, slippage), position sizing rules, and capital constraints. Tools range from simple spreadsheet-based analysis to sophisticated platforms like QuantConnect, Backtrader (Python), TradingView's Pine Script, and institutional platforms like Bloomberg's backtesting engine. However, backtesting has significant limitations that traders must understand. Curve fitting (or over-optimization) is the most dangerous pitfall — adjusting strategy parameters until they perfectly fit historical data, producing impressive backtest results that don't translate to live performance because they've been tailored to the specific noise patterns of the past rather than capturing genuine market phenomena. Look-ahead bias (using future information unavailable at the time of the simulated trade), survivorship bias (testing only on stocks that still exist, ignoring those that went bankrupt), and selection bias (only backtesting strategies that visually appear to work on a chart) further compromise results.",
     proTip: "Separate rule development from evaluation on unseen data and include realistic costs. Out-of-sample results can expose overfitting, but they do not certify future performance.",
     difficulty: "Intermediate",
     readTime: "4 min",
@@ -827,7 +830,7 @@ export const tradingGlossary: GlossaryTerm[] = [
       "Curve fitting is the biggest pitfall — overfit strategies fail live",
       "Out-of-sample testing can challenge overfitting but cannot establish a guaranteed future edge"
     ],
-    studentPerspective: "Backtesting gives you confidence that your strategy has worked in the past. But remember — the map is not the territory. Always forward-test (paper trade) before going live.",
+    studentPerspective: "Keep rule development separate from evaluation on unseen historical data. Record costs and failed cases. Neither backtesting nor forward simulation certifies future investment performance.",
     relatedTerms: ["paper-trading", "risk-reward-ratio", "drawdown"]
   },
   {
@@ -844,7 +847,7 @@ export const tradingGlossary: GlossaryTerm[] = [
       "Pairs trading assumes a relationship that can change; divergence can continue and cause losses",
       "Correlations can change during stress; neither universal convergence nor equal losses is implied"
     ],
-    studentPerspective: "Correlation trading teaches you that diversification is about statistical relationships, not just owning different assets. It's the foundation of professional portfolio construction.",
+    studentPerspective: "Calculate correlations with matching dates, return intervals and data sources. Relationships can change; a correlation estimate alone does not determine an appropriate portfolio.",
     relatedTerms: ["risk-reward-ratio", "drawdown", "support-and-resistance"]
   }
 ];

@@ -33,7 +33,7 @@ const SECTORS = {
   "mega-cap": {
     name: "Mega-Cap Leaders",
     slug: "mega-cap",
-    description: "The world's most valuable companies with trillion-dollar market capitalizations. These industry giants offer stability and growth potential for long-term portfolio building.",
+    description: "Selected large-company examples for virtual practice. Company size and familiarity do not guarantee stable prices, growth or investment returns.",
     icon: Building2,
     assetIds: ["aapl", "msft", "googl", "amzn", "nvda", "meta", "tsla"],
     keywords: ["mega-cap stocks", "blue chip investing", "FAANG stocks", "big tech"],

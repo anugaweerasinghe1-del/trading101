@@ -211,6 +211,7 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
         },
       ],
       links: [
+        ...(g.sources || []),
         ...related.map((r: string) => ({ href: `/wiki/${r}`, label: bySlug.get(r)!.term })),
         { href: "/about", label: "Publisher and editorial approach" },
         { href: "/wiki", label: "Full glossary index" },
