@@ -437,26 +437,26 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
       {
         h: "Named strategy walkthroughs",
         p: [
-          "Each strategy page explains where the method came from, the market conditions that help or hurt it, the exact steps to follow, a worked numeric example of expectancy and sizing, and the three ways it most often fails. None of them are presented as reliable ways to make money.",
+          "The directory compares six different educational topics. Short-horizon methods, multi-day methods, indicator exercises and fixed-schedule purchases serve different questions. Examples use hypothetical inputs, not documented live performance. Read each method's limitations and supporting references before interpreting a calculation.",
         ],
       },
       { h: "Strategies covered", list: strategies.map((s) => `${s.name} — ${s.oneLiner}`) },
       {
         h: "What a strategy is, and what it is not",
         p: [
-          "A strategy is a set of rules describing what you will trade, when you will enter, how much you will risk, and where you will get out. It is not a prediction and it is not an edge by itself. Two traders can follow identical rules and get opposite results over a year purely because one honoured the exit rule and the other did not.",
-          "These pages therefore give as much space to failure modes and to the arithmetic of expectancy as they give to the entry conditions. If a method has a 45% win rate, that is not a flaw as long as the average win is comfortably larger than the average loss — and it is fatal if it is not. Understanding that trade-off is more useful than collecting more entry patterns.",
+          "A trading rule describes a testable set of conditions and assumptions. Dollar-cost averaging is different: it schedules contributions, without requiring an active entry or exit signal. The site presents these methods for comparison, not as advice about which method is suitable for a person.",
+          "A chosen win percentage without the payoff distribution and costs is not enough to evaluate outcomes. Results from a selected historical or virtual sample are descriptive; they may change in another sample. No source-backed universal winning percentage or account-return forecast is offered.",
         ],
       },
       {
         h: "Testing a strategy without fooling yourself",
         list: [
-          "Write the rules down before you start. Rules remembered after the fact always look better than they were.",
-          "Take at least thirty trades before drawing any conclusion, and keep the size constant throughout.",
-          "Record every trade the rules generated, including the ones you chose to skip, and why you skipped them.",
-          "Judge the method by expectancy and drawdown together, never by the best week.",
-          "Expect any method to have losing stretches long enough to make you doubt it — that is the normal condition, not a malfunction.",
-          "Re-test in a different market environment before trusting it; a method tuned to a calm trending month often fails the first volatile one.",
+          "Write down the hypothetical assumptions and observation window before reviewing outcomes.",
+          "Avoid treating 30, 100 or any other arbitrary number of observations as a universal statistical threshold. Sample design, selection and dependence matter.",
+          "Record cases selected by the exercise criteria, including unfavorable cases and changes to the rule.",
+          "If using sample expectancy or drawdown, explicitly label the costs, sizes, dates and limitations of the input data.",
+          "Check the effect of a negative-outcome sequence without asserting how often it will occur in practice.",
+          "Compare a second specified sample without claiming that a backtest establishes future results.",
         ],
       },
     ],
@@ -474,14 +474,7 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
         { h: "Worked example", p: [s.example] },
         { h: "The numbers behind it", p: [s.depth.math] },
         { h: "How it fails", list: s.depth.mistakes },
-        {
-          h: `Practising ${s.name} safely`,
-          p: [
-            `When reviewing a ${s.name} practice trade, compare the rule you planned with the action you recorded. The first pitfall above is a useful review question:`,
-            String(s.depth.mistakes?.[0] || "Check whether position sizing stayed consistent with the plan."),
-            DISCLAIMER,
-          ],
-        },
+        { h: "Scope and source limitations", p: [s.worstFor, DISCLAIMER] },
       ],
       links: [
         ...(s.sources || []),
@@ -509,8 +502,8 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
       {
         h: "Why location changes the practical answer",
         p: [
-          "The mechanics of a limit order are identical everywhere, but almost everything around them is local. Which brokers are licensed to serve you, whether you can hold foreign currency, how money leaves and re-enters the country, what a realistic first account size is in local terms, and how any gains are treated for tax all depend on where you live. Advice written for a US audience quietly assumes a US answer to all of those questions.",
-          "These guides supply the local context that global tutorials skip, so the general education elsewhere on the site actually connects to your situation. They describe how access typically works and point you to the official regulator, rather than recommending a particular broker.",
+          "Rules for accessing financial services, exchanging currency, and reporting taxable gains can differ by jurisdiction and change over time. These guides point readers to local regulators rather than deciding eligibility, recommending a brokerage or prescribing how much real money to invest.",
+          "Treat regulatory summaries as starting points for verification, not current legal advice. Read the relevant authority's latest publications and check the date of any rule before relying on it.",
         ],
       },
       {
