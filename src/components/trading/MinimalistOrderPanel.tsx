@@ -168,6 +168,7 @@ export function MinimalistOrderPanel({
 
           <div className="flex items-center rounded-xl border border-white/10 bg-white/5 px-4 py-4">
             <input
+              aria-label={`Amount in ${asset.symbol}`}
               type="number"
               inputMode="decimal"
               min="0"

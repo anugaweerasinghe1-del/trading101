@@ -142,7 +142,7 @@ export function MobileOrderDrawer({ asset, availableCash, portfolio, onTrade }: 
                 <Label className="text-sm text-muted-foreground">Amount ({asset.symbol})</Label>
                 <span className="text-sm text-muted-foreground">Available: ${availableCash.toLocaleString('en-US', { maximumFractionDigits: 2 })}</span>
               </div>
-              <Input type="number" placeholder="0.00" value={amount} onChange={(e) => setAmount(e.target.value)} className="h-14 text-lg bg-muted/50 border-0 tabular-nums rounded-xl" />
+              <Input aria-label={`Amount in ${asset.symbol}`} type="number" placeholder="0.00" value={amount} onChange={(e) => setAmount(e.target.value)} className="h-14 text-lg bg-muted/50 border-0 tabular-nums rounded-xl" />
             </div>
 
             <div className="grid grid-cols-4 gap-2">
