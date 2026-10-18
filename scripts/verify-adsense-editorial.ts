@@ -10,7 +10,7 @@ import { loadSiteData } from "./loadData";
 import { uniqueRoutes } from "./routes";
 import { buildContentMap } from "./content";
 
-const { HOWTO_ASSETS, STRATEGIES, courseTracks } = await loadSiteData();
+const { HOWTO_ASSETS, STRATEGIES, courseTracks, LEARN_ARTICLES } = await loadSiteData();
 const routes = uniqueRoutes();
 const map = await buildContentMap();
 const audited = [
@@ -72,4 +72,17 @@ for (const slug of ["the-trading-journal", "discipline-and-daily-rituals", "hand
 }
 const coursesPage = readFileSync("src/pages/Courses.tsx", "utf8");
 assert.ok(!coursesPage.includes("Every claim sourced"), "Cannot claim every course statement is source-backed");
+const paper = LEARN_ARTICLES.find(article => article.slug === "what-is-paper-trading")!;
+const charts = LEARN_ARTICLES.find(article => article.slug === "how-to-read-stock-charts")!;
+const orderTypes = LEARN_ARTICLES.find(article => article.slug === "market-orders-vs-limit-orders")!;
+assert.ok(paper && charts && orderTypes);
+assert.doesNotMatch(paper.metaDescription, /no risk|no downside/i, "paper practice still has educational limits");
+assert.match(paper.metaDescription, /real-market costs/i);
+assert.doesNotMatch(charts.metaDescription, /like a pro|smarter trades/i);
+assert.match(JSON.stringify(charts.sections), /not evidence that a reversal is imminent/);
+assert.match(orderTypes.metaDescription, /market orders only/i);
+assert.doesNotMatch(orderTypes.metaDescription, /fill guarantees/i);
+assert.ok(orderTypes.relatedLinks.some(link => link.href === "/trade/nvda" && /simulated market order/.test(link.label)));
+assert.match(JSON.stringify(orderTypes.sections), /highest acceptable price/);
+
 console.log("PASS editorial audit: eight critical pages, six how-to sources, DCA and psychology consistency");
