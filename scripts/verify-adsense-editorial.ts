@@ -132,4 +132,18 @@ for (const [slug, expected] of [
 }
 console.log("PASS scoped source-fit regression: five asset classes, core hubs, portfolio articles and six glossary topics; no AdSense approval implied");
 
+for (const route of ["/learn", "/challenge", "/about", "/trade"]) {
+  assert.ok(map.get(route)?.sections.length, route + ": public support content required");
+}
+const learnHub = JSON.stringify(map.get("/learn"));
+const challengeHub = JSON.stringify(map.get("/challenge"));
+const aboutHub = JSON.stringify(map.get("/about"));
+assert.match(learnHub, /Study the options and futures lessons as conceptual examples/);
+assert.doesNotMatch(learnHub, /Only then take options or futures|complete beginner guide end to end|avoid predictions entirely/);
+assert.match(challengeHub, /no prize pool and no real money/);
+assert.doesNotMatch(challengeHub, /coin-flip on leverage|Judge the winner/);
+assert.doesNotMatch(aboutHub, /never handles money at all|Nothing on the site forecasts prices/);
+assert.ok(!readFileSync("scripts/staticCopy.ts", "utf8").includes('label: "Complete beginner guide"'));
+console.log("PASS published hubs: simulator-only derivatives, qualified editorial scope and virtual-only challenges");
+
 console.log("PASS editorial audit: eight critical pages, six how-to sources, DCA and psychology consistency");
