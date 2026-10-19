@@ -117,7 +117,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
         heading: "Advantages of Starting with Stocks",
         paragraphs: [
           "Company reports provide information about revenue, expenses and business risks. Such information can inform an analysis without making a stock stable or its future return predictable. Any historical index return depends on the dates, reinvestment assumptions, inflation and costs used.",
-          "Stocks are also more heavily regulated, which provides investor protections. You can learn about well-known companies you already use daily (Apple, Google, Amazon) and understand how real-world events affect stock prices. This practical connection makes learning more intuitive.",
+          "Listed shares and cryptocurrencies can be subject to different disclosure, custody and market rules. These vary by jurisdiction and asset; regulation does not eliminate loss risk. Use dated company filings rather than assumptions about familiar brands when researching a historical price change.",
           "TradeHQ lets you study company examples using virtual cash. Treat a news explanation as a hypothesis and compare alternative outcomes. Generated simulator changes do not reproduce an earnings announcement or establish how the actual stock responded."
         ]
       },
@@ -148,7 +148,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
         heading: "1. Buy and Hold (The Warren Buffett Approach)",
         paragraphs: [
           "Buy and hold means retaining an investment over a longer period instead of trading each short-term move. A business can lose value permanently, and patience does not guarantee recovery. In a simulation, define the observation period and compare a hold with alternative rules under the same assumptions.",
-          "On TradeHQ, you can practice buying blue-chip stocks like Apple (AAPL) or index ETFs like SPY and tracking their performance over weeks or months. This strategy teaches you to think long-term and avoid the emotional trap of selling during temporary dips. It also helps you understand the power of compound growth.",
+          "A virtual holding can be marked at several assumed later prices to compare a hold with a different hypothetical rule. Results depend on the window, costs, source quotes and omitted distributions. A lower price might be a lasting loss rather than a temporary dip.",
           "For an educational company comparison, record revenue, costs, debt and business assumptions before observing later results. The mentor provides rule-based practice prompts, not a forecast or a recommendation to commit capital. Distinguish information available at the time from hindsight."
         ]
       },
@@ -180,22 +180,22 @@ export const LEARN_ARTICLES: LearnArticle[] = [
   {
     slug: "stock-market-index-etfs",
     title: "What Is a Stock Market Index and How Do ETFs Work?",
-    summary: "Understand what the S&P 500, Nasdaq, and Dow Jones actually track — and how ETFs let you invest in entire markets with a single trade.",
+    summary: "Compare three different stock-index methodologies and learn how index-tracking ETFs provide specified exposure rather than ownership of an entire market.",
     metaDescription: "What are stock market indexes and ETFs? Learn about the S&P 500, Nasdaq, and Dow Jones. Practice trading SPY, QQQ on TradeHQ — free simulator.",
     readTime: "5 min read",
     sections: [
       {
         heading: "What Is a Stock Market Index?",
         paragraphs: [
-          "A stock market index is a measurement of a section of the stock market. It's calculated from the prices of selected stocks and represents a benchmark for the overall market or a specific sector. The three most famous U.S. indexes are the S&P 500 (500 large companies), the Nasdaq Composite (tech-heavy), and the Dow Jones Industrial Average (30 blue-chip stocks).",
-          "You can't directly buy an index — it's a number, not a tradeable security. But you can buy products that track the index, giving you exposure to all the stocks in it. These products are called ETFs (Exchange-Traded Funds), and they're one of the most popular investment vehicles in the world.",
-          "When financial news says 'the market was up 2% today,' they're usually referring to the S&P 500 index. Understanding indexes helps you gauge overall market health and compare individual stock performance against the broader market."
+          "A stock index summarizes a selected set of securities using published rules. The S&P 500 measures a large-company segment using float-adjusted market-capitalization weighting, the Nasdaq Composite measures eligible Nasdaq-listed securities, and the Dow Jones Industrial Average is a price-weighted index of 30 companies. These have different constituents and weighting methods; consult dated index methodology documents for current details.",
+          "An index is a calculation rather than a security purchased directly. Some exchange-traded funds seek to track named indexes using a specified portfolio and method. Fees, replication choices and distributions can cause a fund's return to differ from a reported index.",
+          "When a report states that 'the market' rose, identify its index, interval, currency and dividend treatment. A price index, total-return index and tracking ETF are distinct observations."
         ]
       },
       {
         heading: "How ETFs Work",
         paragraphs: [
-          "An ETF is a fund that holds a basket of securities (stocks, bonds, commodities) and trades on an exchange like a regular stock. SPY tracks the S&P 500, QQQ tracks the Nasdaq 100, and DIA tracks the Dow Jones. When you buy one share of SPY, you effectively own a tiny piece of all 500 companies in the S&P 500.",
+          "An ETF has shares that trade on an exchange and pursues an objective specified in its prospectus. Examples include SPY (S&P 500), QQQ (Nasdaq-100) and DIA (Dow Jones Industrial Average). An ETF shareholder owns shares of that fund rather than separately registered shares in every underlying company. Holdings, fees and returns may differ from those of its reference index.",
           "An ETF provides the exposure specified by its objective and holdings. Diversification, concentration, leverage, annual expenses and trading costs vary by fund; low cost or broad diversification is not guaranteed. Read the current fund documents before interpreting a historical comparison.",
           "Compare ETF examples with an individual company using the same period and position value in the simulator. Examine holdings and concentration rather than treating any fund as a universally appropriate beginner investment. Several funds can hold overlapping securities."
         ]
@@ -204,8 +204,8 @@ export const LEARN_ARTICLES: LearnArticle[] = [
         heading: "Building a Portfolio with ETFs",
         paragraphs: [
           "As a hypothetical accounting exercise, compare a 60% SPY, 20% QQQ and 20% cash allocation with another allocation that also totals 100%. These are arbitrary practice settings, not a suggested beginner portfolio. Overlapping holdings can create concentration even when several instruments are used.",
-          "ETFs are also excellent for learning about different sectors and asset classes. Want exposure to the semiconductor industry? There's an ETF for that. Interested in international markets, clean energy, or real estate? ETFs cover virtually every market segment imaginable.",
-          "Use TradeHQ to build a virtual portfolio with ETFs and track its performance against individual stock picks. This exercise teaches you about correlation, diversification benefits, and the trade-off between concentrated bets and broad market exposure. This exercise uses virtual cash and does not establish that a strategy will succeed with real money."
+          "Sector, regional and thematic ETFs offer differing exposure, but the name alone does not establish diversification, concentration or risk. Compare dated holdings, weights, fees and tracking objectives.",
+          "For a virtual portfolio comparison, hold constant the initial notional value and observation period for an ETF and a single-company example. Record overlapping holdings and missing distributions or execution costs. This study does not establish that the virtual allocation is truly diversified or that a real strategy would perform similarly."
         ]
       }
     ],
@@ -234,8 +234,8 @@ export const LEARN_ARTICLES: LearnArticle[] = [
       {
         heading: "Diversification: Don't Put All Eggs in One Basket",
         paragraphs: [
-          "Diversification means spreading investments across different assets so that poor performance in one area doesn't devastate your entire portfolio. If you own only tech stocks and the tech sector drops 30%, your whole portfolio suffers. But if tech is just 25% of a diversified portfolio, the impact is cushioned.",
-          "Effective diversification happens across multiple dimensions: asset classes (stocks, crypto, commodities), sectors (technology, healthcare, energy), geographies (US, international), and company sizes (large-cap, mid-cap, small-cap). ETFs make diversification simple — SPY gives you 500 stocks in one trade.",
+          "Diversification distributes selected exposures but cannot prevent several holdings declining together. For arithmetic practice, if a sector is 25% of a $100,000 virtual portfolio and falls 30% while everything else stays unchanged, that sector contributes a $7,500 loss before costs. Actual results depend on overlapping holdings and how other prices change.",
+          "Compare exposures by issuer, sector, geography, currency and economic sensitivity. More tickers do not necessarily mean less concentration when holdings overlap. An index fund provides a specified basket, not every type of protection.",
           "Compare a concentrated virtual portfolio with one spread across different practice exposures. Keep total starting value and observation period equal and record each contribution to gains and losses. A commodity or ETF is not an assured hedge; correlations and fund holdings can change."
         ]
       },
@@ -244,7 +244,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
         paragraphs: [
           "Over time, your portfolio allocation will drift as some assets outperform others. If your crypto holdings surge 50% while stocks grow 10%, crypto becomes a larger percentage of your portfolio than you intended — increasing your risk. Rebalancing means periodically selling some winners and buying more of the underperformers to maintain your target allocation.",
           "Rebalancing restores selected target weights. Timing and thresholds are choices to compare, not universal quarterly or five-percent rules. Rebalancing can add costs and can reduce returns in a continuing trend, so record turnover and compare against a portfolio left unchanged.",
-          "Practice rebalancing on TradeHQ by setting a target allocation at the start, then checking your portfolio monthly. Use the portfolio analytics feature to see how your allocations have shifted and make adjustment trades. This exercise builds the discipline you'll need when managing real investments. Remember: successful investing is a marathon, not a sprint."
+          "For an educational rebalancing worksheet, set hypothetical weights, recalculate them after invented price changes and quantify the effect of virtual transaction fees. Compare the adjusted portfolio with one left unchanged. No allocation, monthly schedule or calculated benefit should be treated as a recommendation for a real account."
         ]
       }
     ],

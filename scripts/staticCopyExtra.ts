@@ -22,7 +22,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
         "Do I need an account? No. Practice trading, courses and the glossary work without signing up. An optional account supports profiles and community features. Account cash, positions and server-recorded trades restore across devices when available; earlier guest trade history, journals and course progress remain on the original browser.",
         "Is the money real? No. Every balance, order and result is simulated, and the platform holds no funds.",
         "Are the prices real? Supported assets use periodically refreshed provider observations. Unsupported assets can use fixed simulator prices; charts may be synthetic. Check each source and timestamp rather than assuming a continuous exchange feed.",
-        "Does TradeHQ give advice? No. There are no signals, price targets or recommendations anywhere on the site.",
+        "Does TradeHQ execute investments or provide personalized advice? No. Trading examples and educational indicator labels are illustrative, not personal recommendations, and the simulator places virtual orders only.",
         "Where is my data? Guest practice records stay in your browser. Signed-in cash, positions and server-recorded trades are stored in Supabase and restored when the service is available. Earlier guest trade history, journal entries, course progress and streaks remain browser-held; a synced badge count does not restore the course record.",
       ],
     },
@@ -32,7 +32,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
     {
       h: "Orders supported by this simulator",
       list: [
-        "Market order: fills immediately at the shown simulated price. Simple, but in a fast market the price you see is not always the price you get — in real trading this gap is called slippage.",
+        "Market order: the virtual engine uses a simplified displayed practice price. Real market orders seek execution at available prices and may fill at different prices or not complete during market interruptions.",
         "Limit orders are explained in the learning material but are not available in the current simulator. Practice orders execute as market orders at the shown simulated price.",
         "Closing a position: sell some or all of an existing holding. You cannot sell more than you hold or open a short position. Completed buys and sells appear in portfolio trade history.",
       ],
@@ -41,7 +41,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
       h: "A practice routine that actually builds skill",
       p: [
         "Choose an exercise with a stated question, record the assumptions before placing orders and review the result afterwards. Transaction count alone does not measure learning or validate a strategy.",
-        "Every session should end with the same three questions written down: did I size this the way I said I would, did I exit where I said I would, and would I take this trade again knowing only what I knew at entry? Answering those honestly over a few months does more for results than any indicator.",
+        "A sample journal can ask whether the observed virtual quantity matched the written assumption, what changed after the quoted timestamp and which execution costs are missing. A journal helps review choices but does not establish improved returns.",
       ],
     },
   ],
@@ -57,9 +57,9 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
     {
       h: "Things that trip beginners on a markets screen",
       list: [
-        "Chasing the biggest gainer of the day, which is usually the worst risk-reward entry available.",
+        "Assuming a large recent gain predicts the next price move; an observed change does not determine future returns or a suitable entry.",
         "Assuming a low nominal price means an asset is 'cheap' — price per unit says nothing about value.",
-        "Treating an ETF as safe because it is diversified; a sector ETF can fall as hard as a single stock.",
+        "Treating any ETF as automatically low-risk: sector funds and concentrated funds still carry market and holding-specific risks.",
         "Ignoring market hours: equities gap overnight, crypto trades continuously, forex has session-driven liquidity.",
       ],
     },
@@ -79,8 +79,8 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
     {
       h: "Reviewing the portfolio weekly",
       p: [
-        "Set a fixed weekly review. Look at the three worst trades and ask whether each was a bad decision or a good decision with a bad outcome — the two are different, and confusing them is how traders abandon working methods and keep broken ones.",
-        "Then look at the largest win with the same suspicion. Outsized winners often come from oversized positions rather than better analysis, and a habit that produces one great week can produce one catastrophic week later.",
+        "Choose a repeatable review interval for virtual results and compare the information recorded before each order with what became known later. A loss alone cannot establish whether the original reasoning was sound.",
+        "Compare the largest virtual gain with its position size, price change, quotation source and costs. A large one-off outcome does not by itself establish skill or predict a similar future result.",
       ],
     },
   ],
@@ -90,7 +90,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
       h: "What a realistic learning timeline looks like",
       p: [
         "Learning timelines differ with prior knowledge, study time and the task being practised. A calendar duration does not establish proficiency or investment readiness. Set an observable learning goal, such as explaining an order fill or reproducing a fee calculation, and record which parts remain uncertain.",
-        "Nobody can promise you a timeline to profitability, and anyone who does is selling something. The material offers questions about position-size arithmetic, exit assumptions, record-keeping and instrument mechanics; completing it cannot guarantee that mistakes disappear.",
+        "A learning timeline varies by topic and prior experience. These guides test understanding of order mechanics, price observations and virtual calculations; completion does not verify investing competence or predict real outcomes.",
       ],
     },
     {
@@ -100,7 +100,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
         "Good material shows losing examples; bad material only shows winners.",
         "Good material cites exchanges, regulators and primary documents; bad material cites screenshots.",
         "Good material tells you who it is not for; bad material claims to suit everyone.",
-        "Good material never asks you to hurry.",
+        "A credible educational source separates observations from forecasts, documents data limitations and does not use time pressure as evidence.",
       ],
     },
   ],
@@ -325,7 +325,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
     {
       h: "Editorial standards",
       list: [
-        "No price predictions, targets, signals or 'best asset' rankings anywhere on the site.",
+        "Education-first positioning: illustrations of market indicators or price scenarios do not constitute verified trade signals, profitable strategies or personal financial recommendations.",
         "No invented statistics, testimonials, credentials or performance figures.",
         "Numbers in lessons are worked examples and are labelled as such.",
         "Every page states that the platform is educational and simulated.",
@@ -417,7 +417,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
       h: "Availability and jurisdiction",
       p: [
         "You must be old enough to form a contract where you live to use the account features, and you are responsible for keeping your login details private. Accounts that are used to abuse other people through public profiles, reviews or duels can be removed.",
-        "The service is provided as it is, without any guarantee of uptime, and features may change or be withdrawn. Because TradeHQ handles no money and executes no trades, disputes about market outcomes cannot arise from using it; anything relating to a real broker is between you and that broker.",
+        "The service is provided as described in the Terms, with no promise of uninterrupted access. It does not hold funds or execute real trades. Questions about virtual account data, simulated outcomes or site operation can still be raised through the Contact page; external brokerage issues are outside this simulator.",
       ],
     },
   ],
