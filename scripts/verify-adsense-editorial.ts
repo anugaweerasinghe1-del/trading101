@@ -10,7 +10,7 @@ import { loadSiteData } from "./loadData";
 import { uniqueRoutes } from "./routes";
 import { buildContentMap } from "./content";
 
-const { HOWTO_ASSETS, STRATEGIES, courseTracks, LEARN_ARTICLES } = await loadSiteData();
+const { HOWTO_ASSETS, STRATEGIES, courseTracks, LEARN_ARTICLES, tradingGlossary } = await loadSiteData();
 const routes = uniqueRoutes();
 const map = await buildContentMap();
 const audited = [
@@ -84,5 +84,52 @@ assert.match(orderTypes.metaDescription, /market orders only/i);
 assert.doesNotMatch(orderTypes.metaDescription, /fill guarantees/i);
 assert.ok(orderTypes.relatedLinks.some(link => link.href === "/trade/nvda" && /simulated market order/.test(link.label)));
 assert.match(JSON.stringify(orderTypes.sections), /highest acceptable price/);
+
+// Review named content families without claiming that an automated test can judge
+// all financial statements or Google's qualitative originality assessment.
+const publisherSource = readFileSync("scripts/content.ts", "utf8");
+const supportingSource = readFileSync("scripts/staticCopyExtra.ts", "utf8");
+for (const unsupported of [
+  "Volatility is several times that of a large-cap equity",
+  "timing beats analysis in this market",
+  "fund positions reward a longer review cycle",
+  "the single most predictable source of a large move",
+  "Forced liquidations of leveraged positions cause a large share",
+  "real returns will lag the simulated ones",
+  "Size crypto positions smaller than equity positions",
+  "give the position a wider stop",
+]) {
+  assert.ok(!publisherSource.includes(unsupported), "Unsupported asset-family claim returned: " + unsupported);
+}
+for (const unsupported of [
+  "There are no signals, price targets or recommendations anywhere",
+  "Answering those honestly over a few months does more for results than any indicator",
+  "Because TradeHQ handles no money and executes no trades, disputes about market outcomes cannot arise",
+  "usually the worst risk-reward entry available",
+]) {
+  assert.ok(!supportingSource.includes(unsupported), "Unsupported hub-wide claim returned: " + unsupported);
+}
+for (const path of ["/trade/btc", "/trade/aapl", "/trade/spy", "/trade/eurusd", "/trade/gold"]) {
+  const page = map.get(path);
+  assert.ok(page?.sections.length, path + ": asset class must have visible learning content");
+}
+const indexArticle = LEARN_ARTICLES.find(a => a.slug === "stock-market-index-etfs")!;
+const portfolioArticle = LEARN_ARTICLES.find(a => a.slug === "how-to-build-a-portfolio")!;
+assert.match(JSON.stringify(indexArticle.sections), /ETF shareholder owns shares of that fund/);
+assert.match(JSON.stringify(portfolioArticle.sections), /\$7,500 loss before costs/);
+assert.equal(0.25 * 100000 * 0.30, 7500, "Diversification example arithmetic");
+for (const [slug, expected] of [
+  ["limit-order-vs-market-order", /simplified virtual market orders only/],
+  ["dark-pool", /not by itself prove it took place in a dark pool/],
+  ["market-maker", /quoted spread is not guaranteed profit/],
+  ["wyckoff-method", /not records proving institutional intentions/],
+  ["paper-trading", /No number of successful virtual transactions proves/],
+  ["elliott-wave-theory", /hindsight bias/],
+] as const) {
+  const term = tradingGlossary.find(t => t.slug === slug)!;
+  assert.ok(term && expected.test(term.definition + " " + term.expertDefinition), slug + ": glossary qualification missing");
+  assert.ok(map.get("/wiki/" + slug)?.sections.length, slug + ": glossary has no authored page");
+}
+console.log("PASS scoped source-fit regression: five asset classes, core hubs, portfolio articles and six glossary topics; no AdSense approval implied");
 
 console.log("PASS editorial audit: eight critical pages, six how-to sources, DCA and psychology consistency");
