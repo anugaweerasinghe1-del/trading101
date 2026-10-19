@@ -147,3 +147,20 @@ assert.ok(!readFileSync("scripts/staticCopy.ts", "utf8").includes('label: "Compl
 console.log("PASS published hubs: simulator-only derivatives, qualified editorial scope and virtual-only challenges");
 
 console.log("PASS editorial audit: eight critical pages, six how-to sources, DCA and psychology consistency");
+
+// Keep public feature descriptions consistent with the actual local mentor and
+// server-scored duel implementation. This does not alter either feature.
+const mentorHub = JSON.stringify(map.get("/ai-mentor"));
+assert.match(mentorHub, /Chat does not call an AI provider/);
+assert.doesNotMatch(mentorHub, /requests AI responses|AI responses depend|mentor will decline/);
+assert.match(challengeHub, /final scores are frozen/);
+assert.doesNotMatch(challengeHub, /are not frozen|very likely lose to them over a year/);
+assert.doesNotMatch(JSON.stringify(map.get("/")), /Most beginners lose money not because/);
+assert.doesNotMatch(JSON.stringify(map.get("/trade")), /see how the equity curve smooths out/);
+assert.doesNotMatch(JSON.stringify(map.get("/reviews")), /product with no negative reviews is a product that removes/);
+assert.match(aboutHub, /AI-assisted drafting/);
+const aboutClient = readFileSync("src/pages/About.tsx", "utf8");
+assert.match(aboutClient, /AI-assisted drafting/);
+assert.doesNotMatch(aboutClient, /do not sell user data or run behavioural ads/);
+assert.doesNotMatch(readFileSync("src/pages/Challenge.tsx", "utf8"), /figures originate in client-held simulator state/);
+console.log("PASS public mentor, duel, publisher and hub claim consistency");

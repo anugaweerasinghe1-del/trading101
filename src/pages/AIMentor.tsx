@@ -212,7 +212,7 @@ export default function AIMentor() {
               {
                 question: "Can the AI Mentor predict prices?",
                 answer:
-                  "No. The mentor is built for education — it explains concepts, reviews your trade history and helps you build discipline. It will never give specific buy/sell recommendations or guarantees.",
+                  "No. This chat matches questions to a built-in educational answer library. It does not read your journal or trade history, forecast prices or assess whether an investment suits you.",
               },
               {
                 question: "Is the AI Mentor free?",

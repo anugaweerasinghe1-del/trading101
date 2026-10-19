@@ -236,9 +236,9 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
       h: "Reading reviews of any trading product",
       list: [
         "Be sceptical of any review mentioning profits — a simulator cannot produce them, and a real platform showing them proves nothing about you.",
-        "Reviews that only appear in a cluster on the same day usually are a cluster from the same source.",
+        "A cluster of reviews on one day is a reason to examine context, not proof of a shared author or source.",
         "The most useful reviews describe a specific task the reviewer tried to complete and whether it worked.",
-        "A product with no negative reviews is a product that removes them.",
+        "An absence of negative reviews does not establish whether feedback was removed. Consider the sample size and how submissions are handled.",
       ],
     },
     {
@@ -253,7 +253,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
     {
       h: "What a duel does and does not prove",
       p: [
-        "Thirty days is long enough to expose recklessness and short enough that luck still decides many outcomes. Someone who takes one enormous position and gets it right will beat a disciplined opponent over a month, and would very likely lose to them over a year. Read the result accordingly.",
+        "A 30-day simulated result cannot separate skill from luck or predict who would lead over a year. Concentrated exposure can produce large gains or losses. Compare the stated assumptions and drawdowns without inferring a reliable future ranking.",
         "The useful output of a duel is not the winner but the comparison of two journals covering the same market conditions. Two people who traded the same month and disagreed about what to do will each learn more from the other's reasoning than from the scoreboard.",
       ],
     },
@@ -273,7 +273,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
         "Send it to one person; the duel starts when they join.",
         "Joining records the second participant's current synced starting value; it does not reset either portfolio.",
         "The scoreboard and countdown appear on this page for both participants for the next 30 days.",
-        "The countdown reaching zero does not stop simulator trading. Displayed scores use synced practice statistics and are not frozen, audited final standings.",
+        "The countdown reaching zero does not stop simulator trading. For server-scored duels, final scores are frozen using server-recorded trades and the last cached valuation quotes available at the deadline. Legacy duels have no reconstructed final scores. Neither type is an audited investment record.",
       ],
     },
   ],
@@ -401,7 +401,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
       h: "No advisory relationship",
       p: [
         "Using this site creates no advisory, fiduciary or brokerage relationship of any kind. Lessons, glossary entries, comparisons, strategy walkthroughs and educational mentor responses are general educational information published to the public at large, with no knowledge of your circumstances, objectives, tax position or risk tolerance.",
-        "Before trading real money, consider seeking advice from a professional licensed in your own jurisdiction. Trading involves the risk of losing more than you invest when leverage is used, and most retail accounts trading leveraged products lose money.",
+        "Before trading real money, consider seeking advice from a professional licensed in your jurisdiction. Leverage magnifies gains and losses; whether losses can exceed a deposit depends on the product, account protections and applicable rules. TradeHQ does not provide leverage or establish a loss rate for retail traders.",
       ],
     },
     {

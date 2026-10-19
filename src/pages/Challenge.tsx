@@ -520,7 +520,7 @@ export default function Challenge() {
                   A duel compares percentage change, not dollar totals. If you begin a duel at
                   $104,000 of simulated equity and finish at $109,200, your duel score is
                   +5.0% — the $4,000 you were already up before the duel started does not count.
-                  Your friend is measured the same way from their own starting line. Because these figures originate in client-held simulator state, they are practice data rather than audited results.
+                  Your friend is measured the same way from their own starting line. Server-scored duels use server-recorded trades and cached quotes. Legacy client-summary duels are labelled separately and do not have reconstructed final scores. These are practice data rather than audited investment results.
                 </p>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Nothing is reset when a duel begins. Your practice portfolio, journal and
