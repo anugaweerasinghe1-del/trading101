@@ -1,6 +1,8 @@
 # TradeHQ — AdSense editorial remediation closeout
 **Date:** 19 October 2026  
 **Code baseline:** `05bb2749a8bc5a210d69064d1d8c6f43168ffa73` (merged #189)  
+**Merged production observation (19 October 2026):** The exact #189 merged SHA `05bb2749` passed GitHub Phase 3, Cloudflare compatibility/SEO, required validation and disposable PostgreSQL controls. Its Cloudflare Pages check succeeded, and Vercel deployment `dpl_8dpiT191B4XbpnFmcuWRhBQBvFQe` was reported READY on the TradeHQ production aliases. These are provider/CI observations, **not** a fresh 147-URL production crawl, a current Google index report or permission to submit AdSense.
+
 **Decision: HOLD ON REAPPLICATION until account-side eligibility, consent/ad-placement settings, and current site review evidence can be checked.** This is not a claim that Google has found a policy violation, or that its prior rejection reason is known.
 
 ## What was actually completed
