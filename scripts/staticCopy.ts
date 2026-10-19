@@ -51,7 +51,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
     links: [
       { href: "/markets", label: "Browse all markets" },
       { href: "/courses", label: "Structured trading courses" },
-      { href: "/learn-trading-guide", label: "Complete beginner guide" },
+      { href: "/learn-trading-guide", label: "Beginner practice guide" },
       { href: "/wiki", label: "Trading glossary" },
       { href: "/how-to-trade", label: "Asset-by-asset guides" },
       { href: "/about", label: "About TradeHQ" },
@@ -64,7 +64,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
         h: "How the practice trading desk works",
         p: [
           "The trading desk is where simulated orders are placed. You choose an instrument, choose a side, choose a size, and the order is filled against the simulator's current price. Guest fills and results are recorded in your browser. Account orders execute through the server and cash, positions and server-recorded trade history restore across devices when the service is available.",
-          "One order type is supported today: the market order, which fills immediately at the shown simulator price. Limit and stop orders are explained in the glossary but cannot yet be placed on the desk. Position sizing is entirely up to you, which is deliberate — learning to size a position is one of the few skills a simulator can teach almost as well as a live account.",
+          "One order type is supported today: the market order, which fills immediately at the shown simulator price. Limit and stop orders are explained in the glossary but cannot yet be placed on the desk. The virtual order screen leaves quantities to the learner. Comparing hypothetical account exposure can teach arithmetic, but this simplified fill model does not validate real-market risk management.",
         ],
       },
       {
@@ -166,29 +166,29 @@ export const STATIC_COPY: Record<string, PageContent> = {
         h: "Two different ways to learn here",
         p: [
           "TradeHQ separates learning into two formats on purpose. Full courses are structured multi-lesson tracks with quizzes, cited sources and a completion badge — use them when you want to actually learn a subject end to end. Quick reads are standalone articles that answer one question well; use them when you have a specific gap to fill.",
-          "Both formats point back at the same free practice account, because reading about position sizing and actually sizing a position are different skills, and only the second one shows up in your results.",
+          "Both formats link to the virtual practice desk. Reading explains concepts; a simulated order can illustrate the arithmetic and interface, but the resulting virtual performance cannot validate financial competence.",
         ],
       },
       {
         h: "A suggested order for complete beginners",
         list: [
-          "Read the complete beginner guide end to end so the vocabulary stops being a barrier.",
+          "Use the beginner practice guide to learn what virtual orders, prices and fees mean, then follow a structured course for more detail.",
           "Use the trading psychology course to examine records, decisions and bias; it does not assign a universal cause to beginner losses.",
           "Use the macro course to read releases and distinguish observed information from uncertain explanations of price changes.",
-          "Only then take options or futures, which are leveraged and unforgiving of gaps in the basics.",
+          "Study the options and futures lessons as conceptual examples of contracts, leverage and risk; TradeHQ does not execute real or simulated derivative contracts.",
           "Keep the glossary open in a second tab and look up every unfamiliar term as it appears.",
         ],
       },
       {
         h: "How this material is written and reviewed",
         p: [
-          "Lessons are written in plain English, cite primary sources such as exchange and regulator documentation where a factual claim is made, and avoid predictions entirely. Where a lesson uses numbers, they are worked examples, not forecasts. Nothing here is personalised advice, and no lesson tells you what to buy.",
+          "Lessons are designed for independent study. Relevant sources accompany many definitions and examples, while some references are background rather than evidence of a strategy's effectiveness. Numerical scenarios are illustrative, not forecasts or individual financial recommendations. Report missing or misleading citations through the Contact page.",
         ],
       },
     ],
     links: [
       { href: "/courses", label: "Structured courses" },
-      { href: "/learn-trading-guide", label: "Complete beginner guide" },
+      { href: "/learn-trading-guide", label: "Beginner practice guide" },
       { href: "/wiki", label: "Trading glossary" },
       { href: "/learn/country", label: "Country guides" },
     ],
@@ -332,7 +332,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
         list: [
           "We do not pay for reviews or offer anything in exchange for one.",
           "We do not delete negative reviews that are honest about the product.",
-          "We do not publish performance claims or income claims.",
+          "Visitor reviews and leaderboards concern simulated activity; they are not independent evidence of actual investment skill, performance or income.",
         ],
       },
     ],
@@ -354,10 +354,10 @@ export const STATIC_COPY: Record<string, PageContent> = {
       {
         h: "Rules that make a duel actually useful",
         list: [
-          "Agree a maximum position size in advance so the duel does not become a coin-flip on leverage.",
-          "Both traders journal every entry and exit; compare journals at the end, not just returns.",
-          "Judge the winner on drawdown as well as return.",
-          "Run a second duel afterwards with the losing habits explicitly banned.",
+          "For a virtual challenge, agree on the example's quantity and exposure assumptions; TradeHQ does not provide leverage or real-money wagering.",
+          "If participants choose to keep a virtual journal, compare stated assumptions and data-source labels rather than treating ranking as a measure of investment ability.",
+          "Compare the illustrated drawdowns and simulated returns without claiming they establish superior real-world skill.",
+          "Discuss which hypothetical assumptions were missing or changed; there is no prize or real-money outcome.",
         ],
       },
     ],
@@ -377,7 +377,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
         ],
       },
       {
-        h: "What TradeHQ will never add",
+        h: "What TradeHQ currently excludes from its educational scope",
         list: [
           "Real-money trading or any brokerage function.",
           "Trade signals, price targets or copy-trading.",
@@ -397,8 +397,8 @@ export const STATIC_COPY: Record<string, PageContent> = {
       {
         h: "Who builds TradeHQ",
         p: [
-          "TradeHQ is built and maintained by Anuga Weerasinghe as an independent educational project. It began as a way to let students in markets with limited access to brokerage accounts learn how trading actually works before risking money they cannot afford to lose.",
-          "TradeHQ is not a brokerage, not a registered investment adviser, and not affiliated with any exchange or broker. It holds no client money because it never handles money at all.",
+          "TradeHQ is maintained as an independent educational project to help learners explore market mechanics with virtual balances. The simulator does not require or enable real-money trading.",
+          "TradeHQ is an educational simulator, not a brokerage or registered investment adviser. It does not accept funds or place real securities orders, and no exchange or brokerage affiliation is claimed.",
         ],
       },
       {
@@ -406,7 +406,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
         list: [
           "Lessons and guides are written for TradeHQ, not syndicated from elsewhere.",
           "Factual claims about market mechanics cite exchange, regulator or central-bank documentation where possible.",
-          "Nothing on the site forecasts prices, and no page recommends an instrument.",
+          "Illustrative chart-pattern labels, calculated indicators and hypothetical scenarios should not be interpreted as verified price forecasts or personalised instrument recommendations.",
           "Errors are corrected when reported; the contact page is the fastest route.",
         ],
       },
