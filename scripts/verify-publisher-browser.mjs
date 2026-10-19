@@ -2,7 +2,8 @@
 import assert from "node:assert/strict";
 import { createServer } from "node:http";
 import { spawn, spawnSync } from "node:child_process";
-import { readFileSync, existsSync, mkdtempSync, rmSync } from "node:fs";
+import { readFileSync, existsSync, mkdtempSync } from "node:fs";
+import { rm } from "node:fs/promises";
 import { resolve, join, extname } from "node:path";
 import { tmpdir } from "node:os";
 import { once } from "node:events";
@@ -37,7 +38,7 @@ let browser, socket;
 try {
   server.listen(0, "127.0.0.1"); await once(server, "listening");
   const origin = "http://127.0.0.1:" + server.address().port;
-  browser = spawn(chrome, ["--headless=new", "--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage", "--no-first-run", "--remote-debugging-address=127.0.0.1", "--remote-debugging-port=0", "--user-data-dir=" + temp, "about:blank"], { stdio: "ignore" });
+  browser = spawn(chrome, ["--headless=new", "--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage", "--no-first-run", "--remote-debugging-address=127.0.0.1", "--remote-debugging-port=0", "--user-data-dir=" + temp, "about:blank"], { stdio: "ignore", detached: process.platform !== "win32" });
   let launchError; browser.on("error", error => { launchError = error; });
   const port = await waitForChromePort({ readPort: () => { try { return readFileSync(join(temp, "DevToolsActivePort"), "utf8").split("\n")[0]; } catch { return null; } }, processState: () => browser, launchError: () => launchError, delay });
   const pages = await (await fetch(`http://127.0.0.1:${port}/json/list`)).json();
@@ -97,9 +98,22 @@ try {
   console.log(`PASS real Chromium: ${checked} compiled route visits (${routes.length} URLs × desktop/mobile × JS on/off), canonical/H1/content parity and overflow. Native courses use read-only published fixtures, not production services.`);
 } finally {
   socket?.close();
-  if (browser && browser.exitCode === null && browser.signalCode === null) {
-    const exited = once(browser, "exit"); browser.kill("SIGKILL"); await exited;
+  // Chromium forks subprocesses; waiting only for its parent can leave a child
+  // writing into Default/ while fs.rmdir traverses the temporary profile.
+  // A detached POSIX process group allows us to stop all isolated Chromium
+  // children, even if the initial browser process has already exited.
+  const waitForExit = browser && browser.exitCode === null && browser.signalCode === null
+    ? once(browser, "exit") : null;
+  if (browser?.pid && process.platform !== "win32") {
+    try { process.kill(-browser.pid, "SIGKILL"); }
+    catch (error) { if (error.code !== "ESRCH") throw error; }
+  } else if (waitForExit) {
+    browser.kill("SIGKILL");
   }
+  if (waitForExit) await waitForExit;
   server.closeAllConnections(); await new Promise(resolveDone => server.close(resolveDone));
-  rmSync(temp, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
+  // Give platform-specific shutdown helpers a bounded settling window and
+  // preserve cleanup as a real failing check if deletion remains impossible.
+  await delay(250);
+  await rm(temp, { recursive: true, force: true, maxRetries: 20, retryDelay: 200 });
 }
