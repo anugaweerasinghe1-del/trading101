@@ -52,7 +52,7 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
     localAssets: [
       "The All Share Price Index and the S&P SL20 as a daily read on local sentiment",
       "USD/LKR, because it silently determines the rupee value of any foreign asset you hold",
-      "Brent crude and global rice and wheat prices, which feed directly into local inflation",
+      "Oil and food-price observations as context; local inflation also depends on currency, costs and policy",
       "US company reporting, studied independently of whether a particular overseas brokerage route is available",
     ],
     practicePlan:
@@ -88,7 +88,7 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
     localAssets: [
       "Nifty 50 and Bank Nifty as the reference indices for Indian equity sentiment",
       "USD/INR, which affects the rupee return on any foreign holding",
-      "Gold, which remains the default household asset and behaves differently in rupees than in dollars",
+      "Gold as a worksheet for distinguishing a dollar price from its rupee translation",
       "US technology large-caps, widely followed by Indian retail investors through international platforms",
     ],
     practicePlan:
@@ -96,7 +96,7 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
     faqs: [
       { q: "Is TradeHQ SEBI-registered?", a: "TradeHQ is a free educational simulator and does not execute trades or hold client funds. For the activities and entities that require SEBI registration, use SEBI's current rules and recognised-intermediary registry." },
       { q: "Can I paper trade Indian stocks like Reliance or TCS?", a: "The current TradeHQ catalogue focuses on US and global tickers. Indian-listed tickers are planned but not yet live." },
-      { q: "Does the app work offline?", a: "The interface loads and stays usable on slow connections, but live price ticks require an internet connection." },
+      { q: "Does the app work offline?", a: "Initial pages, scripts and provider quotes can require a network connection. Existing browser-held records do not guarantee that every page or feature works offline." },
     ],
   },
   {
@@ -124,8 +124,8 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
     localAssets: [
       "The PSEi as the headline measure of local equity sentiment",
       "USD/PHP, which matters to any household receiving remittances",
-      "Regional bank and property names, which dominate local index weight",
-      "US large-caps, the most common first international exposure for Filipino investors",
+      "The PSE’s dated index constituent and weight disclosures, rather than an assumed permanent sector ranking",
+      "US company reports as external research examples; virtual availability does not establish real-market access",
     ],
     practicePlan:
       "Optional study worksheet: assume a fictional USD 100 remittance and choose two hypothetical PHP-per-USD rates. Calculate the peso receipt under each before fees. Then add an explicit fee assumption and compare the net receipts. This separates currency translation and transaction costs from an investment return. It does not forecast USD/PHP or establish a bank or brokerage route. Select a study schedule that fits school or work rather than following a foreign market overnight.",
@@ -162,7 +162,7 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
     localAssets: [
       "The KSE-100 as the headline domestic index",
       "USD/PKR, which drives imported inflation and the local value of foreign holdings",
-      "Energy, cement and banking sector names, which lead local index moves",
+      "Dated PSX constituent and sector information to distinguish index weights from a claim about what caused a move",
       "Global oil prices, given their outsized effect on the Pakistani import bill",
     ],
     practicePlan:
@@ -199,9 +199,9 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
       "TradeHQ does not publish a real-money starting amount because provider minimums, fees, FX terms and personal circumstances vary. Verify current terms directly with a registered provider if you ever consider a real account.",
     localAssets: [
       "The NGX All-Share Index as the domestic benchmark",
-      "USD/NGN, which shapes almost every price in the economy",
+      "USD/NGN as a currency-translation worksheet input, separate from a measured inflation effect",
       "Brent crude, given the weight of oil in national revenue",
-      "US large-cap equities, the most common international exposure available locally",
+      "US company reporting as study material, separate from eligibility to use an overseas provider",
     ],
     practicePlan:
       "Optional study worksheet: model a fictional USD 100 oil receipt at two hypothetical NGN-per-USD rates. Next hold the rate fixed and change the dollar receipt. Compare currency translation with a change in export proceeds. Local inflation, production volumes, fiscal decisions and costs introduce further effects, so the worksheet cannot forecast the naira or a listed company. Keep a virtual stock-order exercise separate from any real account or funding decision.",

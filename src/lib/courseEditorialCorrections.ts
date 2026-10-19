@@ -485,6 +485,311 @@ const corrections: {slug: string; path: (string | number)[]; expected: unknown; 
   }
 ];
 
+// Residual contradictions found by the individual live review on 19 October.
+corrections.push(...[
+  {
+    "slug": "cryptocurrency-price-feeds-and-valuation",
+    "path": [
+      "progression"
+    ],
+    "expected": "This course prepares you for advanced statistical trading, algorithmic execution analysis, and portfolio risk management modules.",
+    "replacement": "Start with venue tickers and a volume-weighted arithmetic example, then compare observation times and delayed portfolio marks. Finish with cash-inclusive allocation and a fee-aware rebalance. These lessons do not establish readiness for statistical trading or algorithmic execution."
+  },
+  {
+    "slug": "cryptocurrency-price-feeds-and-valuation",
+    "path": [
+      "lessons",
+      0,
+      "body",
+      2
+    ],
+    "expected": "To understand how these raw price points translate into actionable data, traders must analyze the bid-ask spread and order book depth. A highly liquid exchange maintains tight spreads, meaning the difference between the highest buy order and the lowest sell order is minimal. When trading volume surges, raw tickers are produced continuously, providing a high-fidelity representation of current market consensus. Conversely, illiquid exchanges present wider spreads and sporadic ticker updates, making their individual prices less reliable for establishing a fair global benchmark for portfolio valuation.",
+    "replacement": "A bid is a quoted buying price and an ask is a quoted selling price for a specified venue and time. Their difference is the spread. Available quantity matters separately: a narrow spread does not guarantee a large order can execute at that quote. A burst of volume does not make a ticker complete or certify a global consensus. Compare observations using matching instruments, quote currencies and timestamps before attributing a difference to liquidity. An unusual price can be a real venue observation rather than an erroneous record; the source and measurement window determine which question can be answered."
+  },
+  {
+    "slug": "cryptocurrency-price-feeds-and-valuation",
+    "path": [
+      "lessons",
+      0,
+      "body",
+      4
+    ],
+    "expected": "In the hypothetical two-venue worksheet, $10 times 1,000 units plus $11 times 100 units gives $11,100 of price-times-volume. Dividing by 1,100 units gives approximately $10.0909. This assumes comparable unit volumes over matching windows and ignores spread and fees. It illustrates one volume-weighted average, not the exact current methodology of every data provider or a guaranteed executable price.",
+    "replacement": "A volume-weighted average multiplies each comparable price by its matched unit volume, adds those products and divides by total units. Larger weights contribute more to this arithmetic average. Providers can additionally filter observations, convert quote currencies and apply product-specific aggregation rules. Match the volume periods and quantity units before calculating; dollar turnover is not interchangeable with token units. An aggregate reference is neither a reserved quote nor a guarantee that any specified quantity can be exchanged at that price. The following invented two-venue example demonstrates only the stated weighting calculation."
+  },
+  {
+    "slug": "cryptocurrency-price-feeds-and-valuation",
+    "path": [
+      "lessons",
+      0,
+      "keyTakeaways"
+    ],
+    "expected": [
+      "Cryptocurrency price feeds are built by aggregating raw ticker data from independent global exchanges.",
+      "Volume-Weighted Average Price (VWAP) ensures high-volume exchanges have a larger impact on the aggregated price.",
+      "Aggregators filter out price outliers and stale exchange data using statistical algorithms like Median Absolute Deviation."
+    ],
+    "replacement": [
+      "Independent venues can publish different ticker measures and observations.",
+      "The worksheet weights comparable prices by matched unit volume; provider implementations can add other rules.",
+      "Filtering and freshness require the provider’s current methodology and timestamps, not an assumed universal algorithm."
+    ]
+  },
+  {
+    "slug": "cryptocurrency-price-feeds-and-valuation",
+    "path": [
+      "lessons",
+      0,
+      "quiz",
+      1,
+      "explanation"
+    ],
+    "expected": "VWAP ensures that exchanges processing higher volumes have a proportionally larger influence on the calculated global benchmark price.",
+    "replacement": "In the stated worksheet, a larger matched unit volume gives that price more weight. This arithmetic example does not describe every provider’s complete live benchmark methodology."
+  },
+  {
+    "slug": "cryptocurrency-price-feeds-and-valuation",
+    "path": [
+      "lessons",
+      1,
+      "body",
+      2
+    ],
+    "expected": "This latency means that when you view a price update on a dashboard, you are looking at historical snapshot data rather than a real-time stream. High-frequency changes are frequently smoothed out, meaning rapid price spikes or sudden market drops might not register on your screen immediately. A delay of several minutes can matter differently depending on the task; it should never be assumed harmless, especially during volatile markets. Understanding this technical pipeline is essential for interpreting why your virtual orders might execute at unexpected rates.",
+    "replacement": "An observation can be older than the time it reaches a dashboard. A snapshot series can also omit price changes between observations; this is not proof that a smoothing algorithm was applied. Aggregation, sampling, caching and transmission are distinct processes with different timestamps. Their effect depends on the learning question and market conditions. Record the provider observation time and fetch time separately, and keep missing observations distinct from a zero price. A recent page refresh or successful response cannot establish that the underlying observation is fresh or executable."
+  },
+  {
+    "slug": "cryptocurrency-price-feeds-and-valuation",
+    "path": [
+      "lessons",
+      1,
+      "keyTakeaways"
+    ],
+    "expected": [
+      "API data feeds often use periodic snapshots, introducing a time delay between live markets and dashboards.",
+      "Paper portfolio valuations can lag behind live exchange rates, creating temporary price discrepancies.",
+      "Simulating slippage and execution delay is necessary to practice realistic portfolio management."
+    ],
+    "replacement": [
+      "Observation time, fetch time and periodic sampling describe different parts of a data feed.",
+      "Delayed marks can differ from a contemporaneous comparison quote, whose own venue and timestamp must be stated.",
+      "A hypothetical slippage assumption and a separately charged fee do not reproduce actual order-book execution."
+    ]
+  },
+  {
+    "slug": "cryptocurrency-price-feeds-and-valuation",
+    "path": [
+      "lessons",
+      2,
+      "body",
+      2
+    ],
+    "expected": "As asset prices fluctuate, your actual portfolio weights will drift away from your original targets. If Ethereum experiences a rapid price surge while Bitcoin remains stagnant, Ethereum's share of your portfolio might climb to fifty-five percent. This unplanned shift increases your concentration risk, making your overall net asset value overly sensitive to Ethereum's price movements. To restore your intended risk profile, you must systematically sell overperforming assets and buy underperforming ones through a process called portfolio rebalancing.",
+    "replacement": "Price changes can alter portfolio weights without an order. If ETH rises while other marked values stay fixed, its share of total value can increase. That changes sensitivity to ETH, but it does not automatically establish excessive risk or require a sale. Rebalancing is one possible response to a chosen target; retaining the drift or adding new cash are different comparisons. State the objective, costs and measurement date before evaluating an adjustment. A target allocation is an exercise input rather than proof that the resulting portfolio is appropriate for real money."
+  },
+  {
+    "slug": "cryptocurrency-price-feeds-and-valuation",
+    "path": [
+      "lessons",
+      2,
+      "body",
+      7
+    ],
+    "expected": "Holding a portion of your portfolio in virtual cash provides stability, but it also introduces a phenomenon known as cash drag. Cash drag is the negative impact that uninvested cash has on your overall portfolio returns during a rising market. Because cash does not yield capital gains, a portfolio containing twenty percent cash will underperform a fully invested portfolio when asset prices are climbing. However, during market downturns, this cash reserve acts as a vital buffer, preserving capital and offering liquidity.",
+    "replacement": "For a fee-free classroom comparison, suppose one account holds $80,000 of an asset and $20,000 non-interest-bearing virtual cash, while a second holds $100,000 of the same asset. A chosen 10% asset rise produces $108,000 versus $110,000. A 10% fall instead produces $92,000 versus $90,000. Cash changes participation in both paths; the word drag describes the rising comparison, not a universal disadvantage or recommendation. The example excludes interest, inflation, taxes and other product risks. Real cash arrangements need their own terms and cannot be inferred from the simulator balance."
+  },
+  {
+    "slug": "cryptocurrency-price-feeds-and-valuation",
+    "path": [
+      "lessons",
+      2,
+      "body",
+      11
+    ],
+    "expected": "Before costs, selling $10,000 from the $60,000 Bitcoin holding would leave $50,000 Bitcoin and $50,000 cash. With TradeHQ’s 0.1% sale fee, the sale instead nets $9,990: Bitcoin becomes $50,000, cash $49,990 and total value $99,990. The weights are approximately 50.005% and 49.995%, so the naive order does not restore exactly 50/50 after fees. Quote changes and quantity rounding can create further differences. This is a hypothetical accounting exercise, not a required allocation.",
+    "replacement": "Before costs, selling $10,000 from the $60,000 Bitcoin holding would leave $50,000 Bitcoin and $50,000 cash. With TradeHQ’s 0.1% sale fee, the sale instead nets $9,990: Bitcoin becomes $50,000, cash $49,990 and total value $99,990. The weights are approximately 50.005% and 49.995%, so the naive order does not restore exactly 50/50 after fees. Quote changes and quantity rounding can create further differences. This is a hypothetical accounting exercise, not a required allocation. For an exact fee-aware 50% target with unchanged quotes and no quantity rounding, let S be the sale notional: 60,000 − S = 0.5 × (100,000 − 0.001S). Thus S = 10,000/0.9995, approximately $10,005.0025. The holding and cash then each equal approximately $49,994.9975. This derives a worksheet amount, not a real-market execution guarantee."
+  },
+  {
+    "slug": "cryptocurrency-price-feeds-and-valuation",
+    "path": [
+      "lessons",
+      2,
+      "keyTakeaways"
+    ],
+    "expected": [
+      "Portfolio rebalancing maintains target asset weights to manage concentration risk effectively.",
+      "Virtual cash reserves provide necessary liquidity for transactions but can cause cash drag during market rallies.",
+      "Accurate rebalancing requires calculating cash requirements while accounting for delayed price execution."
+    ],
+    "replacement": [
+      "Rebalancing adjusts toward selected weights; it does not guarantee lower risk or better returns.",
+      "Virtual cash can fund an affordable purchase including fees, while changing participation in gains and losses.",
+      "Fee-aware target arithmetic assumes stated quotes and units; changed observations and rounding can alter the result."
+    ]
+  },
+  {
+    "slug": "cryptocurrency-price-feeds-and-valuation",
+    "path": [
+      "lessons",
+      2,
+      "quiz",
+      0,
+      "explanation"
+    ],
+    "expected": "Rebalancing restores your intended asset allocation weights, preventing the portfolio from becoming overly concentrated in one asset.",
+    "replacement": "Rebalancing moves toward selected target weights. Those targets can themselves be concentrated, and the adjustment does not prevent shared risks or guarantee lower losses."
+  },
+  {
+    "slug": "cryptocurrency-price-feeds-and-valuation",
+    "path": [
+      "lessons",
+      2,
+      "quiz",
+      1,
+      "question"
+    ],
+    "expected": "How does cash drag affect a portfolio during a strong market rally?",
+    "replacement": "Compared with the same asset fully invested in a fee-free rising-price worksheet, what does some non-interest-bearing virtual cash do?"
+  },
+  {
+    "slug": "cryptocurrency-price-feeds-and-valuation",
+    "path": [
+      "lessons",
+      2,
+      "quiz",
+      1,
+      "explanation"
+    ],
+    "expected": "Cash drag refers to the drag on performance caused by holding uninvested cash, which does not appreciate during a market rally.",
+    "replacement": "With the same rising asset and no other differences, the cash portion does not participate in that gain. A declining path reverses the comparison; real cash can have interest and other characteristics."
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "lessons",
+      0,
+      "body",
+      2
+    ],
+    "expected": "To translate percentage weights into actionable trades, you must perform a simple calculation using your total portfolio value. For instance, if you decide to allocate fifteen percent of your virtual portfolio to a spot exchange-traded fund, your target dollar allocation is fifteen thousand dollars. To find the exact number of units to acquire, you divide this target dollar amount by the current market price of the asset. This methodical approach ensures your trades are always aligned with your pre-determined risk boundaries and overall strategic allocation.",
+    "replacement": "To obtain units for a stated notional amount, divide that amount by the assumed price per unit. For example, a hypothetical $15,000 notional at $300 per share gives 50 shares before fees. This does not guarantee a post-trade allocation percentage. A purchase fee reduces cash and total marked equity, changing the denominator; an order also needs sufficient cash for its fee. State whether the target refers to pre-trade value or final value. Quote changes and rounding can create further differences, so reconcile the recorded quantity, cash debit and marked holding after the exercise."
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "lessons",
+      0,
+      "body",
+      8
+    ],
+    "expected": "Additionally, paper trading platforms execute trades using market orders at the current snapshot price, ignoring the liquidity constraints of real-world order books. In actual markets, executing a large buy order can cause slippage, pushing the execution price higher and distorting your intended target weight. Recognizing these differences helps you maintain a realistic perspective on your simulated performance, ensuring you do not develop false confidence when transitioning from a zero-slippage virtual environment to highly volatile, real-world financial markets.",
+    "replacement": "TradeHQ’s simplified market orders use a displayed practice input without modelling exchange order queues or calibrated slippage. Other simulators can implement different order types and fill assumptions. An actual venue fill depends on available prices, quantity and timing; a single reference quote does not reserve that execution. A hypothetical worse fill can be written into a separate worksheet, but it is not a measured result unless the matching execution record exists. Keep that scenario, the virtual transaction fee and actual market evidence in separate fields when comparing outcomes."
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "lessons",
+      0,
+      "body",
+      11
+    ],
+    "expected": "Ignoring costs, $100,000 times 25% gives $25,000, and $25,000 divided by $250 gives 100 shares. On TradeHQ, buying those shares also incurs a 0.1% fee of $25. Cash falls to $74,975, while the position is marked at $25,000: total marked value is $99,975 and the holding is about 25.006% of that total. Thus the simple division sets a pre-fee notional amount, not a perfect post-fee portfolio weight. Recheck affordability, quantity rounding and the actual recorded fill.",
+    "replacement": "Ignoring costs, $100,000 times 25% gives $25,000, and $25,000 divided by $250 gives 100 shares. On TradeHQ, buying those shares also incurs a 0.1% fee of $25. Cash falls to $74,975, while the position is marked at $25,000: total marked value is $99,975 and the holding is about 25.006% of that total. Thus the simple division sets a pre-fee notional amount, not a perfect post-fee portfolio weight. Recheck affordability, quantity rounding and the actual recorded fill. If an exact 25% post-fee target is the question, let B be the purchase notional: B = 0.25 × (100,000 − 0.001B). Therefore B = 25,000/1.00025, approximately $24,993.7516, or 99.975006 shares at $250. The fee and permitted quantity precision must still be checked; these are fixed-price worksheet assumptions."
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "lessons",
+      0,
+      "keyTakeaways"
+    ],
+    "expected": [
+      "Position sizing uses target percentage weights to manage risk systematically.",
+      "Calculating units to trade requires dividing the target dollar amount by the current snapshot price.",
+      "Spot simulation on TradeHQ relies entirely on asset diversification and cash buffers since leverage and hedging are unavailable."
+    ],
+    "replacement": [
+      "A selected portfolio weight is a classroom input, not a guaranteed risk boundary.",
+      "Units equal assumed notional divided by price; fees change cash and post-trade weights.",
+      "TradeHQ provides long-only spot practice without options, futures, borrowed positions or real order-book execution."
+    ]
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "lessons",
+      0,
+      "quiz",
+      2,
+      "explanation"
+    ],
+    "expected": "TradeHQ is restricted to spot instruments and does not support short selling, leverage, futures, or options, meaning you cannot hedge downside risk directly.",
+    "replacement": "The engine does not execute options, futures, borrowed positions or short sales. Reducing exposure and holding cash are separate actions; this limitation is not a claim that every risk can or cannot be hedged elsewhere."
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "lessons",
+      1,
+      "body",
+      11
+    ],
+    "expected": "To complete the task, first sum the current values: forty-five thousand, thirty-five thousand, and forty thousand dollars. This calculation reveals a new total portfolio value of one hundred and twenty thousand dollars. Next, calculate the weights: gold is thirty-seven and a half percent, the stock index is approximately 29.17 percent, and the token is approximately 33.33 percent. Your token allocation has drifted from twenty percent to thirty-three percent, signaling a major concentration risk that warrants reviewing your hypothetical concentration limit before deciding whether to rebalance.",
+    "replacement": "The hypothetical end values total $120,000. Dividing each by that same denominator gives gold 37.5%, the index approximately 29.1667% and the token approximately 33.3333%. The token’s initial weight was 20%, so its weight rose by about 13.3333 percentage points. Percentage points differ from a percent change in the weight itself. These marked balances exclude costs and cash flows. The drift identifies changed exposure, not a universally unacceptable allocation or an automatic trade. Compare any chosen review threshold with the original assumptions and missing risks before evaluating a hypothetical rebalance."
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "lessons",
+      2,
+      "body",
+      4
+    ],
+    "expected": "Managing a virtual cash buffer is crucial when rebalancing spot portfolios. In our paper trading environment, cash is not just idle capital; it serves as a vital shock absorber and liquidity source. When you need to buy underweight assets, your virtual cash balance provides the immediate funds required without forcing you to sell other assets first. Maintaining a target cash allocation, such as five percent of your total portfolio, can provide funds for modest adjustments, but does not guarantee that every planned purchase is affordable.",
+    "replacement": "Before a hypothetical purchase, list available cash, assumed price, quantity and the 0.1% buy fee. Before a sale, list held units and the 0.1% sale fee. This distinguishes a chosen allocation from an affordable sequence of virtual orders. Cash can fund a purchase without a preceding sale only when the full debit is available; an order plan is not a promise about later prices. The exercise can compare selling first, using existing cash or leaving the portfolio unchanged, while recording each cost and any changed quote. No particular cash fraction is required by this lesson."
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "lessons",
+      2,
+      "body",
+      8
+    ],
+    "expected": "Ignoring fees, selling $10,000 of stock and buying $10,000 of bond ETFs would restore $40,000, $40,000 and $20,000 cash. With TradeHQ’s 0.1% fee, the sale nets $9,990 and the purchase costs $10,010. Final cash is $19,980, holdings total $80,000 and portfolio value is $99,980. The weights are approximately 40.008%, 40.008% and 19.984%, rather than exactly 40/40/20. This example assumes unchanged quotes and ignores quantity rounding.",
+    "replacement": "Ignoring fees, selling $10,000 of stock and buying $10,000 of bond ETFs would restore $40,000, $40,000 and $20,000 cash. With TradeHQ’s 0.1% fee, the sale nets $9,990 and the purchase costs $10,010. Final cash is $19,980, holdings total $80,000 and portfolio value is $99,980. The weights are approximately 40.008%, 40.008% and 19.984%, rather than exactly 40/40/20. This example assumes unchanged quotes and ignores quantity rounding. Under those fixed-price assumptions, an exact 40/40/20 solution instead sells $10,008 of stock and buys $9,992 of the bond-ETF example. The combined fee is still $20. Each holding is $39,992 and cash is $19,996, totalling $99,980; dividing gives 40%, 40% and 20%. This assumes fractional quantities permit those notionals and the inputs stay unchanged."
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "lessons",
+      2,
+      "body",
+      11
+    ],
+    "expected": "Before fees, selling $10,000 reduces the $70,000 equity holding to $60,000. With the 0.1% sale fee, cash rises from $30,000 to $39,990 and total marked value becomes $99,990. Equity is about 60.006% and cash 39.994%, not exactly 60/40. Calculate the fee-aware target again if exact fractions are the question, while acknowledging changed quotes and unit rounding. An approximate rebalance may be sufficient for a stated worksheet tolerance; no real-money action is prescribed.",
+    "replacement": "Before fees, selling $10,000 reduces the $70,000 equity holding to $60,000. With the 0.1% sale fee, cash rises from $30,000 to $39,990 and total marked value becomes $99,990. Equity is about 60.006% and cash 39.994%, not exactly 60/40. Calculate the fee-aware target again if exact fractions are the question, while acknowledging changed quotes and unit rounding. An approximate rebalance may be sufficient for a stated worksheet tolerance; no real-money action is prescribed. To finish the exact fixed-price worksheet, let S be the sale notional: 70,000 − S = 0.6 × (100,000 − 0.001S). This gives S = 10,000/0.9994, approximately $10,006.0036. Equity is about $59,993.9964, cash $39,995.9976 and total $99,989.9940: 60% and 40% before any rounding. A changed quote or restricted unit precision can prevent those exact fractions in a recorded order."
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "lessons",
+      2,
+      "keyTakeaways"
+    ],
+    "expected": [
+      "Rebalancing restores target weights by reducing overweight holdings and increasing underweight holdings; weight alone does not establish whether an asset is overvalued or undervalued.",
+      "Virtual cash acts as an essential liquidity buffer during rebalancing executions.",
+      "Properly sized market orders must be used to execute rebalancing smoothly on TradeHQ's spot simulation."
+    ],
+    "replacement": [
+      "A target-weight adjustment differs from a judgement that an asset is cheap or expensive.",
+      "Available virtual cash must cover purchase notional and fees; selling also incurs a fee.",
+      "Exact worksheet fractions depend on fixed quotes, fee assumptions and permitted quantity precision."
+    ]
+  }
+]);
+
 export function applyCourseEditorialCorrections<T extends { slug: string }>(document: T): T {
   const applicable = corrections.filter(patch => patch.slug === document.slug);
   if (!applicable.length) return document;

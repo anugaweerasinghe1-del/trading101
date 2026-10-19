@@ -178,7 +178,7 @@ export function buildRoutes(): RouteMeta[] {
   routes.push({
     path: "/trade",
     title: "Paper Trade 170 Assets — Free Simulator | TradeHQ",
-    description: `Buy and sell 170 stocks, crypto, ETFs, forex and commodities with ${BALANCE} in virtual cash. No signup, no risk. Educational simulation only.`,
+    description: `Buy and sell 170 stocks, crypto, ETFs, forex and commodities with ${BALANCE} in virtual cash. No signup or real-money trading. Educational simulation only.`,
     h1: "Paper Trade 170 Assets",
     summary: `Choose from 170 simulated assets and place buy or sell orders instantly. Every account starts with ${BALANCE} in virtual cash. Educational simulation — no real money and no brokerage relationship.`,
     priority: "0.9",
@@ -224,7 +224,7 @@ export function buildRoutes(): RouteMeta[] {
     title: "Learn to Trade — Free Lessons, Guides & Glossary | TradeHQ",
     description: `Free trading lessons, glossary, and step-by-step guides for beginners. Learn stocks, crypto and technical analysis, then practice with ${BALANCE} virtual cash.`,
     h1: "Learn to Trade",
-    summary: `Structured lessons, a ${tradingGlossary.length}-term glossary, and long-form guides on stocks, crypto, ETFs and technical analysis. Every concept links to a matching practice trade on the free simulator.`,
+    summary: `Structured lessons, a ${tradingGlossary.length}-term glossary, and long-form guides on stocks, crypto, ETFs and technical analysis. Supported spot mechanics can be explored in the simulator; derivatives and unsupported indicators use separate conceptual worksheets.`,
     priority: "0.9",
     changefreq: "weekly",
   });
@@ -366,7 +366,7 @@ export function buildRoutes(): RouteMeta[] {
     title: "Trading Glossary — Every Term Explained | TradeHQ Wiki",
     description: `A complete plain-language trading glossary, browsable by category, with practice on the free ${BALANCE} simulator. Educational only.`,
     h1: "Trading Glossary",
-    summary: `Every trading term used across TradeHQ in one browsable index, grouped by category and linked to where you can practise it with ${BALANCE} virtual cash.`,
+    summary: `Browse trading terms, distinct worksheets and scoped references. Check feature limitations: not every contract or indicator is implemented in the ${BALANCE} virtual simulator.`,
     priority: "0.7",
     changefreq: "weekly",
   });
@@ -492,7 +492,7 @@ export function buildRoutes(): RouteMeta[] {
     title: "Trading Strategies — Free Guides & Simulator | TradeHQ",
     description: `Curated trading strategies with step-by-step examples. Practice each one with ${BALANCE} virtual cash — free, no signup.`,
     h1: "Trading Strategies",
-    summary: `Curated trading strategies you can learn and immediately practice with ${BALANCE} in virtual cash.`,
+    summary: `Compare six strategy topics through conceptual worksheets and supported spot practice with ${BALANCE} in virtual cash. No strategy performance is validated.`,
     priority: "0.7",
     changefreq: "weekly",
   });

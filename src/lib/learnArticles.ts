@@ -258,7 +258,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
   {
     slug: "risk-management-in-trading",
     title: "What Is Risk Management in Trading? The Complete Beginner's Guide",
-    summary: "Learn how position sizing, stop-loss orders and predefined risk limits can be tested in a simulator. Percentage rules such as 1% or 2% are examples, not universal prescriptions.",
+    summary: "Study position sizing, conceptual exits and risk-budget arithmetic. TradeHQ supports manual market orders; percentage rules such as 1% or 2% are worksheet assumptions.",
     metaDescription: "Learn risk-management concepts including position sizing, stop-loss orders, reward-to-risk assumptions, and example percentage risk limits using TradeHQ practice tools.",
     readTime: "6 min read",
     sections: [
@@ -266,7 +266,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
         heading: "Why Risk Management Matters More Than Stock Picks",
         paragraphs: [
           "Risk management describes how exposure and losses are measured or limited under a chosen process. Profitability also depends on realized gains, losses, frequency and costs. For example, a 40% win rate with fixed 2R gains and 1R losses has gross expectancy 0.4×2−0.6×1=0.2R per trade before costs; it is hypothetical arithmetic.",
-          "Risk management is a set of rules and strategies designed to limit your potential losses on any single trade and across your entire portfolio. Without it, a single bad trade can wipe out weeks or months of gains. With it, you can survive losing streaks, preserve capital, and stay in the game long enough for your edge to play out.",
+          "Exposure rules and intended exits can be compared in a hypothetical worksheet, but they do not guarantee survival through a loss sequence or establish that a profitable edge exists. Gaps, costs and correlated holdings can create losses beyond a chosen assumption.",
           "On TradeHQ, you can practise risk-management ideas with $100,000 in virtual cash. Experiment with different position sizes, exit rules, and reward-to-risk assumptions, then review how each choice changes drawdown and variability over a larger sample of trades. The aim is to build a repeatable process, not to discover a guaranteed formula."
         ]
       },

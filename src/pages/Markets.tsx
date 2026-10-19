@@ -144,7 +144,7 @@ export default function Markets() {
       <div className="min-h-screen bg-background flex">
         <TradingSidebar />
 
-        <div className="flex-1 min-w-0 ml-16 p-3 md:p-6 animate-fade-in">
+        <main className="flex-1 min-w-0 ml-16 p-3 md:p-6 animate-fade-in">
           <div className="max-w-7xl mx-auto space-y-6">
 
             {/* Static H1 Header - Renders immediately for Google */}
@@ -403,7 +403,7 @@ export default function Markets() {
             </section>
 
           </div>
-        </div>
+        </main>
       </div>
 
       <div className="container mx-auto px-4 md:px-6 mt-6">
