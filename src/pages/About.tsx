@@ -31,13 +31,13 @@ const sections = [
     icon: Compass,
     title: "Transparency",
     body:
-      "TradeHQ is not a brokerage. We do not custody funds, execute real trades, or provide financial advice. Prices shown are simulated or delayed and are for education only. We do not sell user data or run behavioural ads.",
+      "TradeHQ is not a brokerage. We do not custody funds, execute real trades, or provide financial advice. Prices shown are simulated or delayed and are for education only. Third-party advertising and optional analytics are described in the privacy policy; their operation depends on provider settings and applicable user choices.",
   },
   {
     icon: Cpu,
     title: "Technology",
     body:
-      "TradeHQ is a modern web application built with React, TypeScript and a serverless backend. Guest practice records stay in your browser so you can start without signing up. Account cash, positions and server-recorded trades restore across devices when available; earlier guest history, journals and course progress remain browser-held. Mentor tools use educational rules and portfolio context, and can fall back to local explanations.",
+      "TradeHQ is a modern web application built with React, TypeScript and a serverless backend. Guest practice records stay in your browser so you can start without signing up. Account cash, positions and server-recorded trades restore across devices when available; earlier guest history, journals and course progress remain browser-held. The standalone mentor uses a built-in answer library and local topic matching without an AI API request; portfolio mentor tools can use simulated portfolio context.",
   },
 ];
 
@@ -116,17 +116,17 @@ export default function About() {
             <section className="glass-liquid-card p-6">
               <h2 className="text-xl font-semibold mb-3">How the material is written and reviewed</h2>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Every lesson, glossary entry and asset page on TradeHQ is written for one purpose: to
-                explain a mechanism clearly enough that a beginner can act on it inside the simulator
-                and see the result for themselves. Where a lesson states a fact about how an
-                instrument works — how margin is calculated, what a CPI release contains, what a
-                contract obliges each side to do — it links to a primary source such as a regulator,
-                an exchange or a statistical agency, so the claim can be checked rather than trusted.
+                TradeHQ uses AI-assisted drafting and editing for educational material and software.
+                Checks include worked-example arithmetic, consistency with simulator features and
+                source suitability within the scope recorded on each page. These checks do not
+                establish that every statement is correct or independently reviewed by a professional.
+                References may provide background rather than evidence that a strategy predicts prices.
+                Options and futures lessons are conceptual; the simulator does not execute those contracts.
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed mt-3">
                 Community Reviews publish visitor-submitted feedback; we do not independently verify
                 reviewers' identities or experiences. The Community Practice Board publishes optional,
-                client-synced simulated statistics, not independently verified investment results.
+                server-recorded ranked simulated portfolios, with earlier browser-reported results labelled separately. These are not independently verified investment results.
                 Neither feedback nor practice rankings promise real-world returns. Educational figures
                 use cited sources or clearly labelled hypothetical examples; when a question has no honest answer —
                 which asset will rise, whether a strategy will work for you — the page says so instead

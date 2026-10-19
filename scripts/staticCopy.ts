@@ -16,7 +16,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
         h: "What TradeHQ actually is",
         p: [
           "TradeHQ is a free paper-trading simulator for people learning how markets work. Every account starts with $100,000 in virtual cash. Nothing on the site touches real money: there is no brokerage account, no deposit, no withdrawal and no order ever reaches an exchange. Supported holdings use periodically refreshed provider quotes. Unsupported assets can use fixed simulator prices, and charts may show synthetic practice candles. Price and chart labels explain their source and freshness.",
-          "The point of a simulator is to let you make the expensive mistakes for free. Most beginners lose money not because they picked the wrong stock but because they sized positions badly, moved a stop, doubled down after a loss, or traded an instrument they did not understand. All of those habits are visible in a practice account, and all of them are cheaper to unlearn there.",
+          "A practice account lets you examine decisions without putting savings at risk. For example, compare how different quantities change a hypothetical loss, or record why you changed an exit plan. These exercises do not establish why most beginners lose money or guarantee that practice changes later behaviour.",
         ],
       },
       {
@@ -70,7 +70,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
       {
         h: "What to practise on the desk",
         list: [
-          "Fixed-fraction sizing: risk the same small percentage of the balance on every trade and see how the equity curve smooths out.",
+          "Position sizing: compare hypothetical quantities under the same adverse price move. A fixed fraction does not guarantee a smoother equity curve, and the current simulator does not execute automatic stop orders.",
           "Stop discipline: decide the exit before entering, then check in the journal whether you actually honoured it.",
           "Entry timing: note the price you intended versus the price you received on a fast-moving instrument, and record the gap in the journal.",
           "Concentration: run a week with five positions and a week with one, and compare the drawdown.",
@@ -265,7 +265,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
       {
         h: "What the AI mentor does",
         p: [
-          "The mentor is a chat assistant that explains trading concepts, indicators, order types and strategies in plain language, and comments on the practice trades in your simulated journal. It is a study aid: it explains why a moving-average crossover is a lagging signal, or what your win-rate and average-loss numbers imply about your sizing.",
+          "This chat matches your question to a built-in library of educational answers about trading concepts, indicators and order types. It does not call a language model, read your journal or assess a proposed investment. Separate portfolio mentor tools can use the simulated figures shown on that page.",
         ],
       },
       {
@@ -273,14 +273,14 @@ export const STATIC_COPY: Record<string, PageContent> = {
         list: [
           "It does not give buy or sell recommendations, price targets or personalised financial advice.",
           "It does not know your real financial circumstances and cannot assess suitability.",
-          "It can be wrong. Language models make confident factual errors; verify anything that matters against a primary source.",
+          "Authored answers and topic matching can be wrong or miss the question. Check important claims against a primary source.",
           "It is not a substitute for a licensed professional in your own jurisdiction.",
         ],
       },
       {
         h: "Getting useful answers",
         p: [
-          "Ask about mechanics rather than outcomes. 'What does implied volatility do to an option's price into earnings?' is a good question. 'Should I buy this?' is not, and the mentor will decline it. Pair every answer with a practice trade so the concept becomes procedural rather than theoretical.",
+          "Ask about mechanics rather than what to buy. Try a supported topic such as risk/reward, diversification or dollar-cost averaging. Topic matching may return a general answer or miss your intent; it does not provide a personalised suitability assessment. Derivatives lessons are conceptual because this simulator does not trade options or futures contracts.",
         ],
       },
     ],
@@ -404,7 +404,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
       {
         h: "How the content is produced",
         list: [
-          "Lessons and guides are written for TradeHQ, not syndicated from elsewhere.",
+          "TradeHQ uses AI-assisted drafting and editing for educational material and software. Content is prepared for this site rather than syndicated; AI assistance does not establish accuracy or originality by itself.",
           "Factual claims about market mechanics cite exchange, regulator or central-bank documentation where possible.",
           "Illustrative chart-pattern labels, calculated indicators and hypothetical scenarios should not be interpreted as verified price forecasts or personalised instrument recommendations.",
           "Errors are corrected when reported; the contact page is the fastest route.",

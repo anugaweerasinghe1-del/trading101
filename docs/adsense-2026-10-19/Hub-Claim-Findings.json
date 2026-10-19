@@ -1,0 +1,185 @@
+{
+  "baseline_sha": "8b96643b9fcbdae0b0eba7dd4b3017f5cdc66a25",
+  "date": "2026-10-19",
+  "findings": [
+    {
+      "id": "HUB-01",
+      "url": "https://www.thetradehq.com/",
+      "severity": "medium",
+      "classification": "substantiated quality/trust risk",
+      "evidence": "Most beginners lose money not because they picked the wrong stock",
+      "observed_at": "2026-10-19T13:35:29.658597+00:00",
+      "raw_response_sha256": "e85479de78603fdf9c46087e8aaaa6f9cdb9dc227f507018ddebbd38a62db66c",
+      "browser_verified": false,
+      "requirement": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+      "defect": "Unsupported population-level causal claim",
+      "root_cause": "Stale or unqualified shared publisher copy; hydrated page copy maintained separately",
+      "files_affected": [
+        "scripts/staticCopy.ts"
+      ],
+      "fix_applied": "Replace asserted causes with a bounded hypothetical sizing exercise.",
+      "tests_run": [
+        "Editorial claim consistency regression",
+        "Compiled publisher parity and inventory checks",
+        "TypeScript application check"
+      ],
+      "production_verification": "PENDING: candidate not yet released",
+      "status": "ACTION REQUIRED",
+      "limitation": "Candidate checks do not constitute an individual review of other routes or Google approval."
+    },
+    {
+      "id": "HUB-02",
+      "url": "https://www.thetradehq.com/trade",
+      "severity": "medium",
+      "classification": "substantiated quality/trust risk",
+      "evidence": "see how the equity curve smooths out",
+      "observed_at": "2026-10-19T13:35:29.660274+00:00",
+      "raw_response_sha256": "df5d89a84e882739fb5bcbded5c43ffff37736ef702c657e95875f3fc403efa5",
+      "browser_verified": false,
+      "requirement": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+      "defect": "Fixed-fraction sizing promises an outcome",
+      "root_cause": "Stale or unqualified shared publisher copy; hydrated page copy maintained separately",
+      "files_affected": [
+        "scripts/staticCopy.ts"
+      ],
+      "fix_applied": "Explain comparing quantities without guaranteeing a smoother curve or automatic stops.",
+      "tests_run": [
+        "Editorial claim consistency regression",
+        "Compiled publisher parity and inventory checks",
+        "TypeScript application check"
+      ],
+      "production_verification": "PENDING: candidate not yet released",
+      "status": "ACTION REQUIRED",
+      "limitation": "Candidate checks do not constitute an individual review of other routes or Google approval."
+    },
+    {
+      "id": "HUB-03",
+      "url": "https://www.thetradehq.com/ai-mentor",
+      "severity": "medium",
+      "classification": "technical/product-description defect",
+      "evidence": "AI responses depend on service availability",
+      "observed_at": "2026-10-19T13:35:46.010061+00:00",
+      "raw_response_sha256": "ac0623dd45e0657f54ab0d7a0cdd88821250a5ff72a80443df4a0be8fe3b814f",
+      "browser_verified": true,
+      "requirement": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+      "defect": "Crawler-visible description contradicts local-only chat implementation and claims journal access",
+      "root_cause": "Stale or unqualified shared publisher copy; hydrated page copy maintained separately",
+      "files_affected": [
+        "scripts/routes.ts",
+        "scripts/staticCopy.ts",
+        "src/pages/AIMentor.tsx"
+      ],
+      "fix_applied": "Describe local authored answers, topic-matching limits and separate portfolio tools.",
+      "tests_run": [
+        "Editorial claim consistency regression",
+        "Compiled publisher parity and inventory checks",
+        "TypeScript application check"
+      ],
+      "production_verification": "PENDING: candidate not yet released",
+      "status": "ACTION REQUIRED",
+      "limitation": "Candidate checks do not constitute an individual review of other routes or Google approval."
+    },
+    {
+      "id": "HUB-04",
+      "url": "https://www.thetradehq.com/about",
+      "severity": "medium",
+      "classification": "substantiated quality/trust risk",
+      "evidence": "We do not sell user data or run behavioural ads.",
+      "observed_at": "2026-10-19T13:35:53.940020+00:00",
+      "raw_response_sha256": "fab7c83993edd8ccee72f5573aea9eb11398e2db9e7943df5b2fa3239d1c2b0c",
+      "browser_verified": false,
+      "requirement": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+      "defect": "Hydrated publisher claim is unsupported by observed advertising settings; AI assistance is undisclosed",
+      "root_cause": "Stale or unqualified shared publisher copy; hydrated page copy maintained separately",
+      "files_affected": [
+        "src/pages/About.tsx",
+        "scripts/staticCopy.ts"
+      ],
+      "fix_applied": "Describe third-party advertising without claiming its configuration; disclose AI-assisted drafting with scoped checks and no invented reviewer.",
+      "tests_run": [
+        "Editorial claim consistency regression",
+        "Compiled publisher parity and inventory checks",
+        "TypeScript application check"
+      ],
+      "production_verification": "PENDING: candidate not yet released",
+      "status": "ACTION REQUIRED",
+      "limitation": "Candidate checks do not constitute an individual review of other routes or Google approval."
+    },
+    {
+      "id": "HUB-05",
+      "url": "https://www.thetradehq.com/challenge",
+      "severity": "medium",
+      "classification": "technical/product-description defect",
+      "evidence": "are not frozen, audited final standings",
+      "observed_at": "2026-10-19T13:36:01.928161+00:00",
+      "raw_response_sha256": "7ea5fbd05ed5339a28e2777b388c0ef6b2d913d8570f90f397454ce03bb7e08f",
+      "browser_verified": true,
+      "requirement": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+      "defect": "Publisher notes contradict server-scored deadline freezing; hydrated text incorrectly attributes scores to client state",
+      "root_cause": "Stale or unqualified shared publisher copy; hydrated page copy maintained separately",
+      "files_affected": [
+        "scripts/staticCopyExtra.ts",
+        "src/pages/Challenge.tsx"
+      ],
+      "fix_applied": "Align all text with server-scored frozen finals and explicit legacy limitations; remove unsupported one-year ranking forecast.",
+      "tests_run": [
+        "Editorial claim consistency regression",
+        "Compiled publisher parity and inventory checks",
+        "TypeScript application check"
+      ],
+      "production_verification": "PENDING: candidate not yet released",
+      "status": "ACTION REQUIRED",
+      "limitation": "Candidate checks do not constitute an individual review of other routes or Google approval."
+    },
+    {
+      "id": "HUB-06",
+      "url": "https://www.thetradehq.com/reviews",
+      "severity": "medium",
+      "classification": "substantiated quality/trust risk",
+      "evidence": "A product with no negative reviews is a product that removes them.",
+      "observed_at": "2026-10-19T13:35:53.871285+00:00",
+      "raw_response_sha256": "4b00a1c2a7c6920c7d808eaf2c19e102e1ed0bca5f0b8ae601487350138b53fb",
+      "browser_verified": false,
+      "requirement": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+      "defect": "No negative reviews and same-day review clusters are presented as proof of manipulation",
+      "root_cause": "Stale or unqualified shared publisher copy; hydrated page copy maintained separately",
+      "files_affected": [
+        "scripts/staticCopyExtra.ts"
+      ],
+      "fix_applied": "Explain that neither pattern establishes removal or common authorship.",
+      "tests_run": [
+        "Editorial claim consistency regression",
+        "Compiled publisher parity and inventory checks",
+        "TypeScript application check"
+      ],
+      "production_verification": "PENDING: candidate not yet released",
+      "status": "ACTION REQUIRED",
+      "limitation": "Candidate checks do not constitute an individual review of other routes or Google approval."
+    },
+    {
+      "id": "HUB-07",
+      "url": "https://www.thetradehq.com/terms",
+      "severity": "medium",
+      "classification": "substantiated quality/trust risk",
+      "evidence": "most retail accounts trading leveraged products lose money",
+      "observed_at": "2026-10-19T13:36:02.003706+00:00",
+      "raw_response_sha256": "042024625679589e87eb954b6106aa929b081993300a5540074f20ee22363961",
+      "browser_verified": false,
+      "requirement": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+      "defect": "Undefined population-level loss claim lacks source/scope",
+      "root_cause": "Stale or unqualified shared publisher copy; hydrated page copy maintained separately",
+      "files_affected": [
+        "scripts/staticCopyExtra.ts"
+      ],
+      "fix_applied": "Describe leverage risk with product/account/jurisdiction limits without asserting an unsupported loss rate.",
+      "tests_run": [
+        "Editorial claim consistency regression",
+        "Compiled publisher parity and inventory checks",
+        "TypeScript application check"
+      ],
+      "production_verification": "PENDING: candidate not yet released",
+      "status": "ACTION REQUIRED",
+      "limitation": "Candidate checks do not constitute an individual review of other routes or Google approval."
+    }
+  ]
+}
