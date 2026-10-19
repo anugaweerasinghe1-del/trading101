@@ -35,29 +35,29 @@ function clean(s: string): string {
  *  close with the same four lines of text. */
 const TYPE_CHECKLIST: Record<string, string[]> = {
   crypto: [
-    "Check what the position would be worth after a 10% overnight move before you size it — crypto gaps happen while you sleep.",
-    "Note whether the move you are reacting to came with rising volume or is a thin weekend drift.",
-    "Write the invalidation price down first; leverage-driven wicks punish stops that are decided afterwards.",
+    "Calculate the hypothetical effect of a 10% change on a virtual crypto holding; a continuously traded market can still move sharply between observations.",
+    "Record the quote timestamp and available volume source, if any; a chart alone cannot establish actual exchange liquidity.",
+    "Compare two hypothetical exit levels and fees on paper; TradeHQ has no resting stops, leverage or liquidation engine.",
   ],
   stock: [
     "Check whether earnings, a split or an index event falls inside your intended holding window.",
-    "Size against the recent daily range rather than a round number of shares.",
-    "Decide in advance what news would make you exit, and write it in the journal before entry.",
+    "Compare hypothetical quantities at a fixed price change; a past daily range does not determine a suitable real-money position size.",
+    "Record which dated company announcement would change your hypothetical scenario and compare the original assumption with later observations.",
   ],
   etf: [
     "Look at what the fund actually holds; two ETFs with similar names can behave very differently.",
-    "Remember that a broad fund moves slower than its largest holding — set expectations for a smaller daily range.",
-    "Treat it as an exercise in patience: fund positions reward a longer review cycle than single names.",
+    "Compare the ETF's dated price change with its largest holdings; composition, weights and tracking differences can change the relationship.",
+    "Choose a defined observation window for a virtual ETF exercise; holding longer does not itself produce a better result.",
   ],
   forex: [
     "Note which session you are trading in; the same pair behaves differently in London and in Asia.",
     "Check the economic calendar for rate decisions or inflation prints inside your window.",
-    "Express risk in account currency, not pips, so the size means something concrete.",
+    "Convert a hypothetical pip change into the virtual account currency using a stated position size and exchange-rate assumption.",
   ],
   commodity: [
     "Check whether the move is supply-driven, demand-driven or currency-driven before deciding it is a trend.",
     "Expect seasonality: several commodities have recurring demand patterns that distort short samples.",
-    "Give the position a wider stop and a smaller size than an equity trade of the same conviction.",
+    "Compare two virtual position sizes and price-shock assumptions; a commodity contract's real-world expiry, leverage and execution are not simulated.",
   ],
 };
 
@@ -67,24 +67,24 @@ const TYPE_GUIDE: Record<string, { h: string; p: string[]; list: string[] }> = {
   crypto: {
     h: "How to approach a crypto instrument as a learner",
     p: [
-      "Crypto markets never close, which sounds convenient and is actually the hardest part of learning on them. There is no closing bell to force a review, no overnight gap to punish sloppy sizing visibly, and no session structure to tell you when liquidity is thin. Volatility is several times that of a large-cap equity, so a position size that feels small can produce an equity swing that feels enormous.",
-      "Price is driven by overall market liquidity, flows into and out of listed products, exchange and custody news, protocol changes, and — more than most participants admit — leverage. Forced liquidations of leveraged positions cause a large share of the sharpest moves in both directions, which is why the same headline can produce a 2% move one week and a 12% move the next.",
+      "Cryptocurrency markets generally trade around the clock, including weekends, but displayed liquidity and price observations vary by venue and time. Compare dated price changes over the same interval as a stock or ETF instead of assuming a fixed volatility multiple. A continuously traded asset can move sharply between observations even without a daily closing bell.",
+      "News, network changes, available liquidity and leveraged positions can coincide with crypto price moves. A candle cannot establish which factor caused a specific change or what portion was forced liquidation. Record the market, quoted source, interval and dated event before comparing explanations.",
     ],
     list: [
-      "Size crypto positions smaller than equity positions for the same account risk; the stop distance has to be wider.",
-      "Set a fixed review time each day, because the market will not create one for you.",
-      "Never learn on leverage. Liquidation is a permanent loss of capital, not a temporary drawdown.",
-      "Treat weekend moves with suspicion: liquidity is thinner and prices move further on less volume.",
+      "Compare equal-dollar virtual exposures to a stated 5% or 10% move and calculate the different results; do not infer a universal position size or stop distance.",
+      "Choose a repeatable observation interval for a study log and note that unseen moves can occur between checks.",
+      "Study leveraged contract risks through external references only; TradeHQ does not support borrowing, margin requirements or forced liquidation.",
+      "If analysing weekend data, verify the venue and comparable volume observations rather than assuming every weekend has lower liquidity.",
     ],
   },
   stock: {
     h: "How to approach a listed stock as a learner",
     p: [
-      "A share is a claim on a real business, so its price responds to earnings, guidance, margins, competition and the interest rate used to discount future profits. Over days, sentiment and sector rotation dominate; over years, the business does. Beginners tend to have a view about the company and no view at all about the timeframe on which that view could be right.",
+      "A listed share represents an ownership interest in a company. Earnings, disclosures, expectations, discount rates and wider market conditions can influence its quoted price, but their relative importance varies by company and period. For a worksheet, state whether you are comparing daily prices, annual reports or a longer set of observations.",
       "Equities also carry structural features a simulator makes easy to forget: they gap between sessions, they halt on news, earnings dates cluster volatility into single days, and index membership can move a price for reasons unrelated to the business.",
     ],
     list: [
-      "Know the next earnings date before entering; it is the single most predictable source of a large move.",
+      "Look up the announced earnings date and note how reporting events can create uncertainty; no event guarantees a particular price move.",
       "A stop does not protect you overnight — price can open below it.",
       "Read the last quarterly report before forming an opinion about the company.",
       "Be honest about whether your idea is a trade with an exit or an investment with a thesis.",
@@ -94,12 +94,12 @@ const TYPE_GUIDE: Record<string, { h: string; p: string[]; list: string[] }> = {
     h: "How to approach an ETF as a learner",
     p: [
       "An exchange-traded fund is a basket, so its behaviour comes from what it holds and how it is weighted. A broad market ETF spreads risk across hundreds of companies; a sector or thematic ETF concentrates it, and can fall as hard as any single stock when that theme goes out of favour. The word 'diversified' on a fact sheet is not the same as diversified in practice.",
-      "Costs and structure matter more than beginners expect: an expense ratio compounds, leveraged and inverse products reset daily and decay in choppy markets, and thinly traded funds can trade away from the value of their holdings.",
+      "ETF exposure depends on the fund's current holdings, fees, benchmark and legal structure. Some leveraged or inverse funds reset daily, making longer holding-period results path-dependent. ETF market prices can differ from reported net asset values, particularly during market stress.",
     ],
     list: [
       "Check the top ten holdings and their combined weight before assuming a fund is broad.",
-      "Avoid daily-leveraged and inverse products entirely while learning — their maths works against holding periods longer than a day.",
-      "Prefer funds with high average volume so the spread does not quietly tax every trade.",
+      "Use a hypothetical two-day return path to illustrate how daily-reset leveraged or inverse funds differ from multiplying the whole-period return; these instruments are not available as leveraged contracts in TradeHQ.",
+      "Compare the quoted spread, dated fund holdings and available liquidity on two ETFs without assuming that volume alone determines execution costs.",
       "Compare the fund's return to its benchmark, not to an unrelated index.",
     ],
   },
@@ -107,26 +107,26 @@ const TYPE_GUIDE: Record<string, { h: string; p: string[]; list: string[] }> = {
     h: "How to approach a currency pair as a learner",
     p: [
       "A currency pair is a relative price: buying one currency is simultaneously selling the other, so every move reflects a change in the relationship rather than in a single asset. The main drivers are interest-rate expectations, inflation data, growth surprises and global risk appetite, and the largest moves cluster around central-bank meetings and monthly data releases.",
-      "Retail forex is where leverage does the most damage. Because daily percentage moves are small compared with equities or crypto, brokers offer very high leverage, which turns an ordinary move into an account-ending one. The mechanics are simple; the position sizing is where beginners fail.",
+      "Retail forex products can involve borrowing, high leverage, financing charges and jurisdiction-specific rules. A small percentage price move can produce a larger change in collateral value when exposure is leveraged. TradeHQ's currency pairs are unleveraged virtual observations, not a model of real broker margin or execution.",
     ],
     list: [
-      "Learn the economic calendar before learning any indicator — timing beats analysis in this market.",
-      "Trade during the session where the pair is most liquid; spreads widen dramatically outside it.",
-      "Calculate position size from stop distance and account risk every single time.",
+      "Note the dates of relevant central-bank decisions and economic releases before comparing currency movements; neither a calendar nor an indicator predicts the result.",
+      "Compare dated spreads, if available, between sessions and venues; the simulator does not reproduce a broker's actual trading conditions.",
+      "For an educational example, vary hypothetical notional exposure and adverse percentage changes; TradeHQ does not implement resting stop orders.",
       "Ignore any material that presents high leverage as an opportunity rather than a hazard.",
     ],
   },
   commodity: {
     h: "How to approach a commodity as a learner",
     p: [
-      "Commodities are physical goods, so supply and demand for the actual material sets the price: weather, harvests, output decisions, inventories, transport and storage all matter in ways they never do for a share. Many commodities are also seasonal, and that seasonality shows up in price patterns that have a real cause rather than a chart-pattern one.",
-      "Most commodity exposure is taken through futures, which expire and roll. That roll has a cost or a benefit depending on the shape of the forward curve, and it is the reason a long-held commodity product can drift away from the spot price it appears to track.",
+      "Commodities include physical goods whose prices can reflect inventories, production, consumption, transport costs, storage and expectations. Some agricultural products have seasonal supply cycles, while energy and metals respond to other factors. Exchange-traded contracts and funds can behave differently from physical spot markets.",
+      "Commodity exposure can come through physical holdings, futures contracts or funds with distinct costs and risks. Futures expire and may be rolled; differences between contract prices can affect a fund's return. TradeHQ commodity entries are virtual spot-style symbols, not actual expiring futures contracts.",
     ],
     list: [
-      "Learn what physically drives this specific commodity before trading it — the drivers differ completely between energy, metals and agriculture.",
+      "For each commodity worksheet, identify its particular production, storage and demand context using dated sources.",
       "Understand contract expiry and rolling if you ever move beyond a simulator.",
-      "Expect gaps around production decisions, inventory reports and geopolitical news.",
-      "Currency matters: most commodities are priced in dollars, so the dollar itself is part of the trade.",
+      "Look up event dates, then compare observed price changes without claiming a specific event caused them by itself.",
+      "Record the quotation currency for the selected contract or reference price and distinguish currency conversion from a change in the commodity's underlying value.",
     ],
   },
 };
