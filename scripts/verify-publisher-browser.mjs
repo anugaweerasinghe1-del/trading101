@@ -201,8 +201,9 @@ try {
   }
   }
   assert.deepEqual(runtimeErrors, [], 'No uncaught application JavaScript exceptions');
-  console.log('PASS accessible visible controls, valid nesting, mobile selector/menu/mentor focus, viewport placement and six legacy lesson source links.');
-  console.log(`PASS real Chromium: ${checked} compiled route visits (${routes.length} URLs × desktop/mobile × JS on/off), canonical/H1/content parity and overflow. Native courses use read-only published fixtures, not production services.`);
+  if (phase === null || phase === 3) console.log('PASS accessible visible controls, valid nesting, mobile selector/menu/mentor focus, viewport placement and six legacy lesson source links.');
+  const phaseDescription = phase === null ? 'desktop/mobile × JS on/off' : `matrix phase ${phase} only`;
+  console.log(`PASS real Chromium: ${checked} compiled route visits (${routes.length} URLs × ${phaseDescription}), canonical/H1/content parity and overflow. Native courses use read-only published fixtures, not production services.`);
 } finally {
   socket?.close();
   // Chromium forks subprocesses; waiting only for its parent can leave a child
