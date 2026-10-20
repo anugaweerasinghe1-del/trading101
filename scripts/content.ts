@@ -541,7 +541,7 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
         { h: "Broker types used locally", list: c.brokers },
         { h: "Starting capital and eligibility", p: [c.startingCapital] },
         { h: "Locally relevant assets to follow", list: c.localAssets },
-        { h: "A three-month practice plan", p: [c.practicePlan] },
+        { h: "Country-specific practice worksheet", p: [c.practicePlan] },
         { h: "Tax", p: [`${c.taxNote} This is general information, not tax advice — confirm your own position with a qualified local professional.`] },
         { h: "If you are a student", p: [c.studentAngle] },
         { h: "Questions people in this country ask", list: c.faqs.map((f: any) => `${f.q} — ${f.a}`) },
