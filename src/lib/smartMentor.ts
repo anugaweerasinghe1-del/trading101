@@ -86,23 +86,23 @@ export const MENTOR_TOPICS: MentorTopic[] = [
     answer:
       "Trading decisions can be affected by emotion, attention and cognitive bias. Psychology matters, but there is no credible universal percentage that separates psychology from strategy.\n\n" +
       "**The 4 killers:**\n" +
-      "• **FOMO** — chasing pumps. The trade is already over by the time you see it.\n" +
-      "• **Revenge trading** — doubling down after a loss to 'win back'. This is how accounts die.\n" +
+      "• **FOMO** — acting from fear of missing a move without checking an assumption.\n" +
+      "• **Revenge trading** — increasing activity or exposure to recover a loss without reassessing risk.\n" +
       "• **Anchoring** — refusing to sell because 'I'll wait until it gets back to my entry'.\n" +
       "• **Confirmation bias** — only reading news that supports your position.\n\n" +
-      "**Cure:** Journal every trade. Set rules *before* you enter. TradeHQ's Ghost Journal and Revenge Blocker are built for this exact reason.",
+      "**Practice review:** Record the original reasoning and compare it with the outcome. Ghost Journal and Revenge Blocker can support a review, but do not cure bias or guarantee disciplined decisions.",
   },
   {
     id: "diversification",
     keywords: ["diversif", "portfolio allocation", "asset allocation"],
     title: "Diversification",
     answer:
-      "**Don't put all your eggs in one basket** — but don't put them in 50 baskets either.\n\n" +
-      "**Practical allocation for $100K:**\n" +
+      "Diversification compares exposure to different holdings and their shared drivers.\n\n" +
+      "**A $100K practice comparison:**\n" +
       "• There is no universal allocation that fits everyone.\n" +
       "• In TradeHQ, compare concentrated and diversified practice portfolios and observe how volatility and drawdown change.\n" +
       "• Treat any example allocation as a simulation scenario, not a recommendation for real money.\n\n" +
-      "True diversification means uncorrelated assets — owning 10 tech stocks isn't diversified, it's one bet 10 times.",
+      "Diversification depends on weights and shared drivers; ten technology stocks can still concentrate sector exposure. Correlations change and different holdings can decline together.",
   },
   {
     id: "leverage",
@@ -219,7 +219,8 @@ export interface PortfolioContext {
   totalValue: number;
   positionsCount: number;
   tradesCount: number;
-  winRate: number | null; // 0-100 or null if not enough sells
+  winRate: number | null; // realized closed-trade metric, or null when unavailable
+  priceOnlySellComparisonPct?: number | null; // separate legacy price comparison; excludes costs and lot matching
   topPosition?: { symbol: string; weightPct: number; pnlPct: number } | null;
   selectedSymbol?: string | null;
   selectedChangePct?: number | null;
@@ -232,25 +233,31 @@ function fmt(n: number): string {
 
 export function getPortfolioMentorReply(input: string, ctx: PortfolioContext): string {
   const text = input.toLowerCase().trim();
+  const cashPct = ctx.totalValue > 0 ? (ctx.cash / ctx.totalValue) * 100 : null;
+  const winSummary = ctx.winRate !== null && Number.isFinite(ctx.winRate)
+    ? `Realized win rate: ${ctx.winRate.toFixed(0)}% (descriptive recorded sample)`
+    : "Realized win rate: unavailable in this snapshot";
+  const priceSummary = ctx.priceOnlySellComparisonPct != null && Number.isFinite(ctx.priceOnlySellComparisonPct)
+    ? `Price-only sell comparison: ${ctx.priceOnlySellComparisonPct.toFixed(0)}% of sales above their latest earlier buy; excludes fees and lot matching, not a realized win rate.` : null;
 
   // Portfolio analysis
   if (/portfolio|positions?|my (cash|balance|holdings?)|analy[sz]e my/.test(text)) {
     const lines = [
       `**Your portfolio at a glance:**`,
       `• Total value: ${fmt(ctx.totalValue)}`,
-      `• Cash: ${fmt(ctx.cash)} (${((ctx.cash / ctx.totalValue) * 100).toFixed(0)}% of book)`,
+      `• Cash: ${fmt(ctx.cash)} (${cashPct === null ? "percentage unavailable" : cashPct.toFixed(0) + "% of book"})`,
       `• Positions: ${ctx.positionsCount}`,
       `• Trades executed: ${ctx.tradesCount}`,
-      ctx.winRate !== null ? `• Win rate: ${ctx.winRate.toFixed(0)}%` : `• Win rate: not enough closed trades yet`,
+      `• ${winSummary}`,
+      ...(priceSummary ? [`• ${priceSummary}`] : []),
     ];
     if (ctx.topPosition) {
       lines.push(
         `\n**Top position:** ${ctx.topPosition.symbol} — ${ctx.topPosition.weightPct.toFixed(0)}% of book, P&L ${ctx.topPosition.pnlPct >= 0 ? "+" : ""}${ctx.topPosition.pnlPct.toFixed(2)}%`,
       );
     }
-    const cashPct = (ctx.cash / ctx.totalValue) * 100;
-    if (cashPct > 80) lines.push(`\n**Observation:** You're sitting on heavy cash (${cashPct.toFixed(0)}%) — compare how different hypothetical cash weights change the practice result; this percentage does not prescribe purchases.`);
-    else if (cashPct < 5) lines.push(`\n**Observation:** Cash is ${cashPct.toFixed(0)}% of the practice portfolio. Compare alternative weights without treating a cash band as a universal requirement.`);
+    if (cashPct !== null && cashPct > 80) lines.push(`\n**Observation:** You're sitting on heavy cash (${cashPct.toFixed(0)}%) — compare how different hypothetical cash weights change the practice result; this percentage does not prescribe purchases.`);
+    else if (cashPct !== null && cashPct < 5) lines.push(`\n**Observation:** Cash is ${cashPct.toFixed(0)}% of the practice portfolio. Compare alternative weights without treating a cash band as a universal requirement.`);
     return lines.join("\n") + DISCLAIMER;
   }
 
@@ -260,7 +267,7 @@ export function getPortfolioMentorReply(input: string, ctx: PortfolioContext): s
     if (ctx.topPosition && ctx.topPosition.weightPct > 30) {
       lines.push(`• ${ctx.topPosition.symbol} is ${ctx.topPosition.weightPct.toFixed(0)}% of the simulated portfolio. That is a useful concentration scenario to stress-test, but there is no universal percentage that automatically makes a position acceptable or unacceptable.`);
     }
-    if (ctx.positionsCount === 1) lines.push("• A one-position simulated portfolio is fully dependent on one asset. Compare that outcome with a diversified practice portfolio.");
+    if (ctx.positionsCount === 1) lines.push("• The invested portion of this one-position simulated portfolio depends on one asset; any cash is a separate exposure. Compare that outcome with a diversified practice portfolio.");
     if (ctx.positionsCount > 15) lines.push(`• The portfolio has ${ctx.positionsCount} positions. Position count alone does not determine diversification; check weights and how strongly the holdings move together.`);
     if (lines.length === 1) lines.push("• Review position weights, correlation, liquidity assumptions and how the portfolio behaves under different simulated losses. Choose any practice risk limit explicitly and test it rather than treating one percentage as universal.");
     return lines.join("\n") + DISCLAIMER;
@@ -268,11 +275,8 @@ export function getPortfolioMentorReply(input: string, ctx: PortfolioContext): s
 
   // Trade history
   if (/trade history|recent trades|review my trades|patterns/.test(text)) {
-    if (ctx.tradesCount === 0) return "You haven't placed any trades yet. Start with a small position on a familiar asset, journal your reasoning, and we'll review patterns once you have 10+ trades." + DISCLAIMER;
-    if (ctx.tradesCount < 10) return `You have ${ctx.tradesCount} trades — too few for pattern analysis. The sample is small; no universal trade count establishes a dependable pattern.${ctx.winRate !== null ? ` Current win rate: ${ctx.winRate.toFixed(0)}%.` : ""}` + DISCLAIMER;
-    const wr = ctx.winRate ?? 0;
-    const verdict = "descriptive sample; no benchmark ranking";
-    return `**Trade history review** (${ctx.tradesCount} trades, ${wr.toFixed(0)}% win rate — ${verdict}):\n\n• Win rate alone is misleading without R-multiple. With fixed realized 3R wins and 1R losses, 40% wins gives 0.6R gross expectancy; 60% wins at 1R gives 0.2R before costs. These are hypothetical inputs.\n• Track avg-win / avg-loss in your journal.\n• Look for time-of-day or asset-class patterns.` + DISCLAIMER;
+    if (ctx.tradesCount === 0) return "No recorded practice trades are available to review. You can record an assumption before a hypothetical exercise. No universal trade count establishes a dependable pattern." + DISCLAIMER;
+    return `**Trade history review** (${ctx.tradesCount} recorded trades):\n\n${winSummary}.${priceSummary ? "\n" + priceSummary : ""}\n\nWith fixed realized 3R wins and 1R losses, 40% wins gives 0.6R gross expectancy; 60% wins at 1R gives 0.2R before costs. These are hypothetical inputs, not predictions. Review gains, losses, costs and cash flows together. Apparent time-of-day or asset patterns in a selected sample can be chance and do not establish predictive value.` + DISCLAIMER;
   }
 
   // What should I do
@@ -282,10 +286,11 @@ export function getPortfolioMentorReply(input: string, ctx: PortfolioContext): s
 
   // Selected asset analysis
   if (ctx.selectedSymbol && /this asset|analyze.*asset|current asset|this coin|this stock/.test(text)) {
-    const dir = (ctx.selectedChangePct ?? 0) >= 0 ? "up" : "down";
-    return `**${ctx.selectedSymbol}** — ${dir} ${Math.abs(ctx.selectedChangePct ?? 0).toFixed(2)}% today.\n\nWithout giving a call, here's a framework:\n• Mark the higher-timeframe trend (daily, weekly).\n• Identify the nearest support and resistance.\n• Compare the planned downside and upside assumptions before a simulated entry; a ratio does not guarantee an outcome.\n• If the setup is unclear, record what information is missing instead of forcing a simulated decision.` + DISCLAIMER;
+    const change = ctx.selectedChangePct;
+    const observation = change == null || !Number.isFinite(change) ? "Percentage change is unavailable in this snapshot." : `Snapshot percentage change: ${change >= 0 ? "+" : ""}${change.toFixed(2)}%. Check the displayed quote source and observation window; this is not a forecast.`;
+    return `**${ctx.selectedSymbol}** — ${observation}\n\nRecord the price source, interval and missing information. Compare hypothetical downside and upside assumptions; a chart pattern or ratio does not guarantee an outcome. A displayed quote can be delayed, cached or generated for practice.` + DISCLAIMER;
   }
 
   // Fall back to topic engine
-  return "Rule-based educational response (AI service unavailable):\n\n" + getSmartMentorReply(input);
+  return "Built-in rule-based educational response:\n\n" + getSmartMentorReply(input);
 }

@@ -13,7 +13,7 @@ function generateTradingSummary(asset: Asset): {
   summary: string;
 } {
   const content = getAssetContent(asset.id);
-  const changePercent = asset.changePercent || asset.change || 0;
+  const changePercent = asset.changePercent ?? 0;
   const verdict = changePercent > 0.5 ? 'bullish' : changePercent < -0.5 ? 'bearish' : 'neutral';
   const strategyHint = content?.strategy || `Compare hypothetical ${asset.symbol} price changes in the simulator.`;
   return {

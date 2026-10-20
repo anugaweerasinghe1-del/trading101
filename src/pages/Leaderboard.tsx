@@ -266,20 +266,20 @@ export default function Leaderboard() {
                       {syncing ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <RefreshCw className="w-4 h-4 mr-2" />}
                       Refresh portfolio
                     </Button>
-                    <Link to="/trader/me">
-                      <Button variant="outline" size="sm" className="rounded-xl">My profile</Button>
-                    </Link>
+                    <Button variant="outline" size="sm" className="rounded-xl" asChild>
+<Link to="/trader/me">My profile</Link>
+</Button>
                   </>
                 ) : (
-                  <Link to="/auth">
-                    <Button size="sm" className="!text-black font-semibold rounded-xl">Create a free account to join</Button>
-                  </Link>
+                  <Button size="sm" className="!text-black font-semibold rounded-xl" asChild>
+<Link to="/auth">Create a free account to join</Link>
+</Button>
                 )}
-                <Link to="/challenge">
-                  <Button variant="outline" size="sm" className="rounded-xl">
+                <Button variant="outline" size="sm" className="rounded-xl" asChild>
+<Link to="/challenge">
                     <Swords className="w-4 h-4 mr-2" /> Challenge a friend
-                  </Button>
-                </Link>
+                  </Link>
+</Button>
               </div>
             </header>
 
@@ -464,11 +464,11 @@ export default function Leaderboard() {
                       Both sides are compared by percentage change from their own recorded starting balance.
                       Scores are simulated practice statistics and are not independently verified.
                     </p>
-                    <Link to="/challenge">
-                      <Button className="!text-black font-bold rounded-xl">
+                    <Button className="!text-black font-bold rounded-xl" asChild>
+<Link to="/challenge">
                         Challenge a friend <ArrowRight className="ml-2 w-4 h-4" />
-                      </Button>
-                    </Link>
+                      </Link>
+</Button>
                   </div>
                 ) : (
                   duels.map((d) => {

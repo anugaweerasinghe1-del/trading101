@@ -47,8 +47,8 @@ export default function WikiIndex() {
           <header className="my-8">
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Trading Glossary</h1>
             <p className="mt-4 text-muted-foreground max-w-3xl leading-relaxed">
-              Every term used across TradeHQ, defined in plain language and linked to the place you can
-              practise it. {tradingGlossary.length} entries, grouped by category — each one explains the
+              Browse trading concepts in plain language with examples, references and limitations.
+              Some mechanisms, including derivatives and unsupported orders, are conceptual rather than executable in TradeHQ. {tradingGlossary.length} entries, grouped by category — each one explains the
               mechanism, gives an example, and states where the idea breaks down rather than only where
               it works.
             </p>

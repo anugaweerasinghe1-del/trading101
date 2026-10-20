@@ -108,16 +108,16 @@ return (
           transition={{ delay: 0.4 }}
           className="text-center mt-16"
         >
-          <Link to="/trade">
-            <Button
+          <Button
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-7 text-base rounded-2xl min-h-[60px] font-semibold"
               style={{ boxShadow: '0 0 40px hsl(180 70% 50% / 0.15)' }}
-            >
+             asChild>
+<Link to="/trade">
               Start Instant Trading
               <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-          </Link>
+            </Link>
+</Button>
         </motion.div>
       </div>
     </section>

@@ -45,7 +45,9 @@ export default function Strategy() {
             <p className="text-xs uppercase tracking-widest text-emerald-400 mb-3 flex items-center gap-2"><Target className="h-3 w-3" />Trading strategy</p>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">{s.name}</h1>
             <p className="mt-4 text-lg text-muted-foreground">{s.oneLiner}</p>
-            <Link to="/trade"><Button className="mt-6">Practise this strategy <ArrowRight className="ml-2 h-4 w-4" /></Button></Link>
+            <Button className="mt-6" asChild>
+<Link to="/trade">Practise this strategy <ArrowRight className="ml-2 h-4 w-4" /></Link>
+</Button>
           </header>
 
           <AIAnswerBlock

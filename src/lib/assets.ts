@@ -1392,6 +1392,10 @@ export function getAssetIcon(type: Asset['type']): string {
 
 // Format price based on asset type
 export function formatPrice(price: number, type: Asset['type']): string {
+  if (!Number.isFinite(price)) return '—';
+  if (price !== 0 && Math.abs(price) < 0.0001) {
+    return price.toLocaleString('en-US', { maximumSignificantDigits: 6 });
+  }
   if (type === 'forex') {
     return price.toFixed(4);
   }

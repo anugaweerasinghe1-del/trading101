@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { formatPrice } from "@/lib/assets";
 import { Trade } from "@/lib/types";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -71,6 +72,7 @@ export function TradeHistory({ trades }: TradeHistoryProps) {
         <div className="relative flex-1 max-w-sm">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
           <Input
+            aria-label="Filter trade history by symbol"
             placeholder="Search by symbol..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -142,7 +144,7 @@ export function TradeHistory({ trades }: TradeHistoryProps) {
                     <span className="font-mono">{trade.quantity.toFixed(4)}</span>
                   </TableCell>
                   <TableCell className="text-right">
-                    <span className="font-mono">${trade.price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                    <span className="font-mono">${formatPrice(trade.price, "stock")}</span>
                   </TableCell>
                   <TableCell className="text-right">
                     <div className="flex flex-col items-end">

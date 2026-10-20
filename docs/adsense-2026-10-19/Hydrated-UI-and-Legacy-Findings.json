@@ -1,0 +1,518 @@
+{
+  "observed_at": "2026-10-19T15:49:52.408395+00:00",
+  "release": "8a3808894c034f3a5a2aab9fd8257725b332d416",
+  "implementation_after_PR193_verified": true,
+  "findings": [
+    {
+      "url": "https://www.thetradehq.com/trade",
+      "severity": "medium",
+      "evidence": "Mentor fixed button bounding box top4285.5,bottom4341.5 in936px viewport; parent PageTransition keeps identity transforms and blur after entry. Launcher at document bottom rather than viewport.",
+      "files": [
+        "src/components/PageTransition.tsx",
+        "src/components/trading/AIMentor.tsx"
+      ],
+      "id": "UI-001",
+      "classification": "technical accessibility/usability defect",
+      "relevant_guidance": [
+        "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+        "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html"
+      ],
+      "explanation": "Observed behavior or wording misstates the interface, data, calculation, documented mechanism or available feature.",
+      "root_cause": "Hydrated components and legacy data retained inconsistent wording or semantics after earlier publisher-body corrections.",
+      "fix_applied": "Remove settled identity transform and blur so fixed descendants use the viewport; size and position mentor within small screens.",
+      "tests": [
+        "TypeScript application check",
+        "Cloudflare build and publisher/course/sitewide checks",
+        "verify-editorial-ui.ts: independent arithmetic, preserved lesson identities, nullable metrics and tiny prices",
+        "Exact-head compiled Chromium desktop/mobile JS on/off plus control semantics and keyboard/viewport regression (CI required)"
+      ],
+      "production_verification": "PENDING exact-head CI, merge and both production host verification",
+      "remaining_limitation": "Source fix alone is not production or editorial cleanliness evidence.",
+      "status": "ACTION REQUIRED"
+    },
+    {
+      "url": "https://www.thetradehq.com/trade",
+      "severity": "low",
+      "evidence": "Mentor icon-only launcher and close button lack accessible names; Ghost Journal switch has no programmatic label; collapsed rationale remains a focusable textarea.",
+      "files": [
+        "src/components/trading/AIMentor.tsx",
+        "src/components/trading/GhostJournalToggle.tsx"
+      ],
+      "id": "UI-002",
+      "classification": "technical accessibility/usability defect",
+      "relevant_guidance": [
+        "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+        "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html"
+      ],
+      "explanation": "Observed behavior or wording misstates the interface, data, calculation, documented mechanism or available feature.",
+      "root_cause": "Hydrated components and legacy data retained inconsistent wording or semantics after earlier publisher-body corrections.",
+      "fix_applied": "Name mentor and journal controls, hide inactive rationale from focus, support Escape and restore mentor focus.",
+      "tests": [
+        "TypeScript application check",
+        "Cloudflare build and publisher/course/sitewide checks",
+        "verify-editorial-ui.ts: independent arithmetic, preserved lesson identities, nullable metrics and tiny prices",
+        "Exact-head compiled Chromium desktop/mobile JS on/off plus control semantics and keyboard/viewport regression (CI required)"
+      ],
+      "production_verification": "PENDING exact-head CI, merge and both production host verification",
+      "remaining_limitation": "Source fix alone is not production or editorial cleanliness evidence.",
+      "status": "ACTION REQUIRED"
+    },
+    {
+      "url": "https://www.thetradehq.com/trade",
+      "severity": "low",
+      "evidence": "20 a>button elements in hydrated shared navigation including hidden mobile menu. Closed menu uses aria-hidden and pointer-events but no visibility or inert; interactive descendants can remain keyboard-focusable.",
+      "files": [
+        "src/components/Navigation.tsx"
+      ],
+      "id": "UI-003",
+      "classification": "technical accessibility/usability defect",
+      "relevant_guidance": [
+        "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+        "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html"
+      ],
+      "explanation": "Observed behavior or wording misstates the interface, data, calculation, documented mechanism or available feature.",
+      "root_cause": "Hydrated components and legacy data retained inconsistent wording or semantics after earlier publisher-body corrections.",
+      "fix_applied": "Compose links through Button asChild, hide closed mobile menu and contain keyboard focus in the open dialog; restore focus on close.",
+      "tests": [
+        "TypeScript application check",
+        "Cloudflare build and publisher/course/sitewide checks",
+        "verify-editorial-ui.ts: independent arithmetic, preserved lesson identities, nullable metrics and tiny prices",
+        "Exact-head compiled Chromium desktop/mobile JS on/off plus control semantics and keyboard/viewport regression (CI required)"
+      ],
+      "production_verification": "PENDING exact-head CI, merge and both production host verification",
+      "remaining_limitation": "Source fix alone is not production or editorial cleanliness evidence.",
+      "status": "ACTION REQUIRED"
+    },
+    {
+      "url": "https://www.thetradehq.com/trade",
+      "severity": "low",
+      "evidence": "AssetSearchDropdown nests favorite buttons inside selecting buttons; stars have no names; positive PEPE/BONK/SHIB quotes render as $0 through default toLocaleString rounding. Sort mutates the supplied assets array when no filter is set.",
+      "files": [
+        "src/components/trading/AssetSearchDropdown.tsx"
+      ],
+      "id": "UI-004",
+      "classification": "technical accessibility/usability defect",
+      "relevant_guidance": [
+        "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+        "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html"
+      ],
+      "explanation": "Observed behavior or wording misstates the interface, data, calculation, documented mechanism or available feature.",
+      "root_cause": "Hydrated components and legacy data retained inconsistent wording or semantics after earlier publisher-body corrections.",
+      "fix_applied": "Use separate favorite and selection buttons, copy before sorting, name search/favorites, restore focus on Escape/selection and retain tiny positive prices at display time.",
+      "tests": [
+        "TypeScript application check",
+        "Cloudflare build and publisher/course/sitewide checks",
+        "verify-editorial-ui.ts: independent arithmetic, preserved lesson identities, nullable metrics and tiny prices",
+        "Exact-head compiled Chromium desktop/mobile JS on/off plus control semantics and keyboard/viewport regression (CI required)"
+      ],
+      "production_verification": "PENDING exact-head CI, merge and both production host verification",
+      "remaining_limitation": "Source fix alone is not production or editorial cleanliness evidence.",
+      "status": "ACTION REQUIRED"
+    },
+    {
+      "url": "https://www.thetradehq.com/portfolio",
+      "severity": "low",
+      "evidence": "Profit Factor helper text says Avg Win / Avg Loss while source correctly divides total winning results by absolute total losing results. Correct helper copy only; preserve calculation. Scenario and history filter inputs lack explicit programmatic labels.",
+      "files": [
+        "src/components/TradeAnalytics.tsx",
+        "src/components/portfolio/ScenarioBuilder.tsx"
+      ],
+      "id": "UI-005",
+      "classification": "substantiated educational accuracy or feature-description risk",
+      "relevant_guidance": [
+        "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+        "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html"
+      ],
+      "explanation": "Observed behavior or wording misstates the interface, data, calculation, documented mechanism or available feature.",
+      "root_cause": "Hydrated components and legacy data retained inconsistent wording or semantics after earlier publisher-body corrections.",
+      "fix_applied": "Correct Profit Factor helper to total gains divided by absolute total losses; associate filter fields with accessible names. Calculations unchanged.",
+      "tests": [
+        "TypeScript application check",
+        "Cloudflare build and publisher/course/sitewide checks",
+        "verify-editorial-ui.ts: independent arithmetic, preserved lesson identities, nullable metrics and tiny prices",
+        "Exact-head compiled Chromium desktop/mobile JS on/off plus control semantics and keyboard/viewport regression (CI required)"
+      ],
+      "production_verification": "PENDING exact-head CI, merge and both production host verification",
+      "remaining_limitation": "Source fix alone is not production or editorial cleanliness evidence.",
+      "status": "ACTION REQUIRED"
+    },
+    {
+      "url": "https://www.thetradehq.com/roadmap",
+      "severity": "low",
+      "evidence": "Hydrated roadmap asserts merely handling funds makes a site a regulated broker; planned Realistic Portfolio Projections description implies extrapolated win-rate paths are realistic. Bound product-scope wording and label hypothetical projections.",
+      "files": [
+        "src/pages/Roadmap.tsx"
+      ],
+      "id": "UI-006",
+      "classification": "substantiated educational accuracy or feature-description risk",
+      "relevant_guidance": [
+        "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+        "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html"
+      ],
+      "explanation": "Observed behavior or wording misstates the interface, data, calculation, documented mechanism or available feature.",
+      "root_cause": "Hydrated components and legacy data retained inconsistent wording or semantics after earlier publisher-body corrections.",
+      "fix_applied": "Bound roadmap language to project scope and label proposed portfolio paths hypothetical rather than calibrated forecasts.",
+      "tests": [
+        "TypeScript application check",
+        "Cloudflare build and publisher/course/sitewide checks",
+        "verify-editorial-ui.ts: independent arithmetic, preserved lesson identities, nullable metrics and tiny prices",
+        "Exact-head compiled Chromium desktop/mobile JS on/off plus control semantics and keyboard/viewport regression (CI required)"
+      ],
+      "production_verification": "PENDING exact-head CI, merge and both production host verification",
+      "remaining_limitation": "Source fix alone is not production or editorial cleanliness evidence.",
+      "status": "ACTION REQUIRED"
+    },
+    {
+      "url": "https://www.thetradehq.com/reviews",
+      "severity": "low",
+      "evidence": "Visible Name (optional) and Your review text are not associated with form inputs in DOM; no labels or aria-labels.",
+      "files": [
+        "src/pages/Reviews.tsx"
+      ],
+      "id": "UI-007",
+      "classification": "technical accessibility/usability defect",
+      "relevant_guidance": [
+        "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+        "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html"
+      ],
+      "explanation": "Observed behavior or wording misstates the interface, data, calculation, documented mechanism or available feature.",
+      "root_cause": "Hydrated components and legacy data retained inconsistent wording or semantics after earlier publisher-body corrections.",
+      "fix_applied": "Associate visible review form labels with their controls.",
+      "tests": [
+        "TypeScript application check",
+        "Cloudflare build and publisher/course/sitewide checks",
+        "verify-editorial-ui.ts: independent arithmetic, preserved lesson identities, nullable metrics and tiny prices",
+        "Exact-head compiled Chromium desktop/mobile JS on/off plus control semantics and keyboard/viewport regression (CI required)"
+      ],
+      "production_verification": "PENDING exact-head CI, merge and both production host verification",
+      "remaining_limitation": "Source fix alone is not production or editorial cleanliness evidence.",
+      "status": "ACTION REQUIRED"
+    },
+    {
+      "url": "https://www.thetradehq.com/challenge",
+      "severity": "low",
+      "evidence": "Everything else stays available without signing in conflicts with profile/community account requirements. Core simulator and learning are available as guest.",
+      "files": [
+        "src/pages/Challenge.tsx"
+      ],
+      "id": "UI-008",
+      "classification": "substantiated educational accuracy or feature-description risk",
+      "relevant_guidance": [
+        "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+        "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html"
+      ],
+      "explanation": "Observed behavior or wording misstates the interface, data, calculation, documented mechanism or available feature.",
+      "root_cause": "Hydrated components and legacy data retained inconsistent wording or semantics after earlier publisher-body corrections.",
+      "fix_applied": "Explain that guest simulator and learning work without sign-in while community features require accounts.",
+      "tests": [
+        "TypeScript application check",
+        "Cloudflare build and publisher/course/sitewide checks",
+        "verify-editorial-ui.ts: independent arithmetic, preserved lesson identities, nullable metrics and tiny prices",
+        "Exact-head compiled Chromium desktop/mobile JS on/off plus control semantics and keyboard/viewport regression (CI required)"
+      ],
+      "production_verification": "PENDING exact-head CI, merge and both production host verification",
+      "remaining_limitation": "Source fix alone is not production or editorial cleanliness evidence.",
+      "status": "ACTION REQUIRED"
+    },
+    {
+      "url": "https://www.thetradehq.com/learn",
+      "severity": "medium",
+      "evidence": "Hydrated hero claims every concept has a real practice trade; unsupported stop/limit, derivatives and indicators are taught. Roadmap teaser calls shipped sign-in future. Legacy cards retain guarantees and unsupported signals.",
+      "files": [
+        "src/pages/Learn.tsx"
+      ],
+      "id": "UI-009",
+      "classification": "substantiated educational accuracy or feature-description risk",
+      "relevant_guidance": [
+        "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+        "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html"
+      ],
+      "explanation": "Observed behavior or wording misstates the interface, data, calculation, documented mechanism or available feature.",
+      "root_cause": "Hydrated components and legacy data retained inconsistent wording or semantics after earlier publisher-body corrections.",
+      "fix_applied": "Correct hero, lesson cards and roadmap teaser to describe executable spot practice, conceptual derivatives and already available sign-in.",
+      "tests": [
+        "TypeScript application check",
+        "Cloudflare build and publisher/course/sitewide checks",
+        "verify-editorial-ui.ts: independent arithmetic, preserved lesson identities, nullable metrics and tiny prices",
+        "Exact-head compiled Chromium desktop/mobile JS on/off plus control semantics and keyboard/viewport regression (CI required)"
+      ],
+      "production_verification": "PENDING exact-head CI, merge and both production host verification",
+      "remaining_limitation": "Source fix alone is not production or editorial cleanliness evidence.",
+      "status": "ACTION REQUIRED"
+    },
+    {
+      "urls": [
+        "https://www.thetradehq.com/learn/1",
+        "https://www.thetradehq.com/learn/2",
+        "https://www.thetradehq.com/learn/3",
+        "https://www.thetradehq.com/learn/4",
+        "https://www.thetradehq.com/learn/5",
+        "https://www.thetradehq.com/learn/6"
+      ],
+      "severity": "medium",
+      "evidence": "All 2038 source lines individually read: ETF universal diversification and safety claims, unsourced Apple market cap, attributed quotes without sources, universal best trading times, surviving long enough to win, sector gains always offset, profitable vs breakeven quiz contradiction, signals predict reversals, rebalancing removes emotions/secret wealth, unstated jurisdiction tax claim, VIX bottom predictions and put/call direction inferences. Prior corrections coexist with contradictory unchanged text. Preserve six lessons, subtopics, quizzes and noindex; correct data and add primary references and worked examples where explanations promise them.",
+      "files": [
+        "src/lib/lessonData.ts",
+        "src/pages/LessonDetail.tsx"
+      ],
+      "id": "UI-010",
+      "classification": "substantiated educational accuracy or feature-description risk",
+      "relevant_guidance": [
+        "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+        "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html"
+      ],
+      "explanation": "Observed behavior or wording misstates the interface, data, calculation, documented mechanism or available feature.",
+      "root_cause": "Hydrated components and legacy data retained inconsistent wording or semantics after earlier publisher-body corrections.",
+      "fix_applied": "Correct 22 individually reviewed legacy subtopics, preserve the two already-correct sections, all lesson IDs, quiz counts and correct-answer indexes. Correct breakeven/forecast/diversification claims, remove unsupported attributed quotations and add primary references plus distinct numerical examples.",
+      "tests": [
+        "TypeScript application check",
+        "Cloudflare build and publisher/course/sitewide checks",
+        "verify-editorial-ui.ts: independent arithmetic, preserved lesson identities, nullable metrics and tiny prices",
+        "Exact-head compiled Chromium desktop/mobile JS on/off plus control semantics and keyboard/viewport regression (CI required)"
+      ],
+      "production_verification": "PENDING exact-head CI, merge and both production host verification",
+      "remaining_limitation": "Source fix alone is not production or editorial cleanliness evidence.",
+      "status": "ACTION REQUIRED"
+    },
+    {
+      "url": "https://www.thetradehq.com/learn-trading-guide",
+      "severity": "low",
+      "evidence": "Two numeric inputs and two sliders lack programmatic labels. Independently recomputed default growth:445733.3651, net285733.3651, deductions286.0194, matching displayed rounding.",
+      "files": [
+        "src/pages/LearnTradingGuide.tsx",
+        "src/components/ui/slider.tsx"
+      ],
+      "id": "UI-011",
+      "classification": "technical accessibility/usability defect",
+      "relevant_guidance": [
+        "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+        "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html"
+      ],
+      "explanation": "Observed behavior or wording misstates the interface, data, calculation, documented mechanism or available feature.",
+      "root_cause": "Hydrated components and legacy data retained inconsistent wording or semantics after earlier publisher-body corrections.",
+      "fix_applied": "Associate calculator numeric labels and forward slider accessible names to the actual thumb. Calculator arithmetic unchanged.",
+      "tests": [
+        "TypeScript application check",
+        "Cloudflare build and publisher/course/sitewide checks",
+        "verify-editorial-ui.ts: independent arithmetic, preserved lesson identities, nullable metrics and tiny prices",
+        "Exact-head compiled Chromium desktop/mobile JS on/off plus control semantics and keyboard/viewport regression (CI required)"
+      ],
+      "production_verification": "PENDING exact-head CI, merge and both production host verification",
+      "remaining_limitation": "Source fix alone is not production or editorial cleanliness evidence.",
+      "status": "ACTION REQUIRED"
+    },
+    {
+      "url": "https://www.thetradehq.com/ai-mentor",
+      "severity": "low",
+      "evidence": "Question input and icon-only send button lack explicit accessible names.",
+      "files": [
+        "src/pages/AIMentor.tsx"
+      ],
+      "id": "UI-012",
+      "classification": "technical accessibility/usability defect",
+      "relevant_guidance": [
+        "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+        "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html"
+      ],
+      "explanation": "Observed behavior or wording misstates the interface, data, calculation, documented mechanism or available feature.",
+      "root_cause": "Hydrated components and legacy data retained inconsistent wording or semantics after earlier publisher-body corrections.",
+      "fix_applied": "Name standalone mentor input and send control.",
+      "tests": [
+        "TypeScript application check",
+        "Cloudflare build and publisher/course/sitewide checks",
+        "verify-editorial-ui.ts: independent arithmetic, preserved lesson identities, nullable metrics and tiny prices",
+        "Exact-head compiled Chromium desktop/mobile JS on/off plus control semantics and keyboard/viewport regression (CI required)"
+      ],
+      "production_verification": "PENDING exact-head CI, merge and both production host verification",
+      "remaining_limitation": "Source fix alone is not production or editorial cleanliness evidence.",
+      "status": "ACTION REQUIRED"
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki",
+      "severity": "low",
+      "evidence": "Hydrated index says every glossary term links to place it can be practised, though unsupported instruments and overlays are conceptual.",
+      "files": [
+        "src/pages/WikiIndex.tsx"
+      ],
+      "id": "UI-013",
+      "classification": "substantiated educational accuracy or feature-description risk",
+      "relevant_guidance": [
+        "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+        "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html"
+      ],
+      "explanation": "Observed behavior or wording misstates the interface, data, calculation, documented mechanism or available feature.",
+      "root_cause": "Hydrated components and legacy data retained inconsistent wording or semantics after earlier publisher-body corrections.",
+      "fix_applied": "Explain glossary concepts may be conceptual rather than executable in the simulator.",
+      "tests": [
+        "TypeScript application check",
+        "Cloudflare build and publisher/course/sitewide checks",
+        "verify-editorial-ui.ts: independent arithmetic, preserved lesson identities, nullable metrics and tiny prices",
+        "Exact-head compiled Chromium desktop/mobile JS on/off plus control semantics and keyboard/viewport regression (CI required)"
+      ],
+      "production_verification": "PENDING exact-head CI, merge and both production host verification",
+      "remaining_limitation": "Source fix alone is not production or editorial cleanliness evidence.",
+      "status": "ACTION REQUIRED"
+    },
+    {
+      "url": "https://www.thetradehq.com/courses",
+      "severity": "low",
+      "evidence": "Hydrated How courses work promises permanent badge on practice profile, although badges and course progress are browser-held and clearing local data removes them.",
+      "files": [
+        "src/pages/Courses.tsx"
+      ],
+      "id": "UI-014",
+      "classification": "substantiated educational accuracy or feature-description risk",
+      "relevant_guidance": [
+        "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+        "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html"
+      ],
+      "explanation": "Observed behavior or wording misstates the interface, data, calculation, documented mechanism or available feature.",
+      "root_cause": "Hydrated components and legacy data retained inconsistent wording or semantics after earlier publisher-body corrections.",
+      "fix_applied": "Explain completion badges are browser-held and can disappear when local storage is cleared.",
+      "tests": [
+        "TypeScript application check",
+        "Cloudflare build and publisher/course/sitewide checks",
+        "verify-editorial-ui.ts: independent arithmetic, preserved lesson identities, nullable metrics and tiny prices",
+        "Exact-head compiled Chromium desktop/mobile JS on/off plus control semantics and keyboard/viewport regression (CI required)"
+      ],
+      "production_verification": "PENDING exact-head CI, merge and both production host verification",
+      "remaining_limitation": "Source fix alone is not production or editorial cleanliness evidence.",
+      "status": "ACTION REQUIRED"
+    },
+    {
+      "url": "https://www.thetradehq.com/terms",
+      "severity": "low",
+      "evidence": "Blanket statement that all software, graphics and site content belong to TradeHQ fails to acknowledge third-party libraries and CC BY music. Clarify original-work ownership and third-party rights without altering user obligations or governing-law clauses.",
+      "files": [
+        "src/pages/Terms.tsx"
+      ],
+      "id": "UI-015",
+      "classification": "substantiated educational accuracy or feature-description risk",
+      "relevant_guidance": [
+        "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+        "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html"
+      ],
+      "explanation": "Observed behavior or wording misstates the interface, data, calculation, documented mechanism or available feature.",
+      "root_cause": "Hydrated components and legacy data retained inconsistent wording or semantics after earlier publisher-body corrections.",
+      "fix_applied": "Qualify ownership of original contributions and acknowledge third-party rights/licenses; render plain-text emphasis without literal Markdown markers.",
+      "tests": [
+        "TypeScript application check",
+        "Cloudflare build and publisher/course/sitewide checks",
+        "verify-editorial-ui.ts: independent arithmetic, preserved lesson identities, nullable metrics and tiny prices",
+        "Exact-head compiled Chromium desktop/mobile JS on/off plus control semantics and keyboard/viewport regression (CI required)"
+      ],
+      "production_verification": "PENDING exact-head CI, merge and both production host verification",
+      "remaining_limitation": "Source fix alone is not production or editorial cleanliness evidence.",
+      "status": "ACTION REQUIRED"
+    },
+    {
+      "url": "https://www.thetradehq.com/trade",
+      "severity": "medium",
+      "evidence": "Portfolio mentor calls a latest-earlier-buy price comparison Win Rate, excluding fees and lot matching. Its introduction claims AI use though getPortfolioAIReply only returns local authored responses. Null win rate is coerced to zero in history; missing selected change is described as flat today.",
+      "files": [
+        "src/components/trading/AIMentor.tsx",
+        "src/lib/smartMentor.ts"
+      ],
+      "id": "UI-016",
+      "classification": "substantiated educational accuracy or feature-description risk",
+      "relevant_guidance": [
+        "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+        "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html"
+      ],
+      "explanation": "Observed behavior or wording misstates the interface, data, calculation, documented mechanism or available feature.",
+      "root_cause": "Hydrated components and legacy data retained inconsistent wording or semantics after earlier publisher-body corrections.",
+      "fix_applied": "Label the existing comparison Price-only sells with visible limitations; pass it separately from unavailable realized win rate, retain unknown values and accurately describe built-in authored chat. Existing order, balance and trade accounting calculations are unchanged.",
+      "tests": [
+        "TypeScript application check",
+        "Cloudflare build and publisher/course/sitewide checks",
+        "verify-editorial-ui.ts: independent arithmetic, preserved lesson identities, nullable metrics and tiny prices",
+        "Exact-head compiled Chromium desktop/mobile JS on/off plus control semantics and keyboard/viewport regression (CI required)"
+      ],
+      "production_verification": "PENDING exact-head CI, merge and both production host verification",
+      "remaining_limitation": "Source fix alone is not production or editorial cleanliness evidence.",
+      "status": "ACTION REQUIRED"
+    },
+    {
+      "url": "https://www.thetradehq.com/markets",
+      "severity": "medium",
+      "evidence": "ASSETS BTC change is 1850 dollars and changePercent is 1.99, but Markets renders asset.change with a percent suffix, sorts movers on dollar amounts and labels generated last-update changes 24h. A price-based arbitrary formula is labeled Volume.",
+      "files": [
+        "src/pages/Markets.tsx",
+        "src/components/AIReadySummary.tsx",
+        "src/components/TradingStrengthMeter.tsx"
+      ],
+      "id": "UI-017",
+      "classification": "substantiated educational accuracy or feature-description risk",
+      "relevant_guidance": [
+        "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+        "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html"
+      ],
+      "explanation": "Observed behavior or wording misstates the interface, data, calculation, documented mechanism or available feature.",
+      "root_cause": "Hydrated components and legacy data retained inconsistent wording or semantics after earlier publisher-body corrections.",
+      "fix_applied": "Display and sort percentage fields consistently, preserve zero percentage observations, distinguish seeded/latest-generated changes from a measured 24-hour return and label synthetic demo activity explicitly. No quote simulation or trading engine calculations changed.",
+      "tests": [
+        "TypeScript application check",
+        "Cloudflare build and publisher/course/sitewide checks",
+        "verify-editorial-ui.ts: independent arithmetic, preserved lesson identities, nullable metrics and tiny prices",
+        "Exact-head compiled Chromium desktop/mobile JS on/off plus control semantics and keyboard/viewport regression (CI required)"
+      ],
+      "production_verification": "PENDING exact-head CI, merge and both production host verification",
+      "remaining_limitation": "Source fix alone is not production or editorial cleanliness evidence.",
+      "status": "ACTION REQUIRED"
+    },
+    {
+      "url": "https://www.thetradehq.com/trade",
+      "severity": "low",
+      "evidence": "AssetContextCard assigns High volatility to every crypto token, including stablecoins, without measured volatility. Sidebar Settings has no action.",
+      "files": [
+        "src/components/trading/AssetContextCard.tsx",
+        "src/components/trading/TradingSidebar.tsx",
+        "src/components/MarketClusters.tsx"
+      ],
+      "id": "UI-018",
+      "classification": "substantiated educational accuracy or feature-description risk",
+      "relevant_guidance": [
+        "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+        "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html"
+      ],
+      "explanation": "Observed behavior or wording misstates the interface, data, calculation, documented mechanism or available feature.",
+      "root_cause": "Hydrated components and legacy data retained inconsistent wording or semantics after earlier publisher-body corrections.",
+      "fix_applied": "Use structural asset-class context rather than unmeasured risk ratings; replace the inactive settings control with a named link to existing privacy/storage choices. Qualify commodity grouping as exposure rather than a guaranteed hedge.",
+      "tests": [
+        "TypeScript application check",
+        "Cloudflare build and publisher/course/sitewide checks",
+        "verify-editorial-ui.ts: independent arithmetic, preserved lesson identities, nullable metrics and tiny prices",
+        "Exact-head compiled Chromium desktop/mobile JS on/off plus control semantics and keyboard/viewport regression (CI required)"
+      ],
+      "production_verification": "PENDING exact-head CI, merge and both production host verification",
+      "remaining_limitation": "Source fix alone is not production or editorial cleanliness evidence.",
+      "status": "ACTION REQUIRED"
+    }
+  ],
+  "scope": "Individual hydrated hub observations, all six legacy source lessons including quizzes, exact source of controls and metrics. This is an implementation record, not final clean classification.",
+  "base_sha": "033c830d4d81389c682ebf6a9e3f58657807e5ca",
+  "ci_discovered_followup": {
+    "exact_head": "a56b3f93ffacf01889d546c03729ad10751ccfc7",
+    "job": 118396074857,
+    "evidence": "620 compiled route visits completed structural checks; new semantic assertion found a raw nested button on home daily CTA and unnamed portfolio mentor launcher on mobile/desktop. Open mentor inspection also found unbounded width and unnamed close/input/send.",
+    "urls": [
+      "https://www.thetradehq.com/",
+      "https://www.thetradehq.com/portfolio"
+    ],
+    "severity": "low",
+    "requirement": "WCAG name/role/value and valid interactive semantics",
+    "root_cause": "Raw HTML button and separate portfolio mentor were outside the initial direct Link/Button and trade-mentor corrections.",
+    "files_affected": [
+      "src/components/home/DailyChallengeCard.tsx",
+      "src/components/AIAssistant.tsx"
+    ],
+    "fix_applied": "Render the challenge CTA as one styled link; give all portfolio mentor controls names, fit its panel inside small viewports and add Escape/focus restoration. Browser assertions retained and expanded.",
+    "tests": [
+      "Exact-head compiled browser re-run required",
+      "Application TypeScript check"
+    ],
+    "production_verification": "PENDING corrected exact-head checks and sequential release",
+    "remaining_limitation": "Not deployed; no cleanliness claim",
+    "status": "ACTION REQUIRED"
+  }
+}

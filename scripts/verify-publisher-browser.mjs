@@ -53,7 +53,12 @@ try {
     pending.set(id, { resolve: resolveTask, reject, timer }); socket.send(JSON.stringify({ id, method, params }));
   });
   const evaluate = async expression => { const result = await send("Runtime.evaluate", { expression, returnByValue: true }); assert.ok(!result.exceptionDetails, "Browser evaluation failed"); return result.result?.value; };
-  await send("Page.enable"); await send("Network.enable");
+  const runtimeErrors = [];
+  socket.addEventListener('message', event => {
+    const message = JSON.parse(event.data);
+    if (message.method === 'Runtime.exceptionThrown') runtimeErrors.push(message.params.exceptionDetails.exception?.description || message.params.exceptionDetails.text);
+  });
+  await send("Page.enable"); await send("Network.enable"); await send("Runtime.enable");
   // Fulfil HTTPS requests inside the fixture. Published-course reads use the
   // same recorded anonymous documents; no real account or service is touched.
   socket.addEventListener("message", event => {
@@ -74,6 +79,7 @@ try {
   });
   await send("Fetch.enable", {patterns:[{urlPattern:"https://*"}]});
   let checked = 0;
+  const semanticFailures = new Map();
   for (const width of [360, 1280]) for (const javaScript of [false, true]) {
     await send("Emulation.setDeviceMetricsOverride", { width, height: 900, deviceScaleFactor: 1, mobile: width === 360 });
     await send("Emulation.setScriptExecutionDisabled", { value: !javaScript });
@@ -92,10 +98,66 @@ try {
       assert.equal(observation.h1, 1, `${path}: one H1 (${width}px, JS=${javaScript})`);
       assert.equal(observation.overflow, false, `${path}: horizontal overflow (${width}px, JS=${javaScript})`);
       if (bundled) assert.equal(observation.notes, path, path + ": publisher content remains visible");
+      if (javaScript) {
+        const issues = await evaluate(`(() => {
+          const visible = e => e.getClientRects().length && getComputedStyle(e).visibility !== 'hidden';
+          const named = e => (e.getAttribute('aria-label') || e.getAttribute('aria-labelledby')?.split(/\\s+/).map(id=>document.getElementById(id)?.textContent || '').join(' ') || e.labels && Array.from(e.labels).map(l=>l.textContent).join(' ') || ((e.matches('button,a')) ? e.textContent : '') || e.getAttribute('title') || '').trim();
+          return Array.from(document.querySelectorAll('button, a[href], input:not([type="hidden"]), textarea, [role="switch"], [role="slider"]')).filter(visible).flatMap(e => {
+            const issues = [];
+            if (!named(e) && !e.querySelector('img[alt]:not([alt=""])')) issues.push('Unnamed control: ' + e.outerHTML.slice(0,400));
+            if (e.matches('button,a') && e.querySelector('button,a[href],input,select,textarea')) issues.push('Nested interactive: '+ e.outerHTML.slice(0,400));
+            return issues;
+          });
+        })()`);
+        for (const issue of issues) { if (!semanticFailures.has(issue)) semanticFailures.set(issue, []); semanticFailures.get(issue).push(path + '@' + width); }
+      }
       checked++;
       if (checked % 50 === 0) console.log(`Verified ${checked} compiled browser visits`);
     }
   }
+  assert.deepEqual(Object.fromEntries(semanticFailures), {}, 'Visible controls need accessible names and valid interaction nesting');
+  // Exercise keyboard navigation and the read-only selector/mentor in the isolated compiled build.
+  await send("Emulation.setScriptExecutionDisabled", {value:false});
+  await send("Emulation.setDeviceMetricsOverride", {width:360,height:900,deviceScaleFactor:1,mobile:true});
+  const waitUntil = async (expression, label) => {
+    const deadline = Date.now() + 12000;
+    while (Date.now() < deadline) { if (await evaluate(expression)) return; await delay(50); }
+    assert.fail(label);
+  };
+  await send('Page.navigate', {url:origin+'/trade'});
+  await waitUntil(`!!document.querySelector('button[aria-label="Open portfolio educational mentor"]')`, 'Trade interface must mount');
+  await evaluate(`document.querySelector('button[aria-controls="asset-search-panel"]').click()`);
+  await waitUntil(`!!document.querySelector('#asset-search-panel input')`, 'Asset search must open');
+  assert.equal(await evaluate(`!!document.querySelector('#asset-search-panel button button')`), false);
+  await send('Input.dispatchKeyEvent', {type:'keyDown',key:'Escape',code:'Escape'});
+  await waitUntil(`!document.querySelector('#asset-search-panel') && document.activeElement?.getAttribute('aria-controls') === 'asset-search-panel'`, 'Escape must close asset search and restore focus');
+  await evaluate(`document.querySelector('button[aria-label="Open portfolio educational mentor"]').click()`);
+  await waitUntil(`document.activeElement?.getAttribute('aria-label') === 'Close portfolio educational mentor'`, 'Mentor close control receives focus');
+  await waitUntil(`(() => { const r=document.querySelector('[role="dialog"][aria-label="Portfolio educational mentor"]').getBoundingClientRect(); return r.left>=0 && r.right<=innerWidth && r.top>=0 && r.bottom<=innerHeight; })()`, 'Mentor must settle inside mobile viewport');
+  await send('Input.dispatchKeyEvent', {type:'keyDown',key:'Escape',code:'Escape'});
+  await waitUntil(`document.activeElement?.getAttribute('aria-label') === 'Open portfolio educational mentor'`, 'Mentor Escape restores launcher focus');
+  await evaluate(`document.querySelector('button[aria-controls="site-menu"]').click()`);
+  await waitUntil(`document.querySelector('#site-menu')?.contains(document.activeElement)`, 'Site menu receives focus');
+  await evaluate(`Array.from(document.querySelectorAll('#site-menu a, #site-menu button')).at(-1).focus()`);
+  await send('Input.dispatchKeyEvent', {type:'keyDown',key:'Tab',code:'Tab'});
+  assert.equal(await evaluate(`document.activeElement === document.querySelector('#site-menu button')`),true,'Menu focus must wrap');
+  await send('Input.dispatchKeyEvent', {type:'keyDown',key:'Escape',code:'Escape'});
+  await waitUntil(`document.activeElement?.getAttribute('aria-controls') === 'site-menu' && getComputedStyle(document.querySelector('#site-menu')).visibility === 'hidden'`, 'Closed menu is hidden and focus returns');
+  await send('Page.navigate', {url:origin+'/portfolio'});
+  await waitUntil(`!!document.querySelector('button[aria-label="Open portfolio review mentor"]')`, 'Portfolio mentor launcher mounts');
+  await evaluate(`document.querySelector('button[aria-label="Open portfolio review mentor"]').click()`);
+  await waitUntil(`document.activeElement?.getAttribute('aria-label') === 'Close portfolio review mentor'`, 'Portfolio mentor receives focus');
+  await waitUntil(`(() => { const r=document.querySelector('[role="dialog"][aria-label="Portfolio review mentor"]').getBoundingClientRect(); return r.left>=0 && r.right<=innerWidth && r.top>=0 && r.bottom<=innerHeight; })()`, 'Portfolio mentor must settle inside mobile viewport');
+  assert.ok(await evaluate(`!!document.querySelector('input[aria-label="Question for the portfolio review mentor"]') && !!document.querySelector('button[aria-label="Send portfolio review question"]')`), 'Open portfolio mentor controls have names');
+  await send('Input.dispatchKeyEvent', {type:'keyDown',key:'Escape',code:'Escape'});
+  await waitUntil(`document.activeElement?.getAttribute('aria-label') === 'Open portfolio review mentor'`, 'Portfolio mentor restores focus');
+  for (let lesson=1; lesson<=6; lesson++) {
+    await send('Page.navigate',{url:origin+'/learn/'+lesson});
+    await waitUntil(`location.pathname === '/learn/${lesson}' && !!document.querySelector('aside a[href^="https://"]')`, 'Legacy lesson '+lesson+' renders sources');
+    assert.equal(await evaluate(`document.documentElement.scrollWidth > innerWidth+1`),false,'Legacy lesson '+lesson+' must fit mobile');
+  }
+  assert.deepEqual(runtimeErrors, [], 'No uncaught application JavaScript exceptions');
+  console.log('PASS accessible visible controls, valid nesting, mobile selector/menu/mentor focus, viewport placement and six legacy lesson source links.');
   console.log(`PASS real Chromium: ${checked} compiled route visits (${routes.length} URLs × desktop/mobile × JS on/off), canonical/H1/content parity and overflow. Native courses use read-only published fixtures, not production services.`);
 } finally {
   socket?.close();

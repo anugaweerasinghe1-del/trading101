@@ -66,7 +66,7 @@ const MARKET_CLUSTERS: Cluster[] = [
   {
     id: "hard-assets",
     name: "⚡ Hard Assets",
-    description: "Commodities that hedge against uncertainty",
+    description: "Commodity practice exposures with different price drivers",
     icon: Gem,
     color: "text-yellow-400",
     bgColor: "bg-yellow-500/10",

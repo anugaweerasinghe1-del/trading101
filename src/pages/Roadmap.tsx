@@ -22,7 +22,7 @@ const ITEMS: RoadmapItem[] = [
   { icon: Globe2, title: "Localised Country Pages", desc: "Free tailored guides for Sri Lanka, India, Philippines, Pakistan and Nigeria — local regulator, exchange, tax notes and student angle. Live under /learn/country.", status: "shipped", eta: "Shipped Jul 2026" },
   { icon: UserCircle2, title: "Optional Email + Google Sign-In", desc: "Optional sign-in supports profile and community features when the service is available. Core trading works as a guest. Account cash, positions and server-recorded trades restore across devices when available; journals and course progress remain browser-held.", status: "shipped", eta: "Shipped Aug 2026" },
   { icon: Users2, title: "Challenge a Friend", desc: "Share an invite link and run a 30-day head-to-head practice duel. Both sides are scored on percentage return from their own recorded starting balance, with a live scoreboard and a Duels tab on the leaderboard.", status: "shipped", eta: "Shipped Aug 2026" },
-  { icon: LineChart, title: "Realistic Portfolio Projections", desc: "See where your simulated equity curve trends if your current win rate, R-multiple and frequency continue — powered by your real trade history.", status: "planned", eta: "No confirmed date" },
+  { icon: LineChart, title: "Hypothetical Portfolio Scenarios", desc: "Explore explicit assumptions for future practice paths. These would be hypothetical scenarios, not calibrated forecasts or evidence that past results will repeat.", status: "planned", eta: "No confirmed date" },
   { icon: BarChart3, title: "Embeddable Live Price Widgets", desc: "A proposed embeddable price widget. Data source, update frequency and access requirements are not yet specified.", status: "planned", eta: "No confirmed date" },
 ];
 
@@ -72,7 +72,7 @@ export default function Roadmap() {
               The Future of TradeHQ
             </h1>
             <p className="mt-5 text-lg text-muted-foreground max-w-2xl mx-auto">
-              We're building the world's most rewarding practice-trading experience — and keeping it 100% free, forever. Here's what's on deck.
+              We're building a free educational practice-trading experience — and keeping it 100% free, forever. Here's what's on deck.
             </p>
           </header>
 
@@ -123,8 +123,8 @@ export default function Roadmap() {
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Two things will not appear on this roadmap. There will be no real-money trading, because
-              the moment a site handles funds it becomes a regulated broker and stops being an
-              educational tool. And there will be no signals, trade alerts or recommendations, because
+              this project is designed for education using virtual funds. Real-money services have
+              product- and jurisdiction-specific legal requirements outside its scope. And there will be no signals, trade alerts or recommendations, because
               telling people what to buy is precisely the failure mode this project was built to
               replace with practice.
             </p>

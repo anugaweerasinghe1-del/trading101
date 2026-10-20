@@ -97,7 +97,7 @@ export default function LessonDetail() {
               <Badge variant="secondary" className="mb-4 px-4 py-1.5 text-sm">
                 {lesson.category}
               </Badge>
-              <h1 className="text-5xl md:text-6xl font-bold mb-4 leading-tight">{lesson.title}</h1>
+              <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight">{lesson.title}</h1>
               <p className="text-2xl text-muted-foreground leading-relaxed max-w-4xl">
                 {lesson.description}
               </p>
@@ -114,6 +114,11 @@ export default function LessonDetail() {
             </Card>
           </div>
 
+          <aside className="mb-8 rounded-xl border border-border p-4 text-sm text-muted-foreground">
+            <p>TradeHQ publishes these AI-assisted educational lessons with source and calculation checks. This is not professional certification or a personalized investment assessment. Examples use invented inputs unless stated otherwise.</p>
+            <p className="mt-2">Sources for this lesson:</p>
+            <ul className="mt-1 space-y-1">{lesson.references?.map(reference => <li key={reference.href}><a className="underline" href={reference.href} target="_blank" rel="noopener noreferrer">{reference.label}</a></li>)}</ul>
+          </aside>
           {/* Subtopic Navigation */}
           <div className="flex gap-3 mb-12 overflow-x-auto pb-4 scrollbar-hide">
             {lesson.subtopics.map((subtopic, index) => (
@@ -133,7 +138,7 @@ export default function LessonDetail() {
           </div>
 
           {/* Content */}
-          <Card className="p-12 md:p-16 mb-12 bg-gradient-to-br from-card/40 via-card/30 to-transparent backdrop-blur-xl border-0 shadow-2xl relative overflow-hidden">
+          <Card className="p-5 sm:p-8 md:p-16 mb-12 bg-gradient-to-br from-card/40 via-card/30 to-transparent backdrop-blur-xl border-0 shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
             <div className="relative z-10">
@@ -141,7 +146,7 @@ export default function LessonDetail() {
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center shadow-lg">
                   <BookOpen className="w-8 h-8 text-primary" />
                 </div>
-                <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">{currentTopic.title}</h2>
+                <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">{currentTopic.title}</h2>
               </div>
 
               <div className="space-y-10 max-w-4xl">
@@ -223,7 +228,7 @@ export default function LessonDetail() {
                       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                       <div className="relative">
                         <TrendingUp className="w-10 h-10 text-primary mb-4 animate-pulse" />
-                        <div className="text-5xl md:text-6xl font-bold text-gradient-gold mb-3">
+                        <div className="text-3xl sm:text-5xl md:text-6xl font-bold text-gradient-gold mb-3">
                           {section.value}
                         </div>
                         <div className="text-xl font-semibold text-primary mb-4">

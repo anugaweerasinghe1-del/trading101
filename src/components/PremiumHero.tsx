@@ -105,27 +105,27 @@ export function PremiumHero() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
         >
-          <Link to="/trade">
-            <Button
+          <Button
               size="lg"
               className="group relative text-base px-12 py-7 bg-primary hover:bg-primary/90 transition-all duration-300 rounded-2xl min-h-[60px] font-bold overflow-hidden text-black"
               style={{ boxShadow: '0 0 40px hsl(168 100% 50% / 0.45), 0 0 80px hsl(168 100% 50% / 0.18)', color: '#000' }}
-            >
+             asChild>
+<Link to="/trade">
               <span className="relative z-10 flex items-center text-black font-bold tracking-tight">
                 Start Trading Free
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1.5 transition-transform text-black" />
               </span>
-            </Button>
-          </Link>
-          <Link to="/courses">
-            <Button
+            </Link>
+</Button>
+          <Button
               size="lg"
               variant="outline"
               className="text-base px-10 py-7 bg-white/[0.06] border-white/20 text-foreground hover:bg-white/[0.10] hover:border-primary/40 transition-all duration-300 rounded-2xl min-h-[60px] backdrop-blur-xl font-semibold"
-            >
+             asChild>
+<Link to="/courses">
               Learn Trading
-            </Button>
-          </Link>
+            </Link>
+</Button>
         </motion.div>
 
         {/* Sub-CTA text */}

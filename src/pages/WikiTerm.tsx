@@ -206,11 +206,11 @@ const WikiTerm = () => {
             <p className="text-xs text-muted-foreground mb-4">
               Use the worksheet below to examine {term.term.toLowerCase()}. Some concepts require external data or paper calculations; TradeHQ does not implement every indicator, order type or contract.
             </p>
-            <Link to="/trade/btc">
-              <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-lg">
+            <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-lg" asChild>
+<Link to="/trade/btc">
                 Open Simulator <ArrowRight className="ml-2 w-3 h-3" />
-              </Button>
-            </Link>
+              </Link>
+</Button>
           </Card>
 
           {/* WhatsApp Share */}

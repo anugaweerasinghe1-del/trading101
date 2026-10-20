@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Wallet, Home, GraduationCap, BookOpen, BarChart3, Bot, Menu, X, Star, Info, UserRound, LogOut } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { cn } from "@/lib/utils";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { BrandMark } from "@/components/brand/BrandMark";
 import { StreakBadge } from "@/components/badges/StreakBadge";
@@ -16,6 +16,8 @@ export function Navigation() {
   const { user, signOut } = useAuth();
   const [signingOut, setSigningOut] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const menuTriggerRef = useRef<HTMLButtonElement>(null);
   const [scrolled, setScrolled] = useState(false);
 
   const handleSignOut = async () => {
@@ -48,13 +50,21 @@ export function Navigation() {
     if (!mobileMenuOpen) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    const focusable = () => Array.from(menuRef.current?.querySelectorAll<HTMLElement>('a[href], button:not([disabled])') ?? []).filter(el => el.getClientRects().length);
+    focusable()[0]?.focus();
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setMobileMenuOpen(false);
+      if (e.key === "Tab") {
+        const items = focusable(), first = items[0], last = items[items.length - 1];
+        if (e.shiftKey && (document.activeElement === first || !menuRef.current?.contains(document.activeElement))) { e.preventDefault(); last?.focus(); }
+        else if (!e.shiftKey && (document.activeElement === last || !menuRef.current?.contains(document.activeElement))) { e.preventDefault(); first?.focus(); }
+      }
     };
     window.addEventListener("keydown", onKey);
     return () => {
       document.body.style.overflow = prev;
       window.removeEventListener("keydown", onKey);
+      menuTriggerRef.current?.focus();
     };
   }, [mobileMenuOpen]);
 
@@ -90,8 +100,7 @@ export function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden xl:flex min-w-0 overflow-x-auto items-center gap-1">
             {navItems.map((item) => (
-              <Link key={item.to} to={item.to}>
-                <Button
+              <Button
                   variant="ghost"
                   size="sm"
                   className={cn(
@@ -100,11 +109,12 @@ export function Navigation() {
                       ? "bg-primary/10 text-primary"
                       : "text-muted-foreground hover:text-foreground hover:bg-white/[0.05]"
                   )}
-                >
+                 asChild key={item.to}>
+<Link  to={item.to}>
                   <item.icon className="w-4 h-4 mr-2" />
                   {item.label}
-                </Button>
-              </Link>
+                </Link>
+</Button>
             ))}
             <div className="ml-2 pl-2 border-l border-white/[0.06]">
               <StreakBadge className="mr-2" />
@@ -121,12 +131,12 @@ export function Navigation() {
                     <LogOut className="w-4 h-4 mr-2" /> {signingOut ? "Signing out…" : "Sign out"}
                   </DropdownMenuItem>
                 </DropdownMenuContent>
-              </DropdownMenu> : <Link to="/auth" className="ml-2 inline-block">
-                <Button variant="outline" size="sm" className="h-9 rounded-xl text-sm">
+              </DropdownMenu> : <Button variant="outline" size="sm" className="h-9 rounded-xl text-sm" asChild>
+<Link to="/auth" className="ml-2 inline-block">
                   <UserRound className="w-4 h-4 mr-2" />
                   Sign in
-                </Button>
-              </Link>}
+                </Link>
+</Button>}
             </div>
           </div>
 
@@ -140,6 +150,8 @@ export function Navigation() {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="h-9 w-9"
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              ref={menuTriggerRef}
+              aria-controls="site-menu"
               aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -155,7 +167,7 @@ export function Navigation() {
     <div
       className={cn(
         "xl:hidden fixed inset-0 overflow-hidden z-[80] transition-opacity duration-300",
-        mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        mobileMenuOpen ? "opacity-100" : "opacity-0 invisible pointer-events-none"
       )}
       aria-hidden={!mobileMenuOpen}
     >
@@ -164,6 +176,8 @@ export function Navigation() {
         onClick={() => setMobileMenuOpen(false)}
       />
       <div
+        id="site-menu"
+        ref={menuRef}
         role="dialog"
         aria-modal="true"
         aria-label="Site menu"
@@ -189,8 +203,7 @@ export function Navigation() {
 
         <div className="flex-1 overflow-y-auto px-3 py-3 flex flex-col gap-1 pb-[calc(env(safe-area-inset-bottom)+5.5rem)]">
           {navItems.map((item) => (
-            <Link key={item.to} to={item.to} onClick={() => setMobileMenuOpen(false)}>
-              <Button
+            <Button
                 variant="ghost"
                 className={cn(
                   "w-full justify-start h-12 px-4 text-sm font-medium rounded-xl transition-all",
@@ -198,18 +211,19 @@ export function Navigation() {
                     ? "bg-primary/10 text-primary"
                     : "text-muted-foreground hover:text-foreground hover:bg-white/[0.05]"
                 )}
-              >
+               asChild key={item.to}>
+<Link  to={item.to} onClick={() => setMobileMenuOpen(false)}>
                 <item.icon className="w-4 h-4 mr-3" />
                 {item.label}
-              </Button>
-            </Link>
+              </Link>
+</Button>
           ))}
-          <Link to={user ? "/trader/me" : "/auth"} onClick={() => setMobileMenuOpen(false)}>
-            <Button variant="ghost" className="w-full justify-start h-12 px-4 text-sm font-medium rounded-xl text-muted-foreground hover:text-foreground hover:bg-white/[0.05]">
+          <Button variant="ghost" className="w-full justify-start h-12 px-4 text-sm font-medium rounded-xl text-muted-foreground hover:text-foreground hover:bg-white/[0.05]" asChild>
+<Link to={user ? "/trader/me" : "/auth"} onClick={() => setMobileMenuOpen(false)}>
               <UserRound className="w-4 h-4 mr-3" />
               {user ? "My profile" : "Sign in (optional)"}
-            </Button>
-          </Link>
+            </Link>
+</Button>
           {user && <Button variant="ghost" disabled={signingOut} onClick={() => void handleSignOut()} className="w-full justify-start h-12 px-4 text-sm font-medium rounded-xl">
             <LogOut className="w-4 h-4 mr-3" /> {signingOut ? "Signing out…" : "Sign out"}
           </Button>}

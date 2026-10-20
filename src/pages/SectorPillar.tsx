@@ -6,7 +6,7 @@ import { MegaFooter } from "@/components/MegaFooter";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { SEOSection } from "@/components/SEOSection";
-import { ASSETS } from "@/lib/assets";
+import { ASSETS, formatPrice } from "@/lib/assets";
 import { TrendingUp, TrendingDown, ArrowRight, Cpu, Coins, Building2, Globe, Gem, LineChart } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -206,7 +206,7 @@ export default function SectorPillar() {
                     <div className="flex items-end justify-between">
                       <div>
                         <p className="text-2xl font-bold tabular-nums">
-                          ${asset.price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                          ${formatPrice(asset.price, asset.type)}
                         </p>
                         <p className={cn(
                           "text-sm tabular-nums",

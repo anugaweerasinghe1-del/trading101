@@ -25,6 +25,7 @@ export function GhostJournalToggle({
           <span>Ghost Journal</span>
         </div>
         <Switch
+          aria-label="Enable Ghost Journal"
           checked={journalEnabled}
           onCheckedChange={onToggle}
           className="scale-75"
@@ -39,6 +40,8 @@ export function GhostJournalToggle({
         )}
       >
         <textarea
+          aria-label="Trade rationale"
+          hidden={!journalEnabled}
           value={rationale}
           onChange={(e) => onRationaleChange(e.target.value)}
           placeholder="Why are you making this trade? (required)"

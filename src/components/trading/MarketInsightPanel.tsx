@@ -24,6 +24,7 @@ interface InsightTile {
 }
 
 function formatPrice(value: number) {
+  if (value !== 0 && Math.abs(value) < 0.0001) return value.toLocaleString("en-US", { maximumSignificantDigits: 6 });
   if (value < 1) return value.toFixed(4);
   return value.toLocaleString(undefined, { maximumFractionDigits: 2 });
 }

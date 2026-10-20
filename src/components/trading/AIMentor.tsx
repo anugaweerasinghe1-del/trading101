@@ -39,12 +39,21 @@ export function AIMentor({ portfolio, assets, selectedAsset }: AIMentorProps) {
     {
       id: '1',
       role: 'assistant',
-      content: "I explain trading concepts using the practice snapshot supplied by this page. Responses use AI when available or a labeled rule-based fallback. Ask about quantities, fees or your recorded assumptions.",
+      content: "I explain trading concepts using the practice snapshot supplied by this page. Responses use a built-in rule-based educational library; this chat does not call an AI service. Ask about quantities, fees or your recorded assumptions.",
       timestamp: new Date(),
     },
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const launcherRef = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    if (!isOpen) return;
+    closeRef.current?.focus();
+    const onKey = (event: KeyboardEvent) => { if (event.key === "Escape") setIsOpen(false); };
+    window.addEventListener("keydown", onKey);
+    return () => { window.removeEventListener("keydown", onKey); launcherRef.current?.focus(); };
+  }, [isOpen]);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -61,7 +70,7 @@ export function AIMentor({ portfolio, assets, selectedAsset }: AIMentorProps) {
     if (buys.length === 0) return false;
     return t.price > buys[buys.length - 1].price;
   });
-  const winRate = sellTrades.length > 0 ? ((wins.length / sellTrades.length) * 100).toFixed(0) : '—';
+  const priceOnlySellRatio = sellTrades.length > 0 ? ((wins.length / sellTrades.length) * 100).toFixed(0) : '—';
 
   const sendMessage = async (customMessage?: string) => {
     const messageText = customMessage || input;
@@ -87,13 +96,14 @@ export function AIMentor({ portfolio, assets, selectedAsset }: AIMentorProps) {
         pnlPct: p.profitLossPercent ?? 0,
       }))
       .sort((a, b) => b.weightPct - a.weightPct)[0] ?? null;
-    const wrNum = winRate === '—' ? null : Number(winRate);
+    const priceOnlySellComparisonPct = priceOnlySellRatio === '—' ? null : Number(priceOnlySellRatio);
     const reply = await getPortfolioAIReply(messageText, {
       cash: portfolio.cash,
       totalValue: portfolio.totalValue,
       positionsCount: portfolio.positions.length,
       tradesCount: portfolio.trades.length,
-      winRate: wrNum,
+      winRate: null,
+      priceOnlySellComparisonPct,
       topPosition: topPos,
       selectedSymbol: selectedAsset?.symbol ?? null,
       selectedChangePct: selectedAsset?.changePercent ?? null,
@@ -112,8 +122,11 @@ export function AIMentor({ portfolio, assets, selectedAsset }: AIMentorProps) {
       {/* Floating Toggle Button */}
       {!isOpen && (
         <Button
+          ref={launcherRef}
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 w-14 h-14 rounded-full shadow-lg bg-primary hover:bg-primary/90 z-50"
+          aria-label="Open portfolio educational mentor"
+          aria-expanded={false}
+          className="fixed bottom-20 right-4 w-14 h-14 rounded-full shadow-lg bg-primary hover:bg-primary/90 z-50"
           size="icon"
         >
           <Bot className="w-6 h-6" />
@@ -122,7 +135,7 @@ export function AIMentor({ portfolio, assets, selectedAsset }: AIMentorProps) {
 
       {/* AI Mentor Panel */}
       {isOpen && (
-        <Card className="fixed bottom-6 right-6 w-[380px] h-[600px] shadow-card bg-card z-50 flex flex-col overflow-hidden border-border animate-slide-in-right">
+        <Card role="dialog" aria-label="Portfolio educational mentor" className="fixed bottom-20 right-4 w-[calc(100vw-2rem)] max-w-[380px] h-[min(600px,calc(100dvh-7rem))] shadow-card bg-card z-50 flex flex-col overflow-hidden border-border animate-slide-in-right">
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b border-border bg-gradient-sidebar">
             <div className="flex items-center gap-3">
@@ -142,6 +155,8 @@ export function AIMentor({ portfolio, assets, selectedAsset }: AIMentorProps) {
               size="icon"
               className="w-8 h-8"
               onClick={() => setIsOpen(false)}
+              ref={closeRef}
+              aria-label="Close portfolio educational mentor"
             >
               <X className="w-4 h-4" />
             </Button>
@@ -162,11 +177,12 @@ export function AIMentor({ portfolio, assets, selectedAsset }: AIMentorProps) {
               <p className="text-[11px] font-bold tabular-nums text-foreground">{totalTrades}</p>
             </div>
             <div>
-              <p className="text-[9px] text-muted-foreground uppercase">Win Rate</p>
-              <p className="text-[11px] font-bold tabular-nums text-foreground">{winRate}{winRate !== '—' ? '%' : ''}</p>
+              <p className="text-[9px] text-muted-foreground uppercase" title="Share of sales priced above the latest earlier buy for that asset. Excludes fees and lot matching; not a realized win rate.">Price-only sells</p>
+              <p className="text-[11px] font-bold tabular-nums text-foreground">{priceOnlySellRatio}{priceOnlySellRatio !== '—' ? '%' : ''}</p>
             </div>
           </div>
 
+          <p className="px-4 py-1 text-2xs text-muted-foreground">Price-only sells compares each sale with its latest earlier buy. It excludes fees and lot matching, so it is not a realized win rate.</p>
           {/* Context Bar */}
           {selectedAsset && (
             <div className="px-4 py-2 border-b border-border bg-secondary/30 flex items-center gap-2">
@@ -261,12 +277,14 @@ export function AIMentor({ portfolio, assets, selectedAsset }: AIMentorProps) {
               <Input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
+                aria-label="Question for the portfolio educational mentor"
                 placeholder="Ask about your portfolio..."
                 disabled={isLoading}
                 className="flex-1 bg-secondary border-0"
               />
               <Button
                 type="submit"
+                aria-label="Send mentor question"
                 size="icon"
                 disabled={isLoading || !input.trim()}
                 className="w-10 h-10"

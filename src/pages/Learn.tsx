@@ -20,10 +20,10 @@ import marketTrends from "@/assets/course-market-trends.jpg";
 
 const lessons = [
   { id: 1, title: "Getting Started with Trading", category: "Basics", icon: BookOpen, image: tradingBasics, description: "Learn the fundamentals of trading, key terminology, and how markets work.", difficulty: "Beginner", readTime: "15 min", tier: "foundations" as const, content: ["Understanding stocks, ETFs, and other securities", "How to read stock quotes and charts", "Market orders vs. limit orders", "Trading hours and market sessions"] },
-  { id: 5, title: "Setting Trading Goals", category: "Basics", icon: Target, image: goals, description: "Define clear objectives and develop a trading plan that works for you.", difficulty: "Beginner", readTime: "12 min", tier: "foundations" as const, content: ["Short-term vs. long-term strategies", "Setting realistic profit targets", "Creating a trading journal", "Evaluating your performance"] },
-  { id: 2, title: "Risk Management", category: "Strategy", icon: Shield, image: riskManagement, description: "Essential strategies to protect your capital and manage trading risk.", difficulty: "Intermediate", readTime: "18 min", tier: "strategy" as const, content: ["Position sizing and the 2% rule", "Stop-loss orders and take-profit targets", "Understanding risk-reward ratios", "Diversification strategies"] },
-  { id: 3, title: "Technical Analysis Basics", category: "Analysis", icon: LineChart, image: technicalAnalysis, description: "Learn to read charts and identify trading opportunities using technical indicators.", difficulty: "Intermediate", readTime: "20 min", tier: "strategy" as const, content: ["Candlestick patterns and what they mean", "Support and resistance levels", "Moving averages (SMA and EMA)", "RSI and MACD indicators"] },
-  { id: 6, title: "Market Trends & Patterns", category: "Analysis", icon: TrendingUp, image: marketTrends, description: "Identify market trends and learn how to trade with momentum.", difficulty: "Intermediate", readTime: "18 min", tier: "strategy" as const, content: ["Bull markets vs. bear markets", "Identifying trend reversals", "Volume analysis", "Market sentiment indicators"] },
+  { id: 5, title: "Setting Trading Goals", category: "Basics", icon: Target, image: goals, description: "Separate hypothetical return arithmetic from reviewable practice goals.", difficulty: "Beginner", readTime: "12 min", tier: "foundations" as const, content: ["Short-term vs. long-term strategies", "Return assumptions and practice goals", "Creating a trading journal", "Evaluating your performance"] },
+  { id: 2, title: "Risk Management", category: "Strategy", icon: Shield, image: riskManagement, description: "Calculate hypothetical exposure, costs and losses, including worse-than-planned exits.", difficulty: "Intermediate", readTime: "18 min", tier: "strategy" as const, content: ["Position sizing assumptions and their limits", "Stop-loss orders and take-profit targets", "Understanding risk-reward ratios", "Diversification strategies"] },
+  { id: 3, title: "Technical Analysis Basics", category: "Analysis", icon: LineChart, image: technicalAnalysis, description: "Read chart observations and indicator calculations without treating them as forecasts.", difficulty: "Intermediate", readTime: "20 min", tier: "strategy" as const, content: ["Candlestick patterns and what they mean", "Support and resistance levels", "Moving averages (SMA and EMA)", "RSI and MACD indicators"] },
+  { id: 6, title: "Market Trends & Patterns", category: "Analysis", icon: TrendingUp, image: marketTrends, description: "Describe trends, volume and sentiment measures, and test their limitations.", difficulty: "Intermediate", readTime: "18 min", tier: "strategy" as const, content: ["Bull markets vs. bear markets", "Identifying trend reversals", "Volume analysis", "Market sentiment indicators"] },
   { id: 4, title: "Portfolio Diversification", category: "Strategy", icon: PieChart, image: diversification, description: "Build a balanced portfolio across different asset classes and sectors.", difficulty: "Advanced", readTime: "22 min", tier: "advanced" as const, content: ["Asset allocation strategies", "Balancing stocks, ETFs, and crypto", "Sector diversification", "Rebalancing your portfolio"] },
 ];
 
@@ -68,7 +68,7 @@ const SECTORS = [
 
 const LEARNING_PATH = [
   { tier: "foundations" as const, label: "Foundations", tagline: "Start here — understand markets, terminology, and your first trade.", color: "text-emerald-400", borderColor: "border-emerald-500/20", bgColor: "bg-emerald-500/5" },
-  { tier: "strategy" as const, label: "Strategy & Analysis", tagline: "Build your edge — risk management, technical analysis, and market patterns.", color: "text-blue-400", borderColor: "border-blue-500/20", bgColor: "bg-blue-500/5" },
+  { tier: "strategy" as const, label: "Strategy & Analysis", tagline: "Compare assumptions — risk management, technical analysis, and market patterns.", color: "text-blue-400", borderColor: "border-blue-500/20", bgColor: "bg-blue-500/5" },
   { tier: "advanced" as const, label: "Advanced Practice", tagline: "Refine your approach — portfolio construction, diversification, and real-world application.", color: "text-amber-400", borderColor: "border-amber-500/20", bgColor: "bg-amber-500/5" },
 ];
 
@@ -211,7 +211,7 @@ export default function Learn() {
               <div className="flex items-center justify-between gap-4">
                 <div>
                   <div className="text-[10px] uppercase tracking-widest text-emerald-400 mb-1">✨ What's next</div>
-                  <p className="text-sm font-medium">Expanded courses, optional sign-in & realistic portfolio projections — peek the roadmap.</p>
+                  <p className="text-sm font-medium">Courses and optional sign-in are live. See planned hypothetical scenario tools on the roadmap.</p>
                 </div>
                 <ChevronRight className="w-5 h-5 text-emerald-400 group-hover:translate-x-1 transition" />
               </div>
@@ -248,7 +248,7 @@ export default function Learn() {
                 Learn Trading — From Zero to Confident
               </h1>
               <p className="text-base md:text-lg text-foreground/70 max-w-2xl mx-auto leading-relaxed mb-6">
-                Structured paths from absolute beginner to advanced strategy. Every concept paired with a real practice trade — no signup, no risk, no fluff.
+                Explore structured courses and shorter explanations. Practice supported spot instruments with virtual funds; options, futures and unsupported order types are conceptual exercises.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-2 text-xs text-foreground/60">
                 <span className="px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">⚡ 4 full courses · 6 quick reads</span>
@@ -284,11 +284,11 @@ export default function Learn() {
                 <h3 className="text-lg font-bold mb-1">New to trading?</h3>
                 <p className="text-sm text-muted-foreground">Start with Quick Read 1 — it covers everything you need to place your first simulated trade.</p>
               </div>
-                <Link to="/learn/1">
-                <Button className="bg-primary hover:bg-primary/90 !text-black px-6 py-3 rounded-xl font-bold whitespace-nowrap shadow-[0_0_24px_hsl(168_100%_50%/0.3)]">
+                <Button className="bg-primary hover:bg-primary/90 !text-black px-6 py-3 rounded-xl font-bold whitespace-nowrap shadow-[0_0_24px_hsl(168_100%_50%/0.3)]" asChild>
+<Link to="/learn/1">
                   Start Quick Read 1 <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </Link>
+                </Link>
+</Button>
             </div>
 
             {/* Featured Guides */}
@@ -425,11 +425,11 @@ export default function Learn() {
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-4xl font-bold mb-6">Ready to Start Trading?</h2>
                 <p className="text-xl text-muted-foreground mb-8 leading-relaxed">Practice these strategies with your $100,000 virtual cash.</p>
-                <Link to="/trade">
-                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-xl min-h-[48px] font-semibold">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-xl min-h-[48px] font-semibold" asChild>
+<Link to="/trade">
                     Start Trading Free <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </Link>
+                  </Link>
+</Button>
               </div>
             </Card>
 
@@ -452,7 +452,7 @@ export default function Learn() {
                 {
                   question: "What's the difference between an article and a lesson?",
                   answer:
-                    "Articles are quick 5–8 minute reads on a single concept (e.g. paper trading). Lessons are interactive, multi-step modules that include quizzes and link to the trading simulator so you can practice instantly.",
+                    "Articles explain individual concepts. Lessons use multiple sections and quizzes; supported spot instruments can be explored in the simulator, while derivatives and unsupported orders remain conceptual.",
                 },
                 {
                   question: "Where should a complete beginner start?",

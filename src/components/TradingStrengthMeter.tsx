@@ -11,7 +11,7 @@ function calculateMovementScore(asset: Asset): {
   score: number;
   interpretation: string;
 } {
-  const changePercent = asset.changePercent || asset.change || 0;
+  const changePercent = asset.changePercent ?? 0;
   const absoluteMove = Math.abs(changePercent);
 
   // Display scale only: a 0-5% absolute move maps linearly to 0-100.

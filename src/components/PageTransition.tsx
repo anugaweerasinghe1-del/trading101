@@ -13,7 +13,7 @@ export function PageTransition({ children }: PageTransitionProps) {
   useEffect(() => {
     // Start exit animation
     setIsVisible(false);
-    
+
     // After exit animation, swap children and start enter animation
     const timer = setTimeout(() => {
       setDisplayChildren(children);
@@ -34,8 +34,8 @@ export function PageTransition({ children }: PageTransitionProps) {
   return (
     <div
       className={`transition-all duration-500 ease-out ${
-        isVisible 
-          ? "opacity-100 translate-y-0 scale-100 blur-0" 
+        isVisible
+          ? "opacity-100 transform-none filter-none"
           : "opacity-0 translate-y-4 scale-[0.98] blur-[2px]"
       }`}
     >

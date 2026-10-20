@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { formatPrice } from "@/lib/assets";
 import { Asset, JournalEntry } from "@/lib/types";
 import { OrderType } from "@/lib/orderTypes";
 import { AVAILABLE_EMOTIONS } from "@/lib/tradingJournal";
@@ -101,7 +102,7 @@ export function TradeDialog({ asset, open, onOpenChange, onTrade, availableCash 
           <div className="flex items-center justify-between p-4 rounded-lg bg-muted/50">
             <div>
               <p className="text-sm text-muted-foreground mb-1">{asset.name}</p>
-              <p className="text-3xl font-bold">${asset.price.toLocaleString('en-US', { minimumFractionDigits: 2 })}</p>
+              <p className="text-3xl font-bold">${formatPrice(asset.price, asset.type)}</p>
             </div>
             <div className={cn(
               "flex items-center gap-1 text-sm font-medium",

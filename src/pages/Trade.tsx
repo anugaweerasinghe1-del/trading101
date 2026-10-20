@@ -15,7 +15,7 @@ import { MobileOrderDrawer } from "@/components/trading/MobileOrderDrawer";
 import { LiveDataToggle } from "@/components/trading/LiveDataToggle";
 import { MegaFooter } from "@/components/MegaFooter";
 import { SEOSection } from "@/components/SEOSection";
-import { ASSETS } from "@/lib/assets";
+import { ASSETS, formatPrice } from "@/lib/assets";
 import { Asset, JournalEntry } from "@/lib/types";
 import {
   getPortfolio,
@@ -372,11 +372,7 @@ export default function Trade() {
                         <div className="flex items-center justify-between mt-1">
                           <p className="text-xs font-medium text-foreground/80">
                             $
-                            {asset.price < 1
-                              ? asset.price.toFixed(4)
-                              : asset.price.toLocaleString(undefined, {
-                                  maximumFractionDigits: 2,
-                                })}
+                            {formatPrice(asset.price, asset.type)}
                           </p>
                           <span className={`text-[8px] font-medium px-1 py-0.5 rounded ${
                             liveAssetIds.has(asset.id)

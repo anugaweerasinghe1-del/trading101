@@ -43,6 +43,7 @@ export function TradingSidebar() {
               <TooltipTrigger asChild>
                 <Link
                   to={item.path}
+                  aria-label={item.label}
                   className={cn(
                     "flex items-center justify-center w-10 h-10 rounded-lg transition-all duration-200",
                     isActive 
@@ -66,12 +67,12 @@ export function TradingSidebar() {
         <ThemeToggle />
         <Tooltip delayDuration={0}>
           <TooltipTrigger asChild>
-            <button className="flex items-center justify-center w-10 h-10 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-colors">
+            <Link to="/privacy" aria-label="Privacy and storage choices" className="flex items-center justify-center w-10 h-10 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-colors">
               <Settings className="w-5 h-5" />
-            </button>
+            </Link>
           </TooltipTrigger>
           <TooltipContent side="right" sideOffset={8}>
-            Settings
+            Privacy and storage choices
           </TooltipContent>
         </Tooltip>
       </div>
