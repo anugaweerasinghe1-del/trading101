@@ -33,7 +33,7 @@ const WikiTerm = () => {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": `What is ${term.term}? | Trading Concept Guide | TradeHQ`,
+    "headline": `${term.term} — Explanation & Learning Exercise | TradeHQ Wiki`,
     "description": `${term.definition}`,
     "author": { "@type": "Organization", "name": "TradeHQ" },
     "publisher": {
@@ -85,7 +85,7 @@ const WikiTerm = () => {
   return (
     <>
       <Helmet>
-        <title>What is {term.term}? | Trading Concept Guide | TradeHQ</title>
+        <title>{term.term} — Explanation & Learning Exercise | TradeHQ Wiki</title>
         <meta
           name="description"
           content={`${firstCompleteSentence(term.definition)} Learn the concept with examples and simulated practice on TradeHQ.`}
