@@ -1,0 +1,37 @@
+name: AdSense live sitemap review
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/audit-live-sitemap.mjs'
+      - '.github/workflows/adsense-live-sitemap.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect-production:
+    name: Inspect every live sitemap URL (read only)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out exactly the proposed audit script
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Set up Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Audit the live production sitemap and every listed URL
+        run: node scripts/audit-live-sitemap.mjs --report-only
+      - name: Attach per-URL evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: adsense-live-sitemap-${{ github.run_id }}
+          path: adsense-live-sitemap-audit.json
+          if-no-files-found: warn
+          retention-days: 7
