@@ -93,7 +93,7 @@ const optionsTrack: CourseTrack = {
       ],
       keyTakeaways: [
         "A standard unadjusted US equity option generally covers 100 shares; adjusted and other contracts can differ.",
-        "At expiration, before costs, a purchased call breaks even at strike + premium and a purchased put at strike − premium; prices beyond those levels produce a net option payoff gain.",
+        "At expiration, before costs, a purchased call has a net gain above strike + premium; a purchased put has a net gain below strike − premium. Those levels are break-even prices.",
         "A purchased option held without exercise can lose its premium plus costs; exercise can create a separate underlying position and obligations.",
         "Options can be used for hedging and speculation; their risk depends on the position and contract.",
       ],
