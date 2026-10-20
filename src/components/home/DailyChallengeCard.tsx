@@ -81,8 +81,7 @@ export function DailyChallengeCard() {
       )}
 
       {/* CTA */}
-      <Link to="/daily" className="block">
-        <button
+      <Link to="/daily"
           className={cn(
             "w-full h-12 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all active:scale-[0.97]",
             played
@@ -100,7 +99,6 @@ export function DailyChallengeCard() {
               Play Today's Challenge <ArrowRight className="w-4 h-4" />
             </>
           )}
-        </button>
       </Link>
 
       {nextBadge && !played && (

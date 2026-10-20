@@ -26,6 +26,15 @@ export function AIAssistant({ portfolio, assets }: AIAssistantProps) {
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const launcherRef = useRef<HTMLButtonElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    if (!isOpen) return;
+    closeRef.current?.focus();
+    const onKey = (event: KeyboardEvent) => { if (event.key === "Escape") setIsOpen(false); };
+    window.addEventListener("keydown", onKey);
+    return () => { window.removeEventListener("keydown", onKey); launcherRef.current?.focus(); };
+  }, [isOpen]);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -88,8 +97,10 @@ export function AIAssistant({ portfolio, assets }: AIAssistantProps) {
       {/* Floating Button */}
       {!isOpen && (
         <Button
+          ref={launcherRef}
+          aria-label="Open portfolio review mentor"
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 w-16 h-16 rounded-full shadow-gold bg-primary hover:bg-primary/90 z-50"
+          className="fixed bottom-20 right-4 w-14 h-14 rounded-full shadow-gold bg-primary hover:bg-primary/90 z-50"
           size="icon"
         >
           <Bot className="w-7 h-7" />
@@ -98,7 +109,7 @@ export function AIAssistant({ portfolio, assets }: AIAssistantProps) {
 
       {/* Chat Window */}
       {isOpen && (
-        <Card className="fixed bottom-6 right-6 w-96 h-[600px] shadow-luxury bg-card z-50 flex flex-col">
+        <Card role="dialog" aria-label="Portfolio review mentor" className="fixed bottom-20 right-4 w-[calc(100vw-2rem)] max-w-[380px] h-[min(600px,calc(100dvh-7rem))] shadow-luxury bg-card z-50 flex flex-col">
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b border-border">
             <div className="flex items-center gap-3">
@@ -113,6 +124,8 @@ export function AIAssistant({ portfolio, assets }: AIAssistantProps) {
             <Button
               variant="ghost"
               size="icon"
+              ref={closeRef}
+              aria-label="Close portfolio review mentor"
               onClick={() => setIsOpen(false)}
             >
               <X className="w-5 h-5" />
@@ -172,11 +185,13 @@ export function AIAssistant({ portfolio, assets }: AIAssistantProps) {
               <Input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
+                aria-label="Question for the portfolio review mentor"
                 placeholder="Ask about trading strategies..."
                 disabled={isLoading}
                 className="flex-1"
               />
               <Button
+                aria-label="Send portfolio review question"
                 type="submit"
                 size="icon"
                 disabled={isLoading || !input.trim()}

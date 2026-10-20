@@ -143,6 +143,14 @@ try {
   assert.equal(await evaluate(`document.activeElement === document.querySelector('#site-menu button')`),true,'Menu focus must wrap');
   await send('Input.dispatchKeyEvent', {type:'keyDown',key:'Escape',code:'Escape'});
   await waitUntil(`document.activeElement?.getAttribute('aria-controls') === 'site-menu' && getComputedStyle(document.querySelector('#site-menu')).visibility === 'hidden'`, 'Closed menu is hidden and focus returns');
+  await send('Page.navigate', {url:origin+'/portfolio'});
+  await waitUntil(`!!document.querySelector('button[aria-label="Open portfolio review mentor"]')`, 'Portfolio mentor launcher mounts');
+  await evaluate(`document.querySelector('button[aria-label="Open portfolio review mentor"]').click()`);
+  await waitUntil(`document.activeElement?.getAttribute('aria-label') === 'Close portfolio review mentor'`, 'Portfolio mentor receives focus');
+  await waitUntil(`(() => { const r=document.querySelector('[role="dialog"][aria-label="Portfolio review mentor"]').getBoundingClientRect(); return r.left>=0 && r.right<=innerWidth && r.top>=0 && r.bottom<=innerHeight; })()`, 'Portfolio mentor must settle inside mobile viewport');
+  assert.ok(await evaluate(`!!document.querySelector('input[aria-label="Question for the portfolio review mentor"]') && !!document.querySelector('button[aria-label="Send portfolio review question"]')`), 'Open portfolio mentor controls have names');
+  await send('Input.dispatchKeyEvent', {type:'keyDown',key:'Escape',code:'Escape'});
+  await waitUntil(`document.activeElement?.getAttribute('aria-label') === 'Open portfolio review mentor'`, 'Portfolio mentor restores focus');
   for (let lesson=1; lesson<=6; lesson++) {
     await send('Page.navigate',{url:origin+'/learn/'+lesson});
     await waitUntil(`location.pathname === '/learn/${lesson}' && !!document.querySelector('aside a[href^="https://"]')`, 'Legacy lesson '+lesson+' renders sources');

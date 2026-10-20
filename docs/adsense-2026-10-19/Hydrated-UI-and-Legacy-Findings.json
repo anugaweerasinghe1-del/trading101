@@ -490,5 +490,29 @@
     }
   ],
   "scope": "Individual hydrated hub observations, all six legacy source lessons including quizzes, exact source of controls and metrics. This is an implementation record, not final clean classification.",
-  "base_sha": "033c830d4d81389c682ebf6a9e3f58657807e5ca"
+  "base_sha": "033c830d4d81389c682ebf6a9e3f58657807e5ca",
+  "ci_discovered_followup": {
+    "exact_head": "a56b3f93ffacf01889d546c03729ad10751ccfc7",
+    "job": 118396074857,
+    "evidence": "620 compiled route visits completed structural checks; new semantic assertion found a raw nested button on home daily CTA and unnamed portfolio mentor launcher on mobile/desktop. Open mentor inspection also found unbounded width and unnamed close/input/send.",
+    "urls": [
+      "https://www.thetradehq.com/",
+      "https://www.thetradehq.com/portfolio"
+    ],
+    "severity": "low",
+    "requirement": "WCAG name/role/value and valid interactive semantics",
+    "root_cause": "Raw HTML button and separate portfolio mentor were outside the initial direct Link/Button and trade-mentor corrections.",
+    "files_affected": [
+      "src/components/home/DailyChallengeCard.tsx",
+      "src/components/AIAssistant.tsx"
+    ],
+    "fix_applied": "Render the challenge CTA as one styled link; give all portfolio mentor controls names, fit its panel inside small viewports and add Escape/focus restoration. Browser assertions retained and expanded.",
+    "tests": [
+      "Exact-head compiled browser re-run required",
+      "Application TypeScript check"
+    ],
+    "production_verification": "PENDING corrected exact-head checks and sequential release",
+    "remaining_limitation": "Not deployed; no cleanliness claim",
+    "status": "ACTION REQUIRED"
+  }
 }
