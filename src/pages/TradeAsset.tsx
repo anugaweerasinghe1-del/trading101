@@ -1,6 +1,6 @@
 import NotFound from "./NotFound";
 import { useState, useEffect, useCallback, useRef } from "react";
-import { useParams, Navigate } from "react-router-dom";
+import { useParams, Navigate, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Breadcrumb } from "@/components/Breadcrumb";
@@ -50,6 +50,7 @@ function AssetIntelligenceWithLiveData({ asset }: { asset: Asset }) {
 
 export default function TradeAsset() {
   const { symbol } = useParams<{ symbol: string }>();
+  const navigate = useNavigate();
   const [portfolio, setPortfolio] = useState(getPortfolio());
   useEffect(() => {
     const refresh = () => setPortfolio(getPortfolio());
@@ -502,7 +503,7 @@ export default function TradeAsset() {
               assets={assets}
               selectedAsset={selectedAsset}
               favorites={favorites}
-              onSelectAsset={setSelectedAsset}
+              onSelectAsset={(asset) => navigate(`/trade/${asset.id}`)}
               onToggleFavorite={handleToggleFavorite}
             />
             
