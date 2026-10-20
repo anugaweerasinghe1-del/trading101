@@ -161,6 +161,16 @@ try {
   assert.equal(await evaluate(`document.activeElement === document.querySelector('#site-menu button')`),true,'Menu focus must wrap');
   await send('Input.dispatchKeyEvent', {type:'keyDown',key:'Escape',code:'Escape'});
   await waitUntil(`document.activeElement?.getAttribute('aria-controls') === 'site-menu' && getComputedStyle(document.querySelector('#site-menu')).visibility === 'hidden'`, 'Closed menu is hidden and focus returns');
+  // Selecting an instrument on a dedicated route must update the route and
+  // its publisher notes as well as the visible instrument; no order is placed.
+  await send('Page.navigate', {url:origin+'/trade/btc'});
+  await waitUntil(`document.querySelector('button[aria-label="Choose an asset, currently BTC"]') && document.querySelector('[data-publisher-notes]')?.textContent.includes('Paper Trade Bitcoin')`, 'Bitcoin route must mount before selection');
+  await evaluate(`document.querySelector('button[aria-controls="asset-search-panel"]').click()`);
+  await waitUntil(`!!document.querySelector('#asset-search-panel')`, 'Dedicated route asset search opens');
+  await evaluate(`Array.from(document.querySelectorAll('#asset-search-panel button')).find(button => button.textContent.startsWith('ETHEthereum')).click()`);
+  await waitUntil(`location.pathname === '/trade/eth' && document.querySelector('h1')?.textContent === 'Ethereum — Practice Trading Simulator' && document.querySelector('link[rel="canonical"]')?.href === 'https://www.thetradehq.com/trade/eth' && document.querySelector('[data-publisher-notes]')?.textContent.includes('Paper Trade Ethereum')`, 'Selection must align URL, heading, canonical and reference notes');
+  await send('Page.reload');
+  await waitUntil(`location.pathname === '/trade/eth' && document.querySelector('h1')?.textContent === 'Ethereum — Practice Trading Simulator' && document.querySelector('[data-publisher-notes]')?.textContent.includes('Paper Trade Ethereum')`, 'Reload must preserve selected instrument route');
   await send('Page.navigate', {url:origin+'/portfolio'});
   await waitUntil(`!!document.querySelector('button[aria-label="Open portfolio review mentor"]')`, 'Portfolio mentor launcher mounts');
   await evaluate(`document.querySelector('button[aria-label="Open portfolio review mentor"]').click()`);
