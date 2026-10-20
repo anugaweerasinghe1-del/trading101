@@ -1,0 +1,2331 @@
+{
+  "scope": "155 independent production HTTP responses plus 155 actual production hydrated desktop content inspections. Final release revalidation is recorded separately; compiled browser tests are not production visits.",
+  "mobile_limitation": "Browser API has no viewport control. Compiled desktop/mobile JS-on/off checks are independent CI evidence; no claim of 155 live mobile visits.",
+  "pages": [
+    {
+      "url": "https://www.thetradehq.com/",
+      "http_at": "2026-10-20T01:45:12.419462+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/trade",
+      "http_at": "2026-10-20T01:45:12.420092+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/trade"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/markets",
+      "http_at": "2026-10-20T01:45:12.420932+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/markets"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/portfolio",
+      "http_at": "2026-10-20T01:45:12.422093+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/portfolio"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/learn",
+      "http_at": "2026-10-20T01:45:12.422616+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/learn"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/learn-trading-guide",
+      "http_at": "2026-10-20T01:45:12.423708+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/learn-trading-guide"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/leaderboard",
+      "http_at": "2026-10-20T01:45:12.425173+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/leaderboard"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/ai-mentor",
+      "http_at": "2026-10-20T01:45:12.425680+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/ai-mentor"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/daily",
+      "http_at": "2026-10-20T01:45:19.990661+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/daily"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/reviews",
+      "http_at": "2026-10-20T01:45:19.994515+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/reviews"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/roadmap",
+      "http_at": "2026-10-20T01:45:19.998412+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/roadmap"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/about",
+      "http_at": "2026-10-20T01:45:19.998845+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/about"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/contact",
+      "http_at": "2026-10-20T01:45:20.008193+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/contact"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/challenge",
+      "http_at": "2026-10-20T01:45:20.019711+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/challenge"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/privacy",
+      "http_at": "2026-10-20T01:45:20.022067+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/privacy"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/terms",
+      "http_at": "2026-10-20T01:45:20.075249+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/terms"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/btc",
+      "http_at": "2026-10-20T01:45:28.264384+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/trade/btc"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/eth",
+      "http_at": "2026-10-20T01:45:28.266754+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/trade/eth"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/sol",
+      "http_at": "2026-10-20T01:45:28.282464+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/trade/sol"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/bnb",
+      "http_at": "2026-10-20T01:45:28.329477+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/trade/bnb"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/xrp",
+      "http_at": "2026-10-20T01:45:28.329780+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/trade/xrp"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/aapl",
+      "http_at": "2026-10-20T01:45:28.335900+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/trade/aapl"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/msft",
+      "http_at": "2026-10-20T01:45:28.337924+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/trade/msft"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/googl",
+      "http_at": "2026-10-20T01:45:28.359639+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/trade/googl"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/amzn",
+      "http_at": "2026-10-20T01:45:35.957555+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/trade/amzn"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/nvda",
+      "http_at": "2026-10-20T01:45:35.983459+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/trade/nvda"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/tsla",
+      "http_at": "2026-10-20T01:45:35.985802+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/trade/tsla"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/meta",
+      "http_at": "2026-10-20T01:45:35.987755+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/trade/meta"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/spy",
+      "http_at": "2026-10-20T01:45:35.991880+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/trade/spy"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/qqq",
+      "http_at": "2026-10-20T01:45:36.020162+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/trade/qqq"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/eurusd",
+      "http_at": "2026-10-20T01:45:36.037175+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/trade/eurusd"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/gbpusd",
+      "http_at": "2026-10-20T01:45:36.041146+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/trade/gbpusd"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/gold",
+      "http_at": "2026-10-20T01:45:46.180599+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/trade/gold"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/oil",
+      "http_at": "2026-10-20T01:45:46.188513+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/trade/oil"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki",
+      "http_at": "2026-10-20T01:45:46.190573+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/short-squeeze",
+      "http_at": "2026-10-20T01:45:46.208969+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/short-squeeze"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/golden-cross",
+      "http_at": "2026-10-20T01:45:46.233238+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/golden-cross"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/death-cross",
+      "http_at": "2026-10-20T01:45:46.233735+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/death-cross"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/liquidation-cascade",
+      "http_at": "2026-10-20T01:45:46.239935+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/liquidation-cascade"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/fibonacci-retracement",
+      "http_at": "2026-10-20T01:45:46.247690+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/fibonacci-retracement"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/rsi-divergence",
+      "http_at": "2026-10-20T01:45:53.900526+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/rsi-divergence"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/macd-histogram",
+      "http_at": "2026-10-20T01:45:53.904224+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/macd-histogram"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/bollinger-band-squeeze",
+      "http_at": "2026-10-20T01:45:53.911060+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/bollinger-band-squeeze"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/order-block",
+      "http_at": "2026-10-20T01:45:53.954517+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/order-block"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/fair-value-gap",
+      "http_at": "2026-10-20T01:45:53.954803+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/fair-value-gap"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/bull-trap",
+      "http_at": "2026-10-20T01:45:53.971647+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/bull-trap"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/bear-trap",
+      "http_at": "2026-10-20T01:45:54.004112+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/bear-trap"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/whale-manipulation",
+      "http_at": "2026-10-20T01:45:54.054437+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/whale-manipulation"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/support-and-resistance",
+      "http_at": "2026-10-20T01:46:01.453290+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/support-and-resistance"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/candlestick-patterns",
+      "http_at": "2026-10-20T01:46:01.487801+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/candlestick-patterns"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/head-and-shoulders",
+      "http_at": "2026-10-20T01:46:01.524416+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/head-and-shoulders"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/double-bottom",
+      "http_at": "2026-10-20T01:46:01.535994+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/double-bottom"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/macd",
+      "http_at": "2026-10-20T01:46:01.567533+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/macd"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/limit-order-vs-market-order",
+      "http_at": "2026-10-20T01:46:01.578099+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/limit-order-vs-market-order"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/stop-loss-hunting",
+      "http_at": "2026-10-20T01:46:01.586157+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/stop-loss-hunting"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/leverage-trading",
+      "http_at": "2026-10-20T01:46:01.912602+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/leverage-trading"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/fomo",
+      "http_at": "2026-10-20T01:46:09.149221+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/fomo"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/fud",
+      "http_at": "2026-10-20T01:46:09.197203+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/fud"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/hodl-strategy",
+      "http_at": "2026-10-20T01:46:09.221577+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/hodl-strategy"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/satoshi-nakamoto",
+      "http_at": "2026-10-20T01:46:09.235331+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/satoshi-nakamoto"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/margin-call",
+      "http_at": "2026-10-20T01:46:09.247608+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/margin-call"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/liquidation-price",
+      "http_at": "2026-10-20T01:46:09.287863+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/liquidation-price"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/dollar-cost-averaging",
+      "http_at": "2026-10-20T01:46:09.309951+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/dollar-cost-averaging"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/swing-trading",
+      "http_at": "2026-10-20T01:46:09.315748+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/swing-trading"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/day-trading",
+      "http_at": "2026-10-20T01:46:16.680400+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/day-trading"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/scalping",
+      "http_at": "2026-10-20T01:46:16.721285+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/scalping"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/volume-profile",
+      "http_at": "2026-10-20T01:46:16.735617+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/volume-profile"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/vwap",
+      "http_at": "2026-10-20T01:46:16.741147+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/vwap"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/ichimoku-cloud",
+      "http_at": "2026-10-20T01:46:16.745404+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/ichimoku-cloud"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/elliott-wave-theory",
+      "http_at": "2026-10-20T01:46:16.750110+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/elliott-wave-theory"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/wyckoff-method",
+      "http_at": "2026-10-20T01:46:16.770620+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/wyckoff-method"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/market-maker",
+      "http_at": "2026-10-20T01:46:16.779687+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/market-maker"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/dark-pool",
+      "http_at": "2026-10-20T01:46:24.276892+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/dark-pool"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/slippage",
+      "http_at": "2026-10-20T01:46:24.299437+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/slippage"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/impermanent-loss",
+      "http_at": "2026-10-20T01:46:24.319978+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/impermanent-loss"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/yield-farming",
+      "http_at": "2026-10-20T01:46:24.324706+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/yield-farming"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/flash-crash",
+      "http_at": "2026-10-20T01:46:24.339775+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/flash-crash"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/circuit-breaker",
+      "http_at": "2026-10-20T01:46:24.354400+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/circuit-breaker"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/pump-and-dump",
+      "http_at": "2026-10-20T01:46:24.359481+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/pump-and-dump"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/paper-trading",
+      "http_at": "2026-10-20T01:46:24.389202+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/paper-trading"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/risk-reward-ratio",
+      "http_at": "2026-10-20T01:46:31.018755+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/risk-reward-ratio"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/drawdown",
+      "http_at": "2026-10-20T01:46:31.031938+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/drawdown"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/backtesting",
+      "http_at": "2026-10-20T01:46:31.055529+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/backtesting"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/wiki/correlation-trading",
+      "http_at": "2026-10-20T01:46:31.068042+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/wiki/correlation-trading"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/article/what-is-paper-trading",
+      "http_at": "2026-10-20T01:46:31.083149+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/learn/article/what-is-paper-trading"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/article/how-to-read-stock-charts",
+      "http_at": "2026-10-20T01:46:31.092236+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/learn/article/how-to-read-stock-charts"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/article/crypto-vs-stocks",
+      "http_at": "2026-10-20T01:46:31.098408+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/learn/article/crypto-vs-stocks"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/article/trading-strategies-for-beginners",
+      "http_at": "2026-10-20T01:46:31.100501+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/learn/article/trading-strategies-for-beginners"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/article/stock-market-index-etfs",
+      "http_at": "2026-10-20T01:46:38.824871+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/learn/article/stock-market-index-etfs"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/article/how-to-build-a-portfolio",
+      "http_at": "2026-10-20T01:46:38.832968+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/learn/article/how-to-build-a-portfolio"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/article/risk-management-in-trading",
+      "http_at": "2026-10-20T01:46:38.839967+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/learn/article/risk-management-in-trading"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/article/market-orders-vs-limit-orders",
+      "http_at": "2026-10-20T01:46:38.843302+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/learn/article/market-orders-vs-limit-orders"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/article/technical-indicators-rsi-macd-moving-averages",
+      "http_at": "2026-10-20T01:46:38.856226+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/learn/article/technical-indicators-rsi-macd-moving-averages"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/compare/bitcoin-vs-ethereum",
+      "http_at": "2026-10-20T01:46:38.875286+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/compare/bitcoin-vs-ethereum"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/compare/tesla-vs-nvidia",
+      "http_at": "2026-10-20T01:46:38.883320+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/compare/tesla-vs-nvidia"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/compare/bitcoin-vs-gold",
+      "http_at": "2026-10-20T01:46:38.887206+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/compare/bitcoin-vs-gold"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/compare/apple-vs-microsoft",
+      "http_at": "2026-10-20T01:46:46.727749+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/compare/apple-vs-microsoft"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/compare/ethereum-vs-solana",
+      "http_at": "2026-10-20T01:46:46.728069+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/compare/ethereum-vs-solana"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/compare/stocks-vs-crypto",
+      "http_at": "2026-10-20T01:46:46.742311+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/compare/stocks-vs-crypto"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/compare/nvidia-vs-amd",
+      "http_at": "2026-10-20T01:46:46.746248+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/compare/nvidia-vs-amd"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/compare/forex-vs-stocks",
+      "http_at": "2026-10-20T01:46:46.746678+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/compare/forex-vs-stocks"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/compare",
+      "http_at": "2026-10-20T01:46:46.748475+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/compare"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/how-to-trade/btc",
+      "http_at": "2026-10-20T01:46:46.749512+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/how-to-trade/btc"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/how-to-trade/eth",
+      "http_at": "2026-10-20T01:46:46.754642+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/how-to-trade/eth"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/how-to-trade/tsla",
+      "http_at": "2026-10-20T01:46:54.372490+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/how-to-trade/tsla"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/how-to-trade/nvda",
+      "http_at": "2026-10-20T01:46:54.381533+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/how-to-trade/nvda"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/how-to-trade/spy",
+      "http_at": "2026-10-20T01:46:54.415670+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/how-to-trade/spy"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/how-to-trade/sol",
+      "http_at": "2026-10-20T01:46:54.420384+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/how-to-trade/sol"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/how-to-trade",
+      "http_at": "2026-10-20T01:46:54.439656+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/how-to-trade"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/strategy/scalping",
+      "http_at": "2026-10-20T01:46:54.491446+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/strategy/scalping"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/strategy/swing-trading",
+      "http_at": "2026-10-20T01:46:54.531398+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/strategy/swing-trading"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/strategy/day-trading",
+      "http_at": "2026-10-20T01:46:54.621399+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/strategy/day-trading"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/strategy/dca-dollar-cost-averaging",
+      "http_at": "2026-10-20T01:47:00.325054+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/strategy/dca-dollar-cost-averaging"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/strategy/rsi-strategy",
+      "http_at": "2026-10-20T01:47:00.334217+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/strategy/rsi-strategy"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/strategy/macd-strategy",
+      "http_at": "2026-10-20T01:47:00.366276+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/strategy/macd-strategy"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/strategy",
+      "http_at": "2026-10-20T01:47:00.386350+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/strategy"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses",
+      "http_at": "2026-10-20T01:47:00.419565+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/options-trading-fundamentals",
+      "http_at": "2026-10-20T01:47:00.447194+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/options-trading-fundamentals"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/options-trading-fundamentals/what-is-an-option",
+      "http_at": "2026-10-20T01:47:00.447552+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/options-trading-fundamentals/what-is-an-option"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+      "http_at": "2026-10-20T01:47:00.538089+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/options-trading-fundamentals/defined-risk-spreads",
+      "http_at": "2026-10-20T01:47:08.085237+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/options-trading-fundamentals/defined-risk-spreads"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/options-trading-fundamentals/implied-volatility-and-earnings",
+      "http_at": "2026-10-20T01:47:08.183641+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/options-trading-fundamentals/implied-volatility-and-earnings"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/options-trading-fundamentals/options-risk-management",
+      "http_at": "2026-10-20T01:47:08.195841+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/options-trading-fundamentals/options-risk-management"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/futures-and-derivatives",
+      "http_at": "2026-10-20T01:47:08.211760+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/futures-and-derivatives"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/futures-and-derivatives/what-is-a-futures-contract",
+      "http_at": "2026-10-20T01:47:08.225180+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/futures-and-derivatives/what-is-a-futures-contract"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/futures-and-derivatives/margin-and-leverage-in-futures",
+      "http_at": "2026-10-20T01:47:08.231098+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/futures-and-derivatives/margin-and-leverage-in-futures"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/futures-and-derivatives/contango-and-backwardation",
+      "http_at": "2026-10-20T01:47:08.231404+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/futures-and-derivatives/contango-and-backwardation"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/futures-and-derivatives/hedging-with-futures",
+      "http_at": "2026-10-20T01:47:08.283889+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/futures-and-derivatives/hedging-with-futures"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/futures-and-derivatives/micro-futures-for-beginners",
+      "http_at": "2026-10-20T01:47:15.709880+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/futures-and-derivatives/micro-futures-for-beginners"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/macro-reading-for-traders",
+      "http_at": "2026-10-20T01:47:15.732856+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/macro-reading-for-traders"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/macro-reading-for-traders/reading-cpi-and-inflation",
+      "http_at": "2026-10-20T01:47:15.763395+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/macro-reading-for-traders/reading-cpi-and-inflation"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/macro-reading-for-traders/the-fed-and-fomc-cycle",
+      "http_at": "2026-10-20T01:47:15.771427+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/macro-reading-for-traders/the-fed-and-fomc-cycle"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/macro-reading-for-traders/the-yield-curve-and-recession",
+      "http_at": "2026-10-20T01:47:15.774579+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/macro-reading-for-traders/the-yield-curve-and-recession"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/macro-reading-for-traders/the-dollar-index-dxy",
+      "http_at": "2026-10-20T01:47:15.787768+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/macro-reading-for-traders/the-dollar-index-dxy"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/macro-reading-for-traders/putting-macro-signals-together",
+      "http_at": "2026-10-20T01:47:15.797259+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/macro-reading-for-traders/putting-macro-signals-together"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/trading-psychology-mastery",
+      "http_at": "2026-10-20T01:47:15.863614+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/trading-psychology-mastery"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/trading-psychology-mastery/cognitive-biases-in-trading",
+      "http_at": "2026-10-20T01:47:23.665655+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/trading-psychology-mastery/cognitive-biases-in-trading"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/trading-psychology-mastery/revenge-trading-and-tilt",
+      "http_at": "2026-10-20T01:47:23.672153+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/trading-psychology-mastery/revenge-trading-and-tilt"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/trading-psychology-mastery/the-trading-journal",
+      "http_at": "2026-10-20T01:47:23.691352+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/trading-psychology-mastery/the-trading-journal"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/trading-psychology-mastery/discipline-and-daily-rituals",
+      "http_at": "2026-10-20T01:47:23.701956+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/trading-psychology-mastery/discipline-and-daily-rituals"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/trading-psychology-mastery/handling-drawdowns",
+      "http_at": "2026-10-20T01:47:23.727771+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/trading-psychology-mastery/handling-drawdowns"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/country",
+      "http_at": "2026-10-20T01:47:23.728136+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/learn/country"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/country/sri-lanka",
+      "http_at": "2026-10-20T01:47:23.741360+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/learn/country/sri-lanka"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/country/india",
+      "http_at": "2026-10-20T01:47:24.113432+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/learn/country/india"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/country/philippines",
+      "http_at": "2026-10-20T01:47:31.180048+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/learn/country/philippines"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/country/pakistan",
+      "http_at": "2026-10-20T01:47:31.200674+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/learn/country/pakistan"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/learn/country/nigeria",
+      "http_at": "2026-10-20T01:47:31.213605+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/learn/country/nigeria"
+      ],
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation",
+      "http_at": "2026-10-20T01:47:31.224542+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation"
+      ],
+      "robots": "index, follow",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/exchange-tickers-and-price-aggregation",
+      "http_at": "2026-10-20T01:47:31.260799+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/exchange-tickers-and-price-aggregation"
+      ],
+      "robots": "index, follow",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/api-delays-and-portfolio-valuation",
+      "http_at": "2026-10-20T01:47:31.303582+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/api-delays-and-portfolio-valuation"
+      ],
+      "robots": "index, follow",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/portfolio-rebalancing-and-cash-drag",
+      "http_at": "2026-10-20T01:47:31.390034+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/portfolio-rebalancing-and-cash-drag"
+      ],
+      "robots": "index, follow",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/diversification-and-position-sizing",
+      "http_at": "2026-10-20T01:47:31.578872+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/diversification-and-position-sizing"
+      ],
+      "robots": "index, follow",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/diversification-and-position-sizing/foundations-of-asset-allocation",
+      "http_at": "2026-10-20T01:47:38.948785+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/diversification-and-position-sizing/foundations-of-asset-allocation"
+      ],
+      "robots": "index, follow",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/diversification-and-position-sizing/managing-concentration-risk",
+      "http_at": "2026-10-20T01:47:38.966255+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/diversification-and-position-sizing/managing-concentration-risk"
+      ],
+      "robots": "index, follow",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash",
+      "http_at": "2026-10-20T01:47:39.024845+00:00",
+      "http_status": 200,
+      "canonical": [
+        "https://www.thetradehq.com/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash"
+      ],
+      "robots": "index, follow",
+      "browser_content_inspected": true,
+      "browser_scope": "Actual production desktop: distinctive main content and publisher notes read, metadata checked after hydration, heading and overflow observed. Not a mobile or complete per-control test.",
+      "baseline_sha": "9c3424457a6733b62b85359308b9d12428bcbf4f",
+      "content_review_date": "2026-10-20",
+      "observed_release": "9c3424457a6733b62b85359308b9d12428bcbf4f; changed pages rechecked after PR195 at 87539cec1805306d1112c99fe834c5839f384fe0",
+      "assessment": "No remaining substantiated blocker in inspected content, except new findings separately recorded for PR195/196."
+    }
+  ]
+}

@@ -93,7 +93,7 @@ const optionsTrack: CourseTrack = {
       ],
       keyTakeaways: [
         "A standard unadjusted US equity option generally covers 100 shares; adjusted and other contracts can differ.",
-        "Calls profit if the stock rises above strike + premium; puts profit if it falls below strike − premium.",
+        "At expiration, before costs, a purchased call has a net gain above strike + premium; a purchased put has a net gain below strike − premium. Those levels are break-even prices.",
         "A purchased option held without exercise can lose its premium plus costs; exercise can create a separate underlying position and obligations.",
         "Options can be used for hedging and speculation; their risk depends on the position and contract.",
       ],
@@ -273,10 +273,10 @@ const futuresTrack: CourseTrack = {
     "Calculate the notional value behind a contract and the margin actually required to hold it.",
     "Read a term structure and say whether a market is in contango or backwardation, and what that implies for anyone holding a rolling position.",
     "Describe how a producer or consumer uses futures to hedge a real-world exposure.",
-    "Choose an appropriately small contract size when learning, rather than a full-size contract.",
+    "Compare contract multipliers and notional exposure against a stated hypothetical account value; smaller contracts still carry leveraged risk.",
   ],
   prerequisites:
-    "Some familiarity with charts and with the idea of buying and selling an asset. The margin lesson involves multiplication and percentages, nothing more. Working through the Trading Psychology track first is recommended, because leverage punishes emotional decisions faster than any other instrument on the site.",
+    "Some familiarity with charts and with the idea of buying and selling an asset. The margin lesson involves multiplication and percentages, nothing more. The Trading Decisions and Behaviour track offers optional exercises for recording assumptions. No lesson establishes a suitable real-money contract size or leverage level.",
   progression:
     "The sequence starts with contract specifications, then margin and leverage. Term structure follows to explain differences between delivery prices and rolling exposure. Hedging introduces basis risk, and micro contracts illustrate smaller multipliers. No contract size is universally suitable, and losses are not limited to the margin deposit.",
   notFor:
@@ -648,7 +648,7 @@ const macroTrack: CourseTrack = {
       ],
       quiz: [
         { question: "The descriptive worksheet in this lesson classifies:", options: ["Guaranteed returns", "Selected growth and inflation directions", "Correct trade sizes", "Future prices"], correctAnswer: 1, explanation: "The selected measures define a description, not a forecast." },
-        { question: "Stagflation =", options: ["Growth up + inflation up", "Growth up + inflation down", "Growth down + inflation up", "Growth down + inflation down"], correctAnswer: 2, explanation: "Weak growth + high inflation." },
+        { question: "Which combination best describes stagflation?", options: ["Strong growth + high inflation", "Strong growth + low inflation", "Weak or stagnant growth + high inflation", "Weak or stagnant growth + low inflation"], correctAnswer: 2, explanation: "Stagflation combines weak or stagnant economic activity with high inflation. Inflation need not accelerate every month; its level differs from a change in the inflation rate." },
         { question: "Why record release dates as well as observation dates?", options: ["To guarantee a profit", "To know what information was available at the decision time", "To remove market risk", "To predict every revision"], correctAnswer: 1, explanation: "Later releases and revisions must not be treated as knowledge available earlier." },
         { question: "Which resource is the St. Louis Fed’s economic-data database?", options: ["Bloomberg", "Reuters Eikon", "FRED", "Cap IQ"], correctAnswer: 2, explanation: "St Louis Fed's free database." },
       ],

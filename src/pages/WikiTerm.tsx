@@ -52,7 +52,7 @@ const WikiTerm = () => {
     "inDefinedTermSet": {
       "@type": "DefinedTermSet",
       "name": "TradeHQ Trading Glossary",
-      "url": `${DOMAIN}/learn-trading-guide`,
+      "url": `${DOMAIN}/wiki`,
     },
     "termCode": term.slug,
     "url": `${DOMAIN}/wiki/${term.slug}`,
@@ -64,7 +64,8 @@ const WikiTerm = () => {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": DOMAIN },
       { "@type": "ListItem", "position": 2, "name": "Trading Guide", "item": `${DOMAIN}/learn-trading-guide` },
-      { "@type": "ListItem", "position": 3, "name": term.term, "item": `${DOMAIN}/wiki/${term.slug}` }
+      { "@type": "ListItem", "position": 3, "name": "Wiki", "item": `${DOMAIN}/wiki` },
+      { "@type": "ListItem", "position": 4, "name": term.term, "item": `${DOMAIN}/wiki/${term.slug}` }
     ]
   };
 
@@ -112,7 +113,7 @@ const WikiTerm = () => {
         <main className="container mx-auto px-6 pt-24 pb-16 max-w-3xl">
           <Breadcrumb items={[
             { label: "Trading Guide", href: "/learn-trading-guide" },
-            { label: "Wiki", href: "/learn-trading-guide" },
+            { label: "Wiki", href: "/wiki" },
             { label: term.term }
           ]} />
 
