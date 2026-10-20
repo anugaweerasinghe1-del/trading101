@@ -374,7 +374,9 @@ export function buildRoutes(): RouteMeta[] {
     routes.push({
       path: `/wiki/${g.slug}`,
       title: `${g.term} — Explanation & Learning Exercise | TradeHQ Wiki`,
-      description: firstCompleteSentence(g.definition),
+      description: g.slug === "circuit-breaker"
+        ? "Circuit breakers are rule-defined trading pauses. Learn about US market-wide thresholds, differing security-specific rules and why halts cannot ensure a chosen exit price."
+        : firstCompleteSentence(g.definition),
       h1: `${g.term} — Trading Wiki`,
       summary: `${g.definition}`,
       priority: "0.7",
@@ -521,7 +523,9 @@ export function buildRoutes(): RouteMeta[] {
       routes.push({
         path: `/courses/${t.slug}/${l.slug}`,
         title: `${l.title} — ${t.title} | TradeHQ`,
-        description: firstCompleteSentence(l.summary),
+        description: t.slug === "futures-and-derivatives" && l.slug === "hedging-with-futures"
+          ? "Learn how airlines, farmers and funds study futures hedges, including basis risk, margin requirements and why price offsets are never guaranteed."
+          : firstCompleteSentence(l.summary),
         h1: l.title,
         summary: `${l.summary} TradeHQ offers ${BALANCE} virtual cash for supported spot instruments. Derivatives contracts remain conceptual exercises. Educational only, not financial advice.`,
         priority: "0.7",
