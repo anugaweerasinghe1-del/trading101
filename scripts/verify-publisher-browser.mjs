@@ -104,7 +104,7 @@ try {
       const expected = "https://www.thetradehq.com" + path;
       const deadline = Date.now() + 12000; let ready = false;
       while (Date.now() < deadline) {
-        ready = await evaluate(`location.pathname === ${JSON.stringify(path)} && document.readyState === "complete" && document.querySelectorAll('main h1').length === 1 && !document.querySelector('main h1').textContent.includes('Loading your page') && document.querySelectorAll('link[rel="canonical"]').length === 1 && document.querySelector('link[rel="canonical"]').href === ${JSON.stringify(expected)} ${javaScript ? "&& !document.querySelector('#prerender-seo') && !!document.querySelector('button[aria-label*=\"theme\"]')" : ""} ${javaScript && bundled ? "&& !!document.querySelector('[data-publisher-notes]')" : ""}`);
+        ready = await evaluate(`location.pathname === ${JSON.stringify(path)} && document.readyState === "complete" && document.querySelectorAll('h1').length === 1 && !document.querySelector('h1').textContent.includes('Loading your page') && document.querySelectorAll('link[rel="canonical"]').length === 1 && document.querySelector('link[rel="canonical"]').href === ${JSON.stringify(expected)} ${javaScript ? "&& !document.querySelector('#prerender-seo') && !!document.querySelector('button[aria-label*=\"theme\"]')" : ""} ${javaScript && bundled ? "&& !!document.querySelector('[data-publisher-notes]')" : ""}`);
         if (ready) break; await delay(50);
       }
       assert.ok(ready, `${path}: content/canonical readiness (${width}px, JS=${javaScript})`);
