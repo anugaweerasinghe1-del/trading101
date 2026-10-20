@@ -79,7 +79,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
       {
         h: "Limits of any simulator",
         p: [
-          "A simulator cannot reproduce slippage on illiquid instruments, brokerage fees, overnight financing, tax, or the specific emotional weight of losing money you actually need. Treat practice results as evidence about your process, not as a forecast of live returns. Past simulated performance does not predict future real-world performance.",
+          "TradeHQ applies a fixed 0.1% virtual fee to each simulated buy or sell, but that classroom input is not a real broker's fee schedule. Displayed-price fills do not reproduce real-world spreads, slippage, overnight financing or taxes; practice also lacks the emotional weight of risking your own money. Treat results as evidence about your practice process, not a forecast of live returns. Past simulated performance does not predict future real-world performance.",
         ],
       },
     ],
