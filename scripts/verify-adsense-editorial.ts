@@ -14,6 +14,19 @@ const { HOWTO_ASSETS, STRATEGIES, courseTracks, LEARN_ARTICLES, tradingGlossary 
 const routes = uniqueRoutes();
 const map = await buildContentMap();
 
+// A production URL-by-URL sweep on 20 October found these two initial HTML
+// descriptions too short to explain the page. Preserve meaningful previews.
+for (const [path, expectedTopic] of [
+  ["/wiki/circuit-breaker", "circuit breakers"],
+  ["/courses/futures-and-derivatives/hedging-with-futures", "futures hedges"],
+] as const) {
+  const description = routes.find((route) => route.path === path)?.description ?? "";
+  assert.ok(description.length >= 85 && description.length <= 158,
+    path + ": initial HTML meta description should be informative and concise");
+  assert.ok(description.toLowerCase().includes(expectedTopic), path + ": topic must be clear in metadata");
+}
+
+
 const wikiClientSource = readFileSync("src/pages/WikiTerm.tsx", "utf8");
 assert.ok(
   wikiClientSource.includes("<title>{term.term} — Explanation & Learning Exercise | TradeHQ Wiki</title>"),
