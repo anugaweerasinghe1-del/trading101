@@ -135,7 +135,7 @@ export function TradeAnalytics({ portfolio }: TradeAnalyticsProps) {
               {analytics.profitFactor.toFixed(2)}
             </div>
             <div className="text-xs text-muted-foreground mt-1">
-              Avg Win / Avg Loss
+              Total gains / absolute total losses
             </div>
           </CardContent>
         </Card>

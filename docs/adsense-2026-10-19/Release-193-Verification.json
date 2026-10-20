@@ -1,0 +1,131 @@
+{
+  "schema": "tradehq-release-verification-v1",
+  "pr": 193,
+  "reviewedHead": "9ca0c7bb03c328d67cb442ca639d9de34187a67b",
+  "main": "033c830d4d81389c682ebf6a9e3f58657807e5ca",
+  "native": [
+    {
+      "schema": "tradehq-vercel-production-evidence-v1",
+      "deploymentId": "dpl_G86HoZCVqSiBZmfjX28ZB8zPigTd",
+      "teamId": "team_fjZ5ggg0P43MsYFSIHbeHAAO",
+      "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+      "commitSha": "033c830d4d81389c682ebf6a9e3f58657807e5ca",
+      "target": "production",
+      "state": "READY",
+      "activeAlias": "thetradehq.com",
+      "createdAt": 1792456989488,
+      "observedAt": 1792457328018,
+      "requests": 2,
+      "authorization": {
+        "merge": false,
+        "productionRelease": false
+      }
+    },
+    {
+      "schema": "tradehq-cloudflare-account-observation-v1",
+      "observedAt": "2026-10-20T00:48:48.019Z",
+      "accountId": "01087d56e4cb7b728a7a9ddbcb12b9bb",
+      "project": "tradehq-preview",
+      "nativeTokenActive": true,
+      "activeProduction": {
+        "id": "12d349db-6246-4245-9e1a-8f37ab4fbe86",
+        "sha": "033c830d4d81389c682ebf6a9e3f58657807e5ca",
+        "environment": "production",
+        "branch": "main",
+        "status": "success",
+        "createdAt": "2026-10-20T00:43:07.488235Z"
+      },
+      "previousSuccessfulProduction": {
+        "id": "bd028696-d87f-4259-b010-f9f0c5d51e66",
+        "sha": "8a3808894c034f3a5a2aab9fd8257725b332d416",
+        "environment": "production",
+        "branch": "main",
+        "status": "success",
+        "createdAt": "2026-10-19T13:46:37.566548Z"
+      },
+      "historyWindow": {
+        "page": 1,
+        "perPage": 25,
+        "rows": 25,
+        "completeAccountHistory": false
+      },
+      "subscriptions": [],
+      "usage": {
+        "from": "2026-10-01T00:00:00Z",
+        "to": "2026-10-20T00:48:48.019Z",
+        "dataset": "pagesFunctionsInvocationsAdaptiveGroups",
+        "groups": 2,
+        "accountRequests": 15522,
+        "accountErrors": 0,
+        "projectScriptMatched": true,
+        "projectRequests": 14669
+      },
+      "quotaHeadroomVerified": false,
+      "rollbackPerformed": false,
+      "authorization": {
+        "providerWrite": false,
+        "modelCall": false,
+        "merge": false,
+        "productionRelease": false
+      },
+      "limitations": [
+        "Adaptive analytics are sampled observations, not authoritative billing counters.",
+        "Subscription metadata does not establish remaining Pages builds or all provider/model quota.",
+        "Previous successful production is a candidate under Cloudflare documentation; an actual authorized rollback/restore remains unperformed."
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "TradeHQ Release & Recovery Readiness (read only)",
+      "id": 118391148889,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/39349295095/job/118391148889"
+    },
+    {
+      "name": "TradeHQ Release signals (read only)",
+      "id": 118391083818,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/39349295095/job/118391083818"
+    },
+    {
+      "name": "TradeHQ Required validation",
+      "id": 118391032329,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/39349295095/job/118391032329"
+    },
+    {
+      "name": "Cloudflare Pages",
+      "id": 118389608181,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/runs/118389608181"
+    },
+    {
+      "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+      "id": 118389411473,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/39349295095/job/118389411473"
+    },
+    {
+      "name": "TradeHQ Phase 3 tests",
+      "id": 118389411290,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/39349295095/job/118389411290"
+    },
+    {
+      "name": "TradeHQ Disposable PostgreSQL controls",
+      "id": 118389410551,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/39349294976/job/118389410551"
+    }
+  ],
+  "productionBrowserFile": "Release-193-Browser-Observations.json",
+  "scope": "Exact production provider records, all postmerge checks, 32 targeted actual production desktop visits and 357-route raw crawl; full final production review remains pending."
+}

@@ -295,12 +295,13 @@ export default function Reviews() {
                       <Stars value={rating} size={24} onChange={setRating} />
                     </div>
                     <div>
-                      <label className="text-xs text-muted-foreground mb-1 block">Name (optional)</label>
-                      <Input value={name} onChange={(e) => setName(e.target.value)} maxLength={60} placeholder="Anonymous" />
+                      <label htmlFor="review-name" className="text-xs text-muted-foreground mb-1 block">Name (optional)</label>
+                      <Input id="review-name" value={name} onChange={(e) => setName(e.target.value)} maxLength={60} placeholder="Anonymous" />
                     </div>
                     <div>
-                      <label className="text-xs text-muted-foreground mb-1 block">Your review</label>
+                      <label htmlFor="review-content" className="text-xs text-muted-foreground mb-1 block">Your review</label>
                       <Textarea
+                        id="review-content"
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
                         rows={5}

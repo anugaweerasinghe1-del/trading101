@@ -57,16 +57,16 @@ export default function Compare() {
             <Card className="p-6 border-emerald-500/20">
               <div className="text-xs text-emerald-400 mb-1">{pair.a.tag}</div>
               <div className="text-2xl font-bold">{pair.a.name} <span className="text-muted-foreground text-base">({pair.a.symbol})</span></div>
-              <Link to={aRoute}>
-                <Button variant="outline" size="sm" className="mt-4">{aRoute === "/trade" ? "Browse practice instruments" : `Practise ${pair.a.symbol}`} <ArrowRight className="ml-2 h-3 w-3" /></Button>
-              </Link>
+              <Button variant="outline" size="sm" className="mt-4" asChild>
+<Link to={aRoute}>{aRoute === "/trade" ? "Browse practice instruments" : `Practise ${pair.a.symbol}`} <ArrowRight className="ml-2 h-3 w-3" /></Link>
+</Button>
             </Card>
             <Card className="p-6 border-rose-500/20">
               <div className="text-xs text-rose-400 mb-1">{pair.b.tag}</div>
               <div className="text-2xl font-bold">{pair.b.name} <span className="text-muted-foreground text-base">({pair.b.symbol})</span></div>
-              <Link to={bRoute}>
-                <Button variant="outline" size="sm" className="mt-4">{bRoute === "/trade" ? "Browse practice instruments" : `Practise ${pair.b.symbol}`} <ArrowRight className="ml-2 h-3 w-3" /></Button>
-              </Link>
+              <Button variant="outline" size="sm" className="mt-4" asChild>
+<Link to={bRoute}>{bRoute === "/trade" ? "Browse practice instruments" : `Practise ${pair.b.symbol}`} <ArrowRight className="ml-2 h-3 w-3" /></Link>
+</Button>
             </Card>
           </div>
 

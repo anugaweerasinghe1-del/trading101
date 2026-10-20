@@ -18,13 +18,13 @@ TradeHQ is a trading simulation platform for educational purposes only. No real 
     {
       icon: AlertTriangle,
       title: "2. Important Disclaimers",
-      content: `**SIMULATION ONLY**: TradeHQ is a market simulation platform. All trades are executed with virtual currency only. No real money is at risk, and no actual securities transactions occur.
+      content: `SIMULATION ONLY: TradeHQ is a market simulation platform. All trades are executed with virtual currency only. No real money is at risk, and no actual securities transactions occur.
 
-**NOT FINANCIAL ADVICE**: Nothing on TradeHQ constitutes financial, investment, legal, or tax advice. We do not recommend any particular investment strategy or security.
+NOT FINANCIAL ADVICE: Nothing on TradeHQ constitutes financial, investment, legal, or tax advice. We do not recommend any particular investment strategy or security.
 
-**NO GUARANTEES**: Past performance in our simulation does not guarantee future real-world results. Market simulations may not accurately reflect actual market conditions.
+NO GUARANTEES: Past performance in our simulation does not guarantee future real-world results. Market simulations may not accurately reflect actual market conditions.
 
-**EDUCATIONAL PURPOSE**: TradeHQ is designed solely for educational and entertainment purposes. Users should consult qualified financial advisors before making real investment decisions.`
+EDUCATIONAL PURPOSE: TradeHQ is designed solely for educational and entertainment purposes. Users should consult qualified financial advisors before making real investment decisions.`
     },
     {
       icon: Scale,
@@ -72,17 +72,11 @@ We will make reasonable efforts to notify users of significant changes through t
     {
       icon: FileText,
       title: "6. Intellectual Property",
-      content: `All content on TradeHQ, including but not limited to:
+      content: `TradeHQ claims rights in its original educational writing, branding, interface contributions and simulation code to the extent those rights belong to its publisher.
 
-• Software and source code
-• User interface design
-• Educational content and articles
-• Graphics, logos, and branding
-• Trading algorithms and simulations
+Third-party libraries, data, images, music, quotations and user submissions retain their respective owners’ rights and applicable licenses. Inclusion on this site does not transfer their ownership to TradeHQ.
 
-...is the intellectual property of TradeHQ and protected by copyright, trademark, and other intellectual property laws.
-
-Users may not copy, modify, distribute, or create derivative works without explicit written permission.`
+Reuse must respect the applicable rights and license terms. This statement does not override permissions granted by an open-source or other third-party license.`
     }
   ];
 

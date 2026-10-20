@@ -171,12 +171,14 @@ export default function AIMentor() {
                 <Input
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
+                  aria-label="Trading concept question"
                   placeholder="Ask about trading, stocks, crypto..."
                   className="flex-1 bg-muted/30 border-white/10 rounded-xl focus:border-primary/50"
                   disabled={isLoading}
                 />
                 <Button 
-                  type="submit" 
+                  type="submit"
+                  aria-label="Send concept question"
                   size="icon" 
                   className="rounded-xl bg-primary hover:bg-primary/90"
                   disabled={isLoading || !input.trim()}

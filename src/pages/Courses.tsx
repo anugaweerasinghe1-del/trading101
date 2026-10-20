@@ -62,7 +62,7 @@ const HOW_IT_WORKS = [
   { step: "2", title: "Read the lesson", body: "Check each lesson’s reading-time estimate. Read the worked examples, assumptions and linked sources at your own pace." },
   { step: "3", title: "Take the quiz", body: "A 4–6 question knowledge check. Explanations for every answer — you learn from mistakes." },
   { step: "4", title: "Work through an example", body: "Practise supported spot trades with virtual cash. For options and futures, calculate hypothetical contract payoffs and margin changes in a worksheet." },
-  { step: "5", title: "Earn the badge", body: "Complete every lesson in a track to earn a permanent completion badge on your practice profile." },
+  { step: "5", title: "Earn the badge", body: "Complete every lesson in a track to record a completion badge in this browser. Clearing browser storage can remove this progress; it is not a permanent profile credential." },
 ];
 
 const FAQ = [

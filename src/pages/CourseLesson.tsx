@@ -248,11 +248,11 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
                     <div className="font-semibold">Lesson complete — {score}/{lesson.quiz.length}</div>
                     <div className="text-xs text-muted-foreground">Progress saved to your browser. Come back anytime.</div>
                   </div>
-                  <Link to="/ai-mentor">
-                    <Button variant="outline" size="sm" className="gap-1">
+                  <Button variant="outline" size="sm" className="gap-1" asChild>
+<Link to="/ai-mentor">
                       <Bot className="w-4 h-4" /> Ask the AI mentor
-                    </Button>
-                  </Link>
+                    </Link>
+</Button>
                 </div>
               </Card>
             )}

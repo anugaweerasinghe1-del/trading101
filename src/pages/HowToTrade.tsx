@@ -54,9 +54,9 @@ export default function HowToTrade() {
             <p className="text-xs uppercase tracking-widest text-emerald-400 mb-3">{asset.type} guide</p>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">How to Trade {asset.fullName}</h1>
             <p className="mt-4 text-lg text-muted-foreground">{asset.whyTrade}</p>
-            <Link to={tradeRouteForSymbol(asset.symbol)}>
-              <Button className="mt-6">Practise {asset.name} now <ArrowRight className="ml-2 h-4 w-4" /></Button>
-            </Link>
+            <Button className="mt-6" asChild>
+<Link to={tradeRouteForSymbol(asset.symbol)}>Practise {asset.name} now <ArrowRight className="ml-2 h-4 w-4" /></Link>
+</Button>
           </header>
 
           <AIAnswerBlock

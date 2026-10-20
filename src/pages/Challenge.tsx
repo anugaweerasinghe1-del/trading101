@@ -278,9 +278,9 @@ export default function Challenge() {
                 The code does not match an existing duel. Double-check the link, or start a
                 fresh duel of your own.
               </p>
-              <Link to="/challenge">
-                <Button className="!text-black font-bold rounded-xl">Create a challenge</Button>
-              </Link>
+              <Button className="!text-black font-bold rounded-xl" asChild>
+<Link to="/challenge">Create a challenge</Link>
+</Button>
             </Card>
           ) : duel ? (
             <>
@@ -464,8 +464,8 @@ export default function Challenge() {
                 ) : (
                   <>
                     <p className="text-sm text-muted-foreground mb-5">
-                      Duels need a free account so both scores can be tracked. Everything else on
-                      TradeHQ stays available without signing in.
+                      Duels need a free account so both scores can be tracked. Core simulator and learning features
+                      work without signing in; community profiles, ranked scores and duels require an account.
                     </p>
                     <Button onClick={goSignIn} className="!text-black font-bold rounded-xl px-8">
                       Create a free account

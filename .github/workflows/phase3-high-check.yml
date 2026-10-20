@@ -54,6 +54,7 @@ jobs:
       - run: node --import tsx scripts/verify-review-admin.ts
       - run: node --import tsx scripts/verify-course-workflow.ts
       - run: node --import tsx scripts/verify-daily-practice.ts
+      - run: node --import tsx scripts/verify-editorial-ui.ts
       - run: npm run verify:backend
       - run: npm run build
       - run: node scripts/verify-course-node.mjs

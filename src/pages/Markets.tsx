@@ -5,7 +5,7 @@ import { MarketClusters } from "@/components/MarketClusters";
 import { MegaFooter } from "@/components/MegaFooter";
 import { SEOSection } from "@/components/SEOSection";
 import { ContextualLinks } from "@/components/ContextualLinks";
-import { ASSETS } from "@/lib/assets";
+import { ASSETS, formatPrice } from "@/lib/assets";
 import { Asset } from "@/lib/types";
 import { simulateAssetPrices } from "@/lib/priceSimulation";
 import { Input } from "@/components/ui/input";
@@ -76,7 +76,7 @@ export default function Markets() {
     }
   };
 
-  // Calculate simulated volume based on price and change
+  // Arbitrary demo activity for visual sorting, not observed volume or monetary turnover.
   const getVolume = (asset: Asset) => Math.abs(asset.price * (100 + asset.change) * 10000);
 
   const filteredAssets = assets
@@ -95,7 +95,7 @@ export default function Markets() {
           comparison = a.price - b.price;
           break;
         case 'change':
-          comparison = a.change - b.change;
+          comparison = a.changePercent - b.changePercent;
           break;
         case 'volume':
           comparison = getVolume(a) - getVolume(b);
@@ -104,8 +104,8 @@ export default function Markets() {
       return sortOrder === 'asc' ? comparison : -comparison;
     });
 
-  const gainers = [...assets].sort((a, b) => b.change - a.change).slice(0, 5);
-  const losers = [...assets].sort((a, b) => a.change - b.change).slice(0, 5);
+  const gainers = assets.filter(a => a.changePercent > 0).sort((a, b) => b.changePercent - a.changePercent).slice(0, 5);
+  const losers = assets.filter(a => a.changePercent < 0).sort((a, b) => a.changePercent - b.changePercent).slice(0, 5);
 
   const SortButton = ({ field, label }: { field: SortField; label: string }) => (
     <button
@@ -152,12 +152,13 @@ export default function Markets() {
               <div>
                 <h1 className="text-xl md:text-3xl font-bold">Market Practice Hub</h1>
                 <p className="text-muted-foreground text-xs md:text-sm">
-                  Practice professional positioning with simulated market data. Explore {assets.length}+ assets across crypto, stocks, ETFs, forex, and commodities.
+                  Explore {assets.length} practice instruments with generated display data across crypto, stocks, ETFs, forex, and commodities. Changes are seeded initially, then show the latest generated update, not a measured 24-hour return. Demo activity is an arbitrary synthetic display value, not traded market volume.
                 </p>
               </div>
               <div className="relative w-full md:w-72 transition-all duration-300">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <Input
+                  aria-label="Search practice instruments"
                   placeholder="Search assets..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
@@ -210,9 +211,9 @@ export default function Markets() {
                         </div>
                       </div>
                       <div className="text-right">
-                        <p className="font-mono text-sm">${asset.price.toLocaleString()}</p>
+                        <p className="font-mono text-sm">${formatPrice(asset.price, asset.type)}</p>
                         <Badge variant="outline" className="text-profit border-profit/30 text-xs transition-all duration-200">
-                          +{asset.change.toFixed(2)}%
+                          +{asset.changePercent.toFixed(2)}%
                         </Badge>
                       </div>
                     </Link>
@@ -240,9 +241,9 @@ export default function Markets() {
                         </div>
                       </div>
                       <div className="text-right">
-                        <p className="font-mono text-sm">${asset.price.toLocaleString()}</p>
+                        <p className="font-mono text-sm">${formatPrice(asset.price, asset.type)}</p>
                         <Badge variant="outline" className="text-loss border-loss/30 text-xs transition-all duration-200">
-                          {asset.change.toFixed(2)}%
+                          {asset.changePercent.toFixed(2)}%
                         </Badge>
                       </div>
                     </Link>
@@ -270,8 +271,8 @@ export default function Markets() {
                   <div className="hidden md:grid grid-cols-5 gap-4 px-4 py-3 bg-muted/30 border-b border-border">
                     <SortButton field="name" label="Asset" />
                     <SortButton field="price" label="Price" />
-                    <SortButton field="change" label="24h Change" />
-                    <SortButton field="volume" label="Volume" />
+                    <SortButton field="change" label="Practice Change" />
+                    <SortButton field="volume" label="Demo activity" />
                     <span className="text-xs text-muted-foreground">Action</span>
                   </div>
 
@@ -296,7 +297,7 @@ export default function Markets() {
                           </div>
 
                           <div className="text-right md:text-left flex items-center justify-end md:justify-start">
-                            <p className="font-mono text-xs md:text-sm">${asset.price.toLocaleString()}</p>
+                            <p className="font-mono text-xs md:text-sm">${formatPrice(asset.price, asset.type)}</p>
                           </div>
 
                           <div className="md:col-span-1 flex items-center">
@@ -304,19 +305,19 @@ export default function Markets() {
                               variant="outline"
                               className={cn(
                                 "text-[10px] md:text-xs transition-all duration-200",
-                                asset.change >= 0
+                                asset.changePercent >= 0
                                   ? "text-profit border-profit/30"
                                   : "text-loss border-loss/30"
                               )}
                             >
-                              {asset.change >= 0 ? "+" : ""}
-                              {asset.change.toFixed(2)}%
+                              {asset.changePercent >= 0 ? "+" : ""}
+                              {asset.changePercent.toFixed(2)}%
                             </Badge>
                           </div>
 
                           <div className="hidden md:flex items-center">
                             <p className="text-sm text-muted-foreground">
-                              ${(getVolume(asset) / 1e6).toFixed(1)}M
+                              {(getVolume(asset) / 1e6).toFixed(1)}M
                             </p>
                           </div>
 
@@ -415,7 +416,7 @@ export default function Markets() {
             {
               question: "What does the TradeHQ Markets dashboard show?",
               answer:
-                "The markets dashboard shows simulated practice prices, percentage change and estimated volume across crypto, stocks, ETFs, forex and commodities. Values on this page are generated for the simulator and are not execution-quality market quotes.",
+                "The markets dashboard shows simulated practice prices, percentage change and synthetic demo activity across crypto, stocks, ETFs, forex and commodities. Values on this page are generated for the simulator and are not execution-quality market quotes.",
             },
             {
               question: "How often does market data refresh?",

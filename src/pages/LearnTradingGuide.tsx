@@ -120,11 +120,11 @@ const LearnTradingGuide = () => {
               The $100K practice balance is simulated; no real-money orders are placed here.
             </p>
 
-            <Link to="/trade/btc">
-              <Button size="lg" className="h-12 bg-profit hover:bg-profit/90 text-profit-foreground font-bold px-10 rounded-xl transition-all shadow-glow-profit">
+            <Button size="lg" className="h-12 bg-profit hover:bg-profit/90 text-profit-foreground font-bold px-10 rounded-xl transition-all shadow-glow-profit" asChild>
+<Link to="/trade/btc">
                 LAUNCH TERMINAL <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-            </Link>
+              </Link>
+</Button>
           </div>
         </header>
 

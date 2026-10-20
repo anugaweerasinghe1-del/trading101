@@ -1,3 +1,4 @@
+import { formatPrice as formatAssetPrice } from "@/lib/assets";
 import { Asset } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
 import { TrendingDown, TrendingUp } from "lucide-react";
@@ -15,18 +16,9 @@ const TYPE_LABELS: Record<Asset["type"], string> = {
   forex: "Forex",
 };
 
-function formatPrice(value: number) {
-  if (value < 1) return `$${value.toFixed(4)}`;
-  return `$${value.toLocaleString(undefined, {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  })}`;
-}
-
 function getRiskProfile(asset: Asset) {
-  if (asset.type === "crypto") return "High volatility";
-  if (asset.type === "forex" || asset.type === "commodity") return "Active market";
-  return "Moderate volatility";
+  const context = { crypto: "Network, custody and price risks vary by token", stock: "Company ownership exposure", etf: "Exposure depends on the fund holdings", forex: "Currency-pair exposure", commodity: "Commodity price exposure" };
+  return context[asset.type];
 }
 
 function getBiasLabel(changePercent: number) {
@@ -58,7 +50,7 @@ export function AssetContextCard({ asset }: AssetContextCardProps) {
 
         <div className="text-left md:text-right">
           <p className="text-2xl font-semibold tabular-nums md:text-3xl">
-            {formatPrice(asset.price)}
+            ${formatAssetPrice(asset.price, asset.type)}
           </p>
           <div
             className={cn(

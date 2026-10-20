@@ -1,6 +1,7 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import { Asset } from "@/lib/types";
 import { Search, ChevronDown, Star, TrendingUp, TrendingDown } from "lucide-react";
+import { formatPrice } from "@/lib/assets";
 import { cn } from "@/lib/utils";
 
 interface AssetSearchDropdownProps {
@@ -23,6 +24,7 @@ export function AssetSearchDropdown({
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState<FilterType>('all');
+  const triggerRef = useRef<HTMLButtonElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Close dropdown when clicking outside
@@ -37,7 +39,7 @@ export function AssetSearchDropdown({
   }, []);
 
   const filteredAssets = useMemo(() => {
-    let result = assets;
+    let result = [...assets];
     
     // Apply type filter
     if (filter !== 'all') {
@@ -75,9 +77,15 @@ export function AssetSearchDropdown({
   ];
 
   return (
-    <div ref={dropdownRef} className="relative w-full max-w-md">
+    <div ref={dropdownRef} className="relative w-full max-w-md" onKeyDown={event => {
+      if (event.key === "Escape" && isOpen) { event.stopPropagation(); setIsOpen(false); triggerRef.current?.focus(); }
+    }}>
       {/* Trigger Button */}
       <button
+        ref={triggerRef}
+        aria-expanded={isOpen}
+        aria-controls="asset-search-panel"
+        aria-label={selectedAsset ? `Choose an asset, currently ${selectedAsset.symbol}` : "Choose an asset"}
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-between gap-3 px-4 py-3 rounded-2xl glass-panel border border-white/10 hover:border-primary/30 transition-all"
       >
@@ -102,13 +110,14 @@ export function AssetSearchDropdown({
 
       {/* Dropdown Panel */}
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 mt-2 z-50 glass-panel border border-white/10 rounded-2xl overflow-hidden shadow-2xl animate-fade-in">
+        <div id="asset-search-panel" className="absolute top-full left-0 right-0 mt-2 z-50 glass-panel border border-white/10 rounded-2xl overflow-hidden shadow-2xl animate-fade-in">
           {/* Search Input */}
           <div className="p-3 border-b border-white/5">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
               <input
                 type="text"
+                aria-label="Search assets by name or symbol"
                 placeholder="Search 170 assets..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
@@ -123,6 +132,7 @@ export function AssetSearchDropdown({
             {filters.map(f => (
               <button
                 key={f.value}
+                aria-pressed={filter === f.value}
                 onClick={() => setFilter(f.value)}
                 className={cn(
                   "px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all",
@@ -144,55 +154,29 @@ export function AssetSearchDropdown({
               </div>
             ) : (
               filteredAssets.map((asset) => (
-                <button
-                  key={asset.id}
-                  onClick={() => {
-                    onSelectAsset(asset);
-                    setIsOpen(false);
-                    setSearch("");
-                  }}
-                  className={cn(
-                    "w-full flex items-center justify-between gap-3 px-4 py-3 hover:bg-white/5 transition-colors",
-                    selectedAsset?.id === asset.id && "bg-primary/10"
-                  )}
-                >
-                  <div className="flex items-center gap-3">
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        onToggleFavorite(asset.id);
-                      }}
-                      className="p-1 -m-1"
-                    >
-                      <Star className={cn(
-                        "w-4 h-4 transition-colors",
-                        favorites.includes(asset.id)
-                          ? "fill-yellow-500 text-yellow-500"
-                          : "text-muted-foreground hover:text-yellow-500"
-                      )} />
-                    </button>
-                    <div className="text-left">
-                      <p className="font-medium">{asset.symbol}</p>
-                      <p className="text-xs text-muted-foreground">{asset.name}</p>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <p className="font-medium tabular-nums">
-                      ${typeof asset.price === 'number' ? asset.price.toLocaleString() : '—'}
-                    </p>
-                    <p className={cn(
-                      "text-xs tabular-nums flex items-center gap-1 justify-end",
-                      (asset.changePercent ?? 0) >= 0 ? "text-profit" : "text-loss"
-                    )}>
-                      {(asset.changePercent ?? 0) >= 0 ? (
-                        <TrendingUp className="w-3 h-3" />
-                      ) : (
-                        <TrendingDown className="w-3 h-3" />
-                      )}
-                      {(asset.changePercent ?? 0) >= 0 ? '+' : ''}{(asset.changePercent ?? 0).toFixed(2)}%
-                    </p>
-                  </div>
-                </button>
+                <div key={asset.id} className={cn("flex items-center px-3 hover:bg-white/5", selectedAsset?.id === asset.id && "bg-primary/10")}>
+                  <button
+                    aria-label={`${favorites.includes(asset.id) ? 'Remove' : 'Add'} ${asset.symbol} ${favorites.includes(asset.id) ? 'from' : 'to'} favorites`}
+                    aria-pressed={favorites.includes(asset.id)}
+                    onClick={() => onToggleFavorite(asset.id)}
+                    className="p-2 shrink-0"
+                  >
+                    <Star className={cn("w-4 h-4", favorites.includes(asset.id) ? "fill-yellow-500 text-yellow-500" : "text-muted-foreground")} />
+                  </button>
+                  <button
+                    onClick={() => { onSelectAsset(asset); setIsOpen(false); setSearch(""); triggerRef.current?.focus(); }}
+                    className="flex-1 min-w-0 flex items-center justify-between gap-3 py-3 pl-2 text-left"
+                  >
+                    <span className="min-w-0"><span className="block font-medium">{asset.symbol}</span><span className="block text-xs text-muted-foreground">{asset.name}</span></span>
+                    <span className="text-right shrink-0">
+                      <span className="block font-medium tabular-nums">${formatPrice(asset.price, asset.type)}</span>
+                      <span className={cn("text-xs tabular-nums flex items-center gap-1 justify-end", (asset.changePercent ?? 0) >= 0 ? "text-profit" : "text-loss")}>
+                        {(asset.changePercent ?? 0) >= 0 ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />}
+                        {(asset.changePercent ?? 0) >= 0 ? '+' : ''}{(asset.changePercent ?? 0).toFixed(2)}%
+                      </span>
+                    </span>
+                  </button>
+                </div>
               ))
             )}
           </div>

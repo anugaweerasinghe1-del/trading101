@@ -158,6 +158,7 @@ export function ScenarioBuilder({ portfolio, liveAssets }: Props) {
         <Input
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
+          aria-label="Hypothetical portfolio scenario"
           placeholder="e.g. What if BTC drops 30% in 30 days?"
           onKeyDown={(e) => e.key === "Enter" && runQuery()}
           disabled={loading}

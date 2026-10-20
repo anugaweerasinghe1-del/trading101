@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo, useRef } from "react";
+import { formatPrice } from "@/lib/assets";
 import { Asset } from "@/lib/types";
 import { useLiveMarketData, useLiveCandleData, CandleData } from "@/hooks/useLiveMarketData";
 import {
@@ -45,7 +46,7 @@ function generateChartData(basePrice: number, count: number = 50): ChartDataPoin
     
     data.push({
       time: date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-      price: Number(price.toFixed(2)),
+      price, // Preserve small positive chart values; rounding belongs at display time.
       timestamp,
     });
   }
@@ -197,7 +198,7 @@ export function MinimalistAreaChart({ asset }: MinimalistAreaChartProps) {
           <div>
             <p className="text-2xl font-bold tabular-nums">
               ${typeof currentPrice === 'number' && !isNaN(currentPrice) 
-                ? currentPrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+                ? formatPrice(currentPrice, asset.type)
                 : '—'}
             </p>
             <p className={`text-sm font-medium tabular-nums ${isPositive ? 'text-profit' : 'text-loss'}`}>

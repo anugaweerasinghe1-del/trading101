@@ -86,18 +86,20 @@ export function CompoundCalculator() {
         {/* Inputs - stacked vertically */}
         <div className="grid grid-cols-2 gap-3">
           <div className="space-y-1">
-            <Label className="text-[9px] uppercase font-bold text-slate-500">Initial Capital</Label>
+            <Label htmlFor="compound-initial-capital" className="text-[9px] uppercase font-bold text-slate-500">Initial Capital</Label>
             <Input
               type="number"
+              id="compound-initial-capital"
               value={initialInvestment}
               onChange={(e) => setInitialInvestment(Number(e.target.value))}
               className="h-8 bg-white/5 border-white/10 text-[11px] font-bold text-foreground"
             />
           </div>
           <div className="space-y-1">
-            <Label className="text-[9px] uppercase font-bold text-slate-500">Monthly Add</Label>
+            <Label htmlFor="compound-monthly-add" className="text-[9px] uppercase font-bold text-slate-500">Monthly Add</Label>
             <Input
               type="number"
+              id="compound-monthly-add"
               value={monthlyContribution}
               onChange={(e) => setMonthlyContribution(Number(e.target.value))}
               className="h-8 bg-white/5 border-white/10 text-[11px] font-bold text-foreground"
