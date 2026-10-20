@@ -59,6 +59,21 @@ try {
     if (message.method === 'Runtime.exceptionThrown') runtimeErrors.push(message.params.exceptionDetails.exception?.description || message.params.exceptionDetails.text);
   });
   await send("Page.enable"); await send("Network.enable"); await send("Runtime.enable");
+  // Record transient head regressions as well as the settled metadata. A page
+  // that temporarily changes its authored canonical or emits noindex while
+  // quotes load must fail even if a later render repairs the tags.
+  await send("Page.addScriptToEvaluateOnNewDocument", { source: `
+    window.__publisherAssetHeadErrors = [];
+    new MutationObserver(() => {
+      if (!location.pathname.startsWith('/trade/')) return;
+      const canonical = document.querySelector('link[rel="canonical"]');
+      const robots = document.querySelector('meta[name="robots"]');
+      const expected = 'https://www.thetradehq.com' + location.pathname;
+      const error = canonical && canonical.href !== expected ? 'canonical: ' + canonical.href
+        : robots && /noindex/i.test(robots.content) ? 'robots: ' + robots.content : null;
+      if (error && !window.__publisherAssetHeadErrors.includes(error)) window.__publisherAssetHeadErrors.push(error);
+    }).observe(document, { subtree: true, childList: true, attributes: true });
+  ` });
   // Fulfil HTTPS requests inside the fixture. Published-course reads use the
   // same recorded anonymous documents; no real account or service is touched.
   socket.addEventListener("message", event => {
@@ -93,6 +108,9 @@ try {
         if (ready) break; await delay(50);
       }
       assert.ok(ready, `${path}: content/canonical readiness (${width}px, JS=${javaScript})`);
+      if (javaScript && path.startsWith('/trade/')) {
+        assert.deepEqual(await evaluate('window.__publisherAssetHeadErrors'), [], `${path}: stable metadata during hydration (${width}px)`);
+      }
       const observation = await evaluate(`({main:document.querySelectorAll('main').length,h1:document.querySelectorAll('h1').length, overflow:document.documentElement.scrollWidth > innerWidth + 1, notes:document.querySelector('[data-publisher-notes]')?.getAttribute('data-publisher-notes')})`);
       assert.equal(observation.main, 1, `${path}: one main content landmark (${width}px, JS=${javaScript})`);
       assert.equal(observation.h1, 1, `${path}: one H1 (${width}px, JS=${javaScript})`);

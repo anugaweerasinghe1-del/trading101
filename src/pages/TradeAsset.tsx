@@ -232,16 +232,19 @@ export default function TradeAsset() {
   // Get content for SEO blocks
   const assetContent = selectedAsset ? getAssetContent(selectedAsset.id) : null;
   const assetFAQs = selectedAsset ? getAssetFAQs(selectedAsset.id) : [];
-  const metaTitle = selectedAsset ? generateAssetMetaTitle(selectedAsset) : "Trade | TradeHQ";
-  const metaDescription = selectedAsset ? generateAssetMetaDescription(selectedAsset) : "";
-  const canonicalUrl = selectedAsset 
-    ? `https://www.thetradehq.com/trade/${selectedAsset.id}`
+  // Page identity belongs to the URL, not the asynchronously loaded quote or
+  // the instrument temporarily selected in the practice desk.
+  const routeAsset = symbol ? findAssetBySymbol(symbol) : ASSETS[0];
+  const metaTitle = routeAsset ? generateAssetMetaTitle(routeAsset) : "Trade | TradeHQ";
+  const metaDescription = routeAsset ? generateAssetMetaDescription(routeAsset) : "";
+  const canonicalUrl = routeAsset
+    ? `https://www.thetradehq.com/trade/${routeAsset.id}`
     : "https://www.thetradehq.com/trade";
   const assetColor = selectedAsset ? getAssetColor(selectedAsset.id) : '#00FFFF';
   // Keep runtime robots aligned with scripts/routes.ts: only authored
   // editorial + authored FAQ asset pages are indexable.
-  const isIndexableAsset = selectedAsset
-    ? Boolean(assetContent && ASSET_FAQS[selectedAsset.id]?.length)
+  const isIndexableAsset = routeAsset
+    ? Boolean(getAssetContent(routeAsset.id) && ASSET_FAQS[routeAsset.id]?.length)
     : false;
 
   // --- CLEAN SCHEMA: No fake ratings, proper nesting ---

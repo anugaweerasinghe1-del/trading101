@@ -78,6 +78,6 @@ function getSimulatorBullet(asset: Asset): string {
 }
 
 function getStudentPerspective(asset: Asset): string {
-  const assetLabel = asset.type === 'crypto' ? 'crypto' : asset.type === 'forex' ? 'forex' : 'stock';
+  const assetLabel = asset.type === 'etf' ? 'ETF' : asset.type;
   return `Student perspective: Practice ${asset.symbol} ${assetLabel} trading as a beginner in Colombo or anywhere — study order mechanics with virtual cash. Practice results do not establish readiness for real trading.`;
 }
