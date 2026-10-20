@@ -121,7 +121,7 @@ export default function CountryGuide() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold mb-3">A three-month practice plan</h2>
+            <h2 className="text-2xl font-bold mb-3">Country-specific practice worksheet</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">{guide.practicePlan}</p>
             <p className="mt-3 text-xs text-muted-foreground italic">
               Educational simulation only — not financial, tax or legal advice. Confirm all local rules with a licensed professional in {guide.country}.
