@@ -109,7 +109,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
         heading: "The Key Differences Between Crypto and Stocks",
         paragraphs: [
           "Stocks represent ownership in real companies. When you buy Apple stock, you own a tiny piece of a trillion-dollar technology company that generates revenue, pays dividends, and is regulated by the SEC. Stock markets operate Monday through Friday during set hours (9:30 AM to 4:00 PM ET for the NYSE).",
-          "Cryptocurrencies are decentralized digital assets that trade 24/7, 365 days a year. There's no closing bell, no holidays, and often no central authority governing their issuance. This means crypto prices can make dramatic moves at any hour — on a Sunday night, during a holiday, or while you sleep.",
+          "Cryptocurrency networks differ in governance, issuance and degree of decentralization. Many crypto trading venues operate around the clock, although maintenance, outages and provider restrictions can interrupt access. Prices can move outside stock-exchange sessions, including weekends and holidays; continuous market hours do not guarantee that a particular venue or order is available.",
           "Price variability depends on the asset, observation period and market conditions. A cryptocurrency and a company share can both have large gains or losses; a typical daily percentage is not a fixed risk classification. Compare percentage changes over the same sample rather than assume a permanent volatility ranking."
         ]
       },
@@ -242,7 +242,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
       {
         heading: "Rebalancing and Ongoing Management",
         paragraphs: [
-          "Over time, your portfolio allocation will drift as some assets outperform others. If your crypto holdings surge 50% while stocks grow 10%, crypto becomes a larger percentage of your portfolio than you intended — increasing your risk. Rebalancing means periodically selling some winners and buying more of the underperformers to maintain your target allocation.",
+          "Portfolio weights can drift as holdings change in value. In a hypothetical portfolio with no cash flows, a 50% crypto gain and a 10% stock gain increase crypto's relative weight. This changes sensitivity to crypto; the calculation alone does not determine the portfolio's overall risk. Rebalancing adjusts toward selected target weights through purchases, sales or new contributions where available. Targets are study assumptions, and fees, taxes and subsequent price changes affect the comparison. Rebalancing does not guarantee smaller losses or higher returns.",
           "Rebalancing restores selected target weights. Timing and thresholds are choices to compare, not universal quarterly or five-percent rules. Rebalancing can add costs and can reduce returns in a continuing trend, so record turnover and compare against a portfolio left unchanged.",
           "For an educational rebalancing worksheet, set hypothetical weights, recalculate them after invented price changes and quantify the effect of virtual transaction fees. Compare the adjusted portfolio with one left unchanged. No allocation, monthly schedule or calculated benefit should be treated as a recommendation for a real account."
         ]
@@ -263,7 +263,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
     readTime: "6 min read",
     sections: [
       {
-        heading: "Why Risk Management Matters More Than Stock Picks",
+        heading: "Measuring Risk Alongside Trade Outcomes",
         paragraphs: [
           "Risk management describes how exposure and losses are measured or limited under a chosen process. Profitability also depends on realized gains, losses, frequency and costs. For example, a 40% win rate with fixed 2R gains and 1R losses has gross expectancy 0.4×2−0.6×1=0.2R per trade before costs; it is hypothetical arithmetic.",
           "Exposure rules and intended exits can be compared in a hypothetical worksheet, but they do not guarantee survival through a loss sequence or establish that a profitable edge exists. Gaps, costs and correlated holdings can create losses beyond a chosen assumption.",
