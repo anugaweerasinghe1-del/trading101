@@ -375,7 +375,7 @@ export function buildRoutes(): RouteMeta[] {
       path: `/wiki/${g.slug}`,
       title: `${g.term} — Explanation & Learning Exercise | TradeHQ Wiki`,
       description: g.slug === "circuit-breaker"
-        ? "Circuit breakers are rule-defined trading pauses. Learn about US market-wide thresholds, differing security-specific rules and why halts cannot ensure a chosen exit price."
+        ? "US circuit breakers pause trading at specified thresholds. Learn how market-wide halts differ from individual-security pauses and why exits remain uncertain."
         : firstCompleteSentence(g.definition),
       h1: `${g.term} — Trading Wiki`,
       summary: `${g.definition}`,
