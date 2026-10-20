@@ -13,6 +13,19 @@ import { buildContentMap } from "./content";
 const { HOWTO_ASSETS, STRATEGIES, courseTracks, LEARN_ARTICLES, tradingGlossary } = await loadSiteData();
 const routes = uniqueRoutes();
 const map = await buildContentMap();
+
+const wikiClientSource = readFileSync("src/pages/WikiTerm.tsx", "utf8");
+assert.ok(
+  wikiClientSource.includes("<title>{term.term} — Explanation & Learning Exercise | TradeHQ Wiki</title>"),
+  "Hydrated glossary title template differs from the initial HTML title"
+);
+for (const term of tradingGlossary) {
+  const path = "/wiki/" + term.slug;
+  const route = routes.find((r) => r.path === path);
+  assert.equal(route?.title, `${term.term} — Explanation & Learning Exercise | TradeHQ Wiki`, path + ": misleading or inconsistent glossary title");
+  assert.ok(map.get(path)?.sections.some((section) => section.h === "Worked exercise and its limits"), path + ": promised exercise missing");
+}
+
 const audited = [
   "/how-to-trade/sol",
   "/strategy/dca-dollar-cost-averaging",

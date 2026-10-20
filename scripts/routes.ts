@@ -373,7 +373,7 @@ export function buildRoutes(): RouteMeta[] {
   for (const g of extractGlossary()) {
     routes.push({
       path: `/wiki/${g.slug}`,
-      title: `${g.term} — Definition, Example & How to Trade It | TradeHQ Wiki`,
+      title: `${g.term} — Explanation & Learning Exercise | TradeHQ Wiki`,
       description: firstCompleteSentence(g.definition),
       h1: `${g.term} — Trading Wiki`,
       summary: `${g.definition}`,
