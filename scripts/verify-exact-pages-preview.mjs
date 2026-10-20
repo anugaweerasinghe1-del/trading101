@@ -47,7 +47,7 @@ export async function verifyExactPagesPreview(sha, { fetchImpl=fetch, now=Date.n
     return response;
   };
   const json=async(path)=>{
-    const response=await get(root+path);assert.equal(response.status,200,'GitHub evidence unavailable; no auth/quota retries.');
+    const response=await get(root+path);assert.equal(response.status,200,`GitHub evidence unavailable (HTTP ${response.status}); no auth/quota retries.`);
     return JSON.parse(await boundedText(response,2000000));
   };
   const repo=await json('');assert.ok(repo.id===1130435580 && repo.full_name==='anugaweerasinghe1-del/trading101' && repo.private===false,'Repository mismatch.');
@@ -84,5 +84,10 @@ if(process.argv[1] && import.meta.url===pathToFileURL(process.argv[1]).href){
   try{
     const sha=process.env.VALIDATION_SHA;assert.equal(execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),sha,'Checkout mismatch.');
     console.log(JSON.stringify(await verifyExactPagesPreview(sha),null,2));
-  }catch{console.error('Exact Pages preview probe blocked: missing, pending, failed or mismatched evidence/HTTP/SEO. No release authority.');process.exitCode=1;}
+  }catch(error){
+    // This probe uses public GETs only. Keep the failing assertion visible so
+    // an evidence outage can be distinguished from a deployment/SEO defect.
+    const reason=error instanceof Error ? error.message.replace(/[\r\n\x00-\x1f]+/g,' ').slice(0,600) : 'Unknown probe failure';
+    console.error(`Exact Pages preview probe blocked: ${reason} No release authority.`);process.exitCode=1;
+  }
 }

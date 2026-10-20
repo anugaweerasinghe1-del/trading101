@@ -1,0 +1,96 @@
+{
+  "sha": "8a3808894c034f3a5a2aab9fd8257725b332d416",
+  "pr": 192,
+  "recorded_at": "2026-10-19T15:32:47.784Z",
+  "providers": {
+    "TRADEHQ_VERCEL_ACTIVE_PRODUCTION_CONFIRMED": {
+      "schema": "tradehq-vercel-production-evidence-v1",
+      "deploymentId": "dpl_QCzdj59U62EWBJPmvgBnorGTPgx9",
+      "teamId": "team_fjZ5ggg0P43MsYFSIHbeHAAO",
+      "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+      "commitSha": "8a3808894c034f3a5a2aab9fd8257725b332d416",
+      "target": "production",
+      "state": "READY",
+      "activeAlias": "thetradehq.com",
+      "createdAt": 1792417598366,
+      "observedAt": 1792417903668,
+      "requests": 2,
+      "authorization": {
+        "merge": false,
+        "productionRelease": false
+      }
+    },
+    "TRADEHQ_CLOUDFLARE_ACCOUNT_OBSERVATION_V1": {
+      "schema": "tradehq-cloudflare-account-observation-v1",
+      "observedAt": "2026-10-19T13:51:43.668Z",
+      "accountId": "01087d56e4cb7b728a7a9ddbcb12b9bb",
+      "project": "tradehq-preview",
+      "nativeTokenActive": true,
+      "activeProduction": {
+        "id": "bd028696-d87f-4259-b010-f9f0c5d51e66",
+        "sha": "8a3808894c034f3a5a2aab9fd8257725b332d416",
+        "environment": "production",
+        "branch": "main",
+        "status": "success",
+        "createdAt": "2026-10-19T13:46:37.566548Z"
+      },
+      "previousSuccessfulProduction": {
+        "id": "cdff01da-84dc-49d9-9b25-6f5830b992f3",
+        "sha": "8b96643b9fcbdae0b0eba7dd4b3017f5cdc66a25",
+        "environment": "production",
+        "branch": "main",
+        "status": "success",
+        "createdAt": "2026-10-19T09:23:04.210077Z"
+      },
+      "historyWindow": {
+        "page": 1,
+        "perPage": 25,
+        "rows": 25,
+        "completeAccountHistory": false
+      },
+      "subscriptions": [],
+      "usage": {
+        "from": "2026-10-01T00:00:00Z",
+        "to": "2026-10-19T13:51:43.668Z",
+        "dataset": "pagesFunctionsInvocationsAdaptiveGroups",
+        "groups": 2,
+        "accountRequests": 15247,
+        "accountErrors": 0,
+        "projectScriptMatched": true,
+        "projectRequests": 14406
+      },
+      "quotaHeadroomVerified": false,
+      "rollbackPerformed": false,
+      "authorization": {
+        "providerWrite": false,
+        "modelCall": false,
+        "merge": false,
+        "productionRelease": false
+      },
+      "limitations": [
+        "Adaptive analytics are sampled observations, not authoritative billing counters.",
+        "Subscription metadata does not establish remaining Pages builds or all provider/model quota.",
+        "Previous successful production is a candidate under Cloudflare documentation; an actual authorized rollback/restore remains unperformed."
+      ]
+    }
+  },
+  "browser": {
+    "scope": "Seven corrected production URLs inspected after hydration in the cloud browser at 1363px; no production account transactions",
+    "urls": [
+      "/",
+      "/trade",
+      "/ai-mentor",
+      "/about",
+      "/challenge",
+      "/reviews",
+      "/terms"
+    ],
+    "single_h1": true,
+    "single_matching_canonical": true,
+    "indexable_robots": true,
+    "horizontal_overflow": false,
+    "corrected_copy_visible": true,
+    "obsolete_claims_absent": true
+  },
+  "post_merge_checks": "All seven exact-SHA checks completed successfully; native provider observations extracted below"
+}

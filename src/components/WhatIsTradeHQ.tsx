@@ -31,7 +31,7 @@ export function WhatIsTradeHQ() {
             trading stocks, cryptocurrencies, ETFs, forex, and commodities — all without risking real money.
             Built for students and beginners, it features simulated market charts, rule-based educational mentoring,
             and 170 tradeable assets. No signup, no credit card, no hidden fees. Start practicing
-            market strategies in seconds and build confidence before committing real capital.
+            order and portfolio arithmetic, recording assumptions without using real capital. Practice results do not establish investment readiness.
           </p>
         </motion.div>
 

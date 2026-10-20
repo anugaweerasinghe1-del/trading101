@@ -436,7 +436,7 @@ export const HOWTO_ASSETS: HowToAsset[] = [
     "review": "Review units, the marked price and whole-account exposure separately. Explain how the $100 holding loss becomes a much smaller account percentage because most of this worksheet is cash. Include fees and note any distribution or expense mechanics excluded from the simulator rather than silently inventing cash entries.",
     "sources": [
       {
-        "href": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-funds-etfs",
+        "href": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2",
         "label": "SEC Investor.gov — exchange-traded funds"
       }
     ]

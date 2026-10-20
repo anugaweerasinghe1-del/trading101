@@ -169,6 +169,7 @@ const Index = () => {
       <div className="min-h-screen bg-background">
         <Navigation />
 
+        <main id="main-content">
         {/* 1. Premium hero (above fold) */}
         <PremiumHero />
 
@@ -224,7 +225,7 @@ const Index = () => {
                   <Sparkles className="h-3 w-3" /> What's coming next
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold tracking-tight">The Future of TradeHQ</h3>
-                <p className="mt-2 text-muted-foreground max-w-xl">Realistic portfolio projections, optional sign-in, expanded courses & more — all 100% free.</p>
+                <p className="mt-2 text-muted-foreground max-w-xl">Explore proposed portfolio worksheets and price widgets, alongside the features already available. Planned work has no confirmed release date.</p>
               </div>
               <div className="inline-flex items-center gap-2 text-emerald-400 font-medium whitespace-nowrap">
                 See the roadmap <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition" />
@@ -344,6 +345,7 @@ const Index = () => {
 
         </section>
 
+        </main>
         <MegaFooter />
       </div>
     </>

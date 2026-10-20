@@ -127,7 +127,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     category: "Technical Analysis",
     keyPoints: [
       "Measures the gap between MACD line and signal line",
-      "Growing bars = accelerating momentum in that direction",
+      "Bars show MACD minus its signal line; a larger difference does not by itself measure price acceleration",
       "Histogram divergence describes historical observations, not a reversal forecast"
     ],
     studentPerspective: "Reproduce the difference between a MACD line and its signal line before interpreting the bars. This describes calculated observations, not a reliable entry or exit time.",
@@ -187,7 +187,7 @@ export const tradingGlossary: GlossaryTerm[] = [
   {
     slug: "bull-trap",
     term: "Bull Trap",
-    definition: "A bull trap is a false breakout above resistance that lures buyers into long positions before price reverses sharply downward, trapping them with losses.",
+    definition: "A retrospective label for a move above selected resistance followed by a downward reversal. The pattern alone does not establish buyers’ losses or anyone’s intent.",
     expertDefinition: "A bull trap is a retrospective label for a price move above a selected resistance area that subsequently reverses below it. The apparent breakout can encourage purchases, but a chart alone cannot establish buyers’ motives or a deliberate attempt to trap them. Definitions of resistance, breakout and reversal depend on the interval and tolerance used. At the moment of the initial break, the subsequent reversal is unknown. A study should define its criteria before looking ahead, include successful continuations as well as reversals and compare realistic fills and costs. No pattern label guarantees that an intended stop can execute at its trigger price.",
     proTip: "Compare the breakout level, subsequent close and trading volume. A retest or candle-close filter can be evaluated as a rule, but it cannot eliminate failed breakouts.",
     difficulty: "Novice",
@@ -195,7 +195,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     category: "Market Mechanics",
     keyPoints: [
       "False breakout above resistance that reverses quickly",
-      "Common at psychological levels and previous all-time highs",
+      "Define the resistance area and reversal window before counting examples or claiming a frequency",
       "Confirmed when price closes back below the broken resistance"
     ],
     studentPerspective: "Record both a breakout and its later reversal using fixed definitions. A confirmation filter changes the rule being tested; it cannot remove every failed signal.",
@@ -204,7 +204,7 @@ export const tradingGlossary: GlossaryTerm[] = [
   {
     slug: "bear-trap",
     term: "Bear Trap",
-    definition: "A bear trap is a false breakdown below support that tricks traders into short positions before price reverses upward, squeezing shorts as it rallies.",
+    definition: "A retrospective label for a move below selected support followed by an upward reversal. The price path alone does not establish short positioning or deliberate manipulation.",
     expertDefinition: "A bear trap is a retrospective description of a move below a chosen support area followed by an upward reversal. It need not reveal intentional manipulation or the actual location of short positions. A short seller can lose if the repurchase price rises, but the existence and size of short covering require separate evidence. State the price interval, support criteria and reversal window before collecting examples. Include declines that continue as well as rebounds. TradeHQ cannot open a short position, so any short-sale comparison must be a separate hypothetical worksheet.",
     proTip: "Record when price breaks a chosen support level and later returns above it. The label describes a sequence of prices; it does not prove manipulation or a high win rate.",
     difficulty: "Novice",
@@ -365,7 +365,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     category: "Trading Fundamentals",
     keyPoints: [
       "Amplifies both gains and losses by the leverage multiplier",
-      "Liquidation occurs when losses exceed your margin deposit",
+      "Liquidation depends on maintenance requirements and venue rules and can occur before the deposit is exhausted",
       "No universal professional leverage limit is established here"
     ],
     studentPerspective: "Use a hypothetical exposure-to-equity calculation to compare gains and losses. TradeHQ does not implement leverage, and completing the exercise does not establish suitability for a real margin account.",
@@ -392,7 +392,7 @@ export const tradingGlossary: GlossaryTerm[] = [
   {
     slug: "fud",
     term: "FUD (Fear, Uncertainty, Doubt)",
-    definition: "Negative information — true, exaggerated, or fabricated — spread to create panic and drive prices down. May be legitimate or deliberately manipulative.",
+    definition: "FUD means fear, uncertainty and doubt. The label is often applied to negative claims; it does not establish whether a claim is true, false or deliberately manipulative.",
     expertDefinition: "FUD means fear, uncertainty and doubt. It is often applied to negative claims about a company, token or market. Calling a claim FUD does not establish whether it is accurate, mistaken or intentionally deceptive. Identify the original source, publication date, evidence and exact allegation; distinguish a regulatory announcement from commentary about its likely price effects. A later price rise does not disprove an earlier risk, and a decline does not verify every allegation. The exercise concerns information checking rather than diagnosing emotions, inferring a short seller’s motives or forecasting a market response.",
     proTip: "Check the original source, date and uncertainty behind a negative claim. Neither fear nor a negative funding rate proves that a rebound is likely.",
     difficulty: "Novice",
@@ -444,15 +444,15 @@ export const tradingGlossary: GlossaryTerm[] = [
   {
     slug: "margin-call",
     term: "Margin Call",
-    definition: "A broker's demand for additional collateral when your account equity falls below the maintenance margin requirement. Failure to meet it triggers forced liquidation.",
-    expertDefinition: "A margin call is a demand from a broker or exchange for a trader to deposit additional funds or securities into their margin account when the account's equity falls below the minimum maintenance margin requirement. This mechanism exists to protect the broker from losses that exceed the trader's deposited collateral. When a trader opens a leveraged position, they deposit an initial margin — a percentage of the total position value. As the position moves against them, their equity (account value minus borrowed amount) decreases. Each broker or exchange sets a maintenance margin level — typically 25-30% for equities and varying for crypto — below which a margin call is triggered. Upon receiving a margin call, the trader has a limited window (often as short as minutes in crypto, or up to a few days in traditional markets) to respond by depositing additional capital, closing some positions to reduce exposure, or transferring additional securities. If the trader fails to meet the margin call, the broker has the right — and typically the automated systems — to liquidate the trader's positions at market price without further consent. This forced liquidation can occur at the worst possible prices, especially during volatile markets when many traders receive margin calls simultaneously. The cascading effect of simultaneous margin calls across many accounts during a market decline can create the liquidation cascades seen in crypto markets, where forced selling amplifies downward pressure beyond what organic selling alone would produce.",
+    definition: "A demand for additional collateral under an account’s margin terms. A broker may reduce or liquidate positions under its rules; a call does not guarantee a response period.",
+    expertDefinition: "A margin call concerns collateral under a particular account agreement. In a loan-funded securities account, equity is the marked asset value less the loan and relevant obligations. Initial and maintenance requirements differ, and a broker can impose house requirements or change them. Futures performance-bond arrangements are a different mechanism from borrowing to purchase shares. Do not transfer a percentage or deadline between products. The linked SEC bulletin warns that a brokerage may sell securities without consulting the customer and that an extension is not an entitlement. Depositing collateral, reducing exposure or liquidation can change the account, but none guarantees a chosen exit price or caps every loss. TradeHQ has no margin accounts. Use the hypothetical equity calculation below to study the denominator, then keep actual broker procedures as a separate source-reading question.",
     proTip: "Read the account's initial margin, maintenance requirements and broker liquidation terms. Alert thresholds are personal monitoring choices; they do not ensure time to respond before liquidation.",
     difficulty: "Intermediate",
     readTime: "4 min",
     category: "Trading Fundamentals",
     keyPoints: [
       "Triggered when account equity falls below maintenance margin",
-      "Failure to deposit additional funds results in forced liquidation",
+      "A broker may reduce or liquidate positions under its agreement; no guaranteed warning or response window is implied",
       "Multiple simultaneous margin calls can amplify market crashes"
     ],
     studentPerspective: "Read the relevant maintenance and liquidation terms. A margin call can require action quickly, and no lesson or alert guarantees time to respond. TradeHQ has no margin accounts.",
@@ -479,7 +479,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     slug: "dollar-cost-averaging",
     term: "Dollar Cost Averaging",
     definition: "Dollar-cost averaging means contributing fixed amounts at regular intervals regardless of price. It changes purchase timing and the units acquired; it does not guarantee a lower average cost or outperform a lump-sum investment.",
-    expertDefinition: "Dollar Cost Averaging (DCA) is an investment strategy where a fixed dollar amount is invested into a specific asset at regular intervals — weekly, bi-weekly, or monthly — regardless of the asset's current price. Equal contributions buy more units at lower prices and fewer at higher prices. The resulting average cost can be above or below a lump-sum purchase; the price sequence and costs determine the comparison. Price variation changes the units acquired under a fixed contribution schedule; that is a purchase-timing effect rather than a guaranteed mathematical advantage. In a volatile asset like Bitcoin, a $500 monthly investment over 12 months will purchase more BTC during months when the price is depressed and less during price peaks. DCA removes these emotional obstacles by automating the decision-making process entirely. For a hypothetical example without fees, investing $100 when a unit costs $10 buys 10 units; another $100 at $20 buys 5. The combined 15 units cost $200, or about $13.33 per unit. Investing the same $200 entirely at the first $10 price would buy 20 units, while investing it entirely at $20 would buy 10. These examples show how timing changes the quantity purchased. They do not imply that either contribution schedule will outperform across a different price path or after costs.",
+    expertDefinition: "Dollar Cost Averaging (DCA) is an investment strategy where a fixed dollar amount is invested into a specific asset at regular intervals — weekly, bi-weekly, or monthly — regardless of the asset's current price. Equal contributions buy more units at lower prices and fewer at higher prices. The resulting average cost can be above or below a lump-sum purchase; the price sequence and costs determine the comparison. Price variation changes the units acquired under a fixed contribution schedule; that is a purchase-timing effect rather than a guaranteed mathematical advantage. In a volatile asset like Bitcoin, a $500 monthly investment over 12 months will purchase more BTC during months when the price is depressed and less during price peaks. A fixed schedule reduces decisions about purchase dates but does not eliminate emotion, automate every product or guarantee a better result. For a hypothetical example without fees, investing $100 when a unit costs $10 buys 10 units; another $100 at $20 buys 5. The combined 15 units cost $200, or about $13.33 per unit. Investing the same $200 entirely at the first $10 price would buy 20 units, while investing it entirely at $20 would buy 10. These examples show how timing changes the quantity purchased. They do not imply that either contribution schedule will outperform across a different price path or after costs.",
     proTip: "Compare equal periodic contributions with the same total invested earlier, using stated prices and costs. Contribution frequency changes exposure and does not guarantee a lower cost or better return.",
     difficulty: "Novice",
     readTime: "3 min",
@@ -495,7 +495,7 @@ export const tradingGlossary: GlossaryTerm[] = [
   {
     slug: "swing-trading",
     term: "Swing Trading",
-    definition: "Holding positions for days to weeks to capture medium-term price swings. Balances active trading with manageable time commitment. Uses daily/4H chart timeframes.",
+    definition: "Holding positions across sessions, commonly for days or weeks. Review schedules and chart intervals vary; gaps and execution risks remain.",
     expertDefinition: "Swing trading describes a holding-period style in which positions commonly remain open across multiple sessions. It is not a standardized contract or proof that a particular schedule suits someone with a job or school commitments. Prices can gap during closed sessions, and an intended exit can execute at a different price or fail during a halt or outage. Chart intervals and review schedules are choices rather than universal professional standards. Compare holding windows using matching dates, costs and assumptions, keeping missed reviews and adverse cases in the record. TradeHQ’s instant practice fills omit real order-book execution.",
     proTip: "Define the holding-period and exit rules before evaluating a practice example. Overnight gaps and execution costs affect results; no fixed position-risk percentage is universally appropriate.",
     difficulty: "Intermediate",
@@ -503,7 +503,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     category: "Trading Fundamentals",
     keyPoints: [
       "Holds positions days to weeks to capture medium-term moves",
-      "Primary timeframes: daily and 4-hour charts",
+      "Chart intervals are choices for the stated exercise rather than a universal requirement",
       "Time requirements vary with the process and instruments; no universal daily schedule is established"
     ],
     studentPerspective: "Compare a multi-day holding window with a shorter one, including gaps between observations. No holding period is a universal best starting method for beginners.",
@@ -581,7 +581,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     slug: "ichimoku-cloud",
     term: "Ichimoku Cloud",
     definition: "A comprehensive Japanese indicator system showing support/resistance, trend direction, and momentum in a single view. The Cloud (Kumo) is the signature feature.",
-    expertDefinition: "The Ichimoku Kinko Hyo — commonly called the Ichimoku Cloud — is a comprehensive technical analysis system developed by Japanese journalist Goichi Hosoda in the late 1930s (published in 1969 after 30 years of refinement). Unlike most Western indicators that measure only one dimension of price action, Ichimoku integrates five distinct calculations into a single chart overlay that simultaneously displays support/resistance levels, trend direction, momentum, and potential future support/resistance zones. The five components are: Tenkan-sen (Conversion Line) — the midpoint of the highest high and lowest low over the past 9 periods, serving as a fast signal line. Kijun-sen (Base Line) — the midpoint over 26 periods, serving as a medium-term trend indicator and potential support/resistance. Senkou Span A (Leading Span A) — the average of Tenkan and Kijun lines, plotted 26 periods into the future. Senkou Span B (Leading Span B) — the midpoint of the highest high and lowest low over 52 periods, plotted 26 periods ahead. The shaded area between Senkou Span A and B forms the Cloud (Kumo) — the system's signature feature. Chikou Span (Lagging Span) — the current closing price plotted 26 periods in the past, used for confirmation. Trading signals in Ichimoku follow a hierarchy. One convention labels a bullish alignment when price is above the Cloud, Tenkan-sen is above Kijun-sen, Chikou Span is above the earlier price and Senkou Span A is above B. The alignment describes selected historical calculations; it is not a proven strongest signal.",
+    expertDefinition: "The Ichimoku Cloud combines five historical-price calculations with different lookbacks and plotting offsets. The linked TradingView documentation describes its components and introduces its late-1960s publication history. A line plotted ahead of the latest candle still uses historical inputs; it does not observe future support or resistance. The five components are: Tenkan-sen (Conversion Line) — the midpoint of the highest high and lowest low over the past 9 periods, serving as a fast signal line. Kijun-sen (Base Line) — the midpoint over 26 periods, serving as a medium-term trend indicator and potential support/resistance. Senkou Span A (Leading Span A) — the average of Tenkan and Kijun lines, plotted 26 periods into the future. Senkou Span B (Leading Span B) — the midpoint of the highest high and lowest low over 52 periods, plotted 26 periods ahead. The shaded area between Senkou Span A and B forms the Cloud (Kumo) — the system's signature feature. Chikou Span (Lagging Span) — the current closing price plotted 26 periods in the past, used for confirmation. Trading signals in Ichimoku follow a hierarchy. One convention labels a bullish alignment when price is above the Cloud, Tenkan-sen is above Kijun-sen, Chikou Span is above the earlier price and Senkou Span A is above B. The alignment describes selected historical calculations; it is not a proven strongest signal.",
     proTip: "Record the lookback and plotting offsets of each line. Lines drawn ahead on a chart are calculated from past prices and do not contain future market information.",
     difficulty: "Pro",
     readTime: "6 min",
@@ -655,7 +655,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     readTime: "5 min",
     category: "Market Mechanics",
     keyPoints: [
-      "Private exchanges for anonymous institutional block trading",
+      "Non-displayed venues differ from public exchanges; access and trade sizes depend on venue rules",
       "Current venue shares require a dated market-data source; no percentage is asserted here",
       "May change execution exposure but does not eliminate market impact"
     ],
@@ -699,8 +699,8 @@ export const tradingGlossary: GlossaryTerm[] = [
   {
     slug: "yield-farming",
     term: "Yield Farming",
-    definition: "Depositing crypto assets into DeFi protocols to earn rewards through trading fees, token incentives, or interest. High APYs often carry high impermanent loss and smart contract risk.",
-    expertDefinition: "Yield farming — also known as liquidity mining — is a decentralized finance (DeFi) strategy where users deposit cryptocurrency assets into smart contract-based protocols to earn returns in the form of trading fees, governance token rewards, interest payments, or a combination of all three. The practice exploded in popularity during 'DeFi Summer' of 2020 when Compound Finance pioneered the distribution of its governance token (COMP) to users who supplied assets to its lending protocol, creating the template for liquidity incentive programs across the ecosystem. The basic mechanics vary by protocol type. On decentralized exchanges (DEXs) like Uniswap or Curve Finance, yield farmers provide liquidity by depositing token pairs into trading pools and earn a share of trading fees generated by the pool. On lending protocols like Aave or Compound, users deposit assets that other users can borrow, earning interest from borrowers. On yield aggregators like Yearn Finance, smart contracts automatically move user deposits between various protocols to maximize returns through constantly evolving strategies. Advertised APYs (Annual Percentage Yields) in yield farming can range from single digits on established stablecoin pools to thousands of percent on newly launched, speculative protocols. However, these headline numbers are misleading for several reasons. First, high APYs typically decline rapidly as more capital enters the pool, diluting returns. Third, impermanent loss can exceed the earned fees and rewards, making the overall position unprofitable despite the nominally high APY.",
+    definition: "An informal term for seeking fees, interest or token incentives through DeFi protocols. Reward rates, token prices, withdrawal terms and contract risks affect the result.",
+    expertDefinition: "Yield farming describes attempts to obtain fees, interest or token incentives through a DeFi arrangement. Liquidity provision, lending and a reward-token programme are different activities; their terms should not be treated as interchangeable. In the linked Uniswap v2 example, a liquidity provider owns a changing pool position and compares its value with holding the original tokens. Fee income and relative token-price changes both matter. An advertised annualised rate is a calculation under stated assumptions rather than a promise that the same rate persists or that a deposit gains value. Reward-token prices, contract failures, withdrawal restrictions and costs can change the outcome. Impermanent-loss arithmetic for a fee-free constant-product pool does not describe every protocol or concentrated range. Separate deposited quantities, rewards received, their valuation date and all costs in a hypothetical worksheet; more reward tokens can coincide with less total value. TradeHQ does not deposit funds into DeFi protocols or pay these rewards.",
     proTip: "Separate fees, token incentives and token-price changes in an example return. An advertised APY can change and does not account for every loss or smart-contract risk.",
     difficulty: "Pro",
     readTime: "5 min",
@@ -716,16 +716,16 @@ export const tradingGlossary: GlossaryTerm[] = [
   {
     slug: "flash-crash",
     term: "Flash Crash",
-    definition: "An extremely rapid and deep market decline followed by a swift recovery, typically lasting minutes. Often caused by algorithmic cascades or erroneous large orders.",
+    definition: "A very rapid price decline, sometimes followed by a partial or full recovery. Its causes and later path require event-specific evidence.",
     expertDefinition: "A flash crash describes a very rapid price decline, often with at least a partial rebound. The term is descriptive and does not establish one universal cause or a guaranteed recovery. Liquidity withdrawal, order interactions, outages and other mechanisms require event-specific evidence. A plotted candle cannot identify a responsible participant or prove an algorithm caused the move. During a disruption, an expected quote and an executable price can differ, and orders can be delayed or remain unfilled. This entry makes no historical point-loss or liquidation-total claim; use a dated official event report for such figures.",
     proTip: "Compare prices, depth and available execution records around the event. A cheap-looking quote may not be executable, and a sharp decline need not recover.",
     difficulty: "Intermediate",
     readTime: "4 min",
     category: "Market Mechanics",
     keyPoints: [
-      "Extreme price decline and recovery within minutes",
-      "Caused by algorithmic cascades, large erroneous orders, or liquidity gaps",
-      "Flash crash of May 2010 saw the Dow drop ~1,000 points in minutes"
+      "Very rapid price decline; the extent and timing of any recovery vary",
+      "Liquidity withdrawal, order interactions or errors are possible explanations requiring event-specific evidence",
+      "A plotted price path alone cannot identify the cause or guarantee a recovery"
     ],
     studentPerspective: "Use separately dated records to compare the price path and available liquidity. A sharp decline need not recover, and intended stops or limits do not guarantee execution.",
     relatedTerms: ["liquidation-cascade", "circuit-breaker", "slippage"]

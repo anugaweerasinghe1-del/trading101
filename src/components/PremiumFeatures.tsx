@@ -9,7 +9,7 @@ export function PremiumFeatures() {
     {
       icon: Shield,
       title: "Practice with Virtual Cash",
-      description: "Trade with $100K virtual cash. Make bold moves, learn from mistakes, and master strategies without risking a single dollar.",
+      description: "Use $100K virtual cash to compare quantities, transaction fees and hypothetical outcomes without spending real funds.",
       gradient: "from-primary/20 to-primary/5",
       iconColor: "text-primary",
       borderGlow: "hover:border-primary/30",
@@ -32,7 +32,7 @@ export function PremiumFeatures() {
     },
     {
       icon: BarChart3,
-      title: "Professional Analytics",
+      title: "Practice Analytics",
       description: "Track simulated P&L, max drawdown, current open-position dispersion, and allocation snapshots with clearly labeled practice metrics.",
       gradient: "from-primary/20 to-primary/5",
       iconColor: "text-primary",
@@ -41,7 +41,7 @@ export function PremiumFeatures() {
     {
       icon: Wallet,
       title: "Multi-Asset Portfolio",
-      description: "Build diversified portfolios spanning stocks, crypto, forex, ETFs, and commodities — all from one powerful dashboard.",
+      description: "Compare holdings across stocks, crypto, forex, ETFs and commodities. Multiple assets can still share risks or overlapping exposures.",
       gradient: "from-warning/20 to-warning/5",
       iconColor: "text-warning",
       borderGlow: "hover:border-warning/30",
@@ -49,7 +49,7 @@ export function PremiumFeatures() {
     {
       icon: GraduationCap,
       title: "Structured Courses",
-      description: "Master technical analysis, risk management, and trading psychology through our structured learning paths.",
+      description: "Study market concepts, risk arithmetic and decision records through structured lessons, quizzes and conceptual worksheets.",
       gradient: "from-secondary/20 to-secondary/5",
       iconColor: "text-secondary",
       borderGlow: "hover:border-secondary/30",

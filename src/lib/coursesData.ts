@@ -61,14 +61,14 @@ const optionsTrack: CourseTrack = {
   outcomes: [
     "Read an option chain and explain what a specific call or put contract obliges each side to do.",
     "Estimate how a position's value changes when price, time or implied volatility moves, using delta, theta and vega rather than intuition.",
-    "Build a defined-risk vertical spread and state its maximum loss before placing it.",
+    "Calculate an intact vertical spread’s theoretical expiration payoff and distinguish costs, assignment and separate stock exposure.",
     "Recognise why an option can lose money even when the directional call was correct.",
-    "Size an options position so that a total loss of premium is a survivable, pre-decided outcome.",
+    "Compare hypothetical option quantities with a stated loss budget without claiming any amount is personally survivable.",
   ],
   prerequisites:
     "You should be comfortable with what a share of stock is, how a market order differs from a limit order, and what a percentage return means. No mathematics beyond arithmetic is required. If you have never placed a simulated trade, spend an hour in the practice terminal first — the options lessons assume you have seen an order ticket.",
   progression:
-    "The track moves from object to behaviour to structure. The first lesson defines the contract itself, because almost every later misunderstanding traces back to a fuzzy definition. The Greeks lesson then explains why the contract's price moves the way it does, which is what turns a static definition into something you can reason about. Defined-risk spreads apply that reasoning to combinations where the worst case is known in advance, and the implied-volatility lesson explains the single factor that most often makes a correct directional view unprofitable. The final lesson is risk management, placed last deliberately: rules only make sense once you understand what they are protecting you from.",
+    "The track moves from object to behaviour to structure. The first lesson defines the contract itself, because almost every later misunderstanding traces back to a fuzzy definition. The Greeks lesson then explains why the contract's price moves the way it does, which is what turns a static definition into something you can reason about. Spread worksheets compare bounded expiration payoffs under stated assumptions, separately from assignment, costs and stock exposure. The implied-volatility lesson compares direction, time and volatility without ranking their frequency as causes of losses. The final lesson is risk management, placed last deliberately: rules only make sense once you understand what they are protecting you from.",
   notFor:
     "This is not a track about income strategies, signal services or generating consistent weekly returns. It will not tell you which contracts to buy, and it does not cover selling naked options, which carries loss potential far beyond the premium received. If you are looking for trade recommendations rather than an explanation of how the instrument works, this material will disappoint you.",
   lessons: [
@@ -212,7 +212,7 @@ const optionsTrack: CourseTrack = {
       ],
       sources: [
         { label: "OIC — Vega and implied volatility sensitivity", url: "https://www.optionseducation.org/advancedconcepts/vega" },
-        { label: "Investopedia — IV", url: "https://www.investopedia.com/terms/i/iv.asp" },
+        { label: "OIC — IV rank and percentile definitions", url: "https://www.optionseducation.org/news/june-office-hours-faqs-iv-statistics-position-management-and-the-wheel-strategy" },
       ],
       quiz: [
         { question: "IV rank of 80 means:", options: ["IV is at 80%", "IV is near a 12-month high", "IV is near a 12-month low", "80% of options are profitable"], correctAnswer: 1, explanation: "IV rank normalises IV against the last year on a 0-100 scale." },
@@ -252,7 +252,7 @@ const optionsTrack: CourseTrack = {
       quiz: [
         { question: "Why define a risk budget before a simulated options trade?", options: ["To guarantee profit", "To control the potential effect of one loss", "To predict volatility", "To avoid all drawdowns"], correctAnswer: 1, explanation: "A predefined risk budget limits how much one trade can affect the practice account; there is no universal percentage that fits every trader or strategy." },
         { question: "What should be compared when evaluating a roll?", options: ["Only whether it creates a credit", "Only the new expiry", "The new risk, break-even points, cost and time remaining", "Nothing — rolling is always better"], correctAnswer: 2, explanation: "A roll changes several dimensions of the position, so the full risk profile matters more than credit versus debit alone." },
-        { question: "What is the best way to evaluate an exit rule in TradeHQ?", options: ["Assume one percentage always works", "Test it across a sample and compare drawdown and average loss", "Change the rule after every loss", "Ignore position size"], correctAnswer: 1, explanation: "Testing the same rule across a meaningful sample is more informative than treating one threshold as universally correct." },
+        { question: "How can a hypothetical options exit rule be studied outside TradeHQ’s spot engine?", options: ["Assume one percentage always works", "Use a separate options-data worksheet with explicit fills and costs", "Change the rule after every loss", "Ignore position size"], correctAnswer: 1, explanation: "TradeHQ cannot execute an options backtest. A separate worksheet needs actual options observations and assumptions; a selected sample cannot validate future performance." },
         { question: "Why journal every trade?", options: ["Tax only", "Review recorded assumptions and mistakes", "Required by regulators", "Boosts win rate automatically"], correctAnswer: 1, explanation: "A journal records assumptions and observed mistakes. It does not prove a statistical edge or predict future profits." },
       ],
     },
@@ -536,12 +536,13 @@ const macroTrack: CourseTrack = {
       ],
       sources: [
         { label: "Federal Reserve — FOMC", url: "https://www.federalreserve.gov/monetarypolicy/fomc.htm" },
+        { label: "Federal Reserve — projections and participant policy assessments (September 2026)", url: "https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260916.htm" },
         { label: "CME — FedWatch", url: "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html" },
       ],
       quiz: [
         { question: "How many FOMC meetings per year?", options: ["4", "6", "8", "12"], correctAnswer: 2, explanation: "Eight scheduled." },
         { question: "Fed's dual mandate:", options: ["Low rates + growth", "Max employment + price stability", "Full employment + stock gains", "Low inflation + strong dollar"], correctAnswer: 1, explanation: "Set by Congress." },
-        { question: "The 'dot plot' shows:", options: ["Historical rates", "Each FOMC member's rate forecast", "Balance sheet", "Sentiment"], correctAnswer: 1, explanation: "Anonymised member forecasts." },
+        { question: "The 'dot plot' shows:", options: ["Historical rates", "Each participant's assessment of appropriate policy", "Balance sheet", "Sentiment"], correctAnswer: 1, explanation: "The dots record individual participants’ assessments of an appropriate policy path, not only voting members and not a Committee promise." },
         { question: "FedWatch derives probabilities from:", options: ["Analyst surveys", "Fed funds futures pricing", "Twitter", "Reuters polls"], correctAnswer: 1, explanation: "Fed funds futures embed implied rate probabilities." },
       ],
     },

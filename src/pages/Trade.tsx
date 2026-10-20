@@ -232,7 +232,7 @@ export default function Trade() {
       <div className="min-h-screen bg-background flex flex-col">
         <Navigation />
 
-        <div className="flex-1 container mx-auto px-4 pt-20 pb-6 space-y-4 max-w-7xl">
+        <main className="flex-1 container mx-auto px-4 pt-20 pb-6 space-y-4 max-w-7xl">
           <header className="pt-2">
             <h1 className="text-xl md:text-2xl font-bold tracking-tight">
               Practice Trading Terminal{selectedAsset ? ` — ${selectedAsset.name} (${selectedAsset.symbol})` : ""}
@@ -392,7 +392,7 @@ export default function Trade() {
               </div>
             </section>
           )}
-        </div>
+        </main>
 
         <AIMentor
           portfolio={portfolio}
@@ -418,7 +418,7 @@ export default function Trade() {
               {
                 question: "What can I trade on TradeHQ?",
                 answer:
-                  "Over 130 assets across 5 markets: cryptocurrencies (BTC, ETH, SOL…), US stocks (AAPL, NVDA, TSLA…), ETFs (SPY, QQQ, VOO…), major forex pairs and commodities like gold and oil — all in one simulated portfolio.",
+                  "170 practice instruments across five asset classes: cryptocurrencies (BTC, ETH, SOL…), US stocks (AAPL, NVDA, TSLA…), ETFs (SPY, QQQ, VOO…), major forex pairs and commodities like gold and oil — all in one simulated portfolio.",
               },
               {
                 question: "Can I lose real money on TradeHQ?",

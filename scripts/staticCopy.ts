@@ -116,7 +116,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
           "ETFs: funds with stated holdings and objectives. Diversification, concentration, leverage and product structure affect risk.",
           "Crypto: 24/7 markets with no closing bell, high volatility and a strong link to overall market liquidity.",
           "Forex: relative pricing of two currencies; driven by rate differentials, inflation prints and risk appetite.",
-          "Commodities: physical goods with supply-and-demand and seasonality effects that equities do not have.",
+          "Commodities: exposures linked to physical goods, supply, demand and seasonal conditions. Company earnings and equity prices can also have seasonal influences.",
         ],
       },
     ],

@@ -84,7 +84,7 @@ export function PremiumHero() {
           <span className="text-transparent bg-clip-text" style={{
             backgroundImage: 'linear-gradient(135deg, hsl(180 70% 50%) 0%, hsl(152 60% 50%) 50%, hsl(280 60% 55%) 100%)'
           }}>
-            Start Risk&#8209;Free.
+            Use Virtual Cash.
           </span>
         </motion.h1>
 
@@ -95,7 +95,7 @@ export function PremiumHero() {
           transition={{ duration: 0.7, delay: 0.25 }}
           className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 font-normal leading-relaxed"
         >
-          Start with <span className="text-foreground font-medium">$100,000 virtual cash</span> — the free simulator for stocks, ETFs & crypto. No signup. No risk.
+          Start with <span className="text-foreground font-medium">$100,000 virtual cash</span> — the free simulator for stocks, ETFs & crypto. No signup. No real-money trades.
         </motion.p>
 
         {/* CTA buttons */}

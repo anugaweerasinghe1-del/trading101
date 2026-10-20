@@ -87,7 +87,8 @@ try {
         if (ready) break; await delay(50);
       }
       assert.ok(ready, `${path}: content/canonical readiness (${width}px, JS=${javaScript})`);
-      const observation = await evaluate(`({h1:document.querySelectorAll('h1').length, overflow:document.documentElement.scrollWidth > innerWidth + 1, notes:document.querySelector('[data-publisher-notes]')?.getAttribute('data-publisher-notes')})`);
+      const observation = await evaluate(`({main:document.querySelectorAll('main').length,h1:document.querySelectorAll('h1').length, overflow:document.documentElement.scrollWidth > innerWidth + 1, notes:document.querySelector('[data-publisher-notes]')?.getAttribute('data-publisher-notes')})`);
+      assert.equal(observation.main, 1, `${path}: one main content landmark (${width}px, JS=${javaScript})`);
       assert.equal(observation.h1, 1, `${path}: one H1 (${width}px, JS=${javaScript})`);
       assert.equal(observation.overflow, false, `${path}: horizontal overflow (${width}px, JS=${javaScript})`);
       if (bundled) assert.equal(observation.notes, path, path + ": publisher content remains visible");

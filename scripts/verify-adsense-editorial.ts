@@ -164,3 +164,38 @@ assert.match(aboutClient, /AI-assisted drafting/);
 assert.doesNotMatch(aboutClient, /do not sell user data or run behavioural ads/);
 assert.doesNotMatch(readFileSync("src/pages/Challenge.tsx", "utf8"), /figures originate in client-held simulator state/);
 console.log("PASS public mentor, duel, publisher and hub claim consistency");
+
+const glossaryCopy = JSON.stringify(tradingGlossary);
+assert.doesNotMatch(glossaryCopy, /DCA removes these emotional obstacles|Liquidation occurs when losses exceed your margin deposit|Private exchanges for anonymous institutional block trading|Third, impermanent loss|Growing bars = accelerating momentum/);
+assert.match(JSON.stringify(map.get("/daily")), /ten linked questions/);
+assert.doesNotMatch(JSON.stringify(map.get("/daily")), /three checkable questions|three linked questions/);
+assert.doesNotMatch(JSON.stringify(map.get("/how-to-trade")), /Copy the suggested first practice trade exactly|when during the day or week it is worth trading/);
+assert.doesNotMatch(JSON.stringify(map.get("/wiki")), /same concept on a live chart in the simulator/);
+assert.doesNotMatch(JSON.stringify(map.get("/leaderboard")), /habit that actually improves results/);
+const fomcLesson = courseTracks.flatMap(track => track.lessons).find(lesson => lesson.slug === "the-fed-and-fomc-cycle")!;
+assert.doesNotMatch(JSON.stringify(fomcLesson), /Each FOMC member.s rate forecast/);
+assert.match(JSON.stringify(fomcLesson.quiz), /participant/);
+const shellSource = readFileSync("index.html", "utf8");
+const { ASSETS } = await loadSiteData();
+assert.ok(shellSource.includes(`${ASSETS.length} simulated practice assets`), "Base structured data must agree with actual catalogue count");
+assert.doesNotMatch(shellSource, /149 assets|149 simulated practice assets/);
+
+// Recalculate explicit published teaching examples rather than assume passing
+// string checks establish numerical accuracy. No order-engine logic is changed.
+const close = (a: number, b: number) => assert.ok(Math.abs(a - b) < 0.00001, `${a} != ${b}`);
+close(0.57 * 1.5 - 0.43, 0.425); close(20 * 250 * 0.425, 2125);
+close(0.52 * 1.5 - 0.48, 0.30); close(0.30 * 500 * 5, 750);
+close(0.47 * 2 - 0.53, 0.41); close(0.43 * 2.5 - 0.57, 0.505);
+close(0.57 * 1.2 - 0.43, 0.254); close(0.32 * 1.2 - 0.68, -0.296);
+close((5 * 50 + 5.2 * 30 + 4.8 * 20) / 100, 5.02);
+close((10 * 100 + 13 * 200) / 300, 12);
+close(40 * 130 * 0.999 - 40 * 125 * 1.001, 189.8);
+close(100000 - 5000 * 1.001 + 4900, 99895);
+close((2000 + 8000 * 0.1) / 10000, 0.28);
+close(5000 * 50, 250000); close(5000 * 5, 25000); close(0.25 * 5, 1.25);
+close(2500 / 13000 * 100, 19.23076923076923);
+for (const [price, gross] of [[175, -200], [182, 0], [190, 300]]) {
+  const payoff = (Math.max(price - 180, 0) - Math.max(price - 185, 0)) * 100 - 200;
+  close(payoff, gross); close(payoff - 8, gross - 8);
+}
+console.log("PASS residual glossary/hub/quiz claims, catalogue schema and independent strategy/payoff/fee arithmetic");
