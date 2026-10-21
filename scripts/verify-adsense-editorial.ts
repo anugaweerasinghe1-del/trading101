@@ -209,7 +209,16 @@ assert.doesNotMatch(shellSource, /149 assets|149 simulated practice assets/);
 // Recalculate explicit published teaching examples rather than assume passing
 // string checks establish numerical accuracy. No order-engine logic is changed.
 const close = (a: number, b: number) => assert.ok(Math.abs(a - b) < 0.00001, `${a} != ${b}`);
-close(0.57 * 1.5 - 0.43, 0.425); close(20 * 250 * 0.425, 2125);
+// Gross targets can be net losses under the simulator's stated 0.1% fee.
+close(95210 * 0.999 - 95120 * 1.001, -100.33);
+close(95080 * 0.999 - 95120 * 1.001, -230.20);
+close((95120 * 1.001 / 0.999) * 0.999 - 95120 * 1.001, 0);
+// A loss budget based only on price distance omits transaction costs.
+close(200 * (100 * 1.001 - 95 * 0.999), 1039);
+const feeAwareUnitLoss = 100 * 1.001 - 95 * 0.999;
+assert.equal(Math.floor(1000 / feeAwareUnitLoss), 192);
+close(192 * feeAwareUnitLoss, 997.44);
+assert.ok(193 * feeAwareUnitLoss > 1000);
 close(0.52 * 1.5 - 0.48, 0.30); close(0.30 * 500 * 5, 750);
 close(0.47 * 2 - 0.53, 0.41); close(0.43 * 2.5 - 0.57, 0.505);
 close(0.57 * 1.2 - 0.43, 0.254); close(0.32 * 1.2 - 0.68, -0.296);

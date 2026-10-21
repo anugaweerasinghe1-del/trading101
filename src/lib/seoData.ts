@@ -520,7 +520,7 @@ export const STRATEGIES: Strategy[] = [
       "Calculate the effect of a worse fill and a wider spread before comparing gains and losses.",
       "Record all selected cases, including unfavorable ones. TradeHQ supports manual market orders; planned stops are worksheet assumptions."
     ],
-    "example": "Hypothetical worksheet, not an observed trade: Long BTC at $95,120 with stop $95,080, target $95,210 — risking $40 to make $90. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.",
+    "example": "Hypothetical one-BTC worksheet: buy at $95,120 and compare exits at $95,210 and $95,080. Before costs, these are a $90 gain and a $40 loss. At TradeHQ's 0.1% fee on each side, the entry fee is $95.12. Selling at $95,210 adds a $95.21 fee, turning the gross gain into a $100.33 net loss. Selling at $95,080 adds a $95.08 fee, making the net loss $230.20. The exit prices are assumptions, not resting stop or target orders; a real fill can differ.",
     "successRate": "No universal win rate applies. Track your own simulated win rate, payoff ratio, costs and drawdown over a sufficiently large sample.",
     "depth": {
       "context": "Scalping describes attempts to capture small changes over short intervals. Because the intended price change is small, a spread, fee or execution delay can form a large part of the result. A two-tick cost is 20% of a ten-tick gross target, but that ratio does not establish expected profit: win frequency, adverse outcomes and all costs would also be needed.",
@@ -530,7 +530,7 @@ export const STRATEGIES: Strategy[] = [
         "Treating a generated candle as evidence of an actual order-book fill.",
         "Changing size or exit assumptions after seeing the result and combining the changed rule with the original sample."
       ],
-      "math": "Hypothetical arithmetic, not observed performance: fixed realized 57% wins at 1.5R and 43% losses at 1R give 0.57×1.5−0.43=0.425R per trade. An assumed 0.25% of $100,000 is $250, giving $106.25 gross expectancy per trade. Twenty trades imply $2,125 gross expectancy; twenty $3 round trips cost $60, about 2.82% of that amount. Actual gains, fills and costs can differ."
+      "math": "For the same one-BTC example, cash paid is $95,120 × 1.001 = $95,215.12. Net sale proceeds at $95,210 are $95,210 × 0.999 = $95,114.79, so the round-trip result is −$100.33. The fee-only break-even exit solves exit price × 0.999 = $95,215.12, or approximately $95,310.43 before any additional costs. A higher assumed win rate cannot make this selected $95,210 exit profitable after those fees. These are hypothetical prices, not a return forecast."
     },
     "sources": [
       {
