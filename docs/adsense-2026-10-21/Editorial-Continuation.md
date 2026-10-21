@@ -48,3 +48,19 @@ Remaining coverage is still pending. A release check is not a page-by-page edito
 ## Reproduced CI runner failure
 
 The post-merge PR204 build succeeded on both hosts, but its browser job twice timed out on Page.navigate after the phase-3 page visits, preventing required post-merge validation. PR205 reproduced that timeout independently. The workflow now runs the unchanged interaction assertions in a fifth fresh Chromium process, after the four unchanged 155-route matrices. Per-route progress is logged to locate any remaining navigation failure. No check is skipped, suppressed or retried into success; job permissions and checkout binding remain unchanged. PR205 must pass the complete candidate and post-merge suites.
+
+## Release 205 and exhaustive inventory
+
+PR #205 merged as 88504b23aa1ef43e74252cbc642446bb1ca6c222. All exact-head candidate checks passed, including 620 compiled page visits and a separate fresh interaction process. Cloudflare production b004bdb7 succeeded and Vercel production reported READY for the merged SHA. Public Gold proxy/metric labels and scalping's single main article with the fee calculation were directly observed after release. Post-merge CI remains a separate gate to inspect.
+
+The expanded read-only audit now requests current main and course sitemaps, uses the historical 357-URL record only for route discovery, follows newly discovered internal anchors and refetches every page sequentially. It records full initial main text, headings, canonical/indexability, source/destination link edges and fragment warnings. It does not treat noindex utility shells as editorial articles or call HTTP checks proof of originality, account access or hydrated behavior.
+
+Local validation: Node syntax check passed. The actual runner crawl, per-page editorial review, candidate checks and release evidence are still required; no unvisited page is claimed reviewed.
+
+## Portfolio display finding and audit discovery correction
+
+The new live browser review reached the homepage, trading desk, Markets and Portfolio. Portfolio with zero completed sells displayed a 0.0% win rate and 0.00 profit factor. Show unavailable marks for averages/rates without observations and profit factor without recorded losses, while preserving all accounting calculations and valid observed zero values. Rendered empty/winning-only/losing-only fixtures exercise these distinctions. Relative best trades can be losses; preserve their negative sign and use 'units' rather than calling every instrument a share.
+
+The first expanded crawl fetched 155 current public pages and 3,381 internal link occurrences without errors, but did not include the historical-only routes: a non-URL discovery label was incorrectly passed as a URL base and silently rejected by new URL. Normalize against the origin when the discovery source is a label, then rerun the full inventory. Do not claim that first 155-page result covered the other 202 routes.
+
+Pause broader editorial traversal at this finding until the corrected batch passes, merges and deploys successfully.

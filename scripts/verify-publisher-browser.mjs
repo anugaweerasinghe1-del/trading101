@@ -51,7 +51,8 @@ try {
     pending.delete(reply.id); clearTimeout(task.timer); if (reply.error) task.reject(Error(reply.error.message)); else task.resolve(reply.result);
   });
   const send = (method, params = {}) => new Promise((resolveTask, reject) => {
-    const id = ++sequence; const timer = setTimeout(() => { pending.delete(id); reject(Error("CDP timeout: " + method)); }, 10000);
+    if (method === "Page.navigate") console.log("BROWSER_NAVIGATE " + params.url);
+    const id = ++sequence; const timer = setTimeout(() => { pending.delete(id); reject(Error("CDP timeout: " + method + (params.url ? " " + params.url : ""))); }, 10000);
     pending.set(id, { resolve: resolveTask, reject, timer }); socket.send(JSON.stringify({ id, method, params }));
   });
   const evaluate = async expression => { const result = await send("Runtime.evaluate", { expression, returnByValue: true }); assert.ok(!result.exceptionDetails, "Browser evaluation failed"); return result.result?.value; };

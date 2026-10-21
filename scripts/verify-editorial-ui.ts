@@ -1,3 +1,7 @@
+import React from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
+import { TradeAnalytics } from '../src/components/TradeAnalytics';
+import type { Portfolio, Trade } from '../src/lib/types';
 /** Read-only unit regressions: educational arithmetic, preserved course identities and truthful missing metrics. */
 import assert from 'node:assert/strict';
 import { lessonData } from '../src/lib/lessonData';
@@ -39,3 +43,22 @@ assert.ok(getPortfolioMentorReply('analyze this asset',context).includes('Percen
 assert.ok(getPortfolioMentorReply('review my trades',{...context,tradesCount:0}).includes('No recorded practice trades'));
 assert.ok(getPortfolioMentorReply('my portfolio',{...context,winRate:75,priceOnlySellComparisonPct:null}).includes('Realized win rate: 75%'));
 console.log('PASS six preserved legacy lesson identities/quizzes, independent worked arithmetic, tiny positive display prices, unknown metrics and distinct price-only mentor comparison. No order, balance or database mutations.');
+
+const renderPerformance = (trades: Trade[]) => renderToStaticMarkup(React.createElement(TradeAnalytics, {
+  portfolio: {cash: 100000, totalValue: 100000, positions: [], trades} satisfies Portfolio,
+}));
+const emptyPerformance = renderPerformance([]);
+assert.ok(emptyPerformance.includes('No completed sells'));
+assert.ok(emptyPerformance.includes('Unavailable without recorded losses'));
+assert.doesNotMatch(emptyPerformance, /0\.0%|Infinity|NaN/, 'No observations must not look like a measured zero rate');
+const buy: Trade = {id:'b',assetId:'btc',symbol:'BTC',type:'buy',quantity:1,price:100,total:100.1,timestamp:new Date('2026-01-01T00:00:00Z')};
+const sale = (price:number):Trade => ({...buy,id:'s',type:'sell',price,total:price*0.999,timestamp:new Date('2026-01-02T00:00:00Z')});
+const winningPerformance=renderPerformance([buy,sale(120)]);
+assert.ok(winningPerformance.includes('100.0%'));
+assert.ok(winningPerformance.includes('Unavailable without recorded losses'));
+assert.doesNotMatch(winningPerformance, /Infinity|NaN/);
+const losingPerformance=renderPerformance([buy,sale(90)]);
+assert.ok(losingPerformance.includes('0.0%'), 'A genuine zero win rate is distinct from no completed sells');
+assert.doesNotMatch(losingPerformance, /\+\-|shares @/, 'Negative best-relative outcomes and token quantities need truthful labels');
+assert.ok(losingPerformance.includes('units @'));
+console.log('PASS rendered empty, winning-only and losing-only performance displays; accounting inputs and calculations unchanged.');

@@ -1,5 +1,5 @@
 import { getRealizedTradeResults } from '@/lib/realizedTrades';
-import { useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { TrendingUp, TrendingDown, Target, Trophy, AlertTriangle, BarChart3 } from 'lucide-react';
@@ -67,6 +67,8 @@ export function TradeAnalytics({ portfolio }: TradeAnalyticsProps) {
     };
   }, [portfolio.trades]);
 
+  const hasCompletedTrades = analytics.completedTrades.length > 0;
+
   const formatCurrency = (value: number) => {
     const formatted = Math.abs(value).toLocaleString('en-US', {
       style: 'currency',
@@ -86,11 +88,11 @@ export function TradeAnalytics({ portfolio }: TradeAnalyticsProps) {
               <Target className="h-4 w-4" />
               Closed-Sell Win Rate
             </div>
-            <div className={`text-2xl font-bold ${analytics.winRate >= 50 ? 'text-success' : 'text-destructive'}`}>
-              {analytics.winRate.toFixed(1)}%
+            <div className={`text-2xl font-bold ${!hasCompletedTrades ? 'text-muted-foreground' : analytics.winRate >= 50 ? 'text-success' : 'text-destructive'}`}>
+              {hasCompletedTrades ? `${analytics.winRate.toFixed(1)}%` : '—'}
             </div>
             <div className="text-xs text-muted-foreground mt-1">
-              {analytics.winningTrades}W / {analytics.losingTrades}L
+              {hasCompletedTrades ? `${analytics.winningTrades}W / ${analytics.losingTrades}L` : 'No completed sells'}
             </div>
           </CardContent>
         </Card>
@@ -101,8 +103,8 @@ export function TradeAnalytics({ portfolio }: TradeAnalyticsProps) {
               <BarChart3 className="h-4 w-4" />
               Avg Profit/Trade
             </div>
-            <div className={`text-2xl font-bold ${analytics.avgProfitPerTrade >= 0 ? 'text-success' : 'text-destructive'}`}>
-              {formatCurrency(analytics.avgProfitPerTrade)}
+            <div className={`text-2xl font-bold ${!hasCompletedTrades ? 'text-muted-foreground' : analytics.avgProfitPerTrade >= 0 ? 'text-success' : 'text-destructive'}`}>
+              {hasCompletedTrades ? formatCurrency(analytics.avgProfitPerTrade) : '—'}
             </div>
             <div className="text-xs text-muted-foreground mt-1">
               {analytics.completedTrades.length} completed trades
@@ -131,11 +133,11 @@ export function TradeAnalytics({ portfolio }: TradeAnalyticsProps) {
               <TrendingDown className="h-4 w-4" />
               Profit Factor
             </div>
-            <div className={`text-2xl font-bold ${analytics.profitFactor >= 1 ? 'text-success' : 'text-destructive'}`}>
-              {analytics.profitFactor.toFixed(2)}
+            <div className={`text-2xl font-bold ${analytics.losingTrades === 0 ? 'text-muted-foreground' : analytics.profitFactor >= 1 ? 'text-success' : 'text-destructive'}`}>
+              {analytics.losingTrades > 0 ? analytics.profitFactor.toFixed(2) : '—'}
             </div>
             <div className="text-xs text-muted-foreground mt-1">
-              Total gains / absolute total losses
+              {analytics.losingTrades > 0 ? 'Total gains / absolute total losses' : 'Unavailable without recorded losses'}
             </div>
           </CardContent>
         </Card>
@@ -149,7 +151,7 @@ export function TradeAnalytics({ portfolio }: TradeAnalyticsProps) {
               <div>
                 <div className="text-sm text-muted-foreground">Average Win</div>
                 <div className="text-xl font-bold text-success">
-                  {formatCurrency(analytics.avgWin)}
+                  {analytics.winningTrades > 0 ? formatCurrency(analytics.avgWin) : '—'}
                 </div>
               </div>
               <div className="h-12 w-12 rounded-full bg-success/10 flex items-center justify-center">
@@ -165,7 +167,7 @@ export function TradeAnalytics({ portfolio }: TradeAnalyticsProps) {
               <div>
                 <div className="text-sm text-muted-foreground">Average Loss</div>
                 <div className="text-xl font-bold text-destructive">
-                  {formatCurrency(analytics.avgLoss)}
+                  {analytics.losingTrades > 0 ? formatCurrency(analytics.avgLoss) : '—'}
                 </div>
               </div>
               <div className="h-12 w-12 rounded-full bg-destructive/10 flex items-center justify-center">
@@ -192,16 +194,16 @@ export function TradeAnalytics({ portfolio }: TradeAnalyticsProps) {
                   <div>
                     <div className="font-medium">{trade.symbol}</div>
                     <div className="text-xs text-muted-foreground">
-                      {trade.quantity} shares @ ${trade.sellPrice.toFixed(2)}
+                      {trade.quantity} units @ ${trade.sellPrice.toFixed(2)}
                     </div>
                     <div className="text-xs text-muted-foreground">
                       {format(new Date(trade.timestamp), 'MMM d, yyyy')}
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="font-bold text-success">{formatCurrency(trade.profit)}</div>
-                    <Badge variant="outline" className="text-success border-success/30">
-                      +{trade.profitPercent.toFixed(1)}%
+                    <div className={`font-bold ${trade.profit >= 0 ? "text-success" : "text-destructive"}`}>{formatCurrency(trade.profit)}</div>
+                    <Badge variant="outline" className={trade.profit >= 0 ? "text-success border-success/30" : "text-destructive border-destructive/30"}>
+                      {trade.profitPercent > 0 ? "+" : ""}{trade.profitPercent.toFixed(1)}%
                     </Badge>
                   </div>
                 </div>
@@ -228,7 +230,7 @@ export function TradeAnalytics({ portfolio }: TradeAnalyticsProps) {
                   <div>
                     <div className="font-medium">{trade.symbol}</div>
                     <div className="text-xs text-muted-foreground">
-                      {trade.quantity} shares @ ${trade.sellPrice.toFixed(2)}
+                      {trade.quantity} units @ ${trade.sellPrice.toFixed(2)}
                     </div>
                     <div className="text-xs text-muted-foreground">
                       {format(new Date(trade.timestamp), 'MMM d, yyyy')}
