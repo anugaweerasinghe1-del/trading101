@@ -266,8 +266,8 @@ export const HOWTO_ASSETS: HowToAsset[] = [
     "steps": [
       "Compare the coin’s percentage change with whole-account return using cash and holding values.",
       "Visit /trade/btc and read the quote and chart data-status labels; they may have different provenance.",
-      "Choose hypothetical quantity and price assumptions, then calculate position value and the 0.1% practice fee before submitting a market order.",
-      "Record the reason for the exercise and any intended manual exit. TradeHQ does not place resting limit or stop orders or open short positions.",
+      "Using a hypothetical BTC holding of 0.05 units at $50,000 per unit, calculate $2,500 of virtual exposure and a $2.50 entry fee at the simulator's 0.1% rate; then compare with the displayed practice quote.",
+      "Record the dated BTC quote and an alternative 10% down-price case. For the same 0.05 BTC, that implies a $250 gross holding loss before fees, not a 10% loss of the whole $100,000 account.",
       "Create a second BTC price scenario with the same unit count so gross holding return and total-account return can be compared."
     ],
     "beginnerTip": "Begin with the difference between coin return and account return. A hypothetical 10% BTC rise applied to a $10,000 holding adds $1,000 before costs, while an otherwise cash-only $100,000 account rises only 1%. The same headline percentage can therefore describe a much larger asset move than portfolio move.",
@@ -302,8 +302,8 @@ export const HOWTO_ASSETS: HowToAsset[] = [
     "steps": [
       "Keep ETH quantity, simulator transaction fees and conceptual network charges in separate ledger fields.",
       "Visit /trade/eth and read the quote and chart data-status labels; they may have different provenance.",
-      "Choose hypothetical quantity and price assumptions, then calculate position value and the 0.1% practice fee before submitting a market order.",
-      "Record the reason for the exercise and any intended manual exit. TradeHQ does not place resting limit or stop orders or open short positions.",
+      "Use 0.5 ETH at an illustrative $3,200 quote to calculate $1,600 of virtual exposure and a $1.60 simulator entry fee. That is separate from real blockchain gas charges, which TradeHQ does not execute.",
+      "Record a second hypothetical ETH price and calculate the change for the same 0.5 ETH. Check the page's quote timestamp; a price screenshot cannot reveal the gas or exchange costs of a real transfer.",
       "Separate the virtual spot transaction fee from any Solana- or Ethereum-style on-chain network charge, which the simulator does not execute."
     ],
     "beginnerTip": "Separate the network from the currency: Ethereum is the system, while ETH is the unit whose price you see. A lower price per coin than BTC does not by itself mean ETH is cheaper in valuation terms.",
@@ -342,8 +342,8 @@ export const HOWTO_ASSETS: HowToAsset[] = [
     "steps": [
       "Write the report metric you intend to investigate and a separate hypothetical gap case before viewing the outcome.",
       "Visit /trade/tsla and read the quote and chart data-status labels; they may have different provenance.",
-      "Choose hypothetical quantity and price assumptions, then calculate position value and the 0.1% practice fee before submitting a market order.",
-      "Record the reason for the exercise and any intended manual exit. TradeHQ does not place resting limit or stop orders or open short positions.",
+      "For a hypothetical four-share TSLA market order at $200 per share, calculate $800 of exposure plus the $0.80 simulator entry fee. Label the chosen price illustrative, not a current Tesla quote.",
+      "Compare a $200 virtual entry with an assumed $180 next-session opening price. Four shares would show an $80 gross loss before costs; an intended exit is not a guaranteed fill across an overnight gap.",
       "Record an alternative next-session opening price in the worksheet to show how an overnight gap can differ from an intended exit."
     ],
     "beginnerTip": "Read deliveries, revenue and profit margins as separate measurements. A hypothetical rise in units delivered does not imply the same rise in revenue, because prices and product mix can change. A stock-price reaction also depends on expectations that a short headline may omit.",
@@ -378,8 +378,8 @@ export const HOWTO_ASSETS: HowToAsset[] = [
     "steps": [
       "List direct company exposure and any assumed fund overlap before computing the combined account weight.",
       "Visit /trade/nvda and read the quote and chart data-status labels; they may have different provenance.",
-      "Choose hypothetical quantity and price assumptions, then calculate position value and the 0.1% practice fee before submitting a market order.",
-      "Record the reason for the exercise and any intended manual exit. TradeHQ does not place resting limit or stop orders or open short positions.",
+      "Using five hypothetical NVDA shares at $120 each, calculate a $600 virtual position and $0.60 simulated entry fee. Do not treat the worksheet price as a live quotation.",
+      "Record any NVDA weight already held inside a chosen ETF using that fund's dated holdings report, then combine direct and indirect exposure before interpreting an illustrative price change.",
       "Compare direct NVIDIA shares with a hypothetical dated ETF allocation to identify potential overlap before interpreting a percentage change."
     ],
     "beginnerTip": "Separate company operating measures from the share-price return. A hypothetical 20% sales increase and a 5% stock decline can coexist when expectations, costs or guidance differ. The price observation alone does not tell you which explanation is correct.",
@@ -414,8 +414,8 @@ export const HOWTO_ASSETS: HowToAsset[] = [
     "steps": [
       "Identify fund units and current account weight; label any distribution or fund-expense concepts not simulated.",
       "Visit /trade/spy and read the quote and chart data-status labels; they may have different provenance.",
-      "Choose hypothetical quantity and price assumptions, then calculate position value and the 0.1% practice fee before submitting a market order.",
-      "Record the reason for the exercise and any intended manual exit. TradeHQ does not place resting limit or stop orders or open short positions.",
+      "For two illustrative SPY units at $500 each, calculate $1,000 of virtual fund exposure and a $1 simulated entry fee. Keep the unit price distinct from the fund's constituent-stock prices.",
+      "Calculate the combined account weight of this $1,000 fund exposure and any direct shares that overlap its disclosed holdings; note that distributions, expense ratios and full tracking effects are not modelled in the basic virtual order.",
       "Label how the ETF's distribution and operating costs are outside the simplified practice order, and calculate exposure against total account value."
     ],
     "beginnerTip": "An ETF unit represents fund exposure; it is not a direct account row for each constituent company. Nominal share price also differs from the dollars you hold. Twenty $50 units and two $500 units both make $1,000 positions before fees.",
