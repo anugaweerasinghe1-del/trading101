@@ -14,7 +14,7 @@ import { waitForChromePort } from "./isolated-chrome-startup.mjs";
 const chrome = ["google-chrome", "google-chrome-stable", "chromium", "chromium-browser"].find(name => spawnSync("which", [name]).status === 0);
 assert.ok(chrome, "Chromium unavailable; this browser check has NOT passed");
 const phase = process.env.TRADEHQ_BROWSER_PHASE === undefined ? null : Number(process.env.TRADEHQ_BROWSER_PHASE);
-assert.ok(phase === null || (Number.isInteger(phase) && phase >= 0 && phase <= 4), "Invalid browser phase");
+assert.ok(phase === null || (Number.isInteger(phase) && phase >= 0 && phase <= 6), "Invalid browser phase");
 const temp = mkdtempSync(join(tmpdir(), "tradehq-publisher-browser-"));
 const dist = resolve("dist");
 const docs = JSON.parse(readFileSync("scripts/fixtures/published-course-editorial.json", "utf8"));
@@ -107,7 +107,7 @@ try {
   let checked = 0;
   const semanticFailures = new Map();
   // Fresh Chromium per phase prevents stale contexts from accumulating across
-  // 620 separate navigations. Assertions remain unchanged for every visit.
+  // 620 separate navigations and isolates the trade, portfolio, and lesson interaction flows. Assertions remain unchanged for every visit.
   const phases = [[360, false], [360, true], [1280, false], [1280, true]];
   for (const [phaseNumber, [width, javaScript]] of phases.entries()) {
     if (phase !== null && phase !== phaseNumber) continue;
@@ -168,7 +168,7 @@ try {
     }
   }
   assert.deepEqual(Object.fromEntries(semanticFailures), {}, 'Visible controls need accessible names and valid interaction nesting');
-  if (phase === null || phase === 4) {
+  if (phase === null || phase >= 4) {
   // Exercise keyboard navigation and the read-only selector/mentor in the isolated compiled build.
   await send("Emulation.setScriptExecutionDisabled", {value:false});
   await send("Emulation.setDeviceMetricsOverride", {width:360,height:900,deviceScaleFactor:1,mobile:true});
@@ -177,6 +177,7 @@ try {
     while (Date.now() < deadline) { if (await evaluate(expression)) return; await delay(50); }
     assert.fail(label);
   };
+  if (phase === null || phase === 4) {
   await send('Page.navigate', {url:origin+'/trade'});
   await waitUntil(`!!document.querySelector('button[aria-label="Open portfolio educational mentor"]')`, 'Trade interface must mount');
   await evaluate(`document.querySelector('button[aria-controls="asset-search-panel"]').click()`);
@@ -206,6 +207,8 @@ try {
   await waitUntil(`location.pathname === '/trade/eth' && document.querySelector('h1')?.textContent === 'Ethereum — Practice Trading Simulator' && document.querySelector('link[rel="canonical"]')?.href === 'https://www.thetradehq.com/trade/eth' && document.querySelector('[data-publisher-notes]')?.textContent.includes('Paper Trade Ethereum')`, 'Selection must align URL, heading, canonical and reference notes');
   await send('Page.reload');
   await waitUntil(`location.pathname === '/trade/eth' && document.querySelector('h1')?.textContent === 'Ethereum — Practice Trading Simulator' && document.querySelector('[data-publisher-notes]')?.textContent.includes('Paper Trade Ethereum')`, 'Reload must preserve selected instrument route');
+  }
+  if (phase === null || phase === 5) {
   await send('Page.navigate', {url:origin+'/portfolio'});
   await waitUntil(`!!document.querySelector('button[aria-label="Open portfolio review mentor"]')`, 'Portfolio mentor launcher mounts');
   await evaluate(`document.querySelector('button[aria-label="Open portfolio review mentor"]').click()`);
@@ -214,15 +217,18 @@ try {
   assert.ok(await evaluate(`!!document.querySelector('input[aria-label="Question for the portfolio review mentor"]') && !!document.querySelector('button[aria-label="Send portfolio review question"]')`), 'Open portfolio mentor controls have names');
   await send('Input.dispatchKeyEvent', {type:'keyDown',key:'Escape',code:'Escape'});
   await waitUntil(`document.activeElement?.getAttribute('aria-label') === 'Open portfolio review mentor'`, 'Portfolio mentor restores focus');
+  }
+  if (phase === null || phase === 6) {
   for (let lesson=1; lesson<=6; lesson++) {
     await send('Page.navigate',{url:origin+'/learn/'+lesson});
     await waitUntil(`location.pathname === '/learn/${lesson}' && !!document.querySelector('aside a[href^="https://"]')`, 'Legacy lesson '+lesson+' renders sources');
     assert.equal(await evaluate(`document.documentElement.scrollWidth > innerWidth+1`),false,'Legacy lesson '+lesson+' must fit mobile');
   }
   }
+  }
   assert.deepEqual(runtimeErrors, [], 'No uncaught application JavaScript exceptions');
-  if (phase === null || phase === 4) console.log('PASS accessible visible controls, valid nesting, mobile selector/menu/mentor focus, viewport placement and six legacy lesson source links.');
-  const phaseDescription = phase === null ? 'desktop/mobile × JS on/off' : phase === 4 ? 'fresh interaction phase; no matrix repeated' : `matrix phase ${phase} only`;
+  if (phase === null || phase >= 4) console.log(`PASS isolated interaction checks for phase ${phase ?? 'all'}; all checks retain their original assertions.`);
+  const phaseDescription = phase === null ? 'desktop/mobile × JS on/off' : phase >= 4 ? `fresh interaction phase ${phase}; no matrix repeated` : `matrix phase ${phase} only`;
   console.log(`PASS real Chromium: ${checked} compiled route visits (${routes.length} URLs × ${phaseDescription}), canonical/H1/content parity and overflow. Native courses use read-only published fixtures, not production services.`);
 } finally {
   socket?.close();
