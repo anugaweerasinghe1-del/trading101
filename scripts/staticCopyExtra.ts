@@ -90,7 +90,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
       h: "What a realistic learning timeline looks like",
       p: [
         "Learning timelines differ with prior knowledge, study time and the task being practised. A calendar duration does not establish proficiency or investment readiness. Set an observable learning goal, such as explaining an order fill or reproducing a fee calculation, and record which parts remain uncertain.",
-        "A learning timeline varies by topic and prior experience. These guides test understanding of order mechanics, price observations and virtual calculations; completion does not verify investing competence or predict real outcomes.",
+        "For a concrete self-check, write down a quote price, quantity and the simulator's 0.1% fee, calculate the virtual purchase cost, then compare your result with the practice order panel. If the figures differ, inspect quantity, rounding and quote freshness before moving on. Completing this exercise checks one skill, not overall investing readiness.",
       ],
     },
     {
