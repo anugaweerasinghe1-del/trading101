@@ -115,6 +115,19 @@ for (const slug of ["the-trading-journal", "discipline-and-daily-rituals", "hand
 }
 const coursesPage = readFileSync("src/pages/Courses.tsx", "utf8");
 assert.ok(!coursesPage.includes("Every claim sourced"), "Cannot claim every course statement is source-backed");
+// Published article titles and introductions must promise only the scope
+// delivered by their educational exercises, not real-order execution or forecasts.
+const riskArticle = LEARN_ARTICLES.find(article => article.slug === "risk-management-in-trading")!;
+assert.equal(riskArticle.title, "Risk Management for Paper Trading: Risk Budgets and Exits");
+const cryptoStocks = LEARN_ARTICLES.find(article => article.slug === "crypto-vs-stocks")!;
+assert.match(JSON.stringify(cryptoStocks.sections), /availability can be interrupted by outages/);
+assert.doesNotMatch(JSON.stringify(cryptoStocks.sections), /Crypto markets never close/);
+assert.match(cryptoStocks.summary, /rather than assuming either is the right starting point/);
+const indicatorArticle = LEARN_ARTICLES.find(article => article.slug === "technical-indicators-rsi-macd-moving-averages")!;
+assert.doesNotMatch(indicatorArticle.metaDescription, /trend confirmation|future returns guaranteed/);
+assert.match(indicatorArticle.metaDescription, /cannot guarantee future returns/);
+assert.doesNotMatch(LEARN_ARTICLES.find(article => article.slug === "trading-strategies-for-beginners")!.summary, /before risking real capital/);
+
 const paper = LEARN_ARTICLES.find(article => article.slug === "what-is-paper-trading")!;
 const charts = LEARN_ARTICLES.find(article => article.slug === "how-to-read-stock-charts")!;
 const orderTypes = LEARN_ARTICLES.find(article => article.slug === "market-orders-vs-limit-orders")!;
