@@ -44,3 +44,7 @@ PR #204 merged as 2a82a527dfc7436973b7eb4efd349da85cbf4b94. Exact candidate head
 - Learn article template: repair missing space in publisher/source metadata and remove the inaccurate claim of a remote AI-provider fallback from its FAQ.
 
 Remaining coverage is still pending. A release check is not a page-by-page editorial approval.
+
+## Reproduced CI runner failure
+
+The post-merge PR204 build succeeded on both hosts, but its browser job twice timed out on Page.navigate after the phase-3 page visits, preventing required post-merge validation. PR205 reproduced that timeout independently. The workflow now runs the unchanged interaction assertions in a fifth fresh Chromium process, after the four unchanged 155-route matrices. Per-route progress is logged to locate any remaining navigation failure. No check is skipped, suppressed or retried into success; job permissions and checkout binding remain unchanged. PR205 must pass the complete candidate and post-merge suites.

@@ -14,7 +14,7 @@ import { waitForChromePort } from "./isolated-chrome-startup.mjs";
 const chrome = ["google-chrome", "google-chrome-stable", "chromium", "chromium-browser"].find(name => spawnSync("which", [name]).status === 0);
 assert.ok(chrome, "Chromium unavailable; this browser check has NOT passed");
 const phase = process.env.TRADEHQ_BROWSER_PHASE === undefined ? null : Number(process.env.TRADEHQ_BROWSER_PHASE);
-assert.ok(phase === null || (Number.isInteger(phase) && phase >= 0 && phase <= 3), "Invalid browser phase");
+assert.ok(phase === null || (Number.isInteger(phase) && phase >= 0 && phase <= 4), "Invalid browser phase");
 const temp = mkdtempSync(join(tmpdir(), "tradehq-publisher-browser-"));
 const dist = resolve("dist");
 const docs = JSON.parse(readFileSync("scripts/fixtures/published-course-editorial.json", "utf8"));
@@ -114,6 +114,7 @@ try {
     await send("Emulation.setScriptExecutionDisabled", { value: !javaScript });
     for (const path of routes) {
       const bundled = !docs.some(row => path === "/courses/" + row.slug || path.startsWith("/courses/" + row.slug + "/"));
+      console.log(`BROWSER_VISIT phase=${phaseNumber} path=${path}`);
       await send("Page.navigate", { url: origin + path });
       const expected = "https://www.thetradehq.com" + path;
       const deadline = Date.now() + 12000; let ready = false;
@@ -166,7 +167,7 @@ try {
     }
   }
   assert.deepEqual(Object.fromEntries(semanticFailures), {}, 'Visible controls need accessible names and valid interaction nesting');
-  if (phase === null || phase === 3) {
+  if (phase === null || phase === 4) {
   // Exercise keyboard navigation and the read-only selector/mentor in the isolated compiled build.
   await send("Emulation.setScriptExecutionDisabled", {value:false});
   await send("Emulation.setDeviceMetricsOverride", {width:360,height:900,deviceScaleFactor:1,mobile:true});
@@ -219,8 +220,8 @@ try {
   }
   }
   assert.deepEqual(runtimeErrors, [], 'No uncaught application JavaScript exceptions');
-  if (phase === null || phase === 3) console.log('PASS accessible visible controls, valid nesting, mobile selector/menu/mentor focus, viewport placement and six legacy lesson source links.');
-  const phaseDescription = phase === null ? 'desktop/mobile × JS on/off' : `matrix phase ${phase} only`;
+  if (phase === null || phase === 4) console.log('PASS accessible visible controls, valid nesting, mobile selector/menu/mentor focus, viewport placement and six legacy lesson source links.');
+  const phaseDescription = phase === null ? 'desktop/mobile × JS on/off' : phase === 4 ? 'fresh interaction phase; no matrix repeated' : `matrix phase ${phase} only`;
   console.log(`PASS real Chromium: ${checked} compiled route visits (${routes.length} URLs × ${phaseDescription}), canonical/H1/content parity and overflow. Native courses use read-only published fixtures, not production services.`);
 } finally {
   socket?.close();
