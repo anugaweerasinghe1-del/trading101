@@ -219,7 +219,7 @@ for (const [slug, expected, prohibited] of [
   ["slippage", /favorable or adverse/, /Occurs during high volatility/],
   ["impermanent-loss", /pool design and relative prices/, /Occurs when token prices diverge/],
   ["volume-profile", /highest-volume bin in that sample/, /Reveals where most activity/],
-  ["ichimoku-cloud", /not observations of future prices/, /showing support\\/resistance/],
+  ["ichimoku-cloud", /not observations of future prices/, /comprehensive Japanese indicator system/],
 ] as const) {
   const term = tradingGlossary.find(item => item.slug === slug);
   assert.ok(term, "Missing source-qualified term: " + slug);
