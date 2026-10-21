@@ -13,6 +13,8 @@ import { waitForChromePort } from "./isolated-chrome-startup.mjs";
 
 const chrome = ["google-chrome", "google-chrome-stable", "chromium", "chromium-browser"].find(name => spawnSync("which", [name]).status === 0);
 assert.ok(chrome, "Chromium unavailable; this browser check has NOT passed");
+const phase = process.env.TRADEHQ_BROWSER_PHASE === undefined ? null : Number(process.env.TRADEHQ_BROWSER_PHASE);
+assert.ok(phase === null || (Number.isInteger(phase) && phase >= 0 && phase <= 3), "Invalid browser phase");
 const temp = mkdtempSync(join(tmpdir(), "tradehq-publisher-browser-"));
 const dist = resolve("dist");
 const docs = JSON.parse(readFileSync("scripts/fixtures/published-course-editorial.json", "utf8"));
@@ -56,7 +58,15 @@ try {
   const runtimeErrors = [];
   socket.addEventListener('message', event => {
     const message = JSON.parse(event.data);
-    if (message.method === 'Runtime.exceptionThrown') runtimeErrors.push(message.params.exceptionDetails.exception?.description || message.params.exceptionDetails.text);
+    if (message.method === 'Runtime.exceptionThrown') {
+      const detail = message.params.exceptionDetails;
+      runtimeErrors.push(JSON.stringify({
+        description: detail.exception?.description || detail.text,
+        page: 'visible-compiled-fixture',
+        source: detail.url || detail.stackTrace?.callFrames?.[0]?.url || '',
+        line: detail.lineNumber,
+      }));
+    }
   });
   await send("Page.enable"); await send("Network.enable"); await send("Runtime.enable");
   // Record transient head regressions as well as the settled metadata. A page
@@ -95,7 +105,11 @@ try {
   await send("Fetch.enable", {patterns:[{urlPattern:"https://*"}]});
   let checked = 0;
   const semanticFailures = new Map();
-  for (const width of [360, 1280]) for (const javaScript of [false, true]) {
+  // Fresh Chromium per phase prevents stale contexts from accumulating across
+  // 620 separate navigations. Assertions remain unchanged for every visit.
+  const phases = [[360, false], [360, true], [1280, false], [1280, true]];
+  for (const [phaseNumber, [width, javaScript]] of phases.entries()) {
+    if (phase !== null && phase !== phaseNumber) continue;
     await send("Emulation.setDeviceMetricsOverride", { width, height: 900, deviceScaleFactor: 1, mobile: width === 360 });
     await send("Emulation.setScriptExecutionDisabled", { value: !javaScript });
     for (const path of routes) {
@@ -134,6 +148,7 @@ try {
     }
   }
   assert.deepEqual(Object.fromEntries(semanticFailures), {}, 'Visible controls need accessible names and valid interaction nesting');
+  if (phase === null || phase === 3) {
   // Exercise keyboard navigation and the read-only selector/mentor in the isolated compiled build.
   await send("Emulation.setScriptExecutionDisabled", {value:false});
   await send("Emulation.setDeviceMetricsOverride", {width:360,height:900,deviceScaleFactor:1,mobile:true});
@@ -184,9 +199,11 @@ try {
     await waitUntil(`location.pathname === '/learn/${lesson}' && !!document.querySelector('aside a[href^="https://"]')`, 'Legacy lesson '+lesson+' renders sources');
     assert.equal(await evaluate(`document.documentElement.scrollWidth > innerWidth+1`),false,'Legacy lesson '+lesson+' must fit mobile');
   }
+  }
   assert.deepEqual(runtimeErrors, [], 'No uncaught application JavaScript exceptions');
-  console.log('PASS accessible visible controls, valid nesting, mobile selector/menu/mentor focus, viewport placement and six legacy lesson source links.');
-  console.log(`PASS real Chromium: ${checked} compiled route visits (${routes.length} URLs × desktop/mobile × JS on/off), canonical/H1/content parity and overflow. Native courses use read-only published fixtures, not production services.`);
+  if (phase === null || phase === 3) console.log('PASS accessible visible controls, valid nesting, mobile selector/menu/mentor focus, viewport placement and six legacy lesson source links.');
+  const phaseDescription = phase === null ? 'desktop/mobile × JS on/off' : `matrix phase ${phase} only`;
+  console.log(`PASS real Chromium: ${checked} compiled route visits (${routes.length} URLs × ${phaseDescription}), canonical/H1/content parity and overflow. Native courses use read-only published fixtures, not production services.`);
 } finally {
   socket?.close();
   // Chromium forks subprocesses; waiting only for its parent can leave a child
