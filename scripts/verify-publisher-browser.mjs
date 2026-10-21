@@ -130,6 +130,24 @@ try {
       assert.equal(observation.h1, 1, `${path}: one H1 (${width}px, JS=${javaScript})`);
       assert.equal(observation.overflow, false, `${path}: horizontal overflow (${width}px, JS=${javaScript})`);
       if (bundled) assert.equal(observation.notes, path, path + ": publisher content remains visible");
+      const primaryCopy = /^\/(?:wiki|strategy)\/[^/]+$/.test(path) || /^\/learn\/article\/[^/]+$/.test(path);
+      if (javaScript && bundled && primaryCopy) {
+        const page = JSON.parse(readFileSync(join(dist, "publisher-notes", path, "index.json"), "utf8"));
+        const normalizedMain = await evaluate(`document.querySelector('main').textContent.replace(/\\s+/g, ' ').trim().toLowerCase()`);
+        const normalize = text => text.replace(/\s+/g, ' ').trim().toLowerCase();
+        for (const section of page.sections) {
+          if (["Publisher and editorial transparency", "Practise what you just read"].includes(section.h)) continue;
+          for (const text of [...(section.p || []), ...(section.list || [])].filter(Boolean)) {
+            assert.ok(normalizedMain.includes(normalize(text)), path + ": preserve substantive section " + section.h);
+          }
+        }
+        const externalLinks = await evaluate(`Array.from(document.querySelectorAll('main a[href]')).map(a => a.href)`);
+        for (const link of page.links.filter(link => /^https?:/.test(link.href))) {
+          assert.ok(externalLinks.includes(link.href), path + ": preserve primary reference " + link.href);
+        }
+        assert.equal(await evaluate(`document.querySelectorAll('[data-publisher-notes]').length`), 1, path + ": one authored article");
+        assert.equal(await evaluate(`document.querySelector('[data-publisher-notes]').tagName`), "MAIN", path + ": article precedes footer");
+      }
       if (javaScript) {
         const issues = await evaluate(`(() => {
           const visible = e => e.getClientRects().length && getComputedStyle(e).visibility !== 'hidden';

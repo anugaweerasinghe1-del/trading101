@@ -468,6 +468,10 @@ export default function TradeAsset() {
               <p className="text-sm text-muted-foreground mb-2 max-w-3xl">
                 Explore {selectedAsset.symbol} with $100,000 in virtual cash. Read simulated charts, compare position sizes, and review practice gains and losses. No real money is traded.
               </p>
+              {selectedAsset.id === "gold" && <p className="text-sm text-muted-foreground mb-2 max-w-3xl">
+                Provider quotes use a PAXG token proxy, not a dedicated XAU/USD spot feed.
+                Practice charts and fixed fallback prices have their own data-status labels.
+              </p>}
               {/* Data trust signal */}
               <div className="flex items-center gap-3 text-xs">
                 <span className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full font-medium ${
