@@ -103,7 +103,7 @@ export default function Learn() {
         <meta name="robots" content="index, follow" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Learn Trading — Free Beginner to Advanced Guides" />
-        <meta property="og:description" content="Master trading with free beginner-to-advanced lessons. Practice instantly with $100K virtual cash. No signup required." />
+        <meta property="og:description" content="Explore trading concepts with free beginner-to-advanced lessons, worked examples and $100K in virtual cash. No signup required." />
         <meta property="og:url" content="https://www.thetradehq.com/learn" />
         <meta property="og:image" content="https://www.thetradehq.com/og-image.png" />
         <meta property="og:image:width" content="1200" />
