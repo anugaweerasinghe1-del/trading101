@@ -56,3 +56,11 @@ PR #205 merged as 88504b23aa1ef43e74252cbc642446bb1ca6c222. All exact-head candi
 The expanded read-only audit now requests current main and course sitemaps, uses the historical 357-URL record only for route discovery, follows newly discovered internal anchors and refetches every page sequentially. It records full initial main text, headings, canonical/indexability, source/destination link edges and fragment warnings. It does not treat noindex utility shells as editorial articles or call HTTP checks proof of originality, account access or hydrated behavior.
 
 Local validation: Node syntax check passed. The actual runner crawl, per-page editorial review, candidate checks and release evidence are still required; no unvisited page is claimed reviewed.
+
+## Portfolio display finding and audit discovery correction
+
+The new live browser review reached the homepage, trading desk, Markets and Portfolio. Portfolio with zero completed sells displayed a 0.0% win rate and 0.00 profit factor. Show unavailable marks for averages/rates without observations and profit factor without recorded losses, while preserving all accounting calculations and valid observed zero values. Rendered empty/winning-only/losing-only fixtures exercise these distinctions. Relative best trades can be losses; preserve their negative sign and use 'units' rather than calling every instrument a share.
+
+The first expanded crawl fetched 155 current public pages and 3,381 internal link occurrences without errors, but did not include the historical-only routes: a non-URL discovery label was incorrectly passed as a URL base and silently rejected by new URL. Normalize against the origin when the discovery source is a label, then rerun the full inventory. Do not claim that first 155-page result covered the other 202 routes.
+
+Pause broader editorial traversal at this finding until the corrected batch passes, merges and deploys successfully.

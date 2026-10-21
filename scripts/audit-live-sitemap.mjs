@@ -37,7 +37,7 @@ const queue=[], queued=new Set(), sitemapPages=new Set(), external=new Set();
 const sources=new Map(), documentIds=new Map();
 function normalize(value,base=ORIGIN) {
   try {
-    const url=new URL(decode(value),base);
+    const url=new URL(decode(value),/^https?:\/\//.test(base)?base:ORIGIN);
     if(!/^https?:$/.test(url.protocol))return null;
     if(!["www.thetradehq.com","thetradehq.com"].includes(url.hostname))return null;
     url.protocol="https:";url.host="www.thetradehq.com";url.hash="";url.search="";
@@ -71,6 +71,7 @@ try {
     const seeds=JSON.parse(readFileSync("docs/adsense-2026-10-19/Baseline-357-HTTP-Observations.json","utf8")).observations;
     for(const seed of seeds)enqueue(seed.url,"historical-route-discovery");
     report.historicalSeedCount=seeds.length;
+    console.log("SEEDED_PAGE_COUNT "+queue.length);
   }catch(error){report.problems.push({type:"historical-seeds-unavailable",detail:String(error.message)});}
   console.log("LIVE_SITEMAP_URL_COUNT "+report.count);
   for(let index=0;index<queue.length;index++) {
