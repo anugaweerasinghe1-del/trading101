@@ -57,6 +57,7 @@ export function AssetIntelligence({ asset, liveMarketCap, liveData, isLiveLoadin
 
   const stats = content.stats;
   const isLiveDataAvailable = liveData?.source === 'live';
+  const isGoldProxy = asset.id === 'gold' && isLiveDataAvailable;
   
   // Use live data if available, otherwise fall back to asset data
   const displayPrice = liveData?.price ?? asset.price;
@@ -103,9 +104,16 @@ export function AssetIntelligence({ asset, liveMarketCap, liveData, isLiveLoadin
       <p className="text-xs text-muted-foreground mb-4">
         Quotes can be provider-sourced while other fields are delayed or simulated.
         High and low values are omitted because this feed can generate those fields.
-        The time below records a fetch, not a verified provider observation time.
+        Read any supplied provider observation time separately from the page refresh time.
       </p>
       
+      {asset.id === 'gold' && <p className="text-sm text-muted-foreground mb-4">
+        Gold provider quotes use the PAX Gold (PAXG) token as a price proxy.
+        Its market cap and trading volume describe that token, not the global gold market or an XAU/USD spot feed.
+        Fixed fallback prices and separately labelled practice charts can also appear.
+        {" "}<a href="https://www.paxos.com/pax-gold" className="text-primary underline">About the PAXG token</a>.
+      </p>}
+
       {/* Category Intro - SEO Multiplier */}
       <div className="mb-6 p-4 rounded-xl bg-primary/5 border border-primary/10">
         <p className="text-sm text-muted-foreground flex items-start gap-2">
@@ -188,7 +196,7 @@ export function AssetIntelligence({ asset, liveMarketCap, liveData, isLiveLoadin
           <div className="space-y-3">
             {/* Live Price */}
             <div className="flex justify-between items-center">
-              <span className="text-muted-foreground text-sm">Price</span>
+              <span className="text-muted-foreground text-sm">{isGoldProxy ? "PAXG proxy price" : "Price"}</span>
               <span className="text-foreground font-medium tabular-nums">
                 {isLiveLoading && !liveData ? (
                   <span className="flex items-center gap-1.5 text-muted-foreground">
@@ -202,7 +210,7 @@ export function AssetIntelligence({ asset, liveMarketCap, liveData, isLiveLoadin
             
             {/* 24h Change */}
             <div className="flex justify-between items-center">
-              <span className="text-muted-foreground text-sm">24h Change</span>
+              <span className="text-muted-foreground text-sm">{isGoldProxy ? "PAXG 24h change" : "24h Change"}</span>
               <span className={`font-medium tabular-nums ${displayChange >= 0 ? 'text-profit' : 'text-loss'}`}>
                 {isLiveLoading && !liveData ? (
                   <span className="flex items-center gap-1.5 text-muted-foreground">
@@ -219,7 +227,7 @@ export function AssetIntelligence({ asset, liveMarketCap, liveData, isLiveLoadin
             {/* 24h Volume - NEW LIVE DATA */}
             {displayVolume && displayVolume > 0 && (
               <div className="flex justify-between items-center">
-                <span className="text-muted-foreground text-sm">24h Volume</span>
+                <span className="text-muted-foreground text-sm">{isGoldProxy ? "PAXG token 24h volume" : "24h Volume"}</span>
                 <span className="text-foreground font-medium tabular-nums">
                   ${formatVolume(displayVolume)}
                 </span>
@@ -229,7 +237,7 @@ export function AssetIntelligence({ asset, liveMarketCap, liveData, isLiveLoadin
             {/* Market Cap - Live or Static */}
             {(displayMarketCap || stats?.marketCap) && (
               <div className="flex justify-between items-center">
-                <span className="text-muted-foreground text-sm">Market Cap</span>
+                <span className="text-muted-foreground text-sm">{isGoldProxy ? "PAXG token market cap" : "Market Cap"}</span>
                 <span className="text-foreground font-medium tabular-nums">
                   {displayMarketCap ? (
                     formatLargeNumber(displayMarketCap)

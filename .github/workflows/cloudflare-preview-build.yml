@@ -40,7 +40,7 @@ jobs:
       - run: npm run build:cloudflare
       - name: Verify all editorial routes on desktop and mobile with and without JavaScript
         run: |
-          for phase in 0 1 2 3; do
+          for phase in 0 1 2 3 4; do
             TRADEHQ_BROWSER_PHASE="$phase" node --import tsx scripts/verify-publisher-browser.mjs
           done
       - name: Verify isolated authenticated browser flow (no production accounts)

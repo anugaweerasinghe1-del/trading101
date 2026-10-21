@@ -40,10 +40,11 @@ export default function Strategy() {
 
       <div className="min-h-screen bg-background flex flex-col">
         <Navigation />
-        <main className="flex-1 container mx-auto px-4 pt-24 pb-12 max-w-4xl">
+        <main data-publisher-notes={`/strategy/${s.slug}`} className="flex-1 container mx-auto px-4 pt-24 pb-12 max-w-4xl">
           <header className="mb-10">
             <p className="text-xs uppercase tracking-widest text-emerald-400 mb-3 flex items-center gap-2"><Target className="h-3 w-3" />Trading strategy</p>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">{s.name}</h1>
+            <p className="mt-3 text-sm text-muted-foreground">Published by TradeHQ. <Link to="/about" className="underline underline-offset-4">Site creator and editorial approach: Anuga Weerasinghe</Link>. No independent professional review is claimed.</p>
             <p className="mt-4 text-lg text-muted-foreground">{s.oneLiner}</p>
             <Button className="mt-6" asChild>
 <Link to="/trade">Practise this strategy <ArrowRight className="ml-2 h-4 w-4" /></Link>

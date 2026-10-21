@@ -110,7 +110,7 @@ const WikiTerm = () => {
       <div className="min-h-screen bg-[hsl(var(--background))] text-foreground font-sans selection:bg-primary/30">
         <Navigation />
 
-        <main className="container mx-auto px-6 pt-24 pb-16 max-w-3xl">
+        <main data-publisher-notes={`/wiki/${term.slug}`} className="container mx-auto px-6 pt-24 pb-16 max-w-3xl">
           <Breadcrumb items={[
             { label: "Trading Guide", href: "/learn-trading-guide" },
             { label: "Wiki", href: "/wiki" },
@@ -205,7 +205,7 @@ const WikiTerm = () => {
               <h3 className="text-sm font-bold text-foreground">Apply This in the Simulator</h3>
             </div>
             <p className="text-xs text-muted-foreground mb-4">
-              Use the worksheet below to examine {term.term.toLowerCase()}. Some concepts require external data or paper calculations; TradeHQ does not implement every indicator, order type or contract.
+              Use the worksheet above to examine {term.term.toLowerCase()}. Some concepts require external data or paper calculations; TradeHQ does not implement every indicator, order type or contract.
             </p>
             <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-lg" asChild>
 <Link to="/trade/btc">

@@ -12,8 +12,15 @@ try {
 export function RoutePublisherNotes() {
   const { pathname } = useLocation();
   const path = pathname.replace(/\/+$/, "") || "/";
+  // These authored page components already render every substantive section
+  // and reference in their main landmark; do not append a second full article.
+  const hasPrimaryCopy = /^\/(?:wiki|strategy)\/[^/]+$/.test(path) || /^\/learn\/article\/[^/]+$/.test(path);
   const [page, setPage] = useState<PublisherPage | null>(initialPage);
   useEffect(() => {
+    if (hasPrimaryCopy) {
+      setPage(null);
+      return;
+    }
     if (path === initialPath) {
       setPage(initialPage);
       return;
@@ -25,6 +32,6 @@ export function RoutePublisherNotes() {
       .then(data => { if (!controller.signal.aborted) setPage(data?.path === path ? data : null); })
       .catch(() => { /* No notes for utility or unknown routes. */ });
     return () => controller.abort();
-  }, [path]);
-  return page?.path === path ? <PublisherNotes page={page} /> : null;
+  }, [path, hasPrimaryCopy]);
+  return !hasPrimaryCopy && page?.path === path ? <PublisherNotes page={page} /> : null;
 }

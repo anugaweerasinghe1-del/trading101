@@ -30,3 +30,21 @@ The user requested a new exhaustive live review including internal links. Previo
 - https://developers.google.com/search/docs/fundamentals/creating-helpful-content
 
 Google Search guidance is an editorial aid, not an additional claim about AdSense eligibility. Automated metadata, link or arithmetic checks cannot certify originality or guarantee acceptance.
+
+## Release 204 confirmed
+
+PR #204 merged as 2a82a527dfc7436973b7eb4efd349da85cbf4b94. Exact candidate head CI, Cloudflare preview and Vercel READY passed. Production Cloudflare reported successful deployment 0cf626dc and Vercel production READY on that merged SHA. All four corrected public pages were visited after release and their corrected text was present.
+
+## Second correction batch
+
+- /trade/gold: reproduced PAXG-derived volume and market capitalization under generic Gold labels. The existing provider mapping is gold -> pax-gold. Clarify the proxy in page/header/authored content and label token statistics; link the issuer's token description. No prices, provider mapping, trades or balances change.
+- Individual glossary, strategy and Learn articles: live browser showed the full primary article plus a repeated publisher-notes article below the footer. These three page components now provide the same substantive content once inside main. No-JavaScript initial content and navigation payloads are retained. The browser gate continues all existing checks and now independently requires every substantive publisher paragraph/list item in the primary main, one content marker, and placement before the footer.
+- Glossary worksheet CTA: correct 'below' to 'above', matching the actual exercise position.
+- Whale references: replace unrelated generic order-type source with SEC manipulation and CFTC spoofing references.
+- Learn article template: repair missing space in publisher/source metadata and remove the inaccurate claim of a remote AI-provider fallback from its FAQ.
+
+Remaining coverage is still pending. A release check is not a page-by-page editorial approval.
+
+## Reproduced CI runner failure
+
+The post-merge PR204 build succeeded on both hosts, but its browser job twice timed out on Page.navigate after the phase-3 page visits, preventing required post-merge validation. PR205 reproduced that timeout independently. The workflow now runs the unchanged interaction assertions in a fifth fresh Chromium process, after the four unchanged 155-route matrices. Per-route progress is logged to locate any remaining navigation failure. No check is skipped, suppressed or retried into success; job permissions and checkout binding remain unchanged. PR205 must pass the complete candidate and post-merge suites.

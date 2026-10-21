@@ -751,7 +751,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   gold: {
-    whatIs: "Gold is a precious metal used in jewellery, industry and official reserves. Physical gold, a gold fund and a gold futures contract create different ownership, cost and settlement exposures. TradeHQ uses a simplified gold-labelled practice instrument.",
+    whatIs: "Gold is a precious metal used in jewellery, industry and official reserves. TradeHQ's gold-labelled practice instrument can use CoinGecko PAX Gold (PAXG) token quotes as a price proxy, rather than a dedicated XAU/USD spot feed. PAXG volume and market cap refer to the token, not the global physical-gold market. Fixed fallback prices and separately labelled generated charts may also appear. A virtual holding acquires no physical gold, fund units or tokens.",
     strategy: "Educational example: Analyze gold price action during periods of high CPI data, Fed policy shifts, or stock market volatility. Focus on real yields as a key driver. (Educational simulation only — not financial advice.)",
     category: "Commodity",
     keywords: ["gold trading", "XAU practice", "precious metals", "safe haven", "inflation hedge"],
