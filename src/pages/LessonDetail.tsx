@@ -255,19 +255,19 @@ export default function LessonDetail() {
         </Card>
 
           {/* Navigation Buttons */}
-          <div className="flex items-center justify-between gap-4 mb-12">
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-12">
             <Button
               variant="outline"
               onClick={() => setCurrentSubtopic(Math.max(0, currentSubtopic - 1))}
               disabled={currentSubtopic === 0}
               size="lg"
-              className="px-8"
+              className="flex-1 px-4 sm:flex-none sm:px-8"
             >
               <ArrowLeft className="w-5 h-5 mr-2" />
               Previous
             </Button>
 
-            <Button onClick={handleComplete} size="lg" className="px-8 text-lg">
+            <Button onClick={handleComplete} size="lg" className="flex-1 px-4 text-lg sm:flex-none sm:px-8">
               {currentSubtopic === lesson.subtopics.length - 1 ? "Take Quiz" : "Continue"}
               {currentSubtopic < lesson.subtopics.length - 1 && (
                 <ArrowRight className="w-5 h-5 ml-2" />

@@ -222,7 +222,12 @@ try {
   for (let lesson=1; lesson<=6; lesson++) {
     await send('Page.navigate',{url:origin+'/learn/'+lesson});
     await waitUntil(`location.pathname === '/learn/${lesson}' && !!document.querySelector('aside a[href^="https://"]')`, 'Legacy lesson '+lesson+' renders sources');
+    // Fallback-font measurements can fit before Inter finishes loading. The
+    // production regression only appears once the navigation labels settle.
+    await evaluate(`window.__lessonFontsReady = false; document.fonts.ready.then(() => window.__lessonFontsReady = true); true`);
+    await waitUntil(`window.__lessonFontsReady === true`, 'Legacy lesson '+lesson+' fonts settle');
     assert.equal(await evaluate(`document.documentElement.scrollWidth > innerWidth+1`),false,'Legacy lesson '+lesson+' must fit mobile');
+    assert.equal(await evaluate(`Array.from(document.querySelectorAll('main button')).filter(b => /^(Previous|Continue|Take Quiz)$/.test(b.textContent.trim())).every(b => { const r=b.getBoundingClientRect(); return r.left>=0 && r.right<=innerWidth; })`),true,'Legacy lesson '+lesson+' navigation controls remain on screen');
   }
   }
   }
