@@ -83,6 +83,23 @@ for (const asset of HOWTO_ASSETS) {
   // A summary step should not reproduce an entire full review paragraph.
   assert.ok(asset.steps.every((step) => step !== asset.review), asset.symbol + ": duplicate review step");
 }
+// Distinct indexed how-to pages must offer an instrument-specific worked activity,
+// not the same generic instruction on every route.
+const specificHowtos = ["btc", "eth", "tsla", "nvda", "spy", "sol"];
+for (const symbol of specificHowtos) {
+  const asset = HOWTO_ASSETS.find(x => x.symbol === symbol);
+  assert.ok(asset, "Missing individual how-to guide: " + symbol);
+  assert.ok(asset.steps.every(s => !s.includes("Choose hypothetical quantity and price assumptions")),
+    symbol + ": template-only order-size step returned");
+  assert.ok(asset.steps.every(s => !s.includes("Record the reason for the exercise and any intended manual exit")),
+    symbol + ": template-only review step returned");
+  assert.ok(asset.steps.some(s => s.includes("$") || s.includes("0.05 BTC") || s.includes("0.5 ETH") || s.includes("SOL unit price")),
+    symbol + ": no instrument-specific numerical worksheet");
+}
+const learnCopy = JSON.stringify(map.get("/learn"));
+assert.match(learnCopy, /For a concrete self-check, write down a quote price/);
+assert.doesNotMatch(learnCopy, /A learning timeline varies by topic and prior experience/);
+
 const dca = STRATEGIES.find((x) => x.slug === "dca-dollar-cost-averaging");
 assert.ok(dca?.sources?.some((x) => x.href.includes("investor.gov")));
 assert.ok(/30\.833/.test(dca?.example || ""));
