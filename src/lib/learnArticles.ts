@@ -101,7 +101,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
   {
     slug: "crypto-vs-stocks",
     title: "Crypto vs Stocks: Which Should You Practice Trading First?",
-    summary: "Crypto and stocks have different risk profiles, trading hours, and volatility. Here's how to decide which to practice first as a beginner.",
+    summary: "Crypto and stocks differ in market structure, trading hours and price risk. Compare the same virtual exposure and observation window rather than assuming either is the right starting point.",
     metaDescription: "Crypto vs stocks — which should beginners practice first? Compare volatility, risk, and trading hours. Practice both free on TradeHQ.",
     readTime: "5 min read",
     sections: [
@@ -122,9 +122,9 @@ export const LEARN_ARTICLES: LearnArticle[] = [
         ]
       },
       {
-        heading: "Why Some Beginners Prefer Crypto First",
+        heading: "What a Crypto Practice Example Teaches Differently",
         paragraphs: [
-          "Crypto markets never close, so simulated practice is available at any time. Higher volatility can make price changes appear faster and larger, but that does not make learning easier or safer. An asset's unit price also does not measure its risk or accessibility; position size and total exposure matter more than whether one token costs less than $1.",
+          "Many cryptocurrency trading venues operate throughout weekends, but availability can be interrupted by outages, maintenance or restrictions. Observed price movements can be rapid or slow depending on the asset and period, and continuous access does not make learning easier or safer. An asset's unit price also does not measure its risk or accessibility; position size and total exposure matter more than whether one token costs less than $1.",
           "The crypto ecosystem introduces you to concepts like blockchain technology, decentralized finance (DeFi), and tokenomics — knowledge that helps you distinguish a network's function from a token's market price. Understanding both worlds can help you ask more precise questions about the risks.",
           "A learning exercise can compare one company example with one cryptocurrency using the same hypothetical position value and observation period. Record differences in mechanics and uncertainty without treating either market as the required starting choice. Virtual results do not establish real-money suitability."
         ]
@@ -140,7 +140,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
   {
     slug: "trading-strategies-for-beginners",
     title: "5 Trading Strategy Hypotheses to Study with Virtual Cash",
-    summary: "From buy-and-hold to momentum trading — explore five strategy hypotheses you can practice with virtual money before risking real capital.",
+    summary: "From buy-and-hold to momentum trading, compare five strategy hypotheses with virtual cash, explicit costs and adverse outcomes. The exercises do not demonstrate real-world suitability.",
     metaDescription: "Study five trading strategy hypotheses with $100K virtual cash on TradeHQ. Compare simulated gains, losses and limitations; no real money is traded.",
     readTime: "7 min read",
     sections: [
@@ -257,7 +257,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
   },
   {
     slug: "risk-management-in-trading",
-    title: "What Is Risk Management in Trading? The Complete Beginner's Guide",
+    title: "Risk Management for Paper Trading: Risk Budgets and Exits",
     summary: "Study position sizing, conceptual exits and risk-budget arithmetic. TradeHQ supports manual market orders; percentage rules such as 1% or 2% are worksheet assumptions.",
     metaDescription: "Learn risk-management concepts including position sizing, stop-loss orders, reward-to-risk assumptions, and example percentage risk limits using TradeHQ practice tools.",
     readTime: "6 min read",
@@ -297,7 +297,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
   {
     slug: "market-orders-vs-limit-orders",
     title: "Market Orders vs Limit Orders: Which Should You Use and When?",
-    summary: "Understanding order types is essential before placing your first trade. Learn the difference between market and limit orders, and when to use each one.",
+    summary: "Compare market and limit order mechanics, fill uncertainty and the situations each order type is designed for. TradeHQ only simulates market orders.",
     metaDescription: "Compare market and limit orders, price uncertainty, slippage and unfilled orders. TradeHQ simulates market orders only; limit orders are explained conceptually.",
     readTime: "5 min read",
     sections: [
@@ -336,9 +336,9 @@ export const LEARN_ARTICLES: LearnArticle[] = [
   {
     slug: "technical-indicators-rsi-macd-moving-averages",
     sourceCheck: { date: "2026-10-18", scope: "RSI, MACD and moving-average definitions compared with the linked Fidelity guides; no predictive-performance or professional review claimed." },
-    title: "How to Use Technical Indicators: RSI, MACD, and Moving Averages Explained",
+    title: "Technical Indicators Explained: RSI, MACD and Moving Averages",
     summary: "RSI, MACD and moving averages describe selected price observations. Learn their calculations, conventional interpretations and limits, then compare hypothetical examples without treating a signal as a trade recommendation.",
-    metaDescription: "Learn how to use RSI, MACD, and Moving Averages for trading. Understand overbought/oversold signals, crossovers, and trend confirmation. Free practice on TradeHQ.",
+    metaDescription: "Understand RSI, MACD and moving-average calculations, how crossovers describe past prices, and why those observations cannot guarantee future returns.",
     readTime: "7 min read",
     sections: [
       {
