@@ -208,6 +208,25 @@ assert.doesNotMatch(aboutClient, /do not sell user data or run behavioural ads/)
 assert.doesNotMatch(readFileSync("src/pages/Challenge.tsx", "utf8"), /figures originate in client-held simulator state/);
 console.log("PASS public mentor, duel, publisher and hub claim consistency");
 
+// All indexable glossary summaries must be consistent with their detailed qualifications.
+for (const [slug, expected, prohibited] of [
+  ["golden-cross", /historical averages and does not establish/, /bullish technical signal/],
+  ["death-cross", /lagging price calculation/, /signaling deteriorating momentum/],
+  ["rsi-divergence", /continuation or reversal/, /signaling weakening momentum/],
+  ["macd", /not reliable reversal predictions/, /reveal trend direction/],
+  ["backtesting", /does not validate future performance/, /Essential for validation/],
+  ["drawdown", /including an unfinished decline/, /before a new peak/],
+  ["slippage", /favorable or adverse/, /Occurs during high volatility/],
+  ["impermanent-loss", /pool design and relative prices/, /Occurs when token prices diverge/],
+  ["volume-profile", /highest-volume bin in that sample/, /Reveals where most activity/],
+  ["ichimoku-cloud", /not observations of future prices/, /comprehensive Japanese indicator system/],
+] as const) {
+  const term = tradingGlossary.find(item => item.slug === slug);
+  assert.ok(term, "Missing source-qualified term: " + slug);
+  assert.match(term.definition, expected, slug + ": misleading summary");
+  assert.doesNotMatch(term.definition, prohibited, slug + ": previous misleading claim returned");
+}
+
 const glossaryCopy = JSON.stringify(tradingGlossary);
 assert.doesNotMatch(glossaryCopy, /DCA removes these emotional obstacles|Liquidation occurs when losses exceed your margin deposit|Private exchanges for anonymous institutional block trading|Third, impermanent loss|Growing bars = accelerating momentum/);
 assert.match(JSON.stringify(map.get("/daily")), /ten linked questions/);

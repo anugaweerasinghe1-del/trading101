@@ -34,7 +34,7 @@ export const tradingGlossary: GlossaryTerm[] = [
   {
     slug: "golden-cross",
     term: "Golden Cross",
-    definition: "A golden cross is a bullish technical signal that occurs when a short-term moving average (typically the 50-day) crosses above a long-term moving average (typically the 200-day).",
+    definition: "A golden cross labels a shorter moving average crossing above a longer one, often the 50-day above the 200-day. It describes historical averages and does not establish that prices will continue rising.",
     expertDefinition: "A golden cross labels a shorter moving average crossing above a longer one; 50-day and 200-day simple averages are a common convention. Each average summarizes selected past closing prices. The crossover can arrive after a substantial price rise, and a subsequent reversal can produce another crossover. Changing the interval, lookback or price adjustment changes the observations. The label does not reveal institutional orders or establish a profitable entry. For a comparison, state the dataset and rules before reviewing later prices, include failed examples and account for costs. A generated practice chart cannot establish how a rule performed in real historical markets.",
     proTip: "Compare the 50-day and 200-day averages with the underlying price series. The crossover describes past price behaviour; it does not determine a profitable entry or predict an uptrend.",
     difficulty: "Novice",
@@ -51,7 +51,7 @@ export const tradingGlossary: GlossaryTerm[] = [
   {
     slug: "death-cross",
     term: "Death Cross",
-    definition: "A death cross is the bearish counterpart to the golden cross. It occurs when the 50-day moving average crosses below the 200-day moving average, signaling deteriorating momentum.",
+    definition: "A death cross labels a shorter moving average crossing below a longer one, often the 50-day below the 200-day. This is a lagging price calculation, not confirmation of a future decline.",
     expertDefinition: "A death cross labels a shorter moving average crossing below a longer one, commonly a 50-day average below a 200-day average. It describes the relationship between selected historical averages. It need not identify the beginning of a decline, and a later recovery can reverse the crossover. The slope of either average is another historical observation, not a universal measure of signal strength. Do not infer how professional managers position portfolios from this label. To evaluate an imagined rule, specify the series, frequency, execution assumptions and comparison period before inspecting outcomes. Include costs and both continuation and recovery cases.",
     proTip: "Check which averages and dates were used to identify the cross. A downward crossover can also occur during a temporary decline; it does not justify a universal percentage reduction in holdings.",
     difficulty: "Novice",
@@ -85,7 +85,7 @@ export const tradingGlossary: GlossaryTerm[] = [
   {
     slug: "fibonacci-retracement",
     term: "Fibonacci Retracement",
-    definition: "Fibonacci retracement is a technical analysis tool using horizontal lines at key ratios (23.6%, 38.2%, 50%, 61.8%, 78.6%) to indicate potential support and resistance levels.",
+    definition: "Fibonacci retracement plots conventional fractions of a selected price swing, often 23.6%, 38.2%, 50%, 61.8% and 78.6%. The 50% level is a common chart convention, not a Fibonacci ratio, and none of these lines guarantees support or resistance.",
     expertDefinition: "A retracement drawing selects a price high and low, then marks fractions of their difference. Common chart conventions include 23.6%, 38.2%, 50%, 61.8% and 78.6%; 50% is a midpoint convention rather than a Fibonacci-sequence ratio. The chosen endpoints and interval materially change the levels. Arithmetic does not establish that buyers or sellers will appear at a marked price. Several drawings can fit the same history, so specify the endpoints before reviewing later candles and keep cases where price passes through the levels. The background reference explains historical chart analysis, not a measured success rate for these ratios.",
     proTip: "Calculate the levels from a clearly identified high and low, then compare how changing those anchors changes the chart. A Fibonacci ratio alone does not establish a reversal probability.",
     difficulty: "Intermediate",
@@ -102,7 +102,7 @@ export const tradingGlossary: GlossaryTerm[] = [
   {
     slug: "rsi-divergence",
     term: "RSI Divergence",
-    definition: "RSI divergence occurs when the Relative Strength Index moves opposite to price, signaling weakening momentum and potential reversal.",
+    definition: "RSI divergence describes a mismatch between selected price swings and RSI swings. It can be followed by continuation or reversal, so it is not a dependable forecast by itself.",
     expertDefinition: "Standard RSI compares smoothed upward and downward price changes over a selected lookback and expresses their relative strength on a 0–100 scale. A divergence compares its selected swings with price swings: for example, a lower price low alongside a higher RSI low. Those observations can occur before either a reversal or continued decline. Changing the interval or which swings count changes the comparison. No timeframe is established here as reliably predictive. Use matching external price and standard RSI data for the worksheet; the RSI-style value in TradeHQ is not a standard historical RSI calculation.",
     proTip: "Compare the price swings and RSI swings over the same dates and settings. Record both divergences followed by reversals and those followed by continuation; divergence is not an entry guarantee.",
     difficulty: "Intermediate",
@@ -306,7 +306,7 @@ export const tradingGlossary: GlossaryTerm[] = [
   {
     slug: "macd",
     term: "Moving Average Convergence Divergence",
-    definition: "MACD shows the relationship between two EMAs. The MACD line, signal line, and histogram together reveal trend direction, momentum, and potential reversals.",
+    definition: "MACD compares exponential moving averages of past prices. Its line, signal line and histogram describe changes in those calculations; crossovers are not reliable reversal predictions by themselves.",
     expertDefinition: "MACD compares exponential moving averages. With common defaults, the MACD line equals the 12-period EMA minus the 26-period EMA, the signal is a 9-period EMA of MACD and the histogram is their difference. A crossover or zero-line crossing is an event in related calculations based on past prices. It need not precede a lasting move and can repeat in a trading range. Prices, interval, initialization and settings must be stated before comparing results. The Fidelity reference documents the default calculation. TradeHQ has no MACD overlay and cannot validate a MACD rule using its generated practice candles.",
     proTip: "State the moving-average settings and compare the resulting crossovers with price. Combining timeframes changes the rule being tested and does not automatically improve its accuracy.",
     difficulty: "Novice",
@@ -537,7 +537,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     category: "Trading Fundamentals",
     keyPoints: [
       "Captures tiny price movements over seconds to minutes",
-      "Requires extremely low latency, tight spreads, and low commissions",
+      "Short-horizon price targets can be overwhelmed by spread, fees, slippage and slow execution",
       "Break-even win rate depends on realized win and loss amounts plus costs"
     ],
     studentPerspective: "Compare a small hypothetical gross price change with spreads, fees and worse fills. Discipline alone cannot remove execution risk or establish an investment edge.",
@@ -546,7 +546,7 @@ export const tradingGlossary: GlossaryTerm[] = [
   {
     slug: "volume-profile",
     term: "Volume Profile",
-    definition: "Shows trading volume distribution at each price level rather than over time. Reveals where most activity occurred — the Point of Control — and value areas.",
+    definition: "A volume profile groups recorded volume into price bins over a chosen interval. Its point of control is the highest-volume bin in that sample, not a forecast of where price must return.",
     expertDefinition: "A volume profile groups observed trading volume into price bins over a stated sample. The point of control is the bin with the greatest volume under those settings. A value area encloses a selected share of volume using a specified construction method; a commonly chosen 70% share is not automatically one standard deviation or an economic valuation. Bin width, observation window and data coverage affect the result. A high-volume bin describes earlier activity and need not attract future price. TradeHQ does not supply a standard historical volume-profile overlay; a separate invented table is sufficient to learn the arithmetic.",
     proTip: "Check the selected time window and how traded volume was allocated to price bins. High- and low-volume nodes describe that sample, not a guaranteed future reaction.",
     difficulty: "Pro",
@@ -580,7 +580,7 @@ export const tradingGlossary: GlossaryTerm[] = [
   {
     slug: "ichimoku-cloud",
     term: "Ichimoku Cloud",
-    definition: "A comprehensive Japanese indicator system showing support/resistance, trend direction, and momentum in a single view. The Cloud (Kumo) is the signature feature.",
+    definition: "Ichimoku Cloud displays several historical-price calculations with differing lookbacks and plotting offsets. Its Kumo cloud and other lines are chart conventions, not observations of future prices.",
     expertDefinition: "The Ichimoku Cloud combines five historical-price calculations with different lookbacks and plotting offsets. The linked TradingView documentation describes its components and introduces its late-1960s publication history. A line plotted ahead of the latest candle still uses historical inputs; it does not observe future support or resistance. The five components are: Tenkan-sen (Conversion Line) — the midpoint of the highest high and lowest low over the past 9 periods, serving as a fast signal line. Kijun-sen (Base Line) — the midpoint over 26 periods, serving as a medium-term trend indicator and potential support/resistance. Senkou Span A (Leading Span A) — the average of Tenkan and Kijun lines, plotted 26 periods into the future. Senkou Span B (Leading Span B) — the midpoint of the highest high and lowest low over 52 periods, plotted 26 periods ahead. The shaded area between Senkou Span A and B forms the Cloud (Kumo) — the system's signature feature. Chikou Span (Lagging Span) — the current closing price plotted 26 periods in the past, used for confirmation. Trading signals in Ichimoku follow a hierarchy. One convention labels a bullish alignment when price is above the Cloud, Tenkan-sen is above Kijun-sen, Chikou Span is above the earlier price and Senkou Span A is above B. The alignment describes selected historical calculations; it is not a proven strongest signal.",
     proTip: "Record the lookback and plotting offsets of each line. Lines drawn ahead on a chart are calculated from past prices and do not contain future market information.",
     difficulty: "Pro",
@@ -665,7 +665,7 @@ export const tradingGlossary: GlossaryTerm[] = [
   {
     slug: "slippage",
     term: "Slippage",
-    definition: "The difference between expected trade price and actual execution price. Occurs during high volatility or low liquidity. Can be positive or negative.",
+    definition: "Slippage is the difference between a stated reference price and an actual execution price. It can be favorable or adverse; volatile conditions, limited liquidity and delays may increase it.",
     expertDefinition: "Slippage compares an actual execution price with a defined expected or reference price. The comparison requires a side, quantity and timestamp. Paying more than the reference on a purchase is adverse; paying less is favorable. A changing quote, limited available quantity or a delay can contribute to a difference, but a price series alone cannot isolate the cause. A limit price constrains eligible fills and may leave the order unfilled. It does not guarantee both execution and a particular outcome. TradeHQ fills supported market orders at a displayed practice input and does not model actual exchange liquidity.",
     proTip: "Compare the expected price with the weighted average fill and include fees separately. A limit order constrains its execution price but may remain unfilled and cannot remove every execution risk.",
     difficulty: "Novice",
@@ -673,7 +673,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     category: "Trading Fundamentals",
     keyPoints: [
       "Difference between expected and actual execution price",
-      "Worse during high volatility and low liquidity conditions",
+      "Quote changes, liquidity constraints and delays can affect slippage even outside volatile periods",
       "Limit prices constrain eligible fills but do not ensure execution; market fills can differ from a quote"
     ],
     studentPerspective: "Compare expected and weighted-average fill prices, with fees stated separately. A limit price can constrain execution but may leave the order unfilled; neither order type removes every risk.",
@@ -682,7 +682,7 @@ export const tradingGlossary: GlossaryTerm[] = [
   {
     slug: "impermanent-loss",
     term: "Impermanent Loss",
-    definition: "The opportunity cost of providing liquidity in a DEX pool compared to simply holding the assets. Occurs when token prices diverge from their ratio at deposit time.",
+    definition: "Impermanent loss compares the value of a liquidity-provider position with simply holding the original tokens. The difference depends on the pool design and relative prices; fees and incentives also matter.",
     expertDefinition: "For a fee-free, full-range constant-product pool initially balanced by value, compare the liquidity-provider position with holding the originally deposited assets. If their relative price changes by a factor r and arbitrage rebalances the pool, the relative value difference is 2×sqrt(r)/(1+r)−1 under these assumptions. At r=2 this is about −5.72%; at r=5 it is about −25.46%. This difference is a comparison with holding, not necessarily an absolute cash loss. Fees, incentives, concentrated ranges and token behavior change outcomes. Withdrawing does not create the earlier economic difference; a later price change can narrow or widen it. Smart-contract and custody risks are additional.",
     proTip: "State the pool model, relative price change and fee assumptions when comparing liquidity provision with holding. Stablecoin or correlated pairs still carry depegging, contract and liquidity risks.",
     difficulty: "Pro",
@@ -690,7 +690,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     category: "DeFi",
     keyPoints: [
       "Value difference between LP position and simply holding the tokens",
-      "Increases as the price ratio of paired tokens diverges from deposit ratio",
+      "In a simple fee-free constant-product pool, the relative value difference grows as paired-token prices diverge",
       "The value difference exists before withdrawal and can change with subsequent prices"
     ],
     studentPerspective: "Compare liquidity provision with holding the same initial assets under a stated pool model. Fees, incentives and price changes all matter, alongside contract and withdrawal risks.",
@@ -803,7 +803,7 @@ export const tradingGlossary: GlossaryTerm[] = [
   {
     slug: "drawdown",
     term: "Drawdown",
-    definition: "The decline from a portfolio's peak value to its lowest point before a new peak. Maximum drawdown measures the largest observed peak-to-trough decline in a specified sample. Critical for risk assessment.",
+    definition: "Drawdown measures a decline from a previously observed peak to a later lower value, including an unfinished decline. Maximum drawdown is the largest such decline in a specified sample, not a ceiling on future loss.",
     expertDefinition: "Drawdown measures a decline from an observed peak to a later lower value within a defined series. Maximum drawdown is the largest such peak-to-trough decline in the chosen sample, not the worst loss that could occur in the future. State whether observations include fees, cash flows and mark-to-market positions; an end-of-day sample can miss an intraday trough. A drop from $100 to $80 is 20%, but recovering from $80 to $100 requires 25%. Deposits can make raw portfolio-value comparisons misleading. The arithmetic does not diagnose stress or predict whether someone would tolerate a real loss.",
     proTip: "Calculate the decline from the relevant peak and state the observation period. Historical maximum drawdown is not an upper bound on future loss, and no universal percentage is a suitable limit for everyone.",
     difficulty: "Intermediate",
@@ -812,7 +812,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     keyPoints: [
       "Observed peak-to-trough decline under the specified valuation and sampling method",
       "50% drawdown requires 100% gain to recover — math is asymmetric",
-      "Calmar Ratio (return/drawdown) measures risk-adjusted performance"
+      "Calmar ratio compares a defined annualised return with maximum drawdown; the sample and assumptions matter"
     ],
     studentPerspective: "Calculate the decline from the relevant peak and state the observation period. Historical maximum drawdown is not an upper bound on future loss, and no universal percentage is a suitable limit for everyone.",
     relatedTerms: ["risk-reward-ratio", "leverage-trading", "paper-trading"]
@@ -820,7 +820,7 @@ export const tradingGlossary: GlossaryTerm[] = [
   {
     slug: "backtesting",
     term: "Backtesting",
-    definition: "Testing a strategy against historical data to evaluate its hypothetical performance. Essential for validation but subject to curve-fitting and survivorship bias.",
+    definition: "Backtesting applies stated rules to historical data to examine hypothetical results. It can reveal problems with an idea but does not validate future performance; look-ahead, survivorship and overfitting bias matter.",
     expertDefinition: "Backtesting applies predefined rules to historical observations under stated execution and accounting assumptions. Its results describe that selected dataset; they are not executed returns or proof of a future advantage. Look-ahead bias uses information unavailable at the decision time, survivorship bias omits failed or unavailable instruments, and repeated parameter searches can overfit the same history. Separate rule development from held-out evaluation, document the searches performed and account for costs and missing observations. There is no universal number of years or trades that validates a strategy. Generated simulator candles are not historical market observations.",
     proTip: "Separate rule development from evaluation on unseen data and include realistic costs. Out-of-sample results can expose overfitting, but they do not certify future performance.",
     difficulty: "Intermediate",
