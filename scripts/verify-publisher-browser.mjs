@@ -10,6 +10,7 @@ import { once } from "node:events";
 import { setTimeout as delay } from "node:timers/promises";
 import { renderApprovedCourse } from "../src/lib/courseHtml.ts";
 import { waitForChromePort } from "./isolated-chrome-startup.mjs";
+import { NICHE_SYMBOLS, getNicheAsset } from "../src/lib/nicheData.ts";
 
 const chrome = ["google-chrome", "google-chrome-stable", "chromium", "chromium-browser"].find(name => spawnSync("which", [name]).status === 0);
 assert.ok(chrome, "Chromium unavailable; this browser check has NOT passed");
@@ -228,6 +229,19 @@ try {
     await waitUntil(`window.__lessonFontsReady === true`, 'Legacy lesson '+lesson+' fonts settle');
     assert.equal(await evaluate(`document.documentElement.scrollWidth > innerWidth+1`),false,'Legacy lesson '+lesson+' must fit mobile');
     assert.equal(await evaluate(`Array.from(document.querySelectorAll('main button')).filter(b => /^(Previous|Continue|Take Quiz)$/.test(b.textContent.trim())).every(b => { const r=b.getBoundingClientRect(); return r.left>=0 && r.right<=innerWidth; })`),true,'Legacy lesson '+lesson+' navigation controls remain on screen');
+  }
+  // These 50 intentionally noindex guides are outside the sitemap matrix.
+  // Commodity slugs are catalogue IDs, while forex slugs encode a slash.
+  for (const symbol of NICHE_SYMBOLS) {
+    const niche = getNicheAsset(symbol);
+    assert.ok(niche, symbol + ': catalogue route must resolve');
+    const path = '/niche/' + symbol.toLowerCase();
+    await send('Page.navigate', {url:origin+path});
+    await waitUntil(`location.pathname === ${JSON.stringify(path)} && document.querySelector('main h1')?.textContent.includes(${JSON.stringify(niche.name)}) && !document.querySelector('#prerender-seo')`, symbol + ': hydrated guide renders');
+    assert.equal(await evaluate(`document.querySelector('meta[name="robots"]')?.content`), 'noindex, follow', symbol + ': retain noindex');
+    assert.equal(await evaluate(`document.querySelector('link[rel="canonical"]')?.href`), 'https://www.thetradehq.com'+path, symbol + ': preserve route canonical');
+    assert.ok(await evaluate(`!!document.querySelector('main a[href="/trade/${niche.assetId}"]')`), symbol + ': practice link uses catalogue ID');
+    assert.equal(await evaluate(`document.documentElement.scrollWidth > innerWidth+1`), false, symbol + ': guide fits mobile');
   }
   }
   }
