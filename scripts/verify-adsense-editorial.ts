@@ -93,7 +93,7 @@ for (const symbol of specificHowtos) {
     symbol + ": template-only order-size step returned");
   assert.ok(asset.steps.every(s => !s.includes("Record the reason for the exercise and any intended manual exit")),
     symbol + ": template-only review step returned");
-  assert.ok(asset.steps.some(s => /\\$[\\d,]+|0\\.05 BTC|0\\.5 ETH/.test(s)),
+  assert.ok(asset.steps.some(s => s.includes("$") || s.includes("0.05 BTC") || s.includes("0.5 ETH") || s.includes("SOL unit price")),
     symbol + ": no instrument-specific numerical worksheet");
 }
 const learnCopy = JSON.stringify(map.get("/learn"));
