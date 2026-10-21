@@ -221,7 +221,7 @@ export const tradingGlossary: GlossaryTerm[] = [
   {
     slug: "whale-manipulation",
     term: "Whale Manipulation",
-    definition: "Whale manipulation refers to large traders using substantial capital to artificially influence prices through spoofing, wash trading, and strategic order placement.",
+    definition: "Whale manipulation is an informal label for alleged manipulation by a large market participant. Large holdings, transfers or ordinary orders alone do not establish wrongdoing; claims about deceptive trading require evidence and the applicable market rules.",
     expertDefinition: "Whale is informal language for a participant or wallet with a large position. Holding or moving a large amount does not by itself establish manipulation. Spoofing involves deceptive orders intended to be cancelled rather than executed; wash-trading allegations concern transactions creating a false appearance of activity. Proving either requires evidence beyond a candlestick, displayed order or wallet transfer and depends on applicable rules. A transfer may reflect custody reorganization or another purpose unrelated to a market sale. Distinguish observable size and timing from claims about ownership, intent and price effects. Do not present alleged misconduct as a validated trading signal.",
     proTip: "Separate an observable transfer or order-book change from an inferred motive. A large wallet movement can be custody or exchange activity and is not proof of accumulation or a trade signal.",
     difficulty: "Intermediate",
@@ -486,7 +486,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     category: "Trading Fundamentals",
     keyPoints: [
       "Fixed amount invested at regular intervals regardless of price",
-      "Buys more when prices are low, less when high — averaging down",
+      "Equal scheduled contributions buy more units at lower prices and fewer at higher prices; DCA is distinct from a discretionary decision to add to a losing position",
       "A schedule defines purchase timing without eliminating emotion or guaranteeing a better result"
     ],
     studentPerspective: "Calculate units bought under equal contributions at different hypothetical prices. Compare the same total cash over the same dates; a schedule does not establish a better return.",
