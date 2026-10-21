@@ -2,6 +2,7 @@
 import { ASSETS } from './assets';
 
 export interface NicheAsset {
+  assetId: string;
   symbol: string;
   name: string;
   type: string;
@@ -27,13 +28,15 @@ const defaultMentorTake = (symbol: string, name: string, type: string) => {
 
 export function getNicheAsset(symbol: string): NicheAsset | null {
   const normalizedSymbol = symbol.toUpperCase().replace('-', '/');
-  const asset = ASSETS.find(a => a.symbol.toUpperCase() === normalizedSymbol);
+  const asset = ASSETS.find(a => a.symbol.toUpperCase() === normalizedSymbol
+    || a.id.toUpperCase() === symbol.toUpperCase().replace(/-/g, ''));
 
   if (!asset) return null;
 
   const mentorTake = mentorTakes[normalizedSymbol] || defaultMentorTake(asset.symbol, asset.name, asset.type);
 
   return {
+    assetId: asset.id,
     symbol: asset.symbol,
     name: asset.name,
     type: asset.type,

@@ -416,10 +416,10 @@ export function buildRoutes(): RouteMeta[] {
   for (const sym of extractNicheSymbols()) {
     routes.push({
       path: `/niche/${sym.toLowerCase()}`,
-      title: `${sym} Deep Dive — Chart, Analysis & Paper Trade | TradeHQ`,
-      description: `In-depth ${sym} analysis with practice trading. ${BALANCE} virtual cash, no signup. Educational simulation only — not financial advice.`,
-      h1: `${sym} — Deep Dive`,
-      summary: `A dedicated ${sym} research page with simulated charts, AI-mentor commentary, and one-click paper trading. Everything is educational — no real orders and no brokerage.`,
+      title: `${sym} Practice Overview | TradeHQ`,
+      description: `Read ${sym} reference facts and educational price-driver notes, then open the virtual simulator. ${BALANCE} virtual cash. Not financial advice.`,
+      h1: `${sym} — Practice Overview`,
+      summary: `Catalogue reference values and general price-driver notes for ${sym}, with a link to virtual practice. Reference values are not live quotes, and this overview does not provide a chart or an investment recommendation.`,
       priority: "0.6",
       changefreq: "daily",
       noindex: true,

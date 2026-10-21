@@ -4,28 +4,18 @@ import { Navigation } from "@/components/Navigation";
 import { MegaFooter } from "@/components/MegaFooter";
 import { getNicheAsset } from "@/lib/nicheData";
 import { TrendingUp, BookOpen, AlertTriangle, ArrowRight } from "lucide-react";
+import NotFound from "./NotFound";
 
 export default function NicheAsset() {
   const { symbol } = useParams();
   const niche = symbol ? getNicheAsset(symbol) : null;
 
   if (!niche) {
-    return (
-      <div className="min-h-screen bg-background flex flex-col">
-        <Navigation />
-        <div className="flex-1 flex items-center justify-center">
-          <div className="text-center space-y-4">
-            <h1 className="text-2xl font-bold">Asset Not Found</h1>
-            <Link to="/markets" className="text-primary hover:underline">Browse Markets →</Link>
-          </div>
-        </div>
-        <MegaFooter />
-      </div>
-    );
+    return <NotFound />;
   }
 
-  const displaySymbol = niche.symbol.replace('/', '-');
-  const canonical = `https://www.thetradehq.com/niche/${displaySymbol.toLowerCase()}`;
+  const routeSlug = symbol!.toLowerCase();
+  const canonical = `https://www.thetradehq.com/niche/${routeSlug}`;
   const title = `${niche.name} (${niche.symbol}) — Price Drivers & Practice Guide | TradeHQ`;
   const description = `Learn the main factors that can move ${niche.name}, review educational chart concepts, and practise ${niche.symbol} with $100K virtual cash. Data may be simulated or delayed.`;
 
@@ -142,7 +132,7 @@ export default function NicheAsset() {
           {/* CTA */}
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              to={`/trade/${displaySymbol}`}
+              to={`/trade/${niche.assetId}`}
               className="flex-1 flex items-center justify-center gap-2 py-4 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all btn-squeeze"
             >
               Practice Trading {niche.symbol}
