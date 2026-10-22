@@ -1,0 +1,21 @@
+BROWSER_NAVIGATE http://127.0.0.1:41655/about
+BROWSER_NAVIGATE http://127.0.0.1:41655/about
+BROWSER_NAVIGATE http://127.0.0.1:41655/about
+BROWSER_NAVIGATE http://127.0.0.1:41655/about
+BROWSER_NAVIGATE http://127.0.0.1:41655/about
+BROWSER_NAVIGATE http://127.0.0.1:41655/courses
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Course title contrast at 360px (light): {"titleSize":36,"stops":3,"title":[1.07130738428959,1.1971442460484396,1.7944667111145065],"accent":1.7944667111145065}
+    at file:///workspace/trading101-validation/scripts/verify-publisher-browser.mjs:257:14 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

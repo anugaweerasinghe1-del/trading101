@@ -1,0 +1,212 @@
+{
+  "complete": false,
+  "findings": [
+    {
+      "id": "THQ-001",
+      "severity": "P3",
+      "category": "About navigation overlap",
+      "adsenseRelevance": "General usability, no specific policy violation established",
+      "urls": [
+        "https://www.thetradehq.com/about"
+      ],
+      "state": "PUBLICLY_VERIFIED",
+      "pr": 212,
+      "mergeSHA": "aa216a24c68c30c9251f96a050da098b33364686",
+      "evidence": "findings/ABOUT-HEADER-OVERLAP.md"
+    },
+    {
+      "id": "THQ-002",
+      "severity": "P2",
+      "category": "Mobile course heading clipping",
+      "adsenseRelevance": "General usability/readability; not represented as a confirmed Publisher Policy violation",
+      "urls": [
+        "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation",
+        "https://www.thetradehq.com/courses/diversification-and-position-sizing",
+        "https://www.thetradehq.com/courses/futures-and-derivatives",
+        "https://www.thetradehq.com/courses/macro-reading-for-traders",
+        "https://www.thetradehq.com/courses/options-trading-fundamentals",
+        "https://www.thetradehq.com/courses/trading-psychology-mastery"
+      ],
+      "observed": "All six track headings extend above the overflow-hidden fixed-aspect hero at360px; long published track titles lose up to about116px. Badge is also clipped.390px affects five headings; futures badge slightly clipped.",
+      "expected": "Full badge, heading and description remain readable inside cover at all five requested widths.",
+      "rootCause": "Absolutely positioned text cannot increase the fixed aspect-ratio parent height.",
+      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "fix": "Keep cover text in normal layout flow with a minimum banner height; position only background layers absolutely.",
+      "risk": "Low interface-only change to shared CourseTrack; no progress or order logic.",
+      "rollback": "Reviewed revert of the cover layout and regression test; no data/settings reversal.",
+      "evidence": "evidence/COURSE-HERO-BEFORE.json",
+      "releaseBlockedBy": "OPS-001",
+      "pr": 213,
+      "candidateSHA": "f5e001cb12a0b8f1b86c38700abab3c0a19d6f7f",
+      "exactHeadRequiredChecks": "PASS",
+      "actualCFPreview": "6tracks x5sizes: zero clipping; long mobile title screenshots inspected.",
+      "merge": "HELD_PENDING_NATIVE_CF_CREDENTIAL_REPAIR"
+    },
+    {
+      "id": "OPS-001",
+      "severity": "P2",
+      "category": "Protected CI credential binding",
+      "adsenseRelevance": "Operational verification limitation, not a public-content policy finding",
+      "state": "BLOCKED_REQUIRES_OWNER_ACTION",
+      "observed": "Fresh full dispatch39789844231 passes required CI, then Cloudflare account token verification returnsHTTP401/code1000. Current cloud environment Pages project read also401; native Vercel production read200 READY exact main.",
+      "proposedFix": "Owner securely replaces CLOUDFLARE_API_TOKEN with active correct-account token in environment settings and GitHub Actions. No values in chat. Then verify native APIs and complete workflow.",
+      "protectedArea": "Production secrets/API credentials",
+      "risk": "Incorrect token/scope can impair release/recovery checks. No DNS, database, deployment token or infrastructure ownership change proposed.",
+      "rollback": "Restore the prior repository secret binding if the owner retains it securely; rerun the read-only monitor. No production data changes.",
+      "evidence": "evidence/PR212-MONITOR-DIAGNOSIS.json"
+    },
+    {
+      "id": "THQ-003",
+      "severity": "P3",
+      "category": "Stale catalog count on Contact",
+      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "urls": [
+        "https://www.thetradehq.com/contact"
+      ],
+      "observed": "Contact links say Courses \u2014 the four structured tracks, with quizzes and completion badges. The settled catalog contains six tracks and26 lessons.",
+      "expected": "Avoid a stale fixed catalog count or use current catalog data.",
+      "rootCause": "Hardcoded count in src/pages/Contact.tsx:299 predates two published tracks.",
+      "proposedFix": "Describe the structured courses without a hardcoded count, retaining the same link.",
+      "risk": "Low, one descriptive text fragment only; no form/data/privacy change.",
+      "adsenseRelevance": "Minor consistency/trust, no specific policy violation established",
+      "evidence": "Settled Contact main text in evidence/live-browser and live course catalog; source literal reproduced.",
+      "rollback": "Reviewed revert of that text fragment.",
+      "releaseOrder": "Prepare separately; release only after current course fix gate complete.",
+      "pr": 214,
+      "candidateSHA": "1139acbed2a58fca4864d2841405bd5a721bbe5a",
+      "localValidation": "Updated CloudflarebuildPASS; actualCloudflarepreview8pagesx5widthsPASS",
+      "mergeAllowed": false,
+      "mergeHold": "Previous release cycle and native Cloudflare credential repair.",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR214-UPDATED-PREVIEW-BROWSER.json"
+    },
+    {
+      "id": "THQ-004",
+      "severity": "P3",
+      "category": "Concatenated public-profile timestamp",
+      "urls": [
+        "https://www.thetradehq.com/trader/forceunstoppable217",
+        "https://www.thetradehq.com/trader/pityuka1312013",
+        "https://www.thetradehq.com/trader/raichevn08",
+        "https://www.thetradehq.com/trader/student-2015",
+        "https://www.thetradehq.com/trader/charmainehurst27",
+        "https://www.thetradehq.com/trader/570008",
+        "https://www.thetradehq.com/trader/tadeas-vrabel",
+        "https://www.thetradehq.com/trader/messimayuri-1",
+        "https://www.thetradehq.com/trader/isiaspart",
+        "https://www.thetradehq.com/trader/sportslordyt",
+        "https://www.thetradehq.com/trader/jose-morale0990",
+        "https://www.thetradehq.com/trader/andresgarciap94"
+      ],
+      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "observed": "Pricing explanation ends prices.Fetched with no separating space when a timestamp exists. Visible in actual desktop capture and settled main text.",
+      "rootCause": "Adjacent JSX string expressions separated only by source newline in PublicTrader.tsx.",
+      "fix": "Explicit literal space after PRICE_REFRESH_COPY; no timestamp/pricing or account logic change.",
+      "risk": "Low, text presentation only",
+      "adsenseRelevance": "General readability, no specific policy violation established",
+      "evidence": "evidence/contact--trader--1280-8.png final panel; findings/PUBLISHER-COPY.md",
+      "rollback": "Reviewed revert of the text separator.",
+      "pr": 214,
+      "candidateSHA": "1139acbed2a58fca4864d2841405bd5a721bbe5a",
+      "localValidation": "Updated CloudflarebuildPASS; actualCloudflarepreview8pagesx5widthsPASS",
+      "mergeAllowed": false,
+      "mergeHold": "Previous release cycle and native Cloudflare credential repair.",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR214-UPDATED-PREVIEW-BROWSER.json"
+    },
+    {
+      "id": "THQ-005",
+      "severity": "P2",
+      "category": "Course catalog light-theme contrast",
+      "urls": [
+        "https://www.thetradehq.com/courses"
+      ],
+      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "observed": "After real theme switch and fresh settled load, heading gradient uses white/emerald200/emerald400 againstRGB247 background. Stop contrasts1.07/1.20/1.79:1; highlighted normal-size100k phrase is1.79:1. Both mobile360 and desktop1280 visibly faint.",
+      "expected": "Large heading at least3:1 and normal accent copy at least4.5:1 against its background, consistent with WCAG contrast benchmarks.",
+      "rootCause": "Pale fixed color utilities remain unchanged when the site enters light theme.",
+      "fix": "Course-specific light-theme gradient with darker emerald stops and darker emerald accent text; retain existing dark-theme colors and all content/layout.",
+      "files": [
+        "src/pages/Courses.tsx",
+        "src/index.css",
+        "scripts/verify-publisher-browser.mjs"
+      ],
+      "risk": "Low interface-only, scoped selectors for course catalog. No user/account/financial/ad/consent change.",
+      "test": "Expected oldcompiledcontrastfailure; candidateCloudflarebuild/fullphase6PASS. ActualCFpreview5widthsx2themesPASS. Initialheadpresenceharnessfailurepreserved; no productionmetadatachange.",
+      "evidence": "evidence/COURSES-LIGHT-CONTRAST-BEFORE.json; courses-light-settled-360.png and1280.png",
+      "adsenseRelevance": "Accessibility/readability improvement; not a specific Publisher Policy violation or whole-site WCAG-compliance claim.",
+      "rollback": "Reviewed revert of scoped classes/style and associated regression; no data/settings reversal.",
+      "mergeAllowed": false,
+      "releaseHold": "Previous prepared batches and current native Cloudflare API401.",
+      "pr": 215,
+      "candidateSHA": "4baff25b9ded86bebbcfe9f21b51e61cc96f692f",
+      "localValidation": "Cloudflare build and full phase-six browserPASS, both themes x5sizes; expected old contrast regression failure. Initial niche head-node timing failure preserved; readiness waits for presence and retains exact-value assertions.",
+      "exactHeadRequiredChecks": "PASS",
+      "actualPreview": "Lightminimum5.1189:1/dark10.2985:1; screenshots360/1280viewed"
+    },
+    {
+      "id": "THQ-006",
+      "severity": "P2",
+      "category": "Published and earlier course badges hidden on local profile",
+      "urls": [
+        "https://www.thetradehq.com/trader/me"
+      ],
+      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "observed": "A fresh disposable guest completes both3lesson published tracks. Browser progress has2earnedbadges/6completed lessons; own profile incorrectly says No completion badges yet. All26real quiz interfaces completed in that isolated browser without Supabase write attempts/runtime exceptions.",
+      "rootCause": "TraderProfile derives badge display only from the4bundled courseTracks array, hiding earned published/removed-course records.",
+      "fix": "Read earned local badge records and use current public catalog for names, with explicit course-completion fallback names when unavailable. Keep local progress storage and all financial/visibility logic.",
+      "files": [
+        "src/pages/TraderProfile.tsx",
+        "scripts/verify-publisher-browser.mjs"
+      ],
+      "risk": "Low interface display correction. Existing courseProgress storage code, account/profile visibility controls and financial calculations unchanged.",
+      "evidence": "evidence/live-quiz/own-profile-after-two-published-tracks.json and390px screenshot; live-quiz/SUMMARY.json has26PASS,0blocked writes,0runtime errors.",
+      "test": "Old compiled app fails actual published-badge assertion. Candidate TypeScript, Cloudflare build and complete phase6PASS. Actual6lesson completion, existing native/retired records, missingcatalogfallback, unchanged progress/financialtiles and5widthbounds checked.",
+      "adsenseRelevance": "Genuine secondary functionality/trust issue; no specific Publisher Policy breach established.",
+      "rollback": "Reviewed revert of display and associated test; existing badge/progress records remain, so no record rollback.",
+      "mergeAllowed": false,
+      "releaseHold": "Current native Cloudflare API401 and required serial production verification.",
+      "pr": 216,
+      "candidateSHA": "c7972692f14f498f242e03aff8f01faba1539f86",
+      "preview": "Actual CFpreview2publishedbadges visible at5widths; own preview storage unchanged. Native provider signal and exacthead checks separately staged.",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PUBLISHED-BADGES-PREVIEW.json"
+    },
+    {
+      "id": "THQ-007",
+      "severity": "P3",
+      "category": "Doubled guide quick-answer punctuation",
+      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "urls": [
+        "https://www.thetradehq.com/how-to-trade/btc",
+        "https://www.thetradehq.com/how-to-trade/eth",
+        "https://www.thetradehq.com/how-to-trade/sol",
+        "https://www.thetradehq.com/how-to-trade/tsla",
+        "https://www.thetradehq.com/how-to-trade/nvda",
+        "https://www.thetradehq.com/how-to-trade/spy"
+      ],
+      "observed": "All6actual public quick answers render third step ending full stop plus an additional appended full stop before Practise.",
+      "rootCause": "Shared HowToTrade JSX appends an unnecessary full stop after complete sentence steps.",
+      "fix": "Remove redundant appended full stop; retain original steps, financial examples and links.",
+      "risk": "Low punctuation-only, no record/logic/privacy change.",
+      "pr": 214,
+      "evidence": "evidence/GUIDE-PUNCTUATION-BEFORE.json and guide-punctuation-before-1280.png",
+      "rollback": "Reviewed revert of one punctuation literal.",
+      "mergeAllowed": false,
+      "releaseHold": "Current Cloudflare native credential401 and serial verification.",
+      "candidateSHA": "1139acbed2a58fca4864d2841405bd5a721bbe5a",
+      "localValidation": "Updated CloudflarebuildPASS; actualCloudflarepreview8pagesx5widthsPASS",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR214-UPDATED-PREVIEW-BROWSER.json"
+    }
+  ],
+  "updatedAt": "2026-10-22T16:20:03.948325+00:00",
+  "counts": {
+    "siteFindings": 7,
+    "P2": 3,
+    "P3": 4,
+    "publiclyRepaired": 1,
+    "preparedNotMerged": 6,
+    "separateOperationalBlockers": 1
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-10-22T15:01:38.429219+00:00",
+  "scope": "Actual primary-source text read from22Oct TLS-preserving source downloads; not full-source or professional verification. CMEcontractSpecs HTML was read but did not expose full dynamic specifications; multiplier/tick source corroboration remains pending.",
+  "checks": [
+    {
+      "source": "https://www.cmegroup.com/education/courses/introduction-to-futures/margin-know-what-is-needed",
+      "supports": "Initial versus maintenance margin, potential margin call/additional funds or liquidation; not a fixed current margin requirement."
+    },
+    {
+      "source": "https://www.cmegroup.com/education/courses/introduction-to-precious-metals/what-is-contango-and-backwardation",
+      "supports": "Contango forward above spot, backwardation below; carry/convenience-yield context and changing curves, not deterministic future prices."
+    },
+    {
+      "source": "https://www.federalreserve.gov/monetarypolicy/fomc.htm",
+      "supports": "Eight regularly scheduled FOMC meetings per year; twelve committee members under stated rotation."
+    },
+    {
+      "source": "https://www.nyse.com/network/article/nyse-increases-resiliancy-during-extreme-volatility",
+      "supports": "US marketwide7/13/20% thresholds; L1/L2before3:25pm15-minute halts, at/after nohalt; L3restofday."
+    },
+    {
+      "source": "https://www.luldplan.com/",
+      "supports": "Separate individual-security price bands depend on tier/reference price; not interchangeable with marketwide thresholds."
+    },
+    {
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+      "supports": "Actually read W3C minimum contrast explanation:3:1 large text and4.5:1 normal text. Used as scoped accessibility benchmark for THQ005, not invented AdSense-specific requirement or whole-site WCAG certification."
+    }
+  ]
+}

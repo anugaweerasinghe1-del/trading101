@@ -1,0 +1,10 @@
+// Labelled gallery of unchanged original browser captures, served only internally.
+import {readFileSync,readdirSync,writeFileSync} from 'node:fs';
+import {resolve,join} from 'node:path';
+import {openAuditPage,pause} from './browser-session.mjs';
+const root=resolve('docs/adsense-2026-10-22'),prefix=process.argv[2]||'/compare/',width=Number(process.argv[3]||360),offset=Number(process.argv[4]||0),count=Number(process.argv[5]||8);
+const records=readdirSync(join(root,'evidence/live-browser')).filter(n=>n.endsWith('.json')).map(n=>JSON.parse(readFileSync(join(root,'evidence/live-browser',n),'utf8'))).filter(d=>d.path.startsWith(prefix)&&d.status==='COLLECTED_NOT_YET_REVIEWED').sort((a,b)=>a.path.localeCompare(b.path));
+const batch=records.slice(offset,offset+count),cols=width===360?4:2,sheetWidth=cols*width,sheetHeight=Math.ceil(batch.length/cols)*835,name='contact-'+prefix.replaceAll('/','-')+'-'+width+'-'+offset;
+const cards=batch.map(d=>`<div><label>${d.path}</label><img src="${d.viewports.find(v=>v.width===width).screenshot}" width="${width}" height="800"></div>`).join('');
+writeFileSync(join(root,name+'.html'),`<!doctype html><meta charset="utf-8"><title>Original viewport captures</title><style>body{margin:0;background:#202020;display:grid;grid-template-columns:repeat(${cols},${width}px);font:14px Arial;color:white}label{display:block;height:35px;line-height:35px;white-space:nowrap;overflow:hidden}img{display:block;object-fit:contain;object-position:top;background:#080808}</style>${cards}`);
+const page=await openAuditPage('http://127.0.0.1:8891/'+name+'.html');try{await page.send('Emulation.setDeviceMetricsOverride',{width:sheetWidth,height:sheetHeight,deviceScaleFactor:1,mobile:false});await page.evaluate('Promise.all([...document.images].map(i=>i.complete?null:new Promise(r=>{i.onload=i.onerror=r})))',true);await pause(100);const file=join(root,'evidence',name+'.png');await page.screenshot(file);console.log(JSON.stringify({file,paths:batch.map(d=>d.path),width:sheetWidth,height:sheetHeight}));}finally{await page.close();}

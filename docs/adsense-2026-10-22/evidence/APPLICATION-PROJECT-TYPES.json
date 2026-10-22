@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-10-22T16:36:50.673819+00:00",
+  "command": "npx tsc --noEmit -p tsconfig.app.json",
+  "results": [
+    {
+      "pr": 214,
+      "sha": "1139acbed2a58fca4864d2841405bd5a721bbe5a",
+      "exitCode": 0,
+      "sourceTree": "All src files compared against exact committed candidate; no differences before subsequent candidate replacement."
+    },
+    {
+      "pr": 216,
+      "sha": "c7972692f14f498f242e03aff8f01faba1539f86",
+      "exitCode": 0,
+      "sourceFilesCompared": 285,
+      "sourceTree": "All src blobs match exact candidate after archive replacement."
+    }
+  ],
+  "scope": "Actual application project, not empty root reference-project invocation. No production code/data changed. Both command sessions completed exit0."
+}

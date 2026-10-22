@@ -1,0 +1,48 @@
+{
+  "expectedSHA": "aa216a24c68c30c9251f96a050da098b33364686",
+  "observations": [
+    {
+      "attempt": 1,
+      "checkedAt": "2026-10-22T12:47:12.539544+00:00",
+      "sha": "aa216a24c68c30c9251f96a050da098b33364686",
+      "cloudflareActive": {
+        "id": "a48650b5-b13e-436f-a097-a3a04111dbba",
+        "environment": "production",
+        "project": "tradehq-preview",
+        "commit": "aa216a24c68c30c9251f96a050da098b33364686",
+        "branch": "main",
+        "stage": "deploy",
+        "status": "success"
+      },
+      "cloudflareLatest": {
+        "id": "a48650b5-b13e-436f-a097-a3a04111dbba",
+        "environment": "production",
+        "project": "tradehq-preview",
+        "commit": "aa216a24c68c30c9251f96a050da098b33364686",
+        "branch": "main",
+        "stage": "deploy",
+        "status": "success"
+      },
+      "vercel": {
+        "id": "dpl_64tgq5fomNQwHZifS9iQVd7UEM4x",
+        "project": "trading101",
+        "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+        "target": "production",
+        "state": "READY",
+        "commit": "aa216a24c68c30c9251f96a050da098b33364686",
+        "branch": "main",
+        "repo": "trading101",
+        "owner": "anugaweerasinghe1-del",
+        "aliases": [
+          "www.thetradehq.com",
+          "thetradehq.com",
+          "tradinghq.vercel.app",
+          "trading101-venomog.vercel.app",
+          "trading101-git-main-venomog.vercel.app"
+        ]
+      },
+      "success": true
+    }
+  ],
+  "state": "NATIVE_PROVIDERS_CONFIRMED"
+}

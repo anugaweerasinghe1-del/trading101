@@ -1,0 +1,29 @@
+BROWSER_NAVIGATE http://127.0.0.1:35279/about
+BROWSER_NAVIGATE http://127.0.0.1:35279/about
+BROWSER_NAVIGATE http://127.0.0.1:35279/about
+BROWSER_NAVIGATE http://127.0.0.1:35279/about
+BROWSER_NAVIGATE http://127.0.0.1:35279/about
+BROWSER_NAVIGATE http://127.0.0.1:35279/trader/me
+BROWSER_NAVIGATE http://127.0.0.1:35279/courses/cryptocurrency-price-feeds-and-valuation/exchange-tickers-and-price-aggregation
+BROWSER_NAVIGATE http://127.0.0.1:35279/courses/cryptocurrency-price-feeds-and-valuation/api-delays-and-portfolio-valuation
+BROWSER_NAVIGATE http://127.0.0.1:35279/courses/cryptocurrency-price-feeds-and-valuation/portfolio-rebalancing-and-cash-drag
+BROWSER_NAVIGATE http://127.0.0.1:35279/courses/diversification-and-position-sizing/foundations-of-asset-allocation
+BROWSER_NAVIGATE http://127.0.0.1:35279/courses/diversification-and-position-sizing/managing-concentration-risk
+BROWSER_NAVIGATE http://127.0.0.1:35279/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash
+BROWSER_NAVIGATE http://127.0.0.1:35279/trader/me
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Own profile displays both published-course badges
+    at waitUntil (file:///workspace/trading101-validation/scripts/verify-publisher-browser.mjs:185:12)
+    at async file:///workspace/trading101-validation/scripts/verify-publisher-browser.mjs:269:3 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: undefined,
+  expected: undefined,
+  operator: 'fail',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

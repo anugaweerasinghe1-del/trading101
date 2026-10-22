@@ -1,0 +1,113 @@
+{
+  "updatedAt": "2026-10-22T16:20:03.948325+00:00",
+  "releases": [
+    {
+      "finding": "THQ-001",
+      "pr": 212,
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/212",
+      "candidateSHA": "07bb1ba12941a23eec876b16ff57e3a96f17a91c",
+      "mergeSHA": "aa216a24c68c30c9251f96a050da098b33364686",
+      "state": "PUBLICLY_VERIFIED_WITH_SEPARATE_OPERATIONAL_MONITOR_BLOCKER",
+      "exactHeadRequiredChecks": "PASS",
+      "previews": {
+        "cloudflare": "b5ca36d0-0a2d-4db5-b27a-d1adc6cc5446",
+        "vercel": "dpl_J13WW4KPYX3iAvejv3knV92n4dnd",
+        "browser": "Five widths: zero overlap"
+      },
+      "production": {
+        "cloudflare": "a48650b5-b13e-436f-a097-a3a04111dbba",
+        "cloudflareStatus": "SUCCESS",
+        "vercel": "dpl_64tgq5fomNQwHZifS9iQVd7UEM4x",
+        "vercelStatus": "READY",
+        "sameMergeSHA": true
+      },
+      "liveRecheck": {
+        "aboutFiveWidths": "PASS, zero overlap",
+        "guestChecks": 8,
+        "guestChecksPassed": 8,
+        "productionDataMutation": false
+      },
+      "monitor": {
+        "run": 39780976847,
+        "attempt": 3,
+        "requiredChecks": "PASS",
+        "releaseSignals": "FAIL: Cloudflare account token verification unavailable (HTTP401; code1000)",
+        "releaseReadiness": "SKIPPED",
+        "ownerAction": "Repair CLOUDFLARE_API_TOKEN securely in cloud environment settings and GitHub Actions. Current native Cloudflare production verification cannot authenticate, so preserve PR213 as reviewed draft.",
+        "localSameScript": "Historical PASS before environment refresh; current Codex Cloudflare binding rejected401. Do not treat as current successful verification.",
+        "secondReleaseAllowed": false,
+        "latestFreshRun": 39789844231,
+        "ownerUpdateObserved": true,
+        "currentCodexCloudflareRead": "HTTP401 after environment configuration refresh",
+        "currentCodexVercelRead": "HTTP200 READY, exact productionSHA"
+      },
+      "evidence": [
+        "evidence/PR212-PREMERGE-CHECKS.json",
+        "evidence/PR212-PREVIEW-PROVIDERS.json",
+        "evidence/PR212-PRODUCTION-PROVIDERS.json",
+        "evidence/ABOUT-OVERLAP-AFTER.json",
+        "evidence/POST-PR212-GUEST-SMOKE.json",
+        "evidence/PR212-MONITOR-DIAGNOSIS.json"
+      ]
+    }
+  ],
+  "nextCandidate": {
+    "finding": "THQ-002",
+    "state": "FIX_TESTED_PREVIEW_VERIFIED",
+    "mergeAllowed": false,
+    "reason": "Current Cloudflare credential rejected401; cannot perform required native production verification after another merge.",
+    "pr": 213,
+    "candidateSHA": "f5e001cb12a0b8f1b86c38700abab3c0a19d6f7f",
+    "exactHeadRequiredChecks": "PASS",
+    "nativePreviews": "CloudflareSUCCESS and VercelREADY for candidate",
+    "actualCloudflarePreview": "All6tracks x5widths: zero badge/title clipping, two long mobile titles and desktop manually viewed"
+  },
+  "independentFutureCandidate": {
+    "pr": 214,
+    "candidateSHA": "1139acbed2a58fca4864d2841405bd5a721bbe5a",
+    "branch": "audit/publisher-copy-20261022",
+    "findings": [
+      "THQ-003",
+      "THQ-004",
+      "THQ-007"
+    ],
+    "baseSHA": "aa216a24c68c30c9251f96a050da098b33364686",
+    "state": "DRAFT_PREVIEW_PASS_REQUIRED_CI_PASS",
+    "mergeAllowed": false,
+    "reason": "PR213 must finish release cycle first; current Cloudflare API401 prevents required native verification.",
+    "exactHeadRequiredChecks": "PASS",
+    "actualPreview": "All8affectedpages x5sizesPASS",
+    "nativeVercel": "READY exacthead",
+    "cloudflare": "TrustedGitHubnativepreviewcheckSUCCESS; authenticatedAPIunverified401"
+  },
+  "lightContrastCandidate": {
+    "pr": 215,
+    "candidateSHA": "4baff25b9ded86bebbcfe9f21b51e61cc96f692f",
+    "branch": "audit/course-light-contrast-20261022",
+    "state": "DRAFT_REQUIRED_CI_PASS_ACTUAL_PREVIEW_PASS",
+    "finding": "THQ-005",
+    "mergeAllowed": false,
+    "baseSHA": "aa216a24c68c30c9251f96a050da098b33364686",
+    "hold": "Current native Cloudflare401; previous release cycle must finish.",
+    "exactHeadRequiredChecks": "PASS",
+    "actualPreview": "5widthsx2themescontrastPASS"
+  },
+  "proposedReleasePriority": [
+    213,
+    216,
+    215,
+    214
+  ],
+  "badgeCandidate": {
+    "pr": 216,
+    "candidateSHA": "c7972692f14f498f242e03aff8f01faba1539f86",
+    "finding": "THQ-006",
+    "state": "DRAFT_REQUIRED_CI_PASS_ACTUAL_PREVIEW_PASS",
+    "exactHeadRequiredChecks": "PASS",
+    "actualPreview": "Bothpublishedbadges5widthsPASS;ownpreviewprogressunchanged",
+    "nativeVercel": "READY exacthead",
+    "cloudflare": "TrustedGitHubnativepreviewcheckSUCCESS; authenticatedAPIunverified401",
+    "mergeAllowed": false,
+    "hold": "CurrentCloudflare401; serialnativeproductionverificationrequired"
+  }
+}

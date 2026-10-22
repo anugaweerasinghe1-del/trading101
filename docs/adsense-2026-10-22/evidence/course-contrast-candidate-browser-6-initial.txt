@@ -1,0 +1,48 @@
+BROWSER_NAVIGATE http://127.0.0.1:45767/about
+BROWSER_NAVIGATE http://127.0.0.1:45767/about
+BROWSER_NAVIGATE http://127.0.0.1:45767/about
+BROWSER_NAVIGATE http://127.0.0.1:45767/about
+BROWSER_NAVIGATE http://127.0.0.1:45767/about
+BROWSER_NAVIGATE http://127.0.0.1:45767/courses
+BROWSER_NAVIGATE http://127.0.0.1:45767/courses
+BROWSER_NAVIGATE http://127.0.0.1:45767/courses
+BROWSER_NAVIGATE http://127.0.0.1:45767/courses
+BROWSER_NAVIGATE http://127.0.0.1:45767/courses
+BROWSER_NAVIGATE http://127.0.0.1:45767/learn/1
+BROWSER_NAVIGATE http://127.0.0.1:45767/learn/2
+BROWSER_NAVIGATE http://127.0.0.1:45767/learn/3
+BROWSER_NAVIGATE http://127.0.0.1:45767/learn/4
+BROWSER_NAVIGATE http://127.0.0.1:45767/learn/5
+BROWSER_NAVIGATE http://127.0.0.1:45767/learn/6
+BROWSER_NAVIGATE http://127.0.0.1:45767/niche/btc
+BROWSER_NAVIGATE http://127.0.0.1:45767/niche/eth
+BROWSER_NAVIGATE http://127.0.0.1:45767/niche/sol
+BROWSER_NAVIGATE http://127.0.0.1:45767/niche/xrp
+BROWSER_NAVIGATE http://127.0.0.1:45767/niche/bnb
+BROWSER_NAVIGATE http://127.0.0.1:45767/niche/ada
+BROWSER_NAVIGATE http://127.0.0.1:45767/niche/doge
+BROWSER_NAVIGATE http://127.0.0.1:45767/niche/avax
+BROWSER_NAVIGATE http://127.0.0.1:45767/niche/dot
+BROWSER_NAVIGATE http://127.0.0.1:45767/niche/matic
+BROWSER_NAVIGATE http://127.0.0.1:45767/niche/link
+BROWSER_NAVIGATE http://127.0.0.1:45767/niche/ltc
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: LTC: retain noindex
++ actual - expected
+
++ undefined
+- 'noindex, follow'
+
+    at file:///workspace/trading101-validation/scripts/verify-publisher-browser.mjs:281:12 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: undefined,
+  expected: 'noindex, follow',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

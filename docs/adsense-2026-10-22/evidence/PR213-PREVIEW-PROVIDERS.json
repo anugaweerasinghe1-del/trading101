@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-10-22T13:38:45.739317+00:00",
+  "candidate": "f5e001cb12a0b8f1b86c38700abab3c0a19d6f7f",
+  "cloudflare": {
+    "id": "dc717b9d-0812-455e-89c9-0d24ae6b35b9",
+    "environment": "preview",
+    "stage": {
+      "name": "deploy",
+      "started_on": "2026-10-22T13:35:20.38173Z",
+      "ended_on": "2026-10-22T13:35:39.886451Z",
+      "status": "success"
+    },
+    "commit": "f5e001cb12a0b8f1b86c38700abab3c0a19d6f7f",
+    "branch": "audit/course-hero-clipping-20261022",
+    "url": "https://dc717b9d.tradehq-preview.pages.dev"
+  },
+  "vercel": {
+    "id": "dpl_FuFqSYv1zCwuKf5gq7EwopXL3LrH",
+    "state": "READY",
+    "target": null,
+    "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+    "commit": "f5e001cb12a0b8f1b86c38700abab3c0a19d6f7f",
+    "branch": "audit/course-hero-clipping-20261022",
+    "url": "trading101-pyis29a97-venomog.vercel.app"
+  }
+}

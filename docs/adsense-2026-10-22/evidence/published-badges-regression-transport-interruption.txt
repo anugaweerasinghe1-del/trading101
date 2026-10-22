@@ -1,0 +1,13 @@
+BROWSER_NAVIGATE http://127.0.0.1:37859/about
+BROWSER_NAVIGATE http://127.0.0.1:37859/about
+BROWSER_NAVIGATE http://127.0.0.1:37859/about
+file:///workspace/trading101-validation/scripts/verify-publisher-browser.mjs:56
+    const id = ++sequence; const timer = setTimeout(() => { pending.delete(id); reject(Error("CDP timeout: " + method + (params.url ? " " + params.url : ""))); }, 10000);
+                                                                                       ^
+
+Error: CDP timeout: Emulation.setDeviceMetricsOverride
+    at Timeout._onTimeout (file:///workspace/trading101-validation/scripts/verify-publisher-browser.mjs:56:88)
+    at listOnTimeout (node:internal/timers:635:17)
+    at process.processTimers (node:internal/timers:571:7)
+
+Node.js v24.19.0

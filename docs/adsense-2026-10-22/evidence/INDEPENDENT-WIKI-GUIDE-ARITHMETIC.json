@@ -1,0 +1,132 @@
+{
+  "checkedAt": "2026-10-22T16:21:17.477000+00:00",
+  "scope": "Independent Decimal calculations from actually read glossary and six trading-guide examples. Fixed hypothetical inputs, not a forecast or financial-engine test. No account/portfolio records changed.",
+  "cases": [
+    {
+      "name": "Securities margin equity share",
+      "independentExpression": "(8000-6000)/8000",
+      "computed": "0.25",
+      "expected": ".25",
+      "pass": true
+    },
+    {
+      "name": "Conditional maker gross spread",
+      "independentExpression": "100*(10.02-10)",
+      "computed": "2.00",
+      "expected": "2",
+      "pass": true
+    },
+    {
+      "name": "Paper roundtrip after both fees",
+      "independentExpression": "10*19*.999-10*20*1.001",
+      "computed": "-10.390",
+      "expected": "-10.39",
+      "pass": true
+    },
+    {
+      "name": "Fixed payoff break even",
+      "independentExpression": "0.25*3-0.75",
+      "computed": "0.00",
+      "expected": "0",
+      "pass": true
+    },
+    {
+      "name": "Short closing loss before borrow",
+      "independentExpression": "10*(20-28)",
+      "computed": "-80",
+      "expected": "-80",
+      "pass": true
+    },
+    {
+      "name": "Adverse buy slippage",
+      "independentExpression": "100*(10.05-10)",
+      "computed": "5.00",
+      "expected": "5",
+      "pass": true
+    },
+    {
+      "name": "Favorable buy saving",
+      "independentExpression": "100*(10-9.98)",
+      "computed": "2.00",
+      "expected": "2",
+      "pass": true
+    },
+    {
+      "name": "Cross-session gap loss",
+      "independentExpression": "20*(45-50)",
+      "computed": "-100",
+      "expected": "-100",
+      "pass": true
+    },
+    {
+      "name": "Weighted price sample",
+      "independentExpression": "(10*100+30*104)/40",
+      "computed": "103",
+      "expected": "103",
+      "pass": true
+    },
+    {
+      "name": "SOL net roundtrip",
+      "independentExpression": "40*130*.999-40*125*1.001",
+      "computed": "189.800",
+      "expected": "189.80",
+      "pass": true
+    },
+    {
+      "name": "ETH equity loss after buy fee",
+      "independentExpression": "2*2400-2*2500*1.001",
+      "computed": "-205.000",
+      "expected": "-205",
+      "pass": true
+    },
+    {
+      "name": "ETH loss after both fees",
+      "independentExpression": "2*2400*.999-2*2500*1.001",
+      "computed": "-209.800",
+      "expected": "-209.80",
+      "pass": true
+    },
+    {
+      "name": "BTC new holding percentage",
+      "independentExpression": "11000/101000*100",
+      "computed": "10.89",
+      "expected": "10.89",
+      "pass": true
+    },
+    {
+      "name": "BTC marked equity after entry fee",
+      "independentExpression": "90000-10000*.001+11000",
+      "computed": "100990.000",
+      "expected": "100990",
+      "pass": true
+    },
+    {
+      "name": "TSLA stressed gross price loss",
+      "independentExpression": "20*(180-200)",
+      "computed": "-400",
+      "expected": "-400",
+      "pass": true
+    },
+    {
+      "name": "NVDA direct plus fund exposure percent",
+      "independentExpression": "(2000+8000*.1)/10000*100",
+      "computed": "28.00",
+      "expected": "28",
+      "pass": true
+    },
+    {
+      "name": "NVDA assumed stressed loss",
+      "independentExpression": "(2000+8000*.1)*-.1",
+      "computed": "-280.00",
+      "expected": "-280",
+      "pass": true
+    },
+    {
+      "name": "SPY marked equity after entry fee",
+      "independentExpression": "95000-5000*.001+5000*.98",
+      "computed": "99895.000",
+      "expected": "99895",
+      "pass": true
+    }
+  ]
+}

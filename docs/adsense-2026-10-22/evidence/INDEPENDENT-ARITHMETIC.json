@@ -1,0 +1,77 @@
+{
+  "scope": "Independent Decimal calculations from today's fetched initial page text; no application or trade-execution logic changed",
+  "cases": [
+    {
+      "case": "Scalping net BTC at selected positive gross exit",
+      "actual": "-100.330",
+      "expected": "-100.330",
+      "result": "PASS"
+    },
+    {
+      "case": "Scalping net BTC at selected losing gross exit",
+      "actual": "-230.200",
+      "expected": "-230.200",
+      "result": "PASS"
+    },
+    {
+      "case": "Scalping fee-only break even rounded to cents",
+      "actual": "95310.43",
+      "expected": "95310.43",
+      "result": "PASS"
+    },
+    {
+      "case": "Risk article: 200 shares fee-inclusive loss",
+      "actual": "1039.000",
+      "expected": "1039.000",
+      "result": "PASS"
+    },
+    {
+      "case": "Risk article: 192 shares fee-inclusive loss",
+      "actual": "997.440",
+      "expected": "997.440",
+      "result": "PASS"
+    },
+    {
+      "case": "Risk article: hypothetical expectancy",
+      "actual": "0.2",
+      "expected": "0.2",
+      "result": "PASS"
+    },
+    {
+      "case": "DCA first example average unit cost rounded",
+      "actual": "13.33",
+      "expected": "13.33",
+      "result": "PASS"
+    },
+    {
+      "case": "DCA lower-cost but losing holding",
+      "actual": "-50",
+      "expected": "-50",
+      "result": "PASS"
+    },
+    {
+      "case": "BTC tutorial fee-inclusive marked equity",
+      "actual": "100990",
+      "expected": "100990",
+      "result": "PASS"
+    },
+    {
+      "case": "BTC tutorial new portfolio weight percent rounded",
+      "actual": "10.89",
+      "expected": "10.89",
+      "result": "PASS"
+    },
+    {
+      "case": "ETH tutorial total loss on sale after fees",
+      "actual": "209.800",
+      "expected": "209.800",
+      "result": "PASS"
+    },
+    {
+      "case": "SPY tutorial marked account equity",
+      "actual": "99895",
+      "expected": "99895",
+      "result": "PASS"
+    }
+  ]
+}

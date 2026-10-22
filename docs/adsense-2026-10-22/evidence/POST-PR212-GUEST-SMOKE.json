@@ -1,0 +1,91 @@
+{
+  "checkedAt": "2026-10-22T12:49:33.491Z",
+  "scope": "Actual production in a new disposable unauthenticated browser. No order, account creation, contact submission or protected record update. Lesson action was local component state; mentor is source-verified local matching.",
+  "checks": [
+    {
+      "name": "Mobile menu opens and has named dialog",
+      "passed": true,
+      "observation": true,
+      "checkedAt": "2026-10-22T12:49:27.343Z"
+    },
+    {
+      "name": "Escape closes menu and restores opener focus",
+      "passed": true,
+      "observation": true,
+      "checkedAt": "2026-10-22T12:49:28.039Z"
+    },
+    {
+      "name": "Markets search exposes Bitcoin practice link",
+      "passed": true,
+      "observation": true,
+      "checkedAt": "2026-10-22T12:49:29.796Z"
+    },
+    {
+      "name": "Asset navigation aligns URL heading and canonical",
+      "passed": true,
+      "observation": true,
+      "checkedAt": "2026-10-22T12:49:30.667Z"
+    },
+    {
+      "name": "Browser back returns to Markets",
+      "passed": true
+    },
+    {
+      "name": "Legacy lesson Continue changes local subtopic",
+      "passed": true,
+      "observation": true,
+      "checkedAt": "2026-10-22T12:49:32.175Z"
+    },
+    {
+      "name": "Lesson navigation remains within 360px viewport",
+      "passed": true,
+      "observation": true,
+      "checkedAt": "2026-10-22T12:49:32.181Z"
+    },
+    {
+      "name": "Mentor returns labelled built-in educational response",
+      "passed": true,
+      "observation": true,
+      "checkedAt": "2026-10-22T12:49:33.491Z"
+    }
+  ],
+  "runtimeErrors": [],
+  "nonGetRequests": [
+    {
+      "method": "POST",
+      "url": "https://cloudflareinsights.com/cdn-cgi/rum"
+    },
+    {
+      "method": "POST",
+      "url": "https://cloudflareinsights.com/cdn-cgi/rum"
+    },
+    {
+      "method": "POST",
+      "url": "https://cloudflareinsights.com/cdn-cgi/rum"
+    },
+    {
+      "method": "POST",
+      "url": "https://cloudflareinsights.com/cdn-cgi/rum"
+    },
+    {
+      "method": "POST",
+      "url": "https://cloudflareinsights.com/cdn-cgi/rum"
+    },
+    {
+      "method": "POST",
+      "url": "https://cloudflareinsights.com/cdn-cgi/rum"
+    },
+    {
+      "method": "POST",
+      "url": "https://cloudflareinsights.com/cdn-cgi/rum"
+    },
+    {
+      "method": "POST",
+      "url": "https://cloudflareinsights.com/cdn-cgi/rum"
+    }
+  ],
+  "failure": null,
+  "limitations": [
+    "Google Fonts, AdSense script and Cloudflare beacon remain denied by environment policy. Full production UI/ad/consent review remains incomplete."
+  ]
+}

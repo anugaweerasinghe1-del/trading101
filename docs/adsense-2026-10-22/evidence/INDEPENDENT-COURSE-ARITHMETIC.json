@@ -1,0 +1,146 @@
+{
+  "generatedAt": "2026-10-22T15:05:01.136883+00:00",
+  "scope": "Independent Decimal classroom calculations from actually read course/article examples. No protected financial engine or user account changed; not a suitability/forecast claim. All assumptions fixed as shown.",
+  "cases": [
+    {
+      "name": "Two-venue unit-volume reference",
+      "independentExpression": "(10*1000+11*100)/1100",
+      "computed": "10.09090909090909090909090909",
+      "expected": "10.09090909090909090909090909",
+      "pass": true
+    },
+    {
+      "name": "Three-venue unit-volume reference",
+      "independentExpression": "(5*50+5.2*30+4.8*20)/100",
+      "computed": "5.02",
+      "expected": "5.02",
+      "pass": true
+    },
+    {
+      "name": "Delayed mark difference",
+      "independentExpression": "100*(12-11.50)",
+      "computed": "50.00",
+      "expected": "50",
+      "pass": true
+    },
+    {
+      "name": "Assumed adverse buy fill",
+      "independentExpression": "10*(1+0.01)",
+      "computed": "10.10",
+      "expected": "10.10",
+      "pass": true
+    },
+    {
+      "name": "80/20 rising example",
+      "independentExpression": "80000*1.1+20000",
+      "computed": "108000.0",
+      "expected": "108000",
+      "pass": true
+    },
+    {
+      "name": "80/20 falling example",
+      "independentExpression": "80000*.9+20000",
+      "computed": "92000.0",
+      "expected": "92000",
+      "pass": true
+    },
+    {
+      "name": "50/50 sale equal values",
+      "independentExpression": "60000-S =40000+.999*S, S=10000/.9995",
+      "computed": "1E-23",
+      "expected": "0",
+      "pass": true
+    },
+    {
+      "name": "25% buy target after fee",
+      "independentExpression": "B/(100000-.001B)",
+      "computed": "0.25",
+      "expected": "0.25",
+      "pass": true
+    },
+    {
+      "name": "Fee-aware rebalance cash",
+      "independentExpression": "20000+10008*.999-9992*1.001",
+      "computed": "19996.000",
+      "expected": "19996",
+      "pass": true
+    },
+    {
+      "name": "Fee-aware rebalance total",
+      "independentExpression": "39992*2+19996",
+      "computed": "99980",
+      "expected": "99980",
+      "pass": true
+    },
+    {
+      "name": "70/30 to60/40 fee-aware holding weight",
+      "independentExpression": "(70000-S)/(100000-.001S)",
+      "computed": "0.6000000000000000000000000000",
+      "expected": "0.6",
+      "pass": true
+    },
+    {
+      "name": "Fee-inclusive192-share loss",
+      "independentExpression": "192*(5+.1+.095)",
+      "computed": "997.440",
+      "expected": "997.44",
+      "pass": true
+    },
+    {
+      "name": "Bull-call spread at180",
+      "independentExpression": "100*(max(P-180,0)-max(P-185,0))-200-8",
+      "computed": "-208",
+      "expected": "-208",
+      "pass": true
+    },
+    {
+      "name": "Bull-call spread at182",
+      "independentExpression": "100*(max(P-180,0)-max(P-185,0))-200-8",
+      "computed": "-8",
+      "expected": "-8",
+      "pass": true
+    },
+    {
+      "name": "Bull-call spread at185",
+      "independentExpression": "100*(max(P-180,0)-max(P-185,0))-200-8",
+      "computed": "292",
+      "expected": "292",
+      "pass": true
+    },
+    {
+      "name": "ES tick",
+      "independentExpression": "0.25*50",
+      "computed": "12.50",
+      "expected": "12.5",
+      "pass": true
+    },
+    {
+      "name": "MES tick",
+      "independentExpression": "0.25*5",
+      "computed": "1.25",
+      "expected": "1.25",
+      "pass": true
+    },
+    {
+      "name": "ES1%notional movement",
+      "independentExpression": "5000*50*.01",
+      "computed": "2500.00",
+      "expected": "2500",
+      "pass": true
+    },
+    {
+      "name": "20%drawdown recovery",
+      "independentExpression": "1/.8-1",
+      "computed": "0.25",
+      "expected": "0.25",
+      "pass": true
+    },
+    {
+      "name": "Concentration loss",
+      "independentExpression": "80%*50%",
+      "computed": "0.40",
+      "expected": "0.4",
+      "pass": true
+    }
+  ]
+}

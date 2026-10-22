@@ -1,0 +1,87 @@
+{
+  "observedAt": "2026-10-22T13:03:56.248942+00:00",
+  "runId": 39780976847,
+  "sha": "aa216a24c68c30c9251f96a050da098b33364686",
+  "firstFailedJobId": 119833820803,
+  "failure": "Release/recovery NOT VERIFIED: Cloudflare read token inactive.",
+  "source": "Official GitHub job-log download through the normal API; only sanitized failure text retained here.",
+  "beforeFailure": [
+    "GitHub release witness collected successfully",
+    "Five public production route checks passed"
+  ],
+  "retry": {
+    "attempt": 2,
+    "state": "failure",
+    "noFurtherUnchangedRetries": true,
+    "failedJobId": 119839212642,
+    "confirmedFailureMessages": [
+      "2026-10-22T13:00:53.3976206Z Release/recovery NOT VERIFIED: Required CI check TradeHQ Phase 3 tests must be unambiguous 0 !== 1 . Do not release or rollback based on this report."
+    ],
+    "verifiedAt": "2026-10-22T13:12:47.601341+00:00",
+    "interpretation": "Partial failed-job rerun failed before token verification because required CI witness was absent. It does not prove the token status was checked again."
+  },
+  "independentEvidence": "Both native production providers and live About/guest checks pass; local execution of the unchanged read-only release-monitor passes with the current Codex bindings.",
+  "diagnosis": "GitHub Actions repository Cloudflare binding is inactive; distinct from the working Codex environment binding. No application regression established.",
+  "requiredOwnerAction": "Replace GitHub Actions CLOUDFLARE_API_TOKEN securely if still inactive; rerun the complete Phase 3 workflow, not only failed jobs. No credential values or proxy placeholders should be sent through chat.",
+  "protectedChangePerformed": false,
+  "nextReleaseAllowed": false,
+  "repositorySecretMetadataRead": "403 Resource not accessible by integration; no value read or changed",
+  "fullWorkflowRerun": {
+    "requestedAt": "2026-10-22T13:14:30.016997+00:00",
+    "queued": true,
+    "reason": "Restore coherent exact-SHA essential-check witness after the insufficient partial rerun. Preserve all assertions and the original token guard.",
+    "expectedAttempt": 3
+  },
+  "fullRerunAttempt3": {
+    "run": 39780976847,
+    "attempt": 3,
+    "job": 119848363767,
+    "conclusion": "failure",
+    "checkedAt": "2026-10-22T13:28:21.298727+00:00",
+    "sanitizedFailureLines": [
+      "2026-10-22T13:19:11.9289806Z Release/recovery NOT VERIFIED: Cloudflare read token inactive. Do not release or rollback based on this report."
+    ],
+    "nextAction": "Owner must repair the GitHub Actions Cloudflare read-token binding securely; protected credentials were not changed. No unchanged retry."
+  },
+  "ownerSecretUpdate": {
+    "reportedBy": "owner",
+    "message": "Added same Cloudflare token to GitHub secrets",
+    "requestedAt": "2026-10-22T13:30:21.606016+00:00",
+    "verification": "Full workflow rerun requested after meaningful owner binding change; outcome pending. No credential values accessed."
+  },
+  "fullRerunAttempt4AfterOwnerUpdate": {
+    "run": 39780976847,
+    "attempt": 4,
+    "job": 119856166687,
+    "checkedAt": "2026-10-22T13:43:02.187989+00:00",
+    "conclusion": "failure",
+    "sanitizedFailureLines": [
+      "2026-10-22T13:34:26.4774259Z Release/recovery NOT VERIFIED: Missing trusted successful CI check. Do not release or rollback based on this report."
+    ]
+  },
+  "attempt4Interpretation": "Failure was Missing trusted successful CI check, before credential collection. Latest native checks later show all required identities successful. Local unchanged script passes after settlement. Does not establish failure of owner secret update.",
+  "specificReleaseJobRetry": {
+    "sourceJob": 119856166687,
+    "reason": "Required native witness now observed settled and all-successful; retry only release job against that evidence after owner token update. No assertions weakened.",
+    "verificationPending": true
+  },
+  "specificRetryAttempt5": {
+    "job": 119861665331,
+    "conclusion": "failure",
+    "sanitizedFailureLines": [
+      "2026-10-22T13:44:59.5203410Z Release/recovery NOT VERIFIED: Required CI check TradeHQ Phase 3 tests must be unambiguous 0 !== 1 . Do not release or rollback based on this report."
+    ],
+    "apiObservation": "GitHub recreated Required validation, Cloudflare and Phase3 synthetic success check IDs asynchronously during specific-job rerun. Current all3 are successful; release job ran before complete latest witness. Do not treat as credential verification."
+  },
+  "freshWorkflowDispatch": {
+    "run": 39789844231,
+    "job": 119865057821,
+    "conclusion": "failure",
+    "sanitizedFailureLines": [
+      "2026-10-22T13:51:13.2225372Z Release/recovery NOT VERIFIED: Cloudflare account token verification unavailable (HTTP 401; code 1000).. Do not release or rollback based on this report."
+    ],
+    "checkedAt": "2026-10-22T14:43:03.767235+00:00"
+  },
+  "latestAssessment": "Supersedes historical working-Codex-binding statements: after environment refresh both current Codex Cloudflare project read and fresh complete GitHub workflow39789844231 reject Cloudflare authenticationHTTP401. Vercel authentication works. Original missing-CI-witness attempts did not verify credentials. No new release permitted until native production verification restored.",
+  "historicalStatementScope": "independentEvidence, diagnosis and requiredOwnerAction above describe earlier pre-refresh state; freshWorkflowDispatch and CURRENT-PRODUCTION-BINDINGS.json establish later state."
+}
