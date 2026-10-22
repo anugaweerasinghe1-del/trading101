@@ -220,6 +220,18 @@ try {
   await waitUntil(`document.activeElement?.getAttribute('aria-label') === 'Open portfolio review mentor'`, 'Portfolio mentor restores focus');
   }
   if (phase === null || phase === 6) {
+  // About's introductory icon previously started beneath the fixed site header.
+  // Check the actual boxes rather than a particular padding class.
+  for (const [width, height] of [[360,800],[390,844],[768,1024],[1280,800],[1920,1080]]) {
+    await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<500});
+    await send('Page.navigate',{url:origin+'/about'});
+    await waitUntil(`location.pathname === '/about' && !!document.querySelector('main > header') && !document.querySelector('#prerender-seo')`, 'About introduction renders at '+width+'px');
+    await evaluate(`scrollTo(0,0); window.__aboutFontsReady = false; document.fonts.ready.then(() => window.__aboutFontsReady = true); true`);
+    await waitUntil(`window.__aboutFontsReady === true`, 'About fonts settle at '+width+'px');
+    assert.equal(await evaluate(`document.querySelector('main > header').getBoundingClientRect().top >= document.querySelector('nav').getBoundingClientRect().bottom`),true,'About introduction clears fixed navigation at '+width+'px');
+  }
+  // The remaining phase-six assertions exercise mobile controls.
+  await send('Emulation.setDeviceMetricsOverride',{width:360,height:900,deviceScaleFactor:1,mobile:true});
   for (let lesson=1; lesson<=6; lesson++) {
     await send('Page.navigate',{url:origin+'/learn/'+lesson});
     await waitUntil(`location.pathname === '/learn/${lesson}' && !!document.querySelector('aside a[href^="https://"]')`, 'Legacy lesson '+lesson+' renders sources');
