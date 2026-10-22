@@ -19,3 +19,8 @@ Root cause: `src/pages/PublicTrader.tsx` places two JSX string expressions next 
 The two corrections affect two existing text fragments only. No dependency, schema, finance, auth, consent, ad or infrastructure change. Existing type/build/browser checks and exact-head required CI apply; no new test mirroring a literal whitespace change is warranted. A candidate preview and both affected live pages must be inspected before claiming the corrections are deployed.
 
 Prepare this batch independently while the course-layout PR is pending. Do not merge until the previous release cycle is verified and native Cloudflare access is restored. Rollback is a reviewed revert of the two text fragments; no data/settings reversal. Baseline main is `aa216a24c68c30c9251f96a050da098b33364686`. Draft preparation is not production release evidence.
+
+
+## THQ-007: doubled punctuation in six guide quick answers (P3)
+
+All six actual guide pages append a full stop to a third step which already ends in one, rendering `.. Practise`. Remove the redundant appended full stop in the shared HowToTrade quick answer. This changes punctuation only; steps, calculations, links, functionality and structured course records are untouched. Fresh actual public rendered text was checked for all six guides and a BTC desktop excerpt captured. Candidate build and deployed preview recheck must be recorded after this added correction. No new unit test for a literal copy edit. Rollback is a reviewed revert of this single punctuation change.
