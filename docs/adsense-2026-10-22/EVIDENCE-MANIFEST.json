@@ -3,13 +3,13 @@
   "files": [
     {
       "path": "BLOCKED-STATUS.md",
-      "bytes": 5103,
-      "sha256": "94f1e2d169a1f724f59fe74989c473cbebbeb66daf2bf16d3000f44f2db8a776"
+      "bytes": 5257,
+      "sha256": "d936cbae7d589b46fe03ade268d322fd55ed963896b8e627c9f82a20b3052798"
     },
     {
       "path": "CHECKPOINT.md",
-      "bytes": 59708,
-      "sha256": "fd26cc1af23ae6f1a481bc2a9db5e0389fce9aa3c38c4293abb35d66fa93afac"
+      "bytes": 60176,
+      "sha256": "96327143e8cd2befb215db49f9d9403daae044df88ec70e90b731daa34b63896"
     },
     {
       "path": "FAQ-REVIEW-NOTES.json",
@@ -18,8 +18,8 @@
     },
     {
       "path": "FINDINGS.json",
-      "bytes": 34957,
-      "sha256": "98e59dcfea0c4d4932837244aca58061431897dbee06efd01acc4a6a0fc1d36a"
+      "bytes": 36349,
+      "sha256": "502e1da26e8cd8e75669d1675a61c732622f2163c9529100c5947ba9d1ad0725"
     },
     {
       "path": "LEGACY-READING-NOTES.json",
@@ -33,13 +33,13 @@
     },
     {
       "path": "PAGE-AUDIT.json",
-      "bytes": 1505190,
-      "sha256": "4e513bb2d76877f2bae35023ec591a3280cf9aa4bb2b0c95abb95e97dd5d2b21"
+      "bytes": 1505533,
+      "sha256": "dd814031b39e30e7a204dd0aa460094704e6b8214850dafb1491be8b201b1f6d"
     },
     {
       "path": "RELEASE-LEDGER.json",
-      "bytes": 24372,
-      "sha256": "1a16cfdbb81e82ca4884106859446f17cd9add2097525ddc87bc616063b7ac0c"
+      "bytes": 27409,
+      "sha256": "f19db9b18adabf5c8d7c67c12e32aa9dbb315c28635de1d45ab68eb660c73966"
     },
     {
       "path": "RENDERED-CONTENT-NOTES.json",
@@ -115,6 +115,11 @@
       "path": "evidence/ABOUT-OVERLAP-AFTER.json",
       "bytes": 4623,
       "sha256": "a6a6a1aa3f6adf5b6059588282379dd233af8f5e6cbe00645154b059542be058"
+    },
+    {
+      "path": "evidence/AMZN-QUOTE-CHANNEL-FOLLOWUP.json",
+      "bytes": 2201,
+      "sha256": "54bc7bc06f1c41bfbf7fb215b4e55ba554558929bdaa5f45a2062a4a8d54b5cc"
     },
     {
       "path": "evidence/APPLICATION-PROJECT-TYPES-20261023.json",
@@ -255,6 +260,11 @@
       "path": "evidence/POST-PR214-GUEST-SMOKE.json",
       "bytes": 8508,
       "sha256": "41093c01bfbe7e4bd248b10b9eec7dee656dd6cad9b05c630804b6e4668a5d49"
+    },
+    {
+      "path": "evidence/POST-PR215-GUEST-SMOKE.json",
+      "bytes": 8549,
+      "sha256": "25764409b216148ff04a20d8924f2a81005882910c3a31c418996aad87221a3b"
     },
     {
       "path": "evidence/POST-PR216-GUEST-SMOKE.json",
@@ -407,6 +417,11 @@
       "sha256": "cebe157c970c27ba3601de69ae050696df6f50ead76f78e8a3ee327606d60283"
     },
     {
+      "path": "evidence/PR215-MAIN-CI.json",
+      "bytes": 2282,
+      "sha256": "254ec3055bea9d1f41e4798e288af98e5df1d791d46f3b589705c77ebbfaf061"
+    },
+    {
       "path": "evidence/PR215-PREMERGE-CHECKS.json",
       "bytes": 2156,
       "sha256": "d0b461d8c980df58ec60738ea8ca4dc57b5430c99e9f6a1ee3ccdbff9f19eda6"
@@ -415,6 +430,31 @@
       "path": "evidence/PR215-PREVIEW-SIGNALS.json",
       "bytes": 835,
       "sha256": "febdbef953ebe6beaf764bbf81134e20389be833031b60a8ec8ea37574cef750"
+    },
+    {
+      "path": "evidence/PR215-PRODUCTION-BROWSER.json",
+      "bytes": 2764,
+      "sha256": "5df2a5c9829547c8adcc3483e4e7eca697ae2bdeec92990b1f8944df133d41c8"
+    },
+    {
+      "path": "evidence/PR215-PRODUCTION-PROVIDERS.json",
+      "bytes": 1347,
+      "sha256": "259eb48744fb68ea685828c16299fa355605dcd03d21655901a14f51ad008e8e"
+    },
+    {
+      "path": "evidence/PR215-UPDATED-PREMERGE-CHECKS.json",
+      "bytes": 1563,
+      "sha256": "d442f570fd09a4204e3e9f90d9d4210b26ab340521a9504168faaf5fbfdfbdee"
+    },
+    {
+      "path": "evidence/PR215-UPDATED-PREVIEW-BROWSER.json",
+      "bytes": 2780,
+      "sha256": "39c0c015a726e23af4dfdf1e3a3d75e08cb02951a79d3259c198ac83e2d942df"
+    },
+    {
+      "path": "evidence/PR215-UPDATED-PREVIEW-SIGNALS.json",
+      "bytes": 764,
+      "sha256": "2680ec0af4942dcc5f2b438a44aa11164e8306a9cfae47a7b96383dde015e8c1"
     },
     {
       "path": "evidence/PR216-MAIN-CI.json",
@@ -1142,6 +1182,46 @@
       "sha256": "9f7e80d8e4330790a6d43a84e3f813924d2222692fff01f16123602da1e4bf98"
     },
     {
+      "path": "evidence/pr215-production-courses-1280.png",
+      "bytes": 241821,
+      "sha256": "5c52ce6ebc98024ba01ae596282369945fd5a00fac552563ec4e7e5f2cf1fa65"
+    },
+    {
+      "path": "evidence/pr215-production-courses-360.png",
+      "bytes": 105762,
+      "sha256": "fb08b3e9cd2f5ca6f0ac1521b0352f61cf99383213ac3cf86d755813508c1d29"
+    },
+    {
+      "path": "evidence/pr215-production-dark-1280.png",
+      "bytes": 241821,
+      "sha256": "5c52ce6ebc98024ba01ae596282369945fd5a00fac552563ec4e7e5f2cf1fa65"
+    },
+    {
+      "path": "evidence/pr215-production-dark-360.png",
+      "bytes": 105762,
+      "sha256": "fb08b3e9cd2f5ca6f0ac1521b0352f61cf99383213ac3cf86d755813508c1d29"
+    },
+    {
+      "path": "evidence/pr215-production-light-1280.png",
+      "bytes": 280645,
+      "sha256": "30cb0d0bbe738d79633ed5c8641fd306d3cb845a84ebe2c37804efb3cf0e97c1"
+    },
+    {
+      "path": "evidence/pr215-production-light-360.png",
+      "bytes": 109591,
+      "sha256": "0be417e519851ec80a08b0ebf6efa37d04eaeba62bb4bd6172b28d982214cef3"
+    },
+    {
+      "path": "evidence/pr215-updated-preview-courses-1280.png",
+      "bytes": 241821,
+      "sha256": "5c52ce6ebc98024ba01ae596282369945fd5a00fac552563ec4e7e5f2cf1fa65"
+    },
+    {
+      "path": "evidence/pr215-updated-preview-courses-360.png",
+      "bytes": 105759,
+      "sha256": "5207a0fb1be1300b48d9fb082cc011a71c89c6d5231a6163954e585b7a8169b7"
+    },
+    {
       "path": "evidence/pr216-production-1280.png",
       "bytes": 99003,
       "sha256": "2d35ee79dc3b87175a4f117ea4f3673ac6d776c1a72225e5c48a3e9d8d0a693a"
@@ -1592,6 +1672,11 @@
       "sha256": "05a86a739c6f2e5395e4bd7d06d4e7194545d0226249c3aaa4690c79214afbe0"
     },
     {
+      "path": "findings/SUMMARY-QUOTE-CONTEXT.md",
+      "bytes": 1500,
+      "sha256": "ce6a730db8605c687c596f6f8d80639a6aefbe5ea3652dd89d753583752e17bd"
+    },
+    {
       "path": "verify-legacy-quiz-preview.mjs",
       "bytes": 4333,
       "sha256": "34618c8d89df057f62713b3e21d1ea91fe428fc2de713e5bf4e79efe3b3c3c1f"
@@ -1617,7 +1702,7 @@
       "sha256": "75c029c85b57a6d5253685eaf559c5f27e0f41b95cc64f25a1b7c81e4427287b"
     }
   ],
-  "fileCount": 323,
-  "totalBytes": 18652729,
-  "generatedAt": "2026-10-23T14:39:00.804394+00:00"
+  "fileCount": 340,
+  "totalBytes": 20114855,
+  "generatedAt": "2026-10-23T14:48:37.710108+00:00"
 }

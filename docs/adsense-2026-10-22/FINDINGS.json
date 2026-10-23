@@ -146,7 +146,7 @@
       "urls": [
         "https://www.thetradehq.com/courses"
       ],
-      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "state": "PUBLICLY_VERIFIED",
       "observed": "After real theme switch and fresh settled load, heading gradient uses white/emerald200/emerald400 againstRGB247 background. Stop contrasts1.07/1.20/1.79:1; highlighted normal-size100k phrase is1.79:1. Both mobile360 and desktop1280 visibly faint.",
       "expected": "Large heading at least3:1 and normal accent copy at least4.5:1 against its background, consistent with WCAG contrast benchmarks.",
       "rootCause": "Pale fixed color utilities remain unchanged when the site enters light theme.",
@@ -164,10 +164,17 @@
       "mergeAllowed": false,
       "releaseHold": "Previous prepared batches and current native Cloudflare API401.",
       "pr": 215,
-      "candidateSHA": "4baff25b9ded86bebbcfe9f21b51e61cc96f692f",
+      "candidateSHA": "064145bb22931600c63045ccbb8c28dfd786d7fd",
       "localValidation": "Cloudflare build and full phase-six browserPASS, both themes x5sizes; expected old contrast regression failure. Initial niche head-node timing failure preserved; readiness waits for presence and retains exact-value assertions.",
       "exactHeadRequiredChecks": "PASS",
-      "actualPreview": "Lightminimum5.1189:1/dark10.2985:1; screenshots360/1280viewed"
+      "actualPreview": "Lightminimum5.1189:1/dark10.2985:1; screenshots360/1280viewed",
+      "mergeSHA": "48b5c2d5a63ea44dee6c23d7adaacb638d65c4dc",
+      "productionEvidence": [
+        "evidence/PR215-PRODUCTION-PROVIDERS.json",
+        "evidence/PR215-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR215-GUEST-SMOKE.json",
+        "evidence/PR215-MAIN-CI.json"
+      ]
     },
     {
       "id": "THQ-006",
@@ -537,14 +544,32 @@
       "mergeSHA": "40ba79c2b65d88badbddada705df80ab65acc2ab",
       "followup": "Completecoherentrerunattempt2passes allrequiredchecks andbothrelease monitors. Priorbrowserconnectionfailurepreserved asrunattempt1history.",
       "latestEvidence": "evidence/PR214-MAIN-CI.json"
+    },
+    {
+      "id": "THQ-018",
+      "severity": "P3",
+      "category": "Separate summary/chart quote snapshots are unexplained",
+      "adsenseRelevance": "Minor display context; not a confirmed financial-engine or Publisher Policy violation",
+      "urls": [
+        "https://www.thetradehq.com/trade/amzn"
+      ],
+      "observed": "23October14:44UTC:summary-1.2percent versuschart+3.10percent; afterrefreshchart-0.09percentwhilesummaryretained-1.2percent. Bothsimulated; separatequoterefresheswereunexplained.",
+      "rootCause": "Summaryreads suppliedasset snapshot; chartfetchesquote independently.",
+      "proposedFix": "Explain the independent snapshots in the existing summary. Do not alter or synchronize numerical data.",
+      "state": "FIX_PREPARED_CI_PENDING",
+      "pr": 221,
+      "candidateSHA": "df3b432275997d1c25ecf250133ff2526f2dd64e",
+      "evidence": "evidence/AMZN-QUOTE-CHANNEL-FOLLOWUP.json",
+      "scope": "Staticparagraphonly; noprotectedcalculations,records,auth,DB,privacy,adbehavior orpricingfeedchanges.",
+      "rollback": "Reviewedrevertofparagraph; nodatachanges."
     }
   ],
-  "updatedAt": "2026-10-23T14:39:00.804394+00:00",
+  "updatedAt": "2026-10-23T14:48:37.710108+00:00",
   "counts": {
-    "siteFindings": 17,
+    "siteFindings": 18,
     "P2": 8,
-    "P3": 9,
-    "publiclyRepaired": 14,
+    "P3": 10,
+    "publiclyRepaired": 15,
     "preparedNotMerged": 3,
     "separateOperationalBlockers": 0
   },

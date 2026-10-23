@@ -1678,7 +1678,16 @@
       ],
       "findingStates": {
         "THQ-005": "FIX_TESTED_PREVIEW_VERIFIED"
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 215,
+          "mergeSHA": "48b5c2d5a63ea44dee6c23d7adaacb638d65c4dc",
+          "outcome": "PASS",
+          "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
+          "evidence": "evidence/PR215-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation",

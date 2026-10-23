@@ -220,3 +220,8 @@ Candidatea914d3dfae5f123f8c1cd81402945c6e8541027a; ordinarysquashmerge9365eaf7e5
 ## PR220 production cycle complete — 2026-10-23T14:39:00.804394+00:00
 
 Candidate8736455a596968c5e6250c544d1ec45971ea1d02; ordinarysquashmerge24a9e4fe486e6ec08026c7e44b7318eda48d1953; nativeCFproductionSUCCESS/VercelREADYsameSHA; trustedmainCIandbothreleasemonitorsPASS. Actualaffectedstates35;gueststates30 and4safecontrolsPASS. Findings['THQ-012', 'THQ-013', 'THQ-015', 'THQ-016'] PUBLICLY_VERIFIED. Totals14repaired/3prepared. No nextmergeuntilthisevidencerecorded. Widerauditcoverageunchanged.
+
+
+## PR215 production cycle complete — 2026-10-23T14:48:37.710108+00:00
+
+Candidate064145bb22931600c63045ccbb8c28dfd786d7fd; ordinarysquashmerge48b5c2d5a63ea44dee6c23d7adaacb638d65c4dc; nativeCFproductionSUCCESS/VercelREADYsameSHA; trustedmainCIandbothreleasemonitorsPASS. Actualaffectedstates10;gueststates30 and4safecontrolsPASS. Findings['THQ-005'] PUBLICLY_VERIFIED. Totals15repaired/3prepared. No nextmergeuntilthisevidencerecorded. Widerauditcoverageunchanged.
