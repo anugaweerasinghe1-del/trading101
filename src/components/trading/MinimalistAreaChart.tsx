@@ -171,7 +171,7 @@ export function MinimalistAreaChart({ asset }: MinimalistAreaChartProps) {
   return (
     <div className="h-full flex flex-col">
       {/* Chart Header */}
-      <div className="flex items-center justify-between p-4 pb-2">
+      <div className="flex flex-wrap items-center justify-between gap-3 p-4 pb-2">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
             <span className="text-lg font-bold text-primary">{asset.symbol.charAt(0)}</span>

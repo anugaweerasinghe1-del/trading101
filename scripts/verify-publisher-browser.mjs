@@ -232,16 +232,21 @@ try {
   // Fixed positive chart candles isolate display precision from live providers
   // and from synthetic chart-data generation. Never submit an order.
   chartPriceFixture = true;
+  const tinyHeaderLayoutFailures = [];
   for (const [width,height] of [[360,800],[390,844],[768,1024],[1280,800],[1920,1080]]) {
     await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<500});
     await send('Page.navigate',{url:origin+'/trade/shib'});
+    try {
     await waitUntil(`location.pathname === '/trade/shib' && !!document.querySelector('main .recharts-yAxis .recharts-cartesian-axis-tick-value') && !document.querySelector('#prerender-seo')`, 'SHIB chart axis renders at '+width+'px');
+    } catch (error) { console.error('CHART_STARTUP_STATE', JSON.stringify(await evaluate(`({state:document.readyState,h1:document.querySelector('main h1')?.textContent,main:document.querySelector('main')?.innerText.slice(0,500),chart:!!document.querySelector('.recharts-wrapper')})`))); throw error; }
     await evaluate(`window.__chartFontsReady=false; document.fonts.ready.then(()=>window.__chartFontsReady=true); true`);
     await waitUntil(`window.__chartFontsReady===true`, 'SHIB chart fonts settle');
     await delay(600);
     const ticks = await evaluate(`Array.from(document.querySelectorAll('main .recharts-yAxis .recharts-cartesian-axis-tick-value')).map(t=>t.textContent)`);
     assert.ok(ticks.length >= 2 && ticks.every(t=>Number(t.replace(/[$,]/g,''))>0), 'Positive tiny SHIB axis prices must not display as zero at '+width+'px');
     assert.ok(new Set(ticks).size>=2,'SHIB axis labels retain distinct prices at '+width+'px');
+    if (!(await evaluate(`(()=>{const root=document.querySelector('main .recharts-wrapper').closest('.h-full.flex.flex-col'),card=root.getBoundingClientRect();return Array.from(root.firstElementChild.children).every(e=>{const r=e.getBoundingClientRect();return r.left>=card.left-1&&r.right<=card.right+1})})()`))) tinyHeaderLayoutFailures.push('Chart symbol/quote/refresh clips at '+width+'px');
+    if (!(await evaluate(`(()=>{const labels=['Total Value','Available Cash'];const groups=labels.map(label=>Array.from(document.querySelectorAll('main p')).find(p=>p.textContent===label)?.parentElement?.parentElement);const button=Array.from(document.querySelectorAll('main button')).find(b=>b.textContent.trim()==='Details');if(groups.some(g=>!g)||!button)return false;const card=groups[0].closest('.glass-panel').getBoundingClientRect();return [...groups,button].every(e=>{const r=e.getBoundingClientRect();return r.left>=card.left-1&&r.right<=card.right+1})})()`))) tinyHeaderLayoutFailures.push('Portfolio summary/cash/details clips at '+width+'px');
     assert.equal(await evaluate(`(()=>{const c=document.querySelector('main .recharts-wrapper').getBoundingClientRect();return Array.from(document.querySelectorAll('main .recharts-yAxis .recharts-cartesian-axis-tick-value')).every(t=>{const r=t.getBoundingClientRect();return r.left>=c.left-1&&r.right<=c.right+1})})()`),true,'SHIB axis labels remain inside chart at '+width+'px');
     assert.equal(await evaluate(`document.documentElement.scrollWidth>innerWidth+1`),false,'Tiny-price chart fits at '+width+'px');
     await evaluate(`document.querySelector('main .recharts-wrapper').scrollIntoView({block:'center'}); true`);
@@ -252,7 +257,13 @@ try {
     const tooltip = await evaluate(`document.querySelector('main .recharts-tooltip-item-value').textContent`);
     assert.ok(Number(tooltip.replace(/[$,]/g,''))>0,'Positive tiny SHIB tooltip retains price precision at '+width+'px');
     await send('Input.dispatchMouseEvent',{type:'mouseMoved',x:0,y:0});
+    const portfolioBeforeDetails = await evaluate(`localStorage.getItem('tradehq_portfolio')`);
+    await evaluate(`Array.from(document.querySelectorAll('main button')).find(b=>b.textContent.trim()==='Details').click();true`);
+    await waitUntil(`document.querySelector('main').innerText.includes('Active holdings') && document.querySelector('main').innerText.includes('Total executed')`, 'Portfolio details remain usable at '+width+'px');
+    assert.equal(await evaluate(`localStorage.getItem('tradehq_portfolio')`),portfolioBeforeDetails,'Details preserves guest portfolio record at '+width+'px');
+    await evaluate(`Array.from(document.querySelectorAll('main button')).find(b=>b.textContent.trim()==='Details').click();true`);
   }
+  assert.deepEqual(tinyHeaderLayoutFailures, [], 'Trading chart and portfolio headers fit all target widths');
   chartPriceFixture = false;
   // About's introductory icon previously started beneath the fixed site header.
   // Check the actual boxes rather than a particular padding class.
