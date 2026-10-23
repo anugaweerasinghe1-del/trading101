@@ -58,15 +58,15 @@
       "category": "Protected CI credential binding",
       "adsenseRelevance": "Operational verification limitation, not a public-content policy finding",
       "state": "GITHUB_BINDING_REPAIRED_WORKSPACE_BINDING_INVALID",
-      "observed": "23October13:59UTC:workspaceCF401invalidAPI token; GitHubActionsCF200nativeproductionexactAA. At14:04UTC GitHubCF200productionSUCCESS exact40ba79c;Vercel200READYsameSHA.",
+      "observed": "FinalworkspaceCloudflareprojectread401/error10000;Vercel200READYfinal793a99d. RepairedGitHubActionsCloudflarecredentialauthenticatesnativeaccount/projectproductionSUCCESSsamefinalSHA; no release blocker throughthisverifiedpath.",
       "proposedFix": "GitHub binding repaired byowner; use authenticatedread-onlyActions forproductionverification. Workspace token remainsinvalid but isnot the currentnative-read blocker. Do notprint secrets.",
       "protectedArea": "Production secrets/API credentials",
       "risk": "Incorrect token/scope can impair release/recovery checks. No DNS, database, deployment token or infrastructure ownership change proposed.",
       "rollback": "Restore the prior repository secret binding if the owner retains it securely; rerun the read-only monitor. No production data changes.",
       "evidence": "evidence/PR212-MONITOR-DIAGNOSIS.json",
-      "latestObservationEvidence": "evidence/RESUMED-WORKSPACE-PROVIDERS-20261023.json",
-      "latestObservedAt": "2026-10-23T14:10:00.122791+00:00",
-      "githubBindingEvidence": "evidence/PR214-PRODUCTION-PROVIDERS.json"
+      "latestObservationEvidence": "evidence/FINAL-WORKSPACE-ACCESS-20261023.json",
+      "latestObservedAt": "2026-10-23T15:19:25.769124+00:00",
+      "githubBindingEvidence": "evidence/PR221-PRODUCTION-PROVIDERS.json"
     },
     {
       "id": "THQ-003",
@@ -619,7 +619,7 @@
       ]
     }
   ],
-  "updatedAt": "2026-10-23T15:21:40.856868+00:00",
+  "updatedAt": "2026-10-23T15:27:00.417446+00:00",
   "counts": {
     "siteFindings": 18,
     "P2": 8,

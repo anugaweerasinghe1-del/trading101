@@ -1,0 +1,49 @@
+{
+  "checkedAt": "2026-10-23T15:17:18.914763+00:00",
+  "baselineSHA": "aa216a24c68c30c9251f96a050da098b33364686",
+  "finalMergeSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
+  "changedAppAndTestPaths": [
+    "scripts/verify-publisher-browser.mjs",
+    "src/components/AIReadySummary.tsx",
+    "src/components/Quiz.tsx",
+    "src/components/trading/MinimalistAreaChart.tsx",
+    "src/components/trading/MinimalistPortfolioBar.tsx",
+    "src/index.css",
+    "src/lib/assetContent.ts",
+    "src/lib/lessonData.ts",
+    "src/lib/nicheData.ts",
+    "src/pages/Contact.tsx",
+    "src/pages/CourseTrack.tsx",
+    "src/pages/Courses.tsx",
+    "src/pages/HowToTrade.tsx",
+    "src/pages/Learn.tsx",
+    "src/pages/PublicTrader.tsx",
+    "src/pages/SectorPillar.tsx",
+    "src/pages/TraderProfile.tsx"
+  ],
+  "otherRepositoryPaths": "Docs/evidence only",
+  "financialAndDataGenerationPrefixes": [
+    {
+      "path": "src/components/trading/MinimalistPortfolioBar.tsx",
+      "beforeMarker": "  return (",
+      "byteEquivalent": true,
+      "sha256": "dd727eeb1ced2cabb961c81a5cc56e75af706817b74827e6e476d5adbdf80e81"
+    },
+    {
+      "path": "src/components/trading/MinimalistAreaChart.tsx",
+      "beforeMarker": "  const padding = (maxPrice - minPrice)",
+      "byteEquivalent": true,
+      "sha256": "6ab3236c59ab46861b6ad88a290b7e6190c527a5eec758b5951d09c2fd41a5f4"
+    },
+    {
+      "path": "src/components/AIReadySummary.tsx",
+      "beforeMarker": "export function AIReadySummary",
+      "byteEquivalent": true,
+      "sha256": "2e34e6697c2020118c13a93ccccdbf0c63151933f8ff5e6a10d613ee05ef10af"
+    }
+  ],
+  "profileFinancialCalculationStatementsByteEquivalent": true,
+  "lessonDataOnlyChangedFields": "Lesson4question2stem/options; allcorrect-answerindices/explanations/otherlessonsidentical",
+  "protectedBackendAuthDBPrivacyAdWorkflowDependenciesChanged": false,
+  "scope": "Source-equivalencechecks andexplicitdiffallowlist. Notcertificationofallfinancialenginebehaviororprivateaccountflows."
+}

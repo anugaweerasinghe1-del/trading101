@@ -1,3 +1,5 @@
+> Release update, 23 October 2026: [PR #212](https://github.com/anugaweerasinghe1-del/trading101/pull/212) merged at `aa216a24c68c30c9251f96a050da098b33364686`. Native production and scoped public verification passed. Any held/unmerged wording in the original preparation note below is historical. See the [release ledger](../RELEASE-LEDGER.json) for exact receipts.
+
 # THQ-20261022-001 — About introduction overlaps fixed navigation
 
 Severity: P3 (minor visual defect). Category: interface spacing. AdSense relevance: general usability only; no Publisher Policy violation established.

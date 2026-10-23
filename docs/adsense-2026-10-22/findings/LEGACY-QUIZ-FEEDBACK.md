@@ -1,3 +1,5 @@
+> Release update, 23 October 2026: [PR #218](https://github.com/anugaweerasinghe1-del/trading101/pull/218) merged at `9365eaf7e57a6020d70df7fe5637286e8389f11d`. Native production and scoped public verification passed. Any held/unmerged wording in the original preparation note below is historical. See the [release ledger](../RELEASE-LEDGER.json) for exact receipts.
+
 # THQ-009/010: incomplete feedback and ambiguous legacy quiz choice
 
 THQ-009, P2: all six `/learn/1`–`/learn/6` quizzes skip the final question's correction/explanation. Actual UI interaction on23October submits all20questions after opening all24subtopics in a fresh disposable guest. Every final submit jumps straight to Quiz Complete. There were0blocked Supabase mutation attempts and0runtime errors. This omits six authored explanations. Source Quiz returns the summary whenever the current question is last and showResult is true.

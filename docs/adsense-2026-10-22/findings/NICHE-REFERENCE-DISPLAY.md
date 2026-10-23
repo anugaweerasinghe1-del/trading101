@@ -1,3 +1,5 @@
+> Release update, 23 October 2026: [PR #220](https://github.com/anugaweerasinghe1-del/trading101/pull/220) merged at `24a9e4fe486e6ec08026c7e44b7318eda48d1953`. Native production and scoped public verification passed. Any held/unmerged wording in the original preparation note below is historical. See the [release ledger](../RELEASE-LEDGER.json) for exact receipts.
+
 # THQ-012 / THQ-013: accurate asset-guide reference display
 
 Fresh normal-TLS anonymous production observations reproduce two reader-facing issues. On /niche/shib the positive catalog reference0.00001245 displays0.0000 (P2). On /niche/btc both mentor text and visible FAQ cite correlation with Bitcoin as a driver of Bitcoin itself (P3). The /trade/shib chart also renders positive source values as four$0axis labels; a fresh desktop screenshot was personally inspected. Before screenshots were personally inspected; JSON records rendered text, not an inferred source-only defect.

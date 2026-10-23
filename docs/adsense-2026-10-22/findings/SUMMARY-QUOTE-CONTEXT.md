@@ -1,3 +1,5 @@
+> Release update, 23 October 2026: [PR #221](https://github.com/anugaweerasinghe1-del/trading101/pull/221) merged at `793a99d538fb81705c79aeca25ad68b10b945905`. Native production and scoped public verification passed. Any held/unmerged wording in the original preparation note below is historical. See the [release ledger](../RELEASE-LEDGER.json) for exact receipts.
+
 # THQ-018: separate summary and chart snapshots lack an explanation
 
 Severity: P3. Display context on public instrument pages with a practice summary.

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T15:21:40.856868+00:00",
+  "updatedAt": "2026-10-23T15:27:00.417446+00:00",
   "releases": [
     {
       "finding": "THQ-001",
@@ -7,7 +7,7 @@
       "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/212",
       "candidateSHA": "07bb1ba12941a23eec876b16ff57e3a96f17a91c",
       "mergeSHA": "aa216a24c68c30c9251f96a050da098b33364686",
-      "state": "PUBLICLY_VERIFIED_WITH_SEPARATE_OPERATIONAL_MONITOR_BLOCKER",
+      "state": "PUBLICLY_VERIFIED_HISTORICAL_RELEASE",
       "exactHeadRequiredChecks": "PASS",
       "previews": {
         "cloudflare": "b5ca36d0-0a2d-4db5-b27a-d1adc6cc5446",
@@ -27,7 +27,15 @@
         "guestChecksPassed": 8,
         "productionDataMutation": false
       },
-      "monitor": {
+      "evidence": [
+        "evidence/PR212-PREMERGE-CHECKS.json",
+        "evidence/PR212-PREVIEW-PROVIDERS.json",
+        "evidence/PR212-PRODUCTION-PROVIDERS.json",
+        "evidence/ABOUT-OVERLAP-AFTER.json",
+        "evidence/POST-PR212-GUEST-SMOKE.json",
+        "evidence/PR212-MONITOR-DIAGNOSIS.json"
+      ],
+      "historicalMonitorDuringOriginalRelease": {
         "run": 39780976847,
         "attempt": 3,
         "requiredChecks": "PASS",
@@ -41,14 +49,7 @@
         "currentCodexCloudflareRead": "HTTP401 after environment configuration refresh",
         "currentCodexVercelRead": "HTTP200 READY, exact productionSHA"
       },
-      "evidence": [
-        "evidence/PR212-PREMERGE-CHECKS.json",
-        "evidence/PR212-PREVIEW-PROVIDERS.json",
-        "evidence/PR212-PRODUCTION-PROVIDERS.json",
-        "evidence/ABOUT-OVERLAP-AFTER.json",
-        "evidence/POST-PR212-GUEST-SMOKE.json",
-        "evidence/PR212-MONITOR-DIAGNOSIS.json"
-      ]
+      "monitorSupersededBy": "All subsequent exact-main release cycles, including final793a99d, pass required checks and both release monitors."
     },
     {
       "pr": 214,
@@ -656,9 +657,7 @@
     "mergeSHA": "48b5c2d5a63ea44dee6c23d7adaacb638d65c4dc",
     "reason": "Releasecyclecomplete; nonewmergeofthisPR."
   },
-  "proposedReleasePriority": [
-    221
-  ],
+  "proposedReleasePriority": [],
   "badgeCandidate": {
     "pr": 216,
     "candidateSHA": "a14bca138a2cae0a1e678c2bba48d2c348db263d",
@@ -776,7 +775,7 @@
       "reason": "Releasecyclecomplete; nonewmergeofthisPR."
     }
   ],
-  "latestResumeProviderEvidence": "evidence/RESUMED-WORKSPACE-PROVIDERS-20261023.json",
+  "latestResumeProviderEvidence": "evidence/FINAL-WORKSPACE-ACCESS-20261023.json",
   "priceAndMobileDisplayCandidate": {
     "pr": 220,
     "candidateSHA": "8736455a596968c5e6250c544d1ec45971ea1d02",
@@ -800,7 +799,7 @@
     "reason": "Releasecyclecomplete; nonewmergeofthisPR."
   },
   "latestGitHubState": "evidence/FINAL-GITHUB-STATE-20261023.json",
-  "latestGitHubProviderBindingEvidence": "evidence/PR214-PRODUCTION-PROVIDERS.json",
+  "latestGitHubProviderBindingEvidence": "evidence/PR221-PRODUCTION-PROVIDERS.json",
   "latestMainValidationEvidence": "evidence/PR221-MAIN-CI.json",
   "latestVerifiedProductionSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
   "summaryQuoteContextCandidate": {
@@ -815,5 +814,7 @@
     "mergeAllowed": false,
     "mergeSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
     "reason": "Releasecyclecomplete; nonewmergeofthisPR."
-  }
+  },
+  "remainingConfirmedSiteFixes": 0,
+  "exhaustiveAuditComplete": false
 }

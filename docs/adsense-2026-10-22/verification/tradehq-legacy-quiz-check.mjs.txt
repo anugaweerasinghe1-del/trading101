@@ -1,0 +1,43 @@
+// Actual candidate preview, own anonymous browser. No account or server writes.
+import assert from 'node:assert/strict';
+import {writeFileSync} from 'node:fs';
+import {openAuditPage,pause} from '/workspace/trading101/docs/adsense-2026-10-22/browser-session.mjs';
+const [sha,origin,stem]=process.argv.slice(2);assert.match(sha,/^[a-f0-9]{40}$/);assert.match(stem,/^PR218-[A-Z-]+$/);const unused=true,p=await openAuditPage(),rows=[],blocked=[],errors=[];
+p.onEvent(m=>{
+ if(m.method==='Runtime.exceptionThrown')errors.push(m.params.exceptionDetails.text);
+ if(m.method==='Fetch.requestPaused'){
+  const {requestId,request}=m.params,u=new URL(request.url),read=['GET','HEAD','OPTIONS'].includes(request.method)||(request.method==='POST'&&u.pathname==='/rest/v1/rpc/get_published_course_catalog');
+  if(!read)blocked.push({method:request.method,path:u.pathname});
+  p.send(read?'Fetch.continueRequest':'Fetch.failRequest',read?{requestId}:{requestId,errorReason:'Aborted'}).catch(e=>errors.push(e.message));
+ }
+});
+await p.send('Runtime.enable');await p.send('Fetch.enable',{patterns:[{urlPattern:'https://*.supabase.co/*',requestStage:'Request'}]});
+async function click(label){await p.evaluate(`(()=>{const b=[...document.querySelectorAll('main button')].find(b=>b.textContent.trim()===${JSON.stringify(label)});if(!b||b.disabled)throw Error('Control unavailable');b.click();return true})()`);await pause(150);}
+try{
+ for(let lesson=1;lesson<=6;lesson++){
+  await p.send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});
+  await p.send('Page.navigate',{url:origin+'/learn/'+lesson});
+  await p.wait(`document.querySelector('main')?.innerText.includes('Subtopic 1 of 4')&&!document.querySelector('#prerender-seo')`);
+  await p.evaluate('document.fonts.ready.then(()=>true)',true);await pause(500);
+  await p.evaluate("[...document.querySelectorAll('button')].find(b=>b.textContent.trim()==='Reject analytics')?.click();true");
+  for(let topic=1;topic<=4;topic++){await p.wait(`document.querySelector('main')?.innerText.includes('Subtopic ${topic} of 4')`);await click(topic===4?'Take Quiz':'Continue');}
+  await p.wait(`document.querySelector('main')?.innerText.includes('Quiz Time!')`);
+  const questions=[];
+  for(let q=1;q<=20;q++){
+   const before=await p.evaluate(`document.querySelector('main').innerText`),count=Number(before.match(/Question \d+ of (\d+)/)[1]);
+   assert.equal(await p.evaluate(`[...document.querySelectorAll('main button')].find(b=>b.textContent.trim()==='Submit Answer').disabled`),true);
+   await p.evaluate(`document.querySelector('main .space-y-3 button').click();true`);await pause(100);await click('Submit Answer');
+   await p.wait(`document.querySelector('main')?.innerText.includes('Incorrect')||document.querySelector('main')?.innerText.includes('Correct!')`);
+   const feedback=await p.evaluate(`document.querySelector('main').innerText`);assert.ok(!feedback.includes('Quiz Complete!'));questions.push({before,feedback});
+   if(q===count){
+    assert.ok(feedback.includes('See Results'));
+    for(const [width,height]of[[390,844],[1280,800]]){await p.send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<500});assert.equal(await p.evaluate('document.documentElement.scrollWidth>innerWidth+1'),false);await p.evaluate('scrollTo(0,0)');await pause(300);await p.screenshot(`docs/adsense-2026-10-22/evidence/${stem.toLowerCase()}-${lesson}-${width}.png`);}
+    await click('See Results');await p.wait(`document.querySelector('main')?.innerText.includes('Quiz Complete!')`);
+    rows.push({path:'/learn/'+lesson,questions,summary:await p.evaluate(`document.querySelector('main').innerText`),finalFeedbackVisible:true});break;
+   }
+   await click('Next Question');await p.wait(`document.querySelector('main')?.innerText.includes('Question ${q+1} of')`);
+  }
+ }
+ assert.equal(rows.length,6);assert.equal(rows.reduce((n,r)=>n+r.questions.length,0),20);assert.equal(blocked.length,0);assert.equal(errors.length,0);
+ console.log('PASSall6actualpreviewquizzes/20questions: finalexplanationsbeforeexplicitresults;nomutations/errors');
+}finally{writeFileSync('docs/adsense-2026-10-22/evidence/'+stem+'-BROWSER.json',JSON.stringify({checkedAt:new Date().toISOString(),origin,sha,outcome:rows.length===6&&blocked.length===0&&errors.length===0?'PASS':'INCOMPLETE',rows,blockedSupabaseMutations:blocked,runtimeErrors:errors},null,2));await p.send('Fetch.disable').catch(()=>{});await p.close();}

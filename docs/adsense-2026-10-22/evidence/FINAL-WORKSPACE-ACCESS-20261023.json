@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-10-23T15:19:25.769124+00:00",
+  "scope": "Workspacecredentialaccessrecheckonly; finalreleaseproofiscollectedseparatelybytrustedActions.",
+  "cloudflare": {
+    "http": 401,
+    "errorCodes": [
+      10000
+    ],
+    "project": null,
+    "deployment": {
+      "id": null,
+      "environment": null,
+      "status": null,
+      "sha": null
+    }
+  },
+  "vercel": {
+    "http": 200,
+    "project": "trading101",
+    "deployment": {
+      "id": "dpl_6iJr8woRy26kKAAjoVsJo3maAY3a",
+      "state": "READY",
+      "sha": "793a99d538fb81705c79aeca25ad68b10b945905"
+    }
+  }
+}

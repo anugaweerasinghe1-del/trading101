@@ -1,3 +1,5 @@
+> Release update, 23 October 2026: [PR #217](https://github.com/anugaweerasinghe1-del/trading101/pull/217) merged at `f56422990c8d275e1abc529235ac926a61f74a45`. Native production and scoped public verification passed. Any held/unmerged wording in the original preparation note below is historical. See the [release ledger](../RELEASE-LEDGER.json) for exact receipts.
+
 # THQ-008: published courses missing from the Learn hub (P3)
 
 Fresh actual production browser comparison on23October confirms `/learn` lists only four bundled tracks and says20lessons/4fullcourses. `/courses` exposes six tracks and26lessons. The primary learning hub hides both published course cards and gives a stale total. This is a content/navigation inconsistency, not a claimed specific Google Publisher Policy violation.
