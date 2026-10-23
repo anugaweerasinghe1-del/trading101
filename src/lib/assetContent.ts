@@ -234,7 +234,7 @@ export function generateAssetFAQs(assetId: string): AssetFAQ[] {
     },
     {
       question: `Can I lose real money trading ${sym} on TradeHQ?`,
-      answer: `No. Every ${sym} trade on TradeHQ uses virtual currency only — your portfolio is stored in your browser and no real funds are ever at risk. The platform is designed purely for education and skill-building.`,
+      answer: `No. Every ${sym} trade on TradeHQ uses virtual currency only — no real funds are ever at risk. The platform is designed purely for education and skill-building.`,
     },
   ];
 }

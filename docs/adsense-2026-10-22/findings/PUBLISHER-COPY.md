@@ -24,3 +24,11 @@ Prepare this batch independently while the course-layout PR is pending. Do not m
 ## THQ-007: doubled punctuation in six guide quick answers (P3)
 
 All six actual guide pages append a full stop to a third step which already ends in one, rendering `.. Practise`. Remove the redundant appended full stop in the shared HowToTrade quick answer. This changes punctuation only; steps, calculations, links, functionality and structured course records are untouched. Fresh actual public rendered text was checked for all six guides and a BTC desktop excerpt captured. Candidate build and deployed preview recheck must be recorded after this added correction. No new unit test for a literal copy edit. Rollback is a reviewed revert of this single punctuation change.
+
+## THQ-014: generated money FAQ implies browser-only account storage (P2)
+
+Fresh production /trade/sui FAQ expansion at360/1280 says every portfolio is stored in the browser. The existing live Privacy text distinguishes guest browser data from signed-in cash, positions and server-recorded trades in Supabase. Read-only source confirms this distinction. A source-derived inventory finds this generic answer on152of170asset terminal routes; this is not152individual fresh browser reproductions.
+
+Remove only the inaccurate storage clause from the no-real-money FAQ, retaining virtual-currency/no-real-funds scope. Visible answers and FAQ structured data share this generator. No privacy-policy, consent, actual storage, accounts, auth, records or financial calculations change. The minimal correction belongs with this PR's existing publisher copy fixes.
+
+Clean exact-main compiled output fails the browser-storage assertion. Updated candidate Cloudflare build, app-project TypeScript and full phase6 PASS, including safe FAQ expansion for five representative asset classes at360/1280. Fresh exact-head CI/provider/actual-preview checks must replace the previous1139acb receipts. Rollback is an ordinary reviewed revert; no data rollback or production release claimed. Native Cloudflare authentication401 still blocks the required serial production release.
