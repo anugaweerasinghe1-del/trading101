@@ -158,6 +158,9 @@ export function MinimalistAreaChart({ asset }: MinimalistAreaChartProps) {
   const formatChartPrice = (value: number) => typeof value === 'number' && !isNaN(value)
     ? `$${value !== 0 && Math.abs(value) < 0.0001 ? formatPrice(value, asset.type) : value.toLocaleString()}`
     : '$—';
+  const chartAxisWidth = safePrice < 0.0001
+    ? Math.max(84, (Math.max(formatChartPrice(minPrice).length, formatChartPrice(maxPrice).length) + 2) * 7 + 16)
+    : 60;
 
 
   const handleRefresh = () => {
@@ -265,7 +268,7 @@ export function MinimalistAreaChart({ asset }: MinimalistAreaChartProps) {
               axisLine={false}
               tickLine={false}
               tick={{ fill: 'hsl(210, 15%, 55%)', fontSize: 10 }}
-              width={safePrice < 0.0001 ? 84 : 60}
+              width={chartAxisWidth}
               tickFormatter={formatChartPrice}
             />
             <Tooltip

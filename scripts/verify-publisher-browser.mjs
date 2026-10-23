@@ -98,8 +98,8 @@ try {
     if (chartPriceFixture && url.pathname.endsWith('/live-market-data') && url.searchParams.get('assetId') === 'shib') {
       const provenance = {status:'simulated',provider:'isolated-fixed-fixture',fetchedAt:new Date().toISOString()};
       const data = url.searchParams.get('dataType') === 'candles'
-        ? Array.from({length:51},(_,i)=>({time:new Date(Date.UTC(2026,0,1,0,i)).toISOString(),open:0.00001245,high:0.000013,low:0.000012,close:0.00001245*(0.99+i*0.0005),volume:100}))
-        : {price:0.00001245,change24h:0,changePercent24h:0,high24h:null,low24h:null,volume24h:null,lastUpdated:null,source:'simulated'};
+        ? Array.from({length:51},(_,i)=>({time:new Date(Date.UTC(2026,0,1,0,i)).toISOString(),open:0.00000520185,high:0.0000055,low:0.000005,close:0.00000520185*(0.99+i*0.0005),volume:100}))
+        : {price:0.00000520185,change24h:0,changePercent24h:0,high24h:null,low24h:null,volume24h:null,lastUpdated:null,source:'simulated'};
       payload = {success:true,assetId:'shib',data,provenance};
     }
     else if (url.pathname.endsWith("/get_published_course_catalog")) payload = docs.map(row => row.document);
