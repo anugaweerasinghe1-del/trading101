@@ -230,6 +230,17 @@ try {
     await waitUntil(`window.__aboutFontsReady === true`, 'About fonts settle at '+width+'px');
     assert.equal(await evaluate(`document.querySelector('main > header').getBoundingClientRect().top >= document.querySelector('nav').getBoundingClientRect().bottom`),true,'About introduction clears fixed navigation at '+width+'px');
   }
+  for (const sector of ['ai-tech','crypto-defi','mega-cap','tech-giants','etf-indices','forex-currencies','commodities']) {
+    for (const [width,height] of [[360,800],[390,844],[768,1024],[1280,800],[1920,1080]]) {
+      await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<500});
+      await send('Page.navigate',{url:origin+'/sectors/'+sector});
+      await waitUntil(`!!document.querySelector('button[aria-label*="theme"]') && getComputedStyle(document.querySelector('nav')).position==='fixed' && !!document.querySelector('main nav[aria-label="Breadcrumb"]') && !document.querySelector('#prerender-seo')`,'Hydrated sector breadcrumb renders');
+      await evaluate(`window.__sectorFontsReady=false;document.fonts.ready.then(()=>window.__sectorFontsReady=true);true`);
+      await waitUntil(`window.__sectorFontsReady===true`,'Sector fonts settle');
+      assert.equal(await evaluate(`(()=>{const nav=document.querySelector('nav');return document.querySelector('main nav[aria-label="Breadcrumb"]').getBoundingClientRect().top>=nav.getBoundingClientRect().bottom})()`),true,'Sector '+sector+' breadcrumb clears navigation at '+width+'px');
+      assert.equal(await evaluate(`document.documentElement.scrollWidth>innerWidth+1`),false,'Sector '+sector+' fits '+width+'px');
+    }
+  }
   // The remaining phase-six assertions exercise mobile controls.
   await send('Emulation.setDeviceMetricsOverride',{width:360,height:900,deviceScaleFactor:1,mobile:true});
   for (let lesson=1; lesson<=6; lesson++) {
