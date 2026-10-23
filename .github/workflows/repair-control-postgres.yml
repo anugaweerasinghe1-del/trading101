@@ -64,3 +64,37 @@ jobs:
         env:
           TRADEHQ_DISPOSABLE_CONTROL_TEST: explicit-ci-fixture
           TRADEHQ_CONTROL_TEST_URL: postgres://tradehq_test:tradehq_ci_only@127.0.0.1:5432/tradehq_control_test
+
+  provider-binding-diagnostic:
+    name: Provider credential binding diagnostic (read only)
+    if: ${{ github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Read selected provider deployment metadata without publication authority
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          TRADEHQ_VERCEL_VERIFY_TOKEN: ${{ secrets.TRADEHQ_VERCEL_VERIFY_TOKEN }}
+        run: |
+          node --input-type=module <<'NODE'
+          // Diagnostic only: GET metadata, no release decision, no writes or credential output.
+          const read = async (url, token) => {
+            if (!token) return {configured:false};
+            try {
+              const response = await fetch(url, {headers:{Authorization:`Bearer ${token}`},signal:AbortSignal.timeout(25000)});
+              const data = await response.json();
+              return {configured:true,httpStatus:response.status,data};
+            } catch (error) { return {configured:true,networkError:error.name}; }
+          };
+          const cf = await read('https://api.cloudflare.com/client/v4/accounts/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/projects/tradehq-preview', process.env.CLOUDFLARE_API_TOKEN);
+          const project = cf.data?.result, deployment = project?.canonical_deployment;
+          console.log('PROVIDER_BINDING_CLOUDFLARE '+JSON.stringify({configured:cf.configured,httpStatus:cf.httpStatus,networkError:cf.networkError,errorCodes:cf.data?.errors?.map(e=>e.code),projectName:project?.name,productionBranch:project?.production_branch,canonicalDeployment:deployment?{id:deployment.id,environment:deployment.environment,status:deployment.latest_stage?.status,sha:deployment.deployment_trigger?.metadata?.commit_hash}:null}));
+          const vc = await read('https://api.vercel.com/v9/projects/prj_PjOhFr0eppPg8hZQhdeBwTniZWOy?teamId=team_fjZ5ggg0P43MsYFSIHbeHAAO', process.env.TRADEHQ_VERCEL_VERIFY_TOKEN);
+          const target = vc.data?.targets?.production;
+          console.log('PROVIDER_BINDING_VERCEL '+JSON.stringify({configured:vc.configured,httpStatus:vc.httpStatus,networkError:vc.networkError,projectId:vc.data?.id,production:target?{id:target.id,target:target.target,state:target.readyState,sha:target.meta?.githubCommitSha,branch:target.meta?.githubCommitRef}:null}));
+          NODE
