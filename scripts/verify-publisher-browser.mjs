@@ -26,6 +26,11 @@ assert.equal(new Set(routes).size, routes.length);
 const mime = { ".js": "application/javascript", ".css": "text/css", ".json": "application/json", ".svg": "image/svg+xml", ".png": "image/png", ".jpg": "image/jpeg", ".html": "text/html" };
 const server = createServer((request, response) => {
   const path = new URL(request.url, "http://localhost").pathname;
+  if (path === '/trader/me') {
+    // This intentionally unlisted guest route uses the production SPA shell.
+    response.writeHead(200, {'Content-Type':'text/html','X-Robots-Tag':'noindex, follow'});
+    response.end(readFileSync(join(dist,'app-shell.html'))); return;
+  }
   const doc = docs.find(row => path === "/courses/" + row.slug || path.startsWith("/courses/" + row.slug + "/"))?.document;
   if (doc) {
     const html = renderApprovedCourse(readFileSync(join(dist, "app-shell.html"), "utf8"), doc, path.split("/")[3]);
@@ -87,6 +92,7 @@ try {
       if (error && !window.__publisherAssetHeadErrors.includes(error)) window.__publisherAssetHeadErrors.push(error);
     }).observe(document, { subtree: true, childList: true, attributes: true });
   ` });
+  let catalogAvailable = true;
   // Fulfil HTTPS requests inside the fixture. Published-course reads use the
   // same recorded anonymous documents; no real account or service is touched.
   socket.addEventListener("message", event => {
@@ -94,7 +100,7 @@ try {
     if (message.method !== "Fetch.requestPaused") return;
     const {requestId, request} = message.params;
     const url = new URL(request.url); let payload = [];
-    if (url.pathname.endsWith("/get_published_course_catalog")) payload = docs.map(row => row.document);
+    if (url.pathname.endsWith("/get_published_course_catalog")) payload = catalogAvailable ? docs.map(row => row.document) : [];
     else if (url.pathname.endsWith("/published_courses")) {
       const slug = url.searchParams.get("slug")?.replace(/^eq\./, "");
       const doc = docs.find(row => row.slug === slug)?.document;
@@ -221,6 +227,21 @@ try {
   await waitUntil(`document.activeElement?.getAttribute('aria-label') === 'Open portfolio review mentor'`, 'Portfolio mentor restores focus');
   }
   if (phase === null || phase === 6) {
+  // A no-real-money answer must not misrepresent optional account storage.
+  // Expand only the FAQ; no authentication, portfolio mutation or order.
+  for (const id of ['sui','abbv','agg','eurjpy','wheat']) {
+    for (const width of [360,1280]) {
+      await send('Emulation.setDeviceMetricsOverride',{width,height:800,deviceScaleFactor:1,mobile:width<500});
+      await send('Page.navigate',{url:origin+'/trade/'+id});
+      await waitUntil(`location.pathname === '/trade/${id}' && Array.from(document.querySelectorAll('main button')).some(b=>b.textContent.includes('Can I lose real money trading')) && !document.querySelector('#prerender-seo')`, 'Asset money FAQ renders for '+id);
+      await evaluate(`(()=>{const b=Array.from(document.querySelectorAll('main button')).find(b=>b.textContent.includes('Can I lose real money trading'));b.scrollIntoView({block:'center'});b.click();return true})()`);
+      await waitUntil(`Array.from(document.querySelectorAll('main [role="region"]')).some(e=>e.innerText.includes('No. Every'))`, 'Money FAQ opens for '+id);
+      const answer = await evaluate(`Array.from(document.querySelectorAll('main [role="region"]')).find(e=>e.innerText.includes('No. Every')).innerText`);
+      assert.ok(answer.includes('virtual currency only') && answer.includes('no real funds'), id+': preserve virtual-only scope');
+      assert.equal(answer.includes('your portfolio is stored in your browser'),false,id+': do not claim all signed-in portfolio records remain browser-only');
+      assert.equal(await evaluate(`document.documentElement.scrollWidth>innerWidth+1`),false,id+': expanded FAQ fits '+width+'px');
+    }
+  }
   // About's introductory icon previously started beneath the fixed site header.
   // Check the actual boxes rather than a particular padding class.
   for (const [width, height] of [[360,800],[390,844],[768,1024],[1280,800],[1920,1080]]) {
@@ -230,6 +251,70 @@ try {
     await evaluate(`scrollTo(0,0); window.__aboutFontsReady = false; document.fonts.ready.then(() => window.__aboutFontsReady = true); true`);
     await waitUntil(`window.__aboutFontsReady === true`, 'About fonts settle at '+width+'px');
     assert.equal(await evaluate(`document.querySelector('main > header').getBoundingClientRect().top >= document.querySelector('nav').getBoundingClientRect().bottom`),true,'About introduction clears fixed navigation at '+width+'px');
+  }
+  // Profile badges must include completed published courses and retain earlier
+  // records when the current catalog cannot supply their display names.
+  await send('Emulation.setDeviceMetricsOverride',{width:360,height:900,deviceScaleFactor:1,mobile:true});
+  await send('Page.navigate',{url:origin+'/trader/me'});
+  await waitUntil(`document.querySelector('main')?.innerText.includes('Course badges earned')`, 'Own fixture profile renders');
+  const financialTiles = await evaluate(`[...document.querySelectorAll('main section')].find(s=>s.innerText.includes('PORTFOLIO VALUE'))?.innerText`);
+  assert.ok(financialTiles?.includes('$100,000'), 'Fresh fixture has its original virtual balance');
+  const badgeSeed = {v:1,tracks:{
+    'options-trading-fundamentals':{lessons:{},badgeEarnedAt:'2026-10-01T00:00:00.000Z'},
+    'retired-study-track':{lessons:{},badgeEarnedAt:'2026-10-02T00:00:00.000Z'},
+  }};
+  await evaluate(`localStorage.setItem('tradehq_course_progress_v1',${JSON.stringify(JSON.stringify(badgeSeed))}); true`);
+  for (const {document:track} of docs) {
+    for (const lesson of track.lessons) {
+      const path='/courses/'+track.slug+'/'+lesson.slug;
+      await send('Page.navigate',{url:origin+path});
+      await waitUntil(`location.pathname===${JSON.stringify(path)} && !document.querySelector('#prerender-seo') && [...document.querySelectorAll('main button')].some(b=>b.innerText.trim()==='Submit & complete lesson')`, 'Published quiz renders '+path);
+      const count = await evaluate(`(()=>{const h=[...document.querySelectorAll('main h2')].find(h=>h.innerText==='Check Your Understanding');const list=h.parentElement.querySelector('.space-y-5');list.setAttribute('data-fixture-quiz','true');return list.children.length})()`);
+      for (let q=0;q<count;q++) {
+        await evaluate(`document.querySelector('[data-fixture-quiz]').children[${q}].querySelector('button').click()`);
+        await delay(50);
+      }
+      await waitUntil(`![...document.querySelectorAll('main button')].find(b=>b.innerText.trim()==='Submit & complete lesson').disabled`, 'Quiz answers enable completion');
+      await evaluate(`[...document.querySelectorAll('main button')].find(b=>b.innerText.trim()==='Submit & complete lesson').click()`);
+      await waitUntil(`document.querySelector('main')?.innerText.includes('Progress saved to your browser.')`, 'Quiz records local completion');
+    }
+  }
+  const completedProgress = await evaluate(`localStorage.getItem('tradehq_course_progress_v1')`);
+  for (const slug of Object.keys(badgeSeed.tracks)) assert.deepEqual(JSON.parse(completedProgress).tracks[slug],badgeSeed.tracks[slug],'Existing badge record remains intact');
+  await send('Page.navigate',{url:origin+'/trader/me'});
+  await waitUntil(`document.querySelector('main')?.innerText.includes(${JSON.stringify(docs[0].document.badge.name)}) && document.querySelector('main')?.innerText.includes(${JSON.stringify(docs[1].document.badge.name)})`, 'Own profile displays both published-course badges');
+  assert.ok(await evaluate(`document.querySelector('main').innerText.includes('Options Fundamentals Completion') && document.querySelector('main').innerText.includes('Course completion: retired study track')`), 'Native and retired completion records remain visible');
+  assert.equal(await evaluate(`[...document.querySelectorAll('main section')].find(s=>s.innerText.includes('PORTFOLIO VALUE'))?.innerText`),financialTiles,'Badge display does not change financial tiles');
+  catalogAvailable = false;
+  await send('Page.navigate',{url:origin+'/trader/me'});
+  await waitUntil(`document.querySelector('main')?.innerText.includes('Course completion: cryptocurrency price feeds and valuation') && document.querySelector('main')?.innerText.includes('Course completion: diversification and position sizing')`, 'Stored badges remain visible without catalog names');
+  assert.equal(await evaluate(`localStorage.getItem('tradehq_course_progress_v1')`),completedProgress,'Profile display does not rewrite progress');
+  for (const [width,height] of [[360,800],[390,844],[768,1024],[1280,800],[1920,1080]]) {
+    await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<500});
+    assert.equal(await evaluate(`document.documentElement.scrollWidth>innerWidth+1`),false,'Completion badges fit profile at '+width+'px');
+  }
+  catalogAvailable = true;
+  // A fixed-aspect cover previously clipped long course headings on mobile.
+  // Exercise every bundled/published track and measure all of its cover text.
+  const trackPaths = routes.filter(path => /^\/courses\/[^/]+$/.test(path));
+  for (const path of trackPaths) {
+    for (const [width, height] of [[360,800],[390,844],[768,1024],[1280,800],[1920,1080]]) {
+      await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<500});
+      await send('Page.navigate',{url:origin+path});
+      await waitUntil(`location.pathname === ${JSON.stringify(path)} && !!document.querySelector('button[aria-label*="theme"]') && !!document.querySelector('main h1')?.previousElementSibling && !!document.querySelector('main h1')?.nextElementSibling && !document.querySelector('#prerender-seo')`, path+' hydrated cover renders at '+width+'px');
+      await evaluate(`window.__coverFontsReady = false; document.fonts.ready.then(() => window.__coverFontsReady = true); true`);
+      await waitUntil(`window.__coverFontsReady === true`, path+' cover fonts settle');
+      assert.equal(await evaluate(`(() => {
+        const heading = document.querySelector('main h1');
+        const text = heading.parentElement;
+        const cover = text.parentElement.getBoundingClientRect();
+        return [heading.previousElementSibling, heading, heading.nextElementSibling].every(element => {
+          const rect = element.getBoundingClientRect();
+          return rect.top >= cover.top - 1 && rect.bottom <= cover.bottom + 1
+            && rect.left >= cover.left - 1 && rect.right <= cover.right + 1;
+        });
+      })()`), true, path+' badge, title and description stay inside cover at '+width+'px');
+    }
   }
   // The remaining phase-six assertions exercise mobile controls.
   await send('Emulation.setDeviceMetricsOverride',{width:360,height:900,deviceScaleFactor:1,mobile:true});
@@ -274,6 +359,7 @@ try {
     const path = '/niche/' + symbol.toLowerCase();
     await send('Page.navigate', {url:origin+path});
     await waitUntil(`location.pathname === ${JSON.stringify(path)} && document.querySelector('main h1')?.textContent.includes(${JSON.stringify(niche.name)}) && !document.querySelector('#prerender-seo')`, symbol + ': hydrated guide renders');
+    await waitUntil(`!!document.querySelector('meta[name="robots"]') && !!document.querySelector('link[rel="canonical"]')`, symbol + ': metadata mounts after hydration');
     assert.equal(await evaluate(`document.querySelector('meta[name="robots"]')?.content`), 'noindex, follow', symbol + ': retain noindex');
     assert.equal(await evaluate(`document.querySelector('link[rel="canonical"]')?.href`), 'https://www.thetradehq.com'+path, symbol + ': preserve route canonical');
     assert.ok(await evaluate(`!!document.querySelector('main a[href="/trade/${niche.assetId}"]')`), symbol + ': practice link uses catalogue ID');

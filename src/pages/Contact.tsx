@@ -296,7 +296,7 @@ export default function Contact() {
             <h2 id="contact-quick-links" className="text-xl font-semibold mb-3">Answers you might not need to write in for</h2>
             <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1.5">
               <li><a className="hover:text-foreground underline-offset-4 hover:underline" href="/about">About TradeHQ</a> — who builds it, what it is and what it deliberately is not.</li>
-              <li><a className="hover:text-foreground underline-offset-4 hover:underline" href="/courses">Courses</a> — the four structured tracks, with quizzes and completion badges.</li>
+              <li><a className="hover:text-foreground underline-offset-4 hover:underline" href="/courses">Courses</a> — structured tracks, with quizzes and completion badges.</li>
               <li><a className="hover:text-foreground underline-offset-4 hover:underline" href="/wiki">Trading glossary</a> — plain-language definitions of the terms used across the site.</li>
               <li><a className="hover:text-foreground underline-offset-4 hover:underline" href="/roadmap">Roadmap</a> — what has shipped and what is planned next.</li>
               <li><a className="hover:text-foreground underline-offset-4 hover:underline" href="/privacy">Privacy</a> and <a className="hover:text-foreground underline-offset-4 hover:underline" href="/terms">Terms</a> — what is stored, and the rules for using the simulator.</li>
