@@ -107,8 +107,8 @@ try {
     if (chartWindowFixture && url.pathname.endsWith('/live-market-data') && url.searchParams.get('assetId') === 'btc') {
       const provenance = {status:'simulated',provider:'isolated-window-fixture',fetchedAt:new Date().toISOString()};
       const data = url.searchParams.get('dataType') === 'candles'
-        ? Array.from({length:193},(_,i)=>({time:new Date(Date.UTC(2026,0,1,i)).toISOString(),open:100+i,high:101+i,low:99+i,close:100+i,volume:100}))
-        : {price:292,change24h:24,changePercent24h:8.96,high24h:null,low24h:null,volume24h:null,lastUpdated:null,source:'simulated'};
+        ? Array.from({length:193},(_,i)=>({time:new Date(Date.UTC(2026,0,1,i)).toISOString(),open:100000+i,high:100001+i,low:99999+i,close:100000+i,volume:100}))
+        : {price:100192,change24h:24,changePercent24h:0.02,high24h:null,low24h:null,volume24h:null,lastUpdated:null,source:'simulated'};
       payload = {success:true,assetId:'btc',data,provenance};
     }
     else if (chartPriceFixture && url.pathname.endsWith('/live-market-data') && url.searchParams.get('assetId') === 'shib') {

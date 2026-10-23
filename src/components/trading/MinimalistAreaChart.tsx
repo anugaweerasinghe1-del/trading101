@@ -171,9 +171,8 @@ export function MinimalistAreaChart({ asset }: MinimalistAreaChartProps) {
   const formatChartPrice = (value: number) => typeof value === 'number' && !isNaN(value)
     ? `$${value !== 0 && Math.abs(value) < 0.0001 ? formatPrice(value, asset.type) : value.toLocaleString()}`
     : '$—';
-  const chartAxisWidth = safePrice < 0.0001
-    ? Math.max(84, (Math.max(formatChartPrice(minPrice).length, formatChartPrice(maxPrice).length) + 2) * 7 + 16)
-    : 60;
+  const chartAxisWidth = Math.max(safePrice < 0.0001 ? 84 : 60,
+    (Math.max(formatChartPrice(minPrice - padding).length, formatChartPrice(maxPrice + padding).length) + 2) * 7 + 16);
 
 
   const handleRefresh = () => {

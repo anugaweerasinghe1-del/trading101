@@ -13,7 +13,8 @@ export async function verifyChartWindows({send,evaluate,waitUntil,origin,delay,s
     await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<500});
     setWindowFixture(true);
     await navigate('/trade/btc');
-    await waitUntil(`document.querySelector('main')?.innerText.includes('$292.00')`,'Fixed quote loaded');
+    await waitUntil(`document.querySelector('main')?.innerText.includes('$100,192.00')`,'Fixed quote loaded');
+    await waitUntil(`document.fonts.status==='loaded'`,'Chart fonts loaded');
     const portfolio = await evaluate(`localStorage.getItem('tradehq_portfolio')`);
     for (const [label,hours] of [['1H',1],['4H',4],['1D',24],['1W',168]]) {
       await evaluate(`[...document.querySelectorAll('main button')].find(b=>b.textContent.trim()===${JSON.stringify(label)}).click();true`);
@@ -24,6 +25,7 @@ export async function verifyChartWindows({send,evaluate,waitUntil,origin,delay,s
       assert.equal(await evaluate(`[...document.querySelectorAll('main button[aria-pressed=true]')].filter(b=>b.textContent.trim()===${JSON.stringify(label)}).length`),1,'Selected chart window is accessible');
       assert.ok(await evaluate(`document.querySelector('main').innerText.includes(${JSON.stringify(label+' window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period.')})`),'History and quote-period limitations are disclosed');
       assert.equal(await evaluate(`localStorage.getItem('tradehq_portfolio')`),portfolio,'Window selection preserves guest holdings');
+      assert.equal(await evaluate(`(()=>{const chart=document.querySelector('main .recharts-wrapper').getBoundingClientRect();return [...document.querySelectorAll('main .recharts-yAxis text')].every(e=>{const r=e.getBoundingClientRect();return r.left>=chart.left && r.right<=chart.right;})})()`),true,'Large price labels remain inside the chart at '+width);
     }
     assert.equal(await evaluate(`document.documentElement.scrollWidth>innerWidth+1`),false,'Window controls fit '+width);
     setWindowFixture(false);
