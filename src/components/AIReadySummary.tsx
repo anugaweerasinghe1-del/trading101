@@ -87,6 +87,10 @@ export function AIReadySummary({ asset }: AIReadySummaryProps) {
           <p className="text-sm text-muted-foreground leading-relaxed">
             {summary}
           </p>
+          <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+            This summary describes the instrument snapshot supplied to the page.
+            The chart refreshes separately, so its quoted change may differ.
+          </p>
           
           <div className="flex items-center gap-4 mt-3 text-xs text-muted-foreground/70">
             <span>Simulated data — not real market conditions</span>
