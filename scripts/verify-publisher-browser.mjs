@@ -11,6 +11,7 @@ import { setTimeout as delay } from "node:timers/promises";
 import { renderApprovedCourse } from "../src/lib/courseHtml.ts";
 import { waitForChromePort } from "./isolated-chrome-startup.mjs";
 import { NICHE_SYMBOLS, getNicheAsset } from "../src/lib/nicheData.ts";
+import { ASSETS } from "../src/lib/assets.ts";
 
 const chrome = ["google-chrome", "google-chrome-stable", "chromium", "chromium-browser"].find(name => spawnSync("which", [name]).status === 0);
 assert.ok(chrome, "Chromium unavailable; this browser check has NOT passed");
@@ -244,6 +245,7 @@ try {
   }
   // These 50 intentionally noindex guides are outside the sitemap matrix.
   // Commodity slugs are catalogue IDs, while forex slugs encode a slash.
+  const nicheReferenceFailures = [];
   for (const symbol of NICHE_SYMBOLS) {
     const niche = getNicheAsset(symbol);
     assert.ok(niche, symbol + ': catalogue route must resolve');
@@ -253,8 +255,21 @@ try {
     assert.equal(await evaluate(`document.querySelector('meta[name="robots"]')?.content`), 'noindex, follow', symbol + ': retain noindex');
     assert.equal(await evaluate(`document.querySelector('link[rel="canonical"]')?.href`), 'https://www.thetradehq.com'+path, symbol + ': preserve route canonical');
     assert.ok(await evaluate(`!!document.querySelector('main a[href="/trade/${niche.assetId}"]')`), symbol + ': practice link uses catalogue ID');
+    const reference = await evaluate(`Array.from(document.querySelectorAll('main tbody tr')).find(row => row.cells[0]?.textContent === 'Simulator Reference Price')?.cells[1]?.textContent`);
+    const sourceAsset = ASSETS.find(asset => asset.id === niche.assetId);
+    assert.ok(sourceAsset, symbol + ': reference asset exists');
+    const displayedPrice = Number(reference?.replaceAll(',', ''));
+    if (sourceAsset.price > 0 && !(displayedPrice > 0)) nicheReferenceFailures.push(symbol + ': a positive reference price must not display as zero');
+    if (sourceAsset.price > 0 && sourceAsset.price < 0.0001) {
+      if (!(Math.abs(displayedPrice - sourceAsset.price) <= sourceAsset.price * 0.00001)) nicheReferenceFailures.push(symbol + ': tiny reference prices retain meaningful precision');
+    }
+    if (symbol === 'BTC') {
+      if (await evaluate(`/(correlation with Bitcoin|Bitcoin correlation)/i.test(document.querySelector('main').innerText)`)) nicheReferenceFailures.push('Bitcoin guide must not explain its price using correlation with itself');
+    }
+
     assert.equal(await evaluate(`document.documentElement.scrollWidth > innerWidth+1`), false, symbol + ': guide fits mobile');
   }
+  assert.deepEqual(nicheReferenceFailures, [], 'All niche reference-price and Bitcoin explanation checks pass');
   }
   }
   assert.deepEqual(runtimeErrors, [], 'No uncaught application JavaScript exceptions');
