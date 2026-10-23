@@ -94,7 +94,7 @@ export function MinimalistAreaChart({ asset }: MinimalistAreaChartProps) {
           
           newData.push({
             time: new Date(now).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-            price: Number(newPrice.toFixed(2)),
+            price: newPrice, // Keep tiny positive chart values through subsequent updates, too.
             timestamp: now,
           });
           return newData;
@@ -123,9 +123,22 @@ export function MinimalistAreaChart({ asset }: MinimalistAreaChartProps) {
     return fallbackData;
   }, [candles, fallbackData]);
 
+  // Select a display window from the returned history; never invent missing history
+  // or alter the quote used by the order panel. Anchor delayed data at its latest point.
+  const visibleChartData = useMemo(() => {
+    const hours = { '1H': 1, '4H': 4, '1D': 24, '1W': 168 }[timeframe];
+    const latest = Math.max(...chartData.map(point => point.timestamp));
+    return chartData.filter(point => point.timestamp >= latest - hours * 3600000).map(point => ({
+      ...point,
+      time: timeframe === '1W'
+        ? new Date(point.timestamp).toLocaleString([], { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })
+        : point.time,
+    }));
+  }, [chartData, timeframe]);
+
   // Calculate price metrics
   const { minPrice, maxPrice, priceChange, priceChangePercent, isPositive, currentPrice } = useMemo(() => {
-    const prices = chartData.map(d => d.price).filter(p => typeof p === 'number' && !isNaN(p));
+    const prices = visibleChartData.map(d => d.price).filter(p => typeof p === 'number' && !isNaN(p));
     const min = prices.length > 0 ? Math.min(...prices) : safePrice * 0.95;
     const max = prices.length > 0 ? Math.max(...prices) : safePrice * 1.05;
     const first = chartData[0]?.price || safePrice;
@@ -144,7 +157,7 @@ export function MinimalistAreaChart({ asset }: MinimalistAreaChartProps) {
       isPositive: change >= 0,
       currentPrice: livePrice,
     };
-  }, [chartData, liveData, safePrice]);
+  }, [chartData, visibleChartData, liveData, safePrice]);
 
   const chartIsRealtime = isLive && candles.length > 0 && candleProvenance?.status === "realtime";
   const chartLabel =
@@ -158,9 +171,8 @@ export function MinimalistAreaChart({ asset }: MinimalistAreaChartProps) {
   const formatChartPrice = (value: number) => typeof value === 'number' && !isNaN(value)
     ? `$${value !== 0 && Math.abs(value) < 0.0001 ? formatPrice(value, asset.type) : value.toLocaleString()}`
     : '$—';
-  const chartAxisWidth = safePrice < 0.0001
-    ? Math.max(84, (Math.max(formatChartPrice(minPrice).length, formatChartPrice(maxPrice).length) + 2) * 7 + 16)
-    : 60;
+  const chartAxisWidth = Math.max(safePrice < 0.0001 ? 84 : 60,
+    (Math.max(formatChartPrice(minPrice - padding).length, formatChartPrice(maxPrice + padding).length) + 2) * 7 + 16);
 
 
   const handleRefresh = () => {
@@ -229,6 +241,7 @@ export function MinimalistAreaChart({ asset }: MinimalistAreaChartProps) {
           <button
             key={tf}
             onClick={() => setTimeframe(tf)}
+            aria-pressed={timeframe === tf}
             className={`px-3 py-1 rounded-full text-xs font-medium transition-all ${
               timeframe === tf
                 ? 'bg-primary/20 text-primary'
@@ -239,11 +252,14 @@ export function MinimalistAreaChart({ asset }: MinimalistAreaChartProps) {
           </button>
         ))}
       </div>
+      <p className="px-4 pb-2 text-xs text-muted-foreground" aria-live="polite">
+        {timeframe} window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period.
+      </p>
 
       {/* Chart */}
       <div className="flex-1 min-h-0 px-2">
         <ResponsiveContainer width="100%" height="100%">
-          <AreaChart data={chartData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+          <AreaChart data={visibleChartData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
             <defs>
               <linearGradient id="priceGradient" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor="hsl(152, 60%, 42%)" stopOpacity={0.3} />

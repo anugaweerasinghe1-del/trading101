@@ -13,6 +13,7 @@ import { waitForChromePort } from "./isolated-chrome-startup.mjs";
 import { NICHE_SYMBOLS, getNicheAsset } from "../src/lib/nicheData.ts";
 import { ASSETS } from "../src/lib/assets.ts";
 import { lessonData } from "../src/lib/lessonData.ts";
+import { verifyChartWindows } from "./verify-chart-windows.mjs";
 
 const chrome = ["google-chrome", "google-chrome-stable", "chromium", "chromium-browser"].find(name => spawnSync("which", [name]).status === 0);
 assert.ok(chrome, "Chromium unavailable; this browser check has NOT passed");
@@ -94,6 +95,7 @@ try {
     }).observe(document, { subtree: true, childList: true, attributes: true });
   ` });
   let chartPriceFixture = false;
+  let chartWindowFixture = false;
   let catalogAvailable = true;
   // Fulfil HTTPS requests inside the fixture. Published-course reads use the
   // same recorded anonymous documents; no real account or service is touched.
@@ -102,7 +104,14 @@ try {
     if (message.method !== "Fetch.requestPaused") return;
     const {requestId, request} = message.params;
     const url = new URL(request.url); let payload = [];
-    if (chartPriceFixture && url.pathname.endsWith('/live-market-data') && url.searchParams.get('assetId') === 'shib') {
+    if (chartWindowFixture && url.pathname.endsWith('/live-market-data') && url.searchParams.get('assetId') === 'btc') {
+      const provenance = {status:'simulated',provider:'isolated-window-fixture',fetchedAt:new Date().toISOString()};
+      const data = url.searchParams.get('dataType') === 'candles'
+        ? Array.from({length:193},(_,i)=>({time:new Date(Date.UTC(2026,0,1,i)).toISOString(),open:100000+i,high:100001+i,low:99999+i,close:100000+i,volume:100}))
+        : {price:100192,change24h:24,changePercent24h:0.02,high24h:null,low24h:null,volume24h:null,lastUpdated:null,source:'simulated'};
+      payload = {success:true,assetId:'btc',data,provenance};
+    }
+    else if (chartPriceFixture && url.pathname.endsWith('/live-market-data') && url.searchParams.get('assetId') === 'shib') {
       const provenance = {status:'simulated',provider:'isolated-fixed-fixture',fetchedAt:new Date().toISOString()};
       const data = url.searchParams.get('dataType') === 'candles'
         ? Array.from({length:51},(_,i)=>({time:new Date(Date.UTC(2026,0,1,0,i)).toISOString(),open:0.00000520185,high:0.0000055,low:0.000005,close:0.00000520185*(0.99+i*0.0005),volume:100}))
@@ -272,6 +281,7 @@ try {
   }
   assert.deepEqual(tinyHeaderLayoutFailures, [], 'Trading chart and portfolio headers fit all target widths');
   chartPriceFixture = false;
+  await verifyChartWindows({send,evaluate,waitUntil,origin,delay,setWindowFixture:value=>{chartWindowFixture=value;}});
   // A no-real-money answer must not misrepresent optional account storage.
   // Expand only the FAQ; no authentication, portfolio mutation or order.
   for (const id of ['sui','abbv','agg','eurjpy','wheat']) {
