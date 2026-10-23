@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import { getPortfolio, calculateRealizedPnL, calculateMaxDrawdown, calculateClosedTradeStats } from "@/lib/portfolio";
 import { STARTING_BALANCE_LABEL } from "@/lib/constants";
 import { loadProgress } from "@/lib/courseProgress";
-import { courseTracks } from "@/lib/coursesData";
+import { useCourseCatalog } from "@/hooks/useCourseCatalog";
 import { EducationalDisclaimer } from "@/components/EducationalDisclaimer";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { toast } from "sonner";
@@ -30,17 +30,19 @@ function useTraderStats() {
     const trades = p.trades.length;
     const winRate = calculateClosedTradeStats(p).winRate;
 
-    const progress = loadProgress();
-    const badges = courseTracks
-      .filter((t) => progress.tracks[t.slug]?.badgeEarnedAt)
-      .map((t) => ({ track: t.slug, name: t.badge.name }));
-
-    return { p, totalPnL, totalPnLPct, realized, maxDD, trades, winRate, badges };
+    return { p, totalPnL, totalPnLPct, realized, maxDD, trades, winRate };
   }, []);
 }
 
 export default function TraderProfile() {
   const s = useTraderStats();
+  const { tracks } = useCourseCatalog();
+  const badges = useMemo(() => {
+    const names = new Map(tracks.map((track) => [track.slug, track.badge.name]));
+    return Object.entries(loadProgress().tracks)
+      .filter(([, progress]) => progress.badgeEarnedAt)
+      .map(([track]) => ({ track, name: names.get(track) ?? `Course completion: ${track.replace(/-/g, " ")}` }));
+  }, [tracks]);
   const { user, profile, refreshProfile } = useAuth();
   const [visibilityBusy, setVisibilityBusy] = useState(false);
 
@@ -157,7 +159,7 @@ export default function TraderProfile() {
             <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
               <Award className="w-5 h-5 text-emerald-400" /> Course badges earned
             </h2>
-            {s.badges.length === 0 ? (
+            {badges.length === 0 ? (
               <Card className="p-6 bg-white/[0.02] border-white/10 text-center">
                 <p className="text-sm text-muted-foreground mb-3">
                   No completion badges yet. Finish a structured course to earn your first.
@@ -171,7 +173,7 @@ export default function TraderProfile() {
               </Card>
             ) : (
               <div className="flex flex-wrap gap-2">
-                {s.badges.map((b) => (
+                {badges.map((b) => (
                   <Badge key={b.track} variant="outline" className="border-emerald-500/30 bg-emerald-500/5 text-emerald-300 px-3 py-2 text-sm">
                     <Sparkles className="w-3 h-3 mr-1" /> {b.name}
                   </Badge>
