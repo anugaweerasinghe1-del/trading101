@@ -1,11 +1,15 @@
 """Selected native/provider preview fields only. Never emits tokens or signed logs."""
-import datetime,json,os,pathlib,re,subprocess,sys,urllib.request
+import datetime,json,os,pathlib,re,subprocess,sys,time,urllib.request
 sha,stem=sys.argv[1:3]
 assert re.fullmatch(r'[a-f0-9]{40}',sha) and re.fullmatch(r'PR\d+(?:-[A-Z0-9-]+)?',stem)
 root=pathlib.Path(__file__).parent
 
 def gh(path):
-    return json.loads(subprocess.check_output(['gh','api',path],text=True))
+    for attempt in range(3):
+        out=subprocess.run(['gh','api',path],text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+        if out.returncode==0:return json.loads(out.stdout)
+        if attempt<2 and any(code in out.stderr for code in ['HTTP 502','HTTP 503','HTTP 504']):time.sleep(5);continue
+        raise RuntimeError('GitHub preview read unavailable; no preview proof')
 
 checks=gh('repos/anugaweerasinghe1-del/trading101/commits/'+sha+'/check-runs')['check_runs']
 cf=next(x for x in checks if x['app']['id']==85455 and x['name']=='Cloudflare Pages' and x['conclusion']=='success' and x['head_sha']==sha)

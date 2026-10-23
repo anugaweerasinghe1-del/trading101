@@ -1,10 +1,10 @@
 # TradeHQ audit status — 23 October 2026
 
-**18 confirmed site defects: 8 P2 and 10 P3. 15 fixes are deployed and publicly verified; 3 remain prepared across 3 PRs.** The exhaustive audit is still incomplete.
+**18 confirmed site defects: 8 P2 and 10 P3. 16 fixes are deployed and publicly verified; 2 remain prepared across 2 PRs.** The exhaustive audit is still incomplete.
 
-Latest verified production SHA: `48b5c2d5a63ea44dee6c23d7adaacb638d65c4dc` ([PR215](https://github.com/anugaweerasinghe1-del/trading101/pull/215)). Authenticated Cloudflare production SUCCESS and Vercel production READY match this exact merge commit. Main required CI, disposable PostgreSQL and both release monitors pass. No next batch was merged before the preceding release cycle completed.
+Latest verified production SHA: `f56422990c8d275e1abc529235ac926a61f74a45` ([PR217](https://github.com/anugaweerasinghe1-del/trading101/pull/217)). Authenticated Cloudflare production SUCCESS and Vercel production READY match this exact merge commit. Main required CI, disposable PostgreSQL and both release monitors pass. No next batch was merged before the preceding release cycle completed.
 
-[Native provider receipt](evidence/PR215-PRODUCTION-PROVIDERS.json), [affected live pages](evidence/PR215-PRODUCTION-BROWSER.json), [guest smoke](evidence/POST-PR215-GUEST-SMOKE.json), [main CI](evidence/PR215-MAIN-CI.json).
+[Native provider receipt](evidence/PR217-PRODUCTION-PROVIDERS.json), [affected live pages](evidence/PR217-PRODUCTION-BROWSER.json), [guest smoke](evidence/POST-PR217-GUEST-SMOKE.json), [main CI](evidence/PR217-MAIN-CI.json).
 
 ## Releases
 
@@ -17,10 +17,10 @@ Latest verified production SHA: `48b5c2d5a63ea44dee6c23d7adaacb638d65c4dc` ([PR2
 |[218](https://github.com/anugaweerasinghe1-del/trading101/pull/218)|THQ-009, THQ-010|`9365eaf7e57a`; native providers and scoped live checks PASS |
 |[220](https://github.com/anugaweerasinghe1-del/trading101/pull/220)|THQ-012, THQ-013, THQ-015, THQ-016|`24a9e4fe486e`; native providers and scoped live checks PASS |
 |[215](https://github.com/anugaweerasinghe1-del/trading101/pull/215)|THQ-005|`48b5c2d5a63e`; native providers and scoped live checks PASS |
+|[217](https://github.com/anugaweerasinghe1-del/trading101/pull/217)|THQ-008|`f56422990c8d`; native providers and scoped live checks PASS |
 
 ## Remaining prepared fixes
 
-- [PR217](https://github.com/anugaweerasinghe1-del/trading101/pull/217): Published courses missing from Learn hub. Refresh against latest main, pass exact-head CI/previews, then follow the serial production gate.
 - [PR219](https://github.com/anugaweerasinghe1-del/trading101/pull/219): Sector breadcrumbs obscured by fixed navigation. Refresh against latest main, pass exact-head CI/previews, then follow the serial production gate.
 - [PR221](https://github.com/anugaweerasinghe1-del/trading101/pull/221): Separate summary/chart quote snapshots are unexplained. Refresh against latest main, pass exact-head CI/previews, then follow the serial production gate.
 
@@ -28,7 +28,7 @@ GitHub Actions Cloudflare access is repaired and provides authenticated native v
 
 ## Scope and limits
 
-449 candidate routes: 441 public/guest routes and eight excluded admin guards. The 22 October collection recorded 441 HTTP 200 responses and 2,205 browser captures at five widths. Captures do not establish human visual completion. Main-body/state notes cover 279 routes; 162 terminal bodies remain unread. Expanded FAQ answers: 134 of 1,042 read, with 908 unread. Separately, 150 native guide answers, 24 legacy topics/20 questions and 26 structured quizzes/104 question-option-explanation sets were read. Full primary-source corroboration, visuals, controls and duplication assessment remain partial. [Precise unfinished scope](UNFINISHED-SCOPE.json), [page ledger](PAGE-AUDIT.json), [findings](FINDINGS.json), [release ledger](RELEASE-LEDGER.json).
+449 candidate routes: 441 public/guest routes and eight excluded admin guards. The 22 October collection recorded 441 HTTP 200 responses and 2,205 browser captures at five widths. Captures do not establish human visual completion. Main-body/state notes cover 282 routes; 159 terminal bodies remain unread. Expanded FAQ answers: 134 of 1,042 read, with 908 unread. Separately, 150 native guide answers, 24 legacy topics/20 questions and 26 structured quizzes/104 question-option-explanation sets were read. Full primary-source corroboration, visuals, controls and duplication assessment remain partial. [Precise unfinished scope](UNFINISHED-SCOPE.json), [page ledger](PAGE-AUDIT.json), [findings](FINDINGS.json), [release ledger](RELEASE-LEDGER.json).
 
 Guest regression covers 15 route interfaces on mobile and desktop, plus four safe controls. The public-duels RPC is deliberately prevented because its SQL may settle expired duels; duel results are not certified. No account, order or contact submission was made. Own disposable local records may be seeded/restored for display checks. Financial calculations, execution, fees, positions/balances/history, auth, database/schema, privacy/consent and ad behavior were not changed.
 

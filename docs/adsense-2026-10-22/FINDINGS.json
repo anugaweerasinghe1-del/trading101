@@ -249,9 +249,9 @@
       "id": "THQ-008",
       "severity": "P3",
       "category": "Published courses missing from Learn hub",
-      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "state": "PUBLICLY_VERIFIED",
       "pr": 217,
-      "candidateSHA": "a74f57a4fd65463441a0421ecf3fdffa3a08698d",
+      "candidateSHA": "0efeb900cd3f5d137e1ab43a93c40fff09bbd0f5",
       "urls": [
         "https://www.thetradehq.com/learn"
       ],
@@ -263,7 +263,14 @@
       "evidence": "evidence/PR217-PREVIEW-BROWSER.json",
       "rollback": "Reviewedrevert,no data rollback.",
       "mergeAllowed": false,
-      "releaseHold": "Cloudflare native authentication401; serial production verification required."
+      "releaseHold": "Cloudflare native authentication401; serial production verification required.",
+      "mergeSHA": "f56422990c8d275e1abc529235ac926a61f74a45",
+      "productionEvidence": [
+        "evidence/PR217-PRODUCTION-PROVIDERS.json",
+        "evidence/PR217-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR217-GUEST-SMOKE.json",
+        "evidence/PR217-MAIN-CI.json"
+      ]
     },
     {
       "id": "THQ-009",
@@ -564,13 +571,13 @@
       "rollback": "Reviewedrevertofparagraph; nodatachanges."
     }
   ],
-  "updatedAt": "2026-10-23T14:48:37.710108+00:00",
+  "updatedAt": "2026-10-23T15:04:22.551202+00:00",
   "counts": {
     "siteFindings": 18,
     "P2": 8,
     "P3": 10,
-    "publiclyRepaired": 15,
-    "preparedNotMerged": 3,
+    "publiclyRepaired": 16,
+    "preparedNotMerged": 2,
     "separateOperationalBlockers": 0
   },
   "investigations": [

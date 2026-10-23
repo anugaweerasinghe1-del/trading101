@@ -1,0 +1,101 @@
+{
+  "checkedAt": "2026-10-23T14:57:49.258Z",
+  "sha": "f56422990c8d275e1abc529235ac926a61f74a45",
+  "origin": "https://www.thetradehq.com",
+  "outcome": "PASS",
+  "kind": "learn",
+  "rows": [
+    {
+      "path": "/learn",
+      "width": 360,
+      "courses": [
+        "/courses/options-trading-fundamentals",
+        "/courses/futures-and-derivatives",
+        "/courses/macro-reading-for-traders",
+        "/courses/trading-psychology-mastery",
+        "/courses/cryptocurrency-price-feeds-and-valuation",
+        "/courses/diversification-and-position-sizing"
+      ],
+      "countCopy": true,
+      "overflow": false
+    },
+    {
+      "path": "/learn",
+      "width": 390,
+      "courses": [
+        "/courses/options-trading-fundamentals",
+        "/courses/futures-and-derivatives",
+        "/courses/macro-reading-for-traders",
+        "/courses/trading-psychology-mastery",
+        "/courses/cryptocurrency-price-feeds-and-valuation",
+        "/courses/diversification-and-position-sizing"
+      ],
+      "countCopy": true,
+      "overflow": false
+    },
+    {
+      "path": "/learn",
+      "width": 768,
+      "courses": [
+        "/courses/options-trading-fundamentals",
+        "/courses/futures-and-derivatives",
+        "/courses/macro-reading-for-traders",
+        "/courses/trading-psychology-mastery",
+        "/courses/cryptocurrency-price-feeds-and-valuation",
+        "/courses/diversification-and-position-sizing"
+      ],
+      "countCopy": true,
+      "overflow": false
+    },
+    {
+      "path": "/learn",
+      "width": 1280,
+      "courses": [
+        "/courses/options-trading-fundamentals",
+        "/courses/futures-and-derivatives",
+        "/courses/macro-reading-for-traders",
+        "/courses/trading-psychology-mastery",
+        "/courses/cryptocurrency-price-feeds-and-valuation",
+        "/courses/diversification-and-position-sizing"
+      ],
+      "countCopy": true,
+      "overflow": false
+    },
+    {
+      "path": "/learn",
+      "width": 1920,
+      "courses": [
+        "/courses/options-trading-fundamentals",
+        "/courses/futures-and-derivatives",
+        "/courses/macro-reading-for-traders",
+        "/courses/trading-psychology-mastery",
+        "/courses/cryptocurrency-price-feeds-and-valuation",
+        "/courses/diversification-and-position-sizing"
+      ],
+      "countCopy": true,
+      "overflow": false
+    }
+  ],
+  "debug": null,
+  "networkFailures": [
+    {
+      "path": "https://ep1.adtrafficquality.google/getconfig/sodar",
+      "error": "net::ERR_FAILED",
+      "canceled": false
+    },
+    {
+      "path": "https://ep1.adtrafficquality.google/getconfig/sodar",
+      "error": "net::ERR_FAILED",
+      "canceled": false
+    }
+  ],
+  "errorResponses": [
+    {
+      "path": "https://googleads.g.doubleclick.net/pagead/ads",
+      "status": 503
+    }
+  ],
+  "runtimeErrors": [],
+  "blockedMutationAttempts": [],
+  "failure": null
+}

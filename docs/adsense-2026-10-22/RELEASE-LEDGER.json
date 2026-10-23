@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T14:48:37.710108+00:00",
+  "updatedAt": "2026-10-23T15:04:22.551202+00:00",
   "releases": [
     {
       "finding": "THQ-001",
@@ -423,6 +423,67 @@
         "evidence/PR215-MAIN-CI.json"
       ],
       "rollback": "Ordinaryprotectedrevertofthisdisplay/contentcommit; noDB/datamigration. Repeatnativeproviderandpublicverification."
+    },
+    {
+      "pr": 217,
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/217",
+      "findings": [
+        "THQ-008"
+      ],
+      "candidateSHA": "0efeb900cd3f5d137e1ab43a93c40fff09bbd0f5",
+      "mergeSHA": "f56422990c8d275e1abc529235ac926a61f74a45",
+      "state": "PUBLICLY_VERIFIED_MAIN_REQUIRED_AND_RELEASE_MONITORS_PASS",
+      "exactHeadRequiredChecks": "PASS",
+      "production": {
+        "checkedAt": "2026-10-23T14:55:37.185820+00:00",
+        "mergeSHA": "f56422990c8d275e1abc529235ac926a61f74a45",
+        "outcome": "PASS",
+        "sourceJob": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/39972834924/job/120482107441",
+        "scope": "Authenticated native provider reads by trusted exact-main release-readiness job. Both production deployments match the immutable merge SHA. No provider mutations.",
+        "cloudflare": {
+          "observedAt": "2026-10-23T14:53:51.782Z",
+          "project": "tradehq-preview",
+          "activeProduction": {
+            "id": "2d3a0bcd-07df-439b-a7cc-a50fc3d71e2c",
+            "sha": "f56422990c8d275e1abc529235ac926a61f74a45",
+            "environment": "production",
+            "branch": "main",
+            "status": "success",
+            "createdAt": "2026-10-23T14:48:49.879871Z"
+          }
+        },
+        "vercel": {
+          "schema": "tradehq-vercel-production-evidence-v1",
+          "deploymentId": "dpl_7bLP3p6UL2zUJQP6bvmzi9WZCNG3",
+          "teamId": "team_fjZ5ggg0P43MsYFSIHbeHAAO",
+          "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+          "commitSha": "f56422990c8d275e1abc529235ac926a61f74a45",
+          "target": "production",
+          "state": "READY",
+          "activeAlias": "thetradehq.com",
+          "createdAt": 1792766930687,
+          "observedAt": 1792767231781,
+          "requests": 2,
+          "authorization": {
+            "merge": false,
+            "productionRelease": false
+          }
+        }
+      },
+      "liveRecheck": {
+        "outcome": "PASS",
+        "affectedStates": 5,
+        "guestStates": 30,
+        "safeGuestControls": 4,
+        "protectedDuelSettlementRPC": "Prevented; resultsnotverified"
+      },
+      "evidence": [
+        "evidence/PR217-PRODUCTION-PROVIDERS.json",
+        "evidence/PR217-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR217-GUEST-SMOKE.json",
+        "evidence/PR217-MAIN-CI.json"
+      ],
+      "rollback": "Ordinaryprotectedrevertofthisdisplay/contentcommit; noDB/datamigration. Repeatnativeproviderandpublicverification."
     }
   ],
   "nextCandidate": {
@@ -502,9 +563,9 @@
       "id": "THQ-008",
       "severity": "P3",
       "category": "Published courses missing from Learn hub",
-      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "state": "MERGED_PUBLICLY_VERIFIED",
       "pr": 217,
-      "candidateSHA": "a74f57a4fd65463441a0421ecf3fdffa3a08698d",
+      "candidateSHA": "0efeb900cd3f5d137e1ab43a93c40fff09bbd0f5",
       "urls": [
         "https://www.thetradehq.com/learn"
       ],
@@ -516,7 +577,9 @@
       "evidence": "evidence/PR217-PREVIEW-BROWSER.json",
       "rollback": "Reviewedrevert,no data rollback.",
       "mergeAllowed": false,
-      "releaseHold": "Cloudflare native authentication401; serial production verification required."
+      "releaseHold": "Cloudflare native authentication401; serial production verification required.",
+      "mergeSHA": "f56422990c8d275e1abc529235ac926a61f74a45",
+      "reason": "Releasecyclecomplete; nonewmergeofthisPR."
     },
     {
       "id": "THQ-009",
@@ -621,8 +684,8 @@
   },
   "latestGitHubState": "evidence/FINAL-GITHUB-STATE-20261023.json",
   "latestGitHubProviderBindingEvidence": "evidence/PR214-PRODUCTION-PROVIDERS.json",
-  "latestMainValidationEvidence": "evidence/PR215-MAIN-CI.json",
-  "latestVerifiedProductionSHA": "48b5c2d5a63ea44dee6c23d7adaacb638d65c4dc",
+  "latestMainValidationEvidence": "evidence/PR217-MAIN-CI.json",
+  "latestVerifiedProductionSHA": "f56422990c8d275e1abc529235ac926a61f74a45",
   "summaryQuoteContextCandidate": {
     "pr": 221,
     "candidateSHA": "df3b432275997d1c25ecf250133ff2526f2dd64e",

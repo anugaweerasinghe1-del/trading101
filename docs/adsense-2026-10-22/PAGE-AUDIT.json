@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-10-23T10:09:18.664511+00:00",
   "complete": false,
-  "mainBodiesRead": 279,
+  "mainBodiesRead": 282,
   "publicRoutes": 441,
   "rows": [
     {
@@ -5315,7 +5315,16 @@
       ],
       "findingStates": {
         "THQ-008": "FIX_TESTED_PREVIEW_VERIFIED"
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 217,
+          "mergeSHA": "f56422990c8d275e1abc529235ac926a61f74a45",
+          "outcome": "PASS",
+          "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
+          "evidence": "evidence/PR217-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/learn-trading-guide",
@@ -14034,7 +14043,7 @@
       "path": "/trade/aluminum",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/aluminum",
         "url": "https://www.thetradehq.com/trade/aluminum",
@@ -14078,10 +14087,10 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
+        "status": "MAIN_BODY_READ",
+        "assessment": "23October reading of complete main text captured22October: aluminum is an ALI virtual commodity exercise with a simulated$2,243.37 quote, ordinary hypothetical rise/fall/fee instructions and an explicit no-asset-specific-research disclaimer. Gold/soybeans/palladium/platinum/wheat/corn links and generic chart-pattern/diversification links provide navigation rather than aluminum supply-demand analysis. Its shared company-fundamentals wording is generic to multiple asset classes and should not be credited as commodity research. Real contract units/settlement and source verification remain outside this text review. Historical commoditys plural is already addressed by THQ017; collapsed answers and full visuals are separately staged.",
+        "originality": "Actualmainprosecomparedwithotherreadterminals; repeatedcontextandasset-specificcontributionsdistinguished.",
+        "factualConcerns": "Currentprimary-sourcecorroboration, quote/controlsemantics andclosedanswersseparatelystaged.",
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
@@ -14127,14 +14136,15 @@
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped.",
         "THQ-017": "Shared generator source inventory; fresh representative browser proof is separately scoped."
-      }
+      },
+      "mainTextReadAt": "2026-10-23T14:50:29.046604+00:00"
     },
     {
       "url": "https://www.thetradehq.com/trade/amd",
       "path": "/trade/amd",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/amd",
         "url": "https://www.thetradehq.com/trade/amd",
@@ -14178,10 +14188,10 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
+        "status": "MAIN_BODY_READ",
+        "assessment": "23October reading of complete main text captured22October: CPU/GPU competition with Intel/NVIDIA and gaming/data-center/AI exposure provide AMD-specific context beyond the shared terminal prose. The exercise asks learners to compare AMD/NVIDIA percentage moves over the same sample and explicitly says measured beta and relative performance can change; it does not promise AMD will outperform. The simulated$136.64 quote is not evidence of an actual market event. The educational task is more specific than ADBE/AGG/ALI fallback descriptions, although repeated beginner/location sections remain. Current business reporting and source corroboration are not certified; closed FAQs and interactive controls need their own review.",
+        "originality": "Actualmainprosecomparedwithotherreadterminals; repeatedcontextandasset-specificcontributionsdistinguished.",
+        "factualConcerns": "Currentprimary-sourcecorroboration, quote/controlsemantics andclosedanswersseparatelystaged.",
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
@@ -14225,14 +14235,15 @@
       },
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped."
-      }
+      },
+      "mainTextReadAt": "2026-10-23T14:50:29.046604+00:00"
     },
     {
       "url": "https://www.thetradehq.com/trade/amzn",
       "path": "/trade/amzn",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/amzn",
         "url": "https://www.thetradehq.com/trade/amzn",
@@ -14276,10 +14287,10 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
+        "status": "MAIN_BODY_READ",
+        "assessment": "23October reading of complete main text captured22October: stores, advertising and AWS describe separate Amazon activities; segment reporting explicitly distinguishes sales from operating income. The earnings/Prime Day/AWS-advertising exercise is repeated in the summary, intelligence and limitations sections, so it should not be counted as three original explanations. Fixed/simulated labels and quote-versus-generated-chart limits are explicit. The captured negative summary versus positive chart prompted a fresh37second public comparison on23October: summary-1.2percent persisted while chart changed from+3.10to-0.09percent. THQ018/PR221 adds context that these are separate snapshots; no financial quote/data wiring is changed. Current Amazon disclosures, collapsed FAQs and full visuals remain follow-ups.",
+        "originality": "Actualmainprosecomparedwithotherreadterminals; repeatedcontextandasset-specificcontributionsdistinguished.",
+        "factualConcerns": "Currentprimary-sourcecorroboration, quote/controlsemantics andclosedanswersseparatelystaged.",
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
@@ -14293,7 +14304,9 @@
         "observedURL": "https://www.thetradehq.com/",
         "backReturned": true
       },
-      "findings": [],
+      "findings": [
+        "THQ-018"
+      ],
       "limitations": [
         "No production account/order/contact submission",
         "Ad delivery and regional CMP not verified",
@@ -14321,7 +14334,8 @@
           8
         ],
         "scope": "Normalized long standalone paragraphs only; not promoted to full main-body reading."
-      }
+      },
+      "mainTextReadAt": "2026-10-23T14:50:29.046604+00:00"
     },
     {
       "url": "https://www.thetradehq.com/trade/apt",
