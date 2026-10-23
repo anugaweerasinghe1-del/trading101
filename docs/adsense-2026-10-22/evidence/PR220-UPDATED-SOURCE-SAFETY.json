@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-10-23T14:33:16.706540+00:00",
+  "baseSHA": "9365eaf7e57a6020d70df7fe5637286e8389f11d",
+  "candidateSHA": "8736455a596968c5e6250c544d1ec45971ea1d02",
+  "applicationAndTestPaths": [
+    "scripts/verify-publisher-browser.mjs",
+    "src/components/trading/MinimalistAreaChart.tsx",
+    "src/components/trading/MinimalistPortfolioBar.tsx",
+    "src/lib/nicheData.ts"
+  ],
+  "portfolioCalculationPrefixByteIdentical": true,
+  "protectedFilesModified": false,
+  "scope": "Exactnewcandidateagainstcurrentmain; displayformatting/layout andstaticproseonly. Datageneration, execution,fees,records,auth,DB,privacy,adbehaviorandreleaseworkflowunchanged."
+}

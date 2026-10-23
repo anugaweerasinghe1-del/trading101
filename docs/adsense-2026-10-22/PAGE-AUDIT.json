@@ -7805,7 +7805,16 @@
         "answersRead": 3,
         "assessment": "Apple Inc. (AAPL): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/af0642a4e809ee7c.json"
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 220,
+          "mergeSHA": "24a9e4fe486e6ec08026c7e44b7318eda48d1953",
+          "outcome": "PASS",
+          "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
+          "evidence": "evidence/PR220-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/niche/ada",
@@ -8689,7 +8698,16 @@
         "answersRead": 3,
         "assessment": "Bitcoin (BTC): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/a68cc13650fb96b4.json"
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 220,
+          "mergeSHA": "24a9e4fe486e6ec08026c7e44b7318eda48d1953",
+          "outcome": "PASS",
+          "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
+          "evidence": "evidence/PR220-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/niche/coin",
@@ -9169,7 +9187,16 @@
         "answersRead": 3,
         "assessment": "Ethereum (ETH): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/3571dc1250c1dfd4.json"
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 220,
+          "mergeSHA": "24a9e4fe486e6ec08026c7e44b7318eda48d1953",
+          "outcome": "PASS",
+          "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
+          "evidence": "evidence/PR220-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/niche/eur-usd",
@@ -9249,7 +9276,16 @@
         "answersRead": 3,
         "assessment": "Euro / US Dollar (EUR/USD): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/feddacc1bf503cac.json"
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 220,
+          "mergeSHA": "24a9e4fe486e6ec08026c7e44b7318eda48d1953",
+          "outcome": "PASS",
+          "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
+          "evidence": "evidence/PR220-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/niche/ftm",
@@ -10853,7 +10889,16 @@
         "answersRead": 3,
         "assessment": "Shiba Inu (SHIB): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/2e2a444206133c85.json"
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 220,
+          "mergeSHA": "24a9e4fe486e6ec08026c7e44b7318eda48d1953",
+          "outcome": "PASS",
+          "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
+          "evidence": "evidence/PR220-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/niche/shop",
@@ -13407,7 +13452,16 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "postDeploymentChecks": [
+        {
+          "pr": 220,
+          "mergeSHA": "24a9e4fe486e6ec08026c7e44b7318eda48d1953",
+          "outcome": "PASS",
+          "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
+          "evidence": "evidence/PR220-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trade/aapl",
@@ -23220,7 +23274,16 @@
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped.",
         "THQ-017": "Shared generator source inventory; fresh representative browser proof is separately scoped."
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 220,
+          "mergeSHA": "24a9e4fe486e6ec08026c7e44b7318eda48d1953",
+          "outcome": "PASS",
+          "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
+          "evidence": "evidence/PR220-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trade/shop",

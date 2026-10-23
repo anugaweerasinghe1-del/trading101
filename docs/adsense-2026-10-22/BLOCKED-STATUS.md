@@ -1,10 +1,10 @@
 # TradeHQ audit status — 23 October 2026
 
-**17 confirmed site defects: 8 P2 and 9 P3. 10 fixes are deployed and publicly verified; 7 remain prepared across 4 PRs.** The exhaustive audit is still incomplete.
+**17 confirmed site defects: 8 P2 and 9 P3. 14 fixes are deployed and publicly verified; 3 remain prepared across 3 PRs.** The exhaustive audit is still incomplete.
 
-Latest verified production SHA: `9365eaf7e57a6020d70df7fe5637286e8389f11d` ([PR218](https://github.com/anugaweerasinghe1-del/trading101/pull/218)). Authenticated Cloudflare production SUCCESS and Vercel production READY match this exact merge commit. Main required CI, disposable PostgreSQL and both release monitors pass. No next batch was merged before the preceding release cycle completed.
+Latest verified production SHA: `24a9e4fe486e6ec08026c7e44b7318eda48d1953` ([PR220](https://github.com/anugaweerasinghe1-del/trading101/pull/220)). Authenticated Cloudflare production SUCCESS and Vercel production READY match this exact merge commit. Main required CI, disposable PostgreSQL and both release monitors pass. No next batch was merged before the preceding release cycle completed.
 
-[Native provider receipt](evidence/PR218-PRODUCTION-PROVIDERS.json), [affected live pages](evidence/PR218-PRODUCTION-BROWSER.json), [guest smoke](evidence/POST-PR218-GUEST-SMOKE.json), [main CI](evidence/PR218-MAIN-CI.json).
+[Native provider receipt](evidence/PR220-PRODUCTION-PROVIDERS.json), [affected live pages](evidence/PR220-PRODUCTION-BROWSER.json), [guest smoke](evidence/POST-PR220-GUEST-SMOKE.json), [main CI](evidence/PR220-MAIN-CI.json).
 
 ## Releases
 
@@ -15,13 +15,13 @@ Latest verified production SHA: `9365eaf7e57a6020d70df7fe5637286e8389f11d` ([PR2
 |[213](https://github.com/anugaweerasinghe1-del/trading101/pull/213)|THQ-002|`1517169657ea`; native providers and scoped live checks PASS |
 |[216](https://github.com/anugaweerasinghe1-del/trading101/pull/216)|THQ-006|`cd05556292fb`; native providers and scoped live checks PASS |
 |[218](https://github.com/anugaweerasinghe1-del/trading101/pull/218)|THQ-009, THQ-010|`9365eaf7e57a`; native providers and scoped live checks PASS |
+|[220](https://github.com/anugaweerasinghe1-del/trading101/pull/220)|THQ-012, THQ-013, THQ-015, THQ-016|`24a9e4fe486e`; native providers and scoped live checks PASS |
 
 ## Remaining prepared fixes
 
 - [PR215](https://github.com/anugaweerasinghe1-del/trading101/pull/215): Course catalog light-theme contrast. Refresh against latest main, pass exact-head CI/previews, then follow the serial production gate.
 - [PR217](https://github.com/anugaweerasinghe1-del/trading101/pull/217): Published courses missing from Learn hub. Refresh against latest main, pass exact-head CI/previews, then follow the serial production gate.
 - [PR219](https://github.com/anugaweerasinghe1-del/trading101/pull/219): Sector breadcrumbs obscured by fixed navigation. Refresh against latest main, pass exact-head CI/previews, then follow the serial production gate.
-- [PR220](https://github.com/anugaweerasinghe1-del/trading101/pull/220): Positive tiny guide/chart price values displayed as zero; Bitcoin guide cites correlation with itself as a price driver; Mobile chart quote and refresh control clipped outside header; Mobile portfolio summary hides cash and Details control. Refresh against latest main, pass exact-head CI/previews, then follow the serial production gate.
 
 GitHub Actions Cloudflare access is repaired and provides authenticated native verification. The separate workspace Cloudflare token remains invalid401, so it is not used as production proof. Vercel access works. No secret values were retrieved or printed. [Access receipts](evidence/RESUMED-GITHUB-PROVIDERS-20261023.json).
 

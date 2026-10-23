@@ -357,7 +357,7 @@
       "fix": "Use shared precise formatter for tiny reference/axis/tooltip values; size gutter from formatted strings. Other numeric data, series generation and financial calculations preserved.",
       "rootCause": "Guide generator always used toFixed(4) below1, bypassing shared tiny-price formatter.",
       "risk": "Low display-only; no numeric source prices, calculations, fees, balances, orders or records altered.",
-      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "state": "PUBLICLY_VERIFIED",
       "pr": 220,
       "mergeAllowed": false,
       "releaseHold": "Cloudflare native401 and required serial production verification",
@@ -365,10 +365,17 @@
       "test": "Production reproduction; old compiled regressions fail; final CFbuild/app TypeScript/fullphase6/exact-head3CI+PG PASS; nativeVercelREADY/trustedCFpreviewSUCCESS and actual35statesPASS.",
       "rollback": "Reviewed revert of guide display/copy and regression; no data rollback.",
       "adsenseRelevance": "Reader trust/accuracy quality issue; not asserted to be a distinct Publisher Policy violation.",
-      "candidateSHA": "8a04b6d35726521522c86e035d5fe73fc83ed982",
+      "candidateSHA": "8736455a596968c5e6250c544d1ec45971ea1d02",
       "exactHeadRequiredChecks": "PASS",
       "previewEvidence": "evidence/PR220-PREVIEW-BROWSER.json",
-      "actualPreview": "35statesPASS:5guides plusSHIBterminal anddefaulttrade at5widths. Quote/axis/header/summary/Details checks; ownportfolio record unchanged."
+      "actualPreview": "35statesPASS:5guides plusSHIBterminal anddefaulttrade at5widths. Quote/axis/header/summary/Details checks; ownportfolio record unchanged.",
+      "mergeSHA": "24a9e4fe486e6ec08026c7e44b7318eda48d1953",
+      "productionEvidence": [
+        "evidence/PR220-PRODUCTION-PROVIDERS.json",
+        "evidence/PR220-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR220-GUEST-SMOKE.json",
+        "evidence/PR220-MAIN-CI.json"
+      ]
     },
     {
       "id": "THQ-013",
@@ -381,7 +388,7 @@
       "fix": "BTC-only copy retains network/regulation/liquidity/market factors and removes self-correlation. Other crypto wording unchanged.",
       "rootCause": "Generic crypto copy interpolated into Bitcoin page without a Bitcoin case.",
       "risk": "Low static copy; FAQ structured data consumes the same text. No financial-engine change.",
-      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "state": "PUBLICLY_VERIFIED",
       "pr": 220,
       "mergeAllowed": false,
       "releaseHold": "Cloudflare native401 and required serial production verification",
@@ -389,10 +396,17 @@
       "test": "Production reproduction; old compiled regressions fail; final CFbuild/app TypeScript/fullphase6/exact-head3CI+PG PASS; nativeVercelREADY/trustedCFpreviewSUCCESS and actual35statesPASS.",
       "rollback": "Reviewed revert of guide display/copy and regression; no data rollback.",
       "adsenseRelevance": "Reader trust/accuracy quality issue; not asserted to be a distinct Publisher Policy violation.",
-      "candidateSHA": "8a04b6d35726521522c86e035d5fe73fc83ed982",
+      "candidateSHA": "8736455a596968c5e6250c544d1ec45971ea1d02",
       "exactHeadRequiredChecks": "PASS",
       "previewEvidence": "evidence/PR220-PREVIEW-BROWSER.json",
-      "actualPreview": "35statesPASS:5guides plusSHIBterminal anddefaulttrade at5widths. Quote/axis/header/summary/Details checks; ownportfolio record unchanged."
+      "actualPreview": "35statesPASS:5guides plusSHIBterminal anddefaulttrade at5widths. Quote/axis/header/summary/Details checks; ownportfolio record unchanged.",
+      "mergeSHA": "24a9e4fe486e6ec08026c7e44b7318eda48d1953",
+      "productionEvidence": [
+        "evidence/PR220-PRODUCTION-PROVIDERS.json",
+        "evidence/PR220-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR220-GUEST-SMOKE.json",
+        "evidence/PR220-MAIN-CI.json"
+      ]
     },
     {
       "id": "THQ-014",
@@ -426,9 +440,9 @@
       "id": "THQ-015",
       "severity": "P2",
       "category": "Mobile chart quote and refresh control clipped outside header",
-      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "state": "PUBLICLY_VERIFIED",
       "pr": 220,
-      "candidateSHA": "8a04b6d35726521522c86e035d5fe73fc83ed982",
+      "candidateSHA": "8736455a596968c5e6250c544d1ec45971ea1d02",
       "urls": [
         "https://www.thetradehq.com/trade/shib"
       ],
@@ -444,15 +458,22 @@
       "releaseHold": "Native Cloudflare401 and mandatory serial production verification",
       "exactHeadRequiredChecks": "PASS",
       "previewEvidence": "evidence/PR220-PREVIEW-BROWSER.json",
-      "actualPreview": "35statesPASS:5guides plusSHIBterminal anddefaulttrade at5widths. Quote/axis/header/summary/Details checks; ownportfolio record unchanged."
+      "actualPreview": "35statesPASS:5guides plusSHIBterminal anddefaulttrade at5widths. Quote/axis/header/summary/Details checks; ownportfolio record unchanged.",
+      "mergeSHA": "24a9e4fe486e6ec08026c7e44b7318eda48d1953",
+      "productionEvidence": [
+        "evidence/PR220-PRODUCTION-PROVIDERS.json",
+        "evidence/PR220-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR220-GUEST-SMOKE.json",
+        "evidence/PR220-MAIN-CI.json"
+      ]
     },
     {
       "id": "THQ-016",
       "severity": "P2",
       "category": "Mobile portfolio summary hides cash and Details control",
-      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "state": "PUBLICLY_VERIFIED",
       "pr": 220,
-      "candidateSHA": "8a04b6d35726521522c86e035d5fe73fc83ed982",
+      "candidateSHA": "8736455a596968c5e6250c544d1ec45971ea1d02",
       "urls": [
         "https://www.thetradehq.com/trade/shib"
       ],
@@ -468,7 +489,14 @@
       "adsenseRelevance": "Public mobile usability issue, not asserted individual Google Publisher Policy violation.",
       "exactHeadRequiredChecks": "PASS",
       "previewEvidence": "evidence/PR220-PREVIEW-BROWSER.json",
-      "actualPreview": "35statesPASS:5guides plusSHIBterminal anddefaulttrade at5widths. Quote/axis/header/summary/Details checks; ownportfolio record unchanged."
+      "actualPreview": "35statesPASS:5guides plusSHIBterminal anddefaulttrade at5widths. Quote/axis/header/summary/Details checks; ownportfolio record unchanged.",
+      "mergeSHA": "24a9e4fe486e6ec08026c7e44b7318eda48d1953",
+      "productionEvidence": [
+        "evidence/PR220-PRODUCTION-PROVIDERS.json",
+        "evidence/PR220-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR220-GUEST-SMOKE.json",
+        "evidence/PR220-MAIN-CI.json"
+      ]
     },
     {
       "id": "THQ-017",
@@ -511,13 +539,13 @@
       "latestEvidence": "evidence/PR214-MAIN-CI.json"
     }
   ],
-  "updatedAt": "2026-10-23T14:32:41.682741+00:00",
+  "updatedAt": "2026-10-23T14:39:00.804394+00:00",
   "counts": {
     "siteFindings": 17,
     "P2": 8,
     "P3": 9,
-    "publiclyRepaired": 10,
-    "preparedNotMerged": 7,
+    "publiclyRepaired": 14,
+    "preparedNotMerged": 3,
     "separateOperationalBlockers": 0
   },
   "investigations": [
