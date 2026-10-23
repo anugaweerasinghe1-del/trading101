@@ -35,7 +35,6 @@
       "risk": "Low interface-only change to shared CourseTrack; no progress or order logic.",
       "rollback": "Reviewed revert of the cover layout and regression test; no data/settings reversal.",
       "evidence": "evidence/COURSE-HERO-BEFORE.json",
-      "releaseBlockedBy": "OPS-001",
       "pr": 213,
       "candidateSHA": "e5fa54fbcbee43eea38a76a121efc8f400f5757c",
       "exactHeadRequiredChecks": "PASS",
@@ -48,7 +47,10 @@
         "evidence/PR213-PRODUCTION-BROWSER.json",
         "evidence/POST-PR213-GUEST-SMOKE.json",
         "evidence/PR213-MAIN-CI.json"
-      ]
+      ],
+      "historicalPreReleaseGate": {
+        "releaseBlockedBy": "OPS-001"
+      }
     },
     {
       "id": "OPS-001",
@@ -86,7 +88,6 @@
       "pr": 214,
       "candidateSHA": "36c8e3ae9c7c5f29b0a4df63c2e3439beebd540d",
       "localValidation": "Updated CloudflarebuildPASS; actualCloudflarepreview8pagesx5widthsPASS",
-      "mergeAllowed": false,
       "mergeHold": "Previous release cycle and native Cloudflare credential repair.",
       "exactHeadRequiredChecks": "PASS",
       "previewEvidence": "evidence/PR214-FINAL-PREVIEW-BROWSER.json",
@@ -96,7 +97,10 @@
         "evidence/PR214-PRODUCTION-PROVIDERS.json",
         "evidence/PR214-PRODUCTION-BROWSER.json",
         "evidence/POST-PR214-GUEST-SMOKE.json"
-      ]
+      ],
+      "historicalPreReleaseGate": {
+        "mergeAllowed": false
+      }
     },
     {
       "id": "THQ-004",
@@ -127,7 +131,6 @@
       "pr": 214,
       "candidateSHA": "36c8e3ae9c7c5f29b0a4df63c2e3439beebd540d",
       "localValidation": "Updated CloudflarebuildPASS; actualCloudflarepreview8pagesx5widthsPASS",
-      "mergeAllowed": false,
       "mergeHold": "Previous release cycle and native Cloudflare credential repair.",
       "exactHeadRequiredChecks": "PASS",
       "previewEvidence": "evidence/PR214-FINAL-PREVIEW-BROWSER.json",
@@ -137,7 +140,10 @@
         "evidence/PR214-PRODUCTION-PROVIDERS.json",
         "evidence/PR214-PRODUCTION-BROWSER.json",
         "evidence/POST-PR214-GUEST-SMOKE.json"
-      ]
+      ],
+      "historicalPreReleaseGate": {
+        "mergeAllowed": false
+      }
     },
     {
       "id": "THQ-005",
@@ -161,8 +167,6 @@
       "evidence": "evidence/COURSES-LIGHT-CONTRAST-BEFORE.json; courses-light-settled-360.png and1280.png",
       "adsenseRelevance": "Accessibility/readability improvement; not a specific Publisher Policy violation or whole-site WCAG-compliance claim.",
       "rollback": "Reviewed revert of scoped classes/style and associated regression; no data/settings reversal.",
-      "mergeAllowed": false,
-      "releaseHold": "Previous prepared batches and current native Cloudflare API401.",
       "pr": 215,
       "candidateSHA": "064145bb22931600c63045ccbb8c28dfd786d7fd",
       "localValidation": "Cloudflare build and full phase-six browserPASS, both themes x5sizes; expected old contrast regression failure. Initial niche head-node timing failure preserved; readiness waits for presence and retains exact-value assertions.",
@@ -174,7 +178,11 @@
         "evidence/PR215-PRODUCTION-BROWSER.json",
         "evidence/POST-PR215-GUEST-SMOKE.json",
         "evidence/PR215-MAIN-CI.json"
-      ]
+      ],
+      "historicalPreReleaseGate": {
+        "releaseHold": "Previous prepared batches and current native Cloudflare API401.",
+        "mergeAllowed": false
+      }
     },
     {
       "id": "THQ-006",
@@ -196,8 +204,6 @@
       "test": "Old compiled app fails actual published-badge assertion. Candidate TypeScript, Cloudflare build and complete phase6PASS. Actual6lesson completion, existing native/retired records, missingcatalogfallback, unchanged progress/financialtiles and5widthbounds checked.",
       "adsenseRelevance": "Genuine secondary functionality/trust issue; no specific Publisher Policy breach established.",
       "rollback": "Reviewed revert of display and associated test; existing badge/progress records remain, so no record rollback.",
-      "mergeAllowed": false,
-      "releaseHold": "Current native Cloudflare API401 and required serial production verification.",
       "pr": 216,
       "candidateSHA": "a14bca138a2cae0a1e678c2bba48d2c348db263d",
       "preview": "Actual CFpreview2publishedbadges visible at5widths; own preview storage unchanged. Native provider signal and exacthead checks separately staged.",
@@ -209,7 +215,11 @@
         "evidence/PR216-PRODUCTION-BROWSER.json",
         "evidence/POST-PR216-GUEST-SMOKE.json",
         "evidence/PR216-MAIN-CI.json"
-      ]
+      ],
+      "historicalPreReleaseGate": {
+        "releaseHold": "Current native Cloudflare API401 and required serial production verification.",
+        "mergeAllowed": false
+      }
     },
     {
       "id": "THQ-007",
@@ -231,8 +241,6 @@
       "pr": 214,
       "evidence": "evidence/GUIDE-PUNCTUATION-BEFORE.json and guide-punctuation-before-1280.png",
       "rollback": "Reviewed revert of one punctuation literal.",
-      "mergeAllowed": false,
-      "releaseHold": "Current Cloudflare native credential401 and serial verification.",
       "candidateSHA": "36c8e3ae9c7c5f29b0a4df63c2e3439beebd540d",
       "localValidation": "Updated CloudflarebuildPASS; actualCloudflarepreview8pagesx5widthsPASS",
       "exactHeadRequiredChecks": "PASS",
@@ -243,7 +251,11 @@
         "evidence/PR214-PRODUCTION-PROVIDERS.json",
         "evidence/PR214-PRODUCTION-BROWSER.json",
         "evidence/POST-PR214-GUEST-SMOKE.json"
-      ]
+      ],
+      "historicalPreReleaseGate": {
+        "releaseHold": "Current Cloudflare native credential401 and serial verification.",
+        "mergeAllowed": false
+      }
     },
     {
       "id": "THQ-008",
@@ -262,15 +274,17 @@
       "exactHeadRequiredChecks": "PASS",
       "evidence": "evidence/PR217-PREVIEW-BROWSER.json",
       "rollback": "Reviewedrevert,no data rollback.",
-      "mergeAllowed": false,
-      "releaseHold": "Cloudflare native authentication401; serial production verification required.",
       "mergeSHA": "f56422990c8d275e1abc529235ac926a61f74a45",
       "productionEvidence": [
         "evidence/PR217-PRODUCTION-PROVIDERS.json",
         "evidence/PR217-PRODUCTION-BROWSER.json",
         "evidence/POST-PR217-GUEST-SMOKE.json",
         "evidence/PR217-MAIN-CI.json"
-      ]
+      ],
+      "historicalPreReleaseGate": {
+        "releaseHold": "Cloudflare native authentication401; serial production verification required.",
+        "mergeAllowed": false
+      }
     },
     {
       "id": "THQ-009",
@@ -294,15 +308,17 @@
       "exactHeadRequiredChecks": "PASS",
       "evidence": "evidence/PR218-PREVIEW-BROWSER.json",
       "rollback": "Reviewedrevert,nodata rollback.",
-      "mergeAllowed": false,
-      "releaseHold": "Cloudflare native authentication401; serial production verification required.",
       "mergeSHA": "9365eaf7e57a6020d70df7fe5637286e8389f11d",
       "productionEvidence": [
         "evidence/PR218-PRODUCTION-PROVIDERS.json",
         "evidence/PR218-PRODUCTION-BROWSER.json",
         "evidence/POST-PR218-GUEST-SMOKE.json",
         "evidence/PR218-MAIN-CI.json"
-      ]
+      ],
+      "historicalPreReleaseGate": {
+        "releaseHold": "Cloudflare native authentication401; serial production verification required.",
+        "mergeAllowed": false
+      }
     },
     {
       "id": "THQ-010",
@@ -321,23 +337,25 @@
       "exactHeadRequiredChecks": "PASS",
       "evidence": "evidence/LEGACY-QUIZ-BEFORE.json; evidence/legacy-quiz-preview-4-1280.png",
       "rollback": "Reviewedrevert,nodata rollback.",
-      "mergeAllowed": false,
-      "releaseHold": "Cloudflare native authentication401; serial production verification required.",
       "mergeSHA": "9365eaf7e57a6020d70df7fe5637286e8389f11d",
       "productionEvidence": [
         "evidence/PR218-PRODUCTION-PROVIDERS.json",
         "evidence/PR218-PRODUCTION-BROWSER.json",
         "evidence/POST-PR218-GUEST-SMOKE.json",
         "evidence/PR218-MAIN-CI.json"
-      ]
+      ],
+      "historicalPreReleaseGate": {
+        "releaseHold": "Cloudflare native authentication401; serial production verification required.",
+        "mergeAllowed": false
+      }
     },
     {
       "id": "THQ-011",
       "severity": "P3",
       "category": "Sector breadcrumbs obscured by fixed navigation",
-      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "state": "PUBLICLY_VERIFIED",
       "pr": 219,
-      "candidateSHA": "ee1659104092fb603507165d2f9b8fbec2bcbda8",
+      "candidateSHA": "e7fe96e00de22d72913ae3c75240db6558991041",
       "urls": [
         "https://www.thetradehq.com/sectors/ai-tech",
         "https://www.thetradehq.com/sectors/crypto-defi",
@@ -354,10 +372,19 @@
       "exactHeadRequiredChecks": "PASS",
       "evidence": "evidence/SECTOR-HEADER-BEFORE.json",
       "rollback": "Reviewedrevert,nodata rollback.",
-      "mergeAllowed": false,
-      "releaseHold": "Cloudflare native authentication401; serial production verification required.",
       "actualPreview": "All35sector-widthstateszerooverlapanddocumentoverflow;360/1280foreximagesinspected",
-      "previewEvidence": "evidence/PR219-PREVIEW-BROWSER.json"
+      "previewEvidence": "evidence/PR219-PREVIEW-BROWSER.json",
+      "mergeSHA": "0e72e8ccc10b24f8f8523e97474bb0b6e9f22d57",
+      "productionEvidence": [
+        "evidence/PR219-PRODUCTION-PROVIDERS.json",
+        "evidence/PR219-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR219-GUEST-SMOKE.json",
+        "evidence/PR219-MAIN-CI.json"
+      ],
+      "historicalPreReleaseGate": {
+        "releaseHold": "Cloudflare native authentication401; serial production verification required.",
+        "mergeAllowed": false
+      }
     },
     {
       "id": "THQ-012",
@@ -373,8 +400,6 @@
       "risk": "Low display-only; no numeric source prices, calculations, fees, balances, orders or records altered.",
       "state": "PUBLICLY_VERIFIED",
       "pr": 220,
-      "mergeAllowed": false,
-      "releaseHold": "Cloudflare native401 and required serial production verification",
       "evidence": "evidence/NICHE-REFERENCE-BEFORE.json",
       "test": "Production reproduction; old compiled regressions fail; final CFbuild/app TypeScript/fullphase6/exact-head3CI+PG PASS; nativeVercelREADY/trustedCFpreviewSUCCESS and actual35statesPASS.",
       "rollback": "Reviewed revert of guide display/copy and regression; no data rollback.",
@@ -389,7 +414,11 @@
         "evidence/PR220-PRODUCTION-BROWSER.json",
         "evidence/POST-PR220-GUEST-SMOKE.json",
         "evidence/PR220-MAIN-CI.json"
-      ]
+      ],
+      "historicalPreReleaseGate": {
+        "releaseHold": "Cloudflare native401 and required serial production verification",
+        "mergeAllowed": false
+      }
     },
     {
       "id": "THQ-013",
@@ -404,8 +433,6 @@
       "risk": "Low static copy; FAQ structured data consumes the same text. No financial-engine change.",
       "state": "PUBLICLY_VERIFIED",
       "pr": 220,
-      "mergeAllowed": false,
-      "releaseHold": "Cloudflare native401 and required serial production verification",
       "evidence": "evidence/NICHE-REFERENCE-BEFORE.json",
       "test": "Production reproduction; old compiled regressions fail; final CFbuild/app TypeScript/fullphase6/exact-head3CI+PG PASS; nativeVercelREADY/trustedCFpreviewSUCCESS and actual35statesPASS.",
       "rollback": "Reviewed revert of guide display/copy and regression; no data rollback.",
@@ -420,7 +447,11 @@
         "evidence/PR220-PRODUCTION-BROWSER.json",
         "evidence/POST-PR220-GUEST-SMOKE.json",
         "evidence/PR220-MAIN-CI.json"
-      ]
+      ],
+      "historicalPreReleaseGate": {
+        "releaseHold": "Cloudflare native401 and required serial production verification",
+        "mergeAllowed": false
+      }
     },
     {
       "id": "THQ-014",
@@ -437,8 +468,6 @@
       "test": "Exact-main compiled regression fails SUI storage assertion. Candidate build and five-category/10state FAQ browser regression in progress.",
       "evidence": "evidence/FAQ-STORAGE-BEFORE.json",
       "rollback": "Reviewed revert of one FAQ sentence and browser regression; no user-data rollback.",
-      "mergeAllowed": false,
-      "releaseHold": "Native Cloudflare credential401 and mandatory serial production verification.",
       "adsenseRelevance": "Reader trust and accurate service description; not automatically a distinct Google Publisher Policy violation.",
       "exactHeadRequiredChecks": "PASS",
       "previewEvidence": "evidence/PR214-FINAL-PREVIEW-BROWSER.json",
@@ -448,7 +477,11 @@
         "evidence/PR214-PRODUCTION-PROVIDERS.json",
         "evidence/PR214-PRODUCTION-BROWSER.json",
         "evidence/POST-PR214-GUEST-SMOKE.json"
-      ]
+      ],
+      "historicalPreReleaseGate": {
+        "releaseHold": "Native Cloudflare credential401 and mandatory serial production verification.",
+        "mergeAllowed": false
+      }
     },
     {
       "id": "THQ-015",
@@ -468,8 +501,6 @@
       "test": "Production reproduction; old compiled regressions fail; final CFbuild/app TypeScript/fullphase6/exact-head3CI+PG PASS; nativeVercelREADY/trustedCFpreviewSUCCESS and actual35statesPASS.",
       "rollback": "Reviewed revert of header flex classes and regression; no data rollback.",
       "adsenseRelevance": "Mobile usability quality issue, not asserted individual Publisher Policy violation.",
-      "mergeAllowed": false,
-      "releaseHold": "Native Cloudflare401 and mandatory serial production verification",
       "exactHeadRequiredChecks": "PASS",
       "previewEvidence": "evidence/PR220-PREVIEW-BROWSER.json",
       "actualPreview": "35statesPASS:5guides plusSHIBterminal anddefaulttrade at5widths. Quote/axis/header/summary/Details checks; ownportfolio record unchanged.",
@@ -479,7 +510,11 @@
         "evidence/PR220-PRODUCTION-BROWSER.json",
         "evidence/POST-PR220-GUEST-SMOKE.json",
         "evidence/PR220-MAIN-CI.json"
-      ]
+      ],
+      "historicalPreReleaseGate": {
+        "releaseHold": "Native Cloudflare401 and mandatory serial production verification",
+        "mergeAllowed": false
+      }
     },
     {
       "id": "THQ-016",
@@ -498,8 +533,6 @@
       "evidence": "evidence/MOBILE-PORTFOLIO-BAR-BEFORE.json",
       "test": "Production reproduction; old compiled regressions fail; final CFbuild/app TypeScript/fullphase6/exact-head3CI+PG PASS; nativeVercelREADY/trustedCFpreviewSUCCESS and actual35statesPASS.",
       "rollback": "Reviewed revert of responsive classes and regression; no record/data rollback.",
-      "mergeAllowed": false,
-      "releaseHold": "Native Cloudflare401 and required serial production verification.",
       "adsenseRelevance": "Public mobile usability issue, not asserted individual Google Publisher Policy violation.",
       "exactHeadRequiredChecks": "PASS",
       "previewEvidence": "evidence/PR220-PREVIEW-BROWSER.json",
@@ -510,7 +543,11 @@
         "evidence/PR220-PRODUCTION-BROWSER.json",
         "evidence/POST-PR220-GUEST-SMOKE.json",
         "evidence/PR220-MAIN-CI.json"
-      ]
+      ],
+      "historicalPreReleaseGate": {
+        "releaseHold": "Native Cloudflare401 and required serial production verification.",
+        "mergeAllowed": false
+      }
     },
     {
       "id": "THQ-017",
@@ -525,8 +562,6 @@
       "risk": "Low static wording only, no controls/data/financial/privacy behavior change.",
       "test": "Candidate build/type/phase6 and latest CI/actual-preview refresh required after this minor copy addition. No new unit test mirroring the string change.",
       "rollback": "Reviewed revert, no data rollback.",
-      "mergeAllowed": false,
-      "releaseHold": "Native Cloudflare401 and serial production verification",
       "adsenseRelevance": "Minor proofreading quality, not asserted AdSense policy blocker",
       "exactHeadRequiredChecks": "PASS",
       "previewEvidence": "evidence/PR214-FINAL-PREVIEW-BROWSER.json",
@@ -536,7 +571,11 @@
         "evidence/PR214-PRODUCTION-PROVIDERS.json",
         "evidence/PR214-PRODUCTION-BROWSER.json",
         "evidence/POST-PR214-GUEST-SMOKE.json"
-      ]
+      ],
+      "historicalPreReleaseGate": {
+        "releaseHold": "Native Cloudflare401 and serial production verification",
+        "mergeAllowed": false
+      }
     },
     {
       "id": "OPS-002",
@@ -571,13 +610,13 @@
       "rollback": "Reviewedrevertofparagraph; nodatachanges."
     }
   ],
-  "updatedAt": "2026-10-23T15:04:22.551202+00:00",
+  "updatedAt": "2026-10-23T15:11:42.577914+00:00",
   "counts": {
     "siteFindings": 18,
     "P2": 8,
     "P3": 10,
-    "publiclyRepaired": 16,
-    "preparedNotMerged": 2,
+    "publiclyRepaired": 17,
+    "preparedNotMerged": 1,
     "separateOperationalBlockers": 0
   },
   "investigations": [

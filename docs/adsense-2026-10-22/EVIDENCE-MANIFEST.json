@@ -3,13 +3,13 @@
   "files": [
     {
       "path": "BLOCKED-STATUS.md",
-      "bytes": 5184,
-      "sha256": "1446d27b527a4525bdb0205ef9359086aca8ac0f99b8aa202991c1abfeed2f13"
+      "bytes": 5411,
+      "sha256": "8612de8d6ff827de4ad6a8f2b288722424130e2b4539f8f3d18c9eeec4a1afe6"
     },
     {
       "path": "CHECKPOINT.md",
-      "bytes": 61170,
-      "sha256": "a188f4099e70f03821d4173a9824a06499c46e685f9fd022eb4c81a2d6e9e282"
+      "bytes": 61638,
+      "sha256": "67412518114c909344555bc367124bacb65e82820757d1bbea28f91d0f319aae"
     },
     {
       "path": "FAQ-REVIEW-NOTES.json",
@@ -18,8 +18,8 @@
     },
     {
       "path": "FINDINGS.json",
-      "bytes": 36628,
-      "sha256": "416208ab0d6d3d5adad250c9ec9d35143b50174f827170e71cc689ca6b410ffc"
+      "bytes": 37669,
+      "sha256": "8137a9a6f2e5c5782d531cfe72763fdd05ff40ee5d4257dc6664d2ee3b76dd6f"
     },
     {
       "path": "LEGACY-READING-NOTES.json",
@@ -33,13 +33,13 @@
     },
     {
       "path": "PAGE-AUDIT.json",
-      "bytes": 1508881,
-      "sha256": "5768b05bc377657817ced15e2385ca0841e130d497a942b365007e7df4658709"
+      "bytes": 1511282,
+      "sha256": "9e2ef095fe9d4de006eaaef9cd587851b7ff85f7878352787a3e6ec8802bd3ec"
     },
     {
       "path": "RELEASE-LEDGER.json",
-      "bytes": 30075,
-      "sha256": "9765d60792c0c036319e683ab82f56cbf306edbd972100152334fb6ac524910b"
+      "bytes": 32742,
+      "sha256": "ae32237813855d5b97a13f143ad6bda3591f76cadc66d47f8f61e66cdbd62292"
     },
     {
       "path": "RENDERED-CONTENT-NOTES.json",
@@ -280,6 +280,11 @@
       "path": "evidence/POST-PR218-GUEST-SMOKE.json",
       "bytes": 8305,
       "sha256": "cd90892669d84454fe267d698b08e374ca1067cca389f641526be7f60d80ed58"
+    },
+    {
+      "path": "evidence/POST-PR219-GUEST-SMOKE.json",
+      "bytes": 8507,
+      "sha256": "52b716a0725ea96959d53d288d3d2a82ce5a46b63278c8d4ea777774dbde5ccc"
     },
     {
       "path": "evidence/POST-PR220-GUEST-SMOKE.json",
@@ -607,6 +612,11 @@
       "sha256": "7c0e87867dfd12bc00f0db05b7890cca9d15a3392aedefe5b1f0a0d824beeb11"
     },
     {
+      "path": "evidence/PR219-MAIN-CI.json",
+      "bytes": 2282,
+      "sha256": "bec39b76bd971173bde41ed8bcaaa453ee7a943c4690900f6915f5bb502a5eed"
+    },
+    {
       "path": "evidence/PR219-PREMERGE-CHECKS.json",
       "bytes": 2156,
       "sha256": "d029b59f63bac9291ca35a5600a0e58e96f128f55a1ac6e71b99999496b3b599"
@@ -617,9 +627,39 @@
       "sha256": "242aab2f0432a22905db8aacef86d7139140aead960bcd05232401a1a7e6fdec"
     },
     {
+      "path": "evidence/PR219-PREVIEW-PROXY-FAILURE.json",
+      "bytes": 936,
+      "sha256": "88976ca877c0c52aed65f7c476ad8a5a408bcfaefeaa6793e1c2fc8031b1ce7e"
+    },
+    {
       "path": "evidence/PR219-PREVIEW-SIGNALS.json",
       "bytes": 763,
       "sha256": "b9313593c894e469f8b4fdda7734c8027c2c0b47b46ca8ebe21147bb46f5197f"
+    },
+    {
+      "path": "evidence/PR219-PRODUCTION-BROWSER.json",
+      "bytes": 10816,
+      "sha256": "ed23c5023a159ce2a2c50887c565ffc917f5dafd5446f64ae22d8c459280335f"
+    },
+    {
+      "path": "evidence/PR219-PRODUCTION-PROVIDERS.json",
+      "bytes": 1347,
+      "sha256": "ab33b3413121d440569afc2b250ffe0d07905ec1482cbb66daf7993bb9d6e1f8"
+    },
+    {
+      "path": "evidence/PR219-UPDATED-PREMERGE-CHECKS.json",
+      "bytes": 1563,
+      "sha256": "548bfb87bc72ae2c09bf01250f12104d558cdb63df022ca6a486330afcb37e84"
+    },
+    {
+      "path": "evidence/PR219-UPDATED-PREVIEW-BROWSER.json",
+      "bytes": 15722,
+      "sha256": "78fe96d12ac51ecc08df447b06ba47cad2731b5c86ecd19c77d2a3110a3bf1ab"
+    },
+    {
+      "path": "evidence/PR219-UPDATED-PREVIEW-SIGNALS.json",
+      "bytes": 764,
+      "sha256": "bcbeb98219a8b9dac27c98763256e2b71790d8452e73e2b316e9b61da6ba9504"
     },
     {
       "path": "evidence/PR220-2943036-PREVIEW-BROWSER.json",
@@ -1447,6 +1487,146 @@
       "sha256": "6e8f3a20e830755e181ce2138dfa5aa3bb252a3de78af3a9a321286aabcb813c"
     },
     {
+      "path": "evidence/pr219-production-ai-tech-1280.png",
+      "bytes": 236347,
+      "sha256": "b557bb3232555d62c5d0a67bc2fa9b10e45bbd4654de7e0f3c36daff0109fb64"
+    },
+    {
+      "path": "evidence/pr219-production-ai-tech-360.png",
+      "bytes": 111315,
+      "sha256": "90a47fda5f687e22d9ee9a7b0f2916f91c20d116726b263c649460570c3053ff"
+    },
+    {
+      "path": "evidence/pr219-production-commodities-1280.png",
+      "bytes": 196186,
+      "sha256": "332dfba773b8b85e66fb497726c9136ece40597521bcb8771c1283e487e321a8"
+    },
+    {
+      "path": "evidence/pr219-production-commodities-360.png",
+      "bytes": 104407,
+      "sha256": "f904c77fc8c9a120cb5b3b95c3a2295201683a4fb5c8d4ef8fae2a8dd886cc7e"
+    },
+    {
+      "path": "evidence/pr219-production-crypto-defi-1280.png",
+      "bytes": 228730,
+      "sha256": "249a24f584b26a0cd7a90d267bec23e58c288efc635e5a07eae1accf285fbd22"
+    },
+    {
+      "path": "evidence/pr219-production-crypto-defi-360.png",
+      "bytes": 109620,
+      "sha256": "47f750c659c770abe58b13130caffc2ef3ebdc7cfdd6a7876caf36af55124ed0"
+    },
+    {
+      "path": "evidence/pr219-production-etf-indices-1280.png",
+      "bytes": 226060,
+      "sha256": "35df8eef9fa5e52f5549df3f16468ecefb1361f76676d247b4048cf565e3a98b"
+    },
+    {
+      "path": "evidence/pr219-production-etf-indices-360.png",
+      "bytes": 105515,
+      "sha256": "67bedbded073bc0f16cdbd6eb6d10edc9557df036a282356ac53268939998281"
+    },
+    {
+      "path": "evidence/pr219-production-forex-currencies-1280.png",
+      "bytes": 220860,
+      "sha256": "eb86ebd0773ad3fdfee49dce79a280839c2be13c7b1ba40e71e0e82de813d3c3"
+    },
+    {
+      "path": "evidence/pr219-production-forex-currencies-360.png",
+      "bytes": 106907,
+      "sha256": "05aa3d29da8d8ee16161dce6c101431883dcbc666462e67a7d8a3b4871dda908"
+    },
+    {
+      "path": "evidence/pr219-production-mega-cap-1280.png",
+      "bytes": 224902,
+      "sha256": "a89729c7d29ba93ca76ed10daa38cca6675dc2e9e0a0c49a7174fdfcebd41486"
+    },
+    {
+      "path": "evidence/pr219-production-mega-cap-360.png",
+      "bytes": 103551,
+      "sha256": "85a6cfca06d71fe7aa5688f93192e8d31fffc5f61221324fea4f05385d18e1b6"
+    },
+    {
+      "path": "evidence/pr219-production-tech-giants-1280.png",
+      "bytes": 230519,
+      "sha256": "3f3c6555ac89db942615050eb23d7ac6d42a3aa573d8cc3710c744f9539d3d03"
+    },
+    {
+      "path": "evidence/pr219-production-tech-giants-360.png",
+      "bytes": 107514,
+      "sha256": "1de72ea39447740ec52d5112c61514ab637a772afd4537f44634cd193ba8e014"
+    },
+    {
+      "path": "evidence/pr219-updated-preview-ai-tech-1280.png",
+      "bytes": 236347,
+      "sha256": "b557bb3232555d62c5d0a67bc2fa9b10e45bbd4654de7e0f3c36daff0109fb64"
+    },
+    {
+      "path": "evidence/pr219-updated-preview-ai-tech-360.png",
+      "bytes": 111416,
+      "sha256": "e80282e27e2a558eb374aab9830699281fc5cf1f754e2364b2672272013438ee"
+    },
+    {
+      "path": "evidence/pr219-updated-preview-commodities-1280.png",
+      "bytes": 196186,
+      "sha256": "332dfba773b8b85e66fb497726c9136ece40597521bcb8771c1283e487e321a8"
+    },
+    {
+      "path": "evidence/pr219-updated-preview-commodities-360.png",
+      "bytes": 104386,
+      "sha256": "3b2f544633358b9211716c78f0097dd2a11269772b9dfa2a32ebded3a27a3c05"
+    },
+    {
+      "path": "evidence/pr219-updated-preview-crypto-defi-1280.png",
+      "bytes": 228730,
+      "sha256": "249a24f584b26a0cd7a90d267bec23e58c288efc635e5a07eae1accf285fbd22"
+    },
+    {
+      "path": "evidence/pr219-updated-preview-crypto-defi-360.png",
+      "bytes": 109609,
+      "sha256": "6cdff74b3acdc4a864a634dd0706b3f870fbdfa6e989545da39a2d1c3c9b0b89"
+    },
+    {
+      "path": "evidence/pr219-updated-preview-etf-indices-1280.png",
+      "bytes": 226060,
+      "sha256": "35df8eef9fa5e52f5549df3f16468ecefb1361f76676d247b4048cf565e3a98b"
+    },
+    {
+      "path": "evidence/pr219-updated-preview-etf-indices-360.png",
+      "bytes": 105515,
+      "sha256": "67bedbded073bc0f16cdbd6eb6d10edc9557df036a282356ac53268939998281"
+    },
+    {
+      "path": "evidence/pr219-updated-preview-forex-currencies-1280.png",
+      "bytes": 220860,
+      "sha256": "eb86ebd0773ad3fdfee49dce79a280839c2be13c7b1ba40e71e0e82de813d3c3"
+    },
+    {
+      "path": "evidence/pr219-updated-preview-forex-currencies-360.png",
+      "bytes": 106907,
+      "sha256": "05aa3d29da8d8ee16161dce6c101431883dcbc666462e67a7d8a3b4871dda908"
+    },
+    {
+      "path": "evidence/pr219-updated-preview-mega-cap-1280.png",
+      "bytes": 224902,
+      "sha256": "a89729c7d29ba93ca76ed10daa38cca6675dc2e9e0a0c49a7174fdfcebd41486"
+    },
+    {
+      "path": "evidence/pr219-updated-preview-mega-cap-360.png",
+      "bytes": 101118,
+      "sha256": "bf88014bbc5f1694bd81b0162bc81eff260d342309d72616694f2bbcbfc0b4f7"
+    },
+    {
+      "path": "evidence/pr219-updated-preview-tech-giants-1280.png",
+      "bytes": 230519,
+      "sha256": "3f3c6555ac89db942615050eb23d7ac6d42a3aa573d8cc3710c744f9539d3d03"
+    },
+    {
+      "path": "evidence/pr219-updated-preview-tech-giants-360.png",
+      "bytes": 107514,
+      "sha256": "1de72ea39447740ec52d5112c61514ab637a772afd4537f44634cd193ba8e014"
+    },
+    {
       "path": "evidence/pr220-2943036-preview-console.txt",
       "bytes": 918,
       "sha256": "b5f293085ef91c1dfd7fa0203c356b0cdcc817282e6320cbaabf0fb085e38543"
@@ -1777,7 +1957,7 @@
       "sha256": "75c029c85b57a6d5253685eaf559c5f27e0f41b95cc64f25a1b7c81e4427287b"
     }
   ],
-  "fileCount": 355,
-  "totalBytes": 20982125,
-  "generatedAt": "2026-10-23T15:04:22.551202+00:00"
+  "fileCount": 391,
+  "totalBytes": 25653368,
+  "generatedAt": "2026-10-23T15:11:42.577914+00:00"
 }

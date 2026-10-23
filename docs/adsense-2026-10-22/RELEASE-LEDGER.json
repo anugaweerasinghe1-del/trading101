@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T15:04:22.551202+00:00",
+  "updatedAt": "2026-10-23T15:11:42.577914+00:00",
   "releases": [
     {
       "finding": "THQ-001",
@@ -484,6 +484,67 @@
         "evidence/PR217-MAIN-CI.json"
       ],
       "rollback": "Ordinaryprotectedrevertofthisdisplay/contentcommit; noDB/datamigration. Repeatnativeproviderandpublicverification."
+    },
+    {
+      "pr": 219,
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/219",
+      "findings": [
+        "THQ-011"
+      ],
+      "candidateSHA": "e7fe96e00de22d72913ae3c75240db6558991041",
+      "mergeSHA": "0e72e8ccc10b24f8f8523e97474bb0b6e9f22d57",
+      "state": "PUBLICLY_VERIFIED_MAIN_REQUIRED_AND_RELEASE_MONITORS_PASS",
+      "exactHeadRequiredChecks": "PASS",
+      "production": {
+        "checkedAt": "2026-10-23T15:10:41.232715+00:00",
+        "mergeSHA": "0e72e8ccc10b24f8f8523e97474bb0b6e9f22d57",
+        "outcome": "PASS",
+        "sourceJob": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/39975183967/job/120490479779",
+        "scope": "Authenticated native provider reads by trusted exact-main release-readiness job. Both production deployments match the immutable merge SHA. No provider mutations.",
+        "cloudflare": {
+          "observedAt": "2026-10-23T15:10:28.036Z",
+          "project": "tradehq-preview",
+          "activeProduction": {
+            "id": "304cd7f3-ded9-4d12-8fd7-f053559236d7",
+            "sha": "0e72e8ccc10b24f8f8523e97474bb0b6e9f22d57",
+            "environment": "production",
+            "branch": "main",
+            "status": "success",
+            "createdAt": "2026-10-23T15:04:59.722989Z"
+          }
+        },
+        "vercel": {
+          "schema": "tradehq-vercel-production-evidence-v1",
+          "deploymentId": "dpl_8p2QLCYmFBdC5GP6buUKro4AUgMX",
+          "teamId": "team_fjZ5ggg0P43MsYFSIHbeHAAO",
+          "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+          "commitSha": "0e72e8ccc10b24f8f8523e97474bb0b6e9f22d57",
+          "target": "production",
+          "state": "READY",
+          "activeAlias": "thetradehq.com",
+          "createdAt": 1792767900917,
+          "observedAt": 1792768228035,
+          "requests": 2,
+          "authorization": {
+            "merge": false,
+            "productionRelease": false
+          }
+        }
+      },
+      "liveRecheck": {
+        "outcome": "PASS",
+        "affectedStates": 35,
+        "guestStates": 30,
+        "safeGuestControls": 4,
+        "protectedDuelSettlementRPC": "Prevented; resultsnotverified"
+      },
+      "evidence": [
+        "evidence/PR219-PRODUCTION-PROVIDERS.json",
+        "evidence/PR219-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR219-GUEST-SMOKE.json",
+        "evidence/PR219-MAIN-CI.json"
+      ],
+      "rollback": "Ordinaryprotectedrevertofthisdisplay/contentcommit; noDB/datamigration. Repeatnativeproviderandpublicverification."
     }
   ],
   "nextCandidate": {
@@ -634,9 +695,9 @@
       "id": "THQ-011",
       "severity": "P3",
       "category": "Sector breadcrumbs obscured by fixed navigation",
-      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "state": "MERGED_PUBLICLY_VERIFIED",
       "pr": 219,
-      "candidateSHA": "ee1659104092fb603507165d2f9b8fbec2bcbda8",
+      "candidateSHA": "e7fe96e00de22d72913ae3c75240db6558991041",
       "urls": [
         "https://www.thetradehq.com/sectors/ai-tech",
         "https://www.thetradehq.com/sectors/crypto-defi",
@@ -656,7 +717,9 @@
       "mergeAllowed": false,
       "releaseHold": "Cloudflare native authentication401; serial production verification required.",
       "actualPreview": "All35sector-widthstateszerooverlapanddocumentoverflow;360/1280foreximagesinspected",
-      "previewEvidence": "evidence/PR219-PREVIEW-BROWSER.json"
+      "previewEvidence": "evidence/PR219-PREVIEW-BROWSER.json",
+      "mergeSHA": "0e72e8ccc10b24f8f8523e97474bb0b6e9f22d57",
+      "reason": "Releasecyclecomplete; nonewmergeofthisPR."
     }
   ],
   "latestResumeProviderEvidence": "evidence/RESUMED-WORKSPACE-PROVIDERS-20261023.json",
@@ -684,8 +747,8 @@
   },
   "latestGitHubState": "evidence/FINAL-GITHUB-STATE-20261023.json",
   "latestGitHubProviderBindingEvidence": "evidence/PR214-PRODUCTION-PROVIDERS.json",
-  "latestMainValidationEvidence": "evidence/PR217-MAIN-CI.json",
-  "latestVerifiedProductionSHA": "f56422990c8d275e1abc529235ac926a61f74a45",
+  "latestMainValidationEvidence": "evidence/PR219-MAIN-CI.json",
+  "latestVerifiedProductionSHA": "0e72e8ccc10b24f8f8523e97474bb0b6e9f22d57",
   "summaryQuoteContextCandidate": {
     "pr": 221,
     "candidateSHA": "df3b432275997d1c25ecf250133ff2526f2dd64e",

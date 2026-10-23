@@ -1,10 +1,10 @@
 # TradeHQ audit status — 23 October 2026
 
-**18 confirmed site defects: 8 P2 and 10 P3. 16 fixes are deployed and publicly verified; 2 remain prepared across 2 PRs.** The exhaustive audit is still incomplete.
+**18 confirmed site defects: 8 P2 and 10 P3. 17 fixes are deployed and publicly verified; 1 remain prepared across 1 PRs.** The exhaustive audit is still incomplete.
 
-Latest verified production SHA: `f56422990c8d275e1abc529235ac926a61f74a45` ([PR217](https://github.com/anugaweerasinghe1-del/trading101/pull/217)). Authenticated Cloudflare production SUCCESS and Vercel production READY match this exact merge commit. Main required CI, disposable PostgreSQL and both release monitors pass. No next batch was merged before the preceding release cycle completed.
+Latest verified production SHA: `0e72e8ccc10b24f8f8523e97474bb0b6e9f22d57` ([PR219](https://github.com/anugaweerasinghe1-del/trading101/pull/219)). Authenticated Cloudflare production SUCCESS and Vercel production READY match this exact merge commit. Main required CI, disposable PostgreSQL and both release monitors pass. No next batch was merged before the preceding release cycle completed.
 
-[Native provider receipt](evidence/PR217-PRODUCTION-PROVIDERS.json), [affected live pages](evidence/PR217-PRODUCTION-BROWSER.json), [guest smoke](evidence/POST-PR217-GUEST-SMOKE.json), [main CI](evidence/PR217-MAIN-CI.json).
+[Native provider receipt](evidence/PR219-PRODUCTION-PROVIDERS.json), [affected live pages](evidence/PR219-PRODUCTION-BROWSER.json), [guest smoke](evidence/POST-PR219-GUEST-SMOKE.json), [main CI](evidence/PR219-MAIN-CI.json).
 
 ## Releases
 
@@ -18,10 +18,10 @@ Latest verified production SHA: `f56422990c8d275e1abc529235ac926a61f74a45` ([PR2
 |[220](https://github.com/anugaweerasinghe1-del/trading101/pull/220)|THQ-012, THQ-013, THQ-015, THQ-016|`24a9e4fe486e`; native providers and scoped live checks PASS |
 |[215](https://github.com/anugaweerasinghe1-del/trading101/pull/215)|THQ-005|`48b5c2d5a63e`; native providers and scoped live checks PASS |
 |[217](https://github.com/anugaweerasinghe1-del/trading101/pull/217)|THQ-008|`f56422990c8d`; native providers and scoped live checks PASS |
+|[219](https://github.com/anugaweerasinghe1-del/trading101/pull/219)|THQ-011|`0e72e8ccc10b`; native providers and scoped live checks PASS |
 
 ## Remaining prepared fixes
 
-- [PR219](https://github.com/anugaweerasinghe1-del/trading101/pull/219): Sector breadcrumbs obscured by fixed navigation. Refresh against latest main, pass exact-head CI/previews, then follow the serial production gate.
 - [PR221](https://github.com/anugaweerasinghe1-del/trading101/pull/221): Separate summary/chart quote snapshots are unexplained. Refresh against latest main, pass exact-head CI/previews, then follow the serial production gate.
 
 GitHub Actions Cloudflare access is repaired and provides authenticated native verification. The separate workspace Cloudflare token remains invalid401, so it is not used as production proof. Vercel access works. No secret values were retrieved or printed. [Access receipts](evidence/RESUMED-GITHUB-PROVIDERS-20261023.json).
@@ -32,7 +32,7 @@ GitHub Actions Cloudflare access is repaired and provides authenticated native v
 
 Guest regression covers 15 route interfaces on mobile and desktop, plus four safe controls. The public-duels RPC is deliberately prevented because its SQL may settle expired duels; duel results are not certified. No account, order or contact submission was made. Own disposable local records may be seeded/restored for display checks. Financial calculations, execution, fees, positions/balances/history, auth, database/schema, privacy/consent and ad behavior were not changed.
 
-The first PR214 main run encountered a browser transport error; complete coherent rerun passed. Live audit helpers retained copy/schema assertions after navigation/readiness correction. Metadata tag-presence waiting retains original canonical/noindex expectations. No protection or release gate was weakened. Further run interruptions, if any, remain in their native workflow attempt history.
+The first PR214 main run encountered a browser transport error; complete coherent rerun passed. Live audit helpers retained copy/schema assertions after navigation/readiness correction. Metadata tag-presence waiting retains original canonical/noindex expectations. No protection or release gate was weakened. Further run interruptions, if any, remain in their native workflow attempt history. [Validation notes](evidence/RESUMED-VALIDATION-NOTES.json) preserve the proxy HTTP503 failures and one initial unclassified browser promise rejection; its attribution remains unproven, while the later full Learn and guest runs pass. No product exception or ad-script fix was invented from that observation.
 
 Open protected investigation: forex quote units versus generic USD practice accounting. No currency conversion, settlement, fee, position or historical revaluation change was made. Other contemporaneous claims, market comparisons, timeframe controls and fallback chart behavior need dedicated follow-up; source suspicions are not counted as confirmed engine defects.
 

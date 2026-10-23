@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-10-23T14:59:46.734Z",
+  "sha": "e7fe96e00de22d72913ae3c75240db6558991041",
+  "origin": "https://ed0a67f0.tradehq-preview.pages.dev",
+  "outcome": "FAIL",
+  "kind": "sector",
+  "rows": [],
+  "debug": {
+    "url": "https://ed0a67f0.tradehq-preview.pages.dev/sectors/ai-tech",
+    "title": "",
+    "ready": "complete",
+    "body": "upstream connect error or disconnect/reset before headers. reset reason: remote connection failure, transport failure reason: immediate connect error: Invalid argument|remote address:envoy://cloudflare_https_tunnel/"
+  },
+  "networkFailures": [],
+  "errorResponses": [
+    {
+      "path": "https://ed0a67f0.tradehq-preview.pages.dev/sectors/ai-tech",
+      "status": 503
+    },
+    {
+      "path": "https://ed0a67f0.tradehq-preview.pages.dev/favicon.ico",
+      "status": 503
+    }
+  ],
+  "runtimeErrors": [],
+  "blockedMutationAttempts": [],
+  "failure": "Page readiness deadline"
+}
