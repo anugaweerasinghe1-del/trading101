@@ -1,0 +1,78 @@
+{
+  "checkedAt": "2026-10-23T14:12:00.338239+00:00",
+  "sha": "e5fa54fbcbee43eea38a76a121efc8f400f5757c",
+  "checks": [
+    {
+      "id": 120459389015,
+      "name": "TradeHQ Release & Recovery Readiness (read only)",
+      "head_sha": "e5fa54fbcbee43eea38a76a121efc8f400f5757c",
+      "status": "completed",
+      "conclusion": "skipped",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/39966236072/job/120459389015",
+      "appId": 15368
+    },
+    {
+      "id": 120459388021,
+      "name": "TradeHQ Release signals (read only)",
+      "head_sha": "e5fa54fbcbee43eea38a76a121efc8f400f5757c",
+      "status": "completed",
+      "conclusion": "skipped",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/39966236072/job/120459388021",
+      "appId": 15368
+    },
+    {
+      "id": 120459333452,
+      "name": "TradeHQ Required validation",
+      "head_sha": "e5fa54fbcbee43eea38a76a121efc8f400f5757c",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/39966236072/job/120459333452",
+      "appId": 15368
+    },
+    {
+      "id": 120457098234,
+      "name": "Cloudflare Pages",
+      "head_sha": "e5fa54fbcbee43eea38a76a121efc8f400f5757c",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/49b77174-ab43-4c43-8172-31d765377a9d",
+      "appId": 85455
+    },
+    {
+      "id": 120457031622,
+      "name": "Vercel Preview Comments",
+      "head_sha": "e5fa54fbcbee43eea38a76a121efc8f400f5757c",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://vercel.com/github",
+      "appId": 8329
+    },
+    {
+      "id": 120456717136,
+      "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+      "head_sha": "e5fa54fbcbee43eea38a76a121efc8f400f5757c",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/39966236072/job/120456717136",
+      "appId": 15368
+    },
+    {
+      "id": 120456716466,
+      "name": "TradeHQ Phase 3 tests",
+      "head_sha": "e5fa54fbcbee43eea38a76a121efc8f400f5757c",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/39966236072/job/120456716466",
+      "appId": 15368
+    },
+    {
+      "id": 120456715863,
+      "name": "TradeHQ Disposable PostgreSQL controls",
+      "head_sha": "e5fa54fbcbee43eea38a76a121efc8f400f5757c",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/39966235886/job/120456715863",
+      "appId": 15368
+    }
+  ]
+}

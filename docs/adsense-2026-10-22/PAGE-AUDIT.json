@@ -1573,7 +1573,16 @@
       ],
       "findingStates": {
         "THQ-003": "FIX_TESTED_PREVIEW_VERIFIED"
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 214,
+          "mergeSHA": "40ba79c2b65d88badbddada705df80ab65acc2ab",
+          "scope": "Only the relevantcopy/visibleFAQ/schema correction atfivewidths; doesnotcompletewholepageaudit.",
+          "outcome": "PASS",
+          "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/courses",
@@ -4604,7 +4613,16 @@
       ],
       "findingStates": {
         "THQ-007": "FIX_TESTED_PREVIEW_VERIFIED"
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 214,
+          "mergeSHA": "40ba79c2b65d88badbddada705df80ab65acc2ab",
+          "scope": "Only the relevantcopy/visibleFAQ/schema correction atfivewidths; doesnotcompletewholepageaudit.",
+          "outcome": "PASS",
+          "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/how-to-trade/eth",
@@ -4688,7 +4706,16 @@
       ],
       "findingStates": {
         "THQ-007": "FIX_TESTED_PREVIEW_VERIFIED"
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 214,
+          "mergeSHA": "40ba79c2b65d88badbddada705df80ab65acc2ab",
+          "scope": "Only the relevantcopy/visibleFAQ/schema correction atfivewidths; doesnotcompletewholepageaudit.",
+          "outcome": "PASS",
+          "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/how-to-trade/nvda",
@@ -4772,7 +4799,16 @@
       ],
       "findingStates": {
         "THQ-007": "FIX_TESTED_PREVIEW_VERIFIED"
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 214,
+          "mergeSHA": "40ba79c2b65d88badbddada705df80ab65acc2ab",
+          "scope": "Only the relevantcopy/visibleFAQ/schema correction atfivewidths; doesnotcompletewholepageaudit.",
+          "outcome": "PASS",
+          "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/how-to-trade/sol",
@@ -4856,7 +4892,16 @@
       ],
       "findingStates": {
         "THQ-007": "FIX_TESTED_PREVIEW_VERIFIED"
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 214,
+          "mergeSHA": "40ba79c2b65d88badbddada705df80ab65acc2ab",
+          "scope": "Only the relevantcopy/visibleFAQ/schema correction atfivewidths; doesnotcompletewholepageaudit.",
+          "outcome": "PASS",
+          "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/how-to-trade/spy",
@@ -4940,7 +4985,16 @@
       ],
       "findingStates": {
         "THQ-007": "FIX_TESTED_PREVIEW_VERIFIED"
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 214,
+          "mergeSHA": "40ba79c2b65d88badbddada705df80ab65acc2ab",
+          "scope": "Only the relevantcopy/visibleFAQ/schema correction atfivewidths; doesnotcompletewholepageaudit.",
+          "outcome": "PASS",
+          "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/how-to-trade/tsla",
@@ -5024,7 +5078,16 @@
       ],
       "findingStates": {
         "THQ-007": "FIX_TESTED_PREVIEW_VERIFIED"
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 214,
+          "mergeSHA": "40ba79c2b65d88badbddada705df80ab65acc2ab",
+          "scope": "Only the relevantcopy/visibleFAQ/schema correction atfivewidths; doesnotcompletewholepageaudit.",
+          "outcome": "PASS",
+          "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/leaderboard",
@@ -6626,7 +6689,7 @@
       ],
       "substantiveContent": {
         "status": "MAIN_BODY_READ",
-        "assessment": "SEBI derivatives study is scoped to FY22–FY24 individual derivatives traders; rounded93% agrees with downloaded executive-summary92.8%. Local NSE/BSE, INR and RBI links plus sample-scope worksheet add country-specific value; no eligibility or tax certification.",
+        "assessment": "SEBI derivatives study is scoped to FY22\u2013FY24 individual derivatives traders; rounded93% agrees with downloaded executive-summary92.8%. Local NSE/BSE, INR and RBI links plus sample-scope worksheet add country-specific value; no eligibility or tax certification.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -13213,7 +13276,7 @@
       ],
       "substantiveContent": {
         "status": "MAIN_BODY_READ",
-        "assessment": "22Oct rendered /trade default state read on23Oct: selected USDC, virtual100000cash and provider snapshot distinguished from simulated chart; market insight explicitly calls fixed ±4% and ±2% buckets descriptive heuristics, not signals. Market list source labels present. Capture still contains loading subchart text, so settled control/render states need fresh safe follow-up; no orders/account mutations attempted.",
+        "assessment": "22Oct rendered /trade default state read on23Oct: selected USDC, virtual100000cash and provider snapshot distinguished from simulated chart; market insight explicitly calls fixed \u00b14% and \u00b12% buckets descriptive heuristics, not signals. Market list source labels present. Capture still contains loading subchart text, so settled control/render states need fresh safe follow-up; no orders/account mutations attempted.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -13393,7 +13456,16 @@
       },
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped."
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 214,
+          "mergeSHA": "40ba79c2b65d88badbddada705df80ab65acc2ab",
+          "scope": "Only the relevantcopy/visibleFAQ/schema correction atfivewidths; doesnotcompletewholepageaudit.",
+          "outcome": "PASS",
+          "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trade/ada",
@@ -13672,7 +13744,16 @@
       },
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped."
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 214,
+          "mergeSHA": "40ba79c2b65d88badbddada705df80ab65acc2ab",
+          "scope": "Only the relevantcopy/visibleFAQ/schema correction atfivewidths; doesnotcompletewholepageaudit.",
+          "outcome": "PASS",
+          "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trade/algo",
@@ -17320,7 +17401,16 @@
       },
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped."
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 214,
+          "mergeSHA": "40ba79c2b65d88badbddada705df80ab65acc2ab",
+          "scope": "Only the relevantcopy/visibleFAQ/schema correction atfivewidths; doesnotcompletewholepageaudit.",
+          "outcome": "PASS",
+          "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trade/eurusd",
@@ -24296,7 +24386,16 @@
         "answersRead": 5,
         "assessment": "Allfivecapturedexpandedanswersread. Generated no-real-money answer incorrectly implies browser-only portfolio storage for every visitor; source and existingPrivacy distinguish guestlocal from signed-in Supabase records. Comparisonvolume and generalizedpopularity claims require separatefollow-up; not counted as additionalconfirmeddefects. This is a staticFAQ representation issue, not a proposed privacy-policy/data-handling change.",
         "controlEvidence": "evidence/live-faq-v2/6108528acb9eabbb.json"
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 214,
+          "mergeSHA": "40ba79c2b65d88badbddada705df80ab65acc2ab",
+          "scope": "Only the relevantcopy/visibleFAQ/schema correction atfivewidths; doesnotcompletewholepageaudit.",
+          "outcome": "PASS",
+          "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trade/tgt",
@@ -26827,7 +26926,16 @@
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped.",
         "THQ-017": "Shared generator source inventory; fresh representative browser proof is separately scoped."
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 214,
+          "mergeSHA": "40ba79c2b65d88badbddada705df80ab65acc2ab",
+          "scope": "Only the relevantcopy/visibleFAQ/schema correction atfivewidths; doesnotcompletewholepageaudit.",
+          "outcome": "PASS",
+          "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trade/wmt",
@@ -28099,7 +28207,7 @@
       ],
       "substantiveContent": {
         "status": "MAIN_BODY_READ",
-        "assessment": "Uses40→38→42 as a retrospective break/rebound description. Chart shape does not establish manipulation or short positioning; actual short sales are unavailable and remain a separate worksheet.",
+        "assessment": "Uses40\u219238\u219242 as a retrospective break/rebound description. Chart shape does not establish manipulation or short positioning; actual short sales are unavailable and remain a separate worksheet.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -28249,7 +28357,7 @@
       ],
       "substantiveContent": {
         "status": "MAIN_BODY_READ",
-        "assessment": "50→52→49 illustrates an ex-post breakout reversal; fixed resistance/reversal criteria and adverse fills matter. Does not infer intent or guarantee stop execution.",
+        "assessment": "50\u219252\u219249 illustrates an ex-post breakout reversal; fixed resistance/reversal criteria and adverse fills matter. Does not infer intent or guarantee stop execution.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -28624,7 +28732,7 @@
       ],
       "substantiveContent": {
         "status": "MAIN_BODY_READ",
-        "assessment": "Intraday close removes later exposure only if executed;100shares20→20.10 gives10gross and-2after12costs. No universal retail loss rate, margin rule or competency claim is asserted.",
+        "assessment": "Intraday close removes later exposure only if executed;100shares20\u219220.10 gives10gross and-2after12costs. No universal retail loss rate, margin rule or competency claim is asserted.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -28924,7 +29032,7 @@
       ],
       "substantiveContent": {
         "status": "MAIN_BODY_READ",
-        "assessment": "Defines observed peak-to-trough decline including unfinished drawdowns and sample/cashflow effects.100→80 is20%drawdown/25%recovery;50%needs100%. Historical max drawdown is no future bound or diagnosis.",
+        "assessment": "Defines observed peak-to-trough decline including unfinished drawdowns and sample/cashflow effects.100\u219280 is20%drawdown/25%recovery;50%needs100%. Historical max drawdown is no future bound or diagnosis.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -29074,7 +29182,7 @@
       ],
       "substantiveContent": {
         "status": "MAIN_BODY_READ",
-        "assessment": "Three-candle non-overlap100–102 is a chart label, not economic fair value, remaining orders or guaranteed revisit. Worked opposing paths and stated source/timeframe limitations give useful context to SMC jargon.",
+        "assessment": "Three-candle non-overlap100\u2013102 is a chart label, not economic fair value, remaining orders or guaranteed revisit. Worked opposing paths and stated source/timeframe limitations give useful context to SMC jargon.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -29149,7 +29257,7 @@
       ],
       "substantiveContent": {
         "status": "MAIN_BODY_READ",
-        "assessment": "Selected80→120 swing gives midpoint100 and61.8%retracement95.28.50%is correctly identified as a convention rather than Fibonacci ratio; anchor selection does not establish predictive probability.",
+        "assessment": "Selected80\u2192120 swing gives midpoint100 and61.8%retracement95.28.50%is correctly identified as a convention rather than Fibonacci ratio; anchor selection does not establish predictive probability.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -29599,7 +29707,7 @@
       ],
       "substantiveContent": {
         "status": "MAIN_BODY_READ",
-        "assessment": "Long holding is separated from DCA cashflows and guaranteed recovery.1000→1400/600/0 scenarios include permanent/custody loss; whitepaper is protocol background.2013etymology not corroborated in current source pass.",
+        "assessment": "Long holding is separated from DCA cashflows and guaranteed recovery.1000\u21921400/600/0 scenarios include permanent/custody loss; whitepaper is protocol background.2013etymology not corroborated in current source pass.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -33692,7 +33800,16 @@
       ],
       "findingStates": {
         "THQ-004": "FIX_TESTED_PREVIEW_VERIFIED"
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 214,
+          "mergeSHA": "40ba79c2b65d88badbddada705df80ab65acc2ab",
+          "scope": "Only the relevantcopy/visibleFAQ/schema correction atfivewidths; doesnotcompletewholepageaudit.",
+          "outcome": "PASS",
+          "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trader/-",

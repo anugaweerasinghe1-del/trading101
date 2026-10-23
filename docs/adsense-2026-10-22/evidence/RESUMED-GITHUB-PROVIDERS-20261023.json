@@ -1,0 +1,35 @@
+{
+  "checkedAt": "2026-10-23T13:59:52.177420+00:00",
+  "run": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/39965772740",
+  "jobId": 120455144134,
+  "scope": "Read-only configured GitHub Actions bindings; no credential values",
+  "providers": [
+    {
+      "provider": "CLOUDFLARE",
+      "configured": true,
+      "httpStatus": 200,
+      "errorCodes": [],
+      "projectName": "tradehq-preview",
+      "productionBranch": "main",
+      "canonicalDeployment": {
+        "id": "a48650b5-b13e-436f-a097-a3a04111dbba",
+        "environment": "production",
+        "status": "success",
+        "sha": "aa216a24c68c30c9251f96a050da098b33364686"
+      }
+    },
+    {
+      "provider": "VERCEL",
+      "configured": true,
+      "httpStatus": 200,
+      "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+      "production": {
+        "id": "dpl_64tgq5fomNQwHZifS9iQVd7UEM4x",
+        "target": "production",
+        "state": "READY",
+        "sha": "aa216a24c68c30c9251f96a050da098b33364686",
+        "branch": "main"
+      }
+    }
+  ]
+}

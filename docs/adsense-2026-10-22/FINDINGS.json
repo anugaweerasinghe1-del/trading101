@@ -37,36 +37,37 @@
       "evidence": "evidence/COURSE-HERO-BEFORE.json",
       "releaseBlockedBy": "OPS-001",
       "pr": 213,
-      "candidateSHA": "f5e001cb12a0b8f1b86c38700abab3c0a19d6f7f",
+      "candidateSHA": "e5fa54fbcbee43eea38a76a121efc8f400f5757c",
       "exactHeadRequiredChecks": "PASS",
       "actualCFPreview": "6tracks x5sizes: zero clipping; long mobile title screenshots inspected.",
-      "merge": "HELD_PENDING_NATIVE_CF_CREDENTIAL_REPAIR"
+      "merge": "HELD_PENDING_NATIVE_CF_CREDENTIAL_REPAIR",
+      "latestPreviewEvidence": "evidence/PR213-UPDATED-PREVIEW-BROWSER.json"
     },
     {
       "id": "OPS-001",
       "severity": "P2",
       "category": "Protected CI credential binding",
       "adsenseRelevance": "Operational verification limitation, not a public-content policy finding",
-      "state": "BLOCKED_REQUIRES_OWNER_ACTION",
-      "observed": "Cloudflare native projectGET HTTP401/error10000 in cloudenvironment09:30andGitHubActions10:01; Vercelboth200/READY exactAA. BothtokenbindingsconfiguredbutCloudflareauthrejected.",
-      "proposedFix": "Owner securely replaces CLOUDFLARE_API_TOKEN with active correct-account token in environment settings and GitHub Actions. No values in chat. Then verify native APIs and complete workflow.",
+      "state": "GITHUB_BINDING_REPAIRED_WORKSPACE_BINDING_INVALID",
+      "observed": "23October13:59UTC:workspaceCF401invalidAPI token; GitHubActionsCF200nativeproductionexactAA. At14:04UTC GitHubCF200productionSUCCESS exact40ba79c;Vercel200READYsameSHA.",
+      "proposedFix": "GitHub binding repaired byowner; use authenticatedread-onlyActions forproductionverification. Workspace token remainsinvalid but isnot the currentnative-read blocker. Do notprint secrets.",
       "protectedArea": "Production secrets/API credentials",
       "risk": "Incorrect token/scope can impair release/recovery checks. No DNS, database, deployment token or infrastructure ownership change proposed.",
       "rollback": "Restore the prior repository secret binding if the owner retains it securely; rerun the read-only monitor. No production data changes.",
       "evidence": "evidence/PR212-MONITOR-DIAGNOSIS.json",
-      "latestObservationEvidence": "evidence/FINAL-PROVIDER-BINDINGS-20261023.json",
-      "latestObservedAt": "2026-10-23T09:30:18.139656+00:00",
-      "githubBindingEvidence": "evidence/GITHUB-PROVIDER-BINDING-DIAGNOSTIC.json"
+      "latestObservationEvidence": "evidence/RESUMED-WORKSPACE-PROVIDERS-20261023.json",
+      "latestObservedAt": "2026-10-23T14:10:00.122791+00:00",
+      "githubBindingEvidence": "evidence/PR214-PRODUCTION-PROVIDERS.json"
     },
     {
       "id": "THQ-003",
       "severity": "P3",
       "category": "Stale catalog count on Contact",
-      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "state": "PUBLICLY_VERIFIED",
       "urls": [
         "https://www.thetradehq.com/contact"
       ],
-      "observed": "Contact links say Courses — the four structured tracks, with quizzes and completion badges. The settled catalog contains six tracks and26 lessons.",
+      "observed": "Contact links say Courses \u2014 the four structured tracks, with quizzes and completion badges. The settled catalog contains six tracks and26 lessons.",
       "expected": "Avoid a stale fixed catalog count or use current catalog data.",
       "rootCause": "Hardcoded count in src/pages/Contact.tsx:299 predates two published tracks.",
       "proposedFix": "Describe the structured courses without a hardcoded count, retaining the same link.",
@@ -82,7 +83,13 @@
       "mergeHold": "Previous release cycle and native Cloudflare credential repair.",
       "exactHeadRequiredChecks": "PASS",
       "previewEvidence": "evidence/PR214-FINAL-PREVIEW-BROWSER.json",
-      "actualPreview": "13affected/representativepages x5widths=65PASS; source152storage/59pluralroutes distinguished from fresh browser count. Visible/schema answers corrected."
+      "actualPreview": "13affected/representativepages x5widths=65PASS; source152storage/59pluralroutes distinguished from fresh browser count. Visible/schema answers corrected.",
+      "mergeSHA": "40ba79c2b65d88badbddada705df80ab65acc2ab",
+      "productionEvidence": [
+        "evidence/PR214-PRODUCTION-PROVIDERS.json",
+        "evidence/PR214-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR214-GUEST-SMOKE.json"
+      ]
     },
     {
       "id": "THQ-004",
@@ -102,7 +109,7 @@
         "https://www.thetradehq.com/trader/jose-morale0990",
         "https://www.thetradehq.com/trader/andresgarciap94"
       ],
-      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "state": "PUBLICLY_VERIFIED",
       "observed": "Pricing explanation ends prices.Fetched with no separating space when a timestamp exists. Visible in actual desktop capture and settled main text.",
       "rootCause": "Adjacent JSX string expressions separated only by source newline in PublicTrader.tsx.",
       "fix": "Explicit literal space after PRICE_REFRESH_COPY; no timestamp/pricing or account logic change.",
@@ -117,7 +124,13 @@
       "mergeHold": "Previous release cycle and native Cloudflare credential repair.",
       "exactHeadRequiredChecks": "PASS",
       "previewEvidence": "evidence/PR214-FINAL-PREVIEW-BROWSER.json",
-      "actualPreview": "13affected/representativepages x5widths=65PASS; source152storage/59pluralroutes distinguished from fresh browser count. Visible/schema answers corrected."
+      "actualPreview": "13affected/representativepages x5widths=65PASS; source152storage/59pluralroutes distinguished from fresh browser count. Visible/schema answers corrected.",
+      "mergeSHA": "40ba79c2b65d88badbddada705df80ab65acc2ab",
+      "productionEvidence": [
+        "evidence/PR214-PRODUCTION-PROVIDERS.json",
+        "evidence/PR214-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR214-GUEST-SMOKE.json"
+      ]
     },
     {
       "id": "THQ-005",
@@ -181,7 +194,7 @@
       "id": "THQ-007",
       "severity": "P3",
       "category": "Doubled guide quick-answer punctuation",
-      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "state": "PUBLICLY_VERIFIED",
       "urls": [
         "https://www.thetradehq.com/how-to-trade/btc",
         "https://www.thetradehq.com/how-to-trade/eth",
@@ -203,7 +216,13 @@
       "localValidation": "Updated CloudflarebuildPASS; actualCloudflarepreview8pagesx5widthsPASS",
       "exactHeadRequiredChecks": "PASS",
       "previewEvidence": "evidence/PR214-FINAL-PREVIEW-BROWSER.json",
-      "actualPreview": "13affected/representativepages x5widths=65PASS; source152storage/59pluralroutes distinguished from fresh browser count. Visible/schema answers corrected."
+      "actualPreview": "13affected/representativepages x5widths=65PASS; source152storage/59pluralroutes distinguished from fresh browser count. Visible/schema answers corrected.",
+      "mergeSHA": "40ba79c2b65d88badbddada705df80ab65acc2ab",
+      "productionEvidence": [
+        "evidence/PR214-PRODUCTION-PROVIDERS.json",
+        "evidence/PR214-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR214-GUEST-SMOKE.json"
+      ]
     },
     {
       "id": "THQ-008",
@@ -286,7 +305,7 @@
         "https://www.thetradehq.com/sectors/forex-currencies",
         "https://www.thetradehq.com/sectors/commodities"
       ],
-      "observed": "Actual35page-widthstates overlap32.34–69px;forexdesktopimagepersonallyviewed.",
+      "observed": "Actual35page-widthstates overlap32.34\u201369px;forexdesktopimagepersonallyviewed.",
       "fix": "SharedSectorPillar main top padding32to112px;bottomspacing/data/metadataunchanged.",
       "risk": "Lowlayoutonly;no financialdata/logicchanges.",
       "test": "CSS-readyoldcompiledregressionfailsbounds;candidateCFbuild/fullphase6PASSatall35states. InitialhelperCSSreadinessfailurepreservedseparately.",
@@ -351,7 +370,7 @@
       "id": "THQ-014",
       "severity": "P2",
       "category": "Generated asset FAQs imply browser-only storage for all portfolios",
-      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "state": "PUBLICLY_VERIFIED",
       "pr": 214,
       "candidateSHA": "36c8e3ae9c7c5f29b0a4df63c2e3439beebd540d",
       "urlsEvidence": "evidence/FAQ-STORAGE-AFFECTED-ROUTES.json",
@@ -367,7 +386,13 @@
       "adsenseRelevance": "Reader trust and accurate service description; not automatically a distinct Google Publisher Policy violation.",
       "exactHeadRequiredChecks": "PASS",
       "previewEvidence": "evidence/PR214-FINAL-PREVIEW-BROWSER.json",
-      "actualPreview": "13affected/representativepages x5widths=65PASS; source152storage/59pluralroutes distinguished from fresh browser count. Visible/schema answers corrected."
+      "actualPreview": "13affected/representativepages x5widths=65PASS; source152storage/59pluralroutes distinguished from fresh browser count. Visible/schema answers corrected.",
+      "mergeSHA": "40ba79c2b65d88badbddada705df80ab65acc2ab",
+      "productionEvidence": [
+        "evidence/PR214-PRODUCTION-PROVIDERS.json",
+        "evidence/PR214-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR214-GUEST-SMOKE.json"
+      ]
     },
     {
       "id": "THQ-015",
@@ -421,7 +446,7 @@
       "id": "THQ-017",
       "severity": "P3",
       "category": "Generated FAQ irregular category plurals are misspelled",
-      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "state": "PUBLICLY_VERIFIED",
       "pr": 214,
       "candidateSHA": "36c8e3ae9c7c5f29b0a4df63c2e3439beebd540d",
       "evidence": "evidence/FAQ-PLURALS-BEFORE.json",
@@ -435,28 +460,37 @@
       "adsenseRelevance": "Minor proofreading quality, not asserted AdSense policy blocker",
       "exactHeadRequiredChecks": "PASS",
       "previewEvidence": "evidence/PR214-FINAL-PREVIEW-BROWSER.json",
-      "actualPreview": "13affected/representativepages x5widths=65PASS; source152storage/59pluralroutes distinguished from fresh browser count. Visible/schema answers corrected."
+      "actualPreview": "13affected/representativepages x5widths=65PASS; source152storage/59pluralroutes distinguished from fresh browser count. Visible/schema answers corrected.",
+      "mergeSHA": "40ba79c2b65d88badbddada705df80ab65acc2ab",
+      "productionEvidence": [
+        "evidence/PR214-PRODUCTION-PROVIDERS.json",
+        "evidence/PR214-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR214-GUEST-SMOKE.json"
+      ]
     },
     {
       "id": "OPS-002",
       "severity": "P2",
       "category": "Existing main CI guide metadata readiness race",
-      "state": "FIX_TESTED_IN_DRAFT214_NOT_MERGED",
+      "state": "FIX_MERGED_MAIN_REQUIRED_AND_RELEASE_MONITORS_PASS",
       "pr": 214,
       "candidateSHA": "36c8e3ae9c7c5f29b0a4df63c2e3439beebd540d",
       "evidence": "evidence/MAIN-VALIDATION-20261023.json",
       "fix": "Wait for robots/canonical tag presence after hydration before retaining exact original assertions. Finalcandidate3requiredCI+PGPASS.",
-      "scope": "Operational test timing, not another reproduced site defect. No release gate bypass."
+      "scope": "Operational test timing, not another reproduced site defect. No release gate bypass.",
+      "mergeSHA": "40ba79c2b65d88badbddada705df80ab65acc2ab",
+      "followup": "Completecoherentrerunattempt2passes allrequiredchecks andbothrelease monitors. Priorbrowserconnectionfailurepreserved asrunattempt1history.",
+      "latestEvidence": "evidence/PR214-MAIN-CI.json"
     }
   ],
-  "updatedAt": "2026-10-23T10:05:37.373850+00:00",
+  "updatedAt": "2026-10-23T14:10:00.122791+00:00",
   "counts": {
     "siteFindings": 17,
     "P2": 8,
     "P3": 9,
-    "publiclyRepaired": 1,
-    "preparedNotMerged": 16,
-    "separateOperationalBlockers": 2
+    "publiclyRepaired": 6,
+    "preparedNotMerged": 11,
+    "separateOperationalBlockers": 0
   },
   "investigations": [
     {

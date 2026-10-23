@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-10-23T14:04:16.667394+00:00",
+  "run": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/39966281387",
+  "jobId": 120456879820,
+  "mergeSHA": "40ba79c2b65d88badbddada705df80ab65acc2ab",
+  "outcome": "PASS",
+  "scope": "Authenticated native production reads executed using the repaired GitHub Actions bindings. Exact productionSHA andSUCCESS/READY checked. No provider changes.",
+  "providers": [
+    {
+      "provider": "CLOUDFLARE",
+      "configured": true,
+      "httpStatus": 200,
+      "errorCodes": [],
+      "projectName": "tradehq-preview",
+      "productionBranch": "main",
+      "canonicalDeployment": {
+        "id": "1b6b423d-7811-4d49-bd2e-3a2bc1fd105c",
+        "environment": "production",
+        "status": "success",
+        "sha": "40ba79c2b65d88badbddada705df80ab65acc2ab"
+      }
+    },
+    {
+      "provider": "VERCEL",
+      "configured": true,
+      "httpStatus": 200,
+      "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+      "production": {
+        "id": "dpl_8viJW6jnELcMD17nv1eYiT3WFL7r",
+        "target": "production",
+        "state": "READY",
+        "sha": "40ba79c2b65d88badbddada705df80ab65acc2ab",
+        "branch": "main"
+      }
+    }
+  ]
+}

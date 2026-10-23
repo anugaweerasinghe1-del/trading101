@@ -3,13 +3,13 @@
   "files": [
     {
       "path": "BLOCKED-STATUS.md",
-      "bytes": 13753,
-      "sha256": "95918b74ec7872506bd488026e80e502bd8635db429ded7f9867be798f4ab8c8"
+      "bytes": 5944,
+      "sha256": "0581eb2212c4f74129468bdd23386cc75e523d163774f21f2df0938c6d0d7834"
     },
     {
       "path": "CHECKPOINT.md",
-      "bytes": 56046,
-      "sha256": "650f2eb3931a226a127d888283a7dfcd92d0e29e579b0d5f0de95c6f54118852"
+      "bytes": 57795,
+      "sha256": "bf44627233689139e7c90ab292db9c1db40e0972572e004db9666976e68eb696"
     },
     {
       "path": "FAQ-REVIEW-NOTES.json",
@@ -18,8 +18,8 @@
     },
     {
       "path": "FINDINGS.json",
-      "bytes": 31140,
-      "sha256": "3bd8bbdb14deb3eaf04f0b1630f6acc70291e3945beb443ca043ec640a629748"
+      "bytes": 32725,
+      "sha256": "fb5487c92f679670de9bb8c53f5fe5ea90c4cbab0af3a56565fd5405acef7780"
     },
     {
       "path": "LEGACY-READING-NOTES.json",
@@ -33,13 +33,13 @@
     },
     {
       "path": "PAGE-AUDIT.json",
-      "bytes": 1490734,
-      "sha256": "ccb293cd2c57aee4c8ed7aa8068e7a36d220a7cead402eb82343b6b307d7d244"
+      "bytes": 1495426,
+      "sha256": "9a762b476e6c63a6ebb17ae5597685293c5ed0c6d53399928536af6432fa7aff"
     },
     {
       "path": "RELEASE-LEDGER.json",
-      "bytes": 11128,
-      "sha256": "71dcb8b4ede97ddd01555d688071b4e914dba5ecb9e91504a376b3e0b76c001f"
+      "bytes": 13630,
+      "sha256": "3be9c7ea9bd018e6c2089aec784e7f8983102ed36e08cfe59b99ffad8afff360"
     },
     {
       "path": "RENDERED-CONTENT-NOTES.json",
@@ -247,6 +247,11 @@
       "sha256": "ea5870b6ae8896727842fa5c4f0bab12b8a41c0dd50d7ccf2c6b70707370831a"
     },
     {
+      "path": "evidence/POST-PR214-GUEST-SMOKE.json",
+      "bytes": 8508,
+      "sha256": "41093c01bfbe7e4bd248b10b9eec7dee656dd6cad9b05c630804b6e4668a5d49"
+    },
+    {
       "path": "evidence/PR212-MONITOR-DIAGNOSIS.json",
       "bytes": 5506,
       "sha256": "22210e253729225b44bda67a5f57923af027d077e3711b5d9d9742f6dc580632"
@@ -265,6 +270,21 @@
       "path": "evidence/PR213-PREVIEW-PROVIDERS.json",
       "bytes": 877,
       "sha256": "f6aa4917818f16a9d385a94690e4bfc02e309d891558766c34c6b0a8f7db1c44"
+    },
+    {
+      "path": "evidence/PR213-UPDATED-PREMERGE-CHECKS.json",
+      "bytes": 2903,
+      "sha256": "3f2a102f6bb9d23de61871b50d9f1e1985d389e05de44c57882220474d7f0b98"
+    },
+    {
+      "path": "evidence/PR213-UPDATED-PREVIEW-BROWSER.json",
+      "bytes": 34737,
+      "sha256": "c3607732d36f5bc653c4a0f1e9a2b474757137b9ec7186e5582c30f50489d849"
+    },
+    {
+      "path": "evidence/PR213-UPDATED-PREVIEW-SIGNALS.json",
+      "bytes": 764,
+      "sha256": "71974620a649e34e3738e66b28bc8056747a7077033fb6bab65ba4e36aa66cba"
     },
     {
       "path": "evidence/PR214-4A3C2DD-PREMERGE-CHECKS.json",
@@ -307,6 +327,11 @@
       "sha256": "c51ce5b924feef92edf411c9e2f8d0a9e475e525a4d6a6304ca8d3230eabcf22"
     },
     {
+      "path": "evidence/PR214-MAIN-CI.json",
+      "bytes": 1679,
+      "sha256": "72f4e16fb33dba08792d49db29ce171794ea1e31c858c84f6c93acf26b74694a"
+    },
+    {
       "path": "evidence/PR214-PARTIAL-43.json",
       "bytes": 8240,
       "sha256": "1e63cc00d940831a20f31ef148d13425e5a55cc68ba3ced95fef4be71e0a3b70"
@@ -320,6 +345,16 @@
       "path": "evidence/PR214-PREVIEW-SIGNALS.json",
       "bytes": 891,
       "sha256": "fd4b93388699fab8b700129f94564b6939e584ffff73eea53c04586560235653"
+    },
+    {
+      "path": "evidence/PR214-PRODUCTION-BROWSER.json",
+      "bytes": 18892,
+      "sha256": "13c38c3e6e5b7e9db1548d425d1673700b6333d918805f1ffef4ff0f622c4008"
+    },
+    {
+      "path": "evidence/PR214-PRODUCTION-PROVIDERS.json",
+      "bytes": 1220,
+      "sha256": "421c83794d6afd971c7a94037b8d625c2e2ab52a42460d12fd5830b531c0b238"
     },
     {
       "path": "evidence/PR214-UPDATED-PREMERGE-CHECKS.json",
@@ -480,6 +515,16 @@
       "path": "evidence/RESUME-20261023-PROVIDER-BINDINGS.json",
       "bytes": 400,
       "sha256": "66ea8374bf19a25caea66c929608dde27e96f5bf9d4c357b81c3a6c97509b178"
+    },
+    {
+      "path": "evidence/RESUMED-GITHUB-PROVIDERS-20261023.json",
+      "bytes": 1050,
+      "sha256": "b4e0a90b5e88efa79daa22bde6d0ebe3c60207200687c6ddaf190b004d9512a2"
+    },
+    {
+      "path": "evidence/RESUMED-WORKSPACE-PROVIDERS-20261023.json",
+      "bytes": 635,
+      "sha256": "8fd73febc60ade32ea920cef47bdc7feade449be7637a913b3c07a7cfe30ec8f"
     },
     {
       "path": "evidence/SECTOR-HEADER-BEFORE.json",
@@ -802,6 +847,66 @@
       "sha256": "add294ebab7cd305d7cd76a741572900dfa05afa78b85b19d1a41ca83524727f"
     },
     {
+      "path": "evidence/pr213-updated-preview-cryptocurrency-price-feeds-and-valuation-1280.png",
+      "bytes": 301790,
+      "sha256": "82ab3b7ab1ec05df24e74e197a4f03c24f54a8c7b7444a3ee7aa63e421ac2263"
+    },
+    {
+      "path": "evidence/pr213-updated-preview-cryptocurrency-price-feeds-and-valuation-360.png",
+      "bytes": 167257,
+      "sha256": "0a7244f6b28f5817818bedcb1665e9b9dada08c491020235e6da60a658c8a677"
+    },
+    {
+      "path": "evidence/pr213-updated-preview-diversification-and-position-sizing-1280.png",
+      "bytes": 326770,
+      "sha256": "8ab57ce28449ce30b03ca2c07a9e9f0b76093c364abd9cedef100141d64a4e37"
+    },
+    {
+      "path": "evidence/pr213-updated-preview-diversification-and-position-sizing-360.png",
+      "bytes": 155716,
+      "sha256": "60c15b9afe8e2bf7a36f603f7d17d3a0def0ce97e20bde27819dd62c0d0abaac"
+    },
+    {
+      "path": "evidence/pr213-updated-preview-futures-and-derivatives-1280.png",
+      "bytes": 273610,
+      "sha256": "7f89ea263a3ec2ee39e030470593d076c2ce8d60a3ae23a8aaff2e02fcc1fe59"
+    },
+    {
+      "path": "evidence/pr213-updated-preview-futures-and-derivatives-360.png",
+      "bytes": 124998,
+      "sha256": "cc1cbaeee5ab81d8d14aac4d60ffab047ec28996887d53737a5ebfa0f9392923"
+    },
+    {
+      "path": "evidence/pr213-updated-preview-macro-reading-for-traders-1280.png",
+      "bytes": 240270,
+      "sha256": "3b9ac90c382f38ae2e8fe921d5fb38def0b8293b56db1c03e29370eaa9afb8b0"
+    },
+    {
+      "path": "evidence/pr213-updated-preview-macro-reading-for-traders-360.png",
+      "bytes": 102504,
+      "sha256": "a64776cbbea39cc87da5429389ae7a280e58b7d323c52e8ea1299a17c11ef3ab"
+    },
+    {
+      "path": "evidence/pr213-updated-preview-options-trading-fundamentals-1280.png",
+      "bytes": 195388,
+      "sha256": "ce4333f3ade5a7b6d3e7bc1d76368613dde5f4542d77b584b4d4c709e9c638ee"
+    },
+    {
+      "path": "evidence/pr213-updated-preview-options-trading-fundamentals-360.png",
+      "bytes": 81688,
+      "sha256": "5c0f0f2b656e6ff8bf558724a4661bc715f700923bae3e01c5f82b98cbc16eeb"
+    },
+    {
+      "path": "evidence/pr213-updated-preview-trading-psychology-mastery-1280.png",
+      "bytes": 228177,
+      "sha256": "9cbf19f93feb286b05af9ddd145efa37ccca18ea6ce1c092c3eadf5fe512a53d"
+    },
+    {
+      "path": "evidence/pr213-updated-preview-trading-psychology-mastery-360.png",
+      "bytes": 114409,
+      "sha256": "297eb08d2a4ff91657f2125abe94644591b2d697509ec1824272ece627640165"
+    },
+    {
       "path": "evidence/pr214-4a3c2dd-preview-console.txt",
       "bytes": 480,
       "sha256": "b2a07e9e27153fa7a71dd2dbf05cd2be55aa72cc01f074b102731e1ef5ece747"
@@ -835,6 +940,16 @@
       "path": "evidence/pr214-partial-43-console.txt",
       "bytes": 1804,
       "sha256": "7697fa1d6f5d9471e085e5d75326ef4bcf6e94f1a4cfc82635104468da36a9fe"
+    },
+    {
+      "path": "evidence/pr214-production-faq-storage-1280.png",
+      "bytes": 143606,
+      "sha256": "262c691175c5b375f141735cc9950c8ed0cca4e00766f67665c01c325be44c99"
+    },
+    {
+      "path": "evidence/pr214-production-faq-storage-360.png",
+      "bytes": 88190,
+      "sha256": "9f7e80d8e4330790a6d43a84e3f813924d2222692fff01f16123602da1e4bf98"
     },
     {
       "path": "evidence/pr220-2943036-preview-console.txt",
@@ -1081,5 +1196,8 @@
       "bytes": 2060,
       "sha256": "75c029c85b57a6d5253685eaf559c5f27e0f41b95cc64f25a1b7c81e4427287b"
     }
-  ]
+  ],
+  "fileCount": 239,
+  "totalBytes": 12082636,
+  "generatedAt": "2026-10-23T14:12:00.338239+00:00"
 }

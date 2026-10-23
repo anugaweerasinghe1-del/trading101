@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-10-23T13:59:00.479820+00:00",
+  "cloudflare": {
+    "http": 401,
+    "errors": [
+      {
+        "code": 10000,
+        "message": "Authentication error"
+      }
+    ],
+    "project": null,
+    "productionBranch": null,
+    "deployment": {
+      "id": null,
+      "environment": null,
+      "stage": null,
+      "commit": null
+    }
+  },
+  "vercel": {
+    "http": 200,
+    "project": "trading101",
+    "deployment": {
+      "id": "dpl_64tgq5fomNQwHZifS9iQVd7UEM4x",
+      "state": "READY",
+      "target": "production",
+      "sha": "aa216a24c68c30c9251f96a050da098b33364686",
+      "branch": "main"
+    }
+  }
+}
