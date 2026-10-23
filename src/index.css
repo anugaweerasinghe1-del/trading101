@@ -154,6 +154,14 @@
 }
 
 @layer base {
+  .light .course-catalog-title {
+    background-image: linear-gradient(to bottom right, #064e3b, #065f46, #047857);
+  }
+
+  .light .course-catalog .text-emerald-400 {
+    color: #047857;
+  }
+
   * {
     @apply border-border;
   }

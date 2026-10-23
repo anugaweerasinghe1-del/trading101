@@ -297,6 +297,34 @@ try {
     await waitUntil(`window.__aboutFontsReady === true`, 'About fonts settle at '+width+'px');
     assert.equal(await evaluate(`document.querySelector('main > header').getBoundingClientRect().top >= document.querySelector('nav').getBoundingClientRect().bottom`),true,'About introduction clears fixed navigation at '+width+'px');
   }
+  // Course title/accent colors must remain readable after the real theme switch.
+  for (const [width, height] of [[360,800],[390,844],[768,1024],[1280,800],[1920,1080]]) {
+    await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<500});
+    await send('Page.navigate',{url:origin+'/courses'});
+    await waitUntil(`location.pathname === '/courses' && !!document.querySelector('main header h1') && !!document.querySelector('button[aria-label*="theme"]') && !document.querySelector('#prerender-seo')`, 'Course catalog theme controls render');
+    await evaluate(`window.__catalogFontsReady = false; document.fonts.ready.then(() => window.__catalogFontsReady = true); true`);
+    await waitUntil(`window.__catalogFontsReady === true`, 'Course catalog fonts settle');
+    for (const mode of ['light','dark']) {
+      await evaluate(`(() => { if (document.documentElement.classList.contains('light') !== ${mode === 'light'}) [...document.querySelectorAll('button[aria-label*="theme"]')].find(b => b.getClientRects().length).click(); return true; })()`);
+      await waitUntil(`document.documentElement.classList.contains('light') === ${mode === 'light'}`, 'Course catalog enters '+mode+' theme');
+      // Wait for the inherited color transition as well as the theme class.
+      await delay(600);
+      const contrast = await evaluate(`(() => {
+        const rgb = s => s.match(/rgba?\\(([^)]+)\\)/)?.[1].split(',').slice(0,3).map(Number);
+        const luminance = channels => channels.map(c => c/255).map(c => c<=0.04045 ? c/12.92 : ((c+0.055)/1.055)**2.4).reduce((sum,c,i) => sum+c*[0.2126,0.7152,0.0722][i],0);
+        const background = luminance(rgb(getComputedStyle(document.body).backgroundColor));
+        const ratio = channels => {const value=luminance(channels);return (Math.max(value,background)+0.05)/(Math.min(value,background)+0.05);};
+        const title = document.querySelector('main header h1');
+        const gradient = getComputedStyle(title).backgroundImage;
+        const stops = [...gradient.matchAll(/rgba?\\([^)]+\\)/g)].map(m => rgb(m[0]));
+        const accent = document.querySelector('main header p span');
+        return {titleSize:parseFloat(getComputedStyle(title).fontSize),stops:stops.length,title:stops.map(ratio),accent:ratio(rgb(getComputedStyle(accent).color))};
+      })()`);
+      assert.ok(contrast.titleSize>=24 && contrast.stops>=2, 'Measure actual large gradient title');
+      assert.ok(contrast.title.every(r=>r>=3), 'Course title contrast at '+width+'px ('+mode+'): '+JSON.stringify(contrast));
+      assert.ok(contrast.accent>=4.5, 'Course accent text contrast at '+width+'px ('+mode+'): '+JSON.stringify(contrast));
+    }
+  }
   // Profile badges must include completed published courses and retain earlier
   // records when the current catalog cannot supply their display names.
   await send('Emulation.setDeviceMetricsOverride',{width:360,height:900,deviceScaleFactor:1,mobile:true});
@@ -404,8 +432,9 @@ try {
     assert.ok(niche, symbol + ': catalogue route must resolve');
     const path = '/niche/' + symbol.toLowerCase();
     await send('Page.navigate', {url:origin+path});
-    await waitUntil(`location.pathname === ${JSON.stringify(path)} && document.querySelector('main h1')?.textContent.includes(${JSON.stringify(niche.name)}) && !document.querySelector('#prerender-seo')`, symbol + ': hydrated guide renders');
-    await waitUntil(`!!document.querySelector('meta[name="robots"]') && !!document.querySelector('link[rel="canonical"]')`, symbol + ': metadata mounts after hydration');
+    // Helmet can commit head nodes just after the hydrated heading. Wait for
+    // their presence, then retain the independent exact-value assertions below.
+    await waitUntil(`location.pathname === ${JSON.stringify(path)} && document.querySelector('main h1')?.textContent.includes(${JSON.stringify(niche.name)}) && !document.querySelector('#prerender-seo') && !!document.querySelector('meta[name="robots"]') && !!document.querySelector('link[rel="canonical"]')`, symbol + ': hydrated guide and head render');
     assert.equal(await evaluate(`document.querySelector('meta[name="robots"]')?.content`), 'noindex, follow', symbol + ': retain noindex');
     assert.equal(await evaluate(`document.querySelector('link[rel="canonical"]')?.href`), 'https://www.thetradehq.com'+path, symbol + ': preserve route canonical');
     assert.ok(await evaluate(`!!document.querySelector('main a[href="/trade/${niche.assetId}"]')`), symbol + ': practice link uses catalogue ID');
