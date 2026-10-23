@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T15:11:42.577914+00:00",
+  "updatedAt": "2026-10-23T15:21:40.856868+00:00",
   "releases": [
     {
       "finding": "THQ-001",
@@ -545,6 +545,67 @@
         "evidence/PR219-MAIN-CI.json"
       ],
       "rollback": "Ordinaryprotectedrevertofthisdisplay/contentcommit; noDB/datamigration. Repeatnativeproviderandpublicverification."
+    },
+    {
+      "pr": 221,
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/221",
+      "findings": [
+        "THQ-018"
+      ],
+      "candidateSHA": "67ba761a85915ad047081206ee671a823c6f7bed",
+      "mergeSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
+      "state": "PUBLICLY_VERIFIED_MAIN_REQUIRED_AND_RELEASE_MONITORS_PASS",
+      "exactHeadRequiredChecks": "PASS",
+      "production": {
+        "checkedAt": "2026-10-23T15:20:21.684629+00:00",
+        "mergeSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
+        "outcome": "PASS",
+        "sourceJob": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/39976638122/job/120495290117",
+        "scope": "Authenticated native provider reads by trusted exact-main release-readiness job. Both production deployments match the immutable merge SHA. No provider mutations.",
+        "cloudflare": {
+          "observedAt": "2026-10-23T15:20:06.751Z",
+          "project": "tradehq-preview",
+          "activeProduction": {
+            "id": "597fc80b-767e-4235-ab99-d092e05c3df3",
+            "sha": "793a99d538fb81705c79aeca25ad68b10b945905",
+            "environment": "production",
+            "branch": "main",
+            "status": "success",
+            "createdAt": "2026-10-23T15:14:59.881366Z"
+          }
+        },
+        "vercel": {
+          "schema": "tradehq-vercel-production-evidence-v1",
+          "deploymentId": "dpl_6iJr8woRy26kKAAjoVsJo3maAY3a",
+          "teamId": "team_fjZ5ggg0P43MsYFSIHbeHAAO",
+          "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+          "commitSha": "793a99d538fb81705c79aeca25ad68b10b945905",
+          "target": "production",
+          "state": "READY",
+          "activeAlias": "thetradehq.com",
+          "createdAt": 1792768500840,
+          "observedAt": 1792768806751,
+          "requests": 2,
+          "authorization": {
+            "merge": false,
+            "productionRelease": false
+          }
+        }
+      },
+      "liveRecheck": {
+        "outcome": "PASS",
+        "affectedStates": 20,
+        "guestStates": 30,
+        "safeGuestControls": 4,
+        "protectedDuelSettlementRPC": "Prevented; resultsnotverified"
+      },
+      "evidence": [
+        "evidence/PR221-PRODUCTION-PROVIDERS.json",
+        "evidence/PR221-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR221-GUEST-SMOKE.json",
+        "evidence/PR221-MAIN-CI.json"
+      ],
+      "rollback": "Ordinaryprotectedrevertofthisdisplay/contentcommit; noDB/datamigration. Repeatnativeproviderandpublicverification."
     }
   ],
   "nextCandidate": {
@@ -740,17 +801,19 @@
   },
   "latestGitHubState": "evidence/FINAL-GITHUB-STATE-20261023.json",
   "latestGitHubProviderBindingEvidence": "evidence/PR214-PRODUCTION-PROVIDERS.json",
-  "latestMainValidationEvidence": "evidence/PR219-MAIN-CI.json",
-  "latestVerifiedProductionSHA": "0e72e8ccc10b24f8f8523e97474bb0b6e9f22d57",
+  "latestMainValidationEvidence": "evidence/PR221-MAIN-CI.json",
+  "latestVerifiedProductionSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
   "summaryQuoteContextCandidate": {
     "pr": 221,
     "candidateSHA": "67ba761a85915ad047081206ee671a823c6f7bed",
     "branch": "audit/summary-quote-context-20261023",
-    "state": "DRAFT_EXACT_HEAD_CI_AND_ACTUAL_PREVIEW_PASS",
+    "state": "MERGED_PUBLICLY_VERIFIED",
     "finding": "THQ-018",
     "scope": "Staticcopyclarificationofseparatequotesnapshots; allvaluesanddataflowunchanged.",
     "evidence": "evidence/AMZN-QUOTE-CHANNEL-FOLLOWUP.json",
     "actualPreviewStates": 20,
-    "mergeAllowed": true
+    "mergeAllowed": false,
+    "mergeSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
+    "reason": "Releasecyclecomplete; nonewmergeofthisPR."
   }
 }

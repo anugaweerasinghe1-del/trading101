@@ -1,10 +1,10 @@
 # TradeHQ audit status — 23 October 2026
 
-**18 confirmed site defects: 8 P2 and 10 P3. 17 fixes are deployed and publicly verified; 1 remain prepared across 1 PRs.** The exhaustive audit is still incomplete.
+**18 confirmed site defects: 8 P2 and 10 P3. 18 fixes are deployed and publicly verified; 0 remain prepared across 0 PRs.** The exhaustive audit is still incomplete.
 
-Latest verified production SHA: `0e72e8ccc10b24f8f8523e97474bb0b6e9f22d57` ([PR219](https://github.com/anugaweerasinghe1-del/trading101/pull/219)). Authenticated Cloudflare production SUCCESS and Vercel production READY match this exact merge commit. Main required CI, disposable PostgreSQL and both release monitors pass. No next batch was merged before the preceding release cycle completed.
+Latest verified production SHA: `793a99d538fb81705c79aeca25ad68b10b945905` ([PR221](https://github.com/anugaweerasinghe1-del/trading101/pull/221)). Authenticated Cloudflare production SUCCESS and Vercel production READY match this exact merge commit. Main required CI, disposable PostgreSQL and both release monitors pass. No next batch was merged before the preceding release cycle completed.
 
-[Native provider receipt](evidence/PR219-PRODUCTION-PROVIDERS.json), [affected live pages](evidence/PR219-PRODUCTION-BROWSER.json), [guest smoke](evidence/POST-PR219-GUEST-SMOKE.json), [main CI](evidence/PR219-MAIN-CI.json).
+[Native provider receipt](evidence/PR221-PRODUCTION-PROVIDERS.json), [affected live pages](evidence/PR221-PRODUCTION-BROWSER.json), [guest smoke](evidence/POST-PR221-GUEST-SMOKE.json), [main CI](evidence/PR221-MAIN-CI.json).
 
 ## Releases
 
@@ -19,10 +19,11 @@ Latest verified production SHA: `0e72e8ccc10b24f8f8523e97474bb0b6e9f22d57` ([PR2
 |[215](https://github.com/anugaweerasinghe1-del/trading101/pull/215)|THQ-005|`48b5c2d5a63e`; native providers and scoped live checks PASS |
 |[217](https://github.com/anugaweerasinghe1-del/trading101/pull/217)|THQ-008|`f56422990c8d`; native providers and scoped live checks PASS |
 |[219](https://github.com/anugaweerasinghe1-del/trading101/pull/219)|THQ-011|`0e72e8ccc10b`; native providers and scoped live checks PASS |
+|[221](https://github.com/anugaweerasinghe1-del/trading101/pull/221)|THQ-018|`793a99d538fb`; native providers and scoped live checks PASS |
 
 ## Remaining prepared fixes
 
-- [PR221](https://github.com/anugaweerasinghe1-del/trading101/pull/221): Separate summary/chart quote snapshots are unexplained. Refresh against latest main, pass exact-head CI/previews, then follow the serial production gate.
+All 18 currently confirmed site defects have completed the protected merge/deploy/live-verification cycle. This does not complete the wider audit.
 
 GitHub Actions Cloudflare access is repaired and provides authenticated native verification. The separate workspace Cloudflare token remains invalid401, so it is not used as production proof. Vercel access works. No secret values were retrieved or printed. [Access receipts](evidence/RESUMED-GITHUB-PROVIDERS-20261023.json).
 
@@ -36,4 +37,4 @@ The first PR214 main run encountered a browser transport error; complete coheren
 
 Open protected investigation: forex quote units versus generic USD practice accounting. No currency conversion, settlement, fee, position or historical revaluation change was made. Other contemporaneous claims, market comparisons, timeframe controls and fallback chart behavior need dedicated follow-up; source suspicions are not counted as confirmed engine defects.
 
-**Provisional C — NOT READY to declare Part 1 complete.** Exhaustive review remains unfinished and known fixes still await release. These quality findings are not asserted to be Google Publisher Policy violations. Google approval/account eligibility remains unverified.
+**Provisional C — NOT READY to declare Part 1 complete.** Exhaustive review remains unfinished. These quality findings are not asserted to be Google Publisher Policy violations. Google approval/account eligibility remains unverified.

@@ -602,23 +602,30 @@
       "observed": "23October14:44UTC:summary-1.2percent versuschart+3.10percent; afterrefreshchart-0.09percentwhilesummaryretained-1.2percent. Bothsimulated; separatequoterefresheswereunexplained.",
       "rootCause": "Summaryreads suppliedasset snapshot; chartfetchesquote independently.",
       "proposedFix": "Explain the independent snapshots in the existing summary. Do not alter or synchronize numerical data.",
-      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "state": "PUBLICLY_VERIFIED",
       "pr": 221,
       "candidateSHA": "67ba761a85915ad047081206ee671a823c6f7bed",
       "evidence": "evidence/AMZN-QUOTE-CHANNEL-FOLLOWUP.json",
       "scope": "Staticparagraphonly; noprotectedcalculations,records,auth,DB,privacy,adbehavior orpricingfeedchanges.",
       "rollback": "Reviewedrevertofparagraph; nodatachanges.",
       "exactHeadRequiredChecks": "PASS",
-      "latestPreviewEvidence": "evidence/PR221-UPDATED-PREVIEW-BROWSER.json"
+      "latestPreviewEvidence": "evidence/PR221-UPDATED-PREVIEW-BROWSER.json",
+      "mergeSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
+      "productionEvidence": [
+        "evidence/PR221-PRODUCTION-PROVIDERS.json",
+        "evidence/PR221-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR221-GUEST-SMOKE.json",
+        "evidence/PR221-MAIN-CI.json"
+      ]
     }
   ],
-  "updatedAt": "2026-10-23T15:11:42.577914+00:00",
+  "updatedAt": "2026-10-23T15:21:40.856868+00:00",
   "counts": {
     "siteFindings": 18,
     "P2": 8,
     "P3": 10,
-    "publiclyRepaired": 17,
-    "preparedNotMerged": 1,
+    "publiclyRepaired": 18,
+    "preparedNotMerged": 0,
     "separateOperationalBlockers": 0
   },
   "investigations": [

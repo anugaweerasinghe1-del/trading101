@@ -14398,7 +14398,16 @@
         ],
         "scope": "Normalized long standalone paragraphs only; not promoted to full main-body reading."
       },
-      "mainTextReadAt": "2026-10-23T14:50:29.046604+00:00"
+      "mainTextReadAt": "2026-10-23T14:50:29.046604+00:00",
+      "postDeploymentChecks": [
+        {
+          "pr": 221,
+          "mergeSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
+          "outcome": "PASS",
+          "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
+          "evidence": "evidence/PR221-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trade/apt",
@@ -15583,7 +15592,16 @@
           8
         ],
         "scope": "Normalized long standalone paragraphs only; not promoted to full main-body reading."
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 221,
+          "mergeSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
+          "outcome": "PASS",
+          "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
+          "evidence": "evidence/PR221-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trade/cat",
@@ -17458,7 +17476,16 @@
           8
         ],
         "scope": "Normalized long standalone paragraphs only; not promoted to full main-body reading."
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 221,
+          "mergeSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
+          "outcome": "PASS",
+          "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
+          "evidence": "evidence/PR221-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trade/eurgbp",
@@ -21595,7 +21622,16 @@
           8
         ],
         "scope": "Normalized long standalone paragraphs only; not promoted to full main-body reading."
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 221,
+          "mergeSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
+          "outcome": "PASS",
+          "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
+          "evidence": "evidence/PR221-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trade/nzdusd",
