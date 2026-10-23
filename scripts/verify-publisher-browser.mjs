@@ -389,6 +389,20 @@ try {
       })()`), true, path+' badge, title and description stay inside cover at '+width+'px');
     }
   }
+  // The learning hub must discover the same published courses as the catalog.
+  await send('Page.navigate', {url:origin+'/learn'});
+  await waitUntil(`document.querySelector('[aria-label="Structured Courses"]')?.querySelectorAll('a[href^="/courses/"]').length === 6`, 'Learning hub includes both published tracks alongside four bundled courses');
+  assert.ok(await evaluate(`document.querySelector('[aria-label="Structured Courses"]').innerText.includes('26 lessons')`), 'Learning hub counts published lessons');
+  for (const {document:track} of docs) assert.ok(await evaluate(`!!document.querySelector('[aria-label="Structured Courses"] a[href="/courses/${track.slug}"]')`), 'Learning hub links published course '+track.slug);
+  for (const [width,height] of [[360,800],[390,844],[768,1024],[1280,800],[1920,1080]]) {
+    await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<500});
+    assert.equal(await evaluate(`document.documentElement.scrollWidth>innerWidth+1`),false,'Learning hub fits '+width+'px');
+  }
+  catalogAvailable = false;
+  await send('Page.navigate', {url:origin+'/learn'});
+  await waitUntil(`document.querySelector('[aria-label="Structured Courses"]')?.innerText.includes('4 available structured tracks and 20 lessons')`, 'Bundled learning catalog remains usable without published entries');
+  assert.equal(await evaluate(`document.querySelector('[aria-label="Structured Courses"]').querySelectorAll('a[href^="/courses/"]').length`),4,'Fallback retains all bundled course links');
+  catalogAvailable = true;
   // The remaining phase-six assertions exercise mobile controls.
   await send('Emulation.setDeviceMetricsOverride',{width:360,height:900,deviceScaleFactor:1,mobile:true});
   for (let lesson=1; lesson<=6; lesson++) {
