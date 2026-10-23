@@ -154,6 +154,11 @@ export function MinimalistAreaChart({ asset }: MinimalistAreaChartProps) {
     "MARKET DATA";
 
   const padding = (maxPrice - minPrice) * 0.1 || 1;
+  // Reuse the quote formatter for tiny labels; retain other chart formatting.
+  const formatChartPrice = (value: number) => typeof value === 'number' && !isNaN(value)
+    ? `$${value !== 0 && Math.abs(value) < 0.0001 ? formatPrice(value, asset.type) : value.toLocaleString()}`
+    : '$—';
+
 
   const handleRefresh = () => {
     refetchQuote();
@@ -260,8 +265,8 @@ export function MinimalistAreaChart({ asset }: MinimalistAreaChartProps) {
               axisLine={false}
               tickLine={false}
               tick={{ fill: 'hsl(210, 15%, 55%)', fontSize: 10 }}
-              width={60}
-              tickFormatter={(value) => typeof value === 'number' && !isNaN(value) ? `$${value.toLocaleString()}` : '$—'}
+              width={safePrice < 0.0001 ? 84 : 60}
+              tickFormatter={formatChartPrice}
             />
             <Tooltip
               contentStyle={{
@@ -272,7 +277,7 @@ export function MinimalistAreaChart({ asset }: MinimalistAreaChartProps) {
               }}
               labelStyle={{ color: 'hsl(210, 15%, 55%)' }}
               itemStyle={{ color: isPositive ? 'hsl(152, 60%, 42%)' : 'hsl(0, 70%, 50%)' }}
-              formatter={(value: number) => [typeof value === 'number' && !isNaN(value) ? `$${value.toLocaleString()}` : '$—', 'Price']}
+              formatter={(value: number) => [formatChartPrice(value), 'Price']}
             />
             <Area
               type="monotone"

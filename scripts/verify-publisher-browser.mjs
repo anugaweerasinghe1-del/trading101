@@ -87,6 +87,7 @@ try {
       if (error && !window.__publisherAssetHeadErrors.includes(error)) window.__publisherAssetHeadErrors.push(error);
     }).observe(document, { subtree: true, childList: true, attributes: true });
   ` });
+  let chartPriceFixture = false;
   // Fulfil HTTPS requests inside the fixture. Published-course reads use the
   // same recorded anonymous documents; no real account or service is touched.
   socket.addEventListener("message", event => {
@@ -94,7 +95,14 @@ try {
     if (message.method !== "Fetch.requestPaused") return;
     const {requestId, request} = message.params;
     const url = new URL(request.url); let payload = [];
-    if (url.pathname.endsWith("/get_published_course_catalog")) payload = docs.map(row => row.document);
+    if (chartPriceFixture && url.pathname.endsWith('/live-market-data') && url.searchParams.get('assetId') === 'shib') {
+      const provenance = {status:'simulated',provider:'isolated-fixed-fixture',fetchedAt:new Date().toISOString()};
+      const data = url.searchParams.get('dataType') === 'candles'
+        ? Array.from({length:51},(_,i)=>({time:new Date(Date.UTC(2026,0,1,0,i)).toISOString(),open:0.00001245,high:0.000013,low:0.000012,close:0.00001245*(0.99+i*0.0005),volume:100}))
+        : {price:0.00001245,change24h:0,changePercent24h:0,high24h:null,low24h:null,volume24h:null,lastUpdated:null,source:'simulated'};
+      payload = {success:true,assetId:'shib',data,provenance};
+    }
+    else if (url.pathname.endsWith("/get_published_course_catalog")) payload = docs.map(row => row.document);
     else if (url.pathname.endsWith("/published_courses")) {
       const slug = url.searchParams.get("slug")?.replace(/^eq\./, "");
       const doc = docs.find(row => row.slug === slug)?.document;
@@ -221,6 +229,31 @@ try {
   await waitUntil(`document.activeElement?.getAttribute('aria-label') === 'Open portfolio review mentor'`, 'Portfolio mentor restores focus');
   }
   if (phase === null || phase === 6) {
+  // Fixed positive chart candles isolate display precision from live providers
+  // and from synthetic chart-data generation. Never submit an order.
+  chartPriceFixture = true;
+  for (const [width,height] of [[360,800],[390,844],[768,1024],[1280,800],[1920,1080]]) {
+    await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<500});
+    await send('Page.navigate',{url:origin+'/trade/shib'});
+    await waitUntil(`location.pathname === '/trade/shib' && !!document.querySelector('main .recharts-yAxis .recharts-cartesian-axis-tick-value') && !document.querySelector('#prerender-seo')`, 'SHIB chart axis renders at '+width+'px');
+    await evaluate(`window.__chartFontsReady=false; document.fonts.ready.then(()=>window.__chartFontsReady=true); true`);
+    await waitUntil(`window.__chartFontsReady===true`, 'SHIB chart fonts settle');
+    await delay(600);
+    const ticks = await evaluate(`Array.from(document.querySelectorAll('main .recharts-yAxis .recharts-cartesian-axis-tick-value')).map(t=>t.textContent)`);
+    assert.ok(ticks.length >= 2 && ticks.every(t=>Number(t.replace(/[$,]/g,''))>0), 'Positive tiny SHIB axis prices must not display as zero at '+width+'px');
+    assert.ok(new Set(ticks).size>=2,'SHIB axis labels retain distinct prices at '+width+'px');
+    assert.equal(await evaluate(`(()=>{const c=document.querySelector('main .recharts-wrapper').getBoundingClientRect();return Array.from(document.querySelectorAll('main .recharts-yAxis .recharts-cartesian-axis-tick-value')).every(t=>{const r=t.getBoundingClientRect();return r.left>=c.left-1&&r.right<=c.right+1})})()`),true,'SHIB axis labels remain inside chart at '+width+'px');
+    assert.equal(await evaluate(`document.documentElement.scrollWidth>innerWidth+1`),false,'Tiny-price chart fits at '+width+'px');
+    await evaluate(`document.querySelector('main .recharts-wrapper').scrollIntoView({block:'center'}); true`);
+    await delay(150);
+    const box = await evaluate(`(()=>{const r=document.querySelector('main .recharts-wrapper').getBoundingClientRect();return {x:r.left+r.width*0.65,y:r.top+r.height*0.5}})()`);
+    await send('Input.dispatchMouseEvent',{type:'mouseMoved',x:box.x,y:box.y});
+    await waitUntil(`!!document.querySelector('main .recharts-tooltip-item-value')`, 'SHIB price tooltip opens at '+width+'px');
+    const tooltip = await evaluate(`document.querySelector('main .recharts-tooltip-item-value').textContent`);
+    assert.ok(Number(tooltip.replace(/[$,]/g,''))>0,'Positive tiny SHIB tooltip retains price precision at '+width+'px');
+    await send('Input.dispatchMouseEvent',{type:'mouseMoved',x:0,y:0});
+  }
+  chartPriceFixture = false;
   // About's introductory icon previously started beneath the fixed site header.
   // Check the actual boxes rather than a particular padding class.
   for (const [width, height] of [[360,800],[390,844],[768,1024],[1280,800],[1920,1080]]) {
