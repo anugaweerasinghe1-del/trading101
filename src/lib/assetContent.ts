@@ -224,15 +224,15 @@ export function generateAssetFAQs(assetId: string): AssetFAQ[] {
     },
     {
       question: `What drives ${name} price action?`,
-      answer: `${name} (${sym}) is primarily influenced by ${driver}. On TradeHQ you can practice reading these catalysts on simulated charts before risking real capital.`,
+      answer: `Factors to research for ${name} (${sym}) include ${driver}. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event.`,
     },
     {
       question: `Is ${sym} a good ${categoryLabel} for beginner traders to study?`,
-      answer: `${sym} is one of the more widely-followed ${categoryPlural}, which makes it a useful learning instrument because chart patterns, news flow and analyst commentary are all easy to find. Use the TradeHQ practice account to test entries and exits without financial risk.`,
+      answer: `Use ${sym} to study order mechanics only after you understand its quote units, displayed fees and data-source labels. Availability in the simulator does not establish suitability for a beginner or readiness for real trading. Practice outcomes do not predict real returns.`,
     },
     {
       question: `How does ${sym} compare to other ${categoryPlural} on the simulator?`,
-      answer: `Open the Markets page to compare ${sym} side-by-side with other ${categoryPlural} by price, 24h change and simulated volume. Practice rotating between assets to learn how correlations behave in different market conditions.`,
+      answer: `Open the Markets page to browse ${sym} and other ${categoryPlural} by generated price, practice change and demo activity. Practice change is not a measured 24-hour return, and demo activity is not traded volume. Generated practice data cannot establish real-market correlations.`,
     },
     {
       question: `Can I lose real money trading ${sym} on TradeHQ?`,
