@@ -215,6 +215,8 @@ export function generateAssetFAQs(assetId: string): AssetFAQ[] {
             ? "forex pair"
             : "commodity";
 
+  const categoryPlural = type === "crypto" ? "cryptocurrencies" : type === "commodity" ? "commodities" : `${categoryLabel}s`;
+
   return [
     {
       question: `How can I practice trading ${name} (${sym}) for free?`,
@@ -226,11 +228,11 @@ export function generateAssetFAQs(assetId: string): AssetFAQ[] {
     },
     {
       question: `Is ${sym} a good ${categoryLabel} for beginner traders to study?`,
-      answer: `${sym} is one of the more widely-followed ${categoryLabel}s, which makes it a useful learning instrument because chart patterns, news flow and analyst commentary are all easy to find. Use the TradeHQ practice account to test entries and exits without financial risk.`,
+      answer: `${sym} is one of the more widely-followed ${categoryPlural}, which makes it a useful learning instrument because chart patterns, news flow and analyst commentary are all easy to find. Use the TradeHQ practice account to test entries and exits without financial risk.`,
     },
     {
-      question: `How does ${sym} compare to other ${categoryLabel}s on the simulator?`,
-      answer: `Open the Markets page to compare ${sym} side-by-side with other ${categoryLabel}s by price, 24h change and simulated volume. Practice rotating between assets to learn how correlations behave in different market conditions.`,
+      question: `How does ${sym} compare to other ${categoryPlural} on the simulator?`,
+      answer: `Open the Markets page to compare ${sym} side-by-side with other ${categoryPlural} by price, 24h change and simulated volume. Practice rotating between assets to learn how correlations behave in different market conditions.`,
     },
     {
       question: `Can I lose real money trading ${sym} on TradeHQ?`,
