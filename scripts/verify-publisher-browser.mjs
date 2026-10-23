@@ -11,6 +11,7 @@ import { setTimeout as delay } from "node:timers/promises";
 import { renderApprovedCourse } from "../src/lib/courseHtml.ts";
 import { waitForChromePort } from "./isolated-chrome-startup.mjs";
 import { NICHE_SYMBOLS, getNicheAsset } from "../src/lib/nicheData.ts";
+import { ASSETS } from "../src/lib/assets.ts";
 import { lessonData } from "../src/lib/lessonData.ts";
 
 const chrome = ["google-chrome", "google-chrome-stable", "chromium", "chromium-browser"].find(name => spawnSync("which", [name]).status === 0);
@@ -92,6 +93,7 @@ try {
       if (error && !window.__publisherAssetHeadErrors.includes(error)) window.__publisherAssetHeadErrors.push(error);
     }).observe(document, { subtree: true, childList: true, attributes: true });
   ` });
+  let chartPriceFixture = false;
   let catalogAvailable = true;
   // Fulfil HTTPS requests inside the fixture. Published-course reads use the
   // same recorded anonymous documents; no real account or service is touched.
@@ -100,7 +102,14 @@ try {
     if (message.method !== "Fetch.requestPaused") return;
     const {requestId, request} = message.params;
     const url = new URL(request.url); let payload = [];
-    if (url.pathname.endsWith("/get_published_course_catalog")) payload = catalogAvailable ? docs.map(row => row.document) : [];
+    if (chartPriceFixture && url.pathname.endsWith('/live-market-data') && url.searchParams.get('assetId') === 'shib') {
+      const provenance = {status:'simulated',provider:'isolated-fixed-fixture',fetchedAt:new Date().toISOString()};
+      const data = url.searchParams.get('dataType') === 'candles'
+        ? Array.from({length:51},(_,i)=>({time:new Date(Date.UTC(2026,0,1,0,i)).toISOString(),open:0.00000520185,high:0.0000055,low:0.000005,close:0.00000520185*(0.99+i*0.0005),volume:100}))
+        : {price:0.00000520185,change24h:0,changePercent24h:0,high24h:null,low24h:null,volume24h:null,lastUpdated:null,source:'simulated'};
+      payload = {success:true,assetId:'shib',data,provenance};
+    }
+    else if (url.pathname.endsWith("/get_published_course_catalog")) payload = catalogAvailable ? docs.map(row => row.document) : [];
     else if (url.pathname.endsWith("/published_courses")) {
       const slug = url.searchParams.get("slug")?.replace(/^eq\./, "");
       const doc = docs.find(row => row.slug === slug)?.document;
@@ -227,6 +236,42 @@ try {
   await waitUntil(`document.activeElement?.getAttribute('aria-label') === 'Open portfolio review mentor'`, 'Portfolio mentor restores focus');
   }
   if (phase === null || phase === 6) {
+  // Fixed positive chart candles isolate display precision from live providers
+  // and from synthetic chart-data generation. Never submit an order.
+  chartPriceFixture = true;
+  const tinyHeaderLayoutFailures = [];
+  for (const [width,height] of [[360,800],[390,844],[768,1024],[1280,800],[1920,1080]]) {
+    await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<500});
+    await send('Page.navigate',{url:origin+'/trade/shib'});
+    try {
+    await waitUntil(`location.pathname === '/trade/shib' && !!document.querySelector('main .recharts-yAxis .recharts-cartesian-axis-tick-value') && !document.querySelector('#prerender-seo')`, 'SHIB chart axis renders at '+width+'px');
+    } catch (error) { console.error('CHART_STARTUP_STATE', JSON.stringify(await evaluate(`({state:document.readyState,h1:document.querySelector('main h1')?.textContent,main:document.querySelector('main')?.innerText.slice(0,500),chart:!!document.querySelector('.recharts-wrapper')})`))); throw error; }
+    await evaluate(`window.__chartFontsReady=false; document.fonts.ready.then(()=>window.__chartFontsReady=true); true`);
+    await waitUntil(`window.__chartFontsReady===true`, 'SHIB chart fonts settle');
+    await delay(600);
+    const ticks = await evaluate(`Array.from(document.querySelectorAll('main .recharts-yAxis .recharts-cartesian-axis-tick-value')).map(t=>t.textContent)`);
+    assert.ok(ticks.length >= 2 && ticks.every(t=>Number(t.replace(/[$,]/g,''))>0), 'Positive tiny SHIB axis prices must not display as zero at '+width+'px');
+    assert.ok(new Set(ticks).size>=2,'SHIB axis labels retain distinct prices at '+width+'px');
+    if (!(await evaluate(`(()=>{const root=document.querySelector('main .recharts-wrapper').closest('.h-full.flex.flex-col'),card=root.getBoundingClientRect();return Array.from(root.firstElementChild.children).every(e=>{const r=e.getBoundingClientRect();return r.left>=card.left-1&&r.right<=card.right+1})})()`))) tinyHeaderLayoutFailures.push('Chart symbol/quote/refresh clips at '+width+'px');
+    if (!(await evaluate(`(()=>{const labels=['Total Value','Available Cash'];const groups=labels.map(label=>Array.from(document.querySelectorAll('main p')).find(p=>p.textContent===label)?.parentElement?.parentElement);const button=Array.from(document.querySelectorAll('main button')).find(b=>b.textContent.trim()==='Details');if(groups.some(g=>!g)||!button)return false;const card=groups[0].closest('.glass-panel').getBoundingClientRect();return [...groups,button].every(e=>{const r=e.getBoundingClientRect();return r.left>=card.left-1&&r.right<=card.right+1})})()`))) tinyHeaderLayoutFailures.push('Portfolio summary/cash/details clips at '+width+'px');
+    assert.equal(await evaluate(`(()=>{const c=document.querySelector('main .recharts-wrapper').getBoundingClientRect();return Array.from(document.querySelectorAll('main .recharts-yAxis .recharts-cartesian-axis-tick-value')).every(t=>{const r=t.getBoundingClientRect();return r.left>=c.left-1&&r.right<=c.right+1})})()`),true,'SHIB axis labels remain inside chart at '+width+'px');
+    assert.equal(await evaluate(`document.documentElement.scrollWidth>innerWidth+1`),false,'Tiny-price chart fits at '+width+'px');
+    await evaluate(`document.querySelector('main .recharts-wrapper').scrollIntoView({block:'center'}); true`);
+    await delay(150);
+    const box = await evaluate(`(()=>{const r=document.querySelector('main .recharts-wrapper').getBoundingClientRect();return {x:r.left+r.width*0.65,y:r.top+r.height*0.5}})()`);
+    await send('Input.dispatchMouseEvent',{type:'mouseMoved',x:box.x,y:box.y});
+    await waitUntil(`!!document.querySelector('main .recharts-tooltip-item-value')`, 'SHIB price tooltip opens at '+width+'px');
+    const tooltip = await evaluate(`document.querySelector('main .recharts-tooltip-item-value').textContent`);
+    assert.ok(Number(tooltip.replace(/[$,]/g,''))>0,'Positive tiny SHIB tooltip retains price precision at '+width+'px');
+    await send('Input.dispatchMouseEvent',{type:'mouseMoved',x:0,y:0});
+    const portfolioBeforeDetails = await evaluate(`localStorage.getItem('tradehq_portfolio')`);
+    await evaluate(`Array.from(document.querySelectorAll('main button')).find(b=>b.textContent.trim()==='Details').click();true`);
+    await waitUntil(`document.querySelector('main').innerText.includes('Active holdings') && document.querySelector('main').innerText.includes('Total executed')`, 'Portfolio details remain usable at '+width+'px');
+    assert.equal(await evaluate(`localStorage.getItem('tradehq_portfolio')`),portfolioBeforeDetails,'Details preserves guest portfolio record at '+width+'px');
+    await evaluate(`Array.from(document.querySelectorAll('main button')).find(b=>b.textContent.trim()==='Details').click();true`);
+  }
+  assert.deepEqual(tinyHeaderLayoutFailures, [], 'Trading chart and portfolio headers fit all target widths');
+  chartPriceFixture = false;
   // A no-real-money answer must not misrepresent optional account storage.
   // Expand only the FAQ; no authentication, portfolio mutation or order.
   for (const id of ['sui','abbv','agg','eurjpy','wheat']) {
@@ -353,6 +398,7 @@ try {
   }
   // These 50 intentionally noindex guides are outside the sitemap matrix.
   // Commodity slugs are catalogue IDs, while forex slugs encode a slash.
+  const nicheReferenceFailures = [];
   for (const symbol of NICHE_SYMBOLS) {
     const niche = getNicheAsset(symbol);
     assert.ok(niche, symbol + ': catalogue route must resolve');
@@ -363,8 +409,21 @@ try {
     assert.equal(await evaluate(`document.querySelector('meta[name="robots"]')?.content`), 'noindex, follow', symbol + ': retain noindex');
     assert.equal(await evaluate(`document.querySelector('link[rel="canonical"]')?.href`), 'https://www.thetradehq.com'+path, symbol + ': preserve route canonical');
     assert.ok(await evaluate(`!!document.querySelector('main a[href="/trade/${niche.assetId}"]')`), symbol + ': practice link uses catalogue ID');
+    const reference = await evaluate(`Array.from(document.querySelectorAll('main tbody tr')).find(row => row.cells[0]?.textContent === 'Simulator Reference Price')?.cells[1]?.textContent`);
+    const sourceAsset = ASSETS.find(asset => asset.id === niche.assetId);
+    assert.ok(sourceAsset, symbol + ': reference asset exists');
+    const displayedPrice = Number(reference?.replaceAll(',', ''));
+    if (sourceAsset.price > 0 && !(displayedPrice > 0)) nicheReferenceFailures.push(symbol + ': a positive reference price must not display as zero');
+    if (sourceAsset.price > 0 && sourceAsset.price < 0.0001) {
+      if (!(Math.abs(displayedPrice - sourceAsset.price) <= sourceAsset.price * 0.00001)) nicheReferenceFailures.push(symbol + ': tiny reference prices retain meaningful precision');
+    }
+    if (symbol === 'BTC') {
+      if (await evaluate(`/(correlation with Bitcoin|Bitcoin correlation)/i.test(document.querySelector('main').innerText)`)) nicheReferenceFailures.push('Bitcoin guide must not explain its price using correlation with itself');
+    }
+
     assert.equal(await evaluate(`document.documentElement.scrollWidth > innerWidth+1`), false, symbol + ': guide fits mobile');
   }
+  assert.deepEqual(nicheReferenceFailures, [], 'All niche reference-price and Bitcoin explanation checks pass');
   }
   }
   assert.deepEqual(runtimeErrors, [], 'No uncaught application JavaScript exceptions');
