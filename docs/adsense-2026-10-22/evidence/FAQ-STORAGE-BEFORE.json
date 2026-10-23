@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-10-23T08:41:09.879Z",
+  "rows": [
+    {
+      "url": "https://www.thetradehq.com/trade/sui",
+      "width": 360,
+      "answer": "No. Every SUI trade on TradeHQ uses virtual currency only — your portfolio is stored in your browser and no real funds are ever at risk. The platform is designed purely for education and skill-building.",
+      "overflow": false
+    },
+    {
+      "url": "https://www.thetradehq.com/trade/sui",
+      "width": 1280,
+      "answer": "No. Every SUI trade on TradeHQ uses virtual currency only — your portfolio is stored in your browser and no real funds are ever at risk. The platform is designed purely for education and skill-building.",
+      "overflow": false
+    }
+  ],
+  "existingPrivacyText": {
+    "url": "https://www.thetradehq.com/privacy",
+    "text": [
+      "Guest portfolios stay in your browser; account cash, positions and server-recorded trades restore from Supabase.",
+      "Optional accounts and community features can store data with Supabase.",
+      "• Signed-in portfolio data: Supabase stores account cash, positions and server-recorded practice orders, including asset, quantity, execution price, fees, time and simulated result. These account records restore across devices when the service is available. A first-time browser import stores cash and positions as an unranked portfolio; earlier guest trade history stays in its original browser. Starting a fresh ranked practice cycle archives the previous account snapshot privately. Journals and course progress remain browser-held.",
+      "• Optional account data: if you create an account, Supabase processes authentication data such as your email or provider identity and can store profile fields including username, country and bio.",
+      "Browser data remains on the device until the browser, the user or TradeHQ's own reset controls remove it. Clearing browser data removes local records; it does not delete a signed-in portfolio already stored in Supabase.",
+      "Optional account and community data can be stored by Supabase for as long as the related account or feature requires it. New accounts start with a public profile: the chosen username, profile fields and selected simulated statistics can be visible on public pages. You can make your profile private at any time from your profile page.",
+      "TradeHQ relies on third parties including Cloudflare Pages and Vercel for hosting, Supabase for optional authentication/database features, Amplitude for consented analytics/session replay, and Google AdSense for consented advertising. These providers can process data in countries other than your own under their own legal and contractual arrangements."
+    ]
+  },
+  "blockedMutationAttempts": [],
+  "scope": "Actual public FAQ safe expansion and existing Privacy body; no accounts or server writes, no policy changes."
+}
