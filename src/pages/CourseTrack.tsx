@@ -75,10 +75,10 @@ function CourseTrackContent({ track }: { track: Track }) {
             ]}
           />
 
-          <div className="rounded-3xl overflow-hidden mb-8 bg-black relative aspect-[16/7]">
-            <img src={track.hero} alt={`${track.title} — cover`} width={1200} height={525} className="w-full h-full object-cover opacity-70" />
+          <div className="rounded-3xl overflow-hidden mb-8 bg-black relative flex items-end min-h-56 md:min-h-96">
+            <img src={track.hero} alt={`${track.title} — cover`} width={1200} height={525} className="absolute inset-0 w-full h-full object-cover opacity-70" />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+            <div className="relative w-full p-6 md:p-8">
               <Badge variant="outline" className="mb-3">{track.level}</Badge>
               <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-2">{track.title}</h1>
               <p className="text-lg text-muted-foreground max-w-2xl">{track.tagline}</p>

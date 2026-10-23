@@ -14,6 +14,7 @@ export function Quiz({ lesson, onComplete }: QuizProps) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
+  const [showSummary, setShowSummary] = useState(false);
   const [score, setScore] = useState(0);
   const [answers, setAnswers] = useState<boolean[]>([]);
 
@@ -39,7 +40,7 @@ export function Quiz({ lesson, onComplete }: QuizProps) {
     setSelectedAnswer(null);
 
     if (isLastQuestion) {
-      onComplete(score);
+      setShowSummary(true);
     } else {
       setCurrentQuestion(currentQuestion + 1);
     }
@@ -47,7 +48,7 @@ export function Quiz({ lesson, onComplete }: QuizProps) {
 
   const percentage = Math.round((score / lesson.quiz.length) * 100);
 
-  if (isLastQuestion && showResult) {
+  if (showSummary) {
     return (
       <Card className="p-12 text-center">
         <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-6">

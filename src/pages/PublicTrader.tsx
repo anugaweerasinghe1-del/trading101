@@ -182,7 +182,7 @@ export default function PublicTrader() {
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   All figures come from a simulated account funded with virtual money.
                   They are not audited, do not represent real trading results, and do not
-                  predict future performance. Comparable ranked portfolios use a {STARTING_BALANCE_LABEL} starting balance; imported portfolios remain unranked. {PRICE_REFRESH_COPY}
+                  predict future performance. Comparable ranked portfolios use a {STARTING_BALANCE_LABEL} starting balance; imported portfolios remain unranked. {PRICE_REFRESH_COPY}{" "}
                   {data.stats && quoteTimeLabel(data.stats.priced_at, data.stats.observed_at)}
                 </p>
               </Card>
