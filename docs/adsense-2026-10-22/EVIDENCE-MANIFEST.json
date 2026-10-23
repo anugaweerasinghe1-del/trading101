@@ -3,13 +3,13 @@
   "files": [
     {
       "path": "BLOCKED-STATUS.md",
-      "bytes": 5457,
-      "sha256": "8e1defddcd2a61b61a105c7f72dcb7db862c4a715ebfc0420b6ca79237aa8994"
+      "bytes": 5364,
+      "sha256": "e78545b98e3db97f4cf459b52723a4b84ff6111c5c6986b5e4d7f4aaf47b6cc4"
     },
     {
       "path": "CHECKPOINT.md",
-      "bytes": 58263,
-      "sha256": "fba43477a614d9f56ef4b3f20fe001e7729e5a0a50adf11771675ddd334ced9f"
+      "bytes": 58729,
+      "sha256": "85fc8b0668cf8193bfb4fa63ac76aff1dbb276324eacfb760dcee8d5d18f76b7"
     },
     {
       "path": "FAQ-REVIEW-NOTES.json",
@@ -18,8 +18,8 @@
     },
     {
       "path": "FINDINGS.json",
-      "bytes": 33004,
-      "sha256": "962e2398014159f89eeef13c04d01706a8bb9fb1bd491fbc9035d3da33b2d412"
+      "bytes": 33282,
+      "sha256": "8f698e8d721986ef6e5eb742022dbe6d6e38dba1a1b8806c6dfbe141cc40a183"
     },
     {
       "path": "LEGACY-READING-NOTES.json",
@@ -33,18 +33,18 @@
     },
     {
       "path": "PAGE-AUDIT.json",
-      "bytes": 1497484,
-      "sha256": "d1d570224a6b2b867fe5f4d4155dfab73fc4846963cdf7c12d1733e5ddb77dbc"
+      "bytes": 1500731,
+      "sha256": "5fd8b74b1ce939a3723e542bfe7f5d5bbc915fea4c72d74c139fb4cfd8d32564"
     },
     {
       "path": "RELEASE-LEDGER.json",
-      "bytes": 16215,
-      "sha256": "6a6bca9ef13bee43bc7adc1910756f44753e1d41e4bdd9c79e7b1d152368ca8b"
+      "bytes": 18862,
+      "sha256": "18f68bc9390bdb1293a7f9fb92589ddcd12ead4d50fe7be5aec5e258ced89521"
     },
     {
       "path": "RENDERED-CONTENT-NOTES.json",
-      "bytes": 98961,
-      "sha256": "8db3eebffe596cfe4e0d59c56bc2acf870ee8078eee4ea85f1d93d66dcc8d4e0"
+      "bytes": 101318,
+      "sha256": "8906fee0a75650a74fd09c9f266731d66e1ba2eb130d2535c15093748394e0d6"
     },
     {
       "path": "STRUCTURED-QUIZ-REVIEW.json",
@@ -58,13 +58,13 @@
     },
     {
       "path": "UNFINISHED-SCOPE.json",
-      "bytes": 234406,
-      "sha256": "8c8702101f4b3d517f2d7cb6504f9fea082a3231fc026ee838a0afff52d34d21"
+      "bytes": 234403,
+      "sha256": "4b58a1d84821e18e2296168c91e0ca5742219fb0bed4e05ef717e2b4eafb1fed"
     },
     {
       "path": "UNREAD-MAIN-ROUTES.txt",
-      "bytes": 6230,
-      "sha256": "5312d44ad43c50d3b82df7ba2756040a0eede93cdb553be92add7f59a34a36ff"
+      "bytes": 6117,
+      "sha256": "89b80872c5099ca5bc7a938371cdb0760367cd3a9ba7154445494e60a448880a"
     },
     {
       "path": "URL-INVENTORY.json",
@@ -257,6 +257,11 @@
       "sha256": "41093c01bfbe7e4bd248b10b9eec7dee656dd6cad9b05c630804b6e4668a5d49"
     },
     {
+      "path": "evidence/POST-PR216-GUEST-SMOKE.json",
+      "bytes": 8487,
+      "sha256": "d745672339d77c229421dd124836a052494c0f67251abd38f43e33e4ecfbb65b"
+    },
+    {
       "path": "evidence/PR212-MONITOR-DIAGNOSIS.json",
       "bytes": 5506,
       "sha256": "22210e253729225b44bda67a5f57923af027d077e3711b5d9d9742f6dc580632"
@@ -402,6 +407,11 @@
       "sha256": "febdbef953ebe6beaf764bbf81134e20389be833031b60a8ec8ea37574cef750"
     },
     {
+      "path": "evidence/PR216-MAIN-CI.json",
+      "bytes": 2282,
+      "sha256": "4da49485afe28d623cf2b129db5f7f8a92c547a883beb16ead752476c6bb39b4"
+    },
+    {
       "path": "evidence/PR216-PREMERGE-CHECKS.json",
       "bytes": 2156,
       "sha256": "2186862cade31c47d49d88f7c7cdcbb35830fad341a290700dcf7feae3078f92"
@@ -410,6 +420,31 @@
       "path": "evidence/PR216-PREVIEW-SIGNALS.json",
       "bytes": 826,
       "sha256": "74a5a3b3f324b0acccd22efedc080a4529848c5857bb6d950a815e1e013cce50"
+    },
+    {
+      "path": "evidence/PR216-PRODUCTION-BROWSER.json",
+      "bytes": 2116,
+      "sha256": "028ca4ad57d8887c91283b9876f02bd0880382dd2d68d5361b28887a4adc8b6b"
+    },
+    {
+      "path": "evidence/PR216-PRODUCTION-PROVIDERS.json",
+      "bytes": 1347,
+      "sha256": "c198853fc6298fab71f60216d4c1173c5af08716b911ea32cd1c6d51602f689b"
+    },
+    {
+      "path": "evidence/PR216-UPDATED-PREMERGE-CHECKS.json",
+      "bytes": 1563,
+      "sha256": "70851ca0e0647859084ae669b43c2efd8d5de4717a7821503034f2293892d363"
+    },
+    {
+      "path": "evidence/PR216-UPDATED-PREVIEW-BROWSER.json",
+      "bytes": 2132,
+      "sha256": "702668b324bc95e7ab3529984a6b44e2069e93ece8b40f5d80232e5ea9cab620"
+    },
+    {
+      "path": "evidence/PR216-UPDATED-PREVIEW-SIGNALS.json",
+      "bytes": 764,
+      "sha256": "1606a8a5aa955f38add61e9cad5d47db2fc7b95affdf6ec8ebeb9cbe3b1d2f93"
     },
     {
       "path": "evidence/PR217-PREMERGE-CHECKS.json",
@@ -1032,6 +1067,36 @@
       "sha256": "9f7e80d8e4330790a6d43a84e3f813924d2222692fff01f16123602da1e4bf98"
     },
     {
+      "path": "evidence/pr216-production-1280.png",
+      "bytes": 99003,
+      "sha256": "2d35ee79dc3b87175a4f117ea4f3673ac6d776c1a72225e5c48a3e9d8d0a693a"
+    },
+    {
+      "path": "evidence/pr216-production-360.png",
+      "bytes": 50922,
+      "sha256": "fad97c9a9600900ea730b221a21eb398c34eb421be601447e28ea4b132f971be"
+    },
+    {
+      "path": "evidence/pr216-production-course-regression-360.png",
+      "bytes": 154308,
+      "sha256": "327318389dc79a91f6446782051884a11c0dcc73fa7eb4750637b42c8cf226ad"
+    },
+    {
+      "path": "evidence/pr216-production-own-profile-badges-360.png",
+      "bytes": 45283,
+      "sha256": "20a2bd73e384d87cf1e8c25d83c80a0ce0f5a04252aeec2d4b8a6097faa074e3"
+    },
+    {
+      "path": "evidence/pr216-updated-preview-1280.png",
+      "bytes": 80342,
+      "sha256": "45a5491903c7dbf0a044383e02fd848617fdd51ec30617b49167e9d62c062a2d"
+    },
+    {
+      "path": "evidence/pr216-updated-preview-360.png",
+      "bytes": 52739,
+      "sha256": "ee6d9d6a4cf3a5b53937341686d76dc86ad7fc9137416b08815698b7bd3bc4cf"
+    },
+    {
       "path": "evidence/pr220-2943036-preview-console.txt",
       "bytes": 918,
       "sha256": "b5f293085ef91c1dfd7fa0203c356b0cdcc817282e6320cbaabf0fb085e38543"
@@ -1277,7 +1342,7 @@
       "sha256": "75c029c85b57a6d5253685eaf559c5f27e0f41b95cc64f25a1b7c81e4427287b"
     }
   ],
-  "fileCount": 255,
-  "totalBytes": 14508035,
-  "generatedAt": "2026-10-23T14:18:17.640216+00:00"
+  "fileCount": 268,
+  "totalBytes": 15018109,
+  "generatedAt": "2026-10-23T14:27:17.071240+00:00"
 }

@@ -176,7 +176,7 @@
       "urls": [
         "https://www.thetradehq.com/trader/me"
       ],
-      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "state": "PUBLICLY_VERIFIED",
       "observed": "A fresh disposable guest completes both3lesson published tracks. Browser progress has2earnedbadges/6completed lessons; own profile incorrectly says No completion badges yet. All26real quiz interfaces completed in that isolated browser without Supabase write attempts/runtime exceptions.",
       "rootCause": "TraderProfile derives badge display only from the4bundled courseTracks array, hiding earned published/removed-course records.",
       "fix": "Read earned local badge records and use current public catalog for names, with explicit course-completion fallback names when unavailable. Keep local progress storage and all financial/visibility logic.",
@@ -192,10 +192,17 @@
       "mergeAllowed": false,
       "releaseHold": "Current native Cloudflare API401 and required serial production verification.",
       "pr": 216,
-      "candidateSHA": "c7972692f14f498f242e03aff8f01faba1539f86",
+      "candidateSHA": "a14bca138a2cae0a1e678c2bba48d2c348db263d",
       "preview": "Actual CFpreview2publishedbadges visible at5widths; own preview storage unchanged. Native provider signal and exacthead checks separately staged.",
       "exactHeadRequiredChecks": "PASS",
-      "previewEvidence": "evidence/PUBLISHED-BADGES-PREVIEW.json"
+      "previewEvidence": "evidence/PUBLISHED-BADGES-PREVIEW.json",
+      "mergeSHA": "cd05556292fbcc740c18a501c5fa529d11c14613",
+      "productionEvidence": [
+        "evidence/PR216-PRODUCTION-PROVIDERS.json",
+        "evidence/PR216-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR216-GUEST-SMOKE.json",
+        "evidence/PR216-MAIN-CI.json"
+      ]
     },
     {
       "id": "THQ-007",
@@ -490,13 +497,13 @@
       "latestEvidence": "evidence/PR214-MAIN-CI.json"
     }
   ],
-  "updatedAt": "2026-10-23T14:18:17.640216+00:00",
+  "updatedAt": "2026-10-23T14:27:17.071240+00:00",
   "counts": {
     "siteFindings": 17,
     "P2": 8,
     "P3": 9,
-    "publiclyRepaired": 7,
-    "preparedNotMerged": 10,
+    "publiclyRepaired": 8,
+    "preparedNotMerged": 9,
     "separateOperationalBlockers": 0
   },
   "investigations": [
