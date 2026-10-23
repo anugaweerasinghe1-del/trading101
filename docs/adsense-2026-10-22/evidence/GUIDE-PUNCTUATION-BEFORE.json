@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-10-22T16:09:34.089Z",
+  "scope": "Actual public rendered quick answers; read only",
+  "rows": [
+    {
+      "path": "/how-to-trade/btc",
+      "text": "To trade Bitcoin: Compare the coin’s percentage change with whole-account return using cash and holding values. → Visit /trade/btc and read the quote and chart data-status labels; they may have different provenance. → Using a hypothetical BTC holding of 0.05 units at $50,000 per unit, calculate $2,500 of virtual exposure and a $2.50 entry fee at the simulator's 0.1% rate; then compare with the displayed practice quote.. Practise the full flow free on TradeHQ with $100,000 in virtual cash — no signup required. (Educational simulation only — not financial advice.)",
+      "doubledFullStop": true
+    },
+    {
+      "path": "/how-to-trade/eth",
+      "text": "To trade Ethereum: Keep ETH quantity, simulator transaction fees and conceptual network charges in separate ledger fields. → Visit /trade/eth and read the quote and chart data-status labels; they may have different provenance. → Use 0.5 ETH at an illustrative $3,200 quote to calculate $1,600 of virtual exposure and a $1.60 simulator entry fee. That is separate from real blockchain gas charges, which TradeHQ does not execute.. Practise the full flow free on TradeHQ with $100,000 in virtual cash — no signup required. (Educational simulation only — not financial advice.)",
+      "doubledFullStop": true
+    },
+    {
+      "path": "/how-to-trade/sol",
+      "text": "To trade Solana: Identify the instrument before doing any arithmetic: SOL is the token, a SOL/USD quote is a price per token, and an exchange venue's quoted price may differ from a separate source. Record the quote currency, source and observation time. → Choose a hypothetical dollar budget and SOL unit price. Divide budget by unit price to calculate units, then add the simulator's stated 0.1% virtual order fee to estimate cash required. Use amounts solely for the worksheet, not as a recommended allocation. → On /trade/sol, inspect the quoted spot price and any data-status label. Submit a virtual market order only if you want to practise the supported interaction; there is no resting limit, stop, short or staking order in TradeHQ.. Practise the full flow free on TradeHQ with $100,000 in virtual cash — no signup required. (Educational simulation only — not financial advice.)",
+      "doubledFullStop": true
+    },
+    {
+      "path": "/how-to-trade/tsla",
+      "text": "To trade Tesla: Write the report metric you intend to investigate and a separate hypothetical gap case before viewing the outcome. → Visit /trade/tsla and read the quote and chart data-status labels; they may have different provenance. → For a hypothetical four-share TSLA market order at $200 per share, calculate $800 of exposure plus the $0.80 simulator entry fee. Label the chosen price illustrative, not a current Tesla quote.. Practise the full flow free on TradeHQ with $100,000 in virtual cash — no signup required. (Educational simulation only — not financial advice.)",
+      "doubledFullStop": true
+    },
+    {
+      "path": "/how-to-trade/nvda",
+      "text": "To trade Nvidia: List direct company exposure and any assumed fund overlap before computing the combined account weight. → Visit /trade/nvda and read the quote and chart data-status labels; they may have different provenance. → Using five hypothetical NVDA shares at $120 each, calculate a $600 virtual position and $0.60 simulated entry fee. Do not treat the worksheet price as a live quotation.. Practise the full flow free on TradeHQ with $100,000 in virtual cash — no signup required. (Educational simulation only — not financial advice.)",
+      "doubledFullStop": true
+    },
+    {
+      "path": "/how-to-trade/spy",
+      "text": "To trade S&P 500 ETF: Identify fund units and current account weight; label any distribution or fund-expense concepts not simulated. → Visit /trade/spy and read the quote and chart data-status labels; they may have different provenance. → For two illustrative SPY units at $500 each, calculate $1,000 of virtual fund exposure and a $1 simulated entry fee. Keep the unit price distinct from the fund's constituent-stock prices.. Practise the full flow free on TradeHQ with $100,000 in virtual cash — no signup required. (Educational simulation only — not financial advice.)",
+      "doubledFullStop": true
+    }
+  ]
+}

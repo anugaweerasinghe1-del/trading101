@@ -154,6 +154,14 @@ export function MinimalistAreaChart({ asset }: MinimalistAreaChartProps) {
     "MARKET DATA";
 
   const padding = (maxPrice - minPrice) * 0.1 || 1;
+  // Reuse the quote formatter for tiny labels; retain other chart formatting.
+  const formatChartPrice = (value: number) => typeof value === 'number' && !isNaN(value)
+    ? `$${value !== 0 && Math.abs(value) < 0.0001 ? formatPrice(value, asset.type) : value.toLocaleString()}`
+    : '$—';
+  const chartAxisWidth = safePrice < 0.0001
+    ? Math.max(84, (Math.max(formatChartPrice(minPrice).length, formatChartPrice(maxPrice).length) + 2) * 7 + 16)
+    : 60;
+
 
   const handleRefresh = () => {
     refetchQuote();
@@ -163,7 +171,7 @@ export function MinimalistAreaChart({ asset }: MinimalistAreaChartProps) {
   return (
     <div className="h-full flex flex-col">
       {/* Chart Header */}
-      <div className="flex items-center justify-between p-4 pb-2">
+      <div className="flex flex-wrap items-center justify-between gap-3 p-4 pb-2">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
             <span className="text-lg font-bold text-primary">{asset.symbol.charAt(0)}</span>
@@ -260,8 +268,8 @@ export function MinimalistAreaChart({ asset }: MinimalistAreaChartProps) {
               axisLine={false}
               tickLine={false}
               tick={{ fill: 'hsl(210, 15%, 55%)', fontSize: 10 }}
-              width={60}
-              tickFormatter={(value) => typeof value === 'number' && !isNaN(value) ? `$${value.toLocaleString()}` : '$—'}
+              width={chartAxisWidth}
+              tickFormatter={formatChartPrice}
             />
             <Tooltip
               contentStyle={{
@@ -272,7 +280,7 @@ export function MinimalistAreaChart({ asset }: MinimalistAreaChartProps) {
               }}
               labelStyle={{ color: 'hsl(210, 15%, 55%)' }}
               itemStyle={{ color: isPositive ? 'hsl(152, 60%, 42%)' : 'hsl(0, 70%, 50%)' }}
-              formatter={(value: number) => [typeof value === 'number' && !isNaN(value) ? `$${value.toLocaleString()}` : '$—', 'Price']}
+              formatter={(value: number) => [formatChartPrice(value), 'Price']}
             />
             <Area
               type="monotone"
