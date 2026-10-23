@@ -3,13 +3,13 @@
   "files": [
     {
       "path": "BLOCKED-STATUS.md",
-      "bytes": 5944,
-      "sha256": "0581eb2212c4f74129468bdd23386cc75e523d163774f21f2df0938c6d0d7834"
+      "bytes": 5457,
+      "sha256": "8e1defddcd2a61b61a105c7f72dcb7db862c4a715ebfc0420b6ca79237aa8994"
     },
     {
       "path": "CHECKPOINT.md",
-      "bytes": 57795,
-      "sha256": "bf44627233689139e7c90ab292db9c1db40e0972572e004db9666976e68eb696"
+      "bytes": 58263,
+      "sha256": "fba43477a614d9f56ef4b3f20fe001e7729e5a0a50adf11771675ddd334ced9f"
     },
     {
       "path": "FAQ-REVIEW-NOTES.json",
@@ -18,8 +18,8 @@
     },
     {
       "path": "FINDINGS.json",
-      "bytes": 32725,
-      "sha256": "fb5487c92f679670de9bb8c53f5fe5ea90c4cbab0af3a56565fd5405acef7780"
+      "bytes": 33004,
+      "sha256": "962e2398014159f89eeef13c04d01706a8bb9fb1bd491fbc9035d3da33b2d412"
     },
     {
       "path": "LEGACY-READING-NOTES.json",
@@ -33,13 +33,13 @@
     },
     {
       "path": "PAGE-AUDIT.json",
-      "bytes": 1495426,
-      "sha256": "9a762b476e6c63a6ebb17ae5597685293c5ed0c6d53399928536af6432fa7aff"
+      "bytes": 1497484,
+      "sha256": "d1d570224a6b2b867fe5f4d4155dfab73fc4846963cdf7c12d1733e5ddb77dbc"
     },
     {
       "path": "RELEASE-LEDGER.json",
-      "bytes": 13630,
-      "sha256": "3be9c7ea9bd018e6c2089aec784e7f8983102ed36e08cfe59b99ffad8afff360"
+      "bytes": 16215,
+      "sha256": "6a6bca9ef13bee43bc7adc1910756f44753e1d41e4bdd9c79e7b1d152368ca8b"
     },
     {
       "path": "RENDERED-CONTENT-NOTES.json",
@@ -247,6 +247,11 @@
       "sha256": "ea5870b6ae8896727842fa5c4f0bab12b8a41c0dd50d7ccf2c6b70707370831a"
     },
     {
+      "path": "evidence/POST-PR213-GUEST-SMOKE.json",
+      "bytes": 8355,
+      "sha256": "515b94774f90fed714892970371622db9a8d354be5e5ef05e50dae42fad965de"
+    },
+    {
       "path": "evidence/POST-PR214-GUEST-SMOKE.json",
       "bytes": 8508,
       "sha256": "41093c01bfbe7e4bd248b10b9eec7dee656dd6cad9b05c630804b6e4668a5d49"
@@ -262,6 +267,11 @@
       "sha256": "22587dab2f09ab7f4350a50403fdadc0ebefec5ae9bed3cf1a2b66a65b5d73c2"
     },
     {
+      "path": "evidence/PR213-MAIN-CI.json",
+      "bytes": 2282,
+      "sha256": "ef9752843634e56f813ca80dbd1d84d87c8d02152a3845f0d132a4efc3c0d7d6"
+    },
+    {
       "path": "evidence/PR213-PREMERGE-CHECKS.json",
       "bytes": 3585,
       "sha256": "60a12661188731533dcb1c738672c4d147b6ffc86d9bca2625ed5c701f1d3282"
@@ -272,9 +282,19 @@
       "sha256": "f6aa4917818f16a9d385a94690e4bfc02e309d891558766c34c6b0a8f7db1c44"
     },
     {
+      "path": "evidence/PR213-PRODUCTION-BROWSER.json",
+      "bytes": 34656,
+      "sha256": "8ceafb952b499770cd9736df0e57fde4d9cf94928fe2c469db56c6e4e85eac88"
+    },
+    {
+      "path": "evidence/PR213-PRODUCTION-PROVIDERS.json",
+      "bytes": 1347,
+      "sha256": "46246a505b5a5fc079602cb06ff463b66ea68ab5c3c87225727b129ddc1b2481"
+    },
+    {
       "path": "evidence/PR213-UPDATED-PREMERGE-CHECKS.json",
-      "bytes": 2903,
-      "sha256": "3f2a102f6bb9d23de61871b50d9f1e1985d389e05de44c57882220474d7f0b98"
+      "bytes": 1563,
+      "sha256": "2d11d67ad3b2a971444f7cc64d7c21be2fe99056fd7272db4acd260e67b0dbf0"
     },
     {
       "path": "evidence/PR213-UPDATED-PREVIEW-BROWSER.json",
@@ -847,6 +867,66 @@
       "sha256": "add294ebab7cd305d7cd76a741572900dfa05afa78b85b19d1a41ca83524727f"
     },
     {
+      "path": "evidence/pr213-production-cryptocurrency-price-feeds-and-valuation-1280.png",
+      "bytes": 329969,
+      "sha256": "ed4bbb29cf23bef17c430f71aac53911cbe99a4ea40a49345e1bf511c80abae3"
+    },
+    {
+      "path": "evidence/pr213-production-cryptocurrency-price-feeds-and-valuation-360.png",
+      "bytes": 165193,
+      "sha256": "a3df8c7f5ea81bbed8c5df8bdd2ac5854f6550b248e14027d924bf089ae96e75"
+    },
+    {
+      "path": "evidence/pr213-production-diversification-and-position-sizing-1280.png",
+      "bytes": 323669,
+      "sha256": "29a6cc5393212bf3434f3f75c02f6352319de0c40a4803435e603a0b97504e51"
+    },
+    {
+      "path": "evidence/pr213-production-diversification-and-position-sizing-360.png",
+      "bytes": 154513,
+      "sha256": "3c17ea8fbf77a4dfc5eea27490154d967147c591ee2740e82f86daa666db31f0"
+    },
+    {
+      "path": "evidence/pr213-production-futures-and-derivatives-1280.png",
+      "bytes": 273610,
+      "sha256": "7f89ea263a3ec2ee39e030470593d076c2ce8d60a3ae23a8aaff2e02fcc1fe59"
+    },
+    {
+      "path": "evidence/pr213-production-futures-and-derivatives-360.png",
+      "bytes": 130425,
+      "sha256": "12b2bc25a4db2b84a182b103c5ed4127399396e045485dcdaef835c0267ef71c"
+    },
+    {
+      "path": "evidence/pr213-production-macro-reading-for-traders-1280.png",
+      "bytes": 232958,
+      "sha256": "cbb2ca519cb689d1360fbd2ba9bbdd3431c8cd3640c01eb80f8f495b18213768"
+    },
+    {
+      "path": "evidence/pr213-production-macro-reading-for-traders-360.png",
+      "bytes": 121714,
+      "sha256": "92a92549fa03f5c880a22d0e98052522b3775b43c0b4637064aaa9ead1e83162"
+    },
+    {
+      "path": "evidence/pr213-production-options-trading-fundamentals-1280.png",
+      "bytes": 191279,
+      "sha256": "8cc56316a61ef6e89d0cf1dc02eb6ec36ba20f92032c5d61552d8ed04623d56b"
+    },
+    {
+      "path": "evidence/pr213-production-options-trading-fundamentals-360.png",
+      "bytes": 107010,
+      "sha256": "b1a3056777caeefd5df0edc8c8e5e45a8dd0efe71015fe89da9c6c244f3da3a4"
+    },
+    {
+      "path": "evidence/pr213-production-trading-psychology-mastery-1280.png",
+      "bytes": 227164,
+      "sha256": "3629f881cc3f2cb3ab895a0dccf0b3fa54b85f561d0f50a992caecb02fbc11c6"
+    },
+    {
+      "path": "evidence/pr213-production-trading-psychology-mastery-360.png",
+      "bytes": 117692,
+      "sha256": "ac9d94b4e6943298bd6673cc722b8256c2183022b4c79a3f491dcd058e78cb65"
+    },
+    {
       "path": "evidence/pr213-updated-preview-cryptocurrency-price-feeds-and-valuation-1280.png",
       "bytes": 301790,
       "sha256": "82ab3b7ab1ec05df24e74e197a4f03c24f54a8c7b7444a3ee7aa63e421ac2263"
@@ -1197,7 +1277,7 @@
       "sha256": "75c029c85b57a6d5253685eaf559c5f27e0f41b95cc64f25a1b7c81e4427287b"
     }
   ],
-  "fileCount": 239,
-  "totalBytes": 12082636,
-  "generatedAt": "2026-10-23T14:12:00.338239+00:00"
+  "fileCount": 255,
+  "totalBytes": 14508035,
+  "generatedAt": "2026-10-23T14:18:17.640216+00:00"
 }

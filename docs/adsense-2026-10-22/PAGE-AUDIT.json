@@ -1769,7 +1769,16 @@
       ],
       "findingStates": {
         "THQ-002": "FIX_TESTED_PREVIEW_VERIFIED"
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 213,
+          "mergeSHA": "1517169657ea32c418286a4c235dacd226bb798e",
+          "outcome": "PASS",
+          "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
+          "evidence": "evidence/PR213-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/api-delays-and-portfolio-valuation",
@@ -2127,7 +2136,16 @@
       ],
       "findingStates": {
         "THQ-002": "FIX_TESTED_PREVIEW_VERIFIED"
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 213,
+          "mergeSHA": "1517169657ea32c418286a4c235dacd226bb798e",
+          "outcome": "PASS",
+          "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
+          "evidence": "evidence/PR213-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash",
@@ -2482,7 +2500,16 @@
       ],
       "findingStates": {
         "THQ-002": "FIX_TESTED_PREVIEW_VERIFIED"
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 213,
+          "mergeSHA": "1517169657ea32c418286a4c235dacd226bb798e",
+          "outcome": "PASS",
+          "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
+          "evidence": "evidence/PR213-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/courses/futures-and-derivatives/contango-and-backwardation",
@@ -3015,7 +3042,16 @@
       ],
       "findingStates": {
         "THQ-002": "FIX_TESTED_PREVIEW_VERIFIED"
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 213,
+          "mergeSHA": "1517169657ea32c418286a4c235dacd226bb798e",
+          "outcome": "PASS",
+          "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
+          "evidence": "evidence/PR213-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/courses/macro-reading-for-traders/putting-macro-signals-together",
@@ -3503,7 +3539,16 @@
       ],
       "findingStates": {
         "THQ-002": "FIX_TESTED_PREVIEW_VERIFIED"
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 213,
+          "mergeSHA": "1517169657ea32c418286a4c235dacd226bb798e",
+          "outcome": "PASS",
+          "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
+          "evidence": "evidence/PR213-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/courses/options-trading-fundamentals/defined-risk-spreads",
@@ -3982,7 +4027,16 @@
       ],
       "findingStates": {
         "THQ-002": "FIX_TESTED_PREVIEW_VERIFIED"
-      }
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 213,
+          "mergeSHA": "1517169657ea32c418286a4c235dacd226bb798e",
+          "outcome": "PASS",
+          "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
+          "evidence": "evidence/PR213-PRODUCTION-BROWSER.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/courses/trading-psychology-mastery/cognitive-biases-in-trading",

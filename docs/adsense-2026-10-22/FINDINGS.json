@@ -30,7 +30,7 @@
       "observed": "All six track headings extend above the overflow-hidden fixed-aspect hero at360px; long published track titles lose up to about116px. Badge is also clipped.390px affects five headings; futures badge slightly clipped.",
       "expected": "Full badge, heading and description remain readable inside cover at all five requested widths.",
       "rootCause": "Absolutely positioned text cannot increase the fixed aspect-ratio parent height.",
-      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "state": "PUBLICLY_VERIFIED",
       "fix": "Keep cover text in normal layout flow with a minimum banner height; position only background layers absolutely.",
       "risk": "Low interface-only change to shared CourseTrack; no progress or order logic.",
       "rollback": "Reviewed revert of the cover layout and regression test; no data/settings reversal.",
@@ -41,7 +41,14 @@
       "exactHeadRequiredChecks": "PASS",
       "actualCFPreview": "6tracks x5sizes: zero clipping; long mobile title screenshots inspected.",
       "merge": "HELD_PENDING_NATIVE_CF_CREDENTIAL_REPAIR",
-      "latestPreviewEvidence": "evidence/PR213-UPDATED-PREVIEW-BROWSER.json"
+      "latestPreviewEvidence": "evidence/PR213-UPDATED-PREVIEW-BROWSER.json",
+      "mergeSHA": "1517169657ea32c418286a4c235dacd226bb798e",
+      "productionEvidence": [
+        "evidence/PR213-PRODUCTION-PROVIDERS.json",
+        "evidence/PR213-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR213-GUEST-SMOKE.json",
+        "evidence/PR213-MAIN-CI.json"
+      ]
     },
     {
       "id": "OPS-001",
@@ -483,13 +490,13 @@
       "latestEvidence": "evidence/PR214-MAIN-CI.json"
     }
   ],
-  "updatedAt": "2026-10-23T14:10:00.122791+00:00",
+  "updatedAt": "2026-10-23T14:18:17.640216+00:00",
   "counts": {
     "siteFindings": 17,
     "P2": 8,
     "P3": 9,
-    "publiclyRepaired": 6,
-    "preparedNotMerged": 11,
+    "publiclyRepaired": 7,
+    "preparedNotMerged": 10,
     "separateOperationalBlockers": 0
   },
   "investigations": [
