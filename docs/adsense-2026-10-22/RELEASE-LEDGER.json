@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T14:27:17.071240+00:00",
+  "updatedAt": "2026-10-23T14:32:41.682741+00:00",
   "releases": [
     {
       "finding": "THQ-001",
@@ -236,6 +236,68 @@
         "evidence/PR216-MAIN-CI.json"
       ],
       "rollback": "Ordinaryprotectedrevertofthisdisplay/contentcommit; noDB/datamigration. Repeatnativeproviderandpublicverification."
+    },
+    {
+      "pr": 218,
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/218",
+      "findings": [
+        "THQ-009",
+        "THQ-010"
+      ],
+      "candidateSHA": "a914d3dfae5f123f8c1cd81402945c6e8541027a",
+      "mergeSHA": "9365eaf7e57a6020d70df7fe5637286e8389f11d",
+      "state": "PUBLICLY_VERIFIED_MAIN_REQUIRED_AND_RELEASE_MONITORS_PASS",
+      "exactHeadRequiredChecks": "PASS",
+      "production": {
+        "checkedAt": "2026-10-23T14:32:29.934583+00:00",
+        "mergeSHA": "9365eaf7e57a6020d70df7fe5637286e8389f11d",
+        "outcome": "PASS",
+        "sourceJob": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/39969790437/job/120471364097",
+        "scope": "Authenticated native provider reads by trusted exact-main release-readiness job. Both production deployments match the immutable merge SHA. No provider mutations.",
+        "cloudflare": {
+          "observedAt": "2026-10-23T14:32:11.775Z",
+          "project": "tradehq-preview",
+          "activeProduction": {
+            "id": "91d42e99-4278-4cd3-b950-460c9ace2ff1",
+            "sha": "9365eaf7e57a6020d70df7fe5637286e8389f11d",
+            "environment": "production",
+            "branch": "main",
+            "status": "success",
+            "createdAt": "2026-10-23T14:27:30.193933Z"
+          }
+        },
+        "vercel": {
+          "schema": "tradehq-vercel-production-evidence-v1",
+          "deploymentId": "dpl_9bPLnARrfmQGEx68gfn4jK7yhUw9",
+          "teamId": "team_fjZ5ggg0P43MsYFSIHbeHAAO",
+          "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+          "commitSha": "9365eaf7e57a6020d70df7fe5637286e8389f11d",
+          "target": "production",
+          "state": "READY",
+          "activeAlias": "thetradehq.com",
+          "createdAt": 1792765650878,
+          "observedAt": 1792765931775,
+          "requests": 2,
+          "authorization": {
+            "merge": false,
+            "productionRelease": false
+          }
+        }
+      },
+      "liveRecheck": {
+        "outcome": "PASS",
+        "affectedStates": 6,
+        "guestStates": 30,
+        "safeGuestControls": 4,
+        "protectedDuelSettlementRPC": "Prevented; resultsnotverified"
+      },
+      "evidence": [
+        "evidence/PR218-PRODUCTION-PROVIDERS.json",
+        "evidence/PR218-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR218-GUEST-SMOKE.json",
+        "evidence/PR218-MAIN-CI.json"
+      ],
+      "rollback": "Ordinaryprotectedrevertofthisdisplay/contentcommit; noDB/datamigration. Repeatnativeproviderandpublicverification."
     }
   ],
   "nextCandidate": {
@@ -333,9 +395,9 @@
       "id": "THQ-009",
       "severity": "P2",
       "category": "Final legacy quiz correction and explanation hidden",
-      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "state": "MERGED_PUBLICLY_VERIFIED",
       "pr": 218,
-      "candidateSHA": "ec353f373ef7c5e6ef21d8c91869a9e7302cfa79",
+      "candidateSHA": "a914d3dfae5f123f8c1cd81402945c6e8541027a",
       "urls": [
         "https://www.thetradehq.com/learn/1",
         "https://www.thetradehq.com/learn/2",
@@ -352,15 +414,17 @@
       "evidence": "evidence/PR218-PREVIEW-BROWSER.json",
       "rollback": "Reviewedrevert,nodata rollback.",
       "mergeAllowed": false,
-      "releaseHold": "Cloudflare native authentication401; serial production verification required."
+      "releaseHold": "Cloudflare native authentication401; serial production verification required.",
+      "mergeSHA": "9365eaf7e57a6020d70df7fe5637286e8389f11d",
+      "reason": "Releasecyclecomplete; nonewmergeofthisPR."
     },
     {
       "id": "THQ-010",
       "severity": "P3",
       "category": "Ambiguous rebalancing multiple-choice question",
-      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "state": "MERGED_PUBLICLY_VERIFIED",
       "pr": 218,
-      "candidateSHA": "ec353f373ef7c5e6ef21d8c91869a9e7302cfa79",
+      "candidateSHA": "a914d3dfae5f123f8c1cd81402945c6e8541027a",
       "urls": [
         "https://www.thetradehq.com/learn/4"
       ],
@@ -372,7 +436,9 @@
       "evidence": "evidence/LEGACY-QUIZ-BEFORE.json; evidence/legacy-quiz-preview-4-1280.png",
       "rollback": "Reviewedrevert,nodata rollback.",
       "mergeAllowed": false,
-      "releaseHold": "Cloudflare native authentication401; serial production verification required."
+      "releaseHold": "Cloudflare native authentication401; serial production verification required.",
+      "mergeSHA": "9365eaf7e57a6020d70df7fe5637286e8389f11d",
+      "reason": "Releasecyclecomplete; nonewmergeofthisPR."
     },
     {
       "id": "THQ-011",
@@ -426,6 +492,6 @@
   },
   "latestGitHubState": "evidence/FINAL-GITHUB-STATE-20261023.json",
   "latestGitHubProviderBindingEvidence": "evidence/PR214-PRODUCTION-PROVIDERS.json",
-  "latestMainValidationEvidence": "evidence/PR216-MAIN-CI.json",
-  "latestVerifiedProductionSHA": "cd05556292fbcc740c18a501c5fa529d11c14613"
+  "latestMainValidationEvidence": "evidence/PR218-MAIN-CI.json",
+  "latestVerifiedProductionSHA": "9365eaf7e57a6020d70df7fe5637286e8389f11d"
 }
