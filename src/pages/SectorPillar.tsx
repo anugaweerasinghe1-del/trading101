@@ -131,7 +131,7 @@ export default function SectorPillar() {
       <div className="min-h-screen bg-background">
         <Navigation />
         
-        <main className="container mx-auto px-4 py-8 max-w-7xl pb-24 md:pb-12">
+        <main className="container mx-auto px-4 pt-28 max-w-7xl pb-24 md:pb-12">
           {/* Breadcrumb */}
           <Breadcrumb items={[
             { label: "Markets", href: "/markets" },

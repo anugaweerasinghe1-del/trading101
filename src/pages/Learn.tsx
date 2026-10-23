@@ -8,7 +8,7 @@ import { BookOpen, TrendingUp, Shield, PieChart, LineChart, Target, ArrowRight, 
 import { Link } from "react-router-dom";
 import { LEARN_ARTICLES } from "@/lib/learnArticles";
 import { SEOSection } from "@/components/SEOSection";
-import { courseTracks } from "@/lib/coursesData";
+import { useCourseCatalog } from "@/hooks/useCourseCatalog";
 import { GuidedNextLesson } from "@/components/GuidedNextLesson";
 import { COUNTRY_GUIDES } from "@/lib/countryGuides";
 import tradingBasics from "@/assets/course-trading-basics.jpg";
@@ -85,6 +85,8 @@ const difficultyColors: Record<string, string> = {
 };
 
 export default function Learn() {
+  const { tracks } = useCourseCatalog();
+  const courseLessonCount = tracks.reduce((count, track) => count + track.lessons.length, 0);
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -150,14 +152,14 @@ export default function Learn() {
                   <h2 className="text-2xl md:text-3xl font-bold flex items-center gap-3">
                     <GraduationCap className="w-6 h-6 text-emerald-400" /> Structured Trading Courses
                   </h2>
-                  <p className="text-sm text-muted-foreground mt-1">Four structured tracks, 20 lessons, quizzes and completion badges — 100% free. This is the guided, in-order way to learn.</p>
+                  <p className="text-sm text-muted-foreground mt-1">Explore {tracks.length} available structured tracks and {courseLessonCount} lessons, with quizzes and completion badges — 100% free. This is the guided, in-order way to learn.</p>
                 </div>
                 <Link to="/courses" className="inline-flex items-center gap-1 text-sm font-semibold text-emerald-400 hover:text-emerald-300">
                   View all courses <ChevronRight className="w-4 h-4" />
                 </Link>
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {courseTracks.map((t) => (
+                {tracks.map((t) => (
                   <Link key={t.slug} to={`/courses/${t.slug}`} className="group block">
                     <Card className="overflow-hidden bg-white/[0.02] border-white/10 hover:border-emerald-500/40 transition h-full">
                       <div className="aspect-[16/9] overflow-hidden bg-black">
@@ -251,7 +253,7 @@ export default function Learn() {
                 Explore structured courses and shorter explanations. Practice supported spot instruments with virtual funds; options, futures and unsupported order types are conceptual exercises.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-2 text-xs text-foreground/60">
-                <span className="px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">⚡ 4 full courses · 6 quick reads</span>
+                <span className="px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">⚡ {tracks.length} available courses · {lessons.length} quick reads</span>
                 <span className="px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">📚 21 wiki terms</span>
                 <span className="px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">🎯 Daily challenge</span>
                 <span className="px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">💸 $100K virtual cash</span>
