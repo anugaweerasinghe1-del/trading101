@@ -30,8 +30,8 @@ export function MinimalistPortfolioBar({ portfolio }: MinimalistPortfolioBarProp
   return (
     <div className="glass-panel border border-white/10 rounded-2xl overflow-hidden">
       {/* Main Stats */}
-      <div className="flex items-center justify-between p-4">
-        <div className="flex items-center gap-6">
+      <div className="flex flex-col gap-4 p-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-6">
           {/* Total Value */}
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -45,7 +45,7 @@ export function MinimalistPortfolioBar({ portfolio }: MinimalistPortfolioBarProp
             </div>
           </div>
 
-          <div className="h-10 w-px bg-white/10" />
+          <div className="hidden h-10 w-px bg-white/10 sm:block" />
 
           {/* Available Cash */}
           <div className="flex items-center gap-3">

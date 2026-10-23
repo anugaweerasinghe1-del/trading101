@@ -162,7 +162,7 @@ export default function Courses() {
         ))}
       </Helmet>
 
-      <div className="min-h-screen bg-background flex flex-col">
+      <div className="course-catalog min-h-screen bg-background flex flex-col">
         <Navigation />
 
         {/* atmospheric backdrop */}
@@ -183,7 +183,7 @@ export default function Courses() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/5 text-xs uppercase tracking-widest text-emerald-400 mb-5">
               <GraduationCap className="h-3 w-3" /> Structured TradeHQ Courses
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight bg-gradient-to-br from-white via-emerald-200 to-emerald-400 bg-clip-text text-transparent leading-[1.05]">
+            <h1 className="course-catalog-title text-4xl md:text-6xl font-bold tracking-tight bg-gradient-to-br from-white via-emerald-200 to-emerald-400 bg-clip-text text-transparent leading-[1.05]">
               Learn to Trade — Properly
             </h1>
             <p className="mt-5 text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">

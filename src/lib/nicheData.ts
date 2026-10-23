@@ -1,5 +1,5 @@
 // Programmatic SEO: 50 unique /niche/[symbol] routes
-import { ASSETS } from './assets';
+import { ASSETS, formatPrice } from './assets';
 
 export interface NicheAsset {
   assetId: string;
@@ -16,7 +16,9 @@ const mentorTakes: Record<string, string> = {};
 const defaultMentorTake = (symbol: string, name: string, type: string) => {
   const driverText =
     type === "crypto"
-      ? "network activity, regulation, liquidity, broader crypto-market sentiment and correlation with Bitcoin"
+      ? symbol === "BTC"
+        ? "network activity, regulation, liquidity and broader crypto-market sentiment"
+        : "network activity, regulation, liquidity, broader crypto-market sentiment and correlation with Bitcoin"
       : type === "stock"
       ? "company earnings, guidance, industry conditions, valuation expectations and broader market risk appetite"
       : type === "forex"
@@ -44,11 +46,11 @@ export function getNicheAsset(symbol: string): NicheAsset | null {
     faqs: [
       { question: `Does TradeHQ recommend buying ${asset.name}?`, answer: `No. TradeHQ is an educational simulator and does not rate assets as good or bad investments. Use the page to understand ${asset.symbol} price drivers and to test a process with virtual funds.` },
       { question: `How can a beginner practise trading ${asset.symbol}?`, answer: `Start by learning what tends to move ${asset.symbol}, then use virtual funds to practise order types, position sizing, predefined exits, and post-trade review. Treat any risk percentage as a simulation setting rather than a universal rule.` },
-      { question: `What affects ${asset.symbol} price?`, answer: `${asset.symbol} price is influenced by ${asset.type === 'crypto' ? 'market sentiment, regulatory news, network metrics, and Bitcoin correlation' : asset.type === 'stock' ? 'earnings reports, sector trends, macroeconomic data, and analyst upgrades/downgrades' : asset.type === 'forex' ? 'interest rate differentials, economic data releases, central bank policy, and geopolitical events' : 'supply/demand dynamics, geopolitical factors, currency movements, and seasonal patterns'}.` },
+      { question: `What affects ${asset.symbol} price?`, answer: `${asset.symbol} price is influenced by ${asset.type === 'crypto' ? asset.symbol === 'BTC' ? 'market sentiment, liquidity, regulatory news, and network activity' : 'market sentiment, regulatory news, network metrics, and Bitcoin correlation' : asset.type === 'stock' ? 'earnings reports, sector trends, macroeconomic data, and analyst upgrades/downgrades' : asset.type === 'forex' ? 'interest rate differentials, economic data releases, central bank policy, and geopolitical events' : 'supply/demand dynamics, geopolitical factors, currency movements, and seasonal patterns'}.` },
     ],
     keyStats: [
       { label: "Asset Class", value: asset.type.charAt(0).toUpperCase() + asset.type.slice(1) },
-      { label: "Simulator Reference Price", value: `${asset.price < 1 ? asset.price.toFixed(4) : asset.price.toLocaleString(undefined, { maximumFractionDigits: 2 })}` },
+      { label: "Simulator Reference Price", value: `${asset.price !== 0 && Math.abs(asset.price) < 0.0001 ? formatPrice(asset.price, asset.type) : asset.price < 1 ? asset.price.toFixed(4) : asset.price.toLocaleString(undefined, { maximumFractionDigits: 2 })}` },
       { label: "Simulator Reference Change", value: `${asset.changePercent >= 0 ? '+' : ''}${asset.changePercent.toFixed(2)}%` },
       { label: "Simulator Available", value: "Yes — Free" },
     ],
