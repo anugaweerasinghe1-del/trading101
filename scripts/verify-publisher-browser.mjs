@@ -265,6 +265,7 @@ try {
     const path = '/niche/' + symbol.toLowerCase();
     await send('Page.navigate', {url:origin+path});
     await waitUntil(`location.pathname === ${JSON.stringify(path)} && document.querySelector('main h1')?.textContent.includes(${JSON.stringify(niche.name)}) && !document.querySelector('#prerender-seo')`, symbol + ': hydrated guide renders');
+    await waitUntil(`!!document.querySelector('meta[name="robots"]') && !!document.querySelector('link[rel="canonical"]')`, symbol + ': metadata mounts after hydration');
     assert.equal(await evaluate(`document.querySelector('meta[name="robots"]')?.content`), 'noindex, follow', symbol + ': retain noindex');
     assert.equal(await evaluate(`document.querySelector('link[rel="canonical"]')?.href`), 'https://www.thetradehq.com'+path, symbol + ': preserve route canonical');
     assert.ok(await evaluate(`!!document.querySelector('main a[href="/trade/${niche.assetId}"]')`), symbol + ': practice link uses catalogue ID');
