@@ -61,7 +61,7 @@ export default function HowToTrade() {
 
           <AIAnswerBlock
             question={`How do you trade ${asset.fullName} step by step?`}
-            answer={`To trade ${asset.fullName}: ${asset.steps.slice(0, 3).join(" → ")}. Practise the full flow free on TradeHQ with $100,000 in virtual cash — no signup required. (Educational simulation only — not financial advice.)`}
+            answer={`To trade ${asset.fullName}: ${asset.steps.slice(0, 3).join(" → ")} Practise the full flow free on TradeHQ with $100,000 in virtual cash — no signup required. (Educational simulation only — not financial advice.)`}
             className="mb-6"
           />
 

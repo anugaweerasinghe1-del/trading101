@@ -220,6 +220,21 @@ try {
   await waitUntil(`document.activeElement?.getAttribute('aria-label') === 'Open portfolio review mentor'`, 'Portfolio mentor restores focus');
   }
   if (phase === null || phase === 6) {
+  // A no-real-money answer must not misrepresent optional account storage.
+  // Expand only the FAQ; no authentication, portfolio mutation or order.
+  for (const id of ['sui','abbv','agg','eurjpy','wheat']) {
+    for (const width of [360,1280]) {
+      await send('Emulation.setDeviceMetricsOverride',{width,height:800,deviceScaleFactor:1,mobile:width<500});
+      await send('Page.navigate',{url:origin+'/trade/'+id});
+      await waitUntil(`location.pathname === '/trade/${id}' && Array.from(document.querySelectorAll('main button')).some(b=>b.textContent.includes('Can I lose real money trading')) && !document.querySelector('#prerender-seo')`, 'Asset money FAQ renders for '+id);
+      await evaluate(`(()=>{const b=Array.from(document.querySelectorAll('main button')).find(b=>b.textContent.includes('Can I lose real money trading'));b.scrollIntoView({block:'center'});b.click();return true})()`);
+      await waitUntil(`Array.from(document.querySelectorAll('main [role="region"]')).some(e=>e.innerText.includes('No. Every'))`, 'Money FAQ opens for '+id);
+      const answer = await evaluate(`Array.from(document.querySelectorAll('main [role="region"]')).find(e=>e.innerText.includes('No. Every')).innerText`);
+      assert.ok(answer.includes('virtual currency only') && answer.includes('no real funds'), id+': preserve virtual-only scope');
+      assert.equal(answer.includes('your portfolio is stored in your browser'),false,id+': do not claim all signed-in portfolio records remain browser-only');
+      assert.equal(await evaluate(`document.documentElement.scrollWidth>innerWidth+1`),false,id+': expanded FAQ fits '+width+'px');
+    }
+  }
   // About's introductory icon previously started beneath the fixed site header.
   // Check the actual boxes rather than a particular padding class.
   for (const [width, height] of [[360,800],[390,844],[768,1024],[1280,800],[1920,1080]]) {
@@ -250,6 +265,7 @@ try {
     const path = '/niche/' + symbol.toLowerCase();
     await send('Page.navigate', {url:origin+path});
     await waitUntil(`location.pathname === ${JSON.stringify(path)} && document.querySelector('main h1')?.textContent.includes(${JSON.stringify(niche.name)}) && !document.querySelector('#prerender-seo')`, symbol + ': hydrated guide renders');
+    await waitUntil(`!!document.querySelector('meta[name="robots"]') && !!document.querySelector('link[rel="canonical"]')`, symbol + ': metadata mounts after hydration');
     assert.equal(await evaluate(`document.querySelector('meta[name="robots"]')?.content`), 'noindex, follow', symbol + ': retain noindex');
     assert.equal(await evaluate(`document.querySelector('link[rel="canonical"]')?.href`), 'https://www.thetradehq.com'+path, symbol + ': preserve route canonical');
     assert.ok(await evaluate(`!!document.querySelector('main a[href="/trade/${niche.assetId}"]')`), symbol + ': practice link uses catalogue ID');
