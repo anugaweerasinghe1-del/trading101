@@ -839,12 +839,12 @@ export const lessonData: Lesson[] = [
         "explanation": "Weights change exposure. Outcomes also depend on holdings, correlations, cash flows, costs and later prices; no allocation guarantees a result."
       },
       {
-        "question": "Which is an example of a rebalancing rule rather than a universal requirement?",
+        "question": "Which statement about a rebalancing rule is accurate?",
         "options": [
-          "Daily",
-          "Weekly",
-          "Quarterly or when allocation drifts significantly",
-          "Never"
+          "All portfolios must rebalance daily",
+          "Weekly rebalancing always gives the highest return",
+          "A calendar or drift threshold is an example to compare, not a universal requirement",
+          "Rebalancing eliminates the possibility of losses"
         ],
         "correctAnswer": 2,
         "explanation": "A calendar or drift threshold is one possible practice rule. Its effect depends on costs and the market path; no frequency is universally best."
