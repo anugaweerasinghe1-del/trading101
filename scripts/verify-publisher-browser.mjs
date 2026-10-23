@@ -11,6 +11,7 @@ import { setTimeout as delay } from "node:timers/promises";
 import { renderApprovedCourse } from "../src/lib/courseHtml.ts";
 import { waitForChromePort } from "./isolated-chrome-startup.mjs";
 import { NICHE_SYMBOLS, getNicheAsset } from "../src/lib/nicheData.ts";
+import { lessonData } from "../src/lib/lessonData.ts";
 
 const chrome = ["google-chrome", "google-chrome-stable", "chromium", "chromium-browser"].find(name => spawnSync("which", [name]).status === 0);
 assert.ok(chrome, "Chromium unavailable; this browser check has NOT passed");
@@ -241,6 +242,29 @@ try {
     await waitUntil(`window.__lessonFontsReady === true`, 'Legacy lesson '+lesson+' fonts settle');
     assert.equal(await evaluate(`document.documentElement.scrollWidth > innerWidth+1`),false,'Legacy lesson '+lesson+' must fit mobile');
     assert.equal(await evaluate(`Array.from(document.querySelectorAll('main button')).filter(b => /^(Previous|Continue|Take Quiz)$/.test(b.textContent.trim())).every(b => { const r=b.getBoundingClientRect(); return r.left>=0 && r.right<=innerWidth; })`),true,'Legacy lesson '+lesson+' navigation controls remain on screen');
+    const authored = lessonData.find(row=>row.id===lesson);
+    for (let topic=0;topic<authored.subtopics.length;topic++) {
+      const label=topic===authored.subtopics.length-1?'Take Quiz':'Continue';
+      await evaluate(`[...document.querySelectorAll('main button')].find(b=>b.textContent.trim()===${JSON.stringify(label)}).click();true`);
+      if (label==='Continue') await waitUntil(`document.querySelector('main')?.innerText.includes('Subtopic ${topic+2} of ${authored.subtopics.length}')`,'Next legacy subtopic renders');
+    }
+    await waitUntil(`document.querySelector('main')?.innerText.includes('Quiz Time!')`,'Legacy quiz opens');
+    for (const [index,question] of authored.quiz.entries()) {
+      await waitUntil(`document.querySelector('main')?.innerText.includes(${JSON.stringify(question.question)})`,'Authored legacy question appears');
+      assert.equal(await evaluate(`[...document.querySelectorAll('main button')].find(b=>b.textContent.trim()==='Submit Answer').disabled`),true,'An unanswered quiz requires a selection');
+      // Exercise an incorrect first response and correct subsequent responses.
+      const choice=index===0?(question.correctAnswer+1)%question.options.length:question.correctAnswer;
+      await evaluate(`document.querySelectorAll('main .space-y-3 button')[${choice}].click();true`);
+      await waitUntil(`![...document.querySelectorAll('main button')].find(b=>b.textContent.trim()==='Submit Answer').disabled`,'Selected answer enables submit');
+      await evaluate(`[...document.querySelectorAll('main button')].find(b=>b.textContent.trim()==='Submit Answer').click();true`);
+      await waitUntil(`document.querySelector('main')?.innerText.includes(${JSON.stringify(question.explanation)})`,'Every answer, including the final question, shows its explanation');
+      assert.equal(await evaluate(`document.querySelector('main').innerText.includes('Quiz Complete!')`),false,'Feedback stays visible before summary');
+      assert.ok(await evaluate(`[...document.querySelectorAll('main .space-y-3 button')].every(b=>b.disabled)`),'Submitted choices cannot be changed');
+      const next=index===authored.quiz.length-1?'See Results':'Next Question';
+      await evaluate(`[...document.querySelectorAll('main button')].find(b=>b.textContent.trim()===${JSON.stringify(next)}).click();true`);
+    }
+    await waitUntil(`document.querySelector('main')?.innerText.includes('Quiz Complete!')`,'Explicit final action opens score summary');
+    assert.ok(await evaluate(`document.querySelector('main').innerText.includes('You scored ${authored.quiz.length-1} out of ${authored.quiz.length}')`),'Final correct answer is included and incorrect response is preserved');
   }
   // These 50 intentionally noindex guides are outside the sitemap matrix.
   // Commodity slugs are catalogue IDs, while forex slugs encode a slash.
