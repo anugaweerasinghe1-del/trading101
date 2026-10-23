@@ -596,14 +596,7 @@
     "reason": "Releasecyclecomplete; nonewmergeofthisPR."
   },
   "proposedReleasePriority": [
-    214,
-    213,
-    216,
-    218,
-    220,
-    215,
-    217,
-    219
+    221
   ],
   "badgeCandidate": {
     "pr": 216,
@@ -751,11 +744,13 @@
   "latestVerifiedProductionSHA": "0e72e8ccc10b24f8f8523e97474bb0b6e9f22d57",
   "summaryQuoteContextCandidate": {
     "pr": 221,
-    "candidateSHA": "df3b432275997d1c25ecf250133ff2526f2dd64e",
+    "candidateSHA": "67ba761a85915ad047081206ee671a823c6f7bed",
     "branch": "audit/summary-quote-context-20261023",
-    "state": "DRAFT_CI_PENDING",
+    "state": "DRAFT_EXACT_HEAD_CI_AND_ACTUAL_PREVIEW_PASS",
     "finding": "THQ-018",
     "scope": "Staticcopyclarificationofseparatequotesnapshots; allvaluesanddataflowunchanged.",
-    "evidence": "evidence/AMZN-QUOTE-CHANNEL-FOLLOWUP.json"
+    "evidence": "evidence/AMZN-QUOTE-CHANNEL-FOLLOWUP.json",
+    "actualPreviewStates": 20,
+    "mergeAllowed": true
   }
 }

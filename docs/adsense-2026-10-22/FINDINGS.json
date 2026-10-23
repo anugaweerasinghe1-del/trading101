@@ -602,12 +602,14 @@
       "observed": "23October14:44UTC:summary-1.2percent versuschart+3.10percent; afterrefreshchart-0.09percentwhilesummaryretained-1.2percent. Bothsimulated; separatequoterefresheswereunexplained.",
       "rootCause": "Summaryreads suppliedasset snapshot; chartfetchesquote independently.",
       "proposedFix": "Explain the independent snapshots in the existing summary. Do not alter or synchronize numerical data.",
-      "state": "FIX_PREPARED_CI_PENDING",
+      "state": "FIX_TESTED_PREVIEW_VERIFIED",
       "pr": 221,
-      "candidateSHA": "df3b432275997d1c25ecf250133ff2526f2dd64e",
+      "candidateSHA": "67ba761a85915ad047081206ee671a823c6f7bed",
       "evidence": "evidence/AMZN-QUOTE-CHANNEL-FOLLOWUP.json",
       "scope": "Staticparagraphonly; noprotectedcalculations,records,auth,DB,privacy,adbehavior orpricingfeedchanges.",
-      "rollback": "Reviewedrevertofparagraph; nodatachanges."
+      "rollback": "Reviewedrevertofparagraph; nodatachanges.",
+      "exactHeadRequiredChecks": "PASS",
+      "latestPreviewEvidence": "evidence/PR221-UPDATED-PREVIEW-BROWSER.json"
     }
   ],
   "updatedAt": "2026-10-23T15:11:42.577914+00:00",
