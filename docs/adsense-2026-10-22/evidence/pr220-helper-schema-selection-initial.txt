@@ -1,0 +1,15 @@
+PASS /niche/shib 360
+PASS /niche/shib 390
+PASS /niche/shib 768
+PASS /niche/shib 1280
+PASS /niche/shib 1920
+file:///workspace/trading101/docs/adsense-2026-10-22/browser-session.mjs:10
+ const evaluate=async(expression,awaitPromise=false)=>{const r=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise});if(r.exceptionDetails)throw Error(r.exceptionDetails.exception?.description||r.exceptionDetails.text);return r.result?.value;};
+                                                                                                                                                                       ^
+
+Error: TypeError: JSON.parse(...).find is not a function
+    at <anonymous>:1:86
+    at Object.evaluate (file:///workspace/trading101/docs/adsense-2026-10-22/browser-session.mjs:10:168)
+    at async file:///workspace/trading101/docs/adsense-2026-10-22/verify-niche-reference-preview.mjs:29:122
+
+Node.js v24.19.0

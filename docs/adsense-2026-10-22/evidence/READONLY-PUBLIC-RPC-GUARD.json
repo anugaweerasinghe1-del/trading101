@@ -1,0 +1,9 @@
+{
+  "checkedAt": "2026-10-23T09:41:13.153374+00:00",
+  "source": "supabase/migrations/20261007125953_automatic_public_leaderboard.sql",
+  "sourceSHA256": "809d19a919eb9bbb0e50ca3946889932f3c14fe507c0e4d762dad2ef3faf2bb0",
+  "publicRPC": "get_public_practice_members",
+  "privateReadFunction": "tradehq_private.public_members",
+  "basis": "Wrapper and underlying function are STABLE SELECT, filter public profiles and do not write records. Audit helper permits this named POST read and catalog read; other Supabase mutations remain blocked.",
+  "scope": "Source inspection and normal public-profile rendering; no auth bypass, account record or financial-engine mutation."
+}

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T01:34:05.181279+00:00",
+  "updatedAt": "2026-10-23T09:28:56.693293+00:00",
   "scope": "Actually viewed original screenshots; first-fold inspection is not complete below-fold or all-five-size human visual review.",
   "routes": {
     "/": {
@@ -1346,6 +1346,78 @@
       "evidence": [],
       "candidateViewedWidths": [
         1280
+      ]
+    },
+    "/niche/shib": {
+      "status": "PARTIAL_VISUAL_REVIEW",
+      "humanViewedWidths": [
+        390
+      ],
+      "candidateViewedWidths": [
+        360
+      ],
+      "notes": [
+        "Production reference0.0000vspositive data personallyviewed; candidate precise reference table at360viewed. Partialsectiononly."
+      ],
+      "evidence": [
+        "evidence/niche-shib-before-390.png",
+        "evidence/pr220-niche-shib-360.png"
+      ]
+    },
+    "/niche/btc": {
+      "status": "PARTIAL_VISUAL_REVIEW",
+      "humanViewedWidths": [
+        1280
+      ],
+      "candidateViewedWidths": [
+        1280
+      ],
+      "notes": [
+        "Productionself-correlation andcandidatecorrectedmentor excerpt personallyviewed; not fullpagefivewidthvisualcompletion."
+      ],
+      "evidence": [
+        "evidence/niche-btc-before-1280.png",
+        "evidence/pr220-niche-btc-1280.png"
+      ]
+    },
+    "/trade/shib": {
+      "status": "PARTIAL_VISUAL_REVIEW",
+      "humanViewedWidths": [
+        360,
+        1280
+      ],
+      "candidateViewedWidths": [
+        360,
+        1280
+      ],
+      "notes": [
+        "Productionzeroaxis andclippedquote/cash/Details personallyviewed. Final8a04b6dcandidate360chartheader/axis and360/1280expandedportfoliobar viewed: readablepositiveprices, visiblequote/refresh/cash/Details. Candidatecontroltoggles preserveownportfolio. Fullsource/timeframe/conditionalvisualreview remainsunfinished."
+      ],
+      "evidence": [
+        "evidence/terminal-shib-chart-before-1280.png",
+        "evidence/mobile-chart-header-before-360.png",
+        "evidence/mobile-portfolio-bar-before-360.png",
+        "evidence/pr220-trade-shib-360.png",
+        "evidence/pr220-portfolio-summary-360.png",
+        "evidence/pr220-portfolio-summary-1280.png"
+      ]
+    },
+    "/trade/sui": {
+      "status": "PARTIAL_VISUAL_REVIEW",
+      "humanViewedWidths": [
+        360
+      ],
+      "candidateViewedWidths": [
+        360,
+        1280
+      ],
+      "notes": [
+        "Production360expandedFAQstorageclaim and misspelledplural personallyviewed. Final36c8e3acandidate360/1280moneyanswer andcorrectcryptocurrenciesquestion personallyviewed. OnlypartialFAQstate; nofullpageclaim."
+      ],
+      "evidence": [
+        "evidence/faq-storage-before-360.png",
+        "evidence/pr214-final-faq-storage-360.png",
+        "evidence/pr214-final-faq-storage-1280.png"
       ]
     }
   }

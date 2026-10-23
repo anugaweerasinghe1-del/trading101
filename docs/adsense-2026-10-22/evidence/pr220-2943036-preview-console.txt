@@ -1,0 +1,40 @@
+PASS /niche/shib 360
+PASS /niche/shib 390
+PASS /niche/shib 768
+PASS /niche/shib 1280
+PASS /niche/shib 1920
+PASS /niche/btc 360
+PASS /niche/btc 390
+PASS /niche/btc 768
+PASS /niche/btc 1280
+PASS /niche/btc 1920
+PASS /niche/eth 360
+PASS /niche/eth 390
+PASS /niche/eth 768
+PASS /niche/eth 1280
+PASS /niche/eth 1920
+PASS /niche/aapl 360
+PASS /niche/aapl 390
+PASS /niche/aapl 768
+PASS /niche/aapl 1280
+PASS /niche/aapl 1920
+PASS /niche/eur-usd 360
+PASS /niche/eur-usd 390
+PASS /niche/eur-usd 768
+PASS /niche/eur-usd 1280
+PASS /niche/eur-usd 1920
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: chart labels stay inside 360
+    at file:///workspace/trading101/docs/adsense-2026-10-22/verify-niche-reference-preview.mjs:33:12 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

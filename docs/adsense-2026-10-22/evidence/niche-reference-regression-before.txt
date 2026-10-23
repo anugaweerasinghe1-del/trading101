@@ -1,0 +1,89 @@
+BROWSER_NAVIGATE http://127.0.0.1:45313/about
+BROWSER_NAVIGATE http://127.0.0.1:45313/about
+BROWSER_NAVIGATE http://127.0.0.1:45313/about
+BROWSER_NAVIGATE http://127.0.0.1:45313/about
+BROWSER_NAVIGATE http://127.0.0.1:45313/about
+BROWSER_NAVIGATE http://127.0.0.1:45313/learn/1
+BROWSER_NAVIGATE http://127.0.0.1:45313/learn/2
+BROWSER_NAVIGATE http://127.0.0.1:45313/learn/3
+BROWSER_NAVIGATE http://127.0.0.1:45313/learn/4
+BROWSER_NAVIGATE http://127.0.0.1:45313/learn/5
+BROWSER_NAVIGATE http://127.0.0.1:45313/learn/6
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/btc
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/eth
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/sol
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/xrp
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/bnb
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/ada
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/doge
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/avax
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/dot
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/matic
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/link
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/ltc
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/shib
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/uni
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/atom
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/algo
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/ftm
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/near
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/icp
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/xlm
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/aapl
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/tsla
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/nvda
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/msft
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/googl
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/amzn
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/meta
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/nflx
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/amd
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/crm
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/intc
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/orcl
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/adbe
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/avgo
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/qcom
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/uber
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/shop
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/pltr
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/coin
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/sq
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/eur-usd
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/gbp-usd
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/usd-jpy
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/aud-usd
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/usd-cad
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/gold
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/oil
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/silver
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/nat-gas
+BROWSER_NAVIGATE http://127.0.0.1:45313/niche/copper
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: All niche reference-price and Bitcoin explanation checks pass
++ actual - expected
+
++ [
++   'Bitcoin guide must not explain its price using correlation with itself',
++   'SHIB: a positive reference price must not display as zero',
++   'SHIB: tiny reference prices retain meaningful precision'
++ ]
+- []
+
+    at file:///workspace/trading101-niche-fix/scripts/verify-publisher-browser.mjs:272:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [
+    'Bitcoin guide must not explain its price using correlation with itself',
+    'SHIB: a positive reference price must not display as zero',
+    'SHIB: tiny reference prices retain meaningful precision'
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

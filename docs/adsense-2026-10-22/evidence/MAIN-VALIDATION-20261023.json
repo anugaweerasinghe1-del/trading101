@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-23T10:05:37.373850+00:00",
+  "runId": 39934572701,
+  "headSHA": "aa216a24c68c30c9251f96a050da098b33364686",
+  "jobId": 120350859840,
+  "conclusion": "failure",
+  "selectedLines": [
+    "2026-10-23T09:51:42.5695855Z Fixture HTTPS fulfilment: CDP timeout: Fetch.fulfillRequest",
+    "2026-10-23T09:51:47.2622207Z AssertionError [ERR_ASSERTION]: BNB: retain noindex",
+    "2026-10-23T09:51:47.2623798Z   actual: undefined,",
+    "2026-10-23T09:51:47.2623974Z   expected: 'noindex, follow',"
+  ],
+  "releaseCredentialJobs": "SKIPPED because required validation failed before credentials",
+  "interpretation": "Existing main guide test observes H1 before asynchronous metadata mount. FinalPR21436c8e3a waits tag presence and retains exact assertions; candidateCIpasses. This mainfailure doesnot establish currentGitHubcredentialvalidity; separate read-onlybindingdiagnostic provides that evidence."
+}

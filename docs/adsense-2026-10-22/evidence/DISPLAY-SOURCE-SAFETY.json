@@ -1,0 +1,80 @@
+{
+  "baseSHA": "aa216a24c68c30c9251f96a050da098b33364686",
+  "displaySHA": "8a04b6d35726521522c86e035d5fe73fc83ed982",
+  "copySHA": "36c8e3ae9c7c5f29b0a4df63c2e3439beebd540d",
+  "scope": "Source equivalence for protected calculation/data paths; not a proof that existing engine logic is error-free.",
+  "unchangedDisplayPaths": [
+    {
+      "path": "src/lib/assets.ts",
+      "sha256": "ad0ec056e7656d24aa32636f4f6b8b0b875232b1f981b745d404b16f939b2ada"
+    },
+    {
+      "path": "src/lib/portfolio.ts",
+      "sha256": "637fb6a0b173fdf00432d4fb4def324aec6bbe293c6c3333f8b6033ec8eaef50"
+    },
+    {
+      "path": "src/lib/cloudPortfolio.ts",
+      "sha256": "c554000d53a7e8c169f5cbcd9d973a8a8945efd2807bc6914bb12df6fcbec39a"
+    },
+    {
+      "path": "src/lib/marketRequests.ts",
+      "sha256": "044834f7c952a694b0060aef7f375875d5a43b2d17f944d10a807da2132e3a4f"
+    },
+    {
+      "path": "src/hooks/useLiveMarketData.ts",
+      "sha256": "47e574f270101dd4b8803fc98f4faee3e46bef44d2844037727668e0ad6e31a2"
+    },
+    {
+      "path": "src/components/trading/OrderPanel.tsx",
+      "sha256": "61e752049e949b8980ba67c1caec6968de45cb9270bfc6499ea77ff59548a644"
+    },
+    {
+      "path": "src/components/trading/MinimalistOrderPanel.tsx",
+      "sha256": "feca94b72e17307063f34e133e5b5600893e3ad8fb0da820da4ed1468c1937b5"
+    }
+  ],
+  "unchangedCopyProtectedPaths": [
+    {
+      "path": "src/pages/Privacy.tsx",
+      "sha256": "7dd716c225b9d5c18a44af52a1cc4ea50dee95cf4dc19fe1d27783454fceea13"
+    },
+    {
+      "path": "src/lib/portfolio.ts",
+      "sha256": "637fb6a0b173fdf00432d4fb4def324aec6bbe293c6c3333f8b6033ec8eaef50"
+    },
+    {
+      "path": "src/lib/cloudPortfolio.ts",
+      "sha256": "c554000d53a7e8c169f5cbcd9d973a8a8945efd2807bc6914bb12df6fcbec39a"
+    }
+  ],
+  "prefixes": [
+    {
+      "path": "src/components/trading/MinimalistPortfolioBar.tsx",
+      "beforeMarker": "  return (",
+      "bytes": 1124,
+      "sha256": "dd727eeb1ced2cabb961c81a5cc56e75af706817b74827e6e476d5adbdf80e81",
+      "equal": true
+    },
+    {
+      "path": "src/components/trading/MinimalistAreaChart.tsx",
+      "beforeMarker": "  const padding =",
+      "bytes": 5557,
+      "sha256": "6ab3236c59ab46861b6ad88a290b7e6190c527a5eec758b5951d09c2fd41a5f4",
+      "equal": true
+    }
+  ],
+  "unchangedReleaseGatePaths": [
+    {
+      "path": "scripts/agent-release-recovery-readiness.mjs",
+      "sha256": "5be3a32fb096bc4809676e963fda7b14386393f162452ddc4ee5fd3032e44b60"
+    },
+    {
+      "path": "scripts/ci-validation-gate.mjs",
+      "sha256": "108f44ae79918ecbbe8685209daca97103dc7cb4f75b1e3b522f3b0cf72f1395"
+    },
+    {
+      "path": ".github/workflows/cloudflare-preview-build.yml",
+      "sha256": "96e1fdcee149ff4d8091d3e622b48b92c17b5dacf5feb0934454a1dd7e2840bb"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+BROWSER_NAVIGATE http://127.0.0.1:33881/trade/shib
+BROWSER_NAVIGATE http://127.0.0.1:33881/trade/shib
+BROWSER_NAVIGATE http://127.0.0.1:33881/trade/shib
+BROWSER_NAVIGATE http://127.0.0.1:33881/trade/shib
+BROWSER_NAVIGATE http://127.0.0.1:33881/trade/shib
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Trading chart and portfolio headers fit all target widths
++ actual - expected
+
++ [
++   'Chart symbol/quote/refresh clips at 360px',
++   'Portfolio summary/cash/details clips at 360px',
++   'Chart symbol/quote/refresh clips at 390px',
++   'Portfolio summary/cash/details clips at 390px'
++ ]
+- []
+
+    at file:///workspace/trading101-niche-fix/scripts/verify-publisher-browser.mjs:259:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [
+    'Chart symbol/quote/refresh clips at 360px',
+    'Portfolio summary/cash/details clips at 360px',
+    'Chart symbol/quote/refresh clips at 390px',
+    'Portfolio summary/cash/details clips at 390px'
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

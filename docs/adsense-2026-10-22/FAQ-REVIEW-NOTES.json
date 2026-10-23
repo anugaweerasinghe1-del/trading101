@@ -147,12 +147,287 @@
       "answersRead": 4,
       "assessment": "Actual expanded answers read: this sector-specific count and terminal links, virtual-only/nofutureperformance, source-labelled asset research, and static cataloguereference ratherthancontinuouslivefeed. Doesnotsettleforexunitconventions orfunddiversificationclaims. Utilitydirectorycontext, not originalinvestmentresearch.",
       "controlEvidence": "evidence/live-faq/fd8c5441dfba37ca.json"
+    },
+    "/trade/sui": {
+      "answersRead": 5,
+      "assessment": "Allfivecapturedexpandedanswersread. Generated no-real-money answer incorrectly implies browser-only portfolio storage for every visitor; source and existingPrivacy distinguish guestlocal from signed-in Supabase records. Comparisonvolume and generalizedpopularity claims require separatefollow-up; not counted as additionalconfirmeddefects. This is a staticFAQ representation issue, not a proposed privacy-policy/data-handling change.",
+      "controlEvidence": "evidence/live-faq-v2/6108528acb9eabbb.json"
+    },
+    "/learn/country/sri-lanka": {
+      "answersRead": 3,
+      "assessment": "Three captured expanded answers read: simulator is not a regulated real broker; authority/provider guidance needed for live eligibility; paper gains cannot convert to cash. USD/LKR illustration is abstract USD scope, not corroboration of FX settlement (INV-FX01).",
+      "controlEvidence": "evidence/live-faq-v2/773093a928793a7b.json"
+    },
+    "/trade/xle": {
+      "answersRead": 5,
+      "assessment": "Five expanded answers read. Virtual-fund workflow, class-level drivers and price/change comparison are generic, with popularity/volume claims needing follow-up. Unconditional browser-only portfolio storage is THQ014; static correction prepared in PR214. No actual orders/account writes performed.",
+      "controlEvidence": "evidence/live-faq-v2/7e52e55acc200014.json"
+    },
+    "/trade/nflx": {
+      "answersRead": 5,
+      "assessment": "Five expanded answers read. Virtual-fund workflow, class-level drivers and price/change comparison are generic, with popularity/volume claims needing follow-up. Unconditional browser-only portfolio storage is THQ014; static correction prepared in PR214. No actual orders/account writes performed.",
+      "controlEvidence": "evidence/live-faq-v2/64f03a1f16b07193.json"
+    },
+    "/trade/tsla": {
+      "answersRead": 4,
+      "assessment": "Four expanded answers read: generated volatility not historical news replay; hypothetical sizing and journal exit condition; stop-loss conceptual and app market-only; gaps need not continue/fill; practice does not establish suitability for real investment.",
+      "controlEvidence": "evidence/live-faq-v2/47586c0dada535d6.json"
+    },
+    "/trade/usdjpy": {
+      "answersRead": 5,
+      "assessment": "Five expanded answers read. Virtual-fund workflow, class-level drivers and price/change comparison are generic, with popularity/volume claims needing follow-up. Unconditional browser-only portfolio storage is THQ014; static correction prepared in PR214. No actual orders/account writes performed.",
+      "controlEvidence": "evidence/live-faq-v2/f2b50467691a2272.json"
     }
   },
   "nativeVisibleFAQRead": {
     "/niche/usd-jpy": {
       "answersRead": 3,
       "assessment": "Visible no-recommendation, practice workflow and interest-differential/macroeconomic driver answers read within actual captured main; distinct from collapsed-answer totals."
+    },
+    "/niche/aapl": {
+      "answersRead": 3,
+      "assessment": "Apple Inc. (AAPL): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/af0642a4e809ee7c.json"
+    },
+    "/niche/ada": {
+      "answersRead": 3,
+      "assessment": "Cardano (ADA): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/607d3a54759a2585.json"
+    },
+    "/niche/adbe": {
+      "answersRead": 3,
+      "assessment": "Adobe Inc. (ADBE): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/60e1eca1271ca5a9.json"
+    },
+    "/niche/algo": {
+      "answersRead": 3,
+      "assessment": "Algorand (ALGO): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/5d742706a99516d6.json"
+    },
+    "/niche/amd": {
+      "answersRead": 3,
+      "assessment": "Advanced Micro Devices (AMD): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/8f9f7c62f3afcdf8.json"
+    },
+    "/niche/amzn": {
+      "answersRead": 3,
+      "assessment": "Amazon.com Inc. (AMZN): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/9da377c89236ac67.json"
+    },
+    "/niche/atom": {
+      "answersRead": 3,
+      "assessment": "Cosmos (ATOM): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/01bd0cb2edba299a.json"
+    },
+    "/niche/aud-usd": {
+      "answersRead": 3,
+      "assessment": "Australian Dollar / US Dollar (AUD/USD): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/ccd43977a6980290.json"
+    },
+    "/niche/avax": {
+      "answersRead": 3,
+      "assessment": "Avalanche (AVAX): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/ee980031b8102455.json"
+    },
+    "/niche/avgo": {
+      "answersRead": 3,
+      "assessment": "Broadcom Inc. (AVGO): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/aebf31ebe706f316.json"
+    },
+    "/niche/bnb": {
+      "answersRead": 3,
+      "assessment": "BNB (BNB): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/6be830ffdd97681e.json"
+    },
+    "/niche/btc": {
+      "answersRead": 3,
+      "assessment": "Bitcoin (BTC): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/a68cc13650fb96b4.json"
+    },
+    "/niche/coin": {
+      "answersRead": 3,
+      "assessment": "Coinbase Global (COIN): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/950980f8bd7ac485.json"
+    },
+    "/niche/copper": {
+      "answersRead": 3,
+      "assessment": "Copper (HG): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/513477e5b9eede19.json"
+    },
+    "/niche/crm": {
+      "answersRead": 3,
+      "assessment": "Salesforce Inc. (CRM): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/6e83e223e5a805da.json"
+    },
+    "/niche/doge": {
+      "answersRead": 3,
+      "assessment": "Dogecoin (DOGE): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/601ac9f05da30256.json"
+    },
+    "/niche/dot": {
+      "answersRead": 3,
+      "assessment": "Polkadot (DOT): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/ed9867f0cc87b509.json"
+    },
+    "/niche/eth": {
+      "answersRead": 3,
+      "assessment": "Ethereum (ETH): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/3571dc1250c1dfd4.json"
+    },
+    "/niche/eur-usd": {
+      "answersRead": 3,
+      "assessment": "Euro / US Dollar (EUR/USD): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/feddacc1bf503cac.json"
+    },
+    "/niche/ftm": {
+      "answersRead": 3,
+      "assessment": "Fantom (FTM): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/7b8df9edd0d2243e.json"
+    },
+    "/niche/gbp-usd": {
+      "answersRead": 3,
+      "assessment": "British Pound / US Dollar (GBP/USD): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/ed47ade64bed3b99.json"
+    },
+    "/niche/gold": {
+      "answersRead": 3,
+      "assessment": "Gold (XAU): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/fb4f2135d5fd935e.json"
+    },
+    "/niche/googl": {
+      "answersRead": 3,
+      "assessment": "Alphabet Inc. (GOOGL): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/62afd2144b717ca9.json"
+    },
+    "/niche/icp": {
+      "answersRead": 3,
+      "assessment": "Internet Computer (ICP): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/bb15736e7528fff9.json"
+    },
+    "/niche/intc": {
+      "answersRead": 3,
+      "assessment": "Intel Corporation (INTC): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/db5421c82ddf00b6.json"
+    },
+    "/niche/link": {
+      "answersRead": 3,
+      "assessment": "Chainlink (LINK): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/b03105f4d9e5aac8.json"
+    },
+    "/niche/ltc": {
+      "answersRead": 3,
+      "assessment": "Litecoin (LTC): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/8a0ebdc3090a9138.json"
+    },
+    "/niche/matic": {
+      "answersRead": 3,
+      "assessment": "Polygon (MATIC): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/f0799e5de5ca223f.json"
+    },
+    "/niche/meta": {
+      "answersRead": 3,
+      "assessment": "Meta Platforms Inc. (META): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/efc2cb37a56255d0.json"
+    },
+    "/niche/msft": {
+      "answersRead": 3,
+      "assessment": "Microsoft Corporation (MSFT): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/a19320757e5a910e.json"
+    },
+    "/niche/nat-gas": {
+      "answersRead": 3,
+      "assessment": "Natural Gas (NG): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/20319088312f3513.json"
+    },
+    "/niche/near": {
+      "answersRead": 3,
+      "assessment": "NEAR Protocol (NEAR): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/64759a7a32d8f7b5.json"
+    },
+    "/niche/nflx": {
+      "answersRead": 3,
+      "assessment": "Netflix Inc. (NFLX): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/34caaf8297f9a7f6.json"
+    },
+    "/niche/nvda": {
+      "answersRead": 3,
+      "assessment": "NVIDIA Corporation (NVDA): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/121ca97f4eea9a9f.json"
+    },
+    "/niche/oil": {
+      "answersRead": 3,
+      "assessment": "Crude Oil WTI (WTI): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/794968b84c1d1468.json"
+    },
+    "/niche/orcl": {
+      "answersRead": 3,
+      "assessment": "Oracle Corporation (ORCL): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/481c6f32d178de37.json"
+    },
+    "/niche/pltr": {
+      "answersRead": 3,
+      "assessment": "Palantir Technologies (PLTR): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/ca6308cc9194395b.json"
+    },
+    "/niche/qcom": {
+      "answersRead": 3,
+      "assessment": "Qualcomm Inc. (QCOM): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/4242a27209d1c270.json"
+    },
+    "/niche/shib": {
+      "answersRead": 3,
+      "assessment": "Shiba Inu (SHIB): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/2e2a444206133c85.json"
+    },
+    "/niche/shop": {
+      "answersRead": 3,
+      "assessment": "Shopify Inc. (SHOP): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/fdf4802eba569ecb.json"
+    },
+    "/niche/silver": {
+      "answersRead": 3,
+      "assessment": "Silver (XAG): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/103b40e2b9d41fe3.json"
+    },
+    "/niche/sol": {
+      "answersRead": 3,
+      "assessment": "Solana (SOL): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/62747d459df1e19b.json"
+    },
+    "/niche/sq": {
+      "answersRead": 3,
+      "assessment": "Block Inc. (SQ): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/373454de6a22abb7.json"
+    },
+    "/niche/tsla": {
+      "answersRead": 3,
+      "assessment": "Tesla Inc. (TSLA): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/e6b3753aff3d33a7.json"
+    },
+    "/niche/uber": {
+      "answersRead": 3,
+      "assessment": "Uber Technologies (UBER): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/4ba75e4b31d9b3f2.json"
+    },
+    "/niche/uni": {
+      "answersRead": 3,
+      "assessment": "Uniswap (UNI): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/38fe9169992c2176.json"
+    },
+    "/niche/usd-cad": {
+      "answersRead": 3,
+      "assessment": "US Dollar / Canadian Dollar (USD/CAD): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/a97b23baa5f369a6.json"
+    },
+    "/niche/xlm": {
+      "answersRead": 3,
+      "assessment": "Stellar (XLM): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/00634ee9ec03d0f2.json"
+    },
+    "/niche/xrp": {
+      "answersRead": 3,
+      "assessment": "XRP (XRP): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
+      "evidence": "evidence/live-browser/c8b6d3e777b760e1.json"
     }
   }
 }

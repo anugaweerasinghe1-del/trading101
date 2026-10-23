@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-10-23T09:30:18.139656+00:00",
+  "scope": "Fresh selected-field native read before release/report decision. No credential values, provider configuration or signed URLs retained.",
+  "cloudflare": {
+    "httpStatus": 401,
+    "errorCodes": [
+      10000
+    ],
+    "productionVerified": false
+  },
+  "vercel": {
+    "httpStatus": 200,
+    "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+    "production": {
+      "id": "dpl_64tgq5fomNQwHZifS9iQVd7UEM4x",
+      "target": "production",
+      "state": "READY",
+      "sha": "aa216a24c68c30c9251f96a050da098b33364686",
+      "branch": "main"
+    }
+  },
+  "mainSHA": "aa216a24c68c30c9251f96a050da098b33364686"
+}

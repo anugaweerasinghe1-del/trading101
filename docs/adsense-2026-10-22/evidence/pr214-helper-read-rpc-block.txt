@@ -1,0 +1,14 @@
+PASS /contact 360
+PASS /contact 390
+PASS /contact 768
+PASS /contact 1280
+PASS /contact 1920
+file:///workspace/trading101/docs/adsense-2026-10-22/browser-session.mjs:11
+ const wait=async(expression,ms=25000)=>{const deadline=Date.now()+ms;while(Date.now()<deadline){if(await evaluate(expression))return true;await pause(150);}throw Error('Page readiness deadline');};
+                                                                                                                                                                   ^
+
+Error: Page readiness deadline
+    at Object.wait (file:///workspace/trading101/docs/adsense-2026-10-22/browser-session.mjs:11:164)
+    at async file:///workspace/trading101/docs/adsense-2026-10-22/verify-publisher-copy-preview.mjs:20:35
+
+Node.js v24.19.0

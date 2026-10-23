@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-10-23T10:01:51.317299+00:00",
+  "diagnosticBranch": "audit/provider-binding-diagnostic-20261023",
+  "diagnosticSHA": "842d83c262fe4cb95de42f715a34e7705278eb12",
+  "workflowRun": 39935895949,
+  "jobId": 120355243311,
+  "jobConclusion": "success",
+  "scope": "Read-only GitHub Actions secret binding probe. Job success records execution, not provider readiness or release approval. No secret values emitted. Existing control job unchanged; isolated branch not a production change.",
+  "providers": {
+    "cloudflare": {
+      "configured": true,
+      "httpStatus": 401,
+      "errorCodes": [
+        10000
+      ],
+      "canonicalDeployment": null
+    },
+    "vercel": {
+      "configured": true,
+      "httpStatus": 200,
+      "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+      "production": {
+        "id": "dpl_64tgq5fomNQwHZifS9iQVd7UEM4x",
+        "target": "production",
+        "state": "READY",
+        "sha": "aa216a24c68c30c9251f96a050da098b33364686",
+        "branch": "main"
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+BROWSER_NAVIGATE http://127.0.0.1:46313/trade/shib
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Positive tiny SHIB axis prices must not display as zero at 360px
+    at file:///workspace/trading101-niche-fix/scripts/verify-publisher-browser.mjs:243:12 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

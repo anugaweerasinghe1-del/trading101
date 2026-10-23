@@ -1,0 +1,52 @@
+{
+  "checkedAt": "2026-10-23T08:52:33.672Z",
+  "candidateSHA": "4a3c2dd9e0012f18cbb060f870c4ee4c99bf4ad7",
+  "origin": "https://9113c693.tradehq-preview.pages.dev",
+  "scope": "Actual13affected/representativepages at5sizes; source-derived152FAQroutes not falsely claimed152freshbrowserchecks. Safe public reading/FAQexpansion only.",
+  "rows": [
+    {
+      "path": "/contact",
+      "width": 360,
+      "overflow": false,
+      "copyCorrectionVisible": true,
+      "answer": null
+    },
+    {
+      "path": "/contact",
+      "width": 390,
+      "overflow": false,
+      "copyCorrectionVisible": true,
+      "answer": null
+    },
+    {
+      "path": "/contact",
+      "width": 768,
+      "overflow": false,
+      "copyCorrectionVisible": true,
+      "answer": null
+    },
+    {
+      "path": "/contact",
+      "width": 1280,
+      "overflow": false,
+      "copyCorrectionVisible": true,
+      "answer": null
+    },
+    {
+      "path": "/contact",
+      "width": 1920,
+      "overflow": false,
+      "copyCorrectionVisible": true,
+      "answer": null
+    }
+  ],
+  "blockedMutationAttempts": [
+    {
+      "method": "POST",
+      "path": "/rest/v1/rpc/get_public_practice_members"
+    }
+  ],
+  "runtimeErrors": [],
+  "outcome": "HELPER_READ_RPC_BLOCK",
+  "interpretation": "Guard wrongly blocked POST get_public_practice_members. Read-only migration inspection confirms STABLE SELECT of public members. This was a read, not an attempted account mutation; allow only this named getter alongside catalog getter. No writes occurred."
+}

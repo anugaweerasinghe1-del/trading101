@@ -1,0 +1,2635 @@
+{
+  "readAt": "2026-10-23T09:59:50.671088+00:00",
+  "scope": "Actual22Octoberown-disposable-guest quiz feedback captures read23October while provider validation runs.26structuredquizzes/104question-option-explanation sets. No new interaction, record or production-account/order mutation. Text review is separate from all-image/all-source completion.",
+  "quizzesRead": 26,
+  "questionsAndExplanationsRead": 104,
+  "newConfirmedFindings": 0,
+  "rows": [
+    {
+      "path": "/courses/cryptocurrency-price-feeds-and-valuation/api-delays-and-portfolio-valuation",
+      "captureAt": "2026-10-22T15:44:04.671Z",
+      "captureEvidence": "evidence/live-quiz/8c49d28cfd7e4e5e.json",
+      "captureSHA256": "48d5b2f0fbb650d65cc7201d20c976e5574bdbdebb6f459a32d8f3c24676ca53",
+      "questionsRead": 4,
+      "questionsAndExplanations": [
+        {
+          "stem": "1. What is the main cause of a delay between a live exchange price and a virtual trading dashboard?",
+          "options": [
+            {
+              "text": "The network bandwidth restrictions imposed by local internet providers.",
+              "markedCorrect": false
+            },
+            {
+              "text": "API transmission latency and data caching intervals.",
+              "markedCorrect": true
+            },
+            {
+              "text": "Manual authorization steps required for every virtual market trade.",
+              "markedCorrect": false
+            },
+            {
+              "text": "Government monitoring procedures that freeze prices temporarily.",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "API endpoints often utilize caching and periodic snapshot schedules, creating a lag between live market trading and dashboard displays."
+        },
+        {
+          "stem": "2. How does an API delay impact paper-trading portfolio valuations?",
+          "options": [
+            {
+              "text": "It prevents users from executing any buy or sell transactions.",
+              "markedCorrect": false
+            },
+            {
+              "text": "It permanently locks the account balance until the live market closes.",
+              "markedCorrect": false
+            },
+            {
+              "text": "It creates a temporary discrepancy between paper values and live market rates.",
+              "markedCorrect": true
+            },
+            {
+              "text": "It forces the portfolio to automatically convert all assets to cash.",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Delayed data feeds cause paper-trading valuations to reflect historical snapshots, leading to short-term differences from live spot prices."
+        },
+        {
+          "stem": "3. What is a limitation of adding a hypothetical slippage adjustment to a worksheet?",
+          "options": [
+            {
+              "text": "It guarantees the actual venue fill",
+              "markedCorrect": false
+            },
+            {
+              "text": "It compares an assumption but does not reproduce actual order-book execution",
+              "markedCorrect": true
+            },
+            {
+              "text": "It creates real commission revenue",
+              "markedCorrect": false
+            },
+            {
+              "text": "It removes the need for timestamps",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "An invented adjustment is a scenario assumption. TradeHQ does not implement a calibrated exchange slippage model."
+        },
+        {
+          "stem": "4. If your portfolio has 50 units of an asset, the live price is $10, and the delayed dashboard price is $8, what is your paper valuation?",
+          "options": [
+            {
+              "text": "$400",
+              "markedCorrect": true
+            },
+            {
+              "text": "$500",
+              "markedCorrect": false
+            },
+            {
+              "text": "$100",
+              "markedCorrect": false
+            },
+            {
+              "text": "$90",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "The paper valuation is calculated using the displayed dashboard price: 50 units * $8 = $400."
+        }
+      ],
+      "assessment": "Reads distinguish API/cache delay, separate order books and matched-unit weighted arithmetic from a complete provider benchmark; rebalancing/cash examples have stated path/cost assumptions and fully-funded spot limits. The400valuation,12weightedprice and2000overweight sale are coherent arithmetic. No new material concern identified in these rendered answers.",
+      "readingStatus": "ALL_RENDERED_QUESTION_OPTION_FEEDBACK_TEXT_READ",
+      "primarySourceCorroboration": "PARTIAL",
+      "allQuizImagesHumanReviewed": false
+    },
+    {
+      "path": "/courses/cryptocurrency-price-feeds-and-valuation/exchange-tickers-and-price-aggregation",
+      "captureAt": "2026-10-22T15:44:13.468Z",
+      "captureEvidence": "evidence/live-quiz/70137c95ae02fb3a.json",
+      "captureSHA256": "ce5881809dac7ddb620598f6b8274b134a707769d5a35e3b3116ab80c7145409",
+      "questionsRead": 4,
+      "questionsAndExplanations": [
+        {
+          "stem": "1. Why do cryptocurrency prices vary slightly across different exchanges simultaneously?",
+          "options": [
+            {
+              "text": "Exchanges operate independently as separate markets without a central clearinghouse.",
+              "markedCorrect": true
+            },
+            {
+              "text": "Data aggregators intentionally introduce differences to balance trading volumes.",
+              "markedCorrect": false
+            },
+            {
+              "text": "Smart contracts force prices to vary based on the geographic location of users.",
+              "markedCorrect": false
+            },
+            {
+              "text": "The Federal Reserve regulates individual digital exchanges with custom price caps.",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Because exchanges are independent marketplaces with their own order books, local liquidity and trading activity cause slight price variations."
+        },
+        {
+          "stem": "2. How does a Volume-Weighted Average Price (VWAP) calculation differ from a simple average?",
+          "options": [
+            {
+              "text": "It only counts the lowest and highest prices reported in a twenty-four-hour window.",
+              "markedCorrect": false
+            },
+            {
+              "text": "It assigns greater weight to exchanges with higher transaction volumes.",
+              "markedCorrect": true
+            },
+            {
+              "text": "It excludes cryptocurrency assets that do not have a fiat trading pair.",
+              "markedCorrect": false
+            },
+            {
+              "text": "It automatically doubles the weight of decentralized exchanges.",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "In the stated worksheet, a larger matched unit volume gives that price more weight. This arithmetic example does not describe every provider’s complete live benchmark methodology."
+        },
+        {
+          "stem": "3. What should you consult before assuming how a provider filters outliers?",
+          "options": [
+            {
+              "text": "An unrelated moving average",
+              "markedCorrect": false
+            },
+            {
+              "text": "The provider’s current published methodology",
+              "markedCorrect": true
+            },
+            {
+              "text": "Only the token symbol",
+              "markedCorrect": false
+            },
+            {
+              "text": "A guaranteed-price claim",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Filtering is provider-specific. The arithmetic worksheet does not implement every provider’s live aggregation rules."
+        },
+        {
+          "stem": "4. If Exchange X has 100 units traded at $10 and Exchange Y has 200 units traded at $13, what is the VWAP?",
+          "options": [
+            {
+              "text": "$11.00",
+              "markedCorrect": false
+            },
+            {
+              "text": "$11.50",
+              "markedCorrect": false
+            },
+            {
+              "text": "$12.00",
+              "markedCorrect": true
+            },
+            {
+              "text": "$12.50",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "To find the VWAP: (100 * $10 + 200 * $13) / (100 + 200) = ($1,000 + $2,600) / 300 = $3,600 / 300 = $12.00."
+        }
+      ],
+      "assessment": "Reads distinguish API/cache delay, separate order books and matched-unit weighted arithmetic from a complete provider benchmark; rebalancing/cash examples have stated path/cost assumptions and fully-funded spot limits. The400valuation,12weightedprice and2000overweight sale are coherent arithmetic. No new material concern identified in these rendered answers.",
+      "readingStatus": "ALL_RENDERED_QUESTION_OPTION_FEEDBACK_TEXT_READ",
+      "primarySourceCorroboration": "PARTIAL",
+      "allQuizImagesHumanReviewed": false
+    },
+    {
+      "path": "/courses/cryptocurrency-price-feeds-and-valuation/portfolio-rebalancing-and-cash-drag",
+      "captureAt": "2026-10-22T15:44:18.642Z",
+      "captureEvidence": "evidence/live-quiz/eebe5a799aa19237.json",
+      "captureSHA256": "d60e05a4cfd4f0aa64b8cc7f2b48dd1869992efda7a5738926fc269685d75efd",
+      "questionsRead": 4,
+      "questionsAndExplanations": [
+        {
+          "stem": "1. What is the primary purpose of systematically rebalancing a portfolio?",
+          "options": [
+            {
+              "text": "To maximize short-term speculative trading profits",
+              "markedCorrect": false
+            },
+            {
+              "text": "To maintain target asset weights and control concentration risk",
+              "markedCorrect": true
+            },
+            {
+              "text": "To completely eliminate transaction fees and slippage",
+              "markedCorrect": false
+            },
+            {
+              "text": "To ensure the portfolio is always invested in a single asset",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Rebalancing moves toward selected target weights. Those targets can themselves be concentrated, and the adjustment does not prevent shared risks or guarantee lower losses."
+        },
+        {
+          "stem": "2. Compared with the same asset fully invested in a fee-free rising-price worksheet, what does some non-interest-bearing virtual cash do?",
+          "options": [
+            {
+              "text": "It increases overall returns by compounding virtual interest rates.",
+              "markedCorrect": false
+            },
+            {
+              "text": "It reduces overall portfolio performance because cash does not gain value.",
+              "markedCorrect": true
+            },
+            {
+              "text": "It forces the automatic execution of limit orders across all assets.",
+              "markedCorrect": false
+            },
+            {
+              "text": "It eliminates the risk of inflation on uninvested virtual currency.",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "With the same rising asset and no other differences, the cash portion does not participate in that gain. A declining path reverses the comparison; real cash can have interest and other characteristics."
+        },
+        {
+          "stem": "3. In a spot-only trading system like TradeHQ, what is a key operational rule for rebalancing?",
+          "options": [
+            {
+              "text": "You can use leverage to buy assets without having cash.",
+              "markedCorrect": false
+            },
+            {
+              "text": "You can execute short positions to profit from declining assets.",
+              "markedCorrect": false
+            },
+            {
+              "text": "You must fund all acquisitions entirely with available cash balances.",
+              "markedCorrect": true
+            },
+            {
+              "text": "You must borrow shares from other virtual accounts on credit.",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Spot-only systems require all buy orders to be fully funded with existing cash reserves, as short selling and leverage are not permitted."
+        },
+        {
+          "stem": "4. At the measurement time a hypothetical portfolio totals $10,000, Asset A is worth $7,000, and its target weight is 50%. What rebalancing action restores that target, ignoring costs?",
+          "options": [
+            {
+              "text": "Sell $2,000 of Asset A to restore the target weight",
+              "markedCorrect": true
+            },
+            {
+              "text": "Buy $2,000 of Asset A to increase concentration",
+              "markedCorrect": false
+            },
+            {
+              "text": "Sell $1,000 of Asset A to restore the target weight",
+              "markedCorrect": false
+            },
+            {
+              "text": "No action is needed since the total portfolio value increased",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "The total portfolio value is $10,000. To achieve a 50% target ($5,000), you must sell $2,000 of Asset A ($7,000 - $5,000 = $2,000)."
+        }
+      ],
+      "assessment": "Reads distinguish API/cache delay, separate order books and matched-unit weighted arithmetic from a complete provider benchmark; rebalancing/cash examples have stated path/cost assumptions and fully-funded spot limits. The400valuation,12weightedprice and2000overweight sale are coherent arithmetic. No new material concern identified in these rendered answers.",
+      "readingStatus": "ALL_RENDERED_QUESTION_OPTION_FEEDBACK_TEXT_READ",
+      "primarySourceCorroboration": "PARTIAL",
+      "allQuizImagesHumanReviewed": false
+    },
+    {
+      "path": "/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash",
+      "captureAt": "2026-10-22T15:44:28.204Z",
+      "captureEvidence": "evidence/live-quiz/f45606ff6c004e19.json",
+      "captureSHA256": "b6900b99c3bf2c5ece37865e3ca7c0538d23625397b13cf1525f2618a0a8de8a",
+      "questionsRead": 4,
+      "questionsAndExplanations": [
+        {
+          "stem": "1. What does a trader do to correct an asset whose weight has grown too large?",
+          "options": [
+            {
+              "text": "Place a market buy order to acquire more units",
+              "markedCorrect": false
+            },
+            {
+              "text": "Place a market sell order to reduce its position size",
+              "markedCorrect": true
+            },
+            {
+              "text": "Execute a short sale to hedge the position",
+              "markedCorrect": false
+            },
+            {
+              "text": "Delete the asset from the paper trading history",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "To reduce an overweight position, you must sell a portion of the asset via a market sell order, returning the proceeds to your virtual cash balance."
+        },
+        {
+          "stem": "2. Why is keeping a virtual cash buffer useful during portfolio rebalancing?",
+          "options": [
+            {
+              "text": "It guarantees that you earn real-world interest",
+              "markedCorrect": false
+            },
+            {
+              "text": "It can fund affordable purchases of underweight assets without an immediate sale",
+              "markedCorrect": true
+            },
+            {
+              "text": "It automatically hedges your entire portfolio from any price drops",
+              "markedCorrect": false
+            },
+            {
+              "text": "It forces TradeHQ to execute trades at cheaper historical prices",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Underweight is a comparison with a chosen target, not evidence of undervaluation. Cash can fund purchases only within the available balance including fees."
+        },
+        {
+          "stem": "3. Relative to a rising invested comparison, what can non-interest-bearing virtual cash do?",
+          "options": [
+            {
+              "text": "The fee charged for holding cash on TradeHQ",
+              "markedCorrect": false
+            },
+            {
+              "text": "Reduce gains; it can instead reduce losses when the comparison falls",
+              "markedCorrect": true
+            },
+            {
+              "text": "A system error where market orders are delayed due to network lag",
+              "markedCorrect": false
+            },
+            {
+              "text": "The process of withdrawing virtual cash from the paper trading platform",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "The comparison depends on the path and alternative. Cash is not always detrimental and real cash products can have interest and other risks."
+        },
+        {
+          "stem": "4. If your target cash allocation is 10% and you currently hold 25% in cash, how do you rebalance?",
+          "options": [
+            {
+              "text": "Buy active assets using the excess cash",
+              "markedCorrect": true
+            },
+            {
+              "text": "Sell active assets to increase your cash to 50%",
+              "markedCorrect": false
+            },
+            {
+              "text": "Withdraw the cash from TradeHQ",
+              "markedCorrect": false
+            },
+            {
+              "text": "Nothing, cash should always be as high as possible",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "To reduce excess cash and return to a 10% target, you must deploy the surplus cash by purchasing underweight assets."
+        }
+      ],
+      "assessment": "Reads distinguish chosen allocations/concentration from guarantees, notional/price units before fees, spot-only supported execution and snapshot/liquidity limits.12percent of100000=12000;27minus15=12percentagepoints, with a chosen threshold rather than mandatory trade. No new material concern identified.",
+      "readingStatus": "ALL_RENDERED_QUESTION_OPTION_FEEDBACK_TEXT_READ",
+      "primarySourceCorroboration": "PARTIAL",
+      "allQuizImagesHumanReviewed": false
+    },
+    {
+      "path": "/courses/diversification-and-position-sizing/foundations-of-asset-allocation",
+      "captureAt": "2026-10-22T15:44:33.283Z",
+      "captureEvidence": "evidence/live-quiz/203a75481291f2ca.json",
+      "captureSHA256": "49f829e854c410ddd7798e6409c82620e9f987445acd1a0af67c1f4485e6b697",
+      "questionsRead": 4,
+      "questionsAndExplanations": [
+        {
+          "stem": "1. If your total portfolio value is $100,000 and you want to allocate 12% to a spot stock, what is the target dollar allocation?",
+          "options": [
+            {
+              "text": "$1,200",
+              "markedCorrect": false
+            },
+            {
+              "text": "$12,000",
+              "markedCorrect": true
+            },
+            {
+              "text": "$24,000",
+              "markedCorrect": false
+            },
+            {
+              "text": "$120",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "To find the target dollar allocation, multiply the total portfolio value of $100,000 by the target percentage of 12% (0.12), which equals $12,000."
+        },
+        {
+          "stem": "2. Before fees and rounding, how do you calculate units for a stated dollar notional?",
+          "options": [
+            {
+              "text": "Multiply the target dollar allocation by the asset price",
+              "markedCorrect": false
+            },
+            {
+              "text": "Divide the asset price by the target dollar allocation",
+              "markedCorrect": false
+            },
+            {
+              "text": "Divide the target dollar allocation by the current snapshot price",
+              "markedCorrect": true
+            },
+            {
+              "text": "Add the virtual cash balance to the asset price",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Divide the stated notional by the assumed price. Check fees and available cash separately; a fee changes total portfolio value and therefore post-trade weights."
+        },
+        {
+          "stem": "3. Which of the following is a key limitation of spot trading on TradeHQ?",
+          "options": [
+            {
+              "text": "No access to market orders",
+              "markedCorrect": false
+            },
+            {
+              "text": "Inability to trade spot equities",
+              "markedCorrect": false
+            },
+            {
+              "text": "Lack of options, futures, and short selling for hedging",
+              "markedCorrect": true
+            },
+            {
+              "text": "Inability to hold virtual cash balances",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "The engine does not execute options, futures, borrowed positions or short sales. Reducing exposure and holding cash are separate actions; this limitation is not a claim that every risk can or cannot be hedged elsewhere."
+        },
+        {
+          "stem": "4. Why might your simulated execution on TradeHQ differ from real-world execution?",
+          "options": [
+            {
+              "text": "TradeHQ uses leverage automatically on all spot orders",
+              "markedCorrect": false
+            },
+            {
+              "text": "Real-world orders are not subject to any price fluctuations",
+              "markedCorrect": false
+            },
+            {
+              "text": "TradeHQ ignores real-world order book liquidity and slippage",
+              "markedCorrect": true
+            },
+            {
+              "text": "Virtual cash has a different purchasing power than real cash",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "TradeHQ executes market orders at periodic snapshot prices without simulating real-world order book liquidity or price slippage."
+        }
+      ],
+      "assessment": "Reads distinguish chosen allocations/concentration from guarantees, notional/price units before fees, spot-only supported execution and snapshot/liquidity limits.12percent of100000=12000;27minus15=12percentagepoints, with a chosen threshold rather than mandatory trade. No new material concern identified.",
+      "readingStatus": "ALL_RENDERED_QUESTION_OPTION_FEEDBACK_TEXT_READ",
+      "primarySourceCorroboration": "PARTIAL",
+      "allQuizImagesHumanReviewed": false
+    },
+    {
+      "path": "/courses/diversification-and-position-sizing/managing-concentration-risk",
+      "captureAt": "2026-10-22T15:44:38.760Z",
+      "captureEvidence": "evidence/live-quiz/c6d79797e1b4b90d.json",
+      "captureSHA256": "3d131affe4b6c4bba2a1ebd68941541d28152b883843def4ca2edcfb95fc70c9",
+      "questionsRead": 4,
+      "questionsAndExplanations": [
+        {
+          "stem": "1. What is concentration risk in a trading portfolio?",
+          "options": [
+            {
+              "text": "The risk of trading while distracted by external factors",
+              "markedCorrect": false
+            },
+            {
+              "text": "Having too much portfolio value allocated to a single asset or sector",
+              "markedCorrect": true
+            },
+            {
+              "text": "Holding too many different assets simultaneously",
+              "markedCorrect": false
+            },
+            {
+              "text": "The risk of virtual cash losing value due to simulation inflation",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Concentration risk is the vulnerability of your capital to a single negative event because too much of your portfolio is allocated to one asset or sector."
+        },
+        {
+          "stem": "2. What primary mechanism causes portfolio drift?",
+          "options": [
+            {
+              "text": "Inactivity of the paper trading platform's database",
+              "markedCorrect": false
+            },
+            {
+              "text": "The execution of limit orders at arbitrary prices",
+              "markedCorrect": false
+            },
+            {
+              "text": "Unbalanced performance of different assets altering their weight percentages",
+              "markedCorrect": true
+            },
+            {
+              "text": "Daily fees charged on spot trading simulator balances",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Portfolio drift is caused by unequal changes in asset prices, causing some positions to grow or shrink in weight relative to others."
+        },
+        {
+          "stem": "3. If your target weight for a token is 15% and its current weight has drifted to 27%, what should you do to manage risk?",
+          "options": [
+            {
+              "text": "Buy more of the token to increase its weight further",
+              "markedCorrect": false
+            },
+            {
+              "text": "Do nothing, since drift is always positive",
+              "markedCorrect": false
+            },
+            {
+              "text": "Assess the drift threshold and consider rebalancing the position back to target",
+              "markedCorrect": true
+            },
+            {
+              "text": "Convert the entire portfolio to cash immediately",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "The change is 12 percentage points. Compare it with an explicitly chosen worksheet threshold and costs; a deviation alone does not establish a universally required transaction."
+        },
+        {
+          "stem": "4. How is the total value of a spot portfolio calculated to determine asset weights?",
+          "options": [
+            {
+              "text": "Sum the purchase costs of all assets, ignoring current market value",
+              "markedCorrect": false
+            },
+            {
+              "text": "Sum the current market value of all held assets plus the remaining cash balance",
+              "markedCorrect": true
+            },
+            {
+              "text": "Multiply the total number of units held by the price of the largest asset",
+              "markedCorrect": false
+            },
+            {
+              "text": "Subtract current liabilities from the initial deposit",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "The total portfolio value is the sum of the current market value of all held assets and your virtual cash balance."
+        }
+      ],
+      "assessment": "Reads distinguish chosen allocations/concentration from guarantees, notional/price units before fees, spot-only supported execution and snapshot/liquidity limits.12percent of100000=12000;27minus15=12percentagepoints, with a chosen threshold rather than mandatory trade. No new material concern identified.",
+      "readingStatus": "ALL_RENDERED_QUESTION_OPTION_FEEDBACK_TEXT_READ",
+      "primarySourceCorroboration": "PARTIAL",
+      "allQuizImagesHumanReviewed": false
+    },
+    {
+      "path": "/courses/futures-and-derivatives/contango-and-backwardation",
+      "captureAt": "2026-10-22T15:44:47.011Z",
+      "captureEvidence": "evidence/live-quiz/56830143619a51bc.json",
+      "captureSHA256": "40710d12409f1eb809b9e0327f5457c41be7d2068d8f958e1d6b85e5dd7ff166",
+      "questionsRead": 4,
+      "questionsAndExplanations": [
+        {
+          "stem": "1. Further-dated below front month =",
+          "options": [
+            {
+              "text": "Contango",
+              "markedCorrect": false
+            },
+            {
+              "text": "Backwardation",
+              "markedCorrect": true
+            },
+            {
+              "text": "Equilibrium",
+              "markedCorrect": false
+            },
+            {
+              "text": "Rollover",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Backwardation describes relative delivery prices; it does not by itself prove a shortage."
+        },
+        {
+          "stem": "2. Which factor can make a futures fund differ from spot performance?",
+          "options": [
+            {
+              "text": "Guaranteed gains",
+              "markedCorrect": false
+            },
+            {
+              "text": "Contract selection and rolling methodology",
+              "markedCorrect": true
+            },
+            {
+              "text": "No costs",
+              "markedCorrect": false
+            },
+            {
+              "text": "Identical exposure",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Methodology, contract price changes, collateral returns and costs affect fund performance."
+        },
+        {
+          "stem": "3. Contango is typical for:",
+          "options": [
+            {
+              "text": "Perishables",
+              "markedCorrect": false
+            },
+            {
+              "text": "Storable commodities in normal markets",
+              "markedCorrect": true
+            },
+            {
+              "text": "Only metals",
+              "markedCorrect": false
+            },
+            {
+              "text": "Only ags",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Storage costs push distant deliveries up."
+        },
+        {
+          "stem": "4. Which condition can contribute to backwardation, without being proven by the curve alone?",
+          "options": [
+            {
+              "text": "Quiet market",
+              "markedCorrect": false
+            },
+            {
+              "text": "Physical shortage",
+              "markedCorrect": true
+            },
+            {
+              "text": "Delisting",
+              "markedCorrect": false
+            },
+            {
+              "text": "Low vol",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Hedgers pay for immediate supply."
+        }
+      ],
+      "assessment": "Conceptual derivatives are not offered as executable TradeHQ products. Reads distinguish margin collateral/notional/loss bounds, relative delivery curves/shortage inference, basis risk and hypothetical contract multipliers.200contract hedge,~19percent deposit move,1.25tick and25000/250000notionals are coherent under given inputs. Current contract/source corroboration remains partial.",
+      "readingStatus": "ALL_RENDERED_QUESTION_OPTION_FEEDBACK_TEXT_READ",
+      "primarySourceCorroboration": "PARTIAL",
+      "allQuizImagesHumanReviewed": false
+    },
+    {
+      "path": "/courses/futures-and-derivatives/hedging-with-futures",
+      "captureAt": "2026-10-22T15:44:50.800Z",
+      "captureEvidence": "evidence/live-quiz/6d1e264368a7831b.json",
+      "captureSHA256": "49812621b29bb7237e322ef1d097d6d9e6a584123e74f5529994ba86635b568a",
+      "questionsRead": 4,
+      "questionsAndExplanations": [
+        {
+          "stem": "1. Which conceptual futures direction offsets some exposure to a falling wheat sale price?",
+          "options": [
+            {
+              "text": "Buy wheat futures",
+              "markedCorrect": false
+            },
+            {
+              "text": "Sell wheat futures",
+              "markedCorrect": true
+            },
+            {
+              "text": "Buy corn futures",
+              "markedCorrect": false
+            },
+            {
+              "text": "Buy S&P",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "A short wheat future can gain when its futures price falls, but basis, quantity and costs affect the combined result."
+        },
+        {
+          "stem": "2. Which conceptual crude futures position gains if its futures price rises?",
+          "options": [
+            {
+              "text": "Sell crude futures",
+              "markedCorrect": false
+            },
+            {
+              "text": "Buy crude futures",
+              "markedCorrect": true
+            },
+            {
+              "text": "Buy S&P",
+              "markedCorrect": false
+            },
+            {
+              "text": "Do nothing",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Buying futures profits if crude rises."
+        },
+        {
+          "stem": "3. Basis risk is:",
+          "options": [
+            {
+              "text": "Exchange default",
+              "markedCorrect": false
+            },
+            {
+              "text": "Futures vs physical don't move perfectly together",
+              "markedCorrect": true
+            },
+            {
+              "text": "Rate risk",
+              "markedCorrect": false
+            },
+            {
+              "text": "FX risk",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Basis fluctuates."
+        },
+        {
+          "stem": "4. Hedge $50M with $250K notional contracts →",
+          "options": [
+            {
+              "text": "20",
+              "markedCorrect": false
+            },
+            {
+              "text": "200",
+              "markedCorrect": true
+            },
+            {
+              "text": "500",
+              "markedCorrect": false
+            },
+            {
+              "text": "1,000",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "$50M / $250K = 200."
+        }
+      ],
+      "assessment": "Conceptual derivatives are not offered as executable TradeHQ products. Reads distinguish margin collateral/notional/loss bounds, relative delivery curves/shortage inference, basis risk and hypothetical contract multipliers.200contract hedge,~19percent deposit move,1.25tick and25000/250000notionals are coherent under given inputs. Current contract/source corroboration remains partial.",
+      "readingStatus": "ALL_RENDERED_QUESTION_OPTION_FEEDBACK_TEXT_READ",
+      "primarySourceCorroboration": "PARTIAL",
+      "allQuizImagesHumanReviewed": false
+    },
+    {
+      "path": "/courses/futures-and-derivatives/margin-and-leverage-in-futures",
+      "captureAt": "2026-10-22T15:44:57.764Z",
+      "captureEvidence": "evidence/live-quiz/259df48bc71f16d7.json",
+      "captureSHA256": "65a92803e18a0a2470aca9a374c63328f05de2e39d191f6912ff280b36931514",
+      "questionsRead": 4,
+      "questionsAndExplanations": [
+        {
+          "stem": "1. Futures margin is best described as:",
+          "options": [
+            {
+              "text": "A loan",
+              "markedCorrect": false
+            },
+            {
+              "text": "A performance bond",
+              "markedCorrect": true
+            },
+            {
+              "text": "A fee",
+              "markedCorrect": false
+            },
+            {
+              "text": "A tax",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "It is collateral supporting the position, not a loan or a cap on losses."
+        },
+        {
+          "stem": "2. Futures accounts are marked-to-market:",
+          "options": [
+            {
+              "text": "Yearly",
+              "markedCorrect": false
+            },
+            {
+              "text": "Monthly",
+              "markedCorrect": false
+            },
+            {
+              "text": "Every trading day",
+              "markedCorrect": true
+            },
+            {
+              "text": "Only at expiration",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Daily settlement moves cash in/out."
+        },
+        {
+          "stem": "3. In the worksheet (index 5,000, $50 multiplier), a 1% move relative to an assumed $13,000 deposit is approximately:",
+          "options": [
+            {
+              "text": "1%",
+              "markedCorrect": false
+            },
+            {
+              "text": "5%",
+              "markedCorrect": false
+            },
+            {
+              "text": "~19%",
+              "markedCorrect": true
+            },
+            {
+              "text": "50%",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "$2,500 on $13,000 ≈ 19%."
+        },
+        {
+          "stem": "4. A margin call means:",
+          "options": [
+            {
+              "text": "You made money",
+              "markedCorrect": false
+            },
+            {
+              "text": "Deposit more or be liquidated",
+              "markedCorrect": true
+            },
+            {
+              "text": "Exchange closed",
+              "markedCorrect": false
+            },
+            {
+              "text": "Broker owes interest",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "The broker may require additional funds or reduce or liquidate positions under its rules."
+        }
+      ],
+      "assessment": "Conceptual derivatives are not offered as executable TradeHQ products. Reads distinguish margin collateral/notional/loss bounds, relative delivery curves/shortage inference, basis risk and hypothetical contract multipliers.200contract hedge,~19percent deposit move,1.25tick and25000/250000notionals are coherent under given inputs. Current contract/source corroboration remains partial.",
+      "readingStatus": "ALL_RENDERED_QUESTION_OPTION_FEEDBACK_TEXT_READ",
+      "primarySourceCorroboration": "PARTIAL",
+      "allQuizImagesHumanReviewed": false
+    },
+    {
+      "path": "/courses/futures-and-derivatives/micro-futures-for-beginners",
+      "captureAt": "2026-10-22T15:45:04.668Z",
+      "captureEvidence": "evidence/live-quiz/9d0ccef1d55bbf90.json",
+      "captureSHA256": "aa30be1bdf47b7ba4bbe28d05d19e72530fa7373453552cbef5e2a6e6d35e0e0",
+      "questionsRead": 4,
+      "questionsAndExplanations": [
+        {
+          "stem": "1. A micro E-mini S&P (MES) is what fraction of a standard e-mini?",
+          "options": [
+            {
+              "text": "1/2",
+              "markedCorrect": false
+            },
+            {
+              "text": "1/5",
+              "markedCorrect": false
+            },
+            {
+              "text": "1/10",
+              "markedCorrect": true
+            },
+            {
+              "text": "1/100",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "MES has a $5 multiplier versus $50 for ES; margin requirements are checked separately."
+        },
+        {
+          "stem": "2. One 0.25-point tick in one MES contract is worth:",
+          "options": [
+            {
+              "text": "$0.25",
+              "markedCorrect": false
+            },
+            {
+              "text": "$1.25",
+              "markedCorrect": true
+            },
+            {
+              "text": "$12.50",
+              "markedCorrect": false
+            },
+            {
+              "text": "$50",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "0.25 points × $5 per point = $1.25 before costs."
+        },
+        {
+          "stem": "3. Which MES and ES comparison is correct?",
+          "options": [
+            {
+              "text": "Fees must be identical",
+              "markedCorrect": false
+            },
+            {
+              "text": "Margin never changes",
+              "markedCorrect": false
+            },
+            {
+              "text": "MES uses $5 per point; ES uses $50",
+              "markedCorrect": true
+            },
+            {
+              "text": "MES losses cannot exceed margin",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "The multipliers determine index-point exposure; other requirements need separate checks."
+        },
+        {
+          "stem": "4. At a hypothetical index level of 5,000, one MES contract represents:",
+          "options": [
+            {
+              "text": "$5,000",
+              "markedCorrect": false
+            },
+            {
+              "text": "$25,000",
+              "markedCorrect": true
+            },
+            {
+              "text": "$250,000",
+              "markedCorrect": false
+            },
+            {
+              "text": "$1,250",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "5,000 × $5 = $25,000 of notional exposure, not a margin quote or maximum loss."
+        }
+      ],
+      "assessment": "Conceptual derivatives are not offered as executable TradeHQ products. Reads distinguish margin collateral/notional/loss bounds, relative delivery curves/shortage inference, basis risk and hypothetical contract multipliers.200contract hedge,~19percent deposit move,1.25tick and25000/250000notionals are coherent under given inputs. Current contract/source corroboration remains partial.",
+      "readingStatus": "ALL_RENDERED_QUESTION_OPTION_FEEDBACK_TEXT_READ",
+      "primarySourceCorroboration": "PARTIAL",
+      "allQuizImagesHumanReviewed": false
+    },
+    {
+      "path": "/courses/futures-and-derivatives/what-is-a-futures-contract",
+      "captureAt": "2026-10-22T15:45:08.873Z",
+      "captureEvidence": "evidence/live-quiz/bdb52da57202463c.json",
+      "captureSHA256": "a18a51aa61357ed1987fe825f37e9998e6ddb14b1c0d79b2316a59b123fd06c1",
+      "questionsRead": 4,
+      "questionsAndExplanations": [
+        {
+          "stem": "1. The central counterparty on a US futures exchange is:",
+          "options": [
+            {
+              "text": "The buyer",
+              "markedCorrect": false
+            },
+            {
+              "text": "The seller",
+              "markedCorrect": false
+            },
+            {
+              "text": "The exchange's clearing house",
+              "markedCorrect": true
+            },
+            {
+              "text": "The broker",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "The clearing house novates every trade."
+        },
+        {
+          "stem": "2. Notional value of one E-mini S&P at index 5,000 ≈",
+          "options": [
+            {
+              "text": "$5,000",
+              "markedCorrect": false
+            },
+            {
+              "text": "$50,000",
+              "markedCorrect": false
+            },
+            {
+              "text": "$250,000",
+              "markedCorrect": true
+            },
+            {
+              "text": "$1,000,000",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "$50 × 5,000 = $250,000."
+        },
+        {
+          "stem": "3. Which statement about opening a short futures position is correct?",
+          "options": [
+            {
+              "text": "It removes margin requirements",
+              "markedCorrect": false
+            },
+            {
+              "text": "It is exempt from exchange rules",
+              "markedCorrect": false
+            },
+            {
+              "text": "It does not require borrowing the underlying asset first",
+              "markedCorrect": true
+            },
+            {
+              "text": "It guarantees a maximum loss",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Selling a futures contract creates short exposure, subject to margin and applicable trading rules."
+        },
+        {
+          "stem": "4. A producer uses a short futures position to offset falling sale prices. This is an example of:",
+          "options": [
+            {
+              "text": "Guaranteed profit",
+              "markedCorrect": false
+            },
+            {
+              "text": "Eliminating default risk",
+              "markedCorrect": false
+            },
+            {
+              "text": "Hedging price exposure",
+              "markedCorrect": true
+            },
+            {
+              "text": "Avoiding all settlement obligations",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "The futures position can offset some price exposure, but a hedge need not remove every risk."
+        }
+      ],
+      "assessment": "Conceptual derivatives are not offered as executable TradeHQ products. Reads distinguish margin collateral/notional/loss bounds, relative delivery curves/shortage inference, basis risk and hypothetical contract multipliers.200contract hedge,~19percent deposit move,1.25tick and25000/250000notionals are coherent under given inputs. Current contract/source corroboration remains partial.",
+      "readingStatus": "ALL_RENDERED_QUESTION_OPTION_FEEDBACK_TEXT_READ",
+      "primarySourceCorroboration": "PARTIAL",
+      "allQuizImagesHumanReviewed": false
+    },
+    {
+      "path": "/courses/macro-reading-for-traders/putting-macro-signals-together",
+      "captureAt": "2026-10-22T15:45:12.323Z",
+      "captureEvidence": "evidence/live-quiz/e57eb144b7575c8c.json",
+      "captureSHA256": "811624d40009a179851cdd0fca71045c2affba7ddfb625f36e8df4f68d693cdb",
+      "questionsRead": 4,
+      "questionsAndExplanations": [
+        {
+          "stem": "1. The descriptive worksheet in this lesson classifies:",
+          "options": [
+            {
+              "text": "Guaranteed returns",
+              "markedCorrect": false
+            },
+            {
+              "text": "Selected growth and inflation directions",
+              "markedCorrect": true
+            },
+            {
+              "text": "Correct trade sizes",
+              "markedCorrect": false
+            },
+            {
+              "text": "Future prices",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "The selected measures define a description, not a forecast."
+        },
+        {
+          "stem": "2. Which combination best describes stagflation?",
+          "options": [
+            {
+              "text": "Strong growth + high inflation",
+              "markedCorrect": false
+            },
+            {
+              "text": "Strong growth + low inflation",
+              "markedCorrect": false
+            },
+            {
+              "text": "Weak or stagnant growth + high inflation",
+              "markedCorrect": true
+            },
+            {
+              "text": "Weak or stagnant growth + low inflation",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Stagflation combines weak or stagnant economic activity with high inflation. Inflation need not accelerate every month; its level differs from a change in the inflation rate."
+        },
+        {
+          "stem": "3. Why record release dates as well as observation dates?",
+          "options": [
+            {
+              "text": "To guarantee a profit",
+              "markedCorrect": false
+            },
+            {
+              "text": "To know what information was available at the decision time",
+              "markedCorrect": true
+            },
+            {
+              "text": "To remove market risk",
+              "markedCorrect": false
+            },
+            {
+              "text": "To predict every revision",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Later releases and revisions must not be treated as knowledge available earlier."
+        },
+        {
+          "stem": "4. Which resource is the St. Louis Fed’s economic-data database?",
+          "options": [
+            {
+              "text": "Bloomberg",
+              "markedCorrect": false
+            },
+            {
+              "text": "Reuters Eikon",
+              "markedCorrect": false
+            },
+            {
+              "text": "FRED",
+              "markedCorrect": true
+            },
+            {
+              "text": "Cap IQ",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "St Louis Fed's free database."
+        }
+      ],
+      "assessment": "Reads distinguish descriptions from forecasts, release versus observation/vintage dates, levels/rates and survey surprise versus causation. PCEgoal/FRED/FOMC/DXY/yield-spread statements read; current schedules/index/institutional primary-source recheck remains partial. No new material concern identified in bounded quiz reading.",
+      "readingStatus": "ALL_RENDERED_QUESTION_OPTION_FEEDBACK_TEXT_READ",
+      "primarySourceCorroboration": "PARTIAL",
+      "allQuizImagesHumanReviewed": false
+    },
+    {
+      "path": "/courses/macro-reading-for-traders/reading-cpi-and-inflation",
+      "captureAt": "2026-10-22T15:45:16.679Z",
+      "captureEvidence": "evidence/live-quiz/e6d755cf358d8db4.json",
+      "captureSHA256": "3a472de19feae3fa18eb6aa29bd9445849f745a7841dd4c5ced3b4143114ea1e",
+      "questionsRead": 4,
+      "questionsAndExplanations": [
+        {
+          "stem": "1. The Fed's 2% longer-run inflation goal is measured using:",
+          "options": [
+            {
+              "text": "Headline CPI",
+              "markedCorrect": false
+            },
+            {
+              "text": "Core CPI",
+              "markedCorrect": false
+            },
+            {
+              "text": "PCE price index",
+              "markedCorrect": true
+            },
+            {
+              "text": "PPI",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "The FOMC states its 2% longer-run inflation goal in terms of the annual change in the PCE price index."
+        },
+        {
+          "stem": "2. CPI is released at:",
+          "options": [
+            {
+              "text": "8:00 AM ET",
+              "markedCorrect": false
+            },
+            {
+              "text": "8:30 AM ET",
+              "markedCorrect": true
+            },
+            {
+              "text": "10:00 AM ET",
+              "markedCorrect": false
+            },
+            {
+              "text": "2:00 PM ET",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "8:30 AM Eastern."
+        },
+        {
+          "stem": "3. Why core over headline?",
+          "options": [
+            {
+              "text": "Core is higher",
+              "markedCorrect": false
+            },
+            {
+              "text": "Food/energy too volatile to signal trend",
+              "markedCorrect": true
+            },
+            {
+              "text": "Headline not reported",
+              "markedCorrect": false
+            },
+            {
+              "text": "Only economists care",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Stripping volatile components isolates trend."
+        },
+        {
+          "stem": "4. A CPI result above one survey’s median forecast establishes:",
+          "options": [
+            {
+              "text": "The next stock return",
+              "markedCorrect": false
+            },
+            {
+              "text": "A difference from that specified forecast",
+              "markedCorrect": true
+            },
+            {
+              "text": "A guaranteed rate increase",
+              "markedCorrect": false
+            },
+            {
+              "text": "Which participant moved the market",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "A forecast difference alone does not identify market participants or determine the next price move."
+        }
+      ],
+      "assessment": "Reads distinguish descriptions from forecasts, release versus observation/vintage dates, levels/rates and survey surprise versus causation. PCEgoal/FRED/FOMC/DXY/yield-spread statements read; current schedules/index/institutional primary-source recheck remains partial. No new material concern identified in bounded quiz reading.",
+      "readingStatus": "ALL_RENDERED_QUESTION_OPTION_FEEDBACK_TEXT_READ",
+      "primarySourceCorroboration": "PARTIAL",
+      "allQuizImagesHumanReviewed": false
+    },
+    {
+      "path": "/courses/macro-reading-for-traders/the-dollar-index-dxy",
+      "captureAt": "2026-10-22T15:45:22.406Z",
+      "captureEvidence": "evidence/live-quiz/a4bae8818b5a1aeb.json",
+      "captureSHA256": "08be6e86167cd6330f24f88882db1f63584635c63d7e3d05f4106574d8b4b949",
+      "questionsRead": 4,
+      "questionsAndExplanations": [
+        {
+          "stem": "1. Largest DXY weight:",
+          "options": [
+            {
+              "text": "Yen",
+              "markedCorrect": false
+            },
+            {
+              "text": "Pound",
+              "markedCorrect": false
+            },
+            {
+              "text": "Euro (~57.6%)",
+              "markedCorrect": true
+            },
+            {
+              "text": "Yuan",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "The euro has a 57.6% weight in ICE's six-currency basket."
+        },
+        {
+          "stem": "2. Dollar appreciation can reduce translated earnings when a company has:",
+          "options": [
+            {
+              "text": "No foreign exposure",
+              "markedCorrect": false
+            },
+            {
+              "text": "Unhedged foreign-currency earnings",
+              "markedCorrect": true
+            },
+            {
+              "text": "Only dollar revenue and costs",
+              "markedCorrect": false
+            },
+            {
+              "text": "No earnings",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Unchanged foreign-currency earnings translate into fewer dollars if the dollar strengthens against that currency. This is not a universal EPS forecast."
+        },
+        {
+          "stem": "3. A gold-DXY correlation measured over one period:",
+          "options": [
+            {
+              "text": "Guarantees the next price move",
+              "markedCorrect": false
+            },
+            {
+              "text": "Proves dollar moves cause gold moves",
+              "markedCorrect": false
+            },
+            {
+              "text": "May differ in another period",
+              "markedCorrect": true
+            },
+            {
+              "text": "Is always positive",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Correlation depends on the selected sample and does not establish causation or a fixed trading rule."
+        },
+        {
+          "stem": "4. Which borrower is directly exposed to a larger local-currency burden when its currency weakens against the dollar?",
+          "options": [
+            {
+              "text": "One with matching dollar income and debt",
+              "markedCorrect": false
+            },
+            {
+              "text": "One with unhedged dollar debt and local-currency income",
+              "markedCorrect": true
+            },
+            {
+              "text": "One with no debt",
+              "markedCorrect": false
+            },
+            {
+              "text": "Every borrower equally",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Currency mismatch can increase the local-currency cost of dollar debt service; hedges or dollar revenues can change that exposure."
+        }
+      ],
+      "assessment": "Reads distinguish descriptions from forecasts, release versus observation/vintage dates, levels/rates and survey surprise versus causation. PCEgoal/FRED/FOMC/DXY/yield-spread statements read; current schedules/index/institutional primary-source recheck remains partial. No new material concern identified in bounded quiz reading.",
+      "readingStatus": "ALL_RENDERED_QUESTION_OPTION_FEEDBACK_TEXT_READ",
+      "primarySourceCorroboration": "PARTIAL",
+      "allQuizImagesHumanReviewed": false
+    },
+    {
+      "path": "/courses/macro-reading-for-traders/the-fed-and-fomc-cycle",
+      "captureAt": "2026-10-22T15:45:26.631Z",
+      "captureEvidence": "evidence/live-quiz/df29f60809942043.json",
+      "captureSHA256": "ca6580508bfc1a26e8ad8cb04da9f76b4e782a00b7d4ae6d12d6053d02dcb5f5",
+      "questionsRead": 4,
+      "questionsAndExplanations": [
+        {
+          "stem": "1. How many FOMC meetings per year?",
+          "options": [
+            {
+              "text": "4",
+              "markedCorrect": false
+            },
+            {
+              "text": "6",
+              "markedCorrect": false
+            },
+            {
+              "text": "8",
+              "markedCorrect": true
+            },
+            {
+              "text": "12",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Eight scheduled."
+        },
+        {
+          "stem": "2. Fed's dual mandate:",
+          "options": [
+            {
+              "text": "Low rates + growth",
+              "markedCorrect": false
+            },
+            {
+              "text": "Max employment + price stability",
+              "markedCorrect": true
+            },
+            {
+              "text": "Full employment + stock gains",
+              "markedCorrect": false
+            },
+            {
+              "text": "Low inflation + strong dollar",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Set by Congress."
+        },
+        {
+          "stem": "3. The 'dot plot' shows:",
+          "options": [
+            {
+              "text": "Historical rates",
+              "markedCorrect": false
+            },
+            {
+              "text": "Each participant's assessment of appropriate policy",
+              "markedCorrect": true
+            },
+            {
+              "text": "Balance sheet",
+              "markedCorrect": false
+            },
+            {
+              "text": "Sentiment",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "The dots record individual participants’ assessments of an appropriate policy path, not only voting members and not a Committee promise."
+        },
+        {
+          "stem": "4. FedWatch derives probabilities from:",
+          "options": [
+            {
+              "text": "Analyst surveys",
+              "markedCorrect": false
+            },
+            {
+              "text": "Fed funds futures pricing",
+              "markedCorrect": true
+            },
+            {
+              "text": "Twitter",
+              "markedCorrect": false
+            },
+            {
+              "text": "Reuters polls",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Fed funds futures embed implied rate probabilities."
+        }
+      ],
+      "assessment": "Reads distinguish descriptions from forecasts, release versus observation/vintage dates, levels/rates and survey surprise versus causation. PCEgoal/FRED/FOMC/DXY/yield-spread statements read; current schedules/index/institutional primary-source recheck remains partial. No new material concern identified in bounded quiz reading.",
+      "readingStatus": "ALL_RENDERED_QUESTION_OPTION_FEEDBACK_TEXT_READ",
+      "primarySourceCorroboration": "PARTIAL",
+      "allQuizImagesHumanReviewed": false
+    },
+    {
+      "path": "/courses/macro-reading-for-traders/the-yield-curve-and-recession",
+      "captureAt": "2026-10-22T15:45:30.980Z",
+      "captureEvidence": "evidence/live-quiz/712b6307be53b03e.json",
+      "captureSHA256": "2b8ee661076af1f75337dd1ec870b7a25d2d9b4f7012868c5ffeca31a18acc11",
+      "questionsRead": 4,
+      "questionsAndExplanations": [
+        {
+          "stem": "1. Inverted curve =",
+          "options": [
+            {
+              "text": "Short < long",
+              "markedCorrect": false
+            },
+            {
+              "text": "Short > long",
+              "markedCorrect": true
+            },
+            {
+              "text": "Flat",
+              "markedCorrect": false
+            },
+            {
+              "text": "Negative yields",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Short-term exceeds long-term."
+        },
+        {
+          "stem": "2. Which spread does the linked NY Fed recession model use?",
+          "options": [
+            {
+              "text": "10Y-2Y",
+              "markedCorrect": false
+            },
+            {
+              "text": "10Y-3M",
+              "markedCorrect": true
+            },
+            {
+              "text": "30Y-5Y",
+              "markedCorrect": false
+            },
+            {
+              "text": "2Y-Fed Funds",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "10Y-3M used in official model."
+        },
+        {
+          "stem": "3. What is the safest interpretation of a yield-curve inversion?",
+          "options": [
+            {
+              "text": "It guarantees a recession",
+              "markedCorrect": false
+            },
+            {
+              "text": "It is one historical recession-risk indicator with uncertain timing",
+              "markedCorrect": true
+            },
+            {
+              "text": "It predicts the exact market bottom",
+              "markedCorrect": false
+            },
+            {
+              "text": "It only matters for day traders",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Yield-curve inversion is informative context, but it is not a guaranteed or precisely timed forecast."
+        },
+        {
+          "stem": "4. The yield curve by itself provides:",
+          "options": [
+            {
+              "text": "An exact entry time",
+              "markedCorrect": false
+            },
+            {
+              "text": "A dated description of yields across maturities",
+              "markedCorrect": true
+            },
+            {
+              "text": "Guaranteed equity returns",
+              "markedCorrect": false
+            },
+            {
+              "text": "One required asset allocation",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "A curve describes relative yields; any forecast requires additional assumptions and remains uncertain."
+        }
+      ],
+      "assessment": "Reads distinguish descriptions from forecasts, release versus observation/vintage dates, levels/rates and survey surprise versus causation. PCEgoal/FRED/FOMC/DXY/yield-spread statements read; current schedules/index/institutional primary-source recheck remains partial. No new material concern identified in bounded quiz reading.",
+      "readingStatus": "ALL_RENDERED_QUESTION_OPTION_FEEDBACK_TEXT_READ",
+      "primarySourceCorroboration": "PARTIAL",
+      "allQuizImagesHumanReviewed": false
+    },
+    {
+      "path": "/courses/options-trading-fundamentals/defined-risk-spreads",
+      "captureAt": "2026-10-22T15:45:39.106Z",
+      "captureEvidence": "evidence/live-quiz/fac7369b43687473.json",
+      "captureSHA256": "dd984ca40ebeb43fe48f7b8f190ff22ceb4793aa37271b91fa135aa28218f3ad",
+      "questionsRead": 4,
+      "questionsAndExplanations": [
+        {
+          "stem": "1. For the intact bull call example, maximum expiration loss before costs is:",
+          "options": [
+            {
+              "text": "Unlimited",
+              "markedCorrect": false
+            },
+            {
+              "text": "The width of the spread",
+              "markedCorrect": false
+            },
+            {
+              "text": "The $200 net debit",
+              "markedCorrect": true
+            },
+            {
+              "text": "The strike price",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Both calls expire worthless below $180, leaving the $200 debit as the gross loss. Costs and separate stock exposure are excluded."
+        },
+        {
+          "stem": "2. An intact short iron condor has its maximum gross expiration gain when the underlying:",
+          "options": [
+            {
+              "text": "Rallies sharply beyond the upper wing",
+              "markedCorrect": false
+            },
+            {
+              "text": "Crashes beyond the lower wing",
+              "markedCorrect": false
+            },
+            {
+              "text": "Finishes between the short strikes",
+              "markedCorrect": true
+            },
+            {
+              "text": "Goes to zero",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "The four options expire without intrinsic value between the short strikes, leaving the credit before costs."
+        },
+        {
+          "stem": "3. In the worksheet, 1-2% of a hypothetical $100,000 account equals:",
+          "options": [
+            {
+              "text": "$50,000",
+              "markedCorrect": false
+            },
+            {
+              "text": "$25,000",
+              "markedCorrect": false
+            },
+            {
+              "text": "$1,000-$2,000",
+              "markedCorrect": true
+            },
+            {
+              "text": "$100",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "100,000 × 0.01 to 0.02 = $1,000-$2,000. The percentages are illustrative assumptions, not a universal standard."
+        },
+        {
+          "stem": "4. Why can an expiration payoff diagram understate account exposure?",
+          "options": [
+            {
+              "text": "It guarantees a profit",
+              "markedCorrect": false
+            },
+            {
+              "text": "It includes all commissions",
+              "markedCorrect": false
+            },
+            {
+              "text": "Assignment of one leg can leave a stock position",
+              "markedCorrect": true
+            },
+            {
+              "text": "Spreads cannot lose",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "The intact-spread payoff assumes both legs are resolved together. Assignment can create separate stock exposure and costs."
+        }
+      ],
+      "assessment": "Reads distinguish option-share/contract units, model sensitivities held fixed, assumed intact expiration payoffs versus assignment/stock exposure, premium/cost scope and relativeIV context rather than signals. Contract100shares is qualified for adjusted deliverables; separate worksheets are explicitly outside the spot engine. No new material concern identified.",
+      "readingStatus": "ALL_RENDERED_QUESTION_OPTION_FEEDBACK_TEXT_READ",
+      "primarySourceCorroboration": "PARTIAL",
+      "allQuizImagesHumanReviewed": false
+    },
+    {
+      "path": "/courses/options-trading-fundamentals/implied-volatility-and-earnings",
+      "captureAt": "2026-10-22T15:45:51.613Z",
+      "captureEvidence": "evidence/live-quiz/8bea5605f9d946bd.json",
+      "captureSHA256": "4b752d0c442e2ac7229fed47663644445a514ceb83816f599c77b4af37c3d09e",
+      "questionsRead": 4,
+      "questionsAndExplanations": [
+        {
+          "stem": "1. IV rank of 80 means:",
+          "options": [
+            {
+              "text": "IV is at 80%",
+              "markedCorrect": false
+            },
+            {
+              "text": "IV is near a 12-month high",
+              "markedCorrect": true
+            },
+            {
+              "text": "IV is near a 12-month low",
+              "markedCorrect": false
+            },
+            {
+              "text": "80% of options are profitable",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "IV rank normalises IV against the last year on a 0-100 scale."
+        },
+        {
+          "stem": "2. Why can a long option lose even if the price moves in the expected direction after earnings?",
+          "options": [
+            {
+              "text": "Because options never follow the underlying",
+              "markedCorrect": false
+            },
+            {
+              "text": "A drop in implied volatility and time value can offset the directional gain",
+              "markedCorrect": true
+            },
+            {
+              "text": "Because earnings cancel the contract",
+              "markedCorrect": false
+            },
+            {
+              "text": "Because all options are illiquid",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Option value depends on more than direction; implied volatility and time value can change sharply after earnings."
+        },
+        {
+          "stem": "3. What does a high IV rank tell you?",
+          "options": [
+            {
+              "text": "A premium-selling trade is guaranteed to work",
+              "markedCorrect": false
+            },
+            {
+              "text": "Current implied volatility is high relative to its own recent range",
+              "markedCorrect": true
+            },
+            {
+              "text": "The stock must fall",
+              "markedCorrect": false
+            },
+            {
+              "text": "The next move will be small",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "IV rank is context about relative option pricing, not a standalone buy or sell signal."
+        },
+        {
+          "stem": "4. Implied volatility is:",
+          "options": [
+            {
+              "text": "Historical vol over 30 days",
+              "markedCorrect": false
+            },
+            {
+              "text": "An exchange forecast",
+              "markedCorrect": false
+            },
+            {
+              "text": "The volatility that makes model = market price",
+              "markedCorrect": true
+            },
+            {
+              "text": "The stock's beta",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "IV is the vol input that reconciles a pricing model with the live option price."
+        }
+      ],
+      "assessment": "Reads distinguish option-share/contract units, model sensitivities held fixed, assumed intact expiration payoffs versus assignment/stock exposure, premium/cost scope and relativeIV context rather than signals. Contract100shares is qualified for adjusted deliverables; separate worksheets are explicitly outside the spot engine. No new material concern identified.",
+      "readingStatus": "ALL_RENDERED_QUESTION_OPTION_FEEDBACK_TEXT_READ",
+      "primarySourceCorroboration": "PARTIAL",
+      "allQuizImagesHumanReviewed": false
+    },
+    {
+      "path": "/courses/options-trading-fundamentals/options-risk-management",
+      "captureAt": "2026-10-22T15:46:08.702Z",
+      "captureEvidence": "evidence/live-quiz/86c98b4ea538000c.json",
+      "captureSHA256": "c31f616ebedb9017ae524de66cba4dcca27ad91682c498b0a5066d6feaf1d673",
+      "questionsRead": 4,
+      "questionsAndExplanations": [
+        {
+          "stem": "1. Why define a risk budget before a simulated options trade?",
+          "options": [
+            {
+              "text": "To guarantee profit",
+              "markedCorrect": false
+            },
+            {
+              "text": "To control the potential effect of one loss",
+              "markedCorrect": true
+            },
+            {
+              "text": "To predict volatility",
+              "markedCorrect": false
+            },
+            {
+              "text": "To avoid all drawdowns",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "A predefined risk budget limits how much one trade can affect the practice account; there is no universal percentage that fits every trader or strategy."
+        },
+        {
+          "stem": "2. What should be compared when evaluating a roll?",
+          "options": [
+            {
+              "text": "Only whether it creates a credit",
+              "markedCorrect": false
+            },
+            {
+              "text": "Only the new expiry",
+              "markedCorrect": false
+            },
+            {
+              "text": "The new risk, break-even points, cost and time remaining",
+              "markedCorrect": true
+            },
+            {
+              "text": "Nothing — rolling is always better",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "A roll changes several dimensions of the position, so the full risk profile matters more than credit versus debit alone."
+        },
+        {
+          "stem": "3. How can a hypothetical options exit rule be studied outside TradeHQ’s spot engine?",
+          "options": [
+            {
+              "text": "Assume one percentage always works",
+              "markedCorrect": false
+            },
+            {
+              "text": "Use a separate options-data worksheet with explicit fills and costs",
+              "markedCorrect": true
+            },
+            {
+              "text": "Change the rule after every loss",
+              "markedCorrect": false
+            },
+            {
+              "text": "Ignore position size",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "TradeHQ cannot execute an options backtest. A separate worksheet needs actual options observations and assumptions; a selected sample cannot validate future performance."
+        },
+        {
+          "stem": "4. Why journal every trade?",
+          "options": [
+            {
+              "text": "Tax only",
+              "markedCorrect": false
+            },
+            {
+              "text": "Review recorded assumptions and mistakes",
+              "markedCorrect": true
+            },
+            {
+              "text": "Required by regulators",
+              "markedCorrect": false
+            },
+            {
+              "text": "Boosts win rate automatically",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "A journal records assumptions and observed mistakes. It does not prove a statistical edge or predict future profits."
+        }
+      ],
+      "assessment": "Reads distinguish option-share/contract units, model sensitivities held fixed, assumed intact expiration payoffs versus assignment/stock exposure, premium/cost scope and relativeIV context rather than signals. Contract100shares is qualified for adjusted deliverables; separate worksheets are explicitly outside the spot engine. No new material concern identified.",
+      "readingStatus": "ALL_RENDERED_QUESTION_OPTION_FEEDBACK_TEXT_READ",
+      "primarySourceCorroboration": "PARTIAL",
+      "allQuizImagesHumanReviewed": false
+    },
+    {
+      "path": "/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+      "captureAt": "2026-10-22T15:46:17.049Z",
+      "captureEvidence": "evidence/live-quiz/c512fe8593191878.json",
+      "captureSHA256": "f15dd9fcf75d9ff104929a949dcb81d6176bb17dc6998022d1b906576f06515b",
+      "questionsRead": 4,
+      "questionsAndExplanations": [
+        {
+          "stem": "1. What does theta measure?",
+          "options": [
+            {
+              "text": "Directional exposure",
+              "markedCorrect": false
+            },
+            {
+              "text": "Time decay per day",
+              "markedCorrect": true
+            },
+            {
+              "text": "Volatility sensitivity",
+              "markedCorrect": false
+            },
+            {
+              "text": "Interest-rate risk",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Theta is a model estimate of time sensitivity with other inputs held fixed; units and time conventions must be stated."
+        },
+        {
+          "stem": "2. In the lesson example, a 0.50 delta and a $1 underlying rise imply approximately what change per option share, before other effects?",
+          "options": [
+            {
+              "text": "$0.10",
+              "markedCorrect": false
+            },
+            {
+              "text": "$0.30",
+              "markedCorrect": false
+            },
+            {
+              "text": "$0.50",
+              "markedCorrect": true
+            },
+            {
+              "text": "$0.90",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "0.50 × $1 = $0.50 per share, holding other inputs fixed; this is not an event probability."
+        },
+        {
+          "stem": "3. 'IV crush' typically happens:",
+          "options": [
+            {
+              "text": "Right before earnings",
+              "markedCorrect": false
+            },
+            {
+              "text": "Right after earnings",
+              "markedCorrect": true
+            },
+            {
+              "text": "On Fed decision day",
+              "markedCorrect": false
+            },
+            {
+              "text": "At market open",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "A post-announcement drop in implied volatility is often called IV crush; it is not inevitable after every release."
+        },
+        {
+          "stem": "4. Which Greek measures the rate of change of delta?",
+          "options": [
+            {
+              "text": "Vega",
+              "markedCorrect": false
+            },
+            {
+              "text": "Theta",
+              "markedCorrect": false
+            },
+            {
+              "text": "Gamma",
+              "markedCorrect": true
+            },
+            {
+              "text": "Rho",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Gamma tells you how quickly delta itself changes."
+        }
+      ],
+      "assessment": "Reads distinguish option-share/contract units, model sensitivities held fixed, assumed intact expiration payoffs versus assignment/stock exposure, premium/cost scope and relativeIV context rather than signals. Contract100shares is qualified for adjusted deliverables; separate worksheets are explicitly outside the spot engine. No new material concern identified.",
+      "readingStatus": "ALL_RENDERED_QUESTION_OPTION_FEEDBACK_TEXT_READ",
+      "primarySourceCorroboration": "PARTIAL",
+      "allQuizImagesHumanReviewed": false
+    },
+    {
+      "path": "/courses/options-trading-fundamentals/what-is-an-option",
+      "captureAt": "2026-10-22T15:46:28.002Z",
+      "captureEvidence": "evidence/live-quiz/c668b04a7fed1589.json",
+      "captureSHA256": "15cbd8febfd90bc23fc1d3771c4f881cac94e04f675e3ef9a6535232a80a25f7",
+      "questionsRead": 4,
+      "questionsAndExplanations": [
+        {
+          "stem": "1. How many shares does one standard US equity option contract control?",
+          "options": [
+            {
+              "text": "10",
+              "markedCorrect": false
+            },
+            {
+              "text": "50",
+              "markedCorrect": false
+            },
+            {
+              "text": "100",
+              "markedCorrect": true
+            },
+            {
+              "text": "1,000",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "A standard unadjusted US equity option generally covers 100 shares. Adjusted deliverables and other option types differ."
+        },
+        {
+          "stem": "2. What is the maximum loss for someone who buys (goes long) a single call option?",
+          "options": [
+            {
+              "text": "Unlimited",
+              "markedCorrect": false
+            },
+            {
+              "text": "The strike price × 100",
+              "markedCorrect": false
+            },
+            {
+              "text": "The premium paid",
+              "markedCorrect": true
+            },
+            {
+              "text": "The stock price × 100",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "For the purchased option alone before exercise and costs, loss is limited to the premium. Exercise can create a separate position."
+        },
+        {
+          "stem": "3. A call option gives the buyer the right to:",
+          "options": [
+            {
+              "text": "Sell shares at the strike price",
+              "markedCorrect": false
+            },
+            {
+              "text": "Buy shares at the strike price",
+              "markedCorrect": true
+            },
+            {
+              "text": "Short the stock",
+              "markedCorrect": false
+            },
+            {
+              "text": "Receive dividends",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Call = right to buy. Put = right to sell."
+        },
+        {
+          "stem": "4. Buying a protective put alongside shares is an example of:",
+          "options": [
+            {
+              "text": "Eliminating every cost",
+              "markedCorrect": false
+            },
+            {
+              "text": "A guaranteed gain",
+              "markedCorrect": false
+            },
+            {
+              "text": "Hedging downside exposure",
+              "markedCorrect": true
+            },
+            {
+              "text": "Avoiding contract terms",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "A put can offset some downside below its strike, but the premium, expiry and other terms matter."
+        }
+      ],
+      "assessment": "Reads distinguish option-share/contract units, model sensitivities held fixed, assumed intact expiration payoffs versus assignment/stock exposure, premium/cost scope and relativeIV context rather than signals. Contract100shares is qualified for adjusted deliverables; separate worksheets are explicitly outside the spot engine. No new material concern identified.",
+      "readingStatus": "ALL_RENDERED_QUESTION_OPTION_FEEDBACK_TEXT_READ",
+      "primarySourceCorroboration": "PARTIAL",
+      "allQuizImagesHumanReviewed": false
+    },
+    {
+      "path": "/courses/trading-psychology-mastery/cognitive-biases-in-trading",
+      "captureAt": "2026-10-22T15:46:32.097Z",
+      "captureEvidence": "evidence/live-quiz/3c7fc0d94dbff8b5.json",
+      "captureSHA256": "6e5597ef87fa1ef2e5c3aaa8833cbcb83eac62c5e4ba6d6eb13bd22998fe47e4",
+      "questionsRead": 4,
+      "questionsAndExplanations": [
+        {
+          "stem": "1. Loss aversion describes:",
+          "options": [
+            {
+              "text": "Identical reactions from everyone",
+              "markedCorrect": false
+            },
+            {
+              "text": "Giving losses more weight than comparable gains relative to a reference point",
+              "markedCorrect": true
+            },
+            {
+              "text": "Preferring losses to gains",
+              "markedCorrect": false
+            },
+            {
+              "text": "Avoiding all trades",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "The concept concerns asymmetric evaluation around a reference point. Its magnitude varies and is not a universal two-times emotional ratio."
+        },
+        {
+          "stem": "2. Which example illustrates a possible purchase-price anchor?",
+          "options": [
+            {
+              "text": "Treating the entry price as the only reason to keep a position",
+              "markedCorrect": true
+            },
+            {
+              "text": "Recording transaction costs",
+              "markedCorrect": false
+            },
+            {
+              "text": "Comparing company revenues",
+              "markedCorrect": false
+            },
+            {
+              "text": "Reading conflicting evidence",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "An entry price can anchor judgement without establishing current value or dictating whether a position should be kept."
+        },
+        {
+          "stem": "3. Which journal exercise examines confirmation bias?",
+          "options": [
+            {
+              "text": "Record only supporting headlines",
+              "markedCorrect": false
+            },
+            {
+              "text": "Record both supporting and conflicting evidence",
+              "markedCorrect": true
+            },
+            {
+              "text": "Assume a profitable result proves the reasoning",
+              "markedCorrect": false
+            },
+            {
+              "text": "Ignore uncertainty",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Comparing how both kinds of evidence were treated can help examine reasoning; it does not guarantee the bias disappears."
+        },
+        {
+          "stem": "4. Recency bias can lead someone to:",
+          "options": [
+            {
+              "text": "Give all observations equal weight",
+              "markedCorrect": false
+            },
+            {
+              "text": "Over-weight the last few outcomes",
+              "markedCorrect": true
+            },
+            {
+              "text": "Ignore all recent evidence",
+              "markedCorrect": false
+            },
+            {
+              "text": "Know the next market move",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Recent outcomes can receive disproportionate weight, while neither a short nor a fixed-size sample proves an edge."
+        }
+      ],
+      "assessment": "Reads avoid universal loss-aversion ratios, ritual durations, sample-size/profit/medical claims. Written stop is not a resting order; cooldown is a choice after pause.100kto90kdrawdown10percent,recovery11.11percent;3percent3000;200notional+0.1percentbuyfee=200.20are coherent stated arithmetic. Actual production trade/cooldown execution was not attempted.",
+      "readingStatus": "ALL_RENDERED_QUESTION_OPTION_FEEDBACK_TEXT_READ",
+      "primarySourceCorroboration": "PARTIAL",
+      "allQuizImagesHumanReviewed": false
+    },
+    {
+      "path": "/courses/trading-psychology-mastery/discipline-and-daily-rituals",
+      "captureAt": "2026-10-22T15:46:36.353Z",
+      "captureEvidence": "evidence/live-quiz/d5456aa5fab64e87.json",
+      "captureSHA256": "a34c17fded09bc1d71155393fe2da88b40b11a14ba5ebc5d7ea84229905c1ca1",
+      "questionsRead": 4,
+      "questionsAndExplanations": [
+        {
+          "stem": "1. What duration must a pre-session checklist have?",
+          "options": [
+            {
+              "text": "Exactly 30 minutes",
+              "markedCorrect": false
+            },
+            {
+              "text": "An hour",
+              "markedCorrect": false
+            },
+            {
+              "text": "No universal duration",
+              "markedCorrect": true
+            },
+            {
+              "text": "Exactly five minutes",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Checklists are optional learning tools, not a timed professional standard."
+        },
+        {
+          "stem": "2. Does a written stop price create a resting order in TradeHQ?",
+          "options": [
+            {
+              "text": "No, virtual orders are manual market orders",
+              "markedCorrect": true
+            },
+            {
+              "text": "Yes, always",
+              "markedCorrect": false
+            },
+            {
+              "text": "Only after 20 minutes",
+              "markedCorrect": false
+            },
+            {
+              "text": "Only with an options contract",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "A worksheet assumption is not an executable resting order."
+        },
+        {
+          "stem": "3. Why record source and observation time?",
+          "options": [
+            {
+              "text": "It guarantees a fill",
+              "markedCorrect": false
+            },
+            {
+              "text": "It can clarify which information was available",
+              "markedCorrect": true
+            },
+            {
+              "text": "It proves market direction",
+              "markedCorrect": false
+            },
+            {
+              "text": "It increases expected profit",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "A source timestamp helps interpret an observed price without promising any outcome."
+        },
+        {
+          "stem": "4. What does a learning streak measure?",
+          "options": [
+            {
+              "text": "Trading expertise",
+              "markedCorrect": false
+            },
+            {
+              "text": "Future profit",
+              "markedCorrect": false
+            },
+            {
+              "text": "Low drawdown",
+              "markedCorrect": false
+            },
+            {
+              "text": "Participation under the feature's rules",
+              "markedCorrect": true
+            }
+          ],
+          "renderedExplanation": "Participation is not an investment-performance measure."
+        }
+      ],
+      "assessment": "Reads avoid universal loss-aversion ratios, ritual durations, sample-size/profit/medical claims. Written stop is not a resting order; cooldown is a choice after pause.100kto90kdrawdown10percent,recovery11.11percent;3percent3000;200notional+0.1percentbuyfee=200.20are coherent stated arithmetic. Actual production trade/cooldown execution was not attempted.",
+      "readingStatus": "ALL_RENDERED_QUESTION_OPTION_FEEDBACK_TEXT_READ",
+      "primarySourceCorroboration": "PARTIAL",
+      "allQuizImagesHumanReviewed": false
+    },
+    {
+      "path": "/courses/trading-psychology-mastery/handling-drawdowns",
+      "captureAt": "2026-10-22T15:46:43.369Z",
+      "captureEvidence": "evidence/live-quiz/327594aae8b22952.json",
+      "captureSHA256": "32bfa65729d31035383d5f96aa1d0847b5b7158ef28f7ea4fa7105fd9e46b60f",
+      "questionsRead": 4,
+      "questionsAndExplanations": [
+        {
+          "stem": "1. A virtual portfolio falls from $100,000 to $90,000. Its peak-to-trough drawdown is:",
+          "options": [
+            {
+              "text": "5%",
+              "markedCorrect": false
+            },
+            {
+              "text": "10%",
+              "markedCorrect": true
+            },
+            {
+              "text": "11.11%",
+              "markedCorrect": false
+            },
+            {
+              "text": "90%",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "$10,000 divided by the $100,000 peak is 10%."
+        },
+        {
+          "stem": "2. How much growth returns $90,000 to $100,000?",
+          "options": [
+            {
+              "text": "10%",
+              "markedCorrect": false
+            },
+            {
+              "text": "1%",
+              "markedCorrect": false
+            },
+            {
+              "text": "20%",
+              "markedCorrect": false
+            },
+            {
+              "text": "About 11.11%",
+              "markedCorrect": true
+            }
+          ],
+          "renderedExplanation": "The $10,000 recovery is divided by the lower $90,000 balance."
+        },
+        {
+          "stem": "3. What determines portfolio impact from an asset loss?",
+          "options": [
+            {
+              "text": "Allocation and the asset's movement, among other factors",
+              "markedCorrect": true
+            },
+            {
+              "text": "Only the ticker",
+              "markedCorrect": false
+            },
+            {
+              "text": "Only the price per unit",
+              "markedCorrect": false
+            },
+            {
+              "text": "The lesson completion badge",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Position weight affects the portfolio-level change."
+        },
+        {
+          "stem": "4. Can a drawdown percentage diagnose a health condition?",
+          "options": [
+            {
+              "text": "Yes",
+              "markedCorrect": false
+            },
+            {
+              "text": "Only after 30 trades",
+              "markedCorrect": false
+            },
+            {
+              "text": "No",
+              "markedCorrect": true
+            },
+            {
+              "text": "Only for experienced traders",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "A finance calculation is not a medical assessment."
+        }
+      ],
+      "assessment": "Reads avoid universal loss-aversion ratios, ritual durations, sample-size/profit/medical claims. Written stop is not a resting order; cooldown is a choice after pause.100kto90kdrawdown10percent,recovery11.11percent;3percent3000;200notional+0.1percentbuyfee=200.20are coherent stated arithmetic. Actual production trade/cooldown execution was not attempted.",
+      "readingStatus": "ALL_RENDERED_QUESTION_OPTION_FEEDBACK_TEXT_READ",
+      "primarySourceCorroboration": "PARTIAL",
+      "allQuizImagesHumanReviewed": false
+    },
+    {
+      "path": "/courses/trading-psychology-mastery/revenge-trading-and-tilt",
+      "captureAt": "2026-10-22T15:46:47.435Z",
+      "captureEvidence": "evidence/live-quiz/e37412b30b867932.json",
+      "captureSHA256": "61ac71297e5e98eb8b9b6de7d78e2668d1edbaf1aa37e5ae37ec1585b92f9862",
+      "questionsRead": 4,
+      "questionsAndExplanations": [
+        {
+          "stem": "1. Tilt is:",
+          "options": [
+            {
+              "text": "A strategy",
+              "markedCorrect": false
+            },
+            {
+              "text": "Emotional state driving reckless trades",
+              "markedCorrect": true
+            },
+            {
+              "text": "A chart pattern",
+              "markedCorrect": false
+            },
+            {
+              "text": "A fee",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Post-loss unplanned oversized trading."
+        },
+        {
+          "stem": "2. In the hypothetical worksheet, 3% of $100,000 is:",
+          "options": [
+            {
+              "text": "$100",
+              "markedCorrect": false
+            },
+            {
+              "text": "$3,000",
+              "markedCorrect": true
+            },
+            {
+              "text": "$25,000",
+              "markedCorrect": false
+            },
+            {
+              "text": "$30,000",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "100,000 × 0.03 = $3,000. This is arithmetic, not an industry-standard limit."
+        },
+        {
+          "stem": "3. What does TradeHQ’s cooldown allow after five seconds?",
+          "options": [
+            {
+              "text": "Guaranteed recovery",
+              "markedCorrect": false
+            },
+            {
+              "text": "Proceeding with or cancelling the trade",
+              "markedCorrect": true
+            },
+            {
+              "text": "Automatic account reset",
+              "markedCorrect": false
+            },
+            {
+              "text": "A mandatory 24-hour lockout",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "The prompt allows a choice after the pause; it does not enforce a daily drawdown limit."
+        },
+        {
+          "stem": "4. Which journal entry helps review a changed decision?",
+          "options": [
+            {
+              "text": "Only the final price",
+              "markedCorrect": false
+            },
+            {
+              "text": "The intended size, actual size and reason for changing it",
+              "markedCorrect": true
+            },
+            {
+              "text": "A guaranteed profit target",
+              "markedCorrect": false
+            },
+            {
+              "text": "Another trader’s ranking",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Recording the original plan and the change makes the decision reviewable."
+        }
+      ],
+      "assessment": "Reads avoid universal loss-aversion ratios, ritual durations, sample-size/profit/medical claims. Written stop is not a resting order; cooldown is a choice after pause.100kto90kdrawdown10percent,recovery11.11percent;3percent3000;200notional+0.1percentbuyfee=200.20are coherent stated arithmetic. Actual production trade/cooldown execution was not attempted.",
+      "readingStatus": "ALL_RENDERED_QUESTION_OPTION_FEEDBACK_TEXT_READ",
+      "primarySourceCorroboration": "PARTIAL",
+      "allQuizImagesHumanReviewed": false
+    },
+    {
+      "path": "/courses/trading-psychology-mastery/the-trading-journal",
+      "captureAt": "2026-10-22T15:46:51.783Z",
+      "captureEvidence": "evidence/live-quiz/5e9e26c2fe800954.json",
+      "captureSHA256": "2ab432a16b0334099f6358d622f6cad768bb1d1e39d019380d3438cc334e4428",
+      "questionsRead": 4,
+      "questionsAndExplanations": [
+        {
+          "stem": "1. What does a journal prove on its own?",
+          "options": [
+            {
+              "text": "A profitable edge",
+              "markedCorrect": false
+            },
+            {
+              "text": "Why the market moved",
+              "markedCorrect": false
+            },
+            {
+              "text": "What observations and assumptions were recorded",
+              "markedCorrect": true
+            },
+            {
+              "text": "A future win rate",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "The journal documents information; it does not prove causation or future returns."
+        },
+        {
+          "stem": "2. In a hypothetical 2-unit order at $100 with a 0.1% buy fee, what cash is spent?",
+          "options": [
+            {
+              "text": "$200",
+              "markedCorrect": false
+            },
+            {
+              "text": "$200.20",
+              "markedCorrect": true
+            },
+            {
+              "text": "$210",
+              "markedCorrect": false
+            },
+            {
+              "text": "$0.20",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "The $200 notional plus 0.1%, or $0.20, is $200.20."
+        },
+        {
+          "stem": "3. Which sample should a review include?",
+          "options": [
+            {
+              "text": "Only gains",
+              "markedCorrect": false
+            },
+            {
+              "text": "Only days with stable prices",
+              "markedCorrect": false
+            },
+            {
+              "text": "Only large positions",
+              "markedCorrect": false
+            },
+            {
+              "text": "Favorable and unfavorable cases under recorded rules",
+              "markedCorrect": true
+            }
+          ],
+          "renderedExplanation": "Selecting only attractive cases makes the summary misleading."
+        },
+        {
+          "stem": "4. Does 30 recorded trades establish a reliable strategy?",
+          "options": [
+            {
+              "text": "No universal sample count can do that",
+              "markedCorrect": true
+            },
+            {
+              "text": "Yes, always",
+              "markedCorrect": false
+            },
+            {
+              "text": "Only with a journal",
+              "markedCorrect": false
+            },
+            {
+              "text": "Only if there were no losing trades",
+              "markedCorrect": false
+            }
+          ],
+          "renderedExplanation": "Sample design, costs, dependence and uncertainty matter."
+        }
+      ],
+      "assessment": "Reads avoid universal loss-aversion ratios, ritual durations, sample-size/profit/medical claims. Written stop is not a resting order; cooldown is a choice after pause.100kto90kdrawdown10percent,recovery11.11percent;3percent3000;200notional+0.1percentbuyfee=200.20are coherent stated arithmetic. Actual production trade/cooldown execution was not attempted.",
+      "readingStatus": "ALL_RENDERED_QUESTION_OPTION_FEEDBACK_TEXT_READ",
+      "primarySourceCorroboration": "PARTIAL",
+      "allQuizImagesHumanReviewed": false
+    }
+  ]
+}

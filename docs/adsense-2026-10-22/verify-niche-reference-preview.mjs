@@ -1,0 +1,53 @@
+// Own anonymous preview browser, no account/trade/server writes.
+import assert from 'node:assert/strict';
+import {readFileSync,writeFileSync} from 'node:fs';
+import {openAuditPage,pause} from './browser-session.mjs';
+const root=new URL('./',import.meta.url),signals=JSON.parse(readFileSync(new URL('evidence/PR220-PREVIEW-SIGNALS.json',root),'utf8'));
+const sha='8a04b6d35726521522c86e035d5fe73fc83ed982';assert.equal(signals.candidateSHA,sha);assert.equal(signals.cloudflareGitHubNativeSignal.headSHA,sha);assert.equal(signals.cloudflareGitHubNativeSignal.conclusion,'success');assert.equal(signals.cloudflareGitHubNativeSignal.appId,85455);
+const origin=signals.cloudflareGitHubNativeSignal.url,p=await openAuditPage(),rows=[],blocked=[],errors=[];
+p.onEvent(m=>{
+ if(m.method==='Runtime.exceptionThrown')errors.push(m.params.exceptionDetails.text);
+ if(m.method==='Fetch.requestPaused'){
+  const {requestId,request}=m.params,u=new URL(request.url),read=['GET','HEAD','OPTIONS'].includes(request.method)||(request.method==='POST'&&u.pathname==='/rest/v1/rpc/get_published_course_catalog');
+  if(!read)blocked.push({method:request.method,path:u.pathname});
+  p.send(read?'Fetch.continueRequest':'Fetch.failRequest',read?{requestId}:{requestId,errorReason:'Aborted'}).catch(e=>errors.push(e.message));
+ }
+});
+await p.send('Runtime.enable');await p.send('Fetch.enable',{patterns:[{urlPattern:'https://*.supabase.co/*',requestStage:'Request'}]});
+try{
+ for(const path of ['/niche/shib','/niche/btc','/niche/eth','/niche/aapl','/niche/eur-usd','/trade/shib','/trade']){
+  for(const [width,height] of [[360,800],[390,844],[768,1024],[1280,800],[1920,1080]]){
+   await p.send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<500});await p.send('Page.navigate',{url:origin+path});
+   await p.wait(`location.pathname===${JSON.stringify(path)} && document.readyState==='complete' && document.querySelector('main h1') && document.querySelector('main h1').textContent.trim()!=='Loading your page' && !document.querySelector('#prerender-seo')`);await p.wait(`document.querySelector('link[rel="canonical"]')?.href===${JSON.stringify('https://www.thetradehq.com'+path)}`);await p.evaluate('document.fonts.ready.then(()=>true)',true);await pause(650);
+   await p.evaluate("[...document.querySelectorAll('button')].find(b=>b.textContent.trim()==='Reject analytics')?.click();true");
+   const row=await p.evaluate(`({path:location.pathname,width:innerWidth,main:document.querySelector('main').innerText,canonical:document.querySelector('link[rel="canonical"]')?.href,robots:document.querySelector('meta[name="robots"]')?.content,overflow:document.documentElement.scrollWidth>innerWidth+1,stats:[...document.querySelectorAll('main tbody tr')].map(r=>[r.cells[0]?.textContent,r.cells[1]?.textContent]),practiceLink:document.querySelector('main a[href^="/trade/"]')?.getAttribute('href')})`);
+   assert.equal(row.overflow,false,path+' fits '+width);
+   assert.equal(row.canonical,'https://www.thetradehq.com'+path);
+   if(path.startsWith('/niche/')){
+    assert.equal(row.robots,'noindex, follow');const price=row.stats.find(r=>r[0]==='Simulator Reference Price')?.[1];
+    assert.ok(Number(price?.replaceAll(',',''))>0);if(path==='/niche/shib')assert.equal(price,'0.00001245');
+    if(path==='/niche/btc'){assert.equal(/correlation with Bitcoin|Bitcoin correlation/i.test(row.main),false);const faq=await p.evaluate(`Array.from(document.querySelectorAll('script[type="application/ld+json"]')).flatMap(s=>{try{const j=JSON.parse(s.textContent);return Array.isArray(j)?j:[j]}catch{return[]}}).find(x=>x['@type']==='FAQPage')?.mainEntity`);assert.ok(Array.isArray(faq)&&faq.length===3);assert.equal(/Bitcoin correlation|correlation with Bitcoin/i.test(JSON.stringify(faq)),false);row.faqStructuredData=faq;}
+   }else{
+    await p.wait(`document.querySelectorAll('main .recharts-yAxis .recharts-cartesian-axis-tick-value').length>=2`);await pause(650);
+    row.chart=await p.evaluate(`(()=>{const c=document.querySelector('main .recharts-wrapper').getBoundingClientRect();return {ticks:[...document.querySelectorAll('main .recharts-yAxis .recharts-cartesian-axis-tick-value')].map(t=>{const r=t.getBoundingClientRect();return {text:t.textContent,inside:r.left>=c.left-1&&r.right<=c.right+1}}),status:[...document.querySelectorAll('main span')].map(x=>x.textContent).find(x=>x.startsWith('Data status:'))}})()`);
+    row.tradingHeaders=await p.evaluate(`(()=>{const root=document.querySelector('main .recharts-wrapper').closest('.h-full.flex.flex-col'),c=root.getBoundingClientRect();const groups=['Total Value','Available Cash'].map(label=>[...document.querySelectorAll('main p')].find(p=>p.textContent===label).parentElement.parentElement);const details=[...document.querySelectorAll('main button')].find(b=>b.textContent.trim()==='Details'),bar=groups[0].closest('.glass-panel').getBoundingClientRect();return {chart:[...root.firstElementChild.children].map(e=>{const r=e.getBoundingClientRect();return {text:e.innerText,inside:r.left>=c.left-1&&r.right<=c.right+1}}),summary:[...groups,details].map(e=>{const r=e.getBoundingClientRect();return {text:e.innerText,inside:r.left>=bar.left-1&&r.right<=bar.right+1}})}})()`);
+    assert.ok(row.tradingHeaders.chart.every(g=>g.inside),'chart header stays inside '+width);assert.ok(row.tradingHeaders.summary.every(g=>g.inside),'portfolio cash and Details stay inside '+width);
+    const stored=await p.evaluate(`localStorage.getItem('tradehq_portfolio')`);
+    await p.evaluate(`[...document.querySelectorAll('main button')].find(b=>b.textContent.trim()==='Details').click();true`);
+    await p.wait(`document.querySelector('main').innerText.includes('Active holdings')&&document.querySelector('main').innerText.includes('Total executed')`);
+    assert.equal(await p.evaluate(`localStorage.getItem('tradehq_portfolio')`),stored,'Details preserves own guest portfolio');row.detailsPreservesPortfolio=true;
+    if(path==='/trade/shib'&&[360,1280].includes(width)){await p.evaluate(`[...document.querySelectorAll('main p')].find(p=>p.textContent==='Total Value').closest('.glass-panel').scrollIntoView({block:'center'});true`);await pause(150);await p.screenshot(new URL('evidence/pr220-portfolio-summary-'+width+'.png',root).pathname);}
+    await p.evaluate(`[...document.querySelectorAll('main button')].find(b=>b.textContent.trim()==='Details').click();true`);
+    assert.ok(row.chart.ticks.every(t=>t.inside),'chart labels stay inside '+width);assert.ok(row.chart.ticks.some(t=>Number(t.text.replace(/[$,]/g,''))>0),'chart retains positive tiny labels '+width);assert.ok(new Set(row.chart.ticks.map(t=>t.text)).size>=2,'chart has distinct labels '+width);
+    await p.evaluate("document.querySelector('main .recharts-wrapper').scrollIntoView({block:'center'});true");await pause(150);
+    const box=await p.evaluate("(()=>{const r=document.querySelector('main .recharts-wrapper').getBoundingClientRect();return {x:r.left+r.width*.65,y:r.top+r.height*.5}})()");await p.send('Input.dispatchMouseEvent',{type:'mouseMoved',...box});await p.wait("!!document.querySelector('main .recharts-tooltip-item-value')");row.chart.tooltip=await p.evaluate("document.querySelector('main .recharts-tooltip-item-value').textContent");assert.ok(Number(row.chart.tooltip.replace(/[$,]/g,''))>0,'chart tooltip retains positive price '+width);await p.send('Input.dispatchMouseEvent',{type:'mouseMoved',x:0,y:0});
+   }
+   rows.push(row);
+   if([360,1280].includes(width)&&['/niche/shib','/niche/btc','/trade/shib'].includes(path)){
+    await p.evaluate(path==='/trade/shib'?"document.querySelector('main .recharts-wrapper').scrollIntoView({block:'center'});true":"document.querySelector('main table').scrollIntoView({block:'center'});true");await pause(150);await p.screenshot(new URL(`evidence/pr220-${path.slice(1).replace('/','-')}-${width}.png`,root).pathname);
+   }
+   console.log('PASS '+path+' '+width);
+  }
+ }
+ assert.deepEqual(blocked,[]);assert.deepEqual(errors,[]);
+}finally{writeFileSync(new URL('evidence/PR220-PREVIEW-BROWSER.json',root),JSON.stringify({checkedAt:new Date().toISOString(),sha,origin,scope:'Actual anonymous preview with native provider SHA binding; no trade/account submissions. Positive-label/tooltip check does not certify financial/chart-data generation.',rows,blockedMutationAttempts:blocked,runtimeErrors:errors},null,2)+'\n');await p.close();}

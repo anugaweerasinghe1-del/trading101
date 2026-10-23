@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-10-23T08:53:00.663249+00:00",
+  "sha": "4a3c2dd9e0012f18cbb060f870c4ee4c99bf4ad7",
+  "runId": 39926874165,
+  "jobId": 120325317275,
+  "conclusion": "failure",
+  "phase": "Existing phase4 selector/trade flow, before newly added phase6 FAQ tests",
+  "selectedLines": [
+    "2026-10-23T08:48:20.9290049Z BROWSER_NAVIGATE [isolated local fixture]/trade/gbpusd",
+    "2026-10-23T08:48:21.8078000Z BROWSER_NAVIGATE [isolated local fixture]/trade/gold",
+    "2026-10-23T08:48:22.6760176Z BROWSER_NAVIGATE [isolated local fixture]/trade/oil",
+    "2026-10-23T08:48:43.9537186Z PASS real Chromium: 155 compiled route visits (155 URLs \u00d7 matrix phase 3 only), canonical/H1/content parity and overflow. Native courses use read-only published fixtures, not production services.",
+    "2026-10-23T08:48:53.9527453Z Fixture HTTPS fulfilment: CDP timeout: Fetch.fulfillRequest",
+    "2026-10-23T08:48:54.5061280Z BROWSER_NAVIGATE [isolated local fixture]/trade",
+    "2026-10-23T08:48:55.6434165Z BROWSER_NAVIGATE [isolated local fixture]/trade/btc",
+    "2026-10-23T08:48:57.5099767Z Error: Inspected target navigated or closed"
+  ],
+  "interpretation": "Browser transport failed with inspected target navigated or closed. Exact cause not established. No product assertion bypass; complete coherent rerun requested, not a partial failed-job rerun. No confirmed new site defect inferred."
+}

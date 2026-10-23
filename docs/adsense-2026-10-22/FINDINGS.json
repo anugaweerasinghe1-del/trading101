@@ -48,12 +48,15 @@
       "category": "Protected CI credential binding",
       "adsenseRelevance": "Operational verification limitation, not a public-content policy finding",
       "state": "BLOCKED_REQUIRES_OWNER_ACTION",
-      "observed": "Fresh full dispatch39789844231 passes required CI, then Cloudflare account token verification returnsHTTP401/code1000. Current cloud environment Pages project read also401; native Vercel production read200 READY exact main.",
+      "observed": "Cloudflare native projectGET HTTP401/error10000 in cloudenvironment09:30andGitHubActions10:01; Vercelboth200/READY exactAA. BothtokenbindingsconfiguredbutCloudflareauthrejected.",
       "proposedFix": "Owner securely replaces CLOUDFLARE_API_TOKEN with active correct-account token in environment settings and GitHub Actions. No values in chat. Then verify native APIs and complete workflow.",
       "protectedArea": "Production secrets/API credentials",
       "risk": "Incorrect token/scope can impair release/recovery checks. No DNS, database, deployment token or infrastructure ownership change proposed.",
       "rollback": "Restore the prior repository secret binding if the owner retains it securely; rerun the read-only monitor. No production data changes.",
-      "evidence": "evidence/PR212-MONITOR-DIAGNOSIS.json"
+      "evidence": "evidence/PR212-MONITOR-DIAGNOSIS.json",
+      "latestObservationEvidence": "evidence/FINAL-PROVIDER-BINDINGS-20261023.json",
+      "latestObservedAt": "2026-10-23T09:30:18.139656+00:00",
+      "githubBindingEvidence": "evidence/GITHUB-PROVIDER-BINDING-DIAGNOSTIC.json"
     },
     {
       "id": "THQ-003",
@@ -63,7 +66,7 @@
       "urls": [
         "https://www.thetradehq.com/contact"
       ],
-      "observed": "Contact links say Courses \u2014 the four structured tracks, with quizzes and completion badges. The settled catalog contains six tracks and26 lessons.",
+      "observed": "Contact links say Courses — the four structured tracks, with quizzes and completion badges. The settled catalog contains six tracks and26 lessons.",
       "expected": "Avoid a stale fixed catalog count or use current catalog data.",
       "rootCause": "Hardcoded count in src/pages/Contact.tsx:299 predates two published tracks.",
       "proposedFix": "Describe the structured courses without a hardcoded count, retaining the same link.",
@@ -73,12 +76,13 @@
       "rollback": "Reviewed revert of that text fragment.",
       "releaseOrder": "Prepare separately; release only after current course fix gate complete.",
       "pr": 214,
-      "candidateSHA": "1139acbed2a58fca4864d2841405bd5a721bbe5a",
+      "candidateSHA": "36c8e3ae9c7c5f29b0a4df63c2e3439beebd540d",
       "localValidation": "Updated CloudflarebuildPASS; actualCloudflarepreview8pagesx5widthsPASS",
       "mergeAllowed": false,
       "mergeHold": "Previous release cycle and native Cloudflare credential repair.",
       "exactHeadRequiredChecks": "PASS",
-      "previewEvidence": "evidence/PR214-UPDATED-PREVIEW-BROWSER.json"
+      "previewEvidence": "evidence/PR214-FINAL-PREVIEW-BROWSER.json",
+      "actualPreview": "13affected/representativepages x5widths=65PASS; source152storage/59pluralroutes distinguished from fresh browser count. Visible/schema answers corrected."
     },
     {
       "id": "THQ-004",
@@ -107,12 +111,13 @@
       "evidence": "evidence/contact--trader--1280-8.png final panel; findings/PUBLISHER-COPY.md",
       "rollback": "Reviewed revert of the text separator.",
       "pr": 214,
-      "candidateSHA": "1139acbed2a58fca4864d2841405bd5a721bbe5a",
+      "candidateSHA": "36c8e3ae9c7c5f29b0a4df63c2e3439beebd540d",
       "localValidation": "Updated CloudflarebuildPASS; actualCloudflarepreview8pagesx5widthsPASS",
       "mergeAllowed": false,
       "mergeHold": "Previous release cycle and native Cloudflare credential repair.",
       "exactHeadRequiredChecks": "PASS",
-      "previewEvidence": "evidence/PR214-UPDATED-PREVIEW-BROWSER.json"
+      "previewEvidence": "evidence/PR214-FINAL-PREVIEW-BROWSER.json",
+      "actualPreview": "13affected/representativepages x5widths=65PASS; source152storage/59pluralroutes distinguished from fresh browser count. Visible/schema answers corrected."
     },
     {
       "id": "THQ-005",
@@ -194,10 +199,11 @@
       "rollback": "Reviewed revert of one punctuation literal.",
       "mergeAllowed": false,
       "releaseHold": "Current Cloudflare native credential401 and serial verification.",
-      "candidateSHA": "1139acbed2a58fca4864d2841405bd5a721bbe5a",
+      "candidateSHA": "36c8e3ae9c7c5f29b0a4df63c2e3439beebd540d",
       "localValidation": "Updated CloudflarebuildPASS; actualCloudflarepreview8pagesx5widthsPASS",
       "exactHeadRequiredChecks": "PASS",
-      "previewEvidence": "evidence/PR214-UPDATED-PREVIEW-BROWSER.json"
+      "previewEvidence": "evidence/PR214-FINAL-PREVIEW-BROWSER.json",
+      "actualPreview": "13affected/representativepages x5widths=65PASS; source152storage/59pluralroutes distinguished from fresh browser count. Visible/schema answers corrected."
     },
     {
       "id": "THQ-008",
@@ -280,7 +286,7 @@
         "https://www.thetradehq.com/sectors/forex-currencies",
         "https://www.thetradehq.com/sectors/commodities"
       ],
-      "observed": "Actual35page-widthstates overlap32.34\u201369px;forexdesktopimagepersonallyviewed.",
+      "observed": "Actual35page-widthstates overlap32.34–69px;forexdesktopimagepersonallyviewed.",
       "fix": "SharedSectorPillar main top padding32to112px;bottomspacing/data/metadataunchanged.",
       "risk": "Lowlayoutonly;no financialdata/logicchanges.",
       "test": "CSS-readyoldcompiledregressionfailsbounds;candidateCFbuild/fullphase6PASSatall35states. InitialhelperCSSreadinessfailurepreservedseparately.",
@@ -291,16 +297,166 @@
       "releaseHold": "Cloudflare native authentication401; serial production verification required.",
       "actualPreview": "All35sector-widthstateszerooverlapanddocumentoverflow;360/1280foreximagesinspected",
       "previewEvidence": "evidence/PR219-PREVIEW-BROWSER.json"
+    },
+    {
+      "id": "THQ-012",
+      "severity": "P2",
+      "category": "Positive tiny guide/chart price values displayed as zero",
+      "urls": [
+        "https://www.thetradehq.com/niche/shib",
+        "https://www.thetradehq.com/trade/shib"
+      ],
+      "observed": "Actual fresh production stat displays0.0000 although retained catalog price is0.00001245; screenshot personally viewed. Fresh terminal chart has four$0axis labels while main quote remainspositive; desktop screenshot personallyviewed.",
+      "fix": "Use shared precise formatter for tiny reference/axis/tooltip values; size gutter from formatted strings. Other numeric data, series generation and financial calculations preserved.",
+      "rootCause": "Guide generator always used toFixed(4) below1, bypassing shared tiny-price formatter.",
+      "risk": "Low display-only; no numeric source prices, calculations, fees, balances, orders or records altered.",
+      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "pr": 220,
+      "mergeAllowed": false,
+      "releaseHold": "Cloudflare native401 and required serial production verification",
+      "evidence": "evidence/NICHE-REFERENCE-BEFORE.json",
+      "test": "Production reproduction; old compiled regressions fail; final CFbuild/app TypeScript/fullphase6/exact-head3CI+PG PASS; nativeVercelREADY/trustedCFpreviewSUCCESS and actual35statesPASS.",
+      "rollback": "Reviewed revert of guide display/copy and regression; no data rollback.",
+      "adsenseRelevance": "Reader trust/accuracy quality issue; not asserted to be a distinct Publisher Policy violation.",
+      "candidateSHA": "8a04b6d35726521522c86e035d5fe73fc83ed982",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR220-PREVIEW-BROWSER.json",
+      "actualPreview": "35statesPASS:5guides plusSHIBterminal anddefaulttrade at5widths. Quote/axis/header/summary/Details checks; ownportfolio record unchanged."
+    },
+    {
+      "id": "THQ-013",
+      "severity": "P3",
+      "category": "Bitcoin guide cites correlation with itself as a price driver",
+      "urls": [
+        "https://www.thetradehq.com/niche/btc"
+      ],
+      "observed": "Actual production mentor text says correlation with Bitcoin; visible Bitcoin FAQ says Bitcoin correlation. This is tautological, not useful asset explanation.",
+      "fix": "BTC-only copy retains network/regulation/liquidity/market factors and removes self-correlation. Other crypto wording unchanged.",
+      "rootCause": "Generic crypto copy interpolated into Bitcoin page without a Bitcoin case.",
+      "risk": "Low static copy; FAQ structured data consumes the same text. No financial-engine change.",
+      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "pr": 220,
+      "mergeAllowed": false,
+      "releaseHold": "Cloudflare native401 and required serial production verification",
+      "evidence": "evidence/NICHE-REFERENCE-BEFORE.json",
+      "test": "Production reproduction; old compiled regressions fail; final CFbuild/app TypeScript/fullphase6/exact-head3CI+PG PASS; nativeVercelREADY/trustedCFpreviewSUCCESS and actual35statesPASS.",
+      "rollback": "Reviewed revert of guide display/copy and regression; no data rollback.",
+      "adsenseRelevance": "Reader trust/accuracy quality issue; not asserted to be a distinct Publisher Policy violation.",
+      "candidateSHA": "8a04b6d35726521522c86e035d5fe73fc83ed982",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR220-PREVIEW-BROWSER.json",
+      "actualPreview": "35statesPASS:5guides plusSHIBterminal anddefaulttrade at5widths. Quote/axis/header/summary/Details checks; ownportfolio record unchanged."
+    },
+    {
+      "id": "THQ-014",
+      "severity": "P2",
+      "category": "Generated asset FAQs imply browser-only storage for all portfolios",
+      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "pr": 214,
+      "candidateSHA": "36c8e3ae9c7c5f29b0a4df63c2e3439beebd540d",
+      "urlsEvidence": "evidence/FAQ-STORAGE-AFFECTED-ROUTES.json",
+      "observed": "Fresh production SUI expanded answer at360/1280 says your portfolio is stored in your browser. Existing live Privacy page explicitly distinguishes guest browser storage from signed-in Supabase cash/positions/server trades. The unconditional statement misrepresents optional account data handling. Source generator reaches152of170assets.",
+      "rootCause": "Generic no-real-money answer includes a browser-storage statement without guest/account qualification.",
+      "fix": "Remove only the inaccurate storage clause from this FAQ; retain virtual-currency/no-real-funds explanation. Same getAssetFAQs text feeds visible answers and FAQ JSON-LD.",
+      "risk": "Low static copy; no privacy-policy, consent, actual storage, account, auth, records or financial calculation changes.",
+      "test": "Exact-main compiled regression fails SUI storage assertion. Candidate build and five-category/10state FAQ browser regression in progress.",
+      "evidence": "evidence/FAQ-STORAGE-BEFORE.json",
+      "rollback": "Reviewed revert of one FAQ sentence and browser regression; no user-data rollback.",
+      "mergeAllowed": false,
+      "releaseHold": "Native Cloudflare credential401 and mandatory serial production verification.",
+      "adsenseRelevance": "Reader trust and accurate service description; not automatically a distinct Google Publisher Policy violation.",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR214-FINAL-PREVIEW-BROWSER.json",
+      "actualPreview": "13affected/representativepages x5widths=65PASS; source152storage/59pluralroutes distinguished from fresh browser count. Visible/schema answers corrected."
+    },
+    {
+      "id": "THQ-015",
+      "severity": "P2",
+      "category": "Mobile chart quote and refresh control clipped outside header",
+      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "pr": 220,
+      "candidateSHA": "8a04b6d35726521522c86e035d5fe73fc83ed982",
+      "urls": [
+        "https://www.thetradehq.com/trade/shib"
+      ],
+      "observed": "Fresh production360px header: card right343, quote/refresh group right409.3125, clipping66.3125px. Screenshot personally viewed. Long quote and data-status groups cannot fit in one row.",
+      "rootCause": "Fixed single-row flex header retains intrinsic child widths without wrapping.",
+      "fix": "Allow header groups to wrap with a gap when insufficient space. Preserve quotes, timeframes, refresh behavior and all calculations.",
+      "risk": "Low interface-only; no numerical data, execution, financial calculations, accounts or records changed.",
+      "evidence": "evidence/MOBILE-CHART-HEADER-BEFORE.json",
+      "test": "Production reproduction; old compiled regressions fail; final CFbuild/app TypeScript/fullphase6/exact-head3CI+PG PASS; nativeVercelREADY/trustedCFpreviewSUCCESS and actual35statesPASS.",
+      "rollback": "Reviewed revert of header flex classes and regression; no data rollback.",
+      "adsenseRelevance": "Mobile usability quality issue, not asserted individual Publisher Policy violation.",
+      "mergeAllowed": false,
+      "releaseHold": "Native Cloudflare401 and mandatory serial production verification",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR220-PREVIEW-BROWSER.json",
+      "actualPreview": "35statesPASS:5guides plusSHIBterminal anddefaulttrade at5widths. Quote/axis/header/summary/Details checks; ownportfolio record unchanged."
+    },
+    {
+      "id": "THQ-016",
+      "severity": "P2",
+      "category": "Mobile portfolio summary hides cash and Details control",
+      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "pr": 220,
+      "candidateSHA": "8a04b6d35726521522c86e035d5fe73fc83ed982",
+      "urls": [
+        "https://www.thetradehq.com/trade/shib"
+      ],
+      "observed": "Fresh production360px card right344 while cash group right440.59375 and Details control right541.546875. Own anonymous100000guest values; screenshot personally viewed. Available cash and Details are clipped by overflow-hidden summary.",
+      "rootCause": "Summary uses a nonwrapping single-row flex group including both monetary stats and Details.",
+      "fix": "Stack summary groups and Details on small screens; retain existing row layout from sm breakpoint. Hide only the decorative separator in stacked layout.",
+      "risk": "Low responsive classes only. Monetary strings, all calculations, balances, positions, records and Details behavior preserved.",
+      "evidence": "evidence/MOBILE-PORTFOLIO-BAR-BEFORE.json",
+      "test": "Production reproduction; old compiled regressions fail; final CFbuild/app TypeScript/fullphase6/exact-head3CI+PG PASS; nativeVercelREADY/trustedCFpreviewSUCCESS and actual35statesPASS.",
+      "rollback": "Reviewed revert of responsive classes and regression; no record/data rollback.",
+      "mergeAllowed": false,
+      "releaseHold": "Native Cloudflare401 and required serial production verification.",
+      "adsenseRelevance": "Public mobile usability issue, not asserted individual Google Publisher Policy violation.",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR220-PREVIEW-BROWSER.json",
+      "actualPreview": "35statesPASS:5guides plusSHIBterminal anddefaulttrade at5widths. Quote/axis/header/summary/Details checks; ownportfolio record unchanged."
+    },
+    {
+      "id": "THQ-017",
+      "severity": "P3",
+      "category": "Generated FAQ irregular category plurals are misspelled",
+      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "pr": 214,
+      "candidateSHA": "36c8e3ae9c7c5f29b0a4df63c2e3439beebd540d",
+      "evidence": "evidence/FAQ-PLURALS-BEFORE.json",
+      "observed": "Visible SUI FAQ questions/answer use cryptocurrencys; the same label+s generator emits commoditys for commodity assets. Source-derived affected route count recorded separately.",
+      "fix": "Use cryptocurrencies and commodities for those categories, retaining regular plurals and singular category labels.",
+      "risk": "Low static wording only, no controls/data/financial/privacy behavior change.",
+      "test": "Candidate build/type/phase6 and latest CI/actual-preview refresh required after this minor copy addition. No new unit test mirroring the string change.",
+      "rollback": "Reviewed revert, no data rollback.",
+      "mergeAllowed": false,
+      "releaseHold": "Native Cloudflare401 and serial production verification",
+      "adsenseRelevance": "Minor proofreading quality, not asserted AdSense policy blocker",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR214-FINAL-PREVIEW-BROWSER.json",
+      "actualPreview": "13affected/representativepages x5widths=65PASS; source152storage/59pluralroutes distinguished from fresh browser count. Visible/schema answers corrected."
+    },
+    {
+      "id": "OPS-002",
+      "severity": "P2",
+      "category": "Existing main CI guide metadata readiness race",
+      "state": "FIX_TESTED_IN_DRAFT214_NOT_MERGED",
+      "pr": 214,
+      "candidateSHA": "36c8e3ae9c7c5f29b0a4df63c2e3439beebd540d",
+      "evidence": "evidence/MAIN-VALIDATION-20261023.json",
+      "fix": "Wait for robots/canonical tag presence after hydration before retaining exact original assertions. Finalcandidate3requiredCI+PGPASS.",
+      "scope": "Operational test timing, not another reproduced site defect. No release gate bypass."
     }
   ],
-  "updatedAt": "2026-10-23T01:27:03.455319+00:00",
+  "updatedAt": "2026-10-23T10:05:37.373850+00:00",
   "counts": {
-    "siteFindings": 11,
-    "P2": 4,
-    "P3": 7,
+    "siteFindings": 17,
+    "P2": 8,
+    "P3": 9,
     "publiclyRepaired": 1,
-    "preparedNotMerged": 10,
-    "separateOperationalBlockers": 1
+    "preparedNotMerged": 16,
+    "separateOperationalBlockers": 2
   },
   "investigations": [
     {

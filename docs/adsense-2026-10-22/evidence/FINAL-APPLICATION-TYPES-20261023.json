@@ -1,0 +1,19 @@
+{
+  "scope": "Explicit app-project TypeScript exit0 for the tested application trees; final intervening commits change browser-test code only. CI separately validates exact final commits.",
+  "command": "npx tsc --noEmit -p tsconfig.app.json",
+  "candidates": [
+    {
+      "pr": 214,
+      "finalSHA": "36c8e3ae9c7c5f29b0a4df63c2e3439beebd540d",
+      "appTreeTypedAtSourceEqualParent": "0c0fdad8680b77887ce27cc91c7217227f75e3e8",
+      "exitCode": 0,
+      "log": "evidence/publisher-copy-with-faq-app-project-types.txt"
+    },
+    {
+      "pr": 220,
+      "finalSHA": "8a04b6d35726521522c86e035d5fe73fc83ed982",
+      "exitCode": 0,
+      "log": "evidence/niche-reference-app-project-types.txt"
+    }
+  ]
+}

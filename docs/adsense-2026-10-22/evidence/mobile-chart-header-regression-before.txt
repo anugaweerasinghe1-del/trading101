@@ -1,0 +1,19 @@
+BROWSER_NAVIGATE http://127.0.0.1:35723/trade/shib
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: SHIB symbol, price and refresh control stay inside chart header at 360px
+
+false !== true
+
+    at file:///workspace/trading101-niche-fix/scripts/verify-publisher-browser.mjs:245:12 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

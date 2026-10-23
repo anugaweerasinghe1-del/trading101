@@ -1,0 +1,19 @@
+BROWSER_NAVIGATE http://127.0.0.1:42461/trade/sui
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: sui: do not claim all signed-in portfolio records remain browser-only
+
+true !== false
+
+    at file:///workspace/trading101-copy-fix/scripts/verify-publisher-browser.mjs:234:14 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: true,
+  expected: false,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0
