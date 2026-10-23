@@ -1,0 +1,22 @@
+BROWSER_NAVIGATE http://127.0.0.1:46537/about
+BROWSER_NAVIGATE http://127.0.0.1:46537/about
+BROWSER_NAVIGATE http://127.0.0.1:46537/about
+BROWSER_NAVIGATE http://127.0.0.1:46537/about
+BROWSER_NAVIGATE http://127.0.0.1:46537/about
+BROWSER_NAVIGATE http://127.0.0.1:46537/learn
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Learning hub includes both published tracks alongside four bundled courses
+    at waitUntil (file:///workspace/trading101-validation/scripts/verify-publisher-browser.mjs:180:12)
+    at async file:///workspace/trading101-validation/scripts/verify-publisher-browser.mjs:236:3 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: undefined,
+  expected: undefined,
+  operator: 'fail',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

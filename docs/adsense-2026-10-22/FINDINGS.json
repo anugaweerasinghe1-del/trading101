@@ -198,15 +198,117 @@
       "localValidation": "Updated CloudflarebuildPASS; actualCloudflarepreview8pagesx5widthsPASS",
       "exactHeadRequiredChecks": "PASS",
       "previewEvidence": "evidence/PR214-UPDATED-PREVIEW-BROWSER.json"
+    },
+    {
+      "id": "THQ-008",
+      "severity": "P3",
+      "category": "Published courses missing from Learn hub",
+      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "pr": 217,
+      "candidateSHA": "a74f57a4fd65463441a0421ecf3fdffa3a08698d",
+      "urls": [
+        "https://www.thetradehq.com/learn"
+      ],
+      "observed": "FreshpublicLearnshows4tracks/20lessons andomits2publishedcards;actualcatalog6/26.",
+      "fix": "Useexistingreadonlypubliccatalog for cards/counts;bundledfallbackretained.",
+      "risk": "Lowdisplayonly;progress,records,recommendationlogicandfinancial/auth unchanged.",
+      "test": "Oldcompiledregressionfails;candidateCFbuild,appTypeScript/fullphase6PASS. Actualpreview6cards/26lessons5widthsPASS.",
+      "exactHeadRequiredChecks": "PASS",
+      "evidence": "evidence/PR217-PREVIEW-BROWSER.json",
+      "rollback": "Reviewedrevert,no data rollback.",
+      "mergeAllowed": false,
+      "releaseHold": "Cloudflare native authentication401; serial production verification required."
+    },
+    {
+      "id": "THQ-009",
+      "severity": "P2",
+      "category": "Final legacy quiz correction and explanation hidden",
+      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "pr": 218,
+      "candidateSHA": "ec353f373ef7c5e6ef21d8c91869a9e7302cfa79",
+      "urls": [
+        "https://www.thetradehq.com/learn/1",
+        "https://www.thetradehq.com/learn/2",
+        "https://www.thetradehq.com/learn/3",
+        "https://www.thetradehq.com/learn/4",
+        "https://www.thetradehq.com/learn/5",
+        "https://www.thetradehq.com/learn/6"
+      ],
+      "observed": "All6legacyquizzesjumptosummaryonfinalsubmit,skipping6of20authoredexplanations.",
+      "fix": "Separate summary state;finalfeedbackremainsuntilSeeResults,score/backnavigationpreserved.",
+      "risk": "LowtransientReactUI;no userprogress/account/server records changed.",
+      "test": "Oldcompiledfailureatfinalexplanation;candidateCFbuild/appTypeScript/fullphase6PASS. Actualcandidateall6quizzes20questions showsfinalfeedbackbeforeexplicitresults;zero mutationattempts/errors.",
+      "exactHeadRequiredChecks": "PASS",
+      "evidence": "evidence/PR218-PREVIEW-BROWSER.json",
+      "rollback": "Reviewedrevert,nodata rollback.",
+      "mergeAllowed": false,
+      "releaseHold": "Cloudflare native authentication401; serial production verification required."
+    },
+    {
+      "id": "THQ-010",
+      "severity": "P3",
+      "category": "Ambiguous rebalancing multiple-choice question",
+      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "pr": 218,
+      "candidateSHA": "ec353f373ef7c5e6ef21d8c91869a9e7302cfa79",
+      "urls": [
+        "https://www.thetradehq.com/learn/4"
+      ],
+      "observed": "Prompt asks an examplecalendar/driftrule, butDaily/WeeklyarealsovalidexamplesbesideskeyedQuarterly.",
+      "fix": "Onequalifiedaccuratestatement andthreefalseuniversalclaims;correctindex2/explanationunchanged.",
+      "risk": "Lowauthoredquizcopy;no score-history mapping reassigned.",
+      "test": "Actualoldquestionread;candidatequestionandallfeedbackread/inspected;fullphase6testsactualquizflow.",
+      "exactHeadRequiredChecks": "PASS",
+      "evidence": "evidence/LEGACY-QUIZ-BEFORE.json; evidence/legacy-quiz-preview-4-1280.png",
+      "rollback": "Reviewedrevert,nodata rollback.",
+      "mergeAllowed": false,
+      "releaseHold": "Cloudflare native authentication401; serial production verification required."
+    },
+    {
+      "id": "THQ-011",
+      "severity": "P3",
+      "category": "Sector breadcrumbs obscured by fixed navigation",
+      "state": "FIX_TESTED_PREVIEW_VERIFIED",
+      "pr": 219,
+      "candidateSHA": "ee1659104092fb603507165d2f9b8fbec2bcbda8",
+      "urls": [
+        "https://www.thetradehq.com/sectors/ai-tech",
+        "https://www.thetradehq.com/sectors/crypto-defi",
+        "https://www.thetradehq.com/sectors/mega-cap",
+        "https://www.thetradehq.com/sectors/tech-giants",
+        "https://www.thetradehq.com/sectors/etf-indices",
+        "https://www.thetradehq.com/sectors/forex-currencies",
+        "https://www.thetradehq.com/sectors/commodities"
+      ],
+      "observed": "Actual35page-widthstates overlap32.34\u201369px;forexdesktopimagepersonallyviewed.",
+      "fix": "SharedSectorPillar main top padding32to112px;bottomspacing/data/metadataunchanged.",
+      "risk": "Lowlayoutonly;no financialdata/logicchanges.",
+      "test": "CSS-readyoldcompiledregressionfailsbounds;candidateCFbuild/fullphase6PASSatall35states. InitialhelperCSSreadinessfailurepreservedseparately.",
+      "exactHeadRequiredChecks": "PASS",
+      "evidence": "evidence/SECTOR-HEADER-BEFORE.json",
+      "rollback": "Reviewedrevert,nodata rollback.",
+      "mergeAllowed": false,
+      "releaseHold": "Cloudflare native authentication401; serial production verification required.",
+      "actualPreview": "All35sector-widthstateszerooverlapanddocumentoverflow;360/1280foreximagesinspected",
+      "previewEvidence": "evidence/PR219-PREVIEW-BROWSER.json"
     }
   ],
-  "updatedAt": "2026-10-22T16:20:03.948325+00:00",
+  "updatedAt": "2026-10-23T01:27:03.455319+00:00",
   "counts": {
-    "siteFindings": 7,
-    "P2": 3,
-    "P3": 4,
+    "siteFindings": 11,
+    "P2": 4,
+    "P3": 7,
     "publiclyRepaired": 1,
-    "preparedNotMerged": 6,
+    "preparedNotMerged": 10,
     "separateOperationalBlockers": 1
-  }
+  },
+  "investigations": [
+    {
+      "id": "INV-FX01",
+      "state": "OPEN_NOT_COUNTED_AS_CONFIRMED_ENGINE_DEFECT",
+      "category": "Forex quoteunits versusabstractUSDpracticeaccounting",
+      "evidence": "findings/FOREX-UNIT-REVIEW.md; evidence/FX-PRIMARY-SOURCE.json",
+      "protectedBoundary": "No currency conversion, fees, positions or history changes without explicit owner approval. A precise display-only scope clarification can be investigated independently."
+    }
+  ]
 }

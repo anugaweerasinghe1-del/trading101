@@ -1,0 +1,22 @@
+BROWSER_NAVIGATE http://127.0.0.1:33507/about
+BROWSER_NAVIGATE http://127.0.0.1:33507/about
+BROWSER_NAVIGATE http://127.0.0.1:33507/about
+BROWSER_NAVIGATE http://127.0.0.1:33507/about
+BROWSER_NAVIGATE http://127.0.0.1:33507/about
+BROWSER_NAVIGATE http://127.0.0.1:33507/learn/1
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Every answer, including the final question, shows its explanation
+    at waitUntil (file:///workspace/trading101-validation/scripts/verify-publisher-browser.mjs:180:12)
+    at async file:///workspace/trading101-validation/scripts/verify-publisher-browser.mjs:260:7 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: undefined,
+  expected: undefined,
+  operator: 'fail',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

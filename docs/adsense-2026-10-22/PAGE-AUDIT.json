@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-22T16:24:18.715366+00:00",
+  "generatedAt": "2026-10-23T01:34:05.181279+00:00",
   "complete": false,
-  "mainBodiesRead": 197,
+  "mainBodiesRead": 222,
   "publicRoutes": 441,
   "rows": [
     {
@@ -4976,7 +4976,7 @@
       "path": "/learn",
       "category": "learn",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/learn",
         "url": "https://www.thetradehq.com/learn",
@@ -5020,16 +5020,27 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
+        "status": "MAIN_BODY_READ",
+        "assessment": "Mainbodyread, confirmed static four-track/20lesson discovery section and4fullcoursebadge disagree with six-trackcatalog; fresh actualbrowserreproduction in progressTHQ008. Guidednextlesson,9articles,6quickreads,21featuredglossarylinks andcountry/sector links provide useful routing. Allsubpages/conditionalrecommendations separatelystaged.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "PARTIAL_VISUAL_REVIEW",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "humanViewedWidths": [
+          1280
+        ],
+        "notes": [
+          "Actual production4course/20lessonheader and candidate6card/26lesson layouts inspected. Partial section only."
+        ],
+        "evidence": [],
+        "candidateViewedWidths": [
+          360,
+          1280
+        ]
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -5043,15 +5054,19 @@
         "Ad delivery and regional CMP not verified",
         "FAQ and quiz-result/control follow-up pending where present"
       ],
-      "specificFindingIds": [],
-      "findingStates": {}
+      "specificFindingIds": [
+        "THQ-008"
+      ],
+      "findingStates": {
+        "THQ-008": "FIX_TESTED_PREVIEW_VERIFIED"
+      }
     },
     {
       "url": "https://www.thetradehq.com/learn-trading-guide",
       "path": "/learn-trading-guide",
       "category": "learn-trading-guide",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/learn-trading-guide",
         "url": "https://www.thetradehq.com/learn-trading-guide",
@@ -5095,8 +5110,8 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
+        "status": "MAIN_BODY_READ",
+        "assessment": "Initialdefaultstatebodyread: sixmodules/0XP, illustrativeticker/sentiment, explicitnominal12%monthlycompounding/deductiononabsolutegrowth, no forecast. Inputs/results/conditionalmoduleandchallengeinteraction remain pending. Duplicate ticker text is scrollingvisualmarquee, not duplicatearticle.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -5126,7 +5141,7 @@
       "path": "/learn/1",
       "category": "learn",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/learn/1",
         "url": "https://www.thetradehq.com/learn/1",
@@ -5170,16 +5185,26 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
+        "status": "MAIN_BODY_READ",
+        "assessment": "All4subtopics read:ownership/ETFmandate,quote/BidAsk/OHLC,market-limit-stop tradeoffs andNasdaqsession/timezone qualifications.0.20spreadx10=$2loss,OHLC100/105/99/103body3range6. Fivequestionsand allfiveexplanationsread(acrossproduction/candidate); no additional materialfactualerror established. Actual24subtopics/20questions reviewed across these6routes; fullpagevisual/sourceverification notcomplete.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "PARTIAL_VISUAL_REVIEW",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "humanViewedWidths": [
+          390
+        ],
+        "notes": [
+          "Actual production final score skips final feedback; candidate final answer/correction visible, partial conditional quiz state."
+        ],
+        "evidence": [],
+        "candidateViewedWidths": [
+          390
+        ]
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -5193,15 +5218,30 @@
         "Ad delivery and regional CMP not verified",
         "FAQ and quiz-result/control follow-up pending where present"
       ],
-      "specificFindingIds": [],
-      "findingStates": {}
+      "specificFindingIds": [
+        "THQ-009"
+      ],
+      "findingStates": {
+        "THQ-009": "FIX_TESTED_PREVIEW_VERIFIED"
+      },
+      "legacyConditionalReview": {
+        "actualSubtopicsRead": 4,
+        "actualQuizQuestionsRead": 5,
+        "productionExplanationsVisible": 4,
+        "candidateAllExplanationsRead": true,
+        "assessment": "All4subtopics read:ownership/ETFmandate,quote/BidAsk/OHLC,market-limit-stop tradeoffs andNasdaqsession/timezone qualifications.0.20spreadx10=$2loss,OHLC100/105/99/103body3range6. Fivequestionsand allfiveexplanationsread(acrossproduction/candidate); no additional materialfactualerror established.",
+        "evidence": "evidence/legacy-learning-20261023/lesson-1.json",
+        "candidateEvidence": "evidence/PR218-PREVIEW-BROWSER.json",
+        "fullPageVisualComplete": false,
+        "completeSourceCorroboration": false
+      }
     },
     {
       "url": "https://www.thetradehq.com/learn/2",
       "path": "/learn/2",
       "category": "learn",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/learn/2",
         "url": "https://www.thetradehq.com/learn/2",
@@ -5245,8 +5285,8 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
+        "status": "MAIN_BODY_READ",
+        "assessment": "All4subtopicsread:2%budgetnotuniversal,400units100to95=$2000pre-feeplannedloss,90gap=$4000;fixed300/100payoffs25%breakeven,5cost=>26.25%;twoequalholdingsfall20/rise10=>-5%,both-20=>-20%. Fivequestions/all5explanationsread; lastoneonlycandidatebecauseproductionflowomitsit. Actual24subtopics/20questions reviewed across these6routes; fullpagevisual/sourceverification notcomplete.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -5268,15 +5308,30 @@
         "Ad delivery and regional CMP not verified",
         "FAQ and quiz-result/control follow-up pending where present"
       ],
-      "specificFindingIds": [],
-      "findingStates": {}
+      "specificFindingIds": [
+        "THQ-009"
+      ],
+      "findingStates": {
+        "THQ-009": "FIX_TESTED_PREVIEW_VERIFIED"
+      },
+      "legacyConditionalReview": {
+        "actualSubtopicsRead": 4,
+        "actualQuizQuestionsRead": 5,
+        "productionExplanationsVisible": 4,
+        "candidateAllExplanationsRead": true,
+        "assessment": "All4subtopicsread:2%budgetnotuniversal,400units100to95=$2000pre-feeplannedloss,90gap=$4000;fixed300/100payoffs25%breakeven,5cost=>26.25%;twoequalholdingsfall20/rise10=>-5%,both-20=>-20%. Fivequestions/all5explanationsread; lastoneonlycandidatebecauseproductionflowomitsit.",
+        "evidence": "evidence/legacy-learning-20261023/lesson-2.json",
+        "candidateEvidence": "evidence/PR218-PREVIEW-BROWSER.json",
+        "fullPageVisualComplete": false,
+        "completeSourceCorroboration": false
+      }
     },
     {
       "url": "https://www.thetradehq.com/learn/3",
       "path": "/learn/3",
       "category": "learn",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/learn/3",
         "url": "https://www.thetradehq.com/learn/3",
@@ -5320,8 +5375,8 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
+        "status": "MAIN_BODY_READ",
+        "assessment": "All4subtopicsread:OHLC/candledefinitions,exantelevelswithfailedbreaks,SMA/EMAalpha(.5)calculation,RSI2:1=>66.67,MACD2/hist.5;noforecastguarantee. Fourquestions/all4explanationsreadaftercandidatefix. Colorconventioniscommonconfiguredstyle,notglobalrule;no new materialmatherror. Actual24subtopics/20questions reviewed across these6routes; fullpagevisual/sourceverification notcomplete.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -5343,15 +5398,30 @@
         "Ad delivery and regional CMP not verified",
         "FAQ and quiz-result/control follow-up pending where present"
       ],
-      "specificFindingIds": [],
-      "findingStates": {}
+      "specificFindingIds": [
+        "THQ-009"
+      ],
+      "findingStates": {
+        "THQ-009": "FIX_TESTED_PREVIEW_VERIFIED"
+      },
+      "legacyConditionalReview": {
+        "actualSubtopicsRead": 4,
+        "actualQuizQuestionsRead": 4,
+        "productionExplanationsVisible": 3,
+        "candidateAllExplanationsRead": true,
+        "assessment": "All4subtopicsread:OHLC/candledefinitions,exantelevelswithfailedbreaks,SMA/EMAalpha(.5)calculation,RSI2:1=>66.67,MACD2/hist.5;noforecastguarantee. Fourquestions/all4explanationsreadaftercandidatefix. Colorconventioniscommonconfiguredstyle,notglobalrule;no new materialmatherror.",
+        "evidence": "evidence/legacy-learning-20261023/lesson-3.json",
+        "candidateEvidence": "evidence/PR218-PREVIEW-BROWSER.json",
+        "fullPageVisualComplete": false,
+        "completeSourceCorroboration": false
+      }
     },
     {
       "url": "https://www.thetradehq.com/learn/4",
       "path": "/learn/4",
       "category": "learn",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/learn/4",
         "url": "https://www.thetradehq.com/learn/4",
@@ -5395,16 +5465,24 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
+        "status": "MAIN_BODY_READ",
+        "assessment": "All4subtopicsread:normalizedillustrativeweights,50direct+20%of50fund=60issuerexposure,70%x-20%=-14%vs30%x-20%=-6%,160/40rebalance60/40requires40transfer. Twoquestions/all2explanationsread; ambiguouscalendaralternativesTHQ010 correctedincandidatewithoutchangingcorrectindex. Actual24subtopics/20questions reviewed across these6routes; fullpagevisual/sourceverification notcomplete.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "PARTIAL_VISUAL_REVIEW",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "humanViewedWidths": [],
+        "notes": [
+          "Candidate final rebalancing question, correction andSeeResults inspected. No production screenshot view claimed for this route."
+        ],
+        "evidence": [],
+        "candidateViewedWidths": [
+          1280
+        ]
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -5418,15 +5496,32 @@
         "Ad delivery and regional CMP not verified",
         "FAQ and quiz-result/control follow-up pending where present"
       ],
-      "specificFindingIds": [],
-      "findingStates": {}
+      "specificFindingIds": [
+        "THQ-009",
+        "THQ-010"
+      ],
+      "findingStates": {
+        "THQ-009": "FIX_TESTED_PREVIEW_VERIFIED",
+        "THQ-010": "FIX_TESTED_PREVIEW_VERIFIED"
+      },
+      "legacyConditionalReview": {
+        "actualSubtopicsRead": 4,
+        "actualQuizQuestionsRead": 2,
+        "productionExplanationsVisible": 1,
+        "candidateAllExplanationsRead": true,
+        "assessment": "All4subtopicsread:normalizedillustrativeweights,50direct+20%of50fund=60issuerexposure,70%x-20%=-14%vs30%x-20%=-6%,160/40rebalance60/40requires40transfer. Twoquestions/all2explanationsread; ambiguouscalendaralternativesTHQ010 correctedincandidatewithoutchangingcorrectindex.",
+        "evidence": "evidence/legacy-learning-20261023/lesson-4.json",
+        "candidateEvidence": "evidence/PR218-PREVIEW-BROWSER.json",
+        "fullPageVisualComplete": false,
+        "completeSourceCorroboration": false
+      }
     },
     {
       "url": "https://www.thetradehq.com/learn/5",
       "path": "/learn/5",
       "category": "learn",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/learn/5",
         "url": "https://www.thetradehq.com/learn/5",
@@ -5470,8 +5565,8 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
+        "status": "MAIN_BODY_READ",
+        "assessment": "All4subtopicsread:costfrequency,compounding10%twice=>21%,12times=>213.8%,down10/up10=>99/recovery11.1%,journal50x5=250/9000=2.78%,profitfactor40/10=4vsavgratio2. Twoquestions/all2explanationsread;explicitnotreal-moneyreadiness. Actual24subtopics/20questions reviewed across these6routes; fullpagevisual/sourceverification notcomplete.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -5493,15 +5588,30 @@
         "Ad delivery and regional CMP not verified",
         "FAQ and quiz-result/control follow-up pending where present"
       ],
-      "specificFindingIds": [],
-      "findingStates": {}
+      "specificFindingIds": [
+        "THQ-009"
+      ],
+      "findingStates": {
+        "THQ-009": "FIX_TESTED_PREVIEW_VERIFIED"
+      },
+      "legacyConditionalReview": {
+        "actualSubtopicsRead": 4,
+        "actualQuizQuestionsRead": 2,
+        "productionExplanationsVisible": 1,
+        "candidateAllExplanationsRead": true,
+        "assessment": "All4subtopicsread:costfrequency,compounding10%twice=>21%,12times=>213.8%,down10/up10=>99/recovery11.1%,journal50x5=250/9000=2.78%,profitfactor40/10=4vsavgratio2. Twoquestions/all2explanationsread;explicitnotreal-moneyreadiness.",
+        "evidence": "evidence/legacy-learning-20261023/lesson-5.json",
+        "candidateEvidence": "evidence/PR218-PREVIEW-BROWSER.json",
+        "fullPageVisualComplete": false,
+        "completeSourceCorroboration": false
+      }
     },
     {
       "url": "https://www.thetradehq.com/learn/6",
       "path": "/learn/6",
       "category": "learn",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/learn/6",
         "url": "https://www.thetradehq.com/learn/6",
@@ -5545,8 +5655,8 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
+        "status": "MAIN_BODY_READ",
+        "assessment": "All4subtopicsread:20%upthen20%down=>96not100,3closeSMA102/103/102.67/101lag,3xhistoricalvolume,put/call600/400=1.5,VIXexpectedvolatilitynotdirection. Twoquestions/all2explanationsread;no volume/intent inference or guaranteedregimeforecast. Actual24subtopics/20questions reviewed across these6routes; fullpagevisual/sourceverification notcomplete.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -5568,8 +5678,23 @@
         "Ad delivery and regional CMP not verified",
         "FAQ and quiz-result/control follow-up pending where present"
       ],
-      "specificFindingIds": [],
-      "findingStates": {}
+      "specificFindingIds": [
+        "THQ-009"
+      ],
+      "findingStates": {
+        "THQ-009": "FIX_TESTED_PREVIEW_VERIFIED"
+      },
+      "legacyConditionalReview": {
+        "actualSubtopicsRead": 4,
+        "actualQuizQuestionsRead": 2,
+        "productionExplanationsVisible": 1,
+        "candidateAllExplanationsRead": true,
+        "assessment": "All4subtopicsread:20%upthen20%down=>96not100,3closeSMA102/103/102.67/101lag,3xhistoricalvolume,put/call600/400=1.5,VIXexpectedvolatilitynotdirection. Twoquestions/all2explanationsread;no volume/intent inference or guaranteedregimeforecast.",
+        "evidence": "evidence/legacy-learning-20261023/lesson-6.json",
+        "candidateEvidence": "evidence/PR218-PREVIEW-BROWSER.json",
+        "fullPageVisualComplete": false,
+        "completeSourceCorroboration": false
+      }
     },
     {
       "url": "https://www.thetradehq.com/learn/article/crypto-vs-stocks",
@@ -6251,7 +6376,7 @@
       "path": "/learn/country",
       "category": "learn",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/learn/country",
         "url": "https://www.thetradehq.com/learn/country",
@@ -6295,8 +6420,8 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
+        "status": "MAIN_BODY_READ",
+        "assessment": "Fivecurrentcountrylinks with regulator/exchange labels andchangingreal-access/tax/remittance qualifiers; avoids operationallegaladvice. Countrydetailbodiesalreadyreadseparately.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -6701,7 +6826,7 @@
       "path": "/learn/crypto-vs-stocks",
       "category": "learn",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/learn/crypto-vs-stocks",
         "url": "https://www.thetradehq.com/learn/crypto-vs-stocks",
@@ -6745,8 +6870,8 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
+        "status": "MAIN_BODY_READ",
+        "assessment": "Canonical article redirect. Ownership/disclosure andmarketcalendar versuscryptoavailability differentiated; no permanentvolatilityranking/suitablefirstasset. NYSEstandard9:30-16ETnotallstockvenues. Samecontentalias, no independentarticleclaim.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -6776,7 +6901,7 @@
       "path": "/learn/how-to-build-a-portfolio",
       "category": "learn",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/learn/how-to-build-a-portfolio",
         "url": "https://www.thetradehq.com/learn/how-to-build-a-portfolio",
@@ -6820,8 +6945,8 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
+        "status": "MAIN_BODY_READ",
+        "assessment": "Canonical article redirect; repeatbodyread confirms arbitraryweightsthatsum100%, sector25%fall30%contributes7500loss, correlation/overlap and rebalancingcostlimits. Age is not suitability. Alias not new original article.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -6851,7 +6976,7 @@
       "path": "/learn/how-to-read-stock-charts",
       "category": "learn",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/learn/how-to-read-stock-charts",
         "url": "https://www.thetradehq.com/learn/how-to-read-stock-charts",
@@ -6895,8 +7020,8 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
+        "status": "MAIN_BODY_READ",
+        "assessment": "Canonical article redirect. CandlesOHLC, conventiondependentcolors, support/trend descriptions,50/200crosses andRSIthresholdsqualified. Mostpopularcandleclaim notcorroborated; nomaterialfinancialerror established. Same authoredarticleviaredirect.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -6926,7 +7051,7 @@
       "path": "/learn/risk-management-in-trading",
       "category": "learn",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/learn/risk-management-in-trading",
         "url": "https://www.thetradehq.com/learn/risk-management-in-trading",
@@ -6970,8 +7095,8 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
+        "status": "MAIN_BODY_READ",
+        "assessment": "Redirects to canonical article. Fee-inclusive sizing200shares loses1039versus192loses997.44atassumed95, not guaranteed stopcap.0.4x2-.6=.2R and25%with3Rbreakseven prefees. Same previously read canonical article, alias assessed individually.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -7001,7 +7126,7 @@
       "path": "/learn/stock-market-index-etfs",
       "category": "learn",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/learn/stock-market-index-etfs",
         "url": "https://www.thetradehq.com/learn/stock-market-index-etfs",
@@ -7045,8 +7170,8 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
+        "status": "MAIN_BODY_READ",
+        "assessment": "Redirects to canonical article. Re-read index methods, ETFshares versusunderlying shares, mandate/overlap/costlimits and arbitrary60/20/20practiceweights. Aliased content, not duplicate indexable publication. Primary current methodologies remain separate-source task.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -7076,7 +7201,7 @@
       "path": "/learn/trading-strategies-for-beginners",
       "category": "learn",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/learn/trading-strategies-for-beginners",
         "url": "https://www.thetradehq.com/learn/trading-strategies-for-beginners",
@@ -7120,8 +7245,8 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
+        "status": "MAIN_BODY_READ",
+        "assessment": "Canonical article redirect. Five distinct hypotheses with matchingcosts/dates:holding,swing,momentum,meanreversion,DCA. No guaranteedreal-readiness frompracticeweeks, no automaticstops. Countsevenarticlealiases asroutes, not extra originalpublications.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -7151,7 +7276,7 @@
       "path": "/learn/what-is-paper-trading",
       "category": "learn",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/learn/what-is-paper-trading",
         "url": "https://www.thetradehq.com/learn/what-is-paper-trading",
@@ -7195,8 +7320,8 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
+        "status": "MAIN_BODY_READ",
+        "assessment": "Redirects to canonical /learn/article/what-is-paper-trading. Actual rendered body re-read: virtual versus brokerage record, no universal practiceperiod, manualmarketorders/unsupportedstops and source/gap/liquidity limits. Same authored article via alias, not separate original content.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -10826,7 +10951,7 @@
       "path": "/niche/usd-jpy",
       "category": "niche",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/niche/usd-jpy",
         "url": "https://www.thetradehq.com/niche/usd-jpy",
@@ -10870,8 +10995,8 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
+        "status": "MAIN_BODY_READ",
+        "assessment": "Captured public main read: noindex utility with reference148.52, source/delay caveats, no buycall and3visibleFAQs aboutstudy/pricedrivers, not a detailed currentmarketanalysis. Quote/unit model reviewed separatelyINV-FX01; genericmacrotext doesnotvalidate FXconversion orP&L.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -10894,7 +11019,11 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "nativeVisibleFAQReview": {
+        "answersRead": 3,
+        "assessment": "Visible no-recommendation, practice workflow and interest-differential/macroeconomic driver answers read within actual captured main; distinct from collapsed-answer totals."
+      }
     },
     {
       "url": "https://www.thetradehq.com/niche/xlm",
@@ -11422,7 +11551,7 @@
       "path": "/sectors/ai-tech",
       "category": "sectors",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/sectors/ai-tech",
         "url": "https://www.thetradehq.com/sectors/ai-tech",
@@ -11466,8 +11595,8 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
+        "status": "MAIN_BODY_READ",
+        "assessment": "SixnamedAI/technologypracticecards, simulatedlabel, links to5othersectors. Distinct themed directory, not originalresearch. No same-sectorproofthatlargeAIcompaniesalwaysappreciate. LaterFAQ/visualreviewpending.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -11489,15 +11618,24 @@
         "Ad delivery and regional CMP not verified",
         "FAQ and quiz-result/control follow-up pending where present"
       ],
-      "specificFindingIds": [],
-      "findingStates": {}
+      "specificFindingIds": [
+        "THQ-011"
+      ],
+      "findingStates": {
+        "THQ-011": "FIX_TESTED_PREVIEW_VERIFIED"
+      },
+      "expandedFAQReview": {
+        "answersRead": 4,
+        "assessment": "Actual expanded answers read: this sector-specific count and terminal links, virtual-only/nofutureperformance, source-labelled asset research, and static cataloguereference ratherthancontinuouslivefeed. Doesnotsettleforexunitconventions orfunddiversificationclaims. Utilitydirectorycontext, not originalinvestmentresearch.",
+        "controlEvidence": "evidence/live-faq/94988464f69c155e.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/sectors/commodities",
       "path": "/sectors/commodities",
       "category": "sectors",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/sectors/commodities",
         "url": "https://www.thetradehq.com/sectors/commodities",
@@ -11541,8 +11679,8 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
+        "status": "MAIN_BODY_READ",
+        "assessment": "Fivecommoditypracticecards andgenericgoldinflationhedging/oilexposure/metalsindicatorphrase. This is utilitynavigation, notanassuredhedge; mustreadFAQandprobeunit/scope beforematerialclaimjudgment.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -11564,15 +11702,24 @@
         "Ad delivery and regional CMP not verified",
         "FAQ and quiz-result/control follow-up pending where present"
       ],
-      "specificFindingIds": [],
-      "findingStates": {}
+      "specificFindingIds": [
+        "THQ-011"
+      ],
+      "findingStates": {
+        "THQ-011": "FIX_TESTED_PREVIEW_VERIFIED"
+      },
+      "expandedFAQReview": {
+        "answersRead": 4,
+        "assessment": "Actual expanded answers read: this sector-specific count and terminal links, virtual-only/nofutureperformance, source-labelled asset research, and static cataloguereference ratherthancontinuouslivefeed. Doesnotsettleforexunitconventions orfunddiversificationclaims. Utilitydirectorycontext, not originalinvestmentresearch.",
+        "controlEvidence": "evidence/live-faq/40fb003befb30162.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/sectors/crypto-defi",
       "path": "/sectors/crypto-defi",
       "category": "sectors",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/sectors/crypto-defi",
         "url": "https://www.thetradehq.com/sectors/crypto-defi",
@@ -11616,8 +11763,8 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
+        "status": "MAIN_BODY_READ",
+        "assessment": "12namedcryptopracticecards, simulatedlabel; introductorystore-of-value/digitalrevolutionphrases aregenericcontext notactualhedge/returnguarantee. Pricechanges smallUSDroundingzero not exactnopercentagechange. Directoryutilitynotarticle.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -11639,15 +11786,24 @@
         "Ad delivery and regional CMP not verified",
         "FAQ and quiz-result/control follow-up pending where present"
       ],
-      "specificFindingIds": [],
-      "findingStates": {}
+      "specificFindingIds": [
+        "THQ-011"
+      ],
+      "findingStates": {
+        "THQ-011": "FIX_TESTED_PREVIEW_VERIFIED"
+      },
+      "expandedFAQReview": {
+        "answersRead": 4,
+        "assessment": "Actual expanded answers read: this sector-specific count and terminal links, virtual-only/nofutureperformance, source-labelled asset research, and static cataloguereference ratherthancontinuouslivefeed. Doesnotsettleforexunitconventions orfunddiversificationclaims. Utilitydirectorycontext, not originalinvestmentresearch.",
+        "controlEvidence": "evidence/live-faq/0be96c01e09034bc.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/sectors/etf-indices",
       "path": "/sectors/etf-indices",
       "category": "sectors",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/sectors/etf-indices",
         "url": "https://www.thetradehq.com/sectors/etf-indices",
@@ -11691,8 +11847,8 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
+        "status": "MAIN_BODY_READ",
+        "assessment": "SixETFcardswithindex/thematicfund examples, includingARKK. Genericdescriptionfundsprovidingdiversifiedexposure/buildbalancedportfolios needs qualifybecausefundmandates/concentrationvary; no specific guaranteedreturn. CompareactualFAQandlivecopybeforeadjudicating.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -11714,15 +11870,24 @@
         "Ad delivery and regional CMP not verified",
         "FAQ and quiz-result/control follow-up pending where present"
       ],
-      "specificFindingIds": [],
-      "findingStates": {}
+      "specificFindingIds": [
+        "THQ-011"
+      ],
+      "findingStates": {
+        "THQ-011": "FIX_TESTED_PREVIEW_VERIFIED"
+      },
+      "expandedFAQReview": {
+        "answersRead": 4,
+        "assessment": "Actual expanded answers read: this sector-specific count and terminal links, virtual-only/nofutureperformance, source-labelled asset research, and static cataloguereference ratherthancontinuouslivefeed. Doesnotsettleforexunitconventions orfunddiversificationclaims. Utilitydirectorycontext, not originalinvestmentresearch.",
+        "controlEvidence": "evidence/live-faq/2648c77cbf7aaf34.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/sectors/forex-currencies",
       "path": "/sectors/forex-currencies",
       "category": "sectors",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/sectors/forex-currencies",
         "url": "https://www.thetradehq.com/sectors/forex-currencies",
@@ -11766,16 +11931,27 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
+        "status": "MAIN_BODY_READ",
+        "assessment": "Fivepaircards show dollars universally includingUSDJPY148.5200. Quote-currency versusUSDpracticeaccount interpretation requires investigation; nofinancial-enginechangeauthorized. Simulateddataqualifier doesnotalone explainunits. Potentialfactualconcern, not yet countedconfirmed.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "PARTIAL_VISUAL_REVIEW",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "humanViewedWidths": [
+          1280
+        ],
+        "notes": [
+          "Actual breadcrumb visibly behindnavigation; candidate header/breadcrumb clear at both inspected widths. Forex-dollar unit semantics separatelyINV-FX01."
+        ],
+        "evidence": [],
+        "candidateViewedWidths": [
+          360,
+          1280
+        ]
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -11789,15 +11965,24 @@
         "Ad delivery and regional CMP not verified",
         "FAQ and quiz-result/control follow-up pending where present"
       ],
-      "specificFindingIds": [],
-      "findingStates": {}
+      "specificFindingIds": [
+        "THQ-011"
+      ],
+      "findingStates": {
+        "THQ-011": "FIX_TESTED_PREVIEW_VERIFIED"
+      },
+      "expandedFAQReview": {
+        "answersRead": 4,
+        "assessment": "Actual expanded answers read: this sector-specific count and terminal links, virtual-only/nofutureperformance, source-labelled asset research, and static cataloguereference ratherthancontinuouslivefeed. Doesnotsettleforexunitconventions orfunddiversificationclaims. Utilitydirectorycontext, not originalinvestmentresearch.",
+        "controlEvidence": "evidence/live-faq/36eb418a1639e20e.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/sectors/mega-cap",
       "path": "/sectors/mega-cap",
       "category": "sectors",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/sectors/mega-cap",
         "url": "https://www.thetradehq.com/sectors/mega-cap",
@@ -11841,8 +12026,8 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
+        "status": "MAIN_BODY_READ",
+        "assessment": "Sevencompanycards andexplicitfamiliarity/size do notguaranteereturns. Scope is selectedexamples, not acurrentmarketcapranking. Simulateddirectoryquotechangesnotlivefundamentals.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -11864,15 +12049,24 @@
         "Ad delivery and regional CMP not verified",
         "FAQ and quiz-result/control follow-up pending where present"
       ],
-      "specificFindingIds": [],
-      "findingStates": {}
+      "specificFindingIds": [
+        "THQ-011"
+      ],
+      "findingStates": {
+        "THQ-011": "FIX_TESTED_PREVIEW_VERIFIED"
+      },
+      "expandedFAQReview": {
+        "answersRead": 4,
+        "assessment": "Actual expanded answers read: this sector-specific count and terminal links, virtual-only/nofutureperformance, source-labelled asset research, and static cataloguereference ratherthancontinuouslivefeed. Doesnotsettleforexunitconventions orfunddiversificationclaims. Utilitydirectorycontext, not originalinvestmentresearch.",
+        "controlEvidence": "evidence/live-faq/b5f9f9b87a534f21.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/sectors/tech-giants",
       "path": "/sectors/tech-giants",
       "category": "sectors",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/sectors/tech-giants",
         "url": "https://www.thetradehq.com/sectors/tech-giants",
@@ -11916,8 +12110,8 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
+        "status": "MAIN_BODY_READ",
+        "assessment": "Tencompanycards spansearch,cloud,ecommerce,software; groupedpracticeutility overlapsAI/megacapbydesign. Doesnotproveindependentdiversification. Simulatedlabels, relatedsectornavigationpresent.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -11939,8 +12133,17 @@
         "Ad delivery and regional CMP not verified",
         "FAQ and quiz-result/control follow-up pending where present"
       ],
-      "specificFindingIds": [],
-      "findingStates": {}
+      "specificFindingIds": [
+        "THQ-011"
+      ],
+      "findingStates": {
+        "THQ-011": "FIX_TESTED_PREVIEW_VERIFIED"
+      },
+      "expandedFAQReview": {
+        "answersRead": 4,
+        "assessment": "Actual expanded answers read: this sector-specific count and terminal links, virtual-only/nofutureperformance, source-labelled asset research, and static cataloguereference ratherthancontinuouslivefeed. Doesnotsettleforexunitconventions orfunddiversificationclaims. Utilitydirectorycontext, not originalinvestmentresearch.",
+        "controlEvidence": "evidence/live-faq/fd8c5441dfba37ca.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/strategy",
@@ -22027,7 +22230,7 @@
       "path": "/trade/usdjpy",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/usdjpy",
         "url": "https://www.thetradehq.com/trade/usdjpy",
@@ -22071,8 +22274,8 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
+        "status": "MAIN_BODY_READ",
+        "assessment": "Full22Octcapturedmainbodyread23Oct; USDJPYcontext, simulatedchart/price labels, source/returnlimitations andrelatedJPYpairs. Dollar-formatrate/P&L model needs clarificationINV-FX01.23Octheadingseen, deeperfreshcaptureCDPtimeoutpreservedashelperlimitation, not appdefect. FAQs/controls/financialsettlement notcompleted.",
         "originality": "NOT_YET_REVIEWED",
         "factualConcerns": "NOT_YET_REVIEWED",
         "credibility": "Source/provenance follow-up pending"
@@ -34760,5 +34963,6 @@
       "findingStates": {}
     }
   ],
-  "expandedFAQAnswersRead": 79
+  "expandedFAQAnswersRead": 107,
+  "legacyConditionalStateReview": "24subtopics/20questions read,14production plus6candidate final explanations. Structured-course26quiz factualfeedbackreview remains pending."
 }

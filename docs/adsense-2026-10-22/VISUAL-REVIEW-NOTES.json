@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T16:17:09.855594+00:00",
+  "updatedAt": "2026-10-23T01:34:05.181279+00:00",
   "scope": "Actually viewed original screenshots; first-fold inspection is not complete below-fold or all-five-size human visual review.",
   "routes": {
     "/": {
@@ -1294,6 +1294,58 @@
         "evidence/courses-light-settled-1280.png",
         "evidence/course-contrast-preview-360.png",
         "evidence/course-contrast-preview-1280.png"
+      ]
+    },
+    "/learn": {
+      "status": "PARTIAL_VISUAL_REVIEW",
+      "humanViewedWidths": [
+        1280
+      ],
+      "notes": [
+        "Actual production4course/20lessonheader and candidate6card/26lesson layouts inspected. Partial section only."
+      ],
+      "evidence": [],
+      "candidateViewedWidths": [
+        360,
+        1280
+      ]
+    },
+    "/sectors/forex-currencies": {
+      "status": "PARTIAL_VISUAL_REVIEW",
+      "humanViewedWidths": [
+        1280
+      ],
+      "notes": [
+        "Actual breadcrumb visibly behindnavigation; candidate header/breadcrumb clear at both inspected widths. Forex-dollar unit semantics separatelyINV-FX01."
+      ],
+      "evidence": [],
+      "candidateViewedWidths": [
+        360,
+        1280
+      ]
+    },
+    "/learn/1": {
+      "status": "PARTIAL_VISUAL_REVIEW",
+      "humanViewedWidths": [
+        390
+      ],
+      "notes": [
+        "Actual production final score skips final feedback; candidate final answer/correction visible, partial conditional quiz state."
+      ],
+      "evidence": [],
+      "candidateViewedWidths": [
+        390
+      ]
+    },
+    "/learn/4": {
+      "status": "PARTIAL_VISUAL_REVIEW",
+      "humanViewedWidths": [],
+      "notes": [
+        "Candidate final rebalancing question, correction andSeeResults inspected. No production screenshot view claimed for this route."
+      ],
+      "evidence": [],
+      "candidateViewedWidths": [
+        1280
       ]
     }
   }

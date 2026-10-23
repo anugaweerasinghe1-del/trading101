@@ -112,6 +112,47 @@
       "answersRead": 3,
       "assessment": "Answers reinforce the specific main worksheet context and qualify results by inputs/costs/sample; no universal winrate or suitability claim. Freepractice answer explicitlyallowsseparateworksheet/externaldata, avoiding a claim that unsupported indicators/orders are implemented.",
       "controlEvidence": "evidence/live-faq/fc59671daa4f3d37.json"
+    },
+    "/sectors/crypto-defi": {
+      "answersRead": 4,
+      "assessment": "Actual expanded answers read: this sector-specific count and terminal links, virtual-only/nofutureperformance, source-labelled asset research, and static cataloguereference ratherthancontinuouslivefeed. Doesnotsettleforexunitconventions orfunddiversificationclaims. Utilitydirectorycontext, not originalinvestmentresearch.",
+      "controlEvidence": "evidence/live-faq/0be96c01e09034bc.json"
+    },
+    "/sectors/etf-indices": {
+      "answersRead": 4,
+      "assessment": "Actual expanded answers read: this sector-specific count and terminal links, virtual-only/nofutureperformance, source-labelled asset research, and static cataloguereference ratherthancontinuouslivefeed. Doesnotsettleforexunitconventions orfunddiversificationclaims. Utilitydirectorycontext, not originalinvestmentresearch.",
+      "controlEvidence": "evidence/live-faq/2648c77cbf7aaf34.json"
+    },
+    "/sectors/forex-currencies": {
+      "answersRead": 4,
+      "assessment": "Actual expanded answers read: this sector-specific count and terminal links, virtual-only/nofutureperformance, source-labelled asset research, and static cataloguereference ratherthancontinuouslivefeed. Doesnotsettleforexunitconventions orfunddiversificationclaims. Utilitydirectorycontext, not originalinvestmentresearch.",
+      "controlEvidence": "evidence/live-faq/36eb418a1639e20e.json"
+    },
+    "/sectors/commodities": {
+      "answersRead": 4,
+      "assessment": "Actual expanded answers read: this sector-specific count and terminal links, virtual-only/nofutureperformance, source-labelled asset research, and static cataloguereference ratherthancontinuouslivefeed. Doesnotsettleforexunitconventions orfunddiversificationclaims. Utilitydirectorycontext, not originalinvestmentresearch.",
+      "controlEvidence": "evidence/live-faq/40fb003befb30162.json"
+    },
+    "/sectors/ai-tech": {
+      "answersRead": 4,
+      "assessment": "Actual expanded answers read: this sector-specific count and terminal links, virtual-only/nofutureperformance, source-labelled asset research, and static cataloguereference ratherthancontinuouslivefeed. Doesnotsettleforexunitconventions orfunddiversificationclaims. Utilitydirectorycontext, not originalinvestmentresearch.",
+      "controlEvidence": "evidence/live-faq/94988464f69c155e.json"
+    },
+    "/sectors/mega-cap": {
+      "answersRead": 4,
+      "assessment": "Actual expanded answers read: this sector-specific count and terminal links, virtual-only/nofutureperformance, source-labelled asset research, and static cataloguereference ratherthancontinuouslivefeed. Doesnotsettleforexunitconventions orfunddiversificationclaims. Utilitydirectorycontext, not originalinvestmentresearch.",
+      "controlEvidence": "evidence/live-faq/b5f9f9b87a534f21.json"
+    },
+    "/sectors/tech-giants": {
+      "answersRead": 4,
+      "assessment": "Actual expanded answers read: this sector-specific count and terminal links, virtual-only/nofutureperformance, source-labelled asset research, and static cataloguereference ratherthancontinuouslivefeed. Doesnotsettleforexunitconventions orfunddiversificationclaims. Utilitydirectorycontext, not originalinvestmentresearch.",
+      "controlEvidence": "evidence/live-faq/fd8c5441dfba37ca.json"
+    }
+  },
+  "nativeVisibleFAQRead": {
+    "/niche/usd-jpy": {
+      "answersRead": 3,
+      "assessment": "Visible no-recommendation, practice workflow and interest-differential/macroeconomic driver answers read within actual captured main; distinct from collapsed-answer totals."
     }
   }
 }

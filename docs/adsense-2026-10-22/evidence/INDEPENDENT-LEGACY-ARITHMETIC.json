@@ -1,0 +1,97 @@
+{
+  "checkedAt": "2026-10-23T01:22:21.124410+00:00",
+  "scope": "Independent fixed-input legacy lesson arithmetic and closed-form positive-growth calculator check; no production financial calculation or record modified. Default growth figure is illustrative, not a forecast.",
+  "cases": [
+    {
+      "name": "Two10percentgains",
+      "expression": "100*1.1^2",
+      "computed": "121.00",
+      "expected": "121",
+      "pass": true
+    },
+    {
+      "name": "Twelvemonthly10percentgains",
+      "expression": "(1.1^12-1)*100",
+      "computed": "213.84",
+      "expected": "213.84",
+      "pass": true
+    },
+    {
+      "name": "Recoveryfrom90to100",
+      "expression": "(100/90-1)*100",
+      "computed": "11.11",
+      "expected": "11.11",
+      "pass": true
+    },
+    {
+      "name": "Feeadjustedfixedpayoffbreakeven",
+      "expression": "(100+5)/400",
+      "computed": "0.2625",
+      "expected": ".2625",
+      "pass": true
+    },
+    {
+      "name": "ThreeperiodEMA",
+      "expression": "0.5*104+0.5*100",
+      "computed": "102.0",
+      "expected": "102",
+      "pass": true
+    },
+    {
+      "name": "RSIwithgain2loss1",
+      "expression": "100-100/(1+2/1)",
+      "computed": "66.67",
+      "expected": "66.67",
+      "pass": true
+    },
+    {
+      "name": "Profitfactor",
+      "expression": "(20+20)/10",
+      "computed": "4",
+      "expected": "4",
+      "pass": true
+    },
+    {
+      "name": "Directandfundoverlap",
+      "expression": "50+0.2*50",
+      "computed": "60.0",
+      "expected": "60",
+      "pass": true
+    },
+    {
+      "name": "Sectorweightshock",
+      "expression": "0.7*(-0.2)",
+      "computed": "-0.14",
+      "expected": "-.14",
+      "pass": true
+    },
+    {
+      "name": "Reverseweightshock",
+      "expression": "0.3*(-0.2)",
+      "computed": "-0.06",
+      "expected": "-.06",
+      "pass": true
+    },
+    {
+      "name": "Rebalancestocktransfer",
+      "expression": "160-0.6*(160+40)",
+      "computed": "40.0",
+      "expected": "40",
+      "pass": true
+    },
+    {
+      "name": "Defaultgrowthclosedform",
+      "expression": "100000*a^120+500*a*(a^120-1)/(a-1),a=1+0.12/12*(1-0.001)",
+      "computed": "445733",
+      "expected": "445733",
+      "pass": true
+    },
+    {
+      "name": "Defaultdeductionsclosedform",
+      "expression": "(FV-100000-500*120)*0.001/(1-0.001)",
+      "computed": "286",
+      "expected": "286",
+      "pass": true
+    }
+  ]
+}

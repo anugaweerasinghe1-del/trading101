@@ -1,103 +1,61 @@
-# TradeHQ audit — blocked release status, 22 October 2026
+# TradeHQ audit status — 23 October 2026
 
-Seven site defects have been reproduced: three P2 and four P3. One is repaired and verified live; six have tested fixes in four draft PRs. All four drafts pass the three required trusted CI checks and disposable PostgreSQL controls. Explicit application-project TypeScript checks also pass for the current copy and badge candidates ([receipt](evidence/APPLICATION-PROJECT-TYPES.json)). **Release is held because the configured Cloudflare credential was rejected with HTTP401. Vercel authentication works.**
+Eleven site defects are reproduced:4P2 and7P3. One fix is verified live;10fixes are prepared in7draft PRs. Three new PRs were created during this continuation. Production has not changed since PR212. **Cloudflare still rejects the configured native API credential with HTTP401; Vercel confirms READY production at the observed main SHA.** The user-required serial production-verification gate remains in force.
 
-This is an incomplete audit handoff, not a completed AdSense review. The detailed ledger contains441 public/guest routes, but only197 settled main bodies and79 expanded FAQ answers have been read and assessed. Capturing a page does not mean its content, screenshots, sources and controls have all been reviewed.
+The exhaustive audit is still incomplete.222of441public/guest route main bodies/state text have been read, with7article aliases explicitly distinguished from original publications.107expanded FAQ answers have been read. All24subtopics and20questions in the6legacy lessons were exercised and read, including6restored final explanations on the candidate preview. Whole-page visual/source/control completion is not claimed.
 
-## Coverage and production
+[Historical22October report](https://github.com/anugaweerasinghe1-del/trading101/blob/5c11deb/docs/adsense-2026-10-22/BLOCKED-STATUS.md) preserves the earlier baseline, first7findings, provider evidence and category assessment. It is superseded by this status and the updated ledgers below.
 
-| Measure | Observed result |
-|---|---|
-| Current GitHub main / last jointly verified production SHA | `aa216a24c68c30c9251f96a050da098b33364686` |
-| Discovered candidates |449:441 public/guest plus8 excluded admin guest guards |
-| Fresh individual public HTTP GETs |441/441 returned200, normal TLS; redirects and initial metadata recorded separately |
-| Actual production browser collection |441 routes ×5 sizes =2205 observations |
-| Mobile / tablet / desktop observations |882 /441 /882 respectively |
-| Settled main bodies actually read |197/441; page-specific notes saved |
-| Human screenshot review |89 distinct routes, partial coverage; all62 trader views inspected at360 and1280 first folds |
-| Expanded FAQ collection / actual reading |1042 answers collected;79 read.50 additional native visible FAQ sections separately collected |
-| Actual course quiz interaction |All26 interfaces exercised in a fresh disposable guest browser; feedback reading/image review remains incomplete |
-| Independent arithmetic receipts |50 fixed-input Decimal calculations passed across three evidence files |
-| Site issues |7 reproduced:3 P2 and4 P3;1 repaired live,6 prepared and tested |
-| Operational issue |1 separate credential/verification blocker |
-| New fix PRs |5 created:212 merged,213–216 draft |
-| Additional ongoing expenditure / paid dependencies |$0 / none introduced |
+## Production and release state
 
-The five capture sizes were360×800,390×844,768×1024,1280×800 and1920×1080. No claim of human visual inspection of all2205 captures or complete below-fold coverage is made. Initial browser collection recorded no uncaught app exceptions, document overflow or resource HTTP≥400 responses; blocked third-party ad/RUM requests were transport limitations, not proof of valid or invalid ad placement.
+Observed main/last jointly verified production commit: `aa216a24c68c30c9251f96a050da098b33364686`. On23October the native Cloudflare project read returned401; native Vercel project production target remained READY at that SHA. Neither preview checks nor browser captures substitute for authenticated active Cloudflare production proof. [Resume provider observation](evidence/RESUME-20261023-PROVIDER-BINDINGS.json).
 
-[Inventory](URL-INVENTORY.json), [individual page ledger](PAGE-AUDIT.json), [content assessments](RENDERED-CONTENT-NOTES.json), [visual stages](VISUAL-REVIEW-NOTES.json), [FAQ assessments](FAQ-REVIEW-NOTES.json), [fresh HTTP observations](evidence/CURRENT-PUBLIC-HTTP.json).
+PR212 remains the only merged audit fix. Its prior exact production proof and8guest smoke checks are preserved in [release ledger](RELEASE-LEDGER.json). No real account, portfolio, order, database, privacy/consent or ad implementation was changed. $0 additional ongoing expenditure; no dependencies added.
 
-## Findings and releases
-
-| ID | Severity | Reproduced defect | Fix / release state |
+| PR | Findings | Candidate SHA | Verification |
 |---|---|---|---|
-|THQ001|P3|About introduction overlapped fixed navigation|[PR212](https://github.com/anugaweerasinghe1-del/trading101/pull/212) merged; native production and affected live page verified at5 widths |
-|THQ002|P2|Course covers clip titles/badges on mobile; all6 titles affected at360|[PR213](https://github.com/anugaweerasinghe1-del/trading101/pull/213), normal-flow cover text; old-app regression fails, candidate suite passes; preview6 tracks ×5 widths has zero clipping |
-|THQ003|P3|Contact described4 tracks although settled catalog has6|[PR214](https://github.com/anugaweerasinghe1-del/trading101/pull/214), remove fixed count; updated preview verified |
-|THQ004|P3|Public-profile explanation rendered `prices.Fetched`|PR214, explicit text space; timestamp and price calculations unchanged |
-|THQ005|P2|Course catalog light-theme heading/accent had1.07–1.79:1 contrast|[PR215](https://github.com/anugaweerasinghe1-del/trading101/pull/215), scoped darker light-theme colors; candidate minimum5.12:1 light /10.30:1 dark at5 widths |
-|THQ006|P2|Own profile hid earned published-course badges|[PR216](https://github.com/anugaweerasinghe1-del/trading101/pull/216), display retained earned records with current catalog names and unavailable-course fallback; progress/financial tiles unchanged |
-|THQ007|P3|All6 trading-guide quick answers had doubled full stops|PR214, remove one redundant punctuation literal; actual preview8 affected pages ×5 widths passes |
+|[213](https://github.com/anugaweerasinghe1-del/trading101/pull/213)|THQ002: mobile course cover clipping, P2|`f5e001cb12a0b8f1b86c38700abab3c0a19d6f7f`|Required CI, local browser/build and native previews PASS; actual30cover checks passed |
+|[214](https://github.com/anugaweerasinghe1-del/trading101/pull/214)|THQ003/004/007: Contact course count, profile spacing, guide punctuation, P3|`1139acbed2a58fca4864d2841405bd5a721bbe5a`|Required CI/local build/typecheck PASS; actual8pages ×5widths passed |
+|[215](https://github.com/anugaweerasinghe1-del/trading101/pull/215)|THQ005: course light-theme contrast, P2|`4baff25b9ded86bebbcfe9f21b51e61cc96f692f`|Required CI/local build/browser PASS; actual5widths ×2themes passed |
+|[216](https://github.com/anugaweerasinghe1-del/trading101/pull/216)|THQ006: published badges hidden, P2|`c7972692f14f498f242e03aff8f01faba1539f86`|Required CI/local build/typecheck/browser PASS; actual published badges at5widths, records unchanged |
+|[217](https://github.com/anugaweerasinghe1-del/trading101/pull/217)|THQ008: Learn omits2published courses and gives4/20 totals, P3|`a74f57a4fd65463441a0421ecf3fdffa3a08698d`|Required CI/local build/app TypeScript/phase6 PASS; actual preview6cards/26lessons at5widths, bundled-only fallback tested locally |
+|[218](https://github.com/anugaweerasinghe1-del/trading101/pull/218)|THQ009: final quiz feedback hidden, P2; THQ010: ambiguous rebalancing choice, P3|`ec353f373ef7c5e6ef21d8c91869a9e7302cfa79`|Required CI/local build/app TypeScript/phase6 PASS; actual6quizzes/20questions retain all final explanations until See Results; correct-answer index preserved |
+|[219](https://github.com/anugaweerasinghe1-del/trading101/pull/219)|THQ011: sector breadcrumbs behind fixed navigation, P3|`ee1659104092fb603507165d2f9b8fbec2bcbda8`|Required CI/local Cloudflare build/phase6 PASS;35actual production states reproduced32.34–69px overlap; actual candidate35states have zero overlap. Native Vercel READY and trusted Cloudflare preview signal SUCCESS |
 
-These are usability, accessibility, consistency and secondary-functionality findings. They are not presented as seven confirmed Google Publisher Policy violations. No P0/P1 site defect has been established in the work completed so far; the unfinished scope prevents a whole-site absence claim.
+All remain draft and unmerged. Only THQ001/About overlap is repaired on production. Source changes are reviewable through each PR's Files changed tab. New source before evidence and finding notes are committed in the corresponding PRs.
 
-| Draft | Exact tested SHA | Required CI / Postgres | Candidate provider and actual preview evidence |
-|---|---|---|---|
-|213|`f5e001cb12a0b8f1b86c38700abab3c0a19d6f7f`|PASS /PASS|[Native provider receipts](evidence/PR213-PREVIEW-PROVIDERS.json), [30 actual cover checks](evidence/COURSE-HERO-PREVIEW.json) |
-|214|`1139acbed2a58fca4864d2841405bd5a721bbe5a`|PASS /PASS|[Provider signals](evidence/PR214-UPDATED-PREVIEW-SIGNALS.json), [40 actual page/width checks](evidence/PR214-UPDATED-PREVIEW-BROWSER.json) |
-|215|`4baff25b9ded86bebbcfe9f21b51e61cc96f692f`|PASS /PASS|[Provider signals](evidence/PR215-PREVIEW-SIGNALS.json), [actual contrast checks](evidence/PREPARED-PREVIEWS-BROWSER.json) |
-|216|`c7972692f14f498f242e03aff8f01faba1539f86`|PASS /PASS|[Provider signals](evidence/PR216-PREVIEW-SIGNALS.json), [actual badge display](evidence/PUBLISHED-BADGES-PREVIEW.json) |
+[217checks](evidence/PR217-PREMERGE-CHECKS.json), [217provider signals](evidence/PR217-PREVIEW-SIGNALS.json), [217actual preview](evidence/PR217-PREVIEW-BROWSER.json); [218checks](evidence/PR218-PREMERGE-CHECKS.json), [218provider signals](evidence/PR218-PREVIEW-SIGNALS.json), [218actual preview](evidence/PR218-PREVIEW-BROWSER.json). [219checks](evidence/PR219-PREMERGE-CHECKS.json), [219provider signals](evidence/PR219-PREVIEW-SIGNALS.json), [219actual preview](evidence/PR219-PREVIEW-BROWSER.json). Each receipt separates trusted Cloudflare GitHub provider success from unavailable authenticated Cloudflare production verification.
 
-PR214's earlier5ddf0d4 evidence is historical. Its updated receipts above establish the new head after adding the punctuation correction. No draft has been merged or deployed to production. Each must be updated against fresh main and reverified if its head changes.
+Restore the Cloudflare binding securely in cloud environment settings and GitHub Actions, then run a complete coherent workflow. No secret values belong in chat. After authentication works, update one candidate against fresh main, retain all regressions, pass exact-head checks/previews, ordinary protected merge, verify both native production providers at the merge SHA, and recheck affected live pages plus guest journeys before the next release. Suggested priority:213,216,218,215,217,219,214. Shared phase6 insertions need careful merge conflict resolution, including one shared catalog fixture flag; no test should be dropped.
 
-The required checks are `TradeHQ Phase 3 tests`, `TradeHQ Cloudflare compatibility / Cloudflare build and SEO`, and `TradeHQ Required validation`, from trusted GitHub Actions app15368. Successful disposable Postgres controls are additional evidence. Optional production release jobs are intentionally skipped for these PR contexts; a skipped job is not production release verification.
+## Reading and evidence coverage
 
-## Credential blocker and exact production proof
-
-At12:47UTC, both native providers confirmed the PR212 merge SHA above:
-
-- Cloudflare production/main deployment `a48650b5-b13e-436f-a097-a3a04111dbba`, deploy stageSUCCESS.
-- Vercel production deployment `dpl_64tgq5fomNQwHZifS9iQVd7UEM4x`, READY, same SHA and production aliases.
-- About actual live checks passed all5 widths;8/8 guest smoke checks passed. [Native receipt](evidence/PR212-PRODUCTION-PROVIDERS.json), [live checks](evidence/POST-PR212-GUEST-SMOKE.json).
-
-After the environment credential refresh, the Cloudflare project read returned401 at14:45UTC; Vercel returned200 and READY for the same production SHA. The unchanged environment remains running at revision8. Later Vercel native reads also verified each candidate. Cloudflare preview signals come from the trusted native GitHub provider app85455 and actual preview pages; they do **not** substitute for authenticated proof of the active production deployment. [Binding observation](evidence/CURRENT-PRODUCTION-BINDINGS.json).
-
-The user's quoted `Missing trusted successful CI check` was from an older rerun. Partial reruns recreated sibling check identities asynchronously. A fresh complete workflow [39789844231](https://github.com/anugaweerasinghe1-del/trading101/actions/runs/39789844231) passed the required checks, then [release job119865057821](https://github.com/anugaweerasinghe1-del/trading101/actions/runs/39789844231/job/119865057821) failed with:
-
-> Cloudflare account token verification unavailable (HTTP401; code1000).
-
-No trust assertion was weakened, no protections changed, and no unchanged failing rerun loop continues. [Sanitized chronology](evidence/PR212-MONITOR-DIAGNOSIS.json), [release ledger](RELEASE-LEDGER.json).
-
-The owner needs to securely repair `CLOUDFLARE_API_TOKEN` in **both cloud environment settings and GitHub Actions** using an active API token for the intended account/project and required read access. Do not paste its value into chat. No further Vercel key is needed for the currently working read verification. The mission's protected area includes “Changing production secrets, API credentials”; none were changed by the audit. The finding records risk and rollback in [FINDINGS.json](FINDINGS.json).
-
-After repair, validate the native Cloudflare account/project read and run the complete workflow. Release one candidate at a time, with fresh-head required CI and preview checks, ordinary protected merge, exact-merge production proof on both providers, affected-page live checks and guest smoke checks before the next release. Proposed priority:213,216,215,214. Preserve all browser regressions when resolving adjacent test insertions.
-
-## Unfinished review and provisional readiness
-
-The244 unread main bodies are precisely listed in [UNREAD-MAIN-ROUTES.txt](UNREAD-MAIN-ROUTES.txt):171 trading terminal/instrument views,50 niche guides,15 Learn views,7 sector pages and1 trading-guide hub. All441 routes still have some follow-up work; [UNFINISHED-SCOPE.json](UNFINISHED-SCOPE.json) identifies body-reading stage, viewed widths and remaining tasks per URL. The963 unread expanded answers,26 quiz feedback/result assessments, deeper conditional controls, below-fold visual inspection, cross-page duplication comparison and outstanding material source corroboration are not marked complete.
-
-All49 glossary entries,6 trading-guide bodies and6 strategy bodies were read with their respective hubs, alongside previously noted articles, courses, trust pages and public profiles. Main-body reading is a partial stage. Some glossary/strategy explanations share navigation and risk caveats but offer different defined calculations or worksheets; a complete originality comparison across the unread inventory remains pending.
-
-Primary text actually checked includes Investor.gov DCA/order mechanics, the SEBI study's scoped statistic, CME margin/term-structure explanations, the Fed FOMC schedule, NYSE marketwide circuit breakers, the separate LULD plan and W3C contrast thresholds. A successful reference GET is not source corroboration. Dynamic CME contract specifications and other material claims remain staged. [Source assessments](evidence/PRIMARY-SOURCE-ASSESSMENTS.json), arithmetic receipts [initial](evidence/INDEPENDENT-ARITHMETIC.json), [courses](evidence/INDEPENDENT-COURSE-ARITHMETIC.json), [glossary/guides](evidence/INDEPENDENT-WIKI-GUIDE-ARITHMETIC.json).
-
-| Review category | Current scoped status and reason |
+| Stage | Recorded work |
 |---|---|
-|Originality and independent value|NOT VERIFIED across the whole inventory;197 main-body notes,244 unread |
-|Educational usefulness|NOT VERIFIED globally; read glossary/course/guide worksheets offer specific mechanisms and limitations |
-|Financial accuracy and responsible claims|NOT VERIFIED globally;50 arithmetic receipts pass, primary-source work remains incomplete |
-|Navigation and accessibility|CONCERN: production still contains clipped mobile covers and low light-theme contrast; tested fixes pending release |
-|Desktop and mobile usability|CONCERN:7 reproduced presentation/functionality defects,6 unreleased; image review incomplete |
-|Functional reliability|CONCERN: hidden published badges remain live; course controls tested in disposable browser, other conditional journeys pending |
-|Publisher transparency and trust|PASS within the read About/Contact/legal scope for visible publisher and simulation disclosures; no professional credentials inferred |
-|Published content consistency|CONCERN: Contact count and punctuation/spacing fixes await deployment |
-|Discoverability and technical presentation|NOT VERIFIED fully;441 fresh HTTP200s and5-size browser collection, but current native Cloudflare production authentication fails |
-|Public AdSense policy concerns|NOT VERIFIED for a final whole-site verdict; no specific policy breach inferred solely from ordinary UI findings |
-|External/account-side uncertainties|NOT VERIFIED: Google account eligibility, private review procedures, actual ad/region consent states and final approval are outside completed evidence |
+|Observed inventory|449candidates:441public/guest plus8excluded admin guards |
+|Fresh public HTTP observations|441/441HTTP200 on22October; not represented as a new23October full recrawl |
+|Baseline actual Chromium collection|441routes ×5sizes =2205observations:882mobile,441tablet,882desktop |
+|Actual rendered main/state reading|222route notes;7redirecting article aliases are not additional original articles |
+|Expanded FAQ reading|107/1042answers;935remain unread.3native visible USDJPY FAQ answers separately read |
+|Legacy lesson conditional review|24subtopics and20questions read;14explanations on production plus6restored on candidate |
+|Structured course quiz interaction|26interfaces previously exercised; full factual feedback/image reading remains unfinished |
+|Independent arithmetic|63fixed-input Decimal receipts; no financial-engine test or account recalculation implied |
+|Human visual review|Partial stages; baseline89routes plus fresh Learn/sector/quiz excerpts. No complete below-fold/all5human-visual claim |
 
-**Provisional handoff decision: C — NOT READY to declare Part1 complete or proceed on a completed site-side review.** Specific P2 usability/functionality defects remain on production and required release verification is blocked; substantial editorial/control review is unfinished. This is not a conclusion that Google has rejected the site or that each remaining quality issue is an AdSense policy blocker. A final independent verdict must follow actual completion, rather than be manufactured from passing CI.
+[Individual page ledger](PAGE-AUDIT.json), [inventory](URL-INVENTORY.json), [content notes](RENDERED-CONTENT-NOTES.json), [legacy state assessments](LEGACY-READING-NOTES.json), [FAQ notes](FAQ-REVIEW-NOTES.json), [visual stages](VISUAL-REVIEW-NOTES.json), [remaining work per route](UNFINISHED-SCOPE.json), [unread main URLs](UNREAD-MAIN-ROUTES.txt).
 
-No production application regression was established after PR212. CDP timeouts, a helper's wrong expected copy string and an isolated metadata-readiness race were retained as test/helper limitations, then corrected and rerun; they are not counted as site defects. No actual user account, order, portfolio, database row, privacy/consent implementation or ad implementation was altered. Quiz and preview completion records belonged only to disposable browser storage.
+The219unread main-route bodies are170trading instrument/terminal views and49niche guides. Other routes still have some visual, source, conditional control or duplication-analysis follow-up. Automation, captures and body reading are distinct stages; none is silently promoted to whole-page completion. Raw captures stay in the workspace under `evidence/live-*`; selected receipts and new legacy captures are backed up on the evidence branch.
 
-Raw browser screenshots and full captured main/FAQ text remain in the workspace under `evidence/live-*`; not every raw capture is committed on the evidence branch. Selected reproduction/candidate images and sanitized receipts are preserved with this report and the source PRs. Changed files are reviewable in [PR212 files](https://github.com/anugaweerasinghe1-del/trading101/pull/212/files), [PR213 files](https://github.com/anugaweerasinghe1-del/trading101/pull/213/files), [PR214 files](https://github.com/anugaweerasinghe1-del/trading101/pull/214/files), [PR215 files](https://github.com/anugaweerasinghe1-del/trading101/pull/215/files) and [PR216 files](https://github.com/anugaweerasinghe1-del/trading101/pull/216/files).
+[Additional legacy arithmetic](evidence/INDEPENDENT-LEGACY-ARITHMETIC.json) includes independent closed-form checks of the default illustrative growth result and deductions. The quote convention [primary-source assessment](evidence/FX-PRIMARY-SOURCE.json) is narrowly scoped, not a certification of FX accounting.
 
-Part2 account-side work should wait for the release blocker, verified production fixes and remaining site review. Do not infer account eligibility or promise Google approval from this handoff. Completed evidence is preserved; unfinished work remains explicit.
+## Open semantic investigation and protected boundary
+
+[INV-FX01](findings/FOREX-UNIT-REVIEW.md) records the distinction between real base/quote currency exchange rates and TradeHQ's generic USD-valued practice accounting. The fresh sector view dollar-formats USD/JPY and USD/CHF numbers; CME primary text defines quote currency differently. Whether and how to clarify the abstract practice-unit model remains under review. This is not yet counted as a confirmed financial-engine defect.
+
+The safe next step is an accurate display-only scope clarification without changing calculations or records. A real FX conversion/settlement model would require explicit owner approval under the mission's protected financial-calculation/position/history rules, an approved unit specification, isolated fixtures and preservation of legacy records. No such protected change was performed. Do not reinterpret or revalue existing accounts automatically.
+
+## Readiness and limitations
+
+**Provisional C — NOT READY to declare the site-side review complete.** Four substantiated P2usability/functionality findings remain live, their tested fixes await release, required production verification is blocked, and the exhaustive review remains unfinished. These are not assertions that Google rejected the site or that11ordinary quality findings are11Publisher Policy violations. A final independent category verdict must follow completed review and verified production fixes. Part2 account eligibility and Google's private review remain unverified.
+
+Normal browser trust was retained. An initial sandbox browser lacked access to its existing certificate trust; a normal approved restart fixed that without adding a CA or disabling TLS checks. A missing audit-helper import, a navigation selector/readiness assumption, one GitHub502 and CDP capture timeouts were kept as environment/helper limitations, not counted as site defects. The final sector regression waits for fixed-navigation CSS/fonts before asserting actual bounds.

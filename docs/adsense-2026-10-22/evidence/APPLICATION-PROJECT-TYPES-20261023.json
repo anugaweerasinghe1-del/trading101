@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-10-23T01:41:11.862489+00:00",
+  "command": "npx tsc --noEmit -p tsconfig.app.json",
+  "results": [
+    {
+      "pr": 217,
+      "sha": "a74f57a4fd65463441a0421ecf3fdffa3a08698d",
+      "exitCode": 0,
+      "receipt": "learn-catalog-app-project-types.txt"
+    },
+    {
+      "pr": 218,
+      "sha": "ec353f373ef7c5e6ef21d8c91869a9e7302cfa79",
+      "exitCode": 0,
+      "receipt": "legacy-quiz-app-project-types.txt"
+    }
+  ],
+  "scope": "Explicit application project run on each candidate working source before its commit; UI source unchanged between command completion and commit. Not the empty root-reference invocation.219is aclass-only change verified through build/browser/requiredCI."
+}
