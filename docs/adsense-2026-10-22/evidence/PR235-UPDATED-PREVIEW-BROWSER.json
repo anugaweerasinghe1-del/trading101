@@ -1,0 +1,555 @@
+{
+  "checkedAt": "2026-10-24T17:05:18.674Z",
+  "sha": "53310c47b2f904e2511ea93b8e11117e9a898148",
+  "origin": "https://be2b5ba1.tradehq-preview.pages.dev",
+  "phase": "after",
+  "outcome": "PASS",
+  "scope": "Actual rendered six public legacy lesson initial states at five widths and actual Chromium accessibility tree. No Continue, quiz, answer, completion, reset or progress/storage operations; all Supabase POSTs prevented. Orange track is the background; green indicator correctly translated offscreen at zero, so no separate visual-percent defect asserted.",
+  "rows": [
+    {
+      "lesson": 1,
+      "width": 360,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -264, 0)",
+      "indicatorWidth": 263.9487609863281,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 1,
+      "width": 390,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -294, 0)",
+      "indicatorWidth": 293.61212158203125,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 1,
+      "width": 768,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -657, 0)",
+      "indicatorWidth": 656.3087768554688,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 1,
+      "width": 1280,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -1056, 0)",
+      "indicatorWidth": 1054.2896728515625,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 1,
+      "width": 1920,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -1056, 0)",
+      "indicatorWidth": 1054.6083984375,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 2,
+      "width": 360,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -264, 0)",
+      "indicatorWidth": 263.6518859863281,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 2,
+      "width": 390,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -294, 0)",
+      "indicatorWidth": 293.8178405761719,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 2,
+      "width": 768,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -657, 0)",
+      "indicatorWidth": 655.1924438476562,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 2,
+      "width": 1280,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -1056, 0)",
+      "indicatorWidth": 1053.934326171875,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 2,
+      "width": 1920,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -1056, 0)",
+      "indicatorWidth": 1053.53515625,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 3,
+      "width": 360,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -264, 0)",
+      "indicatorWidth": 263.7836608886719,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 3,
+      "width": 390,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -294, 0)",
+      "indicatorWidth": 293.61199951171875,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 3,
+      "width": 768,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -657, 0)",
+      "indicatorWidth": 656.1326293945312,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 3,
+      "width": 1280,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -1056, 0)",
+      "indicatorWidth": 1055.1337890625,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 3,
+      "width": 1920,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -1056, 0)",
+      "indicatorWidth": 1054.607666015625,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 4,
+      "width": 360,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -264, 0)",
+      "indicatorWidth": 263.65191650390625,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 4,
+      "width": 390,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -294, 0)",
+      "indicatorWidth": 293.61212158203125,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 4,
+      "width": 768,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -657, 0)",
+      "indicatorWidth": 656.308837890625,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 4,
+      "width": 1280,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -1056, 0)",
+      "indicatorWidth": 1054.8880615234375,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 4,
+      "width": 1920,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -1056, 0)",
+      "indicatorWidth": 1055.1329345703125,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 5,
+      "width": 360,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -264, 0)",
+      "indicatorWidth": 263.65191650390625,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 5,
+      "width": 390,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -294, 0)",
+      "indicatorWidth": 293.75872802734375,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 5,
+      "width": 768,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -657, 0)",
+      "indicatorWidth": 656.3084716796875,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 5,
+      "width": 1280,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -1056, 0)",
+      "indicatorWidth": 1054.8883056640625,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 5,
+      "width": 1920,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -1056, 0)",
+      "indicatorWidth": 1055.133544921875,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 6,
+      "width": 360,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -264, 0)",
+      "indicatorWidth": 263.8363952636719,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 6,
+      "width": 390,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -294, 0)",
+      "indicatorWidth": 293.7591552734375,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 6,
+      "width": 768,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -657, 0)",
+      "indicatorWidth": 656.308837890625,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 6,
+      "width": 1280,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -1056, 0)",
+      "indicatorWidth": 1054.6075439453125,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    },
+    {
+      "lesson": 6,
+      "width": 1920,
+      "label": "Subtopic 1 of 4\n0% Complete",
+      "ariaValue": "0",
+      "ariaName": "Lesson completion",
+      "state": "loading",
+      "indicatorTransform": "matrix(1, 0, 0, 1, -1056, 0)",
+      "indicatorWidth": 1054.6075439453125,
+      "rootBackground": "rgb(245, 106, 71)",
+      "indicatorBackground": "rgb(0, 255, 204)",
+      "overflow": false,
+      "accessibility": {
+        "role": "progressbar",
+        "name": "Lesson completion",
+        "value": 0
+      }
+    }
+  ],
+  "runtimeErrors": [],
+  "preventedProtectedRequests": [],
+  "humanViewedImages": [
+    "lesson1and6 at360/1280; allfourselectedimagespersonallyviewed"
+  ]
+}

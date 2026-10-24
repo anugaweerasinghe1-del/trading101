@@ -3,8 +3,8 @@
   "sourceCandidate": "71b84461ab0f531da44da54d8670ad1bef0628ea",
   "equivalentProductionSHA": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
   "sourceExpectedArticles": 83,
-  "actualRenderedArticlesRead": 32,
-  "sourceExpectedArticlesNotYetIndividuallyReviewed": 51,
+  "actualRenderedArticlesRead": 34,
+  "sourceExpectedArticlesNotYetIndividuallyReviewed": 49,
   "routes": [
     {
       "path": "/",
@@ -383,9 +383,9 @@
     {
       "path": "/courses/futures-and-derivatives/what-is-a-futures-contract",
       "expectedFromCurrentBuiltRouteSource": true,
-      "actualRenderedPresenceVerified": false,
-      "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "actualRenderedPresenceVerified": true,
+      "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+      "assessment": "EntireactualappendedFuturesdefinitionarticle read includingfourquestion/option/key/feedbacksets, allreferences andsimulationdisclaimers. Contractphysical/cashsettlement nuance andclearingnotriskelimination clear; shortcontractnotborrowedstock, limits/permissions preserved; noclaimeduniversal speculatorvolumeshare. HypotheticalE-mini250000notional internallycorrect; actualCMEcontract/sourcecorroboration remains."
     },
     {
       "path": "/courses/futures-and-derivatives/micro-futures-for-beginners",
@@ -481,9 +481,9 @@
     {
       "path": "/courses/options-trading-fundamentals/what-is-an-option",
       "expectedFromCurrentBuiltRouteSource": true,
-      "actualRenderedPresenceVerified": false,
-      "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "actualRenderedPresenceVerified": true,
+      "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+      "assessment": "Entireactualappendedoptiondefinitionarticle read includingfourquestion/option/key/feedbacksets andallreferences. StandardunadjustedUSequity100sharequalification, exercise/deliverableexceptions, purchasedoptionbeforecosts/underlyingexercise boundary andunlimiteduncoveredshortcallrisk clear. Hypothetical250premium/300call arithmetic coherent. Reflection-freepublishednotes include workedcopyduplicate; fulloriginality/currentOCCsourcecertificationnotclaimed."
     },
     {
       "path": "/trade/qqq",
@@ -614,8 +614,8 @@
   ],
   "currentVerifiedProductionSHA": "adcaed329c34f4a846f41b9fff9c01b2f2a3bc2e",
   "currentSeparateArticlesExpected": 75,
-  "currentSeparateArticlesActuallyRead": 30,
-  "currentSeparateArticlesNotYetIndividuallyRead": 45,
+  "currentSeparateArticlesActuallyRead": 32,
+  "currentSeparateArticlesNotYetIndividuallyRead": 43,
   "historicalSeparateArticlesNowIntegratedInMain": 8,
   "historicalBaselineScopePreserved": true
 }

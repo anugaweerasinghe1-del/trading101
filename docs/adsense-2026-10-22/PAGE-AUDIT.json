@@ -3240,7 +3240,7 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "FIRST_FOLD_ONLY",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
         "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
         "humanViewedWidths": [
@@ -3251,7 +3251,17 @@
         ],
         "evidence": [
           "evidence/contact--courses--360-8.png"
-        ]
+        ],
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Allninecontacts coveringallfivewidths personallyviewed: breadcrumbs,byline/hero/quickanswer, fullcoredefinition clearing/defaultlimits, contractspecifications and50\u00d75000=250000notional, long/shortmarginpermissionrules, producerhedge/basisrisk, takeaways, fourunansweredquizcards/disabledsubmit, fiveCMEsourceentries,nextlesson,footerandentireappendednotes. No newdefaultclipping/overlap observed. Main/notes substantialrepetition stillneedscompletecopy/parityanalysis before integration; twoCMEintroentries share URL, no standalonequalityfindingasserted. No quiz/complete/progressactions. Sourcecontract/keyboard/light/zoom andconditionalstates remain incomplete."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -3272,7 +3282,7 @@
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": []
     },
     {
@@ -4299,9 +4309,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Allninecontacts coveringallfivewidths personallyviewed: breadcrumbs,byline/hero,quickanswer,fullbody/defined100sharemultiplier/contractexceptions, worked185callat3breakeven188, spot-onlypracticeboundary, takeaways, allfourunansweredquizcards/disabledsubmit, sourcelinks,nextlesson,footerandentireappendednotes. No newdefaultclipping/overlap observed. Articleandnotes substantiallyrepeat; exactunique-copy/conditionalfeedback preservation investigationremains. No quizselection/submit/completion/progressaction. Light/keyboard/zoom,actualconditionalfeedbackandprimarycontractsourcesremainincomplete."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -4322,7 +4342,7 @@
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": []
     },
     {
@@ -42834,5 +42854,5 @@
     "individualActualRenderedProseComparisonsWithPreviouslyFullyReadBaseline": 85,
     "scope": "441 main texts/states covered, not441 fully completed page/source/control/human-visual reviews. See TERMINAL-TEMPLATE-COMPARISONS.json for raw texts and deltas."
   },
-  "updatedAt": "2026-10-24T16:58:51.394996+00:00"
+  "updatedAt": "2026-10-24T17:15:41.899825+00:00"
 }

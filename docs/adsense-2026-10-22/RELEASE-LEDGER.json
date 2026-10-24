@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T16:57:10.025390+00:00",
+  "updatedAt": "2026-10-24T17:16:06.274353+00:00",
   "releases": [
     {
       "finding": "THQ-001",
@@ -1417,6 +1417,83 @@
       ],
       "rollback": "Reviewed two-static-value revert through serial protected native/live cycle; no data operation.",
       "remaining": "Ownerapprovedpublishedpractice32two-valuepatchawaitssecureADMINMASTERKEYbinding/authenticatedpublication. Do notcountTHQ035fullyrepaired."
+    },
+    {
+      "pr": 234,
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/234",
+      "findings": [
+        "THQ-036_STATIC_FALLBACK_PORTION_ONLY"
+      ],
+      "candidateSHA": "361b1b3a9c4c327150a9de95aa69bd70b0f96c15",
+      "mergeSHA": "313e28e34ff67a5758f3378d1ae7d5bbc6ae3dc5",
+      "state": "STATIC_FALLBACK_PUBLICLY_VERIFIED_MAIN_REQUIRED_AND_RELEASE_MONITORS_PASS_PUBLISHED_BANK_UNCHANGED",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR234-UPDATED-PREVIEW-BROWSER.json",
+      "production": {
+        "checkedAt": "2026-10-24T17:10:04.937473+00:00",
+        "mergeSHA": "313e28e34ff67a5758f3378d1ae7d5bbc6ae3dc5",
+        "outcome": "PASS",
+        "sourceJob": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40114239271/job/120933887904",
+        "scope": "Authenticated native provider reads by trusted exact-main release-readiness job. Both production deployments match the immutable merge SHA. No provider mutations.",
+        "cloudflare": {
+          "observedAt": "2026-10-24T17:09:47.201Z",
+          "project": "tradehq-preview",
+          "activeProduction": {
+            "id": "04c988b4-d73f-475e-b154-8b8e70d0f20e",
+            "sha": "313e28e34ff67a5758f3378d1ae7d5bbc6ae3dc5",
+            "environment": "production",
+            "branch": "main",
+            "status": "success",
+            "createdAt": "2026-10-24T17:01:36.247236Z"
+          }
+        },
+        "vercel": {
+          "schema": "tradehq-vercel-production-evidence-v1",
+          "deploymentId": "dpl_J7svtNuePHHdT1XCYk8BsBfwMqZ1",
+          "teamId": "team_fjZ5ggg0P43MsYFSIHbeHAAO",
+          "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+          "commitSha": "313e28e34ff67a5758f3378d1ae7d5bbc6ae3dc5",
+          "target": "production",
+          "state": "READY",
+          "activeAlias": "thetradehq.com",
+          "createdAt": 1792861297334,
+          "observedAt": 1792861787200,
+          "requests": 2,
+          "authorization": {
+            "merge": false,
+            "productionRelease": false
+          }
+        }
+      },
+      "liveRecheck": {
+        "outcome": "PASS",
+        "fallbackAffectedStates": 10,
+        "guestStates": 30,
+        "safeGuestControls": 4,
+        "runtimeExceptions": 0,
+        "selectedActualImagesViewed": 4
+      },
+      "protectedPublishedBankState": "Noadditionalownerapproval; fivefieldproposalpending, noDBwrite.",
+      "evidence": [
+        "evidence/PR234-MAIN-CI.json",
+        "evidence/PR234-PRODUCTION-PROVIDERS.json",
+        "evidence/PR234-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR234-GUEST-SMOKE.json"
+      ]
+    },
+    {
+      "pr": 235,
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/235",
+      "findings": [
+        "THQ-037"
+      ],
+      "candidateSHA": "53310c47b2f904e2511ea93b8e11117e9a898148",
+      "mergeSHA": "0e4f0dde840905fb95d88d12581643b4635153dd",
+      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR235-UPDATED-PREVIEW-BROWSER.json",
+      "production": null,
+      "liveRecheck": null
     }
   ],
   "nextCandidate": {
@@ -1609,9 +1686,9 @@
     "reason": "Releasecyclecomplete; nonewmergeofthisPR."
   },
   "latestGitHubState": "evidence/FINAL-GITHUB-STATE-20261023.json",
-  "latestGitHubProviderBindingEvidence": "evidence/PR233-PRODUCTION-PROVIDERS.json",
-  "latestMainValidationEvidence": "evidence/PR233-MAIN-CI.json",
-  "latestVerifiedProductionSHA": "db3bfab843a126dda6afc4c2f2184a4366fc70ad",
+  "latestGitHubProviderBindingEvidence": "evidence/PR234-PRODUCTION-PROVIDERS.json",
+  "latestMainValidationEvidence": "evidence/PR234-MAIN-CI.json",
+  "latestVerifiedProductionSHA": "313e28e34ff67a5758f3378d1ae7d5bbc6ae3dc5",
   "summaryQuoteContextCandidate": {
     "pr": 221,
     "candidateSHA": "67ba761a85915ad047081206ee671a823c6f7bed",
@@ -1628,26 +1705,30 @@
   "remainingConfirmedSiteFixes": 3,
   "exhaustiveAuditComplete": false,
   "remainingKnownSafeFindings": 3,
-  "nextReleasePriority": [
-    234,
-    235
-  ],
-  "pendingReleaseVerification": null,
+  "nextReleasePriority": [],
+  "pendingReleaseVerification": {
+    "pr": 235,
+    "mergeSHA": "0e4f0dde840905fb95d88d12581643b4635153dd",
+    "state": "MAIN_REQUIRED_NATIVE_PROVIDERS_AND_LIVE_PENDING"
+  },
   "protectedPublishedContentFinding": "THQ035 exacttwo-valuepatch OWNERAPPROVED; requiredSUPABASE_SERVICE_ROLE_KEYnotbound. THQ036 fivevisualfields cases24/18 NOTYETAPPROVED. No productionrecordwrite; nativeadminpublisherIDrewriteexceedsscope.",
   "dailyChartUnitsCandidate": {
     "pr": 234,
     "candidateSHA": "361b1b3a9c4c327150a9de95aa69bd70b0f96c15",
     "baseSHA": "db3bfab843a126dda6afc4c2f2184a4366fc70ad",
-    "state": "LOCAL_VALIDATION_PASS_REQUIRED_CI_AND_PREVIEWS_PENDING",
+    "state": "STATIC_FALLBACK_PUBLICLY_VERIFIED_MAIN_REQUIRED_AND_RELEASE_MONITORS_PASS_PUBLISHED_BANK_UNCHANGED",
     "scope": "Staticfallbackonly,5illustrationfields; normalpublishedbankunchanged",
-    "mergeAllowed": false
+    "mergeAllowed": false,
+    "mergeSHA": "313e28e34ff67a5758f3378d1ae7d5bbc6ae3dc5",
+    "exactHeadRequiredChecks": "PASS"
   },
   "progressAccessibilityCandidate": {
     "pr": 235,
-    "candidateSHA": "93bb9f69df2aae80200adc6efaee8505034e9b8c",
-    "baseSHA": "db3bfab843a126dda6afc4c2f2184a4366fc70ad",
-    "state": "DRAFT_LOCAL_VALIDATION_PASS_PREVIOUS_RELEASE_HOLD",
+    "candidateSHA": "53310c47b2f904e2511ea93b8e11117e9a898148",
+    "baseSHA": "313e28e34ff67a5758f3378d1ae7d5bbc6ae3dc5",
+    "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
     "mergeAllowed": false,
-    "scope": "ExistingpercentageforwardedtoRadixRoot pluslegacylabel; no progresslogic/storage changes."
+    "scope": "ExistingpercentageforwardedtoRadixRoot pluslegacylabel; no progresslogic/storage changes.",
+    "mergeSHA": "0e4f0dde840905fb95d88d12581643b4635153dd"
   }
 }

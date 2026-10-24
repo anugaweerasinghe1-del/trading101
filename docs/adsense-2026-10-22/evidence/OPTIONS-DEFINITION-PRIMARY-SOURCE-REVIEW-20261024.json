@@ -1,0 +1,43 @@
+{
+  "path": "/courses/options-trading-fundamentals/what-is-an-option",
+  "scope": "Dated individual official source reading for specific material claims; not complete contract/legal/currentODD certification",
+  "sourcesRead": [
+    {
+      "capture": "evidence/options-official-20261024/oic-basics.txt",
+      "scope": "Entire captured8154-bytevisiblepage read including coredefinition,100sharesusually,adjustments, call/putrights/writerobligations, premiumper-share, longpremiumrisk/shortunlimitedcall, puthedge/coveredcallupsidecap andeducationalnocompetencyguarantee."
+    },
+    {
+      "capture": "evidence/options-official-20261024/oic-exercise.txt",
+      "scope": "Actual substantiveExercise/Assignment/Net/Earlyexercise sections andfooter read; Americanstylebeforeexpiry, assignmentobligations and strike\u00b1premium arithmetic supported."
+    },
+    {
+      "capture": "evidence/options-official-20261024/occ-odd.txt",
+      "scope": "Only printedlast6500characters read: archivalversion/distributionpolicy/currentdocumentlookup; noODDPDFreadingclaimed."
+    }
+  ],
+  "claims": [
+    {
+      "claim": "StandardunadjustedUSequitycontractgenerally100shares withadjusteddeliverableexceptions",
+      "outcome": "CORROBORATED_OIC_BASICS"
+    },
+    {
+      "claim": "Callrightbuy/putrightsell, writerobligation; purchasedpremium beforecosts anddifferentexercise/underlyingrisk",
+      "outcome": "CORROBORATED_OIC_BASICS_AND_EXERCISE"
+    },
+    {
+      "claim": "Americanstyleearlyexercise andassignmentrisk",
+      "outcome": "CORROBORATED_OIC_EXERCISE"
+    },
+    {
+      "claim": "Hypothetical185call/3premium cost300, breakeven188 andboundedpremiumbeforecostspayoff",
+      "outcome": "INDEPENDENT_FIXED_INPUT_ARITHMETIC_AND_OIC_NET_PRICE_RULE"
+    }
+  ],
+  "remaining": [
+    "Europeanstyle/indexcashsettlementexactcurrentcontracts not fully corroboratedhere",
+    "CurrentODDPDFnotread",
+    "Actualbrokeragespecificcutoff/afterhoursassignment notcertified",
+    "No realtrades oraccountactions"
+  ],
+  "rawCapturePublicationBoundary": "Full source text remains workspace-only for research; published evidence includes URLs, response metadata, hashes and scoped paraphrased reading assessments."
+}

@@ -1202,7 +1202,7 @@
       "id": "THQ-036",
       "severity": "P2",
       "category": "Daily worksheet chart age/measurement units contradict stated inputs",
-      "state": "STATIC_FALLBACK_FIX_PREPARED_PUBLISHED_RECORD_APPROVAL_REQUIRED",
+      "state": "STATIC_FALLBACK_PUBLICLY_VERIFIED_PUBLISHED_RECORD_APPROVAL_REQUIRED",
       "urls": [
         "https://www.thetradehq.com/daily"
       ],
@@ -1229,13 +1229,23 @@
       "staticFallbackLocalValidation": "PASS: originalbankexpectedfail; fivefieldfullJSONparity, derivedage/feeassertions, existingDaily/PGlite/frozenattemptsuite, build/SEO/editorialchecks andappTypeScript",
       "publishedBankState": "UNCHANGED_NO_ADDITIONAL_OWNER_APPROVAL",
       "staticFallbackPR": 234,
-      "staticFallbackCandidateSHA": "361b1b3a9c4c327150a9de95aa69bd70b0f96c15"
+      "staticFallbackCandidateSHA": "361b1b3a9c4c327150a9de95aa69bd70b0f96c15",
+      "staticFallbackMergeSHA": "313e28e34ff67a5758f3378d1ae7d5bbc6ae3dc5",
+      "staticFallbackState": "PUBLICLY_VERIFIED",
+      "previewEvidence": "evidence/PR234-UPDATED-PREVIEW-BROWSER.json",
+      "staticFallbackVerifiedAt": "2026-10-24T17:14:15.945200+00:00",
+      "staticFallbackProductionEvidence": [
+        "evidence/PR234-PRODUCTION-PROVIDERS.json",
+        "evidence/PR234-MAIN-CI.json",
+        "evidence/PR234-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR234-GUEST-SMOKE.json"
+      ]
     },
     {
       "id": "THQ-037",
       "severity": "P2",
       "category": "Legacy lesson completion percentage omitted from accessibility tree",
-      "state": "FIX_PREPARED_DRAFT_PR_WAITING_PREVIOUS_RELEASE",
+      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
       "urls": [
         "https://www.thetradehq.com/learn/1",
         "https://www.thetradehq.com/learn/2",
@@ -1258,21 +1268,23 @@
         "evidence/PR235-BASELINE-EXPECTED-FAILURE.txt"
       ],
       "pr": 235,
-      "candidateSHA": "93bb9f69df2aae80200adc6efaee8505034e9b8c",
-      "baseSHA": "db3bfab843a126dda6afc4c2f2184a4366fc70ad",
+      "candidateSHA": "53310c47b2f904e2511ea93b8e11117e9a898148",
+      "baseSHA": "313e28e34ff67a5758f3378d1ae7d5bbc6ae3dc5",
       "localValidation": "PASS rendered0/25/62.5/100ARIAstates plus honestunspecifiedindeterminate; oldwrapperexpectedFAIL; existingeditorial/arithmetic/performance tests, buildSEO/editorial/appTypeScriptPASS",
-      "releaseHold": "Draftfuturebatch; PR234mustfinishfullserialproductionverification first, thenrebaseontoactualmainandverifyexactcandidateCI/previews."
+      "releaseHold": "Allsixexactmainchecks/nativeproduction/actualaffectedandguest rechecks required; no nextmerge.",
+      "mergeSHA": "0e4f0dde840905fb95d88d12581643b4635153dd",
+      "previewEvidence": "evidence/PR235-UPDATED-PREVIEW-BROWSER.json"
     }
   ],
-  "updatedAt": "2026-10-24T16:57:10.025390+00:00",
+  "updatedAt": "2026-10-24T17:16:06.274353+00:00",
   "counts": {
     "siteFindings": 37,
     "P2": 24,
     "P3": 13,
     "publiclyRepaired": 34,
-    "preparedNotMerged": 2,
+    "preparedNotMerged": 0,
     "separateOperationalBlockers": 0,
-    "mergedAwaitingProductionVerification": 0,
+    "mergedAwaitingProductionVerification": 1,
     "protectedUnapprovedRecordFixes": 1,
     "approvedPublishedRecordFixesBlockedOnCredential": 1,
     "mergedFallbackAwaitingProductionVerification": 0

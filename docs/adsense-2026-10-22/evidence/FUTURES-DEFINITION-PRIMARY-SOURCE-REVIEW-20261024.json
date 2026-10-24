@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-10-24T17:12:18.543246+00:00",
+  "path": "/courses/futures-and-derivatives/what-is-a-futures-contract",
+  "scope": "Specific printed officialCMEexcerpts individuallyread; retrieval of othercontent not fullsourcereading",
+  "claims": [
+    {
+      "claim": "Clearing usesmargin/defaultsafeguards; extremeevents/default remainpossible",
+      "outcome": "CORROBORATED_SELECTED_CME_CLEARING_EXCERPTS",
+      "source": "evidence/futures-official-20261024/cme-clearing.json"
+    },
+    {
+      "claim": "E-miniS&Pcontractmultiplier50 andnotional250000 atassumed5000index",
+      "outcome": "FIXED_INPUT_ARITHMETIC_CORRECT_ACTUAL_MULTIPLIER_SOURCE_PENDING",
+      "source": "evidence/futures-official-20261024/cme-es-spec.json",
+      "limitation": "OfficialspecURL200butservertextomitsmaterialcontractfields; retrievalnotcorroboration."
+    }
+  ],
+  "remaining": [
+    "Need renderedcontractspecactualfields",
+    "Futureslong/shortpermissions/positionlimitscurrentruleverificationincomplete",
+    "NofullCMEbrochure/currentrulebookreadingclaimed",
+    "No derivativeorder/accountactions"
+  ],
+  "rawCapturePublicationBoundary": "Full source text remains workspace-only for research; published evidence includes URLs, response metadata, hashes and scoped paraphrased reading assessments."
+}

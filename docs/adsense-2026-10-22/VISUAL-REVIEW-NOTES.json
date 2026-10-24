@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T16:58:51.394996+00:00",
+  "updatedAt": "2026-10-24T17:15:41.899825+00:00",
   "scope": "Actual screenshot viewing by route and stage. Full-page default-state images are separately recorded at all five widths for20 core routes; this is not conditional, accessibility, light-theme, source or whole-audit completion.",
   "routes": {
     "/": {
@@ -386,7 +386,7 @@
       ]
     },
     "/courses/futures-and-derivatives/what-is-a-futures-contract": {
-      "status": "FIRST_FOLD_ONLY",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
       "humanViewedWidths": [
         360
       ],
@@ -395,7 +395,18 @@
       ],
       "evidence": [
         "evidence/contact--courses--360-8.png"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Allninecontacts coveringallfivewidths personallyviewed: breadcrumbs,byline/hero/quickanswer, fullcoredefinition clearing/defaultlimits, contractspecifications and50\u00d75000=250000notional, long/shortmarginpermissionrules, producerhedge/basisrisk, takeaways, fourunansweredquizcards/disabledsubmit, fiveCMEsourceentries,nextlesson,footerandentireappendednotes. No newdefaultclipping/overlap observed. Main/notes substantialrepetition stillneedscompletecopy/parityanalysis before integration; twoCMEintroentries share URL, no standalonequalityfindingasserted. No quiz/complete/progressactions. Sourcecontract/keyboard/light/zoom andconditionalstates remain incomplete.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
     },
     "/courses/macro-reading-for-traders": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -1970,6 +1981,20 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Allfivecontacts acrossallfivewidths personallyviewed; initialsubtopic1of4 only. AIassist/sourcechecksnotice, Cboesourcepointers, tabstrip, labelledillustration, bull/bearregimelimits,100\u2192120\u219296 +20%/\u221220%/\u22124%math, priceversustotalreturn, noautomaticdip/cashinstruction, hindsightwarning, Continue/footer readable. Orangeinitialtrackbeside0% requirescomputedstyle/semanticsfollowup, notyetnewfinding. No defaultdocumentoverflow/overlap observed; no Continue/quiz/progressaction. Otherconditionalstates/accessibility/light/keyboard/zoom/primarysources remain incomplete."
+    },
+    "/courses/options-trading-fundamentals/what-is-an-option": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Allninecontacts coveringallfivewidths personallyviewed: breadcrumbs,byline/hero,quickanswer,fullbody/defined100sharemultiplier/contractexceptions, worked185callat3breakeven188, spot-onlypracticeboundary, takeaways, allfourunansweredquizcards/disabledsubmit, sourcelinks,nextlesson,footerandentireappendednotes. No newdefaultclipping/overlap observed. Articleandnotes substantiallyrepeat; exactunique-copy/conditionalfeedback preservation investigationremains. No quizselection/submit/completion/progressaction. Light/keyboard/zoom,actualconditionalfeedbackandprimarycontractsourcesremainincomplete.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
     }
   }
 }
