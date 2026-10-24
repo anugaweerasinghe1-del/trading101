@@ -2,7 +2,6 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { MegaFooter } from "@/components/MegaFooter";
-import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { FileText, AlertTriangle, Scale, Shield, Ban, RefreshCw } from "lucide-react";
 import { SEOSection } from "@/components/SEOSection";
 
@@ -96,7 +95,7 @@ Reuse must respect the applicable rights and license terms. This statement does 
       <div className="min-h-screen bg-background">
         <Navigation />
         
-        <main className="container mx-auto px-4 py-12 max-w-4xl pb-24 md:pb-12">
+        <main className="container mx-auto px-4 pt-28 max-w-4xl pb-24 md:pb-12">
           {/* Header */}
           <div className="text-center mb-12">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 mb-6">
@@ -209,7 +208,6 @@ Reuse must respect the applicable rights and license terms. This statement does 
         </main>
 
         <MegaFooter />
-        <MobileBottomNav />
       </div>
     </>
   );
