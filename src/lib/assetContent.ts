@@ -199,7 +199,7 @@ export function generateAssetFAQs(assetId: string): AssetFAQ[] {
       : type === "stock"
         ? "quarterly earnings, sector trends and macroeconomic conditions"
         : type === "etf"
-          ? "the underlying index composition, fund flows and sector rotation"
+          ? "the fund’s holdings or tracked exposure, fees, structure and underlying market conditions"
           : type === "forex"
             ? "central bank policy, interest-rate differentials and macro releases"
             : "global supply/demand, USD strength and geopolitical events");
