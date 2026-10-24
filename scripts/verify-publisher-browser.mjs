@@ -15,6 +15,7 @@ import { ASSETS } from "../src/lib/assets.ts";
 import { lessonData } from "../src/lib/lessonData.ts";
 import { verifyChartWindows } from "./verify-chart-windows.mjs";
 import { verifyMobileNavigation } from "./verify-mobile-navigation.mjs";
+import { verifyGuidedLesson } from "./verify-guided-lesson.mjs";
 import { verifyMarketsSidebar } from "./verify-markets-sidebar.mjs";
 
 const chrome = ["google-chrome", "google-chrome-stable", "chromium", "chromium-browser"].find(name => spawnSync("which", [name]).status === 0);
@@ -247,6 +248,7 @@ try {
   await waitUntil(`document.activeElement?.getAttribute('aria-label') === 'Open portfolio review mentor'`, 'Portfolio mentor restores focus');
   }
   if (phase === null || phase === 6) {
+  await verifyGuidedLesson({send,evaluate,waitUntil,origin,delay});
   await verifyMarketsSidebar({send,evaluate,waitUntil,origin,delay});
   await verifyMobileNavigation({send,evaluate,waitUntil,origin,delay});
   // Fixed positive chart candles isolate display precision from live providers
