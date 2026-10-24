@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { MegaFooter } from "@/components/MegaFooter";
-import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { Shield, Lock, Eye, Database, Globe, Mail } from "lucide-react";
 import { PRIVACY_SECTIONS, PRIVACY_REFERENCES } from "@/lib/privacyCopy";
 import { SEOSection } from "@/components/SEOSection";
@@ -121,7 +120,6 @@ export default function Privacy() {
         </main>
 
         <MegaFooter />
-        <MobileBottomNav />
       </div>
     </>
   );

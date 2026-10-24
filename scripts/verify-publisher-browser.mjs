@@ -14,6 +14,7 @@ import { NICHE_SYMBOLS, getNicheAsset } from "../src/lib/nicheData.ts";
 import { ASSETS } from "../src/lib/assets.ts";
 import { lessonData } from "../src/lib/lessonData.ts";
 import { verifyChartWindows } from "./verify-chart-windows.mjs";
+import { verifyMobileNavigation } from "./verify-mobile-navigation.mjs";
 
 const chrome = ["google-chrome", "google-chrome-stable", "chromium", "chromium-browser"].find(name => spawnSync("which", [name]).status === 0);
 assert.ok(chrome, "Chromium unavailable; this browser check has NOT passed");
@@ -28,8 +29,8 @@ assert.equal(new Set(routes).size, routes.length);
 const mime = { ".js": "application/javascript", ".css": "text/css", ".json": "application/json", ".svg": "image/svg+xml", ".png": "image/png", ".jpg": "image/jpeg", ".html": "text/html" };
 const server = createServer((request, response) => {
   const path = new URL(request.url, "http://localhost").pathname;
-  if (path === '/trader/me') {
-    // This intentionally unlisted guest route uses the production SPA shell.
+  if (['/trader/me','/auth'].includes(path)) {
+    // These guest utility routes use the production SPA shell.
     response.writeHead(200, {'Content-Type':'text/html','X-Robots-Tag':'noindex, follow'});
     response.end(readFileSync(join(dist,'app-shell.html'))); return;
   }
@@ -245,6 +246,7 @@ try {
   await waitUntil(`document.activeElement?.getAttribute('aria-label') === 'Open portfolio review mentor'`, 'Portfolio mentor restores focus');
   }
   if (phase === null || phase === 6) {
+  await verifyMobileNavigation({send,evaluate,waitUntil,origin,delay});
   // Fixed positive chart candles isolate display precision from live providers
   // and from synthetic chart-data generation. Never submit an order.
   chartPriceFixture = true;

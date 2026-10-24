@@ -2,7 +2,6 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { MegaFooter } from "@/components/MegaFooter";
-import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { FileText, AlertTriangle, Scale, Shield, Ban, RefreshCw } from "lucide-react";
 import { SEOSection } from "@/components/SEOSection";
 
@@ -209,7 +208,6 @@ Reuse must respect the applicable rights and license terms. This statement does 
         </main>
 
         <MegaFooter />
-        <MobileBottomNav />
       </div>
     </>
   );

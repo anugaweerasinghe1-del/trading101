@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet-async";
 import { z } from "zod";
 import { Navigation } from "@/components/Navigation";
 import { MegaFooter } from "@/components/MegaFooter";
-import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { EducationalDisclaimer } from "@/components/EducationalDisclaimer";
 import { SEOSection } from "@/components/SEOSection";
 import { Button } from "@/components/ui/button";
@@ -328,7 +327,6 @@ export default function Contact() {
         </main>
 
         <MegaFooter />
-        <MobileBottomNav />
       </div>
     </>
   );

@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { MegaFooter } from "@/components/MegaFooter";
-import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { EducationalDisclaimer } from "@/components/EducationalDisclaimer";
 import { SEOSection } from "@/components/SEOSection";
 import { Target, Compass, GraduationCap, Eye, Cpu, User } from "lucide-react";
@@ -168,7 +167,6 @@ export default function About() {
         </main>
 
         <MegaFooter />
-        <MobileBottomNav />
       </div>
     </>
   );

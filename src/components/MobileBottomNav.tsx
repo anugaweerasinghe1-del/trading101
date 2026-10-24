@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 /**
  * MobileBottomNav - Fixed bottom navigation for mobile devices
  * Native app feel with smooth transitions and safe area handling
+ * The glass utility supplies relative positioning; !fixed keeps this bar anchored.
  * Only visible on mobile (<768px)
  */
 export function MobileBottomNav() {
@@ -24,8 +25,11 @@ export function MobileBottomNav() {
   };
 
   return (
+    <>
+    {/* Preserve document-end clearance for the bar and mobile safe area. */}
+    <div aria-hidden="true" className="md:hidden" style={{ height: "calc(4rem + 2px + env(safe-area-inset-bottom, 0px))" }} />
     <nav 
-      className="fixed bottom-0 left-0 right-0 z-50 md:hidden glass-liquid-dark border-t border-white/10 pb-safe"
+      className="!fixed bottom-0 left-0 right-0 z-50 md:hidden glass-liquid-dark border-t border-white/10 pb-safe"
       role="navigation"
       aria-label="Mobile navigation"
     >
@@ -64,5 +68,6 @@ export function MobileBottomNav() {
         })}
       </div>
     </nav>
+    </>
   );
 }
