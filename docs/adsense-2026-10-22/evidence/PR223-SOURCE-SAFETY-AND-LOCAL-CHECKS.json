@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-24T04:16:11.119400+00:00",
+  "candidateSHA": "2a83ab9e2e5122005975f26a9f7dfd17f5f91010",
+  "baseSHA": "1a1e577a76203a622cfde2929fb37389369ab65f",
+  "outcome": "PASS",
+  "paths": [
+    "src/lib/assetContent.ts"
+  ],
+  "scope": "Entire source file byte-equivalent after exactly one expected static-string replacement. No calculation, fee charged, trade, price, record, auth, DB, progress, privacy/ad or infra behavior change.",
+  "localChecks": {
+    "cloudflareBuildAndSEO": "PASS",
+    "appTypecheck": "PASS"
+  },
+  "risk": "Low static wording; revert wording through protected release cycle, no data rollback."
+}

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T15:27:00.417446+00:00",
+  "updatedAt": "2026-10-24T04:12:07.150119+00:00",
   "releases": [
     {
       "finding": "THQ-001",
@@ -607,6 +607,109 @@
         "evidence/PR221-MAIN-CI.json"
       ],
       "rollback": "Ordinaryprotectedrevertofthisdisplay/contentcommit; noDB/datamigration. Repeatnativeproviderandpublicverification."
+    },
+    {
+      "pr": 222,
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/222",
+      "findings": [
+        "THQ-019",
+        "THQ-020",
+        "THQ-021",
+        "THQ-022"
+      ],
+      "candidateSHA": "ec1183eb63caf82305ef15160756365b07037737",
+      "mergeSHA": "1a1e577a76203a622cfde2929fb37389369ab65f",
+      "state": "PUBLICLY_VERIFIED_MAIN_REQUIRED_AND_RELEASE_MONITORS_PASS",
+      "exactHeadRequiredChecks": "PASS",
+      "production": {
+        "checkedAt": "2026-10-23T16:08:10.219257+00:00",
+        "mergeSHA": "1a1e577a76203a622cfde2929fb37389369ab65f",
+        "outcome": "PASS",
+        "sourceJob": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/39983402745/job/120518788883",
+        "scope": "Authenticated native provider reads by trusted exact-main release-readiness job. Both production deployments match the immutable merge SHA. No provider mutations.",
+        "cloudflare": {
+          "observedAt": "2026-10-23T16:07:44.421Z",
+          "project": "tradehq-preview",
+          "activeProduction": {
+            "id": "1921e1b9-77d3-40a7-8c0b-56c17b31871b",
+            "sha": "1a1e577a76203a622cfde2929fb37389369ab65f",
+            "environment": "production",
+            "branch": "main",
+            "status": "success",
+            "createdAt": "2026-10-23T16:02:22.071749Z"
+          }
+        },
+        "vercel": {
+          "schema": "tradehq-vercel-production-evidence-v1",
+          "deploymentId": "dpl_9ev1xC9CRow1zpH1Nh5wRZRWR2bN",
+          "teamId": "team_fjZ5ggg0P43MsYFSIHbeHAAO",
+          "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+          "commitSha": "1a1e577a76203a622cfde2929fb37389369ab65f",
+          "target": "production",
+          "state": "READY",
+          "activeAlias": "thetradehq.com",
+          "createdAt": 1792771343921,
+          "observedAt": 1792771664421,
+          "requests": 2,
+          "authorization": {
+            "merge": false,
+            "productionRelease": false
+          }
+        }
+      },
+      "freshProductionBaseline": {
+        "cloudflare": {
+          "configured": true,
+          "httpStatus": 200,
+          "errorCodes": [],
+          "projectName": "tradehq-preview",
+          "productionBranch": "main",
+          "canonicalDeployment": {
+            "id": "1921e1b9-77d3-40a7-8c0b-56c17b31871b",
+            "environment": "production",
+            "status": "success",
+            "sha": "1a1e577a76203a622cfde2929fb37389369ab65f"
+          }
+        },
+        "vercel": {
+          "configured": true,
+          "httpStatus": 200,
+          "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+          "production": {
+            "id": "dpl_9ev1xC9CRow1zpH1Nh5wRZRWR2bN",
+            "target": "production",
+            "state": "READY",
+            "sha": "1a1e577a76203a622cfde2929fb37389369ab65f",
+            "branch": "main"
+          }
+        },
+        "checkedAt": "2026-10-24T04:08:27.872622+00:00",
+        "outcome": "PASS",
+        "productionSHA": "1a1e577a76203a622cfde2929fb37389369ab65f",
+        "sourceJob": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40061063942/job/120774470218",
+        "scope": "Fresh native read-only provider baseline after resumption; diagnostic branch is not a production release."
+      },
+      "liveRecheck": {
+        "outcome": "PASS",
+        "affectedStates": 40,
+        "guestStates": 30,
+        "safeGuestControls": 4,
+        "protectedDuelSettlementRPC": "Prevented; results not verified.",
+        "humanViewedComponents": [
+          "BTC chart360/1280",
+          "SHIB fallback chart360",
+          "APT expanded FAQ360"
+        ],
+        "limitation": "All40states inspected geometrically; selected screenshots manually viewed. This is not a whole-site human visual completion claim."
+      },
+      "evidence": [
+        "evidence/PR222-PRODUCTION-PROVIDERS.json",
+        "evidence/PR222-PRODUCTION-FRESH-BASELINE.json",
+        "evidence/PR222-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR222-GUEST-SMOKE.json",
+        "evidence/PR222-MAIN-CI.json"
+      ],
+      "rollback": "Reviewed protected source revert, no account/data recalculation; repeat native and live release checks."
     }
   ],
   "nextCandidate": {
@@ -657,7 +760,9 @@
     "mergeSHA": "48b5c2d5a63ea44dee6c23d7adaacb638d65c4dc",
     "reason": "Releasecyclecomplete; nonewmergeofthisPR."
   },
-  "proposedReleasePriority": [],
+  "proposedReleasePriority": [
+    223
+  ],
   "badgeCandidate": {
     "pr": 216,
     "candidateSHA": "a14bca138a2cae0a1e678c2bba48d2c348db263d",
@@ -801,7 +906,7 @@
   "latestGitHubState": "evidence/FINAL-GITHUB-STATE-20261023.json",
   "latestGitHubProviderBindingEvidence": "evidence/PR221-PRODUCTION-PROVIDERS.json",
   "latestMainValidationEvidence": "evidence/PR221-MAIN-CI.json",
-  "latestVerifiedProductionSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
+  "latestVerifiedProductionSHA": "1a1e577a76203a622cfde2929fb37389369ab65f",
   "summaryQuoteContextCandidate": {
     "pr": 221,
     "candidateSHA": "67ba761a85915ad047081206ee671a823c6f7bed",
@@ -815,6 +920,6 @@
     "mergeSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
     "reason": "Releasecyclecomplete; nonewmergeofthisPR."
   },
-  "remainingConfirmedSiteFixes": 0,
+  "remainingConfirmedSiteFixes": 1,
   "exhaustiveAuditComplete": false
 }

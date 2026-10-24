@@ -1,0 +1,25 @@
+import assert from 'node:assert/strict';import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
+import {openAuditPage,pause} from '/workspace/trading101/docs/adsense-2026-10-22/browser-session.mjs';
+const [origin,sha,stem]=process.argv.slice(2);assert.match(sha,/^[a-f0-9]{40}$/);assert.match(stem,/^PR223-[A-Z-]+$/);
+const root='/workspace/trading101/docs/adsense-2026-10-22/evidence/',paths=JSON.parse(readFileSync(root+'PR223-AFFECTED-ROUTES.json','utf8')).paths,rows=[],errors=[],blocked=[];mkdirSync(root+stem.toLowerCase(),{recursive:true});const p=await openAuditPage();let failure=null,debug=null;
+p.onEvent(m=>{if(m.method==='Runtime.exceptionThrown')errors.push(m.params.exceptionDetails.text);if(m.method==='Fetch.requestPaused'){const {requestId,request}=m.params,u=new URL(request.url),read=['GET','HEAD','OPTIONS'].includes(request.method)||(request.method==='POST'&&u.pathname==='/rest/v1/rpc/get_published_course_catalog');if(!read)blocked.push({method:request.method,path:u.pathname});p.send(read?'Fetch.continueRequest':'Fetch.failRequest',read?{requestId}:{requestId,errorReason:'Aborted'}).catch(()=>{});}});await p.send('Runtime.enable');await p.send('Fetch.enable',{patterns:[{urlPattern:'https://*.supabase.co/*',requestStage:'Request'}]});
+try{
+ for(const path of [...paths,'/trade/arkk','/trade/dia'])for(const [width,height] of [[360,800],[390,844],[768,1024],[1280,800],[1920,1080]]){
+  await p.send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<500});
+  for(let attempt=0;attempt<3;attempt++){
+   await p.send('Page.navigate',{url:'about:blank'});await p.wait("location.href==='about:blank'&&document.readyState==='complete'");await p.send('Page.navigate',{url:origin+path});
+   try{await p.wait(`location.pathname===${JSON.stringify(path)} && document.readyState==='complete' && !!document.querySelector('section[aria-label="Frequently Asked Questions"]') && !document.querySelector('#prerender-seo')`);break;}catch(e){const body=await p.evaluate('document.body?.innerText||""');if(attempt<2&&body.includes('upstream connect error')&&body.includes('envoy://'))continue;throw e;}
+  }
+  await p.evaluate('document.fonts.ready.then(()=>true)',true);await p.evaluate("[...document.querySelectorAll('button')].find(b=>b.textContent.trim()==='Reject analytics')?.click();true");
+  const before=await p.evaluate("localStorage.getItem('tradehq_portfolio')");await p.evaluate("[...document.querySelectorAll('section[aria-label=\"Frequently Asked Questions\"] button')].find(b=>b.textContent.includes('What drives')).click();true");
+  await p.wait("!!document.querySelector('section[aria-label=\"Frequently Asked Questions\"] button[aria-expanded=true]') && !!document.querySelector('section[aria-label=\"Frequently Asked Questions\"] [role=region][data-state=open] p')");await pause(250);
+  const row=await p.evaluate("(()=>{const s=document.querySelector('section[aria-label=\"Frequently Asked Questions\"]'),b=s.querySelector('button[aria-expanded=true]'),a=document.getElementById(b.getAttribute('aria-controls'));return {path:location.pathname,width:innerWidth,question:b.innerText,answer:a.innerText,overflow:document.documentElement.scrollWidth>innerWidth+1};})()");
+  if(paths.includes(path)){assert.ok(row.answer.includes('the fund’s holdings or tracked exposure, fees, structure and underlying market conditions'),'Fund exposure fallback');assert.equal(row.answer.includes('underlying index composition'),false);}
+  else assert.ok(row.answer.includes(path.endsWith('arkk')?'Disruptive Innovation':'US Blue-Chips'),'Retain authored driver');
+  assert.ok(row.answer.includes('Generated practice charts do not model those events'),'Retain simulation limitation');assert.equal(row.overflow,false);assert.equal(await p.evaluate("localStorage.getItem('tradehq_portfolio')"),before);
+  if([360,1280].includes(width)&&['/trade/gld','/trade/ief','/trade/arkk'].includes(path)){await p.evaluate("document.querySelector('section[aria-label=\"Frequently Asked Questions\"] button[aria-expanded=true]').scrollIntoView({block:'center'});true");await pause(200);row.screenshot=stem.toLowerCase()+'/'+path.replaceAll('/','_')+'-'+width+'.png';await p.screenshot(root+row.screenshot);}
+  rows.push(row);console.log('PASS '+path+' '+width);
+ }
+ assert.deepEqual(errors,[]);
+}catch(e){failure=e.message;debug=await p.evaluate("({path:location.pathname,heading:document.querySelector('main h1')?.innerText})").catch(()=>null);throw e;}
+finally{writeFileSync(root+stem+'-BROWSER.json',JSON.stringify({checkedAt:new Date().toISOString(),sha,origin,outcome:failure?'FAIL':'PASS',scope:'Actual expanded driver answer for every source-affected fund plus two authored-driver controls at five widths. Guest holdings unchanged. No order/account/contact submissions.',rows,runtimeErrors:errors,preventedProtectedRequests:blocked,failure,debug},null,2)+'\n');await p.close();}

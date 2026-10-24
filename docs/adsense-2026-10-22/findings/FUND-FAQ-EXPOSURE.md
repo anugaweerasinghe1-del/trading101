@@ -1,0 +1,7 @@
+# THQ-023 — generic fund FAQ incorrectly assumes index exposure
+
+P2 educational accuracy. Reproduced by expanding the GLD driver answer on the public site: “underlying index composition, fund flows and sector rotation.” GLD's issuer instead states that its objective is to reflect gold-bullion price less expenses; the selected Key Features paragraph was read from https://www.ssga.com/us/en/individual/etfs/spdr-gold-shares-gld . This is not an assertion that all 14 fallback fund descriptions were false, or that this is a specific Google Publisher Policy violation.
+
+Evidence: `evidence/continuation-20261023/trade-gld.json` (actual expanded answer), `PRIMARY-GLD-1.json` in that directory (issuer reference) and `evidence/PR223-AFFECTED-ROUTES.json` (14 source-derived routes). The site remains a virtual practice tool; no real holding, gold ownership, return or price accuracy is inferred.
+
+PR #223 changes one static fallback-driver string to holdings or tracked exposure, fees, structure and underlying market conditions. Authored instrument-specific drivers retain precedence. No pricing, fee charged, order, holdings, account/DB/auth/progress, privacy/ad or infrastructure behavior changes. Rollback is a reviewed wording revert with no data rollback. Build/SEO and typecheck pass; exact-head CI, native preview readiness, actual expanded answers at five widths and the strict serial native-production/live release cycle are required before PUBLICLY_VERIFIED. PR #222 completed that cycle first.

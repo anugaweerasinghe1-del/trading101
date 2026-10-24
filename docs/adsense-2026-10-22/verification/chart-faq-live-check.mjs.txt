@@ -1,0 +1,49 @@
+import assert from 'node:assert/strict';
+import {writeFileSync,mkdirSync} from 'node:fs';
+import {openAuditPage,pause} from '/workspace/trading101/docs/adsense-2026-10-22/browser-session.mjs';
+const [origin,sha,stem,mode]=process.argv.slice(2);assert.ok(/^https:\/\//.test(origin));assert.match(sha,/^[a-f0-9]{40}$/);assert.match(stem,/^PR\d+-[A-Z-]+$/);
+const root='/workspace/trading101/docs/adsense-2026-10-22/evidence/',images=root+stem.toLowerCase();mkdirSync(images,{recursive:true});
+const p=await openAuditPage(),rows=[],errors=[],blocked=[];let candleOutage=false,failure=null,debug=null;
+p.onEvent(m=>{if(m.method==='Runtime.exceptionThrown')errors.push(m.params.exceptionDetails.text);if(m.method==='Fetch.requestPaused'){const {requestId,request}=m.params,u=new URL(request.url),read=['GET','HEAD','OPTIONS'].includes(request.method)||(request.method==='POST'&&['/rest/v1/rpc/get_published_course_catalog','/rest/v1/rpc/get_public_practice_members','/rest/v1/rpc/get_previous_practice_results'].includes(u.pathname));const outage=candleOutage&&u.pathname==='/functions/v1/live-market-data'&&u.searchParams.get('dataType')==='candles';if(!read||outage)blocked.push({method:request.method,path:u.pathname,reason:outage?'Isolated browser candle GET outage fixture':'Prevent protected production mutation'});p.send(read&&!outage?'Fetch.continueRequest':'Fetch.failRequest',read&&!outage?{requestId}:{requestId,errorReason:'Aborted'}).catch(()=>{});}});
+await p.send('Runtime.enable');await p.send('Fetch.enable',{patterns:[{urlPattern:'https://*.supabase.co/*',requestStage:'Request'}]});
+async function navigate(path,width,height){
+ await p.send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<500});
+ for(let attempt=0;attempt<3;attempt++){
+  await p.send('Page.navigate',{url:'about:blank'});await p.wait("location.href==='about:blank'&&document.readyState==='complete'");
+  await p.send('Page.navigate',{url:origin+path});
+  try{await p.wait(`location.pathname===${JSON.stringify(path)} && document.readyState==='complete' && !!document.querySelector('main h1') && !document.querySelector('#prerender-seo') && !document.querySelector('main h1').textContent.includes('Loading')`);break;}
+  catch(e){const body=await p.evaluate('document.body?.innerText||""');if(attempt<2&&body.includes('upstream connect error')&&body.includes('envoy://')){await pause(1000);continue;}throw e;}
+ }
+ await p.evaluate('document.fonts.ready.then(()=>true)',true);await pause(400);await p.evaluate("[...document.querySelectorAll('button')].find(b=>b.textContent.trim()==='Reject analytics')?.click();true");
+ await p.wait("!!document.querySelector('main .recharts-wrapper')");
+}
+try{
+ for(const path of (mode==='short'?['/trade/btc','/trade/shib','/trade/apt']:['/trade','/trade/btc','/trade/shib','/trade/apt','/trade/avgo','/trade/arkk','/trade/audusd','/trade/brent']))for(const [width,height] of (mode==='short'?[[360,800],[1280,800]]:[[360,800],[390,844],[768,1024],[1280,800],[1920,1080]])){
+  candleOutage=path==='/trade/shib';await navigate(path,width,height);
+  const portfolio=await p.evaluate("localStorage.getItem('tradehq_portfolio')");const timeframes=[];
+  for(const tf of ['1H','4H','1D','1W']){
+   await p.evaluate(`[...document.querySelectorAll('main button')].find(b=>b.textContent.trim()===${JSON.stringify(tf)}).click();true`);
+   await p.wait(`[...document.querySelectorAll('main button[aria-pressed=true]')].some(b=>b.textContent.trim()===${JSON.stringify(tf)}) && document.querySelector('main').innerText.includes(${JSON.stringify(tf+' window ending at the latest chart point.')})`);
+   timeframes.push(await p.evaluate(`({window:${JSON.stringify(tf)},ticks:[...document.querySelectorAll('main .recharts-xAxis text')].map(e=>e.textContent),limitation:document.querySelector('main [aria-live=polite]')?.textContent})`));
+  }
+  const faqs=[];
+  if(!['/trade','/trade/btc','/trade/shib'].includes(path))for(const fragment of ['What drives','for beginner traders to study','compare to other']){
+   await p.evaluate(`[...document.querySelectorAll('section[aria-label="Frequently Asked Questions"] button')].find(b=>b.textContent.includes(${JSON.stringify(fragment)})).click();true`);
+   const required=fragment==='What drives'?'do not model those events':fragment==='for beginner traders to study'?'does not establish suitability':'not a measured 24-hour return';
+   await p.wait(`document.querySelector('section[aria-label="Frequently Asked Questions"] [role=region][data-state=open]')?.innerText.includes(${JSON.stringify(required)})`);
+   const faq=await p.evaluate(`(()=>{const section=document.querySelector('section[aria-label="Frequently Asked Questions"]'),b=section.querySelector('button[aria-expanded=true]'),a=document.getElementById(b.getAttribute('aria-controls'));return {question:b.innerText,answer:a.innerText};})()`);faqs.push(faq);
+  }
+  if(candleOutage){await p.evaluate("[...document.querySelectorAll('main button')].find(b=>b.textContent.trim()==='1H').click();true");await pause(6500);const ticks=await p.evaluate("[...document.querySelectorAll('main .recharts-yAxis text')].map(e=>Number(e.textContent.replace(/[$,]/g,'')))");assert.ok(ticks.length&&ticks.every(v=>v>0),'Later tiny-price fallback ticks stay positive');}
+  assert.equal(await p.evaluate("localStorage.getItem('tradehq_portfolio')"),portfolio,'Display controls preserve guest holdings');
+  const axisBounds=await p.evaluate("(()=>{const c=document.querySelector('main .recharts-wrapper').getBoundingClientRect();return [...document.querySelectorAll('main .recharts-yAxis text')].map(e=>{const r=e.getBoundingClientRect();return {text:e.textContent,left:r.left,right:r.right,inside:r.left>=c.left-1&&r.right<=c.right+1};});})()");assert.ok(axisBounds.length&&axisBounds.every(t=>t.inside),'Price labels remain inside SVG');
+  const layout=await p.evaluate("({overflow:document.documentElement.scrollWidth>innerWidth+1,chartHeight:document.querySelector('main .recharts-wrapper').getBoundingClientRect().height,heading:document.querySelector('main h1').innerText})");assert.equal(layout.overflow,false,path+' width '+width);assert.ok(layout.chartHeight>120,'Chart retains usable height');
+  const screenshots=[];
+  if([360,1280].includes(width)){
+   await p.evaluate("document.querySelector('main .recharts-wrapper').parentElement.parentElement.scrollIntoView({block:'center'});true");await pause(300);const image=stem.toLowerCase()+'/'+path.replaceAll('/','_')+'-'+width+'-chart.png';await p.screenshot(root+image);screenshots.push(image);
+   if(faqs.length){await p.evaluate("document.querySelector('section[aria-label=\"Frequently Asked Questions\"]').scrollIntoView({block:'start'});true");const image=stem.toLowerCase()+'/'+path.replaceAll('/','_')+'-'+width+'-faq.png';await p.screenshot(root+image);screenshots.push(image);}
+  }
+  rows.push({path,width,height,checkedAt:new Date().toISOString(),layout,axisBounds,timeframes,faqs,isolatedCandleOutage:candleOutage,screenshots});console.log('PASS '+path+' '+width);
+ }
+ assert.deepEqual(errors,[],'No captured runtime exceptions');
+}catch(e){failure=e.message;debug=await p.evaluate("({url:location.href,heading:document.querySelector('main h1')?.innerText,body:document.body?.innerText.slice(0,1000)})").catch(()=>null);throw e;}
+finally{writeFileSync(root+stem+'-BROWSER.json',JSON.stringify({checkedAt:new Date().toISOString(),sha,origin,outcome:failure?'FAIL':'PASS',scope:mode==='short'?'Actual anonymous preview three route variants x mobile/desktop; four selectors, generated FAQ and later tiny fallback updates. No account/order/contact writes.':'Actual anonymous browser eight route variants x five widths, four chart selectors, 15 generated FAQ answers, two later tiny-price updates in a browser-local candle outage fixture; no orders/accounts/contact writes.',rows,runtimeErrors:errors,preventedRequests:blocked,failure,debug,limitations:['Limited returned history can produce the same points for several windows; multi-day subset behavior is independently verified by isolated compiled UI fixtures.','Candle failure is only a local test condition, not a statement of an actual provider outage.','Screenshots are collection until individually viewed.']},null,2)+'\n');await p.close();}

@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-10-23T15:59:21.261Z",
+  "candidateSHA": "ec1183eb63caf82305ef15160756365b07037737",
+  "nativeState": "READY",
+  "outcome": "NOT_VERIFIED_DEPLOYMENT_PROTECTED",
+  "observed": {
+    "origin": "https://vercel.com",
+    "path": "/login",
+    "heading": "Log in to Vercel"
+  },
+  "limitation": "Existing Vercel preview login protection blocks anonymous rendering; no authentication or project settings were altered. Exact-head native readiness and real Cloudflare preview are verified separately."
+}

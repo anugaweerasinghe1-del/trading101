@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-23T10:09:18.664511+00:00",
+  "generatedAt": "2026-10-24T04:14:23.193734+00:00",
   "complete": false,
-  "mainBodiesRead": 282,
+  "mainBodiesRead": 336,
   "publicRoutes": 441,
   "rows": [
     {
@@ -13541,6 +13541,20 @@
           "outcome": "PASS",
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR220-PRODUCTION-BROWSER.json"
+        },
+        {
+          "pr": 222,
+          "mergeSHA": "1a1e577a76203a622cfde2929fb37389369ab65f",
+          "evidence": "evidence/PR222-PRODUCTION-BROWSER.json",
+          "widths": [
+            360,
+            390,
+            768,
+            1280,
+            1920
+          ],
+          "outcome": "PASS",
+          "scope": "Four window controls, axis bounds, source limitations and relevant expanded FAQ; tiny fallback outage is local test condition. No whole-page completion inferred."
         }
       ]
     },
@@ -14414,7 +14428,7 @@
       "path": "/trade/apt",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/apt",
         "url": "https://www.thetradehq.com/trade/apt",
@@ -14458,11 +14472,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "APT is offered as an order-entry exercise, with no asset-specific research claimed. The main explains virtual sizing and displayed fees; its cryptocurrency discussion and learning links are identical to ARB/ATOM after substituting identity. Functional value is the selected instrument, not a distinct research article. Read 23 October from the dated 22 October rendered-main capture; closed FAQ, complete visual/control/source review is not implied.",
+        "originality": "Specific overlap/distinct value recorded in assessment; whole-inventory duplication review remains incomplete.",
+        "factualConcerns": "See assessment and separately recorded findings/investigations; source corroboration remains partial.",
+        "credibility": "No issuer/network credentials or real quote accuracy inferred from simulator data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -14507,14 +14521,37 @@
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped.",
         "THQ-017": "Shared generator source inventory; fresh representative browser proof is separately scoped."
-      }
+      },
+      "expandedFAQReview": {
+        "answersRead": 5,
+        "assessment": "APT free-practice/no-real-loss answers are clear. The other three answers imply catalyst modelling, universal popularity and real volume/correlation comparisons; fresh Markets labels instead say generated change/demo activity. THQ-021 records this template mismatch.",
+        "controlEvidence": "evidence/continuation-20261023/trade-apt.json",
+        "readAt": "2026-10-23T15:46:33.469819+00:00",
+        "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 222,
+          "mergeSHA": "1a1e577a76203a622cfde2929fb37389369ab65f",
+          "evidence": "evidence/PR222-PRODUCTION-BROWSER.json",
+          "widths": [
+            360,
+            390,
+            768,
+            1280,
+            1920
+          ],
+          "outcome": "PASS",
+          "scope": "Four window controls, axis bounds, source limitations and relevant expanded FAQ; tiny fallback outage is local test condition. No whole-page completion inferred."
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trade/arb",
       "path": "/trade/arb",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/arb",
         "url": "https://www.thetradehq.com/trade/arb",
@@ -14558,11 +14595,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "ARB has a simulated-chart state and the same network/regulation context and no-research limitation as APT. Useful for locating its virtual-order screen; the rendered prose supplies no Arbitrum-specific network explanation or independent price thesis. Do not treat this as unique asset research. Read 23 October from the dated 22 October rendered-main capture; closed FAQ, complete visual/control/source review is not implied.",
+        "originality": "Specific overlap/distinct value recorded in assessment; whole-inventory duplication review remains incomplete.",
+        "factualConcerns": "See assessment and separately recorded findings/investigations; source corroboration remains partial.",
+        "credibility": "No issuer/network credentials or real quote accuracy inferred from simulator data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -14607,6 +14644,13 @@
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped.",
         "THQ-017": "Shared generator source inventory; fresh representative browser proof is separately scoped."
+      },
+      "expandedFAQReview": {
+        "answersRead": 5,
+        "assessment": "ARB answers repeat the APT template: real crypto drivers are mixed with generated-chart practice; broad popularity is unsupported and comparison guidance mislabels generated Markets measures. Virtual-only loss is clear. THQ-021.",
+        "controlEvidence": "evidence/continuation-20261023/trade-arb.json",
+        "readAt": "2026-10-23T15:46:33.469819+00:00",
+        "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
       }
     },
     {
@@ -14614,7 +14658,7 @@
       "path": "/trade/arkk",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/arkk",
         "url": "https://www.thetradehq.com/trade/arkk",
@@ -14658,11 +14702,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "ARKK explains active management and disruptive-innovation concentration. It rejects a universal three-percent position limit and any volatility/return promise. The Cathie Wood/mandate description needs current issuer corroboration; boilerplate practice instructions are repeated, while the fund-specific concentration caution adds context. Read 23 October from the dated 22 October rendered-main capture; closed FAQ, complete visual/control/source review is not implied.",
+        "originality": "Specific overlap/distinct value recorded in assessment; whole-inventory duplication review remains incomplete.",
+        "factualConcerns": "See assessment and separately recorded findings/investigations; source corroboration remains partial.",
+        "credibility": "No issuer/network credentials or real quote accuracy inferred from simulator data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -14705,14 +14749,37 @@
       },
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped."
-      }
+      },
+      "expandedFAQReview": {
+        "answersRead": 5,
+        "assessment": "ARKK uses the fund-specific disruptive-innovation driver, but the generated answer still suggests reading that catalyst on simulated history and labels demo activity/changes as volume/24h returns. The no-real-loss answer is sound. THQ-021.",
+        "controlEvidence": "evidence/continuation-20261023/trade-arkk.json",
+        "readAt": "2026-10-23T15:46:33.469819+00:00",
+        "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 222,
+          "mergeSHA": "1a1e577a76203a622cfde2929fb37389369ab65f",
+          "evidence": "evidence/PR222-PRODUCTION-BROWSER.json",
+          "widths": [
+            360,
+            390,
+            768,
+            1280,
+            1920
+          ],
+          "outcome": "PASS",
+          "scope": "Four window controls, axis bounds, source limitations and relevant expanded FAQ; tiny fallback outage is local test condition. No whole-page completion inferred."
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trade/atom",
       "path": "/trade/atom",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/atom",
         "url": "https://www.thetradehq.com/trade/atom",
@@ -14756,11 +14823,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "ATOM is a generic cryptocurrency exercise with an explicit no-research limitation, rather than a Cosmos ecosystem primer. Its body repeats APT/ARB practice and related-lesson scaffolding; simulation and financial-advice limits are clear. Expanded answers are assessed separately. Read 23 October from the dated 22 October rendered-main capture; closed FAQ, complete visual/control/source review is not implied.",
+        "originality": "Specific overlap/distinct value recorded in assessment; whole-inventory duplication review remains incomplete.",
+        "factualConcerns": "See assessment and separately recorded findings/investigations; source corroboration remains partial.",
+        "credibility": "No issuer/network credentials or real quote accuracy inferred from simulator data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -14805,6 +14872,13 @@
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped.",
         "THQ-017": "Shared generator source inventory; fresh representative browser proof is separately scoped."
+      },
+      "expandedFAQReview": {
+        "answersRead": 5,
+        "assessment": "ATOM FAQ establishes free virtual order entry, then repeats the unsupported widely-followed assertion and real-correlation/volume guidance from APT/ARB. This is not a Cosmos-specific research FAQ. THQ-021.",
+        "controlEvidence": "evidence/continuation-20261023/trade-atom.json",
+        "readAt": "2026-10-23T15:46:33.469819+00:00",
+        "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
       }
     },
     {
@@ -14812,7 +14886,7 @@
       "path": "/trade/audusd",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/audusd",
         "url": "https://www.thetradehq.com/trade/audusd",
@@ -14856,11 +14930,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "AUD/USD identifies Australian dollar versus US dollar, commodity/China drivers and virtual practice. Correlation exercises are suggested without a dated measurement; no fixed correlation should be inferred from generated data. The generic dollar-prefixed quote/unit model remains part of INV-FX01, not an authorized accounting change. Read 23 October from the dated 22 October rendered-main capture; closed FAQ, complete visual/control/source review is not implied.",
+        "originality": "Specific overlap/distinct value recorded in assessment; whole-inventory duplication review remains incomplete.",
+        "factualConcerns": "See assessment and separately recorded findings/investigations; source corroboration remains partial.",
+        "credibility": "No issuer/network credentials or real quote accuracy inferred from simulator data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -14903,14 +14977,37 @@
       },
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped."
-      }
+      },
+      "expandedFAQReview": {
+        "answersRead": 5,
+        "assessment": "AUD/USD driver list covers central-bank/rate/macro topics; generated charts do not model those releases. Its Markets instructions misname synthetic activity/latest change as volume/24h returns; virtual loss scope is clear. Unit/accounting remains INV-FX01. THQ-021.",
+        "controlEvidence": "evidence/continuation-20261023/trade-audusd.json",
+        "readAt": "2026-10-23T15:46:33.469819+00:00",
+        "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 222,
+          "mergeSHA": "1a1e577a76203a622cfde2929fb37389369ab65f",
+          "evidence": "evidence/PR222-PRODUCTION-BROWSER.json",
+          "widths": [
+            360,
+            390,
+            768,
+            1280,
+            1920
+          ],
+          "outcome": "PASS",
+          "scope": "Four window controls, axis bounds, source limitations and relevant expanded FAQ; tiny fallback outage is local test condition. No whole-page completion inferred."
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trade/avax",
       "path": "/trade/avax",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/avax",
         "url": "https://www.thetradehq.com/trade/avax",
@@ -14954,11 +15051,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "AVAX distinguishes network-specific developments from broader crypto and correctly rejects a BTC-dominance fall as proof of AVAX outperformance. The captured CoinGecko observation timestamp is separate from page refresh. Speed/low-fee and multi-VM descriptions need a dated network source, rather than assuming all activity has one cost. Read 23 October from the dated 22 October rendered-main capture; closed FAQ, complete visual/control/source review is not implied.",
+        "originality": "Specific overlap/distinct value recorded in assessment; whole-inventory duplication review remains incomplete.",
+        "factualConcerns": "See assessment and separately recorded findings/investigations; source corroboration remains partial.",
+        "credibility": "No issuer/network credentials or real quote accuracy inferred from simulator data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -15009,6 +15106,13 @@
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped.",
         "THQ-017": "Shared generator source inventory; fresh representative browser proof is separately scoped."
+      },
+      "expandedFAQReview": {
+        "answersRead": 5,
+        "assessment": "AVAX expanded answers use generic crypto drivers/popularity rather than the nuanced main-body network discussion. The comparison answer implies real correlations from generated practice series. Free virtual-only practice is accurately explained. THQ-021.",
+        "controlEvidence": "evidence/continuation-20261023/trade-avax.json",
+        "readAt": "2026-10-23T15:46:33.469819+00:00",
+        "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
       }
     },
     {
@@ -15016,7 +15120,7 @@
       "path": "/trade/avgo",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/avgo",
         "url": "https://www.thetradehq.com/trade/avgo",
@@ -15060,11 +15164,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "AVGO presents Broadcom as a stock exercise and explicitly says asset-specific research is not published. It adds no semiconductor/software business analysis; the generic stock mechanics and lesson links match BA/BAC. The displayed simulated $1,305.87 is not evidence of a current or split-adjusted market quote. Read 23 October from the dated 22 October rendered-main capture; closed FAQ, complete visual/control/source review is not implied.",
+        "originality": "Specific overlap/distinct value recorded in assessment; whole-inventory duplication review remains incomplete.",
+        "factualConcerns": "See assessment and separately recorded findings/investigations; source corroboration remains partial.",
+        "credibility": "No issuer/network credentials or real quote accuracy inferred from simulator data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -15106,14 +15210,37 @@
       },
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped."
-      }
+      },
+      "expandedFAQReview": {
+        "answersRead": 5,
+        "assessment": "AVGO FAQ uses earnings/sector/macro topics but overstates what generated chart history teaches about those events. The same generic popularity and comparison claims recur; virtual-only scope is clear. THQ-021.",
+        "controlEvidence": "evidence/continuation-20261023/trade-avgo.json",
+        "readAt": "2026-10-23T15:46:33.469819+00:00",
+        "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 222,
+          "mergeSHA": "1a1e577a76203a622cfde2929fb37389369ab65f",
+          "evidence": "evidence/PR222-PRODUCTION-BROWSER.json",
+          "widths": [
+            360,
+            390,
+            768,
+            1280,
+            1920
+          ],
+          "outcome": "PASS",
+          "scope": "Four window controls, axis bounds, source limitations and relevant expanded FAQ; tiny fallback outage is local test condition. No whole-page completion inferred."
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trade/ba",
       "path": "/trade/ba",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/ba",
         "url": "https://www.thetradehq.com/trade/ba",
@@ -15157,11 +15284,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "BA is a Boeing-labelled virtual-order screen, not an aerospace outlook. Its scope disclaims company-fundamental or actual-execution inference from generated data. Generic stock practice paragraphs are shared with AVGO/BAC; primary company claims are minimal here. Read 23 October from the dated 22 October rendered-main capture; closed FAQ, complete visual/control/source review is not implied.",
+        "originality": "Specific overlap/distinct value recorded in assessment; whole-inventory duplication review remains incomplete.",
+        "factualConcerns": "See assessment and separately recorded findings/investigations; source corroboration remains partial.",
+        "credibility": "No issuer/network credentials or real quote accuracy inferred from simulator data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -15203,6 +15330,13 @@
       },
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped."
+      },
+      "expandedFAQReview": {
+        "answersRead": 5,
+        "assessment": "BA FAQ contains no Boeing-specific drivers beyond generic stock earnings/sector/macro topics. It describes current Markets data incorrectly and overgeneralizes popularity/suitability; free virtual practice answer is clear. THQ-021.",
+        "controlEvidence": "evidence/continuation-20261023/trade-ba.json",
+        "readAt": "2026-10-23T15:46:33.469819+00:00",
+        "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
       }
     },
     {
@@ -15210,7 +15344,7 @@
       "path": "/trade/bac",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/bac",
         "url": "https://www.thetradehq.com/trade/bac",
@@ -15254,11 +15388,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "BAC provides the Bank of America instrument selection, hypothetical sizing and virtual-only limits. No bank-specific balance-sheet, rate or credit analysis is supplied; prose repeats the other generic stock screens. The functional simulator identity is the useful distinction. Read 23 October from the dated 22 October rendered-main capture; closed FAQ, complete visual/control/source review is not implied.",
+        "originality": "Specific overlap/distinct value recorded in assessment; whole-inventory duplication review remains incomplete.",
+        "factualConcerns": "See assessment and separately recorded findings/investigations; source corroboration remains partial.",
+        "credibility": "No issuer/network credentials or real quote accuracy inferred from simulator data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -15300,6 +15434,13 @@
       },
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped."
+      },
+      "expandedFAQReview": {
+        "answersRead": 5,
+        "assessment": "BAC FAQ repeats generic stock earnings/sector/macro driver guidance, not bank-specific analysis. Its volume/24h/correlation language conflicts with the Markets disclosure; virtual-only currency language is clear. THQ-021.",
+        "controlEvidence": "evidence/continuation-20261023/trade-bac.json",
+        "readAt": "2026-10-23T15:46:33.469819+00:00",
+        "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
       }
     },
     {
@@ -15307,7 +15448,7 @@
       "path": "/trade/bnb",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/bnb",
         "url": "https://www.thetradehq.com/trade/bnb",
@@ -15351,11 +15492,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "BNB separates chain usage, exchange services and token supply, and states that token ownership is not company ownership. It rejects platform updates as evidence of accumulation/rallies. The same strategy is repeated in summary and instrument scope; timestamped provider fields should not be treated as future signals. Read 23 October from the dated 22 October rendered-main capture; closed FAQ, complete visual/control/source review is not implied.",
+        "originality": "Specific overlap/distinct value recorded in assessment; whole-inventory duplication review remains incomplete.",
+        "factualConcerns": "See assessment and separately recorded findings/investigations; source corroboration remains partial.",
+        "credibility": "No issuer/network credentials or real quote accuracy inferred from simulator data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -15396,6 +15537,13 @@
           8
         ],
         "scope": "Normalized long standalone paragraphs only; not promoted to full main-body reading."
+      },
+      "expandedFAQReview": {
+        "answersRead": 4,
+        "assessment": "All four BNB answers distinguish chain/exchange/burn activity and deny guaranteed return relationships. The BTC comparison asks for a matching period and avoids fixed macro/exchange sensitivities. This handwritten set does not contain the generated volume/popularity defect.",
+        "controlEvidence": "evidence/continuation-20261023/trade-bnb.json",
+        "readAt": "2026-10-23T15:46:33.469819+00:00",
+        "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
       }
     },
     {
@@ -15403,7 +15551,7 @@
       "path": "/trade/brent",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/brent",
         "url": "https://www.thetradehq.com/trade/brent",
@@ -15447,11 +15595,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "BRENT explicitly offers only a generic crude-oil practice instrument with no published research. It does not claim a specific futures contract, delivery month or executed exchange price. Commodity practice text and links repeat coffee/corn; no actual oil-market forecast is established. Read 23 October from the dated 22 October rendered-main capture; closed FAQ, complete visual/control/source review is not implied.",
+        "originality": "Specific overlap/distinct value recorded in assessment; whole-inventory duplication review remains incomplete.",
+        "factualConcerns": "See assessment and separately recorded findings/investigations; source corroboration remains partial.",
+        "credibility": "No issuer/network credentials or real quote accuracy inferred from simulator data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -15496,14 +15644,37 @@
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped.",
         "THQ-017": "Shared generator source inventory; fresh representative browser proof is separately scoped."
-      }
+      },
+      "expandedFAQReview": {
+        "answersRead": 5,
+        "assessment": "BRENT driver answer names supply/demand, USD and geopolitics, but generated history cannot model those real events. Its Markets comparison mislabels demo activity and change; no-real-money statement is clear. THQ-021.",
+        "controlEvidence": "evidence/continuation-20261023/trade-brent.json",
+        "readAt": "2026-10-23T15:46:33.469819+00:00",
+        "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+      },
+      "postDeploymentChecks": [
+        {
+          "pr": 222,
+          "mergeSHA": "1a1e577a76203a622cfde2929fb37389369ab65f",
+          "evidence": "evidence/PR222-PRODUCTION-BROWSER.json",
+          "widths": [
+            360,
+            390,
+            768,
+            1280,
+            1920
+          ],
+          "outcome": "PASS",
+          "scope": "Four window controls, axis bounds, source limitations and relevant expanded FAQ; tiny fallback outage is local test condition. No whole-page completion inferred."
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trade/btc",
       "path": "/trade/btc",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/btc",
         "url": "https://www.thetradehq.com/trade/btc",
@@ -15547,11 +15718,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "BTC explains peer-to-peer use, proof of work and a 21-million issuance limit qualified by current consensus rules; fixed issuance does not guarantee purchasing power. Moving-average/support exercises are suggestions, not profitable signals. Summary and scope repeat the same strategy. Fresh live timeframe investigation is recorded under THQ-019. Read 23 October from the dated 22 October rendered-main capture; closed FAQ, complete visual/control/source review is not implied.",
+        "originality": "Specific overlap/distinct value recorded in assessment; whole-inventory duplication review remains incomplete.",
+        "factualConcerns": "See assessment and separately recorded findings/investigations; source corroboration remains partial.",
+        "credibility": "No issuer/network credentials or real quote accuracy inferred from simulator data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -15600,15 +15771,36 @@
           "outcome": "PASS",
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR221-PRODUCTION-BROWSER.json"
+        },
+        {
+          "pr": 222,
+          "mergeSHA": "1a1e577a76203a622cfde2929fb37389369ab65f",
+          "evidence": "evidence/PR222-PRODUCTION-BROWSER.json",
+          "widths": [
+            360,
+            390,
+            768,
+            1280,
+            1920
+          ],
+          "outcome": "PASS",
+          "scope": "Four window controls, axis bounds, source limitations and relevant expanded FAQ; tiny fallback outage is local test condition. No whole-page completion inferred."
         }
-      ]
+      ],
+      "expandedFAQReview": {
+        "answersRead": 4,
+        "assessment": "All four BTC answers were expanded/read. Virtual $100K and no-payment scope are explained, suitability is qualified by the learner objective and volatility. Candlestick/mentor descriptions are separate from the area-chart timeframe defect; no new false return promise established.",
+        "controlEvidence": "evidence/continuation-20261023/trade-btc.json",
+        "readAt": "2026-10-23T15:46:33.469819+00:00",
+        "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+      }
     },
     {
       "url": "https://www.thetradehq.com/trade/cat",
       "path": "/trade/cat",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/cat",
         "url": "https://www.thetradehq.com/trade/cat",
@@ -15652,11 +15844,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "CAT is identified as Caterpillar stock with a no-asset-research limitation. Shared generic stock paragraphs explain hypothetical moves/fees without a construction-cycle thesis. The old capture is a simulated quote, not a verified current market observation. Read 23 October from the dated 22 October rendered-main capture; closed FAQ, complete visual/control/source review is not implied.",
+        "originality": "Specific overlap/distinct value recorded in assessment; whole-inventory duplication review remains incomplete.",
+        "factualConcerns": "See assessment and separately recorded findings/investigations; source corroboration remains partial.",
+        "credibility": "No issuer/network credentials or real quote accuracy inferred from simulator data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -15698,6 +15890,13 @@
       },
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped."
+      },
+      "expandedFAQReview": {
+        "answersRead": 5,
+        "assessment": "CAT FAQ repeats generic stock drivers and popularity rather than an industrial-equipment explanation. Its comparison answer mislabels Markets practice data and implies correlation learning from synthetic series. Virtual practice loss limit is clear. THQ-021.",
+        "controlEvidence": "evidence/continuation-20261023/trade-cat.json",
+        "readAt": "2026-10-23T15:46:33.469819+00:00",
+        "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
       }
     },
     {
@@ -15705,7 +15904,7 @@
       "path": "/trade/coffee",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/coffee",
         "url": "https://www.thetradehq.com/trade/coffee",
@@ -15749,11 +15948,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "KC is a Coffee-labelled commodity exercise, with virtual fees and generated-data limitations. It provides no contract multiplier, physical unit or harvest-specific research, so no exchange-contract arithmetic is implied. The commodity practice copy overlaps BRENT/corn/cotton. Read 23 October from the dated 22 October rendered-main capture; closed FAQ, complete visual/control/source review is not implied.",
+        "originality": "Specific overlap/distinct value recorded in assessment; whole-inventory duplication review remains incomplete.",
+        "factualConcerns": "See assessment and separately recorded findings/investigations; source corroboration remains partial.",
+        "credibility": "No issuer/network credentials or real quote accuracy inferred from simulator data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -15798,6 +15997,13 @@
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped.",
         "THQ-017": "Shared generator source inventory; fresh representative browser proof is separately scoped."
+      },
+      "expandedFAQReview": {
+        "answersRead": 5,
+        "assessment": "Coffee FAQ names supply/demand/USD/geopolitics and offers free virtual exercise, but its generated-chart catalyst and volume/24h/correlation claims exceed the data shown. It supplies no exchange-contract or delivery research. THQ-021.",
+        "controlEvidence": "evidence/continuation-20261023/trade-coffee.json",
+        "readAt": "2026-10-23T15:46:33.469819+00:00",
+        "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
       }
     },
     {
@@ -15805,7 +16011,7 @@
       "path": "/trade/coin",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/coin",
         "url": "https://www.thetradehq.com/trade/coin",
@@ -15849,11 +16055,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "COIN is correctly presented as Coinbase Global stock rather than a cryptocurrency holding. Its body supplies generic virtual-order mechanics and explicitly no asset-specific research. The shared stock paragraphs do not establish an exchange-revenue or crypto-beta thesis. Read 23 October from the dated 22 October rendered-main capture; closed FAQ, complete visual/control/source review is not implied.",
+        "originality": "Specific overlap/distinct value recorded in assessment; whole-inventory duplication review remains incomplete.",
+        "factualConcerns": "See assessment and separately recorded findings/investigations; source corroboration remains partial.",
+        "credibility": "No issuer/network credentials or real quote accuracy inferred from simulator data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -15902,7 +16108,7 @@
       "path": "/trade/copper",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/copper",
         "url": "https://www.thetradehq.com/trade/copper",
@@ -15946,11 +16152,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "HG links copper to industrial uses and explains the Dr. Copper nickname, then warns that price is not a reliable advance signal of a market rally. The dated key takeaway truncates the abbreviation; that sentence-generation defect was already released as THQ-014. Do not count the historical symptom as a new unresolved defect. Read 23 October from the dated 22 October rendered-main capture; closed FAQ, complete visual/control/source review is not implied.",
+        "originality": "Specific overlap/distinct value recorded in assessment; whole-inventory duplication review remains incomplete.",
+        "factualConcerns": "See assessment and separately recorded findings/investigations; source corroboration remains partial.",
+        "credibility": "No issuer/network credentials or real quote accuracy inferred from simulator data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -16003,7 +16209,7 @@
       "path": "/trade/corn",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/corn",
         "url": "https://www.thetradehq.com/trade/corn",
@@ -16047,11 +16253,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "ZC is a Corn practice exposure with no asset-specific research claimed. Hypothetical rise/fall and fee instructions are clear, but the content does not specify a real futures price unit or contract. Repeats the generic commodity exercise; financial unit-model follow-up is separate. Read 23 October from the dated 22 October rendered-main capture; closed FAQ, complete visual/control/source review is not implied.",
+        "originality": "Specific overlap/distinct value recorded in assessment; whole-inventory duplication review remains incomplete.",
+        "factualConcerns": "See assessment and separately recorded findings/investigations; source corroboration remains partial.",
+        "credibility": "No issuer/network credentials or real quote accuracy inferred from simulator data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -16103,7 +16309,7 @@
       "path": "/trade/cost",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/cost",
         "url": "https://www.thetradehq.com/trade/cost",
@@ -16147,11 +16353,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "COST is a Costco-labelled stock practice screen with no claimed issuer research. It makes the virtual/no-exchange-execution scope explicit; related large-cap links are navigation, not evidence of similarity in fundamentals or returns. Main copy overlaps the other generic stocks. Read 23 October from the dated 22 October rendered-main capture; closed FAQ, complete visual/control/source review is not implied.",
+        "originality": "Specific overlap/distinct value recorded in assessment; whole-inventory duplication review remains incomplete.",
+        "factualConcerns": "See assessment and separately recorded findings/investigations; source corroboration remains partial.",
+        "credibility": "No issuer/network credentials or real quote accuracy inferred from simulator data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -16200,7 +16406,7 @@
       "path": "/trade/cotton",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/cotton",
         "url": "https://www.thetradehq.com/trade/cotton",
@@ -16244,11 +16450,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "CT offers Cotton virtual order entry with generated-data limits and no commodity-specific research. It does not explain physical delivery or contract sizing and should not be read as a futures specification. Core practice copy is substantively the same as corn/coffee. Read 23 October from the dated 22 October rendered-main capture; closed FAQ, complete visual/control/source review is not implied.",
+        "originality": "Specific overlap/distinct value recorded in assessment; whole-inventory duplication review remains incomplete.",
+        "factualConcerns": "See assessment and separately recorded findings/investigations; source corroboration remains partial.",
+        "credibility": "No issuer/network credentials or real quote accuracy inferred from simulator data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -16300,7 +16506,7 @@
       "path": "/trade/crm",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/crm",
         "url": "https://www.thetradehq.com/trade/crm",
@@ -16344,11 +16550,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "CRM discusses cloud customer-relationship management, sales/marketing/service and enterprise-software spending. The world-leading superlative and bellwether/gauge wording require source/period follow-up; a simulated CRM price cannot verify spending trends. The historical key takeaway truncation was covered by THQ-014. Read 23 October from the dated 22 October rendered-main capture; closed FAQ, complete visual/control/source review is not implied.",
+        "originality": "Specific overlap/distinct value recorded in assessment; whole-inventory duplication review remains incomplete.",
+        "factualConcerns": "See assessment and separately recorded findings/investigations; source corroboration remains partial.",
+        "credibility": "No issuer/network credentials or real quote accuracy inferred from simulator data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -16398,7 +16604,7 @@
       "path": "/trade/crwd",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/crwd",
         "url": "https://www.thetradehq.com/trade/crwd",
@@ -16442,11 +16648,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "CRWD is a CrowdStrike stock exercise with no asset-specific research asserted. The main contains no endpoint-security or outage/business-risk analysis; its useful function is the selected virtual instrument. Generic mechanics overlap AVGO/BA/COST, with no return promise. Read 23 October from the dated 22 October rendered-main capture; closed FAQ, complete visual/control/source review is not implied.",
+        "originality": "Specific overlap/distinct value recorded in assessment; whole-inventory duplication review remains incomplete.",
+        "factualConcerns": "See assessment and separately recorded findings/investigations; source corroboration remains partial.",
+        "credibility": "No issuer/network credentials or real quote accuracy inferred from simulator data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -16495,7 +16701,7 @@
       "path": "/trade/csco",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/csco",
         "url": "https://www.thetradehq.com/trade/csco",
@@ -16539,11 +16745,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "CSCO offers Cisco Systems stock practice without claiming published company research. The screen explains virtual price/fee arithmetic but no networking-business fundamentals. Repeated stock prose is functional guidance rather than unique research. Read 23 October from the dated 22 October rendered-main capture; closed FAQ, complete visual/control/source review is not implied.",
+        "originality": "Specific overlap/distinct value recorded in assessment; whole-inventory duplication review remains incomplete.",
+        "factualConcerns": "See assessment and separately recorded findings/investigations; source corroboration remains partial.",
+        "credibility": "No issuer/network credentials or real quote accuracy inferred from simulator data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -16592,7 +16798,7 @@
       "path": "/trade/cvx",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/cvx",
         "url": "https://www.thetradehq.com/trade/cvx",
@@ -16636,11 +16842,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "CVX is a Chevron stock-labelled order-entry exercise with an explicit no-asset-research limitation. It gives no integrated-energy, oil-price or capital-return analysis; stock practice text repeats the generic BA/CAT pages. Its generated price is not a verified current quote. Read 23 October from the dated 22 October rendered-main capture; complete FAQ/source/visual/control review remains pending.",
+        "originality": "Specific overlap/distinct contribution described above; whole-site duplication assessment incomplete.",
+        "factualConcerns": "See route assessment; primary source follow-up incomplete.",
+        "credibility": "Simulator data is not issuer evidence."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -16689,7 +16895,7 @@
       "path": "/trade/ddog",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/ddog",
         "url": "https://www.thetradehq.com/trade/ddog",
@@ -16733,11 +16939,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "DDOG offers Datadog stock practice and the standard virtual fee/rise/fall exercise without company research. It supplies no cloud-observability or recurring-revenue explanation, so the distinct utility is instrument selection rather than a separate equity article. Read 23 October from the dated 22 October rendered-main capture; complete FAQ/source/visual/control review remains pending.",
+        "originality": "Specific overlap/distinct contribution described above; whole-site duplication assessment incomplete.",
+        "factualConcerns": "See route assessment; primary source follow-up incomplete.",
+        "credibility": "Simulator data is not issuer evidence."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -16786,7 +16992,7 @@
       "path": "/trade/de",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/de",
         "url": "https://www.thetradehq.com/trade/de",
@@ -16830,11 +17036,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "DE identifies Deere & Company stock with no asset-specific research claim. It does not describe farm machinery demand or financing; the body shares generic stock practice mechanics. No suggestion of forecast or actual exchange execution is made. Read 23 October from the dated 22 October rendered-main capture; complete FAQ/source/visual/control review remains pending.",
+        "originality": "Specific overlap/distinct contribution described above; whole-site duplication assessment incomplete.",
+        "factualConcerns": "See route assessment; primary source follow-up incomplete.",
+        "credibility": "Simulator data is not issuer evidence."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -16883,7 +17089,7 @@
       "path": "/trade/dia",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/dia",
         "url": "https://www.thetradehq.com/trade/dia",
@@ -16927,11 +17133,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "DIA identifies Dow exposure and discusses composition/weighting versus Nasdaq-100, rejecting inherently defensive behavior. The claim that all represented companies are dividend-paying needs current constituent/issuer checking; no present-day fund holding verification is claimed. The ETF-specific caution adds value beyond shared practice instructions. Read 23 October from the dated 22 October rendered-main capture; complete FAQ/source/visual/control review remains pending.",
+        "originality": "Specific overlap/distinct contribution described above; whole-site duplication assessment incomplete.",
+        "factualConcerns": "See route assessment; primary source follow-up incomplete.",
+        "credibility": "Simulator data is not issuer evidence."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -16981,7 +17187,7 @@
       "path": "/trade/dis",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/dis",
         "url": "https://www.thetradehq.com/trade/dis",
@@ -17025,11 +17231,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "DIS is a Walt Disney stock-labelled practice instrument, with no company-specific research claimed. Generic fee/rise/fall instructions do not discuss theme parks, streaming or licensing; repeated stock prose is functional guidance, not a distinct Disney outlook. Read 23 October from dated 22 October rendered-main capture. Expanded FAQ, full visuals/controls and source corroboration remain separately incomplete.",
+        "originality": "Specific repeated content/distinct contribution noted; full duplication comparison pending.",
+        "factualConcerns": "See assessment; no primary-source validation inferred.",
+        "credibility": "Source review partial."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -17078,7 +17284,7 @@
       "path": "/trade/docu",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/docu",
         "url": "https://www.thetradehq.com/trade/docu",
@@ -17122,11 +17328,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "DOCU identifies DocuSign stock and explicitly limits the page to virtual order-entry arithmetic. It contains no e-signature or agreement-platform analysis; its stock mechanics and related links overlap other generic equity screens. Read 23 October from dated 22 October rendered-main capture. Expanded FAQ, full visuals/controls and source corroboration remain separately incomplete.",
+        "originality": "Specific repeated content/distinct contribution noted; full duplication comparison pending.",
+        "factualConcerns": "See assessment; no primary-source validation inferred.",
+        "credibility": "Source review partial."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -17175,7 +17381,7 @@
       "path": "/trade/doge",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/doge",
         "url": "https://www.thetradehq.com/trade/doge",
@@ -17219,11 +17425,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "DOGE distinguishes social-media promotion, news and observed volume and denies that attention/pullbacks guarantee outcomes. Its widely-accepted payment, fast/low-fee description needs primary-source/period qualification. Provider observation time is explicit; a rounded statistic is distinct from the more precise chart quote. Read 23 October from dated 22 October rendered-main capture. Expanded FAQ, full visuals/controls and source corroboration remain separately incomplete.",
+        "originality": "Specific repeated content/distinct contribution noted; full duplication comparison pending.",
+        "factualConcerns": "See assessment; no primary-source validation inferred.",
+        "credibility": "Source review partial."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -17281,7 +17487,7 @@
       "path": "/trade/dot",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/dot",
         "url": "https://www.thetradehq.com/trade/dot",
@@ -17325,11 +17531,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "DOT describes interoperability and a decentralized-web aim, with Nominated PoS listed in statistics. It rejects consolidation/resistance as assurance of profitable exits. The network/consensus descriptions need current primary docs; repeated strategy text is not additional evidence of price forecasting. Read 23 October from dated 22 October rendered-main capture. Expanded FAQ, full visuals/controls and source corroboration remain separately incomplete.",
+        "originality": "Specific repeated content/distinct contribution noted; full duplication comparison pending.",
+        "factualConcerns": "See assessment; no primary-source validation inferred.",
+        "credibility": "Source review partial."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -17387,7 +17593,7 @@
       "path": "/trade/eth",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/eth",
         "url": "https://www.thetradehq.com/trade/eth",
@@ -17431,11 +17637,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "ETH explains native transaction-fee use and proof-of-stake staking, distinguishing application use, token holding and staking risks. It requires matching ETH/BTC observation windows and denies gas/network activity as a leading price signal. The same strategy appears in the snapshot and instrument scope; dated CoinGecko price statistics do not establish current returns. Read 23 October from dated 22 October rendered-main capture. Expanded FAQ, full visual/control and complete source review remain separate.",
+        "originality": "Specific overlap/distinct value described above; full cross-page duplication assessment pending.",
+        "factualConcerns": "See assessment and separate findings/investigations; primary-source checking remains partial.",
+        "credibility": "No current market accuracy or financial suitability inferred from practice data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -17485,14 +17691,21 @@
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR221-PRODUCTION-BROWSER.json"
         }
-      ]
+      ],
+      "expandedFAQReview": {
+        "answersRead": 4,
+        "assessment": "Four handwritten answers distinguish exchange price, gas fees, application use and staking. Free practice explicitly does not execute DeFi/staking/wallet transfers. Indicators and ETH/BTC return comparisons are qualified by period and do not establish future price or readiness.",
+        "controlEvidence": "evidence/continuation-20261023/trade-eth.json",
+        "readAt": "2026-10-24T04:09:25.837635+00:00",
+        "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
+      }
     },
     {
       "url": "https://www.thetradehq.com/trade/eurgbp",
       "path": "/trade/eurgbp",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/eurgbp",
         "url": "https://www.thetradehq.com/trade/eurgbp",
@@ -17536,11 +17749,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "EUR/GBP is correctly named Euro versus British Pound and offers a generic virtual-order exercise with no asset research claimed. Central-bank/rate/macro drivers are broad class context rather than a pair-specific analysis. The displayed dollar prefix and generic account arithmetic remain within INV-FX01; no automatic conversion change is authorized. Read 23 October from dated 22 October rendered-main capture. Expanded FAQ, full visual/control and complete source review remain separate.",
+        "originality": "Specific overlap/distinct value described above; full cross-page duplication assessment pending.",
+        "factualConcerns": "See assessment and separate findings/investigations; primary-source checking remains partial.",
+        "credibility": "No current market accuracy or financial suitability inferred from practice data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -17582,6 +17795,13 @@
       },
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped."
+      },
+      "expandedFAQReview": {
+        "answersRead": 5,
+        "assessment": "Five answers separate virtual order mechanics from external central-bank/rate/macro research and deny event modelling or real correlations from generated data. Suitability is not inferred from availability. Cross-currency account units remain INV-FX01; these answers do not resolve conversion.",
+        "controlEvidence": "evidence/continuation-20261023/trade-eurgbp.json",
+        "readAt": "2026-10-24T04:09:25.837800+00:00",
+        "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
       }
     },
     {
@@ -17589,7 +17809,7 @@
       "path": "/trade/eurjpy",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/eurjpy",
         "url": "https://www.thetradehq.com/trade/eurjpy",
@@ -17633,11 +17853,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "EUR/JPY identifies Euro versus Japanese Yen but supplies only generic currency-policy context and hypothetical price/fee mechanics. No specific ECB/BOJ analysis or broker executable quote is claimed. Its quoted dollar-prefixed units and related yen pairs require the existing practice-unit-model clarification, not a new financial revaluation. Read 23 October from dated 22 October rendered-main capture. Expanded FAQ, full visual/control and complete source review remain separate.",
+        "originality": "Specific overlap/distinct value described above; full cross-page duplication assessment pending.",
+        "factualConcerns": "See assessment and separate findings/investigations; primary-source checking remains partial.",
+        "credibility": "No current market accuracy or financial suitability inferred from practice data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -17688,14 +17908,21 @@
           "outcome": "PASS",
           "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
         }
-      ]
+      ],
+      "expandedFAQReview": {
+        "answersRead": 5,
+        "assessment": "Five expanded answers use the corrected generated guidance: external rate/policy research, explicit synthetic chart/correlation limits and virtual-only trades. They do not add pair-specific ECB/BOJ analysis or specify settlement units; INV-FX01 remains separate.",
+        "controlEvidence": "evidence/continuation-20261023/trade-eurjpy.json",
+        "readAt": "2026-10-24T04:09:25.837956+00:00",
+        "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
+      }
     },
     {
       "url": "https://www.thetradehq.com/trade/eurusd",
       "path": "/trade/eurusd",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/eurusd",
         "url": "https://www.thetradehq.com/trade/eurusd",
@@ -17739,11 +17966,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "EUR/USD defines dollars per euro and correctly illustrates a rise from 1.10 to 1.12 as more dollars per euro. ECB reference data is distinguished from executable broker quotes; matching dated policy/rate observations does not establish causation. The old capture shows Updating and no provider observation, so it is not evidence of a permanent feed failure. The independent summary/chart discrepancy was already addressed by THQ-018. Read 23 October from dated 22 October rendered-main capture. Expanded FAQ, full visual/control and complete source review remain separate.",
+        "originality": "Specific overlap/distinct value described above; full cross-page duplication assessment pending.",
+        "factualConcerns": "See assessment and separate findings/investigations; primary-source checking remains partial.",
+        "credibility": "No current market accuracy or financial suitability inferred from practice data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -17784,6 +18011,13 @@
           8
         ],
         "scope": "Normalized long standalone paragraphs only; not promoted to full main-body reading."
+      },
+      "expandedFAQReview": {
+        "answersRead": 4,
+        "assessment": "Four handwritten answers limit practice to arithmetic/session-learning, deny replication of actual liquidity/execution, and identify ECB/Fed and economic releases without predicting direction. The pip-calculation description does not independently specify the general practice-account unit model.",
+        "controlEvidence": "evidence/continuation-20261023/trade-eurusd.json",
+        "readAt": "2026-10-24T04:09:25.838075+00:00",
+        "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
       }
     },
     {
@@ -17791,7 +18025,7 @@
       "path": "/trade/fil",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/fil",
         "url": "https://www.thetradehq.com/trade/fil",
@@ -17835,11 +18069,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "FIL provides a Filecoin-labelled crypto order-entry screen with no published asset-specific research. Generic network/regulation context does not explain decentralized storage economics; related crypto lessons are navigation. Its dated provider chart is not a fresh market observation. Read 23 October from dated 22 October rendered-main capture. Expanded FAQ, full visual/control and complete source review remain separate.",
+        "originality": "Specific overlap/distinct value described above; full cross-page duplication assessment pending.",
+        "factualConcerns": "See assessment and separate findings/investigations; primary-source checking remains partial.",
+        "credibility": "No current market accuracy or financial suitability inferred from practice data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -17884,6 +18118,13 @@
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped.",
         "THQ-017": "Shared generator source inventory; fresh representative browser proof is separately scoped."
+      },
+      "expandedFAQReview": {
+        "answersRead": 5,
+        "assessment": "Five Filecoin answers provide virtual order entry and mark crypto network/regulatory drivers as separate research. Generated charts cannot establish event responses or real correlations; universal popularity/readiness claims are removed. No storage-network economics are taught here.",
+        "controlEvidence": "evidence/continuation-20261023/trade-fil.json",
+        "readAt": "2026-10-24T04:09:25.838141+00:00",
+        "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
       }
     },
     {
@@ -17891,7 +18132,7 @@
       "path": "/trade/ftm",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/ftm",
         "url": "https://www.thetradehq.com/trade/ftm",
@@ -17935,11 +18176,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "FTM is still labelled Fantom and explicitly has no asset-specific research. Generic crypto exercise content is repetitive; the historical token/network identity and current data mapping need the existing asset-taxonomy follow-up, with no automatic rename or records migration. Repeated rounded axis labels are a display observation, not proof of a flat price or calculation defect. Read 23 October from dated 22 October rendered-main capture. Expanded FAQ, full visual/control and complete source review remain separate.",
+        "originality": "Specific overlap/distinct value described above; full cross-page duplication assessment pending.",
+        "factualConcerns": "See assessment and separate findings/investigations; primary-source checking remains partial.",
+        "credibility": "No current market accuracy or financial suitability inferred from practice data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -17984,6 +18225,13 @@
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped.",
         "THQ-017": "Shared generator source inventory; fresh representative browser proof is separately scoped."
+      },
+      "expandedFAQReview": {
+        "answersRead": 5,
+        "assessment": "Five Fantom/FTM answers correctly limit generated charts and beginner suitability, while current network/token identity remains a separate source/data-mapping investigation. Free virtual-only scope is explicit; no token migration or record rename is implied.",
+        "controlEvidence": "evidence/continuation-20261023/trade-ftm.json",
+        "readAt": "2026-10-24T04:09:25.838274+00:00",
+        "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
       }
     },
     {
@@ -17991,7 +18239,7 @@
       "path": "/trade/gbpjpy",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/gbpjpy",
         "url": "https://www.thetradehq.com/trade/gbpjpy",
@@ -18035,11 +18283,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "GBP/JPY is a British pound versus yen virtual exercise with broad currency-policy context and no pair-specific research. It shares EUR/JPY's practice mechanics/related yen links. Generic dollar-prefixed quote/account units remain under INV-FX01; no conversion/settlement change follows from this content read. Read 23 October from dated 22 October rendered-main capture. Expanded FAQ, full visual/control and complete source review remain separate.",
+        "originality": "Specific overlap/distinct value described above; full cross-page duplication assessment pending.",
+        "factualConcerns": "See assessment and separate findings/investigations; primary-source checking remains partial.",
+        "credibility": "No current market accuracy or financial suitability inferred from practice data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -18081,6 +18329,13 @@
       },
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped."
+      },
+      "expandedFAQReview": {
+        "answersRead": 5,
+        "assessment": "Five answers separate currency policy topics from synthetic charts and clarify demo activity/practice change rather than observed volume/24h return. Currency unit/settlement assumptions are not specified by this FAQ; keep INV-FX01 open.",
+        "controlEvidence": "evidence/continuation-20261023/trade-gbpjpy.json",
+        "readAt": "2026-10-24T04:09:25.838387+00:00",
+        "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
       }
     },
     {
@@ -18088,7 +18343,7 @@
       "path": "/trade/gbpusd",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/gbpusd",
         "url": "https://www.thetradehq.com/trade/gbpusd",
@@ -18132,11 +18387,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "GBP/USD correctly states dollars per pound and distinguishes reference rates, dealing rates and simulator prices. It warns that London/New York overlap changes with daylight saving and does not guarantee liquidity/profit. The fixed simulator quote/Unavailable statistic is explicitly labelled; independent chart/snapshot observations should not be equated with real-time broker execution. Read 23 October from dated 22 October rendered-main capture. Expanded FAQ, full visual/control and complete source review remain separate.",
+        "originality": "Specific overlap/distinct value described above; full cross-page duplication assessment pending.",
+        "factualConcerns": "See assessment and separate findings/investigations; primary-source checking remains partial.",
+        "credibility": "No current market accuracy or financial suitability inferred from practice data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -18177,6 +18432,13 @@
           8
         ],
         "scope": "Normalized long standalone paragraphs only; not promoted to full main-body reading."
+      },
+      "expandedFAQReview": {
+        "answersRead": 4,
+        "assessment": "Four handwritten answers treat Bank of England/Fed announcements as external research; session overlap depends on daylight saving/holidays/news and does not guarantee useful timing or faster learning. Practice liquidity is not claimed to mirror real execution.",
+        "controlEvidence": "evidence/continuation-20261023/trade-gbpusd.json",
+        "readAt": "2026-10-24T04:09:25.838454+00:00",
+        "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
       }
     },
     {
@@ -18184,7 +18446,7 @@
       "path": "/trade/gld",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/gld",
         "url": "https://www.thetradehq.com/trade/gld",
@@ -18228,11 +18490,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "GLD is identified as SPDR Gold Shares and categorized as an ETF exercise, rather than direct physical gold ownership. Its main explicitly has no asset-specific research, so it does not explain trust backing/custody/expense ratio or make a fund-performance claim. Shared generic ETF mechanics add functional navigation value rather than distinct research. Read 23 October from dated 22 October rendered-main capture. Expanded FAQ, full visual/control and complete source review remain separate.",
+        "originality": "Specific overlap/distinct value described above; full cross-page duplication assessment pending.",
+        "factualConcerns": "See assessment and separate findings/investigations; primary-source checking remains partial.",
+        "credibility": "No current market accuracy or financial suitability inferred from practice data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -18274,6 +18536,13 @@
       },
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped."
+      },
+      "expandedFAQReview": {
+        "answersRead": 5,
+        "assessment": "Five expanded answers read. Virtual-only and generated-data limits are clear, but the driver answer incorrectly defaults to underlying index composition for GLD. Issuer states gold-bullion exposure less expenses; THQ-023 records the mismatch and generic fund-driver correction.",
+        "controlEvidence": "evidence/continuation-20261023/trade-gld.json",
+        "readAt": "2026-10-24T04:09:25.838602+00:00",
+        "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
       }
     },
     {
@@ -18281,7 +18550,7 @@
       "path": "/trade/gold",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/gold",
         "url": "https://www.thetradehq.com/trade/gold",
@@ -18325,11 +18594,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "Gold explicitly discloses that provider quotes use a PAXG token proxy rather than dedicated XAU/USD spot data, and token volume/cap are not the global gold market. Virtual holdings acquire no physical gold, fund units or tokens. Macro/real-yield exercises remain hypothetical; the separately labelled chart and proxy quote differ materially, with scope disclosure rather than a claim of synchronized prices. Read 23 October from dated 22 October rendered-main capture. Expanded FAQ, full visual/control and complete source review remain separate.",
+        "originality": "Specific overlap/distinct value described above; full cross-page duplication assessment pending.",
+        "factualConcerns": "See assessment and separate findings/investigations; primary-source checking remains partial.",
+        "credibility": "No current market accuracy or financial suitability inferred from practice data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -18372,6 +18641,13 @@
           8
         ],
         "scope": "Normalized long standalone paragraphs only; not promoted to full main-body reading."
+      },
+      "expandedFAQReview": {
+        "answersRead": 4,
+        "assessment": "Four handwritten answers deny a fixed gold/stock inverse relationship, guaranteed hedge and reliably directional inflation/news response. Macro drivers are hypotheses over stated periods, while a practice chart cannot reproduce an actual market crash.",
+        "controlEvidence": "evidence/continuation-20261023/trade-gold.json",
+        "readAt": "2026-10-24T04:09:25.838726+00:00",
+        "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
       }
     },
     {
@@ -18379,7 +18655,7 @@
       "path": "/trade/googl",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/googl",
         "url": "https://www.thetradehq.com/trade/googl",
@@ -18423,11 +18699,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "GOOGL explains Alphabet's parent role and Services/Cloud/Other Bets reporting. Advertising, cloud results, expectations and spending are distinct research inputs; positive product news need not imply a breakout. The old Loading market-cap state needs settled-state checking before any failure claim, and fixed simulated quotes are not verified current prices. Read 23 October from dated 22 October rendered-main capture. Expanded FAQ, full visual/control and complete source review remain separate.",
+        "originality": "Specific overlap/distinct value described above; full cross-page duplication assessment pending.",
+        "factualConcerns": "See assessment and separate findings/investigations; primary-source checking remains partial.",
+        "credibility": "No current market accuracy or financial suitability inferred from practice data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -18468,6 +18744,13 @@
           8
         ],
         "scope": "Normalized long standalone paragraphs only; not promoted to full main-body reading."
+      },
+      "expandedFAQReview": {
+        "answersRead": 4,
+        "assessment": "Four handwritten answers distinguish company announcements/AI narrative from generated charts and traded volume. GOOGL/NVDA comparisons use equal hypothetical dollar values, and breakout/volume observations are not evidence of profitable future action.",
+        "controlEvidence": "evidence/continuation-20261023/trade-googl.json",
+        "readAt": "2026-10-24T04:09:25.838842+00:00",
+        "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
       }
     },
     {
@@ -18475,7 +18758,7 @@
       "path": "/trade/gs",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/gs",
         "url": "https://www.thetradehq.com/trade/gs",
@@ -18519,11 +18802,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "GS is a Goldman Sachs stock exercise with no asset-specific research claimed. It does not discuss investment banking/trading/asset-management results; the body repeats generic virtual stock price/fee arithmetic and related large-cap links. No real execution or return forecast is promised. Read 23 October from dated 22 October rendered-main capture. Expanded FAQ, full visual/control and complete source review remain separate.",
+        "originality": "Specific overlap/distinct value described above; full cross-page duplication assessment pending.",
+        "factualConcerns": "See assessment and separate findings/investigations; primary-source checking remains partial.",
+        "credibility": "No current market accuracy or financial suitability inferred from practice data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -18565,6 +18848,13 @@
       },
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped."
+      },
+      "expandedFAQReview": {
+        "answersRead": 5,
+        "assessment": "Five Goldman Sachs answers name broad earnings/sector/macro research without claiming synthetic event modelling or actual market correlations. Free virtual trade and suitability limits are clear; there is no firm-specific investment-banking research in this FAQ.",
+        "controlEvidence": "evidence/continuation-20261023/trade-gs.json",
+        "readAt": "2026-10-24T04:09:25.838904+00:00",
+        "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
       }
     },
     {
@@ -18572,7 +18862,7 @@
       "path": "/trade/hbar",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/hbar",
         "url": "https://www.thetradehq.com/trade/hbar",
@@ -18616,11 +18906,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "HBAR offers a Hedera-labelled cryptocurrency practice screen and explicitly says no asset-specific research is published. Network/regulation context is shared with the other generic crypto instruments; it supplies no Hashgraph governance or consensus explanation. Dated provider/market-data status does not certify present accuracy. Read 23 October from dated 22 October rendered-main capture. Expanded FAQ, full visual/control and complete source review remain separate.",
+        "originality": "Specific overlap/distinct value described above; full cross-page duplication assessment pending.",
+        "factualConcerns": "See assessment and separate findings/investigations; primary-source checking remains partial.",
+        "credibility": "No current market accuracy or financial suitability inferred from practice data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -18672,7 +18962,7 @@
       "path": "/trade/hd",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/hd",
         "url": "https://www.thetradehq.com/trade/hd",
@@ -18716,11 +19006,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "HD identifies Home Depot stock for generic hypothetical price/fee arithmetic. It makes no company-research claim and contains no housing/renovation-demand or professional-customer analysis. The repeated stock exercise is useful for instrument entry, not distinct investment research. Read 23 October from dated 22 October rendered-main capture. Expanded FAQ, full visual/control and complete source review remain separate.",
+        "originality": "Specific overlap/distinct value described above; full cross-page duplication assessment pending.",
+        "factualConcerns": "See assessment and separate findings/investigations; primary-source checking remains partial.",
+        "credibility": "No current market accuracy or financial suitability inferred from practice data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -18769,7 +19059,7 @@
       "path": "/trade/ibm",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/ibm",
         "url": "https://www.thetradehq.com/trade/ibm",
@@ -18813,11 +19103,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "IBM presents the IBM Corporation stock exercise without published company research. It does not discuss consulting, software or hybrid-cloud segments; generic stock mechanics and related-market links provide functional navigation rather than a business thesis. No actual execution or real-price accuracy is implied. Read 23 October from dated 22 October rendered-main capture. Expanded FAQ, full visual/control and complete source review remain separate.",
+        "originality": "Specific overlap/distinct value described above; full cross-page duplication assessment pending.",
+        "factualConcerns": "See assessment and separate findings/investigations; primary-source checking remains partial.",
+        "credibility": "No current market accuracy or financial suitability inferred from practice data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -18866,7 +19156,7 @@
       "path": "/trade/icp",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/icp",
         "url": "https://www.thetradehq.com/trade/icp",
@@ -18910,11 +19200,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "ICP is labelled Internet Computer and given generic cryptocurrency drivers and no-research limits. It contains no Internet Computer architecture or token-economics account. Its simulated chart and repeated sizing exercise are separated from claims about actual network demand or future returns. Read 23 October from dated 22 October rendered-main capture. Expanded FAQ, full visual/control and complete source review remain separate.",
+        "originality": "Specific overlap/distinct value described above; full cross-page duplication assessment pending.",
+        "factualConcerns": "See assessment and separate findings/investigations; primary-source checking remains partial.",
+        "credibility": "No current market accuracy or financial suitability inferred from practice data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -18966,7 +19256,7 @@
       "path": "/trade/ief",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/ief",
         "url": "https://www.thetradehq.com/trade/ief",
@@ -19010,11 +19300,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "IEF is identified as iShares 7-10 Year Treasury, an ETF exercise with no asset-specific research. The body contains no duration, yield or rate-sensitivity explanation; generic ETF price/fee arithmetic and related links are the functional value. Do not read the fixed practice quote as a verified Treasury-fund market observation. Read 24 October from dated 22 October rendered-main capture. Expanded FAQ, full visual/control and complete source review remain separate.",
+        "originality": "Specific overlap/distinct value described above; full cross-page duplication assessment pending.",
+        "factualConcerns": "See assessment and separate findings/investigations; primary-source checking remains partial.",
+        "credibility": "No current market accuracy or financial suitability inferred from practice data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -19063,7 +19353,7 @@
       "path": "/trade/inj",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/inj",
         "url": "https://www.thetradehq.com/trade/inj",
@@ -19107,11 +19397,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "INJ is an Injective-labelled cryptocurrency exercise without published network-specific research. Broad crypto drivers and virtual-order mechanics repeat other generic token screens; it supplies no chain architecture or derivatives-market protocol analysis. Its generated decline is not evidence of a real network event. Read 24 October from dated 22 October rendered-main capture. Expanded FAQ, full visual/control and complete source review remain separate.",
+        "originality": "Specific overlap/distinct value described above; full cross-page duplication assessment pending.",
+        "factualConcerns": "See assessment and separate findings/investigations; primary-source checking remains partial.",
+        "credibility": "No current market accuracy or financial suitability inferred from practice data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -19163,7 +19453,7 @@
       "path": "/trade/intc",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/intc",
         "url": "https://www.thetradehq.com/trade/intc",
@@ -19207,11 +19497,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "INTC describes PC processors, AI/foundry transformation and a turnaround hypothesis. The useful caution separates reported results from a hypothesis and denies that longer holding automatically recovers losses. Transformation/current leadership claims need dated issuer corroboration; no actual turnaround success is established by the simulated chart. Read 24 October from dated 22 October rendered-main capture. Expanded FAQ, full visual/control and complete source review remain separate.",
+        "originality": "Specific overlap/distinct value described above; full cross-page duplication assessment pending.",
+        "factualConcerns": "See assessment and separate findings/investigations; primary-source checking remains partial.",
+        "credibility": "No current market accuracy or financial suitability inferred from practice data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -19261,7 +19551,7 @@
       "path": "/trade/ivv",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/ivv",
         "url": "https://www.thetradehq.com/trade/ivv",
@@ -19305,11 +19595,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "IVV is identified as iShares Core S&P 500 and offered as a generic ETF order-entry exercise without published fund research. It does not claim an expense ratio, exact holdings or current benchmark performance. Shared practice arithmetic and related ETF links are useful navigation, not a comparative fund recommendation. Read 24 October from dated 22 October rendered-main capture. Expanded FAQ, full visual/control and complete source review remain separate.",
+        "originality": "Specific overlap/distinct value described above; full cross-page duplication assessment pending.",
+        "factualConcerns": "See assessment and separate findings/investigations; primary-source checking remains partial.",
+        "credibility": "No current market accuracy or financial suitability inferred from practice data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -19358,7 +19648,7 @@
       "path": "/trade/iwm",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/iwm",
         "url": "https://www.thetradehq.com/trade/iwm",
@@ -19402,11 +19692,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "IWM explains US small-cap stock exposure and asks for matched small/large-cap windows and costs. It denies small-cap outperformance as a reliable signal of a wider rally. Historical key-takeaway truncation at U.S. belongs to already repaired THQ-014. Index composition/current coverage still needs issuer corroboration; no forecast is established. Read 24 October from dated 22 October rendered-main capture. Expanded FAQ, full visual/control and complete source review remain separate.",
+        "originality": "Specific overlap/distinct value described above; full cross-page duplication assessment pending.",
+        "factualConcerns": "See assessment and separate findings/investigations; primary-source checking remains partial.",
+        "credibility": "No current market accuracy or financial suitability inferred from practice data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -19456,7 +19746,7 @@
       "path": "/trade/jnj",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/jnj",
         "url": "https://www.thetradehq.com/trade/jnj",
@@ -19500,11 +19790,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "JNJ is a Johnson & Johnson stock exercise with no published company research. It does not describe pharmaceutical/MedTech businesses or corporate changes; generic stock price/fee arithmetic is repeated. The page does not promise defensiveness, dividends or actual execution. Read 24 October from dated 22 October rendered-main capture. Expanded FAQ, full visual/control and complete source review remain separate.",
+        "originality": "Specific overlap/distinct value described above; full cross-page duplication assessment pending.",
+        "factualConcerns": "See assessment and separate findings/investigations; primary-source checking remains partial.",
+        "credibility": "No current market accuracy or financial suitability inferred from practice data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -19553,7 +19843,7 @@
       "path": "/trade/jpm",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/jpm",
         "url": "https://www.thetradehq.com/trade/jpm",
@@ -19597,11 +19887,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "JPM covers consumer/investment banking and asset management, with interest-rate/Fed-announcement learning context. The largest-bank and bellwether wording needs dated regulator/issuer evidence; generated practice moves cannot corroborate economic health or real announcement response. No guaranteed rate/price relationship is stated. Read 24 October from dated 22 October rendered-main capture. Expanded FAQ, full visual/control and complete source review remain separate.",
+        "originality": "Specific overlap/distinct value described above; full cross-page duplication assessment pending.",
+        "factualConcerns": "See assessment and separate findings/investigations; primary-source checking remains partial.",
+        "credibility": "No current market accuracy or financial suitability inferred from practice data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -19651,7 +19941,7 @@
       "path": "/trade/ko",
       "category": "trade",
       "publicScope": true,
-      "state": "STRUCTURALLY_CHECKED_ONLY",
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
       "http": {
         "path": "/trade/ko",
         "url": "https://www.thetradehq.com/trade/ko",
@@ -19695,11 +19985,11 @@
         }
       ],
       "substantiveContent": {
-        "status": "NOT_YET_REVIEWED",
-        "assessment": null,
-        "originality": "NOT_YET_REVIEWED",
-        "factualConcerns": "NOT_YET_REVIEWED",
-        "credibility": "Source/provenance follow-up pending"
+        "status": "MAIN_BODY_READ",
+        "assessment": "KO provides Coca-Cola stock virtual order entry and explicitly no asset-specific research. It does not discuss concentrate/bottling economics, consumer demand or dividend policy. Shared generic stock mechanics and related links have functional value without implying a unique company thesis or real quote. Read 24 October from dated 22 October rendered-main capture. Expanded FAQ, full visual/control and complete source review remain separate.",
+        "originality": "Specific overlap/distinct value described above; full cross-page duplication assessment pending.",
+        "factualConcerns": "See assessment and separate findings/investigations; primary-source checking remains partial.",
+        "credibility": "No current market accuracy or financial suitability inferred from practice data."
       },
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
@@ -23404,6 +23694,20 @@
           "outcome": "PASS",
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR220-PRODUCTION-BROWSER.json"
+        },
+        {
+          "pr": 222,
+          "mergeSHA": "1a1e577a76203a622cfde2929fb37389369ab65f",
+          "evidence": "evidence/PR222-PRODUCTION-BROWSER.json",
+          "widths": [
+            360,
+            390,
+            768,
+            1280,
+            1920
+          ],
+          "outcome": "PASS",
+          "scope": "Four window controls, axis bounds, source limitations and relevant expanded FAQ; tiny fallback outage is local test condition. No whole-page completion inferred."
         }
       ]
     },

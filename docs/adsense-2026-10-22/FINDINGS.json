@@ -617,16 +617,161 @@
         "evidence/POST-PR221-GUEST-SMOKE.json",
         "evidence/PR221-MAIN-CI.json"
       ]
+    },
+    {
+      "id": "THQ-019",
+      "severity": "P2",
+      "category": "Chart timeframe controls only change the selected highlight",
+      "state": "PUBLICLY_VERIFIED",
+      "urls": [
+        "https://www.thetradehq.com/trade/btc"
+      ],
+      "observed": "All four fresh live selections retained the same 51 data points spanning 50 minutes. Source used timeframe only for button styling, never selecting chart data.",
+      "fix": "Filter the existing returned points by a window ending at the latest observation, label shorter available history, preserve the independent quote and account data.",
+      "evidence": "evidence/continuation-20261023/trade-btc.json",
+      "detectedAt": "2026-10-23T15:48:25.696767+00:00",
+      "risk": "Low interface/static-copy change; chart points remain component-local. No order, quote service, fees, positions, balances, auth, database, privacy/ad or secret changes.",
+      "rollback": "Reviewed source revert; no data rollback or recalculation.",
+      "adsenseRelevance": "Usability and accuracy concern; not asserted to be a specific Google Publisher Policy violation.",
+      "tests": "Five-width chart windows and two delayed fallback updates; five generated asset-type expanded FAQ sets; exact-head CI/previews/native production/live recheck required.",
+      "pr": 222,
+      "candidateSHA": "ec1183eb63caf82305ef15160756365b07037737",
+      "mergeSHA": "1a1e577a76203a622cfde2929fb37389369ab65f",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR222-FINAL-PREVIEW-BROWSER.json",
+      "vercelPreviewAccess": "Native exact-head READY; anonymous rendering requires existing Vercel login protection.",
+      "productionEvidence": [
+        "evidence/PR222-PRODUCTION-PROVIDERS.json",
+        "evidence/PR222-PRODUCTION-FRESH-BASELINE.json",
+        "evidence/PR222-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR222-GUEST-SMOKE.json",
+        "evidence/PR222-MAIN-CI.json"
+      ],
+      "verifiedAt": "2026-10-24T04:12:07.150119+00:00"
+    },
+    {
+      "id": "THQ-020",
+      "severity": "P2",
+      "category": "Tiny fallback chart updates introduce an artificial zero",
+      "state": "PUBLICLY_VERIFIED",
+      "urls": [
+        "https://www.thetradehq.com/trade/shib"
+      ],
+      "observed": "With only candle GETs deliberately failed inside an isolated anonymous browser, the initial 51 positive points gained a zero after one 3-second update. Source rounds the update to cents. This is a conditional rendering reproduction, not a claim of an actual provider outage.",
+      "fix": "Keep the unrounded positive value in local chart state, matching the initial generator. No market quote or execution input is changed.",
+      "evidence": "evidence/continuation-20261023/CHART-AND-MARKETS-REPRODUCTION.json",
+      "detectedAt": "2026-10-23T15:48:25.696767+00:00",
+      "risk": "Low interface/static-copy change; chart points remain component-local. No order, quote service, fees, positions, balances, auth, database, privacy/ad or secret changes.",
+      "rollback": "Reviewed source revert; no data rollback or recalculation.",
+      "adsenseRelevance": "Usability and accuracy concern; not asserted to be a specific Google Publisher Policy violation.",
+      "tests": "Five-width chart windows and two delayed fallback updates; five generated asset-type expanded FAQ sets; exact-head CI/previews/native production/live recheck required.",
+      "pr": 222,
+      "candidateSHA": "ec1183eb63caf82305ef15160756365b07037737",
+      "mergeSHA": "1a1e577a76203a622cfde2929fb37389369ab65f",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR222-FINAL-PREVIEW-BROWSER.json",
+      "vercelPreviewAccess": "Native exact-head READY; anonymous rendering requires existing Vercel login protection.",
+      "productionEvidence": [
+        "evidence/PR222-PRODUCTION-PROVIDERS.json",
+        "evidence/PR222-PRODUCTION-FRESH-BASELINE.json",
+        "evidence/PR222-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR222-GUEST-SMOKE.json",
+        "evidence/PR222-MAIN-CI.json"
+      ],
+      "verifiedAt": "2026-10-24T04:12:07.150119+00:00"
+    },
+    {
+      "id": "THQ-021",
+      "severity": "P2",
+      "category": "Generated asset FAQ overstates what practice data demonstrates",
+      "state": "PUBLICLY_VERIFIED",
+      "urls": [
+        "https://www.thetradehq.com/trade/apt"
+      ],
+      "observed": "Expanded FAQ tells readers to infer catalysts/correlations and compare 24-hour change/simulated volume, while the fresh Markets page explicitly labels generated practice change and arbitrary demo activity. It also applies an unsupported widely-followed/suitability claim to every generated asset FAQ.",
+      "fix": "Describe real drivers as research topics, distinguish generated history from event modelling, remove the universal popularity claim, and match actual Markets labels/limitations.",
+      "evidence": "evidence/continuation-20261023/trade-apt.json",
+      "detectedAt": "2026-10-23T15:48:25.696767+00:00",
+      "risk": "Low interface/static-copy change; chart points remain component-local. No order, quote service, fees, positions, balances, auth, database, privacy/ad or secret changes.",
+      "rollback": "Reviewed source revert; no data rollback or recalculation.",
+      "adsenseRelevance": "Usability and accuracy concern; not asserted to be a specific Google Publisher Policy violation.",
+      "tests": "Five-width chart windows and two delayed fallback updates; five generated asset-type expanded FAQ sets; exact-head CI/previews/native production/live recheck required.",
+      "pr": 222,
+      "candidateSHA": "ec1183eb63caf82305ef15160756365b07037737",
+      "mergeSHA": "1a1e577a76203a622cfde2929fb37389369ab65f",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR222-FINAL-PREVIEW-BROWSER.json",
+      "vercelPreviewAccess": "Native exact-head READY; anonymous rendering requires existing Vercel login protection.",
+      "productionEvidence": [
+        "evidence/PR222-PRODUCTION-PROVIDERS.json",
+        "evidence/PR222-PRODUCTION-FRESH-BASELINE.json",
+        "evidence/PR222-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR222-GUEST-SMOKE.json",
+        "evidence/PR222-MAIN-CI.json"
+      ],
+      "verifiedAt": "2026-10-24T04:12:07.150119+00:00"
+    },
+    {
+      "id": "THQ-022",
+      "severity": "P2",
+      "category": "Large chart Y-axis labels are clipped inside the SVG",
+      "state": "PUBLICLY_VERIFIED",
+      "urls": [
+        "https://www.thetradehq.com/trade/btc"
+      ],
+      "observed": "Candidate mobile screenshot at 360px clipped leading characters from a large BTC value. Independent fresh measurement: chart left25px, label $81,418.949 left13.328px (11.672px beyond chart), right77px. The fixed60px axis was too narrow. The same formatter/width exists at the production baseline.",
+      "evidence": "evidence/pr222-updated-preview/_trade_btc-360-chart.png",
+      "fix": "Size the chart axis from the existing padded-label lengths for all prices, retaining the tiny-price minimum. No prices or account calculations change.",
+      "risk": "Low local layout only.",
+      "rollback": "Reviewed source revert; no data operation.",
+      "adsenseRelevance": "Readability/usability; no specific Google policy violation asserted.",
+      "tests": "Large fixed-price timestamp-window fixture checks actual SVG label bounds at all five widths.",
+      "pr": 222,
+      "candidateSHA": "ec1183eb63caf82305ef15160756365b07037737",
+      "mergeSHA": "1a1e577a76203a622cfde2929fb37389369ab65f",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR222-FINAL-PREVIEW-BROWSER.json",
+      "vercelPreviewAccess": "Native exact-head READY; anonymous rendering requires existing Vercel login protection.",
+      "productionEvidence": [
+        "evidence/PR222-PRODUCTION-PROVIDERS.json",
+        "evidence/PR222-PRODUCTION-FRESH-BASELINE.json",
+        "evidence/PR222-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR222-GUEST-SMOKE.json",
+        "evidence/PR222-MAIN-CI.json"
+      ],
+      "verifiedAt": "2026-10-24T04:12:07.150119+00:00"
+    },
+    {
+      "id": "THQ-023",
+      "severity": "P2",
+      "category": "Generic fund FAQ assumes index composition for GLD gold exposure",
+      "state": "FIX_PREPARED_TESTING",
+      "urls": [
+        "https://www.thetradehq.com/trade/gld"
+      ],
+      "observed": "Actual expanded GLD driver answer lists underlying index composition. SPDR/State Street issuer page instead specifies reflecting gold-bullion price less trust expenses. A universal equity-index driver is misleading for this instrument.",
+      "evidence": [
+        "evidence/continuation-20261023/trade-gld.json",
+        "evidence/continuation-20261023/PRIMARY-GLD-1.json"
+      ],
+      "fix": "Describe holdings or tracked exposure, fees, structure and underlying market conditions when no specific fund driver is authored.",
+      "risk": "Low static copy only; no holdings, prices, calculations, fees charged, orders or records change.",
+      "rollback": "Reviewed wording revert; no data operation.",
+      "adsenseRelevance": "Factual educational quality; no specific Google policy violation asserted.",
+      "pr": 223,
+      "candidateSHA": "2a83ab9e2e5122005975f26a9f7dfd17f5f91010",
+      "affectedRouteEvidence": "evidence/PR223-AFFECTED-ROUTES.json"
     }
   ],
   "updatedAt": "2026-10-23T15:27:00.417446+00:00",
   "counts": {
-    "siteFindings": 18,
-    "P2": 8,
+    "siteFindings": 23,
+    "P2": 13,
     "P3": 10,
-    "publiclyRepaired": 18,
-    "preparedNotMerged": 0,
-    "separateOperationalBlockers": 0
+    "publiclyRepaired": 22,
+    "preparedNotMerged": 1,
+    "separateOperationalBlockers": 0,
+    "mergedAwaitingProductionVerification": 0
   },
   "investigations": [
     {

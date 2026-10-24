@@ -1,0 +1,32 @@
+{
+  "cloudflare": {
+    "configured": true,
+    "httpStatus": 200,
+    "errorCodes": [],
+    "projectName": "tradehq-preview",
+    "productionBranch": "main",
+    "canonicalDeployment": {
+      "id": "1921e1b9-77d3-40a7-8c0b-56c17b31871b",
+      "environment": "production",
+      "status": "success",
+      "sha": "1a1e577a76203a622cfde2929fb37389369ab65f"
+    }
+  },
+  "vercel": {
+    "configured": true,
+    "httpStatus": 200,
+    "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+    "production": {
+      "id": "dpl_9ev1xC9CRow1zpH1Nh5wRZRWR2bN",
+      "target": "production",
+      "state": "READY",
+      "sha": "1a1e577a76203a622cfde2929fb37389369ab65f",
+      "branch": "main"
+    }
+  },
+  "checkedAt": "2026-10-24T04:08:27.872622+00:00",
+  "outcome": "PASS",
+  "productionSHA": "1a1e577a76203a622cfde2929fb37389369ab65f",
+  "sourceJob": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40061063942/job/120774470218",
+  "scope": "Fresh native read-only provider baseline after resumption; diagnostic branch is not a production release."
+}

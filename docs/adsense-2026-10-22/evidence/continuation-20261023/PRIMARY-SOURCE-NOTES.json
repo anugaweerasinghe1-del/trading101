@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-10-23T15:58:16.783121+00:00",
+  "scope": "Individually read primary-source claims; no blanket source verification",
+  "routes": {
+    "/trade/btc": {
+      "source": "PRIMARY-BTC.json",
+      "assessment": "Bitcoin.org FAQ selected issuance paragraph states scheduled declining creation and 21-million total. This corroborates the page supply-limit description; it does not validate the displayed price, predict value or certify every Bitcoin claim. Selected claim excerpt read, not the entire long FAQ."
+    },
+    "/trade/bnb": {
+      "source": "PRIMARY-BNB.json",
+      "assessment": "Current BNB Chain BSC validator overview explicitly calls its mechanism Proof of Staked Authority and explains bonded validator selection/slashing. This corroborates the page PoSA label for BSC, not a universal claim about every chain using BNB, historical quotes or returns."
+    },
+    "/trade/doge": {
+      "source": "PRIMARY-DOGE.json",
+      "assessment": "Full short official What is Dogecoin page read. It identifies an open-source peer-to-peer cryptocurrency, community and aspiration to wider currency use. It does not quantify current merchant acceptance, fees or confirmation speed. The site wide-acceptance/fast/low-fee wording remains uncorroborated by this source; no false numerical fact or new policy violation is inferred."
+    }
+  }
+}

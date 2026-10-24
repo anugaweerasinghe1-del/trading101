@@ -177,6 +177,188 @@
       "answersRead": 5,
       "assessment": "Five expanded answers read. Virtual-fund workflow, class-level drivers and price/change comparison are generic, with popularity/volume claims needing follow-up. Unconditional browser-only portfolio storage is THQ014; static correction prepared in PR214. No actual orders/account writes performed.",
       "controlEvidence": "evidence/live-faq-v2/f2b50467691a2272.json"
+    },
+    "/trade/apt": {
+      "answersRead": 5,
+      "assessment": "APT free-practice/no-real-loss answers are clear. The other three answers imply catalyst modelling, universal popularity and real volume/correlation comparisons; fresh Markets labels instead say generated change/demo activity. THQ-021 records this template mismatch.",
+      "controlEvidence": "evidence/continuation-20261023/trade-apt.json",
+      "readAt": "2026-10-23T15:46:33.469819+00:00",
+      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+    },
+    "/trade/arb": {
+      "answersRead": 5,
+      "assessment": "ARB answers repeat the APT template: real crypto drivers are mixed with generated-chart practice; broad popularity is unsupported and comparison guidance mislabels generated Markets measures. Virtual-only loss is clear. THQ-021.",
+      "controlEvidence": "evidence/continuation-20261023/trade-arb.json",
+      "readAt": "2026-10-23T15:46:33.469819+00:00",
+      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+    },
+    "/trade/arkk": {
+      "answersRead": 5,
+      "assessment": "ARKK uses the fund-specific disruptive-innovation driver, but the generated answer still suggests reading that catalyst on simulated history and labels demo activity/changes as volume/24h returns. The no-real-loss answer is sound. THQ-021.",
+      "controlEvidence": "evidence/continuation-20261023/trade-arkk.json",
+      "readAt": "2026-10-23T15:46:33.469819+00:00",
+      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+    },
+    "/trade/atom": {
+      "answersRead": 5,
+      "assessment": "ATOM FAQ establishes free virtual order entry, then repeats the unsupported widely-followed assertion and real-correlation/volume guidance from APT/ARB. This is not a Cosmos-specific research FAQ. THQ-021.",
+      "controlEvidence": "evidence/continuation-20261023/trade-atom.json",
+      "readAt": "2026-10-23T15:46:33.469819+00:00",
+      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+    },
+    "/trade/audusd": {
+      "answersRead": 5,
+      "assessment": "AUD/USD driver list covers central-bank/rate/macro topics; generated charts do not model those releases. Its Markets instructions misname synthetic activity/latest change as volume/24h returns; virtual loss scope is clear. Unit/accounting remains INV-FX01. THQ-021.",
+      "controlEvidence": "evidence/continuation-20261023/trade-audusd.json",
+      "readAt": "2026-10-23T15:46:33.469819+00:00",
+      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+    },
+    "/trade/avax": {
+      "answersRead": 5,
+      "assessment": "AVAX expanded answers use generic crypto drivers/popularity rather than the nuanced main-body network discussion. The comparison answer implies real correlations from generated practice series. Free virtual-only practice is accurately explained. THQ-021.",
+      "controlEvidence": "evidence/continuation-20261023/trade-avax.json",
+      "readAt": "2026-10-23T15:46:33.469819+00:00",
+      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+    },
+    "/trade/avgo": {
+      "answersRead": 5,
+      "assessment": "AVGO FAQ uses earnings/sector/macro topics but overstates what generated chart history teaches about those events. The same generic popularity and comparison claims recur; virtual-only scope is clear. THQ-021.",
+      "controlEvidence": "evidence/continuation-20261023/trade-avgo.json",
+      "readAt": "2026-10-23T15:46:33.469819+00:00",
+      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+    },
+    "/trade/ba": {
+      "answersRead": 5,
+      "assessment": "BA FAQ contains no Boeing-specific drivers beyond generic stock earnings/sector/macro topics. It describes current Markets data incorrectly and overgeneralizes popularity/suitability; free virtual practice answer is clear. THQ-021.",
+      "controlEvidence": "evidence/continuation-20261023/trade-ba.json",
+      "readAt": "2026-10-23T15:46:33.469819+00:00",
+      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+    },
+    "/trade/bac": {
+      "answersRead": 5,
+      "assessment": "BAC FAQ repeats generic stock earnings/sector/macro driver guidance, not bank-specific analysis. Its volume/24h/correlation language conflicts with the Markets disclosure; virtual-only currency language is clear. THQ-021.",
+      "controlEvidence": "evidence/continuation-20261023/trade-bac.json",
+      "readAt": "2026-10-23T15:46:33.469819+00:00",
+      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+    },
+    "/trade/bnb": {
+      "answersRead": 4,
+      "assessment": "All four BNB answers distinguish chain/exchange/burn activity and deny guaranteed return relationships. The BTC comparison asks for a matching period and avoids fixed macro/exchange sensitivities. This handwritten set does not contain the generated volume/popularity defect.",
+      "controlEvidence": "evidence/continuation-20261023/trade-bnb.json",
+      "readAt": "2026-10-23T15:46:33.469819+00:00",
+      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+    },
+    "/trade/brent": {
+      "answersRead": 5,
+      "assessment": "BRENT driver answer names supply/demand, USD and geopolitics, but generated history cannot model those real events. Its Markets comparison mislabels demo activity and change; no-real-money statement is clear. THQ-021.",
+      "controlEvidence": "evidence/continuation-20261023/trade-brent.json",
+      "readAt": "2026-10-23T15:46:33.469819+00:00",
+      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+    },
+    "/trade/btc": {
+      "answersRead": 4,
+      "assessment": "All four BTC answers were expanded/read. Virtual $100K and no-payment scope are explained, suitability is qualified by the learner objective and volatility. Candlestick/mentor descriptions are separate from the area-chart timeframe defect; no new false return promise established.",
+      "controlEvidence": "evidence/continuation-20261023/trade-btc.json",
+      "readAt": "2026-10-23T15:46:33.469819+00:00",
+      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+    },
+    "/trade/cat": {
+      "answersRead": 5,
+      "assessment": "CAT FAQ repeats generic stock drivers and popularity rather than an industrial-equipment explanation. Its comparison answer mislabels Markets practice data and implies correlation learning from synthetic series. Virtual practice loss limit is clear. THQ-021.",
+      "controlEvidence": "evidence/continuation-20261023/trade-cat.json",
+      "readAt": "2026-10-23T15:46:33.469819+00:00",
+      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+    },
+    "/trade/coffee": {
+      "answersRead": 5,
+      "assessment": "Coffee FAQ names supply/demand/USD/geopolitics and offers free virtual exercise, but its generated-chart catalyst and volume/24h/correlation claims exceed the data shown. It supplies no exchange-contract or delivery research. THQ-021.",
+      "controlEvidence": "evidence/continuation-20261023/trade-coffee.json",
+      "readAt": "2026-10-23T15:46:33.469819+00:00",
+      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+    },
+    "/trade/eth": {
+      "answersRead": 4,
+      "assessment": "Four handwritten answers distinguish exchange price, gas fees, application use and staking. Free practice explicitly does not execute DeFi/staking/wallet transfers. Indicators and ETH/BTC return comparisons are qualified by period and do not establish future price or readiness.",
+      "controlEvidence": "evidence/continuation-20261023/trade-eth.json",
+      "readAt": "2026-10-24T04:09:25.837635+00:00",
+      "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
+    },
+    "/trade/eurgbp": {
+      "answersRead": 5,
+      "assessment": "Five answers separate virtual order mechanics from external central-bank/rate/macro research and deny event modelling or real correlations from generated data. Suitability is not inferred from availability. Cross-currency account units remain INV-FX01; these answers do not resolve conversion.",
+      "controlEvidence": "evidence/continuation-20261023/trade-eurgbp.json",
+      "readAt": "2026-10-24T04:09:25.837800+00:00",
+      "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
+    },
+    "/trade/eurjpy": {
+      "answersRead": 5,
+      "assessment": "Five expanded answers use the corrected generated guidance: external rate/policy research, explicit synthetic chart/correlation limits and virtual-only trades. They do not add pair-specific ECB/BOJ analysis or specify settlement units; INV-FX01 remains separate.",
+      "controlEvidence": "evidence/continuation-20261023/trade-eurjpy.json",
+      "readAt": "2026-10-24T04:09:25.837956+00:00",
+      "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
+    },
+    "/trade/eurusd": {
+      "answersRead": 4,
+      "assessment": "Four handwritten answers limit practice to arithmetic/session-learning, deny replication of actual liquidity/execution, and identify ECB/Fed and economic releases without predicting direction. The pip-calculation description does not independently specify the general practice-account unit model.",
+      "controlEvidence": "evidence/continuation-20261023/trade-eurusd.json",
+      "readAt": "2026-10-24T04:09:25.838075+00:00",
+      "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
+    },
+    "/trade/fil": {
+      "answersRead": 5,
+      "assessment": "Five Filecoin answers provide virtual order entry and mark crypto network/regulatory drivers as separate research. Generated charts cannot establish event responses or real correlations; universal popularity/readiness claims are removed. No storage-network economics are taught here.",
+      "controlEvidence": "evidence/continuation-20261023/trade-fil.json",
+      "readAt": "2026-10-24T04:09:25.838141+00:00",
+      "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
+    },
+    "/trade/ftm": {
+      "answersRead": 5,
+      "assessment": "Five Fantom/FTM answers correctly limit generated charts and beginner suitability, while current network/token identity remains a separate source/data-mapping investigation. Free virtual-only scope is explicit; no token migration or record rename is implied.",
+      "controlEvidence": "evidence/continuation-20261023/trade-ftm.json",
+      "readAt": "2026-10-24T04:09:25.838274+00:00",
+      "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
+    },
+    "/trade/gbpjpy": {
+      "answersRead": 5,
+      "assessment": "Five answers separate currency policy topics from synthetic charts and clarify demo activity/practice change rather than observed volume/24h return. Currency unit/settlement assumptions are not specified by this FAQ; keep INV-FX01 open.",
+      "controlEvidence": "evidence/continuation-20261023/trade-gbpjpy.json",
+      "readAt": "2026-10-24T04:09:25.838387+00:00",
+      "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
+    },
+    "/trade/gbpusd": {
+      "answersRead": 4,
+      "assessment": "Four handwritten answers treat Bank of England/Fed announcements as external research; session overlap depends on daylight saving/holidays/news and does not guarantee useful timing or faster learning. Practice liquidity is not claimed to mirror real execution.",
+      "controlEvidence": "evidence/continuation-20261023/trade-gbpusd.json",
+      "readAt": "2026-10-24T04:09:25.838454+00:00",
+      "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
+    },
+    "/trade/gld": {
+      "answersRead": 5,
+      "assessment": "Five expanded answers read. Virtual-only and generated-data limits are clear, but the driver answer incorrectly defaults to underlying index composition for GLD. Issuer states gold-bullion exposure less expenses; THQ-023 records the mismatch and generic fund-driver correction.",
+      "controlEvidence": "evidence/continuation-20261023/trade-gld.json",
+      "readAt": "2026-10-24T04:09:25.838602+00:00",
+      "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
+    },
+    "/trade/gold": {
+      "answersRead": 4,
+      "assessment": "Four handwritten answers deny a fixed gold/stock inverse relationship, guaranteed hedge and reliably directional inflation/news response. Macro drivers are hypotheses over stated periods, while a practice chart cannot reproduce an actual market crash.",
+      "controlEvidence": "evidence/continuation-20261023/trade-gold.json",
+      "readAt": "2026-10-24T04:09:25.838726+00:00",
+      "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
+    },
+    "/trade/googl": {
+      "answersRead": 4,
+      "assessment": "Four handwritten answers distinguish company announcements/AI narrative from generated charts and traded volume. GOOGL/NVDA comparisons use equal hypothetical dollar values, and breakout/volume observations are not evidence of profitable future action.",
+      "controlEvidence": "evidence/continuation-20261023/trade-googl.json",
+      "readAt": "2026-10-24T04:09:25.838842+00:00",
+      "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
+    },
+    "/trade/gs": {
+      "answersRead": 5,
+      "assessment": "Five Goldman Sachs answers name broad earnings/sector/macro research without claiming synthetic event modelling or actual market correlations. Free virtual trade and suitability limits are clear; there is no firm-specific investment-banking research in this FAQ.",
+      "controlEvidence": "evidence/continuation-20261023/trade-gs.json",
+      "readAt": "2026-10-24T04:09:25.838904+00:00",
+      "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
     }
   },
   "nativeVisibleFAQRead": {

@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-10-23T15:58:16.783338+00:00",
+  "candidateSHA": "ec1183eb63caf82305ef15160756365b07037737",
+  "baseSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
+  "outcome": "PASS",
+  "paths": [
+    "scripts/verify-chart-windows.mjs",
+    "scripts/verify-publisher-browser.mjs",
+    "src/components/trading/MinimalistAreaChart.tsx",
+    "src/lib/assetContent.ts"
+  ],
+  "scope": "Component-local chart view and static generated FAQ; only initial FAQ generator answers changed in assetContent; asset data and handwritten FAQs byte-equivalent. No orders, quote requests, financial account/execution, records, auth, DB, progress, privacy/ads, workflows/dependencies or infra changes. Axis scaling alone also now accommodates long large-price labels; fixed-price fixture checks painted SVG bounds.",
+  "localChecks": {
+    "cloudflareBuildAndSEO": "PASS",
+    "appTypecheck": "PASS",
+    "finalPhase6Browser": "PASS"
+  },
+  "testLimitation": "An initial new test selector inspected the chart body instead of its header; corrected selector and complete final suite passed. Not classified as a product failure.",
+  "historicalCandidateSHA": "864f9c0ac0dd1d38af91d7cba54a3c8bf8c17b54"
+}
