@@ -69,7 +69,7 @@ export default function About() {
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 mb-6">
               <Target className="w-8 h-8 text-primary" aria-hidden="true" />
             </div>
-            <h1 className="text-4xl font-bold mb-4">About TradeHQ</h1>
+            <h1 className="text-3xl sm:text-4xl font-bold mb-4">About TradeHQ</h1>
             <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               TradeHQ exists to make financial education more accessible through practical learning.
               It is an educational simulator — not a brokerage, not an advisor.
