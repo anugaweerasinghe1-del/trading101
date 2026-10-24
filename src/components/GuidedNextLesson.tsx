@@ -59,13 +59,13 @@ export function GuidedNextLesson() {
         aria-hidden
         className="absolute -top-16 -right-16 w-56 h-56 rounded-full bg-emerald-500/10 blur-3xl"
       />
-      <div className="relative flex items-start justify-between gap-4 flex-wrap">
-        <div className="min-w-0 flex-1">
+      <div className="relative flex flex-col sm:flex-row items-start justify-between gap-4">
+        <div className="min-w-0 flex-1 w-full sm:w-auto">
           <div className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-widest text-emerald-400 mb-2">
             <Sparkles className="w-3 h-3" /> Guided pathway · Picked for you
           </div>
           <p className="text-xs text-muted-foreground mb-1">{suggestion.reason}</p>
-          <h3 className="text-lg md:text-xl font-semibold text-foreground truncate">
+          <h3 className="text-lg md:text-xl font-semibold text-foreground break-words">
             {suggestion.lesson.title}
           </h3>
           <p className="text-xs text-muted-foreground mt-1">
@@ -75,7 +75,7 @@ export function GuidedNextLesson() {
         </div>
         <Link
           to={`/courses/${suggestion.track.slug}/${suggestion.lesson.slug}`}
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 text-black font-semibold hover:bg-emerald-400 transition whitespace-nowrap"
+          className="inline-flex shrink-0 max-w-full items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 text-black font-semibold hover:bg-emerald-400 transition whitespace-normal"
         >
           {suggestion.cta} <ArrowRight className="w-4 h-4" />
         </Link>
