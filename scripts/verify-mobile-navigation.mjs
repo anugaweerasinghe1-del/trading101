@@ -16,6 +16,10 @@ export async function verifyMobileNavigation({send,evaluate,waitUntil,origin,del
       await evaluate(`[...document.querySelectorAll('button')].find(b=>b.textContent.trim()==='Reject analytics')?.click();true`);
       const count=await evaluate(`document.querySelectorAll('nav[aria-label="Mobile navigation"]').length`);
       assert.equal(count,1,'Exactly one mobile navigation landmark on '+path);
+      await evaluate('scrollTo(0,0);true');
+      if(['/contact','/privacy','/terms'].includes(path)) {
+        assert.equal(await evaluate(`(()=>{const n=[...document.querySelectorAll('nav')].find(e=>getComputedStyle(e).position==='fixed'&&e.querySelector('a[aria-label="TradeHQ home"]')),icon=document.querySelector('main > :first-child > div');return icon.getBoundingClientRect().top>=n.getBoundingClientRect().bottom+1;})()`),true,'Trust header icon clears navigation on '+path+' at '+width);
+      }
       if(width>=768) {
         assert.equal(await evaluate(`getComputedStyle(document.querySelector('nav[aria-label="Mobile navigation"]')).display`),'none','Mobile bar hidden at '+width);
         continue;

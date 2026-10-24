@@ -103,7 +103,7 @@ export default function Contact() {
       <div className="min-h-screen bg-background">
         <Navigation />
 
-        <main className="container mx-auto px-4 py-12 max-w-4xl pb-24 md:pb-12">
+        <main className="container mx-auto px-4 pt-28 max-w-4xl pb-24 md:pb-12">
           <header className="text-center mb-10">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 mb-6">
               <MessageSquare className="w-8 h-8 text-primary" aria-hidden="true" />
