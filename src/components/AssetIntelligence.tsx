@@ -244,11 +244,13 @@ export function AssetIntelligence({ asset, liveMarketCap, liveData, isLiveLoadin
                   ) : stats?.marketCap === "live_sourced_at_runtime" ? (
                     liveMarketCap ? (
                       liveMarketCap
-                    ) : (
+                    ) : isLiveLoading ? (
                       <span className="flex items-center gap-1.5 text-muted-foreground">
                         <Loader2 className="w-3 h-3 animate-spin" />
                         Loading...
                       </span>
+                    ) : (
+                      <span className="text-muted-foreground">Unavailable</span>
                     )
                   ) : (
                     stats?.marketCap
