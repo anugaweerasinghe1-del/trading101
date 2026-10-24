@@ -345,7 +345,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
       h: "Support questions we answer most often",
       list: [
         "My portfolio disappeared — check which account, browser and device you are using. Guest records are browser-held. Account cash, positions and server-recorded trades can be restored when the service is available. Earlier guest history, journals and course progress stay on the original browser. If sync fails, contact the maintainer before resetting the practice account.",
-        "How do I reset my practice balance? There is a reset control in the portfolio area; it returns the account to $100,000 in virtual cash and clears open positions.",
+        "How do I reset my practice balance? The portfolio help explains browser-held guest records and account restoration. Clearing site data removes the local copy, including browser-only history and progress, but does not delete or reset the server account copy.",
         "A price looks wrong — quotes refresh periodically, can be stale or use a labelled fixed fallback, and need not match a broker’s executable price.",
         "Can I use TradeHQ on my phone? Yes, the whole site works on mobile browsers; there is no app to install.",
         "Do you have an affiliate or partnership programme? No.",
