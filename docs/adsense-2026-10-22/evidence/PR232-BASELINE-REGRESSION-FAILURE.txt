@@ -1,0 +1,25 @@
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:42703/compare/bitcoin-vs-ethereum
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Exactly one comparison article in main /compare/bitcoin-vs-ethereum at 360
++ actual - expected
+
+  [
++   'ARTICLE'
+-   'MAIN'
+  ]
+
+    at verifyComparisonArticle (file:///workspace/trading101-comparison-article/scripts/verify-comparison-article.mjs:19:12)
+    at async file:///workspace/trading101-comparison-article/scripts/verify-publisher-browser.mjs:253:3 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [ 'ARTICLE' ],
+  expected: [ 'MAIN' ],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

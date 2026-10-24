@@ -1,0 +1,1411 @@
+{
+  "updatedAt": "2026-10-24T11:23:23.997643+00:00",
+  "publicBankId": "authored-2026-10-depth",
+  "effectiveFrom": "2026-10-09",
+  "source": "evidence/NORMAL-DAILY-REVIEWS-READ-ONLY-FOLLOWUP.json",
+  "scope": "Individually read exact normal-public SELECT response payload text, not fresh production answer submissions or full conditional rendered/control/keyboard/source coverage. Main441/expandedFAQ1042counts unchanged. No real daily progress action.",
+  "totalCases": 50,
+  "totalQuestionFeedbackSets": 500,
+  "payloadTextReadCases": 10,
+  "payloadQuestionFeedbackSetsRead": 100,
+  "payloadQuestionFeedbackSetsUnread": 400,
+  "actualConditionalRenderedControlSetsComplete": 0,
+  "actualConditionalRenderedControlSetsPending": 500,
+  "rows": [
+    {
+      "id": "practice-01",
+      "title": "A rising coin, a mostly cash account",
+      "questionFeedbackSetsRead": 10,
+      "status": "PUBLIC_PAYLOAD_TEXT_READ_RENDERED_SOURCE_FOLLOWUPS_REMAIN",
+      "assessment": "Read all10questions/options/keys/feedback. Independently checked20000\u00d71.1=22000;102000equity;2%accountreturn;22000/102000=21.57%;\u00d7.9=19800;99800equity;\u2212.2%total;20400target/1600sale;2200/102000=2.16%drawdown. Rebalancing branch explicitly separate, fee-free, not automatic order.",
+      "capturedPayload": {
+        "id": "practice-01",
+        "title": "A rising coin, a mostly cash account",
+        "visual": {
+          "bars": [
+            {
+              "label": "Cash",
+              "value": 80000
+            },
+            {
+              "label": "BTC before",
+              "value": 20000
+            },
+            {
+              "label": "BTC after",
+              "value": 22000
+            }
+          ],
+          "unit": "$",
+          "caption": "Hypothetical case inputs \u2014 not a live market chart"
+        },
+        "sources": [
+          {
+            "url": "https://www.investor.gov/introduction-investing",
+            "label": "Investor.gov \u2014 Investing basics"
+          }
+        ],
+        "category": "Portfolio arithmetic",
+        "scenario": "A hypothetical account starts with $80,000 cash and a $20,000 Bitcoin position. Bitcoin then rises by 10%. No trades, deposits, withdrawals or fees occur during this interval. A friend says the account must also be up 10%. Work through the position value and the cash separately before judging that claim.\n\nFollow the account through a second hypothetical interval: after the rise, the Bitcoin holding falls 10% from its new $22,000 value. Cash still earns nothing and no trade occurs. Compare the final account with both its original value and its peak. A classmate proposes selling enough Bitcoin at the peak to restore the original 20% allocation; treat that as a separate, fee-free worksheet, not an automatic simulator order. Keep those branches separate.",
+        "questions": [
+          {
+            "prompt": "What is the Bitcoin position worth after the rise?",
+            "options": [
+              "$22,000",
+              "$30,000",
+              "$20,010"
+            ],
+            "explanation": "Multiply the $20,000 position by 1.10. The $2,000 gain belongs to the invested portion. A quoted percentage change describes the asset, not automatically every account that holds it.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "What is the return of the entire account in this case?",
+            "options": [
+              "2%",
+              "10%",
+              "20%"
+            ],
+            "explanation": "Cash remains $80,000 and the position becomes $22,000, giving $102,000 total. Divide the $2,000 account gain by the original $100,000. That is 2%, before any costs excluded from this case.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "Which denominator gives the new Bitcoin allocation?",
+            "options": [
+              "$102,000 total account value",
+              "$100,000 starting value",
+              "$22,000 position value"
+            ],
+            "explanation": "The new weight is $22,000 divided by $102,000, approximately 21.57%. Using the original balance gives 22%, but that is not the current portfolio weight because total value changed.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "After the second 10% move down, what is the Bitcoin holding worth?",
+            "options": [
+              "$20,000",
+              "$18,000",
+              "$19,800"
+            ],
+            "explanation": "Apply 0.90 to $22,000 to get $19,800. Equal opposite percentage moves use different bases, so they do not cancel and restore the original position value.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "What is the account worth after that second interval?",
+            "options": [
+              "$98,000",
+              "$99,800",
+              "$100,000"
+            ],
+            "explanation": "Add unchanged $80,000 cash to the $19,800 holding. The account ends $200 below its original $100,000 despite the earlier asset rally.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "What is the account\u2019s full-period return across both intervals?",
+            "options": [
+              "\u22120.2%",
+              "\u22122%",
+              "0%"
+            ],
+            "explanation": "Divide the $200 loss by the original $100,000 account. The asset loses 1% across the sequence, but its original account weight was only 20%.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "At the $102,000 peak, what Bitcoin value equals a 20% target?",
+            "options": [
+              "$20,000",
+              "$22,000",
+              "$20,400"
+            ],
+            "explanation": "Twenty percent of current $102,000 equity is $20,400. A $20,000 holding would be slightly below the target because the portfolio denominator has changed.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "In the separate fee-free rebalancing branch, how much Bitcoin value would be sold?",
+            "options": [
+              "$400",
+              "$1,600",
+              "$2,000"
+            ],
+            "explanation": "Subtract the $20,400 target from the $22,000 holding. Selling $1,600 transfers value to cash and leaves equity unchanged when transaction fees are excluded.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "What is the decline from the $102,000 account peak to $99,800, approximately?",
+            "options": [
+              "2.16%",
+              "0.2%",
+              "10%"
+            ],
+            "explanation": "The peak-to-current loss is $2,200. Divide by the $102,000 peak, rather than the original account balance, to obtain approximately 2.16%.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "Which statement distinguishes the two account branches accurately?",
+            "options": [
+              "The price refresh automatically performs the rebalance",
+              "A 20% target guarantees a 20% account return",
+              "Rebalancing changes exposure through a separate order"
+            ],
+            "explanation": "A price refresh only marks existing units. A rebalance changes units and cash through orders; choosing an allocation does not guarantee the resulting return.",
+            "correctAnswer": 2
+          }
+        ],
+        "reflection": "Why can an accurate asset return still produce a misleading account-return claim?",
+        "reflectionGuide": "Name the share of money exposed to the move, show the unchanged cash, and use starting account value for return. Distinguish that calculation from current allocation, which uses the new total."
+      }
+    },
+    {
+      "id": "practice-11",
+      "title": "The unchanged-price round trip",
+      "questionFeedbackSetsRead": 10,
+      "status": "PUBLIC_PAYLOAD_TEXT_READ_RENDERED_SOURCE_FOLLOWUPS_REMAIN",
+      "assessment": "Read all10sets. .001\u00d71000=$1perleg;buy1001/sell999=\u22122;fivepairs10transactions/$10fees;turnover2000perpair. Fixed-notional worksheet excludes spread/slippage. $10grossgain covers fixed$10cost, no claimed engine break-even formula.",
+      "capturedPayload": {
+        "id": "practice-11",
+        "title": "The unchanged-price round trip",
+        "visual": {
+          "bars": [
+            {
+              "label": "Buy notional",
+              "value": 1000
+            },
+            {
+              "label": "Sell notional",
+              "value": 1000
+            },
+            {
+              "label": "Each fee",
+              "value": 1
+            }
+          ],
+          "unit": "$",
+          "caption": "Hypothetical case inputs \u2014 not a live market chart"
+        },
+        "sources": [
+          {
+            "url": "https://www.investor.gov/introduction-investing",
+            "label": "Investor.gov \u2014 Investing basics"
+          }
+        ],
+        "category": "Costs and orders",
+        "scenario": "You buy $1,000 of a hypothetical asset and later sell the same quantity at the same quote. Apply a 0.1% fee to each $1,000 transaction. There is no spread or slippage in this worksheet. The price chart is flat, but the cash ledger will not be. Work out the two separate charges before describing the result.\n\nRepeat the same flat-price round trip five times as a separate worksheet. Each transaction still has $1,000 notional, the quote never moves, and only the 0.1% fee applies. Compare activity count with accumulated cost. Then identify what a small price gain would need to cover before the round trip becomes profitable. A flat chart does not imply an unchanged cash ledger.",
+        "questions": [
+          {
+            "prompt": "What is the fee on the $1,000 buy?",
+            "options": [
+              "$10",
+              "$0.10",
+              "$1"
+            ],
+            "explanation": "A 0.1% fee is 0.001 times the trade value. Multiplying $1,000 by 0.001 gives $1. Converting a percentage to a decimal correctly matters before using any fee estimate.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "What is the net result of the flat-price round trip?",
+            "options": [
+              "No gain or loss",
+              "A $1 gain",
+              "A $2 loss"
+            ],
+            "explanation": "The buy debits $1,001 and the sale credits $999. Subtract the debit from the credit to obtain \u2212$2. The asset made no price gain, but both fees affected the account.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "Would doubling the number of identical round trips remove that loss?",
+            "options": [
+              "Yes; fees cancel each other",
+              "Yes; a flat price ensures break-even",
+              "No; it doubles these assumed fees"
+            ],
+            "explanation": "Two identical round trips incur $4 of fees under these inputs. More activity alone does not create an edge. This case deliberately excludes other execution costs, so real-world costs could differ.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "What is total notional for one complete $1,000 buy and $1,000 sell?",
+            "options": [
+              "$0",
+              "$2,000",
+              "$1,000"
+            ],
+            "explanation": "The buy and sale each count toward turnover, giving $2,000 total. Turnover measures traded notional, not equity earned or the final holding remaining.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "What net cash arrives from the unchanged-price $1,000 sale?",
+            "options": [
+              "$999",
+              "$1,000",
+              "$1,001"
+            ],
+            "explanation": "Subtract the $1 sale fee from $1,000 gross proceeds. The buy fee is separate and must also be counted when reviewing the entire round trip.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "How many transactions occur across five of these round trips?",
+            "options": [
+              "5 transactions",
+              "20 transactions",
+              "10 transactions"
+            ],
+            "explanation": "Each round trip includes one buy and one sell. Five completed pairs therefore contain ten fee-bearing transactions rather than only five.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "What total fee is charged across those five flat-price round trips?",
+            "options": [
+              "$2",
+              "$10",
+              "$5"
+            ],
+            "explanation": "Ten transactions each cost $1, giving $10 total fees. The absence of price movement does not erase the accumulated costs of repeated activity.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "What combined gross price gain would cover those $10 fees exactly?",
+            "options": [
+              "$10",
+              "$0",
+              "$5"
+            ],
+            "explanation": "Net result equals gross price gain minus costs. In this fixed-notional worksheet, a $10 gross gain covers the stated $10 charges without creating positive net profit.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "Does a fee-free hypothetical chart establish a fee-free execution ledger?",
+            "options": [
+              "Yes; all flat charts imply zero costs",
+              "Yes; a plotted quote already includes every user fee",
+              "No; the transaction rules must also be checked"
+            ],
+            "explanation": "A chart records prices, while an execution ledger records units, cash and applicable charges. The two must be combined before evaluating net performance.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "Which record would make this repeated-trading review reproducible?",
+            "options": [
+              "Only the final asset symbol",
+              "Both transaction notionals and each fee",
+              "Only the count of profitable-looking charts"
+            ],
+            "explanation": "Recording the buy and sell notionals and charges lets another reader reconstruct net cash. A chart or trade count alone does not identify the costs.",
+            "correctAnswer": 1
+          }
+        ],
+        "reflection": "What should your journal say when the chart is flat but equity is lower?",
+        "reflectionGuide": "Reconcile the two fee entries rather than blaming an unexplained price change. Mark the excluded spread and slippage assumptions so the worksheet is not mistaken for a complete real execution model."
+      }
+    },
+    {
+      "id": "practice-21",
+      "title": "A snapshot has an observation time",
+      "questionFeedbackSetsRead": 10,
+      "status": "PUBLIC_PAYLOAD_TEXT_READ_RENDERED_SOURCE_FOLLOWUPS_REMAIN",
+      "assessment": "Read all10sets. Distinguishes observation/fetch/viewing times:10:02\u219210:05three minutes;\u219210:08six minutes;second10:07one minute. Identity/currency/methodology checks and cached marks do not imply current/executable quotes. Official CoinGecko methodology not freshly corroborated in this receipt.",
+      "capturedPayload": {
+        "id": "practice-21",
+        "title": "A snapshot has an observation time",
+        "visual": {
+          "bars": [
+            {
+              "label": "Observed",
+              "value": 2
+            },
+            {
+              "label": "Page loaded",
+              "value": 5
+            }
+          ],
+          "unit": "minute after 10:00",
+          "caption": "Hypothetical case inputs \u2014 not a live market chart"
+        },
+        "sources": [
+          {
+            "url": "https://www.coingecko.com/en/methodology",
+            "label": "CoinGecko \u2014 Price methodology"
+          }
+        ],
+        "category": "Price data",
+        "scenario": "A screen refreshes at 10:05 but shows a provider observation stamped 10:02. A different website displays a newer-looking number without a timestamp. All times are hypothetical. Before declaring one quote incorrect, distinguish when the page loaded from when the underlying price was observed, and check the asset identifier and currency.\n\nNow the page is opened again at 10:08, but its provider observation still says 10:02. The displayed mark has not acquired a new observation merely because it was fetched again. A second page identifies the same asset in USD at 10:07. Compare the ages before comparing the prices. A cached quote may remain useful for a labelled valuation even when it is unsuitable for a claim about the current market.",
+        "questions": [
+          {
+            "prompt": "How old is the stated observation at the 10:05 refresh?",
+            "options": [
+              "Five hours",
+              "Three minutes",
+              "Zero minutes"
+            ],
+            "explanation": "Subtract 10:02 from 10:05 to get three minutes. Refreshing a page does not necessarily obtain a new market observation; it can display a cached provider response with an older timestamp.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "Which timestamp best describes the age of the quote itself?",
+            "options": [
+              "The time your account was created",
+              "The provider observation time",
+              "Only the page refresh time"
+            ],
+            "explanation": "The observation timestamp belongs to the price data. The loading timestamp describes the interface request. Both can be useful, but substituting the latter can make an old observation appear newly priced.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "What should be checked before comparing the other website\u2019s number?",
+            "options": [
+              "Only the website\u2019s font size",
+              "Matching asset, currency, time and methodology",
+              "Only which number is larger"
+            ],
+            "explanation": "Two plausible prices can refer to different currencies, timestamps or market sources. An identifier and methodology check helps make the comparison meaningful; a visual difference alone does not establish an error.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "At the later 10:08 page visit, how old is the unchanged 10:02 observation?",
+            "options": [
+              "Six minutes",
+              "One minute",
+              "Zero minutes"
+            ],
+            "explanation": "Subtract the observation time from the viewing time. Fetching the same mark again at 10:08 does not reset its underlying age to zero.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "How old is the second page\u2019s 10:07 observation at 10:08?",
+            "options": [
+              "Six minutes",
+              "Eight minutes",
+              "One minute"
+            ],
+            "explanation": "The second observation was recorded one minute before viewing. Its age differs from the first page even though both are inspected at the same time.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "Which stored field should remain unchanged when the same observation is served again?",
+            "options": [
+              "The price silently converted into a forecast",
+              "The original observation timestamp",
+              "The original observation rewritten to 10:08"
+            ],
+            "explanation": "A cache read should preserve the source observation\u2019s timestamp. The response can have a new fetch time without suggesting the underlying price was observed again.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "Can a six-minute-old observation alone establish the price at 10:08?",
+            "options": [
+              "No; it establishes a mark observed at 10:02",
+              "Yes; every successful fetch is a current quote",
+              "Yes; caching freezes the real market"
+            ],
+            "explanation": "The mark describes the supplied observation time. Markets may move between observations, so a successful cached response is not proof of the current price.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "What identifier check should precede this timestamp comparison?",
+            "options": [
+              "Matching font and display precision only",
+              "Matching website refresh animation",
+              "The same provider asset and quote currency"
+            ],
+            "explanation": "Even simultaneous observations are not comparable if they identify different instruments or currencies. Resolve identity and units before attributing a difference to freshness.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "Which label communicates the first page\u2019s data most accurately at 10:08?",
+            "options": [
+              "Verified execution available at this price",
+              "Provider snapshot observed 10:02, fetched 10:08",
+              "Real-time price observed 10:08"
+            ],
+            "explanation": "The label separates quote observation from page retrieval. It describes the available snapshot without promising current data or execution at a particular venue.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "What would strengthen a claim that one of these feeds is incorrect?",
+            "options": [
+              "Matched-identity, matched-time evidence and provider methodology",
+              "A price difference with no timestamps",
+              "A faster refresh icon"
+            ],
+            "explanation": "A time-aligned comparison can narrow alternative explanations such as different observation windows. Price differences alone do not establish which data source is wrong.",
+            "correctAnswer": 0
+          }
+        ],
+        "reflection": "Write an honest freshness label for this screen.",
+        "reflectionGuide": "Say \u201cpage loaded at 10:05; quote observed at 10:02.\u201d Avoid calling it a continuous tick feed. Mention the missing timestamp when describing the competing quote instead of assuming it is fresher."
+      }
+    },
+    {
+      "id": "practice-31",
+      "title": "An ETF can overlap a stock you own",
+      "questionFeedbackSetsRead": 10,
+      "status": "PUBLIC_PAYLOAD_TEXT_READ_RENDERED_SOURCE_FOLLOWUPS_REMAIN",
+      "assessment": "Read all10sets. 10%\u00d78000=800indirect,2800total/28%;direct20%,indirect8%;20%shockgives400+160=560/5.6%under frozen-input sensitivity assumptions. Two displayedrows do not prove diversification; actualfundweights/otherconstituents not forecast.",
+      "capturedPayload": {
+        "id": "practice-31",
+        "title": "An ETF can overlap a stock you own",
+        "visual": {
+          "bars": [
+            {
+              "label": "Direct A",
+              "value": 2000
+            },
+            {
+              "label": "A inside ETF",
+              "value": 800
+            },
+            {
+              "label": "Other ETF holdings",
+              "value": 7200
+            }
+          ],
+          "unit": "$",
+          "caption": "Hypothetical case inputs \u2014 not a live market chart"
+        },
+        "sources": [
+          {
+            "url": "https://www.investor.gov/introduction-investing",
+            "label": "Investor.gov \u2014 Investing basics"
+          }
+        ],
+        "category": "Risk and uncertainty",
+        "scenario": "Your hypothetical $10,000 account holds $2,000 of stock A and $8,000 of an ETF. For this worksheet the ETF has a fixed 10% exposure to stock A. Ignore other assets, fees and changing weights. Although you see two account rows, part of both rows depends on the same company. Look through the fund rather than counting labels.\n\nIn a separate sensitivity worksheet, stock A falls 20% and every other ETF holding stays unchanged. Keep the ETF\u2019s 10% A weight fixed for this calculation, with no fees or trades. Trace the direct holding and the indirect slice separately before adding their losses. The result is conditional on these assumptions; actual fund weights and other constituents can also change.",
+        "questions": [
+          {
+            "prompt": "How much indirect A exposure is inside the ETF?",
+            "options": [
+              "$800",
+              "$8,000",
+              "$200"
+            ],
+            "explanation": "Ten percent of the $8,000 ETF position is $800 under the assumed fixed weight. A fund holding can contain exposure to an asset already held directly, even though it appears as another row.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "What is the combined direct and indirect A exposure?",
+            "options": [
+              "$2,800",
+              "$2,000",
+              "$10,000"
+            ],
+            "explanation": "Add the $2,000 direct holding and $800 look-through exposure. The resulting $2,800 is 28% of this $10,000 account. Counting the ETF as completely unrelated would miss the overlap.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "Does owning two rows guarantee broad diversification?",
+            "options": [
+              "No; underlying exposures can overlap",
+              "Yes; row count is the diversification measure",
+              "Yes; any ETF eliminates company risk"
+            ],
+            "explanation": "Diversification depends on what the instruments expose you to, not just how many names are displayed. A fund may hold many securities, but its overlap with direct positions can still increase concentration.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "What percentage of the account is directly invested in A?",
+            "options": [
+              "10%",
+              "28%",
+              "20%"
+            ],
+            "explanation": "The direct $2,000 A position divided by $10,000 equity is 20%. Indirect exposure must be considered separately before computing the combined company sensitivity.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "What percentage of account equity is indirectly exposed to A through the ETF?",
+            "options": [
+              "80%",
+              "8%",
+              "10%"
+            ],
+            "explanation": "The ETF\u2019s $800 A slice divided by $10,000 account equity is 8%. The fund\u2019s own 10% holding weight is not the whole account\u2019s indirect exposure.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "What is total account weight dependent on A under the stated look-through method?",
+            "options": [
+              "28%",
+              "20%",
+              "90%"
+            ],
+            "explanation": "Add 20% direct and 8% indirect company exposure. Counting the ETF as unrelated merely because it is a second row would miss the overlap.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "How much does the direct A holding lose in the 20% decline branch?",
+            "options": [
+              "$200",
+              "$560",
+              "$400"
+            ],
+            "explanation": "Apply the selected 20% decline to the direct $2,000 position. The resulting $400 loss excludes the additional A exposure inside the ETF.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "How much does the ETF\u2019s A slice lose in this branch?",
+            "options": [
+              "$400",
+              "$160",
+              "$800"
+            ],
+            "explanation": "Apply 20% to the ETF\u2019s $800 A exposure. Other constituents are assumed unchanged, so this $160 loss is the ETF\u2019s supplied contribution from A.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "What is the combined account loss due to this A-only move?",
+            "options": [
+              "$560",
+              "$400",
+              "$2,000"
+            ],
+            "explanation": "Add the $400 direct loss and $160 indirect loss. The $560 total is 5.6% of account equity under the fixed-weight, other-assets-unchanged assumptions.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "What change would invalidate treating this sensitivity as a complete account forecast?",
+            "options": [
+              "Only the ETF name remaining the same",
+              "Only two rows being visible",
+              "Other fund holdings or weights also moving"
+            ],
+            "explanation": "The worksheet isolates one company and freezes other inputs. Actual changes in constituents, weights or costs require a broader calculation and cannot be inferred from this isolated branch.",
+            "correctAnswer": 2
+          }
+        ],
+        "reflection": "What fund information would you inspect beyond this worksheet?",
+        "reflectionGuide": "Check the actual holdings, weights and date of disclosure. The assumed 10% is not a live ETF fact. Look for sector and company overlap as well as the number of fund constituents."
+      }
+    },
+    {
+      "id": "practice-41",
+      "title": "A good process can have a losing outcome",
+      "questionFeedbackSetsRead": 10,
+      "status": "PUBLIC_PAYLOAD_TEXT_READ_RENDERED_SOURCE_FOLLOWUPS_REMAIN",
+      "assessment": "Read all10sets. A records3defineditems/B0; +50minus\u221250=$100outcome gap. Distinguishes documentation from validatedskill, plans from hindsight and single outcome from repeatability; no profit guarantee.",
+      "capturedPayload": {
+        "id": "practice-41",
+        "title": "A good process can have a losing outcome",
+        "visual": {
+          "bars": [
+            {
+              "label": "Documented loss",
+              "value": 50
+            },
+            {
+              "label": "Undocumented gain",
+              "value": 50
+            }
+          ],
+          "unit": "$ outcome magnitude",
+          "caption": "Hypothetical case inputs \u2014 not a live market chart"
+        },
+        "sources": [
+          {
+            "url": "https://www.investor.gov/introduction-investing",
+            "label": "Investor.gov \u2014 Investing basics"
+          }
+        ],
+        "category": "Decision habits",
+        "scenario": "Two learners each make one hypothetical decision. One records evidence, exposure and a review condition, then loses $50. The other skips those steps and gains $50. A single result cannot tell you which process is repeatable. Evaluate what was known at decision time separately from the outcome that became visible later.\n\nFor a separate process check, use a three-item checklist: recorded evidence, recorded exposure and a recorded review condition. Learner A recorded all three; learner B recorded none. This checklist is not a validated skill score or proof of future profitability. Use it to identify documented versus missing steps, then decide how repeated observations could support a fairer comparison than one $50 outcome.",
+        "questions": [
+          {
+            "prompt": "Does the winning result prove the undocumented process was better?",
+            "options": [
+              "Yes; every profitable decision is well reasoned",
+              "Yes; evidence matters only after a loss",
+              "No; one outcome cannot establish that"
+            ],
+            "explanation": "An outcome is one observation produced under uncertainty. It can be favorable despite a weak process or unfavorable despite careful reasoning. Assessing the pre-decision evidence avoids judging everything through hindsight.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "What should a process review examine first?",
+            "options": [
+              "Only the final profit color",
+              "Only whether a friend agreed afterward",
+              "The information and rules available before acting"
+            ],
+            "explanation": "Review the dated thesis, exposure and decision criteria before adding later information. That preserves a fair account of what could reasonably have been considered and makes later changes to the thesis visible.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "What would help compare the methods over time?",
+            "options": [
+              "Deleting the losing decision",
+              "Calling either method certain after one result",
+              "Consistent prospective records across more decisions"
+            ],
+            "explanation": "A complete sequence of records can reveal repeated weaknesses or strengths better than a selected result. It still needs context and uncertainty; prospective documentation reduces retrospective storytelling and omitted failures.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "How many of the three defined documentation items did A record?",
+            "options": [
+              "Zero",
+              "Three",
+              "One"
+            ],
+            "explanation": "The case explicitly records evidence, exposure and a review condition for A. Counting those items measures documentation completeness under this narrow worksheet definition.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "How many of those defined documentation items did B record?",
+            "options": [
+              "Zero",
+              "Three",
+              "One"
+            ],
+            "explanation": "The case says B skipped the listed steps. That creates a documentation gap even though B\u2019s one supplied outcome happened to be profitable.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "What outcome difference separates B\u2019s +$50 from A\u2019s \u2212$50?",
+            "options": [
+              "$50",
+              "$0",
+              "$100"
+            ],
+            "explanation": "Subtract \u2212$50 from +$50 to obtain a $100 gap. This single dollar comparison describes outcomes without establishing which process is repeatable.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "Does A\u2019s complete checklist prove the next decision will win?",
+            "options": [
+              "Yes; a review condition eliminates uncertainty",
+              "No; documentation is not a profit guarantee",
+              "Yes; all recorded processes are profitable"
+            ],
+            "explanation": "A documented process can make assumptions reviewable, but the supplied checklist does not remove uncertainty or validate future returns.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "Which record helps assess whether each learner followed their stated plan?",
+            "options": [
+              "The original dated plan and the actual actions",
+              "Only the final profit number",
+              "Only the winner\u2019s username"
+            ],
+            "explanation": "Comparing a plan written before the outcome with the subsequent actions distinguishes adherence from a story reconstructed after the result.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "What would make a repeated comparison more informative?",
+            "options": [
+              "Selecting only the best decision from each learner",
+              "Changing the checklist to fit each outcome",
+              "Consistent inclusion rules, comparable exposure and costs"
+            ],
+            "explanation": "Comparable records and predefined inclusion reduce selective interpretation. Exposure and costs affect outcomes, so a fair comparison requires more than repeating profit headlines.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "What feedback matches A\u2019s single losing case without overclaiming?",
+            "options": [
+              "The loss proves A should double the next position",
+              "The documented steps can be reviewed separately from the loss",
+              "The loss proves all three steps were useless"
+            ],
+            "explanation": "The case permits a review of evidence, exposure and conditions independently of one outcome. It does not justify discarding the process or increasing risk automatically.",
+            "correctAnswer": 1
+          }
+        ],
+        "reflection": "How would you review the losing decision without automatically calling it foolish?",
+        "reflectionGuide": "Compare the planned reasoning with the evidence available then, note execution and costs, and identify what changed. Keep the loss in the record while avoiding a claim that good preparation guarantees success."
+      }
+    },
+    {
+      "id": "practice-02",
+      "title": "Two unequal positions fall together",
+      "questionFeedbackSetsRead": 10,
+      "status": "PUBLIC_PAYLOAD_TEXT_READ_RENDERED_SOURCE_FOLLOWUPS_REMAIN",
+      "assessment": "Read10sets:stock\u22121500,crypto\u22122000,96500equity;stockcontribution\u22121.5pp;rebounds29925/9600,final99525,\u2212475. Differentdollarweights/basesexplicit; no account engine certification.",
+      "capturedPayload": {
+        "id": "practice-02",
+        "title": "Two unequal positions fall together",
+        "visual": {
+          "bars": [
+            {
+              "label": "Stock start",
+              "value": 30000
+            },
+            {
+              "label": "Crypto start",
+              "value": 10000
+            },
+            {
+              "label": "Cash",
+              "value": 60000
+            }
+          ],
+          "unit": "$",
+          "caption": "Hypothetical case inputs \u2014 not a live market chart"
+        },
+        "sources": [
+          {
+            "url": "https://www.investor.gov/introduction-investing",
+            "label": "Investor.gov \u2014 Investing basics"
+          }
+        ],
+        "category": "Portfolio arithmetic",
+        "scenario": "Consider $60,000 cash, $30,000 in a stock and $10,000 in a crypto asset. The stock falls 5% while the crypto falls 20%. Treat these as simultaneous hypothetical moves with no trades or fees. Both position losses matter, but averaging the two percentage changes ignores how much money was invested in each.\n\nAfter the simultaneous declines, consider a follow-up interval: the stock rebounds 5% from its reduced value while crypto rebounds 20% from its reduced value. Cash stays unchanged. Prepare an account-value bridge showing both invested contributions and cash. These selected moves are worksheet inputs, not forecasts. Distinguish each holding\u2019s own return from its contribution to the starting account, and check whether the two rebounds restore the original total.",
+        "questions": [
+          {
+            "prompt": "How much does the stock position lose?",
+            "options": [
+              "$5,000",
+              "$150",
+              "$1,500"
+            ],
+            "explanation": "The loss is $30,000 multiplied by 0.05, or $1,500. A price move must be applied to the dollars held in that asset; it is not applied to cash or to another position.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "What is the combined account loss?",
+            "options": [
+              "$12,500",
+              "$2,000",
+              "$3,500"
+            ],
+            "explanation": "The crypto loses $10,000 \u00d7 20% = $2,000. Add the $1,500 stock loss to obtain $3,500. The account becomes $96,500, so its return is \u22123.5% under the stated assumptions.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "Why is a simple average of \u22125% and \u221220% unsuitable here?",
+            "options": [
+              "Cash must lose 12.5% too",
+              "Losses cannot be added",
+              "The positions have different dollar weights"
+            ],
+            "explanation": "A simple average assumes equal exposure to the two assets and omits cash. Dollar-weighted changes preserve the different position sizes. Neither asset volatility nor the number of holdings alone supplies the missing weights.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "How much does the crypto holding lose in the first interval?",
+            "options": [
+              "$6,000",
+              "$2,000",
+              "$200"
+            ],
+            "explanation": "Twenty percent of the $10,000 crypto position is $2,000. Applying that percentage to the stock position or the whole account would use the wrong exposure.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "What is total equity immediately after both initial declines?",
+            "options": [
+              "$96,500",
+              "$87,500",
+              "$100,000"
+            ],
+            "explanation": "The stock becomes $28,500 and crypto becomes $8,000. Add $60,000 cash to obtain $96,500, a $3,500 account loss.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "What contribution does the stock loss make to starting-account return?",
+            "options": [
+              "\u22125 percentage points",
+              "\u221230 percentage points",
+              "\u22121.5 percentage points"
+            ],
+            "explanation": "The stock loses $1,500 on a $100,000 starting account. Its own return is \u22125%, but its contribution to whole-account return is \u22121.5 percentage points.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "What is the stock value after its separate 5% rebound?",
+            "options": [
+              "$31,500",
+              "$29,925",
+              "$30,000"
+            ],
+            "explanation": "Apply 1.05 to $28,500, giving $29,925. The rebound starts from a smaller base than the original decline and therefore does not fully reverse it.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "What is the crypto value after its separate 20% rebound?",
+            "options": [
+              "$9,600",
+              "$10,000",
+              "$12,000"
+            ],
+            "explanation": "Multiply the reduced $8,000 position by 1.20. The $1,600 rebound is smaller than the earlier $2,000 loss because the percentage denominator changed.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "What is final account equity after both stated rebounds?",
+            "options": [
+              "$100,000",
+              "$103,500",
+              "$99,525"
+            ],
+            "explanation": "Add $60,000 cash, $29,925 stock and $9,600 crypto. The account is still $475 below its original value despite both holdings\u2019 positive second intervals.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "Which comparison describes the initial dollar loss contributions correctly?",
+            "options": [
+              "Both lost equally because both prices fell",
+              "Crypto lost more dollars despite the smaller position",
+              "Stock lost more because its position was larger"
+            ],
+            "explanation": "Crypto lost $2,000 and stock lost $1,500. Dollar impact depends on position size and percentage move together, rather than either one considered alone.",
+            "correctAnswer": 1
+          }
+        ],
+        "reflection": "Explain which position contributed more to the loss and why.",
+        "reflectionGuide": "The smaller crypto position lost $2,000, exceeding the stock\u2019s $1,500 loss because its assumed decline was much larger. Discuss both size and price change rather than treating either factor as the whole explanation."
+      }
+    },
+    {
+      "id": "practice-12",
+      "title": "A sale fee uses the exit value",
+      "questionFeedbackSetsRead": 10,
+      "status": "PUBLIC_PAYLOAD_TEXT_READ_RENDERED_SOURCE_FOLLOWUPS_REMAIN",
+      "assessment": "Read10sets:2200exitfee2.20/proceeds2197.80;entry2002;gain195.80;totalfees4.20;195.8/2002\u22489.78%. Alternative1800exitfee1.8/proceeds1798.2/loss203.8. Branchesnotconsecutivedouble-sales.",
+      "capturedPayload": {
+        "id": "practice-12",
+        "title": "A sale fee uses the exit value",
+        "visual": {
+          "bars": [
+            {
+              "label": "Buy value",
+              "value": 2000
+            },
+            {
+              "label": "Sale value",
+              "value": 2200
+            },
+            {
+              "label": "Gross gain",
+              "value": 200
+            }
+          ],
+          "unit": "$",
+          "caption": "Hypothetical case inputs \u2014 not a live market chart"
+        },
+        "sources": [
+          {
+            "url": "https://www.investor.gov/introduction-investing",
+            "label": "Investor.gov \u2014 Investing basics"
+          }
+        ],
+        "category": "Costs and orders",
+        "scenario": "A hypothetical position was bought for $2,000 before its buy fee. Its market value is now $2,200 and you sell it all. Use a 0.1% fee on each transaction\u2019s actual notional value. The sale fee is based on $2,200, not on the original $2,000 purchase or on the $200 gross price gain.\n\nAssume the full position is sold at the stated $2,200 value and no other account activity occurs. Build a cash bridge from original purchase debit to net proceeds. Then test a separate exit at $1,800 using the same fee rate. Treat the two exits as alternative branches, not consecutive sales of the same holding. The fee depends on each branch\u2019s actual exit value.",
+        "questions": [
+          {
+            "prompt": "What is the sale fee under the stated rule?",
+            "options": [
+              "$0.20",
+              "$2.20",
+              "$2"
+            ],
+            "explanation": "Multiply the $2,200 exit notional by 0.001. That gives $2.20. A fee on the transaction\u2019s whole value differs from a tax or charge calculated only on profit.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "What net sale proceeds reach cash?",
+            "options": [
+              "$197.80",
+              "$2,197.80",
+              "$2,200"
+            ],
+            "explanation": "Subtract the $2.20 sale fee from $2,200 gross proceeds. The $2,197.80 cash credit contains original capital and gain. It should not all be reported as profit.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "What is the net gain after the $2 buy fee and sale fee?",
+            "options": [
+              "$197.80",
+              "$195.80",
+              "$200"
+            ],
+            "explanation": "The original cash debit was $2,002. Compare it with $2,197.80 net proceeds to get $195.80. Both fee bases are their respective trade values, and each fee is counted once.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "What initial cash outlay includes the $2,000 purchase and its fee?",
+            "options": [
+              "$2,002",
+              "$2,000",
+              "$2,200"
+            ],
+            "explanation": "The purchase fee is $2,000 times 0.001, or $2. Add it to the purchase notional to obtain the full $2,002 entry debit.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "What gross price gain occurs at the $2,200 exit before any fees?",
+            "options": [
+              "$197.80",
+              "$202",
+              "$200"
+            ],
+            "explanation": "Subtract original $2,000 purchase notional from $2,200 sale notional. This price-only gain has not yet accounted for either transaction charge.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "What is the sum of entry and exit fees in the $2,200 branch?",
+            "options": [
+              "$2.20",
+              "$4.20",
+              "$4"
+            ],
+            "explanation": "The entry charge is $2 and the exit charge is $2.20. Add both to obtain $4.20 total, rather than counting only the latest transaction.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "What is net return on the $2,002 initial outlay, approximately?",
+            "options": [
+              "9.78%",
+              "10%",
+              "19.58%"
+            ],
+            "explanation": "Divide the $195.80 net gain by $2,002 total entry debit. The denominator includes the buy fee because this comparison uses actual initial cash spent.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "In the separate $1,800 exit branch, what fee applies to the sale?",
+            "options": [
+              "$2",
+              "$0.20",
+              "$1.80"
+            ],
+            "explanation": "Charge 0.1% to the actual $1,800 exit value. The fee is neither based on the original purchase nor only on the position\u2019s $200 loss.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "In that $1,800 branch, what is the net loss including both fees?",
+            "options": [
+              "$201.80",
+              "$203.80",
+              "$200"
+            ],
+            "explanation": "Net proceeds are $1,798.20 compared with $2,002 initial outlay. Their difference is a $203.80 loss, including the entry and exit fees.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "Why must the two alternative exit branches be kept separate?",
+            "options": [
+              "One position cannot be sold in full twice without another purchase",
+              "Both branches automatically occur on refresh",
+              "The fee changes the number of holdings into two"
+            ],
+            "explanation": "Each branch imagines a different full-sale price for the same starting holding. Combining both as actual proceeds would double-count quantity and cash.",
+            "correctAnswer": 0
+          }
+        ],
+        "reflection": "How would you explain the difference between gross gain and net gain?",
+        "reflectionGuide": "Show the $200 price gain and subtract the $2 purchase fee plus $2.20 exit fee. Keep these expenses separate from the sale proceeds so the account ledger stays easy to verify."
+      }
+    },
+    {
+      "id": "practice-22",
+      "title": "An aggregate is not one exchange\u2019s last trade",
+      "questionFeedbackSetsRead": 10,
+      "status": "PUBLIC_PAYLOAD_TEXT_READ_RENDERED_SOURCE_FOLLOWUPS_REMAIN",
+      "assessment": "Read10sets:equalweight101;75/25weight100.50;Bpremium2%. Explicitconceptualmethodsnotproviderfact; aggregate/lasttrade/bidask/executiondistinct. Provider methodological corroboration still pending.",
+      "capturedPayload": {
+        "id": "practice-22",
+        "title": "An aggregate is not one exchange\u2019s last trade",
+        "visual": {
+          "bars": [
+            {
+              "label": "Venue A",
+              "value": 100
+            },
+            {
+              "label": "Venue B",
+              "value": 102
+            },
+            {
+              "label": "Reference",
+              "value": 101
+            }
+          ],
+          "unit": "$",
+          "caption": "Hypothetical case inputs \u2014 not a live market chart"
+        },
+        "sources": [
+          {
+            "url": "https://www.coingecko.com/en/methodology",
+            "label": "CoinGecko \u2014 Price methodology"
+          }
+        ],
+        "category": "Price data",
+        "scenario": "A hypothetical asset trades at $100 on venue A and $102 on venue B. A provider reports an aggregate $101 reference. No volume weights or exclusion rules have been supplied. These three numbers can describe different measurements at the same time. A paper-trading mark also does not promise execution at any of these real venues.\n\nConsider two possible aggregation methods as conceptual examples: equal weighting of $100 and $102, or 75% weight on A and 25% on B. Neither is asserted to be the actual provider method. Calculate both references and compare them with observed venue trades. The exercise distinguishes a calculated mark, a venue observation and an executable bid or ask.",
+        "questions": [
+          {
+            "prompt": "Does the $101 reference prove a trade occurred at exactly $101?",
+            "options": [
+              "No; a reference can combine observations",
+              "Yes; every aggregate is a last trade",
+              "Yes; a midpoint is always executable"
+            ],
+            "explanation": "An aggregate can summarize multiple market observations without being the price of a particular transaction. To describe a last trade, you need the actual venue, transaction and timestamp rather than only a reference figure.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "Can you recover the provider\u2019s weighting method from these numbers alone?",
+            "options": [
+              "No; methodology and input weights are missing",
+              "Yes; all aggregates are equal-weight averages",
+              "Yes; the larger venue price has full weight"
+            ],
+            "explanation": "The stated reference happens to lie between the two inputs, but that does not reveal weighting, filtering or source coverage. Consult the methodology instead of inventing an algorithm from a single result.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "What does the simulator\u2019s mark establish?",
+            "options": [
+              "A valuation input for the paper account",
+              "A reserved real exchange fill",
+              "A guaranteed price for unlimited quantity"
+            ],
+            "explanation": "A mark supports simulated valuation under the product\u2019s rules. Real execution depends on an actual venue and available liquidity. Treat the provider number as a reference rather than a promise that money can be exchanged at that price.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "What reference does equal weighting of the two venue prices produce?",
+            "options": [
+              "$100.50",
+              "$102",
+              "$101"
+            ],
+            "explanation": "Average the two supplied prices with equal weights: half of $100 plus half of $102 is $101. This matches the reported reference under one possible method.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "What reference results from 75% A and 25% B weights?",
+            "options": [
+              "$101",
+              "$100.50",
+              "$101.50"
+            ],
+            "explanation": "Multiply $100 by 0.75 and $102 by 0.25, then add $75 and $25.50. The resulting $100.50 shows how different weights alter an aggregate.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "Does matching the equal-weight calculation prove the provider used that method?",
+            "options": [
+              "No; several methods or inputs could produce $101",
+              "Yes; one arithmetic match proves the entire methodology",
+              "Yes; every aggregate must use equal weights"
+            ],
+            "explanation": "A numerical match does not uniquely identify how a provider produced its reference. Additional observations or the published method are needed to establish the process.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "What is venue B\u2019s price premium over venue A in percentage terms?",
+            "options": [
+              "1%",
+              "102%",
+              "2%"
+            ],
+            "explanation": "Divide the $2 difference by venue A\u2019s $100 price. The 2% relative gap should be labelled with its comparison base rather than treated as an account return.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "Does a calculated $100.50 reference imply a venue trade at that exact price?",
+            "options": [
+              "Yes; it proves A\u2019s $100 trade never occurred",
+              "No; a weighted reference can lie between venue observations",
+              "Yes; every reference is a recorded transaction"
+            ],
+            "explanation": "A calculation can combine separate observations into a new reference value. That reference is not automatically evidence of an executed trade at the calculated price.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "Which additional data would be necessary to assess immediate execution?",
+            "options": [
+              "Current venue bids, asks and relevant execution constraints",
+              "Only the aggregate reference",
+              "Only the arithmetic midpoint"
+            ],
+            "explanation": "Execution depends on available orders and venue conditions. A reference price alone does not establish a bid or ask at which the user can actually transact.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "Which report keeps the hypothetical aggregation methods honest?",
+            "options": [
+              "Attribute both to the provider as facts",
+              "Call the larger reference a guaranteed sale price",
+              "Label both weight choices as conceptual alternatives"
+            ],
+            "explanation": "The case supplies alternative worksheet weights, not verified provider rules. Clear labels prevent a mathematical example from turning into an unsupported methodology claim.",
+            "correctAnswer": 2
+          }
+        ],
+        "reflection": "Describe a fair comparison between a venue quote and an aggregate.",
+        "reflectionGuide": "Label each source and timestamp, explain that their methodologies can differ, and compare like currencies. Acknowledge that this case omits volume weights and does not model real exchange execution."
+      }
+    },
+    {
+      "id": "practice-32",
+      "title": "Correlation can change when you need it",
+      "questionFeedbackSetsRead": 10,
+      "status": "PUBLIC_PAYLOAD_TEXT_READ_RENDERED_SOURCE_FOLLOWUPS_REMAIN",
+      "assessment": "Read10sets/scenario/visual. ScenariofourthA\u22123%/B\u22124%;questions5\u20138correctlygive30+40=$70and\u22123.5%on2000. PublicvisualinsteadlabelsAfourth-intervalloss4%/B6%, contradicting suppliedcase. SourcePracticeVisualdirectlyrendersbankbarvalues. Confirmedcontentinconsistency; separateTHQ035; no production records edited.",
+      "capturedPayload": {
+        "id": "practice-32",
+        "title": "Correlation can change when you need it",
+        "visual": {
+          "bars": [
+            {
+              "label": "Asset A",
+              "value": 4
+            },
+            {
+              "label": "Asset B",
+              "value": 6
+            }
+          ],
+          "unit": "fourth-interval loss (%)",
+          "caption": "Hypothetical case inputs \u2014 not a live market chart"
+        },
+        "sources": [
+          {
+            "url": "https://www.investor.gov/introduction-investing",
+            "label": "Investor.gov \u2014 Investing basics"
+          }
+        ],
+        "category": "Risk and uncertainty",
+        "scenario": "Two hypothetical assets moved in opposite directions in three earlier observations. In a fourth observation both fall. A learner calls the fourth pair impossible because the assets were \u201cuncorrelated.\u201d The small sample cannot establish a permanent relationship, and low historical correlation does not promise that losses will offset in every interval.\n\nAdd the following hypothetical paired percentage moves: first observation A +2%, B \u22121%; second A \u22122%, B +1%; third A +1%, B \u22120.5%; fourth A \u22123%, B \u22124%. Treat them as a tiny illustrative sample rather than a permanent relationship estimate. Compare the direction pairs, then test an equal-dollar $1,000 holding in each asset for the fourth observation only.",
+        "questions": [
+          {
+            "prompt": "Does three earlier observations establish a permanent correlation?",
+            "options": [
+              "Yes; three is always enough",
+              "Yes; opposite moves guarantee independence",
+              "No; the sample and period are limited"
+            ],
+            "explanation": "Correlation is a sample-dependent statistic, not a fixed contract between assets. Three observations supply very little evidence, and a relationship estimated in one period may not hold in another.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "Can low past correlation guarantee no simultaneous losses?",
+            "options": [
+              "Yes; simultaneous losses violate the definition",
+              "Yes; one asset must rise every day",
+              "No; individual intervals can still move together"
+            ],
+            "explanation": "A low aggregate relationship can coexist with particular intervals where both assets fall. Correlation does not promise a hedge on every date, and changing conditions can alter the estimated relationship.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "What is the better way to describe the earlier evidence?",
+            "options": [
+              "A guaranteed hedge",
+              "Proof of market-neutral profits",
+              "A limited historical pattern, with its sample stated"
+            ],
+            "explanation": "Specify the period, observations and method used. Avoid upgrading a historical estimate into a guarantee. Even a designed hedge can retain mismatch, liquidity and cost risks beyond the correlation statistic.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "In how many of the four supplied observations do the assets move in opposite directions?",
+            "options": [
+              "One observation",
+              "Three observations",
+              "Four observations"
+            ],
+            "explanation": "The first three pairs have opposite signs while the fourth has two negative signs. Counting directions describes this sample without establishing a stable correlation coefficient.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "In the fourth observation, how much does a $1,000 A holding lose?",
+            "options": [
+              "$30",
+              "$3",
+              "$300"
+            ],
+            "explanation": "Apply A\u2019s selected 3% decline to $1,000 exposure. The $30 loss is a dollar contribution for this one observation, not the asset\u2019s permanent risk.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "In that fourth observation, how much does a $1,000 B holding lose?",
+            "options": [
+              "$4",
+              "$400",
+              "$40"
+            ],
+            "explanation": "Apply B\u2019s selected 4% decline to $1,000. Its $40 loss joins the A loss rather than offsetting it in this particular same-direction observation.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "What is the combined fourth-observation loss on the equal-dollar holdings?",
+            "options": [
+              "$35",
+              "$70",
+              "$10"
+            ],
+            "explanation": "Add $30 A loss and $40 B loss. Equal notionals do not force opposing performance when both supplied asset moves are negative.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "What return does that combined $2,000 position show for the fourth observation?",
+            "options": [
+              "\u22123.5%",
+              "\u22127%",
+              "\u22121%"
+            ],
+            "explanation": "Divide the $70 loss by the combined $2,000 starting value. Adding the two asset percentage declines without weighting would overstate the portfolio percentage.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "Do these direction counts alone supply a reliable long-run correlation estimate?",
+            "options": [
+              "Yes; three opposite pairs guarantee permanent negative correlation",
+              "Yes; one same-direction pair proves permanent positive correlation",
+              "No; magnitudes, a suitable sample and method matter"
+            ],
+            "explanation": "A small selected sample and sign counts cannot establish a durable statistical relationship. A defined method and broader representative observations are needed.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "Which statement is supported without overstating the evidence?",
+            "options": [
+              "The fourth observation could not occur",
+              "Opposite earlier moves did not prevent a simultaneous loss in the fourth case",
+              "Diversification never helps"
+            ],
+            "explanation": "The supplied pairs demonstrate that an earlier pattern did not hold in one later observation. They do not settle all diversification outcomes or future relationships.",
+            "correctAnswer": 1
+          }
+        ],
+        "reflection": "Write a diversification claim that acknowledges this limit.",
+        "reflectionGuide": "State that different exposures may reduce concentration but can still lose together. Identify the historical sample and avoid promising that one position will always offset another."
+      }
+    },
+    {
+      "id": "practice-42",
+      "title": "Write the thesis before the price moves",
+      "questionFeedbackSetsRead": 10,
+      "status": "PUBLIC_PAYLOAD_TEXT_READ_RENDERED_SOURCE_FOLLOWUPS_REMAIN",
+      "assessment": "Read10sets:10units\u00d740=400,\u00d744=440,gain40/10%. Originalthesis/datednewreportvsretrospectivecausalstoryclearlyseparated. No outcome-based certainty.",
+      "capturedPayload": {
+        "id": "practice-42",
+        "title": "Write the thesis before the price moves",
+        "visual": {
+          "bars": [
+            {
+              "label": "Entry",
+              "value": 40
+            },
+            {
+              "label": "Later quote",
+              "value": 44
+            }
+          ],
+          "unit": "$",
+          "caption": "Hypothetical case inputs \u2014 not a live market chart"
+        },
+        "sources": [
+          {
+            "url": "https://www.investor.gov/introduction-investing",
+            "label": "Investor.gov \u2014 Investing basics"
+          }
+        ],
+        "category": "Decision habits",
+        "scenario": "A learner buys a hypothetical stock at $40, then sees it rise to $44. Afterward they write that a strong report made the rise obvious, although their original reason was a chart pattern. The revised story hides what was actually tested. A dated pre-decision note lets you compare the original hypothesis with the later evidence.\n\nAssume ten units were bought at $40 and later marked at $44, excluding fees. Keep the original dated chart-pattern note and add the later report as new information rather than overwriting the first thesis. Compare the price gain with evidence about why the decision was made. A profitable result is compatible with weak attribution, so the journal should preserve the information available at each time.",
+        "questions": [
+          {
+            "prompt": "What is the observed price change in this case?",
+            "options": [
+              "+40%",
+              "+10%",
+              "+4%"
+            ],
+            "explanation": "The $4 increase divided by the $40 starting price is 10%. That observed return is separate from why the learner acted and does not validate a reason invented after the movement.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "What is wrong with replacing the original reason after the rise?",
+            "options": [
+              "It makes the report a proven cause",
+              "It prevents a fair test of the original hypothesis",
+              "It improves the historical evidence"
+            ],
+            "explanation": "A rewritten explanation can make outcomes look more predictable than they were. Preserve the original thesis and add new information as a dated update rather than silently changing what the decision supposedly tested.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "What should a useful pre-decision note contain?",
+            "options": [
+              "Only the hoped-for profit",
+              "Evidence, uncertainty and a review condition",
+              "A certainty claim about the next quote"
+            ],
+            "explanation": "A brief note can state the observable evidence, alternative explanations and what would prompt reconsideration. It creates a reviewable process without pretending a future price is known.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "What notional was invested in the ten units at $40?",
+            "options": [
+              "$400",
+              "$40",
+              "$440"
+            ],
+            "explanation": "Ten units multiplied by the original $40 quote gives $400 before fees. This is the invested notional, not the total size of an unspecified account.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "What is the later ten-unit holding worth at $44?",
+            "options": [
+              "$400",
+              "$44",
+              "$440"
+            ],
+            "explanation": "Multiply ten unchanged units by the later $44 mark. The $440 value can be verified without accepting any particular explanation of the price increase.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "What is the holding\u2019s gross dollar gain?",
+            "options": [
+              "$400",
+              "$40",
+              "$4"
+            ],
+            "explanation": "Subtract $400 original notional from $440 marked value. Ten units translate the $4 per-unit price move into a $40 position gain.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "What is the quote\u2019s return from $40 to $44?",
+            "options": [
+              "10%",
+              "4%",
+              "40%"
+            ],
+            "explanation": "Divide the $4 quote increase by the $40 starting quote. This 10% gross asset return does not establish how much an entire account earned after costs.",
+            "correctAnswer": 0
+          },
+          {
+            "prompt": "How should the later report be recorded without changing the original thesis?",
+            "options": [
+              "As proof the original note always mentioned it",
+              "By deleting the chart-pattern reason",
+              "As dated new evidence beside the original note"
+            ],
+            "explanation": "A dated addition preserves which evidence was available when the decision occurred. Overwriting the entry note hides the hypothesis actually tested.",
+            "correctAnswer": 2
+          },
+          {
+            "prompt": "Does the $40 gain prove the later report caused the price move?",
+            "options": [
+              "Yes; journals determine market prices",
+              "No; the case supplies no causal test",
+              "Yes; every positive result validates the latest story"
+            ],
+            "explanation": "The arithmetic establishes a gain but not its cause. Attribution requires evidence connecting the event and price response beyond an after-the-fact explanation.",
+            "correctAnswer": 1
+          },
+          {
+            "prompt": "What comparison would best reveal hindsight rewriting?",
+            "options": [
+              "The original note against the later revised explanation",
+              "Only the final green return badge",
+              "Only another user\u2019s account rank"
+            ],
+            "explanation": "A preserved original record exposes which reasons changed after the outcome. This comparison supports process learning without requiring a confident market forecast.",
+            "correctAnswer": 0
+          }
+        ],
+        "reflection": "Draft a pre-decision note for this case using only the supplied facts.",
+        "reflectionGuide": "You can state the hypothetical entry and acknowledge that no actual report evidence is supplied. Name information to investigate and a review condition; avoid inventing a catalyst to explain the observed gain."
+      }
+    }
+  ],
+  "reflectionAndReflectionGuideReadingComplete": false
+}

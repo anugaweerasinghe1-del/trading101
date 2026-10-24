@@ -1,0 +1,54 @@
+{
+  "createdAt": "2026-10-24T11:23:24.002911+00:00",
+  "state": "REVIEWABLE_PROPOSAL_ONLY_NO_PRODUCTION_WRITE",
+  "bankId": "authored-2026-10-depth",
+  "effectiveFrom": "2026-10-09",
+  "sourceCanonicalSHA256": "9ca43ccfd1237fbb3fbab4b8dae51fff1fae63b13bb6ab9ee271ca003dc802ad",
+  "exerciseId": "practice-32",
+  "publicCapture": "evidence/NORMAL-DAILY-REVIEWS-READ-ONLY-FOLLOWUP.json",
+  "reason": "Visualfourth-intervallossvalues4/6contradictscenarioandquestions3/4. Correctvisualonly; retainallscenario/questions/answers/explanations/metadataanduserrecords.",
+  "jsonPatch": [
+    {
+      "op": "test",
+      "path": "/id",
+      "value": "authored-2026-10-depth"
+    },
+    {
+      "op": "test",
+      "path": "/exercises/8/id",
+      "value": "practice-32"
+    },
+    {
+      "op": "test",
+      "path": "/exercises/8/visual/bars",
+      "value": [
+        {
+          "label": "Asset A",
+          "value": 4
+        },
+        {
+          "label": "Asset B",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "op": "replace",
+      "path": "/exercises/8/visual/bars/0/value",
+      "value": 3
+    },
+    {
+      "op": "replace",
+      "path": "/exercises/8/visual/bars/1/value",
+      "value": 4
+    }
+  ],
+  "protectedBoundary": "Publishedbankisaproductiondatabasecontentrecord; MISSIONprohibitsalteringproductionrecordswithoutexplicitownerapproval. NoDB/adminpublishoperationauthorizedorperformed.",
+  "risk": "Twoillustrationnumbers, no financial engine change. Savedattemptsnapshotsmustremainimmutableandmayretainoldvisual. Do notreset,rewriteormigratelearningprogress. Re-readcurrentapprovedbankandstopifconcurrentedit; requireexplicitapprovalandapprovedpublicationpath.",
+  "rollback": "Retainpriorpublishedcontentrevisionanduseapprovedcontentrollbackifneeded; no userrecord operation.",
+  "next": "Explicitownerapprovalrequiredfortheexactpublishedcontentpatch. NativeSupabaseadminpublishingpathnotestablished;GitHubsecretmetadataread403doesnotprovecredentialabsence. Do notrequestorprintsecretvalues. Continue232native/liveverificationandindependentaudit.",
+  "isolatedVisualEvidence": "evidence/DAILY-CORRELATION-VISUAL-REPRODUCTION.json",
+  "staticFallbackPR": 233,
+  "staticFallbackCandidateSHA": "f696264cbd8233d39421bed1501dfb04ceeb177f",
+  "staticFallbackLocalValidation": "PASS"
+}

@@ -5174,7 +5174,12 @@
     "sourceExpectedCases": 50,
     "questionFeedbackSetsPerCase": 10,
     "totalSourceExpectedQuestionFeedbackSets": 500,
-    "actualApprovedPublicBankAndRenderedCoverage": "Normal anonymous SELECT returned published50-case bank authored-2026-10-depth effective2026-10-09. Default current case title rendered; all500 conditional question-feedback sets remain unreviewed. No answers submitted.",
-    "evidence": "evidence/NORMAL-DAILY-REVIEWS-READ-ONLY-FOLLOWUP.json"
+    "actualApprovedPublicBankAndRenderedCoverage": "Normal public bank captured50cases. Individually read100question/option/key/feedbacksets across10cases;400payloadsets unread. All500conditional rendered/control/source sets remain incomplete. Reflection/guide reading separately pending. No production answers submitted.",
+    "evidence": "evidence/NORMAL-DAILY-REVIEWS-READ-ONLY-FOLLOWUP.json",
+    "payloadTextReadCases": 10,
+    "payloadQuestionFeedbackSetsRead": 100,
+    "payloadQuestionFeedbackSetsUnread": 400,
+    "conditionalRenderedControlSetsPending": 500,
+    "readingEvidence": "DAILY-CONDITIONAL-REVIEW.json"
   }
 }

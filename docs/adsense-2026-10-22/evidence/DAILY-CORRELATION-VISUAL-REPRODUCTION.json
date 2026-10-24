@@ -1,0 +1,121 @@
+{
+  "checkedAt": "2026-10-24T15:54:25.223Z",
+  "outcome": "PASS_REPRODUCED_INCONSISTENCY_AND_VERIFIED_PROPOSED_VISUAL",
+  "scope": "Exact current PracticeVisual function extracted and transpiled without modifying it; React static rendering of actual public bank case and separate proposed clone. Loopback-only fixture with restrictive CSP. Five widths each; no production daily opening/answer/progress/reset/admin/DB action. Not an actual public-date screenshot.",
+  "componentSHA256": "c26c5b00402373966e61b15ad120461336287fefadc027ff07a33ed0b0910a79",
+  "publicBankId": "authored-2026-10-depth",
+  "exerciseId": "practice-32",
+  "rows": [
+    {
+      "state": "before",
+      "width": 360,
+      "scenario": "Add the following hypothetical paired percentage moves: first observation A +2%, B −1%; second A −2%, B +1%; third A +1%, B −0.5%; fourth A −3%, B −4%. Treat them as a tiny illustrative sample rather than a permanent relationship estimate. Compare the direction pairs, then test an equal-dollar $1,000 holding in each asset for the fourth observation only.",
+      "figure": "Hypothetical case inputs — not a live market chart · fourth-interval loss (%)\nAsset A\n4\nAsset B\n6",
+      "values": [
+        4,
+        6
+      ],
+      "overflow": false
+    },
+    {
+      "state": "before",
+      "width": 390,
+      "scenario": "Add the following hypothetical paired percentage moves: first observation A +2%, B −1%; second A −2%, B +1%; third A +1%, B −0.5%; fourth A −3%, B −4%. Treat them as a tiny illustrative sample rather than a permanent relationship estimate. Compare the direction pairs, then test an equal-dollar $1,000 holding in each asset for the fourth observation only.",
+      "figure": "Hypothetical case inputs — not a live market chart · fourth-interval loss (%)\nAsset A\n4\nAsset B\n6",
+      "values": [
+        4,
+        6
+      ],
+      "overflow": false
+    },
+    {
+      "state": "before",
+      "width": 768,
+      "scenario": "Add the following hypothetical paired percentage moves: first observation A +2%, B −1%; second A −2%, B +1%; third A +1%, B −0.5%; fourth A −3%, B −4%. Treat them as a tiny illustrative sample rather than a permanent relationship estimate. Compare the direction pairs, then test an equal-dollar $1,000 holding in each asset for the fourth observation only.",
+      "figure": "Hypothetical case inputs — not a live market chart · fourth-interval loss (%)\nAsset A\n4\nAsset B\n6",
+      "values": [
+        4,
+        6
+      ],
+      "overflow": false
+    },
+    {
+      "state": "before",
+      "width": 1280,
+      "scenario": "Add the following hypothetical paired percentage moves: first observation A +2%, B −1%; second A −2%, B +1%; third A +1%, B −0.5%; fourth A −3%, B −4%. Treat them as a tiny illustrative sample rather than a permanent relationship estimate. Compare the direction pairs, then test an equal-dollar $1,000 holding in each asset for the fourth observation only.",
+      "figure": "Hypothetical case inputs — not a live market chart · fourth-interval loss (%)\nAsset A\n4\nAsset B\n6",
+      "values": [
+        4,
+        6
+      ],
+      "overflow": false
+    },
+    {
+      "state": "before",
+      "width": 1920,
+      "scenario": "Add the following hypothetical paired percentage moves: first observation A +2%, B −1%; second A −2%, B +1%; third A +1%, B −0.5%; fourth A −3%, B −4%. Treat them as a tiny illustrative sample rather than a permanent relationship estimate. Compare the direction pairs, then test an equal-dollar $1,000 holding in each asset for the fourth observation only.",
+      "figure": "Hypothetical case inputs — not a live market chart · fourth-interval loss (%)\nAsset A\n4\nAsset B\n6",
+      "values": [
+        4,
+        6
+      ],
+      "overflow": false
+    },
+    {
+      "state": "proposed",
+      "width": 360,
+      "scenario": "Add the following hypothetical paired percentage moves: first observation A +2%, B −1%; second A −2%, B +1%; third A +1%, B −0.5%; fourth A −3%, B −4%. Treat them as a tiny illustrative sample rather than a permanent relationship estimate. Compare the direction pairs, then test an equal-dollar $1,000 holding in each asset for the fourth observation only.",
+      "figure": "Hypothetical case inputs — not a live market chart · fourth-interval loss (%)\nAsset A\n3\nAsset B\n4",
+      "values": [
+        3,
+        4
+      ],
+      "overflow": false
+    },
+    {
+      "state": "proposed",
+      "width": 390,
+      "scenario": "Add the following hypothetical paired percentage moves: first observation A +2%, B −1%; second A −2%, B +1%; third A +1%, B −0.5%; fourth A −3%, B −4%. Treat them as a tiny illustrative sample rather than a permanent relationship estimate. Compare the direction pairs, then test an equal-dollar $1,000 holding in each asset for the fourth observation only.",
+      "figure": "Hypothetical case inputs — not a live market chart · fourth-interval loss (%)\nAsset A\n3\nAsset B\n4",
+      "values": [
+        3,
+        4
+      ],
+      "overflow": false
+    },
+    {
+      "state": "proposed",
+      "width": 768,
+      "scenario": "Add the following hypothetical paired percentage moves: first observation A +2%, B −1%; second A −2%, B +1%; third A +1%, B −0.5%; fourth A −3%, B −4%. Treat them as a tiny illustrative sample rather than a permanent relationship estimate. Compare the direction pairs, then test an equal-dollar $1,000 holding in each asset for the fourth observation only.",
+      "figure": "Hypothetical case inputs — not a live market chart · fourth-interval loss (%)\nAsset A\n3\nAsset B\n4",
+      "values": [
+        3,
+        4
+      ],
+      "overflow": false
+    },
+    {
+      "state": "proposed",
+      "width": 1280,
+      "scenario": "Add the following hypothetical paired percentage moves: first observation A +2%, B −1%; second A −2%, B +1%; third A +1%, B −0.5%; fourth A −3%, B −4%. Treat them as a tiny illustrative sample rather than a permanent relationship estimate. Compare the direction pairs, then test an equal-dollar $1,000 holding in each asset for the fourth observation only.",
+      "figure": "Hypothetical case inputs — not a live market chart · fourth-interval loss (%)\nAsset A\n3\nAsset B\n4",
+      "values": [
+        3,
+        4
+      ],
+      "overflow": false
+    },
+    {
+      "state": "proposed",
+      "width": 1920,
+      "scenario": "Add the following hypothetical paired percentage moves: first observation A +2%, B −1%; second A −2%, B +1%; third A +1%, B −0.5%; fourth A −3%, B −4%. Treat them as a tiny illustrative sample rather than a permanent relationship estimate. Compare the direction pairs, then test an equal-dollar $1,000 holding in each asset for the fourth observation only.",
+      "figure": "Hypothetical case inputs — not a live market chart · fourth-interval loss (%)\nAsset A\n3\nAsset B\n4",
+      "values": [
+        3,
+        4
+      ],
+      "overflow": false
+    }
+  ],
+  "runtimeErrors": []
+}

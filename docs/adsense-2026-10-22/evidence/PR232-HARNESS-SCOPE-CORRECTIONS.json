@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-10-24T11:17:27.553313+00:00",
+  "scope": "Preserved audit harness failures; no product finding or weakened assertion.",
+  "corrections": [
+    {
+      "initial": "Static parity reader assumed nested index.html; Cloudflare build uses flat .html. Failed before reading bodies.",
+      "correction": "Use actualflatpaths; independently rerunall8body/contentJSONequalityPASS."
+    },
+    {
+      "initial": "Compiled40widthstatespassed; final client-nav readiness returned DOMobject and CDP returnByValue failed Objectreferencechainistoolong.",
+      "correction": "Explicitbooleanreadiness; initialfailurelogretained; original40parity/no-duplicate/navigationassertionsretained."
+    },
+    {
+      "initial": "Actualpreviewadapterpassedstringlabelsas numericCDPwaittimeout; failedbeforepageinspection.",
+      "correction": "AdaptwaitUntillabelsignaturetop.wait(expression); default25sdeadlineandallassertionsretained."
+    },
+    {
+      "initial": "Actualcomparisonreaderacceptedtemporarymain/h1loadingplaceholderbeforelazyroutecomponentmounted;notesarrayempty.",
+      "correction": "Separate diagnosisaftersettlinghascorrectMAIN/currentpath/attribution. AdapterwaitsexistingLoadingyourpageplaceholderoutandsettles600msbeforealloriginalparity/no-duplicateassertions.Noappchangeorassertionremoved."
+    }
+  ]
+}

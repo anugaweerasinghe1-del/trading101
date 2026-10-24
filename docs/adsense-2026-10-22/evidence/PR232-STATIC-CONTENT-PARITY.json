@@ -1,0 +1,56 @@
+{
+  "checkedAt": "2026-10-24T11:14:35.158035+00:00",
+  "baseSHA": "1e4f03335a17bc08a874e5eda8ea902f96dfa15a",
+  "outcome": "PASS",
+  "scope": "All8comparison build-time no-JS bodies and content JSON byte-identical to verified231 build. Correct flat Cloudflare HTML paths; initial nested-path assertion failed before reading files. Pair/country data and financial/state/auth/DB code unchanged. Actual rendered/client-nav assertions tracked separately.",
+  "rows": [
+    {
+      "path": "/compare/bitcoin-vs-ethereum",
+      "staticNoJSBodyIdentical": true,
+      "contentJSONIdentical": true,
+      "bodySHA256": "26ca85d091c55a03d64580a4cc2b34658ee18d8bd00b936bf226023295e6980e"
+    },
+    {
+      "path": "/compare/tesla-vs-nvidia",
+      "staticNoJSBodyIdentical": true,
+      "contentJSONIdentical": true,
+      "bodySHA256": "355daf61657c7d0f375274ae778ab98bf6941d6483dc0f869a0035bf36a472dd"
+    },
+    {
+      "path": "/compare/bitcoin-vs-gold",
+      "staticNoJSBodyIdentical": true,
+      "contentJSONIdentical": true,
+      "bodySHA256": "3228f54cbeb1cbdd27e8b7a094daee56fbf084be7f00cd4258447d08cbcb5e08"
+    },
+    {
+      "path": "/compare/apple-vs-microsoft",
+      "staticNoJSBodyIdentical": true,
+      "contentJSONIdentical": true,
+      "bodySHA256": "f607ec6604028b12a5748adb042b8a3cdbe2aba740c721634d6d57003c79e297"
+    },
+    {
+      "path": "/compare/ethereum-vs-solana",
+      "staticNoJSBodyIdentical": true,
+      "contentJSONIdentical": true,
+      "bodySHA256": "353b81dd36671ec9db348077eb4b2dd62eb7213084201cbef151e052b55a796b"
+    },
+    {
+      "path": "/compare/stocks-vs-crypto",
+      "staticNoJSBodyIdentical": true,
+      "contentJSONIdentical": true,
+      "bodySHA256": "61ea6dec020f4599a201b42b716b249ed2107696aa5635b79ee15a43694ca77e"
+    },
+    {
+      "path": "/compare/nvidia-vs-amd",
+      "staticNoJSBodyIdentical": true,
+      "contentJSONIdentical": true,
+      "bodySHA256": "450e6f1ee51cc0c017400d1669afd246cd0ee2c8f2a890ee8eb7ae715cea7e32"
+    },
+    {
+      "path": "/compare/forex-vs-stocks",
+      "staticNoJSBodyIdentical": true,
+      "contentJSONIdentical": true,
+      "bodySHA256": "edd2b1ace6b6fc87728fd86f8e667dc8c424993f80a690c2db954d6e131a06af"
+    }
+  ]
+}

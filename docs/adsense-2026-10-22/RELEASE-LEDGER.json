@@ -1496,8 +1496,12 @@
     "mergeSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
     "reason": "Releasecyclecomplete; nonewmergeofthisPR."
   },
-  "remainingConfirmedSiteFixes": 0,
+  "remainingConfirmedSiteFixes": 2,
   "exhaustiveAuditComplete": false,
-  "remainingKnownSafeFindings": 0,
-  "nextReleasePriority": []
+  "remainingKnownSafeFindings": 1,
+  "nextReleasePriority": [
+    233
+  ],
+  "pendingReleaseVerification": 232,
+  "protectedPublishedContentFinding": "THQ-035:twoillustrationbarvalues;exactpatchprepared; noapprovedDB/adminwrite"
 }

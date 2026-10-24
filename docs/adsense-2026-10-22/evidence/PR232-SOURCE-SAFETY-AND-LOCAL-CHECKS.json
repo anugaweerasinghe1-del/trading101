@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-10-24T11:19:25.701958+00:00",
+  "candidateSHA": "4c527facb975a3c940a49c2b3ef85d604d530580",
+  "baseSHA": "1e4f03335a17bc08a874e5eda8ea902f96dfa15a",
+  "changedFiles": [
+    "scripts/verify-comparison-article.mjs",
+    "scripts/verify-publisher-browser.mjs",
+    "src/components/RoutePublisherNotes.tsx",
+    "src/pages/Compare.tsx"
+  ],
+  "outcome": "PASS",
+  "scope": "Two product components only: comparison primary-copy guard; authored-main identity; preserve attribution/disclaimer/internal links. No pair/data/calculation/financial/order/storage/progress/auth/DB/policy/consent/ad/infrastructure/homepage changes.",
+  "validation": [
+    "Build/SEO PASS",
+    "AppTypeScript PASS",
+    "Baselinefails onearticleinmainassertion at360",
+    "40comparison-width parity/no-duplicate/source-scope/reference assertions and client-navigation PASS; final completephase6 PASS",
+    "All8staticnoJSbodies/contentJSONbyteidenticaltoverified231build"
+  ],
+  "rollback": "Reviewed presentation revert through serial protected exact-native/live cycle; no data operation."
+}

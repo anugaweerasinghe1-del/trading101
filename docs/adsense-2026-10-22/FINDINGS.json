@@ -1116,17 +1116,78 @@
         "evidence/PR231-PRODUCTION-BROWSER.json",
         "evidence/POST-PR231-GUEST-SMOKE.json"
       ]
+    },
+    {
+      "id": "THQ-034",
+      "severity": "P3",
+      "category": "Comparison pages repeat the full article below the footer",
+      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+      "urls": [
+        "https://www.thetradehq.com/compare/bitcoin-vs-ethereum",
+        "https://www.thetradehq.com/compare/tesla-vs-nvidia",
+        "https://www.thetradehq.com/compare/bitcoin-vs-gold",
+        "https://www.thetradehq.com/compare/apple-vs-microsoft",
+        "https://www.thetradehq.com/compare/ethereum-vs-solana",
+        "https://www.thetradehq.com/compare/stocks-vs-crypto",
+        "https://www.thetradehq.com/compare/nvidia-vs-amd",
+        "https://www.thetradehq.com/compare/forex-vs-stocks"
+      ],
+      "observed": "All8comparisonroutes at360/1280 append another532\u2013581word article after the footer. Every substantive paragraph and external reference in that article already exists in the authored main; fresh actual payload-body/main parity confirms all16states. This is whole-article repetition, not ordinary shared navigation/disclaimers.",
+      "rootCause": "RoutePublisherNotes primary-copy guard covers wiki/strategy/learn-article but omits authored comparisons. Compare already renders every pair-specific section.",
+      "fix": "Use existing primary-copy guard for comparison routes, mark authored main as the one article, retain attribution/disclaimer and every reference/navigation destination there. Keep build-time no-JS article and content JSON unchanged.",
+      "risk": "Low static article presentation and navigation links only; pair data, calculations, practice links, quiz/auth/storage/progress/DB/policy/consent/ad/infrastructure behavior unchanged. No homepage change.",
+      "rollback": "Reviewed two-component presentation revert through serial protected exact-native/live release cycle; no data operation.",
+      "adsenseRelevance": "Editorial repetition/reader experience. No specific policy violation or Google approval claim.",
+      "evidence": [
+        "evidence/COMPARISON-DUPLICATE-REPRODUCTION.json",
+        "evidence/fullpage-learning-20261024/3eaf67ab64c84a89.json",
+        "evidence/fullpage-learning-20261024/75e5a8a39b33dada.json"
+      ],
+      "detectedAt": "2026-10-24T11:12:42.049990+00:00",
+      "pr": 232,
+      "candidateSHA": "4c527facb975a3c940a49c2b3ef85d604d530580",
+      "mergeSHA": "adcaed329c34f4a846f41b9fff9c01b2f2a3bc2e",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR232-UPDATED-PREVIEW-BROWSER.json"
+    },
+    {
+      "id": "THQ-035",
+      "severity": "P2",
+      "category": "Daily correlation case illustration contradicts scenario and keyed arithmetic",
+      "state": "CONFIRMED_PUBLISHED_RECORD_PATCH_REQUIRES_OWNER_APPROVAL",
+      "urls": [
+        "https://www.thetradehq.com/daily"
+      ],
+      "exerciseId": "practice-32",
+      "observed": "Normalpublished50casepublicpayload:fourthobservationA\u22123%/B\u22124%,questionsandfeedback30/40lossand70total. Samecasevisualunitfourth-intervalloss(%)barsA4/B6. DailyPracticePracticeVisualmapsbarvaluestovisiblenumbersdirectly. Actualcaseconditionalrenderyetpending; no production answer action.",
+      "rootCause": "Illustrationinputsnotkeptconsistentwithexpandedscenarioandquestionarithmetic. Samecontentinstaticstarterfallbackandpublishedbank.",
+      "fix": "Correctonlytwoillustrationbarvalues4\u21923and6\u21924; preserveallothercontentandimmutablesavedattempts. Staticfallbackcanbepreparedsafely; publishedproductioncontentrecordpatchrequiresownerapproval.",
+      "risk": "Twoillustrationnumbers, no financial engine change. Savedattemptsnapshotsmustremainimmutableandmayretainoldvisual. Do notreset,rewriteormigratelearningprogress. Re-readcurrentapprovedbankandstopifconcurrentedit; requireexplicitapprovalandapprovedpublicationpath.",
+      "rollback": "Retainpriorpublishedcontentrevisionanduseapprovedcontentrollbackifneeded; no userrecord operation.",
+      "adsenseRelevance": "Financialeducationaccuracy; nospecificGooglepolicyviolationasserted.",
+      "evidence": [
+        "DAILY-CONDITIONAL-REVIEW.json",
+        "remediation/DAILY-PRACTICE-32-VISUAL-PROPOSAL.json",
+        "src/components/DailyPractice.tsx:PracticeVisual"
+      ],
+      "detectedAt": "2026-10-24T11:23:24.004672+00:00",
+      "staticFallbackPR": 233,
+      "staticFallbackCandidateSHA": "f696264cbd8233d39421bed1501dfb04ceeb177f",
+      "staticFallbackLocalValidation": "PASS:two-valueparsedbankequality;baselinefails;existingDailyandfrozenattempts/build/SEO/typesPASS",
+      "isolatedVisualEvidence": "evidence/DAILY-CORRELATION-VISUAL-REPRODUCTION.json",
+      "publishedBankState": "UNCHANGED_OWNER_APPROVAL_AND_AUTHENTICATED_PUBLICATION_PENDING"
     }
   ],
-  "updatedAt": "2026-10-24T11:08:13.433408+00:00",
+  "updatedAt": "2026-10-24T15:53:01.982163+00:00",
   "counts": {
-    "siteFindings": 33,
-    "P2": 21,
-    "P3": 12,
+    "siteFindings": 35,
+    "P2": 22,
+    "P3": 13,
     "publiclyRepaired": 33,
     "preparedNotMerged": 0,
     "separateOperationalBlockers": 0,
-    "mergedAwaitingProductionVerification": 0
+    "mergedAwaitingProductionVerification": 1,
+    "protectedUnapprovedRecordFixes": 1
   },
   "investigations": [
     {
