@@ -1,0 +1,565 @@
+{
+  "updatedAt": "2026-10-24T10:31:22.843318+00:00",
+  "scope": "Individual human viewing of full-page default-state viewport segment contact sheets. Text reading is separately tracked. This is not completion of conditional controls, keyboard/zoom/contrast, primary sources or all route stages. Raw PNG viewport captures remain in workspace; published contact sheets retain their path/width/scroll labels.",
+  "routes": [
+    {
+      "path": "/",
+      "sha": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
+      "defaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "status": "FULL_PAGE_DEFAULT_STATE_VISUALLY_REVIEWED",
+      "assessment": "Hero, activity cards, feature/asset grids, FAQ question rows, market/directory links, complete footer and subsequent publisher learning notes were individually viewed across all five widths. Mobile cards stack and desktop/tablet grids fit; no newly reproduced clipping or overlap in these default-state segments. The viewport top header repeats in segment contacts because it is fixed, not because the page duplicates headers.",
+      "observations": [
+        "Long mobile page includes optional learning/reference notes after the footer. Source RoutePublisherNotes deliberately renders this separate article; it is not a leftover non-JS prerender fragment. Notes repeat some purpose/data-limit caveats while adding usage and limits. No homepage restructuring or automatic policy violation inferred.",
+        "Fine contrast, touch/keyboard controls, opened FAQs, light theme and zoom/conditional states require separate checks. Mosaic scaling is adequate for layout assessment but not a claim of pixel-level contrast certification.",
+        "Subsequent source/runtime observation establishes the shared Mobile navigation is relative and offscreen at intermediate scroll positions. Earlier no-clipping observation did not certify persistent navigation; keep this follow-up open."
+      ],
+      "supplementaryReading": {
+        "outsideMainPublisherNotesRead": true,
+        "assessment": "Actually read the appended home notes: virtual-only market orders, no custody/advice, optional account restoration versus earlier guest records, practice emotional limitations, getting started and internal references. This adds no main-body or expanded-answer count."
+      },
+      "publishedEvidence": [
+        "evidence/fullpage-core-20261024/8a5edab282632443.json",
+        "evidence/fullpage-core-20261024/contact-8a5edab282632443-1280-0.jpg",
+        "evidence/fullpage-core-20261024/contact-8a5edab282632443-1280-1.jpg",
+        "evidence/fullpage-core-20261024/contact-8a5edab282632443-1280-2.jpg",
+        "evidence/fullpage-core-20261024/contact-8a5edab282632443-1920-0.jpg",
+        "evidence/fullpage-core-20261024/contact-8a5edab282632443-1920-1.jpg",
+        "evidence/fullpage-core-20261024/contact-8a5edab282632443-360-0.jpg",
+        "evidence/fullpage-core-20261024/contact-8a5edab282632443-360-1.jpg",
+        "evidence/fullpage-core-20261024/contact-8a5edab282632443-360-2.jpg",
+        "evidence/fullpage-core-20261024/contact-8a5edab282632443-390-0.jpg",
+        "evidence/fullpage-core-20261024/contact-8a5edab282632443-390-1.jpg",
+        "evidence/fullpage-core-20261024/contact-8a5edab282632443-390-2.jpg",
+        "evidence/fullpage-core-20261024/contact-8a5edab282632443-768-0.jpg",
+        "evidence/fullpage-core-20261024/contact-8a5edab282632443-768-1.jpg"
+      ],
+      "wholePageReviewComplete": false
+    },
+    {
+      "path": "/about",
+      "sha": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
+      "defaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FINDING_UNDER_INVESTIGATION",
+      "assessment": "All mission/vision/philosophy, technology/account-history and creator/review-method cards, FAQ rows, full footer and appended editorial notes were visually viewed in all five width segments. Header spacing remains clear after earlier repair. Mobile images show two navigation bars at different document positions; shared CSS/source follow-up is underway. Desktop/tablet content remains contained.",
+      "supplementaryReading": {
+        "outsideMainPublisherNotesRead": true,
+        "assessment": "Actually read all appended About notes: independent creator, AI drafting limits, no paid asset placement/affiliation claim, editorial standards, correction/contact route and internal references. Several transparency/simulation caveats overlap the styled main cards; no new false professional-review claim is asserted."
+      },
+      "publishedEvidence": [
+        "evidence/fullpage-core-20261024/979bddc4a8caafdd.json",
+        "evidence/fullpage-core-20261024/contact-979bddc4a8caafdd-1280-0.jpg",
+        "evidence/fullpage-core-20261024/contact-979bddc4a8caafdd-1280-1.jpg",
+        "evidence/fullpage-core-20261024/contact-979bddc4a8caafdd-1920-0.jpg",
+        "evidence/fullpage-core-20261024/contact-979bddc4a8caafdd-360-0.jpg",
+        "evidence/fullpage-core-20261024/contact-979bddc4a8caafdd-360-1.jpg",
+        "evidence/fullpage-core-20261024/contact-979bddc4a8caafdd-390-0.jpg",
+        "evidence/fullpage-core-20261024/contact-979bddc4a8caafdd-768-0.jpg"
+      ],
+      "wholePageReviewComplete": false
+    },
+    {
+      "path": "/contact",
+      "sha": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
+      "defaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FINDINGS_REPRODUCED",
+      "assessment": "All labelled empty form fields, contact cards, long response expectations and scope articles, FAQ rows, directory/footer and appended notes viewed at all five widths. Fields stack at mobile and form retains usable width; no submission or mail client action used. Duplicate/offscreen mobile navigation is sharedTHQ027. Appended support answer advertises a portfolio reset control that source inspection cannot locate; separate help accuracy follow-up.",
+      "supplementaryReading": {
+        "outsideMainPublisherNotesRead": true,
+        "assessment": "Read prepared email draft behavior, bug-report details, no investment advice, local/account history, reset claim and response expectations; no real request submitted."
+      },
+      "publishedEvidence": [
+        "evidence/fullpage-core-20261024/4eb950636535d637.json",
+        "evidence/fullpage-core-20261024/contact-4eb950636535d637-1280-0.jpg",
+        "evidence/fullpage-core-20261024/contact-4eb950636535d637-1280-1.jpg",
+        "evidence/fullpage-core-20261024/contact-4eb950636535d637-1920-0.jpg",
+        "evidence/fullpage-core-20261024/contact-4eb950636535d637-360-0.jpg",
+        "evidence/fullpage-core-20261024/contact-4eb950636535d637-390-0.jpg",
+        "evidence/fullpage-core-20261024/contact-4eb950636535d637-768-0.jpg"
+      ],
+      "wholePageReviewComplete": false
+    },
+    {
+      "path": "/privacy",
+      "sha": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
+      "defaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FINDINGS_REPRODUCED",
+      "assessment": "All data-use/retention/age/provider/choice sections, opt-out and contact areas, FAQ rows, full directory/footer and the appended reference policy article viewed at all five widths. Body cards and long external-link labels remain contained. Header-icon clipping and duplicate/offscreen mobile bars are separately reproducedTHQ029/027. No analytics-choice changes, ad clicks/settings or data requests were submitted during this visual pass.",
+      "supplementaryReading": {
+        "outsideMainPublisherNotesRead": true,
+        "assessment": "Actually read the repeated policy sections and additional cookies/analytics, data requests, children/jurisdiction and change/contact notes. These are disclosure-text observations, not certification of legal compliance, account deletion or regional consent/runtime provider behavior. No policy/consent wording change is authorized by merely observing it."
+      },
+      "publishedEvidence": [
+        "evidence/fullpage-core-20261024/0ece7f7c306b4cf6.json",
+        "evidence/fullpage-core-20261024/contact-0ece7f7c306b4cf6-1280-0.jpg",
+        "evidence/fullpage-core-20261024/contact-0ece7f7c306b4cf6-1280-1.jpg",
+        "evidence/fullpage-core-20261024/contact-0ece7f7c306b4cf6-1920-0.jpg",
+        "evidence/fullpage-core-20261024/contact-0ece7f7c306b4cf6-1920-1.jpg",
+        "evidence/fullpage-core-20261024/contact-0ece7f7c306b4cf6-360-0.jpg",
+        "evidence/fullpage-core-20261024/contact-0ece7f7c306b4cf6-360-1.jpg",
+        "evidence/fullpage-core-20261024/contact-0ece7f7c306b4cf6-390-0.jpg",
+        "evidence/fullpage-core-20261024/contact-0ece7f7c306b4cf6-390-1.jpg",
+        "evidence/fullpage-core-20261024/contact-0ece7f7c306b4cf6-768-0.jpg"
+      ],
+      "wholePageReviewComplete": false
+    },
+    {
+      "path": "/terms",
+      "sha": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
+      "defaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FINDINGS_REPRODUCED",
+      "assessment": "Full nine-section terms/disclaimer cards, effective date, contact and FAQ rows, directory/footer and appended reference notes viewed at all five widths. Main long paragraphs wrap within their cards. Header-icon clipping and duplicate/offscreen mobile navigation areTHQ029/027; title itself remains visible. No form/account/reset action used.",
+      "supplementaryReading": {
+        "outsideMainPublisherNotesRead": true,
+        "assessment": "Actually read virtual-only/non-advisory scope, user responsibilities, liability/accuracy, content/account terms and availability/jurisdiction notes. Legal enforceability, authorship/licensing of all material and real account removal behavior remain unverified; do not turn text reading into a legal compliance certificate."
+      },
+      "publishedEvidence": [
+        "evidence/fullpage-core-20261024/2dda5c6b8eee51aa.json",
+        "evidence/fullpage-core-20261024/contact-2dda5c6b8eee51aa-1280-0.jpg",
+        "evidence/fullpage-core-20261024/contact-2dda5c6b8eee51aa-1280-1.jpg",
+        "evidence/fullpage-core-20261024/contact-2dda5c6b8eee51aa-1920-0.jpg",
+        "evidence/fullpage-core-20261024/contact-2dda5c6b8eee51aa-360-0.jpg",
+        "evidence/fullpage-core-20261024/contact-2dda5c6b8eee51aa-360-1.jpg",
+        "evidence/fullpage-core-20261024/contact-2dda5c6b8eee51aa-390-0.jpg",
+        "evidence/fullpage-core-20261024/contact-2dda5c6b8eee51aa-768-0.jpg"
+      ],
+      "wholePageReviewComplete": false
+    },
+    {
+      "path": "/auth",
+      "sha": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
+      "defaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "status": "FULL_PAGE_PUBLIC_DEFAULT_OR_GUARD_STATE_VIEWED",
+      "assessment": "Empty sign-in form, optional-account/public-profile explanation, labelled email/password inputs, Google button and create/forgot links, and complete directory/footer viewed at all five widths. Inputs and controls fit the mobile card. No authentication, account creation or email recovery was submitted; signup/error/keyboard states remain separate. Shared offscreen mobile navigation isTHQ027.",
+      "publishedEvidence": [
+        "evidence/fullpage-core-20261024/7d2f30b877597697.json",
+        "evidence/fullpage-core-20261024/contact-7d2f30b877597697-1280-0.jpg",
+        "evidence/fullpage-core-20261024/contact-7d2f30b877597697-1920-0.jpg",
+        "evidence/fullpage-core-20261024/contact-7d2f30b877597697-360-0.jpg",
+        "evidence/fullpage-core-20261024/contact-7d2f30b877597697-390-0.jpg",
+        "evidence/fullpage-core-20261024/contact-7d2f30b877597697-768-0.jpg"
+      ],
+      "wholePageReviewComplete": false
+    },
+    {
+      "path": "/reset-password",
+      "sha": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
+      "defaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "status": "FULL_PAGE_PUBLIC_DEFAULT_OR_GUARD_STATE_VIEWED",
+      "assessment": "Bare public URL correctly shows an invalid/expired-link state with Back to sign in, then full directory/footer. All five widths contain the message/button without new clipping. A valid recovery-token form is not accessible in this public read-only context and is not certified. No recovery email/password update action performed. Shared offscreen mobile navigation isTHQ027.",
+      "publishedEvidence": [
+        "evidence/fullpage-core-20261024/84aa1abab39f3c9a.json",
+        "evidence/fullpage-core-20261024/contact-84aa1abab39f3c9a-1280-0.jpg",
+        "evidence/fullpage-core-20261024/contact-84aa1abab39f3c9a-1920-0.jpg",
+        "evidence/fullpage-core-20261024/contact-84aa1abab39f3c9a-360-0.jpg",
+        "evidence/fullpage-core-20261024/contact-84aa1abab39f3c9a-390-0.jpg",
+        "evidence/fullpage-core-20261024/contact-84aa1abab39f3c9a-768-0.jpg"
+      ],
+      "wholePageReviewComplete": false
+    },
+    {
+      "path": "/ai-mentor",
+      "sha": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
+      "defaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "status": "FULL_PAGE_DEFAULT_STATE_VISUALLY_REVIEWED",
+      "assessment": "Complete greeting/chat input, six topic pills, quick navigation, FAQ rows/disclaimer and appended learning notes viewed at all five widths. Chat bubble and topic pills wrap within mobile card; send input remains on screen. Source supplies accessible input/send names. Literal emphasis markers appear in the greeting; this minor presentation observation is not evidence of a runtime failure or invented policy violation. Response, keyboard/focus, light/zoom and topic accuracy remain separate checks. Shared offscreen mobile navigation isTHQ027.",
+      "supplementaryReading": {
+        "outsideMainPublisherNotesRead": true,
+        "assessment": "Read full library/local-matching/no-language-model explanation, limitations, suggested mechanics questions, no external AI API cost claim, distinctions from portfolio tools and internal references. Source corroborates the standalone browser topic matcher; the sample question list does not by itself prove every answer is accurate or supported."
+      },
+      "publishedEvidence": [
+        "evidence/fullpage-core-20261024/93da19cb61c8d30d.json",
+        "evidence/fullpage-core-20261024/contact-93da19cb61c8d30d-1280-0.jpg",
+        "evidence/fullpage-core-20261024/contact-93da19cb61c8d30d-1920-0.jpg",
+        "evidence/fullpage-core-20261024/contact-93da19cb61c8d30d-360-0.jpg",
+        "evidence/fullpage-core-20261024/contact-93da19cb61c8d30d-390-0.jpg",
+        "evidence/fullpage-core-20261024/contact-93da19cb61c8d30d-768-0.jpg"
+      ],
+      "wholePageReviewComplete": false
+    },
+    {
+      "path": "/challenge",
+      "sha": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
+      "defaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "status": "FULL_PAGE_GUEST_DEFAULT_STATE_VISUALLY_REVIEWED",
+      "assessment": "Guest account requirement, all three setup cards, score explanation/example, disclaimer, complete directory/footer and appended duel notes viewed at all five widths. Cards stack on mobile and form three columns on larger screens without clipped labels. No invitation/join/settle action or public-duels RPC allowed; authenticated/active/expired duel conditional states and financial outcome logic are not certified. Shared offscreen mobile bar isTHQ027.",
+      "supplementaryReading": {
+        "outsideMainPublisherNotesRead": true,
+        "assessment": "Read own recorded starting values, server trade/cached quote/deadline scoring, legacy score limits, no stake/prize/fee, practice-versus-skill warnings and setup details. The104000-to109200 example is5%; actual settlement/result correctness remains unverified because its public RPC can mutate expired duels."
+      },
+      "publishedEvidence": [
+        "evidence/fullpage-core-20261024/63853d6cbeeeccaf.json",
+        "evidence/fullpage-core-20261024/contact-63853d6cbeeeccaf-1280-0.jpg",
+        "evidence/fullpage-core-20261024/contact-63853d6cbeeeccaf-1920-0.jpg",
+        "evidence/fullpage-core-20261024/contact-63853d6cbeeeccaf-360-0.jpg",
+        "evidence/fullpage-core-20261024/contact-63853d6cbeeeccaf-390-0.jpg",
+        "evidence/fullpage-core-20261024/contact-63853d6cbeeeccaf-768-0.jpg"
+      ],
+      "wholePageReviewComplete": false
+    },
+    {
+      "path": "/daily",
+      "sha": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
+      "defaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "status": "FULL_PAGE_DEFAULT_STATE_VISUALLY_REVIEWED",
+      "assessment": "Today\u2019s labelled hypothetical quick scenario, three reflection choices, the unopened case-study entry, streak/badge cards, complete directory/footer and appended notes viewed at all five widths. Choices and cards fit mobile and wider columns. Daily deep-case/question/result states remain unread/unverified as a separate conditional curriculum stage; no quick choice/start/completion action used in this visual pass. Shared offscreen mobile bar isTHQ027.",
+      "supplementaryReading": {
+        "outsideMainPublisherNotesRead": true,
+        "assessment": "Actually read quick-versus-ten-question distinction, once-per-local-day/browser-held streak, bank rotation and owner-approval fallback description, fictional inputs/no-forecast/no-prize guidance and review journal limits. Source availability of fifty cases is not proof all500 question/feedback sets were read or runtime-verified."
+      },
+      "publishedEvidence": [
+        "evidence/fullpage-core-20261024/8ad2b380cbbeacfb.json",
+        "evidence/fullpage-core-20261024/contact-8ad2b380cbbeacfb-1280-0.jpg",
+        "evidence/fullpage-core-20261024/contact-8ad2b380cbbeacfb-1280-1.jpg",
+        "evidence/fullpage-core-20261024/contact-8ad2b380cbbeacfb-1920-0.jpg",
+        "evidence/fullpage-core-20261024/contact-8ad2b380cbbeacfb-360-0.jpg",
+        "evidence/fullpage-core-20261024/contact-8ad2b380cbbeacfb-390-0.jpg",
+        "evidence/fullpage-core-20261024/contact-8ad2b380cbbeacfb-768-0.jpg"
+      ],
+      "wholePageReviewComplete": false,
+      "normalReadOnlyRPCFollowup": {
+        "evidence": "evidence/NORMAL-DAILY-REVIEWS-READ-ONLY-FOLLOWUP.json",
+        "outcome": "PASS",
+        "scope": "Normal anonymous rendered main text read with source-verified public SELECT allowed. Daily50-case public bank received; all500 question-feedback sets remain unreviewed. Four review cards display normal Like0/1 counts and sign-in-to-like state; no likes submitted. Old guarded screenshots retain their actual controlled state."
+      }
+    },
+    {
+      "path": "/reviews",
+      "sha": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
+      "defaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "status": "FULL_PAGE_CONTROLLED_READ_ONLY_STATE_VISUALLY_REVIEWED",
+      "assessment": "Four public review cards and separately labelled owner replies, rating summary, empty review form and all appended reference notes viewed at all five widths. Cards stack at mobile and share a form/sidebar layout at wider widths without clipped reviews. The initial collector blocked get_review_engagement before its SELECT-only source was verified, so visible Likes unavailable is an audit-controlled state and not a product defect. No like/rating submission or review submitted. Current engagement follow-up remains pending with the verified read RPC allowed. Shared offscreen mobile nav isTHQ027.",
+      "supplementaryReading": {
+        "outsideMainPublisherNotesRead": true,
+        "assessment": "Read full moderation/duplicate/identity caveats, public totals versus private liker identities, no paid reviews claim, acceptance of criticism and limits of testimonial/rating evidence. Statements about moderation/identity/payment history are not independently certified; positive visitor confidence is not treated as audited investing performance."
+      },
+      "publishedEvidence": [
+        "evidence/fullpage-core-20261024/b048b8c0ea22932d.json",
+        "evidence/fullpage-core-20261024/contact-b048b8c0ea22932d-1280-0.jpg",
+        "evidence/fullpage-core-20261024/contact-b048b8c0ea22932d-1920-0.jpg",
+        "evidence/fullpage-core-20261024/contact-b048b8c0ea22932d-360-0.jpg",
+        "evidence/fullpage-core-20261024/contact-b048b8c0ea22932d-390-0.jpg",
+        "evidence/fullpage-core-20261024/contact-b048b8c0ea22932d-768-0.jpg"
+      ],
+      "wholePageReviewComplete": false,
+      "normalReadOnlyRPCFollowup": {
+        "evidence": "evidence/NORMAL-DAILY-REVIEWS-READ-ONLY-FOLLOWUP.json",
+        "outcome": "PASS",
+        "scope": "Normal anonymous rendered main text read with source-verified public SELECT allowed. Daily50-case public bank received; all500 question-feedback sets remain unreviewed. Four review cards display normal Like0/1 counts and sign-in-to-like state; no likes submitted. Old guarded screenshots retain their actual controlled state."
+      }
+    },
+    {
+      "path": "/roadmap",
+      "sha": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
+      "defaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "status": "FULL_PAGE_DEFAULT_STATE_VISUALLY_REVIEWED",
+      "assessment": "Shipped and planned cards, four named historical tracks, local streak versus unimplemented scheduled reminders, optional account/profile restoration, proposed scenario/portfolio/embed widgets, status explainer, footer and all appended reference notes viewed at all five widths. Historical targets and proposed features were read as dated plans, not certification of backend availability. No new confirmed layout defect beyond shared navigation THQ027.",
+      "supplementaryReading": {
+        "outsideMainPublisherNotesRead": true,
+        "assessment": "Actually read the complete appended roadmap notes: simulation-only and no broker/signals, four historical tracks and glossary, proposed widgets without confirmed dates, public profile versus personal dashboard, account-copy versus guest-progress distinction and feedback route. No feature submission or private flow tested."
+      },
+      "publishedEvidence": [
+        "evidence/fullpage-core-20261024/b5f64669f1d8216c.json",
+        "evidence/fullpage-core-20261024/contact-b5f64669f1d8216c-1280-0.jpg",
+        "evidence/fullpage-core-20261024/contact-b5f64669f1d8216c-1280-1.jpg",
+        "evidence/fullpage-core-20261024/contact-b5f64669f1d8216c-1920-0.jpg",
+        "evidence/fullpage-core-20261024/contact-b5f64669f1d8216c-360-0.jpg",
+        "evidence/fullpage-core-20261024/contact-b5f64669f1d8216c-360-1.jpg",
+        "evidence/fullpage-core-20261024/contact-b5f64669f1d8216c-390-0.jpg",
+        "evidence/fullpage-core-20261024/contact-b5f64669f1d8216c-768-0.jpg"
+      ],
+      "wholePageReviewComplete": false
+    },
+    {
+      "path": "/markets",
+      "sha": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
+      "defaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FINDING_REPRODUCED",
+      "assessment": "All categories, simulated gain/loss lists, default asset rows, full instrument/glossary directories, FAQ rows, footer and appended learning notes viewed at all five widths. Dashboard main fits its reserved sidebar width, but fixed sidebar covers footer text at all widths and reference text on360/390/768. Fresh bounds reproduce THQ030; no overflow-only scan would establish its absence. Default table uses a limited subset; search/filter/sort and conditional results remain separate.",
+      "supplementaryReading": {
+        "outsideMainPublisherNotesRead": true,
+        "assessment": "Actually read the complete appended Markets Overview: seeded/generated changes versus measured returns, simulated activity versus actual volume, asset classes, choosing a manageable exercise set, quote/provider limitations, percentage intervals, no future-return inference and nominal-price/ETF/market-hours caveats. No investment recommendation or complete factual-source certification inferred."
+      },
+      "publishedEvidence": [
+        "evidence/fullpage-core-20261024/d106d5242cdd614d.json",
+        "evidence/fullpage-core-20261024/contact-d106d5242cdd614d-1280-0.jpg",
+        "evidence/fullpage-core-20261024/contact-d106d5242cdd614d-1280-1.jpg",
+        "evidence/fullpage-core-20261024/contact-d106d5242cdd614d-1920-0.jpg",
+        "evidence/fullpage-core-20261024/contact-d106d5242cdd614d-360-0.jpg",
+        "evidence/fullpage-core-20261024/contact-d106d5242cdd614d-360-1.jpg",
+        "evidence/fullpage-core-20261024/contact-d106d5242cdd614d-390-0.jpg",
+        "evidence/fullpage-core-20261024/contact-d106d5242cdd614d-390-1.jpg",
+        "evidence/fullpage-core-20261024/contact-d106d5242cdd614d-768-0.jpg"
+      ],
+      "wholePageReviewComplete": false
+    },
+    {
+      "path": "/portfolio",
+      "status": "FULL_PAGE_DEFAULT_EMPTY_GUEST_STATE_VISUALLY_REVIEWED",
+      "assessment": "Actual complete empty guest portfolio reviewed at all five widths: practice history chart and disclaimer, metrics/allocation/exposure/risk cards, scenario assumptions and empty-state notice, summary cards, positions/performance, journal tabs and empty entries, trade history controls, learning links, FAQ rows, full footer and reference article. Cards stack on mobile and form wider grids without a newly confirmed occlusion. Floating mentor can overlay a small piece of currently scrolled text; document end has clearance and the content can be moved above it, so no persistent inaccessible text finding is asserted from these default views. Shared mobile nav defect is separately repaired THQ027. Populated positions/trades, journal entries, scenario outputs, alerts and private restoration remain separate protected/conditional stages.",
+      "supplementaryReading": {
+        "outsideMainPublisherNotesRead": true,
+        "assessment": "Read every appended portfolio note: guest versus server-recorded account trade restoration, unrealised/realised P&L, fee-inclusive closed-sell win rate versus open-position profit share, dispersion versus volatility/Sharpe, locally generated backfill versus observed market history, short-run/selection limits, 0.1% practice fee and unmodelled financing/tax/execution, weekly review and position-size/source/cost comparisons. No order, journal edit, account reset or server write performed; prose reading does not certify financial algorithms."
+      },
+      "sha": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
+      "defaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "publishedEvidence": [
+        "evidence/fullpage-core-20261024/a872f2517a242503.json",
+        "evidence/fullpage-core-20261024/contact-a872f2517a242503-1280-0.jpg",
+        "evidence/fullpage-core-20261024/contact-a872f2517a242503-1280-1.jpg",
+        "evidence/fullpage-core-20261024/contact-a872f2517a242503-1920-0.jpg",
+        "evidence/fullpage-core-20261024/contact-a872f2517a242503-1920-1.jpg",
+        "evidence/fullpage-core-20261024/contact-a872f2517a242503-360-0.jpg",
+        "evidence/fullpage-core-20261024/contact-a872f2517a242503-360-1.jpg",
+        "evidence/fullpage-core-20261024/contact-a872f2517a242503-390-0.jpg",
+        "evidence/fullpage-core-20261024/contact-a872f2517a242503-390-1.jpg",
+        "evidence/fullpage-core-20261024/contact-a872f2517a242503-768-0.jpg"
+      ],
+      "wholePageReviewComplete": false
+    },
+    {
+      "path": "/leaderboard",
+      "status": "FULL_PAGE_DEFAULT_PUBLIC_MEMBERS_STATE_VISUALLY_REVIEWED",
+      "assessment": "All64 public-member rows and subsequent rank/visibility cards, FAQ question rows, footer and appended reference article individually viewed in all five width contacts. Mobile rows become multi-line cards; larger layouts retain columns without a newly reproduced clipped username or number. Imported/unranked and no-trade states are distinctly labelled and do not acquire a practice rank from a large imported balance. This checks public rendering only, not underlying account arithmetic. Some display names are repetitive user-chosen names, not publisher boilerplate. Previous-results tab, portfolio disclosures, keyboard navigation and duet results remain separate conditional checks. Potentially mutating public-duel RPC was blocked; no settlement/result certification.",
+      "supplementaryReading": {
+        "outsideMainPublisherNotesRead": true,
+        "assessment": "Read all appended leaderboard notes: default public profile and private choice, no minimum-trade membership versus first server-trade ranking, comparable100000 starting base, imported/unranked records, stale/fixed price caveats, earlier browser-reported results separate from current ranks, no reward or real money, return versus drawdown and sample/uncertainty limits, no copying-trade recommendation and summary-only privacy explanation. No visibility change, account action or order was performed. Disclosure reading does not certify privacy controls or actual quote timing."
+      },
+      "sha": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
+      "defaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "publishedEvidence": [
+        "evidence/fullpage-core-20261024/27cdef98c66fef7c.json",
+        "evidence/fullpage-core-20261024/contact-27cdef98c66fef7c-1280-0.jpg",
+        "evidence/fullpage-core-20261024/contact-27cdef98c66fef7c-1280-1.jpg",
+        "evidence/fullpage-core-20261024/contact-27cdef98c66fef7c-1280-2.jpg",
+        "evidence/fullpage-core-20261024/contact-27cdef98c66fef7c-1920-0.jpg",
+        "evidence/fullpage-core-20261024/contact-27cdef98c66fef7c-1920-1.jpg",
+        "evidence/fullpage-core-20261024/contact-27cdef98c66fef7c-360-0.jpg",
+        "evidence/fullpage-core-20261024/contact-27cdef98c66fef7c-360-1.jpg",
+        "evidence/fullpage-core-20261024/contact-27cdef98c66fef7c-390-0.jpg",
+        "evidence/fullpage-core-20261024/contact-27cdef98c66fef7c-390-1.jpg",
+        "evidence/fullpage-core-20261024/contact-27cdef98c66fef7c-768-0.jpg"
+      ],
+      "wholePageReviewComplete": false
+    },
+    {
+      "path": "/trader/me",
+      "status": "FULL_PAGE_DEFAULT_PUBLIC_STATE_VISUALLY_REVIEWED",
+      "assessment": "Full empty guest local profile, disabled share action, summary metrics, course-badge empty state, risk cards, disclaimer and full directory/footer viewed at five widths. No clipped cards/headings reproduced. Share/visibility, earned progress and populated account states were not exercised. No supplementary publisher article is source-expected on this utility route.",
+      "sha": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
+      "defaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "publishedEvidence": [
+        "evidence/fullpage-core-20261024/f927e080cd7b31b4.json",
+        "evidence/fullpage-core-20261024/contact-f927e080cd7b31b4-1280-0.jpg",
+        "evidence/fullpage-core-20261024/contact-f927e080cd7b31b4-1920-0.jpg",
+        "evidence/fullpage-core-20261024/contact-f927e080cd7b31b4-360-0.jpg",
+        "evidence/fullpage-core-20261024/contact-f927e080cd7b31b4-390-0.jpg",
+        "evidence/fullpage-core-20261024/contact-f927e080cd7b31b4-768-0.jpg"
+      ],
+      "wholePageReviewComplete": false
+    },
+    {
+      "path": "/trader/570008",
+      "status": "FULL_PAGE_DEFAULT_PUBLIC_STATE_VISUALLY_REVIEWED",
+      "assessment": "Complete public profile570008, member date, unranked return, zero server-trade count, explicit fixed-simulator price basis, full simulation/imported-value/freshness explanation and footer viewed across all five widths. Timestamp separator repair remains readable. This is an imported/unranked public state, not independent validation of account value or a ranked/private state. No separate appended article expected.",
+      "sha": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
+      "defaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "publishedEvidence": [
+        "evidence/fullpage-core-20261024/ed720056a0a4035d.json",
+        "evidence/fullpage-core-20261024/contact-ed720056a0a4035d-1280-0.jpg",
+        "evidence/fullpage-core-20261024/contact-ed720056a0a4035d-1920-0.jpg",
+        "evidence/fullpage-core-20261024/contact-ed720056a0a4035d-360-0.jpg",
+        "evidence/fullpage-core-20261024/contact-ed720056a0a4035d-390-0.jpg",
+        "evidence/fullpage-core-20261024/contact-ed720056a0a4035d-768-0.jpg"
+      ],
+      "wholePageReviewComplete": false
+    },
+    {
+      "path": "/compare",
+      "status": "FULL_PAGE_DEFAULT_STATE_VISUALLY_REVIEWED",
+      "assessment": "All eight comparison cards, structure/units/risk introduction and worked-use guidance, full directories/footer and appended reference article viewed across all five widths. One-column mobile and wider paired grids preserve titles. Description previews are deliberately line-clamped and the full comparisons have individual destinations; preview ellipses alone are not a missing-content defect. No newly confirmed clipping beyond shared navigation previously repaired. Pair-specific pages, source/currentness and worksheets retain independent scope.",
+      "supplementaryReading": {
+        "outsideMainPublisherNotesRead": true,
+        "assessment": "Read every appended comparison note: eight exposure distinctions, named-instrument versus category availability, matching dates/units/sources/costs, equal dollars versus equal risk, drawdown not forecast, simulated versus observed data, no ranking/recommendation, reproducible inputs and non-comparable definitions, missing data versus measured zero and provider fetch versus observation time. No simulated order or account change performed."
+      },
+      "sha": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
+      "defaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "publishedEvidence": [
+        "evidence/fullpage-core-20261024/a00971334b056054.json",
+        "evidence/fullpage-core-20261024/contact-a00971334b056054-1280-0.jpg",
+        "evidence/fullpage-core-20261024/contact-a00971334b056054-1920-0.jpg",
+        "evidence/fullpage-core-20261024/contact-a00971334b056054-360-0.jpg",
+        "evidence/fullpage-core-20261024/contact-a00971334b056054-390-0.jpg",
+        "evidence/fullpage-core-20261024/contact-a00971334b056054-768-0.jpg"
+      ],
+      "wholePageReviewComplete": false
+    },
+    {
+      "path": "/learn",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FINDING_REPRODUCED",
+      "assessment": "Complete guided lesson card, six structured course covers, course/quick-read distinction, country links, roadmap notice, learning-path and starter cards, nine featured guide cards, market theme cards, six quick reads, glossary/sector links, FAQ rows, full footer and reference article viewed across five widths. Guided card nearly eliminates lesson title at360/390 (THQ031), confirmed fresh bounds; remaining grids stack without new reproduced clipping. Some quick-read cards intentionally truncate previews; those individually linked article bodies were previously read. Current capture recommended a psychology lesson; saved-progress suggestions need isolated control review.",
+      "supplementaryReading": {
+        "outsideMainPublisherNotesRead": true,
+        "assessment": "Read all appended Learn notes: course versus standalone article, suggested beginner sequence and no mandatory universal psychology start, simulated versus real derivative availability, author/source/review caveats, elapsed time versus observable competence, two-price 0.1% fee exercise, probability/examples/source quality versus winner-only forecasts and no guaranteed investing readiness. Primary source and actual progress validation remain independent."
+      },
+      "sha": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
+      "defaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "publishedEvidence": [
+        "evidence/fullpage-core-20261024/eabea78578bd867f.json",
+        "evidence/fullpage-core-20261024/contact-eabea78578bd867f-1280-0.jpg",
+        "evidence/fullpage-core-20261024/contact-eabea78578bd867f-1280-1.jpg",
+        "evidence/fullpage-core-20261024/contact-eabea78578bd867f-1920-0.jpg",
+        "evidence/fullpage-core-20261024/contact-eabea78578bd867f-1920-1.jpg",
+        "evidence/fullpage-core-20261024/contact-eabea78578bd867f-360-0.jpg",
+        "evidence/fullpage-core-20261024/contact-eabea78578bd867f-360-1.jpg",
+        "evidence/fullpage-core-20261024/contact-eabea78578bd867f-390-0.jpg",
+        "evidence/fullpage-core-20261024/contact-eabea78578bd867f-390-1.jpg",
+        "evidence/fullpage-core-20261024/contact-eabea78578bd867f-768-0.jpg"
+      ],
+      "wholePageReviewComplete": false
+    },
+    {
+      "path": "/courses",
+      "status": "FULL_PAGE_DEFAULT_CATALOG_STATE_VISUALLY_REVIEWED",
+      "assessment": "Current six-course/26-lesson live catalog, complete course cards and syllabus previews, learning steps, author and review/source/limitation cards, risk information, FAQ rows, footer and appended article viewed at all five widths. Cards stack mobile and pair at tablet/desktop without a new reproduced clipping defect. Appended article explicitly distinguishes four bundled tracks/20 bundled lessons from additional approved live catalog entries, so its four-track heading is not asserted as a stale catalog-count finding. Earned/completed/progress, expanded answers and individual course/lesson interactions are separate stages; earlier text and layout repairs retain their own receipts.",
+      "supplementaryReading": {
+        "outsideMainPublisherNotesRead": true,
+        "assessment": "Read every appended course paragraph and all20 bundled lesson summaries: options rights/Greeks/spreads/model-implied IV and risk, exchange futures/margin/term structure/hedging/micro contract size, CPI/FOMC/yield curve/DXY/macro worksheet, psychology/revenge/journal/checklist/drawdowns, progression and conceptual derivatives versus supported spot practice. Explicitly qualified IV forecasting, loss exceeding margin, historical inversion limits and no universal profitable psychology claim. Full primary-source corroboration and numeric contract worksheets remain separate; no course progress or account changes."
+      },
+      "sha": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
+      "defaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "publishedEvidence": [
+        "evidence/fullpage-core-20261024/b540d8636b3ed8e5.json",
+        "evidence/fullpage-core-20261024/contact-b540d8636b3ed8e5-1280-0.jpg",
+        "evidence/fullpage-core-20261024/contact-b540d8636b3ed8e5-1280-1.jpg",
+        "evidence/fullpage-core-20261024/contact-b540d8636b3ed8e5-1920-0.jpg",
+        "evidence/fullpage-core-20261024/contact-b540d8636b3ed8e5-1920-1.jpg",
+        "evidence/fullpage-core-20261024/contact-b540d8636b3ed8e5-360-0.jpg",
+        "evidence/fullpage-core-20261024/contact-b540d8636b3ed8e5-360-1.jpg",
+        "evidence/fullpage-core-20261024/contact-b540d8636b3ed8e5-390-0.jpg",
+        "evidence/fullpage-core-20261024/contact-b540d8636b3ed8e5-390-1.jpg",
+        "evidence/fullpage-core-20261024/contact-b540d8636b3ed8e5-768-0.jpg"
+      ],
+      "wholePageReviewComplete": false
+    }
+  ]
+}

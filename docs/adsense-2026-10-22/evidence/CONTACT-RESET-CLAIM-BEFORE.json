@@ -1,0 +1,67 @@
+{
+  "checkedAt": "2026-10-24T05:50:12.317Z",
+  "sha": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
+  "scope": "Actual rendered public supplementary contact answer and portfolio control labels. No button/link/form/reset/account/order actions performed.",
+  "rows": [
+    {
+      "path": "/contact",
+      "publisherNotes": "Learning notes: Contact TradeHQ\n\nSend a message to the TradeHQ team. Response times vary with request volume. TradeHQ is a free educational simulator — not a brokerage.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nGetting in touch\n\nThe contact page lists email and phone details for the maintainer. Its form opens your own email client with a prepared draft; it does not send a message automatically or store submissions on TradeHQ. Response times vary with request volume. For a bug report, include the page URL and reproducible steps so the current build can be checked.\n\nWhat to include so we can help quickly\nThe exact page URL where the problem happened.\nWhat you expected to happen, and what happened instead.\nYour browser and whether you are on desktop or mobile.\nFor content corrections: the sentence you believe is wrong and, ideally, a source.\nWhat we cannot answer\nRequests for investment advice, trade ideas or price opinions — we do not provide them at any price.\nAccount or money questions for real brokers; TradeHQ holds no funds and has no brokerage relationship.\nRequests to promote an asset, product or course on the site.\nSupport questions we answer most often\nMy portfolio disappeared — check which account, browser and device you are using. Guest records are browser-held. Account cash, positions and server-recorded trades can be restored when the service is available. Earlier guest history, journals and course progress stay on the original browser. If sync fails, contact the maintainer before resetting the practice account.\nHow do I reset my practice balance? There is a reset control in the portfolio area; it returns the account to $100,000 in virtual cash and clears open positions.\nA price looks wrong — quotes refresh periodically, can be stale or use a labelled fixed fallback, and need not match a broker’s executable price.\nCan I use TradeHQ on my phone? Yes, the whole site works on mobile browsers; there is no app to install.\nDo you have an affiliate or partnership programme? No.\nReporting a content error\n\nContent corrections are the most valuable messages we receive. Send the page URL, quote the sentence you believe is wrong, and where possible link a primary source such as an exchange rule book, a regulator page or a central-bank release. Corrections are applied to the live lesson rather than buried in an errata list.\n\nResponse times and expectations\n\nTradeHQ is maintained by one person, so response times vary with request volume and development work. Contact details include email and phone; there is no live support queue. If you have not heard back after a while, sending the message again is reasonable.\n\nReferences and related pages\nAbout TradeHQ\nPrivacy policy\nTerms of service\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.",
+      "buttonLabels": [
+        "Send message",
+        "How quickly does TradeHQ respond?",
+        "Does TradeHQ offer investment advice by email?",
+        "Can I request a feature or report a bug?"
+      ],
+      "inputLabels": [
+        {
+          "type": "text",
+          "label": null
+        },
+        {
+          "type": "text",
+          "label": null
+        },
+        {
+          "type": "email",
+          "label": null
+        },
+        {
+          "type": "text",
+          "label": null
+        }
+      ]
+    },
+    {
+      "path": "/portfolio",
+      "publisherNotes": "Learning notes: Practice Portfolio\n\nReview simulated positions, trades, P&L, drawdown and allocation snapshots. Guest records stay in your browser; account cash, positions and server-recorded trades restore when the service is available. Server-recorded account trades restore across devices; earlier guest history and journals remain browser-held.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nWhat the practice portfolio tracks\n\nThe portfolio page shows open positions with entry prices, current practice prices and unrealised profit or loss, plus this browser's history of closed trades. Guest records live in local storage. Signed-in cash and open positions can sync when the service is available; clearing browser data does not delete an account copy already stored on the server.\n\nBeyond raw P&L, the page calculates the metrics that actually describe a process rather than an outcome: fee-inclusive closed-result win rate, average win versus average loss, current open-position return dispersion, and practice maximum drawdown. The chart can include generated history; it is not a verified sequence of account observations.\n\nHow to read your own numbers honestly\nCompare win rate, average realized win, average realized loss and costs together. A high win rate alone does not establish a positive result.\nMaximum drawdown describes a selected peak-to-trough decline. It does not measure every risk or predict your response to a real loss.\nA short run is an observation, not proof of a repeatable advantage. Selection, dependence, costs and changing conditions matter; no fixed trade count establishes an edge.\nIf one position drives most of the return, you learned about that position, not about your method.\nWhy results here do not transfer one-to-one\n\nThe simulator applies a 0.1% practice transaction fee, rather than a real broker fee schedule. It does not model financing costs, taxes or actual market execution. Review practice results alongside these limits; they do not predict real-money results.\n\nThe metrics explained in plain language\nUnrealised P&L: what an open position is worth right now versus what you paid. It is not money until you close.\nRealised P&L: the result of trades you have actually closed. This is the number that measures decisions you finished making.\nOpen positions in profit: the share of current open positions showing positive unrealised P&L. This is not a closed-trade win rate.\nOpen-position P&L dispersion: the spread of current position returns around their average. This is a snapshot, not a Sharpe ratio or time-series volatility measure.\nPractice maximum drawdown: the largest fall from a peak in locally stored snapshots, which can include generated hourly backfill. It is not an observed market record or proof that a strategy is survivable.\nReviewing the portfolio weekly\n\nChoose a repeatable review interval for virtual results and compare the information recorded before each order with what became known later. A loss alone cannot establish whether the original reasoning was sound.\n\nCompare the largest virtual gain with its position size, price change, quotation source and costs. A large one-off outcome does not by itself establish skill or predict a similar future result.\n\nReferences and related pages\nPlace a practice trade\nRisk management guide\nWhat drawdown means\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.",
+      "buttonLabels": [
+        "Alerts",
+        "Reference line: 10%",
+        "Run Scenario",
+        "What if BTC drops 30%?",
+        "ETH gains 50% in 30 days",
+        "Tech stocks crash 20%",
+        "Crypto rallies 40% over 60 days",
+        "Entries",
+        "Emotions",
+        "Summary",
+        "All",
+        "Buys",
+        "Sells",
+        "What does the TradeHQ portfolio tracker show?",
+        "Are the portfolio statistics based on real prices?",
+        "How do I reset my virtual portfolio?"
+      ],
+      "inputLabels": [
+        {
+          "type": "text",
+          "label": "Hypothetical portfolio scenario"
+        },
+        {
+          "type": "text",
+          "label": "Filter trade history by symbol"
+        }
+      ]
+    }
+  ]
+}

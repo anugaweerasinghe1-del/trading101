@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-10-24T10:32:25.378910+00:00",
+  "candidateSHA": "230478c76574a4f08d38aa91687368832bd60d2c",
+  "baseSHA": "b86960a3abac068f38365d09abfce6ae90689d0f",
+  "scope": "Only four layout class strings and final newline in product GuidedNextLesson, with exact transformed-source equality to base. All suggestion text/links/loadProgress/recommendation logic byte-identical. No protected financial/order/account/auth/DB/storage/progress/policy/consent/ad/infrastructure behavior changed.",
+  "productSourceEquality": "PASS",
+  "initialValidation": [
+    "Initial build/SEO/type PASS",
+    "Baseline compiled title clipping fails at360",
+    "Initial completephase6 with15isolated guided states PASS"
+  ],
+  "finalCombinedValidation": "Fresh combined build/SEO/type PASS; complete finalphase6 PASS retaining15guided fixture states,15Markets section samples,50mobile-navigation states and all preexisting assertions.",
+  "preservedHarnessFailures": [
+    "Direct Node image import failed; used existing loadSiteData loader without changing original UI assertion.",
+    "After upstream merge, tests correctly rejected the old pre-merge compiled bundle; fresh combined rebuild is required."
+  ],
+  "rollback": "Reviewed layout-only revert through serial protected exact-native/live cycle; no data operation.",
+  "outcome": "PASS"
+}

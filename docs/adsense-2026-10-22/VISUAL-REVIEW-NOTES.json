@@ -1,36 +1,50 @@
 {
-  "updatedAt": "2026-10-23T09:28:56.693293+00:00",
-  "scope": "Actually viewed original screenshots; first-fold inspection is not complete below-fold or all-five-size human visual review.",
+  "updatedAt": "2026-10-24T10:26:06.372979+00:00",
+  "scope": "Actual screenshot viewing by route and stage. Full-page default-state images are separately recorded at all five widths for20 core routes; this is not conditional, accessibility, light-theme, source or whole-audit completion.",
   "routes": {
     "/": {
-      "status": "FIRST_FOLD_ONLY",
+      "status": "FULL_PAGE_DEFAULT_STATE_VISUALLY_REVIEWED",
       "humanViewedWidths": [
         360,
         1280
       ],
       "notes": [
-        "Settled first-fold header, intro and text inspected. About reproduced overlap and was verified after PR212.",
         "Settled first-fold header, intro and text inspected. About reproduced overlap and was verified after PR212."
       ],
       "evidence": [
-        "Initial screenshots and ABOUT-OVERLAP-AFTER evidence",
         "Initial screenshots and ABOUT-OVERLAP-AFTER evidence"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false
     },
     "/about": {
-      "status": "FIRST_FOLD_ONLY",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FINDING_UNDER_INVESTIGATION",
       "humanViewedWidths": [
         360,
         1280
       ],
       "notes": [
-        "Settled first-fold header, intro and text inspected. About reproduced overlap and was verified after PR212.",
         "Settled first-fold header, intro and text inspected. About reproduced overlap and was verified after PR212."
       ],
       "evidence": [
-        "Initial screenshots and ABOUT-OVERLAP-AFTER evidence",
         "Initial screenshots and ABOUT-OVERLAP-AFTER evidence"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false
     },
     "/compare/apple-vs-microsoft": {
       "status": "FIRST_FOLD_ONLY",
@@ -576,7 +590,7 @@
       ]
     },
     "/trader/570008": {
-      "status": "FIRST_FOLD_ONLY",
+      "status": "FULL_PAGE_DEFAULT_PUBLIC_STATE_VISUALLY_REVIEWED",
       "humanViewedWidths": [
         360,
         1280
@@ -588,7 +602,16 @@
       "evidence": [
         "evidence/contact--trader--360-8.png",
         "evidence/contact--trader--1280-8.png"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false
     },
     "/trader/aaagggeeee": {
       "status": "FIRST_FOLD_ONLY",
@@ -951,7 +974,7 @@
       ]
     },
     "/trader/me": {
-      "status": "FIRST_FOLD_ONLY",
+      "status": "FULL_PAGE_DEFAULT_PUBLIC_STATE_VISUALLY_REVIEWED",
       "humanViewedWidths": [
         360,
         1280
@@ -963,7 +986,16 @@
       "evidence": [
         "evidence/contact--trader--360-40.png",
         "evidence/contact--trader--1280-40.png"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false
     },
     "/trader/messimayuri-1": {
       "status": "FIRST_FOLD_ONLY",
@@ -1281,7 +1313,7 @@
       ]
     },
     "/courses": {
-      "status": "PARTIAL_VISUAL_REVIEW",
+      "status": "FULL_PAGE_DEFAULT_CATALOG_STATE_VISUALLY_REVIEWED",
       "humanViewedWidths": [
         360,
         1280
@@ -1294,10 +1326,19 @@
         "evidence/courses-light-settled-1280.png",
         "evidence/course-contrast-preview-360.png",
         "evidence/course-contrast-preview-1280.png"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false
     },
     "/learn": {
-      "status": "PARTIAL_VISUAL_REVIEW",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FINDING_REPRODUCED",
       "humanViewedWidths": [
         1280
       ],
@@ -1308,7 +1349,16 @@
       "candidateViewedWidths": [
         360,
         1280
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false
     },
     "/sectors/forex-currencies": {
       "status": "PARTIAL_VISUAL_REVIEW",
@@ -1419,6 +1469,216 @@
         "evidence/pr214-final-faq-storage-360.png",
         "evidence/pr214-final-faq-storage-1280.png"
       ]
+    },
+    "/contact": {
+      "humanViewedWidths": [],
+      "notes": [],
+      "evidence": [],
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FINDINGS_REPRODUCED",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false
+    },
+    "/privacy": {
+      "humanViewedWidths": [],
+      "notes": [],
+      "evidence": [],
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FINDINGS_REPRODUCED",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false
+    },
+    "/terms": {
+      "humanViewedWidths": [],
+      "notes": [],
+      "evidence": [],
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FINDINGS_REPRODUCED",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false
+    },
+    "/auth": {
+      "humanViewedWidths": [],
+      "notes": [],
+      "evidence": [],
+      "status": "FULL_PAGE_PUBLIC_DEFAULT_OR_GUARD_STATE_VIEWED",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false
+    },
+    "/reset-password": {
+      "humanViewedWidths": [],
+      "notes": [],
+      "evidence": [],
+      "status": "FULL_PAGE_PUBLIC_DEFAULT_OR_GUARD_STATE_VIEWED",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false
+    },
+    "/ai-mentor": {
+      "humanViewedWidths": [],
+      "notes": [],
+      "evidence": [],
+      "status": "FULL_PAGE_DEFAULT_STATE_VISUALLY_REVIEWED",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false
+    },
+    "/challenge": {
+      "humanViewedWidths": [],
+      "notes": [],
+      "evidence": [],
+      "status": "FULL_PAGE_GUEST_DEFAULT_STATE_VISUALLY_REVIEWED",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false
+    },
+    "/daily": {
+      "humanViewedWidths": [],
+      "notes": [],
+      "evidence": [],
+      "status": "FULL_PAGE_DEFAULT_STATE_VISUALLY_REVIEWED",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false
+    },
+    "/reviews": {
+      "humanViewedWidths": [],
+      "notes": [],
+      "evidence": [],
+      "status": "FULL_PAGE_CONTROLLED_READ_ONLY_STATE_VISUALLY_REVIEWED",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false
+    },
+    "/roadmap": {
+      "humanViewedWidths": [],
+      "notes": [],
+      "evidence": [],
+      "status": "FULL_PAGE_DEFAULT_STATE_VISUALLY_REVIEWED",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false
+    },
+    "/markets": {
+      "humanViewedWidths": [],
+      "notes": [],
+      "evidence": [],
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FINDING_REPRODUCED",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false
+    },
+    "/portfolio": {
+      "humanViewedWidths": [],
+      "notes": [],
+      "evidence": [],
+      "status": "FULL_PAGE_DEFAULT_EMPTY_GUEST_STATE_VISUALLY_REVIEWED",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false
+    },
+    "/leaderboard": {
+      "humanViewedWidths": [],
+      "notes": [],
+      "evidence": [],
+      "status": "FULL_PAGE_DEFAULT_PUBLIC_MEMBERS_STATE_VISUALLY_REVIEWED",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false
+    },
+    "/compare": {
+      "humanViewedWidths": [],
+      "notes": [],
+      "evidence": [],
+      "status": "FULL_PAGE_DEFAULT_STATE_VISUALLY_REVIEWED",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false
     }
   }
 }

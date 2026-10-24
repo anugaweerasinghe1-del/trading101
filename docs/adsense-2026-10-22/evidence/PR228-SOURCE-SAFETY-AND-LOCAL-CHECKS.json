@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-10-24T09:52:13.325861+00:00",
+  "candidateSHA": "db469fdfe7d182813efe7c6684dfb959932a97cc",
+  "baseSHA": "66fdfb3243cf6a8ac066f546d4b9c745d27955fe",
+  "outcome": "PASS",
+  "sourceDiff": "diff --git a/scripts/staticCopyExtra.ts b/scripts/staticCopyExtra.ts\nindex 6a176c6..d89aa69 100644\n--- a/scripts/staticCopyExtra.ts\n+++ b/scripts/staticCopyExtra.ts\n@@ -345,7 +345,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {\n       h: \"Support questions we answer most often\",\n       list: [\n         \"My portfolio disappeared \u2014 check which account, browser and device you are using. Guest records are browser-held. Account cash, positions and server-recorded trades can be restored when the service is available. Earlier guest history, journals and course progress stay on the original browser. If sync fails, contact the maintainer before resetting the practice account.\",\n-        \"How do I reset my practice balance? There is a reset control in the portfolio area; it returns the account to $100,000 in virtual cash and clears open positions.\",\n+        \"How do I reset my practice balance? The portfolio help explains browser-held guest records and account restoration. Clearing site data removes the local copy, including browser-only history and progress, but does not delete or reset the server account copy.\",\n         \"A price looks wrong \u2014 quotes refresh periodically, can be stale or use a labelled fixed fallback, and need not match a broker\u2019s executable price.\",\n         \"Can I use TradeHQ on my phone? Yes, the whole site works on mobile browsers; there is no app to install.\",\n         \"Do you have an affiliate or partnership programme? No.\",\n",
+  "scope": "Exactly one static contact support item. No reset/storage/sync/account/financial/auth/access/DB/progress/privacy-policy/consent/ad/infrastructure changes. Updated branch includes prior227 unchanged.",
+  "localValidation": [
+    "Updated combined Cloudflare build/SEO PASS",
+    "Updated app TypeScript PASS"
+  ],
+  "rollback": "Reviewed one-string revert through serial exact-main/native/live release cycle; no data operation."
+}

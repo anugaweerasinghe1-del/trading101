@@ -1,0 +1,21 @@
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:44781/markets
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Markets sidebar must not cover footer text at 360
+
+true !== false
+
+    at verifyMarketsSidebar (file:///workspace/trading101-markets-sidebar/scripts/verify-markets-sidebar.mjs:20:14)
+    at async file:///workspace/trading101-markets-sidebar/scripts/verify-publisher-browser.mjs:250:3 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: true,
+  expected: false,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

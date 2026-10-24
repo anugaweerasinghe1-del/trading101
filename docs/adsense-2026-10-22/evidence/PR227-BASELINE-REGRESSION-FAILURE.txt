@@ -1,0 +1,21 @@
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:34399/about
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Exactly one mobile navigation landmark on /about
+
+2 !== 1
+
+    at verifyMobileNavigation (file:///workspace/trading101-mobile-nav/scripts/verify-mobile-navigation.mjs:18:14)
+    at async file:///workspace/trading101-mobile-nav/scripts/verify-publisher-browser.mjs:249:3 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 2,
+  expected: 1,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

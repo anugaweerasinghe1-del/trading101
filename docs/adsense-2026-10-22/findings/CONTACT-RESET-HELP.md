@@ -1,0 +1,11 @@
+# THQ-028 — nonexistent reset control in Contact support notes
+
+P2 help-accuracy finding. Fresh full-page rendering of `/contact` advertises a portfolio reset control returning an account to$100000 and clearing positions. Actual Portfolio controls/source contain a reset FAQ but no reset action. No reset, browser-clearing, order or account action is needed to reproduce this misleading instruction.
+
+PR [228](https://github.com/anugaweerasinghe1-del/trading101/pull/228) replaces only that support-list item with accurate browser-held guest records and account-copy guidance. It warns that browser-only history/progress is removed by clearing site data, while the server account copy is not deleted/reset. No feature, storage/sync, financial, auth/DB, progress, privacy-policy/consent/ad or infrastructure behavior changes. A reviewed one-string revert through the same native/live release cycle is the rollback; no data operation.
+
+The updated combined candidate is `db469fdfe7d182813efe7c6684dfb959932a97cc`, based on verified PR227. Exact state and release receipts are authoritative in FINDINGS.json and RELEASE-LEDGER.json. Source safety/build/types and five-width actual preview checks are recorded. CLI raw HTTPS fetch received403/code1010; no TLS/proxy/security change or user-agent impersonation was attempted. Native provider and normal Chrome evidence are separate; do not call this client-path limit a product regression.
+
+Evidence: `CONTACT-RESET-CLAIM-BEFORE.json`, before mobile screenshot, `PR228-SOURCE-SAFETY-AND-LOCAL-CHECKS.json`, `PR228-UPDATED-PREVIEW-SIGNALS.json` and `PR228-UPDATED-PREVIEW-BROWSER.json` in evidence/. This finding arose in supplementary reference material outside the main landmark; full-page reading remains distinct from the441main-body count. No specific Google policy violation is asserted.
+
+Verified production24October: PR #228 merge `a4fb46336277e7b053d7a03f7241683ccfa186e0`; all six exact-main checks PASS, native Cloudflare SUCCESS and Vercel READY/active alias match this commit. Actual five-width support checks, normal browser initial/payload/rendered copy parity and30guest states/four safe controls passed;360/1280 component images were personally viewed. See RELEASE-LEDGER and PR228 receipts. No reset or account/storage action performed.

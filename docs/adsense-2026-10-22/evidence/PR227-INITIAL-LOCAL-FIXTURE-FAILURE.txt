@@ -1,0 +1,30 @@
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37191/about
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37191/contact
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37191/privacy
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37191/terms
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37191/sectors/ai-tech
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37191/
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37191/portfolio
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37191/auth
+node:_http_server:408
+    throw new ERR_HTTP_HEADERS_SENT('write');
+    ^
+
+Error [ERR_HTTP_HEADERS_SENT]: Cannot write headers after they are sent to the client
+    at ServerResponse.writeHead (node:_http_server:408:11)
+    at Server.<anonymous> (file:///workspace/trading101-mobile-nav/scripts/verify-publisher-browser.mjs:47:20)
+    at Server.emit (node:events:509:28)
+    at parserOnIncoming (node:_http_server:1282:12)
+    at HTTPParser.parserOnHeadersComplete (node:_http_common:125:17) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+
+Node.js v24.19.0

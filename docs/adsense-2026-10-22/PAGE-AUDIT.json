@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T05:32:24.551488+00:00",
+  "generatedAt": "2026-10-24T10:26:06.372979+00:00",
   "complete": false,
   "mainBodiesRead": 441,
   "publicRoutes": 441,
@@ -74,7 +74,16 @@
         "evidence": [
           "Initial screenshots and ABOUT-OVERLAP-AFTER evidence",
           "Initial screenshots and ABOUT-OVERLAP-AFTER evidence"
-        ]
+        ],
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/trade",
@@ -93,7 +102,12 @@
         "assessment": "Free guest practice,170assets and optional-account restoration are qualified; virtual outcomes do not predict real returns."
       },
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "supplementaryNotesReading": {
+        "status": "ACTUAL_RENDERED_NOTES_READ",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/about",
@@ -165,7 +179,16 @@
         "evidence": [
           "Initial screenshots and ABOUT-OVERLAP-AFTER evidence",
           "Initial screenshots and ABOUT-OVERLAP-AFTER evidence"
-        ]
+        ],
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -190,7 +213,23 @@
       ],
       "findingStates": {
         "THQ-001": "PUBLICLY_VERIFIED"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "ACTUAL_RENDERED_NOTES_READ",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-001",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 212
+        },
+        {
+          "id": "THQ-027",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 227
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/admin",
@@ -223,7 +262,8 @@
         "Restricted administrative guest guard, excluded from public editorial coverage"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/admin/ai",
@@ -256,7 +296,8 @@
         "Restricted administrative guest guard, excluded from public editorial coverage"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/admin/courses",
@@ -289,7 +330,8 @@
         "Restricted administrative guest guard, excluded from public editorial coverage"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/admin/daily",
@@ -322,7 +364,8 @@
         "Restricted administrative guest guard, excluded from public editorial coverage"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/admin/editor",
@@ -355,7 +398,8 @@
         "Restricted administrative guest guard, excluded from public editorial coverage"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/admin/reviews",
@@ -388,7 +432,8 @@
         "Restricted administrative guest guard, excluded from public editorial coverage"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/admin/seo-audit",
@@ -421,7 +466,8 @@
         "Restricted administrative guest guard, excluded from public editorial coverage"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/admin/validator",
@@ -454,7 +500,8 @@
         "Restricted administrative guest guard, excluded from public editorial coverage"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/ai-mentor",
@@ -514,7 +561,16 @@
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -536,7 +592,12 @@
         "controlEvidence": "evidence/live-faq/4d638ee77e5be76c.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "ACTUAL_RENDERED_NOTES_READ",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/auth",
@@ -598,7 +659,16 @@
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/privacy",
@@ -613,7 +683,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/challenge",
@@ -673,7 +744,16 @@
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/leaderboard",
@@ -688,7 +768,12 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "supplementaryNotesReading": {
+        "status": "ACTUAL_RENDERED_NOTES_READ",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/compare",
@@ -748,7 +833,16 @@
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/compare/bitcoin-vs-ethereum",
@@ -763,7 +857,12 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "supplementaryNotesReading": {
+        "status": "ACTUAL_RENDERED_NOTES_READ",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/compare/apple-vs-microsoft",
@@ -855,7 +954,12 @@
         "controlEvidence": "evidence/live-faq/637d568e1a209137.json"
       },
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/compare/bitcoin-vs-ethereum",
@@ -947,7 +1051,12 @@
         "controlEvidence": "evidence/live-faq/42424783ef17a348.json"
       },
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/compare/bitcoin-vs-gold",
@@ -1039,7 +1148,12 @@
         "controlEvidence": "evidence/live-faq/d3e534cea8ed2f72.json"
       },
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/compare/ethereum-vs-solana",
@@ -1131,7 +1245,12 @@
         "controlEvidence": "evidence/live-faq/cc52ec3c8b301b88.json"
       },
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/compare/forex-vs-stocks",
@@ -1223,7 +1342,12 @@
         "controlEvidence": "evidence/live-faq/d12dee690ad59114.json"
       },
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/compare/nvidia-vs-amd",
@@ -1315,7 +1439,12 @@
         "controlEvidence": "evidence/live-faq/6ae9170421e9f3a6.json"
       },
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/compare/stocks-vs-crypto",
@@ -1407,7 +1536,12 @@
         "controlEvidence": "evidence/live-faq/b9d2167274033e58.json"
       },
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/compare/tesla-vs-nvidia",
@@ -1499,7 +1633,12 @@
         "controlEvidence": "evidence/live-faq/6cae9ee44161a7ef.json"
       },
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/contact",
@@ -1559,7 +1698,16 @@
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/about",
@@ -1596,7 +1744,28 @@
         "controlEvidence": "evidence/live-faq/2074d5bd1aceddaa.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "ACTUAL_RENDERED_NOTES_READ",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-003",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 214
+        },
+        {
+          "id": "THQ-028",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 228
+        },
+        {
+          "id": "THQ-029",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 227
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/courses",
@@ -1669,7 +1838,16 @@
           "evidence/courses-light-settled-1280.png",
           "evidence/course-contrast-preview-360.png",
           "evidence/course-contrast-preview-1280.png"
-        ]
+        ],
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/learn",
@@ -1700,6 +1878,17 @@
           "outcome": "PASS",
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR215-PRODUCTION-BROWSER.json"
+        }
+      ],
+      "supplementaryNotesReading": {
+        "status": "ACTUAL_RENDERED_NOTES_READ",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-005",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 215
         }
       ]
     },
@@ -1801,6 +1990,13 @@
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR213-PRODUCTION-BROWSER.json"
         }
+      ],
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-002",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 213
+        }
       ]
     },
     {
@@ -1893,7 +2089,8 @@
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/exchange-tickers-and-price-aggregation",
@@ -1982,7 +2179,8 @@
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/portfolio-rebalancing-and-cash-drag",
@@ -2071,7 +2269,8 @@
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/courses/diversification-and-position-sizing",
@@ -2168,6 +2367,13 @@
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR213-PRODUCTION-BROWSER.json"
         }
+      ],
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-002",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 213
+        }
       ]
     },
     {
@@ -2257,7 +2463,8 @@
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/courses/diversification-and-position-sizing/foundations-of-asset-allocation",
@@ -2346,7 +2553,8 @@
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/courses/diversification-and-position-sizing/managing-concentration-risk",
@@ -2435,7 +2643,8 @@
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/courses/futures-and-derivatives",
@@ -2532,6 +2741,17 @@
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR213-PRODUCTION-BROWSER.json"
         }
+      ],
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-002",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 213
+        }
       ]
     },
     {
@@ -2621,7 +2841,12 @@
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/courses/futures-and-derivatives/hedging-with-futures",
@@ -2710,7 +2935,12 @@
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/courses/futures-and-derivatives/margin-and-leverage-in-futures",
@@ -2799,7 +3029,12 @@
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/courses/futures-and-derivatives/micro-futures-for-beginners",
@@ -2888,7 +3123,12 @@
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/courses/futures-and-derivatives/what-is-a-futures-contract",
@@ -2977,7 +3217,12 @@
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/courses/macro-reading-for-traders",
@@ -3074,6 +3319,17 @@
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR213-PRODUCTION-BROWSER.json"
         }
+      ],
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-002",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 213
+        }
       ]
     },
     {
@@ -3163,7 +3419,12 @@
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/courses/macro-reading-for-traders/reading-cpi-and-inflation",
@@ -3243,7 +3504,12 @@
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/courses/macro-reading-for-traders/the-dollar-index-dxy",
@@ -3323,7 +3589,12 @@
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/courses/macro-reading-for-traders/the-fed-and-fomc-cycle",
@@ -3403,7 +3674,12 @@
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/courses/macro-reading-for-traders/the-yield-curve-and-recession",
@@ -3483,7 +3759,12 @@
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/courses/options-trading-fundamentals",
@@ -3571,6 +3852,17 @@
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR213-PRODUCTION-BROWSER.json"
         }
+      ],
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-002",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 213
+        }
       ]
     },
     {
@@ -3651,7 +3943,12 @@
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/courses/options-trading-fundamentals/implied-volatility-and-earnings",
@@ -3731,7 +4028,12 @@
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/courses/options-trading-fundamentals/options-risk-management",
@@ -3811,7 +4113,12 @@
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
@@ -3891,7 +4198,12 @@
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/courses/options-trading-fundamentals/what-is-an-option",
@@ -3971,7 +4283,12 @@
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/courses/trading-psychology-mastery",
@@ -4059,6 +4376,17 @@
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR213-PRODUCTION-BROWSER.json"
         }
+      ],
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-002",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 213
+        }
       ]
     },
     {
@@ -4139,7 +4467,12 @@
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/courses/trading-psychology-mastery/discipline-and-daily-rituals",
@@ -4219,7 +4552,12 @@
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/courses/trading-psychology-mastery/handling-drawdowns",
@@ -4299,7 +4637,12 @@
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/courses/trading-psychology-mastery/revenge-trading-and-tilt",
@@ -4379,7 +4722,12 @@
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/courses/trading-psychology-mastery/the-trading-journal",
@@ -4459,7 +4807,12 @@
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/daily",
@@ -4519,7 +4872,16 @@
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false
       },
       "safeInternalNavigation": {
         "status": "No qualifying nonmutating main link; not tested"
@@ -4531,7 +4893,12 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "supplementaryNotesReading": {
+        "status": "ACTUAL_RENDERED_NOTES_READ",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/how-to-trade",
@@ -4606,7 +4973,12 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/how-to-trade/btc",
@@ -4698,6 +5070,17 @@
           "scope": "Only the relevantcopy/visibleFAQ/schema correction atfivewidths; doesnotcompletewholepageaudit.",
           "outcome": "PASS",
           "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
+        }
+      ],
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-007",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 214
         }
       ]
     },
@@ -4792,6 +5175,17 @@
           "outcome": "PASS",
           "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
         }
+      ],
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-007",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 214
+        }
       ]
     },
     {
@@ -4884,6 +5278,17 @@
           "scope": "Only the relevantcopy/visibleFAQ/schema correction atfivewidths; doesnotcompletewholepageaudit.",
           "outcome": "PASS",
           "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
+        }
+      ],
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-007",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 214
         }
       ]
     },
@@ -4978,6 +5383,17 @@
           "outcome": "PASS",
           "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
         }
+      ],
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-007",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 214
+        }
       ]
     },
     {
@@ -5070,6 +5486,17 @@
           "scope": "Only the relevantcopy/visibleFAQ/schema correction atfivewidths; doesnotcompletewholepageaudit.",
           "outcome": "PASS",
           "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
+        }
+      ],
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-007",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 214
         }
       ]
     },
@@ -5164,6 +5591,17 @@
           "outcome": "PASS",
           "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
         }
+      ],
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-007",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 214
+        }
       ]
     },
     {
@@ -5224,7 +5662,16 @@
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -5246,7 +5693,12 @@
         "controlEvidence": "evidence/live-faq/e5eeebf4560868e5.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "ACTUAL_RENDERED_NOTES_READ",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/learn",
@@ -5317,7 +5769,16 @@
         "candidateViewedWidths": [
           360,
           1280
-        ]
+        ],
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -5352,7 +5813,23 @@
         "controlEvidence": "evidence/live-faq/8f96f30f9195a0cc.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "ACTUAL_RENDERED_NOTES_READ",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-008",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 217
+        },
+        {
+          "id": "THQ-031",
+          "state": "REPRODUCED_SAFE_LAYOUT_FIX_IN_PROGRESS",
+          "pr": null
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/learn-trading-guide",
@@ -5427,7 +5904,12 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/learn/1",
@@ -5536,6 +6018,13 @@
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR218-PRODUCTION-BROWSER.json"
         }
+      ],
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-009",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 218
+        }
       ]
     },
     {
@@ -5635,6 +6124,13 @@
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR218-PRODUCTION-BROWSER.json"
         }
+      ],
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-009",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 218
+        }
       ]
     },
     {
@@ -5733,6 +6229,13 @@
           "outcome": "PASS",
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR218-PRODUCTION-BROWSER.json"
+        }
+      ],
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-009",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 218
         }
       ]
     },
@@ -5843,6 +6346,18 @@
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR218-PRODUCTION-BROWSER.json"
         }
+      ],
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-009",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 218
+        },
+        {
+          "id": "THQ-010",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 218
+        }
       ]
     },
     {
@@ -5941,6 +6456,13 @@
           "outcome": "PASS",
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR218-PRODUCTION-BROWSER.json"
+        }
+      ],
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-009",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 218
         }
       ]
     },
@@ -6041,6 +6563,13 @@
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR218-PRODUCTION-BROWSER.json"
         }
+      ],
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-009",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 218
+        }
       ]
     },
     {
@@ -6123,7 +6652,8 @@
         "controlEvidence": "evidence/live-faq/ac1b9c75efbfeada.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/learn/article/how-to-build-a-portfolio",
@@ -6205,7 +6735,8 @@
         "controlEvidence": "evidence/live-faq/8606b994fa5ddb2b.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/learn/article/how-to-read-stock-charts",
@@ -6287,7 +6818,8 @@
         "controlEvidence": "evidence/live-faq/adebfb3025c36ccd.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/learn/article/market-orders-vs-limit-orders",
@@ -6369,7 +6901,8 @@
         "controlEvidence": "evidence/live-faq/13609a658930da60.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/learn/article/risk-management-in-trading",
@@ -6451,7 +6984,8 @@
         "controlEvidence": "evidence/live-faq/bd8705a72861c7ee.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/learn/article/stock-market-index-etfs",
@@ -6533,7 +7067,8 @@
         "controlEvidence": "evidence/live-faq/9f5ba0b1212e1c5e.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/learn/article/technical-indicators-rsi-macd-moving-averages",
@@ -6615,7 +7150,8 @@
         "controlEvidence": "evidence/live-faq/ec948df1647e69d7.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/learn/article/trading-strategies-for-beginners",
@@ -6697,7 +7233,8 @@
         "controlEvidence": "evidence/live-faq/a8202d2bf62a5745.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/learn/article/what-is-paper-trading",
@@ -6779,7 +7316,8 @@
         "controlEvidence": "evidence/live-faq/4ed25eaf3092bc95.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/learn/country",
@@ -6854,7 +7392,12 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/learn/country/india",
@@ -6936,7 +7479,12 @@
         "controlEvidence": "evidence/live-faq-v2/d566bfd7ba905d5c.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/learn/country/nigeria",
@@ -7018,7 +7566,12 @@
         "controlEvidence": "evidence/live-faq-v2/ff9a26973c0c60e4.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/learn/country/pakistan",
@@ -7100,7 +7653,12 @@
         "controlEvidence": "evidence/live-faq-v2/3d333321f4bcac7f.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/learn/country/philippines",
@@ -7182,7 +7740,12 @@
         "controlEvidence": "evidence/live-faq-v2/2c25114c1d5b59f5.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/learn/country/sri-lanka",
@@ -7262,7 +7825,12 @@
         "answersRead": 3,
         "assessment": "Three captured expanded answers read: simulator is not a regulated real broker; authority/provider guidance needed for live eligibility; paper gains cannot convert to cash. USD/LKR illustration is abstract USD scope, not corroboration of FX settlement (INV-FX01).",
         "controlEvidence": "evidence/live-faq-v2/773093a928793a7b.json"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/learn/crypto-vs-stocks",
@@ -7344,7 +7912,8 @@
         "controlEvidence": "evidence/live-faq/e6a85be18476f749.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/learn/how-to-build-a-portfolio",
@@ -7426,7 +7995,8 @@
         "controlEvidence": "evidence/live-faq/23a5f55c25a114d6.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/learn/how-to-read-stock-charts",
@@ -7508,7 +8078,8 @@
         "controlEvidence": "evidence/live-faq/c24d1b7b7d683ac4.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/learn/risk-management-in-trading",
@@ -7590,7 +8161,8 @@
         "controlEvidence": "evidence/live-faq/0f2a2dbf514b1056.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/learn/stock-market-index-etfs",
@@ -7672,7 +8244,8 @@
         "controlEvidence": "evidence/live-faq/070277b130b6d22c.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/learn/trading-strategies-for-beginners",
@@ -7754,7 +8327,8 @@
         "controlEvidence": "evidence/live-faq/6f0dcddcba34911e.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/learn/what-is-paper-trading",
@@ -7836,7 +8410,8 @@
         "controlEvidence": "evidence/live-faq/02aba96413d5f886.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/markets",
@@ -7896,7 +8471,16 @@
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/trade/msft",
@@ -7911,7 +8495,18 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "supplementaryNotesReading": {
+        "status": "ACTUAL_RENDERED_NOTES_READ",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-030",
+          "state": "MERGED_PRODUCTION_VERIFICATION_PENDING",
+          "pr": 229
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/niche/aapl",
@@ -8000,7 +8595,8 @@
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR220-PRODUCTION-BROWSER.json"
         }
-      ]
+      ],
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/ada",
@@ -8080,7 +8676,8 @@
         "answersRead": 3,
         "assessment": "Cardano (ADA): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/607d3a54759a2585.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/adbe",
@@ -8160,7 +8757,8 @@
         "answersRead": 3,
         "assessment": "Adobe Inc. (ADBE): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/60e1eca1271ca5a9.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/algo",
@@ -8240,7 +8838,8 @@
         "answersRead": 3,
         "assessment": "Algorand (ALGO): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/5d742706a99516d6.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/amd",
@@ -8320,7 +8919,8 @@
         "answersRead": 3,
         "assessment": "Advanced Micro Devices (AMD): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/8f9f7c62f3afcdf8.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/amzn",
@@ -8400,7 +9000,8 @@
         "answersRead": 3,
         "assessment": "Amazon.com Inc. (AMZN): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/9da377c89236ac67.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/atom",
@@ -8480,7 +9081,8 @@
         "answersRead": 3,
         "assessment": "Cosmos (ATOM): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/01bd0cb2edba299a.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/aud-usd",
@@ -8560,7 +9162,8 @@
         "answersRead": 3,
         "assessment": "Australian Dollar / US Dollar (AUD/USD): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/ccd43977a6980290.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/avax",
@@ -8640,7 +9243,8 @@
         "answersRead": 3,
         "assessment": "Avalanche (AVAX): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/ee980031b8102455.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/avgo",
@@ -8720,7 +9324,8 @@
         "answersRead": 3,
         "assessment": "Broadcom Inc. (AVGO): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/aebf31ebe706f316.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/bnb",
@@ -8800,7 +9405,8 @@
         "answersRead": 3,
         "assessment": "BNB (BNB): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/6be830ffdd97681e.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/btc",
@@ -8893,6 +9499,13 @@
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR220-PRODUCTION-BROWSER.json"
         }
+      ],
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-013",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 220
+        }
       ]
     },
     {
@@ -8973,7 +9586,8 @@
         "answersRead": 3,
         "assessment": "Coinbase Global (COIN): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/950980f8bd7ac485.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/copper",
@@ -9053,7 +9667,8 @@
         "answersRead": 3,
         "assessment": "Copper (HG): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/513477e5b9eede19.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/crm",
@@ -9133,7 +9748,8 @@
         "answersRead": 3,
         "assessment": "Salesforce Inc. (CRM): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/6e83e223e5a805da.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/doge",
@@ -9213,7 +9829,8 @@
         "answersRead": 3,
         "assessment": "Dogecoin (DOGE): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/601ac9f05da30256.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/dot",
@@ -9293,7 +9910,8 @@
         "answersRead": 3,
         "assessment": "Polkadot (DOT): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/ed9867f0cc87b509.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/eth",
@@ -9382,7 +10000,8 @@
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR220-PRODUCTION-BROWSER.json"
         }
-      ]
+      ],
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/eur-usd",
@@ -9471,7 +10090,8 @@
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR220-PRODUCTION-BROWSER.json"
         }
-      ]
+      ],
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/ftm",
@@ -9551,7 +10171,8 @@
         "answersRead": 3,
         "assessment": "Fantom (FTM): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/7b8df9edd0d2243e.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/gbp-usd",
@@ -9631,7 +10252,8 @@
         "answersRead": 3,
         "assessment": "British Pound / US Dollar (GBP/USD): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/ed47ade64bed3b99.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/gold",
@@ -9711,7 +10333,8 @@
         "answersRead": 3,
         "assessment": "Gold (XAU): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/fb4f2135d5fd935e.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/googl",
@@ -9791,7 +10414,8 @@
         "answersRead": 3,
         "assessment": "Alphabet Inc. (GOOGL): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/62afd2144b717ca9.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/icp",
@@ -9871,7 +10495,8 @@
         "answersRead": 3,
         "assessment": "Internet Computer (ICP): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/bb15736e7528fff9.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/intc",
@@ -9951,7 +10576,8 @@
         "answersRead": 3,
         "assessment": "Intel Corporation (INTC): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/db5421c82ddf00b6.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/link",
@@ -10031,7 +10657,8 @@
         "answersRead": 3,
         "assessment": "Chainlink (LINK): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/b03105f4d9e5aac8.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/ltc",
@@ -10111,7 +10738,8 @@
         "answersRead": 3,
         "assessment": "Litecoin (LTC): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/8a0ebdc3090a9138.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/matic",
@@ -10191,7 +10819,8 @@
         "answersRead": 3,
         "assessment": "Polygon (MATIC): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/f0799e5de5ca223f.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/meta",
@@ -10271,7 +10900,8 @@
         "answersRead": 3,
         "assessment": "Meta Platforms Inc. (META): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/efc2cb37a56255d0.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/msft",
@@ -10351,7 +10981,8 @@
         "answersRead": 3,
         "assessment": "Microsoft Corporation (MSFT): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/a19320757e5a910e.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/nat-gas",
@@ -10431,7 +11062,8 @@
         "answersRead": 3,
         "assessment": "Natural Gas (NG): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/20319088312f3513.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/near",
@@ -10511,7 +11143,8 @@
         "answersRead": 3,
         "assessment": "NEAR Protocol (NEAR): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/64759a7a32d8f7b5.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/nflx",
@@ -10591,7 +11224,8 @@
         "answersRead": 3,
         "assessment": "Netflix Inc. (NFLX): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/34caaf8297f9a7f6.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/nvda",
@@ -10671,7 +11305,8 @@
         "answersRead": 3,
         "assessment": "NVIDIA Corporation (NVDA): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/121ca97f4eea9a9f.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/oil",
@@ -10751,7 +11386,8 @@
         "answersRead": 3,
         "assessment": "Crude Oil WTI (WTI): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/794968b84c1d1468.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/orcl",
@@ -10831,7 +11467,8 @@
         "answersRead": 3,
         "assessment": "Oracle Corporation (ORCL): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/481c6f32d178de37.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/pltr",
@@ -10911,7 +11548,8 @@
         "answersRead": 3,
         "assessment": "Palantir Technologies (PLTR): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/ca6308cc9194395b.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/qcom",
@@ -10991,7 +11629,8 @@
         "answersRead": 3,
         "assessment": "Qualcomm Inc. (QCOM): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/4242a27209d1c270.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/shib",
@@ -11084,6 +11723,13 @@
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR220-PRODUCTION-BROWSER.json"
         }
+      ],
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-012",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 220
+        }
       ]
     },
     {
@@ -11164,7 +11810,8 @@
         "answersRead": 3,
         "assessment": "Shopify Inc. (SHOP): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/fdf4802eba569ecb.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/silver",
@@ -11244,7 +11891,8 @@
         "answersRead": 3,
         "assessment": "Silver (XAG): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/103b40e2b9d41fe3.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/sol",
@@ -11324,7 +11972,8 @@
         "answersRead": 3,
         "assessment": "Solana (SOL): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/62747d459df1e19b.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/sq",
@@ -11404,7 +12053,8 @@
         "answersRead": 3,
         "assessment": "Block Inc. (SQ): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/373454de6a22abb7.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/tsla",
@@ -11484,7 +12134,8 @@
         "answersRead": 3,
         "assessment": "Tesla Inc. (TSLA): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/e6b3753aff3d33a7.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/uber",
@@ -11564,7 +12215,8 @@
         "answersRead": 3,
         "assessment": "Uber Technologies (UBER): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/4ba75e4b31d9b3f2.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/uni",
@@ -11644,7 +12296,8 @@
         "answersRead": 3,
         "assessment": "Uniswap (UNI): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/38fe9169992c2176.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/usd-cad",
@@ -11724,7 +12377,8 @@
         "answersRead": 3,
         "assessment": "US Dollar / Canadian Dollar (USD/CAD): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/a97b23baa5f369a6.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/usd-jpy",
@@ -11803,7 +12457,8 @@
       "nativeVisibleFAQReview": {
         "answersRead": 3,
         "assessment": "Visible no-recommendation, practice workflow and interest-differential/macroeconomic driver answers read within actual captured main; distinct from collapsed-answer totals."
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/xlm",
@@ -11883,7 +12538,8 @@
         "answersRead": 3,
         "assessment": "Stellar (XLM): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/00634ee9ec03d0f2.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/niche/xrp",
@@ -11963,7 +12619,8 @@
         "answersRead": 3,
         "assessment": "XRP (XRP): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/c8b6d3e777b760e1.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/portfolio",
@@ -12023,7 +12680,16 @@
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/trade",
@@ -12049,7 +12715,23 @@
         "controlEvidence": "evidence/live-faq/f90b1665cee04b95.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "ACTUAL_RENDERED_NOTES_READ",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-025",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 225
+        },
+        {
+          "id": "THQ-027",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 227
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/privacy",
@@ -12109,7 +12791,16 @@
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/contact",
@@ -12131,7 +12822,18 @@
         "controlEvidence": "evidence/live-faq/b22a3936128395d7.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "ACTUAL_RENDERED_NOTES_READ",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-029",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 227
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/reset-password",
@@ -12193,7 +12895,16 @@
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false
       },
       "safeInternalNavigation": {
         "status": "No qualifying nonmutating main link; not tested"
@@ -12205,7 +12916,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/reviews",
@@ -12265,7 +12977,16 @@
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false
       },
       "safeInternalNavigation": {
         "status": "No qualifying nonmutating main link; not tested"
@@ -12277,7 +12998,12 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "supplementaryNotesReading": {
+        "status": "ACTUAL_RENDERED_NOTES_READ",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/roadmap",
@@ -12337,7 +13063,16 @@
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/reviews",
@@ -12352,7 +13087,12 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "supplementaryNotesReading": {
+        "status": "ACTUAL_RENDERED_NOTES_READ",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/sectors/ai-tech",
@@ -12444,6 +13184,18 @@
           "outcome": "PASS",
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR219-PRODUCTION-BROWSER.json"
+        }
+      ],
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-011",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 219
+        },
+        {
+          "id": "THQ-027",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 227
         }
       ]
     },
@@ -12538,6 +13290,13 @@
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR219-PRODUCTION-BROWSER.json"
         }
+      ],
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-011",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 219
+        }
       ]
     },
     {
@@ -12631,6 +13390,13 @@
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR219-PRODUCTION-BROWSER.json"
         }
+      ],
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-011",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 219
+        }
       ]
     },
     {
@@ -12723,6 +13489,13 @@
           "outcome": "PASS",
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR219-PRODUCTION-BROWSER.json"
+        }
+      ],
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-011",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 219
         }
       ]
     },
@@ -12828,6 +13601,13 @@
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR219-PRODUCTION-BROWSER.json"
         }
+      ],
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-011",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 219
+        }
       ]
     },
     {
@@ -12920,6 +13700,13 @@
           "outcome": "PASS",
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR219-PRODUCTION-BROWSER.json"
+        }
+      ],
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-011",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 219
         }
       ]
     },
@@ -13014,6 +13801,13 @@
           "scope": "Onlytherelevantdisplay/contentcorrection; wholepageauditremainsseparatelystaged.",
           "evidence": "evidence/PR219-PRODUCTION-BROWSER.json"
         }
+      ],
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-011",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 219
+        }
       ]
     },
     {
@@ -13089,7 +13883,12 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/strategy/day-trading",
@@ -13169,7 +13968,8 @@
         "assessment": "Answers reinforce the specific main worksheet context and qualify results by inputs/costs/sample; no universal winrate or suitability claim. Freepractice answer explicitlyallowsseparateworksheet/externaldata, avoiding a claim that unsupported indicators/orders are implemented.",
         "controlEvidence": "evidence/live-faq/f0af7cdede237fed.json"
       },
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/strategy/dca-dollar-cost-averaging",
@@ -13249,7 +14049,8 @@
         "assessment": "Answers reinforce the specific main worksheet context and qualify results by inputs/costs/sample; no universal winrate or suitability claim. Freepractice answer explicitlyallowsseparateworksheet/externaldata, avoiding a claim that unsupported indicators/orders are implemented.",
         "controlEvidence": "evidence/live-faq/7a9dbc6eb2dbca4d.json"
       },
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/strategy/macd-strategy",
@@ -13329,7 +14130,8 @@
         "assessment": "Answers reinforce the specific main worksheet context and qualify results by inputs/costs/sample; no universal winrate or suitability claim. Freepractice answer explicitlyallowsseparateworksheet/externaldata, avoiding a claim that unsupported indicators/orders are implemented.",
         "controlEvidence": "evidence/live-faq/b8041ce42b5bdca3.json"
       },
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/strategy/rsi-strategy",
@@ -13409,7 +14211,8 @@
         "assessment": "Answers reinforce the specific main worksheet context and qualify results by inputs/costs/sample; no universal winrate or suitability claim. Freepractice answer explicitlyallowsseparateworksheet/externaldata, avoiding a claim that unsupported indicators/orders are implemented.",
         "controlEvidence": "evidence/live-faq/fc59671daa4f3d37.json"
       },
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/strategy/scalping",
@@ -13489,7 +14292,8 @@
         "assessment": "Answers reinforce the specific main worksheet context and qualify results by inputs/costs/sample; no universal winrate or suitability claim. Freepractice answer explicitlyallowsseparateworksheet/externaldata, avoiding a claim that unsupported indicators/orders are implemented.",
         "controlEvidence": "evidence/live-faq/4dbd439f8819e6be.json"
       },
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/strategy/swing-trading",
@@ -13569,7 +14373,8 @@
         "assessment": "Answers reinforce the specific main worksheet context and qualify results by inputs/costs/sample; no universal winrate or suitability claim. Freepractice answer explicitlyallowsseparateworksheet/externaldata, avoiding a claim that unsupported indicators/orders are implemented.",
         "controlEvidence": "evidence/live-faq/80e2a7725b57714d.json"
       },
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/terms",
@@ -13629,7 +14434,16 @@
       "visualReview": {
         "status": "PENDING_OR_PARTIAL",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/contact",
@@ -13651,7 +14465,18 @@
         "controlEvidence": "evidence/live-faq/6b08b3566820b509.json",
         "readAt": "2026-10-24T05:00:29.703116+00:00",
         "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "ACTUAL_RENDERED_NOTES_READ",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-029",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 227
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trade",
@@ -13753,6 +14578,17 @@
           "outcome": "PASS",
           "scope": "Four window controls, axis bounds, source limitations and relevant expanded FAQ; tiny fallback outage is local test condition. No whole-page completion inferred."
         }
+      ],
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-026",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 226
+        }
       ]
     },
     {
@@ -13836,7 +14672,12 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.074983+00:00"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/abbv",
@@ -13935,7 +14776,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075022+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/ada",
@@ -14028,7 +14870,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075040+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/adbe",
@@ -14134,7 +14977,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075055+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/agg",
@@ -14249,7 +15093,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075068+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/algo",
@@ -14358,7 +15203,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075082+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/aluminum",
@@ -14467,7 +15313,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075095+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/amd",
@@ -14574,7 +15421,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075108+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/amzn",
@@ -14694,7 +15542,18 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075121+00:00"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-018",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 221
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trade/apt",
@@ -14819,6 +15678,13 @@
           "outcome": "PASS",
           "scope": "Four window controls, axis bounds, source limitations and relevant expanded FAQ; tiny fallback outage is local test condition. No whole-page completion inferred."
         }
+      ],
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-021",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 222
+        }
       ]
     },
     {
@@ -14926,7 +15792,8 @@
         "controlEvidence": "evidence/continuation-20261023/trade-arb.json",
         "readAt": "2026-10-23T15:46:33.469819+00:00",
         "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/arkk",
@@ -15047,7 +15914,8 @@
           "outcome": "PASS",
           "scope": "Four window controls, axis bounds, source limitations and relevant expanded FAQ; tiny fallback outage is local test condition. No whole-page completion inferred."
         }
-      ]
+      ],
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/atom",
@@ -15154,7 +16022,8 @@
         "controlEvidence": "evidence/continuation-20261023/trade-atom.json",
         "readAt": "2026-10-23T15:46:33.469819+00:00",
         "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/audusd",
@@ -15275,7 +16144,8 @@
           "outcome": "PASS",
           "scope": "Four window controls, axis bounds, source limitations and relevant expanded FAQ; tiny fallback outage is local test condition. No whole-page completion inferred."
         }
-      ]
+      ],
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/avax",
@@ -15388,7 +16258,8 @@
         "controlEvidence": "evidence/continuation-20261023/trade-avax.json",
         "readAt": "2026-10-23T15:46:33.469819+00:00",
         "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/avgo",
@@ -15508,7 +16379,8 @@
           "outcome": "PASS",
           "scope": "Four window controls, axis bounds, source limitations and relevant expanded FAQ; tiny fallback outage is local test condition. No whole-page completion inferred."
         }
-      ]
+      ],
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/ba",
@@ -15612,7 +16484,8 @@
         "controlEvidence": "evidence/continuation-20261023/trade-ba.json",
         "readAt": "2026-10-23T15:46:33.469819+00:00",
         "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/bac",
@@ -15716,7 +16589,8 @@
         "controlEvidence": "evidence/continuation-20261023/trade-bac.json",
         "readAt": "2026-10-23T15:46:33.469819+00:00",
         "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/bnb",
@@ -15819,7 +16693,12 @@
         "controlEvidence": "evidence/continuation-20261023/trade-bnb.json",
         "readAt": "2026-10-23T15:46:33.469819+00:00",
         "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/brent",
@@ -15942,7 +16821,8 @@
           "outcome": "PASS",
           "scope": "Four window controls, axis bounds, source limitations and relevant expanded FAQ; tiny fallback outage is local test condition. No whole-page completion inferred."
         }
-      ]
+      ],
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/btc",
@@ -16076,7 +16956,28 @@
         "controlEvidence": "evidence/continuation-20261023/trade-btc.json",
         "readAt": "2026-10-23T15:46:33.469819+00:00",
         "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-019",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 222
+        },
+        {
+          "id": "THQ-022",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 222
+        },
+        {
+          "id": "THQ-026",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 226
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trade/cat",
@@ -16180,7 +17081,8 @@
         "controlEvidence": "evidence/continuation-20261023/trade-cat.json",
         "readAt": "2026-10-23T15:46:33.469819+00:00",
         "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/coffee",
@@ -16287,7 +17189,8 @@
         "controlEvidence": "evidence/continuation-20261023/trade-coffee.json",
         "readAt": "2026-10-23T15:46:33.469819+00:00",
         "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/coin",
@@ -16392,7 +17295,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075135+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/copper",
@@ -16501,7 +17405,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075150+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/corn",
@@ -16609,7 +17514,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075164+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/cost",
@@ -16714,7 +17620,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075178+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/cotton",
@@ -16822,7 +17729,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075191+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/crm",
@@ -16928,7 +17836,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075205+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/crwd",
@@ -17033,7 +17942,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075219+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/csco",
@@ -17138,7 +18048,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075233+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/cvx",
@@ -17243,7 +18154,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075248+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/ddog",
@@ -17348,7 +18260,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075263+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/de",
@@ -17453,7 +18366,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075277+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/dia",
@@ -17559,7 +18473,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075291+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/dis",
@@ -17664,7 +18579,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075305+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/docu",
@@ -17769,7 +18685,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075319+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/doge",
@@ -17883,7 +18800,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075334+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/dot",
@@ -17997,7 +18915,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075349+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/eth",
@@ -18109,7 +19028,12 @@
         "controlEvidence": "evidence/continuation-20261023/trade-eth.json",
         "readAt": "2026-10-24T04:09:25.837635+00:00",
         "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/eurgbp",
@@ -18213,7 +19137,8 @@
         "controlEvidence": "evidence/continuation-20261023/trade-eurgbp.json",
         "readAt": "2026-10-24T04:09:25.837800+00:00",
         "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/eurjpy",
@@ -18326,7 +19251,8 @@
         "controlEvidence": "evidence/continuation-20261023/trade-eurjpy.json",
         "readAt": "2026-10-24T04:09:25.837956+00:00",
         "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/eurusd",
@@ -18429,7 +19355,12 @@
         "controlEvidence": "evidence/continuation-20261023/trade-eurusd.json",
         "readAt": "2026-10-24T04:09:25.838075+00:00",
         "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/fil",
@@ -18536,7 +19467,8 @@
         "controlEvidence": "evidence/continuation-20261023/trade-fil.json",
         "readAt": "2026-10-24T04:09:25.838141+00:00",
         "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/ftm",
@@ -18643,7 +19575,8 @@
         "controlEvidence": "evidence/continuation-20261023/trade-ftm.json",
         "readAt": "2026-10-24T04:09:25.838274+00:00",
         "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/gbpjpy",
@@ -18747,7 +19680,8 @@
         "controlEvidence": "evidence/continuation-20261023/trade-gbpjpy.json",
         "readAt": "2026-10-24T04:09:25.838387+00:00",
         "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/gbpusd",
@@ -18850,7 +19784,12 @@
         "controlEvidence": "evidence/continuation-20261023/trade-gbpusd.json",
         "readAt": "2026-10-24T04:09:25.838454+00:00",
         "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/gld",
@@ -18956,7 +19895,14 @@
         "controlEvidence": "evidence/continuation-20261023/trade-gld.json",
         "readAt": "2026-10-24T04:09:25.838602+00:00",
         "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
-      }
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-023",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 223
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trade/gold",
@@ -19061,7 +20007,12 @@
         "controlEvidence": "evidence/continuation-20261023/trade-gold.json",
         "readAt": "2026-10-24T04:09:25.838726+00:00",
         "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/googl",
@@ -19164,7 +20115,12 @@
         "controlEvidence": "evidence/continuation-20261023/trade-googl.json",
         "readAt": "2026-10-24T04:09:25.838842+00:00",
         "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/gs",
@@ -19268,7 +20224,8 @@
         "controlEvidence": "evidence/continuation-20261023/trade-gs.json",
         "readAt": "2026-10-24T04:09:25.838904+00:00",
         "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/hbar",
@@ -19376,7 +20333,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075365+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/hd",
@@ -19481,7 +20439,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075380+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/ibm",
@@ -19586,7 +20545,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075395+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/icp",
@@ -19694,7 +20654,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075410+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/ief",
@@ -19799,7 +20760,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075426+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/inj",
@@ -19907,7 +20869,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075442+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/intc",
@@ -20013,7 +20976,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075457+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/ivv",
@@ -20118,7 +21082,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075473+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/iwm",
@@ -20224,7 +21189,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075487+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/jnj",
@@ -20329,7 +21295,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:11.075502+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/jpm",
@@ -20435,7 +21402,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.363739+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/ko",
@@ -20540,7 +21508,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.363787+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/link",
@@ -20654,7 +21623,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.363808+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/lly",
@@ -20759,7 +21729,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.363827+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/low",
@@ -20864,7 +21835,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.363846+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/ltc",
@@ -20978,7 +21950,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.363863+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/ma",
@@ -21084,7 +22057,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.363880+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/matic",
@@ -21198,7 +22172,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.363896+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/mcd",
@@ -21303,7 +22278,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.363913+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/mdb",
@@ -21408,7 +22384,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.363930+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/meta",
@@ -21512,7 +22489,12 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.363945+00:00"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/mrna",
@@ -21617,7 +22599,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.363962+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/ms",
@@ -21722,7 +22705,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.363978+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/msft",
@@ -21830,7 +22814,18 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.363993+00:00"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-024",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 224
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trade/natgas",
@@ -21939,7 +22934,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.364011+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/near",
@@ -22047,7 +23043,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.364027+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/net",
@@ -22152,7 +23149,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.364044+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/nflx",
@@ -22255,7 +23253,8 @@
         "answersRead": 5,
         "assessment": "Five expanded answers read. Virtual-fund workflow, class-level drivers and price/change comparison are generic, with popularity/volume claims needing follow-up. Unconditional browser-only portfolio storage is THQ014; static correction prepared in PR214. No actual orders/account writes performed.",
         "controlEvidence": "evidence/live-faq-v2/64f03a1f16b07193.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/nke",
@@ -22360,7 +23359,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.364063+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/now",
@@ -22465,7 +23465,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.364080+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/nvda",
@@ -22578,7 +23579,12 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.364096+00:00"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/nzdusd",
@@ -22683,7 +23689,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.364116+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/oil",
@@ -22788,7 +23795,12 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.364132+00:00"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/okta",
@@ -22894,7 +23906,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.364149+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/op",
@@ -23003,7 +24016,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.364166+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/orcl",
@@ -23109,7 +24123,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.364183+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/palladium",
@@ -23218,7 +24233,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.364201+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/panw",
@@ -23324,7 +24340,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.364219+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/pep",
@@ -23430,7 +24447,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.364236+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/pfe",
@@ -23536,7 +24554,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.364254+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/platinum",
@@ -23645,7 +24664,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.364271+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/pltr",
@@ -23751,7 +24771,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.364288+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/pypl",
@@ -23857,7 +24878,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.364306+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/qcom",
@@ -23963,7 +24985,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.364323+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/qqq",
@@ -24068,7 +25091,12 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.364339+00:00"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/roku",
@@ -24174,7 +25202,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:46:50.364356+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/sbux",
@@ -24280,7 +25309,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.106698+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/sei",
@@ -24389,7 +25419,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.106749+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/shib",
@@ -24528,7 +25559,29 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.106777+00:00"
-      }
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-012",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 220
+        },
+        {
+          "id": "THQ-015",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 220
+        },
+        {
+          "id": "THQ-016",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 220
+        },
+        {
+          "id": "THQ-020",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 222
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trade/shop",
@@ -24634,7 +25687,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.106889+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/silver",
@@ -24744,7 +25798,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.106913+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/slv",
@@ -24850,7 +25905,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.106934+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/smh",
@@ -24956,7 +26012,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.106954+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/snow",
@@ -25062,7 +26119,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.106974+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/sol",
@@ -25167,7 +26225,12 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.106993+00:00"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/soxx",
@@ -25273,7 +26336,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.107014+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/soybean",
@@ -25382,7 +26446,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.107034+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/spot",
@@ -25488,7 +26553,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.107052+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/spy",
@@ -25593,7 +26659,12 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.107071+00:00"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/sq",
@@ -25699,7 +26770,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.107094+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/sugar",
@@ -25808,7 +26880,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.107113+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/sui",
@@ -25923,7 +26996,8 @@
           "outcome": "PASS",
           "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
         }
-      ]
+      ],
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/tgt",
@@ -26029,7 +27103,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.107132+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/tia",
@@ -26138,7 +27213,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.107152+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/tlt",
@@ -26244,7 +27320,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.107171+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/tsla",
@@ -26346,7 +27423,12 @@
         "answersRead": 4,
         "assessment": "Four expanded answers read: generated volatility not historical news replay; hypothetical sizing and journal exit condition; stop-loss conceptual and app market-only; gaps need not continue/fill; practice does not establish suitability for real investment.",
         "controlEvidence": "evidence/live-faq-v2/47586c0dada535d6.json"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/twlo",
@@ -26452,7 +27534,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.107190+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/txn",
@@ -26558,7 +27641,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.107211+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/uber",
@@ -26664,7 +27748,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.107232+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/unh",
@@ -26770,7 +27855,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.107252+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/uni",
@@ -26879,7 +27965,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.107272+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/usdcad",
@@ -26985,7 +28072,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.107293+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/usdchf",
@@ -27092,7 +28180,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.107311+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/usdhkd",
@@ -27198,7 +28287,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.107331+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/usdjpy",
@@ -27285,7 +28375,8 @@
         "answersRead": 5,
         "assessment": "Five expanded answers read. Virtual-fund workflow, class-level drivers and price/change comparison are generic, with popularity/volume claims needing follow-up. Unconditional browser-only portfolio storage is THQ014; static correction prepared in PR214. No actual orders/account writes performed.",
         "controlEvidence": "evidence/live-faq-v2/f2b50467691a2272.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/usdmxn",
@@ -27391,7 +28482,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.107352+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/usdsgd",
@@ -27497,7 +28589,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.107371+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/usdtry",
@@ -27603,7 +28696,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.107391+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/usdzar",
@@ -27709,7 +28803,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.107410+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/uso",
@@ -27815,7 +28910,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.107430+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/v",
@@ -27922,7 +29018,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.107450+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/veev",
@@ -28028,7 +29125,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.107470+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/vet",
@@ -28137,7 +29235,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.107491+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/voo",
@@ -28244,7 +29343,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:47:25.107512+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/vti",
@@ -28350,7 +29450,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391092+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/wday",
@@ -28456,7 +29557,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391164+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/wfc",
@@ -28562,7 +29664,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391192+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/wheat",
@@ -28680,7 +29783,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391215+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/wmt",
@@ -28786,7 +29890,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391238+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/xle",
@@ -28889,7 +29994,8 @@
         "answersRead": 5,
         "assessment": "Five expanded answers read. Virtual-fund workflow, class-level drivers and price/change comparison are generic, with popularity/volume claims needing follow-up. Unconditional browser-only portfolio storage is THQ014; static correction prepared in PR214. No actual orders/account writes performed.",
         "controlEvidence": "evidence/live-faq-v2/7e52e55acc200014.json"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/xlf",
@@ -28995,7 +30101,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391261+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/xlk",
@@ -29101,7 +30208,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391283+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/xlm",
@@ -29210,7 +30318,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391303+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/xlv",
@@ -29316,7 +30425,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391323+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/xom",
@@ -29422,7 +30532,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391343+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/xrp",
@@ -29527,7 +30638,12 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391362+00:00"
-      }
+      },
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/zm",
@@ -29633,7 +30749,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391382+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/zs",
@@ -29739,7 +30856,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391402+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/me",
@@ -29813,7 +30931,16 @@
         "evidence": [
           "evidence/contact--trader--360-40.png",
           "evidence/contact--trader--1280-40.png"
-        ]
+        ],
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/portfolio",
@@ -29832,7 +30959,14 @@
       ],
       "findingStates": {
         "THQ-006": "PUBLICLY_VERIFIED"
-      }
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-006",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 216
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki",
@@ -29907,7 +31041,12 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "supplementaryNotesReading": {
+        "status": "NOT_YET_INDIVIDUALLY_REVIEWED",
+        "evidence": "SUPPLEMENTARY-NOTES-REVIEW.json"
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/backtesting",
@@ -29982,7 +31121,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/bear-trap",
@@ -30057,7 +31197,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/bollinger-band-squeeze",
@@ -30132,7 +31273,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/bull-trap",
@@ -30207,7 +31349,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/candlestick-patterns",
@@ -30282,7 +31425,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/circuit-breaker",
@@ -30357,7 +31501,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/correlation-trading",
@@ -30432,7 +31577,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/dark-pool",
@@ -30507,7 +31653,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/day-trading",
@@ -30582,7 +31729,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/death-cross",
@@ -30657,7 +31805,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/dollar-cost-averaging",
@@ -30732,7 +31881,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/double-bottom",
@@ -30807,7 +31957,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/drawdown",
@@ -30882,7 +32033,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/elliott-wave-theory",
@@ -30957,7 +32109,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/fair-value-gap",
@@ -31032,7 +32185,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/fibonacci-retracement",
@@ -31107,7 +32261,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/flash-crash",
@@ -31182,7 +32337,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/fomo",
@@ -31257,7 +32413,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/fud",
@@ -31332,7 +32489,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/golden-cross",
@@ -31407,7 +32565,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/head-and-shoulders",
@@ -31482,7 +32641,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/hodl-strategy",
@@ -31557,7 +32717,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/ichimoku-cloud",
@@ -31632,7 +32793,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/impermanent-loss",
@@ -31707,7 +32869,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/leverage-trading",
@@ -31782,7 +32945,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/limit-order-vs-market-order",
@@ -31857,7 +33021,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/liquidation-cascade",
@@ -31932,7 +33097,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/liquidation-price",
@@ -32007,7 +33173,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/macd",
@@ -32082,7 +33249,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/macd-histogram",
@@ -32157,7 +33325,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/margin-call",
@@ -32232,7 +33401,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/market-maker",
@@ -32307,7 +33477,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/order-block",
@@ -32382,7 +33553,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/paper-trading",
@@ -32457,7 +33629,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/pump-and-dump",
@@ -32532,7 +33705,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/risk-reward-ratio",
@@ -32607,7 +33781,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/rsi-divergence",
@@ -32682,7 +33857,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/satoshi-nakamoto",
@@ -32757,7 +33933,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/scalping",
@@ -32832,7 +34009,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/short-squeeze",
@@ -32907,7 +34085,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/slippage",
@@ -32982,7 +34161,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/stop-loss-hunting",
@@ -33057,7 +34237,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/support-and-resistance",
@@ -33132,7 +34313,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/swing-trading",
@@ -33207,7 +34389,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/volume-profile",
@@ -33282,7 +34465,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/vwap",
@@ -33357,7 +34541,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/whale-manipulation",
@@ -33432,7 +34617,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/wyckoff-method",
@@ -33507,7 +34693,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/wiki/yield-farming",
@@ -33582,7 +34769,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/xmr",
@@ -33693,7 +34881,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391421+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/bch",
@@ -33804,7 +34993,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391447+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/tao",
@@ -33915,7 +35105,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391470+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/pityuka1312013",
@@ -34008,7 +35199,14 @@
       ],
       "findingStates": {
         "THQ-004": "PUBLICLY_VERIFIED"
-      }
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-004",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 214
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trader/andrieh-alhaj",
@@ -34097,7 +35295,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/charmainehurst27",
@@ -34190,7 +35389,14 @@
       ],
       "findingStates": {
         "THQ-004": "PUBLICLY_VERIFIED"
-      }
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-004",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 214
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trader/kmillztrades",
@@ -34279,7 +35485,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/andresgarciap94",
@@ -34372,7 +35579,14 @@
       ],
       "findingStates": {
         "THQ-004": "PUBLICLY_VERIFIED"
-      }
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-004",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 214
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trader/raichevn08",
@@ -34465,7 +35679,14 @@
       ],
       "findingStates": {
         "THQ-004": "PUBLICLY_VERIFIED"
-      }
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-004",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 214
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trader/ray",
@@ -34554,7 +35775,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/student-2015",
@@ -34647,7 +35869,14 @@
       ],
       "findingStates": {
         "THQ-004": "PUBLICLY_VERIFIED"
-      }
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-004",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 214
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trader/isiaspart",
@@ -34740,7 +35969,14 @@
       ],
       "findingStates": {
         "THQ-004": "PUBLICLY_VERIFIED"
-      }
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-004",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 214
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trader/sportslordyt",
@@ -34833,7 +36069,14 @@
       ],
       "findingStates": {
         "THQ-004": "PUBLICLY_VERIFIED"
-      }
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-004",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 214
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trader/jose-morale0990",
@@ -34926,7 +36169,14 @@
       ],
       "findingStates": {
         "THQ-004": "PUBLICLY_VERIFIED"
-      }
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-004",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 214
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trader/tadeas-vrabel",
@@ -35019,7 +36269,14 @@
       ],
       "findingStates": {
         "THQ-004": "PUBLICLY_VERIFIED"
-      }
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-004",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 214
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trader/thomasvde1",
@@ -35108,7 +36365,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/forceunstoppable217",
@@ -35201,7 +36459,14 @@
       ],
       "findingStates": {
         "THQ-004": "PUBLICLY_VERIFIED"
-      }
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-004",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 214
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trader/koutroufas",
@@ -35290,7 +36555,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/messimayuri-1",
@@ -35383,7 +36649,14 @@
       ],
       "findingStates": {
         "THQ-004": "PUBLICLY_VERIFIED"
-      }
+      },
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-004",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 214
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trader/-it-",
@@ -35472,7 +36745,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/-risky",
@@ -35561,7 +36835,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/570008",
@@ -35635,7 +36910,16 @@
         "evidence": [
           "evidence/contact--trader--360-8.png",
           "evidence/contact--trader--1280-8.png"
-        ]
+        ],
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/leaderboard",
@@ -35662,6 +36946,13 @@
           "scope": "Only the relevantcopy/visibleFAQ/schema correction atfivewidths; doesnotcompletewholepageaudit.",
           "outcome": "PASS",
           "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
+        }
+      ],
+      "confirmedFindingStates": [
+        {
+          "id": "THQ-004",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 214
         }
       ]
     },
@@ -35752,7 +37043,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/--1",
@@ -35841,7 +37133,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/--2",
@@ -35930,7 +37223,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/--3",
@@ -36019,7 +37313,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/-aby47",
@@ -36108,7 +37403,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/-artin-ourado",
@@ -36197,7 +37493,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/-aytrader7",
@@ -36286,7 +37583,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/-erosicha",
@@ -36375,7 +37673,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/-hales",
@@ -36464,7 +37763,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/-oritz-just",
@@ -36553,7 +37853,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/-oritz-justt",
@@ -36642,7 +37943,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/-raderjoe",
@@ -36731,7 +38033,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/-rj65",
@@ -36820,7 +38123,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/aaagggeeee",
@@ -36909,7 +38213,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/adityabehal77",
@@ -36998,7 +38303,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/ahk",
@@ -37087,7 +38393,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/begulah2",
@@ -37176,7 +38483,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/calathe",
@@ -37265,7 +38573,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/carlellert",
@@ -37354,7 +38663,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/cmorrison402",
@@ -37443,7 +38753,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/colton",
@@ -37532,7 +38843,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/dalton",
@@ -37621,7 +38933,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/emelis01",
@@ -37710,7 +39023,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/investir",
@@ -37799,7 +39113,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/jeremiahsticks",
@@ -37888,7 +39203,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/jurekuu",
@@ -37977,7 +39293,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/larp228",
@@ -38066,7 +39383,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/mate2202",
@@ -38155,7 +39473,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/maverick172011",
@@ -38244,7 +39563,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/micah-bus0504",
@@ -38333,7 +39653,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/michyboss04",
@@ -38422,7 +39743,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/mischapork",
@@ -38511,7 +39833,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/mlokzer",
@@ -38600,7 +39923,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/mr-expert-trader-14",
@@ -38689,7 +40013,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/osmoda",
@@ -38778,7 +40103,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/osmoda1412",
@@ -38867,7 +40193,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/palomeria3",
@@ -38956,7 +40283,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/pittmarktrades",
@@ -39045,7 +40373,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/rexandreilouisengo2623",
@@ -39134,7 +40463,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/ruben",
@@ -39223,7 +40553,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/sprtslord",
@@ -39312,7 +40643,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trader/xanderbrown",
@@ -39401,7 +40733,8 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [],
-      "findingStates": {}
+      "findingStates": {},
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/usdt",
@@ -39512,7 +40845,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391491+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/dai",
@@ -39623,7 +40957,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391536+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/trx",
@@ -39734,7 +41069,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391563+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/ton",
@@ -39845,7 +41181,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391589+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/etc",
@@ -39956,7 +41293,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391614+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/aave",
@@ -40067,7 +41405,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391639+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/grt",
@@ -40178,7 +41517,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391665+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/ldo",
@@ -40289,7 +41629,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391691+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/rune",
@@ -40400,7 +41741,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391716+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/kas",
@@ -40511,7 +41853,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391743+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/render",
@@ -40622,7 +41965,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391770+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/usdc",
@@ -40733,7 +42077,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391796+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/wld",
@@ -40844,7 +42189,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391824+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/stx",
@@ -40955,7 +42301,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391852+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/imx",
@@ -41066,7 +42413,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391878+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/pol",
@@ -41177,7 +42525,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391904+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/pepe",
@@ -41288,7 +42637,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391932+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     },
     {
       "url": "https://www.thetradehq.com/trade/bonk",
@@ -41399,7 +42749,8 @@
         "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
         "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
         "readAt": "2026-10-24T04:48:00.391959+00:00"
-      }
+      },
+      "confirmedFindingStates": []
     }
   ],
   "expandedFAQAnswersRead": 134,

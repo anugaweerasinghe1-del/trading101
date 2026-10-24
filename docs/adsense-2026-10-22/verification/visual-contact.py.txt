@@ -1,0 +1,19 @@
+from pathlib import Path
+from PIL import Image,ImageDraw
+import json,sys,math
+folder=Path(sys.argv[1]);path=sys.argv[2]
+row=next(json.loads(p.read_text()) for p in folder.glob('*.json') if len(p.stem)==16 and json.loads(p.read_text()).get('path')==path)
+out=[]
+for w in row['widths']:
+ cols=4 if w['width']<800 else 2
+ scale=1 if w['width']<800 else min(1,768/w['width'])
+ tilew=round(w['width']*scale);tileh=round(w['height']*scale)+24;rows=math.ceil(len(w['segments'])/cols)
+ # At most four screen rows per contact; keep the actual mobile layout/text readable.
+ for start in range(0,rows,4):
+  count=min(4,rows-start);canvas=Image.new('RGB',(cols*tilew,count*tileh),'#ddd');draw=ImageDraw.Draw(canvas)
+  for i,seg in enumerate(w['segments'][start*cols:(start+count)*cols]):
+   x=(i%cols)*tilew;y=(i//cols)*tileh
+   im=Image.open(folder/seg['screenshot']).convert('RGB');im=im.resize((tilew,tileh-24),Image.Resampling.LANCZOS)
+   canvas.paste(im,(x,y+24));draw.text((x+3,y+5),f"{path} width{w['width']} scroll{seg['y']}",fill='black')
+  dest=folder/f"contact-{Path(w['segments'][0]['screenshot']).stem.rsplit('-',2)[0]}-{w['width']}-{start//4}.jpg";canvas.save(dest,quality=88);out.append(str(dest))
+print(json.dumps(out))

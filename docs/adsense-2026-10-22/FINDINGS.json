@@ -876,15 +876,181 @@
         "evidence/POST-PR226-GUEST-SMOKE.json",
         "evidence/PR226-MAIN-CI.json"
       ]
+    },
+    {
+      "id": "THQ-027",
+      "severity": "P2",
+      "category": "Mobile bottom navigation scrolls away and appears twice on several pages",
+      "state": "PUBLICLY_VERIFIED",
+      "urls": [
+        "https://www.thetradehq.com/about",
+        "https://www.thetradehq.com/portfolio",
+        "https://www.thetradehq.com/sectors/ai-tech"
+      ],
+      "scope": "Shared global component is present on public routes; duplicate local copies occur in About, Contact, Privacy, Terms and SectorPillar (seven sector paths). Source scope is not a fresh reproduction on all441 routes.",
+      "observed": "Fresh360px top/middle/bottom DOM and screenshots show computed position relative; global bar sits far below viewport until document end. About/sector have two separate five-link bars. Read-only concurrent portfolio observation corroborates relative position.",
+      "expected": "One mobile navigation landmark anchored to the viewport bottom, hidden at tablet/desktop widths, with document-end content still scrollable above it.",
+      "rootCause": "glass-liquid-dark applies relative later in the utilities layer and overrides fixed; several page components render MobileBottomNav in addition to the existing global App render.",
+      "fix": "Override conflicting position for this component, retain a flow spacer for the bar/safe-area height and remove five redundant page-level renders/imports. Existing navigation labels, destinations and active-route rules retained.",
+      "risk": "Low reversible layout/navigation placement only. No homepage content repositioning, policy wording/consent/ads, auth/access, financial/order/account/storage/DB/progress or infrastructure changes. Shared mobile layout requires representative full CI/preview/live regressions.",
+      "rollback": "Reviewed UI-only revert through protected serial exact-native/live release cycle; no data operation.",
+      "adsenseRelevance": "Navigation usability and duplicate mobile UI; no specific Google policy violation asserted.",
+      "evidence": [
+        "evidence/MOBILE-NAV-BEFORE.json",
+        "evidence/MOBILE-NAV-CONCURRENT-READ-ONLY-OBSERVATION.json",
+        "evidence/mobile-nav-before-_about-top.png",
+        "evidence/mobile-nav-before-_sectors_ai-tech-bottom.png"
+      ],
+      "detectedAt": "2026-10-24T05:47:16.736680+00:00",
+      "pr": 227,
+      "candidateSHA": "5131c3a8456ef10f2e9135a87134f9e07e63657a",
+      "mergeSHA": "66fdfb3243cf6a8ac066f546d4b9c745d27955fe",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR227-UPDATED-PREVIEW-BROWSER.json",
+      "verifiedAt": "2026-10-24T10:02:44.926262+00:00",
+      "productionEvidence": [
+        "evidence/PR227-PRODUCTION-PROVIDERS.json",
+        "evidence/PR227-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR227-GUEST-SMOKE.json",
+        "evidence/PR227-MAIN-CI.json",
+        "evidence/PR227-PRODUCTION-HEADER-IMAGES.json"
+      ]
+    },
+    {
+      "id": "THQ-028",
+      "severity": "P2",
+      "category": "Contact reference notes advertise a nonexistent portfolio reset control",
+      "state": "PUBLICLY_VERIFIED",
+      "urls": [
+        "https://www.thetradehq.com/contact"
+      ],
+      "observed": "Fresh appended contact notes say a reset control in the portfolio area returns the account to$100000 and clears open positions. Fresh rendered portfolio control labels contain only the reset FAQ, not a reset action. Source search across src has no resetPortfolio/reset account control; source Portfolio matches the correct storage/restoration FAQ instead.",
+      "rootCause": "Stale supplementary support text described a reset feature absent from the implemented interface.",
+      "fix": "Replace only that support-list item with accurate local guest record and account-copy guidance, including browser-only history/progress loss. Do not add a reset control or change any records.",
+      "risk": "Low static contact reference wording only. No reset/storage/sync/financial/auth/DB/privacy-policy/consent/ad/infrastructure behavior changes.",
+      "rollback": "Reviewed one-string revert through the same protected exact-native/live release process; no data action.",
+      "adsenseRelevance": "Help accuracy/visitor trust; no specific Google policy violation asserted.",
+      "evidence": [
+        "evidence/CONTACT-RESET-CLAIM-BEFORE.json",
+        "evidence/contact-reset-claim-before-360.png"
+      ],
+      "sourceEvidence": [
+        "scripts/staticCopyExtra.ts contact support list item",
+        "src/pages/Portfolio.tsx only reset FAQ and no reset action",
+        "Current src search has no resetPortfolio/resetAccount/Reset portfolio implementation"
+      ],
+      "detectedAt": "2026-10-24T05:52:01.203950+00:00",
+      "pr": 228,
+      "candidateSHA": "db469fdfe7d182813efe7c6684dfb959932a97cc",
+      "mergeSHA": "a4fb46336277e7b053d7a03f7241683ccfa186e0",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR228-UPDATED-PREVIEW-BROWSER.json",
+      "verifiedAt": "2026-10-24T10:18:20.225745+00:00",
+      "productionEvidence": [
+        "evidence/PR228-PRODUCTION-PROVIDERS.json",
+        "evidence/PR228-MAIN-CI.json",
+        "evidence/PR228-PRODUCTION-BROWSER.json",
+        "evidence/PR228-PRODUCTION-HTTP-PARITY.json",
+        "evidence/POST-PR228-GUEST-SMOKE.json"
+      ]
+    },
+    {
+      "id": "THQ-029",
+      "severity": "P3",
+      "category": "Fixed navigation clips the decorative intro icons on Contact, Privacy and Terms",
+      "state": "PUBLICLY_VERIFIED",
+      "urls": [
+        "https://www.thetradehq.com/contact",
+        "https://www.thetradehq.com/privacy",
+        "https://www.thetradehq.com/terms"
+      ],
+      "observed": "Full-page images show partially obscured introductory icons. Fresh fifteen route/width DOM observations confirm17px overlap at360/390/768/1920 and53px at1280, where the header is two rows. Titles remain visible; this is a minor visual defect.",
+      "rootCause": "Three page wrappers start main at48px while the fixed nav is65px or101px tall. About already uses112px after its earlier heading-overlap repair.",
+      "fix": "Set only the three main top paddings to112px, retaining existing bottom spacing and all content. Include in the focused navigation-placement/clearance PR227 that already touches these wrappers.",
+      "risk": "Low layout-only; policy/terms wording and behavior byte-identical. No homepage rewrite, financial/data/auth/DB/progress/privacy-consent/ad/infrastructure change.",
+      "rollback": "Reviewed UI-only revert in the protected release cycle; no data operation.",
+      "adsenseRelevance": "Minor clipped decorative UI; not a specific Google policy violation.",
+      "evidence": [
+        "evidence/TRUST-HEADER-ICON-BEFORE.json",
+        "evidence/trust-header-before-contact-1280.png"
+      ],
+      "detectedAt": "2026-10-24T05:57:43.370219+00:00",
+      "pr": 227,
+      "candidateSHA": "5131c3a8456ef10f2e9135a87134f9e07e63657a",
+      "mergeSHA": "66fdfb3243cf6a8ac066f546d4b9c745d27955fe",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR227-UPDATED-PREVIEW-BROWSER.json",
+      "verifiedAt": "2026-10-24T10:02:44.926262+00:00",
+      "productionEvidence": [
+        "evidence/PR227-PRODUCTION-PROVIDERS.json",
+        "evidence/PR227-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR227-GUEST-SMOKE.json",
+        "evidence/PR227-MAIN-CI.json",
+        "evidence/PR227-PRODUCTION-HEADER-IMAGES.json"
+      ]
+    },
+    {
+      "id": "THQ-030",
+      "severity": "P2",
+      "category": "Markets sidebar covers footer and appended learning text",
+      "state": "PUBLICLY_VERIFIED",
+      "urls": [
+        "https://www.thetradehq.com/markets"
+      ],
+      "observed": "Actual full-page images and fresh browser bounds show fixed64px sidebar covers the left edge of footer content at all five widths and appended reference notes at360/390/768. Main reserves64px; footer and later notes do not. No horizontal document overflow is needed for this occlusion.",
+      "rootCause": "Sidebar is viewport-fixed inside main-only flex wrapper; footer and global appended notes follow outside that wrapper.",
+      "fix": "Keep the sidebar sticky within its flex parent, reserve its actual64px flex width and remove the duplicate main left margin. It stays visible while browsing the dashboard and leaves with the parent before footer and reference notes.",
+      "risk": "Low layout-only two-class change on Markets and its sidebar (only consumer). No data/feed/financial/order/account/storage/progress/auth/DB/policy/consent/ad/infrastructure changes.",
+      "rollback": "Reviewed UI-only revert through protected exact-native/live release cycle; no data operation.",
+      "adsenseRelevance": "Readability and navigation usability; no specific Google policy violation asserted.",
+      "evidence": [
+        "evidence/MARKETS-SIDEBAR-BEFORE-BROWSER.json",
+        "evidence/fullpage-core-20261024/d106d5242cdd614d.json"
+      ],
+      "detectedAt": "2026-10-24T10:11:40.080046+00:00",
+      "pr": 229,
+      "candidateSHA": "74f8c9ed96a5fc3d6dbaaf83b429b57d9c0643ec",
+      "mergeSHA": "b86960a3abac068f38365d09abfce6ae90689d0f",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR229-UPDATED-PREVIEW-BROWSER.json",
+      "verifiedAt": "2026-10-24T10:33:24.372474+00:00",
+      "productionEvidence": [
+        "evidence/PR229-PRODUCTION-PROVIDERS.json",
+        "evidence/PR229-MAIN-CI.json",
+        "evidence/PR229-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR229-GUEST-SMOKE.json"
+      ]
+    },
+    {
+      "id": "THQ-031",
+      "severity": "P2",
+      "category": "Mobile guided lesson card compresses lesson title to one character",
+      "state": "FIX_TESTED_REQUIRED_CI_AND_PREVIEW_PENDING",
+      "urls": [
+        "https://www.thetradehq.com/learn"
+      ],
+      "observed": "At360px the recommended lesson title has14.4px available for311px of text; at390px44.4px. The unwrappable231.6px CTA shares a262/292px flex row with a zero-minimum growing text column. Title becomes C/Co ellipsis and reason/track wrap into tiny fragments. Actual full-page images and fresh five-width browser bounds corroborate.",
+      "rootCause": "The flex child with min-width0 can shrink to nearly zero, so flex-wrap does not move the CTA; title truncate hides the lesson.",
+      "fix": "Stack text and CTA below640px; retain side-by-side wide layout and allow full title wrapping. Preserve recommendation/progress logic, text, CTA and destination.",
+      "risk": "Low layout-only classes on one Learn card; no progress load/save/recommendation, account, auth, financial, DB, privacy, consent, ad or infrastructure behavior change.",
+      "rollback": "Reviewed UI-only revert through serial protected exact-native/live release cycle. No data operation.",
+      "adsenseRelevance": "Readability/navigation clarity; no specific policy violation asserted.",
+      "evidence": [
+        "evidence/GUIDED-LESSON-BEFORE-BROWSER.json",
+        "evidence/guided-lesson-before/guided-360.png"
+      ],
+      "detectedAt": "2026-10-24T10:22:18.682958+00:00",
+      "pr": 230,
+      "candidateSHA": "230478c76574a4f08d38aa91687368832bd60d2c"
     }
   ],
-  "updatedAt": "2026-10-24T05:35:27.546129+00:00",
+  "updatedAt": "2026-10-24T10:33:24.372474+00:00",
   "counts": {
-    "siteFindings": 26,
-    "P2": 15,
-    "P3": 11,
-    "publiclyRepaired": 26,
-    "preparedNotMerged": 0,
+    "siteFindings": 31,
+    "P2": 19,
+    "P3": 12,
+    "publiclyRepaired": 30,
+    "preparedNotMerged": 1,
     "separateOperationalBlockers": 0,
     "mergedAwaitingProductionVerification": 0
   },

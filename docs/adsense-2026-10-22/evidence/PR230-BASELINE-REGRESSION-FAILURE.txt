@@ -1,0 +1,22 @@
+BROWSER_NAVIGATE http://127.0.0.1:37197/learn
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37197/learn
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Complete guided title visible for new learner at 360
+
+true !== false
+
+    at verifyGuidedLesson (file:///workspace/trading101-guided-lesson/scripts/verify-guided-lesson.mjs:33:14)
+    at async file:///workspace/trading101-guided-lesson/scripts/verify-publisher-browser.mjs:250:3 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: true,
+  expected: false,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

@@ -1,0 +1,11 @@
+{
+  "readAt": "2026-10-24T09:55:31.680761+00:00",
+  "sourceSHA": "66fdfb3243cf6a8ac066f546d4b9c745d27955fe",
+  "addedReadOnlyPOSTAllowlist": {
+    "get_review_engagement": "20261008004119_review_engagement.sql: public STABLE SQL wrapper calls STABLE private SELECT-only visible-review aggregate. Returns counts and caller own liked flag; no identities or mutations. set_review_like remains blocked.",
+    "get_daily_practice_bank": "20261009125658_daily_practice_and_content_cleanup.sql: STABLE SECURITY INVOKER SELECTdocument from published/effective bank table, protected by SELECT RLS; no generation/approval/state mutation."
+  },
+  "existingCaptureLimitations": "Initial20-route full-page collection intentionally blocked five daily-bank reads, five review-engagement reads and five public-duels calls. Daily displayed its authored fallback and Reviews showed Likes unavailable in these controlled captures; those are not reproduced product defects. Fresh public read follow-up is required with the two now source-verified SELECT RPCs allowed.",
+  "stillBlocked": "get_public_practice_duels can settle expired records; do not allow it merely because its name says get. All unspecified mutation requests remain prevented.",
+  "scope": "Audit harness safety refinement only, no application/database/auth/progress/privacy/ad or provider mutation."
+}

@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-10-24T10:16:55.246885+00:00",
+  "candidateSHA": "74f8c9ed96a5fc3d6dbaaf83b429b57d9c0643ec",
+  "baseSHA": "a4fb46336277e7b053d7a03f7241683ccfa186e0",
+  "outcome": "PASS",
+  "files": [
+    "src/components/trading/TradingSidebar.tsx",
+    "src/pages/Markets.tsx",
+    "scripts/verify-markets-sidebar.mjs",
+    "scripts/verify-publisher-browser.mjs"
+  ],
+  "scope": "Two product class-string replacements: viewport-fixed to parent-sticky64px nonshrinking flex item; remove equal64px main left margin. Only Markets consumes sidebar. All labels, links, data/calculations/order/account/auth/DB/storage/progress/policy/consent/ad/infrastructure behavior unchanged.",
+  "validation": [
+    "Cloudflare build/SEO PASS",
+    "App TypeScript PASS",
+    "Unchanged production build fails new footer occlusion regression at360px",
+    "Full final phase6 interaction suite PASS with original assertions, including15new main/footer/notes samples and5 persistent sidebar/destination checks"
+  ],
+  "rollback": "Reviewed UI-only revert through protected exact-native/live cycle; no data operation."
+}

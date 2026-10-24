@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-10-24T05:53:56.899360+00:00",
+  "candidateSHA": "f111dc6c3065b745e15526471fc3f171e67d154d",
+  "baseSHA": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
+  "outcome": "PASS",
+  "files": [
+    "scripts/verify-mobile-navigation.mjs",
+    "scripts/verify-publisher-browser.mjs",
+    "src/components/MobileBottomNav.tsx",
+    "src/pages/About.tsx",
+    "src/pages/Contact.tsx",
+    "src/pages/Privacy.tsx",
+    "src/pages/SectorPillar.tsx",
+    "src/pages/Terms.tsx"
+  ],
+  "scope": "Single global mobile bar placement and document-end clearance. The five page diffs contain only removal of redundant import/render; all page and privacy policy wording byte-identical. Nav destinations/active rules unchanged. No financial, auth/access, storage/DB/account/progress/consent/ad/infrastructure code changed.",
+  "validation": [
+    "Cloudflare build/SEO PASS",
+    "App TypeScript PASS",
+    "Compiled baseline fails exactly-one-landmark assertion: actual2",
+    "Fullphase6 PASS including50route/width navigation checks, scroll persistence, reachable touch targets, end clearance and desktop hiding; original assertions retained."
+  ],
+  "harnessNotes": "First local extended-test run reached auth, whose old fixture server had no explicit shell fallback and failed with headers already sent. Added only auth to the existing noindex SPA-shell fixture allowlist; no product route, original assertion or production gate changed.",
+  "rollback": "Reviewed UI-only revert through normal protected exact-native/live cycle; no data operation."
+}
