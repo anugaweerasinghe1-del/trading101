@@ -1,0 +1,112 @@
+{
+  "checkedAt": "2026-10-24T16:03:50.796Z",
+  "sha": "f696264cbd8233d39421bed1501dfb04ceeb177f",
+  "origin": "https://9e0c11a2.tradehq-preview.pages.dev",
+  "mode": "fallback",
+  "controlledClientDate": "2026-10-17",
+  "expectedValues": [
+    3,
+    4
+  ],
+  "outcome": "PASS",
+  "scope": "Actual deployed Daily interface with controlled JavaScript date selecting publicpractice32; only Startcase/open briefing action, no answer/complete/reflection/reset/admin/order/account action. Fallback deliberately prevents bankRPC; published mode permits only normal SELECT bankRPC. Savedattemptstorageunchanged. This is a controlled-date view, not current natural-date behavior or full500feedback review. Native-provider attestation remains separate.",
+  "rows": [
+    {
+      "width": 360,
+      "title": "Correlation can change when you need it",
+      "scenario": [
+        "Two hypothetical assets moved in opposite directions in three earlier observations. In a fourth observation both fall. A learner calls the fourth pair impossible because the assets were “uncorrelated.” The small sample cannot establish a permanent relationship, and low historical correlation does not promise that losses will offset in every interval.",
+        "Add the following hypothetical paired percentage moves: first observation A +2%, B −1%; second A −2%, B +1%; third A +1%, B −0.5%; fourth A −3%, B −4%. Treat them as a tiny illustrative sample rather than a permanent relationship estimate. Compare the direction pairs, then test an equal-dollar $1,000 holding in each asset for the fourth observation only."
+      ],
+      "figure": "Hypothetical case inputs — not a live market chart · fourth-interval loss (%)\nAsset A\n3\nAsset B\n4",
+      "values": [
+        3,
+        4
+      ],
+      "date": "Risk and uncertainty · 2026-10-17",
+      "question": "Does three earlier observations establish a permanent correlation?",
+      "reviewed": "0",
+      "progressStorage": null,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "title": "Correlation can change when you need it",
+      "scenario": [
+        "Two hypothetical assets moved in opposite directions in three earlier observations. In a fourth observation both fall. A learner calls the fourth pair impossible because the assets were “uncorrelated.” The small sample cannot establish a permanent relationship, and low historical correlation does not promise that losses will offset in every interval.",
+        "Add the following hypothetical paired percentage moves: first observation A +2%, B −1%; second A −2%, B +1%; third A +1%, B −0.5%; fourth A −3%, B −4%. Treat them as a tiny illustrative sample rather than a permanent relationship estimate. Compare the direction pairs, then test an equal-dollar $1,000 holding in each asset for the fourth observation only."
+      ],
+      "figure": "Hypothetical case inputs — not a live market chart · fourth-interval loss (%)\nAsset A\n3\nAsset B\n4",
+      "values": [
+        3,
+        4
+      ],
+      "date": "Risk and uncertainty · 2026-10-17",
+      "question": "Does three earlier observations establish a permanent correlation?",
+      "reviewed": "0",
+      "progressStorage": null,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "title": "Correlation can change when you need it",
+      "scenario": [
+        "Two hypothetical assets moved in opposite directions in three earlier observations. In a fourth observation both fall. A learner calls the fourth pair impossible because the assets were “uncorrelated.” The small sample cannot establish a permanent relationship, and low historical correlation does not promise that losses will offset in every interval.",
+        "Add the following hypothetical paired percentage moves: first observation A +2%, B −1%; second A −2%, B +1%; third A +1%, B −0.5%; fourth A −3%, B −4%. Treat them as a tiny illustrative sample rather than a permanent relationship estimate. Compare the direction pairs, then test an equal-dollar $1,000 holding in each asset for the fourth observation only."
+      ],
+      "figure": "Hypothetical case inputs — not a live market chart · fourth-interval loss (%)\nAsset A\n3\nAsset B\n4",
+      "values": [
+        3,
+        4
+      ],
+      "date": "Risk and uncertainty · 2026-10-17",
+      "question": "Does three earlier observations establish a permanent correlation?",
+      "reviewed": "0",
+      "progressStorage": null,
+      "overflow": false
+    },
+    {
+      "width": 1280,
+      "title": "Correlation can change when you need it",
+      "scenario": [
+        "Two hypothetical assets moved in opposite directions in three earlier observations. In a fourth observation both fall. A learner calls the fourth pair impossible because the assets were “uncorrelated.” The small sample cannot establish a permanent relationship, and low historical correlation does not promise that losses will offset in every interval.",
+        "Add the following hypothetical paired percentage moves: first observation A +2%, B −1%; second A −2%, B +1%; third A +1%, B −0.5%; fourth A −3%, B −4%. Treat them as a tiny illustrative sample rather than a permanent relationship estimate. Compare the direction pairs, then test an equal-dollar $1,000 holding in each asset for the fourth observation only."
+      ],
+      "figure": "Hypothetical case inputs — not a live market chart · fourth-interval loss (%)\nAsset A\n3\nAsset B\n4",
+      "values": [
+        3,
+        4
+      ],
+      "date": "Risk and uncertainty · 2026-10-17",
+      "question": "Does three earlier observations establish a permanent correlation?",
+      "reviewed": "0",
+      "progressStorage": null,
+      "overflow": false
+    },
+    {
+      "width": 1920,
+      "title": "Correlation can change when you need it",
+      "scenario": [
+        "Two hypothetical assets moved in opposite directions in three earlier observations. In a fourth observation both fall. A learner calls the fourth pair impossible because the assets were “uncorrelated.” The small sample cannot establish a permanent relationship, and low historical correlation does not promise that losses will offset in every interval.",
+        "Add the following hypothetical paired percentage moves: first observation A +2%, B −1%; second A −2%, B +1%; third A +1%, B −0.5%; fourth A −3%, B −4%. Treat them as a tiny illustrative sample rather than a permanent relationship estimate. Compare the direction pairs, then test an equal-dollar $1,000 holding in each asset for the fourth observation only."
+      ],
+      "figure": "Hypothetical case inputs — not a live market chart · fourth-interval loss (%)\nAsset A\n3\nAsset B\n4",
+      "values": [
+        3,
+        4
+      ],
+      "date": "Risk and uncertainty · 2026-10-17",
+      "question": "Does three earlier observations establish a permanent correlation?",
+      "reviewed": "0",
+      "progressStorage": null,
+      "overflow": false
+    }
+  ],
+  "runtimeErrors": [],
+  "preventedProtectedRequests": [
+    {
+      "method": "POST",
+      "path": "/rest/v1/rpc/get_daily_practice_bank"
+    }
+  ]
+}

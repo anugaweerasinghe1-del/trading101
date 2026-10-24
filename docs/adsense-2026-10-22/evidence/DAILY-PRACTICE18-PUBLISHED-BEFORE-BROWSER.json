@@ -1,0 +1,163 @@
+{
+  "checkedAt": "2026-10-24T16:40:10.352Z",
+  "sha": "db3bfab843a126dda6afc4c2f2184a4366fc70ad",
+  "origin": "https://www.thetradehq.com",
+  "mode": "published-before",
+  "controlledClientDate": "2026-11-14",
+  "expectedValues": [
+    500,
+    8,
+    20
+  ],
+  "outcome": "PASS",
+  "scope": "Actual deployed Daily interface with controlled JavaScript date selecting publicpractice-18; only Startcase/open briefing action, no answer/complete/reflection/reset/admin/order/account action. Fallback deliberately prevents bankRPC; published mode permits only normal SELECT bankRPC. Savedattemptstorageunchanged. This is a controlled-date view, not current natural-date behavior or full500feedback review. Native-provider attestation remains separate.",
+  "rows": [
+    {
+      "width": 360,
+      "title": "Turnover adds up across many small trades",
+      "scenario": [
+        "You make 20 hypothetical transactions, each with $500 notional and a 0.1% transaction fee. For this worksheet their combined gross price gains are $8 and no other costs occur. Treat a transaction as one buy or one sell, so a round trip counts twice. Evaluate total turnover and fees before calling the activity profitable.",
+        "Continue the worksheet with two alternatives. In one branch, gross gains remain $8 while transaction count doubles to 40 at $500 each. In another, transaction count remains 20 but gross gains rise to $12. Keep the 0.1% fee and exclude other costs. Compare turnover, average fee per transaction and net outcome before interpreting the number of trades as evidence of skill."
+      ],
+      "figure": "Hypothetical case inputs — not a live market chart · $\nPer transaction\n500\nTotal gross gain\n8\nTransactions\n20",
+      "values": [
+        500,
+        8,
+        20
+      ],
+      "date": "Costs and orders · 2026-11-14",
+      "question": "What is the total traded notional across these transactions?",
+      "reviewed": "0",
+      "progressStorage": null,
+      "overflow": false,
+      "normalPublishedBank": {
+        "id": "authored-2026-10-depth",
+        "caseValues": [
+          500,
+          8,
+          20
+        ],
+        "questionCount": 10,
+        "source": "Normalread-onlypublicbankRPC200"
+      }
+    },
+    {
+      "width": 390,
+      "title": "Turnover adds up across many small trades",
+      "scenario": [
+        "You make 20 hypothetical transactions, each with $500 notional and a 0.1% transaction fee. For this worksheet their combined gross price gains are $8 and no other costs occur. Treat a transaction as one buy or one sell, so a round trip counts twice. Evaluate total turnover and fees before calling the activity profitable.",
+        "Continue the worksheet with two alternatives. In one branch, gross gains remain $8 while transaction count doubles to 40 at $500 each. In another, transaction count remains 20 but gross gains rise to $12. Keep the 0.1% fee and exclude other costs. Compare turnover, average fee per transaction and net outcome before interpreting the number of trades as evidence of skill."
+      ],
+      "figure": "Hypothetical case inputs — not a live market chart · $\nPer transaction\n500\nTotal gross gain\n8\nTransactions\n20",
+      "values": [
+        500,
+        8,
+        20
+      ],
+      "date": "Costs and orders · 2026-11-14",
+      "question": "What is the total traded notional across these transactions?",
+      "reviewed": "0",
+      "progressStorage": null,
+      "overflow": false,
+      "normalPublishedBank": {
+        "id": "authored-2026-10-depth",
+        "caseValues": [
+          500,
+          8,
+          20
+        ],
+        "questionCount": 10,
+        "source": "Normalread-onlypublicbankRPC200"
+      }
+    },
+    {
+      "width": 768,
+      "title": "Turnover adds up across many small trades",
+      "scenario": [
+        "You make 20 hypothetical transactions, each with $500 notional and a 0.1% transaction fee. For this worksheet their combined gross price gains are $8 and no other costs occur. Treat a transaction as one buy or one sell, so a round trip counts twice. Evaluate total turnover and fees before calling the activity profitable.",
+        "Continue the worksheet with two alternatives. In one branch, gross gains remain $8 while transaction count doubles to 40 at $500 each. In another, transaction count remains 20 but gross gains rise to $12. Keep the 0.1% fee and exclude other costs. Compare turnover, average fee per transaction and net outcome before interpreting the number of trades as evidence of skill."
+      ],
+      "figure": "Hypothetical case inputs — not a live market chart · $\nPer transaction\n500\nTotal gross gain\n8\nTransactions\n20",
+      "values": [
+        500,
+        8,
+        20
+      ],
+      "date": "Costs and orders · 2026-11-14",
+      "question": "What is the total traded notional across these transactions?",
+      "reviewed": "0",
+      "progressStorage": null,
+      "overflow": false,
+      "normalPublishedBank": {
+        "id": "authored-2026-10-depth",
+        "caseValues": [
+          500,
+          8,
+          20
+        ],
+        "questionCount": 10,
+        "source": "Normalread-onlypublicbankRPC200"
+      }
+    },
+    {
+      "width": 1280,
+      "title": "Turnover adds up across many small trades",
+      "scenario": [
+        "You make 20 hypothetical transactions, each with $500 notional and a 0.1% transaction fee. For this worksheet their combined gross price gains are $8 and no other costs occur. Treat a transaction as one buy or one sell, so a round trip counts twice. Evaluate total turnover and fees before calling the activity profitable.",
+        "Continue the worksheet with two alternatives. In one branch, gross gains remain $8 while transaction count doubles to 40 at $500 each. In another, transaction count remains 20 but gross gains rise to $12. Keep the 0.1% fee and exclude other costs. Compare turnover, average fee per transaction and net outcome before interpreting the number of trades as evidence of skill."
+      ],
+      "figure": "Hypothetical case inputs — not a live market chart · $\nPer transaction\n500\nTotal gross gain\n8\nTransactions\n20",
+      "values": [
+        500,
+        8,
+        20
+      ],
+      "date": "Costs and orders · 2026-11-14",
+      "question": "What is the total traded notional across these transactions?",
+      "reviewed": "0",
+      "progressStorage": null,
+      "overflow": false,
+      "normalPublishedBank": {
+        "id": "authored-2026-10-depth",
+        "caseValues": [
+          500,
+          8,
+          20
+        ],
+        "questionCount": 10,
+        "source": "Normalread-onlypublicbankRPC200"
+      }
+    },
+    {
+      "width": 1920,
+      "title": "Turnover adds up across many small trades",
+      "scenario": [
+        "You make 20 hypothetical transactions, each with $500 notional and a 0.1% transaction fee. For this worksheet their combined gross price gains are $8 and no other costs occur. Treat a transaction as one buy or one sell, so a round trip counts twice. Evaluate total turnover and fees before calling the activity profitable.",
+        "Continue the worksheet with two alternatives. In one branch, gross gains remain $8 while transaction count doubles to 40 at $500 each. In another, transaction count remains 20 but gross gains rise to $12. Keep the 0.1% fee and exclude other costs. Compare turnover, average fee per transaction and net outcome before interpreting the number of trades as evidence of skill."
+      ],
+      "figure": "Hypothetical case inputs — not a live market chart · $\nPer transaction\n500\nTotal gross gain\n8\nTransactions\n20",
+      "values": [
+        500,
+        8,
+        20
+      ],
+      "date": "Costs and orders · 2026-11-14",
+      "question": "What is the total traded notional across these transactions?",
+      "reviewed": "0",
+      "progressStorage": null,
+      "overflow": false,
+      "normalPublishedBank": {
+        "id": "authored-2026-10-depth",
+        "caseValues": [
+          500,
+          8,
+          20
+        ],
+        "questionCount": 10,
+        "source": "Normalread-onlypublicbankRPC200"
+      }
+    }
+  ],
+  "runtimeErrors": [],
+  "preventedProtectedRequests": []
+}

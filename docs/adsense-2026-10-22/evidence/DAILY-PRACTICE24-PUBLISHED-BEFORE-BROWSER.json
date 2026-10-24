@@ -1,0 +1,152 @@
+{
+  "checkedAt": "2026-10-24T16:39:39.793Z",
+  "sha": "db3bfab843a126dda6afc4c2f2184a4366fc70ad",
+  "origin": "https://www.thetradehq.com",
+  "mode": "published-before",
+  "controlledClientDate": "2026-10-26",
+  "expectedValues": [
+    40,
+    0.1
+  ],
+  "outcome": "PASS",
+  "scope": "Actual deployed Daily interface with controlled JavaScript date selecting publicpractice-24; only Startcase/open briefing action, no answer/complete/reflection/reset/admin/order/account action. Fallback deliberately prevents bankRPC; published mode permits only normal SELECT bankRPC. Savedattemptstorageunchanged. This is a controlled-date view, not current natural-date behavior or full500feedback review. Native-provider attestation remains separate.",
+  "rows": [
+    {
+      "width": 360,
+      "title": "A closed market can have a fresh fetch",
+      "scenario": [
+        "A stock’s last eligible quote was observed on Friday afternoon. The page fetches that same observation on Sunday. No new stock trade is stated. Crypto on the page has a separate Sunday observation. The shared interface can therefore contain assets with different ages even when the page request itself is recent.",
+        "For precise age arithmetic, assume the stock observation occurred Friday at 16:00 and the page fetch happened Sunday at 16:00 in the same timezone. Crypto was observed Sunday at 15:58. Ignore holidays and unusual trading sessions; none is supplied. Compare observation ages and decide which labels are supported. A working server on Sunday can retrieve an older eligible stock mark without creating a new stock trade."
+      ],
+      "figure": "Hypothetical case inputs — not a live market chart · illustrative age in hours\nStock observation age\n40\nCrypto observation age\n0.1",
+      "values": [
+        40,
+        0.1
+      ],
+      "date": "Price data · 2026-10-26",
+      "question": "Does a Sunday fetch prove the stock traded on Sunday?",
+      "reviewed": "0",
+      "progressStorage": null,
+      "overflow": false,
+      "normalPublishedBank": {
+        "id": "authored-2026-10-depth",
+        "caseValues": [
+          40,
+          0.1
+        ],
+        "questionCount": 10,
+        "source": "Normalread-onlypublicbankRPC200"
+      }
+    },
+    {
+      "width": 390,
+      "title": "A closed market can have a fresh fetch",
+      "scenario": [
+        "A stock’s last eligible quote was observed on Friday afternoon. The page fetches that same observation on Sunday. No new stock trade is stated. Crypto on the page has a separate Sunday observation. The shared interface can therefore contain assets with different ages even when the page request itself is recent.",
+        "For precise age arithmetic, assume the stock observation occurred Friday at 16:00 and the page fetch happened Sunday at 16:00 in the same timezone. Crypto was observed Sunday at 15:58. Ignore holidays and unusual trading sessions; none is supplied. Compare observation ages and decide which labels are supported. A working server on Sunday can retrieve an older eligible stock mark without creating a new stock trade."
+      ],
+      "figure": "Hypothetical case inputs — not a live market chart · illustrative age in hours\nStock observation age\n40\nCrypto observation age\n0.1",
+      "values": [
+        40,
+        0.1
+      ],
+      "date": "Price data · 2026-10-26",
+      "question": "Does a Sunday fetch prove the stock traded on Sunday?",
+      "reviewed": "0",
+      "progressStorage": null,
+      "overflow": false,
+      "normalPublishedBank": {
+        "id": "authored-2026-10-depth",
+        "caseValues": [
+          40,
+          0.1
+        ],
+        "questionCount": 10,
+        "source": "Normalread-onlypublicbankRPC200"
+      }
+    },
+    {
+      "width": 768,
+      "title": "A closed market can have a fresh fetch",
+      "scenario": [
+        "A stock’s last eligible quote was observed on Friday afternoon. The page fetches that same observation on Sunday. No new stock trade is stated. Crypto on the page has a separate Sunday observation. The shared interface can therefore contain assets with different ages even when the page request itself is recent.",
+        "For precise age arithmetic, assume the stock observation occurred Friday at 16:00 and the page fetch happened Sunday at 16:00 in the same timezone. Crypto was observed Sunday at 15:58. Ignore holidays and unusual trading sessions; none is supplied. Compare observation ages and decide which labels are supported. A working server on Sunday can retrieve an older eligible stock mark without creating a new stock trade."
+      ],
+      "figure": "Hypothetical case inputs — not a live market chart · illustrative age in hours\nStock observation age\n40\nCrypto observation age\n0.1",
+      "values": [
+        40,
+        0.1
+      ],
+      "date": "Price data · 2026-10-26",
+      "question": "Does a Sunday fetch prove the stock traded on Sunday?",
+      "reviewed": "0",
+      "progressStorage": null,
+      "overflow": false,
+      "normalPublishedBank": {
+        "id": "authored-2026-10-depth",
+        "caseValues": [
+          40,
+          0.1
+        ],
+        "questionCount": 10,
+        "source": "Normalread-onlypublicbankRPC200"
+      }
+    },
+    {
+      "width": 1280,
+      "title": "A closed market can have a fresh fetch",
+      "scenario": [
+        "A stock’s last eligible quote was observed on Friday afternoon. The page fetches that same observation on Sunday. No new stock trade is stated. Crypto on the page has a separate Sunday observation. The shared interface can therefore contain assets with different ages even when the page request itself is recent.",
+        "For precise age arithmetic, assume the stock observation occurred Friday at 16:00 and the page fetch happened Sunday at 16:00 in the same timezone. Crypto was observed Sunday at 15:58. Ignore holidays and unusual trading sessions; none is supplied. Compare observation ages and decide which labels are supported. A working server on Sunday can retrieve an older eligible stock mark without creating a new stock trade."
+      ],
+      "figure": "Hypothetical case inputs — not a live market chart · illustrative age in hours\nStock observation age\n40\nCrypto observation age\n0.1",
+      "values": [
+        40,
+        0.1
+      ],
+      "date": "Price data · 2026-10-26",
+      "question": "Does a Sunday fetch prove the stock traded on Sunday?",
+      "reviewed": "0",
+      "progressStorage": null,
+      "overflow": false,
+      "normalPublishedBank": {
+        "id": "authored-2026-10-depth",
+        "caseValues": [
+          40,
+          0.1
+        ],
+        "questionCount": 10,
+        "source": "Normalread-onlypublicbankRPC200"
+      }
+    },
+    {
+      "width": 1920,
+      "title": "A closed market can have a fresh fetch",
+      "scenario": [
+        "A stock’s last eligible quote was observed on Friday afternoon. The page fetches that same observation on Sunday. No new stock trade is stated. Crypto on the page has a separate Sunday observation. The shared interface can therefore contain assets with different ages even when the page request itself is recent.",
+        "For precise age arithmetic, assume the stock observation occurred Friday at 16:00 and the page fetch happened Sunday at 16:00 in the same timezone. Crypto was observed Sunday at 15:58. Ignore holidays and unusual trading sessions; none is supplied. Compare observation ages and decide which labels are supported. A working server on Sunday can retrieve an older eligible stock mark without creating a new stock trade."
+      ],
+      "figure": "Hypothetical case inputs — not a live market chart · illustrative age in hours\nStock observation age\n40\nCrypto observation age\n0.1",
+      "values": [
+        40,
+        0.1
+      ],
+      "date": "Price data · 2026-10-26",
+      "question": "Does a Sunday fetch prove the stock traded on Sunday?",
+      "reviewed": "0",
+      "progressStorage": null,
+      "overflow": false,
+      "normalPublishedBank": {
+        "id": "authored-2026-10-depth",
+        "caseValues": [
+          40,
+          0.1
+        ],
+        "questionCount": 10,
+        "source": "Normalread-onlypublicbankRPC200"
+      }
+    }
+  ],
+  "runtimeErrors": [],
+  "preventedProtectedRequests": []
+}

@@ -1121,7 +1121,7 @@
       "id": "THQ-034",
       "severity": "P3",
       "category": "Comparison pages repeat the full article below the footer",
-      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+      "state": "PUBLICLY_VERIFIED",
       "urls": [
         "https://www.thetradehq.com/compare/bitcoin-vs-ethereum",
         "https://www.thetradehq.com/compare/tesla-vs-nvidia",
@@ -1148,46 +1148,102 @@
       "candidateSHA": "4c527facb975a3c940a49c2b3ef85d604d530580",
       "mergeSHA": "adcaed329c34f4a846f41b9fff9c01b2f2a3bc2e",
       "exactHeadRequiredChecks": "PASS",
-      "previewEvidence": "evidence/PR232-UPDATED-PREVIEW-BROWSER.json"
+      "previewEvidence": "evidence/PR232-UPDATED-PREVIEW-BROWSER.json",
+      "verifiedAt": "2026-10-24T16:03:38.318148+00:00",
+      "productionEvidence": [
+        "evidence/PR232-PRODUCTION-PROVIDERS.json",
+        "evidence/PR232-MAIN-CI.json",
+        "evidence/PR232-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR232-GUEST-SMOKE.json"
+      ]
     },
     {
       "id": "THQ-035",
       "severity": "P2",
       "category": "Daily correlation case illustration contradicts scenario and keyed arithmetic",
-      "state": "CONFIRMED_PUBLISHED_RECORD_PATCH_REQUIRES_OWNER_APPROVAL",
+      "state": "OWNER_APPROVED_PUBLISHED_CORRECTION_BLOCKED_ON_SERVICE_CREDENTIAL",
       "urls": [
         "https://www.thetradehq.com/daily"
       ],
       "exerciseId": "practice-32",
-      "observed": "Normalpublished50casepublicpayload:fourthobservationA\u22123%/B\u22124%,questionsandfeedback30/40lossand70total. Samecasevisualunitfourth-intervalloss(%)barsA4/B6. DailyPracticePracticeVisualmapsbarvaluestovisiblenumbersdirectly. Actualcaseconditionalrenderyetpending; no production answer action.",
+      "observed": "Normal public50case bank and controlled-date actualproductionfivewidths: scenarioA\u22123%/B\u22124%, questions30/40/70loss, chartA4/B6. Staticfallback3/4verified afterPR233; normalpublishedbankunchanged. No production answers or progress writes.",
       "rootCause": "Illustrationinputsnotkeptconsistentwithexpandedscenarioandquestionarithmetic. Samecontentinstaticstarterfallbackandpublishedbank.",
-      "fix": "Correctonlytwoillustrationbarvalues4\u21923and6\u21924; preserveallothercontentandimmutablesavedattempts. Staticfallbackcanbepreparedsafely; publishedproductioncontentrecordpatchrequiresownerapproval.",
+      "fix": "Owner-approved exactlytwo illustrationvalues4\u21923/6\u21924. StaticfallbackPUBLICLY_VERIFIED viaPR233. Guardedpublished-row updater prepared/localadversarialchecksPASS; projectservicekeybinding required. NativeadminpublisherchangesbankID/metadata, so do not use it for this scope.",
       "risk": "Twoillustrationnumbers, no financial engine change. Savedattemptsnapshotsmustremainimmutableandmayretainoldvisual. Do notreset,rewriteormigratelearningprogress. Re-readcurrentapprovedbankandstopifconcurrentedit; requireexplicitapprovalandapprovedpublicationpath.",
       "rollback": "Retainpriorpublishedcontentrevisionanduseapprovedcontentrollbackifneeded; no userrecord operation.",
       "adsenseRelevance": "Financialeducationaccuracy; nospecificGooglepolicyviolationasserted.",
       "evidence": [
         "DAILY-CONDITIONAL-REVIEW.json",
         "remediation/DAILY-PRACTICE-32-VISUAL-PROPOSAL.json",
-        "src/components/DailyPractice.tsx:PracticeVisual"
+        "src/components/DailyPractice.tsx:PracticeVisual",
+        "evidence/DAILY-PRACTICE32-GUARDED-UPDATER-LOCAL.json"
       ],
       "detectedAt": "2026-10-24T11:23:24.004672+00:00",
       "staticFallbackPR": 233,
       "staticFallbackCandidateSHA": "f696264cbd8233d39421bed1501dfb04ceeb177f",
       "staticFallbackLocalValidation": "PASS:two-valueparsedbankequality;baselinefails;existingDailyandfrozenattempts/build/SEO/typesPASS",
       "isolatedVisualEvidence": "evidence/DAILY-CORRELATION-VISUAL-REPRODUCTION.json",
-      "publishedBankState": "UNCHANGED_OWNER_APPROVAL_AND_AUTHENTICATED_PUBLICATION_PENDING"
+      "publishedBankState": "UNCHANGED_APPROVED_PATCH_WAITING_FOR_SUPABASE_SERVICE_ROLE_KEY",
+      "ownerApproval": "User explicitly approved the exact A4/B6\u2192A3/B4 publishedpractice32correction; preserveallothercontent/savedattempts.",
+      "staticFallbackState": "PUBLICLY_VERIFIED",
+      "staticFallbackMergeSHA": "db3bfab843a126dda6afc4c2f2184a4366fc70ad",
+      "previewEvidence": "evidence/PR233-UPDATED-PREVIEW-BROWSER.json",
+      "staticFallbackVerifiedAt": "2026-10-24T16:23:24.953375+00:00",
+      "staticFallbackProductionEvidence": [
+        "evidence/PR233-PRODUCTION-PROVIDERS.json",
+        "evidence/PR233-MAIN-CI.json",
+        "evidence/PR233-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR233-GUEST-SMOKE.json",
+        "evidence/DAILY-PUBLISHED-CORRELATION-BEFORE-BROWSER.json"
+      ],
+      "actualPublishedCaseReproduction": "Controlled-client-dateproductionfivewidthsplusnormalbankRPC200confirmpublic4/6stillcontradicts3/4scenario; noanswers/progresswrites; twoactualimagesviewed."
+    },
+    {
+      "id": "THQ-036",
+      "severity": "P2",
+      "category": "Daily worksheet chart age/measurement units contradict stated inputs",
+      "state": "STATIC_FALLBACK_FIX_PREPARED_PUBLISHED_RECORD_APPROVAL_REQUIRED",
+      "urls": [
+        "https://www.thetradehq.com/daily"
+      ],
+      "exerciseIds": [
+        "practice-24",
+        "practice-18"
+      ],
+      "observed": "Practice24 timestamps Friday16:00\u2192Sunday16:00=48hours and cryptoSunday15:58\u219216:00=2minutes; chart says40/0.1hours(6minutes). Practice18 uses dollar unit for Pertransaction500/Grossgain8/Transactions20, mixing a count into monetary bars. Both confirmed normalbankRPC200 and controlled-date deployedUI atfivewidths, with mobile/desktop images personallyviewed.",
+      "expected": "Illustrations reflect stated scenario values and one shared measurement unit.",
+      "rootCause": "Authored visual fixtures not kept consistent with precise scenario/expanded question inputs.",
+      "fix": "Practice24: unit observation age (minutes), values2880/2. Practice18: replace third bar Transactions20 with Totalfees10, derived20\u00d7500\u00d70.1%. Five visual-only fields; all questions, answers, other content and user attempts unchanged.",
+      "risk": "Static starter fallback content-only; no app mechanics. Published bank is protected productionrecord requiring additional explicit approval; practice32approval does not cover these cases. Old saved snapshots may retain prior illustrations and must not be rewritten.",
+      "rollback": "Retain exact prior static commit and publicbank capture; revert five illustrationfields only through guarded publication if necessary. No userrecord operation.",
+      "adsenseRelevance": "Financial education consistency/readability; not a claimed specific Google policy violation.",
+      "evidence": [
+        "DAILY-CONDITIONAL-REVIEW.json",
+        "evidence/DAILY-PRACTICE-24-VISUAL-REPRODUCTION.json",
+        "evidence/DAILY-PRACTICE-18-VISUAL-REPRODUCTION.json",
+        "evidence/DAILY-PRACTICE24-PUBLISHED-BEFORE-BROWSER.json",
+        "evidence/DAILY-PRACTICE18-PUBLISHED-BEFORE-BROWSER.json",
+        "remediation/DAILY-CHART-UNITS-PROPOSAL.json"
+      ],
+      "detectedAt": "2026-10-24T16:41:39.128558+00:00",
+      "staticFallbackLocalValidation": "PASS: originalbankexpectedfail; fivefieldfullJSONparity, derivedage/feeassertions, existingDaily/PGlite/frozenattemptsuite, build/SEO/editorialchecks andappTypeScript",
+      "publishedBankState": "UNCHANGED_NO_ADDITIONAL_OWNER_APPROVAL",
+      "staticFallbackPR": 234,
+      "staticFallbackCandidateSHA": "361b1b3a9c4c327150a9de95aa69bd70b0f96c15"
     }
   ],
-  "updatedAt": "2026-10-24T15:53:01.982163+00:00",
+  "updatedAt": "2026-10-24T16:41:39.128558+00:00",
   "counts": {
-    "siteFindings": 35,
-    "P2": 22,
+    "siteFindings": 36,
+    "P2": 23,
     "P3": 13,
-    "publiclyRepaired": 33,
-    "preparedNotMerged": 0,
+    "publiclyRepaired": 34,
+    "preparedNotMerged": 1,
     "separateOperationalBlockers": 0,
-    "mergedAwaitingProductionVerification": 1,
-    "protectedUnapprovedRecordFixes": 1
+    "mergedAwaitingProductionVerification": 0,
+    "protectedUnapprovedRecordFixes": 1,
+    "approvedPublishedRecordFixesBlockedOnCredential": 1,
+    "mergedFallbackAwaitingProductionVerification": 0
   },
   "investigations": [
     {

@@ -1,0 +1,92 @@
+{
+  "createdAt": "2026-10-24T16:41:39.128558+00:00",
+  "state": "PROPOSED_NO_PUBLISHED_RECORD_APPROVAL",
+  "finding": "THQ-036",
+  "bankId": "authored-2026-10-depth",
+  "effectiveFrom": "2026-10-09",
+  "originalSourceCanonicalSHA256": "9ca43ccfd1237fbb3fbab4b8dae51fff1fae63b13bb6ab9ee271ca003dc802ad",
+  "jsonPatch": [
+    {
+      "op": "test",
+      "path": "/exercises/17/id",
+      "value": "practice-24"
+    },
+    {
+      "op": "test",
+      "path": "/exercises/17/visual",
+      "value": {
+        "bars": [
+          {
+            "label": "Stock observation age",
+            "value": 40
+          },
+          {
+            "label": "Crypto observation age",
+            "value": 0.1
+          }
+        ],
+        "unit": "illustrative age in hours",
+        "caption": "Hypothetical case inputs \u2014 not a live market chart"
+      }
+    },
+    {
+      "op": "test",
+      "path": "/exercises/36/id",
+      "value": "practice-18"
+    },
+    {
+      "op": "test",
+      "path": "/exercises/36/visual",
+      "value": {
+        "bars": [
+          {
+            "label": "Per transaction",
+            "value": 500
+          },
+          {
+            "label": "Total gross gain",
+            "value": 8
+          },
+          {
+            "label": "Transactions",
+            "value": 20
+          }
+        ],
+        "unit": "$",
+        "caption": "Hypothetical case inputs \u2014 not a live market chart"
+      }
+    },
+    {
+      "op": "replace",
+      "path": "/exercises/17/visual/unit",
+      "value": "observation age (minutes)"
+    },
+    {
+      "op": "replace",
+      "path": "/exercises/17/visual/bars/0/value",
+      "value": 2880
+    },
+    {
+      "op": "replace",
+      "path": "/exercises/17/visual/bars/1/value",
+      "value": 2
+    },
+    {
+      "op": "replace",
+      "path": "/exercises/36/visual/bars/2/label",
+      "value": "Total fees"
+    },
+    {
+      "op": "replace",
+      "path": "/exercises/36/visual/bars/2/value",
+      "value": 10
+    }
+  ],
+  "protectedBoundary": "Five visual-only fields in cases24/18. PreservebankID,allothercontent/metadataandallsavedattempts. Approval forcase32doesnotauthorize this update.",
+  "risk": "Static starter fallback content-only; no app mechanics. Published bank is protected productionrecord requiring additional explicit approval; practice32approval does not cover these cases. Old saved snapshots may retain prior illustrations and must not be rewritten.",
+  "rollback": "Retain exact prior static commit and publicbank capture; revert five illustrationfields only through guarded publication if necessary. No userrecord operation.",
+  "tests": "Localderivedage/feeassertions PASS, originalbankexpectedfailure, entirebankparityexceptfivefields, existingDaily/PGlite/frozenattemptsuite, build/SEO/editorial andappTypeScriptPASS. RequiredCI/previews pending.",
+  "publicationPath": "Must use separately approved guarded update preserving allmetadata; nativepublisher rewritesIDandaddsmetadata, so exceeds thisscope.",
+  "staticFallbackPR": 234,
+  "staticFallbackCandidateSHA": "361b1b3a9c4c327150a9de95aa69bd70b0f96c15"
+}

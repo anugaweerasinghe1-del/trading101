@@ -1,6 +1,6 @@
 {
   "createdAt": "2026-10-24T11:23:24.002911+00:00",
-  "state": "REVIEWABLE_PROPOSAL_ONLY_NO_PRODUCTION_WRITE",
+  "state": "OWNER_APPROVED_NO_PRODUCTION_WRITE_CREDENTIAL_PENDING",
   "bankId": "authored-2026-10-depth",
   "effectiveFrom": "2026-10-09",
   "sourceCanonicalSHA256": "9ca43ccfd1237fbb3fbab4b8dae51fff1fae63b13bb6ab9ee271ca003dc802ad",
@@ -43,12 +43,28 @@
       "value": 4
     }
   ],
-  "protectedBoundary": "Publishedbankisaproductiondatabasecontentrecord; MISSIONprohibitsalteringproductionrecordswithoutexplicitownerapproval. NoDB/adminpublishoperationauthorizedorperformed.",
+  "protectedBoundary": "Explicitownerapprovalnowrecorded foronlytwo publishedpractice32values. No productionwriteperformed; servicecredentialnotbound.",
   "risk": "Twoillustrationnumbers, no financial engine change. Savedattemptsnapshotsmustremainimmutableandmayretainoldvisual. Do notreset,rewriteormigratelearningprogress. Re-readcurrentapprovedbankandstopifconcurrentedit; requireexplicitapprovalandapprovedpublicationpath.",
   "rollback": "Retainpriorpublishedcontentrevisionanduseapprovedcontentrollbackifneeded; no userrecord operation.",
-  "next": "Explicitownerapprovalrequiredfortheexactpublishedcontentpatch. NativeSupabaseadminpublishingpathnotestablished;GitHubsecretmetadataread403doesnotprovecredentialabsence. Do notrequestorprintsecretvalues. Continue232native/liveverificationandindependentaudit.",
+  "next": "Ownerapprovalalreadygranted; do notaskagain. Prepare/testguardedrowupdatewithidentity/revision/reviewed_atconcurrencyguardsandfullbefore/afterdocparity; executeonlywhenprojectservicekeybindingisapplied. Noaccountrecords/schema/functions/gen-schedulechanges.",
   "isolatedVisualEvidence": "evidence/DAILY-CORRELATION-VISUAL-REPRODUCTION.json",
   "staticFallbackPR": 233,
   "staticFallbackCandidateSHA": "f696264cbd8233d39421bed1501dfb04ceeb177f",
-  "staticFallbackLocalValidation": "PASS"
+  "staticFallbackLocalValidation": "PASS",
+  "ownerApproval": {
+    "recordedAt": "2026-10-24T16:09:29.404409+00:00",
+    "answer": "Approve this two-value correction",
+    "scope": "Publishedpractice32onlyA4/B6\u2192A3/B4; preserveallothercontentandallsavedattempts."
+  },
+  "staticFallbackMergeSHA": "db3bfab843a126dda6afc4c2f2184a4366fc70ad",
+  "credentialRequirement": {
+    "name": "SUPABASE_SERVICE_ROLE_KEY",
+    "allowedHost": "cbdktpjgczhthflspqjb.supabase.co",
+    "source": "optionaluser_provided",
+    "draftStatus": "savedrequires_publish",
+    "scope": "Useonlycurrentpublishedbankrowguardedbyidentity/revision/reviewed_at; exactlytwodocumentvalues; preservebankID/allothercontent/metadata/userprogress. ADMINMASTERKEYpublisherrewritesbankIDandisnotsufficientforthisapprovedscope; leaveoptionaladminslotempty."
+  },
+  "localGuardedUpdaterEvidence": "evidence/DAILY-PRACTICE32-GUARDED-UPDATER-LOCAL.json",
+  "guardedUpdater": "verification/publish-approved-practice32.py.txt",
+  "concurrencyLimitation": "CASguards exactrowID/effectivedate/revision/reviewed_at/oldtargetvalues. Fullcontenthashverifiedbeforerequest; ordinarynativeCMSwriterupdatesreviewed_at. Anout-of-bandwriterthatignoresrevisionandreviewed_at is not covered by atomicfull-documenthash; no newRPC/schemaauthorized. Stoponanyunexpectedresponse oruncertaintransport; noautomaticretry."
 }

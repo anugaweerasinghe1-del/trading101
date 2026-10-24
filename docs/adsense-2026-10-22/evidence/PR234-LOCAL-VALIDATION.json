@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-10-24T16:42:53.981912+00:00",
+  "candidateSHA": "361b1b3a9c4c327150a9de95aa69bd70b0f96c15",
+  "outcome": "PASS",
+  "sourceFieldsChanged": 5,
+  "sourceFiles": [
+    "src/lib/dailyPracticeBank.ts",
+    "scripts/verify-daily-chart-units.ts",
+    "scripts/verify-daily-practice.ts"
+  ],
+  "allOtherBankContentEqual": true,
+  "dailySuite": "PASS50cases500questions/frozenattempts/ownerrevisionguards/PGlite",
+  "buildSEOEditorial": "PASS",
+  "appTypeScript": "PASS",
+  "baselineRegression": "EXPECTED_FAIL",
+  "noPublishedDataOrUserRecordsChanged": true
+}

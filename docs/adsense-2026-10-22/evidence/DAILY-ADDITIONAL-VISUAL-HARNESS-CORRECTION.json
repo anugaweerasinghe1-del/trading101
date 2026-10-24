@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-24T16:38:08.349597+00:00",
+  "scope": "Audit fixture only, no application code changes",
+  "initial": "Before screenshots collected; proposed minute value is locale-formatted 2,880, so naive Number(text) becomes NaN. finally server.close waited on persistent connection; only owned fixture process stopped.",
+  "correction": "Strip locale comma before numeric assertion, retain exact expected numeric/layout assertions, close owned loopback connections at cleanup.",
+  "recheck": "PASS bothcases before/proposed fivewidths; numerical/overflow assertions retained"
+}

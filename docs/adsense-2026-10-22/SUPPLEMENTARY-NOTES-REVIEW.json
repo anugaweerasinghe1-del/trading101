@@ -3,8 +3,8 @@
   "sourceCandidate": "71b84461ab0f531da44da54d8670ad1bef0628ea",
   "equivalentProductionSHA": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
   "sourceExpectedArticles": 83,
-  "actualRenderedArticlesRead": 28,
-  "sourceExpectedArticlesNotYetIndividuallyReviewed": 55,
+  "actualRenderedArticlesRead": 30,
+  "sourceExpectedArticlesNotYetIndividuallyReviewed": 53,
   "routes": [
     {
       "path": "/",
@@ -242,56 +242,80 @@
       "expectedFromCurrentBuiltRouteSource": true,
       "actualRenderedPresenceVerified": false,
       "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "assessment": null,
+      "currentSeparateArticleState": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+      "integrationEvidence": "evidence/PR232-PRODUCTION-BROWSER.json",
+      "integrationScope": "Allsubstantiveparagraphs/referencespreservedinmain; historicoutside-mainreadingstateunchanged, noretroactiveclaimofscreenshot/source/humanreading."
     },
     {
       "path": "/compare/stocks-vs-crypto",
       "expectedFromCurrentBuiltRouteSource": true,
       "actualRenderedPresenceVerified": false,
       "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "assessment": null,
+      "currentSeparateArticleState": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+      "integrationEvidence": "evidence/PR232-PRODUCTION-BROWSER.json",
+      "integrationScope": "Allsubstantiveparagraphs/referencespreservedinmain; historicoutside-mainreadingstateunchanged, noretroactiveclaimofscreenshot/source/humanreading."
     },
     {
       "path": "/compare/tesla-vs-nvidia",
       "expectedFromCurrentBuiltRouteSource": true,
       "actualRenderedPresenceVerified": true,
       "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
-      "assessment": "Read rendered Tesla/NVIDIA notes completely. Separate automotive/energy from compute/networking/graphics, matching reporting periods/units/exclusions, alternative assumptions, earnings versus price, sample-dependent beta and no suitability/return promise. Notes substantially repeat the authored main. This records reading, not current financial-filing corroboration, a complete duplication assessment or Google approval."
+      "assessment": "Read rendered Tesla/NVIDIA notes completely. Separate automotive/energy from compute/networking/graphics, matching reporting periods/units/exclusions, alternative assumptions, earnings versus price, sample-dependent beta and no suitability/return promise. Notes substantially repeat the authored main. This records reading, not current financial-filing corroboration, a complete duplication assessment or Google approval.",
+      "currentSeparateArticleState": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+      "integrationEvidence": "evidence/PR232-PRODUCTION-BROWSER.json",
+      "integrationScope": "Allsubstantiveparagraphs/referencespreservedinmain; historicoutside-mainreadingstateunchanged, noretroactiveclaimofscreenshot/source/humanreading."
     },
     {
       "path": "/compare/bitcoin-vs-gold",
       "expectedFromCurrentBuiltRouteSource": true,
       "actualRenderedPresenceVerified": false,
       "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "assessment": null,
+      "currentSeparateArticleState": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+      "integrationEvidence": "evidence/PR232-PRODUCTION-BROWSER.json",
+      "integrationScope": "Allsubstantiveparagraphs/referencespreservedinmain; historicoutside-mainreadingstateunchanged, noretroactiveclaimofscreenshot/source/humanreading."
     },
     {
       "path": "/compare/ethereum-vs-solana",
       "expectedFromCurrentBuiltRouteSource": true,
       "actualRenderedPresenceVerified": false,
       "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "assessment": null,
+      "currentSeparateArticleState": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+      "integrationEvidence": "evidence/PR232-PRODUCTION-BROWSER.json",
+      "integrationScope": "Allsubstantiveparagraphs/referencespreservedinmain; historicoutside-mainreadingstateunchanged, noretroactiveclaimofscreenshot/source/humanreading."
     },
     {
       "path": "/compare/apple-vs-microsoft",
       "expectedFromCurrentBuiltRouteSource": true,
       "actualRenderedPresenceVerified": false,
       "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "assessment": null,
+      "currentSeparateArticleState": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+      "integrationEvidence": "evidence/PR232-PRODUCTION-BROWSER.json",
+      "integrationScope": "Allsubstantiveparagraphs/referencespreservedinmain; historicoutside-mainreadingstateunchanged, noretroactiveclaimofscreenshot/source/humanreading."
     },
     {
       "path": "/compare/nvidia-vs-amd",
       "expectedFromCurrentBuiltRouteSource": true,
       "actualRenderedPresenceVerified": false,
       "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "assessment": null,
+      "currentSeparateArticleState": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+      "integrationEvidence": "evidence/PR232-PRODUCTION-BROWSER.json",
+      "integrationScope": "Allsubstantiveparagraphs/referencespreservedinmain; historicoutside-mainreadingstateunchanged, noretroactiveclaimofscreenshot/source/humanreading."
     },
     {
       "path": "/compare/bitcoin-vs-ethereum",
       "expectedFromCurrentBuiltRouteSource": true,
       "actualRenderedPresenceVerified": true,
       "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
-      "assessment": "Actually read appended BTC/ETH article: variable sample correlation, token price versus valuation, risks by staking method, separate practice fees versus network fees and no staking payout from simulator. Equal-dollar worksheet includes adverse and favorable cases and does not establish equal risk. Much repeats main text; no originality or Google policy completion claimed."
+      "assessment": "Actually read appended BTC/ETH article: variable sample correlation, token price versus valuation, risks by staking method, separate practice fees versus network fees and no staking payout from simulator. Equal-dollar worksheet includes adverse and favorable cases and does not establish equal risk. Much repeats main text; no originality or Google policy completion claimed.",
+      "currentSeparateArticleState": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+      "integrationEvidence": "evidence/PR232-PRODUCTION-BROWSER.json",
+      "integrationScope": "Allsubstantiveparagraphs/referencespreservedinmain; historicoutside-mainreadingstateunchanged, noretroactiveclaimofscreenshot/source/humanreading."
     },
     {
       "path": "/courses/macro-reading-for-traders",
@@ -303,9 +327,9 @@
     {
       "path": "/courses/futures-and-derivatives",
       "expectedFromCurrentBuiltRouteSource": true,
-      "actualRenderedPresenceVerified": false,
-      "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "actualRenderedPresenceVerified": true,
+      "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+      "assessment": "Read entire appended futures track text and all5lesson summaries/badge/reference labels. Distinguishes spot simulator from contract worksheets; margin collateral/variation calls mayexceeddeposit, termstructure/delivery/rolling/basisrisk and micro multipliers; no universal suitable size/survival/leverage claim. Actual contract specifications, expiry/cash-settlement exceptions and badgecontrolstate require separate source/control checks."
     },
     {
       "path": "/courses/trading-psychology-mastery",
@@ -317,9 +341,9 @@
     {
       "path": "/courses/options-trading-fundamentals",
       "expectedFromCurrentBuiltRouteSource": true,
-      "actualRenderedPresenceVerified": false,
-      "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "actualRenderedPresenceVerified": true,
+      "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+      "assessment": "Read entire actual appended options track article, all5lesson summaries and badge criteria/reference labels. It explicitly limits options/futures to worksheets and simulator to spot; bounded spread expiration payoff separated from execution/assignment/stock exposure, no income/signals/naked-option instruction promised. Badge criterion requires everylesson andquiz; saved-state not altered/tested here. Material/source/contract claims not certified by this default text reading."
     },
     {
       "path": "/courses/macro-reading-for-traders/reading-cpi-and-inflation",
@@ -587,5 +611,11 @@
       "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
       "assessment": null
     }
-  ]
+  ],
+  "currentVerifiedProductionSHA": "adcaed329c34f4a846f41b9fff9c01b2f2a3bc2e",
+  "currentSeparateArticlesExpected": 75,
+  "currentSeparateArticlesActuallyRead": 28,
+  "currentSeparateArticlesNotYetIndividuallyRead": 47,
+  "historicalSeparateArticlesNowIntegratedInMain": 8,
+  "historicalBaselineScopePreserved": true
 }

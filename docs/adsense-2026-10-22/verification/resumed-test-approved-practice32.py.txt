@@ -1,0 +1,94 @@
+import copy
+import importlib.util
+import json
+from pathlib import Path
+from urllib.parse import parse_qs, urlsplit
+
+spec = importlib.util.spec_from_file_location('guard', Path(__file__).with_name('publish-approved-practice32.py'))
+m = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(m)
+bank = json.loads(Path('/workspace/scratch/tradehq-audit/public-daily-bank.json').read_text())
+approval = json.loads((m.ROOT/'remediation/DAILY-PRACTICE-32-VISUAL-PROPOSAL.json').read_text())
+
+class API:
+    def __init__(self, change=None):
+        self.row = {'id':'11111111-1111-4111-8111-111111111111', 'effective_from':m.DAY, 'revision':3, 'reviewed_at':'2026-10-09T14:23:12+00:00', 'document':copy.deepcopy(bank)}
+        self.change = change
+        self.calls = []
+        self.writes = 0
+    def __call__(self, method, path, body=None):
+        self.calls.append((method,path))
+        assert urlsplit(path).path == '/rest/v1/daily_practice_batches'
+        if method == 'GET':
+            return [copy.deepcopy(self.row)]
+        assert method == 'PATCH'
+        assert list(body) == ['document']
+        params = parse_qs(urlsplit(path).query)
+        assert params['id'] == ['eq.'+self.row['id']]
+        for field in ['effective_from','revision','reviewed_at']:
+            if self.change == field:
+                self.row[field] = 'concurrent edit' if field != 'revision' else 4
+            if params[field] != ['eq.'+str(self.row[field])]:
+                return []
+        assert params['document->>id'] == ['eq.'+m.BANK]
+        assert params['document->exercises->8->>id'] == ['eq.practice-32']
+        assert params['document->exercises->8->visual->bars->0->>value'] == ['eq.4']
+        assert params['document->exercises->8->visual->bars->1->>value'] == ['eq.6']
+        self.row['document'] = copy.deepcopy(body['document'])
+        self.writes += 1
+        return [copy.deepcopy(self.row)]
+
+checks = []
+api = API()
+m.execute(api,approval)
+assert api.writes == 0 and [x[0] for x in api.calls] == ['GET']
+checks.append('Default plan sends one read and zero writes')
+api = API()
+result = m.execute(api,approval,True)
+assert api.writes == result['mutationCount'] == 1
+restored = copy.deepcopy(api.row['document'])
+restored['exercises'][8]['visual']['bars'][0]['value'] = 4
+restored['exercises'][8]['visual']['bars'][1]['value'] = 6
+assert restored == bank
+checks.append('Single-row update changes only two document values; all other content and metadata exact')
+for field in ['revision','reviewed_at','effective_from']:
+    api = API(field)
+    try:
+        m.execute(api,approval,True)
+        raise RuntimeError('Expected CAS refusal')
+    except AssertionError as e:
+        assert 'CAS failed' in str(e)
+    assert api.writes == 0 and len(api.calls) == 2
+checks.append('Concurrent ordinary writer metadata prevents update; no retry')
+for changed in ['unrelated-content','other-bank','missing-approval']:
+    api = API()
+    auth = copy.deepcopy(approval)
+    if changed == 'unrelated-content':
+        api.row['document']['exercises'][0]['title'] += ' changed'
+    elif changed == 'other-bank':
+        api.row['document']['id'] = 'new-bank'
+    else:
+        auth.pop('ownerApproval')
+    try:
+        m.execute(api,auth,True)
+        raise RuntimeError('Expected stale-content/approval refusal')
+    except AssertionError:
+        pass
+    assert api.writes == 0
+checks.append('Stale full content, a different current bank, or absent recorded approval prevents writes')
+original = api.row['document']
+api = API()
+def uncertain(method,path,body=None):
+    if method == 'PATCH':
+        raise RuntimeError('Simulated uncertain transport outcome')
+    return api(method,path,body)
+try:
+    m.execute(uncertain,approval,True)
+    raise AssertionError('Expected transport failure')
+except RuntimeError as e:
+    assert 'uncertain transport' in str(e)
+assert len(api.calls) == 1
+checks.append('Uncertain mutation transport stops without retry')
+receipt = {'scope':'Local adversarial fake API only; not remote PostgREST/permissions verification', 'outcome':'PASS', 'checks':checks, 'noProductionWrites':True, 'remaining':'Need applied service credential, authenticated read-only plan and normal live public verification after a successful guarded write.'}
+(m.ROOT/'evidence/DAILY-PRACTICE32-GUARDED-UPDATER-LOCAL.json').write_text(json.dumps(receipt,indent=2)+'\n')
+print(json.dumps(receipt))

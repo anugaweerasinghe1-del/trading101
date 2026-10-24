@@ -1,0 +1,121 @@
+{
+  "checkedAt": "2026-10-24T16:38:11.135Z",
+  "outcome": "PASS_REPRODUCED_INCONSISTENCY_AND_VERIFIED_PROPOSED_VISUAL",
+  "scope": "Exact current PracticeVisual function extracted and transpiled without modifying it; React static rendering of actual public bank case and separate proposed clone. Loopback-only fixture with restrictive CSP. Five widths each; no production daily opening/answer/progress/reset/admin/DB action. Not an actual public-date screenshot.",
+  "componentSHA256": "c26c5b00402373966e61b15ad120461336287fefadc027ff07a33ed0b0910a79",
+  "publicBankId": "authored-2026-10-depth",
+  "exerciseId": "practice-24",
+  "rows": [
+    {
+      "state": "before",
+      "width": 360,
+      "scenario": "A stock’s last eligible quote was observed on Friday afternoon. The page fetches that same observation on Sunday. No new stock trade is stated. Crypto on the page has a separate Sunday observation. The shared interface can therefore contain assets with different ages even when the page request itself is recent.\n\nFor precise age arithmetic, assume the stock observation occurred Friday at 16:00 and the page fetch happened Sunday at 16:00 in the same timezone. Crypto was observed Sunday at 15:58. Ignore holidays and unusual trading sessions; none is supplied. Compare observation ages and decide which labels are supported. A working server on Sunday can retrieve an older eligible stock mark without creating a new stock trade.",
+      "figure": "Hypothetical case inputs — not a live market chart · illustrative age in hours\nStock observation age\n40\nCrypto observation age\n0.1",
+      "values": [
+        40,
+        0.1
+      ],
+      "overflow": false
+    },
+    {
+      "state": "before",
+      "width": 390,
+      "scenario": "A stock’s last eligible quote was observed on Friday afternoon. The page fetches that same observation on Sunday. No new stock trade is stated. Crypto on the page has a separate Sunday observation. The shared interface can therefore contain assets with different ages even when the page request itself is recent.\n\nFor precise age arithmetic, assume the stock observation occurred Friday at 16:00 and the page fetch happened Sunday at 16:00 in the same timezone. Crypto was observed Sunday at 15:58. Ignore holidays and unusual trading sessions; none is supplied. Compare observation ages and decide which labels are supported. A working server on Sunday can retrieve an older eligible stock mark without creating a new stock trade.",
+      "figure": "Hypothetical case inputs — not a live market chart · illustrative age in hours\nStock observation age\n40\nCrypto observation age\n0.1",
+      "values": [
+        40,
+        0.1
+      ],
+      "overflow": false
+    },
+    {
+      "state": "before",
+      "width": 768,
+      "scenario": "A stock’s last eligible quote was observed on Friday afternoon. The page fetches that same observation on Sunday. No new stock trade is stated. Crypto on the page has a separate Sunday observation. The shared interface can therefore contain assets with different ages even when the page request itself is recent.\n\nFor precise age arithmetic, assume the stock observation occurred Friday at 16:00 and the page fetch happened Sunday at 16:00 in the same timezone. Crypto was observed Sunday at 15:58. Ignore holidays and unusual trading sessions; none is supplied. Compare observation ages and decide which labels are supported. A working server on Sunday can retrieve an older eligible stock mark without creating a new stock trade.",
+      "figure": "Hypothetical case inputs — not a live market chart · illustrative age in hours\nStock observation age\n40\nCrypto observation age\n0.1",
+      "values": [
+        40,
+        0.1
+      ],
+      "overflow": false
+    },
+    {
+      "state": "before",
+      "width": 1280,
+      "scenario": "A stock’s last eligible quote was observed on Friday afternoon. The page fetches that same observation on Sunday. No new stock trade is stated. Crypto on the page has a separate Sunday observation. The shared interface can therefore contain assets with different ages even when the page request itself is recent.\n\nFor precise age arithmetic, assume the stock observation occurred Friday at 16:00 and the page fetch happened Sunday at 16:00 in the same timezone. Crypto was observed Sunday at 15:58. Ignore holidays and unusual trading sessions; none is supplied. Compare observation ages and decide which labels are supported. A working server on Sunday can retrieve an older eligible stock mark without creating a new stock trade.",
+      "figure": "Hypothetical case inputs — not a live market chart · illustrative age in hours\nStock observation age\n40\nCrypto observation age\n0.1",
+      "values": [
+        40,
+        0.1
+      ],
+      "overflow": false
+    },
+    {
+      "state": "before",
+      "width": 1920,
+      "scenario": "A stock’s last eligible quote was observed on Friday afternoon. The page fetches that same observation on Sunday. No new stock trade is stated. Crypto on the page has a separate Sunday observation. The shared interface can therefore contain assets with different ages even when the page request itself is recent.\n\nFor precise age arithmetic, assume the stock observation occurred Friday at 16:00 and the page fetch happened Sunday at 16:00 in the same timezone. Crypto was observed Sunday at 15:58. Ignore holidays and unusual trading sessions; none is supplied. Compare observation ages and decide which labels are supported. A working server on Sunday can retrieve an older eligible stock mark without creating a new stock trade.",
+      "figure": "Hypothetical case inputs — not a live market chart · illustrative age in hours\nStock observation age\n40\nCrypto observation age\n0.1",
+      "values": [
+        40,
+        0.1
+      ],
+      "overflow": false
+    },
+    {
+      "state": "proposed",
+      "width": 360,
+      "scenario": "A stock’s last eligible quote was observed on Friday afternoon. The page fetches that same observation on Sunday. No new stock trade is stated. Crypto on the page has a separate Sunday observation. The shared interface can therefore contain assets with different ages even when the page request itself is recent.\n\nFor precise age arithmetic, assume the stock observation occurred Friday at 16:00 and the page fetch happened Sunday at 16:00 in the same timezone. Crypto was observed Sunday at 15:58. Ignore holidays and unusual trading sessions; none is supplied. Compare observation ages and decide which labels are supported. A working server on Sunday can retrieve an older eligible stock mark without creating a new stock trade.",
+      "figure": "Hypothetical case inputs — not a live market chart · observation age (minutes)\nStock observation age\n2,880\nCrypto observation age\n2",
+      "values": [
+        2880,
+        2
+      ],
+      "overflow": false
+    },
+    {
+      "state": "proposed",
+      "width": 390,
+      "scenario": "A stock’s last eligible quote was observed on Friday afternoon. The page fetches that same observation on Sunday. No new stock trade is stated. Crypto on the page has a separate Sunday observation. The shared interface can therefore contain assets with different ages even when the page request itself is recent.\n\nFor precise age arithmetic, assume the stock observation occurred Friday at 16:00 and the page fetch happened Sunday at 16:00 in the same timezone. Crypto was observed Sunday at 15:58. Ignore holidays and unusual trading sessions; none is supplied. Compare observation ages and decide which labels are supported. A working server on Sunday can retrieve an older eligible stock mark without creating a new stock trade.",
+      "figure": "Hypothetical case inputs — not a live market chart · observation age (minutes)\nStock observation age\n2,880\nCrypto observation age\n2",
+      "values": [
+        2880,
+        2
+      ],
+      "overflow": false
+    },
+    {
+      "state": "proposed",
+      "width": 768,
+      "scenario": "A stock’s last eligible quote was observed on Friday afternoon. The page fetches that same observation on Sunday. No new stock trade is stated. Crypto on the page has a separate Sunday observation. The shared interface can therefore contain assets with different ages even when the page request itself is recent.\n\nFor precise age arithmetic, assume the stock observation occurred Friday at 16:00 and the page fetch happened Sunday at 16:00 in the same timezone. Crypto was observed Sunday at 15:58. Ignore holidays and unusual trading sessions; none is supplied. Compare observation ages and decide which labels are supported. A working server on Sunday can retrieve an older eligible stock mark without creating a new stock trade.",
+      "figure": "Hypothetical case inputs — not a live market chart · observation age (minutes)\nStock observation age\n2,880\nCrypto observation age\n2",
+      "values": [
+        2880,
+        2
+      ],
+      "overflow": false
+    },
+    {
+      "state": "proposed",
+      "width": 1280,
+      "scenario": "A stock’s last eligible quote was observed on Friday afternoon. The page fetches that same observation on Sunday. No new stock trade is stated. Crypto on the page has a separate Sunday observation. The shared interface can therefore contain assets with different ages even when the page request itself is recent.\n\nFor precise age arithmetic, assume the stock observation occurred Friday at 16:00 and the page fetch happened Sunday at 16:00 in the same timezone. Crypto was observed Sunday at 15:58. Ignore holidays and unusual trading sessions; none is supplied. Compare observation ages and decide which labels are supported. A working server on Sunday can retrieve an older eligible stock mark without creating a new stock trade.",
+      "figure": "Hypothetical case inputs — not a live market chart · observation age (minutes)\nStock observation age\n2,880\nCrypto observation age\n2",
+      "values": [
+        2880,
+        2
+      ],
+      "overflow": false
+    },
+    {
+      "state": "proposed",
+      "width": 1920,
+      "scenario": "A stock’s last eligible quote was observed on Friday afternoon. The page fetches that same observation on Sunday. No new stock trade is stated. Crypto on the page has a separate Sunday observation. The shared interface can therefore contain assets with different ages even when the page request itself is recent.\n\nFor precise age arithmetic, assume the stock observation occurred Friday at 16:00 and the page fetch happened Sunday at 16:00 in the same timezone. Crypto was observed Sunday at 15:58. Ignore holidays and unusual trading sessions; none is supplied. Compare observation ages and decide which labels are supported. A working server on Sunday can retrieve an older eligible stock mark without creating a new stock trade.",
+      "figure": "Hypothetical case inputs — not a live market chart · observation age (minutes)\nStock observation age\n2,880\nCrypto observation age\n2",
+      "values": [
+        2880,
+        2
+      ],
+      "overflow": false
+    }
+  ],
+  "runtimeErrors": []
+}

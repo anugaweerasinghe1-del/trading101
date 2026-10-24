@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-10-24T16:16:53.887753+00:00",
+  "mergeSHA": "db3bfab843a126dda6afc4c2f2184a4366fc70ad",
+  "outcome": "PASS",
+  "sourceJob": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40110194186/job/120921923515",
+  "scope": "Authenticated native provider reads by trusted exact-main release-readiness job. Both production deployments match the immutable merge SHA. No provider mutations.",
+  "cloudflare": {
+    "observedAt": "2026-10-24T16:16:45.859Z",
+    "project": "tradehq-preview",
+    "activeProduction": {
+      "id": "eacb79da-608b-4cdb-b3fe-1acfd63295f1",
+      "sha": "db3bfab843a126dda6afc4c2f2184a4366fc70ad",
+      "environment": "production",
+      "branch": "main",
+      "status": "success",
+      "createdAt": "2026-10-24T16:08:47.750858Z"
+    }
+  },
+  "vercel": {
+    "schema": "tradehq-vercel-production-evidence-v1",
+    "deploymentId": "dpl_D16pH3G58iCTFgwLoYU7Lurq1r3z",
+    "teamId": "team_fjZ5ggg0P43MsYFSIHbeHAAO",
+    "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+    "commitSha": "db3bfab843a126dda6afc4c2f2184a4366fc70ad",
+    "target": "production",
+    "state": "READY",
+    "activeAlias": "thetradehq.com",
+    "createdAt": 1792858128471,
+    "observedAt": 1792858605858,
+    "requests": 2,
+    "authorization": {
+      "merge": false,
+      "productionRelease": false
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "checkedAt": "2026-10-24T16:38:39.731Z",
+  "outcome": "PASS_REPRODUCED_INCONSISTENCY_AND_VERIFIED_PROPOSED_VISUAL",
+  "scope": "Exact current PracticeVisual function extracted and transpiled without modifying it; React static rendering of actual public bank case and separate proposed clone. Loopback-only fixture with restrictive CSP. Five widths each; no production daily opening/answer/progress/reset/admin/DB action. Not an actual public-date screenshot.",
+  "componentSHA256": "c26c5b00402373966e61b15ad120461336287fefadc027ff07a33ed0b0910a79",
+  "publicBankId": "authored-2026-10-depth",
+  "exerciseId": "practice-18",
+  "rows": [
+    {
+      "state": "before",
+      "width": 360,
+      "scenario": "You make 20 hypothetical transactions, each with $500 notional and a 0.1% transaction fee. For this worksheet their combined gross price gains are $8 and no other costs occur. Treat a transaction as one buy or one sell, so a round trip counts twice. Evaluate total turnover and fees before calling the activity profitable.\n\nContinue the worksheet with two alternatives. In one branch, gross gains remain $8 while transaction count doubles to 40 at $500 each. In another, transaction count remains 20 but gross gains rise to $12. Keep the 0.1% fee and exclude other costs. Compare turnover, average fee per transaction and net outcome before interpreting the number of trades as evidence of skill.",
+      "figure": "Hypothetical case inputs — not a live market chart · $\nPer transaction\n500\nTotal gross gain\n8\nTransactions\n20",
+      "values": [
+        500,
+        8,
+        20
+      ],
+      "overflow": false
+    },
+    {
+      "state": "before",
+      "width": 390,
+      "scenario": "You make 20 hypothetical transactions, each with $500 notional and a 0.1% transaction fee. For this worksheet their combined gross price gains are $8 and no other costs occur. Treat a transaction as one buy or one sell, so a round trip counts twice. Evaluate total turnover and fees before calling the activity profitable.\n\nContinue the worksheet with two alternatives. In one branch, gross gains remain $8 while transaction count doubles to 40 at $500 each. In another, transaction count remains 20 but gross gains rise to $12. Keep the 0.1% fee and exclude other costs. Compare turnover, average fee per transaction and net outcome before interpreting the number of trades as evidence of skill.",
+      "figure": "Hypothetical case inputs — not a live market chart · $\nPer transaction\n500\nTotal gross gain\n8\nTransactions\n20",
+      "values": [
+        500,
+        8,
+        20
+      ],
+      "overflow": false
+    },
+    {
+      "state": "before",
+      "width": 768,
+      "scenario": "You make 20 hypothetical transactions, each with $500 notional and a 0.1% transaction fee. For this worksheet their combined gross price gains are $8 and no other costs occur. Treat a transaction as one buy or one sell, so a round trip counts twice. Evaluate total turnover and fees before calling the activity profitable.\n\nContinue the worksheet with two alternatives. In one branch, gross gains remain $8 while transaction count doubles to 40 at $500 each. In another, transaction count remains 20 but gross gains rise to $12. Keep the 0.1% fee and exclude other costs. Compare turnover, average fee per transaction and net outcome before interpreting the number of trades as evidence of skill.",
+      "figure": "Hypothetical case inputs — not a live market chart · $\nPer transaction\n500\nTotal gross gain\n8\nTransactions\n20",
+      "values": [
+        500,
+        8,
+        20
+      ],
+      "overflow": false
+    },
+    {
+      "state": "before",
+      "width": 1280,
+      "scenario": "You make 20 hypothetical transactions, each with $500 notional and a 0.1% transaction fee. For this worksheet their combined gross price gains are $8 and no other costs occur. Treat a transaction as one buy or one sell, so a round trip counts twice. Evaluate total turnover and fees before calling the activity profitable.\n\nContinue the worksheet with two alternatives. In one branch, gross gains remain $8 while transaction count doubles to 40 at $500 each. In another, transaction count remains 20 but gross gains rise to $12. Keep the 0.1% fee and exclude other costs. Compare turnover, average fee per transaction and net outcome before interpreting the number of trades as evidence of skill.",
+      "figure": "Hypothetical case inputs — not a live market chart · $\nPer transaction\n500\nTotal gross gain\n8\nTransactions\n20",
+      "values": [
+        500,
+        8,
+        20
+      ],
+      "overflow": false
+    },
+    {
+      "state": "before",
+      "width": 1920,
+      "scenario": "You make 20 hypothetical transactions, each with $500 notional and a 0.1% transaction fee. For this worksheet their combined gross price gains are $8 and no other costs occur. Treat a transaction as one buy or one sell, so a round trip counts twice. Evaluate total turnover and fees before calling the activity profitable.\n\nContinue the worksheet with two alternatives. In one branch, gross gains remain $8 while transaction count doubles to 40 at $500 each. In another, transaction count remains 20 but gross gains rise to $12. Keep the 0.1% fee and exclude other costs. Compare turnover, average fee per transaction and net outcome before interpreting the number of trades as evidence of skill.",
+      "figure": "Hypothetical case inputs — not a live market chart · $\nPer transaction\n500\nTotal gross gain\n8\nTransactions\n20",
+      "values": [
+        500,
+        8,
+        20
+      ],
+      "overflow": false
+    },
+    {
+      "state": "proposed",
+      "width": 360,
+      "scenario": "You make 20 hypothetical transactions, each with $500 notional and a 0.1% transaction fee. For this worksheet their combined gross price gains are $8 and no other costs occur. Treat a transaction as one buy or one sell, so a round trip counts twice. Evaluate total turnover and fees before calling the activity profitable.\n\nContinue the worksheet with two alternatives. In one branch, gross gains remain $8 while transaction count doubles to 40 at $500 each. In another, transaction count remains 20 but gross gains rise to $12. Keep the 0.1% fee and exclude other costs. Compare turnover, average fee per transaction and net outcome before interpreting the number of trades as evidence of skill.",
+      "figure": "Hypothetical case inputs — not a live market chart · $\nPer transaction\n500\nTotal gross gain\n8\nTotal fees\n10",
+      "values": [
+        500,
+        8,
+        10
+      ],
+      "overflow": false
+    },
+    {
+      "state": "proposed",
+      "width": 390,
+      "scenario": "You make 20 hypothetical transactions, each with $500 notional and a 0.1% transaction fee. For this worksheet their combined gross price gains are $8 and no other costs occur. Treat a transaction as one buy or one sell, so a round trip counts twice. Evaluate total turnover and fees before calling the activity profitable.\n\nContinue the worksheet with two alternatives. In one branch, gross gains remain $8 while transaction count doubles to 40 at $500 each. In another, transaction count remains 20 but gross gains rise to $12. Keep the 0.1% fee and exclude other costs. Compare turnover, average fee per transaction and net outcome before interpreting the number of trades as evidence of skill.",
+      "figure": "Hypothetical case inputs — not a live market chart · $\nPer transaction\n500\nTotal gross gain\n8\nTotal fees\n10",
+      "values": [
+        500,
+        8,
+        10
+      ],
+      "overflow": false
+    },
+    {
+      "state": "proposed",
+      "width": 768,
+      "scenario": "You make 20 hypothetical transactions, each with $500 notional and a 0.1% transaction fee. For this worksheet their combined gross price gains are $8 and no other costs occur. Treat a transaction as one buy or one sell, so a round trip counts twice. Evaluate total turnover and fees before calling the activity profitable.\n\nContinue the worksheet with two alternatives. In one branch, gross gains remain $8 while transaction count doubles to 40 at $500 each. In another, transaction count remains 20 but gross gains rise to $12. Keep the 0.1% fee and exclude other costs. Compare turnover, average fee per transaction and net outcome before interpreting the number of trades as evidence of skill.",
+      "figure": "Hypothetical case inputs — not a live market chart · $\nPer transaction\n500\nTotal gross gain\n8\nTotal fees\n10",
+      "values": [
+        500,
+        8,
+        10
+      ],
+      "overflow": false
+    },
+    {
+      "state": "proposed",
+      "width": 1280,
+      "scenario": "You make 20 hypothetical transactions, each with $500 notional and a 0.1% transaction fee. For this worksheet their combined gross price gains are $8 and no other costs occur. Treat a transaction as one buy or one sell, so a round trip counts twice. Evaluate total turnover and fees before calling the activity profitable.\n\nContinue the worksheet with two alternatives. In one branch, gross gains remain $8 while transaction count doubles to 40 at $500 each. In another, transaction count remains 20 but gross gains rise to $12. Keep the 0.1% fee and exclude other costs. Compare turnover, average fee per transaction and net outcome before interpreting the number of trades as evidence of skill.",
+      "figure": "Hypothetical case inputs — not a live market chart · $\nPer transaction\n500\nTotal gross gain\n8\nTotal fees\n10",
+      "values": [
+        500,
+        8,
+        10
+      ],
+      "overflow": false
+    },
+    {
+      "state": "proposed",
+      "width": 1920,
+      "scenario": "You make 20 hypothetical transactions, each with $500 notional and a 0.1% transaction fee. For this worksheet their combined gross price gains are $8 and no other costs occur. Treat a transaction as one buy or one sell, so a round trip counts twice. Evaluate total turnover and fees before calling the activity profitable.\n\nContinue the worksheet with two alternatives. In one branch, gross gains remain $8 while transaction count doubles to 40 at $500 each. In another, transaction count remains 20 but gross gains rise to $12. Keep the 0.1% fee and exclude other costs. Compare turnover, average fee per transaction and net outcome before interpreting the number of trades as evidence of skill.",
+      "figure": "Hypothetical case inputs — not a live market chart · $\nPer transaction\n500\nTotal gross gain\n8\nTotal fees\n10",
+      "values": [
+        500,
+        8,
+        10
+      ],
+      "overflow": false
+    }
+  ],
+  "runtimeErrors": []
+}

@@ -1,0 +1,13 @@
+{
+  "scope": "Local adversarial fake API only; not remote PostgREST/permissions verification",
+  "outcome": "PASS",
+  "checks": [
+    "Default plan sends one read and zero writes",
+    "Single-row update changes only two document values; all other content and metadata exact",
+    "Concurrent ordinary writer metadata prevents update; no retry",
+    "Stale full content, a different current bank, or absent recorded approval prevents writes",
+    "Uncertain mutation transport stops without retry"
+  ],
+  "noProductionWrites": true,
+  "remaining": "Need applied service credential, authenticated read-only plan and normal live public verification after a successful guarded write."
+}

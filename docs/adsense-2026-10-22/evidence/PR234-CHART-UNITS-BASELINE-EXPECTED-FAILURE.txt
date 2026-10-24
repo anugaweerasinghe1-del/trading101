@@ -1,0 +1,23 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: One explicit common unit avoids rounded fractional hours
++ actual - expected
+
++ 'illustrative age in hours'
+- 'observation age (minutes)'
+
+    at <anonymous> (/workspace/trading101-daily-correlation-visual/scripts/verify-daily-chart-units.ts:13:8)
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'illustrative age in hours',
+  expected: 'observation age (minutes)',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

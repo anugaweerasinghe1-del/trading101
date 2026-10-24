@@ -1,0 +1,27 @@
+{
+  "updatedAt": "2026-10-24T16:18:19.402Z",
+  "sourceBankId": "authored-2026-10-depth",
+  "sourceCapture": "NORMAL-DAILY-REVIEWS-READ-ONLY-FOLLOWUP.json",
+  "compiledSourceSHA": "f696264cbd8233d39421bed1501dfb04ceeb177f",
+  "scope": "Actual compiled Daily UI in separate disposable Chromium profile on loopback. Every HTTPS request fulfilled with local public-bank fixture or prevented; no production network/services/accounts/records. Original public-capture chart4/6 forcase32retainedasdatafixtureknownTHQ035. 500question controls/feedback plus five widths each are automated observations, not independent human image/source review or a quality PASS. Screenshots require individual viewing. Local test answers intentionally alternate right/wrong; no actual user progress.",
+  "completedCases": 0,
+  "questionFeedbackSetsExercised": 0,
+  "outcome": "FAIL",
+  "rows": [],
+  "runtimeErrors": [],
+  "preventedProtectedRequests": [
+    {
+      "method": "GET",
+      "host": "pagead2.googlesyndication.com",
+      "path": "/pagead/js/adsbygoogle.js"
+    },
+    {
+      "method": "GET",
+      "host": "fonts.googleapis.com",
+      "path": "/css2"
+    }
+  ],
+  "failure": {
+    "message": "Page readiness deadline"
+  }
+}

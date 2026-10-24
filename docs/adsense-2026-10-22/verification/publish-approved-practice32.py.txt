@@ -1,0 +1,97 @@
+#!/usr/bin/env python3
+"""Guarded one-row content correction. Default is read-only; no schema/user writes.
+
+Uses inherited HTTPS proxy and TLS trust. Never prints credentials/HTTP bodies.
+Ordinary CMS writers update reviewed_at/revision; these plus old values are CAS
+guards. An out-of-band writer that ignores both metadata fields is not guarded
+by a full-document atomic hash: PostgREST has no such existing RPC here.
+"""
+import argparse
+import copy
+import datetime
+import hashlib
+import json
+import os
+from pathlib import Path
+import urllib.error
+import urllib.parse
+import urllib.request
+
+HOST = 'https://cbdktpjgczhthflspqjb.supabase.co'
+ROOT = Path('/workspace/trading101/docs/adsense-2026-10-22')
+EXPECTED = '9ca43ccfd1237fbb3fbab4b8dae51fff1fae63b13bb6ab9ee271ca003dc802ad'
+BANK = 'authored-2026-10-depth'
+DAY = '2026-10-09'
+
+def digest(doc):
+    return hashlib.sha256(json.dumps(doc, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+
+def corrected(doc):
+    assert digest(doc) == EXPECTED, 'Published content changed; stop and re-review.'
+    assert doc['id'] == BANK and doc['effectiveFrom'] == DAY
+    assert len(doc['exercises']) == 50 and doc['exercises'][8]['id'] == 'practice-32'
+    assert doc['exercises'][8]['visual']['bars'] == [{'label': 'Asset A', 'value': 4}, {'label': 'Asset B', 'value': 6}]
+    after = copy.deepcopy(doc)
+    after['exercises'][8]['visual']['bars'][0]['value'] = 3
+    after['exercises'][8]['visual']['bars'][1]['value'] = 4
+    return after
+
+def query(fields):
+    return urllib.parse.urlencode(fields)
+
+def execute(client, approval, apply=False):
+    assert approval.get('ownerApproval', {}).get('answer') == 'Approve this two-value correction', 'Recorded approval required.'
+    assert approval['sourceCanonicalSHA256'] == EXPECTED
+    # Same effective-date boundary as anonymous SELECT policy; do not select a future bank.
+    today = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=5, minutes=30))).date().isoformat()
+    fields = [('select','id,effective_from,revision,reviewed_at,document'), ('effective_from','lte.'+today), ('order','effective_from.desc,reviewed_at.desc'), ('limit','1')]
+    rows = client('GET', '/rest/v1/daily_practice_batches?' + query(fields))
+    assert len(rows) == 1, 'Exactly one current published row required.'
+    row = rows[0]
+    assert row['effective_from'] == DAY and row['document']['id'] == BANK, 'A different bank is current.'
+    assert isinstance(row['revision'], int) and row['reviewed_at'] and row['id']
+    after = corrected(row['document'])
+    receipt = {'scope':'practice-32 two approved chart values only; no user/progress/draft/schema writes', 'beforeSHA256':digest(row['document']), 'proposedSHA256':digest(after), 'rowId':row['id'], 'revision':row['revision'], 'reviewedAtPreserved':row['reviewed_at'], 'mode':'APPLY' if apply else 'READ_ONLY_PLAN', 'mutationCount':0}
+    if not apply:
+        return receipt
+    guard = [('id','eq.'+row['id']), ('effective_from','eq.'+DAY), ('revision','eq.'+str(row['revision'])), ('reviewed_at','eq.'+row['reviewed_at']), ('document->>id','eq.'+BANK), ('document->exercises->8->>id','eq.practice-32'), ('document->exercises->8->visual->bars->0->>value','eq.4'), ('document->exercises->8->visual->bars->1->>value','eq.6'), ('select','id,effective_from,revision,reviewed_at,document')]
+    updated = client('PATCH','/rest/v1/daily_practice_batches?'+query(guard), {'document':after})
+    assert len(updated) == 1, 'CAS failed; no retry or overwrite is permitted.'
+    expected_row = {**row, 'document':after}
+    assert updated[0] == expected_row, 'Unexpected returned document/metadata; stop and investigate.'
+    reread = client('GET','/rest/v1/daily_practice_batches?'+query([('select','id,effective_from,revision,reviewed_at,document'),('id','eq.'+row['id'])]))
+    assert reread == [expected_row], 'Post-write verification mismatch; stop.'
+    current = client('GET','/rest/v1/daily_practice_batches?'+query(fields))
+    assert current == [expected_row], 'Current bank changed; stop.'
+    receipt.update(mutationCount=1, outcome='EXACT_TWO_VALUES_AND_ALL_OTHER_ROW_FIELDS_VERIFIED', afterSHA256=digest(current[0]['document']))
+    return receipt
+
+def remote(method, path, body=None):
+    key = os.environ.get('SUPABASE_SERVICE_ROLE_KEY')
+    if not key:
+        raise RuntimeError('SUPABASE_SERVICE_ROLE_KEY binding is unavailable; no request sent.')
+    assert path.startswith('/rest/v1/daily_practice_batches?')
+    data = None if body is None else json.dumps(body, ensure_ascii=False).encode()
+    headers = {'apikey':key,'Authorization':'Bearer '+key,'Accept':'application/json','Content-Type':'application/json'}
+    if method == 'PATCH':
+        headers['Prefer'] = 'return=representation,handling=strict,max-affected=1'
+    req = urllib.request.Request(HOST+path,data=data,headers=headers,method=method)
+    try:
+        with urllib.request.urlopen(req,timeout=45) as response:
+            return json.load(response)
+    except urllib.error.HTTPError as e:
+        raise RuntimeError(f'Supabase HTTP {e.code}; response body suppressed. No automatic retry.') from None
+    except urllib.error.URLError:
+        raise RuntimeError('Supabase transport failed; request outcome must be reconciled before any retry.') from None
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--apply', action='store_true')
+    parser.add_argument('--receipt', type=Path)
+    args = parser.parse_args()
+    approval = json.loads((ROOT/'remediation/DAILY-PRACTICE-32-VISUAL-PROPOSAL.json').read_text())
+    result = execute(remote, approval, args.apply)
+    result['checkedAt'] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    if args.receipt:
+        args.receipt.write_text(json.dumps(result,indent=2)+'\n')
+    print(json.dumps(result))
