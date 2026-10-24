@@ -14,7 +14,7 @@ export function RoutePublisherNotes() {
   const path = pathname.replace(/\/+$/, "") || "/";
   // These authored page components already render every substantive section
   // and reference in their main landmark; do not append a second full article.
-  const hasPrimaryCopy = /^\/(?:wiki|strategy)\/[^/]+$/.test(path) || /^\/learn\/article\/[^/]+$/.test(path);
+  const hasPrimaryCopy = /^\/(?:wiki|strategy|compare)\/[^/]+$/.test(path) || /^\/learn\/article\/[^/]+$/.test(path);
   const [page, setPage] = useState<PublisherPage | null>(initialPage);
   useEffect(() => {
     if (hasPrimaryCopy) {

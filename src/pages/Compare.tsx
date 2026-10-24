@@ -45,7 +45,7 @@ export default function Compare() {
 
       <div className="min-h-screen bg-background flex flex-col">
         <Navigation />
-        <main className="flex-1 container mx-auto px-4 pt-24 pb-12 max-w-5xl">
+        <main data-publisher-notes={`/compare/${pair.slug}`} className="flex-1 container mx-auto px-4 pt-24 pb-12 max-w-5xl">
           <header className="mb-10 text-center">
             <p className="text-xs uppercase tracking-widest text-muted-foreground mb-3">Side-by-side comparison</p>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-r from-emerald-400 to-rose-400 bg-clip-text text-transparent">
@@ -53,6 +53,9 @@ export default function Compare() {
             </h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">{pair.intro}</p>
           </header>
+          <p className="text-sm text-muted-foreground mb-8">
+            Published by TradeHQ, created by Anuga Weerasinghe. <Link to="/about" className="underline">Publisher background and editorial approach</Link>. No independent professional review is claimed; any recorded source-check scope appears on the page.
+          </p>
           <div className="grid md:grid-cols-2 gap-4 mb-8">
             <Card className="p-6 border-emerald-500/20">
               <div className="text-xs text-emerald-400 mb-1">{pair.a.tag}</div>
@@ -131,7 +134,16 @@ export default function Compare() {
                 <li key={source.href}><a href={source.href} className="text-emerald-400 underline underline-offset-4">{source.label}</a></li>
               ))}
             </ul>
+            <nav aria-label="Comparison learning links" className="mt-4 flex flex-wrap gap-4 text-sm">
+              <Link to="/compare" className="underline">All comparisons</Link>
+              <Link to="/markets" className="underline">Browse markets</Link>
+              <Link to="/trade" className="underline">Practice desk</Link>
+            </nav>
           </section>
+
+          <p className="text-sm text-muted-foreground mb-8">
+            Educational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.
+          </p>
 
           <section className="mb-10">
             <h2 className="text-2xl font-semibold mb-4">More comparisons</h2>
