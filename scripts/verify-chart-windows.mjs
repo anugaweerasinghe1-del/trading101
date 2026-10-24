@@ -15,6 +15,7 @@ export async function verifyChartWindows({send,evaluate,waitUntil,origin,delay,s
     await navigate('/trade/btc');
     await waitUntil(`document.querySelector('main')?.innerText.includes('$100,192.00')`,'Fixed quote loaded');
     await waitUntil(`document.fonts.status==='loaded'`,'Chart fonts loaded');
+    await waitUntil(`(()=>{const s=document.querySelector('section[aria-label="Bitcoin Asset Intelligence"]');const row=[...s.querySelectorAll('div.flex')].find(e=>e.firstElementChild?.textContent==='Market Cap');return row?.lastElementChild?.textContent.trim()==='Unavailable'&&!row.querySelector('.animate-spin');})()`,'Finished quote without market cap shows Unavailable, not a permanent spinner');
     const portfolio = await evaluate(`localStorage.getItem('tradehq_portfolio')`);
     for (const [label,hours] of [['1H',1],['4H',4],['1D',24],['1W',168]]) {
       await evaluate(`[...document.querySelectorAll('main button')].find(b=>b.textContent.trim()===${JSON.stringify(label)}).click();true`);
@@ -36,6 +37,10 @@ export async function verifyChartWindows({send,evaluate,waitUntil,origin,delay,s
     assert.ok(ticks.length>0 && ticks.every(value=>value>0),'Tiny fallback stays positive through later updates at '+width);
     assert.equal(await evaluate(`document.documentElement.scrollWidth>innerWidth+1`),false,'Tiny fallback fits '+width);
   }
+  setWindowFixture('cap');
+  await navigate('/trade/btc');
+  await waitUntil(`(()=>{const s=document.querySelector('section[aria-label="Bitcoin Asset Intelligence"]');const row=[...s.querySelectorAll('div.flex')].find(e=>e.firstElementChild?.textContent==='Market Cap');return row?.lastElementChild?.textContent.trim()==='$1.23B';})()`,'A supplied market cap retains its original value and formatting');
+  setWindowFixture(false);
   // The generated FAQ applies to all five asset types. Expand the rendered
   // answers and require the same limitations shown by the Markets page.
   for (const id of ['apt','avgo','arkk','audusd','brent']) {
