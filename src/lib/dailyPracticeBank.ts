@@ -1079,11 +1079,11 @@ export const starterPracticeBank: DailyBatch = {
         "bars": [
           {
             "label": "Asset A",
-            "value": 4
+            "value": 3
           },
           {
             "label": "Asset B",
-            "value": 6
+            "value": 4
           }
         ]
       },
