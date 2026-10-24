@@ -31,10 +31,10 @@ export async function verifyComparisonArticle({send,evaluate,waitUntil,origin,de
   await send('Page.navigate',{url:origin+'/compare'});
   await waitUntil(`!!document.querySelector('main a[href="/compare/bitcoin-vs-ethereum"]')&&!document.querySelector('#prerender-seo')`,'Comparison hub hydrates');
   await evaluate(`document.querySelector('main a[href="/compare/bitcoin-vs-ethereum"]').click();true`);
-  await waitUntil(`location.pathname==='/compare/bitcoin-vs-ethereum'&&document.querySelector('main[data-publisher-notes="/compare/bitcoin-vs-ethereum"]')`,'Client navigation to comparison');
+  await waitUntil(`location.pathname==='/compare/bitcoin-vs-ethereum'&&!!document.querySelector('main[data-publisher-notes="/compare/bitcoin-vs-ethereum"]')`,'Client navigation to comparison');
   assert.equal(await evaluate(`document.querySelectorAll('[data-publisher-notes]').length`),1,'No stale hub article after client navigation');
   await evaluate(`document.querySelector('main a[href="/compare"]').click();true`);
-  await waitUntil(`location.pathname==='/compare'&&document.querySelector('article[data-publisher-notes="/compare"]')`,'Hub notes restored after client navigation');
+  await waitUntil(`location.pathname==='/compare'&&!!document.querySelector('article[data-publisher-notes="/compare"]')`,'Hub notes restored after client navigation');
   assert.equal(await evaluate(`document.querySelectorAll('[data-publisher-notes]').length`),1,'One hub article after return');
   console.log('PASS40comparison-width states: one article, unchanged substantive paragraphs/references and safe client navigation');
 }
