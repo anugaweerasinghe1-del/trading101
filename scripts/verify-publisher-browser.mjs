@@ -16,6 +16,7 @@ import { lessonData } from "../src/lib/lessonData.ts";
 import { verifyChartWindows } from "./verify-chart-windows.mjs";
 import { verifyMobileNavigation } from "./verify-mobile-navigation.mjs";
 import { verifyGuidedLesson } from "./verify-guided-lesson.mjs";
+import { verifyComparisonArticle } from "./verify-comparison-article.mjs";
 import { verifyBeginnerGuide } from "./verify-beginner-guide.mjs";
 import { verifyMarketsSidebar } from "./verify-markets-sidebar.mjs";
 
@@ -162,7 +163,7 @@ try {
       assert.equal(observation.h1, 1, `${path}: one H1 (${width}px, JS=${javaScript})`);
       assert.equal(observation.overflow, false, `${path}: horizontal overflow (${width}px, JS=${javaScript})`);
       if (bundled) assert.equal(observation.notes, path, path + ": publisher content remains visible");
-      const primaryCopy = /^\/(?:wiki|strategy)\/[^/]+$/.test(path) || /^\/learn\/article\/[^/]+$/.test(path);
+      const primaryCopy = /^\/(?:wiki|strategy|compare)\/[^/]+$/.test(path) || /^\/learn\/article\/[^/]+$/.test(path);
       if (javaScript && bundled && primaryCopy) {
         const page = JSON.parse(readFileSync(join(dist, "publisher-notes", path, "index.json"), "utf8"));
         const normalizedMain = await evaluate(`document.querySelector('main').textContent.replace(/\\s+/g, ' ').trim().toLowerCase()`);
@@ -249,6 +250,7 @@ try {
   await waitUntil(`document.activeElement?.getAttribute('aria-label') === 'Open portfolio review mentor'`, 'Portfolio mentor restores focus');
   }
   if (phase === null || phase === 6) {
+  await verifyComparisonArticle({send,evaluate,waitUntil,origin,delay,dist});
   await verifyBeginnerGuide({send,evaluate,waitUntil,origin,delay});
   await verifyGuidedLesson({send,evaluate,waitUntil,origin,delay});
   await verifyMarketsSidebar({send,evaluate,waitUntil,origin,delay});
