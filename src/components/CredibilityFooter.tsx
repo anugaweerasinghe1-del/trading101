@@ -32,7 +32,7 @@ export function CredibilityFooter() {
             <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
               <BookOpen className="w-8 h-8 text-primary" />
             </div>
-            <p className="text-3xl font-bold mb-1">25+</p>
+            <p className="text-3xl font-bold mb-1">Guided</p>
             <p className="text-sm text-muted-foreground">Trading Courses</p>
           </div>
           <div className="text-center">
