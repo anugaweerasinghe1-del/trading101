@@ -1,4 +1,5 @@
 import React from 'react';
+import './verify-progress-accessibility.tsx';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { TradeAnalytics } from '../src/components/TradeAnalytics';
 import type { Portfolio, Trade } from '../src/lib/types';
