@@ -1,0 +1,88 @@
+{
+  "checkedAt": "2026-10-24T10:58:25.277947+00:00",
+  "scope": "Fresh public official-source acquisition only. Successful HTTP/title is not substantive claim corroboration; body reading/dated applicability require separate recorded review. Source restrictions remain limitations, not site defects.",
+  "rows": [
+    {
+      "url": "https://www.sec.gov.lk/",
+      "checkedAt": "2026-10-24T10:58:20.524651+00:00",
+      "method": "Normal Python urllib public GET; inherited proxy/CA, verified TLS, no challenge bypass or identity impersonation.",
+      "status": 200,
+      "finalURL": "https://www.sec.gov.lk/",
+      "bytesRead": 366352,
+      "sha256": "bc1c4eb4f1a06295107b5c2e18ddd3edc74eaa847920f2b9e90040638635f242",
+      "title": "Securities & Exchange Commission",
+      "file": "03292439bbec2c58.json"
+    },
+    {
+      "url": "https://www.sebi.gov.in/",
+      "checkedAt": "2026-10-24T10:58:20.525096+00:00",
+      "method": "Normal Python urllib public GET; inherited proxy/CA, verified TLS, no challenge bypass or identity impersonation.",
+      "status": 200,
+      "finalURL": "https://www.sebi.gov.in/",
+      "bytesRead": 54219,
+      "sha256": "ae2a6b95f853469181b13edfbf175fb5297021582ede5b323dae9d41fe877f22",
+      "title": "Securities and Exchange Board of India",
+      "file": "a6ff308c84485186.json"
+    },
+    {
+      "url": "https://www.sebi.gov.in/reports-and-statistics/research/sep-2024/study-analysis-of-profits-and-losses-in-the-equity-derivatives-segment-fy22-fy24-_86905.html",
+      "checkedAt": "2026-10-24T10:58:20.525448+00:00",
+      "method": "Normal Python urllib public GET; inherited proxy/CA, verified TLS, no challenge bypass or identity impersonation.",
+      "status": 200,
+      "finalURL": "https://www.sebi.gov.in/reports-and-statistics/research/sep-2024/study-analysis-of-profits-and-losses-in-the-equity-derivatives-segment-fy22-fy24-_86905.html",
+      "bytesRead": 8433,
+      "sha256": "3f4e8568832ff919065e96bd69ffd3788b605d7520108bfa0c71a70d50e648d5",
+      "title": "SEBI | Study - Analysis of Profits & Losses in the Equity Derivatives Segment (FY22-FY24)",
+      "file": "b647f1c099ac4acc.json"
+    },
+    {
+      "url": "https://www.rbi.org.in/",
+      "checkedAt": "2026-10-24T10:58:20.526063+00:00",
+      "method": "Normal Python urllib public GET; inherited proxy/CA, verified TLS, no challenge bypass or identity impersonation.",
+      "status": 200,
+      "finalURL": "https://www.rbi.org.in/",
+      "bytesRead": 152072,
+      "sha256": "feb4781421f23c40b4ad4e6d8e1225017a7ce7a8e7d84cd4f87e40c11ad2cadf",
+      "title": "Home | Official website of Reserve Bank of India",
+      "file": "5d3835d6cc87a673.json"
+    },
+    {
+      "url": "https://eramp.sec.gov.ph/capital-market-participants",
+      "checkedAt": "2026-10-24T10:58:22.191142+00:00",
+      "method": "Normal Python urllib public GET; inherited proxy/CA, verified TLS, no challenge bypass or identity impersonation.",
+      "status": 403,
+      "limitation": "Normal client HTTP error; no source-body verification and no bypass attempted.",
+      "file": "d0cb943854a8b5f1.json"
+    },
+    {
+      "url": "https://www.secp.gov.pk/licensing/capital-markets/",
+      "checkedAt": "2026-10-24T10:58:22.712634+00:00",
+      "method": "Normal Python urllib public GET; inherited proxy/CA, verified TLS, no challenge bypass or identity impersonation.",
+      "status": 403,
+      "limitation": "Normal client HTTP error; no source-body verification and no bypass attempted.",
+      "file": "b6ce4e8cb6dbe1e7.json"
+    },
+    {
+      "url": "https://sec.gov.ng/for-investors/find-a-registered-operator/",
+      "checkedAt": "2026-10-24T10:58:22.800850+00:00",
+      "method": "Normal Python urllib public GET; inherited proxy/CA, verified TLS, no challenge bypass or identity impersonation.",
+      "status": 200,
+      "finalURL": "https://sec.gov.ng/for-investors/find-a-registered-operator/",
+      "bytesRead": 255537,
+      "sha256": "bd5886d34d480f44e7695b27b2f4958222d10e884543fdd18de7796a1b8aafe5",
+      "title": "Find a Registered Operator - Securities and Exchange Commission, Nigeria",
+      "file": "5510de218c9be9fc.json"
+    },
+    {
+      "url": "https://sec.gov.ng/for-investors/keep-track-of-circulars/public-notice-unregistered-online-investment-schemes/",
+      "checkedAt": "2026-10-24T10:58:23.208176+00:00",
+      "method": "Normal Python urllib public GET; inherited proxy/CA, verified TLS, no challenge bypass or identity impersonation.",
+      "status": 200,
+      "finalURL": "https://sec.gov.ng/for-investors/keep-track-of-circulars/public-notice-unregistered-online-investment-schemes/",
+      "bytesRead": 88408,
+      "sha256": "06fbd2a349404f86533884b6ab79d0c963227ea9e89b268c4901d60912fc3371",
+      "title": "Public notice - unregistered online investment schemes - Securities and Exchange Commission, Nigeria",
+      "file": "193f795e6f49718a.json"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+import pathlib,json,hashlib,datetime,subprocess,re
+r=pathlib.Path('/workspace/trading101/docs/adsense-2026-10-22');m=json.loads((r/'EVIDENCE-MANIFEST.json').read_text());paths={x['path'] for x in m['files']}
+paths.update(['TERMINAL-TEMPLATE-COMPARISONS.json','FAQ-TEMPLATE-COMPARISONS.json','ARTICLE-FAQ-ALIAS-COMPARISONS.json','NONTERMINAL-FAQ-READ-COVERAGE.json','findings/FUND-FAQ-EXPOSURE.md','findings/MARKET-CAP-LOADING-STATE.md','findings/PORTFOLIO-ACCOUNT-HISTORY-HELP.md','findings/CHART-CHECK-CADENCE.md','VISUAL-REVIEW-NOTES.json','SUPPLEMENTARY-NOTES-REVIEW.json','findings/MOBILE-NAVIGATION-AND-TRUST-HEADERS.md','findings/CONTACT-RESET-HELP.md','findings/MARKETS-SIDEBAR-OCCLUSION.md','findings/GUIDED-LESSON-CARD.md'])
+for pat in ['evidence/PR223*.json','evidence/PR224*.json','evidence/PR225*.json','evidence/PR226*.json','evidence/PR227*.json','evidence/PR228*.json','evidence/PR229*.json','evidence/PR230*.json','evidence/PR231*.json','evidence/PR231*.txt','evidence/POST-PR231-GUEST-SMOKE.json','evidence/country-official-20261024/*.json','evidence/country-official-20261024/*.pdf','evidence/PR22[789]*.txt','evidence/PR230*.txt','evidence/POST-PR22[3456789]-GUEST-SMOKE.json','evidence/POST-PR230-GUEST-SMOKE.json','evidence/faq-continuation-20261024/*.json','verification/*.txt']:
+ paths.update(str(p.relative_to(r)) for p in r.glob(pat))
+paths.update(x['file'] for x in json.loads(pathlib.Path('/tmp/tradehq-nonterminal-faq-unread.json').read_text()))
+paths.update(['evidence/CHART-CHECK-CADENCE-BEFORE.json','evidence/MARKET-CAP-AFFECTED-ROUTES.json','evidence/MARKET-CAP-LOADING-REPRODUCTION.json','evidence/PORTFOLIO-HISTORY-WORDING-BEFORE.json','evidence/portfolio-history-wording-before-360.png','evidence/PUBLISHER-POLICY-READING-20261024.json'])
+for folder,names in {'pr223-production':['_trade_gld-360.png','_trade_gld-1280.png'],'pr224-production':['_trade_msft-360.png','_trade_btc-1280.png'],'pr224-updated-preview':['_trade_msft-360.png','_trade_msft-1280.png','_trade_btc-1280.png'],'pr225-production':['portfolio-360.png','portfolio-1280.png'],'pr225-updated-preview':['portfolio-360.png','portfolio-1280.png'],'pr226-updated-preview':['_trade-360-chart.png','_trade_btc-1280-chart.png'],'pr226-production':['_trade-360-chart.png','_trade_btc-1280-chart.png']}.items():
+ for name in names:
+  path='evidence/'+folder+'/'+name
+  if (r/path).is_file():paths.add(path)
+paths.update(['findings/BEGINNER-GUIDE-MODULES-AND-COURSE-CLAIM.md','evidence/BEGINNER-GUIDE-REPRODUCTION.json','evidence/beginner-guide-before/modules-360.png','evidence/beginner-guide-before/modules-390.png','evidence/COUNTRY-PRIMARY-SOURCE-REVIEW-20261024.json','evidence/fullpage-learning-20261024/SUMMARY.json','evidence/NORMAL-DAILY-REVIEWS-READ-ONLY-FOLLOWUP.json','evidence/MOBILE-NAV-BEFORE.json','evidence/MOBILE-NAV-CONCURRENT-READ-ONLY-OBSERVATION.json','evidence/TRUST-HEADER-ICON-BEFORE.json','evidence/CONTACT-RESET-CLAIM-BEFORE.json','evidence/READ-ONLY-RPC-SOURCE-REVIEW-20261024.json','evidence/PR228-CLI-HTTP-LIMITATION.json','evidence/MARKETS-SIDEBAR-BEFORE-BROWSER.json','evidence/GUIDED-LESSON-BEFORE-BROWSER.json','evidence/fullpage-core-20261024/SUMMARY.json','evidence/fullpage-core-20261024/INITIAL-COLLECTOR-EXPRESSION-FAILURE.json'])
+for folder in ['pr227-updated-preview','pr227-production','pr228-updated-preview','pr228-production','pr229-updated-preview','pr229-production','pr230-updated-preview','pr230-production','pr231-updated-preview','pr231-production','markets-sidebar-before','guided-lesson-before']:
+ for image in (r/'evidence'/folder).glob('*.png'):
+  if folder.startswith('pr227') and image.name not in ['_about-360-top.png','_about-360-bottom.png','_trade_btc-360-top.png','_about-1280-top.png']:continue
+  paths.add(str(image.relative_to(r)))
+for image in (r/'evidence').glob('pr227-*-header-images-*.png'):paths.add(str(image.relative_to(r)))
+# Additional selected full-page collections/review notes are added explicitly by their review receipt.
+review=r/'FULLPAGE-VISUAL-REVIEW-20261024.json'
+if review.exists():
+ paths.add(review.name)
+ for row in json.loads(review.read_text()).get('routes',[]):
+  paths.update(row.get('publishedEvidence',[]))
+for rel in sorted(paths):
+ p=r/rel;assert p.is_file(),rel
+ if p.suffix=='.json':json.loads(p.read_text())
+ if p.suffix in ['.json','.md','.txt','.mjs','.py']:
+  s=p.read_text();assert not re.search(r'(?:gh[pousr]_[A-Za-z0-9]{25,}|github_pat_[A-Za-z0-9_]{25,}|AKIA[A-Z0-9]{16}|X-Amz-Signature=[A-Za-z0-9]+|[?&]sig=[A-Za-z0-9%]{24,})',s), 'Potential sensitive text in '+rel
+files=[{'path':rel,'bytes':(r/rel).stat().st_size,'sha256':hashlib.sha256((r/rel).read_bytes()).hexdigest()} for rel in sorted(paths)]
+m.update(files=files,fileCount=len(files),totalBytes=sum(x['bytes'] for x in files),generatedAt=datetime.datetime.now(datetime.timezone.utc).isoformat(),scope='Selected sanitized audit notes, complete main/FAQ reading comparisons and source captures, exact CI/native/browser receipts, helper snapshots and personally viewed component images. Full-page collections receive human-review credit only in explicit review notes. Large raw image collections remain workspace; no exhaustive completion or Google approval certification.')
+(r/'EVIDENCE-MANIFEST.json').write_text(json.dumps(m,indent=2)+'\n')
+pathlib.Path('/tmp/tradehq-selected-stage-paths.json').write_text(json.dumps(['docs/adsense-2026-10-22/'+x for x in sorted(paths|{'EVIDENCE-MANIFEST.json'})]))
+print(json.dumps({'manifestFiles':len(files),'bytes':m['totalBytes'],'jsonAndBoundedSensitivePatternChecks':'PASS'}))

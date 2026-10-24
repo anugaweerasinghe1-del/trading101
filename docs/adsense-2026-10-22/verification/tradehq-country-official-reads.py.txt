@@ -1,0 +1,32 @@
+import urllib.request,urllib.error,json,pathlib,hashlib,datetime,concurrent.futures
+from html.parser import HTMLParser
+class PublicText(HTMLParser):
+ def __init__(self):super().__init__(convert_charrefs=True);self.skip=0;self.parts=[];self.title=[];self.in_title=False;self.links=[];self.anchor=None
+ def handle_starttag(self,tag,attrs):
+  if tag in ['script','style','noscript']:self.skip+=1
+  if tag=='title':self.in_title=True
+  if tag=='a':self.anchor={'label':'','href':dict(attrs).get('href')}
+ def handle_endtag(self,tag):
+  if tag in ['script','style','noscript'] and self.skip:self.skip-=1
+  if tag=='title':self.in_title=False
+  if tag=='a' and self.anchor:self.links.append(self.anchor);self.anchor=None
+ def handle_data(self,data):
+  if self.skip:return
+  clean=' '.join(data.split())
+  if not clean:return
+  self.parts.append(clean)
+  if self.in_title:self.title.append(clean)
+  if self.anchor:self.anchor['label']+=' '+clean
+
+urls=['https://www.sec.gov.lk/','https://www.sebi.gov.in/','https://www.sebi.gov.in/reports-and-statistics/research/sep-2024/study-analysis-of-profits-and-losses-in-the-equity-derivatives-segment-fy22-fy24-_86905.html','https://www.rbi.org.in/','https://eramp.sec.gov.ph/capital-market-participants','https://www.secp.gov.pk/licensing/capital-markets/','https://sec.gov.ng/for-investors/find-a-registered-operator/','https://sec.gov.ng/for-investors/keep-track-of-circulars/public-notice-unregistered-online-investment-schemes/']
+root=pathlib.Path('/workspace/trading101/docs/adsense-2026-10-22/evidence/country-official-20261024');root.mkdir(exist_ok=True)
+def read(url):
+ row={'url':url,'checkedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'method':'Normal Python urllib public GET; inherited proxy/CA, verified TLS, no challenge bypass or identity impersonation.'}
+ try:
+  with urllib.request.urlopen(url,timeout=25) as res:raw=res.read(3000000);row.update(status=res.status,finalURL=res.url,bytesRead=len(raw),sha256=hashlib.sha256(raw).hexdigest());parser=PublicText();parser.feed(raw.decode('utf-8',errors='replace'));row['title']=' '.join(parser.title)
+  row['bodyText']=' '.join(parser.parts);row['links']=[a for a in parser.links if any(t in a['label'].lower() for t in ['broker','intermediar','licens','derivative','registered operator'])][:30]
+ except urllib.error.HTTPError as err:row.update(status=err.code,limitation='Normal client HTTP error; no source-body verification and no bypass attempted.')
+ except Exception as err:row.update(status=None,limitation=type(err).__name__+' normal source read unavailable; no bypass attempted.')
+ key=hashlib.sha256(url.encode()).hexdigest()[:16]+'.json';(root/key).write_text(json.dumps(row,indent=2)+'\n');return {k:v for k,v in row.items() if k not in ['bodyText','links']}|{'file':key}
+with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:rows=list(pool.map(read,urls))
+(root/'SUMMARY.json').write_text(json.dumps({'checkedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scope':'Fresh public official-source acquisition only. Successful HTTP/title is not substantive claim corroboration; body reading/dated applicability require separate recorded review. Source restrictions remain limitations, not site defects.','rows':rows},indent=2)+'\n');print(json.dumps(rows))

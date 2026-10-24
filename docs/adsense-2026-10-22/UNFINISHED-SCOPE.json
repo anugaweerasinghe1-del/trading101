@@ -150,7 +150,15 @@
       "expandedFAQAnswersRead": 3,
       "fullPageReviewComplete": false,
       "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
     },
     {
       "path": "/compare/bitcoin-vs-gold",
@@ -234,7 +242,15 @@
       "expandedFAQAnswersRead": 3,
       "fullPageReviewComplete": false,
       "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
     },
     {
       "path": "/contact",
@@ -709,7 +725,15 @@
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
       "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
     },
     {
       "path": "/how-to-trade/btc",
@@ -818,7 +842,15 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-031"
+        ],
+        "pr": 230,
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "path": "/learn-trading-guide",
@@ -829,7 +861,25 @@
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
       "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-032",
+          "THQ-033"
+        ],
+        "pr": 231,
+        "state": "PUBLICLY_VERIFIED",
+        "mergeSHA": "1e4f03335a17bc08a874e5eda8ea902f96dfa15a",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "path": "/learn/1",
@@ -996,7 +1046,15 @@
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
       "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
     },
     {
       "path": "/learn/country/india",
@@ -1007,7 +1065,20 @@
       "expandedFAQAnswersRead": 3,
       "fullPageReviewComplete": false,
       "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "datedCountrySourceFollowup": {
+        "result": "CORROBORATED_WITH_STATED_HISTORICAL_SCOPE",
+        "evidence": "evidence/COUNTRY-PRIMARY-SOURCE-REVIEW-20261024.json",
+        "remaining": "India tax/remittance/current account eligibility and equity-index/source claims not certified. RBI homepage identity/FX-management navigation checked, not a particular legal rule."
+      }
     },
     {
       "path": "/learn/country/nigeria",
@@ -1018,7 +1089,20 @@
       "expandedFAQAnswersRead": 2,
       "fullPageReviewComplete": false,
       "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "datedCountrySourceFollowup": {
+        "result": "CORROBORATED_WITH_SCOPED_CAUTION",
+        "evidence": "evidence/COUNTRY-PRIMARY-SOURCE-REVIEW-20261024.json",
+        "remaining": "NGXbenchmark,oilrevenueweights,tax,FXfundingpermissionsandNigeria-originavailabilityremainunverified."
+      }
     },
     {
       "path": "/learn/country/pakistan",
@@ -1029,7 +1113,20 @@
       "expandedFAQAnswersRead": 2,
       "fullPageReviewComplete": false,
       "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "datedCountrySourceFollowup": {
+        "result": "SOURCE_ACCESS_LIMITATION_NOT_CORROBORATED",
+        "evidence": "evidence/COUNTRY-PRIMARY-SOURCE-REVIEW-20261024.json",
+        "remaining": "Registry,PSX/KSE100,economicclaims,currenttax/remittanceeligibilityneedindependentreview."
+      }
     },
     {
       "path": "/learn/country/philippines",
@@ -1040,7 +1137,20 @@
       "expandedFAQAnswersRead": 2,
       "fullPageReviewComplete": false,
       "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "datedCountrySourceFollowup": {
+        "result": "SOURCE_ACCESS_LIMITATION_NOT_CORROBORATED",
+        "evidence": "evidence/COUNTRY-PRIMARY-SOURCE-REVIEW-20261024.json",
+        "remaining": "Registry/currentrules,PSEidatedclaimsandprovidereligibilityneedindependentreview."
+      }
     },
     {
       "path": "/learn/country/sri-lanka",
@@ -1051,7 +1161,20 @@
       "expandedFAQAnswersRead": 3,
       "fullPageReviewComplete": false,
       "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "datedCountrySourceFollowup": {
+        "result": "CORROBORATED_REGULATOR_AND_REGISTRY_POINTER_ONLY",
+        "evidence": "evidence/COUNTRY-PRIMARY-SOURCE-REVIEW-20261024.json",
+        "remaining": "CSEexchange,currentlistedbrokers,individualforeignaccess/tax/remittancerulesnotindependentlyverified."
+      }
     },
     {
       "path": "/learn/crypto-vs-stocks",
@@ -1878,7 +2001,15 @@
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
       "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
     },
     {
       "path": "/strategy/day-trading",
@@ -3519,7 +3650,15 @@
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
       "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
     },
     {
       "path": "/wiki/backtesting",
@@ -5025,12 +5164,12 @@
   ],
   "structuredQuizFeedbackTextRead": 26,
   "supplementaryNotesSourceExpected": 83,
-  "supplementaryNotesActuallyRead": 3,
-  "updatedAt": "2026-10-24T10:26:06.372979+00:00",
-  "fullPageDefaultStateRoutesActuallyViewed": 20,
+  "supplementaryNotesActuallyRead": 28,
+  "updatedAt": "2026-10-24T11:05:15.499282+00:00",
+  "fullPageDefaultStateRoutesActuallyViewed": 32,
   "separateSupplementaryArticlesExpected": 83,
-  "separateSupplementaryArticlesRead": 16,
-  "separateSupplementaryArticlesUnread": 67,
+  "separateSupplementaryArticlesRead": 28,
+  "separateSupplementaryArticlesUnread": 55,
   "dailyConditionalCurriculum": {
     "sourceExpectedCases": 50,
     "questionFeedbackSetsPerCase": 10,

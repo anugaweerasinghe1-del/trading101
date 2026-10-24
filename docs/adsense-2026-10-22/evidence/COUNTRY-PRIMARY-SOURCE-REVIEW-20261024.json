@@ -1,0 +1,57 @@
+{
+  "reviewedAt": "2026-10-24T11:02:47.415551+00:00",
+  "scope": "Claim-specific independent reading of normal public official-source bodies, not comprehensive legal advice or current provider eligibility certification. HTTP success alone is not claim verification. No product edits.",
+  "claims": [
+    {
+      "path": "/learn/country/india",
+      "claim": "September2024study:93%ofindividualequity-derivativestradersstudiedlostoverFY22\u2013FY24; notallinvestorsorlaterprediction.",
+      "result": "CORROBORATED_WITH_STATED_HISTORICAL_SCOPE",
+      "evidence": [
+        "country-official-20261024/b647f1c099ac4acc.json",
+        "country-official-20261024/SEBI-PDF-ACQUISITION.json",
+        "country-official-20261024/SEBI-FY22-FY24-STUDY.pdf"
+      ],
+      "reading": "Landing page dated23September2024, PDF executive summary printedp2items3\u20137:92.8%over3years,91.1%FY24; losses inclusive transactioncosts. PDFprintedp8sampletop15brokersindividualclientsinclHUF/NRI, ~90%FY24individuals; p9methodologyrealizedgross/netP&L. Rounded93%fits3yearsample. Readsummaryp2\u20134andbackground/data/methodologyexcerpts,notall33pages.",
+      "remaining": "India tax/remittance/current account eligibility and equity-index/source claims not certified. RBI homepage identity/FX-management navigation checked, not a particular legal rule."
+    },
+    {
+      "path": "/learn/country/sri-lanka",
+      "claim": "UseSecuritiesandExchangeCommissionofSriLankaforregulatory/registeredintermediaryinformation.",
+      "result": "CORROBORATED_REGULATOR_AND_REGISTRY_POINTER_ONLY",
+      "evidence": [
+        "country-official-20261024/03292439bbec2c58.json"
+      ],
+      "reading": "Read SEC homepage description of2021Actreplacing1987Act; licensing, stockbroker/dealer and investmentadviser registration links. Supports regulator/registry pointer.",
+      "remaining": "CSEexchange,currentlistedbrokers,individualforeignaccess/tax/remittancerulesnotindependentlyverified."
+    },
+    {
+      "path": "/learn/country/nigeria",
+      "claim": "SECregistered-operatordirectoryexistsandSECwarnsaboutunregisteredonlineinvestmentschemes.",
+      "result": "CORROBORATED_WITH_SCOPED_CAUTION",
+      "evidence": [
+        "country-official-20261024/5510de218c9be9fc.json",
+        "country-official-20261024/193f795e6f49718a.json"
+      ],
+      "reading": "Read directory description, scopes/status fields and its due-diligence caveat. Read notice published14May2026/signed8May2026: warns unregistered schemes/unrealisticguaranteedreturns, refers to2025Actandregisteredportals. Does not certify any specific provider.",
+      "remaining": "NGXbenchmark,oilrevenueweights,tax,FXfundingpermissionsandNigeria-originavailabilityremainunverified."
+    },
+    {
+      "path": "/learn/country/philippines",
+      "result": "SOURCE_ACCESS_LIMITATION_NOT_CORROBORATED",
+      "evidence": [
+        "country-official-20261024/d0cb943854a8b5f1.json"
+      ],
+      "reading": "NormalpublicurllibGET403; no registry body read and no bypass.",
+      "remaining": "Registry/currentrules,PSEidatedclaimsandprovidereligibilityneedindependentreview."
+    },
+    {
+      "path": "/learn/country/pakistan",
+      "result": "SOURCE_ACCESS_LIMITATION_NOT_CORROBORATED",
+      "evidence": [
+        "country-official-20261024/b6ce4e8cb6dbe1e7.json"
+      ],
+      "reading": "NormalpublicurllibGET403; no source body read and no bypass.",
+      "remaining": "Registry,PSX/KSE100,economicclaims,currenttax/remittanceeligibilityneedindependentreview."
+    }
+  ]
+}

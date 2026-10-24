@@ -1,0 +1,1208 @@
+{
+  "path": "/learn-trading-guide",
+  "sha": "b86960a3abac068f38365d09abfce6ae90689d0f",
+  "origin": "https://www.thetradehq.com",
+  "capturedAt": "2026-10-24T10:34:50.361Z",
+  "outcome": "COLLECTED_NOT_HUMAN_REVIEWED",
+  "widths": [
+    {
+      "width": 360,
+      "height": 800,
+      "path": "/learn-trading-guide",
+      "title": "Beginner Trading Practice Guide | TradeHQ",
+      "supplementaryNotes": [
+        {
+          "path": "/learn-trading-guide",
+          "text": "Learning notes: Beginner Trading Practice Guide\n\nAn introduction to the virtual practice dashboard, order mechanics and a worked buy/sell-fee example. Links to longer courses and reference material; $100,000 is simulated money, not an investment account.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nWhat this page actually provides\n\nThis page is a starting map and interactive practice dashboard, not a complete textbook or independently tested trading course. It introduces quote reading, simulated market orders, fees and reviewing hypothetical outcomes. Use the linked structured courses for deeper explanations of instruments, order types and portfolio concepts. The exercises illustrate arithmetic and questions to ask, not a profitable strategy.\n\nFour checks for a virtual practice exercise\nExposure: quantify the share of virtual cash used and calculate what a chosen adverse price change would do to the holding.\nExit assumptions: write down both a higher and a lower hypothetical sale price. TradeHQ does not support resting limit or stop orders.\nObservation quality: record the quote source, timestamp, asset and quote currency. A generated chart need not reproduce traded market history.\nReview: retain the original assumptions, both virtual fees and alternative outcomes. One or ten practice results do not establish a repeatable advantage.\nWorked example: virtual shares, fees and two outcomes\n\nAssume a purely hypothetical purchase of ten shares at $50 each. The gross cost is $500 and a 0.1% virtual purchase fee is $0.50, so the total cash used is $500.50. If the assumed sale price is $46, the gross proceeds are $460 and a 0.1% virtual sale fee is $0.46; net proceeds are $459.54. Compared with the original $500.50 cost, the round trip produces a loss of $40.96.\n\nFor the same ten shares, a separate hypothetical sale at $54 yields $540 gross, less a $0.54 virtual sale fee, or $539.46 net. Subtract the $500.50 initial cost to get a gain of $38.96. These prices are invented, not a forecast or observed fills. Actual transactions can involve spreads, slippage, taxes and other costs not captured here.\n\nWhat this simulator cannot teach by itself\n\nTradeHQ offers virtual market orders, not real brokerage transactions, short positions or resting limit/stop orders. Even when a displayed quote comes from an external provider, a simulated fill does not establish that the same price or liquidity would be available on an exchange.\n\nUse the structured courses and linked sources to check concepts rather than treating a synthetic sentiment label, an indicator, or a hypothetical growth calculator as a verified trading signal. Practice outcomes do not predict real-money results.\n\nThe vocabulary you need before anything else\nBid and ask: at a given time, the best displayed bid and ask are quoted buying and selling prices. Their difference is the spread. Actual fills and costs can differ from that snapshot.\nLiquidity: the availability of buyers and sellers at prices and quantities. Limited liquidity can make a real order harder or more costly to execute.\nVolatility: a measure of price variation over a stated period. It describes past movement; it cannot dictate one universally appropriate exit level or position size.\nLeverage: exposure larger than posted funds through borrowing or derivatives. Gains and losses can be magnified, and collateral or liquidation rules vary by product and venue. TradeHQ does not provide leverage.\nExpectancy example, not a forecast: five hypothetical wins of $30 and five losses of $20 total $50 before costs. Ten $2 round-trip fees reduce that to $30 net. This invented ten-trade record is too small and artificial to establish a repeatable advantage.\nA first-month plan\nWeek one: label the bid, ask, spread and quote time on an example, then inspect virtual market orders without using real funds.\nWeek two: write assumptions before a virtual example, including quantity, fee, possible lower sale price and an alternative outcome.\nWeek three: check each recorded virtual outcome against its original assumptions; distinguish a mark from an executable real-world quote.\nWeek four: compare the journal entries for missing costs, changed assumptions and hindsight bias. Note what the simulation cannot test.\nReferences and related pages\nStructured courses and quizzes\nGlossary: order terms and market mechanics\nStrategy concepts and limits\nVirtual practice desk\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 360,
+      "scrollHeight": 11524,
+      "viewportWidth": 360,
+      "canonical": "https://www.thetradehq.com/learn-trading-guide",
+      "images": [],
+      "horizontalCandidates": [
+        {
+          "tag": "DIV",
+          "text": "BTC\nsample move\n+2.4%\nETH\nsample move\n+1.8%\nSOL\nsample move\n-0.6%\nNVDA\nsample move\n+3.1%\nSPY\nsample ",
+          "left": -66.14630889892578,
+          "right": 1274.2599411010742
+        },
+        {
+          "tag": "SPAN",
+          "text": "BTC\nsample move\n+2.4%",
+          "left": -50.14630889892578,
+          "right": 103.15056610107422
+        },
+        {
+          "tag": "SPAN",
+          "text": "BTC",
+          "left": -50.14630889892578,
+          "right": -28.45880889892578
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": -20.45880889892578,
+          "right": 59.02556610107422
+        },
+        {
+          "tag": "SPAN",
+          "text": "SOL\nsample move\n-0.6%",
+          "left": 320.44744873046875,
+          "right": 473.74432373046875
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 350.13494873046875,
+          "right": 429.61932373046875
+        },
+        {
+          "tag": "SPAN",
+          "text": "-0.6%",
+          "left": 437.61932373046875,
+          "right": 473.74432373046875
+        },
+        {
+          "tag": "SPAN",
+          "text": "NVDA\nsample move\n+3.1%",
+          "left": 505.74432373046875,
+          "right": 666.2599487304688
+        },
+        {
+          "tag": "SPAN",
+          "text": "NVDA",
+          "left": 505.74432373046875,
+          "right": 534.6505737304688
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 542.6505737304688,
+          "right": 622.1349487304688
+        },
+        {
+          "tag": "SPAN",
+          "text": "+3.1%",
+          "left": 630.1349487304688,
+          "right": 666.2599487304688
+        },
+        {
+          "tag": "SPAN",
+          "text": "SPY\nsample move\n+0.4%",
+          "left": 698.2599487304688,
+          "right": 851.5568237304688
+        },
+        {
+          "tag": "SPAN",
+          "text": "SPY",
+          "left": 698.2599487304688,
+          "right": 719.9474487304688
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 727.9474487304688,
+          "right": 807.4318237304688
+        },
+        {
+          "tag": "SPAN",
+          "text": "+0.4%",
+          "left": 815.4318237304688,
+          "right": 851.5568237304688
+        },
+        {
+          "tag": "SPAN",
+          "text": "GOLD\nsample move\n+0.9%",
+          "left": 883.5568237304688,
+          "right": 1044.072509765625
+        },
+        {
+          "tag": "SPAN",
+          "text": "GOLD",
+          "left": 883.5568237304688,
+          "right": 912.4630737304688
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 920.4630737304688,
+          "right": 999.9474487304688
+        },
+        {
+          "tag": "SPAN",
+          "text": "+0.9%",
+          "left": 1007.9474487304688,
+          "right": 1044.072509765625
+        },
+        {
+          "tag": "SPAN",
+          "text": "EUR/USD\nsample move\n-0.2%",
+          "left": 1076.0723876953125,
+          "right": 1258.2598876953125
+        },
+        {
+          "tag": "SPAN",
+          "text": "EUR/USD",
+          "left": 1076.0723876953125,
+          "right": 1126.6505126953125
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 1134.6505126953125,
+          "right": 1214.1348876953125
+        },
+        {
+          "tag": "SPAN",
+          "text": "-0.2%",
+          "left": 1222.1348876953125,
+          "right": 1258.2598876953125
+        },
+        {
+          "tag": "DIV",
+          "text": "BTC\nsample move\n+2.4%\nETH\nsample move\n+1.8%\nSOL\nsample move\n-0.6%\nNVDA\nsample move\n+3.1%\nSPY\nsample ",
+          "left": 1274.2598876953125,
+          "right": 2614.666015625
+        },
+        {
+          "tag": "SPAN",
+          "text": "BTC\nsample move\n+2.4%",
+          "left": 1290.2598876953125,
+          "right": 1443.5567626953125
+        },
+        {
+          "tag": "SPAN",
+          "text": "BTC",
+          "left": 1290.2598876953125,
+          "right": 1311.9473876953125
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 1319.9473876953125,
+          "right": 1399.4317626953125
+        },
+        {
+          "tag": "SPAN",
+          "text": "+2.4%",
+          "left": 1407.4317626953125,
+          "right": 1443.5567626953125
+        },
+        {
+          "tag": "SPAN",
+          "text": "ETH\nsample move\n+1.8%",
+          "left": 1475.5567626953125,
+          "right": 1628.8536376953125
+        },
+        {
+          "tag": "SPAN",
+          "text": "ETH",
+          "left": 1475.5567626953125,
+          "right": 1497.2442626953125
+        }
+      ],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "6e1ead49e9cb98c7-360-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "6e1ead49e9cb98c7-360-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "6e1ead49e9cb98c7-360-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "6e1ead49e9cb98c7-360-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "6e1ead49e9cb98c7-360-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "6e1ead49e9cb98c7-360-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "6e1ead49e9cb98c7-360-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "6e1ead49e9cb98c7-360-07.png"
+        },
+        {
+          "y": 5440,
+          "screenshot": "6e1ead49e9cb98c7-360-08.png"
+        },
+        {
+          "y": 6120,
+          "screenshot": "6e1ead49e9cb98c7-360-09.png"
+        },
+        {
+          "y": 6800,
+          "screenshot": "6e1ead49e9cb98c7-360-10.png"
+        },
+        {
+          "y": 7480,
+          "screenshot": "6e1ead49e9cb98c7-360-11.png"
+        },
+        {
+          "y": 8160,
+          "screenshot": "6e1ead49e9cb98c7-360-12.png"
+        },
+        {
+          "y": 8840,
+          "screenshot": "6e1ead49e9cb98c7-360-13.png"
+        },
+        {
+          "y": 9520,
+          "screenshot": "6e1ead49e9cb98c7-360-14.png"
+        },
+        {
+          "y": 10200,
+          "screenshot": "6e1ead49e9cb98c7-360-15.png"
+        },
+        {
+          "y": 10724,
+          "screenshot": "6e1ead49e9cb98c7-360-16.png"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "path": "/learn-trading-guide",
+      "title": "Beginner Trading Practice Guide | TradeHQ",
+      "supplementaryNotes": [
+        {
+          "path": "/learn-trading-guide",
+          "text": "Learning notes: Beginner Trading Practice Guide\n\nAn introduction to the virtual practice dashboard, order mechanics and a worked buy/sell-fee example. Links to longer courses and reference material; $100,000 is simulated money, not an investment account.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nWhat this page actually provides\n\nThis page is a starting map and interactive practice dashboard, not a complete textbook or independently tested trading course. It introduces quote reading, simulated market orders, fees and reviewing hypothetical outcomes. Use the linked structured courses for deeper explanations of instruments, order types and portfolio concepts. The exercises illustrate arithmetic and questions to ask, not a profitable strategy.\n\nFour checks for a virtual practice exercise\nExposure: quantify the share of virtual cash used and calculate what a chosen adverse price change would do to the holding.\nExit assumptions: write down both a higher and a lower hypothetical sale price. TradeHQ does not support resting limit or stop orders.\nObservation quality: record the quote source, timestamp, asset and quote currency. A generated chart need not reproduce traded market history.\nReview: retain the original assumptions, both virtual fees and alternative outcomes. One or ten practice results do not establish a repeatable advantage.\nWorked example: virtual shares, fees and two outcomes\n\nAssume a purely hypothetical purchase of ten shares at $50 each. The gross cost is $500 and a 0.1% virtual purchase fee is $0.50, so the total cash used is $500.50. If the assumed sale price is $46, the gross proceeds are $460 and a 0.1% virtual sale fee is $0.46; net proceeds are $459.54. Compared with the original $500.50 cost, the round trip produces a loss of $40.96.\n\nFor the same ten shares, a separate hypothetical sale at $54 yields $540 gross, less a $0.54 virtual sale fee, or $539.46 net. Subtract the $500.50 initial cost to get a gain of $38.96. These prices are invented, not a forecast or observed fills. Actual transactions can involve spreads, slippage, taxes and other costs not captured here.\n\nWhat this simulator cannot teach by itself\n\nTradeHQ offers virtual market orders, not real brokerage transactions, short positions or resting limit/stop orders. Even when a displayed quote comes from an external provider, a simulated fill does not establish that the same price or liquidity would be available on an exchange.\n\nUse the structured courses and linked sources to check concepts rather than treating a synthetic sentiment label, an indicator, or a hypothetical growth calculator as a verified trading signal. Practice outcomes do not predict real-money results.\n\nThe vocabulary you need before anything else\nBid and ask: at a given time, the best displayed bid and ask are quoted buying and selling prices. Their difference is the spread. Actual fills and costs can differ from that snapshot.\nLiquidity: the availability of buyers and sellers at prices and quantities. Limited liquidity can make a real order harder or more costly to execute.\nVolatility: a measure of price variation over a stated period. It describes past movement; it cannot dictate one universally appropriate exit level or position size.\nLeverage: exposure larger than posted funds through borrowing or derivatives. Gains and losses can be magnified, and collateral or liquidation rules vary by product and venue. TradeHQ does not provide leverage.\nExpectancy example, not a forecast: five hypothetical wins of $30 and five losses of $20 total $50 before costs. Ten $2 round-trip fees reduce that to $30 net. This invented ten-trade record is too small and artificial to establish a repeatable advantage.\nA first-month plan\nWeek one: label the bid, ask, spread and quote time on an example, then inspect virtual market orders without using real funds.\nWeek two: write assumptions before a virtual example, including quantity, fee, possible lower sale price and an alternative outcome.\nWeek three: check each recorded virtual outcome against its original assumptions; distinguish a mark from an executable real-world quote.\nWeek four: compare the journal entries for missing costs, changed assumptions and hindsight bias. Note what the simulation cannot test.\nReferences and related pages\nStructured courses and quizzes\nGlossary: order terms and market mechanics\nStrategy concepts and limits\nVirtual practice desk\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 390,
+      "scrollHeight": 10957,
+      "viewportWidth": 390,
+      "canonical": "https://www.thetradehq.com/learn-trading-guide",
+      "images": [],
+      "horizontalCandidates": [
+        {
+          "tag": "DIV",
+          "text": "BTC\nsample move\n+2.4%\nETH\nsample move\n+1.8%\nSOL\nsample move\n-0.6%\nNVDA\nsample move\n+3.1%\nSPY\nsample ",
+          "left": -65.69886016845703,
+          "right": 1274.707389831543
+        },
+        {
+          "tag": "SPAN",
+          "text": "BTC\nsample move\n+2.4%",
+          "left": -49.69886016845703,
+          "right": 103.59801483154297
+        },
+        {
+          "tag": "SPAN",
+          "text": "BTC",
+          "left": -49.69886016845703,
+          "right": -28.01136016845703
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": -20.01136016845703,
+          "right": 59.47301483154297
+        },
+        {
+          "tag": "SPAN",
+          "text": "SOL\nsample move\n-0.6%",
+          "left": 320.8948974609375,
+          "right": 474.1917724609375
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 350.5823974609375,
+          "right": 430.0667724609375
+        },
+        {
+          "tag": "SPAN",
+          "text": "-0.6%",
+          "left": 438.0667724609375,
+          "right": 474.1917724609375
+        },
+        {
+          "tag": "SPAN",
+          "text": "NVDA\nsample move\n+3.1%",
+          "left": 506.1917724609375,
+          "right": 666.7073974609375
+        },
+        {
+          "tag": "SPAN",
+          "text": "NVDA",
+          "left": 506.1917724609375,
+          "right": 535.0980224609375
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 543.0980224609375,
+          "right": 622.5823974609375
+        },
+        {
+          "tag": "SPAN",
+          "text": "+3.1%",
+          "left": 630.5823974609375,
+          "right": 666.7073974609375
+        },
+        {
+          "tag": "SPAN",
+          "text": "SPY\nsample move\n+0.4%",
+          "left": 698.7073974609375,
+          "right": 852.0042724609375
+        },
+        {
+          "tag": "SPAN",
+          "text": "SPY",
+          "left": 698.7073974609375,
+          "right": 720.3948974609375
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 728.3948974609375,
+          "right": 807.8792724609375
+        },
+        {
+          "tag": "SPAN",
+          "text": "+0.4%",
+          "left": 815.8792724609375,
+          "right": 852.0042724609375
+        },
+        {
+          "tag": "SPAN",
+          "text": "GOLD\nsample move\n+0.9%",
+          "left": 884.0042724609375,
+          "right": 1044.5198974609375
+        },
+        {
+          "tag": "SPAN",
+          "text": "GOLD",
+          "left": 884.0042724609375,
+          "right": 912.9105224609375
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 920.9105224609375,
+          "right": 1000.3948974609375
+        },
+        {
+          "tag": "SPAN",
+          "text": "+0.9%",
+          "left": 1008.3948974609375,
+          "right": 1044.5198974609375
+        },
+        {
+          "tag": "SPAN",
+          "text": "EUR/USD\nsample move\n-0.2%",
+          "left": 1076.5198974609375,
+          "right": 1258.7073974609375
+        },
+        {
+          "tag": "SPAN",
+          "text": "EUR/USD",
+          "left": 1076.5198974609375,
+          "right": 1127.0980224609375
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 1135.0980224609375,
+          "right": 1214.5823974609375
+        },
+        {
+          "tag": "SPAN",
+          "text": "-0.2%",
+          "left": 1222.5823974609375,
+          "right": 1258.7073974609375
+        },
+        {
+          "tag": "DIV",
+          "text": "BTC\nsample move\n+2.4%\nETH\nsample move\n+1.8%\nSOL\nsample move\n-0.6%\nNVDA\nsample move\n+3.1%\nSPY\nsample ",
+          "left": 1274.7073974609375,
+          "right": 2615.11376953125
+        },
+        {
+          "tag": "SPAN",
+          "text": "BTC\nsample move\n+2.4%",
+          "left": 1290.7073974609375,
+          "right": 1444.0042724609375
+        },
+        {
+          "tag": "SPAN",
+          "text": "BTC",
+          "left": 1290.7073974609375,
+          "right": 1312.3948974609375
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 1320.3948974609375,
+          "right": 1399.8792724609375
+        },
+        {
+          "tag": "SPAN",
+          "text": "+2.4%",
+          "left": 1407.8792724609375,
+          "right": 1444.0042724609375
+        },
+        {
+          "tag": "SPAN",
+          "text": "ETH\nsample move\n+1.8%",
+          "left": 1476.0042724609375,
+          "right": 1629.3011474609375
+        },
+        {
+          "tag": "SPAN",
+          "text": "ETH",
+          "left": 1476.0042724609375,
+          "right": 1497.6917724609375
+        }
+      ],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "6e1ead49e9cb98c7-390-00.png"
+        },
+        {
+          "y": 717,
+          "screenshot": "6e1ead49e9cb98c7-390-01.png"
+        },
+        {
+          "y": 1434,
+          "screenshot": "6e1ead49e9cb98c7-390-02.png"
+        },
+        {
+          "y": 2151,
+          "screenshot": "6e1ead49e9cb98c7-390-03.png"
+        },
+        {
+          "y": 2868,
+          "screenshot": "6e1ead49e9cb98c7-390-04.png"
+        },
+        {
+          "y": 3585,
+          "screenshot": "6e1ead49e9cb98c7-390-05.png"
+        },
+        {
+          "y": 4302,
+          "screenshot": "6e1ead49e9cb98c7-390-06.png"
+        },
+        {
+          "y": 5019,
+          "screenshot": "6e1ead49e9cb98c7-390-07.png"
+        },
+        {
+          "y": 5736,
+          "screenshot": "6e1ead49e9cb98c7-390-08.png"
+        },
+        {
+          "y": 6453,
+          "screenshot": "6e1ead49e9cb98c7-390-09.png"
+        },
+        {
+          "y": 7170,
+          "screenshot": "6e1ead49e9cb98c7-390-10.png"
+        },
+        {
+          "y": 7887,
+          "screenshot": "6e1ead49e9cb98c7-390-11.png"
+        },
+        {
+          "y": 8604,
+          "screenshot": "6e1ead49e9cb98c7-390-12.png"
+        },
+        {
+          "y": 9321,
+          "screenshot": "6e1ead49e9cb98c7-390-13.png"
+        },
+        {
+          "y": 10038,
+          "screenshot": "6e1ead49e9cb98c7-390-14.png"
+        },
+        {
+          "y": 10113,
+          "screenshot": "6e1ead49e9cb98c7-390-15.png"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "path": "/learn-trading-guide",
+      "title": "Beginner Trading Practice Guide | TradeHQ",
+      "supplementaryNotes": [
+        {
+          "path": "/learn-trading-guide",
+          "text": "Learning notes: Beginner Trading Practice Guide\n\nAn introduction to the virtual practice dashboard, order mechanics and a worked buy/sell-fee example. Links to longer courses and reference material; $100,000 is simulated money, not an investment account.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nWhat this page actually provides\n\nThis page is a starting map and interactive practice dashboard, not a complete textbook or independently tested trading course. It introduces quote reading, simulated market orders, fees and reviewing hypothetical outcomes. Use the linked structured courses for deeper explanations of instruments, order types and portfolio concepts. The exercises illustrate arithmetic and questions to ask, not a profitable strategy.\n\nFour checks for a virtual practice exercise\nExposure: quantify the share of virtual cash used and calculate what a chosen adverse price change would do to the holding.\nExit assumptions: write down both a higher and a lower hypothetical sale price. TradeHQ does not support resting limit or stop orders.\nObservation quality: record the quote source, timestamp, asset and quote currency. A generated chart need not reproduce traded market history.\nReview: retain the original assumptions, both virtual fees and alternative outcomes. One or ten practice results do not establish a repeatable advantage.\nWorked example: virtual shares, fees and two outcomes\n\nAssume a purely hypothetical purchase of ten shares at $50 each. The gross cost is $500 and a 0.1% virtual purchase fee is $0.50, so the total cash used is $500.50. If the assumed sale price is $46, the gross proceeds are $460 and a 0.1% virtual sale fee is $0.46; net proceeds are $459.54. Compared with the original $500.50 cost, the round trip produces a loss of $40.96.\n\nFor the same ten shares, a separate hypothetical sale at $54 yields $540 gross, less a $0.54 virtual sale fee, or $539.46 net. Subtract the $500.50 initial cost to get a gain of $38.96. These prices are invented, not a forecast or observed fills. Actual transactions can involve spreads, slippage, taxes and other costs not captured here.\n\nWhat this simulator cannot teach by itself\n\nTradeHQ offers virtual market orders, not real brokerage transactions, short positions or resting limit/stop orders. Even when a displayed quote comes from an external provider, a simulated fill does not establish that the same price or liquidity would be available on an exchange.\n\nUse the structured courses and linked sources to check concepts rather than treating a synthetic sentiment label, an indicator, or a hypothetical growth calculator as a verified trading signal. Practice outcomes do not predict real-money results.\n\nThe vocabulary you need before anything else\nBid and ask: at a given time, the best displayed bid and ask are quoted buying and selling prices. Their difference is the spread. Actual fills and costs can differ from that snapshot.\nLiquidity: the availability of buyers and sellers at prices and quantities. Limited liquidity can make a real order harder or more costly to execute.\nVolatility: a measure of price variation over a stated period. It describes past movement; it cannot dictate one universally appropriate exit level or position size.\nLeverage: exposure larger than posted funds through borrowing or derivatives. Gains and losses can be magnified, and collateral or liquidation rules vary by product and venue. TradeHQ does not provide leverage.\nExpectancy example, not a forecast: five hypothetical wins of $30 and five losses of $20 total $50 before costs. Ten $2 round-trip fees reduce that to $30 net. This invented ten-trade record is too small and artificial to establish a repeatable advantage.\nA first-month plan\nWeek one: label the bid, ask, spread and quote time on an example, then inspect virtual market orders without using real funds.\nWeek two: write assumptions before a virtual example, including quantity, fee, possible lower sale price and an alternative outcome.\nWeek three: check each recorded virtual outcome against its original assumptions; distinguish a mark from an executable real-world quote.\nWeek four: compare the journal entries for missing costs, changed assumptions and hindsight bias. Note what the simulation cannot test.\nReferences and related pages\nStructured courses and quizzes\nGlossary: order terms and market mechanics\nStrategy concepts and limits\nVirtual practice desk\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 753,
+      "scrollHeight": 6661,
+      "viewportWidth": 768,
+      "canonical": "https://www.thetradehq.com/learn-trading-guide",
+      "images": [],
+      "horizontalCandidates": [
+        {
+          "tag": "DIV",
+          "text": "BTC\nsample move\n+2.4%\nETH\nsample move\n+1.8%\nSOL\nsample move\n-0.6%\nNVDA\nsample move\n+3.1%\nSPY\nsample ",
+          "left": -39.78215789794922,
+          "right": 1300.6240921020508
+        },
+        {
+          "tag": "SPAN",
+          "text": "BTC\nsample move\n+2.4%",
+          "left": -23.78215789794922,
+          "right": 129.51471710205078
+        },
+        {
+          "tag": "SPAN",
+          "text": "BTC",
+          "left": -23.78215789794922,
+          "right": -2.0946578979492188
+        },
+        {
+          "tag": "SPAN",
+          "text": "SPY\nsample move\n+0.4%",
+          "left": 724.6240844726562,
+          "right": 877.9209594726562
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 754.3115844726562,
+          "right": 833.7959594726562
+        },
+        {
+          "tag": "SPAN",
+          "text": "+0.4%",
+          "left": 841.7959594726562,
+          "right": 877.9209594726562
+        },
+        {
+          "tag": "SPAN",
+          "text": "GOLD\nsample move\n+0.9%",
+          "left": 909.9209594726562,
+          "right": 1070.4366455078125
+        },
+        {
+          "tag": "SPAN",
+          "text": "GOLD",
+          "left": 909.9209594726562,
+          "right": 938.8272094726562
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 946.8272094726562,
+          "right": 1026.3115234375
+        },
+        {
+          "tag": "SPAN",
+          "text": "+0.9%",
+          "left": 1034.3115234375,
+          "right": 1070.4366455078125
+        },
+        {
+          "tag": "SPAN",
+          "text": "EUR/USD\nsample move\n-0.2%",
+          "left": 1102.4366455078125,
+          "right": 1284.6241455078125
+        },
+        {
+          "tag": "SPAN",
+          "text": "EUR/USD",
+          "left": 1102.4366455078125,
+          "right": 1153.0147705078125
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 1161.0147705078125,
+          "right": 1240.4991455078125
+        },
+        {
+          "tag": "SPAN",
+          "text": "-0.2%",
+          "left": 1248.4991455078125,
+          "right": 1284.6241455078125
+        },
+        {
+          "tag": "DIV",
+          "text": "BTC\nsample move\n+2.4%\nETH\nsample move\n+1.8%\nSOL\nsample move\n-0.6%\nNVDA\nsample move\n+3.1%\nSPY\nsample ",
+          "left": 1300.6241455078125,
+          "right": 2641.0302734375
+        },
+        {
+          "tag": "SPAN",
+          "text": "BTC\nsample move\n+2.4%",
+          "left": 1316.6241455078125,
+          "right": 1469.9210205078125
+        },
+        {
+          "tag": "SPAN",
+          "text": "BTC",
+          "left": 1316.6241455078125,
+          "right": 1338.3116455078125
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 1346.3116455078125,
+          "right": 1425.7960205078125
+        },
+        {
+          "tag": "SPAN",
+          "text": "+2.4%",
+          "left": 1433.7960205078125,
+          "right": 1469.9210205078125
+        },
+        {
+          "tag": "SPAN",
+          "text": "ETH\nsample move\n+1.8%",
+          "left": 1501.9210205078125,
+          "right": 1655.2178955078125
+        },
+        {
+          "tag": "SPAN",
+          "text": "ETH",
+          "left": 1501.9210205078125,
+          "right": 1523.6085205078125
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 1531.6085205078125,
+          "right": 1611.0928955078125
+        },
+        {
+          "tag": "SPAN",
+          "text": "+1.8%",
+          "left": 1619.0928955078125,
+          "right": 1655.2178955078125
+        },
+        {
+          "tag": "SPAN",
+          "text": "SOL\nsample move\n-0.6%",
+          "left": 1687.2178955078125,
+          "right": 1840.5147705078125
+        },
+        {
+          "tag": "SPAN",
+          "text": "SOL",
+          "left": 1687.2178955078125,
+          "right": 1708.9053955078125
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 1716.9053955078125,
+          "right": 1796.3897705078125
+        },
+        {
+          "tag": "SPAN",
+          "text": "-0.6%",
+          "left": 1804.3897705078125,
+          "right": 1840.5147705078125
+        },
+        {
+          "tag": "SPAN",
+          "text": "NVDA\nsample move\n+3.1%",
+          "left": 1872.5147705078125,
+          "right": 2033.0303955078125
+        },
+        {
+          "tag": "SPAN",
+          "text": "NVDA",
+          "left": 1872.5147705078125,
+          "right": 1901.4210205078125
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 1909.4210205078125,
+          "right": 1988.9053955078125
+        }
+      ],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "6e1ead49e9cb98c7-768-00.png"
+        },
+        {
+          "y": 870,
+          "screenshot": "6e1ead49e9cb98c7-768-01.png"
+        },
+        {
+          "y": 1740,
+          "screenshot": "6e1ead49e9cb98c7-768-02.png"
+        },
+        {
+          "y": 2610,
+          "screenshot": "6e1ead49e9cb98c7-768-03.png"
+        },
+        {
+          "y": 3480,
+          "screenshot": "6e1ead49e9cb98c7-768-04.png"
+        },
+        {
+          "y": 4350,
+          "screenshot": "6e1ead49e9cb98c7-768-05.png"
+        },
+        {
+          "y": 5220,
+          "screenshot": "6e1ead49e9cb98c7-768-06.png"
+        },
+        {
+          "y": 5637,
+          "screenshot": "6e1ead49e9cb98c7-768-07.png"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "path": "/learn-trading-guide",
+      "title": "Beginner Trading Practice Guide | TradeHQ",
+      "supplementaryNotes": [
+        {
+          "path": "/learn-trading-guide",
+          "text": "Learning notes: Beginner Trading Practice Guide\n\nAn introduction to the virtual practice dashboard, order mechanics and a worked buy/sell-fee example. Links to longer courses and reference material; $100,000 is simulated money, not an investment account.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nWhat this page actually provides\n\nThis page is a starting map and interactive practice dashboard, not a complete textbook or independently tested trading course. It introduces quote reading, simulated market orders, fees and reviewing hypothetical outcomes. Use the linked structured courses for deeper explanations of instruments, order types and portfolio concepts. The exercises illustrate arithmetic and questions to ask, not a profitable strategy.\n\nFour checks for a virtual practice exercise\nExposure: quantify the share of virtual cash used and calculate what a chosen adverse price change would do to the holding.\nExit assumptions: write down both a higher and a lower hypothetical sale price. TradeHQ does not support resting limit or stop orders.\nObservation quality: record the quote source, timestamp, asset and quote currency. A generated chart need not reproduce traded market history.\nReview: retain the original assumptions, both virtual fees and alternative outcomes. One or ten practice results do not establish a repeatable advantage.\nWorked example: virtual shares, fees and two outcomes\n\nAssume a purely hypothetical purchase of ten shares at $50 each. The gross cost is $500 and a 0.1% virtual purchase fee is $0.50, so the total cash used is $500.50. If the assumed sale price is $46, the gross proceeds are $460 and a 0.1% virtual sale fee is $0.46; net proceeds are $459.54. Compared with the original $500.50 cost, the round trip produces a loss of $40.96.\n\nFor the same ten shares, a separate hypothetical sale at $54 yields $540 gross, less a $0.54 virtual sale fee, or $539.46 net. Subtract the $500.50 initial cost to get a gain of $38.96. These prices are invented, not a forecast or observed fills. Actual transactions can involve spreads, slippage, taxes and other costs not captured here.\n\nWhat this simulator cannot teach by itself\n\nTradeHQ offers virtual market orders, not real brokerage transactions, short positions or resting limit/stop orders. Even when a displayed quote comes from an external provider, a simulated fill does not establish that the same price or liquidity would be available on an exchange.\n\nUse the structured courses and linked sources to check concepts rather than treating a synthetic sentiment label, an indicator, or a hypothetical growth calculator as a verified trading signal. Practice outcomes do not predict real-money results.\n\nThe vocabulary you need before anything else\nBid and ask: at a given time, the best displayed bid and ask are quoted buying and selling prices. Their difference is the spread. Actual fills and costs can differ from that snapshot.\nLiquidity: the availability of buyers and sellers at prices and quantities. Limited liquidity can make a real order harder or more costly to execute.\nVolatility: a measure of price variation over a stated period. It describes past movement; it cannot dictate one universally appropriate exit level or position size.\nLeverage: exposure larger than posted funds through borrowing or derivatives. Gains and losses can be magnified, and collateral or liquidation rules vary by product and venue. TradeHQ does not provide leverage.\nExpectancy example, not a forecast: five hypothetical wins of $30 and five losses of $20 total $50 before costs. Ten $2 round-trip fees reduce that to $30 net. This invented ten-trade record is too small and artificial to establish a repeatable advantage.\nA first-month plan\nWeek one: label the bid, ask, spread and quote time on an example, then inspect virtual market orders without using real funds.\nWeek two: write assumptions before a virtual example, including quantity, fee, possible lower sale price and an alternative outcome.\nWeek three: check each recorded virtual outcome against its original assumptions; distinguish a mark from an executable real-world quote.\nWeek four: compare the journal entries for missing costs, changed assumptions and hindsight bias. Note what the simulation cannot test.\nReferences and related pages\nStructured courses and quizzes\nGlossary: order terms and market mechanics\nStrategy concepts and limits\nVirtual practice desk\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1265,
+      "scrollHeight": 5649,
+      "viewportWidth": 1280,
+      "canonical": "https://www.thetradehq.com/learn-trading-guide",
+      "images": [],
+      "horizontalCandidates": [
+        {
+          "tag": "DIV",
+          "text": "BTC\nsample move\n+2.4%\nETH\nsample move\n+1.8%\nSOL\nsample move\n-0.6%\nNVDA\nsample move\n+3.1%\nSPY\nsample ",
+          "left": -43.35712432861328,
+          "right": 1297.0491256713867
+        },
+        {
+          "tag": "SPAN",
+          "text": "BTC\nsample move\n+2.4%",
+          "left": -27.35712432861328,
+          "right": 125.93975067138672
+        },
+        {
+          "tag": "SPAN",
+          "text": "BTC",
+          "left": -27.35712432861328,
+          "right": -5.669624328613281
+        },
+        {
+          "tag": "SPAN",
+          "text": "EUR/USD\nsample move\n-0.2%",
+          "left": 1098.861572265625,
+          "right": 1281.049072265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "-0.2%",
+          "left": 1244.924072265625,
+          "right": 1281.049072265625
+        },
+        {
+          "tag": "DIV",
+          "text": "BTC\nsample move\n+2.4%\nETH\nsample move\n+1.8%\nSOL\nsample move\n-0.6%\nNVDA\nsample move\n+3.1%\nSPY\nsample ",
+          "left": 1297.049072265625,
+          "right": 2637.455322265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "BTC\nsample move\n+2.4%",
+          "left": 1313.049072265625,
+          "right": 1466.345947265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "BTC",
+          "left": 1313.049072265625,
+          "right": 1334.736572265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 1342.736572265625,
+          "right": 1422.220947265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "+2.4%",
+          "left": 1430.220947265625,
+          "right": 1466.345947265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "ETH\nsample move\n+1.8%",
+          "left": 1498.345947265625,
+          "right": 1651.642822265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "ETH",
+          "left": 1498.345947265625,
+          "right": 1520.033447265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 1528.033447265625,
+          "right": 1607.517822265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "+1.8%",
+          "left": 1615.517822265625,
+          "right": 1651.642822265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "SOL\nsample move\n-0.6%",
+          "left": 1683.642822265625,
+          "right": 1836.939697265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "SOL",
+          "left": 1683.642822265625,
+          "right": 1705.330322265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 1713.330322265625,
+          "right": 1792.814697265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "-0.6%",
+          "left": 1800.814697265625,
+          "right": 1836.939697265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "NVDA\nsample move\n+3.1%",
+          "left": 1868.939697265625,
+          "right": 2029.455322265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "NVDA",
+          "left": 1868.939697265625,
+          "right": 1897.845947265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 1905.845947265625,
+          "right": 1985.330322265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "+3.1%",
+          "left": 1993.330322265625,
+          "right": 2029.455322265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "SPY\nsample move\n+0.4%",
+          "left": 2061.455322265625,
+          "right": 2214.752197265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "SPY",
+          "left": 2061.455322265625,
+          "right": 2083.142822265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 2091.142822265625,
+          "right": 2170.627197265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "+0.4%",
+          "left": 2178.627197265625,
+          "right": 2214.752197265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "GOLD\nsample move\n+0.9%",
+          "left": 2246.752197265625,
+          "right": 2407.267822265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "GOLD",
+          "left": 2246.752197265625,
+          "right": 2275.658447265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 2283.658447265625,
+          "right": 2363.142822265625
+        },
+        {
+          "tag": "SPAN",
+          "text": "+0.9%",
+          "left": 2371.142822265625,
+          "right": 2407.267822265625
+        }
+      ],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "6e1ead49e9cb98c7-1280-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "6e1ead49e9cb98c7-1280-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "6e1ead49e9cb98c7-1280-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "6e1ead49e9cb98c7-1280-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "6e1ead49e9cb98c7-1280-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "6e1ead49e9cb98c7-1280-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "6e1ead49e9cb98c7-1280-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "6e1ead49e9cb98c7-1280-07.png"
+        },
+        {
+          "y": 4849,
+          "screenshot": "6e1ead49e9cb98c7-1280-08.png"
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "path": "/learn-trading-guide",
+      "title": "Beginner Trading Practice Guide | TradeHQ",
+      "supplementaryNotes": [
+        {
+          "path": "/learn-trading-guide",
+          "text": "Learning notes: Beginner Trading Practice Guide\n\nAn introduction to the virtual practice dashboard, order mechanics and a worked buy/sell-fee example. Links to longer courses and reference material; $100,000 is simulated money, not an investment account.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nWhat this page actually provides\n\nThis page is a starting map and interactive practice dashboard, not a complete textbook or independently tested trading course. It introduces quote reading, simulated market orders, fees and reviewing hypothetical outcomes. Use the linked structured courses for deeper explanations of instruments, order types and portfolio concepts. The exercises illustrate arithmetic and questions to ask, not a profitable strategy.\n\nFour checks for a virtual practice exercise\nExposure: quantify the share of virtual cash used and calculate what a chosen adverse price change would do to the holding.\nExit assumptions: write down both a higher and a lower hypothetical sale price. TradeHQ does not support resting limit or stop orders.\nObservation quality: record the quote source, timestamp, asset and quote currency. A generated chart need not reproduce traded market history.\nReview: retain the original assumptions, both virtual fees and alternative outcomes. One or ten practice results do not establish a repeatable advantage.\nWorked example: virtual shares, fees and two outcomes\n\nAssume a purely hypothetical purchase of ten shares at $50 each. The gross cost is $500 and a 0.1% virtual purchase fee is $0.50, so the total cash used is $500.50. If the assumed sale price is $46, the gross proceeds are $460 and a 0.1% virtual sale fee is $0.46; net proceeds are $459.54. Compared with the original $500.50 cost, the round trip produces a loss of $40.96.\n\nFor the same ten shares, a separate hypothetical sale at $54 yields $540 gross, less a $0.54 virtual sale fee, or $539.46 net. Subtract the $500.50 initial cost to get a gain of $38.96. These prices are invented, not a forecast or observed fills. Actual transactions can involve spreads, slippage, taxes and other costs not captured here.\n\nWhat this simulator cannot teach by itself\n\nTradeHQ offers virtual market orders, not real brokerage transactions, short positions or resting limit/stop orders. Even when a displayed quote comes from an external provider, a simulated fill does not establish that the same price or liquidity would be available on an exchange.\n\nUse the structured courses and linked sources to check concepts rather than treating a synthetic sentiment label, an indicator, or a hypothetical growth calculator as a verified trading signal. Practice outcomes do not predict real-money results.\n\nThe vocabulary you need before anything else\nBid and ask: at a given time, the best displayed bid and ask are quoted buying and selling prices. Their difference is the spread. Actual fills and costs can differ from that snapshot.\nLiquidity: the availability of buyers and sellers at prices and quantities. Limited liquidity can make a real order harder or more costly to execute.\nVolatility: a measure of price variation over a stated period. It describes past movement; it cannot dictate one universally appropriate exit level or position size.\nLeverage: exposure larger than posted funds through borrowing or derivatives. Gains and losses can be magnified, and collateral or liquidation rules vary by product and venue. TradeHQ does not provide leverage.\nExpectancy example, not a forecast: five hypothetical wins of $30 and five losses of $20 total $50 before costs. Ten $2 round-trip fees reduce that to $30 net. This invented ten-trade record is too small and artificial to establish a repeatable advantage.\nA first-month plan\nWeek one: label the bid, ask, spread and quote time on an example, then inspect virtual market orders without using real funds.\nWeek two: write assumptions before a virtual example, including quantity, fee, possible lower sale price and an alternative outcome.\nWeek three: check each recorded virtual outcome against its original assumptions; distinguish a mark from an executable real-world quote.\nWeek four: compare the journal entries for missing costs, changed assumptions and hindsight bias. Note what the simulation cannot test.\nReferences and related pages\nStructured courses and quizzes\nGlossary: order terms and market mechanics\nStrategy concepts and limits\nVirtual practice desk\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1905,
+      "scrollHeight": 5592,
+      "viewportWidth": 1920,
+      "canonical": "https://www.thetradehq.com/learn-trading-guide",
+      "images": [],
+      "horizontalCandidates": [
+        {
+          "tag": "DIV",
+          "text": "BTC\nsample move\n+2.4%\nETH\nsample move\n+1.8%\nSOL\nsample move\n-0.6%\nNVDA\nsample move\n+3.1%\nSPY\nsample ",
+          "left": -33.975948333740234,
+          "right": 1306.4303016662598
+        },
+        {
+          "tag": "SPAN",
+          "text": "BTC\nsample move\n+2.4%",
+          "left": -17.975948333740234,
+          "right": 135.32092666625977
+        },
+        {
+          "tag": "SPAN",
+          "text": "BTC",
+          "left": -17.975948333740234,
+          "right": 3.7115516662597656
+        },
+        {
+          "tag": "DIV",
+          "text": "BTC\nsample move\n+2.4%\nETH\nsample move\n+1.8%\nSOL\nsample move\n-0.6%\nNVDA\nsample move\n+3.1%\nSPY\nsample ",
+          "left": 1306.4302978515625,
+          "right": 2646.83642578125
+        },
+        {
+          "tag": "SPAN",
+          "text": "NVDA\nsample move\n+3.1%",
+          "left": 1878.3209228515625,
+          "right": 2038.8365478515625
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 1915.2271728515625,
+          "right": 1994.7115478515625
+        },
+        {
+          "tag": "SPAN",
+          "text": "+3.1%",
+          "left": 2002.7115478515625,
+          "right": 2038.8365478515625
+        },
+        {
+          "tag": "SPAN",
+          "text": "SPY\nsample move\n+0.4%",
+          "left": 2070.83642578125,
+          "right": 2224.13330078125
+        },
+        {
+          "tag": "SPAN",
+          "text": "SPY",
+          "left": 2070.83642578125,
+          "right": 2092.52392578125
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 2100.52392578125,
+          "right": 2180.00830078125
+        },
+        {
+          "tag": "SPAN",
+          "text": "+0.4%",
+          "left": 2188.00830078125,
+          "right": 2224.13330078125
+        },
+        {
+          "tag": "SPAN",
+          "text": "GOLD\nsample move\n+0.9%",
+          "left": 2256.13330078125,
+          "right": 2416.64892578125
+        },
+        {
+          "tag": "SPAN",
+          "text": "GOLD",
+          "left": 2256.13330078125,
+          "right": 2285.03955078125
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 2293.03955078125,
+          "right": 2372.52392578125
+        },
+        {
+          "tag": "SPAN",
+          "text": "+0.9%",
+          "left": 2380.52392578125,
+          "right": 2416.64892578125
+        },
+        {
+          "tag": "SPAN",
+          "text": "EUR/USD\nsample move\n-0.2%",
+          "left": 2448.64892578125,
+          "right": 2630.83642578125
+        },
+        {
+          "tag": "SPAN",
+          "text": "EUR/USD",
+          "left": 2448.64892578125,
+          "right": 2499.22705078125
+        },
+        {
+          "tag": "SPAN",
+          "text": "sample move",
+          "left": 2507.22705078125,
+          "right": 2586.71142578125
+        },
+        {
+          "tag": "SPAN",
+          "text": "-0.2%",
+          "left": 2594.71142578125,
+          "right": 2630.83642578125
+        },
+        {
+          "tag": "DIV",
+          "text": "",
+          "left": -80.828125,
+          "right": 354.5
+        }
+      ],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "6e1ead49e9cb98c7-1920-00.png"
+        },
+        {
+          "y": 918,
+          "screenshot": "6e1ead49e9cb98c7-1920-01.png"
+        },
+        {
+          "y": 1836,
+          "screenshot": "6e1ead49e9cb98c7-1920-02.png"
+        },
+        {
+          "y": 2754,
+          "screenshot": "6e1ead49e9cb98c7-1920-03.png"
+        },
+        {
+          "y": 3672,
+          "screenshot": "6e1ead49e9cb98c7-1920-04.png"
+        },
+        {
+          "y": 4512,
+          "screenshot": "6e1ead49e9cb98c7-1920-05.png"
+        }
+      ]
+    }
+  ]
+}

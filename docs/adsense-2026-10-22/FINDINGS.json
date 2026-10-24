@@ -1025,7 +1025,7 @@
       "id": "THQ-031",
       "severity": "P2",
       "category": "Mobile guided lesson card compresses lesson title to one character",
-      "state": "FIX_TESTED_REQUIRED_CI_AND_PREVIEW_PENDING",
+      "state": "PUBLICLY_VERIFIED",
       "urls": [
         "https://www.thetradehq.com/learn"
       ],
@@ -1041,16 +1041,90 @@
       ],
       "detectedAt": "2026-10-24T10:22:18.682958+00:00",
       "pr": 230,
-      "candidateSHA": "230478c76574a4f08d38aa91687368832bd60d2c"
+      "candidateSHA": "230478c76574a4f08d38aa91687368832bd60d2c",
+      "mergeSHA": "2d6f22a5044984e2e57fff2b37a0b63634f101a2",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR230-UPDATED-PREVIEW-BROWSER.json",
+      "verifiedAt": "2026-10-24T10:51:35.174629+00:00",
+      "productionEvidence": [
+        "evidence/PR230-PRODUCTION-PROVIDERS.json",
+        "evidence/PR230-MAIN-CI.json",
+        "evidence/PR230-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR230-GUEST-SMOKE.json"
+      ]
+    },
+    {
+      "id": "THQ-032",
+      "category": "Mobile beginner-guide module titles overlap XP and completion controls",
+      "observed": "Fresh actual360/390 widths give first title column0px; text ink extends into XP/action area.360 also overlaps RiskManagement and TradingPsychology. No document overflow is necessary. Tablet/desktop default rows remain separate.",
+      "rootCause": "A nonwrapping module flex row includes fixed icon plus XP/action cluster and allows text flex child to shrink to zero; long words paint into adjacent metadata.",
+      "fix": "Wrap metadata/actions onto a separate full-width row while giving icon/title readable space; preserve module states, completion handler and storage behavior.",
+      "evidence": [
+        "evidence/BEGINNER-GUIDE-REPRODUCTION.json",
+        "evidence/beginner-guide-before/modules-360.png"
+      ],
+      "severity": "P2",
+      "state": "PUBLICLY_VERIFIED",
+      "urls": [
+        "https://www.thetradehq.com/learn-trading-guide"
+      ],
+      "detectedAt": "2026-10-24T10:43:14.340442+00:00",
+      "risk": "Low interface/static feature-label only. No completion/progress logic/state, financial/order/account/auth/DB/storage/policy/consent/ad/infrastructure changes. Preserve actual function bodies and storage keys.",
+      "rollback": "Reviewed UI/static-label revert through protected serial exact-native/live release; no data operation.",
+      "adsenseRelevance": "Readability and accuracy/visitor trust; no specific Google policy violation asserted.",
+      "pr": 231,
+      "candidateSHA": "1017daa17cdb83686bda839b0e2cf18dbbfd6c35",
+      "mergeSHA": "1e4f03335a17bc08a874e5eda8ea902f96dfa15a",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR231-UPDATED-PREVIEW-BROWSER.json",
+      "verifiedAt": "2026-10-24T11:08:13.433408+00:00",
+      "productionEvidence": [
+        "evidence/PR231-PRODUCTION-PROVIDERS.json",
+        "evidence/PR231-MAIN-CI.json",
+        "evidence/PR231-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR231-GUEST-SMOKE.json"
+      ]
+    },
+    {
+      "id": "THQ-033",
+      "category": "Beginner-guide footer overstates available course count",
+      "observed": "Actual guide footer claims25+TradingCourses at all five widths. Normal public live catalog at the same audit has six course tracks and26lessons; four bundled tracks plus two approved additions, not25courses.",
+      "rootCause": "CredibilityFooter contains an unsupported hardcoded marketing count and is used only by LearnTradingGuide.",
+      "fix": "Use a factual count-free educational feature label, preserving the actual course catalog and all course/progress behavior.",
+      "evidence": [
+        "evidence/BEGINNER-GUIDE-REPRODUCTION.json",
+        "src/components/CredibilityFooter.tsx hardcoded25+TradingCourses"
+      ],
+      "severity": "P2",
+      "state": "PUBLICLY_VERIFIED",
+      "urls": [
+        "https://www.thetradehq.com/learn-trading-guide"
+      ],
+      "detectedAt": "2026-10-24T10:43:14.340442+00:00",
+      "risk": "Low interface/static feature-label only. No completion/progress logic/state, financial/order/account/auth/DB/storage/policy/consent/ad/infrastructure changes. Preserve actual function bodies and storage keys.",
+      "rollback": "Reviewed UI/static-label revert through protected serial exact-native/live release; no data operation.",
+      "adsenseRelevance": "Readability and accuracy/visitor trust; no specific Google policy violation asserted.",
+      "pr": 231,
+      "candidateSHA": "1017daa17cdb83686bda839b0e2cf18dbbfd6c35",
+      "mergeSHA": "1e4f03335a17bc08a874e5eda8ea902f96dfa15a",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR231-UPDATED-PREVIEW-BROWSER.json",
+      "verifiedAt": "2026-10-24T11:08:13.433408+00:00",
+      "productionEvidence": [
+        "evidence/PR231-PRODUCTION-PROVIDERS.json",
+        "evidence/PR231-MAIN-CI.json",
+        "evidence/PR231-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR231-GUEST-SMOKE.json"
+      ]
     }
   ],
-  "updatedAt": "2026-10-24T10:33:24.372474+00:00",
+  "updatedAt": "2026-10-24T11:08:13.433408+00:00",
   "counts": {
-    "siteFindings": 31,
-    "P2": 19,
+    "siteFindings": 33,
+    "P2": 21,
     "P3": 12,
-    "publiclyRepaired": 30,
-    "preparedNotMerged": 1,
+    "publiclyRepaired": 33,
+    "preparedNotMerged": 0,
     "separateOperationalBlockers": 0,
     "mergedAwaitingProductionVerification": 0
   },

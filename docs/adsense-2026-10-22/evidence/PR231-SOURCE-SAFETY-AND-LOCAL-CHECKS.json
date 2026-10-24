@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-24T10:48:25.492395+00:00",
+  "candidateSHA": "1017daa17cdb83686bda839b0e2cf18dbbfd6c35",
+  "baseSHA": "2d6f22a5044984e2e57fff2b37a0b63634f101a2",
+  "productSourceEquality": "PASS",
+  "scope": "Only four module class strings and one footer text value, plus final newline. Entire module definitions/handlers/effects/storage/keys/progress/share behavior preserved by transformed-source equality. Only this guide uses these components. No protected behavior changes.",
+  "validation": [
+    "Build/SEO PASS",
+    "AppTypeScript PASS",
+    "Baselinefails new module readability assertion360",
+    "Full finalphase6 PASS:90module rows/15isolated states, unchanged storage and isolated completion/unlock; all prior guided/Markets/mobile/navigation/chart/other assertions retained"
+  ],
+  "rollback": "Reviewed UI/static-label revert through serial protected exact-native/live cycle, no data operation.",
+  "outcome": "PASS"
+}

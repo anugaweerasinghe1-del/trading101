@@ -1,0 +1,19 @@
+BROWSER_NAVIGATE http://127.0.0.1:40417/learn-trading-guide
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:40417/learn-trading-guide
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Module text and controls remain readable at 360 with 0 completed
+    at verifyBeginnerGuide (file:///workspace/trading101-beginner-guide/scripts/verify-beginner-guide.mjs:22:14)
+    at async file:///workspace/trading101-beginner-guide/scripts/verify-publisher-browser.mjs:252:3 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.19.0
