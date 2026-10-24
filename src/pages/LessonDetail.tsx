@@ -110,7 +110,7 @@ export default function LessonDetail() {
                 </span>
                 <span className="text-sm font-semibold">{Math.round(progress)}% Complete</span>
               </div>
-              <Progress value={progress} className="h-3" />
+              <Progress value={progress} aria-label="Lesson completion" className="h-3" />
             </Card>
           </div>
 
