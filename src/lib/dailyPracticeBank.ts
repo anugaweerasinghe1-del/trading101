@@ -2261,15 +2261,15 @@ export const starterPracticeBank: DailyBatch = {
       "scenario": "A stock’s last eligible quote was observed on Friday afternoon. The page fetches that same observation on Sunday. No new stock trade is stated. Crypto on the page has a separate Sunday observation. The shared interface can therefore contain assets with different ages even when the page request itself is recent.\n\nFor precise age arithmetic, assume the stock observation occurred Friday at 16:00 and the page fetch happened Sunday at 16:00 in the same timezone. Crypto was observed Sunday at 15:58. Ignore holidays and unusual trading sessions; none is supplied. Compare observation ages and decide which labels are supported. A working server on Sunday can retrieve an older eligible stock mark without creating a new stock trade.",
       "visual": {
         "caption": "Hypothetical case inputs — not a live market chart",
-        "unit": "illustrative age in hours",
+        "unit": "observation age (minutes)",
         "bars": [
           {
             "label": "Stock observation age",
-            "value": 40
+            "value": 2880
           },
           {
             "label": "Crypto observation age",
-            "value": 0.1
+            "value": 2
           }
         ]
       },
@@ -4766,8 +4766,8 @@ export const starterPracticeBank: DailyBatch = {
             "value": 8
           },
           {
-            "label": "Transactions",
-            "value": 20
+            "label": "Total fees",
+            "value": 10
           }
         ]
       },

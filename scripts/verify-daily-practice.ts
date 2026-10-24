@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import './verify-daily-correlation-visual.ts';
+import './verify-daily-chart-units.ts';
 import { readFileSync } from 'node:fs';
 import { PGlite } from '@electric-sql/pglite';
 import { starterPracticeBank as bank } from '../src/lib/dailyPracticeBank.ts';
