@@ -745,7 +745,7 @@
       "id": "THQ-023",
       "severity": "P2",
       "category": "Generic fund FAQ assumes index composition for GLD gold exposure",
-      "state": "FIX_PREPARED_TESTING",
+      "state": "PUBLICLY_VERIFIED",
       "urls": [
         "https://www.thetradehq.com/trade/gld"
       ],
@@ -760,16 +760,131 @@
       "adsenseRelevance": "Factual educational quality; no specific Google policy violation asserted.",
       "pr": 223,
       "candidateSHA": "2a83ab9e2e5122005975f26a9f7dfd17f5f91010",
-      "affectedRouteEvidence": "evidence/PR223-AFFECTED-ROUTES.json"
+      "affectedRouteEvidence": "evidence/PR223-AFFECTED-ROUTES.json",
+      "mergeSHA": "8f388de78b073506e30c36531cdb91a5879b07e0",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR223-UPDATED-PREVIEW-BROWSER.json",
+      "verifiedAt": "2026-10-24T04:27:37.019404+00:00",
+      "productionEvidence": [
+        "evidence/PR223-PRODUCTION-PROVIDERS.json",
+        "evidence/PR223-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR223-GUEST-SMOKE.json",
+        "evidence/PR223-MAIN-CI.json"
+      ]
+    },
+    {
+      "id": "THQ-024",
+      "severity": "P2",
+      "category": "Missing market cap spins forever after the quote request finishes",
+      "state": "PUBLICLY_VERIFIED",
+      "urls": [
+        "https://www.thetradehq.com/trade/msft"
+      ],
+      "observed": "Fresh settled Asset Intelligence panel showed Simulated and Market Cap Loading... with one spinner at04:21:04UTC and04:21:39UTC24October. It never entered Updating during either observation; no market-cap value was supplied.",
+      "rootCause": "The runtime-market-cap sentinel renders an unconditional loader whenever liveMarketCap is absent, regardless of isLiveLoading. The wrapper supplies liveData and isLiveLoading, not the legacy liveMarketCap prop.",
+      "fix": "Retain loading only while an actual request is in progress; otherwise display Unavailable. Preserve supplied values and all data/price/account paths.",
+      "evidence": [
+        "evidence/MARKET-CAP-LOADING-REPRODUCTION.json",
+        "evidence/market-cap-loading-before-360.png",
+        "evidence/MARKET-CAP-AFFECTED-ROUTES.json"
+      ],
+      "risk": "Low metadata-state UI only. No market-cap value invented, financial calculation, execution/fee/position/balance/history, source request, auth/DB/progress or privacy/ad behavior change.",
+      "rollback": "Reviewed rendering revert with exact deployment/live gates; no data rollback.",
+      "tests": "Isolated browser requires missing-cap Unavailable without spinner at five widths and preserves a supplied1.23B value. Full CI and serial native-production/live cycle still required.",
+      "adsenseRelevance": "Visible reliability/unfinished state concern; no specific Google policy violation asserted.",
+      "detectedAt": "2026-10-24T04:23:10.052367+00:00",
+      "pr": 224,
+      "candidateSHA": "7e1a06a22e9fb2d3b33fbb07d30344994231106a",
+      "mergeSHA": "b5cf45941341673e58f39368e18076c66739e60f",
+      "exactHeadRequiredChecks": "PASS after full coherent rerun attempt2; initial browser transport failure retained.",
+      "previewEvidence": "evidence/PR224-UPDATED-PREVIEW-BROWSER.json",
+      "verifiedAt": "2026-10-24T05:03:22.481053+00:00",
+      "productionEvidence": [
+        "evidence/PR224-PRODUCTION-PROVIDERS.json",
+        "evidence/PR224-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR224-GUEST-SMOKE.json",
+        "evidence/PR224-MAIN-CI.json",
+        "evidence/PR224-CANONICAL-VISIBILITY-DIAGNOSIS.json"
+      ],
+      "operationalLimitations": "Initial CI browser transport failure resolved by full coherent rerun. Initial guest canonical wait occurred on a hidden audit target; controlled two-target experiment reproduces deferred Helmet head and foreground activation resolves it. Serial original guest assertions pass; no app metadata or assertion change."
+    },
+    {
+      "id": "THQ-025",
+      "severity": "P2",
+      "category": "Portfolio reset FAQ incorrectly treats all trade history as browser-only",
+      "state": "PUBLICLY_VERIFIED",
+      "urls": [
+        "https://www.thetradehq.com/portfolio"
+      ],
+      "observed": "Fresh expanded reset FAQ24October says Trade history, journals and course progress remain browser-held. Account restoration actually maps snapshot.trades into portfolio.trades and restores it; Privacy/About/Leaderboard already distinguish server-recorded account trades from earlier guest history.",
+      "rootCause": "A remaining help-text blanket statement was not updated for server-recorded account trades.",
+      "fix": "Clarify account cash, positions and server-recorded trade restoration; retain the warning that browser clearing does not reset/delete the account copy; distinguish earlier guest history from account trades.",
+      "evidence": [
+        "evidence/PORTFOLIO-HISTORY-WORDING-BEFORE.json",
+        "evidence/portfolio-history-wording-before-360.png"
+      ],
+      "sourceEvidence": [
+        "src/lib/cloudPortfolio.ts applyServerSnapshot maps snapshot.trades and saves the account portfolio",
+        "src/pages/Privacy.tsx existingFAQ distinguishes account trades from earlier guest history"
+      ],
+      "risk": "Low static FAQ wording only. No reset, storage, sync, account data, financial calculation, auth/DB, progress, privacy policy/consent/ad behavior or infrastructure changes.",
+      "rollback": "Reviewed one-string revert; no data rollback.",
+      "adsenseRelevance": "Trust/accuracy of data-storage help; no specific Google policy violation asserted.",
+      "detectedAt": "2026-10-24T04:57:16.415299+00:00",
+      "pr": 225,
+      "candidateSHA": "c6494ce6c0747f0b4febcf41c07d35f84194c0e9",
+      "mergeSHA": "d6fb73b84cb35ad57e642f9b99afa856b0c0630b",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR225-UPDATED-PREVIEW-BROWSER.json",
+      "verifiedAt": "2026-10-24T05:23:08.537428+00:00",
+      "productionEvidence": [
+        "evidence/PR225-PRODUCTION-PROVIDERS.json",
+        "evidence/PR225-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR225-GUEST-SMOKE.json",
+        "evidence/PR225-MAIN-CI.json"
+      ]
+    },
+    {
+      "id": "THQ-026",
+      "severity": "P3",
+      "category": "Chart caption misstates the background candle-check cadence",
+      "state": "PUBLICLY_VERIFIED",
+      "urls": [
+        "https://www.thetradehq.com/trade",
+        "https://www.thetradehq.com/trade/btc"
+      ],
+      "observed": "Fresh visible chart caption says Candles60s. useLiveCandleData clamps its visible background interval to Math.max(refreshInterval,300000), so the configured candle checks are five minutes. A browser wrapper delegated native setInterval unchanged and recorded300000ms intervals alongside the visible old caption.",
+      "fix": "State background checks as quotes30s/candles5m while keeping provider candle spacing separate. Do not change intervals, caching, source freshness or market/practice data.",
+      "evidence": "evidence/CHART-CHECK-CADENCE-BEFORE.json",
+      "sourceEvidence": [
+        "src/hooks/useLiveMarketData.ts minimum300000ms candle timer",
+        "src/components/trading/MinimalistAreaChart.tsx passes60000 but the hook clamps it and old caption still claims60s"
+      ],
+      "risk": "Low static chart caption only; no timers, requests/cache, pricing, calculations, trades/accounts/DB/auth/progress/privacy/ad or infrastructure changes.",
+      "rollback": "Reviewed wording revert with standard native/live release cycle; no data operation.",
+      "adsenseRelevance": "Minor data provenance/timing clarity, not a specific Google Publisher Policy violation.",
+      "detectedAt": "2026-10-24T05:12:35.986056+00:00",
+      "pr": 226,
+      "candidateSHA": "71b84461ab0f531da44da54d8670ad1bef0628ea",
+      "mergeSHA": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR226-UPDATED-PREVIEW-BROWSER.json",
+      "verifiedAt": "2026-10-24T05:35:27.546129+00:00",
+      "productionEvidence": [
+        "evidence/PR226-PRODUCTION-PROVIDERS.json",
+        "evidence/PR226-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR226-GUEST-SMOKE.json",
+        "evidence/PR226-MAIN-CI.json"
+      ]
     }
   ],
-  "updatedAt": "2026-10-23T15:27:00.417446+00:00",
+  "updatedAt": "2026-10-24T05:35:27.546129+00:00",
   "counts": {
-    "siteFindings": 23,
-    "P2": 13,
-    "P3": 10,
-    "publiclyRepaired": 22,
-    "preparedNotMerged": 1,
+    "siteFindings": 26,
+    "P2": 15,
+    "P3": 11,
+    "publiclyRepaired": 26,
+    "preparedNotMerged": 0,
     "separateOperationalBlockers": 0,
     "mergedAwaitingProductionVerification": 0
   },

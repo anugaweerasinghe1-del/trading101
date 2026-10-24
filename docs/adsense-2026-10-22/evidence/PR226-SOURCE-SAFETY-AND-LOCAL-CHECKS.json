@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-10-24T05:22:49.831433+00:00",
+  "candidateSHA": "71b84461ab0f531da44da54d8670ad1bef0628ea",
+  "baseSHA": "d6fb73b84cb35ad57e642f9b99afa856b0c0630b",
+  "outcome": "PASS",
+  "sourceDiff": "diff --git a/src/components/trading/MinimalistAreaChart.tsx b/src/components/trading/MinimalistAreaChart.tsx\nindex 256e669..e11a8a1 100644\n--- a/src/components/trading/MinimalistAreaChart.tsx\n+++ b/src/components/trading/MinimalistAreaChart.tsx\n@@ -322,7 +322,7 @@ export function MinimalistAreaChart({ asset }: MinimalistAreaChartProps) {\n           {chartIsRealtime ? 'Realtime quote and chart data' : `Data status: ${chartLabel.toLowerCase()}`}\n         </span>\n         <span>\n-          Candle interval varies by provider \u2022 Quotes 30s \u2022 Candles 60s\n+          Candle spacing varies by provider \u2022 Checks: quotes 30s, candles 5m\n         </span>\n       </div>\n     </div>\n",
+  "scope": "Exactly one static chart caption. Timer/cache/feed, quote arithmetic, financial execution, account/storage/DB/auth/progress, consent/policy/ad and infrastructure code untouched.",
+  "localValidation": "Cloudflare build/SEO and app TypeScript passed before commit; exact-head GitHub CI independently required.",
+  "rollback": "Reviewed one-string revert through ordinary protected release cycle; no data rollback."
+}

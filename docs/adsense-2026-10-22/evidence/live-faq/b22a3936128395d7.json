@@ -1,0 +1,58 @@
+{
+  "url": "https://www.thetradehq.com/privacy",
+  "path": "/privacy",
+  "checkedAt": "2026-10-22T13:39:42.167Z",
+  "status": "COLLECTED_NOT_YET_READ",
+  "width": 360,
+  "answers": [
+    {
+      "question": "Do I need an account to use TradeHQ?",
+      "expanded": "true",
+      "renderedAnswer": "No. Core simulator features work in guest mode. Optional account and community features can store profile information and selected practice statistics.",
+      "panelBounds": {
+        "x": 20.259990692138672,
+        "y": 425.552734375,
+        "width": 319.4800109863281,
+        "height": 0,
+        "top": 425.552734375,
+        "right": 339.7400016784668,
+        "bottom": 425.552734375,
+        "left": 20.259990692138672
+      },
+      "overflow": false
+    },
+    {
+      "question": "Where is my simulated portfolio stored?",
+      "expanded": "true",
+      "renderedAnswer": "Guest portfolios are stored in your browser. Account cash, positions and server-recorded trades are stored with Supabase and restore across devices when available. Earlier guest history, journals and course progress remain browser-held.",
+      "panelBounds": {
+        "x": 20.259990692138672,
+        "y": 537.9033203125,
+        "width": 319.4800109863281,
+        "height": 0,
+        "top": 537.9033203125,
+        "right": 339.7400016784668,
+        "bottom": 537.9033203125,
+        "left": 20.259990692138672
+      },
+      "overflow": false
+    },
+    {
+      "question": "Does TradeHQ use analytics or advertising cookies?",
+      "expanded": "true",
+      "renderedAnswer": "Amplitude analytics/session replay can use cookies or similar identifiers after analytics consent. Google provides separate regional advertising privacy messages and controls. You can change analytics choices here and use Advertising privacy choices when Google's European message applies, or its Do Not Sell or Share link in supported US states.",
+      "panelBounds": {
+        "x": 20.259990692138672,
+        "y": 603.4599609375,
+        "width": 319.4800109863281,
+        "height": 0,
+        "top": 603.4599609375,
+        "right": 339.7400016784668,
+        "bottom": 603.4599609375,
+        "left": 20.259990692138672
+      },
+      "overflow": false
+    }
+  ],
+  "limitation": "Actual safe FAQ expansion only; no account, order, form or quiz submission. Answer collection does not establish substantive review."
+}

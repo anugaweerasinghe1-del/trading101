@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-10-24T04:30:28.398254+00:00",
+  "job": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40062247333/job/120778064418",
+  "candidateSHA": "7e1a06a22e9fb2d3b33fbb07d30344994231106a",
+  "selectedErrorContext": [
+    "2026-10-24T04:26:52.3606540Z BROWSER_NAVIGATE http://127.0.0.1:44877/trade/btc",
+    "2026-10-24T04:26:54.0817437Z file:///home/runner/work/trading101/trading101/scripts/verify-publisher-browser.mjs:60",
+    "2026-10-24T04:26:54.0818073Z     pending.delete(reply.id); clearTimeout(task.timer); if (reply.error) task.reject(Error(reply.error.message)); else task.resolve(reply.result);",
+    "2026-10-24T04:26:54.0818581Z                                                                                      ^",
+    "2026-10-24T04:26:54.0818738Z ",
+    "2026-10-24T04:26:54.0818869Z Error: Inspected target navigated or closed",
+    "2026-10-24T04:26:54.0819502Z     at WebSocket.<anonymous> (file:///home/runner/work/trading101/trading101/scripts/verify-publisher-browser.mjs:60:86)",
+    "2026-10-24T04:26:54.0820034Z     at [nodejs.internal.kHybridDispatch] (node:internal/event_target:843:20)",
+    "2026-10-24T04:26:54.0820388Z     at WebSocket.dispatchEvent (node:internal/event_target:776:26)",
+    "2026-10-24T04:26:54.0820695Z     at fireEvent (node:internal/deps/undici/undici:12005:14)",
+    "2026-10-24T04:26:54.0821032Z     at websocketMessageReceived (node:internal/deps/undici/undici:12027:7)",
+    "2026-10-24T04:26:54.0821332Z     at node:internal/deps/undici/undici:12745:21",
+    "2026-10-24T04:26:54.0821574Z     at node:internal/deps/undici/undici:12515:11",
+    "2026-10-24T04:26:54.0821924Z     at afterWrite (node:internal/streams/writable:710:5)",
+    "2026-10-24T04:26:54.0822378Z     at onwrite (node:internal/streams/writable:688:7)",
+    "2026-10-24T04:26:54.0822718Z     at Zlib.<anonymous> (node:internal/streams/transform:191:7)",
+    "2026-10-24T04:26:54.0822990Z ",
+    "2026-10-24T04:26:54.0823110Z Node.js v22.23.3",
+    "2026-10-24T04:26:54.0877508Z ##[error]Process completed with exit code 1.",
+    "2026-10-24T04:26:54.1001759Z Post job cleanup.",
+    "2026-10-24T04:26:54.1610902Z [command]/usr/bin/git version",
+    "2026-10-24T04:26:54.1638084Z git version 2.55.0",
+    "2026-10-24T04:26:54.1662076Z Temporarily overriding HOME='/home/runner/work/_temp/bef47e03-ec28-4d2d-8e0e-365bfc71fcd8' before making global git config changes"
+  ],
+  "response": "Complete coherent workflow rerun on the same immutable candidate; no failed-only rerun, test suppression or assertion weakening. Browser transport failure retained as history."
+}

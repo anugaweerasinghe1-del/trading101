@@ -1,0 +1,106 @@
+{
+  "url": "https://www.thetradehq.com/leaderboard",
+  "path": "/leaderboard",
+  "checkedAt": "2026-10-22T13:37:15.044Z",
+  "status": "COLLECTED_NOT_YET_READ",
+  "width": 360,
+  "answers": [
+    {
+      "question": "Prices may be delayed or cached. How updates work",
+      "expanded": true,
+      "renderedAnswer": "Prices may be delayed or cached. How updates work\n\nHeld assets are checked in the background every five minutes. Traditional instruments rotate through a limited batch. Provider delays and outages can leave older cached prices; unsupported assets use fixed simulator prices.\n\nThis page refreshes every minute while visible. Last loaded 1:37:12 PM.\n\nRanked practice uses server-recorded orders. Imported portfolios and members with no trades remain unranked. Previous results preserve browser-reported summaries separately.\n\nManage my public/private visibility",
+      "panelBounds": {
+        "x": 16,
+        "y": 368.25,
+        "width": 328,
+        "height": 330.75,
+        "top": 368.25,
+        "right": 344,
+        "bottom": 699,
+        "left": 16
+      },
+      "overflow": false
+    },
+    {
+      "question": "Is the TradeHQ leaderboard real?",
+      "expanded": "true",
+      "renderedAnswer": "Ranked practice uses server-recorded orders. Previous results preserve earlier browser-reported summaries separately and do not enter current rankings. Both display simulated practice, not audited investment performance.",
+      "panelBounds": {
+        "x": 17,
+        "y": 425.5,
+        "width": 326,
+        "height": 152.5,
+        "top": 425.5,
+        "right": 343,
+        "bottom": 578,
+        "left": 17
+      },
+      "overflow": false
+    },
+    {
+      "question": "How do I climb the leaderboard?",
+      "expanded": "true",
+      "renderedAnswer": "Every public member appears, including accounts with no trades yet. Ranked members appear first in return-rank order; unranked members follow, ordered by practice activity. Comparable ranked portfolios receive a rank after their first server-recorded trade, calculated from simulated return against a $100,000 virtual starting balance. Ranks and display order update automatically when this page refreshes. Previous activity never changes a return rank. A rank is not evidence of real-money skill.",
+      "panelBounds": {
+        "x": 17,
+        "y": 273.5,
+        "width": 326,
+        "height": 311.75,
+        "top": 273.5,
+        "right": 343,
+        "bottom": 585.25,
+        "left": 17
+      },
+      "overflow": false
+    },
+    {
+      "question": "Do I need an account to compete?",
+      "expanded": "true",
+      "renderedAnswer": "An account and a public profile are needed to appear on the board. Account cash, positions and server-recorded trades restore across devices when available; earlier guest history, journals and course progress remain browser-held. Core learning tools work without signing up.",
+      "panelBounds": {
+        "x": 17,
+        "y": 114.5,
+        "width": 326,
+        "height": 198,
+        "top": 114.5,
+        "right": 343,
+        "bottom": 312.5,
+        "left": 17
+      },
+      "overflow": false
+    },
+    {
+      "question": "What data does TradeHQ store if I sign up?",
+      "expanded": "true",
+      "renderedAnswer": "Optional accounts use authentication data and can store a username, profile fields, simulated cash, positions and server-recorded practice trades for restoration across devices. Previous reported summary snapshots are also retained; their public visibility follows your profile setting. TradeHQ does not require brokerage credentials or a real-money deposit.",
+      "panelBounds": {
+        "x": 17,
+        "y": 237.5,
+        "width": 326,
+        "height": 243.5,
+        "top": 237.5,
+        "right": 343,
+        "bottom": 481,
+        "left": 17
+      },
+      "overflow": false
+    },
+    {
+      "question": "Can I stay private?",
+      "expanded": "true",
+      "renderedAnswer": "Yes. Profiles can be switched to private at any time from your trader profile page, which hides your data from new leaderboard requests while keeping your account. Open pages reflect the change on refresh.",
+      "panelBounds": {
+        "x": 17,
+        "y": 182.5,
+        "width": 326,
+        "height": 152.5,
+        "top": 182.5,
+        "right": 343,
+        "bottom": 335,
+        "left": 17
+      },
+      "overflow": false
+    }
+  ],
+  "limitation": "Actual safe FAQ expansion only; no account, order, form or quiz submission. Answer collection does not establish substantive review."
+}

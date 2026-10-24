@@ -20,6 +20,8 @@ async function navigate(path,width,height){
 try{
  for(const path of (mode==='short'?['/trade/btc','/trade/shib','/trade/apt']:['/trade','/trade/btc','/trade/shib','/trade/apt','/trade/avgo','/trade/arkk','/trade/audusd','/trade/brent']))for(const [width,height] of (mode==='short'?[[360,800],[1280,800]]:[[360,800],[390,844],[768,1024],[1280,800],[1920,1080]])){
   candleOutage=path==='/trade/shib';await navigate(path,width,height);
+  const cadenceCaption=await p.evaluate("[...document.querySelectorAll('main span')].map(e=>e.textContent).find(t=>t.includes('Candle spacing varies by provider'))||null");
+  if(stem.startsWith('PR226-'))assert.equal(cadenceCaption,'Candle spacing varies by provider • Checks: quotes 30s, candles 5m');
   const portfolio=await p.evaluate("localStorage.getItem('tradehq_portfolio')");const timeframes=[];
   for(const tf of ['1H','4H','1D','1W']){
    await p.evaluate(`[...document.querySelectorAll('main button')].find(b=>b.textContent.trim()===${JSON.stringify(tf)}).click();true`);
@@ -42,7 +44,7 @@ try{
    await p.evaluate("document.querySelector('main .recharts-wrapper').parentElement.parentElement.scrollIntoView({block:'center'});true");await pause(300);const image=stem.toLowerCase()+'/'+path.replaceAll('/','_')+'-'+width+'-chart.png';await p.screenshot(root+image);screenshots.push(image);
    if(faqs.length){await p.evaluate("document.querySelector('section[aria-label=\"Frequently Asked Questions\"]').scrollIntoView({block:'start'});true");const image=stem.toLowerCase()+'/'+path.replaceAll('/','_')+'-'+width+'-faq.png';await p.screenshot(root+image);screenshots.push(image);}
   }
-  rows.push({path,width,height,checkedAt:new Date().toISOString(),layout,axisBounds,timeframes,faqs,isolatedCandleOutage:candleOutage,screenshots});console.log('PASS '+path+' '+width);
+  rows.push({path,width,height,checkedAt:new Date().toISOString(),layout,cadenceCaption,axisBounds,timeframes,faqs,isolatedCandleOutage:candleOutage,screenshots});console.log('PASS '+path+' '+width);
  }
  assert.deepEqual(errors,[],'No captured runtime exceptions');
 }catch(e){failure=e.message;debug=await p.evaluate("({url:location.href,heading:document.querySelector('main h1')?.innerText,body:document.body?.innerText.slice(0,1000)})").catch(()=>null);throw e;}

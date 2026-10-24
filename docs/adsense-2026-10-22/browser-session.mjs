@@ -10,5 +10,6 @@ export async function openAuditPage(url='about:blank',port=9223){
  const evaluate=async(expression,awaitPromise=false)=>{const r=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise});if(r.exceptionDetails)throw Error(r.exceptionDetails.exception?.description||r.exceptionDetails.text);return r.result?.value;};
  const wait=async(expression,ms=25000)=>{const deadline=Date.now()+ms;while(Date.now()<deadline){if(await evaluate(expression))return true;await pause(150);}throw Error('Page readiness deadline');};
  await send('Page.enable');
+ await send('Page.bringToFront');
  return {send,evaluate,wait,onEvent(listener){listeners.add(listener);return()=>listeners.delete(listener);},async screenshot(path){const p=await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});writeFileSync(path,Buffer.from(p.data,'base64'));},async close(){for(const p of pending.values())clearTimeout(p.timer);ws.close();await fetch('http://127.0.0.1:'+port+'/json/close/'+target.id);}};
 }

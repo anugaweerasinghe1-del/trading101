@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-10-24T04:54:10.442Z",
+  "mergeSHA": "b5cf45941341673e58f39368e18076c66739e60f",
+  "scope": "Two owned anonymous audit targets; no orders/accounts/contact or data mutations. Deliberately hidden-target click diagnoses the audit setup, not a normal visible-user interaction.",
+  "rows": [
+    {
+      "stage": "Foreground BTC menu ready",
+      "hidden": false,
+      "visibility": "visible",
+      "path": "/trade/btc",
+      "heading": "Bitcoin — Practice Trading Simulator",
+      "canonicals": [
+        "https://www.thetradehq.com/trade/btc"
+      ]
+    },
+    {
+      "stage": "Other audit target activated",
+      "hidden": true,
+      "visibility": "hidden",
+      "path": "/trade/btc",
+      "heading": "Bitcoin — Practice Trading Simulator",
+      "canonicals": [
+        "https://www.thetradehq.com/trade/btc"
+      ]
+    },
+    {
+      "stage": "Automated selection while audit target hidden",
+      "hidden": true,
+      "visibility": "hidden",
+      "path": "/trade/eth",
+      "heading": "Ethereum — Practice Trading Simulator",
+      "canonicals": [
+        "https://www.thetradehq.com/trade/btc"
+      ]
+    },
+    {
+      "stage": "Same document activated, original canonical assertion passes",
+      "hidden": false,
+      "visibility": "visible",
+      "path": "/trade/eth",
+      "heading": "Ethereum — Practice Trading Simulator",
+      "canonicals": [
+        "https://www.thetradehq.com/trade/eth"
+      ]
+    }
+  ]
+}

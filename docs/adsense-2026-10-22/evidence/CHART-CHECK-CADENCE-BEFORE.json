@@ -1,0 +1,21 @@
+{
+  "path": "/trade/btc",
+  "caption": "Candle interval varies by provider • Quotes 30s • Candles 60s",
+  "configuredIntervalDelays": [
+    300000,
+    45000,
+    30000,
+    5000,
+    5000,
+    30000,
+    300000,
+    3000,
+    30000,
+    60000,
+    3000
+  ],
+  "visibility": "visible",
+  "checkedAt": "2026-10-24T05:11:07.222Z",
+  "observedProductionSHA": null,
+  "scope": "Read-only browser instrumentation delegates every setInterval unchanged and records only configured delays. Fresh visible caption compared with source useLiveCandleData Math.max(refreshInterval,300000). No timer speed, data source, order or account behavior changed."
+}

@@ -1,5 +1,5 @@
 {
-  "scope": "Actual rendered answers read after safe expansion, not generic schema text.",
+  "scope": "Actual expanded FAQ/disclosure answers read or individually compared against fully read identical class/alias answers; all raw text/evidence retained. One leaderboard pricing disclosure is included. Reading completion does not establish full visual/source/control or Google approval.",
   "routes": {
     "/compare/apple-vs-microsoft": {
       "answersRead": 3,
@@ -183,63 +183,126 @@
       "assessment": "APT free-practice/no-real-loss answers are clear. The other three answers imply catalyst modelling, universal popularity and real volume/correlation comparisons; fresh Markets labels instead say generated change/demo activity. THQ-021 records this template mismatch.",
       "controlEvidence": "evidence/continuation-20261023/trade-apt.json",
       "readAt": "2026-10-23T15:46:33.469819+00:00",
-      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
+      "postDeploymentFollowup": {
+        "finding": "THQ-021",
+        "state": "PUBLICLY_VERIFIED",
+        "release": 222,
+        "evidence": "evidence/PR222-PRODUCTION-BROWSER.json",
+        "scope": "Historical reading concern repaired in shared generated answers. Receipt covers eight representative route variants at five widths; no claim of a fresh recapture of every affected route."
+      }
     },
     "/trade/arb": {
       "answersRead": 5,
       "assessment": "ARB answers repeat the APT template: real crypto drivers are mixed with generated-chart practice; broad popularity is unsupported and comparison guidance mislabels generated Markets measures. Virtual-only loss is clear. THQ-021.",
       "controlEvidence": "evidence/continuation-20261023/trade-arb.json",
       "readAt": "2026-10-23T15:46:33.469819+00:00",
-      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
+      "postDeploymentFollowup": {
+        "finding": "THQ-021",
+        "state": "PUBLICLY_VERIFIED",
+        "release": 222,
+        "evidence": "evidence/PR222-PRODUCTION-BROWSER.json",
+        "scope": "Historical reading concern repaired in shared generated answers. Receipt covers eight representative route variants at five widths; no claim of a fresh recapture of every affected route."
+      }
     },
     "/trade/arkk": {
       "answersRead": 5,
       "assessment": "ARKK uses the fund-specific disruptive-innovation driver, but the generated answer still suggests reading that catalyst on simulated history and labels demo activity/changes as volume/24h returns. The no-real-loss answer is sound. THQ-021.",
       "controlEvidence": "evidence/continuation-20261023/trade-arkk.json",
       "readAt": "2026-10-23T15:46:33.469819+00:00",
-      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
+      "postDeploymentFollowup": {
+        "finding": "THQ-021",
+        "state": "PUBLICLY_VERIFIED",
+        "release": 222,
+        "evidence": "evidence/PR222-PRODUCTION-BROWSER.json",
+        "scope": "Historical reading concern repaired in shared generated answers. Receipt covers eight representative route variants at five widths; no claim of a fresh recapture of every affected route."
+      }
     },
     "/trade/atom": {
       "answersRead": 5,
       "assessment": "ATOM FAQ establishes free virtual order entry, then repeats the unsupported widely-followed assertion and real-correlation/volume guidance from APT/ARB. This is not a Cosmos-specific research FAQ. THQ-021.",
       "controlEvidence": "evidence/continuation-20261023/trade-atom.json",
       "readAt": "2026-10-23T15:46:33.469819+00:00",
-      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
+      "postDeploymentFollowup": {
+        "finding": "THQ-021",
+        "state": "PUBLICLY_VERIFIED",
+        "release": 222,
+        "evidence": "evidence/PR222-PRODUCTION-BROWSER.json",
+        "scope": "Historical reading concern repaired in shared generated answers. Receipt covers eight representative route variants at five widths; no claim of a fresh recapture of every affected route."
+      }
     },
     "/trade/audusd": {
       "answersRead": 5,
       "assessment": "AUD/USD driver list covers central-bank/rate/macro topics; generated charts do not model those releases. Its Markets instructions misname synthetic activity/latest change as volume/24h returns; virtual loss scope is clear. Unit/accounting remains INV-FX01. THQ-021.",
       "controlEvidence": "evidence/continuation-20261023/trade-audusd.json",
       "readAt": "2026-10-23T15:46:33.469819+00:00",
-      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
+      "postDeploymentFollowup": {
+        "finding": "THQ-021",
+        "state": "PUBLICLY_VERIFIED",
+        "release": 222,
+        "evidence": "evidence/PR222-PRODUCTION-BROWSER.json",
+        "scope": "Historical reading concern repaired in shared generated answers. Receipt covers eight representative route variants at five widths; no claim of a fresh recapture of every affected route."
+      }
     },
     "/trade/avax": {
       "answersRead": 5,
       "assessment": "AVAX expanded answers use generic crypto drivers/popularity rather than the nuanced main-body network discussion. The comparison answer implies real correlations from generated practice series. Free virtual-only practice is accurately explained. THQ-021.",
       "controlEvidence": "evidence/continuation-20261023/trade-avax.json",
       "readAt": "2026-10-23T15:46:33.469819+00:00",
-      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
+      "postDeploymentFollowup": {
+        "finding": "THQ-021",
+        "state": "PUBLICLY_VERIFIED",
+        "release": 222,
+        "evidence": "evidence/PR222-PRODUCTION-BROWSER.json",
+        "scope": "Historical reading concern repaired in shared generated answers. Receipt covers eight representative route variants at five widths; no claim of a fresh recapture of every affected route."
+      }
     },
     "/trade/avgo": {
       "answersRead": 5,
       "assessment": "AVGO FAQ uses earnings/sector/macro topics but overstates what generated chart history teaches about those events. The same generic popularity and comparison claims recur; virtual-only scope is clear. THQ-021.",
       "controlEvidence": "evidence/continuation-20261023/trade-avgo.json",
       "readAt": "2026-10-23T15:46:33.469819+00:00",
-      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
+      "postDeploymentFollowup": {
+        "finding": "THQ-021",
+        "state": "PUBLICLY_VERIFIED",
+        "release": 222,
+        "evidence": "evidence/PR222-PRODUCTION-BROWSER.json",
+        "scope": "Historical reading concern repaired in shared generated answers. Receipt covers eight representative route variants at five widths; no claim of a fresh recapture of every affected route."
+      }
     },
     "/trade/ba": {
       "answersRead": 5,
       "assessment": "BA FAQ contains no Boeing-specific drivers beyond generic stock earnings/sector/macro topics. It describes current Markets data incorrectly and overgeneralizes popularity/suitability; free virtual practice answer is clear. THQ-021.",
       "controlEvidence": "evidence/continuation-20261023/trade-ba.json",
       "readAt": "2026-10-23T15:46:33.469819+00:00",
-      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
+      "postDeploymentFollowup": {
+        "finding": "THQ-021",
+        "state": "PUBLICLY_VERIFIED",
+        "release": 222,
+        "evidence": "evidence/PR222-PRODUCTION-BROWSER.json",
+        "scope": "Historical reading concern repaired in shared generated answers. Receipt covers eight representative route variants at five widths; no claim of a fresh recapture of every affected route."
+      }
     },
     "/trade/bac": {
       "answersRead": 5,
       "assessment": "BAC FAQ repeats generic stock earnings/sector/macro driver guidance, not bank-specific analysis. Its volume/24h/correlation language conflicts with the Markets disclosure; virtual-only currency language is clear. THQ-021.",
       "controlEvidence": "evidence/continuation-20261023/trade-bac.json",
       "readAt": "2026-10-23T15:46:33.469819+00:00",
-      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
+      "postDeploymentFollowup": {
+        "finding": "THQ-021",
+        "state": "PUBLICLY_VERIFIED",
+        "release": 222,
+        "evidence": "evidence/PR222-PRODUCTION-BROWSER.json",
+        "scope": "Historical reading concern repaired in shared generated answers. Receipt covers eight representative route variants at five widths; no claim of a fresh recapture of every affected route."
+      }
     },
     "/trade/bnb": {
       "answersRead": 4,
@@ -253,7 +316,14 @@
       "assessment": "BRENT driver answer names supply/demand, USD and geopolitics, but generated history cannot model those real events. Its Markets comparison mislabels demo activity and change; no-real-money statement is clear. THQ-021.",
       "controlEvidence": "evidence/continuation-20261023/trade-brent.json",
       "readAt": "2026-10-23T15:46:33.469819+00:00",
-      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
+      "postDeploymentFollowup": {
+        "finding": "THQ-021",
+        "state": "PUBLICLY_VERIFIED",
+        "release": 222,
+        "evidence": "evidence/PR222-PRODUCTION-BROWSER.json",
+        "scope": "Historical reading concern repaired in shared generated answers. Receipt covers eight representative route variants at five widths; no claim of a fresh recapture of every affected route."
+      }
     },
     "/trade/btc": {
       "answersRead": 4,
@@ -267,14 +337,28 @@
       "assessment": "CAT FAQ repeats generic stock drivers and popularity rather than an industrial-equipment explanation. Its comparison answer mislabels Markets practice data and implies correlation learning from synthetic series. Virtual practice loss limit is clear. THQ-021.",
       "controlEvidence": "evidence/continuation-20261023/trade-cat.json",
       "readAt": "2026-10-23T15:46:33.469819+00:00",
-      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
+      "postDeploymentFollowup": {
+        "finding": "THQ-021",
+        "state": "PUBLICLY_VERIFIED",
+        "release": 222,
+        "evidence": "evidence/PR222-PRODUCTION-BROWSER.json",
+        "scope": "Historical reading concern repaired in shared generated answers. Receipt covers eight representative route variants at five widths; no claim of a fresh recapture of every affected route."
+      }
     },
     "/trade/coffee": {
       "answersRead": 5,
       "assessment": "Coffee FAQ names supply/demand/USD/geopolitics and offers free virtual exercise, but its generated-chart catalyst and volume/24h/correlation claims exceed the data shown. It supplies no exchange-contract or delivery research. THQ-021.",
       "controlEvidence": "evidence/continuation-20261023/trade-coffee.json",
       "readAt": "2026-10-23T15:46:33.469819+00:00",
-      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905"
+      "productionSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
+      "postDeploymentFollowup": {
+        "finding": "THQ-021",
+        "state": "PUBLICLY_VERIFIED",
+        "release": 222,
+        "evidence": "evidence/PR222-PRODUCTION-BROWSER.json",
+        "scope": "Historical reading concern repaired in shared generated answers. Receipt covers eight representative route variants at five widths; no claim of a fresh recapture of every affected route."
+      }
     },
     "/trade/eth": {
       "answersRead": 4,
@@ -337,7 +421,14 @@
       "assessment": "Five expanded answers read. Virtual-only and generated-data limits are clear, but the driver answer incorrectly defaults to underlying index composition for GLD. Issuer states gold-bullion exposure less expenses; THQ-023 records the mismatch and generic fund-driver correction.",
       "controlEvidence": "evidence/continuation-20261023/trade-gld.json",
       "readAt": "2026-10-24T04:09:25.838602+00:00",
-      "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
+      "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture.",
+      "postDeploymentFollowup": {
+        "finding": "THQ-023",
+        "state": "PUBLICLY_VERIFIED",
+        "release": 223,
+        "evidence": "evidence/PR223-PRODUCTION-BROWSER.json",
+        "scope": "All fourteen affected fund routes and two authored-driver controls at five widths."
+      }
     },
     "/trade/gold": {
       "answersRead": 4,
@@ -359,6 +450,1314 @@
       "controlEvidence": "evidence/continuation-20261023/trade-gs.json",
       "readAt": "2026-10-24T04:09:25.838904+00:00",
       "scope": "Actual rendered safe expansion captured23October and read24October; production SHA was not asserted during release-transition capture."
+    },
+    "/trade/aapl": {
+      "answersRead": 4,
+      "assessment": "Four handwritten Apple answers were read in full: virtual order/accounting practice, uncertain earnings reactions and revenue/Services/margins/guidance inputs. It rejects predictably profitable news responses and says simulated charts do not reproduce earnings events. Guest simulation needs no brokerage KYC/deposit; this is not a claim of real US brokerage eligibility.",
+      "controlEvidence": "evidence/faq-continuation-20261024/aapl.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.074983+00:00"
+    },
+    "/trade/abbv": {
+      "answersRead": 5,
+      "assessment": "AbbVie Inc. (ABBV): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for AbbVie Inc. (ABBV) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/abbv.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075022+00:00"
+    },
+    "/trade/ada": {
+      "answersRead": 5,
+      "assessment": "Cardano (ADA): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Cardano (ADA) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/ada.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075040+00:00"
+    },
+    "/trade/adbe": {
+      "answersRead": 5,
+      "assessment": "Adobe Inc. (ADBE): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Adobe Inc. (ADBE) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/adbe.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075055+00:00"
+    },
+    "/trade/agg": {
+      "answersRead": 5,
+      "assessment": "iShares Core US Aggregate Bond (AGG): every expanded question/answer is text-identical to the fully read /trade/gld etf baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for iShares Core US Aggregate Bond (AGG) include the fund\u2019s holdings or tracked exposure, fees, structure and underlying market conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/agg.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075068+00:00"
+    },
+    "/trade/algo": {
+      "answersRead": 5,
+      "assessment": "Algorand (ALGO): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Algorand (ALGO) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/algo.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075082+00:00"
+    },
+    "/trade/aluminum": {
+      "answersRead": 5,
+      "assessment": "Aluminum (ALI): every expanded question/answer is text-identical to the fully read /trade/brent commodity baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Aluminum (ALI) include global supply/demand, USD strength and geopolitical events. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/aluminum.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075095+00:00"
+    },
+    "/trade/amd": {
+      "answersRead": 5,
+      "assessment": "All five AMD answers compared individually with the fully read stock baseline. The distinct driver topic is Data Centers & Gaming; generated charts are explicitly excluded as models of actual events. Other four answers match common virtual-mechanics/suitability/correlation limits; no issuer-results or return forecast established.",
+      "controlEvidence": "evidence/faq-continuation-20261024/amd.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075108+00:00"
+    },
+    "/trade/amzn": {
+      "answersRead": 4,
+      "assessment": "All four handwritten Amazon answers read: no universally best announcement time, external historical data for actual earnings responses, AWS/retail/advertising/guidance research and virtual-only student practice. Importance varies by period; simulated outcomes do not predict real returns. No fresh company facts/metrics are certified.",
+      "controlEvidence": "evidence/faq-continuation-20261024/amzn.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075121+00:00"
+    },
+    "/trade/coin": {
+      "answersRead": 5,
+      "assessment": "Coinbase Global (COIN): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Coinbase Global (COIN) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/coin.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075135+00:00"
+    },
+    "/trade/copper": {
+      "answersRead": 5,
+      "assessment": "Copper (HG): every expanded question/answer is text-identical to the fully read /trade/brent commodity baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Copper (HG) include global supply/demand, USD strength and geopolitical events. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/copper.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075150+00:00"
+    },
+    "/trade/corn": {
+      "answersRead": 5,
+      "assessment": "Corn (ZC): every expanded question/answer is text-identical to the fully read /trade/brent commodity baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Corn (ZC) include global supply/demand, USD strength and geopolitical events. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/corn.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075164+00:00"
+    },
+    "/trade/cost": {
+      "answersRead": 5,
+      "assessment": "Costco Wholesale (COST): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Costco Wholesale (COST) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/cost.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075178+00:00"
+    },
+    "/trade/cotton": {
+      "answersRead": 5,
+      "assessment": "Cotton (CT): every expanded question/answer is text-identical to the fully read /trade/brent commodity baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Cotton (CT) include global supply/demand, USD strength and geopolitical events. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/cotton.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075191+00:00"
+    },
+    "/trade/crm": {
+      "answersRead": 5,
+      "assessment": "All five Salesforce answers individually compared. Enterprise Software replaces the generic stock driver, while external-source/event-model limits remain explicit. The other four match the fully read free-practice, suitability, synthetic-comparison and virtual-loss baseline; no unique company research or result is claimed.",
+      "controlEvidence": "evidence/faq-continuation-20261024/crm.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075205+00:00"
+    },
+    "/trade/crwd": {
+      "answersRead": 5,
+      "assessment": "CrowdStrike Holdings (CRWD): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for CrowdStrike Holdings (CRWD) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/crwd.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075219+00:00"
+    },
+    "/trade/csco": {
+      "answersRead": 5,
+      "assessment": "Cisco Systems Inc. (CSCO): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Cisco Systems Inc. (CSCO) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/csco.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075233+00:00"
+    },
+    "/trade/cvx": {
+      "answersRead": 5,
+      "assessment": "Chevron Corporation (CVX): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Chevron Corporation (CVX) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/cvx.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075248+00:00"
+    },
+    "/trade/ddog": {
+      "answersRead": 5,
+      "assessment": "Datadog Inc. (DDOG): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Datadog Inc. (DDOG) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/ddog.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075263+00:00"
+    },
+    "/trade/de": {
+      "answersRead": 5,
+      "assessment": "Deere & Company (DE): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Deere & Company (DE) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/de.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075277+00:00"
+    },
+    "/trade/dia": {
+      "answersRead": 5,
+      "assessment": "All five DIA answers individually compared. US Blue-Chips is the authored driver, not the generic fund-exposure sentence; event modelling and real correlation claims remain excluded. The other four match the fully read fund baseline. Holdings/weighting/current issuer verification is separate.",
+      "controlEvidence": "evidence/faq-continuation-20261024/dia.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075291+00:00"
+    },
+    "/trade/dis": {
+      "answersRead": 5,
+      "assessment": "Walt Disney Company (DIS): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Walt Disney Company (DIS) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/dis.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075305+00:00"
+    },
+    "/trade/docu": {
+      "answersRead": 5,
+      "assessment": "DocuSign Inc. (DOCU): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for DocuSign Inc. (DOCU) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/docu.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075319+00:00"
+    },
+    "/trade/doge": {
+      "answersRead": 5,
+      "assessment": "Dogecoin (DOGE): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Dogecoin (DOGE) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/doge.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075334+00:00"
+    },
+    "/trade/dot": {
+      "answersRead": 5,
+      "assessment": "Polkadot (DOT): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Polkadot (DOT) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/dot.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075349+00:00"
+    },
+    "/trade/hbar": {
+      "answersRead": 5,
+      "assessment": "Hedera (HBAR): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Hedera (HBAR) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/hbar.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075365+00:00"
+    },
+    "/trade/hd": {
+      "answersRead": 5,
+      "assessment": "Home Depot Inc. (HD): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Home Depot Inc. (HD) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/hd.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075380+00:00"
+    },
+    "/trade/ibm": {
+      "answersRead": 5,
+      "assessment": "IBM Corporation (IBM): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for IBM Corporation (IBM) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/ibm.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075395+00:00"
+    },
+    "/trade/icp": {
+      "answersRead": 5,
+      "assessment": "Internet Computer (ICP): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Internet Computer (ICP) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/icp.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075410+00:00"
+    },
+    "/trade/ief": {
+      "answersRead": 5,
+      "assessment": "iShares 7-10 Year Treasury (IEF): every expanded question/answer is text-identical to the fully read /trade/gld etf baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for iShares 7-10 Year Treasury (IEF) include the fund\u2019s holdings or tracked exposure, fees, structure and underlying market conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/ief.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075426+00:00"
+    },
+    "/trade/inj": {
+      "answersRead": 5,
+      "assessment": "Injective (INJ): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Injective (INJ) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/inj.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075442+00:00"
+    },
+    "/trade/intc": {
+      "answersRead": 5,
+      "assessment": "All five Intel answers individually compared: PC & Data Center is the authored driver; no synthetic modelling of those events is implied. Four other answers match common stock mechanics/suitability/data limits. It does not claim that a turnaround succeeds or specify current reported results.",
+      "controlEvidence": "evidence/faq-continuation-20261024/intc.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075457+00:00"
+    },
+    "/trade/ivv": {
+      "answersRead": 5,
+      "assessment": "iShares Core S&P 500 (IVV): every expanded question/answer is text-identical to the fully read /trade/gld etf baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for iShares Core S&P 500 (IVV) include the fund\u2019s holdings or tracked exposure, fees, structure and underlying market conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/ivv.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075473+00:00"
+    },
+    "/trade/iwm": {
+      "answersRead": 5,
+      "assessment": "All five IWM answers individually compared. US Small-Cap is the authored research topic, with generated charts explicitly not modelling real events. The other four match the fully read fund baseline; no small-cap leadership forecast or current holding/cost certification follows.",
+      "controlEvidence": "evidence/faq-continuation-20261024/iwm.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075487+00:00"
+    },
+    "/trade/jnj": {
+      "answersRead": 5,
+      "assessment": "Johnson & Johnson (JNJ): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Johnson & Johnson (JNJ) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/jnj.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:11.075502+00:00"
+    },
+    "/trade/jpm": {
+      "answersRead": 5,
+      "assessment": "All five JPM answers individually compared: Interest Rates replaces generic stock research topics, with generated events/correlation limits explicit. Four remaining answers match the fully read stock baseline. No deterministic rate/stock response or issuer result is asserted.",
+      "controlEvidence": "evidence/faq-continuation-20261024/jpm.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.363739+00:00"
+    },
+    "/trade/ko": {
+      "answersRead": 5,
+      "assessment": "Coca-Cola Company (KO): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Coca-Cola Company (KO) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/ko.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.363787+00:00"
+    },
+    "/trade/link": {
+      "answersRead": 5,
+      "assessment": "Chainlink (LINK): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Chainlink (LINK) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/link.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.363808+00:00"
+    },
+    "/trade/lly": {
+      "answersRead": 5,
+      "assessment": "Eli Lilly & Co. (LLY): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Eli Lilly & Co. (LLY) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/lly.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.363827+00:00"
+    },
+    "/trade/low": {
+      "answersRead": 5,
+      "assessment": "Lowe's Companies (LOW): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Lowe's Companies (LOW) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/low.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.363846+00:00"
+    },
+    "/trade/ltc": {
+      "answersRead": 5,
+      "assessment": "Litecoin (LTC): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Litecoin (LTC) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/ltc.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.363863+00:00"
+    },
+    "/trade/ma": {
+      "answersRead": 5,
+      "assessment": "All five Mastercard answers individually compared. Digital Payments is the authored topic, not a guaranteed adoption/return relationship; the rest match the fully read stock mechanics, suitability, comparison and virtual-loss limits. Current network ranking/footprint still needs separate sources.",
+      "controlEvidence": "evidence/faq-continuation-20261024/ma.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.363880+00:00"
+    },
+    "/trade/matic": {
+      "answersRead": 5,
+      "assessment": "Polygon (MATIC): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Polygon (MATIC) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/matic.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.363896+00:00"
+    },
+    "/trade/mcd": {
+      "answersRead": 5,
+      "assessment": "McDonald's Corporation (MCD): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for McDonald's Corporation (MCD) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/mcd.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.363913+00:00"
+    },
+    "/trade/mdb": {
+      "answersRead": 5,
+      "assessment": "MongoDB Inc. (MDB): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for MongoDB Inc. (MDB) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/mdb.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.363930+00:00"
+    },
+    "/trade/meta": {
+      "answersRead": 4,
+      "assessment": "Four handwritten answers read in full. Engagement/ad revenue/spending/Reality Labs/guidance are external company research; generated charts cannot establish earnings responses or a repeatable strategy. Engagement alone does not predict returns, and actual historical observations must be separately sourced.",
+      "controlEvidence": "evidence/faq-continuation-20261024/meta.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.363945+00:00"
+    },
+    "/trade/mrna": {
+      "answersRead": 5,
+      "assessment": "Moderna Inc. (MRNA): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Moderna Inc. (MRNA) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/mrna.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.363962+00:00"
+    },
+    "/trade/ms": {
+      "answersRead": 5,
+      "assessment": "Morgan Stanley (MS): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Morgan Stanley (MS) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/ms.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.363978+00:00"
+    },
+    "/trade/msft": {
+      "answersRead": 4,
+      "assessment": "Four handwritten answers read in full. Hypothetical sizes and period-defined volatility do not establish inherent steadiness or universal beginner suitability. Azure/subscriptions/AI/guidance are varying research inputs; free guest simulation does not mean US brokerage eligibility or real execution.",
+      "controlEvidence": "evidence/faq-continuation-20261024/msft.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.363993+00:00"
+    },
+    "/trade/natgas": {
+      "answersRead": 5,
+      "assessment": "Natural Gas (NG): every expanded question/answer is text-identical to the fully read /trade/brent commodity baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Natural Gas (NG) include global supply/demand, USD strength and geopolitical events. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/natgas.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.364011+00:00"
+    },
+    "/trade/near": {
+      "answersRead": 5,
+      "assessment": "NEAR Protocol (NEAR): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for NEAR Protocol (NEAR) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/near.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.364027+00:00"
+    },
+    "/trade/net": {
+      "answersRead": 5,
+      "assessment": "Cloudflare Inc. (NET): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Cloudflare Inc. (NET) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/net.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.364044+00:00"
+    },
+    "/trade/nke": {
+      "answersRead": 5,
+      "assessment": "Nike Inc. (NKE): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Nike Inc. (NKE) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/nke.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.364063+00:00"
+    },
+    "/trade/now": {
+      "answersRead": 5,
+      "assessment": "ServiceNow Inc. (NOW): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for ServiceNow Inc. (NOW) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/now.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.364080+00:00"
+    },
+    "/trade/nvda": {
+      "answersRead": 4,
+      "assessment": "Four handwritten answers read in full. AI narratives and historical trends do not establish returns, beginner suitability or real-trading readiness. Virtual position values are distinguished from research inputs such as data-centre revenue/demand/results/guidance, whose effects vary by period.",
+      "controlEvidence": "evidence/faq-continuation-20261024/nvda.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.364096+00:00"
+    },
+    "/trade/nzdusd": {
+      "answersRead": 5,
+      "assessment": "New Zealand Dollar / US Dollar (NZD/USD): every expanded question/answer is text-identical to the fully read /trade/eurgbp forex baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for New Zealand Dollar / US Dollar (NZD/USD) include central bank policy, interest-rate differentials and macro releases. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/nzdusd.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.364116+00:00"
+    },
+    "/trade/oil": {
+      "answersRead": 4,
+      "assessment": "Four handwritten oil answers read in full. WTI-labelled spot practice does not execute futures or reproduce news reactions; OPEC/inventory/geopolitics/demand effects can offset each other. Hypothetical sizing is distinct from real beginner suitability, and historical news observations are not guaranteed directions.",
+      "controlEvidence": "evidence/faq-continuation-20261024/oil.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.364132+00:00"
+    },
+    "/trade/okta": {
+      "answersRead": 5,
+      "assessment": "Okta Inc. (OKTA): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Okta Inc. (OKTA) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/okta.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.364149+00:00"
+    },
+    "/trade/op": {
+      "answersRead": 5,
+      "assessment": "Optimism (OP): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Optimism (OP) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/op.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.364166+00:00"
+    },
+    "/trade/orcl": {
+      "answersRead": 5,
+      "assessment": "Oracle Corporation (ORCL): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Oracle Corporation (ORCL) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/orcl.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.364183+00:00"
+    },
+    "/trade/palladium": {
+      "answersRead": 5,
+      "assessment": "Palladium (XPD): every expanded question/answer is text-identical to the fully read /trade/brent commodity baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Palladium (XPD) include global supply/demand, USD strength and geopolitical events. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/palladium.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.364201+00:00"
+    },
+    "/trade/panw": {
+      "answersRead": 5,
+      "assessment": "Palo Alto Networks (PANW): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Palo Alto Networks (PANW) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/panw.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.364219+00:00"
+    },
+    "/trade/pep": {
+      "answersRead": 5,
+      "assessment": "PepsiCo Inc. (PEP): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for PepsiCo Inc. (PEP) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/pep.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.364236+00:00"
+    },
+    "/trade/pfe": {
+      "answersRead": 5,
+      "assessment": "Pfizer Inc. (PFE): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Pfizer Inc. (PFE) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/pfe.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.364254+00:00"
+    },
+    "/trade/platinum": {
+      "answersRead": 5,
+      "assessment": "Platinum (XPT): every expanded question/answer is text-identical to the fully read /trade/brent commodity baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Platinum (XPT) include global supply/demand, USD strength and geopolitical events. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/platinum.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.364271+00:00"
+    },
+    "/trade/pltr": {
+      "answersRead": 5,
+      "assessment": "Palantir Technologies (PLTR): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Palantir Technologies (PLTR) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/pltr.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.364288+00:00"
+    },
+    "/trade/pypl": {
+      "answersRead": 5,
+      "assessment": "PayPal Holdings (PYPL): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for PayPal Holdings (PYPL) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/pypl.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.364306+00:00"
+    },
+    "/trade/qcom": {
+      "answersRead": 5,
+      "assessment": "Qualcomm Inc. (QCOM): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Qualcomm Inc. (QCOM) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/qcom.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.364323+00:00"
+    },
+    "/trade/qqq": {
+      "answersRead": 4,
+      "assessment": "Four handwritten QQQ answers read in full. They distinguish broad S&P500 from tech-heavy Nasdaq100 without calling the latter technology-only, and treat weights/concentration and QQQ/SPY ratios as educational comparisons rather than reliable risk-on or return signals. Published fund research is separate from generated practice.",
+      "controlEvidence": "evidence/faq-continuation-20261024/qqq.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.364339+00:00"
+    },
+    "/trade/roku": {
+      "answersRead": 5,
+      "assessment": "Roku Inc. (ROKU): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Roku Inc. (ROKU) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/roku.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:46:50.364356+00:00"
+    },
+    "/trade/sbux": {
+      "answersRead": 5,
+      "assessment": "Starbucks Corporation (SBUX): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Starbucks Corporation (SBUX) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/sbux.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.106698+00:00"
+    },
+    "/trade/sei": {
+      "answersRead": 5,
+      "assessment": "Sei (SEI): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Sei (SEI) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/sei.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.106749+00:00"
+    },
+    "/trade/shib": {
+      "answersRead": 5,
+      "assessment": "Shiba Inu (SHIB): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Shiba Inu (SHIB) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/shib.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.106777+00:00"
+    },
+    "/trade/shop": {
+      "answersRead": 5,
+      "assessment": "Shopify Inc. (SHOP): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Shopify Inc. (SHOP) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/shop.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.106889+00:00"
+    },
+    "/trade/silver": {
+      "answersRead": 5,
+      "assessment": "Silver (XAG): every expanded question/answer is text-identical to the fully read /trade/brent commodity baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Silver (XAG) include global supply/demand, USD strength and geopolitical events. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/silver.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.106913+00:00"
+    },
+    "/trade/slv": {
+      "answersRead": 5,
+      "assessment": "iShares Silver Trust (SLV): every expanded question/answer is text-identical to the fully read /trade/gld etf baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for iShares Silver Trust (SLV) include the fund\u2019s holdings or tracked exposure, fees, structure and underlying market conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/slv.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.106934+00:00"
+    },
+    "/trade/smh": {
+      "answersRead": 5,
+      "assessment": "VanEck Semiconductor ETF (SMH): every expanded question/answer is text-identical to the fully read /trade/gld etf baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for VanEck Semiconductor ETF (SMH) include the fund\u2019s holdings or tracked exposure, fees, structure and underlying market conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/smh.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.106954+00:00"
+    },
+    "/trade/snow": {
+      "answersRead": 5,
+      "assessment": "Snowflake Inc. (SNOW): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Snowflake Inc. (SNOW) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/snow.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.106974+00:00"
+    },
+    "/trade/sol": {
+      "answersRead": 4,
+      "assessment": "Four handwritten SOL answers read: practice difficulty/volatility depends on the period and assumptions, so BTC/SOL has no permanent ranking. Network/app/liquidity factors have changing relationships with price; tight exits are assumptions, not universal risk rules. Virtual position shocks do not certify real beginner suitability.",
+      "controlEvidence": "evidence/faq-continuation-20261024/sol.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.106993+00:00"
+    },
+    "/trade/soxx": {
+      "answersRead": 5,
+      "assessment": "iShares Semiconductor ETF (SOXX): every expanded question/answer is text-identical to the fully read /trade/gld etf baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for iShares Semiconductor ETF (SOXX) include the fund\u2019s holdings or tracked exposure, fees, structure and underlying market conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/soxx.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.107014+00:00"
+    },
+    "/trade/soybean": {
+      "answersRead": 5,
+      "assessment": "Soybeans (ZS): every expanded question/answer is text-identical to the fully read /trade/brent commodity baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Soybeans (ZS) include global supply/demand, USD strength and geopolitical events. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/soybean.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.107034+00:00"
+    },
+    "/trade/spot": {
+      "answersRead": 5,
+      "assessment": "Spotify Technology (SPOT): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Spotify Technology (SPOT) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/spot.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.107052+00:00"
+    },
+    "/trade/spy": {
+      "answersRead": 4,
+      "assessment": "Four handwritten SPY answers read. Index and single-stock examples have different exposure without a universally required starting asset; matched period/value comparisons can teach concentration. It explicitly states that the simulator does not execute options contracts, while options payoffs/Greeks/assignment need separate education.",
+      "controlEvidence": "evidence/faq-continuation-20261024/spy.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.107071+00:00"
+    },
+    "/trade/sq": {
+      "answersRead": 5,
+      "assessment": "Block Inc. (SQ): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Block Inc. (SQ) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/sq.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.107094+00:00"
+    },
+    "/trade/sugar": {
+      "answersRead": 5,
+      "assessment": "Sugar (SB): every expanded question/answer is text-identical to the fully read /trade/brent commodity baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Sugar (SB) include global supply/demand, USD strength and geopolitical events. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/sugar.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.107113+00:00"
+    },
+    "/trade/tgt": {
+      "answersRead": 5,
+      "assessment": "Target Corporation (TGT): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Target Corporation (TGT) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/tgt.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.107132+00:00"
+    },
+    "/trade/tia": {
+      "answersRead": 5,
+      "assessment": "Celestia (TIA): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Celestia (TIA) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/tia.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.107152+00:00"
+    },
+    "/trade/tlt": {
+      "answersRead": 5,
+      "assessment": "iShares 20+ Year Treasury (TLT): every expanded question/answer is text-identical to the fully read /trade/gld etf baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for iShares 20+ Year Treasury (TLT) include the fund\u2019s holdings or tracked exposure, fees, structure and underlying market conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/tlt.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.107171+00:00"
+    },
+    "/trade/twlo": {
+      "answersRead": 5,
+      "assessment": "Twilio Inc. (TWLO): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Twilio Inc. (TWLO) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/twlo.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.107190+00:00"
+    },
+    "/trade/txn": {
+      "answersRead": 5,
+      "assessment": "Texas Instruments (TXN): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Texas Instruments (TXN) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/txn.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.107211+00:00"
+    },
+    "/trade/uber": {
+      "answersRead": 5,
+      "assessment": "Uber Technologies (UBER): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Uber Technologies (UBER) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/uber.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.107232+00:00"
+    },
+    "/trade/unh": {
+      "answersRead": 5,
+      "assessment": "UnitedHealth Group (UNH): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for UnitedHealth Group (UNH) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/unh.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.107252+00:00"
+    },
+    "/trade/uni": {
+      "answersRead": 5,
+      "assessment": "Uniswap (UNI): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Uniswap (UNI) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/uni.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.107272+00:00"
+    },
+    "/trade/usdcad": {
+      "answersRead": 5,
+      "assessment": "US Dollar / Canadian Dollar (USD/CAD): every expanded question/answer is text-identical to the fully read /trade/eurgbp forex baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for US Dollar / Canadian Dollar (USD/CAD) include central bank policy, interest-rate differentials and macro releases. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/usdcad.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.107293+00:00"
+    },
+    "/trade/usdchf": {
+      "answersRead": 5,
+      "assessment": "US Dollar / Swiss Franc (USD/CHF): every expanded question/answer is text-identical to the fully read /trade/eurgbp forex baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for US Dollar / Swiss Franc (USD/CHF) include central bank policy, interest-rate differentials and macro releases. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/usdchf.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.107311+00:00"
+    },
+    "/trade/usdhkd": {
+      "answersRead": 5,
+      "assessment": "US Dollar / Hong Kong Dollar (USD/HKD): every expanded question/answer is text-identical to the fully read /trade/eurgbp forex baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for US Dollar / Hong Kong Dollar (USD/HKD) include central bank policy, interest-rate differentials and macro releases. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/usdhkd.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.107331+00:00"
+    },
+    "/trade/usdmxn": {
+      "answersRead": 5,
+      "assessment": "US Dollar / Mexican Peso (USD/MXN): every expanded question/answer is text-identical to the fully read /trade/eurgbp forex baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for US Dollar / Mexican Peso (USD/MXN) include central bank policy, interest-rate differentials and macro releases. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/usdmxn.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.107352+00:00"
+    },
+    "/trade/usdsgd": {
+      "answersRead": 5,
+      "assessment": "US Dollar / Singapore Dollar (USD/SGD): every expanded question/answer is text-identical to the fully read /trade/eurgbp forex baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for US Dollar / Singapore Dollar (USD/SGD) include central bank policy, interest-rate differentials and macro releases. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/usdsgd.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.107371+00:00"
+    },
+    "/trade/usdtry": {
+      "answersRead": 5,
+      "assessment": "US Dollar / Turkish Lira (USD/TRY): every expanded question/answer is text-identical to the fully read /trade/eurgbp forex baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for US Dollar / Turkish Lira (USD/TRY) include central bank policy, interest-rate differentials and macro releases. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/usdtry.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.107391+00:00"
+    },
+    "/trade/usdzar": {
+      "answersRead": 5,
+      "assessment": "US Dollar / South African Rand (USD/ZAR): every expanded question/answer is text-identical to the fully read /trade/eurgbp forex baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for US Dollar / South African Rand (USD/ZAR) include central bank policy, interest-rate differentials and macro releases. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/usdzar.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.107410+00:00"
+    },
+    "/trade/uso": {
+      "answersRead": 5,
+      "assessment": "United States Oil Fund (USO): every expanded question/answer is text-identical to the fully read /trade/gld etf baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for United States Oil Fund (USO) include the fund\u2019s holdings or tracked exposure, fees, structure and underlying market conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/uso.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.107430+00:00"
+    },
+    "/trade/v": {
+      "answersRead": 5,
+      "assessment": "All five Visa answers individually compared. Digital Payments is the authored external research topic; four other answers exactly match the fully read stock baseline. Generated charts do not model real events or establish market correlations, and no payment-growth return guarantee is made.",
+      "controlEvidence": "evidence/faq-continuation-20261024/v.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.107450+00:00"
+    },
+    "/trade/veev": {
+      "answersRead": 5,
+      "assessment": "Veeva Systems (VEEV): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Veeva Systems (VEEV) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/veev.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.107470+00:00"
+    },
+    "/trade/vet": {
+      "answersRead": 5,
+      "assessment": "VeChain (VET): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for VeChain (VET) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/vet.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.107491+00:00"
+    },
+    "/trade/voo": {
+      "answersRead": 5,
+      "assessment": "All five VOO answers individually compared. US Large-Cap replaces the generic fund driver, while external-source/event-model limits remain explicit. Four other answers match common free virtual practice, suitability, synthetic comparison and loss boundaries; costs/holdings are not independently certified.",
+      "controlEvidence": "evidence/faq-continuation-20261024/voo.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:47:25.107512+00:00"
+    },
+    "/trade/vti": {
+      "answersRead": 5,
+      "assessment": "Vanguard Total Stock Market (VTI): every expanded question/answer is text-identical to the fully read /trade/gld etf baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Vanguard Total Stock Market (VTI) include the fund\u2019s holdings or tracked exposure, fees, structure and underlying market conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/vti.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391092+00:00"
+    },
+    "/trade/wday": {
+      "answersRead": 5,
+      "assessment": "Workday Inc. (WDAY): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Workday Inc. (WDAY) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/wday.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391164+00:00"
+    },
+    "/trade/wfc": {
+      "answersRead": 5,
+      "assessment": "Wells Fargo & Co. (WFC): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Wells Fargo & Co. (WFC) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/wfc.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391192+00:00"
+    },
+    "/trade/wheat": {
+      "answersRead": 5,
+      "assessment": "Wheat (ZW): every expanded question/answer is text-identical to the fully read /trade/brent commodity baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Wheat (ZW) include global supply/demand, USD strength and geopolitical events. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/wheat.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391215+00:00"
+    },
+    "/trade/wmt": {
+      "answersRead": 5,
+      "assessment": "Walmart Inc. (WMT): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Walmart Inc. (WMT) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/wmt.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391238+00:00"
+    },
+    "/trade/xlf": {
+      "answersRead": 5,
+      "assessment": "Financial Select SPDR (XLF): every expanded question/answer is text-identical to the fully read /trade/gld etf baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Financial Select SPDR (XLF) include the fund\u2019s holdings or tracked exposure, fees, structure and underlying market conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/xlf.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391261+00:00"
+    },
+    "/trade/xlk": {
+      "answersRead": 5,
+      "assessment": "Technology Select SPDR (XLK): every expanded question/answer is text-identical to the fully read /trade/gld etf baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Technology Select SPDR (XLK) include the fund\u2019s holdings or tracked exposure, fees, structure and underlying market conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/xlk.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391283+00:00"
+    },
+    "/trade/xlm": {
+      "answersRead": 5,
+      "assessment": "Stellar (XLM): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Stellar (XLM) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/xlm.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391303+00:00"
+    },
+    "/trade/xlv": {
+      "answersRead": 5,
+      "assessment": "Health Care Select SPDR (XLV): every expanded question/answer is text-identical to the fully read /trade/gld etf baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Health Care Select SPDR (XLV) include the fund\u2019s holdings or tracked exposure, fees, structure and underlying market conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/xlv.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391323+00:00"
+    },
+    "/trade/xom": {
+      "answersRead": 5,
+      "assessment": "Exxon Mobil Corp. (XOM): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Exxon Mobil Corp. (XOM) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/xom.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391343+00:00"
+    },
+    "/trade/xrp": {
+      "answersRead": 4,
+      "assessment": "Four handwritten XRP answers read in full. Legal/regulatory/company/network and broad crypto developments are varying research inputs rather than fixed price relationships. Announcements must be studied separately from generated charts; virtual gains/losses do not predict future response. Free30-plus-crypto practice is a simulator catalogue statement, not real brokerage or company ownership.",
+      "controlEvidence": "evidence/faq-continuation-20261024/xrp.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391362+00:00"
+    },
+    "/trade/zm": {
+      "answersRead": 5,
+      "assessment": "Zoom Video (ZM): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Zoom Video (ZM) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/zm.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391382+00:00"
+    },
+    "/trade/zs": {
+      "answersRead": 5,
+      "assessment": "Zscaler Inc. (ZS): every expanded question/answer is text-identical to the fully read /trade/gs stock baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Zscaler Inc. (ZS) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/zs.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391402+00:00"
+    },
+    "/trade/xmr": {
+      "answersRead": 5,
+      "assessment": "Monero (XMR): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Monero (XMR) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/xmr.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391421+00:00"
+    },
+    "/trade/bch": {
+      "answersRead": 5,
+      "assessment": "Bitcoin Cash (BCH): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Bitcoin Cash (BCH) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/bch.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391447+00:00"
+    },
+    "/trade/tao": {
+      "answersRead": 5,
+      "assessment": "Bittensor (TAO): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Bittensor (TAO) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/tao.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391470+00:00"
+    },
+    "/trade/usdt": {
+      "answersRead": 5,
+      "assessment": "Tether (USDT): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Tether (USDT) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/usdt.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391491+00:00"
+    },
+    "/trade/dai": {
+      "answersRead": 5,
+      "assessment": "Dai (DAI): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Dai (DAI) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/dai.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391536+00:00"
+    },
+    "/trade/trx": {
+      "answersRead": 5,
+      "assessment": "TRON (TRX): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for TRON (TRX) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/trx.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391563+00:00"
+    },
+    "/trade/ton": {
+      "answersRead": 5,
+      "assessment": "Toncoin (TON): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Toncoin (TON) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/ton.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391589+00:00"
+    },
+    "/trade/etc": {
+      "answersRead": 5,
+      "assessment": "Ethereum Classic (ETC): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Ethereum Classic (ETC) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/etc.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391614+00:00"
+    },
+    "/trade/aave": {
+      "answersRead": 5,
+      "assessment": "Aave (AAVE): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Aave (AAVE) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/aave.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391639+00:00"
+    },
+    "/trade/grt": {
+      "answersRead": 5,
+      "assessment": "The Graph (GRT): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for The Graph (GRT) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/grt.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391665+00:00"
+    },
+    "/trade/ldo": {
+      "answersRead": 5,
+      "assessment": "Lido DAO (LDO): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Lido DAO (LDO) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/ldo.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391691+00:00"
+    },
+    "/trade/rune": {
+      "answersRead": 5,
+      "assessment": "THORChain (RUNE): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for THORChain (RUNE) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/rune.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391716+00:00"
+    },
+    "/trade/kas": {
+      "answersRead": 5,
+      "assessment": "Kaspa (KAS): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Kaspa (KAS) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/kas.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391743+00:00"
+    },
+    "/trade/render": {
+      "answersRead": 5,
+      "assessment": "Render (RENDER): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Render (RENDER) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/render.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391770+00:00"
+    },
+    "/trade/usdc": {
+      "answersRead": 5,
+      "assessment": "USD Coin (USDC): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for USD Coin (USDC) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/usdc.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391796+00:00"
+    },
+    "/trade/wld": {
+      "answersRead": 5,
+      "assessment": "Worldcoin (WLD): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Worldcoin (WLD) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/wld.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391824+00:00"
+    },
+    "/trade/stx": {
+      "answersRead": 5,
+      "assessment": "Stacks (STX): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Stacks (STX) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/stx.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391852+00:00"
+    },
+    "/trade/imx": {
+      "answersRead": 5,
+      "assessment": "Immutable (IMX): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Immutable (IMX) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/imx.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391878+00:00"
+    },
+    "/trade/pol": {
+      "answersRead": 5,
+      "assessment": "Polygon Ecosystem Token (POL): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Polygon Ecosystem Token (POL) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/pol.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391904+00:00"
+    },
+    "/trade/pepe": {
+      "answersRead": 5,
+      "assessment": "Pepe (PEPE): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Pepe (PEPE) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/pepe.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391932+00:00"
+    },
+    "/trade/bonk": {
+      "answersRead": 5,
+      "assessment": "Bonk (BONK): every expanded question/answer is text-identical to the fully read /trade/fil crypto baseline after identity normalization. The repeated answers cover free virtual orders, external research rather than generated event modelling, no assumed beginner suitability, synthetic practice change/demo activity rather than real correlation/volume, and virtual-only loss. Actual research-driver sentence: Factors to research for Bonk (BONK) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event. This is repeated functional guidance, not distinct asset research or complete source/visual/control certification.",
+      "controlEvidence": "evidence/faq-continuation-20261024/bonk.json",
+      "comparisonEvidence": "FAQ-TEMPLATE-COMPARISONS.json",
+      "reviewMethod": "Individual actual expanded-answer delta against fully read fresh class baseline; all raw answers retained.",
+      "readAt": "2026-10-24T04:48:00.391959+00:00"
+    },
+    "/learn/what-is-paper-trading": {
+      "answersRead": 4,
+      "assessment": "/learn/what-is-paper-trading: all four actual expanded questions/answers were individually compared and exactly match the fully read /learn/article/what-is-paper-trading. Four expanded answers read: virtual order placement/accounting cannot reproduce all real costs/risks, free access, separate provider/practice labels and a built-in mentor without AI-provider requests. Related reading is navigation, not certification of skill. This records alias duplication rather than independent new authored material.",
+      "controlEvidence": "evidence/live-faq/02aba96413d5f886.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
+    },
+    "/learn/stock-market-index-etfs": {
+      "answersRead": 4,
+      "assessment": "/learn/stock-market-index-etfs: all four actual expanded questions/answers were individually compared and exactly match the fully read /learn/article/stock-market-index-etfs. Four expanded answers read: three methodologies and specified fund exposure are distinguished from owning an entire market. Shared free-practice/source/mentor limits are explicit; current issuer holdings/costs remain separately verifiable. This records alias duplication rather than independent new authored material.",
+      "controlEvidence": "evidence/live-faq/070277b130b6d22c.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
+    },
+    "/learn/risk-management-in-trading": {
+      "answersRead": 4,
+      "assessment": "/learn/risk-management-in-trading: all four actual expanded questions/answers were individually compared and exactly match the fully read /learn/article/risk-management-in-trading. Four expanded answers read: sizing, conceptual exits and risk budgets are worksheets;1/2percent are assumptions and the product supports manual market orders. The shared free-practice/source/mentor answers do not imply executable automated stops or real-money readiness. This records alias duplication rather than independent new authored material.",
+      "controlEvidence": "evidence/live-faq/0f2a2dbf514b1056.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
+    },
+    "/learn/article/market-orders-vs-limit-orders": {
+      "answersRead": 4,
+      "assessment": "Four expanded answers read: market/limit mechanics and fill uncertainty are explained while explicitly stating TradeHQ only simulates market orders. Shared practice guidance does not promise executable limit orders or live fill quality.",
+      "controlEvidence": "evidence/live-faq/13609a658930da60.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
+    },
+    "/contact": {
+      "answersRead": 3,
+      "assessment": "Three answers read: response timing varies, no individualized investment/legal/tax advice by contact and feature/bug requests have a public channel. No response SLA is promised; no actual message or form submission was made.",
+      "controlEvidence": "evidence/live-faq/2074d5bd1aceddaa.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
+    },
+    "/learn/how-to-build-a-portfolio": {
+      "answersRead": 4,
+      "assessment": "/learn/how-to-build-a-portfolio: all four actual expanded questions/answers were individually compared and exactly match the fully read /learn/article/how-to-build-a-portfolio. Four expanded answers read: allocation/diversification/rebalancing are virtual portfolio exercises, with free access and separated practice/provider data. No particular real-world allocation, investment suitability or profit guarantee follows from the FAQ. This records alias duplication rather than independent new authored material.",
+      "controlEvidence": "evidence/live-faq/23a5f55c25a114d6.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
+    },
+    "/ai-mentor": {
+      "answersRead": 4,
+      "assessment": "Four answers read: the standalone mentor uses labelled authored responses/topic matching without an AI API, does not read journal/history or predict price/suitability, and offers educational prompts/free access. No professional or real-market forecasting service is claimed.",
+      "controlEvidence": "evidence/live-faq/4d638ee77e5be76c.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
+    },
+    "/learn/article/what-is-paper-trading": {
+      "answersRead": 4,
+      "assessment": "Four expanded answers read: virtual order placement/accounting cannot reproduce all real costs/risks, free access, separate provider/practice labels and a built-in mentor without AI-provider requests. Related reading is navigation, not certification of skill.",
+      "controlEvidence": "evidence/live-faq/4ed25eaf3092bc95.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
+    },
+    "/terms": {
+      "answersRead": 4,
+      "assessment": "Four answers read: virtual-only/no-security-transactions scope, no financial/legal/tax advice, personal educational licence and intended beginner/student audience. Publisher legal terms are described, not certified enforceable/current law; no policy text or account condition was altered.",
+      "controlEvidence": "evidence/live-faq/6b08b3566820b509.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
+    },
+    "/learn/trading-strategies-for-beginners": {
+      "answersRead": 4,
+      "assessment": "/learn/trading-strategies-for-beginners: all four actual expanded questions/answers were individually compared and exactly match the fully read /learn/article/trading-strategies-for-beginners. Four expanded answers read: five strategies are hypotheses with explicit costs/adverse outcomes, not demonstrations of real suitability. Free practice and mentor/source descriptions remain bounded; no guaranteed profitable strategy is claimed. This records alias duplication rather than independent new authored material.",
+      "controlEvidence": "evidence/live-faq/6f0dcddcba34911e.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
+    },
+    "/learn/article/how-to-build-a-portfolio": {
+      "answersRead": 4,
+      "assessment": "Four expanded answers read: allocation/diversification/rebalancing are virtual portfolio exercises, with free access and separated practice/provider data. No particular real-world allocation, investment suitability or profit guarantee follows from the FAQ.",
+      "controlEvidence": "evidence/live-faq/8606b994fa5ddb2b.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
+    },
+    "/learn": {
+      "answersRead": 4,
+      "assessment": "Four answers read: free educational topics, articles versus quiz-based lessons, supported spot practice versus conceptual derivatives/unsupported orders, and a beginner reading path. Free content is not a guarantee of skill or live brokerage capability.",
+      "controlEvidence": "evidence/live-faq/8f96f30f9195a0cc.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
+    },
+    "/learn/article/stock-market-index-etfs": {
+      "answersRead": 4,
+      "assessment": "Four expanded answers read: three methodologies and specified fund exposure are distinguished from owning an entire market. Shared free-practice/source/mentor limits are explicit; current issuer holdings/costs remain separately verifiable.",
+      "controlEvidence": "evidence/live-faq/9f5ba0b1212e1c5e.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
+    },
+    "/learn/article/trading-strategies-for-beginners": {
+      "answersRead": 4,
+      "assessment": "Four expanded answers read: five strategies are hypotheses with explicit costs/adverse outcomes, not demonstrations of real suitability. Free practice and mentor/source descriptions remain bounded; no guaranteed profitable strategy is claimed.",
+      "controlEvidence": "evidence/live-faq/a8202d2bf62a5745.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
+    },
+    "/learn/article/crypto-vs-stocks": {
+      "answersRead": 4,
+      "assessment": "Four expanded answers read: market structure/hours/risk and matched virtual exposure/windows replace a universal best starting asset. Shared free-practice/source/mentor limits do not establish a real brokerage or investment recommendation.",
+      "controlEvidence": "evidence/live-faq/ac1b9c75efbfeada.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
+    },
+    "/learn/article/how-to-read-stock-charts": {
+      "answersRead": 4,
+      "assessment": "Four expanded answers read: describing candlesticks/history/indicator calculations does not imply patterns predict returns. Free practice keeps source labels distinct and mentor functionality is a local authored library; source/image/control work remains separate.",
+      "controlEvidence": "evidence/live-faq/adebfb3025c36ccd.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
+    },
+    "/privacy": {
+      "answersRead": 3,
+      "assessment": "Three answers read: guest versus optional account data, server-recorded trade restoration versus earlier guest history, and separate Amplitude consent/Google regional advertising controls. This agrees with source account restoration. Actual regional messages, account eligibility and all data behavior remain separate verification; the policy was not changed.",
+      "controlEvidence": "evidence/live-faq/b22a3936128395d7.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
+    },
+    "/learn/article/risk-management-in-trading": {
+      "answersRead": 4,
+      "assessment": "Four expanded answers read: sizing, conceptual exits and risk budgets are worksheets;1/2percent are assumptions and the product supports manual market orders. The shared free-practice/source/mentor answers do not imply executable automated stops or real-money readiness.",
+      "controlEvidence": "evidence/live-faq/bd8705a72861c7ee.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
+    },
+    "/learn/how-to-read-stock-charts": {
+      "answersRead": 4,
+      "assessment": "/learn/how-to-read-stock-charts: all four actual expanded questions/answers were individually compared and exactly match the fully read /learn/article/how-to-read-stock-charts. Four expanded answers read: describing candlesticks/history/indicator calculations does not imply patterns predict returns. Free practice keeps source labels distinct and mentor functionality is a local authored library; source/image/control work remains separate. This records alias duplication rather than independent new authored material.",
+      "controlEvidence": "evidence/live-faq/c24d1b7b7d683ac4.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
+    },
+    "/leaderboard": {
+      "answersRead": 6,
+      "assessment": "Six expanded FAQ/disclosure panels read. One describes five-minute background pricing, limited traditional-asset batches, cached/fixed fallbacks and visible minute refresh; five describe ranked server orders versus prior summaries, private-profile refresh behavior and stored account trades. These deny audited real returns or skill inference. No account/privacy toggle or public-duel RPC was invoked during this reading.",
+      "controlEvidence": "evidence/live-faq/e5eeebf4560868e5.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
+    },
+    "/learn/crypto-vs-stocks": {
+      "answersRead": 4,
+      "assessment": "/learn/crypto-vs-stocks: all four actual expanded questions/answers were individually compared and exactly match the fully read /learn/article/crypto-vs-stocks. Four expanded answers read: market structure/hours/risk and matched virtual exposure/windows replace a universal best starting asset. Shared free-practice/source/mentor limits do not establish a real brokerage or investment recommendation. This records alias duplication rather than independent new authored material.",
+      "controlEvidence": "evidence/live-faq/e6a85be18476f749.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
+    },
+    "/learn/article/technical-indicators-rsi-macd-moving-averages": {
+      "answersRead": 4,
+      "assessment": "Four expanded answers read: RSI/MACD/moving averages describe selected observations; conventional interpretations and hypothetical examples are not trade recommendations. Free practice separates provider/practice sources and a local authored mentor.",
+      "controlEvidence": "evidence/live-faq/ec948df1647e69d7.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
+    },
+    "/portfolio": {
+      "answersRead": 3,
+      "assessment": "Three answers read: price provenance and portfolio metrics are qualified; clearing browser data does not delete the synced account copy. The final blanket browser-only trade-history sentence contradicts account restoration; fresh reproduction/source inspection established THQ-025, with a static help-text correction prepared. No actual reset or record change was performed.",
+      "controlEvidence": "evidence/live-faq/f90b1665cee04b95.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification.",
+      "postDeploymentFollowup": {
+        "finding": "THQ-025",
+        "state": "PUBLICLY_VERIFIED",
+        "release": 225,
+        "evidence": "evidence/PR225-PRODUCTION-BROWSER.json",
+        "scope": "Exact expanded visible/schema help at all five widths; no reset/account actions."
+      }
+    },
+    "/learn/country/philippines": {
+      "answersRead": 2,
+      "assessment": "Two expanded answers read: simulated activity is separated from Philippine SEC/provider registration and minor brokerage eligibility. It directs readers to current official/provider rules without promising under18 real-money access or regulatory exemption.",
+      "controlEvidence": "evidence/live-faq-v2/2c25114c1d5b59f5.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
+    },
+    "/learn/country/pakistan": {
+      "answersRead": 2,
+      "assessment": "Two expanded answers read: no bank/payment requirement for this free simulator, and PSX-listed shares are not yet in the catalogue. The local-coverage statement is a roadmap limitation, not a promise of delivery or real brokerage access.",
+      "controlEvidence": "evidence/live-faq-v2/3d333321f4bcac7f.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
+    },
+    "/learn/country/india": {
+      "answersRead": 3,
+      "assessment": "Three expanded answers read: educational/noncustodial scope refers registration questions to current SEBI rules/registry, Indian-listed shares are not currently in the catalogue and browser-held records do not guarantee offline functionality. No legal registration or real brokerage eligibility is certified.",
+      "controlEvidence": "evidence/live-faq-v2/d566bfd7ba905d5c.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
+    },
+    "/learn/country/nigeria": {
+      "answersRead": 2,
+      "assessment": "Two expanded answers read: public free educational access and no current NGX-listed catalogue. The no-geo-restriction wording describes the site offering; ISP/region/provider availability was not independently tested from Nigeria and is not certified.",
+      "controlEvidence": "evidence/live-faq-v2/ff9a26973c0c60e4.json",
+      "readAt": "2026-10-24T05:00:29.703116+00:00",
+      "scope": "Actual safely expanded dated22October capture read24October; not a blanket fresh production/source/visual certification."
     }
   },
   "nativeVisibleFAQRead": {
@@ -611,5 +2010,7 @@
       "assessment": "XRP (XRP): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
       "evidence": "evidence/live-browser/c8b6d3e777b760e1.json"
     }
-  }
+  },
+  "expandedReadingComplete": true,
+  "expandedAnswersRead": 1042
 }

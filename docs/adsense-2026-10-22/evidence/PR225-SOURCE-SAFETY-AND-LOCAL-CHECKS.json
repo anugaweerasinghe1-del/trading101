@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-24T05:08:20.625875+00:00",
+  "candidateSHA": "c6494ce6c0747f0b4febcf41c07d35f84194c0e9",
+  "baseSHA": "b5cf45941341673e58f39368e18076c66739e60f",
+  "outcome": "PASS",
+  "paths": [
+    "src/pages/Portfolio.tsx"
+  ],
+  "scope": "Exactly one help-text string replacement; entire file otherwise byte-equivalent. No reset/storage/sync, calculation, order, account/DB/auth, progress, privacy-policy/consent/ad or infrastructure changes.",
+  "sourceBasis": "applyServerSnapshot restores snapshot.trades into portfolio.trades; existing Privacy/About/Leaderboard copy already distinguishes server-recorded account trades from earlier guest history. No private accounts accessed.",
+  "localChecks": {
+    "cloudflareBuildAndSEO": "PASS",
+    "appTypecheck": "PASS"
+  }
+}

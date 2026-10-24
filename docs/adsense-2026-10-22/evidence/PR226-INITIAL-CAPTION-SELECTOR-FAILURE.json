@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-10-24T05:23:10.505Z",
+  "sha": "71b84461ab0f531da44da54d8670ad1bef0628ea",
+  "origin": "https://ba2307a5.tradehq-preview.pages.dev",
+  "outcome": "FAIL",
+  "scope": "Actual anonymous browser eight route variants x five widths, four chart selectors, 15 generated FAQ answers, two later tiny-price updates in a browser-local candle outage fixture; no orders/accounts/contact writes.",
+  "rows": [],
+  "runtimeErrors": [],
+  "preventedRequests": [],
+  "failure": "Expected values to be strictly equal:\n+ actual - expected\n\n+ null\n- 'Candle spacing varies by provider • Checks: quotes 30s, candles 5m'\n",
+  "debug": {
+    "url": "https://ba2307a5.tradehq-preview.pages.dev/trade",
+    "heading": "Practice Trading Terminal — USD Coin (USDC)",
+    "body": "Daily\nPractice Trading Terminal — USD Coin (USDC)\n\nPlace simulated buy and sell orders across crypto, stocks, ETFs, forex and commodities with $100,000 in virtual cash. Quotes and charts can be provider-sourced, delayed or simulated and clearly labelled LIVE, CACHED or SIM. (Educational simulation only — not financial advice.)\n\nTotal Value\n\n$100,000.00\n\nAvailable Cash\n\n$100,000.00\n\nDetails\nU\n\nUSDC\n\nUSD Coin\n\nLoading quote…\nUSD Coin\nCRYPTO\n\nUSDC\n\n$0.9997\n\n+0.00%\n\nWHAT YOU'RE TRADING\n\nCrypto · Simulated market practice\n\nASSET-CLASS CONTEXT\n\nNetwork, custody and price risks vary by token\n\nPRACTICE MOVE BUCKET\n\nInside ±2%\n\nU\nUSDC\nSIMULATED\n\nUSD Coin\n\n$1.00\n\n+0.01 (+1.13%)\n\n1H\n4H\n1D\n1W\n\n1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period.\n\n04:33 AM\n04:55 AM\n05:23 AM\n$0.988\n$0.994\n$0.999\n$1.009\nData status: simulated\nCandle spacing varies by provider • Checks: quotes 30s, candles 5m\nMarket Insight\n\nEducational estimate · not"
+  },
+  "limitations": [
+    "Limited returned history can produce the same points for several windows; multi-day subset behavior is independently verified by isolated compiled UI fixtures.",
+    "Candle failure is only a local test condition, not a statement of an actual provider outage.",
+    "Screenshots are collection until individually viewed."
+  ]
+}

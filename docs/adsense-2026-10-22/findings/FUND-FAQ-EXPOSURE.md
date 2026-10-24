@@ -1,3 +1,5 @@
+> Release update: PR #223 merged as `8f388de78b073506e30c36531cdb91a5879b07e0`; all six main/release checks, native Cloudflare production SUCCESS and Vercel READY, eighty affected/control live states and thirty guest states/four safe controls PASS. THQ-023 is PUBLICLY_VERIFIED. Preparation notes below are historical.
+
 # THQ-023 — generic fund FAQ incorrectly assumes index exposure
 
 P2 educational accuracy. Reproduced by expanding the GLD driver answer on the public site: “underlying index composition, fund flows and sector rotation.” GLD's issuer instead states that its objective is to reflect gold-bullion price less expenses; the selected Key Features paragraph was read from https://www.ssga.com/us/en/individual/etfs/spdr-gold-shares-gld . This is not an assertion that all 14 fallback fund descriptions were false, or that this is a specific Google Publisher Policy violation.

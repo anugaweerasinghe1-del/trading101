@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-10-24T04:28:05.717452+00:00",
+  "candidateSHA": "7e1a06a22e9fb2d3b33fbb07d30344994231106a",
+  "baseSHA": "8f388de78b073506e30c36531cdb91a5879b07e0",
+  "outcome": "PASS",
+  "paths": [
+    "scripts/verify-chart-windows.mjs",
+    "scripts/verify-publisher-browser.mjs",
+    "src/components/AssetIntelligence.tsx"
+  ],
+  "scope": "Market-cap missing-value display branch and isolated regression fixtures only. All numeric derivations/formatting before render are byte-equivalent; no price/quote/order, fee, balance/position/history, auth/DB/progress/privacy/ad/infrastructure or dependency/workflow changes.",
+  "localChecks": {
+    "cloudflareBuildAndSEO": "PASS",
+    "appTypecheck": "PASS",
+    "phase6Browser": "PASS"
+  },
+  "regression": "Missing cap stops spinning at five widths; supplied1.23B retains the previous numeric formatting."
+}

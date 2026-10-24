@@ -1,0 +1,3900 @@
+{
+  "checkedAt": "2026-10-24T05:25:21.142Z",
+  "sha": "71b84461ab0f531da44da54d8670ad1bef0628ea",
+  "origin": "https://ba2307a5.tradehq-preview.pages.dev",
+  "outcome": "PASS",
+  "scope": "Actual anonymous browser eight route variants x five widths, four chart selectors, 15 generated FAQ answers, two later tiny-price updates in a browser-local candle outage fixture; no orders/accounts/contact writes.",
+  "rows": [
+    {
+      "path": "/trade",
+      "width": 360,
+      "height": 800,
+      "checkedAt": "2026-10-24T05:23:33.702Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 236,
+        "heading": "Practice Trading Terminal — USD Coin (USDC)"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$0.965",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$0.971",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$0.977",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$0.988",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:33 AM",
+            "04:55 AM",
+            "05:23 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:33 AM",
+            "04:55 AM",
+            "05:23 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:33 AM",
+            "04:55 AM",
+            "05:23 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:33 AM",
+            "Oct 24, 05:23 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [],
+      "isolatedCandleOutage": false,
+      "screenshots": [
+        "pr226-updated-preview/_trade-360-chart.png"
+      ]
+    },
+    {
+      "path": "/trade",
+      "width": 390,
+      "height": 844,
+      "checkedAt": "2026-10-24T05:23:34.889Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 236,
+        "heading": "Practice Trading Terminal — USD Coin (USDC)"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$0.974",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$0.981",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$0.988",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$1.001",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:33 AM",
+            "04:52 AM",
+            "05:23 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:33 AM",
+            "04:52 AM",
+            "05:23 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:33 AM",
+            "04:52 AM",
+            "05:23 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:33 AM",
+            "Oct 24, 05:23 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [],
+      "isolatedCandleOutage": false,
+      "screenshots": []
+    },
+    {
+      "path": "/trade",
+      "width": 768,
+      "height": 1024,
+      "checkedAt": "2026-10-24T05:23:36.194Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 342.9959716796875,
+        "heading": "Practice Trading Terminal — USD Coin (USDC)"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$0.993",
+          "left": 53.95689010620117,
+          "right": 89.00335693359375,
+          "inside": true
+        },
+        {
+          "text": "$1",
+          "left": 76.09725189208984,
+          "right": 89.00335693359375,
+          "inside": true
+        },
+        {
+          "text": "$1.008",
+          "left": 53.95689010620117,
+          "right": 89.00335693359375,
+          "inside": true
+        },
+        {
+          "text": "$1.021",
+          "left": 53.95689010620117,
+          "right": 89.00335693359375,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:33 AM",
+            "04:41 AM",
+            "04:49 AM",
+            "04:57 AM",
+            "05:05 AM",
+            "05:13 AM",
+            "05:23 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:33 AM",
+            "04:41 AM",
+            "04:49 AM",
+            "04:57 AM",
+            "05:05 AM",
+            "05:13 AM",
+            "05:23 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:33 AM",
+            "04:41 AM",
+            "04:49 AM",
+            "04:57 AM",
+            "05:05 AM",
+            "05:13 AM",
+            "05:23 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:33 AM",
+            "Oct 24, 04:44 AM",
+            "Oct 24, 04:55 AM",
+            "Oct 24, 05:06 AM",
+            "Oct 24, 05:23 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [],
+      "isolatedCandleOutage": false,
+      "screenshots": []
+    },
+    {
+      "path": "/trade",
+      "width": 1280,
+      "height": 800,
+      "checkedAt": "2026-10-24T05:23:37.937Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 343,
+        "heading": "Practice Trading Terminal — USD Coin (USDC)"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$0.981",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$0.984",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$0.987",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$0.992",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:33 AM",
+            "04:40 AM",
+            "04:47 AM",
+            "04:54 AM",
+            "05:01 AM",
+            "05:08 AM",
+            "05:15 AM",
+            "05:23 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:33 AM",
+            "04:40 AM",
+            "04:47 AM",
+            "04:54 AM",
+            "05:01 AM",
+            "05:08 AM",
+            "05:15 AM",
+            "05:23 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:33 AM",
+            "04:40 AM",
+            "04:47 AM",
+            "04:54 AM",
+            "05:01 AM",
+            "05:08 AM",
+            "05:15 AM",
+            "05:23 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:33 AM",
+            "Oct 24, 04:43 AM",
+            "Oct 24, 04:53 AM",
+            "Oct 24, 05:03 AM",
+            "Oct 24, 05:23 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [],
+      "isolatedCandleOutage": false,
+      "screenshots": [
+        "pr226-updated-preview/_trade-1280-chart.png"
+      ]
+    },
+    {
+      "path": "/trade",
+      "width": 1920,
+      "height": 1080,
+      "checkedAt": "2026-10-24T05:23:39.184Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 343,
+        "heading": "Practice Trading Terminal — USD Coin (USDC)"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$0.948",
+          "left": 366.453125,
+          "right": 401.5,
+          "inside": true
+        },
+        {
+          "text": "$0.952",
+          "left": 366.453125,
+          "right": 401.5,
+          "inside": true
+        },
+        {
+          "text": "$0.955",
+          "left": 366.453125,
+          "right": 401.5,
+          "inside": true
+        },
+        {
+          "text": "$0.962",
+          "left": 366.453125,
+          "right": 401.5,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:33 AM",
+            "04:40 AM",
+            "04:47 AM",
+            "04:54 AM",
+            "05:01 AM",
+            "05:08 AM",
+            "05:15 AM",
+            "05:23 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:33 AM",
+            "04:40 AM",
+            "04:47 AM",
+            "04:54 AM",
+            "05:01 AM",
+            "05:08 AM",
+            "05:15 AM",
+            "05:23 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:33 AM",
+            "04:40 AM",
+            "04:47 AM",
+            "04:54 AM",
+            "05:01 AM",
+            "05:08 AM",
+            "05:15 AM",
+            "05:23 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:33 AM",
+            "Oct 24, 04:43 AM",
+            "Oct 24, 04:53 AM",
+            "Oct 24, 05:03 AM",
+            "Oct 24, 05:23 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [],
+      "isolatedCandleOutage": false,
+      "screenshots": []
+    },
+    {
+      "path": "/trade/btc",
+      "width": 360,
+      "height": 800,
+      "checkedAt": "2026-10-24T05:23:41.416Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 256,
+        "heading": "Bitcoin — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$90,612.118",
+          "left": 60.328125,
+          "right": 124,
+          "inside": true
+        },
+        {
+          "text": "$91,212.118",
+          "left": 60.328125,
+          "right": 124,
+          "inside": true
+        },
+        {
+          "text": "$91,812.118",
+          "left": 60.328125,
+          "right": 124,
+          "inside": true
+        },
+        {
+          "text": "$92,962.724",
+          "left": 60.328125,
+          "right": 124,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:33 AM",
+            "05:23 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:33 AM",
+            "05:23 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:33 AM",
+            "05:23 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:33 AM",
+            "Oct 24, 05:23 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [],
+      "isolatedCandleOutage": false,
+      "screenshots": [
+        "pr226-updated-preview/_trade_btc-360-chart.png"
+      ]
+    },
+    {
+      "path": "/trade/btc",
+      "width": 390,
+      "height": 844,
+      "checkedAt": "2026-10-24T05:23:43.153Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 256,
+        "heading": "Bitcoin — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$75,984.009",
+          "left": 60.328125,
+          "right": 124,
+          "inside": true
+        },
+        {
+          "text": "$77,484.009",
+          "left": 60.328125,
+          "right": 124,
+          "inside": true
+        },
+        {
+          "text": "$80,175.616",
+          "left": 60.328125,
+          "right": 124,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:33 AM",
+            "04:55 AM",
+            "05:23 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:33 AM",
+            "04:55 AM",
+            "05:23 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:33 AM",
+            "04:55 AM",
+            "05:23 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:33 AM",
+            "Oct 24, 05:23 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [],
+      "isolatedCandleOutage": false,
+      "screenshots": []
+    },
+    {
+      "path": "/trade/btc",
+      "width": 768,
+      "height": 1024,
+      "checkedAt": "2026-10-24T05:23:44.992Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 363,
+        "heading": "Bitcoin — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$76,753.594",
+          "left": 60.328125,
+          "right": 124,
+          "inside": true
+        },
+        {
+          "text": "$77,303.594",
+          "left": 60.328125,
+          "right": 124,
+          "inside": true
+        },
+        {
+          "text": "$77,853.594",
+          "left": 60.328125,
+          "right": 124,
+          "inside": true
+        },
+        {
+          "text": "$78,858.15",
+          "left": 66.8125,
+          "right": 124,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:33 AM",
+            "04:42 AM",
+            "04:51 AM",
+            "05:00 AM",
+            "05:09 AM",
+            "05:23 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:33 AM",
+            "04:42 AM",
+            "04:51 AM",
+            "05:00 AM",
+            "05:09 AM",
+            "05:23 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:33 AM",
+            "04:42 AM",
+            "04:51 AM",
+            "05:00 AM",
+            "05:09 AM",
+            "05:23 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:33 AM",
+            "Oct 24, 04:45 AM",
+            "Oct 24, 04:57 AM",
+            "Oct 24, 05:23 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [],
+      "isolatedCandleOutage": false,
+      "screenshots": []
+    },
+    {
+      "path": "/trade/btc",
+      "width": 1280,
+      "height": 800,
+      "checkedAt": "2026-10-24T05:23:47.195Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 363,
+        "heading": "Bitcoin — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$77,571.554",
+          "left": 60.37928771972656,
+          "right": 123.95741271972656,
+          "inside": true
+        },
+        {
+          "text": "$78,371.554",
+          "left": 60.37928771972656,
+          "right": 123.95741271972656,
+          "inside": true
+        },
+        {
+          "text": "$79,171.554",
+          "left": 60.37928771972656,
+          "right": 123.95741271972656,
+          "inside": true
+        },
+        {
+          "text": "$80,688.692",
+          "left": 60.37928771972656,
+          "right": 123.95741271972656,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:33 AM",
+            "04:41 AM",
+            "04:49 AM",
+            "04:57 AM",
+            "05:05 AM",
+            "05:13 AM",
+            "05:23 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:33 AM",
+            "04:41 AM",
+            "04:49 AM",
+            "04:57 AM",
+            "05:05 AM",
+            "05:13 AM",
+            "05:23 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:33 AM",
+            "04:41 AM",
+            "04:49 AM",
+            "04:57 AM",
+            "05:05 AM",
+            "05:13 AM",
+            "05:23 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:33 AM",
+            "Oct 24, 04:43 AM",
+            "Oct 24, 04:53 AM",
+            "Oct 24, 05:03 AM",
+            "Oct 24, 05:23 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [],
+      "isolatedCandleOutage": false,
+      "screenshots": [
+        "pr226-updated-preview/_trade_btc-1280-chart.png"
+      ]
+    },
+    {
+      "path": "/trade/btc",
+      "width": 1920,
+      "height": 1080,
+      "checkedAt": "2026-10-24T05:23:49.080Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 363,
+        "heading": "Bitcoin — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$84,438.323",
+          "left": 372.87982177734375,
+          "right": 436.45794677734375,
+          "inside": true
+        },
+        {
+          "text": "$84,938.323",
+          "left": 372.87982177734375,
+          "right": 436.45794677734375,
+          "inside": true
+        },
+        {
+          "text": "$85,438.323",
+          "left": 372.87982177734375,
+          "right": 436.45794677734375,
+          "inside": true
+        },
+        {
+          "text": "$86,297.953",
+          "left": 372.87982177734375,
+          "right": 436.45794677734375,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:33 AM",
+            "04:41 AM",
+            "04:49 AM",
+            "04:57 AM",
+            "05:05 AM",
+            "05:13 AM",
+            "05:23 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:33 AM",
+            "04:41 AM",
+            "04:49 AM",
+            "04:57 AM",
+            "05:05 AM",
+            "05:13 AM",
+            "05:23 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:33 AM",
+            "04:41 AM",
+            "04:49 AM",
+            "04:57 AM",
+            "05:05 AM",
+            "05:13 AM",
+            "05:23 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:33 AM",
+            "Oct 24, 04:43 AM",
+            "Oct 24, 04:53 AM",
+            "Oct 24, 05:03 AM",
+            "Oct 24, 05:23 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [],
+      "isolatedCandleOutage": false,
+      "screenshots": []
+    },
+    {
+      "path": "/trade/shib",
+      "width": 360,
+      "height": 800,
+      "checkedAt": "2026-10-24T05:23:57.779Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 256,
+        "heading": "Shiba Inu — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$0.00000510334",
+          "left": 58.078125,
+          "right": 145,
+          "inside": true
+        },
+        {
+          "text": "$0.00000512834",
+          "left": 58.078125,
+          "right": 145,
+          "inside": true
+        },
+        {
+          "text": "$0.00000515334",
+          "left": 58.078125,
+          "right": 145,
+          "inside": true
+        },
+        {
+          "text": "$0.00000518583",
+          "left": 58.078125,
+          "right": 145,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:33 AM",
+            "05:23 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:33 AM",
+            "05:23 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:33 AM",
+            "05:23 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:33 AM",
+            "Oct 24, 05:23 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [],
+      "isolatedCandleOutage": true,
+      "screenshots": [
+        "pr226-updated-preview/_trade_shib-360-chart.png"
+      ]
+    },
+    {
+      "path": "/trade/shib",
+      "width": 390,
+      "height": 844,
+      "checkedAt": "2026-10-24T05:24:05.936Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 256,
+        "heading": "Shiba Inu — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$0.00000477078",
+          "left": 58.078125,
+          "right": 145,
+          "inside": true
+        },
+        {
+          "text": "$0.00000480578",
+          "left": 58.078125,
+          "right": 145,
+          "inside": true
+        },
+        {
+          "text": "$0.00000484078",
+          "left": 58.078125,
+          "right": 145,
+          "inside": true
+        },
+        {
+          "text": "$0.00000490252",
+          "left": 58.078125,
+          "right": 145,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:33 AM",
+            "05:23 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:33 AM",
+            "05:23 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:33 AM",
+            "05:23 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:33 AM",
+            "Oct 24, 05:23 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [],
+      "isolatedCandleOutage": true,
+      "screenshots": []
+    },
+    {
+      "path": "/trade/shib",
+      "width": 768,
+      "height": 1024,
+      "checkedAt": "2026-10-24T05:24:14.180Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 363,
+        "heading": "Shiba Inu — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$0.00000498538",
+          "left": 58.078125,
+          "right": 145,
+          "inside": true
+        },
+        {
+          "text": "$0.00000504038",
+          "left": 58.078125,
+          "right": 145,
+          "inside": true
+        },
+        {
+          "text": "$0.00000509538",
+          "left": 58.078125,
+          "right": 145,
+          "inside": true
+        },
+        {
+          "text": "$0.00000515038",
+          "left": 58.078125,
+          "right": 145,
+          "inside": true
+        },
+        {
+          "text": "$0.00000520536",
+          "left": 58.078125,
+          "right": 145,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:34 AM",
+            "04:43 AM",
+            "04:52 AM",
+            "05:01 AM",
+            "05:10 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:34 AM",
+            "04:43 AM",
+            "04:52 AM",
+            "05:01 AM",
+            "05:10 AM",
+            "05:24 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:34 AM",
+            "04:43 AM",
+            "04:52 AM",
+            "05:01 AM",
+            "05:10 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:34 AM",
+            "Oct 24, 04:46 AM",
+            "Oct 24, 04:58 AM",
+            "Oct 24, 05:24 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [],
+      "isolatedCandleOutage": true,
+      "screenshots": []
+    },
+    {
+      "path": "/trade/shib",
+      "width": 1280,
+      "height": 800,
+      "checkedAt": "2026-10-24T05:24:22.933Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 363,
+        "heading": "Shiba Inu — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$0.00000479948",
+          "left": 58.16713333129883,
+          "right": 144.9483985900879,
+          "inside": true
+        },
+        {
+          "text": "$0.00000482948",
+          "left": 58.16713333129883,
+          "right": 144.9483985900879,
+          "inside": true
+        },
+        {
+          "text": "$0.00000485948",
+          "left": 58.16713333129883,
+          "right": 144.9483985900879,
+          "inside": true
+        },
+        {
+          "text": "$0.0000049017",
+          "left": 64.63587951660156,
+          "right": 144.94839477539062,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:34 AM",
+            "04:42 AM",
+            "04:50 AM",
+            "04:58 AM",
+            "05:06 AM",
+            "05:14 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:34 AM",
+            "04:42 AM",
+            "04:50 AM",
+            "04:58 AM",
+            "05:06 AM",
+            "05:14 AM",
+            "05:24 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:34 AM",
+            "04:42 AM",
+            "04:50 AM",
+            "04:58 AM",
+            "05:06 AM",
+            "05:14 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:34 AM",
+            "Oct 24, 04:45 AM",
+            "Oct 24, 04:56 AM",
+            "Oct 24, 05:07 AM",
+            "Oct 24, 05:24 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [],
+      "isolatedCandleOutage": true,
+      "screenshots": [
+        "pr226-updated-preview/_trade_shib-1280-chart.png"
+      ]
+    },
+    {
+      "path": "/trade/shib",
+      "width": 1920,
+      "height": 1080,
+      "checkedAt": "2026-10-24T05:24:31.180Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 363,
+        "heading": "Shiba Inu — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$0.00000499607",
+          "left": 370.66778564453125,
+          "right": 457.44903564453125,
+          "inside": true
+        },
+        {
+          "text": "$0.00000502607",
+          "left": 370.66778564453125,
+          "right": 457.44903564453125,
+          "inside": true
+        },
+        {
+          "text": "$0.00000505607",
+          "left": 370.66778564453125,
+          "right": 457.44903564453125,
+          "inside": true
+        },
+        {
+          "text": "$0.00000510569",
+          "left": 370.66778564453125,
+          "right": 457.44903564453125,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:34 AM",
+            "04:42 AM",
+            "04:50 AM",
+            "04:58 AM",
+            "05:06 AM",
+            "05:14 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:34 AM",
+            "04:42 AM",
+            "04:50 AM",
+            "04:58 AM",
+            "05:06 AM",
+            "05:14 AM",
+            "05:24 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:34 AM",
+            "04:42 AM",
+            "04:50 AM",
+            "04:58 AM",
+            "05:06 AM",
+            "05:14 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:34 AM",
+            "Oct 24, 04:45 AM",
+            "Oct 24, 04:56 AM",
+            "Oct 24, 05:07 AM",
+            "Oct 24, 05:24 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [],
+      "isolatedCandleOutage": true,
+      "screenshots": []
+    },
+    {
+      "path": "/trade/apt",
+      "width": 360,
+      "height": 800,
+      "checkedAt": "2026-10-24T05:24:33.502Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 256,
+        "heading": "Aptos — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$8.761",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$8.821",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$8.881",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$8.993",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:34 AM",
+            "04:56 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:34 AM",
+            "04:56 AM",
+            "05:24 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:34 AM",
+            "04:56 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:34 AM",
+            "Oct 24, 05:24 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What drives Aptos price action?",
+          "answer": "Factors to research for Aptos (APT) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event."
+        },
+        {
+          "question": "Is APT a good cryptocurrency for beginner traders to study?",
+          "answer": "Use APT to study order mechanics only after you understand its quote units, displayed fees and data-source labels. Availability in the simulator does not establish suitability for a beginner or readiness for real trading. Practice outcomes do not predict real returns."
+        },
+        {
+          "question": "How does APT compare to other cryptocurrencies on the simulator?",
+          "answer": "Open the Markets page to browse APT and other cryptocurrencies by generated price, practice change and demo activity. Practice change is not a measured 24-hour return, and demo activity is not traded volume. Generated practice data cannot establish real-market correlations."
+        }
+      ],
+      "isolatedCandleOutage": false,
+      "screenshots": [
+        "pr226-updated-preview/_trade_apt-360-chart.png",
+        "pr226-updated-preview/_trade_apt-360-faq.png"
+      ]
+    },
+    {
+      "path": "/trade/apt",
+      "width": 390,
+      "height": 844,
+      "checkedAt": "2026-10-24T05:24:35.195Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 256,
+        "heading": "Aptos — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$0.729",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$0.734",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$0.74",
+          "left": 60.4375,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$0.749",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:34 AM",
+            "04:53 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:34 AM",
+            "04:53 AM",
+            "05:24 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:34 AM",
+            "04:53 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:34 AM",
+            "Oct 24, 05:24 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What drives Aptos price action?",
+          "answer": "Factors to research for Aptos (APT) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event."
+        },
+        {
+          "question": "Is APT a good cryptocurrency for beginner traders to study?",
+          "answer": "Use APT to study order mechanics only after you understand its quote units, displayed fees and data-source labels. Availability in the simulator does not establish suitability for a beginner or readiness for real trading. Practice outcomes do not predict real returns."
+        },
+        {
+          "question": "How does APT compare to other cryptocurrencies on the simulator?",
+          "answer": "Open the Markets page to browse APT and other cryptocurrencies by generated price, practice change and demo activity. Practice change is not a measured 24-hour return, and demo activity is not traded volume. Generated practice data cannot establish real-market correlations."
+        }
+      ],
+      "isolatedCandleOutage": false,
+      "screenshots": []
+    },
+    {
+      "path": "/trade/apt",
+      "width": 768,
+      "height": 1024,
+      "checkedAt": "2026-10-24T05:24:36.944Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 363,
+        "heading": "Aptos — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$0.701",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$0.706",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$0.711",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$0.716",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$0.721",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:34 AM",
+            "04:42 AM",
+            "04:50 AM",
+            "04:58 AM",
+            "05:06 AM",
+            "05:14 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:34 AM",
+            "04:42 AM",
+            "04:50 AM",
+            "04:58 AM",
+            "05:06 AM",
+            "05:14 AM",
+            "05:24 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:34 AM",
+            "04:42 AM",
+            "04:50 AM",
+            "04:58 AM",
+            "05:06 AM",
+            "05:14 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:34 AM",
+            "Oct 24, 04:45 AM",
+            "Oct 24, 04:56 AM",
+            "Oct 24, 05:07 AM",
+            "Oct 24, 05:24 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What drives Aptos price action?",
+          "answer": "Factors to research for Aptos (APT) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event."
+        },
+        {
+          "question": "Is APT a good cryptocurrency for beginner traders to study?",
+          "answer": "Use APT to study order mechanics only after you understand its quote units, displayed fees and data-source labels. Availability in the simulator does not establish suitability for a beginner or readiness for real trading. Practice outcomes do not predict real returns."
+        },
+        {
+          "question": "How does APT compare to other cryptocurrencies on the simulator?",
+          "answer": "Open the Markets page to browse APT and other cryptocurrencies by generated price, practice change and demo activity. Practice change is not a measured 24-hour return, and demo activity is not traded volume. Generated practice data cannot establish real-market correlations."
+        }
+      ],
+      "isolatedCandleOutage": false,
+      "screenshots": []
+    },
+    {
+      "path": "/trade/apt",
+      "width": 1280,
+      "height": 800,
+      "checkedAt": "2026-10-24T05:24:39.331Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 363,
+        "heading": "Aptos — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$0.712",
+          "left": 53.98809051513672,
+          "right": 88.97246551513672,
+          "inside": true
+        },
+        {
+          "text": "$0.716",
+          "left": 53.98809051513672,
+          "right": 88.97246551513672,
+          "inside": true
+        },
+        {
+          "text": "$0.721",
+          "left": 53.98809051513672,
+          "right": 88.97246551513672,
+          "inside": true
+        },
+        {
+          "text": "$0.728",
+          "left": 53.98809051513672,
+          "right": 88.97246551513672,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:34 AM",
+            "04:41 AM",
+            "04:48 AM",
+            "04:55 AM",
+            "05:02 AM",
+            "05:09 AM",
+            "05:16 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:34 AM",
+            "04:41 AM",
+            "04:48 AM",
+            "04:55 AM",
+            "05:02 AM",
+            "05:09 AM",
+            "05:16 AM",
+            "05:24 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:34 AM",
+            "04:41 AM",
+            "04:48 AM",
+            "04:55 AM",
+            "05:02 AM",
+            "05:09 AM",
+            "05:16 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:34 AM",
+            "Oct 24, 04:44 AM",
+            "Oct 24, 04:54 AM",
+            "Oct 24, 05:04 AM",
+            "Oct 24, 05:24 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What drives Aptos price action?",
+          "answer": "Factors to research for Aptos (APT) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event."
+        },
+        {
+          "question": "Is APT a good cryptocurrency for beginner traders to study?",
+          "answer": "Use APT to study order mechanics only after you understand its quote units, displayed fees and data-source labels. Availability in the simulator does not establish suitability for a beginner or readiness for real trading. Practice outcomes do not predict real returns."
+        },
+        {
+          "question": "How does APT compare to other cryptocurrencies on the simulator?",
+          "answer": "Open the Markets page to browse APT and other cryptocurrencies by generated price, practice change and demo activity. Practice change is not a measured 24-hour return, and demo activity is not traded volume. Generated practice data cannot establish real-market correlations."
+        }
+      ],
+      "isolatedCandleOutage": false,
+      "screenshots": [
+        "pr226-updated-preview/_trade_apt-1280-chart.png",
+        "pr226-updated-preview/_trade_apt-1280-faq.png"
+      ]
+    },
+    {
+      "path": "/trade/apt",
+      "width": 1920,
+      "height": 1080,
+      "checkedAt": "2026-10-24T05:24:41.068Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 363,
+        "heading": "Aptos — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$0.756",
+          "left": 366.4884338378906,
+          "right": 401.4728088378906,
+          "inside": true
+        },
+        {
+          "text": "$0.761",
+          "left": 366.4884338378906,
+          "right": 401.4728088378906,
+          "inside": true
+        },
+        {
+          "text": "$0.766",
+          "left": 366.4884338378906,
+          "right": 401.4728088378906,
+          "inside": true
+        },
+        {
+          "text": "$0.776",
+          "left": 366.4884338378906,
+          "right": 401.4728088378906,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:34 AM",
+            "04:41 AM",
+            "04:48 AM",
+            "04:55 AM",
+            "05:02 AM",
+            "05:09 AM",
+            "05:16 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:34 AM",
+            "04:41 AM",
+            "04:48 AM",
+            "04:55 AM",
+            "05:02 AM",
+            "05:09 AM",
+            "05:16 AM",
+            "05:24 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:34 AM",
+            "04:41 AM",
+            "04:48 AM",
+            "04:55 AM",
+            "05:02 AM",
+            "05:09 AM",
+            "05:16 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:34 AM",
+            "Oct 24, 04:44 AM",
+            "Oct 24, 04:54 AM",
+            "Oct 24, 05:04 AM",
+            "Oct 24, 05:24 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What drives Aptos price action?",
+          "answer": "Factors to research for Aptos (APT) include network adoption, regulatory news and overall crypto market sentiment. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event."
+        },
+        {
+          "question": "Is APT a good cryptocurrency for beginner traders to study?",
+          "answer": "Use APT to study order mechanics only after you understand its quote units, displayed fees and data-source labels. Availability in the simulator does not establish suitability for a beginner or readiness for real trading. Practice outcomes do not predict real returns."
+        },
+        {
+          "question": "How does APT compare to other cryptocurrencies on the simulator?",
+          "answer": "Open the Markets page to browse APT and other cryptocurrencies by generated price, practice change and demo activity. Practice change is not a measured 24-hour return, and demo activity is not traded volume. Generated practice data cannot establish real-market correlations."
+        }
+      ],
+      "isolatedCandleOutage": false,
+      "screenshots": []
+    },
+    {
+      "path": "/trade/avgo",
+      "width": 360,
+      "height": 800,
+      "checkedAt": "2026-10-24T05:24:43.419Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 256,
+        "heading": "Broadcom Inc. — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$1,237.265",
+          "left": 59.8125,
+          "right": 117,
+          "inside": true
+        },
+        {
+          "text": "$1,252.265",
+          "left": 59.8125,
+          "right": 117,
+          "inside": true
+        },
+        {
+          "text": "$1,281.861",
+          "left": 59.8125,
+          "right": 117,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:34 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:34 AM",
+            "05:24 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:34 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:34 AM",
+            "Oct 24, 05:24 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What drives Broadcom Inc. price action?",
+          "answer": "Factors to research for Broadcom Inc. (AVGO) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event."
+        },
+        {
+          "question": "Is AVGO a good stock for beginner traders to study?",
+          "answer": "Use AVGO to study order mechanics only after you understand its quote units, displayed fees and data-source labels. Availability in the simulator does not establish suitability for a beginner or readiness for real trading. Practice outcomes do not predict real returns."
+        },
+        {
+          "question": "How does AVGO compare to other stocks on the simulator?",
+          "answer": "Open the Markets page to browse AVGO and other stocks by generated price, practice change and demo activity. Practice change is not a measured 24-hour return, and demo activity is not traded volume. Generated practice data cannot establish real-market correlations."
+        }
+      ],
+      "isolatedCandleOutage": false,
+      "screenshots": [
+        "pr226-updated-preview/_trade_avgo-360-chart.png",
+        "pr226-updated-preview/_trade_avgo-360-faq.png"
+      ]
+    },
+    {
+      "path": "/trade/avgo",
+      "width": 390,
+      "height": 844,
+      "checkedAt": "2026-10-24T05:24:45.222Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 256,
+        "heading": "Broadcom Inc. — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$1,271.329",
+          "left": 59.8125,
+          "right": 117,
+          "inside": true
+        },
+        {
+          "text": "$1,276.329",
+          "left": 59.8125,
+          "right": 117,
+          "inside": true
+        },
+        {
+          "text": "$1,281.329",
+          "left": 59.8125,
+          "right": 117,
+          "inside": true
+        },
+        {
+          "text": "$1,287.595",
+          "left": 59.8125,
+          "right": 117,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:34 AM",
+            "04:56 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:34 AM",
+            "04:56 AM",
+            "05:24 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:34 AM",
+            "04:56 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:34 AM",
+            "Oct 24, 05:24 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What drives Broadcom Inc. price action?",
+          "answer": "Factors to research for Broadcom Inc. (AVGO) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event."
+        },
+        {
+          "question": "Is AVGO a good stock for beginner traders to study?",
+          "answer": "Use AVGO to study order mechanics only after you understand its quote units, displayed fees and data-source labels. Availability in the simulator does not establish suitability for a beginner or readiness for real trading. Practice outcomes do not predict real returns."
+        },
+        {
+          "question": "How does AVGO compare to other stocks on the simulator?",
+          "answer": "Open the Markets page to browse AVGO and other stocks by generated price, practice change and demo activity. Practice change is not a measured 24-hour return, and demo activity is not traded volume. Generated practice data cannot establish real-market correlations."
+        }
+      ],
+      "isolatedCandleOutage": false,
+      "screenshots": []
+    },
+    {
+      "path": "/trade/avgo",
+      "width": 768,
+      "height": 1024,
+      "checkedAt": "2026-10-24T05:24:47.037Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 363,
+        "heading": "Broadcom Inc. — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$1,256.975",
+          "left": 59.8125,
+          "right": 117,
+          "inside": true
+        },
+        {
+          "text": "$1,264.975",
+          "left": 59.8125,
+          "right": 117,
+          "inside": true
+        },
+        {
+          "text": "$1,272.975",
+          "left": 59.8125,
+          "right": 117,
+          "inside": true
+        },
+        {
+          "text": "$1,286.109",
+          "left": 59.8125,
+          "right": 117,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:34 AM",
+            "04:43 AM",
+            "04:52 AM",
+            "05:01 AM",
+            "05:10 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:34 AM",
+            "04:43 AM",
+            "04:52 AM",
+            "05:01 AM",
+            "05:10 AM",
+            "05:24 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:34 AM",
+            "04:43 AM",
+            "04:52 AM",
+            "05:01 AM",
+            "05:10 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:34 AM",
+            "Oct 24, 04:46 AM",
+            "Oct 24, 04:58 AM",
+            "Oct 24, 05:24 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What drives Broadcom Inc. price action?",
+          "answer": "Factors to research for Broadcom Inc. (AVGO) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event."
+        },
+        {
+          "question": "Is AVGO a good stock for beginner traders to study?",
+          "answer": "Use AVGO to study order mechanics only after you understand its quote units, displayed fees and data-source labels. Availability in the simulator does not establish suitability for a beginner or readiness for real trading. Practice outcomes do not predict real returns."
+        },
+        {
+          "question": "How does AVGO compare to other stocks on the simulator?",
+          "answer": "Open the Markets page to browse AVGO and other stocks by generated price, practice change and demo activity. Practice change is not a measured 24-hour return, and demo activity is not traded volume. Generated practice data cannot establish real-market correlations."
+        }
+      ],
+      "isolatedCandleOutage": false,
+      "screenshots": []
+    },
+    {
+      "path": "/trade/avgo",
+      "width": 1280,
+      "height": 800,
+      "checkedAt": "2026-10-24T05:24:49.444Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 363,
+        "heading": "Broadcom Inc. — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$1,272.381",
+          "left": 59.866668701171875,
+          "right": 116.96041870117188,
+          "inside": true
+        },
+        {
+          "text": "$1,281.381",
+          "left": 59.866668701171875,
+          "right": 116.96041870117188,
+          "inside": true
+        },
+        {
+          "text": "$1,290.381",
+          "left": 59.866668701171875,
+          "right": 116.96041870117188,
+          "inside": true
+        },
+        {
+          "text": "$1,308.256",
+          "left": 59.866668701171875,
+          "right": 116.96041870117188,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:34 AM",
+            "04:42 AM",
+            "04:50 AM",
+            "04:58 AM",
+            "05:06 AM",
+            "05:14 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:34 AM",
+            "04:42 AM",
+            "04:50 AM",
+            "04:58 AM",
+            "05:06 AM",
+            "05:14 AM",
+            "05:24 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:34 AM",
+            "04:42 AM",
+            "04:50 AM",
+            "04:58 AM",
+            "05:06 AM",
+            "05:14 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:34 AM",
+            "Oct 24, 04:44 AM",
+            "Oct 24, 04:54 AM",
+            "Oct 24, 05:04 AM",
+            "Oct 24, 05:24 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What drives Broadcom Inc. price action?",
+          "answer": "Factors to research for Broadcom Inc. (AVGO) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event."
+        },
+        {
+          "question": "Is AVGO a good stock for beginner traders to study?",
+          "answer": "Use AVGO to study order mechanics only after you understand its quote units, displayed fees and data-source labels. Availability in the simulator does not establish suitability for a beginner or readiness for real trading. Practice outcomes do not predict real returns."
+        },
+        {
+          "question": "How does AVGO compare to other stocks on the simulator?",
+          "answer": "Open the Markets page to browse AVGO and other stocks by generated price, practice change and demo activity. Practice change is not a measured 24-hour return, and demo activity is not traded volume. Generated practice data cannot establish real-market correlations."
+        }
+      ],
+      "isolatedCandleOutage": false,
+      "screenshots": [
+        "pr226-updated-preview/_trade_avgo-1280-chart.png",
+        "pr226-updated-preview/_trade_avgo-1280-faq.png"
+      ]
+    },
+    {
+      "path": "/trade/avgo",
+      "width": 1920,
+      "height": 1080,
+      "checkedAt": "2026-10-24T05:24:51.256Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 363,
+        "heading": "Broadcom Inc. — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$1,326.798",
+          "left": 372.3671569824219,
+          "right": 429.4609069824219,
+          "inside": true
+        },
+        {
+          "text": "$1,333.798",
+          "left": 372.3671569824219,
+          "right": 429.4609069824219,
+          "inside": true
+        },
+        {
+          "text": "$1,340.798",
+          "left": 372.3671569824219,
+          "right": 429.4609069824219,
+          "inside": true
+        },
+        {
+          "text": "$1,353.327",
+          "left": 372.3671569824219,
+          "right": 429.4609069824219,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:34 AM",
+            "04:41 AM",
+            "04:48 AM",
+            "04:55 AM",
+            "05:02 AM",
+            "05:09 AM",
+            "05:16 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:34 AM",
+            "04:41 AM",
+            "04:48 AM",
+            "04:55 AM",
+            "05:02 AM",
+            "05:09 AM",
+            "05:16 AM",
+            "05:24 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:34 AM",
+            "04:41 AM",
+            "04:48 AM",
+            "04:55 AM",
+            "05:02 AM",
+            "05:09 AM",
+            "05:16 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:34 AM",
+            "Oct 24, 04:44 AM",
+            "Oct 24, 04:54 AM",
+            "Oct 24, 05:04 AM",
+            "Oct 24, 05:24 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What drives Broadcom Inc. price action?",
+          "answer": "Factors to research for Broadcom Inc. (AVGO) include quarterly earnings, sector trends and macroeconomic conditions. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event."
+        },
+        {
+          "question": "Is AVGO a good stock for beginner traders to study?",
+          "answer": "Use AVGO to study order mechanics only after you understand its quote units, displayed fees and data-source labels. Availability in the simulator does not establish suitability for a beginner or readiness for real trading. Practice outcomes do not predict real returns."
+        },
+        {
+          "question": "How does AVGO compare to other stocks on the simulator?",
+          "answer": "Open the Markets page to browse AVGO and other stocks by generated price, practice change and demo activity. Practice change is not a measured 24-hour return, and demo activity is not traded volume. Generated practice data cannot establish real-market correlations."
+        }
+      ],
+      "isolatedCandleOutage": false,
+      "screenshots": []
+    },
+    {
+      "path": "/trade/arkk",
+      "width": 360,
+      "height": 800,
+      "checkedAt": "2026-10-24T05:24:53.635Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 256,
+        "heading": "ARK Innovation ETF — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$45.921",
+          "left": 54.46875,
+          "right": 96,
+          "inside": true
+        },
+        {
+          "text": "$46.271",
+          "left": 54.46875,
+          "right": 96,
+          "inside": true
+        },
+        {
+          "text": "$46.621",
+          "left": 54.46875,
+          "right": 96,
+          "inside": true
+        },
+        {
+          "text": "$47.178",
+          "left": 54.46875,
+          "right": 96,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:34 AM",
+            "04:57 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:34 AM",
+            "04:57 AM",
+            "05:24 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:34 AM",
+            "04:57 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:34 AM",
+            "Oct 24, 05:24 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What drives ARK Innovation ETF price action?",
+          "answer": "Factors to research for ARK Innovation ETF (ARKK) include Disruptive Innovation. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event."
+        },
+        {
+          "question": "Is ARKK a good ETF for beginner traders to study?",
+          "answer": "Use ARKK to study order mechanics only after you understand its quote units, displayed fees and data-source labels. Availability in the simulator does not establish suitability for a beginner or readiness for real trading. Practice outcomes do not predict real returns."
+        },
+        {
+          "question": "How does ARKK compare to other ETFs on the simulator?",
+          "answer": "Open the Markets page to browse ARKK and other ETFs by generated price, practice change and demo activity. Practice change is not a measured 24-hour return, and demo activity is not traded volume. Generated practice data cannot establish real-market correlations."
+        }
+      ],
+      "isolatedCandleOutage": false,
+      "screenshots": [
+        "pr226-updated-preview/_trade_arkk-360-chart.png",
+        "pr226-updated-preview/_trade_arkk-360-faq.png"
+      ]
+    },
+    {
+      "path": "/trade/arkk",
+      "width": 390,
+      "height": 844,
+      "checkedAt": "2026-10-24T05:24:55.339Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 256,
+        "heading": "ARK Innovation ETF — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$47.578",
+          "left": 54.46875,
+          "right": 96,
+          "inside": true
+        },
+        {
+          "text": "$48.028",
+          "left": 54.46875,
+          "right": 96,
+          "inside": true
+        },
+        {
+          "text": "$48.478",
+          "left": 54.46875,
+          "right": 96,
+          "inside": true
+        },
+        {
+          "text": "$49.256",
+          "left": 54.46875,
+          "right": 96,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:34 AM",
+            "04:54 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:34 AM",
+            "04:54 AM",
+            "05:24 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:34 AM",
+            "04:54 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:34 AM",
+            "Oct 24, 05:24 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What drives ARK Innovation ETF price action?",
+          "answer": "Factors to research for ARK Innovation ETF (ARKK) include Disruptive Innovation. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event."
+        },
+        {
+          "question": "Is ARKK a good ETF for beginner traders to study?",
+          "answer": "Use ARKK to study order mechanics only after you understand its quote units, displayed fees and data-source labels. Availability in the simulator does not establish suitability for a beginner or readiness for real trading. Practice outcomes do not predict real returns."
+        },
+        {
+          "question": "How does ARKK compare to other ETFs on the simulator?",
+          "answer": "Open the Markets page to browse ARKK and other ETFs by generated price, practice change and demo activity. Practice change is not a measured 24-hour return, and demo activity is not traded volume. Generated practice data cannot establish real-market correlations."
+        }
+      ],
+      "isolatedCandleOutage": false,
+      "screenshots": []
+    },
+    {
+      "path": "/trade/arkk",
+      "width": 768,
+      "height": 1024,
+      "checkedAt": "2026-10-24T05:24:57.114Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 363,
+        "heading": "ARK Innovation ETF — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$46.402",
+          "left": 54.46875,
+          "right": 96,
+          "inside": true
+        },
+        {
+          "text": "$46.852",
+          "left": 54.46875,
+          "right": 96,
+          "inside": true
+        },
+        {
+          "text": "$47.302",
+          "left": 54.46875,
+          "right": 96,
+          "inside": true
+        },
+        {
+          "text": "$48.114",
+          "left": 54.46875,
+          "right": 96,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:34 AM",
+            "04:42 AM",
+            "04:50 AM",
+            "04:58 AM",
+            "05:06 AM",
+            "05:14 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:34 AM",
+            "04:42 AM",
+            "04:50 AM",
+            "04:58 AM",
+            "05:06 AM",
+            "05:14 AM",
+            "05:24 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:34 AM",
+            "04:42 AM",
+            "04:50 AM",
+            "04:58 AM",
+            "05:06 AM",
+            "05:14 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:34 AM",
+            "Oct 24, 04:45 AM",
+            "Oct 24, 04:56 AM",
+            "Oct 24, 05:07 AM",
+            "Oct 24, 05:24 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What drives ARK Innovation ETF price action?",
+          "answer": "Factors to research for ARK Innovation ETF (ARKK) include Disruptive Innovation. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event."
+        },
+        {
+          "question": "Is ARKK a good ETF for beginner traders to study?",
+          "answer": "Use ARKK to study order mechanics only after you understand its quote units, displayed fees and data-source labels. Availability in the simulator does not establish suitability for a beginner or readiness for real trading. Practice outcomes do not predict real returns."
+        },
+        {
+          "question": "How does ARKK compare to other ETFs on the simulator?",
+          "answer": "Open the Markets page to browse ARKK and other ETFs by generated price, practice change and demo activity. Practice change is not a measured 24-hour return, and demo activity is not traded volume. Generated practice data cannot establish real-market correlations."
+        }
+      ],
+      "isolatedCandleOutage": false,
+      "screenshots": []
+    },
+    {
+      "path": "/trade/arkk",
+      "width": 1280,
+      "height": 800,
+      "checkedAt": "2026-10-24T05:24:59.578Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 363,
+        "heading": "ARK Innovation ETF — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$48.704",
+          "left": 54.500701904296875,
+          "right": 95.96945190429688,
+          "inside": true
+        },
+        {
+          "text": "$49.104",
+          "left": 54.500701904296875,
+          "right": 95.96945190429688,
+          "inside": true
+        },
+        {
+          "text": "$49.504",
+          "left": 54.500701904296875,
+          "right": 95.96945190429688,
+          "inside": true
+        },
+        {
+          "text": "$50.178",
+          "left": 54.500701904296875,
+          "right": 95.96945190429688,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:34 AM",
+            "04:41 AM",
+            "04:48 AM",
+            "04:55 AM",
+            "05:02 AM",
+            "05:09 AM",
+            "05:16 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:34 AM",
+            "04:41 AM",
+            "04:48 AM",
+            "04:55 AM",
+            "05:02 AM",
+            "05:09 AM",
+            "05:16 AM",
+            "05:24 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:34 AM",
+            "04:41 AM",
+            "04:48 AM",
+            "04:55 AM",
+            "05:02 AM",
+            "05:09 AM",
+            "05:16 AM",
+            "05:24 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:34 AM",
+            "Oct 24, 04:44 AM",
+            "Oct 24, 04:54 AM",
+            "Oct 24, 05:04 AM",
+            "Oct 24, 05:24 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What drives ARK Innovation ETF price action?",
+          "answer": "Factors to research for ARK Innovation ETF (ARKK) include Disruptive Innovation. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event."
+        },
+        {
+          "question": "Is ARKK a good ETF for beginner traders to study?",
+          "answer": "Use ARKK to study order mechanics only after you understand its quote units, displayed fees and data-source labels. Availability in the simulator does not establish suitability for a beginner or readiness for real trading. Practice outcomes do not predict real returns."
+        },
+        {
+          "question": "How does ARKK compare to other ETFs on the simulator?",
+          "answer": "Open the Markets page to browse ARKK and other ETFs by generated price, practice change and demo activity. Practice change is not a measured 24-hour return, and demo activity is not traded volume. Generated practice data cannot establish real-market correlations."
+        }
+      ],
+      "isolatedCandleOutage": false,
+      "screenshots": [
+        "pr226-updated-preview/_trade_arkk-1280-chart.png",
+        "pr226-updated-preview/_trade_arkk-1280-faq.png"
+      ]
+    },
+    {
+      "path": "/trade/arkk",
+      "width": 1920,
+      "height": 1080,
+      "checkedAt": "2026-10-24T05:25:01.367Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 363,
+        "heading": "ARK Innovation ETF — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$47.861",
+          "left": 367.0010986328125,
+          "right": 408.4698486328125,
+          "inside": true
+        },
+        {
+          "text": "$48.211",
+          "left": 367.0010986328125,
+          "right": 408.4698486328125,
+          "inside": true
+        },
+        {
+          "text": "$48.561",
+          "left": 367.0010986328125,
+          "right": 408.4698486328125,
+          "inside": true
+        },
+        {
+          "text": "$49.222",
+          "left": 367.0010986328125,
+          "right": 408.4698486328125,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:35 AM",
+            "04:42 AM",
+            "04:49 AM",
+            "04:56 AM",
+            "05:03 AM",
+            "05:10 AM",
+            "05:17 AM",
+            "05:25 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:35 AM",
+            "04:42 AM",
+            "04:49 AM",
+            "04:56 AM",
+            "05:03 AM",
+            "05:10 AM",
+            "05:17 AM",
+            "05:25 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:35 AM",
+            "04:42 AM",
+            "04:49 AM",
+            "04:56 AM",
+            "05:03 AM",
+            "05:10 AM",
+            "05:17 AM",
+            "05:25 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:35 AM",
+            "Oct 24, 04:45 AM",
+            "Oct 24, 04:55 AM",
+            "Oct 24, 05:05 AM",
+            "Oct 24, 05:25 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What drives ARK Innovation ETF price action?",
+          "answer": "Factors to research for ARK Innovation ETF (ARKK) include Disruptive Innovation. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event."
+        },
+        {
+          "question": "Is ARKK a good ETF for beginner traders to study?",
+          "answer": "Use ARKK to study order mechanics only after you understand its quote units, displayed fees and data-source labels. Availability in the simulator does not establish suitability for a beginner or readiness for real trading. Practice outcomes do not predict real returns."
+        },
+        {
+          "question": "How does ARKK compare to other ETFs on the simulator?",
+          "answer": "Open the Markets page to browse ARKK and other ETFs by generated price, practice change and demo activity. Practice change is not a measured 24-hour return, and demo activity is not traded volume. Generated practice data cannot establish real-market correlations."
+        }
+      ],
+      "isolatedCandleOutage": false,
+      "screenshots": []
+    },
+    {
+      "path": "/trade/audusd",
+      "width": 360,
+      "height": 800,
+      "checkedAt": "2026-10-24T05:25:03.641Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 256,
+        "heading": "Australian Dollar / US Dollar — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$0.66",
+          "left": 60.4375,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$0.666",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$0.671",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$0.681",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:35 AM",
+            "04:57 AM",
+            "05:25 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:35 AM",
+            "04:57 AM",
+            "05:25 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:35 AM",
+            "04:57 AM",
+            "05:25 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:35 AM",
+            "Oct 24, 05:25 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What drives Australian Dollar / US Dollar price action?",
+          "answer": "Factors to research for Australian Dollar / US Dollar (AUD/USD) include central bank policy, interest-rate differentials and macro releases. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event."
+        },
+        {
+          "question": "Is AUD/USD a good forex pair for beginner traders to study?",
+          "answer": "Use AUD/USD to study order mechanics only after you understand its quote units, displayed fees and data-source labels. Availability in the simulator does not establish suitability for a beginner or readiness for real trading. Practice outcomes do not predict real returns."
+        },
+        {
+          "question": "How does AUD/USD compare to other forex pairs on the simulator?",
+          "answer": "Open the Markets page to browse AUD/USD and other forex pairs by generated price, practice change and demo activity. Practice change is not a measured 24-hour return, and demo activity is not traded volume. Generated practice data cannot establish real-market correlations."
+        }
+      ],
+      "isolatedCandleOutage": false,
+      "screenshots": [
+        "pr226-updated-preview/_trade_audusd-360-chart.png",
+        "pr226-updated-preview/_trade_audusd-360-faq.png"
+      ]
+    },
+    {
+      "path": "/trade/audusd",
+      "width": 390,
+      "height": 844,
+      "checkedAt": "2026-10-24T05:25:05.353Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 256,
+        "heading": "Australian Dollar / US Dollar — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$0.684",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$0.687",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$0.69",
+          "left": 60.4375,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$0.695",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:35 AM",
+            "04:54 AM",
+            "05:25 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:35 AM",
+            "04:54 AM",
+            "05:25 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:35 AM",
+            "04:54 AM",
+            "05:25 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:35 AM",
+            "Oct 24, 05:25 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What drives Australian Dollar / US Dollar price action?",
+          "answer": "Factors to research for Australian Dollar / US Dollar (AUD/USD) include central bank policy, interest-rate differentials and macro releases. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event."
+        },
+        {
+          "question": "Is AUD/USD a good forex pair for beginner traders to study?",
+          "answer": "Use AUD/USD to study order mechanics only after you understand its quote units, displayed fees and data-source labels. Availability in the simulator does not establish suitability for a beginner or readiness for real trading. Practice outcomes do not predict real returns."
+        },
+        {
+          "question": "How does AUD/USD compare to other forex pairs on the simulator?",
+          "answer": "Open the Markets page to browse AUD/USD and other forex pairs by generated price, practice change and demo activity. Practice change is not a measured 24-hour return, and demo activity is not traded volume. Generated practice data cannot establish real-market correlations."
+        }
+      ],
+      "isolatedCandleOutage": false,
+      "screenshots": []
+    },
+    {
+      "path": "/trade/audusd",
+      "width": 768,
+      "height": 1024,
+      "checkedAt": "2026-10-24T05:25:07.140Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 363,
+        "heading": "Australian Dollar / US Dollar — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$0.668",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$0.674",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$0.679",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        },
+        {
+          "text": "$0.689",
+          "left": 53.953125,
+          "right": 89,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:35 AM",
+            "04:43 AM",
+            "04:51 AM",
+            "04:59 AM",
+            "05:07 AM",
+            "05:15 AM",
+            "05:25 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:35 AM",
+            "04:43 AM",
+            "04:51 AM",
+            "04:59 AM",
+            "05:07 AM",
+            "05:15 AM",
+            "05:25 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:35 AM",
+            "04:43 AM",
+            "04:51 AM",
+            "04:59 AM",
+            "05:07 AM",
+            "05:15 AM",
+            "05:25 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:35 AM",
+            "Oct 24, 04:46 AM",
+            "Oct 24, 04:57 AM",
+            "Oct 24, 05:08 AM",
+            "Oct 24, 05:25 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What drives Australian Dollar / US Dollar price action?",
+          "answer": "Factors to research for Australian Dollar / US Dollar (AUD/USD) include central bank policy, interest-rate differentials and macro releases. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event."
+        },
+        {
+          "question": "Is AUD/USD a good forex pair for beginner traders to study?",
+          "answer": "Use AUD/USD to study order mechanics only after you understand its quote units, displayed fees and data-source labels. Availability in the simulator does not establish suitability for a beginner or readiness for real trading. Practice outcomes do not predict real returns."
+        },
+        {
+          "question": "How does AUD/USD compare to other forex pairs on the simulator?",
+          "answer": "Open the Markets page to browse AUD/USD and other forex pairs by generated price, practice change and demo activity. Practice change is not a measured 24-hour return, and demo activity is not traded volume. Generated practice data cannot establish real-market correlations."
+        }
+      ],
+      "isolatedCandleOutage": false,
+      "screenshots": []
+    },
+    {
+      "path": "/trade/audusd",
+      "width": 1280,
+      "height": 800,
+      "checkedAt": "2026-10-24T05:25:09.555Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 363,
+        "heading": "Australian Dollar / US Dollar — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$0.669",
+          "left": 53.98809051513672,
+          "right": 88.97246551513672,
+          "inside": true
+        },
+        {
+          "text": "$0.674",
+          "left": 53.98809051513672,
+          "right": 88.97246551513672,
+          "inside": true
+        },
+        {
+          "text": "$0.678",
+          "left": 53.98809051513672,
+          "right": 88.97246551513672,
+          "inside": true
+        },
+        {
+          "text": "$0.686",
+          "left": 53.98809051513672,
+          "right": 88.97246551513672,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:35 AM",
+            "04:42 AM",
+            "04:49 AM",
+            "04:56 AM",
+            "05:03 AM",
+            "05:10 AM",
+            "05:17 AM",
+            "05:25 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:35 AM",
+            "04:42 AM",
+            "04:49 AM",
+            "04:56 AM",
+            "05:03 AM",
+            "05:10 AM",
+            "05:17 AM",
+            "05:25 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:35 AM",
+            "04:42 AM",
+            "04:49 AM",
+            "04:56 AM",
+            "05:03 AM",
+            "05:10 AM",
+            "05:17 AM",
+            "05:25 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:35 AM",
+            "Oct 24, 04:45 AM",
+            "Oct 24, 04:55 AM",
+            "Oct 24, 05:05 AM",
+            "Oct 24, 05:25 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What drives Australian Dollar / US Dollar price action?",
+          "answer": "Factors to research for Australian Dollar / US Dollar (AUD/USD) include central bank policy, interest-rate differentials and macro releases. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event."
+        },
+        {
+          "question": "Is AUD/USD a good forex pair for beginner traders to study?",
+          "answer": "Use AUD/USD to study order mechanics only after you understand its quote units, displayed fees and data-source labels. Availability in the simulator does not establish suitability for a beginner or readiness for real trading. Practice outcomes do not predict real returns."
+        },
+        {
+          "question": "How does AUD/USD compare to other forex pairs on the simulator?",
+          "answer": "Open the Markets page to browse AUD/USD and other forex pairs by generated price, practice change and demo activity. Practice change is not a measured 24-hour return, and demo activity is not traded volume. Generated practice data cannot establish real-market correlations."
+        }
+      ],
+      "isolatedCandleOutage": false,
+      "screenshots": [
+        "pr226-updated-preview/_trade_audusd-1280-chart.png",
+        "pr226-updated-preview/_trade_audusd-1280-faq.png"
+      ]
+    },
+    {
+      "path": "/trade/audusd",
+      "width": 1920,
+      "height": 1080,
+      "checkedAt": "2026-10-24T05:25:11.306Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 363,
+        "heading": "Australian Dollar / US Dollar — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$0.634",
+          "left": 366.4884338378906,
+          "right": 401.4728088378906,
+          "inside": true
+        },
+        {
+          "text": "$0.637",
+          "left": 366.4884338378906,
+          "right": 401.4728088378906,
+          "inside": true
+        },
+        {
+          "text": "$0.64",
+          "left": 372.9571838378906,
+          "right": 401.4728088378906,
+          "inside": true
+        },
+        {
+          "text": "$0.646",
+          "left": 366.4884338378906,
+          "right": 401.4728088378906,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:35 AM",
+            "04:42 AM",
+            "04:49 AM",
+            "04:56 AM",
+            "05:03 AM",
+            "05:10 AM",
+            "05:17 AM",
+            "05:25 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:35 AM",
+            "04:42 AM",
+            "04:49 AM",
+            "04:56 AM",
+            "05:03 AM",
+            "05:10 AM",
+            "05:17 AM",
+            "05:25 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:35 AM",
+            "04:42 AM",
+            "04:49 AM",
+            "04:56 AM",
+            "05:03 AM",
+            "05:10 AM",
+            "05:17 AM",
+            "05:25 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:35 AM",
+            "Oct 24, 04:45 AM",
+            "Oct 24, 04:55 AM",
+            "Oct 24, 05:05 AM",
+            "Oct 24, 05:25 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What drives Australian Dollar / US Dollar price action?",
+          "answer": "Factors to research for Australian Dollar / US Dollar (AUD/USD) include central bank policy, interest-rate differentials and macro releases. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event."
+        },
+        {
+          "question": "Is AUD/USD a good forex pair for beginner traders to study?",
+          "answer": "Use AUD/USD to study order mechanics only after you understand its quote units, displayed fees and data-source labels. Availability in the simulator does not establish suitability for a beginner or readiness for real trading. Practice outcomes do not predict real returns."
+        },
+        {
+          "question": "How does AUD/USD compare to other forex pairs on the simulator?",
+          "answer": "Open the Markets page to browse AUD/USD and other forex pairs by generated price, practice change and demo activity. Practice change is not a measured 24-hour return, and demo activity is not traded volume. Generated practice data cannot establish real-market correlations."
+        }
+      ],
+      "isolatedCandleOutage": false,
+      "screenshots": []
+    },
+    {
+      "path": "/trade/brent",
+      "width": 360,
+      "height": 800,
+      "checkedAt": "2026-10-24T05:25:13.586Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 256,
+        "heading": "Brent Crude Oil — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$78.415",
+          "left": 54.46875,
+          "right": 96,
+          "inside": true
+        },
+        {
+          "text": "$79.165",
+          "left": 54.46875,
+          "right": 96,
+          "inside": true
+        },
+        {
+          "text": "$79.915",
+          "left": 54.46875,
+          "right": 96,
+          "inside": true
+        },
+        {
+          "text": "$81.266",
+          "left": 54.46875,
+          "right": 96,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:35 AM",
+            "04:58 AM",
+            "05:25 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:35 AM",
+            "04:58 AM",
+            "05:25 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:35 AM",
+            "04:58 AM",
+            "05:25 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:35 AM",
+            "Oct 24, 05:25 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What drives Brent Crude Oil price action?",
+          "answer": "Factors to research for Brent Crude Oil (BRENT) include global supply/demand, USD strength and geopolitical events. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event."
+        },
+        {
+          "question": "Is BRENT a good commodity for beginner traders to study?",
+          "answer": "Use BRENT to study order mechanics only after you understand its quote units, displayed fees and data-source labels. Availability in the simulator does not establish suitability for a beginner or readiness for real trading. Practice outcomes do not predict real returns."
+        },
+        {
+          "question": "How does BRENT compare to other commodities on the simulator?",
+          "answer": "Open the Markets page to browse BRENT and other commodities by generated price, practice change and demo activity. Practice change is not a measured 24-hour return, and demo activity is not traded volume. Generated practice data cannot establish real-market correlations."
+        }
+      ],
+      "isolatedCandleOutage": false,
+      "screenshots": [
+        "pr226-updated-preview/_trade_brent-360-chart.png",
+        "pr226-updated-preview/_trade_brent-360-faq.png"
+      ]
+    },
+    {
+      "path": "/trade/brent",
+      "width": 390,
+      "height": 844,
+      "checkedAt": "2026-10-24T05:25:15.327Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 256,
+        "heading": "Brent Crude Oil — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$84.379",
+          "left": 54.46875,
+          "right": 96,
+          "inside": true
+        },
+        {
+          "text": "$84.929",
+          "left": 54.46875,
+          "right": 96,
+          "inside": true
+        },
+        {
+          "text": "$85.479",
+          "left": 54.46875,
+          "right": 96,
+          "inside": true
+        },
+        {
+          "text": "$86.552",
+          "left": 54.46875,
+          "right": 96,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:35 AM",
+            "04:55 AM",
+            "05:25 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:35 AM",
+            "04:55 AM",
+            "05:25 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:35 AM",
+            "04:55 AM",
+            "05:25 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:35 AM",
+            "Oct 24, 05:25 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What drives Brent Crude Oil price action?",
+          "answer": "Factors to research for Brent Crude Oil (BRENT) include global supply/demand, USD strength and geopolitical events. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event."
+        },
+        {
+          "question": "Is BRENT a good commodity for beginner traders to study?",
+          "answer": "Use BRENT to study order mechanics only after you understand its quote units, displayed fees and data-source labels. Availability in the simulator does not establish suitability for a beginner or readiness for real trading. Practice outcomes do not predict real returns."
+        },
+        {
+          "question": "How does BRENT compare to other commodities on the simulator?",
+          "answer": "Open the Markets page to browse BRENT and other commodities by generated price, practice change and demo activity. Practice change is not a measured 24-hour return, and demo activity is not traded volume. Generated practice data cannot establish real-market correlations."
+        }
+      ],
+      "isolatedCandleOutage": false,
+      "screenshots": []
+    },
+    {
+      "path": "/trade/brent",
+      "width": 768,
+      "height": 1024,
+      "checkedAt": "2026-10-24T05:25:17.077Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 363,
+        "heading": "Brent Crude Oil — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$85.51",
+          "left": 60.953125,
+          "right": 96,
+          "inside": true
+        },
+        {
+          "text": "$85.96",
+          "left": 60.953125,
+          "right": 96,
+          "inside": true
+        },
+        {
+          "text": "$86.41",
+          "left": 60.953125,
+          "right": 96,
+          "inside": true
+        },
+        {
+          "text": "$87.169",
+          "left": 54.46875,
+          "right": 96,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:35 AM",
+            "04:43 AM",
+            "04:51 AM",
+            "04:59 AM",
+            "05:07 AM",
+            "05:15 AM",
+            "05:25 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:35 AM",
+            "04:43 AM",
+            "04:51 AM",
+            "04:59 AM",
+            "05:07 AM",
+            "05:15 AM",
+            "05:25 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:35 AM",
+            "04:43 AM",
+            "04:51 AM",
+            "04:59 AM",
+            "05:07 AM",
+            "05:15 AM",
+            "05:25 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:35 AM",
+            "Oct 24, 04:46 AM",
+            "Oct 24, 04:57 AM",
+            "Oct 24, 05:08 AM",
+            "Oct 24, 05:25 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What drives Brent Crude Oil price action?",
+          "answer": "Factors to research for Brent Crude Oil (BRENT) include global supply/demand, USD strength and geopolitical events. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event."
+        },
+        {
+          "question": "Is BRENT a good commodity for beginner traders to study?",
+          "answer": "Use BRENT to study order mechanics only after you understand its quote units, displayed fees and data-source labels. Availability in the simulator does not establish suitability for a beginner or readiness for real trading. Practice outcomes do not predict real returns."
+        },
+        {
+          "question": "How does BRENT compare to other commodities on the simulator?",
+          "answer": "Open the Markets page to browse BRENT and other commodities by generated price, practice change and demo activity. Practice change is not a measured 24-hour return, and demo activity is not traded volume. Generated practice data cannot establish real-market correlations."
+        }
+      ],
+      "isolatedCandleOutage": false,
+      "screenshots": []
+    },
+    {
+      "path": "/trade/brent",
+      "width": 1280,
+      "height": 800,
+      "checkedAt": "2026-10-24T05:25:19.398Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 363,
+        "heading": "Brent Crude Oil — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$82.494",
+          "left": 54.500701904296875,
+          "right": 95.96945190429688,
+          "inside": true
+        },
+        {
+          "text": "$82.894",
+          "left": 54.500701904296875,
+          "right": 95.96945190429688,
+          "inside": true
+        },
+        {
+          "text": "$83.294",
+          "left": 54.500701904296875,
+          "right": 95.96945190429688,
+          "inside": true
+        },
+        {
+          "text": "$84.066",
+          "left": 54.500701904296875,
+          "right": 95.96945190429688,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:35 AM",
+            "04:42 AM",
+            "04:49 AM",
+            "04:56 AM",
+            "05:03 AM",
+            "05:10 AM",
+            "05:17 AM",
+            "05:25 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:35 AM",
+            "04:42 AM",
+            "04:49 AM",
+            "04:56 AM",
+            "05:03 AM",
+            "05:10 AM",
+            "05:17 AM",
+            "05:25 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:35 AM",
+            "04:42 AM",
+            "04:49 AM",
+            "04:56 AM",
+            "05:03 AM",
+            "05:10 AM",
+            "05:17 AM",
+            "05:25 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:35 AM",
+            "Oct 24, 04:45 AM",
+            "Oct 24, 04:55 AM",
+            "Oct 24, 05:05 AM",
+            "Oct 24, 05:25 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What drives Brent Crude Oil price action?",
+          "answer": "Factors to research for Brent Crude Oil (BRENT) include global supply/demand, USD strength and geopolitical events. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event."
+        },
+        {
+          "question": "Is BRENT a good commodity for beginner traders to study?",
+          "answer": "Use BRENT to study order mechanics only after you understand its quote units, displayed fees and data-source labels. Availability in the simulator does not establish suitability for a beginner or readiness for real trading. Practice outcomes do not predict real returns."
+        },
+        {
+          "question": "How does BRENT compare to other commodities on the simulator?",
+          "answer": "Open the Markets page to browse BRENT and other commodities by generated price, practice change and demo activity. Practice change is not a measured 24-hour return, and demo activity is not traded volume. Generated practice data cannot establish real-market correlations."
+        }
+      ],
+      "isolatedCandleOutage": false,
+      "screenshots": [
+        "pr226-updated-preview/_trade_brent-1280-chart.png",
+        "pr226-updated-preview/_trade_brent-1280-faq.png"
+      ]
+    },
+    {
+      "path": "/trade/brent",
+      "width": 1920,
+      "height": 1080,
+      "checkedAt": "2026-10-24T05:25:21.142Z",
+      "layout": {
+        "overflow": false,
+        "chartHeight": 363,
+        "heading": "Brent Crude Oil — Practice Trading Simulator"
+      },
+      "cadenceCaption": "Candle spacing varies by provider • Checks: quotes 30s, candles 5m",
+      "axisBounds": [
+        {
+          "text": "$82.545",
+          "left": 367.0010986328125,
+          "right": 408.4698486328125,
+          "inside": true
+        },
+        {
+          "text": "$83.295",
+          "left": 367.0010986328125,
+          "right": 408.4698486328125,
+          "inside": true
+        },
+        {
+          "text": "$84.045",
+          "left": 367.0010986328125,
+          "right": 408.4698486328125,
+          "inside": true
+        },
+        {
+          "text": "$85.536",
+          "left": 367.0010986328125,
+          "right": 408.4698486328125,
+          "inside": true
+        }
+      ],
+      "timeframes": [
+        {
+          "window": "1H",
+          "ticks": [
+            "04:35 AM",
+            "04:42 AM",
+            "04:49 AM",
+            "04:56 AM",
+            "05:03 AM",
+            "05:10 AM",
+            "05:17 AM",
+            "05:25 AM"
+          ],
+          "limitation": "1H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "4H",
+          "ticks": [
+            "04:35 AM",
+            "04:42 AM",
+            "04:49 AM",
+            "04:56 AM",
+            "05:03 AM",
+            "05:10 AM",
+            "05:17 AM",
+            "05:25 AM"
+          ],
+          "limitation": "4H window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1D",
+          "ticks": [
+            "04:35 AM",
+            "04:42 AM",
+            "04:49 AM",
+            "04:56 AM",
+            "05:03 AM",
+            "05:10 AM",
+            "05:17 AM",
+            "05:25 AM"
+          ],
+          "limitation": "1D window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        },
+        {
+          "window": "1W",
+          "ticks": [
+            "Oct 24, 04:35 AM",
+            "Oct 24, 04:45 AM",
+            "Oct 24, 04:55 AM",
+            "Oct 24, 05:05 AM",
+            "Oct 24, 05:25 AM"
+          ],
+          "limitation": "1W window ending at the latest chart point. Available history may be shorter. Quote change may cover a different period."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What drives Brent Crude Oil price action?",
+          "answer": "Factors to research for Brent Crude Oil (BRENT) include global supply/demand, USD strength and geopolitical events. Generated practice charts do not model those events or show how the real market reacted. Use timestamped market data and relevant primary sources to investigate an actual event."
+        },
+        {
+          "question": "Is BRENT a good commodity for beginner traders to study?",
+          "answer": "Use BRENT to study order mechanics only after you understand its quote units, displayed fees and data-source labels. Availability in the simulator does not establish suitability for a beginner or readiness for real trading. Practice outcomes do not predict real returns."
+        },
+        {
+          "question": "How does BRENT compare to other commodities on the simulator?",
+          "answer": "Open the Markets page to browse BRENT and other commodities by generated price, practice change and demo activity. Practice change is not a measured 24-hour return, and demo activity is not traded volume. Generated practice data cannot establish real-market correlations."
+        }
+      ],
+      "isolatedCandleOutage": false,
+      "screenshots": []
+    }
+  ],
+  "runtimeErrors": [],
+  "preventedRequests": [
+    {
+      "method": "OPTIONS",
+      "path": "/functions/v1/live-market-data",
+      "reason": "Isolated browser candle GET outage fixture"
+    },
+    {
+      "method": "OPTIONS",
+      "path": "/functions/v1/live-market-data",
+      "reason": "Isolated browser candle GET outage fixture"
+    },
+    {
+      "method": "OPTIONS",
+      "path": "/functions/v1/live-market-data",
+      "reason": "Isolated browser candle GET outage fixture"
+    },
+    {
+      "method": "OPTIONS",
+      "path": "/functions/v1/live-market-data",
+      "reason": "Isolated browser candle GET outage fixture"
+    },
+    {
+      "method": "OPTIONS",
+      "path": "/functions/v1/live-market-data",
+      "reason": "Isolated browser candle GET outage fixture"
+    }
+  ],
+  "failure": null,
+  "debug": null,
+  "limitations": [
+    "Limited returned history can produce the same points for several windows; multi-day subset behavior is independently verified by isolated compiled UI fixtures.",
+    "Candle failure is only a local test condition, not a statement of an actual provider outage.",
+    "Screenshots are collection until individually viewed."
+  ]
+}

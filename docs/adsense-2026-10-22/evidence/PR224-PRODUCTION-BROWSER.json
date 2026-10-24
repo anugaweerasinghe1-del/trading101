@@ -1,0 +1,499 @@
+{
+  "checkedAt": "2026-10-24T04:49:52.532Z",
+  "sha": "b5cf45941341673e58f39368e18076c66739e60f",
+  "origin": "https://www.thetradehq.com",
+  "outcome": "PASS",
+  "scope": "Eight actual quote/metadata interfaces x five widths after fetch settles; missing fields stop spinning, real supplied values remain visible, guest holdings unchanged; no account/order/contact submissions.",
+  "rows": [
+    {
+      "path": "/trade/msft",
+      "width": 360,
+      "height": 800,
+      "checkedAt": "2026-10-24T04:47:31.701Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false,
+      "screenshot": "pr224-production/_trade_msft-360.png"
+    },
+    {
+      "path": "/trade/msft",
+      "width": 390,
+      "height": 844,
+      "checkedAt": "2026-10-24T04:47:37.030Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/msft",
+      "width": 768,
+      "height": 1024,
+      "checkedAt": "2026-10-24T04:47:41.028Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/msft",
+      "width": 1280,
+      "height": 800,
+      "checkedAt": "2026-10-24T04:47:45.667Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false,
+      "screenshot": "pr224-production/_trade_msft-1280.png"
+    },
+    {
+      "path": "/trade/msft",
+      "width": 1920,
+      "height": 1080,
+      "checkedAt": "2026-10-24T04:47:49.616Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/meta",
+      "width": 360,
+      "height": 800,
+      "checkedAt": "2026-10-24T04:47:53.155Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/meta",
+      "width": 390,
+      "height": 844,
+      "checkedAt": "2026-10-24T04:47:57.684Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/meta",
+      "width": 768,
+      "height": 1024,
+      "checkedAt": "2026-10-24T04:48:01.667Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/meta",
+      "width": 1280,
+      "height": 800,
+      "checkedAt": "2026-10-24T04:48:04.807Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/meta",
+      "width": 1920,
+      "height": 1080,
+      "checkedAt": "2026-10-24T04:48:08.990Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/amzn",
+      "width": 360,
+      "height": 800,
+      "checkedAt": "2026-10-24T04:48:13.922Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/amzn",
+      "width": 390,
+      "height": 844,
+      "checkedAt": "2026-10-24T04:48:17.938Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/amzn",
+      "width": 768,
+      "height": 1024,
+      "checkedAt": "2026-10-24T04:48:23.840Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/amzn",
+      "width": 1280,
+      "height": 800,
+      "checkedAt": "2026-10-24T04:48:27.732Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/amzn",
+      "width": 1920,
+      "height": 1080,
+      "checkedAt": "2026-10-24T04:48:31.598Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/googl",
+      "width": 360,
+      "height": 800,
+      "checkedAt": "2026-10-24T04:48:35.261Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/googl",
+      "width": 390,
+      "height": 844,
+      "checkedAt": "2026-10-24T04:48:38.830Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/googl",
+      "width": 768,
+      "height": 1024,
+      "checkedAt": "2026-10-24T04:48:42.191Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/googl",
+      "width": 1280,
+      "height": 800,
+      "checkedAt": "2026-10-24T04:48:45.528Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/googl",
+      "width": 1920,
+      "height": 1080,
+      "checkedAt": "2026-10-24T04:48:49.381Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/nvda",
+      "width": 360,
+      "height": 800,
+      "checkedAt": "2026-10-24T04:48:53.411Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/nvda",
+      "width": 390,
+      "height": 844,
+      "checkedAt": "2026-10-24T04:48:56.490Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/nvda",
+      "width": 768,
+      "height": 1024,
+      "checkedAt": "2026-10-24T04:48:59.933Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/nvda",
+      "width": 1280,
+      "height": 800,
+      "checkedAt": "2026-10-24T04:49:03.059Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/nvda",
+      "width": 1920,
+      "height": 1080,
+      "checkedAt": "2026-10-24T04:49:07.753Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/spy",
+      "width": 360,
+      "height": 800,
+      "checkedAt": "2026-10-24T04:49:11.395Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/spy",
+      "width": 390,
+      "height": 844,
+      "checkedAt": "2026-10-24T04:49:14.902Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/spy",
+      "width": 768,
+      "height": 1024,
+      "checkedAt": "2026-10-24T04:49:18.640Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/spy",
+      "width": 1280,
+      "height": 800,
+      "checkedAt": "2026-10-24T04:49:22.947Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/spy",
+      "width": 1920,
+      "height": 1080,
+      "checkedAt": "2026-10-24T04:49:26.473Z",
+      "marketCap": {
+        "value": "Unavailable",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/btc",
+      "width": 360,
+      "height": 800,
+      "checkedAt": "2026-10-24T04:49:28.344Z",
+      "marketCap": {
+        "value": "$1.62T",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false,
+      "screenshot": "pr224-production/_trade_btc-360.png"
+    },
+    {
+      "path": "/trade/btc",
+      "width": 390,
+      "height": 844,
+      "checkedAt": "2026-10-24T04:49:30.562Z",
+      "marketCap": {
+        "value": "$1.62T",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/btc",
+      "width": 768,
+      "height": 1024,
+      "checkedAt": "2026-10-24T04:49:32.458Z",
+      "marketCap": {
+        "value": "$1.62T",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/btc",
+      "width": 1280,
+      "height": 800,
+      "checkedAt": "2026-10-24T04:49:34.380Z",
+      "marketCap": {
+        "value": "$1.62T",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false,
+      "screenshot": "pr224-production/_trade_btc-1280.png"
+    },
+    {
+      "path": "/trade/btc",
+      "width": 1920,
+      "height": 1080,
+      "checkedAt": "2026-10-24T04:49:36.715Z",
+      "marketCap": {
+        "value": "$1.62T",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/gold",
+      "width": 360,
+      "height": 800,
+      "checkedAt": "2026-10-24T04:49:39.867Z",
+      "marketCap": {
+        "value": "$1.78B",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false,
+      "screenshot": "pr224-production/_trade_gold-360.png"
+    },
+    {
+      "path": "/trade/gold",
+      "width": 390,
+      "height": 844,
+      "checkedAt": "2026-10-24T04:49:43.317Z",
+      "marketCap": {
+        "value": "$1.78B",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/gold",
+      "width": 768,
+      "height": 1024,
+      "checkedAt": "2026-10-24T04:49:46.068Z",
+      "marketCap": {
+        "value": "$1.78B",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    },
+    {
+      "path": "/trade/gold",
+      "width": 1280,
+      "height": 800,
+      "checkedAt": "2026-10-24T04:49:49.316Z",
+      "marketCap": {
+        "value": "$1.78B",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false,
+      "screenshot": "pr224-production/_trade_gold-1280.png"
+    },
+    {
+      "path": "/trade/gold",
+      "width": 1920,
+      "height": 1080,
+      "checkedAt": "2026-10-24T04:49:52.529Z",
+      "marketCap": {
+        "value": "$1.78B",
+        "spinner": false,
+        "updating": false
+      },
+      "overflow": false
+    }
+  ],
+  "runtimeErrors": [],
+  "preventedProtectedRequests": [],
+  "failure": null,
+  "debug": null
+}

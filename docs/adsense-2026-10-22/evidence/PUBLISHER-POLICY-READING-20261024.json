@@ -1,0 +1,25 @@
+{
+  "readAt": "2026-10-24T05:28:29.382321+00:00",
+  "url": "https://support.google.com/publisherpolicies/answer/10502938?hl=en",
+  "httpStatus": 200,
+  "rawSHA256": "b24adcfb5cb818a46a2f986e55eed82699358163b16a04c9bd13d1236866862c",
+  "scope": "Fresh official policy reading of relevant representation, deceptive-practices, inventory, interference and privacy requirements; not a completed per-route compliance verdict. Full copyrighted response remains scratch only.",
+  "interpretation": {
+    "representation": "Publisher/purpose/content representations and affiliations must be accurate. Educational wording errors are not automatically evidence of deliberate deception or a specific policy violation.",
+    "inventory": "Google-served ads cannot monetize absent/low-value publisher content, navigation-only screens or replicated content without added value. Repeated internal layout or a noindex directive alone does not determine compliance.",
+    "interference": "If ads serve, their placement must not interfere with content, navigation or exit. No actual ads were enabled, clicked or configured by this audit.",
+    "privacy": "Disclosures and applicable consent remain necessary; source disclosure text is not proof of regional runtime compliance.",
+    "other": "Search spam policies are incorporated by the publisher policies; general people-first editorial suggestions are not each a separate mandatory AdSense requirement."
+  },
+  "currentSourceObservation": {
+    "sha": "71b84461ab0f531da44da54d8670ad1bef0628ea",
+    "manualEligibilityHelper": "src/lib/adInventory.ts has a default-deny manual-placement eligibility helper, referenced by its verification script only. It does not govern Google Auto Ads or prove runtime placement exclusions.",
+    "globalTag": "index.html loads the Google publisher tag independently of the optional analytics choice; Google CMP/settings and actual ad delivery require separate observation. No protected ad/consent behavior changed.",
+    "publicAccountIdentifier": "Existing public publisher identity retained; authorized ads.txt entry is source-checked by current CI, not new ownership/account-eligibility proof."
+  },
+  "remaining": [
+    "Read actual AdSense Sites state and precise review/rejection reason if available through authorized account access.",
+    "Inspect actual served inventory and regional Google CMP behavior without bypassing protection or changing settings.",
+    "Finish individual visual/control/source/originality review before a site-side readiness verdict."
+  ]
+}
