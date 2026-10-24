@@ -183,7 +183,7 @@ export function LearningProgressTracker() {
           <div
             key={module.id}
             className={cn(
-              "flex items-center gap-4 p-4 rounded-lg border transition-all",
+              "grid grid-cols-[2.5rem_minmax(0,1fr)] items-center gap-4 p-4 rounded-lg border transition-all",
               module.completed 
                 ? "bg-profit/10 border-profit/30" 
                 : module.locked 
@@ -210,17 +210,17 @@ export function LearningProgressTracker() {
 
             <div className="flex-1 min-w-0">
               <h4 className={cn(
-                "font-semibold",
+                "font-semibold break-words",
                 module.locked && "text-muted-foreground"
               )}>
                 {module.title}
               </h4>
-              <p className="text-xs text-muted-foreground truncate">
+              <p className="text-xs text-muted-foreground break-words">
                 {module.description}
               </p>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="col-span-2 flex flex-wrap items-center justify-end gap-3">
               <span className={cn(
                 "text-xs font-medium px-2 py-1 rounded-full",
                 module.completed 
