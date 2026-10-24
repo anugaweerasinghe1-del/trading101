@@ -3,7 +3,6 @@ import { useParams, Navigate, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { MegaFooter } from "@/components/MegaFooter";
-import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { SEOSection } from "@/components/SEOSection";
 import { ASSETS, formatPrice } from "@/lib/assets";
@@ -278,7 +277,6 @@ export default function SectorPillar() {
         </main>
 
         <MegaFooter />
-        <MobileBottomNav />
       </div>
     </>
   );

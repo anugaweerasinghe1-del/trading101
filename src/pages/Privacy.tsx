@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { MegaFooter } from "@/components/MegaFooter";
-import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { Shield, Lock, Eye, Database, Globe, Mail } from "lucide-react";
 import { PRIVACY_SECTIONS, PRIVACY_REFERENCES } from "@/lib/privacyCopy";
 import { SEOSection } from "@/components/SEOSection";
@@ -25,7 +24,7 @@ export default function Privacy() {
       <div className="min-h-screen bg-background">
         <Navigation />
 
-        <main className="container mx-auto px-4 py-12 max-w-4xl pb-24 md:pb-12">
+        <main className="container mx-auto px-4 pt-28 max-w-4xl pb-24 md:pb-12">
           <div className="text-center mb-12">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 mb-6">
               <Shield className="w-8 h-8 text-primary" />
@@ -121,7 +120,6 @@ export default function Privacy() {
         </main>
 
         <MegaFooter />
-        <MobileBottomNav />
       </div>
     </>
   );
