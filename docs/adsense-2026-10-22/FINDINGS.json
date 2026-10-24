@@ -1230,15 +1230,47 @@
       "publishedBankState": "UNCHANGED_NO_ADDITIONAL_OWNER_APPROVAL",
       "staticFallbackPR": 234,
       "staticFallbackCandidateSHA": "361b1b3a9c4c327150a9de95aa69bd70b0f96c15"
+    },
+    {
+      "id": "THQ-037",
+      "severity": "P2",
+      "category": "Legacy lesson completion percentage omitted from accessibility tree",
+      "state": "FIX_PREPARED_DRAFT_PR_WAITING_PREVIOUS_RELEASE",
+      "urls": [
+        "https://www.thetradehq.com/learn/1",
+        "https://www.thetradehq.com/learn/2",
+        "https://www.thetradehq.com/learn/3",
+        "https://www.thetradehq.com/learn/4",
+        "https://www.thetradehq.com/learn/5",
+        "https://www.thetradehq.com/learn/6"
+      ],
+      "observed": "Allsixlegacyinitialstates\u00d7fivewidths: visible0%Complete butroleprogressbar is unnamed, aria-valuenow absent, data-state indeterminate. ActualChromiumAXtree confirms unnamed/no value.",
+      "expected": "Named lesson-completion progressbar exposes current determined percentage, including0%, to assistive technology.",
+      "rootCause": "SharedProgressdestructures value but never forwards it toRadixRoot; LessonDetailconsumer supplies no accessible name.",
+      "fix": "Forward existingvalue toRadixRoot and add aria-label Lessoncompletion atlegacyconsumer. Existingvaluecalculation/visualtransform/handlers/storageunchanged.",
+      "risk": "Display/accessibilityattributesonly; sharedcomponentalsoannounces existing values inotherconsumers, but no balances/fees/trades/history/auth/progresslogicchanges.",
+      "rollback": "Revert two displayedattributes/testintegration; no data rollback.",
+      "adsenseRelevance": "Accessibility andvisitorusability; no specificGooglepolicyviolationasserted.",
+      "evidence": [
+        "evidence/LEGACY-PROGRESS-BEFORE-BROWSER.json",
+        "evidence/LEGACY-PROGRESS-SEMANTICS-INVESTIGATION.json",
+        "evidence/PR235-LOCAL-EDITORIAL.txt",
+        "evidence/PR235-BASELINE-EXPECTED-FAILURE.txt"
+      ],
+      "pr": 235,
+      "candidateSHA": "93bb9f69df2aae80200adc6efaee8505034e9b8c",
+      "baseSHA": "db3bfab843a126dda6afc4c2f2184a4366fc70ad",
+      "localValidation": "PASS rendered0/25/62.5/100ARIAstates plus honestunspecifiedindeterminate; oldwrapperexpectedFAIL; existingeditorial/arithmetic/performance tests, buildSEO/editorial/appTypeScriptPASS",
+      "releaseHold": "Draftfuturebatch; PR234mustfinishfullserialproductionverification first, thenrebaseontoactualmainandverifyexactcandidateCI/previews."
     }
   ],
-  "updatedAt": "2026-10-24T16:41:39.128558+00:00",
+  "updatedAt": "2026-10-24T16:57:10.025390+00:00",
   "counts": {
-    "siteFindings": 36,
-    "P2": 23,
+    "siteFindings": 37,
+    "P2": 24,
     "P3": 13,
     "publiclyRepaired": 34,
-    "preparedNotMerged": 1,
+    "preparedNotMerged": 2,
     "separateOperationalBlockers": 0,
     "mergedAwaitingProductionVerification": 0,
     "protectedUnapprovedRecordFixes": 1,

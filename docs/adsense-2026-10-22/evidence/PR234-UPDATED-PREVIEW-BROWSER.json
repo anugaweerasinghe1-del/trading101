@@ -1,0 +1,218 @@
+{
+  "checkedAt": "2026-10-24T16:44:36.318705+00:00",
+  "sha": "361b1b3a9c4c327150a9de95aa69bd70b0f96c15",
+  "origin": "https://331e68ca.tradehq-preview.pages.dev",
+  "outcome": "PASS",
+  "scope": "ActualCloudflarecandidatefallback, bankRPCdeliberatelyprevented; two controlled-date publiccases opened only, zeroanswers/unchangedownattemptstorage. Notnormalpublishedbankcorrection.",
+  "rows": [
+    {
+      "case": "practice-24",
+      "width": 360,
+      "title": "A closed market can have a fresh fetch",
+      "scenario": [
+        "A stock\u2019s last eligible quote was observed on Friday afternoon. The page fetches that same observation on Sunday. No new stock trade is stated. Crypto on the page has a separate Sunday observation. The shared interface can therefore contain assets with different ages even when the page request itself is recent.",
+        "For precise age arithmetic, assume the stock observation occurred Friday at 16:00 and the page fetch happened Sunday at 16:00 in the same timezone. Crypto was observed Sunday at 15:58. Ignore holidays and unusual trading sessions; none is supplied. Compare observation ages and decide which labels are supported. A working server on Sunday can retrieve an older eligible stock mark without creating a new stock trade."
+      ],
+      "figure": "Hypothetical case inputs \u2014 not a live market chart \u00b7 observation age (minutes)\nStock observation age\n2,880\nCrypto observation age\n2",
+      "values": [
+        2880,
+        2
+      ],
+      "date": "Price data \u00b7 2026-10-26",
+      "question": "Does a Sunday fetch prove the stock traded on Sunday?",
+      "reviewed": "0",
+      "progressStorage": null,
+      "overflow": false,
+      "normalPublishedBank": null
+    },
+    {
+      "case": "practice-24",
+      "width": 390,
+      "title": "A closed market can have a fresh fetch",
+      "scenario": [
+        "A stock\u2019s last eligible quote was observed on Friday afternoon. The page fetches that same observation on Sunday. No new stock trade is stated. Crypto on the page has a separate Sunday observation. The shared interface can therefore contain assets with different ages even when the page request itself is recent.",
+        "For precise age arithmetic, assume the stock observation occurred Friday at 16:00 and the page fetch happened Sunday at 16:00 in the same timezone. Crypto was observed Sunday at 15:58. Ignore holidays and unusual trading sessions; none is supplied. Compare observation ages and decide which labels are supported. A working server on Sunday can retrieve an older eligible stock mark without creating a new stock trade."
+      ],
+      "figure": "Hypothetical case inputs \u2014 not a live market chart \u00b7 observation age (minutes)\nStock observation age\n2,880\nCrypto observation age\n2",
+      "values": [
+        2880,
+        2
+      ],
+      "date": "Price data \u00b7 2026-10-26",
+      "question": "Does a Sunday fetch prove the stock traded on Sunday?",
+      "reviewed": "0",
+      "progressStorage": null,
+      "overflow": false,
+      "normalPublishedBank": null
+    },
+    {
+      "case": "practice-24",
+      "width": 768,
+      "title": "A closed market can have a fresh fetch",
+      "scenario": [
+        "A stock\u2019s last eligible quote was observed on Friday afternoon. The page fetches that same observation on Sunday. No new stock trade is stated. Crypto on the page has a separate Sunday observation. The shared interface can therefore contain assets with different ages even when the page request itself is recent.",
+        "For precise age arithmetic, assume the stock observation occurred Friday at 16:00 and the page fetch happened Sunday at 16:00 in the same timezone. Crypto was observed Sunday at 15:58. Ignore holidays and unusual trading sessions; none is supplied. Compare observation ages and decide which labels are supported. A working server on Sunday can retrieve an older eligible stock mark without creating a new stock trade."
+      ],
+      "figure": "Hypothetical case inputs \u2014 not a live market chart \u00b7 observation age (minutes)\nStock observation age\n2,880\nCrypto observation age\n2",
+      "values": [
+        2880,
+        2
+      ],
+      "date": "Price data \u00b7 2026-10-26",
+      "question": "Does a Sunday fetch prove the stock traded on Sunday?",
+      "reviewed": "0",
+      "progressStorage": null,
+      "overflow": false,
+      "normalPublishedBank": null
+    },
+    {
+      "case": "practice-24",
+      "width": 1280,
+      "title": "A closed market can have a fresh fetch",
+      "scenario": [
+        "A stock\u2019s last eligible quote was observed on Friday afternoon. The page fetches that same observation on Sunday. No new stock trade is stated. Crypto on the page has a separate Sunday observation. The shared interface can therefore contain assets with different ages even when the page request itself is recent.",
+        "For precise age arithmetic, assume the stock observation occurred Friday at 16:00 and the page fetch happened Sunday at 16:00 in the same timezone. Crypto was observed Sunday at 15:58. Ignore holidays and unusual trading sessions; none is supplied. Compare observation ages and decide which labels are supported. A working server on Sunday can retrieve an older eligible stock mark without creating a new stock trade."
+      ],
+      "figure": "Hypothetical case inputs \u2014 not a live market chart \u00b7 observation age (minutes)\nStock observation age\n2,880\nCrypto observation age\n2",
+      "values": [
+        2880,
+        2
+      ],
+      "date": "Price data \u00b7 2026-10-26",
+      "question": "Does a Sunday fetch prove the stock traded on Sunday?",
+      "reviewed": "0",
+      "progressStorage": null,
+      "overflow": false,
+      "normalPublishedBank": null
+    },
+    {
+      "case": "practice-24",
+      "width": 1920,
+      "title": "A closed market can have a fresh fetch",
+      "scenario": [
+        "A stock\u2019s last eligible quote was observed on Friday afternoon. The page fetches that same observation on Sunday. No new stock trade is stated. Crypto on the page has a separate Sunday observation. The shared interface can therefore contain assets with different ages even when the page request itself is recent.",
+        "For precise age arithmetic, assume the stock observation occurred Friday at 16:00 and the page fetch happened Sunday at 16:00 in the same timezone. Crypto was observed Sunday at 15:58. Ignore holidays and unusual trading sessions; none is supplied. Compare observation ages and decide which labels are supported. A working server on Sunday can retrieve an older eligible stock mark without creating a new stock trade."
+      ],
+      "figure": "Hypothetical case inputs \u2014 not a live market chart \u00b7 observation age (minutes)\nStock observation age\n2,880\nCrypto observation age\n2",
+      "values": [
+        2880,
+        2
+      ],
+      "date": "Price data \u00b7 2026-10-26",
+      "question": "Does a Sunday fetch prove the stock traded on Sunday?",
+      "reviewed": "0",
+      "progressStorage": null,
+      "overflow": false,
+      "normalPublishedBank": null
+    },
+    {
+      "case": "practice-18",
+      "width": 360,
+      "title": "Turnover adds up across many small trades",
+      "scenario": [
+        "You make 20 hypothetical transactions, each with $500 notional and a 0.1% transaction fee. For this worksheet their combined gross price gains are $8 and no other costs occur. Treat a transaction as one buy or one sell, so a round trip counts twice. Evaluate total turnover and fees before calling the activity profitable.",
+        "Continue the worksheet with two alternatives. In one branch, gross gains remain $8 while transaction count doubles to 40 at $500 each. In another, transaction count remains 20 but gross gains rise to $12. Keep the 0.1% fee and exclude other costs. Compare turnover, average fee per transaction and net outcome before interpreting the number of trades as evidence of skill."
+      ],
+      "figure": "Hypothetical case inputs \u2014 not a live market chart \u00b7 $\nPer transaction\n500\nTotal gross gain\n8\nTotal fees\n10",
+      "values": [
+        500,
+        8,
+        10
+      ],
+      "date": "Costs and orders \u00b7 2026-11-14",
+      "question": "What is the total traded notional across these transactions?",
+      "reviewed": "0",
+      "progressStorage": null,
+      "overflow": false,
+      "normalPublishedBank": null
+    },
+    {
+      "case": "practice-18",
+      "width": 390,
+      "title": "Turnover adds up across many small trades",
+      "scenario": [
+        "You make 20 hypothetical transactions, each with $500 notional and a 0.1% transaction fee. For this worksheet their combined gross price gains are $8 and no other costs occur. Treat a transaction as one buy or one sell, so a round trip counts twice. Evaluate total turnover and fees before calling the activity profitable.",
+        "Continue the worksheet with two alternatives. In one branch, gross gains remain $8 while transaction count doubles to 40 at $500 each. In another, transaction count remains 20 but gross gains rise to $12. Keep the 0.1% fee and exclude other costs. Compare turnover, average fee per transaction and net outcome before interpreting the number of trades as evidence of skill."
+      ],
+      "figure": "Hypothetical case inputs \u2014 not a live market chart \u00b7 $\nPer transaction\n500\nTotal gross gain\n8\nTotal fees\n10",
+      "values": [
+        500,
+        8,
+        10
+      ],
+      "date": "Costs and orders \u00b7 2026-11-14",
+      "question": "What is the total traded notional across these transactions?",
+      "reviewed": "0",
+      "progressStorage": null,
+      "overflow": false,
+      "normalPublishedBank": null
+    },
+    {
+      "case": "practice-18",
+      "width": 768,
+      "title": "Turnover adds up across many small trades",
+      "scenario": [
+        "You make 20 hypothetical transactions, each with $500 notional and a 0.1% transaction fee. For this worksheet their combined gross price gains are $8 and no other costs occur. Treat a transaction as one buy or one sell, so a round trip counts twice. Evaluate total turnover and fees before calling the activity profitable.",
+        "Continue the worksheet with two alternatives. In one branch, gross gains remain $8 while transaction count doubles to 40 at $500 each. In another, transaction count remains 20 but gross gains rise to $12. Keep the 0.1% fee and exclude other costs. Compare turnover, average fee per transaction and net outcome before interpreting the number of trades as evidence of skill."
+      ],
+      "figure": "Hypothetical case inputs \u2014 not a live market chart \u00b7 $\nPer transaction\n500\nTotal gross gain\n8\nTotal fees\n10",
+      "values": [
+        500,
+        8,
+        10
+      ],
+      "date": "Costs and orders \u00b7 2026-11-14",
+      "question": "What is the total traded notional across these transactions?",
+      "reviewed": "0",
+      "progressStorage": null,
+      "overflow": false,
+      "normalPublishedBank": null
+    },
+    {
+      "case": "practice-18",
+      "width": 1280,
+      "title": "Turnover adds up across many small trades",
+      "scenario": [
+        "You make 20 hypothetical transactions, each with $500 notional and a 0.1% transaction fee. For this worksheet their combined gross price gains are $8 and no other costs occur. Treat a transaction as one buy or one sell, so a round trip counts twice. Evaluate total turnover and fees before calling the activity profitable.",
+        "Continue the worksheet with two alternatives. In one branch, gross gains remain $8 while transaction count doubles to 40 at $500 each. In another, transaction count remains 20 but gross gains rise to $12. Keep the 0.1% fee and exclude other costs. Compare turnover, average fee per transaction and net outcome before interpreting the number of trades as evidence of skill."
+      ],
+      "figure": "Hypothetical case inputs \u2014 not a live market chart \u00b7 $\nPer transaction\n500\nTotal gross gain\n8\nTotal fees\n10",
+      "values": [
+        500,
+        8,
+        10
+      ],
+      "date": "Costs and orders \u00b7 2026-11-14",
+      "question": "What is the total traded notional across these transactions?",
+      "reviewed": "0",
+      "progressStorage": null,
+      "overflow": false,
+      "normalPublishedBank": null
+    },
+    {
+      "case": "practice-18",
+      "width": 1920,
+      "title": "Turnover adds up across many small trades",
+      "scenario": [
+        "You make 20 hypothetical transactions, each with $500 notional and a 0.1% transaction fee. For this worksheet their combined gross price gains are $8 and no other costs occur. Treat a transaction as one buy or one sell, so a round trip counts twice. Evaluate total turnover and fees before calling the activity profitable.",
+        "Continue the worksheet with two alternatives. In one branch, gross gains remain $8 while transaction count doubles to 40 at $500 each. In another, transaction count remains 20 but gross gains rise to $12. Keep the 0.1% fee and exclude other costs. Compare turnover, average fee per transaction and net outcome before interpreting the number of trades as evidence of skill."
+      ],
+      "figure": "Hypothetical case inputs \u2014 not a live market chart \u00b7 $\nPer transaction\n500\nTotal gross gain\n8\nTotal fees\n10",
+      "values": [
+        500,
+        8,
+        10
+      ],
+      "date": "Costs and orders \u00b7 2026-11-14",
+      "question": "What is the total traded notional across these transactions?",
+      "reviewed": "0",
+      "progressStorage": null,
+      "overflow": false,
+      "normalPublishedBank": null
+    }
+  ],
+  "runtimeErrors": [],
+  "humanViewedImages": [
+    "case24and18 at360/1280 allfourimages personallyviewed"
+  ]
+}

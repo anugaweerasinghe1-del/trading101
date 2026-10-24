@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-10-24T16:57:10.025390+00:00",
+  "candidateSHA": "93bb9f69df2aae80200adc6efaee8505034e9b8c",
+  "outcome": "PASS",
+  "baseline": "EXPECTED_FAIL_missing_determinate_zero_value",
+  "actualSourceComponentCases": [
+    0,
+    25,
+    62.5,
+    100,
+    "unspecified"
+  ],
+  "editorialArithmeticPerformance": "PASS",
+  "buildSEOEditorial": "PASS",
+  "appTypeScript": "PASS",
+  "noProgressCalculationOrStorageChanges": true,
+  "releaseGate": "PR234cycle thennewcandidateCI/previews/serialrelease"
+}

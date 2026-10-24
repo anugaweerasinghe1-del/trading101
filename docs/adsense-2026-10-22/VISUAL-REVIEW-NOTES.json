@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T16:38:32.424070+00:00",
+  "updatedAt": "2026-10-24T16:58:51.394996+00:00",
   "scope": "Actual screenshot viewing by route and stage. Full-page default-state images are separately recorded at all five widths for20 core routes; this is not conditional, accessibility, light-theme, source or whole-audit completion.",
   "routes": {
     "/": {
@@ -193,7 +193,7 @@
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
     },
     "/courses/cryptocurrency-price-feeds-and-valuation": {
-      "status": "FIRST_FOLD_ONLY",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
       "humanViewedWidths": [
         360,
         1280
@@ -205,7 +205,17 @@
       "evidence": [
         "evidence/contact--courses--360-0.png",
         "evidence/contact--courses--1280-0.png"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Allfivecontacts acrossallfivewidths personallyviewed: longtitle/breadcrumb wraps,0%progress/cryptobadgetarget, four goals/prerequisites, three lessoncards,footer. No newdefaultclipping/overlap observed. Venue/VWAP aggregation, delay/mark and feeawareallocation scope explicit; noalgorithmic/arbitrage readinesspromise. No outside-mainPublisherNotes observed, unlikeolderfourtrackoverviews. Source/math/keyboard/light/zoom andconditionalprogression remain incomplete; no lessonscompleted."
     },
     "/courses/cryptocurrency-price-feeds-and-valuation/api-delays-and-portfolio-valuation": {
       "status": "FIRST_FOLD_ONLY",
@@ -247,7 +257,7 @@
       ]
     },
     "/courses/diversification-and-position-sizing": {
-      "status": "FIRST_FOLD_ONLY",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
       "humanViewedWidths": [
         360
       ],
@@ -256,7 +266,17 @@
       ],
       "evidence": [
         "evidence/contact--courses--360-0.png"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Allfivecontacts acrossallfivewidths personallyviewed: longtitle/breadcrumbanddescription wrap,0%progress/badgetarget, four goals/prerequisites, scopeandthreelessoncards,footer. No newdefaultoverlap/clipping observed. Clarifies hypotheticalweights, concentrationdrift, feeawaremanualspotrebalance; targetweights arenotrecommendations/guarantees. No outside-mainPublisherNotes observed. Source/math/light/keyboard/zoom andconditionalprogression/originalityremainincomplete; no progressactions."
     },
     "/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash": {
       "status": "FIRST_FOLD_ONLY",
@@ -378,7 +398,7 @@
       ]
     },
     "/courses/macro-reading-for-traders": {
-      "status": "FIRST_FOLD_ONLY",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
       "humanViewedWidths": [
         360
       ],
@@ -387,7 +407,18 @@
       ],
       "evidence": [
         "evidence/contact--courses--360-8.png"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "All seven contacts covering every captured default segment at360/390/768/1280/1920 personallyviewed: hero,0%progress/badge target, prerequisites, five learning goals, five lessoncards, footer and appended notes. No new default overlap/clipping observed. Source wording sensibly distinguishes CPI/FOMC/yieldcurve/DXY context from forecasts; main/course notes substantiallyrepeat with uniqueattribution, completion anddisclaimer still tocompare before integration. Light/keyboard/zoom/progression/source/originality remain incomplete. No quiz/completion/progress action.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
     },
     "/courses/macro-reading-for-traders/putting-macro-signals-together": {
       "status": "FIRST_FOLD_ONLY",
@@ -1418,7 +1449,7 @@
       ]
     },
     "/learn/1": {
-      "status": "PARTIAL_VISUAL_REVIEW",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
       "humanViewedWidths": [
         390
       ],
@@ -1428,7 +1459,17 @@
       "evidence": [],
       "candidateViewedWidths": [
         390
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Allfivecontacts acrossallfivewidths personallyviewed, initialsubtopic1of4 only: sources/AIassistnotice, tabstrip, twolabelledillustrations, stockownership andhypotheticalgain/loss/marketcapexamples, ETFscope/overlap/twofundshockmath, conceptualderivativeslimit, Continue/footer. No defaultdocumentoverflow/overlap observed; tabs usecontainedhorizontalscroll atnarrowwidths. Examplesmath2000\u21922500/1500,2b\u00d750=100b,halfweight20%shock=10% correct. Orangeinitialprogressbarlooksfullbeside0%label: implementation/reproductionfollowup, notyetnewfinding. No Continue/quiz/progressaction. Otherconditionalstates, imagealtsemantics/light/keyboard/zoom/primarysourcesremainincomplete."
     },
     "/learn/4": {
       "status": "PARTIAL_VISUAL_REVIEW",
@@ -1902,6 +1943,33 @@
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "All default segments actually viewed at five widths: hero/0%progress and badge target, prerequisites, course scope/order, all5lesson cards, footer and appended notes. Readable; no new default layout defect observed. Main and appended course overview substantially repeat; exact full-copy parity/unique badge/attribution preservation investigation remains. No lesson/quiz/completion action. Light/keyboard/zoom, current options source/contract exceptions, conditional progression and originality remain incomplete.",
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+    },
+    "/courses/trading-psychology-mastery": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Allsixcontacts coveringeverydefaultsegment atfivewidths personallyviewed: updatedTradingDecisionsandBehaviourhero,0%progress/badgetarget, goals/prerequisites, fivelessoncards,footer/appendednotes. No newdefaultclipping/overlap observed. Avoids claiming psychologicalassessment/clinicalsupport/professionalconsensus orprofitableperformance. Appendedoutline substantialduplication requiresfullparity/uniquecopy comparison; source/light/keyboard/zoom/conditionalprogression/originality incomplete; nocompletionaction.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+    },
+    "/learn/6": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Allfivecontacts acrossallfivewidths personallyviewed; initialsubtopic1of4 only. AIassist/sourcechecksnotice, Cboesourcepointers, tabstrip, labelledillustration, bull/bearregimelimits,100\u2192120\u219296 +20%/\u221220%/\u22124%math, priceversustotalreturn, noautomaticdip/cashinstruction, hindsightwarning, Continue/footer readable. Orangeinitialtrackbeside0% requirescomputedstyle/semanticsfollowup, notyetnewfinding. No defaultdocumentoverflow/overlap observed; no Continue/quiz/progressaction. Otherconditionalstates/accessibility/light/keyboard/zoom/primarysources remain incomplete."
     }
   }
 }

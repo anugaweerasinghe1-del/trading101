@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T16:42:53.981912+00:00",
+  "updatedAt": "2026-10-24T16:57:10.025390+00:00",
   "releases": [
     {
       "finding": "THQ-001",
@@ -1625,11 +1625,12 @@
     "mergeSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
     "reason": "Releasecyclecomplete; nonewmergeofthisPR."
   },
-  "remainingConfirmedSiteFixes": 2,
+  "remainingConfirmedSiteFixes": 3,
   "exhaustiveAuditComplete": false,
-  "remainingKnownSafeFindings": 2,
+  "remainingKnownSafeFindings": 3,
   "nextReleasePriority": [
-    234
+    234,
+    235
   ],
   "pendingReleaseVerification": null,
   "protectedPublishedContentFinding": "THQ035 exacttwo-valuepatch OWNERAPPROVED; requiredSUPABASE_SERVICE_ROLE_KEYnotbound. THQ036 fivevisualfields cases24/18 NOTYETAPPROVED. No productionrecordwrite; nativeadminpublisherIDrewriteexceedsscope.",
@@ -1640,5 +1641,13 @@
     "state": "LOCAL_VALIDATION_PASS_REQUIRED_CI_AND_PREVIEWS_PENDING",
     "scope": "Staticfallbackonly,5illustrationfields; normalpublishedbankunchanged",
     "mergeAllowed": false
+  },
+  "progressAccessibilityCandidate": {
+    "pr": 235,
+    "candidateSHA": "93bb9f69df2aae80200adc6efaee8505034e9b8c",
+    "baseSHA": "db3bfab843a126dda6afc4c2f2184a4366fc70ad",
+    "state": "DRAFT_LOCAL_VALIDATION_PASS_PREVIOUS_RELEASE_HOLD",
+    "mergeAllowed": false,
+    "scope": "ExistingpercentageforwardedtoRadixRoot pluslegacylabel; no progresslogic/storage changes."
   }
 }

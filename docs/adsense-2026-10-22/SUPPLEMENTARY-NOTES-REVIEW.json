@@ -3,8 +3,8 @@
   "sourceCandidate": "71b84461ab0f531da44da54d8670ad1bef0628ea",
   "equivalentProductionSHA": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
   "sourceExpectedArticles": 83,
-  "actualRenderedArticlesRead": 30,
-  "sourceExpectedArticlesNotYetIndividuallyReviewed": 53,
+  "actualRenderedArticlesRead": 32,
+  "sourceExpectedArticlesNotYetIndividuallyReviewed": 51,
   "routes": [
     {
       "path": "/",
@@ -320,9 +320,9 @@
     {
       "path": "/courses/macro-reading-for-traders",
       "expectedFromCurrentBuiltRouteSource": true,
-      "actualRenderedPresenceVerified": false,
-      "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "actualRenderedPresenceVerified": true,
+      "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+      "assessment": "Entire actual appended macrotrackarticle read: CPIcomponent surprises, FOMCannouncements/expectations, yieldcurveassociation notstandaloneforecast, DXYsixcurrency limits, macro dashboard alternatives, no forecast/leveragepromise; allfive lesson summaries, completion criterion, attribution, references/disclaimer read. Official current primaryclaims still require source corroboration."
     },
     {
       "path": "/courses/futures-and-derivatives",
@@ -334,9 +334,9 @@
     {
       "path": "/courses/trading-psychology-mastery",
       "expectedFromCurrentBuiltRouteSource": true,
-      "actualRenderedPresenceVerified": false,
-      "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "actualRenderedPresenceVerified": true,
+      "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+      "assessment": "Entireappendedarticle read: biasexamples, optionalmade-updata/checklists, observationjournal, drawdownarithmetic, harm/supportscope, allfivelessons andcompletioncriterion/reference/disclaimer. No fixedroutine/forecast promise. Oldtrackname retainedincompletionbadgecriterion; no newinaccuracyfindingassertedfromnamealone. Materialresearch sourcesstillneedverification."
     },
     {
       "path": "/courses/options-trading-fundamentals",
@@ -614,8 +614,8 @@
   ],
   "currentVerifiedProductionSHA": "adcaed329c34f4a846f41b9fff9c01b2f2a3bc2e",
   "currentSeparateArticlesExpected": 75,
-  "currentSeparateArticlesActuallyRead": 28,
-  "currentSeparateArticlesNotYetIndividuallyRead": 47,
+  "currentSeparateArticlesActuallyRead": 30,
+  "currentSeparateArticlesNotYetIndividuallyRead": 45,
   "historicalSeparateArticlesNowIntegratedInMain": 8,
   "historicalBaselineScopePreserved": true
 }
