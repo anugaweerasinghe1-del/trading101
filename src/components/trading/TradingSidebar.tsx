@@ -24,7 +24,7 @@ export function TradingSidebar() {
   const location = useLocation();
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-16 bg-gradient-sidebar border-r border-border/30 flex flex-col items-center py-4 z-50">
+    <aside className="sticky top-0 h-screen w-16 shrink-0 bg-gradient-sidebar border-r border-border/30 flex flex-col items-center py-4 z-50">
       {/* Logo */}
       <div className="mb-8">
         <Link to="/" className="flex items-center justify-center w-10 h-10 rounded-2xl hover:opacity-80 active:scale-[0.97] transition-all" aria-label="TradeHQ home">
