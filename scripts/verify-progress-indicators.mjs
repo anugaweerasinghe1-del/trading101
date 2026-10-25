@@ -9,6 +9,7 @@ export async function verifyProgressIndicators({send, evaluate, waitUntil, origi
     for (const mode of ['light', 'dark']) {
       await evaluate(`(() => { if (document.documentElement.classList.contains('light') !== ${mode === 'light'}) [...document.querySelectorAll('button[aria-label*="theme"]')].find(b => b.getClientRects().length).click(); return true; })()`);
       await waitUntil(`document.documentElement.classList.contains('light') === ${mode === 'light'}`, 'Progress enters ' + mode + ' theme');
+      await waitUntil(`[...document.querySelectorAll('button[aria-label*="theme"]')].every(b => b.getAttribute('aria-label') === ${JSON.stringify('Switch to ')} + ${JSON.stringify(mode === 'light' ? 'dark' : 'light')} + ' theme')`, 'Both responsive theme controls stay synchronized');
       for (const [width, height] of [[360,800], [390,844], [768,1024], [1280,800], [1440,900]]) {
         await send('Emulation.setDeviceMetricsOverride', {width, height, deviceScaleFactor: 1, mobile: width < 500});
         await delay(100);

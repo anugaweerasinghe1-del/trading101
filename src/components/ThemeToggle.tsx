@@ -6,15 +6,21 @@ export function ThemeToggle() {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
 
   useEffect(() => {
-    const stored = localStorage.getItem('theme') as 'dark' | 'light';
-    if (stored) {
-      setTheme(stored);
+    const stored = localStorage.getItem('theme');
+    if (stored === 'light' || stored === 'dark') {
       document.documentElement.classList.toggle('light', stored === 'light');
     }
+    // Desktop and mobile navigation each mount a toggle. Keep both labels in
+    // sync with the actual page theme, including when the breakpoint changes.
+    const syncTheme = () => setTheme(document.documentElement.classList.contains('light') ? 'light' : 'dark');
+    syncTheme();
+    const observer = new MutationObserver(syncTheme);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    return () => observer.disconnect();
   }, []);
 
   const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    const newTheme = document.documentElement.classList.contains('light') ? 'dark' : 'light';
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
     document.documentElement.classList.toggle('light', newTheme === 'light');
