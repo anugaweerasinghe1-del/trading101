@@ -229,6 +229,43 @@ try {
  await db.exec(readFileSync('supabase/migrations/20261009135016_daily_practice_cycle_recovery.sql', 'utf8'));
  await db.exec(readFileSync('supabase/migrations/20261009142312_daily_depth_and_scored_cases.sql', 'utf8'));
  const query = async <T>(sql: string, args: unknown[] = []) => (await db.query<{ v: T }>(sql, args)).rows[0]?.v;
+ // Rehearse the exact one-time production correction in an isolated transaction.
+ // Migration seed is the historical published bank, including its original hash.
+ await db.exec('BEGIN');
+ const correctionId = '3ab17e80-bfa7-45a7-b6f0-5d70e1c26199';
+ await db.query(`INSERT INTO public.daily_practice_drafts(id,effective_from,revision,status,document,research)
+ SELECT $1,effective_from,revision,status,document,research FROM public.daily_practice_drafts WHERE document->>'id'='authored-2026-10-depth'`, [correctionId]);
+ await db.query(`INSERT INTO public.daily_practice_batches(id,effective_from,document,revision)
+ SELECT id,effective_from,document,revision FROM public.daily_practice_drafts WHERE id=$1`, [correctionId]);
+ const beforeCorrection = await query<typeof bank>('SELECT document AS v FROM public.daily_practice_batches WHERE id=$1', [correctionId]);
+ const frozenAttempt = structuredClone(beforeCorrection.exercises.find(e => e.id === 'practice-32'));
+ const correctionSql = readFileSync('scripts/operations/correct-daily-20261025.sql', 'utf8');
+ await db.exec('SAVEPOINT stale_correction');
+ await db.query("UPDATE public.daily_practice_batches SET document=jsonb_set(document,'{id}','\"changed-bank\"') WHERE id=$1", [correctionId]);
+ await assert.rejects(db.exec(correctionSql), /checkpoint changed/);
+ await db.exec('ROLLBACK TO SAVEPOINT stale_correction');
+ await db.exec(correctionSql);
+ const afterCorrection = await query<typeof bank>('SELECT document AS v FROM public.daily_practice_batches WHERE id=$1', [correctionId]);
+ const expectedCorrection = structuredClone(beforeCorrection);
+ const correctedCase = (id: string) => expectedCorrection.exercises.find(e => e.id === id)!;
+ correctedCase('practice-18').visual.bars[2] = { label: 'Total fees', value: 10 };
+ correctedCase('practice-24').visual.bars[0].value = 2880;
+ correctedCase('practice-24').visual.bars[1].value = 2;
+ correctedCase('practice-24').visual.unit = 'illustrative age in minutes';
+ correctedCase('practice-32').visual.bars[0].value = 3;
+ correctedCase('practice-32').visual.bars[1].value = 4;
+ const { reviewer: correctionReviewer, reviewedAt: correctionTime, ...correctedContent } = afterCorrection;
+ assert.deepEqual(correctedContent, expectedCorrection, 'Only the seven approved content fields change');
+ assert.equal(correctionReviewer, 'Owner-approved editorial correction 2026-10-25');
+ assert.ok(Number.isFinite(Date.parse(correctionTime!)));
+ assert.equal(await query('SELECT revision AS v FROM public.daily_practice_batches WHERE id=$1', [correctionId]), 2);
+ assert.equal(frozenAttempt?.visual.bars[0].value, 4, 'Existing attempt snapshots remain unchanged');
+ assert.equal(frozenAttempt?.visual.bars[1].value, 6);
+ await db.exec('SAVEPOINT duplicate_correction');
+ await assert.rejects(db.exec(correctionSql), /checkpoint changed/);
+ await db.exec('ROLLBACK TO SAVEPOINT duplicate_correction');
+ await db.exec('ROLLBACK');
+ console.log('PASS published Daily correction: exact seven fields, 50 cases/500 unchanged questions, stable bank ID, revision/reviewer metadata and repeat-run rejection.');
  assert.equal(await query('SELECT tradehq_private.daily_exercises_valid($1::jsonb) AS v', [JSON.stringify(bank.exercises)]), true);
  await db.exec('SET ROLE anon');
  assert.equal((await db.query('SELECT * FROM public.market_articles')).rows.length, 1);
