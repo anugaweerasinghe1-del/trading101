@@ -120,7 +120,7 @@ const WikiTerm = () => {
           {/* Header */}
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
             <div className="flex flex-wrap items-center gap-3 mb-4">
-              <Badge className={`${difficultyColor} text-[10px] uppercase tracking-[0.15em] font-bold`}>
+              <Badge variant="outline" data-wiki-difficulty={term.difficulty} className={`${difficultyColor} text-[10px] uppercase tracking-[0.15em] font-bold`}>
                 {term.difficulty}
               </Badge>
               <Badge className="bg-muted text-muted-foreground border-border text-[10px] uppercase tracking-[0.15em] font-bold">
