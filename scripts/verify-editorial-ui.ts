@@ -7,7 +7,7 @@ import type { Portfolio, Trade } from '../src/lib/types';
 import assert from 'node:assert/strict';
 import { lessonData } from '../src/lib/lessonData';
 import { formatPrice, ASSETS } from '../src/lib/assets';
-import { getPortfolioMentorReply, type PortfolioContext } from '../src/lib/smartMentor';
+import { getPortfolioMentorReply, getSmartMentorReply, MENTOR_TOPICS, type PortfolioContext } from '../src/lib/smartMentor';
 
 assert.deepEqual(lessonData.map(l => l.id), [1,2,3,4,5,6]);
 assert.deepEqual(lessonData.map(l => l.subtopics.length), [4,4,4,4,4,4]);
@@ -35,6 +35,15 @@ assert.equal(formatPrice(NaN,'stock'), '—');
 assert.equal(formatPrice(0,'stock'), '0.0000');
 assert.equal(formatPrice(123.45,'stock'), '123.45');
 const context:PortfolioContext = {cash:0,totalValue:0,positionsCount:0,tradesCount:12,winRate:null,selectedSymbol:'TEST',selectedChangePct:null,priceOnlySellComparisonPct:50};
+const mentorReplies = [
+  ...MENTOR_TOPICS.map(topic => getSmartMentorReply(topic.keywords[0])),
+  ...['', 'hello', 'unrecognized zqxv', 'my portfolio', 'risk', 'review my trades', 'analyze this asset'].map(prompt => getPortfolioMentorReply(prompt,context)),
+];
+for(const reply of mentorReplies) {
+  assert.doesNotMatch(reply,/\*\*|_\(Educational/,'Plain-text mentor messages must not expose authored Markdown delimiters');
+  assert.ok(reply.endsWith('(Educational simulation only — not financial advice.)'));
+}
+console.log('PASS authored mentor topics, greeting/fallback and portfolio branches preserve disclaimers without literal formatting markers.');
 const portfolio = getPortfolioMentorReply('my portfolio',context);
 assert.ok(portfolio.includes('percentage unavailable') && portfolio.includes('Realized win rate: unavailable') && portfolio.includes('not a realized win rate'));
 assert.ok(!/NaN|Infinity/.test(portfolio));

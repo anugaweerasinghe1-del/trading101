@@ -360,46 +360,64 @@
       "id": "DAILY-PUBLISHED-32",
       "routeOrComponent": "/daily practice-32 published record",
       "severity": "P2",
-      "state": "FIXED ON BRANCH",
+      "state": "VERIFIED IN PRODUCTION",
       "defect": "PR233 documents correlation illustration 4/6 versus scenario 3/4. Bundled fallback fixed, published record explicitly excluded.",
       "existingFix": "db3bfab843a (bundled fallback only)",
-      "pullRequest": null,
-      "liveVerification": "Production revision1/source hash rechecked before implementation; correction not published yet.",
-      "finalResolution": "Guarded operation prepared. Normal save/publish validation and metadata; stable seeded document ID preserved atomically. Final release and publication evidence will be recorded in implementing PR.",
+      "pullRequest": 238,
+      "liveVerification": "Revision2 committed07:59:06UTC. Independent SQL and anonymous API confirm exact7-field content diff; actual PracticeVisual rendered all3 API cases; current live Daily consumes new metadata and opens normally in light/dark at1363px. No claim of browser navigation to non-current dates.",
+      "finalResolution": "Published correction complete; bank identity and50IDs/500questions preserved. Exact evidence in PR238.",
       "authorization": "Owner explicitly approved the documented seven-field correction on 2026-10-25: Yes ofc dont stop just to ask me, continue and deploy, wait till successful move on.",
-      "implementationCommit": null,
-      "ci": "Local exact SQL rehearsal and full Daily checks passed; exact-head remote checks pending.",
-      "cloudflare": "NOT CHECKED"
+      "implementationCommit": "b46b8fd4dd0c20ec242b4aa1173227ac17717234",
+      "ci": "Exact-head and merged-SHA required checks plus real PostgreSQL SUCCESS.",
+      "cloudflare": {
+        "deploymentId": "30451c62-65e8-48d4-a092-3d208ce1f1db",
+        "sha": "f364bce717420298101ff4d1cad02258f1b6e5ba",
+        "environment": "production",
+        "status": "success",
+        "observedAt": "2026-10-25T07:58:09.582Z"
+      }
     },
     {
       "id": "DAILY-PUBLISHED-24",
       "routeOrComponent": "/daily practice-24 published record",
       "severity": "P2",
-      "state": "FIXED ON BRANCH",
+      "state": "VERIFIED IN PRODUCTION",
       "defect": "PR234 documents ages inconsistent with stated timestamps. Bundled fallback fixed, published record excluded.",
       "existingFix": "313e28e34ff (bundled fallback only)",
-      "pullRequest": null,
-      "liveVerification": "Production revision1/source hash rechecked before implementation; correction not published yet.",
-      "finalResolution": "Guarded operation prepared. Normal save/publish validation and metadata; stable seeded document ID preserved atomically. Final release and publication evidence will be recorded in implementing PR.",
+      "pullRequest": 238,
+      "liveVerification": "Revision2 committed07:59:06UTC. Independent SQL and anonymous API confirm exact7-field content diff; actual PracticeVisual rendered all3 API cases; current live Daily consumes new metadata and opens normally in light/dark at1363px. No claim of browser navigation to non-current dates.",
+      "finalResolution": "Published correction complete; bank identity and50IDs/500questions preserved. Exact evidence in PR238.",
       "authorization": "Owner explicitly approved the documented seven-field correction on 2026-10-25: Yes ofc dont stop just to ask me, continue and deploy, wait till successful move on.",
-      "implementationCommit": null,
-      "ci": "Local exact SQL rehearsal and full Daily checks passed; exact-head remote checks pending.",
-      "cloudflare": "NOT CHECKED"
+      "implementationCommit": "b46b8fd4dd0c20ec242b4aa1173227ac17717234",
+      "ci": "Exact-head and merged-SHA required checks plus real PostgreSQL SUCCESS.",
+      "cloudflare": {
+        "deploymentId": "30451c62-65e8-48d4-a092-3d208ce1f1db",
+        "sha": "f364bce717420298101ff4d1cad02258f1b6e5ba",
+        "environment": "production",
+        "status": "success",
+        "observedAt": "2026-10-25T07:58:09.582Z"
+      }
     },
     {
       "id": "DAILY-PUBLISHED-18",
       "routeOrComponent": "/daily practice-18 published record",
       "severity": "P2",
-      "state": "FIXED ON BRANCH",
+      "state": "VERIFIED IN PRODUCTION",
       "defect": "PR234 documents count plotted on dollar scale instead of total fee. Bundled fallback fixed, published record excluded.",
       "existingFix": "313e28e34ff (bundled fallback only)",
-      "pullRequest": null,
-      "liveVerification": "Production revision1/source hash rechecked before implementation; correction not published yet.",
-      "finalResolution": "Guarded operation prepared. Normal save/publish validation and metadata; stable seeded document ID preserved atomically. Final release and publication evidence will be recorded in implementing PR.",
+      "pullRequest": 238,
+      "liveVerification": "Revision2 committed07:59:06UTC. Independent SQL and anonymous API confirm exact7-field content diff; actual PracticeVisual rendered all3 API cases; current live Daily consumes new metadata and opens normally in light/dark at1363px. No claim of browser navigation to non-current dates.",
+      "finalResolution": "Published correction complete; bank identity and50IDs/500questions preserved. Exact evidence in PR238.",
       "authorization": "Owner explicitly approved the documented seven-field correction on 2026-10-25: Yes ofc dont stop just to ask me, continue and deploy, wait till successful move on.",
-      "implementationCommit": null,
-      "ci": "Local exact SQL rehearsal and full Daily checks passed; exact-head remote checks pending.",
-      "cloudflare": "NOT CHECKED"
+      "implementationCommit": "b46b8fd4dd0c20ec242b4aa1173227ac17717234",
+      "ci": "Exact-head and merged-SHA required checks plus real PostgreSQL SUCCESS.",
+      "cloudflare": {
+        "deploymentId": "30451c62-65e8-48d4-a092-3d208ce1f1db",
+        "sha": "f364bce717420298101ff4d1cad02258f1b6e5ba",
+        "environment": "production",
+        "status": "success",
+        "observedAt": "2026-10-25T07:58:09.582Z"
+      }
     },
     {
       "id": "THQ-20261025-002",
@@ -488,10 +506,26 @@
       },
       "liveVerification": "Affected routes rechecked after native Cloudflare confirmation; final immutable evidence in PR237.",
       "finalResolution": "Resolved and verified in production."
+    },
+    {
+      "id": "THQ-20261025-005",
+      "routeOrComponent": "/ai-mentor and portfolio educational mentor",
+      "severity": "P3",
+      "impact": "Literal formatting punctuation clutters otherwise readable educational messages. This is a usability correction, not an independently established AdSense policy violation.",
+      "state": "FIXED ON BRANCH",
+      "defect": "Both plain-text chat renderers expose authored Markdown emphasis delimiters in welcome, library and snapshot replies.",
+      "reproduction": "Actual1363px production welcome displays **Smart Mentor**; stop-loss response displays _(Educational simulation only \u2014 not financial advice.)_; My portfolio response displays **Your portfolio at a glance:**.",
+      "existingFix": null,
+      "implementationCommit": null,
+      "pullRequest": null,
+      "ci": "Local authored-topic/portfolio regression and TypeScript pass; compiled20state regression added; remote results pending.",
+      "cloudflare": "NOT CHECKED",
+      "liveVerification": "Before state reproduced in public and trading mentor; candidate not released.",
+      "finalResolution": null
     }
   ],
   "part2": {
-    "state": "NOT CHECKED",
+    "state": "BLOCKED \u2014 OWNER ACTION REQUIRED",
     "tasks": [
       "Exact AdSense Sites status/rejection",
       "Eligible authorized adult publisher identity",
@@ -506,7 +540,8 @@
       "scriptPublisher": "ca-pub-4160578126993254",
       "match": true,
       "emailSearch": "Connected Gmail search for Google AdSense notices after2026-10-18 returned no results; this is not proof of current account status."
-    }
+    },
+    "blocker": "Automatic approval review denied observation of Google Accounts origin while opening official AdSense sign-in, citing private-account access authorization. No workaround attempted. Exact Sites/rejection/CMP/Search Console evidence remains inaccessible."
   },
   "limitations": [
     "Local build passes. Local Chromium blocked by executor socket EPERM; not a failed application test.",
@@ -561,10 +596,14 @@
     "evidence": "HTTP-Summary.json and Initial-HTML-Evidence.json.gz"
   },
   "freshBrowser": {
-    "productionRoutes": 26,
+    "productionRoutes": 28,
     "viewport": 1363,
     "evidence": "Fresh-Rendered-Observations.json",
-    "allRoutesHumanEditorial": false
+    "allRoutesHumanEditorial": false,
+    "additionalRoutes": [
+      "/ai-mentor",
+      "/wiki/short-squeeze"
+    ]
   },
   "resolutionSource": "This file is a committed source checkpoint. Final immutable release outcomes and issue-state ledger are appended to the implementing PR description after native and live verification."
 }

@@ -1,0 +1,60 @@
+{
+  "schema": "tradehq-release-238-v1",
+  "pullRequest": 238,
+  "candidateSha": "b46b8fd4dd0c20ec242b4aa1173227ac17717234",
+  "mergeSha": "f364bce717420298101ff4d1cad02258f1b6e5ba",
+  "requiredCI": {
+    "candidateRun": 40173804624,
+    "mainRun": 40174287689,
+    "state": "SUCCESS",
+    "disposablePostgresJob": 121110093056,
+    "nativeReadinessJob": 121112980845
+  },
+  "cloudflare": {
+    "id": "30451c62-65e8-48d4-a092-3d208ce1f1db",
+    "sha": "f364bce717420298101ff4d1cad02258f1b6e5ba",
+    "environment": "production",
+    "branch": "main",
+    "status": "success",
+    "createdAt": "2026-10-25T07:50:18.331085Z"
+  },
+  "cloudflareObservedAt": "2026-10-25T07:58:09.582Z",
+  "domain": "https://www.thetradehq.com",
+  "publication": {
+    "rowId": "3ab17e80-bfa7-45a7-b6f0-5d70e1c26199",
+    "bankId": "authored-2026-10-depth",
+    "revision": 2,
+    "reviewedAt": "2026-10-25T07:59:06.350913Z",
+    "md5": "a4a6b00f5ecccfce6d6dbcda13e0ab59",
+    "contentChanges": 7,
+    "exercises": 50,
+    "questions": 500,
+    "normalPublisherMetadata": true,
+    "rollbackRehearsalPassed": true,
+    "committedReadPassed": true,
+    "anonymousHTTP": 200,
+    "fullAnonymousContentDiff": "PASS exact approved fields; all other content preserved",
+    "actualComponentRender": [
+      "practice-18",
+      "practice-24",
+      "practice-32"
+    ]
+  },
+  "live": {
+    "route": "/daily",
+    "viewport": 1363,
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "bankReviewerConsumed": true,
+    "currentCaseOpened": true,
+    "answersRecorded": 0,
+    "horizontalOverflow": false,
+    "entry": "index-B3_F9H7J.js"
+  },
+  "limitations": [
+    "Current public daily route exposes today's case only. The three corrected non-current cases were verified through anonymous production data and actual component server rendering, not three live-date browser navigations.",
+    "Other production viewport widths are not newly claimed; compiled CI exercises responsive widths."
+  ]
+}

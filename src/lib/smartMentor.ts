@@ -16,7 +16,7 @@ export interface MentorTopic {
   answer: string;
 }
 
-const DISCLAIMER = "\n\n_(Educational simulation only — not financial advice.)_";
+const DISCLAIMER = "\n\n(Educational simulation only — not financial advice.)";
 
 export const MENTOR_TOPICS: MentorTopic[] = [
   {
@@ -59,11 +59,11 @@ export const MENTOR_TOPICS: MentorTopic[] = [
     keywords: ["rsi", "relative strength", "overbought", "oversold"],
     title: "RSI (Relative Strength Index)",
     answer:
-      "**RSI** is a momentum oscillator scaled 0–100 measuring speed and change of price moves.\n\n" +
-      "• **>70** = overbought (potential pullback)\n" +
-      "• **<30** = oversold (potential bounce)\n" +
-      "• **50** = neutral / trend reset\n\n" +
-      "**Reality check:** RSI alone is not a buy/sell signal. In strong trends, RSI can stay overbought (or oversold) for weeks. Use it with price action, volume, and support/resistance — not as a standalone trigger.",
+      "RSI is a momentum oscillator scaled 0–100 measuring speed and change of price moves.\n\n" +
+      "• >70 = overbought (potential pullback)\n" +
+      "• <30 = oversold (potential bounce)\n" +
+      "• 50 = neutral / trend reset\n\n" +
+      "Reality check: RSI alone is not a buy/sell signal. In strong trends, RSI can stay overbought (or oversold) for weeks. Use it with price action, volume, and support/resistance — not as a standalone trigger.",
   },
   {
     id: "moving-average",
@@ -85,12 +85,12 @@ export const MENTOR_TOPICS: MentorTopic[] = [
     title: "Trading Psychology",
     answer:
       "Trading decisions can be affected by emotion, attention and cognitive bias. Psychology matters, but there is no credible universal percentage that separates psychology from strategy.\n\n" +
-      "**The 4 killers:**\n" +
-      "• **FOMO** — acting from fear of missing a move without checking an assumption.\n" +
-      "• **Revenge trading** — increasing activity or exposure to recover a loss without reassessing risk.\n" +
-      "• **Anchoring** — refusing to sell because 'I'll wait until it gets back to my entry'.\n" +
-      "• **Confirmation bias** — only reading news that supports your position.\n\n" +
-      "**Practice review:** Record the original reasoning and compare it with the outcome. Ghost Journal and Revenge Blocker can support a review, but do not cure bias or guarantee disciplined decisions.",
+      "The 4 killers:\n" +
+      "• FOMO — acting from fear of missing a move without checking an assumption.\n" +
+      "• Revenge trading — increasing activity or exposure to recover a loss without reassessing risk.\n" +
+      "• Anchoring — refusing to sell because 'I'll wait until it gets back to my entry'.\n" +
+      "• Confirmation bias — only reading news that supports your position.\n\n" +
+      "Practice review: Record the original reasoning and compare it with the outcome. Ghost Journal and Revenge Blocker can support a review, but do not cure bias or guarantee disciplined decisions.",
   },
   {
     id: "diversification",
@@ -98,7 +98,7 @@ export const MENTOR_TOPICS: MentorTopic[] = [
     title: "Diversification",
     answer:
       "Diversification compares exposure to different holdings and their shared drivers.\n\n" +
-      "**A $100K practice comparison:**\n" +
+      "A $100K practice comparison:\n" +
       "• There is no universal allocation that fits everyone.\n" +
       "• In TradeHQ, compare concentrated and diversified practice portfolios and observe how volatility and drawdown change.\n" +
       "• Treat any example allocation as a simulation scenario, not a recommendation for real money.\n\n" +
@@ -144,7 +144,7 @@ export const MENTOR_TOPICS: MentorTopic[] = [
 
 const GREETING_RESPONSE =
   "Hey! I'm your Smart Mentor — a curated trading knowledge engine.\n\n" +
-  "**Try asking me about:**\n" +
+  "Try asking me about:\n" +
   "• Stop-losses, RSI, moving averages, candlesticks\n" +
   "• Bull/bear markets, leverage, position sizing\n" +
   "• Dollar-cost averaging, diversification, compounding\n" +
@@ -154,10 +154,10 @@ const GREETING_RESPONSE =
 
 const FALLBACK_RESPONSE =
   "I don't have a curated lesson for that exact phrase yet, but here's what I can help with:\n\n" +
-  "**Strategy & risk:** stop-losses, position sizing, risk-reward, diversification.\n" +
-  "**Technicals:** RSI, moving averages, candlestick patterns, support/resistance.\n" +
-  "**Psychology:** FOMO, revenge trading, discipline.\n" +
-  "**Markets:** bull/bear markets, leverage, crypto, ETFs.\n\n" +
+  "Strategy & risk: stop-losses, position sizing, risk-reward, diversification.\n" +
+  "Technicals: RSI, moving averages, candlestick patterns, support/resistance.\n" +
+  "Psychology: FOMO, revenge trading, discipline.\n" +
+  "Markets: bull/bear markets, leverage, crypto, ETFs.\n\n" +
   "Try rephrasing, or pick a topic chip below — I'll give you a deep, actionable answer.";
 
 /**
@@ -243,7 +243,7 @@ export function getPortfolioMentorReply(input: string, ctx: PortfolioContext): s
   // Portfolio analysis
   if (/portfolio|positions?|my (cash|balance|holdings?)|analy[sz]e my/.test(text)) {
     const lines = [
-      `**Your portfolio at a glance:**`,
+      `Your portfolio at a glance:`,
       `• Total value: ${fmt(ctx.totalValue)}`,
       `• Cash: ${fmt(ctx.cash)} (${cashPct === null ? "percentage unavailable" : cashPct.toFixed(0) + "% of book"})`,
       `• Positions: ${ctx.positionsCount}`,
@@ -253,17 +253,17 @@ export function getPortfolioMentorReply(input: string, ctx: PortfolioContext): s
     ];
     if (ctx.topPosition) {
       lines.push(
-        `\n**Top position:** ${ctx.topPosition.symbol} — ${ctx.topPosition.weightPct.toFixed(0)}% of book, P&L ${ctx.topPosition.pnlPct >= 0 ? "+" : ""}${ctx.topPosition.pnlPct.toFixed(2)}%`,
+        `\nTop position: ${ctx.topPosition.symbol} — ${ctx.topPosition.weightPct.toFixed(0)}% of book, P&L ${ctx.topPosition.pnlPct >= 0 ? "+" : ""}${ctx.topPosition.pnlPct.toFixed(2)}%`,
       );
     }
-    if (cashPct !== null && cashPct > 80) lines.push(`\n**Observation:** You're sitting on heavy cash (${cashPct.toFixed(0)}%) — compare how different hypothetical cash weights change the practice result; this percentage does not prescribe purchases.`);
-    else if (cashPct !== null && cashPct < 5) lines.push(`\n**Observation:** Cash is ${cashPct.toFixed(0)}% of the practice portfolio. Compare alternative weights without treating a cash band as a universal requirement.`);
+    if (cashPct !== null && cashPct > 80) lines.push(`\nObservation: You're sitting on heavy cash (${cashPct.toFixed(0)}%) — compare how different hypothetical cash weights change the practice result; this percentage does not prescribe purchases.`);
+    else if (cashPct !== null && cashPct < 5) lines.push(`\nObservation: Cash is ${cashPct.toFixed(0)}% of the practice portfolio. Compare alternative weights without treating a cash band as a universal requirement.`);
     return lines.join("\n") + DISCLAIMER;
   }
 
   // Risk assessment
   if (/risk|overexposed|exposure|concentration/.test(text)) {
-    const lines = ["**Risk review:**"];
+    const lines = ["Risk review:"];
     if (ctx.topPosition && ctx.topPosition.weightPct > 30) {
       lines.push(`• ${ctx.topPosition.symbol} is ${ctx.topPosition.weightPct.toFixed(0)}% of the simulated portfolio. That is a useful concentration scenario to stress-test, but there is no universal percentage that automatically makes a position acceptable or unacceptable.`);
     }
@@ -276,7 +276,7 @@ export function getPortfolioMentorReply(input: string, ctx: PortfolioContext): s
   // Trade history
   if (/trade history|recent trades|review my trades|patterns/.test(text)) {
     if (ctx.tradesCount === 0) return "No recorded practice trades are available to review. You can record an assumption before a hypothetical exercise. No universal trade count establishes a dependable pattern." + DISCLAIMER;
-    return `**Trade history review** (${ctx.tradesCount} recorded trades):\n\n${winSummary}.${priceSummary ? "\n" + priceSummary : ""}\n\nWith fixed realized 3R wins and 1R losses, 40% wins gives 0.6R gross expectancy; 60% wins at 1R gives 0.2R before costs. These are hypothetical inputs, not predictions. Review gains, losses, costs and cash flows together. Apparent time-of-day or asset patterns in a selected sample can be chance and do not establish predictive value.` + DISCLAIMER;
+    return `Trade history review (${ctx.tradesCount} recorded trades):\n\n${winSummary}.${priceSummary ? "\n" + priceSummary : ""}\n\nWith fixed realized 3R wins and 1R losses, 40% wins gives 0.6R gross expectancy; 60% wins at 1R gives 0.2R before costs. These are hypothetical inputs, not predictions. Review gains, losses, costs and cash flows together. Apparent time-of-day or asset patterns in a selected sample can be chance and do not establish predictive value.` + DISCLAIMER;
   }
 
   // What should I do
@@ -288,7 +288,7 @@ export function getPortfolioMentorReply(input: string, ctx: PortfolioContext): s
   if (ctx.selectedSymbol && /this asset|analyze.*asset|current asset|this coin|this stock/.test(text)) {
     const change = ctx.selectedChangePct;
     const observation = change == null || !Number.isFinite(change) ? "Percentage change is unavailable in this snapshot." : `Snapshot percentage change: ${change >= 0 ? "+" : ""}${change.toFixed(2)}%. Check the displayed quote source and observation window; this is not a forecast.`;
-    return `**${ctx.selectedSymbol}** — ${observation}\n\nRecord the price source, interval and missing information. Compare hypothetical downside and upside assumptions; a chart pattern or ratio does not guarantee an outcome. A displayed quote can be delayed, cached or generated for practice.` + DISCLAIMER;
+    return `${ctx.selectedSymbol} — ${observation}\n\nRecord the price source, interval and missing information. Compare hypothetical downside and upside assumptions; a chart pattern or ratio does not guarantee an outcome. A displayed quote can be delayed, cached or generated for practice.` + DISCLAIMER;
   }
 
   // Fall back to topic engine

@@ -1,0 +1,9 @@
+# THQ-20261025-005 — authored formatting markers in mentor replies
+
+P3 usability defect, reproduced in the actual public browser at1363px on25October2026. The public `/ai-mentor` welcome displays `**Smart Mentor**`; selecting Explain stop-loss orders shows an underscore-wrapped educational disclaimer. On `/trade/btc`, opening Portfolio educational mentor and choosing My portfolio shows `**Your portfolio at a glance:**` and the same disclaimer markers. No order, account change or remote AI request was made.
+
+Both chat components render `message.content` as React plain text. The built-in library contains Markdown emphasis delimiters, which therefore become visible punctuation. Removing those delimiters from authored strings and the public welcome preserves wording, comparison symbols, numbers, calculations, line breaks and React escaping. User-entered text and matching/persistence behavior are unchanged. This is a display-quality correction; it is not independently established as an AdSense policy violation.
+
+The existing editorial suite exercises all authored topic entries, greeting/fallback and portfolio branches, checks disclaimers, and retains its arithmetic/missing-metric assertions. A compiled-browser regression exercises public RSI and portfolio snapshot replies at360/390/768/1280/1440px in light/dark (20states), preserving numeric labels and checking page/dialog horizontal bounds. No production account or trade is used by these fixtures. Local Chromium remains unavailable under the executor socket restriction; remote CI supplies actual compiled-browser results.
+
+The full Cloudflare build and exact-head required CI must pass before merge. Final exact merge SHA, native Cloudflare production deployment and live public/sidebar checks will be recorded in the implementing PR after release. No completion is inferred from this source checkpoint.
