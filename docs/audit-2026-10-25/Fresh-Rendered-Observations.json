@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-25",
+  "source": "Actual cloud Chromium DOM observations in this session",
+  "productionOrigin": "https://www.thetradehq.com",
+  "viewport": 1363,
+  "uniqueProductionRoutes": 26,
+  "routes": [
+    "/learn/1",
+    "/learn/2",
+    "/learn/3",
+    "/learn/4",
+    "/learn/5",
+    "/learn/6",
+    "/learn-trading-guide",
+    "/portfolio",
+    "/daily",
+    "/about",
+    "/courses",
+    "/learn",
+    "/markets",
+    "/niche/shib",
+    "/niche/btc",
+    "/compare/bitcoin-vs-ethereum",
+    "/trade/btc",
+    "/trade/shib",
+    "/leaderboard",
+    "/reviews",
+    "/contact",
+    "/privacy",
+    "/terms",
+    "/auth",
+    "/trader/me",
+    "/trader/pityuka1312013"
+  ],
+  "scope": "Settled route/component observations and selected content reading; not full human editorial review of every route or every account flow.",
+  "themeCoverage": "Light and dark on affected guide/portfolio release; selected other pages in light.",
+  "interactions": [
+    "Theme changes on About, guide and portfolio",
+    "SHIB 1W timeframe control",
+    "Leaderboard link to one public practice profile"
+  ],
+  "noActions": [
+    "No order, quiz answer, module completion, review submission, contact submission, profile visibility change or account sign-in"
+  ],
+  "transientsResolved": [
+    "Published catalog initially showed4tracks/20lessons, then settled at6tracks/26lessons.",
+    "Trade selection and leaderboard initial loading states settled correctly."
+  ],
+  "knownFindings": [
+    "THQ-20261025-001",
+    "THQ-20261025-002",
+    "THQ-20261025-003",
+    "THQ-20261025-004"
+  ],
+  "limitations": [
+    "No production viewport resize API was available. Local Chromium socket startup was denied; a fixed-frame harness was rejected by browser URL policy and abandoned.",
+    "The other public member profiles were not individually rendered; authenticated/private flows remain unverified.",
+    "Browser extension metadata logging errors are not classified as application errors. No comprehensive production exception-capture claim is made."
+  ]
+}

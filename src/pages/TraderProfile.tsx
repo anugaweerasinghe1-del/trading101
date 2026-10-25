@@ -28,9 +28,10 @@ function useTraderStats() {
     const realized = calculateRealizedPnL(p);
     const maxDD = calculateMaxDrawdown();
     const trades = p.trades.length;
-    const winRate = calculateClosedTradeStats(p).winRate;
+    const closedStats = calculateClosedTradeStats(p);
+    const winRate = closedStats.winRate;
 
-    return { p, totalPnL, totalPnLPct, realized, maxDD, trades, winRate };
+    return { p, totalPnL, totalPnLPct, realized, maxDD, trades, winRate, closedSells: closedStats.sells };
   }, []);
 }
 
@@ -71,7 +72,7 @@ export default function TraderProfile() {
       return;
     }
     const url = `${window.location.origin}/trader/${encodeURIComponent(profile.username)}`;
-    const text = `My TradeHQ practice portfolio: ${s.totalPnLPct >= 0 ? "+" : ""}${s.totalPnLPct.toFixed(1)}% on a ${STARTING_BALANCE_LABEL} virtual account · ${s.trades} trades · ${s.winRate}% win rate. Client-synced simulated stats; not independently verified.`;
+    const text = `My TradeHQ practice portfolio: ${s.totalPnLPct >= 0 ? "+" : ""}${s.totalPnLPct.toFixed(1)}% on a ${STARTING_BALANCE_LABEL} virtual account · ${s.trades} trades · ${s.closedSells > 0 ? `${s.winRate}% win rate` : 'win rate unavailable (no completed sells)'}. Client-synced simulated stats; not independently verified.`;
     try {
       if (navigator.share) {
         await navigator.share({ title: "My TradeHQ trader profile", text, url });
@@ -146,11 +147,12 @@ export default function TraderProfile() {
               { label: "Portfolio value", value: `$${s.p.totalValue.toLocaleString(undefined, { maximumFractionDigits: 0 })}` },
               { label: "Total P&L", value: `${s.totalPnL >= 0 ? "+" : ""}${s.totalPnLPct.toFixed(1)}%`, color: s.totalPnL >= 0 ? "text-emerald-400" : "text-rose-400" },
               { label: "Trades placed", value: s.trades.toString() },
-              { label: "Win rate", value: `${s.winRate}%` },
+              { label: "Win rate", value: s.closedSells > 0 ? `${s.winRate}%` : '—', note: s.closedSells === 0 ? 'No completed sells' : undefined },
             ].map((k) => (
               <Card key={k.label} className="p-5 bg-white/[0.02] border-white/10">
                 <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">{k.label}</p>
                 <p className={`text-xl font-bold ${k.color ?? ""}`}>{k.value}</p>
+                {k.note && <p className="text-xs text-muted-foreground mt-1">{k.note}</p>}
               </Card>
             ))}
           </section>

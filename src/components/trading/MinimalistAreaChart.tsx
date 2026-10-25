@@ -222,7 +222,7 @@ export function MinimalistAreaChart({ asset }: MinimalistAreaChartProps) {
                 : '—'}
             </p>
             <p className={`text-sm font-medium tabular-nums ${isPositive ? 'text-profit' : 'text-loss'}`}>
-              {isPositive ? '+' : ''}{priceChange.toFixed(2)} ({isPositive ? '+' : ''}{priceChangePercent.toFixed(2)}%)
+              {isPositive ? '+' : ''}{priceChange !== 0 && Math.abs(priceChange) < 0.01 ? formatPrice(priceChange, asset.type) : priceChange.toFixed(2)} ({isPositive ? '+' : ''}{priceChangePercent.toFixed(2)}%)
             </p>
           </div>
           <button
