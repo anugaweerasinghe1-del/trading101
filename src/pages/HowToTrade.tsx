@@ -49,11 +49,12 @@ export default function HowToTrade() {
 
       <div className="min-h-screen bg-background flex flex-col">
         <Navigation />
-        <main className="flex-1 container mx-auto px-4 pt-24 pb-12 max-w-4xl">
+        <main data-publisher-notes={`/how-to-trade/${asset.symbol}`} className="flex-1 container mx-auto px-4 pt-24 pb-12 max-w-4xl">
           <header className="mb-10">
             <p className="text-xs uppercase tracking-widest text-emerald-400 mb-3">{asset.type} guide</p>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">How to Trade {asset.fullName}</h1>
             <p className="mt-4 text-lg text-muted-foreground">{asset.whyTrade}</p>
+            <p className="mt-3 text-sm text-muted-foreground">Published by TradeHQ, created by Anuga Weerasinghe. <Link to="/about" className="underline">Publisher background and editorial approach</Link>. No independent professional review is claimed; any recorded source-check scope appears on the page.</p>
             <Button className="mt-6" asChild>
 <Link to={tradeRouteForSymbol(asset.symbol)}>Practise {asset.name} now <ArrowRight className="ml-2 h-4 w-4" /></Link>
 </Button>
@@ -147,6 +148,7 @@ export default function HowToTrade() {
               <Link to="/courses" className="px-4 py-2 rounded-full border border-white/10 hover:border-emerald-500/40">Structured courses</Link>
               <Link to="/wiki" className="px-4 py-2 rounded-full border border-white/10 hover:border-emerald-500/40">Trading glossary</Link>
               <Link to="/compare" className="px-4 py-2 rounded-full border border-white/10 hover:border-emerald-500/40">Asset comparisons</Link>
+              <Link to="/strategy" className="px-4 py-2 rounded-full border border-white/10 hover:border-emerald-500/40">Strategy guides</Link>
             </div>
           </section>
 
@@ -189,6 +191,7 @@ export default function HowToTrade() {
               </ul>
             </section>
           )}
+          <p className="mt-6 text-sm text-muted-foreground">Educational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.</p>
         </main>
         <MegaFooter />
       </div>
