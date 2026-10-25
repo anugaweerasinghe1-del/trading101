@@ -181,8 +181,20 @@ try {
         for (const section of page.sections) {
           if (hasIntegratedCourseOverview(path) && section.h === "Lessons in this track") continue;
           if (["Publisher and editorial transparency", "Practise what you just read"].includes(section.h)) continue;
+          if (hasIntegratedCourseLesson(path) && section.h === "Sources") {
+            // The original literal URL is now the preserved source anchor destination.
+            for (const source of section.list || []) {
+              const match = source.match(/^(.*) \((.+)\)$/);
+              assert.ok(match, path + ": recognized source fixture");
+              assert.ok(normalizedMain.includes(normalize(match[1])), path + ": preserve source label");
+              assert.ok(await evaluate(`Array.from(document.querySelectorAll('main a')).some(a => a.href === ${JSON.stringify(new URL(match[2], origin).href)})`), path + ": preserve source destination");
+            }
+            continue;
+          }
           for (const text of [...(section.p || []), ...(section.list || [])].filter(Boolean)) {
-            assert.ok(normalizedMain.includes(normalize(text)), path + ": preserve substantive section " + section.h);
+            // Authored blockquotes render the quoted text without the Markdown marker.
+            const renderedText = hasIntegratedCourseLesson(path) ? text.replace(/^> /, "") : text;
+            assert.ok(normalizedMain.includes(normalize(renderedText)), path + ": preserve substantive section " + section.h);
           }
         }
         const externalLinks = await evaluate(`Array.from(document.querySelectorAll('main a[href]')).map(a => a.href)`);
