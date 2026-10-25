@@ -168,7 +168,7 @@ export function LearningProgressTracker() {
           <span className="text-muted-foreground">Experience Points</span>
           <span className="font-semibold text-primary">{totalXP} / {maxXP} XP</span>
         </div>
-        <Progress value={(totalXP / maxXP) * 100} className="h-3" />
+        <Progress value={(totalXP / maxXP) * 100} aria-label="Experience Points" className="h-3" />
       </div>
 
       {/* Module Progress */}

@@ -33,7 +33,7 @@ export function RiskManagement({ portfolio }: RiskManagementProps) {
             </span>
             <span className="font-medium">{cashPercent.toFixed(1)}%</span>
           </div>
-          <Progress value={cashPercent} className="h-2" />
+          <Progress value={cashPercent} aria-label="Cash Share of Account" className="h-2" />
         </div>
         <div>
           <div className="flex items-center justify-between mb-2">
@@ -42,7 +42,7 @@ export function RiskManagement({ portfolio }: RiskManagementProps) {
             </span>
             <span className="font-medium">{largestPositionPercent.toFixed(1)}%</span>
           </div>
-          <Progress value={largestPositionPercent} className="h-2" />
+          <Progress value={largestPositionPercent} aria-label="Largest Position Share of Account" className="h-2" />
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div className="p-3 bg-background/50 rounded-lg">

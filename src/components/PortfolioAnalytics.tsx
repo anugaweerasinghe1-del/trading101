@@ -161,7 +161,7 @@ export function PortfolioAnalytics({ portfolio }: PortfolioAnalyticsProps) {
                     </span>
                     <span className="font-medium">{item.percentage.toFixed(1)}%</span>
                   </div>
-                  <Progress value={item.percentage} className="h-2" />
+                  <Progress value={item.percentage} aria-label={`${item.name} allocation`} className="h-2" />
                 </div>
               ))}
             </div>
@@ -214,6 +214,7 @@ export function PortfolioAnalytics({ portfolio }: PortfolioAnalyticsProps) {
             </div>
             <Progress 
               value={(portfolio.cash / portfolio.totalValue) * 100} 
+              aria-label="Cash Reserve"
               className="h-2"
             />
           </div>
