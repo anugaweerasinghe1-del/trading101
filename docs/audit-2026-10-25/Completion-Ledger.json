@@ -317,16 +317,44 @@
       "defect": "XP, cash reserve, cash share and largest-position progress bars expose values without accessible names. Allocation bars use the same unnamed pattern.",
       "severity": "P3",
       "impact": "Assistive technology cannot identify which metric an individual progressbar represents.",
-      "state": "FIXED ON BRANCH",
+      "state": "VERIFIED IN PRODUCTION",
       "reproduction": "Actual production DOM at 1363px: XP value 0; portfolio values 100,100,0; aria-label and aria-labelledby absent. Allocation branch additionally confirmed in source.",
       "existingFix": null,
-      "implementationCommit": null,
-      "pullRequest": null,
-      "ci": "Local rendered component regressions, app TypeScript and full Cloudflare build passed; remote exact-head CI pending.",
-      "cloudflare": "NOT CHECKED",
-      "liveVerification": "Before-state reproduced in cloud Chromium; no account or trade actions.",
-      "finalResolution": null,
-      "regression": "Actual consumer regression fails the unchanged baseline: Missing accessible progress name: Experience Points. Candidate renders all five named indicator variants with unchanged 0/50/100 values."
+      "implementationCommit": "bfff452bce9b8d7164b058331d5a8b6f89037902",
+      "pullRequest": 236,
+      "ci": "All three enforced checks and disposable PostgreSQL SUCCESS at candidate and main.",
+      "cloudflare": {
+        "deploymentId": "cdac0958-80bc-42a7-b1f2-c35593ec4cf0",
+        "sha": "e1c41f4c195de253a1ddd24a6deffd928de95250",
+        "environment": "production",
+        "branch": "main",
+        "status": "success",
+        "observedAt": "2026-10-25T04:54:06.091Z",
+        "nativeEvidenceJob": 121079895182
+      },
+      "liveVerification": {
+        "routes": [
+          "/learn-trading-guide",
+          "/portfolio"
+        ],
+        "viewport": 1363,
+        "themes": [
+          "light",
+          "dark"
+        ],
+        "entry": "/assets/index-CNuRCg_s.js",
+        "result": "Expected names and unchanged 0/100/100/0 values; both controls synchronized; no horizontal document overflow."
+      },
+      "finalResolution": "Released and independently observed; production mobile-width coverage remains unavailable.",
+      "regression": "Actual consumer regression fails the unchanged baseline: Missing accessible progress name: Experience Points. Candidate renders all five named indicator variants with unchanged 0/50/100 values.",
+      "stateHistory": [
+        "CONFIRMED",
+        "FIXED ON BRANCH",
+        "VERIFIED IN CI",
+        "MERGED",
+        "DEPLOYED TO CLOUDFLARE",
+        "VERIFIED IN PRODUCTION"
+      ]
     },
     {
       "id": "DAILY-PUBLISHED-32",
@@ -367,14 +395,74 @@
       "defect": "Two mounted toggles keep independent React state. Switching light on mobile then resizing to desktop leaves desktop state dark; its first click repeats light instead of entering dark.",
       "severity": "P3",
       "impact": "Theme action and accessible name become inconsistent after responsive breakpoint changes.",
-      "state": "FIXED ON BRANCH",
+      "state": "VERIFIED IN PRODUCTION",
       "reproduction": "Candidate Chromium CI run40162306208 fails Progress enters dark theme after 360/390/768/1280/1440 crossing. Actual production About DOM after switching light: visible Switch to dark theme, hidden Switch to light theme.",
       "existingFix": null,
-      "implementationCommit": null,
+      "implementationCommit": "bfff452bce9b8d7164b058331d5a8b6f89037902",
       "pullRequest": 236,
-      "ci": "Initial CI failure preserved; correction pending remote validation.",
+      "ci": "All three enforced checks and disposable PostgreSQL SUCCESS at candidate and main.",
+      "cloudflare": {
+        "deploymentId": "cdac0958-80bc-42a7-b1f2-c35593ec4cf0",
+        "sha": "e1c41f4c195de253a1ddd24a6deffd928de95250",
+        "environment": "production",
+        "branch": "main",
+        "status": "success",
+        "observedAt": "2026-10-25T04:54:06.091Z",
+        "nativeEvidenceJob": 121079895182
+      },
+      "liveVerification": {
+        "routes": [
+          "/learn-trading-guide",
+          "/portfolio"
+        ],
+        "viewport": 1363,
+        "themes": [
+          "light",
+          "dark"
+        ],
+        "entry": "/assets/index-CNuRCg_s.js",
+        "result": "Expected names and unchanged 0/100/100/0 values; both controls synchronized; no horizontal document overflow."
+      },
+      "finalResolution": "Released and independently observed; production mobile-width coverage remains unavailable.",
+      "stateHistory": [
+        "CONFIRMED",
+        "FIXED ON BRANCH",
+        "VERIFIED IN CI",
+        "MERGED",
+        "DEPLOYED TO CLOUDFLARE",
+        "VERIFIED IN PRODUCTION"
+      ]
+    },
+    {
+      "id": "THQ-20261025-003",
+      "routeOrComponent": "/trade/shib; MinimalistAreaChart",
+      "defect": "Nonzero tiny quote change rounds to +0.00 beside +2.40% because absolute changes use toFixed(2).",
+      "severity": "P3",
+      "impact": "Readers cannot distinguish small real displayed quote movements from an actual zero.",
+      "state": "FIXED ON BRANCH",
+      "reproduction": "Actual production display $0.0000125697 and +0.00 (+2.40%); source always rounds absolute change to two decimals.",
+      "existingFix": null,
+      "implementationCommit": null,
+      "pullRequest": null,
+      "ci": "Local validation pending final result; remote Chromium regression required.",
       "cloudflare": "NOT CHECKED",
-      "liveVerification": "Before-state confirmed in actual production DOM.",
+      "liveVerification": "Before-state observed in production; candidate not released.",
+      "finalResolution": null
+    },
+    {
+      "id": "THQ-20261025-004",
+      "routeOrComponent": "/trader/me; local profile Win rate and share copy",
+      "defect": "A profile with zero recorded trades presents 0% win rate as a measured result.",
+      "severity": "P3",
+      "impact": "No completed sell observations are indistinguishable from genuinely measured zero wins.",
+      "state": "FIXED ON BRANCH",
+      "reproduction": "Actual guest production profile:0trades placed,0%Win rate. Existing closed-stat helper returns sells0 and default winRate0.",
+      "existingFix": null,
+      "implementationCommit": null,
+      "pullRequest": null,
+      "ci": "Local validation pending final result; actual compiled empty/buy-only/losing/winning regressions added.",
+      "cloudflare": "NOT CHECKED",
+      "liveVerification": "Before-state observed in production; candidate not released.",
       "finalResolution": null
     }
   ],
@@ -388,11 +476,71 @@
       "Google consent/CMP account configuration",
       "Current Search Console indexing evidence"
     ],
-    "authorization": "Read-only review permitted; no account settings or submission authorized."
+    "authorization": "Read-only review permitted; no account settings or submission authorized.",
+    "publicChecks": {
+      "adsTxt": "google.com,pub-4160578126993254,DIRECT,f08c47fec0942fa0",
+      "scriptPublisher": "ca-pub-4160578126993254",
+      "match": true,
+      "emailSearch": "Connected Gmail search for Google AdSense notices after2026-10-18 returned no results; this is not proof of current account status."
+    }
   },
   "limitations": [
     "Local build passes. Local Chromium blocked by executor socket EPERM; not a failed application test.",
     "Cloud browser currently 1363px. Do not claim five-width production coverage.",
-    "Historical source finding documents are retained unchanged; their prepared/blocker notes are not authoritative current states."
-  ]
+    "Historical source finding documents are retained unchanged; their prepared/blocker notes are not authoritative current states.",
+    "Cloud browser denied a data-URL fixed-width frame harness under its URL security policy; no alternative workaround was attempted. Live rendered width remains1363px.",
+    "Full initial-document HTTP/link sweep is fresh; it is not a claim of fresh human editorial review of all357routes."
+  ],
+  "releases": [
+    {
+      "mergeSha": "e1c41f4c195de253a1ddd24a6deffd928de95250",
+      "pullRequest": 236,
+      "candidateSha": "bfff452bce9b8d7164b058331d5a8b6f89037902",
+      "ci": "All three enforced checks and disposable PostgreSQL SUCCESS at candidate and main.",
+      "cloudflare": {
+        "deploymentId": "cdac0958-80bc-42a7-b1f2-c35593ec4cf0",
+        "sha": "e1c41f4c195de253a1ddd24a6deffd928de95250",
+        "environment": "production",
+        "branch": "main",
+        "status": "success",
+        "observedAt": "2026-10-25T04:54:06.091Z",
+        "nativeEvidenceJob": 121079895182
+      },
+      "liveVerification": {
+        "routes": [
+          "/learn-trading-guide",
+          "/portfolio"
+        ],
+        "viewport": 1363,
+        "themes": [
+          "light",
+          "dark"
+        ],
+        "entry": "/assets/index-CNuRCg_s.js",
+        "result": "Expected names and unchanged 0/100/100/0 values; both controls synchronized; no horizontal document overflow."
+      },
+      "responsiveCI": "20 read-only route/width/theme states, plus existing620route matrix and interactions; fixtures, not production-width evidence."
+    }
+  ],
+  "freshHTTP": {
+    "documentsRequested": 357,
+    "documents200": 357,
+    "indexable": 155,
+    "noindex": 202,
+    "internalLinkOccurrences": 6815,
+    "distinctInternalDestinations": 139,
+    "extraDestinationsRequested": 0,
+    "extraDestinations200": 0,
+    "duplicateIndexableTitles": {},
+    "issues": [],
+    "durationSeconds": 694.9,
+    "evidence": "HTTP-Summary.json and Initial-HTML-Evidence.json.gz"
+  },
+  "freshBrowser": {
+    "productionRoutes": 26,
+    "viewport": 1363,
+    "evidence": "Fresh-Rendered-Observations.json",
+    "allRoutesHumanEditorial": false
+  },
+  "resolutionSource": "This file is a committed source checkpoint. Final immutable release outcomes and issue-state ledger are appended to the implementing PR description after native and live verification."
 }

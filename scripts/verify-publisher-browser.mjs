@@ -20,6 +20,7 @@ import { verifyComparisonArticle } from "./verify-comparison-article.mjs";
 import { verifyBeginnerGuide } from "./verify-beginner-guide.mjs";
 import { verifyMarketsSidebar } from "./verify-markets-sidebar.mjs";
 import { verifyProgressIndicators } from "./verify-progress-indicators.mjs";
+import { verifyProfileMetricAvailability } from "./verify-profile-metric-availability.mjs";
 
 const chrome = ["google-chrome", "google-chrome-stable", "chromium", "chromium-browser"].find(name => spawnSync("which", [name]).status === 0);
 assert.ok(chrome, "Chromium unavailable; this browser check has NOT passed");
@@ -121,7 +122,7 @@ try {
       const provenance = {status:'simulated',provider:'isolated-fixed-fixture',fetchedAt:new Date().toISOString()};
       const data = url.searchParams.get('dataType') === 'candles'
         ? Array.from({length:51},(_,i)=>({time:new Date(Date.UTC(2026,0,1,0,i)).toISOString(),open:0.00000520185,high:0.0000055,low:0.000005,close:0.00000520185*(0.99+i*0.0005),volume:100}))
-        : {price:0.00000520185,change24h:0,changePercent24h:0,high24h:null,low24h:null,volume24h:null,lastUpdated:null,source:'simulated'};
+        : {price:0.00000520185,change24h:chartPriceFixture==='zero'?0:chartPriceFixture==='negative'?-0.00000026:0.00000026,changePercent24h:chartPriceFixture==='zero'?0:chartPriceFixture==='negative'?-5:5,high24h:null,low24h:null,volume24h:null,lastUpdated:null,source:'simulated'};
       payload = {success:true,assetId:'shib',data,provenance};
     }
     else if (url.pathname.endsWith("/get_published_course_catalog")) payload = catalogAvailable ? docs.map(row => row.document) : [];
@@ -252,6 +253,7 @@ try {
   }
   if (phase === null || phase === 6) {
   await verifyProgressIndicators({send,evaluate,waitUntil,origin,delay});
+  await verifyProfileMetricAvailability({send,evaluate,waitUntil,origin});
   await verifyComparisonArticle({send,evaluate,waitUntil,origin,delay,dist});
   await verifyBeginnerGuide({send,evaluate,waitUntil,origin,delay});
   await verifyGuidedLesson({send,evaluate,waitUntil,origin,delay});
@@ -273,6 +275,7 @@ try {
     const ticks = await evaluate(`Array.from(document.querySelectorAll('main .recharts-yAxis .recharts-cartesian-axis-tick-value')).map(t=>t.textContent)`);
     assert.ok(ticks.length >= 2 && ticks.every(t=>Number(t.replace(/[$,]/g,''))>0), 'Positive tiny SHIB axis prices must not display as zero at '+width+'px');
     assert.ok(new Set(ticks).size>=2,'SHIB axis labels retain distinct prices at '+width+'px');
+    assert.equal(await evaluate(`document.querySelector('main .recharts-wrapper').closest('.h-full.flex.flex-col').querySelector('p.text-sm.font-medium.tabular-nums')?.textContent`), '+0.00000026 (+5.00%)', 'Tiny positive quote change must not round to zero');
     if (!(await evaluate(`(()=>{const root=document.querySelector('main .recharts-wrapper').closest('.h-full.flex.flex-col'),card=root.getBoundingClientRect();return Array.from(root.firstElementChild.children).every(e=>{const r=e.getBoundingClientRect();return r.left>=card.left-1&&r.right<=card.right+1})})()`))) tinyHeaderLayoutFailures.push('Chart symbol/quote/refresh clips at '+width+'px');
     if (!(await evaluate(`(()=>{const labels=['Total Value','Available Cash'];const groups=labels.map(label=>Array.from(document.querySelectorAll('main p')).find(p=>p.textContent===label)?.parentElement?.parentElement);const button=Array.from(document.querySelectorAll('main button')).find(b=>b.textContent.trim()==='Details');if(groups.some(g=>!g)||!button)return false;const card=groups[0].closest('.glass-panel').getBoundingClientRect();return [...groups,button].every(e=>{const r=e.getBoundingClientRect();return r.left>=card.left-1&&r.right<=card.right+1})})()`))) tinyHeaderLayoutFailures.push('Portfolio summary/cash/details clips at '+width+'px');
     assert.equal(await evaluate(`(()=>{const c=document.querySelector('main .recharts-wrapper').getBoundingClientRect();return Array.from(document.querySelectorAll('main .recharts-yAxis .recharts-cartesian-axis-tick-value')).every(t=>{const r=t.getBoundingClientRect();return r.left>=c.left-1&&r.right<=c.right+1})})()`),true,'SHIB axis labels remain inside chart at '+width+'px');
@@ -292,6 +295,15 @@ try {
     await evaluate(`Array.from(document.querySelectorAll('main button')).find(b=>b.textContent.trim()==='Details').click();true`);
   }
   assert.deepEqual(tinyHeaderLayoutFailures, [], 'Trading chart and portfolio headers fit all target widths');
+  for (const [mode,expected] of [['negative','-0.00000026 (-5.00%)'],['zero','+0.00 (+0.00%)']]) {
+    chartPriceFixture = mode;
+    for (const width of [360,1440]) {
+      await send('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:width<500});
+      await send('Page.navigate',{url:origin+'/trade/shib'});
+      await waitUntil(`document.querySelector('main .recharts-wrapper')?.closest('.h-full.flex.flex-col').querySelector('p.text-sm.font-medium.tabular-nums')?.textContent === ${JSON.stringify(expected)}`, 'Exact '+mode+' quote change at '+width+'px');
+    }
+  }
+  console.log('PASS tiny quote-change signs/precision and genuine zero; five-width positive and mobile/desktop negative/zero fixtures');
   chartPriceFixture = false;
   await verifyChartWindows({send,evaluate,waitUntil,origin,delay,setWindowFixture:value=>{chartWindowFixture=value;}});
   // A no-real-money answer must not misrepresent optional account storage.

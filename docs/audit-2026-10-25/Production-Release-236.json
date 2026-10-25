@@ -1,0 +1,75 @@
+{
+  "sourceJob": 121079895182,
+  "observations": [
+    {
+      "schema": "tradehq-vercel-production-evidence-v1",
+      "deploymentId": "dpl_GtuY3D5bT4pERRXFWdCtCkVzSbMi",
+      "teamId": "team_fjZ5ggg0P43MsYFSIHbeHAAO",
+      "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+      "commitSha": "e1c41f4c195de253a1ddd24a6deffd928de95250",
+      "target": "production",
+      "state": "READY",
+      "activeAlias": "thetradehq.com",
+      "createdAt": 1792903618318,
+      "observedAt": 1792904046091,
+      "requests": 2,
+      "authorization": {
+        "merge": false,
+        "productionRelease": false
+      }
+    },
+    {
+      "schema": "tradehq-cloudflare-account-observation-v1",
+      "observedAt": "2026-10-25T04:54:06.091Z",
+      "accountId": "01087d56e4cb7b728a7a9ddbcb12b9bb",
+      "project": "tradehq-preview",
+      "nativeTokenActive": true,
+      "activeProduction": {
+        "id": "cdac0958-80bc-42a7-b1f2-c35593ec4cf0",
+        "sha": "e1c41f4c195de253a1ddd24a6deffd928de95250",
+        "environment": "production",
+        "branch": "main",
+        "status": "success",
+        "createdAt": "2026-10-25T04:46:57.601051Z"
+      },
+      "previousSuccessfulProduction": {
+        "id": "0864e0fc-dfa5-4e06-b0cf-e2a6848105dd",
+        "sha": "0e4f0dde840905fb95d88d12581643b4635153dd",
+        "environment": "production",
+        "branch": "main",
+        "status": "success",
+        "createdAt": "2026-10-24T17:14:56.56832Z"
+      },
+      "historyWindow": {
+        "page": 1,
+        "perPage": 25,
+        "rows": 25,
+        "completeAccountHistory": false
+      },
+      "subscriptions": [],
+      "usage": {
+        "from": "2026-10-01T00:00:00Z",
+        "to": "2026-10-25T04:54:06.091Z",
+        "dataset": "pagesFunctionsInvocationsAdaptiveGroups",
+        "groups": 2,
+        "accountRequests": 24733,
+        "accountErrors": 0,
+        "projectScriptMatched": true,
+        "projectRequests": 22805
+      },
+      "quotaHeadroomVerified": false,
+      "rollbackPerformed": false,
+      "authorization": {
+        "providerWrite": false,
+        "modelCall": false,
+        "merge": false,
+        "productionRelease": false
+      },
+      "limitations": [
+        "Adaptive analytics are sampled observations, not authoritative billing counters.",
+        "Subscription metadata does not establish remaining Pages builds or all provider/model quota.",
+        "Previous successful production is a candidate under Cloudflare documentation; an actual authorized rollback/restore remains unperformed."
+      ]
+    }
+  ]
+}

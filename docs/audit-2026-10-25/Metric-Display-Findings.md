@@ -1,0 +1,9 @@
+# Remaining quote and profile display findings
+
+THQ-20261025-003, P3: actual public SHIB chart displayed a nonzero percentage movement as `+0.00 (+2.40%)`; the absolute change always used two decimal places. Reuse the existing significant-digit price formatter for nonzero sub-cent changes; preserve other change formatting, signs, percentage, quote source, timestamps and all numeric inputs. Extend the actual compiled chart fixture to positive/negative tiny changes and genuine zero, retaining existing axis, tooltip and mobile bounds assertions.
+
+THQ-20261025-004, P3: actual empty guest `/trader/me` showed0trades and0%Win rate. Keep the existing closed-trade calculator unchanged; use its existing sell count only to distinguish unavailable observations from a measured0%. Show an em dash with No completed sells, and apply the same qualification to the existing optional share text. A losing completed sell still shows0%; a winning one retains100%. No public-visibility handler, share destination, account authorization, stored portfolio or calculation is changed.
+
+The browser regression creates four disposable loopback portfolio records and checks the real profile at360/390/768/1280/1440px. It performs no order/account action, asserts the seeded record is unchanged and restores fixture storage. All remote HTTPS traffic is already fulfilled by the existing isolated fixture runner. This is not a test on a real account.
+
+These are interface accuracy findings, not individual asserted Google policy violations. Rollback is a reviewed revert of the display changes and associated regressions; no data rollback. The previous release236 is fully verified before this batch begins. Exact candidate CI, native previews, protected merge, exact native production evidence and live affected-page checks remain required before this batch is called complete.
