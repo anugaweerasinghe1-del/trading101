@@ -1,0 +1,475 @@
+{
+  "path": "/courses/options-trading-fundamentals/implied-volatility-and-earnings",
+  "sha": "c3484f39a71e4f638caec7075083b086865fb247",
+  "origin": "https://www.thetradehq.com",
+  "capturedAt": "2026-10-25T15:59:18.765Z",
+  "outcome": "COLLECTED_NOT_HUMAN_REVIEWED",
+  "widths": [
+    {
+      "width": 360,
+      "height": 800,
+      "path": "/courses/options-trading-fundamentals/implied-volatility-and-earnings",
+      "title": "Implied Volatility & Trading Around Earnings — Options Trading Fundamentals | TradeHQ",
+      "heading": "Implied Volatility & Trading Around Earnings",
+      "supplementaryNotes": [
+        {
+          "path": "/courses/options-trading-fundamentals/implied-volatility-and-earnings",
+          "text": "Learning notes: Implied Volatility & Trading Around Earnings\n\nImplied volatility is a model-implied input derived from option prices, with limits as a forecast of realised volatility. TradeHQ offers $100,000 virtual cash for supported spot instruments. Derivatives contracts remain conceptual exercises. Educational only, not financial advice.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nSummary\n\nImplied volatility is a model-implied input derived from option prices, with limits as a forecast of realised volatility.\n\nWhat implied volatility actually is\n\nImplied volatility (IV) is the volatility figure that, plugged into an option pricing model, would produce the option's current market price. It is not a prediction any single person makes — it emerges from the aggregate bids and offers of every participant. Changes can reflect expected uncertainty, demand for protection and risk premiums. IV is model-dependent and need not equal later realised volatility.\n\nIV rank vs IV percentile\n\nThe raw IV number is meaningless without context. IV rank compares today's IV to the highest and lowest reading of the last 12 months on a 0-100 scale. IV percentile tells you what fraction of the last year the stock traded below today's IV. Neither an IV-rank threshold nor an IV-percentile threshold establishes a buy or sell rule. Compare the chosen lookback, option expiry, price source and costs before interpreting either measure.\n\nThe earnings trap\n\nImplied volatility often rises before earnings and can fall sharply afterwards. A trader can be directionally correct and still lose on a long option if the volatility drop and time decay outweigh the price move.\n\nComparing hypothetical earnings payoffs\n\nIn a paper worksheet, compare hypothetical long-premium and defined-risk premium-selling structures around earnings to see how direction, implied volatility and the size of the actual move interact. TradeHQ does not price these structures. Avoid treating volatility selling as inherently safer; short premium can carry substantial risk.\n\nPractice loop\n\nFor a historical study, record dated option quotes and implied-volatility observations from an options-data source before and after an earnings announcement. Keep the expiry, strike and data methodology consistent, and record price changes as well as volatility changes. TradeHQ does not supply an options chain or IV-rank data. A small sample can illustrate mechanisms without establishing a reliable trading edge.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKey takeaways\nIV is inferred from option prices under a model; it can differ from future realised volatility.\nIV rank contextualises today's IV against the last 12 months.\nIV crush after earnings can turn a correct directional bet into a loss.\nElevated implied volatility changes the payoff profile of premium-selling strategies, but higher premiums also reflect higher expected uncertainty and risk.\nCheck your understanding\nIV rank of 80 means: Options: IV is at 80%; IV is near a 12-month high; IV is near a 12-month low; 80% of options are profitable. Correct answer: IV is near a 12-month high. Why: IV rank normalises IV against the last year on a 0-100 scale.\nWhy can a long option lose even if the price moves in the expected direction after earnings? Options: Because options never follow the underlying; A drop in implied volatility and time value can offset the directional gain; Because earnings cancel the contract; Because all options are illiquid. Correct answer: A drop in implied volatility and time value can offset the directional gain. Why: Option value depends on more than direction; implied volatility and time value can change sharply after earnings.\nWhat does a high IV rank tell you? Options: A premium-selling trade is guaranteed to work; Current implied volatility is high relative to its own recent range; The stock must fall; The next move will be small. Correct answer: Current implied volatility is high relative to its own recent range. Why: IV rank is context about relative option pricing, not a standalone buy or sell signal.\nImplied volatility is: Options: Historical vol over 30 days; An exchange forecast; The volatility that makes model = market price; The stock's beta. Correct answer: The volatility that makes model = market price. Why: IV is the vol input that reconciles a pricing model with the live option price.\nSources\nOIC — Vega and implied volatility sensitivity (https://www.optionseducation.org/advancedconcepts/vega)\nOIC — IV rank and percentile definitions (https://www.optionseducation.org/news/june-office-hours-faqs-iv-statistics-position-management-and-the-wheel-strategy)\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nReferences and related pages\nOIC — Vega and implied volatility sensitivity\nOIC — IV rank and percentile definitions\nPrevious: Defined-Risk Spreads — Verticals & Iron Condors\nNext: Options Risk Management — Sizing, Rolling & Cutting Losses\nOptions Trading Fundamentals\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 360,
+      "scrollHeight": 13996,
+      "viewportWidth": 360,
+      "canonical": "https://www.thetradehq.com/courses/options-trading-fundamentals/implied-volatility-and-earnings",
+      "images": [
+        {
+          "alt": "Implied Volatility & Trading Around Earnings — illustration",
+          "complete": true,
+          "naturalWidth": 1200,
+          "source": "https://www.thetradehq.com/assets/options-hero-DeA_XZdf.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "53882527784ab9ef-360-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "53882527784ab9ef-360-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "53882527784ab9ef-360-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "53882527784ab9ef-360-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "53882527784ab9ef-360-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "53882527784ab9ef-360-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "53882527784ab9ef-360-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "53882527784ab9ef-360-07.png"
+        },
+        {
+          "y": 5440,
+          "screenshot": "53882527784ab9ef-360-08.png"
+        },
+        {
+          "y": 6120,
+          "screenshot": "53882527784ab9ef-360-09.png"
+        },
+        {
+          "y": 6800,
+          "screenshot": "53882527784ab9ef-360-10.png"
+        },
+        {
+          "y": 7480,
+          "screenshot": "53882527784ab9ef-360-11.png"
+        },
+        {
+          "y": 8160,
+          "screenshot": "53882527784ab9ef-360-12.png"
+        },
+        {
+          "y": 8840,
+          "screenshot": "53882527784ab9ef-360-13.png"
+        },
+        {
+          "y": 9520,
+          "screenshot": "53882527784ab9ef-360-14.png"
+        },
+        {
+          "y": 10200,
+          "screenshot": "53882527784ab9ef-360-15.png"
+        },
+        {
+          "y": 10880,
+          "screenshot": "53882527784ab9ef-360-16.png"
+        },
+        {
+          "y": 11560,
+          "screenshot": "53882527784ab9ef-360-17.png"
+        },
+        {
+          "y": 12240,
+          "screenshot": "53882527784ab9ef-360-18.png"
+        },
+        {
+          "y": 12920,
+          "screenshot": "53882527784ab9ef-360-19.png"
+        },
+        {
+          "y": 13196,
+          "screenshot": "53882527784ab9ef-360-20.png"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "path": "/courses/options-trading-fundamentals/implied-volatility-and-earnings",
+      "title": "Implied Volatility & Trading Around Earnings — Options Trading Fundamentals | TradeHQ",
+      "heading": "Implied Volatility & Trading Around Earnings",
+      "supplementaryNotes": [
+        {
+          "path": "/courses/options-trading-fundamentals/implied-volatility-and-earnings",
+          "text": "Learning notes: Implied Volatility & Trading Around Earnings\n\nImplied volatility is a model-implied input derived from option prices, with limits as a forecast of realised volatility. TradeHQ offers $100,000 virtual cash for supported spot instruments. Derivatives contracts remain conceptual exercises. Educational only, not financial advice.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nSummary\n\nImplied volatility is a model-implied input derived from option prices, with limits as a forecast of realised volatility.\n\nWhat implied volatility actually is\n\nImplied volatility (IV) is the volatility figure that, plugged into an option pricing model, would produce the option's current market price. It is not a prediction any single person makes — it emerges from the aggregate bids and offers of every participant. Changes can reflect expected uncertainty, demand for protection and risk premiums. IV is model-dependent and need not equal later realised volatility.\n\nIV rank vs IV percentile\n\nThe raw IV number is meaningless without context. IV rank compares today's IV to the highest and lowest reading of the last 12 months on a 0-100 scale. IV percentile tells you what fraction of the last year the stock traded below today's IV. Neither an IV-rank threshold nor an IV-percentile threshold establishes a buy or sell rule. Compare the chosen lookback, option expiry, price source and costs before interpreting either measure.\n\nThe earnings trap\n\nImplied volatility often rises before earnings and can fall sharply afterwards. A trader can be directionally correct and still lose on a long option if the volatility drop and time decay outweigh the price move.\n\nComparing hypothetical earnings payoffs\n\nIn a paper worksheet, compare hypothetical long-premium and defined-risk premium-selling structures around earnings to see how direction, implied volatility and the size of the actual move interact. TradeHQ does not price these structures. Avoid treating volatility selling as inherently safer; short premium can carry substantial risk.\n\nPractice loop\n\nFor a historical study, record dated option quotes and implied-volatility observations from an options-data source before and after an earnings announcement. Keep the expiry, strike and data methodology consistent, and record price changes as well as volatility changes. TradeHQ does not supply an options chain or IV-rank data. A small sample can illustrate mechanisms without establishing a reliable trading edge.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKey takeaways\nIV is inferred from option prices under a model; it can differ from future realised volatility.\nIV rank contextualises today's IV against the last 12 months.\nIV crush after earnings can turn a correct directional bet into a loss.\nElevated implied volatility changes the payoff profile of premium-selling strategies, but higher premiums also reflect higher expected uncertainty and risk.\nCheck your understanding\nIV rank of 80 means: Options: IV is at 80%; IV is near a 12-month high; IV is near a 12-month low; 80% of options are profitable. Correct answer: IV is near a 12-month high. Why: IV rank normalises IV against the last year on a 0-100 scale.\nWhy can a long option lose even if the price moves in the expected direction after earnings? Options: Because options never follow the underlying; A drop in implied volatility and time value can offset the directional gain; Because earnings cancel the contract; Because all options are illiquid. Correct answer: A drop in implied volatility and time value can offset the directional gain. Why: Option value depends on more than direction; implied volatility and time value can change sharply after earnings.\nWhat does a high IV rank tell you? Options: A premium-selling trade is guaranteed to work; Current implied volatility is high relative to its own recent range; The stock must fall; The next move will be small. Correct answer: Current implied volatility is high relative to its own recent range. Why: IV rank is context about relative option pricing, not a standalone buy or sell signal.\nImplied volatility is: Options: Historical vol over 30 days; An exchange forecast; The volatility that makes model = market price; The stock's beta. Correct answer: The volatility that makes model = market price. Why: IV is the vol input that reconciles a pricing model with the live option price.\nSources\nOIC — Vega and implied volatility sensitivity (https://www.optionseducation.org/advancedconcepts/vega)\nOIC — IV rank and percentile definitions (https://www.optionseducation.org/news/june-office-hours-faqs-iv-statistics-position-management-and-the-wheel-strategy)\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nReferences and related pages\nOIC — Vega and implied volatility sensitivity\nOIC — IV rank and percentile definitions\nPrevious: Defined-Risk Spreads — Verticals & Iron Condors\nNext: Options Risk Management — Sizing, Rolling & Cutting Losses\nOptions Trading Fundamentals\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 390,
+      "scrollHeight": 13232,
+      "viewportWidth": 390,
+      "canonical": "https://www.thetradehq.com/courses/options-trading-fundamentals/implied-volatility-and-earnings",
+      "images": [
+        {
+          "alt": "Implied Volatility & Trading Around Earnings — illustration",
+          "complete": true,
+          "naturalWidth": 1200,
+          "source": "https://www.thetradehq.com/assets/options-hero-DeA_XZdf.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "53882527784ab9ef-390-00.png"
+        },
+        {
+          "y": 717,
+          "screenshot": "53882527784ab9ef-390-01.png"
+        },
+        {
+          "y": 1434,
+          "screenshot": "53882527784ab9ef-390-02.png"
+        },
+        {
+          "y": 2151,
+          "screenshot": "53882527784ab9ef-390-03.png"
+        },
+        {
+          "y": 2868,
+          "screenshot": "53882527784ab9ef-390-04.png"
+        },
+        {
+          "y": 3585,
+          "screenshot": "53882527784ab9ef-390-05.png"
+        },
+        {
+          "y": 4302,
+          "screenshot": "53882527784ab9ef-390-06.png"
+        },
+        {
+          "y": 5019,
+          "screenshot": "53882527784ab9ef-390-07.png"
+        },
+        {
+          "y": 5736,
+          "screenshot": "53882527784ab9ef-390-08.png"
+        },
+        {
+          "y": 6453,
+          "screenshot": "53882527784ab9ef-390-09.png"
+        },
+        {
+          "y": 7170,
+          "screenshot": "53882527784ab9ef-390-10.png"
+        },
+        {
+          "y": 7887,
+          "screenshot": "53882527784ab9ef-390-11.png"
+        },
+        {
+          "y": 8604,
+          "screenshot": "53882527784ab9ef-390-12.png"
+        },
+        {
+          "y": 9321,
+          "screenshot": "53882527784ab9ef-390-13.png"
+        },
+        {
+          "y": 10038,
+          "screenshot": "53882527784ab9ef-390-14.png"
+        },
+        {
+          "y": 10755,
+          "screenshot": "53882527784ab9ef-390-15.png"
+        },
+        {
+          "y": 11472,
+          "screenshot": "53882527784ab9ef-390-16.png"
+        },
+        {
+          "y": 12189,
+          "screenshot": "53882527784ab9ef-390-17.png"
+        },
+        {
+          "y": 12388,
+          "screenshot": "53882527784ab9ef-390-18.png"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "path": "/courses/options-trading-fundamentals/implied-volatility-and-earnings",
+      "title": "Implied Volatility & Trading Around Earnings — Options Trading Fundamentals | TradeHQ",
+      "heading": "Implied Volatility & Trading Around Earnings",
+      "supplementaryNotes": [
+        {
+          "path": "/courses/options-trading-fundamentals/implied-volatility-and-earnings",
+          "text": "Learning notes: Implied Volatility & Trading Around Earnings\n\nImplied volatility is a model-implied input derived from option prices, with limits as a forecast of realised volatility. TradeHQ offers $100,000 virtual cash for supported spot instruments. Derivatives contracts remain conceptual exercises. Educational only, not financial advice.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nSummary\n\nImplied volatility is a model-implied input derived from option prices, with limits as a forecast of realised volatility.\n\nWhat implied volatility actually is\n\nImplied volatility (IV) is the volatility figure that, plugged into an option pricing model, would produce the option's current market price. It is not a prediction any single person makes — it emerges from the aggregate bids and offers of every participant. Changes can reflect expected uncertainty, demand for protection and risk premiums. IV is model-dependent and need not equal later realised volatility.\n\nIV rank vs IV percentile\n\nThe raw IV number is meaningless without context. IV rank compares today's IV to the highest and lowest reading of the last 12 months on a 0-100 scale. IV percentile tells you what fraction of the last year the stock traded below today's IV. Neither an IV-rank threshold nor an IV-percentile threshold establishes a buy or sell rule. Compare the chosen lookback, option expiry, price source and costs before interpreting either measure.\n\nThe earnings trap\n\nImplied volatility often rises before earnings and can fall sharply afterwards. A trader can be directionally correct and still lose on a long option if the volatility drop and time decay outweigh the price move.\n\nComparing hypothetical earnings payoffs\n\nIn a paper worksheet, compare hypothetical long-premium and defined-risk premium-selling structures around earnings to see how direction, implied volatility and the size of the actual move interact. TradeHQ does not price these structures. Avoid treating volatility selling as inherently safer; short premium can carry substantial risk.\n\nPractice loop\n\nFor a historical study, record dated option quotes and implied-volatility observations from an options-data source before and after an earnings announcement. Keep the expiry, strike and data methodology consistent, and record price changes as well as volatility changes. TradeHQ does not supply an options chain or IV-rank data. A small sample can illustrate mechanisms without establishing a reliable trading edge.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKey takeaways\nIV is inferred from option prices under a model; it can differ from future realised volatility.\nIV rank contextualises today's IV against the last 12 months.\nIV crush after earnings can turn a correct directional bet into a loss.\nElevated implied volatility changes the payoff profile of premium-selling strategies, but higher premiums also reflect higher expected uncertainty and risk.\nCheck your understanding\nIV rank of 80 means: Options: IV is at 80%; IV is near a 12-month high; IV is near a 12-month low; 80% of options are profitable. Correct answer: IV is near a 12-month high. Why: IV rank normalises IV against the last year on a 0-100 scale.\nWhy can a long option lose even if the price moves in the expected direction after earnings? Options: Because options never follow the underlying; A drop in implied volatility and time value can offset the directional gain; Because earnings cancel the contract; Because all options are illiquid. Correct answer: A drop in implied volatility and time value can offset the directional gain. Why: Option value depends on more than direction; implied volatility and time value can change sharply after earnings.\nWhat does a high IV rank tell you? Options: A premium-selling trade is guaranteed to work; Current implied volatility is high relative to its own recent range; The stock must fall; The next move will be small. Correct answer: Current implied volatility is high relative to its own recent range. Why: IV rank is context about relative option pricing, not a standalone buy or sell signal.\nImplied volatility is: Options: Historical vol over 30 days; An exchange forecast; The volatility that makes model = market price; The stock's beta. Correct answer: The volatility that makes model = market price. Why: IV is the vol input that reconciles a pricing model with the live option price.\nSources\nOIC — Vega and implied volatility sensitivity (https://www.optionseducation.org/advancedconcepts/vega)\nOIC — IV rank and percentile definitions (https://www.optionseducation.org/news/june-office-hours-faqs-iv-statistics-position-management-and-the-wheel-strategy)\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nReferences and related pages\nOIC — Vega and implied volatility sensitivity\nOIC — IV rank and percentile definitions\nPrevious: Defined-Risk Spreads — Verticals & Iron Condors\nNext: Options Risk Management — Sizing, Rolling & Cutting Losses\nOptions Trading Fundamentals\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 753,
+      "scrollHeight": 9115,
+      "viewportWidth": 768,
+      "canonical": "https://www.thetradehq.com/courses/options-trading-fundamentals/implied-volatility-and-earnings",
+      "images": [
+        {
+          "alt": "Implied Volatility & Trading Around Earnings — illustration",
+          "complete": true,
+          "naturalWidth": 1200,
+          "source": "https://www.thetradehq.com/assets/options-hero-DeA_XZdf.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "53882527784ab9ef-768-00.png"
+        },
+        {
+          "y": 870,
+          "screenshot": "53882527784ab9ef-768-01.png"
+        },
+        {
+          "y": 1740,
+          "screenshot": "53882527784ab9ef-768-02.png"
+        },
+        {
+          "y": 2610,
+          "screenshot": "53882527784ab9ef-768-03.png"
+        },
+        {
+          "y": 3480,
+          "screenshot": "53882527784ab9ef-768-04.png"
+        },
+        {
+          "y": 4350,
+          "screenshot": "53882527784ab9ef-768-05.png"
+        },
+        {
+          "y": 5220,
+          "screenshot": "53882527784ab9ef-768-06.png"
+        },
+        {
+          "y": 6090,
+          "screenshot": "53882527784ab9ef-768-07.png"
+        },
+        {
+          "y": 6960,
+          "screenshot": "53882527784ab9ef-768-08.png"
+        },
+        {
+          "y": 7830,
+          "screenshot": "53882527784ab9ef-768-09.png"
+        },
+        {
+          "y": 8091,
+          "screenshot": "53882527784ab9ef-768-10.png"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "path": "/courses/options-trading-fundamentals/implied-volatility-and-earnings",
+      "title": "Implied Volatility & Trading Around Earnings — Options Trading Fundamentals | TradeHQ",
+      "heading": "Implied Volatility & Trading Around Earnings",
+      "supplementaryNotes": [
+        {
+          "path": "/courses/options-trading-fundamentals/implied-volatility-and-earnings",
+          "text": "Learning notes: Implied Volatility & Trading Around Earnings\n\nImplied volatility is a model-implied input derived from option prices, with limits as a forecast of realised volatility. TradeHQ offers $100,000 virtual cash for supported spot instruments. Derivatives contracts remain conceptual exercises. Educational only, not financial advice.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nSummary\n\nImplied volatility is a model-implied input derived from option prices, with limits as a forecast of realised volatility.\n\nWhat implied volatility actually is\n\nImplied volatility (IV) is the volatility figure that, plugged into an option pricing model, would produce the option's current market price. It is not a prediction any single person makes — it emerges from the aggregate bids and offers of every participant. Changes can reflect expected uncertainty, demand for protection and risk premiums. IV is model-dependent and need not equal later realised volatility.\n\nIV rank vs IV percentile\n\nThe raw IV number is meaningless without context. IV rank compares today's IV to the highest and lowest reading of the last 12 months on a 0-100 scale. IV percentile tells you what fraction of the last year the stock traded below today's IV. Neither an IV-rank threshold nor an IV-percentile threshold establishes a buy or sell rule. Compare the chosen lookback, option expiry, price source and costs before interpreting either measure.\n\nThe earnings trap\n\nImplied volatility often rises before earnings and can fall sharply afterwards. A trader can be directionally correct and still lose on a long option if the volatility drop and time decay outweigh the price move.\n\nComparing hypothetical earnings payoffs\n\nIn a paper worksheet, compare hypothetical long-premium and defined-risk premium-selling structures around earnings to see how direction, implied volatility and the size of the actual move interact. TradeHQ does not price these structures. Avoid treating volatility selling as inherently safer; short premium can carry substantial risk.\n\nPractice loop\n\nFor a historical study, record dated option quotes and implied-volatility observations from an options-data source before and after an earnings announcement. Keep the expiry, strike and data methodology consistent, and record price changes as well as volatility changes. TradeHQ does not supply an options chain or IV-rank data. A small sample can illustrate mechanisms without establishing a reliable trading edge.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKey takeaways\nIV is inferred from option prices under a model; it can differ from future realised volatility.\nIV rank contextualises today's IV against the last 12 months.\nIV crush after earnings can turn a correct directional bet into a loss.\nElevated implied volatility changes the payoff profile of premium-selling strategies, but higher premiums also reflect higher expected uncertainty and risk.\nCheck your understanding\nIV rank of 80 means: Options: IV is at 80%; IV is near a 12-month high; IV is near a 12-month low; 80% of options are profitable. Correct answer: IV is near a 12-month high. Why: IV rank normalises IV against the last year on a 0-100 scale.\nWhy can a long option lose even if the price moves in the expected direction after earnings? Options: Because options never follow the underlying; A drop in implied volatility and time value can offset the directional gain; Because earnings cancel the contract; Because all options are illiquid. Correct answer: A drop in implied volatility and time value can offset the directional gain. Why: Option value depends on more than direction; implied volatility and time value can change sharply after earnings.\nWhat does a high IV rank tell you? Options: A premium-selling trade is guaranteed to work; Current implied volatility is high relative to its own recent range; The stock must fall; The next move will be small. Correct answer: Current implied volatility is high relative to its own recent range. Why: IV rank is context about relative option pricing, not a standalone buy or sell signal.\nImplied volatility is: Options: Historical vol over 30 days; An exchange forecast; The volatility that makes model = market price; The stock's beta. Correct answer: The volatility that makes model = market price. Why: IV is the vol input that reconciles a pricing model with the live option price.\nSources\nOIC — Vega and implied volatility sensitivity (https://www.optionseducation.org/advancedconcepts/vega)\nOIC — IV rank and percentile definitions (https://www.optionseducation.org/news/june-office-hours-faqs-iv-statistics-position-management-and-the-wheel-strategy)\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nReferences and related pages\nOIC — Vega and implied volatility sensitivity\nOIC — IV rank and percentile definitions\nPrevious: Defined-Risk Spreads — Verticals & Iron Condors\nNext: Options Risk Management — Sizing, Rolling & Cutting Losses\nOptions Trading Fundamentals\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1265,
+      "scrollHeight": 8543,
+      "viewportWidth": 1280,
+      "canonical": "https://www.thetradehq.com/courses/options-trading-fundamentals/implied-volatility-and-earnings",
+      "images": [
+        {
+          "alt": "Implied Volatility & Trading Around Earnings — illustration",
+          "complete": true,
+          "naturalWidth": 1200,
+          "source": "https://www.thetradehq.com/assets/options-hero-DeA_XZdf.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "53882527784ab9ef-1280-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "53882527784ab9ef-1280-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "53882527784ab9ef-1280-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "53882527784ab9ef-1280-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "53882527784ab9ef-1280-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "53882527784ab9ef-1280-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "53882527784ab9ef-1280-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "53882527784ab9ef-1280-07.png"
+        },
+        {
+          "y": 5440,
+          "screenshot": "53882527784ab9ef-1280-08.png"
+        },
+        {
+          "y": 6120,
+          "screenshot": "53882527784ab9ef-1280-09.png"
+        },
+        {
+          "y": 6800,
+          "screenshot": "53882527784ab9ef-1280-10.png"
+        },
+        {
+          "y": 7480,
+          "screenshot": "53882527784ab9ef-1280-11.png"
+        },
+        {
+          "y": 7743,
+          "screenshot": "53882527784ab9ef-1280-12.png"
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "path": "/courses/options-trading-fundamentals/implied-volatility-and-earnings",
+      "title": "Implied Volatility & Trading Around Earnings — Options Trading Fundamentals | TradeHQ",
+      "heading": "Implied Volatility & Trading Around Earnings",
+      "supplementaryNotes": [
+        {
+          "path": "/courses/options-trading-fundamentals/implied-volatility-and-earnings",
+          "text": "Learning notes: Implied Volatility & Trading Around Earnings\n\nImplied volatility is a model-implied input derived from option prices, with limits as a forecast of realised volatility. TradeHQ offers $100,000 virtual cash for supported spot instruments. Derivatives contracts remain conceptual exercises. Educational only, not financial advice.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nSummary\n\nImplied volatility is a model-implied input derived from option prices, with limits as a forecast of realised volatility.\n\nWhat implied volatility actually is\n\nImplied volatility (IV) is the volatility figure that, plugged into an option pricing model, would produce the option's current market price. It is not a prediction any single person makes — it emerges from the aggregate bids and offers of every participant. Changes can reflect expected uncertainty, demand for protection and risk premiums. IV is model-dependent and need not equal later realised volatility.\n\nIV rank vs IV percentile\n\nThe raw IV number is meaningless without context. IV rank compares today's IV to the highest and lowest reading of the last 12 months on a 0-100 scale. IV percentile tells you what fraction of the last year the stock traded below today's IV. Neither an IV-rank threshold nor an IV-percentile threshold establishes a buy or sell rule. Compare the chosen lookback, option expiry, price source and costs before interpreting either measure.\n\nThe earnings trap\n\nImplied volatility often rises before earnings and can fall sharply afterwards. A trader can be directionally correct and still lose on a long option if the volatility drop and time decay outweigh the price move.\n\nComparing hypothetical earnings payoffs\n\nIn a paper worksheet, compare hypothetical long-premium and defined-risk premium-selling structures around earnings to see how direction, implied volatility and the size of the actual move interact. TradeHQ does not price these structures. Avoid treating volatility selling as inherently safer; short premium can carry substantial risk.\n\nPractice loop\n\nFor a historical study, record dated option quotes and implied-volatility observations from an options-data source before and after an earnings announcement. Keep the expiry, strike and data methodology consistent, and record price changes as well as volatility changes. TradeHQ does not supply an options chain or IV-rank data. A small sample can illustrate mechanisms without establishing a reliable trading edge.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKey takeaways\nIV is inferred from option prices under a model; it can differ from future realised volatility.\nIV rank contextualises today's IV against the last 12 months.\nIV crush after earnings can turn a correct directional bet into a loss.\nElevated implied volatility changes the payoff profile of premium-selling strategies, but higher premiums also reflect higher expected uncertainty and risk.\nCheck your understanding\nIV rank of 80 means: Options: IV is at 80%; IV is near a 12-month high; IV is near a 12-month low; 80% of options are profitable. Correct answer: IV is near a 12-month high. Why: IV rank normalises IV against the last year on a 0-100 scale.\nWhy can a long option lose even if the price moves in the expected direction after earnings? Options: Because options never follow the underlying; A drop in implied volatility and time value can offset the directional gain; Because earnings cancel the contract; Because all options are illiquid. Correct answer: A drop in implied volatility and time value can offset the directional gain. Why: Option value depends on more than direction; implied volatility and time value can change sharply after earnings.\nWhat does a high IV rank tell you? Options: A premium-selling trade is guaranteed to work; Current implied volatility is high relative to its own recent range; The stock must fall; The next move will be small. Correct answer: Current implied volatility is high relative to its own recent range. Why: IV rank is context about relative option pricing, not a standalone buy or sell signal.\nImplied volatility is: Options: Historical vol over 30 days; An exchange forecast; The volatility that makes model = market price; The stock's beta. Correct answer: The volatility that makes model = market price. Why: IV is the vol input that reconciles a pricing model with the live option price.\nSources\nOIC — Vega and implied volatility sensitivity (https://www.optionseducation.org/advancedconcepts/vega)\nOIC — IV rank and percentile definitions (https://www.optionseducation.org/news/june-office-hours-faqs-iv-statistics-position-management-and-the-wheel-strategy)\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nReferences and related pages\nOIC — Vega and implied volatility sensitivity\nOIC — IV rank and percentile definitions\nPrevious: Defined-Risk Spreads — Verticals & Iron Condors\nNext: Options Risk Management — Sizing, Rolling & Cutting Losses\nOptions Trading Fundamentals\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1905,
+      "scrollHeight": 8467,
+      "viewportWidth": 1920,
+      "canonical": "https://www.thetradehq.com/courses/options-trading-fundamentals/implied-volatility-and-earnings",
+      "images": [
+        {
+          "alt": "Implied Volatility & Trading Around Earnings — illustration",
+          "complete": true,
+          "naturalWidth": 1200,
+          "source": "https://www.thetradehq.com/assets/options-hero-DeA_XZdf.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "53882527784ab9ef-1920-00.png"
+        },
+        {
+          "y": 918,
+          "screenshot": "53882527784ab9ef-1920-01.png"
+        },
+        {
+          "y": 1836,
+          "screenshot": "53882527784ab9ef-1920-02.png"
+        },
+        {
+          "y": 2754,
+          "screenshot": "53882527784ab9ef-1920-03.png"
+        },
+        {
+          "y": 3672,
+          "screenshot": "53882527784ab9ef-1920-04.png"
+        },
+        {
+          "y": 4590,
+          "screenshot": "53882527784ab9ef-1920-05.png"
+        },
+        {
+          "y": 5508,
+          "screenshot": "53882527784ab9ef-1920-06.png"
+        },
+        {
+          "y": 6426,
+          "screenshot": "53882527784ab9ef-1920-07.png"
+        },
+        {
+          "y": 7344,
+          "screenshot": "53882527784ab9ef-1920-08.png"
+        },
+        {
+          "y": 7387,
+          "screenshot": "53882527784ab9ef-1920-09.png"
+        }
+      ]
+    }
+  ]
+}

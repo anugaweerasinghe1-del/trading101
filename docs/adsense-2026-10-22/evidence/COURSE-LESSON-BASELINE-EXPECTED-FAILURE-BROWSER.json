@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-10-25T15:35:43.957Z",
+  "sha": "LOCAL",
+  "origin": "http://127.0.0.1:4181",
+  "outcome": "FAIL",
+  "rows": [
+    {
+      "width": 360,
+      "path": "/courses/options-trading-fundamentals/what-is-an-option",
+      "text": "homecoursesoptions trading fundamentalswhat is an option? calls & puts explainedintermediate·lesson 1 of 5·8 min readwhat is an option? calls & puts explaineda stock option gives its buyer a contractual right; contract size, exercise style and settlement terms determine what that right involves.by anuga weerasinghe quick answerwhat is an option? calls & puts explained?a stock option gives its buyer a contractual right; contract size, exercise style and settlement terms determine what that right involves. a standard unadjusted us equity option generally covers 100 shares; adjusted and other contracts can differ. at expiration, before costs, a purchased call has a net gain above strike + premium; a purchased put has a net gain below strike − premium. those levels are break-even prices.the core definitionthis lesson focuses on standard unadjusted us equity options, which generally cover 100 shares. a call gives its buyer a right to buy and a put a right to sell at the strike under the contract terms. american-style options can be exercised before expiry; european-style options have a different exercise schedule. adjusted contracts and cash-settled index options can have different deliverables. the writer takes the corresponding obligation. read the specific contract and occ risk disclosure rather than assume every option is identical.because one contract controls 100 shares, a call option quoted at $2.50 actually costs $250 to buy. that single number embeds four separate ideas: the direction you expect (up for calls, down for puts), how far you expect the move to go (the strike), how much time you're giving it (the expiration), and how much volatility the market currently prices in.why options exista share holder can buy a put to offset some losses below its strike during the option term, at the cost of its premium. a covered call adds premium income but limits upside and retains substantial share-price risk. these examples illustrate different payoffs; neither is a guaranteed return or a universally suitable position.a simple worked exampleimagine apple trades at $180 and you buy one 30-day $185 call for $3.00 ($300 total). three things can happen. if apple closes above $188 on expiration, you're profitable — the intrinsic value of the call exceeds what you paid. if it closes between $185 and $188 you're partially in-the-money but net negative. if it closes at or below $185, the call expires worthless and you lose the full $300 — but nothing more. these are hypothetical expiration payoffs before costs for the purchased option alone. exercise can create a stock position with separate funding and market risk. short options have different obligations, and an uncovered short call can have unlimited loss.what you can practise on tradehqtradehq supports spot instruments, including shares and etfs, with $100,000 virtual capital. it does not model option strikes, expirations or premiums. use this lesson's worked examples to calculate hypothetical contract payoffs on paper; buying an underlying share in the simulator is a different transaction from buying an option on it.options are contracts, not shares. you are trading a right that decays with time.(educational only — not financial advice. tradehq offers $100,000 virtual cash for supported spot instruments. options contracts, greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.) key takeawaysa standard unadjusted us equity option generally covers 100 shares; adjusted and other contracts can differ.at expiration, before costs, a purchased call has a net gain above strike + premium; a purchased put has a net gain below strike − premium. those levels are break-even prices.a purchased option held without exercise can lose its premium plus costs; exercise can create a separate underlying position and obligations.options can be used for hedging and speculation; their risk depends on the position and contract.check your understandinganswer all 4 questions to complete this lesson.1. how many shares does one standard us equity option contract control?10501001,0002. what is the maximum loss for someone who buys (goes long) a single call option?unlimitedthe strike price × 100the premium paidthe stock price × 1003. a call option gives the buyer the right to:sell shares at the strike pricebuy shares at the strike priceshort the stockreceive dividends4. buying a protective put alongside shares is an example of:eliminating every costa guaranteed gainhedging downside exposureavoiding contract termssubmit & complete lessonsources & further readingocc — characteristics and risks of standardized options oic — options basics cboe options institute the greeks — delta, gamma, theta & vega tradehq is an educational paper trading simulator. no real money is traded. nothing on this website constitutes investment, financial, legal or tax advice. past simulated performance does not predict future real-world performance.",
+      "mainPath": null,
+      "articles": [
+        "ARTICLE"
+      ],
+      "links": [
+        "http://127.0.0.1:4181/",
+        "http://127.0.0.1:4181/courses",
+        "http://127.0.0.1:4181/courses/options-trading-fundamentals",
+        "https://www.theocc.com/company-information/documents-and-archives/options-disclosure-document",
+        "https://www.optionseducation.org/optionsoverview/options-basics",
+        "https://www.cboe.com/education/",
+        "http://127.0.0.1:4181/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega"
+      ],
+      "quizButtons": 0,
+      "submitDisabled": true,
+      "overflow": false
+    }
+  ],
+  "runtimeErrors": [],
+  "failure": "One complete lesson before footer /courses/options-trading-fundamentals/what-is-an-option at 360\n+ actual - expected\n\n  [\n+   'ARTICLE'\n-   'MAIN'\n  ]\n",
+  "scope": "Actual compiled/deployed bundled lessons:20routes x5widths, all main paragraphs/takeaways/source-check/answer notes/practice scope/references and unsubmitted quiz controls preserved;noorders,accountsorprogress. Imagesrequirepersonalviewing."
+}

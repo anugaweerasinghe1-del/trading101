@@ -7,7 +7,7 @@ req=urllib.request.Request(url,headers={'Authorization':'Bearer '+os.environ['TR
 with urllib.request.urlopen(req,timeout=40) as response:data=json.load(response)
 v=next(x for x in data['deployments'] if x.get('meta',{}).get('githubCommitSha')==sha and x['state']=='READY')
 assert v['projectId']==project
-checks=json.loads(subprocess.check_output(['gh','api','repos/anugaweerasinghe1-del/trading101/commits/'+sha+'/check-runs?per_page=100']))['check_runs']
+checks=json.loads(subprocess.check_output(['gh','api','-H','Cache-Control: no-cache','repos/anugaweerasinghe1-del/trading101/commits/'+sha+'/check-runs?per_page=100&page=1']))['check_runs']
 cf=max([x for x in checks if x['app']['id']==85455 and x['conclusion']=='success'],key=lambda x:x['id']);assert cf['head_sha']==sha
 preview=re.search(r'https://[0-9a-f]{8}\.tradehq-preview\.pages\.dev',cf['output']['summary']).group()
 out={'checkedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'candidateSHA':sha,'cloudflareGitHubNativeSignal':{'headSHA':sha,'appId':85455,'checkId':cf['id'],'conclusion':'success','deploymentId':cf['details_url'].rsplit('/',1)[1],'url':preview},'cloudflareAuthenticatedAPI':'Not used; trusted GitHub native CF preview attestation. Production verification separate.','vercel':{'id':v['uid'],'state':v['state'],'sha':sha,'url':v['url'],'projectId':project,'target':v.get('target')}}

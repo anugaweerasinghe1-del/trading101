@@ -2990,7 +2990,21 @@
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "thirdLessonPrimarySourceFollowup": {
+        "evidence": "evidence/THIRD-LESSON-PRIMARY-SOURCE-FOLLOWUP-20261025.json",
+        "selectedPassagesRead": [
+          "CME selected text supports storage, financing and insurance as contributing carry costs and convenience yield as a benefit of physical availability. This source describes futures versus spot; that alone is not a complete citation for every near/far calendar-spread comparison or futures-fund methodology claim. Those narrower source-fit follow-ups remain."
+        ],
+        "completeSourceReview": false
+      },
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-042"
+        ],
+        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/courses/futures-and-derivatives/hedging-with-futures",
@@ -3048,7 +3062,7 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "FIRST_FOLD_ONLY",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
         "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
         "humanViewedWidths": [
@@ -3059,7 +3073,17 @@
         ],
         "evidence": [
           "evidence/contact--courses--360-8.png"
-        ]
+        ],
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personally inspected all nine contact sheets and every captured segment at360,390,768,1280,1920: heading/byline, hero, quick answer, complete body/takeaways, unselected quiz options, sources, previous/next links, whole footer and complete appendix. No additional default-state clipping observed. Article repetition is covered by pendingTHQ042/PR243 and is not counted again. No orders/accounts/contact/quiz submission/published-record action. Light/zoom/keyboard/conditional/source/originality stages remain. Read all airline, producer, equity hedge and basis-risk passages plus all four question/options/key/explanation sets. 50million/250000=200 contracts is correctly limited to hypothetical one-for-one notional exposure. Jet-fuel/crude cross-hedge and farmer proceeds retain basis, quantity, timing, liquidity and costs caveats. Both CME labels point to the same general course hub; exact source-fit/claim verification remains."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -3080,8 +3104,15 @@
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "confirmedFindingStates": []
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "confirmedFindingStates": [],
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-042"
+        ],
+        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/courses/futures-and-derivatives/margin-and-leverage-in-futures",
@@ -3189,6 +3220,13 @@
         "corroborated": "CME margin lesson explicitly distinguishes deposit/collateral from borrowed securities purchase; maintenance can require immediate extra funds, reduced positions or liquidation. Amounts may change with risk and brokers may require more funds. The site correctly labels13000as assumed worksheet deposit and2500/13000as deposit-relative, not universal equity return.",
         "remaining": "Current individual exchange/broker requirements, intraday clearing procedures and real financial execution remain outside this reading. Earlier contract specification receipt separately establishes50multiplier.",
         "wholeSourceReviewComplete": false
+      },
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-042"
+        ],
+        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
+        "authoritativeLedger": "FINDINGS.json"
       }
     },
     {
@@ -3280,7 +3318,14 @@
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
       "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-042"
+        ],
+        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/courses/futures-and-derivatives/what-is-a-futures-contract",
@@ -3381,7 +3426,14 @@
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-042"
+        ],
+        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/courses/macro-reading-for-traders",
@@ -3600,7 +3652,14 @@
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
       "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-042"
+        ],
+        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/courses/macro-reading-for-traders/reading-cpi-and-inflation",
@@ -3698,6 +3757,13 @@
         "remaining": "No source certification for every consensus/revision/reaction statement. FRED series and detailed methodology not read; no current inflation statistic is added to site.",
         "evidence": "evidence/COURSE-PRIMARY-SOURCE-FOLLOWUP-20261025.json",
         "wholeSourceReviewComplete": false
+      },
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-042"
+        ],
+        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
+        "authoritativeLedger": "FINDINGS.json"
       }
     },
     {
@@ -3756,9 +3822,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personally inspected all nine contact sheets and every captured segment at360,390,768,1280,1920: heading/byline, hero, quick answer, complete body/takeaways, unselected quiz options, sources, previous/next links, whole footer and complete appendix. No additional default-state clipping observed. Article repetition is covered by pendingTHQ042/PR243 and is not counted again. No orders/accounts/contact/quiz submission/published-record action. Light/zoom/keyboard/conditional/source/originality stages remain. Read the complete currency basket, earnings translation, commodity, dollar-debt and comparison passages and all four question/options/key/explanation sets. The six57.6/13.6/11.9/9.1/4.2/3.6percent weights sum100 and match selected actual ICE text. EUR1million at1.10vs1.00 gives1.10millionvs1million and100000difference, explicitly distinct from a DXY/EPS forecast. Specific Fed/BIS/FRED passages and broader originality remain unverified."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -3779,8 +3855,27 @@
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "confirmedFindingStates": []
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "confirmedFindingStates": [],
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-042"
+        ],
+        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
+        "authoritativeLedger": "FINDINGS.json"
+      },
+      "fourthLessonSourceFollowup": {
+        "evidence": "evidence/FOURTH-LESSON-PRIMARY-SOURCE-FOLLOWUP-20261025.json",
+        "selectedActualPassagesRead": [
+          "The actual ICE passage specifies geometrically averaged six currencies and exactly57.6/13.6/11.9/9.1/4.2/3.6percent weights. The lesson matches those figures and warns that the basket excludes many currencies. This does not establish every corporate-earnings, commodity or emerging-market financing statement."
+        ],
+        "completeSourceReview": false
+      },
+      "renderedFedModelSourceFollowup": {
+        "evidence": "evidence/FED-MODEL-BROWSER-SOURCE-FOLLOWUP-20261025.json",
+        "assessment": "Actually read the2015 introduction describing unhedged foreign-subsidiary earnings translation and export competitiveness, then the dated USIT model section/table. Its conditional10percent dollar/3.8percent direct-investment-receipts result uses the Board major-currencies index and a specific model/period; it is not a universal DXY-to-SP500EPS coefficient. The lesson appropriately avoids that conversion. Historical model figures were not inserted into the site or treated as current estimates.",
+        "completeSourceReview": false
+      }
     },
     {
       "url": "https://www.thetradehq.com/courses/macro-reading-for-traders/the-fed-and-fomc-cycle",
@@ -3872,7 +3967,14 @@
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-042"
+        ],
+        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/courses/macro-reading-for-traders/the-yield-curve-and-recession",
@@ -3964,7 +4066,19 @@
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-042"
+        ],
+        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
+        "authoritativeLedger": "FINDINGS.json"
+      },
+      "renderedFedModelSourceFollowup": {
+        "evidence": "evidence/FED-MODEL-BROWSER-SOURCE-FOLLOWUP-20261025.json",
+        "assessment": "Actual rendered NY Fed overview states the10-year minus3-month spread and a12-month-ahead US recession probability horizon. Its disclaimer explicitly distinguishes these estimates from official forecasts. This corroborates the lesson model distinction and uncertainty; it does not validate every historical lead-time, causal or trading claim.",
+        "completeSourceReview": false
+      }
     },
     {
       "url": "https://www.thetradehq.com/courses/options-trading-fundamentals",
@@ -4175,7 +4289,22 @@
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "thirdLessonPrimarySourceFollowup": {
+        "evidence": "evidence/THIRD-LESSON-PRIMARY-SOURCE-FOLLOWUP-20261025.json",
+        "selectedPassagesRead": [
+          "OIC describes the same-expiry lower-strike long call/higher-strike short call. Its selected Max Loss, Max Gain, break-even and assignment/expiration passages support net-debit loss, strike-width less debit gain, lower strike plus debit break-even, and possible separate stock exposure. The lesson worksheet arithmetic is internally consistent; no real execution or suitability is established.",
+          "The OIC description specifies short inner call/put with long outer wings at one expiration and the example states maximum gain as net premium received. Selected exercise/assignment and expiration passages support the lesson condition that intact expiration payoff excludes unresolved account exposures. No recommendation is endorsed."
+        ],
+        "completeSourceReview": false
+      },
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-042"
+        ],
+        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/courses/options-trading-fundamentals/implied-volatility-and-earnings",
@@ -4233,9 +4362,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personally inspected all nine contact sheets and every captured segment at360,390,768,1280,1920: heading/byline, hero, quick answer, complete body/takeaways, unselected quiz options, sources, previous/next links, whole footer and complete appendix. No additional default-state clipping observed. Article repetition is covered by pendingTHQ042/PR243 and is not counted again. No orders/accounts/contact/quiz submission/published-record action. Light/zoom/keyboard/conditional/source/originality stages remain. Read the complete main and appended article including all four question/options/key/explanation sets. IV is distinguished from later realised volatility, rank from percentile, and event-related losses from direction alone; there is no guaranteed short-premium outcome or supplied options chain. Selected actual OIC rank/percentile definitions corroborate that distinction; broader volatility/event claims and originality remain."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -4256,8 +4395,22 @@
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "confirmedFindingStates": []
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "confirmedFindingStates": [],
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-042"
+        ],
+        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
+        "authoritativeLedger": "FINDINGS.json"
+      },
+      "fourthLessonSourceFollowup": {
+        "evidence": "evidence/FOURTH-LESSON-PRIMARY-SOURCE-FOLLOWUP-20261025.json",
+        "selectedActualPassagesRead": [
+          "OIC distinguishes52-week high/low range normalization (IVrank) from share of trading days below currentIV (percentile). The lesson and key distinguish them; rank80 is a range position, not an80%IV reading or profit rate. Earlier vega source reading separately supports model sensitivity, not a guaranteed event outcome."
+        ],
+        "completeSourceReview": false
+      }
     },
     {
       "url": "https://www.thetradehq.com/courses/options-trading-fundamentals/options-risk-management",
@@ -4339,7 +4492,14 @@
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
       "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-042"
+        ],
+        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
@@ -4443,6 +4603,13 @@
         "evidence": "evidence/GAMMA-CIRCUIT-DARKPOOL-SOURCE-FOLLOWUP-20261025.json",
         "assessment": "OIC describes gamma as the modeled change in delta for a one-dollar underlying move; its examples add gamma to delta after an upward move. The page also qualifies stronger at-the-money/near-expiry sensitivity. This supports the lesson's conditional sensitivity explanation, without implying a realized payoff or probability guarantee.",
         "remaining": "Full Greeks/contract/assumption review and primary-source comparisons outside these selected passages remain."
+      },
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-042"
+        ],
+        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
+        "authoritativeLedger": "FINDINGS.json"
       }
     },
     {
@@ -4535,7 +4702,14 @@
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-042"
+        ],
+        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/courses/trading-psychology-mastery",
@@ -4746,7 +4920,14 @@
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-042"
+        ],
+        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/courses/trading-psychology-mastery/discipline-and-daily-rituals",
@@ -4804,9 +4985,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personally inspected all nine contact sheets and every captured segment at360,390,768,1280,1920: heading/byline, hero, quick answer, complete body/takeaways, unselected quiz options, sources, previous/next links, whole footer and complete appendix. No additional default-state clipping observed. Article repetition is covered by pendingTHQ042/PR243 and is not counted again. No orders/accounts/contact/quiz submission/published-record action. Light/zoom/keyboard/conditional/source/originality stages remain. Read the complete optional-checklist article, dated18October source-scope limitation and all four question/options/key/explanation sets. 10\u00d750=500notional and0.1percent fee=.50 reconcile. No universal session duration, profit guarantee or requirement to place trades is stated; written stop/take-profit assumptions are distinguished from executable orders. No actual quiz completion or trade was performed; external sources/API and broader originality remain."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -4827,8 +5018,15 @@
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "confirmedFindingStates": []
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "confirmedFindingStates": [],
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-042"
+        ],
+        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/courses/trading-psychology-mastery/handling-drawdowns",
@@ -4910,7 +5108,14 @@
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
       "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-042"
+        ],
+        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/courses/trading-psychology-mastery/revenge-trading-and-tilt",
@@ -5002,7 +5207,14 @@
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-042"
+        ],
+        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/courses/trading-psychology-mastery/the-trading-journal",
@@ -5094,7 +5306,14 @@
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-042"
+        ],
+        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/daily",
@@ -44184,5 +44403,5 @@
     "individualActualRenderedProseComparisonsWithPreviouslyFullyReadBaseline": 85,
     "scope": "441 main texts/states covered, not441 fully completed page/source/control/human-visual reviews. See TERMINAL-TEMPLATE-COMPARISONS.json for raw texts and deltas."
   },
-  "updatedAt": "2026-10-25T15:34:36.352318+00:00"
+  "updatedAt": "2026-10-25T16:07:36.323839+00:00"
 }

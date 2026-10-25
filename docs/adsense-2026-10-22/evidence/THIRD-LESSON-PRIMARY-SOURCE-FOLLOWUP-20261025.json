@@ -1,0 +1,57 @@
+{
+  "reviewedAt": "2026-10-25T15:43:06.567113+00:00",
+  "scope": "Selected official source passages actually read; original paraphrases only. Full raw source text retained in scratch, not published. These are limited factual corroborations, not whole-page or originality certification.",
+  "sources": [
+    {
+      "url": "https://www.optionseducation.org/strategies/all-strategies/bull-call-spread-debit-call-spread",
+      "checkedAt": "2026-10-25T15:40:23.637727+00:00",
+      "status": 200,
+      "sha256": "3a00d36443cac8aca42ba96811afd980588c7d0be2b9a9be5b41adddcb0d27f8",
+      "textLength": 12185,
+      "paths": [
+        "/courses/options-trading-fundamentals/defined-risk-spreads"
+      ],
+      "assessment": "OIC describes the same-expiry lower-strike long call/higher-strike short call. Its selected Max Loss, Max Gain, break-even and assignment/expiration passages support net-debit loss, strike-width less debit gain, lower strike plus debit break-even, and possible separate stock exposure. The lesson worksheet arithmetic is internally consistent; no real execution or suitability is established."
+    },
+    {
+      "url": "https://www.optionseducation.org/strategies/all-strategies/short-condor",
+      "checkedAt": "2026-10-25T15:40:23.639094+00:00",
+      "status": 200,
+      "sha256": "ffc29299afa24a743500edf945e0021400b1ccdf268bd07c5e6e1d1fae39e597",
+      "textLength": 9874,
+      "paths": [
+        "/courses/options-trading-fundamentals/defined-risk-spreads"
+      ],
+      "assessment": "The OIC description specifies short inner call/put with long outer wings at one expiration and the example states maximum gain as net premium received. Selected exercise/assignment and expiration passages support the lesson condition that intact expiration payoff excludes unresolved account exposures. No recommendation is endorsed."
+    },
+    {
+      "url": "https://www.cmegroup.com/education/courses/introduction-to-precious-metals/what-is-contango-and-backwardation",
+      "checkedAt": "2026-10-25T15:40:23.441044+00:00",
+      "status": 200,
+      "sha256": "11e3f66428d8f98383396bca1fcbe3c13605281fe230b20e347aa97581fe4f36",
+      "textLength": 2613,
+      "paths": [
+        "/courses/futures-and-derivatives/contango-and-backwardation"
+      ],
+      "assessment": "CME selected text supports storage, financing and insurance as contributing carry costs and convenience yield as a benefit of physical availability. This source describes futures versus spot; that alone is not a complete citation for every near/far calendar-spread comparison or futures-fund methodology claim. Those narrower source-fit follow-ups remain."
+    }
+  ],
+  "unresolved": [
+    {
+      "url": "https://www.newyorkfed.org/research/capital_markets/ycfaq",
+      "observed": "Initial HTTP200 returned navigation/shell without substantive model text. A later HTTP request returned503 and the browser returned a proxy transport error. The exact NY Fed model horizon and source passages are not newly corroborated.",
+      "captureMetadata": {
+        "url": "https://www.newyorkfed.org/research/capital_markets/ycfaq",
+        "checkedAt": "2026-10-25T15:40:23.893451+00:00",
+        "status": 200,
+        "sha256": "aebcbff6c443df8cdd7ed159d404b464555c9dad3d87d4907a3bb029a87a1efc",
+        "textLength": 6702
+      }
+    },
+    {
+      "path": "/courses/trading-psychology-mastery/the-trading-journal",
+      "remaining": "2\u00d7100 plus0.1% and2\u00d7105 arithmetic read and internally reconciled. Complete current SEC/FINRA source reading, originality and broader account-model verification remain."
+    }
+  ],
+  "subsequentActualRenderedFedFollowup": "FED-MODEL-BROWSER-SOURCE-FOLLOWUP-20261025.json narrowly resolves the initial NYFed/model or Fed2015 shell-read limitation; original failed/shell capture remains historical. Other source/originality gaps remain."
+}

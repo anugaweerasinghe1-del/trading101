@@ -1,0 +1,37 @@
+{
+  "reviewedAt": "2026-10-25T16:06:56.400294+00:00",
+  "scope": "Actual selected official source passages read, original paraphrases only; raw research text remains scratch. Not complete source/originality certification.",
+  "sources": [
+    {
+      "url": "https://www.optionseducation.org/news/june-office-hours-faqs-iv-statistics-position-management-and-the-wheel-strategy",
+      "checkedAt": "2026-10-25T16:05:24.064723+00:00",
+      "status": 200,
+      "sha256": "5040f5de5bc5a033051bff6752538653d46d16dd3a555f4889132821be506c93",
+      "textLength": 9289,
+      "path": "/courses/options-trading-fundamentals/implied-volatility-and-earnings",
+      "assessment": "OIC distinguishes52-week high/low range normalization (IVrank) from share of trading days below currentIV (percentile). The lesson and key distinguish them; rank80 is a range position, not an80%IV reading or profit rate. Earlier vega source reading separately supports model sensitivity, not a guaranteed event outcome."
+    },
+    {
+      "url": "https://www.ice.com/insights/indexation-and-etfs/managing-us-dollar-risk-in-uncertain-times",
+      "checkedAt": "2026-10-25T16:05:23.775608+00:00",
+      "status": 200,
+      "sha256": "b4ff78aa463f85b0a8f65bf61414c943d2fe30577198046e937a09e19b5a7eac",
+      "textLength": 5387,
+      "path": "/courses/macro-reading-for-traders/the-dollar-index-dxy",
+      "assessment": "The actual ICE passage specifies geometrically averaged six currencies and exactly57.6/13.6/11.9/9.1/4.2/3.6percent weights. The lesson matches those figures and warns that the basket excludes many currencies. This does not establish every corporate-earnings, commodity or emerging-market financing statement."
+    }
+  ],
+  "remaining": [
+    "The Federal Reserve2015 URL returned navigation/header text without substantive earnings passages in this capture; its exact model/source claims are not newly corroborated.",
+    "Specific BIS/FRED source passages, CME cross-hedging/basis examples and broader source/originality review remain. Both CME links on the hedging lesson currently target the same general introduction hub; narrow source-fit verification remains.",
+    "Checklist worksheet10\u00d750=500 and0.1%fee=.50 internally reconciled. Current source/API behavior and independent outcome evidence are separate from its optional teaching suggestions."
+  ],
+  "incompleteSourceCapture": {
+    "url": "https://www.federalreserve.gov/econresdata/notes/ifdp-notes/2015/how-much-has-dollar-appreciation-affected-us-corporate-profits-20150717.html",
+    "checkedAt": "2026-10-25T16:05:23.744837+00:00",
+    "status": 200,
+    "sha256": "56c7d5dcf9491a02df4a5f5b01e0d9e960f45b9a7cd359f8b60a2cd8ff2161b9",
+    "textLength": 7835
+  },
+  "subsequentActualRenderedFedFollowup": "FED-MODEL-BROWSER-SOURCE-FOLLOWUP-20261025.json narrowly resolves the initial NYFed/model or Fed2015 shell-read limitation; original failed/shell capture remains historical. Other source/originality gaps remain."
+}

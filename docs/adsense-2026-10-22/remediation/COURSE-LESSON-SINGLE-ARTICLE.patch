@@ -1,0 +1,169 @@
+diff --git a/scripts/verify-course-lesson-article.mjs b/scripts/verify-course-lesson-article.mjs
+new file mode 100644
+index 0000000..a58a737
+--- /dev/null
++++ b/scripts/verify-course-lesson-article.mjs
+@@ -0,0 +1,40 @@
++import assert from 'node:assert/strict';
++import {readFileSync} from 'node:fs';
++import {join} from 'node:path';
++import {loadSiteData} from './loadData.ts';
++
++/** Preserve lesson text, public answer notes and navigation without duplicate articles. */
++export async function verifyCourseLessonArticle({send,evaluate,waitUntil,origin,delay,dist}) {
++  const {courseTracks}=await loadSiteData();
++  const normalize=text=>text.replace(/\s+/g,' ').trim().toLowerCase();
++  let count=0;
++  for(const track of courseTracks)for(const lesson of track.lessons)for(const [width,height] of [[360,800],[390,844],[768,1024],[1280,800],[1920,1080]]) {
++    const path='/courses/'+track.slug+'/'+lesson.slug,page=JSON.parse(readFileSync(join(dist,'publisher-notes',path,'index.json'),'utf8'));
++    await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<500});
++    await send('Page.navigate',{url:'about:blank'});
++    await waitUntil(`location.href==='about:blank'&&document.readyState==='complete'`,'Fresh lesson document');
++    await send('Page.navigate',{url:origin+path});
++    await waitUntil(`document.querySelector('main h1')?.textContent===${JSON.stringify(lesson.title)}&&!document.querySelector('#prerender-seo')`,'Lesson hydrates');
++    await delay(100);
++    const row=await evaluate(`(()=>{const main=document.querySelector('main');return {path:location.pathname,text:main.textContent.replace(/\\s+/g,' ').trim().toLowerCase(),mainPath:main.getAttribute('data-publisher-notes'),articles:[...document.querySelectorAll('[data-publisher-notes]')].map(e=>e.tagName),links:[...main.querySelectorAll('a')].map(a=>a.href),quizButtons:main.querySelectorAll('[data-lesson-quiz] button').length,submitDisabled:[...main.querySelectorAll('button')].find(b=>b.textContent.trim()==='Submit & complete lesson')?.disabled,overflow:document.documentElement.scrollWidth>innerWidth+1};})()`);
++    assert.deepEqual(row.articles,['MAIN'],'One complete lesson before footer '+path+' at '+width);
++    assert.equal(row.mainPath,path);
++    assert.ok(row.text.includes(normalize(lesson.summary)),'Keep lesson summary');
++    for(const section of page.sections) {
++      // Source URLs remain the actual anchor destinations, rather than repeated literal URLs.
++      if(section.h==='Sources')continue;
++      for(const text of [...(section.p||[]),...(section.list||[])].filter(Boolean))assert.ok(row.text.includes(normalize(text.replace(/^> /,''))),'Preserve '+section.h+' '+path);
++    }
++    for(const source of lesson.sources)assert.ok(row.text.includes(normalize(source.label))&&row.links.includes(new URL(source.url,origin).href),'Preserve source label and destination');
++    for(const para of lesson.body.filter(p=>!p.startsWith('## ')&&!p.startsWith('> ')))assert.equal(row.text.split(normalize(para)).length-1,1,'Do not repeat body paragraph '+path);
++    for(const link of page.links)assert.ok(row.links.includes(new URL(link.href,origin).href),'Preserve destination '+link.href);
++    assert.equal(row.quizButtons,lesson.quiz.reduce((sum,q)=>sum+q.options.length,0),'Keep all unselected quiz controls');
++    assert.equal(row.submitDisabled,true,'Completion still requires all answers');
++    assert.ok(row.text.includes('published by tradehq')&&row.text.includes('no independent professional review is claimed'),'Keep publisher disclosure');
++    assert.ok(row.text.includes('quotes may be delayed, cached, unavailable or fixed simulator values')&&row.text.includes('practice results do not predict investment outcomes'),'Keep simulator scope');
++    assert.equal(row.overflow,false,'Lesson fits viewport');
++    count++;
++  }
++  assert.equal(count,100);
++  console.log('PASS100lesson-width states: all body/takeaway/source-check/answer explanations/practice scope/references preserved; quizzes unsubmitted');
++}
+diff --git a/scripts/verify-course-overview-article.mjs b/scripts/verify-course-overview-article.mjs
+index 9b29b9d..3601fc6 100644
+--- a/scripts/verify-course-overview-article.mjs
++++ b/scripts/verify-course-overview-article.mjs
+@@ -41 +41 @@ export async function verifyCourseOverviewArticle({send,evaluate,waitUntil,origi
+-  // Suppression is deliberately limited to overview routes. Lesson notes stay intact.
++  // Integrated lessons retain all reference copy in their main; the catalog keeps its notes.
+@@ -46 +46 @@ export async function verifyCourseOverviewArticle({send,evaluate,waitUntil,origi
+-  await waitUntil(`location.pathname==='${path+'/'+first.lessons[0].slug}'&&document.querySelector('main h1')?.textContent===${JSON.stringify(first.lessons[0].title)}&&!!document.querySelector('article[data-publisher-notes]')`,'Individual lesson notes remain available');
++  await waitUntil(`location.pathname==='${path+'/'+first.lessons[0].slug}'&&document.querySelector('main h1')?.textContent===${JSON.stringify(first.lessons[0].title)}&&!!document.querySelector('main[data-publisher-notes]')`,'Individual lesson references remain available');
+@@ -53 +53 @@ export async function verifyCourseOverviewArticle({send,evaluate,waitUntil,origi
+-  console.log('PASS20course-overview width states: single article, all substantive copy/badge criteria/lesson cards/references preserved; individual lesson and catalog notes restored on navigation');
++  console.log('PASS20course-overview width states: single article, all substantive copy/badge criteria/lesson cards/references preserved; integrated lesson and catalog notes restored on navigation');
+diff --git a/scripts/verify-publisher-browser.mjs b/scripts/verify-publisher-browser.mjs
+index 59b7d7c..56cb227 100644
+--- a/scripts/verify-publisher-browser.mjs
++++ b/scripts/verify-publisher-browser.mjs
+@@ -22,0 +23,2 @@ import { verifyWikiDifficultyContrast } from "./verify-wiki-difficulty-contrast.
++import { verifyCourseLessonArticle } from "./verify-course-lesson-article.mjs";
++import { hasIntegratedCourseLesson } from "../src/lib/courseLessonPresentation.ts";
+@@ -174 +176 @@ try {
+-      const primaryCopy = /^\/(?:wiki|strategy|compare)\/[^/]+$/.test(path) || /^\/learn\/article\/[^/]+$/.test(path) || hasIntegratedCourseOverview(path) || /^\/how-to-trade\/(?:btc|eth|nvda|sol|spy|tsla)$/.test(path);
++      const primaryCopy = /^\/(?:wiki|strategy|compare)\/[^/]+$/.test(path) || /^\/learn\/article\/[^/]+$/.test(path) || hasIntegratedCourseLesson(path) || hasIntegratedCourseOverview(path) || /^\/how-to-trade\/(?:btc|eth|nvda|sol|spy|tsla)$/.test(path);
+@@ -181,0 +184,10 @@ try {
++          if (hasIntegratedCourseLesson(path) && section.h === "Sources") {
++            // The original literal URL is now the preserved source anchor destination.
++            for (const source of section.list || []) {
++              const match = source.match(/^(.*) \((.+)\)$/);
++              assert.ok(match, path + ": recognized source fixture");
++              assert.ok(normalizedMain.includes(normalize(match[1])), path + ": preserve source label");
++              assert.ok(await evaluate(`Array.from(document.querySelectorAll('main a')).some(a => a.href === ${JSON.stringify(new URL(match[2], origin).href)})`), path + ": preserve source destination");
++            }
++            continue;
++          }
+@@ -183 +195,3 @@ try {
+-            assert.ok(normalizedMain.includes(normalize(text)), path + ": preserve substantive section " + section.h);
++            // Authored blockquotes render the quoted text without the Markdown marker.
++            const renderedText = hasIntegratedCourseLesson(path) ? text.replace(/^> /, "") : text;
++            assert.ok(normalizedMain.includes(normalize(renderedText)), path + ": preserve substantive section " + section.h);
+@@ -269,0 +284 @@ try {
++  await verifyCourseLessonArticle({send,evaluate,waitUntil,origin,delay,dist});
+diff --git a/src/components/RoutePublisherNotes.tsx b/src/components/RoutePublisherNotes.tsx
+index ee2854b..3640e0a 100644
+--- a/src/components/RoutePublisherNotes.tsx
++++ b/src/components/RoutePublisherNotes.tsx
+@@ -3,0 +4 @@ import { PublisherNotes, type PublisherPage } from "./PublisherNotes";
++import { hasIntegratedCourseLesson } from "@/lib/courseLessonPresentation";
+@@ -18 +19 @@ export function RoutePublisherNotes() {
+-  const hasPrimaryCopy = /^\/(?:wiki|strategy|compare)\/[^/]+$/.test(path) || /^\/learn\/article\/[^/]+$/.test(path) || hasIntegratedCourseOverview(path) || /^\/how-to-trade\/(?:btc|eth|nvda|sol|spy|tsla)$/.test(path);
++  const hasPrimaryCopy = /^\/(?:wiki|strategy|compare)\/[^/]+$/.test(path) || /^\/learn\/article\/[^/]+$/.test(path) || hasIntegratedCourseLesson(path) || hasIntegratedCourseOverview(path) || /^\/how-to-trade\/(?:btc|eth|nvda|sol|spy|tsla)$/.test(path);
+diff --git a/src/lib/courseLessonPresentation.ts b/src/lib/courseLessonPresentation.ts
+new file mode 100644
+index 0000000..fc88271
+--- /dev/null
++++ b/src/lib/courseLessonPresentation.ts
+@@ -0,0 +1,25 @@
++/** Only bundled lessons whose full reference copy is integrated in main. */
++const integratedPaths = new Set([
++  "/courses/futures-and-derivatives/contango-and-backwardation",
++  "/courses/futures-and-derivatives/hedging-with-futures",
++  "/courses/futures-and-derivatives/margin-and-leverage-in-futures",
++  "/courses/futures-and-derivatives/micro-futures-for-beginners",
++  "/courses/futures-and-derivatives/what-is-a-futures-contract",
++  "/courses/macro-reading-for-traders/putting-macro-signals-together",
++  "/courses/macro-reading-for-traders/reading-cpi-and-inflation",
++  "/courses/macro-reading-for-traders/the-dollar-index-dxy",
++  "/courses/macro-reading-for-traders/the-fed-and-fomc-cycle",
++  "/courses/macro-reading-for-traders/the-yield-curve-and-recession",
++  "/courses/options-trading-fundamentals/defined-risk-spreads",
++  "/courses/options-trading-fundamentals/implied-volatility-and-earnings",
++  "/courses/options-trading-fundamentals/options-risk-management",
++  "/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
++  "/courses/options-trading-fundamentals/what-is-an-option",
++  "/courses/trading-psychology-mastery/cognitive-biases-in-trading",
++  "/courses/trading-psychology-mastery/discipline-and-daily-rituals",
++  "/courses/trading-psychology-mastery/handling-drawdowns",
++  "/courses/trading-psychology-mastery/revenge-trading-and-tilt",
++  "/courses/trading-psychology-mastery/the-trading-journal"
++]);
++
++export const hasIntegratedCourseLesson = (path: string) => integratedPaths.has(path);
+diff --git a/src/pages/CourseLesson.tsx b/src/pages/CourseLesson.tsx
+index 128892d..cd5a8dc 100644
+--- a/src/pages/CourseLesson.tsx
++++ b/src/pages/CourseLesson.tsx
+@@ -16,0 +17 @@ import { AIAnswerBlock } from "@/components/seo/AIAnswerBlock";
++import { hasIntegratedCourseLesson } from "@/lib/courseLessonPresentation";
+@@ -47 +48,3 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
+-  const url = `${DOMAIN}/courses/${track.slug}/${lesson.slug}`;
++  const path = `/courses/${track.slug}/${lesson.slug}`;
++  const integratedLesson = hasIntegratedCourseLesson(path);
++  const url = `${DOMAIN}${path}`;
+@@ -137 +140 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
+-        <main className="flex-1 container mx-auto px-4 pt-24 pb-20 max-w-3xl">
++        <main data-publisher-notes={integratedLesson ? path : undefined} className="flex-1 container mx-auto px-4 pt-24 pb-20 max-w-3xl">
+@@ -162,0 +166,5 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
++          {integratedLesson && <div className="text-sm text-muted-foreground mb-6 space-y-2">
++            <p>Published by TradeHQ, created by Anuga Weerasinghe. <Link to="/about" className="underline">Publisher background and editorial approach</Link>. No independent professional review is claimed; any recorded source-check scope appears on the page.</p>
++            {lesson.sourceCheck && <p>Source check: {lesson.sourceCheck.date}. {lesson.sourceCheck.scope}</p>}
++          </div>}
++
+@@ -191 +199 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
+-            <div className="space-y-5">
++            <div data-lesson-quiz className="space-y-5">
+@@ -260,0 +269,7 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
++          {integratedLesson && <section aria-label="Lesson answer notes" className="mt-8">
++            <h2 className="text-xl font-bold mb-3">Answer notes</h2>
++            <ul className="space-y-4 text-sm text-muted-foreground list-disc pl-5">
++              {lesson.quiz.map((q, i) => <li key={i}>{q.question} Options: {q.options.join("; ")}. Correct answer: {q.options[q.correctAnswer]}. Why: {q.explanation}</li>)}
++            </ul>
++          </section>}
++
+@@ -299,0 +315,10 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
++          {integratedLesson && <section className="mt-8 text-sm text-muted-foreground space-y-3">
++            <h2 className="text-xl font-bold text-foreground">Practise this lesson</h2>
++            <p>Use $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.</p>
++            <nav aria-label="Course references" className="flex flex-wrap gap-4">
++              <Link className="underline" to={`/courses/${track.slug}`}>{track.title}</Link>
++              <Link className="underline" to="/courses">All courses</Link>
++            </nav>
++            <p>Educational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.</p>
++          </section>}
++

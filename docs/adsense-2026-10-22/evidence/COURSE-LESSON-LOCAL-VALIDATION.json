@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-10-25T15:49:01.136222+00:00",
+  "candidateSHA": "08f91c548dc5bbd47b7fff420ff722bf375e322e",
+  "baseSHA": "c3484f39a71e4f638caec7075083b086865fb247",
+  "outcome": "LOCAL_AND_CANDIDATE_PREVIEW_PASS_PRODUCTION_PENDING",
+  "checks": {
+    "cloudflareBuildSeoEditorial": "PASS",
+    "applicationTypeScript": "PASS",
+    "fullPhase6": "PASS",
+    "bundledLessonWidthStates": 100,
+    "allSubstantiveContentAndReferencesPreserved": true,
+    "unsubmittedQuizControls": "PASS",
+    "remoteCandidateCI": "PASS all4exact08f91c5trustedchecks",
+    "nativePreviews": "PASS Cloudflare59b2d16d/VercelREADYexact08f91c5",
+    "productionRelease": "MERGED_a936c7d_AWAITING_ALL_PRODUCTION_VERIFICATION",
+    "affected155RouteMatrixPhase1": "PASS"
+  },
+  "localBrowserEvidence": "evidence/COURSE-LESSON-LOCAL-ISOLATED-BROWSER.json",
+  "logs": [
+    "evidence/COURSE-LESSON-BUILD.txt",
+    "evidence/COURSE-LESSON-TYPES.txt",
+    "evidence/COURSE-LESSON-PHASE6.txt",
+    "evidence/COURSE-LESSON-INITIAL-PHASE6-FAILURE.txt"
+  ],
+  "failuresPreserved": [
+    "evidence/COURSE-LESSON-BASELINE-EXPECTED-FAILURE-BROWSER.json",
+    "evidence/COURSE-LESSON-INITIAL-LOCAL-FAILURE.json",
+    "evidence/COURSE-LESSON-LOCAL-CACHE-DIAGNOSIS.json",
+    "evidence/COURSE-LESSON-INITIAL-MARKDOWN-ASSERTION-FAILURE.json",
+    "evidence/COURSE-LESSON-LOCAL-EXTERNAL-AD-FAILURE.json"
+  ],
+  "interpretation": "Baseline ARTICLE failure is expected. Local stale-build cache diagnosed by exact loaded chunk hashes; Markdown fixture marker is presentation syntax, so compare rendered blockquote text. One normal-network local run passed100content states but caught an external Google script exception. The isolated LOCAL app regression blocks external ad networks in its own target, matching deterministic CI intent. No production ad/consent implementation changed; no ad-delivery certification.",
+  "selectedImagesPersonallyViewed": 12,
+  "imageScope": "Four before-footer images for defined-risk-spreads from course-lesson-local; four before-footer images for the-trading-journal from course-lesson-local-isolated; four answer-note images from course-lesson-local-answer-notes. These are selected component checks, not additional whole-page production review credit.",
+  "applicationSourceMatchesValidatedCommit": "67ae46104e4b604e0a19a13e4ccd1497380bd14d",
+  "updatedCandidateScope": "Only matrix test representation of blockquotes and source labels/destinations changed. All quote/source content assertions retained. Additional155routephase1PASS; fresh remote exact-head CI/native/actual previews remain required."
+}

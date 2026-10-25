@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T15:33:56.370723+00:00",
+  "updatedAt": "2026-10-25T16:07:36.323839+00:00",
   "scope": "Actual screenshot viewing by route and stage. Full-page default-state images are separately recorded at all five widths for20 core routes; this is not conditional, accessibility, light-theme, source or whole-audit completion.",
   "routes": {
     "/": {
@@ -393,7 +393,7 @@
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
     },
     "/courses/futures-and-derivatives/hedging-with-futures": {
-      "status": "FIRST_FOLD_ONLY",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
       "humanViewedWidths": [
         360
       ],
@@ -402,7 +402,18 @@
       ],
       "evidence": [
         "evidence/contact--courses--360-8.png"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally inspected all nine contact sheets and every captured segment at360,390,768,1280,1920: heading/byline, hero, quick answer, complete body/takeaways, unselected quiz options, sources, previous/next links, whole footer and complete appendix. No additional default-state clipping observed. Article repetition is covered by pendingTHQ042/PR243 and is not counted again. No orders/accounts/contact/quiz submission/published-record action. Light/zoom/keyboard/conditional/source/originality stages remain. Read all airline, producer, equity hedge and basis-risk passages plus all four question/options/key/explanation sets. 50million/250000=200 contracts is correctly limited to hypothetical one-for-one notional exposure. Jet-fuel/crude cross-hedge and farmer proceeds retain basis, quantity, timing, liquidity and costs caveats. Both CME labels point to the same general course hub; exact source-fit/claim verification remains.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
     },
     "/courses/futures-and-derivatives/margin-and-leverage-in-futures": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -2410,6 +2421,48 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Personally inspected all nine contact sheets and every captured segment at 360, 390, 768, 1280 and 1920 widths: heading/byline, hero, quick answer, full body, takeaways, all unselected quiz questions/options, sources, previous/next navigation, full footer and appended notes. No new default-state clipping observed. A complete substantive article restarts after the footer; its source-check/answer explanations/practice scope provide unique material that must be retained in any remediation. No quiz submission, account, order or production-record action. Light/zoom/keyboard/conditional/source/originality stages remain. Read the complete decision-record and sample-limit article and all four question/options/key/explanation sets, including the dated 18 October source-check limitation. The 2\u00d7$100 purchase plus 0.1% fee is $200.20; 2\u00d7$105 is $210 gross marked value and $10 gross price change before sale costs. No universal 30/100 observation count or profit causation is promised; source and originality follow-up remains.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+    },
+    "/courses/options-trading-fundamentals/implied-volatility-and-earnings": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally inspected all nine contact sheets and every captured segment at360,390,768,1280,1920: heading/byline, hero, quick answer, complete body/takeaways, unselected quiz options, sources, previous/next links, whole footer and complete appendix. No additional default-state clipping observed. Article repetition is covered by pendingTHQ042/PR243 and is not counted again. No orders/accounts/contact/quiz submission/published-record action. Light/zoom/keyboard/conditional/source/originality stages remain. Read the complete main and appended article including all four question/options/key/explanation sets. IV is distinguished from later realised volatility, rank from percentile, and event-related losses from direction alone; there is no guaranteed short-premium outcome or supplied options chain. Selected actual OIC rank/percentile definitions corroborate that distinction; broader volatility/event claims and originality remain.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+    },
+    "/courses/macro-reading-for-traders/the-dollar-index-dxy": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally inspected all nine contact sheets and every captured segment at360,390,768,1280,1920: heading/byline, hero, quick answer, complete body/takeaways, unselected quiz options, sources, previous/next links, whole footer and complete appendix. No additional default-state clipping observed. Article repetition is covered by pendingTHQ042/PR243 and is not counted again. No orders/accounts/contact/quiz submission/published-record action. Light/zoom/keyboard/conditional/source/originality stages remain. Read the complete currency basket, earnings translation, commodity, dollar-debt and comparison passages and all four question/options/key/explanation sets. The six57.6/13.6/11.9/9.1/4.2/3.6percent weights sum100 and match selected actual ICE text. EUR1million at1.10vs1.00 gives1.10millionvs1million and100000difference, explicitly distinct from a DXY/EPS forecast. Specific Fed/BIS/FRED passages and broader originality remain unverified.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+    },
+    "/courses/trading-psychology-mastery/discipline-and-daily-rituals": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally inspected all nine contact sheets and every captured segment at360,390,768,1280,1920: heading/byline, hero, quick answer, complete body/takeaways, unselected quiz options, sources, previous/next links, whole footer and complete appendix. No additional default-state clipping observed. Article repetition is covered by pendingTHQ042/PR243 and is not counted again. No orders/accounts/contact/quiz submission/published-record action. Light/zoom/keyboard/conditional/source/originality stages remain. Read the complete optional-checklist article, dated18October source-scope limitation and all four question/options/key/explanation sets. 10\u00d750=500notional and0.1percent fee=.50 reconcile. No universal session duration, profit guarantee or requirement to place trades is stated; written stop/take-profit assumptions are distinguished from executable orders. No actual quiz completion or trade was performed; external sources/API and broader originality remain.",
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
     }
   }

@@ -1,0 +1,15 @@
+{
+  "observedAt": "2026-10-25T15:49:01.136222+00:00",
+  "operations": [
+    "git push candidate branch",
+    "gh pr create",
+    "git ls-remote main and candidate",
+    "public NY Fed browser/source read"
+  ],
+  "result": "HTTP503 and upstream proxy transport failure through inherited network path; no app candidate has been pushed or merged.",
+  "runtimeStatus": "Connected/running/current revision11; readiness of policy/bindings remains unknown. Diagnostics metadata history_not_found.",
+  "preserved": "Inherited proxy, authentication bindings, CA/TLS and all release checks. No duplicate secret request or network reconfiguration.",
+  "lastKnownMain": "c3484f39a71e4f638caec7075083b086865fb247",
+  "lastConfirmedMainRead": "2026-10-25 continuation before outage; not a current remote-health assertion.",
+  "subsequentRecovery": "Candidate push and PR243 creation succeeded; fresh REST with normal Cache-Control:no-cache and explicit page1 succeeds. Initial503s remain historical/intermittent. No credentials/TLS/proxy configuration changed. New candidate08f91c5 native previews and actual100state previewPASS; protected CI remains pending."
+}

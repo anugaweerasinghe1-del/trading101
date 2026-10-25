@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T15:29:13.942080+00:00",
+  "updatedAt": "2026-10-25T15:53:06.172275+00:00",
   "releases": [
     {
       "finding": "THQ-001",
@@ -2024,11 +2024,15 @@
     "mergeSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
     "reason": "Releasecyclecomplete; nonewmergeofthisPR."
   },
-  "remainingConfirmedSiteFixes": 0,
+  "remainingConfirmedSiteFixes": 1,
   "exhaustiveAuditComplete": false,
-  "remainingKnownSafeFindings": 0,
+  "remainingKnownSafeFindings": 1,
   "nextReleasePriority": [],
-  "pendingReleaseVerification": null,
+  "pendingReleaseVerification": {
+    "pr": 243,
+    "mergeSHA": "a936c7dfbe3a5857794595092408e1f3518de7dc",
+    "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
+  },
   "protectedPublishedContentFinding": "THQ035/036 published revision2 independently verified; credential and approval blockers superseded by owner-approved PR238 operation. No new production writes in this continuation.",
   "dailyChartUnitsCandidate": {
     "pr": 234,

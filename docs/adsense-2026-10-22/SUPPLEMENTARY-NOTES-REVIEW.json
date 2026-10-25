@@ -3,8 +3,8 @@
   "sourceCandidate": "71b84461ab0f531da44da54d8670ad1bef0628ea",
   "equivalentProductionSHA": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
   "sourceExpectedArticles": 83,
-  "actualRenderedArticlesRead": 50,
-  "sourceExpectedArticlesNotYetIndividuallyReviewed": 33,
+  "actualRenderedArticlesRead": 54,
+  "sourceExpectedArticlesNotYetIndividuallyReviewed": 29,
   "routes": [
     {
       "path": "/",
@@ -392,9 +392,9 @@
     {
       "path": "/courses/macro-reading-for-traders/the-dollar-index-dxy",
       "expectedFromCurrentBuiltRouteSource": true,
-      "actualRenderedPresenceVerified": false,
-      "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "actualRenderedPresenceVerified": true,
+      "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+      "assessment": "Read the complete currency basket, earnings translation, commodity, dollar-debt and comparison passages and all four question/options/key/explanation sets. The six57.6/13.6/11.9/9.1/4.2/3.6percent weights sum100 and match selected actual ICE text. EUR1million at1.10vs1.00 gives1.10millionvs1million and100000difference, explicitly distinct from a DXY/EPS forecast. Specific Fed/BIS/FRED passages and broader originality remain unverified."
     },
     {
       "path": "/courses/macro-reading-for-traders/the-yield-curve-and-recession",
@@ -427,9 +427,9 @@
     {
       "path": "/courses/futures-and-derivatives/hedging-with-futures",
       "expectedFromCurrentBuiltRouteSource": true,
-      "actualRenderedPresenceVerified": false,
-      "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "actualRenderedPresenceVerified": true,
+      "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+      "assessment": "Read all airline, producer, equity hedge and basis-risk passages plus all four question/options/key/explanation sets. 50million/250000=200 contracts is correctly limited to hypothetical one-for-one notional exposure. Jet-fuel/crude cross-hedge and farmer proceeds retain basis, quantity, timing, liquidity and costs caveats. Both CME labels point to the same general course hub; exact source-fit/claim verification remains."
     },
     {
       "path": "/courses/futures-and-derivatives/contango-and-backwardation",
@@ -469,9 +469,9 @@
     {
       "path": "/courses/trading-psychology-mastery/discipline-and-daily-rituals",
       "expectedFromCurrentBuiltRouteSource": true,
-      "actualRenderedPresenceVerified": false,
-      "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "actualRenderedPresenceVerified": true,
+      "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+      "assessment": "Read the complete optional-checklist article, dated18October source-scope limitation and all four question/options/key/explanation sets. 10\u00d750=500notional and0.1percent fee=.50 reconcile. No universal session duration, profit guarantee or requirement to place trades is stated; written stop/take-profit assumptions are distinguished from executable orders. No actual quiz completion or trade was performed; external sources/API and broader originality remain."
     },
     {
       "path": "/courses/trading-psychology-mastery/cognitive-biases-in-trading",
@@ -497,9 +497,9 @@
     {
       "path": "/courses/options-trading-fundamentals/implied-volatility-and-earnings",
       "expectedFromCurrentBuiltRouteSource": true,
-      "actualRenderedPresenceVerified": false,
-      "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "actualRenderedPresenceVerified": true,
+      "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+      "assessment": "Read the complete main and appended article including all four question/options/key/explanation sets. IV is distinguished from later realised volatility, rank from percentile, and event-related losses from direction alone; there is no guaranteed short-premium outcome or supplied options chain. Selected actual OIC rank/percentile definitions corroborate that distinction; broader volatility/event claims and originality remain."
     },
     {
       "path": "/courses/options-trading-fundamentals/options-risk-management",
@@ -644,8 +644,8 @@
   ],
   "currentVerifiedProductionSHA": "c3484f39a71e4f638caec7075083b086865fb247",
   "currentSeparateArticlesExpected": 65,
-  "currentSeparateArticlesActuallyRead": 38,
-  "currentSeparateArticlesNotYetIndividuallyRead": 27,
+  "currentSeparateArticlesActuallyRead": 42,
+  "currentSeparateArticlesNotYetIndividuallyRead": 23,
   "historicalSeparateArticlesNowIntegratedInMain": 18,
   "historicalBaselineScopePreserved": true
 }
