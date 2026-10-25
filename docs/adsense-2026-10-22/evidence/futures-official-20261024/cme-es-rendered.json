@@ -1,0 +1,130 @@
+{
+  "checkedAt": "2026-10-24T17:17:01.568Z",
+  "url": "https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contractSpecs.html",
+  "outcome": "MATERIAL_FIELDS_UNAVAILABLE",
+  "requests": [
+    {
+      "path": "/markets/equities/sp/e-mini-sandp500.contractSpecs.html",
+      "status": 200
+    },
+    {
+      "path": "/etc.clientlibs/cmegroupaem/clientlibs/product-contract-specs-widget.3c5611bf17134ef2426ac989dc3d78a2.css",
+      "status": 200
+    },
+    {
+      "path": "/etc.clientlibs/cmegroupaem/clientlibs/product-quotes.4df23c8a9d2037e44e58216ee498be3c.css",
+      "status": 200
+    },
+    {
+      "path": "/etc.clientlibs/cmegroupaem/clientlibs/product-settlements.171be2c5e97e15ab44dad4314dd2bc0d.css",
+      "status": 200
+    },
+    {
+      "path": "/etc.clientlibs/cmegroupaem/clientlibs/product-volume.c3851c9d72777c399703c94cba5038cc.css",
+      "status": 200
+    },
+    {
+      "path": "/etc.clientlibs/cmegroupaem/clientlibs/product-margins.023601189a2672c3cc18f1eb6e5a7cea.css",
+      "status": 200
+    },
+    {
+      "path": "/etc.clientlibs/cmegroupaem/clientlibs/product-tab.473f98a563ac05cd2f56f36934f64420.css",
+      "status": 200
+    },
+    {
+      "path": "/etc.clientlibs/cmegroupaem/clientlibs/product-calendar.187aec61fd92f54882c184656ebf6915.css",
+      "status": 200
+    },
+    {
+      "path": "/etc.clientlibs/cmegroupaem/clientlibs/product-contract-specs.5b932ac05e019ea2381c0132421d4726.css",
+      "status": 200
+    },
+    {
+      "path": "/etc.clientlibs/cmegroupaem/clientlibs/product-override.d41d8cd98f00b204e9800998ecf8427e.css",
+      "status": 200
+    },
+    {
+      "path": "/etc.clientlibs/cmegroupaem/clientlibs/product-contract-specs-widget.f98b5beecbf845af69429a44b15e6ce4.js",
+      "status": 200
+    },
+    {
+      "path": "/etc.clientlibs/cmegroupaem/clientlibs/product-quotes.f1ce3d65f1a84bc864fa0090c66e88f4.js",
+      "status": 200
+    },
+    {
+      "path": "/etc.clientlibs/cmegroupaem/clientlibs/product-volume.f813049f609d1f7bc64c19aa071e16e1.js",
+      "status": 200
+    },
+    {
+      "path": "/etc.clientlibs/cmegroupaem/clientlibs/product-margins.8f2823da2af2600871dad922a6fed590.js",
+      "status": 200
+    },
+    {
+      "path": "/etc.clientlibs/cmegroupaem/clientlibs/product-contract-specs.36259ae33da47dd039469ab07c1cc87d.js",
+      "status": 200
+    },
+    {
+      "path": "/etc.clientlibs/cmegroupaem/clientlibs/product-override.ec571060fa345fdd87672d4de723ee01.js",
+      "status": 200
+    },
+    {
+      "path": "/etc.clientlibs/cmegroupaem/clientlibs/product-settlements.5423ced8c519a83db23d421e1d50cfbe.js",
+      "status": 200
+    },
+    {
+      "path": "/etc.clientlibs/cmegroupaem/clientlibs/product-tab.21ec498efe93fc55318a1f0a0e864eff.js",
+      "status": 200
+    },
+    {
+      "path": "/etc.clientlibs/cmegroupaem/clientlibs/product-calendar.1f47e7c6c0c7d328687abe4f47c03f8e.js",
+      "status": 200
+    },
+    {
+      "path": "/libs/cmegroup/alerts/search.ajax.%7Ccontent%7Ccmegroup%7Cen%7Cmarkets%7Cequities%7Csp%7Ce-mini-sandp500.CONTRACTSPEC.-.json",
+      "status": 200
+    },
+    {
+      "path": "/libs/cmegroup/alerts/search.ajax.%7Ccontent%7Ccmegroup%7Cen%7Cmarkets%7Cequities%7Csp%7Ce-mini-sandp500.CONTRACTSPEC.F.json",
+      "status": 200
+    },
+    {
+      "path": "/CmeWS/mvc/ContractSpecs/List/productId/133",
+      "status": 200
+    },
+    {
+      "path": "/markets/equities.viewproducts.json",
+      "status": 200
+    }
+  ],
+  "preventedWrites": [
+    {
+      "method": "POST",
+      "host": "cmegroup.us-1.evergage.com",
+      "path": "/er"
+    },
+    {
+      "method": "POST",
+      "host": "cmegroup.us-1.evergage.com",
+      "path": "/er"
+    },
+    {
+      "method": "POST",
+      "host": "cmegroup.us-1.evergage.com",
+      "path": "/pr"
+    },
+    {
+      "method": "POST",
+      "host": "www.cmegroup.com",
+      "path": "/CmeWS/mvc/quotes/v2/contracts-by-number"
+    },
+    {
+      "method": "POST",
+      "host": "prompts.maze.co",
+      "path": "/api/widgets"
+    }
+  ],
+  "runtimeExceptions": [],
+  "scope": "Official page opened normally; non-read HTTP methods prevented. No account, consent or form action. Only printed excerpt individually read; full text workspace-only.",
+  "materialReadingSummary": "Normal browser page returned200 and loaded the official ContractSpecs GET endpoint; rendered body did not expose material fields during this observation. Subsequent direct read of that observed public endpoint corroborated the contract multiplier and settlement facts.",
+  "rawRenderedTextWorkspaceOnly": true
+}

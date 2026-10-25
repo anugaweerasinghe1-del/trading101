@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-10-24T17:18:28.872472+00:00",
+  "url": "https://www.cmegroup.com/CmeWS/mvc/ContractSpecs/List/productId/133",
+  "http": 200,
+  "rawJSONSHA256": "511fb8fa542f2bdd11897f111731a391f5facc03c79c8de77ab288b97948678c",
+  "rawResponseWorkspaceOnly": true,
+  "scope": "ActualGETendpointobserved200fromofficialrenderedcontractpage network; factualspecificationreadingrecordedseparately.",
+  "actualMaterialFactsRead": {
+    "ProductID": 133,
+    "ProductName": "E-mini S&P 500 Futures",
+    "ContractUnit": "$50 x S&P 500 Index",
+    "PriceQuotation": "U.S. dollars and cents per index point",
+    "SettlementMethod": "Financially Settled"
+  },
+  "actualOutrightTickFactRead": "0.25 index points = $12.50"
+}

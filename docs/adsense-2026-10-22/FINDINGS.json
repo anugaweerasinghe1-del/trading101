@@ -1245,7 +1245,7 @@
       "id": "THQ-037",
       "severity": "P2",
       "category": "Legacy lesson completion percentage omitted from accessibility tree",
-      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+      "state": "PUBLICLY_VERIFIED",
       "urls": [
         "https://www.thetradehq.com/learn/1",
         "https://www.thetradehq.com/learn/2",
@@ -1273,18 +1273,24 @@
       "localValidation": "PASS rendered0/25/62.5/100ARIAstates plus honestunspecifiedindeterminate; oldwrapperexpectedFAIL; existingeditorial/arithmetic/performance tests, buildSEO/editorial/appTypeScriptPASS",
       "releaseHold": "Allsixexactmainchecks/nativeproduction/actualaffectedandguest rechecks required; no nextmerge.",
       "mergeSHA": "0e4f0dde840905fb95d88d12581643b4635153dd",
-      "previewEvidence": "evidence/PR235-UPDATED-PREVIEW-BROWSER.json"
+      "previewEvidence": "evidence/PR235-UPDATED-PREVIEW-BROWSER.json",
+      "productionEvidence": [
+        "evidence/PR235-PRODUCTION-PROVIDERS.json",
+        "evidence/PR235-MAIN-CI.json",
+        "evidence/PR235-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR235-GUEST-SMOKE.json"
+      ]
     }
   ],
-  "updatedAt": "2026-10-24T17:16:06.274353+00:00",
+  "updatedAt": "2026-10-25T03:14:10.539620+00:00",
   "counts": {
     "siteFindings": 37,
     "P2": 24,
     "P3": 13,
-    "publiclyRepaired": 34,
+    "publiclyRepaired": 35,
     "preparedNotMerged": 0,
     "separateOperationalBlockers": 0,
-    "mergedAwaitingProductionVerification": 1,
+    "mergedAwaitingProductionVerification": 0,
     "protectedUnapprovedRecordFixes": 1,
     "approvedPublishedRecordFixesBlockedOnCredential": 1,
     "mergedFallbackAwaitingProductionVerification": 0

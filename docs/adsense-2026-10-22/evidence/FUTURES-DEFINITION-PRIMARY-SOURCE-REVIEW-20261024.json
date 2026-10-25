@@ -10,16 +10,16 @@
     },
     {
       "claim": "E-miniS&Pcontractmultiplier50 andnotional250000 atassumed5000index",
-      "outcome": "FIXED_INPUT_ARITHMETIC_CORRECT_ACTUAL_MULTIPLIER_SOURCE_PENDING",
-      "source": "evidence/futures-official-20261024/cme-es-spec.json",
-      "limitation": "OfficialspecURL200butservertextomitsmaterialcontractfields; retrievalnotcorroboration."
+      "outcome": "CORROBORATED_OFFICIAL_OBSERVED_CONTRACTSPECS_GET_ENDPOINT_AND_INDEPENDENT_ARITHMETIC",
+      "source": "evidence/futures-official-20261024/cme-es-api.json",
+      "limitation": "HTML/renderedbody lackedfields; officialpage networkobservedGET/CmeWS/mvc/ContractSpecs/List/productId/133, readnormally200. Product133EminiS&P,50\u00d7index,financialsettlement,0.25tick=12.50 factsactuallyread. No livepricesorcontractsplaced."
     }
   ],
   "remaining": [
-    "Need renderedcontractspecactualfields",
     "Futureslong/shortpermissions/positionlimitscurrentruleverificationincomplete",
     "NofullCMEbrochure/currentrulebookreadingclaimed",
-    "No derivativeorder/accountactions"
+    "No derivativeorder/accountactions",
+    "Fullrulebook/settlement/positionlimitdetailsnotread; specificmultiplierandsettlementfactsverified only"
   ],
   "rawCapturePublicationBoundary": "Full source text remains workspace-only for research; published evidence includes URLs, response metadata, hashes and scoped paraphrased reading assessments."
 }
