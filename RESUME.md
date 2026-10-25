@@ -1,5 +1,7 @@
 # TradeHQ — RESUME
 
+Current continuation checkpoint (25 October 2026): use `docs/audit-2026-10-25/Completion-Ledger.json` and final release evidence in PRs [236](https://github.com/anugaweerasinghe1-del/trading101/pull/236), [237](https://github.com/anugaweerasinghe1-del/trading101/pull/237), [238](https://github.com/anugaweerasinghe1-del/trading101/pull/238). Main `f364bce717420298101ff4d1cad02258f1b6e5ba` passed native Cloudflare production verification; approved seven-field published Daily correction is revision2 and anonymously verified. The records below are historical checkpoints; reconcile them with the current ledger/source. Mentor plain-text formatting remediation is in progress; final outcome belongs in its implementing PR.
+
 Branch: `adsense-fixes-20261005`, created from current main `73d5001e8bbfb18b89e862d7781dced2f89169d1` on 2026-10-04 UTC.
 
 ## Step 0: completed status sweep before remediation

@@ -21,6 +21,7 @@ import { verifyBeginnerGuide } from "./verify-beginner-guide.mjs";
 import { verifyMarketsSidebar } from "./verify-markets-sidebar.mjs";
 import { verifyProgressIndicators } from "./verify-progress-indicators.mjs";
 import { verifyProfileMetricAvailability } from "./verify-profile-metric-availability.mjs";
+import { verifyMentorCopy } from "./verify-mentor-copy.mjs";
 
 const chrome = ["google-chrome", "google-chrome-stable", "chromium", "chromium-browser"].find(name => spawnSync("which", [name]).status === 0);
 assert.ok(chrome, "Chromium unavailable; this browser check has NOT passed");
@@ -254,6 +255,7 @@ try {
   if (phase === null || phase === 6) {
   await verifyProgressIndicators({send,evaluate,waitUntil,origin,delay});
   await verifyProfileMetricAvailability({send,evaluate,waitUntil,origin});
+  await verifyMentorCopy({send,evaluate,waitUntil,origin,delay});
   await verifyComparisonArticle({send,evaluate,waitUntil,origin,delay,dist});
   await verifyBeginnerGuide({send,evaluate,waitUntil,origin,delay});
   await verifyGuidedLesson({send,evaluate,waitUntil,origin,delay});
