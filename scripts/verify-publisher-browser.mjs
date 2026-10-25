@@ -20,6 +20,8 @@ import { verifyComparisonArticle } from "./verify-comparison-article.mjs";
 import { verifyCourseOverviewArticle } from "./verify-course-overview-article.mjs";
 import { verifyWikiShareContrast } from "./verify-wiki-share-contrast.mjs";
 import { verifyWikiDifficultyContrast } from "./verify-wiki-difficulty-contrast.mjs";
+import { verifyCourseLessonArticle } from "./verify-course-lesson-article.mjs";
+import { hasIntegratedCourseLesson } from "../src/lib/courseLessonPresentation.ts";
 import { verifyHowToArticle } from "./verify-howto-article.mjs";
 import { hasIntegratedCourseOverview } from "../src/lib/courseOverviewPresentation.ts";
 import { verifyBeginnerGuide } from "./verify-beginner-guide.mjs";
@@ -171,7 +173,7 @@ try {
       assert.equal(observation.h1, 1, `${path}: one H1 (${width}px, JS=${javaScript})`);
       assert.equal(observation.overflow, false, `${path}: horizontal overflow (${width}px, JS=${javaScript})`);
       if (bundled) assert.equal(observation.notes, path, path + ": publisher content remains visible");
-      const primaryCopy = /^\/(?:wiki|strategy|compare)\/[^/]+$/.test(path) || /^\/learn\/article\/[^/]+$/.test(path) || hasIntegratedCourseOverview(path) || /^\/how-to-trade\/(?:btc|eth|nvda|sol|spy|tsla)$/.test(path);
+      const primaryCopy = /^\/(?:wiki|strategy|compare)\/[^/]+$/.test(path) || /^\/learn\/article\/[^/]+$/.test(path) || hasIntegratedCourseLesson(path) || hasIntegratedCourseOverview(path) || /^\/how-to-trade\/(?:btc|eth|nvda|sol|spy|tsla)$/.test(path);
       if (javaScript && bundled && primaryCopy) {
         const page = JSON.parse(readFileSync(join(dist, "publisher-notes", path, "index.json"), "utf8"));
         const normalizedMain = await evaluate(`document.querySelector('main').textContent.replace(/\\s+/g, ' ').trim().toLowerCase()`);
@@ -267,6 +269,7 @@ try {
   await verifyWikiShareContrast({send,evaluate,waitUntil,origin,delay});
   await verifyWikiDifficultyContrast({send,evaluate,waitUntil,origin,delay});
   await verifyHowToArticle({send,evaluate,waitUntil,origin,delay,dist});
+  await verifyCourseLessonArticle({send,evaluate,waitUntil,origin,delay,dist});
   await verifyBeginnerGuide({send,evaluate,waitUntil,origin,delay});
   await verifyGuidedLesson({send,evaluate,waitUntil,origin,delay});
   await verifyMarketsSidebar({send,evaluate,waitUntil,origin,delay});

@@ -14,6 +14,7 @@ import { markLessonStarted, markLessonCompleted, awardBadge, getTrackProgress } 
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { EducationalDisclaimer } from "@/components/EducationalDisclaimer";
 import { AIAnswerBlock } from "@/components/seo/AIAnswerBlock";
+import { hasIntegratedCourseLesson } from "@/lib/courseLessonPresentation";
 import { toast } from "sonner";
 
 const DOMAIN = "https://www.thetradehq.com";
@@ -44,7 +45,9 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
     setSubmitted(false);
   }, [track.slug, lesson.slug]);
 
-  const url = `${DOMAIN}/courses/${track.slug}/${lesson.slug}`;
+  const path = `/courses/${track.slug}/${lesson.slug}`;
+  const integratedLesson = hasIntegratedCourseLesson(path);
+  const url = `${DOMAIN}${path}`;
   const title = `${lesson.title} — ${track.title} | TradeHQ`;
   const description = lesson.summary.slice(0, 155);
 
@@ -134,7 +137,7 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
 
       <div className="min-h-screen bg-background flex flex-col">
         <Navigation />
-        <main className="flex-1 container mx-auto px-4 pt-24 pb-20 max-w-3xl">
+        <main data-publisher-notes={integratedLesson ? path : undefined} className="flex-1 container mx-auto px-4 pt-24 pb-20 max-w-3xl">
           <Breadcrumbs
             className="mb-4"
             items={[
@@ -159,6 +162,11 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
           <div className="text-xs text-muted-foreground mb-6">
             {track.editorial ? <>Prepared with AI assistance · Publication review recorded by <span className="text-foreground font-medium">{track.editorial.reviewer}</span> · {new Date(track.editorial.reviewedAt).toLocaleDateString("en-GB")}</> : <>By <span className="text-foreground font-medium">{AUTHOR}</span></>}
           </div>
+
+          {integratedLesson && <div className="text-sm text-muted-foreground mb-6 space-y-2">
+            <p>Published by TradeHQ, created by Anuga Weerasinghe. <Link to="/about" className="underline">Publisher background and editorial approach</Link>. No independent professional review is claimed; any recorded source-check scope appears on the page.</p>
+            {lesson.sourceCheck && <p>Source check: {lesson.sourceCheck.date}. {lesson.sourceCheck.scope}</p>}
+          </div>}
 
           <div className="rounded-2xl overflow-hidden mb-8 bg-black aspect-[16/9]">
             <img src={track.hero} alt={`${lesson.title} — illustration`} width={1200} height={675} className="w-full h-full object-cover opacity-80" />
@@ -188,7 +196,7 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
             <h2 className="text-2xl font-bold mb-1">Check Your Understanding</h2>
             <p className="text-sm text-muted-foreground mb-6">Answer all {lesson.quiz.length} questions to complete this lesson.</p>
 
-            <div className="space-y-5">
+            <div data-lesson-quiz className="space-y-5">
               {lesson.quiz.map((q, qi) => (
                 <Card key={qi} className="p-5 bg-white/[0.02] border-white/10">
                   <div className="text-sm font-semibold mb-3">{qi + 1}. {q.question}</div>
@@ -258,6 +266,13 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
             )}
           </div>
 
+          {integratedLesson && <section aria-label="Lesson answer notes" className="mt-8">
+            <h2 className="text-xl font-bold mb-3">Answer notes</h2>
+            <ul className="space-y-4 text-sm text-muted-foreground list-disc pl-5">
+              {lesson.quiz.map((q, i) => <li key={i}>{q.question} Options: {q.options.join("; ")}. Correct answer: {q.options[q.correctAnswer]}. Why: {q.explanation}</li>)}
+            </ul>
+          </section>}
+
           {/* Sources */}
           <Card className="mt-8 p-5 bg-white/[0.02] border-white/10">
             <h3 className="text-xs uppercase tracking-widest text-muted-foreground mb-3">Sources & further reading</h3>
@@ -296,6 +311,16 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
               </Link>
             )}
           </nav>
+
+          {integratedLesson && <section className="mt-8 text-sm text-muted-foreground space-y-3">
+            <h2 className="text-xl font-bold text-foreground">Practise this lesson</h2>
+            <p>Use $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.</p>
+            <nav aria-label="Course references" className="flex flex-wrap gap-4">
+              <Link className="underline" to={`/courses/${track.slug}`}>{track.title}</Link>
+              <Link className="underline" to="/courses">All courses</Link>
+            </nav>
+            <p>Educational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.</p>
+          </section>}
 
           <div className="mt-10">
             <EducationalDisclaimer />
