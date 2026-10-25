@@ -1,0 +1,60 @@
+{
+  "checkedAt": "2026-10-25T16:42:26.945865+00:00",
+  "productionSHA": "a936c7dfbe3a5857794595092408e1f3518de7dc",
+  "outcome": "SELECTED_PRIMARY_PASSAGES_READ_ARITHMETIC_RECONCILED_FOLLOWUPS_REMAIN",
+  "sources": [
+    {
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/how-stock-markets-work/types-orders",
+      "checkedAt": "2026-10-25T16:38:43.587377+00:00",
+      "status": 200,
+      "finalUrl": "https://www.investor.gov/introduction-investing/investing-basics/how-stock-markets-work/types-orders",
+      "rawSHA256": "09716056f37e3ac2a5b410c48f56db1b36afe1b327352a3b6442eac1b71aca6c",
+      "textLength": 6157,
+      "passagesActuallyRead": "Market orders do not guarantee an execution price; last-traded price may differ. Limit orders set a price boundary; a stop order becomes a market order on its trigger."
+    },
+    {
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/dollar-cost-averaging",
+      "checkedAt": "2026-10-25T16:38:43.589115+00:00",
+      "status": 200,
+      "finalUrl": "https://www.investor.gov/introduction-investing/investing-basics/glossary/dollar-cost-averaging",
+      "rawSHA256": "d47e94d3a88ef7fab57ef57cf6b7397fbe8c6c177f2a1440f870ec6f3f6db499",
+      "textLength": 5051,
+      "passagesActuallyRead": "Equal amounts at regular intervals buy more units when prices are lower and fewer when higher."
+    },
+    {
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/what-risk",
+      "checkedAt": "2026-10-25T16:38:43.590738+00:00",
+      "status": 200,
+      "finalUrl": "https://www.investor.gov/introduction-investing/investing-basics/what-risk",
+      "rawSHA256": "16cf2e2ad5306a756145f2453903e43dde116dc2e327da6a66114082408a066b",
+      "textLength": 9118,
+      "passagesActuallyRead": "Investments involve uncertainty and potential financial loss. The selected page describes business, volatility, inflation, interest-rate and liquidity risks; it does not define Calmar or validate a strategy."
+    }
+  ],
+  "routes": [
+    {
+      "path": "/wiki/dollar-cost-averaging",
+      "assessment": "The equal-contribution explanation is corroborated by the actual SEC DCA definition. Fee-free $100 at $10 plus $100 at $20 buys 15 units at $200/15, about $13.33; the falling-price worksheet buys 30 units at $200/30, about $6.67, but a $5 mark gives $150 and a $50 loss. Lower average cost is explicitly distinguished from profit and lump-sum outperformance. The body, summary and worksheet repeat core concepts but the adverse-path worksheet adds a useful distinct example; no entire after-footer article repetition. Broader cross-site originality and complete source fit remain."
+    },
+    {
+      "path": "/wiki/drawdown",
+      "assessment": "$100 to $80 is a 20% peak decline and 25% recovery on the lower base; a 50% loss requires 100% recovery. Cash flows, sampling, unfinished decline, historical versus future bounds and lack of health diagnosis are explicit. The SEC risk reference is correctly labelled background; it does not establish the Calmar ratio definition or all drawdown conventions. Those claim-specific source follow-ups remain. Compared with the lesson on handling drawdowns, the shared arithmetic illustrates the same concept; this page adds unfinished maximum-drawdown sampling and Calmar scope, without enough evidence to assert improper duplication."
+    },
+    {
+      "path": "/wiki/risk-reward-ratio",
+      "assessment": "The 1:1, 1:2 and 1:3 fixed realised payoff examples break even before costs at 1/2, 1/3 and 1/4 wins respectively. 0.25 times $3 minus 0.75 times $1 is zero; a positive per-trade cost makes it negative. Planned targets and stops do not establish realised payoff sizes, frequencies or positive expectancy. Actual SEC source text supports market-price uncertainty and stop-to-market conversion, not profitability, a universal ratio or strategy validation. Broader source/originality and complete conditional/accessibility stages remain."
+    },
+    {
+      "path": "/wiki/paper-trading",
+      "assessment": "The worksheet ten units at $20 plus 0.1% costs debits $200.20, selling at $19 less 0.1% credits $189.81 and loses $10.39. A separate $20 to $18 mark loses $20 before costs. These are hypothetical arithmetic, not live execution tests. The text distinguishes virtual funds/generated histories from queue priority, real slippage, limit orders, borrowing, settlement and real-money readiness. SEC order mechanics provides selected execution background, not certification of the simulator engine or a measured psychological claim. No production trade or private-account action was performed."
+    }
+  ],
+  "arithmeticMethod": "Independent exact rational arithmetic on the explicitly hypothetical fixed inputs; no engine/order/account certification.",
+  "preservedFailure": {
+    "method": "Initial foreground Chromium source requests",
+    "outcome": "All three returned the same upstream envoy transport error rather than source content; no reading credit.",
+    "error": "upstream connect error or disconnect/reset before headers; remote connection failure",
+    "subsequentMethod": "Normal urllib HTTPS requests through inherited proxy and configured CA/TLS; actual HTTP 200 bodies read. No proxy bypass or trust/credential change."
+  },
+  "limitations": "Selected source scope only. Calmar definition, complete source-to-claim mapping, simulator/private execution, empirical psychology, cross-site originality and remaining accessibility/control/zoom/ad/CMP stages are not certified. Entire official source texts remain workspace-only; published receipt contains original paraphrases and metadata."
+}
