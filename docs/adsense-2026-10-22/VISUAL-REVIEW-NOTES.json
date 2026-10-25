@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T17:15:41.899825+00:00",
+  "updatedAt": "2026-10-25T09:21:28.990654+00:00",
   "scope": "Actual screenshot viewing by route and stage. Full-page default-state images are separately recorded at all five widths for20 core routes; this is not conditional, accessibility, light-theme, source or whole-audit completion.",
   "routes": {
     "/": {
@@ -233,7 +233,7 @@
       ]
     },
     "/courses/cryptocurrency-price-feeds-and-valuation/exchange-tickers-and-price-aggregation": {
-      "status": "FIRST_FOLD_ONLY",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
       "humanViewedWidths": [
         360
       ],
@@ -242,7 +242,17 @@
       ],
       "evidence": [
         "evidence/contact--courses--360-0.png"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "All six contacts at five widths personally viewed: reviewed AI-assisted attribution/date, hero, quick answer, independent ticker/order-book observations, venue/identifier/liquidity/time comparability, volume-weighted calculation, provider-specific outlier qualification, three-venue worked example, takeaways, four unanswered quiz cards/disabled submit, CoinGecko methodology/API sources, next lesson and footer. No outside-main appended article visible. No default clipping/overlap observed. Fixed examples checked arithmetically:11100/1100=10.0909;502/100=5.02;3600/300=12.00. Provider methodology source and keyboard/light/zoom/conditional stages remain. No production answer/progress action."
     },
     "/courses/cryptocurrency-price-feeds-and-valuation/portfolio-rebalancing-and-cash-drag": {
       "status": "FIRST_FOLD_ONLY",
@@ -291,7 +301,7 @@
       ]
     },
     "/courses/diversification-and-position-sizing/foundations-of-asset-allocation": {
-      "status": "FIRST_FOLD_ONLY",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
       "humanViewedWidths": [
         360
       ],
@@ -300,7 +310,17 @@
       ],
       "evidence": [
         "evidence/contact--courses--360-0.png"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "All six contacts at all five widths personally viewed: publication-review/AI-assisted attribution, hero/quick answer, classroom sizing and available-cash distinction, pre/post-fee weights,30/10/60allocation example, no derivatives/short/leverage or real-book fills, fixed250price fee example/postfee equation, takeaways, four unanswered quizzes/disabled submit, Investor.gov sources, next lesson/footer. No outside-main appended article visible. No default clipping or overlap observed. Arithmetic internally coherent:25000/99975=25.00625%;25000/1.00025=24993.75156;quantity99.975006 at250. Fixed inputs only, no engine test. Source/keyboard/light/zoom/conditional stages remain. No production answer/progress action."
     },
     "/courses/diversification-and-position-sizing/managing-concentration-risk": {
       "status": "FIRST_FOLD_ONLY",
@@ -1994,6 +2014,34 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Allninecontacts coveringallfivewidths personallyviewed: breadcrumbs,byline/hero,quickanswer,fullbody/defined100sharemultiplier/contractexceptions, worked185callat3breakeven188, spot-onlypracticeboundary, takeaways, allfourunansweredquizcards/disabledsubmit, sourcelinks,nextlesson,footerandentireappendednotes. No newdefaultclipping/overlap observed. Articleandnotes substantiallyrepeat; exactunique-copy/conditionalfeedback preservation investigationremains. No quizselection/submit/completion/progressaction. Light/keyboard/zoom,actualconditionalfeedbackandprimarycontractsourcesremainincomplete.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+    },
+    "/courses/macro-reading-for-traders/reading-cpi-and-inflation": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "All nine contacts covering all settled full-page segments at five widths personally viewed: breadcrumb/title/author, hero, quick answer, CPI definitions, release mechanics, consensus and surprise qualification, three-layer reading method, takeaways, four unanswered quiz cards, disabled submission, BLS/FRED links, next lesson, footer and whole appended article. No default clipping/overlap observed. Courses source unchanged between capture commit and live main239. No quiz/progress submission. Light, keyboard, zoom, conditional flows, primary-source corroboration and duplication assessment remain open.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+    },
+    "/courses/trading-psychology-mastery/cognitive-biases-in-trading": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "All nine contacts at five widths personally viewed, including full definitions/research limitations, anchoring, non-universal loss-aversion qualification, hypothetical100gain/loss journal prompt, recency/sample limitations, takeaways, four unanswered quiz cards/disabled submit, references/next, footer and entire appended article. No default clipping or overlap observed. Main article source unchanged since capture through live239. Source studies, keyboard/light/zoom, conditional behavior and exact duplicate integration remain follow-ups. No production quiz/progress action.",
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
     }
   }

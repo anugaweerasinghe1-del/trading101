@@ -2197,7 +2197,7 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "FIRST_FOLD_ONLY",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
         "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
         "humanViewedWidths": [
@@ -2208,7 +2208,17 @@
         ],
         "evidence": [
           "evidence/contact--courses--360-0.png"
-        ]
+        ],
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "All six contacts at five widths personally viewed: reviewed AI-assisted attribution/date, hero, quick answer, independent ticker/order-book observations, venue/identifier/liquidity/time comparability, volume-weighted calculation, provider-specific outlier qualification, three-venue worked example, takeaways, four unanswered quiz cards/disabled submit, CoinGecko methodology/API sources, next lesson and footer. No outside-main appended article visible. No default clipping/overlap observed. Fixed examples checked arithmetically:11100/1100=10.0909;502/100=5.02;3600/300=12.00. Provider methodology source and keyboard/light/zoom/conditional stages remain. No production answer/progress action."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -2229,7 +2239,13 @@
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "datedCoursePrimarySourceFollowup": {
+        "result": "CoinGecko methodology substantive aggregation section read: uses selected ticker set, identifier/currency conversions, outlier exclusion and final VWAP of retained observations; special cases and manual exclusions exist. Lesson appropriately labels simplified worksheet and does not claim exact provider replication. Arithmetic examples internally verified separately.",
+        "remaining": "No API freshness/data-quality or live execution certification; order-book and complete exchange/provider methodology follow-ups remain.",
+        "evidence": "evidence/COURSE-PRIMARY-SOURCE-FOLLOWUP-20261025.json",
+        "wholeSourceReviewComplete": false
+      }
     },
     {
       "url": "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/portfolio-rebalancing-and-cash-drag",
@@ -2581,7 +2597,7 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "FIRST_FOLD_ONLY",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
         "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
         "humanViewedWidths": [
@@ -2592,7 +2608,17 @@
         ],
         "evidence": [
           "evidence/contact--courses--360-0.png"
-        ]
+        ],
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "All six contacts at all five widths personally viewed: publication-review/AI-assisted attribution, hero/quick answer, classroom sizing and available-cash distinction, pre/post-fee weights,30/10/60allocation example, no derivatives/short/leverage or real-book fills, fixed250price fee example/postfee equation, takeaways, four unanswered quizzes/disabled submit, Investor.gov sources, next lesson/footer. No outside-main appended article visible. No default clipping or overlap observed. Arithmetic internally coherent:25000/99975=25.00625%;25000/1.00025=24993.75156;quantity99.975006 at250. Fixed inputs only, no engine test. Source/keyboard/light/zoom/conditional stages remain. No production answer/progress action."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -3547,9 +3573,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "All nine contacts covering all settled full-page segments at five widths personally viewed: breadcrumb/title/author, hero, quick answer, CPI definitions, release mechanics, consensus and surprise qualification, three-layer reading method, takeaways, four unanswered quiz cards, disabled submission, BLS/FRED links, next lesson, footer and whole appended article. No default clipping/overlap observed. Courses source unchanged between capture commit and live main239. No quiz/progress submission. Light, keyboard, zoom, conditional flows, primary-source corroboration and duplication assessment remain open."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -3570,8 +3606,14 @@
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "confirmedFindingStates": []
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "confirmedFindingStates": [],
+      "datedCoursePrimarySourceFollowup": {
+        "result": "BLS defines urban-consumer goods/services basket and distinguishes all items less food/energy. CPI schedule and current homepage identify 8:30 Eastern release timing. Federal Reserve FAQ explicitly uses annual PCE index change for longer-run2% objective, not headline/core CPI.",
+        "remaining": "No source certification for every consensus/revision/reaction statement. FRED series and detailed methodology not read; no current inflation statistic is added to site.",
+        "evidence": "evidence/COURSE-PRIMARY-SOURCE-FOLLOWUP-20261025.json",
+        "wholeSourceReviewComplete": false
+      }
     },
     {
       "url": "https://www.thetradehq.com/courses/macro-reading-for-traders/the-dollar-index-dxy",
@@ -4507,9 +4549,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "All nine contacts at five widths personally viewed, including full definitions/research limitations, anchoring, non-universal loss-aversion qualification, hypothetical100gain/loss journal prompt, recency/sample limitations, takeaways, four unanswered quiz cards/disabled submit, references/next, footer and entire appended article. No default clipping or overlap observed. Main article source unchanged since capture through live239. Source studies, keyboard/light/zoom, conditional behavior and exact duplicate integration remain follow-ups. No production quiz/progress action."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -4530,7 +4582,7 @@
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": []
     },
     {
@@ -42854,5 +42906,5 @@
     "individualActualRenderedProseComparisonsWithPreviouslyFullyReadBaseline": 85,
     "scope": "441 main texts/states covered, not441 fully completed page/source/control/human-visual reviews. See TERMINAL-TEMPLATE-COMPARISONS.json for raw texts and deltas."
   },
-  "updatedAt": "2026-10-24T17:15:41.899825+00:00"
+  "updatedAt": "2026-10-25T09:21:28.990654+00:00"
 }

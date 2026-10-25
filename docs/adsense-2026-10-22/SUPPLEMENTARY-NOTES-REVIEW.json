@@ -3,8 +3,8 @@
   "sourceCandidate": "71b84461ab0f531da44da54d8670ad1bef0628ea",
   "equivalentProductionSHA": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
   "sourceExpectedArticles": 83,
-  "actualRenderedArticlesRead": 34,
-  "sourceExpectedArticlesNotYetIndividuallyReviewed": 49,
+  "actualRenderedArticlesRead": 36,
+  "sourceExpectedArticlesNotYetIndividuallyReviewed": 47,
   "routes": [
     {
       "path": "/",
@@ -348,9 +348,9 @@
     {
       "path": "/courses/macro-reading-for-traders/reading-cpi-and-inflation",
       "expectedFromCurrentBuiltRouteSource": true,
-      "actualRenderedPresenceVerified": false,
-      "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "actualRenderedPresenceVerified": true,
+      "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+      "assessment": "Read the complete rendered notes including all four question keys/explanations. Correctly distinguishes CPI versus PCE target and survey surprise versus predicted returns; no source certification inferred. Notes repeat main body and reveal answer explanations, requiring exact integration analysis before any removal."
     },
     {
       "path": "/courses/macro-reading-for-traders/the-fed-and-fomc-cycle",
@@ -446,9 +446,9 @@
     {
       "path": "/courses/trading-psychology-mastery/cognitive-biases-in-trading",
       "expectedFromCurrentBuiltRouteSource": true,
-      "actualRenderedPresenceVerified": false,
-      "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "actualRenderedPresenceVerified": true,
+      "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+      "assessment": "Entire rendered appended article read, including all four quiz options/keys/explanations and references. Research is not individualized diagnosis, a universal emotional coefficient, an exit guarantee or evidence of a market edge. Notes materially repeat main article and expose explanations; no removal until unique copy and conditional feedback preserved."
     },
     {
       "path": "/courses/options-trading-fundamentals/defined-risk-spreads",
@@ -612,10 +612,10 @@
       "assessment": null
     }
   ],
-  "currentVerifiedProductionSHA": "adcaed329c34f4a846f41b9fff9c01b2f2a3bc2e",
+  "currentVerifiedProductionSHA": "4a1288e4710d60eebe2f77c23badd3aed0030f44",
   "currentSeparateArticlesExpected": 75,
-  "currentSeparateArticlesActuallyRead": 32,
-  "currentSeparateArticlesNotYetIndividuallyRead": 43,
+  "currentSeparateArticlesActuallyRead": 34,
+  "currentSeparateArticlesNotYetIndividuallyRead": 41,
   "historicalSeparateArticlesNowIntegratedInMain": 8,
   "historicalBaselineScopePreserved": true
 }

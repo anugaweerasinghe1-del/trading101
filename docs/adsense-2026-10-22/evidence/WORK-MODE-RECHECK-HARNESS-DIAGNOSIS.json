@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-10-25T09:16:35.911Z",
+  "failedAssumption": "Shared helper required main h1 for guide; guide hero is outside its curriculum main. First transient state happened to satisfy before the subsequent route reload. No product verdict from timeout.",
+  "observed": {
+    "path": "/learn-trading-guide",
+    "ready": "complete",
+    "prerender": false,
+    "h1s": [
+      {
+        "text": "BEGINNER TRADING PRACTICE GUIDE",
+        "parent": "DIV",
+        "inMain": false
+      }
+    ],
+    "mains": [
+      "ILLUSTRATIVE TICKER EXAMPLES \u2014 NOT LIVE MARKET DATA\n\nBTC\nsample move\n+2.4%\nETH\nsample move\n+1.8%\nSOL"
+    ],
+    "xp": "<div aria-valuemax=\"100\" aria-valuemin=\"0\" aria-valuenow=\"0\" aria-valuetext=\"0%\" role=\"progressbar\" data-state=\"loading\" data-value=\"0\" data-max=\"100\" class=\"relative w-full overflow-hidden rounded-full bg-secondary h-3\" aria-label=\"Experience Points\"><div data-state=\"loading\" data-value=\"0\" data-max=\"100\" class=\"h-full w-full flex-1 bg-primary transition-all\" style=\"transform: translateX(-100%);\"></div></div>"
+  },
+  "secondHarnessFailure": {
+    "outcome": "All40affected assertions passed but final harness gate failed because it had blocked five known SELECT-only course-catalog reads.",
+    "correction": "Permit only already source-reviewed get_published_course_catalog, preserving denial of all other mutation RPCs; rerun entire40state check. No app assertion changed."
+  }
+}

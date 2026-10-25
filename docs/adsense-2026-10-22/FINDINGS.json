@@ -1161,14 +1161,14 @@
       "id": "THQ-035",
       "severity": "P2",
       "category": "Daily correlation case illustration contradicts scenario and keyed arithmetic",
-      "state": "OWNER_APPROVED_PUBLISHED_CORRECTION_BLOCKED_ON_SERVICE_CREDENTIAL",
+      "state": "PUBLICLY_VERIFIED",
       "urls": [
         "https://www.thetradehq.com/daily"
       ],
       "exerciseId": "practice-32",
       "observed": "Normal public50case bank and controlled-date actualproductionfivewidths: scenarioA\u22123%/B\u22124%, questions30/40/70loss, chartA4/B6. Staticfallback3/4verified afterPR233; normalpublishedbankunchanged. No production answers or progress writes.",
       "rootCause": "Illustrationinputsnotkeptconsistentwithexpandedscenarioandquestionarithmetic. Samecontentinstaticstarterfallbackandpublishedbank.",
-      "fix": "Owner-approved exactlytwo illustrationvalues4\u21923/6\u21924. StaticfallbackPUBLICLY_VERIFIED viaPR233. Guardedpublished-row updater prepared/localadversarialchecksPASS; projectservicekeybinding required. NativeadminpublisherchangesbankID/metadata, so do not use it for this scope.",
+      "fix": "Static fallback PR233/234 and owner-approved published revision2 via PR238 are complete. Obsolete prepared direct-row helper must not run against revised content.",
       "risk": "Twoillustrationnumbers, no financial engine change. Savedattemptsnapshotsmustremainimmutableandmayretainoldvisual. Do notreset,rewriteormigratelearningprogress. Re-readcurrentapprovedbankandstopifconcurrentedit; requireexplicitapprovalandapprovedpublicationpath.",
       "rollback": "Retainpriorpublishedcontentrevisionanduseapprovedcontentrollbackifneeded; no userrecord operation.",
       "adsenseRelevance": "Financialeducationaccuracy; nospecificGooglepolicyviolationasserted.",
@@ -1183,7 +1183,7 @@
       "staticFallbackCandidateSHA": "f696264cbd8233d39421bed1501dfb04ceeb177f",
       "staticFallbackLocalValidation": "PASS:two-valueparsedbankequality;baselinefails;existingDailyandfrozenattempts/build/SEO/typesPASS",
       "isolatedVisualEvidence": "evidence/DAILY-CORRELATION-VISUAL-REPRODUCTION.json",
-      "publishedBankState": "UNCHANGED_APPROVED_PATCH_WAITING_FOR_SUPABASE_SERVICE_ROLE_KEY",
+      "publishedBankState": "PUBLISHED_REVISION_2_VERIFIED",
       "ownerApproval": "User explicitly approved the exact A4/B6\u2192A3/B4 publishedpractice32correction; preserveallothercontent/savedattempts.",
       "staticFallbackState": "PUBLICLY_VERIFIED",
       "staticFallbackMergeSHA": "db3bfab843a126dda6afc4c2f2184a4366fc70ad",
@@ -1196,13 +1196,25 @@
         "evidence/POST-PR233-GUEST-SMOKE.json",
         "evidence/DAILY-PUBLISHED-CORRELATION-BEFORE-BROWSER.json"
       ],
-      "actualPublishedCaseReproduction": "Controlled-client-dateproductionfivewidthsplusnormalbankRPC200confirmpublic4/6stillcontradicts3/4scenario; noanswers/progresswrites; twoactualimagesviewed."
+      "actualPublishedCaseReproduction": "Controlled-client-dateproductionfivewidthsplusnormalbankRPC200confirmpublic4/6stillcontradicts3/4scenario; noanswers/progresswrites; twoactualimagesviewed.",
+      "publishedCorrectionPR": 238,
+      "publishedCorrectionMergeSHA": "f364bce717420298101ff4d1cad02258f1b6e5ba",
+      "currentVerificationSHA": "4a1288e4710d60eebe2f77c23badd3aed0030f44",
+      "verifiedAt": "2026-10-25T09:20:58.203744+00:00",
+      "publicationApprovalSource": "Implementing PR238 and committed Remaining-Daily-Approval.md record the owner seven-field approval in the separate work-mode conversation. This continuation performed read-only verification, zero writes.",
+      "currentResult": "Exact seven illustration fields plus normal reviewer/reviewedAt metadata changed; same public bank ID/effective date,50cases/500questions and all other content preserved. Actual normal-bank controlled-date charts pass five widths; saved attempts unchanged.",
+      "historicalPreparedFix": "Owner-approved exactlytwo illustrationvalues4\u21923/6\u21924. StaticfallbackPUBLICLY_VERIFIED viaPR233. Guardedpublished-row updater prepared/localadversarialchecksPASS; projectservicekeybinding required. NativeadminpublisherchangesbankID/metadata, so do not use it for this scope.",
+      "productionEvidence": [
+        "evidence/WORK-MODE-PUBLISHED-DAILY-RECONCILIATION.json",
+        "evidence/WORK-MODE-MERGED-PR-RECONCILIATION.json",
+        "evidence/WORK-MODE-DAILY32-CORRECTED-BROWSER.json"
+      ]
     },
     {
       "id": "THQ-036",
       "severity": "P2",
       "category": "Daily worksheet chart age/measurement units contradict stated inputs",
-      "state": "STATIC_FALLBACK_PUBLICLY_VERIFIED_PUBLISHED_RECORD_APPROVAL_REQUIRED",
+      "state": "PUBLICLY_VERIFIED",
       "urls": [
         "https://www.thetradehq.com/daily"
       ],
@@ -1213,7 +1225,7 @@
       "observed": "Practice24 timestamps Friday16:00\u2192Sunday16:00=48hours and cryptoSunday15:58\u219216:00=2minutes; chart says40/0.1hours(6minutes). Practice18 uses dollar unit for Pertransaction500/Grossgain8/Transactions20, mixing a count into monetary bars. Both confirmed normalbankRPC200 and controlled-date deployedUI atfivewidths, with mobile/desktop images personallyviewed.",
       "expected": "Illustrations reflect stated scenario values and one shared measurement unit.",
       "rootCause": "Authored visual fixtures not kept consistent with precise scenario/expanded question inputs.",
-      "fix": "Practice24: unit observation age (minutes), values2880/2. Practice18: replace third bar Transactions20 with Totalfees10, derived20\u00d7500\u00d70.1%. Five visual-only fields; all questions, answers, other content and user attempts unchanged.",
+      "fix": "Static fallback PR233/234 and owner-approved published revision2 via PR238 are complete. Obsolete prepared direct-row helper must not run against revised content.",
       "risk": "Static starter fallback content-only; no app mechanics. Published bank is protected productionrecord requiring additional explicit approval; practice32approval does not cover these cases. Old saved snapshots may retain prior illustrations and must not be rewritten.",
       "rollback": "Retain exact prior static commit and publicbank capture; revert five illustrationfields only through guarded publication if necessary. No userrecord operation.",
       "adsenseRelevance": "Financial education consistency/readability; not a claimed specific Google policy violation.",
@@ -1227,7 +1239,7 @@
       ],
       "detectedAt": "2026-10-24T16:41:39.128558+00:00",
       "staticFallbackLocalValidation": "PASS: originalbankexpectedfail; fivefieldfullJSONparity, derivedage/feeassertions, existingDaily/PGlite/frozenattemptsuite, build/SEO/editorialchecks andappTypeScript",
-      "publishedBankState": "UNCHANGED_NO_ADDITIONAL_OWNER_APPROVAL",
+      "publishedBankState": "PUBLISHED_REVISION_2_VERIFIED",
       "staticFallbackPR": 234,
       "staticFallbackCandidateSHA": "361b1b3a9c4c327150a9de95aa69bd70b0f96c15",
       "staticFallbackMergeSHA": "313e28e34ff67a5758f3378d1ae7d5bbc6ae3dc5",
@@ -1239,6 +1251,20 @@
         "evidence/PR234-MAIN-CI.json",
         "evidence/PR234-PRODUCTION-BROWSER.json",
         "evidence/POST-PR234-GUEST-SMOKE.json"
+      ],
+      "publishedCorrectionPR": 238,
+      "publishedCorrectionMergeSHA": "f364bce717420298101ff4d1cad02258f1b6e5ba",
+      "currentVerificationSHA": "4a1288e4710d60eebe2f77c23badd3aed0030f44",
+      "verifiedAt": "2026-10-25T09:20:58.203744+00:00",
+      "publicationApprovalSource": "Implementing PR238 and committed Remaining-Daily-Approval.md record the owner seven-field approval in the separate work-mode conversation. This continuation performed read-only verification, zero writes.",
+      "currentResult": "Exact seven illustration fields plus normal reviewer/reviewedAt metadata changed; same public bank ID/effective date,50cases/500questions and all other content preserved. Actual normal-bank controlled-date charts pass five widths; saved attempts unchanged.",
+      "historicalPreparedFix": "Practice24: unit observation age (minutes), values2880/2. Practice18: replace third bar Transactions20 with Totalfees10, derived20\u00d7500\u00d70.1%. Five visual-only fields; all questions, answers, other content and user attempts unchanged.",
+      "productionEvidence": [
+        "evidence/WORK-MODE-PUBLISHED-DAILY-RECONCILIATION.json",
+        "evidence/WORK-MODE-MERGED-PR-RECONCILIATION.json",
+        "evidence/WORK-MODE-DAILY32-CORRECTED-BROWSER.json",
+        "evidence/WORK-MODE-DAILY24-CORRECTED-BROWSER.json",
+        "evidence/WORK-MODE-DAILY18-CORRECTED-BROWSER.json"
       ]
     },
     {
@@ -1271,7 +1297,7 @@
       "candidateSHA": "53310c47b2f904e2511ea93b8e11117e9a898148",
       "baseSHA": "313e28e34ff67a5758f3378d1ae7d5bbc6ae3dc5",
       "localValidation": "PASS rendered0/25/62.5/100ARIAstates plus honestunspecifiedindeterminate; oldwrapperexpectedFAIL; existingeditorial/arithmetic/performance tests, buildSEO/editorial/appTypeScriptPASS",
-      "releaseHold": "Allsixexactmainchecks/nativeproduction/actualaffectedandguest rechecks required; no nextmerge.",
+      "releaseHold": "Completed exact-main/native/actual affected/guest checks; no pending235release.",
       "mergeSHA": "0e4f0dde840905fb95d88d12581643b4635153dd",
       "previewEvidence": "evidence/PR235-UPDATED-PREVIEW-BROWSER.json",
       "productionEvidence": [
@@ -1280,19 +1306,220 @@
         "evidence/PR235-PRODUCTION-BROWSER.json",
         "evidence/POST-PR235-GUEST-SMOKE.json"
       ]
+    },
+    {
+      "id": "THQ-20261025-001",
+      "routeOrComponent": "/learn-trading-guide and /portfolio; LearningProgressTracker, RiskManagement, PortfolioAnalytics",
+      "defect": "XP, cash reserve, cash share and largest-position progress bars expose values without accessible names. Allocation bars use the same unnamed pattern.",
+      "severity": "P3",
+      "impact": "Assistive technology cannot identify which metric an individual progressbar represents.",
+      "state": "PUBLICLY_VERIFIED",
+      "reproduction": "Actual production DOM at 1363px: XP value 0; portfolio values 100,100,0; aria-label and aria-labelledby absent. Allocation branch additionally confirmed in source.",
+      "existingFix": null,
+      "implementationCommit": "bfff452bce9b8d7164b058331d5a8b6f89037902",
+      "pullRequest": 236,
+      "ci": "All three enforced checks and disposable PostgreSQL SUCCESS at candidate and main.",
+      "cloudflare": {
+        "deploymentId": "cdac0958-80bc-42a7-b1f2-c35593ec4cf0",
+        "sha": "e1c41f4c195de253a1ddd24a6deffd928de95250",
+        "environment": "production",
+        "branch": "main",
+        "status": "success",
+        "observedAt": "2026-10-25T04:54:06.091Z",
+        "nativeEvidenceJob": 121079895182
+      },
+      "liveVerification": {
+        "routes": [
+          "/learn-trading-guide",
+          "/portfolio"
+        ],
+        "viewport": 1363,
+        "themes": [
+          "light",
+          "dark"
+        ],
+        "entry": "/assets/index-CNuRCg_s.js",
+        "result": "Expected names and unchanged 0/100/100/0 values; both controls synchronized; no horizontal document overflow."
+      },
+      "finalResolution": "Released and independently observed; production mobile-width coverage remains unavailable.",
+      "regression": "Actual consumer regression fails the unchanged baseline: Missing accessible progress name: Experience Points. Candidate renders all five named indicator variants with unchanged 0/50/100 values.",
+      "stateHistory": [
+        "CONFIRMED",
+        "FIXED ON BRANCH",
+        "VERIFIED IN CI",
+        "MERGED",
+        "DEPLOYED TO CLOUDFLARE",
+        "VERIFIED IN PRODUCTION"
+      ],
+      "currentVerificationSHA": "4a1288e4710d60eebe2f77c23badd3aed0030f44",
+      "verifiedAt": "2026-10-25T09:20:58.203744+00:00",
+      "importedFrom": "main:docs/audit-2026-10-25/Completion-Ledger.json; final immutable implementing PR descriptions supersede pre-release source checkpoints",
+      "productionEvidence": [
+        "evidence/WORK-MODE-MERGED-PR-RECONCILIATION.json",
+        "evidence/PR239-PRODUCTION-PROVIDERS.json",
+        "evidence/PR239-MAIN-CI.json",
+        "evidence/WORK-MODE-LIVE-AFFECTED-RECHECK.json",
+        "evidence/POST-PR239-GUEST-SMOKE.json"
+      ]
+    },
+    {
+      "id": "THQ-20261025-002",
+      "routeOrComponent": "ThemeToggle in desktop/mobile Navigation",
+      "defect": "Two mounted toggles keep independent React state. Switching light on mobile then resizing to desktop leaves desktop state dark; its first click repeats light instead of entering dark.",
+      "severity": "P3",
+      "impact": "Theme action and accessible name become inconsistent after responsive breakpoint changes.",
+      "state": "PUBLICLY_VERIFIED",
+      "reproduction": "Candidate Chromium CI run40162306208 fails Progress enters dark theme after 360/390/768/1280/1440 crossing. Actual production About DOM after switching light: visible Switch to dark theme, hidden Switch to light theme.",
+      "existingFix": null,
+      "implementationCommit": "bfff452bce9b8d7164b058331d5a8b6f89037902",
+      "pullRequest": 236,
+      "ci": "All three enforced checks and disposable PostgreSQL SUCCESS at candidate and main.",
+      "cloudflare": {
+        "deploymentId": "cdac0958-80bc-42a7-b1f2-c35593ec4cf0",
+        "sha": "e1c41f4c195de253a1ddd24a6deffd928de95250",
+        "environment": "production",
+        "branch": "main",
+        "status": "success",
+        "observedAt": "2026-10-25T04:54:06.091Z",
+        "nativeEvidenceJob": 121079895182
+      },
+      "liveVerification": {
+        "routes": [
+          "/learn-trading-guide",
+          "/portfolio"
+        ],
+        "viewport": 1363,
+        "themes": [
+          "light",
+          "dark"
+        ],
+        "entry": "/assets/index-CNuRCg_s.js",
+        "result": "Expected names and unchanged 0/100/100/0 values; both controls synchronized; no horizontal document overflow."
+      },
+      "finalResolution": "Released and independently observed; production mobile-width coverage remains unavailable.",
+      "stateHistory": [
+        "CONFIRMED",
+        "FIXED ON BRANCH",
+        "VERIFIED IN CI",
+        "MERGED",
+        "DEPLOYED TO CLOUDFLARE",
+        "VERIFIED IN PRODUCTION"
+      ],
+      "currentVerificationSHA": "4a1288e4710d60eebe2f77c23badd3aed0030f44",
+      "verifiedAt": "2026-10-25T09:20:58.203744+00:00",
+      "importedFrom": "main:docs/audit-2026-10-25/Completion-Ledger.json; final immutable implementing PR descriptions supersede pre-release source checkpoints",
+      "productionEvidence": [
+        "evidence/WORK-MODE-MERGED-PR-RECONCILIATION.json",
+        "evidence/PR239-PRODUCTION-PROVIDERS.json",
+        "evidence/PR239-MAIN-CI.json",
+        "evidence/WORK-MODE-LIVE-AFFECTED-RECHECK.json",
+        "evidence/POST-PR239-GUEST-SMOKE.json"
+      ]
+    },
+    {
+      "id": "THQ-20261025-003",
+      "routeOrComponent": "/trade/shib; MinimalistAreaChart",
+      "defect": "Nonzero tiny quote change rounds to +0.00 beside +2.40% because absolute changes use toFixed(2).",
+      "severity": "P3",
+      "impact": "Readers cannot distinguish small real displayed quote movements from an actual zero.",
+      "state": "PUBLICLY_VERIFIED",
+      "reproduction": "Actual production display $0.0000125697 and +0.00 (+2.40%); source always rounds absolute change to two decimals.",
+      "existingFix": null,
+      "implementationCommit": "53b4b89d77a5820a8e9acb964c520e48930f2ab7",
+      "pullRequest": 237,
+      "ci": "All required exact-head and main checks SUCCESS; unchanged-head retry after existing inspector navigation failure.",
+      "cloudflare": {
+        "deploymentId": "f57a7516-3413-4f96-9c9d-c432661ad380",
+        "sha": "5076c964c51f4e06bac2e469f7dcb6f9bdb2aee3",
+        "environment": "production",
+        "status": "success",
+        "observedAt": "2026-10-25T05:18:49.017Z"
+      },
+      "liveVerification": "Affected routes rechecked after native Cloudflare confirmation; final immutable evidence in PR237.",
+      "finalResolution": "Resolved and verified in production.",
+      "currentVerificationSHA": "4a1288e4710d60eebe2f77c23badd3aed0030f44",
+      "verifiedAt": "2026-10-25T09:20:58.203744+00:00",
+      "importedFrom": "main:docs/audit-2026-10-25/Completion-Ledger.json; final immutable implementing PR descriptions supersede pre-release source checkpoints",
+      "productionEvidence": [
+        "evidence/WORK-MODE-MERGED-PR-RECONCILIATION.json",
+        "evidence/PR239-PRODUCTION-PROVIDERS.json",
+        "evidence/PR239-MAIN-CI.json",
+        "evidence/WORK-MODE-LIVE-AFFECTED-RECHECK.json",
+        "evidence/POST-PR239-GUEST-SMOKE.json",
+        "evidence/WORK-MODE-TINY-CHANGE-RECHECK.json"
+      ],
+      "distinctFromTHQ020": "THQ020 addressed synthetic fallback update arithmetic; this later issue is absolute-change text formatting in MinimalistAreaChart."
+    },
+    {
+      "id": "THQ-20261025-004",
+      "routeOrComponent": "/trader/me; local profile Win rate and share copy",
+      "defect": "A profile with zero recorded trades presents 0% win rate as a measured result.",
+      "severity": "P3",
+      "impact": "No completed sell observations are indistinguishable from genuinely measured zero wins.",
+      "state": "PUBLICLY_VERIFIED",
+      "reproduction": "Actual guest production profile:0trades placed,0%Win rate. Existing closed-stat helper returns sells0 and default winRate0.",
+      "existingFix": null,
+      "implementationCommit": "53b4b89d77a5820a8e9acb964c520e48930f2ab7",
+      "pullRequest": 237,
+      "ci": "All required exact-head and main checks SUCCESS; unchanged-head retry after existing inspector navigation failure.",
+      "cloudflare": {
+        "deploymentId": "f57a7516-3413-4f96-9c9d-c432661ad380",
+        "sha": "5076c964c51f4e06bac2e469f7dcb6f9bdb2aee3",
+        "environment": "production",
+        "status": "success",
+        "observedAt": "2026-10-25T05:18:49.017Z"
+      },
+      "liveVerification": "Affected routes rechecked after native Cloudflare confirmation; final immutable evidence in PR237.",
+      "finalResolution": "Resolved and verified in production.",
+      "currentVerificationSHA": "4a1288e4710d60eebe2f77c23badd3aed0030f44",
+      "verifiedAt": "2026-10-25T09:20:58.203744+00:00",
+      "importedFrom": "main:docs/audit-2026-10-25/Completion-Ledger.json; final immutable implementing PR descriptions supersede pre-release source checkpoints",
+      "productionEvidence": [
+        "evidence/WORK-MODE-MERGED-PR-RECONCILIATION.json",
+        "evidence/PR239-PRODUCTION-PROVIDERS.json",
+        "evidence/PR239-MAIN-CI.json",
+        "evidence/WORK-MODE-LIVE-AFFECTED-RECHECK.json",
+        "evidence/POST-PR239-GUEST-SMOKE.json"
+      ]
+    },
+    {
+      "id": "THQ-20261025-005",
+      "routeOrComponent": "/ai-mentor and portfolio educational mentor",
+      "severity": "P3",
+      "impact": "Literal formatting punctuation clutters otherwise readable educational messages. This is a usability correction, not an independently established AdSense policy violation.",
+      "state": "PUBLICLY_VERIFIED",
+      "defect": "Both plain-text chat renderers expose authored Markdown emphasis delimiters in welcome, library and snapshot replies.",
+      "reproduction": "Actual1363px production welcome displays **Smart Mentor**; stop-loss response displays _(Educational simulation only \u2014 not financial advice.)_; My portfolio response displays **Your portfolio at a glance:**.",
+      "existingFix": null,
+      "implementationCommit": "61892fc8fdbf5524638bed129179c46ac2a0a223",
+      "pullRequest": 239,
+      "ci": "Local authored-topic/portfolio regression and TypeScript pass; compiled20state regression added; remote results pending.",
+      "cloudflare": "NOT CHECKED",
+      "liveVerification": "Before state reproduced in public and trading mentor; candidate not released.",
+      "finalResolution": "Clean welcome and RSI response independently verified at five widths in both themes; prior implementing PR separately verified portfolio mentor.",
+      "currentVerificationSHA": "4a1288e4710d60eebe2f77c23badd3aed0030f44",
+      "verifiedAt": "2026-10-25T09:20:58.203744+00:00",
+      "importedFrom": "main:docs/audit-2026-10-25/Completion-Ledger.json; final immutable implementing PR descriptions supersede pre-release source checkpoints",
+      "productionEvidence": [
+        "evidence/WORK-MODE-MERGED-PR-RECONCILIATION.json",
+        "evidence/PR239-PRODUCTION-PROVIDERS.json",
+        "evidence/PR239-MAIN-CI.json",
+        "evidence/WORK-MODE-LIVE-AFFECTED-RECHECK.json",
+        "evidence/POST-PR239-GUEST-SMOKE.json"
+      ]
     }
   ],
-  "updatedAt": "2026-10-25T03:14:10.539620+00:00",
+  "updatedAt": "2026-10-25T09:20:58.203744+00:00",
   "counts": {
-    "siteFindings": 37,
+    "siteFindings": 42,
     "P2": 24,
-    "P3": 13,
-    "publiclyRepaired": 35,
+    "P3": 18,
+    "publiclyRepaired": 42,
     "preparedNotMerged": 0,
     "separateOperationalBlockers": 0,
     "mergedAwaitingProductionVerification": 0,
-    "protectedUnapprovedRecordFixes": 1,
-    "approvedPublishedRecordFixesBlockedOnCredential": 1,
+    "protectedUnapprovedRecordFixes": 0,
+    "approvedPublishedRecordFixesBlockedOnCredential": 0,
     "mergedFallbackAwaitingProductionVerification": 0
   },
   "investigations": [

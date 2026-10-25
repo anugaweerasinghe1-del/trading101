@@ -395,7 +395,21 @@
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
       "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
-      "structuredQuizQuestionAndFeedbackSetsRead": 4
+      "structuredQuizQuestionAndFeedbackSetsRead": 4,
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "datedCoursePrimarySourceFollowup": {
+        "result": "CoinGecko methodology substantive aggregation section read: uses selected ticker set, identifier/currency conversions, outlier exclusion and final VWAP of retained observations; special cases and manual exclusions exist. Lesson appropriately labels simplified worksheet and does not claim exact provider replication. Arithmetic examples internally verified separately.",
+        "remaining": "No API freshness/data-quality or live execution certification; order-book and complete exchange/provider methodology follow-ups remain.",
+        "evidence": "evidence/COURSE-PRIMARY-SOURCE-FOLLOWUP-20261025.json",
+        "wholeSourceReviewComplete": false
+      }
     },
     {
       "path": "/courses/cryptocurrency-price-feeds-and-valuation/portfolio-rebalancing-and-cash-drag",
@@ -454,7 +468,15 @@
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
       "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
-      "structuredQuizQuestionAndFeedbackSetsRead": 4
+      "structuredQuizQuestionAndFeedbackSetsRead": 4,
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
     },
     {
       "path": "/courses/diversification-and-position-sizing/managing-concentration-risk",
@@ -613,7 +635,21 @@
       "fullPageReviewComplete": false,
       "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
       "structuredQuizQuestionAndFeedbackSetsRead": 4,
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "datedCoursePrimarySourceFollowup": {
+        "result": "BLS defines urban-consumer goods/services basket and distinguishes all items less food/energy. CPI schedule and current homepage identify 8:30 Eastern release timing. Federal Reserve FAQ explicitly uses annual PCE index change for longer-run2% objective, not headline/core CPI.",
+        "remaining": "No source certification for every consensus/revision/reaction statement. FRED series and detailed methodology not read; no current inflation statistic is added to site.",
+        "evidence": "evidence/COURSE-PRIMARY-SOURCE-FOLLOWUP-20261025.json",
+        "wholeSourceReviewComplete": false
+      }
     },
     {
       "path": "/courses/macro-reading-for-traders/the-dollar-index-dxy",
@@ -767,7 +803,15 @@
       "fullPageReviewComplete": false,
       "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
       "structuredQuizQuestionAndFeedbackSetsRead": 4,
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
     },
     {
       "path": "/courses/trading-psychology-mastery/discipline-and-daily-rituals",
@@ -5299,12 +5343,12 @@
   ],
   "structuredQuizFeedbackTextRead": 26,
   "supplementaryNotesSourceExpected": 83,
-  "supplementaryNotesActuallyRead": 34,
-  "updatedAt": "2026-10-24T17:15:41.899825+00:00",
-  "fullPageDefaultStateRoutesActuallyViewed": 42,
+  "supplementaryNotesActuallyRead": 36,
+  "updatedAt": "2026-10-25T09:21:28.990654+00:00",
+  "fullPageDefaultStateRoutesActuallyViewed": 46,
   "separateSupplementaryArticlesExpected": 75,
-  "separateSupplementaryArticlesRead": 32,
-  "separateSupplementaryArticlesUnread": 43,
+  "separateSupplementaryArticlesRead": 34,
+  "separateSupplementaryArticlesUnread": 41,
   "dailyConditionalCurriculum": {
     "sourceExpectedCases": 50,
     "questionFeedbackSetsPerCase": 10,

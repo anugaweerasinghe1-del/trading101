@@ -1,0 +1,47 @@
+import assert from 'node:assert/strict';
+import {writeFileSync} from 'node:fs';
+import {openAuditPage,pause} from '/workspace/trading101/docs/adsense-2026-10-22/browser-session.mjs';
+const p=await openAuditPage(),rows=[],errors=[],blocked=[];
+const sha='4a1288e4710d60eebe2f77c23badd3aed0030f44';
+await p.send('Runtime.enable');
+await p.send('Fetch.enable',{patterns:[{urlPattern:'https://*.supabase.co/*',requestStage:'Request'}]});
+p.onEvent(m=>{
+ if(m.method==='Runtime.exceptionThrown')errors.push(m.params.exceptionDetails.text);
+ if(m.method==='Fetch.requestPaused'){
+  const {requestId,request}=m.params,u=new URL(request.url),allow=['GET','HEAD','OPTIONS'].includes(request.method)||(request.method==='POST'&&u.pathname==='/rest/v1/rpc/get_published_course_catalog');
+  if(!allow)blocked.push({method:request.method,path:u.pathname});
+  p.send(allow?'Fetch.continueRequest':'Fetch.failRequest',allow?{requestId}:{requestId,errorReason:'Aborted'}).catch(()=>{});
+ }
+});
+try{
+ for(const path of ['/learn-trading-guide','/portfolio','/trader/me','/ai-mentor']){
+  for(const width of [360,390,768,1280,1920]){
+   await p.send('Emulation.setDeviceMetricsOverride',{width,height:800,deviceScaleFactor:1,mobile:width<500});
+   await p.send('Page.navigate',{url:'about:blank'});await p.wait("location.href==='about:blank'&&document.readyState==='complete'");
+   await p.send('Page.navigate',{url:'https://www.thetradehq.com'+path});
+   await p.wait("!!document.querySelector('h1')&&!document.querySelector('#prerender-seo')");
+   await p.evaluate('document.fonts.ready.then(()=>true)',true);await pause(400);
+   await p.evaluate("[...document.querySelectorAll('button')].find(b=>b.textContent.trim()==='Reject analytics')?.click();true");
+   if(path==='/ai-mentor'){
+    await p.evaluate("(()=>{const i=document.querySelector('input[aria-label=\"Trading concept question\"]');Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(i,'What is RSI?');i.dispatchEvent(new Event('input',{bubbles:true}));return true;})()");
+    await p.wait("!document.querySelector('button[aria-label=\"Send concept question\"]').disabled");
+    await p.evaluate("document.querySelector('button[aria-label=\"Send concept question\"]').click();true");
+    await p.wait("document.querySelector('main').innerText.includes('RSI is a momentum oscillator')");
+   }
+   for(const theme of ['light','dark']){
+    await p.evaluate(`(()=>{const b=[...document.querySelectorAll('button[aria-label^="Switch to"]')].find(b=>b.getClientRects().length);if(document.documentElement.classList.contains('light')!==${theme==='light'})b.click();return true;})()`);
+    await pause(150);
+    const row=await p.evaluate(`(()=>{const bars=[...document.querySelectorAll('[role=progressbar]')].map(b=>({name:b.getAttribute('aria-label'),value:b.getAttribute('aria-valuenow')}));const text=document.body.innerText;return {path:location.pathname,width:innerWidth,theme:document.documentElement.classList.contains('light')?'light':'dark',bars,toggleLabels:[...document.querySelectorAll('button[aria-label^="Switch to"]')].map(b=>b.getAttribute('aria-label')),overflow:document.documentElement.scrollWidth>innerWidth+1,noCompletedSells:text.includes('No completed sells'),cleanMentor:!text.includes('**Smart Mentor**')&&!text.includes('**RSI**')&&text.includes('RSI is a momentum oscillator')&&text.includes('>70')&&text.includes('<30')&&text.includes('(Educational simulation only — not financial advice.)')};})()`);
+    assert.equal(row.theme,theme);assert.equal(row.overflow,false);assert.ok(row.toggleLabels.length>=1);assert.ok(row.toggleLabels.every(x=>x===`Switch to ${theme==='light'?'dark':'light'} theme`));
+    if(path==='/learn-trading-guide'){assert.ok(row.bars.some(b=>b.name==='Experience Points'&&b.value==='0'));}
+    if(path==='/portfolio'){for(const [name,value]of [['Cash Share of Account','100'],['Largest Position Share of Account','0'],['Cash Reserve','100']])assert.ok(row.bars.some(b=>b.name===name&&b.value===value),name);}
+    if(path==='/trader/me')assert.ok(row.noCompletedSells);
+    if(path==='/ai-mentor')assert.ok(row.cleanMentor);
+    rows.push(row);
+   }
+   console.log('PASS live work-mode '+path+' '+width+' light/dark');
+  }
+ }
+ assert.deepEqual(errors,[]);assert.deepEqual(blocked,[]);
+ writeFileSync('/workspace/trading101/docs/adsense-2026-10-22/evidence/WORK-MODE-LIVE-AFFECTED-RECHECK.json',JSON.stringify({checkedAt:new Date().toISOString(),sha,outcome:'PASS',rows,runtimeErrors:errors,preventedProtectedRequests:blocked,scope:'Four actual anonymous production interfaces at five widths and both themes: named existing empty-state metric values, synchronized theme controls across breakpoints, no-completed-sells profile display and authored RSI response. No accounts/orders/progress action or remote AI call. Theme is disposable browser preference; empty portfolio presentation is not financial-engine certification.'},null,2)+'\n');
+}finally{await p.close();}

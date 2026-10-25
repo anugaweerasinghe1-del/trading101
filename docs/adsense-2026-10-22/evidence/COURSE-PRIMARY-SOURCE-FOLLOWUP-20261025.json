@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-10-25T09:21:29.125369+00:00",
+  "scope": "Selected actual primary-source passages read for two first structured lessons. Raw full source text remains private workspace research; published receipt contains metadata and original paraphrases. Not complete route financial/source certification.",
+  "sources": [
+    {
+      "url": "https://www.federalreserve.gov/faqs/economy_14400.htm",
+      "status": 200,
+      "sha256": "2ac9d072135b52b1006e49d3f5c949dd77c4c041d8778ede42ea0ba4c1073438",
+      "textLength": 9907
+    },
+    {
+      "url": "https://www.bls.gov/schedule/news_release/cpi.htm",
+      "status": 200,
+      "sha256": "cece37b1f964eed1cd51215764a55fb26e310da31b441ab9c65758989c9afc17",
+      "textLength": 7311
+    },
+    {
+      "url": "https://www.bls.gov/cpi/",
+      "status": 200,
+      "sha256": "ce4a427e5a70d1eb5887b9bf602a4fca83c57f1f5c1f74386aa99bd43134006c",
+      "textLength": 9508
+    },
+    {
+      "url": "https://www.coingecko.com/en/methodology",
+      "status": 200,
+      "sha256": "d60ba34bf013a2616a8a65f0214e988fb99540cfdade7c9669dba79e4ed4d5d6",
+      "textLength": 19962
+    }
+  ],
+  "assessments": [
+    {
+      "path": "/courses/macro-reading-for-traders/reading-cpi-and-inflation",
+      "corroborated": "BLS defines urban-consumer goods/services basket and distinguishes all items less food/energy. CPI schedule and current homepage identify 8:30 Eastern release timing. Federal Reserve FAQ explicitly uses annual PCE index change for longer-run2% objective, not headline/core CPI.",
+      "remaining": "No source certification for every consensus/revision/reaction statement. FRED series and detailed methodology not read; no current inflation statistic is added to site."
+    },
+    {
+      "path": "/courses/cryptocurrency-price-feeds-and-valuation/exchange-tickers-and-price-aggregation",
+      "corroborated": "CoinGecko methodology substantive aggregation section read: uses selected ticker set, identifier/currency conversions, outlier exclusion and final VWAP of retained observations; special cases and manual exclusions exist. Lesson appropriately labels simplified worksheet and does not claim exact provider replication. Arithmetic examples internally verified separately.",
+      "remaining": "No API freshness/data-quality or live execution certification; order-book and complete exchange/provider methodology follow-ups remain."
+    }
+  ]
+}
