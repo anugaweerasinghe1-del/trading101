@@ -154,6 +154,18 @@
 }
 
 @layer base {
+  .light [data-wiki-difficulty="Novice"] {
+    color: #064e3b;
+  }
+
+  .light [data-wiki-difficulty="Intermediate"] {
+    color: #78350f;
+  }
+
+  .light [data-wiki-difficulty="Pro"] {
+    color: #7f1d1d;
+  }
+
   .light .course-catalog-title {
     background-image: linear-gradient(to bottom right, #064e3b, #065f46, #047857);
   }

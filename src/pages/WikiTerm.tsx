@@ -120,7 +120,7 @@ const WikiTerm = () => {
           {/* Header */}
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
             <div className="flex flex-wrap items-center gap-3 mb-4">
-              <Badge className={`${difficultyColor} text-[10px] uppercase tracking-[0.15em] font-bold`}>
+              <Badge variant="outline" data-wiki-difficulty={term.difficulty} className={`${difficultyColor} text-[10px] uppercase tracking-[0.15em] font-bold`}>
                 {term.difficulty}
               </Badge>
               <Badge className="bg-muted text-muted-foreground border-border text-[10px] uppercase tracking-[0.15em] font-bold">
@@ -218,7 +218,7 @@ const WikiTerm = () => {
           <div className="mt-8 flex justify-center">
             <Button
               onClick={handleWhatsAppShare}
-              className="h-11 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold px-8 rounded-xl transition-all shadow-[0_0_20px_rgba(37,211,102,0.2)]"
+              className="h-11 bg-[#25D366] hover:bg-[#20bd5a] text-black font-bold px-8 rounded-xl transition-all shadow-[0_0_20px_rgba(37,211,102,0.2)]"
             >
               <Share2 className="w-4 h-4 mr-2" />
               Share to WhatsApp
