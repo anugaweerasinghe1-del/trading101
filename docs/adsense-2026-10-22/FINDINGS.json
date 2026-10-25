@@ -1552,7 +1552,7 @@
       "id": "THQ-039",
       "severity": "P2",
       "category": "Glossary share control text lacks contrast",
-      "state": "FIX_TESTED_AWAITING_UPDATED_CANDIDATE_CI_PREVIEW",
+      "state": "PUBLICLY_VERIFIED",
       "urls": [
         "https://www.thetradehq.com/wiki/backtesting",
         "https://www.thetradehq.com/wiki/bear-trap",
@@ -1621,16 +1621,30 @@
       "candidateSHA": "6a9d3aeb251b105fc26e16c1441f9d9933b4a979",
       "baseSHA": "65df89982a4ab4d0932c5f1135a11e7fb29d68e8",
       "localValidation": "PASS baseline actualwhitecontrol expectedFAIL1.98; compiled80states minimum8.488; fullCloudflarebuild/SEO/editorial/appTypeScript PASS; fourselectedscreenshotsviewed; noactivation.",
-      "previewEvidence": "evidence/PR241-UPDATED-PREVIEW-BROWSER.json",
-      "previewImagesPersonallyViewed": 4,
-      "releaseHold": "Freshcombinedcandidateisremotepushed;waitallrequiredCI/nativepreviews/actualpreview. Original538f1f3previewretainedashistoricalanddoesnotverifybadgefix.",
-      "testOnlyFollowup": "Waitdocument/stylehydration andfiniteCSStransitioncompletion beforereadingpalette; originalcontrastthreshold/contentassertsunchanged. Initialpreviewfailureandsettleddiagnosisretained."
+      "previewEvidence": [
+        "evidence/PR241-UPDATED-PREVIEW-BROWSER.json",
+        "evidence/PR241-UPDATED-DIFFICULTY-BROWSER.json"
+      ],
+      "previewImagesPersonallyViewed": 10,
+      "releaseHold": null,
+      "testOnlyFollowup": "Waitdocument/stylehydration andfiniteCSStransitioncompletion beforereadingpalette; originalcontrastthreshold/contentassertsunchanged. Initialpreviewfailureandsettleddiagnosisretained.",
+      "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+      "requiredCandidateChecks": "PASS all4trustedexacthead checks, coherentcore workflow",
+      "productionEvidence": "evidence/PR241-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR241-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR241-PRODUCTION-BROWSER.json",
+        "evidence/PR241-PRODUCTION-DIFFICULTY-BROWSER.json",
+        "evidence/POST-PR241-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 10,
+      "liveRecheck": "PASS exact merged production: [80, 60] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
     },
     {
       "id": "THQ-040",
       "severity": "P3",
       "category": "Six authored asset guides repeat their full article after the footer",
-      "state": "FIX_TESTED_LOCAL_RELEASE_BLOCKED",
+      "state": "PUBLICLY_VERIFIED",
       "urls": [
         "https://www.thetradehq.com/how-to-trade/btc",
         "https://www.thetradehq.com/how-to-trade/eth",
@@ -1639,13 +1653,13 @@
         "https://www.thetradehq.com/how-to-trade/spy",
         "https://www.thetradehq.com/how-to-trade/tsla"
       ],
-      "observed": "All49contactimages personallyviewed,coveringeverysegmentof6guidesat5widths. Appendedarticle repeatsintroduction,steps,workedexample,timing,mistakes,review,riskandstudentperspective aftercompletefooter. Publisherdisclosureandfullsimulatorscopeunique toappendix mustbepreserved.",
-      "rootCause": "HowToTrade renders substantive HOWTO_ASSETS data in main; RoutePublisherNotes appends generated full article to same route. Existing suppression excludes these six guides.",
-      "expected": "One substantive article beforefooter withallauthoredcontent,disclosures,referencesandFAQcontrolsretained.",
-      "fix": "Identifyauthoredmain; moveexactpublisher/disclaimercopyanduniquestrategyreferenceintomain; suppressonlythe6knownindividualguideappendices. Keepguidehubandotherroutefamiliesunchanged.",
-      "risk": "Reversiblecontentplacement/linkpresentationonly; nofinancialcalculations/tradeexecution/data/auth/persistencechanges.",
-      "rollback": "Revertthepresentationcommit;nodatarollback.",
-      "adsenseRelevance": "Readability/repetition;nospecificGooglepolicyviolationasserted.",
+      "observed": "All 49 contact images were personally viewed across six guides and five widths. The appended article repeats the introduction, steps, worked example, timing, mistakes, review, risk and student perspective after the complete footer. Publisher disclosure and the full simulator scope must be preserved.",
+      "rootCause": "HowToTrade renders HOWTO_ASSETS in main; RoutePublisherNotes appends a second article on those same six individual routes.",
+      "expected": "One complete authored article before the footer, retaining all guide content, disclosures, references and FAQ controls.",
+      "fix": "Identify the authored main, move existing publisher/simulator disclosures and the unique strategy destination there, and suppress only these six appendices. Keep the guide hub and other families unchanged.",
+      "risk": "Reversible content and link placement only. No financial calculation, order, account, record, authentication or progress changes.",
+      "rollback": "Revert the presentation commit; no data rollback.",
+      "adsenseRelevance": "Readability and repetition. No specific Google policy violation is asserted.",
       "evidence": [
         "FULLPAGE-VISUAL-REVIEW-20261024.json",
         "evidence/fullpage-howto-20261025/3e369b8b435d6629.json",
@@ -1655,17 +1669,30 @@
         "evidence/fullpage-howto-20261025/34b6bbb16c3c1f5f.json",
         "evidence/fullpage-howto-20261025/e13f7fc4c611bf92.json"
       ],
-      "baseSHA": "65df89982a4ab4d0932c5f1135a11e7fb29d68e8",
+      "baseSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
       "localBranch": "audit/20261025-howto-single-article",
-      "releaseHold": "GitHubproxy503prevents freshmain/CIreads; reconcilewithmainandfinishPR241beforethisrelease.",
+      "releaseHold": null,
       "localValidation": "FullCloudflarebuild/SEO/editorial/appTypeScriptPASS; new30route-widthstates+90FAQanswers+hubnavigationPASS; fullphase6PASS. BaselineexpectedFAIL. Twelve settledmobile/desktopcomponentimagespersonallyviewed. NewremoteCI/previews/mainreconciliationstillrequired.",
-      "candidateSHA": "786da276dae2c3618512297ac6b408e23c52c68e"
+      "candidateSHA": "baee13d85770a00437c56f0be6bcd08ed16677f6",
+      "pr": 242,
+      "mergeSHA": "c3484f39a71e4f638caec7075083b086865fb247",
+      "previewImagesPersonallyViewed": 12,
+      "previewEvidence": "evidence/PR242-UPDATED-PREVIEW-BROWSER.json",
+      "requiredCandidateChecks": "PASS all4trustedexacthead checks, coherentcore workflow",
+      "productionEvidence": "evidence/PR242-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR242-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR242-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR242-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 12,
+      "liveRecheck": "PASS exact merged production: [30] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
     },
     {
       "id": "THQ-041",
       "severity": "P2",
       "category": "Glossary difficulty labels are hard to read in light theme",
-      "state": "FIX_TESTED_AWAITING_UPDATED_CANDIDATE_CI_PREVIEW",
+      "state": "PUBLICLY_VERIFIED",
       "urls": [
         "https://www.thetradehq.com/wiki/backtesting",
         "https://www.thetradehq.com/wiki/bear-trap",
@@ -1717,12 +1744,12 @@
         "https://www.thetradehq.com/wiki/wyckoff-method",
         "https://www.thetradehq.com/wiki/yield-farming"
       ],
-      "scope": "SharedWikiTermbadgeacross49glossaryroutes;freshactualproductionreadsofthreepalettecontrolsconfirmcompiledmeasurements. PriorNovice/Intermediatemobile/desktoptopimagespersonallyviewed.",
-      "observed": "10px bold Novice, Intermediate and Pro text measure1.64:1,1.45:1 and2.28:1 against actual alpha-composited light backgrounds, below4.5:1. Default dark ratios9.21,10.41,6.63.",
-      "rootCause": "Bright fixed Tailwind foregrounds on near-white light-theme backgrounds. Default interactive Badge variant also changes noninteractive label background on hover.",
-      "fix": "Scope darker hue-matched text to light-theme difficulty labels; use outline variant to retain normal custom background and avoid an interactive hover background. Preserve level text and all course/data behavior.",
-      "risk": "Reversible scoped CSS/static badge presentation only. No financial, account, record or progress changes.",
-      "rollback": "Revert Badge presentation and scoped CSS; no data rollback.",
+      "scope": "Shared WikiTerm difficulty badge across 49 glossary routes. Actual production reads of all three palette controls confirmed the compiled measurements. Novice and Intermediate production light-theme images were personally viewed before repair; new production images of all three corrected palettes were viewed after deployment.",
+      "observed": "The 10 px bold Novice, Intermediate and Pro labels measured 1.64:1, 1.45:1 and 2.28:1 against alpha-composited light backgrounds, below 4.5:1. Default dark ratios were 9.21:1, 10.41:1 and 6.63:1.",
+      "rootCause": "Fixed bright foreground utilities on near-white light backgrounds. The default interactive Badge variant also changed this noninteractive label background on hover.",
+      "fix": "Use darker hue-matched light-theme text and the outline Badge variant to preserve its normal custom background during hover. Level text and data are unchanged.",
+      "risk": "Reversible scoped CSS and static badge presentation only.",
+      "rollback": "Revert the badge presentation and scoped CSS; no data rollback.",
       "evidence": [
         "evidence/WIKI-BADGE-CONTRAST-INVESTIGATION.json",
         "evidence/wiki-light-keyboard-20261025/backtesting-360-light.png",
@@ -1730,21 +1757,37 @@
         "evidence/WIKI-DIFFICULTY-BASELINE-EXPECTED-FAILURE-BROWSER.json",
         "evidence/WIKI-BADGE-CONTRAST-PRODUCTION-BEFORE.json"
       ],
-      "adsenseRelevance": "Accessibility/readability; no specific Google policy violation asserted.",
+      "adsenseRelevance": "Accessibility and readability. No specific Google policy violation is asserted.",
       "pr": 241,
-      "releaseHold": "Freshcombinedcandidateisremotepushed;waitallrequiredCI/nativepreviews/actualpreview. Original538f1f3previewretainedashistoricalanddoesnotverifybadgefix.",
+      "releaseHold": null,
       "candidateSHA": "6a9d3aeb251b105fc26e16c1441f9d9933b4a979",
       "localValidation": "PASS compiled60states threepalettes,fivewidths,boththemes/default-hover. Sixselectedlightheaderimagespersonallyviewed. Cloudflarebuild/editorial/SEO/appTypeScriptPASS; fullphase6finishing.",
-      "testOnlyFollowup": "Waitdocument/stylehydration andfiniteCSStransitioncompletion beforereadingpalette; originalcontrastthreshold/contentassertsunchanged. Initialpreviewfailureandsettleddiagnosisretained."
+      "testOnlyFollowup": "Waitdocument/stylehydration andfiniteCSStransitioncompletion beforereadingpalette; originalcontrastthreshold/contentassertsunchanged. Initialpreviewfailureandsettleddiagnosisretained.",
+      "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+      "previewEvidence": [
+        "evidence/PR241-UPDATED-PREVIEW-BROWSER.json",
+        "evidence/PR241-UPDATED-DIFFICULTY-BROWSER.json"
+      ],
+      "previewImagesPersonallyViewed": 10,
+      "requiredCandidateChecks": "PASS all4trustedexacthead checks, coherentcore workflow",
+      "productionEvidence": "evidence/PR241-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR241-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR241-PRODUCTION-BROWSER.json",
+        "evidence/PR241-PRODUCTION-DIFFICULTY-BROWSER.json",
+        "evidence/POST-PR241-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 10,
+      "liveRecheck": "PASS exact merged production: [80, 60] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
     }
   ],
-  "updatedAt": "2026-10-25T11:12:41.622507+00:00",
+  "updatedAt": "2026-10-25T15:29:13.942080+00:00",
   "counts": {
     "siteFindings": 46,
     "P2": 26,
     "P3": 20,
-    "publiclyRepaired": 43,
-    "preparedNotMerged": 3,
+    "publiclyRepaired": 46,
+    "preparedNotMerged": 0,
     "separateOperationalBlockers": 0,
     "mergedAwaitingProductionVerification": 0,
     "protectedUnapprovedRecordFixes": 0,

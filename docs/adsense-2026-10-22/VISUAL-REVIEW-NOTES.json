@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T11:21:43.662063+00:00",
+  "updatedAt": "2026-10-25T15:33:56.370723+00:00",
   "scope": "Actual screenshot viewing by route and stage. Full-page default-state images are separately recorded at all five widths for20 core routes; this is not conditional, accessibility, light-theme, source or whole-audit completion.",
   "routes": {
     "/": {
@@ -89,7 +89,11 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "All five-width default segments actually viewed from hero/cards through worksheet, source links, collapsed FAQs, footer and notes; no new layout failure observed. No fixed volatility multiple, guaranteed staking yield or diversification promise in current copy. Network mechanisms/fee-burning/custody claims still require dated primary-source reading; light/accessibility/control/originality remain.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+        "evidence": "evidence/PR232-PRODUCTION-BROWSER.json"
+      }
     },
     "/compare/bitcoin-vs-gold": {
       "status": "FIRST_FOLD_ONLY",
@@ -190,7 +194,11 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "All default full-page segments viewed at five widths: differentiated company cards, business-mix explanation, worksheet, source links, collapsed FAQs, footer and repeated notes. No new default layout failure observed. Current text avoids fixed beta/margin or earnings-beat price guarantees. Current issuer segment reporting and source applicability need primary-source reading; keyboard/light/zoom and all conditional states remain separate.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+        "evidence": "evidence/PR232-PRODUCTION-BROWSER.json"
+      }
     },
     "/courses/cryptocurrency-price-feeds-and-valuation": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -355,10 +363,14 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "All five-width default segments personally viewed: coursehero/0%progress, objectives, prerequisites, scope/sequence, five lesson cards, footer and appended notes. No additional default layout failure observed. Substantial main/notes repetition requires exact-parity/unique-copy investigation; not conflated with alreadyreleasedcomparisonfix. No quiz/lessoncompletion/progress action. Light/keyboard/zoom, dated CME/CFTC specifications and source/regional claims remain incomplete.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR240",
+        "evidence": "evidence/PR240-PRODUCTION-BROWSER.json"
+      }
     },
     "/courses/futures-and-derivatives/contango-and-backwardation": {
-      "status": "FIRST_FOLD_ONLY",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
       "humanViewedWidths": [
         360
       ],
@@ -367,7 +379,18 @@
       ],
       "evidence": [
         "evidence/contact--courses--360-8.png"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally inspected all nine contact sheets and every captured segment at 360, 390, 768, 1280 and 1920 widths: heading/byline, hero, quick answer, full body, takeaways, all unselected quiz questions/options, sources, previous/next navigation, full footer and appended notes. No new default-state clipping observed. A complete substantive article restarts after the footer; its source-check/answer explanations/practice scope provide unique material that must be retained in any remediation. No quiz submission, account, order or production-record action. Light/zoom/keyboard/conditional/source/originality stages remain. Read all term-structure, carrying-cost, backwardation and fund-roll explanations and all four question/options/key/explanation sets. The body distinguishes relative delivery prices from shortage proof and a roll from an automatic cash loss. The short quiz phrase about normal storable markets needs source-context follow-up; no additional factual error is asserted from that simplification alone.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
     },
     "/courses/futures-and-derivatives/hedging-with-futures": {
       "status": "FIRST_FOLD_ONLY",
@@ -460,7 +483,11 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "All seven contacts covering every captured default segment at360/390/768/1280/1920 personallyviewed: hero,0%progress/badge target, prerequisites, five learning goals, five lessoncards, footer and appended notes. No new default overlap/clipping observed. Source wording sensibly distinguishes CPI/FOMC/yieldcurve/DXY context from forecasts; main/course notes substantiallyrepeat with uniqueattribution, completion anddisclaimer still tocompare before integration. Light/keyboard/zoom/progression/source/originality remain incomplete. No quiz/completion/progress action.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR240",
+        "evidence": "evidence/PR240-PRODUCTION-BROWSER.json"
+      }
     },
     "/courses/macro-reading-for-traders/putting-macro-signals-together": {
       "status": "FIRST_FOLD_ONLY",
@@ -1984,7 +2011,11 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "All default segments actually viewed at five widths: hero/0%progress and badge target, prerequisites, course scope/order, all5lesson cards, footer and appended notes. Readable; no new default layout defect observed. Main and appended course overview substantially repeat; exact full-copy parity/unique badge/attribution preservation investigation remains. No lesson/quiz/completion action. Light/keyboard/zoom, current options source/contract exceptions, conditional progression and originality remain incomplete.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR240",
+        "evidence": "evidence/PR240-PRODUCTION-BROWSER.json"
+      }
     },
     "/courses/trading-psychology-mastery": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -1998,7 +2029,11 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Allsixcontacts coveringeverydefaultsegment atfivewidths personallyviewed: updatedTradingDecisionsandBehaviourhero,0%progress/badgetarget, goals/prerequisites, fivelessoncards,footer/appendednotes. No newdefaultclipping/overlap observed. Avoids claiming psychologicalassessment/clinicalsupport/professionalconsensus orprofitableperformance. Appendedoutline substantialduplication requiresfullparity/uniquecopy comparison; source/light/keyboard/zoom/conditionalprogression/originality incomplete; nocompletionaction.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR240",
+        "evidence": "evidence/PR240-PRODUCTION-BROWSER.json"
+      }
     },
     "/learn/6": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -2161,7 +2196,11 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Personallyviewedallcontacts/allsegmentsat360,390,768,1280,1920:hero,quickanswer,steps,tips/risks/studentperspective,drivers,workedexample,timing,mistakes/review,links,closedFAQs,sources,entirefooterandappendix. Nodefaultclippingoroverlapobserved. Substantivearticle repeatedafterfooter;retainedasfocusedduplicationfinding. Noorder,share,accountorprogressaction. Light/zoom/keyboard/expandedstate/sourcechecksremain. Read both full rendered copies:0.05BTC at50000=2500 exposure and2.50entryfee;250downside beforecost;10000of100000 rising10percent yields1percent wholeaccount beforecost;11000/101000=10.89percent currentweight. Protocolissuance separatefromprice,provider timestampnotexchangefill,nocustody. Hypotheticalarithmetic internallyconsistent;BTCprimarysourceandfulloriginalityreviewremain.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR242",
+        "evidence": "evidence/PR242-PRODUCTION-BROWSER.json"
+      }
     },
     "/how-to-trade/eth": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -2175,7 +2214,11 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Personallyviewedallcontacts/allsegmentsat360,390,768,1280,1920:hero,quickanswer,steps,tips/risks/studentperspective,drivers,workedexample,timing,mistakes/review,links,closedFAQs,sources,entirefooterandappendix. Nodefaultclippingoroverlapobserved. Substantivearticle repeatedafterfooter;retainedasfocusedduplicationfinding. Noorder,share,accountorprogressaction. Light/zoom/keyboard/expandedstate/sourcechecksremain. Read both full rendered copies:networkversusETH,gasversussimulatorfee,nostaking/transfer;0.5ETHat3200=1600+1.60fee;2ETHat2500=5000+5fee;2400mark gives200grossloss/205equityloss afterentryfee,4.80exitfeeifthen sold. Networkdemandnotautomaticpricerise;completecurrentprimary-sourcecorroborationremains.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR242",
+        "evidence": "evidence/PR242-PRODUCTION-BROWSER.json"
+      }
     },
     "/how-to-trade/nvda": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -2189,7 +2232,11 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Personallyviewedallcontacts/allsegmentsat360,390,768,1280,1920:hero,quickanswer,steps,tips/risks/studentperspective,drivers,workedexample,timing,mistakes/review,links,closedFAQs,sources,entirefooterandappendix. Nodefaultclippingoroverlapobserved. Substantivearticle repeatedafterfooter;retainedasfocusedduplicationfinding. Noorder,share,accountorprogressaction. Light/zoom/keyboard/expandedstate/sourcechecksremain. Read both full rendered copies:businessmetricsversusshareprice;5sharesat120=600plus0.60entryfee;2000directplus8000fundwithassumed10percentNVDA gives2800/10000=28percent lookthroughexposure and280lossif10percentfallwithotherholdingsfixed. Fundweightdated/hypothetical,nominalpricecannotestablishfairvalue,noperformancepromise;issuer/currentfilingandoriginalityfollowupsremain.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR242",
+        "evidence": "evidence/PR242-PRODUCTION-BROWSER.json"
+      }
     },
     "/how-to-trade/spy": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -2203,7 +2250,11 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Personallyviewedallcontacts/allsegmentsat360,390,768,1280,1920:hero,quickanswer,steps,tips/risks/studentperspective,drivers,workedexample,timing,mistakes/review,links,closedFAQs,sources,entirefooterandappendix. Nodefaultclippingoroverlapobserved. Substantivearticle repeatedafterfooter;retainedasfocusedduplicationfinding. Noorder,share,accountorprogressaction. Light/zoom/keyboard/expandedstate/sourcechecksremain. Read both full rendered copies:index/fund/countrydistinction,nodirectownershipofeachconstituent;2unitsat500=1000+1fee;10units500=5000,2percentfall=100lossand0.1percentoriginalaccount;5entryfeeleaves99895equityatmark. Distributions/expensesnotinvented,sessions/provenancequalified;fundsourceandcompleteoriginalityfollowupsremain.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR242",
+        "evidence": "evidence/PR242-PRODUCTION-BROWSER.json"
+      }
     },
     "/how-to-trade/sol": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -2217,7 +2268,11 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Personallyviewedallcontacts/allsegmentsat360,390,768,1280,1920:hero,quickanswer,steps,tips/risks/studentperspective,drivers,workedexample,timing,mistakes/review,links,closedFAQs,sources,entirefooterandappendix. Nodefaultclippingoroverlapobserved. Substantivearticle repeatedafterfooter;retainedasfocusedduplicationfinding. Noorder,share,accountorprogressaction. Light/zoom/keyboard/expandedstate/sourcechecksremain. Read both full rendered copies:SOLtokenversusSolananetwork/onchainfees,nostaking/transfer/derivatives;40SOL125=5000+5buyfee;130exit5200less5.20sellfee gives189.80roundtripresult;115mark4600gives400grosslossbeforefees. Quotesnotguaranteedfills,24/7notconstantliquidity,adversecasepreserved;networksourceandoriginalityfollowupsremain.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR242",
+        "evidence": "evidence/PR242-PRODUCTION-BROWSER.json"
+      }
     },
     "/how-to-trade/tsla": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -2231,7 +2286,11 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Personallyviewedallcontacts/allsegmentsat360,390,768,1280,1920:hero,quickanswer,steps,tips/risks/studentperspective,drivers,workedexample,timing,mistakes/review,links,closedFAQs,sources,entirefooterandappendix. Nodefaultclippingoroverlapobserved. Substantivearticle repeatedafterfooter;retainedasfocusedduplicationfinding. Noorder,share,accountorprogressaction. Light/zoom/keyboard/expandedstate/sourcechecksremain. Read both full rendered copies:delivery/revenue/marginsdistinct;4shares200=800plus0.80entryfee,180gap80grossloss;20shares200=4000plus4buyfee,180mark400grossloss;190plannedthreshold200lossnotguaranteedstopfill. Nooptions/votingrights/realownership,narrativeprespecifiednotrewrittenafteroutcome;issuer/sourceandoriginalityfollowupsremain.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR242",
+        "evidence": "evidence/PR242-PRODUCTION-BROWSER.json"
+      }
     },
     "/wiki/candlestick-patterns": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -2310,6 +2369,48 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Personally viewed all five contacts, covering all default segments at360/390/768/1280/1920:breadcrumb/byline,entiredefinition/explanation/keypoints/worksheet/sourcecontext,CTA/share/relatedlinksandfullfooter. No clipping/documentoverflow/overlap seen. SharedsharecontrastTHQ039isalreadytracked;noexternalshare/account/order/progressaction. Read conventionalshorter/longerMA50/200crossaslagginghistoricalcalculation,nodownturnguarantee/professionalpositioninference. Constructsamecrosswithlaterrecoveryandcontinueddecline,includeexpenses/prespecifiedfrequencyandperiod. FidelityMAreferencequalified;no new sourceverificationfromlinkpresence. Source/keyboard/light/zoomremain."
+    },
+    "/courses/options-trading-fundamentals/defined-risk-spreads": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally inspected all nine contact sheets and every captured segment at 360, 390, 768, 1280 and 1920 widths: heading/byline, hero, quick answer, full body, takeaways, all unselected quiz questions/options, sources, previous/next navigation, full footer and appended notes. No new default-state clipping observed. A complete substantive article restarts after the footer; its source-check/answer explanations/practice scope provide unique material that must be retained in any remediation. No quiz submission, account, order or production-record action. Light/zoom/keyboard/conditional/source/originality stages remain. Read the complete rendered article and appended notes including all four question/options/key/explanation sets. The $200 debit, $300 maximum intact-spread gain, $182 gross break-even and -$208/-$8/+$292 after $8 costs reconcile. Assignment and costs are distinguished from the expiration diagram; 1\u20132% sizing is explicitly hypothetical. Source verification of OIC/OCC statements remains.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+    },
+    "/courses/macro-reading-for-traders/the-yield-curve-and-recession": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally inspected all nine contact sheets and every captured segment at 360, 390, 768, 1280 and 1920 widths: heading/byline, hero, quick answer, full body, takeaways, all unselected quiz questions/options, sources, previous/next navigation, full footer and appended notes. No new default-state clipping observed. A complete substantive article restarts after the footer; its source-check/answer explanations/practice scope provide unique material that must be retained in any remediation. No quiz submission, account, order or production-record action. Light/zoom/keyboard/conditional/source/originality stages remain. Read all curve, recession-risk, 10Y\u20132Y versus 10Y\u20133M and timing explanations, plus all four question/options/key/explanation sets. The main avoids guaranteed forecasts and distinguishes the linked NY Fed model from the FRED 10Y\u20132Y series. Verify the specific model horizon, current source passages and originality separately.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+    },
+    "/courses/trading-psychology-mastery/the-trading-journal": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally inspected all nine contact sheets and every captured segment at 360, 390, 768, 1280 and 1920 widths: heading/byline, hero, quick answer, full body, takeaways, all unselected quiz questions/options, sources, previous/next navigation, full footer and appended notes. No new default-state clipping observed. A complete substantive article restarts after the footer; its source-check/answer explanations/practice scope provide unique material that must be retained in any remediation. No quiz submission, account, order or production-record action. Light/zoom/keyboard/conditional/source/originality stages remain. Read the complete decision-record and sample-limit article and all four question/options/key/explanation sets, including the dated 18 October source-check limitation. The 2\u00d7$100 purchase plus 0.1% fee is $200.20; 2\u00d7$105 is $210 gross marked value and $10 gross price change before sale costs. No universal 30/100 observation count or profit causation is promised; source and originality follow-up remains.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
     }
   }
 }

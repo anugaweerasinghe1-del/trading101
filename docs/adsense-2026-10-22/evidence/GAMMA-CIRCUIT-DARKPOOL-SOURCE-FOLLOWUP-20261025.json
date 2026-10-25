@@ -1,0 +1,46 @@
+{
+  "checkedAt": "2026-10-25T14:56:02.686862+00:00",
+  "captureNote": "Sources captured before environment reconnect; actual selected reading completed after reconnect. No capture-date refresh invented.",
+  "scope": "Narrow corroboration only, original paraphrases and URL/status/hash; no whole-source copyright reproduction or whole-page completion.",
+  "claims": [
+    {
+      "path": "/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+      "source": {
+        "name": "gamma",
+        "url": "https://www.optionseducation.org/advancedconcepts/gamma",
+        "httpStatus": 200,
+        "sha256": "fa9fe1c00543ba11454e825b3106daddbbb4787327ffd02ba7a89a6b8b3b6f15",
+        "textLength": 8387
+      },
+      "reading": "Selected actual substantive passages personally read; raw full text stays workspace only.",
+      "assessment": "OIC describes gamma as the modeled change in delta for a one-dollar underlying move; its examples add gamma to delta after an upward move. The page also qualifies stronger at-the-money/near-expiry sensitivity. This supports the lesson's conditional sensitivity explanation, without implying a realized payoff or probability guarantee.",
+      "remaining": "Full Greeks/contract/assumption review and primary-source comparisons outside these selected passages remain."
+    },
+    {
+      "path": "/wiki/circuit-breaker",
+      "source": {
+        "name": "circuit",
+        "url": "https://www.nyse.com/network/article/nyse-increases-resiliancy-during-extreme-volatility",
+        "httpStatus": 200,
+        "sha256": "80cecdd2c49c51487351f3918158661466ad0933a94040727da2c5bfc423ab2c",
+        "textLength": 6252
+      },
+      "reading": "Selected actual substantive passages personally read; raw full text stays workspace only.",
+      "assessment": "NYSE describes market-wide thresholds of7%,13%,20% against the prior S&P500 close. Its regular-session explanation distinguishes Level1/2 before3:25pm and Level3 day-end halts, and separately explains individual-security LULD bands/pauses. This corroborates the stated US example and its venue/time qualification.",
+      "remaining": "Not certification of every exchange, shortened session, future rule change or actual simulator halt behavior; linked LULD plan not fully reviewed."
+    },
+    {
+      "path": "/wiki/dark-pool",
+      "source": {
+        "name": "darkpool",
+        "url": "https://syndication.finra.org/content/where-do-stocks-trade",
+        "httpStatus": 200,
+        "sha256": "2653ca72692c7cd4ad7595f5b7075ae45d70ecb748cc2ea0166d450e5a32b9bf",
+        "textLength": 7022
+      },
+      "reading": "Selected actual substantive passages personally read; raw full text stays workspace only.",
+      "assessment": "FINRA distinguishes non-displayed pre-trade quotations from mandatory post-trade reporting, and separately describes off-exchange/non-ATS dealer venues. This corroborates that an off-exchange print alone does not identify a dark pool or participant intent.",
+      "remaining": "Jurisdiction-specific rules, current venue statistics and every linked source remain; no trading-venue execution is tested."
+    }
+  ]
+}

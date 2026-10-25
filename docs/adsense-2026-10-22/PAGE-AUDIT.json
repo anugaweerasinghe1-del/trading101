@@ -954,6 +954,10 @@
         "state": "PUBLICLY_VERIFIED",
         "mergeSHA": "adcaed329c34f4a846f41b9fff9c01b2f2a3bc2e",
         "scope": "Targeted40widthtext/reference/no-duplicate checks, not complete all-route full-page/accessibility/source/originality review."
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+        "evidence": "evidence/PR232-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -1065,6 +1069,10 @@
         "state": "PUBLICLY_VERIFIED",
         "mergeSHA": "adcaed329c34f4a846f41b9fff9c01b2f2a3bc2e",
         "scope": "Targeted40widthtext/reference/no-duplicate checks, not complete all-route full-page/accessibility/source/originality review."
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+        "evidence": "evidence/PR232-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -1166,6 +1174,10 @@
         "state": "PUBLICLY_VERIFIED",
         "mergeSHA": "adcaed329c34f4a846f41b9fff9c01b2f2a3bc2e",
         "scope": "Targeted40widthtext/reference/no-duplicate checks, not complete all-route full-page/accessibility/source/originality review."
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+        "evidence": "evidence/PR232-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -1267,6 +1279,10 @@
         "state": "PUBLICLY_VERIFIED",
         "mergeSHA": "adcaed329c34f4a846f41b9fff9c01b2f2a3bc2e",
         "scope": "Targeted40widthtext/reference/no-duplicate checks, not complete all-route full-page/accessibility/source/originality review."
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+        "evidence": "evidence/PR232-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -1368,6 +1384,10 @@
         "state": "PUBLICLY_VERIFIED",
         "mergeSHA": "adcaed329c34f4a846f41b9fff9c01b2f2a3bc2e",
         "scope": "Targeted40widthtext/reference/no-duplicate checks, not complete all-route full-page/accessibility/source/originality review."
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+        "evidence": "evidence/PR232-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -1469,6 +1489,10 @@
         "state": "PUBLICLY_VERIFIED",
         "mergeSHA": "adcaed329c34f4a846f41b9fff9c01b2f2a3bc2e",
         "scope": "Targeted40widthtext/reference/no-duplicate checks, not complete all-route full-page/accessibility/source/originality review."
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+        "evidence": "evidence/PR232-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -1570,6 +1594,10 @@
         "state": "PUBLICLY_VERIFIED",
         "mergeSHA": "adcaed329c34f4a846f41b9fff9c01b2f2a3bc2e",
         "scope": "Targeted40widthtext/reference/no-duplicate checks, not complete all-route full-page/accessibility/source/originality review."
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+        "evidence": "evidence/PR232-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -1681,6 +1709,10 @@
         "state": "PUBLICLY_VERIFIED",
         "mergeSHA": "adcaed329c34f4a846f41b9fff9c01b2f2a3bc2e",
         "scope": "Targeted40widthtext/reference/no-duplicate checks, not complete all-route full-page/accessibility/source/originality review."
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+        "evidence": "evidence/PR232-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -2844,6 +2876,19 @@
           "state": "PUBLICLY_VERIFIED",
           "pr": 213
         }
+      ],
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR240",
+        "evidence": "evidence/PR240-PRODUCTION-BROWSER.json"
+      },
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-038",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 240,
+          "mergeSHA": "65df89982a4ab4d0932c5f1135a11e7fb29d68e8",
+          "evidence": "FINDINGS.json"
+        }
       ]
     },
     {
@@ -2902,7 +2947,7 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "FIRST_FOLD_ONLY",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
         "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
         "humanViewedWidths": [
@@ -2913,7 +2958,17 @@
         ],
         "evidence": [
           "evidence/contact--courses--360-8.png"
-        ]
+        ],
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personally inspected all nine contact sheets and every captured segment at 360, 390, 768, 1280 and 1920 widths: heading/byline, hero, quick answer, full body, takeaways, all unselected quiz questions/options, sources, previous/next navigation, full footer and appended notes. No new default-state clipping observed. A complete substantive article restarts after the footer; its source-check/answer explanations/practice scope provide unique material that must be retained in any remediation. No quiz submission, account, order or production-record action. Light/zoom/keyboard/conditional/source/originality stages remain. Read all term-structure, carrying-cost, backwardation and fund-roll explanations and all four question/options/key/explanation sets. The body distinguishes relative delivery prices from shortage proof and a roll from an automatic cash loss. The short quiz phrase about normal storable markets needs source-context follow-up; no additional factual error is asserted from that simplification alone."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -2934,7 +2989,7 @@
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": []
     },
     {
@@ -3441,6 +3496,19 @@
           "state": "PUBLICLY_VERIFIED",
           "pr": 213
         }
+      ],
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR240",
+        "evidence": "evidence/PR240-PRODUCTION-BROWSER.json"
+      },
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-038",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 240,
+          "mergeSHA": "65df89982a4ab4d0932c5f1135a11e7fb29d68e8",
+          "evidence": "FINDINGS.json"
+        }
       ]
     },
     {
@@ -3862,9 +3930,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personally inspected all nine contact sheets and every captured segment at 360, 390, 768, 1280 and 1920 widths: heading/byline, hero, quick answer, full body, takeaways, all unselected quiz questions/options, sources, previous/next navigation, full footer and appended notes. No new default-state clipping observed. A complete substantive article restarts after the footer; its source-check/answer explanations/practice scope provide unique material that must be retained in any remediation. No quiz submission, account, order or production-record action. Light/zoom/keyboard/conditional/source/originality stages remain. Read all curve, recession-risk, 10Y\u20132Y versus 10Y\u20133M and timing explanations, plus all four question/options/key/explanation sets. The main avoids guaranteed forecasts and distinguishes the linked NY Fed model from the FRED 10Y\u20132Y series. Verify the specific model horizon, current source passages and originality separately."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -3885,7 +3963,7 @@
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": []
     },
     {
@@ -3992,6 +4070,19 @@
           "state": "PUBLICLY_VERIFIED",
           "pr": 213
         }
+      ],
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR240",
+        "evidence": "evidence/PR240-PRODUCTION-BROWSER.json"
+      },
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-038",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 240,
+          "mergeSHA": "65df89982a4ab4d0932c5f1135a11e7fb29d68e8",
+          "evidence": "FINDINGS.json"
+        }
       ]
     },
     {
@@ -4050,9 +4141,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personally inspected all nine contact sheets and every captured segment at 360, 390, 768, 1280 and 1920 widths: heading/byline, hero, quick answer, full body, takeaways, all unselected quiz questions/options, sources, previous/next navigation, full footer and appended notes. No new default-state clipping observed. A complete substantive article restarts after the footer; its source-check/answer explanations/practice scope provide unique material that must be retained in any remediation. No quiz submission, account, order or production-record action. Light/zoom/keyboard/conditional/source/originality stages remain. Read the complete rendered article and appended notes including all four question/options/key/explanation sets. The $200 debit, $300 maximum intact-spread gain, $182 gross break-even and -$208/-$8/+$292 after $8 costs reconcile. Assignment and costs are distinguished from the expiration diagram; 1\u20132% sizing is explicitly hypothetical. Source verification of OIC/OCC statements remains."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -4073,7 +4174,7 @@
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": []
     },
     {
@@ -4337,6 +4438,11 @@
         "corroborated": "OIC Delta definition/example supports theoretical0.50premium movement per1underlying move with other inputs held fixed. OIC Theta supports model estimate/time decay per day, nonlinear behavior and differing weekend/model conventions, rather than guaranteed realized profit. OIC Vega supports implied-volatility sensitivity per one-percentage-point change, separate from the volatility input itself. Lesson retains these qualifications.",
         "remaining": "Gamma shape and calibrated probability distinction not independently completed in this followup; Cboe source, full Greeks interactions and adjusted contract risks remain.",
         "wholeSourceReviewComplete": false
+      },
+      "selectedPrimarySourceFollowup": {
+        "evidence": "evidence/GAMMA-CIRCUIT-DARKPOOL-SOURCE-FOLLOWUP-20261025.json",
+        "assessment": "OIC describes gamma as the modeled change in delta for a one-dollar underlying move; its examples add gamma to delta after an upward move. The page also qualifies stronger at-the-money/near-expiry sensitivity. This supports the lesson's conditional sensitivity explanation, without implying a realized payoff or probability guarantee.",
+        "remaining": "Full Greeks/contract/assumption review and primary-source comparisons outside these selected passages remain."
       }
     },
     {
@@ -4534,6 +4640,19 @@
           "id": "THQ-002",
           "state": "PUBLICLY_VERIFIED",
           "pr": 213
+        }
+      ],
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR240",
+        "evidence": "evidence/PR240-PRODUCTION-BROWSER.json"
+      },
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-038",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 240,
+          "mergeSHA": "65df89982a4ab4d0932c5f1135a11e7fb29d68e8",
+          "evidence": "FINDINGS.json"
         }
       ]
     },
@@ -4941,9 +5060,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personally inspected all nine contact sheets and every captured segment at 360, 390, 768, 1280 and 1920 widths: heading/byline, hero, quick answer, full body, takeaways, all unselected quiz questions/options, sources, previous/next navigation, full footer and appended notes. No new default-state clipping observed. A complete substantive article restarts after the footer; its source-check/answer explanations/practice scope provide unique material that must be retained in any remediation. No quiz submission, account, order or production-record action. Light/zoom/keyboard/conditional/source/originality stages remain. Read the complete decision-record and sample-limit article and all four question/options/key/explanation sets, including the dated 18 October source-check limitation. The 2\u00d7$100 purchase plus 0.1% fee is $200.20; 2\u00d7$105 is $210 gross marked value and $10 gross price change before sale costs. No universal 30/100 observation count or profit causation is promised; source and originality follow-up remains."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -4964,7 +5093,7 @@
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": []
     },
     {
@@ -5247,7 +5376,28 @@
           "state": "PUBLICLY_VERIFIED",
           "pr": 214
         }
-      ]
+      ],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-040",
+          "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+          "pr": 242,
+          "mergeSHA": "c3484f39a71e4f638caec7075083b086865fb247",
+          "evidence": "FINDINGS.json"
+        }
+      ],
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR242",
+        "evidence": "evidence/PR242-PRODUCTION-BROWSER.json"
+      },
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-040"
+        ],
+        "pr": 242,
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/how-to-trade/eth",
@@ -5358,7 +5508,28 @@
           "state": "PUBLICLY_VERIFIED",
           "pr": 214
         }
-      ]
+      ],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-040",
+          "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+          "pr": 242,
+          "mergeSHA": "c3484f39a71e4f638caec7075083b086865fb247",
+          "evidence": "FINDINGS.json"
+        }
+      ],
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR242",
+        "evidence": "evidence/PR242-PRODUCTION-BROWSER.json"
+      },
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-040"
+        ],
+        "pr": 242,
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/how-to-trade/nvda",
@@ -5469,7 +5640,28 @@
           "state": "PUBLICLY_VERIFIED",
           "pr": 214
         }
-      ]
+      ],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-040",
+          "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+          "pr": 242,
+          "mergeSHA": "c3484f39a71e4f638caec7075083b086865fb247",
+          "evidence": "FINDINGS.json"
+        }
+      ],
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR242",
+        "evidence": "evidence/PR242-PRODUCTION-BROWSER.json"
+      },
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-040"
+        ],
+        "pr": 242,
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/how-to-trade/sol",
@@ -5580,7 +5772,28 @@
           "state": "PUBLICLY_VERIFIED",
           "pr": 214
         }
-      ]
+      ],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-040",
+          "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+          "pr": 242,
+          "mergeSHA": "c3484f39a71e4f638caec7075083b086865fb247",
+          "evidence": "FINDINGS.json"
+        }
+      ],
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR242",
+        "evidence": "evidence/PR242-PRODUCTION-BROWSER.json"
+      },
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-040"
+        ],
+        "pr": 242,
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/how-to-trade/spy",
@@ -5691,7 +5904,28 @@
           "state": "PUBLICLY_VERIFIED",
           "pr": 214
         }
-      ]
+      ],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-040",
+          "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+          "pr": 242,
+          "mergeSHA": "c3484f39a71e4f638caec7075083b086865fb247",
+          "evidence": "FINDINGS.json"
+        }
+      ],
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR242",
+        "evidence": "evidence/PR242-PRODUCTION-BROWSER.json"
+      },
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-040"
+        ],
+        "pr": 242,
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/how-to-trade/tsla",
@@ -5802,7 +6036,28 @@
           "state": "PUBLICLY_VERIFIED",
           "pr": 214
         }
-      ]
+      ],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-040",
+          "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+          "pr": 242,
+          "mergeSHA": "c3484f39a71e4f638caec7075083b086865fb247",
+          "evidence": "FINDINGS.json"
+        }
+      ],
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR242",
+        "evidence": "evidence/PR242-PRODUCTION-BROWSER.json"
+      },
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-040"
+        ],
+        "pr": 242,
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "url": "https://www.thetradehq.com/leaderboard",
@@ -31386,7 +31641,28 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ],
+      "targetedDifficultyContrastVerification": {
+        "state": "PUBLICLY_VERIFIED",
+        "evidence": "evidence/PR241-PRODUCTION-DIFFICULTY-BROWSER.json",
+        "scope": "Only difficulty control at five widths, both themes and default/hover. Whole-page review status remains separate."
+      }
     },
     {
       "url": "https://www.thetradehq.com/wiki/bear-trap",
@@ -31472,7 +31748,28 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ],
+      "targetedDifficultyContrastVerification": {
+        "state": "PUBLICLY_VERIFIED",
+        "evidence": "evidence/PR241-PRODUCTION-DIFFICULTY-BROWSER.json",
+        "scope": "Only difficulty control at five widths, both themes and default/hover. Whole-page review status remains separate."
+      }
     },
     {
       "url": "https://www.thetradehq.com/wiki/bollinger-band-squeeze",
@@ -31558,7 +31855,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/bull-trap",
@@ -31644,7 +31957,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/candlestick-patterns",
@@ -31730,7 +32059,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/circuit-breaker",
@@ -31816,7 +32161,28 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "selectedPrimarySourceFollowup": {
+        "evidence": "evidence/GAMMA-CIRCUIT-DARKPOOL-SOURCE-FOLLOWUP-20261025.json",
+        "assessment": "NYSE describes market-wide thresholds of7%,13%,20% against the prior S&P500 close. Its regular-session explanation distinguishes Level1/2 before3:25pm and Level3 day-end halts, and separately explains individual-security LULD bands/pauses. This corroborates the stated US example and its venue/time qualification.",
+        "remaining": "Not certification of every exchange, shortened session, future rule change or actual simulator halt behavior; linked LULD plan not fully reviewed."
+      },
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/correlation-trading",
@@ -31902,7 +32268,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/dark-pool",
@@ -31988,7 +32370,28 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "selectedPrimarySourceFollowup": {
+        "evidence": "evidence/GAMMA-CIRCUIT-DARKPOOL-SOURCE-FOLLOWUP-20261025.json",
+        "assessment": "FINRA distinguishes non-displayed pre-trade quotations from mandatory post-trade reporting, and separately describes off-exchange/non-ATS dealer venues. This corroborates that an off-exchange print alone does not identify a dark pool or participant intent.",
+        "remaining": "Jurisdiction-specific rules, current venue statistics and every linked source remain; no trading-venue execution is tested."
+      },
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/day-trading",
@@ -32074,7 +32477,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/death-cross",
@@ -32160,7 +32579,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/dollar-cost-averaging",
@@ -32236,7 +32671,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/double-bottom",
@@ -32312,7 +32763,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/drawdown",
@@ -32388,7 +32855,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/elliott-wave-theory",
@@ -32464,7 +32947,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/fair-value-gap",
@@ -32540,7 +33039,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/fibonacci-retracement",
@@ -32616,7 +33131,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/flash-crash",
@@ -32692,7 +33223,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/fomo",
@@ -32768,7 +33315,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/fud",
@@ -32844,7 +33407,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/golden-cross",
@@ -32920,7 +33499,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/head-and-shoulders",
@@ -32996,7 +33591,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/hodl-strategy",
@@ -33072,7 +33683,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/ichimoku-cloud",
@@ -33148,7 +33775,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/impermanent-loss",
@@ -33224,7 +33867,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/leverage-trading",
@@ -33300,7 +33959,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/limit-order-vs-market-order",
@@ -33376,7 +34051,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/liquidation-cascade",
@@ -33452,7 +34143,28 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ],
+      "targetedDifficultyContrastVerification": {
+        "state": "PUBLICLY_VERIFIED",
+        "evidence": "evidence/PR241-PRODUCTION-DIFFICULTY-BROWSER.json",
+        "scope": "Only difficulty control at five widths, both themes and default/hover. Whole-page review status remains separate."
+      }
     },
     {
       "url": "https://www.thetradehq.com/wiki/liquidation-price",
@@ -33528,7 +34240,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/macd",
@@ -33604,7 +34332,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/macd-histogram",
@@ -33680,7 +34424,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/margin-call",
@@ -33756,7 +34516,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/market-maker",
@@ -33832,7 +34608,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/order-block",
@@ -33908,7 +34700,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/paper-trading",
@@ -33984,7 +34792,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/pump-and-dump",
@@ -34060,7 +34884,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/risk-reward-ratio",
@@ -34136,7 +34976,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/rsi-divergence",
@@ -34212,7 +35068,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/satoshi-nakamoto",
@@ -34288,7 +35160,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/scalping",
@@ -34364,7 +35252,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/short-squeeze",
@@ -34440,7 +35344,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/slippage",
@@ -34516,7 +35436,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/stop-loss-hunting",
@@ -34592,7 +35528,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/support-and-resistance",
@@ -34668,7 +35620,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/swing-trading",
@@ -34744,7 +35712,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/volume-profile",
@@ -34820,7 +35804,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/vwap",
@@ -34896,7 +35896,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/whale-manipulation",
@@ -34972,7 +35988,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/wyckoff-method",
@@ -35048,7 +36080,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/wiki/yield-farming",
@@ -35124,7 +36172,23 @@
       ],
       "specificFindingIds": [],
       "findingStates": {},
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/trade/xmr",
@@ -43120,5 +44184,5 @@
     "individualActualRenderedProseComparisonsWithPreviouslyFullyReadBaseline": 85,
     "scope": "441 main texts/states covered, not441 fully completed page/source/control/human-visual reviews. See TERMINAL-TEMPLATE-COMPARISONS.json for raw texts and deltas."
   },
-  "updatedAt": "2026-10-25T11:21:43.662063+00:00"
+  "updatedAt": "2026-10-25T15:34:36.352318+00:00"
 }

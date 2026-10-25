@@ -1,0 +1,499 @@
+{
+  "path": "/courses/options-trading-fundamentals/defined-risk-spreads",
+  "sha": "c3484f39a71e4f638caec7075083b086865fb247",
+  "origin": "https://www.thetradehq.com",
+  "capturedAt": "2026-10-25T15:21:40.736Z",
+  "outcome": "COLLECTED_NOT_HUMAN_REVIEWED",
+  "widths": [
+    {
+      "width": 360,
+      "height": 800,
+      "path": "/courses/options-trading-fundamentals/defined-risk-spreads",
+      "title": "Defined-Risk Spreads — Verticals & Iron Condors — Options Trading Fundamentals | TradeHQ",
+      "heading": "Defined-Risk Spreads — Verticals & Iron Condors",
+      "supplementaryNotes": [
+        {
+          "path": "/courses/options-trading-fundamentals/defined-risk-spreads",
+          "text": "Learning notes: Defined-Risk Spreads — Verticals & Iron Condors\n\nVertical spreads and iron condors illustrate bounded expiration payoffs, with execution and assignment risks to consider. TradeHQ offers $100,000 virtual cash for supported spot instruments. Derivatives contracts remain conceptual exercises. Educational only, not financial advice.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nSummary\n\nVertical spreads and iron condors illustrate bounded expiration payoffs, with execution and assignment risks to consider.\n\nComparing expiration payoffs\n\nA spread combines long and short options. Certain vertical spreads have bounded theoretical payoffs at expiration, unlike an uncovered short call. That comparison does not make spreads universally safe or suitable for beginners. TradeHQ does not execute options spreads; the examples below are worksheet exercises.\n\nBull call spread — a hypothetical example\n\nAssume one standard 100-share contract per leg, the same expiration, a $180 long call costing $4 per share and a $185 short call receiving $2. The net debit is $200. With both legs resolved as the expiration payoff assumes, the maximum loss is $200 and the maximum gain is ($185 - $180) × 100 - $200 = $300, before costs. At a $182 expiration price, the $200 intrinsic value offsets the debit for gross break-even. These selected quotes are arithmetic inputs, not current Apple prices or a recommended trade.\n\nIron condor — another payoff structure\n\nA short iron condor combines a put credit spread below and a call credit spread above the underlying price. With all four legs intact, its expiration payoff has a maximum gain equal to the net credit when the price lies between the short strikes. Movement beyond the range can produce a loss. Time decay and implied volatility affect its value before expiration; this structure is an example for comparison rather than a preferred trade.\n\nA hypothetical sizing worksheet\n\nFor arithmetic practice, suppose a worksheet assigns 1-2% of a hypothetical $100,000 account to a trade's planned loss budget: that is $1,000-$2,000. These percentages are assumptions, not an institutional standard or a recommendation for a real account. Repeated losses reduce equity, and correlated positions can lose together. The percentage alone does not establish how many trades an account can withstand.\n\nWhat the payoff diagram leaves out\n\nCosts and poor fills can change realised results. American-style short options can be assigned before expiration. Exercise or assignment of only one leg can leave stock exposure, particularly near a strike at expiration. A bounded payoff diagram assumes the legs are maintained and resolved together; it is not a guarantee about every account outcome. Closing a spread can reduce remaining expiration exposure but adds execution costs and cannot undo earlier assignment.\n\nWorksheet comparison\n\nCalculate the bull call example at expiration prices of $175, $182 and $190. Then add an assumed $8 in total costs: the gross outcomes of -$200, $0 and +$300 become -$208, -$8 and +$292. Separately describe what could happen if the short leg were assigned and the stock position remained open. Keep that exposure separate from the intact-spread payoff.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKey takeaways\nCertain spreads have bounded theoretical expiration payoffs when their legs remain intact.\nThe example's $200 debit and $300 maximum gain exclude costs and additional stock exposure.\nAn iron condor's range-based payoff does not make it a preferred or safe trade.\nTradeHQ supports spot simulation; options spreads are studied in worksheets.\nCheck your understanding\nFor the intact bull call example, maximum expiration loss before costs is: Options: Unlimited; The width of the spread; The $200 net debit; The strike price. Correct answer: The $200 net debit. Why: Both calls expire worthless below $180, leaving the $200 debit as the gross loss. Costs and separate stock exposure are excluded.\nAn intact short iron condor has its maximum gross expiration gain when the underlying: Options: Rallies sharply beyond the upper wing; Crashes beyond the lower wing; Finishes between the short strikes; Goes to zero. Correct answer: Finishes between the short strikes. Why: The four options expire without intrinsic value between the short strikes, leaving the credit before costs.\nIn the worksheet, 1-2% of a hypothetical $100,000 account equals: Options: $50,000; $25,000; $1,000-$2,000; $100. Correct answer: $1,000-$2,000. Why: 100,000 × 0.01 to 0.02 = $1,000-$2,000. The percentages are illustrative assumptions, not a universal standard.\nWhy can an expiration payoff diagram understate account exposure? Options: It guarantees a profit; It includes all commissions; Assignment of one leg can leave a stock position; Spreads cannot lose. Correct answer: Assignment of one leg can leave a stock position. Why: The intact-spread payoff assumes both legs are resolved together. Assignment can create separate stock exposure and costs.\nSources\nOIC — Bull Call Spread and Assignment Risk (https://www.optionseducation.org/strategies/all-strategies/bull-call-spread-debit-call-spread)\nOIC — Short Condor (Iron Condor) (https://www.optionseducation.org/strategies/all-strategies/short-condor)\nOCC — Options Disclosure Document (https://www.theocc.com/company-information/documents-and-archives/options-disclosure-document)\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nReferences and related pages\nOIC — Bull Call Spread and Assignment Risk\nOIC — Short Condor (Iron Condor)\nOCC — Options Disclosure Document\nPrevious: The Greeks — Delta, Gamma, Theta & Vega\nNext: Implied Volatility & Trading Around Earnings\nOptions Trading Fundamentals\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 360,
+      "scrollHeight": 15480,
+      "viewportWidth": 360,
+      "canonical": "https://www.thetradehq.com/courses/options-trading-fundamentals/defined-risk-spreads",
+      "images": [
+        {
+          "alt": "Defined-Risk Spreads — Verticals & Iron Condors — illustration",
+          "complete": true,
+          "naturalWidth": 1200,
+          "source": "https://www.thetradehq.com/assets/options-hero-DeA_XZdf.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "b4685242831de3e4-360-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "b4685242831de3e4-360-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "b4685242831de3e4-360-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "b4685242831de3e4-360-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "b4685242831de3e4-360-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "b4685242831de3e4-360-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "b4685242831de3e4-360-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "b4685242831de3e4-360-07.png"
+        },
+        {
+          "y": 5440,
+          "screenshot": "b4685242831de3e4-360-08.png"
+        },
+        {
+          "y": 6120,
+          "screenshot": "b4685242831de3e4-360-09.png"
+        },
+        {
+          "y": 6800,
+          "screenshot": "b4685242831de3e4-360-10.png"
+        },
+        {
+          "y": 7480,
+          "screenshot": "b4685242831de3e4-360-11.png"
+        },
+        {
+          "y": 8160,
+          "screenshot": "b4685242831de3e4-360-12.png"
+        },
+        {
+          "y": 8840,
+          "screenshot": "b4685242831de3e4-360-13.png"
+        },
+        {
+          "y": 9520,
+          "screenshot": "b4685242831de3e4-360-14.png"
+        },
+        {
+          "y": 10200,
+          "screenshot": "b4685242831de3e4-360-15.png"
+        },
+        {
+          "y": 10880,
+          "screenshot": "b4685242831de3e4-360-16.png"
+        },
+        {
+          "y": 11560,
+          "screenshot": "b4685242831de3e4-360-17.png"
+        },
+        {
+          "y": 12240,
+          "screenshot": "b4685242831de3e4-360-18.png"
+        },
+        {
+          "y": 12920,
+          "screenshot": "b4685242831de3e4-360-19.png"
+        },
+        {
+          "y": 13600,
+          "screenshot": "b4685242831de3e4-360-20.png"
+        },
+        {
+          "y": 14280,
+          "screenshot": "b4685242831de3e4-360-21.png"
+        },
+        {
+          "y": 14680,
+          "screenshot": "b4685242831de3e4-360-22.png"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "path": "/courses/options-trading-fundamentals/defined-risk-spreads",
+      "title": "Defined-Risk Spreads — Verticals & Iron Condors — Options Trading Fundamentals | TradeHQ",
+      "heading": "Defined-Risk Spreads — Verticals & Iron Condors",
+      "supplementaryNotes": [
+        {
+          "path": "/courses/options-trading-fundamentals/defined-risk-spreads",
+          "text": "Learning notes: Defined-Risk Spreads — Verticals & Iron Condors\n\nVertical spreads and iron condors illustrate bounded expiration payoffs, with execution and assignment risks to consider. TradeHQ offers $100,000 virtual cash for supported spot instruments. Derivatives contracts remain conceptual exercises. Educational only, not financial advice.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nSummary\n\nVertical spreads and iron condors illustrate bounded expiration payoffs, with execution and assignment risks to consider.\n\nComparing expiration payoffs\n\nA spread combines long and short options. Certain vertical spreads have bounded theoretical payoffs at expiration, unlike an uncovered short call. That comparison does not make spreads universally safe or suitable for beginners. TradeHQ does not execute options spreads; the examples below are worksheet exercises.\n\nBull call spread — a hypothetical example\n\nAssume one standard 100-share contract per leg, the same expiration, a $180 long call costing $4 per share and a $185 short call receiving $2. The net debit is $200. With both legs resolved as the expiration payoff assumes, the maximum loss is $200 and the maximum gain is ($185 - $180) × 100 - $200 = $300, before costs. At a $182 expiration price, the $200 intrinsic value offsets the debit for gross break-even. These selected quotes are arithmetic inputs, not current Apple prices or a recommended trade.\n\nIron condor — another payoff structure\n\nA short iron condor combines a put credit spread below and a call credit spread above the underlying price. With all four legs intact, its expiration payoff has a maximum gain equal to the net credit when the price lies between the short strikes. Movement beyond the range can produce a loss. Time decay and implied volatility affect its value before expiration; this structure is an example for comparison rather than a preferred trade.\n\nA hypothetical sizing worksheet\n\nFor arithmetic practice, suppose a worksheet assigns 1-2% of a hypothetical $100,000 account to a trade's planned loss budget: that is $1,000-$2,000. These percentages are assumptions, not an institutional standard or a recommendation for a real account. Repeated losses reduce equity, and correlated positions can lose together. The percentage alone does not establish how many trades an account can withstand.\n\nWhat the payoff diagram leaves out\n\nCosts and poor fills can change realised results. American-style short options can be assigned before expiration. Exercise or assignment of only one leg can leave stock exposure, particularly near a strike at expiration. A bounded payoff diagram assumes the legs are maintained and resolved together; it is not a guarantee about every account outcome. Closing a spread can reduce remaining expiration exposure but adds execution costs and cannot undo earlier assignment.\n\nWorksheet comparison\n\nCalculate the bull call example at expiration prices of $175, $182 and $190. Then add an assumed $8 in total costs: the gross outcomes of -$200, $0 and +$300 become -$208, -$8 and +$292. Separately describe what could happen if the short leg were assigned and the stock position remained open. Keep that exposure separate from the intact-spread payoff.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKey takeaways\nCertain spreads have bounded theoretical expiration payoffs when their legs remain intact.\nThe example's $200 debit and $300 maximum gain exclude costs and additional stock exposure.\nAn iron condor's range-based payoff does not make it a preferred or safe trade.\nTradeHQ supports spot simulation; options spreads are studied in worksheets.\nCheck your understanding\nFor the intact bull call example, maximum expiration loss before costs is: Options: Unlimited; The width of the spread; The $200 net debit; The strike price. Correct answer: The $200 net debit. Why: Both calls expire worthless below $180, leaving the $200 debit as the gross loss. Costs and separate stock exposure are excluded.\nAn intact short iron condor has its maximum gross expiration gain when the underlying: Options: Rallies sharply beyond the upper wing; Crashes beyond the lower wing; Finishes between the short strikes; Goes to zero. Correct answer: Finishes between the short strikes. Why: The four options expire without intrinsic value between the short strikes, leaving the credit before costs.\nIn the worksheet, 1-2% of a hypothetical $100,000 account equals: Options: $50,000; $25,000; $1,000-$2,000; $100. Correct answer: $1,000-$2,000. Why: 100,000 × 0.01 to 0.02 = $1,000-$2,000. The percentages are illustrative assumptions, not a universal standard.\nWhy can an expiration payoff diagram understate account exposure? Options: It guarantees a profit; It includes all commissions; Assignment of one leg can leave a stock position; Spreads cannot lose. Correct answer: Assignment of one leg can leave a stock position. Why: The intact-spread payoff assumes both legs are resolved together. Assignment can create separate stock exposure and costs.\nSources\nOIC — Bull Call Spread and Assignment Risk (https://www.optionseducation.org/strategies/all-strategies/bull-call-spread-debit-call-spread)\nOIC — Short Condor (Iron Condor) (https://www.optionseducation.org/strategies/all-strategies/short-condor)\nOCC — Options Disclosure Document (https://www.theocc.com/company-information/documents-and-archives/options-disclosure-document)\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nReferences and related pages\nOIC — Bull Call Spread and Assignment Risk\nOIC — Short Condor (Iron Condor)\nOCC — Options Disclosure Document\nPrevious: The Greeks — Delta, Gamma, Theta & Vega\nNext: Implied Volatility & Trading Around Earnings\nOptions Trading Fundamentals\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 390,
+      "scrollHeight": 14530,
+      "viewportWidth": 390,
+      "canonical": "https://www.thetradehq.com/courses/options-trading-fundamentals/defined-risk-spreads",
+      "images": [
+        {
+          "alt": "Defined-Risk Spreads — Verticals & Iron Condors — illustration",
+          "complete": true,
+          "naturalWidth": 1200,
+          "source": "https://www.thetradehq.com/assets/options-hero-DeA_XZdf.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "b4685242831de3e4-390-00.png"
+        },
+        {
+          "y": 717,
+          "screenshot": "b4685242831de3e4-390-01.png"
+        },
+        {
+          "y": 1434,
+          "screenshot": "b4685242831de3e4-390-02.png"
+        },
+        {
+          "y": 2151,
+          "screenshot": "b4685242831de3e4-390-03.png"
+        },
+        {
+          "y": 2868,
+          "screenshot": "b4685242831de3e4-390-04.png"
+        },
+        {
+          "y": 3585,
+          "screenshot": "b4685242831de3e4-390-05.png"
+        },
+        {
+          "y": 4302,
+          "screenshot": "b4685242831de3e4-390-06.png"
+        },
+        {
+          "y": 5019,
+          "screenshot": "b4685242831de3e4-390-07.png"
+        },
+        {
+          "y": 5736,
+          "screenshot": "b4685242831de3e4-390-08.png"
+        },
+        {
+          "y": 6453,
+          "screenshot": "b4685242831de3e4-390-09.png"
+        },
+        {
+          "y": 7170,
+          "screenshot": "b4685242831de3e4-390-10.png"
+        },
+        {
+          "y": 7887,
+          "screenshot": "b4685242831de3e4-390-11.png"
+        },
+        {
+          "y": 8604,
+          "screenshot": "b4685242831de3e4-390-12.png"
+        },
+        {
+          "y": 9321,
+          "screenshot": "b4685242831de3e4-390-13.png"
+        },
+        {
+          "y": 10038,
+          "screenshot": "b4685242831de3e4-390-14.png"
+        },
+        {
+          "y": 10755,
+          "screenshot": "b4685242831de3e4-390-15.png"
+        },
+        {
+          "y": 11472,
+          "screenshot": "b4685242831de3e4-390-16.png"
+        },
+        {
+          "y": 12189,
+          "screenshot": "b4685242831de3e4-390-17.png"
+        },
+        {
+          "y": 12906,
+          "screenshot": "b4685242831de3e4-390-18.png"
+        },
+        {
+          "y": 13623,
+          "screenshot": "b4685242831de3e4-390-19.png"
+        },
+        {
+          "y": 13686,
+          "screenshot": "b4685242831de3e4-390-20.png"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "path": "/courses/options-trading-fundamentals/defined-risk-spreads",
+      "title": "Defined-Risk Spreads — Verticals & Iron Condors — Options Trading Fundamentals | TradeHQ",
+      "heading": "Defined-Risk Spreads — Verticals & Iron Condors",
+      "supplementaryNotes": [
+        {
+          "path": "/courses/options-trading-fundamentals/defined-risk-spreads",
+          "text": "Learning notes: Defined-Risk Spreads — Verticals & Iron Condors\n\nVertical spreads and iron condors illustrate bounded expiration payoffs, with execution and assignment risks to consider. TradeHQ offers $100,000 virtual cash for supported spot instruments. Derivatives contracts remain conceptual exercises. Educational only, not financial advice.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nSummary\n\nVertical spreads and iron condors illustrate bounded expiration payoffs, with execution and assignment risks to consider.\n\nComparing expiration payoffs\n\nA spread combines long and short options. Certain vertical spreads have bounded theoretical payoffs at expiration, unlike an uncovered short call. That comparison does not make spreads universally safe or suitable for beginners. TradeHQ does not execute options spreads; the examples below are worksheet exercises.\n\nBull call spread — a hypothetical example\n\nAssume one standard 100-share contract per leg, the same expiration, a $180 long call costing $4 per share and a $185 short call receiving $2. The net debit is $200. With both legs resolved as the expiration payoff assumes, the maximum loss is $200 and the maximum gain is ($185 - $180) × 100 - $200 = $300, before costs. At a $182 expiration price, the $200 intrinsic value offsets the debit for gross break-even. These selected quotes are arithmetic inputs, not current Apple prices or a recommended trade.\n\nIron condor — another payoff structure\n\nA short iron condor combines a put credit spread below and a call credit spread above the underlying price. With all four legs intact, its expiration payoff has a maximum gain equal to the net credit when the price lies between the short strikes. Movement beyond the range can produce a loss. Time decay and implied volatility affect its value before expiration; this structure is an example for comparison rather than a preferred trade.\n\nA hypothetical sizing worksheet\n\nFor arithmetic practice, suppose a worksheet assigns 1-2% of a hypothetical $100,000 account to a trade's planned loss budget: that is $1,000-$2,000. These percentages are assumptions, not an institutional standard or a recommendation for a real account. Repeated losses reduce equity, and correlated positions can lose together. The percentage alone does not establish how many trades an account can withstand.\n\nWhat the payoff diagram leaves out\n\nCosts and poor fills can change realised results. American-style short options can be assigned before expiration. Exercise or assignment of only one leg can leave stock exposure, particularly near a strike at expiration. A bounded payoff diagram assumes the legs are maintained and resolved together; it is not a guarantee about every account outcome. Closing a spread can reduce remaining expiration exposure but adds execution costs and cannot undo earlier assignment.\n\nWorksheet comparison\n\nCalculate the bull call example at expiration prices of $175, $182 and $190. Then add an assumed $8 in total costs: the gross outcomes of -$200, $0 and +$300 become -$208, -$8 and +$292. Separately describe what could happen if the short leg were assigned and the stock position remained open. Keep that exposure separate from the intact-spread payoff.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKey takeaways\nCertain spreads have bounded theoretical expiration payoffs when their legs remain intact.\nThe example's $200 debit and $300 maximum gain exclude costs and additional stock exposure.\nAn iron condor's range-based payoff does not make it a preferred or safe trade.\nTradeHQ supports spot simulation; options spreads are studied in worksheets.\nCheck your understanding\nFor the intact bull call example, maximum expiration loss before costs is: Options: Unlimited; The width of the spread; The $200 net debit; The strike price. Correct answer: The $200 net debit. Why: Both calls expire worthless below $180, leaving the $200 debit as the gross loss. Costs and separate stock exposure are excluded.\nAn intact short iron condor has its maximum gross expiration gain when the underlying: Options: Rallies sharply beyond the upper wing; Crashes beyond the lower wing; Finishes between the short strikes; Goes to zero. Correct answer: Finishes between the short strikes. Why: The four options expire without intrinsic value between the short strikes, leaving the credit before costs.\nIn the worksheet, 1-2% of a hypothetical $100,000 account equals: Options: $50,000; $25,000; $1,000-$2,000; $100. Correct answer: $1,000-$2,000. Why: 100,000 × 0.01 to 0.02 = $1,000-$2,000. The percentages are illustrative assumptions, not a universal standard.\nWhy can an expiration payoff diagram understate account exposure? Options: It guarantees a profit; It includes all commissions; Assignment of one leg can leave a stock position; Spreads cannot lose. Correct answer: Assignment of one leg can leave a stock position. Why: The intact-spread payoff assumes both legs are resolved together. Assignment can create separate stock exposure and costs.\nSources\nOIC — Bull Call Spread and Assignment Risk (https://www.optionseducation.org/strategies/all-strategies/bull-call-spread-debit-call-spread)\nOIC — Short Condor (Iron Condor) (https://www.optionseducation.org/strategies/all-strategies/short-condor)\nOCC — Options Disclosure Document (https://www.theocc.com/company-information/documents-and-archives/options-disclosure-document)\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nReferences and related pages\nOIC — Bull Call Spread and Assignment Risk\nOIC — Short Condor (Iron Condor)\nOCC — Options Disclosure Document\nPrevious: The Greeks — Delta, Gamma, Theta & Vega\nNext: Implied Volatility & Trading Around Earnings\nOptions Trading Fundamentals\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 753,
+      "scrollHeight": 9924,
+      "viewportWidth": 768,
+      "canonical": "https://www.thetradehq.com/courses/options-trading-fundamentals/defined-risk-spreads",
+      "images": [
+        {
+          "alt": "Defined-Risk Spreads — Verticals & Iron Condors — illustration",
+          "complete": true,
+          "naturalWidth": 1200,
+          "source": "https://www.thetradehq.com/assets/options-hero-DeA_XZdf.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "b4685242831de3e4-768-00.png"
+        },
+        {
+          "y": 870,
+          "screenshot": "b4685242831de3e4-768-01.png"
+        },
+        {
+          "y": 1740,
+          "screenshot": "b4685242831de3e4-768-02.png"
+        },
+        {
+          "y": 2610,
+          "screenshot": "b4685242831de3e4-768-03.png"
+        },
+        {
+          "y": 3480,
+          "screenshot": "b4685242831de3e4-768-04.png"
+        },
+        {
+          "y": 4350,
+          "screenshot": "b4685242831de3e4-768-05.png"
+        },
+        {
+          "y": 5220,
+          "screenshot": "b4685242831de3e4-768-06.png"
+        },
+        {
+          "y": 6090,
+          "screenshot": "b4685242831de3e4-768-07.png"
+        },
+        {
+          "y": 6960,
+          "screenshot": "b4685242831de3e4-768-08.png"
+        },
+        {
+          "y": 7830,
+          "screenshot": "b4685242831de3e4-768-09.png"
+        },
+        {
+          "y": 8700,
+          "screenshot": "b4685242831de3e4-768-10.png"
+        },
+        {
+          "y": 8900,
+          "screenshot": "b4685242831de3e4-768-11.png"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "path": "/courses/options-trading-fundamentals/defined-risk-spreads",
+      "title": "Defined-Risk Spreads — Verticals & Iron Condors — Options Trading Fundamentals | TradeHQ",
+      "heading": "Defined-Risk Spreads — Verticals & Iron Condors",
+      "supplementaryNotes": [
+        {
+          "path": "/courses/options-trading-fundamentals/defined-risk-spreads",
+          "text": "Learning notes: Defined-Risk Spreads — Verticals & Iron Condors\n\nVertical spreads and iron condors illustrate bounded expiration payoffs, with execution and assignment risks to consider. TradeHQ offers $100,000 virtual cash for supported spot instruments. Derivatives contracts remain conceptual exercises. Educational only, not financial advice.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nSummary\n\nVertical spreads and iron condors illustrate bounded expiration payoffs, with execution and assignment risks to consider.\n\nComparing expiration payoffs\n\nA spread combines long and short options. Certain vertical spreads have bounded theoretical payoffs at expiration, unlike an uncovered short call. That comparison does not make spreads universally safe or suitable for beginners. TradeHQ does not execute options spreads; the examples below are worksheet exercises.\n\nBull call spread — a hypothetical example\n\nAssume one standard 100-share contract per leg, the same expiration, a $180 long call costing $4 per share and a $185 short call receiving $2. The net debit is $200. With both legs resolved as the expiration payoff assumes, the maximum loss is $200 and the maximum gain is ($185 - $180) × 100 - $200 = $300, before costs. At a $182 expiration price, the $200 intrinsic value offsets the debit for gross break-even. These selected quotes are arithmetic inputs, not current Apple prices or a recommended trade.\n\nIron condor — another payoff structure\n\nA short iron condor combines a put credit spread below and a call credit spread above the underlying price. With all four legs intact, its expiration payoff has a maximum gain equal to the net credit when the price lies between the short strikes. Movement beyond the range can produce a loss. Time decay and implied volatility affect its value before expiration; this structure is an example for comparison rather than a preferred trade.\n\nA hypothetical sizing worksheet\n\nFor arithmetic practice, suppose a worksheet assigns 1-2% of a hypothetical $100,000 account to a trade's planned loss budget: that is $1,000-$2,000. These percentages are assumptions, not an institutional standard or a recommendation for a real account. Repeated losses reduce equity, and correlated positions can lose together. The percentage alone does not establish how many trades an account can withstand.\n\nWhat the payoff diagram leaves out\n\nCosts and poor fills can change realised results. American-style short options can be assigned before expiration. Exercise or assignment of only one leg can leave stock exposure, particularly near a strike at expiration. A bounded payoff diagram assumes the legs are maintained and resolved together; it is not a guarantee about every account outcome. Closing a spread can reduce remaining expiration exposure but adds execution costs and cannot undo earlier assignment.\n\nWorksheet comparison\n\nCalculate the bull call example at expiration prices of $175, $182 and $190. Then add an assumed $8 in total costs: the gross outcomes of -$200, $0 and +$300 become -$208, -$8 and +$292. Separately describe what could happen if the short leg were assigned and the stock position remained open. Keep that exposure separate from the intact-spread payoff.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKey takeaways\nCertain spreads have bounded theoretical expiration payoffs when their legs remain intact.\nThe example's $200 debit and $300 maximum gain exclude costs and additional stock exposure.\nAn iron condor's range-based payoff does not make it a preferred or safe trade.\nTradeHQ supports spot simulation; options spreads are studied in worksheets.\nCheck your understanding\nFor the intact bull call example, maximum expiration loss before costs is: Options: Unlimited; The width of the spread; The $200 net debit; The strike price. Correct answer: The $200 net debit. Why: Both calls expire worthless below $180, leaving the $200 debit as the gross loss. Costs and separate stock exposure are excluded.\nAn intact short iron condor has its maximum gross expiration gain when the underlying: Options: Rallies sharply beyond the upper wing; Crashes beyond the lower wing; Finishes between the short strikes; Goes to zero. Correct answer: Finishes between the short strikes. Why: The four options expire without intrinsic value between the short strikes, leaving the credit before costs.\nIn the worksheet, 1-2% of a hypothetical $100,000 account equals: Options: $50,000; $25,000; $1,000-$2,000; $100. Correct answer: $1,000-$2,000. Why: 100,000 × 0.01 to 0.02 = $1,000-$2,000. The percentages are illustrative assumptions, not a universal standard.\nWhy can an expiration payoff diagram understate account exposure? Options: It guarantees a profit; It includes all commissions; Assignment of one leg can leave a stock position; Spreads cannot lose. Correct answer: Assignment of one leg can leave a stock position. Why: The intact-spread payoff assumes both legs are resolved together. Assignment can create separate stock exposure and costs.\nSources\nOIC — Bull Call Spread and Assignment Risk (https://www.optionseducation.org/strategies/all-strategies/bull-call-spread-debit-call-spread)\nOIC — Short Condor (Iron Condor) (https://www.optionseducation.org/strategies/all-strategies/short-condor)\nOCC — Options Disclosure Document (https://www.theocc.com/company-information/documents-and-archives/options-disclosure-document)\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nReferences and related pages\nOIC — Bull Call Spread and Assignment Risk\nOIC — Short Condor (Iron Condor)\nOCC — Options Disclosure Document\nPrevious: The Greeks — Delta, Gamma, Theta & Vega\nNext: Implied Volatility & Trading Around Earnings\nOptions Trading Fundamentals\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1265,
+      "scrollHeight": 9216,
+      "viewportWidth": 1280,
+      "canonical": "https://www.thetradehq.com/courses/options-trading-fundamentals/defined-risk-spreads",
+      "images": [
+        {
+          "alt": "Defined-Risk Spreads — Verticals & Iron Condors — illustration",
+          "complete": true,
+          "naturalWidth": 1200,
+          "source": "https://www.thetradehq.com/assets/options-hero-DeA_XZdf.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "b4685242831de3e4-1280-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "b4685242831de3e4-1280-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "b4685242831de3e4-1280-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "b4685242831de3e4-1280-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "b4685242831de3e4-1280-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "b4685242831de3e4-1280-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "b4685242831de3e4-1280-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "b4685242831de3e4-1280-07.png"
+        },
+        {
+          "y": 5440,
+          "screenshot": "b4685242831de3e4-1280-08.png"
+        },
+        {
+          "y": 6120,
+          "screenshot": "b4685242831de3e4-1280-09.png"
+        },
+        {
+          "y": 6800,
+          "screenshot": "b4685242831de3e4-1280-10.png"
+        },
+        {
+          "y": 7480,
+          "screenshot": "b4685242831de3e4-1280-11.png"
+        },
+        {
+          "y": 8160,
+          "screenshot": "b4685242831de3e4-1280-12.png"
+        },
+        {
+          "y": 8416,
+          "screenshot": "b4685242831de3e4-1280-13.png"
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "path": "/courses/options-trading-fundamentals/defined-risk-spreads",
+      "title": "Defined-Risk Spreads — Verticals & Iron Condors — Options Trading Fundamentals | TradeHQ",
+      "heading": "Defined-Risk Spreads — Verticals & Iron Condors",
+      "supplementaryNotes": [
+        {
+          "path": "/courses/options-trading-fundamentals/defined-risk-spreads",
+          "text": "Learning notes: Defined-Risk Spreads — Verticals & Iron Condors\n\nVertical spreads and iron condors illustrate bounded expiration payoffs, with execution and assignment risks to consider. TradeHQ offers $100,000 virtual cash for supported spot instruments. Derivatives contracts remain conceptual exercises. Educational only, not financial advice.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nSummary\n\nVertical spreads and iron condors illustrate bounded expiration payoffs, with execution and assignment risks to consider.\n\nComparing expiration payoffs\n\nA spread combines long and short options. Certain vertical spreads have bounded theoretical payoffs at expiration, unlike an uncovered short call. That comparison does not make spreads universally safe or suitable for beginners. TradeHQ does not execute options spreads; the examples below are worksheet exercises.\n\nBull call spread — a hypothetical example\n\nAssume one standard 100-share contract per leg, the same expiration, a $180 long call costing $4 per share and a $185 short call receiving $2. The net debit is $200. With both legs resolved as the expiration payoff assumes, the maximum loss is $200 and the maximum gain is ($185 - $180) × 100 - $200 = $300, before costs. At a $182 expiration price, the $200 intrinsic value offsets the debit for gross break-even. These selected quotes are arithmetic inputs, not current Apple prices or a recommended trade.\n\nIron condor — another payoff structure\n\nA short iron condor combines a put credit spread below and a call credit spread above the underlying price. With all four legs intact, its expiration payoff has a maximum gain equal to the net credit when the price lies between the short strikes. Movement beyond the range can produce a loss. Time decay and implied volatility affect its value before expiration; this structure is an example for comparison rather than a preferred trade.\n\nA hypothetical sizing worksheet\n\nFor arithmetic practice, suppose a worksheet assigns 1-2% of a hypothetical $100,000 account to a trade's planned loss budget: that is $1,000-$2,000. These percentages are assumptions, not an institutional standard or a recommendation for a real account. Repeated losses reduce equity, and correlated positions can lose together. The percentage alone does not establish how many trades an account can withstand.\n\nWhat the payoff diagram leaves out\n\nCosts and poor fills can change realised results. American-style short options can be assigned before expiration. Exercise or assignment of only one leg can leave stock exposure, particularly near a strike at expiration. A bounded payoff diagram assumes the legs are maintained and resolved together; it is not a guarantee about every account outcome. Closing a spread can reduce remaining expiration exposure but adds execution costs and cannot undo earlier assignment.\n\nWorksheet comparison\n\nCalculate the bull call example at expiration prices of $175, $182 and $190. Then add an assumed $8 in total costs: the gross outcomes of -$200, $0 and +$300 become -$208, -$8 and +$292. Separately describe what could happen if the short leg were assigned and the stock position remained open. Keep that exposure separate from the intact-spread payoff.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKey takeaways\nCertain spreads have bounded theoretical expiration payoffs when their legs remain intact.\nThe example's $200 debit and $300 maximum gain exclude costs and additional stock exposure.\nAn iron condor's range-based payoff does not make it a preferred or safe trade.\nTradeHQ supports spot simulation; options spreads are studied in worksheets.\nCheck your understanding\nFor the intact bull call example, maximum expiration loss before costs is: Options: Unlimited; The width of the spread; The $200 net debit; The strike price. Correct answer: The $200 net debit. Why: Both calls expire worthless below $180, leaving the $200 debit as the gross loss. Costs and separate stock exposure are excluded.\nAn intact short iron condor has its maximum gross expiration gain when the underlying: Options: Rallies sharply beyond the upper wing; Crashes beyond the lower wing; Finishes between the short strikes; Goes to zero. Correct answer: Finishes between the short strikes. Why: The four options expire without intrinsic value between the short strikes, leaving the credit before costs.\nIn the worksheet, 1-2% of a hypothetical $100,000 account equals: Options: $50,000; $25,000; $1,000-$2,000; $100. Correct answer: $1,000-$2,000. Why: 100,000 × 0.01 to 0.02 = $1,000-$2,000. The percentages are illustrative assumptions, not a universal standard.\nWhy can an expiration payoff diagram understate account exposure? Options: It guarantees a profit; It includes all commissions; Assignment of one leg can leave a stock position; Spreads cannot lose. Correct answer: Assignment of one leg can leave a stock position. Why: The intact-spread payoff assumes both legs are resolved together. Assignment can create separate stock exposure and costs.\nSources\nOIC — Bull Call Spread and Assignment Risk (https://www.optionseducation.org/strategies/all-strategies/bull-call-spread-debit-call-spread)\nOIC — Short Condor (Iron Condor) (https://www.optionseducation.org/strategies/all-strategies/short-condor)\nOCC — Options Disclosure Document (https://www.theocc.com/company-information/documents-and-archives/options-disclosure-document)\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nReferences and related pages\nOIC — Bull Call Spread and Assignment Risk\nOIC — Short Condor (Iron Condor)\nOCC — Options Disclosure Document\nPrevious: The Greeks — Delta, Gamma, Theta & Vega\nNext: Implied Volatility & Trading Around Earnings\nOptions Trading Fundamentals\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1905,
+      "scrollHeight": 9140,
+      "viewportWidth": 1920,
+      "canonical": "https://www.thetradehq.com/courses/options-trading-fundamentals/defined-risk-spreads",
+      "images": [
+        {
+          "alt": "Defined-Risk Spreads — Verticals & Iron Condors — illustration",
+          "complete": true,
+          "naturalWidth": 1200,
+          "source": "https://www.thetradehq.com/assets/options-hero-DeA_XZdf.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "b4685242831de3e4-1920-00.png"
+        },
+        {
+          "y": 918,
+          "screenshot": "b4685242831de3e4-1920-01.png"
+        },
+        {
+          "y": 1836,
+          "screenshot": "b4685242831de3e4-1920-02.png"
+        },
+        {
+          "y": 2754,
+          "screenshot": "b4685242831de3e4-1920-03.png"
+        },
+        {
+          "y": 3672,
+          "screenshot": "b4685242831de3e4-1920-04.png"
+        },
+        {
+          "y": 4590,
+          "screenshot": "b4685242831de3e4-1920-05.png"
+        },
+        {
+          "y": 5508,
+          "screenshot": "b4685242831de3e4-1920-06.png"
+        },
+        {
+          "y": 6426,
+          "screenshot": "b4685242831de3e4-1920-07.png"
+        },
+        {
+          "y": 7344,
+          "screenshot": "b4685242831de3e4-1920-08.png"
+        },
+        {
+          "y": 8060,
+          "screenshot": "b4685242831de3e4-1920-09.png"
+        }
+      ]
+    }
+  ]
+}

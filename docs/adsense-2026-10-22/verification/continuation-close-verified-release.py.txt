@@ -1,0 +1,29 @@
+from pathlib import Path
+import json,datetime,sys
+pr=int(sys.argv[1]);sha=sys.argv[2];r=Path('/workspace/trading101/docs/adsense-2026-10-22');now=datetime.datetime.now(datetime.timezone.utc).isoformat()
+def read(name):return json.loads((r/'evidence'/name).read_text())
+if pr==241:
+ ids=['THQ-039','THQ-041']; receipts=['PR241-PRODUCTION-BROWSER.json','PR241-PRODUCTION-DIFFICULTY-BROWSER.json'];expected=[80,60];images=10
+elif pr==242:
+ ids=['THQ-040'];receipts=['PR242-PRODUCTION-BROWSER.json'];expected=[30];images=12
+else:raise ValueError('Unsupported release')
+ci=read(f'PR{pr}-MAIN-CI.json');providers=read(f'PR{pr}-PRODUCTION-PROVIDERS.json');guest=read(f'POST-PR{pr}-GUEST-SMOKE.json');assert len(ci['checks'])==6
+for d in [ci,providers,guest,*map(read,receipts)]:
+ assert d['outcome']=='PASS' and d.get('sha',d.get('mergeSHA'))==sha
+for name,count in zip(receipts,expected):assert len(read(name)['rows'])==count
+assert len(guest['rows'])==30 and len(guest['controls'])==4 and all(x['passed']for x in guest['controls']);assert not guest['runtimeErrors']
+f=r/'FINDINGS.json';d=json.loads(f.read_text())
+for x in d['findings']:
+ if x['id']in ids:x.update(state='PUBLICLY_VERIFIED',releaseHold=None,mergeSHA=sha,productionEvidence=f'evidence/PR{pr}-PRODUCTION-PROVIDERS.json',mainCIEvidence=f'evidence/PR{pr}-MAIN-CI.json',liveEvidence=['evidence/'+n for n in receipts]+[f'evidence/POST-PR{pr}-GUEST-SMOKE.json'],productionImagesPersonallyViewed=images,liveRecheck='PASS exact merged production: '+str(expected)+' affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action.')
+site=[x for x in d['findings']if x['id'].startswith('THQ-')];assert len(site)==46;d['counts'].update(publiclyRepaired=sum(x['state']=='PUBLICLY_VERIFIED'for x in site),preparedNotMerged=sum(x['state']not in ['PUBLICLY_VERIFIED','MERGED_AWAITING_PRODUCTION_VERIFICATION']for x in site),mergedAwaitingProductionVerification=sum(x['state']=='MERGED_AWAITING_PRODUCTION_VERIFICATION'for x in site));d['updatedAt']=now;f.write_text(json.dumps(d,indent=2)+'\n')
+f=r/'RELEASE-LEDGER.json';l=json.loads(f.read_text());candidate=next(x['candidateSHA']for x in d['findings']if x['id']in ids);l['releases']=[x for x in l['releases']if x['pr']!=pr];l['releases'].append({'pr':pr,'url':f'https://github.com/anugaweerasinghe1-del/trading101/pull/{pr}','candidateSHA':candidate,'mergeSHA':sha,'state':'PUBLICLY_VERIFIED','findings':ids,'production':providers,'mainCIEvidence':f'evidence/PR{pr}-MAIN-CI.json','liveEvidence':['evidence/'+n for n in receipts]+[f'evidence/POST-PR{pr}-GUEST-SMOKE.json'],'liveRecheck':{'outcome':'PASS','affectedStates':expected,'guestStates':30,'safeControls':4,'productionImagesPersonallyViewed':images}})
+remaining=46-d['counts']['publiclyRepaired'];l.update(updatedAt=now,latestVerifiedProductionSHA=sha,latestGitHubProviderBindingEvidence=f'evidence/PR{pr}-PRODUCTION-PROVIDERS.json',latestMainValidationEvidence=f'evidence/PR{pr}-MAIN-CI.json',pendingReleaseVerification=None,remainingConfirmedSiteFixes=remaining,remainingKnownSafeFindings=remaining)
+if pr==241:
+ x=next(x for x in d['findings']if x['id']=='THQ-040');l['nextCandidate']={'pr':242,'candidateSHA':x['candidateSHA'],'baseSHA':sha,'state':x['state'],'scope':'Six authored guide articles integrated; substantive data/behavior unchanged. Required CI/native/actual preview gate remains.'}
+else:l['nextCandidate']=None
+f.write_text(json.dumps(l,indent=2)+'\n')
+f=r/'SUPPLEMENTARY-NOTES-REVIEW.json';s=json.loads(f.read_text());s['currentVerifiedProductionSHA']=sha
+if pr==242:
+ for x in s['routes']:
+  if x['path']in ['/how-to-trade/'+n for n in ['btc','eth','nvda','sol','spy','tsla']]:x.update(currentSeparateArticleState='INTEGRATED_IN_AUTHORED_MAIN_PR242',integrationEvidence='evidence/PR242-PRODUCTION-BROWSER.json',integrationScope='Every substantive paragraph/list/reference retained in authored main; publisher/simulation disclosure moved before footer. Historical outside-main reading receipts retain their actual dates.')
+active=[x for x in s['routes']if not x.get('currentSeparateArticleState','').startswith('INTEGRATED_IN_AUTHORED_MAIN_')];count=sum(x['readingStatus']=='ACTUAL_RENDERED_NOTES_READ'for x in active);s.update(currentSeparateArticlesExpected=len(active),currentSeparateArticlesActuallyRead=count,currentSeparateArticlesNotYetIndividuallyRead=len(active)-count,historicalSeparateArticlesNowIntegratedInMain=83-len(active));f.write_text(json.dumps(s,indent=2)+'\n');print(json.dumps({'pr':pr,'sha':sha,'publiclyRepaired':d['counts']['publiclyRepaired'],'remainingConfirmed':remaining,'separateNotesExpected':len(active),'separateNotesRead':count,'separateNotesUnread':len(active)-count}))

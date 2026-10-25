@@ -143,6 +143,10 @@
         "state": "PUBLICLY_VERIFIED",
         "mergeSHA": "adcaed329c34f4a846f41b9fff9c01b2f2a3bc2e",
         "scope": "Targeted40widthtext/reference/no-duplicate checks, not complete all-route full-page/accessibility/source/originality review."
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+        "evidence": "evidence/PR232-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -172,6 +176,10 @@
         "state": "PUBLICLY_VERIFIED",
         "mergeSHA": "adcaed329c34f4a846f41b9fff9c01b2f2a3bc2e",
         "scope": "Targeted40widthtext/reference/no-duplicate checks, not complete all-route full-page/accessibility/source/originality review."
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+        "evidence": "evidence/PR232-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -193,6 +201,10 @@
         "state": "PUBLICLY_VERIFIED",
         "mergeSHA": "adcaed329c34f4a846f41b9fff9c01b2f2a3bc2e",
         "scope": "Targeted40widthtext/reference/no-duplicate checks, not complete all-route full-page/accessibility/source/originality review."
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+        "evidence": "evidence/PR232-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -214,6 +226,10 @@
         "state": "PUBLICLY_VERIFIED",
         "mergeSHA": "adcaed329c34f4a846f41b9fff9c01b2f2a3bc2e",
         "scope": "Targeted40widthtext/reference/no-duplicate checks, not complete all-route full-page/accessibility/source/originality review."
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+        "evidence": "evidence/PR232-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -235,6 +251,10 @@
         "state": "PUBLICLY_VERIFIED",
         "mergeSHA": "adcaed329c34f4a846f41b9fff9c01b2f2a3bc2e",
         "scope": "Targeted40widthtext/reference/no-duplicate checks, not complete all-route full-page/accessibility/source/originality review."
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+        "evidence": "evidence/PR232-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -256,6 +276,10 @@
         "state": "PUBLICLY_VERIFIED",
         "mergeSHA": "adcaed329c34f4a846f41b9fff9c01b2f2a3bc2e",
         "scope": "Targeted40widthtext/reference/no-duplicate checks, not complete all-route full-page/accessibility/source/originality review."
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+        "evidence": "evidence/PR232-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -277,6 +301,10 @@
         "state": "PUBLICLY_VERIFIED",
         "mergeSHA": "adcaed329c34f4a846f41b9fff9c01b2f2a3bc2e",
         "scope": "Targeted40widthtext/reference/no-duplicate checks, not complete all-route full-page/accessibility/source/originality review."
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+        "evidence": "evidence/PR232-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -306,6 +334,10 @@
         "state": "PUBLICLY_VERIFIED",
         "mergeSHA": "adcaed329c34f4a846f41b9fff9c01b2f2a3bc2e",
         "scope": "Targeted40widthtext/reference/no-duplicate checks, not complete all-route full-page/accessibility/source/originality review."
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+        "evidence": "evidence/PR232-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -510,7 +542,20 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR240",
+        "evidence": "evidence/PR240-PRODUCTION-BROWSER.json"
+      },
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-038",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 240,
+          "mergeSHA": "65df89982a4ab4d0932c5f1135a11e7fb29d68e8",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/courses/futures-and-derivatives/contango-and-backwardation",
@@ -524,7 +569,15 @@
       "fullPageReviewComplete": false,
       "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
       "structuredQuizQuestionAndFeedbackSetsRead": 4,
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
     },
     {
       "path": "/courses/futures-and-derivatives/hedging-with-futures",
@@ -624,7 +677,20 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR240",
+        "evidence": "evidence/PR240-PRODUCTION-BROWSER.json"
+      },
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-038",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 240,
+          "mergeSHA": "65df89982a4ab4d0932c5f1135a11e7fb29d68e8",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/courses/macro-reading-for-traders/putting-macro-signals-together",
@@ -708,7 +774,15 @@
       "fullPageReviewComplete": false,
       "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
       "structuredQuizQuestionAndFeedbackSetsRead": 4,
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
     },
     {
       "path": "/courses/options-trading-fundamentals",
@@ -727,7 +801,20 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR240",
+        "evidence": "evidence/PR240-PRODUCTION-BROWSER.json"
+      },
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-038",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 240,
+          "mergeSHA": "65df89982a4ab4d0932c5f1135a11e7fb29d68e8",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/courses/options-trading-fundamentals/defined-risk-spreads",
@@ -739,7 +826,15 @@
       "fullPageReviewComplete": false,
       "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
       "structuredQuizQuestionAndFeedbackSetsRead": 4,
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
     },
     {
       "path": "/courses/options-trading-fundamentals/implied-volatility-and-earnings",
@@ -790,7 +885,12 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "selectedPrimarySourceFollowup": {
+        "evidence": "evidence/GAMMA-CIRCUIT-DARKPOOL-SOURCE-FOLLOWUP-20261025.json",
+        "assessment": "OIC describes gamma as the modeled change in delta for a one-dollar underlying move; its examples add gamma to delta after an upward move. The page also qualifies stronger at-the-money/near-expiry sensitivity. This supports the lesson's conditional sensitivity explanation, without implying a realized payoff or probability guarantee.",
+        "remaining": "Full Greeks/contract/assumption review and primary-source comparisons outside these selected passages remain."
+      }
     },
     {
       "path": "/courses/options-trading-fundamentals/what-is-an-option",
@@ -829,7 +929,20 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR240",
+        "evidence": "evidence/PR240-PRODUCTION-BROWSER.json"
+      },
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-038",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 240,
+          "mergeSHA": "65df89982a4ab4d0932c5f1135a11e7fb29d68e8",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/courses/trading-psychology-mastery/cognitive-biases-in-trading",
@@ -905,7 +1018,15 @@
       "fullPageReviewComplete": false,
       "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
       "structuredQuizQuestionAndFeedbackSetsRead": 4,
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
     },
     {
       "path": "/daily",
@@ -962,7 +1083,28 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-040",
+          "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+          "pr": 242,
+          "mergeSHA": "c3484f39a71e4f638caec7075083b086865fb247",
+          "evidence": "FINDINGS.json"
+        }
+      ],
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR242",
+        "evidence": "evidence/PR242-PRODUCTION-BROWSER.json"
+      },
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-040"
+        ],
+        "pr": 242,
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "path": "/how-to-trade/eth",
@@ -981,7 +1123,28 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-040",
+          "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+          "pr": 242,
+          "mergeSHA": "c3484f39a71e4f638caec7075083b086865fb247",
+          "evidence": "FINDINGS.json"
+        }
+      ],
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR242",
+        "evidence": "evidence/PR242-PRODUCTION-BROWSER.json"
+      },
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-040"
+        ],
+        "pr": 242,
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "path": "/how-to-trade/nvda",
@@ -1000,7 +1163,28 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-040",
+          "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+          "pr": 242,
+          "mergeSHA": "c3484f39a71e4f638caec7075083b086865fb247",
+          "evidence": "FINDINGS.json"
+        }
+      ],
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR242",
+        "evidence": "evidence/PR242-PRODUCTION-BROWSER.json"
+      },
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-040"
+        ],
+        "pr": 242,
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "path": "/how-to-trade/sol",
@@ -1019,7 +1203,28 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-040",
+          "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+          "pr": 242,
+          "mergeSHA": "c3484f39a71e4f638caec7075083b086865fb247",
+          "evidence": "FINDINGS.json"
+        }
+      ],
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR242",
+        "evidence": "evidence/PR242-PRODUCTION-BROWSER.json"
+      },
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-040"
+        ],
+        "pr": 242,
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "path": "/how-to-trade/spy",
@@ -1038,7 +1243,28 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-040",
+          "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+          "pr": 242,
+          "mergeSHA": "c3484f39a71e4f638caec7075083b086865fb247",
+          "evidence": "FINDINGS.json"
+        }
+      ],
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR242",
+        "evidence": "evidence/PR242-PRODUCTION-BROWSER.json"
+      },
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-040"
+        ],
+        "pr": 242,
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "path": "/how-to-trade/tsla",
@@ -1057,7 +1283,28 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-040",
+          "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+          "pr": 242,
+          "mergeSHA": "c3484f39a71e4f638caec7075083b086865fb247",
+          "evidence": "FINDINGS.json"
+        }
+      ],
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR242",
+        "evidence": "evidence/PR242-PRODUCTION-BROWSER.json"
+      },
+      "knownSafeFindingFollowup": {
+        "ids": [
+          "THQ-040"
+        ],
+        "pr": 242,
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json"
+      }
     },
     {
       "path": "/leaderboard",
@@ -3949,7 +4196,28 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ],
+      "targetedDifficultyContrastVerification": {
+        "state": "PUBLICLY_VERIFIED",
+        "evidence": "evidence/PR241-PRODUCTION-DIFFICULTY-BROWSER.json",
+        "scope": "Only difficulty control at five widths, both themes and default/hover. Whole-page review status remains separate."
+      }
     },
     {
       "path": "/wiki/bear-trap",
@@ -3967,7 +4235,28 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ],
+      "targetedDifficultyContrastVerification": {
+        "state": "PUBLICLY_VERIFIED",
+        "evidence": "evidence/PR241-PRODUCTION-DIFFICULTY-BROWSER.json",
+        "scope": "Only difficulty control at five widths, both themes and default/hover. Whole-page review status remains separate."
+      }
     },
     {
       "path": "/wiki/bollinger-band-squeeze",
@@ -3985,7 +4274,23 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/bull-trap",
@@ -4003,7 +4308,23 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/candlestick-patterns",
@@ -4021,7 +4342,23 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/circuit-breaker",
@@ -4039,7 +4376,28 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "selectedPrimarySourceFollowup": {
+        "evidence": "evidence/GAMMA-CIRCUIT-DARKPOOL-SOURCE-FOLLOWUP-20261025.json",
+        "assessment": "NYSE describes market-wide thresholds of7%,13%,20% against the prior S&P500 close. Its regular-session explanation distinguishes Level1/2 before3:25pm and Level3 day-end halts, and separately explains individual-security LULD bands/pauses. This corroborates the stated US example and its venue/time qualification.",
+        "remaining": "Not certification of every exchange, shortened session, future rule change or actual simulator halt behavior; linked LULD plan not fully reviewed."
+      },
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/correlation-trading",
@@ -4057,7 +4415,23 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/dark-pool",
@@ -4075,7 +4449,28 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "selectedPrimarySourceFollowup": {
+        "evidence": "evidence/GAMMA-CIRCUIT-DARKPOOL-SOURCE-FOLLOWUP-20261025.json",
+        "assessment": "FINRA distinguishes non-displayed pre-trade quotations from mandatory post-trade reporting, and separately describes off-exchange/non-ATS dealer venues. This corroborates that an off-exchange print alone does not identify a dark pool or participant intent.",
+        "remaining": "Jurisdiction-specific rules, current venue statistics and every linked source remain; no trading-venue execution is tested."
+      },
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/day-trading",
@@ -4093,7 +4488,23 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/death-cross",
@@ -4111,7 +4522,23 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/dollar-cost-averaging",
@@ -4121,7 +4548,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/double-bottom",
@@ -4131,7 +4574,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/drawdown",
@@ -4141,7 +4600,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/elliott-wave-theory",
@@ -4151,7 +4626,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/fair-value-gap",
@@ -4161,7 +4652,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/fibonacci-retracement",
@@ -4171,7 +4678,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/flash-crash",
@@ -4181,7 +4704,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/fomo",
@@ -4191,7 +4730,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/fud",
@@ -4201,7 +4756,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/golden-cross",
@@ -4211,7 +4782,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/head-and-shoulders",
@@ -4221,7 +4808,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/hodl-strategy",
@@ -4231,7 +4834,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/ichimoku-cloud",
@@ -4241,7 +4860,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/impermanent-loss",
@@ -4251,7 +4886,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/leverage-trading",
@@ -4261,7 +4912,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/limit-order-vs-market-order",
@@ -4271,7 +4938,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/liquidation-cascade",
@@ -4281,7 +4964,28 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ],
+      "targetedDifficultyContrastVerification": {
+        "state": "PUBLICLY_VERIFIED",
+        "evidence": "evidence/PR241-PRODUCTION-DIFFICULTY-BROWSER.json",
+        "scope": "Only difficulty control at five widths, both themes and default/hover. Whole-page review status remains separate."
+      }
     },
     {
       "path": "/wiki/liquidation-price",
@@ -4291,7 +4995,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/macd",
@@ -4301,7 +5021,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/macd-histogram",
@@ -4311,7 +5047,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/margin-call",
@@ -4321,7 +5073,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/market-maker",
@@ -4331,7 +5099,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/order-block",
@@ -4341,7 +5125,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/paper-trading",
@@ -4351,7 +5151,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/pump-and-dump",
@@ -4361,7 +5177,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/risk-reward-ratio",
@@ -4371,7 +5203,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/rsi-divergence",
@@ -4381,7 +5229,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/satoshi-nakamoto",
@@ -4391,7 +5255,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/scalping",
@@ -4401,7 +5281,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/short-squeeze",
@@ -4411,7 +5307,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/slippage",
@@ -4421,7 +5333,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/stop-loss-hunting",
@@ -4431,7 +5359,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/support-and-resistance",
@@ -4441,7 +5385,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/swing-trading",
@@ -4451,7 +5411,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/volume-profile",
@@ -4461,7 +5437,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/vwap",
@@ -4471,7 +5463,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/whale-manipulation",
@@ -4481,7 +5489,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/wyckoff-method",
@@ -4491,7 +5515,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/wiki/yield-farming",
@@ -4501,7 +5541,23 @@
       "candidateVisualWidths": [],
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
-      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations."
+      "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
+      "currentConfirmedFindingFollowups": [
+        {
+          "id": "THQ-039",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        },
+        {
+          "id": "THQ-041",
+          "state": "PUBLICLY_VERIFIED",
+          "pr": 241,
+          "mergeSHA": "640fb97fd2d884f18be809c193288414eaa4ea48",
+          "evidence": "FINDINGS.json"
+        }
+      ]
     },
     {
       "path": "/trade/xmr",
@@ -5517,12 +6573,12 @@
   ],
   "structuredQuizFeedbackTextRead": 26,
   "supplementaryNotesSourceExpected": 83,
-  "supplementaryNotesActuallyRead": 46,
-  "updatedAt": "2026-10-25T11:21:43.662063+00:00",
-  "fullPageDefaultStateRoutesActuallyViewed": 66,
-  "separateSupplementaryArticlesExpected": 71,
-  "separateSupplementaryArticlesRead": 40,
-  "separateSupplementaryArticlesUnread": 31,
+  "supplementaryNotesActuallyRead": 50,
+  "updatedAt": "2026-10-25T15:34:36.352318+00:00",
+  "fullPageDefaultStateRoutesActuallyViewed": 70,
+  "separateSupplementaryArticlesExpected": 65,
+  "separateSupplementaryArticlesRead": 38,
+  "separateSupplementaryArticlesUnread": 27,
   "dailyConditionalCurriculum": {
     "sourceExpectedCases": 50,
     "questionFeedbackSetsPerCase": 10,

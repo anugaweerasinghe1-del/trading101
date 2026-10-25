@@ -3,8 +3,8 @@
   "sourceCandidate": "71b84461ab0f531da44da54d8670ad1bef0628ea",
   "equivalentProductionSHA": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
   "sourceExpectedArticles": 83,
-  "actualRenderedArticlesRead": 46,
-  "sourceExpectedArticlesNotYetIndividuallyReviewed": 37,
+  "actualRenderedArticlesRead": 50,
+  "sourceExpectedArticlesNotYetIndividuallyReviewed": 33,
   "routes": [
     {
       "path": "/",
@@ -158,42 +158,60 @@
       "expectedFromCurrentBuiltRouteSource": true,
       "actualRenderedPresenceVerified": true,
       "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
-      "assessment": "Read both full rendered copies:delivery/revenue/marginsdistinct;4shares200=800plus0.80entryfee,180gap80grossloss;20shares200=4000plus4buyfee,180mark400grossloss;190plannedthreshold200lossnotguaranteedstopfill. Nooptions/votingrights/realownership,narrativeprespecifiednotrewrittenafteroutcome;issuer/sourceandoriginalityfollowupsremain."
+      "assessment": "Read both full rendered copies:delivery/revenue/marginsdistinct;4shares200=800plus0.80entryfee,180gap80grossloss;20shares200=4000plus4buyfee,180mark400grossloss;190plannedthreshold200lossnotguaranteedstopfill. Nooptions/votingrights/realownership,narrativeprespecifiednotrewrittenafteroutcome;issuer/sourceandoriginalityfollowupsremain.",
+      "currentSeparateArticleState": "INTEGRATED_IN_AUTHORED_MAIN_PR242",
+      "integrationEvidence": "evidence/PR242-PRODUCTION-BROWSER.json",
+      "integrationScope": "Every substantive paragraph/list/reference retained in authored main; publisher/simulation disclosure moved before footer. Historical outside-main reading receipts retain their actual dates."
     },
     {
       "path": "/how-to-trade/eth",
       "expectedFromCurrentBuiltRouteSource": true,
       "actualRenderedPresenceVerified": true,
       "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
-      "assessment": "Read both full rendered copies:networkversusETH,gasversussimulatorfee,nostaking/transfer;0.5ETHat3200=1600+1.60fee;2ETHat2500=5000+5fee;2400mark gives200grossloss/205equityloss afterentryfee,4.80exitfeeifthen sold. Networkdemandnotautomaticpricerise;completecurrentprimary-sourcecorroborationremains."
+      "assessment": "Read both full rendered copies:networkversusETH,gasversussimulatorfee,nostaking/transfer;0.5ETHat3200=1600+1.60fee;2ETHat2500=5000+5fee;2400mark gives200grossloss/205equityloss afterentryfee,4.80exitfeeifthen sold. Networkdemandnotautomaticpricerise;completecurrentprimary-sourcecorroborationremains.",
+      "currentSeparateArticleState": "INTEGRATED_IN_AUTHORED_MAIN_PR242",
+      "integrationEvidence": "evidence/PR242-PRODUCTION-BROWSER.json",
+      "integrationScope": "Every substantive paragraph/list/reference retained in authored main; publisher/simulation disclosure moved before footer. Historical outside-main reading receipts retain their actual dates."
     },
     {
       "path": "/how-to-trade/btc",
       "expectedFromCurrentBuiltRouteSource": true,
       "actualRenderedPresenceVerified": true,
       "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
-      "assessment": "Read both full rendered copies:0.05BTC at50000=2500 exposure and2.50entryfee;250downside beforecost;10000of100000 rising10percent yields1percent wholeaccount beforecost;11000/101000=10.89percent currentweight. Protocolissuance separatefromprice,provider timestampnotexchangefill,nocustody. Hypotheticalarithmetic internallyconsistent;BTCprimarysourceandfulloriginalityreviewremain."
+      "assessment": "Read both full rendered copies:0.05BTC at50000=2500 exposure and2.50entryfee;250downside beforecost;10000of100000 rising10percent yields1percent wholeaccount beforecost;11000/101000=10.89percent currentweight. Protocolissuance separatefromprice,provider timestampnotexchangefill,nocustody. Hypotheticalarithmetic internallyconsistent;BTCprimarysourceandfulloriginalityreviewremain.",
+      "currentSeparateArticleState": "INTEGRATED_IN_AUTHORED_MAIN_PR242",
+      "integrationEvidence": "evidence/PR242-PRODUCTION-BROWSER.json",
+      "integrationScope": "Every substantive paragraph/list/reference retained in authored main; publisher/simulation disclosure moved before footer. Historical outside-main reading receipts retain their actual dates."
     },
     {
       "path": "/how-to-trade/sol",
       "expectedFromCurrentBuiltRouteSource": true,
       "actualRenderedPresenceVerified": true,
       "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
-      "assessment": "Read both full rendered copies:SOLtokenversusSolananetwork/onchainfees,nostaking/transfer/derivatives;40SOL125=5000+5buyfee;130exit5200less5.20sellfee gives189.80roundtripresult;115mark4600gives400grosslossbeforefees. Quotesnotguaranteedfills,24/7notconstantliquidity,adversecasepreserved;networksourceandoriginalityfollowupsremain."
+      "assessment": "Read both full rendered copies:SOLtokenversusSolananetwork/onchainfees,nostaking/transfer/derivatives;40SOL125=5000+5buyfee;130exit5200less5.20sellfee gives189.80roundtripresult;115mark4600gives400grosslossbeforefees. Quotesnotguaranteedfills,24/7notconstantliquidity,adversecasepreserved;networksourceandoriginalityfollowupsremain.",
+      "currentSeparateArticleState": "INTEGRATED_IN_AUTHORED_MAIN_PR242",
+      "integrationEvidence": "evidence/PR242-PRODUCTION-BROWSER.json",
+      "integrationScope": "Every substantive paragraph/list/reference retained in authored main; publisher/simulation disclosure moved before footer. Historical outside-main reading receipts retain their actual dates."
     },
     {
       "path": "/how-to-trade/spy",
       "expectedFromCurrentBuiltRouteSource": true,
       "actualRenderedPresenceVerified": true,
       "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
-      "assessment": "Read both full rendered copies:index/fund/countrydistinction,nodirectownershipofeachconstituent;2unitsat500=1000+1fee;10units500=5000,2percentfall=100lossand0.1percentoriginalaccount;5entryfeeleaves99895equityatmark. Distributions/expensesnotinvented,sessions/provenancequalified;fundsourceandcompleteoriginalityfollowupsremain."
+      "assessment": "Read both full rendered copies:index/fund/countrydistinction,nodirectownershipofeachconstituent;2unitsat500=1000+1fee;10units500=5000,2percentfall=100lossand0.1percentoriginalaccount;5entryfeeleaves99895equityatmark. Distributions/expensesnotinvented,sessions/provenancequalified;fundsourceandcompleteoriginalityfollowupsremain.",
+      "currentSeparateArticleState": "INTEGRATED_IN_AUTHORED_MAIN_PR242",
+      "integrationEvidence": "evidence/PR242-PRODUCTION-BROWSER.json",
+      "integrationScope": "Every substantive paragraph/list/reference retained in authored main; publisher/simulation disclosure moved before footer. Historical outside-main reading receipts retain their actual dates."
     },
     {
       "path": "/how-to-trade/nvda",
       "expectedFromCurrentBuiltRouteSource": true,
       "actualRenderedPresenceVerified": true,
       "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
-      "assessment": "Read both full rendered copies:businessmetricsversusshareprice;5sharesat120=600plus0.60entryfee;2000directplus8000fundwithassumed10percentNVDA gives2800/10000=28percent lookthroughexposure and280lossif10percentfallwithotherholdingsfixed. Fundweightdated/hypothetical,nominalpricecannotestablishfairvalue,noperformancepromise;issuer/currentfilingandoriginalityfollowupsremain."
+      "assessment": "Read both full rendered copies:businessmetricsversusshareprice;5sharesat120=600plus0.60entryfee;2000directplus8000fundwithassumed10percentNVDA gives2800/10000=28percent lookthroughexposure and280lossif10percentfallwithotherholdingsfixed. Fundweightdated/hypothetical,nominalpricecannotestablishfairvalue,noperformancepromise;issuer/currentfilingandoriginalityfollowupsremain.",
+      "currentSeparateArticleState": "INTEGRATED_IN_AUTHORED_MAIN_PR242",
+      "integrationEvidence": "evidence/PR242-PRODUCTION-BROWSER.json",
+      "integrationScope": "Every substantive paragraph/list/reference retained in authored main; publisher/simulation disclosure moved before footer. Historical outside-main reading receipts retain their actual dates."
     },
     {
       "path": "/learn/country",
@@ -381,9 +399,9 @@
     {
       "path": "/courses/macro-reading-for-traders/the-yield-curve-and-recession",
       "expectedFromCurrentBuiltRouteSource": true,
-      "actualRenderedPresenceVerified": false,
-      "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "actualRenderedPresenceVerified": true,
+      "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+      "assessment": "Read all curve, recession-risk, 10Y\u20132Y versus 10Y\u20133M and timing explanations, plus all four question/options/key/explanation sets. The main avoids guaranteed forecasts and distinguishes the linked NY Fed model from the FRED 10Y\u20132Y series. Verify the specific model horizon, current source passages and originality separately."
     },
     {
       "path": "/courses/macro-reading-for-traders/putting-macro-signals-together",
@@ -416,9 +434,9 @@
     {
       "path": "/courses/futures-and-derivatives/contango-and-backwardation",
       "expectedFromCurrentBuiltRouteSource": true,
-      "actualRenderedPresenceVerified": false,
-      "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "actualRenderedPresenceVerified": true,
+      "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+      "assessment": "Read all term-structure, carrying-cost, backwardation and fund-roll explanations and all four question/options/key/explanation sets. The body distinguishes relative delivery prices from shortage proof and a roll from an automatic cash loss. The short quiz phrase about normal storable markets needs source-context follow-up; no additional factual error is asserted from that simplification alone."
     },
     {
       "path": "/courses/futures-and-derivatives/margin-and-leverage-in-futures",
@@ -430,9 +448,9 @@
     {
       "path": "/courses/trading-psychology-mastery/the-trading-journal",
       "expectedFromCurrentBuiltRouteSource": true,
-      "actualRenderedPresenceVerified": false,
-      "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "actualRenderedPresenceVerified": true,
+      "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+      "assessment": "Read the complete decision-record and sample-limit article and all four question/options/key/explanation sets, including the dated 18 October source-check limitation. The 2\u00d7$100 purchase plus 0.1% fee is $200.20; 2\u00d7$105 is $210 gross marked value and $10 gross price change before sale costs. No universal 30/100 observation count or profit causation is promised; source and originality follow-up remains."
     },
     {
       "path": "/courses/trading-psychology-mastery/revenge-trading-and-tilt",
@@ -465,9 +483,9 @@
     {
       "path": "/courses/options-trading-fundamentals/defined-risk-spreads",
       "expectedFromCurrentBuiltRouteSource": true,
-      "actualRenderedPresenceVerified": false,
-      "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "actualRenderedPresenceVerified": true,
+      "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+      "assessment": "Read the complete rendered article and appended notes including all four question/options/key/explanation sets. The $200 debit, $300 maximum intact-spread gain, $182 gross break-even and -$208/-$8/+$292 after $8 costs reconcile. Assignment and costs are distinguished from the expiration diagram; 1\u20132% sizing is explicitly hypothetical. Source verification of OIC/OCC statements remains."
     },
     {
       "path": "/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
@@ -624,10 +642,10 @@
       "assessment": null
     }
   ],
-  "currentVerifiedProductionSHA": "65df89982a4ab4d0932c5f1135a11e7fb29d68e8",
-  "currentSeparateArticlesExpected": 71,
-  "currentSeparateArticlesActuallyRead": 40,
-  "currentSeparateArticlesNotYetIndividuallyRead": 31,
-  "historicalSeparateArticlesNowIntegratedInMain": 12,
+  "currentVerifiedProductionSHA": "c3484f39a71e4f638caec7075083b086865fb247",
+  "currentSeparateArticlesExpected": 65,
+  "currentSeparateArticlesActuallyRead": 38,
+  "currentSeparateArticlesNotYetIndividuallyRead": 27,
+  "historicalSeparateArticlesNowIntegratedInMain": 18,
   "historicalBaselineScopePreserved": true
 }

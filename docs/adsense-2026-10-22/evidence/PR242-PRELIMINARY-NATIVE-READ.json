@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-25T15:13:14.513556+00:00",
+  "expectedSHA": "c3484f39a71e4f638caec7075083b086865fb247",
+  "scope": "Authenticated provider reads only; preliminary production identity, not complete CI/release verification.",
+  "cloudflare": {
+    "result": "UNVERIFIED",
+    "error": "HTTP Error 401: Unauthorized"
+  },
+  "vercel": {
+    "id": "dpl_5gecdkuNgp3cLAY5mJYERiBijEpU",
+    "state": "READY",
+    "target": "production",
+    "sha": "c3484f39a71e4f638caec7075083b086865fb247"
+  }
+}
