@@ -1,0 +1,48 @@
+{
+  "url": "https://www.thetradehq.com/trade",
+  "path": "/trade",
+  "title": "Free Trading Simulator \u2014 Buy Stocks, ETFs & Crypto with $100K | TradeHQ",
+  "canonical": "https://www.thetradehq.com/trade",
+  "tagName": "ARTICLE",
+  "text": "Learning notes: Paper Trade 170 Assets\n\nChoose from 170 simulated assets and place buy or sell orders instantly. Every account starts with $100,000 in virtual cash. Educational simulation \u2014 no real money and no brokerage relationship.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nHow the practice trading desk works\n\nThe trading desk is where simulated orders are placed. You choose an instrument, choose a side, choose a size, and the order is filled against the simulator's current price. Guest fills and results are recorded in your browser. Account orders execute through the server and cash, positions and server-recorded trade history restore across devices when the service is available.\n\nOne order type is supported today: the market order, which fills immediately at the shown simulator price. Limit and stop orders are explained in the glossary but cannot yet be placed on the desk. The virtual order screen leaves quantities to the learner. Comparing hypothetical account exposure can teach arithmetic, but this simplified fill model does not validate real-market risk management.\n\nWhat to practise on the desk\nPosition sizing: compare hypothetical quantities under the same adverse price move. A fixed fraction does not guarantee a smoother equity curve, and the current simulator does not execute automatic stop orders.\nStop discipline: decide the exit before entering, then check in the journal whether you actually honoured it.\nEntry timing: note the price you intended versus the price you received on a fast-moving instrument, and record the gap in the journal.\nConcentration: run a week with five positions and a week with one, and compare the drawdown.\nLimits of any simulator\n\nTradeHQ applies a fixed 0.1% virtual fee to each simulated buy or sell, but that classroom input is not a real broker's fee schedule. Displayed-price fills do not reproduce real-world spreads, slippage, overnight financing or taxes; practice also lacks the emotional weight of risking your own money. Treat results as evidence about your practice process, not a forecast of live returns. Past simulated performance does not predict future real-world performance.\n\nOrders supported by this simulator\nMarket order: the virtual engine uses a simplified displayed practice price. Real market orders seek execution at available prices and may fill at different prices or not complete during market interruptions.\nLimit orders are explained in the learning material but are not available in the current simulator. Practice orders execute as market orders at the shown simulated price.\nClosing a position: sell some or all of an existing holding. You cannot sell more than you hold or open a short position. Completed buys and sells appear in portfolio trade history.\nA practice routine that actually builds skill\n\nChoose an exercise with a stated question, record the assumptions before placing orders and review the result afterwards. Transaction count alone does not measure learning or validate a strategy.\n\nA sample journal can ask whether the observed virtual quantity matched the written assumption, what changed after the quoted timestamp and which execution costs are missing. A journal helps review choices but does not establish improved returns.\n\nReferences and related pages\nChoose an instrument\nYour practice portfolio\nHow-to guides per asset\nStrategy walkthroughs\n\nEducational simulation only \u2014 not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.",
+  "headings": [
+    "Learning notes: Paper Trade 170 Assets",
+    "How the practice trading desk works",
+    "What to practise on the desk",
+    "Limits of any simulator",
+    "Orders supported by this simulator",
+    "A practice routine that actually builds skill",
+    "References and related pages"
+  ],
+  "links": [
+    {
+      "text": "Publisher background and editorial approach",
+      "href": "https://www.thetradehq.com/about"
+    },
+    {
+      "text": "Choose an instrument",
+      "href": "https://www.thetradehq.com/markets"
+    },
+    {
+      "text": "Your practice portfolio",
+      "href": "https://www.thetradehq.com/portfolio"
+    },
+    {
+      "text": "How-to guides per asset",
+      "href": "https://www.thetradehq.com/how-to-trade"
+    },
+    {
+      "text": "Strategy walkthroughs",
+      "href": "https://www.thetradehq.com/strategy"
+    }
+  ],
+  "outsideMain": true,
+  "capturedAt": "2026-10-25T16:44:01.195Z",
+  "sha": "a936c7dfbe3a5857794595092408e1f3518de7dc",
+  "outcome": "COLLECTED_NOT_HUMAN_READ",
+  "renderedTextSHA256": "ade08ee33be0e8657fc525bfa27e82bf3ada742699326ada85123527b97cd422",
+  "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+  "readAt": "2026-10-25T16:46:56.401623+00:00",
+  "assessment": "Read all desk notes: displayed-price market-only fills, no short/resting stops/limits, guest browser versus server account history, fixed0.1%per-side virtual fee and missing real spread/slippage/financing/tax. Position-size, journal and concentration examples are exercises, not evidence of an improved equity curve or live returns. Account restoration/engine behavior is stated content, not independently certified by reading. No order was placed.",
+  "wholePageReviewComplete": false
+}
