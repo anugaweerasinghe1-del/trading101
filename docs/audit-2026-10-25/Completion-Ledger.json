@@ -360,34 +360,46 @@
       "id": "DAILY-PUBLISHED-32",
       "routeOrComponent": "/daily practice-32 published record",
       "severity": "P2",
-      "state": "BLOCKED \u2014 OWNER ACTION REQUIRED",
+      "state": "FIXED ON BRANCH",
       "defect": "PR233 documents correlation illustration 4/6 versus scenario 3/4. Bundled fallback fixed, published record explicitly excluded.",
       "existingFix": "db3bfab843a (bundled fallback only)",
-      "pullRequest": 233,
-      "liveVerification": "Read-only Supabase production SELECT confirms effective bank authored-2026-10-depth,50exercises,revision1,id3ab17e80-bfa7-45a7-b6f0-5d70e1c26199. All three original visual mismatches remain.",
-      "finalResolution": "Prior PR records approval of a guarded two-field publication; authenticated publication path remains unverified."
+      "pullRequest": null,
+      "liveVerification": "Production revision1/source hash rechecked before implementation; correction not published yet.",
+      "finalResolution": "Guarded operation prepared. Normal save/publish validation and metadata; stable seeded document ID preserved atomically. Final release and publication evidence will be recorded in implementing PR.",
+      "authorization": "Owner explicitly approved the documented seven-field correction on 2026-10-25: Yes ofc dont stop just to ask me, continue and deploy, wait till successful move on.",
+      "implementationCommit": null,
+      "ci": "Local exact SQL rehearsal and full Daily checks passed; exact-head remote checks pending.",
+      "cloudflare": "NOT CHECKED"
     },
     {
       "id": "DAILY-PUBLISHED-24",
       "routeOrComponent": "/daily practice-24 published record",
       "severity": "P2",
-      "state": "BLOCKED \u2014 OWNER ACTION REQUIRED",
+      "state": "FIXED ON BRANCH",
       "defect": "PR234 documents ages inconsistent with stated timestamps. Bundled fallback fixed, published record excluded.",
       "existingFix": "313e28e34ff (bundled fallback only)",
-      "pullRequest": 234,
-      "liveVerification": "Read-only Supabase production SELECT confirms effective bank authored-2026-10-depth,50exercises,revision1,id3ab17e80-bfa7-45a7-b6f0-5d70e1c26199. All three original visual mismatches remain.",
-      "finalResolution": "Production-record write requires explicit owner authorization under current mission."
+      "pullRequest": null,
+      "liveVerification": "Production revision1/source hash rechecked before implementation; correction not published yet.",
+      "finalResolution": "Guarded operation prepared. Normal save/publish validation and metadata; stable seeded document ID preserved atomically. Final release and publication evidence will be recorded in implementing PR.",
+      "authorization": "Owner explicitly approved the documented seven-field correction on 2026-10-25: Yes ofc dont stop just to ask me, continue and deploy, wait till successful move on.",
+      "implementationCommit": null,
+      "ci": "Local exact SQL rehearsal and full Daily checks passed; exact-head remote checks pending.",
+      "cloudflare": "NOT CHECKED"
     },
     {
       "id": "DAILY-PUBLISHED-18",
       "routeOrComponent": "/daily practice-18 published record",
       "severity": "P2",
-      "state": "BLOCKED \u2014 OWNER ACTION REQUIRED",
+      "state": "FIXED ON BRANCH",
       "defect": "PR234 documents count plotted on dollar scale instead of total fee. Bundled fallback fixed, published record excluded.",
       "existingFix": "313e28e34ff (bundled fallback only)",
-      "pullRequest": 234,
-      "liveVerification": "Read-only Supabase production SELECT confirms effective bank authored-2026-10-depth,50exercises,revision1,id3ab17e80-bfa7-45a7-b6f0-5d70e1c26199. All three original visual mismatches remain.",
-      "finalResolution": "Production-record write requires explicit owner authorization under current mission."
+      "pullRequest": null,
+      "liveVerification": "Production revision1/source hash rechecked before implementation; correction not published yet.",
+      "finalResolution": "Guarded operation prepared. Normal save/publish validation and metadata; stable seeded document ID preserved atomically. Final release and publication evidence will be recorded in implementing PR.",
+      "authorization": "Owner explicitly approved the documented seven-field correction on 2026-10-25: Yes ofc dont stop just to ask me, continue and deploy, wait till successful move on.",
+      "implementationCommit": null,
+      "ci": "Local exact SQL rehearsal and full Daily checks passed; exact-head remote checks pending.",
+      "cloudflare": "NOT CHECKED"
     },
     {
       "id": "THQ-20261025-002",
@@ -439,15 +451,21 @@
       "defect": "Nonzero tiny quote change rounds to +0.00 beside +2.40% because absolute changes use toFixed(2).",
       "severity": "P3",
       "impact": "Readers cannot distinguish small real displayed quote movements from an actual zero.",
-      "state": "FIXED ON BRANCH",
+      "state": "VERIFIED IN PRODUCTION",
       "reproduction": "Actual production display $0.0000125697 and +0.00 (+2.40%); source always rounds absolute change to two decimals.",
       "existingFix": null,
-      "implementationCommit": null,
-      "pullRequest": null,
-      "ci": "Local validation pending final result; remote Chromium regression required.",
-      "cloudflare": "NOT CHECKED",
-      "liveVerification": "Before-state observed in production; candidate not released.",
-      "finalResolution": null
+      "implementationCommit": "53b4b89d77a5820a8e9acb964c520e48930f2ab7",
+      "pullRequest": 237,
+      "ci": "All required exact-head and main checks SUCCESS; unchanged-head retry after existing inspector navigation failure.",
+      "cloudflare": {
+        "deploymentId": "f57a7516-3413-4f96-9c9d-c432661ad380",
+        "sha": "5076c964c51f4e06bac2e469f7dcb6f9bdb2aee3",
+        "environment": "production",
+        "status": "success",
+        "observedAt": "2026-10-25T05:18:49.017Z"
+      },
+      "liveVerification": "Affected routes rechecked after native Cloudflare confirmation; final immutable evidence in PR237.",
+      "finalResolution": "Resolved and verified in production."
     },
     {
       "id": "THQ-20261025-004",
@@ -455,15 +473,21 @@
       "defect": "A profile with zero recorded trades presents 0% win rate as a measured result.",
       "severity": "P3",
       "impact": "No completed sell observations are indistinguishable from genuinely measured zero wins.",
-      "state": "FIXED ON BRANCH",
+      "state": "VERIFIED IN PRODUCTION",
       "reproduction": "Actual guest production profile:0trades placed,0%Win rate. Existing closed-stat helper returns sells0 and default winRate0.",
       "existingFix": null,
-      "implementationCommit": null,
-      "pullRequest": null,
-      "ci": "Local validation pending final result; actual compiled empty/buy-only/losing/winning regressions added.",
-      "cloudflare": "NOT CHECKED",
-      "liveVerification": "Before-state observed in production; candidate not released.",
-      "finalResolution": null
+      "implementationCommit": "53b4b89d77a5820a8e9acb964c520e48930f2ab7",
+      "pullRequest": 237,
+      "ci": "All required exact-head and main checks SUCCESS; unchanged-head retry after existing inspector navigation failure.",
+      "cloudflare": {
+        "deploymentId": "f57a7516-3413-4f96-9c9d-c432661ad380",
+        "sha": "5076c964c51f4e06bac2e469f7dcb6f9bdb2aee3",
+        "environment": "production",
+        "status": "success",
+        "observedAt": "2026-10-25T05:18:49.017Z"
+      },
+      "liveVerification": "Affected routes rechecked after native Cloudflare confirmation; final immutable evidence in PR237.",
+      "finalResolution": "Resolved and verified in production."
     }
   ],
   "part2": {
