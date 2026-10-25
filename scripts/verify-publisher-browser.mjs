@@ -18,6 +18,7 @@ import { verifyMobileNavigation } from "./verify-mobile-navigation.mjs";
 import { verifyGuidedLesson } from "./verify-guided-lesson.mjs";
 import { verifyComparisonArticle } from "./verify-comparison-article.mjs";
 import { verifyCourseOverviewArticle } from "./verify-course-overview-article.mjs";
+import { verifyWikiShareContrast } from "./verify-wiki-share-contrast.mjs";
 import { hasIntegratedCourseOverview } from "../src/lib/courseOverviewPresentation.ts";
 import { verifyBeginnerGuide } from "./verify-beginner-guide.mjs";
 import { verifyMarketsSidebar } from "./verify-markets-sidebar.mjs";
@@ -261,6 +262,7 @@ try {
   await verifyMentorCopy({send,evaluate,waitUntil,origin,delay});
   await verifyComparisonArticle({send,evaluate,waitUntil,origin,delay,dist});
   await verifyCourseOverviewArticle({send,evaluate,waitUntil,origin,delay,dist});
+  await verifyWikiShareContrast({send,evaluate,waitUntil,origin,delay});
   await verifyBeginnerGuide({send,evaluate,waitUntil,origin,delay});
   await verifyGuidedLesson({send,evaluate,waitUntil,origin,delay});
   await verifyMarketsSidebar({send,evaluate,waitUntil,origin,delay});
