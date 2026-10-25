@@ -43,12 +43,12 @@ export async function verifyCourseOverviewArticle({send,evaluate,waitUntil,origi
   await send('Page.navigate',{url:origin+path});
   await waitUntil(`!!document.querySelector('main[data-publisher-notes="${path}"]')&&!document.querySelector('#prerender-seo')`,'Start overview navigation fixture');
   await evaluate(`document.querySelector('main a[href="${path+'/'+first.lessons[0].slug}"]').click();true`);
-  await waitUntil(`location.pathname==='${path+'/'+first.lessons[0].slug}'&&!!document.querySelector('article[data-publisher-notes]')`,'Individual lesson notes remain available');
+  await waitUntil(`location.pathname==='${path+'/'+first.lessons[0].slug}'&&document.querySelector('main h1')?.textContent===${JSON.stringify(first.lessons[0].title)}&&!!document.querySelector('article[data-publisher-notes]')`,'Individual lesson notes remain available');
   await evaluate(`document.querySelector('main a[href="${path}"]').click();true`);
   await waitUntil(`location.pathname==='${path}'&&!!document.querySelector('main[data-publisher-notes]')`,'Return to integrated overview');
   assert.equal(await evaluate(`document.querySelectorAll('[data-publisher-notes]').length`),1);
   await evaluate(`document.querySelector('main a[href="/courses"]').click();true`);
-  await waitUntil(`location.pathname==='/courses'&&!!document.querySelector('article[data-publisher-notes="/courses"]')`,'Restore catalog notes');
+  await waitUntil(`location.pathname==='/courses'&&!!document.querySelector('main .course-catalog-title')&&!!document.querySelector('article[data-publisher-notes="/courses"]')`,'Restore catalog notes after the catalog main mounts');
   assert.equal(await evaluate(`document.querySelectorAll('[data-publisher-notes]').length`),1);
   console.log('PASS20course-overview width states: single article, all substantive copy/badge criteria/lesson cards/references preserved; individual lesson and catalog notes restored on navigation');
 }
