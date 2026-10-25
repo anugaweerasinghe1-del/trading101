@@ -13,7 +13,7 @@ export async function verifyComparisonArticle({send,evaluate,waitUntil,origin,de
     await send('Page.navigate',{url:'about:blank'});
     await waitUntil(`location.href==='about:blank'&&document.readyState==='complete'`,'Fresh comparison context');
     await send('Page.navigate',{url:origin+path});
-    await waitUntil(`!!document.querySelector('main h1')&&!document.querySelector('#prerender-seo')`,'Comparison hydrates');
+    await waitUntil(`!!document.querySelector('main h1')&&!document.querySelector('main h1').textContent.includes('Loading your page')&&!document.querySelector('#prerender-seo')`,'Comparison hydrates');
     await delay(100);
     const row=await evaluate(`(()=>{const main=document.querySelector('main'),notes=[...document.querySelectorAll('[data-publisher-notes]')];return {text:main.textContent.replace(/\\s+/g,' ').trim().toLowerCase(),mainPath:main.getAttribute('data-publisher-notes'),notes:notes.map(e=>e.tagName),links:[...main.querySelectorAll('a')].map(a=>a.href),overflow:document.documentElement.scrollWidth>innerWidth+1};})()`);
     assert.deepEqual(row.notes,['MAIN'],'Exactly one comparison article in main '+path+' at '+width);
