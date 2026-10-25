@@ -2,7 +2,7 @@
   "checkedAt": "2026-10-25T15:49:01.136222+00:00",
   "candidateSHA": "08f91c548dc5bbd47b7fff420ff722bf375e322e",
   "baseSHA": "c3484f39a71e4f638caec7075083b086865fb247",
-  "outcome": "LOCAL_AND_CANDIDATE_PREVIEW_PASS_PRODUCTION_PENDING",
+  "outcome": "LOCAL_CANDIDATE_AND_PRODUCTION_VERIFIED",
   "checks": {
     "cloudflareBuildSeoEditorial": "PASS",
     "applicationTypeScript": "PASS",
@@ -12,7 +12,7 @@
     "unsubmittedQuizControls": "PASS",
     "remoteCandidateCI": "PASS all4exact08f91c5trustedchecks",
     "nativePreviews": "PASS Cloudflare59b2d16d/VercelREADYexact08f91c5",
-    "productionRelease": "MERGED_a936c7d_AWAITING_ALL_PRODUCTION_VERIFICATION",
+    "productionRelease": "PASS all six exact-main checks, native Cloudflare SUCCESS/Vercel READY active alias at a936c7dfbe3a5857794595092408e1f3518de7dc; 100 actual affected states and 30 guest states/four controls; 12 selected production images personally viewed",
     "affected155RouteMatrixPhase1": "PASS"
   },
   "localBrowserEvidence": "evidence/COURSE-LESSON-LOCAL-ISOLATED-BROWSER.json",
@@ -33,5 +33,12 @@
   "selectedImagesPersonallyViewed": 12,
   "imageScope": "Four before-footer images for defined-risk-spreads from course-lesson-local; four before-footer images for the-trading-journal from course-lesson-local-isolated; four answer-note images from course-lesson-local-answer-notes. These are selected component checks, not additional whole-page production review credit.",
   "applicationSourceMatchesValidatedCommit": "67ae46104e4b604e0a19a13e4ccd1497380bd14d",
-  "updatedCandidateScope": "Only matrix test representation of blockquotes and source labels/destinations changed. All quote/source content assertions retained. Additional155routephase1PASS; fresh remote exact-head CI/native/actual previews remain required."
+  "updatedCandidateScope": "Only matrix test representation of blockquotes and source labels/destinations changed. All quote/source content assertions retained. Additional 155-route phase1 passes, as do fresh remote candidate checks/native previews/actual preview and complete production release gates.",
+  "updatedAt": "2026-10-25T16:35:54.401353+00:00",
+  "productionEvidence": [
+    "evidence/PR243-MAIN-CI.json",
+    "evidence/PR243-PRODUCTION-PROVIDERS.json",
+    "evidence/PR243-PRODUCTION-BROWSER.json",
+    "evidence/POST-PR243-GUEST-SMOKE.json"
+  ]
 }

@@ -589,8 +589,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -610,8 +616,10 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       },
       "fullPageDefaultVisualViewedWidths": [
         360,
@@ -620,7 +628,11 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      }
     },
     {
       "path": "/courses/futures-and-derivatives/margin-and-leverage-in-futures",
@@ -654,8 +666,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -675,8 +693,27 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "datedMicroContractSourceFollowup": {
+        "evidence": "evidence/MICRO-CONTRACT-PRIMARY-SOURCE-FOLLOWUP-20261025.json",
+        "result": "Selected actual CME passages corroborate MES $5 multiplier and 0.25 minimum tick, and ES $50 multiplier.",
+        "remaining": "ES minimum tick, three other listed contract families, current margins/fees/liquidity and full source fit remain."
       }
     },
     {
@@ -704,8 +741,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -759,9 +802,23 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
-      }
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
     },
     {
       "path": "/courses/macro-reading-for-traders/reading-cpi-and-inflation",
@@ -792,8 +849,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -811,8 +874,10 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       },
       "fullPageDefaultVisualViewedWidths": [
         360,
@@ -833,6 +898,10 @@
         "evidence": "evidence/FED-MODEL-BROWSER-SOURCE-FOLLOWUP-20261025.json",
         "assessment": "Actually read the2015 introduction describing unhedged foreign-subsidiary earnings translation and export competitiveness, then the dated USIT model section/table. Its conditional10percent dollar/3.8percent direct-investment-receipts result uses the Board major-currencies index and a specific model/period; it is not a universal DXY-to-SP500EPS coefficient. The lesson appropriately avoids that conversion. Historical model figures were not inserted into the site or treated as current estimates.",
         "completeSourceReview": false
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -858,8 +927,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -885,13 +960,19 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       },
       "renderedFedModelSourceFollowup": {
         "evidence": "evidence/FED-MODEL-BROWSER-SOURCE-FOLLOWUP-20261025.json",
         "assessment": "Actual rendered NY Fed overview states the10-year minus3-month spread and a12-month-ahead US recession probability horizon. Its disclaimer explicitly distinguishes these estimates from official forecasts. This corroborates the lesson model distinction and uncertainty; it does not validate every historical lead-time, causal or trading claim.",
         "completeSourceReview": false
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -957,8 +1038,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -976,8 +1063,10 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       },
       "fullPageDefaultVisualViewedWidths": [
         360,
@@ -993,6 +1082,10 @@
           "OIC distinguishes52-week high/low range normalization (IVrank) from share of trading days below currentIV (percentile). The lesson and key distinguish them; rank80 is a range position, not an80%IV reading or profit rate. Earlier vega source reading separately supports model sensitivity, not a guaranteed event outcome."
         ],
         "completeSourceReview": false
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -1010,9 +1103,23 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
-      }
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
     },
     {
       "path": "/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
@@ -1049,8 +1156,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -1076,8 +1189,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -1135,8 +1254,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -1154,8 +1279,10 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       },
       "fullPageDefaultVisualViewedWidths": [
         360,
@@ -1164,7 +1291,11 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      }
     },
     {
       "path": "/courses/trading-psychology-mastery/handling-drawdowns",
@@ -1181,9 +1312,23 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
-      }
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
     },
     {
       "path": "/courses/trading-psychology-mastery/revenge-trading-and-tilt",
@@ -1208,8 +1353,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -1235,8 +1386,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -6785,11 +6942,11 @@
   "structuredQuizFeedbackTextRead": 26,
   "supplementaryNotesSourceExpected": 83,
   "supplementaryNotesActuallyRead": 54,
-  "updatedAt": "2026-10-25T16:07:36.323839+00:00",
-  "fullPageDefaultStateRoutesActuallyViewed": 74,
-  "separateSupplementaryArticlesExpected": 65,
-  "separateSupplementaryArticlesRead": 42,
-  "separateSupplementaryArticlesUnread": 23,
+  "updatedAt": "2026-10-25T16:35:54.401353+00:00",
+  "fullPageDefaultStateRoutesActuallyViewed": 78,
+  "separateSupplementaryArticlesExpected": 45,
+  "separateSupplementaryArticlesRead": 26,
+  "separateSupplementaryArticlesUnread": 19,
   "dailyConditionalCurriculum": {
     "sourceExpectedCases": 50,
     "questionFeedbackSetsPerCase": 10,

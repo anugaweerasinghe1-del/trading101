@@ -3002,8 +3002,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -3110,8 +3116,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -3225,8 +3237,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -3285,7 +3303,7 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "FIRST_FOLD_ONLY",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
         "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
         "humanViewedWidths": [
@@ -3296,7 +3314,17 @@
         ],
         "evidence": [
           "evidence/contact--courses--360-8.png"
-        ]
+        ],
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personally inspected all six contact sheets and every captured default-state segment at 360, 390, 768, 1280 and 1920 widths after PR243 at a936c7d: byline/source-check, hero, quick answer, complete body/takeaways, unselected quiz, integrated answer explanations, references, practice scope/navigation and whole footer. No default-state clipping or repeated after-footer article observed. No quiz answer/submission, order, account or production-record write. Read all integrated MAIN text and four public question/option/key/explanation sets. MES $5 versus ES $50 multipliers, a 0.25 point tick producing $1.25 versus $12.50, and MES at index 5,000 giving $25,000 notional reconcile; notional is distinguished from margin or maximum loss. Selected actual CME passages corroborate MES multiplier/minimum tick and ES multiplier only; ES tick, three other families, current margin/cost/liquidity and broader source/originality checks remain. Spot simulation is distinguished from futures execution."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -3323,8 +3351,19 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "datedMicroContractSourceFollowup": {
+        "evidence": "evidence/MICRO-CONTRACT-PRIMARY-SOURCE-FOLLOWUP-20261025.json",
+        "result": "Selected actual CME passages corroborate MES $5 multiplier and 0.25 minimum tick, and ES $50 multiplier.",
+        "remaining": "ES minimum tick, three other listed contract families, current margins/fees/liquidity and full source fit remain."
       }
     },
     {
@@ -3431,8 +3470,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -3619,7 +3664,7 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "FIRST_FOLD_ONLY",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
         "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
         "humanViewedWidths": [
@@ -3630,7 +3675,17 @@
         ],
         "evidence": [
           "evidence/contact--courses--360-8.png"
-        ]
+        ],
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personally inspected all six contact sheets and every captured default-state segment at 360, 390, 768, 1280 and 1920 widths after PR243 at a936c7d: byline/source-check, hero, quick answer, complete body/takeaways, unselected quiz, integrated answer explanations, references, practice scope/navigation and whole footer. No default-state clipping or repeated after-footer article observed. No quiz answer/submission, order, account or production-record write. Read all integrated MAIN text and four public question/option/key/explanation sets. Growth/inflation quadrants are descriptive, not an asset allocation rule; levels versus changes, units, release dates, revisions and look-ahead bias are distinguished. The dated 18 October source-check is not evidence of predictive performance. No universal trading advantage is asserted. Full primary-source fit, originality, accessibility and conditional states remain."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -3657,8 +3712,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -3762,8 +3823,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -3861,8 +3928,10 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       },
       "fourthLessonSourceFollowup": {
         "evidence": "evidence/FOURTH-LESSON-PRIMARY-SOURCE-FOLLOWUP-20261025.json",
@@ -3875,6 +3944,10 @@
         "evidence": "evidence/FED-MODEL-BROWSER-SOURCE-FOLLOWUP-20261025.json",
         "assessment": "Actually read the2015 introduction describing unhedged foreign-subsidiary earnings translation and export competitiveness, then the dated USIT model section/table. Its conditional10percent dollar/3.8percent direct-investment-receipts result uses the Board major-currencies index and a specific model/period; it is not a universal DXY-to-SP500EPS coefficient. The lesson appropriately avoids that conversion. Historical model figures were not inserted into the site or treated as current estimates.",
         "completeSourceReview": false
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -3972,8 +4045,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -4071,13 +4150,19 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       },
       "renderedFedModelSourceFollowup": {
         "evidence": "evidence/FED-MODEL-BROWSER-SOURCE-FOLLOWUP-20261025.json",
         "assessment": "Actual rendered NY Fed overview states the10-year minus3-month spread and a12-month-ahead US recession probability horizon. Its disclaimer explicitly distinguishes these estimates from official forecasts. This corroborates the lesson model distinction and uncertainty; it does not validate every historical lead-time, causal or trading claim.",
         "completeSourceReview": false
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -4302,8 +4387,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -4401,8 +4492,10 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       },
       "fourthLessonSourceFollowup": {
         "evidence": "evidence/FOURTH-LESSON-PRIMARY-SOURCE-FOLLOWUP-20261025.json",
@@ -4410,6 +4503,10 @@
           "OIC distinguishes52-week high/low range normalization (IVrank) from share of trading days below currentIV (percentile). The lesson and key distinguish them; rank80 is a range position, not an80%IV reading or profit rate. Earlier vega source reading separately supports model sensitivity, not a guaranteed event outcome."
         ],
         "completeSourceReview": false
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -4468,9 +4565,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personally inspected all six contact sheets and every captured default-state segment at 360, 390, 768, 1280 and 1920 widths after PR243 at a936c7d: byline/source-check, hero, quick answer, complete body/takeaways, unselected quiz, integrated answer explanations, references, practice scope/navigation and whole footer. No default-state clipping or repeated after-footer article observed. No quiz answer/submission, order, account or production-record write. Read all integrated MAIN text and four public question/option/key/explanation sets. Hypothetical 1% of $100,000 is $1,000; option losses can exceed a purchased premium in other strategies, and rolling compares the full new expiry/risk rather than the credit alone. Records do not establish statistical edge. No claim that the spot simulator executes options or validates a strategy. Complete primary-source/OCC risk, cross-page originality, light, zoom, keyboard and conditional-result checks remain."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -4497,8 +4604,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -4608,8 +4721,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -4707,8 +4826,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -4925,8 +5050,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -5024,8 +5155,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -5084,9 +5221,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personally inspected all six contact sheets and every captured default-state segment at 360, 390, 768, 1280 and 1920 widths after PR243 at a936c7d: byline/source-check, hero, quick answer, complete body/takeaways, unselected quiz, integrated answer explanations, references, practice scope/navigation and whole footer. No default-state clipping or repeated after-footer article observed. No quiz answer/submission, order, account or production-record write. Read all integrated MAIN text and four public question/option/key/explanation sets. $100,000 to $90,000 is a 10% drawdown; recovery is $10,000/$90,000, about 11.11%. A 20% loss requires 25% recovery. Under the stated fee-free, unchanged-other-holdings assumptions, a 20% drop on a 10% allocation contributes 2% portfolio loss. Path, flows, valuation and generated-candle limitations are explicit. No universal response threshold or diagnosis of mental/physical health is asserted. SEC source fit, originality, light, zoom, keyboard and conditional states remain."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -5113,8 +5260,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -5212,8 +5365,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -5311,8 +5470,14 @@
         "ids": [
           "THQ-042"
         ],
-        "state": "LOCAL_VALIDATED_PUSH_BLOCKED",
-        "authoritativeLedger": "FINDINGS.json"
+        "state": "PUBLICLY_VERIFIED",
+        "authoritativeLedger": "FINDINGS.json",
+        "pr": 243,
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
+      },
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
+        "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
       }
     },
     {
@@ -44403,5 +44568,5 @@
     "individualActualRenderedProseComparisonsWithPreviouslyFullyReadBaseline": 85,
     "scope": "441 main texts/states covered, not441 fully completed page/source/control/human-visual reviews. See TERMINAL-TEMPLATE-COMPARISONS.json for raw texts and deltas."
   },
-  "updatedAt": "2026-10-25T16:07:36.323839+00:00"
+  "updatedAt": "2026-10-25T16:35:54.401353+00:00"
 }

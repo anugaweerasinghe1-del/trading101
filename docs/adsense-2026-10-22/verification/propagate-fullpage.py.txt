@@ -1,0 +1,25 @@
+import pathlib,json,datetime
+r=pathlib.Path('/workspace/trading101/docs/adsense-2026-10-22');now=datetime.datetime.now(datetime.timezone.utc).isoformat();full=json.loads((r/'FULLPAGE-VISUAL-REVIEW-20261024.json').read_text());view={x['path']:x for x in full['routes']};supp=json.loads((r/'SUPPLEMENTARY-NOTES-REVIEW.json').read_text());notes={x['path']:x for x in supp['routes']};source=r/'evidence/COUNTRY-PRIMARY-SOURCE-REVIEW-20261024.json';claims={x['path']:x for x in json.loads(source.read_text())['claims']}
+for name,key in [('PAGE-AUDIT.json','rows'),('UNFINISHED-SCOPE.json','routes')]:
+ p=r/name;d=json.loads(p.read_text())
+ for row in d[key]:
+  path=row['path']
+  if path in view:
+   v=view[path];w=v['defaultStateViewedWidths']
+   if name=='PAGE-AUDIT.json':row.setdefault('visualReview',{}).update(status='FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN',fullPageDefaultStateViewedWidths=w,fullPageDefaultEvidence='FULLPAGE-VISUAL-REVIEW-20261024.json',wholePageReviewComplete=False,defaultStateAssessment=v['assessment'])
+   else:row.update(fullPageDefaultVisualViewedWidths=w,fullPageDefaultVisualEvidence='FULLPAGE-VISUAL-REVIEW-20261024.json')
+  if path in notes:
+   row['supplementaryNotesReading']=notes[path]['readingStatus']
+   if 'currentSeparateArticleState' in notes[path]:row['currentSupplementaryArticleState']={'state':notes[path]['currentSeparateArticleState'],'evidence':notes[path].get('integrationEvidence')}
+  if path in claims:row['datedCountrySourceFollowup']={'result':claims[path]['result'],'evidence':'evidence/COUNTRY-PRIMARY-SOURCE-REVIEW-20261024.json','remaining':claims[path]['remaining']}
+  if path=='/learn-trading-guide':row['knownSafeFindingFollowup']={'ids':['THQ-032','THQ-033'],'pr':231,'state':'PUBLICLY_VERIFIED','authoritativeLedger':'FINDINGS.json'}
+  if path=='/learn':row['knownSafeFindingFollowup']={'ids':['THQ-031'],'pr':230,'state':'PUBLICLY_VERIFIED','authoritativeLedger':'FINDINGS.json'}
+ if name=='UNFINISHED-SCOPE.json':d.update(fullPageDefaultStateRoutesActuallyViewed=len(view),supplementaryNotesActuallyRead=supp['actualRenderedArticlesRead'],separateSupplementaryArticlesExpected=supp['currentSeparateArticlesExpected'],separateSupplementaryArticlesRead=supp['currentSeparateArticlesActuallyRead'],separateSupplementaryArticlesUnread=supp['currentSeparateArticlesNotYetIndividuallyRead'])
+ d['updatedAt']=now;p.write_text(json.dumps(d,indent=2)+'\n')
+p=r/'VISUAL-REVIEW-NOTES.json';d=json.loads(p.read_text())
+for path,v in view.items():
+ row=d['routes'].setdefault(path,{});row.update(status='FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN',fullPageDefaultStateViewedWidths=v['defaultStateViewedWidths'],fullPageEvidence='FULLPAGE-VISUAL-REVIEW-20261024.json',conditionalAndAccessibilityReviewComplete=False,defaultStateAssessment=v['assessment'])
+ if path in notes:
+   row['supplementaryNotesReading']=notes[path]['readingStatus']
+   if 'currentSeparateArticleState' in notes[path]:row['currentSupplementaryArticleState']={'state':notes[path]['currentSeparateArticleState'],'evidence':notes[path].get('integrationEvidence')}
+d['updatedAt']=now;p.write_text(json.dumps(d,indent=2)+'\n');print(json.dumps({'fullPageRoutesActuallyViewed':len(view),'separateNotesActuallyRead':supp['actualRenderedArticlesRead'],'separateNotesUnread':supp['sourceExpectedArticlesNotYetIndividuallyReviewed'],'wholePageScopeComplete':False}))

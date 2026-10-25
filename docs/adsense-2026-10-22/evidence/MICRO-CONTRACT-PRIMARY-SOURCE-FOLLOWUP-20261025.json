@@ -1,0 +1,22 @@
+{
+  "reviewedAt": "2026-10-25T16:24:17.582550+00:00",
+  "path": "/courses/futures-and-derivatives/micro-futures-for-beginners",
+  "scope": "Selected actual rendered CME source passages, original paraphrases; no complete source/originality/engine/account certification. Initial unactivatedSPECSselector returnednoelement and is not an additional specification verification.",
+  "sources": [
+    {
+      "url": "https://www.cmegroup.com/markets/equities/sp/micro-e-mini-sandp-500.html",
+      "capturedAt": "2026-10-25T16:18:42.324915+00:00",
+      "renderedTextSha256": "c49f505f391cef71e8f39e91b288f4fda14a8e613d3f0f4e76027983352ca9fe",
+      "renderedTextBytes": 4141,
+      "assessment": "Actual CME rendered product overview explicitly gives MES at$5timesS&P500 and a0.25point minimum tick. Their multiplication gives$1.25per tick and a hypothetical5000index level gives25000notional. Source quote tables were not used as current trading/engine data."
+    },
+    {
+      "url": "https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.html",
+      "capturedAt": "2026-10-25T16:20:23.128381+00:00",
+      "renderedTextSha256": "e97556cb8512673d0893fc7f7800077f338d3d1df1d0fd97ada0b7c366f31255",
+      "renderedTextBytes": 6839,
+      "assessment": "The actual CME rendered contract-highlights section gives ES at$50timesS&P500. Relative to the separately verifiedMES$5multiplier, tenMEShave the same index-point exposure as oneES before costs. TheESminimum tick and three other MicroEmini families were not independently established by this selected passage."
+    }
+  ],
+  "remaining": "Other contract families, ESminimumtick, current margins/fees/liquidity, all source links and broader originality remain. Published portfolio/order/accounting behavior unchanged."
+}
