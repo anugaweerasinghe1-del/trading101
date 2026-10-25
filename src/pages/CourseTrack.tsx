@@ -11,6 +11,7 @@ import { useCourseDocument } from "@/hooks/useCourseCatalog";
 import { getTrackProgress, trackCompletionPct } from "@/lib/courseProgress";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { EducationalDisclaimer } from "@/components/EducationalDisclaimer";
+import { hasIntegratedCourseOverview } from "@/lib/courseOverviewPresentation";
 
 const DOMAIN = "https://www.thetradehq.com";
 
@@ -26,6 +27,8 @@ export default function CourseTrack() {
 function CourseTrackContent({ track }: { track: Track }) {
 
   const url = `${DOMAIN}/courses/${track.slug}`;
+  const path = `/courses/${track.slug}`;
+  const integratedOverview = hasIntegratedCourseOverview(path);
   const title = `${track.title} — Free Trading Course | TradeHQ`;
   const description = `${track.tagline} ${track.lessons.length} free lessons with quizzes and a completion badge. Derivatives examples are conceptual; simulator practice uses spot instruments.`;
 
@@ -65,7 +68,7 @@ function CourseTrackContent({ track }: { track: Track }) {
 
       <div className="min-h-screen bg-background flex flex-col">
         <Navigation />
-        <main className="flex-1 container mx-auto px-4 pt-24 pb-20 max-w-4xl">
+        <main data-publisher-notes={integratedOverview ? path : undefined} className="flex-1 container mx-auto px-4 pt-24 pb-20 max-w-4xl">
           <Breadcrumbs
             className="mb-6"
             items={[
@@ -84,6 +87,11 @@ function CourseTrackContent({ track }: { track: Track }) {
               <p className="text-lg text-muted-foreground max-w-2xl">{track.tagline}</p>
             </div>
           </div>
+
+          {integratedOverview && <div className="mb-8 space-y-3 text-sm text-muted-foreground leading-relaxed">
+            <p>Includes {track.lessons.length} lessons, quizzes, sources, and a completion badge. The $100,000 simulator supports spot instruments; options and futures contract mechanics are worksheet exercises.</p>
+            <p>Published by TradeHQ, created by Anuga Weerasinghe. <Link to="/about" className="underline">Publisher background and editorial approach</Link>. No independent professional review is claimed; any recorded source-check scope appears on the page.</p>
+          </div>}
 
           <Card className="p-5 mb-6 bg-white/[0.02] border-white/10">
             <div className="flex items-center justify-between text-sm mb-2">
@@ -161,6 +169,13 @@ function CourseTrackContent({ track }: { track: Track }) {
               );
             })}
           </div>
+
+          {integratedOverview && <section className="mt-8 text-sm text-muted-foreground leading-relaxed">
+            <h2 className="text-xl font-semibold text-foreground mb-3">Completion badge</h2>
+            <p>{track.badge.name}: {track.badge.description} Educational simulation only — not financial advice.</p>
+            <Link to="/courses" className="inline-block mt-4 underline">All courses</Link>
+            <p className="mt-6">Educational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.</p>
+          </section>}
 
           <div className="mt-10">
             <EducationalDisclaimer />

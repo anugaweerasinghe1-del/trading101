@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { PublisherNotes, type PublisherPage } from "./PublisherNotes";
+import { hasIntegratedCourseOverview } from "@/lib/courseOverviewPresentation";
 
 const initialPath = window.location.pathname.replace(/\/+$/, "") || "/";
 let initialPage: PublisherPage | null = null;
@@ -14,7 +15,7 @@ export function RoutePublisherNotes() {
   const path = pathname.replace(/\/+$/, "") || "/";
   // These authored page components already render every substantive section
   // and reference in their main landmark; do not append a second full article.
-  const hasPrimaryCopy = /^\/(?:wiki|strategy|compare)\/[^/]+$/.test(path) || /^\/learn\/article\/[^/]+$/.test(path);
+  const hasPrimaryCopy = /^\/(?:wiki|strategy|compare)\/[^/]+$/.test(path) || /^\/learn\/article\/[^/]+$/.test(path) || hasIntegratedCourseOverview(path);
   const [page, setPage] = useState<PublisherPage | null>(initialPage);
   useEffect(() => {
     if (hasPrimaryCopy) {
