@@ -1,0 +1,276 @@
+{
+  "path": "/wiki/backtesting",
+  "sha": "4a1288e4710d60eebe2f77c23badd3aed0030f44",
+  "origin": "https://www.thetradehq.com",
+  "capturedAt": "2026-10-25T10:22:58.158Z",
+  "outcome": "COLLECTED_NOT_HUMAN_REVIEWED",
+  "widths": [
+    {
+      "width": 360,
+      "height": 800,
+      "path": "/wiki/backtesting",
+      "title": "Backtesting — Explanation & Learning Exercise | TradeHQ Wiki",
+      "heading": "What is Backtesting?",
+      "supplementaryNotes": [
+        {
+          "path": "/wiki/backtesting",
+          "text": "Home\nTrading Guide\nWiki\nBacktesting\nINTERMEDIATE\n4 MIN\nTRADING FUNDAMENTALS\nWhat is Backtesting?\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nDETAILED DEFINITION\n\nBacktesting applies predefined rules to historical observations under stated execution and accounting assumptions. Its results describe that selected dataset; they are not executed returns or proof of a future advantage. Look-ahead bias uses information unavailable at the decision time, survivorship bias omits failed or unavailable instruments, and repeated parameter searches can overfit the same history. Separate rule development from held-out evaluation, document the searches performed and account for costs and missing observations. There is no universal number of years or trades that validates a strategy. Generated simulator candles are not historical market observations.\n\nHOW IT WORKS\n\nBacktesting applies stated rules to historical data to examine hypothetical results. It can reveal problems with an idea but does not validate future performance; look-ahead, survivorship and overfitting bias matter.\n\nKEY POINTS\nSimulates strategy performance using historical price data\nOverfitting can make selected historical results misleading\nOut-of-sample testing can challenge overfitting but cannot establish a guaranteed future edge\n💡 WHY THIS MATTERS\n\nKeep rule development separate from evaluation on unseen historical data. Record costs and failed cases. Neither backtesting nor forward simulation certifies future investment performance.\n\nWorked exercise and its limits\n\nWrite a rule using a development sample, then freeze it before examining a held-out sample. Include costs, missing data and delisted instruments where relevant. A generated simulator chart is not historical market evidence, and a held-out gain does not guarantee future performance.\n\nReferences and scope\nSEC Investor.gov — investment risk (background, not validation of a strategy)\nApply This in the Simulator\n\nUse the worksheet above to examine backtesting. Some concepts require external data or paper calculations; TradeHQ does not implement every indicator, order type or contract.\n\nOpen Simulator\nShare to WhatsApp\nRELATED TERMS\n\nPaper Trading\n\nNovice · 3 min\n\nRisk-Reward Ratio\n\nNovice · 3 min\n\nDrawdown\n\nIntermediate · 4 min"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 360,
+      "scrollHeight": 6208,
+      "viewportWidth": 360,
+      "canonical": "https://www.thetradehq.com/wiki/backtesting",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "a7199c72e528e93a-360-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "a7199c72e528e93a-360-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "a7199c72e528e93a-360-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "a7199c72e528e93a-360-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "a7199c72e528e93a-360-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "a7199c72e528e93a-360-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "a7199c72e528e93a-360-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "a7199c72e528e93a-360-07.png"
+        },
+        {
+          "y": 5408,
+          "screenshot": "a7199c72e528e93a-360-08.png"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "path": "/wiki/backtesting",
+      "title": "Backtesting — Explanation & Learning Exercise | TradeHQ Wiki",
+      "heading": "What is Backtesting?",
+      "supplementaryNotes": [
+        {
+          "path": "/wiki/backtesting",
+          "text": "Home\nTrading Guide\nWiki\nBacktesting\nINTERMEDIATE\n4 MIN\nTRADING FUNDAMENTALS\nWhat is Backtesting?\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nDETAILED DEFINITION\n\nBacktesting applies predefined rules to historical observations under stated execution and accounting assumptions. Its results describe that selected dataset; they are not executed returns or proof of a future advantage. Look-ahead bias uses information unavailable at the decision time, survivorship bias omits failed or unavailable instruments, and repeated parameter searches can overfit the same history. Separate rule development from held-out evaluation, document the searches performed and account for costs and missing observations. There is no universal number of years or trades that validates a strategy. Generated simulator candles are not historical market observations.\n\nHOW IT WORKS\n\nBacktesting applies stated rules to historical data to examine hypothetical results. It can reveal problems with an idea but does not validate future performance; look-ahead, survivorship and overfitting bias matter.\n\nKEY POINTS\nSimulates strategy performance using historical price data\nOverfitting can make selected historical results misleading\nOut-of-sample testing can challenge overfitting but cannot establish a guaranteed future edge\n💡 WHY THIS MATTERS\n\nKeep rule development separate from evaluation on unseen historical data. Record costs and failed cases. Neither backtesting nor forward simulation certifies future investment performance.\n\nWorked exercise and its limits\n\nWrite a rule using a development sample, then freeze it before examining a held-out sample. Include costs, missing data and delisted instruments where relevant. A generated simulator chart is not historical market evidence, and a held-out gain does not guarantee future performance.\n\nReferences and scope\nSEC Investor.gov — investment risk (background, not validation of a strategy)\nApply This in the Simulator\n\nUse the worksheet above to examine backtesting. Some concepts require external data or paper calculations; TradeHQ does not implement every indicator, order type or contract.\n\nOpen Simulator\nShare to WhatsApp\nRELATED TERMS\n\nPaper Trading\n\nNovice · 3 min\n\nRisk-Reward Ratio\n\nNovice · 3 min\n\nDrawdown\n\nIntermediate · 4 min"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 390,
+      "scrollHeight": 5892,
+      "viewportWidth": 390,
+      "canonical": "https://www.thetradehq.com/wiki/backtesting",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "a7199c72e528e93a-390-00.png"
+        },
+        {
+          "y": 717,
+          "screenshot": "a7199c72e528e93a-390-01.png"
+        },
+        {
+          "y": 1434,
+          "screenshot": "a7199c72e528e93a-390-02.png"
+        },
+        {
+          "y": 2151,
+          "screenshot": "a7199c72e528e93a-390-03.png"
+        },
+        {
+          "y": 2868,
+          "screenshot": "a7199c72e528e93a-390-04.png"
+        },
+        {
+          "y": 3585,
+          "screenshot": "a7199c72e528e93a-390-05.png"
+        },
+        {
+          "y": 4302,
+          "screenshot": "a7199c72e528e93a-390-06.png"
+        },
+        {
+          "y": 5019,
+          "screenshot": "a7199c72e528e93a-390-07.png"
+        },
+        {
+          "y": 5048,
+          "screenshot": "a7199c72e528e93a-390-08.png"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "path": "/wiki/backtesting",
+      "title": "Backtesting — Explanation & Learning Exercise | TradeHQ Wiki",
+      "heading": "What is Backtesting?",
+      "supplementaryNotes": [
+        {
+          "path": "/wiki/backtesting",
+          "text": "Home\nTrading Guide\nWiki\nBacktesting\nINTERMEDIATE\n4 MIN\nTRADING FUNDAMENTALS\nWhat is Backtesting?\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nDETAILED DEFINITION\n\nBacktesting applies predefined rules to historical observations under stated execution and accounting assumptions. Its results describe that selected dataset; they are not executed returns or proof of a future advantage. Look-ahead bias uses information unavailable at the decision time, survivorship bias omits failed or unavailable instruments, and repeated parameter searches can overfit the same history. Separate rule development from held-out evaluation, document the searches performed and account for costs and missing observations. There is no universal number of years or trades that validates a strategy. Generated simulator candles are not historical market observations.\n\nHOW IT WORKS\n\nBacktesting applies stated rules to historical data to examine hypothetical results. It can reveal problems with an idea but does not validate future performance; look-ahead, survivorship and overfitting bias matter.\n\nKEY POINTS\nSimulates strategy performance using historical price data\nOverfitting can make selected historical results misleading\nOut-of-sample testing can challenge overfitting but cannot establish a guaranteed future edge\n💡 WHY THIS MATTERS\n\nKeep rule development separate from evaluation on unseen historical data. Record costs and failed cases. Neither backtesting nor forward simulation certifies future investment performance.\n\nWorked exercise and its limits\n\nWrite a rule using a development sample, then freeze it before examining a held-out sample. Include costs, missing data and delisted instruments where relevant. A generated simulator chart is not historical market evidence, and a held-out gain does not guarantee future performance.\n\nReferences and scope\nSEC Investor.gov — investment risk (background, not validation of a strategy)\nApply This in the Simulator\n\nUse the worksheet above to examine backtesting. Some concepts require external data or paper calculations; TradeHQ does not implement every indicator, order type or contract.\n\nOpen Simulator\nShare to WhatsApp\nRELATED TERMS\n\nPaper Trading\n\nNovice · 3 min\n\nRisk-Reward Ratio\n\nNovice · 3 min\n\nDrawdown\n\nIntermediate · 4 min"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 753,
+      "scrollHeight": 4067,
+      "viewportWidth": 768,
+      "canonical": "https://www.thetradehq.com/wiki/backtesting",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "a7199c72e528e93a-768-00.png"
+        },
+        {
+          "y": 870,
+          "screenshot": "a7199c72e528e93a-768-01.png"
+        },
+        {
+          "y": 1740,
+          "screenshot": "a7199c72e528e93a-768-02.png"
+        },
+        {
+          "y": 2610,
+          "screenshot": "a7199c72e528e93a-768-03.png"
+        },
+        {
+          "y": 3043,
+          "screenshot": "a7199c72e528e93a-768-04.png"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "path": "/wiki/backtesting",
+      "title": "Backtesting — Explanation & Learning Exercise | TradeHQ Wiki",
+      "heading": "What is Backtesting?",
+      "supplementaryNotes": [
+        {
+          "path": "/wiki/backtesting",
+          "text": "Home\nTrading Guide\nWiki\nBacktesting\nINTERMEDIATE\n4 MIN\nTRADING FUNDAMENTALS\nWhat is Backtesting?\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nDETAILED DEFINITION\n\nBacktesting applies predefined rules to historical observations under stated execution and accounting assumptions. Its results describe that selected dataset; they are not executed returns or proof of a future advantage. Look-ahead bias uses information unavailable at the decision time, survivorship bias omits failed or unavailable instruments, and repeated parameter searches can overfit the same history. Separate rule development from held-out evaluation, document the searches performed and account for costs and missing observations. There is no universal number of years or trades that validates a strategy. Generated simulator candles are not historical market observations.\n\nHOW IT WORKS\n\nBacktesting applies stated rules to historical data to examine hypothetical results. It can reveal problems with an idea but does not validate future performance; look-ahead, survivorship and overfitting bias matter.\n\nKEY POINTS\nSimulates strategy performance using historical price data\nOverfitting can make selected historical results misleading\nOut-of-sample testing can challenge overfitting but cannot establish a guaranteed future edge\n💡 WHY THIS MATTERS\n\nKeep rule development separate from evaluation on unseen historical data. Record costs and failed cases. Neither backtesting nor forward simulation certifies future investment performance.\n\nWorked exercise and its limits\n\nWrite a rule using a development sample, then freeze it before examining a held-out sample. Include costs, missing data and delisted instruments where relevant. A generated simulator chart is not historical market evidence, and a held-out gain does not guarantee future performance.\n\nReferences and scope\nSEC Investor.gov — investment risk (background, not validation of a strategy)\nApply This in the Simulator\n\nUse the worksheet above to examine backtesting. Some concepts require external data or paper calculations; TradeHQ does not implement every indicator, order type or contract.\n\nOpen Simulator\nShare to WhatsApp\nRELATED TERMS\n\nPaper Trading\n\nNovice · 3 min\n\nRisk-Reward Ratio\n\nNovice · 3 min\n\nDrawdown\n\nIntermediate · 4 min"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1265,
+      "scrollHeight": 3568,
+      "viewportWidth": 1280,
+      "canonical": "https://www.thetradehq.com/wiki/backtesting",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "a7199c72e528e93a-1280-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "a7199c72e528e93a-1280-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "a7199c72e528e93a-1280-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "a7199c72e528e93a-1280-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "a7199c72e528e93a-1280-04.png"
+        },
+        {
+          "y": 2768,
+          "screenshot": "a7199c72e528e93a-1280-05.png"
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "path": "/wiki/backtesting",
+      "title": "Backtesting — Explanation & Learning Exercise | TradeHQ Wiki",
+      "heading": "What is Backtesting?",
+      "supplementaryNotes": [
+        {
+          "path": "/wiki/backtesting",
+          "text": "Home\nTrading Guide\nWiki\nBacktesting\nINTERMEDIATE\n4 MIN\nTRADING FUNDAMENTALS\nWhat is Backtesting?\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nDETAILED DEFINITION\n\nBacktesting applies predefined rules to historical observations under stated execution and accounting assumptions. Its results describe that selected dataset; they are not executed returns or proof of a future advantage. Look-ahead bias uses information unavailable at the decision time, survivorship bias omits failed or unavailable instruments, and repeated parameter searches can overfit the same history. Separate rule development from held-out evaluation, document the searches performed and account for costs and missing observations. There is no universal number of years or trades that validates a strategy. Generated simulator candles are not historical market observations.\n\nHOW IT WORKS\n\nBacktesting applies stated rules to historical data to examine hypothetical results. It can reveal problems with an idea but does not validate future performance; look-ahead, survivorship and overfitting bias matter.\n\nKEY POINTS\nSimulates strategy performance using historical price data\nOverfitting can make selected historical results misleading\nOut-of-sample testing can challenge overfitting but cannot establish a guaranteed future edge\n💡 WHY THIS MATTERS\n\nKeep rule development separate from evaluation on unseen historical data. Record costs and failed cases. Neither backtesting nor forward simulation certifies future investment performance.\n\nWorked exercise and its limits\n\nWrite a rule using a development sample, then freeze it before examining a held-out sample. Include costs, missing data and delisted instruments where relevant. A generated simulator chart is not historical market evidence, and a held-out gain does not guarantee future performance.\n\nReferences and scope\nSEC Investor.gov — investment risk (background, not validation of a strategy)\nApply This in the Simulator\n\nUse the worksheet above to examine backtesting. Some concepts require external data or paper calculations; TradeHQ does not implement every indicator, order type or contract.\n\nOpen Simulator\nShare to WhatsApp\nRELATED TERMS\n\nPaper Trading\n\nNovice · 3 min\n\nRisk-Reward Ratio\n\nNovice · 3 min\n\nDrawdown\n\nIntermediate · 4 min"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1905,
+      "scrollHeight": 3492,
+      "viewportWidth": 1920,
+      "canonical": "https://www.thetradehq.com/wiki/backtesting",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "a7199c72e528e93a-1920-00.png"
+        },
+        {
+          "y": 918,
+          "screenshot": "a7199c72e528e93a-1920-01.png"
+        },
+        {
+          "y": 1836,
+          "screenshot": "a7199c72e528e93a-1920-02.png"
+        },
+        {
+          "y": 2412,
+          "screenshot": "a7199c72e528e93a-1920-03.png"
+        }
+      ]
+    }
+  ]
+}

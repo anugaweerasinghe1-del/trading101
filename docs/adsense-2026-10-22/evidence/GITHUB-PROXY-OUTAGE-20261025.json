@@ -1,0 +1,24 @@
+{
+  "observedAt": "2026-10-25T11:00:07.310009+00:00",
+  "operations": [
+    {
+      "operation": "GitHub REST pull/check-run reads",
+      "result": "HTTP503; on some CLI invocations body was non-JSON upstream error"
+    },
+    {
+      "operation": "git ls-remote origin refs/heads/main",
+      "result": "HTTP503"
+    },
+    {
+      "operation": "actual public browser how-to DOM followup",
+      "result": "Page readiness deadline; earlier complete captures preserved separately"
+    }
+  ],
+  "providerMessage": "upstream connect error or disconnect/reset before headers; remote connection failure; transport failure; immediate connect error; Invalid argument; remote address envoy://cloudflare_https_tunnel/",
+  "diagnostics": "Managed environment still reports connected/running revision11; observations_currenttrue; supported retained network diagnostics history not_found. No HTTP401/403 evidence.",
+  "effect": "Cannot freshly verify main/PR241candidateCI or merge, update PR240body, or push evidence. No merge attempted.",
+  "credentials": "No values inspected, printed or changed; no new credentials requested.",
+  "continuation": "Local build/compiled browser work and actual captured image review continue. Proxy/TLS preserved. Retry after observed recovery; all exact-head/native/live gates still required.",
+  "recoveredAt": "2026-10-25T11:10:10.695142+00:00",
+  "recoveryEvidence": "GitHub RESTpull241 andbranchmain reads plusgitfetchoriginmain now succeed. Freshmainremains65df89982a4ab4d0932c5f1135a11e7fb29d68e8. No network/TLS/credentialconfigurationchanged."
+}

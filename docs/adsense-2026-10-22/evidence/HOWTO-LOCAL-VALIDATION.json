@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-10-25T11:09:23.100012+00:00",
+  "candidateSHA": "786da276dae2c3618512297ac6b408e23c52c68e",
+  "baseSHA": "65df89982a4ab4d0932c5f1135a11e7fb29d68e8",
+  "outcome": "PASS_LOCAL_ONLY",
+  "scope": "Reversiblearticleplacementonly,sixguides,guidehubunchanged. Contentdata/fees/quantities/execution/auth/records unchanged.",
+  "checks": {
+    "CloudflareBuildSEOEditorial": "PASS",
+    "appTypeScript": "PASS",
+    "actualCompiledGuideStates": 30,
+    "actualExpandedAnswerChecks": 90,
+    "hubClientNavigation": "PASS",
+    "fullPhase6": "PASS",
+    "baseline": "EXPECTED_FAIL oldARTICLEinsteadMAIN",
+    "settledImagesPersonallyViewed": 12
+  },
+  "initialHarnessFailures": [
+    "Missing --import tsx caused module resolution failure before tests; corrected invocation to repository CI command.",
+    "Initial new test incorrectly assumed three single-accordion answers could stay open together; corrected to verify each answer sequentially.",
+    "First fast component screenshots captured consent blur; retained raw, replaced publication selection with twelve settled images after ordinary Reject analytics in owned loopback context."
+  ],
+  "release": "UNPUBLISHED; GitHub upstreamproxy503 prevents freshmainread/CI/PR. Reconcile latestmain andfinishserialPR241cyclebeforepublishing."
+}

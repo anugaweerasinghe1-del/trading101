@@ -1,0 +1,155 @@
+BROWSER_NAVIGATE http://127.0.0.1:37605/learn-trading-guide
+BROWSER_NAVIGATE http://127.0.0.1:37605/portfolio
+PASS named progress indicators: 20 rendered route/width/theme states; no completion or trade actions
+BROWSER_NAVIGATE http://127.0.0.1:37605/trader/me
+BROWSER_NAVIGATE http://127.0.0.1:37605/trader/me
+BROWSER_NAVIGATE http://127.0.0.1:37605/trader/me
+BROWSER_NAVIGATE http://127.0.0.1:37605/trader/me
+BROWSER_NAVIGATE http://127.0.0.1:37605/trader/me
+PASS local profile availability: 20 rendered empty/buy-only/losing/winning width states; valid zero retained; no order or account action
+BROWSER_NAVIGATE http://127.0.0.1:37605/ai-mentor
+BROWSER_NAVIGATE http://127.0.0.1:37605/trade/btc
+PASS mentor plain-text copy: 20 public/portfolio width/theme states; disclaimers and numeric labels preserved; no trade/account action
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/bitcoin-vs-ethereum
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/bitcoin-vs-ethereum
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/bitcoin-vs-ethereum
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/bitcoin-vs-ethereum
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/bitcoin-vs-ethereum
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/tesla-vs-nvidia
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/tesla-vs-nvidia
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/tesla-vs-nvidia
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/tesla-vs-nvidia
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/tesla-vs-nvidia
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/bitcoin-vs-gold
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/bitcoin-vs-gold
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/bitcoin-vs-gold
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/bitcoin-vs-gold
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/bitcoin-vs-gold
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/apple-vs-microsoft
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/apple-vs-microsoft
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/apple-vs-microsoft
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/apple-vs-microsoft
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/apple-vs-microsoft
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/ethereum-vs-solana
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/ethereum-vs-solana
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/ethereum-vs-solana
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/ethereum-vs-solana
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/ethereum-vs-solana
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/stocks-vs-crypto
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/stocks-vs-crypto
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/stocks-vs-crypto
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/stocks-vs-crypto
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/stocks-vs-crypto
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/nvidia-vs-amd
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/nvidia-vs-amd
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/nvidia-vs-amd
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/nvidia-vs-amd
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/nvidia-vs-amd
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/forex-vs-stocks
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/forex-vs-stocks
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/forex-vs-stocks
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/forex-vs-stocks
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare/forex-vs-stocks
+BROWSER_NAVIGATE http://127.0.0.1:37605/compare
+PASS40comparison-width states: one article, unchanged substantive paragraphs/references and safe client navigation
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/courses/options-trading-fundamentals
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/courses/options-trading-fundamentals
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/courses/options-trading-fundamentals
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/courses/options-trading-fundamentals
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/courses/options-trading-fundamentals
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/courses/futures-and-derivatives
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/courses/futures-and-derivatives
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/courses/futures-and-derivatives
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/courses/futures-and-derivatives
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/courses/futures-and-derivatives
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/courses/macro-reading-for-traders
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/courses/macro-reading-for-traders
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/courses/macro-reading-for-traders
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/courses/macro-reading-for-traders
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/courses/macro-reading-for-traders
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/courses/trading-psychology-mastery
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/courses/trading-psychology-mastery
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/courses/trading-psychology-mastery
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/courses/trading-psychology-mastery
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/courses/trading-psychology-mastery
+BROWSER_NAVIGATE http://127.0.0.1:37605/courses/options-trading-fundamentals
+PASS20course-overview width states: single article, all substantive copy/badge criteria/lesson cards/references preserved; individual lesson and catalog notes restored on navigation
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:37605/how-to-trade/btc
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Guide answers expand
+    at waitUntil (file:///workspace/trading101-beginner-guide/scripts/verify-publisher-browser.mjs:216:12)
+    at async verifyHowToArticle (file:///workspace/trading101-beginner-guide/scripts/verify-howto-article.mjs:32:5)
+    at async file:///workspace/trading101-beginner-guide/scripts/verify-publisher-browser.mjs:265:3 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: undefined,
+  expected: undefined,
+  operator: 'fail',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

@@ -1,0 +1,25 @@
+import urllib.request,hashlib,json,re
+from pathlib import Path
+from html.parser import HTMLParser
+class Text(HTMLParser):
+ def __init__(self):super().__init__();self.depth=0;self.parts=[]
+ def handle_starttag(self,t,a):
+  if t in ['script','style']:self.depth+=1
+ def handle_endtag(self,t):
+  if t in ['script','style']and self.depth:self.depth-=1
+ def handle_data(self,t):
+  if not self.depth:self.parts.append(t)
+out=Path('/workspace/scratch/tradehq-audit/greeks-primary-sources');out.mkdir(exist_ok=True)
+for name,url in [('delta','https://www.optionseducation.org/advancedconcepts/delta'),('theta','https://www.optionseducation.org/advancedconcepts/theta'),('vega','https://www.optionseducation.org/advancedconcepts/vega'),('margin','https://www.cmegroup.com/education/courses/introduction-to-futures/margin-know-what-is-needed.html')]:
+ try:
+  with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0'}),timeout=30)as r:raw=r.read();status=r.status
+  p=Text();p.feed(raw.decode(errors='replace'));text=re.sub(r'\s+',' ',' '.join(p.parts));(out/(name+'.txt')).write_text(text)
+  meta={'url':url,'status':status,'sha256':hashlib.sha256(raw).hexdigest(),'textLength':len(text)};(out/(name+'.json')).write_text(json.dumps(meta,indent=2))
+  # Reading selected substantive text, avoiding navigation and whole-page reproduction in evidence.
+  terms={'delta':['0.50','Delta measures','delta is'],'theta':['Theta measures','Theta is','time decay'],'vega':['Vega measures','Vega is','one percent'],'margin':['performance bond','maintenance','margin is']}[name]
+  windows=[]
+  for term in terms:
+   m=re.search(re.escape(term),text,re.I)
+   if m:windows.append(text[max(0,m.start()-150):m.end()+1800])
+  print(json.dumps({**meta,'selectedWorkspaceReading':windows}))
+ except Exception as e:print(json.dumps({'url':url,'error':str(e)[:130]}))

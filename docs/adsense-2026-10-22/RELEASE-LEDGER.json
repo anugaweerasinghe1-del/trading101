@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T09:20:58.203744+00:00",
+  "updatedAt": "2026-10-25T10:51:04.865120+00:00",
   "releases": [
     {
       "finding": "THQ-001",
@@ -1644,19 +1644,75 @@
         "safeControls": 4,
         "runtimeExceptions": 0
       }
+    },
+    {
+      "pr": 240,
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/240",
+      "candidateSHA": "37e4d4f7bb5689821233c5091d33cd28cfdc0ca8",
+      "mergeSHA": "65df89982a4ab4d0932c5f1135a11e7fb29d68e8",
+      "state": "PUBLICLY_VERIFIED",
+      "finding": "THQ-038",
+      "production": {
+        "checkedAt": "2026-10-25T10:43:30.527273+00:00",
+        "mergeSHA": "65df89982a4ab4d0932c5f1135a11e7fb29d68e8",
+        "outcome": "PASS",
+        "sourceJob": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40184704007/job/121146505790",
+        "scope": "Authenticated native provider reads by trusted exact-main release-readiness job. Both production deployments match the immutable merge SHA. No provider mutations.",
+        "cloudflare": {
+          "observedAt": "2026-10-25T10:43:06.085Z",
+          "project": "tradehq-preview",
+          "activeProduction": {
+            "id": "0012fe63-d1ec-4881-b7a7-5446263d6346",
+            "sha": "65df89982a4ab4d0932c5f1135a11e7fb29d68e8",
+            "environment": "production",
+            "branch": "main",
+            "status": "success",
+            "createdAt": "2026-10-25T10:25:19.178913Z"
+          }
+        },
+        "vercel": {
+          "schema": "tradehq-vercel-production-evidence-v1",
+          "deploymentId": "dpl_uBzVnTaA1GAG9kgtAyZE214XziSD",
+          "teamId": "team_fjZ5ggg0P43MsYFSIHbeHAAO",
+          "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+          "commitSha": "65df89982a4ab4d0932c5f1135a11e7fb29d68e8",
+          "target": "production",
+          "state": "READY",
+          "activeAlias": "thetradehq.com",
+          "createdAt": 1792923919896,
+          "observedAt": 1792924986085,
+          "requests": 2,
+          "authorization": {
+            "merge": false,
+            "productionRelease": false
+          }
+        }
+      },
+      "mainCIEvidence": "evidence/PR240-MAIN-CI.json",
+      "liveRecheck": {
+        "outcome": "PASS",
+        "affectedCourseStates": 20,
+        "guestStates": 30,
+        "safeControls": 4,
+        "runtimeExceptions": 0,
+        "productionImagesPersonallyViewed": 4
+      },
+      "liveEvidence": [
+        "evidence/PR240-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR240-GUEST-SMOKE.json"
+      ],
+      "initialMainFailure": "evidence/PR240-INITIAL-MAIN-FAILURE.txt",
+      "diagnosis": "evidence/PR240-MENTOR-OVERFLOW-DIAGNOSIS.json",
+      "rerun": "Oneunchangedfullcoherentworkflowattempt2;all6PASS; noassertionsweakened."
     }
   ],
   "nextCandidate": {
-    "finding": "THQ-002",
-    "state": "MERGED_PUBLICLY_VERIFIED",
-    "mergeAllowed": false,
-    "reason": "Releasecyclecomplete; nonewmergeofthisPR.",
-    "pr": 213,
-    "candidateSHA": "e5fa54fbcbee43eea38a76a121efc8f400f5757c",
-    "exactHeadRequiredChecks": "PASS",
-    "nativePreviews": "CloudflareSUCCESS and VercelREADY for candidate",
-    "actualCloudflarePreview": "evidence/PR213-UPDATED-PREVIEW-BROWSER.json",
-    "mergeSHA": "1517169657ea32c418286a4c235dacd226bb798e"
+    "pr": 241,
+    "candidateSHA": "6a9d3aeb251b105fc26e16c1441f9d9933b4a979",
+    "baseSHA": "65df89982a4ab4d0932c5f1135a11e7fb29d68e8",
+    "state": "FIX_TESTED_AWAITING_UPDATED_CANDIDATE_CI_PREVIEW",
+    "previewEvidence": "evidence/PR241-UPDATED-PREVIEW-BROWSER.json",
+    "scope": "THQ-039sharetext/iconandTHQ-041difficultylabelcontrast;80+60actualcompiledstatesPASS, freshremoteproofpending."
   },
   "independentFutureCandidate": {
     "pr": 214,
@@ -1836,9 +1892,9 @@
     "reason": "Releasecyclecomplete; nonewmergeofthisPR."
   },
   "latestGitHubState": "evidence/FINAL-GITHUB-STATE-20261023.json",
-  "latestGitHubProviderBindingEvidence": "evidence/PR239-PRODUCTION-PROVIDERS.json",
-  "latestMainValidationEvidence": "evidence/PR239-MAIN-CI.json",
-  "latestVerifiedProductionSHA": "4a1288e4710d60eebe2f77c23badd3aed0030f44",
+  "latestGitHubProviderBindingEvidence": "evidence/PR240-PRODUCTION-PROVIDERS.json",
+  "latestMainValidationEvidence": "evidence/PR240-MAIN-CI.json",
+  "latestVerifiedProductionSHA": "65df89982a4ab4d0932c5f1135a11e7fb29d68e8",
   "summaryQuoteContextCandidate": {
     "pr": 221,
     "candidateSHA": "67ba761a85915ad047081206ee671a823c6f7bed",
@@ -1852,9 +1908,9 @@
     "mergeSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
     "reason": "Releasecyclecomplete; nonewmergeofthisPR."
   },
-  "remainingConfirmedSiteFixes": 0,
+  "remainingConfirmedSiteFixes": 3,
   "exhaustiveAuditComplete": false,
-  "remainingKnownSafeFindings": 0,
+  "remainingKnownSafeFindings": 3,
   "nextReleasePriority": [],
   "pendingReleaseVerification": null,
   "protectedPublishedContentFinding": "THQ035/036 published revision2 independently verified; credential and approval blockers superseded by owner-approved PR238 operation. No new production writes in this continuation.",
@@ -1876,5 +1932,11 @@
     "mergeAllowed": false,
     "scope": "ExistingpercentageforwardedtoRadixRoot pluslegacylabel; no progresslogic/storage changes.",
     "mergeSHA": "0e4f0dde840905fb95d88d12581643b4635153dd"
+  },
+  "operationalHold": {
+    "state": "RECOVERED",
+    "observedAt": "2026-10-25T10:58:45.050590+00:00",
+    "effect": "No latestmain/CIverification,PR241merge,PR240descriptionupdateorauditevidencepush. ActualgitandRESTreadsbothupstream503;notcredential401/403. Preparedindependentlocalworkcontinues.",
+    "resolvedAt": "2026-10-25T11:10:10.696337+00:00"
   }
 }

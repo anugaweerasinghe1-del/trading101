@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T09:21:28.990654+00:00",
+  "updatedAt": "2026-10-25T11:21:43.662063+00:00",
   "scope": "Actual screenshot viewing by route and stage. Full-page default-state images are separately recorded at all five widths for20 core routes; this is not conditional, accessibility, light-theme, source or whole-audit completion.",
   "routes": {
     "/": {
@@ -382,7 +382,7 @@
       ]
     },
     "/courses/futures-and-derivatives/margin-and-leverage-in-futures": {
-      "status": "FIRST_FOLD_ONLY",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
       "humanViewedWidths": [
         360
       ],
@@ -391,7 +391,18 @@
       ],
       "evidence": [
         "evidence/contact--courses--360-8.png"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "All nine contacts at all five widths personally viewed: title/byline/hero/quick answer, margin collateral vs loan, maintenance requirements and possible intraday liquidation, daily/intraday settlement and residual default risk,50x5000=250000notional and2500/13000=19.23% hypothetical deposit example, takeaways, four unanswered quizzes/disabled submit, CME links/previous/next, footer and entire appended article. No default clipping/overlap observed; no quiz/progress action. Official contract multiplier corroborated in earlier source receipt, but full margin/broker-rule and keyboard/light/zoom/conditional stages remain.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
     },
     "/courses/futures-and-derivatives/micro-futures-for-beginners": {
       "status": "FIRST_FOLD_ONLY",
@@ -2043,6 +2054,262 @@
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "All nine contacts at five widths personally viewed, including full definitions/research limitations, anchoring, non-universal loss-aversion qualification, hypothetical100gain/loss journal prompt, recency/sample limitations, takeaways, four unanswered quiz cards/disabled submit, references/next, footer and entire appended article. No default clipping or overlap observed. Main article source unchanged since capture through live239. Source studies, keyboard/light/zoom, conditional behavior and exact duplicate integration remain follow-ups. No production quiz/progress action.",
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+    },
+    "/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "All nine contacts at all five widths personally viewed, covering hero/byline, quick answer, Greeks model sensitivity definitions,0.50delta example with100sharecontract qualification, gamma/expiry caveats, theta units/time convention/otherinputs, vega vs impliedvolatility distinction, four unanswered quizzes/disabled submit, four sources/previous/next, footer and full appended notes. No default clipping or overlap observed. No production quiz or progress action. Primary source Greeks verification, keyboard/light/zoom and conditional states remain.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+    },
+    "/courses/macro-reading-for-traders/the-fed-and-fomc-cycle": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "All nine contacts at all five widths personally viewed: hero/byline/quick answer, statutory mandate andPCEtarget, eightregular meetings/additionalpossible/quarterlySEP, FedWatch futures-implied probabilities distinctfromcertainty, statementversuspressconference context, observewithoutpredictingfirstmove, takeaways, four unansweredquizzes/disabledsubmit, datedsources/previous/next, footer andentireappendedarticle. No defaultclipping/overlap observed; no quiz/progressaction. Primary-source details andkeyboard/light/zoom/conditionalstages remain.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+    },
+    "/courses/trading-psychology-mastery/revenge-trading-and-tilt": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "All nine contacts at all five widths personally viewed: byline/hero, quickanswer, non-diagnostic response-to-loss discussion, planned/actual size journal prompt, hypothetical revenge sequence without claimed causation/ranking,3%of100000=3000worksheet distinctfromindustryrule, accurate limited five-second cooldown description, breaknotguarantee, takeaways, four unanswered quizzes/disabledsubmit, sources/previous/next, footer/fullnotes. No defaultclipping/overlap observed. No actualorder/loss/cooldown/progress or quizsubmitted; source andconditional/light/keyboard/zoomstages remain.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+    },
+    "/wiki/backtesting": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "All five contacts covering all viewportsegments at all five widths personally viewed: breadcrumb/byline, definition/explanation/cards, workedexercise/sourcecontext, simulatorCTA/sharebutton/relatedterms andentirefooter. No defaultclipping/overlap observed; singleauthoredmain andno appendedarticle. Read complete detailed definition, look-ahead/survivorship/overfitting discussion, held-out exercise and cost/missing-data qualification. Simulator history explicitly not historical market evidence; no guaranteed sample count or futureedge. SEC risk pointer clearly limited to background. No WhatsAppaction, account/order/progress or formsubmission. Keyboard/light/zoom, safe navigation andprimarysource/originality stages remain."
+    },
+    "/wiki/bear-trap": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "All five contacts covering all viewportsegments at all five widths personally viewed: breadcrumb/byline, definition/explanation/cards, workedexercise/sourcecontext, simulatorCTA/sharebutton/relatedterms andentirefooter. No defaultclipping/overlap observed; singleauthoredmain andno appendedarticle. Read complete retrospective-support/reversal definition, no inferred manipulation/short positions, prespecified window and contrary continuations,40to38to42paperexample, shorting unsupported, two SEC references, context CTA andrelatedterms. No WhatsAppaction, account/order/progress or formsubmission. Keyboard/light/zoom, safe navigation andprimarysource/originality stages remain."
+    },
+    "/wiki/bollinger-band-squeeze": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "All five contacts covering all viewportsegments at all five widths personally viewed: breadcrumb/byline, definition/explanation/cards, workedexercise/sourcecontext, simulatorCTA/sharebutton/relatedterms andentirefooter. No defaultclipping/overlap observed; singleauthoredmain andno appendedarticle. Read complete20period/twostandarddeviation commonexample with variable-settings qualification, dispersion not normallydistributed guarantee, prespecified lookback, no direction/deadline fromnarrowbands, bothhypotheticaloutcomes, Fidelitybackgroundsource andrelatedterms. No WhatsAppaction, account/order/progress or formsubmission. Keyboard/light/zoom, safe navigation andprimarysource/originality stages remain."
+    },
+    "/wiki/bull-trap": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "All five contacts covering all viewportsegments at all five widths personally viewed: breadcrumb/byline, definition/explanation/cards, workedexercise/sourcecontext, simulatorCTA/sharebutton/relatedterms andentirefooter. No defaultclipping/overlap observed; singleauthoredmain andno appendedarticle. Read complete retrospective-resistance/reversal definition, pricealonecannotestablish intent, initialreversalunknown, contrarycontinuations andfill/costqualification,50to52to49example andimperfectexit, SECorderreference andrelatedterms. No WhatsAppaction, account/order/progress or formsubmission. Keyboard/light/zoom, safe navigation andprimarysource/originality stages remain."
+    },
+    "/how-to-trade/btc": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personallyviewedallcontacts/allsegmentsat360,390,768,1280,1920:hero,quickanswer,steps,tips/risks/studentperspective,drivers,workedexample,timing,mistakes/review,links,closedFAQs,sources,entirefooterandappendix. Nodefaultclippingoroverlapobserved. Substantivearticle repeatedafterfooter;retainedasfocusedduplicationfinding. Noorder,share,accountorprogressaction. Light/zoom/keyboard/expandedstate/sourcechecksremain. Read both full rendered copies:0.05BTC at50000=2500 exposure and2.50entryfee;250downside beforecost;10000of100000 rising10percent yields1percent wholeaccount beforecost;11000/101000=10.89percent currentweight. Protocolissuance separatefromprice,provider timestampnotexchangefill,nocustody. Hypotheticalarithmetic internallyconsistent;BTCprimarysourceandfulloriginalityreviewremain.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+    },
+    "/how-to-trade/eth": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personallyviewedallcontacts/allsegmentsat360,390,768,1280,1920:hero,quickanswer,steps,tips/risks/studentperspective,drivers,workedexample,timing,mistakes/review,links,closedFAQs,sources,entirefooterandappendix. Nodefaultclippingoroverlapobserved. Substantivearticle repeatedafterfooter;retainedasfocusedduplicationfinding. Noorder,share,accountorprogressaction. Light/zoom/keyboard/expandedstate/sourcechecksremain. Read both full rendered copies:networkversusETH,gasversussimulatorfee,nostaking/transfer;0.5ETHat3200=1600+1.60fee;2ETHat2500=5000+5fee;2400mark gives200grossloss/205equityloss afterentryfee,4.80exitfeeifthen sold. Networkdemandnotautomaticpricerise;completecurrentprimary-sourcecorroborationremains.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+    },
+    "/how-to-trade/nvda": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personallyviewedallcontacts/allsegmentsat360,390,768,1280,1920:hero,quickanswer,steps,tips/risks/studentperspective,drivers,workedexample,timing,mistakes/review,links,closedFAQs,sources,entirefooterandappendix. Nodefaultclippingoroverlapobserved. Substantivearticle repeatedafterfooter;retainedasfocusedduplicationfinding. Noorder,share,accountorprogressaction. Light/zoom/keyboard/expandedstate/sourcechecksremain. Read both full rendered copies:businessmetricsversusshareprice;5sharesat120=600plus0.60entryfee;2000directplus8000fundwithassumed10percentNVDA gives2800/10000=28percent lookthroughexposure and280lossif10percentfallwithotherholdingsfixed. Fundweightdated/hypothetical,nominalpricecannotestablishfairvalue,noperformancepromise;issuer/currentfilingandoriginalityfollowupsremain.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+    },
+    "/how-to-trade/spy": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personallyviewedallcontacts/allsegmentsat360,390,768,1280,1920:hero,quickanswer,steps,tips/risks/studentperspective,drivers,workedexample,timing,mistakes/review,links,closedFAQs,sources,entirefooterandappendix. Nodefaultclippingoroverlapobserved. Substantivearticle repeatedafterfooter;retainedasfocusedduplicationfinding. Noorder,share,accountorprogressaction. Light/zoom/keyboard/expandedstate/sourcechecksremain. Read both full rendered copies:index/fund/countrydistinction,nodirectownershipofeachconstituent;2unitsat500=1000+1fee;10units500=5000,2percentfall=100lossand0.1percentoriginalaccount;5entryfeeleaves99895equityatmark. Distributions/expensesnotinvented,sessions/provenancequalified;fundsourceandcompleteoriginalityfollowupsremain.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+    },
+    "/how-to-trade/sol": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personallyviewedallcontacts/allsegmentsat360,390,768,1280,1920:hero,quickanswer,steps,tips/risks/studentperspective,drivers,workedexample,timing,mistakes/review,links,closedFAQs,sources,entirefooterandappendix. Nodefaultclippingoroverlapobserved. Substantivearticle repeatedafterfooter;retainedasfocusedduplicationfinding. Noorder,share,accountorprogressaction. Light/zoom/keyboard/expandedstate/sourcechecksremain. Read both full rendered copies:SOLtokenversusSolananetwork/onchainfees,nostaking/transfer/derivatives;40SOL125=5000+5buyfee;130exit5200less5.20sellfee gives189.80roundtripresult;115mark4600gives400grosslossbeforefees. Quotesnotguaranteedfills,24/7notconstantliquidity,adversecasepreserved;networksourceandoriginalityfollowupsremain.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+    },
+    "/how-to-trade/tsla": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personallyviewedallcontacts/allsegmentsat360,390,768,1280,1920:hero,quickanswer,steps,tips/risks/studentperspective,drivers,workedexample,timing,mistakes/review,links,closedFAQs,sources,entirefooterandappendix. Nodefaultclippingoroverlapobserved. Substantivearticle repeatedafterfooter;retainedasfocusedduplicationfinding. Noorder,share,accountorprogressaction. Light/zoom/keyboard/expandedstate/sourcechecksremain. Read both full rendered copies:delivery/revenue/marginsdistinct;4shares200=800plus0.80entryfee,180gap80grossloss;20shares200=4000plus4buyfee,180mark400grossloss;190plannedthreshold200lossnotguaranteedstopfill. Nooptions/votingrights/realownership,narrativeprespecifiednotrewrittenafteroutcome;issuer/sourceandoriginalityfollowupsremain.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+    },
+    "/wiki/candlestick-patterns": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally viewed all five contacts, covering all default segments at360/390/768/1280/1920:breadcrumb/byline,entiredefinition/explanation/keypoints/worksheet/sourcecontext,CTA/share/relatedlinksandfullfooter. No clipping/documentoverflow/overlap seen. SharedsharecontrastTHQ039isalreadytracked;noexternalshare/account/order/progressaction. OHLCbody/wicks/dojitolerancesandtwo-candleengulfing distinguished fromlongersequences;100open106high98low104close exercise internallycoherent. IntrabartransactionorderandparticipantintentarenotknownfromOHLC;failedandsuccessfulcasesrequired. No predictivepatternsuccessrate claimed; Fidelitybackgroundqualified. Singlemain/noappendix; source/keyboard/light/zoomfollowupsremain."
+    },
+    "/wiki/circuit-breaker": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally viewed all five contacts, covering all default segments at360/390/768/1280/1920:breadcrumb/byline,entiredefinition/explanation/keypoints/worksheet/sourcecontext,CTA/share/relatedlinksandfullfooter. No clipping/documentoverflow/overlap seen. SharedsharecontrastTHQ039isalreadytracked;noexternalshare/account/order/progressaction. Read rule-basedpause explanation,7/13/20percentUSmarketwideexample,15minLevel1/2before3:25pmregularsessionqualification,Level3dayend;LULDseparatefrommarketwidehalt/othermarkets. 5000priorcloseworksheet4650/4350/4000correct;notguaranteedexit/reopenprice andTradeHQdoesnotmodelrules. CurrentNYSE/LULDprimaryrulereadingandlight/zoom/keyboardfollowupsremain."
+    },
+    "/wiki/correlation-trading": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally viewed all five contacts, covering all default segments at360/390/768/1280/1920:breadcrumb/byline,entiredefinition/explanation/keypoints/worksheet/sourcecontext,CTA/share/relatedlinksandfullfooter. No clipping/documentoverflow/overlap seen. SharedsharecontrastTHQ039isalreadytracked;noexternalshare/account/order/progressaction. Read samplelinearassociationversuscausation/permanence,matchedreturnintervals/dates/data,undefinedconstantseries,regimechanges,borrow/cost/hedgemismatchrisk. Hypotheticalpairlong/shortcannotbeexecutedinspotTradeHQ;recalculatesecondwindowwithoutpromisingconvergence. SECbackgroundnotstrategyvalidation;fullsource/keyboard/light/zoomfollowupsremain."
+    },
+    "/wiki/dark-pool": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally viewed all five contacts, covering all default segments at360/390/768/1280/1920:breadcrumb/byline,entiredefinition/explanation/keypoints/worksheet/sourcecontext,CTA/share/relatedlinksandfullfooter. No clipping/documentoverflow/overlap seen. SharedsharecontrastTHQ039isalreadytracked;noexternalshare/account/order/progressaction. Read non-displayedpretradequotesversusposttradereporting;off-exchangeprintnotproofofdarkpool/participantintent,nocurrentmarketsharepercentageclaimed. Venuejurisdiction/instrument/timeperiodneeded,fees/liquidity/executionstillmatter. FINRA/SECpointerscontextual;TradeHQdoesnotmodelprivatevenues. Source/keyboard/light/zoomfollowupsremain."
+    },
+    "/wiki/day-trading": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally viewed all five contacts, covering all default segments at360/390/768/1280/1920:breadcrumb/byline,entiredefinition/explanation/keypoints/worksheet/sourcecontext,CTA/share/relatedlinksandfullfooter. No clipping/documentoverflow/overlap seen. SharedsharecontrastTHQ039isalreadytracked;noexternalshare/account/order/progressaction. Read samedayopening/closing,closuremayfailbecausehalt/outage/liquidity;no fixedtradecountorfulltimescreenuseestablishescompetence. No universal retaillossrateclaimed.100shares20to20.10=10grossless12modeledcost=2netloss;positioncloseendslaterexposure butnotproofrepeatprofitability. Broker/jurisdictionmarginrulesnotinvented;source/keyboard/light/zoomremain."
+    },
+    "/wiki/death-cross": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally viewed all five contacts, covering all default segments at360/390/768/1280/1920:breadcrumb/byline,entiredefinition/explanation/keypoints/worksheet/sourcecontext,CTA/share/relatedlinksandfullfooter. No clipping/documentoverflow/overlap seen. SharedsharecontrastTHQ039isalreadytracked;noexternalshare/account/order/progressaction. Read conventionalshorter/longerMA50/200crossaslagginghistoricalcalculation,nodownturnguarantee/professionalpositioninference. Constructsamecrosswithlaterrecoveryandcontinueddecline,includeexpenses/prespecifiedfrequencyandperiod. FidelityMAreferencequalified;no new sourceverificationfromlinkpresence. Source/keyboard/light/zoomremain."
     }
   }
 }

@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-10-25T10:22:59.674318+00:00",
+  "sources": [
+    {
+      "url": "https://www.optionseducation.org/advancedconcepts/theta",
+      "status": 200,
+      "sha256": "441736a1ac60d3fb30306966019e05a7b7a8081323f54f26ba291afc9372599d",
+      "textLength": 6820
+    },
+    {
+      "url": "https://www.optionseducation.org/advancedconcepts/vega",
+      "status": 200,
+      "sha256": "c2d937b88809ab852c903205557f5c7b7c9fd69ed9c9b33bbdd7adb376eb0db3",
+      "textLength": 6011
+    },
+    {
+      "url": "https://www.cmegroup.com/education/courses/introduction-to-futures/margin-know-what-is-needed.html",
+      "status": 200,
+      "sha256": "6c3166c81f35d23ab555784956b2c5c3b8afdf256bf7f18ee1e8b6ec2c84c1ed",
+      "textLength": 3137
+    },
+    {
+      "url": "https://www.optionseducation.org/advancedconcepts/delta",
+      "status": 200,
+      "sha256": "b61f19bfacea0f3679cd7ac09ff481ee5dc756e796960227c28ac8ad78541d6d",
+      "textLength": 8739
+    }
+  ],
+  "scope": "Selected actual substantive OIC/CME passages read. Full source texts retained only as workspace research; no full official source reproductions committed. Not complete financial or product-specific permission certification.",
+  "assessments": [
+    {
+      "path": "/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+      "corroborated": "OIC Delta definition/example supports theoretical0.50premium movement per1underlying move with other inputs held fixed. OIC Theta supports model estimate/time decay per day, nonlinear behavior and differing weekend/model conventions, rather than guaranteed realized profit. OIC Vega supports implied-volatility sensitivity per one-percentage-point change, separate from the volatility input itself. Lesson retains these qualifications.",
+      "remaining": "Gamma shape and calibrated probability distinction not independently completed in this followup; Cboe source, full Greeks interactions and adjusted contract risks remain."
+    },
+    {
+      "path": "/courses/futures-and-derivatives/margin-and-leverage-in-futures",
+      "corroborated": "CME margin lesson explicitly distinguishes deposit/collateral from borrowed securities purchase; maintenance can require immediate extra funds, reduced positions or liquidation. Amounts may change with risk and brokers may require more funds. The site correctly labels13000as assumed worksheet deposit and2500/13000as deposit-relative, not universal equity return.",
+      "remaining": "Current individual exchange/broker requirements, intraday clearing procedures and real financial execution remain outside this reading. Earlier contract specification receipt separately establishes50multiplier."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-10-25T10:58:42.780Z",
+  "sha": "65df89982a4ab4d0932c5f1135a11e7fb29d68e8",
+  "origin": "http://127.0.0.1:4180",
+  "outcome": "FAIL",
+  "rows": [
+    {
+      "width": 360,
+      "path": "/how-to-trade/btc",
+      "text": "crypto guidehow to trade bitcoinbitcoin is a digital asset with a protocol-defined issuance schedule. its market price is separate from that schedule and can change without a protocol change.practise btc now quick answerhow do you trade bitcoin step by step?to trade bitcoin: compare the coin’s percentage change with whole-account return using cash and holding values. → visit /trade/btc and read the quote and chart data-status labels; they may have different provenance. → using a hypothetical btc holding of 0.05 units at $50,000 per unit, calculate $2,500 of virtual exposure and a $2.50 entry fee at the simulator's 0.1% rate; then compare with the displayed practice quote. practise the full flow free on tradehq with $100,000 in virtual cash — no signup required. (educational simulation only — not financial advice.)step-by-step1compare the coin’s percentage change with whole-account return using cash and holding values.2visit /trade/btc and read the quote and chart data-status labels; they may have different provenance.3using a hypothetical btc holding of 0.05 units at $50,000 per unit, calculate $2,500 of virtual exposure and a $2.50 entry fee at the simulator's 0.1% rate; then compare with the displayed practice quote.4record the dated btc quote and an alternative 10% down-price case. for the same 0.05 btc, that implies a $250 gross holding loss before fees, not a 10% loss of the whole $100,000 account.5create a second btc price scenario with the same unit count so gross holding return and total-account return can be compared.beginner tipbegin with the difference between coin return and account return. a hypothetical 10% btc rise applied to a $10,000 holding adds $1,000 before costs, while an otherwise cash-only $100,000 account rises only 1%. the same headline percentage can therefore describe a much larger asset move than portfolio move.risk warningbtc price risk and quote-data risk are distinct. a correctly identified asset can still have an older provider observation; a recent page fetch does not make that observation current. a small btc weight can limit its contribution to one assumed account move, but it cannot prevent the holding from losing value. real execution is not reproduced by a paper mark.student perspectivea short btc study session can focus on one unit conversion: coin quantity × dollars per coin. keep virtual accounting separate from questions about real wallets, local access or funding. the practice account holds no real coins and makes no on-chain transfer; current eligibility and tax questions belong to official local information.(educational simulation only — not financial advice.)what actually moves bitcoincompare the protocol supply schedule, exchange trading activity and news claims as separate sources of information. a halving event does not by itself determine the direction or timing of a price change.compare a dated primary description of bitcoin with the practice chart. a simulated movement is not evidence that a particular news item changed the real market price.worked hypothetical practice exampleuse a hypothetical $100,000 account with $90,000 cash and a $10,000 btc holding before fees. a selected 10% btc rise takes the holding to $11,000 and total value to $101,000, before excluded costs. the asset return is 10%; account return is 1%. the current holding weight is $11,000 ÷ $101,000 = about 10.89%, not 11% of the original balance. if the $10,000 purchase incurred the simulator’s 0.1% fee, cash would instead be $89,990 and total marked equity $100,990. these inputs teach accounting rather than recommend exposure.market sessions and observation limitationscompare btc’s provider observation timestamp with the chart’s source label. a periodically refreshed reference can differ from a venue’s last trade or a different-minute quote without proving either is fraudulent. save the observation time used in your worksheet so that a later account change can be reconstructed. opening the page is not an exchange fill.common mistakes specific to bitcoinreporting the btc return as the entire account return despite a large cash balance.calculating new allocation with the original account denominator.calling an aggregate provider mark a reserved exchange fill.ignoring both buy and sell fees in the result.how to review the trade afterwardswrite the position’s percentage move, dollar change and whole-account return on separate lines. recompute allocation using the new total. then reconcile fees and inspect observation age. this review prevents a profitable asset move from being mistaken for an equally large account return, and preserves unfavorable as well as favorable cases.(educational simulation only — not financial advice.)keep goingpractice bitcoin in the simulatorstructured coursestrading glossaryasset comparisonsmore guideshow to trade ethereumhow to trade teslahow to trade nvidiahow to trade s&p 500 etfhow to trade solanahomehow to tradebitcoinfrequently asked questionscan i learn to trade bitcoin for free?how much money do i need to start trading bitcoin?is trading bitcoin risky?primary sources and further readingsources explain the instrument or market structure, not hypothetical returns. always review dates and distinguish real exchange costs from the simulator.bitcoin — original protocol paper",
+      "mainPath": null,
+      "articles": [
+        "ARTICLE"
+      ],
+      "links": [
+        "http://127.0.0.1:4180/trade/btc",
+        "http://127.0.0.1:4180/trade/btc",
+        "http://127.0.0.1:4180/courses",
+        "http://127.0.0.1:4180/wiki",
+        "http://127.0.0.1:4180/compare",
+        "http://127.0.0.1:4180/how-to-trade/eth",
+        "http://127.0.0.1:4180/how-to-trade/tsla",
+        "http://127.0.0.1:4180/how-to-trade/nvda",
+        "http://127.0.0.1:4180/how-to-trade/spy",
+        "http://127.0.0.1:4180/how-to-trade/sol",
+        "http://127.0.0.1:4180/",
+        "http://127.0.0.1:4180/how-to-trade",
+        "https://bitcoin.org/en/bitcoin-paper"
+      ],
+      "overflow": false
+    }
+  ],
+  "runtimeErrors": [],
+  "failure": "One guide article before footer /how-to-trade/btc at 360\n+ actual - expected\n\n  [\n+   'ARTICLE'\n-   'MAIN'\n  ]\n",
+  "scope": "Actualcompiled/deployedguides:6routesx5widths,preservedmainparagraphs/lists/references,FAQandhubnavigation;noorders,accountsorprogress. Imagesrequirepersonalviewing."
+}

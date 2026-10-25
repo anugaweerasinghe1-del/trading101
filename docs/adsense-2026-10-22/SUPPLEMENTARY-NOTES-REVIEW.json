@@ -3,8 +3,8 @@
   "sourceCandidate": "71b84461ab0f531da44da54d8670ad1bef0628ea",
   "equivalentProductionSHA": "8781a5ed3b797e720a75e7aa55cf024bd45bba97",
   "sourceExpectedArticles": 83,
-  "actualRenderedArticlesRead": 36,
-  "sourceExpectedArticlesNotYetIndividuallyReviewed": 47,
+  "actualRenderedArticlesRead": 46,
+  "sourceExpectedArticlesNotYetIndividuallyReviewed": 37,
   "routes": [
     {
       "path": "/",
@@ -156,44 +156,44 @@
     {
       "path": "/how-to-trade/tsla",
       "expectedFromCurrentBuiltRouteSource": true,
-      "actualRenderedPresenceVerified": false,
-      "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "actualRenderedPresenceVerified": true,
+      "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+      "assessment": "Read both full rendered copies:delivery/revenue/marginsdistinct;4shares200=800plus0.80entryfee,180gap80grossloss;20shares200=4000plus4buyfee,180mark400grossloss;190plannedthreshold200lossnotguaranteedstopfill. Nooptions/votingrights/realownership,narrativeprespecifiednotrewrittenafteroutcome;issuer/sourceandoriginalityfollowupsremain."
     },
     {
       "path": "/how-to-trade/eth",
       "expectedFromCurrentBuiltRouteSource": true,
-      "actualRenderedPresenceVerified": false,
-      "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "actualRenderedPresenceVerified": true,
+      "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+      "assessment": "Read both full rendered copies:networkversusETH,gasversussimulatorfee,nostaking/transfer;0.5ETHat3200=1600+1.60fee;2ETHat2500=5000+5fee;2400mark gives200grossloss/205equityloss afterentryfee,4.80exitfeeifthen sold. Networkdemandnotautomaticpricerise;completecurrentprimary-sourcecorroborationremains."
     },
     {
       "path": "/how-to-trade/btc",
       "expectedFromCurrentBuiltRouteSource": true,
-      "actualRenderedPresenceVerified": false,
-      "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "actualRenderedPresenceVerified": true,
+      "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+      "assessment": "Read both full rendered copies:0.05BTC at50000=2500 exposure and2.50entryfee;250downside beforecost;10000of100000 rising10percent yields1percent wholeaccount beforecost;11000/101000=10.89percent currentweight. Protocolissuance separatefromprice,provider timestampnotexchangefill,nocustody. Hypotheticalarithmetic internallyconsistent;BTCprimarysourceandfulloriginalityreviewremain."
     },
     {
       "path": "/how-to-trade/sol",
       "expectedFromCurrentBuiltRouteSource": true,
-      "actualRenderedPresenceVerified": false,
-      "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "actualRenderedPresenceVerified": true,
+      "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+      "assessment": "Read both full rendered copies:SOLtokenversusSolananetwork/onchainfees,nostaking/transfer/derivatives;40SOL125=5000+5buyfee;130exit5200less5.20sellfee gives189.80roundtripresult;115mark4600gives400grosslossbeforefees. Quotesnotguaranteedfills,24/7notconstantliquidity,adversecasepreserved;networksourceandoriginalityfollowupsremain."
     },
     {
       "path": "/how-to-trade/spy",
       "expectedFromCurrentBuiltRouteSource": true,
-      "actualRenderedPresenceVerified": false,
-      "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "actualRenderedPresenceVerified": true,
+      "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+      "assessment": "Read both full rendered copies:index/fund/countrydistinction,nodirectownershipofeachconstituent;2unitsat500=1000+1fee;10units500=5000,2percentfall=100lossand0.1percentoriginalaccount;5entryfeeleaves99895equityatmark. Distributions/expensesnotinvented,sessions/provenancequalified;fundsourceandcompleteoriginalityfollowupsremain."
     },
     {
       "path": "/how-to-trade/nvda",
       "expectedFromCurrentBuiltRouteSource": true,
-      "actualRenderedPresenceVerified": false,
-      "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "actualRenderedPresenceVerified": true,
+      "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+      "assessment": "Read both full rendered copies:businessmetricsversusshareprice;5sharesat120=600plus0.60entryfee;2000directplus8000fundwithassumed10percentNVDA gives2800/10000=28percent lookthroughexposure and280lossif10percentfallwithotherholdingsfixed. Fundweightdated/hypothetical,nominalpricecannotestablishfairvalue,noperformancepromise;issuer/currentfilingandoriginalityfollowupsremain."
     },
     {
       "path": "/learn/country",
@@ -322,28 +322,40 @@
       "expectedFromCurrentBuiltRouteSource": true,
       "actualRenderedPresenceVerified": true,
       "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
-      "assessment": "Entire actual appended macrotrackarticle read: CPIcomponent surprises, FOMCannouncements/expectations, yieldcurveassociation notstandaloneforecast, DXYsixcurrency limits, macro dashboard alternatives, no forecast/leveragepromise; allfive lesson summaries, completion criterion, attribution, references/disclaimer read. Official current primaryclaims still require source corroboration."
+      "assessment": "Entire actual appended macrotrackarticle read: CPIcomponent surprises, FOMCannouncements/expectations, yieldcurveassociation notstandaloneforecast, DXYsixcurrency limits, macro dashboard alternatives, no forecast/leveragepromise; allfive lesson summaries, completion criterion, attribution, references/disclaimer read. Official current primaryclaims still require source corroboration.",
+      "currentSeparateArticleState": "INTEGRATED_IN_AUTHORED_MAIN_PR240",
+      "integrationEvidence": "evidence/PR240-PRODUCTION-BROWSER.json",
+      "integrationScope": "Preservedallsubstantiveparagraphs/outcomes/lessoncardcopy; integrateduniquepublisher/badge/simulatorscopeinmain. Historicaloutside-mainreadingreceiptretained."
     },
     {
       "path": "/courses/futures-and-derivatives",
       "expectedFromCurrentBuiltRouteSource": true,
       "actualRenderedPresenceVerified": true,
       "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
-      "assessment": "Read entire appended futures track text and all5lesson summaries/badge/reference labels. Distinguishes spot simulator from contract worksheets; margin collateral/variation calls mayexceeddeposit, termstructure/delivery/rolling/basisrisk and micro multipliers; no universal suitable size/survival/leverage claim. Actual contract specifications, expiry/cash-settlement exceptions and badgecontrolstate require separate source/control checks."
+      "assessment": "Read entire appended futures track text and all5lesson summaries/badge/reference labels. Distinguishes spot simulator from contract worksheets; margin collateral/variation calls mayexceeddeposit, termstructure/delivery/rolling/basisrisk and micro multipliers; no universal suitable size/survival/leverage claim. Actual contract specifications, expiry/cash-settlement exceptions and badgecontrolstate require separate source/control checks.",
+      "currentSeparateArticleState": "INTEGRATED_IN_AUTHORED_MAIN_PR240",
+      "integrationEvidence": "evidence/PR240-PRODUCTION-BROWSER.json",
+      "integrationScope": "Preservedallsubstantiveparagraphs/outcomes/lessoncardcopy; integrateduniquepublisher/badge/simulatorscopeinmain. Historicaloutside-mainreadingreceiptretained."
     },
     {
       "path": "/courses/trading-psychology-mastery",
       "expectedFromCurrentBuiltRouteSource": true,
       "actualRenderedPresenceVerified": true,
       "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
-      "assessment": "Entireappendedarticle read: biasexamples, optionalmade-updata/checklists, observationjournal, drawdownarithmetic, harm/supportscope, allfivelessons andcompletioncriterion/reference/disclaimer. No fixedroutine/forecast promise. Oldtrackname retainedincompletionbadgecriterion; no newinaccuracyfindingassertedfromnamealone. Materialresearch sourcesstillneedverification."
+      "assessment": "Entireappendedarticle read: biasexamples, optionalmade-updata/checklists, observationjournal, drawdownarithmetic, harm/supportscope, allfivelessons andcompletioncriterion/reference/disclaimer. No fixedroutine/forecast promise. Oldtrackname retainedincompletionbadgecriterion; no newinaccuracyfindingassertedfromnamealone. Materialresearch sourcesstillneedverification.",
+      "currentSeparateArticleState": "INTEGRATED_IN_AUTHORED_MAIN_PR240",
+      "integrationEvidence": "evidence/PR240-PRODUCTION-BROWSER.json",
+      "integrationScope": "Preservedallsubstantiveparagraphs/outcomes/lessoncardcopy; integrateduniquepublisher/badge/simulatorscopeinmain. Historicaloutside-mainreadingreceiptretained."
     },
     {
       "path": "/courses/options-trading-fundamentals",
       "expectedFromCurrentBuiltRouteSource": true,
       "actualRenderedPresenceVerified": true,
       "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
-      "assessment": "Read entire actual appended options track article, all5lesson summaries and badge criteria/reference labels. It explicitly limits options/futures to worksheets and simulator to spot; bounded spread expiration payoff separated from execution/assignment/stock exposure, no income/signals/naked-option instruction promised. Badge criterion requires everylesson andquiz; saved-state not altered/tested here. Material/source/contract claims not certified by this default text reading."
+      "assessment": "Read entire actual appended options track article, all5lesson summaries and badge criteria/reference labels. It explicitly limits options/futures to worksheets and simulator to spot; bounded spread expiration payoff separated from execution/assignment/stock exposure, no income/signals/naked-option instruction promised. Badge criterion requires everylesson andquiz; saved-state not altered/tested here. Material/source/contract claims not certified by this default text reading.",
+      "currentSeparateArticleState": "INTEGRATED_IN_AUTHORED_MAIN_PR240",
+      "integrationEvidence": "evidence/PR240-PRODUCTION-BROWSER.json",
+      "integrationScope": "Preservedallsubstantiveparagraphs/outcomes/lessoncardcopy; integrateduniquepublisher/badge/simulatorscopeinmain. Historicaloutside-mainreadingreceiptretained."
     },
     {
       "path": "/courses/macro-reading-for-traders/reading-cpi-and-inflation",
@@ -355,9 +367,9 @@
     {
       "path": "/courses/macro-reading-for-traders/the-fed-and-fomc-cycle",
       "expectedFromCurrentBuiltRouteSource": true,
-      "actualRenderedPresenceVerified": false,
-      "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "actualRenderedPresenceVerified": true,
+      "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+      "assessment": "Entire actualrenderednotes read including allfourquestion/option/key/feedback sets. Dots describedas individualparticipants appropriatepolicy assessments, notonlyvoters orCommittee promise; probabilities distinguish marketpricingfrom guaranteedoutcomes. Sourcepointer dates explicit; references notall independentlyverified."
     },
     {
       "path": "/courses/macro-reading-for-traders/the-dollar-index-dxy",
@@ -411,9 +423,9 @@
     {
       "path": "/courses/futures-and-derivatives/margin-and-leverage-in-futures",
       "expectedFromCurrentBuiltRouteSource": true,
-      "actualRenderedPresenceVerified": false,
-      "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "actualRenderedPresenceVerified": true,
+      "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+      "assessment": "Entire rendered appended notes read including all four question options/keys/explanations. Deposit13000 is explicitly assumed worksheet input, not current exchange margin or total accountequity; broker timing/action distinctions clear. Repeated lesson article still requires separate preservation/integration analysis; currentPR240 covers onlyoverviews."
     },
     {
       "path": "/courses/trading-psychology-mastery/the-trading-journal",
@@ -425,9 +437,9 @@
     {
       "path": "/courses/trading-psychology-mastery/revenge-trading-and-tilt",
       "expectedFromCurrentBuiltRouteSource": true,
-      "actualRenderedPresenceVerified": false,
-      "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "actualRenderedPresenceVerified": true,
+      "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+      "assessment": "Entire rendered appended article read including four question/option/key/feedback sets. Cooldownchoiceafterfiveseconds notdailylockoutor guaranteedlosslimit; actualsize/accountdefinition qualification present. No universal24hbreakrecovery or diagnosis claimed. Sourceunderuncertainty study and deployed financialbehavior notcertified."
     },
     {
       "path": "/courses/trading-psychology-mastery/handling-drawdowns",
@@ -460,9 +472,9 @@
     {
       "path": "/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
       "expectedFromCurrentBuiltRouteSource": true,
-      "actualRenderedPresenceVerified": false,
-      "readingStatus": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "assessment": null
+      "actualRenderedPresenceVerified": true,
+      "readingStatus": "ACTUAL_RENDERED_NOTES_READ",
+      "assessment": "Entire appended actual rendered article read including four question/option/key/feedback sets and sources. Model delta not calibrated real-world probability or payoff guarantee; theta estimate not assured return; IVcrush not inevitable after every earnings release. All numeric examples internally consistent. Main/notes repetition remains a separate lesson integration investigation; PR240 affects overview routes only."
     },
     {
       "path": "/courses/options-trading-fundamentals/implied-volatility-and-earnings",
@@ -612,10 +624,10 @@
       "assessment": null
     }
   ],
-  "currentVerifiedProductionSHA": "4a1288e4710d60eebe2f77c23badd3aed0030f44",
-  "currentSeparateArticlesExpected": 75,
-  "currentSeparateArticlesActuallyRead": 34,
-  "currentSeparateArticlesNotYetIndividuallyRead": 41,
-  "historicalSeparateArticlesNowIntegratedInMain": 8,
+  "currentVerifiedProductionSHA": "65df89982a4ab4d0932c5f1135a11e7fb29d68e8",
+  "currentSeparateArticlesExpected": 71,
+  "currentSeparateArticlesActuallyRead": 40,
+  "currentSeparateArticlesNotYetIndividuallyRead": 31,
+  "historicalSeparateArticlesNowIntegratedInMain": 12,
   "historicalBaselineScopePreserved": true
 }

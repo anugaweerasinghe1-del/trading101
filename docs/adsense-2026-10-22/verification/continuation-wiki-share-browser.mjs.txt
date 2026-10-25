@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {writeFileSync,mkdirSync} from 'node:fs';
+import {openAuditPage,pause} from '/workspace/trading101/docs/adsense-2026-10-22/browser-session.mjs';
+import {verifyWikiShareContrast,contrastRatio} from '/workspace/trading101-comparison-article/scripts/verify-wiki-share-contrast.mjs';
+const [origin,sha,stem]=process.argv.slice(2);assert.ok(sha==='LOCAL'||/^[a-f0-9]{40}$/.test(sha));assert.match(stem,/^[A-Z0-9-]+$/);
+const p=await openAuditPage(),rows=[],errors=[],root='/workspace/trading101/docs/adsense-2026-10-22/evidence/';mkdirSync(root+stem.toLowerCase(),{recursive:true});let width,path,failure=null;
+await p.send('Runtime.enable');await p.send('Fetch.enable',{patterns:[{urlPattern:'https://*.supabase.co/*',requestStage:'Request'}]});
+p.onEvent(m=>{if(m.method==='Runtime.exceptionThrown')errors.push(m.params.exceptionDetails.text);if(m.method==='Fetch.requestPaused'){const{requestId,request}=m.params,ok=['GET','HEAD','OPTIONS'].includes(request.method);p.send(ok?'Fetch.continueRequest':'Fetch.failRequest',ok?{requestId}:{requestId,errorReason:'Aborted'}).catch(()=>{});}});
+try{
+ await verifyWikiShareContrast({origin,delay:pause,waitUntil:e=>p.wait(e),send:async(method,args)=>{if(method==='Emulation.setDeviceMetricsOverride')width=args.width;if(method==='Page.navigate')path=new URL(args.url).pathname;return p.send(method,args);},evaluate:async(...args)=>{
+  const row=await p.evaluate(...args);
+  if(row&&row.color&&row.background&&row.fontSize){const state=await p.evaluate("({theme:document.documentElement.classList.contains('light')?'light':'dark',hover:document.querySelector('main button').matches(':hover')})");rows.push({path,width,...state,...row,contrast:contrastRatio(row.color,row.background)});if(path==='/wiki/backtesting'&&[360,1280].includes(width)&&!state.hover){await p.evaluate("document.querySelector('main button').scrollIntoView({block:'center'});true");await p.screenshot(root+stem.toLowerCase()+'/share-'+width+'-'+state.theme+'.png');}}
+  return row;
+ }});assert.equal(rows.length,80);assert.deepEqual(errors,[]);
+}catch(e){failure=e.message;throw e;}finally{writeFileSync(root+stem+'-BROWSER.json',JSON.stringify({checkedAt:new Date().toISOString(),sha,origin,outcome:failure?'FAIL':'PASS',rows,runtimeErrors:errors,failure,scope:'Actual computed button colors: four glossary routes atfivewidths,light/dark,normal/forcedCSShover. Share action never activated. Local loopback is compiled fixture; remoteorigin is deployed interface. Screenshots require individual viewing.'},null,2)+'\n');await p.close();}

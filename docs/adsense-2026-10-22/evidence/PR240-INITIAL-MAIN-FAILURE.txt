@@ -1,0 +1,25 @@
+9.5062421Z BROWSER_NAVIGATE http://127.0.0.1:33627/trader/me
+2026-10-25T10:27:59.7661262Z PASS local profile availability: 20 rendered empty/buy-only/losing/winning width states; valid zero retained; no order or account action
+2026-10-25T10:27:59.7665853Z BROWSER_NAVIGATE http://127.0.0.1:33627/ai-mentor
+2026-10-25T10:28:01.0663862Z BROWSER_NAVIGATE http://127.0.0.1:33627/trade/btc
+2026-10-25T10:28:01.9408117Z node:internal/modules/run_main:123
+2026-10-25T10:28:01.9408868Z     triggerUncaughtException(
+2026-10-25T10:28:01.9409408Z     ^
+2026-10-25T10:28:01.9409630Z 
+2026-10-25T10:28:01.9410076Z AssertionError [ERR_ASSERTION]: Mentor page fits 768px
+2026-10-25T10:28:01.9410559Z 
+2026-10-25T10:28:01.9410756Z true !== false
+2026-10-25T10:28:01.9411087Z 
+2026-10-25T10:28:01.9411899Z     at verifyMentorCopy (file:///home/runner/work/trading101/trading101/scripts/verify-mentor-copy.mjs:36:16)
+2026-10-25T10:28:01.9413337Z     at async file:///home/runner/work/trading101/trading101/scripts/verify-publisher-browser.mjs:261:3 {
+2026-10-25T10:28:01.9414155Z   generatedMessage: false,
+2026-10-25T10:28:01.9414538Z   code: 'ERR_ASSERTION',
+2026-10-25T10:28:01.9414929Z   actual: true,
+2026-10-25T10:28:01.9415250Z   expected: false,
+2026-10-25T10:28:01.9415599Z   operator: 'strictEqual',
+2026-10-25T10:28:01.9415968Z   diff: 'simple'
+2026-10-25T10:28:01.9416551Z }
+2026-10-25T10:28:01.9416724Z 
+2026-10-25T10:28:01.9416865Z Node.js v22.23.3
+2026-10-25T10:28:01.9508195Z ##[error]Process completed with exit code 1.
+2026-10-25T10:28:01.9692560Z

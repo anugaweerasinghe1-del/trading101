@@ -1,0 +1,63 @@
+BROWSER_NAVIGATE http://127.0.0.1:44449/learn-trading-guide
+BROWSER_NAVIGATE http://127.0.0.1:44449/portfolio
+PASS named progress indicators: 20 rendered route/width/theme states; no completion or trade actions
+BROWSER_NAVIGATE http://127.0.0.1:44449/trader/me
+BROWSER_NAVIGATE http://127.0.0.1:44449/trader/me
+BROWSER_NAVIGATE http://127.0.0.1:44449/trader/me
+BROWSER_NAVIGATE http://127.0.0.1:44449/trader/me
+BROWSER_NAVIGATE http://127.0.0.1:44449/trader/me
+PASS local profile availability: 20 rendered empty/buy-only/losing/winning width states; valid zero retained; no order or account action
+BROWSER_NAVIGATE http://127.0.0.1:44449/ai-mentor
+BROWSER_NAVIGATE http://127.0.0.1:44449/trade/btc
+PASS mentor plain-text copy: 20 public/portfolio width/theme states; disclaimers and numeric labels preserved; no trade/account action
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:44449/compare/bitcoin-vs-ethereum
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:44449/compare/bitcoin-vs-ethereum
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:44449/compare/bitcoin-vs-ethereum
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:44449/compare/bitcoin-vs-ethereum
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:44449/compare/bitcoin-vs-ethereum
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:44449/compare/tesla-vs-nvidia
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:44449/compare/tesla-vs-nvidia
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:44449/compare/tesla-vs-nvidia
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:44449/compare/tesla-vs-nvidia
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:44449/compare/tesla-vs-nvidia
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:44449/compare/bitcoin-vs-gold
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:44449/compare/bitcoin-vs-gold
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:44449/compare/bitcoin-vs-gold
+BROWSER_NAVIGATE about:blank
+BROWSER_NAVIGATE http://127.0.0.1:44449/compare/bitcoin-vs-gold
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Exactly one comparison article in main /compare/bitcoin-vs-gold at 1280
++ actual - expected
+
++ []
+- [
+-   'MAIN'
+- ]
+
+    at verifyComparisonArticle (file:///workspace/trading101-comparison-article/scripts/verify-comparison-article.mjs:19:12)
+    at async file:///workspace/trading101-comparison-article/scripts/verify-publisher-browser.mjs:262:3 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [],
+  expected: [ 'MAIN' ],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

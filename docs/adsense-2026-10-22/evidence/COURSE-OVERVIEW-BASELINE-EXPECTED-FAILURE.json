@@ -1,0 +1,5 @@
+{
+  "outcome": "EXPECTED_FAILURE",
+  "assertion": "One course overview in main /courses/options-trading-fundamentals at 360\n+ actual - expected\n\n  [\n+   'ARTICLE'\n-   'MAIN'\n  ]\n",
+  "scope": "New actual compiled-content regression against unchanged old baseline build; appended ARTICLE correctly rejected before changes. Initial helper attempted wrong loadSiteData export; corrected to existing courseTracks before this product assertion ran."
+}

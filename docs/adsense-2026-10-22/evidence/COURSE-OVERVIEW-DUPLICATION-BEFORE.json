@@ -1,0 +1,455 @@
+{
+  "checkedAt": "2026-10-25T10:00:27.583Z",
+  "sha": "4a1288e4710d60eebe2f77c23badd3aed0030f44",
+  "rows": [
+    {
+      "path": "/courses/options-trading-fundamentals",
+      "main": "Home\nCourses\nOptions Trading Fundamentals\nIntermediate\nOptions Trading Fundamentals\n\nCalls, puts, spreads and Greeks — decoded for beginners.\n\nYour progress\n0%\nEarn the\nOptions Fundamentals Completion\nbadge on completion\n\nA structured introduction to listed options — from call contracts and the Greeks to defined-risk spread examples. Work through contract payoffs on paper; TradeHQ's spot simulator does not execute options contracts.\n\nWhat you'll be able to do\nRead an option chain and explain what a specific call or put contract obliges each side to do.\nEstimate how a position's value changes when price, time or implied volatility moves, using delta, theta and vega rather than intuition.\nCalculate an intact vertical spread’s theoretical expiration payoff and distinguish costs, assignment and separate stock exposure.\nRecognise why an option can lose money even when the directional call was correct.\nCompare hypothetical option quantities with a stated loss budget without claiming any amount is personally survivable.\nBefore you start\n\nYou should be comfortable with what a share of stock is, how a market order differs from a limit order, and what a percentage return means. No mathematics beyond arithmetic is required. If you have never placed a simulated trade, spend an hour in the practice terminal first — the options lessons assume you have seen an order ticket.\n\nHow the lessons build on each other\n\nThe track moves from object to behaviour to structure. The first lesson defines the contract itself, because almost every later misunderstanding traces back to a fuzzy definition. The Greeks lesson then explains why the contract's price moves the way it does, which is what turns a static definition into something you can reason about. Spread worksheets compare bounded expiration payoffs under stated assumptions, separately from assignment, costs and stock exposure. The implied-volatility lesson compares direction, time and volatility without ranking their frequency as causes of losses. The final lesson is risk management, placed last deliberately: rules only make sense once you understand what they are protecting you from.\n\nWho this track is not for\n\nThis is not a track about income strategies, signal services or generating consistent weekly returns. It will not tell you which contracts to buy, and it does not cover selling naked options, which carries loss potential far beyond the premium received. If you are looking for trade recommendations rather than an explanation of how the instrument works, this material will disappoint you.\n\nLessons\nLESSON 1\nWhat Is an Option? Calls & Puts Explained\nA stock option gives its buyer a contractual right; contract size, exercise style and settlement terms determine what that right involves.\n8 min\nLESSON 2\nThe Greeks — Delta, Gamma, Theta & Vega\nThe four Greeks quantify how an option's price reacts to stock moves, volatility, and the passage of time.\n10 min\nLESSON 3\nDefined-Risk Spreads — Verticals & Iron Condors\nVertical spreads and iron condors illustrate bounded expiration payoffs, with execution and assignment risks to consider.\n9 min\nLESSON 4\nImplied Volatility & Trading Around Earnings\nImplied volatility is a model-implied input derived from option prices, with limits as a forecast of realised volatility.\n8 min\nLESSON 5\nOptions Risk Management — Sizing, Rolling & Cutting Losses\nOptions losses can be amplified by position size, leverage, volatility and time decay. This lesson measures those risks using hypothetical contract examples.\n9 min\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "page": {
+        "path": "/courses/options-trading-fundamentals",
+        "heading": "Options Trading Fundamentals",
+        "summary": "Calls, puts, spreads and Greeks — decoded for beginners. Includes 5 lessons, quizzes, sources, and a completion badge. The $100,000 simulator supports spot instruments; options and futures contract mechanics are worksheet exercises.",
+        "sections": [
+          {
+            "h": "About this track",
+            "p": [
+              "Calls, puts, spreads and Greeks — decoded for beginners.",
+              "A structured introduction to listed options — from call contracts and the Greeks to defined-risk spread examples. Work through contract payoffs on paper; TradeHQ's spot simulator does not execute options contracts."
+            ]
+          },
+          {
+            "h": "What you will be able to do",
+            "list": [
+              "Read an option chain and explain what a specific call or put contract obliges each side to do.",
+              "Estimate how a position's value changes when price, time or implied volatility moves, using delta, theta and vega rather than intuition.",
+              "Calculate an intact vertical spread’s theoretical expiration payoff and distinguish costs, assignment and separate stock exposure.",
+              "Recognise why an option can lose money even when the directional call was correct.",
+              "Compare hypothetical option quantities with a stated loss budget without claiming any amount is personally survivable."
+            ]
+          },
+          {
+            "h": "Before you start",
+            "p": [
+              "You should be comfortable with what a share of stock is, how a market order differs from a limit order, and what a percentage return means. No mathematics beyond arithmetic is required. If you have never placed a simulated trade, spend an hour in the practice terminal first — the options lessons assume you have seen an order ticket."
+            ]
+          },
+          {
+            "h": "How the lessons build",
+            "p": [
+              "The track moves from object to behaviour to structure. The first lesson defines the contract itself, because almost every later misunderstanding traces back to a fuzzy definition. The Greeks lesson then explains why the contract's price moves the way it does, which is what turns a static definition into something you can reason about. Spread worksheets compare bounded expiration payoffs under stated assumptions, separately from assignment, costs and stock exposure. The implied-volatility lesson compares direction, time and volatility without ranking their frequency as causes of losses. The final lesson is risk management, placed last deliberately: rules only make sense once you understand what they are protecting you from."
+            ]
+          },
+          {
+            "h": "Who this track is not for",
+            "p": [
+              "This is not a track about income strategies, signal services or generating consistent weekly returns. It will not tell you which contracts to buy, and it does not cover selling naked options, which carries loss potential far beyond the premium received. If you are looking for trade recommendations rather than an explanation of how the instrument works, this material will disappoint you."
+            ]
+          },
+          {
+            "h": "Lessons in this track",
+            "list": [
+              "What Is an Option? Calls & Puts Explained (8 min) — A stock option gives its buyer a contractual right; contract size, exercise style and settlement terms determine what that right involves.",
+              "The Greeks — Delta, Gamma, Theta & Vega (10 min) — The four Greeks quantify how an option's price reacts to stock moves, volatility, and the passage of time.",
+              "Defined-Risk Spreads — Verticals & Iron Condors (9 min) — Vertical spreads and iron condors illustrate bounded expiration payoffs, with execution and assignment risks to consider.",
+              "Implied Volatility & Trading Around Earnings (8 min) — Implied volatility is a model-implied input derived from option prices, with limits as a forecast of realised volatility.",
+              "Options Risk Management — Sizing, Rolling & Cutting Losses (9 min) — Options losses can be amplified by position size, leverage, volatility and time decay. This lesson measures those risks using hypothetical contract examples."
+            ]
+          },
+          {
+            "h": "Completion badge",
+            "p": [
+              "Options Fundamentals Completion: Awarded after completing every lesson and submitting every quiz in the Options Trading Fundamentals track. Educational simulation only — not financial advice."
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "/courses/options-trading-fundamentals/what-is-an-option",
+            "label": "What Is an Option? Calls & Puts Explained"
+          },
+          {
+            "href": "/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+            "label": "The Greeks — Delta, Gamma, Theta & Vega"
+          },
+          {
+            "href": "/courses/options-trading-fundamentals/defined-risk-spreads",
+            "label": "Defined-Risk Spreads — Verticals & Iron Condors"
+          },
+          {
+            "href": "/courses/options-trading-fundamentals/implied-volatility-and-earnings",
+            "label": "Implied Volatility & Trading Around Earnings"
+          },
+          {
+            "href": "/courses/options-trading-fundamentals/options-risk-management",
+            "label": "Options Risk Management — Sizing, Rolling & Cutting Losses"
+          },
+          {
+            "href": "/courses",
+            "label": "All courses"
+          }
+        ]
+      },
+      "repeatedMainParagraphs": [
+        {
+          "section": "About this track",
+          "text": "Calls, puts, spreads and Greeks — decoded for beginners."
+        },
+        {
+          "section": "About this track",
+          "text": "A structured introduction to listed options — from call contracts and the Greeks to defined-risk spread examples. Work through contract payoffs on paper; TradeHQ's spot simulator does not execute options contracts."
+        },
+        {
+          "section": "Before you start",
+          "text": "You should be comfortable with what a share of stock is, how a market order differs from a limit order, and what a percentage return means. No mathematics beyond arithmetic is required. If you have never placed a simulated trade, spend an hour in the practice terminal first — the options lessons assume you have seen an order ticket."
+        },
+        {
+          "section": "How the lessons build",
+          "text": "The track moves from object to behaviour to structure. The first lesson defines the contract itself, because almost every later misunderstanding traces back to a fuzzy definition. The Greeks lesson then explains why the contract's price moves the way it does, which is what turns a static definition into something you can reason about. Spread worksheets compare bounded expiration payoffs under stated assumptions, separately from assignment, costs and stock exposure. The implied-volatility lesson compares direction, time and volatility without ranking their frequency as causes of losses. The final lesson is risk management, placed last deliberately: rules only make sense once you understand what they are protecting you from."
+        },
+        {
+          "section": "Who this track is not for",
+          "text": "This is not a track about income strategies, signal services or generating consistent weekly returns. It will not tell you which contracts to buy, and it does not cover selling naked options, which carries loss potential far beyond the premium received. If you are looking for trade recommendations rather than an explanation of how the instrument works, this material will disappoint you."
+        }
+      ],
+      "notesAfterFooter": true,
+      "notesText": "Learning notes: Options Trading Fundamentals\n\nCalls, puts, spreads and Greeks — decoded for beginners. Includes 5 lessons, quizzes, sources, and a completion badge. The $100,000 simulator supports spot instruments; options and futures contract mechanics are worksheet exercises.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nAbout this track\n\nCalls, puts, spreads and Greeks — decoded for beginners.\n\nA structured introduction to listed options — from call contracts and the Greeks to defined-risk spread examples. Work through contract payoffs on paper; TradeHQ's spot simulator does not execute options contracts.\n\nWhat you will be able to do\nRead an option chain and explain what a specific call or put contract obliges each side to do.\nEstimate how a position's value changes when price, time or implied volatility moves, using delta, theta and vega rather than intuition.\nCalculate an intact vertical spread’s theoretical expiration payoff and distinguish costs, assignment and separate stock exposure.\nRecognise why an option can lose money even when the directional call was correct.\nCompare hypothetical option quantities with a stated loss budget without claiming any amount is personally survivable.\nBefore you start\n\nYou should be comfortable with what a share of stock is, how a market order differs from a limit order, and what a percentage return means. No mathematics beyond arithmetic is required. If you have never placed a simulated trade, spend an hour in the practice terminal first — the options lessons assume you have seen an order ticket.\n\nHow the lessons build\n\nThe track moves from object to behaviour to structure. The first lesson defines the contract itself, because almost every later misunderstanding traces back to a fuzzy definition. The Greeks lesson then explains why the contract's price moves the way it does, which is what turns a static definition into something you can reason about. Spread worksheets compare bounded expiration payoffs under stated assumptions, separately from assignment, costs and stock exposure. The implied-volatility lesson compares direction, time and volatility without ranking their frequency as causes of losses. The final lesson is risk management, placed last deliberately: rules only make sense once you understand what they are protecting you from.\n\nWho this track is not for\n\nThis is not a track about income strategies, signal services or generating consistent weekly returns. It will not tell you which contracts to buy, and it does not cover selling naked options, which carries loss potential far beyond the premium received. If you are looking for trade recommendations rather than an explanation of how the instrument works, this material will disappoint you.\n\nLessons in this track\nWhat Is an Option? Calls & Puts Explained (8 min) — A stock option gives its buyer a contractual right; contract size, exercise style and settlement terms determine what that right involves.\nThe Greeks — Delta, Gamma, Theta & Vega (10 min) — The four Greeks quantify how an option's price reacts to stock moves, volatility, and the passage of time.\nDefined-Risk Spreads — Verticals & Iron Condors (9 min) — Vertical spreads and iron condors illustrate bounded expiration payoffs, with execution and assignment risks to consider.\nImplied Volatility & Trading Around Earnings (8 min) — Implied volatility is a model-implied input derived from option prices, with limits as a forecast of realised volatility.\nOptions Risk Management — Sizing, Rolling & Cutting Losses (9 min) — Options losses can be amplified by position size, leverage, volatility and time decay. This lesson measures those risks using hypothetical contract examples.\nCompletion badge\n\nOptions Fundamentals Completion: Awarded after completing every lesson and submitting every quiz in the Options Trading Fundamentals track. Educational simulation only — not financial advice.\n\nReferences and related pages\nWhat Is an Option? Calls & Puts Explained\nThe Greeks — Delta, Gamma, Theta & Vega\nDefined-Risk Spreads — Verticals & Iron Condors\nImplied Volatility & Trading Around Earnings\nOptions Risk Management — Sizing, Rolling & Cutting Losses\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+    },
+    {
+      "path": "/courses/futures-and-derivatives",
+      "main": "Home\nCourses\nFutures & Derivatives\nIntermediate\nFutures & Derivatives\n\nContracts, margin, contango and hedging — the trader's toolkit.\n\nYour progress\n0%\nEarn the\nFutures Fundamentals Completion\nbadge on completion\n\nA ground-up guide to exchange-listed futures — how contracts are specified, how margin actually works, why term-structure matters, and how hedgers and speculators interact on the CME.\n\nWhat you'll be able to do\nExplain what a futures contract standardises and who the natural counterparties in a market are.\nCalculate the notional value behind a contract and the margin actually required to hold it.\nRead a term structure and say whether a market is in contango or backwardation, and what that implies for anyone holding a rolling position.\nDescribe how a producer or consumer uses futures to hedge a real-world exposure.\nCompare contract multipliers and notional exposure against a stated hypothetical account value; smaller contracts still carry leveraged risk.\nBefore you start\n\nSome familiarity with charts and with the idea of buying and selling an asset. The margin lesson involves multiplication and percentages, nothing more. The Trading Decisions and Behaviour track offers optional exercises for recording assumptions. No lesson establishes a suitable real-money contract size or leverage level.\n\nHow the lessons build on each other\n\nThe sequence starts with contract specifications, then margin and leverage. Term structure follows to explain differences between delivery prices and rolling exposure. Hedging introduces basis risk, and micro contracts illustrate smaller multipliers. No contract size is universally suitable, and losses are not limited to the margin deposit.\n\nWho this track is not for\n\nThis track does not teach day-trading systems, scalping methods or any approach that relies on high leverage to produce results. It does not cover crypto perpetual contracts, which have different funding mechanics. High notional exposure relative to account equity magnifies losses; this track does not establish a measured survival rate or a suitable real-money leverage level.\n\nLessons\nLESSON 1\nWhat Is a Futures Contract?\nA futures contract is a standardised, exchange-traded agreement to buy or sell a fixed quantity of an asset at a set price on a set future date.\n8 min\nLESSON 2\nMargin & Leverage in Futures\nFutures margin is collateral for contract obligations. Losses and variation-margin demands can exceed an initial margin deposit.\n8 min\nLESSON 3\nContango & Backwardation — Term Structure Explained\nCompare prices across delivery dates and study carrying costs, supply conditions and the assumptions behind rolling exposure.\n9 min\nLESSON 4\nHedging with Futures — The Original Use Case\nHedging is one use of futures. Airlines may hedge fuel, producers may hedge output, and funds may hedge equity beta.\n8 min\nLESSON 5\nMicro Futures — Contract Size and Risk\nCompare Micro E-mini equity-index contracts with their E-mini counterparts, while checking each product’s specifications and risks.\n7 min\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "page": {
+        "path": "/courses/futures-and-derivatives",
+        "heading": "Futures & Derivatives",
+        "summary": "Contracts, margin, contango and hedging — the trader's toolkit. Includes 5 lessons, quizzes, sources, and a completion badge. The $100,000 simulator supports spot instruments; options and futures contract mechanics are worksheet exercises.",
+        "sections": [
+          {
+            "h": "About this track",
+            "p": [
+              "Contracts, margin, contango and hedging — the trader's toolkit.",
+              "A ground-up guide to exchange-listed futures — how contracts are specified, how margin actually works, why term-structure matters, and how hedgers and speculators interact on the CME."
+            ]
+          },
+          {
+            "h": "What you will be able to do",
+            "list": [
+              "Explain what a futures contract standardises and who the natural counterparties in a market are.",
+              "Calculate the notional value behind a contract and the margin actually required to hold it.",
+              "Read a term structure and say whether a market is in contango or backwardation, and what that implies for anyone holding a rolling position.",
+              "Describe how a producer or consumer uses futures to hedge a real-world exposure.",
+              "Compare contract multipliers and notional exposure against a stated hypothetical account value; smaller contracts still carry leveraged risk."
+            ]
+          },
+          {
+            "h": "Before you start",
+            "p": [
+              "Some familiarity with charts and with the idea of buying and selling an asset. The margin lesson involves multiplication and percentages, nothing more. The Trading Decisions and Behaviour track offers optional exercises for recording assumptions. No lesson establishes a suitable real-money contract size or leverage level."
+            ]
+          },
+          {
+            "h": "How the lessons build",
+            "p": [
+              "The sequence starts with contract specifications, then margin and leverage. Term structure follows to explain differences between delivery prices and rolling exposure. Hedging introduces basis risk, and micro contracts illustrate smaller multipliers. No contract size is universally suitable, and losses are not limited to the margin deposit."
+            ]
+          },
+          {
+            "h": "Who this track is not for",
+            "p": [
+              "This track does not teach day-trading systems, scalping methods or any approach that relies on high leverage to produce results. It does not cover crypto perpetual contracts, which have different funding mechanics. High notional exposure relative to account equity magnifies losses; this track does not establish a measured survival rate or a suitable real-money leverage level."
+            ]
+          },
+          {
+            "h": "Lessons in this track",
+            "list": [
+              "What Is a Futures Contract? (8 min) — A futures contract is a standardised, exchange-traded agreement to buy or sell a fixed quantity of an asset at a set price on a set future date.",
+              "Margin & Leverage in Futures (8 min) — Futures margin is collateral for contract obligations. Losses and variation-margin demands can exceed an initial margin deposit.",
+              "Contango & Backwardation — Term Structure Explained (9 min) — Compare prices across delivery dates and study carrying costs, supply conditions and the assumptions behind rolling exposure.",
+              "Hedging with Futures — The Original Use Case (8 min) — Hedging is one use of futures. Airlines may hedge fuel, producers may hedge output, and funds may hedge equity beta.",
+              "Micro Futures — Contract Size and Risk (7 min) — Compare Micro E-mini equity-index contracts with their E-mini counterparts, while checking each product’s specifications and risks."
+            ]
+          },
+          {
+            "h": "Completion badge",
+            "p": [
+              "Futures Fundamentals Completion: Awarded after completing every lesson in the Futures & Derivatives track. Educational simulation only — not financial advice."
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "/courses/futures-and-derivatives/what-is-a-futures-contract",
+            "label": "What Is a Futures Contract?"
+          },
+          {
+            "href": "/courses/futures-and-derivatives/margin-and-leverage-in-futures",
+            "label": "Margin & Leverage in Futures"
+          },
+          {
+            "href": "/courses/futures-and-derivatives/contango-and-backwardation",
+            "label": "Contango & Backwardation — Term Structure Explained"
+          },
+          {
+            "href": "/courses/futures-and-derivatives/hedging-with-futures",
+            "label": "Hedging with Futures — The Original Use Case"
+          },
+          {
+            "href": "/courses/futures-and-derivatives/micro-futures-for-beginners",
+            "label": "Micro Futures — Contract Size and Risk"
+          },
+          {
+            "href": "/courses",
+            "label": "All courses"
+          }
+        ]
+      },
+      "repeatedMainParagraphs": [
+        {
+          "section": "About this track",
+          "text": "Contracts, margin, contango and hedging — the trader's toolkit."
+        },
+        {
+          "section": "About this track",
+          "text": "A ground-up guide to exchange-listed futures — how contracts are specified, how margin actually works, why term-structure matters, and how hedgers and speculators interact on the CME."
+        },
+        {
+          "section": "Before you start",
+          "text": "Some familiarity with charts and with the idea of buying and selling an asset. The margin lesson involves multiplication and percentages, nothing more. The Trading Decisions and Behaviour track offers optional exercises for recording assumptions. No lesson establishes a suitable real-money contract size or leverage level."
+        },
+        {
+          "section": "How the lessons build",
+          "text": "The sequence starts with contract specifications, then margin and leverage. Term structure follows to explain differences between delivery prices and rolling exposure. Hedging introduces basis risk, and micro contracts illustrate smaller multipliers. No contract size is universally suitable, and losses are not limited to the margin deposit."
+        },
+        {
+          "section": "Who this track is not for",
+          "text": "This track does not teach day-trading systems, scalping methods or any approach that relies on high leverage to produce results. It does not cover crypto perpetual contracts, which have different funding mechanics. High notional exposure relative to account equity magnifies losses; this track does not establish a measured survival rate or a suitable real-money leverage level."
+        }
+      ],
+      "notesAfterFooter": true,
+      "notesText": "Learning notes: Futures & Derivatives\n\nContracts, margin, contango and hedging — the trader's toolkit. Includes 5 lessons, quizzes, sources, and a completion badge. The $100,000 simulator supports spot instruments; options and futures contract mechanics are worksheet exercises.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nAbout this track\n\nContracts, margin, contango and hedging — the trader's toolkit.\n\nA ground-up guide to exchange-listed futures — how contracts are specified, how margin actually works, why term-structure matters, and how hedgers and speculators interact on the CME.\n\nWhat you will be able to do\nExplain what a futures contract standardises and who the natural counterparties in a market are.\nCalculate the notional value behind a contract and the margin actually required to hold it.\nRead a term structure and say whether a market is in contango or backwardation, and what that implies for anyone holding a rolling position.\nDescribe how a producer or consumer uses futures to hedge a real-world exposure.\nCompare contract multipliers and notional exposure against a stated hypothetical account value; smaller contracts still carry leveraged risk.\nBefore you start\n\nSome familiarity with charts and with the idea of buying and selling an asset. The margin lesson involves multiplication and percentages, nothing more. The Trading Decisions and Behaviour track offers optional exercises for recording assumptions. No lesson establishes a suitable real-money contract size or leverage level.\n\nHow the lessons build\n\nThe sequence starts with contract specifications, then margin and leverage. Term structure follows to explain differences between delivery prices and rolling exposure. Hedging introduces basis risk, and micro contracts illustrate smaller multipliers. No contract size is universally suitable, and losses are not limited to the margin deposit.\n\nWho this track is not for\n\nThis track does not teach day-trading systems, scalping methods or any approach that relies on high leverage to produce results. It does not cover crypto perpetual contracts, which have different funding mechanics. High notional exposure relative to account equity magnifies losses; this track does not establish a measured survival rate or a suitable real-money leverage level.\n\nLessons in this track\nWhat Is a Futures Contract? (8 min) — A futures contract is a standardised, exchange-traded agreement to buy or sell a fixed quantity of an asset at a set price on a set future date.\nMargin & Leverage in Futures (8 min) — Futures margin is collateral for contract obligations. Losses and variation-margin demands can exceed an initial margin deposit.\nContango & Backwardation — Term Structure Explained (9 min) — Compare prices across delivery dates and study carrying costs, supply conditions and the assumptions behind rolling exposure.\nHedging with Futures — The Original Use Case (8 min) — Hedging is one use of futures. Airlines may hedge fuel, producers may hedge output, and funds may hedge equity beta.\nMicro Futures — Contract Size and Risk (7 min) — Compare Micro E-mini equity-index contracts with their E-mini counterparts, while checking each product’s specifications and risks.\nCompletion badge\n\nFutures Fundamentals Completion: Awarded after completing every lesson in the Futures & Derivatives track. Educational simulation only — not financial advice.\n\nReferences and related pages\nWhat Is a Futures Contract?\nMargin & Leverage in Futures\nContango & Backwardation — Term Structure Explained\nHedging with Futures — The Original Use Case\nMicro Futures — Contract Size and Risk\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+    },
+    {
+      "path": "/courses/macro-reading-for-traders",
+      "main": "Home\nCourses\nMacro Reading for Traders\nIntermediate\nMacro Reading for Traders\n\nCPI, the Fed, the yield curve and the dollar — how the pieces connect.\n\nYour progress\n0%\nEarn the\nMacro Reading Completion\nbadge on completion\n\nAn introduction to CPI releases, central-bank decisions, Treasury yields and the dollar index, with exercises for separating observed data from uncertain market interpretations.\n\nWhat you'll be able to do\nRead a CPI release and identify which component drove the surprise, rather than reacting to the headline number.\nExplain how FOMC decisions are announced and why published expectations and other information may influence different market reactions.\nInterpret the shape of the yield curve and describe what a flattening or inversion has historically signalled.\nConnect dollar strength to the behaviour of commodities, emerging markets and large exporters.\nCombine several macro signals into one written view instead of trading each release in isolation.\nBefore you start\n\nNo economics background is assumed. You should know what an interest rate is and be willing to read a data release rather than a summary of it. Each lesson links to the primary source — the statistical agency or the central bank itself — so you can check every figure yourself.\n\nHow the lessons build on each other\n\nStart by reading CPI definitions and component changes. The Fed lesson then distinguishes policy announcements from expectations; inflation is one input among several. The yield-curve lesson compares maturities and model limitations. The dollar lesson considers currency translation and exposures without assuming a fixed price response. The final exercise compares several observations and alternative explanations.\n\nWho this track is not for\n\nThis is not a macroeconomic forecasting course and it will not tell you where rates or inflation are going. It does not cover trading around releases with leverage, which is a specialist activity with execution risks that reading cannot prepare you for. If you want a directional call on the economy, no honest course can give you one.\n\nLessons\nLESSON 1\nReading CPI and Inflation Data\nCPI measures selected consumer-price changes. Read the release, its definitions and components without assuming a predictable market response.\n8 min\nLESSON 2\nThe Fed & FOMC Cycle — How Rates Get Set\nThe FOMC has eight regularly scheduled meetings a year, and its decisions can affect market expectations.\n9 min\nLESSON 3\nThe Yield Curve and Recession-Risk Research\nYield-curve inversion has historically been associated with elevated US recession risk, but timing varies and the signal is not a standalone forecast.\n8 min\nLESSON 4\nThe Dollar Index (DXY) — Reading Currency Context\nDXY tracks the dollar against six currencies and offers context for studying currency exposure, with important limits.\n7 min\nLESSON 5\nPutting It Together — A Macro Dashboard for Traders\nCompare growth, inflation and financial indicators in a documented worksheet, without treating a regime label as a trading instruction.\n8 min\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "page": {
+        "path": "/courses/macro-reading-for-traders",
+        "heading": "Macro Reading for Traders",
+        "summary": "CPI, the Fed, the yield curve and the dollar — how the pieces connect. Includes 5 lessons, quizzes, sources, and a completion badge. The $100,000 simulator supports spot instruments; options and futures contract mechanics are worksheet exercises.",
+        "sections": [
+          {
+            "h": "About this track",
+            "p": [
+              "CPI, the Fed, the yield curve and the dollar — how the pieces connect.",
+              "An introduction to CPI releases, central-bank decisions, Treasury yields and the dollar index, with exercises for separating observed data from uncertain market interpretations."
+            ]
+          },
+          {
+            "h": "What you will be able to do",
+            "list": [
+              "Read a CPI release and identify which component drove the surprise, rather than reacting to the headline number.",
+              "Explain how FOMC decisions are announced and why published expectations and other information may influence different market reactions.",
+              "Interpret the shape of the yield curve and describe what a flattening or inversion has historically signalled.",
+              "Connect dollar strength to the behaviour of commodities, emerging markets and large exporters.",
+              "Combine several macro signals into one written view instead of trading each release in isolation."
+            ]
+          },
+          {
+            "h": "Before you start",
+            "p": [
+              "No economics background is assumed. You should know what an interest rate is and be willing to read a data release rather than a summary of it. Each lesson links to the primary source — the statistical agency or the central bank itself — so you can check every figure yourself."
+            ]
+          },
+          {
+            "h": "How the lessons build",
+            "p": [
+              "Start by reading CPI definitions and component changes. The Fed lesson then distinguishes policy announcements from expectations; inflation is one input among several. The yield-curve lesson compares maturities and model limitations. The dollar lesson considers currency translation and exposures without assuming a fixed price response. The final exercise compares several observations and alternative explanations."
+            ]
+          },
+          {
+            "h": "Who this track is not for",
+            "p": [
+              "This is not a macroeconomic forecasting course and it will not tell you where rates or inflation are going. It does not cover trading around releases with leverage, which is a specialist activity with execution risks that reading cannot prepare you for. If you want a directional call on the economy, no honest course can give you one."
+            ]
+          },
+          {
+            "h": "Lessons in this track",
+            "list": [
+              "Reading CPI and Inflation Data (8 min) — CPI measures selected consumer-price changes. Read the release, its definitions and components without assuming a predictable market response.",
+              "The Fed & FOMC Cycle — How Rates Get Set (9 min) — The FOMC has eight regularly scheduled meetings a year, and its decisions can affect market expectations.",
+              "The Yield Curve and Recession-Risk Research (8 min) — Yield-curve inversion has historically been associated with elevated US recession risk, but timing varies and the signal is not a standalone forecast.",
+              "The Dollar Index (DXY) — Reading Currency Context (7 min) — DXY tracks the dollar against six currencies and offers context for studying currency exposure, with important limits.",
+              "Putting It Together — A Macro Dashboard for Traders (8 min) — Compare growth, inflation and financial indicators in a documented worksheet, without treating a regime label as a trading instruction."
+            ]
+          },
+          {
+            "h": "Completion badge",
+            "p": [
+              "Macro Reading Completion: Awarded after completing every lesson in the Macro Reading for Traders track. Educational simulation only — not financial advice."
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "/courses/macro-reading-for-traders/reading-cpi-and-inflation",
+            "label": "Reading CPI and Inflation Data"
+          },
+          {
+            "href": "/courses/macro-reading-for-traders/the-fed-and-fomc-cycle",
+            "label": "The Fed & FOMC Cycle — How Rates Get Set"
+          },
+          {
+            "href": "/courses/macro-reading-for-traders/the-yield-curve-and-recession",
+            "label": "The Yield Curve and Recession-Risk Research"
+          },
+          {
+            "href": "/courses/macro-reading-for-traders/the-dollar-index-dxy",
+            "label": "The Dollar Index (DXY) — Reading Currency Context"
+          },
+          {
+            "href": "/courses/macro-reading-for-traders/putting-macro-signals-together",
+            "label": "Putting It Together — A Macro Dashboard for Traders"
+          },
+          {
+            "href": "/courses",
+            "label": "All courses"
+          }
+        ]
+      },
+      "repeatedMainParagraphs": [
+        {
+          "section": "About this track",
+          "text": "CPI, the Fed, the yield curve and the dollar — how the pieces connect."
+        },
+        {
+          "section": "About this track",
+          "text": "An introduction to CPI releases, central-bank decisions, Treasury yields and the dollar index, with exercises for separating observed data from uncertain market interpretations."
+        },
+        {
+          "section": "Before you start",
+          "text": "No economics background is assumed. You should know what an interest rate is and be willing to read a data release rather than a summary of it. Each lesson links to the primary source — the statistical agency or the central bank itself — so you can check every figure yourself."
+        },
+        {
+          "section": "How the lessons build",
+          "text": "Start by reading CPI definitions and component changes. The Fed lesson then distinguishes policy announcements from expectations; inflation is one input among several. The yield-curve lesson compares maturities and model limitations. The dollar lesson considers currency translation and exposures without assuming a fixed price response. The final exercise compares several observations and alternative explanations."
+        },
+        {
+          "section": "Who this track is not for",
+          "text": "This is not a macroeconomic forecasting course and it will not tell you where rates or inflation are going. It does not cover trading around releases with leverage, which is a specialist activity with execution risks that reading cannot prepare you for. If you want a directional call on the economy, no honest course can give you one."
+        }
+      ],
+      "notesAfterFooter": true,
+      "notesText": "Learning notes: Macro Reading for Traders\n\nCPI, the Fed, the yield curve and the dollar — how the pieces connect. Includes 5 lessons, quizzes, sources, and a completion badge. The $100,000 simulator supports spot instruments; options and futures contract mechanics are worksheet exercises.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nAbout this track\n\nCPI, the Fed, the yield curve and the dollar — how the pieces connect.\n\nAn introduction to CPI releases, central-bank decisions, Treasury yields and the dollar index, with exercises for separating observed data from uncertain market interpretations.\n\nWhat you will be able to do\nRead a CPI release and identify which component drove the surprise, rather than reacting to the headline number.\nExplain how FOMC decisions are announced and why published expectations and other information may influence different market reactions.\nInterpret the shape of the yield curve and describe what a flattening or inversion has historically signalled.\nConnect dollar strength to the behaviour of commodities, emerging markets and large exporters.\nCombine several macro signals into one written view instead of trading each release in isolation.\nBefore you start\n\nNo economics background is assumed. You should know what an interest rate is and be willing to read a data release rather than a summary of it. Each lesson links to the primary source — the statistical agency or the central bank itself — so you can check every figure yourself.\n\nHow the lessons build\n\nStart by reading CPI definitions and component changes. The Fed lesson then distinguishes policy announcements from expectations; inflation is one input among several. The yield-curve lesson compares maturities and model limitations. The dollar lesson considers currency translation and exposures without assuming a fixed price response. The final exercise compares several observations and alternative explanations.\n\nWho this track is not for\n\nThis is not a macroeconomic forecasting course and it will not tell you where rates or inflation are going. It does not cover trading around releases with leverage, which is a specialist activity with execution risks that reading cannot prepare you for. If you want a directional call on the economy, no honest course can give you one.\n\nLessons in this track\nReading CPI and Inflation Data (8 min) — CPI measures selected consumer-price changes. Read the release, its definitions and components without assuming a predictable market response.\nThe Fed & FOMC Cycle — How Rates Get Set (9 min) — The FOMC has eight regularly scheduled meetings a year, and its decisions can affect market expectations.\nThe Yield Curve and Recession-Risk Research (8 min) — Yield-curve inversion has historically been associated with elevated US recession risk, but timing varies and the signal is not a standalone forecast.\nThe Dollar Index (DXY) — Reading Currency Context (7 min) — DXY tracks the dollar against six currencies and offers context for studying currency exposure, with important limits.\nPutting It Together — A Macro Dashboard for Traders (8 min) — Compare growth, inflation and financial indicators in a documented worksheet, without treating a regime label as a trading instruction.\nCompletion badge\n\nMacro Reading Completion: Awarded after completing every lesson in the Macro Reading for Traders track. Educational simulation only — not financial advice.\n\nReferences and related pages\nReading CPI and Inflation Data\nThe Fed & FOMC Cycle — How Rates Get Set\nThe Yield Curve and Recession-Risk Research\nThe Dollar Index (DXY) — Reading Currency Context\nPutting It Together — A Macro Dashboard for Traders\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+    },
+    {
+      "path": "/courses/trading-psychology-mastery",
+      "main": "Home\nCourses\nTrading Decisions and Behaviour\nBeginner\nTrading Decisions and Behaviour\n\nUnderstand decision biases, review assumptions and practise reflective exercises.\n\nYour progress\n0%\nEarn the\nTrading Psychology Completion\nbadge on completion\n\nThis educational track examines research on decision biases alongside fictional trading examples. It introduces optional records and checklists that can support reflection, without claiming professional consensus or a link to profitable performance.\n\nWhat you'll be able to do\nName the specific biases most likely to affect your own decisions, with an example from your own trade log.\nRecognise when a fictional trading scenario invites an impulsive decision and consider alternatives including not trading.\nKeep a record of assumptions before evaluating a hypothetical outcome; compare facts with interpretations.\nCreate an optional preparation and review checklist with no fixed time requirement.\nDistinguish between a losing trade that followed the plan and a winning trade that broke it.\nBefore you start\n\nNo previous trading is required. All exercises can be completed with made-up data and virtual observations, without real transactions.\n\nHow the lessons build on each other\n\nThe sequence explores possible decision biases, reactions to an outcome, a journal as an observation record, optional checklists and portfolio-drawdown arithmetic. It does not constitute psychological assessment or a tested method for earning returns.\n\nWho this track is not for\n\nThis track does not address clinical mental health, gambling addiction or financial distress, and it is not a substitute for professional support. If trading is causing you real financial or psychological harm, please speak to a qualified professional rather than reading another lesson on discipline.\n\nLessons\nLESSON 1\nCognitive Biases in Trading Decisions\nConfirmation bias, anchoring and loss aversion offer ways to examine decisions without assuming a universal emotional response.\n9 min\nLESSON 2\nRevenge Trading & Tilt — Recognising Unplanned Decisions\nTilt is the emotional state where a trader tries to recover a loss immediately with larger, unplanned trades.\n8 min\nLESSON 3\nA Trading Journal: Observations and Limits\nUse a decision record to review assumptions without claiming it proves profitable skill.\n8 min\nLESSON 4\nOptional Checklists for Practice Sessions\nPrepare and review educational exercises without prescribing a professional routine or profitable outcome.\n8 min\nLESSON 5\nUnderstanding Drawdowns in a Simulation\nCalculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions.\n8 min\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "page": {
+        "path": "/courses/trading-psychology-mastery",
+        "heading": "Trading Decisions and Behaviour",
+        "summary": "Understand decision biases, review assumptions and practise reflective exercises. Includes 5 lessons, quizzes, sources, and a completion badge. The $100,000 simulator supports spot instruments; options and futures contract mechanics are worksheet exercises.",
+        "sections": [
+          {
+            "h": "About this track",
+            "p": [
+              "Understand decision biases, review assumptions and practise reflective exercises.",
+              "This educational track examines research on decision biases alongside fictional trading examples. It introduces optional records and checklists that can support reflection, without claiming professional consensus or a link to profitable performance."
+            ]
+          },
+          {
+            "h": "What you will be able to do",
+            "list": [
+              "Name the specific biases most likely to affect your own decisions, with an example from your own trade log.",
+              "Recognise when a fictional trading scenario invites an impulsive decision and consider alternatives including not trading.",
+              "Keep a record of assumptions before evaluating a hypothetical outcome; compare facts with interpretations.",
+              "Create an optional preparation and review checklist with no fixed time requirement.",
+              "Distinguish between a losing trade that followed the plan and a winning trade that broke it."
+            ]
+          },
+          {
+            "h": "Before you start",
+            "p": [
+              "No previous trading is required. All exercises can be completed with made-up data and virtual observations, without real transactions."
+            ]
+          },
+          {
+            "h": "How the lessons build",
+            "p": [
+              "The sequence explores possible decision biases, reactions to an outcome, a journal as an observation record, optional checklists and portfolio-drawdown arithmetic. It does not constitute psychological assessment or a tested method for earning returns."
+            ]
+          },
+          {
+            "h": "Who this track is not for",
+            "p": [
+              "This track does not address clinical mental health, gambling addiction or financial distress, and it is not a substitute for professional support. If trading is causing you real financial or psychological harm, please speak to a qualified professional rather than reading another lesson on discipline."
+            ]
+          },
+          {
+            "h": "Lessons in this track",
+            "list": [
+              "Cognitive Biases in Trading Decisions (9 min) — Confirmation bias, anchoring and loss aversion offer ways to examine decisions without assuming a universal emotional response.",
+              "Revenge Trading & Tilt — Recognising Unplanned Decisions (8 min) — Tilt is the emotional state where a trader tries to recover a loss immediately with larger, unplanned trades.",
+              "A Trading Journal: Observations and Limits (8 min) — Use a decision record to review assumptions without claiming it proves profitable skill.",
+              "Optional Checklists for Practice Sessions (8 min) — Prepare and review educational exercises without prescribing a professional routine or profitable outcome.",
+              "Understanding Drawdowns in a Simulation (8 min) — Calculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions."
+            ]
+          },
+          {
+            "h": "Completion badge",
+            "p": [
+              "Trading Psychology Completion: Awarded after completing every lesson in the Trading Psychology Mastery track. Educational simulation only — not financial advice."
+            ]
+          }
+        ],
+        "links": [
+          {
+            "href": "/courses/trading-psychology-mastery/cognitive-biases-in-trading",
+            "label": "Cognitive Biases in Trading Decisions"
+          },
+          {
+            "href": "/courses/trading-psychology-mastery/revenge-trading-and-tilt",
+            "label": "Revenge Trading & Tilt — Recognising Unplanned Decisions"
+          },
+          {
+            "href": "/courses/trading-psychology-mastery/the-trading-journal",
+            "label": "A Trading Journal: Observations and Limits"
+          },
+          {
+            "href": "/courses/trading-psychology-mastery/discipline-and-daily-rituals",
+            "label": "Optional Checklists for Practice Sessions"
+          },
+          {
+            "href": "/courses/trading-psychology-mastery/handling-drawdowns",
+            "label": "Understanding Drawdowns in a Simulation"
+          },
+          {
+            "href": "/courses",
+            "label": "All courses"
+          }
+        ]
+      },
+      "repeatedMainParagraphs": [
+        {
+          "section": "About this track",
+          "text": "Understand decision biases, review assumptions and practise reflective exercises."
+        },
+        {
+          "section": "About this track",
+          "text": "This educational track examines research on decision biases alongside fictional trading examples. It introduces optional records and checklists that can support reflection, without claiming professional consensus or a link to profitable performance."
+        },
+        {
+          "section": "Before you start",
+          "text": "No previous trading is required. All exercises can be completed with made-up data and virtual observations, without real transactions."
+        },
+        {
+          "section": "How the lessons build",
+          "text": "The sequence explores possible decision biases, reactions to an outcome, a journal as an observation record, optional checklists and portfolio-drawdown arithmetic. It does not constitute psychological assessment or a tested method for earning returns."
+        },
+        {
+          "section": "Who this track is not for",
+          "text": "This track does not address clinical mental health, gambling addiction or financial distress, and it is not a substitute for professional support. If trading is causing you real financial or psychological harm, please speak to a qualified professional rather than reading another lesson on discipline."
+        }
+      ],
+      "notesAfterFooter": true,
+      "notesText": "Learning notes: Trading Decisions and Behaviour\n\nUnderstand decision biases, review assumptions and practise reflective exercises. Includes 5 lessons, quizzes, sources, and a completion badge. The $100,000 simulator supports spot instruments; options and futures contract mechanics are worksheet exercises.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nAbout this track\n\nUnderstand decision biases, review assumptions and practise reflective exercises.\n\nThis educational track examines research on decision biases alongside fictional trading examples. It introduces optional records and checklists that can support reflection, without claiming professional consensus or a link to profitable performance.\n\nWhat you will be able to do\nName the specific biases most likely to affect your own decisions, with an example from your own trade log.\nRecognise when a fictional trading scenario invites an impulsive decision and consider alternatives including not trading.\nKeep a record of assumptions before evaluating a hypothetical outcome; compare facts with interpretations.\nCreate an optional preparation and review checklist with no fixed time requirement.\nDistinguish between a losing trade that followed the plan and a winning trade that broke it.\nBefore you start\n\nNo previous trading is required. All exercises can be completed with made-up data and virtual observations, without real transactions.\n\nHow the lessons build\n\nThe sequence explores possible decision biases, reactions to an outcome, a journal as an observation record, optional checklists and portfolio-drawdown arithmetic. It does not constitute psychological assessment or a tested method for earning returns.\n\nWho this track is not for\n\nThis track does not address clinical mental health, gambling addiction or financial distress, and it is not a substitute for professional support. If trading is causing you real financial or psychological harm, please speak to a qualified professional rather than reading another lesson on discipline.\n\nLessons in this track\nCognitive Biases in Trading Decisions (9 min) — Confirmation bias, anchoring and loss aversion offer ways to examine decisions without assuming a universal emotional response.\nRevenge Trading & Tilt — Recognising Unplanned Decisions (8 min) — Tilt is the emotional state where a trader tries to recover a loss immediately with larger, unplanned trades.\nA Trading Journal: Observations and Limits (8 min) — Use a decision record to review assumptions without claiming it proves profitable skill.\nOptional Checklists for Practice Sessions (8 min) — Prepare and review educational exercises without prescribing a professional routine or profitable outcome.\nUnderstanding Drawdowns in a Simulation (8 min) — Calculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions.\nCompletion badge\n\nTrading Psychology Completion: Awarded after completing every lesson in the Trading Psychology Mastery track. Educational simulation only — not financial advice.\n\nReferences and related pages\nCognitive Biases in Trading Decisions\nRevenge Trading & Tilt — Recognising Unplanned Decisions\nA Trading Journal: Observations and Limits\nOptional Checklists for Practice Sessions\nUnderstanding Drawdowns in a Simulation\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+    }
+  ],
+  "scope": "Read-only actual production DOM/normal public JSON. No course action/progress/RPCmutation."
+}

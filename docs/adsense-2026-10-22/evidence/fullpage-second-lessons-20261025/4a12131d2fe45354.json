@@ -1,0 +1,475 @@
+{
+  "path": "/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+  "sha": "4a1288e4710d60eebe2f77c23badd3aed0030f44",
+  "origin": "https://www.thetradehq.com",
+  "capturedAt": "2026-10-25T10:05:35.454Z",
+  "outcome": "COLLECTED_NOT_HUMAN_REVIEWED",
+  "widths": [
+    {
+      "width": 360,
+      "height": 800,
+      "path": "/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+      "title": "The Greeks — Delta, Gamma, Theta & Vega — Options Trading Fundamentals | TradeHQ",
+      "heading": "The Greeks — Delta, Gamma, Theta & Vega",
+      "supplementaryNotes": [
+        {
+          "path": "/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+          "text": "Learning notes: The Greeks — Delta, Gamma, Theta & Vega\n\nThe four Greeks quantify how an option's price reacts to stock moves, volatility, and the passage of time. TradeHQ offers $100,000 virtual cash for supported spot instruments. Derivatives contracts remain conceptual exercises. Educational only, not financial advice.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nSummary\n\nThe four Greeks quantify how an option's price reacts to stock moves, volatility, and the passage of time.\n\nWhy Greeks matter\n\nGreeks are model-based sensitivities to inputs, holding other inputs fixed. Delta describes underlying-price sensitivity; gamma describes a change in delta; theta describes time sensitivity; vega describes implied-volatility sensitivity. Interest rates and dividends can also matter. Finite market moves need not equal a first-order estimate, and different pricing models can produce different values.\n\nDelta — directional exposure\n\nA delta of 0.50 per share describes an approximate $0.50 option-price change for a $1 underlying move, with other inputs held fixed. For a 100-share contract that is about $50, before gamma and other effects. Some traders use delta as a rough probability shorthand, but it is not a calibrated real-world probability and need not match the model probability of finishing in the money.\n\nGamma — how fast delta changes\n\nGamma measures how delta changes as the underlying moves. It is often relatively large near the strike close to expiry, depending on volatility and other inputs. Dealer hedging can affect demand, but a chart or open-interest figure alone does not establish dealer positions, required hedges or the cause of a price move.\n\nTheta — the ticking clock\n\nTheta estimates an option value change as time passes under a model, holding other inputs fixed. State whether the quote is per share or per contract and whether a calendar or trading-day convention is used. Purchased options commonly have negative theta, but realised profit also depends on price, volatility and costs. Selling premium is not a guaranteed collection of that estimate.\n\nVega — volatility sensitivity\n\nVega estimates sensitivity to a one-percentage-point change in implied volatility, with other inputs held fixed. Implied volatility can change around earnings, but it need not rise before every release or fall afterwards. A long option can lose despite a favorable underlying move if time decay and a volatility decline offset that move.\n\n> Every option position is really four separate bets: on direction, on the speed of that direction, on time, and on volatility.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKey takeaways\nDelta estimates underlying-price sensitivity, not a guaranteed payoff or real-world event probability.\nGamma is often relatively large near the strike close to expiration; volatility and other model inputs also matter.\nTheta is a model sensitivity; other price changes can offset or exceed it.\nVega measures volatility sensitivity; a change in implied volatility is a different quantity.\nCheck your understanding\nWhat does theta measure? Options: Directional exposure; Time decay per day; Volatility sensitivity; Interest-rate risk. Correct answer: Time decay per day. Why: Theta is a model estimate of time sensitivity with other inputs held fixed; units and time conventions must be stated.\nIn the lesson example, a 0.50 delta and a $1 underlying rise imply approximately what change per option share, before other effects? Options: $0.10; $0.30; $0.50; $0.90. Correct answer: $0.50. Why: 0.50 × $1 = $0.50 per share, holding other inputs fixed; this is not an event probability.\n'IV crush' typically happens: Options: Right before earnings; Right after earnings; On Fed decision day; At market open. Correct answer: Right after earnings. Why: A post-announcement drop in implied volatility is often called IV crush; it is not inevitable after every release.\nWhich Greek measures the rate of change of delta? Options: Vega; Theta; Gamma; Rho. Correct answer: Gamma. Why: Gamma tells you how quickly delta itself changes.\nSources\nOIC — Delta (https://www.optionseducation.org/advancedconcepts/delta)\nOIC — Theta (https://www.optionseducation.org/advancedconcepts/theta)\nOIC — Vega (https://www.optionseducation.org/advancedconcepts/vega)\nCboe — The Greeks (https://www.cboe.com/education/tools/)\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nReferences and related pages\nOIC — Delta\nOIC — Theta\nOIC — Vega\nCboe — The Greeks\nPrevious: What Is an Option? Calls & Puts Explained\nNext: Defined-Risk Spreads — Verticals & Iron Condors\nOptions Trading Fundamentals\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 360,
+      "scrollHeight": 13852,
+      "viewportWidth": 360,
+      "canonical": "https://www.thetradehq.com/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+      "images": [
+        {
+          "alt": "The Greeks — Delta, Gamma, Theta & Vega — illustration",
+          "complete": true,
+          "naturalWidth": 1200,
+          "source": "https://www.thetradehq.com/assets/options-hero-DeA_XZdf.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "4a12131d2fe45354-360-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "4a12131d2fe45354-360-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "4a12131d2fe45354-360-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "4a12131d2fe45354-360-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "4a12131d2fe45354-360-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "4a12131d2fe45354-360-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "4a12131d2fe45354-360-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "4a12131d2fe45354-360-07.png"
+        },
+        {
+          "y": 5440,
+          "screenshot": "4a12131d2fe45354-360-08.png"
+        },
+        {
+          "y": 6120,
+          "screenshot": "4a12131d2fe45354-360-09.png"
+        },
+        {
+          "y": 6800,
+          "screenshot": "4a12131d2fe45354-360-10.png"
+        },
+        {
+          "y": 7480,
+          "screenshot": "4a12131d2fe45354-360-11.png"
+        },
+        {
+          "y": 8160,
+          "screenshot": "4a12131d2fe45354-360-12.png"
+        },
+        {
+          "y": 8840,
+          "screenshot": "4a12131d2fe45354-360-13.png"
+        },
+        {
+          "y": 9520,
+          "screenshot": "4a12131d2fe45354-360-14.png"
+        },
+        {
+          "y": 10200,
+          "screenshot": "4a12131d2fe45354-360-15.png"
+        },
+        {
+          "y": 10880,
+          "screenshot": "4a12131d2fe45354-360-16.png"
+        },
+        {
+          "y": 11560,
+          "screenshot": "4a12131d2fe45354-360-17.png"
+        },
+        {
+          "y": 12240,
+          "screenshot": "4a12131d2fe45354-360-18.png"
+        },
+        {
+          "y": 12920,
+          "screenshot": "4a12131d2fe45354-360-19.png"
+        },
+        {
+          "y": 13052,
+          "screenshot": "4a12131d2fe45354-360-20.png"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "path": "/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+      "title": "The Greeks — Delta, Gamma, Theta & Vega — Options Trading Fundamentals | TradeHQ",
+      "heading": "The Greeks — Delta, Gamma, Theta & Vega",
+      "supplementaryNotes": [
+        {
+          "path": "/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+          "text": "Learning notes: The Greeks — Delta, Gamma, Theta & Vega\n\nThe four Greeks quantify how an option's price reacts to stock moves, volatility, and the passage of time. TradeHQ offers $100,000 virtual cash for supported spot instruments. Derivatives contracts remain conceptual exercises. Educational only, not financial advice.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nSummary\n\nThe four Greeks quantify how an option's price reacts to stock moves, volatility, and the passage of time.\n\nWhy Greeks matter\n\nGreeks are model-based sensitivities to inputs, holding other inputs fixed. Delta describes underlying-price sensitivity; gamma describes a change in delta; theta describes time sensitivity; vega describes implied-volatility sensitivity. Interest rates and dividends can also matter. Finite market moves need not equal a first-order estimate, and different pricing models can produce different values.\n\nDelta — directional exposure\n\nA delta of 0.50 per share describes an approximate $0.50 option-price change for a $1 underlying move, with other inputs held fixed. For a 100-share contract that is about $50, before gamma and other effects. Some traders use delta as a rough probability shorthand, but it is not a calibrated real-world probability and need not match the model probability of finishing in the money.\n\nGamma — how fast delta changes\n\nGamma measures how delta changes as the underlying moves. It is often relatively large near the strike close to expiry, depending on volatility and other inputs. Dealer hedging can affect demand, but a chart or open-interest figure alone does not establish dealer positions, required hedges or the cause of a price move.\n\nTheta — the ticking clock\n\nTheta estimates an option value change as time passes under a model, holding other inputs fixed. State whether the quote is per share or per contract and whether a calendar or trading-day convention is used. Purchased options commonly have negative theta, but realised profit also depends on price, volatility and costs. Selling premium is not a guaranteed collection of that estimate.\n\nVega — volatility sensitivity\n\nVega estimates sensitivity to a one-percentage-point change in implied volatility, with other inputs held fixed. Implied volatility can change around earnings, but it need not rise before every release or fall afterwards. A long option can lose despite a favorable underlying move if time decay and a volatility decline offset that move.\n\n> Every option position is really four separate bets: on direction, on the speed of that direction, on time, and on volatility.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKey takeaways\nDelta estimates underlying-price sensitivity, not a guaranteed payoff or real-world event probability.\nGamma is often relatively large near the strike close to expiration; volatility and other model inputs also matter.\nTheta is a model sensitivity; other price changes can offset or exceed it.\nVega measures volatility sensitivity; a change in implied volatility is a different quantity.\nCheck your understanding\nWhat does theta measure? Options: Directional exposure; Time decay per day; Volatility sensitivity; Interest-rate risk. Correct answer: Time decay per day. Why: Theta is a model estimate of time sensitivity with other inputs held fixed; units and time conventions must be stated.\nIn the lesson example, a 0.50 delta and a $1 underlying rise imply approximately what change per option share, before other effects? Options: $0.10; $0.30; $0.50; $0.90. Correct answer: $0.50. Why: 0.50 × $1 = $0.50 per share, holding other inputs fixed; this is not an event probability.\n'IV crush' typically happens: Options: Right before earnings; Right after earnings; On Fed decision day; At market open. Correct answer: Right after earnings. Why: A post-announcement drop in implied volatility is often called IV crush; it is not inevitable after every release.\nWhich Greek measures the rate of change of delta? Options: Vega; Theta; Gamma; Rho. Correct answer: Gamma. Why: Gamma tells you how quickly delta itself changes.\nSources\nOIC — Delta (https://www.optionseducation.org/advancedconcepts/delta)\nOIC — Theta (https://www.optionseducation.org/advancedconcepts/theta)\nOIC — Vega (https://www.optionseducation.org/advancedconcepts/vega)\nCboe — The Greeks (https://www.cboe.com/education/tools/)\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nReferences and related pages\nOIC — Delta\nOIC — Theta\nOIC — Vega\nCboe — The Greeks\nPrevious: What Is an Option? Calls & Puts Explained\nNext: Defined-Risk Spreads — Verticals & Iron Condors\nOptions Trading Fundamentals\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 390,
+      "scrollHeight": 13255,
+      "viewportWidth": 390,
+      "canonical": "https://www.thetradehq.com/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+      "images": [
+        {
+          "alt": "The Greeks — Delta, Gamma, Theta & Vega — illustration",
+          "complete": true,
+          "naturalWidth": 1200,
+          "source": "https://www.thetradehq.com/assets/options-hero-DeA_XZdf.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "4a12131d2fe45354-390-00.png"
+        },
+        {
+          "y": 717,
+          "screenshot": "4a12131d2fe45354-390-01.png"
+        },
+        {
+          "y": 1434,
+          "screenshot": "4a12131d2fe45354-390-02.png"
+        },
+        {
+          "y": 2151,
+          "screenshot": "4a12131d2fe45354-390-03.png"
+        },
+        {
+          "y": 2868,
+          "screenshot": "4a12131d2fe45354-390-04.png"
+        },
+        {
+          "y": 3585,
+          "screenshot": "4a12131d2fe45354-390-05.png"
+        },
+        {
+          "y": 4302,
+          "screenshot": "4a12131d2fe45354-390-06.png"
+        },
+        {
+          "y": 5019,
+          "screenshot": "4a12131d2fe45354-390-07.png"
+        },
+        {
+          "y": 5736,
+          "screenshot": "4a12131d2fe45354-390-08.png"
+        },
+        {
+          "y": 6453,
+          "screenshot": "4a12131d2fe45354-390-09.png"
+        },
+        {
+          "y": 7170,
+          "screenshot": "4a12131d2fe45354-390-10.png"
+        },
+        {
+          "y": 7887,
+          "screenshot": "4a12131d2fe45354-390-11.png"
+        },
+        {
+          "y": 8604,
+          "screenshot": "4a12131d2fe45354-390-12.png"
+        },
+        {
+          "y": 9321,
+          "screenshot": "4a12131d2fe45354-390-13.png"
+        },
+        {
+          "y": 10038,
+          "screenshot": "4a12131d2fe45354-390-14.png"
+        },
+        {
+          "y": 10755,
+          "screenshot": "4a12131d2fe45354-390-15.png"
+        },
+        {
+          "y": 11472,
+          "screenshot": "4a12131d2fe45354-390-16.png"
+        },
+        {
+          "y": 12189,
+          "screenshot": "4a12131d2fe45354-390-17.png"
+        },
+        {
+          "y": 12411,
+          "screenshot": "4a12131d2fe45354-390-18.png"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "path": "/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+      "title": "The Greeks — Delta, Gamma, Theta & Vega — Options Trading Fundamentals | TradeHQ",
+      "heading": "The Greeks — Delta, Gamma, Theta & Vega",
+      "supplementaryNotes": [
+        {
+          "path": "/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+          "text": "Learning notes: The Greeks — Delta, Gamma, Theta & Vega\n\nThe four Greeks quantify how an option's price reacts to stock moves, volatility, and the passage of time. TradeHQ offers $100,000 virtual cash for supported spot instruments. Derivatives contracts remain conceptual exercises. Educational only, not financial advice.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nSummary\n\nThe four Greeks quantify how an option's price reacts to stock moves, volatility, and the passage of time.\n\nWhy Greeks matter\n\nGreeks are model-based sensitivities to inputs, holding other inputs fixed. Delta describes underlying-price sensitivity; gamma describes a change in delta; theta describes time sensitivity; vega describes implied-volatility sensitivity. Interest rates and dividends can also matter. Finite market moves need not equal a first-order estimate, and different pricing models can produce different values.\n\nDelta — directional exposure\n\nA delta of 0.50 per share describes an approximate $0.50 option-price change for a $1 underlying move, with other inputs held fixed. For a 100-share contract that is about $50, before gamma and other effects. Some traders use delta as a rough probability shorthand, but it is not a calibrated real-world probability and need not match the model probability of finishing in the money.\n\nGamma — how fast delta changes\n\nGamma measures how delta changes as the underlying moves. It is often relatively large near the strike close to expiry, depending on volatility and other inputs. Dealer hedging can affect demand, but a chart or open-interest figure alone does not establish dealer positions, required hedges or the cause of a price move.\n\nTheta — the ticking clock\n\nTheta estimates an option value change as time passes under a model, holding other inputs fixed. State whether the quote is per share or per contract and whether a calendar or trading-day convention is used. Purchased options commonly have negative theta, but realised profit also depends on price, volatility and costs. Selling premium is not a guaranteed collection of that estimate.\n\nVega — volatility sensitivity\n\nVega estimates sensitivity to a one-percentage-point change in implied volatility, with other inputs held fixed. Implied volatility can change around earnings, but it need not rise before every release or fall afterwards. A long option can lose despite a favorable underlying move if time decay and a volatility decline offset that move.\n\n> Every option position is really four separate bets: on direction, on the speed of that direction, on time, and on volatility.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKey takeaways\nDelta estimates underlying-price sensitivity, not a guaranteed payoff or real-world event probability.\nGamma is often relatively large near the strike close to expiration; volatility and other model inputs also matter.\nTheta is a model sensitivity; other price changes can offset or exceed it.\nVega measures volatility sensitivity; a change in implied volatility is a different quantity.\nCheck your understanding\nWhat does theta measure? Options: Directional exposure; Time decay per day; Volatility sensitivity; Interest-rate risk. Correct answer: Time decay per day. Why: Theta is a model estimate of time sensitivity with other inputs held fixed; units and time conventions must be stated.\nIn the lesson example, a 0.50 delta and a $1 underlying rise imply approximately what change per option share, before other effects? Options: $0.10; $0.30; $0.50; $0.90. Correct answer: $0.50. Why: 0.50 × $1 = $0.50 per share, holding other inputs fixed; this is not an event probability.\n'IV crush' typically happens: Options: Right before earnings; Right after earnings; On Fed decision day; At market open. Correct answer: Right after earnings. Why: A post-announcement drop in implied volatility is often called IV crush; it is not inevitable after every release.\nWhich Greek measures the rate of change of delta? Options: Vega; Theta; Gamma; Rho. Correct answer: Gamma. Why: Gamma tells you how quickly delta itself changes.\nSources\nOIC — Delta (https://www.optionseducation.org/advancedconcepts/delta)\nOIC — Theta (https://www.optionseducation.org/advancedconcepts/theta)\nOIC — Vega (https://www.optionseducation.org/advancedconcepts/vega)\nCboe — The Greeks (https://www.cboe.com/education/tools/)\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nReferences and related pages\nOIC — Delta\nOIC — Theta\nOIC — Vega\nCboe — The Greeks\nPrevious: What Is an Option? Calls & Puts Explained\nNext: Defined-Risk Spreads — Verticals & Iron Condors\nOptions Trading Fundamentals\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 753,
+      "scrollHeight": 9378,
+      "viewportWidth": 768,
+      "canonical": "https://www.thetradehq.com/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+      "images": [
+        {
+          "alt": "The Greeks — Delta, Gamma, Theta & Vega — illustration",
+          "complete": true,
+          "naturalWidth": 1200,
+          "source": "https://www.thetradehq.com/assets/options-hero-DeA_XZdf.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "4a12131d2fe45354-768-00.png"
+        },
+        {
+          "y": 870,
+          "screenshot": "4a12131d2fe45354-768-01.png"
+        },
+        {
+          "y": 1740,
+          "screenshot": "4a12131d2fe45354-768-02.png"
+        },
+        {
+          "y": 2610,
+          "screenshot": "4a12131d2fe45354-768-03.png"
+        },
+        {
+          "y": 3480,
+          "screenshot": "4a12131d2fe45354-768-04.png"
+        },
+        {
+          "y": 4350,
+          "screenshot": "4a12131d2fe45354-768-05.png"
+        },
+        {
+          "y": 5220,
+          "screenshot": "4a12131d2fe45354-768-06.png"
+        },
+        {
+          "y": 6090,
+          "screenshot": "4a12131d2fe45354-768-07.png"
+        },
+        {
+          "y": 6960,
+          "screenshot": "4a12131d2fe45354-768-08.png"
+        },
+        {
+          "y": 7830,
+          "screenshot": "4a12131d2fe45354-768-09.png"
+        },
+        {
+          "y": 8354,
+          "screenshot": "4a12131d2fe45354-768-10.png"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "path": "/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+      "title": "The Greeks — Delta, Gamma, Theta & Vega — Options Trading Fundamentals | TradeHQ",
+      "heading": "The Greeks — Delta, Gamma, Theta & Vega",
+      "supplementaryNotes": [
+        {
+          "path": "/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+          "text": "Learning notes: The Greeks — Delta, Gamma, Theta & Vega\n\nThe four Greeks quantify how an option's price reacts to stock moves, volatility, and the passage of time. TradeHQ offers $100,000 virtual cash for supported spot instruments. Derivatives contracts remain conceptual exercises. Educational only, not financial advice.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nSummary\n\nThe four Greeks quantify how an option's price reacts to stock moves, volatility, and the passage of time.\n\nWhy Greeks matter\n\nGreeks are model-based sensitivities to inputs, holding other inputs fixed. Delta describes underlying-price sensitivity; gamma describes a change in delta; theta describes time sensitivity; vega describes implied-volatility sensitivity. Interest rates and dividends can also matter. Finite market moves need not equal a first-order estimate, and different pricing models can produce different values.\n\nDelta — directional exposure\n\nA delta of 0.50 per share describes an approximate $0.50 option-price change for a $1 underlying move, with other inputs held fixed. For a 100-share contract that is about $50, before gamma and other effects. Some traders use delta as a rough probability shorthand, but it is not a calibrated real-world probability and need not match the model probability of finishing in the money.\n\nGamma — how fast delta changes\n\nGamma measures how delta changes as the underlying moves. It is often relatively large near the strike close to expiry, depending on volatility and other inputs. Dealer hedging can affect demand, but a chart or open-interest figure alone does not establish dealer positions, required hedges or the cause of a price move.\n\nTheta — the ticking clock\n\nTheta estimates an option value change as time passes under a model, holding other inputs fixed. State whether the quote is per share or per contract and whether a calendar or trading-day convention is used. Purchased options commonly have negative theta, but realised profit also depends on price, volatility and costs. Selling premium is not a guaranteed collection of that estimate.\n\nVega — volatility sensitivity\n\nVega estimates sensitivity to a one-percentage-point change in implied volatility, with other inputs held fixed. Implied volatility can change around earnings, but it need not rise before every release or fall afterwards. A long option can lose despite a favorable underlying move if time decay and a volatility decline offset that move.\n\n> Every option position is really four separate bets: on direction, on the speed of that direction, on time, and on volatility.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKey takeaways\nDelta estimates underlying-price sensitivity, not a guaranteed payoff or real-world event probability.\nGamma is often relatively large near the strike close to expiration; volatility and other model inputs also matter.\nTheta is a model sensitivity; other price changes can offset or exceed it.\nVega measures volatility sensitivity; a change in implied volatility is a different quantity.\nCheck your understanding\nWhat does theta measure? Options: Directional exposure; Time decay per day; Volatility sensitivity; Interest-rate risk. Correct answer: Time decay per day. Why: Theta is a model estimate of time sensitivity with other inputs held fixed; units and time conventions must be stated.\nIn the lesson example, a 0.50 delta and a $1 underlying rise imply approximately what change per option share, before other effects? Options: $0.10; $0.30; $0.50; $0.90. Correct answer: $0.50. Why: 0.50 × $1 = $0.50 per share, holding other inputs fixed; this is not an event probability.\n'IV crush' typically happens: Options: Right before earnings; Right after earnings; On Fed decision day; At market open. Correct answer: Right after earnings. Why: A post-announcement drop in implied volatility is often called IV crush; it is not inevitable after every release.\nWhich Greek measures the rate of change of delta? Options: Vega; Theta; Gamma; Rho. Correct answer: Gamma. Why: Gamma tells you how quickly delta itself changes.\nSources\nOIC — Delta (https://www.optionseducation.org/advancedconcepts/delta)\nOIC — Theta (https://www.optionseducation.org/advancedconcepts/theta)\nOIC — Vega (https://www.optionseducation.org/advancedconcepts/vega)\nCboe — The Greeks (https://www.cboe.com/education/tools/)\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nReferences and related pages\nOIC — Delta\nOIC — Theta\nOIC — Vega\nCboe — The Greeks\nPrevious: What Is an Option? Calls & Puts Explained\nNext: Defined-Risk Spreads — Verticals & Iron Condors\nOptions Trading Fundamentals\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1265,
+      "scrollHeight": 8687,
+      "viewportWidth": 1280,
+      "canonical": "https://www.thetradehq.com/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+      "images": [
+        {
+          "alt": "The Greeks — Delta, Gamma, Theta & Vega — illustration",
+          "complete": true,
+          "naturalWidth": 1200,
+          "source": "https://www.thetradehq.com/assets/options-hero-DeA_XZdf.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "4a12131d2fe45354-1280-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "4a12131d2fe45354-1280-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "4a12131d2fe45354-1280-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "4a12131d2fe45354-1280-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "4a12131d2fe45354-1280-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "4a12131d2fe45354-1280-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "4a12131d2fe45354-1280-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "4a12131d2fe45354-1280-07.png"
+        },
+        {
+          "y": 5440,
+          "screenshot": "4a12131d2fe45354-1280-08.png"
+        },
+        {
+          "y": 6120,
+          "screenshot": "4a12131d2fe45354-1280-09.png"
+        },
+        {
+          "y": 6800,
+          "screenshot": "4a12131d2fe45354-1280-10.png"
+        },
+        {
+          "y": 7480,
+          "screenshot": "4a12131d2fe45354-1280-11.png"
+        },
+        {
+          "y": 7887,
+          "screenshot": "4a12131d2fe45354-1280-12.png"
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "path": "/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+      "title": "The Greeks — Delta, Gamma, Theta & Vega — Options Trading Fundamentals | TradeHQ",
+      "heading": "The Greeks — Delta, Gamma, Theta & Vega",
+      "supplementaryNotes": [
+        {
+          "path": "/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+          "text": "Learning notes: The Greeks — Delta, Gamma, Theta & Vega\n\nThe four Greeks quantify how an option's price reacts to stock moves, volatility, and the passage of time. TradeHQ offers $100,000 virtual cash for supported spot instruments. Derivatives contracts remain conceptual exercises. Educational only, not financial advice.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nSummary\n\nThe four Greeks quantify how an option's price reacts to stock moves, volatility, and the passage of time.\n\nWhy Greeks matter\n\nGreeks are model-based sensitivities to inputs, holding other inputs fixed. Delta describes underlying-price sensitivity; gamma describes a change in delta; theta describes time sensitivity; vega describes implied-volatility sensitivity. Interest rates and dividends can also matter. Finite market moves need not equal a first-order estimate, and different pricing models can produce different values.\n\nDelta — directional exposure\n\nA delta of 0.50 per share describes an approximate $0.50 option-price change for a $1 underlying move, with other inputs held fixed. For a 100-share contract that is about $50, before gamma and other effects. Some traders use delta as a rough probability shorthand, but it is not a calibrated real-world probability and need not match the model probability of finishing in the money.\n\nGamma — how fast delta changes\n\nGamma measures how delta changes as the underlying moves. It is often relatively large near the strike close to expiry, depending on volatility and other inputs. Dealer hedging can affect demand, but a chart or open-interest figure alone does not establish dealer positions, required hedges or the cause of a price move.\n\nTheta — the ticking clock\n\nTheta estimates an option value change as time passes under a model, holding other inputs fixed. State whether the quote is per share or per contract and whether a calendar or trading-day convention is used. Purchased options commonly have negative theta, but realised profit also depends on price, volatility and costs. Selling premium is not a guaranteed collection of that estimate.\n\nVega — volatility sensitivity\n\nVega estimates sensitivity to a one-percentage-point change in implied volatility, with other inputs held fixed. Implied volatility can change around earnings, but it need not rise before every release or fall afterwards. A long option can lose despite a favorable underlying move if time decay and a volatility decline offset that move.\n\n> Every option position is really four separate bets: on direction, on the speed of that direction, on time, and on volatility.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKey takeaways\nDelta estimates underlying-price sensitivity, not a guaranteed payoff or real-world event probability.\nGamma is often relatively large near the strike close to expiration; volatility and other model inputs also matter.\nTheta is a model sensitivity; other price changes can offset or exceed it.\nVega measures volatility sensitivity; a change in implied volatility is a different quantity.\nCheck your understanding\nWhat does theta measure? Options: Directional exposure; Time decay per day; Volatility sensitivity; Interest-rate risk. Correct answer: Time decay per day. Why: Theta is a model estimate of time sensitivity with other inputs held fixed; units and time conventions must be stated.\nIn the lesson example, a 0.50 delta and a $1 underlying rise imply approximately what change per option share, before other effects? Options: $0.10; $0.30; $0.50; $0.90. Correct answer: $0.50. Why: 0.50 × $1 = $0.50 per share, holding other inputs fixed; this is not an event probability.\n'IV crush' typically happens: Options: Right before earnings; Right after earnings; On Fed decision day; At market open. Correct answer: Right after earnings. Why: A post-announcement drop in implied volatility is often called IV crush; it is not inevitable after every release.\nWhich Greek measures the rate of change of delta? Options: Vega; Theta; Gamma; Rho. Correct answer: Gamma. Why: Gamma tells you how quickly delta itself changes.\nSources\nOIC — Delta (https://www.optionseducation.org/advancedconcepts/delta)\nOIC — Theta (https://www.optionseducation.org/advancedconcepts/theta)\nOIC — Vega (https://www.optionseducation.org/advancedconcepts/vega)\nCboe — The Greeks (https://www.cboe.com/education/tools/)\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nReferences and related pages\nOIC — Delta\nOIC — Theta\nOIC — Vega\nCboe — The Greeks\nPrevious: What Is an Option? Calls & Puts Explained\nNext: Defined-Risk Spreads — Verticals & Iron Condors\nOptions Trading Fundamentals\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1905,
+      "scrollHeight": 8611,
+      "viewportWidth": 1920,
+      "canonical": "https://www.thetradehq.com/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+      "images": [
+        {
+          "alt": "The Greeks — Delta, Gamma, Theta & Vega — illustration",
+          "complete": true,
+          "naturalWidth": 1200,
+          "source": "https://www.thetradehq.com/assets/options-hero-DeA_XZdf.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "4a12131d2fe45354-1920-00.png"
+        },
+        {
+          "y": 918,
+          "screenshot": "4a12131d2fe45354-1920-01.png"
+        },
+        {
+          "y": 1836,
+          "screenshot": "4a12131d2fe45354-1920-02.png"
+        },
+        {
+          "y": 2754,
+          "screenshot": "4a12131d2fe45354-1920-03.png"
+        },
+        {
+          "y": 3672,
+          "screenshot": "4a12131d2fe45354-1920-04.png"
+        },
+        {
+          "y": 4590,
+          "screenshot": "4a12131d2fe45354-1920-05.png"
+        },
+        {
+          "y": 5508,
+          "screenshot": "4a12131d2fe45354-1920-06.png"
+        },
+        {
+          "y": 6426,
+          "screenshot": "4a12131d2fe45354-1920-07.png"
+        },
+        {
+          "y": 7344,
+          "screenshot": "4a12131d2fe45354-1920-08.png"
+        },
+        {
+          "y": 7531,
+          "screenshot": "4a12131d2fe45354-1920-09.png"
+        }
+      ]
+    }
+  ]
+}

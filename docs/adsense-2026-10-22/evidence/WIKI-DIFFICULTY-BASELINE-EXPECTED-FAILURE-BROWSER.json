@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-10-25T11:07:23.822Z",
+  "sha": "538f1f3c8e6d0a888fc59ae237e202051b2e9a97",
+  "origin": "http://127.0.0.1:4180",
+  "outcome": "FAIL",
+  "rows": [
+    {
+      "width": 360,
+      "theme": "light",
+      "path": "/wiki/bear-trap",
+      "difficulty": "Novice",
+      "color": "rgb(52, 211, 153)",
+      "backgrounds": [
+        "rgba(16, 185, 129, 0.1)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(247, 247, 247)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(247, 247, 247)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "fontSize": "10px",
+      "fontWeight": "700",
+      "opacity": "1",
+      "overflow": false
+    }
+  ],
+  "failure": "Difficulty contrast bear-trap/360/light/default: 1.64",
+  "scope": "Compiled/deployed actualthreepalettecomputedcolors atfivewidths/boththemes/defaultandforcedhover; alphabackgroundscomposited;noexternalshare/account/progressaction. Imagesrequirepersonalviewing."
+}

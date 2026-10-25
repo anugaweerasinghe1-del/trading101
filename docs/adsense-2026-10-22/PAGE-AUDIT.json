@@ -3084,7 +3084,7 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "FIRST_FOLD_ONLY",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
         "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
         "humanViewedWidths": [
@@ -3095,7 +3095,17 @@
         ],
         "evidence": [
           "evidence/contact--courses--360-8.png"
-        ]
+        ],
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "All nine contacts at all five widths personally viewed: title/byline/hero/quick answer, margin collateral vs loan, maintenance requirements and possible intraday liquidation, daily/intraday settlement and residual default risk,50x5000=250000notional and2500/13000=19.23% hypothetical deposit example, takeaways, four unanswered quizzes/disabled submit, CME links/previous/next, footer and entire appended article. No default clipping/overlap observed; no quiz/progress action. Official contract multiplier corroborated in earlier source receipt, but full margin/broker-rule and keyboard/light/zoom/conditional stages remain."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -3116,8 +3126,15 @@
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "confirmedFindingStates": []
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "confirmedFindingStates": [],
+      "datedCoursePrimarySourceFollowup": {
+        "evidence": "evidence/GREEKS-MARGIN-PRIMARY-SOURCE-FOLLOWUP-20261025.json",
+        "path": "/courses/futures-and-derivatives/margin-and-leverage-in-futures",
+        "corroborated": "CME margin lesson explicitly distinguishes deposit/collateral from borrowed securities purchase; maintenance can require immediate extra funds, reduced positions or liquidation. Amounts may change with risk and brokers may require more funds. The site correctly labels13000as assumed worksheet deposit and2500/13000as deposit-relative, not universal equity return.",
+        "remaining": "Current individual exchange/broker requirements, intraday clearing procedures and real financial execution remain outside this reading. Earlier contract specification receipt separately establishes50multiplier.",
+        "wholeSourceReviewComplete": false
+      }
     },
     {
       "url": "https://www.thetradehq.com/courses/futures-and-derivatives/micro-futures-for-beginners",
@@ -3753,9 +3770,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "All nine contacts at all five widths personally viewed: hero/byline/quick answer, statutory mandate andPCEtarget, eightregular meetings/additionalpossible/quarterlySEP, FedWatch futures-implied probabilities distinctfromcertainty, statementversuspressconference context, observewithoutpredictingfirstmove, takeaways, four unansweredquizzes/disabledsubmit, datedsources/previous/next, footer andentireappendedarticle. No defaultclipping/overlap observed; no quiz/progressaction. Primary-source details andkeyboard/light/zoom/conditionalstages remain."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -3776,7 +3803,7 @@
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": []
     },
     {
@@ -4269,9 +4296,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "All nine contacts at all five widths personally viewed, covering hero/byline, quick answer, Greeks model sensitivity definitions,0.50delta example with100sharecontract qualification, gamma/expiry caveats, theta units/time convention/otherinputs, vega vs impliedvolatility distinction, four unanswered quizzes/disabled submit, four sources/previous/next, footer and full appended notes. No default clipping or overlap observed. No production quiz or progress action. Primary source Greeks verification, keyboard/light/zoom and conditional states remain."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -4292,8 +4329,15 @@
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
-      "confirmedFindingStates": []
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "confirmedFindingStates": [],
+      "datedCoursePrimarySourceFollowup": {
+        "evidence": "evidence/GREEKS-MARGIN-PRIMARY-SOURCE-FOLLOWUP-20261025.json",
+        "path": "/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+        "corroborated": "OIC Delta definition/example supports theoretical0.50premium movement per1underlying move with other inputs held fixed. OIC Theta supports model estimate/time decay per day, nonlinear behavior and differing weekend/model conventions, rather than guaranteed realized profit. OIC Vega supports implied-volatility sensitivity per one-percentage-point change, separate from the volatility input itself. Lesson retains these qualifications.",
+        "remaining": "Gamma shape and calibrated probability distinction not independently completed in this followup; Cboe source, full Greeks interactions and adjusted contract risks remain.",
+        "wholeSourceReviewComplete": false
+      }
     },
     {
       "url": "https://www.thetradehq.com/courses/options-trading-fundamentals/what-is-an-option",
@@ -4805,9 +4849,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "All nine contacts at all five widths personally viewed: byline/hero, quickanswer, non-diagnostic response-to-loss discussion, planned/actual size journal prompt, hypothetical revenge sequence without claimed causation/ranking,3%of100000=3000worksheet distinctfromindustryrule, accurate limited five-second cooldown description, breaknotguarantee, takeaways, four unanswered quizzes/disabledsubmit, sources/previous/next, footer/fullnotes. No defaultclipping/overlap observed. No actualorder/loss/cooldown/progress or quizsubmitted; source andconditional/light/keyboard/zoomstages remain."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -4828,7 +4882,7 @@
         "questionsRead": 4,
         "status": "RENDERED_TEXT_READ_SOURCE_AND_VISUAL_FOLLOWUP_PENDING"
       },
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": []
     },
     {
@@ -5140,9 +5194,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personallyviewedallcontacts/allsegmentsat360,390,768,1280,1920:hero,quickanswer,steps,tips/risks/studentperspective,drivers,workedexample,timing,mistakes/review,links,closedFAQs,sources,entirefooterandappendix. Nodefaultclippingoroverlapobserved. Substantivearticle repeatedafterfooter;retainedasfocusedduplicationfinding. Noorder,share,accountorprogressaction. Light/zoom/keyboard/expandedstate/sourcechecksremain. Read both full rendered copies:0.05BTC at50000=2500 exposure and2.50entryfee;250downside beforecost;10000of100000 rising10percent yields1percent wholeaccount beforecost;11000/101000=10.89percent currentweight. Protocolissuance separatefromprice,provider timestampnotexchangefill,nocustody. Hypotheticalarithmetic internallyconsistent;BTCprimarysourceandfulloriginalityreviewremain."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/trade/btc",
@@ -5176,7 +5240,7 @@
           "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
         }
       ],
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": [
         {
           "id": "THQ-007",
@@ -5241,9 +5305,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personallyviewedallcontacts/allsegmentsat360,390,768,1280,1920:hero,quickanswer,steps,tips/risks/studentperspective,drivers,workedexample,timing,mistakes/review,links,closedFAQs,sources,entirefooterandappendix. Nodefaultclippingoroverlapobserved. Substantivearticle repeatedafterfooter;retainedasfocusedduplicationfinding. Noorder,share,accountorprogressaction. Light/zoom/keyboard/expandedstate/sourcechecksremain. Read both full rendered copies:networkversusETH,gasversussimulatorfee,nostaking/transfer;0.5ETHat3200=1600+1.60fee;2ETHat2500=5000+5fee;2400mark gives200grossloss/205equityloss afterentryfee,4.80exitfeeifthen sold. Networkdemandnotautomaticpricerise;completecurrentprimary-sourcecorroborationremains."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/trade/eth",
@@ -5277,7 +5351,7 @@
           "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
         }
       ],
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": [
         {
           "id": "THQ-007",
@@ -5342,9 +5416,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personallyviewedallcontacts/allsegmentsat360,390,768,1280,1920:hero,quickanswer,steps,tips/risks/studentperspective,drivers,workedexample,timing,mistakes/review,links,closedFAQs,sources,entirefooterandappendix. Nodefaultclippingoroverlapobserved. Substantivearticle repeatedafterfooter;retainedasfocusedduplicationfinding. Noorder,share,accountorprogressaction. Light/zoom/keyboard/expandedstate/sourcechecksremain. Read both full rendered copies:businessmetricsversusshareprice;5sharesat120=600plus0.60entryfee;2000directplus8000fundwithassumed10percentNVDA gives2800/10000=28percent lookthroughexposure and280lossif10percentfallwithotherholdingsfixed. Fundweightdated/hypothetical,nominalpricecannotestablishfairvalue,noperformancepromise;issuer/currentfilingandoriginalityfollowupsremain."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/trade/nvda",
@@ -5378,7 +5462,7 @@
           "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
         }
       ],
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": [
         {
           "id": "THQ-007",
@@ -5443,9 +5527,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personallyviewedallcontacts/allsegmentsat360,390,768,1280,1920:hero,quickanswer,steps,tips/risks/studentperspective,drivers,workedexample,timing,mistakes/review,links,closedFAQs,sources,entirefooterandappendix. Nodefaultclippingoroverlapobserved. Substantivearticle repeatedafterfooter;retainedasfocusedduplicationfinding. Noorder,share,accountorprogressaction. Light/zoom/keyboard/expandedstate/sourcechecksremain. Read both full rendered copies:SOLtokenversusSolananetwork/onchainfees,nostaking/transfer/derivatives;40SOL125=5000+5buyfee;130exit5200less5.20sellfee gives189.80roundtripresult;115mark4600gives400grosslossbeforefees. Quotesnotguaranteedfills,24/7notconstantliquidity,adversecasepreserved;networksourceandoriginalityfollowupsremain."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/trade/sol",
@@ -5479,7 +5573,7 @@
           "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
         }
       ],
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": [
         {
           "id": "THQ-007",
@@ -5544,9 +5638,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personallyviewedallcontacts/allsegmentsat360,390,768,1280,1920:hero,quickanswer,steps,tips/risks/studentperspective,drivers,workedexample,timing,mistakes/review,links,closedFAQs,sources,entirefooterandappendix. Nodefaultclippingoroverlapobserved. Substantivearticle repeatedafterfooter;retainedasfocusedduplicationfinding. Noorder,share,accountorprogressaction. Light/zoom/keyboard/expandedstate/sourcechecksremain. Read both full rendered copies:index/fund/countrydistinction,nodirectownershipofeachconstituent;2unitsat500=1000+1fee;10units500=5000,2percentfall=100lossand0.1percentoriginalaccount;5entryfeeleaves99895equityatmark. Distributions/expensesnotinvented,sessions/provenancequalified;fundsourceandcompleteoriginalityfollowupsremain."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/trade/spy",
@@ -5580,7 +5684,7 @@
           "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
         }
       ],
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": [
         {
           "id": "THQ-007",
@@ -5645,9 +5749,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personallyviewedallcontacts/allsegmentsat360,390,768,1280,1920:hero,quickanswer,steps,tips/risks/studentperspective,drivers,workedexample,timing,mistakes/review,links,closedFAQs,sources,entirefooterandappendix. Nodefaultclippingoroverlapobserved. Substantivearticle repeatedafterfooter;retainedasfocusedduplicationfinding. Noorder,share,accountorprogressaction. Light/zoom/keyboard/expandedstate/sourcechecksremain. Read both full rendered copies:delivery/revenue/marginsdistinct;4shares200=800plus0.80entryfee,180gap80grossloss;20shares200=4000plus4buyfee,180mark400grossloss;190plannedthreshold200lossnotguaranteedstopfill. Nooptions/votingrights/realownership,narrativeprespecifiednotrewrittenafteroutcome;issuer/sourceandoriginalityfollowupsremain."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/trade/tsla",
@@ -5681,7 +5795,7 @@
           "evidence": "evidence/PR214-PRODUCTION-BROWSER.json"
         }
       ],
-      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": [
         {
           "id": "THQ-007",
@@ -31244,9 +31358,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "All five contacts covering all viewportsegments at all five widths personally viewed: breadcrumb/byline, definition/explanation/cards, workedexercise/sourcecontext, simulatorCTA/sharebutton/relatedterms andentirefooter. No defaultclipping/overlap observed; singleauthoredmain andno appendedarticle. Read complete detailed definition, look-ahead/survivorship/overfitting discussion, held-out exercise and cost/missing-data qualification. Simulator history explicitly not historical market evidence; no guaranteed sample count or futureedge. SEC risk pointer clearly limited to background. No WhatsAppaction, account/order/progress or formsubmission. Keyboard/light/zoom, safe navigation andprimarysource/originality stages remain."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -31320,9 +31444,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "All five contacts covering all viewportsegments at all five widths personally viewed: breadcrumb/byline, definition/explanation/cards, workedexercise/sourcecontext, simulatorCTA/sharebutton/relatedterms andentirefooter. No defaultclipping/overlap observed; singleauthoredmain andno appendedarticle. Read complete retrospective-support/reversal definition, no inferred manipulation/short positions, prespecified window and contrary continuations,40to38to42paperexample, shorting unsupported, two SEC references, context CTA andrelatedterms. No WhatsAppaction, account/order/progress or formsubmission. Keyboard/light/zoom, safe navigation andprimarysource/originality stages remain."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -31396,9 +31530,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "All five contacts covering all viewportsegments at all five widths personally viewed: breadcrumb/byline, definition/explanation/cards, workedexercise/sourcecontext, simulatorCTA/sharebutton/relatedterms andentirefooter. No defaultclipping/overlap observed; singleauthoredmain andno appendedarticle. Read complete20period/twostandarddeviation commonexample with variable-settings qualification, dispersion not normallydistributed guarantee, prespecified lookback, no direction/deadline fromnarrowbands, bothhypotheticaloutcomes, Fidelitybackgroundsource andrelatedterms. No WhatsAppaction, account/order/progress or formsubmission. Keyboard/light/zoom, safe navigation andprimarysource/originality stages remain."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -31472,9 +31616,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "All five contacts covering all viewportsegments at all five widths personally viewed: breadcrumb/byline, definition/explanation/cards, workedexercise/sourcecontext, simulatorCTA/sharebutton/relatedterms andentirefooter. No defaultclipping/overlap observed; singleauthoredmain andno appendedarticle. Read complete retrospective-resistance/reversal definition, pricealonecannotestablish intent, initialreversalunknown, contrarycontinuations andfill/costqualification,50to52to49example andimperfectexit, SECorderreference andrelatedterms. No WhatsAppaction, account/order/progress or formsubmission. Keyboard/light/zoom, safe navigation andprimarysource/originality stages remain."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -31548,9 +31702,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personally viewed all five contacts, covering all default segments at360/390/768/1280/1920:breadcrumb/byline,entiredefinition/explanation/keypoints/worksheet/sourcecontext,CTA/share/relatedlinksandfullfooter. No clipping/documentoverflow/overlap seen. SharedsharecontrastTHQ039isalreadytracked;noexternalshare/account/order/progressaction. OHLCbody/wicks/dojitolerancesandtwo-candleengulfing distinguished fromlongersequences;100open106high98low104close exercise internallycoherent. IntrabartransactionorderandparticipantintentarenotknownfromOHLC;failedandsuccessfulcasesrequired. No predictivepatternsuccessrate claimed; Fidelitybackgroundqualified. Singlemain/noappendix; source/keyboard/light/zoomfollowupsremain."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -31624,9 +31788,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personally viewed all five contacts, covering all default segments at360/390/768/1280/1920:breadcrumb/byline,entiredefinition/explanation/keypoints/worksheet/sourcecontext,CTA/share/relatedlinksandfullfooter. No clipping/documentoverflow/overlap seen. SharedsharecontrastTHQ039isalreadytracked;noexternalshare/account/order/progressaction. Read rule-basedpause explanation,7/13/20percentUSmarketwideexample,15minLevel1/2before3:25pmregularsessionqualification,Level3dayend;LULDseparatefrommarketwidehalt/othermarkets. 5000priorcloseworksheet4650/4350/4000correct;notguaranteedexit/reopenprice andTradeHQdoesnotmodelrules. CurrentNYSE/LULDprimaryrulereadingandlight/zoom/keyboardfollowupsremain."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -31700,9 +31874,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personally viewed all five contacts, covering all default segments at360/390/768/1280/1920:breadcrumb/byline,entiredefinition/explanation/keypoints/worksheet/sourcecontext,CTA/share/relatedlinksandfullfooter. No clipping/documentoverflow/overlap seen. SharedsharecontrastTHQ039isalreadytracked;noexternalshare/account/order/progressaction. Read samplelinearassociationversuscausation/permanence,matchedreturnintervals/dates/data,undefinedconstantseries,regimechanges,borrow/cost/hedgemismatchrisk. Hypotheticalpairlong/shortcannotbeexecutedinspotTradeHQ;recalculatesecondwindowwithoutpromisingconvergence. SECbackgroundnotstrategyvalidation;fullsource/keyboard/light/zoomfollowupsremain."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -31776,9 +31960,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personally viewed all five contacts, covering all default segments at360/390/768/1280/1920:breadcrumb/byline,entiredefinition/explanation/keypoints/worksheet/sourcecontext,CTA/share/relatedlinksandfullfooter. No clipping/documentoverflow/overlap seen. SharedsharecontrastTHQ039isalreadytracked;noexternalshare/account/order/progressaction. Read non-displayedpretradequotesversusposttradereporting;off-exchangeprintnotproofofdarkpool/participantintent,nocurrentmarketsharepercentageclaimed. Venuejurisdiction/instrument/timeperiodneeded,fees/liquidity/executionstillmatter. FINRA/SECpointerscontextual;TradeHQdoesnotmodelprivatevenues. Source/keyboard/light/zoomfollowupsremain."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -31852,9 +32046,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personally viewed all five contacts, covering all default segments at360/390/768/1280/1920:breadcrumb/byline,entiredefinition/explanation/keypoints/worksheet/sourcecontext,CTA/share/relatedlinksandfullfooter. No clipping/documentoverflow/overlap seen. SharedsharecontrastTHQ039isalreadytracked;noexternalshare/account/order/progressaction. Read samedayopening/closing,closuremayfailbecausehalt/outage/liquidity;no fixedtradecountorfulltimescreenuseestablishescompetence. No universal retaillossrateclaimed.100shares20to20.10=10grossless12modeledcost=2netloss;positioncloseendslaterexposure butnotproofrepeatprofitability. Broker/jurisdictionmarginrulesnotinvented;source/keyboard/light/zoomremain."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -31928,9 +32132,19 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personally viewed all five contacts, covering all default segments at360/390/768/1280/1920:breadcrumb/byline,entiredefinition/explanation/keypoints/worksheet/sourcecontext,CTA/share/relatedlinksandfullfooter. No clipping/documentoverflow/overlap seen. SharedsharecontrastTHQ039isalreadytracked;noexternalshare/account/order/progressaction. Read conventionalshorter/longerMA50/200crossaslagginghistoricalcalculation,nodownturnguarantee/professionalpositioninference. Constructsamecrosswithlaterrecoveryandcontinueddecline,includeexpenses/prespecifiedfrequencyandperiod. FidelityMAreferencequalified;no new sourceverificationfromlinkpresence. Source/keyboard/light/zoomremain."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -42906,5 +43120,5 @@
     "individualActualRenderedProseComparisonsWithPreviouslyFullyReadBaseline": 85,
     "scope": "441 main texts/states covered, not441 fully completed page/source/control/human-visual reviews. See TERMINAL-TEMPLATE-COMPARISONS.json for raw texts and deltas."
   },
-  "updatedAt": "2026-10-25T09:21:28.990654+00:00"
+  "updatedAt": "2026-10-25T11:21:43.662063+00:00"
 }
