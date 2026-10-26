@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-10-26T06:43:23.457106+00:00",
+  "outcome": "SELECTED_BACKGROUND_SOURCE_READ_SPECIFIC_CLAIMS_REMAIN",
+  "source": {
+    "url": "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/overview",
+    "checkedAt": "2026-10-26T06:38:49.812205+00:00",
+    "status": 200,
+    "finalUrl": "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/overview",
+    "sha256": "2cf286cd6b65d8c7418c110c4449f0a8fbaa6a092e3bcf978c6251b3eb51deaa"
+  },
+  "actualPassagesRead": "Fidelity describes technical analysis as using historical data in attempts to identify future price movement and as focusing on price/volume. It states past performance does not guarantee future results. The returned guide index has no populated indicator results; it is not direct corroboration of four pattern definitions, conventions or effectiveness.",
+  "routes": [
+    {
+      "path": "/wiki/double-bottom",
+      "assessment": "Read entire current MAIN. Two troughs near30and intervening35give conventional35+(35-30)=40projection, explicitly not a guaranteed outcome. Fixed tolerances/failed examples and RSI/volume uncertainty are discussed. Ideal-volume and selling-conviction interpretation needs claim-specific source scrutiny; the general Fidelity guide does not establish those details or a success rate. Compared with the other three pages, this page focuses on W/neckline geometry rather than wave counts or a gap. Full source/originality/accessibility/control follow-ups remain."
+    },
+    {
+      "path": "/wiki/elliott-wave-theory",
+      "assessment": "Read entire current MAIN. Five-impulse/three-correction labels are presented as an interpretive framework with competing endpoints, hindsight and invalidation, not hidden orders or a timed forecast. Two-reader/frozen-count exercise adds a distinct uncertainty test beyond shared risk boilerplate. Full framework conventions/primary attribution need specific sources; Fidelity overview alone does not establish them. No generated-history predictive validation is claimed. Full originality/accessibility/conditional follow-ups remain."
+    },
+    {
+      "path": "/wiki/fair-value-gap",
+      "assessment": "Read entire current MAIN. First high100and third low102define the stated non-overlap; both revisiting/non-revisiting paths are requested. Economic fair value, remaining orders, institutional intent and guaranteed fills are explicitly rejected. Supply-zone language is a framework label, not observed order inventory. Exact ICT/SMC attribution and candle conventions remain source follow-ups; Fidelity general background and SEC order mechanics do not establish this framework. Distinct worksheet value exists versus the wave/retracement pages, but cross-site originality remains."
+    },
+    {
+      "path": "/wiki/fibonacci-retracement",
+      "assessment": "Read entire current MAIN. From80to120, midpoint120-40x.5=100and61.8%retracement120-40x.618=95.28 reconcile independently.50%is identified as a midpoint convention rather than a Fibonacci ratio. Endpoint sensitivity and both rebound/continuation examples prevent a numerical ratio being treated as a reversal probability. Specific ratio/chart conventions still need direct source corroboration; the linked overview supplies background only. Full cross-site originality/accessibility/conditional follow-ups remain."
+    }
+  ],
+  "arithmetic": "Independent Decimal calculation95.28and direct35+(35-30)=40. Hypothetical geometry, not financial engine or prediction validation.",
+  "scope": "Original paraphrases only; entire Fidelity source text stays workspace-only. No complete primary-source or AdSense verdict."
+}

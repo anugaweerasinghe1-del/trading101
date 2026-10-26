@@ -9,12 +9,12 @@
     {
       "path": "BLOCKED-STATUS.md",
       "bytes": 11795,
-      "sha256": "b10b12babf78503660d5b6981954154cffb582d27ff4415e85706ea826a78b73"
+      "sha256": "eb9dbea646dca559cf02d6bb585fade784a38cbf9d688d41e8275c31c2cb3062"
     },
     {
       "path": "CHECKPOINT.md",
-      "bytes": 89171,
-      "sha256": "b50a92ca86b3370ded047ca11cbd0d00cbd85cd888d3cf459c7410509047d2bf"
+      "bytes": 90035,
+      "sha256": "8d69ae5553b097bd053a313850baa3dcb45d63d2be99cab11a17295beb2c6704"
     },
     {
       "path": "DAILY-CONDITIONAL-REVIEW.json",
@@ -38,8 +38,8 @@
     },
     {
       "path": "FULLPAGE-VISUAL-REVIEW-20261024.json",
-      "bytes": 175447,
-      "sha256": "74bdcca1118c45eacfb90e499353856b7813681291781ed744d58927811ea3f1"
+      "bytes": 183800,
+      "sha256": "716403c89068b837ff057b2cc493529c3fbdd3c6dba27760d5b0da653797c63c"
     },
     {
       "path": "LEGACY-READING-NOTES.json",
@@ -54,7 +54,7 @@
     {
       "path": "NEXT-REVIEW.md",
       "bytes": 3387,
-      "sha256": "844a480d6aa711328385d0a2d7652c3cbbf953a9a79da663e28f9feb86135d87"
+      "sha256": "606b7e43d49d667d808e3435a7470363267c479c23173caeea42131e2935b41b"
     },
     {
       "path": "NONTERMINAL-FAQ-READ-COVERAGE.json",
@@ -63,8 +63,8 @@
     },
     {
       "path": "PAGE-AUDIT.json",
-      "bytes": 2006679,
-      "sha256": "87474b409f468a30fc1dd62b3470fcc89c3b342ed3c5e90e41bd6f0367e27f9e"
+      "bytes": 2014479,
+      "sha256": "55ff917644eb76a6e67a5cd7df04fc3e5be3efc215679a77cf88041cc981dd2c"
     },
     {
       "path": "RELEASE-LEDGER.json",
@@ -98,8 +98,8 @@
     },
     {
       "path": "UNFINISHED-SCOPE.json",
-      "bytes": 358134,
-      "sha256": "7657b306d2299ce8a20fbfb64df809cedc69d0fbf3a9d282492ff5a32272c59d"
+      "bytes": 361868,
+      "sha256": "55e925ef81e79ca599cd74a7140592dda9aa8ffff4466cafae5d7a8596182142"
     },
     {
       "path": "UNREAD-MAIN-ROUTES.txt",
@@ -113,8 +113,8 @@
     },
     {
       "path": "VISUAL-REVIEW-NOTES.json",
-      "bytes": 153972,
-      "sha256": "ac80c44799166e2883ddfae05de003735d1cfc01a11cf25de3cf1adaf14274bb"
+      "bytes": 159105,
+      "sha256": "17ca688127a38f60382c8ea13d8248bf4e286ee23342fb7453bb23a5aa6d26de"
     },
     {
       "path": "browser-session.mjs",
@@ -2455,6 +2455,21 @@
       "path": "evidence/WIKI-LIGHT-KEYBOARD-20261025.json",
       "bytes": 31513,
       "sha256": "7bfcf699a2226ec24aa78b0e49332a78ebf309f9884e6a170481a930bd15f9ee"
+    },
+    {
+      "path": "evidence/WIKI-PATTERN-NAVIGATION-20261026.json",
+      "bytes": 1613,
+      "sha256": "0bf302c6e10992a0288d7a22d63652a489ff5e0d932b3aa736ef576c5c3e39f7"
+    },
+    {
+      "path": "evidence/WIKI-PATTERN-NAVIGATION-INITIAL-PROBE-20261026.json",
+      "bytes": 1886,
+      "sha256": "ff875f3dd9501defbeae0c99cb01ea8d35ba7ba0ce28bba271bd5e44e541709f"
+    },
+    {
+      "path": "evidence/WIKI-PATTERN-SOURCE-FOLLOWUP-20261026.json",
+      "bytes": 3733,
+      "sha256": "039dd9b8fce4d002b7a106dce7ee413378f35852c20e722f318c06da45ea06c2"
     },
     {
       "path": "evidence/WIKI-RISK-LIGHT-KEYBOARD-20261025.json",
@@ -6887,6 +6902,131 @@
       "sha256": "4167382033d25d7da44cb964efeadb32674b6a7d180660a46e9b53d59a4d0a4a"
     },
     {
+      "path": "evidence/fullpage-wiki-pattern-20261026/31253c41f3c64be7.json",
+      "bytes": 30924,
+      "sha256": "a4b6323aa12542204e4b496ab4c91479c24c684e0a742df2408ed75ad11f461e"
+    },
+    {
+      "path": "evidence/fullpage-wiki-pattern-20261026/777df7244189effb.json",
+      "bytes": 43741,
+      "sha256": "0ccf073f91b2a88a63b0837e037ac57130cd104379b742989984a02a5e46dcbc"
+    },
+    {
+      "path": "evidence/fullpage-wiki-pattern-20261026/SUMMARY.json",
+      "bytes": 757,
+      "sha256": "33bc904d249ea6aaea683133f0eb3b2941b0d8200a6b7843ada40a9276582d84"
+    },
+    {
+      "path": "evidence/fullpage-wiki-pattern-20261026/b779569eb428f508.json",
+      "bytes": 42412,
+      "sha256": "30ceecf55af9a0046e4bd93a62cc4ce6d6bdd6c2f249fe79c4f931b4d9b8a0da"
+    },
+    {
+      "path": "evidence/fullpage-wiki-pattern-20261026/contact-31253c41f3c64be7-1280-0.jpg",
+      "bytes": 274403,
+      "sha256": "c6475bdd4e82f908a319cf5bb24b2677f0e883242d7b22592d9184fc59584d65"
+    },
+    {
+      "path": "evidence/fullpage-wiki-pattern-20261026/contact-31253c41f3c64be7-1920-0.jpg",
+      "bytes": 136968,
+      "sha256": "78653e11cb5854a0eb17c119c0f9ded7100d559df1cc22064c17b7c6c87b9e44"
+    },
+    {
+      "path": "evidence/fullpage-wiki-pattern-20261026/contact-31253c41f3c64be7-360-0.jpg",
+      "bytes": 451808,
+      "sha256": "7ded5665ddea6eda92a2a2ef7cab955e37605b1d151a6ad347c5002910d0755b"
+    },
+    {
+      "path": "evidence/fullpage-wiki-pattern-20261026/contact-31253c41f3c64be7-390-0.jpg",
+      "bytes": 508509,
+      "sha256": "36cb5da2e854f7d832dd902945bca4bdb28b9eacd4cb7aa1ce193538deee6661"
+    },
+    {
+      "path": "evidence/fullpage-wiki-pattern-20261026/contact-31253c41f3c64be7-768-0.jpg",
+      "bytes": 519934,
+      "sha256": "a15a517dcb7b9751eec41682e6488854f2d7a438169602322f8685a103cb6eca"
+    },
+    {
+      "path": "evidence/fullpage-wiki-pattern-20261026/contact-777df7244189effb-1280-0.jpg",
+      "bytes": 303488,
+      "sha256": "b7e9aa5c6d01d7cef87b095e12e09d188551d5ecc23b40adb5838d03eb035a9a"
+    },
+    {
+      "path": "evidence/fullpage-wiki-pattern-20261026/contact-777df7244189effb-1920-0.jpg",
+      "bytes": 180497,
+      "sha256": "b07e74132d8a4a338bc89bd29741ff58463ee17660e87b473f045e673125e09a"
+    },
+    {
+      "path": "evidence/fullpage-wiki-pattern-20261026/contact-777df7244189effb-360-0.jpg",
+      "bytes": 531385,
+      "sha256": "90f62212fa71736bfce76c6f77ad055f877e2a05bdbb09cba5caab5c58027e90"
+    },
+    {
+      "path": "evidence/fullpage-wiki-pattern-20261026/contact-777df7244189effb-390-0.jpg",
+      "bytes": 591142,
+      "sha256": "c9fc4b12fd12400fd63f907abf4deb18e49e7071838687e2b9445b29953a5cce"
+    },
+    {
+      "path": "evidence/fullpage-wiki-pattern-20261026/contact-777df7244189effb-768-0.jpg",
+      "bytes": 605365,
+      "sha256": "f272ee10ae55567c857ebb852052338370e009fe31d00f5acb06d4e2edd93210"
+    },
+    {
+      "path": "evidence/fullpage-wiki-pattern-20261026/contact-b779569eb428f508-1280-0.jpg",
+      "bytes": 294912,
+      "sha256": "1cf1b7226347eed23ae5b2a709f17e361acf0593fe287e42d3159a63da991907"
+    },
+    {
+      "path": "evidence/fullpage-wiki-pattern-20261026/contact-b779569eb428f508-1920-0.jpg",
+      "bytes": 147222,
+      "sha256": "c288bc2285692d4612ec6ab7136666555c9a29986bdae8601864e6a0b9b91857"
+    },
+    {
+      "path": "evidence/fullpage-wiki-pattern-20261026/contact-b779569eb428f508-360-0.jpg",
+      "bytes": 522031,
+      "sha256": "ede32c8ef44113a15fc8842d3ef087fce7cdd253ea8c7c07fc57806fbac9b8c6"
+    },
+    {
+      "path": "evidence/fullpage-wiki-pattern-20261026/contact-b779569eb428f508-390-0.jpg",
+      "bytes": 533873,
+      "sha256": "670c6017de1264bbc49870214023758278ad964b8b04d934f7e89c88ab904328"
+    },
+    {
+      "path": "evidence/fullpage-wiki-pattern-20261026/contact-b779569eb428f508-768-0.jpg",
+      "bytes": 588553,
+      "sha256": "01b55331368acf041a611730529ac026a5ff15833363bb427a14d9027da7a143"
+    },
+    {
+      "path": "evidence/fullpage-wiki-pattern-20261026/contact-f4823f0ac5c6344d-1280-0.jpg",
+      "bytes": 275445,
+      "sha256": "1306e2cb9cc5dd7e23f20adc3be4875cd18ad5ae7f156175fd368e334af401e8"
+    },
+    {
+      "path": "evidence/fullpage-wiki-pattern-20261026/contact-f4823f0ac5c6344d-1920-0.jpg",
+      "bytes": 137790,
+      "sha256": "fdaca7dbf84bb7b0874bbd4026117b1a485f8681ce521e1a6e89696c6bbc0762"
+    },
+    {
+      "path": "evidence/fullpage-wiki-pattern-20261026/contact-f4823f0ac5c6344d-360-0.jpg",
+      "bytes": 448232,
+      "sha256": "a9138d9c6822dc588b9c498fe8dac72f88bb33bc5886fcddc50f13f7a915ddb6"
+    },
+    {
+      "path": "evidence/fullpage-wiki-pattern-20261026/contact-f4823f0ac5c6344d-390-0.jpg",
+      "bytes": 506746,
+      "sha256": "7c6b0dea39cd738079f325e393cd84462928fdae50322d68a7d03e260586a215"
+    },
+    {
+      "path": "evidence/fullpage-wiki-pattern-20261026/contact-f4823f0ac5c6344d-768-0.jpg",
+      "bytes": 539771,
+      "sha256": "963efbf43f979863f117d37a6f103e95b0e4c541d4706a4815a39dc42271b862"
+    },
+    {
+      "path": "evidence/fullpage-wiki-pattern-20261026/f4823f0ac5c6344d.json",
+      "bytes": 32132,
+      "sha256": "511566380569edf938a799d647d0a76f169f0a2a30788f794b36c48450277709"
+    },
+    {
       "path": "evidence/fullpage-wiki-risk-20261025/5bfe1e204282ddc2.json",
       "bytes": 41356,
       "sha256": "90306ea7ccbffbcc450fe225fa43d97250489be1443204b192f2a35f0fa8466f"
@@ -9798,8 +9938,8 @@
     },
     {
       "path": "verification/curate-current-evidence.py.txt",
-      "bytes": 10034,
-      "sha256": "beaa800a0595f2c979db4b8e526bc64e94ad201ec91904bd6fd1d63dd960f2c8"
+      "bytes": 10119,
+      "sha256": "68056188e3ac0f0749c7827ddbc60020bc0ca8bcf02efad6d0361fd742f5394f"
     },
     {
       "path": "verification/finish-243-review.py.txt",
@@ -9905,6 +10045,11 @@
       "path": "verification/record-visual.py.txt",
       "bytes": 1955,
       "sha256": "8f3f75d150a6c27d53ee4ece145957cceff38fbf1651afb93bc5d365c186a075"
+    },
+    {
+      "path": "verification/record-wiki-pattern-review.py.txt",
+      "bytes": 6022,
+      "sha256": "506d23d2c2bb82239b7e2aad2bce92799506ac45b4d4a3f1e566f80b6c91a20f"
     },
     {
       "path": "verification/record-wiki-risk-review.py.txt",
@@ -10097,6 +10242,11 @@
       "sha256": "c68936559e50e916f6c77b3e7092f7598613d4df89a5761dac163cf9c2c9d707"
     },
     {
+      "path": "verification/wiki-pattern-navigation.mjs.txt",
+      "bytes": 2616,
+      "sha256": "9d7b60f36a5a4886306b0787f8a078e3623adc030857646361a7865f4dd6cc4d"
+    },
+    {
       "path": "verification/wiki-risk-light-keyboard.mjs.txt",
       "bytes": 3510,
       "sha256": "f1052a7bdb76484a4c6a2179301469ae1950493d803ec7c2b783587728442d25"
@@ -10147,7 +10297,7 @@
       "sha256": "75c029c85b57a6d5253685eaf559c5f27e0f41b95cc64f25a1b7c81e4427287b"
     }
   ],
-  "fileCount": 2029,
-  "totalBytes": 381461213,
-  "generatedAt": "2026-10-25T16:48:03.565411+00:00"
+  "fileCount": 2059,
+  "totalBytes": 389751092,
+  "generatedAt": "2026-10-26T06:43:53.560858+00:00"
 }
