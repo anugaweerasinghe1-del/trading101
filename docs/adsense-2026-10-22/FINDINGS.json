@@ -1839,17 +1839,43 @@
       ],
       "productionImagesPersonallyViewed": 12,
       "liveRecheck": "PASS exact merged production: [100] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
+    },
+    {
+      "id": "THQ-043",
+      "severity": "P3",
+      "category": "FUD key-point assigns frequency and motive without evidence, contradicting the article guidance",
+      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+      "urls": [
+        "https://www.thetradehq.com/wiki/fud"
+      ],
+      "observed": "Actual current MAIN and five-width images show Often spread on social media to trigger panic selling while body/worksheet say the FUD label does not establish truth or deliberate intent. No supporting evidence for often or motive in the linked general-risk source.",
+      "expected": "Summarize checking the negative claim source and evidence without assigning intent or prevalence.",
+      "fix": "Replace only that key-point string with Negative claims can spread on social media; check their source and evidence.",
+      "risk": "One static educational string only; no financial/auth/account/progress/ad/consent/DB behavior affected.",
+      "rollback": "Ordinary reviewed revert of the content commit; no data rollback.",
+      "adsenseRelevance": "Editorial accuracy and consistency; no asserted Google policy violation.",
+      "evidence": [
+        "evidence/fullpage-wiki-remaining-20261026/95f6ba389a7be4f5.json",
+        "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      ],
+      "baseSHA": "a936c7dfbe3a5857794595092408e1f3518de7dc",
+      "candidateSHA": "1326b0a219398f66291fdb2eea10c3e37ffb2491",
+      "localBranch": "audit/20261026-fud-evidence-summary",
+      "pr": 244,
+      "localValidation": "Build/type pass; local10states and4images viewed. Initial theme harness assertion corrected; preserved initial probe is not an app defect.",
+      "mergeSHA": "5967ea17c8fed2d6d6f1e7a0df4c2e4e090a1675",
+      "requiredCandidateChecks": "PASS four exact candidate trusted checks, coherent core; actual Cloudflare preview10states and4images viewed"
     }
   ],
-  "updatedAt": "2026-10-25T16:27:15.443023+00:00",
+  "updatedAt": "2026-10-26T06:57:57.426954+00:00",
   "counts": {
-    "siteFindings": 47,
+    "siteFindings": 48,
     "P2": 26,
-    "P3": 21,
+    "P3": 22,
     "publiclyRepaired": 47,
     "preparedNotMerged": 0,
     "separateOperationalBlockers": 0,
-    "mergedAwaitingProductionVerification": 0,
+    "mergedAwaitingProductionVerification": 1,
     "protectedUnapprovedRecordFixes": 0,
     "approvedPublishedRecordFixesBlockedOnCredential": 0,
     "mergedFallbackAwaitingProductionVerification": 0

@@ -1,0 +1,286 @@
+{
+  "path": "/wiki/impermanent-loss",
+  "sha": "a936c7dfbe3a5857794595092408e1f3518de7dc",
+  "origin": "https://www.thetradehq.com",
+  "capturedAt": "2026-10-26T06:50:13.840Z",
+  "outcome": "COLLECTED_NOT_HUMAN_REVIEWED",
+  "widths": [
+    {
+      "width": 360,
+      "height": 800,
+      "path": "/wiki/impermanent-loss",
+      "title": "Impermanent Loss — Explanation & Learning Exercise | TradeHQ Wiki",
+      "heading": "What is Impermanent Loss?",
+      "mainText": "Home\nTrading Guide\nWiki\nImpermanent Loss\nPRO\n5 MIN\nDEFI\nWhat is Impermanent Loss?\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nDETAILED DEFINITION\n\nFor a fee-free, full-range constant-product pool initially balanced by value, compare the liquidity-provider position with holding the originally deposited assets. If their relative price changes by a factor r and arbitrage rebalances the pool, the relative value difference is 2×sqrt(r)/(1+r)−1 under these assumptions. At r=2 this is about −5.72%; at r=5 it is about −25.46%. This difference is a comparison with holding, not necessarily an absolute cash loss. Fees, incentives, concentrated ranges and token behavior change outcomes. Withdrawing does not create the earlier economic difference; a later price change can narrow or widen it. Smart-contract and custody risks are additional.\n\nHOW IT WORKS\n\nImpermanent loss compares the value of a liquidity-provider position with simply holding the original tokens. The difference depends on the pool design and relative prices; fees and incentives also matter.\n\nKEY POINTS\nValue difference between LP position and simply holding the tokens\nIn a simple fee-free constant-product pool, the relative value difference grows as paired-token prices diverge\nThe value difference exists before withdrawal and can change with subsequent prices\n💡 WHY THIS MATTERS\n\nCompare liquidity provision with holding the same initial assets under a stated pool model. Fees, incentives and price changes all matter, alongside contract and withdrawal risks.\n\nWorked exercise and its limits\n\nFor a fee-free full-range constant-product pool initially holding 1 token worth $100 and $100 cash, double the token price. Arbitrage gives about 0.7071 tokens and $141.42 cash, total $282.84 versus $300 holding: about 5.72% less. Fees, incentives and concentrated liquidity change the comparison.\n\nReferences and scope\nUniswap v2 — liquidity-provider returns and comparison with holding\nApply This in the Simulator\n\nUse the worksheet above to examine impermanent loss. Some concepts require external data or paper calculations; TradeHQ does not implement every indicator, order type or contract.\n\nOpen Simulator\nShare to WhatsApp\nRELATED TERMS\n\nYield Farming\n\nPro · 5 min\n\nSlippage\n\nNovice · 3 min\n\nMarket Maker\n\nIntermediate · 4 min",
+      "supplementaryNotes": [
+        {
+          "path": "/wiki/impermanent-loss",
+          "tagName": "MAIN",
+          "text": "Home\nTrading Guide\nWiki\nImpermanent Loss\nPRO\n5 MIN\nDEFI\nWhat is Impermanent Loss?\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nDETAILED DEFINITION\n\nFor a fee-free, full-range constant-product pool initially balanced by value, compare the liquidity-provider position with holding the originally deposited assets. If their relative price changes by a factor r and arbitrage rebalances the pool, the relative value difference is 2×sqrt(r)/(1+r)−1 under these assumptions. At r=2 this is about −5.72%; at r=5 it is about −25.46%. This difference is a comparison with holding, not necessarily an absolute cash loss. Fees, incentives, concentrated ranges and token behavior change outcomes. Withdrawing does not create the earlier economic difference; a later price change can narrow or widen it. Smart-contract and custody risks are additional.\n\nHOW IT WORKS\n\nImpermanent loss compares the value of a liquidity-provider position with simply holding the original tokens. The difference depends on the pool design and relative prices; fees and incentives also matter.\n\nKEY POINTS\nValue difference between LP position and simply holding the tokens\nIn a simple fee-free constant-product pool, the relative value difference grows as paired-token prices diverge\nThe value difference exists before withdrawal and can change with subsequent prices\n💡 WHY THIS MATTERS\n\nCompare liquidity provision with holding the same initial assets under a stated pool model. Fees, incentives and price changes all matter, alongside contract and withdrawal risks.\n\nWorked exercise and its limits\n\nFor a fee-free full-range constant-product pool initially holding 1 token worth $100 and $100 cash, double the token price. Arbitrage gives about 0.7071 tokens and $141.42 cash, total $282.84 versus $300 holding: about 5.72% less. Fees, incentives and concentrated liquidity change the comparison.\n\nReferences and scope\nUniswap v2 — liquidity-provider returns and comparison with holding\nApply This in the Simulator\n\nUse the worksheet above to examine impermanent loss. Some concepts require external data or paper calculations; TradeHQ does not implement every indicator, order type or contract.\n\nOpen Simulator\nShare to WhatsApp\nRELATED TERMS\n\nYield Farming\n\nPro · 5 min\n\nSlippage\n\nNovice · 3 min\n\nMarket Maker\n\nIntermediate · 4 min"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 360,
+      "scrollHeight": 6203,
+      "viewportWidth": 360,
+      "canonical": "https://www.thetradehq.com/wiki/impermanent-loss",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "0e3a07a543cf3859-360-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "0e3a07a543cf3859-360-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "0e3a07a543cf3859-360-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "0e3a07a543cf3859-360-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "0e3a07a543cf3859-360-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "0e3a07a543cf3859-360-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "0e3a07a543cf3859-360-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "0e3a07a543cf3859-360-07.png"
+        },
+        {
+          "y": 5403,
+          "screenshot": "0e3a07a543cf3859-360-08.png"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "path": "/wiki/impermanent-loss",
+      "title": "Impermanent Loss — Explanation & Learning Exercise | TradeHQ Wiki",
+      "heading": "What is Impermanent Loss?",
+      "mainText": "Home\nTrading Guide\nWiki\nImpermanent Loss\nPRO\n5 MIN\nDEFI\nWhat is Impermanent Loss?\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nDETAILED DEFINITION\n\nFor a fee-free, full-range constant-product pool initially balanced by value, compare the liquidity-provider position with holding the originally deposited assets. If their relative price changes by a factor r and arbitrage rebalances the pool, the relative value difference is 2×sqrt(r)/(1+r)−1 under these assumptions. At r=2 this is about −5.72%; at r=5 it is about −25.46%. This difference is a comparison with holding, not necessarily an absolute cash loss. Fees, incentives, concentrated ranges and token behavior change outcomes. Withdrawing does not create the earlier economic difference; a later price change can narrow or widen it. Smart-contract and custody risks are additional.\n\nHOW IT WORKS\n\nImpermanent loss compares the value of a liquidity-provider position with simply holding the original tokens. The difference depends on the pool design and relative prices; fees and incentives also matter.\n\nKEY POINTS\nValue difference between LP position and simply holding the tokens\nIn a simple fee-free constant-product pool, the relative value difference grows as paired-token prices diverge\nThe value difference exists before withdrawal and can change with subsequent prices\n💡 WHY THIS MATTERS\n\nCompare liquidity provision with holding the same initial assets under a stated pool model. Fees, incentives and price changes all matter, alongside contract and withdrawal risks.\n\nWorked exercise and its limits\n\nFor a fee-free full-range constant-product pool initially holding 1 token worth $100 and $100 cash, double the token price. Arbitrage gives about 0.7071 tokens and $141.42 cash, total $282.84 versus $300 holding: about 5.72% less. Fees, incentives and concentrated liquidity change the comparison.\n\nReferences and scope\nUniswap v2 — liquidity-provider returns and comparison with holding\nApply This in the Simulator\n\nUse the worksheet above to examine impermanent loss. Some concepts require external data or paper calculations; TradeHQ does not implement every indicator, order type or contract.\n\nOpen Simulator\nShare to WhatsApp\nRELATED TERMS\n\nYield Farming\n\nPro · 5 min\n\nSlippage\n\nNovice · 3 min\n\nMarket Maker\n\nIntermediate · 4 min",
+      "supplementaryNotes": [
+        {
+          "path": "/wiki/impermanent-loss",
+          "tagName": "MAIN",
+          "text": "Home\nTrading Guide\nWiki\nImpermanent Loss\nPRO\n5 MIN\nDEFI\nWhat is Impermanent Loss?\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nDETAILED DEFINITION\n\nFor a fee-free, full-range constant-product pool initially balanced by value, compare the liquidity-provider position with holding the originally deposited assets. If their relative price changes by a factor r and arbitrage rebalances the pool, the relative value difference is 2×sqrt(r)/(1+r)−1 under these assumptions. At r=2 this is about −5.72%; at r=5 it is about −25.46%. This difference is a comparison with holding, not necessarily an absolute cash loss. Fees, incentives, concentrated ranges and token behavior change outcomes. Withdrawing does not create the earlier economic difference; a later price change can narrow or widen it. Smart-contract and custody risks are additional.\n\nHOW IT WORKS\n\nImpermanent loss compares the value of a liquidity-provider position with simply holding the original tokens. The difference depends on the pool design and relative prices; fees and incentives also matter.\n\nKEY POINTS\nValue difference between LP position and simply holding the tokens\nIn a simple fee-free constant-product pool, the relative value difference grows as paired-token prices diverge\nThe value difference exists before withdrawal and can change with subsequent prices\n💡 WHY THIS MATTERS\n\nCompare liquidity provision with holding the same initial assets under a stated pool model. Fees, incentives and price changes all matter, alongside contract and withdrawal risks.\n\nWorked exercise and its limits\n\nFor a fee-free full-range constant-product pool initially holding 1 token worth $100 and $100 cash, double the token price. Arbitrage gives about 0.7071 tokens and $141.42 cash, total $282.84 versus $300 holding: about 5.72% less. Fees, incentives and concentrated liquidity change the comparison.\n\nReferences and scope\nUniswap v2 — liquidity-provider returns and comparison with holding\nApply This in the Simulator\n\nUse the worksheet above to examine impermanent loss. Some concepts require external data or paper calculations; TradeHQ does not implement every indicator, order type or contract.\n\nOpen Simulator\nShare to WhatsApp\nRELATED TERMS\n\nYield Farming\n\nPro · 5 min\n\nSlippage\n\nNovice · 3 min\n\nMarket Maker\n\nIntermediate · 4 min"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 390,
+      "scrollHeight": 5942,
+      "viewportWidth": 390,
+      "canonical": "https://www.thetradehq.com/wiki/impermanent-loss",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "0e3a07a543cf3859-390-00.png"
+        },
+        {
+          "y": 717,
+          "screenshot": "0e3a07a543cf3859-390-01.png"
+        },
+        {
+          "y": 1434,
+          "screenshot": "0e3a07a543cf3859-390-02.png"
+        },
+        {
+          "y": 2151,
+          "screenshot": "0e3a07a543cf3859-390-03.png"
+        },
+        {
+          "y": 2868,
+          "screenshot": "0e3a07a543cf3859-390-04.png"
+        },
+        {
+          "y": 3585,
+          "screenshot": "0e3a07a543cf3859-390-05.png"
+        },
+        {
+          "y": 4302,
+          "screenshot": "0e3a07a543cf3859-390-06.png"
+        },
+        {
+          "y": 5019,
+          "screenshot": "0e3a07a543cf3859-390-07.png"
+        },
+        {
+          "y": 5098,
+          "screenshot": "0e3a07a543cf3859-390-08.png"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "path": "/wiki/impermanent-loss",
+      "title": "Impermanent Loss — Explanation & Learning Exercise | TradeHQ Wiki",
+      "heading": "What is Impermanent Loss?",
+      "mainText": "Home\nTrading Guide\nWiki\nImpermanent Loss\nPRO\n5 MIN\nDEFI\nWhat is Impermanent Loss?\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nDETAILED DEFINITION\n\nFor a fee-free, full-range constant-product pool initially balanced by value, compare the liquidity-provider position with holding the originally deposited assets. If their relative price changes by a factor r and arbitrage rebalances the pool, the relative value difference is 2×sqrt(r)/(1+r)−1 under these assumptions. At r=2 this is about −5.72%; at r=5 it is about −25.46%. This difference is a comparison with holding, not necessarily an absolute cash loss. Fees, incentives, concentrated ranges and token behavior change outcomes. Withdrawing does not create the earlier economic difference; a later price change can narrow or widen it. Smart-contract and custody risks are additional.\n\nHOW IT WORKS\n\nImpermanent loss compares the value of a liquidity-provider position with simply holding the original tokens. The difference depends on the pool design and relative prices; fees and incentives also matter.\n\nKEY POINTS\nValue difference between LP position and simply holding the tokens\nIn a simple fee-free constant-product pool, the relative value difference grows as paired-token prices diverge\nThe value difference exists before withdrawal and can change with subsequent prices\n💡 WHY THIS MATTERS\n\nCompare liquidity provision with holding the same initial assets under a stated pool model. Fees, incentives and price changes all matter, alongside contract and withdrawal risks.\n\nWorked exercise and its limits\n\nFor a fee-free full-range constant-product pool initially holding 1 token worth $100 and $100 cash, double the token price. Arbitrage gives about 0.7071 tokens and $141.42 cash, total $282.84 versus $300 holding: about 5.72% less. Fees, incentives and concentrated liquidity change the comparison.\n\nReferences and scope\nUniswap v2 — liquidity-provider returns and comparison with holding\nApply This in the Simulator\n\nUse the worksheet above to examine impermanent loss. Some concepts require external data or paper calculations; TradeHQ does not implement every indicator, order type or contract.\n\nOpen Simulator\nShare to WhatsApp\nRELATED TERMS\n\nYield Farming\n\nPro · 5 min\n\nSlippage\n\nNovice · 3 min\n\nMarket Maker\n\nIntermediate · 4 min",
+      "supplementaryNotes": [
+        {
+          "path": "/wiki/impermanent-loss",
+          "tagName": "MAIN",
+          "text": "Home\nTrading Guide\nWiki\nImpermanent Loss\nPRO\n5 MIN\nDEFI\nWhat is Impermanent Loss?\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nDETAILED DEFINITION\n\nFor a fee-free, full-range constant-product pool initially balanced by value, compare the liquidity-provider position with holding the originally deposited assets. If their relative price changes by a factor r and arbitrage rebalances the pool, the relative value difference is 2×sqrt(r)/(1+r)−1 under these assumptions. At r=2 this is about −5.72%; at r=5 it is about −25.46%. This difference is a comparison with holding, not necessarily an absolute cash loss. Fees, incentives, concentrated ranges and token behavior change outcomes. Withdrawing does not create the earlier economic difference; a later price change can narrow or widen it. Smart-contract and custody risks are additional.\n\nHOW IT WORKS\n\nImpermanent loss compares the value of a liquidity-provider position with simply holding the original tokens. The difference depends on the pool design and relative prices; fees and incentives also matter.\n\nKEY POINTS\nValue difference between LP position and simply holding the tokens\nIn a simple fee-free constant-product pool, the relative value difference grows as paired-token prices diverge\nThe value difference exists before withdrawal and can change with subsequent prices\n💡 WHY THIS MATTERS\n\nCompare liquidity provision with holding the same initial assets under a stated pool model. Fees, incentives and price changes all matter, alongside contract and withdrawal risks.\n\nWorked exercise and its limits\n\nFor a fee-free full-range constant-product pool initially holding 1 token worth $100 and $100 cash, double the token price. Arbitrage gives about 0.7071 tokens and $141.42 cash, total $282.84 versus $300 holding: about 5.72% less. Fees, incentives and concentrated liquidity change the comparison.\n\nReferences and scope\nUniswap v2 — liquidity-provider returns and comparison with holding\nApply This in the Simulator\n\nUse the worksheet above to examine impermanent loss. Some concepts require external data or paper calculations; TradeHQ does not implement every indicator, order type or contract.\n\nOpen Simulator\nShare to WhatsApp\nRELATED TERMS\n\nYield Farming\n\nPro · 5 min\n\nSlippage\n\nNovice · 3 min\n\nMarket Maker\n\nIntermediate · 4 min"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 753,
+      "scrollHeight": 4067,
+      "viewportWidth": 768,
+      "canonical": "https://www.thetradehq.com/wiki/impermanent-loss",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "0e3a07a543cf3859-768-00.png"
+        },
+        {
+          "y": 870,
+          "screenshot": "0e3a07a543cf3859-768-01.png"
+        },
+        {
+          "y": 1740,
+          "screenshot": "0e3a07a543cf3859-768-02.png"
+        },
+        {
+          "y": 2610,
+          "screenshot": "0e3a07a543cf3859-768-03.png"
+        },
+        {
+          "y": 3043,
+          "screenshot": "0e3a07a543cf3859-768-04.png"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "path": "/wiki/impermanent-loss",
+      "title": "Impermanent Loss — Explanation & Learning Exercise | TradeHQ Wiki",
+      "heading": "What is Impermanent Loss?",
+      "mainText": "Home\nTrading Guide\nWiki\nImpermanent Loss\nPRO\n5 MIN\nDEFI\nWhat is Impermanent Loss?\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nDETAILED DEFINITION\n\nFor a fee-free, full-range constant-product pool initially balanced by value, compare the liquidity-provider position with holding the originally deposited assets. If their relative price changes by a factor r and arbitrage rebalances the pool, the relative value difference is 2×sqrt(r)/(1+r)−1 under these assumptions. At r=2 this is about −5.72%; at r=5 it is about −25.46%. This difference is a comparison with holding, not necessarily an absolute cash loss. Fees, incentives, concentrated ranges and token behavior change outcomes. Withdrawing does not create the earlier economic difference; a later price change can narrow or widen it. Smart-contract and custody risks are additional.\n\nHOW IT WORKS\n\nImpermanent loss compares the value of a liquidity-provider position with simply holding the original tokens. The difference depends on the pool design and relative prices; fees and incentives also matter.\n\nKEY POINTS\nValue difference between LP position and simply holding the tokens\nIn a simple fee-free constant-product pool, the relative value difference grows as paired-token prices diverge\nThe value difference exists before withdrawal and can change with subsequent prices\n💡 WHY THIS MATTERS\n\nCompare liquidity provision with holding the same initial assets under a stated pool model. Fees, incentives and price changes all matter, alongside contract and withdrawal risks.\n\nWorked exercise and its limits\n\nFor a fee-free full-range constant-product pool initially holding 1 token worth $100 and $100 cash, double the token price. Arbitrage gives about 0.7071 tokens and $141.42 cash, total $282.84 versus $300 holding: about 5.72% less. Fees, incentives and concentrated liquidity change the comparison.\n\nReferences and scope\nUniswap v2 — liquidity-provider returns and comparison with holding\nApply This in the Simulator\n\nUse the worksheet above to examine impermanent loss. Some concepts require external data or paper calculations; TradeHQ does not implement every indicator, order type or contract.\n\nOpen Simulator\nShare to WhatsApp\nRELATED TERMS\n\nYield Farming\n\nPro · 5 min\n\nSlippage\n\nNovice · 3 min\n\nMarket Maker\n\nIntermediate · 4 min",
+      "supplementaryNotes": [
+        {
+          "path": "/wiki/impermanent-loss",
+          "tagName": "MAIN",
+          "text": "Home\nTrading Guide\nWiki\nImpermanent Loss\nPRO\n5 MIN\nDEFI\nWhat is Impermanent Loss?\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nDETAILED DEFINITION\n\nFor a fee-free, full-range constant-product pool initially balanced by value, compare the liquidity-provider position with holding the originally deposited assets. If their relative price changes by a factor r and arbitrage rebalances the pool, the relative value difference is 2×sqrt(r)/(1+r)−1 under these assumptions. At r=2 this is about −5.72%; at r=5 it is about −25.46%. This difference is a comparison with holding, not necessarily an absolute cash loss. Fees, incentives, concentrated ranges and token behavior change outcomes. Withdrawing does not create the earlier economic difference; a later price change can narrow or widen it. Smart-contract and custody risks are additional.\n\nHOW IT WORKS\n\nImpermanent loss compares the value of a liquidity-provider position with simply holding the original tokens. The difference depends on the pool design and relative prices; fees and incentives also matter.\n\nKEY POINTS\nValue difference between LP position and simply holding the tokens\nIn a simple fee-free constant-product pool, the relative value difference grows as paired-token prices diverge\nThe value difference exists before withdrawal and can change with subsequent prices\n💡 WHY THIS MATTERS\n\nCompare liquidity provision with holding the same initial assets under a stated pool model. Fees, incentives and price changes all matter, alongside contract and withdrawal risks.\n\nWorked exercise and its limits\n\nFor a fee-free full-range constant-product pool initially holding 1 token worth $100 and $100 cash, double the token price. Arbitrage gives about 0.7071 tokens and $141.42 cash, total $282.84 versus $300 holding: about 5.72% less. Fees, incentives and concentrated liquidity change the comparison.\n\nReferences and scope\nUniswap v2 — liquidity-provider returns and comparison with holding\nApply This in the Simulator\n\nUse the worksheet above to examine impermanent loss. Some concepts require external data or paper calculations; TradeHQ does not implement every indicator, order type or contract.\n\nOpen Simulator\nShare to WhatsApp\nRELATED TERMS\n\nYield Farming\n\nPro · 5 min\n\nSlippage\n\nNovice · 3 min\n\nMarket Maker\n\nIntermediate · 4 min"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1265,
+      "scrollHeight": 3568,
+      "viewportWidth": 1280,
+      "canonical": "https://www.thetradehq.com/wiki/impermanent-loss",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "0e3a07a543cf3859-1280-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "0e3a07a543cf3859-1280-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "0e3a07a543cf3859-1280-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "0e3a07a543cf3859-1280-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "0e3a07a543cf3859-1280-04.png"
+        },
+        {
+          "y": 2768,
+          "screenshot": "0e3a07a543cf3859-1280-05.png"
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "path": "/wiki/impermanent-loss",
+      "title": "Impermanent Loss — Explanation & Learning Exercise | TradeHQ Wiki",
+      "heading": "What is Impermanent Loss?",
+      "mainText": "Home\nTrading Guide\nWiki\nImpermanent Loss\nPRO\n5 MIN\nDEFI\nWhat is Impermanent Loss?\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nDETAILED DEFINITION\n\nFor a fee-free, full-range constant-product pool initially balanced by value, compare the liquidity-provider position with holding the originally deposited assets. If their relative price changes by a factor r and arbitrage rebalances the pool, the relative value difference is 2×sqrt(r)/(1+r)−1 under these assumptions. At r=2 this is about −5.72%; at r=5 it is about −25.46%. This difference is a comparison with holding, not necessarily an absolute cash loss. Fees, incentives, concentrated ranges and token behavior change outcomes. Withdrawing does not create the earlier economic difference; a later price change can narrow or widen it. Smart-contract and custody risks are additional.\n\nHOW IT WORKS\n\nImpermanent loss compares the value of a liquidity-provider position with simply holding the original tokens. The difference depends on the pool design and relative prices; fees and incentives also matter.\n\nKEY POINTS\nValue difference between LP position and simply holding the tokens\nIn a simple fee-free constant-product pool, the relative value difference grows as paired-token prices diverge\nThe value difference exists before withdrawal and can change with subsequent prices\n💡 WHY THIS MATTERS\n\nCompare liquidity provision with holding the same initial assets under a stated pool model. Fees, incentives and price changes all matter, alongside contract and withdrawal risks.\n\nWorked exercise and its limits\n\nFor a fee-free full-range constant-product pool initially holding 1 token worth $100 and $100 cash, double the token price. Arbitrage gives about 0.7071 tokens and $141.42 cash, total $282.84 versus $300 holding: about 5.72% less. Fees, incentives and concentrated liquidity change the comparison.\n\nReferences and scope\nUniswap v2 — liquidity-provider returns and comparison with holding\nApply This in the Simulator\n\nUse the worksheet above to examine impermanent loss. Some concepts require external data or paper calculations; TradeHQ does not implement every indicator, order type or contract.\n\nOpen Simulator\nShare to WhatsApp\nRELATED TERMS\n\nYield Farming\n\nPro · 5 min\n\nSlippage\n\nNovice · 3 min\n\nMarket Maker\n\nIntermediate · 4 min",
+      "supplementaryNotes": [
+        {
+          "path": "/wiki/impermanent-loss",
+          "tagName": "MAIN",
+          "text": "Home\nTrading Guide\nWiki\nImpermanent Loss\nPRO\n5 MIN\nDEFI\nWhat is Impermanent Loss?\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nDETAILED DEFINITION\n\nFor a fee-free, full-range constant-product pool initially balanced by value, compare the liquidity-provider position with holding the originally deposited assets. If their relative price changes by a factor r and arbitrage rebalances the pool, the relative value difference is 2×sqrt(r)/(1+r)−1 under these assumptions. At r=2 this is about −5.72%; at r=5 it is about −25.46%. This difference is a comparison with holding, not necessarily an absolute cash loss. Fees, incentives, concentrated ranges and token behavior change outcomes. Withdrawing does not create the earlier economic difference; a later price change can narrow or widen it. Smart-contract and custody risks are additional.\n\nHOW IT WORKS\n\nImpermanent loss compares the value of a liquidity-provider position with simply holding the original tokens. The difference depends on the pool design and relative prices; fees and incentives also matter.\n\nKEY POINTS\nValue difference between LP position and simply holding the tokens\nIn a simple fee-free constant-product pool, the relative value difference grows as paired-token prices diverge\nThe value difference exists before withdrawal and can change with subsequent prices\n💡 WHY THIS MATTERS\n\nCompare liquidity provision with holding the same initial assets under a stated pool model. Fees, incentives and price changes all matter, alongside contract and withdrawal risks.\n\nWorked exercise and its limits\n\nFor a fee-free full-range constant-product pool initially holding 1 token worth $100 and $100 cash, double the token price. Arbitrage gives about 0.7071 tokens and $141.42 cash, total $282.84 versus $300 holding: about 5.72% less. Fees, incentives and concentrated liquidity change the comparison.\n\nReferences and scope\nUniswap v2 — liquidity-provider returns and comparison with holding\nApply This in the Simulator\n\nUse the worksheet above to examine impermanent loss. Some concepts require external data or paper calculations; TradeHQ does not implement every indicator, order type or contract.\n\nOpen Simulator\nShare to WhatsApp\nRELATED TERMS\n\nYield Farming\n\nPro · 5 min\n\nSlippage\n\nNovice · 3 min\n\nMarket Maker\n\nIntermediate · 4 min"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1905,
+      "scrollHeight": 3492,
+      "viewportWidth": 1920,
+      "canonical": "https://www.thetradehq.com/wiki/impermanent-loss",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "0e3a07a543cf3859-1920-00.png"
+        },
+        {
+          "y": 918,
+          "screenshot": "0e3a07a543cf3859-1920-01.png"
+        },
+        {
+          "y": 1836,
+          "screenshot": "0e3a07a543cf3859-1920-02.png"
+        },
+        {
+          "y": 2412,
+          "screenshot": "0e3a07a543cf3859-1920-03.png"
+        }
+      ]
+    }
+  ]
+}

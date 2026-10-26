@@ -1,0 +1,59 @@
+{
+  "checkedAt": "2026-10-26T07:22:31.450045+00:00",
+  "sources": [
+    {
+      "url": "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/sma",
+      "checkedAt": "2026-10-26T06:58:54.181174+00:00",
+      "status": 200,
+      "finalUrl": "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/sma",
+      "rawSHA256": "4262bdb8ab52d8a82d069f8c9462c6948c32406e326c043ce68ed88b75fb7310",
+      "selectedPassageActuallyRead": true,
+      "assessment": "Read simple averaging, common50/200periods and lag; does not validate forecast success or beginner ranking."
+    },
+    {
+      "url": "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/macd",
+      "checkedAt": "2026-10-26T06:58:54.182013+00:00",
+      "status": 200,
+      "finalUrl": "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/macd",
+      "rawSHA256": "2536fb4f157b0ea9ced83002e240d23e480beb1eed8a25f939009eb2a60fd12d",
+      "selectedPassageActuallyRead": true,
+      "assessment": "Read12/26EMA difference,9EMA signal, adjustable parameters and range whipsaws. Selected passage does not explicitly corroborate histogram."
+    },
+    {
+      "url": "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/RSI",
+      "checkedAt": "2026-10-26T06:58:54.182680+00:00",
+      "status": 200,
+      "finalUrl": "https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/RSI",
+      "rawSHA256": "dae0effdd29214913b698bf4a919e6df8de909ff1ba051ce021e33623a7c995d",
+      "selectedPassageActuallyRead": true,
+      "assessment": "Read0-100, conventional70/30 and persistence in trends; divergence is not guaranteed reversal."
+    },
+    {
+      "url": "https://www.tradingview.com/support/solutions/43000589152-ichimoku-cloud/",
+      "checkedAt": "2026-10-26T06:58:54.183273+00:00",
+      "status": 200,
+      "finalUrl": "https://www.tradingview.com/support/solutions/43000589152-ichimoku-cloud/",
+      "rawSHA256": "c816c90dceed1b53fbad0609f10e0e7bdf65cfca5c25b56478e5c5d7b0875c5d",
+      "selectedPassageActuallyRead": true,
+      "assessment": "Read26period forward/back plotting and historical-data limitation. Extracted equations absent;9/26/52 lookbacks not verified by this text."
+    },
+    {
+      "url": "https://developers.uniswap.org/docs/protocols/v2/concepts/understanding-returns",
+      "checkedAt": "2026-10-26T06:58:54.183883+00:00",
+      "status": 200,
+      "finalUrl": "https://developers.uniswap.org/docs/protocols/v2/concepts/understanding-returns",
+      "rawSHA256": "57cd28189c37fd76677995dc3f80f34d72f8827c43ce6bf95fc74140b40e026b",
+      "selectedPassageActuallyRead": true,
+      "assessment": "Read v2 fee-free constant product derivation and relative-to-holding formula. Not proof for concentrated liquidity or fees/returns of all pools."
+    }
+  ],
+  "independentMath": {
+    "IL2": -5.719095841793653,
+    "IL5": -25.46440075000701,
+    "tokenAt200": 0.7071067811865476,
+    "cashAt200": 141.4213562373095,
+    "poolValue": 282.842712474619,
+    "holdingValue": 300
+  },
+  "limits": "Selected claim corroboration only. Full article/source originality/accessibility and conditional state review remain incomplete. No strategy validation or Google approval claim."
+}
