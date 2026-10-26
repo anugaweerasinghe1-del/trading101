@@ -57,10 +57,11 @@ export function AIMentor({ portfolio, assets, selectedAsset }: AIMentorProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    const viewport = scrollRef.current?.querySelector<HTMLDivElement>('[data-radix-scroll-area-viewport]');
+    if (viewport) {
+      viewport.scrollTop = viewport.scrollHeight;
     }
-  }, [messages]);
+  }, [messages, isOpen]);
 
   // Compute portfolio stats for display
   const totalTrades = portfolio.trades.length;
