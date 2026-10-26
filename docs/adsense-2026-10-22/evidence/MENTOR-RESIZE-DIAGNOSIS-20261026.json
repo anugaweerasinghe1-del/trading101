@@ -1,0 +1,159 @@
+{
+  "checkedAt": "2026-10-26T14:58:29.107Z",
+  "origin": "http://127.0.0.1:4181",
+  "sha": "6ab3b7e374f1a4d4deb68e49eb7a785f7a7f34d5",
+  "failure": "Mentor page fits 768px\n\ntrue !== false\n",
+  "observations": [
+    {
+      "round": 0,
+      "initialOverflow": false,
+      "initial": {
+        "path": "/ai-mentor",
+        "theme": "light",
+        "width": 360,
+        "scrollWidth": 360,
+        "candidates": []
+      }
+    },
+    {
+      "round": 0,
+      "initialOverflow": false,
+      "initial": {
+        "path": "/ai-mentor",
+        "theme": "light",
+        "width": 390,
+        "scrollWidth": 390,
+        "candidates": []
+      }
+    },
+    {
+      "round": 0,
+      "initialOverflow": false,
+      "initial": {
+        "path": "/ai-mentor",
+        "theme": "light",
+        "width": 768,
+        "scrollWidth": 753,
+        "candidates": []
+      }
+    },
+    {
+      "round": 0,
+      "initialOverflow": false,
+      "initial": {
+        "path": "/ai-mentor",
+        "theme": "light",
+        "width": 1280,
+        "scrollWidth": 1265,
+        "candidates": []
+      }
+    },
+    {
+      "round": 0,
+      "initialOverflow": false,
+      "initial": {
+        "path": "/ai-mentor",
+        "theme": "light",
+        "width": 1440,
+        "scrollWidth": 1425,
+        "candidates": []
+      }
+    },
+    {
+      "round": 0,
+      "initialOverflow": false,
+      "initial": {
+        "path": "/ai-mentor",
+        "theme": "",
+        "width": 360,
+        "scrollWidth": 360,
+        "candidates": []
+      }
+    },
+    {
+      "round": 0,
+      "initialOverflow": false,
+      "initial": {
+        "path": "/ai-mentor",
+        "theme": "",
+        "width": 390,
+        "scrollWidth": 390,
+        "candidates": []
+      }
+    },
+    {
+      "round": 0,
+      "initialOverflow": false,
+      "initial": {
+        "path": "/ai-mentor",
+        "theme": "",
+        "width": 768,
+        "scrollWidth": 753,
+        "candidates": []
+      }
+    },
+    {
+      "round": 0,
+      "initialOverflow": false,
+      "initial": {
+        "path": "/ai-mentor",
+        "theme": "",
+        "width": 1280,
+        "scrollWidth": 1265,
+        "candidates": []
+      }
+    },
+    {
+      "round": 0,
+      "initialOverflow": false,
+      "initial": {
+        "path": "/ai-mentor",
+        "theme": "",
+        "width": 1440,
+        "scrollWidth": 1425,
+        "candidates": []
+      }
+    },
+    {
+      "round": 0,
+      "initialOverflow": false,
+      "initial": {
+        "path": "/trade/btc",
+        "theme": "light",
+        "width": 669,
+        "scrollWidth": 669,
+        "candidates": []
+      }
+    },
+    {
+      "round": 0,
+      "initialOverflow": false,
+      "initial": {
+        "path": "/trade/btc",
+        "theme": "light",
+        "width": 608,
+        "scrollWidth": 608,
+        "candidates": []
+      }
+    },
+    {
+      "round": 0,
+      "initialOverflow": true,
+      "initial": {
+        "path": "/trade/btc",
+        "theme": "light",
+        "width": 768,
+        "scrollWidth": 780,
+        "candidates": []
+      },
+      "after1200ms": {
+        "path": "/trade/btc",
+        "theme": "light",
+        "width": 768,
+        "scrollWidth": 753,
+        "candidates": []
+      }
+    }
+  ],
+  "scope": "Observational wrapper around unchanged original mentor test; records100ms resize geometry. Initial assertion result retained even after diagnostic settlement sample. No app or assertion edit; no account/order/progress action."
+}

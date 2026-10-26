@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-10-26T15:02:11.968Z",
+  "origin": "http://127.0.0.1:4181",
+  "baseSHA": "ae8cf2b2db107701d5ffa91b203c1cc8eab3e99d",
+  "outcome": "PASS",
+  "failure": null,
+  "normalStates": 60,
+  "negativeFailure": "Mentor page fits 360px\n\ntrue !== false\n",
+  "scope": "Test-only animation-readiness change;60actual local mentor width/theme states and intentional2000px persistent layout overflow rejected by original360px assertion. Local disposable DOM change cleaned. No app/financial/account/progress modifications."
+}

@@ -1967,7 +1967,7 @@
       "id": "THQ-046",
       "severity": "P2",
       "category": "Asset terminal page keeps dark background in light theme, making headings/prices unreadable",
-      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+      "state": "PUBLICLY_VERIFIED",
       "urls": [
         "https://www.thetradehq.com/trade/usdjpy",
         "https://www.thetradehq.com/trade/btc"
@@ -1987,25 +1987,59 @@
         "evidence/ASSET-BACKGROUND-BEFORE-BROWSER.json"
       ],
       "localValidation": "Build/types and8local states PASS, all8images personallyviewed. Light heading17.89:1, dark16.74:1. Candidate CI/native/actual previews pending.",
-      "releaseHold": "Local rendered checks, required exact candidate CI/native+actual previews, protected merge and complete exact production cycle remain.",
+      "releaseHold": null,
       "pr": 247,
       "localImagesPersonallyViewed": 8,
       "localEvidence": "evidence/ASSET-BACKGROUND-LOCAL-BROWSER.json",
       "previewEvidence": "evidence/PR247-UPDATED-PREVIEW-BROWSER.json",
       "previewImagesPersonallyViewed": 8,
       "previewValidation": "PASS20states actualCFpreview,17.89:1 light/16.74dark; nativeCFsuccess/VercelREADYsamecandidate",
-      "mergeSHA": "ae8cf2b2db107701d5ffa91b203c1cc8eab3e99d"
+      "mergeSHA": "ae8cf2b2db107701d5ffa91b203c1cc8eab3e99d",
+      "productionEvidence": "evidence/PR247-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR247-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR247-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR247-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 8,
+      "liveRecheck": "PASS exact merged production: [20] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
+    },
+    {
+      "id": "THQ-047",
+      "severity": "P3",
+      "type": "Factual/editorial directory scope",
+      "title": "ETF sector directory presents index and active thematic funds as diversified index exposure",
+      "urls": [
+        "https://www.thetradehq.com/sectors/etf-indices",
+        "https://www.thetradehq.com/markets"
+      ],
+      "state": "DRAFT_PR248_CI_HOLD",
+      "implementationRisk": "Low; two static descriptive strings only",
+      "sourceEvidence": "evidence/STRATEGY-SECTOR-PRIMARY-SOURCE-FOLLOWUP-20261026.json",
+      "findingDocument": "findings/ETF-DIRECTORY-SCOPE.md",
+      "files": [
+        "src/pages/SectorPillar.tsx",
+        "src/pages/Markets.tsx"
+      ],
+      "releaseHold": "Recurring mentor opening-animation sample. Separate test-only fix under validation; do not merge248 until exactcandidate checks pass and prior release verified.",
+      "pr": 248,
+      "candidateSHA": "6ab3b7e374f1a4d4deb68e49eb7a785f7a7f34d5",
+      "baseSHA": "ae8cf2b2db107701d5ffa91b203c1cc8eab3e99d",
+      "localBrowserEvidence": "evidence/ETF-DIRECTORY-LOCAL-BROWSER.json",
+      "localImagesPersonallyViewed": 8,
+      "previewBrowserEvidence": "evidence/PR248-UPDATED-PREVIEW-BROWSER.json",
+      "previewImagesPersonallyViewed": 8
     }
   ],
-  "updatedAt": "2026-10-26T14:04:18.516024+00:00",
+  "updatedAt": "2026-10-26T14:50:57.669364+00:00",
   "counts": {
-    "siteFindings": 51,
+    "siteFindings": 52,
     "P2": 27,
-    "P3": 24,
-    "publiclyRepaired": 50,
-    "preparedNotMerged": 0,
+    "P3": 25,
+    "publiclyRepaired": 51,
+    "preparedNotMerged": 1,
     "separateOperationalBlockers": 0,
-    "mergedAwaitingProductionVerification": 1,
+    "mergedAwaitingProductionVerification": 0,
     "protectedUnapprovedRecordFixes": 0,
     "approvedPublishedRecordFixesBlockedOnCredential": 0,
     "mergedFallbackAwaitingProductionVerification": 0

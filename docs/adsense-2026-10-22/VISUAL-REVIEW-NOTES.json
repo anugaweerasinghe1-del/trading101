@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-26T14:24:13.262549+00:00",
+  "updatedAt": "2026-10-26T15:01:59.098971+00:00",
   "scope": "Actual screenshot viewing by route and stage. Full-page default-state images are separately recorded at all five widths for20 core routes; this is not conditional, accessibility, light-theme, source or whole-audit completion.",
   "routes": {
     "/": {
@@ -1775,7 +1775,7 @@
       ]
     },
     "/niche/btc": {
-      "status": "PARTIAL_VISUAL_REVIEW",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
       "humanViewedWidths": [
         1280
       ],
@@ -1788,7 +1788,17 @@
       "evidence": [
         "evidence/niche-btc-before-1280.png",
         "evidence/pr220-niche-btc-1280.png"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "95000/+1.99% simulator-reference data is clearly labelled. Distinct from altcoin template, body/FAQ omit circular Bitcoin-correlation claim and instead list liquidity/network/regulation; no buy recommendation. Five contact sheets personally viewed/all MAIN read; mobile table/FAQs readable. Sources/originality beyond generic drivers and conditional controls remain. No orders/accounts/progress/form actions. Wholepage incomplete."
     },
     "/trade/shib": {
       "status": "PARTIAL_VISUAL_REVIEW",
@@ -3784,6 +3794,97 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Ten stock entries span search/social/cloud/ecommerce/software/networking; no promise of guaranteed growth appears in visible intro. Simulated NFLX485.60/ORCL118.45/ADBE528.30 are distinct directory cards, not live quotes or research evidence. All MAIN read and5contact sheets personally seen; three-column desktop and stacked mobile cards fit. Generic intro and overlap with AI/megacap directories limit independent analysis but directory navigation has a separate role. Sector taxonomy, sources, expandedFAQ/light/zoom/focus/destination follow-ups remain. No account/order/progress/form action. Whole-page review incomplete."
+    },
+    "/niche/bnb": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "312.8/-2.65% simulator-reference table and no-buy-call disclaimer remain clear. Body/FAQ list generic crypto factors/Bitcoin correlation without measured dependence or BNB-specific token utility/exchange-risk analysis; source/originality follow-up remains. Five contact sheets personally viewed, all MAIN read, table and CTA fit. No orders/accounts/progress/form actions. Wholepage incomplete."
+    },
+    "/niche/coin": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Coinbase correctly classified Stock,148.5/+6.07% reference table. Generic earnings/guidance/industry factors do not substantiate a fresh Coinbase-specific analysis or current quote; page disclaims live targets. All MAIN read/all5contact sheets personally viewed; long company heading wraps in360 and table fits. No additional default layout defect confirmed; sources and independent-value/control follow-up remain. No orders/accounts/progress/form actions. Wholepage incomplete."
+    },
+    "/niche/copper": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "HG3.82/+1.06% reference is labelled Commodity; generic supply/demand/currency/seasonal descriptions do not specify physical unit or futures contract specification. Maintain contract-unit factual follow-up without changing engine. All MAIN/FAQs read,5contact sheets viewed; reference labels wrap within360 table, CTA fits. Sources/originality/light/zoom/keyboard/destinations remain. No orders/accounts/progress/form actions. Wholepage incomplete."
+    },
+    "/niche/crm": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "264.9/+1.73% explicitly reference data; Salesforce Stock and generic earnings/guidance/valuation drivers are readable. Inc.. punctuation in intro is minor editorial polish, not material misinformation. Long heading wraps360without clipping. All MAIN/FAQ read and5contact sheets personally seen; no CRM-specific revenue/cloud source substantiation provided. Source/originality/control/light/zoom follow-ups remain. No orders/accounts/progress/form actions. Wholepage incomplete."
+    },
+    "/niche/doge": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "0.0825/+5.77% reference table preserves subcent precision unlike rounded absolute sector change. Generic network/regulatory/Bitcoin-correlation prose does not supply a measured DOGE relationship or meme/social-specific analysis. No asset recommendation; simulation risk framing retained. All MAIN/FAQ read and5contact sheets personally seen, CTA/table fit; primary-source/individual-value/control/light/zoom follow-ups remain. No orders/accounts/progress/form actions. Wholepage incomplete."
+    },
+    "/niche/dot": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "7.85/-2.73% reference table correctly labelled Crypto; no promised profit or live target. Generic altcoin body/FAQ matches other tokens substantially, without DOT-specific staking/parachain explanation or measured correlation. This records limited independent depth without claiming an automatic policy violation. All MAIN/FAQ read/5contact sheets viewed; no clipped content, safe-control/light/zoom/source follow-ups remain. No orders/accounts/progress/form actions. Wholepage incomplete."
+    },
+    "/niche/eth": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "3850/+3.37% reference table and Crypto heading clear. Main body/FAQ remain generic crypto drivers rather than ETH-specific gas/staking/network research; Bitcoin correlation has no measured period/value. No live target or buy recommendation. All MAIN/FAQ read and5contact sheets seen; stacked mobile and desktop table/CTA fit. Individual-value/source/control/light/zoom follow-ups remain. No orders/accounts/progress/form actions. Wholepage incomplete."
     }
   }
 }

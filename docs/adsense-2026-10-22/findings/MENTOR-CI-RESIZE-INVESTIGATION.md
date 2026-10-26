@@ -1,0 +1,9 @@
+# INV-CI01 — mentor resize test samples opening animation
+
+CI on PR246 main, PR247 main and PR248 candidate intermittently failed the unchanged `Mentor page fits768px` document-overflow assertion. PR246/247 full unchanged localphase6 and one whole same-SHA CI rerun passed; those releases subsequently met all provider and live gates. PR248 remains draft and unmerged.
+
+On PR248's compiled local page, an observational wrapper reproduced the original assertion: after switching from390px to768px with the mentor open, `scrollWidth` briefly measured780px, then753px after1200ms with no app change (`evidence/MENTOR-RESIZE-DIAGNOSIS-20261026.json`). Its captured image was personally viewed. The mentor root uses the existing300ms `slide-in-right` translation; its preexisting readiness condition checks only its current bounds100ms after resize and does not require that opening animation to finish. A transient document measurement can therefore precede settled layout.
+
+Separate test-only correction: wait, within the existing12second bound, for that dialog's own opening animation to stop running as well as fit the viewport. Keep every original document-overflow, dialog-fit, literal-text, disclaimer and numerical-label assertion unchanged. No CSS, application behavior, finance, user record or production infrastructure change. The ETF content change remains isolated in PR248. Validation requires repeated local mentor states, persistent-overflow negative control, original complete phase6, exact candidate CI/native/actual preview and full serial production proof after ordinary protected merge. Rollback is an ordinary revert of this one test readiness condition.
+
+This is a CI readiness investigation, counted separately from site quality findings. No settled production layout defect or financial-engine defect is asserted from the transient test sample alone.

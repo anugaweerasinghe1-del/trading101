@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-10-26T14:58:26.290066+00:00",
+  "sha": "6ab3b7e374f1a4d4deb68e49eb7a785f7a7f34d5",
+  "run": 40343717863,
+  "job": 121645060916,
+  "outcome": "FAIL",
+  "selectedActualErrorLines": [
+    "2026-10-26T14:55:09.2181606Z AssertionError [ERR_ASSERTION]: Mentor page fits 768px",
+    "2026-10-26T14:55:09.2181803Z ",
+    "2026-10-26T14:55:09.2181882Z true !== false",
+    "2026-10-26T14:55:09.2181982Z ",
+    "2026-10-26T14:55:09.2182305Z     at verifyMentorCopy (file:///home/runner/work/trading101/trading101/scripts/verify-mentor-copy.mjs:36:16)",
+    "2026-10-26T14:55:09.2182952Z     at async file:///home/runner/work/trading101/trading101/scripts/verify-publisher-browser.mjs:278:3 {",
+    "2026-10-26T14:55:09.2183337Z   generatedMessage: false,",
+    "2026-10-26T14:55:09.2183546Z   code: 'ERR_ASSERTION',",
+    "2026-10-26T14:55:09.2183747Z   actual: true,",
+    "2026-10-26T14:55:09.2184276Z   expected: false,",
+    "2026-10-26T14:55:09.2184477Z   operator: 'strictEqual',",
+    "2026-10-26T14:55:09.2184667Z   diff: 'simple'",
+    "2026-10-26T14:55:09.2184845Z }",
+    "2026-10-26T14:55:09.2184926Z ",
+    "2026-10-26T14:55:09.2185003Z Node.js v22.23.3",
+    "2026-10-26T14:55:09.2270029Z ##[error]Process completed with exit code 1.",
+    "2026-10-26T14:55:09.2398495Z Post job cleanup.",
+    "2026-10-26T14:55:09.3060173Z [command]/usr/bin/git version"
+  ],
+  "scope": "Same recurring mentor768px assertion; candidate remains draft/unmerged. Local geometry diagnosis underway. No test assertions modified."
+}

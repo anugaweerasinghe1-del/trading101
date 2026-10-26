@@ -21,10 +21,10 @@ warn - The class `duration-[2500ms]` is ambiguous and matches multiple utilities
 warn - If this is content and not a class, replace it with `duration-&lsqb;2500ms&rsqb;` to silence this warning.
 ✓ 3537 modules transformed.
 rendering chunks...
-[plugin:vite:reporter] [plugin vite:reporter] 
+[plugin:vite:reporter] [plugin vite:reporter]
 (!) /workspace/trading101-beginner-guide/src/integrations/supabase/client.ts is dynamically imported by /workspace/trading101-beginner-guide/src/lib/portfolio.ts but also statically imported by /workspace/trading101-beginner-guide/src/components/AdminChatPilot.tsx, /workspace/trading101-beginner-guide/src/components/AdminCodeQueue.tsx, /workspace/trading101-beginner-guide/src/components/AdminRepairControls.tsx, /workspace/trading101-beginner-guide/src/components/DailyPractice.tsx, /workspace/trading101-beginner-guide/src/components/RecentAnalysis.tsx, /workspace/trading101-beginner-guide/src/hooks/useAuth.tsx, /workspace/trading101-beginner-guide/src/lib/cloudPortfolio.ts, /workspace/trading101-beginner-guide/src/lib/traderSync.ts, /workspace/trading101-beginner-guide/src/pages/AdminAIAssistant.tsx, /workspace/trading101-beginner-guide/src/pages/AdminCourses.tsx, /workspace/trading101-beginner-guide/src/pages/AdminDaily.tsx, /workspace/trading101-beginner-guide/src/pages/AdminDashboard.tsx, /workspace/trading101-beginner-guide/src/pages/AdminReviews.tsx, /workspace/trading101-beginner-guide/src/pages/Auth.tsx, /workspace/trading101-beginner-guide/src/pages/Challenge.tsx, /workspace/trading101-beginner-guide/src/pages/Leaderboard.tsx, /workspace/trading101-beginner-guide/src/pages/PublicTrader.tsx, /workspace/trading101-beginner-guide/src/pages/ResetPassword.tsx, /workspace/trading101-beginner-guide/src/pages/Reviews.tsx, /workspace/trading101-beginner-guide/src/pages/TraderProfile.tsx, dynamic import will not move module into another chunk.
 
-[plugin:vite:reporter] [plugin vite:reporter] 
+[plugin:vite:reporter] [plugin vite:reporter]
 (!) /workspace/trading101-beginner-guide/src/lib/cloudPortfolio.ts is dynamically imported by /workspace/trading101-beginner-guide/src/lib/portfolio.ts, /workspace/trading101-beginner-guide/src/lib/traderSync.ts but also statically imported by /workspace/trading101-beginner-guide/src/hooks/useAuth.tsx, /workspace/trading101-beginner-guide/src/pages/Leaderboard.tsx, /workspace/trading101-beginner-guide/src/pages/Portfolio.tsx, dynamic import will not move module into another chunk.
 
 computing gzip size...

@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-26T14:45:43.835372+00:00",
+  "candidateSHA": "9229cbab0fb72cea0cc11f37f4d8216b5a930e07",
+  "mergeSHA": "ae8cf2b2db107701d5ffa91b203c1cc8eab3e99d",
+  "identicalGitTree": "b94563676fa994d05e0eb3588924f19ba863e0ae",
+  "outcome": "PASS",
+  "scope": "Entire original isolated phase6 with --import tsx, no source/assertion changes. Includes20mentor states. Same100ms resize assertion intermittently fails onCI; underlying cause unresolved, no app fix claimed. One full exact-main rerun requested; release still held.",
+  "finalActualLogLines": [
+    "BROWSER_NAVIGATE http://127.0.0.1:33033/niche/silver",
+    "BROWSER_NAVIGATE http://127.0.0.1:33033/niche/nat-gas",
+    "BROWSER_NAVIGATE http://127.0.0.1:33033/niche/copper",
+    "PASS isolated interaction checks for phase 6; all checks retain their original assertions.",
+    "PASS real Chromium: 0 compiled route visits (155 URLs \u00d7 fresh interaction phase 6; no matrix repeated), canonical/H1/content parity and overflow. Native courses use read-only published fixtures, not production services."
+  ]
+}

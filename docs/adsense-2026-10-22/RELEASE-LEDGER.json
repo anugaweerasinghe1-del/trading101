@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-26T12:25:10.076152+00:00",
+  "updatedAt": "2026-10-26T14:50:57.669364+00:00",
   "releases": [
     {
       "finding": "THQ-001",
@@ -2072,9 +2072,75 @@
           "result": "PASS two lessons \u00d7 mobile/desktop \u00d7 dark/light/theme-preserving reload. Waited image decode, fonts and3seconds; no DOM/app style modification. All12actual images show correct illustration. Prior shorter-wait blanks retained; evidence supports transient paint/capture limitation, not a proven persistent product defect or claimed CSS fix."
         }
       }
+    },
+    {
+      "pr": 247,
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/247",
+      "candidateSHA": "9229cbab0fb72cea0cc11f37f4d8216b5a930e07",
+      "mergeSHA": "ae8cf2b2db107701d5ffa91b203c1cc8eab3e99d",
+      "state": "PUBLICLY_VERIFIED",
+      "findings": [
+        "THQ-046"
+      ],
+      "production": {
+        "checkedAt": "2026-10-26T14:49:54.319901+00:00",
+        "mergeSHA": "ae8cf2b2db107701d5ffa91b203c1cc8eab3e99d",
+        "outcome": "PASS",
+        "sourceJob": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40338654272/job/121643239868",
+        "scope": "Authenticated native provider reads by trusted exact-main release-readiness job. Both production deployments match the immutable merge SHA. No provider mutations.",
+        "cloudflare": {
+          "observedAt": "2026-10-26T14:49:35.992Z",
+          "project": "tradehq-preview",
+          "activeProduction": {
+            "id": "f711e321-cc9f-4f61-abd7-37f41b96dd68",
+            "sha": "ae8cf2b2db107701d5ffa91b203c1cc8eab3e99d",
+            "environment": "production",
+            "branch": "main",
+            "status": "success",
+            "createdAt": "2026-10-26T14:19:56.759041Z"
+          }
+        },
+        "vercel": {
+          "schema": "tradehq-vercel-production-evidence-v1",
+          "deploymentId": "dpl_688wLv3spkhaA1ctXjGoKNVZuYFj",
+          "teamId": "team_fjZ5ggg0P43MsYFSIHbeHAAO",
+          "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+          "commitSha": "ae8cf2b2db107701d5ffa91b203c1cc8eab3e99d",
+          "target": "production",
+          "state": "READY",
+          "activeAlias": "thetradehq.com",
+          "createdAt": 1793024397591,
+          "observedAt": 1793026175992,
+          "requests": 2,
+          "authorization": {
+            "merge": false,
+            "productionRelease": false
+          }
+        }
+      },
+      "mainCIEvidence": "evidence/PR247-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR247-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR247-GUEST-SMOKE.json"
+      ],
+      "liveRecheck": {
+        "outcome": "PASS",
+        "affectedStates": [
+          20
+        ],
+        "guestStates": 30,
+        "safeControls": 4,
+        "productionImagesPersonallyViewed": 8
+      }
     }
   ],
-  "nextCandidate": null,
+  "nextCandidate": {
+    "pr": 249,
+    "candidateSHA": "42d351ce171c2e2947ad19c6be4c5478a7f6f50f",
+    "baseSHA": "ae8cf2b2db107701d5ffa91b203c1cc8eab3e99d",
+    "state": "DRAFT_REQUIRED_CHECKS_PENDING",
+    "scope": "One test-only animation readiness condition, all existing assertions retained; full localphase6/60mentorstates/negativecontrol PASS. No app changes. ETF248queued."
+  },
   "independentFutureCandidate": {
     "pr": 214,
     "candidateSHA": "36c8e3ae9c7c5f29b0a4df63c2e3439beebd540d",
@@ -2253,9 +2319,9 @@
     "reason": "Releasecyclecomplete; nonewmergeofthisPR."
   },
   "latestGitHubState": "evidence/FINAL-GITHUB-STATE-20261023.json",
-  "latestGitHubProviderBindingEvidence": "evidence/PR246-PRODUCTION-PROVIDERS.json",
-  "latestMainValidationEvidence": "evidence/PR246-MAIN-CI.json",
-  "latestVerifiedProductionSHA": "99d98d1dcffb798765391fcd010a6d11184a1f0f",
+  "latestGitHubProviderBindingEvidence": "evidence/PR247-PRODUCTION-PROVIDERS.json",
+  "latestMainValidationEvidence": "evidence/PR247-MAIN-CI.json",
+  "latestVerifiedProductionSHA": "ae8cf2b2db107701d5ffa91b203c1cc8eab3e99d",
   "summaryQuoteContextCandidate": {
     "pr": 221,
     "candidateSHA": "67ba761a85915ad047081206ee671a823c6f7bed",
@@ -2273,12 +2339,7 @@
   "exhaustiveAuditComplete": false,
   "remainingKnownSafeFindings": 1,
   "nextReleasePriority": [],
-  "pendingReleaseVerification": {
-    "pr": 247,
-    "candidateSHA": "9229cbab0fb72cea0cc11f37f4d8216b5a930e07",
-    "mergeSHA": "ae8cf2b2db107701d5ffa91b203c1cc8eab3e99d",
-    "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
-  },
+  "pendingReleaseVerification": null,
   "protectedPublishedContentFinding": "THQ035/036 published revision2 independently verified; credential and approval blockers superseded by owner-approved PR238 operation. No new production writes in this continuation.",
   "dailyChartUnitsCandidate": {
     "pr": 234,
@@ -2304,5 +2365,14 @@
     "observedAt": "2026-10-25T10:58:45.050590+00:00",
     "effect": "No latestmain/CIverification,PR241merge,PR240descriptionupdateorauditevidencepush. ActualgitandRESTreadsbothupstream503;notcredential401/403. Preparedindependentlocalworkcontinues.",
     "resolvedAt": "2026-10-25T11:10:10.696337+00:00"
-  }
+  },
+  "queuedCandidates": [
+    {
+      "pr": 248,
+      "candidateSHA": "6ab3b7e374f1a4d4deb68e49eb7a785f7a7f34d5",
+      "baseSHA": "ae8cf2b2db107701d5ffa91b203c1cc8eab3e99d",
+      "state": "DRAFT_PR248_CI_HOLD",
+      "scope": "ETF20actualpreview states/8images pass; candidateCI fails recurring unrelatedmentor768px animation sample. Separate test-only fix inprogress."
+    }
+  ]
 }
