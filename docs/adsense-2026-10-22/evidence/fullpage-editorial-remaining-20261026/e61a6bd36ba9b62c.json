@@ -1,0 +1,326 @@
+{
+  "path": "/learn/article/market-orders-vs-limit-orders",
+  "sha": "5967ea17c8fed2d6d6f1e7a0df4c2e4e090a1675",
+  "origin": "https://www.thetradehq.com",
+  "capturedAt": "2026-10-26T07:45:36.166Z",
+  "outcome": "COLLECTED_NOT_HUMAN_REVIEWED",
+  "widths": [
+    {
+      "width": 360,
+      "height": 800,
+      "path": "/learn/article/market-orders-vs-limit-orders",
+      "title": "Market Orders vs Limit Orders: Which Should You Use and When? | TradeHQ Learn",
+      "heading": "Market Orders vs Limit Orders: Which Should You Use and When?",
+      "mainText": "Home\nLearn\nMarket Orders vs Limit Orders: Which Should You Use and When?\n5 min read\nBeginner Guide\nMarket Orders vs Limit Orders: Which Should You Use and When?\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nCompare market and limit order mechanics, fill uncertainty and the situations each order type is designed for. TradeHQ only simulates market orders.\n\nWhat Is a Market Order?\n\nA market order seeks execution at available prices rather than specifying a limit price. Execution and the final price depend on available liquidity, trading halts and other conditions. The displayed quote is not a guaranteed fill, particularly when prices move quickly.\n\nMarket orders prioritize seeking execution over a specified price limit. That trade-off can involve substantial uncertainty in the eventual fill. Compare hypothetical outcomes under different liquidity and gap assumptions rather than prescribe one order type for every urgent situation.\n\nSlippage is the difference between an expected price and the actual fill. Its size varies with order size, liquidity and timing; it is not always pennies in a named asset. TradeHQ uses simplified practice market fills and does not reproduce every exchange execution condition.\n\nWhat Is a Limit Order?\n\nA limit order specifies the highest acceptable price for a buy or the lowest acceptable price for a sale; an execution may occur at a better price. A buy limit order executes only at your specified price or lower; a sell limit order executes only at your specified price or higher. Unlike market orders, limit orders give you price control but don't guarantee execution.\n\nIn a hypothetical example, suppose Bitcoin is quoted at $68,000 while a buy limit is set at $65,000. If the market reaches that level, the order becomes eligible to fill, subject to available liquidity and order priority. If it never reaches $65,000, the order remains open until you cancel it or it expires.\n\nLimit orders can be useful when price control matters more than immediate execution. They are commonly used for planned entries and exits, but the trade-off is that the order may not fill at all, or may fill only partially, if there is not enough matching liquidity.\n\nWhen to Use Each Order Type\n\nA market order and a limit order make different trade-offs between seeking execution and controlling price. For a learning exercise, compare possible fills during a liquid session, a wide spread and a price gap. Neither urgency nor a familiar ticker guarantees a small execution cost.\n\nA limit order specifies a maximum buy price or minimum sell price. Price control does not guarantee any fill or a full fill, even when a chart touches the level. Compare an unfilled order with a partial fill and a completed fill in a written hypothetical example.\n\nTradeHQ currently executes market orders only. Study limit-order mechanics conceptually with a written example; there is no pending limit-order feature to test on SOL or another asset. Simulator fills cannot establish which order type gives better actual execution.\n\nSources and Related Resources\nSEC Investor.gov — order types and price/execution trade-offs\nPractice a simulated market order on NVIDIA (NVDA)\nPractice market orders on Solana (SOL)\nRisk management guide\nGlossary: Limit vs Market Order\nReady to practice?\n\nStudy what you learned with $100,000 in virtual cash. No real money is traded.\n\nStart Trading Free\n\nApply what you just read on the TradeHQ simulator. Practise with virtual cash using these asset examples: BTC, NVDA, SPY. Or scan the full markets dashboard for ideas.\n\nFrequently Asked Questions\nWhat is \"Market Orders vs Limit Orders: Which Should You Use and When?\" about?\nIs this guide free?\nHow can I practice what I just read?\nWhat should I read next?",
+      "supplementaryNotes": [
+        {
+          "path": "/learn/article/market-orders-vs-limit-orders",
+          "tagName": "MAIN",
+          "text": "Home\nLearn\nMarket Orders vs Limit Orders: Which Should You Use and When?\n5 min read\nBeginner Guide\nMarket Orders vs Limit Orders: Which Should You Use and When?\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nCompare market and limit order mechanics, fill uncertainty and the situations each order type is designed for. TradeHQ only simulates market orders.\n\nWhat Is a Market Order?\n\nA market order seeks execution at available prices rather than specifying a limit price. Execution and the final price depend on available liquidity, trading halts and other conditions. The displayed quote is not a guaranteed fill, particularly when prices move quickly.\n\nMarket orders prioritize seeking execution over a specified price limit. That trade-off can involve substantial uncertainty in the eventual fill. Compare hypothetical outcomes under different liquidity and gap assumptions rather than prescribe one order type for every urgent situation.\n\nSlippage is the difference between an expected price and the actual fill. Its size varies with order size, liquidity and timing; it is not always pennies in a named asset. TradeHQ uses simplified practice market fills and does not reproduce every exchange execution condition.\n\nWhat Is a Limit Order?\n\nA limit order specifies the highest acceptable price for a buy or the lowest acceptable price for a sale; an execution may occur at a better price. A buy limit order executes only at your specified price or lower; a sell limit order executes only at your specified price or higher. Unlike market orders, limit orders give you price control but don't guarantee execution.\n\nIn a hypothetical example, suppose Bitcoin is quoted at $68,000 while a buy limit is set at $65,000. If the market reaches that level, the order becomes eligible to fill, subject to available liquidity and order priority. If it never reaches $65,000, the order remains open until you cancel it or it expires.\n\nLimit orders can be useful when price control matters more than immediate execution. They are commonly used for planned entries and exits, but the trade-off is that the order may not fill at all, or may fill only partially, if there is not enough matching liquidity.\n\nWhen to Use Each Order Type\n\nA market order and a limit order make different trade-offs between seeking execution and controlling price. For a learning exercise, compare possible fills during a liquid session, a wide spread and a price gap. Neither urgency nor a familiar ticker guarantees a small execution cost.\n\nA limit order specifies a maximum buy price or minimum sell price. Price control does not guarantee any fill or a full fill, even when a chart touches the level. Compare an unfilled order with a partial fill and a completed fill in a written hypothetical example.\n\nTradeHQ currently executes market orders only. Study limit-order mechanics conceptually with a written example; there is no pending limit-order feature to test on SOL or another asset. Simulator fills cannot establish which order type gives better actual execution.\n\nSources and Related Resources\nSEC Investor.gov — order types and price/execution trade-offs\nPractice a simulated market order on NVIDIA (NVDA)\nPractice market orders on Solana (SOL)\nRisk management guide\nGlossary: Limit vs Market Order\nReady to practice?\n\nStudy what you learned with $100,000 in virtual cash. No real money is traded.\n\nStart Trading Free\n\nApply what you just read on the TradeHQ simulator. Practise with virtual cash using these asset examples: BTC, NVDA, SPY. Or scan the full markets dashboard for ideas.\n\nFrequently Asked Questions\nWhat is \"Market Orders vs Limit Orders: Which Should You Use and When?\" about?\nIs this guide free?\nHow can I practice what I just read?\nWhat should I read next?"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 360,
+      "scrollHeight": 8918,
+      "viewportWidth": 360,
+      "canonical": "https://www.thetradehq.com/learn/article/market-orders-vs-limit-orders",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "e61a6bd36ba9b62c-360-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "e61a6bd36ba9b62c-360-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "e61a6bd36ba9b62c-360-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "e61a6bd36ba9b62c-360-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "e61a6bd36ba9b62c-360-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "e61a6bd36ba9b62c-360-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "e61a6bd36ba9b62c-360-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "e61a6bd36ba9b62c-360-07.png"
+        },
+        {
+          "y": 5440,
+          "screenshot": "e61a6bd36ba9b62c-360-08.png"
+        },
+        {
+          "y": 6120,
+          "screenshot": "e61a6bd36ba9b62c-360-09.png"
+        },
+        {
+          "y": 6800,
+          "screenshot": "e61a6bd36ba9b62c-360-10.png"
+        },
+        {
+          "y": 7480,
+          "screenshot": "e61a6bd36ba9b62c-360-11.png"
+        },
+        {
+          "y": 8118,
+          "screenshot": "e61a6bd36ba9b62c-360-12.png"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "path": "/learn/article/market-orders-vs-limit-orders",
+      "title": "Market Orders vs Limit Orders: Which Should You Use and When? | TradeHQ Learn",
+      "heading": "Market Orders vs Limit Orders: Which Should You Use and When?",
+      "mainText": "Home\nLearn\nMarket Orders vs Limit Orders: Which Should You Use and When?\n5 min read\nBeginner Guide\nMarket Orders vs Limit Orders: Which Should You Use and When?\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nCompare market and limit order mechanics, fill uncertainty and the situations each order type is designed for. TradeHQ only simulates market orders.\n\nWhat Is a Market Order?\n\nA market order seeks execution at available prices rather than specifying a limit price. Execution and the final price depend on available liquidity, trading halts and other conditions. The displayed quote is not a guaranteed fill, particularly when prices move quickly.\n\nMarket orders prioritize seeking execution over a specified price limit. That trade-off can involve substantial uncertainty in the eventual fill. Compare hypothetical outcomes under different liquidity and gap assumptions rather than prescribe one order type for every urgent situation.\n\nSlippage is the difference between an expected price and the actual fill. Its size varies with order size, liquidity and timing; it is not always pennies in a named asset. TradeHQ uses simplified practice market fills and does not reproduce every exchange execution condition.\n\nWhat Is a Limit Order?\n\nA limit order specifies the highest acceptable price for a buy or the lowest acceptable price for a sale; an execution may occur at a better price. A buy limit order executes only at your specified price or lower; a sell limit order executes only at your specified price or higher. Unlike market orders, limit orders give you price control but don't guarantee execution.\n\nIn a hypothetical example, suppose Bitcoin is quoted at $68,000 while a buy limit is set at $65,000. If the market reaches that level, the order becomes eligible to fill, subject to available liquidity and order priority. If it never reaches $65,000, the order remains open until you cancel it or it expires.\n\nLimit orders can be useful when price control matters more than immediate execution. They are commonly used for planned entries and exits, but the trade-off is that the order may not fill at all, or may fill only partially, if there is not enough matching liquidity.\n\nWhen to Use Each Order Type\n\nA market order and a limit order make different trade-offs between seeking execution and controlling price. For a learning exercise, compare possible fills during a liquid session, a wide spread and a price gap. Neither urgency nor a familiar ticker guarantees a small execution cost.\n\nA limit order specifies a maximum buy price or minimum sell price. Price control does not guarantee any fill or a full fill, even when a chart touches the level. Compare an unfilled order with a partial fill and a completed fill in a written hypothetical example.\n\nTradeHQ currently executes market orders only. Study limit-order mechanics conceptually with a written example; there is no pending limit-order feature to test on SOL or another asset. Simulator fills cannot establish which order type gives better actual execution.\n\nSources and Related Resources\nSEC Investor.gov — order types and price/execution trade-offs\nPractice a simulated market order on NVIDIA (NVDA)\nPractice market orders on Solana (SOL)\nRisk management guide\nGlossary: Limit vs Market Order\nReady to practice?\n\nStudy what you learned with $100,000 in virtual cash. No real money is traded.\n\nStart Trading Free\n\nApply what you just read on the TradeHQ simulator. Practise with virtual cash using these asset examples: BTC, NVDA, SPY. Or scan the full markets dashboard for ideas.\n\nFrequently Asked Questions\nWhat is \"Market Orders vs Limit Orders: Which Should You Use and When?\" about?\nIs this guide free?\nHow can I practice what I just read?\nWhat should I read next?",
+      "supplementaryNotes": [
+        {
+          "path": "/learn/article/market-orders-vs-limit-orders",
+          "tagName": "MAIN",
+          "text": "Home\nLearn\nMarket Orders vs Limit Orders: Which Should You Use and When?\n5 min read\nBeginner Guide\nMarket Orders vs Limit Orders: Which Should You Use and When?\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nCompare market and limit order mechanics, fill uncertainty and the situations each order type is designed for. TradeHQ only simulates market orders.\n\nWhat Is a Market Order?\n\nA market order seeks execution at available prices rather than specifying a limit price. Execution and the final price depend on available liquidity, trading halts and other conditions. The displayed quote is not a guaranteed fill, particularly when prices move quickly.\n\nMarket orders prioritize seeking execution over a specified price limit. That trade-off can involve substantial uncertainty in the eventual fill. Compare hypothetical outcomes under different liquidity and gap assumptions rather than prescribe one order type for every urgent situation.\n\nSlippage is the difference between an expected price and the actual fill. Its size varies with order size, liquidity and timing; it is not always pennies in a named asset. TradeHQ uses simplified practice market fills and does not reproduce every exchange execution condition.\n\nWhat Is a Limit Order?\n\nA limit order specifies the highest acceptable price for a buy or the lowest acceptable price for a sale; an execution may occur at a better price. A buy limit order executes only at your specified price or lower; a sell limit order executes only at your specified price or higher. Unlike market orders, limit orders give you price control but don't guarantee execution.\n\nIn a hypothetical example, suppose Bitcoin is quoted at $68,000 while a buy limit is set at $65,000. If the market reaches that level, the order becomes eligible to fill, subject to available liquidity and order priority. If it never reaches $65,000, the order remains open until you cancel it or it expires.\n\nLimit orders can be useful when price control matters more than immediate execution. They are commonly used for planned entries and exits, but the trade-off is that the order may not fill at all, or may fill only partially, if there is not enough matching liquidity.\n\nWhen to Use Each Order Type\n\nA market order and a limit order make different trade-offs between seeking execution and controlling price. For a learning exercise, compare possible fills during a liquid session, a wide spread and a price gap. Neither urgency nor a familiar ticker guarantees a small execution cost.\n\nA limit order specifies a maximum buy price or minimum sell price. Price control does not guarantee any fill or a full fill, even when a chart touches the level. Compare an unfilled order with a partial fill and a completed fill in a written hypothetical example.\n\nTradeHQ currently executes market orders only. Study limit-order mechanics conceptually with a written example; there is no pending limit-order feature to test on SOL or another asset. Simulator fills cannot establish which order type gives better actual execution.\n\nSources and Related Resources\nSEC Investor.gov — order types and price/execution trade-offs\nPractice a simulated market order on NVIDIA (NVDA)\nPractice market orders on Solana (SOL)\nRisk management guide\nGlossary: Limit vs Market Order\nReady to practice?\n\nStudy what you learned with $100,000 in virtual cash. No real money is traded.\n\nStart Trading Free\n\nApply what you just read on the TradeHQ simulator. Practise with virtual cash using these asset examples: BTC, NVDA, SPY. Or scan the full markets dashboard for ideas.\n\nFrequently Asked Questions\nWhat is \"Market Orders vs Limit Orders: Which Should You Use and When?\" about?\nIs this guide free?\nHow can I practice what I just read?\nWhat should I read next?"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 390,
+      "scrollHeight": 8281,
+      "viewportWidth": 390,
+      "canonical": "https://www.thetradehq.com/learn/article/market-orders-vs-limit-orders",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "e61a6bd36ba9b62c-390-00.png"
+        },
+        {
+          "y": 717,
+          "screenshot": "e61a6bd36ba9b62c-390-01.png"
+        },
+        {
+          "y": 1434,
+          "screenshot": "e61a6bd36ba9b62c-390-02.png"
+        },
+        {
+          "y": 2151,
+          "screenshot": "e61a6bd36ba9b62c-390-03.png"
+        },
+        {
+          "y": 2868,
+          "screenshot": "e61a6bd36ba9b62c-390-04.png"
+        },
+        {
+          "y": 3585,
+          "screenshot": "e61a6bd36ba9b62c-390-05.png"
+        },
+        {
+          "y": 4302,
+          "screenshot": "e61a6bd36ba9b62c-390-06.png"
+        },
+        {
+          "y": 5019,
+          "screenshot": "e61a6bd36ba9b62c-390-07.png"
+        },
+        {
+          "y": 5736,
+          "screenshot": "e61a6bd36ba9b62c-390-08.png"
+        },
+        {
+          "y": 6453,
+          "screenshot": "e61a6bd36ba9b62c-390-09.png"
+        },
+        {
+          "y": 7170,
+          "screenshot": "e61a6bd36ba9b62c-390-10.png"
+        },
+        {
+          "y": 7437,
+          "screenshot": "e61a6bd36ba9b62c-390-11.png"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "path": "/learn/article/market-orders-vs-limit-orders",
+      "title": "Market Orders vs Limit Orders: Which Should You Use and When? | TradeHQ Learn",
+      "heading": "Market Orders vs Limit Orders: Which Should You Use and When?",
+      "mainText": "Home\nLearn\nMarket Orders vs Limit Orders: Which Should You Use and When?\n5 min read\nBeginner Guide\nMarket Orders vs Limit Orders: Which Should You Use and When?\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nCompare market and limit order mechanics, fill uncertainty and the situations each order type is designed for. TradeHQ only simulates market orders.\n\nWhat Is a Market Order?\n\nA market order seeks execution at available prices rather than specifying a limit price. Execution and the final price depend on available liquidity, trading halts and other conditions. The displayed quote is not a guaranteed fill, particularly when prices move quickly.\n\nMarket orders prioritize seeking execution over a specified price limit. That trade-off can involve substantial uncertainty in the eventual fill. Compare hypothetical outcomes under different liquidity and gap assumptions rather than prescribe one order type for every urgent situation.\n\nSlippage is the difference between an expected price and the actual fill. Its size varies with order size, liquidity and timing; it is not always pennies in a named asset. TradeHQ uses simplified practice market fills and does not reproduce every exchange execution condition.\n\nWhat Is a Limit Order?\n\nA limit order specifies the highest acceptable price for a buy or the lowest acceptable price for a sale; an execution may occur at a better price. A buy limit order executes only at your specified price or lower; a sell limit order executes only at your specified price or higher. Unlike market orders, limit orders give you price control but don't guarantee execution.\n\nIn a hypothetical example, suppose Bitcoin is quoted at $68,000 while a buy limit is set at $65,000. If the market reaches that level, the order becomes eligible to fill, subject to available liquidity and order priority. If it never reaches $65,000, the order remains open until you cancel it or it expires.\n\nLimit orders can be useful when price control matters more than immediate execution. They are commonly used for planned entries and exits, but the trade-off is that the order may not fill at all, or may fill only partially, if there is not enough matching liquidity.\n\nWhen to Use Each Order Type\n\nA market order and a limit order make different trade-offs between seeking execution and controlling price. For a learning exercise, compare possible fills during a liquid session, a wide spread and a price gap. Neither urgency nor a familiar ticker guarantees a small execution cost.\n\nA limit order specifies a maximum buy price or minimum sell price. Price control does not guarantee any fill or a full fill, even when a chart touches the level. Compare an unfilled order with a partial fill and a completed fill in a written hypothetical example.\n\nTradeHQ currently executes market orders only. Study limit-order mechanics conceptually with a written example; there is no pending limit-order feature to test on SOL or another asset. Simulator fills cannot establish which order type gives better actual execution.\n\nSources and Related Resources\nSEC Investor.gov — order types and price/execution trade-offs\nPractice a simulated market order on NVIDIA (NVDA)\nPractice market orders on Solana (SOL)\nRisk management guide\nGlossary: Limit vs Market Order\nReady to practice?\n\nStudy what you learned with $100,000 in virtual cash. No real money is traded.\n\nStart Trading Free\n\nApply what you just read on the TradeHQ simulator. Practise with virtual cash using these asset examples: BTC, NVDA, SPY. Or scan the full markets dashboard for ideas.\n\nFrequently Asked Questions\nWhat is \"Market Orders vs Limit Orders: Which Should You Use and When?\" about?\nIs this guide free?\nHow can I practice what I just read?\nWhat should I read next?",
+      "supplementaryNotes": [
+        {
+          "path": "/learn/article/market-orders-vs-limit-orders",
+          "tagName": "MAIN",
+          "text": "Home\nLearn\nMarket Orders vs Limit Orders: Which Should You Use and When?\n5 min read\nBeginner Guide\nMarket Orders vs Limit Orders: Which Should You Use and When?\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nCompare market and limit order mechanics, fill uncertainty and the situations each order type is designed for. TradeHQ only simulates market orders.\n\nWhat Is a Market Order?\n\nA market order seeks execution at available prices rather than specifying a limit price. Execution and the final price depend on available liquidity, trading halts and other conditions. The displayed quote is not a guaranteed fill, particularly when prices move quickly.\n\nMarket orders prioritize seeking execution over a specified price limit. That trade-off can involve substantial uncertainty in the eventual fill. Compare hypothetical outcomes under different liquidity and gap assumptions rather than prescribe one order type for every urgent situation.\n\nSlippage is the difference between an expected price and the actual fill. Its size varies with order size, liquidity and timing; it is not always pennies in a named asset. TradeHQ uses simplified practice market fills and does not reproduce every exchange execution condition.\n\nWhat Is a Limit Order?\n\nA limit order specifies the highest acceptable price for a buy or the lowest acceptable price for a sale; an execution may occur at a better price. A buy limit order executes only at your specified price or lower; a sell limit order executes only at your specified price or higher. Unlike market orders, limit orders give you price control but don't guarantee execution.\n\nIn a hypothetical example, suppose Bitcoin is quoted at $68,000 while a buy limit is set at $65,000. If the market reaches that level, the order becomes eligible to fill, subject to available liquidity and order priority. If it never reaches $65,000, the order remains open until you cancel it or it expires.\n\nLimit orders can be useful when price control matters more than immediate execution. They are commonly used for planned entries and exits, but the trade-off is that the order may not fill at all, or may fill only partially, if there is not enough matching liquidity.\n\nWhen to Use Each Order Type\n\nA market order and a limit order make different trade-offs between seeking execution and controlling price. For a learning exercise, compare possible fills during a liquid session, a wide spread and a price gap. Neither urgency nor a familiar ticker guarantees a small execution cost.\n\nA limit order specifies a maximum buy price or minimum sell price. Price control does not guarantee any fill or a full fill, even when a chart touches the level. Compare an unfilled order with a partial fill and a completed fill in a written hypothetical example.\n\nTradeHQ currently executes market orders only. Study limit-order mechanics conceptually with a written example; there is no pending limit-order feature to test on SOL or another asset. Simulator fills cannot establish which order type gives better actual execution.\n\nSources and Related Resources\nSEC Investor.gov — order types and price/execution trade-offs\nPractice a simulated market order on NVIDIA (NVDA)\nPractice market orders on Solana (SOL)\nRisk management guide\nGlossary: Limit vs Market Order\nReady to practice?\n\nStudy what you learned with $100,000 in virtual cash. No real money is traded.\n\nStart Trading Free\n\nApply what you just read on the TradeHQ simulator. Practise with virtual cash using these asset examples: BTC, NVDA, SPY. Or scan the full markets dashboard for ideas.\n\nFrequently Asked Questions\nWhat is \"Market Orders vs Limit Orders: Which Should You Use and When?\" about?\nIs this guide free?\nHow can I practice what I just read?\nWhat should I read next?"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 753,
+      "scrollHeight": 5256,
+      "viewportWidth": 768,
+      "canonical": "https://www.thetradehq.com/learn/article/market-orders-vs-limit-orders",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "e61a6bd36ba9b62c-768-00.png"
+        },
+        {
+          "y": 870,
+          "screenshot": "e61a6bd36ba9b62c-768-01.png"
+        },
+        {
+          "y": 1740,
+          "screenshot": "e61a6bd36ba9b62c-768-02.png"
+        },
+        {
+          "y": 2610,
+          "screenshot": "e61a6bd36ba9b62c-768-03.png"
+        },
+        {
+          "y": 3480,
+          "screenshot": "e61a6bd36ba9b62c-768-04.png"
+        },
+        {
+          "y": 4232,
+          "screenshot": "e61a6bd36ba9b62c-768-05.png"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "path": "/learn/article/market-orders-vs-limit-orders",
+      "title": "Market Orders vs Limit Orders: Which Should You Use and When? | TradeHQ Learn",
+      "heading": "Market Orders vs Limit Orders: Which Should You Use and When?",
+      "mainText": "Home\nLearn\nMarket Orders vs Limit Orders: Which Should You Use and When?\n5 min read\nBeginner Guide\nMarket Orders vs Limit Orders: Which Should You Use and When?\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nCompare market and limit order mechanics, fill uncertainty and the situations each order type is designed for. TradeHQ only simulates market orders.\n\nWhat Is a Market Order?\n\nA market order seeks execution at available prices rather than specifying a limit price. Execution and the final price depend on available liquidity, trading halts and other conditions. The displayed quote is not a guaranteed fill, particularly when prices move quickly.\n\nMarket orders prioritize seeking execution over a specified price limit. That trade-off can involve substantial uncertainty in the eventual fill. Compare hypothetical outcomes under different liquidity and gap assumptions rather than prescribe one order type for every urgent situation.\n\nSlippage is the difference between an expected price and the actual fill. Its size varies with order size, liquidity and timing; it is not always pennies in a named asset. TradeHQ uses simplified practice market fills and does not reproduce every exchange execution condition.\n\nWhat Is a Limit Order?\n\nA limit order specifies the highest acceptable price for a buy or the lowest acceptable price for a sale; an execution may occur at a better price. A buy limit order executes only at your specified price or lower; a sell limit order executes only at your specified price or higher. Unlike market orders, limit orders give you price control but don't guarantee execution.\n\nIn a hypothetical example, suppose Bitcoin is quoted at $68,000 while a buy limit is set at $65,000. If the market reaches that level, the order becomes eligible to fill, subject to available liquidity and order priority. If it never reaches $65,000, the order remains open until you cancel it or it expires.\n\nLimit orders can be useful when price control matters more than immediate execution. They are commonly used for planned entries and exits, but the trade-off is that the order may not fill at all, or may fill only partially, if there is not enough matching liquidity.\n\nWhen to Use Each Order Type\n\nA market order and a limit order make different trade-offs between seeking execution and controlling price. For a learning exercise, compare possible fills during a liquid session, a wide spread and a price gap. Neither urgency nor a familiar ticker guarantees a small execution cost.\n\nA limit order specifies a maximum buy price or minimum sell price. Price control does not guarantee any fill or a full fill, even when a chart touches the level. Compare an unfilled order with a partial fill and a completed fill in a written hypothetical example.\n\nTradeHQ currently executes market orders only. Study limit-order mechanics conceptually with a written example; there is no pending limit-order feature to test on SOL or another asset. Simulator fills cannot establish which order type gives better actual execution.\n\nSources and Related Resources\nSEC Investor.gov — order types and price/execution trade-offs\nPractice a simulated market order on NVIDIA (NVDA)\nPractice market orders on Solana (SOL)\nRisk management guide\nGlossary: Limit vs Market Order\nReady to practice?\n\nStudy what you learned with $100,000 in virtual cash. No real money is traded.\n\nStart Trading Free\n\nApply what you just read on the TradeHQ simulator. Practise with virtual cash using these asset examples: BTC, NVDA, SPY. Or scan the full markets dashboard for ideas.\n\nFrequently Asked Questions\nWhat is \"Market Orders vs Limit Orders: Which Should You Use and When?\" about?\nIs this guide free?\nHow can I practice what I just read?\nWhat should I read next?",
+      "supplementaryNotes": [
+        {
+          "path": "/learn/article/market-orders-vs-limit-orders",
+          "tagName": "MAIN",
+          "text": "Home\nLearn\nMarket Orders vs Limit Orders: Which Should You Use and When?\n5 min read\nBeginner Guide\nMarket Orders vs Limit Orders: Which Should You Use and When?\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nCompare market and limit order mechanics, fill uncertainty and the situations each order type is designed for. TradeHQ only simulates market orders.\n\nWhat Is a Market Order?\n\nA market order seeks execution at available prices rather than specifying a limit price. Execution and the final price depend on available liquidity, trading halts and other conditions. The displayed quote is not a guaranteed fill, particularly when prices move quickly.\n\nMarket orders prioritize seeking execution over a specified price limit. That trade-off can involve substantial uncertainty in the eventual fill. Compare hypothetical outcomes under different liquidity and gap assumptions rather than prescribe one order type for every urgent situation.\n\nSlippage is the difference between an expected price and the actual fill. Its size varies with order size, liquidity and timing; it is not always pennies in a named asset. TradeHQ uses simplified practice market fills and does not reproduce every exchange execution condition.\n\nWhat Is a Limit Order?\n\nA limit order specifies the highest acceptable price for a buy or the lowest acceptable price for a sale; an execution may occur at a better price. A buy limit order executes only at your specified price or lower; a sell limit order executes only at your specified price or higher. Unlike market orders, limit orders give you price control but don't guarantee execution.\n\nIn a hypothetical example, suppose Bitcoin is quoted at $68,000 while a buy limit is set at $65,000. If the market reaches that level, the order becomes eligible to fill, subject to available liquidity and order priority. If it never reaches $65,000, the order remains open until you cancel it or it expires.\n\nLimit orders can be useful when price control matters more than immediate execution. They are commonly used for planned entries and exits, but the trade-off is that the order may not fill at all, or may fill only partially, if there is not enough matching liquidity.\n\nWhen to Use Each Order Type\n\nA market order and a limit order make different trade-offs between seeking execution and controlling price. For a learning exercise, compare possible fills during a liquid session, a wide spread and a price gap. Neither urgency nor a familiar ticker guarantees a small execution cost.\n\nA limit order specifies a maximum buy price or minimum sell price. Price control does not guarantee any fill or a full fill, even when a chart touches the level. Compare an unfilled order with a partial fill and a completed fill in a written hypothetical example.\n\nTradeHQ currently executes market orders only. Study limit-order mechanics conceptually with a written example; there is no pending limit-order feature to test on SOL or another asset. Simulator fills cannot establish which order type gives better actual execution.\n\nSources and Related Resources\nSEC Investor.gov — order types and price/execution trade-offs\nPractice a simulated market order on NVIDIA (NVDA)\nPractice market orders on Solana (SOL)\nRisk management guide\nGlossary: Limit vs Market Order\nReady to practice?\n\nStudy what you learned with $100,000 in virtual cash. No real money is traded.\n\nStart Trading Free\n\nApply what you just read on the TradeHQ simulator. Practise with virtual cash using these asset examples: BTC, NVDA, SPY. Or scan the full markets dashboard for ideas.\n\nFrequently Asked Questions\nWhat is \"Market Orders vs Limit Orders: Which Should You Use and When?\" about?\nIs this guide free?\nHow can I practice what I just read?\nWhat should I read next?"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1265,
+      "scrollHeight": 4397,
+      "viewportWidth": 1280,
+      "canonical": "https://www.thetradehq.com/learn/article/market-orders-vs-limit-orders",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "e61a6bd36ba9b62c-1280-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "e61a6bd36ba9b62c-1280-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "e61a6bd36ba9b62c-1280-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "e61a6bd36ba9b62c-1280-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "e61a6bd36ba9b62c-1280-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "e61a6bd36ba9b62c-1280-05.png"
+        },
+        {
+          "y": 3597,
+          "screenshot": "e61a6bd36ba9b62c-1280-06.png"
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "path": "/learn/article/market-orders-vs-limit-orders",
+      "title": "Market Orders vs Limit Orders: Which Should You Use and When? | TradeHQ Learn",
+      "heading": "Market Orders vs Limit Orders: Which Should You Use and When?",
+      "mainText": "Home\nLearn\nMarket Orders vs Limit Orders: Which Should You Use and When?\n5 min read\nBeginner Guide\nMarket Orders vs Limit Orders: Which Should You Use and When?\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nCompare market and limit order mechanics, fill uncertainty and the situations each order type is designed for. TradeHQ only simulates market orders.\n\nWhat Is a Market Order?\n\nA market order seeks execution at available prices rather than specifying a limit price. Execution and the final price depend on available liquidity, trading halts and other conditions. The displayed quote is not a guaranteed fill, particularly when prices move quickly.\n\nMarket orders prioritize seeking execution over a specified price limit. That trade-off can involve substantial uncertainty in the eventual fill. Compare hypothetical outcomes under different liquidity and gap assumptions rather than prescribe one order type for every urgent situation.\n\nSlippage is the difference between an expected price and the actual fill. Its size varies with order size, liquidity and timing; it is not always pennies in a named asset. TradeHQ uses simplified practice market fills and does not reproduce every exchange execution condition.\n\nWhat Is a Limit Order?\n\nA limit order specifies the highest acceptable price for a buy or the lowest acceptable price for a sale; an execution may occur at a better price. A buy limit order executes only at your specified price or lower; a sell limit order executes only at your specified price or higher. Unlike market orders, limit orders give you price control but don't guarantee execution.\n\nIn a hypothetical example, suppose Bitcoin is quoted at $68,000 while a buy limit is set at $65,000. If the market reaches that level, the order becomes eligible to fill, subject to available liquidity and order priority. If it never reaches $65,000, the order remains open until you cancel it or it expires.\n\nLimit orders can be useful when price control matters more than immediate execution. They are commonly used for planned entries and exits, but the trade-off is that the order may not fill at all, or may fill only partially, if there is not enough matching liquidity.\n\nWhen to Use Each Order Type\n\nA market order and a limit order make different trade-offs between seeking execution and controlling price. For a learning exercise, compare possible fills during a liquid session, a wide spread and a price gap. Neither urgency nor a familiar ticker guarantees a small execution cost.\n\nA limit order specifies a maximum buy price or minimum sell price. Price control does not guarantee any fill or a full fill, even when a chart touches the level. Compare an unfilled order with a partial fill and a completed fill in a written hypothetical example.\n\nTradeHQ currently executes market orders only. Study limit-order mechanics conceptually with a written example; there is no pending limit-order feature to test on SOL or another asset. Simulator fills cannot establish which order type gives better actual execution.\n\nSources and Related Resources\nSEC Investor.gov — order types and price/execution trade-offs\nPractice a simulated market order on NVIDIA (NVDA)\nPractice market orders on Solana (SOL)\nRisk management guide\nGlossary: Limit vs Market Order\nReady to practice?\n\nStudy what you learned with $100,000 in virtual cash. No real money is traded.\n\nStart Trading Free\n\nApply what you just read on the TradeHQ simulator. Practise with virtual cash using these asset examples: BTC, NVDA, SPY. Or scan the full markets dashboard for ideas.\n\nFrequently Asked Questions\nWhat is \"Market Orders vs Limit Orders: Which Should You Use and When?\" about?\nIs this guide free?\nHow can I practice what I just read?\nWhat should I read next?",
+      "supplementaryNotes": [
+        {
+          "path": "/learn/article/market-orders-vs-limit-orders",
+          "tagName": "MAIN",
+          "text": "Home\nLearn\nMarket Orders vs Limit Orders: Which Should You Use and When?\n5 min read\nBeginner Guide\nMarket Orders vs Limit Orders: Which Should You Use and When?\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nCompare market and limit order mechanics, fill uncertainty and the situations each order type is designed for. TradeHQ only simulates market orders.\n\nWhat Is a Market Order?\n\nA market order seeks execution at available prices rather than specifying a limit price. Execution and the final price depend on available liquidity, trading halts and other conditions. The displayed quote is not a guaranteed fill, particularly when prices move quickly.\n\nMarket orders prioritize seeking execution over a specified price limit. That trade-off can involve substantial uncertainty in the eventual fill. Compare hypothetical outcomes under different liquidity and gap assumptions rather than prescribe one order type for every urgent situation.\n\nSlippage is the difference between an expected price and the actual fill. Its size varies with order size, liquidity and timing; it is not always pennies in a named asset. TradeHQ uses simplified practice market fills and does not reproduce every exchange execution condition.\n\nWhat Is a Limit Order?\n\nA limit order specifies the highest acceptable price for a buy or the lowest acceptable price for a sale; an execution may occur at a better price. A buy limit order executes only at your specified price or lower; a sell limit order executes only at your specified price or higher. Unlike market orders, limit orders give you price control but don't guarantee execution.\n\nIn a hypothetical example, suppose Bitcoin is quoted at $68,000 while a buy limit is set at $65,000. If the market reaches that level, the order becomes eligible to fill, subject to available liquidity and order priority. If it never reaches $65,000, the order remains open until you cancel it or it expires.\n\nLimit orders can be useful when price control matters more than immediate execution. They are commonly used for planned entries and exits, but the trade-off is that the order may not fill at all, or may fill only partially, if there is not enough matching liquidity.\n\nWhen to Use Each Order Type\n\nA market order and a limit order make different trade-offs between seeking execution and controlling price. For a learning exercise, compare possible fills during a liquid session, a wide spread and a price gap. Neither urgency nor a familiar ticker guarantees a small execution cost.\n\nA limit order specifies a maximum buy price or minimum sell price. Price control does not guarantee any fill or a full fill, even when a chart touches the level. Compare an unfilled order with a partial fill and a completed fill in a written hypothetical example.\n\nTradeHQ currently executes market orders only. Study limit-order mechanics conceptually with a written example; there is no pending limit-order feature to test on SOL or another asset. Simulator fills cannot establish which order type gives better actual execution.\n\nSources and Related Resources\nSEC Investor.gov — order types and price/execution trade-offs\nPractice a simulated market order on NVIDIA (NVDA)\nPractice market orders on Solana (SOL)\nRisk management guide\nGlossary: Limit vs Market Order\nReady to practice?\n\nStudy what you learned with $100,000 in virtual cash. No real money is traded.\n\nStart Trading Free\n\nApply what you just read on the TradeHQ simulator. Practise with virtual cash using these asset examples: BTC, NVDA, SPY. Or scan the full markets dashboard for ideas.\n\nFrequently Asked Questions\nWhat is \"Market Orders vs Limit Orders: Which Should You Use and When?\" about?\nIs this guide free?\nHow can I practice what I just read?\nWhat should I read next?"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1905,
+      "scrollHeight": 4321,
+      "viewportWidth": 1920,
+      "canonical": "https://www.thetradehq.com/learn/article/market-orders-vs-limit-orders",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "e61a6bd36ba9b62c-1920-00.png"
+        },
+        {
+          "y": 918,
+          "screenshot": "e61a6bd36ba9b62c-1920-01.png"
+        },
+        {
+          "y": 1836,
+          "screenshot": "e61a6bd36ba9b62c-1920-02.png"
+        },
+        {
+          "y": 2754,
+          "screenshot": "e61a6bd36ba9b62c-1920-03.png"
+        },
+        {
+          "y": 3241,
+          "screenshot": "e61a6bd36ba9b62c-1920-04.png"
+        }
+      ]
+    }
+  ]
+}

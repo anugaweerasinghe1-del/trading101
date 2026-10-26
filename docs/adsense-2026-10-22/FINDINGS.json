@@ -1879,7 +1879,7 @@
       "id": "THQ-044",
       "severity": "P3",
       "category": "Yield farming key point overgeneralizes pool risks and unsupported APY prevalence",
-      "state": "PREPARED_LOCAL",
+      "state": "PUBLICLY_VERIFIED",
       "urls": [
         "https://www.thetradehq.com/wiki/yield-farming"
       ],
@@ -1898,16 +1898,59 @@
       "localBranch": "audit/20261026-yield-summary-scope",
       "localValidation": "Full Cloudflare build/SEO/editorial, application TypeScript and10localbrowserstates PASS. Branch pushed. Draft PR creation currently blocked by transient GitHub503; no merge or production claim.",
       "candidateSHA": "85a5a480c439e08478a11a9b94e2ad75b6b649bb",
-      "releaseHold": "Draft creation/required exact-candidate CI/native preview and all production gates pending.",
-      "localImagesPersonallyViewed": 4
+      "releaseHold": null,
+      "localImagesPersonallyViewed": 4,
+      "pr": 245,
+      "localEvidence": "evidence/PR245-LOCAL-BROWSER.json",
+      "mergeSHA": "c9ab602475ace0ef270555916fab8b055f2a9f0c",
+      "exactHeadRequiredChecks": "PASS",
+      "previewEvidence": "evidence/PR245-UPDATED-PREVIEW-BROWSER.json",
+      "previewImagesPersonallyViewed": 4,
+      "productionEvidence": "evidence/PR245-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR245-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR245-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR245-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 4,
+      "liveRecheck": "PASS exact merged production: [10] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
+    },
+    {
+      "id": "THQ-045",
+      "severity": "P3",
+      "category": "Two legacy lesson figures contain malformed embedded labels",
+      "state": "DRAFT_PR",
+      "urls": [
+        "https://www.thetradehq.com/learn/2",
+        "https://www.thetradehq.com/learn/4"
+      ],
+      "observed": "Personally viewed all five default widths and both original assets. Risk illustration says TAKE-PROFIT GRARS. Allocation figure includes Etohes Efs, Addar Wheel Oil and unreadable pseudo-numbers rather than usable category/weight labels. These are raster text defects, not missing fonts or loading states.",
+      "expected": "Published lesson illustrations use readable meaningful labels.",
+      "rootCause": "Malformed embedded labels in two bundled raster illustrations.",
+      "fix": "Remove only the two unreliable optional figure entries. Both lessons retain their valid leading illustration, all written worked examples, sources, takeaways, topic navigation and quiz/progress behavior. Original assets remain on disk; no image editing or broad redesign.",
+      "risk": "Low static lesson content only. No financial execution/calculation, account, record, progress, privacy, ad-serving or infrastructure behavior changes.",
+      "rollback": "Ordinary reviewed revert of the two image-section deletions; no data rollback.",
+      "adsenseRelevance": "Editorial trust/readability concern; no specific Google policy violation asserted.",
+      "evidence": [
+        "evidence/fullpage-editorial-remaining-20261026/44a9cc256255f9b7.json",
+        "evidence/fullpage-editorial-remaining-20261026/1053742c87ba58b4.json"
+      ],
+      "baseSHA": "c9ab602475ace0ef270555916fab8b055f2a9f0c",
+      "detectedAt": "2026-10-26T08:03:30.638326+00:00",
+      "releaseHold": "PR245 production verification and all246candidate/native/actualpreview gates pending; investigate light-theme images before merge.",
+      "pr": 246,
+      "candidateSHA": "a396f047400c0bc2c75f80c805d7d75daa0f7653",
+      "localEvidence": "evidence/LESSON-ILLUSTRATION-LOCAL-BROWSER.json",
+      "localImagesPersonallyViewed": 8,
+      "localValidation": "Build/types and20complete-MAIN default states pass; all8images inspected. Light-theme image visibility needs follow-up before declaring preview ready."
     }
   ],
-  "updatedAt": "2026-10-26T07:39:40.675662+00:00",
+  "updatedAt": "2026-10-26T08:14:25.010800+00:00",
   "counts": {
-    "siteFindings": 49,
+    "siteFindings": 50,
     "P2": 26,
-    "P3": 23,
-    "publiclyRepaired": 48,
+    "P3": 24,
+    "publiclyRepaired": 49,
     "preparedNotMerged": 1,
     "separateOperationalBlockers": 0,
     "mergedAwaitingProductionVerification": 0,
