@@ -21,11 +21,13 @@ export async function verifyMentorCopy({send,evaluate,waitUntil,origin,delay}) {
         await waitUntil(`!!document.querySelector(${JSON.stringify(scope)})`,'Portfolio mentor opens');
         await evaluate(`(()=>{const prompt=[...document.querySelectorAll(${JSON.stringify(scope+' button')})].find(b=>b.textContent.trim()==='My portfolio');if(prompt)prompt.click();return true;})()`);
         await waitUntil(`document.querySelector(${JSON.stringify(scope)})?.innerText.includes('Your portfolio at a glance:')`,'Snapshot answer renders');
+        await waitUntil(`(()=>{const viewport=document.querySelector(${JSON.stringify(scope+' [data-radix-scroll-area-viewport]')}),reply=[...viewport.querySelectorAll('p')].filter(p=>p.innerText.includes('Your portfolio at a glance:')).at(-1);if(!reply)return false;const v=viewport.getBoundingClientRect(),r=reply.getBoundingClientRect();return r.bottom>v.top&&r.top<v.bottom&&viewport.scrollTop>0;})()`,'Latest snapshot reply is visible without manual scrolling');
       }
       for (const [width,height] of [[360,800],[390,844],[768,1024],[1280,800],[1440,900]]) {
         await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<500});
         await delay(100);
         if(path==='/trade/btc') await waitUntil(`(()=>{const dialog=document.querySelector(${JSON.stringify(scope)}),r=dialog.getBoundingClientRect();return r.left>=0&&r.right<=innerWidth&&!dialog.getAnimations().some(animation=>animation.playState==='running');})()`,'Mentor opening animation finishes inside '+width+'px');
+        await waitUntil(`innerWidth===${width}`,'Mentor viewport settles at requested '+width+'px');
         const text=await evaluate(`document.querySelector(${JSON.stringify(scope)}).innerText`);
         assert.doesNotMatch(text,/\*\*|_\(Educational/,'No literal authored emphasis delimiters at '+path+'/'+width+'/'+mode);
         assert.ok(text.includes('(Educational simulation only — not financial advice.)'),'Disclaimer remains present');
