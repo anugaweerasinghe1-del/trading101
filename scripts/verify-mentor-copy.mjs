@@ -25,7 +25,7 @@ export async function verifyMentorCopy({send,evaluate,waitUntil,origin,delay}) {
       for (const [width,height] of [[360,800],[390,844],[768,1024],[1280,800],[1440,900]]) {
         await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<500});
         await delay(100);
-        if(path==='/trade/btc') await waitUntil(`(()=>{const r=document.querySelector(${JSON.stringify(scope)}).getBoundingClientRect();return r.left>=0&&r.right<=innerWidth;})()`,'Mentor dialog settles inside '+width+'px');
+        if(path==='/trade/btc') await waitUntil(`(()=>{const dialog=document.querySelector(${JSON.stringify(scope)}),r=dialog.getBoundingClientRect();return r.left>=0&&r.right<=innerWidth&&!dialog.getAnimations().some(animation=>animation.playState==='running');})()`,'Mentor opening animation finishes inside '+width+'px');
         const text=await evaluate(`document.querySelector(${JSON.stringify(scope)}).innerText`);
         assert.doesNotMatch(text,/\*\*|_\(Educational/,'No literal authored emphasis delimiters at '+path+'/'+width+'/'+mode);
         assert.ok(text.includes('(Educational simulation only — not financial advice.)'),'Disclaimer remains present');
