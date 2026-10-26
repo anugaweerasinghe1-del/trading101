@@ -707,7 +707,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     category: "DeFi",
     keyPoints: [
       "Depositing crypto into protocols to earn fees, interest, or token rewards",
-      "High APYs often unsustainable and offset by IL and token depreciation",
+      "Annualized rates can change; token prices, costs and applicable pool risks affect net returns",
       "Smart contract risk means deposited funds can be lost to exploits"
     ],
     studentPerspective: "Yield farming combines several risks, including changing incentives, token prices, contract failures and withdrawal conditions. A displayed reward rate is not the same as a guaranteed net return.",
