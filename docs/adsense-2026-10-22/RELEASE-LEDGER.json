@@ -2208,7 +2208,12 @@
   "exhaustiveAuditComplete": false,
   "remainingKnownSafeFindings": 1,
   "nextReleasePriority": [],
-  "pendingReleaseVerification": null,
+  "pendingReleaseVerification": {
+    "pr": 246,
+    "mergeSHA": "99d98d1dcffb798765391fcd010a6d11184a1f0f",
+    "state": "MAIN_CI_FAILED_DIAGNOSING",
+    "scope": "Exact-main Cloudflare build/required validation failed; release-readiness skipped. Diagnose before any next release. No production success claimed."
+  },
   "protectedPublishedContentFinding": "THQ035/036 published revision2 independently verified; credential and approval blockers superseded by owner-approved PR238 operation. No new production writes in this continuation.",
   "dailyChartUnitsCandidate": {
     "pr": 234,

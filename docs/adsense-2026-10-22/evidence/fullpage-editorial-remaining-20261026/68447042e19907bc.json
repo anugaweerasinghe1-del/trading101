@@ -1,0 +1,342 @@
+{
+  "path": "/learn/risk-management-in-trading",
+  "sha": "5967ea17c8fed2d6d6f1e7a0df4c2e4e090a1675",
+  "origin": "https://www.thetradehq.com",
+  "capturedAt": "2026-10-26T07:49:07.796Z",
+  "outcome": "COLLECTED_NOT_HUMAN_REVIEWED",
+  "widths": [
+    {
+      "width": 360,
+      "height": 800,
+      "path": "/learn/article/risk-management-in-trading",
+      "title": "Risk Management for Paper Trading: Risk Budgets and Exits | TradeHQ Learn",
+      "heading": "Risk Management for Paper Trading: Risk Budgets and Exits",
+      "mainText": "Home\nLearn\nRisk Management for Paper Trading: Risk Budgets and Exits\n6 min read\nBeginner Guide\nRisk Management for Paper Trading: Risk Budgets and Exits\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nStudy position sizing, conceptual exits and risk-budget arithmetic. TradeHQ supports manual market orders; percentage rules such as 1% or 2% are worksheet assumptions.\n\nMeasuring Risk Alongside Trade Outcomes\n\nRisk management describes how exposure and losses are measured or limited under a chosen process. Profitability also depends on realized gains, losses, frequency and costs. For example, a 40% win rate with fixed 2R gains and 1R losses has gross expectancy 0.4×2−0.6×1=0.2R per trade before costs; it is hypothetical arithmetic.\n\nExposure rules and intended exits can be compared in a hypothetical worksheet, but they do not guarantee survival through a loss sequence or establish that a profitable edge exists. Gaps, costs and correlated holdings can create losses beyond a chosen assumption.\n\nOn TradeHQ, you can practise risk-management ideas with $100,000 in virtual cash. Experiment with different position sizes, exit rules, and reward-to-risk assumptions, then review how each choice changes drawdown and variability over a larger sample of trades. The aim is to build a repeatable process, not to discover a guaranteed formula.\n\nPosition Sizing With a Predefined Risk Limit\n\nPosition sizing determines how much of your portfolio you expose to a single trade. Percentage-based limits such as 1% or 2% are common educational examples, but they are not universal prescriptions. On a $100,000 practice account, a 1% risk budget would be $1,000 and a 2% budget would be $2,000.\n\nFor a hypothetical $100,000 account, a chosen 1% worksheet loss budget is $1,000. An entry at $100 and an assumed exit at $95 create a $5 price loss per share before costs. Dividing $1,000 by $5 gives 200 shares and a $20,000 entry notional, but that excludes fees. TradeHQ's 0.1% buy and sell fees add $20 at entry and $19 at that exit, making the total loss $1,039. To include those fees in the same assumed $1,000 budget, divide by $5 + $0.10 + $0.095 = $5.195 per share: rounding down to 192 whole shares gives a $997.44 loss at exactly $95. This remains a worksheet assumption, not a guaranteed maximum loss: a gap or different fill can exceed it, and TradeHQ does not execute an automatic stop.\n\nSmaller predefined risk budgets reduce the damage from a losing streak, while larger ones make drawdowns compound much faster. Use the simulator to compare several fixed-risk assumptions and record the resulting drawdowns rather than treating any single percentage as a magic number.\n\nStop-Losses and Risk-Reward Ratios\n\nA stop order uses a trigger price, while its eventual fill depends on the order type and market conditions. Gaps or limited liquidity can produce a worse fill than the planned price. A journal exit assumption is useful for arithmetic but does not establish an exact maximum loss.\n\nReward-to-risk compares an assumed gain with an assumed loss. With fixed realized 3R wins and 1R losses, a 25% win rate gives 0.25×3−0.75×1=0R gross expectancy before costs. A planned target need not be achieved, and fees can make even that break-even example negative.\n\nCompare position sizes and hypothetical exit rules in a practice journal, using the same observation period and stated cost assumptions. TradeHQ executes market orders and does not place automatic stop orders. Review drawdown, realized gains and losses, sample size and assumptions without treating any ratio as a guarantee.\n\nSources and Related Resources\nSEC Investor.gov — business, volatility and liquidity risks\nSEC Investor.gov — order types and price/execution trade-offs\nPractice risk management with $100K virtual cash\n5 beginner trading strategies\nPractice position sizing on Bitcoin (BTC)\nHow to read stock charts\nReady to practice?\n\nStudy what you learned with $100,000 in virtual cash. No real money is traded.\n\nStart Trading Free\n\nApply what you just read on the TradeHQ simulator. Practise with virtual cash using these asset examples: BTC, NVDA, SPY. Or scan the full markets dashboard for ideas.\n\nFrequently Asked Questions\nWhat is \"Risk Management for Paper Trading: Risk Budgets and Exits\" about?\nIs this guide free?\nHow can I practice what I just read?\nWhat should I read next?",
+      "supplementaryNotes": [
+        {
+          "path": "/learn/article/risk-management-in-trading",
+          "tagName": "MAIN",
+          "text": "Home\nLearn\nRisk Management for Paper Trading: Risk Budgets and Exits\n6 min read\nBeginner Guide\nRisk Management for Paper Trading: Risk Budgets and Exits\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nStudy position sizing, conceptual exits and risk-budget arithmetic. TradeHQ supports manual market orders; percentage rules such as 1% or 2% are worksheet assumptions.\n\nMeasuring Risk Alongside Trade Outcomes\n\nRisk management describes how exposure and losses are measured or limited under a chosen process. Profitability also depends on realized gains, losses, frequency and costs. For example, a 40% win rate with fixed 2R gains and 1R losses has gross expectancy 0.4×2−0.6×1=0.2R per trade before costs; it is hypothetical arithmetic.\n\nExposure rules and intended exits can be compared in a hypothetical worksheet, but they do not guarantee survival through a loss sequence or establish that a profitable edge exists. Gaps, costs and correlated holdings can create losses beyond a chosen assumption.\n\nOn TradeHQ, you can practise risk-management ideas with $100,000 in virtual cash. Experiment with different position sizes, exit rules, and reward-to-risk assumptions, then review how each choice changes drawdown and variability over a larger sample of trades. The aim is to build a repeatable process, not to discover a guaranteed formula.\n\nPosition Sizing With a Predefined Risk Limit\n\nPosition sizing determines how much of your portfolio you expose to a single trade. Percentage-based limits such as 1% or 2% are common educational examples, but they are not universal prescriptions. On a $100,000 practice account, a 1% risk budget would be $1,000 and a 2% budget would be $2,000.\n\nFor a hypothetical $100,000 account, a chosen 1% worksheet loss budget is $1,000. An entry at $100 and an assumed exit at $95 create a $5 price loss per share before costs. Dividing $1,000 by $5 gives 200 shares and a $20,000 entry notional, but that excludes fees. TradeHQ's 0.1% buy and sell fees add $20 at entry and $19 at that exit, making the total loss $1,039. To include those fees in the same assumed $1,000 budget, divide by $5 + $0.10 + $0.095 = $5.195 per share: rounding down to 192 whole shares gives a $997.44 loss at exactly $95. This remains a worksheet assumption, not a guaranteed maximum loss: a gap or different fill can exceed it, and TradeHQ does not execute an automatic stop.\n\nSmaller predefined risk budgets reduce the damage from a losing streak, while larger ones make drawdowns compound much faster. Use the simulator to compare several fixed-risk assumptions and record the resulting drawdowns rather than treating any single percentage as a magic number.\n\nStop-Losses and Risk-Reward Ratios\n\nA stop order uses a trigger price, while its eventual fill depends on the order type and market conditions. Gaps or limited liquidity can produce a worse fill than the planned price. A journal exit assumption is useful for arithmetic but does not establish an exact maximum loss.\n\nReward-to-risk compares an assumed gain with an assumed loss. With fixed realized 3R wins and 1R losses, a 25% win rate gives 0.25×3−0.75×1=0R gross expectancy before costs. A planned target need not be achieved, and fees can make even that break-even example negative.\n\nCompare position sizes and hypothetical exit rules in a practice journal, using the same observation period and stated cost assumptions. TradeHQ executes market orders and does not place automatic stop orders. Review drawdown, realized gains and losses, sample size and assumptions without treating any ratio as a guarantee.\n\nSources and Related Resources\nSEC Investor.gov — business, volatility and liquidity risks\nSEC Investor.gov — order types and price/execution trade-offs\nPractice risk management with $100K virtual cash\n5 beginner trading strategies\nPractice position sizing on Bitcoin (BTC)\nHow to read stock charts\nReady to practice?\n\nStudy what you learned with $100,000 in virtual cash. No real money is traded.\n\nStart Trading Free\n\nApply what you just read on the TradeHQ simulator. Practise with virtual cash using these asset examples: BTC, NVDA, SPY. Or scan the full markets dashboard for ideas.\n\nFrequently Asked Questions\nWhat is \"Risk Management for Paper Trading: Risk Budgets and Exits\" about?\nIs this guide free?\nHow can I practice what I just read?\nWhat should I read next?"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 360,
+      "scrollHeight": 9842,
+      "viewportWidth": 360,
+      "canonical": "https://www.thetradehq.com/learn/article/risk-management-in-trading",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "68447042e19907bc-360-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "68447042e19907bc-360-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "68447042e19907bc-360-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "68447042e19907bc-360-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "68447042e19907bc-360-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "68447042e19907bc-360-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "68447042e19907bc-360-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "68447042e19907bc-360-07.png"
+        },
+        {
+          "y": 5440,
+          "screenshot": "68447042e19907bc-360-08.png"
+        },
+        {
+          "y": 6120,
+          "screenshot": "68447042e19907bc-360-09.png"
+        },
+        {
+          "y": 6800,
+          "screenshot": "68447042e19907bc-360-10.png"
+        },
+        {
+          "y": 7480,
+          "screenshot": "68447042e19907bc-360-11.png"
+        },
+        {
+          "y": 8160,
+          "screenshot": "68447042e19907bc-360-12.png"
+        },
+        {
+          "y": 8840,
+          "screenshot": "68447042e19907bc-360-13.png"
+        },
+        {
+          "y": 9042,
+          "screenshot": "68447042e19907bc-360-14.png"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "path": "/learn/article/risk-management-in-trading",
+      "title": "Risk Management for Paper Trading: Risk Budgets and Exits | TradeHQ Learn",
+      "heading": "Risk Management for Paper Trading: Risk Budgets and Exits",
+      "mainText": "Home\nLearn\nRisk Management for Paper Trading: Risk Budgets and Exits\n6 min read\nBeginner Guide\nRisk Management for Paper Trading: Risk Budgets and Exits\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nStudy position sizing, conceptual exits and risk-budget arithmetic. TradeHQ supports manual market orders; percentage rules such as 1% or 2% are worksheet assumptions.\n\nMeasuring Risk Alongside Trade Outcomes\n\nRisk management describes how exposure and losses are measured or limited under a chosen process. Profitability also depends on realized gains, losses, frequency and costs. For example, a 40% win rate with fixed 2R gains and 1R losses has gross expectancy 0.4×2−0.6×1=0.2R per trade before costs; it is hypothetical arithmetic.\n\nExposure rules and intended exits can be compared in a hypothetical worksheet, but they do not guarantee survival through a loss sequence or establish that a profitable edge exists. Gaps, costs and correlated holdings can create losses beyond a chosen assumption.\n\nOn TradeHQ, you can practise risk-management ideas with $100,000 in virtual cash. Experiment with different position sizes, exit rules, and reward-to-risk assumptions, then review how each choice changes drawdown and variability over a larger sample of trades. The aim is to build a repeatable process, not to discover a guaranteed formula.\n\nPosition Sizing With a Predefined Risk Limit\n\nPosition sizing determines how much of your portfolio you expose to a single trade. Percentage-based limits such as 1% or 2% are common educational examples, but they are not universal prescriptions. On a $100,000 practice account, a 1% risk budget would be $1,000 and a 2% budget would be $2,000.\n\nFor a hypothetical $100,000 account, a chosen 1% worksheet loss budget is $1,000. An entry at $100 and an assumed exit at $95 create a $5 price loss per share before costs. Dividing $1,000 by $5 gives 200 shares and a $20,000 entry notional, but that excludes fees. TradeHQ's 0.1% buy and sell fees add $20 at entry and $19 at that exit, making the total loss $1,039. To include those fees in the same assumed $1,000 budget, divide by $5 + $0.10 + $0.095 = $5.195 per share: rounding down to 192 whole shares gives a $997.44 loss at exactly $95. This remains a worksheet assumption, not a guaranteed maximum loss: a gap or different fill can exceed it, and TradeHQ does not execute an automatic stop.\n\nSmaller predefined risk budgets reduce the damage from a losing streak, while larger ones make drawdowns compound much faster. Use the simulator to compare several fixed-risk assumptions and record the resulting drawdowns rather than treating any single percentage as a magic number.\n\nStop-Losses and Risk-Reward Ratios\n\nA stop order uses a trigger price, while its eventual fill depends on the order type and market conditions. Gaps or limited liquidity can produce a worse fill than the planned price. A journal exit assumption is useful for arithmetic but does not establish an exact maximum loss.\n\nReward-to-risk compares an assumed gain with an assumed loss. With fixed realized 3R wins and 1R losses, a 25% win rate gives 0.25×3−0.75×1=0R gross expectancy before costs. A planned target need not be achieved, and fees can make even that break-even example negative.\n\nCompare position sizes and hypothetical exit rules in a practice journal, using the same observation period and stated cost assumptions. TradeHQ executes market orders and does not place automatic stop orders. Review drawdown, realized gains and losses, sample size and assumptions without treating any ratio as a guarantee.\n\nSources and Related Resources\nSEC Investor.gov — business, volatility and liquidity risks\nSEC Investor.gov — order types and price/execution trade-offs\nPractice risk management with $100K virtual cash\n5 beginner trading strategies\nPractice position sizing on Bitcoin (BTC)\nHow to read stock charts\nReady to practice?\n\nStudy what you learned with $100,000 in virtual cash. No real money is traded.\n\nStart Trading Free\n\nApply what you just read on the TradeHQ simulator. Practise with virtual cash using these asset examples: BTC, NVDA, SPY. Or scan the full markets dashboard for ideas.\n\nFrequently Asked Questions\nWhat is \"Risk Management for Paper Trading: Risk Budgets and Exits\" about?\nIs this guide free?\nHow can I practice what I just read?\nWhat should I read next?",
+      "supplementaryNotes": [
+        {
+          "path": "/learn/article/risk-management-in-trading",
+          "tagName": "MAIN",
+          "text": "Home\nLearn\nRisk Management for Paper Trading: Risk Budgets and Exits\n6 min read\nBeginner Guide\nRisk Management for Paper Trading: Risk Budgets and Exits\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nStudy position sizing, conceptual exits and risk-budget arithmetic. TradeHQ supports manual market orders; percentage rules such as 1% or 2% are worksheet assumptions.\n\nMeasuring Risk Alongside Trade Outcomes\n\nRisk management describes how exposure and losses are measured or limited under a chosen process. Profitability also depends on realized gains, losses, frequency and costs. For example, a 40% win rate with fixed 2R gains and 1R losses has gross expectancy 0.4×2−0.6×1=0.2R per trade before costs; it is hypothetical arithmetic.\n\nExposure rules and intended exits can be compared in a hypothetical worksheet, but they do not guarantee survival through a loss sequence or establish that a profitable edge exists. Gaps, costs and correlated holdings can create losses beyond a chosen assumption.\n\nOn TradeHQ, you can practise risk-management ideas with $100,000 in virtual cash. Experiment with different position sizes, exit rules, and reward-to-risk assumptions, then review how each choice changes drawdown and variability over a larger sample of trades. The aim is to build a repeatable process, not to discover a guaranteed formula.\n\nPosition Sizing With a Predefined Risk Limit\n\nPosition sizing determines how much of your portfolio you expose to a single trade. Percentage-based limits such as 1% or 2% are common educational examples, but they are not universal prescriptions. On a $100,000 practice account, a 1% risk budget would be $1,000 and a 2% budget would be $2,000.\n\nFor a hypothetical $100,000 account, a chosen 1% worksheet loss budget is $1,000. An entry at $100 and an assumed exit at $95 create a $5 price loss per share before costs. Dividing $1,000 by $5 gives 200 shares and a $20,000 entry notional, but that excludes fees. TradeHQ's 0.1% buy and sell fees add $20 at entry and $19 at that exit, making the total loss $1,039. To include those fees in the same assumed $1,000 budget, divide by $5 + $0.10 + $0.095 = $5.195 per share: rounding down to 192 whole shares gives a $997.44 loss at exactly $95. This remains a worksheet assumption, not a guaranteed maximum loss: a gap or different fill can exceed it, and TradeHQ does not execute an automatic stop.\n\nSmaller predefined risk budgets reduce the damage from a losing streak, while larger ones make drawdowns compound much faster. Use the simulator to compare several fixed-risk assumptions and record the resulting drawdowns rather than treating any single percentage as a magic number.\n\nStop-Losses and Risk-Reward Ratios\n\nA stop order uses a trigger price, while its eventual fill depends on the order type and market conditions. Gaps or limited liquidity can produce a worse fill than the planned price. A journal exit assumption is useful for arithmetic but does not establish an exact maximum loss.\n\nReward-to-risk compares an assumed gain with an assumed loss. With fixed realized 3R wins and 1R losses, a 25% win rate gives 0.25×3−0.75×1=0R gross expectancy before costs. A planned target need not be achieved, and fees can make even that break-even example negative.\n\nCompare position sizes and hypothetical exit rules in a practice journal, using the same observation period and stated cost assumptions. TradeHQ executes market orders and does not place automatic stop orders. Review drawdown, realized gains and losses, sample size and assumptions without treating any ratio as a guarantee.\n\nSources and Related Resources\nSEC Investor.gov — business, volatility and liquidity risks\nSEC Investor.gov — order types and price/execution trade-offs\nPractice risk management with $100K virtual cash\n5 beginner trading strategies\nPractice position sizing on Bitcoin (BTC)\nHow to read stock charts\nReady to practice?\n\nStudy what you learned with $100,000 in virtual cash. No real money is traded.\n\nStart Trading Free\n\nApply what you just read on the TradeHQ simulator. Practise with virtual cash using these asset examples: BTC, NVDA, SPY. Or scan the full markets dashboard for ideas.\n\nFrequently Asked Questions\nWhat is \"Risk Management for Paper Trading: Risk Budgets and Exits\" about?\nIs this guide free?\nHow can I practice what I just read?\nWhat should I read next?"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 390,
+      "scrollHeight": 9057,
+      "viewportWidth": 390,
+      "canonical": "https://www.thetradehq.com/learn/article/risk-management-in-trading",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "68447042e19907bc-390-00.png"
+        },
+        {
+          "y": 717,
+          "screenshot": "68447042e19907bc-390-01.png"
+        },
+        {
+          "y": 1434,
+          "screenshot": "68447042e19907bc-390-02.png"
+        },
+        {
+          "y": 2151,
+          "screenshot": "68447042e19907bc-390-03.png"
+        },
+        {
+          "y": 2868,
+          "screenshot": "68447042e19907bc-390-04.png"
+        },
+        {
+          "y": 3585,
+          "screenshot": "68447042e19907bc-390-05.png"
+        },
+        {
+          "y": 4302,
+          "screenshot": "68447042e19907bc-390-06.png"
+        },
+        {
+          "y": 5019,
+          "screenshot": "68447042e19907bc-390-07.png"
+        },
+        {
+          "y": 5736,
+          "screenshot": "68447042e19907bc-390-08.png"
+        },
+        {
+          "y": 6453,
+          "screenshot": "68447042e19907bc-390-09.png"
+        },
+        {
+          "y": 7170,
+          "screenshot": "68447042e19907bc-390-10.png"
+        },
+        {
+          "y": 7887,
+          "screenshot": "68447042e19907bc-390-11.png"
+        },
+        {
+          "y": 8213,
+          "screenshot": "68447042e19907bc-390-12.png"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "path": "/learn/article/risk-management-in-trading",
+      "title": "Risk Management for Paper Trading: Risk Budgets and Exits | TradeHQ Learn",
+      "heading": "Risk Management for Paper Trading: Risk Budgets and Exits",
+      "mainText": "Home\nLearn\nRisk Management for Paper Trading: Risk Budgets and Exits\n6 min read\nBeginner Guide\nRisk Management for Paper Trading: Risk Budgets and Exits\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nStudy position sizing, conceptual exits and risk-budget arithmetic. TradeHQ supports manual market orders; percentage rules such as 1% or 2% are worksheet assumptions.\n\nMeasuring Risk Alongside Trade Outcomes\n\nRisk management describes how exposure and losses are measured or limited under a chosen process. Profitability also depends on realized gains, losses, frequency and costs. For example, a 40% win rate with fixed 2R gains and 1R losses has gross expectancy 0.4×2−0.6×1=0.2R per trade before costs; it is hypothetical arithmetic.\n\nExposure rules and intended exits can be compared in a hypothetical worksheet, but they do not guarantee survival through a loss sequence or establish that a profitable edge exists. Gaps, costs and correlated holdings can create losses beyond a chosen assumption.\n\nOn TradeHQ, you can practise risk-management ideas with $100,000 in virtual cash. Experiment with different position sizes, exit rules, and reward-to-risk assumptions, then review how each choice changes drawdown and variability over a larger sample of trades. The aim is to build a repeatable process, not to discover a guaranteed formula.\n\nPosition Sizing With a Predefined Risk Limit\n\nPosition sizing determines how much of your portfolio you expose to a single trade. Percentage-based limits such as 1% or 2% are common educational examples, but they are not universal prescriptions. On a $100,000 practice account, a 1% risk budget would be $1,000 and a 2% budget would be $2,000.\n\nFor a hypothetical $100,000 account, a chosen 1% worksheet loss budget is $1,000. An entry at $100 and an assumed exit at $95 create a $5 price loss per share before costs. Dividing $1,000 by $5 gives 200 shares and a $20,000 entry notional, but that excludes fees. TradeHQ's 0.1% buy and sell fees add $20 at entry and $19 at that exit, making the total loss $1,039. To include those fees in the same assumed $1,000 budget, divide by $5 + $0.10 + $0.095 = $5.195 per share: rounding down to 192 whole shares gives a $997.44 loss at exactly $95. This remains a worksheet assumption, not a guaranteed maximum loss: a gap or different fill can exceed it, and TradeHQ does not execute an automatic stop.\n\nSmaller predefined risk budgets reduce the damage from a losing streak, while larger ones make drawdowns compound much faster. Use the simulator to compare several fixed-risk assumptions and record the resulting drawdowns rather than treating any single percentage as a magic number.\n\nStop-Losses and Risk-Reward Ratios\n\nA stop order uses a trigger price, while its eventual fill depends on the order type and market conditions. Gaps or limited liquidity can produce a worse fill than the planned price. A journal exit assumption is useful for arithmetic but does not establish an exact maximum loss.\n\nReward-to-risk compares an assumed gain with an assumed loss. With fixed realized 3R wins and 1R losses, a 25% win rate gives 0.25×3−0.75×1=0R gross expectancy before costs. A planned target need not be achieved, and fees can make even that break-even example negative.\n\nCompare position sizes and hypothetical exit rules in a practice journal, using the same observation period and stated cost assumptions. TradeHQ executes market orders and does not place automatic stop orders. Review drawdown, realized gains and losses, sample size and assumptions without treating any ratio as a guarantee.\n\nSources and Related Resources\nSEC Investor.gov — business, volatility and liquidity risks\nSEC Investor.gov — order types and price/execution trade-offs\nPractice risk management with $100K virtual cash\n5 beginner trading strategies\nPractice position sizing on Bitcoin (BTC)\nHow to read stock charts\nReady to practice?\n\nStudy what you learned with $100,000 in virtual cash. No real money is traded.\n\nStart Trading Free\n\nApply what you just read on the TradeHQ simulator. Practise with virtual cash using these asset examples: BTC, NVDA, SPY. Or scan the full markets dashboard for ideas.\n\nFrequently Asked Questions\nWhat is \"Risk Management for Paper Trading: Risk Budgets and Exits\" about?\nIs this guide free?\nHow can I practice what I just read?\nWhat should I read next?",
+      "supplementaryNotes": [
+        {
+          "path": "/learn/article/risk-management-in-trading",
+          "tagName": "MAIN",
+          "text": "Home\nLearn\nRisk Management for Paper Trading: Risk Budgets and Exits\n6 min read\nBeginner Guide\nRisk Management for Paper Trading: Risk Budgets and Exits\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nStudy position sizing, conceptual exits and risk-budget arithmetic. TradeHQ supports manual market orders; percentage rules such as 1% or 2% are worksheet assumptions.\n\nMeasuring Risk Alongside Trade Outcomes\n\nRisk management describes how exposure and losses are measured or limited under a chosen process. Profitability also depends on realized gains, losses, frequency and costs. For example, a 40% win rate with fixed 2R gains and 1R losses has gross expectancy 0.4×2−0.6×1=0.2R per trade before costs; it is hypothetical arithmetic.\n\nExposure rules and intended exits can be compared in a hypothetical worksheet, but they do not guarantee survival through a loss sequence or establish that a profitable edge exists. Gaps, costs and correlated holdings can create losses beyond a chosen assumption.\n\nOn TradeHQ, you can practise risk-management ideas with $100,000 in virtual cash. Experiment with different position sizes, exit rules, and reward-to-risk assumptions, then review how each choice changes drawdown and variability over a larger sample of trades. The aim is to build a repeatable process, not to discover a guaranteed formula.\n\nPosition Sizing With a Predefined Risk Limit\n\nPosition sizing determines how much of your portfolio you expose to a single trade. Percentage-based limits such as 1% or 2% are common educational examples, but they are not universal prescriptions. On a $100,000 practice account, a 1% risk budget would be $1,000 and a 2% budget would be $2,000.\n\nFor a hypothetical $100,000 account, a chosen 1% worksheet loss budget is $1,000. An entry at $100 and an assumed exit at $95 create a $5 price loss per share before costs. Dividing $1,000 by $5 gives 200 shares and a $20,000 entry notional, but that excludes fees. TradeHQ's 0.1% buy and sell fees add $20 at entry and $19 at that exit, making the total loss $1,039. To include those fees in the same assumed $1,000 budget, divide by $5 + $0.10 + $0.095 = $5.195 per share: rounding down to 192 whole shares gives a $997.44 loss at exactly $95. This remains a worksheet assumption, not a guaranteed maximum loss: a gap or different fill can exceed it, and TradeHQ does not execute an automatic stop.\n\nSmaller predefined risk budgets reduce the damage from a losing streak, while larger ones make drawdowns compound much faster. Use the simulator to compare several fixed-risk assumptions and record the resulting drawdowns rather than treating any single percentage as a magic number.\n\nStop-Losses and Risk-Reward Ratios\n\nA stop order uses a trigger price, while its eventual fill depends on the order type and market conditions. Gaps or limited liquidity can produce a worse fill than the planned price. A journal exit assumption is useful for arithmetic but does not establish an exact maximum loss.\n\nReward-to-risk compares an assumed gain with an assumed loss. With fixed realized 3R wins and 1R losses, a 25% win rate gives 0.25×3−0.75×1=0R gross expectancy before costs. A planned target need not be achieved, and fees can make even that break-even example negative.\n\nCompare position sizes and hypothetical exit rules in a practice journal, using the same observation period and stated cost assumptions. TradeHQ executes market orders and does not place automatic stop orders. Review drawdown, realized gains and losses, sample size and assumptions without treating any ratio as a guarantee.\n\nSources and Related Resources\nSEC Investor.gov — business, volatility and liquidity risks\nSEC Investor.gov — order types and price/execution trade-offs\nPractice risk management with $100K virtual cash\n5 beginner trading strategies\nPractice position sizing on Bitcoin (BTC)\nHow to read stock charts\nReady to practice?\n\nStudy what you learned with $100,000 in virtual cash. No real money is traded.\n\nStart Trading Free\n\nApply what you just read on the TradeHQ simulator. Practise with virtual cash using these asset examples: BTC, NVDA, SPY. Or scan the full markets dashboard for ideas.\n\nFrequently Asked Questions\nWhat is \"Risk Management for Paper Trading: Risk Budgets and Exits\" about?\nIs this guide free?\nHow can I practice what I just read?\nWhat should I read next?"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 753,
+      "scrollHeight": 5500,
+      "viewportWidth": 768,
+      "canonical": "https://www.thetradehq.com/learn/article/risk-management-in-trading",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "68447042e19907bc-768-00.png"
+        },
+        {
+          "y": 870,
+          "screenshot": "68447042e19907bc-768-01.png"
+        },
+        {
+          "y": 1740,
+          "screenshot": "68447042e19907bc-768-02.png"
+        },
+        {
+          "y": 2610,
+          "screenshot": "68447042e19907bc-768-03.png"
+        },
+        {
+          "y": 3480,
+          "screenshot": "68447042e19907bc-768-04.png"
+        },
+        {
+          "y": 4350,
+          "screenshot": "68447042e19907bc-768-05.png"
+        },
+        {
+          "y": 4476,
+          "screenshot": "68447042e19907bc-768-06.png"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "path": "/learn/article/risk-management-in-trading",
+      "title": "Risk Management for Paper Trading: Risk Budgets and Exits | TradeHQ Learn",
+      "heading": "Risk Management for Paper Trading: Risk Budgets and Exits",
+      "mainText": "Home\nLearn\nRisk Management for Paper Trading: Risk Budgets and Exits\n6 min read\nBeginner Guide\nRisk Management for Paper Trading: Risk Budgets and Exits\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nStudy position sizing, conceptual exits and risk-budget arithmetic. TradeHQ supports manual market orders; percentage rules such as 1% or 2% are worksheet assumptions.\n\nMeasuring Risk Alongside Trade Outcomes\n\nRisk management describes how exposure and losses are measured or limited under a chosen process. Profitability also depends on realized gains, losses, frequency and costs. For example, a 40% win rate with fixed 2R gains and 1R losses has gross expectancy 0.4×2−0.6×1=0.2R per trade before costs; it is hypothetical arithmetic.\n\nExposure rules and intended exits can be compared in a hypothetical worksheet, but they do not guarantee survival through a loss sequence or establish that a profitable edge exists. Gaps, costs and correlated holdings can create losses beyond a chosen assumption.\n\nOn TradeHQ, you can practise risk-management ideas with $100,000 in virtual cash. Experiment with different position sizes, exit rules, and reward-to-risk assumptions, then review how each choice changes drawdown and variability over a larger sample of trades. The aim is to build a repeatable process, not to discover a guaranteed formula.\n\nPosition Sizing With a Predefined Risk Limit\n\nPosition sizing determines how much of your portfolio you expose to a single trade. Percentage-based limits such as 1% or 2% are common educational examples, but they are not universal prescriptions. On a $100,000 practice account, a 1% risk budget would be $1,000 and a 2% budget would be $2,000.\n\nFor a hypothetical $100,000 account, a chosen 1% worksheet loss budget is $1,000. An entry at $100 and an assumed exit at $95 create a $5 price loss per share before costs. Dividing $1,000 by $5 gives 200 shares and a $20,000 entry notional, but that excludes fees. TradeHQ's 0.1% buy and sell fees add $20 at entry and $19 at that exit, making the total loss $1,039. To include those fees in the same assumed $1,000 budget, divide by $5 + $0.10 + $0.095 = $5.195 per share: rounding down to 192 whole shares gives a $997.44 loss at exactly $95. This remains a worksheet assumption, not a guaranteed maximum loss: a gap or different fill can exceed it, and TradeHQ does not execute an automatic stop.\n\nSmaller predefined risk budgets reduce the damage from a losing streak, while larger ones make drawdowns compound much faster. Use the simulator to compare several fixed-risk assumptions and record the resulting drawdowns rather than treating any single percentage as a magic number.\n\nStop-Losses and Risk-Reward Ratios\n\nA stop order uses a trigger price, while its eventual fill depends on the order type and market conditions. Gaps or limited liquidity can produce a worse fill than the planned price. A journal exit assumption is useful for arithmetic but does not establish an exact maximum loss.\n\nReward-to-risk compares an assumed gain with an assumed loss. With fixed realized 3R wins and 1R losses, a 25% win rate gives 0.25×3−0.75×1=0R gross expectancy before costs. A planned target need not be achieved, and fees can make even that break-even example negative.\n\nCompare position sizes and hypothetical exit rules in a practice journal, using the same observation period and stated cost assumptions. TradeHQ executes market orders and does not place automatic stop orders. Review drawdown, realized gains and losses, sample size and assumptions without treating any ratio as a guarantee.\n\nSources and Related Resources\nSEC Investor.gov — business, volatility and liquidity risks\nSEC Investor.gov — order types and price/execution trade-offs\nPractice risk management with $100K virtual cash\n5 beginner trading strategies\nPractice position sizing on Bitcoin (BTC)\nHow to read stock charts\nReady to practice?\n\nStudy what you learned with $100,000 in virtual cash. No real money is traded.\n\nStart Trading Free\n\nApply what you just read on the TradeHQ simulator. Practise with virtual cash using these asset examples: BTC, NVDA, SPY. Or scan the full markets dashboard for ideas.\n\nFrequently Asked Questions\nWhat is \"Risk Management for Paper Trading: Risk Budgets and Exits\" about?\nIs this guide free?\nHow can I practice what I just read?\nWhat should I read next?",
+      "supplementaryNotes": [
+        {
+          "path": "/learn/article/risk-management-in-trading",
+          "tagName": "MAIN",
+          "text": "Home\nLearn\nRisk Management for Paper Trading: Risk Budgets and Exits\n6 min read\nBeginner Guide\nRisk Management for Paper Trading: Risk Budgets and Exits\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nStudy position sizing, conceptual exits and risk-budget arithmetic. TradeHQ supports manual market orders; percentage rules such as 1% or 2% are worksheet assumptions.\n\nMeasuring Risk Alongside Trade Outcomes\n\nRisk management describes how exposure and losses are measured or limited under a chosen process. Profitability also depends on realized gains, losses, frequency and costs. For example, a 40% win rate with fixed 2R gains and 1R losses has gross expectancy 0.4×2−0.6×1=0.2R per trade before costs; it is hypothetical arithmetic.\n\nExposure rules and intended exits can be compared in a hypothetical worksheet, but they do not guarantee survival through a loss sequence or establish that a profitable edge exists. Gaps, costs and correlated holdings can create losses beyond a chosen assumption.\n\nOn TradeHQ, you can practise risk-management ideas with $100,000 in virtual cash. Experiment with different position sizes, exit rules, and reward-to-risk assumptions, then review how each choice changes drawdown and variability over a larger sample of trades. The aim is to build a repeatable process, not to discover a guaranteed formula.\n\nPosition Sizing With a Predefined Risk Limit\n\nPosition sizing determines how much of your portfolio you expose to a single trade. Percentage-based limits such as 1% or 2% are common educational examples, but they are not universal prescriptions. On a $100,000 practice account, a 1% risk budget would be $1,000 and a 2% budget would be $2,000.\n\nFor a hypothetical $100,000 account, a chosen 1% worksheet loss budget is $1,000. An entry at $100 and an assumed exit at $95 create a $5 price loss per share before costs. Dividing $1,000 by $5 gives 200 shares and a $20,000 entry notional, but that excludes fees. TradeHQ's 0.1% buy and sell fees add $20 at entry and $19 at that exit, making the total loss $1,039. To include those fees in the same assumed $1,000 budget, divide by $5 + $0.10 + $0.095 = $5.195 per share: rounding down to 192 whole shares gives a $997.44 loss at exactly $95. This remains a worksheet assumption, not a guaranteed maximum loss: a gap or different fill can exceed it, and TradeHQ does not execute an automatic stop.\n\nSmaller predefined risk budgets reduce the damage from a losing streak, while larger ones make drawdowns compound much faster. Use the simulator to compare several fixed-risk assumptions and record the resulting drawdowns rather than treating any single percentage as a magic number.\n\nStop-Losses and Risk-Reward Ratios\n\nA stop order uses a trigger price, while its eventual fill depends on the order type and market conditions. Gaps or limited liquidity can produce a worse fill than the planned price. A journal exit assumption is useful for arithmetic but does not establish an exact maximum loss.\n\nReward-to-risk compares an assumed gain with an assumed loss. With fixed realized 3R wins and 1R losses, a 25% win rate gives 0.25×3−0.75×1=0R gross expectancy before costs. A planned target need not be achieved, and fees can make even that break-even example negative.\n\nCompare position sizes and hypothetical exit rules in a practice journal, using the same observation period and stated cost assumptions. TradeHQ executes market orders and does not place automatic stop orders. Review drawdown, realized gains and losses, sample size and assumptions without treating any ratio as a guarantee.\n\nSources and Related Resources\nSEC Investor.gov — business, volatility and liquidity risks\nSEC Investor.gov — order types and price/execution trade-offs\nPractice risk management with $100K virtual cash\n5 beginner trading strategies\nPractice position sizing on Bitcoin (BTC)\nHow to read stock charts\nReady to practice?\n\nStudy what you learned with $100,000 in virtual cash. No real money is traded.\n\nStart Trading Free\n\nApply what you just read on the TradeHQ simulator. Practise with virtual cash using these asset examples: BTC, NVDA, SPY. Or scan the full markets dashboard for ideas.\n\nFrequently Asked Questions\nWhat is \"Risk Management for Paper Trading: Risk Budgets and Exits\" about?\nIs this guide free?\nHow can I practice what I just read?\nWhat should I read next?"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1265,
+      "scrollHeight": 4673,
+      "viewportWidth": 1280,
+      "canonical": "https://www.thetradehq.com/learn/article/risk-management-in-trading",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "68447042e19907bc-1280-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "68447042e19907bc-1280-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "68447042e19907bc-1280-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "68447042e19907bc-1280-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "68447042e19907bc-1280-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "68447042e19907bc-1280-05.png"
+        },
+        {
+          "y": 3873,
+          "screenshot": "68447042e19907bc-1280-06.png"
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "path": "/learn/article/risk-management-in-trading",
+      "title": "Risk Management for Paper Trading: Risk Budgets and Exits | TradeHQ Learn",
+      "heading": "Risk Management for Paper Trading: Risk Budgets and Exits",
+      "mainText": "Home\nLearn\nRisk Management for Paper Trading: Risk Budgets and Exits\n6 min read\nBeginner Guide\nRisk Management for Paper Trading: Risk Budgets and Exits\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nStudy position sizing, conceptual exits and risk-budget arithmetic. TradeHQ supports manual market orders; percentage rules such as 1% or 2% are worksheet assumptions.\n\nMeasuring Risk Alongside Trade Outcomes\n\nRisk management describes how exposure and losses are measured or limited under a chosen process. Profitability also depends on realized gains, losses, frequency and costs. For example, a 40% win rate with fixed 2R gains and 1R losses has gross expectancy 0.4×2−0.6×1=0.2R per trade before costs; it is hypothetical arithmetic.\n\nExposure rules and intended exits can be compared in a hypothetical worksheet, but they do not guarantee survival through a loss sequence or establish that a profitable edge exists. Gaps, costs and correlated holdings can create losses beyond a chosen assumption.\n\nOn TradeHQ, you can practise risk-management ideas with $100,000 in virtual cash. Experiment with different position sizes, exit rules, and reward-to-risk assumptions, then review how each choice changes drawdown and variability over a larger sample of trades. The aim is to build a repeatable process, not to discover a guaranteed formula.\n\nPosition Sizing With a Predefined Risk Limit\n\nPosition sizing determines how much of your portfolio you expose to a single trade. Percentage-based limits such as 1% or 2% are common educational examples, but they are not universal prescriptions. On a $100,000 practice account, a 1% risk budget would be $1,000 and a 2% budget would be $2,000.\n\nFor a hypothetical $100,000 account, a chosen 1% worksheet loss budget is $1,000. An entry at $100 and an assumed exit at $95 create a $5 price loss per share before costs. Dividing $1,000 by $5 gives 200 shares and a $20,000 entry notional, but that excludes fees. TradeHQ's 0.1% buy and sell fees add $20 at entry and $19 at that exit, making the total loss $1,039. To include those fees in the same assumed $1,000 budget, divide by $5 + $0.10 + $0.095 = $5.195 per share: rounding down to 192 whole shares gives a $997.44 loss at exactly $95. This remains a worksheet assumption, not a guaranteed maximum loss: a gap or different fill can exceed it, and TradeHQ does not execute an automatic stop.\n\nSmaller predefined risk budgets reduce the damage from a losing streak, while larger ones make drawdowns compound much faster. Use the simulator to compare several fixed-risk assumptions and record the resulting drawdowns rather than treating any single percentage as a magic number.\n\nStop-Losses and Risk-Reward Ratios\n\nA stop order uses a trigger price, while its eventual fill depends on the order type and market conditions. Gaps or limited liquidity can produce a worse fill than the planned price. A journal exit assumption is useful for arithmetic but does not establish an exact maximum loss.\n\nReward-to-risk compares an assumed gain with an assumed loss. With fixed realized 3R wins and 1R losses, a 25% win rate gives 0.25×3−0.75×1=0R gross expectancy before costs. A planned target need not be achieved, and fees can make even that break-even example negative.\n\nCompare position sizes and hypothetical exit rules in a practice journal, using the same observation period and stated cost assumptions. TradeHQ executes market orders and does not place automatic stop orders. Review drawdown, realized gains and losses, sample size and assumptions without treating any ratio as a guarantee.\n\nSources and Related Resources\nSEC Investor.gov — business, volatility and liquidity risks\nSEC Investor.gov — order types and price/execution trade-offs\nPractice risk management with $100K virtual cash\n5 beginner trading strategies\nPractice position sizing on Bitcoin (BTC)\nHow to read stock charts\nReady to practice?\n\nStudy what you learned with $100,000 in virtual cash. No real money is traded.\n\nStart Trading Free\n\nApply what you just read on the TradeHQ simulator. Practise with virtual cash using these asset examples: BTC, NVDA, SPY. Or scan the full markets dashboard for ideas.\n\nFrequently Asked Questions\nWhat is \"Risk Management for Paper Trading: Risk Budgets and Exits\" about?\nIs this guide free?\nHow can I practice what I just read?\nWhat should I read next?",
+      "supplementaryNotes": [
+        {
+          "path": "/learn/article/risk-management-in-trading",
+          "tagName": "MAIN",
+          "text": "Home\nLearn\nRisk Management for Paper Trading: Risk Budgets and Exits\n6 min read\nBeginner Guide\nRisk Management for Paper Trading: Risk Budgets and Exits\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. This page has no recorded editorial review date.\n\nStudy position sizing, conceptual exits and risk-budget arithmetic. TradeHQ supports manual market orders; percentage rules such as 1% or 2% are worksheet assumptions.\n\nMeasuring Risk Alongside Trade Outcomes\n\nRisk management describes how exposure and losses are measured or limited under a chosen process. Profitability also depends on realized gains, losses, frequency and costs. For example, a 40% win rate with fixed 2R gains and 1R losses has gross expectancy 0.4×2−0.6×1=0.2R per trade before costs; it is hypothetical arithmetic.\n\nExposure rules and intended exits can be compared in a hypothetical worksheet, but they do not guarantee survival through a loss sequence or establish that a profitable edge exists. Gaps, costs and correlated holdings can create losses beyond a chosen assumption.\n\nOn TradeHQ, you can practise risk-management ideas with $100,000 in virtual cash. Experiment with different position sizes, exit rules, and reward-to-risk assumptions, then review how each choice changes drawdown and variability over a larger sample of trades. The aim is to build a repeatable process, not to discover a guaranteed formula.\n\nPosition Sizing With a Predefined Risk Limit\n\nPosition sizing determines how much of your portfolio you expose to a single trade. Percentage-based limits such as 1% or 2% are common educational examples, but they are not universal prescriptions. On a $100,000 practice account, a 1% risk budget would be $1,000 and a 2% budget would be $2,000.\n\nFor a hypothetical $100,000 account, a chosen 1% worksheet loss budget is $1,000. An entry at $100 and an assumed exit at $95 create a $5 price loss per share before costs. Dividing $1,000 by $5 gives 200 shares and a $20,000 entry notional, but that excludes fees. TradeHQ's 0.1% buy and sell fees add $20 at entry and $19 at that exit, making the total loss $1,039. To include those fees in the same assumed $1,000 budget, divide by $5 + $0.10 + $0.095 = $5.195 per share: rounding down to 192 whole shares gives a $997.44 loss at exactly $95. This remains a worksheet assumption, not a guaranteed maximum loss: a gap or different fill can exceed it, and TradeHQ does not execute an automatic stop.\n\nSmaller predefined risk budgets reduce the damage from a losing streak, while larger ones make drawdowns compound much faster. Use the simulator to compare several fixed-risk assumptions and record the resulting drawdowns rather than treating any single percentage as a magic number.\n\nStop-Losses and Risk-Reward Ratios\n\nA stop order uses a trigger price, while its eventual fill depends on the order type and market conditions. Gaps or limited liquidity can produce a worse fill than the planned price. A journal exit assumption is useful for arithmetic but does not establish an exact maximum loss.\n\nReward-to-risk compares an assumed gain with an assumed loss. With fixed realized 3R wins and 1R losses, a 25% win rate gives 0.25×3−0.75×1=0R gross expectancy before costs. A planned target need not be achieved, and fees can make even that break-even example negative.\n\nCompare position sizes and hypothetical exit rules in a practice journal, using the same observation period and stated cost assumptions. TradeHQ executes market orders and does not place automatic stop orders. Review drawdown, realized gains and losses, sample size and assumptions without treating any ratio as a guarantee.\n\nSources and Related Resources\nSEC Investor.gov — business, volatility and liquidity risks\nSEC Investor.gov — order types and price/execution trade-offs\nPractice risk management with $100K virtual cash\n5 beginner trading strategies\nPractice position sizing on Bitcoin (BTC)\nHow to read stock charts\nReady to practice?\n\nStudy what you learned with $100,000 in virtual cash. No real money is traded.\n\nStart Trading Free\n\nApply what you just read on the TradeHQ simulator. Practise with virtual cash using these asset examples: BTC, NVDA, SPY. Or scan the full markets dashboard for ideas.\n\nFrequently Asked Questions\nWhat is \"Risk Management for Paper Trading: Risk Budgets and Exits\" about?\nIs this guide free?\nHow can I practice what I just read?\nWhat should I read next?"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1905,
+      "scrollHeight": 4597,
+      "viewportWidth": 1920,
+      "canonical": "https://www.thetradehq.com/learn/article/risk-management-in-trading",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "68447042e19907bc-1920-00.png"
+        },
+        {
+          "y": 918,
+          "screenshot": "68447042e19907bc-1920-01.png"
+        },
+        {
+          "y": 1836,
+          "screenshot": "68447042e19907bc-1920-02.png"
+        },
+        {
+          "y": 2754,
+          "screenshot": "68447042e19907bc-1920-03.png"
+        },
+        {
+          "y": 3517,
+          "screenshot": "68447042e19907bc-1920-04.png"
+        }
+      ]
+    }
+  ]
+}

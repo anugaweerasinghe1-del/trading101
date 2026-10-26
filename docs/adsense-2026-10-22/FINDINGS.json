@@ -1919,7 +1919,7 @@
       "id": "THQ-045",
       "severity": "P3",
       "category": "Two legacy lesson figures contain malformed embedded labels",
-      "state": "DRAFT_PR",
+      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
       "urls": [
         "https://www.thetradehq.com/learn/2",
         "https://www.thetradehq.com/learn/4"
@@ -1937,23 +1937,28 @@
       ],
       "baseSHA": "c9ab602475ace0ef270555916fab8b055f2a9f0c",
       "detectedAt": "2026-10-26T08:03:30.638326+00:00",
-      "releaseHold": "PR245 production verification and all246candidate/native/actualpreview gates pending; investigate light-theme images before merge.",
+      "releaseHold": "Exact-main Cloudflare build/required validation failed; release-readiness skipped. Diagnose before any next release. No production success claimed.",
       "pr": 246,
       "candidateSHA": "a396f047400c0bc2c75f80c805d7d75daa0f7653",
       "localEvidence": "evidence/LESSON-ILLUSTRATION-LOCAL-BROWSER.json",
       "localImagesPersonallyViewed": 8,
-      "localValidation": "Build/types and20complete-MAIN default states pass; all8images inspected. Light-theme image visibility needs follow-up before declaring preview ready."
+      "localValidation": "Build/types and20complete-MAIN states pass. Local short-wait images had repaint artifacts; longer settled actual-preview20states/8personallyviewed images allcorrect. Original failed/mislabelled assertion receipts retained.",
+      "previewEvidence": "evidence/PR246-UPDATED-PREVIEW-BROWSER.json",
+      "previewImagesPersonallyViewed": 8,
+      "mergeSHA": "99d98d1dcffb798765391fcd010a6d11184a1f0f",
+      "exactHeadRequiredChecks": "PASS4 trusted candidate checks; coherent core workflow",
+      "previewValidation": "PASS20 actual Cloudflare preview states and8 personally viewed settled images"
     }
   ],
-  "updatedAt": "2026-10-26T08:14:25.010800+00:00",
+  "updatedAt": "2026-10-26T08:30:15.716305+00:00",
   "counts": {
     "siteFindings": 50,
     "P2": 26,
     "P3": 24,
     "publiclyRepaired": 49,
-    "preparedNotMerged": 1,
+    "preparedNotMerged": 0,
     "separateOperationalBlockers": 0,
-    "mergedAwaitingProductionVerification": 0,
+    "mergedAwaitingProductionVerification": 1,
     "protectedUnapprovedRecordFixes": 0,
     "approvedPublishedRecordFixesBlockedOnCredential": 0,
     "mergedFallbackAwaitingProductionVerification": 0

@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-26T11:48:24.667961+00:00",
+  "candidateSHA": "a396f047400c0bc2c75f80c805d7d75daa0f7653",
+  "mergeSHA": "99d98d1dcffb798765391fcd010a6d11184a1f0f",
+  "identicalGitTree": "9fa074345462771d6426e63fb50ccec5e57372b8",
+  "outcome": "PASS",
+  "scope": "Original complete isolated phase6 with --import tsx; no assertions or application code changed. Mentor20states pass. Initial invocation missing tsx failed before browser and is not an application defect. Exact-main CI rerun remains independently required.",
+  "finalActualLogLines": [
+    "BROWSER_NAVIGATE http://127.0.0.1:45687/niche/silver",
+    "BROWSER_NAVIGATE http://127.0.0.1:45687/niche/nat-gas",
+    "BROWSER_NAVIGATE http://127.0.0.1:45687/niche/copper",
+    "PASS isolated interaction checks for phase 6; all checks retain their original assertions.",
+    "PASS real Chromium: 0 compiled route visits (155 URLs \u00d7 fresh interaction phase 6; no matrix repeated), canonical/H1/content parity and overflow. Native courses use read-only published fixtures, not production services."
+  ]
+}
