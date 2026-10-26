@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-26T14:50:57.669364+00:00",
+  "updatedAt": "2026-10-26T15:29:55.921256+00:00",
   "releases": [
     {
       "finding": "THQ-001",
@@ -2132,14 +2132,72 @@
         "safeControls": 4,
         "productionImagesPersonallyViewed": 8
       }
+    },
+    {
+      "pr": 249,
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/249",
+      "candidateSHA": "42d351ce171c2e2947ad19c6be4c5478a7f6f50f",
+      "mergeSHA": "2a21b7f579aba7e5f0e45c6753bb7123b77feb4d",
+      "state": "PUBLICLY_VERIFIED",
+      "findings": [],
+      "production": {
+        "checkedAt": "2026-10-26T15:29:09.797040+00:00",
+        "mergeSHA": "2a21b7f579aba7e5f0e45c6753bb7123b77feb4d",
+        "outcome": "PASS",
+        "sourceJob": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40348104561/job/121665971127",
+        "scope": "Authenticated native provider reads by trusted exact-main release-readiness job. Both production deployments match the immutable merge SHA. No provider mutations.",
+        "cloudflare": {
+          "observedAt": "2026-10-26T15:28:45.614Z",
+          "project": "tradehq-preview",
+          "activeProduction": {
+            "id": "4e56414c-0976-4896-8bb8-4a478e92198d",
+            "sha": "2a21b7f579aba7e5f0e45c6753bb7123b77feb4d",
+            "environment": "production",
+            "branch": "main",
+            "status": "success",
+            "createdAt": "2026-10-26T15:18:56.88347Z"
+          }
+        },
+        "vercel": {
+          "schema": "tradehq-vercel-production-evidence-v1",
+          "deploymentId": "dpl_2JB9yb2V3cMYWwqcvM22DjBFcwqb",
+          "teamId": "team_fjZ5ggg0P43MsYFSIHbeHAAO",
+          "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+          "commitSha": "2a21b7f579aba7e5f0e45c6753bb7123b77feb4d",
+          "target": "production",
+          "state": "READY",
+          "activeAlias": "thetradehq.com",
+          "createdAt": 1793027937922,
+          "observedAt": 1793028525614,
+          "requests": 2,
+          "authorization": {
+            "merge": false,
+            "productionRelease": false
+          }
+        }
+      },
+      "mainCIEvidence": "evidence/PR249-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR249-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR249-GUEST-SMOKE.json"
+      ],
+      "liveRecheck": {
+        "outcome": "PASS",
+        "affectedStates": [
+          20
+        ],
+        "guestStates": 30,
+        "safeControls": 4,
+        "productionImagesPersonallyViewed": 8
+      }
     }
   ],
   "nextCandidate": {
-    "pr": 249,
-    "candidateSHA": "42d351ce171c2e2947ad19c6be4c5478a7f6f50f",
-    "baseSHA": "ae8cf2b2db107701d5ffa91b203c1cc8eab3e99d",
-    "state": "DRAFT_REQUIRED_CHECKS_PENDING",
-    "scope": "One test-only animation readiness condition, all existing assertions retained; full localphase6/60mentorstates/negativecontrol PASS. No app changes. ETF248queued."
+    "pr": 250,
+    "candidateSHA": "bfcf8c61ab9cd775735cd2bcd40d2fff12de5dfa",
+    "baseSHA": "2a21b7f579aba7e5f0e45c6753bb7123b77feb4d",
+    "state": "DRAFT_PR250_PENDING_EXACT_CANDIDATE_GATES",
+    "scope": "THQ048 nested Radix viewport scroll UI; local tests pass, exact candidate CI/native/actual preview remains. PR248 ETF copy stays queued."
   },
   "independentFutureCandidate": {
     "pr": 214,
@@ -2319,9 +2377,9 @@
     "reason": "Releasecyclecomplete; nonewmergeofthisPR."
   },
   "latestGitHubState": "evidence/FINAL-GITHUB-STATE-20261023.json",
-  "latestGitHubProviderBindingEvidence": "evidence/PR247-PRODUCTION-PROVIDERS.json",
-  "latestMainValidationEvidence": "evidence/PR247-MAIN-CI.json",
-  "latestVerifiedProductionSHA": "ae8cf2b2db107701d5ffa91b203c1cc8eab3e99d",
+  "latestGitHubProviderBindingEvidence": "evidence/PR249-PRODUCTION-PROVIDERS.json",
+  "latestMainValidationEvidence": "evidence/PR249-MAIN-CI.json",
+  "latestVerifiedProductionSHA": "2a21b7f579aba7e5f0e45c6753bb7123b77feb4d",
   "summaryQuoteContextCandidate": {
     "pr": 221,
     "candidateSHA": "67ba761a85915ad047081206ee671a823c6f7bed",
@@ -2335,9 +2393,9 @@
     "mergeSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
     "reason": "Releasecyclecomplete; nonewmergeofthisPR."
   },
-  "remainingConfirmedSiteFixes": 1,
+  "remainingConfirmedSiteFixes": 2,
   "exhaustiveAuditComplete": false,
-  "remainingKnownSafeFindings": 1,
+  "remainingKnownSafeFindings": 2,
   "nextReleasePriority": [],
   "pendingReleaseVerification": null,
   "protectedPublishedContentFinding": "THQ035/036 published revision2 independently verified; credential and approval blockers superseded by owner-approved PR238 operation. No new production writes in this continuation.",

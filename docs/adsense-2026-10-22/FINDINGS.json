@@ -2029,15 +2029,46 @@
       "localImagesPersonallyViewed": 8,
       "previewBrowserEvidence": "evidence/PR248-UPDATED-PREVIEW-BROWSER.json",
       "previewImagesPersonallyViewed": 8
+    },
+    {
+      "id": "THQ-048",
+      "title": "Newest portfolio mentor reply stays wholly outside message viewport",
+      "severity": "P2",
+      "type": "Usability/message scrolling",
+      "urls": [
+        "https://www.thetradehq.com/trade/btc"
+      ],
+      "scope": "Shared asset AIMentor; sampled BTC at360/1280light/dark.",
+      "state": "DRAFT_PR250_PENDING_EXACT_CANDIDATE_GATES",
+      "implementationRisk": "Low; target actual nested message viewport, no reply/account/trade/calculation changes",
+      "findingDocument": "findings/MENTOR-REPLY-SCROLL.md",
+      "beforeEvidence": "evidence/MENTOR-SCROLL-BEFORE-BROWSER.json",
+      "beforeImagesPersonallyViewed": 8,
+      "files": [
+        "src/components/trading/AIMentor.tsx",
+        "scripts/verify-mentor-copy.mjs"
+      ],
+      "releaseHold": "Serial249production verification first; no protected changes.",
+      "pr": 250,
+      "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/250",
+      "candidateSHA": "bfcf8c61ab9cd775735cd2bcd40d2fff12de5dfa",
+      "baseSHA": "2a21b7f579aba7e5f0e45c6753bb7123b77feb4d",
+      "localEvidence": [
+        "evidence/MENTOR-SCROLL-LOCAL-BROWSER.json",
+        "evidence/MENTOR-SETTLE-REPLY-LOCAL-COPY-BROWSER.json",
+        "evidence/MENTOR-REPLY-SCROLL-BUILD.txt",
+        "evidence/MENTOR-REPLY-SCROLL-TYPES.txt"
+      ],
+      "localImagesPersonallyViewed": 8
     }
   ],
-  "updatedAt": "2026-10-26T14:50:57.669364+00:00",
+  "updatedAt": "2026-10-26T15:32:16.801405+00:00",
   "counts": {
-    "siteFindings": 52,
-    "P2": 27,
+    "siteFindings": 53,
+    "P2": 28,
     "P3": 25,
     "publiclyRepaired": 51,
-    "preparedNotMerged": 1,
+    "preparedNotMerged": 2,
     "separateOperationalBlockers": 0,
     "mergedAwaitingProductionVerification": 0,
     "protectedUnapprovedRecordFixes": 0,
