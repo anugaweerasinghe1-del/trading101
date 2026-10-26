@@ -305,12 +305,6 @@ export const lessonData: Lesson[] = [
             "caption": "Illustration for position sizing & the 2% rule."
           },
           {
-            "type": "image",
-            "data": "/src/assets/lesson-risk-management.jpg",
-            "alt": "Professional risk management strategies",
-            "caption": "Illustration for position sizing & the 2% rule."
-          },
-          {
             "type": "text",
             "data": "Position sizing converts chosen assumptions into an exposure. The often-mentioned 2% rule is a heuristic, not an appropriate loss limit for every person or trade. A planned exit can be missed, and losses can exceed the worksheet assumption."
           },
@@ -692,12 +686,6 @@ export const lessonData: Lesson[] = [
           {
             "type": "text",
             "data": "Asset allocation describes how value is divided among exposures. Its effect depends on holdings, correlations and the period examined; it does not guarantee performance or universally outrank every other decision."
-          },
-          {
-            "type": "image",
-            "data": "/src/assets/lesson-portfolio-allocation.jpg",
-            "alt": "Portfolio allocation strategy visualization",
-            "caption": "Illustration of portfolio weights, not a recommended allocation."
           },
           {
             "type": "stat",
