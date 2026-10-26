@@ -9850,7 +9850,15 @@
           "evidence": "evidence/PR220-PRODUCTION-BROWSER.json"
         }
       ],
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "safeNavigationFollowup": {
+        "evidence": "evidence/NICHE-SAFE-CONTROLS-20261026.json",
+        "widths": [
+          360,
+          1280
+        ],
+        "result": "PASS light top view, focused-anchor Enter to correct asset practice page, browser Back and Learn Trading Basics destination. No order/account/progress action. Complete keyboard/zoom/source review remains."
+      }
     },
     {
       "url": "https://www.thetradehq.com/niche/ada",
@@ -9908,9 +9916,19 @@
         "credibility": "Explicit simulated/cached/delayed disclaimer; external source corroboration remains partial"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personally viewed all five full-page contact sheets and read entire MAIN. Cardano crypto classification and0.5820/-3.00% simulator reference labels are explicit; drivers mention network, regulation, liquidity and Bitcoin correlation without a measured correlation estimate. No default clipping observed. Compared with previously read AAPL, same hypothesis/risk/disclaimer and first two FAQ structure; limited asset-specific independent value remains for family originality assessment. Light/zoom/keyboard, authoritative asset facts and entry-link behavior remain. No orders or accounts activated."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -9931,7 +9949,15 @@
         "assessment": "Cardano (ADA): all visible no-recommendation/practice/driver answers read from actual rendered main. BTC tautology tracked separately where applicable; not counted as expanded accordion answers.",
         "evidence": "evidence/live-browser/607d3a54759a2585.json"
       },
-      "confirmedFindingStates": []
+      "confirmedFindingStates": [],
+      "safeNavigationFollowup": {
+        "evidence": "evidence/NICHE-SAFE-CONTROLS-20261026.json",
+        "widths": [
+          360,
+          1280
+        ],
+        "result": "PASS light top view, focused-anchor Enter to correct asset practice page, browser Back and Learn Trading Basics destination. No order/account/progress action. Complete keyboard/zoom/source review remains."
+      }
     },
     {
       "url": "https://www.thetradehq.com/niche/adbe",
@@ -9989,9 +10015,19 @@
         "credibility": "Explicit simulated/cached/delayed disclaimer; external source corroboration remains partial"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personally viewed all five full-page contact sheets and read complete MAIN. Adobe is correctly presented as a stock with528.3/+1.64% explicitly simulator reference values, not claimed current quotes. The earnings/guidance/valuation and all three FAQ explanations repeat AAPL after substituting company/ticker; this adds limited company-specific detail and remains part of the family originality/value investigation. No default clipping observed. No entry-link, order/account, theme/keyboard/source verification credit claimed."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -10070,9 +10106,19 @@
         "credibility": "Explicit simulated/cached/delayed disclaimer; external source corroboration remains partial"
       },
       "visualReview": {
-        "status": "PENDING_OR_PARTIAL",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
-        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately."
+        "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personally viewed all five full-page contact sheets and read entire MAIN. Algorand crypto classification and0.1890/-3.32% simulator reference labels remain readable. Network, regulatory, liquidity and Bitcoin-correlation prose matches the Cardano family pattern; no protocol-specific mechanism or correlation estimate is supplied. Default cards/table/FAQs/footer fit all requested widths. No new confirmed defect from visual inspection. Individual source/currentness, originality/value, light/keyboard and practice-entry controls remain. No orders/account/progress actions."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/",
@@ -45312,5 +45358,5 @@
     "individualActualRenderedProseComparisonsWithPreviouslyFullyReadBaseline": 85,
     "scope": "441 main texts/states covered, not441 fully completed page/source/control/human-visual reviews. See TERMINAL-TEMPLATE-COMPARISONS.json for raw texts and deltas."
   },
-  "updatedAt": "2026-10-26T11:48:23.952570+00:00"
+  "updatedAt": "2026-10-26T12:29:39.603214+00:00"
 }

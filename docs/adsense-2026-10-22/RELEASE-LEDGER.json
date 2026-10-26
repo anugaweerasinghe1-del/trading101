@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-26T08:14:25.010800+00:00",
+  "updatedAt": "2026-10-26T12:25:10.076152+00:00",
   "releases": [
     {
       "finding": "THQ-001",
@@ -2007,6 +2007,71 @@
         "safeControls": 4,
         "productionImagesPersonallyViewed": 4
       }
+    },
+    {
+      "pr": 246,
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/246",
+      "candidateSHA": "a396f047400c0bc2c75f80c805d7d75daa0f7653",
+      "mergeSHA": "99d98d1dcffb798765391fcd010a6d11184a1f0f",
+      "state": "PUBLICLY_VERIFIED",
+      "findings": [
+        "THQ-045"
+      ],
+      "production": {
+        "checkedAt": "2026-10-26T11:48:25.300222+00:00",
+        "mergeSHA": "99d98d1dcffb798765391fcd010a6d11184a1f0f",
+        "outcome": "PASS",
+        "sourceJob": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40292258070/job/121475834889",
+        "scope": "Authenticated native provider reads by trusted exact-main release-readiness job. Both production deployments match the immutable merge SHA. No provider mutations.",
+        "cloudflare": {
+          "observedAt": "2026-10-26T08:42:19.415Z",
+          "project": "tradehq-preview",
+          "activeProduction": {
+            "id": "10d35b59-d93d-4f25-846b-ba38c72cfdfa",
+            "sha": "99d98d1dcffb798765391fcd010a6d11184a1f0f",
+            "environment": "production",
+            "branch": "main",
+            "status": "success",
+            "createdAt": "2026-10-26T08:26:20.335702Z"
+          }
+        },
+        "vercel": {
+          "schema": "tradehq-vercel-production-evidence-v1",
+          "deploymentId": "dpl_45EiD6H2mmdjFSyqZEZMivtint8Z",
+          "teamId": "team_fjZ5ggg0P43MsYFSIHbeHAAO",
+          "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+          "commitSha": "99d98d1dcffb798765391fcd010a6d11184a1f0f",
+          "target": "production",
+          "state": "READY",
+          "activeAlias": "thetradehq.com",
+          "createdAt": 1793003181305,
+          "observedAt": 1793004139414,
+          "requests": 2,
+          "authorization": {
+            "merge": false,
+            "productionRelease": false
+          }
+        }
+      },
+      "mainCIEvidence": "evidence/PR246-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR246-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR246-GUEST-SMOKE.json"
+      ],
+      "liveRecheck": {
+        "outcome": "PASS",
+        "affectedStates": [
+          20
+        ],
+        "guestStates": 30,
+        "safeControls": 4,
+        "productionImagesPersonallyViewed": 8,
+        "visualFollowup": {
+          "evidence": "evidence/PR246-PRODUCTION-IMAGE-REPAINT.json",
+          "imagesPersonallyViewed": 12,
+          "result": "PASS two lessons \u00d7 mobile/desktop \u00d7 dark/light/theme-preserving reload. Waited image decode, fonts and3seconds; no DOM/app style modification. All12actual images show correct illustration. Prior shorter-wait blanks retained; evidence supports transient paint/capture limitation, not a proven persistent product defect or claimed CSS fix."
+        }
+      }
     }
   ],
   "nextCandidate": null,
@@ -2188,9 +2253,9 @@
     "reason": "Releasecyclecomplete; nonewmergeofthisPR."
   },
   "latestGitHubState": "evidence/FINAL-GITHUB-STATE-20261023.json",
-  "latestGitHubProviderBindingEvidence": "evidence/PR245-PRODUCTION-PROVIDERS.json",
-  "latestMainValidationEvidence": "evidence/PR245-MAIN-CI.json",
-  "latestVerifiedProductionSHA": "c9ab602475ace0ef270555916fab8b055f2a9f0c",
+  "latestGitHubProviderBindingEvidence": "evidence/PR246-PRODUCTION-PROVIDERS.json",
+  "latestMainValidationEvidence": "evidence/PR246-MAIN-CI.json",
+  "latestVerifiedProductionSHA": "99d98d1dcffb798765391fcd010a6d11184a1f0f",
   "summaryQuoteContextCandidate": {
     "pr": 221,
     "candidateSHA": "67ba761a85915ad047081206ee671a823c6f7bed",
@@ -2204,16 +2269,11 @@
     "mergeSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
     "reason": "Releasecyclecomplete; nonewmergeofthisPR."
   },
-  "remainingConfirmedSiteFixes": 1,
+  "remainingConfirmedSiteFixes": 0,
   "exhaustiveAuditComplete": false,
-  "remainingKnownSafeFindings": 1,
+  "remainingKnownSafeFindings": 0,
   "nextReleasePriority": [],
-  "pendingReleaseVerification": {
-    "pr": 246,
-    "mergeSHA": "99d98d1dcffb798765391fcd010a6d11184a1f0f",
-    "state": "MAIN_CI_FAILED_DIAGNOSING",
-    "scope": "Exact-main Cloudflare build/required validation failed; release-readiness skipped. Diagnose before any next release. No production success claimed."
-  },
+  "pendingReleaseVerification": null,
   "protectedPublishedContentFinding": "THQ035/036 published revision2 independently verified; credential and approval blockers superseded by owner-approved PR238 operation. No new production writes in this continuation.",
   "dailyChartUnitsCandidate": {
     "pr": 234,

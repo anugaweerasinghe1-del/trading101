@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-10-26T12:26:40.080041+00:00",
+  "sha": "99d98d1dcffb798765391fcd010a6d11184a1f0f",
+  "scope": "Direct comparison of personally read complete AAPL/ADBE MAIN; only these two stock pages individually compared. Cardano personally read separately, not claimed identical.",
+  "routes": [
+    "/niche/aapl",
+    "/niche/adbe"
+  ],
+  "result": "Entire MAIN identical after company/ticker/reference-price/reference-change substitutions. Shared earnings/guidance/valuation paragraph and all FAQ prose.",
+  "assessment": "Limited unique detail; intentional noindex utility landing pages and practice-entry purpose matter. Repetition alone is not a confirmed policy violation or enough to justify speculative expansion. Keep family value assessment open; do not add a counted defect merely to rewrite.",
+  "indexingSource": "src/pages/NicheAsset.tsx explicitly sets noindex,follow; actual live metadata checked in NICHE-SAFE-CONTROLS-20261026.json where completed."
+}

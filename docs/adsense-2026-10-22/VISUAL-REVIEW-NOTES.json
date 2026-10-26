@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-26T11:48:23.952570+00:00",
+  "updatedAt": "2026-10-26T12:29:39.603214+00:00",
   "scope": "Actual screenshot viewing by route and stage. Full-page default-state images are separately recorded at all five widths for20 core routes; this is not conditional, accessibility, light-theme, source or whole-audit completion.",
   "routes": {
     "/": {
@@ -3501,6 +3501,45 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Personally viewed all five full-page contact sheets and read the complete MAIN. AAPL stock classification,255.25 simulator reference and+1.37% reference change are explicitly simulation labels. Generic earnings/guidance/valuation explanation gives no live target. Three visible FAQs distinguish education from recommendations. Short largely templated content needs separate originality/value comparison; source, keyboard/light/zoom and practice-link navigation follow-ups remain. No orders or accounts activated."
+    },
+    "/niche/ada": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally viewed all five full-page contact sheets and read entire MAIN. Cardano crypto classification and0.5820/-3.00% simulator reference labels are explicit; drivers mention network, regulation, liquidity and Bitcoin correlation without a measured correlation estimate. No default clipping observed. Compared with previously read AAPL, same hypothesis/risk/disclaimer and first two FAQ structure; limited asset-specific independent value remains for family originality assessment. Light/zoom/keyboard, authoritative asset facts and entry-link behavior remain. No orders or accounts activated."
+    },
+    "/niche/adbe": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally viewed all five full-page contact sheets and read complete MAIN. Adobe is correctly presented as a stock with528.3/+1.64% explicitly simulator reference values, not claimed current quotes. The earnings/guidance/valuation and all three FAQ explanations repeat AAPL after substituting company/ticker; this adds limited company-specific detail and remains part of the family originality/value investigation. No default clipping observed. No entry-link, order/account, theme/keyboard/source verification credit claimed."
+    },
+    "/niche/algo": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally viewed all five full-page contact sheets and read entire MAIN. Algorand crypto classification and0.1890/-3.32% simulator reference labels remain readable. Network, regulatory, liquidity and Bitcoin-correlation prose matches the Cardano family pattern; no protocol-specific mechanism or correlation estimate is supplied. Default cards/table/FAQs/footer fit all requested widths. No new confirmed defect from visual inspection. Individual source/currentness, originality/value, light/keyboard and practice-entry controls remain. No orders/account/progress actions."
     }
   }
 }

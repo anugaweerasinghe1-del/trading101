@@ -1,0 +1,57 @@
+{
+  "checkedAt": "2026-10-26T12:22:14.579Z",
+  "sha": "99d98d1dcffb798765391fcd010a6d11184a1f0f",
+  "scope": "Ordinary theme toggle and reload, image decode/fonts and3secondsettle. No DOM style or app changes; no progress/account/order writes.",
+  "rows": [
+    {
+      "lesson": 2,
+      "width": 360,
+      "stage": "dark",
+      "theme": "",
+      "src": "https://www.thetradehq.com/assets/lesson-risk-shield-DM8vDWpa.jpg",
+      "complete": true,
+      "naturalWidth": 1600,
+      "centerPixel": [
+        72,
+        58,
+        32,
+        255
+      ],
+      "rect": {
+        "x": 44,
+        "y": 292.5,
+        "width": 272,
+        "height": 170
+      },
+      "opacity": "1",
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "progress": "0",
+      "image": "lesson2-360-dark.png"
+    },
+    {
+      "lesson": 2,
+      "width": 360,
+      "stage": "light",
+      "theme": "light",
+      "src": "https://www.thetradehq.com/assets/lesson-risk-shield-DM8vDWpa.jpg",
+      "complete": true,
+      "naturalWidth": 1600,
+      "centerPixel": [
+        72,
+        58,
+        32,
+        255
+      ],
+      "rect": {
+        "x": 44,
+        "y": 314.5,
+        "width": 272,
+        "height": 170
+      },
+      "opacity": "1",
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "progress": "0",
+      "image": "lesson2-360-light.png"
+    }
+  ]
+}

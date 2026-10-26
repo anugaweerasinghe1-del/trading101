@@ -1,0 +1,147 @@
+{
+  "checkedAt": "2026-10-26T12:29:39.091Z",
+  "sha": "99d98d1dcffb798765391fcd010a6d11184a1f0f",
+  "rows": [
+    {
+      "ticker": "aapl",
+      "width": 360,
+      "before": {
+        "robots": "noindex, follow",
+        "canonical": "https://www.thetradehq.com/niche/aapl",
+        "overflow": false,
+        "links": [
+          {
+            "text": "Home",
+            "href": "/"
+          },
+          {
+            "text": "Markets",
+            "href": "/markets"
+          },
+          {
+            "text": "Practice Trading AAPL",
+            "href": "/trade/aapl"
+          },
+          {
+            "text": "Learn Trading Basics",
+            "href": "/learn-trading-guide"
+          }
+        ]
+      },
+      "target": {
+        "path": "/trade/aapl",
+        "heading": "Apple Inc. \u2014 Practice Trading Simulator"
+      },
+      "keyboardEnterPractice": true,
+      "browserBack": true,
+      "learnBasicsNavigation": true
+    },
+    {
+      "ticker": "aapl",
+      "width": 1280,
+      "before": {
+        "robots": "noindex, follow",
+        "canonical": "https://www.thetradehq.com/niche/aapl",
+        "overflow": false,
+        "links": [
+          {
+            "text": "Home",
+            "href": "/"
+          },
+          {
+            "text": "Markets",
+            "href": "/markets"
+          },
+          {
+            "text": "Practice Trading AAPL",
+            "href": "/trade/aapl"
+          },
+          {
+            "text": "Learn Trading Basics",
+            "href": "/learn-trading-guide"
+          }
+        ]
+      },
+      "target": {
+        "path": "/trade/aapl",
+        "heading": "Apple Inc. \u2014 Practice Trading Simulator"
+      },
+      "keyboardEnterPractice": true,
+      "browserBack": true,
+      "learnBasicsNavigation": true
+    },
+    {
+      "ticker": "ada",
+      "width": 360,
+      "before": {
+        "robots": "noindex, follow",
+        "canonical": "https://www.thetradehq.com/niche/ada",
+        "overflow": false,
+        "links": [
+          {
+            "text": "Home",
+            "href": "/"
+          },
+          {
+            "text": "Markets",
+            "href": "/markets"
+          },
+          {
+            "text": "Practice Trading ADA",
+            "href": "/trade/ada"
+          },
+          {
+            "text": "Learn Trading Basics",
+            "href": "/learn-trading-guide"
+          }
+        ]
+      },
+      "target": {
+        "path": "/trade/ada",
+        "heading": "Cardano \u2014 Practice Trading Simulator"
+      },
+      "keyboardEnterPractice": true,
+      "browserBack": true,
+      "learnBasicsNavigation": true
+    },
+    {
+      "ticker": "ada",
+      "width": 1280,
+      "before": {
+        "robots": "noindex, follow",
+        "canonical": "https://www.thetradehq.com/niche/ada",
+        "overflow": false,
+        "links": [
+          {
+            "text": "Home",
+            "href": "/"
+          },
+          {
+            "text": "Markets",
+            "href": "/markets"
+          },
+          {
+            "text": "Practice Trading ADA",
+            "href": "/trade/ada"
+          },
+          {
+            "text": "Learn Trading Basics",
+            "href": "/learn-trading-guide"
+          }
+        ]
+      },
+      "target": {
+        "path": "/trade/ada",
+        "heading": "Cardano \u2014 Practice Trading Simulator"
+      },
+      "keyboardEnterPractice": true,
+      "browserBack": true,
+      "learnBasicsNavigation": true
+    }
+  ],
+  "runtimeErrors": [],
+  "scope": "Four real live route/width states: light theme, keyboard-focused practice link Enter, browser back and Learn basics navigation. No orders/accounts/forms/progress or POST RPC allowed. Screenshots require actual review.",
+  "outcome": "PASS",
+  "imagesPersonallyViewed": 4,
+  "limitations": "Top light-theme screenshots only. Explicitly focused practice anchor and dispatched Enter; not full sequential Tab traversal or screen-reader verification. First harness incorrectly expected ticker in target H1 and then MAIN-contained guide heading; actual target H1 uses asset name and guide H1 is outside MAIN. Corrected harness verifies actual expected destination/heading; no app change."
+}

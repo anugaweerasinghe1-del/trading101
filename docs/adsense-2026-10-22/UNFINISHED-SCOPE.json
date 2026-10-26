@@ -2410,7 +2410,15 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "safeNavigationFollowup": {
+        "evidence": "evidence/NICHE-SAFE-CONTROLS-20261026.json",
+        "widths": [
+          360,
+          1280
+        ],
+        "result": "PASS light top view, focused-anchor Enter to correct asset practice page, browser Back and Learn Trading Basics destination. No order/account/progress action. Complete keyboard/zoom/source review remains."
+      }
     },
     {
       "path": "/niche/ada",
@@ -2421,7 +2429,23 @@
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
       "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
-      "nativeVisibleFAQAnswersRead": 3
+      "nativeVisibleFAQAnswersRead": 3,
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "safeNavigationFollowup": {
+        "evidence": "evidence/NICHE-SAFE-CONTROLS-20261026.json",
+        "widths": [
+          360,
+          1280
+        ],
+        "result": "PASS light top view, focused-anchor Enter to correct asset practice page, browser Back and Learn Trading Basics destination. No order/account/progress action. Complete keyboard/zoom/source review remains."
+      }
     },
     {
       "path": "/niche/adbe",
@@ -2432,7 +2456,15 @@
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
       "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
-      "nativeVisibleFAQAnswersRead": 3
+      "nativeVisibleFAQAnswersRead": 3,
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
     },
     {
       "path": "/niche/algo",
@@ -2443,7 +2475,15 @@
       "expandedFAQAnswersRead": 0,
       "fullPageReviewComplete": false,
       "remaining": "Complete applicable conditional/control/keyboard/zoom/contrast, primary-source and originality stages; full-page default visual remains pending unless explicitly recorded. Source-expected appended notes require separate actual rendered reading if still unread. Preserve dated source/capture observations.",
-      "nativeVisibleFAQAnswersRead": 3
+      "nativeVisibleFAQAnswersRead": 3,
+      "fullPageDefaultVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
     },
     {
       "path": "/niche/amd",
@@ -7546,8 +7586,8 @@
   "structuredQuizFeedbackTextRead": 26,
   "supplementaryNotesSourceExpected": 83,
   "supplementaryNotesActuallyRead": 73,
-  "updatedAt": "2026-10-26T11:48:23.952570+00:00",
-  "fullPageDefaultStateRoutesActuallyViewed": 148,
+  "updatedAt": "2026-10-26T12:29:39.603214+00:00",
+  "fullPageDefaultStateRoutesActuallyViewed": 151,
   "separateSupplementaryArticlesExpected": 45,
   "separateSupplementaryArticlesRead": 45,
   "separateSupplementaryArticlesUnread": 0,
