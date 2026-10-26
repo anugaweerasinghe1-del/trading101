@@ -453,7 +453,7 @@ export default function TradeAsset() {
         )}
       </Helmet>
       
-      <div className="min-h-screen bg-[hsl(0_0%_2%)] flex flex-col">
+      <div className="min-h-screen bg-background flex flex-col">
         <Navigation />
         
 
