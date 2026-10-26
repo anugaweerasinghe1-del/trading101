@@ -400,7 +400,7 @@ export const tradingGlossary: GlossaryTerm[] = [
     category: "Trading Psychology",
     keyPoints: [
       "Can be legitimate concerns or deliberate manipulation",
-      "Often spread on social media to trigger panic selling",
+      "Negative claims can spread on social media; check their source and evidence",
       "Always verify FUD claims through official sources before reacting"
     ],
     studentPerspective: "Check a negative claim’s original source and date. A concern can be material, mistaken or uncertain; a prior thesis does not turn every adverse report into a buying opportunity.",
