@@ -1844,7 +1844,7 @@
       "id": "THQ-043",
       "severity": "P3",
       "category": "FUD key-point assigns frequency and motive without evidence, contradicting the article guidance",
-      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+      "state": "PUBLICLY_VERIFIED",
       "urls": [
         "https://www.thetradehq.com/wiki/fud"
       ],
@@ -1864,18 +1864,27 @@
       "pr": 244,
       "localValidation": "Build/type pass; local10states and4images viewed. Initial theme harness assertion corrected; preserved initial probe is not an app defect.",
       "mergeSHA": "5967ea17c8fed2d6d6f1e7a0df4c2e4e090a1675",
-      "requiredCandidateChecks": "PASS four exact candidate trusted checks, coherent core; actual Cloudflare preview10states and4images viewed"
+      "requiredCandidateChecks": "PASS four exact candidate trusted checks, coherent core; actual Cloudflare preview10states and4images viewed",
+      "releaseHold": null,
+      "productionEvidence": "evidence/PR244-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR244-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR244-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR244-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 4,
+      "liveRecheck": "PASS exact merged production: [10] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
     }
   ],
-  "updatedAt": "2026-10-26T06:57:57.426954+00:00",
+  "updatedAt": "2026-10-26T07:37:08.586322+00:00",
   "counts": {
     "siteFindings": 48,
     "P2": 26,
     "P3": 22,
-    "publiclyRepaired": 47,
+    "publiclyRepaired": 48,
     "preparedNotMerged": 0,
     "separateOperationalBlockers": 0,
-    "mergedAwaitingProductionVerification": 1,
+    "mergedAwaitingProductionVerification": 0,
     "protectedUnapprovedRecordFixes": 0,
     "approvedPublishedRecordFixesBlockedOnCredential": 0,
     "mergedFallbackAwaitingProductionVerification": 0
