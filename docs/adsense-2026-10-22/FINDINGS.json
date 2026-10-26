@@ -1874,15 +1874,41 @@
       ],
       "productionImagesPersonallyViewed": 4,
       "liveRecheck": "PASS exact merged production: [10] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
+    },
+    {
+      "id": "THQ-044",
+      "severity": "P3",
+      "category": "Yield farming key point overgeneralizes pool risks and unsupported APY prevalence",
+      "state": "PREPARED_LOCAL",
+      "urls": [
+        "https://www.thetradehq.com/wiki/yield-farming"
+      ],
+      "observed": "All five actual default-width images and MAIN show High APYs often unsustainable and offset by IL and token depreciation. Body distinguishes lending, pool provision and reward programs. The linked Uniswap v2 returns source explains a particular pool model; it does not establish how often high APYs fail across DeFi, and impermanent-loss mechanics are not generic lending mechanics.",
+      "expected": "Describe contingent risks and changing rates without unsupported frequency or universal pool-mechanism implications.",
+      "fix": "Replace only summary with Annualized rates can change; token prices, costs and applicable pool risks affect net returns.",
+      "risk": "Static educational string only; no funds, trading-engine, authentication, accounts, published records, consent or ad-serving changes.",
+      "rollback": "Ordinary content revert; no data rollback.",
+      "adsenseRelevance": "Editorial accuracy only; no specific Google-policy violation or approval claim.",
+      "evidence": [
+        "evidence/fullpage-wiki-remaining-20261026/c95d1c8452d4207e.json",
+        "evidence/INDICATOR-PRIMARY-SOURCE-FOLLOWUP-20261026.json",
+        "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      ],
+      "baseSHA": "5967ea17c8fed2d6d6f1e7a0df4c2e4e090a1675",
+      "localBranch": "audit/20261026-yield-summary-scope",
+      "localValidation": "Full Cloudflare build/SEO/editorial, application TypeScript and10localbrowserstates PASS. Branch pushed. Draft PR creation currently blocked by transient GitHub503; no merge or production claim.",
+      "candidateSHA": "85a5a480c439e08478a11a9b94e2ad75b6b649bb",
+      "releaseHold": "Draft creation/required exact-candidate CI/native preview and all production gates pending.",
+      "localImagesPersonallyViewed": 4
     }
   ],
-  "updatedAt": "2026-10-26T07:37:08.586322+00:00",
+  "updatedAt": "2026-10-26T07:39:40.675662+00:00",
   "counts": {
-    "siteFindings": 48,
+    "siteFindings": 49,
     "P2": 26,
-    "P3": 22,
+    "P3": 23,
     "publiclyRepaired": 48,
-    "preparedNotMerged": 0,
+    "preparedNotMerged": 1,
     "separateOperationalBlockers": 0,
     "mergedAwaitingProductionVerification": 0,
     "protectedUnapprovedRecordFixes": 0,

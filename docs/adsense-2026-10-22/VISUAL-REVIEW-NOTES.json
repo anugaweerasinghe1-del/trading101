@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-26T07:36:01.430512+00:00",
+  "updatedAt": "2026-10-26T07:47:00.136720+00:00",
   "scope": "Actual screenshot viewing by route and stage. Full-page default-state images are separately recorded at all five widths for20 core routes; this is not conditional, accessibility, light-theme, source or whole-audit completion.",
   "routes": {
     "/": {
@@ -51,7 +51,7 @@
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
     },
     "/compare/apple-vs-microsoft": {
-      "status": "FIRST_FOLD_ONLY",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
       "humanViewedWidths": [
         360,
         1280
@@ -63,7 +63,22 @@
       "evidence": [
         "Individual original comparison viewport files; mobile contact--compare--360-0.png",
         "Individual original comparison viewport files; mobile contact--compare--360-0.png"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally viewed all contact sheets/every captured default segment at360,390,768,1280,1920 including heading/byline, complete body/worksheet/reference, simulator/share/related-term area and entire footer. Current rendered MAIN text read. No default clipping or horizontal document overflow observed. No share activation, accounts/orders/forms or record writes. Light/zoom/keyboard/control/primary-source/cross-site originality follow-ups remain. Read integrated MAIN business-model comparison, matched-reporting-period worksheet, share-count effects and equal-dollar versus risk caution. Default FAQ collapsed; expanded/keyboard/light/zoom/source/current-filings/originality follow-ups remain. No duplicated separate appendix credited.",
+      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+        "evidence": "evidence/PR232-PRODUCTION-BROWSER.json"
+      }
     },
     "/compare/bitcoin-vs-ethereum": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -96,7 +111,7 @@
       }
     },
     "/compare/bitcoin-vs-gold": {
-      "status": "FIRST_FOLD_ONLY",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
       "humanViewedWidths": [
         360,
         1280
@@ -108,10 +123,25 @@
       "evidence": [
         "Individual original comparison viewport files; mobile contact--compare--360-0.png",
         "Individual original comparison viewport files; mobile contact--compare--360-0.png"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally viewed all contact sheets/every captured default segment at360,390,768,1280,1920 including heading/byline, complete body/worksheet/reference, simulator/share/related-term area and entire footer. Current rendered MAIN text read. No default clipping or horizontal document overflow observed. No share activation, accounts/orders/forms or record writes. Light/zoom/keyboard/control/primary-source/cross-site originality follow-ups remain. Read GLD fund versus physical gold distinction, custody/costs/time-window assumptions and no permanent inflation hedge. Equal dollars not equal risk. Default FAQs collapsed; full current product/source, originality and accessibility/conditional follow-ups remain.",
+      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+        "evidence": "evidence/PR232-PRODUCTION-BROWSER.json"
+      }
     },
     "/compare/ethereum-vs-solana": {
-      "status": "FIRST_FOLD_ONLY",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
       "humanViewedWidths": [
         360,
         1280
@@ -123,7 +153,22 @@
       "evidence": [
         "Individual original comparison viewport files; mobile contact--compare--360-0.png",
         "Individual original comparison viewport files; mobile contact--compare--360-0.png"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally viewed all contact sheets/every captured default segment at360,390,768,1280,1920 including heading/byline, complete body/worksheet/reference, simulator/share/related-term area and entire footer. Current rendered MAIN text read. No default clipping or horizontal document overflow observed. No share activation, accounts/orders/forms or record writes. Light/zoom/keyboard/control/primary-source/cross-site originality follow-ups remain. Read transaction-count/window/mainnet-rollup distinctions, variable fees/reliability and token rewards versus return. No fixed fee/leadership/upside claim. Source-specific current network design and active FAQ/keyboard/light/zoom/originality stages remain.",
+      "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
+      "currentSupplementaryArticleState": {
+        "state": "INTEGRATED_IN_AUTHORED_MAIN_PR232",
+        "evidence": "evidence/PR232-PRODUCTION-BROWSER.json"
+      }
     },
     "/compare/forex-vs-stocks": {
       "status": "FIRST_FOLD_ONLY",

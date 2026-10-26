@@ -911,7 +911,7 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "FIRST_FOLD_ONLY",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
         "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
         "humanViewedWidths": [
@@ -925,7 +925,17 @@
         "evidence": [
           "Individual original comparison viewport files; mobile contact--compare--360-0.png",
           "Individual original comparison viewport files; mobile contact--compare--360-0.png"
-        ]
+        ],
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personally viewed all contact sheets/every captured default segment at360,390,768,1280,1920 including heading/byline, complete body/worksheet/reference, simulator/share/related-term area and entire footer. Current rendered MAIN text read. No default clipping or horizontal document overflow observed. No share activation, accounts/orders/forms or record writes. Light/zoom/keyboard/control/primary-source/cross-site originality follow-ups remain. Read integrated MAIN business-model comparison, matched-reporting-period worksheet, share-count effects and equal-dollar versus risk caution. Default FAQ collapsed; expanded/keyboard/light/zoom/source/current-filings/originality follow-ups remain. No duplicated separate appendix credited."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/trade/aapl",
@@ -1131,7 +1141,7 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "FIRST_FOLD_ONLY",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
         "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
         "humanViewedWidths": [
@@ -1145,7 +1155,17 @@
         "evidence": [
           "Individual original comparison viewport files; mobile contact--compare--360-0.png",
           "Individual original comparison viewport files; mobile contact--compare--360-0.png"
-        ]
+        ],
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personally viewed all contact sheets/every captured default segment at360,390,768,1280,1920 including heading/byline, complete body/worksheet/reference, simulator/share/related-term area and entire footer. Current rendered MAIN text read. No default clipping or horizontal document overflow observed. No share activation, accounts/orders/forms or record writes. Light/zoom/keyboard/control/primary-source/cross-site originality follow-ups remain. Read GLD fund versus physical gold distinction, custody/costs/time-window assumptions and no permanent inflation hedge. Equal dollars not equal risk. Default FAQs collapsed; full current product/source, originality and accessibility/conditional follow-ups remain."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/trade/btc",
@@ -1236,7 +1256,7 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "FIRST_FOLD_ONLY",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
         "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
         "humanViewedWidths": [
@@ -1250,7 +1270,17 @@
         "evidence": [
           "Individual original comparison viewport files; mobile contact--compare--360-0.png",
           "Individual original comparison viewport files; mobile contact--compare--360-0.png"
-        ]
+        ],
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Personally viewed all contact sheets/every captured default segment at360,390,768,1280,1920 including heading/byline, complete body/worksheet/reference, simulator/share/related-term area and entire footer. Current rendered MAIN text read. No default clipping or horizontal document overflow observed. No share activation, accounts/orders/forms or record writes. Light/zoom/keyboard/control/primary-source/cross-site originality follow-ups remain. Read transaction-count/window/mainnet-rollup distinctions, variable fees/reliability and token rewards versus return. No fixed fee/leadership/upside claim. Source-specific current network design and active FAQ/keyboard/light/zoom/originality stages remain."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/trade/eth",
@@ -45002,5 +45032,5 @@
     "individualActualRenderedProseComparisonsWithPreviouslyFullyReadBaseline": 85,
     "scope": "441 main texts/states covered, not441 fully completed page/source/control/human-visual reviews. See TERMINAL-TEMPLATE-COMPARISONS.json for raw texts and deltas."
   },
-  "updatedAt": "2026-10-26T07:36:01.430512+00:00"
+  "updatedAt": "2026-10-26T07:47:00.136720+00:00"
 }

@@ -1,0 +1,71 @@
+{
+  "checkedAt": "2026-10-26T07:43:01.635Z",
+  "sha": "85a5a480c439e08478a11a9b94e2ad75b6b649bb",
+  "origin": "http://127.0.0.1:4181",
+  "outcome": "PASS",
+  "rows": [
+    {
+      "width": 360,
+      "theme": "dark",
+      "entireArticlePreservedExceptIntendedString": true,
+      "overflow": false
+    },
+    {
+      "width": 360,
+      "theme": "light",
+      "entireArticlePreservedExceptIntendedString": true,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "entireArticlePreservedExceptIntendedString": true,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "entireArticlePreservedExceptIntendedString": true,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "theme": "dark",
+      "entireArticlePreservedExceptIntendedString": true,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "theme": "light",
+      "entireArticlePreservedExceptIntendedString": true,
+      "overflow": false
+    },
+    {
+      "width": 1280,
+      "theme": "dark",
+      "entireArticlePreservedExceptIntendedString": true,
+      "overflow": false
+    },
+    {
+      "width": 1280,
+      "theme": "light",
+      "entireArticlePreservedExceptIntendedString": true,
+      "overflow": false
+    },
+    {
+      "width": 1920,
+      "theme": "dark",
+      "entireArticlePreservedExceptIntendedString": true,
+      "overflow": false
+    },
+    {
+      "width": 1920,
+      "theme": "light",
+      "entireArticlePreservedExceptIntendedString": true,
+      "overflow": false
+    }
+  ],
+  "runtimeErrors": [],
+  "failure": null,
+  "scope": "Five widths x two themes, complete rendered MAIN equals previous deployed text except the exact one-line correction. No share activation, forms/accounts/orders/record writes. Screenshots need individual viewing; native deployment attestation separate."
+}
