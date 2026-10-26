@@ -1,0 +1,314 @@
+{
+  "path": "/strategy/scalping",
+  "sha": "99d98d1dcffb798765391fcd010a6d11184a1f0f",
+  "origin": "https://www.thetradehq.com",
+  "capturedAt": "2026-10-26T08:52:45.035Z",
+  "outcome": "COLLECTED_NOT_HUMAN_REVIEWED",
+  "widths": [
+    {
+      "width": 360,
+      "height": 800,
+      "path": "/strategy/scalping",
+      "title": "Scalping Strategy — Examples and Limitations | TradeHQ",
+      "heading": "Scalping",
+      "mainText": "TRADING STRATEGY\n\nScalping\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nCapturing small price moves on the 1-5 minute timeframe.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the Scalping trading strategy and does it work?\n\nScalping: Capturing small price moves on the 1-5 minute timeframe. No universal win rate applies. Track your own simulated win rate, payoff ratio, costs and drawdown over a sufficiently large sample. Study context: A study of how spreads, fees and latency affect short-horizon calculations; not a suitability recommendation. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nA study of how spreads, fees and latency affect short-horizon calculations; not a suitability recommendation.\n\nLimitations\n\nSimplified fills and generated candles do not reproduce order-book priority, partial fills or intraday liquidity.\n\nHypothetical study steps\n1\nChoose one instrument and explicitly fictional entry, exit and cost inputs for a short-horizon worksheet.\n2\nState the chart interval and whether the observations are provider history or generated practice candles.\n3\nCalculate the effect of a worse fill and a wider spread before comparing gains and losses.\n4\nRecord all selected cases, including unfavorable ones. TradeHQ supports manual market orders; planned stops are worksheet assumptions.\nWorked example\n\nHypothetical one-BTC worksheet: buy at $95,120 and compare exits at $95,210 and $95,080. Before costs, these are a $90 gain and a $40 loss. At TradeHQ's 0.1% fee on each side, the entry fee is $95.12. Selling at $95,210 adds a $95.21 fee, turning the gross gain into a $100.33 net loss. Selling at $95,080 adds a $95.08 fee, making the net loss $230.20. The exit prices are assumptions, not resting stop or target orders; a real fill can differ.\n\nWhere this method comes from\n\nScalping describes attempts to capture small changes over short intervals. Because the intended price change is small, a spread, fee or execution delay can form a large part of the result. A two-tick cost is 20% of a ten-tick gross target, but that ratio does not establish expected profit: win frequency, adverse outcomes and all costs would also be needed.\n\nSample and market limitations\n\nLiquidity and spreads vary by venue, instrument, session and event. A small spread observed in one period is not a permanent property or a reliable profit opportunity. Compare observations over stated dates rather than assign universally favorable trading hours.\n\nInterpretation pitfalls\nComparing a gross target with a result after fees as if they were the same measure.\nTreating a generated candle as evidence of an actual order-book fill.\nChanging size or exit assumptions after seeing the result and combining the changed rule with the original sample.\nWorked arithmetic\n\nFor the same one-BTC example, cash paid is $95,120 × 1.001 = $95,215.12. Net sale proceeds at $95,210 are $95,210 × 0.999 = $95,114.79, so the round-trip result is −$100.33. The fee-only break-even exit solves exit price × 0.999 = $95,215.12, or approximately $95,310.43 before any additional costs. A higher assumed win rate cannot make this selected $95,210 exit profitable after those fees. These are hypothetical prices, not a return forecast.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nNo universal win rate applies. Track your own simulated win rate, payoff ratio, costs and drawdown over a sufficiently large sample.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFINRA — frequent intraday trading risks and mechanics\nMore strategies\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nRSI Mean-Reversion\nMACD Crossover\nHome\nStrategies\nScalping\nFrequently Asked Questions\nDoes Scalping actually work?\nWhat context does this Scalping worksheet examine?\nCan I practise Scalping for free?",
+      "supplementaryNotes": [
+        {
+          "path": "/strategy/scalping",
+          "tagName": "MAIN",
+          "text": "TRADING STRATEGY\n\nScalping\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nCapturing small price moves on the 1-5 minute timeframe.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the Scalping trading strategy and does it work?\n\nScalping: Capturing small price moves on the 1-5 minute timeframe. No universal win rate applies. Track your own simulated win rate, payoff ratio, costs and drawdown over a sufficiently large sample. Study context: A study of how spreads, fees and latency affect short-horizon calculations; not a suitability recommendation. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nA study of how spreads, fees and latency affect short-horizon calculations; not a suitability recommendation.\n\nLimitations\n\nSimplified fills and generated candles do not reproduce order-book priority, partial fills or intraday liquidity.\n\nHypothetical study steps\n1\nChoose one instrument and explicitly fictional entry, exit and cost inputs for a short-horizon worksheet.\n2\nState the chart interval and whether the observations are provider history or generated practice candles.\n3\nCalculate the effect of a worse fill and a wider spread before comparing gains and losses.\n4\nRecord all selected cases, including unfavorable ones. TradeHQ supports manual market orders; planned stops are worksheet assumptions.\nWorked example\n\nHypothetical one-BTC worksheet: buy at $95,120 and compare exits at $95,210 and $95,080. Before costs, these are a $90 gain and a $40 loss. At TradeHQ's 0.1% fee on each side, the entry fee is $95.12. Selling at $95,210 adds a $95.21 fee, turning the gross gain into a $100.33 net loss. Selling at $95,080 adds a $95.08 fee, making the net loss $230.20. The exit prices are assumptions, not resting stop or target orders; a real fill can differ.\n\nWhere this method comes from\n\nScalping describes attempts to capture small changes over short intervals. Because the intended price change is small, a spread, fee or execution delay can form a large part of the result. A two-tick cost is 20% of a ten-tick gross target, but that ratio does not establish expected profit: win frequency, adverse outcomes and all costs would also be needed.\n\nSample and market limitations\n\nLiquidity and spreads vary by venue, instrument, session and event. A small spread observed in one period is not a permanent property or a reliable profit opportunity. Compare observations over stated dates rather than assign universally favorable trading hours.\n\nInterpretation pitfalls\nComparing a gross target with a result after fees as if they were the same measure.\nTreating a generated candle as evidence of an actual order-book fill.\nChanging size or exit assumptions after seeing the result and combining the changed rule with the original sample.\nWorked arithmetic\n\nFor the same one-BTC example, cash paid is $95,120 × 1.001 = $95,215.12. Net sale proceeds at $95,210 are $95,210 × 0.999 = $95,114.79, so the round-trip result is −$100.33. The fee-only break-even exit solves exit price × 0.999 = $95,215.12, or approximately $95,310.43 before any additional costs. A higher assumed win rate cannot make this selected $95,210 exit profitable after those fees. These are hypothetical prices, not a return forecast.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nNo universal win rate applies. Track your own simulated win rate, payoff ratio, costs and drawdown over a sufficiently large sample.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFINRA — frequent intraday trading risks and mechanics\nMore strategies\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nRSI Mean-Reversion\nMACD Crossover\nHome\nStrategies\nScalping\nFrequently Asked Questions\nDoes Scalping actually work?\nWhat context does this Scalping worksheet examine?\nCan I practise Scalping for free?"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 360,
+      "scrollHeight": 7668,
+      "viewportWidth": 360,
+      "canonical": "https://www.thetradehq.com/strategy/scalping",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "7ccc0633896f95c2-360-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "7ccc0633896f95c2-360-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "7ccc0633896f95c2-360-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "7ccc0633896f95c2-360-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "7ccc0633896f95c2-360-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "7ccc0633896f95c2-360-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "7ccc0633896f95c2-360-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "7ccc0633896f95c2-360-07.png"
+        },
+        {
+          "y": 5440,
+          "screenshot": "7ccc0633896f95c2-360-08.png"
+        },
+        {
+          "y": 6120,
+          "screenshot": "7ccc0633896f95c2-360-09.png"
+        },
+        {
+          "y": 6800,
+          "screenshot": "7ccc0633896f95c2-360-10.png"
+        },
+        {
+          "y": 6868,
+          "screenshot": "7ccc0633896f95c2-360-11.png"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "path": "/strategy/scalping",
+      "title": "Scalping Strategy — Examples and Limitations | TradeHQ",
+      "heading": "Scalping",
+      "mainText": "TRADING STRATEGY\n\nScalping\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nCapturing small price moves on the 1-5 minute timeframe.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the Scalping trading strategy and does it work?\n\nScalping: Capturing small price moves on the 1-5 minute timeframe. No universal win rate applies. Track your own simulated win rate, payoff ratio, costs and drawdown over a sufficiently large sample. Study context: A study of how spreads, fees and latency affect short-horizon calculations; not a suitability recommendation. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nA study of how spreads, fees and latency affect short-horizon calculations; not a suitability recommendation.\n\nLimitations\n\nSimplified fills and generated candles do not reproduce order-book priority, partial fills or intraday liquidity.\n\nHypothetical study steps\n1\nChoose one instrument and explicitly fictional entry, exit and cost inputs for a short-horizon worksheet.\n2\nState the chart interval and whether the observations are provider history or generated practice candles.\n3\nCalculate the effect of a worse fill and a wider spread before comparing gains and losses.\n4\nRecord all selected cases, including unfavorable ones. TradeHQ supports manual market orders; planned stops are worksheet assumptions.\nWorked example\n\nHypothetical one-BTC worksheet: buy at $95,120 and compare exits at $95,210 and $95,080. Before costs, these are a $90 gain and a $40 loss. At TradeHQ's 0.1% fee on each side, the entry fee is $95.12. Selling at $95,210 adds a $95.21 fee, turning the gross gain into a $100.33 net loss. Selling at $95,080 adds a $95.08 fee, making the net loss $230.20. The exit prices are assumptions, not resting stop or target orders; a real fill can differ.\n\nWhere this method comes from\n\nScalping describes attempts to capture small changes over short intervals. Because the intended price change is small, a spread, fee or execution delay can form a large part of the result. A two-tick cost is 20% of a ten-tick gross target, but that ratio does not establish expected profit: win frequency, adverse outcomes and all costs would also be needed.\n\nSample and market limitations\n\nLiquidity and spreads vary by venue, instrument, session and event. A small spread observed in one period is not a permanent property or a reliable profit opportunity. Compare observations over stated dates rather than assign universally favorable trading hours.\n\nInterpretation pitfalls\nComparing a gross target with a result after fees as if they were the same measure.\nTreating a generated candle as evidence of an actual order-book fill.\nChanging size or exit assumptions after seeing the result and combining the changed rule with the original sample.\nWorked arithmetic\n\nFor the same one-BTC example, cash paid is $95,120 × 1.001 = $95,215.12. Net sale proceeds at $95,210 are $95,210 × 0.999 = $95,114.79, so the round-trip result is −$100.33. The fee-only break-even exit solves exit price × 0.999 = $95,215.12, or approximately $95,310.43 before any additional costs. A higher assumed win rate cannot make this selected $95,210 exit profitable after those fees. These are hypothetical prices, not a return forecast.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nNo universal win rate applies. Track your own simulated win rate, payoff ratio, costs and drawdown over a sufficiently large sample.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFINRA — frequent intraday trading risks and mechanics\nMore strategies\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nRSI Mean-Reversion\nMACD Crossover\nHome\nStrategies\nScalping\nFrequently Asked Questions\nDoes Scalping actually work?\nWhat context does this Scalping worksheet examine?\nCan I practise Scalping for free?",
+      "supplementaryNotes": [
+        {
+          "path": "/strategy/scalping",
+          "tagName": "MAIN",
+          "text": "TRADING STRATEGY\n\nScalping\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nCapturing small price moves on the 1-5 minute timeframe.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the Scalping trading strategy and does it work?\n\nScalping: Capturing small price moves on the 1-5 minute timeframe. No universal win rate applies. Track your own simulated win rate, payoff ratio, costs and drawdown over a sufficiently large sample. Study context: A study of how spreads, fees and latency affect short-horizon calculations; not a suitability recommendation. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nA study of how spreads, fees and latency affect short-horizon calculations; not a suitability recommendation.\n\nLimitations\n\nSimplified fills and generated candles do not reproduce order-book priority, partial fills or intraday liquidity.\n\nHypothetical study steps\n1\nChoose one instrument and explicitly fictional entry, exit and cost inputs for a short-horizon worksheet.\n2\nState the chart interval and whether the observations are provider history or generated practice candles.\n3\nCalculate the effect of a worse fill and a wider spread before comparing gains and losses.\n4\nRecord all selected cases, including unfavorable ones. TradeHQ supports manual market orders; planned stops are worksheet assumptions.\nWorked example\n\nHypothetical one-BTC worksheet: buy at $95,120 and compare exits at $95,210 and $95,080. Before costs, these are a $90 gain and a $40 loss. At TradeHQ's 0.1% fee on each side, the entry fee is $95.12. Selling at $95,210 adds a $95.21 fee, turning the gross gain into a $100.33 net loss. Selling at $95,080 adds a $95.08 fee, making the net loss $230.20. The exit prices are assumptions, not resting stop or target orders; a real fill can differ.\n\nWhere this method comes from\n\nScalping describes attempts to capture small changes over short intervals. Because the intended price change is small, a spread, fee or execution delay can form a large part of the result. A two-tick cost is 20% of a ten-tick gross target, but that ratio does not establish expected profit: win frequency, adverse outcomes and all costs would also be needed.\n\nSample and market limitations\n\nLiquidity and spreads vary by venue, instrument, session and event. A small spread observed in one period is not a permanent property or a reliable profit opportunity. Compare observations over stated dates rather than assign universally favorable trading hours.\n\nInterpretation pitfalls\nComparing a gross target with a result after fees as if they were the same measure.\nTreating a generated candle as evidence of an actual order-book fill.\nChanging size or exit assumptions after seeing the result and combining the changed rule with the original sample.\nWorked arithmetic\n\nFor the same one-BTC example, cash paid is $95,120 × 1.001 = $95,215.12. Net sale proceeds at $95,210 are $95,210 × 0.999 = $95,114.79, so the round-trip result is −$100.33. The fee-only break-even exit solves exit price × 0.999 = $95,215.12, or approximately $95,310.43 before any additional costs. A higher assumed win rate cannot make this selected $95,210 exit profitable after those fees. These are hypothetical prices, not a return forecast.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nNo universal win rate applies. Track your own simulated win rate, payoff ratio, costs and drawdown over a sufficiently large sample.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFINRA — frequent intraday trading risks and mechanics\nMore strategies\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nRSI Mean-Reversion\nMACD Crossover\nHome\nStrategies\nScalping\nFrequently Asked Questions\nDoes Scalping actually work?\nWhat context does this Scalping worksheet examine?\nCan I practise Scalping for free?"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 390,
+      "scrollHeight": 7263,
+      "viewportWidth": 390,
+      "canonical": "https://www.thetradehq.com/strategy/scalping",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "7ccc0633896f95c2-390-00.png"
+        },
+        {
+          "y": 717,
+          "screenshot": "7ccc0633896f95c2-390-01.png"
+        },
+        {
+          "y": 1434,
+          "screenshot": "7ccc0633896f95c2-390-02.png"
+        },
+        {
+          "y": 2151,
+          "screenshot": "7ccc0633896f95c2-390-03.png"
+        },
+        {
+          "y": 2868,
+          "screenshot": "7ccc0633896f95c2-390-04.png"
+        },
+        {
+          "y": 3585,
+          "screenshot": "7ccc0633896f95c2-390-05.png"
+        },
+        {
+          "y": 4302,
+          "screenshot": "7ccc0633896f95c2-390-06.png"
+        },
+        {
+          "y": 5019,
+          "screenshot": "7ccc0633896f95c2-390-07.png"
+        },
+        {
+          "y": 5736,
+          "screenshot": "7ccc0633896f95c2-390-08.png"
+        },
+        {
+          "y": 6419,
+          "screenshot": "7ccc0633896f95c2-390-09.png"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "path": "/strategy/scalping",
+      "title": "Scalping Strategy — Examples and Limitations | TradeHQ",
+      "heading": "Scalping",
+      "mainText": "TRADING STRATEGY\n\nScalping\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nCapturing small price moves on the 1-5 minute timeframe.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the Scalping trading strategy and does it work?\n\nScalping: Capturing small price moves on the 1-5 minute timeframe. No universal win rate applies. Track your own simulated win rate, payoff ratio, costs and drawdown over a sufficiently large sample. Study context: A study of how spreads, fees and latency affect short-horizon calculations; not a suitability recommendation. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nA study of how spreads, fees and latency affect short-horizon calculations; not a suitability recommendation.\n\nLimitations\n\nSimplified fills and generated candles do not reproduce order-book priority, partial fills or intraday liquidity.\n\nHypothetical study steps\n1\nChoose one instrument and explicitly fictional entry, exit and cost inputs for a short-horizon worksheet.\n2\nState the chart interval and whether the observations are provider history or generated practice candles.\n3\nCalculate the effect of a worse fill and a wider spread before comparing gains and losses.\n4\nRecord all selected cases, including unfavorable ones. TradeHQ supports manual market orders; planned stops are worksheet assumptions.\nWorked example\n\nHypothetical one-BTC worksheet: buy at $95,120 and compare exits at $95,210 and $95,080. Before costs, these are a $90 gain and a $40 loss. At TradeHQ's 0.1% fee on each side, the entry fee is $95.12. Selling at $95,210 adds a $95.21 fee, turning the gross gain into a $100.33 net loss. Selling at $95,080 adds a $95.08 fee, making the net loss $230.20. The exit prices are assumptions, not resting stop or target orders; a real fill can differ.\n\nWhere this method comes from\n\nScalping describes attempts to capture small changes over short intervals. Because the intended price change is small, a spread, fee or execution delay can form a large part of the result. A two-tick cost is 20% of a ten-tick gross target, but that ratio does not establish expected profit: win frequency, adverse outcomes and all costs would also be needed.\n\nSample and market limitations\n\nLiquidity and spreads vary by venue, instrument, session and event. A small spread observed in one period is not a permanent property or a reliable profit opportunity. Compare observations over stated dates rather than assign universally favorable trading hours.\n\nInterpretation pitfalls\nComparing a gross target with a result after fees as if they were the same measure.\nTreating a generated candle as evidence of an actual order-book fill.\nChanging size or exit assumptions after seeing the result and combining the changed rule with the original sample.\nWorked arithmetic\n\nFor the same one-BTC example, cash paid is $95,120 × 1.001 = $95,215.12. Net sale proceeds at $95,210 are $95,210 × 0.999 = $95,114.79, so the round-trip result is −$100.33. The fee-only break-even exit solves exit price × 0.999 = $95,215.12, or approximately $95,310.43 before any additional costs. A higher assumed win rate cannot make this selected $95,210 exit profitable after those fees. These are hypothetical prices, not a return forecast.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nNo universal win rate applies. Track your own simulated win rate, payoff ratio, costs and drawdown over a sufficiently large sample.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFINRA — frequent intraday trading risks and mechanics\nMore strategies\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nRSI Mean-Reversion\nMACD Crossover\nHome\nStrategies\nScalping\nFrequently Asked Questions\nDoes Scalping actually work?\nWhat context does this Scalping worksheet examine?\nCan I practise Scalping for free?",
+      "supplementaryNotes": [
+        {
+          "path": "/strategy/scalping",
+          "tagName": "MAIN",
+          "text": "TRADING STRATEGY\n\nScalping\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nCapturing small price moves on the 1-5 minute timeframe.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the Scalping trading strategy and does it work?\n\nScalping: Capturing small price moves on the 1-5 minute timeframe. No universal win rate applies. Track your own simulated win rate, payoff ratio, costs and drawdown over a sufficiently large sample. Study context: A study of how spreads, fees and latency affect short-horizon calculations; not a suitability recommendation. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nA study of how spreads, fees and latency affect short-horizon calculations; not a suitability recommendation.\n\nLimitations\n\nSimplified fills and generated candles do not reproduce order-book priority, partial fills or intraday liquidity.\n\nHypothetical study steps\n1\nChoose one instrument and explicitly fictional entry, exit and cost inputs for a short-horizon worksheet.\n2\nState the chart interval and whether the observations are provider history or generated practice candles.\n3\nCalculate the effect of a worse fill and a wider spread before comparing gains and losses.\n4\nRecord all selected cases, including unfavorable ones. TradeHQ supports manual market orders; planned stops are worksheet assumptions.\nWorked example\n\nHypothetical one-BTC worksheet: buy at $95,120 and compare exits at $95,210 and $95,080. Before costs, these are a $90 gain and a $40 loss. At TradeHQ's 0.1% fee on each side, the entry fee is $95.12. Selling at $95,210 adds a $95.21 fee, turning the gross gain into a $100.33 net loss. Selling at $95,080 adds a $95.08 fee, making the net loss $230.20. The exit prices are assumptions, not resting stop or target orders; a real fill can differ.\n\nWhere this method comes from\n\nScalping describes attempts to capture small changes over short intervals. Because the intended price change is small, a spread, fee or execution delay can form a large part of the result. A two-tick cost is 20% of a ten-tick gross target, but that ratio does not establish expected profit: win frequency, adverse outcomes and all costs would also be needed.\n\nSample and market limitations\n\nLiquidity and spreads vary by venue, instrument, session and event. A small spread observed in one period is not a permanent property or a reliable profit opportunity. Compare observations over stated dates rather than assign universally favorable trading hours.\n\nInterpretation pitfalls\nComparing a gross target with a result after fees as if they were the same measure.\nTreating a generated candle as evidence of an actual order-book fill.\nChanging size or exit assumptions after seeing the result and combining the changed rule with the original sample.\nWorked arithmetic\n\nFor the same one-BTC example, cash paid is $95,120 × 1.001 = $95,215.12. Net sale proceeds at $95,210 are $95,210 × 0.999 = $95,114.79, so the round-trip result is −$100.33. The fee-only break-even exit solves exit price × 0.999 = $95,215.12, or approximately $95,310.43 before any additional costs. A higher assumed win rate cannot make this selected $95,210 exit profitable after those fees. These are hypothetical prices, not a return forecast.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nNo universal win rate applies. Track your own simulated win rate, payoff ratio, costs and drawdown over a sufficiently large sample.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFINRA — frequent intraday trading risks and mechanics\nMore strategies\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nRSI Mean-Reversion\nMACD Crossover\nHome\nStrategies\nScalping\nFrequently Asked Questions\nDoes Scalping actually work?\nWhat context does this Scalping worksheet examine?\nCan I practise Scalping for free?"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 753,
+      "scrollHeight": 5042,
+      "viewportWidth": 768,
+      "canonical": "https://www.thetradehq.com/strategy/scalping",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "7ccc0633896f95c2-768-00.png"
+        },
+        {
+          "y": 870,
+          "screenshot": "7ccc0633896f95c2-768-01.png"
+        },
+        {
+          "y": 1740,
+          "screenshot": "7ccc0633896f95c2-768-02.png"
+        },
+        {
+          "y": 2610,
+          "screenshot": "7ccc0633896f95c2-768-03.png"
+        },
+        {
+          "y": 3480,
+          "screenshot": "7ccc0633896f95c2-768-04.png"
+        },
+        {
+          "y": 4018,
+          "screenshot": "7ccc0633896f95c2-768-05.png"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "path": "/strategy/scalping",
+      "title": "Scalping Strategy — Examples and Limitations | TradeHQ",
+      "heading": "Scalping",
+      "mainText": "TRADING STRATEGY\n\nScalping\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nCapturing small price moves on the 1-5 minute timeframe.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the Scalping trading strategy and does it work?\n\nScalping: Capturing small price moves on the 1-5 minute timeframe. No universal win rate applies. Track your own simulated win rate, payoff ratio, costs and drawdown over a sufficiently large sample. Study context: A study of how spreads, fees and latency affect short-horizon calculations; not a suitability recommendation. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nA study of how spreads, fees and latency affect short-horizon calculations; not a suitability recommendation.\n\nLimitations\n\nSimplified fills and generated candles do not reproduce order-book priority, partial fills or intraday liquidity.\n\nHypothetical study steps\n1\nChoose one instrument and explicitly fictional entry, exit and cost inputs for a short-horizon worksheet.\n2\nState the chart interval and whether the observations are provider history or generated practice candles.\n3\nCalculate the effect of a worse fill and a wider spread before comparing gains and losses.\n4\nRecord all selected cases, including unfavorable ones. TradeHQ supports manual market orders; planned stops are worksheet assumptions.\nWorked example\n\nHypothetical one-BTC worksheet: buy at $95,120 and compare exits at $95,210 and $95,080. Before costs, these are a $90 gain and a $40 loss. At TradeHQ's 0.1% fee on each side, the entry fee is $95.12. Selling at $95,210 adds a $95.21 fee, turning the gross gain into a $100.33 net loss. Selling at $95,080 adds a $95.08 fee, making the net loss $230.20. The exit prices are assumptions, not resting stop or target orders; a real fill can differ.\n\nWhere this method comes from\n\nScalping describes attempts to capture small changes over short intervals. Because the intended price change is small, a spread, fee or execution delay can form a large part of the result. A two-tick cost is 20% of a ten-tick gross target, but that ratio does not establish expected profit: win frequency, adverse outcomes and all costs would also be needed.\n\nSample and market limitations\n\nLiquidity and spreads vary by venue, instrument, session and event. A small spread observed in one period is not a permanent property or a reliable profit opportunity. Compare observations over stated dates rather than assign universally favorable trading hours.\n\nInterpretation pitfalls\nComparing a gross target with a result after fees as if they were the same measure.\nTreating a generated candle as evidence of an actual order-book fill.\nChanging size or exit assumptions after seeing the result and combining the changed rule with the original sample.\nWorked arithmetic\n\nFor the same one-BTC example, cash paid is $95,120 × 1.001 = $95,215.12. Net sale proceeds at $95,210 are $95,210 × 0.999 = $95,114.79, so the round-trip result is −$100.33. The fee-only break-even exit solves exit price × 0.999 = $95,215.12, or approximately $95,310.43 before any additional costs. A higher assumed win rate cannot make this selected $95,210 exit profitable after those fees. These are hypothetical prices, not a return forecast.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nNo universal win rate applies. Track your own simulated win rate, payoff ratio, costs and drawdown over a sufficiently large sample.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFINRA — frequent intraday trading risks and mechanics\nMore strategies\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nRSI Mean-Reversion\nMACD Crossover\nHome\nStrategies\nScalping\nFrequently Asked Questions\nDoes Scalping actually work?\nWhat context does this Scalping worksheet examine?\nCan I practise Scalping for free?",
+      "supplementaryNotes": [
+        {
+          "path": "/strategy/scalping",
+          "tagName": "MAIN",
+          "text": "TRADING STRATEGY\n\nScalping\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nCapturing small price moves on the 1-5 minute timeframe.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the Scalping trading strategy and does it work?\n\nScalping: Capturing small price moves on the 1-5 minute timeframe. No universal win rate applies. Track your own simulated win rate, payoff ratio, costs and drawdown over a sufficiently large sample. Study context: A study of how spreads, fees and latency affect short-horizon calculations; not a suitability recommendation. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nA study of how spreads, fees and latency affect short-horizon calculations; not a suitability recommendation.\n\nLimitations\n\nSimplified fills and generated candles do not reproduce order-book priority, partial fills or intraday liquidity.\n\nHypothetical study steps\n1\nChoose one instrument and explicitly fictional entry, exit and cost inputs for a short-horizon worksheet.\n2\nState the chart interval and whether the observations are provider history or generated practice candles.\n3\nCalculate the effect of a worse fill and a wider spread before comparing gains and losses.\n4\nRecord all selected cases, including unfavorable ones. TradeHQ supports manual market orders; planned stops are worksheet assumptions.\nWorked example\n\nHypothetical one-BTC worksheet: buy at $95,120 and compare exits at $95,210 and $95,080. Before costs, these are a $90 gain and a $40 loss. At TradeHQ's 0.1% fee on each side, the entry fee is $95.12. Selling at $95,210 adds a $95.21 fee, turning the gross gain into a $100.33 net loss. Selling at $95,080 adds a $95.08 fee, making the net loss $230.20. The exit prices are assumptions, not resting stop or target orders; a real fill can differ.\n\nWhere this method comes from\n\nScalping describes attempts to capture small changes over short intervals. Because the intended price change is small, a spread, fee or execution delay can form a large part of the result. A two-tick cost is 20% of a ten-tick gross target, but that ratio does not establish expected profit: win frequency, adverse outcomes and all costs would also be needed.\n\nSample and market limitations\n\nLiquidity and spreads vary by venue, instrument, session and event. A small spread observed in one period is not a permanent property or a reliable profit opportunity. Compare observations over stated dates rather than assign universally favorable trading hours.\n\nInterpretation pitfalls\nComparing a gross target with a result after fees as if they were the same measure.\nTreating a generated candle as evidence of an actual order-book fill.\nChanging size or exit assumptions after seeing the result and combining the changed rule with the original sample.\nWorked arithmetic\n\nFor the same one-BTC example, cash paid is $95,120 × 1.001 = $95,215.12. Net sale proceeds at $95,210 are $95,210 × 0.999 = $95,114.79, so the round-trip result is −$100.33. The fee-only break-even exit solves exit price × 0.999 = $95,215.12, or approximately $95,310.43 before any additional costs. A higher assumed win rate cannot make this selected $95,210 exit profitable after those fees. These are hypothetical prices, not a return forecast.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nNo universal win rate applies. Track your own simulated win rate, payoff ratio, costs and drawdown over a sufficiently large sample.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFINRA — frequent intraday trading risks and mechanics\nMore strategies\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nRSI Mean-Reversion\nMACD Crossover\nHome\nStrategies\nScalping\nFrequently Asked Questions\nDoes Scalping actually work?\nWhat context does this Scalping worksheet examine?\nCan I practise Scalping for free?"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1265,
+      "scrollHeight": 4351,
+      "viewportWidth": 1280,
+      "canonical": "https://www.thetradehq.com/strategy/scalping",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "7ccc0633896f95c2-1280-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "7ccc0633896f95c2-1280-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "7ccc0633896f95c2-1280-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "7ccc0633896f95c2-1280-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "7ccc0633896f95c2-1280-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "7ccc0633896f95c2-1280-05.png"
+        },
+        {
+          "y": 3551,
+          "screenshot": "7ccc0633896f95c2-1280-06.png"
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "path": "/strategy/scalping",
+      "title": "Scalping Strategy — Examples and Limitations | TradeHQ",
+      "heading": "Scalping",
+      "mainText": "TRADING STRATEGY\n\nScalping\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nCapturing small price moves on the 1-5 minute timeframe.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the Scalping trading strategy and does it work?\n\nScalping: Capturing small price moves on the 1-5 minute timeframe. No universal win rate applies. Track your own simulated win rate, payoff ratio, costs and drawdown over a sufficiently large sample. Study context: A study of how spreads, fees and latency affect short-horizon calculations; not a suitability recommendation. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nA study of how spreads, fees and latency affect short-horizon calculations; not a suitability recommendation.\n\nLimitations\n\nSimplified fills and generated candles do not reproduce order-book priority, partial fills or intraday liquidity.\n\nHypothetical study steps\n1\nChoose one instrument and explicitly fictional entry, exit and cost inputs for a short-horizon worksheet.\n2\nState the chart interval and whether the observations are provider history or generated practice candles.\n3\nCalculate the effect of a worse fill and a wider spread before comparing gains and losses.\n4\nRecord all selected cases, including unfavorable ones. TradeHQ supports manual market orders; planned stops are worksheet assumptions.\nWorked example\n\nHypothetical one-BTC worksheet: buy at $95,120 and compare exits at $95,210 and $95,080. Before costs, these are a $90 gain and a $40 loss. At TradeHQ's 0.1% fee on each side, the entry fee is $95.12. Selling at $95,210 adds a $95.21 fee, turning the gross gain into a $100.33 net loss. Selling at $95,080 adds a $95.08 fee, making the net loss $230.20. The exit prices are assumptions, not resting stop or target orders; a real fill can differ.\n\nWhere this method comes from\n\nScalping describes attempts to capture small changes over short intervals. Because the intended price change is small, a spread, fee or execution delay can form a large part of the result. A two-tick cost is 20% of a ten-tick gross target, but that ratio does not establish expected profit: win frequency, adverse outcomes and all costs would also be needed.\n\nSample and market limitations\n\nLiquidity and spreads vary by venue, instrument, session and event. A small spread observed in one period is not a permanent property or a reliable profit opportunity. Compare observations over stated dates rather than assign universally favorable trading hours.\n\nInterpretation pitfalls\nComparing a gross target with a result after fees as if they were the same measure.\nTreating a generated candle as evidence of an actual order-book fill.\nChanging size or exit assumptions after seeing the result and combining the changed rule with the original sample.\nWorked arithmetic\n\nFor the same one-BTC example, cash paid is $95,120 × 1.001 = $95,215.12. Net sale proceeds at $95,210 are $95,210 × 0.999 = $95,114.79, so the round-trip result is −$100.33. The fee-only break-even exit solves exit price × 0.999 = $95,215.12, or approximately $95,310.43 before any additional costs. A higher assumed win rate cannot make this selected $95,210 exit profitable after those fees. These are hypothetical prices, not a return forecast.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nNo universal win rate applies. Track your own simulated win rate, payoff ratio, costs and drawdown over a sufficiently large sample.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFINRA — frequent intraday trading risks and mechanics\nMore strategies\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nRSI Mean-Reversion\nMACD Crossover\nHome\nStrategies\nScalping\nFrequently Asked Questions\nDoes Scalping actually work?\nWhat context does this Scalping worksheet examine?\nCan I practise Scalping for free?",
+      "supplementaryNotes": [
+        {
+          "path": "/strategy/scalping",
+          "tagName": "MAIN",
+          "text": "TRADING STRATEGY\n\nScalping\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nCapturing small price moves on the 1-5 minute timeframe.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the Scalping trading strategy and does it work?\n\nScalping: Capturing small price moves on the 1-5 minute timeframe. No universal win rate applies. Track your own simulated win rate, payoff ratio, costs and drawdown over a sufficiently large sample. Study context: A study of how spreads, fees and latency affect short-horizon calculations; not a suitability recommendation. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nA study of how spreads, fees and latency affect short-horizon calculations; not a suitability recommendation.\n\nLimitations\n\nSimplified fills and generated candles do not reproduce order-book priority, partial fills or intraday liquidity.\n\nHypothetical study steps\n1\nChoose one instrument and explicitly fictional entry, exit and cost inputs for a short-horizon worksheet.\n2\nState the chart interval and whether the observations are provider history or generated practice candles.\n3\nCalculate the effect of a worse fill and a wider spread before comparing gains and losses.\n4\nRecord all selected cases, including unfavorable ones. TradeHQ supports manual market orders; planned stops are worksheet assumptions.\nWorked example\n\nHypothetical one-BTC worksheet: buy at $95,120 and compare exits at $95,210 and $95,080. Before costs, these are a $90 gain and a $40 loss. At TradeHQ's 0.1% fee on each side, the entry fee is $95.12. Selling at $95,210 adds a $95.21 fee, turning the gross gain into a $100.33 net loss. Selling at $95,080 adds a $95.08 fee, making the net loss $230.20. The exit prices are assumptions, not resting stop or target orders; a real fill can differ.\n\nWhere this method comes from\n\nScalping describes attempts to capture small changes over short intervals. Because the intended price change is small, a spread, fee or execution delay can form a large part of the result. A two-tick cost is 20% of a ten-tick gross target, but that ratio does not establish expected profit: win frequency, adverse outcomes and all costs would also be needed.\n\nSample and market limitations\n\nLiquidity and spreads vary by venue, instrument, session and event. A small spread observed in one period is not a permanent property or a reliable profit opportunity. Compare observations over stated dates rather than assign universally favorable trading hours.\n\nInterpretation pitfalls\nComparing a gross target with a result after fees as if they were the same measure.\nTreating a generated candle as evidence of an actual order-book fill.\nChanging size or exit assumptions after seeing the result and combining the changed rule with the original sample.\nWorked arithmetic\n\nFor the same one-BTC example, cash paid is $95,120 × 1.001 = $95,215.12. Net sale proceeds at $95,210 are $95,210 × 0.999 = $95,114.79, so the round-trip result is −$100.33. The fee-only break-even exit solves exit price × 0.999 = $95,215.12, or approximately $95,310.43 before any additional costs. A higher assumed win rate cannot make this selected $95,210 exit profitable after those fees. These are hypothetical prices, not a return forecast.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nNo universal win rate applies. Track your own simulated win rate, payoff ratio, costs and drawdown over a sufficiently large sample.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFINRA — frequent intraday trading risks and mechanics\nMore strategies\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nRSI Mean-Reversion\nMACD Crossover\nHome\nStrategies\nScalping\nFrequently Asked Questions\nDoes Scalping actually work?\nWhat context does this Scalping worksheet examine?\nCan I practise Scalping for free?"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1905,
+      "scrollHeight": 4275,
+      "viewportWidth": 1920,
+      "canonical": "https://www.thetradehq.com/strategy/scalping",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "7ccc0633896f95c2-1920-00.png"
+        },
+        {
+          "y": 918,
+          "screenshot": "7ccc0633896f95c2-1920-01.png"
+        },
+        {
+          "y": 1836,
+          "screenshot": "7ccc0633896f95c2-1920-02.png"
+        },
+        {
+          "y": 2754,
+          "screenshot": "7ccc0633896f95c2-1920-03.png"
+        },
+        {
+          "y": 3195,
+          "screenshot": "7ccc0633896f95c2-1920-04.png"
+        }
+      ]
+    }
+  ]
+}

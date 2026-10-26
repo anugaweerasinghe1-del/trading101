@@ -1962,17 +1962,50 @@
         "imagesPersonallyViewed": 12,
         "result": "PASS two lessons \u00d7 mobile/desktop \u00d7 dark/light/theme-preserving reload. Waited image decode, fonts and3seconds; no DOM/app style modification. All12actual images show correct illustration. Prior shorter-wait blanks retained; evidence supports transient paint/capture limitation, not a proven persistent product defect or claimed CSS fix."
       }
+    },
+    {
+      "id": "THQ-046",
+      "severity": "P2",
+      "category": "Asset terminal page keeps dark background in light theme, making headings/prices unreadable",
+      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+      "urls": [
+        "https://www.thetradehq.com/trade/usdjpy",
+        "https://www.thetradehq.com/trade/btc"
+      ],
+      "scope": "Shared TradeAsset page wrapper affects supported asset routes; individually reproduced on crypto and forex at360/1280 in light/dark. No exhaustive terminal visual claim.",
+      "observed": "Heading foreground rgb(15,15,15) against fixed rgb(5,5,5):1.06:1 in light theme at both widths. Personally viewed8beforeimages; headings, breadcrumb and chart price nearly invisible. Dark heading contrast17.23:1.",
+      "expected": "Page surface follows selected theme so theme-aware foreground remains readable.",
+      "rootCause": "TradeAsset.tsx wrapper hardcodes bg-[hsl(0_0%_2%)] while children use text-foreground.",
+      "fix": "Replace only wrapper background class with bg-background.",
+      "risk": "Low interface-only theme surface. No changes to engine/orders/calculations/data/records/auth/progress/privacy/ads/infrastructure.",
+      "rollback": "Ordinary reviewed revert of one CSS class; no data rollback.",
+      "adsenseRelevance": "Readability/accessibility quality; not a separately asserted Google policy violation.",
+      "baseSHA": "99d98d1dcffb798765391fcd010a6d11184a1f0f",
+      "candidateSHA": "9229cbab0fb72cea0cc11f37f4d8216b5a930e07",
+      "localBranch": "audit/20261026-asset-theme-background",
+      "evidence": [
+        "evidence/ASSET-BACKGROUND-BEFORE-BROWSER.json"
+      ],
+      "localValidation": "Build/types and8local states PASS, all8images personallyviewed. Light heading17.89:1, dark16.74:1. Candidate CI/native/actual previews pending.",
+      "releaseHold": "Local rendered checks, required exact candidate CI/native+actual previews, protected merge and complete exact production cycle remain.",
+      "pr": 247,
+      "localImagesPersonallyViewed": 8,
+      "localEvidence": "evidence/ASSET-BACKGROUND-LOCAL-BROWSER.json",
+      "previewEvidence": "evidence/PR247-UPDATED-PREVIEW-BROWSER.json",
+      "previewImagesPersonallyViewed": 8,
+      "previewValidation": "PASS20states actualCFpreview,17.89:1 light/16.74dark; nativeCFsuccess/VercelREADYsamecandidate",
+      "mergeSHA": "ae8cf2b2db107701d5ffa91b203c1cc8eab3e99d"
     }
   ],
-  "updatedAt": "2026-10-26T12:25:10.076152+00:00",
+  "updatedAt": "2026-10-26T14:04:18.516024+00:00",
   "counts": {
-    "siteFindings": 50,
-    "P2": 26,
+    "siteFindings": 51,
+    "P2": 27,
     "P3": 24,
     "publiclyRepaired": 50,
     "preparedNotMerged": 0,
     "separateOperationalBlockers": 0,
-    "mergedAwaitingProductionVerification": 0,
+    "mergedAwaitingProductionVerification": 1,
     "protectedUnapprovedRecordFixes": 0,
     "approvedPublishedRecordFixesBlockedOnCredential": 0,
     "mergedFallbackAwaitingProductionVerification": 0

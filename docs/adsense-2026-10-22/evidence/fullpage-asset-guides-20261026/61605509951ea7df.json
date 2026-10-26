@@ -1,0 +1,314 @@
+{
+  "path": "/strategy/macd-strategy",
+  "sha": "99d98d1dcffb798765391fcd010a6d11184a1f0f",
+  "origin": "https://www.thetradehq.com",
+  "capturedAt": "2026-10-26T08:52:03.177Z",
+  "outcome": "COLLECTED_NOT_HUMAN_REVIEWED",
+  "widths": [
+    {
+      "width": 360,
+      "height": 800,
+      "path": "/strategy/macd-strategy",
+      "title": "MACD Crossover Strategy — Examples and Limitations | TradeHQ",
+      "heading": "MACD Crossover",
+      "mainText": "TRADING STRATEGY\n\nMACD Crossover\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nTrading the signal-line cross on the MACD indicator.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the MACD Crossover trading strategy and does it work?\n\nMACD Crossover: Trading the signal-line cross on the MACD indicator. MACD results vary by timeframe, market and exit rule. Track payoff distribution and drawdown instead of assuming a fixed win-rate range. Study context: Studying differences between moving averages, signal-line crossings and alternative exit assumptions. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nStudying differences between moving averages, signal-line crossings and alternative exit assumptions.\n\nLimitations\n\nLag and repeated crossings can create unfavorable hypothetical outcomes; no market regime guarantees performance.\n\nHypothetical study steps\n1\nSpecify the price series, interval and EMA calculation; 12, 26 and 9 are conventional settings, not validated defaults.\n2\nRecord each selected signal-line crossing without discarding later unfavorable cases.\n3\nChoose fictional entry and exit assumptions before calculating results, including a case where price moves before entry.\n4\nCompare costs and alternative rules in a worksheet. TradeHQ does not provide a MACD overlay or genuine short selling.\nWorked example\n\nHypothetical worksheet, not an observed trade: NVDA MACD crosses up at $130 with stop $124 — held for 6 weeks to $165. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.\n\nWhere this method comes from\n\nMACD subtracts a 26-period exponential moving average from a 12-period average and compares the result with a 9-period signal line. These historical inputs create lag. A crossover can persist or reverse; the calculation does not establish a win rate, profitability or how many false starts a rule filters.\n\nSample and market limitations\n\nA sustained historical move and a sideways sample can produce different numbers of crossovers. That observation does not prove a universally favorable asset class or timeframe. A filter based on a longer average is another rule to test with the same data and costs, rather than an established improvement. For a concrete comparison, label a five-bar sequence of hypothetical MACD values and identify exactly which bar produces a crossover rather than drawing a line after seeing the outcome. Record whether the signal was calculated at bar close or while the bar was still forming; that difference can alter whether a crossing appears at all. Because the indicator is derived from closing prices, it contains no information about bid-ask spreads, execution priority or transaction fees.\n\nInterpretation pitfalls\nReporting only favorable crossings while excluding costly reversals.\nTreating a planned reward-to-risk ratio as a realized payoff.\nAssuming histogram divergence establishes a reversal or a profitable trade.\nWorked arithmetic\n\nHypothetical arithmetic: fixed realized 43% wins at 2.5R and 57% losses at 1R give 0.505R gross expectancy before costs. A planned reward-to-risk ratio is not the realized payoff. Losing-run probabilities depend on sample length, independence and the assumed win rate; a six-to-eight-loss run is not a universally expected outcome.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nMACD results vary by timeframe, market and exit rule. Track payoff distribution and drawdown instead of assuming a fixed win-rate range.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFidelity — indicator definition and limits\nMore strategies\nScalping\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nRSI Mean-Reversion\nHome\nStrategies\nMACD Crossover\nFrequently Asked Questions\nDoes MACD Crossover actually work?\nWhat context does this MACD Crossover worksheet examine?\nCan I practise MACD Crossover for free?",
+      "supplementaryNotes": [
+        {
+          "path": "/strategy/macd-strategy",
+          "tagName": "MAIN",
+          "text": "TRADING STRATEGY\n\nMACD Crossover\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nTrading the signal-line cross on the MACD indicator.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the MACD Crossover trading strategy and does it work?\n\nMACD Crossover: Trading the signal-line cross on the MACD indicator. MACD results vary by timeframe, market and exit rule. Track payoff distribution and drawdown instead of assuming a fixed win-rate range. Study context: Studying differences between moving averages, signal-line crossings and alternative exit assumptions. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nStudying differences between moving averages, signal-line crossings and alternative exit assumptions.\n\nLimitations\n\nLag and repeated crossings can create unfavorable hypothetical outcomes; no market regime guarantees performance.\n\nHypothetical study steps\n1\nSpecify the price series, interval and EMA calculation; 12, 26 and 9 are conventional settings, not validated defaults.\n2\nRecord each selected signal-line crossing without discarding later unfavorable cases.\n3\nChoose fictional entry and exit assumptions before calculating results, including a case where price moves before entry.\n4\nCompare costs and alternative rules in a worksheet. TradeHQ does not provide a MACD overlay or genuine short selling.\nWorked example\n\nHypothetical worksheet, not an observed trade: NVDA MACD crosses up at $130 with stop $124 — held for 6 weeks to $165. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.\n\nWhere this method comes from\n\nMACD subtracts a 26-period exponential moving average from a 12-period average and compares the result with a 9-period signal line. These historical inputs create lag. A crossover can persist or reverse; the calculation does not establish a win rate, profitability or how many false starts a rule filters.\n\nSample and market limitations\n\nA sustained historical move and a sideways sample can produce different numbers of crossovers. That observation does not prove a universally favorable asset class or timeframe. A filter based on a longer average is another rule to test with the same data and costs, rather than an established improvement. For a concrete comparison, label a five-bar sequence of hypothetical MACD values and identify exactly which bar produces a crossover rather than drawing a line after seeing the outcome. Record whether the signal was calculated at bar close or while the bar was still forming; that difference can alter whether a crossing appears at all. Because the indicator is derived from closing prices, it contains no information about bid-ask spreads, execution priority or transaction fees.\n\nInterpretation pitfalls\nReporting only favorable crossings while excluding costly reversals.\nTreating a planned reward-to-risk ratio as a realized payoff.\nAssuming histogram divergence establishes a reversal or a profitable trade.\nWorked arithmetic\n\nHypothetical arithmetic: fixed realized 43% wins at 2.5R and 57% losses at 1R give 0.505R gross expectancy before costs. A planned reward-to-risk ratio is not the realized payoff. Losing-run probabilities depend on sample length, independence and the assumed win rate; a six-to-eight-loss run is not a universally expected outcome.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nMACD results vary by timeframe, market and exit rule. Track payoff distribution and drawdown instead of assuming a fixed win-rate range.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFidelity — indicator definition and limits\nMore strategies\nScalping\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nRSI Mean-Reversion\nHome\nStrategies\nMACD Crossover\nFrequently Asked Questions\nDoes MACD Crossover actually work?\nWhat context does this MACD Crossover worksheet examine?\nCan I practise MACD Crossover for free?"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 360,
+      "scrollHeight": 7661,
+      "viewportWidth": 360,
+      "canonical": "https://www.thetradehq.com/strategy/macd-strategy",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "61605509951ea7df-360-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "61605509951ea7df-360-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "61605509951ea7df-360-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "61605509951ea7df-360-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "61605509951ea7df-360-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "61605509951ea7df-360-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "61605509951ea7df-360-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "61605509951ea7df-360-07.png"
+        },
+        {
+          "y": 5440,
+          "screenshot": "61605509951ea7df-360-08.png"
+        },
+        {
+          "y": 6120,
+          "screenshot": "61605509951ea7df-360-09.png"
+        },
+        {
+          "y": 6800,
+          "screenshot": "61605509951ea7df-360-10.png"
+        },
+        {
+          "y": 6861,
+          "screenshot": "61605509951ea7df-360-11.png"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "path": "/strategy/macd-strategy",
+      "title": "MACD Crossover Strategy — Examples and Limitations | TradeHQ",
+      "heading": "MACD Crossover",
+      "mainText": "TRADING STRATEGY\n\nMACD Crossover\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nTrading the signal-line cross on the MACD indicator.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the MACD Crossover trading strategy and does it work?\n\nMACD Crossover: Trading the signal-line cross on the MACD indicator. MACD results vary by timeframe, market and exit rule. Track payoff distribution and drawdown instead of assuming a fixed win-rate range. Study context: Studying differences between moving averages, signal-line crossings and alternative exit assumptions. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nStudying differences between moving averages, signal-line crossings and alternative exit assumptions.\n\nLimitations\n\nLag and repeated crossings can create unfavorable hypothetical outcomes; no market regime guarantees performance.\n\nHypothetical study steps\n1\nSpecify the price series, interval and EMA calculation; 12, 26 and 9 are conventional settings, not validated defaults.\n2\nRecord each selected signal-line crossing without discarding later unfavorable cases.\n3\nChoose fictional entry and exit assumptions before calculating results, including a case where price moves before entry.\n4\nCompare costs and alternative rules in a worksheet. TradeHQ does not provide a MACD overlay or genuine short selling.\nWorked example\n\nHypothetical worksheet, not an observed trade: NVDA MACD crosses up at $130 with stop $124 — held for 6 weeks to $165. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.\n\nWhere this method comes from\n\nMACD subtracts a 26-period exponential moving average from a 12-period average and compares the result with a 9-period signal line. These historical inputs create lag. A crossover can persist or reverse; the calculation does not establish a win rate, profitability or how many false starts a rule filters.\n\nSample and market limitations\n\nA sustained historical move and a sideways sample can produce different numbers of crossovers. That observation does not prove a universally favorable asset class or timeframe. A filter based on a longer average is another rule to test with the same data and costs, rather than an established improvement. For a concrete comparison, label a five-bar sequence of hypothetical MACD values and identify exactly which bar produces a crossover rather than drawing a line after seeing the outcome. Record whether the signal was calculated at bar close or while the bar was still forming; that difference can alter whether a crossing appears at all. Because the indicator is derived from closing prices, it contains no information about bid-ask spreads, execution priority or transaction fees.\n\nInterpretation pitfalls\nReporting only favorable crossings while excluding costly reversals.\nTreating a planned reward-to-risk ratio as a realized payoff.\nAssuming histogram divergence establishes a reversal or a profitable trade.\nWorked arithmetic\n\nHypothetical arithmetic: fixed realized 43% wins at 2.5R and 57% losses at 1R give 0.505R gross expectancy before costs. A planned reward-to-risk ratio is not the realized payoff. Losing-run probabilities depend on sample length, independence and the assumed win rate; a six-to-eight-loss run is not a universally expected outcome.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nMACD results vary by timeframe, market and exit rule. Track payoff distribution and drawdown instead of assuming a fixed win-rate range.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFidelity — indicator definition and limits\nMore strategies\nScalping\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nRSI Mean-Reversion\nHome\nStrategies\nMACD Crossover\nFrequently Asked Questions\nDoes MACD Crossover actually work?\nWhat context does this MACD Crossover worksheet examine?\nCan I practise MACD Crossover for free?",
+      "supplementaryNotes": [
+        {
+          "path": "/strategy/macd-strategy",
+          "tagName": "MAIN",
+          "text": "TRADING STRATEGY\n\nMACD Crossover\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nTrading the signal-line cross on the MACD indicator.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the MACD Crossover trading strategy and does it work?\n\nMACD Crossover: Trading the signal-line cross on the MACD indicator. MACD results vary by timeframe, market and exit rule. Track payoff distribution and drawdown instead of assuming a fixed win-rate range. Study context: Studying differences between moving averages, signal-line crossings and alternative exit assumptions. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nStudying differences between moving averages, signal-line crossings and alternative exit assumptions.\n\nLimitations\n\nLag and repeated crossings can create unfavorable hypothetical outcomes; no market regime guarantees performance.\n\nHypothetical study steps\n1\nSpecify the price series, interval and EMA calculation; 12, 26 and 9 are conventional settings, not validated defaults.\n2\nRecord each selected signal-line crossing without discarding later unfavorable cases.\n3\nChoose fictional entry and exit assumptions before calculating results, including a case where price moves before entry.\n4\nCompare costs and alternative rules in a worksheet. TradeHQ does not provide a MACD overlay or genuine short selling.\nWorked example\n\nHypothetical worksheet, not an observed trade: NVDA MACD crosses up at $130 with stop $124 — held for 6 weeks to $165. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.\n\nWhere this method comes from\n\nMACD subtracts a 26-period exponential moving average from a 12-period average and compares the result with a 9-period signal line. These historical inputs create lag. A crossover can persist or reverse; the calculation does not establish a win rate, profitability or how many false starts a rule filters.\n\nSample and market limitations\n\nA sustained historical move and a sideways sample can produce different numbers of crossovers. That observation does not prove a universally favorable asset class or timeframe. A filter based on a longer average is another rule to test with the same data and costs, rather than an established improvement. For a concrete comparison, label a five-bar sequence of hypothetical MACD values and identify exactly which bar produces a crossover rather than drawing a line after seeing the outcome. Record whether the signal was calculated at bar close or while the bar was still forming; that difference can alter whether a crossing appears at all. Because the indicator is derived from closing prices, it contains no information about bid-ask spreads, execution priority or transaction fees.\n\nInterpretation pitfalls\nReporting only favorable crossings while excluding costly reversals.\nTreating a planned reward-to-risk ratio as a realized payoff.\nAssuming histogram divergence establishes a reversal or a profitable trade.\nWorked arithmetic\n\nHypothetical arithmetic: fixed realized 43% wins at 2.5R and 57% losses at 1R give 0.505R gross expectancy before costs. A planned reward-to-risk ratio is not the realized payoff. Losing-run probabilities depend on sample length, independence and the assumed win rate; a six-to-eight-loss run is not a universally expected outcome.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nMACD results vary by timeframe, market and exit rule. Track payoff distribution and drawdown instead of assuming a fixed win-rate range.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFidelity — indicator definition and limits\nMore strategies\nScalping\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nRSI Mean-Reversion\nHome\nStrategies\nMACD Crossover\nFrequently Asked Questions\nDoes MACD Crossover actually work?\nWhat context does this MACD Crossover worksheet examine?\nCan I practise MACD Crossover for free?"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 390,
+      "scrollHeight": 7293,
+      "viewportWidth": 390,
+      "canonical": "https://www.thetradehq.com/strategy/macd-strategy",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "61605509951ea7df-390-00.png"
+        },
+        {
+          "y": 717,
+          "screenshot": "61605509951ea7df-390-01.png"
+        },
+        {
+          "y": 1434,
+          "screenshot": "61605509951ea7df-390-02.png"
+        },
+        {
+          "y": 2151,
+          "screenshot": "61605509951ea7df-390-03.png"
+        },
+        {
+          "y": 2868,
+          "screenshot": "61605509951ea7df-390-04.png"
+        },
+        {
+          "y": 3585,
+          "screenshot": "61605509951ea7df-390-05.png"
+        },
+        {
+          "y": 4302,
+          "screenshot": "61605509951ea7df-390-06.png"
+        },
+        {
+          "y": 5019,
+          "screenshot": "61605509951ea7df-390-07.png"
+        },
+        {
+          "y": 5736,
+          "screenshot": "61605509951ea7df-390-08.png"
+        },
+        {
+          "y": 6449,
+          "screenshot": "61605509951ea7df-390-09.png"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "path": "/strategy/macd-strategy",
+      "title": "MACD Crossover Strategy — Examples and Limitations | TradeHQ",
+      "heading": "MACD Crossover",
+      "mainText": "TRADING STRATEGY\n\nMACD Crossover\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nTrading the signal-line cross on the MACD indicator.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the MACD Crossover trading strategy and does it work?\n\nMACD Crossover: Trading the signal-line cross on the MACD indicator. MACD results vary by timeframe, market and exit rule. Track payoff distribution and drawdown instead of assuming a fixed win-rate range. Study context: Studying differences between moving averages, signal-line crossings and alternative exit assumptions. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nStudying differences between moving averages, signal-line crossings and alternative exit assumptions.\n\nLimitations\n\nLag and repeated crossings can create unfavorable hypothetical outcomes; no market regime guarantees performance.\n\nHypothetical study steps\n1\nSpecify the price series, interval and EMA calculation; 12, 26 and 9 are conventional settings, not validated defaults.\n2\nRecord each selected signal-line crossing without discarding later unfavorable cases.\n3\nChoose fictional entry and exit assumptions before calculating results, including a case where price moves before entry.\n4\nCompare costs and alternative rules in a worksheet. TradeHQ does not provide a MACD overlay or genuine short selling.\nWorked example\n\nHypothetical worksheet, not an observed trade: NVDA MACD crosses up at $130 with stop $124 — held for 6 weeks to $165. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.\n\nWhere this method comes from\n\nMACD subtracts a 26-period exponential moving average from a 12-period average and compares the result with a 9-period signal line. These historical inputs create lag. A crossover can persist or reverse; the calculation does not establish a win rate, profitability or how many false starts a rule filters.\n\nSample and market limitations\n\nA sustained historical move and a sideways sample can produce different numbers of crossovers. That observation does not prove a universally favorable asset class or timeframe. A filter based on a longer average is another rule to test with the same data and costs, rather than an established improvement. For a concrete comparison, label a five-bar sequence of hypothetical MACD values and identify exactly which bar produces a crossover rather than drawing a line after seeing the outcome. Record whether the signal was calculated at bar close or while the bar was still forming; that difference can alter whether a crossing appears at all. Because the indicator is derived from closing prices, it contains no information about bid-ask spreads, execution priority or transaction fees.\n\nInterpretation pitfalls\nReporting only favorable crossings while excluding costly reversals.\nTreating a planned reward-to-risk ratio as a realized payoff.\nAssuming histogram divergence establishes a reversal or a profitable trade.\nWorked arithmetic\n\nHypothetical arithmetic: fixed realized 43% wins at 2.5R and 57% losses at 1R give 0.505R gross expectancy before costs. A planned reward-to-risk ratio is not the realized payoff. Losing-run probabilities depend on sample length, independence and the assumed win rate; a six-to-eight-loss run is not a universally expected outcome.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nMACD results vary by timeframe, market and exit rule. Track payoff distribution and drawdown instead of assuming a fixed win-rate range.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFidelity — indicator definition and limits\nMore strategies\nScalping\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nRSI Mean-Reversion\nHome\nStrategies\nMACD Crossover\nFrequently Asked Questions\nDoes MACD Crossover actually work?\nWhat context does this MACD Crossover worksheet examine?\nCan I practise MACD Crossover for free?",
+      "supplementaryNotes": [
+        {
+          "path": "/strategy/macd-strategy",
+          "tagName": "MAIN",
+          "text": "TRADING STRATEGY\n\nMACD Crossover\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nTrading the signal-line cross on the MACD indicator.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the MACD Crossover trading strategy and does it work?\n\nMACD Crossover: Trading the signal-line cross on the MACD indicator. MACD results vary by timeframe, market and exit rule. Track payoff distribution and drawdown instead of assuming a fixed win-rate range. Study context: Studying differences between moving averages, signal-line crossings and alternative exit assumptions. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nStudying differences between moving averages, signal-line crossings and alternative exit assumptions.\n\nLimitations\n\nLag and repeated crossings can create unfavorable hypothetical outcomes; no market regime guarantees performance.\n\nHypothetical study steps\n1\nSpecify the price series, interval and EMA calculation; 12, 26 and 9 are conventional settings, not validated defaults.\n2\nRecord each selected signal-line crossing without discarding later unfavorable cases.\n3\nChoose fictional entry and exit assumptions before calculating results, including a case where price moves before entry.\n4\nCompare costs and alternative rules in a worksheet. TradeHQ does not provide a MACD overlay or genuine short selling.\nWorked example\n\nHypothetical worksheet, not an observed trade: NVDA MACD crosses up at $130 with stop $124 — held for 6 weeks to $165. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.\n\nWhere this method comes from\n\nMACD subtracts a 26-period exponential moving average from a 12-period average and compares the result with a 9-period signal line. These historical inputs create lag. A crossover can persist or reverse; the calculation does not establish a win rate, profitability or how many false starts a rule filters.\n\nSample and market limitations\n\nA sustained historical move and a sideways sample can produce different numbers of crossovers. That observation does not prove a universally favorable asset class or timeframe. A filter based on a longer average is another rule to test with the same data and costs, rather than an established improvement. For a concrete comparison, label a five-bar sequence of hypothetical MACD values and identify exactly which bar produces a crossover rather than drawing a line after seeing the outcome. Record whether the signal was calculated at bar close or while the bar was still forming; that difference can alter whether a crossing appears at all. Because the indicator is derived from closing prices, it contains no information about bid-ask spreads, execution priority or transaction fees.\n\nInterpretation pitfalls\nReporting only favorable crossings while excluding costly reversals.\nTreating a planned reward-to-risk ratio as a realized payoff.\nAssuming histogram divergence establishes a reversal or a profitable trade.\nWorked arithmetic\n\nHypothetical arithmetic: fixed realized 43% wins at 2.5R and 57% losses at 1R give 0.505R gross expectancy before costs. A planned reward-to-risk ratio is not the realized payoff. Losing-run probabilities depend on sample length, independence and the assumed win rate; a six-to-eight-loss run is not a universally expected outcome.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nMACD results vary by timeframe, market and exit rule. Track payoff distribution and drawdown instead of assuming a fixed win-rate range.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFidelity — indicator definition and limits\nMore strategies\nScalping\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nRSI Mean-Reversion\nHome\nStrategies\nMACD Crossover\nFrequently Asked Questions\nDoes MACD Crossover actually work?\nWhat context does this MACD Crossover worksheet examine?\nCan I practise MACD Crossover for free?"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 753,
+      "scrollHeight": 5048,
+      "viewportWidth": 768,
+      "canonical": "https://www.thetradehq.com/strategy/macd-strategy",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "61605509951ea7df-768-00.png"
+        },
+        {
+          "y": 870,
+          "screenshot": "61605509951ea7df-768-01.png"
+        },
+        {
+          "y": 1740,
+          "screenshot": "61605509951ea7df-768-02.png"
+        },
+        {
+          "y": 2610,
+          "screenshot": "61605509951ea7df-768-03.png"
+        },
+        {
+          "y": 3480,
+          "screenshot": "61605509951ea7df-768-04.png"
+        },
+        {
+          "y": 4024,
+          "screenshot": "61605509951ea7df-768-05.png"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "path": "/strategy/macd-strategy",
+      "title": "MACD Crossover Strategy — Examples and Limitations | TradeHQ",
+      "heading": "MACD Crossover",
+      "mainText": "TRADING STRATEGY\n\nMACD Crossover\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nTrading the signal-line cross on the MACD indicator.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the MACD Crossover trading strategy and does it work?\n\nMACD Crossover: Trading the signal-line cross on the MACD indicator. MACD results vary by timeframe, market and exit rule. Track payoff distribution and drawdown instead of assuming a fixed win-rate range. Study context: Studying differences between moving averages, signal-line crossings and alternative exit assumptions. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nStudying differences between moving averages, signal-line crossings and alternative exit assumptions.\n\nLimitations\n\nLag and repeated crossings can create unfavorable hypothetical outcomes; no market regime guarantees performance.\n\nHypothetical study steps\n1\nSpecify the price series, interval and EMA calculation; 12, 26 and 9 are conventional settings, not validated defaults.\n2\nRecord each selected signal-line crossing without discarding later unfavorable cases.\n3\nChoose fictional entry and exit assumptions before calculating results, including a case where price moves before entry.\n4\nCompare costs and alternative rules in a worksheet. TradeHQ does not provide a MACD overlay or genuine short selling.\nWorked example\n\nHypothetical worksheet, not an observed trade: NVDA MACD crosses up at $130 with stop $124 — held for 6 weeks to $165. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.\n\nWhere this method comes from\n\nMACD subtracts a 26-period exponential moving average from a 12-period average and compares the result with a 9-period signal line. These historical inputs create lag. A crossover can persist or reverse; the calculation does not establish a win rate, profitability or how many false starts a rule filters.\n\nSample and market limitations\n\nA sustained historical move and a sideways sample can produce different numbers of crossovers. That observation does not prove a universally favorable asset class or timeframe. A filter based on a longer average is another rule to test with the same data and costs, rather than an established improvement. For a concrete comparison, label a five-bar sequence of hypothetical MACD values and identify exactly which bar produces a crossover rather than drawing a line after seeing the outcome. Record whether the signal was calculated at bar close or while the bar was still forming; that difference can alter whether a crossing appears at all. Because the indicator is derived from closing prices, it contains no information about bid-ask spreads, execution priority or transaction fees.\n\nInterpretation pitfalls\nReporting only favorable crossings while excluding costly reversals.\nTreating a planned reward-to-risk ratio as a realized payoff.\nAssuming histogram divergence establishes a reversal or a profitable trade.\nWorked arithmetic\n\nHypothetical arithmetic: fixed realized 43% wins at 2.5R and 57% losses at 1R give 0.505R gross expectancy before costs. A planned reward-to-risk ratio is not the realized payoff. Losing-run probabilities depend on sample length, independence and the assumed win rate; a six-to-eight-loss run is not a universally expected outcome.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nMACD results vary by timeframe, market and exit rule. Track payoff distribution and drawdown instead of assuming a fixed win-rate range.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFidelity — indicator definition and limits\nMore strategies\nScalping\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nRSI Mean-Reversion\nHome\nStrategies\nMACD Crossover\nFrequently Asked Questions\nDoes MACD Crossover actually work?\nWhat context does this MACD Crossover worksheet examine?\nCan I practise MACD Crossover for free?",
+      "supplementaryNotes": [
+        {
+          "path": "/strategy/macd-strategy",
+          "tagName": "MAIN",
+          "text": "TRADING STRATEGY\n\nMACD Crossover\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nTrading the signal-line cross on the MACD indicator.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the MACD Crossover trading strategy and does it work?\n\nMACD Crossover: Trading the signal-line cross on the MACD indicator. MACD results vary by timeframe, market and exit rule. Track payoff distribution and drawdown instead of assuming a fixed win-rate range. Study context: Studying differences between moving averages, signal-line crossings and alternative exit assumptions. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nStudying differences between moving averages, signal-line crossings and alternative exit assumptions.\n\nLimitations\n\nLag and repeated crossings can create unfavorable hypothetical outcomes; no market regime guarantees performance.\n\nHypothetical study steps\n1\nSpecify the price series, interval and EMA calculation; 12, 26 and 9 are conventional settings, not validated defaults.\n2\nRecord each selected signal-line crossing without discarding later unfavorable cases.\n3\nChoose fictional entry and exit assumptions before calculating results, including a case where price moves before entry.\n4\nCompare costs and alternative rules in a worksheet. TradeHQ does not provide a MACD overlay or genuine short selling.\nWorked example\n\nHypothetical worksheet, not an observed trade: NVDA MACD crosses up at $130 with stop $124 — held for 6 weeks to $165. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.\n\nWhere this method comes from\n\nMACD subtracts a 26-period exponential moving average from a 12-period average and compares the result with a 9-period signal line. These historical inputs create lag. A crossover can persist or reverse; the calculation does not establish a win rate, profitability or how many false starts a rule filters.\n\nSample and market limitations\n\nA sustained historical move and a sideways sample can produce different numbers of crossovers. That observation does not prove a universally favorable asset class or timeframe. A filter based on a longer average is another rule to test with the same data and costs, rather than an established improvement. For a concrete comparison, label a five-bar sequence of hypothetical MACD values and identify exactly which bar produces a crossover rather than drawing a line after seeing the outcome. Record whether the signal was calculated at bar close or while the bar was still forming; that difference can alter whether a crossing appears at all. Because the indicator is derived from closing prices, it contains no information about bid-ask spreads, execution priority or transaction fees.\n\nInterpretation pitfalls\nReporting only favorable crossings while excluding costly reversals.\nTreating a planned reward-to-risk ratio as a realized payoff.\nAssuming histogram divergence establishes a reversal or a profitable trade.\nWorked arithmetic\n\nHypothetical arithmetic: fixed realized 43% wins at 2.5R and 57% losses at 1R give 0.505R gross expectancy before costs. A planned reward-to-risk ratio is not the realized payoff. Losing-run probabilities depend on sample length, independence and the assumed win rate; a six-to-eight-loss run is not a universally expected outcome.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nMACD results vary by timeframe, market and exit rule. Track payoff distribution and drawdown instead of assuming a fixed win-rate range.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFidelity — indicator definition and limits\nMore strategies\nScalping\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nRSI Mean-Reversion\nHome\nStrategies\nMACD Crossover\nFrequently Asked Questions\nDoes MACD Crossover actually work?\nWhat context does this MACD Crossover worksheet examine?\nCan I practise MACD Crossover for free?"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1265,
+      "scrollHeight": 4411,
+      "viewportWidth": 1280,
+      "canonical": "https://www.thetradehq.com/strategy/macd-strategy",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "61605509951ea7df-1280-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "61605509951ea7df-1280-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "61605509951ea7df-1280-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "61605509951ea7df-1280-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "61605509951ea7df-1280-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "61605509951ea7df-1280-05.png"
+        },
+        {
+          "y": 3611,
+          "screenshot": "61605509951ea7df-1280-06.png"
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "path": "/strategy/macd-strategy",
+      "title": "MACD Crossover Strategy — Examples and Limitations | TradeHQ",
+      "heading": "MACD Crossover",
+      "mainText": "TRADING STRATEGY\n\nMACD Crossover\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nTrading the signal-line cross on the MACD indicator.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the MACD Crossover trading strategy and does it work?\n\nMACD Crossover: Trading the signal-line cross on the MACD indicator. MACD results vary by timeframe, market and exit rule. Track payoff distribution and drawdown instead of assuming a fixed win-rate range. Study context: Studying differences between moving averages, signal-line crossings and alternative exit assumptions. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nStudying differences between moving averages, signal-line crossings and alternative exit assumptions.\n\nLimitations\n\nLag and repeated crossings can create unfavorable hypothetical outcomes; no market regime guarantees performance.\n\nHypothetical study steps\n1\nSpecify the price series, interval and EMA calculation; 12, 26 and 9 are conventional settings, not validated defaults.\n2\nRecord each selected signal-line crossing without discarding later unfavorable cases.\n3\nChoose fictional entry and exit assumptions before calculating results, including a case where price moves before entry.\n4\nCompare costs and alternative rules in a worksheet. TradeHQ does not provide a MACD overlay or genuine short selling.\nWorked example\n\nHypothetical worksheet, not an observed trade: NVDA MACD crosses up at $130 with stop $124 — held for 6 weeks to $165. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.\n\nWhere this method comes from\n\nMACD subtracts a 26-period exponential moving average from a 12-period average and compares the result with a 9-period signal line. These historical inputs create lag. A crossover can persist or reverse; the calculation does not establish a win rate, profitability or how many false starts a rule filters.\n\nSample and market limitations\n\nA sustained historical move and a sideways sample can produce different numbers of crossovers. That observation does not prove a universally favorable asset class or timeframe. A filter based on a longer average is another rule to test with the same data and costs, rather than an established improvement. For a concrete comparison, label a five-bar sequence of hypothetical MACD values and identify exactly which bar produces a crossover rather than drawing a line after seeing the outcome. Record whether the signal was calculated at bar close or while the bar was still forming; that difference can alter whether a crossing appears at all. Because the indicator is derived from closing prices, it contains no information about bid-ask spreads, execution priority or transaction fees.\n\nInterpretation pitfalls\nReporting only favorable crossings while excluding costly reversals.\nTreating a planned reward-to-risk ratio as a realized payoff.\nAssuming histogram divergence establishes a reversal or a profitable trade.\nWorked arithmetic\n\nHypothetical arithmetic: fixed realized 43% wins at 2.5R and 57% losses at 1R give 0.505R gross expectancy before costs. A planned reward-to-risk ratio is not the realized payoff. Losing-run probabilities depend on sample length, independence and the assumed win rate; a six-to-eight-loss run is not a universally expected outcome.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nMACD results vary by timeframe, market and exit rule. Track payoff distribution and drawdown instead of assuming a fixed win-rate range.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFidelity — indicator definition and limits\nMore strategies\nScalping\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nRSI Mean-Reversion\nHome\nStrategies\nMACD Crossover\nFrequently Asked Questions\nDoes MACD Crossover actually work?\nWhat context does this MACD Crossover worksheet examine?\nCan I practise MACD Crossover for free?",
+      "supplementaryNotes": [
+        {
+          "path": "/strategy/macd-strategy",
+          "tagName": "MAIN",
+          "text": "TRADING STRATEGY\n\nMACD Crossover\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nTrading the signal-line cross on the MACD indicator.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the MACD Crossover trading strategy and does it work?\n\nMACD Crossover: Trading the signal-line cross on the MACD indicator. MACD results vary by timeframe, market and exit rule. Track payoff distribution and drawdown instead of assuming a fixed win-rate range. Study context: Studying differences between moving averages, signal-line crossings and alternative exit assumptions. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nStudying differences between moving averages, signal-line crossings and alternative exit assumptions.\n\nLimitations\n\nLag and repeated crossings can create unfavorable hypothetical outcomes; no market regime guarantees performance.\n\nHypothetical study steps\n1\nSpecify the price series, interval and EMA calculation; 12, 26 and 9 are conventional settings, not validated defaults.\n2\nRecord each selected signal-line crossing without discarding later unfavorable cases.\n3\nChoose fictional entry and exit assumptions before calculating results, including a case where price moves before entry.\n4\nCompare costs and alternative rules in a worksheet. TradeHQ does not provide a MACD overlay or genuine short selling.\nWorked example\n\nHypothetical worksheet, not an observed trade: NVDA MACD crosses up at $130 with stop $124 — held for 6 weeks to $165. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.\n\nWhere this method comes from\n\nMACD subtracts a 26-period exponential moving average from a 12-period average and compares the result with a 9-period signal line. These historical inputs create lag. A crossover can persist or reverse; the calculation does not establish a win rate, profitability or how many false starts a rule filters.\n\nSample and market limitations\n\nA sustained historical move and a sideways sample can produce different numbers of crossovers. That observation does not prove a universally favorable asset class or timeframe. A filter based on a longer average is another rule to test with the same data and costs, rather than an established improvement. For a concrete comparison, label a five-bar sequence of hypothetical MACD values and identify exactly which bar produces a crossover rather than drawing a line after seeing the outcome. Record whether the signal was calculated at bar close or while the bar was still forming; that difference can alter whether a crossing appears at all. Because the indicator is derived from closing prices, it contains no information about bid-ask spreads, execution priority or transaction fees.\n\nInterpretation pitfalls\nReporting only favorable crossings while excluding costly reversals.\nTreating a planned reward-to-risk ratio as a realized payoff.\nAssuming histogram divergence establishes a reversal or a profitable trade.\nWorked arithmetic\n\nHypothetical arithmetic: fixed realized 43% wins at 2.5R and 57% losses at 1R give 0.505R gross expectancy before costs. A planned reward-to-risk ratio is not the realized payoff. Losing-run probabilities depend on sample length, independence and the assumed win rate; a six-to-eight-loss run is not a universally expected outcome.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nMACD results vary by timeframe, market and exit rule. Track payoff distribution and drawdown instead of assuming a fixed win-rate range.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFidelity — indicator definition and limits\nMore strategies\nScalping\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nRSI Mean-Reversion\nHome\nStrategies\nMACD Crossover\nFrequently Asked Questions\nDoes MACD Crossover actually work?\nWhat context does this MACD Crossover worksheet examine?\nCan I practise MACD Crossover for free?"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1905,
+      "scrollHeight": 4335,
+      "viewportWidth": 1920,
+      "canonical": "https://www.thetradehq.com/strategy/macd-strategy",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "61605509951ea7df-1920-00.png"
+        },
+        {
+          "y": 918,
+          "screenshot": "61605509951ea7df-1920-01.png"
+        },
+        {
+          "y": 1836,
+          "screenshot": "61605509951ea7df-1920-02.png"
+        },
+        {
+          "y": 2754,
+          "screenshot": "61605509951ea7df-1920-03.png"
+        },
+        {
+          "y": 3255,
+          "screenshot": "61605509951ea7df-1920-04.png"
+        }
+      ]
+    }
+  ]
+}

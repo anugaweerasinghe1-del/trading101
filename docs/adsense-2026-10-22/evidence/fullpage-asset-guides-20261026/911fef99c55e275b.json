@@ -1,0 +1,310 @@
+{
+  "path": "/strategy/rsi-strategy",
+  "sha": "99d98d1dcffb798765391fcd010a6d11184a1f0f",
+  "origin": "https://www.thetradehq.com",
+  "capturedAt": "2026-10-26T08:52:23.933Z",
+  "outcome": "COLLECTED_NOT_HUMAN_REVIEWED",
+  "widths": [
+    {
+      "width": 360,
+      "height": 800,
+      "path": "/strategy/rsi-strategy",
+      "title": "RSI Mean-Reversion Strategy — Examples and Limitations | TradeHQ",
+      "heading": "RSI Mean-Reversion",
+      "mainText": "TRADING STRATEGY\n\nRSI Mean-Reversion\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nA conceptual comparison of RSI thresholds and later price observations.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the RSI Mean-Reversion trading strategy and does it work?\n\nRSI Mean-Reversion: A conceptual comparison of RSI thresholds and later price observations. RSI-based results can vary sharply by market regime and rule set. Test the same rules in ranging and trending periods rather than relying on a fixed win-rate claim. Study context: Studying how the same oscillator threshold behaves in different historical samples. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nStudying how the same oscillator threshold behaves in different historical samples.\n\nLimitations\n\nAn extreme reading can persist. Neither a threshold nor a second chart pattern proves a reversal.\n\nHypothetical study steps\n1\nSpecify a standard RSI calculation and interval using a source that supplies the necessary historical prices.\n2\nMark the conventional 30 and 70 thresholds as descriptions, then record all observations meeting them.\n3\nCompare later continuation and reversal cases under the same sampling and cost assumptions.\n4\nTreat entry and exit choices as separate hypothetical rules. TradeHQ’s RSI-style practice value is not a standard historical RSI calculation.\nWorked example\n\nHypothetical worksheet, not an observed trade: BTC RSI dips to 26 at $92K with a bullish engulfing — buy, stop $91K, target $94K. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.\n\nWhere this method comes from\n\nRSI compares smoothed recent gains and losses over a selected lookback and scales the result between zero and 100. Fourteen periods is a common setting; the interval must also be stated. Conventional threshold labels describe the calculation. They do not establish that an asset is mispriced or that a price reversal must follow.\n\nSample and market limitations\n\nRSI can remain extreme during a sustained move or cross its thresholds repeatedly. Comparing samples labeled trending and ranging requires a rule for those labels that does not use future information. A second indicator shares price inputs and is not necessarily independent confirmation.\n\nInterpretation pitfalls\nTreating an oscillator threshold as a mandatory buy or sell instruction.\nAssuming a candlestick pattern proves a reversal or that simulated volume validates it.\nSelecting lookbacks after seeing profitable historical outcomes without testing a separate sample.\nWorked arithmetic\n\nHypothetical comparison: fixed realized 57% wins at 1.2R and 43% losses at 1R give 0.254R gross expectancy. Changing only the assumed win rate to 32% gives 0.32×1.2−0.68=−0.296R. These chosen inputs do not establish the observed profitability of ranging or trending markets; costs and actual fills must also be considered.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nRSI-based results can vary sharply by market regime and rule set. Test the same rules in ranging and trending periods rather than relying on a fixed win-rate claim.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFidelity — indicator definition and limits\nMore strategies\nScalping\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nMACD Crossover\nHome\nStrategies\nRSI Mean-Reversion\nFrequently Asked Questions\nDoes RSI Mean-Reversion actually work?\nWhat context does this RSI Mean-Reversion worksheet examine?\nCan I practise RSI Mean-Reversion for free?",
+      "supplementaryNotes": [
+        {
+          "path": "/strategy/rsi-strategy",
+          "tagName": "MAIN",
+          "text": "TRADING STRATEGY\n\nRSI Mean-Reversion\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nA conceptual comparison of RSI thresholds and later price observations.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the RSI Mean-Reversion trading strategy and does it work?\n\nRSI Mean-Reversion: A conceptual comparison of RSI thresholds and later price observations. RSI-based results can vary sharply by market regime and rule set. Test the same rules in ranging and trending periods rather than relying on a fixed win-rate claim. Study context: Studying how the same oscillator threshold behaves in different historical samples. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nStudying how the same oscillator threshold behaves in different historical samples.\n\nLimitations\n\nAn extreme reading can persist. Neither a threshold nor a second chart pattern proves a reversal.\n\nHypothetical study steps\n1\nSpecify a standard RSI calculation and interval using a source that supplies the necessary historical prices.\n2\nMark the conventional 30 and 70 thresholds as descriptions, then record all observations meeting them.\n3\nCompare later continuation and reversal cases under the same sampling and cost assumptions.\n4\nTreat entry and exit choices as separate hypothetical rules. TradeHQ’s RSI-style practice value is not a standard historical RSI calculation.\nWorked example\n\nHypothetical worksheet, not an observed trade: BTC RSI dips to 26 at $92K with a bullish engulfing — buy, stop $91K, target $94K. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.\n\nWhere this method comes from\n\nRSI compares smoothed recent gains and losses over a selected lookback and scales the result between zero and 100. Fourteen periods is a common setting; the interval must also be stated. Conventional threshold labels describe the calculation. They do not establish that an asset is mispriced or that a price reversal must follow.\n\nSample and market limitations\n\nRSI can remain extreme during a sustained move or cross its thresholds repeatedly. Comparing samples labeled trending and ranging requires a rule for those labels that does not use future information. A second indicator shares price inputs and is not necessarily independent confirmation.\n\nInterpretation pitfalls\nTreating an oscillator threshold as a mandatory buy or sell instruction.\nAssuming a candlestick pattern proves a reversal or that simulated volume validates it.\nSelecting lookbacks after seeing profitable historical outcomes without testing a separate sample.\nWorked arithmetic\n\nHypothetical comparison: fixed realized 57% wins at 1.2R and 43% losses at 1R give 0.254R gross expectancy. Changing only the assumed win rate to 32% gives 0.32×1.2−0.68=−0.296R. These chosen inputs do not establish the observed profitability of ranging or trending markets; costs and actual fills must also be considered.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nRSI-based results can vary sharply by market regime and rule set. Test the same rules in ranging and trending periods rather than relying on a fixed win-rate claim.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFidelity — indicator definition and limits\nMore strategies\nScalping\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nMACD Crossover\nHome\nStrategies\nRSI Mean-Reversion\nFrequently Asked Questions\nDoes RSI Mean-Reversion actually work?\nWhat context does this RSI Mean-Reversion worksheet examine?\nCan I practise RSI Mean-Reversion for free?"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 360,
+      "scrollHeight": 7547,
+      "viewportWidth": 360,
+      "canonical": "https://www.thetradehq.com/strategy/rsi-strategy",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "911fef99c55e275b-360-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "911fef99c55e275b-360-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "911fef99c55e275b-360-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "911fef99c55e275b-360-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "911fef99c55e275b-360-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "911fef99c55e275b-360-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "911fef99c55e275b-360-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "911fef99c55e275b-360-07.png"
+        },
+        {
+          "y": 5440,
+          "screenshot": "911fef99c55e275b-360-08.png"
+        },
+        {
+          "y": 6120,
+          "screenshot": "911fef99c55e275b-360-09.png"
+        },
+        {
+          "y": 6747,
+          "screenshot": "911fef99c55e275b-360-10.png"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "path": "/strategy/rsi-strategy",
+      "title": "RSI Mean-Reversion Strategy — Examples and Limitations | TradeHQ",
+      "heading": "RSI Mean-Reversion",
+      "mainText": "TRADING STRATEGY\n\nRSI Mean-Reversion\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nA conceptual comparison of RSI thresholds and later price observations.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the RSI Mean-Reversion trading strategy and does it work?\n\nRSI Mean-Reversion: A conceptual comparison of RSI thresholds and later price observations. RSI-based results can vary sharply by market regime and rule set. Test the same rules in ranging and trending periods rather than relying on a fixed win-rate claim. Study context: Studying how the same oscillator threshold behaves in different historical samples. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nStudying how the same oscillator threshold behaves in different historical samples.\n\nLimitations\n\nAn extreme reading can persist. Neither a threshold nor a second chart pattern proves a reversal.\n\nHypothetical study steps\n1\nSpecify a standard RSI calculation and interval using a source that supplies the necessary historical prices.\n2\nMark the conventional 30 and 70 thresholds as descriptions, then record all observations meeting them.\n3\nCompare later continuation and reversal cases under the same sampling and cost assumptions.\n4\nTreat entry and exit choices as separate hypothetical rules. TradeHQ’s RSI-style practice value is not a standard historical RSI calculation.\nWorked example\n\nHypothetical worksheet, not an observed trade: BTC RSI dips to 26 at $92K with a bullish engulfing — buy, stop $91K, target $94K. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.\n\nWhere this method comes from\n\nRSI compares smoothed recent gains and losses over a selected lookback and scales the result between zero and 100. Fourteen periods is a common setting; the interval must also be stated. Conventional threshold labels describe the calculation. They do not establish that an asset is mispriced or that a price reversal must follow.\n\nSample and market limitations\n\nRSI can remain extreme during a sustained move or cross its thresholds repeatedly. Comparing samples labeled trending and ranging requires a rule for those labels that does not use future information. A second indicator shares price inputs and is not necessarily independent confirmation.\n\nInterpretation pitfalls\nTreating an oscillator threshold as a mandatory buy or sell instruction.\nAssuming a candlestick pattern proves a reversal or that simulated volume validates it.\nSelecting lookbacks after seeing profitable historical outcomes without testing a separate sample.\nWorked arithmetic\n\nHypothetical comparison: fixed realized 57% wins at 1.2R and 43% losses at 1R give 0.254R gross expectancy. Changing only the assumed win rate to 32% gives 0.32×1.2−0.68=−0.296R. These chosen inputs do not establish the observed profitability of ranging or trending markets; costs and actual fills must also be considered.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nRSI-based results can vary sharply by market regime and rule set. Test the same rules in ranging and trending periods rather than relying on a fixed win-rate claim.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFidelity — indicator definition and limits\nMore strategies\nScalping\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nMACD Crossover\nHome\nStrategies\nRSI Mean-Reversion\nFrequently Asked Questions\nDoes RSI Mean-Reversion actually work?\nWhat context does this RSI Mean-Reversion worksheet examine?\nCan I practise RSI Mean-Reversion for free?",
+      "supplementaryNotes": [
+        {
+          "path": "/strategy/rsi-strategy",
+          "tagName": "MAIN",
+          "text": "TRADING STRATEGY\n\nRSI Mean-Reversion\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nA conceptual comparison of RSI thresholds and later price observations.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the RSI Mean-Reversion trading strategy and does it work?\n\nRSI Mean-Reversion: A conceptual comparison of RSI thresholds and later price observations. RSI-based results can vary sharply by market regime and rule set. Test the same rules in ranging and trending periods rather than relying on a fixed win-rate claim. Study context: Studying how the same oscillator threshold behaves in different historical samples. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nStudying how the same oscillator threshold behaves in different historical samples.\n\nLimitations\n\nAn extreme reading can persist. Neither a threshold nor a second chart pattern proves a reversal.\n\nHypothetical study steps\n1\nSpecify a standard RSI calculation and interval using a source that supplies the necessary historical prices.\n2\nMark the conventional 30 and 70 thresholds as descriptions, then record all observations meeting them.\n3\nCompare later continuation and reversal cases under the same sampling and cost assumptions.\n4\nTreat entry and exit choices as separate hypothetical rules. TradeHQ’s RSI-style practice value is not a standard historical RSI calculation.\nWorked example\n\nHypothetical worksheet, not an observed trade: BTC RSI dips to 26 at $92K with a bullish engulfing — buy, stop $91K, target $94K. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.\n\nWhere this method comes from\n\nRSI compares smoothed recent gains and losses over a selected lookback and scales the result between zero and 100. Fourteen periods is a common setting; the interval must also be stated. Conventional threshold labels describe the calculation. They do not establish that an asset is mispriced or that a price reversal must follow.\n\nSample and market limitations\n\nRSI can remain extreme during a sustained move or cross its thresholds repeatedly. Comparing samples labeled trending and ranging requires a rule for those labels that does not use future information. A second indicator shares price inputs and is not necessarily independent confirmation.\n\nInterpretation pitfalls\nTreating an oscillator threshold as a mandatory buy or sell instruction.\nAssuming a candlestick pattern proves a reversal or that simulated volume validates it.\nSelecting lookbacks after seeing profitable historical outcomes without testing a separate sample.\nWorked arithmetic\n\nHypothetical comparison: fixed realized 57% wins at 1.2R and 43% losses at 1R give 0.254R gross expectancy. Changing only the assumed win rate to 32% gives 0.32×1.2−0.68=−0.296R. These chosen inputs do not establish the observed profitability of ranging or trending markets; costs and actual fills must also be considered.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nRSI-based results can vary sharply by market regime and rule set. Test the same rules in ranging and trending periods rather than relying on a fixed win-rate claim.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFidelity — indicator definition and limits\nMore strategies\nScalping\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nMACD Crossover\nHome\nStrategies\nRSI Mean-Reversion\nFrequently Asked Questions\nDoes RSI Mean-Reversion actually work?\nWhat context does this RSI Mean-Reversion worksheet examine?\nCan I practise RSI Mean-Reversion for free?"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 390,
+      "scrollHeight": 7136,
+      "viewportWidth": 390,
+      "canonical": "https://www.thetradehq.com/strategy/rsi-strategy",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "911fef99c55e275b-390-00.png"
+        },
+        {
+          "y": 717,
+          "screenshot": "911fef99c55e275b-390-01.png"
+        },
+        {
+          "y": 1434,
+          "screenshot": "911fef99c55e275b-390-02.png"
+        },
+        {
+          "y": 2151,
+          "screenshot": "911fef99c55e275b-390-03.png"
+        },
+        {
+          "y": 2868,
+          "screenshot": "911fef99c55e275b-390-04.png"
+        },
+        {
+          "y": 3585,
+          "screenshot": "911fef99c55e275b-390-05.png"
+        },
+        {
+          "y": 4302,
+          "screenshot": "911fef99c55e275b-390-06.png"
+        },
+        {
+          "y": 5019,
+          "screenshot": "911fef99c55e275b-390-07.png"
+        },
+        {
+          "y": 5736,
+          "screenshot": "911fef99c55e275b-390-08.png"
+        },
+        {
+          "y": 6292,
+          "screenshot": "911fef99c55e275b-390-09.png"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "path": "/strategy/rsi-strategy",
+      "title": "RSI Mean-Reversion Strategy — Examples and Limitations | TradeHQ",
+      "heading": "RSI Mean-Reversion",
+      "mainText": "TRADING STRATEGY\n\nRSI Mean-Reversion\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nA conceptual comparison of RSI thresholds and later price observations.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the RSI Mean-Reversion trading strategy and does it work?\n\nRSI Mean-Reversion: A conceptual comparison of RSI thresholds and later price observations. RSI-based results can vary sharply by market regime and rule set. Test the same rules in ranging and trending periods rather than relying on a fixed win-rate claim. Study context: Studying how the same oscillator threshold behaves in different historical samples. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nStudying how the same oscillator threshold behaves in different historical samples.\n\nLimitations\n\nAn extreme reading can persist. Neither a threshold nor a second chart pattern proves a reversal.\n\nHypothetical study steps\n1\nSpecify a standard RSI calculation and interval using a source that supplies the necessary historical prices.\n2\nMark the conventional 30 and 70 thresholds as descriptions, then record all observations meeting them.\n3\nCompare later continuation and reversal cases under the same sampling and cost assumptions.\n4\nTreat entry and exit choices as separate hypothetical rules. TradeHQ’s RSI-style practice value is not a standard historical RSI calculation.\nWorked example\n\nHypothetical worksheet, not an observed trade: BTC RSI dips to 26 at $92K with a bullish engulfing — buy, stop $91K, target $94K. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.\n\nWhere this method comes from\n\nRSI compares smoothed recent gains and losses over a selected lookback and scales the result between zero and 100. Fourteen periods is a common setting; the interval must also be stated. Conventional threshold labels describe the calculation. They do not establish that an asset is mispriced or that a price reversal must follow.\n\nSample and market limitations\n\nRSI can remain extreme during a sustained move or cross its thresholds repeatedly. Comparing samples labeled trending and ranging requires a rule for those labels that does not use future information. A second indicator shares price inputs and is not necessarily independent confirmation.\n\nInterpretation pitfalls\nTreating an oscillator threshold as a mandatory buy or sell instruction.\nAssuming a candlestick pattern proves a reversal or that simulated volume validates it.\nSelecting lookbacks after seeing profitable historical outcomes without testing a separate sample.\nWorked arithmetic\n\nHypothetical comparison: fixed realized 57% wins at 1.2R and 43% losses at 1R give 0.254R gross expectancy. Changing only the assumed win rate to 32% gives 0.32×1.2−0.68=−0.296R. These chosen inputs do not establish the observed profitability of ranging or trending markets; costs and actual fills must also be considered.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nRSI-based results can vary sharply by market regime and rule set. Test the same rules in ranging and trending periods rather than relying on a fixed win-rate claim.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFidelity — indicator definition and limits\nMore strategies\nScalping\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nMACD Crossover\nHome\nStrategies\nRSI Mean-Reversion\nFrequently Asked Questions\nDoes RSI Mean-Reversion actually work?\nWhat context does this RSI Mean-Reversion worksheet examine?\nCan I practise RSI Mean-Reversion for free?",
+      "supplementaryNotes": [
+        {
+          "path": "/strategy/rsi-strategy",
+          "tagName": "MAIN",
+          "text": "TRADING STRATEGY\n\nRSI Mean-Reversion\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nA conceptual comparison of RSI thresholds and later price observations.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the RSI Mean-Reversion trading strategy and does it work?\n\nRSI Mean-Reversion: A conceptual comparison of RSI thresholds and later price observations. RSI-based results can vary sharply by market regime and rule set. Test the same rules in ranging and trending periods rather than relying on a fixed win-rate claim. Study context: Studying how the same oscillator threshold behaves in different historical samples. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nStudying how the same oscillator threshold behaves in different historical samples.\n\nLimitations\n\nAn extreme reading can persist. Neither a threshold nor a second chart pattern proves a reversal.\n\nHypothetical study steps\n1\nSpecify a standard RSI calculation and interval using a source that supplies the necessary historical prices.\n2\nMark the conventional 30 and 70 thresholds as descriptions, then record all observations meeting them.\n3\nCompare later continuation and reversal cases under the same sampling and cost assumptions.\n4\nTreat entry and exit choices as separate hypothetical rules. TradeHQ’s RSI-style practice value is not a standard historical RSI calculation.\nWorked example\n\nHypothetical worksheet, not an observed trade: BTC RSI dips to 26 at $92K with a bullish engulfing — buy, stop $91K, target $94K. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.\n\nWhere this method comes from\n\nRSI compares smoothed recent gains and losses over a selected lookback and scales the result between zero and 100. Fourteen periods is a common setting; the interval must also be stated. Conventional threshold labels describe the calculation. They do not establish that an asset is mispriced or that a price reversal must follow.\n\nSample and market limitations\n\nRSI can remain extreme during a sustained move or cross its thresholds repeatedly. Comparing samples labeled trending and ranging requires a rule for those labels that does not use future information. A second indicator shares price inputs and is not necessarily independent confirmation.\n\nInterpretation pitfalls\nTreating an oscillator threshold as a mandatory buy or sell instruction.\nAssuming a candlestick pattern proves a reversal or that simulated volume validates it.\nSelecting lookbacks after seeing profitable historical outcomes without testing a separate sample.\nWorked arithmetic\n\nHypothetical comparison: fixed realized 57% wins at 1.2R and 43% losses at 1R give 0.254R gross expectancy. Changing only the assumed win rate to 32% gives 0.32×1.2−0.68=−0.296R. These chosen inputs do not establish the observed profitability of ranging or trending markets; costs and actual fills must also be considered.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nRSI-based results can vary sharply by market regime and rule set. Test the same rules in ranging and trending periods rather than relying on a fixed win-rate claim.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFidelity — indicator definition and limits\nMore strategies\nScalping\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nMACD Crossover\nHome\nStrategies\nRSI Mean-Reversion\nFrequently Asked Questions\nDoes RSI Mean-Reversion actually work?\nWhat context does this RSI Mean-Reversion worksheet examine?\nCan I practise RSI Mean-Reversion for free?"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 753,
+      "scrollHeight": 4993,
+      "viewportWidth": 768,
+      "canonical": "https://www.thetradehq.com/strategy/rsi-strategy",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "911fef99c55e275b-768-00.png"
+        },
+        {
+          "y": 870,
+          "screenshot": "911fef99c55e275b-768-01.png"
+        },
+        {
+          "y": 1740,
+          "screenshot": "911fef99c55e275b-768-02.png"
+        },
+        {
+          "y": 2610,
+          "screenshot": "911fef99c55e275b-768-03.png"
+        },
+        {
+          "y": 3480,
+          "screenshot": "911fef99c55e275b-768-04.png"
+        },
+        {
+          "y": 3969,
+          "screenshot": "911fef99c55e275b-768-05.png"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "path": "/strategy/rsi-strategy",
+      "title": "RSI Mean-Reversion Strategy — Examples and Limitations | TradeHQ",
+      "heading": "RSI Mean-Reversion",
+      "mainText": "TRADING STRATEGY\n\nRSI Mean-Reversion\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nA conceptual comparison of RSI thresholds and later price observations.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the RSI Mean-Reversion trading strategy and does it work?\n\nRSI Mean-Reversion: A conceptual comparison of RSI thresholds and later price observations. RSI-based results can vary sharply by market regime and rule set. Test the same rules in ranging and trending periods rather than relying on a fixed win-rate claim. Study context: Studying how the same oscillator threshold behaves in different historical samples. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nStudying how the same oscillator threshold behaves in different historical samples.\n\nLimitations\n\nAn extreme reading can persist. Neither a threshold nor a second chart pattern proves a reversal.\n\nHypothetical study steps\n1\nSpecify a standard RSI calculation and interval using a source that supplies the necessary historical prices.\n2\nMark the conventional 30 and 70 thresholds as descriptions, then record all observations meeting them.\n3\nCompare later continuation and reversal cases under the same sampling and cost assumptions.\n4\nTreat entry and exit choices as separate hypothetical rules. TradeHQ’s RSI-style practice value is not a standard historical RSI calculation.\nWorked example\n\nHypothetical worksheet, not an observed trade: BTC RSI dips to 26 at $92K with a bullish engulfing — buy, stop $91K, target $94K. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.\n\nWhere this method comes from\n\nRSI compares smoothed recent gains and losses over a selected lookback and scales the result between zero and 100. Fourteen periods is a common setting; the interval must also be stated. Conventional threshold labels describe the calculation. They do not establish that an asset is mispriced or that a price reversal must follow.\n\nSample and market limitations\n\nRSI can remain extreme during a sustained move or cross its thresholds repeatedly. Comparing samples labeled trending and ranging requires a rule for those labels that does not use future information. A second indicator shares price inputs and is not necessarily independent confirmation.\n\nInterpretation pitfalls\nTreating an oscillator threshold as a mandatory buy or sell instruction.\nAssuming a candlestick pattern proves a reversal or that simulated volume validates it.\nSelecting lookbacks after seeing profitable historical outcomes without testing a separate sample.\nWorked arithmetic\n\nHypothetical comparison: fixed realized 57% wins at 1.2R and 43% losses at 1R give 0.254R gross expectancy. Changing only the assumed win rate to 32% gives 0.32×1.2−0.68=−0.296R. These chosen inputs do not establish the observed profitability of ranging or trending markets; costs and actual fills must also be considered.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nRSI-based results can vary sharply by market regime and rule set. Test the same rules in ranging and trending periods rather than relying on a fixed win-rate claim.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFidelity — indicator definition and limits\nMore strategies\nScalping\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nMACD Crossover\nHome\nStrategies\nRSI Mean-Reversion\nFrequently Asked Questions\nDoes RSI Mean-Reversion actually work?\nWhat context does this RSI Mean-Reversion worksheet examine?\nCan I practise RSI Mean-Reversion for free?",
+      "supplementaryNotes": [
+        {
+          "path": "/strategy/rsi-strategy",
+          "tagName": "MAIN",
+          "text": "TRADING STRATEGY\n\nRSI Mean-Reversion\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nA conceptual comparison of RSI thresholds and later price observations.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the RSI Mean-Reversion trading strategy and does it work?\n\nRSI Mean-Reversion: A conceptual comparison of RSI thresholds and later price observations. RSI-based results can vary sharply by market regime and rule set. Test the same rules in ranging and trending periods rather than relying on a fixed win-rate claim. Study context: Studying how the same oscillator threshold behaves in different historical samples. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nStudying how the same oscillator threshold behaves in different historical samples.\n\nLimitations\n\nAn extreme reading can persist. Neither a threshold nor a second chart pattern proves a reversal.\n\nHypothetical study steps\n1\nSpecify a standard RSI calculation and interval using a source that supplies the necessary historical prices.\n2\nMark the conventional 30 and 70 thresholds as descriptions, then record all observations meeting them.\n3\nCompare later continuation and reversal cases under the same sampling and cost assumptions.\n4\nTreat entry and exit choices as separate hypothetical rules. TradeHQ’s RSI-style practice value is not a standard historical RSI calculation.\nWorked example\n\nHypothetical worksheet, not an observed trade: BTC RSI dips to 26 at $92K with a bullish engulfing — buy, stop $91K, target $94K. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.\n\nWhere this method comes from\n\nRSI compares smoothed recent gains and losses over a selected lookback and scales the result between zero and 100. Fourteen periods is a common setting; the interval must also be stated. Conventional threshold labels describe the calculation. They do not establish that an asset is mispriced or that a price reversal must follow.\n\nSample and market limitations\n\nRSI can remain extreme during a sustained move or cross its thresholds repeatedly. Comparing samples labeled trending and ranging requires a rule for those labels that does not use future information. A second indicator shares price inputs and is not necessarily independent confirmation.\n\nInterpretation pitfalls\nTreating an oscillator threshold as a mandatory buy or sell instruction.\nAssuming a candlestick pattern proves a reversal or that simulated volume validates it.\nSelecting lookbacks after seeing profitable historical outcomes without testing a separate sample.\nWorked arithmetic\n\nHypothetical comparison: fixed realized 57% wins at 1.2R and 43% losses at 1R give 0.254R gross expectancy. Changing only the assumed win rate to 32% gives 0.32×1.2−0.68=−0.296R. These chosen inputs do not establish the observed profitability of ranging or trending markets; costs and actual fills must also be considered.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nRSI-based results can vary sharply by market regime and rule set. Test the same rules in ranging and trending periods rather than relying on a fixed win-rate claim.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFidelity — indicator definition and limits\nMore strategies\nScalping\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nMACD Crossover\nHome\nStrategies\nRSI Mean-Reversion\nFrequently Asked Questions\nDoes RSI Mean-Reversion actually work?\nWhat context does this RSI Mean-Reversion worksheet examine?\nCan I practise RSI Mean-Reversion for free?"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1265,
+      "scrollHeight": 4312,
+      "viewportWidth": 1280,
+      "canonical": "https://www.thetradehq.com/strategy/rsi-strategy",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "911fef99c55e275b-1280-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "911fef99c55e275b-1280-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "911fef99c55e275b-1280-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "911fef99c55e275b-1280-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "911fef99c55e275b-1280-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "911fef99c55e275b-1280-05.png"
+        },
+        {
+          "y": 3512,
+          "screenshot": "911fef99c55e275b-1280-06.png"
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "path": "/strategy/rsi-strategy",
+      "title": "RSI Mean-Reversion Strategy — Examples and Limitations | TradeHQ",
+      "heading": "RSI Mean-Reversion",
+      "mainText": "TRADING STRATEGY\n\nRSI Mean-Reversion\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nA conceptual comparison of RSI thresholds and later price observations.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the RSI Mean-Reversion trading strategy and does it work?\n\nRSI Mean-Reversion: A conceptual comparison of RSI thresholds and later price observations. RSI-based results can vary sharply by market regime and rule set. Test the same rules in ranging and trending periods rather than relying on a fixed win-rate claim. Study context: Studying how the same oscillator threshold behaves in different historical samples. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nStudying how the same oscillator threshold behaves in different historical samples.\n\nLimitations\n\nAn extreme reading can persist. Neither a threshold nor a second chart pattern proves a reversal.\n\nHypothetical study steps\n1\nSpecify a standard RSI calculation and interval using a source that supplies the necessary historical prices.\n2\nMark the conventional 30 and 70 thresholds as descriptions, then record all observations meeting them.\n3\nCompare later continuation and reversal cases under the same sampling and cost assumptions.\n4\nTreat entry and exit choices as separate hypothetical rules. TradeHQ’s RSI-style practice value is not a standard historical RSI calculation.\nWorked example\n\nHypothetical worksheet, not an observed trade: BTC RSI dips to 26 at $92K with a bullish engulfing — buy, stop $91K, target $94K. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.\n\nWhere this method comes from\n\nRSI compares smoothed recent gains and losses over a selected lookback and scales the result between zero and 100. Fourteen periods is a common setting; the interval must also be stated. Conventional threshold labels describe the calculation. They do not establish that an asset is mispriced or that a price reversal must follow.\n\nSample and market limitations\n\nRSI can remain extreme during a sustained move or cross its thresholds repeatedly. Comparing samples labeled trending and ranging requires a rule for those labels that does not use future information. A second indicator shares price inputs and is not necessarily independent confirmation.\n\nInterpretation pitfalls\nTreating an oscillator threshold as a mandatory buy or sell instruction.\nAssuming a candlestick pattern proves a reversal or that simulated volume validates it.\nSelecting lookbacks after seeing profitable historical outcomes without testing a separate sample.\nWorked arithmetic\n\nHypothetical comparison: fixed realized 57% wins at 1.2R and 43% losses at 1R give 0.254R gross expectancy. Changing only the assumed win rate to 32% gives 0.32×1.2−0.68=−0.296R. These chosen inputs do not establish the observed profitability of ranging or trending markets; costs and actual fills must also be considered.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nRSI-based results can vary sharply by market regime and rule set. Test the same rules in ranging and trending periods rather than relying on a fixed win-rate claim.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFidelity — indicator definition and limits\nMore strategies\nScalping\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nMACD Crossover\nHome\nStrategies\nRSI Mean-Reversion\nFrequently Asked Questions\nDoes RSI Mean-Reversion actually work?\nWhat context does this RSI Mean-Reversion worksheet examine?\nCan I practise RSI Mean-Reversion for free?",
+      "supplementaryNotes": [
+        {
+          "path": "/strategy/rsi-strategy",
+          "tagName": "MAIN",
+          "text": "TRADING STRATEGY\n\nRSI Mean-Reversion\n\nPublished by TradeHQ. Site creator and editorial approach: Anuga Weerasinghe. No independent professional review is claimed.\n\nA conceptual comparison of RSI thresholds and later price observations.\n\nPractise this strategy\nQUICK ANSWER\nWhat is the RSI Mean-Reversion trading strategy and does it work?\n\nRSI Mean-Reversion: A conceptual comparison of RSI thresholds and later price observations. RSI-based results can vary sharply by market regime and rule set. Test the same rules in ranging and trending periods rather than relying on a fixed win-rate claim. Study context: Studying how the same oscillator threshold behaves in different historical samples. Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)\n\nStudy context\n\nStudying how the same oscillator threshold behaves in different historical samples.\n\nLimitations\n\nAn extreme reading can persist. Neither a threshold nor a second chart pattern proves a reversal.\n\nHypothetical study steps\n1\nSpecify a standard RSI calculation and interval using a source that supplies the necessary historical prices.\n2\nMark the conventional 30 and 70 thresholds as descriptions, then record all observations meeting them.\n3\nCompare later continuation and reversal cases under the same sampling and cost assumptions.\n4\nTreat entry and exit choices as separate hypothetical rules. TradeHQ’s RSI-style practice value is not a standard historical RSI calculation.\nWorked example\n\nHypothetical worksheet, not an observed trade: BTC RSI dips to 26 at $92K with a bullish engulfing — buy, stop $91K, target $94K. Stop and target levels are conceptual assumptions, not resting TradeHQ orders; gaps and fees can change the result.\n\nWhere this method comes from\n\nRSI compares smoothed recent gains and losses over a selected lookback and scales the result between zero and 100. Fourteen periods is a common setting; the interval must also be stated. Conventional threshold labels describe the calculation. They do not establish that an asset is mispriced or that a price reversal must follow.\n\nSample and market limitations\n\nRSI can remain extreme during a sustained move or cross its thresholds repeatedly. Comparing samples labeled trending and ranging requires a rule for those labels that does not use future information. A second indicator shares price inputs and is not necessarily independent confirmation.\n\nInterpretation pitfalls\nTreating an oscillator threshold as a mandatory buy or sell instruction.\nAssuming a candlestick pattern proves a reversal or that simulated volume validates it.\nSelecting lookbacks after seeing profitable historical outcomes without testing a separate sample.\nWorked arithmetic\n\nHypothetical comparison: fixed realized 57% wins at 1.2R and 43% losses at 1R give 0.254R gross expectancy. Changing only the assumed win rate to 32% gives 0.32×1.2−0.68=−0.296R. These chosen inputs do not establish the observed profitability of ranging or trending markets; costs and actual fills must also be considered.\n\nFigures are illustrative teaching examples, not projections of your results. (Educational simulation only — not financial advice.)\n\nRealistic expectations\n\nRSI-based results can vary sharply by market regime and rule set. Test the same rules in ranging and trending periods rather than relying on a fixed win-rate claim.\n\n(Educational simulation only — not financial advice.)\n\nReferences\nFidelity — indicator definition and limits\nMore strategies\nScalping\nSwing Trading\nDay Trading\nDollar-Cost Averaging (DCA)\nMACD Crossover\nHome\nStrategies\nRSI Mean-Reversion\nFrequently Asked Questions\nDoes RSI Mean-Reversion actually work?\nWhat context does this RSI Mean-Reversion worksheet examine?\nCan I practise RSI Mean-Reversion for free?"
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1905,
+      "scrollHeight": 4236,
+      "viewportWidth": 1920,
+      "canonical": "https://www.thetradehq.com/strategy/rsi-strategy",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "911fef99c55e275b-1920-00.png"
+        },
+        {
+          "y": 918,
+          "screenshot": "911fef99c55e275b-1920-01.png"
+        },
+        {
+          "y": 1836,
+          "screenshot": "911fef99c55e275b-1920-02.png"
+        },
+        {
+          "y": 2754,
+          "screenshot": "911fef99c55e275b-1920-03.png"
+        },
+        {
+          "y": 3156,
+          "screenshot": "911fef99c55e275b-1920-04.png"
+        }
+      ]
+    }
+  ]
+}

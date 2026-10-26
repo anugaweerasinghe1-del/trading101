@@ -2269,11 +2269,16 @@
     "mergeSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
     "reason": "Releasecyclecomplete; nonewmergeofthisPR."
   },
-  "remainingConfirmedSiteFixes": 0,
+  "remainingConfirmedSiteFixes": 1,
   "exhaustiveAuditComplete": false,
-  "remainingKnownSafeFindings": 0,
+  "remainingKnownSafeFindings": 1,
   "nextReleasePriority": [],
-  "pendingReleaseVerification": null,
+  "pendingReleaseVerification": {
+    "pr": 247,
+    "candidateSHA": "9229cbab0fb72cea0cc11f37f4d8216b5a930e07",
+    "mergeSHA": "ae8cf2b2db107701d5ffa91b203c1cc8eab3e99d",
+    "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
+  },
   "protectedPublishedContentFinding": "THQ035/036 published revision2 independently verified; credential and approval blockers superseded by owner-approved PR238 operation. No new production writes in this continuation.",
   "dailyChartUnitsCandidate": {
     "pr": 234,

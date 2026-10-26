@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-10-26T14:38:16.497977+00:00",
+  "sha": "ae8cf2b2db107701d5ffa91b203c1cc8eab3e99d",
+  "run": 40338654272,
+  "job": 121626965965,
+  "initialOutcome": "FAIL",
+  "error": "Mentor page fits768px assertion after trade/btc mentor dialog resize. Same symptom observed on previous release; exact underlying timing/layout cause not yet established.",
+  "selectedActualErrorLines": [
+    "2026-10-26T14:21:58.5204214Z AssertionError [ERR_ASSERTION]: Mentor page fits 768px",
+    "2026-10-26T14:21:58.5204421Z ",
+    "2026-10-26T14:21:58.5204500Z true !== false",
+    "2026-10-26T14:21:58.5204599Z ",
+    "2026-10-26T14:21:58.5204950Z     at verifyMentorCopy (file:///home/runner/work/trading101/trading101/scripts/verify-mentor-copy.mjs:36:16)",
+    "2026-10-26T14:21:58.5205624Z     at async file:///home/runner/work/trading101/trading101/scripts/verify-publisher-browser.mjs:278:3 {",
+    "2026-10-26T14:21:58.5205928Z   generatedMessage: false,",
+    "2026-10-26T14:21:58.5206068Z   code: 'ERR_ASSERTION',",
+    "2026-10-26T14:21:58.5206197Z   actual: true,",
+    "2026-10-26T14:21:58.5206318Z   expected: false,",
+    "2026-10-26T14:21:58.5206446Z   operator: 'strictEqual',",
+    "2026-10-26T14:21:58.5206572Z   diff: 'simple'",
+    "2026-10-26T14:21:58.5206688Z }",
+    "2026-10-26T14:21:58.5206742Z ",
+    "2026-10-26T14:21:58.5206792Z Node.js v22.23.3",
+    "2026-10-26T14:21:58.5289869Z ##[error]Process completed with exit code 1.",
+    "2026-10-26T14:21:58.5390633Z Post job cleanup.",
+    "2026-10-26T14:21:58.5894485Z [command]/usr/bin/git version"
+  ],
+  "releaseHold": "No next merge. Original full localphase6 running unchanged; investigate resize settling before attributing application defect."
+}
