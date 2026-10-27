@@ -2013,7 +2013,7 @@
         "https://www.thetradehq.com/sectors/etf-indices",
         "https://www.thetradehq.com/markets"
       ],
-      "state": "DRAFT_PR248_CI_HOLD",
+      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
       "implementationRisk": "Low; two static descriptive strings only",
       "sourceEvidence": "evidence/STRATEGY-SECTOR-PRIMARY-SOURCE-FOLLOWUP-20261026.json",
       "findingDocument": "findings/ETF-DIRECTORY-SCOPE.md",
@@ -2021,14 +2021,16 @@
         "src/pages/SectorPillar.tsx",
         "src/pages/Markets.tsx"
       ],
-      "releaseHold": "Recurring mentor opening-animation sample. Separate test-only fix under validation; do not merge248 until exactcandidate checks pass and prior release verified.",
+      "releaseHold": "All six exact-main/native production and actual live/guest proofs remain. No next merge.",
       "pr": 248,
-      "candidateSHA": "6ab3b7e374f1a4d4deb68e49eb7a785f7a7f34d5",
-      "baseSHA": "ae8cf2b2db107701d5ffa91b203c1cc8eab3e99d",
+      "candidateSHA": "64b53d22f25150acaf9936cbda639661d42fbb4d",
+      "baseSHA": "e672a93b9c36641b16492cbb77aa417fbe37ed59",
       "localBrowserEvidence": "evidence/ETF-DIRECTORY-LOCAL-BROWSER.json",
       "localImagesPersonallyViewed": 8,
       "previewBrowserEvidence": "evidence/PR248-UPDATED-PREVIEW-BROWSER.json",
-      "previewImagesPersonallyViewed": 8
+      "previewImagesPersonallyViewed": 8,
+      "previousCandidateSHA": "6ab3b7e374f1a4d4deb68e49eb7a785f7a7f34d5",
+      "mergeSHA": "4120be70fd4acb0f8edee0b1b6028c5561f26ab4"
     },
     {
       "id": "THQ-048",
@@ -2039,7 +2041,7 @@
         "https://www.thetradehq.com/trade/btc"
       ],
       "scope": "Shared asset AIMentor; sampled BTC at360/1280light/dark.",
-      "state": "DRAFT_PR250_PENDING_EXACT_CANDIDATE_GATES",
+      "state": "PUBLICLY_VERIFIED",
       "implementationRisk": "Low; target actual nested message viewport, no reply/account/trade/calculation changes",
       "findingDocument": "findings/MENTOR-REPLY-SCROLL.md",
       "beforeEvidence": "evidence/MENTOR-SCROLL-BEFORE-BROWSER.json",
@@ -2048,7 +2050,7 @@
         "src/components/trading/AIMentor.tsx",
         "scripts/verify-mentor-copy.mjs"
       ],
-      "releaseHold": "Serial249production verification first; no protected changes.",
+      "releaseHold": null,
       "pr": 250,
       "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/250",
       "candidateSHA": "bfcf8c61ab9cd775735cd2bcd40d2fff12de5dfa",
@@ -2059,18 +2061,47 @@
         "evidence/MENTOR-REPLY-SCROLL-BUILD.txt",
         "evidence/MENTOR-REPLY-SCROLL-TYPES.txt"
       ],
-      "localImagesPersonallyViewed": 8
+      "localImagesPersonallyViewed": 8,
+      "previewEvidence": "evidence/PR250-UPDATED-PREVIEW-BROWSER.json",
+      "previewImagesPersonallyViewed": 8,
+      "mergeSHA": "e672a93b9c36641b16492cbb77aa417fbe37ed59",
+      "productionEvidence": "evidence/PR250-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR250-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR250-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR250-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 8,
+      "liveRecheck": "PASS exact merged production: [10] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
+    },
+    {
+      "id": "THQ-049",
+      "title": "Legacy FTM and MATIC guide labels lack current token migration context",
+      "severity": "P3",
+      "type": "Financial education/factual context",
+      "urls": [
+        "https://www.thetradehq.com/niche/ftm",
+        "https://www.thetradehq.com/niche/matic"
+      ],
+      "scope": "Two authored public guide bodies; no instrument migration or provider change",
+      "state": "CONFIRMED_COPY_ONLY_REMEDIATION_QUEUED",
+      "implementationRisk": "Low: static explanatory paragraphs and official references; financial identifiers/state unchanged",
+      "findingDocument": "findings/LEGACY-TOKEN-CONTEXT.md",
+      "beforeEvidence": "evidence/LEGACY-TOKEN-BEFORE-BROWSER.json",
+      "sourceEvidence": "evidence/TOKEN-MIGRATION-PRIMARY-SOURCE-FOLLOWUP-20261026.json",
+      "beforeImagesPersonallyViewed": 4,
+      "releaseHold": "Prepare isolated content-only candidate after serial pending safe releases; no financial/token conversion changes."
     }
   ],
-  "updatedAt": "2026-10-26T15:32:16.801405+00:00",
+  "updatedAt": "2026-10-27T02:14:00.532662+00:00",
   "counts": {
-    "siteFindings": 53,
+    "siteFindings": 54,
     "P2": 28,
-    "P3": 25,
-    "publiclyRepaired": 51,
-    "preparedNotMerged": 2,
+    "P3": 26,
+    "publiclyRepaired": 52,
+    "preparedNotMerged": 1,
     "separateOperationalBlockers": 0,
-    "mergedAwaitingProductionVerification": 0,
+    "mergedAwaitingProductionVerification": 1,
     "protectedUnapprovedRecordFixes": 0,
     "approvedPublishedRecordFixesBlockedOnCredential": 0,
     "mergedFallbackAwaitingProductionVerification": 0
