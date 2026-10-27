@@ -2130,14 +2130,14 @@
         "https://www.thetradehq.com/niche/sq"
       ],
       "scope": "One authored public guide body; static explanatory note",
-      "state": "FIX_TESTED",
+      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
       "implementationRisk": "Low: static explanatory text and official source only; no identifiers, providers, statistics, trades, accounts or data changes",
       "findingDocument": "findings/BLOCK-TICKER-CONTEXT.md",
       "beforeEvidence": "evidence/BLOCK-TICKER-BEFORE-BROWSER.json",
       "sourceEvidence": "evidence/BLOCK-TICKER-PRIMARY-SOURCE-20261027.json",
       "beforeImagesPersonallyViewed": 2,
       "baseSHA": "9af6e6eacab5abdc0d99b89861d45f9943738f61",
-      "releaseHold": "Actual immutable Cloudflare preview inaccessible through environment proxy:503 upstream cloudflare_https_tunnel connection error. Native deployments ready; actual preview still required.",
+      "releaseHold": "Preview access recovered; all exactcandidate gatesPASS. Merged normally. Exactmain sixchecks/nativeprod/affectedlive/guest checks required.",
       "candidateSHA": "b0989d6b0c230c3ffce1648a58568a93a62c70f2",
       "localImagesPersonallyViewed": 4,
       "localEvidence": [
@@ -2146,7 +2146,10 @@
         "evidence/BLOCK-TICKER-CONTEXT-TYPES.txt"
       ],
       "pr": 252,
-      "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/252"
+      "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/252",
+      "mergeSHA": "8466183898adf733cb7165d1339a79bddcde6da5",
+      "previewEvidence": "evidence/PR252-UPDATED-PREVIEW-BROWSER.json",
+      "previewImagesPersonallyViewed": 4
     }
   ],
   "updatedAt": "2026-10-27T02:49:46.155225+00:00",
@@ -2155,9 +2158,9 @@
     "P2": 28,
     "P3": 27,
     "publiclyRepaired": 54,
-    "preparedNotMerged": 1,
+    "preparedNotMerged": 0,
     "separateOperationalBlockers": 0,
-    "mergedAwaitingProductionVerification": 0,
+    "mergedAwaitingProductionVerification": 1,
     "protectedUnapprovedRecordFixes": 0,
     "approvedPublishedRecordFixesBlockedOnCredential": 0,
     "mergedFallbackAwaitingProductionVerification": 0

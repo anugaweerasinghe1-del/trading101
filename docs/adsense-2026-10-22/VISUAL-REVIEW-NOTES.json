@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T02:58:18.845846+00:00",
+  "updatedAt": "2026-10-27T04:35:24.617572+00:00",
   "scope": "Actual screenshot viewing by route and stage. Full-page default-state images are separately recorded at all five widths for20 core routes; this is not conditional, accessibility, light-theme, source or whole-audit completion.",
   "routes": {
     "/": {
@@ -1811,7 +1811,7 @@
       "defaultStateAssessment": "95000/+1.99% simulator-reference data is clearly labelled. Distinct from altcoin template, body/FAQ omit circular Bitcoin-correlation claim and instead list liquidity/network/regulation; no buy recommendation. Five contact sheets personally viewed/all MAIN read; mobile table/FAQs readable. Sources/originality beyond generic drivers and conditional controls remain. No orders/accounts/progress/form actions. Wholepage incomplete."
     },
     "/trade/shib": {
-      "status": "PARTIAL_VISUAL_REVIEW",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
       "humanViewedWidths": [
         360,
         1280
@@ -1830,7 +1830,17 @@
         "evidence/pr220-trade-shib-360.png",
         "evidence/pr220-portfolio-summary-360.png",
         "evidence/pr220-portfolio-summary-1280.png"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Shiba Inu practice terminal complete main read: virtual order-entry utility,explicitly no published asset-specific research,arithmetic exercise/fee limitation and generated data warnings. All five light fullpage sheets personally viewed: tiny nonzero quote and long absolute change remain readable; chart/sidebar/FAQ/relatedcards/footer fit. Distinct source labels change between simulated/provider observations across capture time; no real quote certification. Generic first takeaway provides little SHIB education, but explicit utility limits are present; retain originality/source follow-up. No orders,amount/account/progress actions. Dark/fullsafe controls,keyboard/zoom/screenreader and material-source follow-up remain; whole-page incomplete."
     },
     "/trade/sui": {
       "status": "PARTIAL_VISUAL_REVIEW",
@@ -4298,6 +4308,47 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "XRP(XRP), Crypto reference0.6245/+4.78%; full network/regulation/liquidity paragraph and three FAQs read. Five complete sheets viewed: repeated name(symbol) cosmetic but readable; four-decimal table and mentor/practice/FAQ/footer fit360 through1920. Generic crypto drivers do not distinguish XRP token from issuer/company or explain ledger mechanics; source/independent-value follow-up remains. No new default-layout defect. Full-light scrolling, actual safe navigation and sequential keyboard/zoom/screenreader follow-ups remain. Whole-page incomplete; no orders/accounts/progress/forms used."
+    },
+    "/trade/btc": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Bitcoin practice terminal full main read: peer-to-peer BTC/proof-of-work/21million schedule, snapshot versus separately refreshing chart, position sizing process and quoted-data/source limitations. Six complete full-page sheets personally viewed across all five widths, captured in light theme: hero/takeaways,chart,meter,stats,collapsed FAQs,related markets,footer and separate publisher notes fit. Large desktop whitespace follows chart/right-column grid rather than clipped content. Provider and simulated chart states can differ; screenshot timing differs from text snapshot, no live quote/current financial-source certification. Appended notes visible beyond footer; historical separate-note reading status retained, no retroactive completion credit. No order,amount,portfolio,account,progress or form action. Actual safe controls,dark/full source,factual verification,keyboard/zoom/screenreader and originality follow-ups remain; whole-page incomplete.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+    },
+    "/trade/aapl": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Apple practice terminal complete main read: product/services business, earnings hypothesis and revenue/margin/valuation distinction, simulated quote/chart/source scope. All six fullpage light sheets personally viewed across five widths: wrapping title, chart, trade panel, three-column intelligence cards, FAQs,related markets,footer and separately appended learning notes fit. Unavailable24h/marketcap text remains meaningful; quote/chart and snapshot values differ with explicit separate-source explanation. Tablet labels wrap within narrow intelligence columns. No new default-layout defect. Actual orders/amount inputs/account/progress untouched. Full dark, safe conditional controls, keyboard/zoom/screenreader, primary-source and originality follow-ups remain. Separate-note historical read status retained; whole-page incomplete.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+    },
+    "/trade/usdjpy": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "USD/JPY terminal complete main read: Fed/BOJ differentials,carry/risk framing,simulated chart period versus quote period and instrument limitations. All five light fullpage sheets personally viewed: long title/breadcrumb wraps,chart/sidebar/collapsed FAQs,related pair cards and footer fit. Related long country names use ellipses intentionally. Dollar-prefixed quote/unit model ambiguity remains INV-FX01, not approved accounting defect or new claim. No order,amount,portfolio,account/progress action. Full dark, actual safe controls, primary-source/claim checks, keyboard/zoom/screenreader and originality follow-ups remain; whole-page incomplete."
     }
   }
 }
