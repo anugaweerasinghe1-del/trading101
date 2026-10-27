@@ -2372,7 +2372,13 @@
       }
     }
   ],
-  "nextCandidate": null,
+  "nextCandidate": {
+    "pr": 252,
+    "candidateSHA": "b0989d6b0c230c3ffce1648a58568a93a62c70f2",
+    "baseSHA": "9af6e6eacab5abdc0d99b89861d45f9943738f61",
+    "state": "FIX_TESTED",
+    "scope": "Block guide legacy ticker context; one conditional static section"
+  },
   "independentFutureCandidate": {
     "pr": 214,
     "candidateSHA": "36c8e3ae9c7c5f29b0a4df63c2e3439beebd540d",
@@ -2567,9 +2573,9 @@
     "mergeSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
     "reason": "Releasecyclecomplete; nonewmergeofthisPR."
   },
-  "remainingConfirmedSiteFixes": 0,
+  "remainingConfirmedSiteFixes": 1,
   "exhaustiveAuditComplete": false,
-  "remainingKnownSafeFindings": 0,
+  "remainingKnownSafeFindings": 1,
   "nextReleasePriority": [],
   "pendingReleaseVerification": null,
   "protectedPublishedContentFinding": "THQ035/036 published revision2 independently verified; credential and approval blockers superseded by owner-approved PR238 operation. No new production writes in this continuation.",

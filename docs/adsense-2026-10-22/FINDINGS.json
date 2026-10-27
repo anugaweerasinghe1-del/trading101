@@ -2120,15 +2120,42 @@
       ],
       "productionImagesPersonallyViewed": 8,
       "liveRecheck": "PASS exact merged production: [30] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
+    },
+    {
+      "id": "THQ-050",
+      "title": "Block practice guide uses legacy SQ label without current XYZ context",
+      "severity": "P3",
+      "type": "Financial education/factual context",
+      "urls": [
+        "https://www.thetradehq.com/niche/sq"
+      ],
+      "scope": "One authored public guide body; static explanatory note",
+      "state": "FIX_TESTED",
+      "implementationRisk": "Low: static explanatory text and official source only; no identifiers, providers, statistics, trades, accounts or data changes",
+      "findingDocument": "findings/BLOCK-TICKER-CONTEXT.md",
+      "beforeEvidence": "evidence/BLOCK-TICKER-BEFORE-BROWSER.json",
+      "sourceEvidence": "evidence/BLOCK-TICKER-PRIMARY-SOURCE-20261027.json",
+      "beforeImagesPersonallyViewed": 2,
+      "baseSHA": "9af6e6eacab5abdc0d99b89861d45f9943738f61",
+      "releaseHold": "Actual immutable Cloudflare preview inaccessible through environment proxy:503 upstream cloudflare_https_tunnel connection error. Native deployments ready; actual preview still required.",
+      "candidateSHA": "b0989d6b0c230c3ffce1648a58568a93a62c70f2",
+      "localImagesPersonallyViewed": 4,
+      "localEvidence": [
+        "evidence/BLOCK-TICKER-CONTEXT-LOCAL-BROWSER.json",
+        "evidence/BLOCK-TICKER-CONTEXT-BUILD.txt",
+        "evidence/BLOCK-TICKER-CONTEXT-TYPES.txt"
+      ],
+      "pr": 252,
+      "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/252"
     }
   ],
-  "updatedAt": "2026-10-27T02:40:47.161023+00:00",
+  "updatedAt": "2026-10-27T02:49:46.155225+00:00",
   "counts": {
-    "siteFindings": 54,
+    "siteFindings": 55,
     "P2": 28,
-    "P3": 26,
+    "P3": 27,
     "publiclyRepaired": 54,
-    "preparedNotMerged": 0,
+    "preparedNotMerged": 1,
     "separateOperationalBlockers": 0,
     "mergedAwaitingProductionVerification": 0,
     "protectedUnapprovedRecordFixes": 0,
