@@ -7,5 +7,11 @@
   "expected": "RENDERED_AT_FOLLOWUP",
   "scope": "Read-only isolated loopback fixture observation; root cause not yet established. App main build, full editorial browser and isolated auth stages passed before this check. No production stability assertion from fixture failure. All next merges held; local exact-script reproduction pending.",
   "localExactScriptReproduction": "PASS without script changes; full loopback6-page validation completed locally.",
-  "recovery": "One full rerun of exact merged-SHA workflow40450309024 requested. Preserve original failure; do not weaken assertions or treat localpass as CIpass. Root cause of unavailable original observation remains unverified."
+  "recovery": "One full rerun of exact merged-SHA workflow40450309024 requested. Preserve original failure; do not weaken assertions or treat localpass as CIpass. Root cause of unavailable original observation remains unverified.",
+  "resolution": "Unchanged fixture passed locally; one complete exact-SHA workflow rerun attempt2 passed all six required checks. No assertions changed. Original unavailable-observation root cause remains unestablished.",
+  "resolutionEvidence": [
+    "evidence/PR252-LOCAL-BROWSER-INVESTIGATION.txt",
+    "evidence/PR252-MAIN-CI.json",
+    "evidence/PR252-PRODUCTION-PROVIDERS.json"
+  ]
 }

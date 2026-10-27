@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-10-27T04:59:24.108663+00:00",
+  "sourceRead": [
+    "src/pages/PublicTrader.tsx",
+    "supabase/migrations/20261007125953_automatic_public_leaderboard.sql:31-32"
+  ],
+  "observation": "Public kmillztrades snapshot at846618 shows99,999 and+0.0%; andresgarciap94 shows99,987 and-0.0%. Source public profile displays returned pnl_pct.toFixed(1) with sign from returned value. SQL public reader rounds percentage to2decimals before UI rounds to1. Tiny losses can thus return numeric zero and display+0.0%; larger still sub0.05% losses can retain minus sign and display-0.0%.",
+  "assessment": "Rounding precision explains these displayed states; no independently established balance/engine defect, ranking error or fresh-price assertion. Not counted as a new confirmed site finding. Backend/financial behavior unchanged; no source/data mutations.",
+  "limitations": "Source inspection does not prove deployed database function definition or independently value real-user holdings; no protected systems tested."
+}

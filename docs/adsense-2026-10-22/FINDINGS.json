@@ -2130,14 +2130,14 @@
         "https://www.thetradehq.com/niche/sq"
       ],
       "scope": "One authored public guide body; static explanatory note",
-      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+      "state": "PUBLICLY_VERIFIED",
       "implementationRisk": "Low: static explanatory text and official source only; no identifiers, providers, statistics, trades, accounts or data changes",
       "findingDocument": "findings/BLOCK-TICKER-CONTEXT.md",
       "beforeEvidence": "evidence/BLOCK-TICKER-BEFORE-BROWSER.json",
       "sourceEvidence": "evidence/BLOCK-TICKER-PRIMARY-SOURCE-20261027.json",
       "beforeImagesPersonallyViewed": 2,
       "baseSHA": "9af6e6eacab5abdc0d99b89861d45f9943738f61",
-      "releaseHold": "Exactmain Cloudflare compatibility/editorial browser job failed; validation failed and release-readiness skipped. Hold all next merges while diagnosing immutable job122011224386. Actual affected20states and guest30/fourcontrols PASS are insufficient for closeout.",
+      "releaseHold": null,
       "candidateSHA": "b0989d6b0c230c3ffce1648a58568a93a62c70f2",
       "localImagesPersonallyViewed": 4,
       "localEvidence": [
@@ -2149,7 +2149,15 @@
       "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/252",
       "mergeSHA": "8466183898adf733cb7165d1339a79bddcde6da5",
       "previewEvidence": "evidence/PR252-UPDATED-PREVIEW-BROWSER.json",
-      "previewImagesPersonallyViewed": 4
+      "previewImagesPersonallyViewed": 4,
+      "productionEvidence": "evidence/PR252-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR252-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR252-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR252-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 4,
+      "liveRecheck": "PASS exact merged production: [20] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
     },
     {
       "id": "THQ-051",
@@ -2161,13 +2169,13 @@
         "https://www.thetradehq.com/niche/btc"
       ],
       "scope": "Shared MegaFooter headings and glossary/foreground-based links; other rendered instances may be affected",
-      "state": "FIX_TESTED",
+      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
       "beforeEvidence": "evidence/FOOTER-THEME-BEFORE-20261027.json",
       "beforeImagesPersonallyViewed": 4,
       "findingDocument": "findings/FOOTER-THEME-CONTRAST.md",
       "implementationRisk": "Low: scope dark footer color variables locally; no links, forms, privacy controls, behavior or account changes. Shared presentation needs representative route regression.",
       "baseSHA": "8466183898adf733cb7165d1339a79bddcde6da5",
-      "releaseHold": "Previous PR252 must fully verify before next merge. Focused footer source/build/browser/native/CI/preview/production validation required.",
+      "releaseHold": "All four exact-candidate checks/native previews and20actualpreview states/two safe flows with12selectedimages viewed pass; ordinaryprotected merge complete. Exact-main six checks/native production/actualaffected+guest checks pending. No nextmerge.",
       "localEvidence": [
         "evidence/FOOTER-THEME-LOCAL-REGRESSION-BROWSER.json",
         "evidence/FOOTER-THEME-LOCAL-20261027.json",
@@ -2177,16 +2185,19 @@
       "localImagesPersonallyViewed": 16,
       "pr": 253,
       "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/253",
-      "candidateSHA": "61ee68c15e40990a28c9c198c2e346e0db13c6f0"
+      "candidateSHA": "61ee68c15e40990a28c9c198c2e346e0db13c6f0",
+      "previewEvidence": "evidence/PR253-UPDATED-PREVIEW-BROWSER.json",
+      "previewImagesPersonallyViewed": 12,
+      "mergeSHA": "c4c8e9b827311bee6343a1c5f24f674e33f40c9d"
     }
   ],
-  "updatedAt": "2026-10-27T04:40:59.795014+00:00",
+  "updatedAt": "2026-10-27T04:55:19.601855+00:00",
   "counts": {
     "siteFindings": 56,
     "P2": 29,
     "P3": 27,
-    "publiclyRepaired": 54,
-    "preparedNotMerged": 1,
+    "publiclyRepaired": 55,
+    "preparedNotMerged": 0,
     "separateOperationalBlockers": 0,
     "mergedAwaitingProductionVerification": 1,
     "protectedUnapprovedRecordFixes": 0,
