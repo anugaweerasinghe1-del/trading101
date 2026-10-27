@@ -2092,13 +2092,13 @@
         "https://www.thetradehq.com/niche/matic"
       ],
       "scope": "Two authored public guide bodies; no instrument migration or provider change",
-      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+      "state": "PUBLICLY_VERIFIED",
       "implementationRisk": "Low: static explanatory paragraphs and official references; financial identifiers/state unchanged",
       "findingDocument": "findings/LEGACY-TOKEN-CONTEXT.md",
       "beforeEvidence": "evidence/LEGACY-TOKEN-BEFORE-BROWSER.json",
       "sourceEvidence": "evidence/TOKEN-MIGRATION-PRIMARY-SOURCE-FOLLOWUP-20261026.json",
       "beforeImagesPersonallyViewed": 4,
-      "releaseHold": "All six exact-main/native production and actual live/guest proofs remain. No next merge.",
+      "releaseHold": null,
       "pr": 251,
       "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/251",
       "candidateSHA": "15834d42c54ea55a244fede881a6e270682899fe",
@@ -2111,18 +2111,26 @@
       "localImagesPersonallyViewed": 8,
       "previewEvidence": "evidence/PR251-UPDATED-PREVIEW-BROWSER.json",
       "previewImagesPersonallyViewed": 8,
-      "mergeSHA": "9af6e6eacab5abdc0d99b89861d45f9943738f61"
+      "mergeSHA": "9af6e6eacab5abdc0d99b89861d45f9943738f61",
+      "productionEvidence": "evidence/PR251-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR251-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR251-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR251-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 8,
+      "liveRecheck": "PASS exact merged production: [30] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
     }
   ],
-  "updatedAt": "2026-10-27T02:31:55.152315+00:00",
+  "updatedAt": "2026-10-27T02:40:47.161023+00:00",
   "counts": {
     "siteFindings": 54,
     "P2": 28,
     "P3": 26,
-    "publiclyRepaired": 53,
+    "publiclyRepaired": 54,
     "preparedNotMerged": 0,
     "separateOperationalBlockers": 0,
-    "mergedAwaitingProductionVerification": 1,
+    "mergedAwaitingProductionVerification": 0,
     "protectedUnapprovedRecordFixes": 0,
     "approvedPublishedRecordFixesBlockedOnCredential": 0,
     "mergedFallbackAwaitingProductionVerification": 0

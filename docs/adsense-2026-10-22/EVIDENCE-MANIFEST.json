@@ -8,8 +8,8 @@
     },
     {
       "path": "BLOCKED-STATUS.md",
-      "bytes": 12151,
-      "sha256": "43c515d1c5e578b1ba2859d0a00e8fd25dd91135540375de231da26db05d07c3"
+      "bytes": 12150,
+      "sha256": "a7f2544b5ea8537a2c79727c996550e9eae9c154c288a78433e3af5df7ea0c66"
     },
     {
       "path": "CHECKPOINT.md",
@@ -33,8 +33,8 @@
     },
     {
       "path": "FINDINGS.json",
-      "bytes": 136820,
-      "sha256": "ac6a38c92ebd1d5406defaf7e2f339bf92e1c82495ba321bb1c5ebea8674962d"
+      "bytes": 137186,
+      "sha256": "a7fc1769e0a39f08a3b5aa2b297ebd4cc58cf9f038a7e5db5a1b7c48583c1a26"
     },
     {
       "path": "FULLPAGE-VISUAL-REVIEW-20261024.json",
@@ -53,8 +53,8 @@
     },
     {
       "path": "NEXT-REVIEW.md",
-      "bytes": 3422,
-      "sha256": "c83e478768b07cd90c8a4721d689df8caed56f300d004474c7df52af6a0762e8"
+      "bytes": 3388,
+      "sha256": "e5985b91f40ec40932851440b058e67e885eb5bbdba0bd7b2209858558b80e41"
     },
     {
       "path": "NONTERMINAL-FAQ-READ-COVERAGE.json",
@@ -68,8 +68,8 @@
     },
     {
       "path": "RELEASE-LEDGER.json",
-      "bytes": 107447,
-      "sha256": "0b95cbfc9a1921f31e16b20052f203c2e014ec283a9d79e6051df2410dc2c1f7"
+      "bytes": 109543,
+      "sha256": "9ce4aae74be97cf64b49e869d472fe66fc60eef0aeea5cb7360cdf3d07834846"
     },
     {
       "path": "RENDERED-CONTENT-NOTES.json",
@@ -84,7 +84,7 @@
     {
       "path": "SUPPLEMENTARY-NOTES-REVIEW.json",
       "bytes": 68089,
-      "sha256": "728626472aac901efb691ad046c0e49ca08d9851df5a7e919ea2e1e40425fef3"
+      "sha256": "dc8a3af1dbd9db417a4f98daaa891a9d94c2af6513c3ba1bd9941d114d95ffd8"
     },
     {
       "path": "TERMINAL-PROSE-REVIEW.json",
@@ -2932,9 +2932,19 @@
       "sha256": "44e284cf80990f381dce06f820142b36d96603f16ce48ff67f250577432d87bf"
     },
     {
+      "path": "evidence/PR251-MAIN-CI.json",
+      "bytes": 2282,
+      "sha256": "69dad0eb47d44903845da4900cc2fdd9194ca788d2b5c0333f6ce3a5b6a3327e"
+    },
+    {
       "path": "evidence/PR251-PRODUCTION-BROWSER.json",
       "bytes": 78676,
       "sha256": "843a17d72daa497d99cbcc9c1da7b8bc142107c03f7a02daf9a08a085d4e770c"
+    },
+    {
+      "path": "evidence/PR251-PRODUCTION-PROVIDERS.json",
+      "bytes": 1347,
+      "sha256": "98b88eecaadd436d53b7b1272990a8e8af8a537a6cbd9c2ba508217bfab43c89"
     },
     {
       "path": "evidence/PR251-UPDATED-PREMERGE-CHECKS.json",
@@ -15153,8 +15163,8 @@
     },
     {
       "path": "findings/LEGACY-TOKEN-CONTEXT.md",
-      "bytes": 2692,
-      "sha256": "c40f85b0aeb3ba478d68d2acddd9396bf812979358155368d054c07753078d5c"
+      "bytes": 3093,
+      "sha256": "f7692dd94dcf968522eddd651d961bc5095bba2edfa31eab81be667d5d92e12e"
     },
     {
       "path": "findings/LESSON-ILLUSTRATION-LABELS.md",
@@ -15727,7 +15737,7 @@
       "sha256": "75c029c85b57a6d5253685eaf559c5f27e0f41b95cc64f25a1b7c81e4427287b"
     }
   ],
-  "fileCount": 3145,
-  "totalBytes": 665074437,
-  "generatedAt": "2026-10-27T02:39:49.535091+00:00"
+  "fileCount": 3147,
+  "totalBytes": 665080894,
+  "generatedAt": "2026-10-27T02:40:49.902347+00:00"
 }
