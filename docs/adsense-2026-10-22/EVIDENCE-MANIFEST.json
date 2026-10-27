@@ -203,8 +203,8 @@
     },
     {
       "path": "evidence/AUDIT-RESUME-20261027.json",
-      "bytes": 1856,
-      "sha256": "9146a196a63f3adbd83fb9c041c39a342c4c39bd520fb5424aba654a71c1035f"
+      "bytes": 2017,
+      "sha256": "b21794e9f510ea1a717d889c655b2dd5008d8791a64794bec14753c63d6bfb98"
     },
     {
       "path": "evidence/BEGINNER-GUIDE-REPRODUCTION.json",
@@ -950,6 +950,11 @@
       "path": "evidence/NICHE-SAFE-CONTROLS-20261026.json",
       "bytes": 4188,
       "sha256": "9cf355311cfd8d67b1da657d0339afe2152529d1f8d8049a05e1846cc5833871"
+    },
+    {
+      "path": "evidence/NICHE-SEQUENTIAL-KEYBOARD-LOCAL-20261027.json",
+      "bytes": 9329,
+      "sha256": "d9b97b27b5be792b24e622cac1ab69509669dfc510475342ef2a3ed301f6b045"
     },
     {
       "path": "evidence/NICHE-SEQUENTIAL-KEYBOARD-PROBE-20261027.json",
@@ -13177,6 +13182,26 @@
       "sha256": "d20db8a63b58e50bf33216e10c0052e7a5e6d4b6907497f1124424f31f868afb"
     },
     {
+      "path": "evidence/niche-sequential-keyboard-local/sq-1280-14.png",
+      "bytes": 93736,
+      "sha256": "1a723b20e50b7c5169ea1f8377b470f07ada39455880c67d0672267f392a113a"
+    },
+    {
+      "path": "evidence/niche-sequential-keyboard-local/sq-360-7.png",
+      "bytes": 57685,
+      "sha256": "6fce6d28e1420a522b43d352e9e0c9cb0562535b4e1c8ea07b0ee1719f79a07d"
+    },
+    {
+      "path": "evidence/niche-sequential-keyboard-local/sq-360-8.png",
+      "bytes": 90890,
+      "sha256": "ffd3470b1882ae528c0c340c6326329861b7ee72347bef14e613bd68edeafed6"
+    },
+    {
+      "path": "evidence/niche-sequential-keyboard-local/tsla-1280-16.png",
+      "bytes": 164303,
+      "sha256": "2c231d991643a748d8f30f0194f32599e404a002557719381787e7f79c360ce8"
+    },
+    {
       "path": "evidence/niche-shib-before-1280.png",
       "bytes": 143443,
       "sha256": "0987563b5cabf2e0ac771f4583ec735a081f49fe2a246d57be2f11c6ae497ca8"
@@ -15478,8 +15503,8 @@
     },
     {
       "path": "findings/BLOCK-TICKER-CONTEXT.md",
-      "bytes": 1629,
-      "sha256": "a150dcca979146d09e0c53d0019a8149a79d272f2138c19c90f00e3377fa5758"
+      "bytes": 1968,
+      "sha256": "e83c8290aaaea93230ba52b71d5abc0ffea5665efc45b661307d4179f08b90ad"
     },
     {
       "path": "findings/CHART-CHECK-CADENCE.md",
@@ -16142,7 +16167,7 @@
       "sha256": "75c029c85b57a6d5253685eaf559c5f27e0f41b95cc64f25a1b7c81e4427287b"
     }
   ],
-  "fileCount": 3228,
-  "totalBytes": 682682601,
-  "generatedAt": "2026-10-27T03:00:15.795880+00:00"
+  "fileCount": 3233,
+  "totalBytes": 683099044,
+  "generatedAt": "2026-10-27T03:04:50.926169+00:00"
 }
