@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T05:02:23.281287+00:00",
+  "updatedAt": "2026-10-27T09:04:22.180036+00:00",
   "scope": "Actual screenshot viewing by route and stage. Full-page default-state images are separately recorded at all five widths for20 core routes; this is not conditional, accessibility, light-theme, source or whole-audit completion.",
   "routes": {
     "/": {
@@ -689,7 +689,7 @@
       }
     },
     "/trader/-": {
-      "status": "FIRST_FOLD_ONLY",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
       "humanViewedWidths": [
         360,
         1280
@@ -701,10 +701,20 @@
       "evidence": [
         "evidence/contact--trader--360-0.png",
         "evidence/contact--trader--1280-0.png"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Public September2026 member - explicitly shows no account portfolio or server-recorded trades, while explaining leaderboard participation. No numeric performance is invented; virtual/non-audited/non-predictive and delayed/fixed-price caveats read in full."
     },
     "/trader/--1": {
-      "status": "FIRST_FOLD_ONLY",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
       "humanViewedWidths": [
         360,
         1280
@@ -716,10 +726,20 @@
       "evidence": [
         "evidence/contact--trader--360-0.png",
         "evidence/contact--trader--1280-0.png"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Public September2026 member --1 explicitly shows no account portfolio or server-recorded trades, while explaining leaderboard participation. No numeric performance is invented; virtual/non-audited/non-predictive and delayed/fixed-price caveats read in full."
     },
     "/trader/--2": {
-      "status": "FIRST_FOLD_ONLY",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
       "humanViewedWidths": [
         360,
         1280
@@ -731,10 +751,20 @@
       "evidence": [
         "evidence/contact--trader--360-0.png",
         "evidence/contact--trader--1280-0.png"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Public September2026 member --2 explicitly shows no account portfolio or server-recorded trades, while explaining leaderboard participation. No numeric performance is invented; virtual/non-audited/non-predictive and delayed/fixed-price caveats read in full."
     },
     "/trader/--3": {
-      "status": "FIRST_FOLD_ONLY",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
       "humanViewedWidths": [
         360,
         1280
@@ -746,10 +776,20 @@
       "evidence": [
         "evidence/contact--trader--360-0.png",
         "evidence/contact--trader--1280-0.png"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Public September2026 member --3 explicitly shows no account portfolio or server-recorded trades. All explanatory simulation/non-audited/cache/imported-unranked text read. Earlier1920capture contained loading only; fresh h1-settled collection and all five full-page sheets now personally viewed, without inventing a permanent page failure."
     },
     "/trader/-aby47": {
-      "status": "FIRST_FOLD_ONLY",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
       "humanViewedWidths": [
         360,
         1280
@@ -761,7 +801,17 @@
       "evidence": [
         "evidence/contact--trader--360-0.png",
         "evidence/contact--trader--1280-4.png"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "September2026 public member -aby47 shows no account portfolio or server-recorded trades; no performance value invented. Full simulation, un-audited, delayed/cache and imported-unranked explanations read. Earlier360 capture contained loading only and receives no settled-state credit. Fresh h1-settled collection reviewed at all five widths."
     },
     "/trader/-artin-ourado": {
       "status": "FIRST_FOLD_ONLY",
@@ -824,7 +874,7 @@
       ]
     },
     "/trader/-it-": {
-      "status": "FIRST_FOLD_ONLY",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
       "humanViewedWidths": [
         360,
         1280
@@ -836,7 +886,17 @@
       "evidence": [
         "evidence/contact--trader--360-8.png",
         "evidence/contact--trader--1280-8.png"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Public September2026 member -it- explicitly shows no account portfolio or server-recorded trades, while explaining leaderboard participation. No numeric performance is invented; virtual/non-audited/non-predictive and delayed/fixed-price caveats read in full."
     },
     "/trader/-oritz-just": {
       "status": "FIRST_FOLD_ONLY",
@@ -884,7 +944,7 @@
       ]
     },
     "/trader/-risky": {
-      "status": "FIRST_FOLD_ONLY",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
       "humanViewedWidths": [
         360,
         1280
@@ -896,7 +956,17 @@
       "evidence": [
         "evidence/contact--trader--360-8.png",
         "evidence/contact--trader--1280-8.png"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Public September2026 member -risky explicitly shows no account portfolio or server-recorded trades, while explaining leaderboard participation. No numeric performance is invented; virtual/non-audited/non-predictive and delayed/fixed-price caveats read in full."
     },
     "/trader/-rj65": {
       "status": "FIRST_FOLD_ONLY",
@@ -1404,7 +1474,7 @@
       "defaultStateAssessment": "Full empty guest local profile, disabled share action, summary metrics, course-badge empty state, risk cards, disclaimer and full directory/footer viewed at five widths. No clipped cards/headings reproduced. Share/visibility, earned progress and populated account states were not exercised. No supplementary publisher article is source-expected on this utility route."
     },
     "/trader/messimayuri-1": {
-      "status": "FIRST_FOLD_ONLY",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
       "humanViewedWidths": [
         360,
         1280
@@ -1416,7 +1486,17 @@
       "evidence": [
         "evidence/contact--trader--360-40.png",
         "evidence/contact--trader--1280-40.png"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Public unranked snapshot shows395,023 initially and395,534 in later widths, one trade and Provider snapshots with changing fetched/oldest timestamps. Different capture times explain the observed values; imported-unranked/simulation/non-audited caveats remain explicit. No independent valuation or profitable-return claim inferred."
     },
     "/trader/micah-bus0504": {
       "status": "FIRST_FOLD_ONLY",
