@@ -53,8 +53,7 @@ export function GEOKeyTakeaways({ asset }: GEOKeyTakeawaysProps) {
 }
 
 function getDefinitionBullet(asset: Asset, content: ReturnType<typeof getAssetContent>): string {
-  const firstSentence = content.whatIs.split('. ')[0];
-  return `${asset.name} (${asset.symbol}) — ${firstSentence}.`;
+  return `${asset.name} (${asset.symbol}) — ${content.whatIs}`;
 }
 
 function getInfluencersBullet(asset: Asset, content: ReturnType<typeof getAssetContent>): string {

@@ -254,7 +254,7 @@ export default function TradeAsset() {
     "@context": "https://schema.org",
     "@type": "DefinedTerm",
     "name": `${selectedAsset.name} (${selectedAsset.symbol})`,
-    "description": assetContent.whatIs.split('. ')[0] + '.',
+    "description": assetContent.whatIs,
     "inDefinedTermSet": {
       "@type": "DefinedTermSet",
       "name": "TradeHQ Asset Directory"
