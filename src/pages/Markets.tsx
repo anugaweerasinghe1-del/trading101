@@ -24,7 +24,7 @@ const SECTORS = [
   { id: "ai-tech", label: "AI & Tech", description: "Artificial intelligence, semiconductors & software" },
   { id: "crypto-defi", label: "Crypto & DeFi", description: "Bitcoin, Ethereum & DeFi tokens" },
   { id: "mega-cap", label: "Mega Cap", description: "World's largest companies by market cap" },
-  { id: "etf-indices", label: "ETFs & Indices", description: "Diversified funds tracking markets" },
+  { id: "etf-indices", label: "ETFs & Indices", description: "Index-tracking and thematic ETF examples" },
   { id: "forex-currencies", label: "Forex & Currencies", description: "Major and minor currency pairs" },
   { id: "commodities", label: "Commodities", description: "Gold, oil, silver & agricultural markets" },
 ];

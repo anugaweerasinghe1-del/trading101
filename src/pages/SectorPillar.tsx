@@ -68,7 +68,7 @@ const SECTORS = {
   "etf-indices": {
     name: "ETFs & Indices",
     slug: "etf-indices",
-    description: "Exchange-traded funds providing diversified exposure to market indices. From broad market SPY to tech-focused QQQ, build balanced portfolios efficiently.",
+    description: "Selected ETFs include index trackers such as SPY and actively managed thematic funds such as ARKK. Their holdings, objectives and concentration differ; an ETF is not automatically a balanced portfolio.",
     icon: LineChart,
     assetIds: ["spy", "qqq", "iwm", "dia", "voo", "arkk"],
     keywords: ["ETF investing", "index funds", "S&P 500", "passive investing"],
