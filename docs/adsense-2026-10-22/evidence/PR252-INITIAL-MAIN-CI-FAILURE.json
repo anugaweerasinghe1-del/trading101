@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-10-27T04:43:08.513629+00:00",
+  "sha": "8466183898adf733cb7165d1339a79bddcde6da5",
+  "job": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40450309024/job/122011224386",
+  "failingScript": "scripts/verify-browser-investigation.mjs:34",
+  "actual": "OBSERVATION_UNAVAILABLE",
+  "expected": "RENDERED_AT_FOLLOWUP",
+  "scope": "Read-only isolated loopback fixture observation; root cause not yet established. App main build, full editorial browser and isolated auth stages passed before this check. No production stability assertion from fixture failure. All next merges held; local exact-script reproduction pending.",
+  "localExactScriptReproduction": "PASS without script changes; full loopback6-page validation completed locally.",
+  "recovery": "One full rerun of exact merged-SHA workflow40450309024 requested. Preserve original failure; do not weaken assertions or treat localpass as CIpass. Root cause of unavailable original observation remains unverified."
+}

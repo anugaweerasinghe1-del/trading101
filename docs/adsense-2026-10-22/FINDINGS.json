@@ -2137,7 +2137,7 @@
       "sourceEvidence": "evidence/BLOCK-TICKER-PRIMARY-SOURCE-20261027.json",
       "beforeImagesPersonallyViewed": 2,
       "baseSHA": "9af6e6eacab5abdc0d99b89861d45f9943738f61",
-      "releaseHold": "Preview access recovered; all exactcandidate gatesPASS. Merged normally. Exactmain sixchecks/nativeprod/affectedlive/guest checks required.",
+      "releaseHold": "Exactmain Cloudflare compatibility/editorial browser job failed; validation failed and release-readiness skipped. Hold all next merges while diagnosing immutable job122011224386. Actual affected20states and guest30/fourcontrols PASS are insufficient for closeout.",
       "candidateSHA": "b0989d6b0c230c3ffce1648a58568a93a62c70f2",
       "localImagesPersonallyViewed": 4,
       "localEvidence": [
@@ -2150,15 +2150,43 @@
       "mergeSHA": "8466183898adf733cb7165d1339a79bddcde6da5",
       "previewEvidence": "evidence/PR252-UPDATED-PREVIEW-BROWSER.json",
       "previewImagesPersonallyViewed": 4
+    },
+    {
+      "id": "THQ-051",
+      "title": "Fixed dark MegaFooter inherits nearly black text in light theme",
+      "severity": "P2",
+      "type": "Accessibility/readability/theme contrast",
+      "urls": [
+        "https://www.thetradehq.com/trader/me",
+        "https://www.thetradehq.com/niche/btc"
+      ],
+      "scope": "Shared MegaFooter headings and glossary/foreground-based links; other rendered instances may be affected",
+      "state": "FIX_TESTED",
+      "beforeEvidence": "evidence/FOOTER-THEME-BEFORE-20261027.json",
+      "beforeImagesPersonallyViewed": 4,
+      "findingDocument": "findings/FOOTER-THEME-CONTRAST.md",
+      "implementationRisk": "Low: scope dark footer color variables locally; no links, forms, privacy controls, behavior or account changes. Shared presentation needs representative route regression.",
+      "baseSHA": "8466183898adf733cb7165d1339a79bddcde6da5",
+      "releaseHold": "Previous PR252 must fully verify before next merge. Focused footer source/build/browser/native/CI/preview/production validation required.",
+      "localEvidence": [
+        "evidence/FOOTER-THEME-LOCAL-REGRESSION-BROWSER.json",
+        "evidence/FOOTER-THEME-LOCAL-20261027.json",
+        "evidence/FOOTER-THEME-BUILD.txt",
+        "evidence/FOOTER-THEME-TYPES.txt"
+      ],
+      "localImagesPersonallyViewed": 16,
+      "pr": 253,
+      "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/253",
+      "candidateSHA": "61ee68c15e40990a28c9c198c2e346e0db13c6f0"
     }
   ],
-  "updatedAt": "2026-10-27T02:49:46.155225+00:00",
+  "updatedAt": "2026-10-27T04:40:59.795014+00:00",
   "counts": {
-    "siteFindings": 55,
-    "P2": 28,
+    "siteFindings": 56,
+    "P2": 29,
     "P3": 27,
     "publiclyRepaired": 54,
-    "preparedNotMerged": 0,
+    "preparedNotMerged": 1,
     "separateOperationalBlockers": 0,
     "mergedAwaitingProductionVerification": 1,
     "protectedUnapprovedRecordFixes": 0,

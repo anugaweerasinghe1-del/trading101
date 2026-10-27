@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T04:35:22.990762+00:00",
+  "updatedAt": "2026-10-27T04:51:42.281020+00:00",
   "scope": "Individual human viewing of full-page default-state viewport segment contact sheets. Text reading is separately tracked. This is not completion of conditional controls, keyboard/zoom/contrast, primary sources or all route stages. Raw PNG viewport captures remain in workspace; published contact sheets retain their path/width/scroll labels.",
   "routes": [
     {
@@ -451,7 +451,13 @@
         "evidence/fullpage-core-20261024/contact-f927e080cd7b31b4-390-0.jpg",
         "evidence/fullpage-core-20261024/contact-f927e080cd7b31b4-768-0.jpg"
       ],
-      "wholePageReviewComplete": false
+      "wholePageReviewComplete": false,
+      "currentLightFooterFollowup": {
+        "status": "FINDING_REPRODUCED",
+        "finding": "THQ-051",
+        "evidence": "evidence/FOOTER-THEME-BEFORE-20261027.json",
+        "scope": "Fresh fivewidth actual light fullpage sheets personallyviewed; no additional routecountcredit. Main fits, footer headings/glossary nearlyblack onblack; no share/account actions."
+      }
     },
     {
       "path": "/trader/570008",
@@ -5504,6 +5510,90 @@
         "evidence/fullpage-terminal-start-20261027/contact-c5668f91726d3dda-360-0.jpg",
         "evidence/fullpage-terminal-start-20261027/contact-c5668f91726d3dda-390-0.jpg",
         "evidence/fullpage-terminal-start-20261027/contact-c5668f91726d3dda-768-0.jpg"
+      ],
+      "wholePageReviewComplete": false
+    },
+    {
+      "path": "/trader/pityuka1312013",
+      "reviewedAt": "2026-10-27T04:51:42.178262+00:00",
+      "assessment": "Public practice profile displays $100,015 portfolio value, rounded +0.0% return and one trade. Provider snapshots are explicitly identified; fetched and oldest-quote timestamps accompany the delayed/cache/fixed-price explanation. Virtual/un-audited figures and non-predictive results are disclosed. Mobile price-basis label wraps inside its card; desktop metrics fit.",
+      "visualAssessment": "All five widths personally inspected through every full-page contact sheet. No main-content horizontal cut-off/overlap observed. Shared light-theme footer headings, glossary and contact labels are nearly invisible: THQ-051. Captures precede its fix.",
+      "findings": [
+        "THQ-051"
+      ],
+      "status": "FINDING_REPRODUCED",
+      "limitations": "Default light-theme scroll images and actual main text reviewed only. No accounts, share, trades, progress, public-record changes or performance correctness verification; safe navigation, alternate themes, zoom and screen-reader review remain separate.",
+      "sha": "8466183898adf733cb7165d1339a79bddcde6da5",
+      "defaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "publishedEvidence": [
+        "evidence/fullpage-profiles-start-20261027/18b9019c187a9bf9.json",
+        "evidence/fullpage-profiles-start-20261027/contact-18b9019c187a9bf9-1280-0.jpg",
+        "evidence/fullpage-profiles-start-20261027/contact-18b9019c187a9bf9-1920-0.jpg",
+        "evidence/fullpage-profiles-start-20261027/contact-18b9019c187a9bf9-360-0.jpg",
+        "evidence/fullpage-profiles-start-20261027/contact-18b9019c187a9bf9-390-0.jpg",
+        "evidence/fullpage-profiles-start-20261027/contact-18b9019c187a9bf9-768-0.jpg"
+      ],
+      "wholePageReviewComplete": false
+    },
+    {
+      "path": "/trader/andrieh-alhaj",
+      "reviewedAt": "2026-10-27T04:51:42.217480+00:00",
+      "assessment": "Public practice profile displays $100,000, rounded +0.0% and one trade. The price-basis card explicitly says Includes fixed simulator prices. The caveat explains virtual/un-audited figures, cache delays, fixed unsupported prices and non-predictive results; no current quote timestamp is asserted. Four metric cards fit and long price-basis label wraps within its mobile card.",
+      "visualAssessment": "All five widths personally inspected through every full-page contact sheet. No main-content horizontal cut-off/overlap observed. Shared light-theme footer headings, glossary and contact labels are nearly invisible: THQ-051. Captures precede its fix.",
+      "findings": [
+        "THQ-051"
+      ],
+      "status": "FINDING_REPRODUCED",
+      "limitations": "Default light-theme scroll images and actual main text reviewed only. No accounts, share, trades, progress, public-record changes or performance correctness verification; safe navigation, alternate themes, zoom and screen-reader review remain separate.",
+      "sha": "8466183898adf733cb7165d1339a79bddcde6da5",
+      "defaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "publishedEvidence": [
+        "evidence/fullpage-profiles-start-20261027/4e4a84b29afeb6e8.json",
+        "evidence/fullpage-profiles-start-20261027/contact-4e4a84b29afeb6e8-1280-0.jpg",
+        "evidence/fullpage-profiles-start-20261027/contact-4e4a84b29afeb6e8-1920-0.jpg",
+        "evidence/fullpage-profiles-start-20261027/contact-4e4a84b29afeb6e8-360-0.jpg",
+        "evidence/fullpage-profiles-start-20261027/contact-4e4a84b29afeb6e8-390-0.jpg",
+        "evidence/fullpage-profiles-start-20261027/contact-4e4a84b29afeb6e8-768-0.jpg"
+      ],
+      "wholePageReviewComplete": false
+    },
+    {
+      "path": "/trader/charmainehurst27",
+      "reviewedAt": "2026-10-27T04:51:42.253746+00:00",
+      "assessment": "Public practice profile displays $100,000, rounded +0.0% and one trade. Provider snapshots and fetched/oldest-quote timestamps are disclosed alongside virtual-money, un-audited and cache/fixed-price limitations. The long public handle and price-basis label fit the mobile layout; four desktop metric cards remain aligned.",
+      "visualAssessment": "All five widths personally inspected through every full-page contact sheet. No main-content horizontal cut-off/overlap observed. Shared light-theme footer headings, glossary and contact labels are nearly invisible: THQ-051. Captures precede its fix.",
+      "findings": [
+        "THQ-051"
+      ],
+      "status": "FINDING_REPRODUCED",
+      "limitations": "Default light-theme scroll images and actual main text reviewed only. No accounts, share, trades, progress, public-record changes or performance correctness verification; safe navigation, alternate themes, zoom and screen-reader review remain separate.",
+      "sha": "8466183898adf733cb7165d1339a79bddcde6da5",
+      "defaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "publishedEvidence": [
+        "evidence/fullpage-profiles-start-20261027/86b8db9c8a960d30.json",
+        "evidence/fullpage-profiles-start-20261027/contact-86b8db9c8a960d30-1280-0.jpg",
+        "evidence/fullpage-profiles-start-20261027/contact-86b8db9c8a960d30-1920-0.jpg",
+        "evidence/fullpage-profiles-start-20261027/contact-86b8db9c8a960d30-360-0.jpg",
+        "evidence/fullpage-profiles-start-20261027/contact-86b8db9c8a960d30-390-0.jpg",
+        "evidence/fullpage-profiles-start-20261027/contact-86b8db9c8a960d30-768-0.jpg"
       ],
       "wholePageReviewComplete": false
     }

@@ -1,0 +1,9 @@
+# THQ-051 — Fixed dark footer inherits light-theme foreground
+
+P2, low implementation risk. Actual hydrated `/trader/me` and `/niche/btc` at360/1280, light/dark: footer background rgb(5,5,5), light-theme heading rgb(15,15,15) and glossary rgba(15,15,15,.5), while dark heading rgb(234,236,240). Four selected before screenshots personally inspected: light headings and glossary labels nearly invisible, dark control readable. This is an observed secondary-navigation readability defect; no invented AdSense rule.
+
+Root cause: MegaFooter uses fixed near-black backgrounds but semantic foreground/primary variables inherit from the site's light theme. Proposed minimal fix: scope the established dark palette to this intentionally dark footer. Preserve theme elsewhere, exact destinations, content and privacy/signup behavior. Affected source only src/components/MegaFooter.tsx. Test representative shared-footer routes at five widths/light-dark, computed contrast, existing link/consent/form attributes; never submit or activate privacy controls.
+
+Rollback: ordinary revert of the focused presentation commit through protected release, no data rollback. Previous PR252 release gate remains outstanding; no next merge until verified. Whole-page audit remains incomplete.
+
+Local Cloudflare build/editorial/SEO and TypeScript pass. Two representative routes × five widths × light/dark = 20 states pass. Measured heading contrast 17.232:1; alpha-composited glossary text contrast 4.673:1. Footer text, destinations, button/form attributes and root/main palette compare equal with the scoped style removed/restored. Two focused-Enter glossary/back flows pass. Eight selected regression screenshots personally inspected, including actual footer end in light mode. This is bounded evidence, not certification of all footer colors or whole-site accessibility.

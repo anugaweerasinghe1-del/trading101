@@ -39124,7 +39124,7 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "FIRST_FOLD_ONLY",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
         "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
         "humanViewedWidths": [
@@ -39138,7 +39138,17 @@
         "evidence": [
           "evidence/contact--trader--360-48.png",
           "evidence/contact--trader--1280-48.png"
-        ]
+        ],
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Public practice profile displays $100,015 portfolio value, rounded +0.0% return and one trade. Provider snapshots are explicitly identified; fetched and oldest-quote timestamps accompany the delayed/cache/fixed-price explanation. Virtual/un-audited figures and non-predictive results are disclosed. Mobile price-basis label wraps inside its card; desktop metrics fit."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/leaderboard",
@@ -39224,7 +39234,7 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "FIRST_FOLD_ONLY",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
         "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
         "humanViewedWidths": [
@@ -39238,7 +39248,17 @@
         "evidence": [
           "evidence/contact--trader--360-16.png",
           "evidence/contact--trader--1280-16.png"
-        ]
+        ],
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Public practice profile displays $100,000, rounded +0.0% and one trade. The price-basis card explicitly says Includes fixed simulator prices. The caveat explains virtual/un-audited figures, cache delays, fixed unsupported prices and non-predictive results; no current quote timestamp is asserted. Four metric cards fit and long price-basis label wraps within its mobile card."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/leaderboard",
@@ -39314,7 +39334,7 @@
         "credibility": "Source/provenance follow-up pending"
       },
       "visualReview": {
-        "status": "FIRST_FOLD_ONLY",
+        "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
         "allFiveCaptured": true,
         "limitation": "Capture is not human inspection; first-fold manually viewed subset recorded separately.",
         "humanViewedWidths": [
@@ -39328,7 +39348,17 @@
         "evidence": [
           "evidence/contact--trader--360-24.png",
           "evidence/contact--trader--1280-24.png"
-        ]
+        ],
+        "fullPageDefaultStateViewedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "fullPageDefaultEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "wholePageReviewComplete": false,
+        "defaultStateAssessment": "Public practice profile displays $100,000, rounded +0.0% and one trade. Provider snapshots and fetched/oldest-quote timestamps are disclosed alongside virtual-money, un-audited and cache/fixed-price limitations. The long public handle and price-basis label fit the mobile layout; four desktop metric cards remain aligned."
       },
       "safeInternalNavigation": {
         "destination": "https://www.thetradehq.com/leaderboard",
@@ -46724,5 +46754,5 @@
     "individualActualRenderedProseComparisonsWithPreviouslyFullyReadBaseline": 85,
     "scope": "441 main texts/states covered, not441 fully completed page/source/control/human-visual reviews. See TERMINAL-TEMPLATE-COMPARISONS.json for raw texts and deltas."
   },
-  "updatedAt": "2026-10-27T04:35:24.617572+00:00"
+  "updatedAt": "2026-10-27T04:51:42.312695+00:00"
 }
