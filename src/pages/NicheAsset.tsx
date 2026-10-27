@@ -88,6 +88,25 @@ export default function NicheAsset() {
             </p>
           </header>
 
+          {(niche.assetId === "ftm" || niche.assetId === "matic") && (
+            <section className="rounded-2xl border border-border bg-card p-6 space-y-3" aria-label="Legacy token context">
+              <h2 className="text-lg font-semibold">Legacy token context</h2>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {niche.assetId === "ftm"
+                  ? "This practice guide retains the legacy Fantom (FTM) label. Sonic Labs documents an upgrade from FTM to Sonic's S token. The simulator reference shown here is not a current S quote or a token conversion."
+                  : "This practice guide retains the legacy Polygon (MATIC) label. Polygon documents the migration from MATIC to POL, its native gas and staking token. The simulator reference shown here is not a current POL quote or a token conversion."}
+              </p>
+              <a
+                href={niche.assetId === "ftm" ? "https://docs.soniclabs.com/migration/app-token-migration" : "https://docs.polygon.technology/pos/concepts/tokens/matic-to-pol"}
+                className="text-sm text-primary underline underline-offset-4"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {niche.assetId === "ftm" ? "Sonic Labs migration documentation" : "Polygon migration documentation"}
+              </a>
+            </section>
+          )}
+
           {/* Key Stats Table */}
           <section>
             <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
