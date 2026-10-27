@@ -107,6 +107,23 @@ export default function NicheAsset() {
             </section>
           )}
 
+          {niche.assetId === "sq" && (
+            <section className="rounded-2xl border border-border bg-card p-6 space-y-3" aria-label="Legacy ticker context">
+              <h2 className="text-lg font-semibold">Legacy ticker context</h2>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                This practice guide retains Block's legacy SQ label. Block's investor relations site identifies the company as XYZ. The simulator reference shown here is not a current XYZ quote.
+              </p>
+              <a
+                href="https://investors.block.xyz/stock-info/default.aspx"
+                className="text-sm text-primary underline underline-offset-4"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Block investor relations — stock information
+              </a>
+            </section>
+          )}
+
           {/* Key Stats Table */}
           <section>
             <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
