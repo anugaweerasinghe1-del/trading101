@@ -2169,13 +2169,13 @@
         "https://www.thetradehq.com/niche/btc"
       ],
       "scope": "Shared MegaFooter headings and glossary/foreground-based links; other rendered instances may be affected",
-      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+      "state": "PUBLICLY_VERIFIED",
       "beforeEvidence": "evidence/FOOTER-THEME-BEFORE-20261027.json",
       "beforeImagesPersonallyViewed": 4,
       "findingDocument": "findings/FOOTER-THEME-CONTRAST.md",
       "implementationRisk": "Low: scope dark footer color variables locally; no links, forms, privacy controls, behavior or account changes. Shared presentation needs representative route regression.",
       "baseSHA": "8466183898adf733cb7165d1339a79bddcde6da5",
-      "releaseHold": "All four exact-candidate checks/native previews and20actualpreview states/two safe flows with12selectedimages viewed pass; ordinaryprotected merge complete. Exact-main six checks/native production/actualaffected+guest checks pending. No nextmerge.",
+      "releaseHold": null,
       "localEvidence": [
         "evidence/FOOTER-THEME-LOCAL-REGRESSION-BROWSER.json",
         "evidence/FOOTER-THEME-LOCAL-20261027.json",
@@ -2188,18 +2188,26 @@
       "candidateSHA": "61ee68c15e40990a28c9c198c2e346e0db13c6f0",
       "previewEvidence": "evidence/PR253-UPDATED-PREVIEW-BROWSER.json",
       "previewImagesPersonallyViewed": 12,
-      "mergeSHA": "c4c8e9b827311bee6343a1c5f24f674e33f40c9d"
+      "mergeSHA": "c4c8e9b827311bee6343a1c5f24f674e33f40c9d",
+      "productionEvidence": "evidence/PR253-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR253-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR253-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR253-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 12,
+      "liveRecheck": "PASS exact merged production: [24] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
     }
   ],
-  "updatedAt": "2026-10-27T04:55:19.601855+00:00",
+  "updatedAt": "2026-10-27T08:50:34.558630+00:00",
   "counts": {
     "siteFindings": 56,
     "P2": 29,
     "P3": 27,
-    "publiclyRepaired": 55,
+    "publiclyRepaired": 56,
     "preparedNotMerged": 0,
     "separateOperationalBlockers": 0,
-    "mergedAwaitingProductionVerification": 1,
+    "mergedAwaitingProductionVerification": 0,
     "protectedUnapprovedRecordFixes": 0,
     "approvedPublishedRecordFixesBlockedOnCredential": 0,
     "mergedFallbackAwaitingProductionVerification": 0

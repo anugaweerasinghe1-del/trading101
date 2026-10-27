@@ -8,8 +8,8 @@
     },
     {
       "path": "BLOCKED-STATUS.md",
-      "bytes": 12151,
-      "sha256": "dac4339428c7f3831c2e0d19a4400461bfb628b69e1f7563d98fd75d0583c566"
+      "bytes": 12150,
+      "sha256": "2db3f083329364d0dd867235341185258ab0e849a501aeca9c1f8d5c47638db1"
     },
     {
       "path": "CHECKPOINT.md",
@@ -33,8 +33,8 @@
     },
     {
       "path": "FINDINGS.json",
-      "bytes": 140932,
-      "sha256": "d929081c0d04ae554c7001b23482cb0ebe39a4402e7c941a27843e26c8599830"
+      "bytes": 141140,
+      "sha256": "0e5a8deff94e0781d3b05b2b26eb0249e1c8056e760b44c26485e814b996bdb1"
     },
     {
       "path": "FULLPAGE-VISUAL-REVIEW-20261024.json",
@@ -53,8 +53,8 @@
     },
     {
       "path": "NEXT-REVIEW.md",
-      "bytes": 3422,
-      "sha256": "ec1c43129e3d0b5485aa1dee964575f27f00279dedcae46b9389c3a870d63926"
+      "bytes": 3388,
+      "sha256": "bbcb4ee2936a3e47c58c3d96153d25dd2fccb1d18276e661416d58705f7f2831"
     },
     {
       "path": "NONTERMINAL-FAQ-READ-COVERAGE.json",
@@ -68,8 +68,8 @@
     },
     {
       "path": "RELEASE-LEDGER.json",
-      "bytes": 111965,
-      "sha256": "e6a5cd40f55491ad968be95b3623a8b4d5114e09617d65d55e1e6c3401f08c47"
+      "bytes": 114126,
+      "sha256": "214c986c820d10594cd64a6cfaa630493f112fcd733082915671a1c5b70ec682"
     },
     {
       "path": "RENDERED-CONTENT-NOTES.json",
@@ -84,7 +84,7 @@
     {
       "path": "SUPPLEMENTARY-NOTES-REVIEW.json",
       "bytes": 68089,
-      "sha256": "08ea958c20123b953a6703901e5b311e715cb0e7f44f5b9162a38a71354ada1d"
+      "sha256": "20416ba0b31004e75503ad2a2c422f268a47eb762c15861152fe4f70a2ef1673"
     },
     {
       "path": "TERMINAL-PROSE-REVIEW.json",
@@ -203,8 +203,8 @@
     },
     {
       "path": "evidence/AUDIT-RESUME-20261027.json",
-      "bytes": 3260,
-      "sha256": "7ed5b3356b69b798e29a59b138850333b35b6a91a1fdd55a709a9d972f687b9f"
+      "bytes": 3435,
+      "sha256": "f41f6193c3ea60be9d54fffed040cee675b5337689b2166dbaac4703816e0739"
     },
     {
       "path": "evidence/BEGINNER-GUIDE-REPRODUCTION.json",
@@ -560,6 +560,16 @@
       "path": "evidence/FOOTER-THEME-LOCAL-REGRESSION-BROWSER.json",
       "bytes": 670758,
       "sha256": "934c314e32b857b38efe92b1f5fb6b3f6c1550993104380bf1e3ecb736e7442f"
+    },
+    {
+      "path": "evidence/FOOTER-THEME-ORIGINAL-ROUTE-PRODUCTION.json",
+      "bytes": 4873,
+      "sha256": "14ef33c570398286ac0dedc84fed0dd1f3c1bb232068b95a23c8a06a7e1d1ba7"
+    },
+    {
+      "path": "evidence/FOOTER-THEME-PRODUCTION-BROWSER.json",
+      "bytes": 670037,
+      "sha256": "3b77fef7e85c9a8e5373a5a2da67fa4272496933911e2b766a9ea40eb91e59d2"
     },
     {
       "path": "evidence/FOOTER-THEME-TYPES.txt",
@@ -1220,6 +1230,11 @@
       "path": "evidence/POST-PR252-GUEST-SMOKE.json",
       "bytes": 8549,
       "sha256": "9d71f183766029c2678ccc5030b4b5a49fd75ee1617174062849666fe3411bb1"
+    },
+    {
+      "path": "evidence/POST-PR253-GUEST-SMOKE.json",
+      "bytes": 8549,
+      "sha256": "a7382bef08f283e2cbdaa10818cb52b879194e7208fc984c2ad080457a015dcb"
     },
     {
       "path": "evidence/PR212-MONITOR-DIAGNOSIS.json",
@@ -3120,6 +3135,21 @@
       "path": "evidence/PR252-UPDATED-PREVIEW-SIGNALS.json",
       "bytes": 803,
       "sha256": "430f737f83c13622690c823f1564468f4e0840140a45e26cc3d9396be31dc143"
+    },
+    {
+      "path": "evidence/PR253-MAIN-CI.json",
+      "bytes": 2282,
+      "sha256": "e8ac9805177a166ac1c2f81bf6571fe0ea0504fd3afe0d881e15f1c5dd3a287e"
+    },
+    {
+      "path": "evidence/PR253-PRODUCTION-BROWSER.json",
+      "bytes": 675164,
+      "sha256": "6ceca29cd7789271d8fdb7c852582ae0e34ee9ecf9e6d98278ea6532a296e234"
+    },
+    {
+      "path": "evidence/PR253-PRODUCTION-PROVIDERS.json",
+      "bytes": 1347,
+      "sha256": "c273d168f98f0afe8b518696528eb819b1762057814048be3d6078943ea95830"
     },
     {
       "path": "evidence/PR253-UPDATED-PREMERGE-CHECKS.json",
@@ -5105,6 +5135,106 @@
       "path": "evidence/footer-theme-local/_niche_btc-360-light-top.png",
       "bytes": 36403,
       "sha256": "d9bc533623e7e0ad14f54ced1b75e6f55010cfc31851a0ba6cec8693e7d9936d"
+    },
+    {
+      "path": "evidence/footer-theme-production/_markets-1280-dark-footer-end.png",
+      "bytes": 64714,
+      "sha256": "76513e9641b7b8242c80f6a3da8a3acf5e3e9ab2ac53df0284747e7a41f15e2d"
+    },
+    {
+      "path": "evidence/footer-theme-production/_markets-1280-dark-top.png",
+      "bytes": 115745,
+      "sha256": "20bcbd502433b5fd196c5979d016c851f12cd1829ae13a9eff335572edd612bb"
+    },
+    {
+      "path": "evidence/footer-theme-production/_markets-1280-light-footer-end.png",
+      "bytes": 64714,
+      "sha256": "79814db2fc3b2142451657a52f21891aa88c2ba1d295652899372a7c698779b9"
+    },
+    {
+      "path": "evidence/footer-theme-production/_markets-1280-light-top.png",
+      "bytes": 147531,
+      "sha256": "92bc757571dab8b5d1566882afc16d918cc057d91a6cbea3ae4173902520a0f9"
+    },
+    {
+      "path": "evidence/footer-theme-production/_markets-360-dark-footer-end.png",
+      "bytes": 52815,
+      "sha256": "d3f9adf5a13780b016da33bfdcd6f77905872005beb1411bbbd848ae0e5c4e3c"
+    },
+    {
+      "path": "evidence/footer-theme-production/_markets-360-dark-top.png",
+      "bytes": 40609,
+      "sha256": "d2130410db474219dd18926f7daa6f7f6815b8f87277e7a1190afff8d6b956ca"
+    },
+    {
+      "path": "evidence/footer-theme-production/_markets-360-light-footer-end.png",
+      "bytes": 52480,
+      "sha256": "192e35819c14bfc1e8ea8f3c512c56cf0c0a1fa979064d66f470b6985de26cfa"
+    },
+    {
+      "path": "evidence/footer-theme-production/_markets-360-light-top.png",
+      "bytes": 46934,
+      "sha256": "2609296ad9a421d3bcc7ed927dfc960ce2645751ad1ae3dfccb91f551f367b9f"
+    },
+    {
+      "path": "evidence/footer-theme-production/_niche_btc-1280-dark-footer-end.png",
+      "bytes": 78014,
+      "sha256": "6dbedc6c7a194811db0e1eeba2375c117d85f40383c8d5ad4ea7ae6f6b781b4a"
+    },
+    {
+      "path": "evidence/footer-theme-production/_niche_btc-1280-dark-top.png",
+      "bytes": 125138,
+      "sha256": "c5e33becfcaa00f19140eb539b13ca3ac6a1c84dde42b186c1f1add00a85d4b4"
+    },
+    {
+      "path": "evidence/footer-theme-production/_niche_btc-1280-light-footer-end.png",
+      "bytes": 77347,
+      "sha256": "49ee7365dd1ef4f8f88e886fe96ee2bb43b102fead8ef40f097349b3377df053"
+    },
+    {
+      "path": "evidence/footer-theme-production/_niche_btc-1280-light-top.png",
+      "bytes": 122449,
+      "sha256": "41929698faf3a6e8cf9208caa0945e8ef240e2c161aedc30b2aa616d7ab40838"
+    },
+    {
+      "path": "evidence/footer-theme-production/_niche_btc-360-dark-footer-end.png",
+      "bytes": 55690,
+      "sha256": "826f98753537b287cad504193f246090833de7457f50c7cabc884e10440093de"
+    },
+    {
+      "path": "evidence/footer-theme-production/_niche_btc-360-dark-top.png",
+      "bytes": 36217,
+      "sha256": "5b4466172bed12532cb4c613d68fd359b6d3a71da0f1910b92fe30b60fb2b4da"
+    },
+    {
+      "path": "evidence/footer-theme-production/_niche_btc-360-light-footer-end.png",
+      "bytes": 55265,
+      "sha256": "8dc652e9b0ee90ba945305214cbb54fc734de8b0a1a2f068b6d39a326abbcb91"
+    },
+    {
+      "path": "evidence/footer-theme-production/_niche_btc-360-light-top.png",
+      "bytes": 37171,
+      "sha256": "900998aaa9a92190bb2d70f06a876d46b9e1427527b104c2e426f2a67050e138"
+    },
+    {
+      "path": "evidence/footer-theme-production/_trader_me-1280-dark-top.png",
+      "bytes": 114688,
+      "sha256": "99b7990f20454bfaf7b6cdfe175de5ab8d0d6db8ee5e0beeb259bda1a1992e21"
+    },
+    {
+      "path": "evidence/footer-theme-production/_trader_me-1280-light-top.png",
+      "bytes": 114884,
+      "sha256": "f58f9209e47de2be7685e4ce9e9e7a114eb3e84ce025675816ea2510dc979883"
+    },
+    {
+      "path": "evidence/footer-theme-production/_trader_me-360-dark-top.png",
+      "bytes": 33718,
+      "sha256": "ee2f6223881d6af14077ac3db13c5d02b219a2f516f5dc7d883fb818716efdc7"
+    },
+    {
+      "path": "evidence/footer-theme-production/_trader_me-360-light-top.png",
+      "bytes": 33826,
+      "sha256": "8081b14593449f5f5859bb8470fd191abd5b0e23a41af9722ea0719cfaa867a9"
     },
     {
       "path": "evidence/footer-theme-updated-preview/_markets-1280-dark-footer-end.png",
@@ -10490,6 +10620,11 @@
       "path": "evidence/fullpage-learning-20261024/fdf33dfda1bc755b.json",
       "bytes": 31414,
       "sha256": "8a8b6c65250e10c96d912687463c9232917767c1ac6b28447ffefa16ca3bc82a"
+    },
+    {
+      "path": "evidence/fullpage-profiles-fourth-20261027/SUMMARY.json",
+      "bytes": 845,
+      "sha256": "982b5e0bd45e7d37d19f12b5cdcebdbd9c14f436313058a142aa2f2c8a4061d1"
     },
     {
       "path": "evidence/fullpage-profiles-second-20261027/3f6478e465449a59.json",
@@ -17222,7 +17357,7 @@
       "sha256": "75c029c85b57a6d5253685eaf559c5f27e0f41b95cc64f25a1b7c81e4427287b"
     }
   ],
-  "fileCount": 3444,
-  "totalBytes": 719760626,
-  "generatedAt": "2026-10-27T05:04:01.877758+00:00"
+  "fileCount": 3471,
+  "totalBytes": 722596181,
+  "generatedAt": "2026-10-27T08:50:38.977065+00:00"
 }

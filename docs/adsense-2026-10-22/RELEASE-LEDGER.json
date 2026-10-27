@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T04:55:19.601855+00:00",
+  "updatedAt": "2026-10-27T08:50:34.558630+00:00",
   "releases": [
     {
       "finding": "THQ-001",
@@ -2430,6 +2430,66 @@
         "safeControls": 4,
         "productionImagesPersonallyViewed": 4
       }
+    },
+    {
+      "pr": 253,
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/253",
+      "candidateSHA": "61ee68c15e40990a28c9c198c2e346e0db13c6f0",
+      "mergeSHA": "c4c8e9b827311bee6343a1c5f24f674e33f40c9d",
+      "state": "PUBLICLY_VERIFIED",
+      "findings": [
+        "THQ-051"
+      ],
+      "production": {
+        "checkedAt": "2026-10-27T08:48:52.192711+00:00",
+        "mergeSHA": "c4c8e9b827311bee6343a1c5f24f674e33f40c9d",
+        "outcome": "PASS",
+        "sourceJob": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40453122197/job/122022965545",
+        "scope": "Authenticated native provider reads by trusted exact-main release-readiness job. Both production deployments match the immutable merge SHA. No provider mutations.",
+        "cloudflare": {
+          "observedAt": "2026-10-27T05:12:46.927Z",
+          "project": "tradehq-preview",
+          "activeProduction": {
+            "id": "b11eee6d-af0d-457f-9a24-d98fe7e0e164",
+            "sha": "c4c8e9b827311bee6343a1c5f24f674e33f40c9d",
+            "environment": "production",
+            "branch": "main",
+            "status": "success",
+            "createdAt": "2026-10-27T05:03:15.996159Z"
+          }
+        },
+        "vercel": {
+          "schema": "tradehq-vercel-production-evidence-v1",
+          "deploymentId": "dpl_GV9MDTQ1pdbyfETTkmS3cmR1sMtD",
+          "teamId": "team_fjZ5ggg0P43MsYFSIHbeHAAO",
+          "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+          "commitSha": "c4c8e9b827311bee6343a1c5f24f674e33f40c9d",
+          "target": "production",
+          "state": "READY",
+          "activeAlias": "thetradehq.com",
+          "createdAt": 1793077396641,
+          "observedAt": 1793077966927,
+          "requests": 2,
+          "authorization": {
+            "merge": false,
+            "productionRelease": false
+          }
+        }
+      },
+      "mainCIEvidence": "evidence/PR253-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR253-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR253-GUEST-SMOKE.json"
+      ],
+      "liveRecheck": {
+        "outcome": "PASS",
+        "affectedStates": [
+          24
+        ],
+        "guestStates": 30,
+        "safeControls": 4,
+        "productionImagesPersonallyViewed": 12
+      }
     }
   ],
   "nextCandidate": null,
@@ -2611,9 +2671,9 @@
     "reason": "Releasecyclecomplete; nonewmergeofthisPR."
   },
   "latestGitHubState": "evidence/FINAL-GITHUB-STATE-20261023.json",
-  "latestGitHubProviderBindingEvidence": "evidence/PR252-PRODUCTION-PROVIDERS.json",
-  "latestMainValidationEvidence": "evidence/PR252-MAIN-CI.json",
-  "latestVerifiedProductionSHA": "8466183898adf733cb7165d1339a79bddcde6da5",
+  "latestGitHubProviderBindingEvidence": "evidence/PR253-PRODUCTION-PROVIDERS.json",
+  "latestMainValidationEvidence": "evidence/PR253-MAIN-CI.json",
+  "latestVerifiedProductionSHA": "c4c8e9b827311bee6343a1c5f24f674e33f40c9d",
   "summaryQuoteContextCandidate": {
     "pr": 221,
     "candidateSHA": "67ba761a85915ad047081206ee671a823c6f7bed",
@@ -2627,15 +2687,11 @@
     "mergeSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
     "reason": "Releasecyclecomplete; nonewmergeofthisPR."
   },
-  "remainingConfirmedSiteFixes": 1,
+  "remainingConfirmedSiteFixes": 0,
   "exhaustiveAuditComplete": false,
-  "remainingKnownSafeFindings": 1,
+  "remainingKnownSafeFindings": 0,
   "nextReleasePriority": [],
-  "pendingReleaseVerification": {
-    "pr": 253,
-    "mergeSHA": "c4c8e9b827311bee6343a1c5f24f674e33f40c9d",
-    "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
-  },
+  "pendingReleaseVerification": null,
   "protectedPublishedContentFinding": "THQ035/036 published revision2 independently verified; credential and approval blockers superseded by owner-approved PR238 operation. No new production writes in this continuation.",
   "dailyChartUnitsCandidate": {
     "pr": 234,
