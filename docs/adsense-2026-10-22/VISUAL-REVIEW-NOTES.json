@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-26T15:43:13.023985+00:00",
+  "updatedAt": "2026-10-27T02:39:45.970038+00:00",
   "scope": "Actual screenshot viewing by route and stage. Full-page default-state images are separately recorded at all five widths for20 core routes; this is not conditional, accessibility, light-theme, source or whole-audit completion.",
   "routes": {
     "/": {
@@ -1759,7 +1759,7 @@
       "defaultStateAssessment": "Personally viewed all contact sheets/every captured default segment at360,390,768,1280,1920 including heading/byline, complete body/worksheet/reference, simulator/share/related-term area and entire footer. Current rendered MAIN text read. No default clipping or horizontal document overflow observed. No share activation, accounts/orders/forms or record writes. Light/zoom/keyboard/control/primary-source/cross-site originality follow-ups remain. Default topic distinguishes accounting weights summing100percent from influence on returns and labels80/15/5,60/30/10,40/60 as hypothetical. Age shortcut75/50/30percentstock arithmetic is correct and explicitly insufficient for suitability. Two illustration cards fit allwidths, but the second contains conspicuous nonword labels in the allocation chart, requiring original-asset and live reproduction; no numerical educational credit is given to those labels. Tabs and Continue were not activated."
     },
     "/niche/shib": {
-      "status": "PARTIAL_VISUAL_REVIEW",
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
       "humanViewedWidths": [
         390
       ],
@@ -1772,7 +1772,17 @@
       "evidence": [
         "evidence/niche-shib-before-390.png",
         "evidence/pr220-niche-shib-360.png"
-      ]
+      ],
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Shiba Inu(SHIB), Crypto reference0.00001245/+7.32%; full crypto paragraph and three FAQs read. Five complete sheets personally viewed: eight-decimal tiny reference remains nonzero/readable and fits small-phone table; heading/badge, mentor/CTA/FAQs/footer fit. Generic Bitcoin correlation/network prose does not explain SHIB token mechanics or measured correlation. Independent-value/source follow-up remains, no new default-layout defect established. Full-light scrolling, actual safe navigation, sequential keyboard/zoom/screenreader stages remain. Whole-page incomplete; no orders/accounts/progress/forms used."
     },
     "/niche/btc": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -4054,6 +4064,136 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Netflix Inc.(NFLX) Stock reference485.6/-0.65%; complete stock-driver paragraph and three FAQs read. Five full-page sheets personally viewed: phone heading and stock badge fit, table/reference labels and CTA/FAQ/footer layouts fit. Doubled period after Inc. cosmetic; generic prose does not cover Netflix subscriber/advertising/cost exposures. Independent-value/source follow-up remains; no new default-layout defect established. Full light scroll, actual safe navigation, sequential keyboard/zoom/screenreader and material-source follow-ups remain. Whole-page incomplete; no order/account/progress/form actions."
+    },
+    "/niche/nat-gas": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Natural Gas(NG), Commodity reference2.85/+2.89%, full commodity-driver paragraph and three native FAQs actually read. All five full-page contact sheets personally viewed: phone name wraps with badge, tablelabelwraps and signedpercent clear; mentor/CTA/FAQ/footer fit. Seasonal-pattern claim plausible generic category language but no dated energy source or physical pricing unit/contract definition; no futures-contract/current-price inference. Independent-value/source/unit follow-up remains. Light/full keyboard/zoom/screenreader and safe control stages remain. Whole-page incomplete; no orders/accounts/progress/forms used."
+    },
+    "/niche/near": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "NEAR Protocol(NEAR), Crypto reference3.85/+6.06%, complete crypto-driver paragraph and three native FAQs actually read. All five full-page sheets personally viewed: mobile two-line title, category badge, statistics/mentor/CTA/FAQ/footer fit. Generic network/Bitcoin-correlation prose does not supply protocol-specific mechanics or measured correlation; independent-value/source follow-up remains. No new default-layout defect established. Light/full keyboard/zoom/screenreader and safe control stages remain. Whole-page incomplete; no orders/accounts/progress/forms used."
+    },
+    "/niche/nvda": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "NVIDIA Corporation(NVDA), Stock reference190.2/+2.81%, full stock-driver paragraph and three FAQs actually read. All five full-page sheets personally viewed: three-line360 title retains stock badge; table, paragraph/CTA/FAQs/footer fit. Generic drivers do not provide NVIDIA semiconductor/customer/revenue reasoning; no current earnings, split-adjusted quote or return claim independently verified. Source/independent-value follow-up remains. Light/full keyboard/zoom/screenreader and safe control stages remain. Whole-page incomplete; no orders/accounts/progress/forms used."
+    },
+    "/niche/oil": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Crude Oil WTI(WTI), Commodity reference78.25/-1.82%, full commodity-driver paragraph and three FAQs actually read. All five full-page sheets personally viewed: mobile heading, badge, reference rows, mentor/CTA/FAQ/footer fit. Broad supply/demand/geopolitical/seasonal prose lacks dated energy source or physical pricing/contract unit; no exact futures-contract equivalence inferred from WTI label. Independent-value/source/unit follow-up remains. Light/full keyboard/zoom/screenreader and safe control stages remain. Whole-page incomplete; no orders/accounts/progress/forms used."
+    },
+    "/niche/orcl": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Oracle Corporation(ORCL), Stock reference118.45/+1.85%; entire stock-driver paragraph and three FAQs read. Five full-page sheets personally viewed: three-line360 heading avoids stock badge collision, table/card/CTA/FAQ/footer fit. Generic driver reuse provides no Oracle-specific cloud/database/licensing explanation or dated source; no current-market inference. Independent-value/source follow-up remains. Full-light scrolling, actual safe navigation, sequential keyboard/zoom/screenreader stages remain. Whole-page incomplete; no orders/accounts/progress/forms used."
+    },
+    "/niche/pltr": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Palantir Technologies(PLTR), Stock reference21.85/+4.54%; full stock-driver paragraph and three FAQs read. Five complete sheets personally viewed: long mobile heading wraps across three lines, statistic rows and long FAQ answers fit; CTAs and footer remain available. Generic stock template does not explain Palantir contract/customer exposures; independent-value/source follow-up remains. No new default-layout defect established. Full-light scrolling, actual safe navigation, sequential keyboard/zoom/screenreader stages remain. Whole-page incomplete; no orders/accounts/progress/forms used."
+    },
+    "/niche/qcom": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Qualcomm Inc.(QCOM), Stock reference145.8/+2.24%; full paragraph and three FAQs read. All five complete sheets personally viewed: two-line phone heading, table/mentor/CTA/FAQ/footer fit. Minor doubled period after Inc. cosmetic; generic stock drivers omit Qualcomm handset/licensing context. Independent-value/source follow-up remains, no unsupported current-company/earnings claim certified. Full-light scrolling, actual safe navigation, sequential keyboard/zoom/screenreader stages remain. Whole-page incomplete; no orders/accounts/progress/forms used."
+    },
+    "/niche/shop": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Shopify Inc.(SHOP), Stock reference78.5/+3.77%; full earnings/guidance/industry/valuation paragraph and all three rendered FAQs read. Five complete sheets personally viewed: 360 heading wraps cleanly to two lines, tables, mentor, practice/basic links and FAQ cards fit; footer/contact/legal remain reachable. Generic stock driver prose lacks Shopify commerce/subscription-specific context or worked examples; independent-value/source follow-up remains. Inc.. introductory punctuation is cosmetic. No new default-layout defect established. Full-light scrolling, safe navigation, sequential keyboard/zoom/screenreader follow-up remains; whole-page incomplete. No orders/accounts/progress/forms used."
+    },
+    "/niche/silver": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Silver(XAG), Commodity reference23.45/+1.21%; supply/demand, currency and macro paragraph and all three rendered FAQs read. Five complete sheets personally viewed: narrow-phone price/change labels wrap within cells, XAG heading and commodity badge fit, mentor/CTAs/FAQ/footer show no overlap or horizontal clipping. Generic seasonal/geopolitical drivers lack silver-specific industrial/precious-metal explanation or physical quotation units; primary-source/value follow-up remains. No new default-layout defect established. Full-light scrolling, safe navigation, sequential keyboard/zoom/screenreader follow-up remains; whole-page incomplete. No orders/accounts/progress/forms used."
+    },
+    "/niche/sol": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Solana(SOL), Crypto reference248.5/+6.33%; full network/regulation/liquidity paragraph and all three rendered FAQs read. Five complete sheets personally viewed: heading/badge, reference table, mentor prose, practice/basic CTAs, FAQ cards and full footer fit across five widths. Generic network metrics/Bitcoin correlation assertions provide no Solana mechanism or measured correlation; source/independent-value follow-up remains. No new default-layout defect established. Full-light scrolling, safe navigation, sequential keyboard/zoom/screenreader follow-ups remain. Whole-page incomplete; no orders/accounts/progress/forms used."
     }
   }
 }

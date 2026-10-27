@@ -2013,7 +2013,7 @@
         "https://www.thetradehq.com/sectors/etf-indices",
         "https://www.thetradehq.com/markets"
       ],
-      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+      "state": "PUBLICLY_VERIFIED",
       "implementationRisk": "Low; two static descriptive strings only",
       "sourceEvidence": "evidence/STRATEGY-SECTOR-PRIMARY-SOURCE-FOLLOWUP-20261026.json",
       "findingDocument": "findings/ETF-DIRECTORY-SCOPE.md",
@@ -2021,7 +2021,7 @@
         "src/pages/SectorPillar.tsx",
         "src/pages/Markets.tsx"
       ],
-      "releaseHold": "All six exact-main/native production and actual live/guest proofs remain. No next merge.",
+      "releaseHold": null,
       "pr": 248,
       "candidateSHA": "64b53d22f25150acaf9936cbda639661d42fbb4d",
       "baseSHA": "e672a93b9c36641b16492cbb77aa417fbe37ed59",
@@ -2030,7 +2030,15 @@
       "previewBrowserEvidence": "evidence/PR248-UPDATED-PREVIEW-BROWSER.json",
       "previewImagesPersonallyViewed": 8,
       "previousCandidateSHA": "6ab3b7e374f1a4d4deb68e49eb7a785f7a7f34d5",
-      "mergeSHA": "4120be70fd4acb0f8edee0b1b6028c5561f26ab4"
+      "mergeSHA": "4120be70fd4acb0f8edee0b1b6028c5561f26ab4",
+      "productionEvidence": "evidence/PR248-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR248-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR248-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR248-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 8,
+      "liveRecheck": "PASS exact merged production: [20] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
     },
     {
       "id": "THQ-048",
@@ -2084,22 +2092,35 @@
         "https://www.thetradehq.com/niche/matic"
       ],
       "scope": "Two authored public guide bodies; no instrument migration or provider change",
-      "state": "CONFIRMED_COPY_ONLY_REMEDIATION_QUEUED",
+      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
       "implementationRisk": "Low: static explanatory paragraphs and official references; financial identifiers/state unchanged",
       "findingDocument": "findings/LEGACY-TOKEN-CONTEXT.md",
       "beforeEvidence": "evidence/LEGACY-TOKEN-BEFORE-BROWSER.json",
       "sourceEvidence": "evidence/TOKEN-MIGRATION-PRIMARY-SOURCE-FOLLOWUP-20261026.json",
       "beforeImagesPersonallyViewed": 4,
-      "releaseHold": "Prepare isolated content-only candidate after serial pending safe releases; no financial/token conversion changes."
+      "releaseHold": "All six exact-main/native production and actual live/guest proofs remain. No next merge.",
+      "pr": 251,
+      "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/251",
+      "candidateSHA": "15834d42c54ea55a244fede881a6e270682899fe",
+      "baseSHA": "4120be70fd4acb0f8edee0b1b6028c5561f26ab4",
+      "localEvidence": [
+        "evidence/LEGACY-TOKEN-CONTEXT-LOCAL-BROWSER.json",
+        "evidence/LEGACY-TOKEN-CONTEXT-BUILD.txt",
+        "evidence/LEGACY-TOKEN-CONTEXT-TYPES.txt"
+      ],
+      "localImagesPersonallyViewed": 8,
+      "previewEvidence": "evidence/PR251-UPDATED-PREVIEW-BROWSER.json",
+      "previewImagesPersonallyViewed": 8,
+      "mergeSHA": "9af6e6eacab5abdc0d99b89861d45f9943738f61"
     }
   ],
-  "updatedAt": "2026-10-27T02:14:00.532662+00:00",
+  "updatedAt": "2026-10-27T02:31:55.152315+00:00",
   "counts": {
     "siteFindings": 54,
     "P2": 28,
     "P3": 26,
-    "publiclyRepaired": 52,
-    "preparedNotMerged": 1,
+    "publiclyRepaired": 53,
+    "preparedNotMerged": 0,
     "separateOperationalBlockers": 0,
     "mergedAwaitingProductionVerification": 1,
     "protectedUnapprovedRecordFixes": 0,
