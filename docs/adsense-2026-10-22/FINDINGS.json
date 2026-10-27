@@ -2197,14 +2197,54 @@
       ],
       "productionImagesPersonallyViewed": 12,
       "liveRecheck": "PASS exact merged production: [24] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
+    },
+    {
+      "id": "THQ-052",
+      "title": "Candlestick header clips range controls and illustrative-band labels on mobile",
+      "severity": "P2",
+      "type": "Responsive UI / control visibility",
+      "urls": [
+        "https://www.thetradehq.com/trade"
+      ],
+      "state": "PUBLICLY_VERIFIED",
+      "baseSHA": "c4c8e9b827311bee6343a1c5f24f674e33f40c9d",
+      "beforeEvidence": "evidence/CANDLE-HEADER-BEFORE-BROWSER.json",
+      "beforeImagesPersonallyViewed": 4,
+      "observed": "At360/390px the nonwrapping header extends beyond overflow-hidden chart container;5Y and lower/upper illustrative-band labels are clipped. Loading badge temporarily clips more range controls. All10five-width/theme observations recorded; desktop labels fit.",
+      "rootCause": "Three header groups use a single nonwrapping flex row inside overflow-hidden chart card.",
+      "fix": "Allow header and its nested source/range/legend groups to wrap, with explicit row/column gaps. Four CSS class strings only.",
+      "findingDocument": "findings/CANDLESTICK-HEADER-MOBILE.md",
+      "implementationRisk": "Low presentation-only: NeuralPulseChart is imported only by Trade. No candle values, ranges, data sources, orders, financial calculations, accounts, consent/ad or infrastructure behavior changes.",
+      "rollback": "Ordinary revert of the four CSS class changes; no migrations.",
+      "releaseHold": null,
+      "pr": 254,
+      "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/254",
+      "candidateSHA": "73d2611c5c418e0117725b2b3239e1285723f23b",
+      "localEvidence": [
+        "evidence/CANDLE-HEADER-LOCAL-BROWSER.json",
+        "evidence/CANDLE-HEADER-BUILD.txt",
+        "evidence/CANDLE-HEADER-TYPES.txt"
+      ],
+      "localImagesPersonallyViewed": 4,
+      "mergeSHA": "846cadc5c847b7ad68925f9f1aa722b30ac33bec",
+      "previewEvidence": "evidence/PR254-UPDATED-PREVIEW-BROWSER.json",
+      "previewImagesPersonallyViewed": 4,
+      "productionEvidence": "evidence/PR254-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR254-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR254-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR254-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 4,
+      "liveRecheck": "PASS exact merged production: [10] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
     }
   ],
-  "updatedAt": "2026-10-27T08:50:34.558630+00:00",
+  "updatedAt": "2026-10-27T10:23:22.837259+00:00",
   "counts": {
-    "siteFindings": 56,
-    "P2": 29,
+    "siteFindings": 57,
+    "P2": 30,
     "P3": 27,
-    "publiclyRepaired": 56,
+    "publiclyRepaired": 57,
     "preparedNotMerged": 0,
     "separateOperationalBlockers": 0,
     "mergedAwaitingProductionVerification": 0,

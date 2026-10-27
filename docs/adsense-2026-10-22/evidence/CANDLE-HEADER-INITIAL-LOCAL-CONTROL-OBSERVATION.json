@@ -1,0 +1,232 @@
+{
+  "checkedAt": "2026-10-27T10:01:00.281Z",
+  "origin": "http://127.0.0.1:4182",
+  "sha": "c4c8e9b827311bee6343a1c5f24f674e33f40c9d",
+  "outcome": "FAIL",
+  "failure": "The expression evaluated to a falsy value:\n\n  assert.ok(selected.active)\n",
+  "rows": [
+    {
+      "width": 360,
+      "theme": "light",
+      "path": "/trade",
+      "heading": "Practice Trading Terminal — USD Coin (USDC)",
+      "headerText": "USDC/USD\n● Simulated\nLoading...\n1D\n1W\n1M\n1Y\n5Y\nLower illustrative band −3%\nUpper illustrative band +3.5%",
+      "header": {
+        "left": 21,
+        "right": 339,
+        "top": 100,
+        "bottom": 212.5,
+        "width": 318,
+        "height": 112.5
+      },
+      "container": {
+        "left": 16,
+        "right": 344,
+        "top": 95,
+        "bottom": 577.5,
+        "width": 328,
+        "height": 482.5
+      },
+      "items": [
+        {
+          "text": "1D",
+          "rect": {
+            "left": 37,
+            "right": 72.0625,
+            "top": 136,
+            "bottom": 160.5,
+            "width": 35.0625,
+            "height": 24.5
+          },
+          "fullyInside": true
+        },
+        {
+          "text": "1W",
+          "rect": {
+            "left": 76.0625,
+            "right": 114.40625,
+            "top": 136,
+            "bottom": 160.5,
+            "width": 38.34375,
+            "height": 24.5
+          },
+          "fullyInside": true
+        },
+        {
+          "text": "1M",
+          "rect": {
+            "left": 118.40625,
+            "right": 155.671875,
+            "top": 136,
+            "bottom": 160.5,
+            "width": 37.265625,
+            "height": 24.5
+          },
+          "fullyInside": true
+        },
+        {
+          "text": "1Y",
+          "rect": {
+            "left": 159.671875,
+            "right": 194.640625,
+            "top": 136,
+            "bottom": 160.5,
+            "width": 34.96875,
+            "height": 24.5
+          },
+          "fullyInside": true
+        },
+        {
+          "text": "5Y",
+          "rect": {
+            "left": 198.640625,
+            "right": 233.609375,
+            "top": 136,
+            "bottom": 160.5,
+            "width": 34.96875,
+            "height": 24.5
+          },
+          "fullyInside": true
+        },
+        {
+          "text": "Lower illustrative band −3%",
+          "rect": {
+            "left": 37,
+            "right": 207.203125,
+            "top": 168.5,
+            "bottom": 184.5,
+            "width": 170.203125,
+            "height": 16
+          },
+          "fullyInside": true
+        },
+        {
+          "text": "Upper illustrative band +3.5%",
+          "rect": {
+            "left": 37,
+            "right": 218.46875,
+            "top": 188.5,
+            "bottom": 204.5,
+            "width": 181.46875,
+            "height": 16
+          },
+          "fullyInside": true
+        }
+      ],
+      "pageOverflow": false
+    },
+    {
+      "width": 360,
+      "theme": "dark",
+      "path": "/trade",
+      "heading": "Practice Trading Terminal — USD Coin (USDC)",
+      "headerText": "USDC/USD\n● Provider history\n1D\n1W\n1M\n1Y\n5Y\nLower illustrative band −3%\nUpper illustrative band +3.5%",
+      "header": {
+        "left": 21,
+        "right": 339,
+        "top": 100,
+        "bottom": 212.5,
+        "width": 318,
+        "height": 112.5
+      },
+      "container": {
+        "left": 16,
+        "right": 344,
+        "top": 95,
+        "bottom": 577.5,
+        "width": 328,
+        "height": 482.5
+      },
+      "items": [
+        {
+          "text": "1D",
+          "rect": {
+            "left": 37,
+            "right": 72.0625,
+            "top": 136,
+            "bottom": 160.5,
+            "width": 35.0625,
+            "height": 24.5
+          },
+          "fullyInside": true
+        },
+        {
+          "text": "1W",
+          "rect": {
+            "left": 76.0625,
+            "right": 114.40625,
+            "top": 136,
+            "bottom": 160.5,
+            "width": 38.34375,
+            "height": 24.5
+          },
+          "fullyInside": true
+        },
+        {
+          "text": "1M",
+          "rect": {
+            "left": 118.40625,
+            "right": 155.671875,
+            "top": 136,
+            "bottom": 160.5,
+            "width": 37.265625,
+            "height": 24.5
+          },
+          "fullyInside": true
+        },
+        {
+          "text": "1Y",
+          "rect": {
+            "left": 159.671875,
+            "right": 194.640625,
+            "top": 136,
+            "bottom": 160.5,
+            "width": 34.96875,
+            "height": 24.5
+          },
+          "fullyInside": true
+        },
+        {
+          "text": "5Y",
+          "rect": {
+            "left": 198.640625,
+            "right": 233.609375,
+            "top": 136,
+            "bottom": 160.5,
+            "width": 34.96875,
+            "height": 24.5
+          },
+          "fullyInside": true
+        },
+        {
+          "text": "Lower illustrative band −3%",
+          "rect": {
+            "left": 37,
+            "right": 207.203125,
+            "top": 168.5,
+            "bottom": 184.5,
+            "width": 170.203125,
+            "height": 16
+          },
+          "fullyInside": true
+        },
+        {
+          "text": "Upper illustrative band +3.5%",
+          "rect": {
+            "left": 37,
+            "right": 218.46875,
+            "top": 188.5,
+            "bottom": 204.5,
+            "width": 181.46875,
+            "height": 16
+          },
+          "fullyInside": true
+        }
+      ],
+      "pageOverflow": false
+    }
+  ],
+  "controls": [],
+  "runtimeErrors": [],
+  "scope": "Bounded public /trade candlestick header at five widths and both themes. Rectangles and image captures; images require personal viewing. After-fix focused Enter range selection verifies selected UI and canvas, not provider accuracy or order/account calculations. Mutation RPCs blocked, no amount/order/favorites/progress/form actions."
+}
