@@ -221,8 +221,8 @@ export function NeuralPulseChart({ asset, height = 420 }: NeuralPulseChartProps)
 
   return (
     <div className="glass-tactile rounded-2xl p-1 overflow-hidden border-chrome">
-      <div className="flex items-center justify-between px-4 py-2">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-wrap items-center justify-between gap-2 px-4 py-2">
+        <div className="flex flex-wrap items-center gap-2">
           <span className="text-xs font-medium text-muted-foreground tracking-tight-cyber">
             {asset.symbol}/USD
           </span>
@@ -240,7 +240,7 @@ export function NeuralPulseChart({ asset, height = 420 }: NeuralPulseChartProps)
         </div>
 
         {/* Time Range Selector */}
-        <div className="flex items-center gap-1">
+        <div className="flex flex-wrap items-center gap-1">
           {(Object.keys(RANGE_CONFIG) as TimeRange[]).map((r) => (
             <button
               key={r}
@@ -257,7 +257,7 @@ export function NeuralPulseChart({ asset, height = 420 }: NeuralPulseChartProps)
           ))}
         </div>
 
-        <div className="flex items-center gap-3 text-xs text-muted-foreground">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
           <span className="flex items-center gap-1">
             <span className="w-2 h-2 rounded-full bg-profit" />
             Lower illustrative band −3%
