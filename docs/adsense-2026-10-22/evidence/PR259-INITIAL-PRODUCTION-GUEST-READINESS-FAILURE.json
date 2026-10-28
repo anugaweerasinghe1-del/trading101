@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-10-28T16:11:55.654Z",
+  "mergeSHA": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
+  "origin": "https://www.thetradehq.com",
+  "outcome": "FAIL",
+  "resumedRowCount": 0,
+  "debug": {
+    "path": "/learn",
+    "ready": "complete"
+  },
+  "scope": "Actual anonymous production15route interfaces atmobile/desktop plus4safecontrols; no orders/accounts/contact submissions; onlyread-onlypublicRPCs allowed.",
+  "rows": [
+    {
+      "path": "/",
+      "width": 360,
+      "title": "TradeHQ \u2014 Free Paper Trading Simulator | $100K Virtual Cash (No Signup)",
+      "heading": "Free Paper Trading.\nUse Virtual Cash.",
+      "mainCharacters": 7678,
+      "overflow": false
+    },
+    {
+      "path": "/",
+      "width": 1280,
+      "title": "TradeHQ \u2014 Free Paper Trading Simulator | $100K Virtual Cash (No Signup)",
+      "heading": "Free Paper Trading.\nUse Virtual Cash.",
+      "mainCharacters": 7678,
+      "overflow": false
+    }
+  ],
+  "controls": [],
+  "runtimeErrors": [
+    "Uncaught"
+  ],
+  "preventedProtectedRequests": [],
+  "limitations": [
+    "Leaderboard rank and previous-result reads allowed; public-duels RPC deliberately prevented because its SQL may settle expired duels. Duel results are not verified."
+  ],
+  "failure": "Page readiness deadline",
+  "resolution": "Fresh anonymous rerun completed all30gueststates and4safecontrols with no runtime exceptions. Initial generic Uncaught did not retain an exception description; root cause is not established and is not silently classified as a provider error. Historical failed receipt preserved."
+}

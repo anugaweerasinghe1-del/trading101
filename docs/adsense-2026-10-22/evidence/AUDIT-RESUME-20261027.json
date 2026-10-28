@@ -1,26 +1,34 @@
 {
-  "updatedAt": "2026-10-28T16:01:06.066645+00:00",
+  "updatedAt": "2026-10-28T16:31:53.826362+00:00",
   "latestMergedProductionSHA": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
-  "fullpageRoutesPersonallyViewed": 442,
+  "fullpageRoutesPersonallyViewed": 451,
   "publicInventoryRoutes": 451,
-  "remainingDefaultVisualRoutes": 9,
+  "remainingDefaultVisualRoutes": 0,
   "confirmedFindings": 70,
-  "publiclyVerifiedRepairs": 62,
+  "publiclyVerifiedRepairs": 63,
   "activeCandidate": {
-    "pr": 259,
-    "candidateSHA": "26e61df88627a597b0d8d709055af2c4b2b524f2",
-    "mergeSHA": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
-    "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
-    "hold": "Initial exact-main browser job could not start Chrome within45seconds. Full unchanged workflow rerun in progress; no further release."
+    "pr": 261,
+    "candidateSHA": "77a52ce663927cb298764181b6c50abf5ad2f555",
+    "baseSHA": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
+    "state": "LOCAL_BROWSER_REVIEW_IN_PROGRESS",
+    "findings": [
+      "THQ-060",
+      "THQ-061",
+      "THQ-062",
+      "THQ-063",
+      "THQ-064"
+    ],
+    "scope": "Seven frontend presentation files; five reviewed light-theme surfaces and shared nav backing. Localbuild/types/50browserstates PASS; personalimages/safecontrols/nativepreview/fullrelease pending.",
+    "notes": "Draft PR261.6ba personal review caught guide inherited pale controls; scoped light header foreground fixed77a52ce. Current repeated browser/CI underway; not production verified."
   },
   "releaseGate": {
-    "active": true,
-    "reason": "Exact-main production gate and public rechecks pending after isolated Chrome startup failure.",
+    "active": false,
+    "reason": "No active release hold.",
     "evidence": "evidence/PR259-INITIAL-MAIN-CHROME-STARTUP-FAILURE.json"
   },
   "publicProfileControls": "60profiles240states120focusedEnterLeaderboard/backflows PASS; all120initiallightimages personallyviewed across31sheets. No full accessibility certification.",
   "activeCollection": null,
-  "unresolved": "8 substantive findings remain until closed with release evidence; exact count follows FINDINGS.json. Remaining full-light scroll, sequential Tab, zoom, screenreader, primary sources, originality/value, daily conditional and regional ad/CMP/account stages prevent whole-audit completion.",
+  "unresolved": "7 substantive findings remain until closed with release evidence; exact count follows FINDINGS.json. Remaining full-light scroll, sequential Tab, zoom, screenreader, primary sources, originality/value, daily conditional and regional ad/CMP/account stages prevent whole-audit completion.",
   "historicalResumeNote": "Earlier checkpoint fields were stale; historical observations remain in their dated receipts and git history.",
   "terminalControls": "19assetterminals76light/darkmobile/desktopstates372focusedEnterFAQexpansions PASS; all38initiallightimages personallyviewed. No fullaccessibilitycertification.",
   "latestOwnerUpdate": "Owner clarified the repeated rejection only provides generic account-not-approved/few-more-tweaks wording and Sites section is inaccessible without resubmission. No further rejection detail is available; do not repeatedly request it. No inferred Google rejection cause.",
@@ -28,15 +36,10 @@
   "terminalSixthControls": "Evidence TERMINAL-SIXTH-SAFE-CONTROLS-20261028.json; freshness/navigationinitialfailurepreserved separately.",
   "terminalSeventhControls": "20 terminals,80 states,396 FAQ expansions,all40 initial light images personally viewed.",
   "terminalFinalControls": "27 terminals,108 states,536 FAQ expansions,all54 initial light images personally viewed.",
-  "latestFullyVerifiedProductionSHA": "6ff5e952058da66ef78a89536f76ef802bf560b2",
-  "fullLightRoutesPersonallyViewed": 27,
-  "remainingFullLightRoutes": 424,
+  "latestFullyVerifiedProductionSHA": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
+  "fullLightRoutesPersonallyViewed": 36,
+  "remainingFullLightRoutes": 415,
   "currentFindingStates": [
-    {
-      "id": "THQ-058",
-      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
-      "scope": "Terminal status-label contrast in light theme"
-    },
     {
       "id": "THQ-059",
       "state": "PROPOSED_NOT_IMPLEMENTED",
@@ -44,27 +47,27 @@
     },
     {
       "id": "THQ-060",
-      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "state": "LOCAL_BROWSER_REVIEW_IN_PROGRESS",
       "scope": "Homepage fixed dark surfaces inherit light-theme dark text"
     },
     {
       "id": "THQ-061",
-      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "state": "LOCAL_BROWSER_REVIEW_IN_PROGRESS",
       "scope": "Daily challenge fixed dark surfaces inherit near-black light-theme text"
     },
     {
       "id": "THQ-062",
-      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "state": "LOCAL_BROWSER_REVIEW_IN_PROGRESS",
       "scope": "Learning introduction mixes dark copy and fixed dark gradient"
     },
     {
       "id": "THQ-063",
-      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "state": "LOCAL_BROWSER_REVIEW_IN_PROGRESS",
       "scope": "Beginner-guide credibility footer inherits pale text over light gradient"
     },
     {
       "id": "THQ-064",
-      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "state": "LOCAL_BROWSER_REVIEW_IN_PROGRESS",
       "scope": "Roadmap heading and feature accents remain pale in light mode"
     },
     {

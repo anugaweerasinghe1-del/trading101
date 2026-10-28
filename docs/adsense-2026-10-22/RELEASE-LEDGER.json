@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T16:01:06.066645+00:00",
+  "updatedAt": "2026-10-28T16:31:53.826362+00:00",
   "releases": [
     {
       "finding": "THQ-001",
@@ -2791,28 +2791,96 @@
         "safeControls": 4,
         "productionImagesPersonallyViewed": 8
       }
+    },
+    {
+      "pr": 259,
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/259",
+      "candidateSHA": "26e61df88627a597b0d8d709055af2c4b2b524f2",
+      "mergeSHA": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
+      "state": "PUBLICLY_VERIFIED",
+      "findings": [
+        "THQ-058"
+      ],
+      "production": {
+        "checkedAt": "2026-10-28T16:08:26.599536+00:00",
+        "mergeSHA": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
+        "outcome": "PASS",
+        "sourceJob": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40720569601/job/122938199199",
+        "scope": "Authenticated native provider reads by trusted exact-main release-readiness job. Both production deployments match the immutable merge SHA. No provider mutations.",
+        "cloudflare": {
+          "observedAt": "2026-10-28T16:07:56.261Z",
+          "project": "tradehq-preview",
+          "activeProduction": {
+            "id": "9cf87c28-d7ce-4986-b008-7001b3149de4",
+            "sha": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
+            "environment": "production",
+            "branch": "main",
+            "status": "success",
+            "createdAt": "2026-10-28T15:53:47.906134Z"
+          }
+        },
+        "vercel": {
+          "schema": "tradehq-vercel-production-evidence-v1",
+          "deploymentId": "dpl_7LFBtGBykvvynKLhrkhuifc2ovPY",
+          "teamId": "team_fjZ5ggg0P43MsYFSIHbeHAAO",
+          "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+          "commitSha": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
+          "target": "production",
+          "state": "READY",
+          "activeAlias": "thetradehq.com",
+          "createdAt": 1793202829185,
+          "observedAt": 1793203676260,
+          "requests": 2,
+          "authorization": {
+            "merge": false,
+            "productionRelease": false
+          }
+        }
+      },
+      "mainCIEvidence": "evidence/PR259-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR259-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR259-GUEST-SMOKE.json"
+      ],
+      "liveRecheck": {
+        "outcome": "PASS",
+        "affectedStates": [
+          40
+        ],
+        "guestStates": 30,
+        "safeControls": 4,
+        "productionImagesPersonallyViewed": 16
+      }
     }
   ],
-  "nextCandidate": null,
+  "nextCandidate": {
+    "pr": 261,
+    "candidateSHA": "77a52ce663927cb298764181b6c50abf5ad2f555",
+    "baseSHA": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
+    "state": "LOCAL_BROWSER_REVIEW_IN_PROGRESS",
+    "findings": [
+      "THQ-060",
+      "THQ-061",
+      "THQ-062",
+      "THQ-063",
+      "THQ-064"
+    ],
+    "scope": "Seven frontend presentation files; five reviewed light-theme surfaces and shared nav backing. Localbuild/types/50browserstates PASS; personalimages/safecontrols/nativepreview/fullrelease pending.",
+    "notes": "Draft PR261.6ba personal review caught guide inherited pale controls; scoped light header foreground fixed77a52ce. Current repeated browser/CI underway; not production verified."
+  },
   "latestResumeProviderEvidence": "evidence/FINAL-WORKSPACE-ACCESS-20261023.json",
   "latestGitHubState": "evidence/FINAL-GITHUB-STATE-20261023.json",
-  "latestGitHubProviderBindingEvidence": "evidence/PR258-PRODUCTION-PROVIDERS.json",
-  "latestMainValidationEvidence": "evidence/PR258-MAIN-CI.json",
-  "latestVerifiedProductionSHA": "6ff5e952058da66ef78a89536f76ef802bf560b2",
-  "remainingConfirmedSiteFixes": 8,
+  "latestGitHubProviderBindingEvidence": "evidence/PR259-PRODUCTION-PROVIDERS.json",
+  "latestMainValidationEvidence": "evidence/PR259-MAIN-CI.json",
+  "latestVerifiedProductionSHA": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
+  "remainingConfirmedSiteFixes": 7,
   "exhaustiveAuditComplete": false,
-  "remainingKnownSafeFindings": 8,
-  "pendingReleaseVerification": {
-    "pr": 259,
-    "candidateSHA": "26e61df88627a597b0d8d709055af2c4b2b524f2",
-    "mergeSHA": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
-    "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
-    "hold": "Initial exact-main browser job could not start Chrome within45seconds. Full unchanged workflow rerun in progress; no further release."
-  },
+  "remainingKnownSafeFindings": 7,
+  "pendingReleaseVerification": null,
   "protectedPublishedContentFinding": "THQ035/036 published revision2 independently verified; credential and approval blockers superseded by owner-approved PR238 operation. No new production writes in this continuation.",
   "operationalHold": {
-    "active": true,
-    "reason": "Exact-main production gate and public rechecks pending after isolated Chrome startup failure.",
+    "active": false,
+    "reason": "No active release hold.",
     "evidence": "evidence/PR259-INITIAL-MAIN-CHROME-STARTUP-FAILURE.json"
   },
   "latestObservedMainSHA": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
@@ -3041,31 +3109,6 @@
       "finding": "THQ-059",
       "state": "PROPOSED_NOT_IMPLEMENTED",
       "evidence": "findings/TERMINAL-METADATA-SCOPE.md"
-    },
-    {
-      "finding": "THQ-060",
-      "state": "PROPOSED_NOT_IMPLEMENTED",
-      "evidence": "findings/HOME-LIGHT-SURFACES.md"
-    },
-    {
-      "finding": "THQ-061",
-      "state": "PROPOSED_NOT_IMPLEMENTED",
-      "evidence": "findings/DAILY-LIGHT-SURFACES.md"
-    },
-    {
-      "finding": "THQ-062",
-      "state": "PROPOSED_NOT_IMPLEMENTED",
-      "evidence": "findings/LEARN-INTRO-LIGHT-SURFACE.md"
-    },
-    {
-      "finding": "THQ-063",
-      "state": "PROPOSED_NOT_IMPLEMENTED",
-      "evidence": "findings/GUIDE-FOOTER-LIGHT-SURFACE.md"
-    },
-    {
-      "finding": "THQ-064",
-      "state": "PROPOSED_NOT_IMPLEMENTED",
-      "evidence": "findings/ROADMAP-LIGHT-TEXT.md"
     },
     {
       "finding": "THQ-065",

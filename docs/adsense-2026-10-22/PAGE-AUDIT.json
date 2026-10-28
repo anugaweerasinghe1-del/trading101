@@ -106,7 +106,7 @@
         "THQ-060"
       ],
       "findingStates": {
-        "THQ-060": "PROPOSED_NOT_IMPLEMENTED"
+        "THQ-060": "LOCAL_BROWSER_REVIEW_IN_PROGRESS"
       },
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": [],
@@ -6512,7 +6512,7 @@
       "findingStates": {
         "THQ-035": "PUBLICLY_VERIFIED",
         "THQ-036": "PUBLICLY_VERIFIED",
-        "THQ-061": "PROPOSED_NOT_IMPLEMENTED"
+        "THQ-061": "LOCAL_BROWSER_REVIEW_IN_PROGRESS"
       },
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": [],
@@ -7759,7 +7759,7 @@
       "findingStates": {
         "THQ-008": "PUBLICLY_VERIFIED",
         "THQ-031": "PUBLICLY_VERIFIED",
-        "THQ-062": "PROPOSED_NOT_IMPLEMENTED"
+        "THQ-062": "LOCAL_BROWSER_REVIEW_IN_PROGRESS"
       },
       "postDeploymentChecks": [
         {
@@ -7915,7 +7915,7 @@
       "findingStates": {
         "THQ-032": "PUBLICLY_VERIFIED",
         "THQ-033": "PUBLICLY_VERIFIED",
-        "THQ-063": "PROPOSED_NOT_IMPLEMENTED"
+        "THQ-063": "LOCAL_BROWSER_REVIEW_IN_PROGRESS"
       },
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": [],
@@ -17918,7 +17918,7 @@
         "THQ-064"
       ],
       "findingStates": {
-        "THQ-064": "PROPOSED_NOT_IMPLEMENTED"
+        "THQ-064": "LOCAL_BROWSER_REVIEW_IN_PROGRESS"
       },
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": [],
@@ -36875,7 +36875,7 @@
       ],
       "findingStates": {
         "THQ-014": "PUBLICLY_VERIFIED",
-        "THQ-058": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
+        "THQ-058": "PUBLICLY_VERIFIED"
       },
       "partialProseReview": {
         "evidence": "TERMINAL-PROSE-REVIEW.json",
@@ -39053,7 +39053,7 @@
       ],
       "findingStates": {
         "THQ-014": "PUBLICLY_VERIFIED",
-        "THQ-058": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
+        "THQ-058": "PUBLICLY_VERIFIED"
       },
       "partialProseReview": {
         "evidence": "TERMINAL-PROSE-REVIEW.json",
@@ -58599,6 +58599,32 @@
         ],
         "htmlBytes": 4398,
         "evidence": "evidence/NEW-PROFILES-HTTP-20261028.json"
+      },
+      "defaultFullPageVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "requestedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Cash-only100000 virtual balance,0.0percent and0recorded trades; username, four cards and how-to-read disclosure visible at every requested width. This initialized portfolio is not treated as audited performance. Allfive requested-width dark contact sheets personally viewed through footer end; no new profile-specific clipping observed.",
+        "evidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "passIsNotImpliedByInspection": true
+      },
+      "fullLightVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "widths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Cash-only100000 virtual balance,0.0percent and0recorded trades; username, four cards and how-to-read disclosure visible at every requested width. This initialized portfolio is not treated as audited performance. Allfive light full-scroll contacts personally viewed through footer end. Main disclosure/cards readable, no new profile-specific clipping observed. Shared navigation over dark footer is already THQ060. No protected actions.",
+        "evidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json",
+        "wholePageReviewComplete": false
       }
     },
     {
@@ -58638,6 +58664,32 @@
         ],
         "htmlBytes": 4398,
         "evidence": "evidence/NEW-PROFILES-HTTP-20261028.json"
+      },
+      "defaultFullPageVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "requestedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Virtual balance99936,return-0.1percent,five trades and Includes fixed simulator prices card; the long price-basis label wraps into readable lines rather than truncating. Visible fetched timestamp is12October and remains an explicit provider-age follow-up; no current-price or accounting accuracy certification. Allfive requested-width dark contact sheets personally viewed through footer end; no new profile-specific clipping observed.",
+        "evidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "passIsNotImpliedByInspection": true
+      },
+      "fullLightVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "widths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Virtual balance99936,return-0.1percent,five trades and Includes fixed simulator prices card; the long price-basis label wraps into readable lines rather than truncating. Visible fetched timestamp is12October and remains an explicit provider-age follow-up; no current-price or accounting accuracy certification. Allfive light full-scroll contacts personally viewed through footer end. Main disclosure/cards readable, no new profile-specific clipping observed. Shared navigation over dark footer is already THQ060. No protected actions.",
+        "evidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json",
+        "wholePageReviewComplete": false
       }
     },
     {
@@ -58677,6 +58729,32 @@
         ],
         "htmlBytes": 4398,
         "evidence": "evidence/NEW-PROFILES-HTTP-20261028.json"
+      },
+      "defaultFullPageVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "requestedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Seven virtual trades with provider-snapshot price basis. Earlier light capture100224/+0.2percent and later dark capture99309/-0.7percent have different fetch/oldest-quote timestamps; these are dated live observations, not a controlled equal-price valuation comparison. Cards, wrapped basis and full limitations paragraph fit the observed layouts. Allfive requested-width dark contact sheets personally viewed through footer end; no new profile-specific clipping observed.",
+        "evidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "passIsNotImpliedByInspection": true
+      },
+      "fullLightVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "widths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Seven virtual trades with provider-snapshot price basis. Earlier light capture100224/+0.2percent and later dark capture99309/-0.7percent have different fetch/oldest-quote timestamps; these are dated live observations, not a controlled equal-price valuation comparison. Cards, wrapped basis and full limitations paragraph fit the observed layouts. Allfive light full-scroll contacts personally viewed through footer end. Main disclosure/cards readable, no new profile-specific clipping observed. Shared navigation over dark footer is already THQ060. No protected actions.",
+        "evidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json",
+        "wholePageReviewComplete": false
       }
     },
     {
@@ -58716,6 +58794,32 @@
         ],
         "htmlBytes": 4398,
         "evidence": "evidence/NEW-PROFILES-HTTP-20261028.json"
+      },
+      "defaultFullPageVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "requestedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Two recorded virtual trades,99785balance,-0.2percent and Cash only price basis. Closed losses can coexist with cash-only holdings; these public summary labels alone do not establish an accounting defect. Four cards and explanatory disclaimer remain readable at all requested widths. Allfive requested-width dark contact sheets personally viewed through footer end; no new profile-specific clipping observed.",
+        "evidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "passIsNotImpliedByInspection": true
+      },
+      "fullLightVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "widths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Two recorded virtual trades,99785balance,-0.2percent and Cash only price basis. Closed losses can coexist with cash-only holdings; these public summary labels alone do not establish an accounting defect. Four cards and explanatory disclaimer remain readable at all requested widths. Allfive light full-scroll contacts personally viewed through footer end. Main disclosure/cards readable, no new profile-specific clipping observed. Shared navigation over dark footer is already THQ060. No protected actions.",
+        "evidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json",
+        "wholePageReviewComplete": false
       }
     },
     {
@@ -58755,6 +58859,32 @@
         ],
         "htmlBytes": 4398,
         "evidence": "evidence/NEW-PROFILES-HTTP-20261028.json"
+      },
+      "defaultFullPageVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "requestedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Sixteen recorded virtual trades and Includes fixed simulator prices; earlier light100327/+0.3percent and later dark100210/+0.2percent are separate dated live snapshots. Price-basis wording wraps at mobile; all four cards, refresh limitations and simulation disclaimer fit observed layouts. Allfive requested-width dark contact sheets personally viewed through footer end; no new profile-specific clipping observed.",
+        "evidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "passIsNotImpliedByInspection": true
+      },
+      "fullLightVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "widths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Sixteen recorded virtual trades and Includes fixed simulator prices; earlier light100327/+0.3percent and later dark100210/+0.2percent are separate dated live snapshots. Price-basis wording wraps at mobile; all four cards, refresh limitations and simulation disclaimer fit observed layouts. Allfive light full-scroll contacts personally viewed through footer end. Main disclosure/cards readable, no new profile-specific clipping observed. Shared navigation over dark footer is already THQ060. No protected actions.",
+        "evidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json",
+        "wholePageReviewComplete": false
       }
     },
     {
@@ -58794,6 +58924,32 @@
         ],
         "htmlBytes": 4398,
         "evidence": "evidence/NEW-PROFILES-HTTP-20261028.json"
+      },
+      "defaultFullPageVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "requestedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Virtual100479balance,+0.5percent,eight trades and Includes fixed simulator prices; basis label wraps at mobile, full simulation/fetch-limit disclosure remains readable. No private holdings, trade actions or performance valuation verification. Allfive requested-width dark contact sheets personally viewed through footer end; no new profile-specific clipping observed.",
+        "evidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "passIsNotImpliedByInspection": true
+      },
+      "fullLightVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "widths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Virtual100479balance,+0.5percent,eight trades and Includes fixed simulator prices; basis label wraps at mobile, full simulation/fetch-limit disclosure remains readable. No private holdings, trade actions or performance valuation verification. Allfive light full-scroll contacts personally viewed through footer end. Main disclosure/cards readable, no new profile-specific clipping observed. Shared navigation over dark footer is already THQ060. No protected actions.",
+        "evidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json",
+        "wholePageReviewComplete": false
       }
     },
     {
@@ -58833,6 +58989,32 @@
         ],
         "htmlBytes": 4398,
         "evidence": "evidence/NEW-PROFILES-HTTP-20261028.json"
+      },
+      "defaultFullPageVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "requestedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Unranked imported practice summary,zero server-recorded trades and provider-snapshot basis; light99870 and later dark99869 are separately timestamped observations. Public disclosure explains imported portfolios remain unranked. Username, Unranked label and wrapped snapshot wording fit all observed widths; zero recorded trades is not assumed to mean no imported holdings. Allfive requested-width dark contact sheets personally viewed through footer end; no new profile-specific clipping observed.",
+        "evidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "passIsNotImpliedByInspection": true
+      },
+      "fullLightVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "widths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Unranked imported practice summary,zero server-recorded trades and provider-snapshot basis; light99870 and later dark99869 are separately timestamped observations. Public disclosure explains imported portfolios remain unranked. Username, Unranked label and wrapped snapshot wording fit all observed widths; zero recorded trades is not assumed to mean no imported holdings. Allfive light full-scroll contacts personally viewed through footer end. Main disclosure/cards readable, no new profile-specific clipping observed. Shared navigation over dark footer is already THQ060. No protected actions.",
+        "evidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json",
+        "wholePageReviewComplete": false
       }
     },
     {
@@ -58872,6 +59054,32 @@
         ],
         "htmlBytes": 4398,
         "evidence": "evidence/NEW-PROFILES-HTTP-20261028.json"
+      },
+      "defaultFullPageVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "requestedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Explicit empty account-portfolio/server-recorded-trades state explains that a public member can still appear on the leaderboard. No fabricated balance or performance card. Username, empty-state paragraph and full how-to-read/simulation limitations remain readable across layouts. Allfive requested-width dark contact sheets personally viewed through footer end; no new profile-specific clipping observed.",
+        "evidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "passIsNotImpliedByInspection": true
+      },
+      "fullLightVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "widths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Explicit empty account-portfolio/server-recorded-trades state explains that a public member can still appear on the leaderboard. No fabricated balance or performance card. Username, empty-state paragraph and full how-to-read/simulation limitations remain readable across layouts. Allfive light full-scroll contacts personally viewed through footer end. Main disclosure/cards readable, no new profile-specific clipping observed. Shared navigation over dark footer is already THQ060. No protected actions.",
+        "evidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json",
+        "wholePageReviewComplete": false
       }
     },
     {
@@ -58911,6 +59119,32 @@
         ],
         "htmlBytes": 4398,
         "evidence": "evidence/NEW-PROFILES-HTTP-20261028.json"
+      },
+      "defaultFullPageVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "requestedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Personally reviewed all five viewport contact sheets in both separately dated default and light captures. Public portfolio values differ between captures with different quote timestamps; no calculation defect inferred. Username, cards, basis disclosure and footer remain readable. Allfive requested-width dark contact sheets personally viewed through footer end; no new profile-specific clipping observed.",
+        "evidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "passIsNotImpliedByInspection": true
+      },
+      "fullLightVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "widths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Personally reviewed all five viewport contact sheets in both separately dated default and light captures. Public portfolio values differ between captures with different quote timestamps; no calculation defect inferred. Username, cards, basis disclosure and footer remain readable. Allfive light full-scroll contacts personally viewed through footer end. Main disclosure/cards readable, no new profile-specific clipping observed. Shared navigation over dark footer is already THQ060. No protected actions.",
+        "evidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json",
+        "wholePageReviewComplete": false
       }
     }
   ],
@@ -58926,5 +59160,5 @@
     "individualActualRenderedProseComparisonsWithPreviouslyFullyReadBaseline": 85,
     "scope": "441 main texts/states covered, not441 fully completed page/source/control/human-visual reviews. See TERMINAL-TEMPLATE-COMPARISONS.json for raw texts and deltas."
   },
-  "updatedAt": "2026-10-28T16:01:06.066645+00:00"
+  "updatedAt": "2026-10-28T16:31:53.826362+00:00"
 }

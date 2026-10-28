@@ -1,6 +1,8 @@
+diff --git a/src/components/CredibilityFooter.tsx b/src/components/CredibilityFooter.tsx
+index 796b617e91cc3645c69e7f14f5b098085915c4e6..a709539e883f312b1f078b234b9fd48222ff5983 100644
 --- a/src/components/CredibilityFooter.tsx
 +++ b/src/components/CredibilityFooter.tsx
-@@ -10,7 +10,7 @@
+@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
  export function CredibilityFooter() {
    return (
