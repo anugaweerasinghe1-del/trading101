@@ -494,6 +494,25 @@ export default function TradeAsset() {
             </header>
           )}
 
+          {(selectedAsset?.id === "ftm" || selectedAsset?.id === "matic") && (
+            <section className="rounded-2xl border border-border bg-card p-6 space-y-3" aria-label="Legacy token context">
+              <h2 className="text-lg font-semibold">Legacy token context</h2>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {selectedAsset.id === "ftm"
+                  ? "This practice terminal retains the legacy Fantom (FTM) label. Sonic Labs documents an upgrade from FTM to Sonic's S token. The practice prices shown here are not current S quotes or a token conversion."
+                  : "This practice terminal retains the legacy Polygon (MATIC) label. Polygon documents the migration from MATIC to POL, its native gas and staking token. The practice prices shown here are not current POL quotes or a token conversion."}
+              </p>
+              <a
+                href={selectedAsset.id === "ftm" ? "https://docs.soniclabs.com/migration/app-token-migration" : "https://docs.polygon.technology/pos/concepts/tokens/matic-to-pol"}
+                className="text-sm text-primary underline underline-offset-4"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {selectedAsset.id === "ftm" ? "Sonic Labs migration documentation" : "Polygon migration documentation"}
+              </a>
+            </section>
+          )}
+
           {/* GEO Key Takeaways - machine-readable for AI Overviews */}
           {selectedAsset && <GEOKeyTakeaways asset={selectedAsset} />}
           

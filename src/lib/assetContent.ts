@@ -525,7 +525,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   matic: {
-    whatIs: "Polygon (MATIC) is an Ethereum scaling solution that provides faster and cheaper transactions. It has become a leading layer-2 network for DeFi, gaming, and NFT applications.",
+    whatIs: "This simulator retains Polygon's legacy MATIC label. Polygon documents a migration from MATIC to POL, the native gas and staking token on Polygon Chain. Practice prices on this terminal are not current POL quotes or a token conversion.",
     strategy: "Compare the asset identification and current network documentation before studying historical percentage changes. A historical correlation with ETH is not a reliable leading indicator. Educational simulation only; not financial advice.",
     category: "Cryptocurrency",
     keywords: ["Polygon trading", "MATIC simulator", "layer-2 scaling", "Ethereum"],
