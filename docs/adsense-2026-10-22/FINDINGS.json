@@ -2237,14 +2237,56 @@
       ],
       "productionImagesPersonallyViewed": 4,
       "liveRecheck": "PASS exact merged production: [10] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
+    },
+    {
+      "id": "THQ-053",
+      "title": "Period-based asset summary truncates Copper at Dr. and duplicates punctuation",
+      "severity": "P3",
+      "type": "Content presentation / structured data",
+      "urls": [
+        "https://www.thetradehq.com/trade/copper",
+        "https://www.thetradehq.com/trade/arkk",
+        "https://www.thetradehq.com/trade/crm"
+      ],
+      "state": "PUBLICLY_VERIFIED",
+      "baseSHA": "846cadc5c847b7ad68925f9f1aa722b30ac33bec",
+      "beforeEvidence": "evidence/ASSET-DEFINITION-BEFORE-BROWSER.json",
+      "beforeImagesPersonallyViewed": 4,
+      "observed": "All ten Copper five-width/theme observations show the first takeaway and DefinedTerm description ending at Copper is called Dr. The period-space split treats the abbreviation as a sentence boundary; appending a period also duplicates terminal punctuation when no split exists. The newly read Salesforce CRM page also truncates the first takeaway to Salesforce Inc.; same abbreviation cause.",
+      "fix": "Preserve complete authored whatIs text in both the visible definition and matching DefinedTerm description, without splitting or adding punctuation.",
+      "findingDocument": "findings/ASSET-DEFINITION-TRUNCATION.md",
+      "implementationRisk": "Low content presentation only. Shared TradeAsset takeaway/schema consumers; validate Copper, ARKK, generic stock and crypto across widths/themes. No authored financial claims, data or handlers changed.",
+      "rollback": "Ordinary revert of the two rendering expressions; no migration or user-data changes.",
+      "releaseHold": null,
+      "pr": 255,
+      "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/255",
+      "candidateSHA": "2a5d3ab385cd731b49799a0539a2b1abcaac6196",
+      "localEvidence": [
+        "evidence/ASSET-DEFINITION-LOCAL-BROWSER.json",
+        "evidence/ASSET-DEFINITION-BUILD.txt",
+        "evidence/ASSET-DEFINITION-TYPES.txt",
+        "evidence/ASSET-DEFINITION-LOCAL-WITH-CRM-BROWSER.json"
+      ],
+      "localImagesPersonallyViewed": 8,
+      "previewEvidence": "evidence/PR255-UPDATED-PREVIEW-BROWSER.json",
+      "previewImagesPersonallyViewed": 8,
+      "mergeSHA": "cbcce94bbd8cf35deadec17684b9ec75156f2030",
+      "productionEvidence": "evidence/PR255-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR255-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR255-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR255-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 8,
+      "liveRecheck": "PASS exact merged production: [50] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
     }
   ],
-  "updatedAt": "2026-10-27T10:23:22.837259+00:00",
+  "updatedAt": "2026-10-28T01:13:53.842240+00:00",
   "counts": {
-    "siteFindings": 57,
+    "siteFindings": 58,
     "P2": 30,
-    "P3": 27,
-    "publiclyRepaired": 57,
+    "P3": 28,
+    "publiclyRepaired": 58,
     "preparedNotMerged": 0,
     "separateOperationalBlockers": 0,
     "mergedAwaitingProductionVerification": 0,

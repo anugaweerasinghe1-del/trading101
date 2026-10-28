@@ -1,0 +1,11 @@
+# THQ-053: asset definitions truncated at abbreviations
+
+P3 content presentation finding, reproduced on production main `846cadc5c847b7ad68925f9f1aa722b30ac33bec`. Copper’s first takeaway ends at “Copper is called 'Dr.” in all five widths and both themes. The matching DefinedTerm JSON-LD description has the same truncation. Ten observations are in `evidence/ASSET-DEFINITION-BEFORE-BROWSER.json`; four selected before images personally viewed. The full lower authored paragraph is intact.
+
+Cause: both renderers split authored text at the first period-space, interpreting “Dr. Copper” as a sentence boundary. Appending a period also duplicates existing terminal punctuation when the paragraph has no period-space.
+
+Fix: preserve complete existing authored `whatIs` text in the visible takeaway and matching schema description. The component is used only by TradeAsset. No authored financial claim, data source, trading calculation, handler, order, account, privacy, ad or infrastructure behavior changes. Shared text may become longer, so validate Copper, ARKK, generic ABBV and Ethereum across all five widths and both themes. Rollback: ordinary revert of these two presentation expressions; no data rollback.
+
+Local Cloudflare build/editorial/SEO and application TypeScript pass. Initial local40states pass with eight selected images personally viewed; expanded local50states include Salesforce CRM and also pass. Actual Cloudflare preview50states pass, with eight selected Copper/ARKK light/dark mobile/desktop images personally viewed. All four exact-candidate checks pass. Native CF preview b32e66bf SUCCESS and Vercel dpl_9eLWE2beTYQJ8xR1NLghyR6AXUoK READY match candidate 2a5d3ab385cd731b49799a0539a2b1abcaac6196. PR255 production verification remains pending. This is not a standalone claim of Google policy violation or overall AdSense readiness.
+
+PR255 ordinary protected squash merge produced `cbcce94bbd8cf35deadec17684b9ec75156f2030`. All six exact-main checks and native Cloudflare/Vercel exact production verification PASS. Live50states and guest30states/fourcontrols PASS; eight selected production screenshots personally reviewed. Finding PUBLICLY_VERIFIED. Whole audit remains incomplete.

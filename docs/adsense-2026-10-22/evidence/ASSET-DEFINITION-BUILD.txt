@@ -1,0 +1,207 @@
+
+> vite_react_shadcn_ts@0.0.0 build:cloudflare
+> npm run build && node scripts/prepare-cloudflare.mjs && node --import tsx scripts/verify-cloudflare-canonicals.ts
+
+
+> vite_react_shadcn_ts@0.0.0 prebuild
+> node --import tsx scripts/generate-sitemap.ts
+
+✅ Sitemap: 147 URLs → public/sitemap.xml
+
+> vite_react_shadcn_ts@0.0.0 build
+> vite build
+
+vite v5.4.19 building for production...
+transforming...
+Browserslist: browsers data (caniuse-lite) is 16 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+warn - The class `duration-[2500ms]` is ambiguous and matches multiple utilities.
+warn - If this is content and not a class, replace it with `duration-&lsqb;2500ms&rsqb;` to silence this warning.
+✓ 3537 modules transformed.
+rendering chunks...
+[plugin:vite:reporter] [plugin vite:reporter]
+(!) /workspace/trading101-beginner-guide/src/integrations/supabase/client.ts is dynamically imported by /workspace/trading101-beginner-guide/src/lib/portfolio.ts but also statically imported by /workspace/trading101-beginner-guide/src/components/AdminChatPilot.tsx, /workspace/trading101-beginner-guide/src/components/AdminCodeQueue.tsx, /workspace/trading101-beginner-guide/src/components/AdminRepairControls.tsx, /workspace/trading101-beginner-guide/src/components/DailyPractice.tsx, /workspace/trading101-beginner-guide/src/components/RecentAnalysis.tsx, /workspace/trading101-beginner-guide/src/hooks/useAuth.tsx, /workspace/trading101-beginner-guide/src/lib/cloudPortfolio.ts, /workspace/trading101-beginner-guide/src/lib/traderSync.ts, /workspace/trading101-beginner-guide/src/pages/AdminAIAssistant.tsx, /workspace/trading101-beginner-guide/src/pages/AdminCourses.tsx, /workspace/trading101-beginner-guide/src/pages/AdminDaily.tsx, /workspace/trading101-beginner-guide/src/pages/AdminDashboard.tsx, /workspace/trading101-beginner-guide/src/pages/AdminReviews.tsx, /workspace/trading101-beginner-guide/src/pages/Auth.tsx, /workspace/trading101-beginner-guide/src/pages/Challenge.tsx, /workspace/trading101-beginner-guide/src/pages/Leaderboard.tsx, /workspace/trading101-beginner-guide/src/pages/PublicTrader.tsx, /workspace/trading101-beginner-guide/src/pages/ResetPassword.tsx, /workspace/trading101-beginner-guide/src/pages/Reviews.tsx, /workspace/trading101-beginner-guide/src/pages/TraderProfile.tsx, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter]
+(!) /workspace/trading101-beginner-guide/src/lib/cloudPortfolio.ts is dynamically imported by /workspace/trading101-beginner-guide/src/lib/portfolio.ts, /workspace/trading101-beginner-guide/src/lib/traderSync.ts but also statically imported by /workspace/trading101-beginner-guide/src/hooks/useAuth.tsx, /workspace/trading101-beginner-guide/src/pages/Leaderboard.tsx, /workspace/trading101-beginner-guide/src/pages/Portfolio.tsx, dynamic import will not move module into another chunk.
+
+computing gzip size...
+dist/index.html                                             5.80 kB │ gzip:   2.08 kB
+dist/assets/options-hero-DeA_XZdf.jpg                      26.99 kB
+dist/assets/psychology-hero-BjxsBmgY.jpg                   36.36 kB
+dist/assets/macro-hero-BIhE6gYh.jpg                        39.98 kB
+dist/assets/course-risk-management-Bl31WepL.jpg            46.79 kB
+dist/assets/lesson-candlestick-DmRwGOPR.jpg                59.12 kB
+dist/assets/lesson-moving-averages-D8BJJV00.jpg            59.27 kB
+dist/assets/course-goals-DUiNfiqI.jpg                      62.09 kB
+dist/assets/course-diversification-DMCc5i8A.jpg            63.03 kB
+dist/assets/lesson-asset-allocation-chart-DVtqTXKu.jpg     65.76 kB
+dist/assets/course-market-trends-7Z9slysK.jpg              67.99 kB
+dist/assets/lesson-risk-shield-DM8vDWpa.jpg                69.19 kB
+dist/assets/futures-hero-DsjhfM9Q.jpg                      71.93 kB
+dist/assets/lesson-technical-indicators-CivyU1aX.jpg       73.35 kB
+dist/assets/lesson-risk-management-DjODmvm4.jpg            73.72 kB
+dist/assets/course-trading-basics-DwSXdGM_.jpg             75.38 kB
+dist/assets/lesson-support-resistance-Bd1RO3it.jpg         76.47 kB
+dist/assets/lesson-market-trends-arrows-MNr4ZbbV.jpg       77.99 kB
+dist/assets/lesson-etf-diversification-B9k2yzv8.jpg        78.59 kB
+dist/assets/lesson-portfolio-allocation-BnShfUC6.jpg       84.51 kB
+dist/assets/lesson-goals-roadmap-DT54pOzB.jpg              85.73 kB
+dist/assets/lesson-order-types-ZAuK3Qm7.jpg                92.38 kB
+dist/assets/lesson-stocks-basics-DaVSsi2z.jpg             125.72 kB
+dist/assets/course-technical-analysis-KE1-DUmL.jpg        148.26 kB
+dist/assets/lesson-trading-workspace-Ci3rhx2L.jpg         199.88 kB
+dist/assets/index-1lT3dx2D.css                            129.62 kB │ gzip:  20.92 kB
+dist/assets/index-BdQq_4o_.js                               0.06 kB │ gzip:   0.08 kB
+dist/assets/constants-6wIDjO2B.js                           0.07 kB │ gzip:   0.09 kB
+dist/assets/AdminEditor-C0kk6ey0.js                         0.13 kB │ gzip:   0.14 kB
+dist/assets/index-E8HavgNH.js                               0.23 kB │ gzip:   0.17 kB
+dist/assets/loader-circle-DUPWeUqW.js                       0.31 kB │ gzip:   0.26 kB
+dist/assets/arrow-left-CbOeqdjo.js                          0.33 kB │ gzip:   0.26 kB
+dist/assets/search-DhVvNVSl.js                              0.34 kB │ gzip:   0.27 kB
+dist/assets/message-square-BvPgSP5B.js                      0.35 kB │ gzip:   0.27 kB
+dist/assets/circle-check-big-Ctujg_S-.js                    0.36 kB │ gzip:   0.28 kB
+dist/assets/user-Bs6wy7LW.js                                0.37 kB │ gzip:   0.28 kB
+dist/assets/pendingRedirect-ZrT5yuhv.js                     0.37 kB │ gzip:   0.22 kB
+dist/assets/lock-JFmQYfEP.js                                0.38 kB │ gzip:   0.29 kB
+dist/assets/circle-x-CVKkerw8.js                            0.38 kB │ gzip:   0.28 kB
+dist/assets/target-DQAxFkAD.js                              0.40 kB │ gzip:   0.27 kB
+dist/assets/copy-C4ivY_Po.js                                0.41 kB │ gzip:   0.31 kB
+dist/assets/external-link-Byqpzx5J.js                       0.42 kB │ gzip:   0.30 kB
+dist/assets/triangle-alert-DXnZg7s9.js                      0.43 kB │ gzip:   0.31 kB
+dist/assets/chart-pie-DQUBxjat.js                           0.44 kB │ gzip:   0.33 kB
+dist/assets/lightbulb-B69EKSLq.js                           0.46 kB │ gzip:   0.33 kB
+dist/assets/users-DdHaoFmj.js                               0.47 kB │ gzip:   0.33 kB
+dist/assets/textarea-D9c9VHxP.js                            0.48 kB │ gzip:   0.32 kB
+dist/assets/shield-check-C5O9-V6h.js                        0.49 kB │ gzip:   0.35 kB
+dist/assets/refresh-cw-Cw_Zndhk.js                          0.49 kB │ gzip:   0.32 kB
+dist/assets/save-CYXD_gA5.js                                0.50 kB │ gzip:   0.33 kB
+dist/assets/file-text-CD1Mv-AH.js                           0.50 kB │ gzip:   0.32 kB
+dist/assets/share-2-B08gyfCA.js                             0.53 kB │ gzip:   0.34 kB
+dist/assets/label-B956f-2s.js                               0.56 kB │ gzip:   0.38 kB
+dist/assets/quote-IoDi2nX1.js                               0.56 kB │ gzip:   0.30 kB
+dist/assets/earth-DisOUqSx.js                               0.56 kB │ gzip:   0.37 kB
+dist/assets/input-D64PshAT.js                               0.58 kB │ gzip:   0.35 kB
+dist/assets/building-2-BnWkF2Ik.js                          0.61 kB │ gzip:   0.35 kB
+dist/assets/swords-D0dLTalH.js                              0.72 kB │ gzip:   0.38 kB
+dist/assets/Breadcrumbs-BqJDH2dU.js                         0.92 kB │ gzip:   0.53 kB
+dist/assets/SEOSection-xCEtMfe6.js                          1.08 kB │ gzip:   0.61 kB
+dist/assets/practicePricing-BHiCPqlO.js                     1.14 kB │ gzip:   0.64 kB
+dist/assets/Breadcrumb-C-qKUsp5.js                          1.39 kB │ gzip:   0.51 kB
+dist/assets/NotFound-B1K-YP-e.js                            1.88 kB │ gzip:   0.94 kB
+dist/assets/progress-Ac6svaPB.js                            1.88 kB │ gzip:   0.94 kB
+dist/assets/switch-B4QoYe6c.js                              2.48 kB │ gzip:   1.24 kB
+dist/assets/ResetPassword-CKK1ecLM.js                       2.66 kB │ gzip:   1.30 kB
+dist/assets/AdminValidator-Zx8PBka2.js                      3.19 kB │ gzip:   1.41 kB
+dist/assets/tabs-D7gx1aLG.js                                3.20 kB │ gzip:   1.35 kB
+dist/assets/nicheData-Dvx4IkuX.js                           3.25 kB │ gzip:   1.66 kB
+dist/assets/WikiIndex-D7SL3DQb.js                           3.31 kB │ gzip:   1.42 kB
+dist/assets/courseDocument-B7NmDWKR.js                      3.77 kB │ gzip:   1.71 kB
+dist/assets/index-78lBdcjx.js                               5.21 kB │ gzip:   1.99 kB
+dist/assets/PublicTrader-BI1DBPgi.js                        5.96 kB │ gzip:   2.60 kB
+dist/assets/ContextualLinks-BJA2Qn_d.js                     6.82 kB │ gzip:   2.02 kB
+dist/assets/SEOAudit-Dd-_Ma8J.js                            7.13 kB │ gzip:   2.69 kB
+dist/assets/Auth-DPYrO4wY.js                                7.16 kB │ gzip:   3.00 kB
+dist/assets/TraderProfile-CPwoxjSd.js                       7.31 kB │ gzip:   2.86 kB
+dist/assets/CourseTrack-De-MqV8x.js                         7.32 kB │ gzip:   2.66 kB
+dist/assets/NicheAsset-CN_v8cTI.js                          7.37 kB │ gzip:   2.45 kB
+dist/assets/LearnArticle-C5HPLidg.js                        7.89 kB │ gzip:   2.99 kB
+dist/assets/AssetFAQSection-uciGneh9.js                     7.90 kB │ gzip:   3.01 kB
+dist/assets/AIMentor-B46jgUCd.js                            8.32 kB │ gzip:   2.81 kB
+dist/assets/About-BQ8HTVGG.js                               8.32 kB │ gzip:   3.25 kB
+dist/assets/slider-uVYVK6xW.js                              8.38 kB │ gzip:   3.39 kB
+dist/assets/SectorPillar-BTUUi8P9.js                        8.89 kB │ gzip:   3.49 kB
+dist/assets/AdminReviews-BmONX7xV.js                        9.04 kB │ gzip:   3.04 kB
+dist/assets/Roadmap-BJV4KUd_.js                             9.77 kB │ gzip:   3.80 kB
+dist/assets/Terms-BmjjAdLz.js                               9.92 kB │ gzip:   3.82 kB
+dist/assets/Strategy-CbF5rw5K.js                           10.00 kB │ gzip:   3.14 kB
+dist/assets/useQuery-C_vffSZx.js                           10.29 kB │ gzip:   3.63 kB
+dist/assets/HowToTrade-CjQiWQxr.js                         10.59 kB │ gzip:   3.13 kB
+dist/assets/CourseLesson-BDQ5Cx5B.js                       11.00 kB │ gzip:   4.00 kB
+dist/assets/Reviews-CkUq4cc-.js                            11.01 kB │ gzip:   4.18 kB
+dist/assets/CountryGuide-Bkjemtuw.js                       11.12 kB │ gzip:   3.23 kB
+dist/assets/Compare-CPS4RJm4.js                            11.67 kB │ gzip:   3.74 kB
+dist/assets/Contact-Cklnk0i-.js                            12.18 kB │ gzip:   4.20 kB
+dist/assets/scroll-area-DA8gYL1F.js                        12.49 kB │ gzip:   3.93 kB
+dist/assets/Daily-DTlbz8H8.js                              13.53 kB │ gzip:   4.30 kB
+dist/assets/Privacy-RDd6u9JQ.js                            14.00 kB │ gzip:   4.89 kB
+dist/assets/smartMentor-Yc7UWOMx.js                        14.21 kB │ gzip:   5.99 kB
+dist/assets/Challenge-BdFiGbCG.js                          16.16 kB │ gzip:   5.41 kB
+dist/assets/Courses-CfvgU0yV.js                            17.69 kB │ gzip:   5.79 kB
+dist/assets/countryGuides-uEB0OY8r.js                      18.35 kB │ gzip:   5.32 kB
+dist/assets/AdminDaily-20gwWI_d.js                         22.52 kB │ gzip:   7.11 kB
+dist/assets/Markets-B_dAtae9.js                            23.39 kB │ gzip:   7.00 kB
+dist/assets/WikiTerm-B-9W65yQ.js                           25.94 kB │ gzip:   9.35 kB
+dist/assets/AdminCourses-aBavThWm.js                       26.52 kB │ gzip:   7.61 kB
+dist/assets/Learn-C8HPf7rS.js                              27.96 kB │ gzip:   8.25 kB
+dist/assets/Leaderboard-BsnKNvWS.js                        31.09 kB │ gzip:   9.04 kB
+dist/assets/AdminDashboard-1KGmjhdd.js                     31.19 kB │ gzip:   9.11 kB
+dist/assets/LearnTradingGuide-DbVSIvfd.js                  32.45 kB │ gzip:   9.32 kB
+dist/assets/learnArticles-Cqf0iOg5.js                      35.45 kB │ gzip:  12.24 kB
+dist/assets/AdminAIAssistant-CoTZRpLF.js                   41.57 kB │ gzip:  12.72 kB
+dist/assets/types-3c7sL9OC.js                              53.37 kB │ gzip:  12.16 kB
+dist/assets/useCourseCatalog-BYyHrw-I.js                   58.27 kB │ gzip:  17.11 kB
+dist/assets/LessonDetail-CaZbQl1i.js                       59.80 kB │ gzip:  19.38 kB
+dist/assets/MobileOrderDrawer-YRJQlqLE.js                  73.89 kB │ gzip:  21.59 kB
+dist/assets/TradeAsset-BJlTbSPU.js                         92.90 kB │ gzip:  26.21 kB
+dist/assets/Portfolio-CpfXR3Og.js                         147.27 kB │ gzip:  37.80 kB
+dist/assets/Trade-DcIpGUOq.js                             183.55 kB │ gzip:  59.41 kB
+dist/assets/DailyPractice-CaMUhnw3.js                     255.02 kB │ gzip:  73.62 kB
+dist/assets/generateCategoricalChart-BT0LlGWK.js          382.30 kB │ gzip: 106.06 kB
+dist/assets/index-CdxSdOHw.js                           1,081.27 kB │ gzip: 330.80 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 7.70s
+
+> vite_react_shadcn_ts@0.0.0 postbuild
+> node --import tsx scripts/prerender.ts && node --import tsx scripts/generate-sitemap.ts && node scripts/verify-seo.mjs && node --import tsx scripts/verify-publisher-content.ts && node --import tsx scripts/verify-editorial-inventory.ts && node --import tsx scripts/verify-ad-inventory.ts && node --import tsx scripts/verify-adsense-editorial.ts && node --import tsx scripts/verify-sitewide-readiness.ts && node --import tsx scripts/verify-course-editorial.ts
+
+✅ Prerendered 349 routes (147 indexable, 202 noindex)
+✅ Canonical uniqueness confirmed (349 unique URLs)
+✅ Every indexable route has authored content; no arbitrary minimum word count
+✅ Sitemap: 147 URLs → public/sitemap.xml
+
+| Route | Title | Description | Canonical | H1 | No $10K |
+|-------|-------|-------------|-----------|----|---------|
+| `/` | ✅ unique | ✅ unique | ✅ self | ✅ | ✅ |
+| `/markets` | ✅ unique | ✅ unique | ✅ self | ✅ | ✅ |
+| `/wiki/macd` | ✅ unique | ✅ unique | ✅ self | ✅ | ✅ |
+| `/wiki/bollinger-band-squeeze` | ✅ unique | ✅ unique | ✅ self | ✅ | ✅ |
+| `/learn-trading-guide` | ✅ unique | ✅ unique | ✅ self | ✅ | ✅ |
+| `/privacy` | ✅ unique | ✅ unique | ✅ self | ✅ | ✅ |
+| `/terms` | ✅ unique | ✅ unique | ✅ self | ✅ | ✅ |
+| `/about` | ✅ unique | ✅ unique | ✅ self | ✅ | ✅ |
+
+**Sitemap presence:**
+- `/` → ✅ in sitemap
+- `/markets` → ✅ in sitemap
+- `/wiki/macd` → ✅ in sitemap
+- `/wiki/bollinger-band-squeeze` → ✅ in sitemap
+- `/learn-trading-guide` → ✅ in sitemap
+- `/privacy` → ✅ in sitemap
+- `/terms` → ✅ in sitemap
+- `/about` → ✅ in sitemap
+
+**Stale domain guard:**
+- ✅ no legacy hosts (tradinghq.vercel.app, lovable.app) in build output
+
+🟢 SEO verification passed
+PASS publisher content equivalence: 147 indexable snapshots and navigation payloads; utility exclusion and short-squeeze metadata
+PASS real 404 fallbacks, preserved 170 catalog assets/client states and valid legacy redirects
+PASS complete published course manifest/quizzes, individual asset references/worksheets and scoped country sourcing
+PASS manual ad-inventory default denial, utility/error/loading exclusion and unchanged publisher identity; no ads enabled
+PASS scoped source-fit regression: five asset classes, core hubs, portfolio articles and six glossary topics; no AdSense approval implied
+PASS published hubs: simulator-only derivatives, qualified editorial scope and virtual-only challenges
+PASS editorial audit: eight critical pages, six how-to sources, DCA and psychology consistency
+PASS public mentor, duel, publisher and hub claim consistency
+PASS residual glossary/hub/quiz claims, catalogue schema and independent strategy/payoff/fee arithmetic
+{"routes":349,"sitemapURLs":147,"intentionallyNoindex":202,"internalLinks":713,"worksheets":49,"calculations":9,"checks":"PASS","scope":"compiled metadata, content graph, duplicate paragraphs, reference presence, quiz structure and known numerical examples; not financial-source validation or browser proof"}
+PASS both published course fixtures, six lesson render/bootstrap pairs, idempotence, later-edit preservation, fee-aware examples and corrected quiz wording; no database writes
+PASS exact fee-aware targets, explicit course exclusion heading and preservation of later paragraph edits
+Cloudflare preview prepared: prerendered static routes retained; narrow Functions routing.
+PASS Cloudflare flat output, 348 served route fixtures, slash redirects with query preservation, preview noindex, 404 and Vercel slash setting. Real Pages preview still required.
