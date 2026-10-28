@@ -23,6 +23,7 @@ import { AIAnswerBlock } from "@/components/seo/AIAnswerBlock";
 // These homepage sections keep fixed dark surfaces in both themes.
 const homeDarkPalette = {
   "--foreground": "220 15% 93%",
+  "--card-foreground": "220 15% 93%",
   "--muted-foreground": "220 14% 68%",
   "--primary": "168 100% 50%",
   color: "hsl(220 15% 93%)",
