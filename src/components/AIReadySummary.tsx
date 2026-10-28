@@ -29,21 +29,21 @@ export function AIReadySummary({ asset }: AIReadySummaryProps) {
     bullish: {
       icon: TrendingUp,
       label: "Positive practice change",
-      color: "text-green-400",
+      color: "text-green-400 [.light_&]:text-green-800",
       bg: "bg-green-500/10",
       border: "border-green-500/20"
     },
     bearish: {
       icon: TrendingDown,
       label: "Negative practice change",
-      color: "text-red-400",
+      color: "text-red-400 [.light_&]:text-red-800",
       bg: "bg-red-500/10",
       border: "border-red-500/20"
     },
     neutral: {
       icon: Minus,
       label: "Small practice change",
-      color: "text-yellow-400",
+      color: "text-yellow-400 [.light_&]:text-yellow-800",
       bg: "bg-yellow-500/10",
       border: "border-yellow-500/20"
     }
