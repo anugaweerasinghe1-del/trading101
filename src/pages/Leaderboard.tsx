@@ -220,14 +220,14 @@ export default function Leaderboard() {
         <meta property="og:title" content="TradeHQ Community Practice Board" />
         <meta property="og:description" content="Public TradeHQ accounts ordered by simulated return rank, followed by unranked members. Results are not audited investment performance." />
         <meta property="og:url" content="https://www.thetradehq.com/leaderboard" />
-        <meta property="og:image" content="https://www.thetradehq.com/og-image.png" />
+        <meta property="og:image" content="https://www.thetradehq.com/tradehq-preview-2026.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="TradeHQ" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="TradeHQ Community Practice Board" />
         <meta name="twitter:description" content="Public TradeHQ accounts ordered by simulated return rank, followed by unranked members. Stats are not independently verified." />
-        <meta name="twitter:image" content="https://www.thetradehq.com/og-image.png" />
+        <meta name="twitter:image" content="https://www.thetradehq.com/tradehq-preview-2026.png" />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(FAQ_SCHEMA)}</script>
       </Helmet>

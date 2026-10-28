@@ -44,7 +44,7 @@ export default function LearnArticle() {
     "@type": "Article",
     headline: article.title,
     description: article.metaDescription,
-    image: [`${DOMAIN}/og-image.png`],
+    image: [`${DOMAIN}/tradehq-preview-2026.png`],
     mainEntityOfPage: { "@type": "WebPage", "@id": articleUrl },
     url: articleUrl,
 
@@ -68,11 +68,11 @@ export default function LearnArticle() {
         <meta property="og:title" content={`${article.title} | TradeHQ Learn`} />
         <meta property="og:description" content={article.metaDescription} />
         <meta property="og:url" content={articleUrl} />
-        <meta property="og:image" content={`${DOMAIN}/og-image.png`} />
+        <meta property="og:image" content={`${DOMAIN}/tradehq-preview-2026.png`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${article.title} | TradeHQ Learn`} />
         <meta name="twitter:description" content={article.metaDescription} />
-        <meta name="twitter:image" content={`${DOMAIN}/og-image.png`} />
+        <meta name="twitter:image" content={`${DOMAIN}/tradehq-preview-2026.png`} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
       </Helmet>

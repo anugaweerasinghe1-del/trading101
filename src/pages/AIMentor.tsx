@@ -70,14 +70,14 @@ export default function AIMentor() {
         <meta property="og:title" content="Smart Trading Mentor — Your Free Trading Coach | TradeHQ" />
         <meta property="og:description" content="Ask anything about trading, risk, psychology, or markets. Rule-based educational explanations. Free on TradeHQ." />
         <meta property="og:url" content="https://www.thetradehq.com/ai-mentor" />
-        <meta property="og:image" content="https://www.thetradehq.com/og-image.png" />
+        <meta property="og:image" content="https://www.thetradehq.com/tradehq-preview-2026.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="TradeHQ" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Smart Trading Mentor — Your Free Trading Coach | TradeHQ" />
         <meta name="twitter:description" content="Ask anything about trading, risk, psychology, or markets. Rule-based educational explanations." />
-        <meta name="twitter:image" content="https://www.thetradehq.com/og-image.png" />
+        <meta name="twitter:image" content="https://www.thetradehq.com/tradehq-preview-2026.png" />
       </Helmet>
 
       <div className="min-h-screen bg-background flex flex-col">

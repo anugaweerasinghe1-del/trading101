@@ -152,14 +152,14 @@ const Index = () => {
         <meta property="og:title" content="TradeHQ — Free Paper Trading Simulator | $100K Virtual Cash (No Signup)" />
         <meta property="og:description" content="Practice simulated trading with $100K virtual money. AI mentor + simulated charts. No signup needed. Start in seconds." />
         <meta property="og:url" content="https://www.thetradehq.com/" />
-        <meta property="og:image" content="https://www.thetradehq.com/og-image.png" />
+        <meta property="og:image" content="https://www.thetradehq.com/tradehq-preview-2026.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="TradeHQ" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="TradeHQ — Free Paper Trading Simulator" />
         <meta name="twitter:description" content="Practice stocks & crypto with $100K virtual cash. No signup. Educational mentor included." />
-        <meta name="twitter:image" content="https://www.thetradehq.com/og-image.png" />
+        <meta name="twitter:image" content="https://www.thetradehq.com/tradehq-preview-2026.png" />
         <script type="application/ld+json">{JSON.stringify(homeFaqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(orgSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(webAppSchema)}</script>
