@@ -1,0 +1,517 @@
+{
+  "path": "/roadmap",
+  "sha": "6ff5e952058da66ef78a89536f76ef802bf560b2",
+  "origin": "https://www.thetradehq.com",
+  "capturedAt": "2026-10-28T10:50:45.053Z",
+  "outcome": "COLLECTED_NOT_HUMAN_REVIEWED",
+  "widths": [
+    {
+      "width": 360,
+      "height": 800,
+      "path": "/roadmap",
+      "theme": "light",
+      "mainText": "WHAT'S COMING NEXT\nThe Future of TradeHQ\n\nWe're building a free educational practice-trading experience — and keeping it 100% free, forever. Here's what's on deck.\n\nShipped\nExpanded Learning Courses\n\nFour structured tracks — options, futures, macro reading and trading psychology — each with quizzes and a completion badge. Now live at /courses.\n\nTarget: Shipped Jul 2026\nShipped\nGuided Learning Pathways\n\nPersonalised next-lesson suggestions based on what you've already studied. Live on the Learn hub — the 'Picked for you' card resumes your last lesson or points you to the best starting point.\n\nTarget: Shipped Jul 2026\nShipped\nDaily Challenge Streak\n\nLocal streak tracking is live on the daily challenge. Scheduled daily or watchlist reminder notifications are not currently implemented.\n\nTarget: Shipped Jul 2026\nShipped\nPublic Trader Profiles\n\nNew accounts start with a public profile and can share its /trader/{username} link. Account holders can make the profile private at any time. /trader/me is the private account view, not a public sharing address.\n\nTarget: Shipped Jul 2026\nShipped\nLocalised Country Pages\n\nFree tailored guides for Sri Lanka, India, Philippines, Pakistan and Nigeria — local regulator, exchange, tax notes and student angle. Live under /learn/country.\n\nTarget: Shipped Jul 2026\nShipped\nOptional Email + Google Sign-In\n\nOptional sign-in supports profile and community features when the service is available. Core trading works as a guest. Account cash, positions and server-recorded trades restore across devices when available; journals and course progress remain browser-held.\n\nTarget: Shipped Aug 2026\nShipped\nChallenge a Friend\n\nShare an invite link and run a 30-day head-to-head practice duel. Both sides are scored on percentage return from their own recorded starting balance, with a live scoreboard and a Duels tab on the leaderboard.\n\nTarget: Shipped Aug 2026\nPlanned\nHypothetical Portfolio Scenarios\n\nExplore explicit assumptions for future practice paths. These would be hypothetical scenarios, not calibrated forecasts or evidence that past results will repeat.\n\nTarget: No confirmed date\nPlanned\nEmbeddable Live Price Widgets\n\nA proposed embeddable price widget. Data source, update frequency and access requirements are not yet specified.\n\nTarget: No confirmed date\nWhat the statuses actually mean\n\n\"Shipped\" identifies an implemented feature. Profile and community features require an account and an available backend service; this list does not certify service availability. Shipped items still get refined as people use them, and the date shown is when the first working version went live rather than when the idea started. \"Planned\" identifies a proposal with no confirmed release date; because TradeHQ is built by one person and given away free, a planned date can slip when something more useful takes priority. Nothing on this page is a promise of a paid feature, because there are none.\n\nItems reach the list in one of two ways. Most come from watching where people get stuck: the courses were added because the glossary alone left readers without a sequence to follow, and the country guides exist because a large share of visitors were trying to work out whether any of this applied where they live. The rest come from messages readers send through the contact page, which is the fastest way to get something considered.\n\nTwo things will not appear on this roadmap. There will be no real-money trading, because this project is designed for education using virtual funds. Real-money services have product- and jurisdiction-specific legal requirements outside its scope. And there will be no signals, trade alerts or recommendations, because telling people what to buy is precisely the failure mode this project was built to replace with practice.\n\n(Educational simulation only — not financial advice.)\n\nWant a feature on this list?\n\nDrop a review on our reviews page with your idea — every suggestion gets read.\n\n(Educational simulation only — not financial advice.)",
+      "title": "TradeHQ Roadmap — What's Coming Next | Future Updates",
+      "heading": "The Future of TradeHQ",
+      "supplementaryNotes": [
+        {
+          "path": "/roadmap",
+          "text": "Learning notes: TradeHQ Roadmap\n\nThe TradeHQ roadmap separates implemented features from proposals for portfolio projections and embeddable price widgets. Planned features have no confirmed release date; account features depend on backend availability.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nWhat this page is\n\nThe roadmap lists what has already shipped on TradeHQ and what is being worked on next, with honest status labels. Shipped identifies an implemented feature; account and community features still depend on the backend being available. Planned means it is intended but not built, and no confirmed delivery date is promised.\n\nWhat TradeHQ currently excludes from its educational scope\nReal-money trading or any brokerage function.\nTrade signals, price targets or copy-trading.\nPaid tips, sponsored asset coverage or affiliate broker rankings.\nAnything that implies simulated performance predicts real returns.\nHow features get prioritised\n\nRequests that come through the contact page are weighted far more heavily than anything else, because a feature nobody asked for is usually a feature nobody uses. After that, the priority is whatever removes a known reason people fail to learn — better review tools beat more instruments, and clearer explanations beat more features.\n\nHistorical dates identify recorded implementation milestones. Proposed features have no confirmed release date. A feature appearing in the code does not guarantee that its backend is available; account and community features depend on that service.\n\nRecently shipped\nFour structured course tracks with quizzes, cited sources and completion badges.\nA full trading glossary with detailed explanations and related-term navigation.\nLocalised country guides covering official regulatory sources, market-access checks and country-specific practice worksheets.\nOptional public trader profiles and a 30-day practice duel against a friend.\nDaily challenges with a local-time streak counter, plus journal and portfolio analytics.\nProposed features\nPortfolio projections are proposed as a way to explore hypothetical inputs, not as a promise of future returns.\nEmbeddable price widgets are proposed; their data sources, update frequency and access requirements are not specified.\nThese proposals are not available execution tools. Options and futures lessons remain conceptual; current simulator practice uses supported spot instruments.\nPublic profile sharing requires public visibility and uses the /trader/{username} address. New profiles start public; visibility can be switched off at any time. The /trader/me route is an account view, not a public profile link.\nHow to influence it\n\nGuest portfolios, journals and course progress use browser storage. Optional sign-in stores account cash, positions and server-recorded trades for restoration on another device, alongside profile and community features. Earlier guest trade history, journals and course progress remain browser-held.\n\nThe contact page is the roadmap's real input. Describe the thing you were trying to learn and where the site failed you — that is far more actionable than a feature name, and it is how most of the items above ended up on the list.\n\nReferences and related pages\nAbout TradeHQ\nSuggest a feature\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 360,
+      "scrollHeight": 11583,
+      "viewportWidth": 360,
+      "canonical": "https://www.thetradehq.com/roadmap",
+      "images": [],
+      "horizontalCandidates": [
+        {
+          "tag": "DIV",
+          "text": "",
+          "left": 263,
+          "right": 391
+        },
+        {
+          "tag": "DIV",
+          "text": "",
+          "left": 263,
+          "right": 391
+        },
+        {
+          "tag": "DIV",
+          "text": "",
+          "left": 263,
+          "right": 391
+        },
+        {
+          "tag": "DIV",
+          "text": "",
+          "left": 263,
+          "right": 391
+        },
+        {
+          "tag": "DIV",
+          "text": "",
+          "left": 263,
+          "right": 391
+        },
+        {
+          "tag": "DIV",
+          "text": "",
+          "left": 263,
+          "right": 391
+        },
+        {
+          "tag": "DIV",
+          "text": "",
+          "left": 263,
+          "right": 391
+        },
+        {
+          "tag": "DIV",
+          "text": "",
+          "left": 263,
+          "right": 391
+        },
+        {
+          "tag": "DIV",
+          "text": "",
+          "left": 263,
+          "right": 391
+        }
+      ],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "b5f64669f1d8216c-360-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "b5f64669f1d8216c-360-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "b5f64669f1d8216c-360-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "b5f64669f1d8216c-360-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "b5f64669f1d8216c-360-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "b5f64669f1d8216c-360-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "b5f64669f1d8216c-360-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "b5f64669f1d8216c-360-07.png"
+        },
+        {
+          "y": 5440,
+          "screenshot": "b5f64669f1d8216c-360-08.png"
+        },
+        {
+          "y": 6120,
+          "screenshot": "b5f64669f1d8216c-360-09.png"
+        },
+        {
+          "y": 6800,
+          "screenshot": "b5f64669f1d8216c-360-10.png"
+        },
+        {
+          "y": 7480,
+          "screenshot": "b5f64669f1d8216c-360-11.png"
+        },
+        {
+          "y": 8160,
+          "screenshot": "b5f64669f1d8216c-360-12.png"
+        },
+        {
+          "y": 8840,
+          "screenshot": "b5f64669f1d8216c-360-13.png"
+        },
+        {
+          "y": 9520,
+          "screenshot": "b5f64669f1d8216c-360-14.png"
+        },
+        {
+          "y": 10200,
+          "screenshot": "b5f64669f1d8216c-360-15.png"
+        },
+        {
+          "y": 10783,
+          "screenshot": "b5f64669f1d8216c-360-16.png"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "path": "/roadmap",
+      "theme": "light",
+      "mainText": "WHAT'S COMING NEXT\nThe Future of TradeHQ\n\nWe're building a free educational practice-trading experience — and keeping it 100% free, forever. Here's what's on deck.\n\nShipped\nExpanded Learning Courses\n\nFour structured tracks — options, futures, macro reading and trading psychology — each with quizzes and a completion badge. Now live at /courses.\n\nTarget: Shipped Jul 2026\nShipped\nGuided Learning Pathways\n\nPersonalised next-lesson suggestions based on what you've already studied. Live on the Learn hub — the 'Picked for you' card resumes your last lesson or points you to the best starting point.\n\nTarget: Shipped Jul 2026\nShipped\nDaily Challenge Streak\n\nLocal streak tracking is live on the daily challenge. Scheduled daily or watchlist reminder notifications are not currently implemented.\n\nTarget: Shipped Jul 2026\nShipped\nPublic Trader Profiles\n\nNew accounts start with a public profile and can share its /trader/{username} link. Account holders can make the profile private at any time. /trader/me is the private account view, not a public sharing address.\n\nTarget: Shipped Jul 2026\nShipped\nLocalised Country Pages\n\nFree tailored guides for Sri Lanka, India, Philippines, Pakistan and Nigeria — local regulator, exchange, tax notes and student angle. Live under /learn/country.\n\nTarget: Shipped Jul 2026\nShipped\nOptional Email + Google Sign-In\n\nOptional sign-in supports profile and community features when the service is available. Core trading works as a guest. Account cash, positions and server-recorded trades restore across devices when available; journals and course progress remain browser-held.\n\nTarget: Shipped Aug 2026\nShipped\nChallenge a Friend\n\nShare an invite link and run a 30-day head-to-head practice duel. Both sides are scored on percentage return from their own recorded starting balance, with a live scoreboard and a Duels tab on the leaderboard.\n\nTarget: Shipped Aug 2026\nPlanned\nHypothetical Portfolio Scenarios\n\nExplore explicit assumptions for future practice paths. These would be hypothetical scenarios, not calibrated forecasts or evidence that past results will repeat.\n\nTarget: No confirmed date\nPlanned\nEmbeddable Live Price Widgets\n\nA proposed embeddable price widget. Data source, update frequency and access requirements are not yet specified.\n\nTarget: No confirmed date\nWhat the statuses actually mean\n\n\"Shipped\" identifies an implemented feature. Profile and community features require an account and an available backend service; this list does not certify service availability. Shipped items still get refined as people use them, and the date shown is when the first working version went live rather than when the idea started. \"Planned\" identifies a proposal with no confirmed release date; because TradeHQ is built by one person and given away free, a planned date can slip when something more useful takes priority. Nothing on this page is a promise of a paid feature, because there are none.\n\nItems reach the list in one of two ways. Most come from watching where people get stuck: the courses were added because the glossary alone left readers without a sequence to follow, and the country guides exist because a large share of visitors were trying to work out whether any of this applied where they live. The rest come from messages readers send through the contact page, which is the fastest way to get something considered.\n\nTwo things will not appear on this roadmap. There will be no real-money trading, because this project is designed for education using virtual funds. Real-money services have product- and jurisdiction-specific legal requirements outside its scope. And there will be no signals, trade alerts or recommendations, because telling people what to buy is precisely the failure mode this project was built to replace with practice.\n\n(Educational simulation only — not financial advice.)\n\nWant a feature on this list?\n\nDrop a review on our reviews page with your idea — every suggestion gets read.\n\n(Educational simulation only — not financial advice.)",
+      "title": "TradeHQ Roadmap — What's Coming Next | Future Updates",
+      "heading": "The Future of TradeHQ",
+      "supplementaryNotes": [
+        {
+          "path": "/roadmap",
+          "text": "Learning notes: TradeHQ Roadmap\n\nThe TradeHQ roadmap separates implemented features from proposals for portfolio projections and embeddable price widgets. Planned features have no confirmed release date; account features depend on backend availability.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nWhat this page is\n\nThe roadmap lists what has already shipped on TradeHQ and what is being worked on next, with honest status labels. Shipped identifies an implemented feature; account and community features still depend on the backend being available. Planned means it is intended but not built, and no confirmed delivery date is promised.\n\nWhat TradeHQ currently excludes from its educational scope\nReal-money trading or any brokerage function.\nTrade signals, price targets or copy-trading.\nPaid tips, sponsored asset coverage or affiliate broker rankings.\nAnything that implies simulated performance predicts real returns.\nHow features get prioritised\n\nRequests that come through the contact page are weighted far more heavily than anything else, because a feature nobody asked for is usually a feature nobody uses. After that, the priority is whatever removes a known reason people fail to learn — better review tools beat more instruments, and clearer explanations beat more features.\n\nHistorical dates identify recorded implementation milestones. Proposed features have no confirmed release date. A feature appearing in the code does not guarantee that its backend is available; account and community features depend on that service.\n\nRecently shipped\nFour structured course tracks with quizzes, cited sources and completion badges.\nA full trading glossary with detailed explanations and related-term navigation.\nLocalised country guides covering official regulatory sources, market-access checks and country-specific practice worksheets.\nOptional public trader profiles and a 30-day practice duel against a friend.\nDaily challenges with a local-time streak counter, plus journal and portfolio analytics.\nProposed features\nPortfolio projections are proposed as a way to explore hypothetical inputs, not as a promise of future returns.\nEmbeddable price widgets are proposed; their data sources, update frequency and access requirements are not specified.\nThese proposals are not available execution tools. Options and futures lessons remain conceptual; current simulator practice uses supported spot instruments.\nPublic profile sharing requires public visibility and uses the /trader/{username} address. New profiles start public; visibility can be switched off at any time. The /trader/me route is an account view, not a public profile link.\nHow to influence it\n\nGuest portfolios, journals and course progress use browser storage. Optional sign-in stores account cash, positions and server-recorded trades for restoration on another device, alongside profile and community features. Earlier guest trade history, journals and course progress remain browser-held.\n\nThe contact page is the roadmap's real input. Describe the thing you were trying to learn and where the site failed you — that is far more actionable than a feature name, and it is how most of the items above ended up on the list.\n\nReferences and related pages\nAbout TradeHQ\nSuggest a feature\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 390,
+      "scrollHeight": 11130,
+      "viewportWidth": 390,
+      "canonical": "https://www.thetradehq.com/roadmap",
+      "images": [],
+      "horizontalCandidates": [
+        {
+          "tag": "DIV",
+          "text": "",
+          "left": 293,
+          "right": 421
+        },
+        {
+          "tag": "DIV",
+          "text": "",
+          "left": 293,
+          "right": 421
+        },
+        {
+          "tag": "DIV",
+          "text": "",
+          "left": 293,
+          "right": 421
+        },
+        {
+          "tag": "DIV",
+          "text": "",
+          "left": 293,
+          "right": 421
+        },
+        {
+          "tag": "DIV",
+          "text": "",
+          "left": 293,
+          "right": 421
+        },
+        {
+          "tag": "DIV",
+          "text": "",
+          "left": 293,
+          "right": 421
+        },
+        {
+          "tag": "DIV",
+          "text": "",
+          "left": 293,
+          "right": 421
+        },
+        {
+          "tag": "DIV",
+          "text": "",
+          "left": 293,
+          "right": 421
+        },
+        {
+          "tag": "DIV",
+          "text": "",
+          "left": 293,
+          "right": 421
+        }
+      ],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "b5f64669f1d8216c-390-00.png"
+        },
+        {
+          "y": 717,
+          "screenshot": "b5f64669f1d8216c-390-01.png"
+        },
+        {
+          "y": 1434,
+          "screenshot": "b5f64669f1d8216c-390-02.png"
+        },
+        {
+          "y": 2151,
+          "screenshot": "b5f64669f1d8216c-390-03.png"
+        },
+        {
+          "y": 2868,
+          "screenshot": "b5f64669f1d8216c-390-04.png"
+        },
+        {
+          "y": 3585,
+          "screenshot": "b5f64669f1d8216c-390-05.png"
+        },
+        {
+          "y": 4302,
+          "screenshot": "b5f64669f1d8216c-390-06.png"
+        },
+        {
+          "y": 5019,
+          "screenshot": "b5f64669f1d8216c-390-07.png"
+        },
+        {
+          "y": 5736,
+          "screenshot": "b5f64669f1d8216c-390-08.png"
+        },
+        {
+          "y": 6453,
+          "screenshot": "b5f64669f1d8216c-390-09.png"
+        },
+        {
+          "y": 7170,
+          "screenshot": "b5f64669f1d8216c-390-10.png"
+        },
+        {
+          "y": 7887,
+          "screenshot": "b5f64669f1d8216c-390-11.png"
+        },
+        {
+          "y": 8604,
+          "screenshot": "b5f64669f1d8216c-390-12.png"
+        },
+        {
+          "y": 9321,
+          "screenshot": "b5f64669f1d8216c-390-13.png"
+        },
+        {
+          "y": 10038,
+          "screenshot": "b5f64669f1d8216c-390-14.png"
+        },
+        {
+          "y": 10286,
+          "screenshot": "b5f64669f1d8216c-390-15.png"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "path": "/roadmap",
+      "theme": "light",
+      "mainText": "WHAT'S COMING NEXT\nThe Future of TradeHQ\n\nWe're building a free educational practice-trading experience — and keeping it 100% free, forever. Here's what's on deck.\n\nShipped\nExpanded Learning Courses\n\nFour structured tracks — options, futures, macro reading and trading psychology — each with quizzes and a completion badge. Now live at /courses.\n\nTarget: Shipped Jul 2026\nShipped\nGuided Learning Pathways\n\nPersonalised next-lesson suggestions based on what you've already studied. Live on the Learn hub — the 'Picked for you' card resumes your last lesson or points you to the best starting point.\n\nTarget: Shipped Jul 2026\nShipped\nDaily Challenge Streak\n\nLocal streak tracking is live on the daily challenge. Scheduled daily or watchlist reminder notifications are not currently implemented.\n\nTarget: Shipped Jul 2026\nShipped\nPublic Trader Profiles\n\nNew accounts start with a public profile and can share its /trader/{username} link. Account holders can make the profile private at any time. /trader/me is the private account view, not a public sharing address.\n\nTarget: Shipped Jul 2026\nShipped\nLocalised Country Pages\n\nFree tailored guides for Sri Lanka, India, Philippines, Pakistan and Nigeria — local regulator, exchange, tax notes and student angle. Live under /learn/country.\n\nTarget: Shipped Jul 2026\nShipped\nOptional Email + Google Sign-In\n\nOptional sign-in supports profile and community features when the service is available. Core trading works as a guest. Account cash, positions and server-recorded trades restore across devices when available; journals and course progress remain browser-held.\n\nTarget: Shipped Aug 2026\nShipped\nChallenge a Friend\n\nShare an invite link and run a 30-day head-to-head practice duel. Both sides are scored on percentage return from their own recorded starting balance, with a live scoreboard and a Duels tab on the leaderboard.\n\nTarget: Shipped Aug 2026\nPlanned\nHypothetical Portfolio Scenarios\n\nExplore explicit assumptions for future practice paths. These would be hypothetical scenarios, not calibrated forecasts or evidence that past results will repeat.\n\nTarget: No confirmed date\nPlanned\nEmbeddable Live Price Widgets\n\nA proposed embeddable price widget. Data source, update frequency and access requirements are not yet specified.\n\nTarget: No confirmed date\nWhat the statuses actually mean\n\n\"Shipped\" identifies an implemented feature. Profile and community features require an account and an available backend service; this list does not certify service availability. Shipped items still get refined as people use them, and the date shown is when the first working version went live rather than when the idea started. \"Planned\" identifies a proposal with no confirmed release date; because TradeHQ is built by one person and given away free, a planned date can slip when something more useful takes priority. Nothing on this page is a promise of a paid feature, because there are none.\n\nItems reach the list in one of two ways. Most come from watching where people get stuck: the courses were added because the glossary alone left readers without a sequence to follow, and the country guides exist because a large share of visitors were trying to work out whether any of this applied where they live. The rest come from messages readers send through the contact page, which is the fastest way to get something considered.\n\nTwo things will not appear on this roadmap. There will be no real-money trading, because this project is designed for education using virtual funds. Real-money services have product- and jurisdiction-specific legal requirements outside its scope. And there will be no signals, trade alerts or recommendations, because telling people what to buy is precisely the failure mode this project was built to replace with practice.\n\n(Educational simulation only — not financial advice.)\n\nWant a feature on this list?\n\nDrop a review on our reviews page with your idea — every suggestion gets read.\n\n(Educational simulation only — not financial advice.)",
+      "title": "TradeHQ Roadmap — What's Coming Next | Future Updates",
+      "heading": "The Future of TradeHQ",
+      "supplementaryNotes": [
+        {
+          "path": "/roadmap",
+          "text": "Learning notes: TradeHQ Roadmap\n\nThe TradeHQ roadmap separates implemented features from proposals for portfolio projections and embeddable price widgets. Planned features have no confirmed release date; account features depend on backend availability.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nWhat this page is\n\nThe roadmap lists what has already shipped on TradeHQ and what is being worked on next, with honest status labels. Shipped identifies an implemented feature; account and community features still depend on the backend being available. Planned means it is intended but not built, and no confirmed delivery date is promised.\n\nWhat TradeHQ currently excludes from its educational scope\nReal-money trading or any brokerage function.\nTrade signals, price targets or copy-trading.\nPaid tips, sponsored asset coverage or affiliate broker rankings.\nAnything that implies simulated performance predicts real returns.\nHow features get prioritised\n\nRequests that come through the contact page are weighted far more heavily than anything else, because a feature nobody asked for is usually a feature nobody uses. After that, the priority is whatever removes a known reason people fail to learn — better review tools beat more instruments, and clearer explanations beat more features.\n\nHistorical dates identify recorded implementation milestones. Proposed features have no confirmed release date. A feature appearing in the code does not guarantee that its backend is available; account and community features depend on that service.\n\nRecently shipped\nFour structured course tracks with quizzes, cited sources and completion badges.\nA full trading glossary with detailed explanations and related-term navigation.\nLocalised country guides covering official regulatory sources, market-access checks and country-specific practice worksheets.\nOptional public trader profiles and a 30-day practice duel against a friend.\nDaily challenges with a local-time streak counter, plus journal and portfolio analytics.\nProposed features\nPortfolio projections are proposed as a way to explore hypothetical inputs, not as a promise of future returns.\nEmbeddable price widgets are proposed; their data sources, update frequency and access requirements are not specified.\nThese proposals are not available execution tools. Options and futures lessons remain conceptual; current simulator practice uses supported spot instruments.\nPublic profile sharing requires public visibility and uses the /trader/{username} address. New profiles start public; visibility can be switched off at any time. The /trader/me route is an account view, not a public profile link.\nHow to influence it\n\nGuest portfolios, journals and course progress use browser storage. Optional sign-in stores account cash, positions and server-recorded trades for restoration on another device, alongside profile and community features. Earlier guest trade history, journals and course progress remain browser-held.\n\nThe contact page is the roadmap's real input. Describe the thing you were trying to learn and where the site failed you — that is far more actionable than a feature name, and it is how most of the items above ended up on the list.\n\nReferences and related pages\nAbout TradeHQ\nSuggest a feature\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 753,
+      "scrollHeight": 6935,
+      "viewportWidth": 768,
+      "canonical": "https://www.thetradehq.com/roadmap",
+      "images": [],
+      "horizontalCandidates": [
+        {
+          "tag": "DIV",
+          "text": "",
+          "left": 656,
+          "right": 784
+        },
+        {
+          "tag": "DIV",
+          "text": "",
+          "left": 656,
+          "right": 784
+        },
+        {
+          "tag": "DIV",
+          "text": "",
+          "left": 656,
+          "right": 784
+        },
+        {
+          "tag": "DIV",
+          "text": "",
+          "left": 656,
+          "right": 784
+        }
+      ],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "b5f64669f1d8216c-768-00.png"
+        },
+        {
+          "y": 870,
+          "screenshot": "b5f64669f1d8216c-768-01.png"
+        },
+        {
+          "y": 1740,
+          "screenshot": "b5f64669f1d8216c-768-02.png"
+        },
+        {
+          "y": 2610,
+          "screenshot": "b5f64669f1d8216c-768-03.png"
+        },
+        {
+          "y": 3480,
+          "screenshot": "b5f64669f1d8216c-768-04.png"
+        },
+        {
+          "y": 4350,
+          "screenshot": "b5f64669f1d8216c-768-05.png"
+        },
+        {
+          "y": 5220,
+          "screenshot": "b5f64669f1d8216c-768-06.png"
+        },
+        {
+          "y": 5911,
+          "screenshot": "b5f64669f1d8216c-768-07.png"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "path": "/roadmap",
+      "theme": "light",
+      "mainText": "WHAT'S COMING NEXT\nThe Future of TradeHQ\n\nWe're building a free educational practice-trading experience — and keeping it 100% free, forever. Here's what's on deck.\n\nShipped\nExpanded Learning Courses\n\nFour structured tracks — options, futures, macro reading and trading psychology — each with quizzes and a completion badge. Now live at /courses.\n\nTarget: Shipped Jul 2026\nShipped\nGuided Learning Pathways\n\nPersonalised next-lesson suggestions based on what you've already studied. Live on the Learn hub — the 'Picked for you' card resumes your last lesson or points you to the best starting point.\n\nTarget: Shipped Jul 2026\nShipped\nDaily Challenge Streak\n\nLocal streak tracking is live on the daily challenge. Scheduled daily or watchlist reminder notifications are not currently implemented.\n\nTarget: Shipped Jul 2026\nShipped\nPublic Trader Profiles\n\nNew accounts start with a public profile and can share its /trader/{username} link. Account holders can make the profile private at any time. /trader/me is the private account view, not a public sharing address.\n\nTarget: Shipped Jul 2026\nShipped\nLocalised Country Pages\n\nFree tailored guides for Sri Lanka, India, Philippines, Pakistan and Nigeria — local regulator, exchange, tax notes and student angle. Live under /learn/country.\n\nTarget: Shipped Jul 2026\nShipped\nOptional Email + Google Sign-In\n\nOptional sign-in supports profile and community features when the service is available. Core trading works as a guest. Account cash, positions and server-recorded trades restore across devices when available; journals and course progress remain browser-held.\n\nTarget: Shipped Aug 2026\nShipped\nChallenge a Friend\n\nShare an invite link and run a 30-day head-to-head practice duel. Both sides are scored on percentage return from their own recorded starting balance, with a live scoreboard and a Duels tab on the leaderboard.\n\nTarget: Shipped Aug 2026\nPlanned\nHypothetical Portfolio Scenarios\n\nExplore explicit assumptions for future practice paths. These would be hypothetical scenarios, not calibrated forecasts or evidence that past results will repeat.\n\nTarget: No confirmed date\nPlanned\nEmbeddable Live Price Widgets\n\nA proposed embeddable price widget. Data source, update frequency and access requirements are not yet specified.\n\nTarget: No confirmed date\nWhat the statuses actually mean\n\n\"Shipped\" identifies an implemented feature. Profile and community features require an account and an available backend service; this list does not certify service availability. Shipped items still get refined as people use them, and the date shown is when the first working version went live rather than when the idea started. \"Planned\" identifies a proposal with no confirmed release date; because TradeHQ is built by one person and given away free, a planned date can slip when something more useful takes priority. Nothing on this page is a promise of a paid feature, because there are none.\n\nItems reach the list in one of two ways. Most come from watching where people get stuck: the courses were added because the glossary alone left readers without a sequence to follow, and the country guides exist because a large share of visitors were trying to work out whether any of this applied where they live. The rest come from messages readers send through the contact page, which is the fastest way to get something considered.\n\nTwo things will not appear on this roadmap. There will be no real-money trading, because this project is designed for education using virtual funds. Real-money services have product- and jurisdiction-specific legal requirements outside its scope. And there will be no signals, trade alerts or recommendations, because telling people what to buy is precisely the failure mode this project was built to replace with practice.\n\n(Educational simulation only — not financial advice.)\n\nWant a feature on this list?\n\nDrop a review on our reviews page with your idea — every suggestion gets read.\n\n(Educational simulation only — not financial advice.)",
+      "title": "TradeHQ Roadmap — What's Coming Next | Future Updates",
+      "heading": "The Future of TradeHQ",
+      "supplementaryNotes": [
+        {
+          "path": "/roadmap",
+          "text": "Learning notes: TradeHQ Roadmap\n\nThe TradeHQ roadmap separates implemented features from proposals for portfolio projections and embeddable price widgets. Planned features have no confirmed release date; account features depend on backend availability.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nWhat this page is\n\nThe roadmap lists what has already shipped on TradeHQ and what is being worked on next, with honest status labels. Shipped identifies an implemented feature; account and community features still depend on the backend being available. Planned means it is intended but not built, and no confirmed delivery date is promised.\n\nWhat TradeHQ currently excludes from its educational scope\nReal-money trading or any brokerage function.\nTrade signals, price targets or copy-trading.\nPaid tips, sponsored asset coverage or affiliate broker rankings.\nAnything that implies simulated performance predicts real returns.\nHow features get prioritised\n\nRequests that come through the contact page are weighted far more heavily than anything else, because a feature nobody asked for is usually a feature nobody uses. After that, the priority is whatever removes a known reason people fail to learn — better review tools beat more instruments, and clearer explanations beat more features.\n\nHistorical dates identify recorded implementation milestones. Proposed features have no confirmed release date. A feature appearing in the code does not guarantee that its backend is available; account and community features depend on that service.\n\nRecently shipped\nFour structured course tracks with quizzes, cited sources and completion badges.\nA full trading glossary with detailed explanations and related-term navigation.\nLocalised country guides covering official regulatory sources, market-access checks and country-specific practice worksheets.\nOptional public trader profiles and a 30-day practice duel against a friend.\nDaily challenges with a local-time streak counter, plus journal and portfolio analytics.\nProposed features\nPortfolio projections are proposed as a way to explore hypothetical inputs, not as a promise of future returns.\nEmbeddable price widgets are proposed; their data sources, update frequency and access requirements are not specified.\nThese proposals are not available execution tools. Options and futures lessons remain conceptual; current simulator practice uses supported spot instruments.\nPublic profile sharing requires public visibility and uses the /trader/{username} address. New profiles start public; visibility can be switched off at any time. The /trader/me route is an account view, not a public profile link.\nHow to influence it\n\nGuest portfolios, journals and course progress use browser storage. Optional sign-in stores account cash, positions and server-recorded trades for restoration on another device, alongside profile and community features. Earlier guest trade history, journals and course progress remain browser-held.\n\nThe contact page is the roadmap's real input. Describe the thing you were trying to learn and where the site failed you — that is far more actionable than a feature name, and it is how most of the items above ended up on the list.\n\nReferences and related pages\nAbout TradeHQ\nSuggest a feature\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1265,
+      "scrollHeight": 6204,
+      "viewportWidth": 1280,
+      "canonical": "https://www.thetradehq.com/roadmap",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "b5f64669f1d8216c-1280-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "b5f64669f1d8216c-1280-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "b5f64669f1d8216c-1280-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "b5f64669f1d8216c-1280-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "b5f64669f1d8216c-1280-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "b5f64669f1d8216c-1280-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "b5f64669f1d8216c-1280-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "b5f64669f1d8216c-1280-07.png"
+        },
+        {
+          "y": 5404,
+          "screenshot": "b5f64669f1d8216c-1280-08.png"
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "path": "/roadmap",
+      "theme": "light",
+      "mainText": "WHAT'S COMING NEXT\nThe Future of TradeHQ\n\nWe're building a free educational practice-trading experience — and keeping it 100% free, forever. Here's what's on deck.\n\nShipped\nExpanded Learning Courses\n\nFour structured tracks — options, futures, macro reading and trading psychology — each with quizzes and a completion badge. Now live at /courses.\n\nTarget: Shipped Jul 2026\nShipped\nGuided Learning Pathways\n\nPersonalised next-lesson suggestions based on what you've already studied. Live on the Learn hub — the 'Picked for you' card resumes your last lesson or points you to the best starting point.\n\nTarget: Shipped Jul 2026\nShipped\nDaily Challenge Streak\n\nLocal streak tracking is live on the daily challenge. Scheduled daily or watchlist reminder notifications are not currently implemented.\n\nTarget: Shipped Jul 2026\nShipped\nPublic Trader Profiles\n\nNew accounts start with a public profile and can share its /trader/{username} link. Account holders can make the profile private at any time. /trader/me is the private account view, not a public sharing address.\n\nTarget: Shipped Jul 2026\nShipped\nLocalised Country Pages\n\nFree tailored guides for Sri Lanka, India, Philippines, Pakistan and Nigeria — local regulator, exchange, tax notes and student angle. Live under /learn/country.\n\nTarget: Shipped Jul 2026\nShipped\nOptional Email + Google Sign-In\n\nOptional sign-in supports profile and community features when the service is available. Core trading works as a guest. Account cash, positions and server-recorded trades restore across devices when available; journals and course progress remain browser-held.\n\nTarget: Shipped Aug 2026\nShipped\nChallenge a Friend\n\nShare an invite link and run a 30-day head-to-head practice duel. Both sides are scored on percentage return from their own recorded starting balance, with a live scoreboard and a Duels tab on the leaderboard.\n\nTarget: Shipped Aug 2026\nPlanned\nHypothetical Portfolio Scenarios\n\nExplore explicit assumptions for future practice paths. These would be hypothetical scenarios, not calibrated forecasts or evidence that past results will repeat.\n\nTarget: No confirmed date\nPlanned\nEmbeddable Live Price Widgets\n\nA proposed embeddable price widget. Data source, update frequency and access requirements are not yet specified.\n\nTarget: No confirmed date\nWhat the statuses actually mean\n\n\"Shipped\" identifies an implemented feature. Profile and community features require an account and an available backend service; this list does not certify service availability. Shipped items still get refined as people use them, and the date shown is when the first working version went live rather than when the idea started. \"Planned\" identifies a proposal with no confirmed release date; because TradeHQ is built by one person and given away free, a planned date can slip when something more useful takes priority. Nothing on this page is a promise of a paid feature, because there are none.\n\nItems reach the list in one of two ways. Most come from watching where people get stuck: the courses were added because the glossary alone left readers without a sequence to follow, and the country guides exist because a large share of visitors were trying to work out whether any of this applied where they live. The rest come from messages readers send through the contact page, which is the fastest way to get something considered.\n\nTwo things will not appear on this roadmap. There will be no real-money trading, because this project is designed for education using virtual funds. Real-money services have product- and jurisdiction-specific legal requirements outside its scope. And there will be no signals, trade alerts or recommendations, because telling people what to buy is precisely the failure mode this project was built to replace with practice.\n\n(Educational simulation only — not financial advice.)\n\nWant a feature on this list?\n\nDrop a review on our reviews page with your idea — every suggestion gets read.\n\n(Educational simulation only — not financial advice.)",
+      "title": "TradeHQ Roadmap — What's Coming Next | Future Updates",
+      "heading": "The Future of TradeHQ",
+      "supplementaryNotes": [
+        {
+          "path": "/roadmap",
+          "text": "Learning notes: TradeHQ Roadmap\n\nThe TradeHQ roadmap separates implemented features from proposals for portfolio projections and embeddable price widgets. Planned features have no confirmed release date; account features depend on backend availability.\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nWhat this page is\n\nThe roadmap lists what has already shipped on TradeHQ and what is being worked on next, with honest status labels. Shipped identifies an implemented feature; account and community features still depend on the backend being available. Planned means it is intended but not built, and no confirmed delivery date is promised.\n\nWhat TradeHQ currently excludes from its educational scope\nReal-money trading or any brokerage function.\nTrade signals, price targets or copy-trading.\nPaid tips, sponsored asset coverage or affiliate broker rankings.\nAnything that implies simulated performance predicts real returns.\nHow features get prioritised\n\nRequests that come through the contact page are weighted far more heavily than anything else, because a feature nobody asked for is usually a feature nobody uses. After that, the priority is whatever removes a known reason people fail to learn — better review tools beat more instruments, and clearer explanations beat more features.\n\nHistorical dates identify recorded implementation milestones. Proposed features have no confirmed release date. A feature appearing in the code does not guarantee that its backend is available; account and community features depend on that service.\n\nRecently shipped\nFour structured course tracks with quizzes, cited sources and completion badges.\nA full trading glossary with detailed explanations and related-term navigation.\nLocalised country guides covering official regulatory sources, market-access checks and country-specific practice worksheets.\nOptional public trader profiles and a 30-day practice duel against a friend.\nDaily challenges with a local-time streak counter, plus journal and portfolio analytics.\nProposed features\nPortfolio projections are proposed as a way to explore hypothetical inputs, not as a promise of future returns.\nEmbeddable price widgets are proposed; their data sources, update frequency and access requirements are not specified.\nThese proposals are not available execution tools. Options and futures lessons remain conceptual; current simulator practice uses supported spot instruments.\nPublic profile sharing requires public visibility and uses the /trader/{username} address. New profiles start public; visibility can be switched off at any time. The /trader/me route is an account view, not a public profile link.\nHow to influence it\n\nGuest portfolios, journals and course progress use browser storage. Optional sign-in stores account cash, positions and server-recorded trades for restoration on another device, alongside profile and community features. Earlier guest trade history, journals and course progress remain browser-held.\n\nThe contact page is the roadmap's real input. Describe the thing you were trying to learn and where the site failed you — that is far more actionable than a feature name, and it is how most of the items above ended up on the list.\n\nReferences and related pages\nAbout TradeHQ\nSuggest a feature\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1905,
+      "scrollHeight": 6128,
+      "viewportWidth": 1920,
+      "canonical": "https://www.thetradehq.com/roadmap",
+      "images": [],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "b5f64669f1d8216c-1920-00.png"
+        },
+        {
+          "y": 918,
+          "screenshot": "b5f64669f1d8216c-1920-01.png"
+        },
+        {
+          "y": 1836,
+          "screenshot": "b5f64669f1d8216c-1920-02.png"
+        },
+        {
+          "y": 2754,
+          "screenshot": "b5f64669f1d8216c-1920-03.png"
+        },
+        {
+          "y": 3672,
+          "screenshot": "b5f64669f1d8216c-1920-04.png"
+        },
+        {
+          "y": 4590,
+          "screenshot": "b5f64669f1d8216c-1920-05.png"
+        },
+        {
+          "y": 5048,
+          "screenshot": "b5f64669f1d8216c-1920-06.png"
+        }
+      ]
+    }
+  ]
+}

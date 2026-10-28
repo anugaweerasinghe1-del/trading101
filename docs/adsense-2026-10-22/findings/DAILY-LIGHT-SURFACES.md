@@ -1,0 +1,9 @@
+# THQ-061 — Daily challenge fixed dark surfaces inherit near-black light-theme text
+
+At 390/1280 in both themes, actual active scenario/context/option labels inherit light rgb(15,15,15) or its 75% alpha over fixed dark gradients; dark rgb(234,236,240) remains readable. The header uses a pale fixed text gradient on the light page. Full-scroll all five widths separately viewed.
+
+Proposal scopes original dark color variables to existing challenge and streak surfaces, provides a solid dark backing for those gradients and a solid light-theme title. No scenario/answer/reasoning/streak/bank/score logic changes.
+
+Actual evidence: `evidence/LEARNING-LIGHT-BEFORE-20261028.json`, with computed foreground/background-image/opacity chains and thirty-six personally viewed screenshots across three routes, two widths and two themes. Separate full-light scrolls cover all five widths in `FULL-LIGHT-VISUAL-REVIEW-20261028.json`. Positioned gradients and translucent layers make naive ancestor-only exact contrast calculations invalid; no unsupported numeric ratio is claimed.
+
+Reviewable proposal: `remediation/DAILY-LIGHT-SURFACES.patch`. Not applied to the application checkout, not a tested release candidate, not deployed. Before publication, inspect full affected page at five widths/two themes; compare unrelated surfaces and hover/focus; exercise safe controls and conditional educational content only in isolated disposable fixtures where records would otherwise change. Build/type/editorial checks and trusted exact-head/native preview, protected merge, exact-main/native production, affected live and guest smoke remain mandatory. PR259's current native Cloudflare failure is an operational hold. No changes to calculations, orders, auth, records, scores, ad delivery, consent, infrastructure or secrets. Revert through ordinary protected review if needed.

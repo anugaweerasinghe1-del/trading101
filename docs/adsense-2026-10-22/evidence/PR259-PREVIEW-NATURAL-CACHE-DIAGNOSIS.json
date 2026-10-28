@@ -1,0 +1,81 @@
+{
+  "origin": "https://8088e33a.tradehq-preview.pages.dev",
+  "sha": "26e61df88627a597b0d8d709055af2c4b2b524f2",
+  "observations": [
+    {
+      "label": "Simulated",
+      "hasNaturalTxnCache": false
+    },
+    {
+      "label": "Simulated",
+      "hasNaturalTxnCache": true
+    },
+    {
+      "label": "Simulated",
+      "hasNaturalTxnCache": true
+    },
+    {
+      "label": "Simulated",
+      "hasNaturalTxnCache": true
+    },
+    {
+      "label": "Simulated",
+      "hasNaturalTxnCache": true
+    },
+    {
+      "label": "Simulated",
+      "hasNaturalTxnCache": true
+    },
+    {
+      "label": "Simulated",
+      "hasNaturalTxnCache": true
+    },
+    {
+      "label": "Simulated",
+      "hasNaturalTxnCache": true
+    }
+  ],
+  "network": [
+    {
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "status": 200
+    },
+    {
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/functions/v1/live-market-data",
+      "status": 200
+    },
+    {
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/market_articles",
+      "status": 200
+    },
+    {
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "status": 200
+    },
+    {
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/market_prices",
+      "status": 200
+    },
+    {
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/functions/v1/live-market-data",
+      "status": 200
+    },
+    {
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/functions/v1/live-market-data",
+      "status": 200
+    },
+    {
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/functions/v1/live-market-data",
+      "status": 200
+    }
+  ],
+  "scope": "Read only actual quote response statuses and boolean existence of specific naturally created practice-price cache entry; no storage write or session reads."
+}

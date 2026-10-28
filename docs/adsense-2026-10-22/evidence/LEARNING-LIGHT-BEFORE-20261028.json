@@ -1,0 +1,3706 @@
+{
+  "checkedAt": "2026-10-28T10:42:01.697Z",
+  "sha": "6ff5e952058da66ef78a89536f76ef802bf560b2",
+  "rows": [
+    {
+      "path": "/daily",
+      "width": 390,
+      "theme": "light",
+      "actualTheme": "light",
+      "targets": [
+        {
+          "key": "title",
+          "selector": "main h1",
+          "text": "Today's Trading Scenario",
+          "color": "rgb(15, 15, 15)",
+          "textFill": "rgba(0, 0, 0, 0)",
+          "fontSize": "36px",
+          "fontWeight": "700",
+          "backgroundImage": "linear-gradient(135deg, rgb(249, 250, 251) 0%, rgb(147, 236, 218) 50%, rgb(211, 215, 222) 100%)",
+          "bounds": {
+            "left": 24,
+            "right": 366,
+            "top": 146.5,
+            "bottom": 222.09375
+          },
+          "ancestors": [
+            {
+              "tag": "H1",
+              "classes": "text-4xl md:text-6xl font-bold mb-4 tracking-tight leading-[1.05]",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(135deg, rgb(249, 250, 251) 0%, rgb(147, 236, 218) 50%, rgb(211, 215, 222) 100%)",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HEADER",
+              "classes": "mb-10 text-center",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 max-w-5xl",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "MAIN",
+              "classes": "relative pt-24 pb-20",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-background",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "light",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "daily-title-390-light.png"
+        },
+        {
+          "key": "scenario",
+          "selector": "main article h2",
+          "text": "10-year yield crosses above 5%.",
+          "color": "rgb(15, 15, 15)",
+          "textFill": "rgb(15, 15, 15)",
+          "fontSize": "24px",
+          "fontWeight": "700",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 49,
+            "right": 341,
+            "top": 372.59375,
+            "bottom": 427.78125
+          },
+          "ancestors": [
+            {
+              "tag": "H2",
+              "classes": "text-2xl md:text-[34px] font-bold mb-4 text-foreground leading-[1.15] tracking-tight",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "ARTICLE",
+              "classes": "relative overflow-hidden rounded-[28px] p-6 md:p-12 border border-white/[0.08] mb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(140deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%)",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 max-w-5xl",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "MAIN",
+              "classes": "relative pt-24 pb-20",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-background",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "light",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "daily-scenario-390-light.png"
+        },
+        {
+          "key": "context",
+          "selector": "main article p.text-foreground\\/75",
+          "text": "QQQ down 2% intraday. Tech leadership weakening. Equal-weight QQQ outperforming.",
+          "color": "rgba(15, 15, 15, 0.75)",
+          "textFill": "rgba(15, 15, 15, 0.75)",
+          "fontSize": "15px",
+          "fontWeight": "400",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 49,
+            "right": 341,
+            "top": 363.28125,
+            "bottom": 436.40625
+          },
+          "ancestors": [
+            {
+              "tag": "P",
+              "classes": "text-[15px] md:text-base text-foreground/75 mb-8 leading-relaxed max-w-3xl",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgba(15, 15, 15, 0.75)",
+              "opacity": "1"
+            },
+            {
+              "tag": "ARTICLE",
+              "classes": "relative overflow-hidden rounded-[28px] p-6 md:p-12 border border-white/[0.08] mb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(140deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%)",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 max-w-5xl",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "MAIN",
+              "classes": "relative pt-24 pb-20",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-background",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "light",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "daily-context-390-light.png"
+        },
+        {
+          "key": "option",
+          "selector": "main article button .font-semibold",
+          "text": "Rotate out of mega-cap into equal-weight",
+          "color": "rgb(15, 15, 15)",
+          "textFill": "rgb(15, 15, 15)",
+          "fontSize": "15px",
+          "fontWeight": "600",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 66,
+            "right": 324,
+            "top": 377.40625,
+            "bottom": 422.40625
+          },
+          "ancestors": [
+            {
+              "tag": "DIV",
+              "classes": "text-[15px] font-semibold text-foreground mb-1 group-hover:text-primary transition-colors",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "flex-1",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "flex items-start justify-between gap-3",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BUTTON",
+              "classes": "group w-full text-left p-4 md:p-5 rounded-2xl border transition-all duration-200 active:scale-[0.98] bg-white/[0.03] border-white/[0.08] hover:border-primary/50 hover:bg-primary/[0.06] hover:translate-x-0.5 cursor-pointer",
+              "background": "rgba(255, 255, 255, 0.03)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "space-y-2.5 mb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "ARTICLE",
+              "classes": "relative overflow-hidden rounded-[28px] p-6 md:p-12 border border-white/[0.08] mb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(140deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%)",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 max-w-5xl",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "MAIN",
+              "classes": "relative pt-24 pb-20",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-background",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "light",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "daily-option-390-light.png"
+        }
+      ]
+    },
+    {
+      "path": "/daily",
+      "width": 390,
+      "theme": "dark",
+      "actualTheme": "dark",
+      "targets": [
+        {
+          "key": "title",
+          "selector": "main h1",
+          "text": "Today's Trading Scenario",
+          "color": "rgb(234, 236, 240)",
+          "textFill": "rgba(0, 0, 0, 0)",
+          "fontSize": "36px",
+          "fontWeight": "700",
+          "backgroundImage": "linear-gradient(135deg, rgb(249, 250, 251) 0%, rgb(147, 236, 218) 50%, rgb(211, 215, 222) 100%)",
+          "bounds": {
+            "left": 24,
+            "right": 366,
+            "top": 146.5,
+            "bottom": 222.09375
+          },
+          "ancestors": [
+            {
+              "tag": "H1",
+              "classes": "text-4xl md:text-6xl font-bold mb-4 tracking-tight leading-[1.05]",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(135deg, rgb(249, 250, 251) 0%, rgb(147, 236, 218) 50%, rgb(211, 215, 222) 100%)",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HEADER",
+              "classes": "mb-10 text-center",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 max-w-5xl",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "MAIN",
+              "classes": "relative pt-24 pb-20",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-background",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "daily-title-390-dark.png"
+        },
+        {
+          "key": "scenario",
+          "selector": "main article h2",
+          "text": "10-year yield crosses above 5%.",
+          "color": "rgb(234, 236, 240)",
+          "textFill": "rgb(234, 236, 240)",
+          "fontSize": "24px",
+          "fontWeight": "700",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 49,
+            "right": 341,
+            "top": 372.59375,
+            "bottom": 427.78125
+          },
+          "ancestors": [
+            {
+              "tag": "H2",
+              "classes": "text-2xl md:text-[34px] font-bold mb-4 text-foreground leading-[1.15] tracking-tight",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "ARTICLE",
+              "classes": "relative overflow-hidden rounded-[28px] p-6 md:p-12 border border-white/[0.08] mb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(140deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%)",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 max-w-5xl",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "MAIN",
+              "classes": "relative pt-24 pb-20",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-background",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "daily-scenario-390-dark.png"
+        },
+        {
+          "key": "context",
+          "selector": "main article p.text-foreground\\/75",
+          "text": "QQQ down 2% intraday. Tech leadership weakening. Equal-weight QQQ outperforming.",
+          "color": "rgba(234, 236, 240, 0.75)",
+          "textFill": "rgba(234, 236, 240, 0.75)",
+          "fontSize": "15px",
+          "fontWeight": "400",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 49,
+            "right": 341,
+            "top": 363.28125,
+            "bottom": 436.40625
+          },
+          "ancestors": [
+            {
+              "tag": "P",
+              "classes": "text-[15px] md:text-base text-foreground/75 mb-8 leading-relaxed max-w-3xl",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgba(234, 236, 240, 0.75)",
+              "opacity": "1"
+            },
+            {
+              "tag": "ARTICLE",
+              "classes": "relative overflow-hidden rounded-[28px] p-6 md:p-12 border border-white/[0.08] mb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(140deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%)",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 max-w-5xl",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "MAIN",
+              "classes": "relative pt-24 pb-20",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-background",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "daily-context-390-dark.png"
+        },
+        {
+          "key": "option",
+          "selector": "main article button .font-semibold",
+          "text": "Rotate out of mega-cap into equal-weight",
+          "color": "rgb(234, 236, 240)",
+          "textFill": "rgb(234, 236, 240)",
+          "fontSize": "15px",
+          "fontWeight": "600",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 66,
+            "right": 324,
+            "top": 377.40625,
+            "bottom": 422.40625
+          },
+          "ancestors": [
+            {
+              "tag": "DIV",
+              "classes": "text-[15px] font-semibold text-foreground mb-1 group-hover:text-primary transition-colors",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "flex-1",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "flex items-start justify-between gap-3",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BUTTON",
+              "classes": "group w-full text-left p-4 md:p-5 rounded-2xl border transition-all duration-200 active:scale-[0.98] bg-white/[0.03] border-white/[0.08] hover:border-primary/50 hover:bg-primary/[0.06] hover:translate-x-0.5 cursor-pointer",
+              "background": "rgba(255, 255, 255, 0.03)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "space-y-2.5 mb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "ARTICLE",
+              "classes": "relative overflow-hidden rounded-[28px] p-6 md:p-12 border border-white/[0.08] mb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(140deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%)",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 max-w-5xl",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "MAIN",
+              "classes": "relative pt-24 pb-20",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-background",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "daily-option-390-dark.png"
+        }
+      ]
+    },
+    {
+      "path": "/daily",
+      "width": 1280,
+      "theme": "light",
+      "actualTheme": "light",
+      "targets": [
+        {
+          "key": "title",
+          "selector": "main h1",
+          "text": "Today's Trading Scenario",
+          "color": "rgb(15, 15, 15)",
+          "textFill": "rgba(0, 0, 0, 0)",
+          "fontSize": "60px",
+          "fontWeight": "700",
+          "backgroundImage": "linear-gradient(135deg, rgb(249, 250, 251) 0%, rgb(147, 236, 218) 50%, rgb(211, 215, 222) 100%)",
+          "bounds": {
+            "left": 144.5,
+            "right": 1120.5,
+            "top": 146.5,
+            "bottom": 206.5
+          },
+          "ancestors": [
+            {
+              "tag": "H1",
+              "classes": "text-4xl md:text-6xl font-bold mb-4 tracking-tight leading-[1.05]",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(135deg, rgb(249, 250, 251) 0%, rgb(147, 236, 218) 50%, rgb(211, 215, 222) 100%)",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HEADER",
+              "classes": "mb-10 text-center",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 max-w-5xl",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "MAIN",
+              "classes": "relative pt-24 pb-20",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-background",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "light",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "daily-title-1280-light.png"
+        },
+        {
+          "key": "scenario",
+          "selector": "main article h2",
+          "text": "10-year yield crosses above 5%.",
+          "color": "rgb(15, 15, 15)",
+          "textFill": "rgb(15, 15, 15)",
+          "fontSize": "34px",
+          "fontWeight": "700",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 193.5,
+            "right": 1071.5,
+            "top": 380.625,
+            "bottom": 419.71875
+          },
+          "ancestors": [
+            {
+              "tag": "H2",
+              "classes": "text-2xl md:text-[34px] font-bold mb-4 text-foreground leading-[1.15] tracking-tight",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "ARTICLE",
+              "classes": "relative overflow-hidden rounded-[28px] p-6 md:p-12 border border-white/[0.08] mb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(140deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%)",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 max-w-5xl",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "MAIN",
+              "classes": "relative pt-24 pb-20",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-background",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "light",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "daily-scenario-1280-light.png"
+        },
+        {
+          "key": "context",
+          "selector": "main article p.text-foreground\\/75",
+          "text": "QQQ down 2% intraday. Tech leadership weakening. Equal-weight QQQ outperforming.",
+          "color": "rgba(15, 15, 15, 0.75)",
+          "textFill": "rgba(15, 15, 15, 0.75)",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 193.5,
+            "right": 961.5,
+            "top": 388.21875,
+            "bottom": 412.21875
+          },
+          "ancestors": [
+            {
+              "tag": "P",
+              "classes": "text-[15px] md:text-base text-foreground/75 mb-8 leading-relaxed max-w-3xl",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgba(15, 15, 15, 0.75)",
+              "opacity": "1"
+            },
+            {
+              "tag": "ARTICLE",
+              "classes": "relative overflow-hidden rounded-[28px] p-6 md:p-12 border border-white/[0.08] mb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(140deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%)",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 max-w-5xl",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "MAIN",
+              "classes": "relative pt-24 pb-20",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-background",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "light",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "daily-context-1280-light.png"
+        },
+        {
+          "key": "option",
+          "selector": "main article button .font-semibold",
+          "text": "Rotate out of mega-cap into equal-weight",
+          "color": "rgb(15, 15, 15)",
+          "textFill": "rgb(15, 15, 15)",
+          "fontSize": "15px",
+          "fontWeight": "600",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 214.5,
+            "right": 1050.5,
+            "top": 389.21875,
+            "bottom": 411.71875
+          },
+          "ancestors": [
+            {
+              "tag": "DIV",
+              "classes": "text-[15px] font-semibold text-foreground mb-1 group-hover:text-primary transition-colors",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "flex-1",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "flex items-start justify-between gap-3",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BUTTON",
+              "classes": "group w-full text-left p-4 md:p-5 rounded-2xl border transition-all duration-200 active:scale-[0.98] bg-white/[0.03] border-white/[0.08] hover:border-primary/50 hover:bg-primary/[0.06] hover:translate-x-0.5 cursor-pointer",
+              "background": "rgba(255, 255, 255, 0.03)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "space-y-2.5 mb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "ARTICLE",
+              "classes": "relative overflow-hidden rounded-[28px] p-6 md:p-12 border border-white/[0.08] mb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(140deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%)",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 max-w-5xl",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "MAIN",
+              "classes": "relative pt-24 pb-20",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-background",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "light",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "daily-option-1280-light.png"
+        }
+      ]
+    },
+    {
+      "path": "/daily",
+      "width": 1280,
+      "theme": "dark",
+      "actualTheme": "dark",
+      "targets": [
+        {
+          "key": "title",
+          "selector": "main h1",
+          "text": "Today's Trading Scenario",
+          "color": "rgb(234, 236, 240)",
+          "textFill": "rgba(0, 0, 0, 0)",
+          "fontSize": "60px",
+          "fontWeight": "700",
+          "backgroundImage": "linear-gradient(135deg, rgb(249, 250, 251) 0%, rgb(147, 236, 218) 50%, rgb(211, 215, 222) 100%)",
+          "bounds": {
+            "left": 144.5,
+            "right": 1120.5,
+            "top": 146.5,
+            "bottom": 206.5
+          },
+          "ancestors": [
+            {
+              "tag": "H1",
+              "classes": "text-4xl md:text-6xl font-bold mb-4 tracking-tight leading-[1.05]",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(135deg, rgb(249, 250, 251) 0%, rgb(147, 236, 218) 50%, rgb(211, 215, 222) 100%)",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HEADER",
+              "classes": "mb-10 text-center",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 max-w-5xl",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "MAIN",
+              "classes": "relative pt-24 pb-20",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-background",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "daily-title-1280-dark.png"
+        },
+        {
+          "key": "scenario",
+          "selector": "main article h2",
+          "text": "10-year yield crosses above 5%.",
+          "color": "rgb(234, 236, 240)",
+          "textFill": "rgb(234, 236, 240)",
+          "fontSize": "34px",
+          "fontWeight": "700",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 193.5,
+            "right": 1071.5,
+            "top": 380.625,
+            "bottom": 419.71875
+          },
+          "ancestors": [
+            {
+              "tag": "H2",
+              "classes": "text-2xl md:text-[34px] font-bold mb-4 text-foreground leading-[1.15] tracking-tight",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "ARTICLE",
+              "classes": "relative overflow-hidden rounded-[28px] p-6 md:p-12 border border-white/[0.08] mb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(140deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%)",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 max-w-5xl",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "MAIN",
+              "classes": "relative pt-24 pb-20",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-background",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "daily-scenario-1280-dark.png"
+        },
+        {
+          "key": "context",
+          "selector": "main article p.text-foreground\\/75",
+          "text": "QQQ down 2% intraday. Tech leadership weakening. Equal-weight QQQ outperforming.",
+          "color": "rgba(234, 236, 240, 0.75)",
+          "textFill": "rgba(234, 236, 240, 0.75)",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 193.5,
+            "right": 961.5,
+            "top": 388.21875,
+            "bottom": 412.21875
+          },
+          "ancestors": [
+            {
+              "tag": "P",
+              "classes": "text-[15px] md:text-base text-foreground/75 mb-8 leading-relaxed max-w-3xl",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgba(234, 236, 240, 0.75)",
+              "opacity": "1"
+            },
+            {
+              "tag": "ARTICLE",
+              "classes": "relative overflow-hidden rounded-[28px] p-6 md:p-12 border border-white/[0.08] mb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(140deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%)",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 max-w-5xl",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "MAIN",
+              "classes": "relative pt-24 pb-20",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-background",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "daily-context-1280-dark.png"
+        },
+        {
+          "key": "option",
+          "selector": "main article button .font-semibold",
+          "text": "Rotate out of mega-cap into equal-weight",
+          "color": "rgb(234, 236, 240)",
+          "textFill": "rgb(234, 236, 240)",
+          "fontSize": "15px",
+          "fontWeight": "600",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 214.5,
+            "right": 1050.5,
+            "top": 389.21875,
+            "bottom": 411.71875
+          },
+          "ancestors": [
+            {
+              "tag": "DIV",
+              "classes": "text-[15px] font-semibold text-foreground mb-1 group-hover:text-primary transition-colors",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "flex-1",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "flex items-start justify-between gap-3",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BUTTON",
+              "classes": "group w-full text-left p-4 md:p-5 rounded-2xl border transition-all duration-200 active:scale-[0.98] bg-white/[0.03] border-white/[0.08] hover:border-primary/50 hover:bg-primary/[0.06] hover:translate-x-0.5 cursor-pointer",
+              "background": "rgba(255, 255, 255, 0.03)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "space-y-2.5 mb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "ARTICLE",
+              "classes": "relative overflow-hidden rounded-[28px] p-6 md:p-12 border border-white/[0.08] mb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(140deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%)",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 max-w-5xl",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "MAIN",
+              "classes": "relative pt-24 pb-20",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-background",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "daily-option-1280-dark.png"
+        }
+      ]
+    },
+    {
+      "path": "/learn",
+      "width": 390,
+      "theme": "light",
+      "actualTheme": "light",
+      "targets": [
+        {
+          "key": "intro",
+          "selector": "main h1 + p",
+          "text": "Explore structured courses and shorter explanations. Practice supported spot instruments with virtual funds; options, futures and unsupported order types are conceptual exercises.",
+          "color": "rgba(15, 15, 15, 0.7)",
+          "textFill": "rgba(15, 15, 15, 0.7)",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 65,
+            "right": 325,
+            "top": 321.890625,
+            "bottom": 477.890625
+          },
+          "ancestors": [
+            {
+              "tag": "P",
+              "classes": "text-base md:text-lg text-foreground/70 max-w-2xl mx-auto leading-relaxed mb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgba(15, 15, 15, 0.7)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "relative mb-16 overflow-hidden rounded-[32px] border border-white/[0.08] p-10 md:p-16 text-center animate-fade-in",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(140deg, rgba(0, 255, 204, 0.06) 0%, rgba(15, 15, 15, 0.85) 50%, rgba(163, 71, 209, 0.05) 100%)",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 max-w-7xl",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "MAIN",
+              "classes": "relative pt-32 pb-20",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-background",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "light",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "learn-intro-390-light.png"
+        }
+      ]
+    },
+    {
+      "path": "/learn",
+      "width": 390,
+      "theme": "dark",
+      "actualTheme": "dark",
+      "targets": [
+        {
+          "key": "intro",
+          "selector": "main h1 + p",
+          "text": "Explore structured courses and shorter explanations. Practice supported spot instruments with virtual funds; options, futures and unsupported order types are conceptual exercises.",
+          "color": "rgba(234, 236, 240, 0.7)",
+          "textFill": "rgba(234, 236, 240, 0.7)",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 65,
+            "right": 325,
+            "top": 321.890625,
+            "bottom": 477.890625
+          },
+          "ancestors": [
+            {
+              "tag": "P",
+              "classes": "text-base md:text-lg text-foreground/70 max-w-2xl mx-auto leading-relaxed mb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgba(234, 236, 240, 0.7)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "relative mb-16 overflow-hidden rounded-[32px] border border-white/[0.08] p-10 md:p-16 text-center animate-fade-in",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(140deg, rgba(0, 255, 204, 0.06) 0%, rgba(15, 15, 15, 0.85) 50%, rgba(163, 71, 209, 0.05) 100%)",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 max-w-7xl",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "MAIN",
+              "classes": "relative pt-32 pb-20",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-background",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "learn-intro-390-dark.png"
+        }
+      ]
+    },
+    {
+      "path": "/learn",
+      "width": 1280,
+      "theme": "light",
+      "actualTheme": "light",
+      "targets": [
+        {
+          "key": "intro",
+          "selector": "main h1 + p",
+          "text": "Explore structured courses and shorter explanations. Practice supported spot instruments with virtual funds; options, futures and unsupported order types are conceptual exercises.",
+          "color": "rgba(15, 15, 15, 0.7)",
+          "textFill": "rgba(15, 15, 15, 0.7)",
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 296.5,
+            "right": 968.5,
+            "top": 357.78125,
+            "bottom": 441.78125
+          },
+          "ancestors": [
+            {
+              "tag": "P",
+              "classes": "text-base md:text-lg text-foreground/70 max-w-2xl mx-auto leading-relaxed mb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgba(15, 15, 15, 0.7)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "relative mb-16 overflow-hidden rounded-[32px] border border-white/[0.08] p-10 md:p-16 text-center animate-fade-in",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(140deg, rgba(0, 255, 204, 0.06) 0%, rgba(15, 15, 15, 0.85) 50%, rgba(163, 71, 209, 0.05) 100%)",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 max-w-7xl",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "MAIN",
+              "classes": "relative pt-32 pb-20",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-background",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "light",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "learn-intro-1280-light.png"
+        }
+      ]
+    },
+    {
+      "path": "/learn",
+      "width": 1280,
+      "theme": "dark",
+      "actualTheme": "dark",
+      "targets": [
+        {
+          "key": "intro",
+          "selector": "main h1 + p",
+          "text": "Explore structured courses and shorter explanations. Practice supported spot instruments with virtual funds; options, futures and unsupported order types are conceptual exercises.",
+          "color": "rgba(234, 236, 240, 0.7)",
+          "textFill": "rgba(234, 236, 240, 0.7)",
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 296.5,
+            "right": 968.5,
+            "top": 357.78125,
+            "bottom": 441.78125
+          },
+          "ancestors": [
+            {
+              "tag": "P",
+              "classes": "text-base md:text-lg text-foreground/70 max-w-2xl mx-auto leading-relaxed mb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgba(234, 236, 240, 0.7)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "relative mb-16 overflow-hidden rounded-[32px] border border-white/[0.08] p-10 md:p-16 text-center animate-fade-in",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(140deg, rgba(0, 255, 204, 0.06) 0%, rgba(15, 15, 15, 0.85) 50%, rgba(163, 71, 209, 0.05) 100%)",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 max-w-7xl",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "MAIN",
+              "classes": "relative pt-32 pb-20",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-background",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "learn-intro-1280-dark.png"
+        }
+      ]
+    },
+    {
+      "path": "/learn-trading-guide",
+      "width": 390,
+      "theme": "light",
+      "actualTheme": "light",
+      "targets": [
+        {
+          "key": "footer-stat",
+          "selector": "footer .text-3xl",
+          "text": "170",
+          "color": "rgb(203, 213, 225)",
+          "textFill": "rgb(203, 213, 225)",
+          "fontSize": "30px",
+          "fontWeight": "700",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 24,
+            "right": 366,
+            "top": 381.5,
+            "bottom": 417.5
+          },
+          "ancestors": [
+            {
+              "tag": "P",
+              "classes": "text-3xl font-bold mb-1",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "text-center",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "grid md:grid-cols-4 gap-8 mb-12",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 py-16",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "FOOTER",
+              "classes": "border-t border-border bg-gradient-to-b from-background to-card/50",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(rgb(247, 247, 247), rgba(255, 255, 255, 0.5))",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-[#020405] text-slate-300 selection:bg-emerald-500/30 font-sans",
+              "background": "rgb(2, 4, 5)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "light",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "guide-footer-stat-390-light.png"
+        },
+        {
+          "key": "footer-heading",
+          "selector": "footer h4",
+          "text": "Platform",
+          "color": "rgb(203, 213, 225)",
+          "textFill": "rgb(203, 213, 225)",
+          "fontSize": "16px",
+          "fontWeight": "600",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 24,
+            "right": 366,
+            "top": 387.5,
+            "bottom": 411.5
+          },
+          "ancestors": [
+            {
+              "tag": "H4",
+              "classes": "font-semibold mb-4",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "grid md:grid-cols-5 gap-8 mb-12",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 py-16",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "FOOTER",
+              "classes": "border-t border-border bg-gradient-to-b from-background to-card/50",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(rgb(247, 247, 247), rgba(255, 255, 255, 0.5))",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-[#020405] text-slate-300 selection:bg-emerald-500/30 font-sans",
+              "background": "rgb(2, 4, 5)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "light",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "guide-footer-heading-390-light.png"
+        },
+        {
+          "key": "footer-disclaimer",
+          "selector": "footer strong",
+          "text": "Disclaimer:",
+          "color": "rgb(107, 114, 128)",
+          "textFill": "rgb(107, 114, 128)",
+          "fontSize": "12px",
+          "fontWeight": "700",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 24.109375,
+            "right": 89.5,
+            "top": 392.5,
+            "bottom": 407.5
+          },
+          "ancestors": [
+            {
+              "tag": "STRONG",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(107, 114, 128)",
+              "opacity": "1"
+            },
+            {
+              "tag": "P",
+              "classes": "text-xs text-muted-foreground text-center max-w-4xl mx-auto",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(107, 114, 128)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "border-t border-border pt-8",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 py-16",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "FOOTER",
+              "classes": "border-t border-border bg-gradient-to-b from-background to-card/50",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(rgb(247, 247, 247), rgba(255, 255, 255, 0.5))",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-[#020405] text-slate-300 selection:bg-emerald-500/30 font-sans",
+              "background": "rgb(2, 4, 5)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "light",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "guide-footer-disclaimer-390-light.png"
+        },
+        {
+          "key": "share",
+          "selector": "main button",
+          "text": "Share Progress",
+          "color": "rgb(15, 15, 15)",
+          "textFill": "rgb(15, 15, 15)",
+          "fontSize": "14px",
+          "fontWeight": "500",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 66,
+            "right": 218.265625,
+            "top": 382,
+            "bottom": 418
+          },
+          "ancestors": [
+            {
+              "tag": "BUTTON",
+              "classes": "inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 active:animate-squeeze border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 gap-2",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "flex flex-wrap items-center justify-between gap-4 mb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "rounded-lg border bg-card text-card-foreground shadow-sm p-6 bg-gradient-to-br from-card via-card to-primary/5 border-primary/20",
+              "background": "rgb(255, 255, 255)",
+              "image": "linear-gradient(to right bottom, rgb(255, 255, 255), rgb(255, 255, 255), rgba(0, 163, 131, 0.05))",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "bg-white/[0.01] border border-white/5 rounded-2xl p-4",
+              "background": "rgba(255, 255, 255, 0.01)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "SECTION",
+              "classes": "lg:col-span-5 space-y-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch max-w-7xl mx-auto",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "MAIN",
+              "classes": "container mx-auto px-6 pb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-[#020405] text-slate-300 selection:bg-emerald-500/30 font-sans",
+              "background": "rgb(2, 4, 5)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "light",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "guide-share-390-light.png"
+        }
+      ]
+    },
+    {
+      "path": "/learn-trading-guide",
+      "width": 390,
+      "theme": "dark",
+      "actualTheme": "dark",
+      "targets": [
+        {
+          "key": "footer-stat",
+          "selector": "footer .text-3xl",
+          "text": "170",
+          "color": "rgb(203, 213, 225)",
+          "textFill": "rgb(203, 213, 225)",
+          "fontSize": "30px",
+          "fontWeight": "700",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 24,
+            "right": 366,
+            "top": 381.5,
+            "bottom": 417.5
+          },
+          "ancestors": [
+            {
+              "tag": "P",
+              "classes": "text-3xl font-bold mb-1",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "text-center",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "grid md:grid-cols-4 gap-8 mb-12",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 py-16",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "FOOTER",
+              "classes": "border-t border-border bg-gradient-to-b from-background to-card/50",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(rgb(10, 10, 10), rgba(17, 17, 17, 0.5))",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-[#020405] text-slate-300 selection:bg-emerald-500/30 font-sans",
+              "background": "rgb(2, 4, 5)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "guide-footer-stat-390-dark.png"
+        },
+        {
+          "key": "footer-heading",
+          "selector": "footer h4",
+          "text": "Platform",
+          "color": "rgb(203, 213, 225)",
+          "textFill": "rgb(203, 213, 225)",
+          "fontSize": "16px",
+          "fontWeight": "600",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 24,
+            "right": 366,
+            "top": 387.5,
+            "bottom": 411.5
+          },
+          "ancestors": [
+            {
+              "tag": "H4",
+              "classes": "font-semibold mb-4",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "grid md:grid-cols-5 gap-8 mb-12",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 py-16",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "FOOTER",
+              "classes": "border-t border-border bg-gradient-to-b from-background to-card/50",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(rgb(10, 10, 10), rgba(17, 17, 17, 0.5))",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-[#020405] text-slate-300 selection:bg-emerald-500/30 font-sans",
+              "background": "rgb(2, 4, 5)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "guide-footer-heading-390-dark.png"
+        },
+        {
+          "key": "footer-disclaimer",
+          "selector": "footer strong",
+          "text": "Disclaimer:",
+          "color": "rgb(162, 170, 185)",
+          "textFill": "rgb(162, 170, 185)",
+          "fontSize": "12px",
+          "fontWeight": "700",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 24.109375,
+            "right": 89.5,
+            "top": 392.5,
+            "bottom": 407.5
+          },
+          "ancestors": [
+            {
+              "tag": "STRONG",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(162, 170, 185)",
+              "opacity": "1"
+            },
+            {
+              "tag": "P",
+              "classes": "text-xs text-muted-foreground text-center max-w-4xl mx-auto",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(162, 170, 185)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "border-t border-border pt-8",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 py-16",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "FOOTER",
+              "classes": "border-t border-border bg-gradient-to-b from-background to-card/50",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(rgb(10, 10, 10), rgba(17, 17, 17, 0.5))",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-[#020405] text-slate-300 selection:bg-emerald-500/30 font-sans",
+              "background": "rgb(2, 4, 5)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "guide-footer-disclaimer-390-dark.png"
+        },
+        {
+          "key": "share",
+          "selector": "main button",
+          "text": "Share Progress",
+          "color": "rgb(234, 236, 240)",
+          "textFill": "rgb(234, 236, 240)",
+          "fontSize": "14px",
+          "fontWeight": "500",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 66,
+            "right": 218.265625,
+            "top": 382,
+            "bottom": 418
+          },
+          "ancestors": [
+            {
+              "tag": "BUTTON",
+              "classes": "inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 active:animate-squeeze border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 gap-2",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "flex flex-wrap items-center justify-between gap-4 mb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "rounded-lg border bg-card text-card-foreground shadow-sm p-6 bg-gradient-to-br from-card via-card to-primary/5 border-primary/20",
+              "background": "rgb(17, 17, 17)",
+              "image": "linear-gradient(to right bottom, rgb(17, 17, 17), rgb(17, 17, 17), rgba(0, 255, 204, 0.05))",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "bg-white/[0.01] border border-white/5 rounded-2xl p-4",
+              "background": "rgba(255, 255, 255, 0.01)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "SECTION",
+              "classes": "lg:col-span-5 space-y-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch max-w-7xl mx-auto",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "MAIN",
+              "classes": "container mx-auto px-6 pb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-[#020405] text-slate-300 selection:bg-emerald-500/30 font-sans",
+              "background": "rgb(2, 4, 5)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "guide-share-390-dark.png"
+        }
+      ]
+    },
+    {
+      "path": "/learn-trading-guide",
+      "width": 1280,
+      "theme": "light",
+      "actualTheme": "light",
+      "targets": [
+        {
+          "key": "footer-stat",
+          "selector": "footer .text-3xl",
+          "text": "170",
+          "color": "rgb(203, 213, 225)",
+          "textFill": "rgb(203, 213, 225)",
+          "fontSize": "30px",
+          "fontWeight": "700",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 24,
+            "right": 304.25,
+            "top": 382,
+            "bottom": 418
+          },
+          "ancestors": [
+            {
+              "tag": "P",
+              "classes": "text-3xl font-bold mb-1",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "text-center",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "grid md:grid-cols-4 gap-8 mb-12",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 py-16",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "FOOTER",
+              "classes": "border-t border-border bg-gradient-to-b from-background to-card/50",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(rgb(247, 247, 247), rgba(255, 255, 255, 0.5))",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-[#020405] text-slate-300 selection:bg-emerald-500/30 font-sans",
+              "background": "rgb(2, 4, 5)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "light",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "guide-footer-stat-1280-light.png"
+        },
+        {
+          "key": "footer-heading",
+          "selector": "footer h4",
+          "text": "Platform",
+          "color": "rgb(203, 213, 225)",
+          "textFill": "rgb(203, 213, 225)",
+          "fontSize": "16px",
+          "fontWeight": "600",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 523.59375,
+            "right": 741.390625,
+            "top": 388,
+            "bottom": 412
+          },
+          "ancestors": [
+            {
+              "tag": "H4",
+              "classes": "font-semibold mb-4",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "grid md:grid-cols-5 gap-8 mb-12",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 py-16",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "FOOTER",
+              "classes": "border-t border-border bg-gradient-to-b from-background to-card/50",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(rgb(247, 247, 247), rgba(255, 255, 255, 0.5))",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-[#020405] text-slate-300 selection:bg-emerald-500/30 font-sans",
+              "background": "rgb(2, 4, 5)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "light",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "guide-footer-heading-1280-light.png"
+        },
+        {
+          "key": "footer-disclaimer",
+          "selector": "footer strong",
+          "text": "Disclaimer:",
+          "color": "rgb(107, 114, 128)",
+          "textFill": "rgb(107, 114, 128)",
+          "fontSize": "12px",
+          "fontWeight": "700",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 191.8125,
+            "right": 257.203125,
+            "top": 392.25,
+            "bottom": 407.25
+          },
+          "ancestors": [
+            {
+              "tag": "STRONG",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(107, 114, 128)",
+              "opacity": "1"
+            },
+            {
+              "tag": "P",
+              "classes": "text-xs text-muted-foreground text-center max-w-4xl mx-auto",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(107, 114, 128)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "border-t border-border pt-8",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 py-16",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "FOOTER",
+              "classes": "border-t border-border bg-gradient-to-b from-background to-card/50",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(rgb(247, 247, 247), rgba(255, 255, 255, 0.5))",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-[#020405] text-slate-300 selection:bg-emerald-500/30 font-sans",
+              "background": "rgb(2, 4, 5)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "light",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "guide-footer-disclaimer-1280-light.png"
+        },
+        {
+          "key": "share",
+          "selector": "main button",
+          "text": "Share Progress",
+          "color": "rgb(15, 15, 15)",
+          "textFill": "rgb(15, 15, 15)",
+          "fontSize": "14px",
+          "fontWeight": "500",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 322.8125,
+            "right": 475.078125,
+            "top": 382,
+            "bottom": 418
+          },
+          "ancestors": [
+            {
+              "tag": "BUTTON",
+              "classes": "inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 active:animate-squeeze border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 gap-2",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "flex flex-wrap items-center justify-between gap-4 mb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "rounded-lg border bg-card text-card-foreground shadow-sm p-6 bg-gradient-to-br from-card via-card to-primary/5 border-primary/20",
+              "background": "rgb(255, 255, 255)",
+              "image": "linear-gradient(to right bottom, rgb(255, 255, 255), rgb(255, 255, 255), rgba(0, 163, 131, 0.05))",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "bg-white/[0.01] border border-white/5 rounded-2xl p-4",
+              "background": "rgba(255, 255, 255, 0.01)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "SECTION",
+              "classes": "lg:col-span-5 space-y-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch max-w-7xl mx-auto",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "MAIN",
+              "classes": "container mx-auto px-6 pb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-[#020405] text-slate-300 selection:bg-emerald-500/30 font-sans",
+              "background": "rgb(2, 4, 5)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(247, 247, 247)",
+              "image": "none",
+              "color": "rgb(15, 15, 15)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "light",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "guide-share-1280-light.png"
+        }
+      ]
+    },
+    {
+      "path": "/learn-trading-guide",
+      "width": 1280,
+      "theme": "dark",
+      "actualTheme": "dark",
+      "targets": [
+        {
+          "key": "footer-stat",
+          "selector": "footer .text-3xl",
+          "text": "170",
+          "color": "rgb(203, 213, 225)",
+          "textFill": "rgb(203, 213, 225)",
+          "fontSize": "30px",
+          "fontWeight": "700",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 24,
+            "right": 304.25,
+            "top": 382,
+            "bottom": 418
+          },
+          "ancestors": [
+            {
+              "tag": "P",
+              "classes": "text-3xl font-bold mb-1",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "text-center",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "grid md:grid-cols-4 gap-8 mb-12",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 py-16",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "FOOTER",
+              "classes": "border-t border-border bg-gradient-to-b from-background to-card/50",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(rgb(10, 10, 10), rgba(17, 17, 17, 0.5))",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-[#020405] text-slate-300 selection:bg-emerald-500/30 font-sans",
+              "background": "rgb(2, 4, 5)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "guide-footer-stat-1280-dark.png"
+        },
+        {
+          "key": "footer-heading",
+          "selector": "footer h4",
+          "text": "Platform",
+          "color": "rgb(203, 213, 225)",
+          "textFill": "rgb(203, 213, 225)",
+          "fontSize": "16px",
+          "fontWeight": "600",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 523.59375,
+            "right": 741.390625,
+            "top": 388,
+            "bottom": 412
+          },
+          "ancestors": [
+            {
+              "tag": "H4",
+              "classes": "font-semibold mb-4",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "grid md:grid-cols-5 gap-8 mb-12",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 py-16",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "FOOTER",
+              "classes": "border-t border-border bg-gradient-to-b from-background to-card/50",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(rgb(10, 10, 10), rgba(17, 17, 17, 0.5))",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-[#020405] text-slate-300 selection:bg-emerald-500/30 font-sans",
+              "background": "rgb(2, 4, 5)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "guide-footer-heading-1280-dark.png"
+        },
+        {
+          "key": "footer-disclaimer",
+          "selector": "footer strong",
+          "text": "Disclaimer:",
+          "color": "rgb(162, 170, 185)",
+          "textFill": "rgb(162, 170, 185)",
+          "fontSize": "12px",
+          "fontWeight": "700",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 191.8125,
+            "right": 257.203125,
+            "top": 392.25,
+            "bottom": 407.25
+          },
+          "ancestors": [
+            {
+              "tag": "STRONG",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(162, 170, 185)",
+              "opacity": "1"
+            },
+            {
+              "tag": "P",
+              "classes": "text-xs text-muted-foreground text-center max-w-4xl mx-auto",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(162, 170, 185)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "border-t border-border pt-8",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "container mx-auto px-6 py-16",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "FOOTER",
+              "classes": "border-t border-border bg-gradient-to-b from-background to-card/50",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "linear-gradient(rgb(10, 10, 10), rgba(17, 17, 17, 0.5))",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-[#020405] text-slate-300 selection:bg-emerald-500/30 font-sans",
+              "background": "rgb(2, 4, 5)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "guide-footer-disclaimer-1280-dark.png"
+        },
+        {
+          "key": "share",
+          "selector": "main button",
+          "text": "Share Progress",
+          "color": "rgb(234, 236, 240)",
+          "textFill": "rgb(234, 236, 240)",
+          "fontSize": "14px",
+          "fontWeight": "500",
+          "backgroundImage": "none",
+          "bounds": {
+            "left": 322.8125,
+            "right": 475.078125,
+            "top": 382,
+            "bottom": 418
+          },
+          "ancestors": [
+            {
+              "tag": "BUTTON",
+              "classes": "inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 active:animate-squeeze border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 gap-2",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "flex flex-wrap items-center justify-between gap-4 mb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "rounded-lg border bg-card text-card-foreground shadow-sm p-6 bg-gradient-to-br from-card via-card to-primary/5 border-primary/20",
+              "background": "rgb(17, 17, 17)",
+              "image": "linear-gradient(to right bottom, rgb(17, 17, 17), rgb(17, 17, 17), rgba(0, 255, 204, 0.05))",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "bg-white/[0.01] border border-white/5 rounded-2xl p-4",
+              "background": "rgba(255, 255, 255, 0.01)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "SECTION",
+              "classes": "lg:col-span-5 space-y-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch max-w-7xl mx-auto",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "MAIN",
+              "classes": "container mx-auto px-6 pb-6",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "min-h-screen bg-[#020405] text-slate-300 selection:bg-emerald-500/30 font-sans",
+              "background": "rgb(2, 4, 5)",
+              "image": "none",
+              "color": "rgb(203, 213, 225)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "transition-all duration-500 ease-out opacity-100 transform-none filter-none",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "DIV",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "BODY",
+              "classes": "",
+              "background": "rgb(10, 10, 10)",
+              "image": "none",
+              "color": "rgb(234, 236, 240)",
+              "opacity": "1"
+            },
+            {
+              "tag": "HTML",
+              "classes": "",
+              "background": "rgba(0, 0, 0, 0)",
+              "image": "none",
+              "color": "rgb(0, 0, 0)",
+              "opacity": "1"
+            }
+          ],
+          "screenshot": "guide-share-1280-dark.png"
+        }
+      ]
+    }
+  ],
+  "blocked": [],
+  "errors": [],
+  "scope": "Actual production mobile/desktop after theme settle; no content, style, response or state injection. Readonly public catalog/bank RPC only. No answers, progress completion, shares, orders or account mutations. Gradient/positioned backdrops mean no naive ancestor-derived exact contrast ratio is claimed. Screens require personal viewing.",
+  "personalVisualReview": {
+    "screenshotsPersonallyViewed": 36,
+    "contactSheetsPersonallyViewed": 9,
+    "assessment": "All nine contact sheets personally viewed: actual daily title faint on light background and challenge scenario/context/active option labels near-black on dark card; learning intro dark over mixed gradient; beginner-guide statistics and link headings pale over light gradient. Dark comparisons readable. The guide share selector captured the existing Share Progress button, which is readable and is not counted as a defect. Locked disabled-module opacity excluded from automatic contrast findings. No exact gradient contrast ratio asserted."
+  }
+}

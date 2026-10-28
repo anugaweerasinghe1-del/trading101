@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-10-28T10:33:37.907835+00:00",
+  "candidateSHA": "400b00648c053215503edcb968741003f8dabec1",
+  "pr": 259,
+  "cloudflareDeploymentId": "625a3134-19f6-4a9f-b3d6-fbb01137df6d",
+  "nativeCloudflareConclusion": "failure",
+  "trustedCI": "Cloudflare compatibility application build, editorials and phases0\u20136 passed; final exact native Pages-preview gate failed because native check reports deployment failure. Phase3 and disposable PostgreSQL checks passed; Required validation failed as designed.",
+  "failedGateMessage": "Exact Pages preview probe blocked: Pages deployment failed or inconclusive. actual failure; expected success. No release authority.",
+  "providerFailureCause": "Cloudflare failed during repository fetch/clone: HTTP2 framing-layer disconnect, early EOF and invalid index-pack output. No application build ran in that native attempt. Underlying network cause unknown.",
+  "ownerQuestion": "Answered; no further provider logs requested.",
+  "productionChanged": false,
+  "mergePerformed": false,
+  "releaseState": "HOLD_NATIVE_PREVIEW_FAILURE",
+  "continuingIndependentWork": "Full light-scroll page review, source reading and separate reviewable homepage/title proposals. No bypass or speculative provider/infrastructure mutation.",
+  "ownerProviderLog": {
+    "source": "Owner supplied final Cloudflare native build-log lines in this conversation",
+    "cloneStartedAt": "2026-10-28T10:15:31.970524Z",
+    "failedAt": "2026-10-28T10:23:02.347027Z",
+    "errorLines": [
+      "error: RPC failed; curl 16 Error in the HTTP2 framing layer",
+      "error: 10 bytes of body are still expected",
+      "fetch-pack: unexpected disconnect while reading sideband packet",
+      "fatal: early EOF",
+      "fatal: fetch-pack: invalid index-pack output",
+      "Failed: error occurred while fetching repository"
+    ]
+  },
+  "recoveryDecision": "One code-identical empty commit to existing authorized PR branch triggers fresh native provider and exact-head required CI; no provider, credential, DNS or workflow settings changed. All gates remain mandatory.",
+  "updatedAt": "2026-10-28T10:51:51.200105+00:00"
+}

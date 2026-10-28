@@ -2417,7 +2417,7 @@
       "observed": "Actual 12px weight500 cached label is 1.686:1 and simulated gray label is 4.301:1 in light mode at 360/1280. Measured computed foreground and alpha-composited actual ancestor backgrounds, eight personally viewed screenshots per state. Cached state exercised by aborting public quote reads in disposable client after natural warmup.",
       "fix": "Two light-theme-only text-color overrides in TradeAsset; original dark colors and all status/data logic preserved.",
       "evidence": "findings/TERMINAL-STATUS-CONTRAST.md",
-      "state": "CANDIDATE_CHECKS_PENDING",
+      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
       "detectedAt": "2026-10-28T10:09:29.644244+00:00",
       "beforeEvidence": [
         "evidence/TERMINAL-TRUST-CONTRAST-BEFORE.json",
@@ -2426,24 +2426,152 @@
       "beforeImagesPersonallyViewed": 16,
       "risk": "Low, two CSS class changes; no protected calculations, trading, data/provider selection, storage, accounts, ad/consent or infrastructure changes.",
       "adsenseRelevance": "Accessibility quality only; no asserted Google rejection cause or approval guarantee.",
-      "releaseHold": "Local affected-state verification, exact candidate native/actual previews and protected merge plus production verification required.",
-      "candidateSHA": "400b00648c053215503edcb968741003f8dabec1",
-      "baseSHA": "6ff5e952058da66ef78a89536f76ef802bf560b2",
+      "releaseHold": "Protected merge complete; six exact-main trusted checks, exact native production and actual public browser/guest verification pending.",
+      "candidateSHA": "26e61df88627a597b0d8d709055af2c4b2b524f2",
+      "baseSHA": "eab092bc811f908dc4f2049661a28ad287122c0a",
       "localEvidence": "evidence/TERMINAL-STATUS-LOCAL-BROWSER.json",
       "localImagesPersonallyViewed": 16,
       "pr": 259,
-      "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/259"
+      "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/259",
+      "mergeSHA": "c24f878f3871e0507e3cd040bf7d61572d68af3a"
+    },
+    {
+      "id": "THQ-059",
+      "severity": "P3",
+      "category": "Long generic terminal titles claim analysis absent from content",
+      "urls": [
+        "https://www.thetradehq.com/trade/rune",
+        "https://www.thetradehq.com/trade/render",
+        "https://www.thetradehq.com/trade/usdc",
+        "https://www.thetradehq.com/trade/wld",
+        "https://www.thetradehq.com/trade/imx",
+        "https://www.thetradehq.com/trade/pol"
+      ],
+      "observed": "Fresh actual production metadata at hydrated-main readiness,+3s,+8s consistently retains Analysis browser titles while main scope disclaims asset-specific research. Source assetContent.generateAssetMetaTitle chooses Analysis whenever long Practice Data & Educational Guide title exceeds60 chars. All seven sampled terminals intentionally noindex,follow; no indexability defect asserted.",
+      "fix": "Change only long-title fallback to Practice, preserving instrument names/symbols, custom metadata, descriptions, canonicals and robots.",
+      "evidence": "findings/TERMINAL-METADATA-SCOPE.md",
+      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "detectedAt": "2026-10-28T10:18:41.770525+00:00",
+      "beforeEvidence": "evidence/TERMINAL-FINAL-SETTLED-METADATA-20261028.json",
+      "risk": "Low, one static title fallback; ordinary reviewed wording revert rollback. No data/calculation/account/ad/consent changes.",
+      "adsenseRelevance": "Accurate content description only; no claimed Google rejection cause or title-length penalty.",
+      "releaseHold": "PR259 merged; wait for six exact-main/native production and live checks before next release. Proposal is not an implemented or verified repair."
+    },
+    {
+      "id": "THQ-060",
+      "severity": "P2",
+      "category": "Homepage fixed dark surfaces inherit light-theme dark text",
+      "urls": [
+        "https://www.thetradehq.com/"
+      ],
+      "observed": "Full light-scroll at all five widths personally viewed plus four settled mobile/desktop hero comparisons. Hero heading, highlighted amount, secondary CTA/stats and multiple fixed-black sections inherit rgb(15,15,15) light text and become unreadable. Dark mode uses rgb(234,236,240). Transparent navigation also loses dark icons over black hero. Source components fix dark surfaces but consume global theme text variables; MegaFooter already has explicit local dark palette.",
+      "fix": "Prepared scoped homepage dark-surface palette for existing fixed-black hero, MarketPulse and six marketing sections, plus a shared light-theme navigation background so controls remain visible over fixed-dark content. Preserve all copy, controls, data, calculations and theme preference behavior.",
+      "evidence": "findings/HOME-LIGHT-SURFACES.md",
+      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "detectedAt": "2026-10-28T10:31:27.184117+00:00",
+      "beforeEvidence": "evidence/HOME-LIGHT-BEFORE-20261028.json",
+      "beforeImagesPersonallyViewed": 4,
+      "risk": "Low-to-moderate presentation-only inherited color scope. Must compare every affected section and unaffected light blocks at all five widths/both themes, safe controls and exact provider gates. Ordinary reviewed revert rollback; no protected behavior changes.",
+      "adsenseRelevance": "Visitor readability and access to substantive content; not a known Google rejection reason.",
+      "releaseHold": "PR259 merged; wait for six exact-main/native production and live checks before next release. Proposal is not an implemented or verified repair."
+    },
+    {
+      "id": "THQ-061",
+      "severity": "P2",
+      "category": "Daily challenge fixed dark surfaces inherit near-black light-theme text",
+      "urls": [
+        "https://www.thetradehq.com/daily"
+      ],
+      "observed": "At 390/1280 in both themes, actual active scenario/context/option labels inherit light rgb(15,15,15) or its 75% alpha over fixed dark gradients; dark rgb(234,236,240) remains readable. The header uses a pale fixed text gradient on the light page. Full-scroll all five widths separately viewed.",
+      "fix": "Proposal scopes original dark color variables to existing challenge and streak surfaces, provides a solid dark backing for those gradients and a solid light-theme title. No scenario/answer/reasoning/streak/bank/score logic changes.",
+      "evidence": "findings/DAILY-LIGHT-SURFACES.md",
+      "beforeEvidence": "evidence/LEARNING-LIGHT-BEFORE-20261028.json",
+      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "detectedAt": "2026-10-28T10:45:55.577714+00:00",
+      "risk": "Presentation-only proposal. Requires five widths/both themes, focus/hover/conditional visible content in isolated fixtures without production progress writes, unaffected shared surfaces, build and exact native release gates. Rollback ordinary reviewed revert.",
+      "adsenseRelevance": "Visitor readability and ability to use educational content; not an asserted Google rejection reason.",
+      "releaseHold": "PR259 merged; wait for six exact-main/native production and live checks before next release. Proposal is not an implemented or verified repair."
+    },
+    {
+      "id": "THQ-062",
+      "severity": "P2",
+      "category": "Learning introduction mixes dark copy and fixed dark gradient",
+      "urls": [
+        "https://www.thetradehq.com/learn"
+      ],
+      "observed": "At 390/1280 in both themes, the intro paragraph computes rgba(15,15,15,0.7) in light mode over an independently fixed dark gradient, compared with rgba(234,236,240,0.7) in dark. Full-scroll all five widths separately viewed.",
+      "fix": "Proposal scopes original dark foreground/primary variables and a solid dark gradient backing to the existing intro only. Catalogue, learning path, article cards, counts and progress behavior untouched.",
+      "evidence": "findings/LEARN-INTRO-LIGHT-SURFACE.md",
+      "beforeEvidence": "evidence/LEARNING-LIGHT-BEFORE-20261028.json",
+      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "detectedAt": "2026-10-28T10:45:55.577714+00:00",
+      "risk": "Presentation-only proposal. Requires five widths/both themes, focus/hover/conditional visible content in isolated fixtures without production progress writes, unaffected shared surfaces, build and exact native release gates. Rollback ordinary reviewed revert.",
+      "adsenseRelevance": "Visitor readability and ability to use educational content; not an asserted Google rejection reason.",
+      "releaseHold": "PR259 merged; wait for six exact-main/native production and live checks before next release. Proposal is not an implemented or verified repair."
+    },
+    {
+      "id": "THQ-063",
+      "severity": "P2",
+      "category": "Beginner-guide credibility footer inherits pale text over light gradient",
+      "urls": [
+        "https://www.thetradehq.com/learn-trading-guide"
+      ],
+      "observed": "At 390/1280, footer statistics and headings compute rgb(203,213,225) inherited from the guide outer text-slate-300. In light mode the footer switches to a light gradient; its transparent end blends over the black page, leaving inconsistent contrast. Actual all-five-width full scroll and dark comparisons viewed. Disabled locked-module opacity is excluded.",
+      "fix": "Proposal adds light-only background and foreground utility overrides to the existing CredibilityFooter root. This component is used only by the guide. Keeps all footer copy/links, cards, completion/quiz/calculator/share behavior and default dark presentation unchanged.",
+      "evidence": "findings/GUIDE-FOOTER-LIGHT-SURFACE.md",
+      "beforeEvidence": "evidence/LEARNING-LIGHT-BEFORE-20261028.json",
+      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "detectedAt": "2026-10-28T10:45:55.577714+00:00",
+      "risk": "Presentation-only proposal. Requires five widths/both themes, focus/hover/conditional visible content in isolated fixtures without production progress writes, unaffected shared surfaces, build and exact native release gates. Rollback ordinary reviewed revert.",
+      "adsenseRelevance": "Visitor readability and ability to use educational content; not an asserted Google rejection reason.",
+      "releaseHold": "PR259 merged; wait for six exact-main/native production and live checks before next release. Proposal is not an implemented or verified repair."
+    },
+    {
+      "id": "THQ-064",
+      "severity": "P2",
+      "category": "Roadmap heading and feature accents remain pale in light mode",
+      "urls": [
+        "https://www.thetradehq.com/roadmap"
+      ],
+      "observed": "Full light scroll personally viewed at all five widths; fresh settled390/1280 light/dark captures confirm white/emerald pale gradient heading,12px sky300 Shipped badge and pale planned/date accents on light background. Dark mode readable. No exact pixel contrast ratio asserted for layered gradients.",
+      "fix": "Unapplied light-only darker gradient/status/date foreground overrides; preserve all feature copy, statuses, dates and behavior.",
+      "evidence": "findings/ROADMAP-LIGHT-TEXT.md",
+      "beforeEvidence": "evidence/ROADMAP-LIGHT-BEFORE-20261028.json",
+      "beforeImagesPersonallyViewed": 4,
+      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "detectedAt": "2026-10-28T15:55:46.464277+00:00",
+      "risk": "Presentation-only; requires local five-width/two-theme settled/scroll/hover and exact release/native/public rechecks. Ordinary reviewed revert rollback.",
+      "adsenseRelevance": "Visitor readability; no Google rejection reason asserted.",
+      "releaseHold": "PR259 merged; wait for six exact-main/native production and live checks before next release. Proposal is not an implemented or verified repair."
+    },
+    {
+      "id": "THQ-065",
+      "severity": "P2",
+      "category": "Long public username extends beyond narrow profile viewport",
+      "urls": [
+        "https://www.thetradehq.com/trader/abdullazeezy72munnissy"
+      ],
+      "observed": "At requested360 actual username text bounds16\u2192376.0625 exceed padded heading end344 and captured viewport360. Mobile innerWidth expands376, so scrollWidth<=innerWidth alone misses overflow. Actual raw screenshot clips trailing username characters.390/768/1280/1920 comparisons recorded.",
+      "fix": "Unapplied overflow-wrap:anywhere on existing public username heading; all records, validation, URL and behavior unchanged.",
+      "evidence": "findings/PUBLIC-PROFILE-NAME-WRAP.md",
+      "beforeEvidence": "evidence/PROFILE-NAME-BOUNDS-20261028.json",
+      "beforeImagesPersonallyViewed": 2,
+      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "detectedAt": "2026-10-28T15:58:07.380265+00:00",
+      "risk": "Presentation only; require requested viewport and text-range bounds five widths/two themes, short/long names, safe navigation and exact release gates.",
+      "adsenseRelevance": "Mobile usability, not a claimed Google rejection reason.",
+      "releaseHold": "PR259 merged; production re-verification pending after isolated Chrome startup failure."
     }
   ],
-  "updatedAt": "2026-10-28T10:16:41.048584+00:00",
+  "updatedAt": "2026-10-28T15:58:07.380275+00:00",
   "counts": {
-    "siteFindings": 63,
-    "P2": 33,
-    "P3": 30,
+    "siteFindings": 70,
+    "P2": 39,
+    "P3": 31,
     "publiclyRepaired": 62,
-    "preparedNotMerged": 1,
+    "preparedNotMerged": 7,
     "separateOperationalBlockers": 0,
-    "mergedAwaitingProductionVerification": 0,
+    "mergedAwaitingProductionVerification": 1,
     "protectedUnapprovedRecordFixes": 0,
     "approvedPublishedRecordFixesBlockedOnCredential": 0,
     "mergedFallbackAwaitingProductionVerification": 0

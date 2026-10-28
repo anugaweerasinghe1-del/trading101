@@ -1,0 +1,69 @@
+{
+  "checkedAt": "2026-10-28T10:51:42.401Z",
+  "sha": "6ff5e952058da66ef78a89536f76ef802bf560b2",
+  "origin": "https://www.thetradehq.com",
+  "requestedPaths": [
+    "/ai-mentor",
+    "/challenge",
+    "/compare",
+    "/how-to-trade",
+    "/leaderboard",
+    "/learn/country",
+    "/learn/country/india",
+    "/learn/country/nigeria",
+    "/learn/country/pakistan",
+    "/learn/country/philippines",
+    "/learn/country/sri-lanka",
+    "/privacy",
+    "/terms",
+    "/roadmap",
+    "/wiki"
+  ],
+  "collected": [
+    "/ai-mentor",
+    "/challenge",
+    "/compare",
+    "/how-to-trade",
+    "/leaderboard",
+    "/learn/country",
+    "/learn/country/india",
+    "/learn/country/nigeria",
+    "/learn/country/pakistan",
+    "/learn/country/philippines",
+    "/learn/country/sri-lanka",
+    "/privacy",
+    "/terms",
+    "/roadmap",
+    "/wiki"
+  ],
+  "failure": null,
+  "exceptions": [],
+  "blocked": [
+    {
+      "path": "/leaderboard",
+      "method": "POST",
+      "rpc": "/rest/v1/rpc/get_public_practice_duels"
+    },
+    {
+      "path": "/leaderboard",
+      "method": "POST",
+      "rpc": "/rest/v1/rpc/get_public_practice_duels"
+    },
+    {
+      "path": "/leaderboard",
+      "method": "POST",
+      "rpc": "/rest/v1/rpc/get_public_practice_duels"
+    },
+    {
+      "path": "/leaderboard",
+      "method": "POST",
+      "rpc": "/rest/v1/rpc/get_public_practice_duels"
+    },
+    {
+      "path": "/leaderboard",
+      "method": "POST",
+      "rpc": "/rest/v1/rpc/get_public_practice_duels"
+    }
+  ],
+  "scope": "Actual settled full-page viewport segments at all five widths, scrolled for lazy rendering. Full-scroll light-theme public default state only; images require individual human viewing before review credit. No forms, orders, accounts, reset/clear or duel-settlement RPC allowed."
+}

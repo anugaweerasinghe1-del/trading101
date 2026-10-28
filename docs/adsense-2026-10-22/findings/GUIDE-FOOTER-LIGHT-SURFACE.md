@@ -1,0 +1,9 @@
+# THQ-063 — Beginner-guide credibility footer inherits pale text over light gradient
+
+At 390/1280, footer statistics and headings compute rgb(203,213,225) inherited from the guide outer text-slate-300. In light mode the footer switches to a light gradient; its transparent end blends over the black page, leaving inconsistent contrast. Actual all-five-width full scroll and dark comparisons viewed. Disabled locked-module opacity is excluded.
+
+Proposal adds light-only background and foreground utility overrides to the existing CredibilityFooter root. This component is used only by the guide. Keeps all footer copy/links, cards, completion/quiz/calculator/share behavior and default dark presentation unchanged.
+
+Actual evidence: `evidence/LEARNING-LIGHT-BEFORE-20261028.json`, with computed foreground/background-image/opacity chains and thirty-six personally viewed screenshots across three routes, two widths and two themes. Separate full-light scrolls cover all five widths in `FULL-LIGHT-VISUAL-REVIEW-20261028.json`. Positioned gradients and translucent layers make naive ancestor-only exact contrast calculations invalid; no unsupported numeric ratio is claimed.
+
+Reviewable proposal: `remediation/GUIDE-FOOTER-LIGHT-SURFACE.patch`. Not applied to the application checkout, not a tested release candidate, not deployed. Before publication, inspect full affected page at five widths/two themes; compare unrelated surfaces and hover/focus; exercise safe controls and conditional educational content only in isolated disposable fixtures where records would otherwise change. Build/type/editorial checks and trusted exact-head/native preview, protected merge, exact-main/native production, affected live and guest smoke remain mandatory. PR259's current native Cloudflare failure is an operational hold. No changes to calculations, orders, auth, records, scores, ad delivery, consent, infrastructure or secrets. Revert through ordinary protected review if needed.

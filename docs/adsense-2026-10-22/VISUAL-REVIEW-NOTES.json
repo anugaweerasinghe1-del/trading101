@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-28T10:06:24.188112+00:00",
-  "scope": "Actual screenshot viewing by route and stage. Full-page default-state images are separately recorded at all five widths for20 core routes; this is not conditional, accessibility, light-theme, source or whole-audit completion.",
+  "updatedAt": "2026-10-28T16:01:06.066645+00:00",
+  "scope": "Actual personal screenshot viewing by route/stage. 442/451 public default full-page requested-five-width captures viewed; 27 full light routes viewed. Existing defects remain failures despite coverage. No conditional/source/full-accessibility/whole-audit completion implied.",
   "routes": {
     "/": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -24,7 +24,8 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Hero, activity cards, feature/asset grids, FAQ question rows, market/directory links, complete footer and subsequent publisher learning notes were individually viewed across all five widths. Mobile cards stack and desktop/tablet grids fit; no newly reproduced clipping or overlap in these default-state segments. The viewport top header repeats in segment contacts because it is fixed, not because the page duplicates headers.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     "/about": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -48,7 +49,8 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "All mission/vision/philosophy, technology/account-history and creator/review-method cards, FAQ rows, full footer and appended editorial notes were visually viewed in all five width segments. Header spacing remains clear after earlier repair. Mobile images show two navigation bars at different document positions; shared CSS/source follow-up is underway. Desktop/tablet content remains contained.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     "/compare/apple-vs-microsoft": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -2263,7 +2265,8 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Current six-course/26-lesson live catalog, complete course cards and syllabus previews, learning steps, author and review/source/limitation cards, risk information, FAQ rows, footer and appended article viewed at all five widths. Cards stack mobile and pair at tablet/desktop without a new reproduced clipping defect. Appended article explicitly distinguishes four bundled tracks/20 bundled lessons from additional approved live catalog entries, so its four-track heading is not asserted as a stale catalog-count finding. Earned/completed/progress, expanded answers and individual course/lesson interactions are separate stages; earlier text and layout repairs retain their own receipts.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     "/learn": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -2288,7 +2291,8 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Complete guided lesson card, six structured course covers, course/quick-read distinction, country links, roadmap notice, learning-path and starter cards, nine featured guide cards, market theme cards, six quick reads, glossary/sector links, FAQ rows, full footer and reference article viewed across five widths. Guided card nearly eliminates lesson title at360/390 (THQ031), confirmed fresh bounds; remaining grids stack without new reproduced clipping. Some quick-read cards intentionally truncate previews; those individually linked article bodies were previously read. Current capture recommended a psychology lesson; saved-progress suggestions need isolated control review.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     "/sectors/forex-currencies": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -2485,7 +2489,8 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "All labelled empty form fields, contact cards, long response expectations and scope articles, FAQ rows, directory/footer and appended notes viewed at all five widths. Fields stack at mobile and form retains usable width; no submission or mail client action used. Duplicate/offscreen mobile navigation is sharedTHQ027. Appended support answer advertises a portfolio reset control that source inspection cannot locate; separate help accuracy follow-up.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     "/privacy": {
       "humanViewedWidths": [],
@@ -2502,7 +2507,8 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "All data-use/retention/age/provider/choice sections, opt-out and contact areas, FAQ rows, full directory/footer and the appended reference policy article viewed at all five widths. Body cards and long external-link labels remain contained. Header-icon clipping and duplicate/offscreen mobile bars are separately reproducedTHQ029/027. No analytics-choice changes, ad clicks/settings or data requests were submitted during this visual pass.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     "/terms": {
       "humanViewedWidths": [],
@@ -2519,7 +2525,8 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Full nine-section terms/disclaimer cards, effective date, contact and FAQ rows, directory/footer and appended reference notes viewed at all five widths. Main long paragraphs wrap within their cards. Header-icon clipping and duplicate/offscreen mobile navigation areTHQ029/027; title itself remains visible. No form/account/reset action used.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     "/auth": {
       "humanViewedWidths": [],
@@ -2568,7 +2575,8 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Complete greeting/chat input, six topic pills, quick navigation, FAQ rows/disclaimer and appended learning notes viewed at all five widths. Chat bubble and topic pills wrap within mobile card; send input remains on screen. Source supplies accessible input/send names. Literal emphasis markers appear in the greeting; this minor presentation observation is not evidence of a runtime failure or invented policy violation. Response, keyboard/focus, light/zoom and topic accuracy remain separate checks. Shared offscreen mobile navigation isTHQ027.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     "/challenge": {
       "humanViewedWidths": [],
@@ -2585,7 +2593,8 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Guest account requirement, all three setup cards, score explanation/example, disclaimer, complete directory/footer and appended duel notes viewed at all five widths. Cards stack on mobile and form three columns on larger screens without clipped labels. No invitation/join/settle action or public-duels RPC allowed; authenticated/active/expired duel conditional states and financial outcome logic are not certified. Shared offscreen mobile bar isTHQ027.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     "/daily": {
       "humanViewedWidths": [],
@@ -2602,7 +2611,8 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Today\u2019s labelled hypothetical quick scenario, three reflection choices, the unopened case-study entry, streak/badge cards, complete directory/footer and appended notes viewed at all five widths. Choices and cards fit mobile and wider columns. Daily deep-case/question/result states remain unread/unverified as a separate conditional curriculum stage; no quick choice/start/completion action used in this visual pass. Shared offscreen mobile bar isTHQ027.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     "/reviews": {
       "humanViewedWidths": [],
@@ -2619,7 +2629,8 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Four public review cards and separately labelled owner replies, rating summary, empty review form and all appended reference notes viewed at all five widths. Cards stack at mobile and share a form/sidebar layout at wider widths without clipped reviews. The initial collector blocked get_review_engagement before its SELECT-only source was verified, so visible Likes unavailable is an audit-controlled state and not a product defect. No like/rating submission or review submitted. Current engagement follow-up remains pending with the verified read RPC allowed. Shared offscreen mobile nav isTHQ027.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     "/roadmap": {
       "humanViewedWidths": [],
@@ -2636,7 +2647,8 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Shipped and planned cards, four named historical tracks, local streak versus unimplemented scheduled reminders, optional account/profile restoration, proposed scenario/portfolio/embed widgets, status explainer, footer and all appended reference notes viewed at all five widths. Historical targets and proposed features were read as dated plans, not certification of backend availability. No new confirmed layout defect beyond shared navigation THQ027.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     "/markets": {
       "humanViewedWidths": [],
@@ -2653,7 +2665,8 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "All categories, simulated gain/loss lists, default asset rows, full instrument/glossary directories, FAQ rows, footer and appended learning notes viewed at all five widths. Dashboard main fits its reserved sidebar width, but fixed sidebar covers footer text at all widths and reference text on360/390/768. Fresh bounds reproduce THQ030; no overflow-only scan would establish its absence. Default table uses a limited subset; search/filter/sort and conditional results remain separate.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     "/portfolio": {
       "humanViewedWidths": [],
@@ -2670,7 +2683,8 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Actual complete empty guest portfolio reviewed at all five widths: practice history chart and disclaimer, metrics/allocation/exposure/risk cards, scenario assumptions and empty-state notice, summary cards, positions/performance, journal tabs and empty entries, trade history controls, learning links, FAQ rows, full footer and reference article. Cards stack on mobile and form wider grids without a newly confirmed occlusion. Floating mentor can overlay a small piece of currently scrolled text; document end has clearance and the content can be moved above it, so no persistent inaccessible text finding is asserted from these default views. Shared mobile nav defect is separately repaired THQ027. Populated positions/trades, journal entries, scenario outputs, alerts and private restoration remain separate protected/conditional stages.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     "/leaderboard": {
       "humanViewedWidths": [],
@@ -2687,7 +2701,8 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "All64 public-member rows and subsequent rank/visibility cards, FAQ question rows, footer and appended reference article individually viewed in all five width contacts. Mobile rows become multi-line cards; larger layouts retain columns without a newly reproduced clipped username or number. Imported/unranked and no-trade states are distinctly labelled and do not acquire a practice rank from a large imported balance. This checks public rendering only, not underlying account arithmetic. Some display names are repetitive user-chosen names, not publisher boilerplate. Previous-results tab, portfolio disclosures, keyboard navigation and duet results remain separate conditional checks. Potentially mutating public-duel RPC was blocked; no settlement/result certification.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     "/compare": {
       "humanViewedWidths": [],
@@ -2704,7 +2719,8 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "All eight comparison cards, structure/units/risk introduction and worked-use guidance, full directories/footer and appended reference article viewed across all five widths. One-column mobile and wider paired grids preserve titles. Description previews are deliberately line-clamped and the full comparisons have individual destinations; preview ellipses alone are not a missing-content defect. No newly confirmed clipping beyond shared navigation previously repaired. Pair-specific pages, source/currentness and worksheets retain independent scope.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     "/how-to-trade": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -2718,7 +2734,8 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "All six instrument guide cards, full market/glossary directory and footer and appended how-to reference article viewed at all five widths. Mobile single-column and wider paired cards fit, titles remain readable, and repaired mobile navigation stays in the viewport. Description previews are deliberately clamped and have individual full guide destinations; no new missing-content defect inferred. This hub links distinct hypothetical accounting/quote-source exercises; individual guide controls and primary sources remain separate.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     "/learn-trading-guide": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -2732,7 +2749,8 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Entire guide dashboard at five widths viewed: purpose hero and illustrative ticker, curriculum cards and six local learning modules, default compound-growth controls/chart/caveats, pattern question and synthetic sentiment example, wiki spotlights, stats/creator/footer and appended article. Mobile first-module title, XP badge and action appear crowded/overlapping; fresh bounds/source investigation required before finding or repair. Credibility stat claims25+TradingCourses despite the current six-course catalog; source/count meaning needs investigation. Neither issue is certified absent by zero-overflow observations. No module completion, share/copy/tweet, answer or calculator-state change performed; conditional controls and calculations remain separate.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     "/wiki": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -2746,7 +2764,8 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "All49 glossary entry cards grouped by category, six how-to guide links, full directory/footer and appended glossary reference article viewed at every requested width. Mobile one-column and wider three-column groups retain wrapped long titles including MACD and uncertainty labels. No fresh occlusion/clipping reproduced in default state. The index provides a lookup/navigation function; repeated term links in the global footer alone are not a thin-content finding. Individual entries and actual keyboard/focus/primary-source checks retain their own scope.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     "/strategy": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -2774,7 +2793,8 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Five local-country cards with flags/currencies/exchanges, introductory purpose, simulation disclaimer, complete global directory/footer and appended country hub notes viewed across five widths. Mobile cards stack and wider cards pair without a new clipped heading or visible overflow. Preview descriptions are intentionally shortened and link to complete guides. Country eligibility, access, taxes and current regulation are not certified by this directory; individual guide facts need dated official sources and separate originality review.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     "/learn/country/sri-lanka": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -2788,7 +2808,8 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Entire Sri Lanka page viewed at five widths: flag/title/summary, public simulator-access answer and dated source-check scope, SEC/CSE cards, practice/local-access/eligibility context, locally relevant observations and USD/LKR worksheet, student/broker/tax notes, FAQ question rows, country links and complete footer/reference article. Mobile cards and long SEC labels wrap within bounds; no new default-state clipping reproduced. Public simulator-access wording is separated from real brokerage/remittance eligibility. Actual current regulation, tax/eligibility, keyboard/expanded layouts and material-primary-source/originality checks remain separate.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     "/learn/country/india": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -2802,7 +2823,8 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "All default segments actually viewed at five widths, including links, regulator/exchange cards, SEBI study scope, worksheet, collapsed FAQ, footer and appended notes. No new layout occlusion or document overflow observed. Main and appended copy repeat substantially; original-value and official claim corroboration are separate follow-ups, not established by screenshots. Expanded FAQ reading already tracked separately. Light theme, keyboard/zoom and primary-source applicability remain.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     "/learn/country/philippines": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -2816,7 +2838,8 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "All default segments viewed at five widths: hero, regulator/PSE cards, non-guaranteed access explanations, remittance worksheet, two collapsed FAQs, footer and notes. No new default-state layout defect observed. Light/keyboard/zoom, eligibility and dated PSE-source checks remain; registry normal client read returned403, not corroborated by title/HTTP alone.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     "/learn/country/pakistan": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -2830,7 +2853,8 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Five-width whole default segments viewed, including main regulator/PSX cards, oil/PKR exercise, collapsed FAQs, footer and appended notes. No additional default layout defect observed. Normal SECP source request403 leaves official registry applicability unverified. No bank, brokerage or progress action performed. Light/keyboard/zoom, dated economic claims and originality remain.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     "/learn/country/nigeria": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -2844,7 +2868,8 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "All default segments viewed at360/390/768/1280/1920, including main/notes, registered-operator citations, two collapsed FAQs and footer. No new default layout defect observed. Normal official SEC directory and14May2026warning body were actually read; they corroborate existence of registration search and warning, not all eligibility/tax/economic claims. Local/accessibility/keyboard/light and originality follow-ups remain.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     "/courses/options-trading-fundamentals": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -4972,7 +4997,8 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Generic practice terminal observed with USD Coin (USDC); portfolio100k, provider/simulated provenance, 1H area window, five-range candlestick panel and illustrative band legends, heuristic practice buckets and12Explore cards. Actual main and separately appended simulator notes read. Six contact sheets across five widths personally viewed. Mobile candlestick header clips ranges/legend: THQ-052 reproduced, prepared CSS fix PR254. Appended notes explicitly distinguish guest/account storage,0.1%classroom fee, market-only fills/no shorts and missing real-world execution costs; not certified account/engine behavior. Other default content and navigation fit; all conditional/order/account/source/accessibility stages remain bounded/incomplete.",
-      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     "/trade/abbv": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -7134,6 +7160,12 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Read complete actual main and personally viewed all five widths through final disclaimer. Pepe tiny-price digits remain visible in default screenshots; precision and trading amounts were not changed or certified. Generic cryptocurrency explanation gives no specific meme-token context. Simulation/no-real-money and absence-of-research scope are explicit. Full-light scroll, keyboard sequence, zoom/screenreader, source/content-value and conditional-state follow-ups remain."
+    },
+    "/trader/abdullazeezy72munnissy": {
+      "path": "/trader/abdullazeezy72munnissy",
+      "defaultFullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "assessment": "All5 requested-width dark contacts personally viewed;360 screenshot clips long username, later measured text-range bounds exceed requested viewport and expand mobile layout viewport. This is visual inspection coverage with a reproduced failure, not a five-width passing layout. Breadcrumb retains full identifier.",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     }
   }
 }

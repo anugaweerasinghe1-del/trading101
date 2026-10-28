@@ -1,0 +1,35 @@
+--- a/src/pages/Roadmap.tsx
++++ b/src/pages/Roadmap.tsx
+@@ -27,10 +27,10 @@
+ ];
+
+ const STATUS_STYLES: Record<RoadmapItem["status"], string> = {
+-  "shipped": "bg-sky-500/15 text-sky-300 border-sky-500/30",
+-  "shipping-soon": "bg-emerald-500/15 text-emerald-300 border-emerald-500/30",
+-  "in-progress": "bg-amber-500/15 text-amber-300 border-amber-500/30",
+-  "planned": "bg-fuchsia-500/15 text-fuchsia-300 border-fuchsia-500/30",
++  "shipped": "bg-sky-500/15 text-sky-300 [.light_&]:text-sky-800 border-sky-500/30",
++  "shipping-soon": "bg-emerald-500/15 text-emerald-300 [.light_&]:text-emerald-800 border-emerald-500/30",
++  "in-progress": "bg-amber-500/15 text-amber-300 [.light_&]:text-amber-800 border-amber-500/30",
++  "planned": "bg-fuchsia-500/15 text-fuchsia-300 [.light_&]:text-fuchsia-800 border-fuchsia-500/30",
+ };
+
+ const STATUS_LABEL: Record<RoadmapItem["status"], string> = {
+@@ -68,7 +68,7 @@
+             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur text-xs uppercase tracking-widest text-muted-foreground mb-5">
+               <Sparkles className="h-3 w-3 text-emerald-400" /> What's coming next
+             </div>
+-            <h1 className="text-5xl md:text-6xl font-bold tracking-tight bg-gradient-to-br from-white via-emerald-200 to-emerald-400 bg-clip-text text-transparent">
++            <h1 className="text-5xl md:text-6xl font-bold tracking-tight bg-gradient-to-br from-white via-emerald-200 to-emerald-400 [.light_&]:from-emerald-950 [.light_&]:via-emerald-800 [.light_&]:to-emerald-700 bg-clip-text text-transparent">
+               The Future of TradeHQ
+             </h1>
+             <p className="mt-5 text-lg text-muted-foreground max-w-2xl mx-auto">
+@@ -96,7 +96,7 @@
+                   <h2 className="text-lg font-semibold tracking-tight mb-2">{item.title}</h2>
+                   <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                   <div className="mt-4 pt-4 border-t border-white/5 text-xs text-muted-foreground/70">
+-                    Target: <span className="text-emerald-400/80">{item.eta}</span>
++                    Target: <span className="text-emerald-400/80 [.light_&]:text-emerald-800">{item.eta}</span>
+                   </div>
+                 </Card>
+               );

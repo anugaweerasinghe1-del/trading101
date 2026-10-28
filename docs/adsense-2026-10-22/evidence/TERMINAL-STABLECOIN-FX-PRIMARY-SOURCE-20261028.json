@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-10-28T10:19:55.301548+00:00",
+  "productionSHA": "6ff5e952058da66ef78a89536f76ef802bf560b2",
+  "rows": [
+    {
+      "paths": [
+        "/trade/usdt"
+      ],
+      "source": "tether-how-it-works",
+      "status": "SELECTED_ISSUER_PASSAGES_READ",
+      "assessment": "Issuer explicitly describes fiat-linked 1:1 tokens, claims 100% reserve backing and describes KYC for issuance. Promotional statements are issuer assertions; not independently certified reserves or a guarantee of market price/redemption access. Actual terminal generic crypto copy lacks this essential instrument context. Potential educational improvement: distinguish intended dollar peg, reserve report scope, issuer terms and simulated chart; no current market event inferred."
+    },
+    {
+      "paths": [
+        "/trade/usdc"
+      ],
+      "source": "circle-usdc",
+      "status": "SELECTED_ISSUER_PASSAGES_READ",
+      "assessment": "Issuer describes USDC as dollar-linked, backed by reserves, redeemable1:1; footnote says Circle Mint is institutions-only, not individuals. Legal disclosure says digital assets lack typical deposit protection and may cause losses. Do not generalize issuer redemption availability to every token holder or certify safety."
+    },
+    {
+      "paths": [
+        "/trade/usdc"
+      ],
+      "source": "circle-transparency",
+      "status": "SELECTED_ISSUER_PASSAGES_READ",
+      "assessment": "Issuer transparency page describes weekly reserve disclosures and monthly third-party assurance under AICPA attestation standards; cash/cash-equivalents and Circle Reserve Fund detailed. Read selected substantive sections, not underlying monthly reports. Do not equate attestation with independent full financial audit or guarantee of future value. Terminal lacks substantive stablecoin education."
+    },
+    {
+      "paths": [
+        "/trade/usdhkd"
+      ],
+      "source": "hkma-linked-rate",
+      "status": "SELECTED_AUTHORITY_PASSAGES_READ",
+      "assessment": "HKMA describes currency-board Linked Exchange Rate System since1983 and7.75\u20137.85HKDperUSD band. Generic central-bank policy-divergence copy omits this regime. Educational framework context is supportable; not a claim that TradeHQ simulated path respects band or converts actual currency units correctly. Unit-model investigation remains separate."
+    },
+    {
+      "paths": [
+        "/trade/usdsgd"
+      ],
+      "source": "mas-framework",
+      "status": "BLOCKED_MAINTENANCE_CONTENT",
+      "assessment": "HTTP200 returned government maintenance/unavailable page, not monetary-framework content. No framework claim verified from this response. Preserve receipt, source follow-up open."
+    }
+  ],
+  "scope": "Personally read selected actual issuer/authority passages and actual page omissions. No full-source/underlying-report certification, reserve guarantee, financial advice, protected data/logic change or Google rejection-cause assertion."
+}

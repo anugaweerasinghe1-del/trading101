@@ -1,0 +1,11 @@
+--- a/src/pages/PublicTrader.tsx
++++ b/src/pages/PublicTrader.tsx
+@@ -142,7 +142,7 @@
+                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-2xs uppercase tracking-widest text-primary mb-3">
+                   <Trophy className="h-3 w-3" /> Public practice profile
+                 </div>
+-                <h1 className="text-3xl md:text-4xl font-bold tracking-tight">{data.username}</h1>
++                <h1 className="text-3xl md:text-4xl font-bold tracking-tight [overflow-wrap:anywhere]">{data.username}</h1>
+                 <p className="text-sm text-muted-foreground mt-2 max-w-xl">
+                   {data.bio ||
+                     `Public practice-trading profile on TradeHQ.`}

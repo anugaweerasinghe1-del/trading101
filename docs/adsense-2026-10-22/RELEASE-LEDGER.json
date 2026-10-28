@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T10:12:29.129593+00:00",
+  "updatedAt": "2026-10-28T16:01:06.066645+00:00",
   "releases": [
     {
       "finding": "THQ-001",
@@ -2793,245 +2793,284 @@
       }
     }
   ],
-  "nextCandidate": {
-    "pr": 259,
-    "candidateSHA": "400b00648c053215503edcb968741003f8dabec1",
-    "baseSHA": "6ff5e952058da66ef78a89536f76ef802bf560b2",
-    "state": "CANDIDATE_CHECKS_PENDING",
-    "scope": "THQ-058 two light-theme status text colors. Build/types and40localstates4controls16personallyviewedimagesPASS."
-  },
-  "independentFutureCandidate": {
-    "pr": 214,
-    "candidateSHA": "36c8e3ae9c7c5f29b0a4df63c2e3439beebd540d",
-    "branch": "audit/publisher-copy-20261022",
-    "findings": [
-      "THQ-003",
-      "THQ-004",
-      "THQ-007",
-      "THQ-014",
-      "THQ-017"
-    ],
-    "baseSHA": "aa216a24c68c30c9251f96a050da098b33364686",
-    "state": "MERGED_PUBLICLY_VERIFIED",
-    "mergeAllowed": false,
-    "reason": "Released214firstaspreviouslyrecommended; livecheckscomplete; waitmainmonitorrerunbeforenextmerge.",
-    "exactHeadRequiredChecks": "PASS",
-    "actualPreview": "13pages x5sizes=65PASS; visible andstructuredFAQ copycorrect; 152/59source-derivedcounts not152/59freshbrowserclaims.",
-    "nativeVercel": "READY exacthead",
-    "cloudflare": "TrustedGitHubnativepreviewcheckSUCCESS; authenticatedAPIunverified401",
-    "evidence": "evidence/PR214-FINAL-PREVIEW-BROWSER.json",
-    "mergeSHA": "40ba79c2b65d88badbddada705df80ab65acc2ab"
-  },
-  "lightContrastCandidate": {
-    "pr": 215,
-    "candidateSHA": "064145bb22931600c63045ccbb8c28dfd786d7fd",
-    "branch": "audit/course-light-contrast-20261022",
-    "state": "MERGED_PUBLICLY_VERIFIED",
-    "finding": "THQ-005",
-    "mergeAllowed": false,
-    "baseSHA": "aa216a24c68c30c9251f96a050da098b33364686",
-    "hold": "Current native Cloudflare401; previous release cycle must finish.",
-    "exactHeadRequiredChecks": "PASS",
-    "actualPreview": "5widthsx2themescontrastPASS",
-    "mergeSHA": "48b5c2d5a63ea44dee6c23d7adaacb638d65c4dc",
-    "reason": "Releasecyclecomplete; nonewmergeofthisPR."
-  },
-  "proposedReleasePriority": [],
-  "badgeCandidate": {
-    "pr": 216,
-    "candidateSHA": "a14bca138a2cae0a1e678c2bba48d2c348db263d",
-    "finding": "THQ-006",
-    "state": "MERGED_PUBLICLY_VERIFIED",
-    "exactHeadRequiredChecks": "PASS",
-    "actualPreview": "Bothpublishedbadges5widthsPASS;ownpreviewprogressunchanged",
-    "nativeVercel": "READY exacthead",
-    "cloudflare": "TrustedGitHubnativepreviewcheckSUCCESS; authenticatedAPIunverified401",
-    "mergeAllowed": false,
-    "hold": "CurrentCloudflare401; serialnativeproductionverificationrequired",
-    "mergeSHA": "cd05556292fbcc740c18a501c5fa529d11c14613",
-    "reason": "Releasecyclecomplete; nonewmergeofthisPR."
-  },
-  "new23OctoberCandidates": [
-    {
-      "id": "THQ-008",
-      "severity": "P3",
-      "category": "Published courses missing from Learn hub",
-      "state": "MERGED_PUBLICLY_VERIFIED",
-      "pr": 217,
-      "candidateSHA": "0efeb900cd3f5d137e1ab43a93c40fff09bbd0f5",
-      "urls": [
-        "https://www.thetradehq.com/learn"
-      ],
-      "observed": "FreshpublicLearnshows4tracks/20lessons andomits2publishedcards;actualcatalog6/26.",
-      "fix": "Useexistingreadonlypubliccatalog for cards/counts;bundledfallbackretained.",
-      "risk": "Lowdisplayonly;progress,records,recommendationlogicandfinancial/auth unchanged.",
-      "test": "Oldcompiledregressionfails;candidateCFbuild,appTypeScript/fullphase6PASS. Actualpreview6cards/26lessons5widthsPASS.",
-      "exactHeadRequiredChecks": "PASS",
-      "evidence": "evidence/PR217-PREVIEW-BROWSER.json",
-      "rollback": "Reviewedrevert,no data rollback.",
-      "mergeAllowed": false,
-      "releaseHold": "Cloudflare native authentication401; serial production verification required.",
-      "mergeSHA": "f56422990c8d275e1abc529235ac926a61f74a45",
-      "reason": "Releasecyclecomplete; nonewmergeofthisPR."
-    },
-    {
-      "id": "THQ-009",
-      "severity": "P2",
-      "category": "Final legacy quiz correction and explanation hidden",
-      "state": "MERGED_PUBLICLY_VERIFIED",
-      "pr": 218,
-      "candidateSHA": "a914d3dfae5f123f8c1cd81402945c6e8541027a",
-      "urls": [
-        "https://www.thetradehq.com/learn/1",
-        "https://www.thetradehq.com/learn/2",
-        "https://www.thetradehq.com/learn/3",
-        "https://www.thetradehq.com/learn/4",
-        "https://www.thetradehq.com/learn/5",
-        "https://www.thetradehq.com/learn/6"
-      ],
-      "observed": "All6legacyquizzesjumptosummaryonfinalsubmit,skipping6of20authoredexplanations.",
-      "fix": "Separate summary state;finalfeedbackremainsuntilSeeResults,score/backnavigationpreserved.",
-      "risk": "LowtransientReactUI;no userprogress/account/server records changed.",
-      "test": "Oldcompiledfailureatfinalexplanation;candidateCFbuild/appTypeScript/fullphase6PASS. Actualcandidateall6quizzes20questions showsfinalfeedbackbeforeexplicitresults;zero mutationattempts/errors.",
-      "exactHeadRequiredChecks": "PASS",
-      "evidence": "evidence/PR218-PREVIEW-BROWSER.json",
-      "rollback": "Reviewedrevert,nodata rollback.",
-      "mergeAllowed": false,
-      "releaseHold": "Cloudflare native authentication401; serial production verification required.",
-      "mergeSHA": "9365eaf7e57a6020d70df7fe5637286e8389f11d",
-      "reason": "Releasecyclecomplete; nonewmergeofthisPR."
-    },
-    {
-      "id": "THQ-010",
-      "severity": "P3",
-      "category": "Ambiguous rebalancing multiple-choice question",
-      "state": "MERGED_PUBLICLY_VERIFIED",
-      "pr": 218,
-      "candidateSHA": "a914d3dfae5f123f8c1cd81402945c6e8541027a",
-      "urls": [
-        "https://www.thetradehq.com/learn/4"
-      ],
-      "observed": "Prompt asks an examplecalendar/driftrule, butDaily/WeeklyarealsovalidexamplesbesideskeyedQuarterly.",
-      "fix": "Onequalifiedaccuratestatement andthreefalseuniversalclaims;correctindex2/explanationunchanged.",
-      "risk": "Lowauthoredquizcopy;no score-history mapping reassigned.",
-      "test": "Actualoldquestionread;candidatequestionandallfeedbackread/inspected;fullphase6testsactualquizflow.",
-      "exactHeadRequiredChecks": "PASS",
-      "evidence": "evidence/LEGACY-QUIZ-BEFORE.json; evidence/legacy-quiz-preview-4-1280.png",
-      "rollback": "Reviewedrevert,nodata rollback.",
-      "mergeAllowed": false,
-      "releaseHold": "Cloudflare native authentication401; serial production verification required.",
-      "mergeSHA": "9365eaf7e57a6020d70df7fe5637286e8389f11d",
-      "reason": "Releasecyclecomplete; nonewmergeofthisPR."
-    },
-    {
-      "id": "THQ-011",
-      "severity": "P3",
-      "category": "Sector breadcrumbs obscured by fixed navigation",
-      "state": "MERGED_PUBLICLY_VERIFIED",
-      "pr": 219,
-      "candidateSHA": "e7fe96e00de22d72913ae3c75240db6558991041",
-      "urls": [
-        "https://www.thetradehq.com/sectors/ai-tech",
-        "https://www.thetradehq.com/sectors/crypto-defi",
-        "https://www.thetradehq.com/sectors/mega-cap",
-        "https://www.thetradehq.com/sectors/tech-giants",
-        "https://www.thetradehq.com/sectors/etf-indices",
-        "https://www.thetradehq.com/sectors/forex-currencies",
-        "https://www.thetradehq.com/sectors/commodities"
-      ],
-      "observed": "Actual35page-widthstates overlap32.34\u201369px;forexdesktopimagepersonallyviewed.",
-      "fix": "SharedSectorPillar main top padding32to112px;bottomspacing/data/metadataunchanged.",
-      "risk": "Lowlayoutonly;no financialdata/logicchanges.",
-      "test": "CSS-readyoldcompiledregressionfailsbounds;candidateCFbuild/fullphase6PASSatall35states. InitialhelperCSSreadinessfailurepreservedseparately.",
-      "exactHeadRequiredChecks": "PASS",
-      "evidence": "evidence/SECTOR-HEADER-BEFORE.json",
-      "rollback": "Reviewedrevert,nodata rollback.",
-      "mergeAllowed": false,
-      "releaseHold": "Cloudflare native authentication401; serial production verification required.",
-      "actualPreview": "All35sector-widthstateszerooverlapanddocumentoverflow;360/1280foreximagesinspected",
-      "previewEvidence": "evidence/PR219-PREVIEW-BROWSER.json",
-      "mergeSHA": "0e72e8ccc10b24f8f8523e97474bb0b6e9f22d57",
-      "reason": "Releasecyclecomplete; nonewmergeofthisPR."
-    }
-  ],
+  "nextCandidate": null,
   "latestResumeProviderEvidence": "evidence/FINAL-WORKSPACE-ACCESS-20261023.json",
-  "priceAndMobileDisplayCandidate": {
-    "pr": 220,
-    "candidateSHA": "8736455a596968c5e6250c544d1ec45971ea1d02",
-    "branch": "audit/niche-reference-display-20261023",
-    "findings": [
-      "THQ-012",
-      "THQ-013",
-      "THQ-015",
-      "THQ-016"
-    ],
-    "baseSHA": "aa216a24c68c30c9251f96a050da098b33364686",
-    "state": "MERGED_PUBLICLY_VERIFIED",
-    "exactHeadRequiredChecks": "PASS",
-    "actualPreview": "35states includingdefaulttrade/SHIBcontrols, unchangedownportfoliorecord",
-    "evidence": "evidence/PR220-PREVIEW-BROWSER.json",
-    "nativeVercel": "READY exacthead",
-    "cloudflare": "TrustedGitHubproviderSUCCESS; authenticatedactive-productionAPIunverified401",
-    "mergeAllowed": false,
-    "hold": "Cloudflare401 and mandatoryserialproductionverification",
-    "mergeSHA": "24a9e4fe486e6ec08026c7e44b7318eda48d1953",
-    "reason": "Releasecyclecomplete; nonewmergeofthisPR."
-  },
   "latestGitHubState": "evidence/FINAL-GITHUB-STATE-20261023.json",
   "latestGitHubProviderBindingEvidence": "evidence/PR258-PRODUCTION-PROVIDERS.json",
   "latestMainValidationEvidence": "evidence/PR258-MAIN-CI.json",
   "latestVerifiedProductionSHA": "6ff5e952058da66ef78a89536f76ef802bf560b2",
-  "summaryQuoteContextCandidate": {
-    "pr": 221,
-    "candidateSHA": "67ba761a85915ad047081206ee671a823c6f7bed",
-    "branch": "audit/summary-quote-context-20261023",
-    "state": "MERGED_PUBLICLY_VERIFIED",
-    "finding": "THQ-018",
-    "scope": "Staticcopyclarificationofseparatequotesnapshots; allvaluesanddataflowunchanged.",
-    "evidence": "evidence/AMZN-QUOTE-CHANNEL-FOLLOWUP.json",
-    "actualPreviewStates": 20,
-    "mergeAllowed": false,
-    "mergeSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
-    "reason": "Releasecyclecomplete; nonewmergeofthisPR."
-  },
-  "remainingConfirmedSiteFixes": 1,
+  "remainingConfirmedSiteFixes": 8,
   "exhaustiveAuditComplete": false,
-  "remainingKnownSafeFindings": 1,
-  "nextReleasePriority": [],
-  "pendingReleaseVerification": null,
+  "remainingKnownSafeFindings": 8,
+  "pendingReleaseVerification": {
+    "pr": 259,
+    "candidateSHA": "26e61df88627a597b0d8d709055af2c4b2b524f2",
+    "mergeSHA": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
+    "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+    "hold": "Initial exact-main browser job could not start Chrome within45seconds. Full unchanged workflow rerun in progress; no further release."
+  },
   "protectedPublishedContentFinding": "THQ035/036 published revision2 independently verified; credential and approval blockers superseded by owner-approved PR238 operation. No new production writes in this continuation.",
-  "dailyChartUnitsCandidate": {
-    "pr": 234,
-    "candidateSHA": "361b1b3a9c4c327150a9de95aa69bd70b0f96c15",
-    "baseSHA": "db3bfab843a126dda6afc4c2f2184a4366fc70ad",
-    "state": "STATIC_AND_PUBLISHED_PUBLICLY_VERIFIED",
-    "scope": "Staticfallbackonly,5illustrationfields; normalpublishedbankunchanged",
-    "mergeAllowed": false,
-    "mergeSHA": "313e28e34ff67a5758f3378d1ae7d5bbc6ae3dc5",
-    "exactHeadRequiredChecks": "PASS"
-  },
-  "progressAccessibilityCandidate": {
-    "pr": 235,
-    "candidateSHA": "53310c47b2f904e2511ea93b8e11117e9a898148",
-    "baseSHA": "313e28e34ff67a5758f3378d1ae7d5bbc6ae3dc5",
-    "state": "PUBLICLY_VERIFIED",
-    "mergeAllowed": false,
-    "scope": "ExistingpercentageforwardedtoRadixRoot pluslegacylabel; no progresslogic/storage changes.",
-    "mergeSHA": "0e4f0dde840905fb95d88d12581643b4635153dd"
-  },
   "operationalHold": {
-    "state": "RECOVERED",
-    "observedAt": "2026-10-25T10:58:45.050590+00:00",
-    "effect": "No latestmain/CIverification,PR241merge,PR240descriptionupdateorauditevidencepush. ActualgitandRESTreadsbothupstream503;notcredential401/403. Preparedindependentlocalworkcontinues.",
-    "resolvedAt": "2026-10-25T11:10:10.696337+00:00"
+    "active": true,
+    "reason": "Exact-main production gate and public rechecks pending after isolated Chrome startup failure.",
+    "evidence": "evidence/PR259-INITIAL-MAIN-CHROME-STARTUP-FAILURE.json"
   },
-  "queuedCandidates": [
+  "latestObservedMainSHA": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
+  "historicalCandidateRecords": {
+    "independentFutureCandidate": {
+      "pr": 214,
+      "candidateSHA": "36c8e3ae9c7c5f29b0a4df63c2e3439beebd540d",
+      "branch": "audit/publisher-copy-20261022",
+      "findings": [
+        "THQ-003",
+        "THQ-004",
+        "THQ-007",
+        "THQ-014",
+        "THQ-017"
+      ],
+      "baseSHA": "aa216a24c68c30c9251f96a050da098b33364686",
+      "state": "MERGED_PUBLICLY_VERIFIED",
+      "mergeAllowed": false,
+      "reason": "Released214firstaspreviouslyrecommended; livecheckscomplete; waitmainmonitorrerunbeforenextmerge.",
+      "exactHeadRequiredChecks": "PASS",
+      "actualPreview": "13pages x5sizes=65PASS; visible andstructuredFAQ copycorrect; 152/59source-derivedcounts not152/59freshbrowserclaims.",
+      "nativeVercel": "READY exacthead",
+      "cloudflare": "TrustedGitHubnativepreviewcheckSUCCESS; authenticatedAPIunverified401",
+      "evidence": "evidence/PR214-FINAL-PREVIEW-BROWSER.json",
+      "mergeSHA": "40ba79c2b65d88badbddada705df80ab65acc2ab"
+    },
+    "lightContrastCandidate": {
+      "pr": 215,
+      "candidateSHA": "064145bb22931600c63045ccbb8c28dfd786d7fd",
+      "branch": "audit/course-light-contrast-20261022",
+      "state": "MERGED_PUBLICLY_VERIFIED",
+      "finding": "THQ-005",
+      "mergeAllowed": false,
+      "baseSHA": "aa216a24c68c30c9251f96a050da098b33364686",
+      "hold": "Current native Cloudflare401; previous release cycle must finish.",
+      "exactHeadRequiredChecks": "PASS",
+      "actualPreview": "5widthsx2themescontrastPASS",
+      "mergeSHA": "48b5c2d5a63ea44dee6c23d7adaacb638d65c4dc",
+      "reason": "Releasecyclecomplete; nonewmergeofthisPR."
+    },
+    "proposedReleasePriority": [],
+    "badgeCandidate": {
+      "pr": 216,
+      "candidateSHA": "a14bca138a2cae0a1e678c2bba48d2c348db263d",
+      "finding": "THQ-006",
+      "state": "MERGED_PUBLICLY_VERIFIED",
+      "exactHeadRequiredChecks": "PASS",
+      "actualPreview": "Bothpublishedbadges5widthsPASS;ownpreviewprogressunchanged",
+      "nativeVercel": "READY exacthead",
+      "cloudflare": "TrustedGitHubnativepreviewcheckSUCCESS; authenticatedAPIunverified401",
+      "mergeAllowed": false,
+      "hold": "CurrentCloudflare401; serialnativeproductionverificationrequired",
+      "mergeSHA": "cd05556292fbcc740c18a501c5fa529d11c14613",
+      "reason": "Releasecyclecomplete; nonewmergeofthisPR."
+    },
+    "new23OctoberCandidates": [
+      {
+        "id": "THQ-008",
+        "severity": "P3",
+        "category": "Published courses missing from Learn hub",
+        "state": "MERGED_PUBLICLY_VERIFIED",
+        "pr": 217,
+        "candidateSHA": "0efeb900cd3f5d137e1ab43a93c40fff09bbd0f5",
+        "urls": [
+          "https://www.thetradehq.com/learn"
+        ],
+        "observed": "FreshpublicLearnshows4tracks/20lessons andomits2publishedcards;actualcatalog6/26.",
+        "fix": "Useexistingreadonlypubliccatalog for cards/counts;bundledfallbackretained.",
+        "risk": "Lowdisplayonly;progress,records,recommendationlogicandfinancial/auth unchanged.",
+        "test": "Oldcompiledregressionfails;candidateCFbuild,appTypeScript/fullphase6PASS. Actualpreview6cards/26lessons5widthsPASS.",
+        "exactHeadRequiredChecks": "PASS",
+        "evidence": "evidence/PR217-PREVIEW-BROWSER.json",
+        "rollback": "Reviewedrevert,no data rollback.",
+        "mergeAllowed": false,
+        "releaseHold": "Cloudflare native authentication401; serial production verification required.",
+        "mergeSHA": "f56422990c8d275e1abc529235ac926a61f74a45",
+        "reason": "Releasecyclecomplete; nonewmergeofthisPR."
+      },
+      {
+        "id": "THQ-009",
+        "severity": "P2",
+        "category": "Final legacy quiz correction and explanation hidden",
+        "state": "MERGED_PUBLICLY_VERIFIED",
+        "pr": 218,
+        "candidateSHA": "a914d3dfae5f123f8c1cd81402945c6e8541027a",
+        "urls": [
+          "https://www.thetradehq.com/learn/1",
+          "https://www.thetradehq.com/learn/2",
+          "https://www.thetradehq.com/learn/3",
+          "https://www.thetradehq.com/learn/4",
+          "https://www.thetradehq.com/learn/5",
+          "https://www.thetradehq.com/learn/6"
+        ],
+        "observed": "All6legacyquizzesjumptosummaryonfinalsubmit,skipping6of20authoredexplanations.",
+        "fix": "Separate summary state;finalfeedbackremainsuntilSeeResults,score/backnavigationpreserved.",
+        "risk": "LowtransientReactUI;no userprogress/account/server records changed.",
+        "test": "Oldcompiledfailureatfinalexplanation;candidateCFbuild/appTypeScript/fullphase6PASS. Actualcandidateall6quizzes20questions showsfinalfeedbackbeforeexplicitresults;zero mutationattempts/errors.",
+        "exactHeadRequiredChecks": "PASS",
+        "evidence": "evidence/PR218-PREVIEW-BROWSER.json",
+        "rollback": "Reviewedrevert,nodata rollback.",
+        "mergeAllowed": false,
+        "releaseHold": "Cloudflare native authentication401; serial production verification required.",
+        "mergeSHA": "9365eaf7e57a6020d70df7fe5637286e8389f11d",
+        "reason": "Releasecyclecomplete; nonewmergeofthisPR."
+      },
+      {
+        "id": "THQ-010",
+        "severity": "P3",
+        "category": "Ambiguous rebalancing multiple-choice question",
+        "state": "MERGED_PUBLICLY_VERIFIED",
+        "pr": 218,
+        "candidateSHA": "a914d3dfae5f123f8c1cd81402945c6e8541027a",
+        "urls": [
+          "https://www.thetradehq.com/learn/4"
+        ],
+        "observed": "Prompt asks an examplecalendar/driftrule, butDaily/WeeklyarealsovalidexamplesbesideskeyedQuarterly.",
+        "fix": "Onequalifiedaccuratestatement andthreefalseuniversalclaims;correctindex2/explanationunchanged.",
+        "risk": "Lowauthoredquizcopy;no score-history mapping reassigned.",
+        "test": "Actualoldquestionread;candidatequestionandallfeedbackread/inspected;fullphase6testsactualquizflow.",
+        "exactHeadRequiredChecks": "PASS",
+        "evidence": "evidence/LEGACY-QUIZ-BEFORE.json; evidence/legacy-quiz-preview-4-1280.png",
+        "rollback": "Reviewedrevert,nodata rollback.",
+        "mergeAllowed": false,
+        "releaseHold": "Cloudflare native authentication401; serial production verification required.",
+        "mergeSHA": "9365eaf7e57a6020d70df7fe5637286e8389f11d",
+        "reason": "Releasecyclecomplete; nonewmergeofthisPR."
+      },
+      {
+        "id": "THQ-011",
+        "severity": "P3",
+        "category": "Sector breadcrumbs obscured by fixed navigation",
+        "state": "MERGED_PUBLICLY_VERIFIED",
+        "pr": 219,
+        "candidateSHA": "e7fe96e00de22d72913ae3c75240db6558991041",
+        "urls": [
+          "https://www.thetradehq.com/sectors/ai-tech",
+          "https://www.thetradehq.com/sectors/crypto-defi",
+          "https://www.thetradehq.com/sectors/mega-cap",
+          "https://www.thetradehq.com/sectors/tech-giants",
+          "https://www.thetradehq.com/sectors/etf-indices",
+          "https://www.thetradehq.com/sectors/forex-currencies",
+          "https://www.thetradehq.com/sectors/commodities"
+        ],
+        "observed": "Actual35page-widthstates overlap32.34\u201369px;forexdesktopimagepersonallyviewed.",
+        "fix": "SharedSectorPillar main top padding32to112px;bottomspacing/data/metadataunchanged.",
+        "risk": "Lowlayoutonly;no financialdata/logicchanges.",
+        "test": "CSS-readyoldcompiledregressionfailsbounds;candidateCFbuild/fullphase6PASSatall35states. InitialhelperCSSreadinessfailurepreservedseparately.",
+        "exactHeadRequiredChecks": "PASS",
+        "evidence": "evidence/SECTOR-HEADER-BEFORE.json",
+        "rollback": "Reviewedrevert,nodata rollback.",
+        "mergeAllowed": false,
+        "releaseHold": "Cloudflare native authentication401; serial production verification required.",
+        "actualPreview": "All35sector-widthstateszerooverlapanddocumentoverflow;360/1280foreximagesinspected",
+        "previewEvidence": "evidence/PR219-PREVIEW-BROWSER.json",
+        "mergeSHA": "0e72e8ccc10b24f8f8523e97474bb0b6e9f22d57",
+        "reason": "Releasecyclecomplete; nonewmergeofthisPR."
+      }
+    ],
+    "priceAndMobileDisplayCandidate": {
+      "pr": 220,
+      "candidateSHA": "8736455a596968c5e6250c544d1ec45971ea1d02",
+      "branch": "audit/niche-reference-display-20261023",
+      "findings": [
+        "THQ-012",
+        "THQ-013",
+        "THQ-015",
+        "THQ-016"
+      ],
+      "baseSHA": "aa216a24c68c30c9251f96a050da098b33364686",
+      "state": "MERGED_PUBLICLY_VERIFIED",
+      "exactHeadRequiredChecks": "PASS",
+      "actualPreview": "35states includingdefaulttrade/SHIBcontrols, unchangedownportfoliorecord",
+      "evidence": "evidence/PR220-PREVIEW-BROWSER.json",
+      "nativeVercel": "READY exacthead",
+      "cloudflare": "TrustedGitHubproviderSUCCESS; authenticatedactive-productionAPIunverified401",
+      "mergeAllowed": false,
+      "hold": "Cloudflare401 and mandatoryserialproductionverification",
+      "mergeSHA": "24a9e4fe486e6ec08026c7e44b7318eda48d1953",
+      "reason": "Releasecyclecomplete; nonewmergeofthisPR."
+    },
+    "summaryQuoteContextCandidate": {
+      "pr": 221,
+      "candidateSHA": "67ba761a85915ad047081206ee671a823c6f7bed",
+      "branch": "audit/summary-quote-context-20261023",
+      "state": "MERGED_PUBLICLY_VERIFIED",
+      "finding": "THQ-018",
+      "scope": "Staticcopyclarificationofseparatequotesnapshots; allvaluesanddataflowunchanged.",
+      "evidence": "evidence/AMZN-QUOTE-CHANNEL-FOLLOWUP.json",
+      "actualPreviewStates": 20,
+      "mergeAllowed": false,
+      "mergeSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
+      "reason": "Releasecyclecomplete; nonewmergeofthisPR."
+    },
+    "nextReleasePriority": [],
+    "dailyChartUnitsCandidate": {
+      "pr": 234,
+      "candidateSHA": "361b1b3a9c4c327150a9de95aa69bd70b0f96c15",
+      "baseSHA": "db3bfab843a126dda6afc4c2f2184a4366fc70ad",
+      "state": "STATIC_AND_PUBLISHED_PUBLICLY_VERIFIED",
+      "scope": "Staticfallbackonly,5illustrationfields; normalpublishedbankunchanged",
+      "mergeAllowed": false,
+      "mergeSHA": "313e28e34ff67a5758f3378d1ae7d5bbc6ae3dc5",
+      "exactHeadRequiredChecks": "PASS"
+    },
+    "progressAccessibilityCandidate": {
+      "pr": 235,
+      "candidateSHA": "53310c47b2f904e2511ea93b8e11117e9a898148",
+      "baseSHA": "313e28e34ff67a5758f3378d1ae7d5bbc6ae3dc5",
+      "state": "PUBLICLY_VERIFIED",
+      "mergeAllowed": false,
+      "scope": "ExistingpercentageforwardedtoRadixRoot pluslegacylabel; no progresslogic/storage changes.",
+      "mergeSHA": "0e4f0dde840905fb95d88d12581643b4635153dd"
+    },
+    "queuedCandidates": [
+      {
+        "pr": 248,
+        "candidateSHA": "6ab3b7e374f1a4d4deb68e49eb7a785f7a7f34d5",
+        "baseSHA": "ae8cf2b2db107701d5ffa91b203c1cc8eab3e99d",
+        "state": "DRAFT_PR248_CI_HOLD",
+        "scope": "ETF20actualpreview states/8images pass; candidateCI fails recurring unrelatedmentor768px animation sample. Separate test-only fix inprogress."
+      }
+    ]
+  },
+  "safeProposals": [
     {
-      "pr": 248,
-      "candidateSHA": "6ab3b7e374f1a4d4deb68e49eb7a785f7a7f34d5",
-      "baseSHA": "ae8cf2b2db107701d5ffa91b203c1cc8eab3e99d",
-      "state": "DRAFT_PR248_CI_HOLD",
-      "scope": "ETF20actualpreview states/8images pass; candidateCI fails recurring unrelatedmentor768px animation sample. Separate test-only fix inprogress."
+      "finding": "THQ-059",
+      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "evidence": "findings/TERMINAL-METADATA-SCOPE.md"
+    },
+    {
+      "finding": "THQ-060",
+      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "evidence": "findings/HOME-LIGHT-SURFACES.md"
+    },
+    {
+      "finding": "THQ-061",
+      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "evidence": "findings/DAILY-LIGHT-SURFACES.md"
+    },
+    {
+      "finding": "THQ-062",
+      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "evidence": "findings/LEARN-INTRO-LIGHT-SURFACE.md"
+    },
+    {
+      "finding": "THQ-063",
+      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "evidence": "findings/GUIDE-FOOTER-LIGHT-SURFACE.md"
+    },
+    {
+      "finding": "THQ-064",
+      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "evidence": "findings/ROADMAP-LIGHT-TEXT.md"
+    },
+    {
+      "finding": "THQ-065",
+      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "evidence": "findings/PUBLIC-PROFILE-NAME-WRAP.md"
     }
   ]
 }

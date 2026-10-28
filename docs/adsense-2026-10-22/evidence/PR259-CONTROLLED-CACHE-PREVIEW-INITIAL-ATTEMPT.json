@@ -1,0 +1,172 @@
+{
+  "checkedAt": "2026-10-28T15:47:39.071Z",
+  "origin": "https://8088e33a.tradehq-preview.pages.dev",
+  "sha": "26e61df88627a597b0d8d709055af2c4b2b524f2",
+  "outcome": "FAIL",
+  "failure": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'Simulated'\n- 'Cached practice price'\n",
+  "rows": [
+    {
+      "path": "/trade/txn",
+      "width": 360,
+      "theme": "light",
+      "overflow": false,
+      "canonical": "https://www.thetradehq.com/trade/txn",
+      "bounds": {
+        "left": 16,
+        "right": 108.9375,
+        "top": 284,
+        "bottom": 306
+      },
+      "label": "Simulated",
+      "color": "rgb(51, 65, 85)",
+      "fontSize": "12px",
+      "fontWeight": "500",
+      "backgrounds": [
+        {
+          "tag": "SPAN",
+          "background": "rgba(235, 236, 240, 0.5)",
+          "image": "none",
+          "opacity": "1"
+        },
+        {
+          "tag": "DIV",
+          "background": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1"
+        },
+        {
+          "tag": "HEADER",
+          "background": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1"
+        },
+        {
+          "tag": "MAIN",
+          "background": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1"
+        },
+        {
+          "tag": "DIV",
+          "background": "rgb(247, 247, 247)",
+          "image": "none",
+          "opacity": "1"
+        },
+        {
+          "tag": "DIV",
+          "background": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1"
+        },
+        {
+          "tag": "DIV",
+          "background": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1"
+        },
+        {
+          "tag": "BODY",
+          "background": "rgb(247, 247, 247)",
+          "image": "none",
+          "opacity": "1"
+        },
+        {
+          "tag": "HTML",
+          "background": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1"
+        }
+      ],
+      "state": "normal",
+      "compositedBackground": [
+        241,
+        241.5,
+        243.5
+      ],
+      "contrast": 9.211691387488642
+    },
+    {
+      "path": "/trade/txn",
+      "width": 360,
+      "theme": "dark",
+      "overflow": false,
+      "canonical": "https://www.thetradehq.com/trade/txn",
+      "bounds": {
+        "left": 16,
+        "right": 108.9375,
+        "top": 284,
+        "bottom": 306
+      },
+      "label": "Simulated",
+      "color": "rgb(162, 170, 185)",
+      "fontSize": "12px",
+      "fontWeight": "500",
+      "backgrounds": [
+        {
+          "tag": "SPAN",
+          "background": "rgba(26, 27, 30, 0.5)",
+          "image": "none",
+          "opacity": "1"
+        },
+        {
+          "tag": "DIV",
+          "background": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1"
+        },
+        {
+          "tag": "HEADER",
+          "background": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1"
+        },
+        {
+          "tag": "MAIN",
+          "background": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1"
+        },
+        {
+          "tag": "DIV",
+          "background": "rgb(10, 10, 10)",
+          "image": "none",
+          "opacity": "1"
+        },
+        {
+          "tag": "DIV",
+          "background": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1"
+        },
+        {
+          "tag": "DIV",
+          "background": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1"
+        },
+        {
+          "tag": "BODY",
+          "background": "rgb(10, 10, 10)",
+          "image": "none",
+          "opacity": "1"
+        },
+        {
+          "tag": "HTML",
+          "background": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1"
+        }
+      ],
+      "state": "normal",
+      "compositedBackground": [
+        18,
+        18.5,
+        20
+      ],
+      "contrast": 7.9837906587818095
+    }
+  ],
+  "controls": [],
+  "runtimeErrors": [],
+  "scope": "Two actual terminals ×fivewidths ×twothemes ×unblocked-normal/controlled-cached conditions =40; actual normal label may also naturally be cached;4focusedEnterFAQchecks. Controlled disposable-client market_prices/live-market-data network failure after natural warmup exercises cached UI; no server response, storage or DOM-color injection. Actual text/RGBA ancestor compositing, ≥4.5contrast, unchanged darkcolors, canonical and nooverflow.16screenshots require personal viewing. No orders/account/data/calculation mutations. Does not certify all colors or full accessibility."
+}

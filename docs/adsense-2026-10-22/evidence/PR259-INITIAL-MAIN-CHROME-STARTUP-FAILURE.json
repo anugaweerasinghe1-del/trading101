@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-10-28T15:57:14.676808+00:00",
+  "sha": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
+  "outcome": "FAIL",
+  "sourceJob": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40720569601/job/122930015135",
+  "applicationBuildAndEditorialChecks": "PASS",
+  "browserPhase": "Chrome process failed to open debugging port within45second startup bound, before phase0 browser assertions ran.",
+  "error": "Isolated Chrome startup exceeded its 45-second bound",
+  "rawLogSHA256": "d15cb628976cc63d548c788e18b7f78ddf4c3a3101e6af70fad7604b595a8cf9",
+  "nativeCloudflareSignal": {
+    "appId": 85455,
+    "checkId": 122931230968,
+    "conclusion": "success",
+    "deploymentId": "9cf87c28-d7ce-4986-b008-7001b3149de4"
+  },
+  "action": "One full unchanged exact-main workflow rerun; no check, timeout or application code weakened. Further releases held pending complete gates."
+}
