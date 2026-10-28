@@ -483,8 +483,8 @@ export default function TradeAsset() {
                   dataSource === 'live' 
                     ? 'bg-green-500/10 text-green-500 border border-green-500/20' 
                     : dataSource === 'cached'
-                    ? 'bg-yellow-500/10 text-yellow-500 border border-yellow-500/20'
-                    : 'bg-muted/50 text-muted-foreground border border-muted-foreground/20'
+                    ? 'bg-yellow-500/10 text-yellow-500 [.light_&]:text-yellow-800 border border-yellow-500/20'
+                    : 'bg-muted/50 text-muted-foreground [.light_&]:text-slate-700 border border-muted-foreground/20'
                 }`}>
                   {dataSource === 'live' ? <Wifi className="w-3 h-3" /> : <WifiOff className="w-3 h-3" />}
                   {dataSource === 'live' ? 'Provider reference + simulation' : dataSource === 'delayed' ? 'Provider reference + simulation' : dataSource === 'cached' ? 'Cached practice price' : 'Simulated'}
