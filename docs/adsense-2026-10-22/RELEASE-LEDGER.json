@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T09:31:18.155764+00:00",
+  "updatedAt": "2026-10-28T10:12:29.129593+00:00",
   "releases": [
     {
       "finding": "THQ-001",
@@ -2730,14 +2730,75 @@
         "safeControls": 4,
         "productionImagesPersonallyViewed": 12
       }
+    },
+    {
+      "pr": 258,
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/258",
+      "candidateSHA": "b57fa8315fabdbf5349367adb6c27b18a47c904e",
+      "mergeSHA": "6ff5e952058da66ef78a89536f76ef802bf560b2",
+      "state": "PUBLICLY_VERIFIED",
+      "findings": [
+        "THQ-056",
+        "THQ-057"
+      ],
+      "production": {
+        "checkedAt": "2026-10-28T09:56:25.358946+00:00",
+        "mergeSHA": "6ff5e952058da66ef78a89536f76ef802bf560b2",
+        "outcome": "PASS",
+        "sourceJob": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40666799259/job/122747598499",
+        "scope": "Authenticated native provider reads by trusted exact-main release-readiness job. Both production deployments match the immutable merge SHA. No provider mutations.",
+        "cloudflare": {
+          "observedAt": "2026-10-28T09:56:01.858Z",
+          "project": "tradehq-preview",
+          "activeProduction": {
+            "id": "6f021552-e545-4afd-a8c6-6e46b63fab84",
+            "sha": "6ff5e952058da66ef78a89536f76ef802bf560b2",
+            "environment": "production",
+            "branch": "main",
+            "status": "success",
+            "createdAt": "2026-10-28T09:45:56.778825Z"
+          }
+        },
+        "vercel": {
+          "schema": "tradehq-vercel-production-evidence-v1",
+          "deploymentId": "dpl_37AXTYfXuXFJky9suAss2ydnL16U",
+          "teamId": "team_fjZ5ggg0P43MsYFSIHbeHAAO",
+          "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+          "commitSha": "6ff5e952058da66ef78a89536f76ef802bf560b2",
+          "target": "production",
+          "state": "READY",
+          "activeAlias": "thetradehq.com",
+          "createdAt": 1793180757706,
+          "observedAt": 1793181361857,
+          "requests": 2,
+          "authorization": {
+            "merge": false,
+            "productionRelease": false
+          }
+        }
+      },
+      "mainCIEvidence": "evidence/PR258-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR258-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR258-GUEST-SMOKE.json"
+      ],
+      "liveRecheck": {
+        "outcome": "PASS",
+        "affectedStates": [
+          30
+        ],
+        "guestStates": 30,
+        "safeControls": 4,
+        "productionImagesPersonallyViewed": 8
+      }
     }
   ],
   "nextCandidate": {
-    "pr": 258,
-    "candidateSHA": "b57fa8315fabdbf5349367adb6c27b18a47c904e",
-    "baseSHA": "4efa44123bee8478202a8af0514e3a92ec7b36b7",
-    "state": "DRAFT_LOCAL_VERIFIED_PREVIEW_PENDING",
-    "scope": "Silver tokenproxy andBlocklegacytickerstaticnotes; nofeed/provider/calculation changes. Local30states4controls8personallyviewedimages pass."
+    "pr": 259,
+    "candidateSHA": "400b00648c053215503edcb968741003f8dabec1",
+    "baseSHA": "6ff5e952058da66ef78a89536f76ef802bf560b2",
+    "state": "CANDIDATE_CHECKS_PENDING",
+    "scope": "THQ-058 two light-theme status text colors. Build/types and40localstates4controls16personallyviewedimagesPASS."
   },
   "independentFutureCandidate": {
     "pr": 214,
@@ -2917,9 +2978,9 @@
     "reason": "Releasecyclecomplete; nonewmergeofthisPR."
   },
   "latestGitHubState": "evidence/FINAL-GITHUB-STATE-20261023.json",
-  "latestGitHubProviderBindingEvidence": "evidence/PR257-PRODUCTION-PROVIDERS.json",
-  "latestMainValidationEvidence": "evidence/PR257-MAIN-CI.json",
-  "latestVerifiedProductionSHA": "4efa44123bee8478202a8af0514e3a92ec7b36b7",
+  "latestGitHubProviderBindingEvidence": "evidence/PR258-PRODUCTION-PROVIDERS.json",
+  "latestMainValidationEvidence": "evidence/PR258-MAIN-CI.json",
+  "latestVerifiedProductionSHA": "6ff5e952058da66ef78a89536f76ef802bf560b2",
   "summaryQuoteContextCandidate": {
     "pr": 221,
     "candidateSHA": "67ba761a85915ad047081206ee671a823c6f7bed",
@@ -2933,9 +2994,9 @@
     "mergeSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
     "reason": "Releasecyclecomplete; nonewmergeofthisPR."
   },
-  "remainingConfirmedSiteFixes": 2,
+  "remainingConfirmedSiteFixes": 1,
   "exhaustiveAuditComplete": false,
-  "remainingKnownSafeFindings": 2,
+  "remainingKnownSafeFindings": 1,
   "nextReleasePriority": [],
   "pendingReleaseVerification": null,
   "protectedPublishedContentFinding": "THQ035/036 published revision2 independently verified; credential and approval blockers superseded by owner-approved PR238 operation. No new production writes in this continuation.",

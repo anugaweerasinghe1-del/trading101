@@ -1,0 +1,92 @@
+{
+  "checkedAt": "2026-10-28T10:07:26.780Z",
+  "origin": "http://127.0.0.1:4183",
+  "sha": "6ff5e95-plus-two-theme-classes",
+  "outcome": "FAIL",
+  "failure": "{\"state\":\"normal\",\"theme\":\"dark\",\"label\":\"Simulated\",\"contrast\":1.8017213966960128}",
+  "rows": [
+    {
+      "path": "/trade/txn",
+      "width": 360,
+      "theme": "light",
+      "overflow": false,
+      "canonical": "https://www.thetradehq.com/trade/txn",
+      "bounds": {
+        "left": 16,
+        "right": 108.9375,
+        "top": 284,
+        "bottom": 306
+      },
+      "label": "Simulated",
+      "color": "rgb(51, 65, 85)",
+      "fontSize": "12px",
+      "fontWeight": "500",
+      "backgrounds": [
+        {
+          "tag": "SPAN",
+          "background": "rgba(235, 236, 240, 0.5)",
+          "image": "none",
+          "opacity": "1"
+        },
+        {
+          "tag": "DIV",
+          "background": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1"
+        },
+        {
+          "tag": "HEADER",
+          "background": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1"
+        },
+        {
+          "tag": "MAIN",
+          "background": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1"
+        },
+        {
+          "tag": "DIV",
+          "background": "rgb(247, 247, 247)",
+          "image": "none",
+          "opacity": "1"
+        },
+        {
+          "tag": "DIV",
+          "background": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1"
+        },
+        {
+          "tag": "DIV",
+          "background": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1"
+        },
+        {
+          "tag": "BODY",
+          "background": "rgb(247, 247, 247)",
+          "image": "none",
+          "opacity": "1"
+        },
+        {
+          "tag": "HTML",
+          "background": "rgba(0, 0, 0, 0)",
+          "image": "none",
+          "opacity": "1"
+        }
+      ],
+      "state": "normal",
+      "compositedBackground": [
+        241,
+        241.5,
+        243.5
+      ],
+      "contrast": 9.211691387488642
+    }
+  ],
+  "controls": [],
+  "runtimeErrors": [],
+  "scope": "Two actual terminals ×fivewidths ×twothemes ×normal/cached states =40;4focusedEnterFAQchecks. Controlled disposable-client market_prices/live-market-data network failure after natural warmup exercises cached UI; no server response, storage or DOM-color injection. Actual text/RGBA ancestor compositing, ≥4.5contrast, unchanged darkcolors, canonical and nooverflow.16screenshots require personal viewing. No orders/account/data/calculation mutations. Does not certify all colors or full accessibility."
+}

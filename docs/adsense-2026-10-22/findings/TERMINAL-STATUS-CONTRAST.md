@@ -1,0 +1,9 @@
+# THQ-058 — terminal status labels in light mode
+
+The actual 12px, weight-500 Simulated label measures 4.3008:1 in light mode, and Cached practice price measures 1.6860:1. The text needs 4.5:1. Texas Instruments and VOO at 360/1280 reproduce both colors. Sixteen screenshots were personally viewed in four complete contact sheets. Computed foreground and ancestor backgrounds were alpha-composited only after confirming no background images or opacity.
+
+Cached-state reproduction warms naturally, then aborts public quote/snapshot GETs in a disposable audit browser. It does not modify production, response data, stored prices or DOM colors. Earlier attempts failed to exercise cached state; their receipts retain actual Simulated results. These are not evidence of a site outage.
+
+Two light-theme text class overrides are prepared. Original dark foregrounds, backgrounds, labels and status/data logic remain unchanged. The first local attempt used a dark-class variant, but this app uses an explicit .light selector; the failing receipt is retained and implementation corrected to match existing summary badges. A second harness assertion expected the wrong original gray; actual baseline is rgb(162,170,185), and the assertion was corrected from the preserved production receipt. Neither failure was promoted to verified success.
+
+Build/types, forty actual states (two assets × five widths × light/dark × normal/cached), four safe keyboard FAQ checks and sixteen personally viewed images are required locally and on actual provider preview/production. Exact candidate CI/native deployments, ordinary protected merge, six main checks, native production and thirty guest states/four safe controls remain mandatory. No whole-site contrast/accessibility certification or Google rejection-cause assertion.

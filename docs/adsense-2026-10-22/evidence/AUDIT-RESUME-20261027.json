@@ -1,23 +1,25 @@
 {
-  "updatedAt": "2026-10-28T09:36:06.185950+00:00",
-  "latestMergedProductionSHA": "4efa44123bee8478202a8af0514e3a92ec7b36b7",
-  "fullpageRoutesPersonallyViewed": 394,
+  "updatedAt": "2026-10-28T10:12:29.129593+00:00",
+  "latestMergedProductionSHA": "6ff5e952058da66ef78a89536f76ef802bf560b2",
+  "fullpageRoutesPersonallyViewed": 441,
   "publicInventoryRoutes": 441,
-  "remainingDefaultVisualRoutes": 47,
-  "confirmedFindings": 62,
-  "publiclyVerifiedRepairs": 60,
+  "remainingDefaultVisualRoutes": 0,
+  "confirmedFindings": 63,
+  "publiclyVerifiedRepairs": 62,
   "activeCandidate": {
-    "pr": 258,
-    "sha": "b57fa8315fabdbf5349367adb6c27b18a47c904e",
-    "scope": "THQ056/057 static terminal notes;local30states4controls8imagesPASS;nativeCI/previewpending"
+    "pr": 259,
+    "sha": "400b00648c053215503edcb968741003f8dabec1",
+    "scope": "THQ-058 local verified; native/exact candidate/actual preview pending."
   },
-  "releaseGate": "PR257 fully PUBLICLY_VERIFIED: all6exactmain/nativeCF+Vercelproduction/30affectedstates12personallyviewedimages/30gueststates4controlsPASS. PR258 must completecandidate/nativeactualpreview thennormalprotectedmerge andallproduction/livegates.",
+  "releaseGate": "PR258 fully verified: four trusted candidate checks/native and actual preview/protected squash/all six main/native production/30 affected states/8 personally viewed images/30 guest states/4 controls passed. THQ-058 must complete serial release gates.",
   "publicProfileControls": "60profiles240states120focusedEnterLeaderboard/backflows PASS; all120initiallightimages personallyviewed across31sheets. No full accessibility certification.",
-  "activeCollection": "Seventh20 fullpagecollection running9225 current4efa; zero newreviewcredit. Sixth20defaultfullpage reviewed; controls80states388FAQexpansionsPASS/all40initiallightimages viewed.",
-  "unresolved": "Remaining default full-page visual review, full-light/keyboard/zoom/screenreader/source and conditional-state reviews. Whole audit incomplete; no Google approval certification.",
+  "activeCollection": null,
+  "unresolved": "All 441 default full-page five-width views complete. Full-light scroll, sequential Tab, zoom, screenreader, primary-source accuracy, originality/value and conditional/regional ad-CMP stages remain incomplete. No whole-audit completion percentage or Google approval certification.",
   "historicalResumeNote": "Earlier checkpoint fields were stale; historical observations remain in their dated receipts and git history.",
   "terminalControls": "19assetterminals76light/darkmobile/desktopstates372focusedEnterFAQexpansions PASS; all38initiallightimages personallyviewed. No fullaccessibilitycertification.",
   "latestOwnerUpdate": "Owner clarified the repeated rejection only provides generic account-not-approved/few-more-tweaks wording and Sites section is inaccessible without resubmission. No further rejection detail is available; do not repeatedly request it. No inferred Google rejection cause.",
   "terminalThirdMetadata": "AAVE/DAI/GLD runtime noindex,follow; authored EURUSD/GBPUSD index,follow. Initial Updating resolved within bounded wait to fixed simulator values, no persistent defect established.",
-  "terminalSixthControls": "Evidence TERMINAL-SIXTH-SAFE-CONTROLS-20261028.json; freshness/navigationinitialfailurepreserved separately."
+  "terminalSixthControls": "Evidence TERMINAL-SIXTH-SAFE-CONTROLS-20261028.json; freshness/navigationinitialfailurepreserved separately.",
+  "terminalSeventhControls": "20 terminals,80 states,396 FAQ expansions,all40 initial light images personally viewed.",
+  "terminalFinalControls": "27 terminals,108 states,536 FAQ expansions,all54 initial light images personally viewed."
 }

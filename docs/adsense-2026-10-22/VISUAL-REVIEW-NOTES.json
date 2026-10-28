@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T02:34:05.953178+00:00",
+  "updatedAt": "2026-10-28T10:06:24.188112+00:00",
   "scope": "Actual screenshot viewing by route and stage. Full-page default-state images are separately recorded at all five widths for20 core routes; this is not conditional, accessibility, light-theme, source or whole-audit completion.",
   "routes": {
     "/": {
@@ -6521,6 +6521,619 @@
       "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "conditionalAndAccessibilityReviewComplete": false,
       "defaultStateAssessment": "Full main and all five default-width screenshots personally read/viewed. Long iShares20+YearTreasury title/ETF FAQs wrap mobile and desktop. Scope explicitly not fund research; no actual duration/holdings/fund structure claim certified. Cached/simulated quotes distinct from order panel under shared source followup. Full-light/zoom/sequentialTab/screenreader remain; no order."
+    },
+    "/trade/tsla": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read the full main text and actual separate Tesla notes, and viewed every collected full-page segment at 360/390/768/1280/1920 including the long desktop tail. Delivery, revenue and margin distinctions and generated-price limitations are explicit; worksheet avoids a universal allocation rule. Headings, summary, charts, FAQs, notes and footer fit in the captured default state. CEO-statement price-response and venue-specific slippage assertions still need dated source assessment; light/full keyboard and conditional states remain.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+    },
+    "/trade/twlo": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed all five width contact sheets. Twilio heading, simulator panels, collapsed FAQs, scope statement, related-market cards and footer fit. Page explicitly says no instrument-specific research has been published; generic practice copy is not credited as issuer research. Independent chart/order quote explanation remains a shared follow-up; no order was placed. Light/full keyboard and conditional states remain."
+    },
+    "/trade/txn": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed all five width contact sheets. Long Texas Instruments heading and FAQ labels wrap within the mobile cards; terminal, scope statement, related cards and footer remain visible. Generic scope explicitly disclaims issuer research. Chart and order-panel prices differ in some captures; shared data-source explanation remains under investigation, with no execution or calculation defect established. Light/full keyboard and conditional states remain."
+    },
+    "/trade/uber": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed all five width contact sheets. Uber Technologies title wraps on mobile; simulator, FAQs, scope limitations, related cards and footer fit. The page explicitly disclaims company-specific research and generated-data forecasts. Chart and order quote semantics remain a shared follow-up; no financial transaction was attempted. Light/full keyboard and conditional states remain."
+    },
+    "/trade/unh": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. UnitedHealth Group heading and long FAQ labels wrap within mobile cards. Full simulator, scope limitations, related cards and footer fit at all five widths. The generic page explicitly disclaims instrument-specific research; no issuer research credit. Chart/order quote semantics remain a shared follow-up. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/uni": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. Uniswap provider-reference badge wraps within the 360px header; separate chart market-data/simulated states appear across captures. Scope explicitly disclaims instrument research. Full terminal, FAQ, related-crypto cards and footer fit. Provider observation-age and independent quote-source visibility remain shared follow-ups. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/usdcad": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. Long US Dollar / Canadian Dollar heading and FAQ labels wrap at 360/390; full terminal, scope, forex related cards and footer fit. Generic practice scope is explicit. Dollar-prefixed FX ratio and simplified account-unit model remain a shared explanatory follow-up, without changing calculations. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/usdchf": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. US Dollar / Swiss Franc heading and FAQ labels wrap within mobile cards. Full terminal, authored scope and footer fit; safe-haven relationship is expressly conditional and not an assured hedge. Historical safe-haven source qualification and FX account-unit explanation remain follow-ups. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/usdhkd": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. Long Hong Kong Dollar heading, simulator, FAQs, scope and footer fit. Generic central-bank-policy-divergence wording needs review against the linked exchange-rate regime; no asset-specific research is claimed. Simulation can move outside market patterns, so no actual peg breach is inferred. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/usdmxn": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. Mexican Peso heading and FAQ labels wrap in mobile cards; terminal, generic scope, related cards and footer fit. No asset-specific research is claimed. Generated movement is explicitly simulated; FX unit/account-model explanation remains a shared follow-up. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/usdsgd": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. Singapore Dollar long heading and FAQ labels wrap at narrow widths; all main sections and footer fit. Generic policy-divergence wording needs source assessment against Singapore exchange-rate policy framework. No instrument research is credited; generated chart does not establish a real market event. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/usdtry": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. Turkish Lira long heading, narrow FAQ labels and terminal cards fit at five widths. Scope disclaims asset-specific research and forecast/execution inference. Generated price, cached-practice state and order quote semantics remain shared follow-ups, not a proven calculation fault. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/usdzar": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. South African Rand title takes three mobile lines without overflow; long FAQs, generated chart, scope, related forex and footer fit. Generic instrument scope disclaims research/forecast/execution inference. FX dollar-prefix and simplified account-unit explanation remain shared follow-ups. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/uso": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. United States Oil Fund heading and ETF FAQ labels wrap correctly; full simulator, scope disclaimer and footer fit. Page does not claim dedicated fund research. Futures-based fund versus spot-oil exposure needs source/content-value review; no fund mechanics inferred from generated series. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/v": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. Visa title, terminal, FAQs, authored scope, related cards and footer fit all five widths. The scope warns payment volumes/cross-border activity do not guarantee compounding or suitability. Undated world-largest electronic-payments-network assertion needs a defined comparison metric and dated primary support. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/veev": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. Veeva Systems title and narrow FAQ labels fit; all terminal, practice-scope, related-market and footer segments viewed. Generic scope explicitly states no instrument-specific research. Chart/order quote sources remain a shared explanatory follow-up; no order/calculation test performed. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/vet": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. VeChain provider-reference badge wraps at 360px, separate chart data-status labels remain visible. Terminal, FAQs, scope and footer fit; generic page disclaims instrument research. Repeated $0.006 y-axis labels obscure small variation and remain a shared precision investigation, without changing actual prices. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/voo": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. Vanguard S&P 500 ETF title and FAQ labels wrap correctly. Scope says similar index exposure does not make prices/distributions/execution identical. Undated low-cost/minimal-expense and popularity claims need current issuer documentation, not inference from generated series. Full main sections and footer fit. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/vti": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. Vanguard Total Stock Market long title and FAQs fit mobile and desktop. Generic instrument scope disclaims dedicated research, forecasts and real execution quality. Full simulator, related ETF cards and footer viewed; total-market versus S&P500 exposure needs content-value/source follow-up. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/wday": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. Workday heading, simulator panels, FAQs, generic scope and footer fit at all five widths. Explicit no-instrument-research limitation remains visible. Captured chart/order quote differences need the shared data-source explanation investigation; no order was entered. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/wfc": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. Wells Fargo heading, long FAQ labels, scope limitations and related-market cards fit at every width. Generic copy explicitly disclaims company research; no banking-specific factual value is credited. Chart versus order quote source remains a shared follow-up. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/wheat": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. Wheat/ZW title, commodity FAQs, chart, scope and footer fit. Generic scope disclaims instrument research. Dollar-prefixed ZW prices lack contract/unit context in the text; shared commodity unit explanation needs verification against actual simplified practice model, not an inferred futures contract. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/wmt": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. Walmart title, all simulator sections, FAQs, generic scope, related cards and footer fit five widths. Practice-only prices are explicitly simulated, so stock-split/current-market conclusions are not inferred. Dedicated issuer research is expressly absent. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/xle": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. Energy Select SPDR title and ETF FAQ labels fit. Generic scope disclaims dedicated instrument research. Full terminal, related ETF cards, learning links and footer viewed; sector concentration versus broad-market exposure remains content/source follow-up. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/xlf": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. Financial Select SPDR title, ETF FAQ labels, scope, related cards and footer fit. Instrument-specific research is explicitly absent; financial-sector composition and concentration require source/value assessment separately from broad index ETFs. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/xlk": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. Technology Select SPDR heading wraps in mobile layout; all terminal, FAQ, limitations, related cards and footer segments fit. Page disclaims fund research. Sector fund versus broader Nasdaq/S&P exposure should be assessed from issuer holdings, not generated chart paths. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/xlm": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. Stellar provider-reference badge wraps at 360px and fits all widths; full terminal, FAQ, generic scope and footer viewed. Several y-axis labels repeat $0.172 although the curve changes, preserving the shared small-price precision issue for reproduction. Instrument research explicitly absent. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/xlv": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. Health Care Select SPDR heading and long ETF FAQ labels fit mobile/desktop. Simulator, generic scope, related cards and footer viewed. Dedicated fund research is disclaimed; concentration/constituent claims require issuer sources and are not inferred. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/xom": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. Exxon Mobil heading, simulator, collapsed FAQs, scope, related cards and footer fit five widths. Generic scope disclaims issuer research. Generated chart is not evidence of energy-price/company fundamentals; chart/order reference differences remain shared explanatory follow-up. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/xrp": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. Full XRP main and actual separate learning notes read, including token ownership versus Ripple company shares and market-only/no-stop-order limitations. All five-width segments, including 1280 tail, personally viewed; title, summary, intelligence, stats, FAQ, footer and long article fit. Undated claims about sharpest regulatory moves/news-versus-flows and checklist continuation framing need dated sources and simulated-data qualification. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain.",
+      "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ"
+    },
+    "/trade/zm": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. Zoom Video title, simulator, FAQs, generic limitations and footer fit all widths. Scope explicitly says no asset-specific research. Current issuer naming/context requires official source review; old-looking practice price is not assumed to be an actual quote. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/zs": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Personally read full main text and viewed every collected segment at all five widths. Zscaler title, simulator, FAQs, scope, related-market cards and footer fit all widths. Generic scope disclaims instrument-specific research. ZS versus soybean symbol collision across instruments remains a distinguishability/source-context follow-up, not evidence of wrong trades. Full-light scroll, sequential keyboard, zoom, screenreader and conditional states remain."
+    },
+    "/trade/xmr": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Read complete actual main and viewed all five widths through the final disclaimer. Provider-reference header can coexist with a simulated chart; independent quote/chart amounts require the existing shared data-status follow-up, without proof of a calculation defect. Scope explicitly says no instrument-specific research; generic Monero copy is not credited as such. Source accuracy, full light scroll, sequential keyboard, zoom and screenreader remain."
+    },
+    "/trade/tao": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Read complete actual main and personally viewed all five widths through final disclaimer. Bittensor page is an order-entry exercise with explicit absence of instrument-specific research. Header provider-reference and SIMULATED chart coexist; source/provenance follow-up remains. No new route-specific clipping observed in default dark captures. Broader accessibility and source/content-value review remains."
+    },
+    "/trade/usdt": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Read complete actual main and personally viewed all five widths through final disclaimer. Generic cryptocurrency copy supplies no substantive Tether peg/reserves/redemption education. Actual default captures include repeated rounded 0.999 axis labels and a generated chart above one dollar; this is not evidence of a real depeg. Shared precision/data-status and source/content-value review remain. Scope limitation and simulation warnings are visible."
+    },
+    "/trade/trx": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Read complete actual main and personally viewed all five widths through final disclaimer. TRON page explicitly disclaims instrument-specific research. Repeated 0.331/0.332 chart labels and transitions between market-data and simulated captures retain shared precision/provenance follow-ups. No route-specific default clipping observed. Source, full light scroll, keyboard sequence, zoom and screenreader remain."
+    },
+    "/trade/ton": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Read complete actual main and personally viewed all five widths. Toncoin simulator, scope, related markets and final disclaimer fit default captures. No asset-specific research is claimed in scope, while generic learn-price-patterns/trading-thesis language needs value/source review. Provider-reference header with simulated versus market-data chart states remains a shared provenance concern, without proving a financial defect."
+    },
+    "/trade/ldo": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Read complete actual main and personally viewed all five widths. Lido DAO page is generic cryptocurrency practice copy, explicitly disclaims instrument-specific research and does not explain governance-token versus liquid-staking-token distinctions; content-value/source follow-up remains. All default segments including final disclaimer viewed without route-specific clipping. Full light, sequential keyboard, zoom, screenreader and data-state follow-ups remain."
+    },
+    "/trade/rune": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Read complete actual main and personally viewed all five widths through final disclaimer. THORChain scope says no asset-specific research but captured browser title says Analysis, unlike Practice Data & Educational Guide used by most terminals; verify settled title/source before counting a metadata defect. Generic crypto copy does not explain the network. Shared provenance and broader accessibility/content-value follow-ups remain."
+    },
+    "/trade/kas": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Read complete actual main and personally viewed all five widths. Kaspa copy is generic cryptocurrency practice content with explicit no-research scope. Multiple y-axis ticks round to identical 0.036/0.037 values in collected states; existing shared precision follow-up remains. Default layout fits all five widths through final disclaimer; source, light-scroll, sequential keyboard, zoom/screenreader and conditional states remain."
+    },
+    "/trade/render": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Read complete actual main and personally viewed every segment at all five widths. Render page fits default widths through disclaimer but generic cryptocurrency copy gives no Render network or token-migration research. Captured Analysis browser title needs settled metadata verification against no-research scope. Provider-reference header with independently generated chart remains shared provenance follow-up; no real price event inferred."
+    },
+    "/trade/usdc": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Read complete actual main and personally viewed all five widths through disclaimer. USD Coin content lacks substantive peg, reserves and redemption explanation; generic cryptocurrency claims do not establish instrument-specific educational value. Several market-data captures have identical rounded 0.999 axis labels; simulated chart deviations do not establish real depegs. Analysis title needs settled metadata check. Source and accessibility follow-ups remain."
+    },
+    "/trade/wld": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Read complete actual main and personally viewed all five widths through final disclaimer. Worldcoin header and generic crypto practice body supply no researched World/Worldcoin distinction; current naming needs primary-source review. Captured Analysis title needs settled metadata check versus explicit absence of asset-specific research. Shared status, precision and accessibility follow-ups remain; no default route-specific overflow observed."
+    },
+    "/trade/stx": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Read complete actual main and personally viewed all five widths. Stacks practice page explicitly disclaims instrument-specific research; repeated rounded 0.303 tick labels retain shared chart-precision follow-up. Generic linked explainers do not establish Stacks-specific fundamentals coverage. Default scope, FAQs, markets and disclaimer fit; full light-scroll, keyboard sequence, zoom/screenreader and source/content-value review remain."
+    },
+    "/trade/imx": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Read complete actual main and personally viewed all five widths through final disclaimer. Immutable page uses generic crypto practice text, explicitly no instrument-specific research. Analysis title requires settled metadata check. No route-specific clipping in default captures; source/content-value, provenance, light-scroll, sequential keyboard, zoom/screenreader and conditional-state reviews remain."
+    },
+    "/trade/pol": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Read complete actual main and personally viewed all five widths. Long Polygon Ecosystem Token heading/breadcrumbs wrap within narrow layouts. POL terminal does not itself explain MATIC migration although legacy MATIC route now has corrected context; source-backed reciprocal explanation remains an editorial follow-up. Multiple axis labels round identically to 0.092/0.093. Analysis title requires settled metadata check; generic scope does not supply asset research."
+    },
+    "/trade/pepe": {
+      "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
+      "fullPageDefaultStateViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "conditionalAndAccessibilityReviewComplete": false,
+      "defaultStateAssessment": "Read complete actual main and personally viewed all five widths through final disclaimer. Pepe tiny-price digits remain visible in default screenshots; precision and trading amounts were not changed or certified. Generic cryptocurrency explanation gives no specific meme-token context. Simulation/no-real-money and absence-of-research scope are explicit. Full-light scroll, keyboard sequence, zoom/screenreader, source/content-value and conditional-state follow-ups remain."
     }
   }
 }
