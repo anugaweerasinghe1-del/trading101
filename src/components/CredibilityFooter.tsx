@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 export function CredibilityFooter() {
   return (
-    <footer className="border-t border-border bg-gradient-to-b from-background to-card/50">
+    <footer className="border-t border-border bg-gradient-to-b from-background to-card/50 [.light_&]:bg-background [.light_&]:text-foreground">
       <div className="container mx-auto px-6 py-16">
         {/* Feature Highlights */}
         <div className="grid md:grid-cols-4 gap-8 mb-12">

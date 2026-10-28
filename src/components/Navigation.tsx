@@ -84,7 +84,7 @@ export function Navigation() {
   return (
     <>
     <nav className={cn(
-      "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+      "fixed top-0 left-0 right-0 z-50 transition-all duration-500 [.light_&]:bg-background/95 [.light_&]:border-border",
 
       scrolled
         ? "bg-[hsl(0_0%_2%)/90] backdrop-blur-2xl border-b border-white/[0.06] shadow-[0_4px_30px_-10px_hsl(0_0%_0%/0.5)]"
