@@ -96,12 +96,12 @@ const WikiTerm = () => {
         <meta property="og:title" content={`What is ${term.term}? | Trading Concept Guide | TradeHQ`} />
         <meta property="og:description" content={term.definition} />
         <meta property="og:url" content={`${DOMAIN}/wiki/${term.slug}`} />
-        <meta property="og:image" content={`${DOMAIN}/og-image.png`} />
+        <meta property="og:image" content={`${DOMAIN}/tradehq-preview-2026.png`} />
         <meta property="og:site_name" content="TradeHQ" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`What is ${term.term}? | TradeHQ`} />
         <meta name="twitter:description" content={term.definition} />
-        <meta name="twitter:image" content={`${DOMAIN}/og-image.png`} />
+        <meta name="twitter:image" content={`${DOMAIN}/tradehq-preview-2026.png`} />
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(definedTermSchema)}</script>

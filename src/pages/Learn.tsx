@@ -107,14 +107,14 @@ export default function Learn() {
         <meta property="og:title" content="Learn Trading — Free Beginner to Advanced Guides" />
         <meta property="og:description" content="Explore trading concepts with free beginner-to-advanced lessons, worked examples and $100K in virtual cash. No signup required." />
         <meta property="og:url" content="https://www.thetradehq.com/learn" />
-        <meta property="og:image" content="https://www.thetradehq.com/og-image.png" />
+        <meta property="og:image" content="https://www.thetradehq.com/tradehq-preview-2026.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="TradeHQ" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Learn Trading — Free Beginner to Advanced Guides" />
         <meta name="twitter:description" content="Free trading education: stocks, crypto, technical analysis & more. Practice with $100K virtual cash." />
-        <meta name="twitter:image" content="https://www.thetradehq.com/og-image.png" />
+        <meta name="twitter:image" content="https://www.thetradehq.com/tradehq-preview-2026.png" />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
 

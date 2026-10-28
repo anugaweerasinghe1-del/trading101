@@ -303,7 +303,7 @@ export default function Portfolio() {
         <meta property="og:url" content="https://www.thetradehq.com/portfolio" />
         <meta
           property="og:image"
-          content="https://www.thetradehq.com/og-image.png"
+          content="https://www.thetradehq.com/tradehq-preview-2026.png"
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -316,7 +316,7 @@ export default function Portfolio() {
         />
         <meta
           name="twitter:image"
-          content="https://www.thetradehq.com/og-image.png"
+          content="https://www.thetradehq.com/tradehq-preview-2026.png"
         />
       </Helmet>
 
