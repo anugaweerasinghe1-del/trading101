@@ -1,22 +1,23 @@
 {
-  "updatedAt": "2026-10-28T02:13:48.881515+00:00",
-  "latestMergedProductionSHA": "cbcce94bbd8cf35deadec17684b9ec75156f2030",
-  "fullpageRoutesPersonallyViewed": 374,
+  "updatedAt": "2026-10-28T09:36:06.185950+00:00",
+  "latestMergedProductionSHA": "4efa44123bee8478202a8af0514e3a92ec7b36b7",
+  "fullpageRoutesPersonallyViewed": 394,
   "publicInventoryRoutes": 441,
-  "remainingDefaultVisualRoutes": 67,
-  "confirmedFindings": 60,
-  "publiclyVerifiedRepairs": 58,
+  "remainingDefaultVisualRoutes": 47,
+  "confirmedFindings": 62,
+  "publiclyVerifiedRepairs": 60,
   "activeCandidate": {
-    "pr": 257,
-    "sha": "1e395664a197c06d80f4f64f797d13e3495af235",
-    "scope": "THQ055 three light-only summary foreground classes; local/preview/CI pending"
+    "pr": 258,
+    "sha": "b57fa8315fabdbf5349367adb6c27b18a47c904e",
+    "scope": "THQ056/057 static terminal notes;local30states4controls8imagesPASS;nativeCI/previewpending"
   },
-  "releaseGate": "PR256 mergeddd2febe; affected30states/eightpersonallyviewedimagesPASS; guest/main6checks/nativeprod binding pending. Do not merge257until256fullyverified.",
+  "releaseGate": "PR257 fully PUBLICLY_VERIFIED: all6exactmain/nativeCF+Vercelproduction/30affectedstates12personallyviewedimages/30gueststates4controlsPASS. PR258 must completecandidate/nativeactualpreview thennormalprotectedmerge andallproduction/livegates.",
   "publicProfileControls": "60profiles240states120focusedEnterLeaderboard/backflows PASS; all120initiallightimages personallyviewed across31sheets. No full accessibility certification.",
-  "activeCollection": "Fifth20 defaultfivewidth personallyreviewed; fifthFAQ80states running9225. Browser9224 guest smoke256running then summarylocal30states. Sixthbatch not started.",
+  "activeCollection": "Seventh20 fullpagecollection running9225 current4efa; zero newreviewcredit. Sixth20defaultfullpage reviewed; controls80states388FAQexpansionsPASS/all40initiallightimages viewed.",
   "unresolved": "Remaining default full-page visual review, full-light/keyboard/zoom/screenreader/source and conditional-state reviews. Whole audit incomplete; no Google approval certification.",
   "historicalResumeNote": "Earlier checkpoint fields were stale; historical observations remain in their dated receipts and git history.",
   "terminalControls": "19assetterminals76light/darkmobile/desktopstates372focusedEnterFAQexpansions PASS; all38initiallightimages personallyviewed. No fullaccessibilitycertification.",
   "latestOwnerUpdate": "Owner clarified the repeated rejection only provides generic account-not-approved/few-more-tweaks wording and Sites section is inaccessible without resubmission. No further rejection detail is available; do not repeatedly request it. No inferred Google rejection cause.",
-  "terminalThirdMetadata": "AAVE/DAI/GLD runtime noindex,follow; authored EURUSD/GBPUSD index,follow. Initial Updating resolved within bounded wait to fixed simulator values, no persistent defect established."
+  "terminalThirdMetadata": "AAVE/DAI/GLD runtime noindex,follow; authored EURUSD/GBPUSD index,follow. Initial Updating resolved within bounded wait to fixed simulator values, no persistent defect established.",
+  "terminalSixthControls": "Evidence TERMINAL-SIXTH-SAFE-CONTROLS-20261028.json; freshness/navigationinitialfailurepreserved separately."
 }

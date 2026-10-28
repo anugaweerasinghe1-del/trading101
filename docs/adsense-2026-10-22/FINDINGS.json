@@ -2290,7 +2290,7 @@
         "https://www.thetradehq.com/trade/matic"
       ],
       "observed": "Actual hydrated terminal text at360/1280 omits legacy-label/Sonic/POL migration context; MATIC repeatedly described as current scaling solution. Four before screenshots personally viewed. Previous THQ-049 correction was confined to niche guides.",
-      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+      "state": "PUBLICLY_VERIFIED",
       "fix": "Static source-linked note on affected terminals and neutral MATIC authored definition; preserve simulator identifiers and all protected mechanics/data.",
       "evidence": "findings/TERMINAL-LEGACY-TOKEN-CONTEXT.md",
       "pr": 256,
@@ -2298,7 +2298,16 @@
       "mergeSHA": "dd2febe86eea71341cc2b3c0e7c2522e58f9f6f7",
       "exactHeadRequiredChecks": "PASS",
       "actualCFPreview": "30states/fourFAQ/source-focusflowsPASS;eightimagespersonallyviewed",
-      "previewEvidence": "evidence/PR256-UPDATED-PREVIEW-BROWSER.json"
+      "previewEvidence": "evidence/PR256-UPDATED-PREVIEW-BROWSER.json",
+      "releaseHold": null,
+      "productionEvidence": "evidence/PR256-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR256-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR256-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR256-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 8,
+      "liveRecheck": "PASS exact merged production: [30] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
     },
     {
       "id": "THQ-055",
@@ -2311,22 +2320,84 @@
         "https://www.thetradehq.com/trade/matic"
       ],
       "observed": "Actual12px500weight badges positive/negative/small contrast1.396/2.026/1.276:1 in light theme; corresponding dark8.499/5.966/9.228:1. Background ancestors no images/allopacity1, alpha composition applicable. Six before screenshots personally viewed.",
-      "state": "CONFIRMED_REMEDIATION_IN_PROGRESS",
+      "state": "PUBLICLY_VERIFIED",
       "fix": "Theme-scoped darker text colors in AIReadySummary; preserve labels, verdict thresholds, summaries, data, handlers and dark appearance.",
       "evidence": "findings/TERMINAL-SUMMARY-CONTRAST.md",
       "pr": 257,
-      "candidateSHA": "1e395664a197c06d80f4f64f797d13e3495af235"
+      "candidateSHA": "1e395664a197c06d80f4f64f797d13e3495af235",
+      "mergeSHA": "4efa44123bee8478202a8af0514e3a92ec7b36b7",
+      "localEvidence": "evidence/TERMINAL-SUMMARY-LOCAL-BROWSER.json",
+      "localImagesPersonallyViewed": 12,
+      "previewEvidence": "evidence/PR257-UPDATED-PREVIEW-BROWSER.json",
+      "previewImagesPersonallyViewed": 12,
+      "releaseHold": null,
+      "productionEvidence": "evidence/PR257-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR257-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR257-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR257-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 12,
+      "liveRecheck": "PASS exact merged production: [30] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
+    },
+    {
+      "id": "THQ-056",
+      "severity": "P3",
+      "category": "Block terminal legacy ticker context omitted",
+      "urls": [
+        "https://www.thetradehq.com/trade/sq"
+      ],
+      "observed": "Actual full hydrated main360/1280andfivewidth fullpage review omit XYZ/legacycontext; priorPR252 onlyfixednicheguide. Fresh official issuerstockpage title explicitlyXYZ.",
+      "fix": "Static legacy SQ explanation and official issuerlink above terminaltakeaways; noinstrumentID/symbol/provider/order/datachange.",
+      "evidence": "findings/TERMINAL-INSTRUMENT-CONTEXT.md",
+      "state": "PREPARED_NOT_MERGED",
+      "detectedAt": "2026-10-28T02:37:54.375847+00:00",
+      "beforeEvidence": "evidence/TERMINAL-INSTRUMENT-CONTEXT-BEFORE.json",
+      "beforeImagesPersonallyViewed": 4,
+      "risk": "Low static explanatory text/source link only. No protected feed,accounting,orders,records,auth,ads/consent or infrastructure changes.",
+      "adsenseRelevance": "Educational/source transparency only; no Google rejection cause or specificpolicyviolation asserted.",
+      "releaseHold": "CI/nativeactualpreview/protectedmerge/production/liveguestgates pending",
+      "pr": 258,
+      "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/258",
+      "candidateSHA": "b57fa8315fabdbf5349367adb6c27b18a47c904e",
+      "baseSHA": "4efa44123bee8478202a8af0514e3a92ec7b36b7",
+      "localEvidence": "evidence/TERMINAL-INSTRUMENT-CONTEXT-LOCAL-BROWSER.json",
+      "localImagesPersonallyViewed": 8
+    },
+    {
+      "id": "THQ-057",
+      "severity": "P2",
+      "category": "Silver terminal omits provider token proxy identity",
+      "urls": [
+        "https://www.thetradehq.com/trade/silver"
+      ],
+      "observed": "Actual Silver/XAG terminal displaysproviderreferencequotearound0.0651without tokenproxy/spot distinction. PublicGETquote provenanceproxy expresslynottraditionalspotcommodityinstrument, observationAug19/pageOct28updated0s. RepoCOMMODITY_MAP maps silvertosilver-token.",
+      "fix": "Static conditional explanation identifying tokenproxy versus dedicatedXAG/USDspotfeed; keepprices/provider/calculations/accounts/historyunchanged. Underlyingproviderselection/currentquoteage investigation remains separate.",
+      "evidence": "findings/TERMINAL-INSTRUMENT-CONTEXT.md",
+      "state": "PREPARED_NOT_MERGED",
+      "detectedAt": "2026-10-28T02:37:54.375847+00:00",
+      "beforeEvidence": "evidence/TERMINAL-INSTRUMENT-CONTEXT-BEFORE.json",
+      "beforeImagesPersonallyViewed": 4,
+      "risk": "Low static explanatory text/source link only. No protected feed,accounting,orders,records,auth,ads/consent or infrastructure changes.",
+      "adsenseRelevance": "Educational/source transparency only; no Google rejection cause or specificpolicyviolation asserted.",
+      "releaseHold": "CI/nativeactualpreview/protectedmerge/production/liveguestgates pending",
+      "pr": 258,
+      "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/258",
+      "candidateSHA": "b57fa8315fabdbf5349367adb6c27b18a47c904e",
+      "baseSHA": "4efa44123bee8478202a8af0514e3a92ec7b36b7",
+      "localEvidence": "evidence/TERMINAL-INSTRUMENT-CONTEXT-LOCAL-BROWSER.json",
+      "localImagesPersonallyViewed": 8
     }
   ],
-  "updatedAt": "2026-10-28T02:08:34.325454+00:00",
+  "updatedAt": "2026-10-28T09:31:18.155764+00:00",
   "counts": {
-    "siteFindings": 60,
-    "P2": 31,
-    "P3": 29,
-    "publiclyRepaired": 58,
-    "preparedNotMerged": 1,
+    "siteFindings": 62,
+    "P2": 32,
+    "P3": 30,
+    "publiclyRepaired": 60,
+    "preparedNotMerged": 2,
     "separateOperationalBlockers": 0,
-    "mergedAwaitingProductionVerification": 1,
+    "mergedAwaitingProductionVerification": 0,
     "protectedUnapprovedRecordFixes": 0,
     "approvedPublishedRecordFixesBlockedOnCredential": 0,
     "mergedFallbackAwaitingProductionVerification": 0
