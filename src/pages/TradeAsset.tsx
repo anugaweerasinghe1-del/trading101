@@ -472,6 +472,11 @@ export default function TradeAsset() {
                 Provider quotes use a PAXG token proxy, not a dedicated XAU/USD spot feed.
                 Practice charts and fixed fallback prices have their own data-status labels.
               </p>}
+              {selectedAsset.id === "silver" && <p className="text-sm text-muted-foreground mb-2 max-w-3xl">
+                When available, provider quotes use CoinGecko's silver-token proxy rather than
+                a dedicated XAG/USD spot feed. A token proxy price is not a silver spot quote
+                or a conversion rate. Practice charts and fallback prices have separate data-status labels.
+              </p>}
               {/* Data trust signal */}
               <div className="flex items-center gap-3 text-xs">
                 <span className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full font-medium ${
@@ -514,6 +519,20 @@ export default function TradeAsset() {
           )}
 
           {/* GEO Key Takeaways - machine-readable for AI Overviews */}
+          {selectedAsset?.id === "sq" && (
+            <section aria-labelledby="legacy-stock-label" className="rounded-xl border border-border bg-card p-4 text-sm text-muted-foreground">
+              <h2 id="legacy-stock-label" className="font-semibold text-foreground mb-2">Legacy practice label</h2>
+              <p>
+                This simulator retains Block's legacy SQ label. Block's investor stock page
+                identifies the company as XYZ. The practice label and generated prices do
+                not establish a current XYZ market quote.
+              </p>
+              <a href="https://investors.block.xyz/stock-info/default.aspx" target="_blank" rel="noopener noreferrer" className="inline-block mt-2 text-primary underline underline-offset-2">
+                Block investor stock information
+              </a>
+            </section>
+          )}
+
           {selectedAsset && <GEOKeyTakeaways asset={selectedAsset} />}
           
           {selectedAsset && showSeoBlocks && (
