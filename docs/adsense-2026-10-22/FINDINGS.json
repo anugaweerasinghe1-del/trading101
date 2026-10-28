@@ -66,7 +66,8 @@
       "evidence": "evidence/PR212-MONITOR-DIAGNOSIS.json",
       "latestObservationEvidence": "evidence/FINAL-WORKSPACE-ACCESS-20261023.json",
       "latestObservedAt": "2026-10-23T15:19:25.769124+00:00",
-      "githubBindingEvidence": "evidence/PR221-PRODUCTION-PROVIDERS.json"
+      "githubBindingEvidence": "evidence/PR221-PRODUCTION-PROVIDERS.json",
+      "releaseHold": "PR261 is the active draft candidate. All exact preview/protected merge/main/native/live verification must pass before closing its five findings or releasing later independent proposals."
     },
     {
       "id": "THQ-003",
@@ -589,7 +590,8 @@
       "scope": "Operational test timing, not another reproduced site defect. No release gate bypass.",
       "mergeSHA": "40ba79c2b65d88badbddada705df80ab65acc2ab",
       "followup": "Completecoherentrerunattempt2passes allrequiredchecks andbothrelease monitors. Priorbrowserconnectionfailurepreserved asrunattempt1history.",
-      "latestEvidence": "evidence/PR214-MAIN-CI.json"
+      "latestEvidence": "evidence/PR214-MAIN-CI.json",
+      "releaseHold": "PR261 is the active draft candidate. All exact preview/protected merge/main/native/live verification must pass before closing its five findings or releasing later independent proposals."
     },
     {
       "id": "THQ-018",
@@ -2463,7 +2465,7 @@
       "beforeEvidence": "evidence/TERMINAL-FINAL-SETTLED-METADATA-20261028.json",
       "risk": "Low, one static title fallback; ordinary reviewed wording revert rollback. No data/calculation/account/ad/consent changes.",
       "adsenseRelevance": "Accurate content description only; no claimed Google rejection cause or title-length penalty.",
-      "releaseHold": "PR259 merged; wait for six exact-main/native production and live checks before next release. Proposal is not an implemented or verified repair."
+      "releaseHold": "PR261 is the active draft candidate. All exact preview/protected merge/main/native/live verification must pass before closing its five findings or releasing later independent proposals."
     },
     {
       "id": "THQ-060",
@@ -2481,7 +2483,7 @@
       "beforeImagesPersonallyViewed": 4,
       "risk": "Low-to-moderate presentation-only inherited color scope. Must compare every affected section and unaffected light blocks at all five widths/both themes, safe controls and exact provider gates. Ordinary reviewed revert rollback; no protected behavior changes.",
       "adsenseRelevance": "Visitor readability and access to substantive content; not a known Google rejection reason.",
-      "releaseHold": "DraftPR261: local50requested-width/theme states PASS;220screens collected but not personally reviewed yet; safecontrols/exactCI/native/actualpreview/production gates remain.",
+      "releaseHold": "PR261 is the active draft candidate. All exact preview/protected merge/main/native/live verification must pass before closing its five findings or releasing later independent proposals.",
       "pr": 261,
       "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/261",
       "candidateSHA": "77a52ce663927cb298764181b6c50abf5ad2f555",
@@ -2503,7 +2505,7 @@
       "detectedAt": "2026-10-28T10:45:55.577714+00:00",
       "risk": "Presentation-only proposal. Requires five widths/both themes, focus/hover/conditional visible content in isolated fixtures without production progress writes, unaffected shared surfaces, build and exact native release gates. Rollback ordinary reviewed revert.",
       "adsenseRelevance": "Visitor readability and ability to use educational content; not an asserted Google rejection reason.",
-      "releaseHold": "DraftPR261: local50requested-width/theme states PASS;220screens collected but not personally reviewed yet; safecontrols/exactCI/native/actualpreview/production gates remain.",
+      "releaseHold": "PR261 is the active draft candidate. All exact preview/protected merge/main/native/live verification must pass before closing its five findings or releasing later independent proposals.",
       "pr": 261,
       "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/261",
       "candidateSHA": "77a52ce663927cb298764181b6c50abf5ad2f555",
@@ -2525,7 +2527,7 @@
       "detectedAt": "2026-10-28T10:45:55.577714+00:00",
       "risk": "Presentation-only proposal. Requires five widths/both themes, focus/hover/conditional visible content in isolated fixtures without production progress writes, unaffected shared surfaces, build and exact native release gates. Rollback ordinary reviewed revert.",
       "adsenseRelevance": "Visitor readability and ability to use educational content; not an asserted Google rejection reason.",
-      "releaseHold": "DraftPR261: local50requested-width/theme states PASS;220screens collected but not personally reviewed yet; safecontrols/exactCI/native/actualpreview/production gates remain.",
+      "releaseHold": "PR261 is the active draft candidate. All exact preview/protected merge/main/native/live verification must pass before closing its five findings or releasing later independent proposals.",
       "pr": 261,
       "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/261",
       "candidateSHA": "77a52ce663927cb298764181b6c50abf5ad2f555",
@@ -2547,7 +2549,7 @@
       "detectedAt": "2026-10-28T10:45:55.577714+00:00",
       "risk": "Presentation-only proposal. Requires five widths/both themes, focus/hover/conditional visible content in isolated fixtures without production progress writes, unaffected shared surfaces, build and exact native release gates. Rollback ordinary reviewed revert.",
       "adsenseRelevance": "Visitor readability and ability to use educational content; not an asserted Google rejection reason.",
-      "releaseHold": "DraftPR261: local50requested-width/theme states PASS;220screens collected but not personally reviewed yet; safecontrols/exactCI/native/actualpreview/production gates remain.",
+      "releaseHold": "PR261 is the active draft candidate. All exact preview/protected merge/main/native/live verification must pass before closing its five findings or releasing later independent proposals.",
       "pr": 261,
       "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/261",
       "candidateSHA": "77a52ce663927cb298764181b6c50abf5ad2f555",
@@ -2570,7 +2572,7 @@
       "detectedAt": "2026-10-28T15:55:46.464277+00:00",
       "risk": "Presentation-only; requires local five-width/two-theme settled/scroll/hover and exact release/native/public rechecks. Ordinary reviewed revert rollback.",
       "adsenseRelevance": "Visitor readability; no Google rejection reason asserted.",
-      "releaseHold": "DraftPR261: local50requested-width/theme states PASS;220screens collected but not personally reviewed yet; safecontrols/exactCI/native/actualpreview/production gates remain.",
+      "releaseHold": "PR261 is the active draft candidate. All exact preview/protected merge/main/native/live verification must pass before closing its five findings or releasing later independent proposals.",
       "pr": 261,
       "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/261",
       "candidateSHA": "77a52ce663927cb298764181b6c50abf5ad2f555",
@@ -2593,16 +2595,67 @@
       "detectedAt": "2026-10-28T15:58:07.380265+00:00",
       "risk": "Presentation only; require requested viewport and text-range bounds five widths/two themes, short/long names, safe navigation and exact release gates.",
       "adsenseRelevance": "Mobile usability, not a claimed Google rejection reason.",
-      "releaseHold": "PR259 merged; production re-verification pending after isolated Chrome startup failure."
+      "releaseHold": "PR261 is the active draft candidate. All exact preview/protected merge/main/native/live verification must pass before closing its five findings or releasing later independent proposals."
+    },
+    {
+      "id": "THQ-066",
+      "severity": "P3",
+      "category": "Homepage FAQ buttons omit their expanded state",
+      "urls": [
+        "https://www.thetradehq.com/"
+      ],
+      "observed": "Actual production keyboard Enter opens the answer, but aria-expanded is null before and after and the Chromium accessibility-tree button exposes no expanded property at360/1280 in both themes. All8 current candidate FAQ flows independently reproduce absent state. Keyboard activation itself works.",
+      "fix": "Add aria-expanded reflecting the existing openIndex expression. Preserve all content, handlers, animation, DOM and accordion state; no new dependency.",
+      "evidence": "findings/HOMEPAGE-FAQ-EXPANDED-STATE.md",
+      "beforeEvidence": "evidence/FOLLOWUP-CONTROLS-LIVE-BEFORE-20261028.json",
+      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "detectedAt": "2026-10-28T16:44:32.291958+00:00",
+      "risk": "Unapplied reversible presentation/semantics-only proposal; preserve protected data/calculation/auth behavior. All serial release gates required.",
+      "adsenseRelevance": "User-facing readability/accessibility; no rejection cause asserted.",
+      "releaseHold": "PR261 is the active draft candidate. All exact preview/protected merge/main/native/live verification must pass before closing its five findings or releasing later independent proposals."
+    },
+    {
+      "id": "THQ-067",
+      "severity": "P2",
+      "category": "Compound calculator input values vanish in light theme",
+      "urls": [
+        "https://www.thetradehq.com/learn-trading-guide"
+      ],
+      "observed": "Actual unmodified live values100000/500 compute rgb15,15,15 over a5%white input composited over fixed rgb3,5,6 card: 1.017:1. Values are nearly invisible in personally viewed360/1280 light screenshots; original dark values remain legible. No calculation value or slider changed.",
+      "fix": "Light-only explicit original dark foreground on the two input elements. Preserve all input values, handlers, arithmetic, sliders, output, persistence and existing dark appearance.",
+      "evidence": "findings/COMPOUND-INPUT-LIGHT-TEXT.md",
+      "beforeEvidence": "evidence/FOLLOWUP-CONTROLS-LIVE-BEFORE-20261028.json",
+      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "detectedAt": "2026-10-28T16:44:32.291958+00:00",
+      "risk": "Unapplied reversible presentation/semantics-only proposal; preserve protected data/calculation/auth behavior. All serial release gates required.",
+      "adsenseRelevance": "User-facing readability/accessibility; no rejection cause asserted.",
+      "releaseHold": "PR261 is the active draft candidate. All exact preview/protected merge/main/native/live verification must pass before closing its five findings or releasing later independent proposals."
+    },
+    {
+      "id": "THQ-068",
+      "severity": "P2",
+      "category": "Shared header hover controls lack light-theme contrast",
+      "urls": [
+        "https://www.thetradehq.com/"
+      ],
+      "observed": "Actual live hover uses white foreground on opaque rgb145,145,161: 3.102:1 for14px/500 Sign in; mobile menu icon shares the pair. Both360/1280 light hover screenshots personally viewed with dark comparisons. Current PR261 local hover retains this preexisting pair.",
+      "fix": "Scope a dark accent foreground to light-mode shared nav only; preserve accent background, normal foreground, dark palette, authentication/navigation handlers and portal menu behavior.",
+      "evidence": "findings/HEADER-HOVER-LIGHT-CONTRAST.md",
+      "beforeEvidence": "evidence/FOLLOWUP-CONTROLS-LIVE-BEFORE-20261028.json",
+      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "detectedAt": "2026-10-28T16:44:32.291958+00:00",
+      "risk": "Unapplied reversible presentation/semantics-only proposal; preserve protected data/calculation/auth behavior. All serial release gates required.",
+      "adsenseRelevance": "User-facing readability/accessibility; no rejection cause asserted.",
+      "releaseHold": "PR261 is the active draft candidate. All exact preview/protected merge/main/native/live verification must pass before closing its five findings or releasing later independent proposals."
     }
   ],
-  "updatedAt": "2026-10-28T16:17:46.678020+00:00",
+  "updatedAt": "2026-10-28T16:44:32.291958+00:00",
   "counts": {
-    "siteFindings": 70,
-    "P2": 39,
-    "P3": 31,
+    "siteFindings": 73,
+    "P2": 41,
+    "P3": 32,
     "publiclyRepaired": 63,
-    "preparedNotMerged": 7,
+    "preparedNotMerged": 10,
     "separateOperationalBlockers": 0,
     "mergedAwaitingProductionVerification": 0,
     "protectedUnapprovedRecordFixes": 0,

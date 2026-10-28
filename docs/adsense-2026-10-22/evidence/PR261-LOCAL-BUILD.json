@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-10-28T16:36:56.246083+00:00",
+  "candidateSHA": "77a52ce663927cb298764181b6c50abf5ad2f555",
+  "command": "npm run build:cloudflare",
+  "exitCode": 0,
+  "outcome": "PASS",
+  "logSHA256": "e24d8cdc0e5c172c6be1a2e925b3000ae445359ef9a720d36f287cad28dfff1e",
+  "finalLines": [
+    "{\"routes\":349,\"sitemapURLs\":147,\"intentionallyNoindex\":202,\"internalLinks\":713,\"worksheets\":49,\"calculations\":9,\"checks\":\"PASS\",\"scope\":\"compiled metadata, content graph, duplicate paragraphs, reference presence, quiz structure and known numerical examples; not financial-source validation or browser proof\"}",
+    "PASS both published course fixtures, six lesson render/bootstrap pairs, idempotence, later-edit preservation, fee-aware examples and corrected quiz wording; no database writes",
+    "PASS exact fee-aware targets, explicit course exclusion heading and preservation of later paragraph edits",
+    "Cloudflare preview prepared: prerendered static routes retained; narrow Functions routing.",
+    "PASS Cloudflare flat output, 348 served route fixtures, slash redirects with query preservation, preview noindex, 404 and Vercel slash setting. Real Pages preview still required."
+  ],
+  "scope": "Actual production-compatible application build, editorial SEO assertions, postbuild and provider packaging; live browser/native deployment proof separate."
+}

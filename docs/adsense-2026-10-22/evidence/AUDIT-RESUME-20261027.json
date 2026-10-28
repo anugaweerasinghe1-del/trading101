@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-10-28T16:31:53.826362+00:00",
+  "updatedAt": "2026-10-28T16:45:01.866350+00:00",
   "latestMergedProductionSHA": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
   "fullpageRoutesPersonallyViewed": 451,
   "publicInventoryRoutes": 451,
   "remainingDefaultVisualRoutes": 0,
-  "confirmedFindings": 70,
+  "confirmedFindings": 73,
   "publiclyVerifiedRepairs": 63,
   "activeCandidate": {
     "pr": 261,
@@ -28,7 +28,7 @@
   },
   "publicProfileControls": "60profiles240states120focusedEnterLeaderboard/backflows PASS; all120initiallightimages personallyviewed across31sheets. No full accessibility certification.",
   "activeCollection": null,
-  "unresolved": "7 substantive findings remain until closed with release evidence; exact count follows FINDINGS.json. Remaining full-light scroll, sequential Tab, zoom, screenreader, primary sources, originality/value, daily conditional and regional ad/CMP/account stages prevent whole-audit completion.",
+  "unresolved": "10 substantive findings remain until closed with release evidence; exact count follows FINDINGS.json. Remaining full-light scroll, sequential Tab, zoom, screenreader, primary sources, originality/value, daily conditional and regional ad/CMP/account stages prevent whole-audit completion.",
   "historicalResumeNote": "Earlier checkpoint fields were stale; historical observations remain in their dated receipts and git history.",
   "terminalControls": "19assetterminals76light/darkmobile/desktopstates372focusedEnterFAQexpansions PASS; all38initiallightimages personallyviewed. No fullaccessibilitycertification.",
   "latestOwnerUpdate": "Owner clarified the repeated rejection only provides generic account-not-approved/few-more-tweaks wording and Sites section is inaccessible without resubmission. No further rejection detail is available; do not repeatedly request it. No inferred Google rejection cause.",
@@ -74,6 +74,21 @@
       "id": "THQ-065",
       "state": "PROPOSED_NOT_IMPLEMENTED",
       "scope": "Long public username extends beyond narrow profile viewport"
+    },
+    {
+      "id": "THQ-066",
+      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "scope": "Homepage FAQ buttons omit their expanded state"
+    },
+    {
+      "id": "THQ-067",
+      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "scope": "Compound calculator input values vanish in light theme"
+    },
+    {
+      "id": "THQ-068",
+      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "scope": "Shared header hover controls lack light-theme contrast"
     }
   ]
 }

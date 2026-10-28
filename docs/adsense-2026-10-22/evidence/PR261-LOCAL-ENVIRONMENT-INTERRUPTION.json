@@ -1,0 +1,7 @@
+{
+  "checkedAt": "2026-10-28T16:42:39.266037+00:00",
+  "sha": "77a52ce663927cb298764181b6c50abf5ad2f555",
+  "cause": "Managed environment restart terminated browser/test processes before final50-state receipt persisted. Raw partial screenshots retained; no complete passing credit granted.",
+  "lastObservedConsole": "Through /roadmap390light;43state PASS messages, full completion not established.",
+  "recovery": "Fresh anonymous Chromium profiles and existing Vite app restarted with session proxy/CA trust. Entire current50-state run repeated. GitHub CI observed separately; no merge yet."
+}

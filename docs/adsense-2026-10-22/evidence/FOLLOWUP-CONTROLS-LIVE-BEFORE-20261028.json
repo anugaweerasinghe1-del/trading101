@@ -1,0 +1,973 @@
+{
+  "checkedAt": "2026-10-28T16:39:56.727Z",
+  "origin": "https://www.thetradehq.com",
+  "sha": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
+  "outcome": "REPRODUCTION_COLLECTED",
+  "failure": null,
+  "rows": [
+    {
+      "path": "/",
+      "width": 360,
+      "theme": "light",
+      "kind": "FAQ expansion state",
+      "closed": {
+        "expanded": null,
+        "controls": null,
+        "answerPresent": false
+      },
+      "opened": {
+        "expanded": null,
+        "controls": null,
+        "answer": "TradeHQ is a free paper trading simulator where you can practice trading stocks, crypto, ETFs, forex, and commodities with $100,000 in virtual cash. No signup or credit card required \u2014 just open the app and start trading."
+      },
+      "axClosed": {
+        "nodes": [
+          {
+            "nodeId": "709",
+            "ignored": false,
+            "role": {
+              "type": "role",
+              "value": "button"
+            },
+            "chromeRole": {
+              "type": "internalRole",
+              "value": 9
+            },
+            "name": {
+              "type": "computedString",
+              "value": "What is TradeHQ?",
+              "sources": [
+                {
+                  "type": "relatedElement",
+                  "attribute": "aria-labelledby"
+                },
+                {
+                  "type": "attribute",
+                  "attribute": "aria-label"
+                },
+                {
+                  "type": "relatedElement",
+                  "nativeSource": "label"
+                },
+                {
+                  "type": "contents",
+                  "value": {
+                    "type": "computedString",
+                    "value": "What is TradeHQ?"
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "attribute": "title",
+                  "superseded": true
+                }
+              ]
+            },
+            "properties": [
+              {
+                "name": "invalid",
+                "value": {
+                  "type": "token",
+                  "value": "false"
+                }
+              },
+              {
+                "name": "focusable",
+                "value": {
+                  "type": "booleanOrUndefined",
+                  "value": true
+                }
+              },
+              {
+                "name": "focused",
+                "value": {
+                  "type": "booleanOrUndefined",
+                  "value": true
+                }
+              }
+            ],
+            "parentId": "708",
+            "childIds": [
+              "710"
+            ],
+            "backendDOMNodeId": 709
+          }
+        ]
+      },
+      "axOpen": {
+        "nodes": [
+          {
+            "nodeId": "709",
+            "ignored": false,
+            "role": {
+              "type": "role",
+              "value": "button"
+            },
+            "chromeRole": {
+              "type": "internalRole",
+              "value": 9
+            },
+            "name": {
+              "type": "computedString",
+              "value": "What is TradeHQ? TradeHQ is a free paper trading simulator where you can practice trading stocks, crypto, ETFs, forex, and commodities with $100,000 in virtual cash. No signup or credit card required \u2014 just open the app and start trading.",
+              "sources": [
+                {
+                  "type": "relatedElement",
+                  "attribute": "aria-labelledby"
+                },
+                {
+                  "type": "attribute",
+                  "attribute": "aria-label"
+                },
+                {
+                  "type": "relatedElement",
+                  "nativeSource": "label"
+                },
+                {
+                  "type": "contents",
+                  "value": {
+                    "type": "computedString",
+                    "value": "What is TradeHQ? TradeHQ is a free paper trading simulator where you can practice trading stocks, crypto, ETFs, forex, and commodities with $100,000 in virtual cash. No signup or credit card required \u2014 just open the app and start trading."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "attribute": "title",
+                  "superseded": true
+                }
+              ]
+            },
+            "properties": [
+              {
+                "name": "invalid",
+                "value": {
+                  "type": "token",
+                  "value": "false"
+                }
+              },
+              {
+                "name": "focusable",
+                "value": {
+                  "type": "booleanOrUndefined",
+                  "value": true
+                }
+              },
+              {
+                "name": "focused",
+                "value": {
+                  "type": "booleanOrUndefined",
+                  "value": true
+                }
+              }
+            ],
+            "parentId": "708",
+            "childIds": [
+              "710",
+              "1973"
+            ],
+            "backendDOMNodeId": 709
+          }
+        ]
+      },
+      "screenshot": "faq-360-light.png"
+    },
+    {
+      "path": "/learn-trading-guide",
+      "width": 360,
+      "theme": "light",
+      "kind": "Unmodified calculator inputs",
+      "inputs": [
+        {
+          "id": "compound-initial-capital",
+          "value": "100000",
+          "color": "rgb(15, 15, 15)",
+          "fontSize": "11px",
+          "background": "rgba(255, 255, 255, 0.05)",
+          "ancestors": [
+            {
+              "tag": "DIV",
+              "color": "rgba(0, 0, 0, 0)",
+              "image": "none"
+            },
+            {
+              "tag": "DIV",
+              "color": "rgba(0, 0, 0, 0)",
+              "image": "none"
+            },
+            {
+              "tag": "DIV",
+              "color": "rgb(3, 5, 6)",
+              "image": "none"
+            }
+          ]
+        },
+        {
+          "id": "compound-monthly-add",
+          "value": "500",
+          "color": "rgb(15, 15, 15)",
+          "fontSize": "11px",
+          "background": "rgba(255, 255, 255, 0.05)",
+          "ancestors": [
+            {
+              "tag": "DIV",
+              "color": "rgba(0, 0, 0, 0)",
+              "image": "none"
+            },
+            {
+              "tag": "DIV",
+              "color": "rgba(0, 0, 0, 0)",
+              "image": "none"
+            },
+            {
+              "tag": "DIV",
+              "color": "rgb(3, 5, 6)",
+              "image": "none"
+            }
+          ]
+        }
+      ],
+      "screenshot": "calculator-360-light.png"
+    },
+    {
+      "path": "/",
+      "width": 360,
+      "theme": "light",
+      "kind": "Header hover palette",
+      "hover": {
+        "text": "",
+        "label": "Open menu",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(145, 145, 161)",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "opacity": "1"
+      },
+      "screenshot": "header-hover-360-light.png"
+    },
+    {
+      "path": "/",
+      "width": 360,
+      "theme": "dark",
+      "kind": "FAQ expansion state",
+      "closed": {
+        "expanded": null,
+        "controls": null,
+        "answerPresent": false
+      },
+      "opened": {
+        "expanded": null,
+        "controls": null,
+        "answer": "TradeHQ is a free paper trading simulator where you can practice trading stocks, crypto, ETFs, forex, and commodities with $100,000 in virtual cash. No signup or credit card required \u2014 just open the app and start trading."
+      },
+      "axClosed": {
+        "nodes": [
+          {
+            "nodeId": "2699",
+            "ignored": false,
+            "role": {
+              "type": "role",
+              "value": "button"
+            },
+            "chromeRole": {
+              "type": "internalRole",
+              "value": 9
+            },
+            "name": {
+              "type": "computedString",
+              "value": "What is TradeHQ?",
+              "sources": [
+                {
+                  "type": "relatedElement",
+                  "attribute": "aria-labelledby"
+                },
+                {
+                  "type": "attribute",
+                  "attribute": "aria-label"
+                },
+                {
+                  "type": "relatedElement",
+                  "nativeSource": "label"
+                },
+                {
+                  "type": "contents",
+                  "value": {
+                    "type": "computedString",
+                    "value": "What is TradeHQ?"
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "attribute": "title",
+                  "superseded": true
+                }
+              ]
+            },
+            "properties": [
+              {
+                "name": "invalid",
+                "value": {
+                  "type": "token",
+                  "value": "false"
+                }
+              },
+              {
+                "name": "focusable",
+                "value": {
+                  "type": "booleanOrUndefined",
+                  "value": true
+                }
+              },
+              {
+                "name": "focused",
+                "value": {
+                  "type": "booleanOrUndefined",
+                  "value": true
+                }
+              }
+            ],
+            "parentId": "2698",
+            "childIds": [
+              "2700"
+            ],
+            "backendDOMNodeId": 2699
+          }
+        ]
+      },
+      "axOpen": {
+        "nodes": [
+          {
+            "nodeId": "2699",
+            "ignored": false,
+            "role": {
+              "type": "role",
+              "value": "button"
+            },
+            "chromeRole": {
+              "type": "internalRole",
+              "value": 9
+            },
+            "name": {
+              "type": "computedString",
+              "value": "What is TradeHQ? TradeHQ is a free paper trading simulator where you can practice trading stocks, crypto, ETFs, forex, and commodities with $100,000 in virtual cash. No signup or credit card required \u2014 just open the app and start trading.",
+              "sources": [
+                {
+                  "type": "relatedElement",
+                  "attribute": "aria-labelledby"
+                },
+                {
+                  "type": "attribute",
+                  "attribute": "aria-label"
+                },
+                {
+                  "type": "relatedElement",
+                  "nativeSource": "label"
+                },
+                {
+                  "type": "contents",
+                  "value": {
+                    "type": "computedString",
+                    "value": "What is TradeHQ? TradeHQ is a free paper trading simulator where you can practice trading stocks, crypto, ETFs, forex, and commodities with $100,000 in virtual cash. No signup or credit card required \u2014 just open the app and start trading."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "attribute": "title",
+                  "superseded": true
+                }
+              ]
+            },
+            "properties": [
+              {
+                "name": "invalid",
+                "value": {
+                  "type": "token",
+                  "value": "false"
+                }
+              },
+              {
+                "name": "focusable",
+                "value": {
+                  "type": "booleanOrUndefined",
+                  "value": true
+                }
+              },
+              {
+                "name": "focused",
+                "value": {
+                  "type": "booleanOrUndefined",
+                  "value": true
+                }
+              }
+            ],
+            "parentId": "2698",
+            "childIds": [
+              "2700",
+              "3968"
+            ],
+            "backendDOMNodeId": 2699
+          }
+        ]
+      },
+      "screenshot": "faq-360-dark.png"
+    },
+    {
+      "path": "/learn-trading-guide",
+      "width": 360,
+      "theme": "dark",
+      "kind": "Unmodified calculator inputs",
+      "inputs": [
+        {
+          "id": "compound-initial-capital",
+          "value": "100000",
+          "color": "rgb(234, 236, 240)",
+          "fontSize": "11px",
+          "background": "rgba(255, 255, 255, 0.05)",
+          "ancestors": [
+            {
+              "tag": "DIV",
+              "color": "rgba(0, 0, 0, 0)",
+              "image": "none"
+            },
+            {
+              "tag": "DIV",
+              "color": "rgba(0, 0, 0, 0)",
+              "image": "none"
+            },
+            {
+              "tag": "DIV",
+              "color": "rgb(3, 5, 6)",
+              "image": "none"
+            }
+          ]
+        },
+        {
+          "id": "compound-monthly-add",
+          "value": "500",
+          "color": "rgb(234, 236, 240)",
+          "fontSize": "11px",
+          "background": "rgba(255, 255, 255, 0.05)",
+          "ancestors": [
+            {
+              "tag": "DIV",
+              "color": "rgba(0, 0, 0, 0)",
+              "image": "none"
+            },
+            {
+              "tag": "DIV",
+              "color": "rgba(0, 0, 0, 0)",
+              "image": "none"
+            },
+            {
+              "tag": "DIV",
+              "color": "rgb(3, 5, 6)",
+              "image": "none"
+            }
+          ]
+        }
+      ],
+      "screenshot": "calculator-360-dark.png"
+    },
+    {
+      "path": "/",
+      "width": 360,
+      "theme": "dark",
+      "kind": "Header hover palette",
+      "hover": {
+        "text": "",
+        "label": "Open menu",
+        "color": "rgb(0, 0, 0)",
+        "background": "rgb(176, 176, 191)",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "opacity": "1"
+      },
+      "screenshot": "header-hover-360-dark.png"
+    },
+    {
+      "path": "/",
+      "width": 1280,
+      "theme": "light",
+      "kind": "FAQ expansion state",
+      "closed": {
+        "expanded": null,
+        "controls": null,
+        "answerPresent": false
+      },
+      "opened": {
+        "expanded": null,
+        "controls": null,
+        "answer": "TradeHQ is a free paper trading simulator where you can practice trading stocks, crypto, ETFs, forex, and commodities with $100,000 in virtual cash. No signup or credit card required \u2014 just open the app and start trading."
+      },
+      "axClosed": {
+        "nodes": [
+          {
+            "nodeId": "4691",
+            "ignored": false,
+            "role": {
+              "type": "role",
+              "value": "button"
+            },
+            "chromeRole": {
+              "type": "internalRole",
+              "value": 9
+            },
+            "name": {
+              "type": "computedString",
+              "value": "What is TradeHQ?",
+              "sources": [
+                {
+                  "type": "relatedElement",
+                  "attribute": "aria-labelledby"
+                },
+                {
+                  "type": "attribute",
+                  "attribute": "aria-label"
+                },
+                {
+                  "type": "relatedElement",
+                  "nativeSource": "label"
+                },
+                {
+                  "type": "contents",
+                  "value": {
+                    "type": "computedString",
+                    "value": "What is TradeHQ?"
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "attribute": "title",
+                  "superseded": true
+                }
+              ]
+            },
+            "properties": [
+              {
+                "name": "invalid",
+                "value": {
+                  "type": "token",
+                  "value": "false"
+                }
+              },
+              {
+                "name": "focusable",
+                "value": {
+                  "type": "booleanOrUndefined",
+                  "value": true
+                }
+              },
+              {
+                "name": "focused",
+                "value": {
+                  "type": "booleanOrUndefined",
+                  "value": true
+                }
+              }
+            ],
+            "parentId": "4690",
+            "childIds": [
+              "4692"
+            ],
+            "backendDOMNodeId": 4691
+          }
+        ]
+      },
+      "axOpen": {
+        "nodes": [
+          {
+            "nodeId": "4691",
+            "ignored": false,
+            "role": {
+              "type": "role",
+              "value": "button"
+            },
+            "chromeRole": {
+              "type": "internalRole",
+              "value": 9
+            },
+            "name": {
+              "type": "computedString",
+              "value": "What is TradeHQ? TradeHQ is a free paper trading simulator where you can practice trading stocks, crypto, ETFs, forex, and commodities with $100,000 in virtual cash. No signup or credit card required \u2014 just open the app and start trading.",
+              "sources": [
+                {
+                  "type": "relatedElement",
+                  "attribute": "aria-labelledby"
+                },
+                {
+                  "type": "attribute",
+                  "attribute": "aria-label"
+                },
+                {
+                  "type": "relatedElement",
+                  "nativeSource": "label"
+                },
+                {
+                  "type": "contents",
+                  "value": {
+                    "type": "computedString",
+                    "value": "What is TradeHQ? TradeHQ is a free paper trading simulator where you can practice trading stocks, crypto, ETFs, forex, and commodities with $100,000 in virtual cash. No signup or credit card required \u2014 just open the app and start trading."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "attribute": "title",
+                  "superseded": true
+                }
+              ]
+            },
+            "properties": [
+              {
+                "name": "invalid",
+                "value": {
+                  "type": "token",
+                  "value": "false"
+                }
+              },
+              {
+                "name": "focusable",
+                "value": {
+                  "type": "booleanOrUndefined",
+                  "value": true
+                }
+              },
+              {
+                "name": "focused",
+                "value": {
+                  "type": "booleanOrUndefined",
+                  "value": true
+                }
+              }
+            ],
+            "parentId": "4690",
+            "childIds": [
+              "4692",
+              "5958"
+            ],
+            "backendDOMNodeId": 4691
+          }
+        ]
+      },
+      "screenshot": "faq-1280-light.png"
+    },
+    {
+      "path": "/learn-trading-guide",
+      "width": 1280,
+      "theme": "light",
+      "kind": "Unmodified calculator inputs",
+      "inputs": [
+        {
+          "id": "compound-initial-capital",
+          "value": "100000",
+          "color": "rgb(15, 15, 15)",
+          "fontSize": "14px",
+          "background": "rgba(255, 255, 255, 0.05)",
+          "ancestors": [
+            {
+              "tag": "DIV",
+              "color": "rgba(0, 0, 0, 0)",
+              "image": "none"
+            },
+            {
+              "tag": "DIV",
+              "color": "rgba(0, 0, 0, 0)",
+              "image": "none"
+            },
+            {
+              "tag": "DIV",
+              "color": "rgb(3, 5, 6)",
+              "image": "none"
+            }
+          ]
+        },
+        {
+          "id": "compound-monthly-add",
+          "value": "500",
+          "color": "rgb(15, 15, 15)",
+          "fontSize": "14px",
+          "background": "rgba(255, 255, 255, 0.05)",
+          "ancestors": [
+            {
+              "tag": "DIV",
+              "color": "rgba(0, 0, 0, 0)",
+              "image": "none"
+            },
+            {
+              "tag": "DIV",
+              "color": "rgba(0, 0, 0, 0)",
+              "image": "none"
+            },
+            {
+              "tag": "DIV",
+              "color": "rgb(3, 5, 6)",
+              "image": "none"
+            }
+          ]
+        }
+      ],
+      "screenshot": "calculator-1280-light.png"
+    },
+    {
+      "path": "/",
+      "width": 1280,
+      "theme": "light",
+      "kind": "Header hover palette",
+      "hover": {
+        "text": "Sign in",
+        "label": null,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(145, 145, 161)",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "opacity": "1"
+      },
+      "screenshot": "header-hover-1280-light.png"
+    },
+    {
+      "path": "/",
+      "width": 1280,
+      "theme": "dark",
+      "kind": "FAQ expansion state",
+      "closed": {
+        "expanded": null,
+        "controls": null,
+        "answerPresent": false
+      },
+      "opened": {
+        "expanded": null,
+        "controls": null,
+        "answer": "TradeHQ is a free paper trading simulator where you can practice trading stocks, crypto, ETFs, forex, and commodities with $100,000 in virtual cash. No signup or credit card required \u2014 just open the app and start trading."
+      },
+      "axClosed": {
+        "nodes": [
+          {
+            "nodeId": "6686",
+            "ignored": false,
+            "role": {
+              "type": "role",
+              "value": "button"
+            },
+            "chromeRole": {
+              "type": "internalRole",
+              "value": 9
+            },
+            "name": {
+              "type": "computedString",
+              "value": "What is TradeHQ?",
+              "sources": [
+                {
+                  "type": "relatedElement",
+                  "attribute": "aria-labelledby"
+                },
+                {
+                  "type": "attribute",
+                  "attribute": "aria-label"
+                },
+                {
+                  "type": "relatedElement",
+                  "nativeSource": "label"
+                },
+                {
+                  "type": "contents",
+                  "value": {
+                    "type": "computedString",
+                    "value": "What is TradeHQ?"
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "attribute": "title",
+                  "superseded": true
+                }
+              ]
+            },
+            "properties": [
+              {
+                "name": "invalid",
+                "value": {
+                  "type": "token",
+                  "value": "false"
+                }
+              },
+              {
+                "name": "focusable",
+                "value": {
+                  "type": "booleanOrUndefined",
+                  "value": true
+                }
+              },
+              {
+                "name": "focused",
+                "value": {
+                  "type": "booleanOrUndefined",
+                  "value": true
+                }
+              }
+            ],
+            "parentId": "6685",
+            "childIds": [
+              "6687"
+            ],
+            "backendDOMNodeId": 6686
+          }
+        ]
+      },
+      "axOpen": {
+        "nodes": [
+          {
+            "nodeId": "6686",
+            "ignored": false,
+            "role": {
+              "type": "role",
+              "value": "button"
+            },
+            "chromeRole": {
+              "type": "internalRole",
+              "value": 9
+            },
+            "name": {
+              "type": "computedString",
+              "value": "What is TradeHQ? TradeHQ is a free paper trading simulator where you can practice trading stocks, crypto, ETFs, forex, and commodities with $100,000 in virtual cash. No signup or credit card required \u2014 just open the app and start trading.",
+              "sources": [
+                {
+                  "type": "relatedElement",
+                  "attribute": "aria-labelledby"
+                },
+                {
+                  "type": "attribute",
+                  "attribute": "aria-label"
+                },
+                {
+                  "type": "relatedElement",
+                  "nativeSource": "label"
+                },
+                {
+                  "type": "contents",
+                  "value": {
+                    "type": "computedString",
+                    "value": "What is TradeHQ? TradeHQ is a free paper trading simulator where you can practice trading stocks, crypto, ETFs, forex, and commodities with $100,000 in virtual cash. No signup or credit card required \u2014 just open the app and start trading."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "attribute": "title",
+                  "superseded": true
+                }
+              ]
+            },
+            "properties": [
+              {
+                "name": "invalid",
+                "value": {
+                  "type": "token",
+                  "value": "false"
+                }
+              },
+              {
+                "name": "focusable",
+                "value": {
+                  "type": "booleanOrUndefined",
+                  "value": true
+                }
+              },
+              {
+                "name": "focused",
+                "value": {
+                  "type": "booleanOrUndefined",
+                  "value": true
+                }
+              }
+            ],
+            "parentId": "6685",
+            "childIds": [
+              "6687",
+              "7955"
+            ],
+            "backendDOMNodeId": 6686
+          }
+        ]
+      },
+      "screenshot": "faq-1280-dark.png"
+    },
+    {
+      "path": "/learn-trading-guide",
+      "width": 1280,
+      "theme": "dark",
+      "kind": "Unmodified calculator inputs",
+      "inputs": [
+        {
+          "id": "compound-initial-capital",
+          "value": "100000",
+          "color": "rgb(234, 236, 240)",
+          "fontSize": "14px",
+          "background": "rgba(255, 255, 255, 0.05)",
+          "ancestors": [
+            {
+              "tag": "DIV",
+              "color": "rgba(0, 0, 0, 0)",
+              "image": "none"
+            },
+            {
+              "tag": "DIV",
+              "color": "rgba(0, 0, 0, 0)",
+              "image": "none"
+            },
+            {
+              "tag": "DIV",
+              "color": "rgb(3, 5, 6)",
+              "image": "none"
+            }
+          ]
+        },
+        {
+          "id": "compound-monthly-add",
+          "value": "500",
+          "color": "rgb(234, 236, 240)",
+          "fontSize": "14px",
+          "background": "rgba(255, 255, 255, 0.05)",
+          "ancestors": [
+            {
+              "tag": "DIV",
+              "color": "rgba(0, 0, 0, 0)",
+              "image": "none"
+            },
+            {
+              "tag": "DIV",
+              "color": "rgba(0, 0, 0, 0)",
+              "image": "none"
+            },
+            {
+              "tag": "DIV",
+              "color": "rgb(3, 5, 6)",
+              "image": "none"
+            }
+          ]
+        }
+      ],
+      "screenshot": "calculator-1280-dark.png"
+    },
+    {
+      "path": "/",
+      "width": 1280,
+      "theme": "dark",
+      "kind": "Header hover palette",
+      "hover": {
+        "text": "Sign in",
+        "label": null,
+        "color": "rgb(0, 0, 0)",
+        "background": "rgb(176, 176, 191)",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "opacity": "1"
+      },
+      "screenshot": "header-hover-1280-dark.png"
+    }
+  ],
+  "runtimeErrors": [],
+  "scope": "Read-only live FAQ keyboard expansion/DOM and accessibility-tree state, unmodified calculator input values/colors, header hover. No calculation inputs, sliders, saved progress, records, auth, forms or orders changed. Images require personal viewing.",
+  "screenshotsPersonallyViewed": 12,
+  "reviewedAt": "2026-10-28T16:44:32.291958+00:00",
+  "calculatedContrast": {
+    "calculatorInputOnCompositedBackground": 1.017,
+    "opaqueHeaderHover": 3.102
+  }
+}

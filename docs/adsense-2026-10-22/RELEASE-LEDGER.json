@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T16:31:53.826362+00:00",
+  "updatedAt": "2026-10-28T16:45:01.866350+00:00",
   "releases": [
     {
       "finding": "THQ-001",
@@ -2873,9 +2873,9 @@
   "latestGitHubProviderBindingEvidence": "evidence/PR259-PRODUCTION-PROVIDERS.json",
   "latestMainValidationEvidence": "evidence/PR259-MAIN-CI.json",
   "latestVerifiedProductionSHA": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
-  "remainingConfirmedSiteFixes": 7,
+  "remainingConfirmedSiteFixes": 10,
   "exhaustiveAuditComplete": false,
-  "remainingKnownSafeFindings": 7,
+  "remainingKnownSafeFindings": 10,
   "pendingReleaseVerification": null,
   "protectedPublishedContentFinding": "THQ035/036 published revision2 independently verified; credential and approval blockers superseded by owner-approved PR238 operation. No new production writes in this continuation.",
   "operationalHold": {
@@ -3114,6 +3114,21 @@
       "finding": "THQ-065",
       "state": "PROPOSED_NOT_IMPLEMENTED",
       "evidence": "findings/PUBLIC-PROFILE-NAME-WRAP.md"
+    },
+    {
+      "finding": "THQ-066",
+      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "evidence": "findings/HOMEPAGE-FAQ-EXPANDED-STATE.md"
+    },
+    {
+      "finding": "THQ-067",
+      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "evidence": "findings/COMPOUND-INPUT-LIGHT-TEXT.md"
+    },
+    {
+      "finding": "THQ-068",
+      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "evidence": "findings/HEADER-HOVER-LIGHT-CONTRAST.md"
     }
   ]
 }

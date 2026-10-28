@@ -8,8 +8,8 @@
     },
     {
       "path": "BLOCKED-STATUS.md",
-      "bytes": 3740,
-      "sha256": "98cd93a7c5da83767b4c2bc494453982f600850e5ff7af72b28b8e0b19f20ec4"
+      "bytes": 4164,
+      "sha256": "26f3982c5bce25cb64459f6f8228e1e9915537932997d1eecc0564ce01d80603"
     },
     {
       "path": "CHECKPOINT.md",
@@ -33,8 +33,8 @@
     },
     {
       "path": "FINDINGS.json",
-      "bytes": 168970,
-      "sha256": "b10eaf1e7a3379b322fb1e1496692b21e8c42f5281506cc919ade1490f62869d"
+      "bytes": 173788,
+      "sha256": "c0bbec762b1ad7d8e41dd2826d9e07e3fe3d1285d6c324d8babac9892a10dcb5"
     },
     {
       "path": "FULL-LIGHT-VISUAL-REVIEW-20261028.json",
@@ -58,8 +58,8 @@
     },
     {
       "path": "NEXT-REVIEW.md",
-      "bytes": 1939,
-      "sha256": "2ab2291f663dda8c5ad5bd50892730f82d678dd4a2ac9fb2f844a7a155160418"
+      "bytes": 1974,
+      "sha256": "dda49702f810a7938bfb50c88f165156878271567f4ea418a5e288032ef7d2e5"
     },
     {
       "path": "NONTERMINAL-FAQ-READ-COVERAGE.json",
@@ -68,13 +68,13 @@
     },
     {
       "path": "PAGE-AUDIT.json",
-      "bytes": 2924027,
-      "sha256": "4c2b56cfd820dea058a2b0b4534d419c50e2e927fa228650cb86fe7ca8fd9b15"
+      "bytes": 2928689,
+      "sha256": "44085fe7ce58ab57c61f4e5638f97aa96e93f286611973f5a5e11613f3424826"
     },
     {
       "path": "RELEASE-LEDGER.json",
-      "bytes": 129251,
-      "sha256": "77db9ceea67ebb7ac56e17fdd428ef46cb823bfad353ac255812baeb8a53a5ad"
+      "bytes": 129683,
+      "sha256": "a9fbeb412cfc736089e4b20adb4cfbe483f0fdcb6960da155af8430011d97823"
     },
     {
       "path": "RENDERED-CONTENT-NOTES.json",
@@ -104,7 +104,7 @@
     {
       "path": "UNFINISHED-SCOPE.json",
       "bytes": 610480,
-      "sha256": "3c4ac2d9f5c5d32aea92d6099bd396bbe4265a6a83b935a18a6782485e1bb9d0"
+      "sha256": "ff3c02d2563330bb4da1dc85ab61d3082b175893df771c6ee273c3555f7756fa"
     },
     {
       "path": "UNREAD-MAIN-ROUTES.txt",
@@ -114,12 +114,12 @@
     {
       "path": "URL-INVENTORY.json",
       "bytes": 718308,
-      "sha256": "06b9b1c402f9b8a94ef2e49b3b57dc6dd0677f09aeda7124dd3b343554354faf"
+      "sha256": "1d8d464a92f3cbfb62706fcaf6772ec3c760c387dc33af89e0877a8c8fc217f0"
     },
     {
       "path": "VISUAL-REVIEW-NOTES.json",
       "bytes": 480566,
-      "sha256": "955dbfa094903da8c7e9164ff982dee125a7ea13b06b4c70b16519af635911d7"
+      "sha256": "a34f335ef3a937426ef327021f48023ecdf7dd7c86bb4fb8fce7dcae19441d6c"
     },
     {
       "path": "browser-session.mjs",
@@ -243,8 +243,8 @@
     },
     {
       "path": "evidence/AUDIT-RESUME-20261027.json",
-      "bytes": 4272,
-      "sha256": "0872f3b1df0a82da7d09f18f99a6e288226e2a157a49f820073832bb686c143e"
+      "bytes": 4718,
+      "sha256": "5f56bc0321165a5252506af71c014385f20f9e21a7db799488545112b5b54eac"
     },
     {
       "path": "evidence/BEGINNER-GUIDE-REPRODUCTION.json",
@@ -620,6 +620,11 @@
       "path": "evidence/FINAL-WORKSPACE-ACCESS-20261023.json",
       "bytes": 592,
       "sha256": "14529c8230850fa15735269c3851c4e4d1afa35c4cae385893f0d1ededc79612"
+    },
+    {
+      "path": "evidence/FOLLOWUP-CONTROLS-LIVE-BEFORE-20261028.json",
+      "bytes": 28457,
+      "sha256": "16e59061b71f9287eaac1e3eb5212245116a578da6705c98d826872db1af5e42"
     },
     {
       "path": "evidence/FOOTER-THEME-BEFORE-20261027.json",
@@ -3512,19 +3517,44 @@
       "sha256": "cc3857df534bd10ba13e6de4749c58240b508f70aa67e316c203ee563e289045"
     },
     {
-      "path": "evidence/PR261-LOCAL-GUEST-SMOKE.json",
+      "path": "evidence/PR261-6BA-LOCAL-GUEST-SMOKE.json",
       "bytes": 8731,
       "sha256": "74c7643cdd568211bf5050578df83b5716e4e4762ab9df1ef71a356d2064da89"
     },
     {
+      "path": "evidence/PR261-LOCAL-BUILD.json",
+      "bytes": 1385,
+      "sha256": "8d5ffe8585af43a31adb548fee9803b50b211e5d9c19e43eda7ffaa9f7a89343"
+    },
+    {
+      "path": "evidence/PR261-LOCAL-CONTROL-INITIAL-KEY-DISPATCH-FAILURE.json",
+      "bytes": 814,
+      "sha256": "741f0f1d86af131f0294b5aa3fafb088c6ea60934fa63e7001994a0bb58d0584"
+    },
+    {
+      "path": "evidence/PR261-LOCAL-CONTROL-SECOND-KEY-DISPATCH-FAILURE.json",
+      "bytes": 893,
+      "sha256": "00031fc1d001b96ecd9149174c50017ed81216f01c54b8c0295c3a8c7207d697"
+    },
+    {
+      "path": "evidence/PR261-LOCAL-ENVIRONMENT-INTERRUPTION.json",
+      "bytes": 596,
+      "sha256": "c9880da12fd2235b3d020d527a3e406f62b2a9d59d1e6ef7921775e77e0e8829"
+    },
+    {
+      "path": "evidence/PR261-LOCAL-GUEST-SMOKE.json",
+      "bytes": 8731,
+      "sha256": "a7ce5a6408b202707fb4cc6fee2c2e8c24067c69304d3a8fb6efa572aca06739"
+    },
+    {
       "path": "evidence/PR261-LOCAL-SAFE-CONTROLS.json",
-      "bytes": 635,
-      "sha256": "774ae4116ad85c18a1573768920d9cf2c2ae79947c8c31ddc869666f166a35ac"
+      "bytes": 20852,
+      "sha256": "87e6f7cd024ec0f46841e41517845231287fb0911b3a6835ac3d4639f299f715"
     },
     {
       "path": "evidence/PR261-UPDATED-PREVIEW-SIGNALS.json",
       "bytes": 803,
-      "sha256": "bb6f1eb7e388c60a093406e66f0d2d34e528c4efe549686f7fda91b777133f58"
+      "sha256": "3f91315cf9de32371261ccf21269d5eff512645825235f551cf07ddbabb0d056"
     },
     {
       "path": "evidence/PREPARED-PREVIEWS-BROWSER.json",
@@ -3560,6 +3590,11 @@
       "path": "evidence/PUBLIC-PROFILE-INITIAL-CONTROL-OBSERVATION-20261027.json",
       "bytes": 744,
       "sha256": "30a702d9b57a6d9c8add665925cd65c06d4ae252cfbaa528df2de7575f6b719e"
+    },
+    {
+      "path": "evidence/PUBLIC-PROFILE-NEW-NINE-SAFE-CONTROLS-20261028.json",
+      "bytes": 58790,
+      "sha256": "eea6fda38391012913d5fcd5d85edaef237f94f17ddb616e5ff2f67cff144d4d"
     },
     {
       "path": "evidence/PUBLIC-PROFILE-REMAINING-SAFE-CONTROLS-20261027.json",
@@ -3622,6 +3657,11 @@
       "sha256": "e174e4116518192dc7ba4948599aefd4daf8c34f378fc9ba53e1159f19b23694"
     },
     {
+      "path": "evidence/REVIEWED-LIGHT-SURFACES-LOCAL-BROWSER.json",
+      "bytes": 173323,
+      "sha256": "d6e1f6589d614b5f9d33c354e7eff81123024606b2fa03f983732089804111a7"
+    },
+    {
       "path": "evidence/REVIEWED-LIGHT-SURFACES-LOCAL-DAILY-TITLE-CANDIDATE-FAILURE.json",
       "bytes": 156203,
       "sha256": "21d5b6b38c4aed6e938b9b9c30c4e11f999385d857c93ad6834e1f49402efb1a"
@@ -3635,6 +3675,11 @@
       "path": "evidence/REVIEWED-LIGHT-SURFACES-LOCAL-INITIAL-HARNESS-COUNT.json",
       "bytes": 703,
       "sha256": "0937a5b2dd95eb66049e299ef6d2ce05d9ec18de8d9c16a1f397130ed0cd10c8"
+    },
+    {
+      "path": "evidence/REVIEWED-LIGHT-SURFACES-UPDATED-PREVIEW-BROWSER.json",
+      "bytes": 131617,
+      "sha256": "440baa88b9cad9fc0e1046fbb52963aead6b6c2a9fa3630ed0b2901651d4918a"
     },
     {
       "path": "evidence/ROADMAP-LIGHT-BEFORE-20261028.json",
@@ -5825,6 +5870,66 @@
       "path": "evidence/faq-storage-regression-before.txt",
       "bytes": 483,
       "sha256": "5ca8b07a3c7310892295b15ba46dedd7cf62f87f4918f54e7359689b561638d7"
+    },
+    {
+      "path": "evidence/followup-controls-before-20261028/calculator-1280-dark.png",
+      "bytes": 187624,
+      "sha256": "9c8651790b5c00206534dc374a004c1b4feb3d9e6dc7135a5bfb774dd9d486a3"
+    },
+    {
+      "path": "evidence/followup-controls-before-20261028/calculator-1280-light.png",
+      "bytes": 183321,
+      "sha256": "90e10941f77a83f6a799a8385a710950c2ce55f2b4342fdf639f2a370a576517"
+    },
+    {
+      "path": "evidence/followup-controls-before-20261028/calculator-360-dark.png",
+      "bytes": 66534,
+      "sha256": "fa315aba96b4907c4bf06f3ca174a2a749a060c7499ea624137aa32859e994b8"
+    },
+    {
+      "path": "evidence/followup-controls-before-20261028/calculator-360-light.png",
+      "bytes": 65657,
+      "sha256": "2c9cc3801944d8c7fe1dc381d6e1ce69536e705ce23dc01bcefa882593163568"
+    },
+    {
+      "path": "evidence/followup-controls-before-20261028/faq-1280-dark.png",
+      "bytes": 81170,
+      "sha256": "bbe27880234605f6b9a15bab470f46676d6263de39eae0f1db49be35e00508fb"
+    },
+    {
+      "path": "evidence/followup-controls-before-20261028/faq-1280-light.png",
+      "bytes": 64301,
+      "sha256": "3b7685f8725543005f15dc3679ba1f145bf8c8766c3c4b4dc3f1aed77aa9a61c"
+    },
+    {
+      "path": "evidence/followup-controls-before-20261028/faq-360-dark.png",
+      "bytes": 55396,
+      "sha256": "a633f71ca5e0504bfa1e9e06a720c6a9d047a3484d2cc440d316eca2120f8c28"
+    },
+    {
+      "path": "evidence/followup-controls-before-20261028/faq-360-light.png",
+      "bytes": 45599,
+      "sha256": "d25bfde9a92b8a1bffde50440623a0b42fa0c2d6eaf9ff6adaba2b352dfc4090"
+    },
+    {
+      "path": "evidence/followup-controls-before-20261028/header-hover-1280-dark.png",
+      "bytes": 194426,
+      "sha256": "bdd3c7d3b1d77b64bead689a343d6de5a2342a7430e5b1979b4d2e530defc08c"
+    },
+    {
+      "path": "evidence/followup-controls-before-20261028/header-hover-1280-light.png",
+      "bytes": 181181,
+      "sha256": "8255e65c87c688741d893f05e677288c33f553450d71618a2fc927f93fe6ac90"
+    },
+    {
+      "path": "evidence/followup-controls-before-20261028/header-hover-360-dark.png",
+      "bytes": 101312,
+      "sha256": "bcc575280c97f3b001034ef0979c5bc4f35e31f61ffd378788af876420b0dbfa"
+    },
+    {
+      "path": "evidence/followup-controls-before-20261028/header-hover-360-light.png",
+      "bytes": 94248,
+      "sha256": "000ba721b259e0f27603a9c5ff79f285d638d5c28a0f2104cd06c7bacab6961e"
     },
     {
       "path": "evidence/footer-theme-before/_niche_btc-1280-dark-top.png",
@@ -25492,6 +25597,26 @@
       "sha256": "2543b8b7359d98af17da26ac0a9e2b51ac8264326df12023f1481dc0a7c62b1b"
     },
     {
+      "path": "evidence/public-profile-new-nine-safe-controls-20261028/PERSONAL-REVIEW-QUEUE.json",
+      "bytes": 329,
+      "sha256": "47b6909b795178da2c3c881d770c8a20db783c1ee4171facadf93dbd3b0911b4"
+    },
+    {
+      "path": "evidence/public-profile-new-nine-safe-controls-20261028/review-0.jpg",
+      "bytes": 264983,
+      "sha256": "f4a2c8e7e910144d0b72150d3072bc9798db216a95c1b6bb462d384d4f19ad38"
+    },
+    {
+      "path": "evidence/public-profile-new-nine-safe-controls-20261028/review-1.jpg",
+      "bytes": 261351,
+      "sha256": "241306b7a03c0eeae64d55d05caf8f296a1685c1b2f41190c704191a72297670"
+    },
+    {
+      "path": "evidence/public-profile-new-nine-safe-controls-20261028/review-2.jpg",
+      "bytes": 291485,
+      "sha256": "c64224fb54b9e20988b06d0ed9c8847ae75ae72b5c6806bc8b3c35e64a86de78"
+    },
+    {
       "path": "evidence/public-profile-remaining-safe-controls-20261027/view-contact-00.jpg",
       "bytes": 228041,
       "sha256": "402c04040fbf520d3190836a63a382f6922f70758917f96ecec89dc65957b654"
@@ -25710,6 +25835,46 @@
       "path": "evidence/publisher-copy-with-faq-build.txt",
       "bytes": 17602,
       "sha256": "7df5cf6d426a85240d8547cb86896f995044f7dffe3311776015bc78c1ebcbb2"
+    },
+    {
+      "path": "evidence/reviewed-light-controls-local/faq-1280-dark.png",
+      "bytes": 81200,
+      "sha256": "fb10e7ae77873df06e6394f55939288cfcb638357be4f53fe335cbe5590cfb34"
+    },
+    {
+      "path": "evidence/reviewed-light-controls-local/faq-1280-light.png",
+      "bytes": 79826,
+      "sha256": "c8415642390fd831d8cacf3970175609ccdad3ec72bf4796ed697fd39604a31b"
+    },
+    {
+      "path": "evidence/reviewed-light-controls-local/faq-360-dark.png",
+      "bytes": 55340,
+      "sha256": "a23e1a52769beb7ef630578f9d668b3791d122d42e1653062340daa2539d6c7e"
+    },
+    {
+      "path": "evidence/reviewed-light-controls-local/faq-360-light.png",
+      "bytes": 54640,
+      "sha256": "371f5ff9545e81348ba4d64a65442501ccec620a107976d649d71535cd2eb074"
+    },
+    {
+      "path": "evidence/reviewed-light-controls-local/guide-header-1280-dark.png",
+      "bytes": 161379,
+      "sha256": "704b02d139f3dc6839e922c78841f5dfdd4487ef6e18301a7c0fb752ed0efce7"
+    },
+    {
+      "path": "evidence/reviewed-light-controls-local/guide-header-1280-light.png",
+      "bytes": 156453,
+      "sha256": "71ced54ba82a00a56536f0866739221846b64aa2b1b7b326c760c46fa29bced4"
+    },
+    {
+      "path": "evidence/reviewed-light-controls-local/guide-header-360-dark.png",
+      "bytes": 73000,
+      "sha256": "bb8f24dc8d9f525a5659547f3ac23b7ac64b88d561caaa7ca22b70dbe018d3c3"
+    },
+    {
+      "path": "evidence/reviewed-light-controls-local/guide-header-360-light.png",
+      "bytes": 71594,
+      "sha256": "a552bb8896ffeb8ce046f5ba472edf04530ac17bd8e0d32ea1e3069974b89ade"
     },
     {
       "path": "evidence/reviewed-light-surfaces-local-6ba-incomplete/PERSONAL-REVIEW-QUEUE.json",
@@ -27707,6 +27872,11 @@
       "sha256": "23a05820b44f1a1b79244f71e3aa2728810d31114aec3f7aeaa8c27f0e8e484a"
     },
     {
+      "path": "findings/COMPOUND-INPUT-LIGHT-TEXT.md",
+      "bytes": 1356,
+      "sha256": "b0181f4b74b492b6812c0384cd5063a2444112f144a0fa01eb0541018077506a"
+    },
+    {
       "path": "findings/CONTACT-RESET-HELP.md",
       "bytes": 2301,
       "sha256": "8f3584a7cd0432bdb9ab280f286cec1c41fb8cfa46c1b55c513b6f76a5b5fc9c"
@@ -27738,8 +27908,8 @@
     },
     {
       "path": "findings/DAILY-LIGHT-SURFACES.md",
-      "bytes": 1863,
-      "sha256": "833a5addd4737ec1f88e077f977e9cd6429d8cae7b976c3df3127fc30ac69c71"
+      "bytes": 2237,
+      "sha256": "f92ca5505c617603c4548f5926000ef11b22c41aaf53ce8ba27aadc3eeb6d11d"
     },
     {
       "path": "findings/ETF-DIRECTORY-SCOPE.md",
@@ -27768,8 +27938,8 @@
     },
     {
       "path": "findings/GUIDE-FOOTER-LIGHT-SURFACE.md",
-      "bytes": 1971,
-      "sha256": "ee9678221853b99bf7c0048371633e7687f5a8d808d2b70e412a1508fbe1fc18"
+      "bytes": 2345,
+      "sha256": "bd43ef45b0b500c0073cdbbb6f01a1a279610bfd783f83e03ee4aff498b0c3c1"
     },
     {
       "path": "findings/GUIDED-LESSON-CARD.md",
@@ -27777,14 +27947,24 @@
       "sha256": "6bd2122202eabd87c019ce816f0a13f13235e636cafc722ae493468ac5c64a04"
     },
     {
+      "path": "findings/HEADER-HOVER-LIGHT-CONTRAST.md",
+      "bytes": 1345,
+      "sha256": "0b1b07e0cc7b13498eefd3bc79a6f506cb5ab626e78c985ac3d4a84a135b2a92"
+    },
+    {
       "path": "findings/HOME-LIGHT-SURFACES.md",
-      "bytes": 2396,
-      "sha256": "d88baa3971098e2b19e2ea59f021adbcd358328096ffffc021515733009f79c5"
+      "bytes": 2770,
+      "sha256": "3827ffa66fcd234a57d1f9eb5fc0258565dc3296bd0b82012f2becfa579da35b"
+    },
+    {
+      "path": "findings/HOMEPAGE-FAQ-EXPANDED-STATE.md",
+      "bytes": 1338,
+      "sha256": "d568265da02c50f50b6f263fe6a32a50783db820d3bf95db7286f5f252ff2827"
     },
     {
       "path": "findings/LEARN-INTRO-LIGHT-SURFACE.md",
-      "bytes": 1759,
-      "sha256": "233e7482004d20a8d917b4da1664bc3b0cc6cb3daad36ee20baf785dcd347da8"
+      "bytes": 2133,
+      "sha256": "328066f3b39ac428abb9b1f1adf382be672b22bb06a88a203fb1d63d6e0eb4fd"
     },
     {
       "path": "findings/LEARN-PUBLISHED-CATALOG.md",
@@ -27863,8 +28043,8 @@
     },
     {
       "path": "findings/ROADMAP-LIGHT-TEXT.md",
-      "bytes": 1269,
-      "sha256": "9affdb3758488f6096f4aff7980995d9806825d6610f349acc0e143676b5497f"
+      "bytes": 1643,
+      "sha256": "3860d2d691aed168beb55d230f0f5229ea38beac79d654f9c5d8490d2ff9aa06"
     },
     {
       "path": "findings/SECTOR-HEADER-SPACING.md",
@@ -27907,6 +28087,11 @@
       "sha256": "4f57972b0bf778c1598a18e43e14afe1e1586b326127ae95dcbf96608d86b880"
     },
     {
+      "path": "remediation/COMPOUND-INPUT-LIGHT-TEXT.patch",
+      "bytes": 1031,
+      "sha256": "cacb827a5ee9794f3d00ce3215873ad2cd9f5b8f3bf336fb0021ecfa500ef46d"
+    },
+    {
       "path": "remediation/COURSE-LESSON-SINGLE-ARTICLE.patch",
       "bytes": 14207,
       "sha256": "beadbab88e68b24999811829f9a8090de7db7f1fc08e5423c49bf4fb7d178eed"
@@ -27932,9 +28117,19 @@
       "sha256": "0672e0e768f9f11981fe718f5d740750dcb6e7beff0652a6939f7a25568a0974"
     },
     {
+      "path": "remediation/HEADER-HOVER-LIGHT-CONTRAST.patch",
+      "bytes": 617,
+      "sha256": "300c1c680b65dd741429b9800736c69d9c7ff1b3fc14902b5fe62987962a7fa8"
+    },
+    {
       "path": "remediation/HOME-LIGHT-SURFACES.patch",
       "bytes": 2886,
       "sha256": "6c924e92bb2f993b8268cf04be27940f39c0e9d5a5aa4aa0c2415e34f09e6cec"
+    },
+    {
+      "path": "remediation/HOMEPAGE-FAQ-EXPANDED-STATE.patch",
+      "bytes": 518,
+      "sha256": "d622055d11e71f57d8e35df53b6f71a6360053a313f7095e8f4a9040dd5c1400"
     },
     {
       "path": "remediation/LEARN-INTRO-LIGHT-SURFACE.patch",
@@ -28447,7 +28642,7 @@
       "sha256": "75c029c85b57a6d5253685eaf559c5f27e0f41b95cc64f25a1b7c81e4427287b"
     }
   ],
-  "fileCount": 5689,
-  "totalBytes": 1301811176,
-  "generatedAt": "2026-10-28T16:33:06.599156+00:00"
+  "fileCount": 5728,
+  "totalBytes": 1305127240,
+  "generatedAt": "2026-10-28T16:46:29.063449+00:00"
 }

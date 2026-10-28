@@ -1,0 +1,20 @@
+--- a/src/components/CompoundCalculator.tsx
++++ b/src/components/CompoundCalculator.tsx
+@@ -92,7 +92,7 @@
+               id="compound-initial-capital"
+               value={initialInvestment}
+               onChange={(e) => setInitialInvestment(Number(e.target.value))}
+-              className="h-8 bg-white/5 border-white/10 text-[11px] font-bold text-foreground"
++              className="h-8 bg-white/5 border-white/10 text-[11px] font-bold text-foreground [.light_&]:text-[hsl(220_15%_93%)]"
+             />
+           </div>
+           <div className="space-y-1">
+@@ -102,7 +102,7 @@
+               id="compound-monthly-add"
+               value={monthlyContribution}
+               onChange={(e) => setMonthlyContribution(Number(e.target.value))}
+-              className="h-8 bg-white/5 border-white/10 text-[11px] font-bold text-foreground"
++              className="h-8 bg-white/5 border-white/10 text-[11px] font-bold text-foreground [.light_&]:text-[hsl(220_15%_93%)]"
+             />
+           </div>
+         </div>
