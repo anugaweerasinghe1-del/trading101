@@ -1,0 +1,42 @@
+{
+  "reviewedAt": "2026-10-28T01:41:14.234581+00:00",
+  "status": "BOUNDED_PRIMARY_SOURCE_READ_FOLLOWUP",
+  "scope": "Actual source reading scopes below; retrieval alone is not corroboration and these are not comprehensive financial reviews.",
+  "sources": [
+    {
+      "path": "/trade/dot",
+      "capture": "evidence/terminal-second-primary-20261027/polkadot.json",
+      "readingScope": "Read available approximately 12979-character official introduction text.",
+      "corroborates": "Broad Web3 ownership aim, PoS validator/nominator staking roles and cross-chain messaging/interoperability descriptions.",
+      "remaining": "Does not establish current DOT price/returns, all security assertions or suitability."
+    },
+    {
+      "path": "/trade/dia",
+      "capture": "evidence/terminal-second-primary-20261027/dia.json",
+      "readingScope": "Read relevant issuer product objective/index overview excerpts; full long fund page not certified.",
+      "corroborates": "DIA aim to track price/yield of Dow Jones Industrial Average, 30 US blue-chip stocks, price weighting and monthly distribution statement.",
+      "remaining": "No all-constituent dividend guarantee or future defensive performance; snapshot values not independently reconciled to application."
+    },
+    {
+      "path": "/trade/copper",
+      "capture": "evidence/terminal-second-primary-20261027/copper.json",
+      "readingScope": "Read product overview and bounded relevant CME excerpts.",
+      "corroborates": "Copper futures benchmark/risk-management product description and option-implied CVOL explanation.",
+      "remaining": "This retrieved source does not corroborate Dr. Copper nickname, industrial applications or leading-indicator claim. Construction search hit was a contact-form company dropdown, not support."
+    },
+    {
+      "path": "/trade/crm",
+      "capture": "evidence/terminal-second-primary-20261027/salesforce.json",
+      "readingScope": "Read first 16000 characters plus bounded cloud-software excerpt; not full page.",
+      "corroborates": "CRM software spanning sales, marketing and customer service and cloud deployment description.",
+      "remaining": "No world-leading ranking or SaaS bellwether claim corroborated in this reading."
+    },
+    {
+      "path": "/trade/doge",
+      "capture": "evidence/terminal-second-primary-20261027/dogecoin.json",
+      "readingScope": "Retrieval failure only.",
+      "corroborates": null,
+      "remaining": "Guessed official documentation URL returned 404; no factual corroboration earned. Find a working official source before closing."
+    }
+  ]
+}
