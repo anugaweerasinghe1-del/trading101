@@ -1,0 +1,7 @@
+# THQ-055 — practice summary badges lack light-theme contrast
+
+Actual public `AIReadySummary` badge text on NVDA/oil/MATIC measured 1.396/2.026/1.276:1 respectively in light theme, all below the4.5:1 small-text target. Text is12px/weight500; each badge and section overlays10% matching color on247grey. All ancestor opacity1/background images none, so captured computed-color alpha compositing applies. Corresponding dark samples8.499/5.966/9.228:1. All six selected before screenshots personally viewed and the faint labels independently visible. Evidence `evidence/TERMINAL-SUMMARY-CONTRAST-BEFORE.json`.
+
+Probe started before PR256 merge and public deployment could transition while reading. The summary component is identical in oldcbcce94 and mergeddd2febe; exact release attribution is not claimed for these observations. This is a readability finding, not an inferred Google rejection cause or a complete accessibility assessment.
+
+Safe remedy: scope darker summary foreground colors to existing root.light selector while retaining dark colors and all labels, data selection, thresholds, summary logic and trading handlers. Measure actual styles after change on positive/negative/neutral cases acrossfive widths/two themes; personally review mobile/desktop screenshots. Build/types and exact-candidate/native preview/actual preview gates precede protected merge. PR256 must be fully verified before any next merge. No prices/calculations/auth/user records/ad or consent change.

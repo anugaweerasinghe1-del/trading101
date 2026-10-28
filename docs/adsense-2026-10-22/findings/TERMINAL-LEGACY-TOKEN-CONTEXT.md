@@ -1,0 +1,9 @@
+# THQ-054 — terminal legacy-token context omitted
+
+P3 educational factual context, separately reproduced on `/trade/ftm` and `/trade/matic` at production SHA `cbcce94bbd8cf35deadec17684b9ec75156f2030`. Full hydrated main text personally read at360/1280 and all four before screenshots personally viewed. No legacy/migration/Sonic/POL explanation appears. MATIC definition repeatedly describes the old label in present tense. Earlier THQ-049/PR251 corrected niche guide bodies only; this is the independently verified remaining terminal surface, not an assertion that the earlier correction failed.
+
+Evidence: `evidence/TERMINAL-TOKEN-BEFORE-BROWSER.json`, `evidence/TERMINAL-TOKEN-PRIMARY-SOURCES-20261028.json`. Fresh official Sonic Labs and Polygon documentation passages personally read Oct28 support the FTM-to-S upgrade and MATIC-to-POL migration/native gas/staking distinction. They do not establish that legacy instruments are unavailable everywhere or that simulator quotes, portfolios or execution are wrong.
+
+Narrow correction: static legacy context and official explanatory source links above takeaways on these two terminals. Replace the MATIC educational definition with neutral legacy-label/migration language shared by existing takeaways/intelligence/schema/scope rendering. Preserve asset IDs/symbols, source providers, prices, calculations, fees, holdings, trades, saved records, auth, ad/consent behavior and all handlers. No wallet or token conversion workflow. Risk low; rollback ordinary reviewed revert. Local build/types and actual browser atfive widths/two themes with unaffected BTC, then normal exact-head CI/native preview/protected merge/production and live guest verification required before PUBLICLY_VERIFIED.
+
+Current state: source-only patch prepared; release verification pending. No AdSense rejection cause inferred.

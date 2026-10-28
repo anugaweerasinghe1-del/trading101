@@ -2279,17 +2279,54 @@
       ],
       "productionImagesPersonallyViewed": 8,
       "liveRecheck": "PASS exact merged production: [50] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
+    },
+    {
+      "id": "THQ-054",
+      "severity": "P3",
+      "category": "Legacy token terminal context",
+      "adsenseRelevance": "Educational factual context; no Google rejection cause or specific policy violation established",
+      "urls": [
+        "https://www.thetradehq.com/trade/ftm",
+        "https://www.thetradehq.com/trade/matic"
+      ],
+      "observed": "Actual hydrated terminal text at360/1280 omits legacy-label/Sonic/POL migration context; MATIC repeatedly described as current scaling solution. Four before screenshots personally viewed. Previous THQ-049 correction was confined to niche guides.",
+      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+      "fix": "Static source-linked note on affected terminals and neutral MATIC authored definition; preserve simulator identifiers and all protected mechanics/data.",
+      "evidence": "findings/TERMINAL-LEGACY-TOKEN-CONTEXT.md",
+      "pr": 256,
+      "candidateSHA": "ef057c80da800e7a3aabd454b7feb46eeb1a4da2",
+      "mergeSHA": "dd2febe86eea71341cc2b3c0e7c2522e58f9f6f7",
+      "exactHeadRequiredChecks": "PASS",
+      "actualCFPreview": "30states/fourFAQ/source-focusflowsPASS;eightimagespersonallyviewed",
+      "previewEvidence": "evidence/PR256-UPDATED-PREVIEW-BROWSER.json"
+    },
+    {
+      "id": "THQ-055",
+      "severity": "P2",
+      "category": "Light-theme practice summary badge contrast",
+      "adsenseRelevance": "Small-text readability/accessibility; no Google rejection cause or specific Publisher Policy violation asserted",
+      "urls": [
+        "https://www.thetradehq.com/trade/nvda",
+        "https://www.thetradehq.com/trade/oil",
+        "https://www.thetradehq.com/trade/matic"
+      ],
+      "observed": "Actual12px500weight badges positive/negative/small contrast1.396/2.026/1.276:1 in light theme; corresponding dark8.499/5.966/9.228:1. Background ancestors no images/allopacity1, alpha composition applicable. Six before screenshots personally viewed.",
+      "state": "CONFIRMED_REMEDIATION_IN_PROGRESS",
+      "fix": "Theme-scoped darker text colors in AIReadySummary; preserve labels, verdict thresholds, summaries, data, handlers and dark appearance.",
+      "evidence": "findings/TERMINAL-SUMMARY-CONTRAST.md",
+      "pr": 257,
+      "candidateSHA": "1e395664a197c06d80f4f64f797d13e3495af235"
     }
   ],
-  "updatedAt": "2026-10-28T01:13:53.842240+00:00",
+  "updatedAt": "2026-10-28T02:08:34.325454+00:00",
   "counts": {
-    "siteFindings": 58,
-    "P2": 30,
-    "P3": 28,
+    "siteFindings": 60,
+    "P2": 31,
+    "P3": 29,
     "publiclyRepaired": 58,
-    "preparedNotMerged": 0,
+    "preparedNotMerged": 1,
     "separateOperationalBlockers": 0,
-    "mergedAwaitingProductionVerification": 0,
+    "mergedAwaitingProductionVerification": 1,
     "protectedUnapprovedRecordFixes": 0,
     "approvedPublishedRecordFixesBlockedOnCredential": 0,
     "mergedFallbackAwaitingProductionVerification": 0

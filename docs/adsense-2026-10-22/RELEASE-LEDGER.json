@@ -2612,7 +2612,13 @@
       }
     }
   ],
-  "nextCandidate": null,
+  "nextCandidate": {
+    "pr": 256,
+    "candidateSHA": "ef057c80da800e7a3aabd454b7feb46eeb1a4da2",
+    "baseSHA": "cbcce94bbd8cf35deadec17684b9ec75156f2030",
+    "state": "DRAFT_LOCAL_BROWSER_AND_EXACT_CANDIDATE_GATES_PENDING",
+    "scope": "THQ-054 terminal-only legacy FTM/MATIC explanatory note and static MATIC definition. No identifiers, calculations, data or handlers changed."
+  },
   "independentFutureCandidate": {
     "pr": 214,
     "candidateSHA": "36c8e3ae9c7c5f29b0a4df63c2e3439beebd540d",
@@ -2807,9 +2813,9 @@
     "mergeSHA": "793a99d538fb81705c79aeca25ad68b10b945905",
     "reason": "Releasecyclecomplete; nonewmergeofthisPR."
   },
-  "remainingConfirmedSiteFixes": 0,
+  "remainingConfirmedSiteFixes": 1,
   "exhaustiveAuditComplete": false,
-  "remainingKnownSafeFindings": 0,
+  "remainingKnownSafeFindings": 1,
   "nextReleasePriority": [],
   "pendingReleaseVerification": null,
   "protectedPublishedContentFinding": "THQ035/036 published revision2 independently verified; credential and approval blockers superseded by owner-approved PR238 operation. No new production writes in this continuation.",
