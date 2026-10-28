@@ -156,7 +156,7 @@
 @layer base {
   .light [data-daily-heading] {
     background-image: none !important;
-    -webkit-text-fill-color: hsl(var(--foreground));
+    -webkit-text-fill-color: hsl(var(--foreground)) !important;
   }
 
   .light [data-wiki-difficulty="Novice"] {
