@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T16:45:01.866350+00:00",
+  "updatedAt": "2026-10-29T14:17:02.732358+00:00",
   "latestMergedProductionSHA": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
   "fullpageRoutesPersonallyViewed": 451,
   "publicInventoryRoutes": 451,
@@ -8,7 +8,7 @@
   "publiclyVerifiedRepairs": 63,
   "activeCandidate": {
     "pr": 261,
-    "candidateSHA": "77a52ce663927cb298764181b6c50abf5ad2f555",
+    "candidateSHA": "de9c05d5d0ccb3951561c48df5a7a6e25c9e1bd7",
     "baseSHA": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
     "state": "LOCAL_BROWSER_REVIEW_IN_PROGRESS",
     "findings": [
@@ -18,7 +18,7 @@
       "THQ-063",
       "THQ-064"
     ],
-    "scope": "Seven frontend presentation files; five reviewed light-theme surfaces and shared nav backing. Localbuild/types/50browserstates PASS; personalimages/safecontrols/nativepreview/fullrelease pending.",
+    "scope": "PR261 seven-file presentation correction; final Daily bonus option foreground caught by personal review and corrected. Updated exact-head gates pending.",
     "notes": "Draft PR261.6ba personal review caught guide inherited pale controls; scoped light header foreground fixed77a52ce. Current repeated browser/CI underway; not production verified."
   },
   "releaseGate": {

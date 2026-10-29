@@ -1,0 +1,63 @@
+{
+  "checkedAt": "2026-10-28T16:55:04.165Z",
+  "sha": "77a52ce663927cb298764181b6c50abf5ad2f555",
+  "origin": "http://127.0.0.1:4183",
+  "outcome": "FAIL",
+  "failure": "Page readiness deadline",
+  "rows": [],
+  "runtimeErrors": [],
+  "allExternalRequestsPreventedOrLocallyFulfilled": [
+    {
+      "method": "GET",
+      "host": "pagead2.googlesyndication.com",
+      "path": "/pagead/js/adsbygoogle.js"
+    },
+    {
+      "method": "GET",
+      "host": "fonts.googleapis.com",
+      "path": "/css2"
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses"
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses"
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_daily_practice_bank"
+    },
+    {
+      "method": "GET",
+      "host": "pagead2.googlesyndication.com",
+      "path": "/pagead/js/adsbygoogle.js"
+    },
+    {
+      "method": "GET",
+      "host": "fonts.googleapis.com",
+      "path": "/css2"
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses"
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses"
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_daily_practice_bank"
+    }
+  ],
+  "scope": "Fresh dedicated disposable browser profile. Loopback app only; every external request prevented or locally fulfilled with null before connection. All3quick choices\u00d73bonus choices\u00d75widths\u00d72themes, audit-only local saved streak/answers. No production records, network, user progress or app handlers changed. Four images require personal viewing. Does not cover500individual case-study conditional visuals.",
+  "diagnosis": "Audit wait incorrectly searched mixed-case innerText for a CSS-uppercase label. Application label is text-transform uppercase; change case-insensitive readiness check, preserve original assertion count."
+}

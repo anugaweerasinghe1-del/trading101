@@ -1,0 +1,101 @@
+{
+  "checkedAt": "2026-10-29T14:12:39.465Z",
+  "sha": "77a52ce663927cb298764181b6c50abf5ad2f555",
+  "origin": "http://127.0.0.1:4183",
+  "outcome": "FAIL",
+  "failure": "[{\"text\":\"It measures expected S&P 500 volatility (the 'fear gauge')\\nVIX reflects option-implied S&P 500 volatility over roughly 30 days. It does not predict the direction of the next market move.\",\"color\":\"rgb(234, 236, 240)\",\"opacity\":\"1\",\"disabled\":true},{\"text\":\"It tracks Bitcoin dominance\",\"color\":\"rgb(167, 169, 171)\",\"opacity\":\"0.5\",\"disabled\":true},{\"text\":\"It signals interest-rate decisions\",\"color\":\"rgb(167, 169, 171)\",\"opacity\":\"0.5\",\"disabled\":true}]",
+  "rows": [
+    {
+      "quick": 0,
+      "bonus": 0,
+      "width": 360,
+      "theme": "light",
+      "documentWidth": 360,
+      "foreground": "220 15% 93%",
+      "reasoning": true,
+      "decision": "HYPOTHETICAL EXERCISE INPUTS — NOT CURRENT MARKET DATA, VERIFIED FORECASTS, OR TRADING SIGNALS",
+      "bonusReveal": true,
+      "bonusLabels": [
+        {
+          "text": "It measures expected S&P 500 volatility (the 'fear gauge')\nVIX reflects option-implied S&P 500 volatility over roughly 30 days. It does not predict the direction of the next market move.",
+          "color": "rgb(234, 236, 240)",
+          "opacity": "1",
+          "disabled": true
+        },
+        {
+          "text": "It tracks Bitcoin dominance",
+          "color": "rgb(234, 236, 240)",
+          "opacity": "0.5",
+          "disabled": true
+        },
+        {
+          "text": "It signals interest-rate decisions",
+          "color": "rgb(234, 236, 240)",
+          "opacity": "0.5",
+          "disabled": true
+        }
+      ],
+      "feedbackColors": [
+        "rgb(234, 236, 240)",
+        "rgb(234, 236, 240)",
+        "rgb(234, 236, 240)",
+        "rgb(234, 236, 240)"
+      ],
+      "screenshot": "bonus-360-light.png"
+    }
+  ],
+  "runtimeErrors": [],
+  "allExternalRequestsPreventedOrLocallyFulfilled": [
+    {
+      "method": "GET",
+      "host": "pagead2.googlesyndication.com",
+      "path": "/pagead/js/adsbygoogle.js"
+    },
+    {
+      "method": "GET",
+      "host": "fonts.googleapis.com",
+      "path": "/css2"
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses"
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses"
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_daily_practice_bank"
+    },
+    {
+      "method": "GET",
+      "host": "pagead2.googlesyndication.com",
+      "path": "/pagead/js/adsbygoogle.js"
+    },
+    {
+      "method": "GET",
+      "host": "fonts.googleapis.com",
+      "path": "/css2"
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses"
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses"
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_daily_practice_bank"
+    }
+  ],
+  "scope": "Fresh dedicated disposable browser profile. Loopback app only; every external request prevented or locally fulfilled with null before connection. All3quick choices×3bonus choices×5widths×2themes, audit-only local saved streak/answers. No production records, network, user progress or app handlers changed. Four images require personal viewing. Does not cover500individual case-study conditional visuals."
+}

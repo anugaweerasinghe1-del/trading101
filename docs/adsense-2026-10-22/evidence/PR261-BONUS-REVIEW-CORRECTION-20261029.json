@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-10-29T14:17:02.700818+00:00",
+  "priorCandidateSHA": "77a52ce663927cb298764181b6c50abf5ad2f555",
+  "currentCandidateSHA": "de9c05d5d0ccb3951561c48df5a7a6e25c9e1bd7",
+  "finding": "THQ-061",
+  "observed": "Personal viewing caught light-mode bonus option labels inheriting browser/theme text colour on a fixed dark Daily card. Original selected-only computed assertions missed unselected options.",
+  "fix": "Add text-foreground to the existing bonus button base classes, inheriting the reviewed local dark-card foreground. No handlers, choices, explanations, progress, streak or arithmetic changes.",
+  "verification": "Exact-head Cloudflare-compatible build PASS; all120 isolated quick\u00d7bonus-state\u00d7width\u00d7theme states PASS and eight screenshots personally viewed. All external requests blocked or locally fulfilled before connection; disposable local audit state only.",
+  "status": "FIX_PUSHED_NOT_MERGED",
+  "remaining": "Updated exact-head five-page checks, safe controls, actual provider preview and personal review, then protected merge and exact-main/native-production/public/guest gates."
+}
