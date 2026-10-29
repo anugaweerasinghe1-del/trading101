@@ -286,7 +286,7 @@ export default function Daily() {
                           onClick={() => bonusPick === null && setBonusPick(idx)}
                           disabled={bonusPick !== null}
                           className={cn(
-                            "w-full text-left p-3 rounded-xl border transition-all text-sm",
+                            "w-full text-left p-3 rounded-xl border transition-all text-sm text-foreground",
                             !reveal && "bg-white/[0.03] border-white/[0.08] hover:border-amber-400/50 hover:bg-amber-400/[0.05] cursor-pointer",
                             reveal && o.correct && "bg-success/10 border-success/50 text-foreground",
                             reveal && picked && !o.correct && "bg-destructive/10 border-destructive/50 text-foreground",
