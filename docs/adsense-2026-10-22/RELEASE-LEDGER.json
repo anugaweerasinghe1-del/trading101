@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T14:17:02.732358+00:00",
+  "updatedAt": "2026-10-29T15:25:14.329709+00:00",
   "releases": [
     {
       "finding": "THQ-001",
@@ -2853,21 +2853,7 @@
       }
     }
   ],
-  "nextCandidate": {
-    "pr": 261,
-    "candidateSHA": "de9c05d5d0ccb3951561c48df5a7a6e25c9e1bd7",
-    "baseSHA": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
-    "state": "LOCAL_BROWSER_REVIEW_IN_PROGRESS",
-    "findings": [
-      "THQ-060",
-      "THQ-061",
-      "THQ-062",
-      "THQ-063",
-      "THQ-064"
-    ],
-    "scope": "PR261 seven-file presentation correction; final Daily bonus option foreground caught by personal review and corrected. Updated exact-head gates pending.",
-    "notes": "Draft PR261.6ba personal review caught guide inherited pale controls; scoped light header foreground fixed77a52ce. Current repeated browser/CI underway; not production verified."
-  },
+  "nextCandidate": null,
   "latestResumeProviderEvidence": "evidence/FINAL-WORKSPACE-ACCESS-20261023.json",
   "latestGitHubState": "evidence/FINAL-GITHUB-STATE-20261023.json",
   "latestGitHubProviderBindingEvidence": "evidence/PR259-PRODUCTION-PROVIDERS.json",
@@ -2876,14 +2862,19 @@
   "remainingConfirmedSiteFixes": 10,
   "exhaustiveAuditComplete": false,
   "remainingKnownSafeFindings": 10,
-  "pendingReleaseVerification": null,
+  "pendingReleaseVerification": {
+    "pr": 261,
+    "candidateSHA": "de9c05d5d0ccb3951561c48df5a7a6e25c9e1bd7",
+    "mergeSHA": "1dacd0ac9a986546b9480476a084b9049b56e036",
+    "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+    "hold": "Six exact-main checks, authenticated native CF/Vercel production and actual public affected/guest checks required before another merge."
+  },
   "protectedPublishedContentFinding": "THQ035/036 published revision2 independently verified; credential and approval blockers superseded by owner-approved PR238 operation. No new production writes in this continuation.",
   "operationalHold": {
-    "active": false,
-    "reason": "No active release hold.",
-    "evidence": "evidence/PR259-INITIAL-MAIN-CHROME-STARTUP-FAILURE.json"
+    "active": true,
+    "reason": "PR261 serial production verification pending"
   },
-  "latestObservedMainSHA": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
+  "latestObservedMainSHA": "1dacd0ac9a986546b9480476a084b9049b56e036",
   "historicalCandidateRecords": {
     "independentFutureCandidate": {
       "pr": 214,
@@ -3104,31 +3095,5 @@
       }
     ]
   },
-  "safeProposals": [
-    {
-      "finding": "THQ-059",
-      "state": "PROPOSED_NOT_IMPLEMENTED",
-      "evidence": "findings/TERMINAL-METADATA-SCOPE.md"
-    },
-    {
-      "finding": "THQ-065",
-      "state": "PROPOSED_NOT_IMPLEMENTED",
-      "evidence": "findings/PUBLIC-PROFILE-NAME-WRAP.md"
-    },
-    {
-      "finding": "THQ-066",
-      "state": "PROPOSED_NOT_IMPLEMENTED",
-      "evidence": "findings/HOMEPAGE-FAQ-EXPANDED-STATE.md"
-    },
-    {
-      "finding": "THQ-067",
-      "state": "PROPOSED_NOT_IMPLEMENTED",
-      "evidence": "findings/COMPOUND-INPUT-LIGHT-TEXT.md"
-    },
-    {
-      "finding": "THQ-068",
-      "state": "PROPOSED_NOT_IMPLEMENTED",
-      "evidence": "findings/HEADER-HOVER-LIGHT-CONTRAST.md"
-    }
-  ]
+  "safeProposals": []
 }

@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-10-29T15:08:52.130677+00:00",
+  "outcome": "BLOCKED_OUTBOUND_TRANSPORT",
+  "environmentObservedConnected": true,
+  "networkPolicy": "unrestricted/enforced; observations current; ready bindings do not establish actual API reachability",
+  "observed": [
+    "GitHub API HTTP503 upstream connect error before headers; envoy cloudflare_https_tunnel remote connection failure",
+    "Public-domain HTTP503 from same outbound transport",
+    "Fresh premerge-check failed after bounded retries; no current remote HEAD/check/merge-state observation accepted"
+  ],
+  "candidateSHA": "de9c05d5d0ccb3951561c48df5a7a6e25c9e1bd7",
+  "pr": 261,
+  "mergePerformed": false,
+  "productionChanged": false,
+  "scope": "Workspace transport diagnosis only. Does not establish public website outage or provider deployment failure. Keep accepted earlier exact-head preview evidence; require a fresh successful premerge observation before ordinary protected merge.",
+  "subsequentObservation": "GitHub access recovered. Fresh exact-head premerge check and unchanged current main observed successfully before protected merge.",
+  "recoveredAt": "2026-10-29T15:13:44.842874+00:00",
+  "supersedingEvidence": "PR261-UPDATED-PREMERGE-CHECKS.json"
+}

@@ -1,0 +1,92 @@
+{
+  "checkedAt": "2026-10-29T15:21:14.722Z",
+  "sha": "cb25c22e84933394442197f8f5bce4190ce1cfbf",
+  "rows": [
+    {
+      "width": 360,
+      "theme": "light",
+      "color": "rgb(15, 15, 15)",
+      "background": "rgb(145, 145, 161)",
+      "svgColor": "rgb(15, 15, 15)",
+      "stroke": "rgb(15, 15, 15)",
+      "svgStyle": null,
+      "hovered": true,
+      "focus": true,
+      "screenshot": "header-360-light.png"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "color": "rgb(15, 15, 15)",
+      "background": "rgb(145, 145, 161)",
+      "svgColor": "rgb(15, 15, 15)",
+      "stroke": "rgb(15, 15, 15)",
+      "svgStyle": null,
+      "hovered": true,
+      "focus": true,
+      "screenshot": "header-390-light.png"
+    },
+    {
+      "width": 768,
+      "theme": "light",
+      "color": "rgb(15, 15, 15)",
+      "background": "rgb(145, 145, 161)",
+      "svgColor": "rgb(15, 15, 15)",
+      "stroke": "rgb(15, 15, 15)",
+      "svgStyle": null,
+      "hovered": true,
+      "focus": true,
+      "screenshot": "header-768-light.png"
+    },
+    {
+      "width": 1280,
+      "theme": "light",
+      "color": "rgb(15, 15, 15)",
+      "background": "rgb(145, 145, 161)",
+      "svgColor": "rgb(15, 15, 15)",
+      "stroke": "rgb(15, 15, 15)",
+      "svgStyle": null,
+      "hovered": true,
+      "focus": true,
+      "screenshot": "header-1280-light.png"
+    },
+    {
+      "width": 1920,
+      "theme": "light",
+      "color": "rgb(15, 15, 15)",
+      "background": "rgb(145, 145, 161)",
+      "svgColor": "rgb(15, 15, 15)",
+      "stroke": "rgb(15, 15, 15)",
+      "svgStyle": null,
+      "hovered": true,
+      "focus": true,
+      "screenshot": "header-1920-light.png"
+    }
+  ],
+  "scope": "Fresh process, settled light-theme hover/focus actual SVG color/stroke plus pixels. All external requests prevented. Screenshot personal review pending.",
+  "outcome": "PASS_BOUNDED_HOVER_AND_FOCUS",
+  "personallyViewedCount": 5,
+  "personallyViewedImages": [
+    {
+      "name": "header-1280-light.png",
+      "sha256": "71ed0633f343e1783d9687628757527188900230647401989641c97dc554697a"
+    },
+    {
+      "name": "header-1920-light.png",
+      "sha256": "41cbfba7f1dd708b9791780ad5e44061f029b923e5419e6481d814aa824c4e3a"
+    },
+    {
+      "name": "header-360-light.png",
+      "sha256": "95de14b27105b087b4e712a4ff5fd0a8fae977d801de2fba415be9321c23925f"
+    },
+    {
+      "name": "header-390-light.png",
+      "sha256": "980d5d982125cb84417adaf524937de90cc1629116252c27ee5724d2defd029d"
+    },
+    {
+      "name": "header-768-light.png",
+      "sha256": "df80dca369aadc0708b701d5d52901990a30b6293c9c5d79442dd3aeb264463e"
+    }
+  ],
+  "personalAssessment": "All5 settled actual hovered/focused header images personally viewed. Dark menu stroke/sign-in label visible over gray backing; actual CSS matches(:hover) true and button/SVG/stroke allrgb15. Initial unestablished-hover attempt retained separately. No broader accessibility completion."
+}

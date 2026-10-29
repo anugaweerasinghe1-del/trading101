@@ -1,0 +1,64 @@
+{
+  "checkedAt": "2026-10-29T15:19:17.155Z",
+  "sha": "cb25c22e84933394442197f8f5bce4190ce1cfbf",
+  "rows": [
+    {
+      "width": 360,
+      "theme": "light",
+      "color": "rgb(15, 15, 15)",
+      "background": "rgba(0, 0, 0, 0)",
+      "svgColor": "rgb(15, 15, 15)",
+      "stroke": "rgb(15, 15, 15)",
+      "svgStyle": null,
+      "focus": true,
+      "screenshot": "header-360-light.png"
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "color": "rgb(15, 15, 15)",
+      "background": "rgba(0, 0, 0, 0)",
+      "svgColor": "rgb(15, 15, 15)",
+      "stroke": "rgb(15, 15, 15)",
+      "svgStyle": null,
+      "focus": true,
+      "screenshot": "header-390-light.png"
+    },
+    {
+      "width": 768,
+      "theme": "light",
+      "color": "rgb(15, 15, 15)",
+      "background": "rgba(0, 0, 0, 0)",
+      "svgColor": "rgb(15, 15, 15)",
+      "stroke": "rgb(15, 15, 15)",
+      "svgStyle": null,
+      "focus": true,
+      "screenshot": "header-768-light.png"
+    },
+    {
+      "width": 1280,
+      "theme": "light",
+      "color": "rgb(15, 15, 15)",
+      "background": "rgb(247, 247, 247)",
+      "svgColor": "rgb(15, 15, 15)",
+      "stroke": "rgb(15, 15, 15)",
+      "svgStyle": null,
+      "focus": true,
+      "screenshot": "header-1280-light.png"
+    },
+    {
+      "width": 1920,
+      "theme": "light",
+      "color": "rgb(15, 15, 15)",
+      "background": "rgb(247, 247, 247)",
+      "svgColor": "rgb(15, 15, 15)",
+      "stroke": "rgb(15, 15, 15)",
+      "svgStyle": null,
+      "focus": true,
+      "screenshot": "header-1920-light.png"
+    }
+  ],
+  "scope": "Fresh process, settled light-theme hover/focus actual SVG color/stroke plus pixels. All external requests prevented. Screenshot personal review pending.",
+  "outcome": "INVALID_HOVER_NOT_ESTABLISHED",
+  "limitation": "Fresh navigation measured pointer coordinates before settled responsive layout; screenshots show no hover backing. Do not use for hover validation; rerun waits actual viewport/fonts/layout and asserts matches(:hover)."
+}

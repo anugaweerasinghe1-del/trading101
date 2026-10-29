@@ -1,0 +1,1539 @@
+{
+  "checkedAt": "2026-10-29T15:12:54.252Z",
+  "candidateSHA": "d863bb447816f6ef7891d2f3955c1f09db983d06",
+  "outcome": "PASS",
+  "rows": [
+    {
+      "id": "usdc",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "before": "USD Coin (USDC) Analysis | TradeHQ",
+      "after": "USD Coin (USDC) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "usdt",
+      "name": "Tether",
+      "symbol": "USDT",
+      "before": "Tether (USDT) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Tether (USDT) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "dai",
+      "name": "Dai",
+      "symbol": "DAI",
+      "before": "Dai (DAI) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Dai (DAI) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "trx",
+      "name": "TRON",
+      "symbol": "TRX",
+      "before": "TRON (TRX) — Practice Data & Educational Guide | TradeHQ",
+      "after": "TRON (TRX) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "bch",
+      "name": "Bitcoin Cash",
+      "symbol": "BCH",
+      "before": "Bitcoin Cash (BCH) Analysis | TradeHQ",
+      "after": "Bitcoin Cash (BCH) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "ton",
+      "name": "Toncoin",
+      "symbol": "TON",
+      "before": "Toncoin (TON) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Toncoin (TON) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "etc",
+      "name": "Ethereum Classic",
+      "symbol": "ETC",
+      "before": "Ethereum Classic (ETC) Analysis | TradeHQ",
+      "after": "Ethereum Classic (ETC) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "xmr",
+      "name": "Monero",
+      "symbol": "XMR",
+      "before": "Monero (XMR) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Monero (XMR) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "aave",
+      "name": "Aave",
+      "symbol": "AAVE",
+      "before": "Aave (AAVE) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Aave (AAVE) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "grt",
+      "name": "The Graph",
+      "symbol": "GRT",
+      "before": "The Graph (GRT) Analysis | TradeHQ",
+      "after": "The Graph (GRT) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "ldo",
+      "name": "Lido DAO",
+      "symbol": "LDO",
+      "before": "Lido DAO (LDO) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Lido DAO (LDO) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "rune",
+      "name": "THORChain",
+      "symbol": "RUNE",
+      "before": "THORChain (RUNE) Analysis | TradeHQ",
+      "after": "THORChain (RUNE) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "kas",
+      "name": "Kaspa",
+      "symbol": "KAS",
+      "before": "Kaspa (KAS) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Kaspa (KAS) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "stx",
+      "name": "Stacks",
+      "symbol": "STX",
+      "before": "Stacks (STX) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Stacks (STX) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "imx",
+      "name": "Immutable",
+      "symbol": "IMX",
+      "before": "Immutable (IMX) Analysis | TradeHQ",
+      "after": "Immutable (IMX) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "render",
+      "name": "Render",
+      "symbol": "RENDER",
+      "before": "Render (RENDER) Analysis | TradeHQ",
+      "after": "Render (RENDER) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "pepe",
+      "name": "Pepe",
+      "symbol": "PEPE",
+      "before": "Pepe (PEPE) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Pepe (PEPE) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "bonk",
+      "name": "Bonk",
+      "symbol": "BONK",
+      "before": "Bonk (BONK) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Bonk (BONK) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "wld",
+      "name": "Worldcoin",
+      "symbol": "WLD",
+      "before": "Worldcoin (WLD) Analysis | TradeHQ",
+      "after": "Worldcoin (WLD) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "pol",
+      "name": "Polygon Ecosystem Token",
+      "symbol": "POL",
+      "before": "Polygon Ecosystem Token (POL) Analysis | TradeHQ",
+      "after": "Polygon Ecosystem Token (POL) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "tao",
+      "name": "Bittensor",
+      "symbol": "TAO",
+      "before": "Bittensor (TAO) Analysis | TradeHQ",
+      "after": "Bittensor (TAO) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "btc",
+      "name": "Bitcoin",
+      "symbol": "BTC",
+      "before": "Learn & Practice Bitcoin Trading Free — $100K Simulator | Simulated BTC Data",
+      "after": "Learn & Practice Bitcoin Trading Free — $100K Simulator | Simulated BTC Data",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "eth",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "before": "Learn & Practice Ethereum Trading Free — $100K Simulator | Simulated ETH Data",
+      "after": "Learn & Practice Ethereum Trading Free — $100K Simulator | Simulated ETH Data",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "sol",
+      "name": "Solana",
+      "symbol": "SOL",
+      "before": "Learn & Practice Solana Trading Free — $100K Simulator | Simulated SOL Data",
+      "after": "Learn & Practice Solana Trading Free — $100K Simulator | Simulated SOL Data",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "bnb",
+      "name": "BNB",
+      "symbol": "BNB",
+      "before": "Learn & Practice BNB Trading Free — $100K Simulator | Simulated Data",
+      "after": "Learn & Practice BNB Trading Free — $100K Simulator | Simulated Data",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "xrp",
+      "name": "XRP",
+      "symbol": "XRP",
+      "before": "Learn & Practice XRP Trading Free — $100K Simulator | Simulated Data",
+      "after": "Learn & Practice XRP Trading Free — $100K Simulator | Simulated Data",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "ada",
+      "name": "Cardano",
+      "symbol": "ADA",
+      "before": "Cardano (ADA) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Cardano (ADA) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "doge",
+      "name": "Dogecoin",
+      "symbol": "DOGE",
+      "before": "Dogecoin (DOGE) Analysis | TradeHQ",
+      "after": "Dogecoin (DOGE) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "avax",
+      "name": "Avalanche",
+      "symbol": "AVAX",
+      "before": "Avalanche (AVAX) Analysis | TradeHQ",
+      "after": "Avalanche (AVAX) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "dot",
+      "name": "Polkadot",
+      "symbol": "DOT",
+      "before": "Polkadot (DOT) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Polkadot (DOT) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "matic",
+      "name": "Polygon",
+      "symbol": "MATIC",
+      "before": "Polygon (MATIC) Analysis | TradeHQ",
+      "after": "Polygon (MATIC) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "link",
+      "name": "Chainlink",
+      "symbol": "LINK",
+      "before": "Chainlink (LINK) Analysis | TradeHQ",
+      "after": "Chainlink (LINK) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "ltc",
+      "name": "Litecoin",
+      "symbol": "LTC",
+      "before": "Litecoin (LTC) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Litecoin (LTC) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "shib",
+      "name": "Shiba Inu",
+      "symbol": "SHIB",
+      "before": "Shiba Inu (SHIB) Analysis | TradeHQ",
+      "after": "Shiba Inu (SHIB) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "uni",
+      "name": "Uniswap",
+      "symbol": "UNI",
+      "before": "Uniswap (UNI) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Uniswap (UNI) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "atom",
+      "name": "Cosmos",
+      "symbol": "ATOM",
+      "before": "Cosmos (ATOM) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Cosmos (ATOM) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "algo",
+      "name": "Algorand",
+      "symbol": "ALGO",
+      "before": "Algorand (ALGO) Analysis | TradeHQ",
+      "after": "Algorand (ALGO) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "ftm",
+      "name": "Fantom",
+      "symbol": "FTM",
+      "before": "Fantom (FTM) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Fantom (FTM) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "near",
+      "name": "NEAR Protocol",
+      "symbol": "NEAR",
+      "before": "NEAR Protocol (NEAR) Analysis | TradeHQ",
+      "after": "NEAR Protocol (NEAR) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "icp",
+      "name": "Internet Computer",
+      "symbol": "ICP",
+      "before": "Internet Computer (ICP) Analysis | TradeHQ",
+      "after": "Internet Computer (ICP) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "xlm",
+      "name": "Stellar",
+      "symbol": "XLM",
+      "before": "Stellar (XLM) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Stellar (XLM) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "vet",
+      "name": "VeChain",
+      "symbol": "VET",
+      "before": "VeChain (VET) — Practice Data & Educational Guide | TradeHQ",
+      "after": "VeChain (VET) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "fil",
+      "name": "Filecoin",
+      "symbol": "FIL",
+      "before": "Filecoin (FIL) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Filecoin (FIL) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "hbar",
+      "name": "Hedera",
+      "symbol": "HBAR",
+      "before": "Hedera (HBAR) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Hedera (HBAR) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "apt",
+      "name": "Aptos",
+      "symbol": "APT",
+      "before": "Aptos (APT) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Aptos (APT) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "arb",
+      "name": "Arbitrum",
+      "symbol": "ARB",
+      "before": "Arbitrum (ARB) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Arbitrum (ARB) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "op",
+      "name": "Optimism",
+      "symbol": "OP",
+      "before": "Optimism (OP) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Optimism (OP) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "inj",
+      "name": "Injective",
+      "symbol": "INJ",
+      "before": "Injective (INJ) Analysis | TradeHQ",
+      "after": "Injective (INJ) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "sui",
+      "name": "Sui",
+      "symbol": "SUI",
+      "before": "Sui (SUI) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Sui (SUI) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "sei",
+      "name": "Sei",
+      "symbol": "SEI",
+      "before": "Sei (SEI) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Sei (SEI) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "tia",
+      "name": "Celestia",
+      "symbol": "TIA",
+      "before": "Celestia (TIA) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Celestia (TIA) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "aapl",
+      "name": "Apple Inc.",
+      "symbol": "AAPL",
+      "before": "Learn & Practice Apple Stock Trading Free — $100K Simulator",
+      "after": "Learn & Practice Apple Stock Trading Free — $100K Simulator",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "msft",
+      "name": "Microsoft Corporation",
+      "symbol": "MSFT",
+      "before": "Learn & Practice MSFT Trading Free — $100K Simulator | Simulated Data",
+      "after": "Learn & Practice MSFT Trading Free — $100K Simulator | Simulated Data",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "googl",
+      "name": "Alphabet Inc.",
+      "symbol": "GOOGL",
+      "before": "Learn & Practice GOOGL Trading Free — $100K Simulator | Simulated Data",
+      "after": "Learn & Practice GOOGL Trading Free — $100K Simulator | Simulated Data",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "amzn",
+      "name": "Amazon.com Inc.",
+      "symbol": "AMZN",
+      "before": "Learn & Practice AMZN Trading Free — $100K Simulator | Simulated Data",
+      "after": "Learn & Practice AMZN Trading Free — $100K Simulator | Simulated Data",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "nvda",
+      "name": "NVIDIA Corporation",
+      "symbol": "NVDA",
+      "before": "Learn & Practice NVDA Trading Free — $100K Simulator | Simulated Data",
+      "after": "Learn & Practice NVDA Trading Free — $100K Simulator | Simulated Data",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "tsla",
+      "name": "Tesla Inc.",
+      "symbol": "TSLA",
+      "before": "Learn & Practice Tesla Trading Free — $100K Simulator | Simulated TSLA Data",
+      "after": "Learn & Practice Tesla Trading Free — $100K Simulator | Simulated TSLA Data",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "meta",
+      "name": "Meta Platforms Inc.",
+      "symbol": "META",
+      "before": "Learn & Practice META Trading Free — $100K Simulator | Simulated Data",
+      "after": "Learn & Practice META Trading Free — $100K Simulator | Simulated Data",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "nflx",
+      "name": "Netflix Inc.",
+      "symbol": "NFLX",
+      "before": "Netflix Inc. (NFLX) Analysis | TradeHQ",
+      "after": "Netflix Inc. (NFLX) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "amd",
+      "name": "Advanced Micro Devices",
+      "symbol": "AMD",
+      "before": "Advanced Micro Devices (AMD) Analysis | TradeHQ",
+      "after": "Advanced Micro Devices (AMD) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "crm",
+      "name": "Salesforce Inc.",
+      "symbol": "CRM",
+      "before": "Salesforce Inc. (CRM) Analysis | TradeHQ",
+      "after": "Salesforce Inc. (CRM) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "intc",
+      "name": "Intel Corporation",
+      "symbol": "INTC",
+      "before": "Intel Corporation (INTC) Analysis | TradeHQ",
+      "after": "Intel Corporation (INTC) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "orcl",
+      "name": "Oracle Corporation",
+      "symbol": "ORCL",
+      "before": "Oracle Corporation (ORCL) Analysis | TradeHQ",
+      "after": "Oracle Corporation (ORCL) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "adbe",
+      "name": "Adobe Inc.",
+      "symbol": "ADBE",
+      "before": "Adobe Inc. (ADBE) Analysis | TradeHQ",
+      "after": "Adobe Inc. (ADBE) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "csco",
+      "name": "Cisco Systems Inc.",
+      "symbol": "CSCO",
+      "before": "Cisco Systems Inc. (CSCO) Analysis | TradeHQ",
+      "after": "Cisco Systems Inc. (CSCO) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "avgo",
+      "name": "Broadcom Inc.",
+      "symbol": "AVGO",
+      "before": "Broadcom Inc. (AVGO) Analysis | TradeHQ",
+      "after": "Broadcom Inc. (AVGO) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "txn",
+      "name": "Texas Instruments",
+      "symbol": "TXN",
+      "before": "Texas Instruments (TXN) Analysis | TradeHQ",
+      "after": "Texas Instruments (TXN) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "qcom",
+      "name": "Qualcomm Inc.",
+      "symbol": "QCOM",
+      "before": "Qualcomm Inc. (QCOM) Analysis | TradeHQ",
+      "after": "Qualcomm Inc. (QCOM) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "now",
+      "name": "ServiceNow Inc.",
+      "symbol": "NOW",
+      "before": "ServiceNow Inc. (NOW) Analysis | TradeHQ",
+      "after": "ServiceNow Inc. (NOW) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "ibm",
+      "name": "IBM Corporation",
+      "symbol": "IBM",
+      "before": "IBM Corporation (IBM) Analysis | TradeHQ",
+      "after": "IBM Corporation (IBM) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "uber",
+      "name": "Uber Technologies",
+      "symbol": "UBER",
+      "before": "Uber Technologies (UBER) Analysis | TradeHQ",
+      "after": "Uber Technologies (UBER) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "shop",
+      "name": "Shopify Inc.",
+      "symbol": "SHOP",
+      "before": "Shopify Inc. (SHOP) Analysis | TradeHQ",
+      "after": "Shopify Inc. (SHOP) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "snow",
+      "name": "Snowflake Inc.",
+      "symbol": "SNOW",
+      "before": "Snowflake Inc. (SNOW) Analysis | TradeHQ",
+      "after": "Snowflake Inc. (SNOW) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "pltr",
+      "name": "Palantir Technologies",
+      "symbol": "PLTR",
+      "before": "Palantir Technologies (PLTR) Analysis | TradeHQ",
+      "after": "Palantir Technologies (PLTR) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "coin",
+      "name": "Coinbase Global",
+      "symbol": "COIN",
+      "before": "Coinbase Global (COIN) Analysis | TradeHQ",
+      "after": "Coinbase Global (COIN) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "spot",
+      "name": "Spotify Technology",
+      "symbol": "SPOT",
+      "before": "Spotify Technology (SPOT) Analysis | TradeHQ",
+      "after": "Spotify Technology (SPOT) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "sq",
+      "name": "Block Inc.",
+      "symbol": "SQ",
+      "before": "Block Inc. (SQ) Analysis | TradeHQ",
+      "after": "Block Inc. (SQ) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "pypl",
+      "name": "PayPal Holdings",
+      "symbol": "PYPL",
+      "before": "PayPal Holdings (PYPL) Analysis | TradeHQ",
+      "after": "PayPal Holdings (PYPL) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "twlo",
+      "name": "Twilio Inc.",
+      "symbol": "TWLO",
+      "before": "Twilio Inc. (TWLO) Analysis | TradeHQ",
+      "after": "Twilio Inc. (TWLO) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "docu",
+      "name": "DocuSign Inc.",
+      "symbol": "DOCU",
+      "before": "DocuSign Inc. (DOCU) Analysis | TradeHQ",
+      "after": "DocuSign Inc. (DOCU) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "zm",
+      "name": "Zoom Video",
+      "symbol": "ZM",
+      "before": "Zoom Video (ZM) Analysis | TradeHQ",
+      "after": "Zoom Video (ZM) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "roku",
+      "name": "Roku Inc.",
+      "symbol": "ROKU",
+      "before": "Roku Inc. (ROKU) Analysis | TradeHQ",
+      "after": "Roku Inc. (ROKU) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "net",
+      "name": "Cloudflare Inc.",
+      "symbol": "NET",
+      "before": "Cloudflare Inc. (NET) Analysis | TradeHQ",
+      "after": "Cloudflare Inc. (NET) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "ddog",
+      "name": "Datadog Inc.",
+      "symbol": "DDOG",
+      "before": "Datadog Inc. (DDOG) Analysis | TradeHQ",
+      "after": "Datadog Inc. (DDOG) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "mdb",
+      "name": "MongoDB Inc.",
+      "symbol": "MDB",
+      "before": "MongoDB Inc. (MDB) Analysis | TradeHQ",
+      "after": "MongoDB Inc. (MDB) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "crwd",
+      "name": "CrowdStrike Holdings",
+      "symbol": "CRWD",
+      "before": "CrowdStrike Holdings (CRWD) Analysis | TradeHQ",
+      "after": "CrowdStrike Holdings (CRWD) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "zs",
+      "name": "Zscaler Inc.",
+      "symbol": "ZS",
+      "before": "Zscaler Inc. (ZS) Analysis | TradeHQ",
+      "after": "Zscaler Inc. (ZS) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "panw",
+      "name": "Palo Alto Networks",
+      "symbol": "PANW",
+      "before": "Palo Alto Networks (PANW) Analysis | TradeHQ",
+      "after": "Palo Alto Networks (PANW) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "okta",
+      "name": "Okta Inc.",
+      "symbol": "OKTA",
+      "before": "Okta Inc. (OKTA) Analysis | TradeHQ",
+      "after": "Okta Inc. (OKTA) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "wday",
+      "name": "Workday Inc.",
+      "symbol": "WDAY",
+      "before": "Workday Inc. (WDAY) Analysis | TradeHQ",
+      "after": "Workday Inc. (WDAY) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "veev",
+      "name": "Veeva Systems",
+      "symbol": "VEEV",
+      "before": "Veeva Systems (VEEV) Analysis | TradeHQ",
+      "after": "Veeva Systems (VEEV) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "jpm",
+      "name": "JPMorgan Chase & Co.",
+      "symbol": "JPM",
+      "before": "JPMorgan Chase & Co. (JPM) Analysis | TradeHQ",
+      "after": "JPMorgan Chase & Co. (JPM) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "v",
+      "name": "Visa Inc.",
+      "symbol": "V",
+      "before": "Visa Inc. (V) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Visa Inc. (V) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "ma",
+      "name": "Mastercard Incorporated",
+      "symbol": "MA",
+      "before": "Mastercard Incorporated (MA) Analysis | TradeHQ",
+      "after": "Mastercard Incorporated (MA) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "bac",
+      "name": "Bank of America",
+      "symbol": "BAC",
+      "before": "Bank of America (BAC) Analysis | TradeHQ",
+      "after": "Bank of America (BAC) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "wfc",
+      "name": "Wells Fargo & Co.",
+      "symbol": "WFC",
+      "before": "Wells Fargo & Co. (WFC) Analysis | TradeHQ",
+      "after": "Wells Fargo & Co. (WFC) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "gs",
+      "name": "Goldman Sachs Group",
+      "symbol": "GS",
+      "before": "Goldman Sachs Group (GS) Analysis | TradeHQ",
+      "after": "Goldman Sachs Group (GS) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "ms",
+      "name": "Morgan Stanley",
+      "symbol": "MS",
+      "before": "Morgan Stanley (MS) Analysis | TradeHQ",
+      "after": "Morgan Stanley (MS) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "unh",
+      "name": "UnitedHealth Group",
+      "symbol": "UNH",
+      "before": "UnitedHealth Group (UNH) Analysis | TradeHQ",
+      "after": "UnitedHealth Group (UNH) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "jnj",
+      "name": "Johnson & Johnson",
+      "symbol": "JNJ",
+      "before": "Johnson & Johnson (JNJ) Analysis | TradeHQ",
+      "after": "Johnson & Johnson (JNJ) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "pfe",
+      "name": "Pfizer Inc.",
+      "symbol": "PFE",
+      "before": "Pfizer Inc. (PFE) Analysis | TradeHQ",
+      "after": "Pfizer Inc. (PFE) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "mrna",
+      "name": "Moderna Inc.",
+      "symbol": "MRNA",
+      "before": "Moderna Inc. (MRNA) Analysis | TradeHQ",
+      "after": "Moderna Inc. (MRNA) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "abbv",
+      "name": "AbbVie Inc.",
+      "symbol": "ABBV",
+      "before": "AbbVie Inc. (ABBV) Analysis | TradeHQ",
+      "after": "AbbVie Inc. (ABBV) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "lly",
+      "name": "Eli Lilly & Co.",
+      "symbol": "LLY",
+      "before": "Eli Lilly & Co. (LLY) Analysis | TradeHQ",
+      "after": "Eli Lilly & Co. (LLY) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "wmt",
+      "name": "Walmart Inc.",
+      "symbol": "WMT",
+      "before": "Walmart Inc. (WMT) Analysis | TradeHQ",
+      "after": "Walmart Inc. (WMT) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "cost",
+      "name": "Costco Wholesale",
+      "symbol": "COST",
+      "before": "Costco Wholesale (COST) Analysis | TradeHQ",
+      "after": "Costco Wholesale (COST) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "hd",
+      "name": "Home Depot Inc.",
+      "symbol": "HD",
+      "before": "Home Depot Inc. (HD) Analysis | TradeHQ",
+      "after": "Home Depot Inc. (HD) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "low",
+      "name": "Lowe's Companies",
+      "symbol": "LOW",
+      "before": "Lowe's Companies (LOW) Analysis | TradeHQ",
+      "after": "Lowe's Companies (LOW) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "tgt",
+      "name": "Target Corporation",
+      "symbol": "TGT",
+      "before": "Target Corporation (TGT) Analysis | TradeHQ",
+      "after": "Target Corporation (TGT) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "sbux",
+      "name": "Starbucks Corporation",
+      "symbol": "SBUX",
+      "before": "Starbucks Corporation (SBUX) Analysis | TradeHQ",
+      "after": "Starbucks Corporation (SBUX) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "mcd",
+      "name": "McDonald's Corporation",
+      "symbol": "MCD",
+      "before": "McDonald's Corporation (MCD) Analysis | TradeHQ",
+      "after": "McDonald's Corporation (MCD) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "ko",
+      "name": "Coca-Cola Company",
+      "symbol": "KO",
+      "before": "Coca-Cola Company (KO) Analysis | TradeHQ",
+      "after": "Coca-Cola Company (KO) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "pep",
+      "name": "PepsiCo Inc.",
+      "symbol": "PEP",
+      "before": "PepsiCo Inc. (PEP) Analysis | TradeHQ",
+      "after": "PepsiCo Inc. (PEP) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "dis",
+      "name": "Walt Disney Company",
+      "symbol": "DIS",
+      "before": "Walt Disney Company (DIS) Analysis | TradeHQ",
+      "after": "Walt Disney Company (DIS) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "nke",
+      "name": "Nike Inc.",
+      "symbol": "NKE",
+      "before": "Nike Inc. (NKE) Analysis | TradeHQ",
+      "after": "Nike Inc. (NKE) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "xom",
+      "name": "Exxon Mobil Corp.",
+      "symbol": "XOM",
+      "before": "Exxon Mobil Corp. (XOM) Analysis | TradeHQ",
+      "after": "Exxon Mobil Corp. (XOM) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "cvx",
+      "name": "Chevron Corporation",
+      "symbol": "CVX",
+      "before": "Chevron Corporation (CVX) Analysis | TradeHQ",
+      "after": "Chevron Corporation (CVX) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "ba",
+      "name": "Boeing Company",
+      "symbol": "BA",
+      "before": "Boeing Company (BA) Analysis | TradeHQ",
+      "after": "Boeing Company (BA) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "cat",
+      "name": "Caterpillar Inc.",
+      "symbol": "CAT",
+      "before": "Caterpillar Inc. (CAT) Analysis | TradeHQ",
+      "after": "Caterpillar Inc. (CAT) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "de",
+      "name": "Deere & Company",
+      "symbol": "DE",
+      "before": "Deere & Company (DE) Analysis | TradeHQ",
+      "after": "Deere & Company (DE) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "spy",
+      "name": "SPDR S&P 500 ETF",
+      "symbol": "SPY",
+      "before": "Learn & Practice SPY ETF Trading Free — $100K Simulator | Simulated Data",
+      "after": "Learn & Practice SPY ETF Trading Free — $100K Simulator | Simulated Data",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "qqq",
+      "name": "Invesco QQQ Trust",
+      "symbol": "QQQ",
+      "before": "Learn & Practice QQQ ETF Trading Free — $100K Simulator | Simulated Data",
+      "after": "Learn & Practice QQQ ETF Trading Free — $100K Simulator | Simulated Data",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "iwm",
+      "name": "iShares Russell 2000 ETF",
+      "symbol": "IWM",
+      "before": "iShares Russell 2000 ETF (IWM) Analysis | TradeHQ",
+      "after": "iShares Russell 2000 ETF (IWM) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "dia",
+      "name": "SPDR Dow Jones ETF",
+      "symbol": "DIA",
+      "before": "SPDR Dow Jones ETF (DIA) Analysis | TradeHQ",
+      "after": "SPDR Dow Jones ETF (DIA) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "voo",
+      "name": "Vanguard S&P 500 ETF",
+      "symbol": "VOO",
+      "before": "Vanguard S&P 500 ETF (VOO) Analysis | TradeHQ",
+      "after": "Vanguard S&P 500 ETF (VOO) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "arkk",
+      "name": "ARK Innovation ETF",
+      "symbol": "ARKK",
+      "before": "ARK Innovation ETF (ARKK) Analysis | TradeHQ",
+      "after": "ARK Innovation ETF (ARKK) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "vti",
+      "name": "Vanguard Total Stock Market",
+      "symbol": "VTI",
+      "before": "Vanguard Total Stock Market (VTI) Analysis | TradeHQ",
+      "after": "Vanguard Total Stock Market (VTI) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "ivv",
+      "name": "iShares Core S&P 500",
+      "symbol": "IVV",
+      "before": "iShares Core S&P 500 (IVV) Analysis | TradeHQ",
+      "after": "iShares Core S&P 500 (IVV) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "agg",
+      "name": "iShares Core US Aggregate Bond",
+      "symbol": "AGG",
+      "before": "iShares Core US Aggregate Bond (AGG) Analysis | TradeHQ",
+      "after": "iShares Core US Aggregate Bond (AGG) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "ief",
+      "name": "iShares 7-10 Year Treasury",
+      "symbol": "IEF",
+      "before": "iShares 7-10 Year Treasury (IEF) Analysis | TradeHQ",
+      "after": "iShares 7-10 Year Treasury (IEF) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "tlt",
+      "name": "iShares 20+ Year Treasury",
+      "symbol": "TLT",
+      "before": "iShares 20+ Year Treasury (TLT) Analysis | TradeHQ",
+      "after": "iShares 20+ Year Treasury (TLT) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "gld",
+      "name": "SPDR Gold Shares",
+      "symbol": "GLD",
+      "before": "SPDR Gold Shares (GLD) Analysis | TradeHQ",
+      "after": "SPDR Gold Shares (GLD) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "slv",
+      "name": "iShares Silver Trust",
+      "symbol": "SLV",
+      "before": "iShares Silver Trust (SLV) Analysis | TradeHQ",
+      "after": "iShares Silver Trust (SLV) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "uso",
+      "name": "United States Oil Fund",
+      "symbol": "USO",
+      "before": "United States Oil Fund (USO) Analysis | TradeHQ",
+      "after": "United States Oil Fund (USO) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "xlf",
+      "name": "Financial Select SPDR",
+      "symbol": "XLF",
+      "before": "Financial Select SPDR (XLF) Analysis | TradeHQ",
+      "after": "Financial Select SPDR (XLF) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "xlk",
+      "name": "Technology Select SPDR",
+      "symbol": "XLK",
+      "before": "Technology Select SPDR (XLK) Analysis | TradeHQ",
+      "after": "Technology Select SPDR (XLK) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "xle",
+      "name": "Energy Select SPDR",
+      "symbol": "XLE",
+      "before": "Energy Select SPDR (XLE) Analysis | TradeHQ",
+      "after": "Energy Select SPDR (XLE) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "xlv",
+      "name": "Health Care Select SPDR",
+      "symbol": "XLV",
+      "before": "Health Care Select SPDR (XLV) Analysis | TradeHQ",
+      "after": "Health Care Select SPDR (XLV) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "smh",
+      "name": "VanEck Semiconductor ETF",
+      "symbol": "SMH",
+      "before": "VanEck Semiconductor ETF (SMH) Analysis | TradeHQ",
+      "after": "VanEck Semiconductor ETF (SMH) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "soxx",
+      "name": "iShares Semiconductor ETF",
+      "symbol": "SOXX",
+      "before": "iShares Semiconductor ETF (SOXX) Analysis | TradeHQ",
+      "after": "iShares Semiconductor ETF (SOXX) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "eurusd",
+      "name": "Euro / US Dollar",
+      "symbol": "EUR/USD",
+      "before": "Euro / US Dollar (EUR/USD) Analysis | TradeHQ",
+      "after": "Euro / US Dollar (EUR/USD) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "gbpusd",
+      "name": "British Pound / US Dollar",
+      "symbol": "GBP/USD",
+      "before": "Learn & Practice GBP/USD Forex Free — $100K Simulator | Simulated Data",
+      "after": "Learn & Practice GBP/USD Forex Free — $100K Simulator | Simulated Data",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "usdjpy",
+      "name": "US Dollar / Japanese Yen",
+      "symbol": "USD/JPY",
+      "before": "US Dollar / Japanese Yen (USD/JPY) Analysis | TradeHQ",
+      "after": "US Dollar / Japanese Yen (USD/JPY) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "usdchf",
+      "name": "US Dollar / Swiss Franc",
+      "symbol": "USD/CHF",
+      "before": "US Dollar / Swiss Franc (USD/CHF) Analysis | TradeHQ",
+      "after": "US Dollar / Swiss Franc (USD/CHF) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "audusd",
+      "name": "Australian Dollar / US Dollar",
+      "symbol": "AUD/USD",
+      "before": "Australian Dollar / US Dollar (AUD/USD) Analysis | TradeHQ",
+      "after": "Australian Dollar / US Dollar (AUD/USD) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "usdcad",
+      "name": "US Dollar / Canadian Dollar",
+      "symbol": "USD/CAD",
+      "before": "US Dollar / Canadian Dollar (USD/CAD) Analysis | TradeHQ",
+      "after": "US Dollar / Canadian Dollar (USD/CAD) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "nzdusd",
+      "name": "New Zealand Dollar / US Dollar",
+      "symbol": "NZD/USD",
+      "before": "New Zealand Dollar / US Dollar (NZD/USD) Analysis | TradeHQ",
+      "after": "New Zealand Dollar / US Dollar (NZD/USD) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "eurgbp",
+      "name": "Euro / British Pound",
+      "symbol": "EUR/GBP",
+      "before": "Euro / British Pound (EUR/GBP) Analysis | TradeHQ",
+      "after": "Euro / British Pound (EUR/GBP) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "eurjpy",
+      "name": "Euro / Japanese Yen",
+      "symbol": "EUR/JPY",
+      "before": "Euro / Japanese Yen (EUR/JPY) Analysis | TradeHQ",
+      "after": "Euro / Japanese Yen (EUR/JPY) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "gbpjpy",
+      "name": "British Pound / Japanese Yen",
+      "symbol": "GBP/JPY",
+      "before": "British Pound / Japanese Yen (GBP/JPY) Analysis | TradeHQ",
+      "after": "British Pound / Japanese Yen (GBP/JPY) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "usdhkd",
+      "name": "US Dollar / Hong Kong Dollar",
+      "symbol": "USD/HKD",
+      "before": "US Dollar / Hong Kong Dollar (USD/HKD) Analysis | TradeHQ",
+      "after": "US Dollar / Hong Kong Dollar (USD/HKD) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "usdsgd",
+      "name": "US Dollar / Singapore Dollar",
+      "symbol": "USD/SGD",
+      "before": "US Dollar / Singapore Dollar (USD/SGD) Analysis | TradeHQ",
+      "after": "US Dollar / Singapore Dollar (USD/SGD) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "usdmxn",
+      "name": "US Dollar / Mexican Peso",
+      "symbol": "USD/MXN",
+      "before": "US Dollar / Mexican Peso (USD/MXN) Analysis | TradeHQ",
+      "after": "US Dollar / Mexican Peso (USD/MXN) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "usdzar",
+      "name": "US Dollar / South African Rand",
+      "symbol": "USD/ZAR",
+      "before": "US Dollar / South African Rand (USD/ZAR) Analysis | TradeHQ",
+      "after": "US Dollar / South African Rand (USD/ZAR) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "usdtry",
+      "name": "US Dollar / Turkish Lira",
+      "symbol": "USD/TRY",
+      "before": "US Dollar / Turkish Lira (USD/TRY) Analysis | TradeHQ",
+      "after": "US Dollar / Turkish Lira (USD/TRY) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "gold",
+      "name": "Gold",
+      "symbol": "XAU",
+      "before": "Learn & Practice Gold Trading Free — $100K Simulator | Simulated XAU Data",
+      "after": "Learn & Practice Gold Trading Free — $100K Simulator | Simulated XAU Data",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "silver",
+      "name": "Silver",
+      "symbol": "XAG",
+      "before": "Silver (XAG) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Silver (XAG) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "oil",
+      "name": "Crude Oil WTI",
+      "symbol": "WTI",
+      "before": "Learn & Practice Oil Trading Free — $100K Simulator | Simulated WTI Data",
+      "after": "Learn & Practice Oil Trading Free — $100K Simulator | Simulated WTI Data",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "natgas",
+      "name": "Natural Gas",
+      "symbol": "NG",
+      "before": "Natural Gas (NG) Analysis | TradeHQ",
+      "after": "Natural Gas (NG) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "copper",
+      "name": "Copper",
+      "symbol": "HG",
+      "before": "Copper (HG) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Copper (HG) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "platinum",
+      "name": "Platinum",
+      "symbol": "XPT",
+      "before": "Platinum (XPT) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Platinum (XPT) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "palladium",
+      "name": "Palladium",
+      "symbol": "XPD",
+      "before": "Palladium (XPD) Analysis | TradeHQ",
+      "after": "Palladium (XPD) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "brent",
+      "name": "Brent Crude Oil",
+      "symbol": "BRENT",
+      "before": "Brent Crude Oil (BRENT) Analysis | TradeHQ",
+      "after": "Brent Crude Oil (BRENT) Practice | TradeHQ",
+      "changed": true,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "wheat",
+      "name": "Wheat",
+      "symbol": "ZW",
+      "before": "Wheat (ZW) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Wheat (ZW) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "corn",
+      "name": "Corn",
+      "symbol": "ZC",
+      "before": "Corn (ZC) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Corn (ZC) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "soybean",
+      "name": "Soybeans",
+      "symbol": "ZS",
+      "before": "Soybeans (ZS) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Soybeans (ZS) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "coffee",
+      "name": "Coffee",
+      "symbol": "KC",
+      "before": "Coffee (KC) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Coffee (KC) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "sugar",
+      "name": "Sugar",
+      "symbol": "SB",
+      "before": "Sugar (SB) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Sugar (SB) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "cotton",
+      "name": "Cotton",
+      "symbol": "CT",
+      "before": "Cotton (CT) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Cotton (CT) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    },
+    {
+      "id": "aluminum",
+      "name": "Aluminum",
+      "symbol": "ALI",
+      "before": "Aluminum (ALI) — Practice Data & Educational Guide | TradeHQ",
+      "after": "Aluminum (ALI) — Practice Data & Educational Guide | TradeHQ",
+      "changed": false,
+      "descriptionUnchanged": true
+    }
+  ],
+  "changed": 115,
+  "scope": "Actual imported title and description output across every configured asset; candidate changes only generic length fallbackAnalysis→Practice, preserves custom/short titles and all descriptions. Not live browser/native provider verification."
+}

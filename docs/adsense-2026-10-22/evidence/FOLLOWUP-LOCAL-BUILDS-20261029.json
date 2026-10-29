@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-10-29T15:21:25.163701+00:00",
+  "outcome": "PASS",
+  "builds": [
+    {
+      "sha": "cb25c22e84933394442197f8f5bce4190ce1cfbf",
+      "logSHA256": "c36e5f57ab3bb403fdda81d586c19d55834ae4effe441d9a877f1bab9fbed384",
+      "scope": "npm run build:cloudflare; compile and existing editorial/SEO/postbuild/flat-output checks; no native provider/live acceptance"
+    },
+    {
+      "sha": "d863bb447816f6ef7891d2f3955c1f09db983d06",
+      "logSHA256": "572f3d8139323ca0c2cd854df35c94047814ddc741a22a0c97870626ec08d5bd",
+      "scope": "npm run build:cloudflare; compile and existing editorial/SEO/postbuild/flat-output checks; no native provider/live acceptance"
+    }
+  ]
+}

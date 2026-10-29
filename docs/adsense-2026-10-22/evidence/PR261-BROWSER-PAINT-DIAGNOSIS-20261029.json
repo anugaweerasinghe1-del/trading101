@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-10-29T14:37:07.500963+00:00",
+  "candidateSHA": "de9c05d5d0ccb3951561c48df5a7a6e25c9e1bd7",
+  "status": "BROWSER_PAINT_DIAGNOSIS_FRESH_PROCESS_BOUNDED_REVIEW_COMPLETE",
+  "observed": "Intermittent missing-painted white/gray text after real theme changes despite computed colour/visibility/opacity/font readiness. Reproduces on unchanged production, local candidate, Cloudflare preview, Chromium154 headless/headful and stable156 headless.",
+  "isolation": "Also reproduced in minimal document with no TradeHQ styles or scripts: explicit white Arial heading/paragraph disappear after root foreground change while green span remains. This excludes React and project CSS as necessary causes; no new site finding or speculative application fix.",
+  "freshProcess": "Same actual light-mode guide heading paints fully after ordinary actual theme selection, browser close/restart with saved disposable profile, then navigation. Fresh process light/dark collection now underway; not yet full personalPASS.",
+  "proof": {
+    "local50": "REVIEWED-LIGHT-SURFACES-LOCAL-BONUS-FINAL-BROWSER.json",
+    "preview50": "REVIEWED-LIGHT-SURFACES-PREVIEW-BONUS-FINAL-BROWSER.json",
+    "isolated120": "PR261-ISOLATED-DAILY-PALETTE-BONUS-FINAL.json",
+    "local38Controls": "PR261-LOCAL-BONUS-FINAL-SAFE-CONTROLS.json",
+    "preview38Controls": "PR261-PREVIEW-BONUS-FINAL-SAFE-CONTROLS.json",
+    "local30Guest": "PR261-LOCAL-BONUS-FINAL-GUEST-SMOKE.json",
+    "preview30Guest": "PR261-PREVIEW-BONUS-FINAL-GUEST-SMOKE.json"
+  },
+  "release": "Draft PR261 remains unmerged. Four exact candidate CI and both native previews PASS; current personal review incomplete. No user/protected record mutations.",
+  "updatedAt": "2026-10-29T15:13:44.842499+00:00",
+  "acceptedVerification": {
+    "local": "PR261-LOCAL-FRESH-THEME-PERSONAL-VIEW.json",
+    "actualPreview": "PR261-PREVIEW-FRESH-THEME-PERSONAL-VIEW.json",
+    "statesEach": 50,
+    "personallyViewedRawCapturesEach": 220,
+    "scope": "All affected captures personally reviewed with separate fresh process per theme; no TradeHQ paint fix introduced."
+  }
+}

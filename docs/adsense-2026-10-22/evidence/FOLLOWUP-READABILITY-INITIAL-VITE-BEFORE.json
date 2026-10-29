@@ -1,0 +1,709 @@
+{
+  "checkedAt": "2026-10-29T15:10:43.626Z",
+  "origin": "http://127.0.0.1:4183",
+  "sha": "de9c05d5d0ccb3951561c48df5a7a6e25c9e1bd7",
+  "stage": "before",
+  "outcome": "FAIL",
+  "failure": "Page readiness deadline",
+  "rows": [
+    {
+      "kind": "profile fixture wrapping",
+      "width": 360,
+      "theme": "light",
+      "username": "abdullazeezy72munnissy",
+      "viewport": 360,
+      "documentWidth": 360,
+      "headingBounds": {
+        "left": 16,
+        "right": 344
+      },
+      "textRects": [
+        {
+          "left": 16,
+          "right": 357.984375
+        }
+      ],
+      "wrap": "normal",
+      "fits": false,
+      "screenshot": "profile-observed-360-light.png"
+    },
+    {
+      "kind": "profile fixture wrapping",
+      "width": 360,
+      "theme": "light",
+      "username": "WWWWWWWWWWWWWWWWWWWW",
+      "viewport": 567,
+      "documentWidth": 567,
+      "headingBounds": {
+        "left": 16,
+        "right": 344
+      },
+      "textRects": [
+        {
+          "left": 16,
+          "right": 567.3125
+        }
+      ],
+      "wrap": "normal",
+      "fits": false,
+      "screenshot": "profile-maximal-360-light.png"
+    },
+    {
+      "kind": "unchanged calculator input values",
+      "width": 360,
+      "theme": "light",
+      "inputs": [
+        {
+          "id": "compound-initial-capital",
+          "value": "100000",
+          "color": "rgb(15, 15, 15)"
+        },
+        {
+          "id": "compound-monthly-add",
+          "value": "500",
+          "color": "rgb(15, 15, 15)"
+        }
+      ],
+      "screenshot": "calculator-360-light.png"
+    },
+    {
+      "kind": "header hover and focus",
+      "width": 360,
+      "theme": "light",
+      "hover": {
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(145, 145, 161)",
+        "focus": true,
+        "navAccent": "0 0% 100%",
+        "viewport": 360,
+        "documentWidth": 360
+      },
+      "screenshot": "header-360-light.png"
+    },
+    {
+      "kind": "profile fixture wrapping",
+      "width": 390,
+      "theme": "light",
+      "username": "abdullazeezy72munnissy",
+      "viewport": 390,
+      "documentWidth": 390,
+      "headingBounds": {
+        "left": 16,
+        "right": 374
+      },
+      "textRects": [
+        {
+          "left": 16,
+          "right": 357.984375
+        }
+      ],
+      "wrap": "normal",
+      "fits": true,
+      "screenshot": "profile-observed-390-light.png"
+    },
+    {
+      "kind": "profile fixture wrapping",
+      "width": 390,
+      "theme": "light",
+      "username": "WWWWWWWWWWWWWWWWWWWW",
+      "viewport": 567,
+      "documentWidth": 567,
+      "headingBounds": {
+        "left": 16,
+        "right": 374
+      },
+      "textRects": [
+        {
+          "left": 16,
+          "right": 567.3125
+        }
+      ],
+      "wrap": "normal",
+      "fits": false,
+      "screenshot": "profile-maximal-390-light.png"
+    },
+    {
+      "kind": "unchanged calculator input values",
+      "width": 390,
+      "theme": "light",
+      "inputs": [
+        {
+          "id": "compound-initial-capital",
+          "value": "100000",
+          "color": "rgb(15, 15, 15)"
+        },
+        {
+          "id": "compound-monthly-add",
+          "value": "500",
+          "color": "rgb(15, 15, 15)"
+        }
+      ],
+      "screenshot": "calculator-390-light.png"
+    },
+    {
+      "kind": "header hover and focus",
+      "width": 390,
+      "theme": "light",
+      "hover": {
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(145, 145, 161)",
+        "focus": true,
+        "navAccent": "0 0% 100%",
+        "viewport": 390,
+        "documentWidth": 390
+      },
+      "screenshot": "header-390-light.png"
+    },
+    {
+      "kind": "profile fixture wrapping",
+      "width": 768,
+      "theme": "light",
+      "username": "abdullazeezy72munnissy",
+      "viewport": 768,
+      "documentWidth": 753,
+      "headingBounds": {
+        "left": 16,
+        "right": 737
+      },
+      "textRects": [
+        {
+          "left": 16,
+          "right": 426.375
+        }
+      ],
+      "wrap": "normal",
+      "fits": true,
+      "screenshot": "profile-observed-768-light.png"
+    },
+    {
+      "kind": "profile fixture wrapping",
+      "width": 768,
+      "theme": "light",
+      "username": "WWWWWWWWWWWWWWWWWWWW",
+      "viewport": 768,
+      "documentWidth": 753,
+      "headingBounds": {
+        "left": 16,
+        "right": 737
+      },
+      "textRects": [
+        {
+          "left": 16,
+          "right": 677.578125
+        }
+      ],
+      "wrap": "normal",
+      "fits": true,
+      "screenshot": "profile-maximal-768-light.png"
+    }
+  ],
+  "runtimeErrors": [],
+  "preventedExternalRequests": [
+    {
+      "method": "GET",
+      "host": "pagead2.googlesyndication.com",
+      "path": "/pagead/js/adsbygoogle.js",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "fonts.googleapis.com",
+      "path": "/css2",
+      "fixture": false
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "POST",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "POST",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "pagead2.googlesyndication.com",
+      "path": "/pagead/js/adsbygoogle.js",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "fonts.googleapis.com",
+      "path": "/css2",
+      "fixture": false
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "POST",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "POST",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "pagead2.googlesyndication.com",
+      "path": "/pagead/js/adsbygoogle.js",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "fonts.googleapis.com",
+      "path": "/css2",
+      "fixture": false
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "pagead2.googlesyndication.com",
+      "path": "/pagead/js/adsbygoogle.js",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "fonts.googleapis.com",
+      "path": "/css2",
+      "fixture": false
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "POST",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "POST",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "pagead2.googlesyndication.com",
+      "path": "/pagead/js/adsbygoogle.js",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "fonts.googleapis.com",
+      "path": "/css2",
+      "fixture": false
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "POST",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "POST",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "pagead2.googlesyndication.com",
+      "path": "/pagead/js/adsbygoogle.js",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "fonts.googleapis.com",
+      "path": "/css2",
+      "fixture": false
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "pagead2.googlesyndication.com",
+      "path": "/pagead/js/adsbygoogle.js",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "fonts.googleapis.com",
+      "path": "/css2",
+      "fixture": false
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "POST",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "POST",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "pagead2.googlesyndication.com",
+      "path": "/pagead/js/adsbygoogle.js",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "fonts.googleapis.com",
+      "path": "/css2",
+      "fixture": false
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "POST",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "POST",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "pagead2.googlesyndication.com",
+      "path": "/pagead/js/adsbygoogle.js",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "fonts.googleapis.com",
+      "path": "/css2",
+      "fixture": false
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    }
+  ],
+  "scope": "Local isolated presentation verification only. Every external request intercepted before connection and fulfilled locally. Public profile data are explicitly synthetic fixtures: observed long username shape plus20-wide-character supported signup maximum. No production account/record access or modification. Calculator defaults unchanged; inputs/sliders/calculation logic never changed. Five widths and two themes. Screenshot collection requires personal review; no native CI/preview/production credit.",
+  "limitation": "Initial Vite development-server run stopped at page readiness with no runtime exception. No credit; fresh built-output run supersedes."
+}

@@ -2460,12 +2460,19 @@
       "observed": "Fresh actual production metadata at hydrated-main readiness,+3s,+8s consistently retains Analysis browser titles while main scope disclaims asset-specific research. Source assetContent.generateAssetMetaTitle chooses Analysis whenever long Practice Data & Educational Guide title exceeds60 chars. All seven sampled terminals intentionally noindex,follow; no indexability defect asserted.",
       "fix": "Change only long-title fallback to Practice, preserving instrument names/symbols, custom metadata, descriptions, canonicals and robots.",
       "evidence": "findings/TERMINAL-METADATA-SCOPE.md",
-      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "state": "FIX_PREPARED_INDEPENDENT_LOCAL_BRANCH",
       "detectedAt": "2026-10-28T10:18:41.770525+00:00",
       "beforeEvidence": "evidence/TERMINAL-FINAL-SETTLED-METADATA-20261028.json",
       "risk": "Low, one static title fallback; ordinary reviewed wording revert rollback. No data/calculation/account/ad/consent changes.",
       "adsenseRelevance": "Accurate content description only; no claimed Google rejection cause or title-length penalty.",
-      "releaseHold": "PR261 is the active draft candidate. All exact preview/protected merge/main/native/live verification must pass before closing its five findings or releasing later independent proposals."
+      "releaseHold": "PR261 is the active draft candidate. All exact preview/protected merge/main/native/live verification must pass before closing its five findings or releasing later independent proposals.",
+      "candidateSHA": "f52803671f243c9b9488e07d7121dc51c91a3afb",
+      "pr": null,
+      "localEvidence": [
+        "evidence/SCOPE-FAQ-LOCAL-20261029.json",
+        "evidence/SCOPE-TITLE-COMPARISON-20261029.json"
+      ],
+      "limitation": "Separate local P3 candidate with same tested tree; no current native/preview/public verification. FAQ capture banner limitation explicit; title browser follow-up pending."
     },
     {
       "id": "THQ-060",
@@ -2477,7 +2484,7 @@
       "observed": "Full light-scroll at all five widths personally viewed plus four settled mobile/desktop hero comparisons. Hero heading, highlighted amount, secondary CTA/stats and multiple fixed-black sections inherit rgb(15,15,15) light text and become unreadable. Dark mode uses rgb(234,236,240). Transparent navigation also loses dark icons over black hero. Source components fix dark surfaces but consume global theme text variables; MegaFooter already has explicit local dark palette.",
       "fix": "Prepared scoped homepage dark-surface palette for existing fixed-black hero, MarketPulse and six marketing sections, plus a shared light-theme navigation background so controls remain visible over fixed-dark content. Preserve all copy, controls, data, calculations and theme preference behavior.",
       "evidence": "findings/HOME-LIGHT-SURFACES.md",
-      "state": "LOCAL_BROWSER_REVIEW_IN_PROGRESS",
+      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
       "detectedAt": "2026-10-28T10:31:27.184117+00:00",
       "beforeEvidence": "evidence/HOME-LIGHT-BEFORE-20261028.json",
       "beforeImagesPersonallyViewed": 4,
@@ -2488,7 +2495,9 @@
       "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/261",
       "candidateSHA": "de9c05d5d0ccb3951561c48df5a7a6e25c9e1bd7",
       "baseSHA": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
-      "localEvidence": "evidence/REVIEWED-LIGHT-SURFACES-LOCAL-BROWSER.json"
+      "localEvidence": "evidence/REVIEWED-LIGHT-SURFACES-LOCAL-BROWSER.json",
+      "validation": "Exact-head build, four trusted CI checks, native CF/Vercel previews, local+actual50-state browser checks and all220 affected screenshots personally reviewed per environment;38 controls and30 guest checks/four controls per environment. Daily120 isolated states and8 personally viewed captures. Not merged/publicly verified.",
+      "mergeSHA": "1dacd0ac9a986546b9480476a084b9049b56e036"
     },
     {
       "id": "THQ-061",
@@ -2501,7 +2510,7 @@
       "fix": "Proposal scopes original dark color variables to existing challenge and streak surfaces, provides a solid dark backing for those gradients and a solid light-theme title. No scenario/answer/reasoning/streak/bank/score logic changes.",
       "evidence": "findings/DAILY-LIGHT-SURFACES.md",
       "beforeEvidence": "evidence/LEARNING-LIGHT-BEFORE-20261028.json",
-      "state": "LOCAL_BROWSER_REVIEW_IN_PROGRESS",
+      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
       "detectedAt": "2026-10-28T10:45:55.577714+00:00",
       "risk": "Presentation-only proposal. Requires five widths/both themes, focus/hover/conditional visible content in isolated fixtures without production progress writes, unaffected shared surfaces, build and exact native release gates. Rollback ordinary reviewed revert.",
       "adsenseRelevance": "Visitor readability and ability to use educational content; not an asserted Google rejection reason.",
@@ -2510,7 +2519,9 @@
       "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/261",
       "candidateSHA": "de9c05d5d0ccb3951561c48df5a7a6e25c9e1bd7",
       "baseSHA": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
-      "localEvidence": "evidence/REVIEWED-LIGHT-SURFACES-LOCAL-BROWSER.json"
+      "localEvidence": "evidence/REVIEWED-LIGHT-SURFACES-LOCAL-BROWSER.json",
+      "validation": "Exact-head build, four trusted CI checks, native CF/Vercel previews, local+actual50-state browser checks and all220 affected screenshots personally reviewed per environment;38 controls and30 guest checks/four controls per environment. Daily120 isolated states and8 personally viewed captures. Not merged/publicly verified.",
+      "mergeSHA": "1dacd0ac9a986546b9480476a084b9049b56e036"
     },
     {
       "id": "THQ-062",
@@ -2523,7 +2534,7 @@
       "fix": "Proposal scopes original dark foreground/primary variables and a solid dark gradient backing to the existing intro only. Catalogue, learning path, article cards, counts and progress behavior untouched.",
       "evidence": "findings/LEARN-INTRO-LIGHT-SURFACE.md",
       "beforeEvidence": "evidence/LEARNING-LIGHT-BEFORE-20261028.json",
-      "state": "LOCAL_BROWSER_REVIEW_IN_PROGRESS",
+      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
       "detectedAt": "2026-10-28T10:45:55.577714+00:00",
       "risk": "Presentation-only proposal. Requires five widths/both themes, focus/hover/conditional visible content in isolated fixtures without production progress writes, unaffected shared surfaces, build and exact native release gates. Rollback ordinary reviewed revert.",
       "adsenseRelevance": "Visitor readability and ability to use educational content; not an asserted Google rejection reason.",
@@ -2532,7 +2543,9 @@
       "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/261",
       "candidateSHA": "de9c05d5d0ccb3951561c48df5a7a6e25c9e1bd7",
       "baseSHA": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
-      "localEvidence": "evidence/REVIEWED-LIGHT-SURFACES-LOCAL-BROWSER.json"
+      "localEvidence": "evidence/REVIEWED-LIGHT-SURFACES-LOCAL-BROWSER.json",
+      "validation": "Exact-head build, four trusted CI checks, native CF/Vercel previews, local+actual50-state browser checks and all220 affected screenshots personally reviewed per environment;38 controls and30 guest checks/four controls per environment. Daily120 isolated states and8 personally viewed captures. Not merged/publicly verified.",
+      "mergeSHA": "1dacd0ac9a986546b9480476a084b9049b56e036"
     },
     {
       "id": "THQ-063",
@@ -2545,7 +2558,7 @@
       "fix": "Proposal adds light-only background and foreground utility overrides to the existing CredibilityFooter root. This component is used only by the guide. Keeps all footer copy/links, cards, completion/quiz/calculator/share behavior and default dark presentation unchanged.",
       "evidence": "findings/GUIDE-FOOTER-LIGHT-SURFACE.md",
       "beforeEvidence": "evidence/LEARNING-LIGHT-BEFORE-20261028.json",
-      "state": "LOCAL_BROWSER_REVIEW_IN_PROGRESS",
+      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
       "detectedAt": "2026-10-28T10:45:55.577714+00:00",
       "risk": "Presentation-only proposal. Requires five widths/both themes, focus/hover/conditional visible content in isolated fixtures without production progress writes, unaffected shared surfaces, build and exact native release gates. Rollback ordinary reviewed revert.",
       "adsenseRelevance": "Visitor readability and ability to use educational content; not an asserted Google rejection reason.",
@@ -2554,7 +2567,9 @@
       "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/261",
       "candidateSHA": "de9c05d5d0ccb3951561c48df5a7a6e25c9e1bd7",
       "baseSHA": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
-      "localEvidence": "evidence/REVIEWED-LIGHT-SURFACES-LOCAL-BROWSER.json"
+      "localEvidence": "evidence/REVIEWED-LIGHT-SURFACES-LOCAL-BROWSER.json",
+      "validation": "Exact-head build, four trusted CI checks, native CF/Vercel previews, local+actual50-state browser checks and all220 affected screenshots personally reviewed per environment;38 controls and30 guest checks/four controls per environment. Daily120 isolated states and8 personally viewed captures. Not merged/publicly verified.",
+      "mergeSHA": "1dacd0ac9a986546b9480476a084b9049b56e036"
     },
     {
       "id": "THQ-064",
@@ -2568,7 +2583,7 @@
       "evidence": "findings/ROADMAP-LIGHT-TEXT.md",
       "beforeEvidence": "evidence/ROADMAP-LIGHT-BEFORE-20261028.json",
       "beforeImagesPersonallyViewed": 4,
-      "state": "LOCAL_BROWSER_REVIEW_IN_PROGRESS",
+      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
       "detectedAt": "2026-10-28T15:55:46.464277+00:00",
       "risk": "Presentation-only; requires local five-width/two-theme settled/scroll/hover and exact release/native/public rechecks. Ordinary reviewed revert rollback.",
       "adsenseRelevance": "Visitor readability; no Google rejection reason asserted.",
@@ -2577,7 +2592,9 @@
       "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/261",
       "candidateSHA": "de9c05d5d0ccb3951561c48df5a7a6e25c9e1bd7",
       "baseSHA": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
-      "localEvidence": "evidence/REVIEWED-LIGHT-SURFACES-LOCAL-BROWSER.json"
+      "localEvidence": "evidence/REVIEWED-LIGHT-SURFACES-LOCAL-BROWSER.json",
+      "validation": "Exact-head build, four trusted CI checks, native CF/Vercel previews, local+actual50-state browser checks and all220 affected screenshots personally reviewed per environment;38 controls and30 guest checks/four controls per environment. Daily120 isolated states and8 personally viewed captures. Not merged/publicly verified.",
+      "mergeSHA": "1dacd0ac9a986546b9480476a084b9049b56e036"
     },
     {
       "id": "THQ-065",
@@ -2591,11 +2608,20 @@
       "evidence": "findings/PUBLIC-PROFILE-NAME-WRAP.md",
       "beforeEvidence": "evidence/PROFILE-NAME-BOUNDS-20261028.json",
       "beforeImagesPersonallyViewed": 2,
-      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "state": "FIX_TESTED_DRAFT_CANDIDATE",
       "detectedAt": "2026-10-28T15:58:07.380265+00:00",
       "risk": "Presentation only; require requested viewport and text-range bounds five widths/two themes, short/long names, safe navigation and exact release gates.",
       "adsenseRelevance": "Mobile usability, not a claimed Google rejection reason.",
-      "releaseHold": "PR261 is the active draft candidate. All exact preview/protected merge/main/native/live verification must pass before closing its five findings or releasing later independent proposals."
+      "releaseHold": "PR261 is the active draft candidate. All exact preview/protected merge/main/native/live verification must pass before closing its five findings or releasing later independent proposals.",
+      "candidateSHA": "4cfb4d78c4fb4b6438b546c5acaa4d1c6aa9b40a",
+      "pr": 262,
+      "localEvidence": [
+        "evidence/FOLLOWUP-READABILITY-AFTER.json",
+        "evidence/FOLLOWUP-READABILITY-PERSONAL-20261029.json",
+        "evidence/FOLLOWUP-HOVER-SUPPLEMENT-20261029.json",
+        "evidence/FOLLOWUP-CANDIDATE-TREE-EQUIVALENCE-20261029.json"
+      ],
+      "limitation": "Isolated local synthetic profile fixtures/fallback fonts; actual exact-head native/preview/public checks pending. No live repair credit."
     },
     {
       "id": "THQ-066",
@@ -2608,11 +2634,18 @@
       "fix": "Add aria-expanded reflecting the existing openIndex expression. Preserve all content, handlers, animation, DOM and accordion state; no new dependency.",
       "evidence": "findings/HOMEPAGE-FAQ-EXPANDED-STATE.md",
       "beforeEvidence": "evidence/FOLLOWUP-CONTROLS-LIVE-BEFORE-20261028.json",
-      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "state": "FIX_PREPARED_INDEPENDENT_LOCAL_BRANCH",
       "detectedAt": "2026-10-28T16:44:32.291958+00:00",
       "risk": "Unapplied reversible presentation/semantics-only proposal; preserve protected data/calculation/auth behavior. All serial release gates required.",
       "adsenseRelevance": "User-facing readability/accessibility; no rejection cause asserted.",
-      "releaseHold": "PR261 is the active draft candidate. All exact preview/protected merge/main/native/live verification must pass before closing its five findings or releasing later independent proposals."
+      "releaseHold": "PR261 is the active draft candidate. All exact preview/protected merge/main/native/live verification must pass before closing its five findings or releasing later independent proposals.",
+      "candidateSHA": "f52803671f243c9b9488e07d7121dc51c91a3afb",
+      "pr": null,
+      "localEvidence": [
+        "evidence/SCOPE-FAQ-LOCAL-20261029.json",
+        "evidence/SCOPE-TITLE-COMPARISON-20261029.json"
+      ],
+      "limitation": "Separate local P3 candidate with same tested tree; no current native/preview/public verification. FAQ capture banner limitation explicit; title browser follow-up pending."
     },
     {
       "id": "THQ-067",
@@ -2625,11 +2658,20 @@
       "fix": "Light-only explicit original dark foreground on the two input elements. Preserve all input values, handlers, arithmetic, sliders, output, persistence and existing dark appearance.",
       "evidence": "findings/COMPOUND-INPUT-LIGHT-TEXT.md",
       "beforeEvidence": "evidence/FOLLOWUP-CONTROLS-LIVE-BEFORE-20261028.json",
-      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "state": "FIX_TESTED_DRAFT_CANDIDATE",
       "detectedAt": "2026-10-28T16:44:32.291958+00:00",
       "risk": "Unapplied reversible presentation/semantics-only proposal; preserve protected data/calculation/auth behavior. All serial release gates required.",
       "adsenseRelevance": "User-facing readability/accessibility; no rejection cause asserted.",
-      "releaseHold": "PR261 is the active draft candidate. All exact preview/protected merge/main/native/live verification must pass before closing its five findings or releasing later independent proposals."
+      "releaseHold": "PR261 is the active draft candidate. All exact preview/protected merge/main/native/live verification must pass before closing its five findings or releasing later independent proposals.",
+      "candidateSHA": "4cfb4d78c4fb4b6438b546c5acaa4d1c6aa9b40a",
+      "pr": 262,
+      "localEvidence": [
+        "evidence/FOLLOWUP-READABILITY-AFTER.json",
+        "evidence/FOLLOWUP-READABILITY-PERSONAL-20261029.json",
+        "evidence/FOLLOWUP-HOVER-SUPPLEMENT-20261029.json",
+        "evidence/FOLLOWUP-CANDIDATE-TREE-EQUIVALENCE-20261029.json"
+      ],
+      "limitation": "Isolated local synthetic profile fixtures/fallback fonts; actual exact-head native/preview/public checks pending. No live repair credit."
     },
     {
       "id": "THQ-068",
@@ -2642,11 +2684,20 @@
       "fix": "Scope a dark accent foreground to light-mode shared nav only; preserve accent background, normal foreground, dark palette, authentication/navigation handlers and portal menu behavior.",
       "evidence": "findings/HEADER-HOVER-LIGHT-CONTRAST.md",
       "beforeEvidence": "evidence/FOLLOWUP-CONTROLS-LIVE-BEFORE-20261028.json",
-      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "state": "FIX_TESTED_DRAFT_CANDIDATE",
       "detectedAt": "2026-10-28T16:44:32.291958+00:00",
       "risk": "Unapplied reversible presentation/semantics-only proposal; preserve protected data/calculation/auth behavior. All serial release gates required.",
       "adsenseRelevance": "User-facing readability/accessibility; no rejection cause asserted.",
-      "releaseHold": "PR261 is the active draft candidate. All exact preview/protected merge/main/native/live verification must pass before closing its five findings or releasing later independent proposals."
+      "releaseHold": "PR261 is the active draft candidate. All exact preview/protected merge/main/native/live verification must pass before closing its five findings or releasing later independent proposals.",
+      "candidateSHA": "4cfb4d78c4fb4b6438b546c5acaa4d1c6aa9b40a",
+      "pr": 262,
+      "localEvidence": [
+        "evidence/FOLLOWUP-READABILITY-AFTER.json",
+        "evidence/FOLLOWUP-READABILITY-PERSONAL-20261029.json",
+        "evidence/FOLLOWUP-HOVER-SUPPLEMENT-20261029.json",
+        "evidence/FOLLOWUP-CANDIDATE-TREE-EQUIVALENCE-20261029.json"
+      ],
+      "limitation": "Isolated local synthetic profile fixtures/fallback fonts; actual exact-head native/preview/public checks pending. No live repair credit."
     }
   ],
   "updatedAt": "2026-10-29T14:14:46.621298+00:00",

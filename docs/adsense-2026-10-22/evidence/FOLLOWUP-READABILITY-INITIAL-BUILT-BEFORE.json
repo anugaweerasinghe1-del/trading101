@@ -1,0 +1,177 @@
+{
+  "checkedAt": "2026-10-29T15:13:20.359Z",
+  "origin": "http://127.0.0.1:4186",
+  "sha": "de9c05d5d0ccb3951561c48df5a7a6e25c9e1bd7",
+  "stage": "before",
+  "outcome": "FAIL",
+  "failure": "Page readiness deadline",
+  "rows": [
+    {
+      "kind": "profile fixture wrapping",
+      "width": 360,
+      "theme": "light",
+      "username": "abdullazeezy72munnissy",
+      "viewport": 360,
+      "documentWidth": 360,
+      "headingBounds": {
+        "left": 16,
+        "right": 344
+      },
+      "textRects": [
+        {
+          "left": 16,
+          "right": 357.984375
+        }
+      ],
+      "wrap": "normal",
+      "fits": false,
+      "screenshot": "profile-observed-360-light.png"
+    },
+    {
+      "kind": "profile fixture wrapping",
+      "width": 360,
+      "theme": "light",
+      "username": "WWWWWWWWWWWWWWWWWWWW",
+      "viewport": 567,
+      "documentWidth": 567,
+      "headingBounds": {
+        "left": 16,
+        "right": 344
+      },
+      "textRects": [
+        {
+          "left": 16,
+          "right": 567.3125
+        }
+      ],
+      "wrap": "normal",
+      "fits": false,
+      "screenshot": "profile-maximal-360-light.png"
+    }
+  ],
+  "runtimeErrors": [],
+  "preventedExternalRequests": [
+    {
+      "method": "GET",
+      "host": "pagead2.googlesyndication.com",
+      "path": "/pagead/js/adsbygoogle.js",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "fonts.googleapis.com",
+      "path": "/css2",
+      "fixture": false
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "POST",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "pagead2.googlesyndication.com",
+      "path": "/pagead/js/adsbygoogle.js",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "fonts.googleapis.com",
+      "path": "/css2",
+      "fixture": false
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "POST",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "pagead2.googlesyndication.com",
+      "path": "/pagead/js/adsbygoogle.js",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "fonts.googleapis.com",
+      "path": "/css2",
+      "fixture": false
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    }
+  ],
+  "scope": "Local isolated presentation verification only. Every external request intercepted before connection and fulfilled locally. Public profile data are explicitly synthetic fixtures: observed long username shape plus20-wide-character supported signup maximum. No production account/record access or modification. Calculator defaults unchanged; inputs/sliders/calculation logic never changed. Five widths and two themes. Screenshot collection requires personal review; no native CI/preview/production credit.",
+  "limitation": "Harness waited for main h1 on guide, whose h1 is outside main; incorrect selector, not application failure. Corrected to document h1 and fresh rerun required."
+}

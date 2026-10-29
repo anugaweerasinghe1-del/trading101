@@ -1,5 +1,5 @@
 diff --git a/src/index.css b/src/index.css
-index 3fd1846494c373611ce124bd65e8f2a79cd8cbe9..008ee8a6edc9aad127723189cd57f77a8f49bc44 100644
+index 3fd1846..008ee8a 100644
 --- a/src/index.css
 +++ b/src/index.css
 @@ -154,6 +154,11 @@
@@ -15,7 +15,7 @@ index 3fd1846494c373611ce124bd65e8f2a79cd8cbe9..008ee8a6edc9aad127723189cd57f77a
      color: #064e3b;
    }
 diff --git a/src/pages/Daily.tsx b/src/pages/Daily.tsx
-index e870863d27063ea94f9ae8927e3584555855c8d0..826959b6bf4ac378a13997bb1b59d3b7d0a0c655 100644
+index e870863..ec7622a 100644
 --- a/src/pages/Daily.tsx
 +++ b/src/pages/Daily.tsx
 @@ -1,3 +1,4 @@
@@ -66,3 +66,12 @@ index e870863d27063ea94f9ae8927e3584555855c8d0..826959b6bf4ac378a13997bb1b59d3b7
                    "linear-gradient(140deg, hsl(0 0% 8% / 0.95) 0%, hsl(0 0% 4% / 0.98) 100%)",
                  backdropFilter: "blur(40px) saturate(180%)",
                  boxShadow:
+@@ -274,7 +286,7 @@ export default function Daily() {
+                           onClick={() => bonusPick === null && setBonusPick(idx)}
+                           disabled={bonusPick !== null}
+                           className={cn(
+-                            "w-full text-left p-3 rounded-xl border transition-all text-sm",
++                            "w-full text-left p-3 rounded-xl border transition-all text-sm text-foreground",
+                             !reveal && "bg-white/[0.03] border-white/[0.08] hover:border-amber-400/50 hover:bg-amber-400/[0.05] cursor-pointer",
+                             reveal && o.correct && "bg-success/10 border-success/50 text-foreground",
+                             reveal && picked && !o.correct && "bg-destructive/10 border-destructive/50 text-foreground",

@@ -1,0 +1,91 @@
+{
+  "checkedAt": "2026-10-29T15:21:19.799084+00:00",
+  "sha": "cb25c22e84933394442197f8f5bce4190ce1cfbf",
+  "outcome": "PASS_BOUNDED_ISOLATED_PRESENTATION",
+  "personallyViewedSheets": [
+    {
+      "name": "review-profiles-360-light.jpg",
+      "sha256": "d6f1f1f77d4d09021a6d7e5c4015dd2596962719227fbbab556cda7a0b771bde"
+    },
+    {
+      "name": "review-controls-360-light.jpg",
+      "sha256": "fbe102297e8203c519fd2f8aff27e2208143267a807f3f26375ee400538b32b9"
+    },
+    {
+      "name": "review-profiles-390-light.jpg",
+      "sha256": "db1bfc042462caa5834f71139f4561021c6860cf3c62907e05d67fef79c68cb6"
+    },
+    {
+      "name": "review-controls-390-light.jpg",
+      "sha256": "8395a4fcb14b5873cd3a0d9764e97343c1a30ade31ddceb642a1e64099c12896"
+    },
+    {
+      "name": "review-profiles-768-light.jpg",
+      "sha256": "baf19a3aac98bd6dad5f02c3a4690cb9c3f6987a4dd13e7cd3b8ed80b66a411b"
+    },
+    {
+      "name": "review-controls-768-light.jpg",
+      "sha256": "dda394e84d501962658266d1ea55c8472104f06fb703a4397f4fe0d17b82151a"
+    },
+    {
+      "name": "review-profiles-1280-light.jpg",
+      "sha256": "151011c18819ca38e563a11f2e24876dc8fd0a6eba8ccc428101842ccd3fcccf"
+    },
+    {
+      "name": "review-controls-1280-light.jpg",
+      "sha256": "b37f62b950406791eedbaac5c471baed5acbc3094f7d725634659c03f72fdb66"
+    },
+    {
+      "name": "review-profiles-1920-light.jpg",
+      "sha256": "142b62332813bcf9dcd597bac1d3c0dbc542ebaf29ac61dbe73656a2dcced167"
+    },
+    {
+      "name": "review-controls-1920-light.jpg",
+      "sha256": "834917f1ee8944c0e857a4641176af50e0626ef4c4900ca826ae9199ea7735a6"
+    },
+    {
+      "name": "review-profiles-360-dark.jpg",
+      "sha256": "8db923e01ecc5c51ffe54bb0015d0eaefdcbab9a884c2b0614cd77d2b1910f3a"
+    },
+    {
+      "name": "review-controls-360-dark.jpg",
+      "sha256": "987a72c5bfff2cedaaa60dfc29b27e1b3fc84ca93f66dfa0de4436e3556fb6d0"
+    },
+    {
+      "name": "review-profiles-390-dark.jpg",
+      "sha256": "9009a8677948529696ceb337068d8c1084648aef5fcf9d9d008e94a07215c3c6"
+    },
+    {
+      "name": "review-controls-390-dark.jpg",
+      "sha256": "bc6c51fe48be267b1dc58e1a3a47c1e14d79d4ca2772c961b46b796b602f9cf1"
+    },
+    {
+      "name": "review-profiles-768-dark.jpg",
+      "sha256": "00eaee2d002ba0c33d0d871bb1fa2ec7d9cd0f0358693d914b2b51f12a388e9a"
+    },
+    {
+      "name": "review-controls-768-dark.jpg",
+      "sha256": "6fe5119bafec19c0437a810f7b8cc321468c097092fc46cad00c6b5c946e6bab"
+    },
+    {
+      "name": "review-profiles-1280-dark.jpg",
+      "sha256": "b5c055d19f88a2481bda1f52f4083758b1f90793140866b25739fa325954e69c"
+    },
+    {
+      "name": "review-controls-1280-dark.jpg",
+      "sha256": "3be70b07828094c310becf2f20560c619f2c5a31961ddce8177a44497004c082"
+    },
+    {
+      "name": "review-profiles-1920-dark.jpg",
+      "sha256": "72cdcc56fcc88ef5b8bf00cd01913978fcbf2fe4bdd48280824d7cee56652dc8"
+    },
+    {
+      "name": "review-controls-1920-dark.jpg",
+      "sha256": "9cb350c5821e4df277a446e70239d846b0551ad73a83be7b003c09f528ef5487"
+    }
+  ],
+  "count": 20,
+  "rawCapturesRepresented": 80,
+  "assessment": "Personally viewed all20 comparative sheets. Profile wrapping and calculator light input values visibly corrected; darker palette preserved. Header after360light screenshot still appeared pale despite button computed dark color; all other light header views show dark text/icon. Settled actual SVG/hover supplement required before claiming bounded styling pass. All external requests blocked; fallback fonts used; no actual production profile/record/data action.32-character unsupported stress and initial harness selector failures are retained separately without accepted coverage. Fresh settled header supplement now passes all5 actual hovered/focused views including360; each personally viewed. No application change required after initial capture. Native CI/preview/public verification still required.",
+  "headerSupplement": "FOLLOWUP-HOVER-SUPPLEMENT-20261029.json"
+}

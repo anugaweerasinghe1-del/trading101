@@ -1,0 +1,213 @@
+{
+  "checkedAt": "2026-10-29T15:08:51.982Z",
+  "origin": "http://127.0.0.1:4184",
+  "sha": "cb25c22e84933394442197f8f5bce4190ce1cfbf",
+  "stage": "after",
+  "outcome": "FAIL",
+  "failure": "profile text bounds",
+  "rows": [
+    {
+      "kind": "profile fixture wrapping",
+      "width": 360,
+      "theme": "light",
+      "username": "abdullazeezy72munnissy",
+      "viewport": 360,
+      "documentWidth": 360,
+      "headingBounds": {
+        "left": 16,
+        "right": 344
+      },
+      "textRects": [
+        {
+          "left": 16,
+          "right": 342.046875
+        },
+        {
+          "left": 16,
+          "right": 31.9375
+        }
+      ],
+      "wrap": "anywhere",
+      "fits": true,
+      "screenshot": "profile-observed-360-light.png"
+    },
+    {
+      "kind": "profile fixture wrapping",
+      "width": 360,
+      "theme": "light",
+      "username": "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+      "viewport": 467,
+      "documentWidth": 467,
+      "headingBounds": {
+        "left": 16,
+        "right": 344
+      },
+      "textRects": [
+        {
+          "left": 16,
+          "right": 319.234375
+        },
+        {
+          "left": 16,
+          "right": 319.234375
+        },
+        {
+          "left": 16,
+          "right": 291.65625
+        }
+      ],
+      "wrap": "anywhere",
+      "fits": false,
+      "screenshot": "profile-maximal-360-light.png"
+    }
+  ],
+  "runtimeErrors": [],
+  "preventedExternalRequests": [
+    {
+      "method": "GET",
+      "host": "pagead2.googlesyndication.com",
+      "path": "/pagead/js/adsbygoogle.js",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "fonts.googleapis.com",
+      "path": "/css2",
+      "fixture": false
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "POST",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "POST",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "pagead2.googlesyndication.com",
+      "path": "/pagead/js/adsbygoogle.js",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "fonts.googleapis.com",
+      "path": "/css2",
+      "fixture": false
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/published_courses",
+      "fixture": false
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "GET",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/profiles",
+      "fixture": true
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "OPTIONS",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "POST",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    },
+    {
+      "method": "POST",
+      "host": "cbdktpjgczhthflspqjb.supabase.co",
+      "path": "/rest/v1/rpc/get_public_practice_members",
+      "fixture": true
+    }
+  ],
+  "scope": "Local isolated presentation verification only. Every external request intercepted before connection and fulfilled locally. Public profile data are explicitly synthetic fixtures: observed long username shape plus32-wide-character stress case. No production account/record access or modification. Calculator defaults unchanged; inputs/sliders/calculation logic never changed. Five widths and two themes. Screenshot collection requires personal review; no native CI/preview/production credit.",
+  "limitation": "Exploratory32-character stress fixture exceeds current signup20-character maximum. Preserve as out-of-contract diagnostic only, not supported-input validation, no new finding. Fresh20-character run supersedes."
+}
