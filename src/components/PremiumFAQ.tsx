@@ -82,6 +82,7 @@ export function PremiumFAQ() {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                aria-expanded={openIndex === index}
                 className="w-full text-left p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-primary/20 transition-all duration-300 group"
               >
                 <div className="flex items-center justify-between gap-4">

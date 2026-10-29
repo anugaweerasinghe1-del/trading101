@@ -881,7 +881,7 @@ export function generateAssetMetaTitle(asset: Asset): string {
     ? `${asset.name} (${asset.symbol})`
     : asset.symbol;
   const title = `${label} — Practice Data & Educational Guide | TradeHQ`;
-  return title.length > 60 ? `${label} Analysis | TradeHQ` : title;
+  return title.length > 60 ? `${label} Practice | TradeHQ` : title;
 }
 
 // Truncate meta description safely at 155 chars (no mid-sentence cuts)
