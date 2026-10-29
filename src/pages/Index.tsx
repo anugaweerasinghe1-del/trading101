@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Link } from "react-router-dom";
@@ -18,6 +19,15 @@ import { ContinueBanner } from "@/components/retention/ContinueBanner";
 import { WatchlistAlerts } from "@/components/retention/WatchlistAlerts";
 import { WeeklyRecap } from "@/components/retention/WeeklyRecap";
 import { AIAnswerBlock } from "@/components/seo/AIAnswerBlock";
+
+// These homepage sections keep fixed dark surfaces in both themes.
+const homeDarkPalette = {
+  "--foreground": "220 15% 93%",
+  "--card-foreground": "220 15% 93%",
+  "--muted-foreground": "220 14% 68%",
+  "--primary": "168 100% 50%",
+  color: "hsl(220 15% 93%)",
+} as CSSProperties;
 
 // ORIGINAL schemas — unchanged
 const homeFaqSchema = {
@@ -171,7 +181,9 @@ const Index = () => {
 
         <main id="main-content">
         {/* 1. Premium hero (above fold) */}
-        <PremiumHero />
+        <div style={homeDarkPalette}>
+          <PremiumHero />
+        </div>
 
         {/* Retention hooks — silent unless the user is returning */}
         <ContinueBanner />
@@ -189,7 +201,7 @@ const Index = () => {
             <div className="lg:col-span-2">
               <DailyChallengeCard />
             </div>
-            <div className="lg:col-span-3">
+            <div className="lg:col-span-3" style={homeDarkPalette}>
               <MarketPulse />
             </div>
           </div>
@@ -205,12 +217,14 @@ const Index = () => {
 
         {/* 3. Original homepage flow continues */}
         <SocialProofTicker />
+        <div style={homeDarkPalette}>
         <WhatIsTradeHQ />
         <HowItWorks />
         <PremiumFeatures />
         <TopAssetsGrid />
         <MarketTrends2026 />
         <PremiumFAQ />
+        </div>
 
         {/* Roadmap teaser — only linked from homepage + /learn (not navigation) */}
         <section className="container mx-auto px-6 max-w-7xl py-12">

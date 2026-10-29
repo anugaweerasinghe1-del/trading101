@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
@@ -19,6 +20,12 @@ import {
 import { DailyPractice } from "@/components/DailyPractice";
 import { practiceDate } from "../../supabase/functions/_shared/dailyPractice";
 import { cn } from "@/lib/utils";
+
+const dailyDarkPalette = {
+  "--foreground": "220 15% 93%",
+  "--muted-foreground": "220 14% 68%",
+  "--primary": "168 100% 50%",
+} as CSSProperties;
 
 export default function Daily() {
   const [deeperOpen, setDeeperOpen] = useState(false);
@@ -100,6 +107,7 @@ export default function Daily() {
                 </span>
               </div>
               <h1
+                data-daily-heading
                 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight leading-[1.05]"
                 style={{
                   background:
@@ -128,7 +136,9 @@ export default function Daily() {
                     key={i}
                     className="relative overflow-hidden p-4 md:p-5 rounded-2xl border border-white/[0.08] backdrop-blur-xl group transition-all hover:border-white/[0.15]"
                     style={{
-                      background: `linear-gradient(140deg, hsl(${s.glow} / 0.06) 0%, hsl(0 0% 6% / 0.7) 100%)`,
+                      ...dailyDarkPalette,
+                      backgroundColor: "hsl(0 0% 4%)",
+                      backgroundImage: `linear-gradient(140deg, hsl(${s.glow} / 0.06) 0%, hsl(0 0% 6% / 0.7) 100%)`,
                       boxShadow: s.active ? `0 8px 32px -12px hsl(${s.glow} / 0.3), inset 0 1px 0 0 hsl(0 0% 100% / 0.05)` : "inset 0 1px 0 0 hsl(0 0% 100% / 0.04)",
                     }}
                   >
@@ -144,7 +154,9 @@ export default function Daily() {
             <article
               className="relative overflow-hidden rounded-[28px] p-6 md:p-12 border border-white/[0.08] mb-6"
               style={{
-                background:
+                ...dailyDarkPalette,
+                backgroundColor: "hsl(0 0% 4%)",
+                backgroundImage:
                   "linear-gradient(140deg, hsl(0 0% 8% / 0.95) 0%, hsl(0 0% 4% / 0.98) 100%)",
                 backdropFilter: "blur(40px) saturate(180%)",
                 boxShadow:
@@ -274,7 +286,7 @@ export default function Daily() {
                           onClick={() => bonusPick === null && setBonusPick(idx)}
                           disabled={bonusPick !== null}
                           className={cn(
-                            "w-full text-left p-3 rounded-xl border transition-all text-sm",
+                            "w-full text-left p-3 rounded-xl border transition-all text-sm text-foreground",
                             !reveal && "bg-white/[0.03] border-white/[0.08] hover:border-amber-400/50 hover:bg-amber-400/[0.05] cursor-pointer",
                             reveal && o.correct && "bg-success/10 border-success/50 text-foreground",
                             reveal && picked && !o.correct && "bg-destructive/10 border-destructive/50 text-foreground",
