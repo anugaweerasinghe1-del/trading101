@@ -1,23 +1,19 @@
 {
-  "updatedAt": "2026-10-30T14:56:58.654494+00:00",
+  "updatedAt": "2026-10-30T15:06:31.312012+00:00",
   "latestMergedProductionSHA": "23a3be579eb49b5af2db33dc37434027040e2d92",
   "fullpageRoutesPersonallyViewed": 454,
   "publicInventoryRoutes": 454,
   "remainingDefaultVisualRoutes": 0,
   "confirmedFindings": 84,
-  "publiclyVerifiedRepairs": 83,
-  "activeCandidate": {
-    "pr": 267,
-    "mergeSHA": "23a3be579eb49b5af2db33dc37434027040e2d92",
-    "candidateSHA": "a15d20b4a65e7ea251634086eede2751d6cd8cff"
-  },
+  "publiclyVerifiedRepairs": 84,
+  "activeCandidate": null,
   "releaseGate": {
-    "active": true,
-    "reason": "PR267 exact-main/native/affected public/guest verification pending."
+    "active": false,
+    "reason": "No active release hold."
   },
   "publicProfileControls": "60profiles240states120focusedEnterLeaderboard/backflows PASS; all120initiallightimages personallyviewed across31sheets. No full accessibility certification.",
   "activeCollection": null,
-  "unresolved": "1 substantive findings remain until closed with release evidence; exact count follows FINDINGS.json. Remaining full-light scroll, sequential Tab, zoom, screenreader, primary sources, originality/value, daily conditional and regional ad/CMP/account stages prevent whole-audit completion.",
+  "unresolved": "0 substantive findings remain until closed with release evidence; exact count follows FINDINGS.json. Remaining full-light scroll, sequential Tab, zoom, screenreader, primary sources, originality/value, daily conditional and regional ad/CMP/account stages prevent whole-audit completion.",
   "historicalResumeNote": "Earlier checkpoint fields were stale; historical observations remain in their dated receipts and git history.",
   "terminalControls": "19assetterminals76light/darkmobile/desktopstates372focusedEnterFAQexpansions PASS; all38initiallightimages personallyviewed. No fullaccessibilitycertification.",
   "latestOwnerUpdate": "Owner clarified the repeated rejection only provides generic account-not-approved/few-more-tweaks wording and Sites section is inaccessible without resubmission. No further rejection detail is available; do not repeatedly request it. No inferred Google rejection cause.",
@@ -25,14 +21,8 @@
   "terminalSixthControls": "Evidence TERMINAL-SIXTH-SAFE-CONTROLS-20261028.json; freshness/navigationinitialfailurepreserved separately.",
   "terminalSeventhControls": "20 terminals,80 states,396 FAQ expansions,all40 initial light images personally viewed.",
   "terminalFinalControls": "27 terminals,108 states,536 FAQ expansions,all54 initial light images personally viewed.",
-  "latestFullyVerifiedProductionSHA": "4fad776ec28409929eb08f47e4734c229e79adb8",
+  "latestFullyVerifiedProductionSHA": "23a3be579eb49b5af2db33dc37434027040e2d92",
   "fullLightRoutesPersonallyViewed": 56,
   "remainingFullLightRoutes": 398,
-  "currentFindingStates": [
-    {
-      "id": "THQ-079",
-      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
-      "scope": "Course lesson source and onward links have low contrast in light mode"
-    }
-  ]
+  "currentFindingStates": []
 }

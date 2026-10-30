@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-10-30T15:01:50.066122+00:00",
+  "outcome": "BOUNDED_STATIC_MODEL_COMPARISON_COMPLETE",
+  "candidateSHA": "a15d20b4a65e7ea251634086eede2751d6cd8cff",
+  "verifiedReferenceMainSHA": "4fad776ec28409929eb08f47e4734c229e79adb8",
+  "mergedMainObserved": "23a3be579eb49b5af2db33dc37434027040e2d92",
+  "filesActuallyRead": [
+    {
+      "file": "src/lib/portfolio.ts",
+      "sha256": "637fb6a0b173fdf00432d4fb4def324aec6bbe293c6c3333f8b6033ec8eaef50",
+      "unchangedFromVerifiedMain": true
+    },
+    {
+      "file": "supabase/migrations/20261007113853_server_recorded_practice_scores.sql",
+      "sha256": "5cdb429720ea4ffad86cec2f29c4b29c0dc27943e913442a2c970e0d7bb94a59",
+      "unchangedFromVerifiedMain": true
+    }
+  ],
+  "observations": [
+    "Guest executeLocalTrade computes price times quantity notional, fee0.001 times notional, checks full purchase debit and held units, and credits sale notional minus fee.",
+    "Signed-in executeTrade routes through record_practice_trade and fails without local fallback on server error. Repository migration record_trade computes the same0.001 notional fee, purchase affordability and sale-held-unit constraints with quote or fixed simulator fallback.",
+    "Both source paths support the lesson fee assumption as repository-source evidence; arithmetic cannot prove a particular live quote/fill or deployed database function.",
+    "No trade function was invoked, portfolio initialized, user storage reset, account/order submitted or SQL run."
+  ],
+  "lessonScopes": [
+    "/courses/cryptocurrency-price-feeds-and-valuation/portfolio-rebalancing-and-cash-drag",
+    "/courses/diversification-and-position-sizing/foundations-of-asset-allocation",
+    "/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash"
+  ],
+  "limitations": "Read-only static source comparison, not deployed database introspection, executable-order testing or a financial-engine security/correctness certification. Exact targets assume unchanged prices and supported unit precision. A separate signed-in/live-schema check remains outside this receipt."
+}

@@ -2911,6 +2911,11 @@
         "officialArticlesActuallyRead": 2,
         "evidence": "evidence/CRYPTO-REBALANCE-PRIMARY-COMPARISON-20261030.json",
         "wholePageSourceReviewComplete": false
+      },
+      "boundedImplementationSourceComparison": {
+        "status": "BOUNDED_STATIC_MODEL_COMPARISON_COMPLETE",
+        "evidence": "evidence/REBALANCE-MODEL-SOURCE-COMPARISON-20261030.json",
+        "liveOrderOrSchemaVerification": false
       }
     },
     {
@@ -3148,7 +3153,7 @@
         "THQ-079"
       ],
       "findingStates": {
-        "THQ-079": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
+        "THQ-079": "PUBLICLY_VERIFIED"
       },
       "structuredQuizReview": {
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
@@ -3181,6 +3186,11 @@
         "assessment": "Full lesson including affordable cash/fee sequence,40/40/20 fee-aware10008sale/9992purchase illustration,60/40 worksheet10000/.9994, changed quote/rounding cautions, quizzes/options, sources/navigation/disclosure and entire footer personally viewed.",
         "evidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json",
         "wholePageReviewComplete": false
+      },
+      "boundedImplementationSourceComparison": {
+        "status": "BOUNDED_STATIC_MODEL_COMPARISON_COMPLETE",
+        "evidence": "evidence/REBALANCE-MODEL-SOURCE-COMPARISON-20261030.json",
+        "liveOrderOrSchemaVerification": false
       }
     },
     {
@@ -3278,7 +3288,7 @@
         "THQ-079"
       ],
       "findingStates": {
-        "THQ-079": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
+        "THQ-079": "PUBLICLY_VERIFIED"
       },
       "structuredQuizReview": {
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
@@ -3311,6 +3321,11 @@
         "assessment": "Full lesson, title/byline/hero, cash-inclusive weights, units/notional, execution limits, pre-fee25k/100shares versus fee-aware24993.7516/99.975006shares example, four unselected quiz groups, source list/navigation/disclosure and entire footer personally viewed.",
         "evidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json",
         "wholePageReviewComplete": false
+      },
+      "boundedImplementationSourceComparison": {
+        "status": "BOUNDED_STATIC_MODEL_COMPARISON_COMPLETE",
+        "evidence": "evidence/REBALANCE-MODEL-SOURCE-COMPARISON-20261030.json",
+        "liveOrderOrSchemaVerification": false
       }
     },
     {
@@ -59706,5 +59721,5 @@
     "individualActualRenderedProseComparisonsWithPreviouslyFullyReadBaseline": 85,
     "scope": "441 main texts/states covered, not441 fully completed page/source/control/human-visual reviews. See TERMINAL-TEMPLATE-COMPARISONS.json for raw texts and deltas."
   },
-  "updatedAt": "2026-10-30T14:56:58.654494+00:00"
+  "updatedAt": "2026-10-30T15:06:31.312012+00:00"
 }

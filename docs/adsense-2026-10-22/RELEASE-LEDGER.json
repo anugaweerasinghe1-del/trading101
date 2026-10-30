@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T14:56:58.654494+00:00",
+  "updatedAt": "2026-10-30T15:06:31.312012+00:00",
   "releases": [
     {
       "finding": "THQ-001",
@@ -3225,32 +3225,82 @@
         "safeControls": 4,
         "productionImagesPersonallyViewed": 60
       }
+    },
+    {
+      "pr": 267,
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/267",
+      "candidateSHA": "a15d20b4a65e7ea251634086eede2751d6cd8cff",
+      "mergeSHA": "23a3be579eb49b5af2db33dc37434027040e2d92",
+      "state": "PUBLICLY_VERIFIED",
+      "findings": [
+        "THQ-079"
+      ],
+      "production": {
+        "checkedAt": "2026-10-30T15:05:46.602478+00:00",
+        "mergeSHA": "23a3be579eb49b5af2db33dc37434027040e2d92",
+        "outcome": "PASS",
+        "sourceJob": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/41076072084/job/124137222159",
+        "scope": "Authenticated native provider reads by trusted exact-main release-readiness job. Both production deployments match the immutable merge SHA. No provider mutations.",
+        "cloudflare": {
+          "observedAt": "2026-10-30T15:05:22.431Z",
+          "project": "tradehq-preview",
+          "activeProduction": {
+            "id": "61c1d823-0109-4e03-87bc-6091933bb338",
+            "sha": "23a3be579eb49b5af2db33dc37434027040e2d92",
+            "environment": "production",
+            "branch": "main",
+            "status": "success",
+            "createdAt": "2026-10-30T14:56:14.776223Z"
+          }
+        },
+        "vercel": {
+          "schema": "tradehq-vercel-production-evidence-v1",
+          "deploymentId": "dpl_GUGdcY3LGMvNNkpPvRWUYzg79zcb",
+          "teamId": "team_fjZ5ggg0P43MsYFSIHbeHAAO",
+          "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+          "commitSha": "23a3be579eb49b5af2db33dc37434027040e2d92",
+          "target": "production",
+          "state": "READY",
+          "activeAlias": "thetradehq.com",
+          "createdAt": 1793372175641,
+          "observedAt": 1793372722431,
+          "requests": 2,
+          "authorization": {
+            "merge": false,
+            "productionRelease": false
+          }
+        }
+      },
+      "mainCIEvidence": "evidence/PR267-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR267-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR267-GUEST-SMOKE.json"
+      ],
+      "liveRecheck": {
+        "outcome": "PASS",
+        "affectedStates": [
+          40
+        ],
+        "guestStates": 30,
+        "safeControls": 4,
+        "productionImagesPersonallyViewed": 40
+      }
     }
   ],
-  "nextCandidate": {
-    "pr": 267,
-    "candidateSHA": "a15d20b4a65e7ea251634086eede2751d6cd8cff",
-    "baseSHA": "4fad776ec28409929eb08f47e4734c229e79adb8",
-    "state": "PREPARED_NOT_MERGED",
-    "scope": "Three course lesson source/onward link colour class sites; source/navigation/quiz/data/progress behavior unchanged."
-  },
+  "nextCandidate": null,
   "latestResumeProviderEvidence": "evidence/FINAL-WORKSPACE-ACCESS-20261023.json",
   "latestGitHubState": "evidence/FINAL-GITHUB-STATE-20261023.json",
-  "latestGitHubProviderBindingEvidence": "evidence/PR266-PRODUCTION-PROVIDERS.json",
-  "latestMainValidationEvidence": "evidence/PR266-MAIN-CI.json",
-  "latestVerifiedProductionSHA": "4fad776ec28409929eb08f47e4734c229e79adb8",
-  "remainingConfirmedSiteFixes": 1,
+  "latestGitHubProviderBindingEvidence": "evidence/PR267-PRODUCTION-PROVIDERS.json",
+  "latestMainValidationEvidence": "evidence/PR267-MAIN-CI.json",
+  "latestVerifiedProductionSHA": "23a3be579eb49b5af2db33dc37434027040e2d92",
+  "remainingConfirmedSiteFixes": 0,
   "exhaustiveAuditComplete": false,
-  "remainingKnownSafeFindings": 1,
-  "pendingReleaseVerification": {
-    "pr": 267,
-    "mergeSHA": "23a3be579eb49b5af2db33dc37434027040e2d92",
-    "candidateSHA": "a15d20b4a65e7ea251634086eede2751d6cd8cff"
-  },
+  "remainingKnownSafeFindings": 0,
+  "pendingReleaseVerification": null,
   "protectedPublishedContentFinding": "THQ035/036 published revision2 independently verified; credential and approval blockers superseded by owner-approved PR238 operation. No new production writes in this continuation.",
   "operationalHold": {
-    "active": true,
-    "reason": "PR267 exact-main/native/affected public/guest verification pending."
+    "active": false,
+    "reason": "No active release hold."
   },
   "latestObservedMainSHA": "23a3be579eb49b5af2db33dc37434027040e2d92",
   "historicalCandidateRecords": {

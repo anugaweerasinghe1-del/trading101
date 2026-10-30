@@ -1,0 +1,113 @@
+{
+  "checkedAt": "2026-10-30T15:03:50.708320+00:00",
+  "sha": "23a3be579eb49b5af2db33dc37434027040e2d92",
+  "origin": "https://www.thetradehq.com",
+  "outcome": "PASS_BOUNDED_COURSE_LINK_CONTRAST",
+  "count": 10,
+  "rawScreenshotsRepresented": 40,
+  "minimumLinkContrast": 7.172243113417228,
+  "contrastObservations": 120,
+  "personallyViewedSheets": [
+    {
+      "name": "review-360-light.jpg",
+      "sourceCaptures": [
+        "next-360-light-rest.png",
+        "next-360-light-hover.png",
+        "back-360-light-rest.png",
+        "back-360-light-hover.png"
+      ],
+      "sha256": "d2bc11e6d21ec6ff46ab60e8feec3180e805cd6e84d6fc2272b5a6706a61fc4c"
+    },
+    {
+      "name": "review-390-light.jpg",
+      "sourceCaptures": [
+        "next-390-light-rest.png",
+        "next-390-light-hover.png",
+        "back-390-light-rest.png",
+        "back-390-light-hover.png"
+      ],
+      "sha256": "42bc991541679293d4982288e96a567f915b2060f3be9d6b824fb24aff263bcc"
+    },
+    {
+      "name": "review-768-light.jpg",
+      "sourceCaptures": [
+        "next-768-light-rest.png",
+        "next-768-light-hover.png",
+        "back-768-light-rest.png",
+        "back-768-light-hover.png"
+      ],
+      "sha256": "33723cc2bba1ece8d383ba7650f1dc7e32a85140ba92531c1db9fb6fcc595ca8"
+    },
+    {
+      "name": "review-1280-light.jpg",
+      "sourceCaptures": [
+        "next-1280-light-rest.png",
+        "next-1280-light-hover.png",
+        "back-1280-light-rest.png",
+        "back-1280-light-hover.png"
+      ],
+      "sha256": "bfb97b83cee26eb75bea142d738877c9f39a028f008313856b81002e42a8e68f"
+    },
+    {
+      "name": "review-1920-light.jpg",
+      "sourceCaptures": [
+        "next-1920-light-rest.png",
+        "next-1920-light-hover.png",
+        "back-1920-light-rest.png",
+        "back-1920-light-hover.png"
+      ],
+      "sha256": "b94fb92b4484c94beba4f8fe5457e259c9465dbc578e2902e01fa294ac729398"
+    },
+    {
+      "name": "review-360-dark.jpg",
+      "sourceCaptures": [
+        "next-360-dark-rest.png",
+        "next-360-dark-hover.png",
+        "back-360-dark-rest.png",
+        "back-360-dark-hover.png"
+      ],
+      "sha256": "0fc9d66f1afffe58f6d69b9714c85861857c35ee5d0d18a045b27bc679948cba"
+    },
+    {
+      "name": "review-390-dark.jpg",
+      "sourceCaptures": [
+        "next-390-dark-rest.png",
+        "next-390-dark-hover.png",
+        "back-390-dark-rest.png",
+        "back-390-dark-hover.png"
+      ],
+      "sha256": "93d5391a2e3ae4e513d0f959ec11cb8cea91b608e6dca5dba5da586801d533d8"
+    },
+    {
+      "name": "review-768-dark.jpg",
+      "sourceCaptures": [
+        "next-768-dark-rest.png",
+        "next-768-dark-hover.png",
+        "back-768-dark-rest.png",
+        "back-768-dark-hover.png"
+      ],
+      "sha256": "8110d5f512d09b4d25b9a6df85a7761ebfe1c7b230703ae294b98042830f360b"
+    },
+    {
+      "name": "review-1280-dark.jpg",
+      "sourceCaptures": [
+        "next-1280-dark-rest.png",
+        "next-1280-dark-hover.png",
+        "back-1280-dark-rest.png",
+        "back-1280-dark-hover.png"
+      ],
+      "sha256": "70bf3bdf03436c6de7d96591bc92afe5d02864f4c59d70a7da8167b7e45b3a20"
+    },
+    {
+      "name": "review-1920-dark.jpg",
+      "sourceCaptures": [
+        "next-1920-dark-rest.png",
+        "next-1920-dark-hover.png",
+        "back-1920-dark-rest.png",
+        "back-1920-dark-hover.png"
+      ],
+      "sha256": "ce140fe2a531ccad5ee9005806a0be6278c7a2672dda98376e3286ca11fcf4b3"
+    }
+  ],
+  "scope": "All10 sheets/40captures personally viewed. Source links and next/back labels legible at five widths/both real themes. Actual rest and pointer-hover computed foregrounds observed; combined screenshot after source-section recentering represents source/navigation layout, not every individual hovered link. No link activation or quiz completion. Template-bounded coverage of first/last published allocation lesson, not every course route or full-page accessibility/source/keyboard/zoom/screenreader certification."
+}

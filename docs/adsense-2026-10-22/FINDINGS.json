@@ -3156,7 +3156,7 @@
         "https://www.thetradehq.com/courses/diversification-and-position-sizing/foundations-of-asset-allocation"
       ],
       "affectedScope": "Shared CourseLesson source and next/back link classes, including built-in and published course lessons; observed on first and last allocation lessons.",
-      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+      "state": "PUBLICLY_VERIFIED",
       "evidence": "findings/COURSE-LESSON-LINK-CONTRAST.md",
       "reproductionEvidence": "evidence/COURSE-LINK-CONTRAST-BEFORE-20261030.json",
       "actualBehavior": "14px400-weight source and next/back links use emerald400/300 over247 light surfaces. Actual rest/hover observations range1.42281\u20131.79697:1; under4.5:1 normal-text threshold.",
@@ -3164,24 +3164,32 @@
       "proposedFix": "Add light-only emerald800 foreground and emerald900 hover to three existing class sites, preserving dark classes and all destinations, text and handlers.",
       "risk": "Low, reversible presentation-only foreground classes. No course content/answers/progress/financial/account/record behavior change.",
       "candidateSHA": "a15d20b4a65e7ea251634086eede2751d6cd8cff",
-      "releaseHold": "All PR267 production gates pending.",
+      "releaseHold": null,
       "pr": 267,
       "mergeSHA": "23a3be579eb49b5af2db33dc37434027040e2d92",
       "localEvidence": [
         "evidence/COURSE-LINK-CONTRAST-LOCAL-20261030.json",
         "evidence/COURSE-LINK-CONTRAST-LOCAL-PERSONAL-20261030.json"
-      ]
+      ],
+      "productionEvidence": "evidence/PR267-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR267-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR267-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR267-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 40,
+      "liveRecheck": "PASS exact merged production: [40] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
     }
   ],
-  "updatedAt": "2026-10-30T14:44:08.802534+00:00",
+  "updatedAt": "2026-10-30T15:06:31.146394+00:00",
   "counts": {
     "siteFindings": 84,
     "P2": 46,
     "P3": 38,
-    "publiclyRepaired": 83,
+    "publiclyRepaired": 84,
     "preparedNotMerged": 0,
     "separateOperationalBlockers": 0,
-    "mergedAwaitingProductionVerification": 1,
+    "mergedAwaitingProductionVerification": 0,
     "protectedUnapprovedRecordFixes": 0,
     "approvedPublishedRecordFixesBlockedOnCredential": 0,
     "mergedFallbackAwaitingProductionVerification": 0
