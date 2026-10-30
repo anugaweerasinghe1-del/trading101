@@ -1,6 +1,6 @@
 # TradeHQ ongoing independent audit
 
-**454 public routes discovered; all 454 main bodies read.** Default full-page captures at all five requested widths have been personally viewed for **454/454** routes; full light-mode scrolls for **56/454**. These are inspection counts, not proof that every layout passes. The long public username overflow has since been repaired and verified in PR262. Whole-audit review remains incomplete.
+**454 public routes discovered; all 454 main bodies read.** Default full-page captures at all five requested widths have been personally viewed for **454/454** routes; full light-mode scrolls for **71/454**. These are inspection counts, not proof that every layout passes. The long public username overflow has since been repaired and verified in PR262. Whole-audit review remains incomplete.
 
 **84 confirmed site findings; 84 repairs publicly verified; 0 unresolved.** Last fully verified production: `23a3be579eb49b5af2db33dc37434027040e2d92`. Current merged main: `23a3be579eb49b5af2db33dc37434027040e2d92` (see release ledger). PR267 completed six exact-main checks, authenticated Cloudflare/Vercel production verification,[40] affected states with40 accepted captures personally viewed, and30 guest states/four safe controls. Truthful audit User-Agent identification resolved Cloudflare1010.
 

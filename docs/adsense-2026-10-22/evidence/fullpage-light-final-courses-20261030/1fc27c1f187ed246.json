@@ -1,0 +1,401 @@
+{
+  "path": "/courses/trading-psychology-mastery/handling-drawdowns",
+  "sha": "23a3be579eb49b5af2db33dc37434027040e2d92",
+  "origin": "https://www.thetradehq.com",
+  "capturedAt": "2026-10-30T15:12:07.987Z",
+  "outcome": "COLLECTED_NOT_HUMAN_REVIEWED",
+  "widths": [
+    {
+      "width": 360,
+      "height": 800,
+      "path": "/courses/trading-psychology-mastery/handling-drawdowns",
+      "theme": "light",
+      "mainText": "Home\nCourses\nTrading Decisions and Behaviour\nUnderstanding Drawdowns in a Simulation\nBeginner\n·\nLesson 5 of 5\n·\n8 min read\nUnderstanding Drawdowns in a Simulation\n\nCalculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions.\n\nBy Anuga Weerasinghe\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nSource check: 2026-10-18. Checked arithmetic and removed unsupported physical-health and professional-behaviour claims.\n\nQUICK ANSWER\nUnderstanding Drawdowns in a Simulation?\n\nCalculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions. Drawdown is measured from a previous peak, with a clear valuation basis. Recovering from a decline requires calculating the gain on the reduced base.\n\nWhat drawdown actually measures\n\nA drawdown compares a portfolio's value with an earlier peak, using the same measurement basis. If an illustrative virtual portfolio peaks at $100,000 and later marks at $90,000, the peak-to-trough drawdown is ($100,000 - $90,000) / $100,000 = 10%. This number describes a past decline, not the probability of a future loss.\n\nA different denominator for recovery\n\nMoving from $90,000 back to $100,000 requires $10,000 / $90,000, or approximately 11.11% growth, not 10%. A 20% decline from $100,000 to $80,000 requires a 25% gain to return to the same previous peak. This asymmetry is simple arithmetic; it does not prescribe a trading strategy.\n\nThe effect of sizing assumptions\n\nThe same assumed asset movement can produce different portfolio-level changes depending on allocation. In a fee-free illustration, a 20% drop in an asset that is 10% of a $100,000 portfolio contributes approximately a 2% portfolio decline if everything else stays constant. Concentration, other holdings, fees and timing can change the observed result.\n\nSequence and measurement matter\n\nDrawdown depends on the path of account values, not only the first and final price. Specify whether account values include fees, deposits or withdrawals, and whether valuations are current or delayed. A sequence built from generated practice candles is not an observed market drawdown.\n\nTesting changes to a fictional rule\n\nA learner may compare two explicitly hypothetical size schedules after a recorded decline. Define each rule before looking at its result; document any change so a revised rule is not mixed with the original sample. No fixed 10%, 20% or other threshold is universally suitable.\n\nScope of this lesson\n\nA portfolio decline cannot be used to diagnose stress, sleep, hormones or mental-health conditions. This lesson teaches virtual portfolio arithmetic and uncertainty, not healthcare guidance or advice about recovering real financial losses.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKEY TAKEAWAYS\nDrawdown is measured from a previous peak, with a clear valuation basis.\nRecovering from a decline requires calculating the gain on the reduced base.\nAllocation, costs and price sequence affect portfolio-level outcomes.\nNo particular drawdown threshold or response is universally validated.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. A virtual portfolio falls from $100,000 to $90,000. Its peak-to-trough drawdown is:\n5%10%11.11%90%\n2. How much growth returns $90,000 to $100,000?\n10%1%20%About 11.11%\n3. What determines portfolio impact from an asset loss?\nAllocation and the asset's movement, among other factorsOnly the tickerOnly the price per unitThe lesson completion badge\n4. Can a drawdown percentage diagnose a health condition?\nYesOnly after 30 tradesNoOnly for experienced traders\nSubmit & complete lesson\nAnswer notes\nA virtual portfolio falls from $100,000 to $90,000. Its peak-to-trough drawdown is: Options: 5%; 10%; 11.11%; 90%. Correct answer: 10%. Why: $10,000 divided by the $100,000 peak is 10%.\nHow much growth returns $90,000 to $100,000? Options: 10%; 1%; 20%; About 11.11%. Correct answer: About 11.11%. Why: The $10,000 recovery is divided by the lower $90,000 balance.\nWhat determines portfolio impact from an asset loss? Options: Allocation and the asset's movement, among other factors; Only the ticker; Only the price per unit; The lesson completion badge. Correct answer: Allocation and the asset's movement, among other factors. Why: Position weight affects the portfolio-level change.\nCan a drawdown percentage diagnose a health condition? Options: Yes; Only after 30 trades; No; Only for experienced traders. Correct answer: No. Why: A finance calculation is not a medical assessment.\nSOURCES & FURTHER READING\nSEC Investor.gov — risk\nSEC Investor.gov — past-performance limitations\nOptional Checklists for Practice Sessions\nBack to track\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nTrading Decisions and Behaviour\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "Understanding Drawdowns in a Simulation — Trading Decisions and Behaviour | TradeHQ",
+      "heading": "Understanding Drawdowns in a Simulation",
+      "supplementaryNotes": [
+        {
+          "path": "/courses/trading-psychology-mastery/handling-drawdowns",
+          "text": "Home\nCourses\nTrading Decisions and Behaviour\nUnderstanding Drawdowns in a Simulation\nBeginner\n·\nLesson 5 of 5\n·\n8 min read\nUnderstanding Drawdowns in a Simulation\n\nCalculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions.\n\nBy Anuga Weerasinghe\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nSource check: 2026-10-18. Checked arithmetic and removed unsupported physical-health and professional-behaviour claims.\n\nQUICK ANSWER\nUnderstanding Drawdowns in a Simulation?\n\nCalculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions. Drawdown is measured from a previous peak, with a clear valuation basis. Recovering from a decline requires calculating the gain on the reduced base.\n\nWhat drawdown actually measures\n\nA drawdown compares a portfolio's value with an earlier peak, using the same measurement basis. If an illustrative virtual portfolio peaks at $100,000 and later marks at $90,000, the peak-to-trough drawdown is ($100,000 - $90,000) / $100,000 = 10%. This number describes a past decline, not the probability of a future loss.\n\nA different denominator for recovery\n\nMoving from $90,000 back to $100,000 requires $10,000 / $90,000, or approximately 11.11% growth, not 10%. A 20% decline from $100,000 to $80,000 requires a 25% gain to return to the same previous peak. This asymmetry is simple arithmetic; it does not prescribe a trading strategy.\n\nThe effect of sizing assumptions\n\nThe same assumed asset movement can produce different portfolio-level changes depending on allocation. In a fee-free illustration, a 20% drop in an asset that is 10% of a $100,000 portfolio contributes approximately a 2% portfolio decline if everything else stays constant. Concentration, other holdings, fees and timing can change the observed result.\n\nSequence and measurement matter\n\nDrawdown depends on the path of account values, not only the first and final price. Specify whether account values include fees, deposits or withdrawals, and whether valuations are current or delayed. A sequence built from generated practice candles is not an observed market drawdown.\n\nTesting changes to a fictional rule\n\nA learner may compare two explicitly hypothetical size schedules after a recorded decline. Define each rule before looking at its result; document any change so a revised rule is not mixed with the original sample. No fixed 10%, 20% or other threshold is universally suitable.\n\nScope of this lesson\n\nA portfolio decline cannot be used to diagnose stress, sleep, hormones or mental-health conditions. This lesson teaches virtual portfolio arithmetic and uncertainty, not healthcare guidance or advice about recovering real financial losses.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKEY TAKEAWAYS\nDrawdown is measured from a previous peak, with a clear valuation basis.\nRecovering from a decline requires calculating the gain on the reduced base.\nAllocation, costs and price sequence affect portfolio-level outcomes.\nNo particular drawdown threshold or response is universally validated.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. A virtual portfolio falls from $100,000 to $90,000. Its peak-to-trough drawdown is:\n5%10%11.11%90%\n2. How much growth returns $90,000 to $100,000?\n10%1%20%About 11.11%\n3. What determines portfolio impact from an asset loss?\nAllocation and the asset's movement, among other factorsOnly the tickerOnly the price per unitThe lesson completion badge\n4. Can a drawdown percentage diagnose a health condition?\nYesOnly after 30 tradesNoOnly for experienced traders\nSubmit & complete lesson\nAnswer notes\nA virtual portfolio falls from $100,000 to $90,000. Its peak-to-trough drawdown is: Options: 5%; 10%; 11.11%; 90%. Correct answer: 10%. Why: $10,000 divided by the $100,000 peak is 10%.\nHow much growth returns $90,000 to $100,000? Options: 10%; 1%; 20%; About 11.11%. Correct answer: About 11.11%. Why: The $10,000 recovery is divided by the lower $90,000 balance.\nWhat determines portfolio impact from an asset loss? Options: Allocation and the asset's movement, among other factors; Only the ticker; Only the price per unit; The lesson completion badge. Correct answer: Allocation and the asset's movement, among other factors. Why: Position weight affects the portfolio-level change.\nCan a drawdown percentage diagnose a health condition? Options: Yes; Only after 30 trades; No; Only for experienced traders. Correct answer: No. Why: A finance calculation is not a medical assessment.\nSOURCES & FURTHER READING\nSEC Investor.gov — risk\nSEC Investor.gov — past-performance limitations\nOptional Checklists for Practice Sessions\nBack to track\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nTrading Decisions and Behaviour\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 360,
+      "scrollHeight": 9803,
+      "viewportWidth": 360,
+      "canonical": "https://www.thetradehq.com/courses/trading-psychology-mastery/handling-drawdowns",
+      "images": [
+        {
+          "alt": "Understanding Drawdowns in a Simulation — illustration",
+          "complete": true,
+          "naturalWidth": 1200,
+          "source": "https://www.thetradehq.com/assets/psychology-hero-BjxsBmgY.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "1fc27c1f187ed246-360-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "1fc27c1f187ed246-360-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "1fc27c1f187ed246-360-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "1fc27c1f187ed246-360-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "1fc27c1f187ed246-360-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "1fc27c1f187ed246-360-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "1fc27c1f187ed246-360-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "1fc27c1f187ed246-360-07.png"
+        },
+        {
+          "y": 5440,
+          "screenshot": "1fc27c1f187ed246-360-08.png"
+        },
+        {
+          "y": 6120,
+          "screenshot": "1fc27c1f187ed246-360-09.png"
+        },
+        {
+          "y": 6800,
+          "screenshot": "1fc27c1f187ed246-360-10.png"
+        },
+        {
+          "y": 7480,
+          "screenshot": "1fc27c1f187ed246-360-11.png"
+        },
+        {
+          "y": 8160,
+          "screenshot": "1fc27c1f187ed246-360-12.png"
+        },
+        {
+          "y": 8840,
+          "screenshot": "1fc27c1f187ed246-360-13.png"
+        },
+        {
+          "y": 9003,
+          "screenshot": "1fc27c1f187ed246-360-14.png"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "path": "/courses/trading-psychology-mastery/handling-drawdowns",
+      "theme": "light",
+      "mainText": "Home\nCourses\nTrading Decisions and Behaviour\nUnderstanding Drawdowns in a Simulation\nBeginner\n·\nLesson 5 of 5\n·\n8 min read\nUnderstanding Drawdowns in a Simulation\n\nCalculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions.\n\nBy Anuga Weerasinghe\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nSource check: 2026-10-18. Checked arithmetic and removed unsupported physical-health and professional-behaviour claims.\n\nQUICK ANSWER\nUnderstanding Drawdowns in a Simulation?\n\nCalculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions. Drawdown is measured from a previous peak, with a clear valuation basis. Recovering from a decline requires calculating the gain on the reduced base.\n\nWhat drawdown actually measures\n\nA drawdown compares a portfolio's value with an earlier peak, using the same measurement basis. If an illustrative virtual portfolio peaks at $100,000 and later marks at $90,000, the peak-to-trough drawdown is ($100,000 - $90,000) / $100,000 = 10%. This number describes a past decline, not the probability of a future loss.\n\nA different denominator for recovery\n\nMoving from $90,000 back to $100,000 requires $10,000 / $90,000, or approximately 11.11% growth, not 10%. A 20% decline from $100,000 to $80,000 requires a 25% gain to return to the same previous peak. This asymmetry is simple arithmetic; it does not prescribe a trading strategy.\n\nThe effect of sizing assumptions\n\nThe same assumed asset movement can produce different portfolio-level changes depending on allocation. In a fee-free illustration, a 20% drop in an asset that is 10% of a $100,000 portfolio contributes approximately a 2% portfolio decline if everything else stays constant. Concentration, other holdings, fees and timing can change the observed result.\n\nSequence and measurement matter\n\nDrawdown depends on the path of account values, not only the first and final price. Specify whether account values include fees, deposits or withdrawals, and whether valuations are current or delayed. A sequence built from generated practice candles is not an observed market drawdown.\n\nTesting changes to a fictional rule\n\nA learner may compare two explicitly hypothetical size schedules after a recorded decline. Define each rule before looking at its result; document any change so a revised rule is not mixed with the original sample. No fixed 10%, 20% or other threshold is universally suitable.\n\nScope of this lesson\n\nA portfolio decline cannot be used to diagnose stress, sleep, hormones or mental-health conditions. This lesson teaches virtual portfolio arithmetic and uncertainty, not healthcare guidance or advice about recovering real financial losses.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKEY TAKEAWAYS\nDrawdown is measured from a previous peak, with a clear valuation basis.\nRecovering from a decline requires calculating the gain on the reduced base.\nAllocation, costs and price sequence affect portfolio-level outcomes.\nNo particular drawdown threshold or response is universally validated.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. A virtual portfolio falls from $100,000 to $90,000. Its peak-to-trough drawdown is:\n5%10%11.11%90%\n2. How much growth returns $90,000 to $100,000?\n10%1%20%About 11.11%\n3. What determines portfolio impact from an asset loss?\nAllocation and the asset's movement, among other factorsOnly the tickerOnly the price per unitThe lesson completion badge\n4. Can a drawdown percentage diagnose a health condition?\nYesOnly after 30 tradesNoOnly for experienced traders\nSubmit & complete lesson\nAnswer notes\nA virtual portfolio falls from $100,000 to $90,000. Its peak-to-trough drawdown is: Options: 5%; 10%; 11.11%; 90%. Correct answer: 10%. Why: $10,000 divided by the $100,000 peak is 10%.\nHow much growth returns $90,000 to $100,000? Options: 10%; 1%; 20%; About 11.11%. Correct answer: About 11.11%. Why: The $10,000 recovery is divided by the lower $90,000 balance.\nWhat determines portfolio impact from an asset loss? Options: Allocation and the asset's movement, among other factors; Only the ticker; Only the price per unit; The lesson completion badge. Correct answer: Allocation and the asset's movement, among other factors. Why: Position weight affects the portfolio-level change.\nCan a drawdown percentage diagnose a health condition? Options: Yes; Only after 30 trades; No; Only for experienced traders. Correct answer: No. Why: A finance calculation is not a medical assessment.\nSOURCES & FURTHER READING\nSEC Investor.gov — risk\nSEC Investor.gov — past-performance limitations\nOptional Checklists for Practice Sessions\nBack to track\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nTrading Decisions and Behaviour\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "Understanding Drawdowns in a Simulation — Trading Decisions and Behaviour | TradeHQ",
+      "heading": "Understanding Drawdowns in a Simulation",
+      "supplementaryNotes": [
+        {
+          "path": "/courses/trading-psychology-mastery/handling-drawdowns",
+          "text": "Home\nCourses\nTrading Decisions and Behaviour\nUnderstanding Drawdowns in a Simulation\nBeginner\n·\nLesson 5 of 5\n·\n8 min read\nUnderstanding Drawdowns in a Simulation\n\nCalculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions.\n\nBy Anuga Weerasinghe\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nSource check: 2026-10-18. Checked arithmetic and removed unsupported physical-health and professional-behaviour claims.\n\nQUICK ANSWER\nUnderstanding Drawdowns in a Simulation?\n\nCalculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions. Drawdown is measured from a previous peak, with a clear valuation basis. Recovering from a decline requires calculating the gain on the reduced base.\n\nWhat drawdown actually measures\n\nA drawdown compares a portfolio's value with an earlier peak, using the same measurement basis. If an illustrative virtual portfolio peaks at $100,000 and later marks at $90,000, the peak-to-trough drawdown is ($100,000 - $90,000) / $100,000 = 10%. This number describes a past decline, not the probability of a future loss.\n\nA different denominator for recovery\n\nMoving from $90,000 back to $100,000 requires $10,000 / $90,000, or approximately 11.11% growth, not 10%. A 20% decline from $100,000 to $80,000 requires a 25% gain to return to the same previous peak. This asymmetry is simple arithmetic; it does not prescribe a trading strategy.\n\nThe effect of sizing assumptions\n\nThe same assumed asset movement can produce different portfolio-level changes depending on allocation. In a fee-free illustration, a 20% drop in an asset that is 10% of a $100,000 portfolio contributes approximately a 2% portfolio decline if everything else stays constant. Concentration, other holdings, fees and timing can change the observed result.\n\nSequence and measurement matter\n\nDrawdown depends on the path of account values, not only the first and final price. Specify whether account values include fees, deposits or withdrawals, and whether valuations are current or delayed. A sequence built from generated practice candles is not an observed market drawdown.\n\nTesting changes to a fictional rule\n\nA learner may compare two explicitly hypothetical size schedules after a recorded decline. Define each rule before looking at its result; document any change so a revised rule is not mixed with the original sample. No fixed 10%, 20% or other threshold is universally suitable.\n\nScope of this lesson\n\nA portfolio decline cannot be used to diagnose stress, sleep, hormones or mental-health conditions. This lesson teaches virtual portfolio arithmetic and uncertainty, not healthcare guidance or advice about recovering real financial losses.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKEY TAKEAWAYS\nDrawdown is measured from a previous peak, with a clear valuation basis.\nRecovering from a decline requires calculating the gain on the reduced base.\nAllocation, costs and price sequence affect portfolio-level outcomes.\nNo particular drawdown threshold or response is universally validated.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. A virtual portfolio falls from $100,000 to $90,000. Its peak-to-trough drawdown is:\n5%10%11.11%90%\n2. How much growth returns $90,000 to $100,000?\n10%1%20%About 11.11%\n3. What determines portfolio impact from an asset loss?\nAllocation and the asset's movement, among other factorsOnly the tickerOnly the price per unitThe lesson completion badge\n4. Can a drawdown percentage diagnose a health condition?\nYesOnly after 30 tradesNoOnly for experienced traders\nSubmit & complete lesson\nAnswer notes\nA virtual portfolio falls from $100,000 to $90,000. Its peak-to-trough drawdown is: Options: 5%; 10%; 11.11%; 90%. Correct answer: 10%. Why: $10,000 divided by the $100,000 peak is 10%.\nHow much growth returns $90,000 to $100,000? Options: 10%; 1%; 20%; About 11.11%. Correct answer: About 11.11%. Why: The $10,000 recovery is divided by the lower $90,000 balance.\nWhat determines portfolio impact from an asset loss? Options: Allocation and the asset's movement, among other factors; Only the ticker; Only the price per unit; The lesson completion badge. Correct answer: Allocation and the asset's movement, among other factors. Why: Position weight affects the portfolio-level change.\nCan a drawdown percentage diagnose a health condition? Options: Yes; Only after 30 trades; No; Only for experienced traders. Correct answer: No. Why: A finance calculation is not a medical assessment.\nSOURCES & FURTHER READING\nSEC Investor.gov — risk\nSEC Investor.gov — past-performance limitations\nOptional Checklists for Practice Sessions\nBack to track\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nTrading Decisions and Behaviour\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 390,
+      "scrollHeight": 9361,
+      "viewportWidth": 390,
+      "canonical": "https://www.thetradehq.com/courses/trading-psychology-mastery/handling-drawdowns",
+      "images": [
+        {
+          "alt": "Understanding Drawdowns in a Simulation — illustration",
+          "complete": true,
+          "naturalWidth": 1200,
+          "source": "https://www.thetradehq.com/assets/psychology-hero-BjxsBmgY.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "1fc27c1f187ed246-390-00.png"
+        },
+        {
+          "y": 717,
+          "screenshot": "1fc27c1f187ed246-390-01.png"
+        },
+        {
+          "y": 1434,
+          "screenshot": "1fc27c1f187ed246-390-02.png"
+        },
+        {
+          "y": 2151,
+          "screenshot": "1fc27c1f187ed246-390-03.png"
+        },
+        {
+          "y": 2868,
+          "screenshot": "1fc27c1f187ed246-390-04.png"
+        },
+        {
+          "y": 3585,
+          "screenshot": "1fc27c1f187ed246-390-05.png"
+        },
+        {
+          "y": 4302,
+          "screenshot": "1fc27c1f187ed246-390-06.png"
+        },
+        {
+          "y": 5019,
+          "screenshot": "1fc27c1f187ed246-390-07.png"
+        },
+        {
+          "y": 5736,
+          "screenshot": "1fc27c1f187ed246-390-08.png"
+        },
+        {
+          "y": 6453,
+          "screenshot": "1fc27c1f187ed246-390-09.png"
+        },
+        {
+          "y": 7170,
+          "screenshot": "1fc27c1f187ed246-390-10.png"
+        },
+        {
+          "y": 7887,
+          "screenshot": "1fc27c1f187ed246-390-11.png"
+        },
+        {
+          "y": 8517,
+          "screenshot": "1fc27c1f187ed246-390-12.png"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "path": "/courses/trading-psychology-mastery/handling-drawdowns",
+      "theme": "light",
+      "mainText": "Home\nCourses\nTrading Decisions and Behaviour\nUnderstanding Drawdowns in a Simulation\nBeginner\n·\nLesson 5 of 5\n·\n8 min read\nUnderstanding Drawdowns in a Simulation\n\nCalculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions.\n\nBy Anuga Weerasinghe\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nSource check: 2026-10-18. Checked arithmetic and removed unsupported physical-health and professional-behaviour claims.\n\nQUICK ANSWER\nUnderstanding Drawdowns in a Simulation?\n\nCalculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions. Drawdown is measured from a previous peak, with a clear valuation basis. Recovering from a decline requires calculating the gain on the reduced base.\n\nWhat drawdown actually measures\n\nA drawdown compares a portfolio's value with an earlier peak, using the same measurement basis. If an illustrative virtual portfolio peaks at $100,000 and later marks at $90,000, the peak-to-trough drawdown is ($100,000 - $90,000) / $100,000 = 10%. This number describes a past decline, not the probability of a future loss.\n\nA different denominator for recovery\n\nMoving from $90,000 back to $100,000 requires $10,000 / $90,000, or approximately 11.11% growth, not 10%. A 20% decline from $100,000 to $80,000 requires a 25% gain to return to the same previous peak. This asymmetry is simple arithmetic; it does not prescribe a trading strategy.\n\nThe effect of sizing assumptions\n\nThe same assumed asset movement can produce different portfolio-level changes depending on allocation. In a fee-free illustration, a 20% drop in an asset that is 10% of a $100,000 portfolio contributes approximately a 2% portfolio decline if everything else stays constant. Concentration, other holdings, fees and timing can change the observed result.\n\nSequence and measurement matter\n\nDrawdown depends on the path of account values, not only the first and final price. Specify whether account values include fees, deposits or withdrawals, and whether valuations are current or delayed. A sequence built from generated practice candles is not an observed market drawdown.\n\nTesting changes to a fictional rule\n\nA learner may compare two explicitly hypothetical size schedules after a recorded decline. Define each rule before looking at its result; document any change so a revised rule is not mixed with the original sample. No fixed 10%, 20% or other threshold is universally suitable.\n\nScope of this lesson\n\nA portfolio decline cannot be used to diagnose stress, sleep, hormones or mental-health conditions. This lesson teaches virtual portfolio arithmetic and uncertainty, not healthcare guidance or advice about recovering real financial losses.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKEY TAKEAWAYS\nDrawdown is measured from a previous peak, with a clear valuation basis.\nRecovering from a decline requires calculating the gain on the reduced base.\nAllocation, costs and price sequence affect portfolio-level outcomes.\nNo particular drawdown threshold or response is universally validated.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. A virtual portfolio falls from $100,000 to $90,000. Its peak-to-trough drawdown is:\n5%10%11.11%90%\n2. How much growth returns $90,000 to $100,000?\n10%1%20%About 11.11%\n3. What determines portfolio impact from an asset loss?\nAllocation and the asset's movement, among other factorsOnly the tickerOnly the price per unitThe lesson completion badge\n4. Can a drawdown percentage diagnose a health condition?\nYesOnly after 30 tradesNoOnly for experienced traders\nSubmit & complete lesson\nAnswer notes\nA virtual portfolio falls from $100,000 to $90,000. Its peak-to-trough drawdown is: Options: 5%; 10%; 11.11%; 90%. Correct answer: 10%. Why: $10,000 divided by the $100,000 peak is 10%.\nHow much growth returns $90,000 to $100,000? Options: 10%; 1%; 20%; About 11.11%. Correct answer: About 11.11%. Why: The $10,000 recovery is divided by the lower $90,000 balance.\nWhat determines portfolio impact from an asset loss? Options: Allocation and the asset's movement, among other factors; Only the ticker; Only the price per unit; The lesson completion badge. Correct answer: Allocation and the asset's movement, among other factors. Why: Position weight affects the portfolio-level change.\nCan a drawdown percentage diagnose a health condition? Options: Yes; Only after 30 trades; No; Only for experienced traders. Correct answer: No. Why: A finance calculation is not a medical assessment.\nSOURCES & FURTHER READING\nSEC Investor.gov — risk\nSEC Investor.gov — past-performance limitations\nOptional Checklists for Practice Sessions\nBack to track\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nTrading Decisions and Behaviour\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "Understanding Drawdowns in a Simulation — Trading Decisions and Behaviour | TradeHQ",
+      "heading": "Understanding Drawdowns in a Simulation",
+      "supplementaryNotes": [
+        {
+          "path": "/courses/trading-psychology-mastery/handling-drawdowns",
+          "text": "Home\nCourses\nTrading Decisions and Behaviour\nUnderstanding Drawdowns in a Simulation\nBeginner\n·\nLesson 5 of 5\n·\n8 min read\nUnderstanding Drawdowns in a Simulation\n\nCalculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions.\n\nBy Anuga Weerasinghe\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nSource check: 2026-10-18. Checked arithmetic and removed unsupported physical-health and professional-behaviour claims.\n\nQUICK ANSWER\nUnderstanding Drawdowns in a Simulation?\n\nCalculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions. Drawdown is measured from a previous peak, with a clear valuation basis. Recovering from a decline requires calculating the gain on the reduced base.\n\nWhat drawdown actually measures\n\nA drawdown compares a portfolio's value with an earlier peak, using the same measurement basis. If an illustrative virtual portfolio peaks at $100,000 and later marks at $90,000, the peak-to-trough drawdown is ($100,000 - $90,000) / $100,000 = 10%. This number describes a past decline, not the probability of a future loss.\n\nA different denominator for recovery\n\nMoving from $90,000 back to $100,000 requires $10,000 / $90,000, or approximately 11.11% growth, not 10%. A 20% decline from $100,000 to $80,000 requires a 25% gain to return to the same previous peak. This asymmetry is simple arithmetic; it does not prescribe a trading strategy.\n\nThe effect of sizing assumptions\n\nThe same assumed asset movement can produce different portfolio-level changes depending on allocation. In a fee-free illustration, a 20% drop in an asset that is 10% of a $100,000 portfolio contributes approximately a 2% portfolio decline if everything else stays constant. Concentration, other holdings, fees and timing can change the observed result.\n\nSequence and measurement matter\n\nDrawdown depends on the path of account values, not only the first and final price. Specify whether account values include fees, deposits or withdrawals, and whether valuations are current or delayed. A sequence built from generated practice candles is not an observed market drawdown.\n\nTesting changes to a fictional rule\n\nA learner may compare two explicitly hypothetical size schedules after a recorded decline. Define each rule before looking at its result; document any change so a revised rule is not mixed with the original sample. No fixed 10%, 20% or other threshold is universally suitable.\n\nScope of this lesson\n\nA portfolio decline cannot be used to diagnose stress, sleep, hormones or mental-health conditions. This lesson teaches virtual portfolio arithmetic and uncertainty, not healthcare guidance or advice about recovering real financial losses.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKEY TAKEAWAYS\nDrawdown is measured from a previous peak, with a clear valuation basis.\nRecovering from a decline requires calculating the gain on the reduced base.\nAllocation, costs and price sequence affect portfolio-level outcomes.\nNo particular drawdown threshold or response is universally validated.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. A virtual portfolio falls from $100,000 to $90,000. Its peak-to-trough drawdown is:\n5%10%11.11%90%\n2. How much growth returns $90,000 to $100,000?\n10%1%20%About 11.11%\n3. What determines portfolio impact from an asset loss?\nAllocation and the asset's movement, among other factorsOnly the tickerOnly the price per unitThe lesson completion badge\n4. Can a drawdown percentage diagnose a health condition?\nYesOnly after 30 tradesNoOnly for experienced traders\nSubmit & complete lesson\nAnswer notes\nA virtual portfolio falls from $100,000 to $90,000. Its peak-to-trough drawdown is: Options: 5%; 10%; 11.11%; 90%. Correct answer: 10%. Why: $10,000 divided by the $100,000 peak is 10%.\nHow much growth returns $90,000 to $100,000? Options: 10%; 1%; 20%; About 11.11%. Correct answer: About 11.11%. Why: The $10,000 recovery is divided by the lower $90,000 balance.\nWhat determines portfolio impact from an asset loss? Options: Allocation and the asset's movement, among other factors; Only the ticker; Only the price per unit; The lesson completion badge. Correct answer: Allocation and the asset's movement, among other factors. Why: Position weight affects the portfolio-level change.\nCan a drawdown percentage diagnose a health condition? Options: Yes; Only after 30 trades; No; Only for experienced traders. Correct answer: No. Why: A finance calculation is not a medical assessment.\nSOURCES & FURTHER READING\nSEC Investor.gov — risk\nSEC Investor.gov — past-performance limitations\nOptional Checklists for Practice Sessions\nBack to track\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nTrading Decisions and Behaviour\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 753,
+      "scrollHeight": 6835,
+      "viewportWidth": 768,
+      "canonical": "https://www.thetradehq.com/courses/trading-psychology-mastery/handling-drawdowns",
+      "images": [
+        {
+          "alt": "Understanding Drawdowns in a Simulation — illustration",
+          "complete": true,
+          "naturalWidth": 1200,
+          "source": "https://www.thetradehq.com/assets/psychology-hero-BjxsBmgY.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "1fc27c1f187ed246-768-00.png"
+        },
+        {
+          "y": 870,
+          "screenshot": "1fc27c1f187ed246-768-01.png"
+        },
+        {
+          "y": 1740,
+          "screenshot": "1fc27c1f187ed246-768-02.png"
+        },
+        {
+          "y": 2610,
+          "screenshot": "1fc27c1f187ed246-768-03.png"
+        },
+        {
+          "y": 3480,
+          "screenshot": "1fc27c1f187ed246-768-04.png"
+        },
+        {
+          "y": 4350,
+          "screenshot": "1fc27c1f187ed246-768-05.png"
+        },
+        {
+          "y": 5220,
+          "screenshot": "1fc27c1f187ed246-768-06.png"
+        },
+        {
+          "y": 5811,
+          "screenshot": "1fc27c1f187ed246-768-07.png"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "path": "/courses/trading-psychology-mastery/handling-drawdowns",
+      "theme": "light",
+      "mainText": "Home\nCourses\nTrading Decisions and Behaviour\nUnderstanding Drawdowns in a Simulation\nBeginner\n·\nLesson 5 of 5\n·\n8 min read\nUnderstanding Drawdowns in a Simulation\n\nCalculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions.\n\nBy Anuga Weerasinghe\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nSource check: 2026-10-18. Checked arithmetic and removed unsupported physical-health and professional-behaviour claims.\n\nQUICK ANSWER\nUnderstanding Drawdowns in a Simulation?\n\nCalculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions. Drawdown is measured from a previous peak, with a clear valuation basis. Recovering from a decline requires calculating the gain on the reduced base.\n\nWhat drawdown actually measures\n\nA drawdown compares a portfolio's value with an earlier peak, using the same measurement basis. If an illustrative virtual portfolio peaks at $100,000 and later marks at $90,000, the peak-to-trough drawdown is ($100,000 - $90,000) / $100,000 = 10%. This number describes a past decline, not the probability of a future loss.\n\nA different denominator for recovery\n\nMoving from $90,000 back to $100,000 requires $10,000 / $90,000, or approximately 11.11% growth, not 10%. A 20% decline from $100,000 to $80,000 requires a 25% gain to return to the same previous peak. This asymmetry is simple arithmetic; it does not prescribe a trading strategy.\n\nThe effect of sizing assumptions\n\nThe same assumed asset movement can produce different portfolio-level changes depending on allocation. In a fee-free illustration, a 20% drop in an asset that is 10% of a $100,000 portfolio contributes approximately a 2% portfolio decline if everything else stays constant. Concentration, other holdings, fees and timing can change the observed result.\n\nSequence and measurement matter\n\nDrawdown depends on the path of account values, not only the first and final price. Specify whether account values include fees, deposits or withdrawals, and whether valuations are current or delayed. A sequence built from generated practice candles is not an observed market drawdown.\n\nTesting changes to a fictional rule\n\nA learner may compare two explicitly hypothetical size schedules after a recorded decline. Define each rule before looking at its result; document any change so a revised rule is not mixed with the original sample. No fixed 10%, 20% or other threshold is universally suitable.\n\nScope of this lesson\n\nA portfolio decline cannot be used to diagnose stress, sleep, hormones or mental-health conditions. This lesson teaches virtual portfolio arithmetic and uncertainty, not healthcare guidance or advice about recovering real financial losses.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKEY TAKEAWAYS\nDrawdown is measured from a previous peak, with a clear valuation basis.\nRecovering from a decline requires calculating the gain on the reduced base.\nAllocation, costs and price sequence affect portfolio-level outcomes.\nNo particular drawdown threshold or response is universally validated.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. A virtual portfolio falls from $100,000 to $90,000. Its peak-to-trough drawdown is:\n5%10%11.11%90%\n2. How much growth returns $90,000 to $100,000?\n10%1%20%About 11.11%\n3. What determines portfolio impact from an asset loss?\nAllocation and the asset's movement, among other factorsOnly the tickerOnly the price per unitThe lesson completion badge\n4. Can a drawdown percentage diagnose a health condition?\nYesOnly after 30 tradesNoOnly for experienced traders\nSubmit & complete lesson\nAnswer notes\nA virtual portfolio falls from $100,000 to $90,000. Its peak-to-trough drawdown is: Options: 5%; 10%; 11.11%; 90%. Correct answer: 10%. Why: $10,000 divided by the $100,000 peak is 10%.\nHow much growth returns $90,000 to $100,000? Options: 10%; 1%; 20%; About 11.11%. Correct answer: About 11.11%. Why: The $10,000 recovery is divided by the lower $90,000 balance.\nWhat determines portfolio impact from an asset loss? Options: Allocation and the asset's movement, among other factors; Only the ticker; Only the price per unit; The lesson completion badge. Correct answer: Allocation and the asset's movement, among other factors. Why: Position weight affects the portfolio-level change.\nCan a drawdown percentage diagnose a health condition? Options: Yes; Only after 30 trades; No; Only for experienced traders. Correct answer: No. Why: A finance calculation is not a medical assessment.\nSOURCES & FURTHER READING\nSEC Investor.gov — risk\nSEC Investor.gov — past-performance limitations\nOptional Checklists for Practice Sessions\nBack to track\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nTrading Decisions and Behaviour\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "Understanding Drawdowns in a Simulation — Trading Decisions and Behaviour | TradeHQ",
+      "heading": "Understanding Drawdowns in a Simulation",
+      "supplementaryNotes": [
+        {
+          "path": "/courses/trading-psychology-mastery/handling-drawdowns",
+          "text": "Home\nCourses\nTrading Decisions and Behaviour\nUnderstanding Drawdowns in a Simulation\nBeginner\n·\nLesson 5 of 5\n·\n8 min read\nUnderstanding Drawdowns in a Simulation\n\nCalculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions.\n\nBy Anuga Weerasinghe\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nSource check: 2026-10-18. Checked arithmetic and removed unsupported physical-health and professional-behaviour claims.\n\nQUICK ANSWER\nUnderstanding Drawdowns in a Simulation?\n\nCalculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions. Drawdown is measured from a previous peak, with a clear valuation basis. Recovering from a decline requires calculating the gain on the reduced base.\n\nWhat drawdown actually measures\n\nA drawdown compares a portfolio's value with an earlier peak, using the same measurement basis. If an illustrative virtual portfolio peaks at $100,000 and later marks at $90,000, the peak-to-trough drawdown is ($100,000 - $90,000) / $100,000 = 10%. This number describes a past decline, not the probability of a future loss.\n\nA different denominator for recovery\n\nMoving from $90,000 back to $100,000 requires $10,000 / $90,000, or approximately 11.11% growth, not 10%. A 20% decline from $100,000 to $80,000 requires a 25% gain to return to the same previous peak. This asymmetry is simple arithmetic; it does not prescribe a trading strategy.\n\nThe effect of sizing assumptions\n\nThe same assumed asset movement can produce different portfolio-level changes depending on allocation. In a fee-free illustration, a 20% drop in an asset that is 10% of a $100,000 portfolio contributes approximately a 2% portfolio decline if everything else stays constant. Concentration, other holdings, fees and timing can change the observed result.\n\nSequence and measurement matter\n\nDrawdown depends on the path of account values, not only the first and final price. Specify whether account values include fees, deposits or withdrawals, and whether valuations are current or delayed. A sequence built from generated practice candles is not an observed market drawdown.\n\nTesting changes to a fictional rule\n\nA learner may compare two explicitly hypothetical size schedules after a recorded decline. Define each rule before looking at its result; document any change so a revised rule is not mixed with the original sample. No fixed 10%, 20% or other threshold is universally suitable.\n\nScope of this lesson\n\nA portfolio decline cannot be used to diagnose stress, sleep, hormones or mental-health conditions. This lesson teaches virtual portfolio arithmetic and uncertainty, not healthcare guidance or advice about recovering real financial losses.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKEY TAKEAWAYS\nDrawdown is measured from a previous peak, with a clear valuation basis.\nRecovering from a decline requires calculating the gain on the reduced base.\nAllocation, costs and price sequence affect portfolio-level outcomes.\nNo particular drawdown threshold or response is universally validated.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. A virtual portfolio falls from $100,000 to $90,000. Its peak-to-trough drawdown is:\n5%10%11.11%90%\n2. How much growth returns $90,000 to $100,000?\n10%1%20%About 11.11%\n3. What determines portfolio impact from an asset loss?\nAllocation and the asset's movement, among other factorsOnly the tickerOnly the price per unitThe lesson completion badge\n4. Can a drawdown percentage diagnose a health condition?\nYesOnly after 30 tradesNoOnly for experienced traders\nSubmit & complete lesson\nAnswer notes\nA virtual portfolio falls from $100,000 to $90,000. Its peak-to-trough drawdown is: Options: 5%; 10%; 11.11%; 90%. Correct answer: 10%. Why: $10,000 divided by the $100,000 peak is 10%.\nHow much growth returns $90,000 to $100,000? Options: 10%; 1%; 20%; About 11.11%. Correct answer: About 11.11%. Why: The $10,000 recovery is divided by the lower $90,000 balance.\nWhat determines portfolio impact from an asset loss? Options: Allocation and the asset's movement, among other factors; Only the ticker; Only the price per unit; The lesson completion badge. Correct answer: Allocation and the asset's movement, among other factors. Why: Position weight affects the portfolio-level change.\nCan a drawdown percentage diagnose a health condition? Options: Yes; Only after 30 trades; No; Only for experienced traders. Correct answer: No. Why: A finance calculation is not a medical assessment.\nSOURCES & FURTHER READING\nSEC Investor.gov — risk\nSEC Investor.gov — past-performance limitations\nOptional Checklists for Practice Sessions\nBack to track\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nTrading Decisions and Behaviour\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1265,
+      "scrollHeight": 6345,
+      "viewportWidth": 1280,
+      "canonical": "https://www.thetradehq.com/courses/trading-psychology-mastery/handling-drawdowns",
+      "images": [
+        {
+          "alt": "Understanding Drawdowns in a Simulation — illustration",
+          "complete": true,
+          "naturalWidth": 1200,
+          "source": "https://www.thetradehq.com/assets/psychology-hero-BjxsBmgY.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "1fc27c1f187ed246-1280-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "1fc27c1f187ed246-1280-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "1fc27c1f187ed246-1280-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "1fc27c1f187ed246-1280-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "1fc27c1f187ed246-1280-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "1fc27c1f187ed246-1280-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "1fc27c1f187ed246-1280-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "1fc27c1f187ed246-1280-07.png"
+        },
+        {
+          "y": 5440,
+          "screenshot": "1fc27c1f187ed246-1280-08.png"
+        },
+        {
+          "y": 5545,
+          "screenshot": "1fc27c1f187ed246-1280-09.png"
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "path": "/courses/trading-psychology-mastery/handling-drawdowns",
+      "theme": "light",
+      "mainText": "Home\nCourses\nTrading Decisions and Behaviour\nUnderstanding Drawdowns in a Simulation\nBeginner\n·\nLesson 5 of 5\n·\n8 min read\nUnderstanding Drawdowns in a Simulation\n\nCalculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions.\n\nBy Anuga Weerasinghe\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nSource check: 2026-10-18. Checked arithmetic and removed unsupported physical-health and professional-behaviour claims.\n\nQUICK ANSWER\nUnderstanding Drawdowns in a Simulation?\n\nCalculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions. Drawdown is measured from a previous peak, with a clear valuation basis. Recovering from a decline requires calculating the gain on the reduced base.\n\nWhat drawdown actually measures\n\nA drawdown compares a portfolio's value with an earlier peak, using the same measurement basis. If an illustrative virtual portfolio peaks at $100,000 and later marks at $90,000, the peak-to-trough drawdown is ($100,000 - $90,000) / $100,000 = 10%. This number describes a past decline, not the probability of a future loss.\n\nA different denominator for recovery\n\nMoving from $90,000 back to $100,000 requires $10,000 / $90,000, or approximately 11.11% growth, not 10%. A 20% decline from $100,000 to $80,000 requires a 25% gain to return to the same previous peak. This asymmetry is simple arithmetic; it does not prescribe a trading strategy.\n\nThe effect of sizing assumptions\n\nThe same assumed asset movement can produce different portfolio-level changes depending on allocation. In a fee-free illustration, a 20% drop in an asset that is 10% of a $100,000 portfolio contributes approximately a 2% portfolio decline if everything else stays constant. Concentration, other holdings, fees and timing can change the observed result.\n\nSequence and measurement matter\n\nDrawdown depends on the path of account values, not only the first and final price. Specify whether account values include fees, deposits or withdrawals, and whether valuations are current or delayed. A sequence built from generated practice candles is not an observed market drawdown.\n\nTesting changes to a fictional rule\n\nA learner may compare two explicitly hypothetical size schedules after a recorded decline. Define each rule before looking at its result; document any change so a revised rule is not mixed with the original sample. No fixed 10%, 20% or other threshold is universally suitable.\n\nScope of this lesson\n\nA portfolio decline cannot be used to diagnose stress, sleep, hormones or mental-health conditions. This lesson teaches virtual portfolio arithmetic and uncertainty, not healthcare guidance or advice about recovering real financial losses.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKEY TAKEAWAYS\nDrawdown is measured from a previous peak, with a clear valuation basis.\nRecovering from a decline requires calculating the gain on the reduced base.\nAllocation, costs and price sequence affect portfolio-level outcomes.\nNo particular drawdown threshold or response is universally validated.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. A virtual portfolio falls from $100,000 to $90,000. Its peak-to-trough drawdown is:\n5%10%11.11%90%\n2. How much growth returns $90,000 to $100,000?\n10%1%20%About 11.11%\n3. What determines portfolio impact from an asset loss?\nAllocation and the asset's movement, among other factorsOnly the tickerOnly the price per unitThe lesson completion badge\n4. Can a drawdown percentage diagnose a health condition?\nYesOnly after 30 tradesNoOnly for experienced traders\nSubmit & complete lesson\nAnswer notes\nA virtual portfolio falls from $100,000 to $90,000. Its peak-to-trough drawdown is: Options: 5%; 10%; 11.11%; 90%. Correct answer: 10%. Why: $10,000 divided by the $100,000 peak is 10%.\nHow much growth returns $90,000 to $100,000? Options: 10%; 1%; 20%; About 11.11%. Correct answer: About 11.11%. Why: The $10,000 recovery is divided by the lower $90,000 balance.\nWhat determines portfolio impact from an asset loss? Options: Allocation and the asset's movement, among other factors; Only the ticker; Only the price per unit; The lesson completion badge. Correct answer: Allocation and the asset's movement, among other factors. Why: Position weight affects the portfolio-level change.\nCan a drawdown percentage diagnose a health condition? Options: Yes; Only after 30 trades; No; Only for experienced traders. Correct answer: No. Why: A finance calculation is not a medical assessment.\nSOURCES & FURTHER READING\nSEC Investor.gov — risk\nSEC Investor.gov — past-performance limitations\nOptional Checklists for Practice Sessions\nBack to track\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nTrading Decisions and Behaviour\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "Understanding Drawdowns in a Simulation — Trading Decisions and Behaviour | TradeHQ",
+      "heading": "Understanding Drawdowns in a Simulation",
+      "supplementaryNotes": [
+        {
+          "path": "/courses/trading-psychology-mastery/handling-drawdowns",
+          "text": "Home\nCourses\nTrading Decisions and Behaviour\nUnderstanding Drawdowns in a Simulation\nBeginner\n·\nLesson 5 of 5\n·\n8 min read\nUnderstanding Drawdowns in a Simulation\n\nCalculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions.\n\nBy Anuga Weerasinghe\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nSource check: 2026-10-18. Checked arithmetic and removed unsupported physical-health and professional-behaviour claims.\n\nQUICK ANSWER\nUnderstanding Drawdowns in a Simulation?\n\nCalculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions. Drawdown is measured from a previous peak, with a clear valuation basis. Recovering from a decline requires calculating the gain on the reduced base.\n\nWhat drawdown actually measures\n\nA drawdown compares a portfolio's value with an earlier peak, using the same measurement basis. If an illustrative virtual portfolio peaks at $100,000 and later marks at $90,000, the peak-to-trough drawdown is ($100,000 - $90,000) / $100,000 = 10%. This number describes a past decline, not the probability of a future loss.\n\nA different denominator for recovery\n\nMoving from $90,000 back to $100,000 requires $10,000 / $90,000, or approximately 11.11% growth, not 10%. A 20% decline from $100,000 to $80,000 requires a 25% gain to return to the same previous peak. This asymmetry is simple arithmetic; it does not prescribe a trading strategy.\n\nThe effect of sizing assumptions\n\nThe same assumed asset movement can produce different portfolio-level changes depending on allocation. In a fee-free illustration, a 20% drop in an asset that is 10% of a $100,000 portfolio contributes approximately a 2% portfolio decline if everything else stays constant. Concentration, other holdings, fees and timing can change the observed result.\n\nSequence and measurement matter\n\nDrawdown depends on the path of account values, not only the first and final price. Specify whether account values include fees, deposits or withdrawals, and whether valuations are current or delayed. A sequence built from generated practice candles is not an observed market drawdown.\n\nTesting changes to a fictional rule\n\nA learner may compare two explicitly hypothetical size schedules after a recorded decline. Define each rule before looking at its result; document any change so a revised rule is not mixed with the original sample. No fixed 10%, 20% or other threshold is universally suitable.\n\nScope of this lesson\n\nA portfolio decline cannot be used to diagnose stress, sleep, hormones or mental-health conditions. This lesson teaches virtual portfolio arithmetic and uncertainty, not healthcare guidance or advice about recovering real financial losses.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKEY TAKEAWAYS\nDrawdown is measured from a previous peak, with a clear valuation basis.\nRecovering from a decline requires calculating the gain on the reduced base.\nAllocation, costs and price sequence affect portfolio-level outcomes.\nNo particular drawdown threshold or response is universally validated.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. A virtual portfolio falls from $100,000 to $90,000. Its peak-to-trough drawdown is:\n5%10%11.11%90%\n2. How much growth returns $90,000 to $100,000?\n10%1%20%About 11.11%\n3. What determines portfolio impact from an asset loss?\nAllocation and the asset's movement, among other factorsOnly the tickerOnly the price per unitThe lesson completion badge\n4. Can a drawdown percentage diagnose a health condition?\nYesOnly after 30 tradesNoOnly for experienced traders\nSubmit & complete lesson\nAnswer notes\nA virtual portfolio falls from $100,000 to $90,000. Its peak-to-trough drawdown is: Options: 5%; 10%; 11.11%; 90%. Correct answer: 10%. Why: $10,000 divided by the $100,000 peak is 10%.\nHow much growth returns $90,000 to $100,000? Options: 10%; 1%; 20%; About 11.11%. Correct answer: About 11.11%. Why: The $10,000 recovery is divided by the lower $90,000 balance.\nWhat determines portfolio impact from an asset loss? Options: Allocation and the asset's movement, among other factors; Only the ticker; Only the price per unit; The lesson completion badge. Correct answer: Allocation and the asset's movement, among other factors. Why: Position weight affects the portfolio-level change.\nCan a drawdown percentage diagnose a health condition? Options: Yes; Only after 30 trades; No; Only for experienced traders. Correct answer: No. Why: A finance calculation is not a medical assessment.\nSOURCES & FURTHER READING\nSEC Investor.gov — risk\nSEC Investor.gov — past-performance limitations\nOptional Checklists for Practice Sessions\nBack to track\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nTrading Decisions and Behaviour\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1905,
+      "scrollHeight": 6269,
+      "viewportWidth": 1920,
+      "canonical": "https://www.thetradehq.com/courses/trading-psychology-mastery/handling-drawdowns",
+      "images": [
+        {
+          "alt": "Understanding Drawdowns in a Simulation — illustration",
+          "complete": true,
+          "naturalWidth": 1200,
+          "source": "https://www.thetradehq.com/assets/psychology-hero-BjxsBmgY.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "1fc27c1f187ed246-1920-00.png"
+        },
+        {
+          "y": 918,
+          "screenshot": "1fc27c1f187ed246-1920-01.png"
+        },
+        {
+          "y": 1836,
+          "screenshot": "1fc27c1f187ed246-1920-02.png"
+        },
+        {
+          "y": 2754,
+          "screenshot": "1fc27c1f187ed246-1920-03.png"
+        },
+        {
+          "y": 3672,
+          "screenshot": "1fc27c1f187ed246-1920-04.png"
+        },
+        {
+          "y": 4590,
+          "screenshot": "1fc27c1f187ed246-1920-05.png"
+        },
+        {
+          "y": 5189,
+          "screenshot": "1fc27c1f187ed246-1920-06.png"
+        }
+      ]
+    }
+  ]
+}
