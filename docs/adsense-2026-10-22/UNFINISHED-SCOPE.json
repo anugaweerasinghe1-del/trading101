@@ -626,7 +626,15 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "fullPageLightVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageLightVisualEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     {
       "path": "/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash",
@@ -647,7 +655,15 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "fullPageLightVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageLightVisualEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     {
       "path": "/courses/diversification-and-position-sizing/foundations-of-asset-allocation",
@@ -668,7 +684,15 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "fullPageLightVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageLightVisualEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     {
       "path": "/courses/diversification-and-position-sizing/managing-concentration-risk",
@@ -689,7 +713,15 @@
         1280,
         1920
       ],
-      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json"
+      "fullPageDefaultVisualEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "fullPageLightVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageLightVisualEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     {
       "path": "/courses/futures-and-derivatives",
@@ -773,7 +805,15 @@
       "currentSupplementaryArticleState": {
         "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
         "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
-      }
+      },
+      "fullPageLightVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageLightVisualEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     {
       "path": "/courses/futures-and-derivatives/hedging-with-futures",
@@ -808,7 +848,15 @@
       "currentSupplementaryArticleState": {
         "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
         "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
-      }
+      },
+      "fullPageLightVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageLightVisualEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     {
       "path": "/courses/futures-and-derivatives/margin-and-leverage-in-futures",
@@ -850,7 +898,15 @@
       "currentSupplementaryArticleState": {
         "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
         "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
-      }
+      },
+      "fullPageLightVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageLightVisualEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     {
       "path": "/courses/futures-and-derivatives/micro-futures-for-beginners",
@@ -890,7 +946,15 @@
         "evidence": "evidence/MICRO-CONTRACT-PRIMARY-SOURCE-FOLLOWUP-20261025.json",
         "result": "Selected actual CME passages corroborate MES $5 multiplier and 0.25 minimum tick, and ES $50 multiplier.",
         "remaining": "ES minimum tick, three other listed contract families, current margins/fees/liquidity and full source fit remain."
-      }
+      },
+      "fullPageLightVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageLightVisualEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     {
       "path": "/courses/futures-and-derivatives/what-is-a-futures-contract",
@@ -925,7 +989,15 @@
       "currentSupplementaryArticleState": {
         "state": "INTEGRATED_IN_AUTHORED_MAIN_PR243",
         "evidence": "evidence/PR243-PRODUCTION-BROWSER.json"
-      }
+      },
+      "fullPageLightVisualViewedWidths": [
+        360,
+        390,
+        768,
+        1280,
+        1920
+      ],
+      "fullPageLightVisualEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     },
     {
       "path": "/courses/macro-reading-for-traders",
@@ -14128,7 +14200,7 @@
   "structuredQuizFeedbackTextRead": 26,
   "supplementaryNotesSourceExpected": 83,
   "supplementaryNotesActuallyRead": 73,
-  "updatedAt": "2026-10-30T11:40:41.825446+00:00",
+  "updatedAt": "2026-10-30T14:56:58.654494+00:00",
   "fullPageDefaultStateRoutesActuallyViewed": 454,
   "separateSupplementaryArticlesExpected": 45,
   "separateSupplementaryArticlesRead": 45,
@@ -14150,5 +14222,5 @@
     "isolatedFunctionalEvidence": "evidence/DAILY-CURRICULUM-ISOLATED-BROWSER.json",
     "reflectionGuidePairsPayloadTextUnread": 0
   },
-  "fullLightStateRoutesActuallyViewed": 47
+  "fullLightStateRoutesActuallyViewed": 56
 }

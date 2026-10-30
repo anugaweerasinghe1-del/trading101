@@ -1,0 +1,380 @@
+{
+  "path": "/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash",
+  "sha": "4fad776ec28409929eb08f47e4734c229e79adb8",
+  "origin": "https://www.thetradehq.com",
+  "capturedAt": "2026-10-30T11:40:42.159Z",
+  "outcome": "COLLECTED_NOT_HUMAN_REVIEWED",
+  "widths": [
+    {
+      "width": 360,
+      "height": 800,
+      "path": "/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash",
+      "theme": "light",
+      "mainText": "Home\nCourses\nDiversification and Position Sizing for Spot Paper Trading\nExecuting Rebalancing with Virtual Cash\nBeginner\n·\nLesson 3 of 3\n·\n5 min read\nExecuting Rebalancing with Virtual Cash\n\nCalculate hypothetical trades toward target weights, including transaction fees, affordability and changed quotes.\n\nPrepared with AI assistance · Publication review recorded by Anuga Weerasinghe · 09/10/2026\nQUICK ANSWER\nExecuting Rebalancing with Virtual Cash?\n\nCalculate hypothetical trades toward target weights, including transaction fees, affordability and changed quotes. A target-weight adjustment differs from a judgement that an asset is cheap or expensive. Available virtual cash must cover purchase notional and fees; selling also incurs a fee.\n\nThe Mechanism of Rebalancing\n\nRebalancing adjusts holdings toward a stated target allocation. Reducing an overweight holding and increasing an underweight one refers to portfolio weights, not whether either asset is overvalued or undervalued. Selling a winner need not mean its price is high in an economic sense, and the asset bought can later fall. Targets are classroom assumptions, not recommendations. Compare no-trade and rebalance cases over matching dates, with fees included, before interpreting the exercise.\n\nTradeHQ supports market purchases and sales of held spot units, using available virtual cash. Selling incurs a 0.1% practice fee and buying needs cash for its own 0.1% fee. Prices can change between orders, so a calculated notional and actual recorded result can differ. List the assumed quote, units, fee and available balance for each step. A plan does not guarantee a fill, a perfect target weight or an improvement in returns; actual markets add liquidity and execution constraints not modelled here.\n\nRebalancing with a Virtual Cash Buffer\n\nBefore a hypothetical purchase, list available cash, assumed price, quantity and the 0.1% buy fee. Before a sale, list held units and the 0.1% sale fee. This distinguishes a chosen allocation from an affordable sequence of virtual orders. Cash can fund a purchase without a preceding sale only when the full debit is available; an order plan is not a promise about later prices. The exercise can compare selling first, using existing cash or leaving the portfolio unchanged, while recording each cost and any changed quote. No particular cash fraction is required by this lesson.\n\nCash can fund purchases without an immediate sale, subject to affordability and fees. A 5% cash allocation is only a hypothetical input. Compare it with another allocation under the same end dates and both rising and falling asset prices. Cash can reduce gains when the comparison asset rises and reduce losses when it falls; real cash products can also earn interest, unlike TradeHQ virtual cash. No percentage guarantees enough funds for every intended transaction.\n\nWorked Example: Restoring Target Weights\n\nLet us work through a concrete execution example using a drifted portfolio. Suppose your total portfolio value is $100,000, and your target allocations are forty percent stocks, forty percent bond ETFs, and twenty percent cash. Currently, your stocks have grown to fifty thousand dollars, your bond ETFs have fallen to thirty thousand dollars, and you hold twenty thousand dollars in virtual cash. To restore your target weights, you must calculate the difference between your current holdings and your target allocations.\n\nIgnoring fees, selling $10,000 of stock and buying $10,000 of bond ETFs would restore $40,000, $40,000 and $20,000 cash. With TradeHQ’s 0.1% fee, the sale nets $9,990 and the purchase costs $10,010. Final cash is $19,980, holdings total $80,000 and portfolio value is $99,980. The weights are approximately 40.008%, 40.008% and 19.984%, rather than exactly 40/40/20. This example assumes unchanged quotes and ignores quantity rounding. Under those fixed-price assumptions, an exact 40/40/20 solution instead sells $10,008 of stock and buys $9,992 of the bond-ETF example. The combined fee is still $20. Each holding is $39,992 and cash is $19,996, totalling $99,980; dividing gives 40%, 40% and 20%. This assumes fractional quantities permit those notionals and the inputs stay unchanged.\n\nPractice Task: Rebalancing Your Portfolio\n\nFor your final practice challenge, you will calculate the precise trades needed to rebalance a drifted portfolio. Assume your total virtual portfolio value is exactly $100,000. Your target allocations are sixty percent spot equities and forty percent virtual cash. However, due to market swings, your equities are now worth seventy thousand dollars, and your virtual cash balance is thirty thousand dollars. Determine the exact market order you must place on TradeHQ to restore your target weights.\n\nBefore fees, selling $10,000 reduces the $70,000 equity holding to $60,000. With the 0.1% sale fee, cash rises from $30,000 to $39,990 and total marked value becomes $99,990. Equity is about 60.006% and cash 39.994%, not exactly 60/40. Calculate the fee-aware target again if exact fractions are the question, while acknowledging changed quotes and unit rounding. An approximate rebalance may be sufficient for a stated worksheet tolerance; no real-money action is prescribed. To finish the exact fixed-price worksheet, let S be the sale notional: 70,000 − S = 0.6 × (100,000 − 0.001S). This gives S = 10,000/0.9994, approximately $10,006.0036. Equity is about $59,993.9964, cash $39,995.9976 and total $99,989.9940: 60% and 40% before any rounding. A changed quote or restricted unit precision can prevent those exact fractions in a recorded order.\n\nKEY TAKEAWAYS\nA target-weight adjustment differs from a judgement that an asset is cheap or expensive.\nAvailable virtual cash must cover purchase notional and fees; selling also incurs a fee.\nExact worksheet fractions depend on fixed quotes, fee assumptions and permitted quantity precision.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. What does a trader do to correct an asset whose weight has grown too large?\nPlace a market buy order to acquire more unitsPlace a market sell order to reduce its position sizeExecute a short sale to hedge the positionDelete the asset from the paper trading history\n2. Why is keeping a virtual cash buffer useful during portfolio rebalancing?\nIt guarantees that you earn real-world interestIt can fund affordable purchases of underweight assets without an immediate saleIt automatically hedges your entire portfolio from any price dropsIt forces TradeHQ to execute trades at cheaper historical prices\n3. Relative to a rising invested comparison, what can non-interest-bearing virtual cash do?\nThe fee charged for holding cash on TradeHQReduce gains; it can instead reduce losses when the comparison fallsA system error where market orders are delayed due to network lagThe process of withdrawing virtual cash from the paper trading platform\n4. If your target cash allocation is 10% and you currently hold 25% in cash, how do you rebalance?\nBuy active assets using the excess cashSell active assets to increase your cash to 50%Withdraw the cash from TradeHQNothing, cash should always be as high as possible\nSubmit & complete lesson\nSOURCES & FURTHER READING\nInvestor.gov — Asset Allocation, Diversification and Rebalancing\nInvestor.gov — Asset Allocation and Diversification\nManaging Concentration Risk and Portfolio Drift\nBack to track\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "Executing Rebalancing with Virtual Cash — Diversification and Position Sizing for Spot Paper Trading | TradeHQ",
+      "heading": "Executing Rebalancing with Virtual Cash",
+      "supplementaryNotes": [],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 360,
+      "scrollHeight": 10393,
+      "viewportWidth": 360,
+      "canonical": "https://www.thetradehq.com/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash",
+      "images": [
+        {
+          "alt": "Executing Rebalancing with Virtual Cash — illustration",
+          "complete": true,
+          "naturalWidth": 1920,
+          "source": "https://www.thetradehq.com/course-covers/trading-basics.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "454888befcbb782f-360-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "454888befcbb782f-360-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "454888befcbb782f-360-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "454888befcbb782f-360-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "454888befcbb782f-360-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "454888befcbb782f-360-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "454888befcbb782f-360-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "454888befcbb782f-360-07.png"
+        },
+        {
+          "y": 5440,
+          "screenshot": "454888befcbb782f-360-08.png"
+        },
+        {
+          "y": 6120,
+          "screenshot": "454888befcbb782f-360-09.png"
+        },
+        {
+          "y": 6800,
+          "screenshot": "454888befcbb782f-360-10.png"
+        },
+        {
+          "y": 7480,
+          "screenshot": "454888befcbb782f-360-11.png"
+        },
+        {
+          "y": 8160,
+          "screenshot": "454888befcbb782f-360-12.png"
+        },
+        {
+          "y": 8840,
+          "screenshot": "454888befcbb782f-360-13.png"
+        },
+        {
+          "y": 9520,
+          "screenshot": "454888befcbb782f-360-14.png"
+        },
+        {
+          "y": 9593,
+          "screenshot": "454888befcbb782f-360-15.png"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "path": "/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash",
+      "theme": "light",
+      "mainText": "Home\nCourses\nDiversification and Position Sizing for Spot Paper Trading\nExecuting Rebalancing with Virtual Cash\nBeginner\n·\nLesson 3 of 3\n·\n5 min read\nExecuting Rebalancing with Virtual Cash\n\nCalculate hypothetical trades toward target weights, including transaction fees, affordability and changed quotes.\n\nPrepared with AI assistance · Publication review recorded by Anuga Weerasinghe · 09/10/2026\nQUICK ANSWER\nExecuting Rebalancing with Virtual Cash?\n\nCalculate hypothetical trades toward target weights, including transaction fees, affordability and changed quotes. A target-weight adjustment differs from a judgement that an asset is cheap or expensive. Available virtual cash must cover purchase notional and fees; selling also incurs a fee.\n\nThe Mechanism of Rebalancing\n\nRebalancing adjusts holdings toward a stated target allocation. Reducing an overweight holding and increasing an underweight one refers to portfolio weights, not whether either asset is overvalued or undervalued. Selling a winner need not mean its price is high in an economic sense, and the asset bought can later fall. Targets are classroom assumptions, not recommendations. Compare no-trade and rebalance cases over matching dates, with fees included, before interpreting the exercise.\n\nTradeHQ supports market purchases and sales of held spot units, using available virtual cash. Selling incurs a 0.1% practice fee and buying needs cash for its own 0.1% fee. Prices can change between orders, so a calculated notional and actual recorded result can differ. List the assumed quote, units, fee and available balance for each step. A plan does not guarantee a fill, a perfect target weight or an improvement in returns; actual markets add liquidity and execution constraints not modelled here.\n\nRebalancing with a Virtual Cash Buffer\n\nBefore a hypothetical purchase, list available cash, assumed price, quantity and the 0.1% buy fee. Before a sale, list held units and the 0.1% sale fee. This distinguishes a chosen allocation from an affordable sequence of virtual orders. Cash can fund a purchase without a preceding sale only when the full debit is available; an order plan is not a promise about later prices. The exercise can compare selling first, using existing cash or leaving the portfolio unchanged, while recording each cost and any changed quote. No particular cash fraction is required by this lesson.\n\nCash can fund purchases without an immediate sale, subject to affordability and fees. A 5% cash allocation is only a hypothetical input. Compare it with another allocation under the same end dates and both rising and falling asset prices. Cash can reduce gains when the comparison asset rises and reduce losses when it falls; real cash products can also earn interest, unlike TradeHQ virtual cash. No percentage guarantees enough funds for every intended transaction.\n\nWorked Example: Restoring Target Weights\n\nLet us work through a concrete execution example using a drifted portfolio. Suppose your total portfolio value is $100,000, and your target allocations are forty percent stocks, forty percent bond ETFs, and twenty percent cash. Currently, your stocks have grown to fifty thousand dollars, your bond ETFs have fallen to thirty thousand dollars, and you hold twenty thousand dollars in virtual cash. To restore your target weights, you must calculate the difference between your current holdings and your target allocations.\n\nIgnoring fees, selling $10,000 of stock and buying $10,000 of bond ETFs would restore $40,000, $40,000 and $20,000 cash. With TradeHQ’s 0.1% fee, the sale nets $9,990 and the purchase costs $10,010. Final cash is $19,980, holdings total $80,000 and portfolio value is $99,980. The weights are approximately 40.008%, 40.008% and 19.984%, rather than exactly 40/40/20. This example assumes unchanged quotes and ignores quantity rounding. Under those fixed-price assumptions, an exact 40/40/20 solution instead sells $10,008 of stock and buys $9,992 of the bond-ETF example. The combined fee is still $20. Each holding is $39,992 and cash is $19,996, totalling $99,980; dividing gives 40%, 40% and 20%. This assumes fractional quantities permit those notionals and the inputs stay unchanged.\n\nPractice Task: Rebalancing Your Portfolio\n\nFor your final practice challenge, you will calculate the precise trades needed to rebalance a drifted portfolio. Assume your total virtual portfolio value is exactly $100,000. Your target allocations are sixty percent spot equities and forty percent virtual cash. However, due to market swings, your equities are now worth seventy thousand dollars, and your virtual cash balance is thirty thousand dollars. Determine the exact market order you must place on TradeHQ to restore your target weights.\n\nBefore fees, selling $10,000 reduces the $70,000 equity holding to $60,000. With the 0.1% sale fee, cash rises from $30,000 to $39,990 and total marked value becomes $99,990. Equity is about 60.006% and cash 39.994%, not exactly 60/40. Calculate the fee-aware target again if exact fractions are the question, while acknowledging changed quotes and unit rounding. An approximate rebalance may be sufficient for a stated worksheet tolerance; no real-money action is prescribed. To finish the exact fixed-price worksheet, let S be the sale notional: 70,000 − S = 0.6 × (100,000 − 0.001S). This gives S = 10,000/0.9994, approximately $10,006.0036. Equity is about $59,993.9964, cash $39,995.9976 and total $99,989.9940: 60% and 40% before any rounding. A changed quote or restricted unit precision can prevent those exact fractions in a recorded order.\n\nKEY TAKEAWAYS\nA target-weight adjustment differs from a judgement that an asset is cheap or expensive.\nAvailable virtual cash must cover purchase notional and fees; selling also incurs a fee.\nExact worksheet fractions depend on fixed quotes, fee assumptions and permitted quantity precision.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. What does a trader do to correct an asset whose weight has grown too large?\nPlace a market buy order to acquire more unitsPlace a market sell order to reduce its position sizeExecute a short sale to hedge the positionDelete the asset from the paper trading history\n2. Why is keeping a virtual cash buffer useful during portfolio rebalancing?\nIt guarantees that you earn real-world interestIt can fund affordable purchases of underweight assets without an immediate saleIt automatically hedges your entire portfolio from any price dropsIt forces TradeHQ to execute trades at cheaper historical prices\n3. Relative to a rising invested comparison, what can non-interest-bearing virtual cash do?\nThe fee charged for holding cash on TradeHQReduce gains; it can instead reduce losses when the comparison fallsA system error where market orders are delayed due to network lagThe process of withdrawing virtual cash from the paper trading platform\n4. If your target cash allocation is 10% and you currently hold 25% in cash, how do you rebalance?\nBuy active assets using the excess cashSell active assets to increase your cash to 50%Withdraw the cash from TradeHQNothing, cash should always be as high as possible\nSubmit & complete lesson\nSOURCES & FURTHER READING\nInvestor.gov — Asset Allocation, Diversification and Rebalancing\nInvestor.gov — Asset Allocation and Diversification\nManaging Concentration Risk and Portfolio Drift\nBack to track\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "Executing Rebalancing with Virtual Cash — Diversification and Position Sizing for Spot Paper Trading | TradeHQ",
+      "heading": "Executing Rebalancing with Virtual Cash",
+      "supplementaryNotes": [],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 390,
+      "scrollHeight": 9869,
+      "viewportWidth": 390,
+      "canonical": "https://www.thetradehq.com/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash",
+      "images": [
+        {
+          "alt": "Executing Rebalancing with Virtual Cash — illustration",
+          "complete": true,
+          "naturalWidth": 1920,
+          "source": "https://www.thetradehq.com/course-covers/trading-basics.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "454888befcbb782f-390-00.png"
+        },
+        {
+          "y": 717,
+          "screenshot": "454888befcbb782f-390-01.png"
+        },
+        {
+          "y": 1434,
+          "screenshot": "454888befcbb782f-390-02.png"
+        },
+        {
+          "y": 2151,
+          "screenshot": "454888befcbb782f-390-03.png"
+        },
+        {
+          "y": 2868,
+          "screenshot": "454888befcbb782f-390-04.png"
+        },
+        {
+          "y": 3585,
+          "screenshot": "454888befcbb782f-390-05.png"
+        },
+        {
+          "y": 4302,
+          "screenshot": "454888befcbb782f-390-06.png"
+        },
+        {
+          "y": 5019,
+          "screenshot": "454888befcbb782f-390-07.png"
+        },
+        {
+          "y": 5736,
+          "screenshot": "454888befcbb782f-390-08.png"
+        },
+        {
+          "y": 6453,
+          "screenshot": "454888befcbb782f-390-09.png"
+        },
+        {
+          "y": 7170,
+          "screenshot": "454888befcbb782f-390-10.png"
+        },
+        {
+          "y": 7887,
+          "screenshot": "454888befcbb782f-390-11.png"
+        },
+        {
+          "y": 8604,
+          "screenshot": "454888befcbb782f-390-12.png"
+        },
+        {
+          "y": 9025,
+          "screenshot": "454888befcbb782f-390-13.png"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "path": "/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash",
+      "theme": "light",
+      "mainText": "Home\nCourses\nDiversification and Position Sizing for Spot Paper Trading\nExecuting Rebalancing with Virtual Cash\nBeginner\n·\nLesson 3 of 3\n·\n5 min read\nExecuting Rebalancing with Virtual Cash\n\nCalculate hypothetical trades toward target weights, including transaction fees, affordability and changed quotes.\n\nPrepared with AI assistance · Publication review recorded by Anuga Weerasinghe · 09/10/2026\nQUICK ANSWER\nExecuting Rebalancing with Virtual Cash?\n\nCalculate hypothetical trades toward target weights, including transaction fees, affordability and changed quotes. A target-weight adjustment differs from a judgement that an asset is cheap or expensive. Available virtual cash must cover purchase notional and fees; selling also incurs a fee.\n\nThe Mechanism of Rebalancing\n\nRebalancing adjusts holdings toward a stated target allocation. Reducing an overweight holding and increasing an underweight one refers to portfolio weights, not whether either asset is overvalued or undervalued. Selling a winner need not mean its price is high in an economic sense, and the asset bought can later fall. Targets are classroom assumptions, not recommendations. Compare no-trade and rebalance cases over matching dates, with fees included, before interpreting the exercise.\n\nTradeHQ supports market purchases and sales of held spot units, using available virtual cash. Selling incurs a 0.1% practice fee and buying needs cash for its own 0.1% fee. Prices can change between orders, so a calculated notional and actual recorded result can differ. List the assumed quote, units, fee and available balance for each step. A plan does not guarantee a fill, a perfect target weight or an improvement in returns; actual markets add liquidity and execution constraints not modelled here.\n\nRebalancing with a Virtual Cash Buffer\n\nBefore a hypothetical purchase, list available cash, assumed price, quantity and the 0.1% buy fee. Before a sale, list held units and the 0.1% sale fee. This distinguishes a chosen allocation from an affordable sequence of virtual orders. Cash can fund a purchase without a preceding sale only when the full debit is available; an order plan is not a promise about later prices. The exercise can compare selling first, using existing cash or leaving the portfolio unchanged, while recording each cost and any changed quote. No particular cash fraction is required by this lesson.\n\nCash can fund purchases without an immediate sale, subject to affordability and fees. A 5% cash allocation is only a hypothetical input. Compare it with another allocation under the same end dates and both rising and falling asset prices. Cash can reduce gains when the comparison asset rises and reduce losses when it falls; real cash products can also earn interest, unlike TradeHQ virtual cash. No percentage guarantees enough funds for every intended transaction.\n\nWorked Example: Restoring Target Weights\n\nLet us work through a concrete execution example using a drifted portfolio. Suppose your total portfolio value is $100,000, and your target allocations are forty percent stocks, forty percent bond ETFs, and twenty percent cash. Currently, your stocks have grown to fifty thousand dollars, your bond ETFs have fallen to thirty thousand dollars, and you hold twenty thousand dollars in virtual cash. To restore your target weights, you must calculate the difference between your current holdings and your target allocations.\n\nIgnoring fees, selling $10,000 of stock and buying $10,000 of bond ETFs would restore $40,000, $40,000 and $20,000 cash. With TradeHQ’s 0.1% fee, the sale nets $9,990 and the purchase costs $10,010. Final cash is $19,980, holdings total $80,000 and portfolio value is $99,980. The weights are approximately 40.008%, 40.008% and 19.984%, rather than exactly 40/40/20. This example assumes unchanged quotes and ignores quantity rounding. Under those fixed-price assumptions, an exact 40/40/20 solution instead sells $10,008 of stock and buys $9,992 of the bond-ETF example. The combined fee is still $20. Each holding is $39,992 and cash is $19,996, totalling $99,980; dividing gives 40%, 40% and 20%. This assumes fractional quantities permit those notionals and the inputs stay unchanged.\n\nPractice Task: Rebalancing Your Portfolio\n\nFor your final practice challenge, you will calculate the precise trades needed to rebalance a drifted portfolio. Assume your total virtual portfolio value is exactly $100,000. Your target allocations are sixty percent spot equities and forty percent virtual cash. However, due to market swings, your equities are now worth seventy thousand dollars, and your virtual cash balance is thirty thousand dollars. Determine the exact market order you must place on TradeHQ to restore your target weights.\n\nBefore fees, selling $10,000 reduces the $70,000 equity holding to $60,000. With the 0.1% sale fee, cash rises from $30,000 to $39,990 and total marked value becomes $99,990. Equity is about 60.006% and cash 39.994%, not exactly 60/40. Calculate the fee-aware target again if exact fractions are the question, while acknowledging changed quotes and unit rounding. An approximate rebalance may be sufficient for a stated worksheet tolerance; no real-money action is prescribed. To finish the exact fixed-price worksheet, let S be the sale notional: 70,000 − S = 0.6 × (100,000 − 0.001S). This gives S = 10,000/0.9994, approximately $10,006.0036. Equity is about $59,993.9964, cash $39,995.9976 and total $99,989.9940: 60% and 40% before any rounding. A changed quote or restricted unit precision can prevent those exact fractions in a recorded order.\n\nKEY TAKEAWAYS\nA target-weight adjustment differs from a judgement that an asset is cheap or expensive.\nAvailable virtual cash must cover purchase notional and fees; selling also incurs a fee.\nExact worksheet fractions depend on fixed quotes, fee assumptions and permitted quantity precision.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. What does a trader do to correct an asset whose weight has grown too large?\nPlace a market buy order to acquire more unitsPlace a market sell order to reduce its position sizeExecute a short sale to hedge the positionDelete the asset from the paper trading history\n2. Why is keeping a virtual cash buffer useful during portfolio rebalancing?\nIt guarantees that you earn real-world interestIt can fund affordable purchases of underweight assets without an immediate saleIt automatically hedges your entire portfolio from any price dropsIt forces TradeHQ to execute trades at cheaper historical prices\n3. Relative to a rising invested comparison, what can non-interest-bearing virtual cash do?\nThe fee charged for holding cash on TradeHQReduce gains; it can instead reduce losses when the comparison fallsA system error where market orders are delayed due to network lagThe process of withdrawing virtual cash from the paper trading platform\n4. If your target cash allocation is 10% and you currently hold 25% in cash, how do you rebalance?\nBuy active assets using the excess cashSell active assets to increase your cash to 50%Withdraw the cash from TradeHQNothing, cash should always be as high as possible\nSubmit & complete lesson\nSOURCES & FURTHER READING\nInvestor.gov — Asset Allocation, Diversification and Rebalancing\nInvestor.gov — Asset Allocation and Diversification\nManaging Concentration Risk and Portfolio Drift\nBack to track\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "Executing Rebalancing with Virtual Cash — Diversification and Position Sizing for Spot Paper Trading | TradeHQ",
+      "heading": "Executing Rebalancing with Virtual Cash",
+      "supplementaryNotes": [],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 753,
+      "scrollHeight": 6738,
+      "viewportWidth": 768,
+      "canonical": "https://www.thetradehq.com/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash",
+      "images": [
+        {
+          "alt": "Executing Rebalancing with Virtual Cash — illustration",
+          "complete": true,
+          "naturalWidth": 1920,
+          "source": "https://www.thetradehq.com/course-covers/trading-basics.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "454888befcbb782f-768-00.png"
+        },
+        {
+          "y": 870,
+          "screenshot": "454888befcbb782f-768-01.png"
+        },
+        {
+          "y": 1740,
+          "screenshot": "454888befcbb782f-768-02.png"
+        },
+        {
+          "y": 2610,
+          "screenshot": "454888befcbb782f-768-03.png"
+        },
+        {
+          "y": 3480,
+          "screenshot": "454888befcbb782f-768-04.png"
+        },
+        {
+          "y": 4350,
+          "screenshot": "454888befcbb782f-768-05.png"
+        },
+        {
+          "y": 5220,
+          "screenshot": "454888befcbb782f-768-06.png"
+        },
+        {
+          "y": 5714,
+          "screenshot": "454888befcbb782f-768-07.png"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "path": "/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash",
+      "theme": "light",
+      "mainText": "Home\nCourses\nDiversification and Position Sizing for Spot Paper Trading\nExecuting Rebalancing with Virtual Cash\nBeginner\n·\nLesson 3 of 3\n·\n5 min read\nExecuting Rebalancing with Virtual Cash\n\nCalculate hypothetical trades toward target weights, including transaction fees, affordability and changed quotes.\n\nPrepared with AI assistance · Publication review recorded by Anuga Weerasinghe · 09/10/2026\nQUICK ANSWER\nExecuting Rebalancing with Virtual Cash?\n\nCalculate hypothetical trades toward target weights, including transaction fees, affordability and changed quotes. A target-weight adjustment differs from a judgement that an asset is cheap or expensive. Available virtual cash must cover purchase notional and fees; selling also incurs a fee.\n\nThe Mechanism of Rebalancing\n\nRebalancing adjusts holdings toward a stated target allocation. Reducing an overweight holding and increasing an underweight one refers to portfolio weights, not whether either asset is overvalued or undervalued. Selling a winner need not mean its price is high in an economic sense, and the asset bought can later fall. Targets are classroom assumptions, not recommendations. Compare no-trade and rebalance cases over matching dates, with fees included, before interpreting the exercise.\n\nTradeHQ supports market purchases and sales of held spot units, using available virtual cash. Selling incurs a 0.1% practice fee and buying needs cash for its own 0.1% fee. Prices can change between orders, so a calculated notional and actual recorded result can differ. List the assumed quote, units, fee and available balance for each step. A plan does not guarantee a fill, a perfect target weight or an improvement in returns; actual markets add liquidity and execution constraints not modelled here.\n\nRebalancing with a Virtual Cash Buffer\n\nBefore a hypothetical purchase, list available cash, assumed price, quantity and the 0.1% buy fee. Before a sale, list held units and the 0.1% sale fee. This distinguishes a chosen allocation from an affordable sequence of virtual orders. Cash can fund a purchase without a preceding sale only when the full debit is available; an order plan is not a promise about later prices. The exercise can compare selling first, using existing cash or leaving the portfolio unchanged, while recording each cost and any changed quote. No particular cash fraction is required by this lesson.\n\nCash can fund purchases without an immediate sale, subject to affordability and fees. A 5% cash allocation is only a hypothetical input. Compare it with another allocation under the same end dates and both rising and falling asset prices. Cash can reduce gains when the comparison asset rises and reduce losses when it falls; real cash products can also earn interest, unlike TradeHQ virtual cash. No percentage guarantees enough funds for every intended transaction.\n\nWorked Example: Restoring Target Weights\n\nLet us work through a concrete execution example using a drifted portfolio. Suppose your total portfolio value is $100,000, and your target allocations are forty percent stocks, forty percent bond ETFs, and twenty percent cash. Currently, your stocks have grown to fifty thousand dollars, your bond ETFs have fallen to thirty thousand dollars, and you hold twenty thousand dollars in virtual cash. To restore your target weights, you must calculate the difference between your current holdings and your target allocations.\n\nIgnoring fees, selling $10,000 of stock and buying $10,000 of bond ETFs would restore $40,000, $40,000 and $20,000 cash. With TradeHQ’s 0.1% fee, the sale nets $9,990 and the purchase costs $10,010. Final cash is $19,980, holdings total $80,000 and portfolio value is $99,980. The weights are approximately 40.008%, 40.008% and 19.984%, rather than exactly 40/40/20. This example assumes unchanged quotes and ignores quantity rounding. Under those fixed-price assumptions, an exact 40/40/20 solution instead sells $10,008 of stock and buys $9,992 of the bond-ETF example. The combined fee is still $20. Each holding is $39,992 and cash is $19,996, totalling $99,980; dividing gives 40%, 40% and 20%. This assumes fractional quantities permit those notionals and the inputs stay unchanged.\n\nPractice Task: Rebalancing Your Portfolio\n\nFor your final practice challenge, you will calculate the precise trades needed to rebalance a drifted portfolio. Assume your total virtual portfolio value is exactly $100,000. Your target allocations are sixty percent spot equities and forty percent virtual cash. However, due to market swings, your equities are now worth seventy thousand dollars, and your virtual cash balance is thirty thousand dollars. Determine the exact market order you must place on TradeHQ to restore your target weights.\n\nBefore fees, selling $10,000 reduces the $70,000 equity holding to $60,000. With the 0.1% sale fee, cash rises from $30,000 to $39,990 and total marked value becomes $99,990. Equity is about 60.006% and cash 39.994%, not exactly 60/40. Calculate the fee-aware target again if exact fractions are the question, while acknowledging changed quotes and unit rounding. An approximate rebalance may be sufficient for a stated worksheet tolerance; no real-money action is prescribed. To finish the exact fixed-price worksheet, let S be the sale notional: 70,000 − S = 0.6 × (100,000 − 0.001S). This gives S = 10,000/0.9994, approximately $10,006.0036. Equity is about $59,993.9964, cash $39,995.9976 and total $99,989.9940: 60% and 40% before any rounding. A changed quote or restricted unit precision can prevent those exact fractions in a recorded order.\n\nKEY TAKEAWAYS\nA target-weight adjustment differs from a judgement that an asset is cheap or expensive.\nAvailable virtual cash must cover purchase notional and fees; selling also incurs a fee.\nExact worksheet fractions depend on fixed quotes, fee assumptions and permitted quantity precision.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. What does a trader do to correct an asset whose weight has grown too large?\nPlace a market buy order to acquire more unitsPlace a market sell order to reduce its position sizeExecute a short sale to hedge the positionDelete the asset from the paper trading history\n2. Why is keeping a virtual cash buffer useful during portfolio rebalancing?\nIt guarantees that you earn real-world interestIt can fund affordable purchases of underweight assets without an immediate saleIt automatically hedges your entire portfolio from any price dropsIt forces TradeHQ to execute trades at cheaper historical prices\n3. Relative to a rising invested comparison, what can non-interest-bearing virtual cash do?\nThe fee charged for holding cash on TradeHQReduce gains; it can instead reduce losses when the comparison fallsA system error where market orders are delayed due to network lagThe process of withdrawing virtual cash from the paper trading platform\n4. If your target cash allocation is 10% and you currently hold 25% in cash, how do you rebalance?\nBuy active assets using the excess cashSell active assets to increase your cash to 50%Withdraw the cash from TradeHQNothing, cash should always be as high as possible\nSubmit & complete lesson\nSOURCES & FURTHER READING\nInvestor.gov — Asset Allocation, Diversification and Rebalancing\nInvestor.gov — Asset Allocation and Diversification\nManaging Concentration Risk and Portfolio Drift\nBack to track\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "Executing Rebalancing with Virtual Cash — Diversification and Position Sizing for Spot Paper Trading | TradeHQ",
+      "heading": "Executing Rebalancing with Virtual Cash",
+      "supplementaryNotes": [],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1265,
+      "scrollHeight": 6227,
+      "viewportWidth": 1280,
+      "canonical": "https://www.thetradehq.com/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash",
+      "images": [
+        {
+          "alt": "Executing Rebalancing with Virtual Cash — illustration",
+          "complete": true,
+          "naturalWidth": 1920,
+          "source": "https://www.thetradehq.com/course-covers/trading-basics.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "454888befcbb782f-1280-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "454888befcbb782f-1280-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "454888befcbb782f-1280-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "454888befcbb782f-1280-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "454888befcbb782f-1280-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "454888befcbb782f-1280-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "454888befcbb782f-1280-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "454888befcbb782f-1280-07.png"
+        },
+        {
+          "y": 5427,
+          "screenshot": "454888befcbb782f-1280-08.png"
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "path": "/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash",
+      "theme": "light",
+      "mainText": "Home\nCourses\nDiversification and Position Sizing for Spot Paper Trading\nExecuting Rebalancing with Virtual Cash\nBeginner\n·\nLesson 3 of 3\n·\n5 min read\nExecuting Rebalancing with Virtual Cash\n\nCalculate hypothetical trades toward target weights, including transaction fees, affordability and changed quotes.\n\nPrepared with AI assistance · Publication review recorded by Anuga Weerasinghe · 09/10/2026\nQUICK ANSWER\nExecuting Rebalancing with Virtual Cash?\n\nCalculate hypothetical trades toward target weights, including transaction fees, affordability and changed quotes. A target-weight adjustment differs from a judgement that an asset is cheap or expensive. Available virtual cash must cover purchase notional and fees; selling also incurs a fee.\n\nThe Mechanism of Rebalancing\n\nRebalancing adjusts holdings toward a stated target allocation. Reducing an overweight holding and increasing an underweight one refers to portfolio weights, not whether either asset is overvalued or undervalued. Selling a winner need not mean its price is high in an economic sense, and the asset bought can later fall. Targets are classroom assumptions, not recommendations. Compare no-trade and rebalance cases over matching dates, with fees included, before interpreting the exercise.\n\nTradeHQ supports market purchases and sales of held spot units, using available virtual cash. Selling incurs a 0.1% practice fee and buying needs cash for its own 0.1% fee. Prices can change between orders, so a calculated notional and actual recorded result can differ. List the assumed quote, units, fee and available balance for each step. A plan does not guarantee a fill, a perfect target weight or an improvement in returns; actual markets add liquidity and execution constraints not modelled here.\n\nRebalancing with a Virtual Cash Buffer\n\nBefore a hypothetical purchase, list available cash, assumed price, quantity and the 0.1% buy fee. Before a sale, list held units and the 0.1% sale fee. This distinguishes a chosen allocation from an affordable sequence of virtual orders. Cash can fund a purchase without a preceding sale only when the full debit is available; an order plan is not a promise about later prices. The exercise can compare selling first, using existing cash or leaving the portfolio unchanged, while recording each cost and any changed quote. No particular cash fraction is required by this lesson.\n\nCash can fund purchases without an immediate sale, subject to affordability and fees. A 5% cash allocation is only a hypothetical input. Compare it with another allocation under the same end dates and both rising and falling asset prices. Cash can reduce gains when the comparison asset rises and reduce losses when it falls; real cash products can also earn interest, unlike TradeHQ virtual cash. No percentage guarantees enough funds for every intended transaction.\n\nWorked Example: Restoring Target Weights\n\nLet us work through a concrete execution example using a drifted portfolio. Suppose your total portfolio value is $100,000, and your target allocations are forty percent stocks, forty percent bond ETFs, and twenty percent cash. Currently, your stocks have grown to fifty thousand dollars, your bond ETFs have fallen to thirty thousand dollars, and you hold twenty thousand dollars in virtual cash. To restore your target weights, you must calculate the difference between your current holdings and your target allocations.\n\nIgnoring fees, selling $10,000 of stock and buying $10,000 of bond ETFs would restore $40,000, $40,000 and $20,000 cash. With TradeHQ’s 0.1% fee, the sale nets $9,990 and the purchase costs $10,010. Final cash is $19,980, holdings total $80,000 and portfolio value is $99,980. The weights are approximately 40.008%, 40.008% and 19.984%, rather than exactly 40/40/20. This example assumes unchanged quotes and ignores quantity rounding. Under those fixed-price assumptions, an exact 40/40/20 solution instead sells $10,008 of stock and buys $9,992 of the bond-ETF example. The combined fee is still $20. Each holding is $39,992 and cash is $19,996, totalling $99,980; dividing gives 40%, 40% and 20%. This assumes fractional quantities permit those notionals and the inputs stay unchanged.\n\nPractice Task: Rebalancing Your Portfolio\n\nFor your final practice challenge, you will calculate the precise trades needed to rebalance a drifted portfolio. Assume your total virtual portfolio value is exactly $100,000. Your target allocations are sixty percent spot equities and forty percent virtual cash. However, due to market swings, your equities are now worth seventy thousand dollars, and your virtual cash balance is thirty thousand dollars. Determine the exact market order you must place on TradeHQ to restore your target weights.\n\nBefore fees, selling $10,000 reduces the $70,000 equity holding to $60,000. With the 0.1% sale fee, cash rises from $30,000 to $39,990 and total marked value becomes $99,990. Equity is about 60.006% and cash 39.994%, not exactly 60/40. Calculate the fee-aware target again if exact fractions are the question, while acknowledging changed quotes and unit rounding. An approximate rebalance may be sufficient for a stated worksheet tolerance; no real-money action is prescribed. To finish the exact fixed-price worksheet, let S be the sale notional: 70,000 − S = 0.6 × (100,000 − 0.001S). This gives S = 10,000/0.9994, approximately $10,006.0036. Equity is about $59,993.9964, cash $39,995.9976 and total $99,989.9940: 60% and 40% before any rounding. A changed quote or restricted unit precision can prevent those exact fractions in a recorded order.\n\nKEY TAKEAWAYS\nA target-weight adjustment differs from a judgement that an asset is cheap or expensive.\nAvailable virtual cash must cover purchase notional and fees; selling also incurs a fee.\nExact worksheet fractions depend on fixed quotes, fee assumptions and permitted quantity precision.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. What does a trader do to correct an asset whose weight has grown too large?\nPlace a market buy order to acquire more unitsPlace a market sell order to reduce its position sizeExecute a short sale to hedge the positionDelete the asset from the paper trading history\n2. Why is keeping a virtual cash buffer useful during portfolio rebalancing?\nIt guarantees that you earn real-world interestIt can fund affordable purchases of underweight assets without an immediate saleIt automatically hedges your entire portfolio from any price dropsIt forces TradeHQ to execute trades at cheaper historical prices\n3. Relative to a rising invested comparison, what can non-interest-bearing virtual cash do?\nThe fee charged for holding cash on TradeHQReduce gains; it can instead reduce losses when the comparison fallsA system error where market orders are delayed due to network lagThe process of withdrawing virtual cash from the paper trading platform\n4. If your target cash allocation is 10% and you currently hold 25% in cash, how do you rebalance?\nBuy active assets using the excess cashSell active assets to increase your cash to 50%Withdraw the cash from TradeHQNothing, cash should always be as high as possible\nSubmit & complete lesson\nSOURCES & FURTHER READING\nInvestor.gov — Asset Allocation, Diversification and Rebalancing\nInvestor.gov — Asset Allocation and Diversification\nManaging Concentration Risk and Portfolio Drift\nBack to track\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "Executing Rebalancing with Virtual Cash — Diversification and Position Sizing for Spot Paper Trading | TradeHQ",
+      "heading": "Executing Rebalancing with Virtual Cash",
+      "supplementaryNotes": [],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1905,
+      "scrollHeight": 6151,
+      "viewportWidth": 1920,
+      "canonical": "https://www.thetradehq.com/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash",
+      "images": [
+        {
+          "alt": "Executing Rebalancing with Virtual Cash — illustration",
+          "complete": true,
+          "naturalWidth": 1920,
+          "source": "https://www.thetradehq.com/course-covers/trading-basics.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "454888befcbb782f-1920-00.png"
+        },
+        {
+          "y": 918,
+          "screenshot": "454888befcbb782f-1920-01.png"
+        },
+        {
+          "y": 1836,
+          "screenshot": "454888befcbb782f-1920-02.png"
+        },
+        {
+          "y": 2754,
+          "screenshot": "454888befcbb782f-1920-03.png"
+        },
+        {
+          "y": 3672,
+          "screenshot": "454888befcbb782f-1920-04.png"
+        },
+        {
+          "y": 4590,
+          "screenshot": "454888befcbb782f-1920-05.png"
+        },
+        {
+          "y": 5071,
+          "screenshot": "454888befcbb782f-1920-06.png"
+        }
+      ]
+    }
+  ]
+}

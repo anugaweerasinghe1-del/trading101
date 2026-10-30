@@ -1,0 +1,380 @@
+{
+  "path": "/courses/diversification-and-position-sizing/foundations-of-asset-allocation",
+  "sha": "4fad776ec28409929eb08f47e4734c229e79adb8",
+  "origin": "https://www.thetradehq.com",
+  "capturedAt": "2026-10-30T11:41:14.126Z",
+  "outcome": "COLLECTED_NOT_HUMAN_REVIEWED",
+  "widths": [
+    {
+      "width": 360,
+      "height": 800,
+      "path": "/courses/diversification-and-position-sizing/foundations-of-asset-allocation",
+      "theme": "light",
+      "mainText": "Home\nCourses\nDiversification and Position Sizing for Spot Paper Trading\nFoundations of Asset Allocation and Position Sizing\nBeginner\n·\nLesson 1 of 3\n·\n5 min read\nFoundations of Asset Allocation and Position Sizing\n\nLearn how to establish target portfolio weights and calculate precise spot trade sizes using virtual cash.\n\nPrepared with AI assistance · Publication review recorded by Anuga Weerasinghe · 09/10/2026\nQUICK ANSWER\nFoundations of Asset Allocation and Position Sizing?\n\nLearn how to establish target portfolio weights and calculate precise spot trade sizes using virtual cash. A selected portfolio weight is a classroom input, not a guaranteed risk boundary. Units equal assumed notional divided by price; fees change cash and post-trade weights.\n\nIntroduction to Spot Position Sizing\n\nPosition sizing translates a stated classroom exposure into dollars and units. A target percentage is a worksheet assumption rather than a professional requirement or a guarantee against emotional decisions. TradeHQ starts a fresh account with $100,000 virtual cash. For an existing account, use its current marked holdings plus available cash, rather than assuming its value is still the starting balance. Different assets can share risks even when their names differ, and a chosen weight does not make a holding suitable for real money.\n\nTo obtain units for a stated notional amount, divide that amount by the assumed price per unit. For example, a hypothetical $15,000 notional at $300 per share gives 50 shares before fees. This does not guarantee a post-trade allocation percentage. A purchase fee reduces cash and total marked equity, changing the denominator; an order also needs sufficient cash for its fee. State whether the target refers to pre-trade value or final value. Quote changes and rounding can create further differences, so reconcile the recorded quantity, cash debit and marked holding after the exercise.\n\nThe Mathematics of Portfolio Weights\n\nCalculating portfolio weights requires dividing the current market value of an individual position by the total value of your entire portfolio. This total value includes both the market value of all held assets and your remaining virtual cash balance. In a spot paper trading environment, asset prices fluctuate continuously, which directly alters their respective weights. If your total portfolio value is $100,000 and your Bitcoin position is worth $20,000, your current allocation weight for that specific asset is exactly twenty percent of your overall holding.\n\nLet us look at a worked example where a trader holds three assets and some cash. Suppose you hold $30,000 in an equity ETF, $10,000 in a cryptocurrency, and have $60,000 in virtual cash. Your total portfolio value is the sum of these parts, which is exactly $100,000. The weight of the equity ETF is thirty percent, the crypto asset is ten percent, and your virtual cash buffer is sixty percent. This basic mathematical layout forms the foundation for tracking portfolio concentration and preparing for subsequent rebalancing.\n\nLimitations of Spot Portfolio Models\n\nThe spot simulator cannot execute derivatives, short sales or leverage. A worksheet can compare lower hypothetical exposure, cash and several assets, but none guarantees protection from adverse market moves. The order engine does not reproduce exchange liquidity or hedging instruments. Prices may be provider-backed, cached, delayed, unavailable or fixed simulator inputs, with chart provenance labelled separately. These limits matter when interpreting an apparent success; simulated results cannot establish that a real hedge or allocation will work.\n\nTradeHQ’s simplified market orders use a displayed practice input without modelling exchange order queues or calibrated slippage. Other simulators can implement different order types and fill assumptions. An actual venue fill depends on available prices, quantity and timing; a single reference quote does not reserve that execution. A hypothetical worse fill can be written into a separate worksheet, but it is not a measured result unless the matching execution record exists. Keep that scenario, the virtual transaction fee and actual market evidence in separate fields when comparing outcomes.\n\nPractice Task: Sizing Your First Trade\n\nNow, address this practice task directly to test your comprehension of basic position sizing. Imagine you have a fresh TradeHQ account with a virtual cash balance of $100,000. Your strategy dictates that you allocate exactly twenty-five percent of your total portfolio to a spot technology ETF. The current snapshot price of this technology ETF is listed as two hundred and fifty dollars per share. Calculate the total dollar allocation and the precise number of shares you must purchase to meet your strategic target weight.\n\nIgnoring costs, $100,000 times 25% gives $25,000, and $25,000 divided by $250 gives 100 shares. On TradeHQ, buying those shares also incurs a 0.1% fee of $25. Cash falls to $74,975, while the position is marked at $25,000: total marked value is $99,975 and the holding is about 25.006% of that total. Thus the simple division sets a pre-fee notional amount, not a perfect post-fee portfolio weight. Recheck affordability, quantity rounding and the actual recorded fill. If an exact 25% post-fee target is the question, let B be the purchase notional: B = 0.25 × (100,000 − 0.001B). Therefore B = 25,000/1.00025, approximately $24,993.7516, or 99.975006 shares at $250. The fee and permitted quantity precision must still be checked; these are fixed-price worksheet assumptions.\n\nKEY TAKEAWAYS\nA selected portfolio weight is a classroom input, not a guaranteed risk boundary.\nUnits equal assumed notional divided by price; fees change cash and post-trade weights.\nTradeHQ provides long-only spot practice without options, futures, borrowed positions or real order-book execution.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. If your total portfolio value is $100,000 and you want to allocate 12% to a spot stock, what is the target dollar allocation?\n$1,200$12,000$24,000$120\n2. Before fees and rounding, how do you calculate units for a stated dollar notional?\nMultiply the target dollar allocation by the asset priceDivide the asset price by the target dollar allocationDivide the target dollar allocation by the current snapshot priceAdd the virtual cash balance to the asset price\n3. Which of the following is a key limitation of spot trading on TradeHQ?\nNo access to market ordersInability to trade spot equitiesLack of options, futures, and short selling for hedgingInability to hold virtual cash balances\n4. Why might your simulated execution on TradeHQ differ from real-world execution?\nTradeHQ uses leverage automatically on all spot ordersReal-world orders are not subject to any price fluctuationsTradeHQ ignores real-world order book liquidity and slippageVirtual cash has a different purchasing power than real cash\nSubmit & complete lesson\nSOURCES & FURTHER READING\nInvestor.gov — Asset Allocation, Diversification and Rebalancing\nInvestor.gov — Asset Allocation and Diversification\nManaging Concentration Risk and Portfolio Drift\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "Foundations of Asset Allocation and Position Sizing — Diversification and Position Sizing for Spot Paper Trading | TradeHQ",
+      "heading": "Foundations of Asset Allocation and Position Sizing",
+      "supplementaryNotes": [],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 360,
+      "scrollHeight": 10253,
+      "viewportWidth": 360,
+      "canonical": "https://www.thetradehq.com/courses/diversification-and-position-sizing/foundations-of-asset-allocation",
+      "images": [
+        {
+          "alt": "Foundations of Asset Allocation and Position Sizing — illustration",
+          "complete": true,
+          "naturalWidth": 1920,
+          "source": "https://www.thetradehq.com/course-covers/trading-basics.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "8f432852ff8e4977-360-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "8f432852ff8e4977-360-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "8f432852ff8e4977-360-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "8f432852ff8e4977-360-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "8f432852ff8e4977-360-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "8f432852ff8e4977-360-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "8f432852ff8e4977-360-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "8f432852ff8e4977-360-07.png"
+        },
+        {
+          "y": 5440,
+          "screenshot": "8f432852ff8e4977-360-08.png"
+        },
+        {
+          "y": 6120,
+          "screenshot": "8f432852ff8e4977-360-09.png"
+        },
+        {
+          "y": 6800,
+          "screenshot": "8f432852ff8e4977-360-10.png"
+        },
+        {
+          "y": 7480,
+          "screenshot": "8f432852ff8e4977-360-11.png"
+        },
+        {
+          "y": 8160,
+          "screenshot": "8f432852ff8e4977-360-12.png"
+        },
+        {
+          "y": 8840,
+          "screenshot": "8f432852ff8e4977-360-13.png"
+        },
+        {
+          "y": 9453,
+          "screenshot": "8f432852ff8e4977-360-14.png"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "path": "/courses/diversification-and-position-sizing/foundations-of-asset-allocation",
+      "theme": "light",
+      "mainText": "Home\nCourses\nDiversification and Position Sizing for Spot Paper Trading\nFoundations of Asset Allocation and Position Sizing\nBeginner\n·\nLesson 1 of 3\n·\n5 min read\nFoundations of Asset Allocation and Position Sizing\n\nLearn how to establish target portfolio weights and calculate precise spot trade sizes using virtual cash.\n\nPrepared with AI assistance · Publication review recorded by Anuga Weerasinghe · 09/10/2026\nQUICK ANSWER\nFoundations of Asset Allocation and Position Sizing?\n\nLearn how to establish target portfolio weights and calculate precise spot trade sizes using virtual cash. A selected portfolio weight is a classroom input, not a guaranteed risk boundary. Units equal assumed notional divided by price; fees change cash and post-trade weights.\n\nIntroduction to Spot Position Sizing\n\nPosition sizing translates a stated classroom exposure into dollars and units. A target percentage is a worksheet assumption rather than a professional requirement or a guarantee against emotional decisions. TradeHQ starts a fresh account with $100,000 virtual cash. For an existing account, use its current marked holdings plus available cash, rather than assuming its value is still the starting balance. Different assets can share risks even when their names differ, and a chosen weight does not make a holding suitable for real money.\n\nTo obtain units for a stated notional amount, divide that amount by the assumed price per unit. For example, a hypothetical $15,000 notional at $300 per share gives 50 shares before fees. This does not guarantee a post-trade allocation percentage. A purchase fee reduces cash and total marked equity, changing the denominator; an order also needs sufficient cash for its fee. State whether the target refers to pre-trade value or final value. Quote changes and rounding can create further differences, so reconcile the recorded quantity, cash debit and marked holding after the exercise.\n\nThe Mathematics of Portfolio Weights\n\nCalculating portfolio weights requires dividing the current market value of an individual position by the total value of your entire portfolio. This total value includes both the market value of all held assets and your remaining virtual cash balance. In a spot paper trading environment, asset prices fluctuate continuously, which directly alters their respective weights. If your total portfolio value is $100,000 and your Bitcoin position is worth $20,000, your current allocation weight for that specific asset is exactly twenty percent of your overall holding.\n\nLet us look at a worked example where a trader holds three assets and some cash. Suppose you hold $30,000 in an equity ETF, $10,000 in a cryptocurrency, and have $60,000 in virtual cash. Your total portfolio value is the sum of these parts, which is exactly $100,000. The weight of the equity ETF is thirty percent, the crypto asset is ten percent, and your virtual cash buffer is sixty percent. This basic mathematical layout forms the foundation for tracking portfolio concentration and preparing for subsequent rebalancing.\n\nLimitations of Spot Portfolio Models\n\nThe spot simulator cannot execute derivatives, short sales or leverage. A worksheet can compare lower hypothetical exposure, cash and several assets, but none guarantees protection from adverse market moves. The order engine does not reproduce exchange liquidity or hedging instruments. Prices may be provider-backed, cached, delayed, unavailable or fixed simulator inputs, with chart provenance labelled separately. These limits matter when interpreting an apparent success; simulated results cannot establish that a real hedge or allocation will work.\n\nTradeHQ’s simplified market orders use a displayed practice input without modelling exchange order queues or calibrated slippage. Other simulators can implement different order types and fill assumptions. An actual venue fill depends on available prices, quantity and timing; a single reference quote does not reserve that execution. A hypothetical worse fill can be written into a separate worksheet, but it is not a measured result unless the matching execution record exists. Keep that scenario, the virtual transaction fee and actual market evidence in separate fields when comparing outcomes.\n\nPractice Task: Sizing Your First Trade\n\nNow, address this practice task directly to test your comprehension of basic position sizing. Imagine you have a fresh TradeHQ account with a virtual cash balance of $100,000. Your strategy dictates that you allocate exactly twenty-five percent of your total portfolio to a spot technology ETF. The current snapshot price of this technology ETF is listed as two hundred and fifty dollars per share. Calculate the total dollar allocation and the precise number of shares you must purchase to meet your strategic target weight.\n\nIgnoring costs, $100,000 times 25% gives $25,000, and $25,000 divided by $250 gives 100 shares. On TradeHQ, buying those shares also incurs a 0.1% fee of $25. Cash falls to $74,975, while the position is marked at $25,000: total marked value is $99,975 and the holding is about 25.006% of that total. Thus the simple division sets a pre-fee notional amount, not a perfect post-fee portfolio weight. Recheck affordability, quantity rounding and the actual recorded fill. If an exact 25% post-fee target is the question, let B be the purchase notional: B = 0.25 × (100,000 − 0.001B). Therefore B = 25,000/1.00025, approximately $24,993.7516, or 99.975006 shares at $250. The fee and permitted quantity precision must still be checked; these are fixed-price worksheet assumptions.\n\nKEY TAKEAWAYS\nA selected portfolio weight is a classroom input, not a guaranteed risk boundary.\nUnits equal assumed notional divided by price; fees change cash and post-trade weights.\nTradeHQ provides long-only spot practice without options, futures, borrowed positions or real order-book execution.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. If your total portfolio value is $100,000 and you want to allocate 12% to a spot stock, what is the target dollar allocation?\n$1,200$12,000$24,000$120\n2. Before fees and rounding, how do you calculate units for a stated dollar notional?\nMultiply the target dollar allocation by the asset priceDivide the asset price by the target dollar allocationDivide the target dollar allocation by the current snapshot priceAdd the virtual cash balance to the asset price\n3. Which of the following is a key limitation of spot trading on TradeHQ?\nNo access to market ordersInability to trade spot equitiesLack of options, futures, and short selling for hedgingInability to hold virtual cash balances\n4. Why might your simulated execution on TradeHQ differ from real-world execution?\nTradeHQ uses leverage automatically on all spot ordersReal-world orders are not subject to any price fluctuationsTradeHQ ignores real-world order book liquidity and slippageVirtual cash has a different purchasing power than real cash\nSubmit & complete lesson\nSOURCES & FURTHER READING\nInvestor.gov — Asset Allocation, Diversification and Rebalancing\nInvestor.gov — Asset Allocation and Diversification\nManaging Concentration Risk and Portfolio Drift\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "Foundations of Asset Allocation and Position Sizing — Diversification and Position Sizing for Spot Paper Trading | TradeHQ",
+      "heading": "Foundations of Asset Allocation and Position Sizing",
+      "supplementaryNotes": [],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 390,
+      "scrollHeight": 9776,
+      "viewportWidth": 390,
+      "canonical": "https://www.thetradehq.com/courses/diversification-and-position-sizing/foundations-of-asset-allocation",
+      "images": [
+        {
+          "alt": "Foundations of Asset Allocation and Position Sizing — illustration",
+          "complete": true,
+          "naturalWidth": 1920,
+          "source": "https://www.thetradehq.com/course-covers/trading-basics.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "8f432852ff8e4977-390-00.png"
+        },
+        {
+          "y": 717,
+          "screenshot": "8f432852ff8e4977-390-01.png"
+        },
+        {
+          "y": 1434,
+          "screenshot": "8f432852ff8e4977-390-02.png"
+        },
+        {
+          "y": 2151,
+          "screenshot": "8f432852ff8e4977-390-03.png"
+        },
+        {
+          "y": 2868,
+          "screenshot": "8f432852ff8e4977-390-04.png"
+        },
+        {
+          "y": 3585,
+          "screenshot": "8f432852ff8e4977-390-05.png"
+        },
+        {
+          "y": 4302,
+          "screenshot": "8f432852ff8e4977-390-06.png"
+        },
+        {
+          "y": 5019,
+          "screenshot": "8f432852ff8e4977-390-07.png"
+        },
+        {
+          "y": 5736,
+          "screenshot": "8f432852ff8e4977-390-08.png"
+        },
+        {
+          "y": 6453,
+          "screenshot": "8f432852ff8e4977-390-09.png"
+        },
+        {
+          "y": 7170,
+          "screenshot": "8f432852ff8e4977-390-10.png"
+        },
+        {
+          "y": 7887,
+          "screenshot": "8f432852ff8e4977-390-11.png"
+        },
+        {
+          "y": 8604,
+          "screenshot": "8f432852ff8e4977-390-12.png"
+        },
+        {
+          "y": 8932,
+          "screenshot": "8f432852ff8e4977-390-13.png"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "path": "/courses/diversification-and-position-sizing/foundations-of-asset-allocation",
+      "theme": "light",
+      "mainText": "Home\nCourses\nDiversification and Position Sizing for Spot Paper Trading\nFoundations of Asset Allocation and Position Sizing\nBeginner\n·\nLesson 1 of 3\n·\n5 min read\nFoundations of Asset Allocation and Position Sizing\n\nLearn how to establish target portfolio weights and calculate precise spot trade sizes using virtual cash.\n\nPrepared with AI assistance · Publication review recorded by Anuga Weerasinghe · 09/10/2026\nQUICK ANSWER\nFoundations of Asset Allocation and Position Sizing?\n\nLearn how to establish target portfolio weights and calculate precise spot trade sizes using virtual cash. A selected portfolio weight is a classroom input, not a guaranteed risk boundary. Units equal assumed notional divided by price; fees change cash and post-trade weights.\n\nIntroduction to Spot Position Sizing\n\nPosition sizing translates a stated classroom exposure into dollars and units. A target percentage is a worksheet assumption rather than a professional requirement or a guarantee against emotional decisions. TradeHQ starts a fresh account with $100,000 virtual cash. For an existing account, use its current marked holdings plus available cash, rather than assuming its value is still the starting balance. Different assets can share risks even when their names differ, and a chosen weight does not make a holding suitable for real money.\n\nTo obtain units for a stated notional amount, divide that amount by the assumed price per unit. For example, a hypothetical $15,000 notional at $300 per share gives 50 shares before fees. This does not guarantee a post-trade allocation percentage. A purchase fee reduces cash and total marked equity, changing the denominator; an order also needs sufficient cash for its fee. State whether the target refers to pre-trade value or final value. Quote changes and rounding can create further differences, so reconcile the recorded quantity, cash debit and marked holding after the exercise.\n\nThe Mathematics of Portfolio Weights\n\nCalculating portfolio weights requires dividing the current market value of an individual position by the total value of your entire portfolio. This total value includes both the market value of all held assets and your remaining virtual cash balance. In a spot paper trading environment, asset prices fluctuate continuously, which directly alters their respective weights. If your total portfolio value is $100,000 and your Bitcoin position is worth $20,000, your current allocation weight for that specific asset is exactly twenty percent of your overall holding.\n\nLet us look at a worked example where a trader holds three assets and some cash. Suppose you hold $30,000 in an equity ETF, $10,000 in a cryptocurrency, and have $60,000 in virtual cash. Your total portfolio value is the sum of these parts, which is exactly $100,000. The weight of the equity ETF is thirty percent, the crypto asset is ten percent, and your virtual cash buffer is sixty percent. This basic mathematical layout forms the foundation for tracking portfolio concentration and preparing for subsequent rebalancing.\n\nLimitations of Spot Portfolio Models\n\nThe spot simulator cannot execute derivatives, short sales or leverage. A worksheet can compare lower hypothetical exposure, cash and several assets, but none guarantees protection from adverse market moves. The order engine does not reproduce exchange liquidity or hedging instruments. Prices may be provider-backed, cached, delayed, unavailable or fixed simulator inputs, with chart provenance labelled separately. These limits matter when interpreting an apparent success; simulated results cannot establish that a real hedge or allocation will work.\n\nTradeHQ’s simplified market orders use a displayed practice input without modelling exchange order queues or calibrated slippage. Other simulators can implement different order types and fill assumptions. An actual venue fill depends on available prices, quantity and timing; a single reference quote does not reserve that execution. A hypothetical worse fill can be written into a separate worksheet, but it is not a measured result unless the matching execution record exists. Keep that scenario, the virtual transaction fee and actual market evidence in separate fields when comparing outcomes.\n\nPractice Task: Sizing Your First Trade\n\nNow, address this practice task directly to test your comprehension of basic position sizing. Imagine you have a fresh TradeHQ account with a virtual cash balance of $100,000. Your strategy dictates that you allocate exactly twenty-five percent of your total portfolio to a spot technology ETF. The current snapshot price of this technology ETF is listed as two hundred and fifty dollars per share. Calculate the total dollar allocation and the precise number of shares you must purchase to meet your strategic target weight.\n\nIgnoring costs, $100,000 times 25% gives $25,000, and $25,000 divided by $250 gives 100 shares. On TradeHQ, buying those shares also incurs a 0.1% fee of $25. Cash falls to $74,975, while the position is marked at $25,000: total marked value is $99,975 and the holding is about 25.006% of that total. Thus the simple division sets a pre-fee notional amount, not a perfect post-fee portfolio weight. Recheck affordability, quantity rounding and the actual recorded fill. If an exact 25% post-fee target is the question, let B be the purchase notional: B = 0.25 × (100,000 − 0.001B). Therefore B = 25,000/1.00025, approximately $24,993.7516, or 99.975006 shares at $250. The fee and permitted quantity precision must still be checked; these are fixed-price worksheet assumptions.\n\nKEY TAKEAWAYS\nA selected portfolio weight is a classroom input, not a guaranteed risk boundary.\nUnits equal assumed notional divided by price; fees change cash and post-trade weights.\nTradeHQ provides long-only spot practice without options, futures, borrowed positions or real order-book execution.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. If your total portfolio value is $100,000 and you want to allocate 12% to a spot stock, what is the target dollar allocation?\n$1,200$12,000$24,000$120\n2. Before fees and rounding, how do you calculate units for a stated dollar notional?\nMultiply the target dollar allocation by the asset priceDivide the asset price by the target dollar allocationDivide the target dollar allocation by the current snapshot priceAdd the virtual cash balance to the asset price\n3. Which of the following is a key limitation of spot trading on TradeHQ?\nNo access to market ordersInability to trade spot equitiesLack of options, futures, and short selling for hedgingInability to hold virtual cash balances\n4. Why might your simulated execution on TradeHQ differ from real-world execution?\nTradeHQ uses leverage automatically on all spot ordersReal-world orders are not subject to any price fluctuationsTradeHQ ignores real-world order book liquidity and slippageVirtual cash has a different purchasing power than real cash\nSubmit & complete lesson\nSOURCES & FURTHER READING\nInvestor.gov — Asset Allocation, Diversification and Rebalancing\nInvestor.gov — Asset Allocation and Diversification\nManaging Concentration Risk and Portfolio Drift\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "Foundations of Asset Allocation and Position Sizing — Diversification and Position Sizing for Spot Paper Trading | TradeHQ",
+      "heading": "Foundations of Asset Allocation and Position Sizing",
+      "supplementaryNotes": [],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 753,
+      "scrollHeight": 6818,
+      "viewportWidth": 768,
+      "canonical": "https://www.thetradehq.com/courses/diversification-and-position-sizing/foundations-of-asset-allocation",
+      "images": [
+        {
+          "alt": "Foundations of Asset Allocation and Position Sizing — illustration",
+          "complete": true,
+          "naturalWidth": 1920,
+          "source": "https://www.thetradehq.com/course-covers/trading-basics.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "8f432852ff8e4977-768-00.png"
+        },
+        {
+          "y": 870,
+          "screenshot": "8f432852ff8e4977-768-01.png"
+        },
+        {
+          "y": 1740,
+          "screenshot": "8f432852ff8e4977-768-02.png"
+        },
+        {
+          "y": 2610,
+          "screenshot": "8f432852ff8e4977-768-03.png"
+        },
+        {
+          "y": 3480,
+          "screenshot": "8f432852ff8e4977-768-04.png"
+        },
+        {
+          "y": 4350,
+          "screenshot": "8f432852ff8e4977-768-05.png"
+        },
+        {
+          "y": 5220,
+          "screenshot": "8f432852ff8e4977-768-06.png"
+        },
+        {
+          "y": 5794,
+          "screenshot": "8f432852ff8e4977-768-07.png"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "path": "/courses/diversification-and-position-sizing/foundations-of-asset-allocation",
+      "theme": "light",
+      "mainText": "Home\nCourses\nDiversification and Position Sizing for Spot Paper Trading\nFoundations of Asset Allocation and Position Sizing\nBeginner\n·\nLesson 1 of 3\n·\n5 min read\nFoundations of Asset Allocation and Position Sizing\n\nLearn how to establish target portfolio weights and calculate precise spot trade sizes using virtual cash.\n\nPrepared with AI assistance · Publication review recorded by Anuga Weerasinghe · 09/10/2026\nQUICK ANSWER\nFoundations of Asset Allocation and Position Sizing?\n\nLearn how to establish target portfolio weights and calculate precise spot trade sizes using virtual cash. A selected portfolio weight is a classroom input, not a guaranteed risk boundary. Units equal assumed notional divided by price; fees change cash and post-trade weights.\n\nIntroduction to Spot Position Sizing\n\nPosition sizing translates a stated classroom exposure into dollars and units. A target percentage is a worksheet assumption rather than a professional requirement or a guarantee against emotional decisions. TradeHQ starts a fresh account with $100,000 virtual cash. For an existing account, use its current marked holdings plus available cash, rather than assuming its value is still the starting balance. Different assets can share risks even when their names differ, and a chosen weight does not make a holding suitable for real money.\n\nTo obtain units for a stated notional amount, divide that amount by the assumed price per unit. For example, a hypothetical $15,000 notional at $300 per share gives 50 shares before fees. This does not guarantee a post-trade allocation percentage. A purchase fee reduces cash and total marked equity, changing the denominator; an order also needs sufficient cash for its fee. State whether the target refers to pre-trade value or final value. Quote changes and rounding can create further differences, so reconcile the recorded quantity, cash debit and marked holding after the exercise.\n\nThe Mathematics of Portfolio Weights\n\nCalculating portfolio weights requires dividing the current market value of an individual position by the total value of your entire portfolio. This total value includes both the market value of all held assets and your remaining virtual cash balance. In a spot paper trading environment, asset prices fluctuate continuously, which directly alters their respective weights. If your total portfolio value is $100,000 and your Bitcoin position is worth $20,000, your current allocation weight for that specific asset is exactly twenty percent of your overall holding.\n\nLet us look at a worked example where a trader holds three assets and some cash. Suppose you hold $30,000 in an equity ETF, $10,000 in a cryptocurrency, and have $60,000 in virtual cash. Your total portfolio value is the sum of these parts, which is exactly $100,000. The weight of the equity ETF is thirty percent, the crypto asset is ten percent, and your virtual cash buffer is sixty percent. This basic mathematical layout forms the foundation for tracking portfolio concentration and preparing for subsequent rebalancing.\n\nLimitations of Spot Portfolio Models\n\nThe spot simulator cannot execute derivatives, short sales or leverage. A worksheet can compare lower hypothetical exposure, cash and several assets, but none guarantees protection from adverse market moves. The order engine does not reproduce exchange liquidity or hedging instruments. Prices may be provider-backed, cached, delayed, unavailable or fixed simulator inputs, with chart provenance labelled separately. These limits matter when interpreting an apparent success; simulated results cannot establish that a real hedge or allocation will work.\n\nTradeHQ’s simplified market orders use a displayed practice input without modelling exchange order queues or calibrated slippage. Other simulators can implement different order types and fill assumptions. An actual venue fill depends on available prices, quantity and timing; a single reference quote does not reserve that execution. A hypothetical worse fill can be written into a separate worksheet, but it is not a measured result unless the matching execution record exists. Keep that scenario, the virtual transaction fee and actual market evidence in separate fields when comparing outcomes.\n\nPractice Task: Sizing Your First Trade\n\nNow, address this practice task directly to test your comprehension of basic position sizing. Imagine you have a fresh TradeHQ account with a virtual cash balance of $100,000. Your strategy dictates that you allocate exactly twenty-five percent of your total portfolio to a spot technology ETF. The current snapshot price of this technology ETF is listed as two hundred and fifty dollars per share. Calculate the total dollar allocation and the precise number of shares you must purchase to meet your strategic target weight.\n\nIgnoring costs, $100,000 times 25% gives $25,000, and $25,000 divided by $250 gives 100 shares. On TradeHQ, buying those shares also incurs a 0.1% fee of $25. Cash falls to $74,975, while the position is marked at $25,000: total marked value is $99,975 and the holding is about 25.006% of that total. Thus the simple division sets a pre-fee notional amount, not a perfect post-fee portfolio weight. Recheck affordability, quantity rounding and the actual recorded fill. If an exact 25% post-fee target is the question, let B be the purchase notional: B = 0.25 × (100,000 − 0.001B). Therefore B = 25,000/1.00025, approximately $24,993.7516, or 99.975006 shares at $250. The fee and permitted quantity precision must still be checked; these are fixed-price worksheet assumptions.\n\nKEY TAKEAWAYS\nA selected portfolio weight is a classroom input, not a guaranteed risk boundary.\nUnits equal assumed notional divided by price; fees change cash and post-trade weights.\nTradeHQ provides long-only spot practice without options, futures, borrowed positions or real order-book execution.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. If your total portfolio value is $100,000 and you want to allocate 12% to a spot stock, what is the target dollar allocation?\n$1,200$12,000$24,000$120\n2. Before fees and rounding, how do you calculate units for a stated dollar notional?\nMultiply the target dollar allocation by the asset priceDivide the asset price by the target dollar allocationDivide the target dollar allocation by the current snapshot priceAdd the virtual cash balance to the asset price\n3. Which of the following is a key limitation of spot trading on TradeHQ?\nNo access to market ordersInability to trade spot equitiesLack of options, futures, and short selling for hedgingInability to hold virtual cash balances\n4. Why might your simulated execution on TradeHQ differ from real-world execution?\nTradeHQ uses leverage automatically on all spot ordersReal-world orders are not subject to any price fluctuationsTradeHQ ignores real-world order book liquidity and slippageVirtual cash has a different purchasing power than real cash\nSubmit & complete lesson\nSOURCES & FURTHER READING\nInvestor.gov — Asset Allocation, Diversification and Rebalancing\nInvestor.gov — Asset Allocation and Diversification\nManaging Concentration Risk and Portfolio Drift\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "Foundations of Asset Allocation and Position Sizing — Diversification and Position Sizing for Spot Paper Trading | TradeHQ",
+      "heading": "Foundations of Asset Allocation and Position Sizing",
+      "supplementaryNotes": [],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1265,
+      "scrollHeight": 6303,
+      "viewportWidth": 1280,
+      "canonical": "https://www.thetradehq.com/courses/diversification-and-position-sizing/foundations-of-asset-allocation",
+      "images": [
+        {
+          "alt": "Foundations of Asset Allocation and Position Sizing — illustration",
+          "complete": true,
+          "naturalWidth": 1920,
+          "source": "https://www.thetradehq.com/course-covers/trading-basics.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "8f432852ff8e4977-1280-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "8f432852ff8e4977-1280-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "8f432852ff8e4977-1280-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "8f432852ff8e4977-1280-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "8f432852ff8e4977-1280-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "8f432852ff8e4977-1280-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "8f432852ff8e4977-1280-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "8f432852ff8e4977-1280-07.png"
+        },
+        {
+          "y": 5440,
+          "screenshot": "8f432852ff8e4977-1280-08.png"
+        },
+        {
+          "y": 5503,
+          "screenshot": "8f432852ff8e4977-1280-09.png"
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "path": "/courses/diversification-and-position-sizing/foundations-of-asset-allocation",
+      "theme": "light",
+      "mainText": "Home\nCourses\nDiversification and Position Sizing for Spot Paper Trading\nFoundations of Asset Allocation and Position Sizing\nBeginner\n·\nLesson 1 of 3\n·\n5 min read\nFoundations of Asset Allocation and Position Sizing\n\nLearn how to establish target portfolio weights and calculate precise spot trade sizes using virtual cash.\n\nPrepared with AI assistance · Publication review recorded by Anuga Weerasinghe · 09/10/2026\nQUICK ANSWER\nFoundations of Asset Allocation and Position Sizing?\n\nLearn how to establish target portfolio weights and calculate precise spot trade sizes using virtual cash. A selected portfolio weight is a classroom input, not a guaranteed risk boundary. Units equal assumed notional divided by price; fees change cash and post-trade weights.\n\nIntroduction to Spot Position Sizing\n\nPosition sizing translates a stated classroom exposure into dollars and units. A target percentage is a worksheet assumption rather than a professional requirement or a guarantee against emotional decisions. TradeHQ starts a fresh account with $100,000 virtual cash. For an existing account, use its current marked holdings plus available cash, rather than assuming its value is still the starting balance. Different assets can share risks even when their names differ, and a chosen weight does not make a holding suitable for real money.\n\nTo obtain units for a stated notional amount, divide that amount by the assumed price per unit. For example, a hypothetical $15,000 notional at $300 per share gives 50 shares before fees. This does not guarantee a post-trade allocation percentage. A purchase fee reduces cash and total marked equity, changing the denominator; an order also needs sufficient cash for its fee. State whether the target refers to pre-trade value or final value. Quote changes and rounding can create further differences, so reconcile the recorded quantity, cash debit and marked holding after the exercise.\n\nThe Mathematics of Portfolio Weights\n\nCalculating portfolio weights requires dividing the current market value of an individual position by the total value of your entire portfolio. This total value includes both the market value of all held assets and your remaining virtual cash balance. In a spot paper trading environment, asset prices fluctuate continuously, which directly alters their respective weights. If your total portfolio value is $100,000 and your Bitcoin position is worth $20,000, your current allocation weight for that specific asset is exactly twenty percent of your overall holding.\n\nLet us look at a worked example where a trader holds three assets and some cash. Suppose you hold $30,000 in an equity ETF, $10,000 in a cryptocurrency, and have $60,000 in virtual cash. Your total portfolio value is the sum of these parts, which is exactly $100,000. The weight of the equity ETF is thirty percent, the crypto asset is ten percent, and your virtual cash buffer is sixty percent. This basic mathematical layout forms the foundation for tracking portfolio concentration and preparing for subsequent rebalancing.\n\nLimitations of Spot Portfolio Models\n\nThe spot simulator cannot execute derivatives, short sales or leverage. A worksheet can compare lower hypothetical exposure, cash and several assets, but none guarantees protection from adverse market moves. The order engine does not reproduce exchange liquidity or hedging instruments. Prices may be provider-backed, cached, delayed, unavailable or fixed simulator inputs, with chart provenance labelled separately. These limits matter when interpreting an apparent success; simulated results cannot establish that a real hedge or allocation will work.\n\nTradeHQ’s simplified market orders use a displayed practice input without modelling exchange order queues or calibrated slippage. Other simulators can implement different order types and fill assumptions. An actual venue fill depends on available prices, quantity and timing; a single reference quote does not reserve that execution. A hypothetical worse fill can be written into a separate worksheet, but it is not a measured result unless the matching execution record exists. Keep that scenario, the virtual transaction fee and actual market evidence in separate fields when comparing outcomes.\n\nPractice Task: Sizing Your First Trade\n\nNow, address this practice task directly to test your comprehension of basic position sizing. Imagine you have a fresh TradeHQ account with a virtual cash balance of $100,000. Your strategy dictates that you allocate exactly twenty-five percent of your total portfolio to a spot technology ETF. The current snapshot price of this technology ETF is listed as two hundred and fifty dollars per share. Calculate the total dollar allocation and the precise number of shares you must purchase to meet your strategic target weight.\n\nIgnoring costs, $100,000 times 25% gives $25,000, and $25,000 divided by $250 gives 100 shares. On TradeHQ, buying those shares also incurs a 0.1% fee of $25. Cash falls to $74,975, while the position is marked at $25,000: total marked value is $99,975 and the holding is about 25.006% of that total. Thus the simple division sets a pre-fee notional amount, not a perfect post-fee portfolio weight. Recheck affordability, quantity rounding and the actual recorded fill. If an exact 25% post-fee target is the question, let B be the purchase notional: B = 0.25 × (100,000 − 0.001B). Therefore B = 25,000/1.00025, approximately $24,993.7516, or 99.975006 shares at $250. The fee and permitted quantity precision must still be checked; these are fixed-price worksheet assumptions.\n\nKEY TAKEAWAYS\nA selected portfolio weight is a classroom input, not a guaranteed risk boundary.\nUnits equal assumed notional divided by price; fees change cash and post-trade weights.\nTradeHQ provides long-only spot practice without options, futures, borrowed positions or real order-book execution.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. If your total portfolio value is $100,000 and you want to allocate 12% to a spot stock, what is the target dollar allocation?\n$1,200$12,000$24,000$120\n2. Before fees and rounding, how do you calculate units for a stated dollar notional?\nMultiply the target dollar allocation by the asset priceDivide the asset price by the target dollar allocationDivide the target dollar allocation by the current snapshot priceAdd the virtual cash balance to the asset price\n3. Which of the following is a key limitation of spot trading on TradeHQ?\nNo access to market ordersInability to trade spot equitiesLack of options, futures, and short selling for hedgingInability to hold virtual cash balances\n4. Why might your simulated execution on TradeHQ differ from real-world execution?\nTradeHQ uses leverage automatically on all spot ordersReal-world orders are not subject to any price fluctuationsTradeHQ ignores real-world order book liquidity and slippageVirtual cash has a different purchasing power than real cash\nSubmit & complete lesson\nSOURCES & FURTHER READING\nInvestor.gov — Asset Allocation, Diversification and Rebalancing\nInvestor.gov — Asset Allocation and Diversification\nManaging Concentration Risk and Portfolio Drift\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "Foundations of Asset Allocation and Position Sizing — Diversification and Position Sizing for Spot Paper Trading | TradeHQ",
+      "heading": "Foundations of Asset Allocation and Position Sizing",
+      "supplementaryNotes": [],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1905,
+      "scrollHeight": 6227,
+      "viewportWidth": 1920,
+      "canonical": "https://www.thetradehq.com/courses/diversification-and-position-sizing/foundations-of-asset-allocation",
+      "images": [
+        {
+          "alt": "Foundations of Asset Allocation and Position Sizing — illustration",
+          "complete": true,
+          "naturalWidth": 1920,
+          "source": "https://www.thetradehq.com/course-covers/trading-basics.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "8f432852ff8e4977-1920-00.png"
+        },
+        {
+          "y": 918,
+          "screenshot": "8f432852ff8e4977-1920-01.png"
+        },
+        {
+          "y": 1836,
+          "screenshot": "8f432852ff8e4977-1920-02.png"
+        },
+        {
+          "y": 2754,
+          "screenshot": "8f432852ff8e4977-1920-03.png"
+        },
+        {
+          "y": 3672,
+          "screenshot": "8f432852ff8e4977-1920-04.png"
+        },
+        {
+          "y": 4590,
+          "screenshot": "8f432852ff8e4977-1920-05.png"
+        },
+        {
+          "y": 5147,
+          "screenshot": "8f432852ff8e4977-1920-06.png"
+        }
+      ]
+    }
+  ]
+}

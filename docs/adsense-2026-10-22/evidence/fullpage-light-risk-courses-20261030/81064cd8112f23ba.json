@@ -1,0 +1,393 @@
+{
+  "path": "/courses/futures-and-derivatives/margin-and-leverage-in-futures",
+  "sha": "4fad776ec28409929eb08f47e4734c229e79adb8",
+  "origin": "https://www.thetradehq.com",
+  "capturedAt": "2026-10-30T11:43:13.370Z",
+  "outcome": "COLLECTED_NOT_HUMAN_REVIEWED",
+  "widths": [
+    {
+      "width": 360,
+      "height": 800,
+      "path": "/courses/futures-and-derivatives/margin-and-leverage-in-futures",
+      "theme": "light",
+      "mainText": "Home\nCourses\nFutures & Derivatives\nMargin & Leverage in Futures\nIntermediate\n·\nLesson 2 of 5\n·\n8 min read\nMargin & Leverage in Futures\n\nFutures margin is collateral for contract obligations. Losses and variation-margin demands can exceed an initial margin deposit.\n\nBy Anuga Weerasinghe\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nQUICK ANSWER\nMargin & Leverage in Futures?\n\nFutures margin is collateral for contract obligations. Losses and variation-margin demands can exceed an initial margin deposit. Futures margin is a performance bond, not a loan. Accounts are marked-to-market every trading day.\n\nMargin is not what you think\n\nStock margin can involve borrowing to purchase shares. Futures margin is collateral, often called a performance bond, rather than a loan to purchase the contract's notional value. It does not cap losses. Exchange requirements vary by contract and market conditions, and brokers can require additional funds. The figures below are a hypothetical worksheet, not current margin requirements.\n\nMaintenance margin and margin calls\n\nMaintenance margin is the minimum account equity required to maintain a position. It is not a universal percentage of initial margin. A shortfall can require additional funds or a reduction in positions; a broker may liquidate positions under its rules. Requirements can change, and action may occur intraday. Check the contract requirements and broker agreement instead of assuming a fixed deadline or a guaranteed warning.\n\nDaily mark-to-market\n\nFutures positions are marked to market, with gains and losses settled through variation margin. Daily settlement limits the accumulation of unpaid losses, and clearing arrangements may include intraday settlement. It does not eliminate default or overnight risk: clearing houses also use collateral and other financial safeguards. A hypothetical $2,000 loss reduces the account's funds; the timing of customer-account entries depends on the broker's arrangements.\n\nWhy leverage cuts both ways\n\nFor a hypothetical E-mini S&P 500 contract at an index level of 5,000, the $50 multiplier gives $250,000 of notional exposure. A 1% index move is 50 points, or $2,500 per contract before costs. Relative to an assumed $13,000 margin deposit, that is about 19.2%; it is not a percentage of every trader's total account equity. A different index level, contract quantity or account balance changes the calculation.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKEY TAKEAWAYS\nFutures margin is a performance bond, not a loan.\nAccounts are marked-to-market every trading day.\nA maintenance shortfall can require more funds, reduced positions or liquidation under broker rules.\nLeverage depends on contract exposure and the equity used in the calculation.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. Futures margin is best described as:\nA loanA performance bondA feeA tax\n2. Futures accounts are marked-to-market:\nYearlyMonthlyEvery trading dayOnly at expiration\n3. In the worksheet (index 5,000, $50 multiplier), a 1% move relative to an assumed $13,000 deposit is approximately:\n1%5%~19%50%\n4. A margin call means:\nYou made moneyDeposit more or be liquidatedExchange closedBroker owes interest\nSubmit & complete lesson\nAnswer notes\nFutures margin is best described as: Options: A loan; A performance bond; A fee; A tax. Correct answer: A performance bond. Why: It is collateral supporting the position, not a loan or a cap on losses.\nFutures accounts are marked-to-market: Options: Yearly; Monthly; Every trading day; Only at expiration. Correct answer: Every trading day. Why: Daily settlement moves cash in/out.\nIn the worksheet (index 5,000, $50 multiplier), a 1% move relative to an assumed $13,000 deposit is approximately: Options: 1%; 5%; ~19%; 50%. Correct answer: ~19%. Why: $2,500 on $13,000 ≈ 19%.\nA margin call means: Options: You made money; Deposit more or be liquidated; Exchange closed; Broker owes interest. Correct answer: Deposit more or be liquidated. Why: The broker may require additional funds or reduce or liquidate positions under its rules.\nSOURCES & FURTHER READING\nCME — Margin: Know What Is Needed\nCME — Financial Safeguards\nWhat Is a Futures Contract?\nContango & Backwardation — Term Structure Explained\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nFutures & Derivatives\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "Margin & Leverage in Futures — Futures & Derivatives | TradeHQ",
+      "heading": "Margin & Leverage in Futures",
+      "supplementaryNotes": [
+        {
+          "path": "/courses/futures-and-derivatives/margin-and-leverage-in-futures",
+          "text": "Home\nCourses\nFutures & Derivatives\nMargin & Leverage in Futures\nIntermediate\n·\nLesson 2 of 5\n·\n8 min read\nMargin & Leverage in Futures\n\nFutures margin is collateral for contract obligations. Losses and variation-margin demands can exceed an initial margin deposit.\n\nBy Anuga Weerasinghe\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nQUICK ANSWER\nMargin & Leverage in Futures?\n\nFutures margin is collateral for contract obligations. Losses and variation-margin demands can exceed an initial margin deposit. Futures margin is a performance bond, not a loan. Accounts are marked-to-market every trading day.\n\nMargin is not what you think\n\nStock margin can involve borrowing to purchase shares. Futures margin is collateral, often called a performance bond, rather than a loan to purchase the contract's notional value. It does not cap losses. Exchange requirements vary by contract and market conditions, and brokers can require additional funds. The figures below are a hypothetical worksheet, not current margin requirements.\n\nMaintenance margin and margin calls\n\nMaintenance margin is the minimum account equity required to maintain a position. It is not a universal percentage of initial margin. A shortfall can require additional funds or a reduction in positions; a broker may liquidate positions under its rules. Requirements can change, and action may occur intraday. Check the contract requirements and broker agreement instead of assuming a fixed deadline or a guaranteed warning.\n\nDaily mark-to-market\n\nFutures positions are marked to market, with gains and losses settled through variation margin. Daily settlement limits the accumulation of unpaid losses, and clearing arrangements may include intraday settlement. It does not eliminate default or overnight risk: clearing houses also use collateral and other financial safeguards. A hypothetical $2,000 loss reduces the account's funds; the timing of customer-account entries depends on the broker's arrangements.\n\nWhy leverage cuts both ways\n\nFor a hypothetical E-mini S&P 500 contract at an index level of 5,000, the $50 multiplier gives $250,000 of notional exposure. A 1% index move is 50 points, or $2,500 per contract before costs. Relative to an assumed $13,000 margin deposit, that is about 19.2%; it is not a percentage of every trader's total account equity. A different index level, contract quantity or account balance changes the calculation.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKEY TAKEAWAYS\nFutures margin is a performance bond, not a loan.\nAccounts are marked-to-market every trading day.\nA maintenance shortfall can require more funds, reduced positions or liquidation under broker rules.\nLeverage depends on contract exposure and the equity used in the calculation.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. Futures margin is best described as:\nA loanA performance bondA feeA tax\n2. Futures accounts are marked-to-market:\nYearlyMonthlyEvery trading dayOnly at expiration\n3. In the worksheet (index 5,000, $50 multiplier), a 1% move relative to an assumed $13,000 deposit is approximately:\n1%5%~19%50%\n4. A margin call means:\nYou made moneyDeposit more or be liquidatedExchange closedBroker owes interest\nSubmit & complete lesson\nAnswer notes\nFutures margin is best described as: Options: A loan; A performance bond; A fee; A tax. Correct answer: A performance bond. Why: It is collateral supporting the position, not a loan or a cap on losses.\nFutures accounts are marked-to-market: Options: Yearly; Monthly; Every trading day; Only at expiration. Correct answer: Every trading day. Why: Daily settlement moves cash in/out.\nIn the worksheet (index 5,000, $50 multiplier), a 1% move relative to an assumed $13,000 deposit is approximately: Options: 1%; 5%; ~19%; 50%. Correct answer: ~19%. Why: $2,500 on $13,000 ≈ 19%.\nA margin call means: Options: You made money; Deposit more or be liquidated; Exchange closed; Broker owes interest. Correct answer: Deposit more or be liquidated. Why: The broker may require additional funds or reduce or liquidate positions under its rules.\nSOURCES & FURTHER READING\nCME — Margin: Know What Is Needed\nCME — Financial Safeguards\nWhat Is a Futures Contract?\nContango & Backwardation — Term Structure Explained\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nFutures & Derivatives\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 360,
+      "scrollHeight": 9240,
+      "viewportWidth": 360,
+      "canonical": "https://www.thetradehq.com/courses/futures-and-derivatives/margin-and-leverage-in-futures",
+      "images": [
+        {
+          "alt": "Margin & Leverage in Futures — illustration",
+          "complete": true,
+          "naturalWidth": 1200,
+          "source": "https://www.thetradehq.com/assets/futures-hero-DsjhfM9Q.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "81064cd8112f23ba-360-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "81064cd8112f23ba-360-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "81064cd8112f23ba-360-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "81064cd8112f23ba-360-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "81064cd8112f23ba-360-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "81064cd8112f23ba-360-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "81064cd8112f23ba-360-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "81064cd8112f23ba-360-07.png"
+        },
+        {
+          "y": 5440,
+          "screenshot": "81064cd8112f23ba-360-08.png"
+        },
+        {
+          "y": 6120,
+          "screenshot": "81064cd8112f23ba-360-09.png"
+        },
+        {
+          "y": 6800,
+          "screenshot": "81064cd8112f23ba-360-10.png"
+        },
+        {
+          "y": 7480,
+          "screenshot": "81064cd8112f23ba-360-11.png"
+        },
+        {
+          "y": 8160,
+          "screenshot": "81064cd8112f23ba-360-12.png"
+        },
+        {
+          "y": 8440,
+          "screenshot": "81064cd8112f23ba-360-13.png"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "path": "/courses/futures-and-derivatives/margin-and-leverage-in-futures",
+      "theme": "light",
+      "mainText": "Home\nCourses\nFutures & Derivatives\nMargin & Leverage in Futures\nIntermediate\n·\nLesson 2 of 5\n·\n8 min read\nMargin & Leverage in Futures\n\nFutures margin is collateral for contract obligations. Losses and variation-margin demands can exceed an initial margin deposit.\n\nBy Anuga Weerasinghe\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nQUICK ANSWER\nMargin & Leverage in Futures?\n\nFutures margin is collateral for contract obligations. Losses and variation-margin demands can exceed an initial margin deposit. Futures margin is a performance bond, not a loan. Accounts are marked-to-market every trading day.\n\nMargin is not what you think\n\nStock margin can involve borrowing to purchase shares. Futures margin is collateral, often called a performance bond, rather than a loan to purchase the contract's notional value. It does not cap losses. Exchange requirements vary by contract and market conditions, and brokers can require additional funds. The figures below are a hypothetical worksheet, not current margin requirements.\n\nMaintenance margin and margin calls\n\nMaintenance margin is the minimum account equity required to maintain a position. It is not a universal percentage of initial margin. A shortfall can require additional funds or a reduction in positions; a broker may liquidate positions under its rules. Requirements can change, and action may occur intraday. Check the contract requirements and broker agreement instead of assuming a fixed deadline or a guaranteed warning.\n\nDaily mark-to-market\n\nFutures positions are marked to market, with gains and losses settled through variation margin. Daily settlement limits the accumulation of unpaid losses, and clearing arrangements may include intraday settlement. It does not eliminate default or overnight risk: clearing houses also use collateral and other financial safeguards. A hypothetical $2,000 loss reduces the account's funds; the timing of customer-account entries depends on the broker's arrangements.\n\nWhy leverage cuts both ways\n\nFor a hypothetical E-mini S&P 500 contract at an index level of 5,000, the $50 multiplier gives $250,000 of notional exposure. A 1% index move is 50 points, or $2,500 per contract before costs. Relative to an assumed $13,000 margin deposit, that is about 19.2%; it is not a percentage of every trader's total account equity. A different index level, contract quantity or account balance changes the calculation.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKEY TAKEAWAYS\nFutures margin is a performance bond, not a loan.\nAccounts are marked-to-market every trading day.\nA maintenance shortfall can require more funds, reduced positions or liquidation under broker rules.\nLeverage depends on contract exposure and the equity used in the calculation.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. Futures margin is best described as:\nA loanA performance bondA feeA tax\n2. Futures accounts are marked-to-market:\nYearlyMonthlyEvery trading dayOnly at expiration\n3. In the worksheet (index 5,000, $50 multiplier), a 1% move relative to an assumed $13,000 deposit is approximately:\n1%5%~19%50%\n4. A margin call means:\nYou made moneyDeposit more or be liquidatedExchange closedBroker owes interest\nSubmit & complete lesson\nAnswer notes\nFutures margin is best described as: Options: A loan; A performance bond; A fee; A tax. Correct answer: A performance bond. Why: It is collateral supporting the position, not a loan or a cap on losses.\nFutures accounts are marked-to-market: Options: Yearly; Monthly; Every trading day; Only at expiration. Correct answer: Every trading day. Why: Daily settlement moves cash in/out.\nIn the worksheet (index 5,000, $50 multiplier), a 1% move relative to an assumed $13,000 deposit is approximately: Options: 1%; 5%; ~19%; 50%. Correct answer: ~19%. Why: $2,500 on $13,000 ≈ 19%.\nA margin call means: Options: You made money; Deposit more or be liquidated; Exchange closed; Broker owes interest. Correct answer: Deposit more or be liquidated. Why: The broker may require additional funds or reduce or liquidate positions under its rules.\nSOURCES & FURTHER READING\nCME — Margin: Know What Is Needed\nCME — Financial Safeguards\nWhat Is a Futures Contract?\nContango & Backwardation — Term Structure Explained\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nFutures & Derivatives\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "Margin & Leverage in Futures — Futures & Derivatives | TradeHQ",
+      "heading": "Margin & Leverage in Futures",
+      "supplementaryNotes": [
+        {
+          "path": "/courses/futures-and-derivatives/margin-and-leverage-in-futures",
+          "text": "Home\nCourses\nFutures & Derivatives\nMargin & Leverage in Futures\nIntermediate\n·\nLesson 2 of 5\n·\n8 min read\nMargin & Leverage in Futures\n\nFutures margin is collateral for contract obligations. Losses and variation-margin demands can exceed an initial margin deposit.\n\nBy Anuga Weerasinghe\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nQUICK ANSWER\nMargin & Leverage in Futures?\n\nFutures margin is collateral for contract obligations. Losses and variation-margin demands can exceed an initial margin deposit. Futures margin is a performance bond, not a loan. Accounts are marked-to-market every trading day.\n\nMargin is not what you think\n\nStock margin can involve borrowing to purchase shares. Futures margin is collateral, often called a performance bond, rather than a loan to purchase the contract's notional value. It does not cap losses. Exchange requirements vary by contract and market conditions, and brokers can require additional funds. The figures below are a hypothetical worksheet, not current margin requirements.\n\nMaintenance margin and margin calls\n\nMaintenance margin is the minimum account equity required to maintain a position. It is not a universal percentage of initial margin. A shortfall can require additional funds or a reduction in positions; a broker may liquidate positions under its rules. Requirements can change, and action may occur intraday. Check the contract requirements and broker agreement instead of assuming a fixed deadline or a guaranteed warning.\n\nDaily mark-to-market\n\nFutures positions are marked to market, with gains and losses settled through variation margin. Daily settlement limits the accumulation of unpaid losses, and clearing arrangements may include intraday settlement. It does not eliminate default or overnight risk: clearing houses also use collateral and other financial safeguards. A hypothetical $2,000 loss reduces the account's funds; the timing of customer-account entries depends on the broker's arrangements.\n\nWhy leverage cuts both ways\n\nFor a hypothetical E-mini S&P 500 contract at an index level of 5,000, the $50 multiplier gives $250,000 of notional exposure. A 1% index move is 50 points, or $2,500 per contract before costs. Relative to an assumed $13,000 margin deposit, that is about 19.2%; it is not a percentage of every trader's total account equity. A different index level, contract quantity or account balance changes the calculation.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKEY TAKEAWAYS\nFutures margin is a performance bond, not a loan.\nAccounts are marked-to-market every trading day.\nA maintenance shortfall can require more funds, reduced positions or liquidation under broker rules.\nLeverage depends on contract exposure and the equity used in the calculation.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. Futures margin is best described as:\nA loanA performance bondA feeA tax\n2. Futures accounts are marked-to-market:\nYearlyMonthlyEvery trading dayOnly at expiration\n3. In the worksheet (index 5,000, $50 multiplier), a 1% move relative to an assumed $13,000 deposit is approximately:\n1%5%~19%50%\n4. A margin call means:\nYou made moneyDeposit more or be liquidatedExchange closedBroker owes interest\nSubmit & complete lesson\nAnswer notes\nFutures margin is best described as: Options: A loan; A performance bond; A fee; A tax. Correct answer: A performance bond. Why: It is collateral supporting the position, not a loan or a cap on losses.\nFutures accounts are marked-to-market: Options: Yearly; Monthly; Every trading day; Only at expiration. Correct answer: Every trading day. Why: Daily settlement moves cash in/out.\nIn the worksheet (index 5,000, $50 multiplier), a 1% move relative to an assumed $13,000 deposit is approximately: Options: 1%; 5%; ~19%; 50%. Correct answer: ~19%. Why: $2,500 on $13,000 ≈ 19%.\nA margin call means: Options: You made money; Deposit more or be liquidated; Exchange closed; Broker owes interest. Correct answer: Deposit more or be liquidated. Why: The broker may require additional funds or reduce or liquidate positions under its rules.\nSOURCES & FURTHER READING\nCME — Margin: Know What Is Needed\nCME — Financial Safeguards\nWhat Is a Futures Contract?\nContango & Backwardation — Term Structure Explained\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nFutures & Derivatives\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 390,
+      "scrollHeight": 8849,
+      "viewportWidth": 390,
+      "canonical": "https://www.thetradehq.com/courses/futures-and-derivatives/margin-and-leverage-in-futures",
+      "images": [
+        {
+          "alt": "Margin & Leverage in Futures — illustration",
+          "complete": true,
+          "naturalWidth": 1200,
+          "source": "https://www.thetradehq.com/assets/futures-hero-DsjhfM9Q.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "81064cd8112f23ba-390-00.png"
+        },
+        {
+          "y": 717,
+          "screenshot": "81064cd8112f23ba-390-01.png"
+        },
+        {
+          "y": 1434,
+          "screenshot": "81064cd8112f23ba-390-02.png"
+        },
+        {
+          "y": 2151,
+          "screenshot": "81064cd8112f23ba-390-03.png"
+        },
+        {
+          "y": 2868,
+          "screenshot": "81064cd8112f23ba-390-04.png"
+        },
+        {
+          "y": 3585,
+          "screenshot": "81064cd8112f23ba-390-05.png"
+        },
+        {
+          "y": 4302,
+          "screenshot": "81064cd8112f23ba-390-06.png"
+        },
+        {
+          "y": 5019,
+          "screenshot": "81064cd8112f23ba-390-07.png"
+        },
+        {
+          "y": 5736,
+          "screenshot": "81064cd8112f23ba-390-08.png"
+        },
+        {
+          "y": 6453,
+          "screenshot": "81064cd8112f23ba-390-09.png"
+        },
+        {
+          "y": 7170,
+          "screenshot": "81064cd8112f23ba-390-10.png"
+        },
+        {
+          "y": 7887,
+          "screenshot": "81064cd8112f23ba-390-11.png"
+        },
+        {
+          "y": 8005,
+          "screenshot": "81064cd8112f23ba-390-12.png"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "path": "/courses/futures-and-derivatives/margin-and-leverage-in-futures",
+      "theme": "light",
+      "mainText": "Home\nCourses\nFutures & Derivatives\nMargin & Leverage in Futures\nIntermediate\n·\nLesson 2 of 5\n·\n8 min read\nMargin & Leverage in Futures\n\nFutures margin is collateral for contract obligations. Losses and variation-margin demands can exceed an initial margin deposit.\n\nBy Anuga Weerasinghe\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nQUICK ANSWER\nMargin & Leverage in Futures?\n\nFutures margin is collateral for contract obligations. Losses and variation-margin demands can exceed an initial margin deposit. Futures margin is a performance bond, not a loan. Accounts are marked-to-market every trading day.\n\nMargin is not what you think\n\nStock margin can involve borrowing to purchase shares. Futures margin is collateral, often called a performance bond, rather than a loan to purchase the contract's notional value. It does not cap losses. Exchange requirements vary by contract and market conditions, and brokers can require additional funds. The figures below are a hypothetical worksheet, not current margin requirements.\n\nMaintenance margin and margin calls\n\nMaintenance margin is the minimum account equity required to maintain a position. It is not a universal percentage of initial margin. A shortfall can require additional funds or a reduction in positions; a broker may liquidate positions under its rules. Requirements can change, and action may occur intraday. Check the contract requirements and broker agreement instead of assuming a fixed deadline or a guaranteed warning.\n\nDaily mark-to-market\n\nFutures positions are marked to market, with gains and losses settled through variation margin. Daily settlement limits the accumulation of unpaid losses, and clearing arrangements may include intraday settlement. It does not eliminate default or overnight risk: clearing houses also use collateral and other financial safeguards. A hypothetical $2,000 loss reduces the account's funds; the timing of customer-account entries depends on the broker's arrangements.\n\nWhy leverage cuts both ways\n\nFor a hypothetical E-mini S&P 500 contract at an index level of 5,000, the $50 multiplier gives $250,000 of notional exposure. A 1% index move is 50 points, or $2,500 per contract before costs. Relative to an assumed $13,000 margin deposit, that is about 19.2%; it is not a percentage of every trader's total account equity. A different index level, contract quantity or account balance changes the calculation.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKEY TAKEAWAYS\nFutures margin is a performance bond, not a loan.\nAccounts are marked-to-market every trading day.\nA maintenance shortfall can require more funds, reduced positions or liquidation under broker rules.\nLeverage depends on contract exposure and the equity used in the calculation.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. Futures margin is best described as:\nA loanA performance bondA feeA tax\n2. Futures accounts are marked-to-market:\nYearlyMonthlyEvery trading dayOnly at expiration\n3. In the worksheet (index 5,000, $50 multiplier), a 1% move relative to an assumed $13,000 deposit is approximately:\n1%5%~19%50%\n4. A margin call means:\nYou made moneyDeposit more or be liquidatedExchange closedBroker owes interest\nSubmit & complete lesson\nAnswer notes\nFutures margin is best described as: Options: A loan; A performance bond; A fee; A tax. Correct answer: A performance bond. Why: It is collateral supporting the position, not a loan or a cap on losses.\nFutures accounts are marked-to-market: Options: Yearly; Monthly; Every trading day; Only at expiration. Correct answer: Every trading day. Why: Daily settlement moves cash in/out.\nIn the worksheet (index 5,000, $50 multiplier), a 1% move relative to an assumed $13,000 deposit is approximately: Options: 1%; 5%; ~19%; 50%. Correct answer: ~19%. Why: $2,500 on $13,000 ≈ 19%.\nA margin call means: Options: You made money; Deposit more or be liquidated; Exchange closed; Broker owes interest. Correct answer: Deposit more or be liquidated. Why: The broker may require additional funds or reduce or liquidate positions under its rules.\nSOURCES & FURTHER READING\nCME — Margin: Know What Is Needed\nCME — Financial Safeguards\nWhat Is a Futures Contract?\nContango & Backwardation — Term Structure Explained\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nFutures & Derivatives\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "Margin & Leverage in Futures — Futures & Derivatives | TradeHQ",
+      "heading": "Margin & Leverage in Futures",
+      "supplementaryNotes": [
+        {
+          "path": "/courses/futures-and-derivatives/margin-and-leverage-in-futures",
+          "text": "Home\nCourses\nFutures & Derivatives\nMargin & Leverage in Futures\nIntermediate\n·\nLesson 2 of 5\n·\n8 min read\nMargin & Leverage in Futures\n\nFutures margin is collateral for contract obligations. Losses and variation-margin demands can exceed an initial margin deposit.\n\nBy Anuga Weerasinghe\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nQUICK ANSWER\nMargin & Leverage in Futures?\n\nFutures margin is collateral for contract obligations. Losses and variation-margin demands can exceed an initial margin deposit. Futures margin is a performance bond, not a loan. Accounts are marked-to-market every trading day.\n\nMargin is not what you think\n\nStock margin can involve borrowing to purchase shares. Futures margin is collateral, often called a performance bond, rather than a loan to purchase the contract's notional value. It does not cap losses. Exchange requirements vary by contract and market conditions, and brokers can require additional funds. The figures below are a hypothetical worksheet, not current margin requirements.\n\nMaintenance margin and margin calls\n\nMaintenance margin is the minimum account equity required to maintain a position. It is not a universal percentage of initial margin. A shortfall can require additional funds or a reduction in positions; a broker may liquidate positions under its rules. Requirements can change, and action may occur intraday. Check the contract requirements and broker agreement instead of assuming a fixed deadline or a guaranteed warning.\n\nDaily mark-to-market\n\nFutures positions are marked to market, with gains and losses settled through variation margin. Daily settlement limits the accumulation of unpaid losses, and clearing arrangements may include intraday settlement. It does not eliminate default or overnight risk: clearing houses also use collateral and other financial safeguards. A hypothetical $2,000 loss reduces the account's funds; the timing of customer-account entries depends on the broker's arrangements.\n\nWhy leverage cuts both ways\n\nFor a hypothetical E-mini S&P 500 contract at an index level of 5,000, the $50 multiplier gives $250,000 of notional exposure. A 1% index move is 50 points, or $2,500 per contract before costs. Relative to an assumed $13,000 margin deposit, that is about 19.2%; it is not a percentage of every trader's total account equity. A different index level, contract quantity or account balance changes the calculation.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKEY TAKEAWAYS\nFutures margin is a performance bond, not a loan.\nAccounts are marked-to-market every trading day.\nA maintenance shortfall can require more funds, reduced positions or liquidation under broker rules.\nLeverage depends on contract exposure and the equity used in the calculation.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. Futures margin is best described as:\nA loanA performance bondA feeA tax\n2. Futures accounts are marked-to-market:\nYearlyMonthlyEvery trading dayOnly at expiration\n3. In the worksheet (index 5,000, $50 multiplier), a 1% move relative to an assumed $13,000 deposit is approximately:\n1%5%~19%50%\n4. A margin call means:\nYou made moneyDeposit more or be liquidatedExchange closedBroker owes interest\nSubmit & complete lesson\nAnswer notes\nFutures margin is best described as: Options: A loan; A performance bond; A fee; A tax. Correct answer: A performance bond. Why: It is collateral supporting the position, not a loan or a cap on losses.\nFutures accounts are marked-to-market: Options: Yearly; Monthly; Every trading day; Only at expiration. Correct answer: Every trading day. Why: Daily settlement moves cash in/out.\nIn the worksheet (index 5,000, $50 multiplier), a 1% move relative to an assumed $13,000 deposit is approximately: Options: 1%; 5%; ~19%; 50%. Correct answer: ~19%. Why: $2,500 on $13,000 ≈ 19%.\nA margin call means: Options: You made money; Deposit more or be liquidated; Exchange closed; Broker owes interest. Correct answer: Deposit more or be liquidated. Why: The broker may require additional funds or reduce or liquidate positions under its rules.\nSOURCES & FURTHER READING\nCME — Margin: Know What Is Needed\nCME — Financial Safeguards\nWhat Is a Futures Contract?\nContango & Backwardation — Term Structure Explained\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nFutures & Derivatives\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 753,
+      "scrollHeight": 6631,
+      "viewportWidth": 768,
+      "canonical": "https://www.thetradehq.com/courses/futures-and-derivatives/margin-and-leverage-in-futures",
+      "images": [
+        {
+          "alt": "Margin & Leverage in Futures — illustration",
+          "complete": true,
+          "naturalWidth": 1200,
+          "source": "https://www.thetradehq.com/assets/futures-hero-DsjhfM9Q.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "81064cd8112f23ba-768-00.png"
+        },
+        {
+          "y": 870,
+          "screenshot": "81064cd8112f23ba-768-01.png"
+        },
+        {
+          "y": 1740,
+          "screenshot": "81064cd8112f23ba-768-02.png"
+        },
+        {
+          "y": 2610,
+          "screenshot": "81064cd8112f23ba-768-03.png"
+        },
+        {
+          "y": 3480,
+          "screenshot": "81064cd8112f23ba-768-04.png"
+        },
+        {
+          "y": 4350,
+          "screenshot": "81064cd8112f23ba-768-05.png"
+        },
+        {
+          "y": 5220,
+          "screenshot": "81064cd8112f23ba-768-06.png"
+        },
+        {
+          "y": 5607,
+          "screenshot": "81064cd8112f23ba-768-07.png"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "path": "/courses/futures-and-derivatives/margin-and-leverage-in-futures",
+      "theme": "light",
+      "mainText": "Home\nCourses\nFutures & Derivatives\nMargin & Leverage in Futures\nIntermediate\n·\nLesson 2 of 5\n·\n8 min read\nMargin & Leverage in Futures\n\nFutures margin is collateral for contract obligations. Losses and variation-margin demands can exceed an initial margin deposit.\n\nBy Anuga Weerasinghe\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nQUICK ANSWER\nMargin & Leverage in Futures?\n\nFutures margin is collateral for contract obligations. Losses and variation-margin demands can exceed an initial margin deposit. Futures margin is a performance bond, not a loan. Accounts are marked-to-market every trading day.\n\nMargin is not what you think\n\nStock margin can involve borrowing to purchase shares. Futures margin is collateral, often called a performance bond, rather than a loan to purchase the contract's notional value. It does not cap losses. Exchange requirements vary by contract and market conditions, and brokers can require additional funds. The figures below are a hypothetical worksheet, not current margin requirements.\n\nMaintenance margin and margin calls\n\nMaintenance margin is the minimum account equity required to maintain a position. It is not a universal percentage of initial margin. A shortfall can require additional funds or a reduction in positions; a broker may liquidate positions under its rules. Requirements can change, and action may occur intraday. Check the contract requirements and broker agreement instead of assuming a fixed deadline or a guaranteed warning.\n\nDaily mark-to-market\n\nFutures positions are marked to market, with gains and losses settled through variation margin. Daily settlement limits the accumulation of unpaid losses, and clearing arrangements may include intraday settlement. It does not eliminate default or overnight risk: clearing houses also use collateral and other financial safeguards. A hypothetical $2,000 loss reduces the account's funds; the timing of customer-account entries depends on the broker's arrangements.\n\nWhy leverage cuts both ways\n\nFor a hypothetical E-mini S&P 500 contract at an index level of 5,000, the $50 multiplier gives $250,000 of notional exposure. A 1% index move is 50 points, or $2,500 per contract before costs. Relative to an assumed $13,000 margin deposit, that is about 19.2%; it is not a percentage of every trader's total account equity. A different index level, contract quantity or account balance changes the calculation.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKEY TAKEAWAYS\nFutures margin is a performance bond, not a loan.\nAccounts are marked-to-market every trading day.\nA maintenance shortfall can require more funds, reduced positions or liquidation under broker rules.\nLeverage depends on contract exposure and the equity used in the calculation.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. Futures margin is best described as:\nA loanA performance bondA feeA tax\n2. Futures accounts are marked-to-market:\nYearlyMonthlyEvery trading dayOnly at expiration\n3. In the worksheet (index 5,000, $50 multiplier), a 1% move relative to an assumed $13,000 deposit is approximately:\n1%5%~19%50%\n4. A margin call means:\nYou made moneyDeposit more or be liquidatedExchange closedBroker owes interest\nSubmit & complete lesson\nAnswer notes\nFutures margin is best described as: Options: A loan; A performance bond; A fee; A tax. Correct answer: A performance bond. Why: It is collateral supporting the position, not a loan or a cap on losses.\nFutures accounts are marked-to-market: Options: Yearly; Monthly; Every trading day; Only at expiration. Correct answer: Every trading day. Why: Daily settlement moves cash in/out.\nIn the worksheet (index 5,000, $50 multiplier), a 1% move relative to an assumed $13,000 deposit is approximately: Options: 1%; 5%; ~19%; 50%. Correct answer: ~19%. Why: $2,500 on $13,000 ≈ 19%.\nA margin call means: Options: You made money; Deposit more or be liquidated; Exchange closed; Broker owes interest. Correct answer: Deposit more or be liquidated. Why: The broker may require additional funds or reduce or liquidate positions under its rules.\nSOURCES & FURTHER READING\nCME — Margin: Know What Is Needed\nCME — Financial Safeguards\nWhat Is a Futures Contract?\nContango & Backwardation — Term Structure Explained\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nFutures & Derivatives\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "Margin & Leverage in Futures — Futures & Derivatives | TradeHQ",
+      "heading": "Margin & Leverage in Futures",
+      "supplementaryNotes": [
+        {
+          "path": "/courses/futures-and-derivatives/margin-and-leverage-in-futures",
+          "text": "Home\nCourses\nFutures & Derivatives\nMargin & Leverage in Futures\nIntermediate\n·\nLesson 2 of 5\n·\n8 min read\nMargin & Leverage in Futures\n\nFutures margin is collateral for contract obligations. Losses and variation-margin demands can exceed an initial margin deposit.\n\nBy Anuga Weerasinghe\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nQUICK ANSWER\nMargin & Leverage in Futures?\n\nFutures margin is collateral for contract obligations. Losses and variation-margin demands can exceed an initial margin deposit. Futures margin is a performance bond, not a loan. Accounts are marked-to-market every trading day.\n\nMargin is not what you think\n\nStock margin can involve borrowing to purchase shares. Futures margin is collateral, often called a performance bond, rather than a loan to purchase the contract's notional value. It does not cap losses. Exchange requirements vary by contract and market conditions, and brokers can require additional funds. The figures below are a hypothetical worksheet, not current margin requirements.\n\nMaintenance margin and margin calls\n\nMaintenance margin is the minimum account equity required to maintain a position. It is not a universal percentage of initial margin. A shortfall can require additional funds or a reduction in positions; a broker may liquidate positions under its rules. Requirements can change, and action may occur intraday. Check the contract requirements and broker agreement instead of assuming a fixed deadline or a guaranteed warning.\n\nDaily mark-to-market\n\nFutures positions are marked to market, with gains and losses settled through variation margin. Daily settlement limits the accumulation of unpaid losses, and clearing arrangements may include intraday settlement. It does not eliminate default or overnight risk: clearing houses also use collateral and other financial safeguards. A hypothetical $2,000 loss reduces the account's funds; the timing of customer-account entries depends on the broker's arrangements.\n\nWhy leverage cuts both ways\n\nFor a hypothetical E-mini S&P 500 contract at an index level of 5,000, the $50 multiplier gives $250,000 of notional exposure. A 1% index move is 50 points, or $2,500 per contract before costs. Relative to an assumed $13,000 margin deposit, that is about 19.2%; it is not a percentage of every trader's total account equity. A different index level, contract quantity or account balance changes the calculation.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKEY TAKEAWAYS\nFutures margin is a performance bond, not a loan.\nAccounts are marked-to-market every trading day.\nA maintenance shortfall can require more funds, reduced positions or liquidation under broker rules.\nLeverage depends on contract exposure and the equity used in the calculation.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. Futures margin is best described as:\nA loanA performance bondA feeA tax\n2. Futures accounts are marked-to-market:\nYearlyMonthlyEvery trading dayOnly at expiration\n3. In the worksheet (index 5,000, $50 multiplier), a 1% move relative to an assumed $13,000 deposit is approximately:\n1%5%~19%50%\n4. A margin call means:\nYou made moneyDeposit more or be liquidatedExchange closedBroker owes interest\nSubmit & complete lesson\nAnswer notes\nFutures margin is best described as: Options: A loan; A performance bond; A fee; A tax. Correct answer: A performance bond. Why: It is collateral supporting the position, not a loan or a cap on losses.\nFutures accounts are marked-to-market: Options: Yearly; Monthly; Every trading day; Only at expiration. Correct answer: Every trading day. Why: Daily settlement moves cash in/out.\nIn the worksheet (index 5,000, $50 multiplier), a 1% move relative to an assumed $13,000 deposit is approximately: Options: 1%; 5%; ~19%; 50%. Correct answer: ~19%. Why: $2,500 on $13,000 ≈ 19%.\nA margin call means: Options: You made money; Deposit more or be liquidated; Exchange closed; Broker owes interest. Correct answer: Deposit more or be liquidated. Why: The broker may require additional funds or reduce or liquidate positions under its rules.\nSOURCES & FURTHER READING\nCME — Margin: Know What Is Needed\nCME — Financial Safeguards\nWhat Is a Futures Contract?\nContango & Backwardation — Term Structure Explained\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nFutures & Derivatives\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1265,
+      "scrollHeight": 6120,
+      "viewportWidth": 1280,
+      "canonical": "https://www.thetradehq.com/courses/futures-and-derivatives/margin-and-leverage-in-futures",
+      "images": [
+        {
+          "alt": "Margin & Leverage in Futures — illustration",
+          "complete": true,
+          "naturalWidth": 1200,
+          "source": "https://www.thetradehq.com/assets/futures-hero-DsjhfM9Q.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "81064cd8112f23ba-1280-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "81064cd8112f23ba-1280-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "81064cd8112f23ba-1280-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "81064cd8112f23ba-1280-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "81064cd8112f23ba-1280-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "81064cd8112f23ba-1280-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "81064cd8112f23ba-1280-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "81064cd8112f23ba-1280-07.png"
+        },
+        {
+          "y": 5320,
+          "screenshot": "81064cd8112f23ba-1280-08.png"
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "path": "/courses/futures-and-derivatives/margin-and-leverage-in-futures",
+      "theme": "light",
+      "mainText": "Home\nCourses\nFutures & Derivatives\nMargin & Leverage in Futures\nIntermediate\n·\nLesson 2 of 5\n·\n8 min read\nMargin & Leverage in Futures\n\nFutures margin is collateral for contract obligations. Losses and variation-margin demands can exceed an initial margin deposit.\n\nBy Anuga Weerasinghe\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nQUICK ANSWER\nMargin & Leverage in Futures?\n\nFutures margin is collateral for contract obligations. Losses and variation-margin demands can exceed an initial margin deposit. Futures margin is a performance bond, not a loan. Accounts are marked-to-market every trading day.\n\nMargin is not what you think\n\nStock margin can involve borrowing to purchase shares. Futures margin is collateral, often called a performance bond, rather than a loan to purchase the contract's notional value. It does not cap losses. Exchange requirements vary by contract and market conditions, and brokers can require additional funds. The figures below are a hypothetical worksheet, not current margin requirements.\n\nMaintenance margin and margin calls\n\nMaintenance margin is the minimum account equity required to maintain a position. It is not a universal percentage of initial margin. A shortfall can require additional funds or a reduction in positions; a broker may liquidate positions under its rules. Requirements can change, and action may occur intraday. Check the contract requirements and broker agreement instead of assuming a fixed deadline or a guaranteed warning.\n\nDaily mark-to-market\n\nFutures positions are marked to market, with gains and losses settled through variation margin. Daily settlement limits the accumulation of unpaid losses, and clearing arrangements may include intraday settlement. It does not eliminate default or overnight risk: clearing houses also use collateral and other financial safeguards. A hypothetical $2,000 loss reduces the account's funds; the timing of customer-account entries depends on the broker's arrangements.\n\nWhy leverage cuts both ways\n\nFor a hypothetical E-mini S&P 500 contract at an index level of 5,000, the $50 multiplier gives $250,000 of notional exposure. A 1% index move is 50 points, or $2,500 per contract before costs. Relative to an assumed $13,000 margin deposit, that is about 19.2%; it is not a percentage of every trader's total account equity. A different index level, contract quantity or account balance changes the calculation.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKEY TAKEAWAYS\nFutures margin is a performance bond, not a loan.\nAccounts are marked-to-market every trading day.\nA maintenance shortfall can require more funds, reduced positions or liquidation under broker rules.\nLeverage depends on contract exposure and the equity used in the calculation.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. Futures margin is best described as:\nA loanA performance bondA feeA tax\n2. Futures accounts are marked-to-market:\nYearlyMonthlyEvery trading dayOnly at expiration\n3. In the worksheet (index 5,000, $50 multiplier), a 1% move relative to an assumed $13,000 deposit is approximately:\n1%5%~19%50%\n4. A margin call means:\nYou made moneyDeposit more or be liquidatedExchange closedBroker owes interest\nSubmit & complete lesson\nAnswer notes\nFutures margin is best described as: Options: A loan; A performance bond; A fee; A tax. Correct answer: A performance bond. Why: It is collateral supporting the position, not a loan or a cap on losses.\nFutures accounts are marked-to-market: Options: Yearly; Monthly; Every trading day; Only at expiration. Correct answer: Every trading day. Why: Daily settlement moves cash in/out.\nIn the worksheet (index 5,000, $50 multiplier), a 1% move relative to an assumed $13,000 deposit is approximately: Options: 1%; 5%; ~19%; 50%. Correct answer: ~19%. Why: $2,500 on $13,000 ≈ 19%.\nA margin call means: Options: You made money; Deposit more or be liquidated; Exchange closed; Broker owes interest. Correct answer: Deposit more or be liquidated. Why: The broker may require additional funds or reduce or liquidate positions under its rules.\nSOURCES & FURTHER READING\nCME — Margin: Know What Is Needed\nCME — Financial Safeguards\nWhat Is a Futures Contract?\nContango & Backwardation — Term Structure Explained\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nFutures & Derivatives\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "Margin & Leverage in Futures — Futures & Derivatives | TradeHQ",
+      "heading": "Margin & Leverage in Futures",
+      "supplementaryNotes": [
+        {
+          "path": "/courses/futures-and-derivatives/margin-and-leverage-in-futures",
+          "text": "Home\nCourses\nFutures & Derivatives\nMargin & Leverage in Futures\nIntermediate\n·\nLesson 2 of 5\n·\n8 min read\nMargin & Leverage in Futures\n\nFutures margin is collateral for contract obligations. Losses and variation-margin demands can exceed an initial margin deposit.\n\nBy Anuga Weerasinghe\n\nPublished by TradeHQ, created by Anuga Weerasinghe. Publisher background and editorial approach. No independent professional review is claimed; any recorded source-check scope appears on the page.\n\nQUICK ANSWER\nMargin & Leverage in Futures?\n\nFutures margin is collateral for contract obligations. Losses and variation-margin demands can exceed an initial margin deposit. Futures margin is a performance bond, not a loan. Accounts are marked-to-market every trading day.\n\nMargin is not what you think\n\nStock margin can involve borrowing to purchase shares. Futures margin is collateral, often called a performance bond, rather than a loan to purchase the contract's notional value. It does not cap losses. Exchange requirements vary by contract and market conditions, and brokers can require additional funds. The figures below are a hypothetical worksheet, not current margin requirements.\n\nMaintenance margin and margin calls\n\nMaintenance margin is the minimum account equity required to maintain a position. It is not a universal percentage of initial margin. A shortfall can require additional funds or a reduction in positions; a broker may liquidate positions under its rules. Requirements can change, and action may occur intraday. Check the contract requirements and broker agreement instead of assuming a fixed deadline or a guaranteed warning.\n\nDaily mark-to-market\n\nFutures positions are marked to market, with gains and losses settled through variation margin. Daily settlement limits the accumulation of unpaid losses, and clearing arrangements may include intraday settlement. It does not eliminate default or overnight risk: clearing houses also use collateral and other financial safeguards. A hypothetical $2,000 loss reduces the account's funds; the timing of customer-account entries depends on the broker's arrangements.\n\nWhy leverage cuts both ways\n\nFor a hypothetical E-mini S&P 500 contract at an index level of 5,000, the $50 multiplier gives $250,000 of notional exposure. A 1% index move is 50 points, or $2,500 per contract before costs. Relative to an assumed $13,000 margin deposit, that is about 19.2%; it is not a percentage of every trader's total account equity. A different index level, contract quantity or account balance changes the calculation.\n\n(Educational only — not financial advice. TradeHQ offers $100,000 virtual cash for supported spot instruments. Options contracts, Greeks, futures margin and settlement are conceptual exercises; the simulator does not execute them.)\n\nKEY TAKEAWAYS\nFutures margin is a performance bond, not a loan.\nAccounts are marked-to-market every trading day.\nA maintenance shortfall can require more funds, reduced positions or liquidation under broker rules.\nLeverage depends on contract exposure and the equity used in the calculation.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. Futures margin is best described as:\nA loanA performance bondA feeA tax\n2. Futures accounts are marked-to-market:\nYearlyMonthlyEvery trading dayOnly at expiration\n3. In the worksheet (index 5,000, $50 multiplier), a 1% move relative to an assumed $13,000 deposit is approximately:\n1%5%~19%50%\n4. A margin call means:\nYou made moneyDeposit more or be liquidatedExchange closedBroker owes interest\nSubmit & complete lesson\nAnswer notes\nFutures margin is best described as: Options: A loan; A performance bond; A fee; A tax. Correct answer: A performance bond. Why: It is collateral supporting the position, not a loan or a cap on losses.\nFutures accounts are marked-to-market: Options: Yearly; Monthly; Every trading day; Only at expiration. Correct answer: Every trading day. Why: Daily settlement moves cash in/out.\nIn the worksheet (index 5,000, $50 multiplier), a 1% move relative to an assumed $13,000 deposit is approximately: Options: 1%; 5%; ~19%; 50%. Correct answer: ~19%. Why: $2,500 on $13,000 ≈ 19%.\nA margin call means: Options: You made money; Deposit more or be liquidated; Exchange closed; Broker owes interest. Correct answer: Deposit more or be liquidated. Why: The broker may require additional funds or reduce or liquidate positions under its rules.\nSOURCES & FURTHER READING\nCME — Margin: Know What Is Needed\nCME — Financial Safeguards\nWhat Is a Futures Contract?\nContango & Backwardation — Term Structure Explained\nPractise this lesson\n\nUse $100,000 in virtual cash to practise supported spot instruments and general habits such as recording a trade thesis. Options contracts, Greeks, futures margin and daily settlement are conceptual exercises: calculate their examples in a worksheet, because TradeHQ does not execute derivatives contracts. Educational simulation only — not financial advice.\n\nFutures & Derivatives\nAll courses\n\nEducational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance."
+        }
+      ],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1905,
+      "scrollHeight": 6044,
+      "viewportWidth": 1920,
+      "canonical": "https://www.thetradehq.com/courses/futures-and-derivatives/margin-and-leverage-in-futures",
+      "images": [
+        {
+          "alt": "Margin & Leverage in Futures — illustration",
+          "complete": true,
+          "naturalWidth": 1200,
+          "source": "https://www.thetradehq.com/assets/futures-hero-DsjhfM9Q.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "81064cd8112f23ba-1920-00.png"
+        },
+        {
+          "y": 918,
+          "screenshot": "81064cd8112f23ba-1920-01.png"
+        },
+        {
+          "y": 1836,
+          "screenshot": "81064cd8112f23ba-1920-02.png"
+        },
+        {
+          "y": 2754,
+          "screenshot": "81064cd8112f23ba-1920-03.png"
+        },
+        {
+          "y": 3672,
+          "screenshot": "81064cd8112f23ba-1920-04.png"
+        },
+        {
+          "y": 4590,
+          "screenshot": "81064cd8112f23ba-1920-05.png"
+        },
+        {
+          "y": 4964,
+          "screenshot": "81064cd8112f23ba-1920-06.png"
+        }
+      ]
+    }
+  ]
+}

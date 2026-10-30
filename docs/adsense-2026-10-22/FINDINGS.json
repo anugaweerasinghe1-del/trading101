@@ -3145,17 +3145,43 @@
       ],
       "productionImagesPersonallyViewed": 60,
       "liveRecheck": "PASS exact merged production: [50] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
+    },
+    {
+      "id": "THQ-079",
+      "severity": "P2",
+      "category": "Course lesson source and onward links have low contrast in light mode",
+      "adsenseRelevance": "General reading and navigation accessibility; no established Google rejection cause or ad-policy violation.",
+      "urls": [
+        "https://www.thetradehq.com/courses/diversification-and-position-sizing/executing-rebalancing-virtual-cash",
+        "https://www.thetradehq.com/courses/diversification-and-position-sizing/foundations-of-asset-allocation"
+      ],
+      "affectedScope": "Shared CourseLesson source and next/back link classes, including built-in and published course lessons; observed on first and last allocation lessons.",
+      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+      "evidence": "findings/COURSE-LESSON-LINK-CONTRAST.md",
+      "reproductionEvidence": "evidence/COURSE-LINK-CONTRAST-BEFORE-20261030.json",
+      "actualBehavior": "14px400-weight source and next/back links use emerald400/300 over247 light surfaces. Actual rest/hover observations range1.42281\u20131.79697:1; under4.5:1 normal-text threshold.",
+      "expectedBehavior": "Source and onward links are legible with4.5:1 or greater contrast in light mode at rest and hover.",
+      "proposedFix": "Add light-only emerald800 foreground and emerald900 hover to three existing class sites, preserving dark classes and all destinations, text and handlers.",
+      "risk": "Low, reversible presentation-only foreground classes. No course content/answers/progress/financial/account/record behavior change.",
+      "candidateSHA": "a15d20b4a65e7ea251634086eede2751d6cd8cff",
+      "releaseHold": "All PR267 production gates pending.",
+      "pr": 267,
+      "mergeSHA": "23a3be579eb49b5af2db33dc37434027040e2d92",
+      "localEvidence": [
+        "evidence/COURSE-LINK-CONTRAST-LOCAL-20261030.json",
+        "evidence/COURSE-LINK-CONTRAST-LOCAL-PERSONAL-20261030.json"
+      ]
     }
   ],
-  "updatedAt": "2026-10-30T11:40:08.057146+00:00",
+  "updatedAt": "2026-10-30T14:44:08.802534+00:00",
   "counts": {
-    "siteFindings": 83,
-    "P2": 45,
+    "siteFindings": 84,
+    "P2": 46,
     "P3": 38,
     "publiclyRepaired": 83,
     "preparedNotMerged": 0,
     "separateOperationalBlockers": 0,
-    "mergedAwaitingProductionVerification": 0,
+    "mergedAwaitingProductionVerification": 1,
     "protectedUnapprovedRecordFixes": 0,
     "approvedPublishedRecordFixesBlockedOnCredential": 0,
     "mergedFallbackAwaitingProductionVerification": 0

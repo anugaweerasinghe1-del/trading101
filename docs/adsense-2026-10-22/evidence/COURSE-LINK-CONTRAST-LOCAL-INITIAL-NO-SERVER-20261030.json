@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-10-30T14:43:59.468Z",
+  "sha": "a15d20b4a65e7ea251634086eede2751d6cd8cff",
+  "origin": "http://127.0.0.1:4188",
+  "outcome": "FAIL",
+  "failure": "Page readiness deadline",
+  "rows": [],
+  "runtimeErrors": [],
+  "blocked": [],
+  "scope": "Source links and next/back link text, rest and actual pointer hover, both real themes. Never activates links or quiz/progress/order/account actions. Measured CSS compositing over solid surfaces; screenshot review required.",
+  "diagnosis": "Local preview server was absent: TCP4188 refused connection; curl exit7 confirmed. Started existing built application with npm run preview on4188; no application change or test weakening."
+}

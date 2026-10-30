@@ -8,8 +8,8 @@
     },
     {
       "path": "BLOCKED-STATUS.md",
-      "bytes": 3207,
-      "sha256": "97dae67350949eba6731f35e93831b0e16796e3ff2a89f06d4996ea2024f0d1d"
+      "bytes": 3160,
+      "sha256": "dfab7a6eeedeba4ee14eebd8090a43d6fa5ccf104d54f729e1bae523999e05dc"
     },
     {
       "path": "CHECKPOINT.md",
@@ -18,8 +18,8 @@
     },
     {
       "path": "CURRENT-REVIEW-20261030.md",
-      "bytes": 5157,
-      "sha256": "25521f7c3cab3ec4c0a71848f9a2894080fb68f29e0ad5f55ae466ce030ad7fa"
+      "bytes": 6646,
+      "sha256": "2f3dd728d1d1f6889134b8f83e13335058f5745c38ed2a25cd61f1268de3c882"
     },
     {
       "path": "DAILY-CONDITIONAL-REVIEW.json",
@@ -38,13 +38,13 @@
     },
     {
       "path": "FINDINGS.json",
-      "bytes": 203079,
-      "sha256": "fe34a00bff36626c9977b384cd5bb32955a5421e98283ca574a48f90ab2e9eb6"
+      "bytes": 205030,
+      "sha256": "569c232e431a26596efa096aa3b3b181eef108669f7dc032821378fc9c111259"
     },
     {
       "path": "FULL-LIGHT-VISUAL-REVIEW-20261028.json",
-      "bytes": 74193,
-      "sha256": "7b68b3cdaee7b61e5935b64f22035a61393945578bce4d4dc60b44e619659968"
+      "bytes": 97859,
+      "sha256": "8b79ea2a28aff0a3a56d06ec7e677acc4d788c8e6d14fdeb7052386edff762ce"
     },
     {
       "path": "FULLPAGE-VISUAL-REVIEW-20261024.json",
@@ -63,8 +63,8 @@
     },
     {
       "path": "NEXT-REVIEW.md",
-      "bytes": 2254,
-      "sha256": "97d7864f399f2f41188257f23705fb0d9d2ffcf3cbe74cea08e3e764c6deb661"
+      "bytes": 2408,
+      "sha256": "e668904c4dc34e98f20a677dfc4d881ffbcfd772ac62659d5647b4dbf5ec575e"
     },
     {
       "path": "NONTERMINAL-FAQ-READ-COVERAGE.json",
@@ -73,13 +73,13 @@
     },
     {
       "path": "PAGE-AUDIT.json",
-      "bytes": 2943566,
-      "sha256": "328bc5db895527d4496a2edecf84f5af52fe247a08af95d35432d881cfef863d"
+      "bytes": 2949407,
+      "sha256": "5bd997af98dd9f5d836483617facc4e57a10c57fae135e4e630ec552c87ef053"
     },
     {
       "path": "RELEASE-LEDGER.json",
-      "bytes": 142312,
-      "sha256": "581c9f916d4c1302ca2340f06907a07654eb24e94dd842f3d1beb738b6cd50ec"
+      "bytes": 142800,
+      "sha256": "381e711657c4ea27d62b70eee8970ca4be82b838b6400bf659124ecb54a8329c"
     },
     {
       "path": "RENDERED-CONTENT-NOTES.json",
@@ -108,8 +108,8 @@
     },
     {
       "path": "UNFINISHED-SCOPE.json",
-      "bytes": 615061,
-      "sha256": "aa0dde9066c670d0118e972396a2bdf4a8a07ecb90712f500071eac6c3a2e179"
+      "bytes": 616834,
+      "sha256": "82fe8b1e35376844c3e0efeacee051d54f40ed812982ab7db6bba14df1fc1e69"
     },
     {
       "path": "UNREAD-MAIN-ROUTES.txt",
@@ -119,12 +119,12 @@
     {
       "path": "URL-INVENTORY.json",
       "bytes": 720853,
-      "sha256": "d35b06faa0cef816c581adbceab3294a47306b7b683fa5c093e19e9ccff17673"
+      "sha256": "2207e25d42b4caaaf7f8b10da74b097f89a901868d908c103f6eba05ae7131e8"
     },
     {
       "path": "VISUAL-REVIEW-NOTES.json",
-      "bytes": 483137,
-      "sha256": "c4433692d07dac8a298f46d3c9c1c62a3a78c0bf3516371c45d4220d904484d1"
+      "bytes": 483758,
+      "sha256": "27799f6c58600d2e6881bbeeb21177ce97e2273df022ef261d8e7a79d105754c"
     },
     {
       "path": "browser-session.mjs",
@@ -263,8 +263,8 @@
     },
     {
       "path": "evidence/AUDIT-RESUME-20261027.json",
-      "bytes": 2329,
-      "sha256": "0e979d12e8abdbb2a2a5d0584e6789a2b6a50919b4a75fa5267e7bfb313d49b4"
+      "bytes": 2694,
+      "sha256": "5b5a682f5e046bb7b2e73cf145bbe80ffe3be2606146888dd74e033143b0d54e"
     },
     {
       "path": "evidence/BEGINNER-GUIDE-REPRODUCTION.json",
@@ -492,6 +492,46 @@
       "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
     },
     {
+      "path": "evidence/COURSE-LINK-BUILD-20261030.txt",
+      "bytes": 17119,
+      "sha256": "b43bb12ab2476f5a84bd47d941e6ca805c0b4d3e611e5c210f2f2575f32675f1"
+    },
+    {
+      "path": "evidence/COURSE-LINK-CONTRAST-BEFORE-20261030.json",
+      "bytes": 55398,
+      "sha256": "44dc3ca52a3d5ccd0a58d2d72fd2850544d2eaf0c36c3500ca89536af81c1f62"
+    },
+    {
+      "path": "evidence/COURSE-LINK-CONTRAST-LOCAL-20261030.json",
+      "bytes": 137441,
+      "sha256": "b51c9fc04aa41bf2bd163f92908126fb85e9707fc65de642082ebb9defe43a3a"
+    },
+    {
+      "path": "evidence/COURSE-LINK-CONTRAST-LOCAL-INITIAL-NO-SERVER-20261030.json",
+      "bytes": 694,
+      "sha256": "b57b1fe6d97e2582621b9d9f7b03ae0717d157403a8d1ef7e338684945e11cba"
+    },
+    {
+      "path": "evidence/COURSE-LINK-CONTRAST-LOCAL-PERSONAL-20261030.json",
+      "bytes": 3973,
+      "sha256": "308565e3766d781ea6aaec98180e52db9ff501b3cfddf36c51a3fe722723ccae"
+    },
+    {
+      "path": "evidence/COURSE-LINK-CONTRAST-PREVIEW-20261030.json",
+      "bytes": 137462,
+      "sha256": "413ec1528520b07b1d236ed20f70a69c5f5681601471ae688a6a295318ce07a1"
+    },
+    {
+      "path": "evidence/COURSE-LINK-CONTRAST-PREVIEW-PERSONAL-20261030.json",
+      "bytes": 3994,
+      "sha256": "2981cae92dd6ab72744d9d3d559a36c81940d6055824a35eb8006db510b62de9"
+    },
+    {
+      "path": "evidence/COURSE-LINK-PRESENTATION-SCOPE-20261030.json",
+      "bytes": 612,
+      "sha256": "4dea2a99100a2a4f87020dcfdc920bc795c2bb4c73c588ae8e476abd2b536a0f"
+    },
+    {
       "path": "evidence/COURSE-OVERVIEW-BASELINE-EXPECTED-FAILURE.json",
       "bytes": 454,
       "sha256": "7bbb3493f74e17b6078d50fadd57ea523fe3b98e4062bba6d84eab75b4f71dc2"
@@ -510,6 +550,11 @@
       "path": "evidence/CRYPTO-COURSES-LIGHT-PERSONAL-20261030.json",
       "bytes": 9568,
       "sha256": "f8ff816e2c657bb8519ab8d52376dcd3188adea6f7ee4926f23059373cdeb5e8"
+    },
+    {
+      "path": "evidence/CRYPTO-REBALANCE-PRIMARY-COMPARISON-20261030.json",
+      "bytes": 4274,
+      "sha256": "dd175f7a3cceb1b627b0ec6dcacb80b6c5ef42e5d4b0f1d8d7c52c8afebd155e"
     },
     {
       "path": "evidence/CURRENT-PRODUCTION-BINDINGS.json",
@@ -4287,6 +4332,31 @@
       "sha256": "b99de42db60ece3de395fa7c1b2db2c7f278a65cd8c564733b0ca4ad9e86e1b2"
     },
     {
+      "path": "evidence/PR267-MERGE.json",
+      "bytes": 123,
+      "sha256": "2a175576c155472519165418f12a7c1e665e3494db16f4f04d5adbafb8a76ecf"
+    },
+    {
+      "path": "evidence/PR267-PREVIEW-GUEST-SMOKE.json",
+      "bytes": 8676,
+      "sha256": "c0b547369004b0482126cba5297a3fb5d34a86b94914b5e6c25eec2268180874"
+    },
+    {
+      "path": "evidence/PR267-UPDATED-PREMERGE-CHECKS.json",
+      "bytes": 1563,
+      "sha256": "95de8c200cd70e5fd950f4972208f32d57a0f35cd062db0c9ecbdde69e4faf30"
+    },
+    {
+      "path": "evidence/PR267-UPDATED-PREVIEW-BROWSER.json",
+      "bytes": 137875,
+      "sha256": "1e3742b3130b74477469abb015baee1302d4cb70a98d53fc329a89fb5fdcaec1"
+    },
+    {
+      "path": "evidence/PR267-UPDATED-PREVIEW-SIGNALS.json",
+      "bytes": 803,
+      "sha256": "8cd15f07c5f3605a7e919bc9821e6e1da9ed12b4a60fcae2f4b335937c5c8908"
+    },
+    {
       "path": "evidence/PREPARED-PREVIEWS-BROWSER.json",
       "bytes": 5333,
       "sha256": "504902589fba5c23d3950d5d55901b3510e4c57911ace1db7547ab27eb0df87e"
@@ -4550,6 +4620,11 @@
       "path": "evidence/REVIEWED-LIGHT-SURFACES-UPDATED-PREVIEW-BROWSER.json",
       "bytes": 396719,
       "sha256": "c28dcaf1a284789f51826cac58acb17ca86b25f93c89464c90de3f209358db0a"
+    },
+    {
+      "path": "evidence/RISK-COURSES-LIGHT-PERSONAL-20261030.json",
+      "bytes": 19979,
+      "sha256": "602b51b15b18e8bcc141a102a225e462c2c75fa1dcaafca26476cd362b99c453"
     },
     {
       "path": "evidence/ROADMAP-LIGHT-BEFORE-20261028.json",
@@ -6150,6 +6225,141 @@
       "path": "evidence/course-lesson-local/defined-risk-spreads-360-top.png",
       "bytes": 76277,
       "sha256": "23bb2f27e35821370cd98f174f8859c060199a9329a4b36543c09a88916f5492"
+    },
+    {
+      "path": "evidence/course-link-contrast-before-20261030/back-1280-light-hover.png",
+      "bytes": 61572,
+      "sha256": "93e69bbad02d4cdd6c5113f78afe1b96235b074b8cde555ea2737509d3289999"
+    },
+    {
+      "path": "evidence/course-link-contrast-before-20261030/next-360-light-rest.png",
+      "bytes": 51499,
+      "sha256": "8b3cf8cc74e801ad9fc74f47ea65d103dd68897d5e728ee63504df873ecce1e2"
+    },
+    {
+      "path": "evidence/course-link-contrast-local-20261030/review-1280-dark.jpg",
+      "bytes": 226656,
+      "sha256": "70bf3bdf03436c6de7d96591bc92afe5d02864f4c59d70a7da8167b7e45b3a20"
+    },
+    {
+      "path": "evidence/course-link-contrast-local-20261030/review-1280-light.jpg",
+      "bytes": 199294,
+      "sha256": "bfb97b83cee26eb75bea142d738877c9f39a028f008313856b81002e42a8e68f"
+    },
+    {
+      "path": "evidence/course-link-contrast-local-20261030/review-1920-dark.jpg",
+      "bytes": 143246,
+      "sha256": "ce140fe2a531ccad5ee9005806a0be6278c7a2672dda98376e3286ca11fcf4b3"
+    },
+    {
+      "path": "evidence/course-link-contrast-local-20261030/review-1920-light.jpg",
+      "bytes": 135254,
+      "sha256": "b94fb92b4484c94beba4f8fe5457e259c9465dbc578e2902e01fa294ac729398"
+    },
+    {
+      "path": "evidence/course-link-contrast-local-20261030/review-360-dark.jpg",
+      "bytes": 319536,
+      "sha256": "0fc9d66f1afffe58f6d69b9714c85861857c35ee5d0d18a045b27bc679948cba"
+    },
+    {
+      "path": "evidence/course-link-contrast-local-20261030/review-360-light.jpg",
+      "bytes": 288945,
+      "sha256": "d2bc11e6d21ec6ff46ab60e8feec3180e805cd6e84d6fc2272b5a6706a61fc4c"
+    },
+    {
+      "path": "evidence/course-link-contrast-local-20261030/review-390-dark.jpg",
+      "bytes": 328981,
+      "sha256": "93d5391a2e3ae4e513d0f959ec11cb8cea91b608e6dca5dba5da586801d533d8"
+    },
+    {
+      "path": "evidence/course-link-contrast-local-20261030/review-390-light.jpg",
+      "bytes": 298019,
+      "sha256": "42bc991541679293d4982288e96a567f915b2060f3be9d6b824fb24aff263bcc"
+    },
+    {
+      "path": "evidence/course-link-contrast-local-20261030/review-768-dark.jpg",
+      "bytes": 412153,
+      "sha256": "8110d5f512d09b4d25b9a6df85a7761ebfe1c7b230703ae294b98042830f360b"
+    },
+    {
+      "path": "evidence/course-link-contrast-local-20261030/review-768-light.jpg",
+      "bytes": 354048,
+      "sha256": "33723cc2bba1ece8d383ba7650f1dc7e32a85140ba92531c1db9fb6fcc595ca8"
+    },
+    {
+      "path": "evidence/course-link-contrast-local-20261030/review-queue.json",
+      "bytes": 2078,
+      "sha256": "3fd2d4e3fddb82ec30b8bbdb7e6179094d32ef808d08c3bcbe7f42697a94c06a"
+    },
+    {
+      "path": "evidence/course-link-contrast-preview-20261030/review-1280-dark.jpg",
+      "bytes": 226656,
+      "sha256": "70bf3bdf03436c6de7d96591bc92afe5d02864f4c59d70a7da8167b7e45b3a20"
+    },
+    {
+      "path": "evidence/course-link-contrast-preview-20261030/review-1280-light.jpg",
+      "bytes": 199294,
+      "sha256": "bfb97b83cee26eb75bea142d738877c9f39a028f008313856b81002e42a8e68f"
+    },
+    {
+      "path": "evidence/course-link-contrast-preview-20261030/review-1920-dark.jpg",
+      "bytes": 143246,
+      "sha256": "ce140fe2a531ccad5ee9005806a0be6278c7a2672dda98376e3286ca11fcf4b3"
+    },
+    {
+      "path": "evidence/course-link-contrast-preview-20261030/review-1920-light.jpg",
+      "bytes": 135254,
+      "sha256": "b94fb92b4484c94beba4f8fe5457e259c9465dbc578e2902e01fa294ac729398"
+    },
+    {
+      "path": "evidence/course-link-contrast-preview-20261030/review-360-dark.jpg",
+      "bytes": 319536,
+      "sha256": "0fc9d66f1afffe58f6d69b9714c85861857c35ee5d0d18a045b27bc679948cba"
+    },
+    {
+      "path": "evidence/course-link-contrast-preview-20261030/review-360-light.jpg",
+      "bytes": 288945,
+      "sha256": "d2bc11e6d21ec6ff46ab60e8feec3180e805cd6e84d6fc2272b5a6706a61fc4c"
+    },
+    {
+      "path": "evidence/course-link-contrast-preview-20261030/review-390-dark.jpg",
+      "bytes": 328981,
+      "sha256": "93d5391a2e3ae4e513d0f959ec11cb8cea91b608e6dca5dba5da586801d533d8"
+    },
+    {
+      "path": "evidence/course-link-contrast-preview-20261030/review-390-light.jpg",
+      "bytes": 298019,
+      "sha256": "42bc991541679293d4982288e96a567f915b2060f3be9d6b824fb24aff263bcc"
+    },
+    {
+      "path": "evidence/course-link-contrast-preview-20261030/review-768-dark.jpg",
+      "bytes": 412153,
+      "sha256": "8110d5f512d09b4d25b9a6df85a7761ebfe1c7b230703ae294b98042830f360b"
+    },
+    {
+      "path": "evidence/course-link-contrast-preview-20261030/review-768-light.jpg",
+      "bytes": 354048,
+      "sha256": "33723cc2bba1ece8d383ba7650f1dc7e32a85140ba92531c1db9fb6fcc595ca8"
+    },
+    {
+      "path": "evidence/course-link-contrast-preview-20261030/review-queue.json",
+      "bytes": 2078,
+      "sha256": "3fd2d4e3fddb82ec30b8bbdb7e6179094d32ef808d08c3bcbe7f42697a94c06a"
+    },
+    {
+      "path": "evidence/crypto-primary-20261030/SUMMARY.json",
+      "bytes": 1373,
+      "sha256": "4b8ba5b7409854495a0fcf0fb0360c4bc488b2696ab7fd5462182dff107734bf"
+    },
+    {
+      "path": "evidence/crypto-primary-20261030/source-0.json",
+      "bytes": 24206,
+      "sha256": "9b97a8e951971d227d2fea49d3b090fe79119794c2e39a7dc4debac3dcae30bd"
+    },
+    {
+      "path": "evidence/crypto-primary-20261030/source-1.json",
+      "bytes": 8789,
+      "sha256": "6d5ff256748f2f56d0289eb0c6e2a4f8e70c778c11c0826da623563fa373a46f"
     },
     {
       "path": "evidence/current-public-http-console.txt",
@@ -14205,6 +14415,326 @@
       "path": "evidence/fullpage-light-new-profiles-20261028/fbde0b10e3e99f6a.json",
       "bytes": 10918,
       "sha256": "78f1697376cfa9856fb0d66d28f8097766f43d9680d1eb8402019fb4790a82b6"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/454888befcbb782f.json",
+      "bytes": 49514,
+      "sha256": "1aac3482093d7a569bd394f8fd7ba45a0b236013d0c669e9983ea3a0dfdb2fd6"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/6c15ac15f50ac13a.json",
+      "bytes": 75372,
+      "sha256": "50a9fe7be7b90aa46f5d43956174898d059b377a0bb9edf9e42695ef176ed1fd"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/81064cd8112f23ba.json",
+      "bytes": 66804,
+      "sha256": "47be56feb2ac1c5132c3c524a3a1241be1a2a1622a10d9e1dadfd122a51fa848"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/8f432852ff8e4977.json",
+      "bytes": 48527,
+      "sha256": "27a46c1ab451257fca6c055fa9a47d8aa3513cc09bf06e37b6febf541e44143c"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/SUMMARY.json",
+      "bytes": 1809,
+      "sha256": "94eacd021962ec4de21fe4f614265f0ef7a6b6097eea1714e62e13a8ade14964"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-454888befcbb782f-1280-0.jpg",
+      "bytes": 470601,
+      "sha256": "0f1596dbc8fff5efab57a848b6078db8f3e017115e922be083653f898317f00d"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-454888befcbb782f-1280-1.jpg",
+      "bytes": 39932,
+      "sha256": "5583020f9abb3934336e31d6b04b12c4c809f180804c45e147af5faeda6d5ec9"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-454888befcbb782f-1920-0.jpg",
+      "bytes": 291878,
+      "sha256": "d71b469479ded58f4895c605e728d839a4df4d9b91ac2bf84cdfb4ab357b3217"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-454888befcbb782f-360-0.jpg",
+      "bytes": 950449,
+      "sha256": "9c1529c477a77bb2d36ff0bf98d641f9ee1f636231757a0266bd12034204523b"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-454888befcbb782f-390-0.jpg",
+      "bytes": 953335,
+      "sha256": "fd64ff010e5b8d442377259d4d470263171f5bb90d4fb515a1f6deaa055b1b3c"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-454888befcbb782f-768-0.jpg",
+      "bytes": 989372,
+      "sha256": "a93f2e2facf4af515a4f4c08cd6f0c7c0a1b87c2378d941797410c98f1a3a29d"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-6c15ac15f50ac13a-1280-0.jpg",
+      "bytes": 406119,
+      "sha256": "89e281f7929545a55130ecffc0a05791b8c1f1737a65f075401c67e7b51e67c8"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-6c15ac15f50ac13a-1280-1.jpg",
+      "bytes": 65537,
+      "sha256": "f66516fe2b606c5a0ad557a0847495ac30bba3a9e3458e6a34da0a8af7390d26"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-6c15ac15f50ac13a-1920-0.jpg",
+      "bytes": 252252,
+      "sha256": "aa073c2c94d84bac25f35925c73c0052304ef9e23e6258fc5f8cc0d2f21e26da"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-6c15ac15f50ac13a-360-0.jpg",
+      "bytes": 780851,
+      "sha256": "8b324777d67c53538e7fb3dfadcf0cebc605f1685ace16bfa2610507a00152c0"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-6c15ac15f50ac13a-390-0.jpg",
+      "bytes": 810020,
+      "sha256": "0a159fc9901dade114cec0c62d06d63503df7e3beae3690f3d83ddbd60a61c30"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-6c15ac15f50ac13a-768-0.jpg",
+      "bytes": 867777,
+      "sha256": "86d85abcfc349d49a4800a8550bce66441aa3e7da84c70526363fa22aa54ccec"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-81064cd8112f23ba-1280-0.jpg",
+      "bytes": 388836,
+      "sha256": "d5a655eb9cdea46ba05469a94683f6566dd78807b7d568c5de9270c027d6c4fd"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-81064cd8112f23ba-1280-1.jpg",
+      "bytes": 39325,
+      "sha256": "9919b40743cb9f649b780433db5a88a9bfe45b6f5be592e9dc4e1a0ce4d99167"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-81064cd8112f23ba-1920-0.jpg",
+      "bytes": 244797,
+      "sha256": "a819accdefb825054751f4c56675be975bedab235c311aa40584844aafab0047"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-81064cd8112f23ba-360-0.jpg",
+      "bytes": 744896,
+      "sha256": "dfab2a5cc320ad383960946d06272fa54a11daf2794ba4c8d69f9751b4d06277"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-81064cd8112f23ba-390-0.jpg",
+      "bytes": 790552,
+      "sha256": "843be690c26bc01978cd26d94910a3cde3a47d1ca6b7ff9451d3614ac779b35f"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-81064cd8112f23ba-768-0.jpg",
+      "bytes": 800754,
+      "sha256": "a89a53a69beb449b0260aa5e16b590edb67690752fcf0514c754690d988e1c0d"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-8f432852ff8e4977-1280-0.jpg",
+      "bytes": 452027,
+      "sha256": "efaa564df63c1044d83d3d99ed5c8ffcd20f1c35cc7728b078007b912935257a"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-8f432852ff8e4977-1280-1.jpg",
+      "bytes": 67220,
+      "sha256": "35087171dc09a070bd74a4447e5696b19fdfda60681d441e9c0378f3ebcb4b0b"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-8f432852ff8e4977-1920-0.jpg",
+      "bytes": 280672,
+      "sha256": "7e29cf9a0171c4410ac54762078eebd4815657beb6773d4b3dd9b7fdf7b7a4e4"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-8f432852ff8e4977-360-0.jpg",
+      "bytes": 889941,
+      "sha256": "2003ee90f987da5a65a5ff487f6420b61b0fb448ec72d2a4a3c21b1e430b3e32"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-8f432852ff8e4977-390-0.jpg",
+      "bytes": 944083,
+      "sha256": "a38c7fccd7ae55488209fe017d05db43b7a3d20144f2e457d860726c181b695a"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-8f432852ff8e4977-768-0.jpg",
+      "bytes": 984476,
+      "sha256": "2e680377dda0f80dc2fcf4697b5c7dddc17403b19255e4a5eb2a397b6cc68215"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-d272a6f544dfb3b7-1280-0.jpg",
+      "bytes": 258786,
+      "sha256": "1e5f2a3417dcdd42741022f05b9e10f575abc71a5b7daf10b8c4e3e1bd519b31"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-d272a6f544dfb3b7-1920-0.jpg",
+      "bytes": 137070,
+      "sha256": "47f296854b630cb26a7d1b0e020db51cf69f80df9152d0ed8d483df6b3f5638e"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-d272a6f544dfb3b7-360-0.jpg",
+      "bytes": 416718,
+      "sha256": "02e89c5a4ac1f6ecd44ecd12f5f430787649169e820bd21ff564660280e277c3"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-d272a6f544dfb3b7-390-0.jpg",
+      "bytes": 477146,
+      "sha256": "c01cc6c75253ab27f018766786a94c825e4466eea5ee3161cff32aea93d0c497"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-d272a6f544dfb3b7-768-0.jpg",
+      "bytes": 498110,
+      "sha256": "d6f09aa1a919cc4709a580cf3fa816a556d8eb8c87854cf59b806b56a622362f"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-e17879a47adfb16d-1280-0.jpg",
+      "bytes": 387619,
+      "sha256": "5ac394ec702f0ea310fdaba27dcc460a7d7aa4825eb9f6e065b3c82d11835ae3"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-e17879a47adfb16d-1280-1.jpg",
+      "bytes": 65862,
+      "sha256": "84024812db0a9ae3fa6d08dfbff53ec17f29e1f53008546902464d2a3974dbb1"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-e17879a47adfb16d-1920-0.jpg",
+      "bytes": 253217,
+      "sha256": "bc177d5eb44b54b19d61f500fd8e9787a3bdc23bd24a5ab0f3709ed6b5f6409d"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-e17879a47adfb16d-360-0.jpg",
+      "bytes": 752090,
+      "sha256": "d77c433fd558e6d6f24249e68e41deabfcd475816212e4d0c35977ace58616a6"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-e17879a47adfb16d-390-0.jpg",
+      "bytes": 799804,
+      "sha256": "87ce0e8c29516fddac8adb3287c99ce1d53d09cba67f15121e9ea2c6ab15beea"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-e17879a47adfb16d-768-0.jpg",
+      "bytes": 842256,
+      "sha256": "0bc4090c650a1e7a3e88446d52e7d07179c9e8c193dbd476787df054e1d89bb1"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-eef0691d88a1b685-1280-0.jpg",
+      "bytes": 379255,
+      "sha256": "f23d8005e04e76918d8f9a1143851ed758e09927387d1f3ddd140317a53d4175"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-eef0691d88a1b685-1280-1.jpg",
+      "bytes": 39202,
+      "sha256": "113a8f345a7f9c5ff45560d46e5b811bb09471dea2e7fd33185b68e6323e9420"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-eef0691d88a1b685-1920-0.jpg",
+      "bytes": 241596,
+      "sha256": "f19caa251afd26e8c1de40ac25ebf436b1fb87ede8961767d160fe91ee3d58b4"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-eef0691d88a1b685-360-0.jpg",
+      "bytes": 750826,
+      "sha256": "dcd94de9dd8ac9b8654448dc8fe16535270044403514348287ef8a23e83b6035"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-eef0691d88a1b685-390-0.jpg",
+      "bytes": 792937,
+      "sha256": "f53f2e5f39fc03356d0cfe122762eeb3b5f99e1f630399aa1833f5dca565ba46"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-eef0691d88a1b685-768-0.jpg",
+      "bytes": 807959,
+      "sha256": "eb777badefc21f23e28044b0e3e8d7858e159090737f5681fe62a98e0e8d0276"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-f65b36210d067672-1280-0.jpg",
+      "bytes": 384131,
+      "sha256": "ae4b67de257bcc07638b7b5c621694e2915b02079eee5f27d908bc5648051299"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-f65b36210d067672-1280-1.jpg",
+      "bytes": 39076,
+      "sha256": "893fee353a70dbe1e82a88601c9c637a8a903e67e763fcd4b3ec6746be9658ab"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-f65b36210d067672-1920-0.jpg",
+      "bytes": 239760,
+      "sha256": "d65b0f33f2f1c348077599cab2efc977bb1649c0e3997af43eecf5548da68d7f"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-f65b36210d067672-360-0.jpg",
+      "bytes": 744440,
+      "sha256": "54ec44dead67679f0d474167993476aca4daf7547eb9be0c1a344e6eca5b3086"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-f65b36210d067672-390-0.jpg",
+      "bytes": 712361,
+      "sha256": "5a9d2427d327d28575ba94885b1d3a6f610e053cb725f1cf3598defe1d8f408f"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-f65b36210d067672-768-0.jpg",
+      "bytes": 787290,
+      "sha256": "8a38b90b4bdd42d8bb933607c4f61b49efc5d7a14674ee38f21233362f1b4d28"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-fafd72fc8cc66e91-1280-0.jpg",
+      "bytes": 453954,
+      "sha256": "7d30ab7367cd6c73e32f1e42931e36970fd1337e15c3446ef7dc62d36e43fa70"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-fafd72fc8cc66e91-1280-1.jpg",
+      "bytes": 39637,
+      "sha256": "1e6a76bc074106b065f0a485f06880d9cad79c2cec6998f99366d33a295e2b4f"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-fafd72fc8cc66e91-1920-0.jpg",
+      "bytes": 277530,
+      "sha256": "648626bc92e637bba230be0da44a98c166f6f80774c5018e461454c63fcc1214"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-fafd72fc8cc66e91-360-0.jpg",
+      "bytes": 872481,
+      "sha256": "ddfdc7ccb09e39b96ac10d06c6ad82215c29b60f85cc2ed1b00559ccb846be83"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-fafd72fc8cc66e91-390-0.jpg",
+      "bytes": 928645,
+      "sha256": "8173e307bd5d9ead43dd628b1d44d3c46f681281ace90c1c2cd500c6758c2855"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/contact-fafd72fc8cc66e91-768-0.jpg",
+      "bytes": 952500,
+      "sha256": "2e1ef19e6bf79df849c8c0fb6e43b89a1589e2a923ea0da4213091a50b3bc9fe"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/d272a6f544dfb3b7.json",
+      "bytes": 19136,
+      "sha256": "28a60d3de76331969bc1b22d6e59bd53711cc0ea103835022fa8c7b363b3a76d"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/e17879a47adfb16d.json",
+      "bytes": 70372,
+      "sha256": "b33c9db9baeb0fd16f5afd884a07fdf7ac1a80ffef6825c72a2c82df29faab03"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/eef0691d88a1b685.json",
+      "bytes": 67306,
+      "sha256": "714501a69ebcca026c9b3de77112b1834039eaeb1263cc9fcbb0480d4f01069a"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/f65b36210d067672.json",
+      "bytes": 65578,
+      "sha256": "e809207f4b522fbfb5c5952557bb22e2bd3423fd119abeaa7769e48292b0d698"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/fafd72fc8cc66e91.json",
+      "bytes": 47191,
+      "sha256": "1e219bb0c0ba0413edc1b90165aff9bc1101b500cb012698b66287a30cc52a5d"
+    },
+    {
+      "path": "evidence/fullpage-light-risk-courses-20261030/review-queue.json",
+      "bytes": 7297,
+      "sha256": "f8d3c92c98d1fc7fb6b5e1f20f88e3fddd0792547bcf9ee9e24874003203baca"
     },
     {
       "path": "evidence/fullpage-light-static-20261028/06061c5b6ef1510e.json",
@@ -33027,6 +33557,11 @@
       "sha256": "742e8b31b1cc9b62a1efb3a6e9f7ce9bc4907f4bc86d209946742cb9261d8c8f"
     },
     {
+      "path": "findings/COURSE-LESSON-LINK-CONTRAST.md",
+      "bytes": 1810,
+      "sha256": "56e83f1e78679714ced268b321b76b0c0eb8bf618a85446fc3001609e0e4e9fd"
+    },
+    {
       "path": "findings/COURSE-LIGHT-CONTRAST.md",
       "bytes": 3870,
       "sha256": "42896138c64fce53b8eed2d9318b93283cb628ec2fa709835627561e23961099"
@@ -33462,6 +33997,26 @@
       "sha256": "886058d6784dd9f9fc05438cb9c0912a449d4ecf8b576d4f6e1324a804f487fc"
     },
     {
+      "path": "verification/course-links-contacts-20261030.py",
+      "bytes": 1086,
+      "sha256": "cbab0f178f2891d6e20293d99df98e6d2a24d7850b8b8cf1f16548f9851e2820"
+    },
+    {
+      "path": "verification/course-links-contrast-20261030.mjs",
+      "bytes": 5024,
+      "sha256": "abf163ff135591ec2b83706114e9334da8d9efab92ee1b2bd21ca3a2595f097a"
+    },
+    {
+      "path": "verification/course-links-personal-20261030.py",
+      "bytes": 2059,
+      "sha256": "2791d138cdd956b433eab919ebee598b957139aae68d5bbb224d0150b362a624"
+    },
+    {
+      "path": "verification/course-links-run-20261030.py",
+      "bytes": 767,
+      "sha256": "edf76c507fb01d43af9d53c97da6ce9b270eafe8a011bea00e93a6a42802e088"
+    },
+    {
       "path": "verification/course-overview-browser.mjs.txt",
       "bytes": 2834,
       "sha256": "39352d8028d4c9c6c794f81c1a4496679db9d3e400b146466c2223483513a573"
@@ -33582,6 +34137,11 @@
       "sha256": "fd1502faf9d0578f303914e4b59ccda028231364360e1767b064b3899ebcbfc3"
     },
     {
+      "path": "verification/merge-reviewed-course-links-20261030.py",
+      "bytes": 4706,
+      "sha256": "297ef89a6812f1244076f99b46c47c455416e4c137ea42d1338c74a7a6f0bf36"
+    },
+    {
       "path": "verification/normal-public-rpc-followup.mjs.txt",
       "bytes": 3856,
       "sha256": "195b69e0a8950776486631d6435e3381a0184bb1581498eab12bbf7d3ae96a94"
@@ -33652,6 +34212,11 @@
       "sha256": "3df454bbf4d106b1f5a689fb0920c4dca6d20d1f77d2566270379b7fa63abc33"
     },
     {
+      "path": "verification/read-crypto-primary-20261030.py",
+      "bytes": 2362,
+      "sha256": "5b9b390e87523fca0092298f429a3b3d77b2d9eb2e3b7695c6df2b65ea57349f"
+    },
+    {
       "path": "verification/read-greeks-sources.py.txt",
       "bytes": 1869,
       "sha256": "3f4de2b869b6c6b5421d87c006ecfaf088d263b68c7c4d051af09ca707efa854"
@@ -33682,14 +34247,29 @@
       "sha256": "463153997f74aa8af1bf1915647496af40041cb7296ff81f0fcea91e2936318f"
     },
     {
+      "path": "verification/record-course-links-finding-20261030.py",
+      "bytes": 4776,
+      "sha256": "33839662b3b79d561271156192aab2be3077106a6bd96b3dc41af6ee74a3dc41"
+    },
+    {
       "path": "verification/record-crypto-light-20261030.py",
       "bytes": 4342,
       "sha256": "6ebb3b47d37ebdfa7ad19fb6e6e67d5b3d76a78473fe2f37f608a1271e7c46bd"
     },
     {
+      "path": "verification/record-crypto-primary-20261030.py",
+      "bytes": 3571,
+      "sha256": "c77120773105d6edbe1dcf734c1aa50dab9a8c86bf7dd09ea3d8392910b19f31"
+    },
+    {
       "path": "verification/record-pr266-closure-20261030.py",
       "bytes": 7177,
       "sha256": "baea8dbb8037de0c2ece51df0a0bf9799142669ad0949d0d2848053686c4d869"
+    },
+    {
+      "path": "verification/record-risk-courses-light-20261030.py",
+      "bytes": 5766,
+      "sha256": "6e4c13179a19df7900034ff93ea4893d4634cb83406e0d7570f4e3d92c3fb22f"
     },
     {
       "path": "verification/record-terminal-appendix-reading.py.txt",
@@ -33997,7 +34577,7 @@
       "sha256": "75c029c85b57a6d5253685eaf559c5f27e0f41b95cc64f25a1b7c81e4427287b"
     }
   ],
-  "fileCount": 6799,
-  "totalBytes": 1536419925,
-  "generatedAt": "2026-10-30T11:40:44.961987+00:00"
+  "fileCount": 6915,
+  "totalBytes": 1570938864,
+  "generatedAt": "2026-10-30T14:57:01.575405+00:00"
 }

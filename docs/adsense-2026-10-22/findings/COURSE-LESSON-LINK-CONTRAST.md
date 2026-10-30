@@ -1,0 +1,9 @@
+# THQ079 — Course lesson link contrast
+
+P2, PREPARED_NOT_MERGED. Observed on production4fad776 during full light-mode allocation lesson review. Sources and next/back links use14px emerald400 normal and emerald300 hover over light247 surfaces.16 actual browser rows cover two routes,360/1280 widths,both real themes,rest and pointer hover.48 colour measurements include24 light observations. Light contrast range1.422807–1.796973:1; dark minimum9.978251:1. Two source/nav captures personally viewed directly; full-page light inspection also shows pale text.
+
+Reproduction: open either allocation foundations or executing-rebalancing lesson, use light theme, scroll to Sources & further reading and next/back navigation; compare link text to surrounding light surface. Source URL text/destinations are present but hard to read. Computed foreground/background and actual screenshots: evidence/COURSE-LINK-CONTRAST-BEFORE-20261030.json and course-link-contrast-before-20261030/.
+
+Candidatea15d20b adds only `[.light_&]:text-emerald-800 [.light_&]:hover:text-emerald-900` at three class sites in src/pages/CourseLesson.tsx. Removing the exact additions makes the file byte-identical to main4fad776. Full application/editorial/SSG build passes. Source text/href/rel/target, next/back routing, lessons/quiz answer data/saved progress, calculations/orders/auth and all handlers unchanged.
+
+Actual local/preview five-width/both-theme/rest-hover and safe guest checks, trusted candidate CI and both native previews remain required before an ordinary protected merge. Exact-main six CI, authenticated native production, actual affected public/personal and guest gates remain required after merge. Rollback is an ordinary frontend revert. No established Google rejection cause or whole-site accessibility certificate.

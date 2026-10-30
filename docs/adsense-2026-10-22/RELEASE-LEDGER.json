@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T11:40:41.825446+00:00",
+  "updatedAt": "2026-10-30T14:56:58.654494+00:00",
   "releases": [
     {
       "finding": "THQ-001",
@@ -3227,22 +3227,32 @@
       }
     }
   ],
-  "nextCandidate": null,
+  "nextCandidate": {
+    "pr": 267,
+    "candidateSHA": "a15d20b4a65e7ea251634086eede2751d6cd8cff",
+    "baseSHA": "4fad776ec28409929eb08f47e4734c229e79adb8",
+    "state": "PREPARED_NOT_MERGED",
+    "scope": "Three course lesson source/onward link colour class sites; source/navigation/quiz/data/progress behavior unchanged."
+  },
   "latestResumeProviderEvidence": "evidence/FINAL-WORKSPACE-ACCESS-20261023.json",
   "latestGitHubState": "evidence/FINAL-GITHUB-STATE-20261023.json",
   "latestGitHubProviderBindingEvidence": "evidence/PR266-PRODUCTION-PROVIDERS.json",
   "latestMainValidationEvidence": "evidence/PR266-MAIN-CI.json",
   "latestVerifiedProductionSHA": "4fad776ec28409929eb08f47e4734c229e79adb8",
-  "remainingConfirmedSiteFixes": 0,
+  "remainingConfirmedSiteFixes": 1,
   "exhaustiveAuditComplete": false,
-  "remainingKnownSafeFindings": 0,
-  "pendingReleaseVerification": null,
+  "remainingKnownSafeFindings": 1,
+  "pendingReleaseVerification": {
+    "pr": 267,
+    "mergeSHA": "23a3be579eb49b5af2db33dc37434027040e2d92",
+    "candidateSHA": "a15d20b4a65e7ea251634086eede2751d6cd8cff"
+  },
   "protectedPublishedContentFinding": "THQ035/036 published revision2 independently verified; credential and approval blockers superseded by owner-approved PR238 operation. No new production writes in this continuation.",
   "operationalHold": {
-    "active": false,
-    "reason": "No active release hold."
+    "active": true,
+    "reason": "PR267 exact-main/native/affected public/guest verification pending."
   },
-  "latestObservedMainSHA": "4fad776ec28409929eb08f47e4734c229e79adb8",
+  "latestObservedMainSHA": "23a3be579eb49b5af2db33dc37434027040e2d92",
   "historicalCandidateRecords": {
     "independentFutureCandidate": {
       "pr": 214,
