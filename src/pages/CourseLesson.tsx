@@ -283,7 +283,7 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
                     href={s.url}
                     rel="noopener nofollow"
                     target="_blank"
-                    className="text-sm text-emerald-400 hover:text-emerald-300 inline-flex items-center gap-1"
+                    className="text-sm text-emerald-400 hover:text-emerald-300 [.light_&]:text-emerald-800 [.light_&]:hover:text-emerald-900 inline-flex items-center gap-1"
                   >
                     {s.label} <ExternalLink className="w-3 h-3" />
                   </a>
@@ -302,11 +302,11 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
               <span />
             )}
             {next ? (
-              <Link to={`/courses/${track.slug}/${next.slug}`} className="text-sm text-emerald-400 hover:text-emerald-300 inline-flex items-center gap-1 ml-auto">
+              <Link to={`/courses/${track.slug}/${next.slug}`} className="text-sm text-emerald-400 hover:text-emerald-300 [.light_&]:text-emerald-800 [.light_&]:hover:text-emerald-900 inline-flex items-center gap-1 ml-auto">
                 {next.title} <ArrowRight className="w-4 h-4" />
               </Link>
             ) : (
-              <Link to={`/courses/${track.slug}`} className="text-sm text-emerald-400 hover:text-emerald-300 inline-flex items-center gap-1 ml-auto">
+              <Link to={`/courses/${track.slug}`} className="text-sm text-emerald-400 hover:text-emerald-300 [.light_&]:text-emerald-800 [.light_&]:hover:text-emerald-900 inline-flex items-center gap-1 ml-auto">
                 Back to track <ArrowRight className="w-4 h-4" />
               </Link>
             )}
