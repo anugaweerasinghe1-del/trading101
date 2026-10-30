@@ -1,0 +1,19 @@
+{
+  "baseSHA": "23a3be579eb49b5af2db33dc37434027040e2d92",
+  "scope": "Only scoped light foreground variants on comparison/how-to main containers and light-only comparison title gradient removal. Text, hrefs, events, financial/auth/data behavior unchanged. Both index containers receive same scoped variants.",
+  "files": [
+    {
+      "file": "src/pages/Compare.tsx",
+      "baseSHA256": "5db0f2c47ffd85617eaf0b08cc5c623f6ff5b8fe5835a91cc86b96c10510f118",
+      "patchedSHA256": "7fa8c3140721cdcb8a1a382d8864794da0b7c8348db4ebe0a73eab348c39ffb0",
+      "removingExactAddedClassesRestoresBase": true
+    },
+    {
+      "file": "src/pages/HowToTrade.tsx",
+      "baseSHA256": "3cd0b3f034161ecd2a2b45429ee1e5113d0718dc25ddc3251921f7751dbb87c5",
+      "patchedSHA256": "787d5ad902e0d1edbcdb0fed44e77abe2cf4e376f7babfbcd0d60bc330077ff2",
+      "removingExactAddedClassesRestoresBase": true
+    }
+  ],
+  "rollback": "Revert presentation-only commit via normal protected workflow."
+}

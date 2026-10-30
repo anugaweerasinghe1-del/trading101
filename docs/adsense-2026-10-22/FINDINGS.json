@@ -3179,15 +3179,36 @@
       ],
       "productionImagesPersonallyViewed": 40,
       "liveRecheck": "PASS exact merged production: [40] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
+    },
+    {
+      "id": "THQ-080",
+      "severity": "P2",
+      "category": "Comparison and how-to light-theme research links and instructional labels have low contrast",
+      "state": "PREPARED_NOT_MERGED",
+      "urls": [
+        "https://www.thetradehq.com/compare/apple-vs-microsoft",
+        "https://www.thetradehq.com/how-to-trade/btc",
+        "https://www.thetradehq.com/how-to-trade"
+      ],
+      "affectedScope": "Compare and HowToTrade templates, both indexes, scoped small green/pink text, numbered steps, quick-answer label, sources and comparison title.",
+      "evidence": "findings/EDITORIAL-LIGHT-TEXT-CONTRAST.md",
+      "reproductionEvidence": "evidence/EDITORIAL-CONTRAST-BEFORE-20261030.json",
+      "actualBehavior": "Observed normal-text light contrast1.66881\u20132.69141:1 in16before states; screenshot review confirms faint research links. Additional title/index measurements pending.",
+      "expectedBehavior": "Normal text>=4.5:1 and large title>=3:1 on light surfaces.",
+      "proposedFix": "Scoped light-only emerald800/rose800 descendant foregrounds in four existing main containers plus light-only solid comparison title; original dark styles preserved.",
+      "risk": "Reversible presentation-only class additions in two frontend files. No copy, URLs, handlers, fees/orders/auth/records/progress/consent/infrastructure change.",
+      "candidateSHA": "a5970bfbd39b4588a94f0f6b1eba1964e0e933d0",
+      "adsenseRelevance": "General accessibility, no established Google rejection reason.",
+      "releaseHold": "PR268 draft; local/actual native preview, trusted CI, normal protected merge and exact production gates required."
     }
   ],
-  "updatedAt": "2026-10-30T15:06:31.146394+00:00",
+  "updatedAt": "2026-10-30T15:27:33.579323+00:00",
   "counts": {
-    "siteFindings": 84,
-    "P2": 46,
+    "siteFindings": 85,
+    "P2": 47,
     "P3": 38,
     "publiclyRepaired": 84,
-    "preparedNotMerged": 0,
+    "preparedNotMerged": 1,
     "separateOperationalBlockers": 0,
     "mergedAwaitingProductionVerification": 0,
     "protectedUnapprovedRecordFixes": 0,

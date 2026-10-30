@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T15:20:22.548074+00:00",
+  "updatedAt": "2026-10-30T15:37:23.491358+00:00",
   "releases": [
     {
       "finding": "THQ-001",
@@ -3287,15 +3287,21 @@
       }
     }
   ],
-  "nextCandidate": null,
+  "nextCandidate": {
+    "pr": 268,
+    "candidateSHA": "a5970bfbd39b4588a94f0f6b1eba1964e0e933d0",
+    "baseSHA": "23a3be579eb49b5af2db33dc37434027040e2d92",
+    "state": "PREPARED_NOT_MERGED",
+    "scope": "THQ080 light-only comparison/how-to text/title contrast; four trusted CI and native preview pass; actual browser/personal/guest verification pending."
+  },
   "latestResumeProviderEvidence": "evidence/FINAL-WORKSPACE-ACCESS-20261023.json",
   "latestGitHubState": "evidence/FINAL-GITHUB-STATE-20261023.json",
   "latestGitHubProviderBindingEvidence": "evidence/PR267-PRODUCTION-PROVIDERS.json",
   "latestMainValidationEvidence": "evidence/PR267-MAIN-CI.json",
   "latestVerifiedProductionSHA": "23a3be579eb49b5af2db33dc37434027040e2d92",
-  "remainingConfirmedSiteFixes": 0,
+  "remainingConfirmedSiteFixes": 1,
   "exhaustiveAuditComplete": false,
-  "remainingKnownSafeFindings": 0,
+  "remainingKnownSafeFindings": 1,
   "pendingReleaseVerification": null,
   "protectedPublishedContentFinding": "THQ035/036 published revision2 independently verified; credential and approval blockers superseded by owner-approved PR238 operation. No new production writes in this continuation.",
   "operationalHold": {
