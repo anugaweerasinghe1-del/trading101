@@ -16,7 +16,7 @@ export default function Strategy() {
   if (!s) return <NotFound />;
 
   const title = `${s.name} Strategy — Examples and Limitations | TradeHQ`;
-  const description = `${s.name}: ${s.oneLiner} Example rules, limitations and a hypothetical worked example. Practise it free with $100K virtual cash. (Educational simulation only — not financial advice.)`;
+  const description = `${s.name}: ${s.oneLiner} Example rules, limitations and a hypothetical worked example. Study the worksheet on this page; the separate simulator supports spot order-entry practice. (Educational simulation only — not financial advice.)`;
   const url = `${SITE_DOMAIN}/strategy/${s.slug}`;
 
   return (
@@ -47,13 +47,13 @@ export default function Strategy() {
             <p className="mt-3 text-sm text-muted-foreground">Published by TradeHQ. <Link to="/about" className="underline underline-offset-4">Site creator and editorial approach: Anuga Weerasinghe</Link>. No independent professional review is claimed.</p>
             <p className="mt-4 text-lg text-muted-foreground">{s.oneLiner}</p>
             <Button className="mt-6" asChild>
-<Link to="/trade">Practise this strategy <ArrowRight className="ml-2 h-4 w-4" /></Link>
+<Link to="/trade">Open spot-order practice <ArrowRight className="ml-2 h-4 w-4" /></Link>
 </Button>
           </header>
 
           <AIAnswerBlock
             question={`What is the ${s.name} trading strategy and does it work?`}
-            answer={`${s.name}: ${s.oneLiner} ${s.successRate} Study context: ${s.bestFor} Practise it free on TradeHQ with $100,000 in virtual cash. (Educational simulation only — not financial advice.)`}
+            answer={`${s.name}: ${s.oneLiner} ${s.successRate} Study context: ${s.bestFor} Use the worksheet below to examine the example rules. TradeHQ’s separate $100,000 spot simulator does not implement every indicator or strategy. (Educational simulation only — not financial advice.)`}
             className="mb-6"
           />
 
