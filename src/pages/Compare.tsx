@@ -45,10 +45,10 @@ export default function Compare() {
 
       <div className="min-h-screen bg-background flex flex-col">
         <Navigation />
-        <main data-publisher-notes={`/compare/${pair.slug}`} className="flex-1 container mx-auto px-4 pt-24 pb-12 max-w-5xl">
+        <main data-publisher-notes={`/compare/${pair.slug}`} className="[.light_&_.text-emerald-400]:text-emerald-800 [.light_&_.text-rose-400]:text-rose-800 flex-1 container mx-auto px-4 pt-24 pb-12 max-w-5xl">
           <header className="mb-10 text-center">
             <p className="text-xs uppercase tracking-widest text-muted-foreground mb-3">Side-by-side comparison</p>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-r from-emerald-400 to-rose-400 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-r from-emerald-400 to-rose-400 bg-clip-text text-transparent [.light_&]:bg-none [.light_&]:text-foreground">
               {pair.a.name} vs {pair.b.name}
             </h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">{pair.intro}</p>
@@ -190,7 +190,7 @@ export function CompareIndex() {
       </Helmet>
       <div className="min-h-screen bg-background flex flex-col">
         <Navigation />
-        <main className="flex-1 container mx-auto px-4 pt-24 pb-12 max-w-5xl">
+        <main className="[.light_&_.text-emerald-400]:text-emerald-800 [.light_&_.text-rose-400]:text-rose-800 flex-1 container mx-auto px-4 pt-24 pb-12 max-w-5xl">
           <h1 className="text-4xl font-bold mb-2">Asset Comparisons</h1>
           <p className="text-muted-foreground mb-8">Pick a head-to-head. Each comparison is built around real differences in returns, risk and use case.</p>
 
