@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { MegaFooter } from "@/components/MegaFooter";
@@ -85,6 +86,7 @@ export default function About() {
                   {s.title}
                 </h2>
                 <p className="text-sm text-muted-foreground leading-relaxed">{s.body}</p>
+                {s.title === "Educational Philosophy" && <p className="mt-3 text-sm"><Link to="/learn-trading-guide#compound-initial-capital" className="text-primary underline underline-offset-4">Open the hypothetical compound growth calculator</Link></p>}
               </section>
             ))}
 

@@ -202,14 +202,14 @@ const WikiTerm = () => {
           <Card className="mt-6 p-6 bg-card border-border rounded-2xl">
             <div className="flex items-center gap-3 mb-3">
               <TrendingUp className="w-5 h-5 text-primary" />
-              <h3 className="text-sm font-bold text-foreground">Apply This in the Simulator</h3>
+              <h3 className="text-sm font-bold text-foreground">Worksheet and optional spot practice</h3>
             </div>
             <p className="text-xs text-muted-foreground mb-4">
-              Use the worksheet above to examine {term.term.toLowerCase()}. Some concepts require external data or paper calculations; TradeHQ does not implement every indicator, order type or contract.
+              Work through the {term.term.toLowerCase()} exercise above using its stated inputs or external data. The terminal link below is for separate spot order-entry practice; it does not recreate every indicator, chart pattern or derivatives contract.
             </p>
             <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-lg" asChild>
 <Link to="/trade/btc">
-                Open Simulator <ArrowRight className="ml-2 w-3 h-3" />
+                Open spot-order simulator <ArrowRight className="ml-2 w-3 h-3" />
               </Link>
 </Button>
           </Card>
