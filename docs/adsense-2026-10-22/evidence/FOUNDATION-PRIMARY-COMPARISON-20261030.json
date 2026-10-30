@@ -1,0 +1,65 @@
+{
+  "checkedAt": "2026-10-30T15:50:37.574864+00:00",
+  "outcome": "BOUNDED_SOURCE_COMPARISON_COMPLETE",
+  "paths": [
+    "/learn/1",
+    "/learn/4"
+  ],
+  "contentSource": "src/lib/lessonData.ts",
+  "sourceCandidateSHA": "a5970bfbd39b4588a94f0f6b1eba1964e0e933d0",
+  "sources": [
+    {
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/stocks",
+      "label": "SEC: stocks",
+      "checkedAt": "2026-10-30T15:49:53.671709+00:00",
+      "status": 200,
+      "finalURL": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/stocks",
+      "title": "Stocks - FAQs | Investor.gov",
+      "textSHA256": "e58d75a5018210e9f3a7241f06059bc154c45fd4513d60b8f441b53c6e07871e",
+      "outcome": "RETRIEVED_REQUIRES_ACTUAL_READING",
+      "evidence": "evidence/foundation-primary-20261030/source-0.json",
+      "readingStatus": "ACTUAL_ARTICLE_TEXT_READ",
+      "readingScope": "Entire substantive retrieved article text personally read; navigation/footer excluded as financial support."
+    },
+    {
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/single-stock-etfs",
+      "label": "SEC: single-stock ETFs",
+      "checkedAt": "2026-10-30T15:49:57.334528+00:00",
+      "status": 200,
+      "finalURL": "https://www.investor.gov/introduction-investing/investing-basics/glossary/single-stock-etfs",
+      "title": "Single-stock ETFs | Investor.gov",
+      "textSHA256": "54a7050ba84869484729a1313911f28dd9f211c2a0efe67f2b2f941afb6729b9",
+      "outcome": "RETRIEVED_REQUIRES_ACTUAL_READING",
+      "evidence": "evidence/foundation-primary-20261030/source-1.json",
+      "readingStatus": "ACTUAL_ARTICLE_TEXT_READ",
+      "readingScope": "Entire substantive retrieved article text personally read; navigation/footer excluded as financial support."
+    }
+  ],
+  "claimsCompared": [
+    {
+      "claim": "A stock represents company ownership; dividends and price gains are not guaranteed.",
+      "sources": [
+        0
+      ],
+      "assessment": "Supported by StocksFAQs ownership definition and explicit no-guarantee/loss discussion. Voting rights and payment priority depend on stock class; this receipt does not certify every stock-rights claim."
+    },
+    {
+      "claim": "ETF designation alone establishes neither diversification nor a low-risk rating.",
+      "sources": [
+        1
+      ],
+      "assessment": "Supported by the SEC single-stockETF counterexample: single-stock focus does not diversify, leveraged exposure can amplify volatility/risk. This short glossary entry does not establish every fund expense, holdings, or mandate claim."
+    },
+    {
+      "claim": "Invented equal-weighted two-name fund loses10% when one falls20% and other is unchanged, and20% when both fall20%.",
+      "sources": [],
+      "assessment": "Independent no-cost arithmetic:0.5*(-0.2)+0.5*0=-0.1;0.5*(-0.2)+0.5*(-0.2)=-0.2. Not a forecast or source endorsement of a real fund."
+    },
+    {
+      "claim": "Two tickers can overlap:50direct companyA plus50fund with20%A yields60A exposure.",
+      "sources": [],
+      "assessment": "Independent worksheet arithmetic50+50*.2=60 of100. Product holdings require separate current documents; short SEC glossary is not verification of an actual fund holding."
+    }
+  ],
+  "limitations": "Four bounded definition/arithmetic comparisons only. Full individual lesson source/originality, current real fund holdings, schedules, conditional subtopics and full accessibility remain incomplete. No account/order/quiz/progress or production mutation."
+}

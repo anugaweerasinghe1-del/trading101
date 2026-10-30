@@ -1115,7 +1115,7 @@
       ],
       "findingStates": {
         "THQ-034": "PUBLICLY_VERIFIED",
-        "THQ-080": "PREPARED_NOT_MERGED"
+        "THQ-080": "PUBLICLY_VERIFIED"
       },
       "supplementaryNotesReading": "NOT_YET_INDIVIDUALLY_REVIEWED",
       "confirmedFindingStates": [],
@@ -7193,7 +7193,7 @@
         "THQ-080"
       ],
       "findingStates": {
-        "THQ-080": "PREPARED_NOT_MERGED"
+        "THQ-080": "PUBLICLY_VERIFIED"
       },
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": [],
@@ -7319,7 +7319,7 @@
       "findingStates": {
         "THQ-007": "PUBLICLY_VERIFIED",
         "THQ-040": "PUBLICLY_VERIFIED",
-        "THQ-080": "PREPARED_NOT_MERGED"
+        "THQ-080": "PUBLICLY_VERIFIED"
       },
       "postDeploymentChecks": [
         {
@@ -8746,7 +8746,14 @@
         "assessment": "Allfivecontacts acrossallfivewidths personallyviewed, initialsubtopic1of4 only: sources/AIassistnotice, tabstrip, twolabelledillustrations, stockownership andhypotheticalgain/loss/marketcapexamples, ETFscope/overlap/twofundshockmath, conceptualderivativeslimit, Continue/footer. No defaultdocumentoverflow/overlap observed; tabs usecontainedhorizontalscroll atnarrowwidths. Examplesmath2000\u21922500/1500,2b\u00d750=100b,halfweight20%shock=10% correct. Orangeinitialprogressbarlooksfullbeside0%label: implementation/reproductionfollowup, notyetnewfinding. No Continue/quiz/progressaction. Otherconditionalstates, imagealtsemantics/light/keyboard/zoom/primarysourcesremainincomplete.",
         "evidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
         "passIsNotImpliedByInspection": true
-      }
+      },
+      "additionalBoundedPrimarySourceReviews": [
+        {
+          "status": "BOUNDED_SOURCE_COMPARISON_COMPLETE",
+          "evidence": "evidence/FOUNDATION-PRIMARY-COMPARISON-20261030.json",
+          "wholePageSourceReviewComplete": false
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/learn/2",
@@ -9158,7 +9165,14 @@
         "assessment": "Personally viewed all contact sheets/every captured default segment at360,390,768,1280,1920 including heading/byline, complete body/worksheet/reference, simulator/share/related-term area and entire footer. Current rendered MAIN text read. No default clipping or horizontal document overflow observed. No share activation, accounts/orders/forms or record writes. Light/zoom/keyboard/control/primary-source/cross-site originality follow-ups remain. Default topic distinguishes accounting weights summing100percent from influence on returns and labels80/15/5,60/30/10,40/60 as hypothetical. Age shortcut75/50/30percentstock arithmetic is correct and explicitly insufficient for suitability. Two illustration cards fit allwidths, but the second contains conspicuous nonword labels in the allocation chart, requiring original-asset and live reproduction; no numerical educational credit is given to those labels. Tabs and Continue were not activated.",
         "evidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
         "passIsNotImpliedByInspection": true
-      }
+      },
+      "additionalBoundedPrimarySourceReviews": [
+        {
+          "status": "BOUNDED_SOURCE_COMPARISON_COMPLETE",
+          "evidence": "evidence/FOUNDATION-PRIMARY-COMPARISON-20261030.json",
+          "wholePageSourceReviewComplete": false
+        }
+      ]
     },
     {
       "url": "https://www.thetradehq.com/learn/5",
@@ -60106,5 +60120,5 @@
     "individualActualRenderedProseComparisonsWithPreviouslyFullyReadBaseline": 85,
     "scope": "441 main texts/states covered, not441 fully completed page/source/control/human-visual reviews. See TERMINAL-TEMPLATE-COMPARISONS.json for raw texts and deltas."
   },
-  "updatedAt": "2026-10-30T15:37:23.491358+00:00"
+  "updatedAt": "2026-10-30T15:54:25.813174+00:00"
 }

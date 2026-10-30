@@ -1,25 +1,19 @@
 {
-  "updatedAt": "2026-10-30T15:37:23.491358+00:00",
-  "latestMergedProductionSHA": "23a3be579eb49b5af2db33dc37434027040e2d92",
+  "updatedAt": "2026-10-30T15:54:25.813174+00:00",
+  "latestMergedProductionSHA": "1da8d75941f7db17695440acafaef112c3a7ca6e",
   "fullpageRoutesPersonallyViewed": 454,
   "publicInventoryRoutes": 454,
   "remainingDefaultVisualRoutes": 0,
   "confirmedFindings": 85,
-  "publiclyVerifiedRepairs": 84,
-  "activeCandidate": {
-    "pr": 268,
-    "candidateSHA": "a5970bfbd39b4588a94f0f6b1eba1964e0e933d0",
-    "baseSHA": "23a3be579eb49b5af2db33dc37434027040e2d92",
-    "state": "PREPARED_NOT_MERGED",
-    "scope": "THQ080 light-only comparison/how-to text/title contrast; four trusted CI and native preview pass; actual browser/personal/guest verification pending."
-  },
+  "publiclyVerifiedRepairs": 85,
+  "activeCandidate": null,
   "releaseGate": {
     "active": false,
     "reason": "No active release hold."
   },
   "publicProfileControls": "60profiles240states120focusedEnterLeaderboard/backflows PASS; all120initiallightimages personallyviewed across31sheets. No full accessibility certification.",
   "activeCollection": null,
-  "unresolved": "1 substantive findings remain until closed with release evidence; exact count follows FINDINGS.json. Remaining full-light scroll, sequential Tab, zoom, screenreader, primary sources, originality/value, daily conditional and regional ad/CMP/account stages prevent whole-audit completion.",
+  "unresolved": "0 substantive findings remain until closed with release evidence; exact count follows FINDINGS.json. Remaining full-light scroll, sequential Tab, zoom, screenreader, primary sources, originality/value, daily conditional and regional ad/CMP/account stages prevent whole-audit completion.",
   "historicalResumeNote": "Earlier checkpoint fields were stale; historical observations remain in their dated receipts and git history.",
   "terminalControls": "19assetterminals76light/darkmobile/desktopstates372focusedEnterFAQexpansions PASS; all38initiallightimages personallyviewed. No fullaccessibilitycertification.",
   "latestOwnerUpdate": "Owner clarified the repeated rejection only provides generic account-not-approved/few-more-tweaks wording and Sites section is inaccessible without resubmission. No further rejection detail is available; do not repeatedly request it. No inferred Google rejection cause.",
@@ -27,14 +21,8 @@
   "terminalSixthControls": "Evidence TERMINAL-SIXTH-SAFE-CONTROLS-20261028.json; freshness/navigationinitialfailurepreserved separately.",
   "terminalSeventhControls": "20 terminals,80 states,396 FAQ expansions,all40 initial light images personally viewed.",
   "terminalFinalControls": "27 terminals,108 states,536 FAQ expansions,all54 initial light images personally viewed.",
-  "latestFullyVerifiedProductionSHA": "23a3be579eb49b5af2db33dc37434027040e2d92",
+  "latestFullyVerifiedProductionSHA": "1da8d75941f7db17695440acafaef112c3a7ca6e",
   "fullLightRoutesPersonallyViewed": 85,
   "remainingFullLightRoutes": 369,
-  "currentFindingStates": [
-    {
-      "id": "THQ-080",
-      "state": "PREPARED_NOT_MERGED",
-      "scope": "Comparison and how-to light-theme research links and instructional labels have low contrast"
-    }
-  ]
+  "currentFindingStates": []
 }

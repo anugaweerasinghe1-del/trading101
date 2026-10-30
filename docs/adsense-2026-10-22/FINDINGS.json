@@ -3184,7 +3184,7 @@
       "id": "THQ-080",
       "severity": "P2",
       "category": "Comparison and how-to light-theme research links and instructional labels have low contrast",
-      "state": "PREPARED_NOT_MERGED",
+      "state": "PUBLICLY_VERIFIED",
       "urls": [
         "https://www.thetradehq.com/compare/apple-vs-microsoft",
         "https://www.thetradehq.com/how-to-trade/btc",
@@ -3199,16 +3199,29 @@
       "risk": "Reversible presentation-only class additions in two frontend files. No copy, URLs, handlers, fees/orders/auth/records/progress/consent/infrastructure change.",
       "candidateSHA": "a5970bfbd39b4588a94f0f6b1eba1964e0e933d0",
       "adsenseRelevance": "General accessibility, no established Google rejection reason.",
-      "releaseHold": "PR268 draft; local/actual native preview, trusted CI, normal protected merge and exact production gates required."
+      "releaseHold": null,
+      "mergeSHA": "1da8d75941f7db17695440acafaef112c3a7ca6e",
+      "localEvidence": [
+        "evidence/EDITORIAL-CONTRAST-LOCAL-20261030.json",
+        "evidence/EDITORIAL-CONTRAST-LOCAL-PERSONAL-20261030.json"
+      ],
+      "productionEvidence": "evidence/PR268-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR268-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR268-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR268-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 60,
+      "liveRecheck": "PASS exact merged production: [60] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
     }
   ],
-  "updatedAt": "2026-10-30T15:27:33.579323+00:00",
+  "updatedAt": "2026-10-30T15:53:40.411254+00:00",
   "counts": {
     "siteFindings": 85,
     "P2": 47,
     "P3": 38,
-    "publiclyRepaired": 84,
-    "preparedNotMerged": 1,
+    "publiclyRepaired": 85,
+    "preparedNotMerged": 0,
     "separateOperationalBlockers": 0,
     "mergedAwaitingProductionVerification": 0,
     "protectedUnapprovedRecordFixes": 0,

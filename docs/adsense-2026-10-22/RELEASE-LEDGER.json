@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T15:37:23.491358+00:00",
+  "updatedAt": "2026-10-30T15:54:25.813174+00:00",
   "releases": [
     {
       "finding": "THQ-001",
@@ -3285,30 +3285,84 @@
         "safeControls": 4,
         "productionImagesPersonallyViewed": 40
       }
+    },
+    {
+      "pr": 268,
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/268",
+      "candidateSHA": "a5970bfbd39b4588a94f0f6b1eba1964e0e933d0",
+      "mergeSHA": "1da8d75941f7db17695440acafaef112c3a7ca6e",
+      "state": "PUBLICLY_VERIFIED",
+      "findings": [
+        "THQ-080"
+      ],
+      "production": {
+        "checkedAt": "2026-10-30T15:53:27.752044+00:00",
+        "mergeSHA": "1da8d75941f7db17695440acafaef112c3a7ca6e",
+        "outcome": "PASS",
+        "sourceJob": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/41083400230/job/124162898943",
+        "scope": "Authenticated native provider reads by trusted exact-main release-readiness job. Both production deployments match the immutable merge SHA. No provider mutations.",
+        "cloudflare": {
+          "observedAt": "2026-10-30T15:53:06.679Z",
+          "project": "tradehq-preview",
+          "activeProduction": {
+            "id": "f64c5a97-8fac-4d9f-8b86-8a60255ab02b",
+            "sha": "1da8d75941f7db17695440acafaef112c3a7ca6e",
+            "environment": "production",
+            "branch": "main",
+            "status": "success",
+            "createdAt": "2026-10-30T15:43:56.500928Z"
+          }
+        },
+        "vercel": {
+          "schema": "tradehq-vercel-production-evidence-v1",
+          "deploymentId": "dpl_Hd7xwYgq8W7q6HDDHvDR1UzdZXza",
+          "teamId": "team_fjZ5ggg0P43MsYFSIHbeHAAO",
+          "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+          "commitSha": "1da8d75941f7db17695440acafaef112c3a7ca6e",
+          "target": "production",
+          "state": "READY",
+          "activeAlias": "thetradehq.com",
+          "createdAt": 1793375037354,
+          "observedAt": 1793375586679,
+          "requests": 2,
+          "authorization": {
+            "merge": false,
+            "productionRelease": false
+          }
+        }
+      },
+      "mainCIEvidence": "evidence/PR268-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR268-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR268-GUEST-SMOKE.json"
+      ],
+      "liveRecheck": {
+        "outcome": "PASS",
+        "affectedStates": [
+          60
+        ],
+        "guestStates": 30,
+        "safeControls": 4,
+        "productionImagesPersonallyViewed": 60
+      }
     }
   ],
-  "nextCandidate": {
-    "pr": 268,
-    "candidateSHA": "a5970bfbd39b4588a94f0f6b1eba1964e0e933d0",
-    "baseSHA": "23a3be579eb49b5af2db33dc37434027040e2d92",
-    "state": "PREPARED_NOT_MERGED",
-    "scope": "THQ080 light-only comparison/how-to text/title contrast; four trusted CI and native preview pass; actual browser/personal/guest verification pending."
-  },
+  "nextCandidate": null,
   "latestResumeProviderEvidence": "evidence/FINAL-WORKSPACE-ACCESS-20261023.json",
   "latestGitHubState": "evidence/FINAL-GITHUB-STATE-20261023.json",
-  "latestGitHubProviderBindingEvidence": "evidence/PR267-PRODUCTION-PROVIDERS.json",
-  "latestMainValidationEvidence": "evidence/PR267-MAIN-CI.json",
-  "latestVerifiedProductionSHA": "23a3be579eb49b5af2db33dc37434027040e2d92",
-  "remainingConfirmedSiteFixes": 1,
+  "latestGitHubProviderBindingEvidence": "evidence/PR268-PRODUCTION-PROVIDERS.json",
+  "latestMainValidationEvidence": "evidence/PR268-MAIN-CI.json",
+  "latestVerifiedProductionSHA": "1da8d75941f7db17695440acafaef112c3a7ca6e",
+  "remainingConfirmedSiteFixes": 0,
   "exhaustiveAuditComplete": false,
-  "remainingKnownSafeFindings": 1,
+  "remainingKnownSafeFindings": 0,
   "pendingReleaseVerification": null,
   "protectedPublishedContentFinding": "THQ035/036 published revision2 independently verified; credential and approval blockers superseded by owner-approved PR238 operation. No new production writes in this continuation.",
   "operationalHold": {
     "active": false,
     "reason": "No active release hold."
   },
-  "latestObservedMainSHA": "23a3be579eb49b5af2db33dc37434027040e2d92",
+  "latestObservedMainSHA": "1da8d75941f7db17695440acafaef112c3a7ca6e",
   "historicalCandidateRecords": {
     "independentFutureCandidate": {
       "pr": 214,

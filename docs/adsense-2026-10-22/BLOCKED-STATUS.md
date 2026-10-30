@@ -2,11 +2,11 @@
 
 **454 public routes discovered; all 454 main bodies read.** Default full-page captures at all five requested widths have been personally viewed for **454/454** routes; full light-mode scrolls for **85/454**. These are inspection counts, not proof that every layout passes. The long public username overflow has since been repaired and verified in PR262. Whole-audit review remains incomplete.
 
-**85 confirmed site findings; 84 repairs publicly verified; 1 unresolved.** Last fully verified production: `23a3be579eb49b5af2db33dc37434027040e2d92`. Current merged main: `23a3be579eb49b5af2db33dc37434027040e2d92` (see release ledger). PR267 completed six exact-main checks, authenticated Cloudflare/Vercel production verification,[40] affected states with40 accepted captures personally viewed, and30 guest states/four safe controls. Truthful audit User-Agent identification resolved Cloudflare1010.
+**85 confirmed site findings; 85 repairs publicly verified; 0 unresolved.** Last fully verified production: `1da8d75941f7db17695440acafaef112c3a7ca6e`. Current merged main: `1da8d75941f7db17695440acafaef112c3a7ca6e` (see release ledger). PR268 completed six exact-main checks, authenticated Cloudflare/Vercel production verification,[60] affected states with60 accepted captures personally viewed, and30 guest states/four safe controls. Truthful audit User-Agent identification resolved Cloudflare1010.
 
 Unresolved findings:
 
-- **THQ-080 (P2)** — Comparison and how-to light-theme research links and instructional labels have low contrast; `PREPARED_NOT_MERGED`.
+
 
 Additional review remains: full light scrolls, sequential keyboard/focus, zoom, screenreader, primary-source accuracy, originality/usefulness, individual Daily conditional visuals and sources, and applicable regional/account-side ad/CMP behavior. Generic stock/fund/crypto terminals, stablecoin peg/reserve/redemption education, Visa/NFLX/VOO claims, FX frameworks, Silver provider identity/age, chart/quote explanations, axes and units remain explicit follow-ups rather than invented resolved issues.
 
