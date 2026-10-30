@@ -1,0 +1,48 @@
+# Page Not Found
+
+The URL `table-of-contents/market-analysis/elliott-wave-analysis` does not exist. This page may have been moved, renamed, or deleted.
+
+## Suggested Pages
+
+You may be looking for one of the following:
+- [Elliott Wave Analysis Articles](https://chartschool.stockcharts.com/table-of-contents/market-analysis/elliott-wave-analysis-articles.md)
+- [Intermarket Analysis](https://chartschool.stockcharts.com/table-of-contents/market-analysis/intermarket-analysis.md)
+- [Sector Rotation Analysis](https://chartschool.stockcharts.com/table-of-contents/market-analysis/sector-rotation-analysis.md)
+- [DecisionPoint Rydex Asset Analysis](https://chartschool.stockcharts.com/table-of-contents/market-analysis/decisionpoint-rydex-asset-analysis.md)
+- [Market Analysis](https://chartschool.stockcharts.com/table-of-contents/market-analysis.md)
+
+## How to find the correct page
+
+If the exact page cannot be found, you can still retrieve the information using the documentation query interface.
+
+### Option 1 — Ask a question (recommended)
+
+Perform an HTTP GET request on the following URL with the `ask` and `goal` query parameters:
+
+```
+GET https://chartschool.stockcharts.com/table-of-contents/market-analysis/elliott-wave-analysis-articles.md?ask=
+&goal=
+```
+
+`ask` is the immediate question: it should be specific, self-contained, and written in natural language.
+`goal` is what the user is ultimately trying to achieve, the reason they need the answer. Sharing it helps GitBook give you a better, more relevant answer. A goal is most helpful when it describes the outcome the user wants rather than restating the question. For example, with `ask=how do I create an API token`, a goal like `automate deployments from our CI pipeline` lets GitBook tailor the answer to that use case.
+
+The response will contain a direct answer to the question and relevant excerpts and sources from the documentation.
+
+### Option 2 — Browse the documentation index
+
+Full index: https://chartschool.stockcharts.com/sitemap.md
+
+Use this to discover valid page paths or navigate the documentation structure.
+
+### Option 3 — Retrieve the full documentation corpus
+
+Full export: https://chartschool.stockcharts.com/llms-full.txt
+
+Use this to access all content at once and perform your own parsing or retrieval. It will be more expensive.
+
+## Tips for requesting documentation
+
+Prefer `.md` URLs for structured content, append `.md` to URLs (e.g., `/table-of-contents/market-analysis/elliott-wave-analysis-articles.md`).
+
+You may also use `Accept: text/markdown` header for content negotiation.

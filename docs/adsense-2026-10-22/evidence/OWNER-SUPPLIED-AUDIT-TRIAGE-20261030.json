@@ -12,7 +12,7 @@
       "sha256": "52a5ae0402511f43bd9c4110d270c6fedd66663f6195744a4526871763208b97"
     }
   ],
-  "currentMainObserved": "1dacd0ac9a986546b9480476a084b9049b56e036",
+  "currentMainObserved": "fe9fe3eeef989210853420168e895501165f1fcd",
   "reportScope": "Report dated29October2026,396 discovered self-canonical pages, nine finding groups and54 policy topics. Input claims are investigation leads, not current independent verification or Google rejection reasons. Original audit public451 routes/default five-width review retained separately. No account-reason request will be repeated.",
   "findings": [
     {
@@ -32,8 +32,13 @@
         "https://www.thetradehq.com/trade/usdzar",
         "https://www.thetradehq.com/trade/usdtry"
       ],
-      "state": "CURRENT_REPRODUCTION_PENDING",
-      "nextAction": "Reproduce FX UI; inspect quote versus USD simulation accounting; display/copy correction can be independent of protected accounting. No automatic conversion/ledger change."
+      "state": "REPRODUCED_FIX_DRAFT_PREVIEW_PARTIAL",
+      "nextAction": "Reproduce FX UI; inspect quote versus USD simulation accounting; display/copy correction can be independent of protected accounting. No automatic conversion/ledger change.",
+      "findingIds": [
+        "THQ-072"
+      ],
+      "currentIndependentAssessment": "PR264 labels pair-rate quote currency and simplified USD virtual execution separately. Exact numeric/order-code preservation verified. Preview mobile pointer/guest gates pending; no financial engine conversion.",
+      "sourceVerification": "CME Understanding FX Quote Conventions independently retrieved and complete extracted article/visible quiz text read. First currency is base and second quote. No video/quiz interaction; no financial engine validation inferred."
     },
     {
       "reportId": "F02",
@@ -168,8 +173,12 @@
         "https://www.thetradehq.com/trade/zm",
         "https://www.thetradehq.com/trade/zs"
       ],
-      "state": "CURRENT_REPRODUCTION_PENDING",
-      "nextAction": "Compare128 mapped generic terminals with current honest scope and THQ059 title candidate; assess exact heading promises/value. Avoid filler or invented per-asset research; no ad configuration change."
+      "state": "REPRODUCED_DEPLOYED_FINAL_GUEST_GATE_PENDING",
+      "nextAction": "Compare128 mapped generic terminals with current honest scope and THQ059 title candidate; assess exact heading promises/value. Avoid filler or invented per-asset research; no ad configuration change.",
+      "findingIds": [
+        "THQ-070"
+      ],
+      "currentIndependentAssessment": "PR263 corrects shared general-learning headings and copy.140 affected production checks passed and70 captures personally viewed; final guest gate held by current Cloudflare audit access failure. Asset-specific originality/source/value assessment remains independent; no blanket128-route value or ad-serving conclusion."
     },
     {
       "reportId": "F03",
@@ -347,8 +356,12 @@
         "https://www.thetradehq.com/trade/zm",
         "https://www.thetradehq.com/trade/zs"
       ],
-      "state": "CURRENT_REPRODUCTION_PENDING",
-      "nextAction": "Inspect actual adjacent chart and virtual execution labels and timestamps; retain independent feeds/calculations."
+      "state": "REPRODUCED_FIX_DRAFT_PREVIEW_PARTIAL",
+      "nextAction": "Inspect actual adjacent chart and virtual execution labels and timestamps; retain independent feeds/calculations.",
+      "findingIds": [
+        "THQ-073"
+      ],
+      "currentIndependentAssessment": "PR264 separately labels chart and virtual execution inputs, available quote timestamp or explicit absence. No source/interval/number/accounting changes. Scope checked on representative FX,crypto,default and directory states; not independent visual credit for171 routes."
     },
     {
       "reportId": "F04",
@@ -364,8 +377,12 @@
         "https://www.thetradehq.com/courses/options-trading-fundamentals",
         "https://www.thetradehq.com/courses/futures-and-derivatives"
       ],
-      "state": "CURRENT_REPRODUCTION_PENDING",
-      "nextAction": "Check nine mapped lesson/strategy CTAs against actual supported exercises and supplied data; narrow CTA promise where appropriate."
+      "state": "REPRODUCED_LOCAL_FIX_PERSONALLY_REVIEWED",
+      "nextAction": "Check nine mapped lesson/strategy CTAs against actual supported exercises and supplied data; narrow CTA promise where appropriate.",
+      "findingIds": [
+        "THQ-074"
+      ],
+      "currentIndependentAssessment": "Six-file worksheet batch: separate optional spot-order practice, worksheet-first strategy scope, complete given-RSI example. Existing VWAP/volume-profile/MACD numeric work is retained.90 local states/all90 captures reviewed across nine routes; no live repair credit."
     },
     {
       "reportId": "F05",
@@ -376,8 +393,12 @@
         "https://www.thetradehq.com/wiki/elliott-wave-theory",
         "https://www.thetradehq.com/wiki/wyckoff-method"
       ],
-      "state": "CURRENT_REPRODUCTION_PENDING",
-      "nextAction": "Check four mapped definitions and current exact links; verify primary source fit before replacing references."
+      "state": "PARTIAL_REPRODUCTION_REFERENCE_FIX_LOCAL_REVIEWED",
+      "nextAction": "Check four mapped definitions and current exact links; verify primary source fit before replacing references.",
+      "findingIds": [
+        "THQ-075"
+      ],
+      "currentIndependentAssessment": "FINRA whole article/data schedule and relevant glossary fields, Kraken whole relevant spot-margin text, StockCharts Wyckoff selected sections actually read before adding precisely scoped references. Elliott-specific source retrials403/soft404, no source-reading credit or invented citation. Native/actual preview/public gates remain."
     },
     {
       "reportId": "F06",
@@ -386,8 +407,12 @@
         "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation",
         "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/exchange-tickers-and-price-aggregation"
       ],
-      "state": "CURRENT_REPRODUCTION_PENDING",
-      "nextAction": "Compare crypto overview outcome with actual authored lesson; narrow unsupported statistical-filtering promise if still present."
+      "state": "REPRODUCED_DEPLOYED_FINAL_GUEST_GATE_PENDING",
+      "nextAction": "Compare crypto overview outcome with actual authored lesson; narrow unsupported statistical-filtering promise if still present.",
+      "findingIds": [
+        "THQ-071"
+      ],
+      "currentIndependentAssessment": "Actual crypto overview and full first lesson compared; PR263 exact-text display correction replaces unsupported statistical-filter outcome with provider methodology and timestamps. No published course record/progress/quiz mutation. Affected production review complete, final guest gate pending."
     },
     {
       "reportId": "F07",
@@ -397,8 +422,12 @@
         "https://www.thetradehq.com/portfolio",
         "https://www.thetradehq.com/about"
       ],
-      "state": "CURRENT_REPRODUCTION_PENDING",
-      "nextAction": "Compare current Beta scenario capability with roadmap planned item; link existing compound calculator. Copy/link-only corrections."
+      "state": "REPRODUCED_LOCAL_FIX_PERSONALLY_REVIEWED",
+      "nextAction": "Compare current Beta scenario capability with roadmap planned item; link existing compound calculator. Copy/link-only corrections.",
+      "findingIds": [
+        "THQ-076"
+      ],
+      "currentIndependentAssessment": "Roadmap distinguishes existing Scenario Builder Beta from undefined future extensions; About links existing compound-growth calculator. Local five-width/two-theme text/link captures reviewed; no calculator/scenario actions."
     },
     {
       "reportId": "F08",
@@ -409,8 +438,10 @@
         "https://www.thetradehq.com/trade/usdjpy",
         "https://www.thetradehq.com/trade/avgo"
       ],
-      "state": "CURRENT_REPRODUCTION_PENDING",
-      "nextAction": "Reproduce first-visit banner/control overlap at five widths; styling-only proposal must preserve every consent choice, storage behavior and ad implementation."
+      "state": "BOUNDED_PRESENTATION_ASSESSMENT_NO_POLICY_FINDING",
+      "nextAction": "Reproduce first-visit banner/control overlap at five widths; styling-only proposal must preserve every consent choice, storage behavior and ad implementation.",
+      "findingIds": [],
+      "currentIndependentAssessment": "Actual initial USDJPY1280-wide consent capture personally viewed: Analytics choices panel covers part of the initial chart viewport but provides visible Reject analytics / Accept analytics buttons, privacy-policy link, explicit Amplitude-only choice scope and separate Google advertising privacy-choice note. This supports a cosmetic/space-use observation, not a proven AdSense policy violation or rejection cause. No consent/ads/data behavior changes authorized or made. Wider regional/CMP behavior remains unverified."
     },
     {
       "reportId": "F09",
@@ -422,8 +453,12 @@
         "https://www.thetradehq.com/wiki/support-and-resistance",
         "https://www.thetradehq.com/wiki/fair-value-gap"
       ],
-      "state": "CURRENT_REPRODUCTION_PENDING",
-      "nextAction": "Compare exact overlapping substantive paragraphs and page purpose; preserve necessary adjacent risk/unit disclosure, avoid preference-only rewrites."
+      "state": "BOUNDED_REPETITION_FIX_LOCAL_REVIEWED",
+      "nextAction": "Compare exact overlapping substantive paragraphs and page purpose; preserve necessary adjacent risk/unit disclosure, avoid preference-only rewrites.",
+      "findingIds": [
+        "THQ-077"
+      ],
+      "currentIndependentAssessment": "Actual Golden Cross,Death Cross,Support/Resistance,FVG bodies read alongside earlier BTC assessment. Only FVG long definition had avoidable repeated construction/limits warranting this correction; other brief summaries,mechanics and exercises retained for distinct reader roles. Local FVG captures personally viewed; no blanket AI-content/duplication violation."
     }
   ],
   "newProfileLeads": [
@@ -431,6 +466,8 @@
     "/trader/thabomlingani",
     "/trader/theworst_trader"
   ],
-  "newProfileState": "PENDING_INDEPENDENT_LIVE_DISCOVERY_VERIFICATION",
-  "protectedScope": "No pricing/order/calculation/auth/database/records/progress/ads/consent behavior/secrets/infra changes authorized by the general fix request; pursue reversible display/copy fixes and isolated verification."
+  "newProfileState": "Three report-discovered public main bodies independently read and now included in454 public inventory; all five-width default/light visuals and safe controls remain pending. No account access.",
+  "protectedScope": "No pricing/order/calculation/auth/database/records/progress/ads/consent behavior/secrets/infra changes authorized by the general fix request; pursue reversible display/copy fixes and isolated verification.",
+  "updatedAt": "2026-10-30T02:43:55.993922+00:00",
+  "scopeLimit": "Nine groups triaged independently with bounded evidence.396 appendix records parsed, not credited as396 fresh personal readings. No Google rejection-cause, whole-report completion or approval certificate."
 }

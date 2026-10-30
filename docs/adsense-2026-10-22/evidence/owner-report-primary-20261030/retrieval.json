@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-10-30T01:53:37.767929+00:00",
+  "rows": [
+    {
+      "name": "finra-short-interest",
+      "url": "https://www.finra.org/investors/insights/short-interest",
+      "status": 200,
+      "finalURL": "https://www.finra.org/investors/insights/short-interest",
+      "bytes": 93477,
+      "readCredit": false
+    },
+    {
+      "name": "finra-short-interest-data",
+      "url": "https://www.finra.org/finra-data/browse-catalog/equity-short-interest",
+      "status": 200,
+      "finalURL": "https://www.finra.org/finra-data/browse-catalog/equity-short-interest",
+      "bytes": 81960,
+      "readCredit": false
+    },
+    {
+      "name": "coinbase-liquidation",
+      "url": "https://help.coinbase.com/en/international-exchange/trading-deposits-withdrawals/leverage-and-margin",
+      "error": "HTTP Error 404: Not Found",
+      "readCredit": false
+    }
+  ]
+}

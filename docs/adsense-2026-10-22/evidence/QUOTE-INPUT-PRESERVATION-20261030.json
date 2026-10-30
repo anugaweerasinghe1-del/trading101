@@ -1,0 +1,1220 @@
+{
+  "checkedAt": "2026-10-30T02:11:57.993Z",
+  "sha": "62aac4f4d49c0a2883436786774efee92e1fadaa",
+  "base": "fe9fe3eeef989210853420168e895501165f1fcd",
+  "outcome": "PASS",
+  "logic": [
+    {
+      "component": "MinimalistOrderPanel",
+      "allStatementsBeforeFinalJSXReturnIdentical": true
+    },
+    {
+      "component": "MobileOrderDrawer",
+      "allStatementsBeforeFinalJSXReturnIdentical": true
+    }
+  ],
+  "rows": [
+    {
+      "id": "usdc",
+      "type": "crypto",
+      "numberUnchanged": "0.9997",
+      "display": "$0.9997",
+      "units": "USD per unit"
+    },
+    {
+      "id": "usdt",
+      "type": "crypto",
+      "numberUnchanged": "0.9995",
+      "display": "$0.9995",
+      "units": "USD per unit"
+    },
+    {
+      "id": "dai",
+      "type": "crypto",
+      "numberUnchanged": "1.0000",
+      "display": "$1.0000",
+      "units": "USD per unit"
+    },
+    {
+      "id": "trx",
+      "type": "crypto",
+      "numberUnchanged": "0.3322",
+      "display": "$0.3322",
+      "units": "USD per unit"
+    },
+    {
+      "id": "bch",
+      "type": "crypto",
+      "numberUnchanged": "277.03",
+      "display": "$277.03",
+      "units": "USD per unit"
+    },
+    {
+      "id": "ton",
+      "type": "crypto",
+      "numberUnchanged": "1.38",
+      "display": "$1.38",
+      "units": "USD per unit"
+    },
+    {
+      "id": "etc",
+      "type": "crypto",
+      "numberUnchanged": "8.11",
+      "display": "$8.11",
+      "units": "USD per unit"
+    },
+    {
+      "id": "xmr",
+      "type": "crypto",
+      "numberUnchanged": "544.27",
+      "display": "$544.27",
+      "units": "USD per unit"
+    },
+    {
+      "id": "aave",
+      "type": "crypto",
+      "numberUnchanged": "165.18",
+      "display": "$165.18",
+      "units": "USD per unit"
+    },
+    {
+      "id": "grt",
+      "type": "crypto",
+      "numberUnchanged": "0.0262",
+      "display": "$0.0262",
+      "units": "USD per unit"
+    },
+    {
+      "id": "ldo",
+      "type": "crypto",
+      "numberUnchanged": "0.4120",
+      "display": "$0.4120",
+      "units": "USD per unit"
+    },
+    {
+      "id": "rune",
+      "type": "crypto",
+      "numberUnchanged": "0.6789",
+      "display": "$0.6789",
+      "units": "USD per unit"
+    },
+    {
+      "id": "kas",
+      "type": "crypto",
+      "numberUnchanged": "0.0393",
+      "display": "$0.0393",
+      "units": "USD per unit"
+    },
+    {
+      "id": "stx",
+      "type": "crypto",
+      "numberUnchanged": "0.3926",
+      "display": "$0.3926",
+      "units": "USD per unit"
+    },
+    {
+      "id": "imx",
+      "type": "crypto",
+      "numberUnchanged": "0.1875",
+      "display": "$0.1875",
+      "units": "USD per unit"
+    },
+    {
+      "id": "render",
+      "type": "crypto",
+      "numberUnchanged": "1.85",
+      "display": "$1.85",
+      "units": "USD per unit"
+    },
+    {
+      "id": "pepe",
+      "type": "crypto",
+      "numberUnchanged": "0.00000388",
+      "display": "$0.00000388",
+      "units": "USD per unit"
+    },
+    {
+      "id": "bonk",
+      "type": "crypto",
+      "numberUnchanged": "0.00000327",
+      "display": "$0.00000327",
+      "units": "USD per unit"
+    },
+    {
+      "id": "wld",
+      "type": "crypto",
+      "numberUnchanged": "0.4850",
+      "display": "$0.4850",
+      "units": "USD per unit"
+    },
+    {
+      "id": "pol",
+      "type": "crypto",
+      "numberUnchanged": "0.0988",
+      "display": "$0.0988",
+      "units": "USD per unit"
+    },
+    {
+      "id": "tao",
+      "type": "crypto",
+      "numberUnchanged": "273.42",
+      "display": "$273.42",
+      "units": "USD per unit"
+    },
+    {
+      "id": "btc",
+      "type": "crypto",
+      "numberUnchanged": "95,000.00",
+      "display": "$95,000.00",
+      "units": "USD per unit"
+    },
+    {
+      "id": "eth",
+      "type": "crypto",
+      "numberUnchanged": "3,850.00",
+      "display": "$3,850.00",
+      "units": "USD per unit"
+    },
+    {
+      "id": "sol",
+      "type": "crypto",
+      "numberUnchanged": "248.50",
+      "display": "$248.50",
+      "units": "USD per unit"
+    },
+    {
+      "id": "bnb",
+      "type": "crypto",
+      "numberUnchanged": "312.80",
+      "display": "$312.80",
+      "units": "USD per unit"
+    },
+    {
+      "id": "xrp",
+      "type": "crypto",
+      "numberUnchanged": "0.6245",
+      "display": "$0.6245",
+      "units": "USD per unit"
+    },
+    {
+      "id": "ada",
+      "type": "crypto",
+      "numberUnchanged": "0.5820",
+      "display": "$0.5820",
+      "units": "USD per unit"
+    },
+    {
+      "id": "doge",
+      "type": "crypto",
+      "numberUnchanged": "0.0825",
+      "display": "$0.0825",
+      "units": "USD per unit"
+    },
+    {
+      "id": "avax",
+      "type": "crypto",
+      "numberUnchanged": "38.90",
+      "display": "$38.90",
+      "units": "USD per unit"
+    },
+    {
+      "id": "dot",
+      "type": "crypto",
+      "numberUnchanged": "7.85",
+      "display": "$7.85",
+      "units": "USD per unit"
+    },
+    {
+      "id": "matic",
+      "type": "crypto",
+      "numberUnchanged": "0.8950",
+      "display": "$0.8950",
+      "units": "USD per unit"
+    },
+    {
+      "id": "link",
+      "type": "crypto",
+      "numberUnchanged": "14.85",
+      "display": "$14.85",
+      "units": "USD per unit"
+    },
+    {
+      "id": "ltc",
+      "type": "crypto",
+      "numberUnchanged": "72.40",
+      "display": "$72.40",
+      "units": "USD per unit"
+    },
+    {
+      "id": "shib",
+      "type": "crypto",
+      "numberUnchanged": "0.00001245",
+      "display": "$0.00001245",
+      "units": "USD per unit"
+    },
+    {
+      "id": "uni",
+      "type": "crypto",
+      "numberUnchanged": "6.82",
+      "display": "$6.82",
+      "units": "USD per unit"
+    },
+    {
+      "id": "atom",
+      "type": "crypto",
+      "numberUnchanged": "9.45",
+      "display": "$9.45",
+      "units": "USD per unit"
+    },
+    {
+      "id": "algo",
+      "type": "crypto",
+      "numberUnchanged": "0.1890",
+      "display": "$0.1890",
+      "units": "USD per unit"
+    },
+    {
+      "id": "ftm",
+      "type": "crypto",
+      "numberUnchanged": "0.4250",
+      "display": "$0.4250",
+      "units": "USD per unit"
+    },
+    {
+      "id": "near",
+      "type": "crypto",
+      "numberUnchanged": "3.85",
+      "display": "$3.85",
+      "units": "USD per unit"
+    },
+    {
+      "id": "icp",
+      "type": "crypto",
+      "numberUnchanged": "12.45",
+      "display": "$12.45",
+      "units": "USD per unit"
+    },
+    {
+      "id": "xlm",
+      "type": "crypto",
+      "numberUnchanged": "0.1285",
+      "display": "$0.1285",
+      "units": "USD per unit"
+    },
+    {
+      "id": "vet",
+      "type": "crypto",
+      "numberUnchanged": "0.0285",
+      "display": "$0.0285",
+      "units": "USD per unit"
+    },
+    {
+      "id": "fil",
+      "type": "crypto",
+      "numberUnchanged": "5.85",
+      "display": "$5.85",
+      "units": "USD per unit"
+    },
+    {
+      "id": "hbar",
+      "type": "crypto",
+      "numberUnchanged": "0.0785",
+      "display": "$0.0785",
+      "units": "USD per unit"
+    },
+    {
+      "id": "apt",
+      "type": "crypto",
+      "numberUnchanged": "9.25",
+      "display": "$9.25",
+      "units": "USD per unit"
+    },
+    {
+      "id": "arb",
+      "type": "crypto",
+      "numberUnchanged": "1.12",
+      "display": "$1.12",
+      "units": "USD per unit"
+    },
+    {
+      "id": "op",
+      "type": "crypto",
+      "numberUnchanged": "2.45",
+      "display": "$2.45",
+      "units": "USD per unit"
+    },
+    {
+      "id": "inj",
+      "type": "crypto",
+      "numberUnchanged": "28.50",
+      "display": "$28.50",
+      "units": "USD per unit"
+    },
+    {
+      "id": "sui",
+      "type": "crypto",
+      "numberUnchanged": "1.45",
+      "display": "$1.45",
+      "units": "USD per unit"
+    },
+    {
+      "id": "sei",
+      "type": "crypto",
+      "numberUnchanged": "0.5200",
+      "display": "$0.5200",
+      "units": "USD per unit"
+    },
+    {
+      "id": "tia",
+      "type": "crypto",
+      "numberUnchanged": "12.85",
+      "display": "$12.85",
+      "units": "USD per unit"
+    },
+    {
+      "id": "aapl",
+      "type": "stock",
+      "numberUnchanged": "255.25",
+      "display": "$255.25",
+      "units": "USD per unit"
+    },
+    {
+      "id": "msft",
+      "type": "stock",
+      "numberUnchanged": "378.91",
+      "display": "$378.91",
+      "units": "USD per unit"
+    },
+    {
+      "id": "googl",
+      "type": "stock",
+      "numberUnchanged": "338.58",
+      "display": "$338.58",
+      "units": "USD per unit"
+    },
+    {
+      "id": "amzn",
+      "type": "stock",
+      "numberUnchanged": "178.25",
+      "display": "$178.25",
+      "units": "USD per unit"
+    },
+    {
+      "id": "nvda",
+      "type": "stock",
+      "numberUnchanged": "190.20",
+      "display": "$190.20",
+      "units": "USD per unit"
+    },
+    {
+      "id": "tsla",
+      "type": "stock",
+      "numberUnchanged": "248.50",
+      "display": "$248.50",
+      "units": "USD per unit"
+    },
+    {
+      "id": "meta",
+      "type": "stock",
+      "numberUnchanged": "505.95",
+      "display": "$505.95",
+      "units": "USD per unit"
+    },
+    {
+      "id": "nflx",
+      "type": "stock",
+      "numberUnchanged": "485.60",
+      "display": "$485.60",
+      "units": "USD per unit"
+    },
+    {
+      "id": "amd",
+      "type": "stock",
+      "numberUnchanged": "142.30",
+      "display": "$142.30",
+      "units": "USD per unit"
+    },
+    {
+      "id": "crm",
+      "type": "stock",
+      "numberUnchanged": "264.90",
+      "display": "$264.90",
+      "units": "USD per unit"
+    },
+    {
+      "id": "intc",
+      "type": "stock",
+      "numberUnchanged": "43.25",
+      "display": "$43.25",
+      "units": "USD per unit"
+    },
+    {
+      "id": "orcl",
+      "type": "stock",
+      "numberUnchanged": "118.45",
+      "display": "$118.45",
+      "units": "USD per unit"
+    },
+    {
+      "id": "adbe",
+      "type": "stock",
+      "numberUnchanged": "528.30",
+      "display": "$528.30",
+      "units": "USD per unit"
+    },
+    {
+      "id": "csco",
+      "type": "stock",
+      "numberUnchanged": "52.80",
+      "display": "$52.80",
+      "units": "USD per unit"
+    },
+    {
+      "id": "avgo",
+      "type": "stock",
+      "numberUnchanged": "1,285.50",
+      "display": "$1,285.50",
+      "units": "USD per unit"
+    },
+    {
+      "id": "txn",
+      "type": "stock",
+      "numberUnchanged": "168.25",
+      "display": "$168.25",
+      "units": "USD per unit"
+    },
+    {
+      "id": "qcom",
+      "type": "stock",
+      "numberUnchanged": "145.80",
+      "display": "$145.80",
+      "units": "USD per unit"
+    },
+    {
+      "id": "now",
+      "type": "stock",
+      "numberUnchanged": "742.50",
+      "display": "$742.50",
+      "units": "USD per unit"
+    },
+    {
+      "id": "ibm",
+      "type": "stock",
+      "numberUnchanged": "168.90",
+      "display": "$168.90",
+      "units": "USD per unit"
+    },
+    {
+      "id": "uber",
+      "type": "stock",
+      "numberUnchanged": "62.45",
+      "display": "$62.45",
+      "units": "USD per unit"
+    },
+    {
+      "id": "shop",
+      "type": "stock",
+      "numberUnchanged": "78.50",
+      "display": "$78.50",
+      "units": "USD per unit"
+    },
+    {
+      "id": "snow",
+      "type": "stock",
+      "numberUnchanged": "165.20",
+      "display": "$165.20",
+      "units": "USD per unit"
+    },
+    {
+      "id": "pltr",
+      "type": "stock",
+      "numberUnchanged": "21.85",
+      "display": "$21.85",
+      "units": "USD per unit"
+    },
+    {
+      "id": "coin",
+      "type": "stock",
+      "numberUnchanged": "148.50",
+      "display": "$148.50",
+      "units": "USD per unit"
+    },
+    {
+      "id": "spot",
+      "type": "stock",
+      "numberUnchanged": "285.40",
+      "display": "$285.40",
+      "units": "USD per unit"
+    },
+    {
+      "id": "sq",
+      "type": "stock",
+      "numberUnchanged": "68.25",
+      "display": "$68.25",
+      "units": "USD per unit"
+    },
+    {
+      "id": "pypl",
+      "type": "stock",
+      "numberUnchanged": "62.80",
+      "display": "$62.80",
+      "units": "USD per unit"
+    },
+    {
+      "id": "twlo",
+      "type": "stock",
+      "numberUnchanged": "68.50",
+      "display": "$68.50",
+      "units": "USD per unit"
+    },
+    {
+      "id": "docu",
+      "type": "stock",
+      "numberUnchanged": "58.25",
+      "display": "$58.25",
+      "units": "USD per unit"
+    },
+    {
+      "id": "zm",
+      "type": "stock",
+      "numberUnchanged": "68.40",
+      "display": "$68.40",
+      "units": "USD per unit"
+    },
+    {
+      "id": "roku",
+      "type": "stock",
+      "numberUnchanged": "68.25",
+      "display": "$68.25",
+      "units": "USD per unit"
+    },
+    {
+      "id": "net",
+      "type": "stock",
+      "numberUnchanged": "85.40",
+      "display": "$85.40",
+      "units": "USD per unit"
+    },
+    {
+      "id": "ddog",
+      "type": "stock",
+      "numberUnchanged": "128.50",
+      "display": "$128.50",
+      "units": "USD per unit"
+    },
+    {
+      "id": "mdb",
+      "type": "stock",
+      "numberUnchanged": "385.20",
+      "display": "$385.20",
+      "units": "USD per unit"
+    },
+    {
+      "id": "crwd",
+      "type": "stock",
+      "numberUnchanged": "285.40",
+      "display": "$285.40",
+      "units": "USD per unit"
+    },
+    {
+      "id": "zs",
+      "type": "stock",
+      "numberUnchanged": "195.80",
+      "display": "$195.80",
+      "units": "USD per unit"
+    },
+    {
+      "id": "panw",
+      "type": "stock",
+      "numberUnchanged": "315.40",
+      "display": "$315.40",
+      "units": "USD per unit"
+    },
+    {
+      "id": "okta",
+      "type": "stock",
+      "numberUnchanged": "98.50",
+      "display": "$98.50",
+      "units": "USD per unit"
+    },
+    {
+      "id": "wday",
+      "type": "stock",
+      "numberUnchanged": "265.80",
+      "display": "$265.80",
+      "units": "USD per unit"
+    },
+    {
+      "id": "veev",
+      "type": "stock",
+      "numberUnchanged": "195.40",
+      "display": "$195.40",
+      "units": "USD per unit"
+    },
+    {
+      "id": "jpm",
+      "type": "stock",
+      "numberUnchanged": "172.45",
+      "display": "$172.45",
+      "units": "USD per unit"
+    },
+    {
+      "id": "v",
+      "type": "stock",
+      "numberUnchanged": "275.80",
+      "display": "$275.80",
+      "units": "USD per unit"
+    },
+    {
+      "id": "ma",
+      "type": "stock",
+      "numberUnchanged": "452.30",
+      "display": "$452.30",
+      "units": "USD per unit"
+    },
+    {
+      "id": "bac",
+      "type": "stock",
+      "numberUnchanged": "35.45",
+      "display": "$35.45",
+      "units": "USD per unit"
+    },
+    {
+      "id": "wfc",
+      "type": "stock",
+      "numberUnchanged": "48.25",
+      "display": "$48.25",
+      "units": "USD per unit"
+    },
+    {
+      "id": "gs",
+      "type": "stock",
+      "numberUnchanged": "385.40",
+      "display": "$385.40",
+      "units": "USD per unit"
+    },
+    {
+      "id": "ms",
+      "type": "stock",
+      "numberUnchanged": "92.50",
+      "display": "$92.50",
+      "units": "USD per unit"
+    },
+    {
+      "id": "unh",
+      "type": "stock",
+      "numberUnchanged": "528.40",
+      "display": "$528.40",
+      "units": "USD per unit"
+    },
+    {
+      "id": "jnj",
+      "type": "stock",
+      "numberUnchanged": "158.25",
+      "display": "$158.25",
+      "units": "USD per unit"
+    },
+    {
+      "id": "pfe",
+      "type": "stock",
+      "numberUnchanged": "28.45",
+      "display": "$28.45",
+      "units": "USD per unit"
+    },
+    {
+      "id": "mrna",
+      "type": "stock",
+      "numberUnchanged": "98.50",
+      "display": "$98.50",
+      "units": "USD per unit"
+    },
+    {
+      "id": "abbv",
+      "type": "stock",
+      "numberUnchanged": "172.80",
+      "display": "$172.80",
+      "units": "USD per unit"
+    },
+    {
+      "id": "lly",
+      "type": "stock",
+      "numberUnchanged": "752.40",
+      "display": "$752.40",
+      "units": "USD per unit"
+    },
+    {
+      "id": "wmt",
+      "type": "stock",
+      "numberUnchanged": "165.80",
+      "display": "$165.80",
+      "units": "USD per unit"
+    },
+    {
+      "id": "cost",
+      "type": "stock",
+      "numberUnchanged": "725.40",
+      "display": "$725.40",
+      "units": "USD per unit"
+    },
+    {
+      "id": "hd",
+      "type": "stock",
+      "numberUnchanged": "358.25",
+      "display": "$358.25",
+      "units": "USD per unit"
+    },
+    {
+      "id": "low",
+      "type": "stock",
+      "numberUnchanged": "225.40",
+      "display": "$225.40",
+      "units": "USD per unit"
+    },
+    {
+      "id": "tgt",
+      "type": "stock",
+      "numberUnchanged": "142.80",
+      "display": "$142.80",
+      "units": "USD per unit"
+    },
+    {
+      "id": "sbux",
+      "type": "stock",
+      "numberUnchanged": "98.50",
+      "display": "$98.50",
+      "units": "USD per unit"
+    },
+    {
+      "id": "mcd",
+      "type": "stock",
+      "numberUnchanged": "295.40",
+      "display": "$295.40",
+      "units": "USD per unit"
+    },
+    {
+      "id": "ko",
+      "type": "stock",
+      "numberUnchanged": "62.45",
+      "display": "$62.45",
+      "units": "USD per unit"
+    },
+    {
+      "id": "pep",
+      "type": "stock",
+      "numberUnchanged": "172.80",
+      "display": "$172.80",
+      "units": "USD per unit"
+    },
+    {
+      "id": "dis",
+      "type": "stock",
+      "numberUnchanged": "108.50",
+      "display": "$108.50",
+      "units": "USD per unit"
+    },
+    {
+      "id": "nke",
+      "type": "stock",
+      "numberUnchanged": "98.25",
+      "display": "$98.25",
+      "units": "USD per unit"
+    },
+    {
+      "id": "xom",
+      "type": "stock",
+      "numberUnchanged": "108.50",
+      "display": "$108.50",
+      "units": "USD per unit"
+    },
+    {
+      "id": "cvx",
+      "type": "stock",
+      "numberUnchanged": "152.40",
+      "display": "$152.40",
+      "units": "USD per unit"
+    },
+    {
+      "id": "ba",
+      "type": "stock",
+      "numberUnchanged": "218.50",
+      "display": "$218.50",
+      "units": "USD per unit"
+    },
+    {
+      "id": "cat",
+      "type": "stock",
+      "numberUnchanged": "295.80",
+      "display": "$295.80",
+      "units": "USD per unit"
+    },
+    {
+      "id": "de",
+      "type": "stock",
+      "numberUnchanged": "398.50",
+      "display": "$398.50",
+      "units": "USD per unit"
+    },
+    {
+      "id": "spy",
+      "type": "etf",
+      "numberUnchanged": "478.25",
+      "display": "$478.25",
+      "units": "USD per unit"
+    },
+    {
+      "id": "qqq",
+      "type": "etf",
+      "numberUnchanged": "405.90",
+      "display": "$405.90",
+      "units": "USD per unit"
+    },
+    {
+      "id": "iwm",
+      "type": "etf",
+      "numberUnchanged": "198.45",
+      "display": "$198.45",
+      "units": "USD per unit"
+    },
+    {
+      "id": "dia",
+      "type": "etf",
+      "numberUnchanged": "378.60",
+      "display": "$378.60",
+      "units": "USD per unit"
+    },
+    {
+      "id": "voo",
+      "type": "etf",
+      "numberUnchanged": "439.80",
+      "display": "$439.80",
+      "units": "USD per unit"
+    },
+    {
+      "id": "arkk",
+      "type": "etf",
+      "numberUnchanged": "48.25",
+      "display": "$48.25",
+      "units": "USD per unit"
+    },
+    {
+      "id": "vti",
+      "type": "etf",
+      "numberUnchanged": "245.80",
+      "display": "$245.80",
+      "units": "USD per unit"
+    },
+    {
+      "id": "ivv",
+      "type": "etf",
+      "numberUnchanged": "482.50",
+      "display": "$482.50",
+      "units": "USD per unit"
+    },
+    {
+      "id": "agg",
+      "type": "etf",
+      "numberUnchanged": "98.50",
+      "display": "$98.50",
+      "units": "USD per unit"
+    },
+    {
+      "id": "ief",
+      "type": "etf",
+      "numberUnchanged": "95.80",
+      "display": "$95.80",
+      "units": "USD per unit"
+    },
+    {
+      "id": "tlt",
+      "type": "etf",
+      "numberUnchanged": "92.45",
+      "display": "$92.45",
+      "units": "USD per unit"
+    },
+    {
+      "id": "gld",
+      "type": "etf",
+      "numberUnchanged": "185.40",
+      "display": "$185.40",
+      "units": "USD per unit"
+    },
+    {
+      "id": "slv",
+      "type": "etf",
+      "numberUnchanged": "21.85",
+      "display": "$21.85",
+      "units": "USD per unit"
+    },
+    {
+      "id": "uso",
+      "type": "etf",
+      "numberUnchanged": "72.50",
+      "display": "$72.50",
+      "units": "USD per unit"
+    },
+    {
+      "id": "xlf",
+      "type": "etf",
+      "numberUnchanged": "42.85",
+      "display": "$42.85",
+      "units": "USD per unit"
+    },
+    {
+      "id": "xlk",
+      "type": "etf",
+      "numberUnchanged": "195.40",
+      "display": "$195.40",
+      "units": "USD per unit"
+    },
+    {
+      "id": "xle",
+      "type": "etf",
+      "numberUnchanged": "85.40",
+      "display": "$85.40",
+      "units": "USD per unit"
+    },
+    {
+      "id": "xlv",
+      "type": "etf",
+      "numberUnchanged": "142.80",
+      "display": "$142.80",
+      "units": "USD per unit"
+    },
+    {
+      "id": "smh",
+      "type": "etf",
+      "numberUnchanged": "195.80",
+      "display": "$195.80",
+      "units": "USD per unit"
+    },
+    {
+      "id": "soxx",
+      "type": "etf",
+      "numberUnchanged": "545.20",
+      "display": "$545.20",
+      "units": "USD per unit"
+    },
+    {
+      "id": "eurusd",
+      "type": "forex",
+      "numberUnchanged": "1.0892",
+      "display": "1.0892 USD",
+      "units": "USD per EUR"
+    },
+    {
+      "id": "gbpusd",
+      "type": "forex",
+      "numberUnchanged": "1.2685",
+      "display": "1.2685 USD",
+      "units": "USD per GBP"
+    },
+    {
+      "id": "usdjpy",
+      "type": "forex",
+      "numberUnchanged": "148.5200",
+      "display": "148.5200 JPY",
+      "units": "JPY per USD"
+    },
+    {
+      "id": "usdchf",
+      "type": "forex",
+      "numberUnchanged": "0.8745",
+      "display": "0.8745 CHF",
+      "units": "CHF per USD"
+    },
+    {
+      "id": "audusd",
+      "type": "forex",
+      "numberUnchanged": "0.6582",
+      "display": "0.6582 USD",
+      "units": "USD per AUD"
+    },
+    {
+      "id": "usdcad",
+      "type": "forex",
+      "numberUnchanged": "1.3485",
+      "display": "1.3485 CAD",
+      "units": "CAD per USD"
+    },
+    {
+      "id": "nzdusd",
+      "type": "forex",
+      "numberUnchanged": "0.6145",
+      "display": "0.6145 USD",
+      "units": "USD per NZD"
+    },
+    {
+      "id": "eurgbp",
+      "type": "forex",
+      "numberUnchanged": "0.8585",
+      "display": "0.8585 GBP",
+      "units": "GBP per EUR"
+    },
+    {
+      "id": "eurjpy",
+      "type": "forex",
+      "numberUnchanged": "161.8500",
+      "display": "161.8500 JPY",
+      "units": "JPY per EUR"
+    },
+    {
+      "id": "gbpjpy",
+      "type": "forex",
+      "numberUnchanged": "188.4500",
+      "display": "188.4500 JPY",
+      "units": "JPY per GBP"
+    },
+    {
+      "id": "usdhkd",
+      "type": "forex",
+      "numberUnchanged": "7.8245",
+      "display": "7.8245 HKD",
+      "units": "HKD per USD"
+    },
+    {
+      "id": "usdsgd",
+      "type": "forex",
+      "numberUnchanged": "1.3425",
+      "display": "1.3425 SGD",
+      "units": "SGD per USD"
+    },
+    {
+      "id": "usdmxn",
+      "type": "forex",
+      "numberUnchanged": "17.2450",
+      "display": "17.2450 MXN",
+      "units": "MXN per USD"
+    },
+    {
+      "id": "usdzar",
+      "type": "forex",
+      "numberUnchanged": "18.8540",
+      "display": "18.8540 ZAR",
+      "units": "ZAR per USD"
+    },
+    {
+      "id": "usdtry",
+      "type": "forex",
+      "numberUnchanged": "32.4850",
+      "display": "32.4850 TRY",
+      "units": "TRY per USD"
+    },
+    {
+      "id": "gold",
+      "type": "commodity",
+      "numberUnchanged": "2,024.50",
+      "display": "$2,024.50",
+      "units": "USD per unit"
+    },
+    {
+      "id": "silver",
+      "type": "commodity",
+      "numberUnchanged": "23.45",
+      "display": "$23.45",
+      "units": "USD per unit"
+    },
+    {
+      "id": "oil",
+      "type": "commodity",
+      "numberUnchanged": "78.25",
+      "display": "$78.25",
+      "units": "USD per unit"
+    },
+    {
+      "id": "natgas",
+      "type": "commodity",
+      "numberUnchanged": "2.85",
+      "display": "$2.85",
+      "units": "USD per unit"
+    },
+    {
+      "id": "copper",
+      "type": "commodity",
+      "numberUnchanged": "3.82",
+      "display": "$3.82",
+      "units": "USD per unit"
+    },
+    {
+      "id": "platinum",
+      "type": "commodity",
+      "numberUnchanged": "985.40",
+      "display": "$985.40",
+      "units": "USD per unit"
+    },
+    {
+      "id": "palladium",
+      "type": "commodity",
+      "numberUnchanged": "1,025.80",
+      "display": "$1,025.80",
+      "units": "USD per unit"
+    },
+    {
+      "id": "brent",
+      "type": "commodity",
+      "numberUnchanged": "82.45",
+      "display": "$82.45",
+      "units": "USD per unit"
+    },
+    {
+      "id": "wheat",
+      "type": "commodity",
+      "numberUnchanged": "585.40",
+      "display": "$585.40",
+      "units": "USD per unit"
+    },
+    {
+      "id": "corn",
+      "type": "commodity",
+      "numberUnchanged": "445.80",
+      "display": "$445.80",
+      "units": "USD per unit"
+    },
+    {
+      "id": "soybean",
+      "type": "commodity",
+      "numberUnchanged": "1,185.40",
+      "display": "$1,185.40",
+      "units": "USD per unit"
+    },
+    {
+      "id": "coffee",
+      "type": "commodity",
+      "numberUnchanged": "185.40",
+      "display": "$185.40",
+      "units": "USD per unit"
+    },
+    {
+      "id": "sugar",
+      "type": "commodity",
+      "numberUnchanged": "21.45",
+      "display": "$21.45",
+      "units": "USD per unit"
+    },
+    {
+      "id": "cotton",
+      "type": "commodity",
+      "numberUnchanged": "78.25",
+      "display": "$78.25",
+      "units": "USD per unit"
+    },
+    {
+      "id": "aluminum",
+      "type": "commodity",
+      "numberUnchanged": "2,245.80",
+      "display": "$2,245.80",
+      "units": "USD per unit"
+    }
+  ],
+  "files": [
+    "src/components/RelatedAssets.tsx",
+    "src/components/trading/AssetContextCard.tsx",
+    "src/components/trading/AssetSearchDropdown.tsx",
+    "src/components/trading/AssetTable.tsx",
+    "src/components/trading/MinimalistAreaChart.tsx",
+    "src/components/trading/MinimalistOrderPanel.tsx",
+    "src/components/trading/MobileOrderDrawer.tsx",
+    "src/lib/quoteDisplay.ts",
+    "src/pages/Markets.tsx"
+  ],
+  "scope": "Actual AST statement prefixes preserve both execution components completely before final JSX return;170asset display outputs retain numeric format, forex only changes units and all other dollar displays match. No order or account action; no engine/source conversion claimed."
+}

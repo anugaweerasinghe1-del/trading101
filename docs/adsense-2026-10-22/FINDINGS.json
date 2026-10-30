@@ -2460,19 +2460,28 @@
       "observed": "Fresh actual production metadata at hydrated-main readiness,+3s,+8s consistently retains Analysis browser titles while main scope disclaims asset-specific research. Source assetContent.generateAssetMetaTitle chooses Analysis whenever long Practice Data & Educational Guide title exceeds60 chars. All seven sampled terminals intentionally noindex,follow; no indexability defect asserted.",
       "fix": "Change only long-title fallback to Practice, preserving instrument names/symbols, custom metadata, descriptions, canonicals and robots.",
       "evidence": "findings/TERMINAL-METADATA-SCOPE.md",
-      "state": "PREPARED_NOT_MERGED",
+      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
       "detectedAt": "2026-10-28T10:18:41.770525+00:00",
       "beforeEvidence": "evidence/TERMINAL-FINAL-SETTLED-METADATA-20261028.json",
       "risk": "Low, one static title fallback; ordinary reviewed wording revert rollback. No data/calculation/account/ad/consent changes.",
       "adsenseRelevance": "Accurate content description only; no claimed Google rejection cause or title-length penalty.",
-      "releaseHold": "Serial prior release PR262 verified. Current learning scope candidate requires exact CI/native/actual preview and ordinary protected merge, then production verification.",
+      "releaseHold": "Six exact-main CI checks and authenticated native production verification passed.140 affected checks/70 captures personally reviewed. Fresh30-state/four-control production guest gate pending due audit-side Cloudflare403/1010; no later merge.",
       "candidateSHA": "bb6623af78e6ad5e83f2d727a349ca106e270051",
-      "pr": null,
+      "pr": 263,
       "localEvidence": [
-        "evidence/SCOPE-FAQ-LOCAL-20261029.json",
-        "evidence/SCOPE-TITLE-COMPARISON-20261029.json"
+        "evidence/PUBLIC-LEARNING-SCOPE-LOCAL-20261030.json",
+        "evidence/PUBLIC-LEARNING-SCOPE-LOCAL-PERSONAL-20261030.json"
       ],
-      "limitation": "Separate local P3 candidate with same tested tree; no current native/preview/public verification. FAQ capture banner limitation explicit; title browser follow-up pending."
+      "limitation": "Separate local P3 candidate with same tested tree; no current native/preview/public verification. FAQ capture banner limitation explicit; title browser follow-up pending.",
+      "mergeSHA": "fe9fe3eeef989210853420168e895501165f1fcd",
+      "previewEvidence": [
+        "evidence/PR263-UPDATED-PREVIEW-BROWSER.json",
+        "evidence/PR263-PREVIEW-GUEST-SMOKE.json"
+      ],
+      "productionEvidence": "evidence/PR263-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR263-MAIN-CI.json",
+      "affectedProductionEvidence": "evidence/PR263-PRODUCTION-BROWSER.json",
+      "affectedProductionPersonalEvidence": "evidence/PUBLIC-LEARNING-SCOPE-PRODUCTION-PERSONAL-20261030.json"
     },
     {
       "id": "THQ-060",
@@ -2683,18 +2692,27 @@
       "fix": "Add aria-expanded reflecting the existing openIndex expression. Preserve all content, handlers, animation, DOM and accordion state; no new dependency.",
       "evidence": "findings/HOMEPAGE-FAQ-EXPANDED-STATE.md",
       "beforeEvidence": "evidence/FOLLOWUP-CONTROLS-LIVE-BEFORE-20261028.json",
-      "state": "PREPARED_NOT_MERGED",
+      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
       "detectedAt": "2026-10-28T16:44:32.291958+00:00",
       "risk": "Unapplied reversible presentation/semantics-only proposal; preserve protected data/calculation/auth behavior. All serial release gates required.",
       "adsenseRelevance": "User-facing readability/accessibility; no rejection cause asserted.",
-      "releaseHold": "Serial prior release PR262 verified. Current learning scope candidate requires exact CI/native/actual preview and ordinary protected merge, then production verification.",
+      "releaseHold": "Six exact-main CI checks and authenticated native production verification passed.140 affected checks/70 captures personally reviewed. Fresh30-state/four-control production guest gate pending due audit-side Cloudflare403/1010; no later merge.",
       "candidateSHA": "bb6623af78e6ad5e83f2d727a349ca106e270051",
-      "pr": null,
+      "pr": 263,
       "localEvidence": [
-        "evidence/SCOPE-FAQ-LOCAL-20261029.json",
-        "evidence/SCOPE-TITLE-COMPARISON-20261029.json"
+        "evidence/PUBLIC-LEARNING-SCOPE-LOCAL-20261030.json",
+        "evidence/PUBLIC-LEARNING-SCOPE-LOCAL-PERSONAL-20261030.json"
       ],
-      "limitation": "Separate local P3 candidate with same tested tree; no current native/preview/public verification. FAQ capture banner limitation explicit; title browser follow-up pending."
+      "limitation": "Separate local P3 candidate with same tested tree; no current native/preview/public verification. FAQ capture banner limitation explicit; title browser follow-up pending.",
+      "mergeSHA": "fe9fe3eeef989210853420168e895501165f1fcd",
+      "previewEvidence": [
+        "evidence/PR263-UPDATED-PREVIEW-BROWSER.json",
+        "evidence/PR263-PREVIEW-GUEST-SMOKE.json"
+      ],
+      "productionEvidence": "evidence/PR263-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR263-MAIN-CI.json",
+      "affectedProductionEvidence": "evidence/PR263-PRODUCTION-BROWSER.json",
+      "affectedProductionPersonalEvidence": "evidence/PUBLIC-LEARNING-SCOPE-PRODUCTION-PERSONAL-20261030.json"
     },
     {
       "id": "THQ-067",
@@ -2774,11 +2792,18 @@
       "urls": [
         "https://www.thetradehq.com/learn"
       ],
-      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "state": "PREPARED_NOT_MERGED",
       "evidence": "findings/LEARN-PATH-LIGHT-CONTRAST.md",
       "reproductionEvidence": "evidence/LEARN-PATH-CONTRAST-LIVE-BEFORE-20261029.json",
       "proposedFix": "Three LEARNING_PATH foreground classes receive light-only emerald800/blue800/amber800 variants; no content/progress/handler changes.",
-      "risk": "Low, reversible class-only presentation; full release verification required."
+      "risk": "Low, reversible class-only presentation; full release verification required.",
+      "candidateSHA": "10c41e243f64ee6beb1fc2e4f35c5a5d2e495752",
+      "fix": "Three light-only foreground class variants; existing dark colors, labels and progress behavior preserved.",
+      "localEvidence": [
+        "evidence/LEARN-PATH-CONTRAST-LOCAL-MEASURED-20261030.json",
+        "evidence/LEARN-PATH-CONTRAST-LOCAL-PERSONAL-20261030.json"
+      ],
+      "pr": 266
     },
     {
       "id": "THQ-070",
@@ -2792,11 +2817,26 @@
       "fix": "Describe general trading concepts and explicitly distinguish asset research; retain all link destinations and functionality.",
       "evidence": "findings/LEARNING-SCOPE-REPORT-CORRECTIONS.md",
       "beforeEvidence": "evidence/OWNER-AUDIT-LIVE-REPRODUCTION-20261030.json",
-      "state": "PREPARED_NOT_MERGED",
+      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
       "candidateSHA": "bb6623af78e6ad5e83f2d727a349ca106e270051",
       "detectedAt": "2026-10-30T01:52:23.465947+00:00",
       "risk": "Low, reversible display text only. No protected behavior changes. Full release gates required.",
-      "adsenseRelevance": "Editorial accuracy and expectation fit; no Google rejection cause or approval implication."
+      "adsenseRelevance": "Editorial accuracy and expectation fit; no Google rejection cause or approval implication.",
+      "mergeSHA": "fe9fe3eeef989210853420168e895501165f1fcd",
+      "pr": 263,
+      "releaseHold": "Six exact-main CI checks and authenticated native production verification passed.140 affected checks/70 captures personally reviewed. Fresh30-state/four-control production guest gate pending due audit-side Cloudflare403/1010; no later merge.",
+      "localEvidence": [
+        "evidence/PUBLIC-LEARNING-SCOPE-LOCAL-20261030.json",
+        "evidence/PUBLIC-LEARNING-SCOPE-LOCAL-PERSONAL-20261030.json"
+      ],
+      "previewEvidence": [
+        "evidence/PR263-UPDATED-PREVIEW-BROWSER.json",
+        "evidence/PR263-PREVIEW-GUEST-SMOKE.json"
+      ],
+      "productionEvidence": "evidence/PR263-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR263-MAIN-CI.json",
+      "affectedProductionEvidence": "evidence/PR263-PRODUCTION-BROWSER.json",
+      "affectedProductionPersonalEvidence": "evidence/PUBLIC-LEARNING-SCOPE-PRODUCTION-PERSONAL-20261030.json"
     },
     {
       "id": "THQ-071",
@@ -2810,22 +2850,188 @@
       "fix": "Exact-text display-copy correction to explain provider-specific filtering and timestamps; preserve records, lessons, quizzes, progress and later author edits.",
       "evidence": "findings/LEARNING-SCOPE-REPORT-CORRECTIONS.md",
       "beforeEvidence": "evidence/OWNER-AUDIT-LIVE-REPRODUCTION-20261030.json",
-      "state": "PREPARED_NOT_MERGED",
+      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
       "candidateSHA": "bb6623af78e6ad5e83f2d727a349ca106e270051",
       "detectedAt": "2026-10-30T01:52:23.465947+00:00",
       "risk": "Low, reversible display text only. No protected behavior changes. Full release gates required.",
-      "adsenseRelevance": "Editorial accuracy and expectation fit; no Google rejection cause or approval implication."
+      "adsenseRelevance": "Editorial accuracy and expectation fit; no Google rejection cause or approval implication.",
+      "mergeSHA": "fe9fe3eeef989210853420168e895501165f1fcd",
+      "pr": 263,
+      "releaseHold": "Six exact-main CI checks and authenticated native production verification passed.140 affected checks/70 captures personally reviewed. Fresh30-state/four-control production guest gate pending due audit-side Cloudflare403/1010; no later merge.",
+      "localEvidence": [
+        "evidence/PUBLIC-LEARNING-SCOPE-LOCAL-20261030.json",
+        "evidence/PUBLIC-LEARNING-SCOPE-LOCAL-PERSONAL-20261030.json"
+      ],
+      "previewEvidence": [
+        "evidence/PR263-UPDATED-PREVIEW-BROWSER.json",
+        "evidence/PR263-PREVIEW-GUEST-SMOKE.json"
+      ],
+      "productionEvidence": "evidence/PR263-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR263-MAIN-CI.json",
+      "affectedProductionEvidence": "evidence/PR263-PRODUCTION-BROWSER.json",
+      "affectedProductionPersonalEvidence": "evidence/PUBLIC-LEARNING-SCOPE-PRODUCTION-PERSONAL-20261030.json"
+    },
+    {
+      "id": "THQ-072",
+      "severity": "P2",
+      "category": "Forex reference displays incorrectly prefix non-USD quote rates with dollars",
+      "urls": [
+        "https://www.thetradehq.com/trade/usdjpy",
+        "https://www.thetradehq.com/markets"
+      ],
+      "observed": "Report F01: actual USDJPY main/capture shows $148.0415 chart and $148.5200 order. Related non-USD pairs also prefixed dollars. Read actual implementation: FX catalogue numbers retain pair-rate convention while simplified order ledger uses numeric values as USD unit costs.",
+      "fix": "Display reference quote units and explicitly disclose simplified USD execution unit model. Do not convert numbers, reprice orders or alter balances.",
+      "evidence": "findings/QUOTE-UNITS-AND-INPUT-SCOPE.md",
+      "beforeEvidence": "evidence/OWNER-AUDIT-LIVE-REPRODUCTION-20261030.json",
+      "state": "PREPARED_NOT_MERGED",
+      "candidateSHA": "62aac4f4d49c0a2883436786774efee92e1fadaa",
+      "detectedAt": "2026-10-30T02:02:51.423606+00:00",
+      "risk": "Reversible display/copy only; protected calculations/orders/records/auth/progress/ads/consent untouched. No live credit before all release gates.",
+      "releaseHold": "Serial PR263 final public guest gate remains open. PR264 actual preview visible-pointer drawers and guest gate remain blocked by Cloudflare access; do not merge.",
+      "pr": 264,
+      "localEvidence": [
+        "evidence/PR264-LOCAL-ACCEPTANCE.json",
+        "evidence/QUOTE-INPUT-PRESERVATION-20261030.json"
+      ],
+      "partialPreviewEvidence": [
+        "evidence/QUOTE-INPUT-PREVIEW-20261030.json",
+        "evidence/QUOTE-INPUT-PREVIEW-VALID-SECTIONS-PERSONAL-20261030.json"
+      ]
+    },
+    {
+      "id": "THQ-073",
+      "severity": "P2",
+      "category": "Chart headline and virtual execution input are not distinguished adjacently",
+      "urls": [
+        "https://www.thetradehq.com/trade/usdjpy",
+        "https://www.thetradehq.com/trade/btc"
+      ],
+      "observed": "Report F03: actual USDJPY chart148.0415 vs execution148.5200. Chart hook quote/candles/generated fallback and parent-selected execution asset are independent. Existing remote source badges do not label each visible number.",
+      "fix": "Label chart input and virtual execution input separately; expose available observation timestamp or explicit absence; preserve all sources, intervals, arithmetic and handlers.",
+      "evidence": "findings/QUOTE-UNITS-AND-INPUT-SCOPE.md",
+      "beforeEvidence": "evidence/OWNER-AUDIT-LIVE-REPRODUCTION-20261030.json",
+      "state": "PREPARED_NOT_MERGED",
+      "candidateSHA": "62aac4f4d49c0a2883436786774efee92e1fadaa",
+      "detectedAt": "2026-10-30T02:02:51.423606+00:00",
+      "risk": "Reversible display/copy only; protected calculations/orders/records/auth/progress/ads/consent untouched. No live credit before all release gates.",
+      "releaseHold": "Serial PR263 final public guest gate remains open. PR264 actual preview visible-pointer drawers and guest gate remain blocked by Cloudflare access; do not merge.",
+      "pr": 264,
+      "localEvidence": [
+        "evidence/PR264-LOCAL-ACCEPTANCE.json",
+        "evidence/QUOTE-INPUT-PRESERVATION-20261030.json"
+      ],
+      "partialPreviewEvidence": [
+        "evidence/QUOTE-INPUT-PREVIEW-20261030.json",
+        "evidence/QUOTE-INPUT-PREVIEW-VALID-SECTIONS-PERSONAL-20261030.json"
+      ]
+    },
+    {
+      "id": "THQ-074",
+      "severity": "P3",
+      "category": "Educational simulator CTAs overstate supported worksheet execution",
+      "urls": [
+        "https://www.thetradehq.com/wiki/rsi-divergence",
+        "https://www.thetradehq.com/wiki/macd",
+        "https://www.thetradehq.com/wiki/macd-histogram",
+        "https://www.thetradehq.com/wiki/vwap",
+        "https://www.thetradehq.com/wiki/volume-profile",
+        "https://www.thetradehq.com/strategy/rsi-strategy",
+        "https://www.thetradehq.com/strategy/macd-strategy"
+      ],
+      "observed": "Report F04: current wiki heading Apply This in the Simulator and strategy Practise this strategy conflict with honest nearby unsupported-indicator scope. Actual RSI worksheet lacks a complete sample. VWAP/volume-profile already have full invented numeric examples.",
+      "fix": "Describe separate optional spot-order practice, preserve worksheet-first learning, and supply stipulated RSI swings plus both possible continuations. Do not implement unsupported indicators or change engine.",
+      "evidence": "findings/WORKSHEET-AND-REFERENCE-SCOPE.md",
+      "beforeEvidence": "evidence/OWNER-AUDIT-LIVE-REPRODUCTION-20261030.json",
+      "state": "PREPARED_NOT_MERGED",
+      "candidateSHA": "518a6d7eb222e8e4f32b7a00766abbd6809c5242",
+      "detectedAt": "2026-10-30T02:02:51.423606+00:00",
+      "risk": "Reversible display/copy only; protected calculations/orders/records/auth/progress/ads/consent untouched. No live credit before all release gates.",
+      "releaseHold": "PR263 serial candidate pending verification; this is an independent prepared follow-up.",
+      "localEvidence": [
+        "evidence/WORKSHEET-SCOPE-LOCAL-20261030.json",
+        "evidence/WORKSHEET-SCOPE-LOCAL-PERSONAL-20261030.json"
+      ],
+      "pr": 265
+    },
+    {
+      "id": "THQ-075",
+      "severity": "P3",
+      "category": "Topic-specific glossary references are missing for short-interest and liquidation claims",
+      "urls": [
+        "https://www.thetradehq.com/wiki/short-squeeze",
+        "https://www.thetradehq.com/wiki/liquidation-price",
+        "https://www.thetradehq.com/wiki/wyckoff-method"
+      ],
+      "observed": "Report F05: current FINRA/venue-specific/framework prose cites only broad SEC/Fidelity background. FINRA article/data fields and Kraken spot-margin mechanics independently retrieved/read; StockCharts relevant Wyckoff framework sections read as secondary practitioner explanation. Elliott reference follow-up remains separate.",
+      "fix": "Add references with precise scope. Do not claim one venue explains every derivatives contract or any framework proves predictive efficacy.",
+      "evidence": "findings/WORKSHEET-AND-REFERENCE-SCOPE.md",
+      "beforeEvidence": "evidence/OWNER-AUDIT-LIVE-REPRODUCTION-20261030.json",
+      "state": "PREPARED_NOT_MERGED",
+      "candidateSHA": "518a6d7eb222e8e4f32b7a00766abbd6809c5242",
+      "detectedAt": "2026-10-30T02:02:51.423606+00:00",
+      "risk": "Reversible display/copy only; protected calculations/orders/records/auth/progress/ads/consent untouched. No live credit before all release gates.",
+      "releaseHold": "PR263 serial candidate pending verification; this is an independent prepared follow-up.",
+      "localEvidence": [
+        "evidence/WORKSHEET-SCOPE-LOCAL-20261030.json",
+        "evidence/WORKSHEET-SCOPE-LOCAL-PERSONAL-20261030.json"
+      ],
+      "pr": 265
+    },
+    {
+      "id": "THQ-076",
+      "severity": "P3",
+      "category": "Roadmap planned scenarios conflict with the current portfolio Beta",
+      "urls": [
+        "https://www.thetradehq.com/roadmap",
+        "https://www.thetradehq.com/portfolio",
+        "https://www.thetradehq.com/about"
+      ],
+      "observed": "Report F07: actual portfolio shows Scenario Builder Beta and assumptions; Roadmap lists hypothetical portfolio scenarios as absent/planned. About mentions compound growth without a direct tool link.",
+      "fix": "Distinguish current Beta from unscheduled proposed extensions and link About to the existing calculator. No scenario execution or calculator change.",
+      "evidence": "findings/WORKSHEET-AND-REFERENCE-SCOPE.md",
+      "beforeEvidence": "evidence/OWNER-AUDIT-LIVE-REPRODUCTION-20261030.json",
+      "state": "PREPARED_NOT_MERGED",
+      "candidateSHA": "518a6d7eb222e8e4f32b7a00766abbd6809c5242",
+      "detectedAt": "2026-10-30T02:02:51.423606+00:00",
+      "risk": "Reversible display/copy only; protected calculations/orders/records/auth/progress/ads/consent untouched. No live credit before all release gates.",
+      "releaseHold": "PR263 serial candidate pending verification; this is an independent prepared follow-up.",
+      "localEvidence": [
+        "evidence/WORKSHEET-SCOPE-LOCAL-20261030.json",
+        "evidence/WORKSHEET-SCOPE-LOCAL-PERSONAL-20261030.json"
+      ],
+      "pr": 265
+    },
+    {
+      "id": "THQ-077",
+      "severity": "P3",
+      "category": "Fair Value Gap detailed definition repeats its construction and limitations",
+      "urls": [
+        "https://www.thetradehq.com/wiki/fair-value-gap"
+      ],
+      "observed": "Report F09 reproduced: current detailed definition repeats the three-candle construction and independent versions of no prediction/no hidden orders/no confirmation assertions, obscuring the actual upward/downward examples. Entire current body independently read alongside four other report examples. Other short definitions retained where useful summary and exercise roles differ.",
+      "fix": "Condense only the long FVG detailed definition into one coherent paragraph retaining construction, data selection, uncertainty, hindsight-control comparison and worksheet link. No quiz/financial engine changes.",
+      "state": "PREPARED_NOT_MERGED",
+      "candidateSHA": "518a6d7eb222e8e4f32b7a00766abbd6809c5242",
+      "evidence": "findings/WORKSHEET-AND-REFERENCE-SCOPE.md",
+      "beforeEvidence": "evidence/OWNER-AUDIT-LIVE-REPRODUCTION-20261030.json",
+      "detectedAt": "2026-10-30T02:11:10.886903+00:00",
+      "risk": "Reversible editorial text; ordinary frontend revert only.",
+      "localEvidence": [
+        "evidence/WORKSHEET-SCOPE-LOCAL-20261030.json",
+        "evidence/WORKSHEET-SCOPE-LOCAL-PERSONAL-20261030.json"
+      ],
+      "pr": 265
     }
   ],
-  "updatedAt": "2026-10-30T01:52:23.465947+00:00",
+  "updatedAt": "2026-10-30T02:43:55.993922+00:00",
   "counts": {
-    "siteFindings": 76,
-    "P2": 42,
-    "P3": 34,
+    "siteFindings": 82,
+    "P2": 44,
+    "P3": 38,
     "publiclyRepaired": 71,
-    "preparedNotMerged": 5,
+    "preparedNotMerged": 7,
     "separateOperationalBlockers": 0,
-    "mergedAwaitingProductionVerification": 0,
+    "mergedAwaitingProductionVerification": 4,
     "protectedUnapprovedRecordFixes": 0,
     "approvedPublishedRecordFixesBlockedOnCredential": 0,
     "mergedFallbackAwaitingProductionVerification": 0

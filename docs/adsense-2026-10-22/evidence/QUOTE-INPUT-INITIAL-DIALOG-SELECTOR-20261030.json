@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-10-30T02:09:35.589Z",
+  "origin": "http://127.0.0.1:4187",
+  "sha": "62aac4f4d49c0a2883436786774efee92e1fadaa",
+  "stage": "local",
+  "outcome": "FAIL",
+  "failure": "The expression evaluated to a falsy value:\n\n  assert.ok(info.order.includes('Virtual execution input'))\n",
+  "rows": [],
+  "runtimeErrors": [],
+  "blockedProtectedRequests": [],
+  "scope": "Read-only quote/unit/source text and empty virtual execution panels. Five widths/two real themes. Mobile drawer is opened only; no amounts, sliders, order submit, portfolio/account/progress/records actions. Screenshots require personal viewing.",
+  "acceptance": "INVALID_DIALOG_SELECTOR",
+  "explanation": "Collector selected the hidden persistent mobile-nav dialog instead of visible open order drawer. No application failure is established. Correct collector to visible data-state=open drawer; preserve this failure."
+}

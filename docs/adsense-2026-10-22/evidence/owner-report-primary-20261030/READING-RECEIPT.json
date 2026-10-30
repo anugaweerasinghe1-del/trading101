@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-10-30T02:02:51.423606+00:00",
+  "sources": [
+    {
+      "name": "finra-short-interest",
+      "scope": "Complete main article read,5246chars; short-sale mechanics, periodic positions and volume distinction."
+    },
+    {
+      "name": "finra-short-interest-data",
+      "scope": "Complete main page read,2206chars; collection/publishing schedule."
+    },
+    {
+      "name": "finra-data-glossary",
+      "scope": "Relevant short-interest/average daily volume/days-to-cover fields read; no live dataset/account used."
+    },
+    {
+      "name": "kraken-liquidation",
+      "scope": "Complete8043char extracted main read; current spot-margin-specific thresholds, discretion, fees, order execution and collateral-dependent example; not a universal contract formula."
+    },
+    {
+      "name": "stockcharts-wyckoff",
+      "scope": "Relevant first13500characters read, origins through beginning of accumulation events. Secondary practitioner framework exposition; profitability/institutional-intent claims not adopted."
+    },
+    {
+      "name": "cme-fx-quote-conventions",
+      "url": "https://www.cmegroup.com/education/courses/introduction-to-fx/understanding-fx-quote-conventions",
+      "scope": "Complete extracted visible article and displayed quiz text read: first currency is named/base, second terms/quote; EURUSD1.1250 exchanges1EUR for1.1250USD; American/European quote conventions and spot/futures differences. No video viewed or quiz submitted. Supports pair quotation units only, not correctness of the TradeHQ simplified USD accounting engine.",
+      "textSHA256": "732f211d1f1ac9522ce540daa9a6fd590b23f9687da460752acf61d052e43b94"
+    }
+  ],
+  "limitations": [
+    "StockCharts Elliott initial route is a soft404, not substantive source content. Suggested index request403; no source-reading or citation credit.",
+    "Coinbase proposed liquidation URL404; no source credit.",
+    "Sources establish bounded mechanics/vocabulary only, not empirical prediction performance or AdSense cause."
+  ],
+  "updatedAt": "2026-10-30T02:53:33.765301+00:00"
+}

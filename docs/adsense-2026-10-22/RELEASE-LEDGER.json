@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T01:53:36.615403+00:00",
+  "updatedAt": "2026-10-30T02:46:38.681337+00:00",
   "releases": [
     {
       "finding": "THQ-001",
@@ -2985,16 +2985,27 @@
   "latestGitHubProviderBindingEvidence": "evidence/PR262-PRODUCTION-PROVIDERS.json",
   "latestMainValidationEvidence": "evidence/PR262-MAIN-CI.json",
   "latestVerifiedProductionSHA": "84e26a8bd3dc442b4c1d153cba0d94cc8cccc677",
-  "remainingConfirmedSiteFixes": 5,
+  "remainingConfirmedSiteFixes": 11,
   "exhaustiveAuditComplete": false,
-  "remainingKnownSafeFindings": 5,
-  "pendingReleaseVerification": null,
+  "remainingKnownSafeFindings": 11,
+  "pendingReleaseVerification": {
+    "pr": 263,
+    "candidateSHA": "bb6623af78e6ad5e83f2d727a349ca106e270051",
+    "mergeSHA": "fe9fe3eeef989210853420168e895501165f1fcd",
+    "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+    "mainCIEvidence": "evidence/PR263-MAIN-CI.json",
+    "nativeProductionEvidence": "evidence/PR263-PRODUCTION-PROVIDERS.json",
+    "affectedPublicEvidence": "evidence/PR263-PRODUCTION-BROWSER.json",
+    "personalPublicEvidence": "evidence/PUBLIC-LEARNING-SCOPE-PRODUCTION-PERSONAL-20261030.json",
+    "remainingGate": "Fresh full30-state/four-control public guest recheck. Initial collection completed rows/controls but mixed a CDP InvalidInterceptionId into runtime errors; hardened collector fails root readiness under subsequent Cloudflare403/503 access failure. Original failures preserved."
+  },
   "protectedPublishedContentFinding": "THQ035/036 published revision2 independently verified; credential and approval blockers superseded by owner-approved PR238 operation. No new production writes in this continuation.",
   "operationalHold": {
-    "active": false,
-    "reason": "No active release hold."
+    "active": true,
+    "reason": "PR263 six exact-main CI and native production gates passed;140 affected public checks/70 personally viewed captures passed. Fresh full production guest gate is blocked by Cloudflare403/1010 from audit environment. No later merge until verified.",
+    "evidence": "evidence/NETWORK-ACCESS-20261030-CLOUDFLARE-RECHECK.json"
   },
-  "latestObservedMainSHA": "84e26a8bd3dc442b4c1d153cba0d94cc8cccc677",
+  "latestObservedMainSHA": "fe9fe3eeef989210853420168e895501165f1fcd",
   "historicalCandidateRecords": {
     "independentFutureCandidate": {
       "pr": 214,
@@ -3215,11 +3226,25 @@
       }
     ]
   },
-  "safeProposals": [
+  "safeProposals": [],
+  "preparedFollowups": [
     {
-      "finding": "THQ-069",
-      "state": "PROPOSED_NOT_IMPLEMENTED",
-      "evidence": "findings/LEARN-PATH-LIGHT-CONTRAST.md"
+      "pr": 264,
+      "candidateSHA": "62aac4f4d49c0a2883436786774efee92e1fadaa",
+      "scope": "Quote units and independent chart/execution source labels",
+      "state": "DRAFT_PREVIEW_PARTIAL_SERIAL_HOLD"
+    },
+    {
+      "pr": 265,
+      "candidateSHA": "518a6d7eb222e8e4f32b7a00766abbd6809c5242",
+      "scope": "Worksheet,reference,roadmap and FVG copy",
+      "state": "DRAFT_LOCAL_PERSONALLY_REVIEWED_SERIAL_HOLD"
+    },
+    {
+      "pr": 266,
+      "candidateSHA": "10c41e243f64ee6beb1fc2e4f35c5a5d2e495752",
+      "scope": "Three light-theme Learning Path foreground classes",
+      "state": "DRAFT_LOCAL_PERSONALLY_REVIEWED_SERIAL_HOLD"
     }
   ]
 }

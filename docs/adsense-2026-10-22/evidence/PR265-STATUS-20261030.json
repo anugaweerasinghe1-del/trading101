@@ -1,0 +1,68 @@
+{
+  "headRefOid": "518a6d7eb222e8e4f32b7a00766abbd6809c5242",
+  "isDraft": true,
+  "mergeStateStatus": "BLOCKED",
+  "number": 265,
+  "state": "OPEN",
+  "statusCheckRollup": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T02:45:03Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40993414762/job/123860908967",
+      "name": "TradeHQ Disposable PostgreSQL controls",
+      "startedAt": "2026-10-30T02:44:19Z",
+      "status": "COMPLETED",
+      "workflowName": "Disposable repair-control validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T02:45:40Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40993414875/job/123860909421",
+      "name": "TradeHQ Phase 3 tests",
+      "startedAt": "2026-10-30T02:44:19Z",
+      "status": "COMPLETED",
+      "workflowName": "Phase 3 High Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40993414875/job/123860909707",
+      "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+      "startedAt": "2026-10-30T02:44:19Z",
+      "status": "IN_PROGRESS",
+      "workflowName": "Phase 3 High Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T02:44:25Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/2f304939-0f5c-41b2-8f20-0f2cc6a4c70e",
+      "name": "Cloudflare Pages",
+      "startedAt": "2026-10-30T02:44:25Z",
+      "status": "COMPLETED",
+      "workflowName": ""
+    },
+    {
+      "__typename": "StatusContext",
+      "context": "Vercel",
+      "startedAt": "2026-10-30T02:43:44Z",
+      "state": "SUCCESS",
+      "targetUrl": "https://vercel.com/venomog/trading101/6qLQKMFm9RZ5Rbyjs3QWjWm2tWhq"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T02:44:19Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://vercel.com/github",
+      "name": "Vercel Preview Comments",
+      "startedAt": "2026-10-30T02:44:19Z",
+      "status": "COMPLETED",
+      "workflowName": ""
+    }
+  ],
+  "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/265",
+  "observedAt": "2026-10-30T02:53:35.371010+00:00"
+}

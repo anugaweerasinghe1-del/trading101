@@ -1,0 +1,60 @@
+{
+  "checkedAt": "2026-10-30T02:25:48.595518+00:00",
+  "outcome": "AUDIT_PATH_ACCESS_INTERRUPTION",
+  "observations": [
+    "Public origin curl HTTP403 Cloudflare1010; another public browser request returned503 envoy cloudflare_https_tunnel transport error.",
+    "Exact PR264 preview curl alternated403 and503 same relay; not accepted as an application content failure."
+  ],
+  "managedNetwork": "environment_status observations_current true,connected,unrestricted enforced,spec16,no diagnostics; no config changes requested.",
+  "deploymentEvidence": "PR263 six exact-main and authenticated native production PASS, affected140state browser captures already collected; final guest recheck pending.",
+  "scope": "No evidence of global public outage, no bypass, DNS/secret/infra/ads changes. Continue independent local work and human review; serial merge hold remains.",
+  "rechecks": [
+    {
+      "checkedAt": "2026-10-30T02:29:54.097839+00:00",
+      "rows": [
+        {
+          "url": "https://www.thetradehq.com/",
+          "status": 403,
+          "body": "error code: 1010\n"
+        },
+        {
+          "url": "https://7eac6f4f.tradehq-preview.pages.dev/trade/usdjpy",
+          "status": 403,
+          "body": "error code: 1010\n"
+        }
+      ]
+    }
+  ],
+  "additionalBoundedRechecks": [
+    {
+      "at": "2026-10-30T02:37:09.892369+00:00",
+      "rows": [
+        {
+          "url": "https://www.thetradehq.com/",
+          "status": 403,
+          "sample": "error code: 1010\n"
+        },
+        {
+          "url": "https://7eac6f4f.tradehq-preview.pages.dev/",
+          "status": 403,
+          "sample": "error code: 1010\n"
+        }
+      ]
+    },
+    {
+      "at": "2026-10-30T02:47:37.598353+00:00",
+      "rows": [
+        {
+          "url": "https://www.thetradehq.com/",
+          "status": 403,
+          "sample": "error code: 1010\n"
+        },
+        {
+          "url": "https://7eac6f4f.tradehq-preview.pages.dev/",
+          "status": 403,
+          "sample": "error code: 1010\n"
+        }
+      ]
+    }
+  ]
+}

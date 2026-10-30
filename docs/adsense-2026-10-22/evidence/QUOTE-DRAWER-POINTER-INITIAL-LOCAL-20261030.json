@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-10-30T02:21:14.811Z",
+  "origin": "http://127.0.0.1:4187",
+  "sha": "62aac4f4d49c0a2883436786774efee92e1fadaa",
+  "outcome": "FAIL",
+  "rows": [],
+  "runtimeErrors": [],
+  "failure": "TypeError: Cannot read properties of undefined (reading 'scrollIntoView')\n    at <anonymous>:1:119",
+  "scope": "Actual visible Trade trigger scrolled into view and clicked using pointer events, followed by settled mobile drawer at3widths/2themes. Replaces offscreen programmatic opening as a realistic user action; no amount/slider/submit/record action. Screenshots require personal viewing."
+}

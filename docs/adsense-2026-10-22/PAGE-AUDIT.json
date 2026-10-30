@@ -1,8 +1,8 @@
 {
   "generatedAt": "2026-10-24T10:26:06.372979+00:00",
   "complete": false,
-  "mainBodiesRead": 451,
-  "publicRoutes": 451,
+  "mainBodiesRead": 454,
+  "publicRoutes": 454,
   "rows": [
     {
       "url": "https://www.thetradehq.com/",
@@ -109,7 +109,7 @@
       ],
       "findingStates": {
         "THQ-060": "PUBLICLY_VERIFIED",
-        "THQ-066": "PREPARED_NOT_MERGED",
+        "THQ-066": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
         "THQ-068": "PUBLICLY_VERIFIED"
       },
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
@@ -243,11 +243,13 @@
       },
       "specificFindingIds": [
         "THQ-001",
-        "THQ-027"
+        "THQ-027",
+        "THQ-076"
       ],
       "findingStates": {
         "THQ-001": "PUBLICLY_VERIFIED",
-        "THQ-027": "PUBLICLY_VERIFIED"
+        "THQ-027": "PUBLICLY_VERIFIED",
+        "THQ-076": "PREPARED_NOT_MERGED"
       },
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": [
@@ -2468,7 +2470,7 @@
       ],
       "findingStates": {
         "THQ-002": "PUBLICLY_VERIFIED",
-        "THQ-071": "PREPARED_NOT_MERGED"
+        "THQ-071": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
       },
       "postDeploymentChecks": [
         {
@@ -2711,7 +2713,7 @@
         "THQ-071"
       ],
       "findingStates": {
-        "THQ-071": "PREPARED_NOT_MERGED"
+        "THQ-071": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
       },
       "structuredQuizReview": {
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
@@ -7823,7 +7825,7 @@
         "THQ-008": "PUBLICLY_VERIFIED",
         "THQ-031": "PUBLICLY_VERIFIED",
         "THQ-062": "PUBLICLY_VERIFIED",
-        "THQ-069": "PROPOSED_NOT_IMPLEMENTED"
+        "THQ-069": "PREPARED_NOT_MERGED"
       },
       "postDeploymentChecks": [
         {
@@ -11352,11 +11354,13 @@
       ],
       "specificFindingIds": [
         "THQ-030",
-        "THQ-047"
+        "THQ-047",
+        "THQ-072"
       ],
       "findingStates": {
         "THQ-030": "PUBLICLY_VERIFIED",
-        "THQ-047": "PUBLICLY_VERIFIED"
+        "THQ-047": "PUBLICLY_VERIFIED",
+        "THQ-072": "PREPARED_NOT_MERGED"
       },
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": [
@@ -17507,11 +17511,13 @@
       ],
       "specificFindingIds": [
         "THQ-025",
-        "THQ-027"
+        "THQ-027",
+        "THQ-076"
       ],
       "findingStates": {
         "THQ-025": "PUBLICLY_VERIFIED",
-        "THQ-027": "PUBLICLY_VERIFIED"
+        "THQ-027": "PUBLICLY_VERIFIED",
+        "THQ-076": "PREPARED_NOT_MERGED"
       },
       "expandedFAQReview": {
         "answersRead": 3,
@@ -17981,10 +17987,12 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [
-        "THQ-064"
+        "THQ-064",
+        "THQ-076"
       ],
       "findingStates": {
-        "THQ-064": "PUBLICLY_VERIFIED"
+        "THQ-064": "PUBLICLY_VERIFIED",
+        "THQ-076": "PREPARED_NOT_MERGED"
       },
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": [],
@@ -19286,13 +19294,17 @@
         "Ad delivery and regional CMP not verified",
         "FAQ and quiz-result/control follow-up pending where present"
       ],
-      "specificFindingIds": [],
+      "specificFindingIds": [
+        "THQ-074"
+      ],
       "expandedFAQReview": {
         "answersRead": 3,
         "assessment": "Answers reinforce the specific main worksheet context and qualify results by inputs/costs/sample; no universal winrate or suitability claim. Freepractice answer explicitlyallowsseparateworksheet/externaldata, avoiding a claim that unsupported indicators/orders are implemented.",
         "controlEvidence": "evidence/live-faq/b8041ce42b5bdca3.json"
       },
-      "findingStates": {},
+      "findingStates": {
+        "THQ-074": "PREPARED_NOT_MERGED"
+      },
       "confirmedFindingStates": [],
       "defaultFullPageVisual": {
         "status": "PERSONALLY_VIEWED_BOUNDED",
@@ -19390,13 +19402,17 @@
         "Ad delivery and regional CMP not verified",
         "FAQ and quiz-result/control follow-up pending where present"
       ],
-      "specificFindingIds": [],
+      "specificFindingIds": [
+        "THQ-074"
+      ],
       "expandedFAQReview": {
         "answersRead": 3,
         "assessment": "Answers reinforce the specific main worksheet context and qualify results by inputs/costs/sample; no universal winrate or suitability claim. Freepractice answer explicitlyallowsseparateworksheet/externaldata, avoiding a claim that unsupported indicators/orders are implemented.",
         "controlEvidence": "evidence/live-faq/fc59671daa4f3d37.json"
       },
-      "findingStates": {},
+      "findingStates": {
+        "THQ-074": "PREPARED_NOT_MERGED"
+      },
       "confirmedFindingStates": [],
       "defaultFullPageVisual": {
         "status": "PERSONALLY_VIEWED_BOUNDED",
@@ -22123,7 +22139,7 @@
       ],
       "findingStates": {
         "THQ-014": "PUBLICLY_VERIFIED",
-        "THQ-070": "PREPARED_NOT_MERGED"
+        "THQ-070": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
       },
       "partialProseReview": {
         "evidence": "TERMINAL-PROSE-REVIEW.json",
@@ -22844,14 +22860,16 @@
         "THQ-022",
         "THQ-026",
         "THQ-046",
-        "THQ-048"
+        "THQ-048",
+        "THQ-073"
       ],
       "findingStates": {
         "THQ-019": "PUBLICLY_VERIFIED",
         "THQ-022": "PUBLICLY_VERIFIED",
         "THQ-026": "PUBLICLY_VERIFIED",
         "THQ-046": "PUBLICLY_VERIFIED",
-        "THQ-048": "PUBLICLY_VERIFIED"
+        "THQ-048": "PUBLICLY_VERIFIED",
+        "THQ-073": "PREPARED_NOT_MERGED"
       },
       "partialProseReview": {
         "evidence": "TERMINAL-PROSE-REVIEW.json",
@@ -37904,12 +37922,16 @@
       "specificFindingIds": [
         "THQ-014",
         "THQ-046",
-        "THQ-070"
+        "THQ-070",
+        "THQ-072",
+        "THQ-073"
       ],
       "findingStates": {
         "THQ-014": "PUBLICLY_VERIFIED",
         "THQ-046": "PUBLICLY_VERIFIED",
-        "THQ-070": "PREPARED_NOT_MERGED"
+        "THQ-070": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+        "THQ-072": "PREPARED_NOT_MERGED",
+        "THQ-073": "PREPARED_NOT_MERGED"
       },
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped."
@@ -43162,11 +43184,13 @@
       ],
       "specificFindingIds": [
         "THQ-039",
-        "THQ-041"
+        "THQ-041",
+        "THQ-077"
       ],
       "findingStates": {
         "THQ-039": "PUBLICLY_VERIFIED",
-        "THQ-041": "PUBLICLY_VERIFIED"
+        "THQ-041": "PUBLICLY_VERIFIED",
+        "THQ-077": "PREPARED_NOT_MERGED"
       },
       "confirmedFindingStates": [],
       "currentConfirmedFindingFollowups": [
@@ -44752,11 +44776,13 @@
       ],
       "specificFindingIds": [
         "THQ-039",
-        "THQ-041"
+        "THQ-041",
+        "THQ-075"
       ],
       "findingStates": {
         "THQ-039": "PUBLICLY_VERIFIED",
-        "THQ-041": "PUBLICLY_VERIFIED"
+        "THQ-041": "PUBLICLY_VERIFIED",
+        "THQ-075": "PREPARED_NOT_MERGED"
       },
       "confirmedFindingStates": [],
       "currentConfirmedFindingFollowups": [
@@ -44873,11 +44899,13 @@
       ],
       "specificFindingIds": [
         "THQ-039",
-        "THQ-041"
+        "THQ-041",
+        "THQ-074"
       ],
       "findingStates": {
         "THQ-039": "PUBLICLY_VERIFIED",
-        "THQ-041": "PUBLICLY_VERIFIED"
+        "THQ-041": "PUBLICLY_VERIFIED",
+        "THQ-074": "PREPARED_NOT_MERGED"
       },
       "confirmedFindingStates": [],
       "currentConfirmedFindingFollowups": [
@@ -44994,11 +45022,13 @@
       ],
       "specificFindingIds": [
         "THQ-039",
-        "THQ-041"
+        "THQ-041",
+        "THQ-074"
       ],
       "findingStates": {
         "THQ-039": "PUBLICLY_VERIFIED",
-        "THQ-041": "PUBLICLY_VERIFIED"
+        "THQ-041": "PUBLICLY_VERIFIED",
+        "THQ-074": "PREPARED_NOT_MERGED"
       },
       "confirmedFindingStates": [],
       "currentConfirmedFindingFollowups": [
@@ -45853,11 +45883,13 @@
       ],
       "specificFindingIds": [
         "THQ-039",
-        "THQ-041"
+        "THQ-041",
+        "THQ-074"
       ],
       "findingStates": {
         "THQ-039": "PUBLICLY_VERIFIED",
-        "THQ-041": "PUBLICLY_VERIFIED"
+        "THQ-041": "PUBLICLY_VERIFIED",
+        "THQ-074": "PREPARED_NOT_MERGED"
       },
       "confirmedFindingStates": [],
       "currentConfirmedFindingFollowups": [
@@ -46216,11 +46248,13 @@
       ],
       "specificFindingIds": [
         "THQ-039",
-        "THQ-041"
+        "THQ-041",
+        "THQ-075"
       ],
       "findingStates": {
         "THQ-039": "PUBLICLY_VERIFIED",
-        "THQ-041": "PUBLICLY_VERIFIED"
+        "THQ-041": "PUBLICLY_VERIFIED",
+        "THQ-075": "PREPARED_NOT_MERGED"
       },
       "confirmedFindingStates": [],
       "currentConfirmedFindingFollowups": [
@@ -46821,11 +46855,13 @@
       ],
       "specificFindingIds": [
         "THQ-039",
-        "THQ-041"
+        "THQ-041",
+        "THQ-074"
       ],
       "findingStates": {
         "THQ-039": "PUBLICLY_VERIFIED",
-        "THQ-041": "PUBLICLY_VERIFIED"
+        "THQ-041": "PUBLICLY_VERIFIED",
+        "THQ-074": "PREPARED_NOT_MERGED"
       },
       "confirmedFindingStates": [],
       "currentConfirmedFindingFollowups": [
@@ -46942,11 +46978,13 @@
       ],
       "specificFindingIds": [
         "THQ-039",
-        "THQ-041"
+        "THQ-041",
+        "THQ-074"
       ],
       "findingStates": {
         "THQ-039": "PUBLICLY_VERIFIED",
-        "THQ-041": "PUBLICLY_VERIFIED"
+        "THQ-041": "PUBLICLY_VERIFIED",
+        "THQ-074": "PREPARED_NOT_MERGED"
       },
       "confirmedFindingStates": [],
       "currentConfirmedFindingFollowups": [
@@ -47184,11 +47222,13 @@
       ],
       "specificFindingIds": [
         "THQ-039",
-        "THQ-041"
+        "THQ-041",
+        "THQ-075"
       ],
       "findingStates": {
         "THQ-039": "PUBLICLY_VERIFIED",
-        "THQ-041": "PUBLICLY_VERIFIED"
+        "THQ-041": "PUBLICLY_VERIFIED",
+        "THQ-075": "PREPARED_NOT_MERGED"
       },
       "confirmedFindingStates": [],
       "currentConfirmedFindingFollowups": [
@@ -57214,7 +57254,7 @@
       "findingStates": {
         "THQ-014": "PUBLICLY_VERIFIED",
         "THQ-017": "PUBLICLY_VERIFIED",
-        "THQ-059": "PREPARED_NOT_MERGED"
+        "THQ-059": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
       },
       "partialProseReview": {
         "evidence": "TERMINAL-PROSE-REVIEW.json",
@@ -57500,7 +57540,7 @@
       "findingStates": {
         "THQ-014": "PUBLICLY_VERIFIED",
         "THQ-017": "PUBLICLY_VERIFIED",
-        "THQ-059": "PREPARED_NOT_MERGED"
+        "THQ-059": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
       },
       "partialProseReview": {
         "evidence": "TERMINAL-PROSE-REVIEW.json",
@@ -57644,7 +57684,7 @@
       "findingStates": {
         "THQ-014": "PUBLICLY_VERIFIED",
         "THQ-017": "PUBLICLY_VERIFIED",
-        "THQ-059": "PREPARED_NOT_MERGED"
+        "THQ-059": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
       },
       "partialProseReview": {
         "evidence": "TERMINAL-PROSE-REVIEW.json",
@@ -57788,7 +57828,7 @@
       "findingStates": {
         "THQ-014": "PUBLICLY_VERIFIED",
         "THQ-017": "PUBLICLY_VERIFIED",
-        "THQ-059": "PREPARED_NOT_MERGED"
+        "THQ-059": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
       },
       "partialProseReview": {
         "evidence": "TERMINAL-PROSE-REVIEW.json",
@@ -58074,7 +58114,7 @@
       "findingStates": {
         "THQ-014": "PUBLICLY_VERIFIED",
         "THQ-017": "PUBLICLY_VERIFIED",
-        "THQ-059": "PREPARED_NOT_MERGED"
+        "THQ-059": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
       },
       "partialProseReview": {
         "evidence": "TERMINAL-PROSE-REVIEW.json",
@@ -58218,7 +58258,7 @@
       "findingStates": {
         "THQ-014": "PUBLICLY_VERIFIED",
         "THQ-017": "PUBLICLY_VERIFIED",
-        "THQ-059": "PREPARED_NOT_MERGED"
+        "THQ-059": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
       },
       "partialProseReview": {
         "evidence": "TERMINAL-PROSE-REVIEW.json",
@@ -59297,6 +59337,81 @@
         "lightInitialScreensPersonallyViewed": 2,
         "scope": "Requested360/1280 both themes, settled headings/canonical/indexability/disclosures and focused Enter/back. No financial-source/full-accessibility certification."
       }
+    },
+    {
+      "url": "https://www.thetradehq.com/trader/muzh3q",
+      "path": "/trader/muzh3q",
+      "category": "trader",
+      "publicScope": true,
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
+      "discoveredAt": "2026-10-30T01:42:06.686Z",
+      "discoveryEvidence": "evidence/OWNER-SUPPLIED-AUDIT-TRIAGE-20261030.json",
+      "substantiveContent": {
+        "status": "MAIN_BODY_READ",
+        "assessment": "No account portfolio or server-recorded trades yet; distinction from leaderboard membership is explicit. Full actual main read with simulation/unaudited-performance/quote-refresh limitations and footer.",
+        "originality": "Functional public member summary; shared explanatory template appropriate. No new defect proved by account inactivity.",
+        "credibility": "Public visitor-selected information only; no private account/profile mutations."
+      },
+      "visualReview": {
+        "status": "PENDING_PERSONAL_FIVE_WIDTH_DEFAULT_AND_LIGHT",
+        "wholePageReviewComplete": false
+      },
+      "browserEvidence": "evidence/OWNER-AUDIT-LIVE-REPRODUCTION-20261030.json",
+      "canonicalObserved": "https://www.thetradehq.com/trader/muzh3q",
+      "robotsObserved": "index, follow",
+      "limitations": [
+        "No individual HTTP200 certificate, requested five-width visual coverage, account performance certification, or private data access."
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/trader/thabomlingani",
+      "path": "/trader/thabomlingani",
+      "category": "trader",
+      "publicScope": true,
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
+      "discoveredAt": "2026-10-30T01:42:06.686Z",
+      "discoveryEvidence": "evidence/OWNER-SUPPLIED-AUDIT-TRIAGE-20261030.json",
+      "substantiveContent": {
+        "status": "MAIN_BODY_READ",
+        "assessment": "No account portfolio or server-recorded trades yet; distinction from leaderboard membership is explicit. Full actual main read with simulation/unaudited-performance/quote-refresh limitations and footer.",
+        "originality": "Functional public member summary; shared explanatory template appropriate. No new defect proved by account inactivity.",
+        "credibility": "Public visitor-selected information only; no private account/profile mutations."
+      },
+      "visualReview": {
+        "status": "PENDING_PERSONAL_FIVE_WIDTH_DEFAULT_AND_LIGHT",
+        "wholePageReviewComplete": false
+      },
+      "browserEvidence": "evidence/OWNER-AUDIT-LIVE-REPRODUCTION-20261030.json",
+      "canonicalObserved": "https://www.thetradehq.com/trader/thabomlingani",
+      "robotsObserved": "index, follow",
+      "limitations": [
+        "No individual HTTP200 certificate, requested five-width visual coverage, account performance certification, or private data access."
+      ]
+    },
+    {
+      "url": "https://www.thetradehq.com/trader/theworst_trader",
+      "path": "/trader/theworst_trader",
+      "category": "trader",
+      "publicScope": true,
+      "state": "SUBSTANTIVE_MAIN_READ_FOLLOWUP_PENDING",
+      "discoveredAt": "2026-10-30T01:42:06.686Z",
+      "discoveryEvidence": "evidence/OWNER-SUPPLIED-AUDIT-TRIAGE-20261030.json",
+      "substantiveContent": {
+        "status": "MAIN_BODY_READ",
+        "assessment": "Cash-only virtual account:100000 portfolio,0percent,zero recorded trades; cash-only basis. Full actual main read with simulation/unaudited-performance/quote-refresh limitations and footer.",
+        "originality": "Functional public member summary; shared explanatory template appropriate. No new defect proved by account inactivity.",
+        "credibility": "Public visitor-selected information only; no private account/profile mutations."
+      },
+      "visualReview": {
+        "status": "PENDING_PERSONAL_FIVE_WIDTH_DEFAULT_AND_LIGHT",
+        "wholePageReviewComplete": false
+      },
+      "browserEvidence": "evidence/OWNER-AUDIT-LIVE-REPRODUCTION-20261030.json",
+      "canonicalObserved": "https://www.thetradehq.com/trader/theworst_trader",
+      "robotsObserved": "index, follow",
+      "limitations": [
+        "No individual HTTP200 certificate, requested five-width visual coverage, account performance certification, or private data access."
+      ]
     }
   ],
   "expandedFAQAnswersRead": 134,
@@ -59311,5 +59426,5 @@
     "individualActualRenderedProseComparisonsWithPreviouslyFullyReadBaseline": 85,
     "scope": "441 main texts/states covered, not441 fully completed page/source/control/human-visual reviews. See TERMINAL-TEMPLATE-COMPARISONS.json for raw texts and deltas."
   },
-  "updatedAt": "2026-10-30T01:53:36.615403+00:00"
+  "updatedAt": "2026-10-30T02:46:38.681337+00:00"
 }

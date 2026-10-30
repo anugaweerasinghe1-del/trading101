@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-10-30T02:22:56.929Z",
+  "candidateSHA": "fe9fe3eeef989210853420168e895501165f1fcd",
+  "sha": "fe9fe3eeef989210853420168e895501165f1fcd",
+  "origin": "https://www.thetradehq.com",
+  "outcome": "FAIL",
+  "resumedRowCount": 0,
+  "debug": {
+    "path": "/",
+    "ready": "complete"
+  },
+  "scope": "Actual anonymous candidate15route interfaces atmobile/desktop plus4safecontrols; no orders/accounts/contact submissions; onlyread-onlypublicRPCs allowed.",
+  "rows": [],
+  "controls": [],
+  "runtimeErrors": [],
+  "protocolErrors": [],
+  "canceledInterceptions": [],
+  "preventedProtectedRequests": [],
+  "limitations": [
+    "Leaderboard rank and previous-result reads allowed; public-duels RPC deliberately prevented because its SQL may settle expired duels. Duel results are not verified."
+  ],
+  "failure": "Page readiness deadline"
+}

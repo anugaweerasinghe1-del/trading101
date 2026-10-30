@@ -1,19 +1,30 @@
 {
-  "updatedAt": "2026-10-30T01:53:36.615403+00:00",
-  "latestMergedProductionSHA": "84e26a8bd3dc442b4c1d153cba0d94cc8cccc677",
+  "updatedAt": "2026-10-30T02:46:38.681337+00:00",
+  "latestMergedProductionSHA": "fe9fe3eeef989210853420168e895501165f1fcd",
   "fullpageRoutesPersonallyViewed": 451,
-  "publicInventoryRoutes": 451,
-  "remainingDefaultVisualRoutes": 0,
-  "confirmedFindings": 76,
+  "publicInventoryRoutes": 454,
+  "remainingDefaultVisualRoutes": 3,
+  "confirmedFindings": 82,
   "publiclyVerifiedRepairs": 71,
-  "activeCandidate": null,
+  "activeCandidate": {
+    "pr": 263,
+    "candidateSHA": "bb6623af78e6ad5e83f2d727a349ca106e270051",
+    "mergeSHA": "fe9fe3eeef989210853420168e895501165f1fcd",
+    "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+    "mainCIEvidence": "evidence/PR263-MAIN-CI.json",
+    "nativeProductionEvidence": "evidence/PR263-PRODUCTION-PROVIDERS.json",
+    "affectedPublicEvidence": "evidence/PR263-PRODUCTION-BROWSER.json",
+    "personalPublicEvidence": "evidence/PUBLIC-LEARNING-SCOPE-PRODUCTION-PERSONAL-20261030.json",
+    "remainingGate": "Fresh full30-state/four-control public guest recheck. Initial collection completed rows/controls but mixed a CDP InvalidInterceptionId into runtime errors; hardened collector fails root readiness under subsequent Cloudflare403/503 access failure. Original failures preserved."
+  },
   "releaseGate": {
-    "active": false,
-    "reason": "No active release hold."
+    "active": true,
+    "reason": "PR263 six exact-main CI and native production gates passed;140 affected public checks/70 personally viewed captures passed. Fresh full production guest gate is blocked by Cloudflare403/1010 from audit environment. No later merge until verified.",
+    "evidence": "evidence/NETWORK-ACCESS-20261030-CLOUDFLARE-RECHECK.json"
   },
   "publicProfileControls": "60profiles240states120focusedEnterLeaderboard/backflows PASS; all120initiallightimages personallyviewed across31sheets. No full accessibility certification.",
   "activeCollection": null,
-  "unresolved": "5 substantive findings remain until closed with release evidence; exact count follows FINDINGS.json. Remaining full-light scroll, sequential Tab, zoom, screenreader, primary sources, originality/value, daily conditional and regional ad/CMP/account stages prevent whole-audit completion.",
+  "unresolved": "11 substantive findings remain until closed with release evidence; exact count follows FINDINGS.json. Remaining full-light scroll, sequential Tab, zoom, screenreader, primary sources, originality/value, daily conditional and regional ad/CMP/account stages prevent whole-audit completion.",
   "historicalResumeNote": "Earlier checkpoint fields were stale; historical observations remain in their dated receipts and git history.",
   "terminalControls": "19assetterminals76light/darkmobile/desktopstates372focusedEnterFAQexpansions PASS; all38initiallightimages personallyviewed. No fullaccessibilitycertification.",
   "latestOwnerUpdate": "Owner clarified the repeated rejection only provides generic account-not-approved/few-more-tweaks wording and Sites section is inaccessible without resubmission. No further rejection detail is available; do not repeatedly request it. No inferred Google rejection cause.",
@@ -23,32 +34,62 @@
   "terminalFinalControls": "27 terminals,108 states,536 FAQ expansions,all54 initial light images personally viewed.",
   "latestFullyVerifiedProductionSHA": "84e26a8bd3dc442b4c1d153cba0d94cc8cccc677",
   "fullLightRoutesPersonallyViewed": 40,
-  "remainingFullLightRoutes": 411,
+  "remainingFullLightRoutes": 414,
   "currentFindingStates": [
     {
       "id": "THQ-059",
-      "state": "PREPARED_NOT_MERGED",
+      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
       "scope": "Long generic terminal titles claim analysis absent from content"
     },
     {
       "id": "THQ-066",
-      "state": "PREPARED_NOT_MERGED",
+      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
       "scope": "Homepage FAQ buttons omit their expanded state"
     },
     {
       "id": "THQ-069",
-      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "state": "PREPARED_NOT_MERGED",
       "scope": "Learning path level labels have low contrast on light backgrounds"
     },
     {
       "id": "THQ-070",
-      "state": "PREPARED_NOT_MERGED",
+      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
       "scope": "Asset learning links overpromise instrument-specific research"
     },
     {
       "id": "THQ-071",
-      "state": "PREPARED_NOT_MERGED",
+      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
       "scope": "Published crypto course outcome promises untaught statistical filtering"
+    },
+    {
+      "id": "THQ-072",
+      "state": "PREPARED_NOT_MERGED",
+      "scope": "Forex reference displays incorrectly prefix non-USD quote rates with dollars"
+    },
+    {
+      "id": "THQ-073",
+      "state": "PREPARED_NOT_MERGED",
+      "scope": "Chart headline and virtual execution input are not distinguished adjacently"
+    },
+    {
+      "id": "THQ-074",
+      "state": "PREPARED_NOT_MERGED",
+      "scope": "Educational simulator CTAs overstate supported worksheet execution"
+    },
+    {
+      "id": "THQ-075",
+      "state": "PREPARED_NOT_MERGED",
+      "scope": "Topic-specific glossary references are missing for short-interest and liquidation claims"
+    },
+    {
+      "id": "THQ-076",
+      "state": "PREPARED_NOT_MERGED",
+      "scope": "Roadmap planned scenarios conflict with the current portfolio Beta"
+    },
+    {
+      "id": "THQ-077",
+      "state": "PREPARED_NOT_MERGED",
+      "scope": "Fair Value Gap detailed definition repeats its construction and limitations"
     }
   ]
 }

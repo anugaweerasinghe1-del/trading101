@@ -1,9 +1,9 @@
 {
   "generatedAt": "2026-10-22T13:08:12.146627+00:00",
   "sourceCommit": "cd64fdef9f9d33670514d5be391f545fb30c330b",
-  "scope": "459 observed candidates:451 public/guest plus8 restricted admin guest guards. Includes10 newly discovered actual public leaderboard profile links on2026-10-28. Historical routes retained; discovery does not establish current content or full review.",
+  "scope": "462 discovered candidates:454 concrete public/guest routes plus8 restricted admin guards. Three report-discovered profiles were independently loaded and their full main bodies read on30October; HTTP and requested five-width default/light/controls remain pending. Earlier451-route review coverage is retained as historical stage evidence.",
   "complete": false,
-  "count": 459,
+  "count": 462,
   "dynamicTemplatesPendingLiveDiscovery": [
     "*",
     "/challenge/:code",
@@ -15727,6 +15727,51 @@
       "inspectionState": "DISCOVERED_NOT_YET_INDIVIDUALLY_REVIEWED",
       "declaredPurpose": "Visitor-selected public practice portfolio profile; not independently verified financial performance.",
       "sourceIndexability": false
+    },
+    {
+      "url": "https://www.thetradehq.com/trader/muzh3q",
+      "path": "/trader/muzh3q",
+      "category": "trader",
+      "discoveredFrom": [
+        "Owner-supplied report appendix",
+        "evidence/OWNER-SUPPLIED-AUDIT-TRIAGE-20261030.json"
+      ],
+      "inspectionState": "MAIN_BODY_READ_VISUAL_AND_HTTP_FOLLOWUP_PENDING",
+      "declaredPurpose": "Visitor-selected public virtual-practice account summary; not audited investment performance.",
+      "sourceIndexability": null,
+      "renderedIndexability": "index, follow",
+      "canonicalObserved": "https://www.thetradehq.com/trader/muzh3q",
+      "currentMainBodyEvidence": "evidence/OWNER-AUDIT-LIVE-REPRODUCTION-20261030.json"
+    },
+    {
+      "url": "https://www.thetradehq.com/trader/thabomlingani",
+      "path": "/trader/thabomlingani",
+      "category": "trader",
+      "discoveredFrom": [
+        "Owner-supplied report appendix",
+        "evidence/OWNER-SUPPLIED-AUDIT-TRIAGE-20261030.json"
+      ],
+      "inspectionState": "MAIN_BODY_READ_VISUAL_AND_HTTP_FOLLOWUP_PENDING",
+      "declaredPurpose": "Visitor-selected public virtual-practice account summary; not audited investment performance.",
+      "sourceIndexability": null,
+      "renderedIndexability": "index, follow",
+      "canonicalObserved": "https://www.thetradehq.com/trader/thabomlingani",
+      "currentMainBodyEvidence": "evidence/OWNER-AUDIT-LIVE-REPRODUCTION-20261030.json"
+    },
+    {
+      "url": "https://www.thetradehq.com/trader/theworst_trader",
+      "path": "/trader/theworst_trader",
+      "category": "trader",
+      "discoveredFrom": [
+        "Owner-supplied report appendix",
+        "evidence/OWNER-SUPPLIED-AUDIT-TRIAGE-20261030.json"
+      ],
+      "inspectionState": "MAIN_BODY_READ_VISUAL_AND_HTTP_FOLLOWUP_PENDING",
+      "declaredPurpose": "Visitor-selected public virtual-practice account summary; not audited investment performance.",
+      "sourceIndexability": null,
+      "renderedIndexability": "index, follow",
+      "canonicalObserved": "https://www.thetradehq.com/trader/theworst_trader",
+      "currentMainBodyEvidence": "evidence/OWNER-AUDIT-LIVE-REPRODUCTION-20261030.json"
     }
   ],
   "liveDiscovery": {
@@ -15742,11 +15787,11 @@
     "allDiscoveredCandidatesHTTPRequested": true,
     "browserDiscoveryComplete": false
   },
-  "publicGuestRouteCount": 451,
+  "publicGuestRouteCount": 454,
   "restrictedAdminGuardRouteCount": 8,
   "classificationCorrection": "Historical/compiled discovery included eight admin guest shells among the 367 candidates. Keep them separate from the public editorial review queue.",
   "sourceCommitScope": "Initial compiled seed commit; later main and observations recorded separately.",
-  "currentMainObserved": "84e26a8bd3dc442b4c1d153cba0d94cc8cccc677",
+  "currentMainObserved": "fe9fe3eeef989210853420168e895501165f1fcd",
   "initialDynamicTemplateList": [
     "*",
     "/challenge/:code",
@@ -15764,7 +15809,7 @@
     "/trader/:username",
     "/wiki/:slug"
   ],
-  "dynamicTemplatesPendingLiveDiscoveryScope": "Historical initial seed templates; current inventory451 concrete public URLs, including10 newly discovered actual leaderboard links. HTTP/main-body/full-default/light/controls are separate stages.",
+  "dynamicTemplatesPendingLiveDiscoveryScope": "Historical initial seed templates; current inventory454 concrete public URLs, including10 prior leaderboard links and3report-discovered public profiles. HTTP/main-body/full-default/light/controls are separate stages.",
   "currentObservationCollection": {
     "publicRoutes": 441,
     "freshHTTP200": 441,
@@ -15773,9 +15818,9 @@
     "expandedFAQAnswersActuallyRead": 107,
     "humanReviewComplete": false
   },
-  "lastReviewUpdate": "2026-10-30T01:53:36.615403+00:00",
+  "lastReviewUpdate": "2026-10-30T02:46:38.681337+00:00",
   "currentEditorialStages": {
-    "mainBodiesRead": 276,
+    "mainBodiesRead": 454,
     "mainBodiesUnread": 165,
     "expandedFAQAnswersRead": 134,
     "expandedAnswersUnread": 908,
@@ -15795,5 +15840,11 @@
       "allImagesHumanReviewed": false
     }
   },
-  "latestDynamicDiscovery": "evidence/PUBLIC-PROFILE-DISCOVERY-20261028.json"
+  "latestDynamicDiscovery": "evidence/OWNER-AUDIT-LIVE-REPRODUCTION-20261030.json",
+  "latestReadingCoverage": {
+    "mainBodiesActuallyRead": 454,
+    "defaultFullPageSetsPersonallyViewed": 451,
+    "lightFullPageSetsPersonallyViewed": 40,
+    "scope": "No fresh HTTP200, full review, or personally viewed images credit for the3new profiles."
+  }
 }

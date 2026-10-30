@@ -1,0 +1,110 @@
+Ask AI
+All
+Filter by:
+Select Product
+How do I deposit cash into my account?
+I need help with account verification
+Why can't I access my account?
+Are there any crypto withdrawal fees?
+I need help signing into my account
+Support
+Trading
+Margin trading
+Margin trading terms & concepts
+Margin call level and margin liquidation level
+Last updated:
+October 1, 2026
+The availability of margin trading services is subject to certain limitations and eligibility criteria.
+Margin call level
+The "margin call level" is the
+margin level
+at which you are in danger of having some of your positions forcibly closed (or "liquidated"). The margin call level is approximately 80%, although the exact threshold varies in accordance with price volatility in applicable markets.
+When your margin level reaches the margin call level, you may receive a notification prompting you to either close some of your positions or deposit more collateral funds. Margin call level notifications are generally sent by email. However, margin call level notifications are
+not
+guaranteed
+.
+It is important to proactively monitor your margin level. If your margin level falls below the margin call level, you authorize us to liquidate either all of your open positions, or only enough to get your margin level above 100%, at our reasonable discretion.
+Positions will be liquidated in the order
+First In, First Out (FIFO)
+regardless of currency pair or whether the position is in profit. Execution order may vary depending on the market conditions at the time.
+Margin liquidation level
+When your available margin reaches the point of liquidation (for spot margin, this is 40% Margin Health), your positions will be liquidated until your margin health is restored, either by closing your positions or by having your margin health return to a margin health above 100%.
+The liquidation process will be at Kraken's discretion in order to manage the risk of closing positions given prevailing market conditions. In order to mitigate slippage on liquidations and improve latency around closing positions, Kraken may liquidate positions automatically at the current index price of the market, immediately closing the position and realizing any associated losses.
+This process includes a 2% liquidation fee as a way to manage risk associated with that market and prevent further losses due to slippage. As these orders do not go through the order book, they do not incur the standard trading fee.
+Alternatively, liquidations are posted as a market order into the order book and will execute at the best price available at that given time. Like any other market order, they pay a taker fee corresponding to your current fee tier.
+Note:
+The liquidation process that initiates when your margin level falls below the margin liquidation level is automated, which means that once the process has started, it is not possible to stop it.
+Calculate margin call price
+For a "long" position you can use a series of linear equations to estimate how much the price of an asset would need to fall for your margin level to drop to 80% (the “margin call price”).
+For example:
+You've just entered into a “long” BTC spot position on margin by purchasing 1 BTC with 5:1 leverage at a price of 20,000 USD. You can estimate the approximate margin call price of your purchased BTC as follows. Assume that, after purchasing the 1 BTC, your Kraken account metrics are:
+Trade Balance - 10,000 USD
+(assume your collateral balances are 100% composed of USD)
+Used Margin - 4,000 USD
+Opening Cost - 20,000 USD
+Current Margin Level - 250%.
+We start by calculating what your
+equity
+would have to be for your margin level to fall to 80%:
+Since: Margin Level = Equity / Used Margin
+Then: Margin Level * Used Margin = Equity
+So: 80% * 4,000 USD = 3,200 USD.
+Using the calculated equity amount (in this example, 3,200 USD), we can estimate the aggregate amount the BTC you purchased would need to decrease in value to trigger a margin call.
+Since: Equity =
+Trade Balance
++
+Profit/Loss
+Then: Equity - Trade Balance = Profit/Loss
+So: 3,200 USD - 10,000 USD = -6,800 USD
+With the calculated Profit/Loss (in this example, -6,800 USD), we can approximate a “current valuation” for your spot position on margin. Keep in mind this calculation only works if you are “long” a given asset.
+For a “long” spot position on margin, calculate:
+Since: Profit/Loss = Current Valuation - Opening Cost
+Then: Profit/Loss + Opening Cost = Current Valuation
+So: -6,800 USD + 20,000 USD = 13,200 USD
+So (assuming your collateral balances are 100% composed of USD), for your margin level to drop to 80%, the price of BTC would have to fall to approximately 13,200 USD. You can use the equations above to estimate what the price of BTC would have to be for your margin level to fall to the margin liquidation level of 40% as well.
+You can also use the following equation to calculate your margin call price for a long position:
+Margin Call Price
+Margin Call Price = Entry Price - ((Equity - (Used Margin x 0.8)) / Open Volume*)
+Liquidation Price
+Liquidation Price = Entry Price - ((Equity - (Used Margin x 0.4)) / Open Volume*)
+*Open Volume
+is the amount of the asset purchased if you didn’t close any part of the position, it's the volume open minus the volume closed.
+For example, if you open a long position for 2 BTC and close 1 BTC the open volume is 1 BTC.
+Why are the formulas different for Long and Short Position(s)?
+On a long position, margin is used from the quote currency.
+•
+For example, when a long position is opened on the BTC/USD market (where the quote currency is USD), the currency utilized for the Used Margin is USD.
+•
+Therefore, USD value of the Used Margin does not change when the BTC/USD market price changes.
+On a short position, margin is used from the base currency.
+•
+For example, when a short position is opened on the BTC/USD market (where the base currency is BTC), the currency utilized for the Used Margin is BTC.
+•
+Therefore, USD value of the Used Margin changes when the BTC/USD market price changes.
+Since the Used Margin changes on a short position as opposed to a long position, formulas become different.
+Calculating Margin Call Price for Short Position(s)
+Assume the following:
+- an account has $5,000 balance,
+- BTC/USD price is $30,000.
+At that time, a short position is opened with:
+- an entry price of $30,000,
+- a volume of 0.2 BTC,
+- a used leverage of 4x.
+In this scenario, margin call and liquidation prices are calculated by using the following formulas:
+Margin Call Price
+Margin Call Price = Leverage x (Trade Balance + (Entry Price x Open Volume)) / (Open Volume x (0.8 + Leverage))
+Liquidation Price
+Liquidation Price = Leverage x (Trade Balance + (Entry Price x Open Volume)) / (Open Volume x (0.4 + Leverage))
+How to calculate Margin Call Price?
+Margin Call Price = Leverage x (Trade Balance + (Entry Price x Open Volume)) / (Open Volume x (0.8 + Leverage))
+Margin Call Price = 4 x ($5,000.00 + ($30,000.00 x 0.20)) / (0.20 x (0.8 + 4))
+Margin Call Price = 4 x ($5,000.00 + $6,000.00) / (0.20 x 4.8)
+Margin Call Price = 4 x $11,000.00 / 0.96
+Margin Call Price = $44,000.00 / 0.96
+Margin Call Price = $45,833.33
+Note:
+A caveat of using the above equations to calculate a margin call price is that they assume your collateral balances are 100% composed of USD. If you are using digital assets (e.g., BTC or ETH) as collateral, the USD value of your collateral would go down as the price of that digital asset goes down, causing the margin call price to actually be higher than the above calculations would suggest.
+For a more accurate margin call price approximation, you would need to re-calculate the price at separate intervals in time. By the same logic, if the price of your collateral currency increases, your margin call price may decrease, since the value of your collateral would be higher.
+The decimal and thousands separators shown in this article may differ from the formats displayed on our trading platforms. Review our article on how we use
+points and commas
+for more information.

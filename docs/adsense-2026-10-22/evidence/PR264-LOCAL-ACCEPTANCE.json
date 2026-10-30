@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-10-30T02:32:15.385338+00:00",
+  "sha": "62aac4f4d49c0a2883436786774efee92e1fadaa",
+  "outcome": "PASS_BOUNDED_DISPLAY_AND_READ_ONLY_UI",
+  "sourceStates": 60,
+  "pointerDrawerStates": 30,
+  "acceptedImages": 110,
+  "acceptedSourceImages": 80,
+  "replacementPointerImages": 30,
+  "sourceEvidence": "QUOTE-INPUT-LOCAL-20261030.json",
+  "initialPersonalReview": "QUOTE-INPUT-LOCAL-INITIAL-PERSONAL-20261030.json",
+  "pointerEvidence": "QUOTE-DRAWER-POINTER-LOCAL-20261030.json",
+  "pointerPersonalReview": "QUOTE-DRAWER-POINTER-LOCAL-PERSONAL-20261030.json",
+  "numericAndLogicEvidence": "QUOTE-INPUT-PRESERVATION-20261030.json",
+  "scope": "Exclude all30 offscreen programmatic drawer captures; use80 personally viewed chart/desktop/directory captures plus30 visible pointer drawer captures. Exact local build passed. All actual preview/native/main/public release gates remain required."
+}

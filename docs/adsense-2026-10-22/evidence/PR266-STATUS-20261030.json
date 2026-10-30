@@ -1,0 +1,98 @@
+{
+  "headRefOid": "10c41e243f64ee6beb1fc2e4f35c5a5d2e495752",
+  "isDraft": true,
+  "mergeStateStatus": "CLEAN",
+  "number": 266,
+  "state": "OPEN",
+  "statusCheckRollup": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T02:46:05Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40993508151/job/123861200534",
+      "name": "TradeHQ Disposable PostgreSQL controls",
+      "startedAt": "2026-10-30T02:45:17Z",
+      "status": "COMPLETED",
+      "workflowName": "Disposable repair-control validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T02:46:53Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40993508144/job/123861200645",
+      "name": "TradeHQ Phase 3 tests",
+      "startedAt": "2026-10-30T02:45:17Z",
+      "status": "COMPLETED",
+      "workflowName": "Phase 3 High Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T02:53:05Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40993508144/job/123861200815",
+      "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+      "startedAt": "2026-10-30T02:45:17Z",
+      "status": "COMPLETED",
+      "workflowName": "Phase 3 High Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T02:53:14Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40993508144/job/123863530272",
+      "name": "TradeHQ Required validation",
+      "startedAt": "2026-10-30T02:53:08Z",
+      "status": "COMPLETED",
+      "workflowName": "Phase 3 High Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T02:53:14Z",
+      "conclusion": "SKIPPED",
+      "detailsUrl": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40993508144/job/123863574539",
+      "name": "TradeHQ Release signals (read only)",
+      "startedAt": "2026-10-30T02:53:15Z",
+      "status": "COMPLETED",
+      "workflowName": "Phase 3 High Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T02:53:14Z",
+      "conclusion": "SKIPPED",
+      "detailsUrl": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40993508144/job/123863574608",
+      "name": "TradeHQ Release & Recovery Readiness (read only)",
+      "startedAt": "2026-10-30T02:53:15Z",
+      "status": "COMPLETED",
+      "workflowName": "Phase 3 High Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T02:46:04Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/8bcca70f-0e39-4328-9fe3-31f0cf4ebf75",
+      "name": "Cloudflare Pages",
+      "startedAt": "2026-10-30T02:46:04Z",
+      "status": "COMPLETED",
+      "workflowName": ""
+    },
+    {
+      "__typename": "StatusContext",
+      "context": "Vercel",
+      "startedAt": "2026-10-30T02:45:12Z",
+      "state": "SUCCESS",
+      "targetUrl": "https://vercel.com/venomog/trading101/Eb9NZvA8UaENsxe3vJvRRRuuU3fD"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T02:45:17Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://vercel.com/github",
+      "name": "Vercel Preview Comments",
+      "startedAt": "2026-10-30T02:45:17Z",
+      "status": "COMPLETED",
+      "workflowName": ""
+    }
+  ],
+  "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/266",
+  "observedAt": "2026-10-30T02:53:36.448330+00:00"
+}

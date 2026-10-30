@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-30T02:48:32.045175+00:00",
+  "rows": [
+    {
+      "pr": 265,
+      "url": "https://2f304939.tradehq-preview.pages.dev",
+      "status": 403,
+      "bodySummary": "error code: 1010\n"
+    },
+    {
+      "pr": 265,
+      "url": "https://trading101-ejwnlwt8c-venomog.vercel.app",
+      "status": 200,
+      "bodySummary": "HTML received; not a browser review"
+    },
+    {
+      "pr": 266,
+      "url": "https://8bcca70f.tradehq-preview.pages.dev",
+      "status": 403,
+      "bodySummary": "error code: 1010\n"
+    },
+    {
+      "pr": 266,
+      "url": "https://trading101-hqrlp84qo-venomog.vercel.app",
+      "status": 200,
+      "bodySummary": "HTML received; not a browser review"
+    }
+  ],
+  "scope": "Bounded ordinary GETs only. Provider deployment success is separate from actual browser review. No alternate-egress, protection bypass, DNS or infrastructure change.",
+  "subsequentReadinessCorrection": "Vercel initial GET200 responses follow redirects to Vercel login. All three real browser bootstrap attempts failed before candidate collection. Follow-up metadata confirms final origin/path https://vercel.com/login. No actual Vercel application browser pass; see VERCEL-PREVIEW-BROWSER-READINESS-20261030.json."
+}
