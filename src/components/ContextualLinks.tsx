@@ -64,15 +64,15 @@ export function ContextualLinks({ variant, asset, assetSymbols }: ContextualLink
     const learn = LEARN_FOR_TYPE[asset.type] || LEARN_FOR_TYPE.stock;
     return (
       <section
-        aria-label={`Learn more about ${asset.symbol}`}
+        aria-label={`General learning resources for ${asset.symbol} practice`}
         className="mt-8 p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06]"
       >
         <h2 className="text-base font-bold text-foreground mb-3 flex items-center gap-2">
           <BookOpen className="w-4 h-4 text-primary" />
-          Learn the fundamentals behind {asset.symbol}
+          Trading concepts for your {asset.symbol} practice
         </h2>
         <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-          Sharpen your {asset.name} trading thesis with these short, beginner-friendly explainers — then track your simulated {asset.symbol} positions in your{" "}
+          These general explainers cover trading concepts, not research or a valuation of {asset.name}. Use them alongside your simulated {asset.symbol} practice, then review positions in your{" "}
           <Link to="/portfolio" className="text-primary underline-offset-4 hover:underline">
             portfolio dashboard
           </Link>
