@@ -1,0 +1,131 @@
+{
+  "at": "2026-10-30T08:51:16.702831+00:00",
+  "outcome": "PARTIAL_HISTORICAL_VISUAL_REVIEW_DESKTOP_CAPTURES_QUALIFIED",
+  "personallyViewedSheets": [
+    {
+      "name": "practice-01.jpg",
+      "id": "practice-01",
+      "sourceCaptures": [
+        "practice-01-q1-360.png",
+        "practice-01-q1-1280.png",
+        "practice-01-q10-360.png",
+        "practice-01-q10-1280.png"
+      ],
+      "sha256": "fc94fd91dda0d8ac5557550c239037236e6c94f4e15f8b588c3888114898e7c9"
+    },
+    {
+      "name": "practice-11.jpg",
+      "id": "practice-11",
+      "sourceCaptures": [
+        "practice-11-q1-360.png",
+        "practice-11-q1-1280.png",
+        "practice-11-q10-360.png",
+        "practice-11-q10-1280.png"
+      ],
+      "sha256": "ed2b58ba1ee1a97193a9b212619ccf729ec69702c4c25954289c412478ba123d"
+    },
+    {
+      "name": "practice-21.jpg",
+      "id": "practice-21",
+      "sourceCaptures": [
+        "practice-21-q1-360.png",
+        "practice-21-q1-1280.png",
+        "practice-21-q10-360.png",
+        "practice-21-q10-1280.png"
+      ],
+      "sha256": "1af81e028307d7c370f387e321b9416722f2374eaf213dba287f59d617fbd29d"
+    },
+    {
+      "name": "practice-31.jpg",
+      "id": "practice-31",
+      "sourceCaptures": [
+        "practice-31-q1-360.png",
+        "practice-31-q1-1280.png",
+        "practice-31-q10-360.png",
+        "practice-31-q10-1280.png"
+      ],
+      "sha256": "65ce08534a98f15c96a523ce7a2f212fd699b8e623ef196aa035162cc604bd7e"
+    },
+    {
+      "name": "practice-41.jpg",
+      "id": "practice-41",
+      "sourceCaptures": [
+        "practice-41-q1-360.png",
+        "practice-41-q1-1280.png",
+        "practice-41-q10-360.png",
+        "practice-41-q10-1280.png"
+      ],
+      "sha256": "fed6e544947a5eaaecbb66e27e0bef9b5d467fb3b71a926b2f49777ee1f90f57"
+    },
+    {
+      "name": "practice-02.jpg",
+      "id": "practice-02",
+      "sourceCaptures": [
+        "practice-02-q1-360.png",
+        "practice-02-q1-1280.png",
+        "practice-02-q10-360.png",
+        "practice-02-q10-1280.png"
+      ],
+      "sha256": "8cc97620076c5165a2ecd0313f5b3a44063942431f31ed7560c7f59eac454588"
+    },
+    {
+      "name": "practice-12.jpg",
+      "id": "practice-12",
+      "sourceCaptures": [
+        "practice-12-q1-360.png",
+        "practice-12-q1-1280.png",
+        "practice-12-q10-360.png",
+        "practice-12-q10-1280.png"
+      ],
+      "sha256": "4b6570a0b794323ef514ddd6fb6e9cedca82ed9587680b054d5c16085a6f430b"
+    },
+    {
+      "name": "practice-22.jpg",
+      "id": "practice-22",
+      "sourceCaptures": [
+        "practice-22-q1-360.png",
+        "practice-22-q1-1280.png",
+        "practice-22-q10-360.png",
+        "practice-22-q10-1280.png"
+      ],
+      "sha256": "db2e5457745247bc93d9941fdd4c73a319c6110d370c1fc4a2cf768cfbad07f8"
+    },
+    {
+      "name": "practice-32.jpg",
+      "id": "practice-32",
+      "sourceCaptures": [
+        "practice-32-q1-360.png",
+        "practice-32-q1-1280.png",
+        "practice-32-q10-360.png",
+        "practice-32-q10-1280.png"
+      ],
+      "sha256": "1f7cf56115a1f2471bc216ce0834bd74b02fafe5b410a187b87b6070c42a6a48"
+    },
+    {
+      "name": "practice-42.jpg",
+      "id": "practice-42",
+      "sourceCaptures": [
+        "practice-42-q1-360.png",
+        "practice-42-q1-1280.png",
+        "practice-42-q10-360.png",
+        "practice-42-q10-1280.png"
+      ],
+      "sha256": "2879782a6c5a6f3ddbc3dd6d89f58ad0afae696117f5b545e12ca7a0dc8a183c"
+    }
+  ],
+  "count": 10,
+  "rawScreenshotsRepresented": 40,
+  "scope": "First/final checked-question viewport captures for10 historical isolated cases. Mobile text sharp in these new captures. Some cross-width desktop foreground text remains clipped despite fitting DOM bounds and scale1. These desktop images are diagnostic, not presentation approval. Mobile screenshots do not show every lower feedback/completion section; no complete question-state, five-width,source or current production credit.",
+  "caseSpecificNotes": {
+    "practice-01": "Position gain versus account return and separate rebalance branch remain explicit.",
+    "practice-11": "Fee decimal conversion and both transaction notionals needed for reproducibility. Cross-width clipped glyphs separately tested in fresh fixed desktop.",
+    "practice-21": "Observation age and matched-time/identity evidence distinguish refresh time from price evidence.",
+    "practice-31": "ETF look-through exposure and frozen-weight assumptions remain explicit.",
+    "practice-41": "Single outcome separated from decision-process quality.",
+    "practice-02": "Dollar impact combines position size and percentage change.",
+    "practice-12": "Fee charged on whole exit notional; alternative sale branches cannot both occur.",
+    "practice-22": "Hypothetical aggregation weights explicitly separate from provider facts.",
+    "practice-32": "Sample-dependent correlation limitations retained. Historical fixture predates approved chart correction; not a production regression or request to reapply it.",
+    "practice-42": "Observed return separated from hindsight explanations."
+  }
+}

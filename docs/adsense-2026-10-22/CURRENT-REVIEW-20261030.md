@@ -40,3 +40,9 @@ The release sequence remains held at PR263’s fresh public guest check. PR264, 
 The owner’s AdSense rejection message is generic. No additional rejection reason is available or requested. No final site-side readiness verdict or approval promise is issued while the audit remains incomplete.
 
 See [finding ledger](FINDINGS.json), [release ledger](RELEASE-LEDGER.json), [page audit](PAGE-AUDIT.json), [remaining work](UNFINISHED-SCOPE.json), and [nine-group report triage](evidence/OWNER-SUPPLIED-AUDIT-TRIAGE-20261030.json).
+
+## Further Daily review
+
+The historical Daily fixture has received a new settled-capture review. Forty new first/final-question viewport captures across ten cases were personally inspected, plus two fresh fixed-width desktop diagnostic captures. Some desktop captures made while switching widths contain clipped foreground glyphs despite fitting DOM bounds. The fresh fixed1280 case renders cleanly, so these captures are excluded from approval rather than treated as evidence for an application patch. Mobile screenshots remain partial viewport observations, not complete question-state or five-width/source verification.
+
+The fixture deliberately retains historical pre-correction practice32 data and uses an existing isolated build whose exact source commit was not re-established. It is not a new live-site verification. The complete Daily visual/source counters and production repair counts remain unchanged. See evidence/DAILY-SETTLED-REVIEW-20261030.md for the final rerun and review limits.

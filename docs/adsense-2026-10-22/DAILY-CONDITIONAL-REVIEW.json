@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T16:37:12.711882+00:00",
+  "updatedAt": "2026-10-30T08:51:16.702831+00:00",
   "publicBankId": "authored-2026-10-depth",
   "effectiveFrom": "2026-10-09",
   "source": "evidence/NORMAL-DAILY-REVIEWS-READ-ONLY-FOLLOWUP.json",
@@ -7068,5 +7068,19 @@
   "isolatedCompiledFunctionalCasesVerified": 50,
   "isolatedCompiledQuestionFeedbackSetsVerified": 500,
   "isolatedCompiledWidthObservations": 2500,
-  "isolatedFunctionalEvidence": "evidence/DAILY-CURRICULUM-ISOLATED-BROWSER.json"
+  "isolatedFunctionalEvidence": "evidence/DAILY-CURRICULUM-ISOLATED-BROWSER.json",
+  "historicalIsolatedPartialVisualFollowup": {
+    "personallyViewedFirstAndFinalQuestionPairs": 10,
+    "partialQuestionStates": 20,
+    "capturesPersonallyViewed": 40,
+    "completeQuestionVisualOrSourceCredit": false,
+    "evidence": "evidence/DAILY-SETTLED-PERSONAL-20261030.json",
+    "freshFixedDesktopDiagnostic": "evidence/DAILY-CURRICULUM-FIXED-WIDTH-PROBE-20261030.json",
+    "completeStateCountersUnchanged": true,
+    "settledRerunEvidence": "evidence/DAILY-CURRICULUM-SETTLED-BROWSER-20261030.json",
+    "settledFunctionalCases": 50,
+    "settledFunctionalQuestionStates": 500,
+    "settledFunctionalWidthObservations": 2500,
+    "report": "evidence/DAILY-SETTLED-REVIEW-20261030.md"
+  }
 }

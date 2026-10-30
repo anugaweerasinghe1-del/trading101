@@ -1,0 +1,195 @@
+{
+  "updatedAt": "2026-10-30T08:49:28.262Z",
+  "sourceBankId": "authored-2026-10-depth",
+  "sourceCapture": "NORMAL-DAILY-REVIEWS-READ-ONLY-FOLLOWUP.json",
+  "compiledArtifactProvenance": "Existing isolated dist; exact source commit not re-established. Historical public bank, including explicitly retained pre-correction practice32 fixture. Not current production verification.",
+  "scope": "Single historical practice11, fresh fixed1280 desktop browser.10 question/feedback interactions plus frozen-answer refresh verified; only first/final screenshots collected and personally viewed. No current-source,full-case visual,production or source-verification credit.",
+  "completedCases": 1,
+  "questionFeedbackSetsExercised": 10,
+  "outcome": "FUNCTIONAL_ASSERTIONS_PASS_READING_AND_QUALITY_REVIEW_SEPARATE",
+  "rows": [
+    {
+      "id": "practice-11",
+      "title": "The unchanged-price round trip",
+      "date": "2026-10-10",
+      "questions": [
+        {
+          "index": 1,
+          "prompt": "What is the fee on the $1,000 buy?",
+          "options": [
+            "$10",
+            "$0.10",
+            "$1"
+          ],
+          "correctAnswer": 2,
+          "chosenAnswer": 2,
+          "feedback": "A 0.1% fee is 0.001 times the trade value. Multiplying $1,000 by 0.001 gives $1. Converting a percentage to a decimal correctly matters before using any fee estimate.",
+          "checkedWidths": [
+            1280
+          ]
+        },
+        {
+          "index": 2,
+          "prompt": "What is the net result of the flat-price round trip?",
+          "options": [
+            "No gain or loss",
+            "A $1 gain",
+            "A $2 loss"
+          ],
+          "correctAnswer": 2,
+          "chosenAnswer": 0,
+          "feedback": "The buy debits $1,001 and the sale credits $999. Subtract the debit from the credit to obtain \u2212$2. The asset made no price gain, but both fees affected the account.",
+          "checkedWidths": [
+            1280
+          ]
+        },
+        {
+          "index": 3,
+          "prompt": "Would doubling the number of identical round trips remove that loss?",
+          "options": [
+            "Yes; fees cancel each other",
+            "Yes; a flat price ensures break-even",
+            "No; it doubles these assumed fees"
+          ],
+          "correctAnswer": 2,
+          "chosenAnswer": 2,
+          "feedback": "Two identical round trips incur $4 of fees under these inputs. More activity alone does not create an edge. This case deliberately excludes other execution costs, so real-world costs could differ.",
+          "checkedWidths": [
+            1280
+          ]
+        },
+        {
+          "index": 4,
+          "prompt": "What is total notional for one complete $1,000 buy and $1,000 sell?",
+          "options": [
+            "$0",
+            "$2,000",
+            "$1,000"
+          ],
+          "correctAnswer": 1,
+          "chosenAnswer": 2,
+          "feedback": "The buy and sale each count toward turnover, giving $2,000 total. Turnover measures traded notional, not equity earned or the final holding remaining.",
+          "checkedWidths": [
+            1280
+          ]
+        },
+        {
+          "index": 5,
+          "prompt": "What net cash arrives from the unchanged-price $1,000 sale?",
+          "options": [
+            "$999",
+            "$1,000",
+            "$1,001"
+          ],
+          "correctAnswer": 0,
+          "chosenAnswer": 0,
+          "feedback": "Subtract the $1 sale fee from $1,000 gross proceeds. The buy fee is separate and must also be counted when reviewing the entire round trip.",
+          "checkedWidths": [
+            1280
+          ]
+        },
+        {
+          "index": 6,
+          "prompt": "How many transactions occur across five of these round trips?",
+          "options": [
+            "5 transactions",
+            "20 transactions",
+            "10 transactions"
+          ],
+          "correctAnswer": 2,
+          "chosenAnswer": 0,
+          "feedback": "Each round trip includes one buy and one sell. Five completed pairs therefore contain ten fee-bearing transactions rather than only five.",
+          "checkedWidths": [
+            1280
+          ]
+        },
+        {
+          "index": 7,
+          "prompt": "What total fee is charged across those five flat-price round trips?",
+          "options": [
+            "$2",
+            "$10",
+            "$5"
+          ],
+          "correctAnswer": 1,
+          "chosenAnswer": 1,
+          "feedback": "Ten transactions each cost $1, giving $10 total fees. The absence of price movement does not erase the accumulated costs of repeated activity.",
+          "checkedWidths": [
+            1280
+          ]
+        },
+        {
+          "index": 8,
+          "prompt": "What combined gross price gain would cover those $10 fees exactly?",
+          "options": [
+            "$10",
+            "$0",
+            "$5"
+          ],
+          "correctAnswer": 0,
+          "chosenAnswer": 1,
+          "feedback": "Net result equals gross price gain minus costs. In this fixed-notional worksheet, a $10 gross gain covers the stated $10 charges without creating positive net profit.",
+          "checkedWidths": [
+            1280
+          ]
+        },
+        {
+          "index": 9,
+          "prompt": "Does a fee-free hypothetical chart establish a fee-free execution ledger?",
+          "options": [
+            "Yes; all flat charts imply zero costs",
+            "Yes; a plotted quote already includes every user fee",
+            "No; the transaction rules must also be checked"
+          ],
+          "correctAnswer": 2,
+          "chosenAnswer": 2,
+          "feedback": "A chart records prices, while an execution ledger records units, cash and applicable charges. The two must be combined before evaluating net performance.",
+          "checkedWidths": [
+            1280
+          ]
+        },
+        {
+          "index": 10,
+          "prompt": "Which record would make this repeated-trading review reproducible?",
+          "options": [
+            "Only the final asset symbol",
+            "Both transaction notionals and each fee",
+            "Only the count of profitable-looking charts"
+          ],
+          "correctAnswer": 1,
+          "chosenAnswer": 2,
+          "feedback": "Recording the buy and sell notionals and charges lets another reader reconstruct net cash. A chart or trade count alone does not identify the costs.",
+          "checkedWidths": [
+            1280
+          ]
+        }
+      ],
+      "refreshAndFirstAnswerPreserved": true
+    }
+  ],
+  "runtimeErrors": [],
+  "preventedProtectedRequests": [
+    {
+      "method": "GET",
+      "host": "pagead2.googlesyndication.com",
+      "path": "/pagead/js/adsbygoogle.js"
+    },
+    {
+      "method": "GET",
+      "host": "fonts.googleapis.com",
+      "path": "/css2"
+    }
+  ],
+  "failure": null,
+  "personallyViewedScreenshots": [
+    {
+      "name": "practice-11-q1-1280.png",
+      "sha256": "20faed97b86a8b0a828085b05df5eef74639460e000d942a4e1fea03ff3e0e68"
+    },
+    {
+      "name": "practice-11-q10-1280.png",
+      "sha256": "676bae62c645870af4ca050345874d5eab71c4f1bcb9ebdced76374089fc35cf"
+    }
+  ],
+  "assessment": "Both screenshots personally viewed: full question/options/feedback and final completion visible without cross-width glyph clipping. Does not establish an application defect or claim a browser root cause beyond this bounded comparison."
+}

@@ -18,13 +18,13 @@
     },
     {
       "path": "CURRENT-REVIEW-20261030.md",
-      "bytes": 6583,
-      "sha256": "386a8dabf946302cd55535900bd94e1c742dd149eb2112b10d5cc21b2e2c12b0"
+      "bytes": 7583,
+      "sha256": "0f01078bc03bb64e5b7474aa3068b549e9927cac471c2655a207b779a41069ea"
     },
     {
       "path": "DAILY-CONDITIONAL-REVIEW.json",
-      "bytes": 376080,
-      "sha256": "8411ad0afff5425bc31fecdcc63adb052931e6410270af375147d74c8eef860d"
+      "bytes": 376782,
+      "sha256": "eedf1f9f8a36e502639ce6430db5de728b0a0d56eecf1f0fe78d2b4c15b68d5c"
     },
     {
       "path": "FAQ-REVIEW-NOTES.json",
@@ -497,6 +497,11 @@
       "sha256": "3870c428c50734d40995463d6d46444f9031cad4ce3a68b7247954f67324c9d3"
     },
     {
+      "path": "evidence/DAILY-CURRICULUM-FIXED-WIDTH-PROBE-20261030.json",
+      "bytes": 7466,
+      "sha256": "3f0d42a48ed4b684bc8abe14826229f9822ed5ff1f3ec16abf53df4b94bc06eb"
+    },
+    {
       "path": "evidence/DAILY-CURRICULUM-HARNESS-CORRECTION.json",
       "bytes": 705,
       "sha256": "6d557c356cfc324620887222ac695f0a534bba699676dfe48efe813257aa987d"
@@ -510,6 +515,16 @@
       "path": "evidence/DAILY-CURRICULUM-ISOLATED-BROWSER.json",
       "bytes": 332996,
       "sha256": "822a9cbaa612f2eef854ed514ec3cb7dcf5f00ca5a4137d4059ade2c8e2e9c53"
+    },
+    {
+      "path": "evidence/DAILY-CURRICULUM-SETTLED-BROWSER-20261030.json",
+      "bytes": 333154,
+      "sha256": "2e4f015bf8bb5e3824ad95faf6ce19b85008a6229462a6c30fd8b51c9c3b4ad0"
+    },
+    {
+      "path": "evidence/DAILY-FIXED-WIDTH-INITIAL-INVALID-BANK-20261030.json",
+      "bytes": 5987,
+      "sha256": "fc42da6aaff68f14d5393ec65cc185888e44dc0ab0a7b7827f8cec8e8d7d5669"
     },
     {
       "path": "evidence/DAILY-PRACTICE-18-VISUAL-REPRODUCTION.json",
@@ -545,6 +560,26 @@
       "path": "evidence/DAILY-PUBLISHER-AUTHENTICATION-PATH.json",
       "bytes": 895,
       "sha256": "d6dc942098bda67c34eae804abbc52a9215e546d4032f5f2281422f90ac8b804"
+    },
+    {
+      "path": "evidence/DAILY-SETTLED-ARTIFACT-PROVENANCE-20261030.json",
+      "bytes": 93702,
+      "sha256": "b3d2974353bc058672eb45396fdb2ff4ec3c1e40ff1aceed964b5753007df28e"
+    },
+    {
+      "path": "evidence/DAILY-SETTLED-LAYOUT-DIAGNOSTIC-20261030.json",
+      "bytes": 1346,
+      "sha256": "62f73c54b8529c96e04f9f84b4f5d046d32b056240007ee00686a587b87725b5"
+    },
+    {
+      "path": "evidence/DAILY-SETTLED-PERSONAL-20261030.json",
+      "bytes": 5089,
+      "sha256": "e5ac4970cd61836a6525cf6a2709a999979f915fcaa93d4739092aef6b014dee"
+    },
+    {
+      "path": "evidence/DAILY-SETTLED-REVIEW-20261030.md",
+      "bytes": 2429,
+      "sha256": "f332dfb32c30d1f4d500a2c52978fc9ba90dc007a4a23b954916412cb806900e"
     },
     {
       "path": "evidence/DIRECTORY-TOP-BOUND-BEFORE-20261028.json",
@@ -1173,8 +1208,8 @@
     },
     {
       "path": "evidence/NETWORK-ACCESS-20261030-CLOUDFLARE-RECHECK.json",
-      "bytes": 2423,
-      "sha256": "8d777229b4488d644e35578aa96568a7736ef04974bc18404465a8581a3e3620"
+      "bytes": 2793,
+      "sha256": "28dc0bbdf4eda1ea77e25b7df75d544baf282d289425ddf2af43bd16e3158174"
     },
     {
       "path": "evidence/NETWORK-RECONNECTED-20261027.json",
@@ -5622,6 +5657,16 @@
       "sha256": "78fb143f9988c775a591ea47d5e0db89557e54791be8dd7c1da5b31a6595aaa0"
     },
     {
+      "path": "evidence/daily-curriculum-fixed-width-probe-20261030/practice-11-q1-1280.png",
+      "bytes": 298116,
+      "sha256": "20faed97b86a8b0a828085b05df5eef74639460e000d942a4e1fea03ff3e0e68"
+    },
+    {
+      "path": "evidence/daily-curriculum-fixed-width-probe-20261030/practice-11-q10-1280.png",
+      "bytes": 327499,
+      "sha256": "676bae62c645870af4ca050345874d5eab71c4f1bcb9ebdced76374089fc35cf"
+    },
+    {
       "path": "evidence/daily-practice-18-visual/before-1280.png",
       "bytes": 80089,
       "sha256": "51f444ed441e11e4a1fc505c5de32a56829fbe30d200803b8961216862cd46b3"
@@ -5690,6 +5735,56 @@
       "path": "evidence/daily-published-correlation-before/visual-360.png",
       "bytes": 179906,
       "sha256": "917736ba2fa403b16330e831fafdeec1bf75f04a0c687acabc4877c2d69769df"
+    },
+    {
+      "path": "evidence/daily-settled-personal-20261030/practice-01.jpg",
+      "bytes": 387595,
+      "sha256": "fc94fd91dda0d8ac5557550c239037236e6c94f4e15f8b588c3888114898e7c9"
+    },
+    {
+      "path": "evidence/daily-settled-personal-20261030/practice-02.jpg",
+      "bytes": 381677,
+      "sha256": "8cc97620076c5165a2ecd0313f5b3a44063942431f31ed7560c7f59eac454588"
+    },
+    {
+      "path": "evidence/daily-settled-personal-20261030/practice-11.jpg",
+      "bytes": 372861,
+      "sha256": "ed2b58ba1ee1a97193a9b212619ccf729ec69702c4c25954289c412478ba123d"
+    },
+    {
+      "path": "evidence/daily-settled-personal-20261030/practice-12.jpg",
+      "bytes": 380568,
+      "sha256": "4b6570a0b794323ef514ddd6fb6e9cedca82ed9587680b054d5c16085a6f430b"
+    },
+    {
+      "path": "evidence/daily-settled-personal-20261030/practice-21.jpg",
+      "bytes": 390048,
+      "sha256": "1af81e028307d7c370f387e321b9416722f2374eaf213dba287f59d617fbd29d"
+    },
+    {
+      "path": "evidence/daily-settled-personal-20261030/practice-22.jpg",
+      "bytes": 409707,
+      "sha256": "db2e5457745247bc93d9941fdd4c73a319c6110d370c1fc4a2cf768cfbad07f8"
+    },
+    {
+      "path": "evidence/daily-settled-personal-20261030/practice-31.jpg",
+      "bytes": 391069,
+      "sha256": "65ce08534a98f15c96a523ce7a2f212fd699b8e623ef196aa035162cc604bd7e"
+    },
+    {
+      "path": "evidence/daily-settled-personal-20261030/practice-32.jpg",
+      "bytes": 405463,
+      "sha256": "1f7cf56115a1f2471bc216ce0834bd74b02fafe5b410a187b87b6070c42a6a48"
+    },
+    {
+      "path": "evidence/daily-settled-personal-20261030/practice-41.jpg",
+      "bytes": 415886,
+      "sha256": "fed6e544947a5eaaecbb66e27e0bef9b5d467fb3b71a926b2f49777ee1f90f57"
+    },
+    {
+      "path": "evidence/daily-settled-personal-20261030/practice-42.jpg",
+      "bytes": 381266,
+      "sha256": "2879782a6c5a6f3ddbc3dd6d89f58ad0afae696117f5b545e12ca7a0dc8a183c"
     },
     {
       "path": "evidence/etf-directory-local/markets-1280-dark.png",
@@ -24932,6 +25027,11 @@
       "sha256": "732f211d1f1ac9522ce540daa9a6fd590b23f9687da460752acf61d052e43b94"
     },
     {
+      "path": "evidence/owner-report-primary-20261030/elliott-independent-retrieval-recheck.json",
+      "bytes": 670,
+      "sha256": "a03ca544d70febb09a875b23ad99bb32c42931e53e162ed11243e440a5a00801"
+    },
+    {
       "path": "evidence/owner-report-primary-20261030/elliott-publisher-retrieval.json",
       "bytes": 191,
       "sha256": "12afd35c48eccf872e343ae07c62f3bd1d1ea255c0ce387abcde3709c3819f66"
@@ -32012,6 +32112,21 @@
       "sha256": "68056188e3ac0f0749c7827ddbc60020bc0ca8bcf02efad6d0361fd742f5394f"
     },
     {
+      "path": "verification/daily-curriculum-settled-review-20261030.mjs",
+      "bytes": 10800,
+      "sha256": "452148e1aed2062015d2534df1c3db4c7bfb6c5feb45ac6aef6b4969c104ad6b"
+    },
+    {
+      "path": "verification/daily-fixed-width-probe-20261030.mjs",
+      "bytes": 10836,
+      "sha256": "90d0e273197e6822bfa2a68631c7b393cc98e9aa1b3afe7531f39941bad626b8"
+    },
+    {
+      "path": "verification/daily-settled-contacts-20261030.py",
+      "bytes": 1083,
+      "sha256": "d3b6a29aa33289e9df5d048bccfa0e5ce457e32cd67cd3254c77a9bc75669596"
+    },
+    {
       "path": "verification/finish-243-review.py.txt",
       "bytes": 7449,
       "sha256": "61521d8c6b3de04b05d7ed94ff16d864ad3db20f349f69e531db9012634cd048"
@@ -32452,7 +32567,7 @@
       "sha256": "75c029c85b57a6d5253685eaf559c5f27e0f41b95cc64f25a1b7c81e4427287b"
     }
   ],
-  "fileCount": 6490,
-  "totalBytes": 1455176184,
-  "generatedAt": "2026-10-30T02:59:28.487969+00:00"
+  "fileCount": 6513,
+  "totalBytes": 1460192573,
+  "generatedAt": "2026-10-30T08:54:05.171775+00:00"
 }

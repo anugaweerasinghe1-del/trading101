@@ -1,0 +1,2544 @@
+{
+  "at": "2026-10-30T08:44:53.717154+00:00",
+  "files": [
+    {
+      "path": "_redirects",
+      "sha256": "682acfb0ef0fb1c7164fe976af115b2935188e7ad3a7987ceb9992fac680f66d"
+    },
+    {
+      "path": "about/index.html",
+      "sha256": "b5e0a007abbc788005f8d1295256afbb8dfff12d8bc3547118ebe70eccc94e18"
+    },
+    {
+      "path": "admin/ai/index.html",
+      "sha256": "a5922c0feb199ed69f39526849ee9067d4d3790ba7c7d10871e7ef9f7789fea6"
+    },
+    {
+      "path": "admin/courses/index.html",
+      "sha256": "d5a4155025322ee37a99f4a87152faf8c1eaa8db0a4503e195815a9913289e6f"
+    },
+    {
+      "path": "admin/daily/index.html",
+      "sha256": "5f30b2dff115d9e2a686d5ececb3a3eb912efd1de6f9af8d4e33e1787ad3e8ff"
+    },
+    {
+      "path": "admin/editor/index.html",
+      "sha256": "1e3bc50af75412335ade30bb792e549bb15b58bc02df0963eb108fa76e7a9999"
+    },
+    {
+      "path": "admin/index.html",
+      "sha256": "900ac01a7e0a5e3a4713fe0ec1e1fef901c9d0465704c228c9eadd4d9723e53e"
+    },
+    {
+      "path": "admin/reviews/index.html",
+      "sha256": "03c66f177c153add93dfaf41bb61a200b0075939694963ed61a716e397a4ff00"
+    },
+    {
+      "path": "admin/seo-audit/index.html",
+      "sha256": "cf2e901948d3e288defcdde6e338bc38209b519d69d1a2f82f3226d92c6f869d"
+    },
+    {
+      "path": "admin/validator/index.html",
+      "sha256": "015205602011e308f13350101581442bc428a160e6002f0219434360b195fb86"
+    },
+    {
+      "path": "ads.txt",
+      "sha256": "89da9e74466a0163a4f0fe39d05768864c20f3aaa440ffda10aa19a71aa60c12"
+    },
+    {
+      "path": "ai-mentor/index.html",
+      "sha256": "559abb676f35cfb8a1ae217f5d1130f48ce2de120bcafbd4a3dda530ad212bf5"
+    },
+    {
+      "path": "app-shell.html",
+      "sha256": "aae713178ed3417ab67b57aeb231f87efe81a36ac27bd1369ad017437405895d"
+    },
+    {
+      "path": "assets/AIMentor-BRRAJNHv.js",
+      "sha256": "e3571ea249bd2d8d3141f0bacbd94fe95f860ba2abe3cccf48f3d8919f334d60"
+    },
+    {
+      "path": "assets/About-B4q0U3TA.js",
+      "sha256": "5885633a8b588eb39a844ad631aae53d36f9fa21fac47d6eda7c91b06d5d4716"
+    },
+    {
+      "path": "assets/AdminAIAssistant-CdhScAsC.js",
+      "sha256": "843e7edf528d5e346b6114ab88faa42d485d815632c48e87d951182e6dcb0bc9"
+    },
+    {
+      "path": "assets/AdminCourses-q1N5Hign.js",
+      "sha256": "a721060e62d0f9fd48b5e4ed18ba1c37de48b4a77438dac2541a1ded8ace3a3f"
+    },
+    {
+      "path": "assets/AdminDaily-402t0r-7.js",
+      "sha256": "bf47911867764a3de5b6b1e365ba8708a6c59652629d37163c314cf41f0bcb51"
+    },
+    {
+      "path": "assets/AdminDashboard-DF4qi714.js",
+      "sha256": "512612070e4728ab7e0fd8144b8b10b3ba7238ca4b6d29c9b71445f66e5ebea0"
+    },
+    {
+      "path": "assets/AdminEditor-Dytv-D0V.js",
+      "sha256": "14c9b71dac155c55296a511f35cd5b72dad81375a52d7b286478c94e617b26cd"
+    },
+    {
+      "path": "assets/AdminReviews-Cs1bRW63.js",
+      "sha256": "76a324c22b6f261a9d3de6a798efa7fccd04bea5c1a66fb4cd6abec10929959b"
+    },
+    {
+      "path": "assets/AdminValidator-CQ5c8MUk.js",
+      "sha256": "0a63ec7cf14eaa55ec172d77624e5b0e610c46f7e711273799b46b29117076ca"
+    },
+    {
+      "path": "assets/AssetFAQSection-CFQqEqB-.js",
+      "sha256": "828f2b7d903fbe2ec333c696dcc60e78c35fccdd9c6a6a4f5c3140db390bdca4"
+    },
+    {
+      "path": "assets/Auth-D_f9xWzV.js",
+      "sha256": "a0dcd265388a2a096a2fd0ea0881eeea12d6808e6d555d239d707d5496f201ee"
+    },
+    {
+      "path": "assets/Breadcrumb-BvqqIAGX.js",
+      "sha256": "75aa2e9d8b8a9978f0c42d1d9edb278ac462347b82b66864252e99228cf537ec"
+    },
+    {
+      "path": "assets/Breadcrumbs-CFwa7llE.js",
+      "sha256": "0cfbb4f93ce66100deeff91b1ea80d1cc1559acaa7ce85cf517534c84f0b00c1"
+    },
+    {
+      "path": "assets/Challenge-CrdAo6Gu.js",
+      "sha256": "a3f1a4b011fa364dc28112c510f14648336112f1e9ce1f14e1ba8de6e38ebc23"
+    },
+    {
+      "path": "assets/Compare-ROed9pHs.js",
+      "sha256": "55514c0ec39da775ec741d860ddcd7e3a15777f1b8d404e7b582e03de73feb8a"
+    },
+    {
+      "path": "assets/Contact-DimZ98Tk.js",
+      "sha256": "d66a05fd6daad2dfefbdea01b2b9526d40b634d07ea0848f6c09f65831304661"
+    },
+    {
+      "path": "assets/ContextualLinks-CbJm4gTC.js",
+      "sha256": "c62e074580fb0c9485c2047bb069eaae144ca98d5133a4515f13ae88ee687915"
+    },
+    {
+      "path": "assets/CountryGuide-DkHO_WnQ.js",
+      "sha256": "3561cf5222dbcc63a4a4689ce42ce496c84048dfcdfb6fda9b2061a25c44a331"
+    },
+    {
+      "path": "assets/CourseLesson-Bd98SkLK.js",
+      "sha256": "8fa594d441d6fd52ea044ce4e1c61d415f8bcf872bd9baa4b01229569d3518c3"
+    },
+    {
+      "path": "assets/CourseTrack-v8_A5wYw.js",
+      "sha256": "24f7983b9b233f143d5b8b153b22e875836dd611ecc899654290dfd994850a27"
+    },
+    {
+      "path": "assets/Courses-DBZRqUgz.js",
+      "sha256": "087085ee0064065ab3a6674fd6318a87ee40f2926f89f0cc39c9b9f2390f055c"
+    },
+    {
+      "path": "assets/Daily-Ce6fst1t.js",
+      "sha256": "81373ad45f7a4ebaaf8447f4b21be077ca363472a823661480d0bd437fa4ad72"
+    },
+    {
+      "path": "assets/DailyPractice-CDhnlWuQ.js",
+      "sha256": "ef74e51fdd2384d1f1513a1f4e209207be1059dea7b338fa52c21e2fedab89e4"
+    },
+    {
+      "path": "assets/HowToTrade-XSuAG8bl.js",
+      "sha256": "602cbaf9e85992888f82d3d013f5bf86d1e09e65315fe465f1936d6d8a4c0618"
+    },
+    {
+      "path": "assets/Leaderboard-D1S7J0Zk.js",
+      "sha256": "e2c54f7c9ad08c42599ada3903fc60d691c80b5fe1baff537a4487964e92e3b6"
+    },
+    {
+      "path": "assets/Learn-CCI9Y0c1.js",
+      "sha256": "878c51c071b65882d2e7dd3918b7d8aeee3bec4c9a795653810ae8d46ef03635"
+    },
+    {
+      "path": "assets/LearnArticle-DedrXXgM.js",
+      "sha256": "a01d93e566f9d604dd0dffd85b36cfc6bb03c38fcbedf523b876a29ac3e62e87"
+    },
+    {
+      "path": "assets/LearnTradingGuide-C7q9A8PD.js",
+      "sha256": "54420014d8e63d20df52c8a2a6cc46b51a218c68a761b58f7b52f6ab26fe4dfe"
+    },
+    {
+      "path": "assets/LessonDetail-2DxaSe05.js",
+      "sha256": "801392d83870dbd26d28d594531d4a4462931df5ecbb6e75ad151daf7dfc73b5"
+    },
+    {
+      "path": "assets/Markets-DLWUfY5N.js",
+      "sha256": "dd1ca18ea0ad4303d8edb58fa379909377a4e0bbdd5528af142ae06cbcc62d52"
+    },
+    {
+      "path": "assets/MobileOrderDrawer-DGMr_3Oi.js",
+      "sha256": "bfa1a7d6f02d6c99bc450011e0e07a068e05bc2725f5c2b747a2966176972ab1"
+    },
+    {
+      "path": "assets/NicheAsset-KaxJGDK-.js",
+      "sha256": "767fb76a01e32e82f74385eca4c9a420bb4546086cefe06d2d78b232fe7cb185"
+    },
+    {
+      "path": "assets/NotFound-BgI0Q5VP.js",
+      "sha256": "27cbe18497b4f1040cfa12b2cd18b9c52b0644ad6116d3e37b4d4313fffdf883"
+    },
+    {
+      "path": "assets/Portfolio-B9FtCtgC.js",
+      "sha256": "ca432b2a862c22ca8a7e0e29550088ace0accb75638c80a625a7ad765d534965"
+    },
+    {
+      "path": "assets/Privacy-B7nz1n1y.js",
+      "sha256": "2402874693f1cf73deb08816589336f56d6f54db4300770b41310191bd71efc1"
+    },
+    {
+      "path": "assets/PublicTrader-C3SdkSAS.js",
+      "sha256": "d2ecf3ddcf7421643d3a72670229d90e334b8fd257e5342c5f573d2c5c225c8c"
+    },
+    {
+      "path": "assets/ResetPassword-CT7vzq-G.js",
+      "sha256": "002a7924d6c50876f83af719adb5446de7baa08ffce9df6c25dadf3247496bb4"
+    },
+    {
+      "path": "assets/Reviews-s3GY6ig2.js",
+      "sha256": "68572f392efbbaf38e7cfcf5f0643e45bc1f221ec68eaf2aaed6a4960eaba148"
+    },
+    {
+      "path": "assets/Roadmap-B5WWT2Xu.js",
+      "sha256": "1f8490031acb20497958f96f345119d728db8ad78749767296d7a67d2c30b81b"
+    },
+    {
+      "path": "assets/SEOAudit-BKcBNYc7.js",
+      "sha256": "5627e5455f1fd2fdc37d75989392f27e42e8660d80a8537bfc39a3eee7e59eaf"
+    },
+    {
+      "path": "assets/SEOSection-Cb2cKAHi.js",
+      "sha256": "c697b4c2c010ae87daf304067a9a3303143557b749f97830c7d57fa2b2b22dde"
+    },
+    {
+      "path": "assets/SectorPillar-D9GDbfds.js",
+      "sha256": "8ec1d0ad2f2b6225de4c0c0c5cab0e376beec24fa7dbfa3991fc41233bcab70a"
+    },
+    {
+      "path": "assets/Strategy-B40Klx8a.js",
+      "sha256": "b808975cfe70b79fd6ede27efefcfb6f0f9f7597073de78fff3118cc3e454e2e"
+    },
+    {
+      "path": "assets/Terms-bZexJAFD.js",
+      "sha256": "2fc61c6150ef7fca4d49292a9c22066976a00d109a25f0736a5ceb1e318bf71e"
+    },
+    {
+      "path": "assets/Trade-Bc-0ZHq3.js",
+      "sha256": "6edf3c346a501f17d616f348a4b402cab8fddea069574d5b684e526726ea74a7"
+    },
+    {
+      "path": "assets/TradeAsset-CFqg4oUO.js",
+      "sha256": "d666a0011ffcb205e7a80c64bfa540fd69062b155da7fa8a07581e6b44e9ec6e"
+    },
+    {
+      "path": "assets/TraderProfile-stU64ql7.js",
+      "sha256": "95bea0f2b8e6310e430f4d98e2aab2171847df756fbf8cd5ecb91fc7beb5df12"
+    },
+    {
+      "path": "assets/WikiIndex-CUHS3LWe.js",
+      "sha256": "507555f7d91a0ba3dbd0d6f5e854cfc68daf091309101f8d19536f3d8a693bdc"
+    },
+    {
+      "path": "assets/WikiTerm-C8-e7gSB.js",
+      "sha256": "3991a156c582d65c4338d8b7e43857a88d99ea124dd027ba00a56e21e01d7f38"
+    },
+    {
+      "path": "assets/arrow-left-pxM5pSRn.js",
+      "sha256": "60a0972f86dbce4c5e03c06d90f51c660a9a07f9c7b9cb1abf19c8fbad2c863f"
+    },
+    {
+      "path": "assets/building-2-M-VzeaY3.js",
+      "sha256": "046a5591609a2b0cb4d57551fcb3767847e9268bec37441f0cb33aa5521e6553"
+    },
+    {
+      "path": "assets/chart-pie-BxgF9Hl-.js",
+      "sha256": "ff9694804112d6142176f8051c29f9a033e89162128d78cbb1cbe8a17faf22f4"
+    },
+    {
+      "path": "assets/circle-check-big-D3j_DQB0.js",
+      "sha256": "377cf835c59455929c1d0c5abf6147d53c4448a4d087558c0ba82ee3f19e16a8"
+    },
+    {
+      "path": "assets/circle-x-CrYmR2d-.js",
+      "sha256": "1dd1d9fa4a9d13c0fa34085853d9005de0f3a3a679b1f75c786d5272beeee459"
+    },
+    {
+      "path": "assets/constants-6wIDjO2B.js",
+      "sha256": "dbc09c783db42299f4ca57e63da38ce961a0c31049d413b7551daceec86e60ca"
+    },
+    {
+      "path": "assets/copy-DPWr5S3l.js",
+      "sha256": "f205ad9e39fad4daf7c49e581a672ed20b84bee497029dbe56946d0d831c4d1b"
+    },
+    {
+      "path": "assets/countryGuides-uEB0OY8r.js",
+      "sha256": "24b3b315d068d6de54212257856759374ef9e075499e6a202111d4ff5d20303f"
+    },
+    {
+      "path": "assets/course-diversification-DMCc5i8A.jpg",
+      "sha256": "98493dcfc905f83aa0dbc19c71cdfc30aafde27984c3fb2bc3b6ec9650553012"
+    },
+    {
+      "path": "assets/course-goals-DUiNfiqI.jpg",
+      "sha256": "484fc2aff2700c6e18be591d879b78bc42f14c5348ebc9a3b9064b1f5bafce30"
+    },
+    {
+      "path": "assets/course-market-trends-7Z9slysK.jpg",
+      "sha256": "8f882be2c2a31348fc2ba2161282a063a750eb26f82b6bf77b03847c1e1183cb"
+    },
+    {
+      "path": "assets/course-risk-management-Bl31WepL.jpg",
+      "sha256": "ea3afafdccbb2635cf0db895de62d30e0eb2ba8ba2e00bf5ba6ba276dc95a346"
+    },
+    {
+      "path": "assets/course-technical-analysis-KE1-DUmL.jpg",
+      "sha256": "912be542e12b37cfd997b98149567904a4827660683087cd0507e10272739cfc"
+    },
+    {
+      "path": "assets/course-trading-basics-DwSXdGM_.jpg",
+      "sha256": "33ba35b3b2abbb7d752ed2f76bf714c6cff70a5b6368f2f10ebe58ceb59805aa"
+    },
+    {
+      "path": "assets/courseDocument-B7NmDWKR.js",
+      "sha256": "8cff4755b308490257af2f043835eb39174a7e67e874914e05d31a8a63d0d2e7"
+    },
+    {
+      "path": "assets/earth-D_gr3aLh.js",
+      "sha256": "a1ef49a5baae0a082669f3e0f5e5ca55760dd9af4f440e06e2b58078c49ae85b"
+    },
+    {
+      "path": "assets/external-link-pAmT3bzV.js",
+      "sha256": "35846442ffb12a7162d0af8d1f0512f1371d5961645dfd0b9bb6556e2ca06d20"
+    },
+    {
+      "path": "assets/file-text-BF8aIVf9.js",
+      "sha256": "6bde85e89e6338e3e6e6515632b307a37666deadaf8fea7646468620b846ba6d"
+    },
+    {
+      "path": "assets/futures-hero-DsjhfM9Q.jpg",
+      "sha256": "fdfc322fb408762117f1faf1b7da62a3331d11e6b2acd05ea09bfb1b49f0232f"
+    },
+    {
+      "path": "assets/generateCategoricalChart-Btm_gUDS.js",
+      "sha256": "c8dd48d9842508b8c276ba1c80b6f3dd5251814ef3982a029f00e24d7750957e"
+    },
+    {
+      "path": "assets/index-BWyNWk50.js",
+      "sha256": "b992aa4b273006eeb512bdf016b916e697e407efe9bbdf0f578b9ecb19941adf"
+    },
+    {
+      "path": "assets/index-BdQq_4o_.js",
+      "sha256": "302541c92aa7e2402be57fa8241a0d67e3b17496cdf3645c716ff3b239f03e28"
+    },
+    {
+      "path": "assets/index-DPFxIW8Y.js",
+      "sha256": "8d51211dfa3093c64a72ac01ba57d161b19f8c723cd5cea43b7ca49a9725fab6"
+    },
+    {
+      "path": "assets/index-DhOCj2We.css",
+      "sha256": "a4a3892b39c2ae3530f648be4bc673162e460bc7c46a777900f5131fbbca6705"
+    },
+    {
+      "path": "assets/index-j97jRlzt.js",
+      "sha256": "cf047716bc56385aa79a2fef9611363f8ff9cfbfab9e115662beaa8b719e5580"
+    },
+    {
+      "path": "assets/input-CKSIkIwp.js",
+      "sha256": "e9bc6d8bc801940d2bed2ab056367125ae166fad5f0d863ee9b230d145e6ba04"
+    },
+    {
+      "path": "assets/label-B3qPb55G.js",
+      "sha256": "015c7344afc56680f7d69e418c3b3362ce8229756afe189f14f2e74ab70938ba"
+    },
+    {
+      "path": "assets/learnArticles-Cqf0iOg5.js",
+      "sha256": "c1749fc7286c42630baad93c93b2b8ea94be4e6ecd8eb7db9de14d0a9a2b720d"
+    },
+    {
+      "path": "assets/lesson-asset-allocation-chart-DVtqTXKu.jpg",
+      "sha256": "2a52c1dc4752e0e6973d291e94ef99961fc96b235a6af07283bc132fb05422ca"
+    },
+    {
+      "path": "assets/lesson-candlestick-DmRwGOPR.jpg",
+      "sha256": "64f084c32e9b10eaa1461c1854a4b66cd79fd0fc15cb237ab9e770463d02197e"
+    },
+    {
+      "path": "assets/lesson-etf-diversification-B9k2yzv8.jpg",
+      "sha256": "9736b366aa19ebb0a972dc0c346271eab00093c471830dfa845212f9eec61d1a"
+    },
+    {
+      "path": "assets/lesson-goals-roadmap-DT54pOzB.jpg",
+      "sha256": "86160d16bccf60626075b41e53a474ac886ae020207536f93ac61d07e788505c"
+    },
+    {
+      "path": "assets/lesson-market-trends-arrows-MNr4ZbbV.jpg",
+      "sha256": "025a672b324f7a227efa29856617270d34f9b29af7206a16804cdd650838bff4"
+    },
+    {
+      "path": "assets/lesson-moving-averages-D8BJJV00.jpg",
+      "sha256": "4f455696ed9af08505954be67adc9bef60cf102d31fe0fd45b8d254f81307cc2"
+    },
+    {
+      "path": "assets/lesson-order-types-ZAuK3Qm7.jpg",
+      "sha256": "61bff30f7e6f7ea263b2604c702d545be25f3a4da5ec8c58654dfa836949c120"
+    },
+    {
+      "path": "assets/lesson-portfolio-allocation-BnShfUC6.jpg",
+      "sha256": "1f4bc27fa7b7071bd4e4b7dd21b08886a03550986232d255a0a7088d72d5a3d8"
+    },
+    {
+      "path": "assets/lesson-risk-management-DjODmvm4.jpg",
+      "sha256": "a8cd128357f1ae0e5f4b7f16d54b05f9096fa9699eb59d7e6dff0b2a2a70dd6b"
+    },
+    {
+      "path": "assets/lesson-risk-shield-DM8vDWpa.jpg",
+      "sha256": "3fe28f5e658f0f342bf7bbb090bff4ff93beb29de21ca39a606dffef805b7589"
+    },
+    {
+      "path": "assets/lesson-stocks-basics-DaVSsi2z.jpg",
+      "sha256": "013269a4784c219d4f92a7bf62704f071fc86179bcc1e6df2ee6a1ed22bb94dd"
+    },
+    {
+      "path": "assets/lesson-support-resistance-Bd1RO3it.jpg",
+      "sha256": "e173dd998a16ececa3e633d20972d3d8f1ec666d3382e824806a10ef8b4f5fb1"
+    },
+    {
+      "path": "assets/lesson-technical-indicators-CivyU1aX.jpg",
+      "sha256": "adf18d460709f89b234fef492deb36666943b709b7b215a39e017fa10e441d2b"
+    },
+    {
+      "path": "assets/lesson-trading-workspace-Ci3rhx2L.jpg",
+      "sha256": "31bea0c4f323fc11ab7831c5955ac62191d6b73f38dcf915031bbe5836a05b66"
+    },
+    {
+      "path": "assets/lightbulb-CpUbUfaQ.js",
+      "sha256": "ffdeeb8931f810a37de142d37618950135140437e14f9773d4bd38a32c15ce60"
+    },
+    {
+      "path": "assets/loader-circle-CePZ1DIv.js",
+      "sha256": "c805a20a87806f5c53a47e6c1c7730bbfd1efee325ed52f0e381934ad25c6bbe"
+    },
+    {
+      "path": "assets/lock-CXtAU5iK.js",
+      "sha256": "94c54021ef814c4c7285f713741d003bc59ba79c82ef8e9746642a763a8c34b3"
+    },
+    {
+      "path": "assets/macro-hero-BIhE6gYh.jpg",
+      "sha256": "99703532b588ca1a25b70b1d3d16e12979c81dcd3be13aa000ce306d45ff1dac"
+    },
+    {
+      "path": "assets/message-square-CkRmGPAi.js",
+      "sha256": "51de60ca708d7d1919548fd6c5afbd5a1b793b1e6f0878de802004b1cbe75b5d"
+    },
+    {
+      "path": "assets/nicheData-BwLv13zt.js",
+      "sha256": "d4004282a0069ab54c3c380a9a77a9fe19fa6e99a00cc097f4f56661c5c3fda6"
+    },
+    {
+      "path": "assets/options-hero-DeA_XZdf.jpg",
+      "sha256": "fa79f00164549e03779f72e34b83f9400812223005f15fbab21fc4b128c13b12"
+    },
+    {
+      "path": "assets/pendingRedirect-ZrT5yuhv.js",
+      "sha256": "37f8619a74b43beef0d3f97d607dfcaf19095ff8e8e654c24c18004444fccee8"
+    },
+    {
+      "path": "assets/practicePricing-BHiCPqlO.js",
+      "sha256": "c0d6ffc8fd8a9320318e3dc06fb0666dfff2ab4838e140eb2ecf0cca1f65e1c2"
+    },
+    {
+      "path": "assets/progress-B_0cYTha.js",
+      "sha256": "ca668b71d333da229d8cce8ac1123829b757024f08f1f68c841bee478cce9343"
+    },
+    {
+      "path": "assets/psychology-hero-BjxsBmgY.jpg",
+      "sha256": "8de79c325023dce16273734ec2267fa60c9d2fe15104773b98ea973ed081045b"
+    },
+    {
+      "path": "assets/quote-DDdohoDC.js",
+      "sha256": "6b5f0114d35c58f30a14723307cdaabcbcf040e1e78e2cbb4a4149b2d9d4751f"
+    },
+    {
+      "path": "assets/refresh-cw-DLrSDqYB.js",
+      "sha256": "a4689c17cb429b0963edd1e43038858aa4db9f708f9012b72386aed41367aaae"
+    },
+    {
+      "path": "assets/save-Bbs8NHlr.js",
+      "sha256": "6cf1860ab0ad49588615c715ca89417debc333f4cd686e561b7b42965ba5452e"
+    },
+    {
+      "path": "assets/scroll-area-CJczCzJF.js",
+      "sha256": "cdc5e6c8d38703cfb917a0bf7393d4074567baf914934954a91d0dddbf5a904a"
+    },
+    {
+      "path": "assets/search-CAoARAg2.js",
+      "sha256": "6f0fc4828cfc91dc2f2ab9a87b301d568fff82eb1fca63a928a67584cd1c5bce"
+    },
+    {
+      "path": "assets/share-2-CU1Q-8_e.js",
+      "sha256": "390491c1ba5536e06b788a0a267f07e8800cd9aa8eb5f267b80229d3c301b08f"
+    },
+    {
+      "path": "assets/shield-check-FqjoEK12.js",
+      "sha256": "f893f6f2d2d8458c6d990845422b37930cfb1f33392190f1d94ed38e0f3688ee"
+    },
+    {
+      "path": "assets/slider-BgxkVCbf.js",
+      "sha256": "c4dc45c7c68bc5de8c9597f963f05f1e8338d6a3e90f1d6d0f56dc0c49ad30d3"
+    },
+    {
+      "path": "assets/smartMentor-DCFv__mK.js",
+      "sha256": "4c1f785551b224a454ec23d54d24af38ba9c4e64640a15543608ab751710151c"
+    },
+    {
+      "path": "assets/switch-CtdMbftY.js",
+      "sha256": "75af214e54075b79154132914e300dd22a2334a33e46ed51dce7e0c6329f6cc2"
+    },
+    {
+      "path": "assets/swords-5hmusiXc.js",
+      "sha256": "aa563d7777bbebf76f2a1e6ecad806cfba224bcf7109bc1b6c0492839a089b80"
+    },
+    {
+      "path": "assets/tabs-DkvmzvQX.js",
+      "sha256": "c0f2be74400c0ef9f882f12e064af2d402d5b4ee694b1e263f4e8d07dc194614"
+    },
+    {
+      "path": "assets/target-A1-pZtH9.js",
+      "sha256": "921dbf7c3a319792fefc305c5e42b2fb58cd047bba89251fbb6542cb65cff3cc"
+    },
+    {
+      "path": "assets/textarea-Bzo5LPi6.js",
+      "sha256": "40fea229208fc137392d61aac8be3f546d29f70c56645400ba32869aa76124c5"
+    },
+    {
+      "path": "assets/triangle-alert-BFLrEhfr.js",
+      "sha256": "cef73a8a8c4f0c961c6b4a8766987c2914148631b5f0b2c33d3222f838df4bc6"
+    },
+    {
+      "path": "assets/types-3c7sL9OC.js",
+      "sha256": "3c131586cc8298fec18dfb14f903ea0c1bb4f7a810ed4de9a6d9ce6b25a8c8db"
+    },
+    {
+      "path": "assets/useCourseCatalog-DdEm1vuQ.js",
+      "sha256": "6193312c5162105b36ad7c49d6f86be67b0c39b9da796bb90efe782042aace0e"
+    },
+    {
+      "path": "assets/useQuery-nPREhUDY.js",
+      "sha256": "75b0e2d2897f2d05d7b8da69c3cdf15d70bc56e7da122d9c4934968adae447f8"
+    },
+    {
+      "path": "assets/user-CHXweGIg.js",
+      "sha256": "7ad75d0128e432a1bf3e34e3eca40f8be19f50f34e6d71ccf8872a5e1d42d6f4"
+    },
+    {
+      "path": "assets/users-Doc_D0dV.js",
+      "sha256": "bc7e88c14b5aa0a2cf791119bb8adc9dc9d3b240f09d19288ae150274ffc580a"
+    },
+    {
+      "path": "audio/long-road-ahead-kevin-macleod.mp3",
+      "sha256": "91997574f6b18918a6e93e543c42b047ae7179d2643b2a4d706e5338ad75eef7"
+    },
+    {
+      "path": "challenge/index.html",
+      "sha256": "803c74bb6ca7eb7cd69c5d1ed0d25ccda128c24e0ce4e36ad2c73dddeef4149a"
+    },
+    {
+      "path": "compare/apple-vs-microsoft/index.html",
+      "sha256": "3e154190a2b054986aca6822f4ccafb74733f781c466659aa32ad885c4db146f"
+    },
+    {
+      "path": "compare/bitcoin-vs-ethereum/index.html",
+      "sha256": "1b013457fc4b4e4251253a867e159db99b914ce8b9587a8d2622289fadd1a3cf"
+    },
+    {
+      "path": "compare/bitcoin-vs-gold/index.html",
+      "sha256": "6e0e0d4fee39c495a7018a4539246c24994ae95985d08a937d75da39ca9c3e9f"
+    },
+    {
+      "path": "compare/ethereum-vs-solana/index.html",
+      "sha256": "5f354c8f99c11f5cd825929181e3673d7da901da520181bfdde34d513da29e93"
+    },
+    {
+      "path": "compare/forex-vs-stocks/index.html",
+      "sha256": "b77ea275170a429b805d126f6eae89a27abe03d2ae2f14c9f0d3a512987de2ce"
+    },
+    {
+      "path": "compare/index.html",
+      "sha256": "c4e995b942aeb473bc8808e8d57aa0eaa231adca340d0b8529a5e97c32dafa7c"
+    },
+    {
+      "path": "compare/nvidia-vs-amd/index.html",
+      "sha256": "97d1ce8981f3216ee58a462e065aac50e83db93f774cf1a51177428179320600"
+    },
+    {
+      "path": "compare/stocks-vs-crypto/index.html",
+      "sha256": "189274008bc731786a338ae7592d3340f0aad5c7f9b30d27111dfd587b8a866b"
+    },
+    {
+      "path": "compare/tesla-vs-nvidia/index.html",
+      "sha256": "03bd82788c9af04b1f6d1b04d55bbfa2e56aaf5e2d2ff25248154e58f2c225dd"
+    },
+    {
+      "path": "contact/index.html",
+      "sha256": "11b1862ad477bebd03dd3620d6dac75521c9632b0de21dee40d1e0e1304318bf"
+    },
+    {
+      "path": "course-covers/diversification.jpg",
+      "sha256": "98493dcfc905f83aa0dbc19c71cdfc30aafde27984c3fb2bc3b6ec9650553012"
+    },
+    {
+      "path": "course-covers/market-trends.jpg",
+      "sha256": "8f882be2c2a31348fc2ba2161282a063a750eb26f82b6bf77b03847c1e1183cb"
+    },
+    {
+      "path": "course-covers/risk-management.jpg",
+      "sha256": "ea3afafdccbb2635cf0db895de62d30e0eb2ba8ba2e00bf5ba6ba276dc95a346"
+    },
+    {
+      "path": "course-covers/trading-basics.jpg",
+      "sha256": "33ba35b3b2abbb7d752ed2f76bf714c6cff70a5b6368f2f10ebe58ceb59805aa"
+    },
+    {
+      "path": "courses/futures-and-derivatives/contango-and-backwardation/index.html",
+      "sha256": "47ad1029d2940dfa9661c25ddf792227502e7af3defc697787b4458ea5780048"
+    },
+    {
+      "path": "courses/futures-and-derivatives/hedging-with-futures/index.html",
+      "sha256": "850ecab04dce151a15d26cfec430eed0ef6f444cfb59157a08d66a47507bed5f"
+    },
+    {
+      "path": "courses/futures-and-derivatives/index.html",
+      "sha256": "0d6eb69c5cf698c343e9d28f9956f7e0045c26069cb0879b196442b6f0f30368"
+    },
+    {
+      "path": "courses/futures-and-derivatives/margin-and-leverage-in-futures/index.html",
+      "sha256": "e5b87e1a45cb26c584cc2a899d5a7a71b2e64447a1e9485a716f854b96238a2b"
+    },
+    {
+      "path": "courses/futures-and-derivatives/micro-futures-for-beginners/index.html",
+      "sha256": "70ba817fe84296d7e71edadb6c2ec81bd6479adc71d1d282eaff2b75f8b440d9"
+    },
+    {
+      "path": "courses/futures-and-derivatives/what-is-a-futures-contract/index.html",
+      "sha256": "14a7f445eb2f750b23a8a37bb916ec8dd6c68cc9092868831f238a2f5db043f7"
+    },
+    {
+      "path": "courses/index.html",
+      "sha256": "73a44522d3c6e62609dc808e279cc10da78343d70c92526383f04c37b4d4aea1"
+    },
+    {
+      "path": "courses/macro-reading-for-traders/index.html",
+      "sha256": "6864de4318315d99a42ada85a74cd141575df78b8a597f1d4614cfdb2c4ed785"
+    },
+    {
+      "path": "courses/macro-reading-for-traders/putting-macro-signals-together/index.html",
+      "sha256": "38ca29bed1dd14db78d264d4d4d5fd95fb512c7b48a711c8ad2418fed51adca6"
+    },
+    {
+      "path": "courses/macro-reading-for-traders/reading-cpi-and-inflation/index.html",
+      "sha256": "2630a2e64e757a7e19f5da36bf1a57d023b44674151d0f852833742ea6883573"
+    },
+    {
+      "path": "courses/macro-reading-for-traders/the-dollar-index-dxy/index.html",
+      "sha256": "c1d4437c7e2afd566818b6fb3d7d32c97d6117d41269edd93de506e845347305"
+    },
+    {
+      "path": "courses/macro-reading-for-traders/the-fed-and-fomc-cycle/index.html",
+      "sha256": "c3b19a65ebd7ebb742d5919f2142905436e59764a9cf70cd5122eb38457e398d"
+    },
+    {
+      "path": "courses/macro-reading-for-traders/the-yield-curve-and-recession/index.html",
+      "sha256": "cada7ac3b8a5c5bd74e507052db4e7716e4f8ac864e3eb062fd80f644ce23649"
+    },
+    {
+      "path": "courses/options-trading-fundamentals/defined-risk-spreads/index.html",
+      "sha256": "efe605edb630b671b9e57d3f3add6d7846fa3663e7ad3e4bbc829895b39e7bee"
+    },
+    {
+      "path": "courses/options-trading-fundamentals/implied-volatility-and-earnings/index.html",
+      "sha256": "b68b0de0a014562e55d3c2575899a8082da792d10aea519028a719b6d96cdd43"
+    },
+    {
+      "path": "courses/options-trading-fundamentals/index.html",
+      "sha256": "b5e935a1aad21540949baa81dbf872df7407846ada44148c254ff87a7a46503e"
+    },
+    {
+      "path": "courses/options-trading-fundamentals/options-risk-management/index.html",
+      "sha256": "4a7ee63b039c8285e3a4260407f99796859d37c302bdc123ff6c9a2406e28285"
+    },
+    {
+      "path": "courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega/index.html",
+      "sha256": "aa0ec397d6c4b8a3e5d04a848aa5daced897961834f46a22222276e9d64b4bcd"
+    },
+    {
+      "path": "courses/options-trading-fundamentals/what-is-an-option/index.html",
+      "sha256": "55727d72cb1116531deb2b1e06e8d7f13a852ef39bd083b75a19f7658fa90435"
+    },
+    {
+      "path": "courses/trading-psychology-mastery/cognitive-biases-in-trading/index.html",
+      "sha256": "4564f488c8e8462da66163ac3c7cbe5eea097605a10cce98cc30abfbec941b62"
+    },
+    {
+      "path": "courses/trading-psychology-mastery/discipline-and-daily-rituals/index.html",
+      "sha256": "9658bf91dc520917623a89a25ed70be7870a099353ff540573ba5a1844858d7c"
+    },
+    {
+      "path": "courses/trading-psychology-mastery/handling-drawdowns/index.html",
+      "sha256": "1c81972e2eaa0380d33dc89b4fda2e6a7b679785097f609fe2d7d3bf0fcd890f"
+    },
+    {
+      "path": "courses/trading-psychology-mastery/index.html",
+      "sha256": "9d21184d9a4f754ea6aa6e5c29fbb934929dd54bc4c68bab36e7f12b5e3aed4e"
+    },
+    {
+      "path": "courses/trading-psychology-mastery/revenge-trading-and-tilt/index.html",
+      "sha256": "093da42674bde79eadcd6b401765f88642a8976003252f19a80fa5e9682def93"
+    },
+    {
+      "path": "courses/trading-psychology-mastery/the-trading-journal/index.html",
+      "sha256": "5554c66c02b08b8e1d90184e3615be5b13014b4f017eceddf5e93d07fa4a909a"
+    },
+    {
+      "path": "daily/index.html",
+      "sha256": "d7cccc2bd578eb72a4a7f255db03094e9a7beffa7a78b1481228f6efa7a98c40"
+    },
+    {
+      "path": "how-to-trade/btc/index.html",
+      "sha256": "1a3c556a3bed232cca10fb15f25a3bced232bb2007189496da6c0ee072561805"
+    },
+    {
+      "path": "how-to-trade/eth/index.html",
+      "sha256": "99118c74c945fc5fe23c4ab0f83c001f728d4132a23cffba0cdd725e492e227e"
+    },
+    {
+      "path": "how-to-trade/index.html",
+      "sha256": "a3be1f8e488cb78a2833199063d6afb67cc402c24ba1b62c228d6e3389b51dc3"
+    },
+    {
+      "path": "how-to-trade/nvda/index.html",
+      "sha256": "decb2810cffa9f95f59cd0b117ae84c127229d3392fbb10ae59fa648ae19124a"
+    },
+    {
+      "path": "how-to-trade/sol/index.html",
+      "sha256": "a7427b8e65782d3ad377de29dd299e5169e66b6a683673bda03dbbb03f8dd20d"
+    },
+    {
+      "path": "how-to-trade/spy/index.html",
+      "sha256": "02504901e54170b26001187189f8d104fb47b9d0ef456951807fad690bf757fa"
+    },
+    {
+      "path": "how-to-trade/tsla/index.html",
+      "sha256": "baf7a7d64e0ddf6869b37d9f6b8084f55ca1da2e8a6b8a7d2156018cd0511bca"
+    },
+    {
+      "path": "index.html",
+      "sha256": "1dc148ba69f7106dfab7af45256d428379ae1eee2065282363c852d316eb1bfe"
+    },
+    {
+      "path": "leaderboard/index.html",
+      "sha256": "a0e27cc775ca46aac6b501278b380f8735cb89115f20271e5f584dee08f96bc6"
+    },
+    {
+      "path": "learn/1/index.html",
+      "sha256": "9529d4db8a36d2c0c6bd7ca3ae203f6ecd00f998a70e8bcbda3ab854ccc7abcb"
+    },
+    {
+      "path": "learn/2/index.html",
+      "sha256": "2bb512100b5c7dc0096968870286f90cddd5963c25141b0a7e85f3f7fb2eacfe"
+    },
+    {
+      "path": "learn/3/index.html",
+      "sha256": "b54767b876893511726bbefb31552f8eb7dc0a224bd989698b9784148263e3cd"
+    },
+    {
+      "path": "learn/4/index.html",
+      "sha256": "dbf305bb1fbc1112ec2de9350679a853acf31d77d3bbffe845b8b58b6c4c1ef4"
+    },
+    {
+      "path": "learn/5/index.html",
+      "sha256": "f391c58b617658892c82ad0fe76aa0d18dc593ce52b39652a34298ae69ba6b7e"
+    },
+    {
+      "path": "learn/6/index.html",
+      "sha256": "a8d523b69a4d1c9fb696b25bb724bd911769a57a221068f046868c7b6b58944c"
+    },
+    {
+      "path": "learn/article/crypto-vs-stocks/index.html",
+      "sha256": "c5d1d70904a628157101a7e7e4e91cf8eb412021cb248c0640892c720e95c615"
+    },
+    {
+      "path": "learn/article/how-to-build-a-portfolio/index.html",
+      "sha256": "1c83219f242a207c319f46a8c3c95ff694293c53d1de1eef89e5b08ac6e1f23c"
+    },
+    {
+      "path": "learn/article/how-to-read-stock-charts/index.html",
+      "sha256": "ccae23eb3c3c7439aabb462ca78860ab8ab80b5be47759c2ccf3e26c2b6353d0"
+    },
+    {
+      "path": "learn/article/market-orders-vs-limit-orders/index.html",
+      "sha256": "ca790a2cacdb6087033a33f59606dff7c14792ab92d005dd5f82b3f3ddb9c965"
+    },
+    {
+      "path": "learn/article/risk-management-in-trading/index.html",
+      "sha256": "406f65fcba9f6490bcaca0ad3ae5bafc3bca05808f1a77038fb76be4620102e3"
+    },
+    {
+      "path": "learn/article/stock-market-index-etfs/index.html",
+      "sha256": "3260ed42134769af198a33c59a8a67edacca90f9e7e3cceb859341203625f7f2"
+    },
+    {
+      "path": "learn/article/technical-indicators-rsi-macd-moving-averages/index.html",
+      "sha256": "e5677e7e3901349f2a5b3feea07ba78b556683824e2c0c5841dbaf459d12872a"
+    },
+    {
+      "path": "learn/article/trading-strategies-for-beginners/index.html",
+      "sha256": "fbbed8692705301f9528b50278ff421bc8c405cacd7b92e167b8725527f6f3f3"
+    },
+    {
+      "path": "learn/article/what-is-paper-trading/index.html",
+      "sha256": "795deeace98d565971e79dbaf20b1d717b872926bc5c71061d570e29355d733e"
+    },
+    {
+      "path": "learn/country/index.html",
+      "sha256": "46fb852d5a200740ee9c65d703e32e28f8a676cc06fb9915aa79b4d6743818c6"
+    },
+    {
+      "path": "learn/country/india/index.html",
+      "sha256": "421c0ec1da2565a70e84e360527e1c2ca2d67edd5383375b093428279a457d1a"
+    },
+    {
+      "path": "learn/country/nigeria/index.html",
+      "sha256": "971f57640b7b9b5b326e702a7eb48c9c03207969b753c25cff928ac40f1cf0ac"
+    },
+    {
+      "path": "learn/country/pakistan/index.html",
+      "sha256": "116fd9e4f36b976c4c79194662336dc3fe027f583a7eb876de9513da17a92057"
+    },
+    {
+      "path": "learn/country/philippines/index.html",
+      "sha256": "c37efb87fc602a62136033edfba05c10e83c92f25d7deb1ec976703d810afac0"
+    },
+    {
+      "path": "learn/country/sri-lanka/index.html",
+      "sha256": "9d4188bf5530fa4f2af495b7e0ccc767e54c684a8a1a8bd8287628272592ce90"
+    },
+    {
+      "path": "learn/index.html",
+      "sha256": "c4b58a8577ab62b3b56099d592816dbabee06c1bf9fbc2ce2736dab1fa847fe0"
+    },
+    {
+      "path": "learn-trading-guide/index.html",
+      "sha256": "8dcc7f9bc3d29ca75149c21b933f88ec47165a2df4e49f547c377db34cf104af"
+    },
+    {
+      "path": "llms.txt",
+      "sha256": "a0cccb5fe4563a064304d5f7912d29a0b9a3a7d19abca9ad93474c7bbb5a31d6"
+    },
+    {
+      "path": "logo.png",
+      "sha256": "3080be1deb89b5ada2c1e572da9eb69afb0d7b0f6a14f12772acbda7a94c21f2"
+    },
+    {
+      "path": "logo.svg",
+      "sha256": "70788d5699fe0ac4764c0874d70183af612021f73cdc92965ceb3237d86e26ae"
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "1d965fd3ee1c9962e578ba9ec14234a60d500f6b653b7cea04186f8f0ee8a165"
+    },
+    {
+      "path": "markets/index.html",
+      "sha256": "9898fa84a0af21871f10559c6e6e943ca9db3d1db996905998a1b27c357208ea"
+    },
+    {
+      "path": "niche/aapl/index.html",
+      "sha256": "6f633d077d7688400f2d7ff0d8d514e5060cf3ccfd5466cbc0d7a2a08e4a81b1"
+    },
+    {
+      "path": "niche/ada/index.html",
+      "sha256": "c403c4d24b9cf4bb843ab2efefbc7a7e5b514d4f7997122e5439f08b9c760d13"
+    },
+    {
+      "path": "niche/adbe/index.html",
+      "sha256": "8993ad25ac5a488cecca17b0784c652e7421fad0ec0f31d430bcb9845c26f69b"
+    },
+    {
+      "path": "niche/algo/index.html",
+      "sha256": "ac37db132c597a16c0c88ba3eec53852d18206e23df3a5df2f03fadd3e0b0499"
+    },
+    {
+      "path": "niche/amd/index.html",
+      "sha256": "aa163e5e2d79f00f4fcbd4517c62196879ff29f13266aef962af79b9ce79d709"
+    },
+    {
+      "path": "niche/amzn/index.html",
+      "sha256": "ae2f2b758e972d716902f862f706bc49627c8f8d3dc0f03b9e9d385d7331c8fd"
+    },
+    {
+      "path": "niche/atom/index.html",
+      "sha256": "6b538b57e85b7f7388285c6ae7c6b0f34ca72a8289c33637fd089b7b1b32f1e8"
+    },
+    {
+      "path": "niche/aud-usd/index.html",
+      "sha256": "1c087bdb07811a98ff177b20934bd9e5332ab8370d114be4c5dfbf5c028c031b"
+    },
+    {
+      "path": "niche/avax/index.html",
+      "sha256": "034a9271a824a61c07c462c005c9e56dce3c96f58aea09edb68cf01c8be586e9"
+    },
+    {
+      "path": "niche/avgo/index.html",
+      "sha256": "53016ba12d821ad8197bae9a335720e6492200f7147dfa79a08cbc5e2e78b41d"
+    },
+    {
+      "path": "niche/bnb/index.html",
+      "sha256": "5011844ff7b1be513730b803a5d8d02afc002a0ec730a1021a4425c572823966"
+    },
+    {
+      "path": "niche/btc/index.html",
+      "sha256": "6c8248dc4ad314716f44281cbb646e1fce49df06bd416e6f35ada58a13ba4b27"
+    },
+    {
+      "path": "niche/coin/index.html",
+      "sha256": "aa73c1302a3fd44513ecf15d77554929914d541ec2c7f07feac2cc6f64b22601"
+    },
+    {
+      "path": "niche/copper/index.html",
+      "sha256": "b4aad7e33f8cdcacd6dd8ed7b49add9604113386821d6b9c5aeed94a1699930e"
+    },
+    {
+      "path": "niche/crm/index.html",
+      "sha256": "fa415423879b25b0737bcbf8375413e79696b2ee41a8a4b714010c9f811feb63"
+    },
+    {
+      "path": "niche/doge/index.html",
+      "sha256": "7ab903e53acbc6f3feb0920efd9292514bcab785a1fbb795141f6dd5c66e727a"
+    },
+    {
+      "path": "niche/dot/index.html",
+      "sha256": "71a41f33d2f4985797556937a26bb9e5b734570373f399958b11f088ff4cba87"
+    },
+    {
+      "path": "niche/eth/index.html",
+      "sha256": "8ee967c18b47e6417a02a5822d3b934798d526d03e820f59bc5f2f1af14b6e7f"
+    },
+    {
+      "path": "niche/eur-usd/index.html",
+      "sha256": "305175c35b0939f03722204f91d98adb8d2da6e24d6ed4d643f43e1f928694fe"
+    },
+    {
+      "path": "niche/ftm/index.html",
+      "sha256": "c125ff2e396d6c9f4c56aa64d598a2a37fce6c11b33b834891b3ac9ff6c70c05"
+    },
+    {
+      "path": "niche/gbp-usd/index.html",
+      "sha256": "dc50808045cac9a62c3b8fde336091ba770c644b163a21eef9a7ab14f90b0f36"
+    },
+    {
+      "path": "niche/gold/index.html",
+      "sha256": "87e0f78153eed10965ed69b75f437040a03749fb5b9dd32ffb86add7506288b5"
+    },
+    {
+      "path": "niche/googl/index.html",
+      "sha256": "c3f7e8ec8b6ffc8b8a0c799e0d7f34f74b58dce366c9867e1e4ff213a8644053"
+    },
+    {
+      "path": "niche/icp/index.html",
+      "sha256": "6469bdf0ed35c0431752b88610002d4e00b116e8415d9f1a56ee08dc5320b665"
+    },
+    {
+      "path": "niche/intc/index.html",
+      "sha256": "ac2839d9721321ddf84e55b1768fdd3ae5d4141243db8196aaec7612cd5efe74"
+    },
+    {
+      "path": "niche/link/index.html",
+      "sha256": "159a77d8fc467c3b14d1b9faaf5309796b1cd1ee92e9a854581ced56d1fa2880"
+    },
+    {
+      "path": "niche/ltc/index.html",
+      "sha256": "4d76caebd1f5b3bdb0e9db7a28f1d309e46b3fbf1e8073aae0cad03044592121"
+    },
+    {
+      "path": "niche/matic/index.html",
+      "sha256": "cfd5c41c53f80c59af21ec6bbd816b738e115b9e6f95c6c0b5c2d16d0cc5e522"
+    },
+    {
+      "path": "niche/meta/index.html",
+      "sha256": "1ad1886e664f80c79627cae16f97dce810d5594254fa757c14f446f475fa51fb"
+    },
+    {
+      "path": "niche/msft/index.html",
+      "sha256": "6030bb8464796246a2e75b5aa7262ee3becacb66f529e3bf73bfd9623397e640"
+    },
+    {
+      "path": "niche/nat-gas/index.html",
+      "sha256": "1e9580ddca169cdb1704bec678b2d13990ce20dea9fc01301dab3628f0bfbdd2"
+    },
+    {
+      "path": "niche/near/index.html",
+      "sha256": "92d95ef84a02ac1b648bc08bb6f827c1f7295608188c9bba140730c059696b9d"
+    },
+    {
+      "path": "niche/nflx/index.html",
+      "sha256": "4e733433f92363f008caa2a8f950114fa2ed121f7800a2219dfa37e2b75e94b6"
+    },
+    {
+      "path": "niche/nvda/index.html",
+      "sha256": "167cd1e9dfa3927373f4db424dff7c4873a0ad8dd5340e5d2b6493c55a09c906"
+    },
+    {
+      "path": "niche/oil/index.html",
+      "sha256": "5e1d8e2b3e2c873f011c8a9319f37eaa0854f3448e22733d853ab5d87d7694db"
+    },
+    {
+      "path": "niche/orcl/index.html",
+      "sha256": "6384f0b3da4bbcf0a15d0c14568bd927dc6ae59edab57421eab254485b45ae44"
+    },
+    {
+      "path": "niche/pltr/index.html",
+      "sha256": "649a8777163e24e864ab8d82af631bf852d4570f8e0fa045c7df4f6f843d4dfa"
+    },
+    {
+      "path": "niche/qcom/index.html",
+      "sha256": "ee2a7bce80d8e019250371d56bd6be8a11b9903fbc579646e66151df574f908f"
+    },
+    {
+      "path": "niche/shib/index.html",
+      "sha256": "dd603c2c03207b4984ce5f93065dbbb7e7bf19fc8dbb952e91438a965c8174a1"
+    },
+    {
+      "path": "niche/shop/index.html",
+      "sha256": "13e6513d8c791f9eeefa68f364fe726f2b0d1d252486bdb6a9956c6d3b9bd1aa"
+    },
+    {
+      "path": "niche/silver/index.html",
+      "sha256": "b8236b3513ee4a7f9315c3173673cd2e77ce98db8f623850fb0a087e45337aa5"
+    },
+    {
+      "path": "niche/sol/index.html",
+      "sha256": "45b155859959688bddefbef336d81b1bc478326bca463ad1e5c156ee0b9531ed"
+    },
+    {
+      "path": "niche/sq/index.html",
+      "sha256": "2494069407bd985a407f4d2b0eba822fabf9995339bed384343dc233ddc5f14e"
+    },
+    {
+      "path": "niche/tsla/index.html",
+      "sha256": "99341a6f32670cb0b2b835bc702ac21127078548eb0af0db61233f0413069f15"
+    },
+    {
+      "path": "niche/uber/index.html",
+      "sha256": "1102752ecdaf5943bfd287d7cda3365f4d0d995fc5235858e666bf788267cf43"
+    },
+    {
+      "path": "niche/uni/index.html",
+      "sha256": "c12ebd3b905ee24b6447a4c6c791e97a564b05f5929e94f3d609ff28e9120095"
+    },
+    {
+      "path": "niche/usd-cad/index.html",
+      "sha256": "fc955f47796d81aa4eff59da48baf8f4ba77396f6fa39535ed50fad86a1b98b0"
+    },
+    {
+      "path": "niche/usd-jpy/index.html",
+      "sha256": "39ffe0c5b32c9a8dd7eaefb890fb049bb0b8cae2c1923f432f2e5976d8e9c9bd"
+    },
+    {
+      "path": "niche/xlm/index.html",
+      "sha256": "b489eaaca7b19a6734f54358795d477fe5fe5069c1839c5aa15b1ef9f6b08dc4"
+    },
+    {
+      "path": "niche/xrp/index.html",
+      "sha256": "a49d20b278ae41d880692b5b4889af2ca7bd08be8853fbf58ec0c3d3c327d184"
+    },
+    {
+      "path": "og-image.png",
+      "sha256": "506adf0039e30ea8da71b36c35c812ff43166fedbb62922cad16c031c7987b97"
+    },
+    {
+      "path": "placeholder.svg",
+      "sha256": "64badf7aabda0b9630b87020ffb6095cb858ccbcf66b355c2aa08b1063954d3b"
+    },
+    {
+      "path": "portfolio/index.html",
+      "sha256": "7443f347a9299ff47dba9753ee90bdf7ba478c2ddcc481b00284b6aeeae9fd0d"
+    },
+    {
+      "path": "privacy/index.html",
+      "sha256": "d3b986173b7052b070cd9e36a8bb7259af4c921e24256887553c50a553a2aaaf"
+    },
+    {
+      "path": "publisher-notes/about/index.json",
+      "sha256": "f5cebc156398736ba39e64ed49123721b607a4f3d52bdf7a43e9d98d8644acd0"
+    },
+    {
+      "path": "publisher-notes/ai-mentor/index.json",
+      "sha256": "22b338efae6ccdbaeebd75717e2373135e1bd3602b804816ac0097844456c155"
+    },
+    {
+      "path": "publisher-notes/challenge/index.json",
+      "sha256": "9aac116d63fecea90c8e38dce4e491f539d174c19de1f8a0960ce7e7335abdbb"
+    },
+    {
+      "path": "publisher-notes/compare/apple-vs-microsoft/index.json",
+      "sha256": "27f0e969205f089a5f4ab23e9411ead2ecc8588dd21118cecdf8c6666e468eaa"
+    },
+    {
+      "path": "publisher-notes/compare/bitcoin-vs-ethereum/index.json",
+      "sha256": "0d191112ee7ffb02c638c10da2663ca797f9c0a494dc1309a50370e5d5cd8ee8"
+    },
+    {
+      "path": "publisher-notes/compare/bitcoin-vs-gold/index.json",
+      "sha256": "8f0ea633c0a175dd915bf24caf92fc29fd58a5d9f99e047bf5a33c052b12e1b6"
+    },
+    {
+      "path": "publisher-notes/compare/ethereum-vs-solana/index.json",
+      "sha256": "ffd8f71751762af8cfc0a8c250e7fecbdbe7e30a43ae8644d577c7f6b27de636"
+    },
+    {
+      "path": "publisher-notes/compare/forex-vs-stocks/index.json",
+      "sha256": "b006ddb86326a0dc5457632f11001812d642c66394b662eac3e9998087f2f100"
+    },
+    {
+      "path": "publisher-notes/compare/index.json",
+      "sha256": "527727e0d705b9641b7bec6136348454e7f9c354411bd629c414d22b6787dffd"
+    },
+    {
+      "path": "publisher-notes/compare/nvidia-vs-amd/index.json",
+      "sha256": "4834bfcec54f4676e53020590472d01172fab322216cde24bfa43b207fc9ff69"
+    },
+    {
+      "path": "publisher-notes/compare/stocks-vs-crypto/index.json",
+      "sha256": "ba11962c706520cb78f906c33fe68a842650c3035c15f098fc098c7f11f04770"
+    },
+    {
+      "path": "publisher-notes/compare/tesla-vs-nvidia/index.json",
+      "sha256": "d51d6718c872b72aae33b29bc9861d4032744ee419eb01d040a574f4917210dd"
+    },
+    {
+      "path": "publisher-notes/contact/index.json",
+      "sha256": "12a95c62bffe7214e7f8d7ecfc915adc62768185011b69f10e3b4cfb24dda2a1"
+    },
+    {
+      "path": "publisher-notes/courses/futures-and-derivatives/contango-and-backwardation/index.json",
+      "sha256": "1e92d736a684fc7cd335e2c36038aacd532889675a9120c8330c6fff87d34079"
+    },
+    {
+      "path": "publisher-notes/courses/futures-and-derivatives/hedging-with-futures/index.json",
+      "sha256": "8ce7b72c95934993e73a33b798dc88cadc11642c844fe0634455cc626e2feee3"
+    },
+    {
+      "path": "publisher-notes/courses/futures-and-derivatives/index.json",
+      "sha256": "7f6ab3c5bb47f9c609e056539ce1de4b787868c5789766373be5cc04d63545d6"
+    },
+    {
+      "path": "publisher-notes/courses/futures-and-derivatives/margin-and-leverage-in-futures/index.json",
+      "sha256": "d8c2c8f9a41c0dad7e9e850c000b5822b137b01c9ebc24e489fb05229cee5308"
+    },
+    {
+      "path": "publisher-notes/courses/futures-and-derivatives/micro-futures-for-beginners/index.json",
+      "sha256": "69917ff873aafdf7fd4780eacb7c3420d7cb1a250120fbc96b401ac7573dc192"
+    },
+    {
+      "path": "publisher-notes/courses/futures-and-derivatives/what-is-a-futures-contract/index.json",
+      "sha256": "a0c9e28496045ccd4a831e1571d9947c393c84056f3ba783d44fb31f6b099c16"
+    },
+    {
+      "path": "publisher-notes/courses/index.json",
+      "sha256": "db65f15eeece48ea48b8024547a522554f65271441c07a491fccd587cc8ee0d1"
+    },
+    {
+      "path": "publisher-notes/courses/macro-reading-for-traders/index.json",
+      "sha256": "43f51331bdc70b03616dc44d4f5773f260687aa34f4c67c67915df21e7be459b"
+    },
+    {
+      "path": "publisher-notes/courses/macro-reading-for-traders/putting-macro-signals-together/index.json",
+      "sha256": "60bbdc77ad65ab1eede8970df8a5109eceaabb20bc65cb0a7815d59f16012925"
+    },
+    {
+      "path": "publisher-notes/courses/macro-reading-for-traders/reading-cpi-and-inflation/index.json",
+      "sha256": "9e40628ff9c2f7507c58813dc71aa4d4b039ee126f3f0de49f5cdf3a4577e344"
+    },
+    {
+      "path": "publisher-notes/courses/macro-reading-for-traders/the-dollar-index-dxy/index.json",
+      "sha256": "db02c37d020d249b85c29edbf79ed820e37f6ae7c856b89bfd29c7f8e2e0d437"
+    },
+    {
+      "path": "publisher-notes/courses/macro-reading-for-traders/the-fed-and-fomc-cycle/index.json",
+      "sha256": "c5747cc268a1ba4473018f3e2fbb0e37e57660edf302f0294b97a61855cf3485"
+    },
+    {
+      "path": "publisher-notes/courses/macro-reading-for-traders/the-yield-curve-and-recession/index.json",
+      "sha256": "2438c686ff683d18a2b919447ef1d775f07aaa4e8dd066c3fc70d73363b838db"
+    },
+    {
+      "path": "publisher-notes/courses/options-trading-fundamentals/defined-risk-spreads/index.json",
+      "sha256": "1c2d55125f6ed82baace0876f10181fd95574fde656e1e0b38f4a34da5f2db87"
+    },
+    {
+      "path": "publisher-notes/courses/options-trading-fundamentals/implied-volatility-and-earnings/index.json",
+      "sha256": "e57e75ac212c5188e56277beaf57c8adb446a9a48151372e6ebb76dcc9cbf550"
+    },
+    {
+      "path": "publisher-notes/courses/options-trading-fundamentals/index.json",
+      "sha256": "7491e28c083a6c4bf2ce5ad5d0d65a544cee2bc6ef9fef5e4f6622b220ae4e5b"
+    },
+    {
+      "path": "publisher-notes/courses/options-trading-fundamentals/options-risk-management/index.json",
+      "sha256": "207b77eb9098c671204eeeaf81ff5edde4f7e4f68bf69d27777dd318a6625f5c"
+    },
+    {
+      "path": "publisher-notes/courses/options-trading-fundamentals/the-greeks-delta-gamma-theta-vega/index.json",
+      "sha256": "61ad5e5558092ffc4821a7640c20ac8cfcf90f241d12e1e8e5365342ae38419e"
+    },
+    {
+      "path": "publisher-notes/courses/options-trading-fundamentals/what-is-an-option/index.json",
+      "sha256": "6662fa21a0bcb197d592cda49fe5668bae7b35ba686c8e75dc90042838527b99"
+    },
+    {
+      "path": "publisher-notes/courses/trading-psychology-mastery/cognitive-biases-in-trading/index.json",
+      "sha256": "bcd737025c438d35e7d446e603c89b32e8b40d886c37d4069bd1fd76181c5de2"
+    },
+    {
+      "path": "publisher-notes/courses/trading-psychology-mastery/discipline-and-daily-rituals/index.json",
+      "sha256": "893525b4f2156e92eb39bbf55d6394634d81638b1ecd0c6967c3fd272598f598"
+    },
+    {
+      "path": "publisher-notes/courses/trading-psychology-mastery/handling-drawdowns/index.json",
+      "sha256": "c3219b76532f188e2a2f41d470517ba1c45e18ae580d98a6f63836763a83dbc5"
+    },
+    {
+      "path": "publisher-notes/courses/trading-psychology-mastery/index.json",
+      "sha256": "d6c745117649dc768e46be4e51cbd9321792de9a05a57a36124a5a1e14f2e5e7"
+    },
+    {
+      "path": "publisher-notes/courses/trading-psychology-mastery/revenge-trading-and-tilt/index.json",
+      "sha256": "356e555a7722f6bb8b3f453655095d17eb505dd1c89ef84ae0aae7864dc11429"
+    },
+    {
+      "path": "publisher-notes/courses/trading-psychology-mastery/the-trading-journal/index.json",
+      "sha256": "1e1acca54e4ffd30306e3534a7f406f3187770ed9934eaafe722e0145e7a3419"
+    },
+    {
+      "path": "publisher-notes/daily/index.json",
+      "sha256": "5243085c0171b39bef52ca63396a912f83d06355d25a0aebf26c2fb912e8b870"
+    },
+    {
+      "path": "publisher-notes/how-to-trade/btc/index.json",
+      "sha256": "f2decb527a29535b2146fae5c364495bbf9c0acab4d8ec74256bc287c7e712a2"
+    },
+    {
+      "path": "publisher-notes/how-to-trade/eth/index.json",
+      "sha256": "29d2a5ab82a684e5a08bae4f82a5bfb19baf31e21d89bde5c112ec18b8d25e9b"
+    },
+    {
+      "path": "publisher-notes/how-to-trade/index.json",
+      "sha256": "b18bc0d0bbe2569365126dec58f32c8a4d32eb6bd9231148b9f5e028647b39fa"
+    },
+    {
+      "path": "publisher-notes/how-to-trade/nvda/index.json",
+      "sha256": "c2cd4ab4f6ceae31c8bc5bb5db745aa4fb0f56a38c33425fb43a587784bdd0a6"
+    },
+    {
+      "path": "publisher-notes/how-to-trade/sol/index.json",
+      "sha256": "bf574c3cf2c17657c1b5edc7258cc249dd078e07210357330752cba86e743b5d"
+    },
+    {
+      "path": "publisher-notes/how-to-trade/spy/index.json",
+      "sha256": "f8f2bd6fcf161a74ff3a5ae94c75709b3908319f61476ae490b053dcf7e1b0c0"
+    },
+    {
+      "path": "publisher-notes/how-to-trade/tsla/index.json",
+      "sha256": "baf704c6ace9672b08456641fd33416d677daf1b619d1c8f9d1fe039038d0d24"
+    },
+    {
+      "path": "publisher-notes/index.json",
+      "sha256": "3ae07c91b67c68f10e5ab3b0341cdbbbb7f5c5da656146002debbbed886e55f6"
+    },
+    {
+      "path": "publisher-notes/leaderboard/index.json",
+      "sha256": "6acfe632fa240cb79a8669014a127ceeae37758e36b7c615182377a11b358968"
+    },
+    {
+      "path": "publisher-notes/learn/article/crypto-vs-stocks/index.json",
+      "sha256": "3ded53d030a4612c8d78f8c753aed62e778283c3225ec16323432cfb60d4ad53"
+    },
+    {
+      "path": "publisher-notes/learn/article/how-to-build-a-portfolio/index.json",
+      "sha256": "a9def0a1b14e908e639d874d02750d0da5e5d5682d8ea7437ad6ce66697ed762"
+    },
+    {
+      "path": "publisher-notes/learn/article/how-to-read-stock-charts/index.json",
+      "sha256": "5530ddb1ecb6677715003a6a9095884f49f403a7f79f7de3830affb0255883ef"
+    },
+    {
+      "path": "publisher-notes/learn/article/market-orders-vs-limit-orders/index.json",
+      "sha256": "456660460e275ac364b9e11559f789ca82673248116d92465d1bfa33a5f9d3ca"
+    },
+    {
+      "path": "publisher-notes/learn/article/risk-management-in-trading/index.json",
+      "sha256": "55f0c0b618993013a1795f5c51abe4ae8b3385f4473830f10f1ab1794046600e"
+    },
+    {
+      "path": "publisher-notes/learn/article/stock-market-index-etfs/index.json",
+      "sha256": "794b0ffa1bb3fa33c94cf714d91b896f27238728c15336cd31dc1286ba1a633e"
+    },
+    {
+      "path": "publisher-notes/learn/article/technical-indicators-rsi-macd-moving-averages/index.json",
+      "sha256": "74f5ac141ecdec7ec00c2bbb60d9df7e78282f784c2ac8d5dcf90afbac3d3d9b"
+    },
+    {
+      "path": "publisher-notes/learn/article/trading-strategies-for-beginners/index.json",
+      "sha256": "4caf7621ca4fbb6e5ba73a9851d5d8f7fa70675ff568deed095bafea31ea61c4"
+    },
+    {
+      "path": "publisher-notes/learn/article/what-is-paper-trading/index.json",
+      "sha256": "89ef72727e162fa655b4f05d1c7ff8eaae802ef53fcd94b20fbdf824639f6107"
+    },
+    {
+      "path": "publisher-notes/learn/country/index.json",
+      "sha256": "a433dc77c2165c8ef1a7a13a14da4ab80ca4fffbec1bf020421cf57a2ad7aef5"
+    },
+    {
+      "path": "publisher-notes/learn/country/india/index.json",
+      "sha256": "b3ccaff5a990883dc81abc4729a3979573ef2848c20c2bbb2f58ebfbd071b2d6"
+    },
+    {
+      "path": "publisher-notes/learn/country/nigeria/index.json",
+      "sha256": "329e232838699585d181b56906df2111aeecb5f36a49447e5d8fab71c01280bc"
+    },
+    {
+      "path": "publisher-notes/learn/country/pakistan/index.json",
+      "sha256": "d125503e7ade1e18f03dd70ca0a39cb6ab6095eae884f8bf11b3584107a8efdc"
+    },
+    {
+      "path": "publisher-notes/learn/country/philippines/index.json",
+      "sha256": "247ebbb2cd9670780555a6a0215052f085de58f4ed21b8b5f74d992084f96290"
+    },
+    {
+      "path": "publisher-notes/learn/country/sri-lanka/index.json",
+      "sha256": "3e139215984b238f182e20cc0fc989544f26a9f5baba2aec3f3d1c243d086241"
+    },
+    {
+      "path": "publisher-notes/learn/index.json",
+      "sha256": "ae737527b43acf40cd7c0a94573e3f34dd079d2a1edb461d2caae13b69225750"
+    },
+    {
+      "path": "publisher-notes/learn-trading-guide/index.json",
+      "sha256": "87dc9d9aae558cc0c6aa085ba7123fb0df288cb8d54cf36bd24db216216f2bdd"
+    },
+    {
+      "path": "publisher-notes/markets/index.json",
+      "sha256": "416c3821257f5bc6b677c6bf622c3373ad543e6839b13540630ed29dee386f8a"
+    },
+    {
+      "path": "publisher-notes/portfolio/index.json",
+      "sha256": "0f320fd73a7900c3ab4fd544c42792249d45ee4920634b3c8c31b82df0eeb886"
+    },
+    {
+      "path": "publisher-notes/privacy/index.json",
+      "sha256": "23659e8d4452bae10b65dd0c65deb07e9d26be4997658ad1aab179efe06934f6"
+    },
+    {
+      "path": "publisher-notes/reviews/index.json",
+      "sha256": "91c6140a2808753e9e1fc77899336f6bc3da844109bc71e06c3d440b25b4a562"
+    },
+    {
+      "path": "publisher-notes/roadmap/index.json",
+      "sha256": "62690c6e09858894dc681f99433d08a31a96abccac847ae1299098502d0e75f4"
+    },
+    {
+      "path": "publisher-notes/strategy/day-trading/index.json",
+      "sha256": "81de6e7f65fd430df5b2c832d4690ee4f75a51f4e24ba634e207d2fcafd90c45"
+    },
+    {
+      "path": "publisher-notes/strategy/dca-dollar-cost-averaging/index.json",
+      "sha256": "1fd15d64fb568660bab9dabe0a9a9e433013a607f5acd39090dcf088f68a6378"
+    },
+    {
+      "path": "publisher-notes/strategy/index.json",
+      "sha256": "7758632150e9221fa1c347adca00b7fbbf2f699cbe402d5b29845dc56a3d00d1"
+    },
+    {
+      "path": "publisher-notes/strategy/macd-strategy/index.json",
+      "sha256": "18b541024f539db42b6adacfc1c9a0ef987c5eb515fac5d6eb846c8ece0d4a9f"
+    },
+    {
+      "path": "publisher-notes/strategy/rsi-strategy/index.json",
+      "sha256": "7e09154f8f95ab1bec80c1aaccf3d9b061e5350611ab4b72f55d39196b015e3c"
+    },
+    {
+      "path": "publisher-notes/strategy/scalping/index.json",
+      "sha256": "e430511bc764f53d44ba0365092cb2522b5cd959cff942b86848122e2d380b32"
+    },
+    {
+      "path": "publisher-notes/strategy/swing-trading/index.json",
+      "sha256": "fef10104a4547de5e2e1de2e4f00bad52c383fef62232ea9c66aa8113d2ed7ed"
+    },
+    {
+      "path": "publisher-notes/terms/index.json",
+      "sha256": "e78a89400a80c3ffd38ab2fe9186e63d0e026a806942e39a714bf4dba3c44b83"
+    },
+    {
+      "path": "publisher-notes/trade/aapl/index.json",
+      "sha256": "d86ff63dcc590a4eec532bd948110b63866cc10782edacbec50710db6c9711be"
+    },
+    {
+      "path": "publisher-notes/trade/amzn/index.json",
+      "sha256": "513686de3ca9022ef26602594dc260df76d1b57701205abdca090c191073b503"
+    },
+    {
+      "path": "publisher-notes/trade/bnb/index.json",
+      "sha256": "98fa71671082f0078420b09fd58b284ccab59d583421f5d0535f94ff791d0b59"
+    },
+    {
+      "path": "publisher-notes/trade/btc/index.json",
+      "sha256": "691c8cc586581da7e90407bb79f059704337bd5cbd2eceea1675a69f24e67c05"
+    },
+    {
+      "path": "publisher-notes/trade/eth/index.json",
+      "sha256": "cade80b267df14f8fcc57b05889dbad8a6f2496eee8798d2a552ac03705f128e"
+    },
+    {
+      "path": "publisher-notes/trade/eurusd/index.json",
+      "sha256": "3c85b7eae8edc13e9546a8e328377e11128b382a11ba5bd326fd32cd21ccb2a1"
+    },
+    {
+      "path": "publisher-notes/trade/gbpusd/index.json",
+      "sha256": "3b4995e5f90e3f73bc3945d24cbbb9e8a1912c4623617d153546b27cea0e51e0"
+    },
+    {
+      "path": "publisher-notes/trade/gold/index.json",
+      "sha256": "16895ccde4a6be8e72ab206152f02effcae191bb19b6671c384ed293e71bedf4"
+    },
+    {
+      "path": "publisher-notes/trade/googl/index.json",
+      "sha256": "14c50091fa5fa1e4bc2ffd2e1d884400842f998dfef6582cc1ba75574176ddf7"
+    },
+    {
+      "path": "publisher-notes/trade/index.json",
+      "sha256": "f7396ab332924984571081546b35f175807a83707f592891028994d4d614ed6a"
+    },
+    {
+      "path": "publisher-notes/trade/meta/index.json",
+      "sha256": "d1a90083038eb3d41ba029c77bee77ec04f82439baca2a1c5cb713696648b5d8"
+    },
+    {
+      "path": "publisher-notes/trade/msft/index.json",
+      "sha256": "a05839e57db19374688ff6155aca39de2df62969e727b4249419a638c6a1dd5c"
+    },
+    {
+      "path": "publisher-notes/trade/nvda/index.json",
+      "sha256": "3c626a0b15a71725fc5b932dd0d4a18f08a671fb9323305793e10d8e636db279"
+    },
+    {
+      "path": "publisher-notes/trade/oil/index.json",
+      "sha256": "5a7e35f7f445b81691fbd9c9de5a3c330558d695910541f74200b167d48cac71"
+    },
+    {
+      "path": "publisher-notes/trade/qqq/index.json",
+      "sha256": "f5a28ea7b9a613e64c0c6f7b23ca1bfaf313a62cdd876f2cc2b24f0b5a11251c"
+    },
+    {
+      "path": "publisher-notes/trade/sol/index.json",
+      "sha256": "ea9e9cf3ad3af4af9085a2132c398b112114d7eab9b89566bbe684a4fc7e0f13"
+    },
+    {
+      "path": "publisher-notes/trade/spy/index.json",
+      "sha256": "8f4be13a37aba95015a1c6f24d73c037f66e449639a7546c5a865e48d6eb31b5"
+    },
+    {
+      "path": "publisher-notes/trade/tsla/index.json",
+      "sha256": "ace2aae36eb02c27efc7ddeaa4dd3b97f8ea410d8026f79136893193c9b50a98"
+    },
+    {
+      "path": "publisher-notes/trade/xrp/index.json",
+      "sha256": "3aa0d7448299de4810193ca6c1e65685c5ccce15be40d35af4a9bc26b24eabe5"
+    },
+    {
+      "path": "publisher-notes/wiki/backtesting/index.json",
+      "sha256": "8e3520d25dd5fd82d2e059c642defd3ec2ac634bc9a33a22a593492326ea06d9"
+    },
+    {
+      "path": "publisher-notes/wiki/bear-trap/index.json",
+      "sha256": "d897396312dbde54a060858e698c7a5667ca1197f059833298dc67e1375a2a6b"
+    },
+    {
+      "path": "publisher-notes/wiki/bollinger-band-squeeze/index.json",
+      "sha256": "0627df12244fe1a517cdad44fd9d1aa480edb05912cc55f36c5471528ef094d8"
+    },
+    {
+      "path": "publisher-notes/wiki/bull-trap/index.json",
+      "sha256": "956dfe6071c38769f56a17c0de3fd26adfff893c356be50eb632735f875546d4"
+    },
+    {
+      "path": "publisher-notes/wiki/candlestick-patterns/index.json",
+      "sha256": "3259f41b5fbfb3a293cac9a00fa849db6428e29c569a398df12415960aa71e16"
+    },
+    {
+      "path": "publisher-notes/wiki/circuit-breaker/index.json",
+      "sha256": "a37b1c794ad23bd85b4d032be334ee85711af564e22dd1f3ccba435634bac3b8"
+    },
+    {
+      "path": "publisher-notes/wiki/correlation-trading/index.json",
+      "sha256": "a4d4102664ea85b189c556bab12a44b0435630118ebbae7a0a70b62e5a33c720"
+    },
+    {
+      "path": "publisher-notes/wiki/dark-pool/index.json",
+      "sha256": "1bbf7097adc810a9440f3b5684e9e98621f290390b655dd57d8cfebaa6483b60"
+    },
+    {
+      "path": "publisher-notes/wiki/day-trading/index.json",
+      "sha256": "6e7a34d067c6465830425d8f438cc9a1440b38972901bd5caf9dfba8534697bc"
+    },
+    {
+      "path": "publisher-notes/wiki/death-cross/index.json",
+      "sha256": "789ee60d516f0e9f15322108ac21bd9bbf1310bf7bf600da97e3ca5d45ad0d62"
+    },
+    {
+      "path": "publisher-notes/wiki/dollar-cost-averaging/index.json",
+      "sha256": "1dc920f0a01c44dad745bbb7c37b15df9ca162e63d56b75cdb48267a94b81cc8"
+    },
+    {
+      "path": "publisher-notes/wiki/double-bottom/index.json",
+      "sha256": "a5db25b719d436d032754d5f9aba37540ff0922ce6ea51e0ba600eaeab0f1555"
+    },
+    {
+      "path": "publisher-notes/wiki/drawdown/index.json",
+      "sha256": "a0ecc39c3c25dce50e47e19d7649b5a36f15894019398cc854209365e4f5936d"
+    },
+    {
+      "path": "publisher-notes/wiki/elliott-wave-theory/index.json",
+      "sha256": "4036dd95903c84cadce2aa066b3496003c383a31e9ac366f5a023585e019d342"
+    },
+    {
+      "path": "publisher-notes/wiki/fair-value-gap/index.json",
+      "sha256": "6c00009e513c1d340284139d80382f28b75805d9152c9e185f985870ae210492"
+    },
+    {
+      "path": "publisher-notes/wiki/fibonacci-retracement/index.json",
+      "sha256": "dbc24fa95a9708ac653cd8fcc0c8637efecc2657227160a84eb885fbcfadc4b5"
+    },
+    {
+      "path": "publisher-notes/wiki/flash-crash/index.json",
+      "sha256": "739f14beece2104791975a2319d3e7836f333b695d73a23da9851801a1c1e99e"
+    },
+    {
+      "path": "publisher-notes/wiki/fomo/index.json",
+      "sha256": "a4d0e6757ee13531384f8467bf819d9e04784d00615f3dc14b1661fb91ffd03c"
+    },
+    {
+      "path": "publisher-notes/wiki/fud/index.json",
+      "sha256": "2b8fd88439f1166f26bd038507f95979faf2e5dfe1689a8ee7b120762f8eed2e"
+    },
+    {
+      "path": "publisher-notes/wiki/golden-cross/index.json",
+      "sha256": "cbff77d4978c036e261369b81825d5f168c1428e68a51293c04e9db07c775541"
+    },
+    {
+      "path": "publisher-notes/wiki/head-and-shoulders/index.json",
+      "sha256": "babc82e08143f5e01f5b304c975c10d446ef564bf278dd189cd43f53c9a78950"
+    },
+    {
+      "path": "publisher-notes/wiki/hodl-strategy/index.json",
+      "sha256": "55e1963bac40779292488954211a4f4e369daaf631dd80deb92c56fd303b5519"
+    },
+    {
+      "path": "publisher-notes/wiki/ichimoku-cloud/index.json",
+      "sha256": "9ad3b398cc78a7ab36c6d72fe5c4878cfb3d324df0cafb27da267ecee794ad7e"
+    },
+    {
+      "path": "publisher-notes/wiki/impermanent-loss/index.json",
+      "sha256": "67a7459e5c6b79a90864ff68858f47af67dc0cf0829b43c2669c280a11820b71"
+    },
+    {
+      "path": "publisher-notes/wiki/index.json",
+      "sha256": "3740a700440bec4a75f2dc6f5cb60c02aabcf29b1dada90d977046275697ed2e"
+    },
+    {
+      "path": "publisher-notes/wiki/leverage-trading/index.json",
+      "sha256": "d1d43207f40de895e57213ebbb392a89df69b5b31cf70f848e48ba0a99a41c42"
+    },
+    {
+      "path": "publisher-notes/wiki/limit-order-vs-market-order/index.json",
+      "sha256": "7891f1719b84df53b911d6629f54a23bc2ec4a4f12b901903a88048138f804e7"
+    },
+    {
+      "path": "publisher-notes/wiki/liquidation-cascade/index.json",
+      "sha256": "fbccb7e6528d2f5370e90ee11efa8d07a57f771243c349178d9b3a7391768bd3"
+    },
+    {
+      "path": "publisher-notes/wiki/liquidation-price/index.json",
+      "sha256": "70e43c70dd97c109f99af73d4c1fbd8f03b7b8fb1b05928f81653ac9e5ed1bc1"
+    },
+    {
+      "path": "publisher-notes/wiki/macd/index.json",
+      "sha256": "496b8086d252dfe5c716416b62cafb10120e622a96fd1f90cf094532f038c296"
+    },
+    {
+      "path": "publisher-notes/wiki/macd-histogram/index.json",
+      "sha256": "19283944bbba621f7606c5e4a6f9d78f721ae6ddfbdd4766758b015225c6444c"
+    },
+    {
+      "path": "publisher-notes/wiki/margin-call/index.json",
+      "sha256": "f265c35dacd0c4f84453651cff126c0d44993c0a42a45f1bf74b95928c3003e3"
+    },
+    {
+      "path": "publisher-notes/wiki/market-maker/index.json",
+      "sha256": "c54699734cc9db44f9670057ffa371001e022198a43435ce16fd4f442a40a756"
+    },
+    {
+      "path": "publisher-notes/wiki/order-block/index.json",
+      "sha256": "a6c883b6b84bf75262d35a504289f03fa2b97afba05ee245a1b83d2c077c9969"
+    },
+    {
+      "path": "publisher-notes/wiki/paper-trading/index.json",
+      "sha256": "ddcca88663302da112480c36bea66c15cbd7eba5c5ffc89a864f493967aa743e"
+    },
+    {
+      "path": "publisher-notes/wiki/pump-and-dump/index.json",
+      "sha256": "83dfc8bca9910692f01941354bb8e6ca46f1d8bf38c3543bb54d9a5e1d38b396"
+    },
+    {
+      "path": "publisher-notes/wiki/risk-reward-ratio/index.json",
+      "sha256": "a11396d39b6a8ffc373aa41f117d00bce041c93cfb01a819481a7cdb4985ff61"
+    },
+    {
+      "path": "publisher-notes/wiki/rsi-divergence/index.json",
+      "sha256": "5e655ae83e9a2a347ac2fad09b63893621c8287e3a3667f76cc6ea0a5fc3097e"
+    },
+    {
+      "path": "publisher-notes/wiki/satoshi-nakamoto/index.json",
+      "sha256": "f518876b7aab1e9acab5068a714f6a82f7366ee0060c1901bbe9160f7bc5b572"
+    },
+    {
+      "path": "publisher-notes/wiki/scalping/index.json",
+      "sha256": "4acd9139b366061792d4b8fc09a5786623acde4788db1237837e64545e3d2b5b"
+    },
+    {
+      "path": "publisher-notes/wiki/short-squeeze/index.json",
+      "sha256": "a2675825314cd53e93d79dd828a67a09781db3f5e944d63bd5bbd06c32557652"
+    },
+    {
+      "path": "publisher-notes/wiki/slippage/index.json",
+      "sha256": "e318c36cf0012905b98ae1c5e0e39825da01d86306169deb392b551944b667b1"
+    },
+    {
+      "path": "publisher-notes/wiki/stop-loss-hunting/index.json",
+      "sha256": "b6f8df7f9f3746f278f26ec97b9b1638f7890a08251d04e2b7a24a410eefb632"
+    },
+    {
+      "path": "publisher-notes/wiki/support-and-resistance/index.json",
+      "sha256": "64720a56267f2256d15d1f12afaa5aaf9f9851e56b4de473001ba0f289227bbe"
+    },
+    {
+      "path": "publisher-notes/wiki/swing-trading/index.json",
+      "sha256": "696d62a09e643ee59386701a1a05489da4089ab9df7c2aecba49f270bf88e2de"
+    },
+    {
+      "path": "publisher-notes/wiki/volume-profile/index.json",
+      "sha256": "e9d0d3feff85c54507e8c5401b6b587e14b5fc6c16488d9bae69663bfa0f76c7"
+    },
+    {
+      "path": "publisher-notes/wiki/vwap/index.json",
+      "sha256": "c6e045d567301819c77f88f16ae16e644242922dc5c3823030d02750f3f75982"
+    },
+    {
+      "path": "publisher-notes/wiki/whale-manipulation/index.json",
+      "sha256": "ee1205714bfdc979733513b55e9256b040685c1817472c3e5061d21e0d807f24"
+    },
+    {
+      "path": "publisher-notes/wiki/wyckoff-method/index.json",
+      "sha256": "fc1087aee23b56c4c25d5330873cc7803b89033ba39d080e1451a0b2ed6f554d"
+    },
+    {
+      "path": "publisher-notes/wiki/yield-farming/index.json",
+      "sha256": "a177d1357b560188d02a10f38b3c8e4acb2b631b87353b475c8c6f9ca304ce78"
+    },
+    {
+      "path": "reviews/index.html",
+      "sha256": "5ac831ba9415b6fe4d48831283e8a2da568a4051d459986a7bd220d69214280d"
+    },
+    {
+      "path": "roadmap/index.html",
+      "sha256": "c402c7493e8023152864fddc07a1aae2670a90e1b55a031affdff92d93236dde"
+    },
+    {
+      "path": "robots.txt",
+      "sha256": "34f4835436a8a5b140320f7194a650d2ffb1524b3d158619243119a0d19ed0e8"
+    },
+    {
+      "path": "sectors/ai-tech/index.html",
+      "sha256": "bace30c7274c082ef926cc65fac5ec2fd66d9f590d44233ef1dbdc78e6045769"
+    },
+    {
+      "path": "sectors/commodities/index.html",
+      "sha256": "41ca9ccd445fbae433efe67ffb6ef5210f3f2dbc95f35572aace7aeb818406f5"
+    },
+    {
+      "path": "sectors/crypto-defi/index.html",
+      "sha256": "9d68c8ff49be91b2d7a903b854458b09852be936a60637578abf88c8a287abc1"
+    },
+    {
+      "path": "sectors/etf-indices/index.html",
+      "sha256": "4f76fef2f2951ab925f244154b81ee0bf01d6abb17fdc617b61d2d20c74edc57"
+    },
+    {
+      "path": "sectors/forex-currencies/index.html",
+      "sha256": "b656f2a791f4ac21f8dd6a841be3bab1ebd2b49d09b3959f475c8d5ae9103d29"
+    },
+    {
+      "path": "sectors/mega-cap/index.html",
+      "sha256": "4fd2134fdfe35d5d97d89a0b8f38d9e7000fb0d8ba782fc4e94933c1e8aa4151"
+    },
+    {
+      "path": "sectors/tech-giants/index.html",
+      "sha256": "0d1bcb54475ca683e149c59996f92a3edfcd31fce8daf705dba1cc0ad18600ab"
+    },
+    {
+      "path": "sitemap.xml",
+      "sha256": "55da7a92e15eb004bb808d430ab5faac87c847fec1231ffba23e812867f64cef"
+    },
+    {
+      "path": "strategy/day-trading/index.html",
+      "sha256": "64f85cb61db29725ef25f7eece73cb40ea0a185e2c007ad8078567325134abd9"
+    },
+    {
+      "path": "strategy/dca-dollar-cost-averaging/index.html",
+      "sha256": "d1a426b84f56495589578b08a90642563fea2e44948de6170c5abbb0e44bc745"
+    },
+    {
+      "path": "strategy/index.html",
+      "sha256": "c00a235abbbc389c2477128aa37701706d1822c9a9916deaadd0383d4450f7c4"
+    },
+    {
+      "path": "strategy/macd-strategy/index.html",
+      "sha256": "613b163004337e5a86ce8833e750b94e95d921591f3b35b21a68d1a478faaac6"
+    },
+    {
+      "path": "strategy/rsi-strategy/index.html",
+      "sha256": "9ff6f76ffe38e19e602cbaf39ecbf6f7a56877730b9029454084ed0388f61934"
+    },
+    {
+      "path": "strategy/scalping/index.html",
+      "sha256": "8ad1a02839c374f6b12de33e5b4d8be18112178483ef1dc7eced432a7fef4dbc"
+    },
+    {
+      "path": "strategy/swing-trading/index.html",
+      "sha256": "109858480fb6eb5df610e22b4b44f375cc5356efeae2415015edeb5a1a79f936"
+    },
+    {
+      "path": "terms/index.html",
+      "sha256": "8a2c6e730f71997604ed97c9717a33402d800c9bcb48b3add0bf0e665b402424"
+    },
+    {
+      "path": "trade/aapl/index.html",
+      "sha256": "723286f7ca5315896da767d71f74e9c21cccde5443875f4eb838ce15014811cb"
+    },
+    {
+      "path": "trade/abbv/index.html",
+      "sha256": "efdab2a824b78c88744cf5da4efc887cab73cd74ed2ac1d18f658fe04eeadd92"
+    },
+    {
+      "path": "trade/ada/index.html",
+      "sha256": "a16aac0286974ef93e5619d4bf2de2996954faa58941881f8ca9c0dcecc73823"
+    },
+    {
+      "path": "trade/adbe/index.html",
+      "sha256": "29ea4c55c671bfbab23a9e3ea58fa4b72894728bcf8b968c9fc67cd3df7456b5"
+    },
+    {
+      "path": "trade/agg/index.html",
+      "sha256": "bfa098700b6af66eee44dc2186e279f3a85b1080b9af2eb2f2a584b2ff18bb6e"
+    },
+    {
+      "path": "trade/algo/index.html",
+      "sha256": "12bf8635e609de098f3a228866a1e9946f09bc475a2fa143f4d38bad9a338f8c"
+    },
+    {
+      "path": "trade/aluminum/index.html",
+      "sha256": "fe9bda83ab440a0471d3735514b537cbdd4959c9db9dbbac57d0ceeb962b7e3c"
+    },
+    {
+      "path": "trade/amd/index.html",
+      "sha256": "744da737e7f6c5ff57201358f5af786459e752b44b0ac5a9d23324c17cf1b611"
+    },
+    {
+      "path": "trade/amzn/index.html",
+      "sha256": "d16b1228306c832d340139a7dcc50e3d43a0f5ee1209ee19f1f62405d0d6c8c0"
+    },
+    {
+      "path": "trade/apt/index.html",
+      "sha256": "f99762c7dc4d83823a2cd34d0e14f4a68e179855621e3889d777194423a86c92"
+    },
+    {
+      "path": "trade/arb/index.html",
+      "sha256": "fe2b63279a150990fb9d234aaac84f57ad65b1a6309d62a97fcb1d5973693943"
+    },
+    {
+      "path": "trade/arkk/index.html",
+      "sha256": "07dfecd8b67b79a3a3ea8be248a23908de65913191814a3623e5e2165a0a64d9"
+    },
+    {
+      "path": "trade/atom/index.html",
+      "sha256": "568d8d30ee67ab331394195f84b43d9bc15875c477c241205c389cd19ad43b04"
+    },
+    {
+      "path": "trade/audusd/index.html",
+      "sha256": "c33f161327d2e469068964754fd4b520bd289c63b8cc90eed5112785d705510e"
+    },
+    {
+      "path": "trade/avax/index.html",
+      "sha256": "8a6ae6623e628200b302c00e9cb0f370d20360dbf970cc0737c3dc0ad7a49ed2"
+    },
+    {
+      "path": "trade/avgo/index.html",
+      "sha256": "e0f0db993f62f72024bbd32911017f8391b68a40d9c7946a1a77e6e92c9113bd"
+    },
+    {
+      "path": "trade/ba/index.html",
+      "sha256": "8e03ca7eceff1a4c38931e7f2d82934f906e08f53c7b1d761dca58ce59d561fa"
+    },
+    {
+      "path": "trade/bac/index.html",
+      "sha256": "9bc01d5de4adad142da103b9232bc47d599baf124a4b6e16c06c35f41ea730a1"
+    },
+    {
+      "path": "trade/bnb/index.html",
+      "sha256": "2ee5b0fa185a769e4de2f31ff81a8e43137078e6f399c36359e9f76df6125676"
+    },
+    {
+      "path": "trade/brent/index.html",
+      "sha256": "525e8c91c7f3e6e0cdf75240e60acf80a6e520614df63295166b509352754742"
+    },
+    {
+      "path": "trade/btc/index.html",
+      "sha256": "3d892c54e2a6f992fa871c344b714a21e00b5d8e6e2263b60696bc3f05da9ee2"
+    },
+    {
+      "path": "trade/cat/index.html",
+      "sha256": "33fb2b89d67a4a4afd980d0df6e3523b7a32b9a491ed70c49bfb99823e198860"
+    },
+    {
+      "path": "trade/coffee/index.html",
+      "sha256": "c3d6eba2d21fce84c81ddabbc117e47844cddff5292705c362899e4ce1ed12fb"
+    },
+    {
+      "path": "trade/coin/index.html",
+      "sha256": "2bae5893c8a69af6f266e3359569f1f61fd66804ef2a084ba6fec468a7356f17"
+    },
+    {
+      "path": "trade/copper/index.html",
+      "sha256": "a23ab83e11ecda10e95b8ec62b7069c21ed930990b18970a8e64ab2b38937ab7"
+    },
+    {
+      "path": "trade/corn/index.html",
+      "sha256": "ef7b89dd42dec239b90989e38273fdfbe569f2636e87251217adfe3513b4470c"
+    },
+    {
+      "path": "trade/cost/index.html",
+      "sha256": "db435f13261315533dc32d7eb3bd47e990b3f49b342c86d12b234f0dd179650b"
+    },
+    {
+      "path": "trade/cotton/index.html",
+      "sha256": "c3f208471300efe61cc88eabe06d745d0cae48211bf8a44bbe81c58d4fc31d1f"
+    },
+    {
+      "path": "trade/crm/index.html",
+      "sha256": "ead1fa0b9c6fcc853d391d4f6e70850929f4aa62bd475fedbb144dd077a09c02"
+    },
+    {
+      "path": "trade/crwd/index.html",
+      "sha256": "8e095e658a3c5891f311f5a63bfe95fd2226881e06bd16f933b06f0f2aad0fbf"
+    },
+    {
+      "path": "trade/csco/index.html",
+      "sha256": "3ede410f29ec12b1d63c2ce39b1e291469ff3347df2dfebeeb2b4454338ba4a6"
+    },
+    {
+      "path": "trade/cvx/index.html",
+      "sha256": "fd4d78c52f02e67f8d340cde7f08ad1152ac9ee17c0ef973a27fb912fdde4f5b"
+    },
+    {
+      "path": "trade/ddog/index.html",
+      "sha256": "ff06081337db7c271360b10b17d21cf33180d6bec23d86d72099889b6bb40466"
+    },
+    {
+      "path": "trade/de/index.html",
+      "sha256": "cea2dd8bba8a265d5aa097f686a25411d2277b7dc5a1c8a821c7e7ff54c6f61a"
+    },
+    {
+      "path": "trade/dia/index.html",
+      "sha256": "1ed097233513d7aaf9ab7407775698544479c5e7a70197607085498bea860cc4"
+    },
+    {
+      "path": "trade/dis/index.html",
+      "sha256": "9ece44c394d6114186a26eaacfc2c1a46e30643574bcde1f4f608681180a20b7"
+    },
+    {
+      "path": "trade/docu/index.html",
+      "sha256": "2c8b5f814ebc8aa51a910046c0ed95dc3dab5d89de236826358b00ff2ab5d0d7"
+    },
+    {
+      "path": "trade/doge/index.html",
+      "sha256": "c77c8305b8d350d6a707b48654f2133af807f8a72a75c05b3a730247047cec52"
+    },
+    {
+      "path": "trade/dot/index.html",
+      "sha256": "adf6bb25e18961e13d6df94a5bbc5b76c3263750d1e7cbfe5f5550cf1ac22960"
+    },
+    {
+      "path": "trade/eth/index.html",
+      "sha256": "b1cac0732042e3e3b0ea95727a26be7680265f76b8e14bf7fd0b1288f1ba35c7"
+    },
+    {
+      "path": "trade/eurgbp/index.html",
+      "sha256": "a1788f84f21583f281c5f7010789bbf46cf7908d15c914c027bb97b7b2f08e28"
+    },
+    {
+      "path": "trade/eurjpy/index.html",
+      "sha256": "61ebb2745ccdf5e8d781254016f395eb1949aadc240c4468b1efc11aee5f93fa"
+    },
+    {
+      "path": "trade/eurusd/index.html",
+      "sha256": "b3be37170461fa88924d5141dc731356d24442cc18ce803def69fb1136c4562f"
+    },
+    {
+      "path": "trade/fil/index.html",
+      "sha256": "f1177373a89f7c5d4b14d7b058b8d29b81940df45de01f7668fabb925ef87ee0"
+    },
+    {
+      "path": "trade/ftm/index.html",
+      "sha256": "dcc2a0db58556d05eee3d1a3c58155912407d86ed538633e6e1039bd1c4acad0"
+    },
+    {
+      "path": "trade/gbpjpy/index.html",
+      "sha256": "e22295cf1aacda97e685d73707652c008744007bc1736afdcb16fc716b6954c9"
+    },
+    {
+      "path": "trade/gbpusd/index.html",
+      "sha256": "2d8f1699105ce22a6590f024571b9830a0d283a27e8362e320b52ae48a7329d3"
+    },
+    {
+      "path": "trade/gld/index.html",
+      "sha256": "54d3a93d973369a9ad2140284f5abb6dec2cb8386b6e6befe7781331d4e64656"
+    },
+    {
+      "path": "trade/gold/index.html",
+      "sha256": "5a400138181d264dcc7905cd0479467ec3bca8bced79eb18ad09dd76adc09a7d"
+    },
+    {
+      "path": "trade/googl/index.html",
+      "sha256": "848134027ff092dc5b5efc36341e7eaa16eb794cba7559ea5b764bc095ff95b7"
+    },
+    {
+      "path": "trade/gs/index.html",
+      "sha256": "cc531d89c9a767a2d21f74a33644029b3ab9f5d780e735be496915f3ed42c854"
+    },
+    {
+      "path": "trade/hbar/index.html",
+      "sha256": "7caec182390bdcc98e59ce513877e8190f380d94b0baf52906c5c525d0655d04"
+    },
+    {
+      "path": "trade/hd/index.html",
+      "sha256": "78aec67a43a451470bd925ba2876909bb245b6ab8fa50845f28df02484af6f83"
+    },
+    {
+      "path": "trade/ibm/index.html",
+      "sha256": "d3636b3ac231ac397d35a1aefacbd32b50a8fcd79564431fb7720678c4f23ad4"
+    },
+    {
+      "path": "trade/icp/index.html",
+      "sha256": "4dd91f71f095e2feaed39eaccca8f1d4fd93fc6e2bf38b2790c41bd8a758cc13"
+    },
+    {
+      "path": "trade/ief/index.html",
+      "sha256": "5874a842b191db0b0b085488c81bc94ab8f4123ff483811f63795d59e4a0e9d7"
+    },
+    {
+      "path": "trade/index.html",
+      "sha256": "fa845b40d9a81b6a24ac10b8789e985ab714b2bee4faf2d6d0a3a5bc1c4da371"
+    },
+    {
+      "path": "trade/inj/index.html",
+      "sha256": "9b7f62f9d66456ff17c6f3a7cb5b8b3319e5c632f041fbd5db9ed31537249f62"
+    },
+    {
+      "path": "trade/intc/index.html",
+      "sha256": "e78f37694b14809fbc3ae0aae4717677cd0db7b88fd9cee1db3d45cb9a8d9036"
+    },
+    {
+      "path": "trade/ivv/index.html",
+      "sha256": "672ffbd7dc3c3fa6c34c17c24b355744a5df9ab5deb0dc04c2cc1b692a7d8cd4"
+    },
+    {
+      "path": "trade/iwm/index.html",
+      "sha256": "a987978470a88c8307b0ca102ba00cd141b6d094d1b7201fec28bc97ef96db8f"
+    },
+    {
+      "path": "trade/jnj/index.html",
+      "sha256": "c425e78706a81b709ec26079152894dd6e7fa479f07f97d2a00b19d0de7faabe"
+    },
+    {
+      "path": "trade/jpm/index.html",
+      "sha256": "0026cce02231ceabf7b165d7dd9be93f7dda75b1067600d6cea086a2c3aa6364"
+    },
+    {
+      "path": "trade/ko/index.html",
+      "sha256": "e6b4940310fa04055da7df1cf751fe58c714c2aeaa7df9d62e5820947a40bfa9"
+    },
+    {
+      "path": "trade/link/index.html",
+      "sha256": "8ffb9c48f99df92169a0031eb82e0a4db210014e8a7995a310a2270d2c550698"
+    },
+    {
+      "path": "trade/lly/index.html",
+      "sha256": "55c9046bfd2c04bccea9a4f0c960db71aafd13a4a3da6228ceafa04c2d264a43"
+    },
+    {
+      "path": "trade/low/index.html",
+      "sha256": "dd79cc2b5fdea1d5cff1a8f7c9ff9265c7527b7b611a10f97e03da7590e73cbd"
+    },
+    {
+      "path": "trade/ltc/index.html",
+      "sha256": "7850dd078157970903e8880dbcddf1abe444fa1595f582264363dc53d34f17a1"
+    },
+    {
+      "path": "trade/ma/index.html",
+      "sha256": "777fda190e3bacfea39974994ac2bc6691519093641974b5194a792e797121d3"
+    },
+    {
+      "path": "trade/matic/index.html",
+      "sha256": "09e670b29e50689041fd930795fba1cdd3f99fee30652e1a476832b031e46696"
+    },
+    {
+      "path": "trade/mcd/index.html",
+      "sha256": "f6d18942fad402f868893c39068c932174e057ce35c8f6aa2a9ab5e69b764280"
+    },
+    {
+      "path": "trade/mdb/index.html",
+      "sha256": "588e2efcd0e92a84b80525e7888e276c48154ed84f590b64ab79019abe8cf96c"
+    },
+    {
+      "path": "trade/meta/index.html",
+      "sha256": "b557aaa8cd6119972abdc9107c12f31f6d0afe0f1604c5e19c5ab1e491af7212"
+    },
+    {
+      "path": "trade/mrna/index.html",
+      "sha256": "9aa0d3ea42ed3d329e5c9f9e8f7279a476d488b5a90e3eccef865c51d6097bf4"
+    },
+    {
+      "path": "trade/ms/index.html",
+      "sha256": "47d38d69f31331fea03b09e1e7f302261cfd6ac444f425786f38b71729ec5448"
+    },
+    {
+      "path": "trade/msft/index.html",
+      "sha256": "d82162aa316f51b937f2c72ebb74f8751899897f3ee96ed3cc0d8260a1a899b5"
+    },
+    {
+      "path": "trade/natgas/index.html",
+      "sha256": "2e7424b33a1a501aa377925ea6a6142f79dadd7d8e2f6fac6c36b90e32e820b4"
+    },
+    {
+      "path": "trade/near/index.html",
+      "sha256": "0cfd1fa1d5897c9c080043d8ce92c4e4ee03999c21b3480be5bcaa0e7bd433b0"
+    },
+    {
+      "path": "trade/net/index.html",
+      "sha256": "ceeb0cd658c581d96cfa93e70ffaeb90aa828b3568a4d31800990a07ab7e6111"
+    },
+    {
+      "path": "trade/nflx/index.html",
+      "sha256": "2829d330ac1237a6f6a1b051a3b294e124c7e561316932671fc626467560d7df"
+    },
+    {
+      "path": "trade/nke/index.html",
+      "sha256": "d2a6a6c683d4b5213c4e922abf132b3ae394da5403d6a6f9863450b4c038be4f"
+    },
+    {
+      "path": "trade/now/index.html",
+      "sha256": "c6b2982011a3898d68b7593f823a99c18d1665389c1b23ac3b53ff23c0fe71d4"
+    },
+    {
+      "path": "trade/nvda/index.html",
+      "sha256": "64706dea2eba22f89769a70b3f2b3e8c8235128f4de34b890c395f2b6db0af6d"
+    },
+    {
+      "path": "trade/nzdusd/index.html",
+      "sha256": "40540f723a2579d145b11573037ad4e0b1db2dfaa5c4cc098d4e539408a91ac1"
+    },
+    {
+      "path": "trade/oil/index.html",
+      "sha256": "ae63dd3a4cb8a63915927708fd81c7ad0ca05a227398e5ebefea0b018207731e"
+    },
+    {
+      "path": "trade/okta/index.html",
+      "sha256": "baf4a91494a699a6d390a89e137e4d19cef2d686a22ba0b6ec39d6791dfc1e66"
+    },
+    {
+      "path": "trade/op/index.html",
+      "sha256": "5d11681cc22c31953f3767af75aa5dc618b9c97a73199a8fed5acdd4862d8a86"
+    },
+    {
+      "path": "trade/orcl/index.html",
+      "sha256": "efe4f539e815a218bcfa6614e124c81f655360dcd27ba1c1518536e3fb49d9f0"
+    },
+    {
+      "path": "trade/palladium/index.html",
+      "sha256": "1d7ad57c00152860b6c46463028a4253c0595592d1622ebaba81baaf4d33a22f"
+    },
+    {
+      "path": "trade/panw/index.html",
+      "sha256": "5eca0b0b0a0acddf4f42e9731bcbb7728c952e9161f46b2b330d5ef32f6a3bd0"
+    },
+    {
+      "path": "trade/pep/index.html",
+      "sha256": "3c593b4b679f784a7329a49feba981f2f91c2bc5847d46467435b3fb05e846e6"
+    },
+    {
+      "path": "trade/pfe/index.html",
+      "sha256": "b616060c130da294224e15db72929923da1fd7f2ee9bf4460dfa25ff6f337f0c"
+    },
+    {
+      "path": "trade/platinum/index.html",
+      "sha256": "4e8ebadbc564352f9c7669d06d9b91fa82e1d23c3cb57bba59967e3d29c6994e"
+    },
+    {
+      "path": "trade/pltr/index.html",
+      "sha256": "cd6fcae3879c96c7c4208362d4a1545a6674339e78a8dabfb58fb736e7a69bd5"
+    },
+    {
+      "path": "trade/pypl/index.html",
+      "sha256": "e433c03e072f25d124c1788253f451b1d884d5931d8702f8b207e9f50e32ea7b"
+    },
+    {
+      "path": "trade/qcom/index.html",
+      "sha256": "04753d65431d1b3c2c98e51ab8616f861101ac8d95c3696e5bec0b3100d21387"
+    },
+    {
+      "path": "trade/qqq/index.html",
+      "sha256": "98f5371417dd5f6b34bf0c9e61a67470f7494bfb9071881125b5ede31b0bdb59"
+    },
+    {
+      "path": "trade/roku/index.html",
+      "sha256": "90ca70a7896a8f9bf73695d1008b0aff2475b01aa5f05bd70dbb1ef86dd55159"
+    },
+    {
+      "path": "trade/sbux/index.html",
+      "sha256": "fc81c7d481d65a8d88146b51c647d156273f6c5652de0cd48f828873fb15deb0"
+    },
+    {
+      "path": "trade/sei/index.html",
+      "sha256": "e4c0eecfefb3b9130f3157f0a55a334b973b2c09cd19794839b362b03e2390af"
+    },
+    {
+      "path": "trade/shib/index.html",
+      "sha256": "c28075f281d1a0ab9d68920057d880658e251cc5e905815f2e451da926dc4f30"
+    },
+    {
+      "path": "trade/shop/index.html",
+      "sha256": "124e4d68d92984614edf469fdbfeb34fa37784578126a142f5be639344bd0e8d"
+    },
+    {
+      "path": "trade/silver/index.html",
+      "sha256": "6a7d91aab90072b2c77623074a974d07e31d23001c7239d8bc3d312dee340263"
+    },
+    {
+      "path": "trade/slv/index.html",
+      "sha256": "f0f4a9c44800e26769e41e391d0d7bc944f6584464f23d1de896d51763effc3f"
+    },
+    {
+      "path": "trade/smh/index.html",
+      "sha256": "9ce3e4d6364721eb23eae87214d86ee4a898e0153515bf9ff3dce2ef54b19438"
+    },
+    {
+      "path": "trade/snow/index.html",
+      "sha256": "e937c80f311451f523200e2e39c6d9f7847f8054159df1cab78ad1ce35890fd6"
+    },
+    {
+      "path": "trade/sol/index.html",
+      "sha256": "48422fccebe50d700b543bd7db018a8b2d337305b35c6267b431b579be2e5ae6"
+    },
+    {
+      "path": "trade/soxx/index.html",
+      "sha256": "e68d33986b09c50875164626a980a6400933e7031bf7eddbf0e9c98ab374ba3d"
+    },
+    {
+      "path": "trade/soybean/index.html",
+      "sha256": "a045b33a0532ea9766714cf8251d4c8406f2aacf8982c57487b6f1cfcb32c95f"
+    },
+    {
+      "path": "trade/spot/index.html",
+      "sha256": "15ac214e41a29a236c794dad53503cb39a62b37f6e74146e4ba2badfa4825c6f"
+    },
+    {
+      "path": "trade/spy/index.html",
+      "sha256": "784ab13da38d5bfc82a11b5edb0e1f54ade270e3703170a65c13b5af664f9c87"
+    },
+    {
+      "path": "trade/sq/index.html",
+      "sha256": "12f03b00dea2673b04c2b8546b88cbb29791823a2a68cc34a3261bc7c53b20f9"
+    },
+    {
+      "path": "trade/sugar/index.html",
+      "sha256": "0ea18c6b7cb9c39179fbcf322db596376de2456eb7e2730738bdfe58a72c73a1"
+    },
+    {
+      "path": "trade/sui/index.html",
+      "sha256": "4f40268a91ce5846ef06be2da27e950bb9cedfcc03b915c997a0364f8fd8db38"
+    },
+    {
+      "path": "trade/tgt/index.html",
+      "sha256": "c39919feb2cfad0e137134bd6fe291b7d82a94544906b2f59a4db87605128328"
+    },
+    {
+      "path": "trade/tia/index.html",
+      "sha256": "5847eeb12153bdf9afb60776694afcb4e754005e193d5af65739a3cc13a7cced"
+    },
+    {
+      "path": "trade/tlt/index.html",
+      "sha256": "c2147f3c220fea5a0d1380db7c5c07c2de8aeef1582e055d982dba05ab3f6f9b"
+    },
+    {
+      "path": "trade/tsla/index.html",
+      "sha256": "34f450965b2da3841add551ba0df29df96afc111c2af407bd71369ab58ccd696"
+    },
+    {
+      "path": "trade/twlo/index.html",
+      "sha256": "725a000ea1c3515ac007c8e23ca468fb6a09fb27a057d55b9a4a1fb8b67f22a1"
+    },
+    {
+      "path": "trade/txn/index.html",
+      "sha256": "12ad44c27c3c5dda5e572df748b49f90ad7b1860e81c8ab37fa92debd6b1a44e"
+    },
+    {
+      "path": "trade/uber/index.html",
+      "sha256": "d0a786e115db580b8e0c1c85d2906e0b5c3aba7dd8d2b97bb85c6f4ee8f2b7d9"
+    },
+    {
+      "path": "trade/unh/index.html",
+      "sha256": "6fd7f278808bc74e1bb7601e9f1a98dfd2f0bcd104c09de8e240d017944bdbe3"
+    },
+    {
+      "path": "trade/uni/index.html",
+      "sha256": "425036227a627c172db5fe1a915524392048328c923b16c07ae88b55f98041cd"
+    },
+    {
+      "path": "trade/usdcad/index.html",
+      "sha256": "10feff16be11c06327d0851085af65701bce3498be1b9e34fa5103e20b95b49c"
+    },
+    {
+      "path": "trade/usdchf/index.html",
+      "sha256": "a6cb04fa77529a41644e771fc350886d6c6d89c409fd1acfdbec0632ca62bf5f"
+    },
+    {
+      "path": "trade/usdhkd/index.html",
+      "sha256": "b3d82c900b1072e208bfb94c8e11a56eddb3c523642281aeac581c607903e920"
+    },
+    {
+      "path": "trade/usdjpy/index.html",
+      "sha256": "5cd1cc46997e2d57101fcada9ad9022a3d360cb6800975e32194918968181b0c"
+    },
+    {
+      "path": "trade/usdmxn/index.html",
+      "sha256": "b916d771432d5f0a39a48da95fd47e6e0a8a2a7a989199b74fba53dd8d16befd"
+    },
+    {
+      "path": "trade/usdsgd/index.html",
+      "sha256": "b0bc81f8ea45ea188daa2da1e183072b1e5455b0d31e40f57c4ce1037f016140"
+    },
+    {
+      "path": "trade/usdtry/index.html",
+      "sha256": "757943829acbed970a0df47da1a364e37bd02ae788f1b10c4241aea6ee45bee2"
+    },
+    {
+      "path": "trade/usdzar/index.html",
+      "sha256": "487f69af42ba05d7df225d226b13cfdeff17cd4f2ce8f791d51c865ae4159db7"
+    },
+    {
+      "path": "trade/uso/index.html",
+      "sha256": "2a9eef74ecd906440ac1356d3f4e0b52e336dee7bb59926d286ae45fd030140e"
+    },
+    {
+      "path": "trade/v/index.html",
+      "sha256": "ee034c1e9ba9b9bb6b1016d052b5d5051c727328b89486a49b644dd909a0d17f"
+    },
+    {
+      "path": "trade/veev/index.html",
+      "sha256": "3b241b960e3046e8dc76b8d193baf4ffb61bde0e5928c5018d054fd9031d5323"
+    },
+    {
+      "path": "trade/vet/index.html",
+      "sha256": "dc60c36ade628d2e476516a529dc0ee9c02b4d99235f090fa88c32a7979e6c1a"
+    },
+    {
+      "path": "trade/voo/index.html",
+      "sha256": "e00efed5d3d525a915946d26c943a7555591d6178d336bb96c1a3a64ba8120a1"
+    },
+    {
+      "path": "trade/vti/index.html",
+      "sha256": "6e57cbd003effda0f99b853056915c899e1391918a963d732655f47c9d2245c0"
+    },
+    {
+      "path": "trade/wday/index.html",
+      "sha256": "883bf5ab957ad3328964be7b2e5082ef6f4646e692832e8a4eb6dba5afea2ffa"
+    },
+    {
+      "path": "trade/wfc/index.html",
+      "sha256": "922ec93eecb095e7e1acf81d428a0b6da5be59b5d7ab776e3e15ff0e487e4110"
+    },
+    {
+      "path": "trade/wheat/index.html",
+      "sha256": "7d3dcf1d79a951d75f98bb282e6aabe8c5a48e4f825865123d44afbd0310282a"
+    },
+    {
+      "path": "trade/wmt/index.html",
+      "sha256": "b1e82b6e41a1024bbd085c238c7eed388fc9bd139cee8e50fde6d678b56925bf"
+    },
+    {
+      "path": "trade/xle/index.html",
+      "sha256": "cf743cfb432e6d62dc6a138dee78d4dc66eff4842e94cd847e348eb8fee95818"
+    },
+    {
+      "path": "trade/xlf/index.html",
+      "sha256": "4a0bb2e0e62486e4874267aa54c3f0f204a01d1e96979989f612bfe0288c98b1"
+    },
+    {
+      "path": "trade/xlk/index.html",
+      "sha256": "d485ef193820c8d77f90534710ca7afad7bc26d343a42a638d858c57870fcf39"
+    },
+    {
+      "path": "trade/xlm/index.html",
+      "sha256": "1ba6b0ee09bb5089faa9d34b02f0272cdb758364419dffd4a651bcbc375df2db"
+    },
+    {
+      "path": "trade/xlv/index.html",
+      "sha256": "823a61b1f2423e3d6ab231c05560013d2e39d7f61893585cfd17f4a6379857ac"
+    },
+    {
+      "path": "trade/xom/index.html",
+      "sha256": "cdcbb3f6312bf0a8af765b6fc8849c3df5beec0a2cde1d9bc57ef78c6bbd6f2e"
+    },
+    {
+      "path": "trade/xrp/index.html",
+      "sha256": "9fbed03f024acc12380201f7d9df8568d5a56e3d8d84efb4bdcf7d6d8cb5ff2e"
+    },
+    {
+      "path": "trade/zm/index.html",
+      "sha256": "f0cb94728a1dd6bec1a636f6df33ec8228e5bf0ab3f44f7cb2f5b98665c60e11"
+    },
+    {
+      "path": "trade/zs/index.html",
+      "sha256": "e744a27ca3adb117da734ff907f55429079f0b9a149cabdea3a82a624c0da350"
+    },
+    {
+      "path": "wiki/backtesting/index.html",
+      "sha256": "50aa080020b035598b717dbc227711f686f5295595fde3726a461d4ab02f6f5e"
+    },
+    {
+      "path": "wiki/bear-trap/index.html",
+      "sha256": "1289fbb3195105f2369b2835af88f74286d9ce2dbaa2cf44cf1ae3b304979d8a"
+    },
+    {
+      "path": "wiki/bollinger-band-squeeze/index.html",
+      "sha256": "c1fb76137fed8646e79c6b9581aa9c1506fbcd6832cc1d5f7f9d768b983f7e00"
+    },
+    {
+      "path": "wiki/bull-trap/index.html",
+      "sha256": "8d7746dc53ac6bfbd9596867203014b174a217c682048725dfbee74085e0b31c"
+    },
+    {
+      "path": "wiki/candlestick-patterns/index.html",
+      "sha256": "737ca68b2b7c1253188ba263f5700ffc08cf8624d87de5d007ddd6f0d6603444"
+    },
+    {
+      "path": "wiki/circuit-breaker/index.html",
+      "sha256": "1d5c1da971ef8c27fd0a0b441f7e643d259e506da128843558de150d21ebcfe6"
+    },
+    {
+      "path": "wiki/correlation-trading/index.html",
+      "sha256": "2c7a10396a11bb6577000008d5fe3a718142a85e091f43bdf2fc83dd7cde3393"
+    },
+    {
+      "path": "wiki/dark-pool/index.html",
+      "sha256": "78528578e7a7acf36ab76ca52cbaa021a211d1def7e03a0f58a4983d7c5dd38a"
+    },
+    {
+      "path": "wiki/day-trading/index.html",
+      "sha256": "f5e0e323029282fdc61959144755c1a96a218d0bdc208705e74a7785090a5269"
+    },
+    {
+      "path": "wiki/death-cross/index.html",
+      "sha256": "2daf09bc62c99b0514a08e4cd017b0bddb7d31c4bd6ea5e66d848f0dbe4ef990"
+    },
+    {
+      "path": "wiki/dollar-cost-averaging/index.html",
+      "sha256": "10fdf328e7c7e9cc1b262ef4f39b1d8bdff4d8311161fb8b92bf8a7d89394902"
+    },
+    {
+      "path": "wiki/double-bottom/index.html",
+      "sha256": "9c67b73da44f8ae1f26a28522fa0a2ffc708743b19d56da9df1a39a1047c9cee"
+    },
+    {
+      "path": "wiki/drawdown/index.html",
+      "sha256": "53b007e31e7c362b5c02a38eb1ca51eeda2a6874e435b3dd21fdb045d0fe29f1"
+    },
+    {
+      "path": "wiki/elliott-wave-theory/index.html",
+      "sha256": "87233a9214f9dd57851782993fb8c52b347bd35dcc5cb8496faa372316afcb6d"
+    },
+    {
+      "path": "wiki/fair-value-gap/index.html",
+      "sha256": "5b64603c9528a3829dcacff2158ae4ee996c22b1251446eee955882f02707d69"
+    },
+    {
+      "path": "wiki/fibonacci-retracement/index.html",
+      "sha256": "f6948bf4b89b7ef732adfbcc4720a312aad6166e8d1dc9596b72babc139b528d"
+    },
+    {
+      "path": "wiki/flash-crash/index.html",
+      "sha256": "fb186637582ae9901b1ed7f75a238df54f243d669ddda6e9d5a35c4ce8c41049"
+    },
+    {
+      "path": "wiki/fomo/index.html",
+      "sha256": "e188a0d3a81325b29851b9223f72200753e28d87a48c2fcc4e0cfad23d4e28dc"
+    },
+    {
+      "path": "wiki/fud/index.html",
+      "sha256": "c78a72b4f2e4b584729648324cf0f8eec2586d1814acc9de4a6f77d3029c25fd"
+    },
+    {
+      "path": "wiki/golden-cross/index.html",
+      "sha256": "a80475745c68bde9b82e6028d0c9f5195bf34f1a5f4e86c25d557da4d03755b0"
+    },
+    {
+      "path": "wiki/head-and-shoulders/index.html",
+      "sha256": "8ffbe7ff63fbe725e69f9ddccd931444b57df70fc6a502d8edc8507e318aa1f4"
+    },
+    {
+      "path": "wiki/hodl-strategy/index.html",
+      "sha256": "083688a96b3ce202dde5635f542977c62a7d370714fc0f2d412da66a876a644a"
+    },
+    {
+      "path": "wiki/ichimoku-cloud/index.html",
+      "sha256": "b71a807d98deaeec0e3575729962b28ee333e6ce39279f1f084b44793dbf98b1"
+    },
+    {
+      "path": "wiki/impermanent-loss/index.html",
+      "sha256": "73eed8d58eb19beae6927a289cd10bbaef68225c46d032d3f106a0a2b6c252d4"
+    },
+    {
+      "path": "wiki/index.html",
+      "sha256": "3ac2773b8432f314f86fa70df8cbab9626f1b5cfc4c62afc28b802beebd1ef3c"
+    },
+    {
+      "path": "wiki/leverage-trading/index.html",
+      "sha256": "0e8232729abf93f7a5af5952fac9588c37e7dfdfc191e1bc13ccd7c771c8bbcb"
+    },
+    {
+      "path": "wiki/limit-order-vs-market-order/index.html",
+      "sha256": "fbd38dfaa9f6b46a8fd650533c7b9b7b7235c9796a6a2a8804d60497399d7ea1"
+    },
+    {
+      "path": "wiki/liquidation-cascade/index.html",
+      "sha256": "22200b924fdaf6f971f7f7adfd1d01a3c0cc3b42e1cea3ad08a64c0d4ca3062f"
+    },
+    {
+      "path": "wiki/liquidation-price/index.html",
+      "sha256": "891f7f6f79f982a85721a54f153762560702a7b107f2a2578f5497bed6b5b1fc"
+    },
+    {
+      "path": "wiki/macd/index.html",
+      "sha256": "7186be84c395adfa1741a825d83ccc69dd37253265f0e428d6dfd567bd6999dd"
+    },
+    {
+      "path": "wiki/macd-histogram/index.html",
+      "sha256": "6cd33e2d19f6facb7206cc3ac24d81d96b77a2d9667569f6311b5b60f5e37059"
+    },
+    {
+      "path": "wiki/margin-call/index.html",
+      "sha256": "39dbc4e653e180b0abb133f84066092e1ce5d1e8a0f522da7bbc0bab3953e2a6"
+    },
+    {
+      "path": "wiki/market-maker/index.html",
+      "sha256": "cead223199f1c31c799aea0249757d1f6cd446f7c691d7c9572e7a9fc70a016f"
+    },
+    {
+      "path": "wiki/order-block/index.html",
+      "sha256": "22ae018b3d01c12f4cedf4a41d199b13bf6cf131196d34bbee7d502e99b8c862"
+    },
+    {
+      "path": "wiki/paper-trading/index.html",
+      "sha256": "7ebff973c80fdab6a2545ec78d12becf18ad2390ec913040df278c5d742d4b2a"
+    },
+    {
+      "path": "wiki/pump-and-dump/index.html",
+      "sha256": "2211bd4dc1c89cd50fda8d0fe3250cd5e6de283d78f8634b5d5538d05bb179ce"
+    },
+    {
+      "path": "wiki/risk-reward-ratio/index.html",
+      "sha256": "7e9ccb6d3e281d3e9586655f147f7c55fdd4b9b5f63d35e708aa68aa8a6e7f4d"
+    },
+    {
+      "path": "wiki/rsi-divergence/index.html",
+      "sha256": "a41b4623331d945e19c7bfea97f5f7f4019c884daa5421bcb75181b3f264f12a"
+    },
+    {
+      "path": "wiki/satoshi-nakamoto/index.html",
+      "sha256": "cf27d73330bc82fac2cadaf3ef93799e9055247f089b6a347307d62a43153573"
+    },
+    {
+      "path": "wiki/scalping/index.html",
+      "sha256": "cb635f37df251e43891717f67003fbc59e36fd50b296d6152819928c50e8ec44"
+    },
+    {
+      "path": "wiki/short-squeeze/index.html",
+      "sha256": "b3d9657969f6a252553f8ebf4d5c7d639814473cd012bcfdbca6eaf85f68312d"
+    },
+    {
+      "path": "wiki/slippage/index.html",
+      "sha256": "65a5b1f1b61ee9561b077475afa9bac87d9bfc8dc6be16be616cef18003d2833"
+    },
+    {
+      "path": "wiki/stop-loss-hunting/index.html",
+      "sha256": "bf63a2086328d897c9bbbf430dbbd766d0c997cf10650a8f6973387cf84c505c"
+    },
+    {
+      "path": "wiki/support-and-resistance/index.html",
+      "sha256": "80cedb8774584049bd5c02b5449eaf4c89d1f99b55893256968f6db257047525"
+    },
+    {
+      "path": "wiki/swing-trading/index.html",
+      "sha256": "3aadba86178ef8ae95e951e70fb139dca7ae94611a53cf92c7814872ec1cb3c9"
+    },
+    {
+      "path": "wiki/volume-profile/index.html",
+      "sha256": "d2ead8b3ea74f6ad99ee4c9247bea0bfbafc008fd3c18e7bd997dad303bc9a8f"
+    },
+    {
+      "path": "wiki/vwap/index.html",
+      "sha256": "47ff214e6623b037764198251d9ad25ef56638adb0cd96c64d9fab798141217b"
+    },
+    {
+      "path": "wiki/whale-manipulation/index.html",
+      "sha256": "1a340b6f0473c9a5b833720b86b25c03f685ffc55a45f5d6ed66f1a557fe1cff"
+    },
+    {
+      "path": "wiki/wyckoff-method/index.html",
+      "sha256": "184a3255347484a4901d69afc3f3062af79b817a56bf9fc60ca805645950fa5e"
+    },
+    {
+      "path": "wiki/yield-farming/index.html",
+      "sha256": "6032236ce75d96c7ebcac6a4374bf7f58ca916eb8ea43fdfcd5190ebfd24f08c"
+    }
+  ],
+  "sourceCommitVerification": "Not re-established for existing isolated dist; no current-source or production credit.",
+  "bank": "Historical captured authored-2026-10-depth; practice32 predates approved record correction, deliberately retained as historical fixture. No published records modified.",
+  "captureChange": "Audit harness waits for font readiness,1.5s settled rendering and two animation frames; resets horizontal scroll before screenshot. No application source changes."
+}
