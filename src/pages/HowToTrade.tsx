@@ -49,7 +49,7 @@ export default function HowToTrade() {
 
       <div className="min-h-screen bg-background flex flex-col">
         <Navigation />
-        <main data-publisher-notes={`/how-to-trade/${asset.symbol}`} className="flex-1 container mx-auto px-4 pt-24 pb-12 max-w-4xl">
+        <main data-publisher-notes={`/how-to-trade/${asset.symbol}`} className="[.light_&_.text-emerald-400]:text-emerald-800 [.light_&_.text-rose-400]:text-rose-800 flex-1 container mx-auto px-4 pt-24 pb-12 max-w-4xl">
           <header className="mb-10">
             <p className="text-xs uppercase tracking-widest text-emerald-400 mb-3">{asset.type} guide</p>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">How to Trade {asset.fullName}</h1>
@@ -211,7 +211,7 @@ export function HowToTradeIndex() {
       </Helmet>
       <div className="min-h-screen bg-background flex flex-col">
         <Navigation />
-        <main className="flex-1 container mx-auto px-4 pt-24 pb-12 max-w-5xl">
+        <main className="[.light_&_.text-emerald-400]:text-emerald-800 [.light_&_.text-rose-400]:text-rose-800 flex-1 container mx-auto px-4 pt-24 pb-12 max-w-5xl">
           <h1 className="text-4xl font-bold mb-2">How to Trade — Guides</h1>
           <p className="text-muted-foreground mb-8">Pick an asset and learn step-by-step on the free $100K practice account.</p>
           <div className="grid md:grid-cols-2 gap-4">
