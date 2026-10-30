@@ -68,9 +68,9 @@ const SECTORS = [
 ];
 
 const LEARNING_PATH = [
-  { tier: "foundations" as const, label: "Foundations", tagline: "Start here — understand markets, terminology, and your first trade.", color: "text-emerald-400", borderColor: "border-emerald-500/20", bgColor: "bg-emerald-500/5" },
-  { tier: "strategy" as const, label: "Strategy & Analysis", tagline: "Compare assumptions — risk management, technical analysis, and market patterns.", color: "text-blue-400", borderColor: "border-blue-500/20", bgColor: "bg-blue-500/5" },
-  { tier: "advanced" as const, label: "Advanced Practice", tagline: "Refine your approach — portfolio construction, diversification, and real-world application.", color: "text-amber-400", borderColor: "border-amber-500/20", bgColor: "bg-amber-500/5" },
+  { tier: "foundations" as const, label: "Foundations", tagline: "Start here — understand markets, terminology, and your first trade.", color: "text-emerald-400 [.light_&]:text-emerald-800", borderColor: "border-emerald-500/20", bgColor: "bg-emerald-500/5" },
+  { tier: "strategy" as const, label: "Strategy & Analysis", tagline: "Compare assumptions — risk management, technical analysis, and market patterns.", color: "text-blue-400 [.light_&]:text-blue-800", borderColor: "border-blue-500/20", bgColor: "bg-blue-500/5" },
+  { tier: "advanced" as const, label: "Advanced Practice", tagline: "Refine your approach — portfolio construction, diversification, and real-world application.", color: "text-amber-400 [.light_&]:text-amber-800", borderColor: "border-amber-500/20", bgColor: "bg-amber-500/5" },
 ];
 
 /** Explains the difference between /courses (structured) and /learn (quick reads). */
