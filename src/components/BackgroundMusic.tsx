@@ -74,7 +74,7 @@ export function BackgroundMusic() {
         "shadow-[0_6px_24px_-6px_hsl(0_0%_0%/0.6)]",
         playing
           ? "bg-primary/20 border-primary/40 text-primary"
-          : "bg-black/40 text-foreground/70 hover:text-foreground hover:bg-black/60",
+          : "bg-black/40 text-foreground/70 hover:text-foreground hover:bg-black/60 [.light_&]:bg-white [.light_&]:text-neutral-800 [.light_&]:border-neutral-500 [.light_&]:hover:bg-neutral-100 [.light_&]:hover:text-neutral-900",
       )}
     >
       {playing ? (
