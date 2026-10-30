@@ -1,3 +1,4 @@
+import { quoteDisplay, quoteUnits } from "@/lib/quoteDisplay";
 import { useState, useEffect, useMemo, useRef } from "react";
 import { formatPrice } from "@/lib/assets";
 import { Asset } from "@/lib/types";
@@ -169,8 +170,8 @@ export function MinimalistAreaChart({ asset }: MinimalistAreaChartProps) {
   const padding = (maxPrice - minPrice) * 0.1 || 1;
   // Reuse the quote formatter for tiny labels; retain other chart formatting.
   const formatChartPrice = (value: number) => typeof value === 'number' && !isNaN(value)
-    ? `$${value !== 0 && Math.abs(value) < 0.0001 ? formatPrice(value, asset.type) : value.toLocaleString()}`
-    : '$—';
+    ? quoteDisplay(asset, value !== 0 && Math.abs(value) < 0.0001 ? formatPrice(value, asset.type) : value.toLocaleString())
+    : quoteDisplay(asset, '—');
   const chartAxisWidth = Math.max(safePrice < 0.0001 ? 84 : 60,
     (Math.max(formatChartPrice(minPrice - padding).length, formatChartPrice(maxPrice + padding).length) + 2) * 7 + 16);
 
@@ -216,10 +217,11 @@ export function MinimalistAreaChart({ asset }: MinimalistAreaChartProps) {
         
         <div className="text-right flex items-start gap-2">
           <div>
+            <p className="text-xs text-muted-foreground">Chart input · {quoteUnits(asset)}</p>
             <p className="text-2xl font-bold tabular-nums">
-              ${typeof currentPrice === 'number' && !isNaN(currentPrice) 
+              {quoteDisplay(asset, typeof currentPrice === 'number' && !isNaN(currentPrice)
                 ? formatPrice(currentPrice, asset.type)
-                : '—'}
+                : '—')}
             </p>
             <p className={`text-sm font-medium tabular-nums ${isPositive ? 'text-profit' : 'text-loss'}`}>
               {isPositive ? '+' : ''}{priceChange !== 0 && Math.abs(priceChange) < 0.01 ? formatPrice(priceChange, asset.type) : priceChange.toFixed(2)} ({isPositive ? '+' : ''}{priceChangePercent.toFixed(2)}%)
@@ -316,6 +318,12 @@ export function MinimalistAreaChart({ asset }: MinimalistAreaChartProps) {
         </ResponsiveContainer>
       </div>
 
+      <p className="px-4 pb-2 text-xs text-muted-foreground">
+        Headline: {liveData?.price ? "separate quote input" : "latest chart point"}. The order panel uses its own virtual execution input.
+        {liveData?.provenance?.observedAt || liveData?.lastUpdated
+          ? ` Quote observation: ${liveData.provenance?.observedAt || liveData.lastUpdated}.`
+          : " No provider quote observation time supplied."}
+      </p>
       {/* Footer with data source info */}
       <div className="px-4 pb-2 flex items-center justify-between text-[10px] text-muted-foreground">
         <span>

@@ -1,3 +1,4 @@
+import { quoteDisplay } from "@/lib/quoteDisplay";
 import { Link } from "react-router-dom";
 import { Asset } from "@/lib/types";
 import { ASSETS } from "@/lib/assets";
@@ -78,10 +79,10 @@ export function RelatedAssets({ currentAsset }: RelatedAssetsProps) {
             
             <div className="flex items-center justify-between">
               <span className="text-sm font-medium text-foreground">
-                ${asset.price.toLocaleString(undefined, { 
+                {quoteDisplay(asset, asset.price.toLocaleString(undefined, {
                   minimumFractionDigits: 2, 
                   maximumFractionDigits: asset.price < 1 ? 4 : 2 
-                })}
+                }))}
               </span>
               <span className={`text-xs font-medium ${
                 asset.changePercent >= 0 ? 'text-green-500' : 'text-red-500'

@@ -116,13 +116,17 @@ export function MobileOrderDrawer({ asset, availableCash, portfolio, onTrade }: 
             <DrawerTitle className="flex items-center justify-between">
               <div>
                 <span className="text-xl">{asset.symbol}</span>
-                <span className="text-sm text-muted-foreground ml-2">${formatPrice(asset.price, asset.type)}</span>
+                <span className="text-sm text-muted-foreground ml-2">${formatPrice(asset.price, asset.type)} USD/unit</span>
               </div>
               <DrawerClose asChild>
                 <Button variant="ghost" size="icon"><ChevronDown className="w-5 h-5" /></Button>
               </DrawerClose>
             </DrawerTitle>
           </DrawerHeader>
+          <p className="px-4 pb-2 text-xs text-muted-foreground">
+            Virtual execution input in USD per simulator unit. Chart inputs update separately; this execution input has no observation timestamp.
+            {asset.type === "forex" && " The numeric pair rate is used as a USD cost per virtual unit; no currency conversion, delivery or leveraged FX contract is modeled."}
+          </p>
           <div className="px-4 pb-6 space-y-4 overflow-auto">
             <div className="grid grid-cols-2 gap-2">
               <Button
@@ -159,7 +163,7 @@ export function MobileOrderDrawer({ asset, availableCash, portfolio, onTrade }: 
 
             <div className="space-y-2 py-3 border-t border-border/30">
               <div className="flex justify-between text-base">
-                <span className="text-muted-foreground">Total</span>
+                <span className="text-muted-foreground">Total (USD)</span>
                 <span className="tabular-nums font-semibold">${totalWithFee.toFixed(2)}</span>
               </div>
             </div>
