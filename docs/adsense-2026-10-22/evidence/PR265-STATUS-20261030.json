@@ -1,7 +1,7 @@
 {
   "headRefOid": "518a6d7eb222e8e4f32b7a00766abbd6809c5242",
   "isDraft": true,
-  "mergeStateStatus": "BLOCKED",
+  "mergeStateStatus": "CLEAN",
   "number": 265,
   "state": "OPEN",
   "statusCheckRollup": [
@@ -27,12 +27,42 @@
     },
     {
       "__typename": "CheckRun",
-      "completedAt": "0001-01-01T00:00:00Z",
-      "conclusion": "",
+      "completedAt": "2026-10-30T02:53:53Z",
+      "conclusion": "SUCCESS",
       "detailsUrl": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40993414875/job/123860909707",
       "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
       "startedAt": "2026-10-30T02:44:19Z",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETED",
+      "workflowName": "Phase 3 High Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T02:53:59Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40993414875/job/123863758056",
+      "name": "TradeHQ Required validation",
+      "startedAt": "2026-10-30T02:53:55Z",
+      "status": "COMPLETED",
+      "workflowName": "Phase 3 High Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T02:53:59Z",
+      "conclusion": "SKIPPED",
+      "detailsUrl": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40993414875/job/123863789595",
+      "name": "TradeHQ Release signals (read only)",
+      "startedAt": "2026-10-30T02:53:59Z",
+      "status": "COMPLETED",
+      "workflowName": "Phase 3 High Validation"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-30T02:53:59Z",
+      "conclusion": "SKIPPED",
+      "detailsUrl": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40993414875/job/123863789501",
+      "name": "TradeHQ Release & Recovery Readiness (read only)",
+      "startedAt": "2026-10-30T02:53:59Z",
+      "status": "COMPLETED",
       "workflowName": "Phase 3 High Validation"
     },
     {
@@ -64,5 +94,5 @@
     }
   ],
   "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/265",
-  "observedAt": "2026-10-30T02:53:35.371010+00:00"
+  "observedAt": "2026-10-30T02:56:20.868134+00:00"
 }

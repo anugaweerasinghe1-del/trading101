@@ -17,6 +17,11 @@
       "sha256": "8d69ae5553b097bd053a313850baa3dcb45d63d2be99cab11a17295beb2c6704"
     },
     {
+      "path": "CURRENT-REVIEW-20261030.md",
+      "bytes": 6583,
+      "sha256": "386a8dabf946302cd55535900bd94e1c742dd149eb2112b10d5cc21b2e2c12b0"
+    },
+    {
       "path": "DAILY-CONDITIONAL-REVIEW.json",
       "bytes": 376080,
       "sha256": "8411ad0afff5425bc31fecdcc63adb052931e6410270af375147d74c8eef860d"
@@ -69,12 +74,12 @@
     {
       "path": "PAGE-AUDIT.json",
       "bytes": 2937083,
-      "sha256": "66405ea91c2644f04b87a069aefd2cd0670e80d8e9e4768375e01123eb71ea25"
+      "sha256": "88df2e09b099636ee6ca841c8c45fe50cf2b4e7898df89d83e1283de7d8d8026"
     },
     {
       "path": "RELEASE-LEDGER.json",
-      "bytes": 134675,
-      "sha256": "20c32288c4c7d4c621f43586e413bce0ccd3e024ef038f3fc01d2a5ba5fdc62e"
+      "bytes": 135287,
+      "sha256": "e634721fa5fafb2b8ec6e6ab34824c1ccd6490bc62ab65be2710ab2335675b5e"
     },
     {
       "path": "RENDERED-CONTENT-NOTES.json",
@@ -104,7 +109,7 @@
     {
       "path": "UNFINISHED-SCOPE.json",
       "bytes": 613085,
-      "sha256": "417c36ac707bd3e159a0f529444611ba2055be8ea00fc42ad44159bcaf2a4e68"
+      "sha256": "02e760a6c1558e3540e33a03b3613d90093c33f0ae6df713884654c7409bd4d1"
     },
     {
       "path": "UNREAD-MAIN-ROUTES.txt",
@@ -114,12 +119,12 @@
     {
       "path": "URL-INVENTORY.json",
       "bytes": 720853,
-      "sha256": "6f220784a32e4f85f8840d6095b84030ba246146fb1fe0797eda4122384f9dd3"
+      "sha256": "212dda41ed6833d67430c28414184981e6ec84d32ecc4435bd6f3aebfd5d53d6"
     },
     {
       "path": "VISUAL-REVIEW-NOTES.json",
       "bytes": 480842,
-      "sha256": "76f96605e190d3de6e3aa8d9f4775abf9ae5908f487adf30e099e72e18b6b1ae"
+      "sha256": "023a9bd82249abed9e31d6c59e7427f6401f016348539360bb89052f484a632a"
     },
     {
       "path": "browser-session.mjs",
@@ -244,7 +249,7 @@
     {
       "path": "evidence/AUDIT-RESUME-20261027.json",
       "bytes": 5266,
-      "sha256": "4f99b2b5e7d7bcc51c8e299d720b92f5eb98d977dc58fa25bca073779fb7539e"
+      "sha256": "efb87adf13baa2f0b36394d6baf3787c00c3944b7f922bc5e8704b8938d2f702"
     },
     {
       "path": "evidence/BEGINNER-GUIDE-REPRODUCTION.json",
@@ -1168,8 +1173,8 @@
     },
     {
       "path": "evidence/NETWORK-ACCESS-20261030-CLOUDFLARE-RECHECK.json",
-      "bytes": 2053,
-      "sha256": "e51830f7c4c7e4580c25094b2d610872707cc73b245c00bf224c5233971b055c"
+      "bytes": 2423,
+      "sha256": "8d777229b4488d644e35578aa96568a7736ef04974bc18404465a8581a3e3620"
     },
     {
       "path": "evidence/NETWORK-RECONNECTED-20261027.json",
@@ -3987,9 +3992,19 @@
       "sha256": "0229dea3cc64d9f92d32f44f5702d2e538189fc511925d2220a2246e5885204f"
     },
     {
+      "path": "evidence/PR264-EXACT-CANDIDATE-CI-20261030.json",
+      "bytes": 1684,
+      "sha256": "b290107b87d68224a8bf56b3b7970725ba27aba5894d0cf53dbb45f4f43dcadb"
+    },
+    {
       "path": "evidence/PR264-LOCAL-ACCEPTANCE.json",
       "bytes": 911,
       "sha256": "34ae2524fba22babf59f8c200c956adb76d8741c538adcae8ed186e20800a3a2"
+    },
+    {
+      "path": "evidence/PR264-LOCAL-HARNESS-GUEST-SMOKE.json",
+      "bytes": 8656,
+      "sha256": "bf535b1970054b29d1c0f163575abf727ed283cb74856cdd209f3f38b154ef9b"
     },
     {
       "path": "evidence/PR264-STATUS-20261030.json",
@@ -4002,9 +4017,14 @@
       "sha256": "4b9d18575504b462cae565139813b6184bb3af48c29495006bac004e2e920b26"
     },
     {
+      "path": "evidence/PR265-EXACT-CANDIDATE-CI-20261030.json",
+      "bytes": 1730,
+      "sha256": "c6d9584e2574f726c61b958aef13118281fd4b40159e91821cdac700a013b2a8"
+    },
+    {
       "path": "evidence/PR265-STATUS-20261030.json",
-      "bytes": 2506,
-      "sha256": "f22d8f432a3d8ee791c7a25d3eda17bb238b2b06a7a5cc9ea123307105d93777"
+      "bytes": 3747,
+      "sha256": "bdb21e15733cd358fdcf8ab2a72c2cd180c24489539d44d624e1d73e12599bcd"
     },
     {
       "path": "evidence/PR265-UPDATED-PREVIEW-SIGNALS.json",
@@ -4012,9 +4032,14 @@
       "sha256": "af8db4b03dc8abbd9c5a8e299abe6eb047f3db8356e8b498d00f4038da01a774"
     },
     {
+      "path": "evidence/PR266-EXACT-CANDIDATE-CI-20261030.json",
+      "bytes": 1730,
+      "sha256": "50dc9829532d03d88c8be953297a2f55015d47180879a1b9664c9692287ab119"
+    },
+    {
       "path": "evidence/PR266-STATUS-20261030.json",
       "bytes": 3747,
-      "sha256": "537e2c6823ec435595c7425d86b9c418501915e1f2d3fb0c3e9dbf219b86958d"
+      "sha256": "a2ddcc44517226f077f17f112a448acf2344e29bf13b20478fbd1abad7776494"
     },
     {
       "path": "evidence/PR266-UPDATED-PREVIEW-SIGNALS.json",
@@ -32427,7 +32452,7 @@
       "sha256": "75c029c85b57a6d5253685eaf559c5f27e0f41b95cc64f25a1b7c81e4427287b"
     }
   ],
-  "fileCount": 6485,
-  "totalBytes": 1455153578,
-  "generatedAt": "2026-10-30T02:53:59.346936+00:00"
+  "fileCount": 6490,
+  "totalBytes": 1455176184,
+  "generatedAt": "2026-10-30T02:59:28.487969+00:00"
 }

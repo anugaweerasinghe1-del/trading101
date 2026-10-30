@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T02:46:38.681337+00:00",
+  "updatedAt": "2026-10-30T02:59:13.154734+00:00",
   "releases": [
     {
       "finding": "THQ-001",
@@ -3238,13 +3238,19 @@
       "pr": 265,
       "candidateSHA": "518a6d7eb222e8e4f32b7a00766abbd6809c5242",
       "scope": "Worksheet,reference,roadmap and FVG copy",
-      "state": "DRAFT_LOCAL_PERSONALLY_REVIEWED_SERIAL_HOLD"
+      "state": "DRAFT_CI_AND_NATIVE_PREVIEWS_PASS_BROWSER_ACCESS_BLOCKED",
+      "candidateCIEvidence": "evidence/PR265-EXACT-CANDIDATE-CI-20261030.json",
+      "nativePreviewEvidence": "evidence/PR265-UPDATED-PREVIEW-SIGNALS.json",
+      "actualBrowserLimitation": "Cloudflare preview403/1010; Vercel preview redirects to login. No actual preview application pass."
     },
     {
       "pr": 266,
       "candidateSHA": "10c41e243f64ee6beb1fc2e4f35c5a5d2e495752",
       "scope": "Three light-theme Learning Path foreground classes",
-      "state": "DRAFT_LOCAL_PERSONALLY_REVIEWED_SERIAL_HOLD"
+      "state": "DRAFT_CI_AND_NATIVE_PREVIEWS_PASS_BROWSER_ACCESS_BLOCKED",
+      "candidateCIEvidence": "evidence/PR266-EXACT-CANDIDATE-CI-20261030.json",
+      "nativePreviewEvidence": "evidence/PR266-UPDATED-PREVIEW-SIGNALS.json",
+      "actualBrowserLimitation": "Cloudflare preview403/1010; Vercel preview redirects to login. No actual preview application pass."
     }
   ]
 }

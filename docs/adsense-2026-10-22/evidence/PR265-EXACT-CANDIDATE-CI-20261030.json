@@ -1,0 +1,44 @@
+{
+  "checkedAt": "2026-10-30T02:56:22.635654+00:00",
+  "sha": "518a6d7eb222e8e4f32b7a00766abbd6809c5242",
+  "outcome": "PASS",
+  "checks": [
+    {
+      "id": 123860909421,
+      "name": "TradeHQ Phase 3 tests",
+      "head_sha": "518a6d7eb222e8e4f32b7a00766abbd6809c5242",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40993414875/job/123860909421",
+      "appId": 15368
+    },
+    {
+      "id": 123860909707,
+      "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+      "head_sha": "518a6d7eb222e8e4f32b7a00766abbd6809c5242",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40993414875/job/123860909707",
+      "appId": 15368
+    },
+    {
+      "id": 123863758056,
+      "name": "TradeHQ Required validation",
+      "head_sha": "518a6d7eb222e8e4f32b7a00766abbd6809c5242",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40993414875/job/123863758056",
+      "appId": 15368
+    },
+    {
+      "id": 123860908967,
+      "name": "TradeHQ Disposable PostgreSQL controls",
+      "head_sha": "518a6d7eb222e8e4f32b7a00766abbd6809c5242",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/40993414762/job/123860908967",
+      "appId": 15368
+    }
+  ],
+  "scope": "Four trusted exact-candidate required CI checks only. Native provider and actual preview/public/browser gates are separate; serial release hold remains."
+}
