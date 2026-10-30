@@ -2,13 +2,11 @@
 
 **454 public routes discovered; all 454 main bodies read.** Default full-page captures at all five requested widths have been personally viewed for **451/454** routes; full light-mode scrolls for **40/454**. These are inspection counts, not proof that every layout passes. The long public username overflow has since been repaired and verified in PR262. Whole-audit review remains incomplete.
 
-**82 confirmed site findings; 75 repairs publicly verified; 7 unresolved.** Last fully verified production: `fe9fe3eeef989210853420168e895501165f1fcd`. Current merged main: `fe9fe3eeef989210853420168e895501165f1fcd` (see release ledger). PR263 completed all six exact-main checks, authenticated native provider verification,140 affected production checks with70 captures personally viewed in20 sheets and30 guest states/four safe controls. Truthful audit User-Agent identification resolved Cloudflare1010; API token authentication remains a separate issue.
+**82 confirmed site findings; 77 repairs publicly verified; 5 unresolved.** Last fully verified production: `ad86b30c6877cafe9ffcc47aa3dd8c117e38bef9`. Current merged main: `ad86b30c6877cafe9ffcc47aa3dd8c117e38bef9` (see release ledger). PR264 completed six exact-main checks, authenticated Cloudflare/Vercel production verification,90 affected states with110 accepted captures personally viewed in20 sheets, and30 guest states/four safe controls. Truthful audit User-Agent identification resolved Cloudflare1010; runtime API authentication is a separate matter.
 
 Unresolved findings:
 
 - **THQ-069 (P2)** — Learning path level labels have low contrast on light backgrounds; `PREPARED_NOT_MERGED`.
-- **THQ-072 (P2)** — Forex reference displays incorrectly prefix non-USD quote rates with dollars; `PREPARED_NOT_MERGED`.
-- **THQ-073 (P2)** — Chart headline and virtual execution input are not distinguished adjacently; `PREPARED_NOT_MERGED`.
 - **THQ-074 (P3)** — Educational simulator CTAs overstate supported worksheet execution; `PREPARED_NOT_MERGED`.
 - **THQ-075 (P3)** — Topic-specific glossary references are missing for short-interest and liquidation claims; `PREPARED_NOT_MERGED`.
 - **THQ-076 (P3)** — Roadmap planned scenarios conflict with the current portfolio Beta; `PREPARED_NOT_MERGED`.

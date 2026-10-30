@@ -2908,11 +2908,11 @@
       "fix": "Display reference quote units and explicitly disclose simplified USD execution unit model. Do not convert numbers, reprice orders or alter balances.",
       "evidence": "findings/QUOTE-UNITS-AND-INPUT-SCOPE.md",
       "beforeEvidence": "evidence/OWNER-AUDIT-LIVE-REPRODUCTION-20261030.json",
-      "state": "PREPARED_NOT_MERGED",
+      "state": "PUBLICLY_VERIFIED",
       "candidateSHA": "62aac4f4d49c0a2883436786774efee92e1fadaa",
       "detectedAt": "2026-10-30T02:02:51.423606+00:00",
       "risk": "Reversible display/copy only; protected calculations/orders/records/auth/progress/ads/consent untouched. No live credit before all release gates.",
-      "releaseHold": "PR263 verified and serial hold cleared. This candidate still requires its own actual preview checks, ordinary protected merge, exact-main/native production and public verification.",
+      "releaseHold": null,
       "pr": 264,
       "localEvidence": [
         "evidence/PR264-LOCAL-ACCEPTANCE.json",
@@ -2921,7 +2921,16 @@
       "partialPreviewEvidence": [
         "evidence/QUOTE-INPUT-PREVIEW-20261030.json",
         "evidence/QUOTE-INPUT-PREVIEW-VALID-SECTIONS-PERSONAL-20261030.json"
-      ]
+      ],
+      "mergeSHA": "ad86b30c6877cafe9ffcc47aa3dd8c117e38bef9",
+      "productionEvidence": "evidence/PR264-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR264-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR264-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR264-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 110,
+      "liveRecheck": "PASS exact merged production: [90] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
     },
     {
       "id": "THQ-073",
@@ -2935,11 +2944,11 @@
       "fix": "Label chart input and virtual execution input separately; expose available observation timestamp or explicit absence; preserve all sources, intervals, arithmetic and handlers.",
       "evidence": "findings/QUOTE-UNITS-AND-INPUT-SCOPE.md",
       "beforeEvidence": "evidence/OWNER-AUDIT-LIVE-REPRODUCTION-20261030.json",
-      "state": "PREPARED_NOT_MERGED",
+      "state": "PUBLICLY_VERIFIED",
       "candidateSHA": "62aac4f4d49c0a2883436786774efee92e1fadaa",
       "detectedAt": "2026-10-30T02:02:51.423606+00:00",
       "risk": "Reversible display/copy only; protected calculations/orders/records/auth/progress/ads/consent untouched. No live credit before all release gates.",
-      "releaseHold": "PR263 verified and serial hold cleared. This candidate still requires its own actual preview checks, ordinary protected merge, exact-main/native production and public verification.",
+      "releaseHold": null,
       "pr": 264,
       "localEvidence": [
         "evidence/PR264-LOCAL-ACCEPTANCE.json",
@@ -2948,7 +2957,16 @@
       "partialPreviewEvidence": [
         "evidence/QUOTE-INPUT-PREVIEW-20261030.json",
         "evidence/QUOTE-INPUT-PREVIEW-VALID-SECTIONS-PERSONAL-20261030.json"
-      ]
+      ],
+      "mergeSHA": "ad86b30c6877cafe9ffcc47aa3dd8c117e38bef9",
+      "productionEvidence": "evidence/PR264-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR264-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR264-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR264-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 110,
+      "liveRecheck": "PASS exact merged production: [90] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
     },
     {
       "id": "THQ-074",
@@ -3049,13 +3067,13 @@
       "releaseHold": "PR263 verified and serial hold cleared. This candidate still requires its own actual preview checks, ordinary protected merge, exact-main/native production and public verification."
     }
   ],
-  "updatedAt": "2026-10-30T09:25:07.074869+00:00",
+  "updatedAt": "2026-10-30T11:00:05.790794+00:00",
   "counts": {
     "siteFindings": 82,
     "P2": 44,
     "P3": 38,
-    "publiclyRepaired": 75,
-    "preparedNotMerged": 7,
+    "publiclyRepaired": 77,
+    "preparedNotMerged": 5,
     "separateOperationalBlockers": 0,
     "mergedAwaitingProductionVerification": 0,
     "protectedUnapprovedRecordFixes": 0,

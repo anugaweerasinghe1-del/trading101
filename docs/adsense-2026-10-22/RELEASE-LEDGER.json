@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T09:25:07.652380+00:00",
+  "updatedAt": "2026-10-30T11:00:56.026932+00:00",
   "releases": [
     {
       "finding": "THQ-001",
@@ -3040,24 +3040,85 @@
         "safeControls": 4,
         "productionImagesPersonallyViewed": 70
       }
+    },
+    {
+      "pr": 264,
+      "url": "https://github.com/anugaweerasinghe1-del/trading101/pull/264",
+      "candidateSHA": "62aac4f4d49c0a2883436786774efee92e1fadaa",
+      "mergeSHA": "ad86b30c6877cafe9ffcc47aa3dd8c117e38bef9",
+      "state": "PUBLICLY_VERIFIED",
+      "findings": [
+        "THQ-072",
+        "THQ-073"
+      ],
+      "production": {
+        "checkedAt": "2026-10-30T09:41:56.638108+00:00",
+        "mergeSHA": "ad86b30c6877cafe9ffcc47aa3dd8c117e38bef9",
+        "outcome": "PASS",
+        "sourceJob": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/41034068203/job/123994388208",
+        "scope": "Authenticated native provider reads by trusted exact-main release-readiness job. Both production deployments match the immutable merge SHA. No provider mutations.",
+        "cloudflare": {
+          "observedAt": "2026-10-30T09:41:33.841Z",
+          "project": "tradehq-preview",
+          "activeProduction": {
+            "id": "84b217b2-ab24-46a7-a195-2d8f0350b1b6",
+            "sha": "ad86b30c6877cafe9ffcc47aa3dd8c117e38bef9",
+            "environment": "production",
+            "branch": "main",
+            "status": "success",
+            "createdAt": "2026-10-30T09:31:33.90372Z"
+          }
+        },
+        "vercel": {
+          "schema": "tradehq-vercel-production-evidence-v1",
+          "deploymentId": "dpl_G5fdpoeQ5hWeb2U9SetsWSYx3AQD",
+          "teamId": "team_fjZ5ggg0P43MsYFSIHbeHAAO",
+          "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+          "commitSha": "ad86b30c6877cafe9ffcc47aa3dd8c117e38bef9",
+          "target": "production",
+          "state": "READY",
+          "activeAlias": "thetradehq.com",
+          "createdAt": 1793352694646,
+          "observedAt": 1793353293841,
+          "requests": 2,
+          "authorization": {
+            "merge": false,
+            "productionRelease": false
+          }
+        }
+      },
+      "mainCIEvidence": "evidence/PR264-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR264-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR264-GUEST-SMOKE.json"
+      ],
+      "liveRecheck": {
+        "outcome": "PASS",
+        "affectedStates": [
+          90
+        ],
+        "guestStates": 30,
+        "safeControls": 4,
+        "productionImagesPersonallyViewed": 110
+      }
     }
   ],
   "nextCandidate": null,
   "latestResumeProviderEvidence": "evidence/FINAL-WORKSPACE-ACCESS-20261023.json",
   "latestGitHubState": "evidence/FINAL-GITHUB-STATE-20261023.json",
-  "latestGitHubProviderBindingEvidence": "evidence/PR263-PRODUCTION-PROVIDERS.json",
-  "latestMainValidationEvidence": "evidence/PR263-MAIN-CI.json",
-  "latestVerifiedProductionSHA": "fe9fe3eeef989210853420168e895501165f1fcd",
-  "remainingConfirmedSiteFixes": 7,
+  "latestGitHubProviderBindingEvidence": "evidence/PR264-PRODUCTION-PROVIDERS.json",
+  "latestMainValidationEvidence": "evidence/PR264-MAIN-CI.json",
+  "latestVerifiedProductionSHA": "ad86b30c6877cafe9ffcc47aa3dd8c117e38bef9",
+  "remainingConfirmedSiteFixes": 5,
   "exhaustiveAuditComplete": false,
-  "remainingKnownSafeFindings": 7,
+  "remainingKnownSafeFindings": 5,
   "pendingReleaseVerification": null,
   "protectedPublishedContentFinding": "THQ035/036 published revision2 independently verified; credential and approval blockers superseded by owner-approved PR238 operation. No new production writes in this continuation.",
   "operationalHold": {
     "active": false,
     "reason": "No active release hold."
   },
-  "latestObservedMainSHA": "fe9fe3eeef989210853420168e895501165f1fcd",
+  "latestObservedMainSHA": "ad86b30c6877cafe9ffcc47aa3dd8c117e38bef9",
   "historicalCandidateRecords": {
     "independentFutureCandidate": {
       "pr": 214,
@@ -3280,13 +3341,6 @@
   },
   "safeProposals": [],
   "preparedFollowups": [
-    {
-      "pr": 264,
-      "candidateSHA": "62aac4f4d49c0a2883436786774efee92e1fadaa",
-      "scope": "Quote units and independent chart/execution source labels",
-      "state": "DRAFT_CI_NATIVE_PASS_ACTUAL_PREVIEW_CHECKS_PENDING",
-      "actualBrowserLimitation": "Cloudflare application access restored with truthful audit User-Agent. Actual candidate browser checks must now complete; Vercel browser login protection is separate."
-    },
     {
       "pr": 265,
       "candidateSHA": "518a6d7eb222e8e4f32b7a00766abbd6809c5242",
