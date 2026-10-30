@@ -1,3 +1,4 @@
+import { quoteDisplay } from "@/lib/quoteDisplay";
 import { useState, useMemo, useRef, useEffect } from "react";
 import { Asset } from "@/lib/types";
 import { Search, ChevronDown, Star, TrendingUp, TrendingDown } from "lucide-react";
@@ -169,7 +170,7 @@ export function AssetSearchDropdown({
                   >
                     <span className="min-w-0"><span className="block font-medium">{asset.symbol}</span><span className="block text-xs text-muted-foreground">{asset.name}</span></span>
                     <span className="text-right shrink-0">
-                      <span className="block font-medium tabular-nums">${formatPrice(asset.price, asset.type)}</span>
+                      <span className="block font-medium tabular-nums">{quoteDisplay(asset, formatPrice(asset.price, asset.type))}</span>
                       <span className={cn("text-xs tabular-nums flex items-center gap-1 justify-end", (asset.changePercent ?? 0) >= 0 ? "text-profit" : "text-loss")}>
                         {(asset.changePercent ?? 0) >= 0 ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />}
                         {(asset.changePercent ?? 0) >= 0 ? '+' : ''}{(asset.changePercent ?? 0).toFixed(2)}%

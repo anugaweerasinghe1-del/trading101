@@ -1,3 +1,4 @@
+import { quoteDisplay } from "@/lib/quoteDisplay";
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { TradingSidebar } from "@/components/trading/TradingSidebar";
@@ -211,7 +212,7 @@ export default function Markets() {
                         </div>
                       </div>
                       <div className="text-right">
-                        <p className="font-mono text-sm">${formatPrice(asset.price, asset.type)}</p>
+                        <p className="font-mono text-sm">{quoteDisplay(asset, formatPrice(asset.price, asset.type))}</p>
                         <Badge variant="outline" className="text-profit border-profit/30 text-xs transition-all duration-200">
                           +{asset.changePercent.toFixed(2)}%
                         </Badge>
@@ -241,7 +242,7 @@ export default function Markets() {
                         </div>
                       </div>
                       <div className="text-right">
-                        <p className="font-mono text-sm">${formatPrice(asset.price, asset.type)}</p>
+                        <p className="font-mono text-sm">{quoteDisplay(asset, formatPrice(asset.price, asset.type))}</p>
                         <Badge variant="outline" className="text-loss border-loss/30 text-xs transition-all duration-200">
                           {asset.changePercent.toFixed(2)}%
                         </Badge>
@@ -297,7 +298,7 @@ export default function Markets() {
                           </div>
 
                           <div className="text-right md:text-left flex items-center justify-end md:justify-start">
-                            <p className="font-mono text-xs md:text-sm">${formatPrice(asset.price, asset.type)}</p>
+                            <p className="font-mono text-xs md:text-sm">{quoteDisplay(asset, formatPrice(asset.price, asset.type))}</p>
                           </div>
 
                           <div className="md:col-span-1 flex items-center">

@@ -1,3 +1,4 @@
+import { quoteDisplay } from "@/lib/quoteDisplay";
 import { useState, useMemo } from "react";
 import { Asset } from "@/lib/types";
 import { formatPrice } from "@/lib/assets";
@@ -249,7 +250,7 @@ export function AssetTable({
                   </TableCell>
                   <TableCell className="text-right py-2">
                     <p className="font-medium tabular-nums text-sm">
-                      ${formatPrice(asset.price, asset.type)}
+                      {quoteDisplay(asset, formatPrice(asset.price, asset.type))}
                     </p>
                   </TableCell>
                   <TableCell className="text-right py-2">

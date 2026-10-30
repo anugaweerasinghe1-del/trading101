@@ -205,20 +205,25 @@ export function MinimalistOrderPanel({
         />
 
         <div className="space-y-3 rounded-xl border border-white/8 bg-white/[0.02] p-4">
+          <p className="text-xs font-medium text-muted-foreground">Virtual execution input · USD per simulator unit</p>
           <div className="flex items-center justify-between text-sm">
-            <span className="text-muted-foreground">Price</span>
+            <span className="text-muted-foreground">Price (USD/unit)</span>
             <span className="font-medium tabular-nums">
               ${formatPrice(price, asset.type)}
             </span>
           </div>
 
+          <p className="text-xs text-muted-foreground">
+            Chart quotes and generated chart points update separately. No observation timestamp is supplied with this execution input.
+            {asset.type === "forex" && " For this simplified FX instrument, the numeric pair rate is treated as a USD cost per virtual unit. No currency conversion, currency delivery or leveraged FX contract is modeled."}
+          </p>
           <div className="flex items-center justify-between text-sm">
             <span className="text-muted-foreground">Fee (0.1%)</span>
             <span className="font-medium tabular-nums">${fee.toFixed(2)}</span>
           </div>
 
           <div className="flex items-center justify-between text-sm">
-            <span className="text-muted-foreground">Total</span>
+            <span className="text-muted-foreground">Total (USD)</span>
             <span className="font-semibold tabular-nums">
               ${totalWithFee.toFixed(2)}
             </span>
@@ -235,7 +240,7 @@ export function MinimalistOrderPanel({
 
               <div className="rounded-lg border border-white/8 bg-white/[0.02] px-3 py-2 text-xs text-muted-foreground">
                 You are placing a market {side} for {quantity.toFixed(4)}{" "}
-                {asset.symbol} at approximately ${formatPrice(price, asset.type)}.
+                {asset.symbol} at approximately ${formatPrice(price, asset.type)} USD per simulator unit.
               </div>
             </>
           ) : null}

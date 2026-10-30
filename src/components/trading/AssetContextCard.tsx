@@ -1,3 +1,4 @@
+import { quoteDisplay } from "@/lib/quoteDisplay";
 import { formatPrice as formatAssetPrice } from "@/lib/assets";
 import { Asset } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
@@ -50,7 +51,7 @@ export function AssetContextCard({ asset }: AssetContextCardProps) {
 
         <div className="text-left md:text-right">
           <p className="text-2xl font-semibold tabular-nums md:text-3xl">
-            ${formatAssetPrice(asset.price, asset.type)}
+            {quoteDisplay(asset, formatAssetPrice(asset.price, asset.type))}
           </p>
           <div
             className={cn(
