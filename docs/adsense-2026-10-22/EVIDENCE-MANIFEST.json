@@ -8,8 +8,8 @@
     },
     {
       "path": "BLOCKED-STATUS.md",
-      "bytes": 4642,
-      "sha256": "f934dc8e20be6d569019102174ebbdc26d0b8d3ee034bca016a9827ca788dc6e"
+      "bytes": 3771,
+      "sha256": "dc515c7a8012925555363dab7f7dacedfccbfe202ca90319f6620797fbc939df"
     },
     {
       "path": "CHECKPOINT.md",
@@ -33,13 +33,13 @@
     },
     {
       "path": "FINDINGS.json",
-      "bytes": 178297,
-      "sha256": "e950b52fee4ed2bd4a60c815b0186312d47ede928f25e6300ac401d050b66723"
+      "bytes": 183967,
+      "sha256": "d6917357d215562bc1d1530e268e42f183d0cb3e0ab4ebf63a54586b39e199de"
     },
     {
       "path": "FULL-LIGHT-VISUAL-REVIEW-20261028.json",
-      "bytes": 53914,
-      "sha256": "3ea53eaa5203d0937a800a0c89f5e72d6aa9c9bdbb9b8658f3a91e7d8d889a58"
+      "bytes": 58917,
+      "sha256": "8d51b2e7c1ea207900d92d86720f790c9441f08df5adbfee55604a71ccae54ac"
     },
     {
       "path": "FULLPAGE-VISUAL-REVIEW-20261024.json",
@@ -58,8 +58,8 @@
     },
     {
       "path": "NEXT-REVIEW.md",
-      "bytes": 1991,
-      "sha256": "cf8e1a0937302df4d0d9b751ab1046ee33a03f4b2707b9ae0b1228a8ea98f854"
+      "bytes": 1795,
+      "sha256": "e5660416d1edee5acae4a5e9b33cd4edcd51613a885ce6c488cd35413d646777"
     },
     {
       "path": "NONTERMINAL-FAQ-READ-COVERAGE.json",
@@ -68,13 +68,13 @@
     },
     {
       "path": "PAGE-AUDIT.json",
-      "bytes": 2928821,
-      "sha256": "858fd47918b67747e369236b079d659056f481b8071477910e9381be20eb1318"
+      "bytes": 2931497,
+      "sha256": "5573cc09fe00ce3261ca03abbdba17828652beec48623c0fe768fd3a219f8754"
     },
     {
       "path": "RELEASE-LEDGER.json",
-      "bytes": 128559,
-      "sha256": "e6edf93885bdb9b542d440e654eb2e728995b495223e00af6f23af7b87146880"
+      "bytes": 133033,
+      "sha256": "c2055dcb7fcb0677b973caf7bb4c346a8809a9271d1ce15ef59daf480113ef9f"
     },
     {
       "path": "RENDERED-CONTENT-NOTES.json",
@@ -89,7 +89,7 @@
     {
       "path": "SUPPLEMENTARY-NOTES-REVIEW.json",
       "bytes": 66971,
-      "sha256": "4a25fec094c1380f18eed5ed977822e60f73a482a26500726365334c27f24137"
+      "sha256": "3b802d237076252fa480a772771cf026d4a965146a3c02c778bc36e056160fcd"
     },
     {
       "path": "TERMINAL-PROSE-REVIEW.json",
@@ -103,8 +103,8 @@
     },
     {
       "path": "UNFINISHED-SCOPE.json",
-      "bytes": 610480,
-      "sha256": "5e2d8c5cbb766cd6259cef8c6e520723dc288fd591df306d6f62b8b0dbbd8c2c"
+      "bytes": 611268,
+      "sha256": "072d47437a9f0f5d0be67032335832d394327ba12414388023326d8f63f1585f"
     },
     {
       "path": "UNREAD-MAIN-ROUTES.txt",
@@ -114,12 +114,12 @@
     {
       "path": "URL-INVENTORY.json",
       "bytes": 718308,
-      "sha256": "0b9b4b3f45e278c4bcefba4e88ec63252707df0ba6de19d9ac5c4a14d51f1b63"
+      "sha256": "d5b5e031b621fe453c0e0b0d3775f34d2375dccb3901089a71c70351aa710574"
     },
     {
       "path": "VISUAL-REVIEW-NOTES.json",
-      "bytes": 480566,
-      "sha256": "55a25f77bfc6989ef82f155a90ecada1e311d03b707ff1f852692e82f9539d36"
+      "bytes": 480842,
+      "sha256": "8b8620fd3b9df0591b18351513ce73e6e7441f55326d4179cabbb04cc3bab293"
     },
     {
       "path": "browser-session.mjs",
@@ -243,8 +243,8 @@
     },
     {
       "path": "evidence/AUDIT-RESUME-20261027.json",
-      "bytes": 4374,
-      "sha256": "a0affae1ee5f92f0172db50282e9682fc26e9469418b9f505fae4d79cb1086f7"
+      "bytes": 3102,
+      "sha256": "59b18aeb08096b04e9e4adf2ef18e394159d05dfcc567c04184d504d26589cff"
     },
     {
       "path": "evidence/BEGINNER-GUIDE-REPRODUCTION.json",
@@ -892,6 +892,11 @@
       "sha256": "2fa07ba302d884c1fe8fb5d7548e2c81eb6571c5daafd244222ad47f58c56fd5"
     },
     {
+      "path": "evidence/LEARN-PATH-CONTRAST-LIVE-BEFORE-20261029.json",
+      "bytes": 30671,
+      "sha256": "d0afe627bf8fd81ef9abd2948acf49de5257f9c7ea79942ab22c5b60f5794a16"
+    },
+    {
       "path": "evidence/LEARNING-LIGHT-BEFORE-20261028.json",
       "bytes": 128564,
       "sha256": "95d27f107c11c75f745c4a5420892d94d20663579cc6e0c544c8d7589a8f083f"
@@ -1207,6 +1212,21 @@
       "sha256": "93036e12941c0b06feeafaab6b574e78d915c9db9bb5e7fcf6ef0f1769f53a67"
     },
     {
+      "path": "evidence/OWNER-AUDIT-INITIAL-PROFILE-HARNESS-20261030.json",
+      "bytes": 187059,
+      "sha256": "ed270efef0c506cc54b5c36d7e9e11c89fbe5d238f7efe6c878d8b1fc2b30ae8"
+    },
+    {
+      "path": "evidence/OWNER-AUDIT-LIVE-REPRODUCTION-20261030.json",
+      "bytes": 191609,
+      "sha256": "959f9ec80bad39b175c8f5fa21cef08d2b15a571c7790c18c1eda67020dbec98"
+    },
+    {
+      "path": "evidence/OWNER-SUPPLIED-AUDIT-TRIAGE-20261030.json",
+      "bytes": 41794,
+      "sha256": "f8ca31655091a4677a0c09cd32db9c92fb14966d2dd28de863090921bbc16755"
+    },
+    {
       "path": "evidence/POLYGON-SOURCE-FOLLOWUP.json",
       "bytes": 776,
       "sha256": "73f4e4e184a81f5ecdf15f55815671aaf82aba4e68e677f075152040ada1671e"
@@ -1435,6 +1455,11 @@
       "path": "evidence/POST-PR259-GUEST-SMOKE.json",
       "bytes": 8549,
       "sha256": "15be8394c7378582712d098276146e41997eb176f9ad309890896f4e49fb27e3"
+    },
+    {
+      "path": "evidence/POST-PR262-GUEST-SMOKE.json",
+      "bytes": 8550,
+      "sha256": "32b7a829bfd6c9cac9f001e7323c61dc083ba787f5e54c8fd09920b17de8dc31"
     },
     {
       "path": "evidence/PR212-MONITOR-DIAGNOSIS.json",
@@ -3732,6 +3757,26 @@
       "sha256": "6b65b0a205a855926850dacf03caf5599828437ec139d7986b56924707c2bdb3"
     },
     {
+      "path": "evidence/PR261-PRODUCTION-BROWSER.json",
+      "bytes": 397474,
+      "sha256": "77542fc62e80ad2e7ed7a4b2492de31e15cf3fa7ccdf72b955dde535230ad099"
+    },
+    {
+      "path": "evidence/PR261-PRODUCTION-FRESH-THEME-DARK-SAFE-CONTROLS.json",
+      "bytes": 11414,
+      "sha256": "3e68c73cb61713e8e0a2daef33976885c78e94805510377d3b79f7857f0045bb"
+    },
+    {
+      "path": "evidence/PR261-PRODUCTION-FRESH-THEME-LIGHT-SAFE-CONTROLS.json",
+      "bytes": 11453,
+      "sha256": "913c496f13944921b66dd6808a73c9e31175416c34f4686af5105bb749241102"
+    },
+    {
+      "path": "evidence/PR261-PRODUCTION-FRESH-THEME-PERSONAL-VIEW.json",
+      "bytes": 10133,
+      "sha256": "ca4270d4c0c9cc73b5ba11702ec72fe0995b8f3098af0a4de4f8d4819d1e20ce"
+    },
+    {
       "path": "evidence/PR261-PRODUCTION-PROVIDERS.json",
       "bytes": 1346,
       "sha256": "82d50b1833681f5ec091b6da9596cde807eff612b27114f1d5db12e2c2f54d0e"
@@ -3765,6 +3810,71 @@
       "path": "evidence/PR261-UPDATED-PREVIEW-SIGNALS.json",
       "bytes": 803,
       "sha256": "3a5af249321f8854941316696fa10070d5fa255f5340b66c5ec0d75d88c37bcc"
+    },
+    {
+      "path": "evidence/PR262-INITIAL-MAIN-BROWSER-TARGET-FAILURE.json",
+      "bytes": 1876,
+      "sha256": "6073b9dde2786949dd3de8daa8961e0384008e21b7b8af0ac8448b2f0fa4feb8"
+    },
+    {
+      "path": "evidence/PR262-LOCAL-BUILD.json",
+      "bytes": 361,
+      "sha256": "c0f6968f747bb938af25ec0f55312fafa8a8cb213f6c6370aece70641c8355ff"
+    },
+    {
+      "path": "evidence/PR262-MAIN-CI.json",
+      "bytes": 2282,
+      "sha256": "5eaec12d09ae78bc8d5f4bd9d5ebd73194e695e26369901b0048818237f2afbf"
+    },
+    {
+      "path": "evidence/PR262-MERGE.json",
+      "bytes": 318,
+      "sha256": "17fa03ebbee317a4540aca80d07cdf2611b1667089db8a2ddb412564620beeed"
+    },
+    {
+      "path": "evidence/PR262-PREVIEW-GUEST-SMOKE.json",
+      "bytes": 8569,
+      "sha256": "409f7cefc8ada315c1d1f5a87d77c0cb5181deab206c703c51104a89f5d4f281"
+    },
+    {
+      "path": "evidence/PR262-PREVIEW-READABILITY.json",
+      "bytes": 16200,
+      "sha256": "678aa6d7eabca3ba0974114a2ef76c8529863271a868a3ba8352156b9e3d2a77"
+    },
+    {
+      "path": "evidence/PR262-PRODUCTION-BROWSER.json",
+      "bytes": 14099,
+      "sha256": "2f335d13d7a06613f91129b8ac3dca7157327f572589fe2c69eea96e17a61a7e"
+    },
+    {
+      "path": "evidence/PR262-PRODUCTION-PERSONAL-VIEW.json",
+      "bytes": 2012,
+      "sha256": "62ef7090cfad948d0b052cc350a128faccc482516ab426be96a9c3872848a942"
+    },
+    {
+      "path": "evidence/PR262-PRODUCTION-PROVIDERS.json",
+      "bytes": 1347,
+      "sha256": "bd8c737538991d27aacc8e923a7212d7140e68ec1844a995c3d364197ef66c23"
+    },
+    {
+      "path": "evidence/PR262-PRODUCTION-READABILITY.json",
+      "bytes": 14276,
+      "sha256": "f00b79ce64c82797d9489382547c547df5e6bcecc63ff5af519966a77a63b93b"
+    },
+    {
+      "path": "evidence/PR262-UPDATED-PREMERGE-CHECKS.json",
+      "bytes": 1563,
+      "sha256": "eee083afa7acce20576be3bf9207f74e920d4a89d0aff7a4ec7787a0bd197b88"
+    },
+    {
+      "path": "evidence/PR262-UPDATED-PREVIEW-BROWSER.json",
+      "bytes": 16260,
+      "sha256": "f2c33df46be4c7a84325753a69d29fc40f7ea827225a3ec582fd2a2afc47e2c1"
+    },
+    {
+      "path": "evidence/PR262-UPDATED-PREVIEW-SIGNALS.json",
+      "bytes": 803,
+      "sha256": "789f1cf92649a782347c30a3f2192f3036e490cbf733864d0036a49a1cc08e5c"
     },
     {
       "path": "evidence/PREPARED-PREVIEWS-BROWSER.json",
@@ -3908,8 +4018,8 @@
     },
     {
       "path": "evidence/REVIEWED-LIGHT-SURFACES-PRODUCTION-FRESH-THEME-BROWSER.json",
-      "bytes": 98337,
-      "sha256": "53c0d08a3b840c60450d37e9e02b8e7de9124f5821504afb26c898e943e70b6e"
+      "bytes": 396638,
+      "sha256": "800c6134dc4cf539da79f78a4c6c5198661067f3cc880376326394b9e10b5bca"
     },
     {
       "path": "evidence/REVIEWED-LIGHT-SURFACES-UPDATED-PREVIEW-BROWSER.json",
@@ -6235,6 +6345,111 @@
       "path": "evidence/followup-hover-supplement-20261029/header-768-light.png",
       "bytes": 90903,
       "sha256": "df80dca369aadc0708b701d5d52901990a30b6293c9c5d79442dd3aeb264463e"
+    },
+    {
+      "path": "evidence/followup-readability-preview/review-1280-dark.jpg",
+      "bytes": 211836,
+      "sha256": "9db3f93a93d408d5398b0d7f9b367b2a9118ffbc4a95c1db86101b89f7985acf"
+    },
+    {
+      "path": "evidence/followup-readability-preview/review-1280-light.jpg",
+      "bytes": 207794,
+      "sha256": "56d34084eb2449e7344fda77368b4c19236665d5bdd34f7239fd033439138d8a"
+    },
+    {
+      "path": "evidence/followup-readability-preview/review-1920-dark.jpg",
+      "bytes": 117317,
+      "sha256": "b0c249c9bffe41f6925082f4b3a548348a0c4d8432c756a98e4e55c60bb1af91"
+    },
+    {
+      "path": "evidence/followup-readability-preview/review-1920-light.jpg",
+      "bytes": 118107,
+      "sha256": "2a4357af30fd9cefbc3542daec7258ee7e6b87a9abf30d4eeb2ac6666efb43f0"
+    },
+    {
+      "path": "evidence/followup-readability-preview/review-360-dark.jpg",
+      "bytes": 199918,
+      "sha256": "5b4e5dcdc701ad79a8354dfbee787694056204629eb0a8daa70483bdb97ffd71"
+    },
+    {
+      "path": "evidence/followup-readability-preview/review-360-light.jpg",
+      "bytes": 193018,
+      "sha256": "c59e64d71a7418262a9be3943bb6bb09da9f4d6b4bb813d64a6ce3ca59f888a7"
+    },
+    {
+      "path": "evidence/followup-readability-preview/review-390-dark.jpg",
+      "bytes": 218299,
+      "sha256": "ecd91c55af898f36830f4b67f55ce91d1a14bf2ebc8d7bcec55183fed68f3501"
+    },
+    {
+      "path": "evidence/followup-readability-preview/review-390-light.jpg",
+      "bytes": 212571,
+      "sha256": "b329c7211e31780f665a568bf28d90ba6fdad5052888a0fbc7486842cd820fcf"
+    },
+    {
+      "path": "evidence/followup-readability-preview/review-768-dark.jpg",
+      "bytes": 301421,
+      "sha256": "266288c6f3af747c6724dd8dfa24319d1768193fbb51d9b9b92e88b379af8325"
+    },
+    {
+      "path": "evidence/followup-readability-preview/review-768-light.jpg",
+      "bytes": 294005,
+      "sha256": "410d1d3b63025f18a3f309465e4a8815731ff2586b6221cbcdb2c9bf470bd40c"
+    },
+    {
+      "path": "evidence/followup-readability-production/review-1280-dark.jpg",
+      "bytes": 250113,
+      "sha256": "2835280c4275b5f5243a7204488155872638581d09182ff7628ffd8d1a57e87b"
+    },
+    {
+      "path": "evidence/followup-readability-production/review-1280-light.jpg",
+      "bytes": 245343,
+      "sha256": "dbc34fb6ba460765531edc20a285be7b642f3136208ad8e1687452e2327c2381"
+    },
+    {
+      "path": "evidence/followup-readability-production/review-1920-dark.jpg",
+      "bytes": 162305,
+      "sha256": "f1b93382ef87785e6a279d4a324fd7de141d8ddcd2511c37d3a2f05de7cfeb0d"
+    },
+    {
+      "path": "evidence/followup-readability-production/review-1920-light.jpg",
+      "bytes": 162265,
+      "sha256": "efcde2ff1c873e9750e579fb88ebaf76c69573b618017528c83bc995d47193c6"
+    },
+    {
+      "path": "evidence/followup-readability-production/review-360-dark.jpg",
+      "bytes": 240504,
+      "sha256": "0e9f2693b9a98611c045db8a0c3a4e234466458f53561062a2eb877059ee67dd"
+    },
+    {
+      "path": "evidence/followup-readability-production/review-360-light.jpg",
+      "bytes": 232407,
+      "sha256": "cffaeee3c86c64d5575a55a0fb93a76e0737982a41688dac54aef4ceb6b30074"
+    },
+    {
+      "path": "evidence/followup-readability-production/review-390-dark.jpg",
+      "bytes": 259520,
+      "sha256": "afa1cd88c62691f23468591cd4da2121cd54ef97f084afc410f5a1719ea37575"
+    },
+    {
+      "path": "evidence/followup-readability-production/review-390-light.jpg",
+      "bytes": 251274,
+      "sha256": "0d2cf627b280cfc7e8948aaf5e67ff4fd7bf6f946680951f1840ac2b0f99a196"
+    },
+    {
+      "path": "evidence/followup-readability-production/review-768-dark.jpg",
+      "bytes": 325687,
+      "sha256": "cc5e4bb3f7acdd5956d97af11d62b3d0cc507bd5644e9b4c02cbe8697dc89c24"
+    },
+    {
+      "path": "evidence/followup-readability-production/review-768-light.jpg",
+      "bytes": 317844,
+      "sha256": "deb89de16ea718941c374cc81348e06fbdf2f11480b77df7ad258dd5ec5a93de"
+    },
+    {
+      "path": "evidence/followup-readability-production/review-queue.json",
+      "bytes": 262,
+      "sha256": "454963e438ece92ecf93f804ac342ed445d424dc9db1a89b524be98602fb1d99"
     },
     {
       "path": "evidence/followup-readability-review-20261029/PERSONAL-REVIEW-QUEUE.json",
@@ -12515,6 +12730,126 @@
       "path": "evidence/fullpage-light-core-20261028/eabea78578bd867f.json",
       "bytes": 91258,
       "sha256": "692da2e473cf1a9fa3d12f5633cd2d15bf660ac9c1605a0c453d40c05029c5a9"
+    },
+    {
+      "path": "evidence/fullpage-light-core-courses-20261029/1f89c1267f1bcf37.json",
+      "bytes": 56399,
+      "sha256": "5b3878ac50cbdda9dded8b348444708f65b627718fee7df8c64b57c645ea0e24"
+    },
+    {
+      "path": "evidence/fullpage-light-core-courses-20261029/86b6583ee9d2e533.json",
+      "bytes": 47015,
+      "sha256": "56edb0c5f7d782e875937b3f1aa8926cb3267ee8bbf8d25f72c42aad886ae89e"
+    },
+    {
+      "path": "evidence/fullpage-light-core-courses-20261029/acd713dd033a0521.json",
+      "bytes": 50970,
+      "sha256": "94754f775100756e79fec149f34716c42aa795e9f5dfb666374ca612c169c3d1"
+    },
+    {
+      "path": "evidence/fullpage-light-core-courses-20261029/contact-1f89c1267f1bcf37-1280-0.jpg",
+      "bytes": 337314,
+      "sha256": "ef5f0f2180c182333d2a993fbeb33e734b027d72f5ff37a1c1c09e3438bbb36d"
+    },
+    {
+      "path": "evidence/fullpage-light-core-courses-20261029/contact-1f89c1267f1bcf37-1920-0.jpg",
+      "bytes": 184726,
+      "sha256": "68546f10ec8aab9b0cdd814634edd8dccffcec240990331b4b42b0f905db1b55"
+    },
+    {
+      "path": "evidence/fullpage-light-core-courses-20261029/contact-1f89c1267f1bcf37-360-0.jpg",
+      "bytes": 594773,
+      "sha256": "005bd37304bcf7f7fb95d3587fbb3761c66668a7e6d6e5d8e5db8ee708304081"
+    },
+    {
+      "path": "evidence/fullpage-light-core-courses-20261029/contact-1f89c1267f1bcf37-390-0.jpg",
+      "bytes": 624009,
+      "sha256": "09cdadd45205632fceab64a496d70509b6ab95abab5699141884b34aa97fd8ff"
+    },
+    {
+      "path": "evidence/fullpage-light-core-courses-20261029/contact-1f89c1267f1bcf37-768-0.jpg",
+      "bytes": 636711,
+      "sha256": "e12fe811acfb3e9eac94713655d1fed58ad1015b41b8e6e7f28d2c6424e287a9"
+    },
+    {
+      "path": "evidence/fullpage-light-core-courses-20261029/contact-86b6583ee9d2e533-1280-0.jpg",
+      "bytes": 325333,
+      "sha256": "e2f6a370715ce9296f46ade4ae37215ebe68340c0516954682c23a8ed610dbeb"
+    },
+    {
+      "path": "evidence/fullpage-light-core-courses-20261029/contact-86b6583ee9d2e533-1920-0.jpg",
+      "bytes": 182693,
+      "sha256": "73b0501d993bb34b3c8b79670fbbcbb065a525eb2dea627674f992976e366306"
+    },
+    {
+      "path": "evidence/fullpage-light-core-courses-20261029/contact-86b6583ee9d2e533-360-0.jpg",
+      "bytes": 530450,
+      "sha256": "139fe7cbaa8c129956bbf84e5dbd3209651ea62e58a10a0a575bc235c2bc8620"
+    },
+    {
+      "path": "evidence/fullpage-light-core-courses-20261029/contact-86b6583ee9d2e533-390-0.jpg",
+      "bytes": 550341,
+      "sha256": "6670e3eb3360d8c661c3483c7dbd17449a8fd97f9b2405327352c5daa0d877ab"
+    },
+    {
+      "path": "evidence/fullpage-light-core-courses-20261029/contact-86b6583ee9d2e533-768-0.jpg",
+      "bytes": 603767,
+      "sha256": "805d657ca132c703177cb6eae40e2dff382014143f5df23ddbcbc6d75502726d"
+    },
+    {
+      "path": "evidence/fullpage-light-core-courses-20261029/contact-acd713dd033a0521-1280-0.jpg",
+      "bytes": 325824,
+      "sha256": "d418f269f10e726c724a4ea40569557625a0c7639e53e87abdfe8e4d7c749c7b"
+    },
+    {
+      "path": "evidence/fullpage-light-core-courses-20261029/contact-acd713dd033a0521-1920-0.jpg",
+      "bytes": 182991,
+      "sha256": "47539c5f9ea2e7a0a08c36f5681d7267c5204c1a715ae24c2ed197db403f7104"
+    },
+    {
+      "path": "evidence/fullpage-light-core-courses-20261029/contact-acd713dd033a0521-360-0.jpg",
+      "bytes": 570136,
+      "sha256": "68fa7310f9741a31d7a47bc9fb96fb6ef6943e067bc034f7290eb845c68ad4b9"
+    },
+    {
+      "path": "evidence/fullpage-light-core-courses-20261029/contact-acd713dd033a0521-390-0.jpg",
+      "bytes": 558763,
+      "sha256": "5d9614e07b9688fa2d08115bc8612b0f9b6fb428689209feee9ea4f6a9ae9f71"
+    },
+    {
+      "path": "evidence/fullpage-light-core-courses-20261029/contact-acd713dd033a0521-768-0.jpg",
+      "bytes": 638718,
+      "sha256": "1813540a4f5b795e1b61ef8cd888826bcb63edeec16dd468640e97faff0ccbf9"
+    },
+    {
+      "path": "evidence/fullpage-light-core-courses-20261029/contact-e6b90b700fabb1c1-1280-0.jpg",
+      "bytes": 322744,
+      "sha256": "924499cedd9dd9a64c534f0ae6abdb4fbe5f958539651ced252791b58629ba05"
+    },
+    {
+      "path": "evidence/fullpage-light-core-courses-20261029/contact-e6b90b700fabb1c1-1920-0.jpg",
+      "bytes": 179517,
+      "sha256": "45d5ff556c02c32717e4e43e5890221ae54efa72d70f7ef7381f9287323b8652"
+    },
+    {
+      "path": "evidence/fullpage-light-core-courses-20261029/contact-e6b90b700fabb1c1-360-0.jpg",
+      "bytes": 570011,
+      "sha256": "38cc3d90aaa643dfa88217ed1bf92b3e2128ebcc1259b8dc82afc449647bc1e1"
+    },
+    {
+      "path": "evidence/fullpage-light-core-courses-20261029/contact-e6b90b700fabb1c1-390-0.jpg",
+      "bytes": 559917,
+      "sha256": "38405cbec74dcdee5c661617443e8697c2f45c2537817f8c82d09a20396da97a"
+    },
+    {
+      "path": "evidence/fullpage-light-core-courses-20261029/contact-e6b90b700fabb1c1-768-0.jpg",
+      "bytes": 638983,
+      "sha256": "2ba36e9157cb106a55e2a55d5043793d39a59ba2ecb23436b0e14dbe7fc140c0"
+    },
+    {
+      "path": "evidence/fullpage-light-core-courses-20261029/e6b90b700fabb1c1.json",
+      "bytes": 50738,
+      "sha256": "f7882854b8e1bc44707ee46f2965ee770a3d11de7887db04713deb83746c2b82"
     },
     {
       "path": "evidence/fullpage-light-new-profiles-20261028/2a28f4e4b4cb9b81.json",
@@ -22912,6 +23247,26 @@
       "sha256": "16d3eba83f3e25ee4d3c1a8c97e89af4c4f0d9afa30dca6194bcb361d8de0ab6"
     },
     {
+      "path": "evidence/learn-path-contrast-before-20261029/path-0-1280-light.png",
+      "bytes": 153732,
+      "sha256": "15f020e9f9815b3d86da85e253ee121296c5ac0b425892c58217f5b5a917a616"
+    },
+    {
+      "path": "evidence/learn-path-contrast-before-20261029/path-0-360-light.png",
+      "bytes": 88821,
+      "sha256": "21648d7b8a044926def32a01b0811d04badca64d5e81b684a50885370061a46e"
+    },
+    {
+      "path": "evidence/learn-path-contrast-before-20261029/path-2-1280-light.png",
+      "bytes": 153732,
+      "sha256": "15f020e9f9815b3d86da85e253ee121296c5ac0b425892c58217f5b5a917a616"
+    },
+    {
+      "path": "evidence/learn-path-contrast-before-20261029/path-2-360-light.png",
+      "bytes": 82987,
+      "sha256": "d25567b309c1241a252e1dcc0a55fa0c32d5192b7eb203b362259c3b414eeb30"
+    },
+    {
       "path": "evidence/learning-light-before-20261028/review-contact-0.jpg",
       "bytes": 186885,
       "sha256": "874fd735b7db1526091d43ea56d41841d39b1ec2e98adb8df8ffc1de682be6c5"
@@ -24185,6 +24540,36 @@
       "path": "evidence/options-official-20261024/oic-exercise.json",
       "bytes": 354,
       "sha256": "4799968ed913ee5b948020195cfce2e1655679d83c76ba26e7529678b8bdf031"
+    },
+    {
+      "path": "evidence/owner-audit-before-20261030/courses-cryptocurrency-price-feeds-and-valuation-area0-1280.png",
+      "bytes": 94385,
+      "sha256": "5b621a9f1bdfede774a405401eb0612bcea29e9f621d5c532f9b7bbabde612da"
+    },
+    {
+      "path": "evidence/owner-audit-before-20261030/markets-initial-1280.png",
+      "bytes": 277990,
+      "sha256": "b995949e527966c9e02e0b1d4d4b4e5fe9c4d9efdaef7771e5b6158308626e19"
+    },
+    {
+      "path": "evidence/owner-audit-before-20261030/trade-avgo-area1-1280.png",
+      "bytes": 110352,
+      "sha256": "0f62cc0dc1c5077c348d8e6b8a923db2d4e3230eae3c8c5fa8f3a54a6a6147d2"
+    },
+    {
+      "path": "evidence/owner-audit-before-20261030/trade-usdjpy-area0-1280.png",
+      "bytes": 131594,
+      "sha256": "8e746670f9b3103b24d5039a4b5356446b78a0098f169f27473b72a82c651f5d"
+    },
+    {
+      "path": "evidence/owner-audit-before-20261030/trade-usdjpy-area1-1280.png",
+      "bytes": 115939,
+      "sha256": "58fb8631cc1c1dc408b6c0a599e56ed1486ee8858b5f99c32db16c7c4ff90bd8"
+    },
+    {
+      "path": "evidence/owner-audit-before-20261030/trade-usdjpy-initial-1280.png",
+      "bytes": 160133,
+      "sha256": "d562eebff3d9a1551bcf3a0a9a878741bcf7f7e3655b08aad28e542eb9aa0697"
     },
     {
       "path": "evidence/portfolio-history-wording-before-360.png",
@@ -26422,6 +26807,46 @@
       "sha256": "5ab9fcb0dcb429e9a189b37b7967dc833944f65933829f9d599db4cb8a7500c3"
     },
     {
+      "path": "evidence/reviewed-light-controls-production-fresh-theme-dark/faq-1280-dark.png",
+      "bytes": 70560,
+      "sha256": "aa407596fa6e9d8848e43eeadc4113f3426e98a03ca2a48b8434ae236f51fba5"
+    },
+    {
+      "path": "evidence/reviewed-light-controls-production-fresh-theme-dark/faq-360-dark.png",
+      "bytes": 48338,
+      "sha256": "9d9f85ba4def3c0e216263b99e0b26eab9d2156bb9b73a47633b3bf48100ab0d"
+    },
+    {
+      "path": "evidence/reviewed-light-controls-production-fresh-theme-dark/guide-header-1280-dark.png",
+      "bytes": 132655,
+      "sha256": "64436c0be51fc801dc5426dcc6ed555a77e9bdb8fb82653cda509afe09744287"
+    },
+    {
+      "path": "evidence/reviewed-light-controls-production-fresh-theme-dark/guide-header-360-dark.png",
+      "bytes": 60210,
+      "sha256": "d6a31642e5bfce09dc94c548bb82f8779623528516d81010b07a98647a1892eb"
+    },
+    {
+      "path": "evidence/reviewed-light-controls-production-fresh-theme-light/faq-1280-light.png",
+      "bytes": 68946,
+      "sha256": "cb6b2a38d94b66cce8e604a4531c50c5ab5e097c1787500ecf7a04bb7b80225b"
+    },
+    {
+      "path": "evidence/reviewed-light-controls-production-fresh-theme-light/faq-360-light.png",
+      "bytes": 47686,
+      "sha256": "961d31d884ecc8a955d51cd6bffb7eecfcbc1a58c5a820940c83b30f1b42bc81"
+    },
+    {
+      "path": "evidence/reviewed-light-controls-production-fresh-theme-light/guide-header-1280-light.png",
+      "bytes": 129808,
+      "sha256": "580bfc848e3124a4f60b5b0890a2164817da738eaed638164e921b03ae268c0f"
+    },
+    {
+      "path": "evidence/reviewed-light-controls-production-fresh-theme-light/guide-header-360-light.png",
+      "bytes": 58942,
+      "sha256": "c808eaec59a9e28f5e28d704cb0746b80e36d255f7d1ab7398fe7891253bd1e4"
+    },
+    {
       "path": "evidence/reviewed-light-surfaces-local-6ba-incomplete/PERSONAL-REVIEW-QUEUE.json",
       "bytes": 5685,
       "sha256": "f51fc7b8017a92a9ec67e52fa80336190a1f3485aadfae1e91756e870b331030"
@@ -27738,6 +28163,331 @@
     },
     {
       "path": "evidence/reviewed-light-surfaces-preview-fresh-theme/review-roadmap-768-light-0.jpg",
+      "bytes": 531303,
+      "sha256": "39e22285912fbe36769c16bf70bfcf2234a5557df760eafe62cd5140e84635e0"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/PERSONAL-REVIEW-QUEUE.json",
+      "bytes": 2528,
+      "sha256": "094ffd7db005dac21282f866899b7744b00cd5cb515375401cf6ddf839f872bb"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-daily-1280-dark-0.jpg",
+      "bytes": 205698,
+      "sha256": "5206b917b185f8b9eecb0e004259b0b617a5e1789be4015ba794ffcdda7f580a"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-daily-1280-light-0.jpg",
+      "bytes": 207359,
+      "sha256": "7d928aa324a22566e2ddbda0d21f3e59a213490c9ef4265d7aa55b373322310f"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-daily-1920-dark-0.jpg",
+      "bytes": 118112,
+      "sha256": "b14614dd18e1621c175859d0cc26aad3503713ad87fbb247cfe1056a23ceee71"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-daily-1920-light-0.jpg",
+      "bytes": 119436,
+      "sha256": "185e2ad8775451a2a298170c6975b5f62d4629c14eb22e1828f6f28515405ed3"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-daily-360-dark-0.jpg",
+      "bytes": 201803,
+      "sha256": "d8f1c80d02ebdeeb91c74fa7aa909929fddf7cd37be8c849d26d9f36330bce09"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-daily-360-light-0.jpg",
+      "bytes": 205212,
+      "sha256": "e34e114af8ad02eb6f75169bf918b968b384f3a6c0872bae43156877b0f8b38e"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-daily-390-dark-0.jpg",
+      "bytes": 228494,
+      "sha256": "9233caca0e317c4465ba49c4f02bf2fab03f7d7724fa7436f16219d3a2eed1fb"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-daily-390-light-0.jpg",
+      "bytes": 234442,
+      "sha256": "f2756ace01818039b0afad5cb8948f244db0b44529b725598fe48748d8d3a118"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-daily-768-dark-0.jpg",
+      "bytes": 346554,
+      "sha256": "09ec86a696a80c06f1fd9579e37a753d59e5f36e7b06020b4fa67f12cda3571c"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-daily-768-light-0.jpg",
+      "bytes": 347662,
+      "sha256": "a5960e29a70f9ef9bf0b528b8bbf4a57c1b96a8cb503998db3954ec73f41c2ba"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-home-1280-dark-0.jpg",
+      "bytes": 250872,
+      "sha256": "ad96e974ed4ec9cb9eacb3b7958285fde8068adc869268c72191ce9857a20aae"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-home-1280-dark-1.jpg",
+      "bytes": 215234,
+      "sha256": "fdbfc9c9f3c17a5a20344058f6d515969f48e639aca8258a07beefaa6ef25ed2"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-home-1280-dark-2.jpg",
+      "bytes": 80846,
+      "sha256": "d9a66e780c5b52e52b147bc5cdfd741a74e26a2b0d3ad9f742098ef0c9d64558"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-home-1280-light-0.jpg",
+      "bytes": 245743,
+      "sha256": "5b607b8d1926f74bc9a2bbdceb33c057909e8524f55a846c0ddd7446b583d90b"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-home-1280-light-1.jpg",
+      "bytes": 211723,
+      "sha256": "f4ada62f56f464418d5e8a9cda976ff5c6dca90e158ec740bb40cb91526c3e6d"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-home-1280-light-2.jpg",
+      "bytes": 78070,
+      "sha256": "b1618ccf80e4436de9e4c2ff4d2e2d0d60580b61b06a9ab7b01880ba5d671dbb"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-home-1920-dark-0.jpg",
+      "bytes": 146997,
+      "sha256": "646062819dd7a415e56a46efa81b40c6f3272b05b1e28becbf4f2fdccf9319af"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-home-1920-dark-1.jpg",
+      "bytes": 124868,
+      "sha256": "984500155baa47c3090f18c3f30f057265bf0d4d418c0e6373db856e0caca5ed"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-home-1920-dark-2.jpg",
+      "bytes": 48737,
+      "sha256": "02d1ec332f5de584974556866279f7a4cf78d2444013695584d217b9ace5c46e"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-home-1920-light-0.jpg",
+      "bytes": 146721,
+      "sha256": "11ea180800f41d9a30e5144ae93f10338f07f37f7e660f41a1d0c57bc4c24cb9"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-home-1920-light-1.jpg",
+      "bytes": 125201,
+      "sha256": "8bbab02fe37e3e8cf7c57bc424e5b7f53ceb95fc1019dddf43efa85ee882d14f"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-home-1920-light-2.jpg",
+      "bytes": 47647,
+      "sha256": "3cca082ed412d0583cba4643323feb1cb79e9bc777c7bf55cca3beecf8c41fdd"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-home-360-dark-0.jpg",
+      "bytes": 336266,
+      "sha256": "f96f73732f4eb5cf72e4d83bb7ef0c2d47b4429054a57c73ac76deb63561ac41"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-home-360-dark-1.jpg",
+      "bytes": 179733,
+      "sha256": "75135cc6bc2a8ed9d2cee7b46664d4dcdc81461a7db6de5a98bbe68c5b47f315"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-home-360-light-0.jpg",
+      "bytes": 329791,
+      "sha256": "2943da016e846742f9e555fc37a5bb3fef3eea2d0d177a2c0d36a834e6700843"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-home-360-light-1.jpg",
+      "bytes": 176332,
+      "sha256": "e95d5d4b0ef25f8141fd2f353df39a172028a797e74a3f31dd5e4599ba40dba5"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-home-390-dark-0.jpg",
+      "bytes": 349839,
+      "sha256": "ba465c6478a732cb2ddb84c9395b13507bfdabb44906ee3eedf525b60e646c75"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-home-390-dark-1.jpg",
+      "bytes": 194466,
+      "sha256": "ed9e433d4747cd6c64659467d5e1201d488469a926b6199b647e009699ed937c"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-home-390-light-0.jpg",
+      "bytes": 346820,
+      "sha256": "803ef2309efa46eeaa44e1bb4e9086be010c5a5a95005ebc7e280d7fe7bddf34"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-home-390-light-1.jpg",
+      "bytes": 192359,
+      "sha256": "2f3f16d77bcc44d8ecb30185bf5d7d8ca39c993d6faa250dc1fbe205b58a9ec8"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-home-768-dark-0.jpg",
+      "bytes": 585494,
+      "sha256": "bc47c811a23bc3bd9887c6eb605f6db3ddf49d200ba16f9a8b003b87b39ebc05"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-home-768-dark-1.jpg",
+      "bytes": 322393,
+      "sha256": "df89bcdc3641b0892c315747e807d13c8affb616bb4586ddccf27a0984331952"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-home-768-light-0.jpg",
+      "bytes": 578018,
+      "sha256": "53de2a51304f4d3899fc1756b93154dc9bfb9d0304b3416723b032cc81ceb573"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-home-768-light-1.jpg",
+      "bytes": 315443,
+      "sha256": "33caf0bf15e27b396c8cdc6ccc4a4d3dbd4a6cedd6b5359e096d9a6bc326a8cd"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-learn-1280-dark-0.jpg",
+      "bytes": 220349,
+      "sha256": "d0dfa6fe7872fd3a4cdaa79030ce9455ceed66eec492b4c481f027c91a4adf0c"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-learn-1280-light-0.jpg",
+      "bytes": 217530,
+      "sha256": "feea8b2697b7077216c3202145fdc83582b91237eb071e7ccd4580f915021a31"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-learn-1920-dark-0.jpg",
+      "bytes": 124592,
+      "sha256": "ae448e889c52d44d2be9d6add75f2db79168277a0235a98f9981fd9d40046209"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-learn-1920-light-0.jpg",
+      "bytes": 123307,
+      "sha256": "6f6e63c7822dc78395dfa2924e78e571656d54a20a19177735dba0e209c6e202"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-learn-360-dark-0.jpg",
+      "bytes": 187296,
+      "sha256": "f37036749126290d71ba24ccf29168507d0039fd2240f7bb0f07e2326ff5d0c3"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-learn-360-light-0.jpg",
+      "bytes": 188756,
+      "sha256": "2115671d41e96bd431ae8e467fd1634d0306566e8058c5c940d59010c6b1241e"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-learn-390-dark-0.jpg",
+      "bytes": 204888,
+      "sha256": "8385393a18146e27274b4f39ea6c050bb3f39661d9798ed7b09b27a34c024e9b"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-learn-390-light-0.jpg",
+      "bytes": 207327,
+      "sha256": "229b436bdb84ddf063831cccf5cb53cba0e54013ad32b8ab5f770c731d4dee97"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-learn-768-dark-0.jpg",
+      "bytes": 357559,
+      "sha256": "3231cd3f1641e3c3852ffd143b38b83b82edc4f4b8c181fc96c292c8d19f79f9"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-learn-768-light-0.jpg",
+      "bytes": 353086,
+      "sha256": "322a399623e828b410235422fd5fb34c0cb7292a43ae43cd1d71abda9facc09d"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-learn-trading-guide-1280-dark-0.jpg",
+      "bytes": 235131,
+      "sha256": "3b9dfafae658ce439e6b15f4d3c447437219c76ee1e19db7fcdf8e8de2dbd342"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-learn-trading-guide-1280-light-0.jpg",
+      "bytes": 228045,
+      "sha256": "bbf1097844f8940d9752d4550f7e27c54aa831c2d593ae4f9fdc79fdc6953b4f"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-learn-trading-guide-1920-dark-0.jpg",
+      "bytes": 136636,
+      "sha256": "602b08fa906b6d23f0808dd66066b7926d8cff571a16ca1c9c543868e9389925"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-learn-trading-guide-1920-light-0.jpg",
+      "bytes": 132879,
+      "sha256": "93337eced6496c18b44207246378fd63efe3651d6b0777778632afcb85dc13ef"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-learn-trading-guide-360-dark-0.jpg",
+      "bytes": 204024,
+      "sha256": "bae6d4f1820fb8693e31311ed008f4071e6d7dae137dae14ad7c16a953ab1552"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-learn-trading-guide-360-light-0.jpg",
+      "bytes": 199965,
+      "sha256": "93f0bf175c31649613db027d5abe6b1f8f72016cad40db1a249e485c62bde86d"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-learn-trading-guide-390-dark-0.jpg",
+      "bytes": 217928,
+      "sha256": "ba22a06c4aba27cccc634eb98da64d976ab749003f53a1317e138992650319ad"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-learn-trading-guide-390-light-0.jpg",
+      "bytes": 215226,
+      "sha256": "9b9f9d9ee169fd8f2b213b5c9e8b7e163394afa53a3e49c0e128575f7962e240"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-learn-trading-guide-768-dark-0.jpg",
+      "bytes": 371282,
+      "sha256": "8bb52a2b44f25b1ddc41201d23b464159de20a1a676c65500ec74e7e7f11f2df"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-learn-trading-guide-768-light-0.jpg",
+      "bytes": 361655,
+      "sha256": "1354442159004cec6b0e2f77498bc0243b37b14b5723032c645e7fbed26b5fae"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-roadmap-1280-dark-0.jpg",
+      "bytes": 287200,
+      "sha256": "4a1ff2a6408d672e2024f2b97301800325572ec26136fdee94a4b81d3efdfffc"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-roadmap-1280-light-0.jpg",
+      "bytes": 266585,
+      "sha256": "823cc9b89bb2f53f6da2ffbb89226107dca1afba8bc0f5e6f4beae7f9173228e"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-roadmap-1920-dark-0.jpg",
+      "bytes": 155250,
+      "sha256": "4f2b37a6aca130514c2d1b69c968e4e071f61261fece5b405b27fab4c4ad72b5"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-roadmap-1920-light-0.jpg",
+      "bytes": 143946,
+      "sha256": "b653d52e5dfd142fd435fb815b34a2b77a280f41dc3508eb9035625316c4902b"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-roadmap-360-dark-0.jpg",
+      "bytes": 300408,
+      "sha256": "16a4eb542b85b5fcf281a245ef324d21a34bd0ef72cf28dc6d67edffa7659f7e"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-roadmap-360-light-0.jpg",
+      "bytes": 287392,
+      "sha256": "b7bf8e7f9fece944d198f7bb2315b9532b6814ae47510806d4be2381fb77c597"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-roadmap-390-dark-0.jpg",
+      "bytes": 338251,
+      "sha256": "b5428122e17bc7eee36052641fe5438a134926e9e83a7166a979a426ace6a8da"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-roadmap-390-light-0.jpg",
+      "bytes": 322814,
+      "sha256": "ee074f4828214b70092cbc7570cb8c2176f41e4bb45a5b3dca59cafd340f7cdd"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-roadmap-768-dark-0.jpg",
+      "bytes": 565710,
+      "sha256": "4d11609a489a8ffca9b20b0848a4a1129e5765934f8531ba419d33ed7af7152e"
+    },
+    {
+      "path": "evidence/reviewed-light-surfaces-production-fresh-theme/review-roadmap-768-light-0.jpg",
       "bytes": 531303,
       "sha256": "39e22285912fbe36769c16bf70bfcf2234a5557df760eafe62cd5140e84635e0"
     },
@@ -29862,9 +30612,19 @@
       "sha256": "328066f3b39ac428abb9b1f1adf382be672b22bb06a88a203fb1d63d6e0eb4fd"
     },
     {
+      "path": "findings/LEARN-PATH-LIGHT-CONTRAST.md",
+      "bytes": 1132,
+      "sha256": "8154529cbafaae9d7a341aff8de9e735639c0c95647494fc22c15e902d542144"
+    },
+    {
       "path": "findings/LEARN-PUBLISHED-CATALOG.md",
       "bytes": 1917,
       "sha256": "de73ad7b585e8f8b6380a3b4acf2f990c609648d087cda47ff5cc2b35088cfdb"
+    },
+    {
+      "path": "findings/LEARNING-SCOPE-REPORT-CORRECTIONS.md",
+      "bytes": 1247,
+      "sha256": "606f30fb443e165a43c81e46d82b0ea4adcc3ad5a3e7a97a89062e4e26e74248"
     },
     {
       "path": "findings/LEGACY-PROGRESS-ACCESSIBILITY.md",
@@ -30582,7 +31342,7 @@
       "sha256": "75c029c85b57a6d5253685eaf559c5f27e0f41b95cc64f25a1b7c81e4427287b"
     }
   ],
-  "fileCount": 6116,
-  "totalBytes": 1378389931,
-  "generatedAt": "2026-10-29T15:25:53.667055+00:00"
+  "fileCount": 6268,
+  "totalBytes": 1411041978,
+  "generatedAt": "2026-10-30T01:54:24.469897+00:00"
 }

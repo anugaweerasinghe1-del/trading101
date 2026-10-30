@@ -1,0 +1,50 @@
+{
+  "checkedAt": "2026-10-30T01:51:06.816108+00:00",
+  "sha": "84e26a8bd3dc442b4c1d153cba0d94cc8cccc677",
+  "outcome": "PASS_BOUNDED_AFFECTED_PRESENTATION",
+  "count": 10,
+  "rawScreenshotsRepresented": 30,
+  "personallyViewedSheets": [
+    {
+      "name": "review-360-light.jpg",
+      "sha256": "cffaeee3c86c64d5575a55a0fb93a76e0737982a41688dac54aef4ceb6b30074"
+    },
+    {
+      "name": "review-390-light.jpg",
+      "sha256": "0d2cf627b280cfc7e8948aaf5e67ff4fd7bf6f946680951f1840ac2b0f99a196"
+    },
+    {
+      "name": "review-768-light.jpg",
+      "sha256": "deb89de16ea718941c374cc81348e06fbdf2f11480b77df7ad258dd5ec5a93de"
+    },
+    {
+      "name": "review-1280-light.jpg",
+      "sha256": "dbc34fb6ba460765531edc20a285be7b642f3136208ad8e1687452e2327c2381"
+    },
+    {
+      "name": "review-1920-light.jpg",
+      "sha256": "efcde2ff1c873e9750e579fb88ebaf76c69573b618017528c83bc995d47193c6"
+    },
+    {
+      "name": "review-360-dark.jpg",
+      "sha256": "0e9f2693b9a98611c045db8a0c3a4e234466458f53561062a2eb877059ee67dd"
+    },
+    {
+      "name": "review-390-dark.jpg",
+      "sha256": "afa1cd88c62691f23468591cd4da2121cd54ef97f084afc410f5a1719ea37575"
+    },
+    {
+      "name": "review-768-dark.jpg",
+      "sha256": "cc5e4bb3f7acdd5956d97af11d62b3d0cc507bd5644e9b4c02cbe8697dc89c24"
+    },
+    {
+      "name": "review-1280-dark.jpg",
+      "sha256": "2835280c4275b5f5243a7204488155872638581d09182ff7628ffd8d1a57e87b"
+    },
+    {
+      "name": "review-1920-dark.jpg",
+      "sha256": "f1b93382ef87785e6a279d4a324fd7de141d8ddcd2511c37d3a2f05de7cfeb0d"
+    }
+  ],
+  "assessment": "All10 sheets personally viewed: actual public long username wraps within heading at360/390; remaining widths retain layout. Calculator defaults100000/500 visible on dark island in both themes without edits; light header hovered/focused menu/sign-in icon and text have dark foreground with visible focus ring. Dark controls remain readable. No financial calculations, profile visibility, auth or records changed."
+}

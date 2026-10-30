@@ -1,25 +1,19 @@
 {
-  "updatedAt": "2026-10-29T15:25:14.329709+00:00",
-  "latestMergedProductionSHA": "1dacd0ac9a986546b9480476a084b9049b56e036",
+  "updatedAt": "2026-10-30T01:53:36.615403+00:00",
+  "latestMergedProductionSHA": "84e26a8bd3dc442b4c1d153cba0d94cc8cccc677",
   "fullpageRoutesPersonallyViewed": 451,
   "publicInventoryRoutes": 451,
   "remainingDefaultVisualRoutes": 0,
-  "confirmedFindings": 73,
-  "publiclyVerifiedRepairs": 63,
-  "activeCandidate": {
-    "pr": 261,
-    "candidateSHA": "de9c05d5d0ccb3951561c48df5a7a6e25c9e1bd7",
-    "mergeSHA": "1dacd0ac9a986546b9480476a084b9049b56e036",
-    "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
-    "hold": "Six exact-main checks, authenticated native CF/Vercel production and actual public affected/guest checks required before another merge."
-  },
+  "confirmedFindings": 76,
+  "publiclyVerifiedRepairs": 71,
+  "activeCandidate": null,
   "releaseGate": {
-    "active": true,
-    "reason": "PR261 serial production verification pending"
+    "active": false,
+    "reason": "No active release hold."
   },
   "publicProfileControls": "60profiles240states120focusedEnterLeaderboard/backflows PASS; all120initiallightimages personallyviewed across31sheets. No full accessibility certification.",
   "activeCollection": null,
-  "unresolved": "10 substantive findings remain until closed with release evidence; exact count follows FINDINGS.json. Remaining full-light scroll, sequential Tab, zoom, screenreader, primary sources, originality/value, daily conditional and regional ad/CMP/account stages prevent whole-audit completion.",
+  "unresolved": "5 substantive findings remain until closed with release evidence; exact count follows FINDINGS.json. Remaining full-light scroll, sequential Tab, zoom, screenreader, primary sources, originality/value, daily conditional and regional ad/CMP/account stages prevent whole-audit completion.",
   "historicalResumeNote": "Earlier checkpoint fields were stale; historical observations remain in their dated receipts and git history.",
   "terminalControls": "19assetterminals76light/darkmobile/desktopstates372focusedEnterFAQexpansions PASS; all38initiallightimages personallyviewed. No fullaccessibilitycertification.",
   "latestOwnerUpdate": "Owner clarified the repeated rejection only provides generic account-not-approved/few-more-tweaks wording and Sites section is inaccessible without resubmission. No further rejection detail is available; do not repeatedly request it. No inferred Google rejection cause.",
@@ -27,59 +21,34 @@
   "terminalSixthControls": "Evidence TERMINAL-SIXTH-SAFE-CONTROLS-20261028.json; freshness/navigationinitialfailurepreserved separately.",
   "terminalSeventhControls": "20 terminals,80 states,396 FAQ expansions,all40 initial light images personally viewed.",
   "terminalFinalControls": "27 terminals,108 states,536 FAQ expansions,all54 initial light images personally viewed.",
-  "latestFullyVerifiedProductionSHA": "c24f878f3871e0507e3cd040bf7d61572d68af3a",
-  "fullLightRoutesPersonallyViewed": 36,
-  "remainingFullLightRoutes": 415,
+  "latestFullyVerifiedProductionSHA": "84e26a8bd3dc442b4c1d153cba0d94cc8cccc677",
+  "fullLightRoutesPersonallyViewed": 40,
+  "remainingFullLightRoutes": 411,
   "currentFindingStates": [
     {
       "id": "THQ-059",
-      "state": "FIX_PREPARED_INDEPENDENT_LOCAL_BRANCH",
+      "state": "PREPARED_NOT_MERGED",
       "scope": "Long generic terminal titles claim analysis absent from content"
     },
     {
-      "id": "THQ-060",
-      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
-      "scope": "Homepage fixed dark surfaces inherit light-theme dark text"
-    },
-    {
-      "id": "THQ-061",
-      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
-      "scope": "Daily challenge fixed dark surfaces inherit near-black light-theme text"
-    },
-    {
-      "id": "THQ-062",
-      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
-      "scope": "Learning introduction mixes dark copy and fixed dark gradient"
-    },
-    {
-      "id": "THQ-063",
-      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
-      "scope": "Beginner-guide credibility footer inherits pale text over light gradient"
-    },
-    {
-      "id": "THQ-064",
-      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
-      "scope": "Roadmap heading and feature accents remain pale in light mode"
-    },
-    {
-      "id": "THQ-065",
-      "state": "FIX_TESTED_DRAFT_CANDIDATE",
-      "scope": "Long public username extends beyond narrow profile viewport"
-    },
-    {
       "id": "THQ-066",
-      "state": "FIX_PREPARED_INDEPENDENT_LOCAL_BRANCH",
+      "state": "PREPARED_NOT_MERGED",
       "scope": "Homepage FAQ buttons omit their expanded state"
     },
     {
-      "id": "THQ-067",
-      "state": "FIX_TESTED_DRAFT_CANDIDATE",
-      "scope": "Compound calculator input values vanish in light theme"
+      "id": "THQ-069",
+      "state": "PROPOSED_NOT_IMPLEMENTED",
+      "scope": "Learning path level labels have low contrast on light backgrounds"
     },
     {
-      "id": "THQ-068",
-      "state": "FIX_TESTED_DRAFT_CANDIDATE",
-      "scope": "Shared header hover controls lack light-theme contrast"
+      "id": "THQ-070",
+      "state": "PREPARED_NOT_MERGED",
+      "scope": "Asset learning links overpromise instrument-specific research"
+    },
+    {
+      "id": "THQ-071",
+      "state": "PREPARED_NOT_MERGED",
+      "scope": "Published crypto course outcome promises untaught statistical filtering"
     }
   ]
 }

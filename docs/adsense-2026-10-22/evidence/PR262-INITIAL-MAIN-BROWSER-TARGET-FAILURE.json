@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-10-30T01:37:53.889825+00:00",
+  "sha": "84e26a8bd3dc442b4c1d153cba0d94cc8cccc677",
+  "workflow": 40985981139,
+  "attempt": 1,
+  "outcome": "FAIL_BROWSER_TARGET_INTERRUPTED",
+  "actualError": "Error: Inspected target navigated or closed",
+  "context": "Application build and earlier compiled editorial route phases passed; browser verification then lost inspected CDP target during/trade/btc smoke. No failed application-content assertion identified. Required validation correctly blocked and production readiness monitors skipped.",
+  "logSHA256": "39226d6e33c2c398918be73d104407fca55abef9f3296fcb3770e1c79d28efba",
+  "boundedErrorLines": [
+    "2026-10-30T01:28:24.1355669Z PASS real Chromium: 155 compiled route visits (155 URLs \u00d7 matrix phase 0 only), canonical/H1/content parity and overflow. Native courses use read-only published fixtures, not production services.",
+    "2026-10-30T01:29:02.5440956Z PASS real Chromium: 155 compiled route visits (155 URLs \u00d7 matrix phase 1 only), canonical/H1/content parity and overflow. Native courses use read-only published fixtures, not production services.",
+    "2026-10-30T01:29:14.5194492Z PASS real Chromium: 155 compiled route visits (155 URLs \u00d7 matrix phase 2 only), canonical/H1/content parity and overflow. Native courses use read-only published fixtures, not production services.",
+    "2026-10-30T01:29:52.5189183Z PASS real Chromium: 155 compiled route visits (155 URLs \u00d7 matrix phase 3 only), canonical/H1/content parity and overflow. Native courses use read-only published fixtures, not production services.",
+    "2026-10-30T01:29:56.3224404Z Error: Inspected target navigated or closed"
+  ],
+  "nextAction": "One unchanged full workflow rerun; all six exact-main and native/live acceptance still required. No later merge.",
+  "minimumPriorWorkflowCheckId": 123837757031
+}

@@ -108,9 +108,9 @@
         "THQ-068"
       ],
       "findingStates": {
-        "THQ-060": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
-        "THQ-066": "FIX_PREPARED_INDEPENDENT_LOCAL_BRANCH",
-        "THQ-068": "FIX_TESTED_DRAFT_CANDIDATE"
+        "THQ-060": "PUBLICLY_VERIFIED",
+        "THQ-066": "PREPARED_NOT_MERGED",
+        "THQ-068": "PUBLICLY_VERIFIED"
       },
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": [],
@@ -2463,10 +2463,12 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [
-        "THQ-002"
+        "THQ-002",
+        "THQ-071"
       ],
       "findingStates": {
-        "THQ-002": "PUBLICLY_VERIFIED"
+        "THQ-002": "PUBLICLY_VERIFIED",
+        "THQ-071": "PREPARED_NOT_MERGED"
       },
       "postDeploymentChecks": [
         {
@@ -2705,8 +2707,12 @@
         "Ad delivery and regional CMP not verified",
         "FAQ and quiz-result/control follow-up pending where present"
       ],
-      "specificFindingIds": [],
-      "findingStates": {},
+      "specificFindingIds": [
+        "THQ-071"
+      ],
+      "findingStates": {
+        "THQ-071": "PREPARED_NOT_MERGED"
+      },
       "structuredQuizReview": {
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
         "questionsRead": 4,
@@ -3453,6 +3459,19 @@
         "assessment": "All five-width default segments personally viewed: coursehero/0%progress, objectives, prerequisites, scope/sequence, five lesson cards, footer and appended notes. No additional default layout failure observed. Substantial main/notes repetition requires exact-parity/unique-copy investigation; not conflated with alreadyreleasedcomparisonfix. No quiz/lessoncompletion/progress action. Light/keyboard/zoom, dated CME/CFTC specifications and source/regional claims remain incomplete.",
         "evidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
         "passIsNotImpliedByInspection": true
+      },
+      "fullLightVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "widths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Personally viewed every segment at five widths: title, spot-only simulator limitation, contract and margin learning outcomes, prerequisites, five lesson cards, completion note and footer flow without observed width overflow. Visual coverage does not establish support for futures execution or verify every financial claim.",
+        "evidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json",
+        "wholePageReviewComplete": false
       }
     },
     {
@@ -4270,6 +4289,19 @@
         "assessment": "All seven contacts covering every captured default segment at360/390/768/1280/1920 personallyviewed: hero,0%progress/badge target, prerequisites, five learning goals, five lessoncards, footer and appended notes. No new default overlap/clipping observed. Source wording sensibly distinguishes CPI/FOMC/yieldcurve/DXY context from forecasts; main/course notes substantiallyrepeat with uniqueattribution, completion anddisclaimer still tocompare before integration. Light/keyboard/zoom/progression/source/originality remain incomplete. No quiz/completion/progress action.",
         "evidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
         "passIsNotImpliedByInspection": true
+      },
+      "fullLightVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "widths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Personally viewed all five full-scroll sheets. Hero, five learning outcomes, source-reading prerequisite, forecast limitations, five lesson cards, badge scope and complete footer remain laid out without observed horizontal clipping. CPI/FOMC/yield-curve factual support and outcome fit are separate content checks.",
+        "evidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json",
+        "wholePageReviewComplete": false
       }
     },
     {
@@ -5046,6 +5078,19 @@
         "assessment": "All default segments actually viewed at five widths: hero/0%progress and badge target, prerequisites, course scope/order, all5lesson cards, footer and appended notes. Readable; no new default layout defect observed. Main and appended course overview substantially repeat; exact full-copy parity/unique badge/attribution preservation investigation remains. No lesson/quiz/completion action. Light/keyboard/zoom, current options source/contract exceptions, conditional progression and originality remain incomplete.",
         "evidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
         "passIsNotImpliedByInspection": true
+      },
+      "fullLightVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "widths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Personally viewed all five complete scroll contact sheets: hero and spot-only limitation, outcomes, prerequisites, track ordering, five lesson cards, completion scope, legal block and footer remain in their columns without observed horizontal clipping. This is visual coverage only; course capability promises and source/worksheet correctness remain separately under report F04 review.",
+        "evidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json",
+        "wholePageReviewComplete": false
       }
     },
     {
@@ -5817,6 +5862,19 @@
         "assessment": "Allsixcontacts coveringeverydefaultsegment atfivewidths personallyviewed: updatedTradingDecisionsandBehaviourhero,0%progress/badgetarget, goals/prerequisites, fivelessoncards,footer/appendednotes. No newdefaultclipping/overlap observed. Avoids claiming psychologicalassessment/clinicalsupport/professionalconsensus orprofitableperformance. Appendedoutline substantialduplication requiresfullparity/uniquecopy comparison; source/light/keyboard/zoom/conditionalprogression/originality incomplete; nocompletionaction.",
         "evidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
         "passIsNotImpliedByInspection": true
+      },
+      "fullLightVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "widths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Personally viewed all five full-scroll sheets: revised Trading Decisions and Behaviour title, reflective exercise scope, clinical-support exclusion, five lesson cards, badge note and footer. Content remains within viewport; this is visual coverage and does not assert a tested psychological or profitable-trading method.",
+        "evidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json",
+        "wholePageReviewComplete": false
       }
     },
     {
@@ -6516,7 +6574,7 @@
       "findingStates": {
         "THQ-035": "PUBLICLY_VERIFIED",
         "THQ-036": "PUBLICLY_VERIFIED",
-        "THQ-061": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
+        "THQ-061": "PUBLICLY_VERIFIED"
       },
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": [],
@@ -7758,12 +7816,14 @@
       "specificFindingIds": [
         "THQ-008",
         "THQ-031",
-        "THQ-062"
+        "THQ-062",
+        "THQ-069"
       ],
       "findingStates": {
         "THQ-008": "PUBLICLY_VERIFIED",
         "THQ-031": "PUBLICLY_VERIFIED",
-        "THQ-062": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
+        "THQ-062": "PUBLICLY_VERIFIED",
+        "THQ-069": "PROPOSED_NOT_IMPLEMENTED"
       },
       "postDeploymentChecks": [
         {
@@ -7920,8 +7980,8 @@
       "findingStates": {
         "THQ-032": "PUBLICLY_VERIFIED",
         "THQ-033": "PUBLICLY_VERIFIED",
-        "THQ-063": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
-        "THQ-067": "FIX_TESTED_DRAFT_CANDIDATE"
+        "THQ-063": "PUBLICLY_VERIFIED",
+        "THQ-067": "PUBLICLY_VERIFIED"
       },
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": [],
@@ -17924,7 +17984,7 @@
         "THQ-064"
       ],
       "findingStates": {
-        "THQ-064": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
+        "THQ-064": "PUBLICLY_VERIFIED"
       },
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": [],
@@ -22058,10 +22118,12 @@
         "FAQ and quiz-result/control follow-up pending where present"
       ],
       "specificFindingIds": [
-        "THQ-014"
+        "THQ-014",
+        "THQ-070"
       ],
       "findingStates": {
-        "THQ-014": "PUBLICLY_VERIFIED"
+        "THQ-014": "PUBLICLY_VERIFIED",
+        "THQ-070": "PREPARED_NOT_MERGED"
       },
       "partialProseReview": {
         "evidence": "TERMINAL-PROSE-REVIEW.json",
@@ -37841,11 +37903,13 @@
       ],
       "specificFindingIds": [
         "THQ-014",
-        "THQ-046"
+        "THQ-046",
+        "THQ-070"
       ],
       "findingStates": {
         "THQ-014": "PUBLICLY_VERIFIED",
-        "THQ-046": "PUBLICLY_VERIFIED"
+        "THQ-046": "PUBLICLY_VERIFIED",
+        "THQ-070": "PREPARED_NOT_MERGED"
       },
       "findingEvidenceBasis": {
         "THQ-014": "Shared generator source inventory; fresh representative browser proof is separately scoped."
@@ -57150,7 +57214,7 @@
       "findingStates": {
         "THQ-014": "PUBLICLY_VERIFIED",
         "THQ-017": "PUBLICLY_VERIFIED",
-        "THQ-059": "FIX_PREPARED_INDEPENDENT_LOCAL_BRANCH"
+        "THQ-059": "PREPARED_NOT_MERGED"
       },
       "partialProseReview": {
         "evidence": "TERMINAL-PROSE-REVIEW.json",
@@ -57436,7 +57500,7 @@
       "findingStates": {
         "THQ-014": "PUBLICLY_VERIFIED",
         "THQ-017": "PUBLICLY_VERIFIED",
-        "THQ-059": "FIX_PREPARED_INDEPENDENT_LOCAL_BRANCH"
+        "THQ-059": "PREPARED_NOT_MERGED"
       },
       "partialProseReview": {
         "evidence": "TERMINAL-PROSE-REVIEW.json",
@@ -57580,7 +57644,7 @@
       "findingStates": {
         "THQ-014": "PUBLICLY_VERIFIED",
         "THQ-017": "PUBLICLY_VERIFIED",
-        "THQ-059": "FIX_PREPARED_INDEPENDENT_LOCAL_BRANCH"
+        "THQ-059": "PREPARED_NOT_MERGED"
       },
       "partialProseReview": {
         "evidence": "TERMINAL-PROSE-REVIEW.json",
@@ -57724,7 +57788,7 @@
       "findingStates": {
         "THQ-014": "PUBLICLY_VERIFIED",
         "THQ-017": "PUBLICLY_VERIFIED",
-        "THQ-059": "FIX_PREPARED_INDEPENDENT_LOCAL_BRANCH"
+        "THQ-059": "PREPARED_NOT_MERGED"
       },
       "partialProseReview": {
         "evidence": "TERMINAL-PROSE-REVIEW.json",
@@ -58010,7 +58074,7 @@
       "findingStates": {
         "THQ-014": "PUBLICLY_VERIFIED",
         "THQ-017": "PUBLICLY_VERIFIED",
-        "THQ-059": "FIX_PREPARED_INDEPENDENT_LOCAL_BRANCH"
+        "THQ-059": "PREPARED_NOT_MERGED"
       },
       "partialProseReview": {
         "evidence": "TERMINAL-PROSE-REVIEW.json",
@@ -58154,7 +58218,7 @@
       "findingStates": {
         "THQ-014": "PUBLICLY_VERIFIED",
         "THQ-017": "PUBLICLY_VERIFIED",
-        "THQ-059": "FIX_PREPARED_INDEPENDENT_LOCAL_BRANCH"
+        "THQ-059": "PREPARED_NOT_MERGED"
       },
       "partialProseReview": {
         "evidence": "TERMINAL-PROSE-REVIEW.json",
@@ -58521,7 +58585,7 @@
         "THQ-065"
       ],
       "findingStates": {
-        "THQ-065": "FIX_TESTED_DRAFT_CANDIDATE"
+        "THQ-065": "PUBLICLY_VERIFIED"
       },
       "limitations": [
         "Discovery is not reading or personal visual inspection. No private profile data or account actions authorized."
@@ -59247,5 +59311,5 @@
     "individualActualRenderedProseComparisonsWithPreviouslyFullyReadBaseline": 85,
     "scope": "441 main texts/states covered, not441 fully completed page/source/control/human-visual reviews. See TERMINAL-TEMPLATE-COMPARISONS.json for raw texts and deltas."
   },
-  "updatedAt": "2026-10-29T15:25:14.329709+00:00"
+  "updatedAt": "2026-10-30T01:53:36.615403+00:00"
 }
