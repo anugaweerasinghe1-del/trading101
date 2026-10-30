@@ -8,8 +8,8 @@
     },
     {
       "path": "BLOCKED-STATUS.md",
-      "bytes": 4755,
-      "sha256": "2bbdb876af770af857ad88413715623af7bdd10ddadb255ebdfb5a86fe1e8c70"
+      "bytes": 4107,
+      "sha256": "dff6c6688e95989d44ebe91fd33f3fb397c26a6881c425f62dd62e5ef3d5e8c4"
     },
     {
       "path": "CHECKPOINT.md",
@@ -18,8 +18,8 @@
     },
     {
       "path": "CURRENT-REVIEW-20261030.md",
-      "bytes": 7583,
-      "sha256": "0f01078bc03bb64e5b7474aa3068b549e9927cac471c2655a207b779a41069ea"
+      "bytes": 8188,
+      "sha256": "51d5534cedd8f2778852062568c7922da39e2bcca976bee05ed7b03d44f2c25c"
     },
     {
       "path": "DAILY-CONDITIONAL-REVIEW.json",
@@ -38,8 +38,8 @@
     },
     {
       "path": "FINDINGS.json",
-      "bytes": 197304,
-      "sha256": "a8b84efbc979f7dc257c8eb52b54a4ac4aba13e3ed68f871522fee0ef5f39c6d"
+      "bytes": 198383,
+      "sha256": "9ebbf4f0751a3795d4915cbc35fdf35dcdf143ff01860ab45fda68349208057a"
     },
     {
       "path": "FULL-LIGHT-VISUAL-REVIEW-20261028.json",
@@ -63,8 +63,8 @@
     },
     {
       "path": "NEXT-REVIEW.md",
-      "bytes": 2749,
-      "sha256": "2e8f6ff071621d15fd31dd86a0e04e05e7b720df4dbf4ac2fb42e007d87add7b"
+      "bytes": 2882,
+      "sha256": "f7fb47aa6fc98dfe40bfa0b82dcf09e85adbcd41c8d3977ac0daa6bb6d7a888e"
     },
     {
       "path": "NONTERMINAL-FAQ-READ-COVERAGE.json",
@@ -73,13 +73,13 @@
     },
     {
       "path": "PAGE-AUDIT.json",
-      "bytes": 2937083,
-      "sha256": "88df2e09b099636ee6ca841c8c45fe50cf2b4e7898df89d83e1283de7d8d8026"
+      "bytes": 2936841,
+      "sha256": "cbaeff7cde1ab172c3870a3d97742584a2df3949ea44b21fa31e7046f5dca81b"
     },
     {
       "path": "RELEASE-LEDGER.json",
-      "bytes": 135287,
-      "sha256": "e634721fa5fafb2b8ec6e6ab34824c1ccd6490bc62ab65be2710ab2335675b5e"
+      "bytes": 136963,
+      "sha256": "50fc8736d6d08e19175c5b4a14439dfed68b52e210fce42dad8d731d24e6c45a"
     },
     {
       "path": "RENDERED-CONTENT-NOTES.json",
@@ -94,7 +94,7 @@
     {
       "path": "SUPPLEMENTARY-NOTES-REVIEW.json",
       "bytes": 66971,
-      "sha256": "3b802d237076252fa480a772771cf026d4a965146a3c02c778bc36e056160fcd"
+      "sha256": "7e54abe1048b19410ed52b41e62c29bededbbd5650a1e082cfbb1e70490316aa"
     },
     {
       "path": "TERMINAL-PROSE-REVIEW.json",
@@ -109,7 +109,7 @@
     {
       "path": "UNFINISHED-SCOPE.json",
       "bytes": 613085,
-      "sha256": "02e760a6c1558e3540e33a03b3613d90093c33f0ae6df713884654c7409bd4d1"
+      "sha256": "2250fd9cb71bc33ac10ac07f4463eba102391118fa314092d09b386cf2d205aa"
     },
     {
       "path": "UNREAD-MAIN-ROUTES.txt",
@@ -119,17 +119,17 @@
     {
       "path": "URL-INVENTORY.json",
       "bytes": 720853,
-      "sha256": "212dda41ed6833d67430c28414184981e6ec84d32ecc4435bd6f3aebfd5d53d6"
+      "sha256": "ac393d8243c4e9d80ea0cc02b62e800f790d2931e966216bb13222cfa3fe3e6b"
     },
     {
       "path": "VISUAL-REVIEW-NOTES.json",
       "bytes": 480842,
-      "sha256": "023a9bd82249abed9e31d6c59e7427f6401f016348539360bb89052f484a632a"
+      "sha256": "72d210e4abe56056d4f7c21f9e363a28d9da8fafecb97a96deb5c332716feaa0"
     },
     {
       "path": "browser-session.mjs",
-      "bytes": 2120,
-      "sha256": "85f603c8e5d1a4afb6e666cd80966f40121884c0ef6090c25d93fcf51f9982e2"
+      "bytes": 2511,
+      "sha256": "3305820b61139941bf3bfb49eb40f51bf1dcd60c875135b1b18de3540aa6804a"
     },
     {
       "path": "collect-candidate-preview-signals.py",
@@ -248,8 +248,8 @@
     },
     {
       "path": "evidence/AUDIT-RESUME-20261027.json",
-      "bytes": 5266,
-      "sha256": "efb87adf13baa2f0b36394d6baf3787c00c3944b7f922bc5e8704b8938d2f702"
+      "bytes": 3486,
+      "sha256": "74dfa5864ecfb122c4cb913bdc74676484051742db85f13ec19cce3d32d036f7"
     },
     {
       "path": "evidence/BEGINNER-GUIDE-REPRODUCTION.json",
@@ -335,6 +335,11 @@
       "path": "evidence/CHART-CHECK-CADENCE-BEFORE.json",
       "bytes": 648,
       "sha256": "cbc95b24eabecebc8c873c42ef20a12c9edc2b3c2995c8e985c6ac57daf74efc"
+    },
+    {
+      "path": "evidence/CLOUDFLARE-OFFICIAL-ERROR-1010-20261030.md",
+      "bytes": 2803,
+      "sha256": "23f5c56aeeb7182c2a565699a7da257ca19fa43ec2d81998dae2f3e9e8fe5127"
     },
     {
       "path": "evidence/CLOUDFLARE-READONLY-AUTH-RECHECK-20261030.json",
@@ -1212,6 +1217,16 @@
       "sha256": "9dbf143edfed568288acfdaf290ca5c54a4e3cf64b7a4e8b3b631c4fafa91a79"
     },
     {
+      "path": "evidence/NETWORK-DIAGNOSIS-20261030.json",
+      "bytes": 6943,
+      "sha256": "9caffb89f16185eb5f072db66317693e650a76011720e09f5e881f16a6e2fda0"
+    },
+    {
+      "path": "evidence/NETWORK-DIAGNOSIS-20261030.md",
+      "bytes": 2906,
+      "sha256": "e255e79f7292a0a354e2b9e754910407078c75aeb6fdf34aa6dfbb1440c37e1b"
+    },
+    {
       "path": "evidence/NETWORK-RECONNECTED-20261027.json",
       "bytes": 724,
       "sha256": "fb007ff5b80c86e761cb6c81d5cf92c9b09f9847097138f6b097faad40352365"
@@ -1548,8 +1563,8 @@
     },
     {
       "path": "evidence/POST-PR263-GUEST-SMOKE.json",
-      "bytes": 856,
-      "sha256": "bcc79dd782011f8dc5bf9e7ae941648cf12f76962bda2e5c1c63de043519b817"
+      "bytes": 8660,
+      "sha256": "79a2d8b62a3fd4e238efe2cadde66606585b926e5c5c427c4e7ed39341accf97"
     },
     {
       "path": "evidence/PR212-MONITOR-DIAGNOSIS.json",
@@ -32567,7 +32582,7 @@
       "sha256": "75c029c85b57a6d5253685eaf559c5f27e0f41b95cc64f25a1b7c81e4427287b"
     }
   ],
-  "fileCount": 6513,
-  "totalBytes": 1460192943,
-  "generatedAt": "2026-10-30T08:54:46.263901+00:00"
+  "fileCount": 6516,
+  "totalBytes": 1460214613,
+  "generatedAt": "2026-10-30T09:25:43.970554+00:00"
 }

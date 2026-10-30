@@ -2460,12 +2460,12 @@
       "observed": "Fresh actual production metadata at hydrated-main readiness,+3s,+8s consistently retains Analysis browser titles while main scope disclaims asset-specific research. Source assetContent.generateAssetMetaTitle chooses Analysis whenever long Practice Data & Educational Guide title exceeds60 chars. All seven sampled terminals intentionally noindex,follow; no indexability defect asserted.",
       "fix": "Change only long-title fallback to Practice, preserving instrument names/symbols, custom metadata, descriptions, canonicals and robots.",
       "evidence": "findings/TERMINAL-METADATA-SCOPE.md",
-      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+      "state": "PUBLICLY_VERIFIED",
       "detectedAt": "2026-10-28T10:18:41.770525+00:00",
       "beforeEvidence": "evidence/TERMINAL-FINAL-SETTLED-METADATA-20261028.json",
       "risk": "Low, one static title fallback; ordinary reviewed wording revert rollback. No data/calculation/account/ad/consent changes.",
       "adsenseRelevance": "Accurate content description only; no claimed Google rejection cause or title-length penalty.",
-      "releaseHold": "Six exact-main CI checks and authenticated native production verification passed.140 affected checks/70 captures personally reviewed. Fresh30-state/four-control production guest gate pending due audit-side Cloudflare403/1010; no later merge.",
+      "releaseHold": null,
       "candidateSHA": "bb6623af78e6ad5e83f2d727a349ca106e270051",
       "pr": 263,
       "localEvidence": [
@@ -2481,7 +2481,13 @@
       "productionEvidence": "evidence/PR263-PRODUCTION-PROVIDERS.json",
       "mainCIEvidence": "evidence/PR263-MAIN-CI.json",
       "affectedProductionEvidence": "evidence/PR263-PRODUCTION-BROWSER.json",
-      "affectedProductionPersonalEvidence": "evidence/PUBLIC-LEARNING-SCOPE-PRODUCTION-PERSONAL-20261030.json"
+      "affectedProductionPersonalEvidence": "evidence/PUBLIC-LEARNING-SCOPE-PRODUCTION-PERSONAL-20261030.json",
+      "liveEvidence": [
+        "evidence/PR263-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR263-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 70,
+      "liveRecheck": "PASS exact merged production: [140] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
     },
     {
       "id": "THQ-060",
@@ -2692,11 +2698,11 @@
       "fix": "Add aria-expanded reflecting the existing openIndex expression. Preserve all content, handlers, animation, DOM and accordion state; no new dependency.",
       "evidence": "findings/HOMEPAGE-FAQ-EXPANDED-STATE.md",
       "beforeEvidence": "evidence/FOLLOWUP-CONTROLS-LIVE-BEFORE-20261028.json",
-      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+      "state": "PUBLICLY_VERIFIED",
       "detectedAt": "2026-10-28T16:44:32.291958+00:00",
       "risk": "Unapplied reversible presentation/semantics-only proposal; preserve protected data/calculation/auth behavior. All serial release gates required.",
       "adsenseRelevance": "User-facing readability/accessibility; no rejection cause asserted.",
-      "releaseHold": "Six exact-main CI checks and authenticated native production verification passed.140 affected checks/70 captures personally reviewed. Fresh30-state/four-control production guest gate pending due audit-side Cloudflare403/1010; no later merge.",
+      "releaseHold": null,
       "candidateSHA": "bb6623af78e6ad5e83f2d727a349ca106e270051",
       "pr": 263,
       "localEvidence": [
@@ -2712,7 +2718,13 @@
       "productionEvidence": "evidence/PR263-PRODUCTION-PROVIDERS.json",
       "mainCIEvidence": "evidence/PR263-MAIN-CI.json",
       "affectedProductionEvidence": "evidence/PR263-PRODUCTION-BROWSER.json",
-      "affectedProductionPersonalEvidence": "evidence/PUBLIC-LEARNING-SCOPE-PRODUCTION-PERSONAL-20261030.json"
+      "affectedProductionPersonalEvidence": "evidence/PUBLIC-LEARNING-SCOPE-PRODUCTION-PERSONAL-20261030.json",
+      "liveEvidence": [
+        "evidence/PR263-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR263-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 70,
+      "liveRecheck": "PASS exact merged production: [140] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
     },
     {
       "id": "THQ-067",
@@ -2803,7 +2815,8 @@
         "evidence/LEARN-PATH-CONTRAST-LOCAL-MEASURED-20261030.json",
         "evidence/LEARN-PATH-CONTRAST-LOCAL-PERSONAL-20261030.json"
       ],
-      "pr": 266
+      "pr": 266,
+      "releaseHold": "PR263 verified and serial hold cleared. This candidate still requires its own actual preview checks, ordinary protected merge, exact-main/native production and public verification."
     },
     {
       "id": "THQ-070",
@@ -2817,14 +2830,14 @@
       "fix": "Describe general trading concepts and explicitly distinguish asset research; retain all link destinations and functionality.",
       "evidence": "findings/LEARNING-SCOPE-REPORT-CORRECTIONS.md",
       "beforeEvidence": "evidence/OWNER-AUDIT-LIVE-REPRODUCTION-20261030.json",
-      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+      "state": "PUBLICLY_VERIFIED",
       "candidateSHA": "bb6623af78e6ad5e83f2d727a349ca106e270051",
       "detectedAt": "2026-10-30T01:52:23.465947+00:00",
       "risk": "Low, reversible display text only. No protected behavior changes. Full release gates required.",
       "adsenseRelevance": "Editorial accuracy and expectation fit; no Google rejection cause or approval implication.",
       "mergeSHA": "fe9fe3eeef989210853420168e895501165f1fcd",
       "pr": 263,
-      "releaseHold": "Six exact-main CI checks and authenticated native production verification passed.140 affected checks/70 captures personally reviewed. Fresh30-state/four-control production guest gate pending due audit-side Cloudflare403/1010; no later merge.",
+      "releaseHold": null,
       "localEvidence": [
         "evidence/PUBLIC-LEARNING-SCOPE-LOCAL-20261030.json",
         "evidence/PUBLIC-LEARNING-SCOPE-LOCAL-PERSONAL-20261030.json"
@@ -2836,7 +2849,13 @@
       "productionEvidence": "evidence/PR263-PRODUCTION-PROVIDERS.json",
       "mainCIEvidence": "evidence/PR263-MAIN-CI.json",
       "affectedProductionEvidence": "evidence/PR263-PRODUCTION-BROWSER.json",
-      "affectedProductionPersonalEvidence": "evidence/PUBLIC-LEARNING-SCOPE-PRODUCTION-PERSONAL-20261030.json"
+      "affectedProductionPersonalEvidence": "evidence/PUBLIC-LEARNING-SCOPE-PRODUCTION-PERSONAL-20261030.json",
+      "liveEvidence": [
+        "evidence/PR263-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR263-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 70,
+      "liveRecheck": "PASS exact merged production: [140] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
     },
     {
       "id": "THQ-071",
@@ -2850,14 +2869,14 @@
       "fix": "Exact-text display-copy correction to explain provider-specific filtering and timestamps; preserve records, lessons, quizzes, progress and later author edits.",
       "evidence": "findings/LEARNING-SCOPE-REPORT-CORRECTIONS.md",
       "beforeEvidence": "evidence/OWNER-AUDIT-LIVE-REPRODUCTION-20261030.json",
-      "state": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+      "state": "PUBLICLY_VERIFIED",
       "candidateSHA": "bb6623af78e6ad5e83f2d727a349ca106e270051",
       "detectedAt": "2026-10-30T01:52:23.465947+00:00",
       "risk": "Low, reversible display text only. No protected behavior changes. Full release gates required.",
       "adsenseRelevance": "Editorial accuracy and expectation fit; no Google rejection cause or approval implication.",
       "mergeSHA": "fe9fe3eeef989210853420168e895501165f1fcd",
       "pr": 263,
-      "releaseHold": "Six exact-main CI checks and authenticated native production verification passed.140 affected checks/70 captures personally reviewed. Fresh30-state/four-control production guest gate pending due audit-side Cloudflare403/1010; no later merge.",
+      "releaseHold": null,
       "localEvidence": [
         "evidence/PUBLIC-LEARNING-SCOPE-LOCAL-20261030.json",
         "evidence/PUBLIC-LEARNING-SCOPE-LOCAL-PERSONAL-20261030.json"
@@ -2869,7 +2888,13 @@
       "productionEvidence": "evidence/PR263-PRODUCTION-PROVIDERS.json",
       "mainCIEvidence": "evidence/PR263-MAIN-CI.json",
       "affectedProductionEvidence": "evidence/PR263-PRODUCTION-BROWSER.json",
-      "affectedProductionPersonalEvidence": "evidence/PUBLIC-LEARNING-SCOPE-PRODUCTION-PERSONAL-20261030.json"
+      "affectedProductionPersonalEvidence": "evidence/PUBLIC-LEARNING-SCOPE-PRODUCTION-PERSONAL-20261030.json",
+      "liveEvidence": [
+        "evidence/PR263-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR263-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 70,
+      "liveRecheck": "PASS exact merged production: [140] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
     },
     {
       "id": "THQ-072",
@@ -2887,7 +2912,7 @@
       "candidateSHA": "62aac4f4d49c0a2883436786774efee92e1fadaa",
       "detectedAt": "2026-10-30T02:02:51.423606+00:00",
       "risk": "Reversible display/copy only; protected calculations/orders/records/auth/progress/ads/consent untouched. No live credit before all release gates.",
-      "releaseHold": "Serial PR263 final public guest gate remains open. PR264 actual preview visible-pointer drawers and guest gate remain blocked by Cloudflare access; do not merge.",
+      "releaseHold": "PR263 verified and serial hold cleared. This candidate still requires its own actual preview checks, ordinary protected merge, exact-main/native production and public verification.",
       "pr": 264,
       "localEvidence": [
         "evidence/PR264-LOCAL-ACCEPTANCE.json",
@@ -2914,7 +2939,7 @@
       "candidateSHA": "62aac4f4d49c0a2883436786774efee92e1fadaa",
       "detectedAt": "2026-10-30T02:02:51.423606+00:00",
       "risk": "Reversible display/copy only; protected calculations/orders/records/auth/progress/ads/consent untouched. No live credit before all release gates.",
-      "releaseHold": "Serial PR263 final public guest gate remains open. PR264 actual preview visible-pointer drawers and guest gate remain blocked by Cloudflare access; do not merge.",
+      "releaseHold": "PR263 verified and serial hold cleared. This candidate still requires its own actual preview checks, ordinary protected merge, exact-main/native production and public verification.",
       "pr": 264,
       "localEvidence": [
         "evidence/PR264-LOCAL-ACCEPTANCE.json",
@@ -2946,7 +2971,7 @@
       "candidateSHA": "518a6d7eb222e8e4f32b7a00766abbd6809c5242",
       "detectedAt": "2026-10-30T02:02:51.423606+00:00",
       "risk": "Reversible display/copy only; protected calculations/orders/records/auth/progress/ads/consent untouched. No live credit before all release gates.",
-      "releaseHold": "PR263 serial candidate pending verification; this is an independent prepared follow-up.",
+      "releaseHold": "PR263 verified and serial hold cleared. This candidate still requires its own actual preview checks, ordinary protected merge, exact-main/native production and public verification.",
       "localEvidence": [
         "evidence/WORKSHEET-SCOPE-LOCAL-20261030.json",
         "evidence/WORKSHEET-SCOPE-LOCAL-PERSONAL-20261030.json"
@@ -2970,7 +2995,7 @@
       "candidateSHA": "518a6d7eb222e8e4f32b7a00766abbd6809c5242",
       "detectedAt": "2026-10-30T02:02:51.423606+00:00",
       "risk": "Reversible display/copy only; protected calculations/orders/records/auth/progress/ads/consent untouched. No live credit before all release gates.",
-      "releaseHold": "PR263 serial candidate pending verification; this is an independent prepared follow-up.",
+      "releaseHold": "PR263 verified and serial hold cleared. This candidate still requires its own actual preview checks, ordinary protected merge, exact-main/native production and public verification.",
       "localEvidence": [
         "evidence/WORKSHEET-SCOPE-LOCAL-20261030.json",
         "evidence/WORKSHEET-SCOPE-LOCAL-PERSONAL-20261030.json"
@@ -2994,7 +3019,7 @@
       "candidateSHA": "518a6d7eb222e8e4f32b7a00766abbd6809c5242",
       "detectedAt": "2026-10-30T02:02:51.423606+00:00",
       "risk": "Reversible display/copy only; protected calculations/orders/records/auth/progress/ads/consent untouched. No live credit before all release gates.",
-      "releaseHold": "PR263 serial candidate pending verification; this is an independent prepared follow-up.",
+      "releaseHold": "PR263 verified and serial hold cleared. This candidate still requires its own actual preview checks, ordinary protected merge, exact-main/native production and public verification.",
       "localEvidence": [
         "evidence/WORKSHEET-SCOPE-LOCAL-20261030.json",
         "evidence/WORKSHEET-SCOPE-LOCAL-PERSONAL-20261030.json"
@@ -3020,18 +3045,19 @@
         "evidence/WORKSHEET-SCOPE-LOCAL-20261030.json",
         "evidence/WORKSHEET-SCOPE-LOCAL-PERSONAL-20261030.json"
       ],
-      "pr": 265
+      "pr": 265,
+      "releaseHold": "PR263 verified and serial hold cleared. This candidate still requires its own actual preview checks, ordinary protected merge, exact-main/native production and public verification."
     }
   ],
-  "updatedAt": "2026-10-30T02:43:55.993922+00:00",
+  "updatedAt": "2026-10-30T09:25:07.074869+00:00",
   "counts": {
     "siteFindings": 82,
     "P2": 44,
     "P3": 38,
-    "publiclyRepaired": 71,
+    "publiclyRepaired": 75,
     "preparedNotMerged": 7,
     "separateOperationalBlockers": 0,
-    "mergedAwaitingProductionVerification": 4,
+    "mergedAwaitingProductionVerification": 0,
     "protectedUnapprovedRecordFixes": 0,
     "approvedPublishedRecordFixesBlockedOnCredential": 0,
     "mergedFallbackAwaitingProductionVerification": 0

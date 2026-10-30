@@ -1,8 +1,10 @@
+> Access diagnosis resolved: Cloudflare Pages rejected default client signatures. Truthful `TradeHQ-Audit/1.0` identification restored public and preview requests, confirmed403/200/403. The real browser then passed30 guest states/four safe controls. PR263 is now fully verified: **75/82 findings repaired; seven draft corrections remain; no deployed fixes await verification.** Earlier access-blocked observations below are historical. API-token authentication still fails separately. See [diagnosis](evidence/NETWORK-DIAGNOSIS-20261030.md).
+
 # TradeHQ audit continuation — 30 October 2026
 
-The audit remains open. **71 of 82 confirmed site findings are fully repaired and publicly verified.** Four further corrections are deployed in PR263 and await one final guest check. Seven have tested, reviewable draft corrections. These are repair counts, not an overall audit percentage or an AdSense approval score.
+The audit remains open. **75 of 82 confirmed site findings are fully repaired and publicly verified.** PR263’s final guest gate has passed. Seven have tested, reviewable draft corrections. These are repair counts, not an overall audit percentage or an AdSense approval score.
 
-Current main: `fe9fe3eeef989210853420168e895501165f1fcd`. Last release with every verification gate closed: PR262, `84e26a8bd3dc442b4c1d153cba0d94cc8cccc677`.
+Current main: `fe9fe3eeef989210853420168e895501165f1fcd`. Last release with every verification gate closed: PR263, `fe9fe3eeef989210853420168e895501165f1fcd`.
 
 ## Supplied reports and corrections
 
@@ -22,7 +24,7 @@ An earlier contrast finding is addressed separately in [PR266](https://github.co
 
 ## Verification completed
 
-- PR263: all six exact-main CI checks and authenticated Cloudflare/Vercel production verification passed. All 140 affected-page checks passed; 70 production captures personally viewed. Final fresh guest recheck remains open.
+- PR263: all six exact-main CI checks and authenticated Cloudflare/Vercel production verification passed. All 140 affected-page checks passed; 70 production captures personally viewed. Final fresh guest recheck passed30 states/four safe controls after the audit-client access fix.
 - PR264: full build, 170-asset display preservation and unchanged order-component logic checks passed. Local review covers 60 source states plus 30 visible-pointer mobile drawer states; all 110 accepted captures personally viewed. Four trusted candidate CI checks and both native previews passed. Actual Cloudflare preview source checks passed; 80 valid chart/desktop/directory captures personally viewed. Preview mobile drawer/guest gates remain open. The hardened guest harness also passed 30 states and four safe controls locally; that is not production verification.
 - PR265: full build and 90 read-only local browser states passed; all 90 captures personally viewed in 20 sheets. Four trusted candidate CI checks and both native previews passed. Actual preview browser verification remains blocked.
 - PR266: full build passed. All 90 label contrast observations across five widths and both themes exceed 4.5:1; minimum 6.38765:1. All 20 affected captures personally viewed. Four trusted candidate CI checks and both native previews passed. Actual preview browser verification remains blocked.
@@ -35,7 +37,7 @@ The inventory contains **454 public routes and eight restricted routes**. All 45
 
 Public and Cloudflare preview requests from this audit environment currently return HTTP 403 / Cloudflare 1010, with earlier transport failures. This does not establish a global site outage or explain Google’s rejection. The environment’s Cloudflare API binding also returned 401 Invalid API Token; the trusted GitHub production verification had already authenticated successfully. Vercel preview browser attempts redirect to its login page, despite the login page returning HTTP 200. No preview application pass is claimed from that response.
 
-The release sequence remains held at PR263’s fresh public guest check. PR264, PR265 and PR266 remain drafts; no later release was merged. No user data, trades, balances, financial calculations, authentication, course progress, ad behaviour, consent behaviour, DNS or infrastructure was changed in this continuation.
+PR263’s serial release hold is now cleared. PR264 still needs its own actual preview checks before a protected merge. PR264, PR265 and PR266 remain drafts; no later release was merged. No user data, trades, balances, financial calculations, authentication, course progress, ad behaviour, consent behaviour, DNS or infrastructure was changed in this continuation.
 
 The owner’s AdSense rejection message is generic. No additional rejection reason is available or requested. No final site-side readiness verdict or approval promise is issued while the audit remains incomplete.
 

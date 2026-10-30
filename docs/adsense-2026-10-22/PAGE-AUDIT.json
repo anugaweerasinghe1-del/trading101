@@ -109,7 +109,7 @@
       ],
       "findingStates": {
         "THQ-060": "PUBLICLY_VERIFIED",
-        "THQ-066": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+        "THQ-066": "PUBLICLY_VERIFIED",
         "THQ-068": "PUBLICLY_VERIFIED"
       },
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
@@ -2470,7 +2470,7 @@
       ],
       "findingStates": {
         "THQ-002": "PUBLICLY_VERIFIED",
-        "THQ-071": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
+        "THQ-071": "PUBLICLY_VERIFIED"
       },
       "postDeploymentChecks": [
         {
@@ -2713,7 +2713,7 @@
         "THQ-071"
       ],
       "findingStates": {
-        "THQ-071": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
+        "THQ-071": "PUBLICLY_VERIFIED"
       },
       "structuredQuizReview": {
         "evidence": "STRUCTURED-QUIZ-REVIEW.json",
@@ -22139,7 +22139,7 @@
       ],
       "findingStates": {
         "THQ-014": "PUBLICLY_VERIFIED",
-        "THQ-070": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
+        "THQ-070": "PUBLICLY_VERIFIED"
       },
       "partialProseReview": {
         "evidence": "TERMINAL-PROSE-REVIEW.json",
@@ -37929,7 +37929,7 @@
       "findingStates": {
         "THQ-014": "PUBLICLY_VERIFIED",
         "THQ-046": "PUBLICLY_VERIFIED",
-        "THQ-070": "MERGED_AWAITING_PRODUCTION_VERIFICATION",
+        "THQ-070": "PUBLICLY_VERIFIED",
         "THQ-072": "PREPARED_NOT_MERGED",
         "THQ-073": "PREPARED_NOT_MERGED"
       },
@@ -57254,7 +57254,7 @@
       "findingStates": {
         "THQ-014": "PUBLICLY_VERIFIED",
         "THQ-017": "PUBLICLY_VERIFIED",
-        "THQ-059": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
+        "THQ-059": "PUBLICLY_VERIFIED"
       },
       "partialProseReview": {
         "evidence": "TERMINAL-PROSE-REVIEW.json",
@@ -57540,7 +57540,7 @@
       "findingStates": {
         "THQ-014": "PUBLICLY_VERIFIED",
         "THQ-017": "PUBLICLY_VERIFIED",
-        "THQ-059": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
+        "THQ-059": "PUBLICLY_VERIFIED"
       },
       "partialProseReview": {
         "evidence": "TERMINAL-PROSE-REVIEW.json",
@@ -57684,7 +57684,7 @@
       "findingStates": {
         "THQ-014": "PUBLICLY_VERIFIED",
         "THQ-017": "PUBLICLY_VERIFIED",
-        "THQ-059": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
+        "THQ-059": "PUBLICLY_VERIFIED"
       },
       "partialProseReview": {
         "evidence": "TERMINAL-PROSE-REVIEW.json",
@@ -57828,7 +57828,7 @@
       "findingStates": {
         "THQ-014": "PUBLICLY_VERIFIED",
         "THQ-017": "PUBLICLY_VERIFIED",
-        "THQ-059": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
+        "THQ-059": "PUBLICLY_VERIFIED"
       },
       "partialProseReview": {
         "evidence": "TERMINAL-PROSE-REVIEW.json",
@@ -58114,7 +58114,7 @@
       "findingStates": {
         "THQ-014": "PUBLICLY_VERIFIED",
         "THQ-017": "PUBLICLY_VERIFIED",
-        "THQ-059": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
+        "THQ-059": "PUBLICLY_VERIFIED"
       },
       "partialProseReview": {
         "evidence": "TERMINAL-PROSE-REVIEW.json",
@@ -58258,7 +58258,7 @@
       "findingStates": {
         "THQ-014": "PUBLICLY_VERIFIED",
         "THQ-017": "PUBLICLY_VERIFIED",
-        "THQ-059": "MERGED_AWAITING_PRODUCTION_VERIFICATION"
+        "THQ-059": "PUBLICLY_VERIFIED"
       },
       "partialProseReview": {
         "evidence": "TERMINAL-PROSE-REVIEW.json",
@@ -59426,5 +59426,5 @@
     "individualActualRenderedProseComparisonsWithPreviouslyFullyReadBaseline": 85,
     "scope": "441 main texts/states covered, not441 fully completed page/source/control/human-visual reviews. See TERMINAL-TEMPLATE-COMPARISONS.json for raw texts and deltas."
   },
-  "updatedAt": "2026-10-30T02:59:13.154734+00:00"
+  "updatedAt": "2026-10-30T09:25:07.652380+00:00"
 }

@@ -1,0 +1,231 @@
+{
+  "at": "2026-10-30T09:20:29.603129+00:00",
+  "rows": [
+    {
+      "url": "https://www.thetradehq.com/",
+      "status": 403,
+      "headers": {
+        "content-type": "text/plain; charset=UTF-8",
+        "server": "envoy",
+        "cf-ray": "a5295825bb265582-ORD",
+        "x-envoy-upstream-service-time": "59"
+      },
+      "sample": "error code: 1010\n"
+    },
+    {
+      "url": "https://7eac6f4f.tradehq-preview.pages.dev/",
+      "status": 403,
+      "headers": {
+        "content-type": "text/plain; charset=UTF-8",
+        "server": "envoy",
+        "cf-ray": "a5295825899c4d23-ORD",
+        "x-envoy-upstream-service-time": "52"
+      },
+      "sample": "error code: 1010\n"
+    },
+    {
+      "url": "https://www.cloudflare.com/cdn-cgi/trace",
+      "status": 200,
+      "headers": {
+        "content-type": "text/plain",
+        "server": "envoy",
+        "cf-ray": "a52958257950b947-ORD",
+        "x-envoy-upstream-service-time": "37"
+      },
+      "sample": "Success; body omitted"
+    },
+    {
+      "url": "https://developers.cloudflare.com/",
+      "status": 403,
+      "headers": {
+        "content-type": "text/plain; charset=UTF-8",
+        "server": "envoy",
+        "cf-ray": "a52958255a9e0ea2-ORD",
+        "x-envoy-upstream-service-time": "52"
+      },
+      "sample": "error code: 1010\n"
+    },
+    {
+      "url": "https://www.cmegroup.com/education/courses/introduction-to-fx/understanding-fx-quote-conventions",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-envoy-upstream-service-time": "344",
+        "server": "envoy"
+      },
+      "sample": "Success; body omitted"
+    },
+    {
+      "url": "https://api.cloudflare.com/client/v4/user/tokens/verify",
+      "status": 401,
+      "headers": {
+        "cf-cache-status": "DYNAMIC",
+        "cf-ray": "a5295825dadcee24-ORD",
+        "content-type": "application/json",
+        "server": "envoy",
+        "x-envoy-upstream-service-time": "133"
+      },
+      "sample": "{\"success\":false,\"errors\":[{\"code\":1000,\"message\":\"Invalid API Token\"}],\"messages\":[],\"result\":null}"
+    }
+  ],
+  "scope": "Ordinary proxied TLS-verified GETs; no user-agent spoofing or access bypass; credentials omitted.",
+  "edgeTraceChecks": {
+    "at": "2026-10-30T09:21:03.911854+00:00",
+    "rows": [
+      {
+        "url": "https://www.thetradehq.com/cdn-cgi/trace",
+        "status": 200,
+        "ray": "a52958fe3a5a90b3-ORD",
+        "trace": {
+          "fl": "658f272",
+          "h": "www.thetradehq.com",
+          "ts": "1793352063.000",
+          "visit_scheme": "https",
+          "uag": "Python-urllib/3.12",
+          "colo": "ORD",
+          "sliver": "050-tier1",
+          "http": "http/2",
+          "loc": "LK",
+          "tls": "TLSv1.3",
+          "sni": "plaintext",
+          "warp": "off",
+          "gateway": "off",
+          "rbi": "off",
+          "kex": "X25519"
+        }
+      },
+      {
+        "url": "https://7eac6f4f.tradehq-preview.pages.dev/cdn-cgi/trace",
+        "status": 200,
+        "ray": "a52958fefbd1338f-ORD",
+        "trace": {
+          "fl": "415f205",
+          "h": "7eac6f4f.tradehq-preview.pages.dev",
+          "ts": "1793352063.000",
+          "visit_scheme": "https",
+          "uag": "Python-urllib/3.12",
+          "colo": "ORD",
+          "sliver": "050-tier1",
+          "http": "http/2",
+          "loc": "LK",
+          "tls": "TLSv1.3",
+          "sni": "plaintext",
+          "warp": "off",
+          "gateway": "off",
+          "rbi": "off",
+          "kex": "X25519"
+        }
+      },
+      {
+        "url": "https://www.cloudflare.com/cdn-cgi/trace",
+        "status": 200,
+        "ray": "a52958ff69c2022a-ORD",
+        "trace": {
+          "fl": "415f241",
+          "h": "www.cloudflare.com",
+          "ts": "1793352063.000",
+          "visit_scheme": "https",
+          "uag": "Python-urllib/3.12",
+          "colo": "ORD",
+          "sliver": "none",
+          "http": "http/2",
+          "loc": "LK",
+          "tls": "TLSv1.3",
+          "sni": "plaintext",
+          "warp": "off",
+          "gateway": "off",
+          "rbi": "off",
+          "kex": "X25519"
+        }
+      }
+    ],
+    "publicEgressIP": "Omitted from publication"
+  },
+  "alternateTokenAndScopeChecks": {
+    "at": "2026-10-30T09:21:36.692169+00:00",
+    "rows": [
+      {
+        "url": "https://api.cloudflare.com/client/v4/accounts/01087d56e4cb7b728a7a9ddbcb12b9bb/tokens/verify",
+        "status": 401,
+        "success": false,
+        "errors": [
+          {
+            "code": 1000,
+            "message": "Invalid API Token"
+          }
+        ]
+      },
+      {
+        "url": "https://api.cloudflare.com/client/v4/accounts/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/projects/tradehq-preview",
+        "status": 401,
+        "success": false,
+        "errors": [
+          {
+            "code": 10000,
+            "message": "Authentication error"
+          }
+        ]
+      },
+      {
+        "url": "https://api.cloudflare.com/client/v4/zones?name=thetradehq.com",
+        "status": 403,
+        "success": false,
+        "errors": [
+          {
+            "code": 9109,
+            "message": "Invalid access token"
+          }
+        ]
+      }
+    ]
+  },
+  "honestApplicationUserAgentTrial": {
+    "at": "2026-10-30T09:22:14.424175+00:00",
+    "userAgent": "TradeHQ-Audit/1.0 (+https://github.com/anugaweerasinghe1-del/trading101)",
+    "rows": [
+      {
+        "url": "https://www.thetradehq.com/",
+        "status": 200,
+        "ray": "a5295ab60f2af60b-ORD",
+        "htmlReceived": true
+      },
+      {
+        "url": "https://7eac6f4f.tradehq-preview.pages.dev/",
+        "status": 200,
+        "ray": "a5295ab6ff83f859-ORD",
+        "htmlReceived": true
+      },
+      {
+        "url": "https://developers.cloudflare.com/",
+        "status": 200,
+        "ray": "a5295ab7fc80c694-ORD",
+        "htmlReceived": true
+      }
+    ],
+    "changes": "Request identification only; no DNS,security,proxy,authentication or application changes."
+  },
+  "pairedReproduction": {
+    "at": "2026-10-30T09:23:57.868663+00:00",
+    "url": "https://www.thetradehq.com/",
+    "rows": [
+      {
+        "client": "library default",
+        "status": 403,
+        "ray": "a5295d3d6e02022c-ORD",
+        "body": "error code: 1010\n"
+      },
+      {
+        "client": "truthful application",
+        "status": 200,
+        "ray": "a5295d3dd8beeb68-ORD"
+      },
+      {
+        "client": "library default repeat",
+        "status": 403,
+        "ray": "a5295d3e9d937a44-ORD",
+        "body": "error code: 1010\n"
+      }
+    ]
+  },
+  "diagnosis": "Cloudflare Pages Browser Integrity Check rejects default client signatures. Truthful application User-Agent restores ordinary public HTTP access; confirmed403/200/403 paired reproduction. No production setting change required. Separate bound API credential fails user/account verification and project/zone reads."
+}

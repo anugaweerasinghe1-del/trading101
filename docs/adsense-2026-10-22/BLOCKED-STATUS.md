@@ -2,15 +2,11 @@
 
 **454 public routes discovered; all 454 main bodies read.** Default full-page captures at all five requested widths have been personally viewed for **451/454** routes; full light-mode scrolls for **40/454**. These are inspection counts, not proof that every layout passes. The long public username overflow has since been repaired and verified in PR262. Whole-audit review remains incomplete.
 
-**82 confirmed site findings; 71 repairs publicly verified; 11 unresolved.** Last fully verified production: `84e26a8bd3dc442b4c1d153cba0d94cc8cccc677`. Current merged main: `fe9fe3eeef989210853420168e895501165f1fcd` (see release ledger). PR263 passed all six exact-main CI checks and authenticated Cloudflare/Vercel production verification.140 affected production checks passed; all70 captures were personally viewed. Fresh full guest recheck remains blocked by audit-environment Cloudflare403/1010 after an initial CDP interception error. Original errors retained; no later merge until this gate closes. See RELEASE-LEDGER.json and evidence/NETWORK-ACCESS-20261030-CLOUDFLARE-RECHECK.json.
+**82 confirmed site findings; 75 repairs publicly verified; 7 unresolved.** Last fully verified production: `fe9fe3eeef989210853420168e895501165f1fcd`. Current merged main: `fe9fe3eeef989210853420168e895501165f1fcd` (see release ledger). PR263 completed all six exact-main checks, authenticated native provider verification,140 affected production checks with70 captures personally viewed in20 sheets and30 guest states/four safe controls. Truthful audit User-Agent identification resolved Cloudflare1010; API token authentication remains a separate issue.
 
 Unresolved findings:
 
-- **THQ-059 (P3)** — Long generic terminal titles claim analysis absent from content; `MERGED_AWAITING_PRODUCTION_VERIFICATION`.
-- **THQ-066 (P3)** — Homepage FAQ buttons omit their expanded state; `MERGED_AWAITING_PRODUCTION_VERIFICATION`.
 - **THQ-069 (P2)** — Learning path level labels have low contrast on light backgrounds; `PREPARED_NOT_MERGED`.
-- **THQ-070 (P3)** — Asset learning links overpromise instrument-specific research; `MERGED_AWAITING_PRODUCTION_VERIFICATION`.
-- **THQ-071 (P3)** — Published crypto course outcome promises untaught statistical filtering; `MERGED_AWAITING_PRODUCTION_VERIFICATION`.
 - **THQ-072 (P2)** — Forex reference displays incorrectly prefix non-USD quote rates with dollars; `PREPARED_NOT_MERGED`.
 - **THQ-073 (P2)** — Chart headline and virtual execution input are not distinguished adjacently; `PREPARED_NOT_MERGED`.
 - **THQ-074 (P3)** — Educational simulator CTAs overstate supported worksheet execution; `PREPARED_NOT_MERGED`.
