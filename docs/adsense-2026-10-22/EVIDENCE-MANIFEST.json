@@ -8,8 +8,8 @@
     },
     {
       "path": "BLOCKED-STATUS.md",
-      "bytes": 3450,
-      "sha256": "66a6bfecff9dea5c482fbca836a769286410e8c2c873fb07c2ce52f4f510f725"
+      "bytes": 3207,
+      "sha256": "97dae67350949eba6731f35e93831b0e16796e3ff2a89f06d4996ea2024f0d1d"
     },
     {
       "path": "CHECKPOINT.md",
@@ -18,8 +18,8 @@
     },
     {
       "path": "CURRENT-REVIEW-20261030.md",
-      "bytes": 4952,
-      "sha256": "119b3b79cb1fa17dd02d77f1ab5888f0142a2bc4c11988a92339632e2bbfed9c"
+      "bytes": 5157,
+      "sha256": "25521f7c3cab3ec4c0a71848f9a2894080fb68f29e0ad5f55ae466ce030ad7fa"
     },
     {
       "path": "DAILY-CONDITIONAL-REVIEW.json",
@@ -38,13 +38,13 @@
     },
     {
       "path": "FINDINGS.json",
-      "bytes": 202187,
-      "sha256": "fcad671090a3f4a74ae08ee20c33e838dcfb15d12a7446db5d2f38c64c7033c3"
+      "bytes": 203079,
+      "sha256": "fe34a00bff36626c9977b384cd5bb32955a5421e98283ca574a48f90ab2e9eb6"
     },
     {
       "path": "FULL-LIGHT-VISUAL-REVIEW-20261028.json",
-      "bytes": 64680,
-      "sha256": "fa8e7850d9553558384dc342a0652422943fa980be32eafe1dcaf8d7a40126ce"
+      "bytes": 74193,
+      "sha256": "7b68b3cdaee7b61e5935b64f22035a61393945578bce4d4dc60b44e619659968"
     },
     {
       "path": "FULLPAGE-VISUAL-REVIEW-20261024.json",
@@ -63,8 +63,8 @@
     },
     {
       "path": "NEXT-REVIEW.md",
-      "bytes": 2219,
-      "sha256": "2b35c404f0d4dd033a185f921833b15ba18b5878d5be174ab9e2b19f22160f22"
+      "bytes": 2254,
+      "sha256": "97d7864f399f2f41188257f23705fb0d9d2ffcf3cbe74cea08e3e764c6deb661"
     },
     {
       "path": "NONTERMINAL-FAQ-READ-COVERAGE.json",
@@ -73,13 +73,13 @@
     },
     {
       "path": "PAGE-AUDIT.json",
-      "bytes": 2941211,
-      "sha256": "8068c40b7a030995e86c41532d777d181e580583164d5c47946b77beb032c471"
+      "bytes": 2943566,
+      "sha256": "328bc5db895527d4496a2edecf84f5af52fe247a08af95d35432d881cfef863d"
     },
     {
       "path": "RELEASE-LEDGER.json",
-      "bytes": 140335,
-      "sha256": "f4274d54be79cbd19c41be5aee179a051b9bfe138e1e20f4d3eba79fe456f14f"
+      "bytes": 142312,
+      "sha256": "581c9f916d4c1302ca2340f06907a07654eb24e94dd842f3d1beb738b6cd50ec"
     },
     {
       "path": "RENDERED-CONTENT-NOTES.json",
@@ -94,7 +94,7 @@
     {
       "path": "SUPPLEMENTARY-NOTES-REVIEW.json",
       "bytes": 66971,
-      "sha256": "1f79c88ddf1c1feea8454953d65ab05f92903dc009533aac0da5f95d89898a77"
+      "sha256": "5328ebdd7a1c4c752de95acac98fe620e2cb28c0bc6da9087cb832683c01d910"
     },
     {
       "path": "TERMINAL-PROSE-REVIEW.json",
@@ -108,8 +108,8 @@
     },
     {
       "path": "UNFINISHED-SCOPE.json",
-      "bytes": 614273,
-      "sha256": "123c2f48441c832dc2df0a0a226c6795791a7f18896f8cd60ae5c0a4be056596"
+      "bytes": 615061,
+      "sha256": "aa0dde9066c670d0118e972396a2bdf4a8a07ecb90712f500071eac6c3a2e179"
     },
     {
       "path": "UNREAD-MAIN-ROUTES.txt",
@@ -119,12 +119,12 @@
     {
       "path": "URL-INVENTORY.json",
       "bytes": 720853,
-      "sha256": "f1e930bd4b160ef44171a1752820d2125be3305522983e2266f1383897c7d415"
+      "sha256": "d35b06faa0cef816c581adbceab3294a47306b7b683fa5c093e19e9ccff17673"
     },
     {
       "path": "VISUAL-REVIEW-NOTES.json",
-      "bytes": 482861,
-      "sha256": "3bfbae0dc09c3429c742c961073a61e2235e04e6c478593dfd7170bc4cc8b731"
+      "bytes": 483137,
+      "sha256": "c4433692d07dac8a298f46d3c9c1c62a3a78c0bf3516371c45d4220d904484d1"
     },
     {
       "path": "browser-session.mjs",
@@ -263,8 +263,8 @@
     },
     {
       "path": "evidence/AUDIT-RESUME-20261027.json",
-      "bytes": 2661,
-      "sha256": "e9a770f7b291a5994bb1f75b91ae9b6885b7033293c682033c95553f2840361e"
+      "bytes": 2329,
+      "sha256": "0e979d12e8abdbb2a2a5d0584e6789a2b6a50919b4a75fa5267e7bfb313d49b4"
     },
     {
       "path": "evidence/BEGINNER-GUIDE-REPRODUCTION.json",
@@ -397,6 +397,16 @@
       "sha256": "855de4f756815b465e32da2d07bf19c7e69f84cc246f54f24e130e4fbe156ef9"
     },
     {
+      "path": "evidence/CONTRAST-SURFACES-PRODUCTION-20261030.json",
+      "bytes": 95491,
+      "sha256": "5cb76bd8e3e74dcb80a9ecd1714c295c45d62c8bf3c7bd94ba89eb660fa3840b"
+    },
+    {
+      "path": "evidence/CONTRAST-SURFACES-PRODUCTION-PERSONAL-20261030.json",
+      "bytes": 4868,
+      "sha256": "1de9e894ca8806110ebadf4bb30ae2a4590d1788e436e1546e95fae32a19eae6"
+    },
+    {
       "path": "evidence/CONTRAST-SURFACES-REFRESHED-BUILD-20261030.txt",
       "bytes": 17119,
       "sha256": "15939646d8c944399f7fa906188f5512ed8602a5c82f277288f0d434d175adeb"
@@ -495,6 +505,11 @@
       "path": "evidence/COURSE-PRIMARY-SOURCE-FOLLOWUP-20261025.json",
       "bytes": 2420,
       "sha256": "15f9c8c2ade6e2d41526fd0a7a61a1781e763229035e570d0c65206333096e2d"
+    },
+    {
+      "path": "evidence/CRYPTO-COURSES-LIGHT-PERSONAL-20261030.json",
+      "bytes": 9568,
+      "sha256": "f8ff816e2c657bb8519ab8d52376dcd3188adea6f7ee4926f23059373cdeb5e8"
     },
     {
       "path": "evidence/CURRENT-PRODUCTION-BINDINGS.json",
@@ -1615,6 +1630,11 @@
       "path": "evidence/POST-PR265-GUEST-SMOKE.json",
       "bytes": 8660,
       "sha256": "db96e41a95a92695c96486191b003fd0f684f8b0e624355202d9d77dbb1391b3"
+    },
+    {
+      "path": "evidence/POST-PR266-GUEST-SMOKE.json",
+      "bytes": 8660,
+      "sha256": "52d6d450ab1ece57f3638d41e688bcb38074b46755b20df58d17305e46b1bcb0"
     },
     {
       "path": "evidence/PR212-MONITOR-DIAGNOSIS.json",
@@ -4217,6 +4237,16 @@
       "sha256": "4ce5c72262aa8f0a742c842340fef58f1a4d77d6f7044032ac2c8e5af771ce8e"
     },
     {
+      "path": "evidence/PR266-MAIN-CI.json",
+      "bytes": 2282,
+      "sha256": "1e2cc6cf0671587ec0956956968ecf04df0f9160458a5a0db72c6d693880087b"
+    },
+    {
+      "path": "evidence/PR266-MERGE.json",
+      "bytes": 123,
+      "sha256": "1ba8c4727b411f1445789b8970c90172301203321ef1c1de9f990c1670de2c98"
+    },
+    {
       "path": "evidence/PR266-PRESENTATION-SCOPE-20261030.json",
       "bytes": 547,
       "sha256": "141487c982d227197aff13bf2020dd09c7979ba270f407f794a7ecbde64ff58f"
@@ -4227,9 +4257,24 @@
       "sha256": "b90c16a43fa8c6c441bb6233e2242cb07191c3caf07a873bbff27e1d9048ed77"
     },
     {
+      "path": "evidence/PR266-PRODUCTION-BROWSER.json",
+      "bytes": 95625,
+      "sha256": "85b54584966432b62244e8a874b7dede8c69cce45d8b2e69bd9a4a560753e47e"
+    },
+    {
+      "path": "evidence/PR266-PRODUCTION-PROVIDERS.json",
+      "bytes": 1347,
+      "sha256": "5a5c19efd2c354341861ed4a0ab60cdcf4598fd7dd4497342111dcc0cd78a292"
+    },
+    {
       "path": "evidence/PR266-STATUS-20261030.json",
       "bytes": 3747,
       "sha256": "a2ddcc44517226f077f17f112a448acf2344e29bf13b20478fbd1abad7776494"
+    },
+    {
+      "path": "evidence/PR266-UPDATED-PREMERGE-CHECKS.json",
+      "bytes": 1563,
+      "sha256": "72caea2e90748fb09c4c3e82241f8f73e208c6655e1a35cf2270f2dc9d556cb0"
     },
     {
       "path": "evidence/PR266-UPDATED-PREVIEW-BROWSER.json",
@@ -5898,6 +5943,61 @@
     },
     {
       "path": "evidence/contrast-surfaces-preview-20261030/review-queue.json",
+      "bytes": 2976,
+      "sha256": "38dda6cb21c46abbbebb5096efd8d07e011bc7bb634542e1b5d131d89fa7085b"
+    },
+    {
+      "path": "evidence/contrast-surfaces-production-20261030/review-1280-dark.jpg",
+      "bytes": 415493,
+      "sha256": "6564b3db8002d5cb5945c0b2492c7a253f6467177afc8f0bde5bb3dba6837ba3"
+    },
+    {
+      "path": "evidence/contrast-surfaces-production-20261030/review-1280-light.jpg",
+      "bytes": 379055,
+      "sha256": "7af1f2573abdd16985ab9023178fd468a88f9f390684717d04969bbe747845fa"
+    },
+    {
+      "path": "evidence/contrast-surfaces-production-20261030/review-1920-dark.jpg",
+      "bytes": 239440,
+      "sha256": "fda73a08949c476b8d27bd40a5615a528678f0345d4b0c7b62668a7752fbabc1"
+    },
+    {
+      "path": "evidence/contrast-surfaces-production-20261030/review-1920-light.jpg",
+      "bytes": 233505,
+      "sha256": "a7eb797dd971869ecdceec14135e88acd4ca474a3319c632a42beb3493ffc76f"
+    },
+    {
+      "path": "evidence/contrast-surfaces-production-20261030/review-360-dark.jpg",
+      "bytes": 456688,
+      "sha256": "a9014602ac981faf459b24d4edb783955786b3e4d413d406f0d6c25b2c1e423b"
+    },
+    {
+      "path": "evidence/contrast-surfaces-production-20261030/review-360-light.jpg",
+      "bytes": 438503,
+      "sha256": "695e296bf1807c327be77a7b3e43dff123bbc42584b21fdaf7f910c365c038c6"
+    },
+    {
+      "path": "evidence/contrast-surfaces-production-20261030/review-390-dark.jpg",
+      "bytes": 469282,
+      "sha256": "87b769b932d48583f1ef6d3c464d69b8274225db761829679a4372b6bcc5d83c"
+    },
+    {
+      "path": "evidence/contrast-surfaces-production-20261030/review-390-light.jpg",
+      "bytes": 448502,
+      "sha256": "76632d92bbd36ae34ad176a6c37d4568fcda128092bfa8b1cf46051f46699d72"
+    },
+    {
+      "path": "evidence/contrast-surfaces-production-20261030/review-768-dark.jpg",
+      "bytes": 649030,
+      "sha256": "45a4240cb7793277f0a76616d25a40b1ab84130672f9debf91909f957a357345"
+    },
+    {
+      "path": "evidence/contrast-surfaces-production-20261030/review-768-light.jpg",
+      "bytes": 620558,
+      "sha256": "6af5eb5ec7b574f430ab9ac990fbbc96a53c811bcfe6287bbd32eaab14c2ad99"
+    },
+    {
+      "path": "evidence/contrast-surfaces-production-20261030/review-queue.json",
       "bytes": 2976,
       "sha256": "38dda6cb21c46abbbebb5096efd8d07e011bc7bb634542e1b5d131d89fa7085b"
     },
@@ -13655,6 +13755,151 @@
       "path": "evidence/fullpage-light-core-courses-20261029/e6b90b700fabb1c1.json",
       "bytes": 50738,
       "sha256": "f7882854b8e1bc44707ee46f2965ee770a3d11de7887db04713deb83746c2b82"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/1f92af069af10323.json",
+      "bytes": 20152,
+      "sha256": "bfdce85ad6198bcb675fe0b03c91c25d08dfbfb01f44a28542fdd9b099480377"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/58fa88fc44c95cfc.json",
+      "bytes": 46672,
+      "sha256": "1ce55d145698062c33d4c1e429829a29897955704adc0b1fd8340edc4f8844f6"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/7ba23e3948f3ede5.json",
+      "bytes": 48494,
+      "sha256": "c0e37487830f4cb7663b804ce8abd9efccaaf11f9caa5f61b1e31f722370b07e"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/84c2322a61b9438a.json",
+      "bytes": 50912,
+      "sha256": "a920203b2168e78dcb6b92686425c04581ccca230a27e6f8e02050384610c260"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/SUMMARY.json",
+      "bytes": 1211,
+      "sha256": "88b093d6097a079f547d606fa5d84955cfd0486009738783724b555a5c3c5495"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/contact-1f92af069af10323-1280-0.jpg",
+      "bytes": 269794,
+      "sha256": "37a5bb233bafdbd7a39ae49779df8ce2b32e79c9c6f4066be97bd7cdb8d592df"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/contact-1f92af069af10323-1920-0.jpg",
+      "bytes": 138948,
+      "sha256": "5f934f3ef51a8d08296c030c31b763a280e81027b37a23e645f3aa114b608404"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/contact-1f92af069af10323-360-0.jpg",
+      "bytes": 462383,
+      "sha256": "15c37e12c3e9627d986f80bd7a2ba99563443c5317171676d5adf2eb54d70234"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/contact-1f92af069af10323-390-0.jpg",
+      "bytes": 482151,
+      "sha256": "d9f240f417af59a702ba6439474d2f24e70c3d43ed65750a9fc0169d0623a496"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/contact-1f92af069af10323-768-0.jpg",
+      "bytes": 505621,
+      "sha256": "38032d8db930f31b01d78049b44a4a307a8ba8250cec46cbafac795b71d5f1bd"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/contact-58fa88fc44c95cfc-1280-0.jpg",
+      "bytes": 450691,
+      "sha256": "dc8ff02ac9da342b33e0d428951ec53d08cc750c29d6c418f4f5255746ebb682"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/contact-58fa88fc44c95cfc-1280-1.jpg",
+      "bytes": 39696,
+      "sha256": "b6f03e1161b7c57df14807efed2ec4d5bc50700e580f9fc090c8bf498fb9854c"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/contact-58fa88fc44c95cfc-1920-0.jpg",
+      "bytes": 277036,
+      "sha256": "cb102fe9e5e5a2924f889e3bbceb26b98badd83f3d329979f32d2b7a3aadc4a6"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/contact-58fa88fc44c95cfc-360-0.jpg",
+      "bytes": 863095,
+      "sha256": "f9d9d6e98f7a7301df29c5099236827b246894eeefce349497e82aeab32345ea"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/contact-58fa88fc44c95cfc-390-0.jpg",
+      "bytes": 921075,
+      "sha256": "7dc739c8e36475a7cf3bd1aba04318f41022ac7a6bba03b2319773789fd18883"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/contact-58fa88fc44c95cfc-768-0.jpg",
+      "bytes": 934812,
+      "sha256": "c76eb16c625be9aff9e63ba5e29aff784e12150caa3f879869583186a48487d6"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/contact-7ba23e3948f3ede5-1280-0.jpg",
+      "bytes": 460417,
+      "sha256": "7e200a574f196c2cfff6db89ffba48b2c30859dd8d570ae06fb3646c0c275501"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/contact-7ba23e3948f3ede5-1280-1.jpg",
+      "bytes": 68237,
+      "sha256": "e22c754a511c7de239966b2d14d2a48d3a0092c5f8bce5e7cff756c669635c22"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/contact-7ba23e3948f3ede5-1920-0.jpg",
+      "bytes": 285451,
+      "sha256": "466e35c1700b5ea96bd618ae2a4635fb5bc18ace30df570451bb838fc3a40c76"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/contact-7ba23e3948f3ede5-360-0.jpg",
+      "bytes": 881908,
+      "sha256": "82252c7045d3f89388891120690d621ab513bcf30930fb1d4aea0db081117849"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/contact-7ba23e3948f3ede5-390-0.jpg",
+      "bytes": 939150,
+      "sha256": "0565174e9acbf0dc9831247e6b1850fdf57decec5adc3eee24295dc445e7f17e"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/contact-7ba23e3948f3ede5-768-0.jpg",
+      "bytes": 978988,
+      "sha256": "611b177ac7d0f1ee7b394de3ec349d69075bb09d5d19d9cad5b8b1e562ed1876"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/contact-84c2322a61b9438a-1280-0.jpg",
+      "bytes": 470121,
+      "sha256": "3089fc2f61202bcc7cdeef745b4f14818cdca6b3946807a6154af53fb9713d66"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/contact-84c2322a61b9438a-1280-1.jpg",
+      "bytes": 66427,
+      "sha256": "f8bebd5b926b84159ad7dc95c824826bfa612776659866cdbe158ef77e176576"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/contact-84c2322a61b9438a-1920-0.jpg",
+      "bytes": 288322,
+      "sha256": "7cc189e34143d5a025c5454d184bd17af38e78c5cd7fb1852b782e5f4b019cf8"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/contact-84c2322a61b9438a-360-0.jpg",
+      "bytes": 939055,
+      "sha256": "c5c20188f1894b36c8aaa87b5555873819e0fcbc5c56ef56707cf406c6fa34bd"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/contact-84c2322a61b9438a-390-0.jpg",
+      "bytes": 958527,
+      "sha256": "f0b0d94f3763435d0a239226b2f672809a4f11813bc401ec4eb932197d979b3f"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/contact-84c2322a61b9438a-768-0.jpg",
+      "bytes": 1012419,
+      "sha256": "874ad8095a8155a10f0b1824cac908d820de02a93031578b9dceb942b0ff327e"
+    },
+    {
+      "path": "evidence/fullpage-light-crypto-courses-20261030/review-queue.json",
+      "bytes": 3503,
+      "sha256": "69bfb590e5df24fddafd01ae22d7fb629093b96a484c68d2b465a9d88e2fa312"
     },
     {
       "path": "evidence/fullpage-light-new-profiles-20261028/2a28f4e4b4cb9b81.json",
@@ -32728,8 +32973,8 @@
     },
     {
       "path": "findings/AUDIO-CONTROL-LIGHT-CONTRAST.md",
-      "bytes": 1320,
-      "sha256": "5b938499b91858561f027cc67751c070c440c24efca08be28cb32a1a92437bfe"
+      "bytes": 2256,
+      "sha256": "0fcf0bb8896db0af34967d9b64f4ac7af05381d4592ebd1dc208684516555d8f"
     },
     {
       "path": "findings/BEGINNER-GUIDE-MODULES-AND-COURSE-CLAIM.md",
@@ -32858,8 +33103,8 @@
     },
     {
       "path": "findings/LEARN-PATH-LIGHT-CONTRAST.md",
-      "bytes": 1132,
-      "sha256": "8154529cbafaae9d7a341aff8de9e735639c0c95647494fc22c15e902d542144"
+      "bytes": 2068,
+      "sha256": "dd08dc299db617c441fd9cf427085b8e3319f466e6adab29cd25b450045e0fdb"
     },
     {
       "path": "findings/LEARN-PUBLISHED-CATALOG.md",
@@ -33267,6 +33512,16 @@
       "sha256": "0d6f8b1ed49e6494e2ca97fc83c36fb5b1af43e5428f970b5cf2d365530d8f5b"
     },
     {
+      "path": "verification/full-light-crypto-run-20261030.py",
+      "bytes": 1640,
+      "sha256": "cc2d4a034414e6224d2f74b10739d383ccb4e52a3afed37aeb97a912b70902db"
+    },
+    {
+      "path": "verification/full-light-risk-courses-run-20261030.py",
+      "bytes": 1650,
+      "sha256": "fd6fd1af32ad16d7982817a1b8721b539dfd23c1fd0e543920e5ec20a448d89e"
+    },
+    {
       "path": "verification/fullpage-second-lessons-collect.mjs.txt",
       "bytes": 6035,
       "sha256": "20d9ae4da20df4db9cda249a272a102f8612d4b9557bcc8fa2b2742440960c92"
@@ -33425,6 +33680,16 @@
       "path": "verification/reconciled-practice-24-published-browser.mjs.txt",
       "bytes": 5689,
       "sha256": "463153997f74aa8af1bf1915647496af40041cb7296ff81f0fcea91e2936318f"
+    },
+    {
+      "path": "verification/record-crypto-light-20261030.py",
+      "bytes": 4342,
+      "sha256": "6ebb3b47d37ebdfa7ad19fb6e6e67d5b3d76a78473fe2f37f608a1271e7c46bd"
+    },
+    {
+      "path": "verification/record-pr266-closure-20261030.py",
+      "bytes": 7177,
+      "sha256": "baea8dbb8037de0c2ece51df0a0bf9799142669ad0949d0d2848053686c4d869"
     },
     {
       "path": "verification/record-terminal-appendix-reading.py.txt",
@@ -33732,7 +33997,7 @@
       "sha256": "75c029c85b57a6d5253685eaf559c5f27e0f41b95cc64f25a1b7c81e4427287b"
     }
   ],
-  "fileCount": 6746,
-  "totalBytes": 1518949951,
-  "generatedAt": "2026-10-30T11:26:57.726268+00:00"
+  "fileCount": 6799,
+  "totalBytes": 1536419925,
+  "generatedAt": "2026-10-30T11:40:44.961987+00:00"
 }

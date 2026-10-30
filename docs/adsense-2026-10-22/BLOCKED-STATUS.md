@@ -1,13 +1,12 @@
 # TradeHQ ongoing independent audit
 
-**454 public routes discovered; all 454 main bodies read.** Default full-page captures at all five requested widths have been personally viewed for **454/454** routes; full light-mode scrolls for **43/454**. These are inspection counts, not proof that every layout passes. The long public username overflow has since been repaired and verified in PR262. Whole-audit review remains incomplete.
+**454 public routes discovered; all 454 main bodies read.** Default full-page captures at all five requested widths have been personally viewed for **454/454** routes; full light-mode scrolls for **47/454**. These are inspection counts, not proof that every layout passes. The long public username overflow has since been repaired and verified in PR262. Whole-audit review remains incomplete.
 
-**83 confirmed site findings; 81 repairs publicly verified; 2 unresolved.** Last fully verified production: `55087f82f4df93a1e8f84e1e59295c62308247fd`. Current merged main: `55087f82f4df93a1e8f84e1e59295c62308247fd` (see release ledger). PR265 completed six exact-main checks, authenticated Cloudflare/Vercel production verification,[100] affected states with100 accepted captures personally viewed, and30 guest states/four safe controls. Truthful audit User-Agent identification resolved Cloudflare1010.
+**83 confirmed site findings; 83 repairs publicly verified; 0 unresolved.** Last fully verified production: `4fad776ec28409929eb08f47e4734c229e79adb8`. Current merged main: `4fad776ec28409929eb08f47e4734c229e79adb8` (see release ledger). PR266 completed six exact-main checks, authenticated Cloudflare/Vercel production verification,[50] affected states with60 accepted captures personally viewed, and30 guest states/four safe controls. Truthful audit User-Agent identification resolved Cloudflare1010.
 
 Unresolved findings:
 
-- **THQ-069 (P2)** — Learning path level labels have low contrast on light backgrounds; `PREPARED_NOT_MERGED`.
-- **THQ-078 (P2)** — Inactive background-music icon loses contrast over the black footer in light mode; `PREPARED_NOT_MERGED`.
+
 
 Additional review remains: full light scrolls, sequential keyboard/focus, zoom, screenreader, primary-source accuracy, originality/usefulness, individual Daily conditional visuals and sources, and applicable regional/account-side ad/CMP behavior. Generic stock/fund/crypto terminals, stablecoin peg/reserve/redemption education, Visa/NFLX/VOO claims, FX frameworks, Silver provider identity/age, chart/quote explanations, axes and units remain explicit follow-ups rather than invented resolved issues.
 

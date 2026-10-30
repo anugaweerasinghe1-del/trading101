@@ -1,0 +1,376 @@
+{
+  "path": "/courses/cryptocurrency-price-feeds-and-valuation/api-delays-and-portfolio-valuation",
+  "sha": "55087f82f4df93a1e8f84e1e59295c62308247fd",
+  "origin": "https://www.thetradehq.com",
+  "capturedAt": "2026-10-30T11:27:31.789Z",
+  "outcome": "COLLECTED_NOT_HUMAN_REVIEWED",
+  "widths": [
+    {
+      "width": 360,
+      "height": 800,
+      "path": "/courses/cryptocurrency-price-feeds-and-valuation/api-delays-and-portfolio-valuation",
+      "theme": "light",
+      "mainText": "Home\nCourses\nUnderstanding Cryptocurrency Price Feeds and Portfolio Valuation\nAPI Delays and Portfolio Valuation Mechanics\nIntermediate\n·\nLesson 2 of 3\n·\n8 min read\nAPI Delays and Portfolio Valuation Mechanics\n\nExamine how data transmission delays, API snapshots, and cache intervals impact the valuation and execution of virtual portfolios.\n\nPrepared with AI assistance · Publication review recorded by Anuga Weerasinghe · 09/10/2026\nQUICK ANSWER\nAPI Delays and Portfolio Valuation Mechanics?\n\nExamine how data transmission delays, API snapshots, and cache intervals impact the valuation and execution of virtual portfolios. Observation time, fetch time and periodic sampling describe different parts of a data feed. Delayed marks can differ from a contemporaneous comparison quote, whose own venue and timestamp must be stated.\n\nThe Architecture of Price Delivery\n\nDelivery through an API can involve timestamps, caching, rate limits and service interruptions. Update schedules differ by endpoint and plan; this lesson does not assert a universal delay for free services. Distinguish the provider observation time from the time the page fetched it. A successful HTTP response need not contain a fresh observation, and a failed request supplies no new market price. Use the actual status and timestamps before interpreting a practice valuation.\n\nAn observation can be older than the time it reaches a dashboard. A snapshot series can also omit price changes between observations; this is not proof that a smoothing algorithm was applied. Aggregation, sampling, caching and transmission are distinct processes with different timestamps. Their effect depends on the learning question and market conditions. Record the provider observation time and fetch time separately, and keep missing observations distinct from a zero price. A recent page refresh or successful response cannot establish that the underlying observation is fresh or executable.\n\nValuing a Virtual Portfolio\n\nIn paper trading, your simulated portfolio valuation is directly tied to these periodic snapshot feeds. If you hold ten virtual tokens, the platform calculates your net asset value by multiplying this balance by the latest available API price. If the API feed is delayed by five minutes, your virtual balance reflects a market state from five minutes ago. The delay postpones the displayed effect of price changes; it does not protect the portfolio from losses, which become visible when a fresh quote arrives.\n\nTo maintain realistic tracking, platforms utilize historical closing rates or specific snapshot times to mark portfolios to market. For example, if you decide to rebalance your assets, the transaction executes using the current delayed feed price. A delayed quote does not itself model execution costs and can introduce a mismatch if you are monitoring real-time exchange charts elsewhere. Recognizing how your simulator updates its internal price database is crucial for maintaining an accurate record of your virtual trading performance over time.\n\nSlippage and Execution Realities\n\nA separate worksheet can apply hypothetical slippage assumptions to compare outcomes. That does not reproduce a venue’s actual liquidity or make a simulator fill realistic by itself. TradeHQ fills supported spot orders at its displayed practice input and charges a 0.1% virtual transaction fee; it does not model order-book priority, partial fills or a calibrated slippage process. Keep a delayed observation, an execution assumption and an actual historical exchange fill distinct.\n\nFor a hypothetical 1% adverse buy adjustment to a $10 reference, the assumed fill is $10.10. This arithmetic cannot establish that the real market had that price or enough available quantity. An actual historical fill would require a matched timestamp, venue and execution record. A separate fee remains a different cost from slippage. Label invented adjustments as assumptions and compare more than one path; changing the scenario does not make practice results a reliable forecast.\n\nPractice Task: Estimating Valuation Discrepancies\n\nFor this exercise, assume you manage a virtual portfolio holding exactly one hundred units of an asset. The live exchange price is currently twelve dollars per unit, but your paper-trading dashboard is linked to a delayed API feed that updates every ten minutes. The current dashboard display shows a price of eleven dollars and fifty cents per unit, which was the exchange rate ten minutes ago. Calculate both the current paper valuation and the actual real-time market value of your holdings.\n\nTo solve this, multiply your one hundred units by the dashboard price of eleven dollars and fifty cents, yielding a paper valuation of one thousand one hundred fifty dollars. Next, calculate the live market value by multiplying your one hundred units by twelve dollars, which equals one thousand two hundred dollars. The fifty-dollar discrepancy represents the temporary valuation lag caused by the API delay. Recognizing this difference prevents you from making hasty rebalancing decisions based on outdated interface data.\n\nKEY TAKEAWAYS\nObservation time, fetch time and periodic sampling describe different parts of a data feed.\nDelayed marks can differ from a contemporaneous comparison quote, whose own venue and timestamp must be stated.\nA hypothetical slippage assumption and a separately charged fee do not reproduce actual order-book execution.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. What is the main cause of a delay between a live exchange price and a virtual trading dashboard?\nThe network bandwidth restrictions imposed by local internet providers.API transmission latency and data caching intervals.Manual authorization steps required for every virtual market trade.Government monitoring procedures that freeze prices temporarily.\n2. How does an API delay impact paper-trading portfolio valuations?\nIt prevents users from executing any buy or sell transactions.It permanently locks the account balance until the live market closes.It creates a temporary discrepancy between paper values and live market rates.It forces the portfolio to automatically convert all assets to cash.\n3. What is a limitation of adding a hypothetical slippage adjustment to a worksheet?\nIt guarantees the actual venue fillIt compares an assumption but does not reproduce actual order-book executionIt creates real commission revenueIt removes the need for timestamps\n4. If your portfolio has 50 units of an asset, the live price is $10, and the delayed dashboard price is $8, what is your paper valuation?\n$400$500$100$90\nSubmit & complete lesson\nSOURCES & FURTHER READING\nCoinGecko — Price Methodology\nCoinGecko — Coin Price API\nExchange Tickers and Price Aggregation Foundations\nPortfolio Rebalancing and Cash Drag Dynamics\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "API Delays and Portfolio Valuation Mechanics — Understanding Cryptocurrency Price Feeds and Portfolio Valuation | TradeHQ",
+      "heading": "API Delays and Portfolio Valuation Mechanics",
+      "supplementaryNotes": [],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 360,
+      "scrollHeight": 9992,
+      "viewportWidth": 360,
+      "canonical": "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/api-delays-and-portfolio-valuation",
+      "images": [
+        {
+          "alt": "API Delays and Portfolio Valuation Mechanics — illustration",
+          "complete": true,
+          "naturalWidth": 1920,
+          "source": "https://www.thetradehq.com/course-covers/trading-basics.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "58fa88fc44c95cfc-360-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "58fa88fc44c95cfc-360-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "58fa88fc44c95cfc-360-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "58fa88fc44c95cfc-360-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "58fa88fc44c95cfc-360-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "58fa88fc44c95cfc-360-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "58fa88fc44c95cfc-360-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "58fa88fc44c95cfc-360-07.png"
+        },
+        {
+          "y": 5440,
+          "screenshot": "58fa88fc44c95cfc-360-08.png"
+        },
+        {
+          "y": 6120,
+          "screenshot": "58fa88fc44c95cfc-360-09.png"
+        },
+        {
+          "y": 6800,
+          "screenshot": "58fa88fc44c95cfc-360-10.png"
+        },
+        {
+          "y": 7480,
+          "screenshot": "58fa88fc44c95cfc-360-11.png"
+        },
+        {
+          "y": 8160,
+          "screenshot": "58fa88fc44c95cfc-360-12.png"
+        },
+        {
+          "y": 8840,
+          "screenshot": "58fa88fc44c95cfc-360-13.png"
+        },
+        {
+          "y": 9192,
+          "screenshot": "58fa88fc44c95cfc-360-14.png"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "path": "/courses/cryptocurrency-price-feeds-and-valuation/api-delays-and-portfolio-valuation",
+      "theme": "light",
+      "mainText": "Home\nCourses\nUnderstanding Cryptocurrency Price Feeds and Portfolio Valuation\nAPI Delays and Portfolio Valuation Mechanics\nIntermediate\n·\nLesson 2 of 3\n·\n8 min read\nAPI Delays and Portfolio Valuation Mechanics\n\nExamine how data transmission delays, API snapshots, and cache intervals impact the valuation and execution of virtual portfolios.\n\nPrepared with AI assistance · Publication review recorded by Anuga Weerasinghe · 09/10/2026\nQUICK ANSWER\nAPI Delays and Portfolio Valuation Mechanics?\n\nExamine how data transmission delays, API snapshots, and cache intervals impact the valuation and execution of virtual portfolios. Observation time, fetch time and periodic sampling describe different parts of a data feed. Delayed marks can differ from a contemporaneous comparison quote, whose own venue and timestamp must be stated.\n\nThe Architecture of Price Delivery\n\nDelivery through an API can involve timestamps, caching, rate limits and service interruptions. Update schedules differ by endpoint and plan; this lesson does not assert a universal delay for free services. Distinguish the provider observation time from the time the page fetched it. A successful HTTP response need not contain a fresh observation, and a failed request supplies no new market price. Use the actual status and timestamps before interpreting a practice valuation.\n\nAn observation can be older than the time it reaches a dashboard. A snapshot series can also omit price changes between observations; this is not proof that a smoothing algorithm was applied. Aggregation, sampling, caching and transmission are distinct processes with different timestamps. Their effect depends on the learning question and market conditions. Record the provider observation time and fetch time separately, and keep missing observations distinct from a zero price. A recent page refresh or successful response cannot establish that the underlying observation is fresh or executable.\n\nValuing a Virtual Portfolio\n\nIn paper trading, your simulated portfolio valuation is directly tied to these periodic snapshot feeds. If you hold ten virtual tokens, the platform calculates your net asset value by multiplying this balance by the latest available API price. If the API feed is delayed by five minutes, your virtual balance reflects a market state from five minutes ago. The delay postpones the displayed effect of price changes; it does not protect the portfolio from losses, which become visible when a fresh quote arrives.\n\nTo maintain realistic tracking, platforms utilize historical closing rates or specific snapshot times to mark portfolios to market. For example, if you decide to rebalance your assets, the transaction executes using the current delayed feed price. A delayed quote does not itself model execution costs and can introduce a mismatch if you are monitoring real-time exchange charts elsewhere. Recognizing how your simulator updates its internal price database is crucial for maintaining an accurate record of your virtual trading performance over time.\n\nSlippage and Execution Realities\n\nA separate worksheet can apply hypothetical slippage assumptions to compare outcomes. That does not reproduce a venue’s actual liquidity or make a simulator fill realistic by itself. TradeHQ fills supported spot orders at its displayed practice input and charges a 0.1% virtual transaction fee; it does not model order-book priority, partial fills or a calibrated slippage process. Keep a delayed observation, an execution assumption and an actual historical exchange fill distinct.\n\nFor a hypothetical 1% adverse buy adjustment to a $10 reference, the assumed fill is $10.10. This arithmetic cannot establish that the real market had that price or enough available quantity. An actual historical fill would require a matched timestamp, venue and execution record. A separate fee remains a different cost from slippage. Label invented adjustments as assumptions and compare more than one path; changing the scenario does not make practice results a reliable forecast.\n\nPractice Task: Estimating Valuation Discrepancies\n\nFor this exercise, assume you manage a virtual portfolio holding exactly one hundred units of an asset. The live exchange price is currently twelve dollars per unit, but your paper-trading dashboard is linked to a delayed API feed that updates every ten minutes. The current dashboard display shows a price of eleven dollars and fifty cents per unit, which was the exchange rate ten minutes ago. Calculate both the current paper valuation and the actual real-time market value of your holdings.\n\nTo solve this, multiply your one hundred units by the dashboard price of eleven dollars and fifty cents, yielding a paper valuation of one thousand one hundred fifty dollars. Next, calculate the live market value by multiplying your one hundred units by twelve dollars, which equals one thousand two hundred dollars. The fifty-dollar discrepancy represents the temporary valuation lag caused by the API delay. Recognizing this difference prevents you from making hasty rebalancing decisions based on outdated interface data.\n\nKEY TAKEAWAYS\nObservation time, fetch time and periodic sampling describe different parts of a data feed.\nDelayed marks can differ from a contemporaneous comparison quote, whose own venue and timestamp must be stated.\nA hypothetical slippage assumption and a separately charged fee do not reproduce actual order-book execution.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. What is the main cause of a delay between a live exchange price and a virtual trading dashboard?\nThe network bandwidth restrictions imposed by local internet providers.API transmission latency and data caching intervals.Manual authorization steps required for every virtual market trade.Government monitoring procedures that freeze prices temporarily.\n2. How does an API delay impact paper-trading portfolio valuations?\nIt prevents users from executing any buy or sell transactions.It permanently locks the account balance until the live market closes.It creates a temporary discrepancy between paper values and live market rates.It forces the portfolio to automatically convert all assets to cash.\n3. What is a limitation of adding a hypothetical slippage adjustment to a worksheet?\nIt guarantees the actual venue fillIt compares an assumption but does not reproduce actual order-book executionIt creates real commission revenueIt removes the need for timestamps\n4. If your portfolio has 50 units of an asset, the live price is $10, and the delayed dashboard price is $8, what is your paper valuation?\n$400$500$100$90\nSubmit & complete lesson\nSOURCES & FURTHER READING\nCoinGecko — Price Methodology\nCoinGecko — Coin Price API\nExchange Tickers and Price Aggregation Foundations\nPortfolio Rebalancing and Cash Drag Dynamics\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "API Delays and Portfolio Valuation Mechanics — Understanding Cryptocurrency Price Feeds and Portfolio Valuation | TradeHQ",
+      "heading": "API Delays and Portfolio Valuation Mechanics",
+      "supplementaryNotes": [],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 390,
+      "scrollHeight": 9581,
+      "viewportWidth": 390,
+      "canonical": "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/api-delays-and-portfolio-valuation",
+      "images": [
+        {
+          "alt": "API Delays and Portfolio Valuation Mechanics — illustration",
+          "complete": true,
+          "naturalWidth": 1920,
+          "source": "https://www.thetradehq.com/course-covers/trading-basics.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "58fa88fc44c95cfc-390-00.png"
+        },
+        {
+          "y": 717,
+          "screenshot": "58fa88fc44c95cfc-390-01.png"
+        },
+        {
+          "y": 1434,
+          "screenshot": "58fa88fc44c95cfc-390-02.png"
+        },
+        {
+          "y": 2151,
+          "screenshot": "58fa88fc44c95cfc-390-03.png"
+        },
+        {
+          "y": 2868,
+          "screenshot": "58fa88fc44c95cfc-390-04.png"
+        },
+        {
+          "y": 3585,
+          "screenshot": "58fa88fc44c95cfc-390-05.png"
+        },
+        {
+          "y": 4302,
+          "screenshot": "58fa88fc44c95cfc-390-06.png"
+        },
+        {
+          "y": 5019,
+          "screenshot": "58fa88fc44c95cfc-390-07.png"
+        },
+        {
+          "y": 5736,
+          "screenshot": "58fa88fc44c95cfc-390-08.png"
+        },
+        {
+          "y": 6453,
+          "screenshot": "58fa88fc44c95cfc-390-09.png"
+        },
+        {
+          "y": 7170,
+          "screenshot": "58fa88fc44c95cfc-390-10.png"
+        },
+        {
+          "y": 7887,
+          "screenshot": "58fa88fc44c95cfc-390-11.png"
+        },
+        {
+          "y": 8604,
+          "screenshot": "58fa88fc44c95cfc-390-12.png"
+        },
+        {
+          "y": 8737,
+          "screenshot": "58fa88fc44c95cfc-390-13.png"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "path": "/courses/cryptocurrency-price-feeds-and-valuation/api-delays-and-portfolio-valuation",
+      "theme": "light",
+      "mainText": "Home\nCourses\nUnderstanding Cryptocurrency Price Feeds and Portfolio Valuation\nAPI Delays and Portfolio Valuation Mechanics\nIntermediate\n·\nLesson 2 of 3\n·\n8 min read\nAPI Delays and Portfolio Valuation Mechanics\n\nExamine how data transmission delays, API snapshots, and cache intervals impact the valuation and execution of virtual portfolios.\n\nPrepared with AI assistance · Publication review recorded by Anuga Weerasinghe · 09/10/2026\nQUICK ANSWER\nAPI Delays and Portfolio Valuation Mechanics?\n\nExamine how data transmission delays, API snapshots, and cache intervals impact the valuation and execution of virtual portfolios. Observation time, fetch time and periodic sampling describe different parts of a data feed. Delayed marks can differ from a contemporaneous comparison quote, whose own venue and timestamp must be stated.\n\nThe Architecture of Price Delivery\n\nDelivery through an API can involve timestamps, caching, rate limits and service interruptions. Update schedules differ by endpoint and plan; this lesson does not assert a universal delay for free services. Distinguish the provider observation time from the time the page fetched it. A successful HTTP response need not contain a fresh observation, and a failed request supplies no new market price. Use the actual status and timestamps before interpreting a practice valuation.\n\nAn observation can be older than the time it reaches a dashboard. A snapshot series can also omit price changes between observations; this is not proof that a smoothing algorithm was applied. Aggregation, sampling, caching and transmission are distinct processes with different timestamps. Their effect depends on the learning question and market conditions. Record the provider observation time and fetch time separately, and keep missing observations distinct from a zero price. A recent page refresh or successful response cannot establish that the underlying observation is fresh or executable.\n\nValuing a Virtual Portfolio\n\nIn paper trading, your simulated portfolio valuation is directly tied to these periodic snapshot feeds. If you hold ten virtual tokens, the platform calculates your net asset value by multiplying this balance by the latest available API price. If the API feed is delayed by five minutes, your virtual balance reflects a market state from five minutes ago. The delay postpones the displayed effect of price changes; it does not protect the portfolio from losses, which become visible when a fresh quote arrives.\n\nTo maintain realistic tracking, platforms utilize historical closing rates or specific snapshot times to mark portfolios to market. For example, if you decide to rebalance your assets, the transaction executes using the current delayed feed price. A delayed quote does not itself model execution costs and can introduce a mismatch if you are monitoring real-time exchange charts elsewhere. Recognizing how your simulator updates its internal price database is crucial for maintaining an accurate record of your virtual trading performance over time.\n\nSlippage and Execution Realities\n\nA separate worksheet can apply hypothetical slippage assumptions to compare outcomes. That does not reproduce a venue’s actual liquidity or make a simulator fill realistic by itself. TradeHQ fills supported spot orders at its displayed practice input and charges a 0.1% virtual transaction fee; it does not model order-book priority, partial fills or a calibrated slippage process. Keep a delayed observation, an execution assumption and an actual historical exchange fill distinct.\n\nFor a hypothetical 1% adverse buy adjustment to a $10 reference, the assumed fill is $10.10. This arithmetic cannot establish that the real market had that price or enough available quantity. An actual historical fill would require a matched timestamp, venue and execution record. A separate fee remains a different cost from slippage. Label invented adjustments as assumptions and compare more than one path; changing the scenario does not make practice results a reliable forecast.\n\nPractice Task: Estimating Valuation Discrepancies\n\nFor this exercise, assume you manage a virtual portfolio holding exactly one hundred units of an asset. The live exchange price is currently twelve dollars per unit, but your paper-trading dashboard is linked to a delayed API feed that updates every ten minutes. The current dashboard display shows a price of eleven dollars and fifty cents per unit, which was the exchange rate ten minutes ago. Calculate both the current paper valuation and the actual real-time market value of your holdings.\n\nTo solve this, multiply your one hundred units by the dashboard price of eleven dollars and fifty cents, yielding a paper valuation of one thousand one hundred fifty dollars. Next, calculate the live market value by multiplying your one hundred units by twelve dollars, which equals one thousand two hundred dollars. The fifty-dollar discrepancy represents the temporary valuation lag caused by the API delay. Recognizing this difference prevents you from making hasty rebalancing decisions based on outdated interface data.\n\nKEY TAKEAWAYS\nObservation time, fetch time and periodic sampling describe different parts of a data feed.\nDelayed marks can differ from a contemporaneous comparison quote, whose own venue and timestamp must be stated.\nA hypothetical slippage assumption and a separately charged fee do not reproduce actual order-book execution.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. What is the main cause of a delay between a live exchange price and a virtual trading dashboard?\nThe network bandwidth restrictions imposed by local internet providers.API transmission latency and data caching intervals.Manual authorization steps required for every virtual market trade.Government monitoring procedures that freeze prices temporarily.\n2. How does an API delay impact paper-trading portfolio valuations?\nIt prevents users from executing any buy or sell transactions.It permanently locks the account balance until the live market closes.It creates a temporary discrepancy between paper values and live market rates.It forces the portfolio to automatically convert all assets to cash.\n3. What is a limitation of adding a hypothetical slippage adjustment to a worksheet?\nIt guarantees the actual venue fillIt compares an assumption but does not reproduce actual order-book executionIt creates real commission revenueIt removes the need for timestamps\n4. If your portfolio has 50 units of an asset, the live price is $10, and the delayed dashboard price is $8, what is your paper valuation?\n$400$500$100$90\nSubmit & complete lesson\nSOURCES & FURTHER READING\nCoinGecko — Price Methodology\nCoinGecko — Coin Price API\nExchange Tickers and Price Aggregation Foundations\nPortfolio Rebalancing and Cash Drag Dynamics\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "API Delays and Portfolio Valuation Mechanics — Understanding Cryptocurrency Price Feeds and Portfolio Valuation | TradeHQ",
+      "heading": "API Delays and Portfolio Valuation Mechanics",
+      "supplementaryNotes": [],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 753,
+      "scrollHeight": 6688,
+      "viewportWidth": 768,
+      "canonical": "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/api-delays-and-portfolio-valuation",
+      "images": [
+        {
+          "alt": "API Delays and Portfolio Valuation Mechanics — illustration",
+          "complete": true,
+          "naturalWidth": 1920,
+          "source": "https://www.thetradehq.com/course-covers/trading-basics.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "58fa88fc44c95cfc-768-00.png"
+        },
+        {
+          "y": 870,
+          "screenshot": "58fa88fc44c95cfc-768-01.png"
+        },
+        {
+          "y": 1740,
+          "screenshot": "58fa88fc44c95cfc-768-02.png"
+        },
+        {
+          "y": 2610,
+          "screenshot": "58fa88fc44c95cfc-768-03.png"
+        },
+        {
+          "y": 3480,
+          "screenshot": "58fa88fc44c95cfc-768-04.png"
+        },
+        {
+          "y": 4350,
+          "screenshot": "58fa88fc44c95cfc-768-05.png"
+        },
+        {
+          "y": 5220,
+          "screenshot": "58fa88fc44c95cfc-768-06.png"
+        },
+        {
+          "y": 5664,
+          "screenshot": "58fa88fc44c95cfc-768-07.png"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "path": "/courses/cryptocurrency-price-feeds-and-valuation/api-delays-and-portfolio-valuation",
+      "theme": "light",
+      "mainText": "Home\nCourses\nUnderstanding Cryptocurrency Price Feeds and Portfolio Valuation\nAPI Delays and Portfolio Valuation Mechanics\nIntermediate\n·\nLesson 2 of 3\n·\n8 min read\nAPI Delays and Portfolio Valuation Mechanics\n\nExamine how data transmission delays, API snapshots, and cache intervals impact the valuation and execution of virtual portfolios.\n\nPrepared with AI assistance · Publication review recorded by Anuga Weerasinghe · 09/10/2026\nQUICK ANSWER\nAPI Delays and Portfolio Valuation Mechanics?\n\nExamine how data transmission delays, API snapshots, and cache intervals impact the valuation and execution of virtual portfolios. Observation time, fetch time and periodic sampling describe different parts of a data feed. Delayed marks can differ from a contemporaneous comparison quote, whose own venue and timestamp must be stated.\n\nThe Architecture of Price Delivery\n\nDelivery through an API can involve timestamps, caching, rate limits and service interruptions. Update schedules differ by endpoint and plan; this lesson does not assert a universal delay for free services. Distinguish the provider observation time from the time the page fetched it. A successful HTTP response need not contain a fresh observation, and a failed request supplies no new market price. Use the actual status and timestamps before interpreting a practice valuation.\n\nAn observation can be older than the time it reaches a dashboard. A snapshot series can also omit price changes between observations; this is not proof that a smoothing algorithm was applied. Aggregation, sampling, caching and transmission are distinct processes with different timestamps. Their effect depends on the learning question and market conditions. Record the provider observation time and fetch time separately, and keep missing observations distinct from a zero price. A recent page refresh or successful response cannot establish that the underlying observation is fresh or executable.\n\nValuing a Virtual Portfolio\n\nIn paper trading, your simulated portfolio valuation is directly tied to these periodic snapshot feeds. If you hold ten virtual tokens, the platform calculates your net asset value by multiplying this balance by the latest available API price. If the API feed is delayed by five minutes, your virtual balance reflects a market state from five minutes ago. The delay postpones the displayed effect of price changes; it does not protect the portfolio from losses, which become visible when a fresh quote arrives.\n\nTo maintain realistic tracking, platforms utilize historical closing rates or specific snapshot times to mark portfolios to market. For example, if you decide to rebalance your assets, the transaction executes using the current delayed feed price. A delayed quote does not itself model execution costs and can introduce a mismatch if you are monitoring real-time exchange charts elsewhere. Recognizing how your simulator updates its internal price database is crucial for maintaining an accurate record of your virtual trading performance over time.\n\nSlippage and Execution Realities\n\nA separate worksheet can apply hypothetical slippage assumptions to compare outcomes. That does not reproduce a venue’s actual liquidity or make a simulator fill realistic by itself. TradeHQ fills supported spot orders at its displayed practice input and charges a 0.1% virtual transaction fee; it does not model order-book priority, partial fills or a calibrated slippage process. Keep a delayed observation, an execution assumption and an actual historical exchange fill distinct.\n\nFor a hypothetical 1% adverse buy adjustment to a $10 reference, the assumed fill is $10.10. This arithmetic cannot establish that the real market had that price or enough available quantity. An actual historical fill would require a matched timestamp, venue and execution record. A separate fee remains a different cost from slippage. Label invented adjustments as assumptions and compare more than one path; changing the scenario does not make practice results a reliable forecast.\n\nPractice Task: Estimating Valuation Discrepancies\n\nFor this exercise, assume you manage a virtual portfolio holding exactly one hundred units of an asset. The live exchange price is currently twelve dollars per unit, but your paper-trading dashboard is linked to a delayed API feed that updates every ten minutes. The current dashboard display shows a price of eleven dollars and fifty cents per unit, which was the exchange rate ten minutes ago. Calculate both the current paper valuation and the actual real-time market value of your holdings.\n\nTo solve this, multiply your one hundred units by the dashboard price of eleven dollars and fifty cents, yielding a paper valuation of one thousand one hundred fifty dollars. Next, calculate the live market value by multiplying your one hundred units by twelve dollars, which equals one thousand two hundred dollars. The fifty-dollar discrepancy represents the temporary valuation lag caused by the API delay. Recognizing this difference prevents you from making hasty rebalancing decisions based on outdated interface data.\n\nKEY TAKEAWAYS\nObservation time, fetch time and periodic sampling describe different parts of a data feed.\nDelayed marks can differ from a contemporaneous comparison quote, whose own venue and timestamp must be stated.\nA hypothetical slippage assumption and a separately charged fee do not reproduce actual order-book execution.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. What is the main cause of a delay between a live exchange price and a virtual trading dashboard?\nThe network bandwidth restrictions imposed by local internet providers.API transmission latency and data caching intervals.Manual authorization steps required for every virtual market trade.Government monitoring procedures that freeze prices temporarily.\n2. How does an API delay impact paper-trading portfolio valuations?\nIt prevents users from executing any buy or sell transactions.It permanently locks the account balance until the live market closes.It creates a temporary discrepancy between paper values and live market rates.It forces the portfolio to automatically convert all assets to cash.\n3. What is a limitation of adding a hypothetical slippage adjustment to a worksheet?\nIt guarantees the actual venue fillIt compares an assumption but does not reproduce actual order-book executionIt creates real commission revenueIt removes the need for timestamps\n4. If your portfolio has 50 units of an asset, the live price is $10, and the delayed dashboard price is $8, what is your paper valuation?\n$400$500$100$90\nSubmit & complete lesson\nSOURCES & FURTHER READING\nCoinGecko — Price Methodology\nCoinGecko — Coin Price API\nExchange Tickers and Price Aggregation Foundations\nPortfolio Rebalancing and Cash Drag Dynamics\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "API Delays and Portfolio Valuation Mechanics — Understanding Cryptocurrency Price Feeds and Portfolio Valuation | TradeHQ",
+      "heading": "API Delays and Portfolio Valuation Mechanics",
+      "supplementaryNotes": [],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1265,
+      "scrollHeight": 6177,
+      "viewportWidth": 1280,
+      "canonical": "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/api-delays-and-portfolio-valuation",
+      "images": [
+        {
+          "alt": "API Delays and Portfolio Valuation Mechanics — illustration",
+          "complete": true,
+          "naturalWidth": 1920,
+          "source": "https://www.thetradehq.com/course-covers/trading-basics.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "58fa88fc44c95cfc-1280-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "58fa88fc44c95cfc-1280-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "58fa88fc44c95cfc-1280-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "58fa88fc44c95cfc-1280-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "58fa88fc44c95cfc-1280-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "58fa88fc44c95cfc-1280-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "58fa88fc44c95cfc-1280-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "58fa88fc44c95cfc-1280-07.png"
+        },
+        {
+          "y": 5377,
+          "screenshot": "58fa88fc44c95cfc-1280-08.png"
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "path": "/courses/cryptocurrency-price-feeds-and-valuation/api-delays-and-portfolio-valuation",
+      "theme": "light",
+      "mainText": "Home\nCourses\nUnderstanding Cryptocurrency Price Feeds and Portfolio Valuation\nAPI Delays and Portfolio Valuation Mechanics\nIntermediate\n·\nLesson 2 of 3\n·\n8 min read\nAPI Delays and Portfolio Valuation Mechanics\n\nExamine how data transmission delays, API snapshots, and cache intervals impact the valuation and execution of virtual portfolios.\n\nPrepared with AI assistance · Publication review recorded by Anuga Weerasinghe · 09/10/2026\nQUICK ANSWER\nAPI Delays and Portfolio Valuation Mechanics?\n\nExamine how data transmission delays, API snapshots, and cache intervals impact the valuation and execution of virtual portfolios. Observation time, fetch time and periodic sampling describe different parts of a data feed. Delayed marks can differ from a contemporaneous comparison quote, whose own venue and timestamp must be stated.\n\nThe Architecture of Price Delivery\n\nDelivery through an API can involve timestamps, caching, rate limits and service interruptions. Update schedules differ by endpoint and plan; this lesson does not assert a universal delay for free services. Distinguish the provider observation time from the time the page fetched it. A successful HTTP response need not contain a fresh observation, and a failed request supplies no new market price. Use the actual status and timestamps before interpreting a practice valuation.\n\nAn observation can be older than the time it reaches a dashboard. A snapshot series can also omit price changes between observations; this is not proof that a smoothing algorithm was applied. Aggregation, sampling, caching and transmission are distinct processes with different timestamps. Their effect depends on the learning question and market conditions. Record the provider observation time and fetch time separately, and keep missing observations distinct from a zero price. A recent page refresh or successful response cannot establish that the underlying observation is fresh or executable.\n\nValuing a Virtual Portfolio\n\nIn paper trading, your simulated portfolio valuation is directly tied to these periodic snapshot feeds. If you hold ten virtual tokens, the platform calculates your net asset value by multiplying this balance by the latest available API price. If the API feed is delayed by five minutes, your virtual balance reflects a market state from five minutes ago. The delay postpones the displayed effect of price changes; it does not protect the portfolio from losses, which become visible when a fresh quote arrives.\n\nTo maintain realistic tracking, platforms utilize historical closing rates or specific snapshot times to mark portfolios to market. For example, if you decide to rebalance your assets, the transaction executes using the current delayed feed price. A delayed quote does not itself model execution costs and can introduce a mismatch if you are monitoring real-time exchange charts elsewhere. Recognizing how your simulator updates its internal price database is crucial for maintaining an accurate record of your virtual trading performance over time.\n\nSlippage and Execution Realities\n\nA separate worksheet can apply hypothetical slippage assumptions to compare outcomes. That does not reproduce a venue’s actual liquidity or make a simulator fill realistic by itself. TradeHQ fills supported spot orders at its displayed practice input and charges a 0.1% virtual transaction fee; it does not model order-book priority, partial fills or a calibrated slippage process. Keep a delayed observation, an execution assumption and an actual historical exchange fill distinct.\n\nFor a hypothetical 1% adverse buy adjustment to a $10 reference, the assumed fill is $10.10. This arithmetic cannot establish that the real market had that price or enough available quantity. An actual historical fill would require a matched timestamp, venue and execution record. A separate fee remains a different cost from slippage. Label invented adjustments as assumptions and compare more than one path; changing the scenario does not make practice results a reliable forecast.\n\nPractice Task: Estimating Valuation Discrepancies\n\nFor this exercise, assume you manage a virtual portfolio holding exactly one hundred units of an asset. The live exchange price is currently twelve dollars per unit, but your paper-trading dashboard is linked to a delayed API feed that updates every ten minutes. The current dashboard display shows a price of eleven dollars and fifty cents per unit, which was the exchange rate ten minutes ago. Calculate both the current paper valuation and the actual real-time market value of your holdings.\n\nTo solve this, multiply your one hundred units by the dashboard price of eleven dollars and fifty cents, yielding a paper valuation of one thousand one hundred fifty dollars. Next, calculate the live market value by multiplying your one hundred units by twelve dollars, which equals one thousand two hundred dollars. The fifty-dollar discrepancy represents the temporary valuation lag caused by the API delay. Recognizing this difference prevents you from making hasty rebalancing decisions based on outdated interface data.\n\nKEY TAKEAWAYS\nObservation time, fetch time and periodic sampling describe different parts of a data feed.\nDelayed marks can differ from a contemporaneous comparison quote, whose own venue and timestamp must be stated.\nA hypothetical slippage assumption and a separately charged fee do not reproduce actual order-book execution.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. What is the main cause of a delay between a live exchange price and a virtual trading dashboard?\nThe network bandwidth restrictions imposed by local internet providers.API transmission latency and data caching intervals.Manual authorization steps required for every virtual market trade.Government monitoring procedures that freeze prices temporarily.\n2. How does an API delay impact paper-trading portfolio valuations?\nIt prevents users from executing any buy or sell transactions.It permanently locks the account balance until the live market closes.It creates a temporary discrepancy between paper values and live market rates.It forces the portfolio to automatically convert all assets to cash.\n3. What is a limitation of adding a hypothetical slippage adjustment to a worksheet?\nIt guarantees the actual venue fillIt compares an assumption but does not reproduce actual order-book executionIt creates real commission revenueIt removes the need for timestamps\n4. If your portfolio has 50 units of an asset, the live price is $10, and the delayed dashboard price is $8, what is your paper valuation?\n$400$500$100$90\nSubmit & complete lesson\nSOURCES & FURTHER READING\nCoinGecko — Price Methodology\nCoinGecko — Coin Price API\nExchange Tickers and Price Aggregation Foundations\nPortfolio Rebalancing and Cash Drag Dynamics\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "API Delays and Portfolio Valuation Mechanics — Understanding Cryptocurrency Price Feeds and Portfolio Valuation | TradeHQ",
+      "heading": "API Delays and Portfolio Valuation Mechanics",
+      "supplementaryNotes": [],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1905,
+      "scrollHeight": 6101,
+      "viewportWidth": 1920,
+      "canonical": "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/api-delays-and-portfolio-valuation",
+      "images": [
+        {
+          "alt": "API Delays and Portfolio Valuation Mechanics — illustration",
+          "complete": true,
+          "naturalWidth": 1920,
+          "source": "https://www.thetradehq.com/course-covers/trading-basics.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "58fa88fc44c95cfc-1920-00.png"
+        },
+        {
+          "y": 918,
+          "screenshot": "58fa88fc44c95cfc-1920-01.png"
+        },
+        {
+          "y": 1836,
+          "screenshot": "58fa88fc44c95cfc-1920-02.png"
+        },
+        {
+          "y": 2754,
+          "screenshot": "58fa88fc44c95cfc-1920-03.png"
+        },
+        {
+          "y": 3672,
+          "screenshot": "58fa88fc44c95cfc-1920-04.png"
+        },
+        {
+          "y": 4590,
+          "screenshot": "58fa88fc44c95cfc-1920-05.png"
+        },
+        {
+          "y": 5021,
+          "screenshot": "58fa88fc44c95cfc-1920-06.png"
+        }
+      ]
+    }
+  ]
+}

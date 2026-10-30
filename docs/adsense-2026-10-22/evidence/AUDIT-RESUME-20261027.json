@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-10-30T11:25:17.270627+00:00",
-  "latestMergedProductionSHA": "55087f82f4df93a1e8f84e1e59295c62308247fd",
+  "updatedAt": "2026-10-30T11:40:41.825446+00:00",
+  "latestMergedProductionSHA": "4fad776ec28409929eb08f47e4734c229e79adb8",
   "fullpageRoutesPersonallyViewed": 454,
   "publicInventoryRoutes": 454,
   "remainingDefaultVisualRoutes": 0,
   "confirmedFindings": 83,
-  "publiclyVerifiedRepairs": 81,
+  "publiclyVerifiedRepairs": 83,
   "activeCandidate": null,
   "releaseGate": {
     "active": false,
@@ -13,7 +13,7 @@
   },
   "publicProfileControls": "60profiles240states120focusedEnterLeaderboard/backflows PASS; all120initiallightimages personallyviewed across31sheets. No full accessibility certification.",
   "activeCollection": null,
-  "unresolved": "2 substantive findings remain until closed with release evidence; exact count follows FINDINGS.json. Remaining full-light scroll, sequential Tab, zoom, screenreader, primary sources, originality/value, daily conditional and regional ad/CMP/account stages prevent whole-audit completion.",
+  "unresolved": "0 substantive findings remain until closed with release evidence; exact count follows FINDINGS.json. Remaining full-light scroll, sequential Tab, zoom, screenreader, primary sources, originality/value, daily conditional and regional ad/CMP/account stages prevent whole-audit completion.",
   "historicalResumeNote": "Earlier checkpoint fields were stale; historical observations remain in their dated receipts and git history.",
   "terminalControls": "19assetterminals76light/darkmobile/desktopstates372focusedEnterFAQexpansions PASS; all38initiallightimages personallyviewed. No fullaccessibilitycertification.",
   "latestOwnerUpdate": "Owner clarified the repeated rejection only provides generic account-not-approved/few-more-tweaks wording and Sites section is inaccessible without resubmission. No further rejection detail is available; do not repeatedly request it. No inferred Google rejection cause.",
@@ -21,19 +21,8 @@
   "terminalSixthControls": "Evidence TERMINAL-SIXTH-SAFE-CONTROLS-20261028.json; freshness/navigationinitialfailurepreserved separately.",
   "terminalSeventhControls": "20 terminals,80 states,396 FAQ expansions,all40 initial light images personally viewed.",
   "terminalFinalControls": "27 terminals,108 states,536 FAQ expansions,all54 initial light images personally viewed.",
-  "latestFullyVerifiedProductionSHA": "55087f82f4df93a1e8f84e1e59295c62308247fd",
-  "fullLightRoutesPersonallyViewed": 43,
-  "remainingFullLightRoutes": 411,
-  "currentFindingStates": [
-    {
-      "id": "THQ-069",
-      "state": "PREPARED_NOT_MERGED",
-      "scope": "Learning path level labels have low contrast on light backgrounds"
-    },
-    {
-      "id": "THQ-078",
-      "state": "PREPARED_NOT_MERGED",
-      "scope": "Inactive background-music icon loses contrast over the black footer in light mode"
-    }
-  ]
+  "latestFullyVerifiedProductionSHA": "4fad776ec28409929eb08f47e4734c229e79adb8",
+  "fullLightRoutesPersonallyViewed": 47,
+  "remainingFullLightRoutes": 407,
+  "currentFindingStates": []
 }

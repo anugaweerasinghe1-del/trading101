@@ -1,0 +1,380 @@
+{
+  "path": "/courses/cryptocurrency-price-feeds-and-valuation/exchange-tickers-and-price-aggregation",
+  "sha": "55087f82f4df93a1e8f84e1e59295c62308247fd",
+  "origin": "https://www.thetradehq.com",
+  "capturedAt": "2026-10-30T11:26:58.603Z",
+  "outcome": "COLLECTED_NOT_HUMAN_REVIEWED",
+  "widths": [
+    {
+      "width": 360,
+      "height": 800,
+      "path": "/courses/cryptocurrency-price-feeds-and-valuation/exchange-tickers-and-price-aggregation",
+      "theme": "light",
+      "mainText": "Home\nCourses\nUnderstanding Cryptocurrency Price Feeds and Portfolio Valuation\nExchange Tickers and Price Aggregation Foundations\nIntermediate\n·\nLesson 1 of 3\n·\n8 min read\nExchange Tickers and Price Aggregation Foundations\n\nLearn how individual cryptocurrency exchanges generate ticker prices and how data aggregators synthesize this information into a unified market rate.\n\nPrepared with AI assistance · Publication review recorded by Anuga Weerasinghe · 09/10/2026\nQUICK ANSWER\nExchange Tickers and Price Aggregation Foundations?\n\nLearn how individual cryptocurrency exchanges generate ticker prices and how data aggregators synthesize this information into a unified market rate. Independent venues can publish different ticker measures and observations. The worksheet weights comparable prices by matched unit volume; provider implementations can add other rules.\n\nRaw Exchange Tickers and Order Books\n\nA venue can publish individual trades and ticker summaries. A ticker may contain a last trade, bid, ask or rolling volume rather than one universally defined transaction record. Independent venues have different order books, liquidity, quote currencies and timestamps. Aggregation creates a reference under the provider’s stated method, not a price executable for any quantity on every exchange. Record the asset identifier and quote currency before comparing prices; matching symbols alone cannot establish that two feeds describe the same instrument.\n\nA bid is a quoted buying price and an ask is a quoted selling price for a specified venue and time. Their difference is the spread. Available quantity matters separately: a narrow spread does not guarantee a large order can execute at that quote. A burst of volume does not make a ticker complete or certify a global consensus. Compare observations using matching instruments, quote currencies and timestamps before attributing a difference to liquidity. An unusual price can be a real venue observation rather than an erroneous record; the source and measurement window determine which question can be answered.\n\nVolume-Weighted Average Price Mechanics\n\nA volume-weighted average multiplies each comparable price by its matched unit volume, adds those products and divides by total units. Larger weights contribute more to this arithmetic average. Providers can additionally filter observations, convert quote currencies and apply product-specific aggregation rules. Match the volume periods and quantity units before calculating; dollar turnover is not interchangeable with token units. An aggregate reference is neither a reserved quote nor a guarantee that any specified quantity can be exchanged at that price. The following invented two-venue example demonstrates only the stated weighting calculation.\n\nLet us consider a simplified hypothetical calculation to see this system in action. Suppose an asset trades on Exchange A at ten dollars with a volume of one thousand units, and on Exchange B at eleven dollars with a volume of one hundred units. To calculate the VWAP, you multiply each price by its volume, sum these products to get eleven thousand one hundred dollars, and divide by the total volume of one thousand one hundred units. This mathematical process yields an aggregated price of ten dollars and nine cents.\n\nOutlier Detection and Filtering\n\nOutlier rules depend on the provider and data product. A stale timestamp, mapping problem or exchange-specific dislocation may warrant investigation, but an unusual observation is not automatically wrong. Compare the exact provider methodology, identifiers and observation window before describing a rejection rule. The worksheet below uses invented, comparable observations and does not reproduce CoinGecko’s complete live aggregation process or guarantee its data quality.\n\nA provider may filter stale, anomalous or unsuitable observations under its published methodology. CoinGecko’s linked methodology describes its aggregation and outlier treatment; read its current rules rather than treating this exercise as a complete implementation. A genuine large move is not automatically an error, and a successful filter cannot guarantee that the remaining reference is fresh or executable. Record the provider observation timestamp, excluded venues and comparison window when those details are available.\n\nPractice Task: Calculating VWAP\n\nNow, let us test your understanding of price aggregation with a hands-on exercise. Imagine you are tracking a digital token across three separate exchanges to establish its baseline price for a paper-trading account. Exchange Alpha reports a transaction price of five dollars with fifty units traded. Exchange Beta shows five dollars and twenty cents with thirty units traded. Exchange Gamma records four dollars and eighty cents with twenty units traded. Your objective is to compute the global volume-weighted average price based on these specific parameters.\n\nTo solve this, multiply each exchange price by its respective volume: two hundred fifty dollars, one hundred fifty-six dollars, and ninety-six dollars. Summing these values gives a total dollar volume of five hundred two dollars. Next, add the individual volumes together, which equals exactly one hundred units. Finally, divide the total dollar volume by the total unit volume, resulting in an aggregated price of exactly five dollars and two cents. This structured process demonstrates how higher volume trades pull the average toward their execution level.\n\nKEY TAKEAWAYS\nIndependent venues can publish different ticker measures and observations.\nThe worksheet weights comparable prices by matched unit volume; provider implementations can add other rules.\nFiltering and freshness require the provider’s current methodology and timestamps, not an assumed universal algorithm.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. Why do cryptocurrency prices vary slightly across different exchanges simultaneously?\nExchanges operate independently as separate markets without a central clearinghouse.Data aggregators intentionally introduce differences to balance trading volumes.Smart contracts force prices to vary based on the geographic location of users.The Federal Reserve regulates individual digital exchanges with custom price caps.\n2. How does a Volume-Weighted Average Price (VWAP) calculation differ from a simple average?\nIt only counts the lowest and highest prices reported in a twenty-four-hour window.It assigns greater weight to exchanges with higher transaction volumes.It excludes cryptocurrency assets that do not have a fiat trading pair.It automatically doubles the weight of decentralized exchanges.\n3. What should you consult before assuming how a provider filters outliers?\nAn unrelated moving averageThe provider’s current published methodologyOnly the token symbolA guaranteed-price claim\n4. If Exchange X has 100 units traded at $10 and Exchange Y has 200 units traded at $13, what is the VWAP?\n$11.00$11.50$12.00$12.50\nSubmit & complete lesson\nSOURCES & FURTHER READING\nCoinGecko — Price Methodology\nCoinGecko — Coin Price API\nAPI Delays and Portfolio Valuation Mechanics\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "Exchange Tickers and Price Aggregation Foundations — Understanding Cryptocurrency Price Feeds and Portfolio Valuation | TradeHQ",
+      "heading": "Exchange Tickers and Price Aggregation Foundations",
+      "supplementaryNotes": [],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 360,
+      "scrollHeight": 10299,
+      "viewportWidth": 360,
+      "canonical": "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/exchange-tickers-and-price-aggregation",
+      "images": [
+        {
+          "alt": "Exchange Tickers and Price Aggregation Foundations — illustration",
+          "complete": true,
+          "naturalWidth": 1920,
+          "source": "https://www.thetradehq.com/course-covers/trading-basics.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "7ba23e3948f3ede5-360-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "7ba23e3948f3ede5-360-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "7ba23e3948f3ede5-360-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "7ba23e3948f3ede5-360-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "7ba23e3948f3ede5-360-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "7ba23e3948f3ede5-360-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "7ba23e3948f3ede5-360-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "7ba23e3948f3ede5-360-07.png"
+        },
+        {
+          "y": 5440,
+          "screenshot": "7ba23e3948f3ede5-360-08.png"
+        },
+        {
+          "y": 6120,
+          "screenshot": "7ba23e3948f3ede5-360-09.png"
+        },
+        {
+          "y": 6800,
+          "screenshot": "7ba23e3948f3ede5-360-10.png"
+        },
+        {
+          "y": 7480,
+          "screenshot": "7ba23e3948f3ede5-360-11.png"
+        },
+        {
+          "y": 8160,
+          "screenshot": "7ba23e3948f3ede5-360-12.png"
+        },
+        {
+          "y": 8840,
+          "screenshot": "7ba23e3948f3ede5-360-13.png"
+        },
+        {
+          "y": 9499,
+          "screenshot": "7ba23e3948f3ede5-360-14.png"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "path": "/courses/cryptocurrency-price-feeds-and-valuation/exchange-tickers-and-price-aggregation",
+      "theme": "light",
+      "mainText": "Home\nCourses\nUnderstanding Cryptocurrency Price Feeds and Portfolio Valuation\nExchange Tickers and Price Aggregation Foundations\nIntermediate\n·\nLesson 1 of 3\n·\n8 min read\nExchange Tickers and Price Aggregation Foundations\n\nLearn how individual cryptocurrency exchanges generate ticker prices and how data aggregators synthesize this information into a unified market rate.\n\nPrepared with AI assistance · Publication review recorded by Anuga Weerasinghe · 09/10/2026\nQUICK ANSWER\nExchange Tickers and Price Aggregation Foundations?\n\nLearn how individual cryptocurrency exchanges generate ticker prices and how data aggregators synthesize this information into a unified market rate. Independent venues can publish different ticker measures and observations. The worksheet weights comparable prices by matched unit volume; provider implementations can add other rules.\n\nRaw Exchange Tickers and Order Books\n\nA venue can publish individual trades and ticker summaries. A ticker may contain a last trade, bid, ask or rolling volume rather than one universally defined transaction record. Independent venues have different order books, liquidity, quote currencies and timestamps. Aggregation creates a reference under the provider’s stated method, not a price executable for any quantity on every exchange. Record the asset identifier and quote currency before comparing prices; matching symbols alone cannot establish that two feeds describe the same instrument.\n\nA bid is a quoted buying price and an ask is a quoted selling price for a specified venue and time. Their difference is the spread. Available quantity matters separately: a narrow spread does not guarantee a large order can execute at that quote. A burst of volume does not make a ticker complete or certify a global consensus. Compare observations using matching instruments, quote currencies and timestamps before attributing a difference to liquidity. An unusual price can be a real venue observation rather than an erroneous record; the source and measurement window determine which question can be answered.\n\nVolume-Weighted Average Price Mechanics\n\nA volume-weighted average multiplies each comparable price by its matched unit volume, adds those products and divides by total units. Larger weights contribute more to this arithmetic average. Providers can additionally filter observations, convert quote currencies and apply product-specific aggregation rules. Match the volume periods and quantity units before calculating; dollar turnover is not interchangeable with token units. An aggregate reference is neither a reserved quote nor a guarantee that any specified quantity can be exchanged at that price. The following invented two-venue example demonstrates only the stated weighting calculation.\n\nLet us consider a simplified hypothetical calculation to see this system in action. Suppose an asset trades on Exchange A at ten dollars with a volume of one thousand units, and on Exchange B at eleven dollars with a volume of one hundred units. To calculate the VWAP, you multiply each price by its volume, sum these products to get eleven thousand one hundred dollars, and divide by the total volume of one thousand one hundred units. This mathematical process yields an aggregated price of ten dollars and nine cents.\n\nOutlier Detection and Filtering\n\nOutlier rules depend on the provider and data product. A stale timestamp, mapping problem or exchange-specific dislocation may warrant investigation, but an unusual observation is not automatically wrong. Compare the exact provider methodology, identifiers and observation window before describing a rejection rule. The worksheet below uses invented, comparable observations and does not reproduce CoinGecko’s complete live aggregation process or guarantee its data quality.\n\nA provider may filter stale, anomalous or unsuitable observations under its published methodology. CoinGecko’s linked methodology describes its aggregation and outlier treatment; read its current rules rather than treating this exercise as a complete implementation. A genuine large move is not automatically an error, and a successful filter cannot guarantee that the remaining reference is fresh or executable. Record the provider observation timestamp, excluded venues and comparison window when those details are available.\n\nPractice Task: Calculating VWAP\n\nNow, let us test your understanding of price aggregation with a hands-on exercise. Imagine you are tracking a digital token across three separate exchanges to establish its baseline price for a paper-trading account. Exchange Alpha reports a transaction price of five dollars with fifty units traded. Exchange Beta shows five dollars and twenty cents with thirty units traded. Exchange Gamma records four dollars and eighty cents with twenty units traded. Your objective is to compute the global volume-weighted average price based on these specific parameters.\n\nTo solve this, multiply each exchange price by its respective volume: two hundred fifty dollars, one hundred fifty-six dollars, and ninety-six dollars. Summing these values gives a total dollar volume of five hundred two dollars. Next, add the individual volumes together, which equals exactly one hundred units. Finally, divide the total dollar volume by the total unit volume, resulting in an aggregated price of exactly five dollars and two cents. This structured process demonstrates how higher volume trades pull the average toward their execution level.\n\nKEY TAKEAWAYS\nIndependent venues can publish different ticker measures and observations.\nThe worksheet weights comparable prices by matched unit volume; provider implementations can add other rules.\nFiltering and freshness require the provider’s current methodology and timestamps, not an assumed universal algorithm.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. Why do cryptocurrency prices vary slightly across different exchanges simultaneously?\nExchanges operate independently as separate markets without a central clearinghouse.Data aggregators intentionally introduce differences to balance trading volumes.Smart contracts force prices to vary based on the geographic location of users.The Federal Reserve regulates individual digital exchanges with custom price caps.\n2. How does a Volume-Weighted Average Price (VWAP) calculation differ from a simple average?\nIt only counts the lowest and highest prices reported in a twenty-four-hour window.It assigns greater weight to exchanges with higher transaction volumes.It excludes cryptocurrency assets that do not have a fiat trading pair.It automatically doubles the weight of decentralized exchanges.\n3. What should you consult before assuming how a provider filters outliers?\nAn unrelated moving averageThe provider’s current published methodologyOnly the token symbolA guaranteed-price claim\n4. If Exchange X has 100 units traded at $10 and Exchange Y has 200 units traded at $13, what is the VWAP?\n$11.00$11.50$12.00$12.50\nSubmit & complete lesson\nSOURCES & FURTHER READING\nCoinGecko — Price Methodology\nCoinGecko — Coin Price API\nAPI Delays and Portfolio Valuation Mechanics\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "Exchange Tickers and Price Aggregation Foundations — Understanding Cryptocurrency Price Feeds and Portfolio Valuation | TradeHQ",
+      "heading": "Exchange Tickers and Price Aggregation Foundations",
+      "supplementaryNotes": [],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "block"
+        }
+      ],
+      "scrollWidth": 390,
+      "scrollHeight": 9747,
+      "viewportWidth": 390,
+      "canonical": "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/exchange-tickers-and-price-aggregation",
+      "images": [
+        {
+          "alt": "Exchange Tickers and Price Aggregation Foundations — illustration",
+          "complete": true,
+          "naturalWidth": 1920,
+          "source": "https://www.thetradehq.com/course-covers/trading-basics.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "7ba23e3948f3ede5-390-00.png"
+        },
+        {
+          "y": 717,
+          "screenshot": "7ba23e3948f3ede5-390-01.png"
+        },
+        {
+          "y": 1434,
+          "screenshot": "7ba23e3948f3ede5-390-02.png"
+        },
+        {
+          "y": 2151,
+          "screenshot": "7ba23e3948f3ede5-390-03.png"
+        },
+        {
+          "y": 2868,
+          "screenshot": "7ba23e3948f3ede5-390-04.png"
+        },
+        {
+          "y": 3585,
+          "screenshot": "7ba23e3948f3ede5-390-05.png"
+        },
+        {
+          "y": 4302,
+          "screenshot": "7ba23e3948f3ede5-390-06.png"
+        },
+        {
+          "y": 5019,
+          "screenshot": "7ba23e3948f3ede5-390-07.png"
+        },
+        {
+          "y": 5736,
+          "screenshot": "7ba23e3948f3ede5-390-08.png"
+        },
+        {
+          "y": 6453,
+          "screenshot": "7ba23e3948f3ede5-390-09.png"
+        },
+        {
+          "y": 7170,
+          "screenshot": "7ba23e3948f3ede5-390-10.png"
+        },
+        {
+          "y": 7887,
+          "screenshot": "7ba23e3948f3ede5-390-11.png"
+        },
+        {
+          "y": 8604,
+          "screenshot": "7ba23e3948f3ede5-390-12.png"
+        },
+        {
+          "y": 8903,
+          "screenshot": "7ba23e3948f3ede5-390-13.png"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "path": "/courses/cryptocurrency-price-feeds-and-valuation/exchange-tickers-and-price-aggregation",
+      "theme": "light",
+      "mainText": "Home\nCourses\nUnderstanding Cryptocurrency Price Feeds and Portfolio Valuation\nExchange Tickers and Price Aggregation Foundations\nIntermediate\n·\nLesson 1 of 3\n·\n8 min read\nExchange Tickers and Price Aggregation Foundations\n\nLearn how individual cryptocurrency exchanges generate ticker prices and how data aggregators synthesize this information into a unified market rate.\n\nPrepared with AI assistance · Publication review recorded by Anuga Weerasinghe · 09/10/2026\nQUICK ANSWER\nExchange Tickers and Price Aggregation Foundations?\n\nLearn how individual cryptocurrency exchanges generate ticker prices and how data aggregators synthesize this information into a unified market rate. Independent venues can publish different ticker measures and observations. The worksheet weights comparable prices by matched unit volume; provider implementations can add other rules.\n\nRaw Exchange Tickers and Order Books\n\nA venue can publish individual trades and ticker summaries. A ticker may contain a last trade, bid, ask or rolling volume rather than one universally defined transaction record. Independent venues have different order books, liquidity, quote currencies and timestamps. Aggregation creates a reference under the provider’s stated method, not a price executable for any quantity on every exchange. Record the asset identifier and quote currency before comparing prices; matching symbols alone cannot establish that two feeds describe the same instrument.\n\nA bid is a quoted buying price and an ask is a quoted selling price for a specified venue and time. Their difference is the spread. Available quantity matters separately: a narrow spread does not guarantee a large order can execute at that quote. A burst of volume does not make a ticker complete or certify a global consensus. Compare observations using matching instruments, quote currencies and timestamps before attributing a difference to liquidity. An unusual price can be a real venue observation rather than an erroneous record; the source and measurement window determine which question can be answered.\n\nVolume-Weighted Average Price Mechanics\n\nA volume-weighted average multiplies each comparable price by its matched unit volume, adds those products and divides by total units. Larger weights contribute more to this arithmetic average. Providers can additionally filter observations, convert quote currencies and apply product-specific aggregation rules. Match the volume periods and quantity units before calculating; dollar turnover is not interchangeable with token units. An aggregate reference is neither a reserved quote nor a guarantee that any specified quantity can be exchanged at that price. The following invented two-venue example demonstrates only the stated weighting calculation.\n\nLet us consider a simplified hypothetical calculation to see this system in action. Suppose an asset trades on Exchange A at ten dollars with a volume of one thousand units, and on Exchange B at eleven dollars with a volume of one hundred units. To calculate the VWAP, you multiply each price by its volume, sum these products to get eleven thousand one hundred dollars, and divide by the total volume of one thousand one hundred units. This mathematical process yields an aggregated price of ten dollars and nine cents.\n\nOutlier Detection and Filtering\n\nOutlier rules depend on the provider and data product. A stale timestamp, mapping problem or exchange-specific dislocation may warrant investigation, but an unusual observation is not automatically wrong. Compare the exact provider methodology, identifiers and observation window before describing a rejection rule. The worksheet below uses invented, comparable observations and does not reproduce CoinGecko’s complete live aggregation process or guarantee its data quality.\n\nA provider may filter stale, anomalous or unsuitable observations under its published methodology. CoinGecko’s linked methodology describes its aggregation and outlier treatment; read its current rules rather than treating this exercise as a complete implementation. A genuine large move is not automatically an error, and a successful filter cannot guarantee that the remaining reference is fresh or executable. Record the provider observation timestamp, excluded venues and comparison window when those details are available.\n\nPractice Task: Calculating VWAP\n\nNow, let us test your understanding of price aggregation with a hands-on exercise. Imagine you are tracking a digital token across three separate exchanges to establish its baseline price for a paper-trading account. Exchange Alpha reports a transaction price of five dollars with fifty units traded. Exchange Beta shows five dollars and twenty cents with thirty units traded. Exchange Gamma records four dollars and eighty cents with twenty units traded. Your objective is to compute the global volume-weighted average price based on these specific parameters.\n\nTo solve this, multiply each exchange price by its respective volume: two hundred fifty dollars, one hundred fifty-six dollars, and ninety-six dollars. Summing these values gives a total dollar volume of five hundred two dollars. Next, add the individual volumes together, which equals exactly one hundred units. Finally, divide the total dollar volume by the total unit volume, resulting in an aggregated price of exactly five dollars and two cents. This structured process demonstrates how higher volume trades pull the average toward their execution level.\n\nKEY TAKEAWAYS\nIndependent venues can publish different ticker measures and observations.\nThe worksheet weights comparable prices by matched unit volume; provider implementations can add other rules.\nFiltering and freshness require the provider’s current methodology and timestamps, not an assumed universal algorithm.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. Why do cryptocurrency prices vary slightly across different exchanges simultaneously?\nExchanges operate independently as separate markets without a central clearinghouse.Data aggregators intentionally introduce differences to balance trading volumes.Smart contracts force prices to vary based on the geographic location of users.The Federal Reserve regulates individual digital exchanges with custom price caps.\n2. How does a Volume-Weighted Average Price (VWAP) calculation differ from a simple average?\nIt only counts the lowest and highest prices reported in a twenty-four-hour window.It assigns greater weight to exchanges with higher transaction volumes.It excludes cryptocurrency assets that do not have a fiat trading pair.It automatically doubles the weight of decentralized exchanges.\n3. What should you consult before assuming how a provider filters outliers?\nAn unrelated moving averageThe provider’s current published methodologyOnly the token symbolA guaranteed-price claim\n4. If Exchange X has 100 units traded at $10 and Exchange Y has 200 units traded at $13, what is the VWAP?\n$11.00$11.50$12.00$12.50\nSubmit & complete lesson\nSOURCES & FURTHER READING\nCoinGecko — Price Methodology\nCoinGecko — Coin Price API\nAPI Delays and Portfolio Valuation Mechanics\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "Exchange Tickers and Price Aggregation Foundations — Understanding Cryptocurrency Price Feeds and Portfolio Valuation | TradeHQ",
+      "heading": "Exchange Tickers and Price Aggregation Foundations",
+      "supplementaryNotes": [],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 753,
+      "scrollHeight": 6789,
+      "viewportWidth": 768,
+      "canonical": "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/exchange-tickers-and-price-aggregation",
+      "images": [
+        {
+          "alt": "Exchange Tickers and Price Aggregation Foundations — illustration",
+          "complete": true,
+          "naturalWidth": 1920,
+          "source": "https://www.thetradehq.com/course-covers/trading-basics.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "7ba23e3948f3ede5-768-00.png"
+        },
+        {
+          "y": 870,
+          "screenshot": "7ba23e3948f3ede5-768-01.png"
+        },
+        {
+          "y": 1740,
+          "screenshot": "7ba23e3948f3ede5-768-02.png"
+        },
+        {
+          "y": 2610,
+          "screenshot": "7ba23e3948f3ede5-768-03.png"
+        },
+        {
+          "y": 3480,
+          "screenshot": "7ba23e3948f3ede5-768-04.png"
+        },
+        {
+          "y": 4350,
+          "screenshot": "7ba23e3948f3ede5-768-05.png"
+        },
+        {
+          "y": 5220,
+          "screenshot": "7ba23e3948f3ede5-768-06.png"
+        },
+        {
+          "y": 5765,
+          "screenshot": "7ba23e3948f3ede5-768-07.png"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "path": "/courses/cryptocurrency-price-feeds-and-valuation/exchange-tickers-and-price-aggregation",
+      "theme": "light",
+      "mainText": "Home\nCourses\nUnderstanding Cryptocurrency Price Feeds and Portfolio Valuation\nExchange Tickers and Price Aggregation Foundations\nIntermediate\n·\nLesson 1 of 3\n·\n8 min read\nExchange Tickers and Price Aggregation Foundations\n\nLearn how individual cryptocurrency exchanges generate ticker prices and how data aggregators synthesize this information into a unified market rate.\n\nPrepared with AI assistance · Publication review recorded by Anuga Weerasinghe · 09/10/2026\nQUICK ANSWER\nExchange Tickers and Price Aggregation Foundations?\n\nLearn how individual cryptocurrency exchanges generate ticker prices and how data aggregators synthesize this information into a unified market rate. Independent venues can publish different ticker measures and observations. The worksheet weights comparable prices by matched unit volume; provider implementations can add other rules.\n\nRaw Exchange Tickers and Order Books\n\nA venue can publish individual trades and ticker summaries. A ticker may contain a last trade, bid, ask or rolling volume rather than one universally defined transaction record. Independent venues have different order books, liquidity, quote currencies and timestamps. Aggregation creates a reference under the provider’s stated method, not a price executable for any quantity on every exchange. Record the asset identifier and quote currency before comparing prices; matching symbols alone cannot establish that two feeds describe the same instrument.\n\nA bid is a quoted buying price and an ask is a quoted selling price for a specified venue and time. Their difference is the spread. Available quantity matters separately: a narrow spread does not guarantee a large order can execute at that quote. A burst of volume does not make a ticker complete or certify a global consensus. Compare observations using matching instruments, quote currencies and timestamps before attributing a difference to liquidity. An unusual price can be a real venue observation rather than an erroneous record; the source and measurement window determine which question can be answered.\n\nVolume-Weighted Average Price Mechanics\n\nA volume-weighted average multiplies each comparable price by its matched unit volume, adds those products and divides by total units. Larger weights contribute more to this arithmetic average. Providers can additionally filter observations, convert quote currencies and apply product-specific aggregation rules. Match the volume periods and quantity units before calculating; dollar turnover is not interchangeable with token units. An aggregate reference is neither a reserved quote nor a guarantee that any specified quantity can be exchanged at that price. The following invented two-venue example demonstrates only the stated weighting calculation.\n\nLet us consider a simplified hypothetical calculation to see this system in action. Suppose an asset trades on Exchange A at ten dollars with a volume of one thousand units, and on Exchange B at eleven dollars with a volume of one hundred units. To calculate the VWAP, you multiply each price by its volume, sum these products to get eleven thousand one hundred dollars, and divide by the total volume of one thousand one hundred units. This mathematical process yields an aggregated price of ten dollars and nine cents.\n\nOutlier Detection and Filtering\n\nOutlier rules depend on the provider and data product. A stale timestamp, mapping problem or exchange-specific dislocation may warrant investigation, but an unusual observation is not automatically wrong. Compare the exact provider methodology, identifiers and observation window before describing a rejection rule. The worksheet below uses invented, comparable observations and does not reproduce CoinGecko’s complete live aggregation process or guarantee its data quality.\n\nA provider may filter stale, anomalous or unsuitable observations under its published methodology. CoinGecko’s linked methodology describes its aggregation and outlier treatment; read its current rules rather than treating this exercise as a complete implementation. A genuine large move is not automatically an error, and a successful filter cannot guarantee that the remaining reference is fresh or executable. Record the provider observation timestamp, excluded venues and comparison window when those details are available.\n\nPractice Task: Calculating VWAP\n\nNow, let us test your understanding of price aggregation with a hands-on exercise. Imagine you are tracking a digital token across three separate exchanges to establish its baseline price for a paper-trading account. Exchange Alpha reports a transaction price of five dollars with fifty units traded. Exchange Beta shows five dollars and twenty cents with thirty units traded. Exchange Gamma records four dollars and eighty cents with twenty units traded. Your objective is to compute the global volume-weighted average price based on these specific parameters.\n\nTo solve this, multiply each exchange price by its respective volume: two hundred fifty dollars, one hundred fifty-six dollars, and ninety-six dollars. Summing these values gives a total dollar volume of five hundred two dollars. Next, add the individual volumes together, which equals exactly one hundred units. Finally, divide the total dollar volume by the total unit volume, resulting in an aggregated price of exactly five dollars and two cents. This structured process demonstrates how higher volume trades pull the average toward their execution level.\n\nKEY TAKEAWAYS\nIndependent venues can publish different ticker measures and observations.\nThe worksheet weights comparable prices by matched unit volume; provider implementations can add other rules.\nFiltering and freshness require the provider’s current methodology and timestamps, not an assumed universal algorithm.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. Why do cryptocurrency prices vary slightly across different exchanges simultaneously?\nExchanges operate independently as separate markets without a central clearinghouse.Data aggregators intentionally introduce differences to balance trading volumes.Smart contracts force prices to vary based on the geographic location of users.The Federal Reserve regulates individual digital exchanges with custom price caps.\n2. How does a Volume-Weighted Average Price (VWAP) calculation differ from a simple average?\nIt only counts the lowest and highest prices reported in a twenty-four-hour window.It assigns greater weight to exchanges with higher transaction volumes.It excludes cryptocurrency assets that do not have a fiat trading pair.It automatically doubles the weight of decentralized exchanges.\n3. What should you consult before assuming how a provider filters outliers?\nAn unrelated moving averageThe provider’s current published methodologyOnly the token symbolA guaranteed-price claim\n4. If Exchange X has 100 units traded at $10 and Exchange Y has 200 units traded at $13, what is the VWAP?\n$11.00$11.50$12.00$12.50\nSubmit & complete lesson\nSOURCES & FURTHER READING\nCoinGecko — Price Methodology\nCoinGecko — Coin Price API\nAPI Delays and Portfolio Valuation Mechanics\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "Exchange Tickers and Price Aggregation Foundations — Understanding Cryptocurrency Price Feeds and Portfolio Valuation | TradeHQ",
+      "heading": "Exchange Tickers and Price Aggregation Foundations",
+      "supplementaryNotes": [],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1265,
+      "scrollHeight": 6299,
+      "viewportWidth": 1280,
+      "canonical": "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/exchange-tickers-and-price-aggregation",
+      "images": [
+        {
+          "alt": "Exchange Tickers and Price Aggregation Foundations — illustration",
+          "complete": true,
+          "naturalWidth": 1920,
+          "source": "https://www.thetradehq.com/course-covers/trading-basics.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "7ba23e3948f3ede5-1280-00.png"
+        },
+        {
+          "y": 680,
+          "screenshot": "7ba23e3948f3ede5-1280-01.png"
+        },
+        {
+          "y": 1360,
+          "screenshot": "7ba23e3948f3ede5-1280-02.png"
+        },
+        {
+          "y": 2040,
+          "screenshot": "7ba23e3948f3ede5-1280-03.png"
+        },
+        {
+          "y": 2720,
+          "screenshot": "7ba23e3948f3ede5-1280-04.png"
+        },
+        {
+          "y": 3400,
+          "screenshot": "7ba23e3948f3ede5-1280-05.png"
+        },
+        {
+          "y": 4080,
+          "screenshot": "7ba23e3948f3ede5-1280-06.png"
+        },
+        {
+          "y": 4760,
+          "screenshot": "7ba23e3948f3ede5-1280-07.png"
+        },
+        {
+          "y": 5440,
+          "screenshot": "7ba23e3948f3ede5-1280-08.png"
+        },
+        {
+          "y": 5499,
+          "screenshot": "7ba23e3948f3ede5-1280-09.png"
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "path": "/courses/cryptocurrency-price-feeds-and-valuation/exchange-tickers-and-price-aggregation",
+      "theme": "light",
+      "mainText": "Home\nCourses\nUnderstanding Cryptocurrency Price Feeds and Portfolio Valuation\nExchange Tickers and Price Aggregation Foundations\nIntermediate\n·\nLesson 1 of 3\n·\n8 min read\nExchange Tickers and Price Aggregation Foundations\n\nLearn how individual cryptocurrency exchanges generate ticker prices and how data aggregators synthesize this information into a unified market rate.\n\nPrepared with AI assistance · Publication review recorded by Anuga Weerasinghe · 09/10/2026\nQUICK ANSWER\nExchange Tickers and Price Aggregation Foundations?\n\nLearn how individual cryptocurrency exchanges generate ticker prices and how data aggregators synthesize this information into a unified market rate. Independent venues can publish different ticker measures and observations. The worksheet weights comparable prices by matched unit volume; provider implementations can add other rules.\n\nRaw Exchange Tickers and Order Books\n\nA venue can publish individual trades and ticker summaries. A ticker may contain a last trade, bid, ask or rolling volume rather than one universally defined transaction record. Independent venues have different order books, liquidity, quote currencies and timestamps. Aggregation creates a reference under the provider’s stated method, not a price executable for any quantity on every exchange. Record the asset identifier and quote currency before comparing prices; matching symbols alone cannot establish that two feeds describe the same instrument.\n\nA bid is a quoted buying price and an ask is a quoted selling price for a specified venue and time. Their difference is the spread. Available quantity matters separately: a narrow spread does not guarantee a large order can execute at that quote. A burst of volume does not make a ticker complete or certify a global consensus. Compare observations using matching instruments, quote currencies and timestamps before attributing a difference to liquidity. An unusual price can be a real venue observation rather than an erroneous record; the source and measurement window determine which question can be answered.\n\nVolume-Weighted Average Price Mechanics\n\nA volume-weighted average multiplies each comparable price by its matched unit volume, adds those products and divides by total units. Larger weights contribute more to this arithmetic average. Providers can additionally filter observations, convert quote currencies and apply product-specific aggregation rules. Match the volume periods and quantity units before calculating; dollar turnover is not interchangeable with token units. An aggregate reference is neither a reserved quote nor a guarantee that any specified quantity can be exchanged at that price. The following invented two-venue example demonstrates only the stated weighting calculation.\n\nLet us consider a simplified hypothetical calculation to see this system in action. Suppose an asset trades on Exchange A at ten dollars with a volume of one thousand units, and on Exchange B at eleven dollars with a volume of one hundred units. To calculate the VWAP, you multiply each price by its volume, sum these products to get eleven thousand one hundred dollars, and divide by the total volume of one thousand one hundred units. This mathematical process yields an aggregated price of ten dollars and nine cents.\n\nOutlier Detection and Filtering\n\nOutlier rules depend on the provider and data product. A stale timestamp, mapping problem or exchange-specific dislocation may warrant investigation, but an unusual observation is not automatically wrong. Compare the exact provider methodology, identifiers and observation window before describing a rejection rule. The worksheet below uses invented, comparable observations and does not reproduce CoinGecko’s complete live aggregation process or guarantee its data quality.\n\nA provider may filter stale, anomalous or unsuitable observations under its published methodology. CoinGecko’s linked methodology describes its aggregation and outlier treatment; read its current rules rather than treating this exercise as a complete implementation. A genuine large move is not automatically an error, and a successful filter cannot guarantee that the remaining reference is fresh or executable. Record the provider observation timestamp, excluded venues and comparison window when those details are available.\n\nPractice Task: Calculating VWAP\n\nNow, let us test your understanding of price aggregation with a hands-on exercise. Imagine you are tracking a digital token across three separate exchanges to establish its baseline price for a paper-trading account. Exchange Alpha reports a transaction price of five dollars with fifty units traded. Exchange Beta shows five dollars and twenty cents with thirty units traded. Exchange Gamma records four dollars and eighty cents with twenty units traded. Your objective is to compute the global volume-weighted average price based on these specific parameters.\n\nTo solve this, multiply each exchange price by its respective volume: two hundred fifty dollars, one hundred fifty-six dollars, and ninety-six dollars. Summing these values gives a total dollar volume of five hundred two dollars. Next, add the individual volumes together, which equals exactly one hundred units. Finally, divide the total dollar volume by the total unit volume, resulting in an aggregated price of exactly five dollars and two cents. This structured process demonstrates how higher volume trades pull the average toward their execution level.\n\nKEY TAKEAWAYS\nIndependent venues can publish different ticker measures and observations.\nThe worksheet weights comparable prices by matched unit volume; provider implementations can add other rules.\nFiltering and freshness require the provider’s current methodology and timestamps, not an assumed universal algorithm.\nCheck Your Understanding\n\nAnswer all 4 questions to complete this lesson.\n\n1. Why do cryptocurrency prices vary slightly across different exchanges simultaneously?\nExchanges operate independently as separate markets without a central clearinghouse.Data aggregators intentionally introduce differences to balance trading volumes.Smart contracts force prices to vary based on the geographic location of users.The Federal Reserve regulates individual digital exchanges with custom price caps.\n2. How does a Volume-Weighted Average Price (VWAP) calculation differ from a simple average?\nIt only counts the lowest and highest prices reported in a twenty-four-hour window.It assigns greater weight to exchanges with higher transaction volumes.It excludes cryptocurrency assets that do not have a fiat trading pair.It automatically doubles the weight of decentralized exchanges.\n3. What should you consult before assuming how a provider filters outliers?\nAn unrelated moving averageThe provider’s current published methodologyOnly the token symbolA guaranteed-price claim\n4. If Exchange X has 100 units traded at $10 and Exchange Y has 200 units traded at $13, what is the VWAP?\n$11.00$11.50$12.00$12.50\nSubmit & complete lesson\nSOURCES & FURTHER READING\nCoinGecko — Price Methodology\nCoinGecko — Coin Price API\nAPI Delays and Portfolio Valuation Mechanics\n\nTradeHQ is an educational paper trading simulator. No real money is traded. Nothing on this website constitutes investment, financial, legal or tax advice. Past simulated performance does not predict future real-world performance.",
+      "title": "Exchange Tickers and Price Aggregation Foundations — Understanding Cryptocurrency Price Feeds and Portfolio Valuation | TradeHQ",
+      "heading": "Exchange Tickers and Price Aggregation Foundations",
+      "supplementaryNotes": [],
+      "mobileNavigation": [
+        {
+          "position": "fixed",
+          "display": "none"
+        }
+      ],
+      "scrollWidth": 1905,
+      "scrollHeight": 6223,
+      "viewportWidth": 1920,
+      "canonical": "https://www.thetradehq.com/courses/cryptocurrency-price-feeds-and-valuation/exchange-tickers-and-price-aggregation",
+      "images": [
+        {
+          "alt": "Exchange Tickers and Price Aggregation Foundations — illustration",
+          "complete": true,
+          "naturalWidth": 1920,
+          "source": "https://www.thetradehq.com/course-covers/trading-basics.jpg"
+        }
+      ],
+      "horizontalCandidates": [],
+      "segments": [
+        {
+          "y": 0,
+          "screenshot": "7ba23e3948f3ede5-1920-00.png"
+        },
+        {
+          "y": 918,
+          "screenshot": "7ba23e3948f3ede5-1920-01.png"
+        },
+        {
+          "y": 1836,
+          "screenshot": "7ba23e3948f3ede5-1920-02.png"
+        },
+        {
+          "y": 2754,
+          "screenshot": "7ba23e3948f3ede5-1920-03.png"
+        },
+        {
+          "y": 3672,
+          "screenshot": "7ba23e3948f3ede5-1920-04.png"
+        },
+        {
+          "y": 4590,
+          "screenshot": "7ba23e3948f3ede5-1920-05.png"
+        },
+        {
+          "y": 5143,
+          "screenshot": "7ba23e3948f3ede5-1920-06.png"
+        }
+      ]
+    }
+  ]
+}

@@ -2804,7 +2804,7 @@
       "urls": [
         "https://www.thetradehq.com/learn"
       ],
-      "state": "PREPARED_NOT_MERGED",
+      "state": "PUBLICLY_VERIFIED",
       "evidence": "findings/LEARN-PATH-LIGHT-CONTRAST.md",
       "reproductionEvidence": "evidence/LEARN-PATH-CONTRAST-LIVE-BEFORE-20261029.json",
       "proposedFix": "Three LEARNING_PATH foreground classes receive light-only emerald800/blue800/amber800 variants; no content/progress/handler changes.",
@@ -2816,7 +2816,16 @@
         "evidence/CONTRAST-SURFACES-LOCAL-PERSONAL-20261030.json"
       ],
       "pr": 266,
-      "releaseHold": "PR265 fully verified. PR266 full unchanged workflow rerun and actual preview gates pending."
+      "releaseHold": null,
+      "mergeSHA": "4fad776ec28409929eb08f47e4734c229e79adb8",
+      "productionEvidence": "evidence/PR266-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR266-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR266-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR266-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 60,
+      "liveRecheck": "PASS exact merged production: [50] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
     },
     {
       "id": "THQ-070",
@@ -3113,7 +3122,7 @@
         "https://www.thetradehq.com/trader/theworst_trader"
       ],
       "affectedScope": "Shared floating background-music control on public pages; reproduced over public-profile black footer.",
-      "state": "PREPARED_NOT_MERGED",
+      "state": "PUBLICLY_VERIFIED",
       "evidence": "findings/AUDIO-CONTROL-LIGHT-CONTRAST.md",
       "reproductionEvidence": "evidence/AUDIO-CONTROL-CONTRAST-REPRODUCTION-20261030.json",
       "actualBehavior": "Light foreground token yields dark rgba15/70% over translucent black button and black footer; calculated icon contrast~1.05:1. Actual full-scroll images show almost invisible icon.",
@@ -3121,21 +3130,30 @@
       "proposedFix": "Add light-only opaque white backing, neutral800 icon and neutral500 border/hover variants; preserve dark/playing styling and all handlers.",
       "risk": "Low, reversible class-only presentation; no playback, persisted preferences or audio event changes.",
       "pr": 266,
-      "releaseHold": "PR265 fully verified. PR266 full unchanged workflow rerun and actual preview gates pending.",
+      "releaseHold": null,
       "candidateSHA": "5e5a7d420d74f5aa5ed882b12e8e303290c2606a",
       "localEvidence": [
         "evidence/CONTRAST-SURFACES-LOCAL-20261030.json",
         "evidence/CONTRAST-SURFACES-LOCAL-PERSONAL-20261030.json"
-      ]
+      ],
+      "mergeSHA": "4fad776ec28409929eb08f47e4734c229e79adb8",
+      "productionEvidence": "evidence/PR266-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR266-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR266-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR266-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 60,
+      "liveRecheck": "PASS exact merged production: [50] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
     }
   ],
-  "updatedAt": "2026-10-30T11:22:25.778672+00:00",
+  "updatedAt": "2026-10-30T11:40:08.057146+00:00",
   "counts": {
     "siteFindings": 83,
     "P2": 45,
     "P3": 38,
-    "publiclyRepaired": 81,
-    "preparedNotMerged": 2,
+    "publiclyRepaired": 83,
+    "preparedNotMerged": 0,
     "separateOperationalBlockers": 0,
     "mergedAwaitingProductionVerification": 0,
     "protectedUnapprovedRecordFixes": 0,
