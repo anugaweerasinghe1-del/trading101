@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-10-30T11:17:49.819517+00:00",
+  "sha": "5e5a7d420d74f5aa5ed882b12e8e303290c2606a",
+  "outcome": "FAIL_PRESERVED",
+  "runId": 41046536138,
+  "jobId": 124031879272,
+  "failure": "Error: Inspected target navigated or closed",
+  "step": "Verify all editorial routes on desktop and mobile with and without JavaScript",
+  "precedingEvidence": "155 compiled phase3 routes passed; failure during later /trade/btc probe at CDP transport command. No content/contrast assertion failure reported.",
+  "response": "One complete unchanged workflow rerun; no test/source bypass or CI weakening. All candidate gates must pass before merge."
+}

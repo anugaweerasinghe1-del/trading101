@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-30T11:00:56.026932+00:00",
-  "scope": "Actual personal screenshot viewing by route/stage. 451/454 public default full-page requested-five-width captures viewed; 40 full light routes viewed. Existing defects remain failures despite coverage. No conditional/source/full-accessibility/whole-audit completion implied.",
+  "updatedAt": "2026-10-30T11:25:17.270627+00:00",
+  "scope": "Actual personal screenshot viewing by route/stage. 454/454 public default full-page requested-five-width captures viewed; 43 full light routes viewed. Existing defects remain failures despite coverage. No conditional/source/full-accessibility/whole-audit completion implied.",
   "routes": {
     "/": {
       "status": "FULL_PAGE_DEFAULT_STATE_VIEWED_FOLLOWUPS_REMAIN",
@@ -7223,6 +7223,24 @@
       "path": "/trader/xern",
       "defaultFullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
       "assessment": "Personally reviewed all five viewport contact sheets in both separately dated default and light captures. Public portfolio values differ between captures with different quote timestamps; no calculation defect inferred. Username, cards, basis disclosure and footer remain readable. Allfive requested-width dark contact sheets personally viewed through footer end; no new profile-specific clipping observed.",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
+    },
+    "/trader/muzh3q": {
+      "path": "/trader/muzh3q",
+      "defaultFullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "assessment": "Public member since October2026; no account portfolio or server-recorded trades, explicitly disclosed. Virtual-only, unaudited, non-predictive scope and comparable/imported portfolio distinction visible. No profile-specific clipping observed through footer at five widths. Personally viewed all full-scroll contact sheets. Light-theme floating audio icon becomes faint over the black footer; record for contrast investigation, no pass credit for that control.",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
+    },
+    "/trader/thabomlingani": {
+      "path": "/trader/thabomlingani",
+      "defaultFullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "assessment": "Public member since October2026; no account portfolio or server-recorded trades, explicitly disclosed. Long username fits at360; explanation and complete footer readable at all five widths. No invented holdings or performance results. Personally viewed all full-scroll contact sheets. Light-theme floating audio icon becomes faint over the black footer; record for contrast investigation, no pass credit for that control.",
+      "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
+    },
+    "/trader/theworst_trader": {
+      "path": "/trader/theworst_trader",
+      "defaultFullPageEvidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+      "assessment": "Public cash-only account shows$100,000,+0.0%,zero trades and Cash only. Simulation/non-audited/non-predictive scope visible. Four-card grid and username fit at all five widths; complete footer inspected. No valuation/order logic tested. Personally viewed all full-scroll contact sheets. Light-theme floating audio icon becomes faint over the black footer; record for contrast investigation, no pass credit for that control.",
       "fullLightEvidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json"
     }
   }

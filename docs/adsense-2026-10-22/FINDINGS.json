@@ -2809,14 +2809,14 @@
       "reproductionEvidence": "evidence/LEARN-PATH-CONTRAST-LIVE-BEFORE-20261029.json",
       "proposedFix": "Three LEARNING_PATH foreground classes receive light-only emerald800/blue800/amber800 variants; no content/progress/handler changes.",
       "risk": "Low, reversible class-only presentation; full release verification required.",
-      "candidateSHA": "10c41e243f64ee6beb1fc2e4f35c5a5d2e495752",
+      "candidateSHA": "5e5a7d420d74f5aa5ed882b12e8e303290c2606a",
       "fix": "Three light-only foreground class variants; existing dark colors, labels and progress behavior preserved.",
       "localEvidence": [
-        "evidence/LEARN-PATH-CONTRAST-LOCAL-MEASURED-20261030.json",
-        "evidence/LEARN-PATH-CONTRAST-LOCAL-PERSONAL-20261030.json"
+        "evidence/CONTRAST-SURFACES-LOCAL-20261030.json",
+        "evidence/CONTRAST-SURFACES-LOCAL-PERSONAL-20261030.json"
       ],
       "pr": 266,
-      "releaseHold": "PR263 verified and serial hold cleared. This candidate still requires its own actual preview checks, ordinary protected merge, exact-main/native production and public verification."
+      "releaseHold": "PR265 fully verified. PR266 full unchanged workflow rerun and actual preview gates pending."
     },
     {
       "id": "THQ-070",
@@ -2985,16 +2985,25 @@
       "fix": "Describe separate optional spot-order practice, preserve worksheet-first learning, and supply stipulated RSI swings plus both possible continuations. Do not implement unsupported indicators or change engine.",
       "evidence": "findings/WORKSHEET-AND-REFERENCE-SCOPE.md",
       "beforeEvidence": "evidence/OWNER-AUDIT-LIVE-REPRODUCTION-20261030.json",
-      "state": "PREPARED_NOT_MERGED",
-      "candidateSHA": "518a6d7eb222e8e4f32b7a00766abbd6809c5242",
+      "state": "PUBLICLY_VERIFIED",
+      "candidateSHA": "2427b99822304da60de9af9e802a06149a52f5c4",
       "detectedAt": "2026-10-30T02:02:51.423606+00:00",
       "risk": "Reversible display/copy only; protected calculations/orders/records/auth/progress/ads/consent untouched. No live credit before all release gates.",
-      "releaseHold": "PR263 verified and serial hold cleared. This candidate still requires its own actual preview checks, ordinary protected merge, exact-main/native production and public verification.",
+      "releaseHold": null,
       "localEvidence": [
         "evidence/WORKSHEET-SCOPE-LOCAL-20261030.json",
         "evidence/WORKSHEET-SCOPE-LOCAL-PERSONAL-20261030.json"
       ],
-      "pr": 265
+      "pr": 265,
+      "mergeSHA": "55087f82f4df93a1e8f84e1e59295c62308247fd",
+      "productionEvidence": "evidence/PR265-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR265-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR265-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR265-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 100,
+      "liveRecheck": "PASS exact merged production: [100] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
     },
     {
       "id": "THQ-075",
@@ -3009,16 +3018,25 @@
       "fix": "Add references with precise scope. Do not claim one venue explains every derivatives contract or any framework proves predictive efficacy.",
       "evidence": "findings/WORKSHEET-AND-REFERENCE-SCOPE.md",
       "beforeEvidence": "evidence/OWNER-AUDIT-LIVE-REPRODUCTION-20261030.json",
-      "state": "PREPARED_NOT_MERGED",
-      "candidateSHA": "518a6d7eb222e8e4f32b7a00766abbd6809c5242",
+      "state": "PUBLICLY_VERIFIED",
+      "candidateSHA": "2427b99822304da60de9af9e802a06149a52f5c4",
       "detectedAt": "2026-10-30T02:02:51.423606+00:00",
       "risk": "Reversible display/copy only; protected calculations/orders/records/auth/progress/ads/consent untouched. No live credit before all release gates.",
-      "releaseHold": "PR263 verified and serial hold cleared. This candidate still requires its own actual preview checks, ordinary protected merge, exact-main/native production and public verification.",
+      "releaseHold": null,
       "localEvidence": [
         "evidence/WORKSHEET-SCOPE-LOCAL-20261030.json",
         "evidence/WORKSHEET-SCOPE-LOCAL-PERSONAL-20261030.json"
       ],
-      "pr": 265
+      "pr": 265,
+      "mergeSHA": "55087f82f4df93a1e8f84e1e59295c62308247fd",
+      "productionEvidence": "evidence/PR265-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR265-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR265-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR265-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 100,
+      "liveRecheck": "PASS exact merged production: [100] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
     },
     {
       "id": "THQ-076",
@@ -3033,16 +3051,25 @@
       "fix": "Distinguish current Beta from unscheduled proposed extensions and link About to the existing calculator. No scenario execution or calculator change.",
       "evidence": "findings/WORKSHEET-AND-REFERENCE-SCOPE.md",
       "beforeEvidence": "evidence/OWNER-AUDIT-LIVE-REPRODUCTION-20261030.json",
-      "state": "PREPARED_NOT_MERGED",
-      "candidateSHA": "518a6d7eb222e8e4f32b7a00766abbd6809c5242",
+      "state": "PUBLICLY_VERIFIED",
+      "candidateSHA": "2427b99822304da60de9af9e802a06149a52f5c4",
       "detectedAt": "2026-10-30T02:02:51.423606+00:00",
       "risk": "Reversible display/copy only; protected calculations/orders/records/auth/progress/ads/consent untouched. No live credit before all release gates.",
-      "releaseHold": "PR263 verified and serial hold cleared. This candidate still requires its own actual preview checks, ordinary protected merge, exact-main/native production and public verification.",
+      "releaseHold": null,
       "localEvidence": [
         "evidence/WORKSHEET-SCOPE-LOCAL-20261030.json",
         "evidence/WORKSHEET-SCOPE-LOCAL-PERSONAL-20261030.json"
       ],
-      "pr": 265
+      "pr": 265,
+      "mergeSHA": "55087f82f4df93a1e8f84e1e59295c62308247fd",
+      "productionEvidence": "evidence/PR265-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR265-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR265-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR265-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 100,
+      "liveRecheck": "PASS exact merged production: [100] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
     },
     {
       "id": "THQ-077",
@@ -3053,8 +3080,8 @@
       ],
       "observed": "Report F09 reproduced: current detailed definition repeats the three-candle construction and independent versions of no prediction/no hidden orders/no confirmation assertions, obscuring the actual upward/downward examples. Entire current body independently read alongside four other report examples. Other short definitions retained where useful summary and exercise roles differ.",
       "fix": "Condense only the long FVG detailed definition into one coherent paragraph retaining construction, data selection, uncertainty, hindsight-control comparison and worksheet link. No quiz/financial engine changes.",
-      "state": "PREPARED_NOT_MERGED",
-      "candidateSHA": "518a6d7eb222e8e4f32b7a00766abbd6809c5242",
+      "state": "PUBLICLY_VERIFIED",
+      "candidateSHA": "2427b99822304da60de9af9e802a06149a52f5c4",
       "evidence": "findings/WORKSHEET-AND-REFERENCE-SCOPE.md",
       "beforeEvidence": "evidence/OWNER-AUDIT-LIVE-REPRODUCTION-20261030.json",
       "detectedAt": "2026-10-30T02:11:10.886903+00:00",
@@ -3064,16 +3091,51 @@
         "evidence/WORKSHEET-SCOPE-LOCAL-PERSONAL-20261030.json"
       ],
       "pr": 265,
-      "releaseHold": "PR263 verified and serial hold cleared. This candidate still requires its own actual preview checks, ordinary protected merge, exact-main/native production and public verification."
+      "releaseHold": null,
+      "mergeSHA": "55087f82f4df93a1e8f84e1e59295c62308247fd",
+      "productionEvidence": "evidence/PR265-PRODUCTION-PROVIDERS.json",
+      "mainCIEvidence": "evidence/PR265-MAIN-CI.json",
+      "liveEvidence": [
+        "evidence/PR265-PRODUCTION-BROWSER.json",
+        "evidence/POST-PR265-GUEST-SMOKE.json"
+      ],
+      "productionImagesPersonallyViewed": 100,
+      "liveRecheck": "PASS exact merged production: [100] affected states,30 guest states and four safe controls; no share/order/account/progress/published-record action."
+    },
+    {
+      "id": "THQ-078",
+      "severity": "P2",
+      "category": "Inactive background-music icon loses contrast over the black footer in light mode",
+      "adsenseRelevance": "General interface accessibility; no Google rejection cause or ad policy violation established.",
+      "urls": [
+        "https://www.thetradehq.com/trader/muzh3q",
+        "https://www.thetradehq.com/trader/thabomlingani",
+        "https://www.thetradehq.com/trader/theworst_trader"
+      ],
+      "affectedScope": "Shared floating background-music control on public pages; reproduced over public-profile black footer.",
+      "state": "PREPARED_NOT_MERGED",
+      "evidence": "findings/AUDIO-CONTROL-LIGHT-CONTRAST.md",
+      "reproductionEvidence": "evidence/AUDIO-CONTROL-CONTRAST-REPRODUCTION-20261030.json",
+      "actualBehavior": "Light foreground token yields dark rgba15/70% over translucent black button and black footer; calculated icon contrast~1.05:1. Actual full-scroll images show almost invisible icon.",
+      "expectedBehavior": "Inactive control remains identifiable against light and black page surfaces.",
+      "proposedFix": "Add light-only opaque white backing, neutral800 icon and neutral500 border/hover variants; preserve dark/playing styling and all handlers.",
+      "risk": "Low, reversible class-only presentation; no playback, persisted preferences or audio event changes.",
+      "pr": 266,
+      "releaseHold": "PR265 fully verified. PR266 full unchanged workflow rerun and actual preview gates pending.",
+      "candidateSHA": "5e5a7d420d74f5aa5ed882b12e8e303290c2606a",
+      "localEvidence": [
+        "evidence/CONTRAST-SURFACES-LOCAL-20261030.json",
+        "evidence/CONTRAST-SURFACES-LOCAL-PERSONAL-20261030.json"
+      ]
     }
   ],
-  "updatedAt": "2026-10-30T11:00:05.790794+00:00",
+  "updatedAt": "2026-10-30T11:22:25.778672+00:00",
   "counts": {
-    "siteFindings": 82,
-    "P2": 44,
+    "siteFindings": 83,
+    "P2": 45,
     "P3": 38,
-    "publiclyRepaired": 77,
-    "preparedNotMerged": 5,
+    "publiclyRepaired": 81,
+    "preparedNotMerged": 2,
     "separateOperationalBlockers": 0,
     "mergedAwaitingProductionVerification": 0,
     "protectedUnapprovedRecordFixes": 0,

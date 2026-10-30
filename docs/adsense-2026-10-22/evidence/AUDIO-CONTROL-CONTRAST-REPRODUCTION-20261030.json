@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-10-30T11:14:07.665338+00:00",
+  "outcome": "REPRODUCED_FAIL",
+  "computedForeground": "rgba(15,15,15,0.7)",
+  "computedButtonBackground": "rgba(0,0,0,0.4)",
+  "footerBackground": "rgb(4,4,4)",
+  "compositedButtonBackground": [
+    2.4,
+    2.4,
+    2.4
+  ],
+  "compositedIconForeground": [
+    11.22,
+    11.22,
+    11.22
+  ],
+  "contrast": 1.0530099671653523,
+  "threshold": 3,
+  "scope": "Inactive icon against black-footer backing; sRGB alpha composition from computed styles. Blur may sample surrounding content, so exact screenshot raster differs; uniformly dark footer and personally inspected screenshots independently reproduce near-invisibility. No playback click.",
+  "evidence": "AUDIO-CONTROL-BEFORE-DISMISSED-20261030.json"
+}

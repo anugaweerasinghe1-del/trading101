@@ -249,7 +249,7 @@
       "findingStates": {
         "THQ-001": "PUBLICLY_VERIFIED",
         "THQ-027": "PUBLICLY_VERIFIED",
-        "THQ-076": "PREPARED_NOT_MERGED"
+        "THQ-076": "PUBLICLY_VERIFIED"
       },
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": [
@@ -17517,7 +17517,7 @@
       "findingStates": {
         "THQ-025": "PUBLICLY_VERIFIED",
         "THQ-027": "PUBLICLY_VERIFIED",
-        "THQ-076": "PREPARED_NOT_MERGED"
+        "THQ-076": "PUBLICLY_VERIFIED"
       },
       "expandedFAQReview": {
         "answersRead": 3,
@@ -17992,7 +17992,7 @@
       ],
       "findingStates": {
         "THQ-064": "PUBLICLY_VERIFIED",
-        "THQ-076": "PREPARED_NOT_MERGED"
+        "THQ-076": "PUBLICLY_VERIFIED"
       },
       "supplementaryNotesReading": "ACTUAL_RENDERED_NOTES_READ",
       "confirmedFindingStates": [],
@@ -19303,7 +19303,7 @@
         "controlEvidence": "evidence/live-faq/b8041ce42b5bdca3.json"
       },
       "findingStates": {
-        "THQ-074": "PREPARED_NOT_MERGED"
+        "THQ-074": "PUBLICLY_VERIFIED"
       },
       "confirmedFindingStates": [],
       "defaultFullPageVisual": {
@@ -19411,7 +19411,7 @@
         "controlEvidence": "evidence/live-faq/fc59671daa4f3d37.json"
       },
       "findingStates": {
-        "THQ-074": "PREPARED_NOT_MERGED"
+        "THQ-074": "PUBLICLY_VERIFIED"
       },
       "confirmedFindingStates": [],
       "defaultFullPageVisual": {
@@ -43190,7 +43190,7 @@
       "findingStates": {
         "THQ-039": "PUBLICLY_VERIFIED",
         "THQ-041": "PUBLICLY_VERIFIED",
-        "THQ-077": "PREPARED_NOT_MERGED"
+        "THQ-077": "PUBLICLY_VERIFIED"
       },
       "confirmedFindingStates": [],
       "currentConfirmedFindingFollowups": [
@@ -44782,7 +44782,7 @@
       "findingStates": {
         "THQ-039": "PUBLICLY_VERIFIED",
         "THQ-041": "PUBLICLY_VERIFIED",
-        "THQ-075": "PREPARED_NOT_MERGED"
+        "THQ-075": "PUBLICLY_VERIFIED"
       },
       "confirmedFindingStates": [],
       "currentConfirmedFindingFollowups": [
@@ -44905,7 +44905,7 @@
       "findingStates": {
         "THQ-039": "PUBLICLY_VERIFIED",
         "THQ-041": "PUBLICLY_VERIFIED",
-        "THQ-074": "PREPARED_NOT_MERGED"
+        "THQ-074": "PUBLICLY_VERIFIED"
       },
       "confirmedFindingStates": [],
       "currentConfirmedFindingFollowups": [
@@ -45028,7 +45028,7 @@
       "findingStates": {
         "THQ-039": "PUBLICLY_VERIFIED",
         "THQ-041": "PUBLICLY_VERIFIED",
-        "THQ-074": "PREPARED_NOT_MERGED"
+        "THQ-074": "PUBLICLY_VERIFIED"
       },
       "confirmedFindingStates": [],
       "currentConfirmedFindingFollowups": [
@@ -45889,7 +45889,7 @@
       "findingStates": {
         "THQ-039": "PUBLICLY_VERIFIED",
         "THQ-041": "PUBLICLY_VERIFIED",
-        "THQ-074": "PREPARED_NOT_MERGED"
+        "THQ-074": "PUBLICLY_VERIFIED"
       },
       "confirmedFindingStates": [],
       "currentConfirmedFindingFollowups": [
@@ -46254,7 +46254,7 @@
       "findingStates": {
         "THQ-039": "PUBLICLY_VERIFIED",
         "THQ-041": "PUBLICLY_VERIFIED",
-        "THQ-075": "PREPARED_NOT_MERGED"
+        "THQ-075": "PUBLICLY_VERIFIED"
       },
       "confirmedFindingStates": [],
       "currentConfirmedFindingFollowups": [
@@ -46861,7 +46861,7 @@
       "findingStates": {
         "THQ-039": "PUBLICLY_VERIFIED",
         "THQ-041": "PUBLICLY_VERIFIED",
-        "THQ-074": "PREPARED_NOT_MERGED"
+        "THQ-074": "PUBLICLY_VERIFIED"
       },
       "confirmedFindingStates": [],
       "currentConfirmedFindingFollowups": [
@@ -46984,7 +46984,7 @@
       "findingStates": {
         "THQ-039": "PUBLICLY_VERIFIED",
         "THQ-041": "PUBLICLY_VERIFIED",
-        "THQ-074": "PREPARED_NOT_MERGED"
+        "THQ-074": "PUBLICLY_VERIFIED"
       },
       "confirmedFindingStates": [],
       "currentConfirmedFindingFollowups": [
@@ -47228,7 +47228,7 @@
       "findingStates": {
         "THQ-039": "PUBLICLY_VERIFIED",
         "THQ-041": "PUBLICLY_VERIFIED",
-        "THQ-075": "PREPARED_NOT_MERGED"
+        "THQ-075": "PUBLICLY_VERIFIED"
       },
       "confirmedFindingStates": [],
       "currentConfirmedFindingFollowups": [
@@ -59361,7 +59361,39 @@
       "robotsObserved": "index, follow",
       "limitations": [
         "No individual HTTP200 certificate, requested five-width visual coverage, account performance certification, or private data access."
-      ]
+      ],
+      "defaultFullPageVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "requestedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Public member since October2026; no account portfolio or server-recorded trades, explicitly disclosed. Virtual-only, unaudited, non-predictive scope and comparable/imported portfolio distinction visible. No profile-specific clipping observed through footer at five widths. Personally viewed all full-scroll contact sheets. Light-theme floating audio icon becomes faint over the black footer; record for contrast investigation, no pass credit for that control.",
+        "evidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "passIsNotImpliedByInspection": true
+      },
+      "fullLightVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "widths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Public member since October2026; no account portfolio or server-recorded trades, explicitly disclosed. Virtual-only, unaudited, non-predictive scope and comparable/imported portfolio distinction visible. No profile-specific clipping observed through footer at five widths.",
+        "evidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json",
+        "wholePageReviewComplete": false
+      },
+      "specificFindingIds": [
+        "THQ-078"
+      ],
+      "findingStates": {
+        "THQ-078": "PREPARED_NOT_MERGED"
+      }
     },
     {
       "url": "https://www.thetradehq.com/trader/thabomlingani",
@@ -59386,7 +59418,39 @@
       "robotsObserved": "index, follow",
       "limitations": [
         "No individual HTTP200 certificate, requested five-width visual coverage, account performance certification, or private data access."
-      ]
+      ],
+      "defaultFullPageVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "requestedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Public member since October2026; no account portfolio or server-recorded trades, explicitly disclosed. Long username fits at360; explanation and complete footer readable at all five widths. No invented holdings or performance results. Personally viewed all full-scroll contact sheets. Light-theme floating audio icon becomes faint over the black footer; record for contrast investigation, no pass credit for that control.",
+        "evidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "passIsNotImpliedByInspection": true
+      },
+      "fullLightVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "widths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Public member since October2026; no account portfolio or server-recorded trades, explicitly disclosed. Long username fits at360; explanation and complete footer readable at all five widths. No invented holdings or performance results.",
+        "evidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json",
+        "wholePageReviewComplete": false
+      },
+      "specificFindingIds": [
+        "THQ-078"
+      ],
+      "findingStates": {
+        "THQ-078": "PREPARED_NOT_MERGED"
+      }
     },
     {
       "url": "https://www.thetradehq.com/trader/theworst_trader",
@@ -59411,7 +59475,39 @@
       "robotsObserved": "index, follow",
       "limitations": [
         "No individual HTTP200 certificate, requested five-width visual coverage, account performance certification, or private data access."
-      ]
+      ],
+      "defaultFullPageVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "requestedWidths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Public cash-only account shows$100,000,+0.0%,zero trades and Cash only. Simulation/non-audited/non-predictive scope visible. Four-card grid and username fit at all five widths; complete footer inspected. No valuation/order logic tested. Personally viewed all full-scroll contact sheets. Light-theme floating audio icon becomes faint over the black footer; record for contrast investigation, no pass credit for that control.",
+        "evidence": "FULLPAGE-VISUAL-REVIEW-20261024.json",
+        "passIsNotImpliedByInspection": true
+      },
+      "fullLightVisual": {
+        "status": "PERSONALLY_VIEWED_BOUNDED",
+        "widths": [
+          360,
+          390,
+          768,
+          1280,
+          1920
+        ],
+        "assessment": "Public cash-only account shows$100,000,+0.0%,zero trades and Cash only. Simulation/non-audited/non-predictive scope visible. Four-card grid and username fit at all five widths; complete footer inspected. No valuation/order logic tested.",
+        "evidence": "FULL-LIGHT-VISUAL-REVIEW-20261028.json",
+        "wholePageReviewComplete": false
+      },
+      "specificFindingIds": [
+        "THQ-078"
+      ],
+      "findingStates": {
+        "THQ-078": "PREPARED_NOT_MERGED"
+      }
     }
   ],
   "expandedFAQAnswersRead": 134,
@@ -59426,5 +59522,5 @@
     "individualActualRenderedProseComparisonsWithPreviouslyFullyReadBaseline": 85,
     "scope": "441 main texts/states covered, not441 fully completed page/source/control/human-visual reviews. See TERMINAL-TEMPLATE-COMPARISONS.json for raw texts and deltas."
   },
-  "updatedAt": "2026-10-30T11:00:56.026932+00:00"
+  "updatedAt": "2026-10-30T11:25:17.270627+00:00"
 }

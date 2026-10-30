@@ -1,0 +1,133 @@
+{
+  "checkedAt": "2026-10-30T11:25:17.220827+00:00",
+  "sha": "5e5a7d420d74f5aa5ed882b12e8e303290c2606a",
+  "origin": "https://d4b4b652.tradehq-preview.pages.dev",
+  "outcome": "PASS_BOUNDED_LABEL_AND_INACTIVE_AUDIO_CONTRAST",
+  "count": 10,
+  "rawScreenshotsRepresented": 60,
+  "minimumLabelContrast": 6.387652249565556,
+  "minimumAudioIconContrast": 8.294859224184862,
+  "personallyViewedSheets": [
+    {
+      "name": "review-360-light.jpg",
+      "sourceCaptures": [
+        "labels-0-360-light.png",
+        "labels-2-360-light.png",
+        "audio-top-rest-360-light.png",
+        "audio-top-hover-360-light.png",
+        "audio-footer-rest-360-light.png",
+        "audio-footer-hover-360-light.png"
+      ],
+      "sha256": "d13a9286a77ec79fd3bfd8f50f34fd634272390503a87beebda8a0a37443dfef"
+    },
+    {
+      "name": "review-390-light.jpg",
+      "sourceCaptures": [
+        "labels-0-390-light.png",
+        "labels-2-390-light.png",
+        "audio-top-rest-390-light.png",
+        "audio-top-hover-390-light.png",
+        "audio-footer-rest-390-light.png",
+        "audio-footer-hover-390-light.png"
+      ],
+      "sha256": "5858bde8a50ec86c3b19e11c9e2f0b647857b2127b1f025ccd492ef746564013"
+    },
+    {
+      "name": "review-768-light.jpg",
+      "sourceCaptures": [
+        "labels-0-768-light.png",
+        "labels-2-768-light.png",
+        "audio-top-rest-768-light.png",
+        "audio-top-hover-768-light.png",
+        "audio-footer-rest-768-light.png",
+        "audio-footer-hover-768-light.png"
+      ],
+      "sha256": "981a1e082d1caeb1c8e1e699e7764344e26bce47a0e160cf87d21dbfd6b31ab9"
+    },
+    {
+      "name": "review-1280-light.jpg",
+      "sourceCaptures": [
+        "labels-0-1280-light.png",
+        "labels-2-1280-light.png",
+        "audio-top-rest-1280-light.png",
+        "audio-top-hover-1280-light.png",
+        "audio-footer-rest-1280-light.png",
+        "audio-footer-hover-1280-light.png"
+      ],
+      "sha256": "f2447e2fdcda7e0ff192529d20946167e2420f76b247e1aef758c58a383e6b34"
+    },
+    {
+      "name": "review-1920-light.jpg",
+      "sourceCaptures": [
+        "labels-0-1920-light.png",
+        "labels-2-1920-light.png",
+        "audio-top-rest-1920-light.png",
+        "audio-top-hover-1920-light.png",
+        "audio-footer-rest-1920-light.png",
+        "audio-footer-hover-1920-light.png"
+      ],
+      "sha256": "c089bf1cae1af2a6165ae8f7bcb3e69e6f0571704760ba503473dade71da5dbd"
+    },
+    {
+      "name": "review-360-dark.jpg",
+      "sourceCaptures": [
+        "labels-0-360-dark.png",
+        "labels-2-360-dark.png",
+        "audio-top-rest-360-dark.png",
+        "audio-top-hover-360-dark.png",
+        "audio-footer-rest-360-dark.png",
+        "audio-footer-hover-360-dark.png"
+      ],
+      "sha256": "6c4b17f5dd35b9ea8611098b60782f2cee5809625867cf9dede7152219912d59"
+    },
+    {
+      "name": "review-390-dark.jpg",
+      "sourceCaptures": [
+        "labels-0-390-dark.png",
+        "labels-2-390-dark.png",
+        "audio-top-rest-390-dark.png",
+        "audio-top-hover-390-dark.png",
+        "audio-footer-rest-390-dark.png",
+        "audio-footer-hover-390-dark.png"
+      ],
+      "sha256": "eaa3112c7a776ea5f41dc844eb73ddf554825a0c66ca60eca88662aed495b9bf"
+    },
+    {
+      "name": "review-768-dark.jpg",
+      "sourceCaptures": [
+        "labels-0-768-dark.png",
+        "labels-2-768-dark.png",
+        "audio-top-rest-768-dark.png",
+        "audio-top-hover-768-dark.png",
+        "audio-footer-rest-768-dark.png",
+        "audio-footer-hover-768-dark.png"
+      ],
+      "sha256": "fdf50374f8377dac3c2e50be214a61471aeb485e25e3ec5a054b1c42b6117e64"
+    },
+    {
+      "name": "review-1280-dark.jpg",
+      "sourceCaptures": [
+        "labels-0-1280-dark.png",
+        "labels-2-1280-dark.png",
+        "audio-top-rest-1280-dark.png",
+        "audio-top-hover-1280-dark.png",
+        "audio-footer-rest-1280-dark.png",
+        "audio-footer-hover-1280-dark.png"
+      ],
+      "sha256": "fcda5654fa6ed919edc63f76934a29646308a5135b89f5582d58a519569cb3c4"
+    },
+    {
+      "name": "review-1920-dark.jpg",
+      "sourceCaptures": [
+        "labels-0-1920-dark.png",
+        "labels-2-1920-dark.png",
+        "audio-top-rest-1920-dark.png",
+        "audio-top-hover-1920-dark.png",
+        "audio-footer-rest-1920-dark.png",
+        "audio-footer-hover-1920-dark.png"
+      ],
+      "sha256": "3f15b7d66e48f73da34e8cce499b35a75a86de23f7dc4c1a5663e2add9ba355f"
+    }
+  ],
+  "scope": "All10 sheets/60captures personally viewed. Learning Path labels legible, light music control now has visible white backing/dark icon over light content and black footer, rest/hover; dark appearance retained. Some redundant label captures land above section due layout shifts; first capture still shows all three labels per viewport. No active playback, arbitrary overlay, full-page/source/keyboard/zoom/screenreader certification."
+}

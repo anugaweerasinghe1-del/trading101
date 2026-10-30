@@ -1,0 +1,11 @@
+{
+  "sha": "5e5a7d420d74f5aa5ed882b12e8e303290c2606a",
+  "baseSHA": "55087f82f4df93a1e8f84e1e59295c62308247fd",
+  "audioExactPreservationAfterRemovingFiveLightClasses": "PASS",
+  "files": [
+    "src/components/BackgroundMusic.tsx",
+    "src/pages/Learn.tsx"
+  ],
+  "scope": "Two frontend presentation files only. Audio file byte-identical to base after removing the five light-only class modifiers. Learn change limited to three static foreground strings, inspected exact diff.",
+  "learnExactPreservationAfterRemovingThreeLightClasses": "PASS"
+}
