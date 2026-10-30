@@ -4,6 +4,12 @@
  */
 const corrections: {slug: string; path: (string | number)[]; expected: unknown; replacement: unknown}[] = [
   {
+    slug: "cryptocurrency-price-feeds-and-valuation",
+    path: ["outcomes", 1],
+    expected: "Identify and filter out price outliers using statistical methods",
+    replacement: "Explain why outlier filtering requires the provider’s methodology and observation timestamps",
+  },
+  {
     "slug": "cryptocurrency-price-feeds-and-valuation",
     "path": [
       "lessons",
