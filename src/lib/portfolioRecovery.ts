@@ -78,6 +78,7 @@ export function parsePracticeBackup(text: string): Portfolio {
     throw new Error("This is not a TradeHQ practice portfolio backup.");
   const portfolio = parsePracticePortfolio(candidate.portfolio);
   if (!portfolio) throw new Error("The backup is missing valid portfolio information.");
+  validateImportedPracticePortfolio(portfolio);
   return portfolio;
 }
 
@@ -88,4 +89,82 @@ export function browserCanPersistPortfolio(): boolean {
     localStorage.removeItem(key);
     return true;
   } catch { return false; }
+}
+
+/** These records describe UNVERIFIED guest imports, never ranked performance. */
+export const GUEST_IMPORT_MARKER = "tradehq:guest-import-origin:v1";
+export const RESTORE_UNDO_KEY = "tradehq:guest-restore-undo:v1";
+
+export function validateImportedPracticePortfolio(portfolio: Portfolio): void {
+  // Additional checks are import-only: older browser portfolios retain the
+  // legacy parser to avoid erasing existing users' saved data.
+  const seen = new Set<string>();
+  for (const trade of portfolio.trades) {
+    if (!trade.id.trim() || seen.has(trade.id)) throw new Error("Backup has duplicate or missing trade IDs.");
+    seen.add(trade.id);
+    if (!Number.isFinite(trade.quantity) || trade.quantity <= 0 ||
+        !Number.isFinite(trade.price) || trade.price <= 0 ||
+        !Number.isFinite(trade.total) || trade.total <= 0 ||
+        !trade.assetId.trim() || !trade.symbol.trim())
+      throw new Error("Backup contains an invalid simulated trade.");
+    if (trade.journal) {
+      if (typeof trade.journal.notes !== "string" || typeof trade.journal.reasoning !== "string" ||
+          !Array.isArray(trade.journal.emotions) || trade.journal.emotions.some(e=>typeof e!=="string"))
+        throw new Error("Backup includes a malformed private trading journal.");
+    }
+  }
+  const assets = new Set<string>();
+  for (const pos of portfolio.positions) {
+    if (!pos.asset.id.trim() || assets.has(pos.asset.id) ||
+        !Number.isFinite(pos.quantity) || pos.quantity <= 0 ||
+        !Number.isFinite(pos.avgPrice) || pos.avgPrice <= 0 ||
+        !Number.isFinite(pos.asset.price) || pos.asset.price <= 0)
+      throw new Error("Backup contains duplicate or invalid holdings.");
+    assets.add(pos.asset.id);
+  }
+  // Distinguish genuine arithmetic errors from minor currency rounding.
+  const total = portfolio.cash + portfolio.positions.reduce((sum,pos)=>sum+pos.currentValue,0);
+  const allowedRounding = Math.max(2,Math.abs(total)*0.0001);
+  if (Math.abs(total-portfolio.totalValue) > allowedRounding)
+    throw new Error("Portfolio value does not match cash plus the saved holdings.");
+}
+
+export function savePreRestoreCopy(current: Portfolio): void {
+  // MUST succeed before any import can replace current local portfolio.
+  const raw = localStorage.getItem(GUEST_IMPORT_MARKER);
+  localStorage.setItem(RESTORE_UNDO_KEY, JSON.stringify({
+    format: BACKUP_FORMAT, version: 1, portfolio: current, provenance: raw,
+    savedAt: new Date().toISOString()
+  }));
+  if (!readPreviousGuestPortfolio()) throw new Error("Could not preserve your previous portfolio. No import was performed.");
+}
+
+export function readPreviousGuestPortfolio(): Portfolio | null {
+  try {
+    const raw = localStorage.getItem(RESTORE_UNDO_KEY);
+    if (!raw) return null;
+    const data = JSON.parse(raw);
+    return data.format===BACKUP_FORMAT && data.version===1 ? parsePracticePortfolio(data.portfolio) : null;
+  } catch { return null; }
+}
+
+export function markGuestImport(): void {
+  localStorage.setItem(GUEST_IMPORT_MARKER, JSON.stringify({
+    source:"unverified-user-supplied-file", importedAt:new Date().toISOString()
+  }));
+}
+
+export function restorePreviousProvenance(): void {
+  try {
+    const data=JSON.parse(localStorage.getItem(RESTORE_UNDO_KEY) ?? "null");
+    const previous=data?.provenance;
+    if(typeof previous==="string") localStorage.setItem(GUEST_IMPORT_MARKER,previous);
+    else localStorage.removeItem(GUEST_IMPORT_MARKER);
+    localStorage.removeItem(RESTORE_UNDO_KEY);
+  } catch {}
+}
+
+export function isGuestImportUnverified(): boolean {
+  try { return JSON.parse(localStorage.getItem(GUEST_IMPORT_MARKER) || "null")?.source === "unverified-user-supplied-file"; }
+  catch { return false; }
 }
