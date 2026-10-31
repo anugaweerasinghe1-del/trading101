@@ -10,7 +10,9 @@ export async function verifyMarketsSidebar({send,evaluate,waitUntil,origin,delay
     await waitUntil(`!!document.querySelector('[data-publisher-notes="/markets"]')&&!document.querySelector('#prerender-seo')&&!!document.querySelector('nav.fixed')`,'Markets and horizontal header hydrate');
     await evaluate(`window.__marketsFontsReady=false;document.fonts.ready.then(()=>window.__marketsFontsReady=true);true`);
     await waitUntil(`window.__marketsFontsReady===true`,'Markets fonts settle');
-    await delay(300);
+    // Let the longest site-header transition finish before measuring its geometry.
+    // The assertion still requires a full-width, viewport-anchored navigation.
+    await delay(750);
     await evaluate(`[...document.querySelectorAll('button')].find(b=>b.textContent.trim()==='Reject analytics')?.click();true`);
     const state=await evaluate(`(()=>{
       const nav=document.querySelector('nav.fixed'),r=nav.getBoundingClientRect();
@@ -19,6 +21,9 @@ export async function verifyMarketsSidebar({send,evaluate,waitUntil,origin,delay
         viewport:innerWidth,documentWidth:document.documentElement.clientWidth,
         bodyWidth:document.body.getBoundingClientRect().width,
         computedPosition:getComputedStyle(nav).position,
+        computedTransform:getComputedStyle(nav).transform,
+        computedTop:getComputedStyle(nav).top,
+        ancestors:(()=>{const rows=[];let a=nav.parentElement;while(a&&rows.length<8){const v=getComputedStyle(a);rows.push({tag:a.tagName,cls:String(a.className).slice(0,130),transform:v.transform,filter:v.filter,perspective:v.perspective,position:v.position});a=a.parentElement;}return rows;})(),
         hasRail:!!document.querySelector('aside.sticky'),
         headingTop:heading?.top ?? -1,
         links:[...nav.querySelectorAll('a[href]')].map(a=>a.getAttribute('href')),
