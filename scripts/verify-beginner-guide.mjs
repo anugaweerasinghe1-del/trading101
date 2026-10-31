@@ -28,6 +28,7 @@ export async function verifyBeginnerGuide({send,evaluate,waitUntil,origin,delay}
     // Deep link must focus the real, hydrated calculator input, not the page top.
     await send('Page.navigate',{url:origin+'/learn-trading-guide#compound-initial-capital'});
     await waitUntil(`document.activeElement?.id==='compound-initial-capital'`,'Compound calculator anchor focuses after hydration');
+    await waitUntil(`(()=>{const r=document.getElementById('compound-initial-capital')?.getBoundingClientRect();return !!r&&r.top>=0&&r.top<innerHeight;})()`,'Focused calculator input scrolls into the viewport');
     const calculator = await evaluate(`(()=>{
       const input=document.getElementById('compound-initial-capital');
       const a=input.getBoundingClientRect();
