@@ -8,6 +8,7 @@ export interface LessonProgress {
   score?: number;
   completedAt?: string;
   scrolledPct?: number;
+  quizAnswers?: Record<string, number>;
 }
 
 export interface TrackProgress {
@@ -22,7 +23,9 @@ export interface CourseProgressState {
   updatedAt: string;
 }
 
-const KEY = "tradehq_course_progress_v1";
+export const COURSE_PROGRESS_EVENT = "tradehq:course-progress-updated";
+export const COURSE_PROGRESS_KEY = "tradehq_course_progress_v1";
+const KEY = COURSE_PROGRESS_KEY;
 const emptyTrack = (): TrackProgress => ({ lessons: Object.create(null) });
 
 const empty = (): CourseProgressState => ({
@@ -55,6 +58,14 @@ export function parseCourseProgress(raw: string | null): CourseProgressState {
         if (typeof item.score === 'number' && Number.isInteger(item.score) && item.score >= 0) row.score = item.score;
         if (timestamp(item.completedAt)) row.completedAt = item.completedAt;
         if (typeof item.scrolledPct === 'number' && Number.isFinite(item.scrolledPct) && item.scrolledPct >= 0 && item.scrolledPct <= 100) row.scrolledPct = item.scrolledPct;
+        if (record(item.quizAnswers) && row.status !== "completed") {
+          const answers: Record<string, number> = Object.create(null);
+          for (const [question, option] of Object.entries(item.quizAnswers).slice(0, 24)) {
+            if (/^(0|[1-9]\d{0,2})$/.test(question) && typeof option === "number" &&
+                Number.isInteger(option) && option >= 0 && option <= 11) answers[question] = option;
+          }
+          if (Object.keys(answers).length) row.quizAnswers = answers;
+        }
         progress.lessons[lesson] = row;
       }
       if (timestamp(value.badgeEarnedAt)) progress.badgeEarnedAt = value.badgeEarnedAt;
@@ -78,7 +89,8 @@ function save(state: CourseProgressState) {
   state.updatedAt = new Date().toISOString();
   try {
     localStorage.setItem(KEY, JSON.stringify(state));
-  } catch {}
+    window.dispatchEvent?.(new Event(COURSE_PROGRESS_EVENT));
+  } catch { /* Disabled browser storage must not claim persistence. */ }
 }
 
 export function markLessonStarted(track: string, lesson: string) {
@@ -92,6 +104,42 @@ export function markLessonStarted(track: string, lesson: string) {
   save(s);
 }
 
+/** Preserve partial quiz answers without changing completed lessons or placing orders. */
+export function saveLessonDraft(track: string, lesson: string, answers: Record<number, number>) {
+  const s = loadProgress();
+  s.tracks[track] ??= emptyTrack();
+  const previous = s.tracks[track].lessons[lesson];
+  if (previous?.status === "completed") return;
+  const clean: Record<string, number> = Object.create(null);
+  for (const [question, option] of Object.entries(answers).slice(0, 24)) {
+    if (/^(0|[1-9]\d{0,2})$/.test(question) && Number.isInteger(option) && option >= 0 && option <= 11) clean[question] = option;
+  }
+  s.tracks[track].lessons[lesson] = {
+    ...previous, status: "in-progress",
+    ...(Object.keys(clean).length ? { quizAnswers: clean } : { quizAnswers: undefined }),
+  };
+  s.lastLesson = { track, lesson, at: new Date().toISOString() };
+  save(s);
+}
+
+/** Never turn a completed lesson back into an unfinished one. */
+export function saveLessonPosition(track: string, lesson: string, percent: number) {
+  if (!Number.isFinite(percent)) return;
+  const pct = Math.max(0, Math.min(100, Math.round(percent)));
+  const s = loadProgress();
+  s.tracks[track] ??= emptyTrack();
+  const previous = s.tracks[track].lessons[lesson];
+  if (previous?.status === "completed" || previous?.scrolledPct === pct) return;
+  s.tracks[track].lessons[lesson] = { ...previous, status: "in-progress", scrolledPct: pct };
+  s.lastLesson = { track, lesson, at: new Date().toISOString() };
+  save(s);
+}
+
+export function readLessonDraft(track: string, lesson: string) {
+  const row = getTrackProgress(track).lessons[lesson];
+  return { answers: row?.status === "completed" ? {} : { ...(row?.quizAnswers ?? {}) }, scrolledPct: row?.scrolledPct ?? 0 };
+}
+
 export function markLessonCompleted(track: string, lesson: string, score: number) {
   const s = loadProgress();
   s.tracks[track] ??= emptyTrack();
@@ -99,6 +147,7 @@ export function markLessonCompleted(track: string, lesson: string, score: number
     status: "completed",
     score,
     completedAt: new Date().toISOString(),
+    scrolledPct: 100,
   };
   s.lastLesson = { track, lesson, at: new Date().toISOString() };
   save(s);

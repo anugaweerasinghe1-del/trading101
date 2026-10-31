@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Award, ArrowLeft, ArrowRight, CheckCircle2, XCircle, ExternalLink, Sparkles, Bot } from "lucide-react";
 import type { CourseTrack as Track, CourseLesson as Lesson } from "@/lib/coursesData";
 import { useCourseDocument } from "@/hooks/useCourseCatalog";
-import { markLessonStarted, markLessonCompleted, awardBadge, getTrackProgress } from "@/lib/courseProgress";
+import { markLessonStarted, markLessonCompleted, awardBadge, getTrackProgress, readLessonDraft, saveLessonDraft, saveLessonPosition } from "@/lib/courseProgress";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { EducationalDisclaimer } from "@/components/EducationalDisclaimer";
 import { AIAnswerBlock } from "@/components/seo/AIAnswerBlock";
@@ -32,7 +32,8 @@ export default function CourseLesson() {
 
 function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: Lesson; index: number }) {
 
-  const [answers, setAnswers] = useState<Record<number, number>>({});
+  const [answers, setAnswers] = useState<Record<number, number>>(() => readLessonDraft(track.slug, lesson.slug).answers);
+  const [resumePct] = useState(() => readLessonDraft(track.slug, lesson.slug).scrolledPct);
   const [submitted, setSubmitted] = useState(false);
   const score = useMemo(
     () => lesson.quiz.reduce((s, q, i) => (answers[i] === q.correctAnswer ? s + 1 : s), 0),
@@ -41,8 +42,20 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
 
   useEffect(() => {
     markLessonStarted(track.slug, lesson.slug);
-    setAnswers({});
+    setAnswers(readLessonDraft(track.slug, lesson.slug).answers);
     setSubmitted(false);
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const storePosition = () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      if (total > 0) saveLessonPosition(track.slug, lesson.slug, (window.scrollY / total) * 100);
+    };
+    const onScroll = () => { if (timer) clearTimeout(timer); timer = setTimeout(storePosition, 700); };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (timer) clearTimeout(timer);
+      storePosition();
+    };
   }, [track.slug, lesson.slug]);
 
   const path = `/courses/${track.slug}/${lesson.slug}`;
@@ -158,6 +171,17 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
 
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">{lesson.title}</h1>
           <p className="text-base text-muted-foreground mb-4">{lesson.summary}</p>
+          {resumePct >= 10 && resumePct < 98 && getTrackProgress(track.slug).lessons[lesson.slug]?.status !== "completed" && (
+            <button type="button" className="mb-5 rounded-xl border border-primary/30 bg-primary/5 px-4 py-3 text-sm text-primary underline underline-offset-4"
+              onClick={() => window.scrollTo({ top: Math.round((document.documentElement.scrollHeight - window.innerHeight) * resumePct / 100), behavior: "smooth" })}>
+              Resume reading near {resumePct}% of this lesson
+            </button>
+          )}
+          {Object.keys(answers).length > 0 && !submitted && (
+            <p className="mb-4 text-sm text-muted-foreground" role="status">
+              {Object.keys(answers).length} quiz answer(s) restored from this browser. Your unfinished lesson is still in progress.
+            </p>
+          )}
           {(track.slug === "options-trading-fundamentals" || track.slug === "futures-and-derivatives") && (
             <aside role="note" className="mb-6 rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-sm leading-relaxed text-foreground">
               <strong className="block mb-1">Contract worksheet only — no derivatives trading desk</strong>
@@ -216,7 +240,7 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
                         <button
                           key={oi}
                           type="button"
-                          onClick={() => !submitted && setAnswers({ ...answers, [qi]: oi })}
+                          onClick={() => { if (!submitted) { const updated = { ...answers, [qi]: oi }; setAnswers(updated); saveLessonDraft(track.slug, lesson.slug, updated); } }}
                           disabled={submitted}
                           className={`w-full text-left px-4 py-2.5 rounded-lg border text-sm transition-all ${
                             correct
