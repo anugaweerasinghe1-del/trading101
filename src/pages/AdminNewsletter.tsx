@@ -10,6 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { CheckCircle2, RefreshCw, Sparkles, Lock, Mail } from "lucide-react";
 
+type LessonTopic = { id: string; title: string; sourceTitle: string };
 type Edition = {
   id: string; week_of: string; status: "generating" | "draft" | "approved" | "failed";
   revision: number; subject: string; preheader: string; body_markdown: string;
@@ -28,6 +29,9 @@ export default function AdminNewsletter() {
   const [body, setBody] = useState("");
   const [reviewed, setReviewed] = useState(false);
   const [reviewer, setReviewer] = useState("");
+  const [topics, setTopics] = useState<LessonTopic[]>([]);
+  const [topicId, setTopicId] = useState("stop-gap");
+  const [previewGenerated, setPreviewGenerated] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
 
@@ -51,6 +55,7 @@ export default function AdminNewsletter() {
     setPreheader(edition.preheader);
     setBody(edition.body_markdown);
     setReviewed(false);
+    setPreviewGenerated(false);
     setError("");
   };
   const refresh = useCallback(async (preferId?: string) => {
@@ -70,7 +75,14 @@ export default function AdminNewsletter() {
   };
   const unlock = (event: React.FormEvent) => {
     event.preventDefault();
-    void run(async () => { await refresh(); setUnlocked(true); });
+    void run(async () => {
+      await refresh();
+      const available = await call("topics") as LessonTopic[];
+      if (!Array.isArray(available) || !available.length) throw Error("Newsletter learning topics unavailable");
+      setTopics(available);
+      setTopicId(available[0].id);
+      setUnlocked(true);
+    });
   };
   const generate = () => void run(async () => {
     const result = await call("generate-weekly") as { created: boolean; status: string };
@@ -81,7 +93,26 @@ export default function AdminNewsletter() {
     if (!current) return;
     await call("save", { id: current.id, revision: current.revision, subject, preheader, body_markdown: body });
     await refresh(current.id);
-    toast.success("Draft saved. No email was sent.");
+    setPreviewGenerated(false);
+    toast.success("Educational draft saved. Review and approve separately; nothing was sent.");
+  });
+  const reopen = () => void run(async () => {
+    if (!current || current.status !== "approved") return;
+    await call("reopen", { id: current.id, revision: current.revision });
+    await refresh(current.id);
+    toast.message("Editorial approval withdrawn for revisions. Nothing was emailed.");
+  });
+  const previewLesson = () => void run(async () => {
+    if (!current || current.status !== "draft") return;
+    const response = await call("preview-rewrite", {
+      id: current.id, revision: current.revision, topicId,
+    }) as { subject: string; preheader: string; body_markdown: string };
+    setSubject(response.subject);
+    setPreheader(response.preheader);
+    setBody(response.body_markdown);
+    setReviewed(false);
+    setPreviewGenerated(true);
+    toast.message("A deeper, source-backed lesson is ready to review. It is NOT saved or approved yet.");
   });
   const approve = () => void run(async () => {
     if (!current || !reviewed || reviewer.trim().length < 2) throw Error("Read the draft and confirm your review.");
@@ -99,7 +130,7 @@ export default function AdminNewsletter() {
         <div>
           <p className="text-xs uppercase tracking-[0.16em] text-primary">TradeHQ / Administration</p>
           <h1 className="mt-2 text-3xl font-semibold">Newsletter Desk</h1>
-          <p className="mt-2 text-sm text-muted-foreground">Weekly AI drafts. Your edits. Your approval. Never auto-send.</p>
+          <p className="mt-2 text-sm text-muted-foreground">One genuinely useful financial-literacy lesson per week. Your edits. Your approval. Never auto-send.</p>
         </div>
         <Link to="/admin" className="text-sm text-primary underline underline-offset-4">Back to dashboard</Link>
       </header>
@@ -111,9 +142,10 @@ export default function AdminNewsletter() {
             <h2 className="font-semibold">Editorial mode only</h2>
             <p className="text-sm text-muted-foreground">
               TradeHQ's Supabase scheduler prepares a private AI draft every Monday.
-              Your review and approval do <strong>not</strong> send any emails. Subscriber delivery
-              remains disabled until verified subscriptions, unsubscribe links and a
-              legitimate sending provider are configured.
+              Each issue now explores an original, hypothetical decision problem with a verified calculation
+              and a primary investor-education source—not a list of TradeHQ product links. Your approval
+              <strong> does not send emails</strong>. Subscriber delivery stays disabled until the
+              permission and unsubscribe system is complete.
             </p>
           </div>
         </div>
@@ -129,7 +161,7 @@ export default function AdminNewsletter() {
         <div className="flex flex-wrap items-center gap-3">
           <Button onClick={generate} disabled={busy}><Sparkles className="mr-2 h-4 w-4"/> Generate this week's draft</Button>
           <Button onClick={() => void run(async () => refresh(current?.id))} variant="outline" disabled={busy}><RefreshCw className="mr-2 h-4 w-4"/> Refresh</Button>
-          <Button variant="outline" onClick={() => { setUnlocked(false); setKey(""); setCurrent(null); setEditions([]); }} disabled={busy}>Lock</Button>
+          <Button variant="outline" onClick={() => { setUnlocked(false); setKey(""); setCurrent(null); setEditions([]); setTopics([]); }} disabled={busy}>Lock</Button>
         </div>
         {error && <p role="alert" className="text-sm text-destructive">{error}</p>}
         <div className="grid gap-5 lg:grid-cols-[240px_minmax(0,1fr)]">
@@ -154,13 +186,40 @@ export default function AdminNewsletter() {
                 {current.status === "approved" && <span className="flex items-center gap-1 text-sm text-primary"><CheckCircle2 className="h-4 w-4"/> Approved by {current.reviewed_by}</span>}
               </div>
               {current.generator_error && <p className="text-sm text-destructive">{current.generator_error}</p>}
+              {current.status === "approved" && (
+                <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-border p-3">
+                  <p className="text-sm text-muted-foreground">This issue is approved but not sent. Reopen it to replace repetitive content with a more useful educational lesson.</p>
+                  <Button variant="outline" onClick={reopen} disabled={busy}>Reopen for revisions</Button>
+                </div>
+              )}
+              {current.status === "draft" && (
+                <div className="space-y-3 rounded-xl border border-border bg-muted/30 p-4">
+                  <h3 className="text-sm font-semibold">Create an original learning issue</h3>
+                  <p className="text-xs text-muted-foreground">
+                    Select a topic. AI will explain the subtle mechanism, then attach a checked hypothetical
+                    worksheet and a verified SEC Investor.gov source. No product advertisement or article recap.
+                    This previews new text; your stored draft is not replaced until you click Save edits.
+                  </p>
+                  <Label htmlFor="lesson-topic">This week's learning focus</Label>
+                  <select id="lesson-topic" value={topicId} onChange={e => setTopicId(e.target.value)}
+                    className="w-full rounded-lg border border-input bg-background p-2 text-sm">
+                    {topics.map(topic => <option key={topic.id} value={topic.id}>{topic.title}</option>)}
+                  </select>
+                  <Button variant="outline" onClick={previewLesson} disabled={busy || !topics.length}>
+                    <Sparkles className="mr-2 h-4 w-4" /> Draft a deeper lesson (preview only)
+                  </Button>
+                  {previewGenerated && (
+                    <p className="text-xs text-primary" role="status">Unsaved AI preview. Review every fact, then save your edits before approving.</p>
+                  )}
+                </div>
+              )}
               <Label htmlFor="newsletter-subject">Email subject</Label>
               <Input id="newsletter-subject" value={subject} onChange={e => setSubject(e.target.value)} maxLength={140} disabled={current.status !== "draft"} />
               <Label htmlFor="newsletter-preheader">Short preview line</Label>
               <Input id="newsletter-preheader" value={preheader} onChange={e => setPreheader(e.target.value)} maxLength={240} disabled={current.status !== "draft"} />
               <Label htmlFor="newsletter-body">Newsletter text (Markdown)</Label>
               <Textarea id="newsletter-body" value={body} onChange={e => setBody(e.target.value)} rows={19} className="font-mono text-sm" disabled={current.status !== "draft"} />
-              <p className="text-xs text-muted-foreground">Article links must point to approved {canonical} learning pages. Check facts, tone and every link before approving.</p>
+              <p className="text-xs text-muted-foreground">Article links must point to approved {canonical} learning pages. Prioritize clear examples and trustworthy primary sources. Verify the calculations and claims before approving.</p>
               {current.status === "draft" && <>
                 <Button onClick={save} disabled={busy} variant="outline">Save edits</Button>
                 <div className="border-t border-border pt-4 space-y-3">
