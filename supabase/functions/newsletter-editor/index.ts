@@ -210,6 +210,21 @@ Deno.serve(async req => {
       return reply({ data: data as Draft[] });
     }
     if (action === "generate-weekly") return reply({ data: await generate(thisMondayColombo()) });
+    if (action === "preview-upcoming" && admin) {
+      // Generate a NEW AI sample for next Monday without creating an edition,
+      // altering an approved issue, sending mail, or consuming a mailing list.
+      const currentMonday = thisMondayColombo();
+      const followingMonday = new Date(Date.parse(currentMonday + "T00:00:00Z") + 7 * 86_400_000)
+        .toISOString().slice(0, 10);
+      try {
+        const draft = await composeOriginalNewsletter(followingMonday);
+        return reply({ data: { week_of: followingMonday, subject: draft.subject,
+          preheader: draft.preheader, body_markdown: draft.body_markdown,
+          note: "Unsaved AI-generated preview. No edition was approved and no email was sent." } });
+      } catch {
+        return reply({ error: "AI preview failed free-provider or source-quality checks. Existing approved issue is unchanged." }, 422);
+      }
+    }
     if (action === "topics" && admin) {
       return reply({ data: NEWSLETTER_LABS.map(t => ({ id: t.id, title: t.title, sourceTitle: t.sourceTitle })) });
     }
