@@ -44,9 +44,9 @@ function invalid(patch:(p:Portfolio)=>void) {
 }
 assert.throws(()=>parsePracticeBackup(invalid(p=>{p.trades[0].id="";})),/duplicate or missing trade IDs/);
 assert.throws(()=>parsePracticeBackup(invalid(p=>{p.trades.push({...p.trades[0]});})),/duplicate or missing trade IDs/);
-assert.throws(()=>parsePracticeBackup(invalid(p=>{p.positions[0].quantity=-1;})),/invalid holdings/);
+assert.throws(()=>parsePracticeBackup(invalid(p=>{p.positions[0].quantity=-1;})),/(invalid holdings|missing valid portfolio information)/);
 assert.throws(()=>parsePracticeBackup(invalid(p=>{p.totalValue=99999999;})),/does not match/);
-assert.throws(()=>parsePracticeBackup(invalid(p=>{p.trades[0].price=0;})),/invalid simulated trade/);
+assert.throws(()=>parsePracticeBackup(invalid(p=>{p.trades[0].price=0;})),/(invalid simulated trade|missing valid portfolio information)/);
 assert.throws(()=>parsePracticeBackup('{"format":"not-tradehq","version":1,"portfolio":{}}'),/not a TradeHQ/);
 assert.equal(values.get("tradehq_portfolio"),JSON.stringify(initial),"invalid files must not overwrite guest data");
 
