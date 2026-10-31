@@ -35,7 +35,7 @@ const WikiTerm = () => {
     "@type": "Article",
     "headline": `${term.term} — Explanation & Learning Exercise | TradeHQ Wiki`,
     "description": `${term.definition}`,
-    "author": { "@type": "Organization", "name": "TradeHQ" },
+    "author": { "@type": "Person", "name": "Anuga Weerasinghe", "url": `${DOMAIN}/about` },
     "publisher": {
       "@type": "Organization",
       "name": "TradeHQ",
