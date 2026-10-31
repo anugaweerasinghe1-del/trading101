@@ -44,6 +44,7 @@ const AdminReviews = lazy(() => import("./pages/AdminReviews"));
 const AdminDaily = lazy(() => import("./pages/AdminDaily"));
 const AdminCourses = lazy(() => import("./pages/AdminCourses"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
+const AdminNewsletter = lazy(() => import("./pages/AdminNewsletter"));
 const AdminAIAssistant = lazy(() => import("./pages/AdminAIAssistant"));
 const Roadmap = lazy(() => import("./pages/Roadmap"));
 const Compare = lazy(() => import("./pages/Compare"));
@@ -146,6 +147,7 @@ function AnimatedRoutes() {
           <Route path="/admin/editor" element={<AdminEditor />} />
           <Route path="/admin/reviews" element={<AdminReviews />} />
           <Route path="/admin/daily" element={<AdminDaily />} />
+          <Route path="/admin/newsletter" element={<AdminNewsletter />} />
           <Route path="/admin/courses" element={<AdminCourses />} />
 
           {/* CATCH-ALL */}
