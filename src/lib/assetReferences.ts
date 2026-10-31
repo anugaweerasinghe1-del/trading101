@@ -24,6 +24,26 @@ export const ASSET_REFERENCES: Record<string, { label: string; href: string; exe
     "href": "https://docs.bnbchain.org/",
     "exercise": "Separate a transaction fee paid in BNB, a token supply change and an exchange-service announcement. For each, record what evidence would be needed to claim an effect on price; the exercise makes no such measured claim."
   },
+  "amd": {
+    "label": "AMD — FY2025 audited annual report (filed February 2026)",
+    "href": "https://ir.amd.com/financial-information/sec-filings/content/0000002488-26-000018/amd-20251227.htm",
+    "exercise": "Use AMD's FY2025 Form 10-K to compare reported Data Center, Client and Gaming, and Embedded revenue with FY2024. State the reporting periods and compute each segment's year-over-year change. Explain why rounded segment values might not sum exactly to consolidated revenue, and why revenue is not operating income or evidence of a future AMD share price."
+  },
+  "nflx": {
+    "label": "Netflix — investor relations and quarterly financial reports",
+    "href": "https://ir.netflix.net/ir-overview/profile/",
+    "exercise": "Open Netflix's dated quarterly shareholder letter and identify revenue, operating income and operating margin for the same quarter. Check whether an increase in revenue and an increase in operating margin are the same claim. Compare operating margin as operating income divided by revenue. Do not substitute old subscriber counts for a current metric or use the earnings release to predict NFLX shares."
+  },
+  "coin": {
+    "label": "Coinbase — SEC financial filings",
+    "href": "https://investor.coinbase.com/financials/sec-filings/",
+    "exercise": "Find Coinbase's latest available Form 10-Q or 10-K and distinguish transaction-related revenue from subscriptions and services using figures from the same reporting period. Note the filing date and compare drivers, then explain why bitcoin's price alone cannot determine a company's consolidated profit or COIN share value. This is an issuer-report exercise, not an order signal."
+  },
+  "iwm": {
+    "label": "iShares — Russell 2000 ETF holdings and fund documents",
+    "href": "https://www.ishares.com/us/products/239710/ishares-russell-2000-etf",
+    "exercise": "Read the issuer's dated IWM holdings and expense-ratio disclosure. Compare the largest five holding weights with a large-cap fund over the same date; counting holdings alone is not a measure of diversification. Using a hypothetical 0.19% annual fee and $10,000 as arithmetic inputs gives $19 before changes and other costs. Distinguish an ETF's NAV, market price and a fictional TradeHQ practice quote."
+  },
   "avgo": {
     "label": "Broadcom — fiscal 2025 Form 10-K (filed 18 December 2025)",
     "href": "https://investors.broadcom.com/sec-filings/sec-filing/10-k/0001730168-25-000121",
