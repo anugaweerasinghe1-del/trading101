@@ -29,7 +29,9 @@ export function CompoundCalculator() {
       requestAnimationFrame(() => requestAnimationFrame(() => {
         const target = document.getElementById("compound-initial-capital") as HTMLInputElement | null;
         if (!target) return;
-        target.scrollIntoView({ behavior: "auto", block: "center" });
+        // Force an immediate anchor jump even when the site uses global
+        // smooth-scrolling CSS. This is a user-requested deep link.
+        target.scrollIntoView({ behavior: "instant", block: "center" });
         target.focus({ preventScroll: true });
       }));
     };
