@@ -73,6 +73,13 @@ Deno.serve(async (req: Request) => {
     if(priorError) return json({error:"Signup temporarily unavailable"},503);
     if(prior?.status==="confirmed" || prior?.status==="unsubscribed" || prior?.status==="bounced" || prior?.status==="complained") return json(OK);
     if(prior?.confirmation_sent_at && Date.now()-Date.parse(prior.confirmation_sent_at)<15*60_000) return json(OK);
+    // Reserve the free Resend daily quota for existing readers and other app mail.
+    // Public confirmation requests must not consume an unlimited daily volume.
+    const today=new Date().toISOString().slice(0,10)+"T00:00:00.000Z";
+    const {count:confirmationsToday,error:quotaError}=await db.from("newsletter_contacts")
+      .select("id",{count:"exact",head:true}).gte("confirmation_sent_at",today);
+    if(quotaError)return json({error:"Confirmation quota unavailable"},503);
+    if((confirmationsToday??0)>=30)return json({error:"Daily email confirmation limit reached. Try tomorrow."},429);
     const token=hex(crypto.getRandomValues(new Uint8Array(32)));
     const confirmationHash=await digest(token);
     const record={
