@@ -45,6 +45,7 @@ const AdminDaily = lazy(() => import("./pages/AdminDaily"));
 const AdminCourses = lazy(() => import("./pages/AdminCourses"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
 const AdminNewsletter = lazy(() => import("./pages/AdminNewsletter"));
+const NewsletterPage = lazy(() => import("./pages/NewsletterPage"));
 const AdminAIAssistant = lazy(() => import("./pages/AdminAIAssistant"));
 const Roadmap = lazy(() => import("./pages/Roadmap"));
 const Compare = lazy(() => import("./pages/Compare"));
@@ -132,6 +133,9 @@ function AnimatedRoutes() {
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/challenge" element={<Challenge />} />
           <Route path="/challenge/:code" element={<Challenge />} />
+          <Route path="/newsletter" element={<NewsletterPage />} />
+          <Route path="/newsletter/confirm" element={<NewsletterPage />} />
+          <Route path="/newsletter/unsubscribe" element={<NewsletterPage />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/sectors/:sectorId" element={<SectorPillar />} />
