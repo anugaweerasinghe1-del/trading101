@@ -62,6 +62,18 @@ export default function TraderProfile() {
     }
     setVisibilityBusy(false);
   };
+  const setTradeVisibility = async (showPublicTrades: boolean) => {
+    if (!user || visibilityBusy) return;
+    setVisibilityBusy(true);
+    const { error } = await supabase.from("profiles")
+      .update({ show_public_trades: showPublicTrades }).eq("id", user.id);
+    if (error) toast.error("Could not save trade-history permission. No trade details were shared.");
+    else {
+      await refreshProfile();
+      toast.success(showPublicTrades ? "Recent server-recorded practice trades are now visible on your public profile." : "Public trade history hidden.");
+    }
+    setVisibilityBusy(false);
+  };
   const path = "/trader/me";
   const title = "My Trader Profile — Practice Portfolio Stats | TradeHQ";
   const description = "Local snapshot of TradeHQ practice statistics. Signed-in users can choose whether their backend profile is public. Educational simulation only, not financial advice.";
@@ -138,6 +150,24 @@ export default function TraderProfile() {
                   onCheckedChange={setPublicVisibility}
                   aria-label="Public profile visibility"
                 />
+              </div>
+            </Card>
+          )}
+
+          {user && profile && (
+            <Card className="p-5 mb-8 bg-white/[0.02] border-white/10">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div>
+                  <h2 className="font-semibold">Share my recent simulated trades</h2>
+                  <p className="text-xs text-muted-foreground mt-1 max-w-2xl leading-relaxed">
+                    Separate optional permission, off by default. With a public profile enabled, the most recent 20 current-cycle server-recorded practice orders can show asset, buy/sell, quantity, simulated execution price, fee and time.
+                    Private journal notes, older cycles and browser-only guest history are never shared. Turning your profile private hides this history too.
+                  </p>
+                </div>
+                <Switch aria-label="Share recent simulated trade history"
+                  checked={profile.show_public_trades === true}
+                  disabled={visibilityBusy || !profile.is_public}
+                  onCheckedChange={setTradeVisibility} />
               </div>
             </Card>
           )}

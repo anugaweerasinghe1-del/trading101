@@ -39,6 +39,7 @@ import {
 import { cn } from "@/lib/utils";
 import { AIInsightSummary } from "@/components/portfolio/AIInsightSummary";
 import { PositionsTable } from "@/components/portfolio/PositionsTable";
+import { PortfolioRecoveryPanel } from "@/components/portfolio/PortfolioRecoveryPanel";
 import { ScenarioBuilder } from "@/components/portfolio/ScenarioBuilder";
 import { useToast } from "@/hooks/use-toast";
 import {
@@ -52,7 +53,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { pushPortfolio } from "@/lib/cloudPortfolio";
 import { PRICE_REFRESH_COPY, priceLabel, quoteTimeLabel, snapshotPriceInfo } from "@/lib/practicePricing";
 export default function Portfolio() {
-  const { user } = useAuth();
+  const { user, loading: authLoading } = useAuth();
   const userRef = useRef(user);
   userRef.current = user;
   const refreshBusy = useRef(false);
@@ -329,6 +330,7 @@ export default function Portfolio() {
           </div>
 
           <div className="container mx-auto px-6">
+            <PortfolioRecoveryPanel signedIn={!!user} authLoading={authLoading} />
             <header className="mb-8">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div>

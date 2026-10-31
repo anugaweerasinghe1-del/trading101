@@ -82,6 +82,7 @@ export function Navigation() {
   ];
   const moreGroups = [
     { label: "Explore", items: [
+      { to: "/start", label: "Start Here", icon: GraduationCap },
       { to: "/courses", label: "Courses", icon: BookOpen },
       { to: "/ai-mentor", label: "AI Mentor", icon: Bot },
       { to: "/markets", label: "Markets", icon: TrendingUp },

@@ -228,6 +228,7 @@ export type Database = {
           created_at: string
           id: string
           is_public: boolean
+          show_public_trades: boolean
           updated_at: string
           username: string
         }
@@ -237,6 +238,7 @@ export type Database = {
           created_at?: string
           id: string
           is_public?: boolean
+          show_public_trades?: boolean
           updated_at?: string
           username: string
         }
@@ -246,6 +248,7 @@ export type Database = {
           created_at?: string
           id?: string
           is_public?: boolean
+          show_public_trades?: boolean
           updated_at?: string
           username?: string
         }
@@ -371,6 +374,10 @@ export type Database = {
         Returns: { user_id: string; username: string; country: string | null; portfolio_value: number | null; pnl_pct: number | null; trades: number; portfolio_status: string; practice_rank: number | null; priced_at: string | null; observed_at: string | null; price_status: string }[]
       }
 
+      get_public_practice_trades: {
+        Args: { p_username: string; p_limit?: number }
+        Returns: { asset_id: string; side: string; quantity: number; price: number; fee: number; total: number; realized_pnl: number | null; price_source: string; created_at: string }[]
+      }
       get_previous_practice_results: {
         Args: { p_limit?: number }
         Returns: { user_id: string; username: string; country: string | null; portfolio_value: number; pnl_pct: number; trades: number; reported_at: string }[]

@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { Helmet } from "react-helmet-async";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useSearchParams, Link } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { AssetSearchDropdown } from "@/components/trading/AssetSearchDropdown";
 import { MinimalistAreaChart } from "@/components/trading/MinimalistAreaChart";
@@ -28,9 +28,13 @@ import { recordLoss } from "@/components/trading/RevengeTradingBlocker";
 import { useToast } from "@/hooks/use-toast";
 import { persistPrice, getPersistedPrices } from "@/lib/pricePersistence";
 import { refreshAssetSnapshots } from "@/lib/marketDataClient";
+import { markJourneyTrade, readJourney } from "@/lib/beginnerJourney";
 
 export default function Trade() {
   const { symbol } = useParams();
+  const [query] = useSearchParams();
+  const guidedPractice = query.get("journey") === "1";
+  const [guidedOrderComplete, setGuidedOrderComplete] = useState(() => Boolean(readJourney().tradeId));
   const [portfolio, setPortfolio] = useState(getPortfolio());
   useEffect(() => {
     const refresh = () => setPortfolio(getPortfolio());
@@ -98,7 +102,7 @@ export default function Trade() {
         );
         setSelectedAsset(match || hydratedAssets[0] || null);
       } else {
-        setSelectedAsset(hydratedAssets[0] || null);
+        setSelectedAsset((guidedPractice ? hydratedAssets.find(a => a.symbol === "AAPL") : null) || hydratedAssets[0] || null);
       }
 
       setIsLoading(false);
@@ -109,7 +113,7 @@ export default function Trade() {
     return () => {
       isMounted.current = false;
     };
-  }, [symbol]);
+  }, [symbol, guidedPractice]);
 
   useEffect(() => {
     if (isLoading || assets.length === 0) return;
@@ -165,6 +169,10 @@ export default function Trade() {
         }
 
         setPortfolio(result.portfolio);
+        if (guidedPractice && result.portfolio.trades[0]) {
+          markJourneyTrade(result.portfolio.trades[0]);
+          setGuidedOrderComplete(true);
+        }
 
         toast({
           title: `${type === "buy" ? "🟢" : "🔴"} Order Executed`,
@@ -178,7 +186,7 @@ export default function Trade() {
         });
       }
     },
-    [portfolio, toast],
+    [portfolio, toast, guidedPractice],
   );
 
   const handleToggleFavorite = useCallback((assetId: string) => {
@@ -233,6 +241,10 @@ export default function Trade() {
         <Navigation />
 
         <main className="flex-1 container mx-auto px-4 pt-20 pb-6 space-y-4 max-w-7xl">
+          {guidedPractice && <div className="rounded-2xl border border-primary/40 bg-primary/5 p-4 text-sm flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <div><strong>Beginner journey · guided virtual trade</strong><p className="text-muted-foreground mt-1">{guidedOrderComplete ? "Your order has been recorded. Return to understand its effect on cash, holdings and fees." : "AAPL is preselected as an example, not a recommendation. Review the quote source, quantity and costs. You decide whether to submit a practice order."}</p></div>
+            <Link to="/start" className="font-semibold text-primary whitespace-nowrap underline underline-offset-4">Back to my journey</Link>
+          </div>}
           <header className="pt-2">
             <h1 className="text-xl md:text-2xl font-bold tracking-tight">
               Practice Trading Terminal{selectedAsset ? ` — ${selectedAsset.name} (${selectedAsset.symbol})` : ""}

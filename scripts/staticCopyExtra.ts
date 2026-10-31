@@ -148,7 +148,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
       list: [
         "Do I have to appear here? No. New profiles start public, but you can switch public visibility off at any time from your profile page.",
         "Is there a prize? No. There is no money, no entry fee and nothing to win.",
-        "Can I see someone's trades? Only the summary statistics they chose to publish, never their journal.",
+        "Can I see someone's trades? Only if that member independently opts in to showing recent current-cycle server-recorded practice orders on an otherwise public profile. Private journal entries and browser-only history never appear.",
         "How often does it update? Held assets are checked in the background every five minutes, with traditional instruments rotating through a limited batch. The visible board refreshes every minute. Provider delays and outages can leave older quotes; unsupported assets use fixed simulator prices.",
         "Who appears? All public members, including accounts with no trades. Only comparable server-recorded portfolios receive practice ranks after a first trade; imported portfolios stay unranked.",
       ],
