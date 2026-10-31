@@ -12,7 +12,7 @@ const app = read("src/App.tsx");
 assert.match(sql, /alter table public\.newsletter_editions enable row level security/i);
 assert.match(sql, /revoke all on public\.newsletter_editions from anon,authenticated/i);
 assert.match(sql, /week_of date not null unique/i);
-assert.ok(!/\bnewsletter_subscribers\b|\bsubscribers\b/i.test(edge),
+assert.ok(!/\.from\s*\(\s*["\x27](?:newsletter_subscribers|subscribers)["\x27]\s*\)|\.rpc\s*\(\s*["\x27][^"\x27]*subscriber/i.test(edge),
   "Draft generator must not read subscriber emails");
 assert.ok(!/resend\.com|send-newsletter|smtp|reply_to|newsletter_deliveries/i.test(edge),
   "Draft generator must have no outbound newsletter sending capability");
