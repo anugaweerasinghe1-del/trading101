@@ -77,8 +77,9 @@ export function buildLearningOverview(
     }
   }
   if (!next) {
-    const beginner = tracks.find(t => t.slug === "trading-psychology-mastery" && t.lessons.length) ??
-      tracks.find(t => t.lessons.length > 0);
+    const unfinished = (t: LearningTrack) => t.lessons.some(l => course.tracks[t.slug]?.lessons[l.slug]?.status !== "completed");
+    const beginner = tracks.find(t => t.slug === "trading-psychology-mastery" && unfinished(t)) ??
+      tracks.find(unfinished);
     if (beginner) {
       const first = beginner.lessons.find(l => course.tracks[beginner.slug]?.lessons[l.slug]?.status !== "completed");
       if (first) next = pick(beginner, first, "Suggested structured course lesson");
