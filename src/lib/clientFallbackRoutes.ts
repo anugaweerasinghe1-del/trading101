@@ -6,7 +6,7 @@ const articleIds = new Set(LEARN_ARTICLES.map(article => article.slug));
 const fixedRoutes = new Set([
   "/auth", "/reset-password", "/admin", "/admin/ai", "/admin/courses",
   "/admin/reviews", "/admin/daily", "/admin/newsletter", "/admin/validator", "/admin/seo-audit", "/admin/editor",
-  "/challenge",
+  "/challenge", "/newsletter", "/newsletter/confirm", "/newsletter/unsubscribe",
 ]);
 
 /** Only known application states may use a successful SPA fallback response. */
