@@ -96,7 +96,7 @@ export default function Roadmap() {
                   <h2 className="text-lg font-semibold tracking-tight mb-2">{item.title}</h2>
                   <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                   <div className="mt-4 pt-4 border-t border-white/5 text-xs text-muted-foreground/70">
-                    Target: <span className="text-emerald-400/80 [.light_&]:text-emerald-800">{item.eta}</span>
+                    Timeline: <span className="text-emerald-400/80 [.light_&]:text-emerald-800">{item.eta}</span>
                   </div>
                 </Card>
               );
