@@ -77,6 +77,18 @@ function getSimulatorBullet(asset: Asset): string {
 }
 
 function getStudentPerspective(asset: Asset): string {
-  const assetLabel = asset.type === 'etf' ? 'ETF' : asset.type;
-  return `Student perspective: Practice ${asset.symbol} ${assetLabel} trading as a beginner in Colombo or anywhere — study order mechanics with virtual cash. Practice results do not establish readiness for real trading.`;
+  // Distinguish the learning task by instrument class rather than mass-repeating
+  // a location-specific sentence that does not tell a student anything new.
+  switch (asset.type) {
+    case "stock":
+      return `Student exercise for ${asset.symbol}: compare a virtual share position with a dated issuer financial statement. Reported company revenue and a simulated share return are different quantities.`;
+    case "etf":
+      return `Student exercise for ${asset.symbol}: inspect an issuer's dated holdings and expenses, then compare concentration with a virtual fund holding. Fund diversification is not a guarantee against loss.`;
+    case "forex":
+      return `Student exercise for ${asset.symbol}: identify the base and quote currencies and calculate a hypothetical conversion in the correct quote units. This does not place a real currency transaction.`;
+    case "crypto":
+      return `Student exercise for ${asset.symbol}: distinguish the asset's token quantity from network activity and estimate a virtual buy/sell fee. Market moves do not establish whether a strategy is safe.`;
+    case "commodity":
+      return `Student exercise for ${asset.symbol}: distinguish the simulator's price exposure from physical delivery, storage and futures settlement. No physical commodity is bought in the practice desk.`;
+  }
 }

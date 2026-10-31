@@ -92,6 +92,7 @@ const webAppSchema = {
   url: "https://www.thetradehq.com/",
   applicationCategory: "FinanceApplication",
   operatingSystem: "Web Browser",
+  creator: { "@type": "Person", name: "Anuga Weerasinghe", url: "https://www.thetradehq.com/about" },
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   description: "Practice stock & crypto trading free with $100,000 virtual cash. No signup needed. 170 assets, AI mentor, leaderboard.",
 };
