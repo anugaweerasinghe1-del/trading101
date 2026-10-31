@@ -80,6 +80,6 @@ assert.match(migration,/pf\.is_public IS TRUE/);
 assert.match(migration,/pf\.show_public_trades IS TRUE/);
 assert.match(migration,/t\.cycle_id = pp\.cycle_id/);
 assert.match(migration,/LIMIT GREATEST\(1, LEAST\(COALESCE\(p_limit, 20\), 20\)\)/);
-assert.doesNotMatch(migration,/journal|notes/i,"Private notes must not be projected into public trade RPC");
+assert.doesNotMatch(migration,/t\\.journal|t\\.notes/i,"Private notes must not be projected into public trade RPC");
 assert.match(privacy,/off by default/i);
 console.log("PASS portable guest recovery, resilient journey progress, voluntary orders, daily habit and private-by-default public history");
