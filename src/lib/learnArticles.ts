@@ -25,6 +25,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
     title: "What Is Paper Trading? Practice, Uses and Limitations",
     summary: "Paper trading uses virtual money to explore order placement, portfolio arithmetic and record-keeping. It avoids real-money trades, but cannot reproduce all live-market costs or risks.",
     metaDescription: "Learn how paper trading works with $100,000 in virtual cash on TradeHQ. Practice orders are simulated; real-market costs and outcomes can differ.",
+    sourceCheck: { date: "2026-10-31", scope: "Limited source check: SEC Investor.gov order-type definitions and simulator practice-scope statements were compared with the public TradeHQ implementation. This does not verify every learning claim or constitute independent professional review." },
     readTime: "5 min read",
     sections: [
       {
@@ -260,6 +261,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
     title: "Risk Management for Paper Trading: Risk Budgets and Exits",
     summary: "Study position sizing, conceptual exits and risk-budget arithmetic. TradeHQ supports manual market orders; percentage rules such as 1% or 2% are worksheet assumptions.",
     metaDescription: "Learn risk-management concepts including position sizing, stop-loss orders, reward-to-risk assumptions, and example percentage risk limits using TradeHQ practice tools.",
+    sourceCheck: { date: "2026-10-31", scope: "Limited calculation and source check: 0.4×2−0.6×1=0.2, 0.25×3−0.75×1=0, and 192×(5+0.10+0.095)=997.44 were recalculated. SEC order guidance supports the limitations of stop orders. No strategy performance or suitability claim was verified." },
     readTime: "6 min read",
     sections: [
       {
@@ -299,6 +301,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
     title: "Market Orders vs Limit Orders: Which Should You Use and When?",
     summary: "Compare market and limit order mechanics, fill uncertainty and the situations each order type is designed for. TradeHQ only simulates market orders.",
     metaDescription: "Compare market and limit orders, price uncertainty, slippage and unfilled orders. TradeHQ simulates market orders only; limit orders are explained conceptually.",
+    sourceCheck: { date: "2026-10-31", scope: "Limited source check: market, limit and stop order definitions and execution/price uncertainty were compared with the SEC Investor.gov Types of Orders page. Hypothetical BTC prices are illustrative, not a verified market quotation." },
     readTime: "5 min read",
     sections: [
       {
