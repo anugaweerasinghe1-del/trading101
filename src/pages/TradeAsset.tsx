@@ -603,9 +603,6 @@ export default function TradeAsset() {
               <p className="text-sm text-muted-foreground leading-relaxed">
                 {generateStudentUseSection(selectedAsset)}
               </p>
-              <p className="text-xs text-muted-foreground/60 mt-3 italic">
-                Student perspective: Study {selectedAsset.symbol} order mechanics with virtual cash in Colombo or anywhere. Simulation does not predict real returns.
-              </p>
             </section>
           )}
 
