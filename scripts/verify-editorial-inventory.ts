@@ -12,6 +12,10 @@ for (const track of data.courseTracks) for (const lesson of track.lessons) {
   assert.ok(content.get(path)?.sections.length, path);
   assert.equal(lesson.quiz.length, 4, `${path}: preserve complete quiz`);
   for (const quiz of lesson.quiz) assert.ok(quiz.correctAnswer >= 0 && quiz.correctAnswer < quiz.options.length);
+  assert.ok(Array.isArray(lesson.sources) && lesson.sources.length >= 2,
+    `${path}: lessons must provide at least two reference entries`);
+  assert.ok(lesson.sources.some(source => /^https:\/\/[^\s]+$/.test(source.url)),
+    `${path}: lesson must provide an external source with an HTTPS URL`);
 }
 for (const route of routes.filter(route => route.path.startsWith("/trade/") && !route.noindex)) {
   const id = route.path.split("/").pop()!;
