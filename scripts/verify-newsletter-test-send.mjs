@@ -23,7 +23,8 @@ assert.match(migration, /REVOKE ALL ON public\.newsletter_test_deliveries FROM P
 assert.match(editor, /"preview-upcoming" && admin/);
 assert.match(editor, /followingMonday/);
 assert.match(ui, /Preview next week's AI issue/);
-assert.match(ui, /Send test to my inbox/);
-assert.match(ui, /!testStatus\?\.configured/);
+assert.doesNotMatch(ui, /Send test to my inbox/);
+assert.match(ui, /Publish approved issue to subscribers/);
+assert.match(ui, /distributionCall\("publish"/);
 assert.match(ui, /current\?\.status !== "approved"/);
-console.log("PASS next-week original AI preview and fixed-recipient, one-time owner test sending boundaries");
+console.log("PASS original AI preview and hidden legacy test sender safeguards");
