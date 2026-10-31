@@ -168,3 +168,26 @@ export function isGuestImportUnverified(): boolean {
   try { return JSON.parse(localStorage.getItem(GUEST_IMPORT_MARKER) || "null")?.source === "unverified-user-supplied-file"; }
   catch { return false; }
 }
+
+/** Unverified guest imports are intentionally never a proof of ranked activity. */
+export function applyUnverifiedGuestRestore(
+  imported: Portfolio, current: Portfolio, saveLocal: (p: Portfolio) => void
+): void {
+  validateImportedPracticePortfolio(imported);
+  if (!browserCanPersistPortfolio()) throw new Error("Browser storage is unavailable. Nothing was restored.");
+  savePreRestoreCopy(current);
+  try {
+    // Mark the guest data as imported *before* applying it so a delayed
+    // account initialisation cannot mistake a hand-edited JSON for proof.
+    markGuestImport();
+    saveLocal(imported);
+    const persisted = parsePracticePortfolio(JSON.parse(localStorage.getItem("tradehq_portfolio") ?? "null"));
+    if (!persisted || JSON.stringify(persisted) !== JSON.stringify(imported))
+      throw new Error("The browser could not verify the saved portfolio. Restore was cancelled.");
+  } catch (error) {
+    // Roll back the previous guest portfolio; preserve the rollback record
+    // if browser writes fail so recovery is still possible.
+    try { saveLocal(current); restorePreviousProvenance(); } catch {}
+    throw error;
+  }
+}
