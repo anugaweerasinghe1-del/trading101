@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Wallet, Home, GraduationCap, BookOpen, BarChart3, Bot, Menu, X, Star, Info, UserRound, LogOut } from "lucide-react";
+import { Wallet, Home, GraduationCap, BookOpen, BarChart3, Bot, Menu, X, Star, Info, UserRound, LogOut, ChevronDown, Mail, CalendarCheck, Contact, TrendingUp, Layers } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { cn } from "@/lib/utils";
 import { useState, useEffect, useRef } from "react";
@@ -8,7 +8,7 @@ import { createPortal } from "react-dom";
 import { BrandMark } from "@/components/brand/BrandMark";
 import { StreakBadge } from "@/components/badges/StreakBadge";
 import { useAuth } from "@/hooks/useAuth";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { toast } from "sonner";
 
 export function Navigation() {
@@ -16,6 +16,7 @@ export function Navigation() {
   const { user, signOut } = useAuth();
   const [signingOut, setSigningOut] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileMoreOpen, setMobileMoreOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const menuTriggerRef = useRef<HTMLButtonElement>(null);
   const [scrolled, setScrolled] = useState(false);
@@ -69,17 +70,41 @@ export function Navigation() {
   }, [mobileMenuOpen]);
 
 
+  // The primary navigation describes the beginner's progression:
+  // Learn the essentials -> practise with virtual money -> track a portfolio
+  // -> build a weekly learning habit.
   const navItems = [
     { to: "/", label: "Home", icon: Home },
-    { to: "/trade", label: "Trade", icon: BarChart3 },
-    { to: "/portfolio", label: "Portfolio", icon: BookOpen },
     { to: "/learn", label: "Learn", icon: GraduationCap },
-    { to: "/courses", label: "Courses", icon: BookOpen },
-    { to: "/leaderboard", label: "Leaderboard", icon: Wallet },
-    { to: "/reviews", label: "Reviews", icon: Star },
-    { to: "/ai-mentor", label: "AI Mentor", icon: Bot },
-    { to: "/about", label: "About", icon: Info },
+    { to: "/trade", label: "Trade", icon: BarChart3 },
+    { to: "/portfolio", label: "Portfolio", icon: Wallet },
+    { to: "/newsletter", label: "Weekly", icon: Mail },
   ];
+  const moreGroups = [
+    { label: "Explore", items: [
+      { to: "/courses", label: "Courses", icon: BookOpen },
+      { to: "/ai-mentor", label: "AI Mentor", icon: Bot },
+      { to: "/markets", label: "Markets", icon: TrendingUp },
+      { to: "/daily", label: "Daily Practice", icon: CalendarCheck },
+    ] },
+    { label: "Community", items: [
+      { to: "/leaderboard", label: "Leaderboard", icon: Layers },
+      { to: "/reviews", label: "Reviews", icon: Star },
+    ] },
+    { label: "Company", items: [
+      { to: "/about", label: "About", icon: Info },
+      { to: "/contact", label: "Contact", icon: Contact },
+    ] },
+    { label: "Legal & Trust", items: [
+      { to: "/privacy", label: "Privacy Policy", icon: Info },
+      { to: "/terms", label: "Terms of Service", icon: BookOpen },
+      { to: "/about#disclaimer", label: "Educational Disclaimer", icon: Info },
+    ] },
+  ];
+  const isActive = (path: string) => path === "/"
+    ? location.pathname === "/"
+    : location.pathname === path || location.pathname.startsWith(path + "/");
+  const moreActive = moreGroups.some(group => group.items.some(item => isActive(item.to)));
 
   return (
     <>
@@ -98,24 +123,52 @@ export function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden xl:flex min-w-0 overflow-x-auto items-center gap-1">
+          <div className="hidden xl:flex min-w-0 items-center gap-1">
             {navItems.map((item) => (
               <Button
                   variant="ghost"
                   size="sm"
                   className={cn(
                     "h-9 px-2 text-sm font-medium rounded-xl transition-all duration-300",
-                    location.pathname === item.to
+                    isActive(item.to)
                       ? "bg-primary/10 text-primary"
                       : "text-muted-foreground hover:text-foreground hover:bg-white/[0.05]"
                   )}
                  asChild key={item.to}>
-<Link  to={item.to}>
+<Link to={item.to} aria-current={isActive(item.to) ? "page" : undefined}>
                   <item.icon className="w-4 h-4 mr-2" />
                   {item.label}
                 </Link>
 </Button>
             ))}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="sm" aria-label="More site pages"
+                  className={cn("h-9 px-3 text-sm font-medium rounded-xl",
+                    moreActive ? "bg-primary/10 text-primary" : "text-muted-foreground hover:text-foreground hover:bg-white/[0.05]")}>
+                  More <ChevronDown className="ml-1.5 w-4 h-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" sideOffset={10}
+                className="w-56 rounded-xl border border-border bg-popover/95 p-2 shadow-2xl backdrop-blur-xl">
+                {moreGroups.map((group, index) => (
+                  <div key={group.label}>
+                    {index > 0 && <DropdownMenuSeparator className="my-1.5" />}
+                    <DropdownMenuLabel className="px-2 py-1 text-[10px] uppercase tracking-[0.15em] text-muted-foreground">
+                      {group.label}
+                    </DropdownMenuLabel>
+                    {group.items.map(item => (
+                      <DropdownMenuItem key={item.to} asChild
+                        className={cn("rounded-lg cursor-pointer text-sm", isActive(item.to) && "bg-primary/10 text-primary")}>
+                        <Link to={item.to} aria-current={isActive(item.to) ? "page" : undefined}>
+                          <item.icon className="mr-2.5 h-4 w-4" /> {item.label}
+                        </Link>
+                      </DropdownMenuItem>
+                    ))}
+                  </div>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
             <div className="ml-2 pl-2 border-l border-white/[0.06]">
               <StreakBadge className="mr-2" />
               <ThemeToggle />
@@ -207,17 +260,42 @@ export function Navigation() {
                 variant="ghost"
                 className={cn(
                   "w-full justify-start h-12 px-4 text-sm font-medium rounded-xl transition-all",
-                  location.pathname === item.to
+                  isActive(item.to)
                     ? "bg-primary/10 text-primary"
                     : "text-muted-foreground hover:text-foreground hover:bg-white/[0.05]"
                 )}
                asChild key={item.to}>
-<Link  to={item.to} onClick={() => setMobileMenuOpen(false)}>
+<Link to={item.to} aria-current={isActive(item.to) ? "page" : undefined} onClick={() => setMobileMenuOpen(false)}>
                 <item.icon className="w-4 h-4 mr-3" />
                 {item.label}
               </Link>
 </Button>
           ))}
+          <button type="button"
+            className={cn("w-full flex items-center h-12 px-4 text-sm font-medium rounded-xl text-left transition-all",
+              moreActive ? "text-primary bg-primary/10" : "text-muted-foreground hover:text-foreground hover:bg-white/[0.05]")}
+            aria-expanded={mobileMoreOpen} aria-controls="mobile-more-pages"
+            onClick={() => setMobileMoreOpen(open => !open)}>
+            <Layers className="w-4 h-4 mr-3" /> More
+            <ChevronDown className={cn("ml-auto w-4 h-4 transition-transform", mobileMoreOpen && "rotate-180")} />
+          </button>
+          {mobileMoreOpen && <div id="mobile-more-pages" className="ml-3 border-l border-white/10 pl-2 space-y-3">
+            {moreGroups.map(group => (
+              <div key={group.label}>
+                <p className="px-4 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                  {group.label}
+                </p>
+                {group.items.map(item => (
+                  <Link key={item.to} to={item.to} onClick={() => setMobileMenuOpen(false)}
+                    aria-current={isActive(item.to) ? "page" : undefined}
+                    className={cn("flex w-full items-center min-h-11 rounded-lg px-4 py-2 text-sm",
+                      isActive(item.to) ? "bg-primary/10 text-primary" : "text-muted-foreground hover:text-foreground hover:bg-white/[0.05]")}>
+                    <item.icon className="mr-3 h-4 w-4" /> {item.label}
+                  </Link>
+                ))}
+              </div>
+            ))}
+          </div>}
           <Button variant="ghost" className="w-full justify-start h-12 px-4 text-sm font-medium rounded-xl text-muted-foreground hover:text-foreground hover:bg-white/[0.05]" asChild>
 <Link to={user ? "/trader/me" : "/auth"} onClick={() => setMobileMenuOpen(false)}>
               <UserRound className="w-4 h-4 mr-3" />
