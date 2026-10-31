@@ -15,14 +15,17 @@ export async function verifyMarketsSidebar({send,evaluate,waitUntil,origin,delay
     const state=await evaluate(`(()=>{
       const nav=document.querySelector('nav.fixed'),r=nav.getBoundingClientRect();
       const heading=document.querySelector('main h1')?.getBoundingClientRect();
-      return {top:r.top,width:r.width,height:r.height,
+      return {top:r.top,left:r.left,right:r.right,width:r.width,height:r.height,
+        viewport:innerWidth,documentWidth:document.documentElement.clientWidth,
+        bodyWidth:document.body.getBoundingClientRect().width,
+        computedPosition:getComputedStyle(nav).position,
         hasRail:!!document.querySelector('aside.sticky'),
         headingTop:heading?.top ?? -1,
         links:[...nav.querySelectorAll('a[href]')].map(a=>a.getAttribute('href')),
         overflow:document.documentElement.scrollWidth>innerWidth+1};
     })()`);
     assert.equal(state.hasRail,false,'Legacy Markets vertical sidebar removed at '+width);
-    assert.ok(Math.abs(state.top)<=1 && state.width>=width-1,'Shared navbar spans viewport at '+width);
+    assert.ok(Math.abs(state.top)<=1 && state.width>=width-1,'Shared navbar spans viewport at '+width+': '+JSON.stringify(state));
     assert.ok(state.headingTop>=state.height-1,'Markets heading clears fixed site header at '+width);
     assert.equal(state.overflow,false,'Markets content does not overflow viewport at '+width);
     for (const path of ['/','/learn','/trade','/portfolio','/newsletter']) {
