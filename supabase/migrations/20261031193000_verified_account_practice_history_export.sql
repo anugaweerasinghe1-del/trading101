@@ -59,11 +59,28 @@ BEGIN
   payload:=p_document->'payload';
   sig:=p_document->>'signature';
   IF payload IS NULL OR jsonb_typeof(payload)<>'object'
-     OR payload->>'format'<>'tradehq-server-practice-history'
-     OR payload->>'version'<>'1'
-     OR payload->>'user_id'<>uid::text
-     OR p_document->>'key_id'<>'v1'
-     OR sig !~ '^[0-9a-f]{64}$' THEN
+     OR payload->>'format' IS DISTINCT FROM 'tradehq-server-practice-history'
+     OR payload->>'version' IS DISTINCT FROM '1'
+     OR payload->>'user_id' IS DISTINCT FROM uid::text
+     OR p_document->>'key_id' IS DISTINCT FROM 'v1'
+     OR sig IS NULL OR sig !~ '^[0-9a-f]{64}
+    RETURN jsonb_build_object('verified',false,'reason','Wrong account or format');
+  END IF;
+  SELECT signing_key INTO secret FROM tradehq_private.practice_export_keys WHERE key_id='v1';
+  IF secret IS NULL THEN RETURN jsonb_build_object('verified',false,'reason','Verification unavailable'); END IF;
+  calculated:=encode(extensions.hmac(convert_to(payload::text,'UTF8'),secret,'sha256'),'hex');
+  RETURN jsonb_build_object(
+    'verified',sig=calculated,
+    'reason',CASE WHEN sig=calculated THEN 'Issued by TradeHQ for this account; historical snapshot only'
+      ELSE 'File content does not match its original server-issued signature' END
+  );
+END;
+$$;
+REVOKE ALL ON FUNCTION public.verify_my_practice_history_export(jsonb) FROM PUBLIC, anon;
+GRANT EXECUTE ON FUNCTION public.verify_my_practice_history_export(jsonb) TO authenticated;
+COMMENT ON FUNCTION public.export_my_verified_practice_history() IS
+ 'Export server-recorded current-cycle practice history with a private HMAC signature. No restoration or rank mutation.';
+ THEN
     RETURN jsonb_build_object('verified',false,'reason','Wrong account or format');
   END IF;
   SELECT signing_key INTO secret FROM tradehq_private.practice_export_keys WHERE key_id='v1';
