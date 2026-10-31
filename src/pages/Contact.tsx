@@ -43,16 +43,17 @@ export default function Contact() {
   const [submitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "", website: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [manualDraft, setManualDraft] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const prepareDraft = () => {
     setErrors({});
+    setManualDraft(null);
 
-    // Honeypot + timing spam protection
-    if (form.website.trim() !== "") return;
+    // Honeypot + timing spam protection: no data leaves the browser.
+    if (form.website.trim() !== "") return null;
     if (Date.now() - loadedAt < 2500) {
       toast.error("Please take a moment to review your message before sending.");
-      return;
+      return null;
     }
 
     const parsed = contactSchema.safeParse(form);
@@ -63,18 +64,40 @@ export default function Contact() {
         if (!fieldErrors[key]) fieldErrors[key] = issue.message;
       }
       setErrors(fieldErrors);
-      return;
+      return null;
     }
 
-    setSubmitting(true);
     const { name, email, subject, message } = parsed.data;
-    const body = `${message}\n\n— ${name} (${email})`;
-    const mailto = `mailto:${OWNER_EMAIL}?subject=${encodeURIComponent(
-      `[TradeHQ] ${subject}`
-    )}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
-    toast.success("Opening your email client — send from there to reach us.");
+    const mailSubject = `[TradeHQ] ${subject}`;
+    const mailBody = `${message}\n\n— ${name} (${email})`;
+    return {
+      subject: mailSubject,
+      body: mailBody,
+      plainText: `To: ${OWNER_EMAIL}\nSubject: ${mailSubject}\n\n${mailBody}`,
+    };
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const draft = prepareDraft();
+    if (!draft) return;
+    setSubmitting(true);
+    window.location.href = `mailto:${OWNER_EMAIL}?subject=${encodeURIComponent(draft.subject)}&body=${encodeURIComponent(draft.body)}`;
+    toast.message("Email draft requested. Press Send in your email app; TradeHQ has not sent it.");
     setSubmitting(false);
+  };
+
+  const copyForWebmail = async () => {
+    const draft = prepareDraft();
+    if (!draft) return;
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error("Clipboard unavailable");
+      await navigator.clipboard.writeText(draft.plainText);
+      toast.success("Draft copied. Paste it into your webmail and press Send.");
+    } catch {
+      setManualDraft(draft.plainText);
+      toast.message("Clipboard access unavailable. Copy the selectable draft shown below.");
+    }
   };
 
   const setField = (key: keyof typeof form) => (
@@ -234,12 +257,25 @@ export default function Contact() {
                 )}
               </div>
 
-              <Button type="submit" disabled={submitting} className="w-full sm:w-auto">
-                {submitting ? "Opening…" : "Send message"}
-              </Button>
-              <p className="text-[11px] text-muted-foreground">
-                Submitting opens your email client with the message pre-filled — nothing is sent from your browser.
+              <div className="flex flex-wrap items-center gap-3">
+                <Button type="submit" disabled={submitting} className="w-full sm:w-auto">
+                  {submitting ? "Opening…" : "Open email app"}
+                </Button>
+                <Button type="button" variant="outline" onClick={() => void copyForWebmail()} className="w-full sm:w-auto">
+                  Copy draft for webmail
+                </Button>
+              </div>
+              <p className="text-xs text-muted-foreground">
+                Neither action sends a message automatically. Open your email app, or copy the draft into
+                <a href="https://mail.google.com/" target="_blank" rel="noopener noreferrer" className="mx-1 underline text-primary">Gmail</a>
+                or your preferred webmail service, then press Send there. TradeHQ does not store this message.
               </p>
+              {manualDraft && (
+                <div className="space-y-2" role="status" aria-live="polite">
+                  <Label htmlFor="manual-email-draft">Copy this draft and paste it into your email</Label>
+                  <Textarea id="manual-email-draft" value={manualDraft} readOnly rows={9} onFocus={e => e.currentTarget.select()} />
+                </div>
+              )}
             </form>
           </section>
 
@@ -251,9 +287,9 @@ export default function Contact() {
               TradeHQ is a small independent project rather than a company with a support desk, so
               messages are read and answered by the person who builds the site. In practice that means
               response times vary with request volume and can take longer over a
-              weekend or a public holiday. Nothing is auto-responded to, and no message is passed to a
-              third party — the contact form simply opens your own email client with the text
-              pre-filled, so your address is never stored on this site.
+              weekend or a public holiday. Nothing is auto-responded to by TradeHQ. The form only
+              opens an email draft or lets you copy it into webmail. Nothing is submitted to a
+              TradeHQ server, and no contact message is stored on this site.
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed mt-3">
               Bug reports are the most useful thing you can send. If something behaved unexpectedly,

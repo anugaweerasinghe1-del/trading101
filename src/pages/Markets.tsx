@@ -56,6 +56,7 @@ const WIKI_TERMS = [
 
 export default function Markets() {
   const [assets, setAssets] = useState(ASSETS);
+  const [lastSimulatedTick, setLastSimulatedTick] = useState<number | null>(null);
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("all");
   const [sortField, setSortField] = useState<SortField>('volume');
@@ -64,6 +65,7 @@ export default function Markets() {
   useEffect(() => {
     const interval = setInterval(() => {
       setAssets(prev => simulateAssetPrices(prev, 0.03));
+      setLastSimulatedTick(Date.now());
     }, 3000);
     return () => clearInterval(interval);
   }, []);
@@ -154,6 +156,11 @@ export default function Markets() {
                 <h1 className="text-xl md:text-3xl font-bold">Market Practice Hub</h1>
                 <p className="text-muted-foreground text-xs md:text-sm">
                   Explore {assets.length} practice instruments with generated display data across crypto, stocks, ETFs, forex, and commodities. Changes are seeded initially, then show the latest generated update, not a measured 24-hour return. Demo activity is an arbitrary synthetic display value, not traded market volume.
+                </p>
+                <p className="mt-2 text-xs text-muted-foreground" data-simulated-timestamp aria-live="off">
+                  {lastSimulatedTick === null
+                    ? "Simulated display: initial fixtures. Generated updates begin after this page opens; no live market timestamp is available."
+                    : `Last locally generated display update: ${new Date(lastSimulatedTick).toLocaleTimeString()} (this device). Not an exchange quote or provider timestamp.`}
                 </p>
               </div>
               <div className="relative w-full md:w-72 transition-all duration-300">

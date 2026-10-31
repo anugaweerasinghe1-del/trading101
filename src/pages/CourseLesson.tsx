@@ -158,6 +158,13 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
 
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">{lesson.title}</h1>
           <p className="text-base text-muted-foreground mb-4">{lesson.summary}</p>
+          {(track.slug === "options-trading-fundamentals" || track.slug === "futures-and-derivatives") && (
+            <aside role="note" className="mb-6 rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-sm leading-relaxed text-foreground">
+              <strong className="block mb-1">Contract worksheet only — no derivatives trading desk</strong>
+              This lesson teaches hypothetical options or futures contract mechanics. TradeHQ’s $100,000 virtual desk supports only its listed spot-style practice instruments; it cannot open, value, margin, exercise or settle an options or futures contract. Work through the contract calculations here rather than entering the example as a simulated order.
+            </aside>
+          )}
+
 
           <div className="text-xs text-muted-foreground mb-6">
             {track.editorial ? <>Prepared with AI assistance · Publication review recorded by <span className="text-foreground font-medium">{track.editorial.reviewer}</span> · {new Date(track.editorial.reviewedAt).toLocaleDateString("en-GB")}</> : <>By <span className="text-foreground font-medium">{AUTHOR}</span></>}

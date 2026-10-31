@@ -360,6 +360,17 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
       source: "Yahoo Finance"
     }
   },
+  coin: {
+    whatIs: "Coinbase Global operates a cryptocurrency-related platform and reports public-company financial results. Its filings separate revenue sources, which may respond differently to crypto activity, service demand and operating costs. Buying a COIN share is not the same exposure as holding a bitcoin token.",
+    strategy: "From the issuer's dated Form 10-Q or 10-K, compare transaction revenue with subscriptions and services for one reporting period. Calculate each share of reported revenue, then distinguish the company's expenses and net income from crypto-market prices. TradeHQ orders are virtual share practice only; this exercise does not predict the share price.",
+    category: "Technology Stock",
+    keywords: ["Coinbase", "COIN shares", "transaction revenue", "subscription revenue"],
+    stats: {
+      sector: "Crypto-related public company",
+      primaryDriver: "Platform activity, revenue mix and expenses",
+      source: "Coinbase public SEC filings (dated financial context)"
+    }
+  },
   avgo: {
     whatIs: "Broadcom Inc. designs semiconductor and infrastructure software products. Its fiscal 2025 Form 10-K reports two business segments: Semiconductor Solutions (including networking and custom AI accelerators) and Infrastructure Software (including private cloud and enterprise software). This is a dated company description, not evidence of a current stock valuation or price trend.",
     strategy: "Open Broadcom's fiscal 2025 annual report and compare its two segment revenue totals using the same fiscal year. Calculate each segment's share of consolidated revenue, then distinguish revenue growth from profit, cash flow and the price investors pay for AVGO shares. Use TradeHQ's virtual market order only for a separate position-value and fee exercise; the simulation does not recreate financial results or predict AVGO.",
@@ -432,8 +443,8 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   nflx: {
-    whatIs: "The world's largest streaming entertainment service with 280M+ subscribers globally. Netflix produces award-winning original content and is expanding into live sports, gaming, and ad-supported tiers.",
-    strategy: "Practice earnings plays to understand volatility around subscriber growth and retention reports. Focus on content spending ROI and international expansion. (Educational simulation only — not financial advice.)",
+    whatIs: "Netflix distributes streaming series, films, games and live programming through subscription and advertising offerings. Its investor reports distinguish revenue, operating profit and margin; old subscriber counts should not be used as undated live company statistics.",
+    strategy: "Use the current dated Netflix shareholder letter to compare revenue with operating income and operating margin in the same quarter. Then make a hypothetical cost change and recalculate the margin. Neither content spending nor an earnings headline guarantees a stock-price direction.",
     category: "Technology Stock",
     keywords: ["Netflix stock trading", "NFLX practice", "streaming", "entertainment", "content"],
     stats: {
@@ -668,7 +679,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   iwm: {
-    whatIs: "iShares Russell 2000 ETF tracks small-cap U.S. stocks. It's often used to gauge risk appetite, domestic economic health, and breadth of market rallies.",
+    whatIs: "The iShares Russell 2000 ETF (IWM) seeks to track the Russell 2000 Index, providing a fund exposure to U.S. small-cap stocks. The issuer's dated holdings, expense ratio and NAV disclosures describe the fund; they are not exchange-quality TradeHQ price data.",
     strategy: "Compare small-cap and large-cap index exposure with costs and the chosen observation period. Small-cap outperformance does not reliably predict a wider market rally. Educational simulation only; not financial advice.",
     category: "ETF",
     keywords: ["IWM ETF trading", "small-cap practice", "Russell 2000"],

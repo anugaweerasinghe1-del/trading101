@@ -88,6 +88,13 @@ function CourseTrackContent({ track }: { track: Track }) {
             </div>
           </div>
 
+          {(track.slug === "options-trading-fundamentals" || track.slug === "futures-and-derivatives") && (
+            <aside role="note" className="mb-6 rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-sm leading-relaxed text-foreground">
+              <strong className="block mb-1">What you can actually practise</strong>
+              Options and futures examples in this course are calculations and worksheets, not executable simulator contracts. The TradeHQ desk handles supported spot-style virtual instruments only; it does not provide option chains, futures margin, contract settlement or derivatives orders.
+            </aside>
+          )}
+
           {integratedOverview && <div className="mb-8 space-y-3 text-sm text-muted-foreground leading-relaxed">
             <p>Includes {track.lessons.length} lessons, quizzes, sources, and a completion badge. The $100,000 simulator supports spot instruments; options and futures contract mechanics are worksheet exercises.</p>
             <p>Published by TradeHQ, created by Anuga Weerasinghe. <Link to="/about" className="underline">Publisher background and editorial approach</Link>. No independent professional review is claimed; any recorded source-check scope appears on the page.</p>
