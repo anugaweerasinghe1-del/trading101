@@ -17,12 +17,17 @@ type Edition = {
   reviewed_by: string | null; reviewed_at: string | null; updated_at: string;
   ai_model: string | null; generator_error: string | null;
 };
+type AudienceSummary = {
+  legacyRecordsTotal: number; confirmedSubscribers: number; unsubscribesTracked: boolean;
+  records: { email: string; subscribed_at: string; source: string | null }[];
+  notice: string;
+};
 const border = "rounded-2xl border border-border bg-card/70 p-5";
-const canonical = "https://www.thetradehq.com";
 export default function AdminNewsletter() {
   const [key, setKey] = useState("");
   const [unlocked, setUnlocked] = useState(false);
   const [editions, setEditions] = useState<Edition[]>([]);
+  const [audience, setAudience] = useState<AudienceSummary | null>(null);
   const [current, setCurrent] = useState<Edition | null>(null);
   const [subject, setSubject] = useState("");
   const [preheader, setPreheader] = useState("");
@@ -47,6 +52,14 @@ export default function AdminNewsletter() {
       throw Error(newsletterAdminError(context?.status, typeof data?.error === "string" ? data.error : null));
     }
     return data.data;
+  }, [key]);
+
+  const loadAudience = useCallback(async () => {
+    const { data, error: apiError } = await supabase.functions.invoke("newsletter-audience-admin", {
+      body: { action: "summary" }, headers: { "x-admin-key": key },
+    });
+    if (apiError || data?.error || !data?.data) throw Error("Subscriber overview is unavailable");
+    setAudience(data.data as AudienceSummary);
   }, [key]);
 
   const pick = (edition: Edition) => {
@@ -82,6 +95,7 @@ export default function AdminNewsletter() {
       setTopics(available);
       setTopicId(available[0].id);
       setUnlocked(true);
+      void loadAudience().catch(() => setAudience(null));
     });
   };
   const generate = () => void run(async () => {
@@ -161,9 +175,29 @@ export default function AdminNewsletter() {
         <div className="flex flex-wrap items-center gap-3">
           <Button onClick={generate} disabled={busy}><Sparkles className="mr-2 h-4 w-4"/> Generate this week's draft</Button>
           <Button onClick={() => void run(async () => refresh(current?.id))} variant="outline" disabled={busy}><RefreshCw className="mr-2 h-4 w-4"/> Refresh</Button>
-          <Button variant="outline" onClick={() => { setUnlocked(false); setKey(""); setCurrent(null); setEditions([]); setTopics([]); }} disabled={busy}>Lock</Button>
+          <Button variant="outline" onClick={() => { setUnlocked(false); setKey(""); setCurrent(null); setEditions([]); setTopics([]); setAudience(null); }} disabled={busy}>Lock</Button>
         </div>
         {error && <p role="alert" className="text-sm text-destructive">{error}</p>}
+        <section className={border+" space-y-3"}>
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <h2 className="font-semibold">Subscriber registry <span className="text-xs font-normal text-muted-foreground">(private and read-only)</span></h2>
+            <Button variant="outline" size="sm" disabled={busy} onClick={() => void run(loadAudience)}>Refresh subscribers</Button>
+          </div>
+          {!audience ? <p className="text-sm text-muted-foreground">Audience summary unavailable. Drafting still works.</p> : <>
+            <div className="grid gap-3 sm:grid-cols-3">
+              <div><p className="text-xs text-muted-foreground">Historic email records</p><p className="text-2xl font-semibold">{audience.legacyRecordsTotal}</p></div>
+              <div><p className="text-xs text-muted-foreground">Confirmed subscribers</p><p className="text-2xl font-semibold">{audience.confirmedSubscribers}</p></div>
+              <div><p className="text-xs text-muted-foreground">Unsubscribes</p><p className="font-medium">Not tracked</p></div>
+            </div>
+            <p className="text-xs text-muted-foreground">{audience.notice}</p>
+            <div className="space-y-2">
+              {audience.records.map(record => <div key={record.email} className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-border p-3 text-sm">
+                <span className="break-all">{record.email}</span>
+                <span className="text-xs text-muted-foreground">Unverified · {new Date(record.subscribed_at).toLocaleDateString()}</span>
+              </div>)}
+            </div>
+          </>}
+        </section>
         <div className="grid gap-5 lg:grid-cols-[240px_minmax(0,1fr)]">
           <aside className={border+" space-y-3"}>
             <h2 className="font-semibold">Weekly editions</h2>
@@ -219,7 +253,7 @@ export default function AdminNewsletter() {
               <Input id="newsletter-preheader" value={preheader} onChange={e => setPreheader(e.target.value)} maxLength={240} disabled={current.status !== "draft"} />
               <Label htmlFor="newsletter-body">Newsletter text (Markdown)</Label>
               <Textarea id="newsletter-body" value={body} onChange={e => setBody(e.target.value)} rows={19} className="font-mono text-sm" disabled={current.status !== "draft"} />
-              <p className="text-xs text-muted-foreground">Article links must point to approved {canonical} learning pages. Prioritize clear examples and trustworthy primary sources. Verify the calculations and claims before approving.</p>
+              <p className="text-xs text-muted-foreground">Use independent primary-source references where appropriate. Verify calculations, claims and links before approving.</p>
               {current.status === "draft" && <>
                 <Button onClick={save} disabled={busy} variant="outline">Save edits</Button>
                 <div className="border-t border-border pt-4 space-y-3">
