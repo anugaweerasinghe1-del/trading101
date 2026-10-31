@@ -8,11 +8,12 @@ import {
   restorePreviousProvenance, UNREADABLE_KEY
 } from "@/lib/portfolioRecovery";
 import type { Portfolio } from "@/lib/types";
+import { VerifiedAccountRecovery } from "./VerifiedAccountRecovery";
 
 const dollars = (n: number) => n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 });
 interface Candidate { filename: string; portfolio: Portfolio; date: string | null; }
 
-export function PortfolioRecoveryPanel({ signedIn, authLoading = false }: { signedIn: boolean; authLoading?: boolean }) {
+export function PortfolioRecoveryPanel({ signedIn, authLoading = false, userId = null }: { signedIn: boolean; authLoading?: boolean; userId?: string | null }) {
   const fileRef = useRef<HTMLInputElement>(null);
   const [warning, setWarning] = useState(false);
   const [unreadable] = useState(() => { try { return Boolean(localStorage.getItem(UNREADABLE_KEY)); } catch { return false; } });
@@ -126,7 +127,8 @@ export function PortfolioRecoveryPanel({ signedIn, authLoading = false }: { sign
           </p>
         </div>
       </div>
-      <div className="grid md:grid-cols-2 gap-4">
+      {signedIn && userId && !authLoading && <VerifiedAccountRecovery userId={userId} />}
+      {!signedIn && !authLoading && <div className="grid md:grid-cols-2 gap-4">
         <div className="rounded-xl border border-border bg-background/50 p-4 flex flex-col gap-3">
           <h3 className="font-semibold flex gap-2 items-center"><ArrowDownToLine className="h-4 w-4 text-primary"/> 1. Save a copy</h3>
           <p className="text-sm text-muted-foreground flex-1">Download your current local simulated cash, positions, trades and attached private journal. Store this file somewhere outside the browser, such as your device files.</p>
@@ -149,7 +151,7 @@ export function PortfolioRecoveryPanel({ signedIn, authLoading = false }: { sign
             <Upload className="h-4 w-4 mr-2"/> Choose backup to restore
           </Button>
         </div>
-      </div>
+      </div>}
       {candidate && !signedIn && !authLoading && (
         <div className="mt-4 rounded-xl border border-primary/40 p-4 space-y-3">
           <h3 className="font-semibold">Preview backup before restoring</h3>

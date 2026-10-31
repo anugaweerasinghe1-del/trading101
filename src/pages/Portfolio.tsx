@@ -330,7 +330,7 @@ export default function Portfolio() {
           </div>
 
           <div className="container mx-auto px-6">
-            <PortfolioRecoveryPanel signedIn={!!user} authLoading={authLoading} />
+            <PortfolioRecoveryPanel signedIn={!!user} authLoading={authLoading} userId={user?.id ?? null} />
             <header className="mb-8">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div>

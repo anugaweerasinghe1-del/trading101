@@ -374,6 +374,9 @@ export type Database = {
         Returns: { user_id: string; username: string; country: string | null; portfolio_value: number | null; pnl_pct: number | null; trades: number; portfolio_status: string; practice_rank: number | null; priced_at: string | null; observed_at: string | null; price_status: string }[]
       }
 
+      get_my_account_practice_snapshot: { Args: Record<PropertyKey, never>; Returns: Json }
+      export_my_verified_practice_history: { Args: Record<PropertyKey, never>; Returns: Json }
+      verify_my_practice_history_export: { Args: { p_document: Json }; Returns: Json }
       get_public_practice_trades: {
         Args: { p_username: string; p_limit?: number }
         Returns: { asset_id: string; side: string; quantity: number; price: number; fee: number; total: number; realized_pnl: number | null; price_source: string; created_at: string }[]
