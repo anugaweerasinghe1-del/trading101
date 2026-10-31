@@ -25,6 +25,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
     title: "What Is Paper Trading? Practice, Uses and Limitations",
     summary: "Paper trading uses virtual money to explore order placement, portfolio arithmetic and record-keeping. It avoids real-money trades, but cannot reproduce all live-market costs or risks.",
     metaDescription: "Learn how paper trading works with $100,000 in virtual cash on TradeHQ. Practice orders are simulated; real-market costs and outcomes can differ.",
+    sourceCheck: { date: "2026-10-31", scope: "Limited source check: SEC Investor.gov order-type definitions and simulator practice-scope statements were compared with the public TradeHQ implementation. This does not verify every learning claim or constitute independent professional review." },
     readTime: "5 min read",
     sections: [
       {
@@ -64,6 +65,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
     title: "How to Read a Stock Chart: A Beginner's Guide",
     summary: "Learn to describe candlesticks, historical price movements and common indicator calculations without assuming that a recognizable pattern predicts returns.",
     metaDescription: "Learn chart-reading basics, including candles, volume, support and resistance, and why technical indicators cannot guarantee future prices.",
+    sourceCheck: { date: "2026-10-31", scope: "Limited source check: OHLC candlestick descriptions and standard indicator terminology were compared with the linked chart-learning materials. Pattern forecasts and trading outcomes have not been independently validated." },
     readTime: "6 min read",
     sections: [
       {
@@ -103,12 +105,13 @@ export const LEARN_ARTICLES: LearnArticle[] = [
     title: "Crypto vs Stocks: Which Should You Practice Trading First?",
     summary: "Crypto and stocks differ in market structure, trading hours and price risk. Compare the same virtual exposure and observation window rather than assuming either is the right starting point.",
     metaDescription: "Crypto vs stocks — which should beginners practice first? Compare volatility, risk, and trading hours. Practice both free on TradeHQ.",
+    sourceCheck: { date: "2026-10-31", scope: "Limited source check: listed-share versus crypto-asset exposure and variable regulatory protections were compared with SEC Investor.gov crypto-asset guidance. Market hours and issuer claims are descriptive, not investment recommendations." },
     readTime: "5 min read",
     sections: [
       {
         heading: "The Key Differences Between Crypto and Stocks",
         paragraphs: [
-          "Stocks represent ownership in real companies. When you buy Apple stock, you own a tiny piece of a trillion-dollar technology company that generates revenue, pays dividends, and is regulated by the SEC. Stock markets operate Monday through Friday during set hours (9:30 AM to 4:00 PM ET for the NYSE).",
+          "A listed company share represents an ownership interest rather than direct ownership of the issuer's underlying assets. U.S.-listed public companies such as Apple publish financial disclosures under applicable securities rules; some companies pay dividends, but payouts are not guaranteed. The NYSE normally operates Monday to Friday, 9:30 AM to 4:00 PM Eastern Time, subject to holidays and special sessions.",
           "Cryptocurrency networks differ in governance, issuance and degree of decentralization. Many crypto trading venues operate around the clock, although maintenance, outages and provider restrictions can interrupt access. Prices can move outside stock-exchange sessions, including weekends and holidays; continuous market hours do not guarantee that a particular venue or order is available.",
           "Price variability depends on the asset, observation period and market conditions. A cryptocurrency and a company share can both have large gains or losses; a typical daily percentage is not a fixed risk classification. Compare percentage changes over the same sample rather than assume a permanent volatility ranking."
         ]
@@ -142,6 +145,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
     title: "5 Trading Strategy Hypotheses to Study with Virtual Cash",
     summary: "From buy-and-hold to momentum trading, compare five strategy hypotheses with virtual cash, explicit costs and adverse outcomes. The exercises do not demonstrate real-world suitability.",
     metaDescription: "Study five trading strategy hypotheses with $100K virtual cash on TradeHQ. Compare simulated gains, losses and limitations; no real money is traded.",
+    sourceCheck: { date: "2026-10-31", scope: "Limited source check: the SEC Investor.gov definition of dollar-cost averaging was reviewed; buy-and-hold, swing, momentum and mean-reversion examples remain hypothetical hypotheses without performance verification." },
     readTime: "7 min read",
     sections: [
       {
@@ -182,6 +186,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
     title: "What Is a Stock Market Index and How Do ETFs Work?",
     summary: "Compare three different stock-index methodologies and learn how index-tracking ETFs provide specified exposure rather than ownership of an entire market.",
     metaDescription: "What are stock market indexes and ETFs? Learn about the S&P 500, Nasdaq, and Dow Jones. Practice trading SPY, QQQ on TradeHQ — free simulator.",
+    sourceCheck: { date: "2026-10-31", scope: "Limited source check: ETF ownership, fund-diversification limitations and the distinction between an index and a fund were compared with SEC Investor.gov fund guidance. Named index methodology and current holdings require dated issuer documents." },
     readTime: "5 min read",
     sections: [
       {
@@ -221,6 +226,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
     title: "How to Build a Balanced Virtual Portfolio from Scratch",
     summary: "Learn the fundamentals of portfolio construction — asset allocation, diversification, and rebalancing — using your $100,000 TradeHQ virtual cash.",
     metaDescription: "Learn how to build a diversified portfolio from scratch. Practice asset allocation with $100K virtual cash on TradeHQ — free stock simulator.",
+    sourceCheck: { date: "2026-10-31", scope: "Limited source and arithmetic check: SEC Investor.gov diversification guidance and the hypothetical 25% × 30% × $100,000 = $7,500 sector-loss example were checked. No asset allocation or rebalancing schedule is recommended." },
     readTime: "6 min read",
     sections: [
       {
@@ -260,6 +266,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
     title: "Risk Management for Paper Trading: Risk Budgets and Exits",
     summary: "Study position sizing, conceptual exits and risk-budget arithmetic. TradeHQ supports manual market orders; percentage rules such as 1% or 2% are worksheet assumptions.",
     metaDescription: "Learn risk-management concepts including position sizing, stop-loss orders, reward-to-risk assumptions, and example percentage risk limits using TradeHQ practice tools.",
+    sourceCheck: { date: "2026-10-31", scope: "Limited calculation and source check: 0.4×2−0.6×1=0.2, 0.25×3−0.75×1=0, and 192×(5+0.10+0.095)=997.44 were recalculated. SEC order guidance supports the limitations of stop orders. No strategy performance or suitability claim was verified." },
     readTime: "6 min read",
     sections: [
       {
@@ -299,6 +306,7 @@ export const LEARN_ARTICLES: LearnArticle[] = [
     title: "Market Orders vs Limit Orders: Which Should You Use and When?",
     summary: "Compare market and limit order mechanics, fill uncertainty and the situations each order type is designed for. TradeHQ only simulates market orders.",
     metaDescription: "Compare market and limit orders, price uncertainty, slippage and unfilled orders. TradeHQ simulates market orders only; limit orders are explained conceptually.",
+    sourceCheck: { date: "2026-10-31", scope: "Limited source check: market, limit and stop order definitions and execution/price uncertainty were compared with the SEC Investor.gov Types of Orders page. Hypothetical BTC prices are illustrative, not a verified market quotation." },
     readTime: "5 min read",
     sections: [
       {

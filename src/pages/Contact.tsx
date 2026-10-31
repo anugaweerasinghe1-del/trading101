@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { DirectContactOption } from "@/components/DirectContactOption";
 import { toast } from "sonner";
 import { Mail, Phone, Clock, MessageSquare } from "lucide-react";
 
@@ -266,10 +267,11 @@ export default function Contact() {
                 </Button>
               </div>
               <p className="text-xs text-muted-foreground">
-                Neither action sends a message automatically. Open your email app, or copy the draft into
+                These two draft options never send a message automatically. Open your email app, or copy the draft into
                 <a href="https://mail.google.com/" target="_blank" rel="noopener noreferrer" className="mx-1 underline text-primary">Gmail</a>
                 or your preferred webmail service, then press Send there. TradeHQ does not store this message.
               </p>
+              <DirectContactOption values={form} validate={() => Boolean(prepareDraft())} />
               {manualDraft && (
                 <div className="space-y-2" role="status" aria-live="polite">
                   <Label htmlFor="manual-email-draft">Copy this draft and paste it into your email</Label>
@@ -287,9 +289,10 @@ export default function Contact() {
               TradeHQ is a small independent project rather than a company with a support desk, so
               messages are read and answered by the person who builds the site. In practice that means
               response times vary with request volume and can take longer over a
-              weekend or a public holiday. Nothing is auto-responded to by TradeHQ. The form only
-              opens an email draft or lets you copy it into webmail. Nothing is submitted to a
-              TradeHQ server, and no contact message is stored on this site.
+              weekend or a public holiday. Nothing is auto-responded to by TradeHQ.
+              You can open an email draft or copy it into webmail. Where configured, a separate
+              direct-send option delivers a validated message through Cloudflare and an email
+              provider to the maintainer; the app does not retain it in its own database.
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed mt-3">
               Bug reports are the most useful thing you can send. If something behaved unexpectedly,

@@ -43,6 +43,19 @@ assert.equal(new Set(routes).size, routes.length);
 const mime = { ".js": "application/javascript", ".css": "text/css", ".json": "application/json", ".svg": "image/svg+xml", ".png": "image/png", ".jpg": "image/jpeg", ".html": "text/html" };
 const server = createServer((request, response) => {
   const path = new URL(request.url, "http://localhost").pathname;
+  if (path === "/api/contact") {
+    // Real production backend is fail-closed before the owner configures all
+    // five provider/Turnstile bindings. Preserve that behavior in isolated
+    // compiled-browser tests; never invoke the real Resend API.
+    if (request.method !== "GET") {
+      response.writeHead(405, { "Content-Type": "application/json", "Cache-Control": "no-store" });
+      response.end(JSON.stringify({ sent: false, error: "Test fixture refuses direct sends" }));
+    } else {
+      response.writeHead(200, { "Content-Type": "application/json", "Cache-Control": "no-store" });
+      response.end(JSON.stringify({ enabled: false, siteKey: null }));
+    }
+    return;
+  }
   if (['/trader/me','/auth'].includes(path)) {
     // These guest utility routes use the production SPA shell.
     response.writeHead(200, {'Content-Type':'text/html','X-Robots-Tag':'noindex, follow'});
@@ -57,8 +70,16 @@ const server = createServer((request, response) => {
   if (!file.startsWith(dist + "/")) { response.writeHead(404); response.end(); return; }
   if (existsSync(file + ".html")) file += ".html";
   else if (existsSync(join(file, "index.html"))) file = join(file, "index.html");
-  try { response.writeHead(200, { "Content-Type": mime[extname(file)] || "application/octet-stream" }); response.end(readFileSync(file)); }
-  catch { response.writeHead(404); response.end("Missing"); }
+  try {
+    // Read first: missing fixture resources must not write 200 headers before
+    // throwing and then attempt a second set of headers in the catch block.
+    const bytes = readFileSync(file);
+    response.writeHead(200, { "Content-Type": mime[extname(file)] || "application/octet-stream" });
+    response.end(bytes);
+  } catch {
+    if (!response.headersSent) response.writeHead(404);
+    response.end("Missing");
+  }
 });
 let browser, socket;
 try {

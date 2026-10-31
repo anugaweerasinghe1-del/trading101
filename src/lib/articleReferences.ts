@@ -5,10 +5,10 @@ const indicators = { href: "https://www.fidelity.com/learning-center/trading-inv
 export const ARTICLE_REFERENCES: Record<string, { href: string; label: string }[]> = {
   "what-is-paper-trading": [orders, risk],
   "how-to-read-stock-charts": [indicators],
-  "crypto-vs-stocks": [risk, { href: "https://bitcoin.org/bitcoin.pdf", label: "Bitcoin white paper — protocol design, not a valuation forecast" }],
+  "crypto-vs-stocks": [{ href: "https://www.investor.gov/introduction-investing/investing-basics/investment-products/crypto-asset-related-investments", label: "SEC Investor.gov — crypto holdings, listed securities and distinct risks" }, risk, { href: "https://bitcoin.org/bitcoin.pdf", label: "Bitcoin white paper — protocol design, not a valuation forecast" }],
   "trading-strategies-for-beginners": [orders, { href: "https://www.investor.gov/introduction-investing/investing-basics/glossary/dollar-cost-averaging", label: "SEC Investor.gov — scheduled dollar-cost averaging" }],
-  "stock-market-index-etfs": [risk, { href: "https://www.ssga.com/us/en/individual/etfs/spdr-sp-500-etf-trust-spy", label: "State Street — SPY objective, holdings and fund disclosures; consult dated documents" }],
-  "how-to-build-a-portfolio": [risk],
+  "stock-market-index-etfs": [{ href: "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2", label: "SEC Investor.gov — ETF shares, fund risks and diversification limits" }, risk, { href: "https://www.ssga.com/us/en/individual/etfs/spdr-sp-500-etf-trust-spy", label: "State Street — SPY objective, holdings and fund disclosures; consult dated documents" }],
+  "how-to-build-a-portfolio": [risk, { href: "https://www.investor.gov/introduction-investing/getting-started/asset-allocation", label: "SEC Investor.gov — allocation and diversification" }],
   "risk-management-in-trading": [risk, orders],
   "market-orders-vs-limit-orders": [orders],
   "technical-indicators-rsi-macd-moving-averages": [indicators],
