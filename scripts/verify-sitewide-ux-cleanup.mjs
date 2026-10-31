@@ -1,0 +1,50 @@
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+const read = path => readFileSync(path, "utf8");
+const nav=read("src/components/Navigation.tsx");
+const markets=read("src/pages/Markets.tsx");
+const clusters=read("src/components/MarketClusters.tsx");
+const footer=read("src/components/MegaFooter.tsx");
+const home=read("src/pages/Index.tsx");
+const weekly=read("src/pages/NewsletterPage.tsx");
+const calculator=read("src/components/CompoundCalculator.tsx");
+const roadmap=read("src/pages/Roadmap.tsx");
+const routes=read("src/App.tsx");
+
+assert.match(markets, /<Navigation\s*\/>/);
+assert.doesNotMatch(markets, /<TradingSidebar|trading\/TradingSidebar/);
+assert.match(markets, /pt-24 px-4 pb-8 md:pt-28/);
+assert.match(nav, /text-\[15px\] 2xl:text-base/);
+assert.match(nav, /label: "Roadmap"/);
+assert.match(footer, /to: "\/roadmap", label: "Roadmap"/);
+assert.match(routes, /path="\/roadmap"/);
+
+assert.match(home, /<NewsletterSignup prominent\s*\/>/);
+assert.match(weekly, /<NewsletterSignup prominent\s*\/>/);
+assert.match(footer, /pathname === "\/" \|\| pathname === "\/newsletter"/);
+assert.match(footer, /hasPrimaryNewsletterSignup \? \(/);
+assert.match(footer, /Contact TradeHQ/);
+assert.match(footer, /mailto:anugaweerasinghe1@gmail\.com/);
+assert.match(footer, /<NewsletterSignup\s*\/>/);
+assert.match(footer, /to="\/privacy"/);
+assert.match(footer, /to="\/terms"/);
+
+assert.match(calculator, /window\.location\.hash !== "#compound-initial-capital"/);
+assert.match(calculator, /requestAnimationFrame/);
+assert.match(calculator, /target\.scrollIntoView/);
+assert.match(calculator, /target\.focus/);
+assert.match(calculator, /addEventListener\("hashchange"/);
+assert.match(calculator, /Math\.min\(100000000/);
+assert.match(calculator, /Math\.min\(1000000/);
+assert.match(calculator, /useState\(1000\)/);
+assert.match(clusters, /a\.changePercent/);
+assert.doesNotMatch(clusters, /sum \+ \(a\.change \|\| 0\)/);
+
+assert.match(roadmap, /TradeHQ Weekly/);
+assert.match(roadmap, /One Beginner Journey/);
+assert.match(roadmap, /21 Nov 2026/);
+assert.match(roadmap, /Learn\. Practise\. Grow\./);
+assert.doesNotMatch(roadmap, /adsense/i);
+assert.match(roadmap, /status: "in-progress"/);
+assert.match(roadmap, /status: "shipped"/);
+console.log("PASS consistent desktop/mobile navigation, single newsletter form per route, contact footer, calculator deep link, market percent units and public November roadmap");
