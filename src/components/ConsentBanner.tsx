@@ -73,7 +73,7 @@ export function ConsentBanner() {
     <div
       role="dialog"
       aria-label="Analytics choices"
-      className="fixed inset-x-3 bottom-3 z-[120] mx-auto max-w-3xl rounded-2xl border border-border bg-background/95 p-5 shadow-2xl backdrop-blur-xl md:bottom-5"
+      className="fixed inset-x-3 bottom-[calc(5rem+env(safe-area-inset-bottom,0px))] z-[120] mx-auto max-h-[65dvh] overflow-y-auto rounded-2xl border border-border bg-background/95 p-3 shadow-2xl backdrop-blur-xl md:inset-x-auto md:bottom-5 md:right-5 md:mx-0 md:w-[min(25rem,calc(100vw-2.5rem))] md:p-4"
     >
       <p className="text-sm font-semibold text-foreground">Analytics choices</p>
       <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
@@ -81,7 +81,7 @@ export function ConsentBanner() {
         until you accept them. You can reject analytics and still use the core site.
         See the <Link to="/privacy" className="text-primary hover:underline">privacy policy</Link>.
       </p>
-      <div className="mt-4 flex flex-wrap gap-2">
+      <div className="mt-3 flex flex-wrap gap-2">
         <button
           type="button"
           onClick={() => save("rejected")}
@@ -97,7 +97,7 @@ export function ConsentBanner() {
           Accept analytics
         </button>
       </div>
-      <p className="mt-3 text-[10px] leading-relaxed text-muted-foreground">
+      <p className="mt-2 text-[10px] leading-relaxed text-muted-foreground">
         This choice controls Amplitude analytics. Google provides separate advertising privacy
         choices where they apply.
       </p>
