@@ -76,7 +76,7 @@ Deno.serve(async req => {
        pending:allPending.count??0,bounced:allBounce.count??0},
      subscribers:rows, recentDeliveries:delivered.data??[],
      webhookConfigured:Boolean(Deno.env.get("RESEND_WEBHOOK_SECRET")), 
-     limitInfo:"At most 20 recipients per manual publish request; 60 newsletters/day and 2500/month by application guard. Confirmation emails also consume Resend's provider quota.",
+     limitInfo:"At most 20 recipients per manual publish request; 60 newsletters/day and 2000/month by application guard. Confirmation emails also consume Resend's provider quota.",
     }});
   }
   if(input?.action!=="publish"||input?.confirmed!==true)return reply({error:"Explicit publish confirmation required"},400);
@@ -101,7 +101,7 @@ Deno.serve(async req => {
     db.from("newsletter_deliveries").select("id",{count:"exact",head:true}).gte("created_at",month),
   ]);
   if(today.error||monthly.error)return reply({error:"Quota check unavailable"},503);
-  const room=Math.min(20,Math.max(0,60-(today.count??0)),Math.max(0,2500-(monthly.count??0)));
+  const room=Math.min(20,Math.max(0,60-(today.count??0)),Math.max(0,2000-(monthly.count??0)));
   if(room<=0)return reply({data:{sent:0,remaining:0,message:"App-level free-tier safety limit reached for this period."}});
   const {data:confirmed,error:contactError}=await db.from("newsletter_contacts")
     .select("id,email,status,unsubscribe_token").eq("status","confirmed")
