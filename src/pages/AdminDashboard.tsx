@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { supabase } from "@/integrations/supabase/client";
 import { AutomationInbox, type EditorialQueueRow } from "@/components/admin/AutomationInbox";
+import { Mail } from "lucide-react";
 import { Activity, BookOpen, Bot, CalendarCheck, CheckCircle2, ExternalLink, Lock, MessageSquare, RefreshCw, ShieldCheck, Sparkles, Wrench } from "lucide-react";
 
 type Course = { id: string; status: string; document?: { title?: string }; updated_at?: string };
@@ -183,6 +184,12 @@ export default function AdminDashboard() {
           findingCount={agentFindings.length} proposalCount={proposals.length} githubAvailable={!agentError && !!lastGitHubChecked} />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <section className={card}><BookOpen className="w-6 h-6 text-primary"/><h3 className="font-semibold">Courses</h3><p className="text-2xl font-semibold">{courses === null ? "—" : courses.filter(c => c.status === "draft").length} <span className="text-sm font-normal text-muted-foreground">drafts awaiting review</span></p><p className="text-xs text-muted-foreground">Generation: {courseStatus ? (courseStatus.enabled ? "enabled" : "paused") : "unavailable"} · {courseStatus?.model || "unknown"}</p><Link className={linkStyle} to="/admin/courses">Manage drafts and approvals →</Link></section>
+          <section className={card}>
+            <Mail className="w-6 h-6 text-primary" />
+            <h3 className="font-semibold">Weekly Newsletter</h3>
+            <p className="text-xs text-muted-foreground">AI-powered educational draft, your edits and explicit approval. No automatic sending or legacy list imports.</p>
+            <Link className={linkStyle} to="/admin/newsletter">Open Newsletter Desk →</Link>
+          </section>
           <section className={card}><CalendarCheck className="w-6 h-6 text-primary"/><h3 className="font-semibold">Daily practice</h3><p className="text-2xl font-semibold">{daily ? (daily.completed ?? 0) + "/50" : "—"} <span className="text-sm font-normal text-muted-foreground">next bank ready</span></p><p className="text-xs text-muted-foreground">{daily ? (daily.enabled ? "Schedule enabled" : "Schedule paused") : "Schedule unavailable"} · Next due {daily?.nextDue || "unknown"}</p>{daily?.lastError && <p className="text-xs text-amber-400">{daily.lastError}</p>}<Link className={linkStyle} to="/admin/daily">Review questions and schedule →</Link></section>
           <section className={card}><MessageSquare className="w-6 h-6 text-primary"/><h3 className="font-semibold">Community reviews</h3><p className="text-2xl font-semibold">{reviews ?? "—"} <span className="text-sm font-normal text-muted-foreground">reviews in moderation desk</span></p><Link className={linkStyle} to="/admin/reviews">Reply, feature or moderate →</Link></section>
         </div>

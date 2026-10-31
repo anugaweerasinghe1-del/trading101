@@ -48,3 +48,7 @@ verify_jwt = false
 # Disabled unless the separately approved stopped control installation is configured.
 verify_jwt = false
 
+
+[functions.newsletter-editor]
+# Owner master key or an isolated scheduled draft-only token; no public access.
+verify_jwt = false

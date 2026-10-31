@@ -5,7 +5,7 @@ const assetIds = new Set(ASSETS.map(asset => asset.id));
 const articleIds = new Set(LEARN_ARTICLES.map(article => article.slug));
 const fixedRoutes = new Set([
   "/auth", "/reset-password", "/admin", "/admin/ai", "/admin/courses",
-  "/admin/reviews", "/admin/daily", "/admin/validator", "/admin/seo-audit", "/admin/editor",
+  "/admin/reviews", "/admin/daily", "/admin/newsletter", "/admin/validator", "/admin/seo-audit", "/admin/editor",
   "/challenge",
 ]);
 
