@@ -166,7 +166,7 @@ export default function AdminNewsletter() {
                 </div>
               </>}
               <div className="mt-4 rounded-lg border border-border bg-muted/30 p-3 text-sm text-muted-foreground">
-                **Publish to subscribers is not active.** Activation requires confirmed opt-in, suppression/unsubscribe, a verified sending provider and delivery tracking. Nothing gets mailed just because you approve.
+                Publish to subscribers is not active. Activation requires confirmed opt-in, suppression/unsubscribe, a verified sending provider and delivery tracking. Nothing gets mailed just because you approve.
               </div>
             </>}
           </section>
