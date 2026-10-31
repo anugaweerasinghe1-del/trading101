@@ -36,8 +36,13 @@ assert.equal(phase.jobs.cloudflare.uses, "./.github/workflows/cloudflare-preview
 assert.deepEqual(phase.jobs.validation.needs, ["phase3", "cloudflare"]);
 assert.equal(phase.jobs.validation.if, "${{ always() }}");
 assert.equal(phase.jobs.validation.steps.at(-1).env.VALIDATION_NEEDS, "${{ toJSON(needs) }}");
+assert.deepEqual(phase.permissions, { contents: "read" });
+assert.deepEqual(phase.jobs.cloudflare.permissions, { contents: "read", checks: "read" });
+assert.deepEqual(cf.permissions, { contents: "read", checks: "read" });
+const previewCheck = cf.jobs.compatibility.steps.find(x => x.name === "Verify trusted exact-head Pages preview HTTP and SEO");
+assert.ok(previewCheck, "Exact-head Cloudflare Pages check must remain required");
+assert.equal(previewCheck.env.GITHUB_TOKEN, "${{ github.token }}");
 for (const workflow of [phase, cf]) {
-  assert.deepEqual(workflow.permissions, { contents: "read" });
   assert.equal(workflow.on.pull_request_target, undefined);
 }
 assert.deepEqual(proposal.jobs.verify.permissions, { contents: "read" });

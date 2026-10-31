@@ -62,6 +62,9 @@ jobs:
 
   cloudflare:
     name: TradeHQ Cloudflare compatibility
+    permissions:
+      contents: read
+      checks: read
     uses: ./.github/workflows/cloudflare-preview-build.yml
     with:
       validation_sha: ${{ github.event.pull_request.head.sha || github.sha }}

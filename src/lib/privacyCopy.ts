@@ -9,7 +9,7 @@ export const PRIVACY_SECTIONS = [
 • Optional account data: if you create an account, Supabase processes authentication data such as your email or provider identity and can store profile fields including username, country and bio.
 • Community data: signed-in features can store selected practice statistics, public-profile settings, reviews and duel/challenge records. These are simulated results, not brokerage statements or verified real-money performance.
 • Review interactions: likes are stored with your account ID and the review ID to enforce one like per account. Public pages show totals, not individual liker identities. Owner replies are public. Reviews removed from public view remain in the private admin panel for restoration.
-• Contact messages: by default the contact page opens your email app or lets you copy a draft into webmail. If the optional direct-send service is configured, Cloudflare Turnstile processes challenge and connection information and Resend processes the message, sender reply address and recipient information to deliver it to the maintainer's inbox. TradeHQ does not retain direct-send message bodies in its application database. The maintainer's email provider retains delivered messages according to its settings.
+• Optional TradeHQ Weekly: if you explicitly request the educational newsletter, TradeHQ stores your email address, consent/confirmation status, the date and source of signup, unsubscribe status, and delivery receipts in private Supabase records. Resend handles email delivery and receives your address for confirmations and issues. We never add prior contact records to the mailing list without permission. Every newsletter provides an unsubscribe link, and you may use the contact page to request deletion.\n• Contact messages: by default the contact page opens your email app or lets you copy a draft into webmail. If the optional direct-send service is configured, Cloudflare Turnstile processes challenge and connection information and Resend processes the message, sender reply address and recipient information to deliver it to the maintainer's inbox. TradeHQ does not retain direct-send message bodies in its application database. The maintainer's email provider retains delivered messages according to its settings.
 • Technical data: hosting, authentication, security and abuse-prevention services can receive normal request information such as IP address, browser/device information and server logs.
 • Optional analytics and advertising data: after the applicable consent choice, Amplitude may receive analytics/session-replay data and Google AdSense may use cookies or similar identifiers for ad delivery, measurement and, where permitted by the user's choices and region, personalization.
 
@@ -18,7 +18,7 @@ TradeHQ does not require a payment card, bank account or brokerage account to pl
     {
       icon: "Lock",
       title: "How Information Is Used",
-      content: `TradeHQ uses data only for the feature that needs it: operating the simulator, authenticating optional accounts, showing profile/community features, preventing abuse, responding to messages, diagnosing problems and improving the service.
+      content: `TradeHQ uses data only for the feature that needs it: operating the simulator, authenticating optional accounts, showing profile/community features, preventing abuse, responding to messages, delivering a voluntarily confirmed TradeHQ Weekly subscription, diagnosing problems and improving the service.
 
 Amplitude is used for product analytics and may include session replay when analytics consent is granted. This can record interactions such as navigation and clicks subject to the provider's masking and privacy controls.
 
@@ -31,7 +31,7 @@ TradeHQ does not sell simulated portfolio data to brokers or financial instituti
       title: "Storage, Visibility & Retention",
       content: `Browser data remains on the device until the browser, the user or TradeHQ's own reset controls remove it. Clearing browser data removes local records; it does not delete a signed-in portfolio already stored in Supabase.
 
-Optional account and community data can be stored by Supabase for as long as the related account or feature requires it. New accounts start with a public profile: the chosen username, profile fields and selected simulated statistics can be visible on public pages. You can make your profile private at any time from your profile page.
+Optional account and community data can be stored by Supabase for as long as the related account or feature requires it. Newsletter consent records and delivery receipts are retained while relevant to operating the requested subscription, unsubscribe suppression, and compliance; contact TradeHQ to request deletion or information. New accounts start with a public profile: the chosen username, profile fields and selected simulated statistics can be visible on public pages. You can make your profile private at any time from your profile page.
 
 Analytics and advertising data are retained according to the settings and policies of the relevant provider. TradeHQ does not state a fixed retention period where it cannot verify one.
 
@@ -49,7 +49,7 @@ An advertising consent choice alone does not determine age or replace age-specif
     {
       icon: "Globe",
       title: "Service Providers, Cookies & Your Choices",
-      content: `TradeHQ relies on third parties including Cloudflare Pages and Vercel for hosting, Supabase for optional authentication/database features, Amplitude for consented analytics/session replay, and Google AdSense for consented advertising. These providers can process data in countries other than your own under their own legal and contractual arrangements.
+      content: `TradeHQ relies on third parties including Cloudflare Pages and Vercel for hosting, Supabase for optional authentication/database features, Resend for explicitly requested newsletter emails and contact messages, Amplitude for consented analytics/session replay, and Google AdSense for consented advertising. These providers can process data in countries other than your own under their own legal and contractual arrangements.
 
 Optional Amplitude analytics scripts are blocked until you accept analytics. You can reject analytics and change that choice later from this privacy page. Analytics acceptance does not grant advertising consent.
 
