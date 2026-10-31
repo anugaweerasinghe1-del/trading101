@@ -2,7 +2,7 @@ import { getRealizedTradeResults } from './realizedTrades';
 import { Portfolio, Trade, Position, Asset } from './types';
 import { INITIAL_CASH, ASSETS } from './assets';
 import { recordSnapshot, getPortfolioHistory } from './portfolioHistory';
-import { parsePracticePortfolio, readRecoveryPortfolio, writeRecoveryPortfolio } from './portfolioRecovery';
+import { parsePracticePortfolio, readRecoveryPortfolio, writeRecoveryPortfolio, UNREADABLE_KEY } from './portfolioRecovery';
 
 const STORAGE_KEY = 'tradehq_portfolio';
 const HISTORY_KEY = 'tradehq_history';
@@ -15,7 +15,14 @@ export function getPortfolio(): Portfolio {
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
     hasMainRecord = Boolean(stored);
-    if (stored) portfolio = parsePracticePortfolio(JSON.parse(stored));
+    if (stored) {
+      try { portfolio = parsePracticePortfolio(JSON.parse(stored)); } catch { portfolio = null; }
+      if (!portfolio && !localStorage.getItem(UNREADABLE_KEY)) {
+        // Preserve the raw original before any future save can overwrite it.
+        // This cannot repair an unknown legacy format, but prevents silent loss.
+        try { localStorage.setItem(UNREADABLE_KEY, stored); } catch {}
+      }
+    }
   } catch { /* Corrupted JSON or browser storage denied: try the recovery copy. */ }
 
   if (!portfolio) {
