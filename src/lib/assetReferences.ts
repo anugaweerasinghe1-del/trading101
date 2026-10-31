@@ -24,6 +24,11 @@ export const ASSET_REFERENCES: Record<string, { label: string; href: string; exe
     "href": "https://docs.bnbchain.org/",
     "exercise": "Separate a transaction fee paid in BNB, a token supply change and an exchange-service announcement. For each, record what evidence would be needed to claim an effect on price; the exercise makes no such measured claim."
   },
+  "avgo": {
+    "label": "Broadcom — fiscal 2025 Form 10-K (filed 18 December 2025)",
+    "href": "https://investors.broadcom.com/sec-filings/sec-filing/10-k/0001730168-25-000121",
+    "exercise": "Issuer-reported FY2025 net revenue was $36,858 million for Semiconductor Solutions and $27,029 million for Infrastructure Software, totaling $63,887 million. Calculate each segment's share (about 57.7% and 42.3%). Compare the same segments with FY2024's $30,096 million and $21,478 million. Which segment grew faster in percentage terms? Explain why segment revenue does not establish segment profit, AVGO's present valuation or a forecast. Use a dated Broadcom filing, not a simulated market quote, as the source."
+  },
   "nvda": {
     "label": "NVIDIA investor reports",
     "href": "https://investor.nvidia.com/home/default.aspx",
