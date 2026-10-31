@@ -30,7 +30,15 @@ export async function verifyMarketsSidebar({send,evaluate,waitUntil,origin,delay
         overflow:document.documentElement.scrollWidth>innerWidth+1};
     })()`);
     assert.equal(state.hasRail,false,'Legacy Markets vertical sidebar removed at '+width);
-    assert.ok(Math.abs(state.top)<=1 && state.width>=width-1,'Shared navbar spans viewport at '+width+': '+JSON.stringify(state));
+    // Desktop emulation may reserve 15px for a vertical scrollbar:
+    // innerWidth includes it while position:fixed left/right spans the
+    // document's clientWidth. Test both visible edges, not the scrollbar.
+    assert.ok(
+      Math.abs(state.top)<=1 && Math.abs(state.left)<=1 &&
+      Math.abs(state.right-state.documentWidth)<=1 &&
+      Math.abs(state.width-state.documentWidth)<=1,
+      'Shared navbar spans available document width at '+width+': '+JSON.stringify(state)
+    );
     assert.ok(state.headingTop>=state.height-1,'Markets heading clears fixed site header at '+width);
     assert.equal(state.overflow,false,'Markets content does not overflow viewport at '+width);
     for (const path of ['/','/learn','/trade','/portfolio','/newsletter']) {
