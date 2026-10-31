@@ -48,7 +48,9 @@ function thisMondayColombo(now = new Date()): string {
 function validateDraft(subject: unknown, preheader: unknown, body: unknown): boolean {
   if (typeof subject !== "string" || subject.trim().length < 8 || subject.length > 140) return false;
   if (typeof preheader !== "string" || preheader.trim().length < 10 || preheader.length > 240) return false;
-  if (typeof body !== "string" || body.trim().length < 250 || body.length > 7000) return false;
+  if (typeof body !== "string" || body.length > 7000) return false;
+  const words = body.trim().split(/\s+/).filter(Boolean).length;
+  if (words < 200 || words > 650) return false;
   // Every link must lead to a vetted, actually published TradeHQ page.
   const links = [...body.matchAll(/https?:\/\/[^\s)>\]]+/g)].map(m => m[0].replace(/[.,;]$/, ""));
   const approved = new Set(sources.map(s => "https://www.thetradehq.com" + s.path));
