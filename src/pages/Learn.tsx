@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { LEARN_ARTICLES } from "@/lib/learnArticles";
 import { SEOSection } from "@/components/SEOSection";
 import { useCourseCatalog } from "@/hooks/useCourseCatalog";
+import { LearningJourneyDashboard } from "@/components/LearningJourneyDashboard";
 import { GuidedNextLesson } from "@/components/GuidedNextLesson";
 import { COUNTRY_GUIDES } from "@/lib/countryGuides";
 import tradingBasics from "@/assets/course-trading-basics.jpg";
@@ -140,16 +141,11 @@ export default function Learn() {
               <span className="text-foreground font-medium">Learning</span>
             </nav>
 
-            <Link to="/start" className="mb-8 block rounded-2xl border border-primary/30 bg-primary/5 px-5 py-5 hover:border-primary/60 transition-colors">
-              <p className="text-xs uppercase tracking-wider text-primary font-semibold">Not sure where to begin?</p>
-              <h2 className="text-xl font-bold mt-1">Take the five-step beginner journey</h2>
-              <p className="text-sm text-muted-foreground mt-2">Learn the order, make a voluntary virtual trade, review your portfolio, reflect, then try Daily Practice. Resume whenever you return.</p>
-            </Link>
-
-            {/* Guided next lesson — pathway pick */}
+            {/* Keep the existing accessible next-lesson recommendation before the unified summary. */}
             <div className="mb-8">
               <GuidedNextLesson />
             </div>
+            <LearningJourneyDashboard tracks={tracks} />
 
             {/* Structured Courses — top-of-page discovery */}
             <section className="mb-14" aria-label="Structured Courses">
