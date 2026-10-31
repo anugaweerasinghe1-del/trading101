@@ -1,4 +1,4 @@
-/** GET-only exact-SHA Pages probe. No token, model, account, trade or release operation. */
+/** GET-only exact-SHA Pages probe. An ephemeral checks:read GitHub Actions token may authenticate GitHub API reads; never forward it to Cloudflare previews. No model, trade or release operation. */
 import assert from 'node:assert/strict';
 import { pathToFileURL } from 'node:url';
 import { execFileSync } from 'node:child_process';
@@ -37,13 +37,14 @@ function identify(data, sha, now) {
   assert.equal(links.length,1,'Missing/ambiguous immutable preview URL.'); assert.equal(links[0],url,'Preview URL/deployment mismatch.');
   return { checkId:c.id, deploymentId:c.external_id, headSha:sha, url };
 }
-export async function verifyExactPagesPreview(sha, { fetchImpl=fetch, now=Date.now, pause=ms=>new Promise(r=>setTimeout(r,ms)) }={}) {
+export async function verifyExactPagesPreview(sha, { fetchImpl=fetch, now=Date.now, pause=ms=>new Promise(r=>setTimeout(r,ms)), githubToken }={}) {
   assert.ok(/^[a-f0-9]{40}$/.test(sha || ''),'Immutable validation SHA required.');
   let requests=0;const deadline=now()+180000;
   const get=async(url)=>{
     assert.ok(++requests <= 30 && now()<deadline,'Preview probe budget exhausted.');
     const response=await fetchImpl(url,{method:'GET',redirect:'manual',signal:AbortSignal.timeout(Math.min(15000,deadline-now())),
-      headers:{Accept:url.startsWith(root)?'application/vnd.github+json':'text/html','User-Agent':'TradeHQ-Exact-Preview-ReadOnly/1.0'}});
+      headers:{Accept:url.startsWith(root)?'application/vnd.github+json':'text/html','User-Agent':'TradeHQ-Exact-Preview-ReadOnly/1.0',
+        ...(url.startsWith(root) && githubToken ? {Authorization:`Bearer ${githubToken}`} : {})}});
     return response;
   };
   const json=async(path)=>{
@@ -83,9 +84,9 @@ export async function verifyExactPagesPreview(sha, { fetchImpl=fetch, now=Date.n
 if(process.argv[1] && import.meta.url===pathToFileURL(process.argv[1]).href){
   try{
     const sha=process.env.VALIDATION_SHA;assert.equal(execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),sha,'Checkout mismatch.');
-    console.log(JSON.stringify(await verifyExactPagesPreview(sha),null,2));
+    console.log(JSON.stringify(await verifyExactPagesPreview(sha,{githubToken:process.env.GITHUB_TOKEN}),null,2));
   }catch(error){
-    // This probe uses public GETs only. Keep the failing assertion visible so
+    // This probe uses read-only GETs and only GitHub-scoped credentials. Keep the failing assertion visible so
     // an evidence outage can be distinguished from a deployment/SEO defect.
     const reason=error instanceof Error ? error.message.replace(/[\r\n\x00-\x1f]+/g,' ').slice(0,600) : 'Unknown probe failure';
     console.error(`Exact Pages preview probe blocked: ${reason} No release authority.`);process.exitCode=1;
