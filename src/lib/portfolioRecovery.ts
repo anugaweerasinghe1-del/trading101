@@ -5,6 +5,7 @@ import type { Portfolio, Trade } from "./types";
  * a visitor clears all site data; downloading the file protects against that.
  */
 export const RECOVERY_KEY = "tradehq:portfolio-recovery:v1";
+export const UNREADABLE_KEY = "tradehq:portfolio-unreadable-original:v1";
 export const BACKUP_FORMAT = "tradehq-practice-portfolio";
 export interface PracticeBackup {
   format: typeof BACKUP_FORMAT;
