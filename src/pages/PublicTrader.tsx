@@ -17,6 +17,7 @@ interface PublicTraderData {
   country: string | null;
   bio: string | null;
   createdAt: string;
+  showPublicTrades: boolean;
   stats: {
     portfolio_value: number;
     pnl_pct: number | null;
@@ -28,10 +29,17 @@ interface PublicTraderData {
   } | null;
 }
 
+interface PublicTradeRow {
+  asset_id: string; side: string; quantity: number; price: number; fee: number;
+  total: number; realized_pnl: number | null; price_source: string; created_at: string;
+}
 export default function PublicTrader() {
   const { username = "" } = useParams();
   const [data, setData] = useState<PublicTraderData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [publicTrades, setPublicTrades] = useState<PublicTradeRow[]>([]);
+  const [historyUnavailable, setHistoryUnavailable] = useState(false);
+  const [scenarioPercent, setScenarioPercent] = useState(-5);
 
   useEffect(() => {
     let active = true;
@@ -42,7 +50,7 @@ export default function PublicTrader() {
       try {
       const { data: p } = await supabase
         .from("profiles")
-        .select("id, username, country, bio, created_at, is_public")
+        .select("id, username, country, bio, created_at, is_public, show_public_trades")
         .eq("username", username)
         .eq("is_public", true)
         .maybeSingle();
@@ -55,15 +63,24 @@ export default function PublicTrader() {
         return;
       }
 
-      const { data: members, error } = await supabase.rpc("get_public_practice_members", { p_limit: 1, p_username: username });
+      const [membersResult, historyResult] = await Promise.all([
+        supabase.rpc("get_public_practice_members", { p_limit: 1, p_username: username }),
+        p.show_public_trades
+          ? supabase.rpc("get_public_practice_trades", { p_username: username, p_limit: 20 })
+          : Promise.resolve({ data: [], error: null }),
+      ]);
+      const { data: members, error } = membersResult;
       const s = !error ? members?.[0] : null;
       if (!s) { if (active) { setData(null); setLoading(false); } return; }
       if (active) {
+        setPublicTrades(!historyResult.error ? (historyResult.data ?? []) as PublicTradeRow[] : []);
+        setHistoryUnavailable(!!historyResult.error);
         setData({
           username: p.username,
           country: p.country,
           bio: p.bio,
           createdAt: p.created_at,
+          showPublicTrades: p.show_public_trades === true,
           stats: s.portfolio_value !== null
             ? {
                 portfolio_value: Number(s.portfolio_value),
@@ -176,6 +193,44 @@ export default function PublicTrader() {
                   No account portfolio or server-recorded trades yet. This public member can still appear on the leaderboard.
                 </p>
               )}
+
+              <Card className="p-5 sm:p-6 bg-white/[0.02] border-white/10 mb-8">
+                <h2 className="text-lg font-semibold">Public practice activity</h2>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Only voluntarily shared, server-recorded simulated orders from the current practice cycle can appear here.
+                  Private reflections, journal entries, older cycles and browser-only trades are excluded.
+                </p>
+                {!data.showPublicTrades
+                  ? <p className="mt-4 text-sm text-muted-foreground">This member has not enabled public trade-history sharing.</p>
+                  : historyUnavailable
+                    ? <p role="status" className="mt-4 text-sm text-muted-foreground">Trade history is temporarily unavailable.</p>
+                    : publicTrades.length === 0
+                      ? <p className="mt-4 text-sm text-muted-foreground">No current-cycle public practice orders to display yet.</p>
+                      : <div className="mt-4 space-y-2" aria-label="Recent public practice orders">
+                          {publicTrades.map((t, index) => <div key={t.created_at + t.asset_id + index}
+                            className="grid grid-cols-2 sm:grid-cols-5 gap-2 rounded-xl border border-border/70 p-3 text-sm">
+                            <div><p className="text-xs text-muted-foreground">Action</p><strong className="capitalize">{t.side}</strong> {t.asset_id.toUpperCase()}</div>
+                            <div><p className="text-xs text-muted-foreground">Quantity</p><span className="tabular-nums">{Number(t.quantity).toLocaleString()}</span></div>
+                            <div><p className="text-xs text-muted-foreground">Sim. execution</p><span className="tabular-nums">${Number(t.price).toLocaleString(undefined,{maximumFractionDigits:4})}</span></div>
+                            <div><p className="text-xs text-muted-foreground">Recorded fee</p><span className="tabular-nums">${Number(t.fee).toFixed(2)}</span></div>
+                            <div><p className="text-xs text-muted-foreground">Date</p><span>{new Date(t.created_at).toLocaleDateString()}</span></div>
+                          </div>)}
+                        </div>}
+              </Card>
+
+              {data.stats && <Card className="p-5 sm:p-6 bg-white/[0.02] border-white/10 mb-8">
+                <h2 className="text-lg font-semibold">What-if arithmetic — not a prediction</h2>
+                <p className="mt-2 text-sm text-muted-foreground">Change the assumed percentage applied to this entire simulated portfolio value. This simple exercise ignores changes in cash allocation, future transactions, pricing delays and fees. It is not a forecast.</p>
+                <div className="mt-4 flex gap-2" aria-label="Choose an illustrative value change">
+                  {[-5,0,5].map(pct => <button key={pct} type="button" aria-pressed={scenarioPercent===pct}
+                    onClick={() => setScenarioPercent(pct)}
+                    className={`rounded-lg border px-4 py-2 text-sm ${scenarioPercent===pct ? "border-primary bg-primary/10" : "border-border"}`}>
+                    {pct>0?"+":""}{pct}%
+                  </button>)}
+                </div>
+                <p className="mt-3 text-lg font-bold tabular-nums">${(data.stats.portfolio_value*(1+scenarioPercent/100)).toLocaleString(undefined,{maximumFractionDigits:2})}</p>
+                <p className="text-xs text-muted-foreground">Pure multiplication of the current hypothetical portfolio value by {1+scenarioPercent/100}. No expected return is implied.</p>
+              </Card>}
 
               <Card className="p-5 bg-white/[0.02] border-white/10 mb-10">
                 <h2 className="font-semibold mb-2">How to read these numbers</h2>
