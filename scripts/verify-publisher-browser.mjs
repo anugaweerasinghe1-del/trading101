@@ -93,12 +93,12 @@ try {
   const pending = new Map(); let sequence = 0;
   socket.addEventListener("message", event => {
     const reply = JSON.parse(event.data); const task = pending.get(reply.id); if (!task) return;
-    pending.delete(reply.id); clearTimeout(task.timer); if (reply.error) task.reject(Error(reply.error.message)); else task.resolve(reply.result);
+    pending.delete(reply.id); clearTimeout(task.timer); if (reply.error) task.reject(Error(task.method + ": " + reply.error.message)); else task.resolve(reply.result);
   });
   const send = (method, params = {}) => new Promise((resolveTask, reject) => {
     if (method === "Page.navigate") console.log("BROWSER_NAVIGATE " + params.url);
     const id = ++sequence; const timer = setTimeout(() => { pending.delete(id); reject(Error("CDP timeout: " + method + (params.url ? " " + params.url : ""))); }, 10000);
-    pending.set(id, { resolve: resolveTask, reject, timer }); socket.send(JSON.stringify({ id, method, params }));
+    pending.set(id, { resolve: resolveTask, reject, timer, method }); socket.send(JSON.stringify({ id, method, params }));
   });
   const evaluate = async expression => { const result = await send("Runtime.evaluate", { expression, returnByValue: true }); assert.ok(!result.exceptionDetails, "Browser evaluation failed"); return result.result?.value; };
   const runtimeErrors = [];
@@ -249,8 +249,20 @@ try {
   await send("Emulation.setDeviceMetricsOverride", {width:360,height:900,deviceScaleFactor:1,mobile:true});
   const waitUntil = async (expression, label) => {
     const deadline = Date.now() + 12000;
-    while (Date.now() < deadline) { if (await evaluate(expression)) return; await delay(50); }
-    assert.fail(label);
+    while (Date.now() < deadline) {
+      try {
+        if (await evaluate(expression)) return;
+      } catch (error) {
+        // Chromium occasionally destroys its previous JS execution context
+        // while Page.navigate swaps documents. That transient error is not a
+        // failed assertion; retry until the SAME original condition is true.
+        // Any other CDP or app error must still fail immediately.
+        if (!/Inspected target navigated or closed|Execution context was destroyed|Cannot find context with specified id/i.test(String(error)))
+          throw error;
+      }
+      await delay(50);
+    }
+    assert.fail(label + " (navigation/hydration did not settle within the existing deadline)");
   };
   if (phase === null || phase === 4) {
   await send('Page.navigate', {url:origin+'/trade'});

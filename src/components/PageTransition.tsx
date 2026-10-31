@@ -33,10 +33,12 @@ export function PageTransition({ children }: PageTransitionProps) {
 
   return (
     <div
-      className={`transition-all duration-500 ease-out ${
-        isVisible
-          ? "opacity-100 transform-none filter-none"
-          : "opacity-0 translate-y-4 scale-[0.98] blur-[2px]"
+      // A transformed ancestor becomes the containing block for CSS fixed
+      // descendants, causing the shared navbar to shrink/shift on mobile.
+      // Fade route content without scale/translate/filter so fixed headers
+      // remain viewport-anchored on every route during navigation.
+      className={`transition-opacity duration-300 ease-out ${
+        isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
       {displayChildren}

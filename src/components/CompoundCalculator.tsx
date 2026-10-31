@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,25 +16,44 @@ interface CalculatorResult {
 }
 
 export function CompoundCalculator() {
-  const [initialInvestment, setInitialInvestment] = useState(100000);
-  const [monthlyContribution, setMonthlyContribution] = useState(500);
-  const [annualReturn, setAnnualReturn] = useState(12);
+  const [initialInvestment, setInitialInvestment] = useState(1000);
+  const [monthlyContribution, setMonthlyContribution] = useState(50);
+  const [annualReturn, setAnnualReturn] = useState(5);
   const [tradingFeePct, setTradingFeePct] = useState(0.1);
   const [years, setYears] = useState(10);
+
+  // The hash target is rendered by React, so browsers may scroll before it exists.
+  useEffect(() => {
+    const focusCapital = () => {
+      if (window.location.hash !== "#compound-initial-capital") return;
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        const target = document.getElementById("compound-initial-capital") as HTMLInputElement | null;
+        if (!target) return;
+        // Force an immediate anchor jump even when the site uses global
+        // smooth-scrolling CSS. This is a user-requested deep link.
+        target.scrollIntoView({ behavior: "instant", block: "center" });
+        target.focus({ preventScroll: true });
+      }));
+    };
+    focusCapital();
+    window.addEventListener("hashchange", focusCapital);
+    return () => window.removeEventListener("hashchange", focusCapital);
+  }, []);
 
   const result = useMemo<CalculatorResult>(() => {
     const monthlyRate = annualReturn / 100 / 12;
     const feeRate = tradingFeePct / 100;
-    const months = years * 12;
+    const months = Math.min(50, Math.max(1, years)) * 12;
     
-    let balance = initialInvestment;
-    let totalContributions = initialInvestment;
+    let balance = Math.max(0, Math.min(100000000, initialInvestment));
+    let totalContributions = balance;
     let totalFees = 0;
     const yearlyBreakdown: { year: number; value: number; profit: number }[] = [];
 
     for (let month = 1; month <= months; month++) {
-      balance += monthlyContribution;
-      totalContributions += monthlyContribution;
+      const contribution = Math.max(0, Math.min(1000000, monthlyContribution));
+      balance += contribution;
+      totalContributions += contribution;
       const growth = balance * monthlyRate;
       balance += growth;
       const fee = Math.abs(growth) * feeRate;
@@ -86,29 +105,35 @@ export function CompoundCalculator() {
         {/* Inputs - stacked vertically */}
         <div className="grid grid-cols-2 gap-3">
           <div className="space-y-1">
-            <Label htmlFor="compound-initial-capital" className="text-[9px] uppercase font-bold text-slate-500">Initial Capital</Label>
+            <Label htmlFor="compound-initial-capital" className="text-xs uppercase font-bold text-slate-400">Initial Capital</Label>
             <Input
               type="number"
+              min={0}
+              max={100000000}
+              step={100}
               id="compound-initial-capital"
               value={initialInvestment}
-              onChange={(e) => setInitialInvestment(Number(e.target.value))}
-              className="h-8 bg-white/5 border-white/10 text-[11px] font-bold text-foreground [.light_&]:text-[hsl(220_15%_93%)]"
+              onChange={(e) => setInitialInvestment(Math.max(0, Math.min(100000000, Number(e.target.value) || 0)))}
+              className="h-10 bg-white/5 border-white/10 text-sm font-medium text-foreground [.light_&]:text-[hsl(220_15%_93%)]"
             />
           </div>
           <div className="space-y-1">
-            <Label htmlFor="compound-monthly-add" className="text-[9px] uppercase font-bold text-slate-500">Monthly Add</Label>
+            <Label htmlFor="compound-monthly-add" className="text-xs uppercase font-bold text-slate-400">Monthly Add</Label>
             <Input
               type="number"
+              min={0}
+              max={1000000}
+              step={10}
               id="compound-monthly-add"
               value={monthlyContribution}
-              onChange={(e) => setMonthlyContribution(Number(e.target.value))}
-              className="h-8 bg-white/5 border-white/10 text-[11px] font-bold text-foreground [.light_&]:text-[hsl(220_15%_93%)]"
+              onChange={(e) => setMonthlyContribution(Math.max(0, Math.min(1000000, Number(e.target.value) || 0)))}
+              className="h-10 bg-white/5 border-white/10 text-sm font-medium text-foreground [.light_&]:text-[hsl(220_15%_93%)]"
             />
           </div>
         </div>
 
         <div className="space-y-3">
-          <div className="flex flex-wrap justify-between gap-2 text-[9px] font-black text-emerald-500/80 uppercase">
+          <div className="flex flex-wrap justify-between gap-2 text-xs font-semibold text-emerald-400 uppercase">
             <span>Assumed nominal annual rate: {annualReturn}%</span>
             <span>Growth deduction: {tradingFeePct}%</span>
           </div>
@@ -119,23 +144,23 @@ export function CompoundCalculator() {
         {/* Results */}
         <div className="grid grid-cols-2 gap-2">
           <div className="p-2.5 bg-emerald-500/5 border border-emerald-500/20 rounded-lg">
-            <p className="text-[8px] uppercase font-bold text-slate-500 mb-1">Final Value</p>
-            <p className="text-[13px] font-black text-emerald-400 tabular-nums tracking-tighter truncate">
+            <p className="text-[11px] uppercase font-bold text-slate-400 mb-1">Final Value</p>
+            <p className="text-lg font-bold text-emerald-400 tabular-nums tracking-tighter truncate">
               {formatCurrency(result.finalValue)}
             </p>
           </div>
           <div className="p-2.5 bg-emerald-500/5 border border-emerald-500/20 rounded-lg">
-            <p className="text-[8px] uppercase font-bold text-slate-500 mb-1">Illustrative net gain</p>
-            <p className="text-[13px] font-black text-emerald-500 tabular-nums tracking-tighter truncate">
-              +{formatCurrency(result.netProfit)}
+            <p className="text-[11px] uppercase font-bold text-slate-400 mb-1">Illustrative net gain</p>
+            <p className="text-lg font-bold text-emerald-500 tabular-nums tracking-tighter truncate">
+              {result.netProfit >= 0 ? "+" : "−"}{formatCurrency(Math.abs(result.netProfit))}
             </p>
           </div>
         </div>
 
         {/* Broker Fees */}
         <div className="px-2.5 py-1.5 bg-red-500/5 border border-red-500/10 rounded-lg flex justify-between items-center">
-          <span className="text-[8px] uppercase font-bold text-slate-500">Illustrative deductions:</span>
-          <span className="text-[10px] font-black text-red-400">-{formatCurrency(result.totalFees)}</span>
+          <span className="text-[11px] uppercase font-bold text-slate-400">Illustrative deductions:</span>
+          <span className="text-sm font-semibold text-red-400">-{formatCurrency(result.totalFees)}</span>
         </div>
 
         {/* Growth Chart - expands to fill remaining space */}
@@ -144,13 +169,13 @@ export function CompoundCalculator() {
             <div
               key={i}
               className="flex-1 bg-emerald-500/20 rounded-t-[1px]"
-              style={{ height: `${(data.value / result.finalValue) * 100}%` }}
+              style={{ height: `${Math.max(0, Math.min(100, (data.value / Math.max(result.finalValue, 1)) * 100))}%` }}
             />
           ))}
         </div>
 
         <Button 
-          className="w-full h-8 bg-emerald-500 hover:bg-emerald-400 text-black text-[9px] font-black uppercase tracking-[0.15em]" 
+          className="w-full h-8 bg-emerald-500 hover:bg-emerald-400 text-black text-xs font-semibold uppercase tracking-[0.12em]" 
           asChild
         >
           <a href="/trade">START SIMULATOR</a>

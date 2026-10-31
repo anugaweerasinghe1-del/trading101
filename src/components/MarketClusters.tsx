@@ -110,8 +110,11 @@ export function MarketClusters({ assets }: MarketClustersProps) {
         {MARKET_CLUSTERS.map((cluster) => {
           const clusterAssets = getAssetsByCluster(cluster.assetIds);
           const Icon = cluster.icon;
-          const avgChange = clusterAssets.length > 0 
-            ? clusterAssets.reduce((sum, a) => sum + (a.change || 0), 0) / clusterAssets.length 
+          // a.change is an ABSOLUTE price change in USD/quote units, not a percent.
+          // Averaging dollars across Bitcoin, stocks and FX and appending '%' creates
+          // nonsensical figures such as -479.3%. Use the per-asset simulated % instead.
+          const avgChange = clusterAssets.length > 0
+            ? clusterAssets.reduce((sum, a) => sum + (Number.isFinite(a.changePercent) ? a.changePercent : 0), 0) / clusterAssets.length
             : 0;
           
           return (
@@ -135,7 +138,7 @@ export function MarketClusters({ assets }: MarketClustersProps) {
                     avgChange >= 0 ? "text-green-400 border-green-400/30" : "text-red-400 border-red-400/30"
                   )}
                 >
-                  {avgChange >= 0 ? "+" : ""}{avgChange.toFixed(1)}%
+                  {avgChange >= 0 ? "+" : ""}{avgChange.toFixed(1)}% <span className="sr-only">average simulated percentage change</span>
                 </Badge>
               </div>
               

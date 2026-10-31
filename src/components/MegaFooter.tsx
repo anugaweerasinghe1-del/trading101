@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { EducationalDisclaimer } from "@/components/EducationalDisclaimer";
 import {
@@ -31,6 +31,10 @@ import { AdvertisingPrivacyChoices } from "@/components/AdvertisingPrivacyChoice
  * MegaFooter - Premium Multi-Column SEO Footer
  */
 export function MegaFooter() {
+  const { pathname } = useLocation();
+  // Home and /newsletter already provide a prominent signup in their content.
+  // The shared footer must not render a second form on those pages.
+  const hasPrimaryNewsletterSignup = pathname === "/" || pathname.startsWith("/newsletter");
   const assetCategories = {
     crypto: {
       title: "Top Crypto",
@@ -106,6 +110,7 @@ export function MegaFooter() {
   const companyLinks = [
     { to: "/about", label: "About", icon: Info },
     { to: "/contact", label: "Contact", icon: Mail },
+    { to: "/roadmap", label: "Roadmap", icon: BookOpen },
     { to: "/privacy", label: "Privacy Policy", icon: Shield },
     { to: "/terms", label: "Terms of Service", icon: BookOpen },
     { to: "/about#disclaimer", label: "Disclaimer", icon: Info },
@@ -262,11 +267,22 @@ export function MegaFooter() {
         </div>
       </div>
 
-      {/* Newsletter + Bottom Bar */}
+      {/* Exactly one newsletter form per page. Pages with a lead signup show contact details here instead. */}
       <div className="border-t border-white/[0.04]">
-        <div className="container mx-auto px-6 py-8">
-          <div className="max-w-md mx-auto mb-8">
-            <NewsletterSignup />
+        <div className="container mx-auto px-6 py-10">
+          <div className="max-w-xl mx-auto">
+            {hasPrimaryNewsletterSignup ? (
+              <section aria-label="Contact TradeHQ" className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center space-y-3">
+                <h2 className="text-lg font-semibold text-foreground">Questions, feedback or partnerships?</h2>
+                <p className="text-sm text-muted-foreground">Reach the TradeHQ team directly. You'll find contact details and a ready-to-send message on our contact page.</p>
+                <div className="flex flex-wrap gap-x-5 gap-y-3 justify-center items-center text-sm">
+                  <Link to="/contact" className="text-primary hover:underline font-semibold">Contact TradeHQ</Link>
+                  <a href="mailto:anugaweerasinghe1@gmail.com" className="text-foreground/80 hover:text-primary hover:underline break-all">anugaweerasinghe1@gmail.com</a>
+                </div>
+              </section>
+            ) : (
+              <NewsletterSignup />
+            )}
           </div>
         </div>
       </div>

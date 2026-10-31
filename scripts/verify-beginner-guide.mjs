@@ -25,6 +25,19 @@ export async function verifyBeginnerGuide({send,evaluate,waitUntil,origin,delay}
       assert.equal(await evaluate(`[...document.querySelectorAll('main button')].filter(b=>b.textContent.trim()==='Complete').length`),completed===6?0:1,'Retain available completion action');
       assert.equal(await evaluate(`[...document.querySelectorAll('footer p')].find(p=>p.textContent==='Trading Courses')?.previousElementSibling.textContent`),'Guided','Describe courses without unsupported numeric promise');
     }
+    // Deep link must focus the real, hydrated calculator input, not the page top.
+    await send('Page.navigate',{url:origin+'/learn-trading-guide#compound-initial-capital'});
+    await waitUntil(`document.activeElement?.id==='compound-initial-capital'`,'Compound calculator anchor focuses after hydration');
+    await waitUntil(`(()=>{const r=document.getElementById('compound-initial-capital')?.getBoundingClientRect();return !!r&&r.top>=0&&r.top<innerHeight;})()`,'Focused calculator input scrolls into the viewport');
+    const calculator = await evaluate(`(()=>{
+      const input=document.getElementById('compound-initial-capital');
+      const a=input.getBoundingClientRect();
+      return {hash:location.hash,value:Number(input.value),visible:a.top>=0&&a.top<innerHeight,typed:input.type};
+    })()`);
+    assert.equal(calculator.hash,'#compound-initial-capital');
+    assert.equal(calculator.typed,'number');
+    assert.equal(calculator.value,1000,'Beginner-friendly initial capital assumption');
+    assert.equal(calculator.visible,true,'Calculator deep link must be in the visible viewport');
     // Verify an ordinary local completion still unlocks the following module.
     await evaluate(`localStorage.setItem(${JSON.stringify(key)},${JSON.stringify(JSON.stringify(ids.map((id,i)=>({id,completed:false,locked:i>0}))))});true`);
     await send('Page.navigate',{url:origin+'/learn-trading-guide'});

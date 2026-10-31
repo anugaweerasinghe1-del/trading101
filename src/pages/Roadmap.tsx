@@ -15,15 +15,15 @@ interface RoadmapItem {
 }
 
 const ITEMS: RoadmapItem[] = [
-  { icon: BookOpenCheck, title: "Expanded Learning Courses", desc: "Four structured tracks — options, futures, macro reading and trading psychology — each with quizzes and a completion badge. Now live at /courses.", status: "shipped", eta: "Shipped Jul 2026" },
-  { icon: GraduationCap, title: "Guided Learning Pathways", desc: "Personalised next-lesson suggestions based on what you've already studied. Live on the Learn hub — the 'Picked for you' card resumes your last lesson or points you to the best starting point.", status: "shipped", eta: "Shipped Jul 2026" },
-  { icon: Bell, title: "Daily Challenge Streak", desc: "Local streak tracking is live on the daily challenge. Scheduled daily or watchlist reminder notifications are not currently implemented.", status: "shipped", eta: "Shipped Jul 2026" },
-  { icon: Trophy, title: "Public Trader Profiles", desc: "New accounts start with a public profile and can share its /trader/{username} link. Account holders can make the profile private at any time. /trader/me is the private account view, not a public sharing address.", status: "shipped", eta: "Shipped Jul 2026" },
-  { icon: Globe2, title: "Localised Country Pages", desc: "Free tailored guides for Sri Lanka, India, Philippines, Pakistan and Nigeria — local regulator, exchange, tax notes and student angle. Live under /learn/country.", status: "shipped", eta: "Shipped Jul 2026" },
-  { icon: UserCircle2, title: "Optional Email + Google Sign-In", desc: "Optional sign-in supports profile and community features when the service is available. Core trading works as a guest. Account cash, positions and server-recorded trades restore across devices when available; journals and course progress remain browser-held.", status: "shipped", eta: "Shipped Aug 2026" },
-  { icon: Users2, title: "Challenge a Friend", desc: "Share an invite link and run a 30-day head-to-head practice duel. Both sides are scored on percentage return from their own recorded starting balance, with a live scoreboard and a Duels tab on the leaderboard.", status: "shipped", eta: "Shipped Aug 2026" },
-  { icon: LineChart, title: "Portfolio Scenario Extensions", desc: "The Portfolio already includes a Scenario Builder Beta for hypothetical paths under stated assumptions. Further scenario features are planned, with no confirmed scope or date. Neither the current Beta nor proposed additions provide calibrated forecasts.", status: "planned", eta: "No confirmed date" },
-  { icon: BarChart3, title: "Embeddable Live Price Widgets", desc: "A proposed embeddable price widget. Data source, update frequency and access requirements are not yet specified.", status: "planned", eta: "No confirmed date" },
+  { icon: Bell, title: "TradeHQ Weekly", desc: "Free original beginner lessons. Voluntary subscription, confirmation and unsubscribe; only editor-approved issues are published. See /newsletter.", status: "shipped", eta: "Live · Oct 2026" },
+  { icon: GraduationCap, title: "Clearer Navigation", desc: "Home, Learn, Trade, Portfolio and Weekly are front and centre. Everything else is accessible from More, on desktop and mobile.", status: "shipped", eta: "Live · Oct 2026" },
+  { icon: BookOpenCheck, title: "Courses and Learning Tools", desc: "Structured tracks, the trading guide, practice lessons and local progress tracking are already available.", status: "shipped", eta: "Already available" },
+  { icon: Trophy, title: "Virtual Trading and Daily Practice", desc: "Practice with virtual funds, review your portfolio, try daily exercises and optionally challenge a friend.", status: "shipped", eta: "Already available" },
+  { icon: Sparkles, title: "One Beginner Journey", desc: "Connect first lessons, a guided virtual trade, portfolio reflection and a next-lesson suggestion into one discoverable progression, without requiring an account for core practice.", status: "in-progress", eta: "Target · 21 Nov 2026" },
+  { icon: LineChart, title: "Better Educational Examples", desc: "Improve explanations, sourced examples, calculation clarity, simulated-data labels and useful exercises that readers can check independently.", status: "in-progress", eta: "Target · 21 Nov 2026" },
+  { icon: Users2, title: "Contact and Feedback Improvements", desc: "Make contact and reporting confusing pages easier. Use actual reader feedback to identify, prioritize and fix friction.", status: "in-progress", eta: "Target · 21 Nov 2026" },
+  { icon: Globe2, title: "Comfortable on Every Screen", desc: "Review desktop, tablet and mobile navigation, readable type, keyboard access, working deep links, and consistent page footers, validated before Cloudflare releases.", status: "in-progress", eta: "Target · 21 Nov 2026" },
+  { icon: BarChart3, title: "More Meaningful Progress Cues", desc: "Explore clear continue-learning pathways and beginner-friendly progress explanations that do not confuse scores with trading competence.", status: "planned", eta: "Exploring after 21 Nov" },
 ];
 
 const STATUS_STYLES: Record<RoadmapItem["status"], string> = {
@@ -41,8 +41,8 @@ const STATUS_LABEL: Record<RoadmapItem["status"], string> = {
 };
 
 export default function Roadmap() {
-  const title = "TradeHQ Roadmap — What's Coming Next | Future Updates";
-  const description = "Review existing TradeHQ features and proposed portfolio projections and embeddable price widgets. Planned features have no confirmed release date.";
+  const title = "TradeHQ Roadmap | Free Beginner Learning";
+  const description = "See what TradeHQ has shipped and the goals by November 21, 2026: a connected beginner journey, better lessons, accessible design and feedback.";
   return (
     <>
       <Helmet>
@@ -69,10 +69,10 @@ export default function Roadmap() {
               <Sparkles className="h-3 w-3 text-emerald-400" /> What's coming next
             </div>
             <h1 className="text-5xl md:text-6xl font-bold tracking-tight bg-gradient-to-br from-white via-emerald-200 to-emerald-400 [.light_&]:from-emerald-950 [.light_&]:via-emerald-800 [.light_&]:to-emerald-700 bg-clip-text text-transparent">
-              The Future of TradeHQ
+              Learn. Practise. Grow.
             </h1>
             <p className="mt-5 text-lg text-muted-foreground max-w-2xl mx-auto">
-              We're building a free educational practice-trading experience — and keeping it 100% free, forever. Here's what's on deck.
+              Our public product roadmap: what works today and what we aim to improve by 21 November 2026. Always focused on learning with virtual funds.
             </p>
           </header>
 
@@ -96,45 +96,36 @@ export default function Roadmap() {
                   <h2 className="text-lg font-semibold tracking-tight mb-2">{item.title}</h2>
                   <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                   <div className="mt-4 pt-4 border-t border-white/5 text-xs text-muted-foreground/70">
-                    Target: <span className="text-emerald-400/80 [.light_&]:text-emerald-800">{item.eta}</span>
+                    Timeline: <span className="text-emerald-400/80 [.light_&]:text-emerald-800">{item.eta}</span>
                   </div>
                 </Card>
               );
             })}
           </div>
 
-          <section className="mt-12 max-w-3xl mx-auto space-y-4">
-            <h2 className="text-2xl font-semibold">What the statuses actually mean</h2>
+          <section className="mt-12 max-w-3xl mx-auto space-y-4" aria-labelledby="roadmap-status-explained">
+            <h2 id="roadmap-status-explained" className="text-2xl font-semibold">How to read this roadmap</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              "Shipped" identifies an implemented feature. Profile and community features require an
-              account and an available backend service; this list does not certify service availability. Shipped items still get refined as people use
-              them, and the date shown is when the first working version went live rather than when
-              the idea started. "Planned" identifies a proposal with no confirmed release date; because TradeHQ is built by one
-              person and given away free, a planned date can slip when something more useful takes
-              priority. Nothing on this page is a promise of a paid feature, because there are none.
+              Shipped means a working version exists, not that it is perfect. In progress means an active priority.
+              Planned means an idea under consideration. November 21, 2026 is our target for improvements, not a guaranteed release date.
+              We'll update the page when changes are verified as available.
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Items reach the list in one of two ways. Most come from watching where people get stuck:
-              the courses were added because the glossary alone left readers without a sequence to
-              follow, and the country guides exist because a large share of visitors were trying to
-              work out whether any of this applied where they live. The rest come from messages
-              readers send through the contact page, which is the fastest way to get something
-              considered.
+              We prioritize what confuses beginners: knowing where to start, understanding examples,
+              making the first virtual trade, interpreting the portfolio, and choosing a next lesson.
+              Clear sources, transparent simulated data, and useful contact options matter more than hype.
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Two things will not appear on this roadmap. There will be no real-money trading, because
-              this project is designed for education using virtual funds. Real-money services have
-              product- and jurisdiction-specific legal requirements outside its scope. And there will be no signals, trade alerts or recommendations, because
-              telling people what to buy is precisely the failure mode this project was built to
-              replace with practice.
+              TradeHQ remains educational practice only. No real-money trading, guaranteed returns,
+              personalized investment recommendations or buy/sell signals. Core practice does not require an account.
             </p>
-            <p className="text-xs text-muted-foreground/60 italic">(Educational simulation only — not financial advice.)</p>
+            <p className="text-xs text-muted-foreground/60 italic">Updated 31 October 2026 · Educational simulation only — not financial advice.</p>
           </section>
 
           <Card className="mt-12 p-8 text-center bg-gradient-to-br from-emerald-500/10 via-transparent to-fuchsia-500/10 border-white/10 backdrop-blur-xl">
             <h3 className="text-xl font-semibold mb-2">Want a feature on this list?</h3>
             <p className="text-sm text-muted-foreground max-w-md mx-auto">
-              Drop a review on our <a href="/reviews" className="text-emerald-400 underline-offset-4 hover:underline">reviews page</a> with your idea — every suggestion gets read.
+              Share an idea through our <a href="/contact" className="text-emerald-400 underline-offset-4 hover:underline">contact page</a> or the <a href="/reviews" className="text-emerald-400 underline-offset-4 hover:underline">reviews page</a>. We use genuine feedback to prioritize changes.
             </p>
             <p className="mt-4 text-xs text-muted-foreground/60 italic">(Educational simulation only — not financial advice.)</p>
           </Card>

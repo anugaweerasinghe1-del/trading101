@@ -1,7 +1,7 @@
 import { quoteDisplay } from "@/lib/quoteDisplay";
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import { TradingSidebar } from "@/components/trading/TradingSidebar";
+import { Navigation } from "@/components/Navigation";
 import { MarketClusters } from "@/components/MarketClusters";
 import { MegaFooter } from "@/components/MegaFooter";
 import { SEOSection } from "@/components/SEOSection";
@@ -144,10 +144,10 @@ export default function Markets() {
         <meta name="twitter:image" content="https://www.thetradehq.com/tradehq-preview-2026.png" />
       </Helmet>
 
-      <div className="min-h-screen bg-background flex">
-        <TradingSidebar />
+      <div className="min-h-screen bg-background flex flex-col">
+        <Navigation />
 
-        <main className="flex-1 min-w-0 p-3 md:p-6 animate-fade-in">
+        <main className="flex-1 min-w-0 pt-24 px-4 pb-8 md:pt-28 md:px-6 animate-fade-in">
           <div className="max-w-7xl mx-auto space-y-6">
 
             {/* Static H1 Header - Renders immediately for Google */}
