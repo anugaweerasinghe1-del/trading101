@@ -94,6 +94,7 @@ export function Navigation() {
     { label: "Company", items: [
       { to: "/about", label: "About", icon: Info },
       { to: "/contact", label: "Contact", icon: Contact },
+      { to: "/roadmap", label: "Roadmap", icon: CalendarCheck },
     ] },
     { label: "Legal & Trust", items: [
       { to: "/privacy", label: "Privacy Policy", icon: Info },
