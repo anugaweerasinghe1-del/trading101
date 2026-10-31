@@ -134,7 +134,6 @@ const WikiTerm = () => {
             <h1 className="text-3xl md:text-4xl font-black text-foreground tracking-tight mb-2 leading-tight">
               What is <span className="text-primary">{term.term}</span>?
             </h1>
-            <p className="mt-3 text-base leading-relaxed text-foreground/90">{term.definition}</p>
           </motion.div>
 
               <p className="text-sm text-muted-foreground mb-6">
