@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useSearchParams, Link } from "react-router-dom";
+import { useSearchParams, useLocation, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { MegaFooter } from "@/components/MegaFooter";
@@ -8,9 +8,10 @@ import { supabase } from "@/integrations/supabase/client";
 
 export default function NewsletterPage() {
   const [params] = useSearchParams();
+  const pageLocation = useLocation();
   const token = params.get("token") || "";
-  const confirm = location.pathname.endsWith("/confirm");
-  const remove = location.pathname.endsWith("/unsubscribe");
+  const confirm = pageLocation.pathname.endsWith("/confirm");
+  const remove = pageLocation.pathname.endsWith("/unsubscribe");
   const special = confirm || remove;
   const [busy, setBusy] = useState(false);
   const [status, setStatus] = useState("");
