@@ -52,3 +52,15 @@ verify_jwt = false
 [functions.newsletter-editor]
 # Owner master key or an isolated scheduled draft-only token; no public access.
 verify_jwt = false
+
+[functions.newsletter-public]
+# Public requests are validated and rate-limited; no caller JWT required.
+verify_jwt = false
+
+[functions.newsletter-dispatch]
+# Private handler validates the admin master key and explicit publish confirmation.
+verify_jwt = false
+
+[functions.newsletter-provider-events]
+# Incoming Resend webhooks are verified using Svix HMAC signatures.
+verify_jwt = false
