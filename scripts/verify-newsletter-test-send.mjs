@@ -5,6 +5,14 @@ const editor = readFileSync("supabase/functions/newsletter-editor/index.ts","utf
 const ui = readFileSync("src/pages/AdminNewsletter.tsx","utf8");
 const migration = readFileSync("supabase/migrations/20261031133500_newsletter_test_delivery_receipts.sql","utf8");
 
+// Test emails must render as clean, readable, light-theme educational articles.
+assert.match(sender, /background-color:#f4f6fa/);
+assert.match(sender, /bgcolor="#ffffff"/);
+assert.match(sender, /color:#243047/);
+assert.match(sender, /meta name="color-scheme"/);
+assert.match(sender, /hasDivider/);
+assert.match(sender, /inlineMarkdown\(cell\)/);
+assert.doesNotMatch(sender, /#0b0d12|#141820|#303746/);
 assert.match(sender, /NEWSLETTER_TEST_TO_EMAIL/);
 assert.match(sender, /NEWSLETTER_FROM_EMAIL/);
 assert.match(sender, /RESEND_API_KEY/);
