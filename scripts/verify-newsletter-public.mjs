@@ -29,7 +29,7 @@ assert.match(publisher,/List-Unsubscribe-Post/);
 assert.match(publisher,/Idempotency-Key/);
 assert.match(publisher,/eq\("status","confirmed"\)/);
 assert.match(publisher,/60-\(today.count/);
-assert.match(publisher,/2500-\(monthly.count/);
+assert.match(publisher,/2000-\(monthly.count/);
 assert.match(publisher,/UNIQUE/ .test(migration) ? /newsletter_deliveries/ : /DOES_NOT_MATCH/);
 assert.doesNotMatch(publisher,/from\("subscribers"\)|newsletter_test_deliveries/);
 assert.match(webhook,/svix-signature/);
