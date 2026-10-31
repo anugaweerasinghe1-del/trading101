@@ -1,5 +1,6 @@
 import { createClient } from "npm:@supabase/supabase-js@2.75.1";
 import { allow, clientIp } from "../_shared/rateLimit.ts";
+import { NEWSLETTER_LABS, newsletterLab, appendVerifiedLab, validateNewsletterCopy } from "../_shared/newsletterLabs.ts";
 
 // Editorial-only AI draft generator. NEVER sends emails or reads subscribers.
 // Requires independently deployed SQL, Edge function, provider key and scheduler secret.
@@ -15,17 +16,7 @@ const headers = {
 };
 const reply = (value: unknown, status = 200) => new Response(JSON.stringify(value), { status, headers });
 
-const sources = [
-  { title: "What Is Paper Trading?", path: "/learn/article/what-is-paper-trading", summary: "Simulated market orders, virtual balances, and limits of practice results" },
-  { title: "How to Read a Stock Chart", path: "/learn/article/how-to-read-stock-charts", summary: "Candlesticks, time intervals, and why patterns don't predict certain outcomes" },
-  { title: "Risk Management for Paper Trading", path: "/learn/article/risk-management-in-trading", summary: "Risk budgets, examples with fees, and why planned stop prices aren't guaranteed fills" },
-  { title: "Market Orders vs Limit Orders", path: "/learn/article/market-orders-vs-limit-orders", summary: "TradeHQ simulates market orders; limit orders are covered as worksheets only" },
-  { title: "Stock Market Indexes and ETFs", path: "/learn/article/stock-market-index-etfs", summary: "Index calculations, ETF objectives, fees and overlapping holdings" },
-  { title: "How to Build a Virtual Portfolio", path: "/learn/article/how-to-build-a-portfolio", summary: "Hypothetical allocation, diversification limits and rebalancing costs" },
-  { title: "Crypto vs Stocks", path: "/learn/article/crypto-vs-stocks", summary: "Differences between stock ownership and cryptocurrency exposures" },
-  { title: "Trading Strategies to Study", path: "/learn/article/trading-strategies-for-beginners", summary: "Strategies as hypotheses rather than guaranteed ways to earn" },
-  { title: "Technical Indicators: RSI, MACD and Moving Averages", path: "/learn/article/technical-indicators-rsi-macd-moving-averages", summary: "What indicators calculate, and why crossovers aren't recommendations" },
-] as const;
+
 
 type Draft = {
   id: string; week_of: string; status: string; revision: number;
@@ -45,19 +36,88 @@ function thisMondayColombo(now = new Date()): string {
   const day = local.getUTCDay(); // Sun 0, Mon 1
   return new Date(midnight - ((day + 6) % 7) * 86_400_000).toISOString().slice(0, 10);
 }
+// Human edits may depart from AI's format. Keep source verification and
+// anti-promotion checks, but don't force a specific AI-authored worksheet.
 function validateDraft(subject: unknown, preheader: unknown, body: unknown): boolean {
-  if (typeof subject !== "string" || subject.trim().length < 8 || subject.length > 140) return false;
+  if (typeof subject !== "string" || subject.trim().length < 10 || subject.length > 140) return false;
   if (typeof preheader !== "string" || preheader.trim().length < 10 || preheader.length > 240) return false;
-  if (typeof body !== "string" || body.length > 7000) return false;
+  if (typeof body !== "string" || body.trim().length > 12000) return false;
   const words = body.trim().split(/\s+/).filter(Boolean).length;
-  if (words < 200 || words > 650) return false;
-  // Every link must lead to a vetted, actually published TradeHQ page.
+  if (words < 180 || words > 1000) return false;
   const links = [...body.matchAll(/https?:\/\/[^\s)>\]]+/g)].map(m => m[0].replace(/[.,;]$/, ""));
-  const approved = new Set(sources.map(s => "https://www.thetradehq.com" + s.path));
-  if (links.length < 1 || links.length > 4 || links.some(link => !approved.has(link))) return false;
-  if (/guarantee(?:d|s)?\s+(returns?|profit)|real[- ]time\s+(market|price|data)|licensed\s+(financial|adviser)/i.test(subject + " " + body)) return false;
+  const safe = new Set(NEWSLETTER_LABS.map(t => t.sourceUrl));
+  const ownLinks = links.filter(url => url.startsWith("https://www.thetradehq.com/"));
+  if (links.length < 1 || links.length > 4 || ownLinks.length > 1 || links.some(link =>
+    !safe.has(link) && !link.startsWith("https://www.thetradehq.com/learn/article/"))) return false;
+  if ((body.match(/\bTradeHQ\b/gi)||[]).length > 2) return false;
+  if (/guarantee(?:d|s)?\s+(returns?|profit)|risk[- ]free\s+(trading|investing)|real[- ]time\s+(market|price|data)|licensed\s+(financial|adviser)/i.test(subject + " " + body)) return false;
   return true;
 }
+
+type LessonDraft = { subject: string; preheader: string; body_markdown: string; source_links: string[]; ai_model: string };
+async function composeOriginalNewsletter(week: string, topicId?: string): Promise<LessonDraft> {
+  const lab = newsletterLab(week, topicId);
+  const { data: credentials, error: credentialError } = await client.rpc("newsletter_ai_credentials");
+  const key = credentialError ? null : (credentials?.apiKey as string | null);
+  const model = credentialError ? "" : (credentials?.model as string || "");
+  if (!credentials?.freeConfirmed || !key || !["gemini-3.5-flash", "gemini-3.5-flash-lite"].includes(model))
+    throw Error("Free-tier Gemini credentials are not configured");
+  const request = {
+    contents: [{ role: "user", parts: [{ text: JSON.stringify({
+      task: "Write a genuinely useful, ORIGINAL standalone financial-literacy email lesson. Return JSON only. This is an UNPUBLISHED draft; never email or publish.",
+      weekOf: week,
+      editorialAngle: lab.title,
+      primarySource: { name: lab.sourceTitle, url: lab.sourceUrl, supports: lab.sourceScope },
+      authorPreparedWorkedExample: { assumptions: lab.puzzle, answerToRespect: lab.answer, limitations: lab.limitation, takeaway: lab.takeaway },
+      instructions: [
+        "The reader should gain a reusable analytical habit, not hear about the TradeHQ product. Never repeat or advertise existing site articles, features, $100,000 virtual cash or trading terminal.",
+        "Teach ONE subtle, non-obvious distinction in substantial depth. No generic 'learn trading' tips, buzzword lists, filler greetings, hype, or product CTA. Prefer a vivid fictional dilemma, counterintuitive insight and realistic alternatives/tradeoffs.",
+        "Write 330–460 words in body_markdown, exclusive of the verified worksheet the server appends. Friendly, precise, curious and human. Use ## The hidden trap; ## What changes the decision; ## A useful habit. Include one thought-provoking question.",
+        "Use ONLY the supplied source scope and fictional arithmetic. Do not invent regulators' exact statements, dates, market prices, headlines, backtests, success probabilities or financial credentials.",
+        "Do not provide personally tailored buy/sell recommendations or claim profitability. Explain mechanisms, assumptions, uncertainty and the main failure case. No claims that the advice is exclusive to this newsletter.",
+        "Do not include Markdown links or any URLs in body_markdown—the server supplies a verified primary reference and exact checked numerical worksheet. Do not repeat the full numerical answer; refer to the worksheet following your explanation.",
+        "Do NOT mention TradeHQ at all in the body. Branding belongs to the email sender; if adding promotional copy would displace education, omit it.",
+        "Give the subject a concrete intellectual hook, not 'Your TradeHQ Weekly' or 'Latest Guides'. The preheader should promise a tangible lesson, not a product update.",
+        "Avoid guarantees, affiliate offers, urgency and personalized investment advice."
+      ],
+    }) }] }],
+    generationConfig: {
+      temperature: 0.65,
+      maxOutputTokens: 8192,
+      thinkingConfig: { thinkingLevel: "LOW" },
+      responseMimeType: "application/json",
+      responseJsonSchema: {
+        type: "object",
+        properties: {
+          subject: { type: "string" },
+          preheader: { type: "string" },
+          body_markdown: { type: "string" },
+        },
+        required: ["subject", "preheader", "body_markdown"],
+      },
+    },
+  };
+  const response = await fetch(
+    "https://generativelanguage.googleapis.com/v1beta/models/" + model + ":generateContent",
+    { method: "POST", headers: { "Content-Type": "application/json", "x-goog-api-key": key },
+      body: JSON.stringify(request), signal: AbortSignal.timeout(52000) },
+  );
+  if (!response.ok) throw Error("Free-tier model rejected newsletter request");
+  const raw = await response.text();
+  if (raw.length > 30000) throw Error("Provider response too large");
+  const result = JSON.parse(raw);
+  const draft = JSON.parse(result?.candidates?.[0]?.content?.parts?.[0]?.text ?? "{}");
+  if (typeof draft.body_markdown !== "string" || /https?:\/\/|TradeHQ/i.test(draft.body_markdown))
+    throw Error("Generated narrative included prohibited links or promotion");
+  const body = appendVerifiedLab(draft.body_markdown, lab);
+  if (!validateNewsletterCopy(draft.subject, draft.preheader, body, lab))
+    throw Error("Newsletter failed original-value and source checks");
+  return {
+    subject: draft.subject.trim(), preheader: draft.preheader.trim(),
+    body_markdown: body, source_links: [lab.sourceUrl], ai_model: model,
+  };
+}
+
 async function generate(week: string) {
   const { data: existing, error: readError } = await client
     .from("newsletter_editions").select("id,status,revision").eq("week_of", week).maybeSingle();
@@ -80,73 +140,18 @@ async function generate(week: string) {
       .eq("id", id).eq("status", "failed").select("id").maybeSingle();
     if (error || !data) return { weekOf: week, status: "already-running", created: false };
   }
-  // Existing course-generation settings explicitly confirm free tier.
-  // The service-role-only RPC decrypts the existing Vault key in Edge memory.
-  const { data: credentials, error: credentialError } = await client.rpc("newsletter_ai_credentials");
-  const key = credentialError ? null : (credentials?.apiKey as string | null);
-  const model = credentialError ? "" : (credentials?.model as string || "");
-  if (!credentials?.freeConfirmed || !key || !["gemini-3.5-flash","gemini-3.5-flash-lite"].includes(model)) {
-    await client.from("newsletter_editions").update({
-      status: "failed", generator_error: "Configure a free Gemini API key and model first.",
-    }).eq("id", id).eq("status", "generating");
-    return { weekOf: week, created: false, status: "needs-free-provider" };
-  }
   try {
-    const rotation = (Math.floor(Date.parse(week + "T00:00:00Z") / (7 * 86_400_000)) % sources.length);
-    const selected = [sources[rotation], sources[(rotation + 3) % sources.length], sources[(rotation + 6) % sources.length]];
-    const allowedLinks = selected.map(s => "https://www.thetradehq.com" + s.path);
-    const request = {
-      contents: [{ role: "user", parts: [{ text: JSON.stringify({
-        task: "Write a friendly weekly TradeHQ educational newsletter DRAFT for editorial review. Return JSON only. No email is sent by this operation.",
-        weekOf: week,
-        allowedPublishedArticles: selected.map(s => ({ ...s, url: "https://www.thetradehq.com" + s.path })),
-        constraints: [
-          "Ground the piece ONLY in the article summaries supplied. Do not invent news, current prices, returns, regulatory changes, reviews, statistics, achievements, or financial advice.",
-          "Friendly, concise, personable voice. One practical learning challenge with hypothetical arithmetic or observation; label assumptions.",
-          "TradeHQ has $100,000 virtual starting balance and manual spot-style market orders; quotes may be simulated, cached, delayed or unavailable. No real-money trading, pending stop/limit, options or futures execution.",
-          "Write 300–450 original words: compelling subject, concise preheader, clear section headings, 2–3 approved article links only. Avoid salesy or institutional claims.",
-          "Provide all links as full canonical https://www.thetradehq.com URLs, never links outside the allowed list.",
-          "Do not include unsub or subscription management wording inside body; the eventual provider/approval system will add required footer and headers.",
-          "Do not claim this has been fact-checked by a professional or sourced to current events. Avoid price predictions and urgent trading prompts."
-        ],
-      }) }] }],
-      generationConfig: {
-        temperature: 0.7,
-        maxOutputTokens: 8192,
-        thinkingConfig: { thinkingLevel: "LOW" },
-        responseMimeType: "application/json",
-        responseJsonSchema: {
-          type: "object",
-          properties: {
-            subject: { type: "string" },
-            preheader: { type: "string" },
-            body_markdown: { type: "string" },
-          },
-          required: ["subject", "preheader", "body_markdown"],
-        },
-      },
-    };
-    const response = await fetch(
-      "https://generativelanguage.googleapis.com/v1beta/models/" + model + ":generateContent",
-      { method: "POST", headers: { "Content-Type": "application/json", "x-goog-api-key": key }, body: JSON.stringify(request), signal: AbortSignal.timeout(52000) },
-    );
-    if (!response.ok) throw Error("AI provider rejected request");
-    const raw = await response.text();
-    if (raw.length > 30000) throw Error("Provider response too large");
-    const result = JSON.parse(raw);
-    const draft = JSON.parse(result?.candidates?.[0]?.content?.parts?.[0]?.text ?? "{}");
-    if (!validateDraft(draft.subject, draft.preheader, draft.body_markdown)) throw Error("AI draft failed editorial validation");
+    const draft = await composeOriginalNewsletter(week);
     const { error } = await client.from("newsletter_editions").update({
-      subject: draft.subject.trim(), preheader: draft.preheader.trim(), body_markdown: draft.body_markdown.trim(),
-      source_links: allowedLinks, status: "draft", ai_model: model,
-      generator_error: null, updated_at: new Date().toISOString(),
+      ...draft, status: "draft", generator_error: null,
+      updated_at: new Date().toISOString(),
     }).eq("id", id).eq("status", "generating");
-    if (error) throw Error("Could not persist draft");
+    if (error) throw Error("Could not save private lesson");
     return { weekOf: week, created: true, status: "draft" };
   } catch {
     await client.from("newsletter_editions").update({
       status: "failed",
-      generator_error: "AI generation or content validation failed. No edition was approved or sent.",
+      generator_error: "AI drafting or educational content validation failed. No email was sent.",
       updated_at: new Date().toISOString(),
     }).eq("id", id).eq("status", "generating");
     return { weekOf: week, created: false, status: "failed" };
@@ -188,9 +193,39 @@ Deno.serve(async req => {
       return reply({ data: data as Draft[] });
     }
     if (action === "generate-weekly") return reply({ data: await generate(thisMondayColombo()) });
+    if (action === "topics" && admin) {
+      return reply({ data: NEWSLETTER_LABS.map(t => ({ id: t.id, title: t.title, sourceTitle: t.sourceTitle })) });
+    }
     const id = body.id, revision = body.revision;
     if (!admin || typeof id !== "string" || !/^[0-9a-f-]{36}$/i.test(id) || !Number.isInteger(revision) || Number(revision) < 1)
       return reply({ error: "Invalid edition" }, 400);
+    if (action === "reopen") {
+      // Approved is an editorial state only. Explicitly invalidate approval,
+      // retaining the text, before allowing further edits or AI preview.
+      const { data, error } = await client.from("newsletter_editions")
+        .update({ status: "draft", reviewed_by: null, reviewed_at: null,
+          revision: Number(revision) + 1, updated_at: new Date().toISOString() })
+        .eq("id", id).eq("revision", revision).eq("status", "approved")
+        .select("id,revision,status").maybeSingle();
+      if (error || !data) return reply({ error: "Edition changed or is not approved. Refresh." }, 409);
+      return reply({ data, note: "Editorial approval revoked for revisions. No email sent." });
+    }
+    if (action === "preview-rewrite") {
+      const { data: current, error } = await client.from("newsletter_editions")
+        .select("week_of,status,revision").eq("id", id).maybeSingle();
+      if (error || !current || current.status !== "draft" || current.revision !== revision)
+        return reply({ error: "Reopen and refresh the draft before requesting a new AI preview." }, 409);
+      if (typeof body.topicId !== "string" || !NEWSLETTER_LABS.some(t => t.id === body.topicId))
+        return reply({ error: "Choose a valid educational topic." }, 400);
+      try {
+        // Return an editable preview. NEVER overwrite the stored text, approval
+        // or revision as a side-effect of an AI generation call.
+        const preview = await composeOriginalNewsletter(current.week_of, body.topicId);
+        return reply({ data: preview });
+      } catch {
+        return reply({ error: "AI preview failed its source or educational quality checks. Your saved draft is unchanged." }, 422);
+      }
+    }
     if (action === "save") {
       if (!validateDraft(body.subject, body.preheader, body.body_markdown))
         return reply({ error: "Draft needs a subject, preheader, 250+ words of useful copy and approved article links." }, 400);
@@ -198,6 +233,7 @@ Deno.serve(async req => {
         .update({
           subject: String(body.subject).trim(), preheader: String(body.preheader).trim(),
           body_markdown: String(body.body_markdown).trim(),
+          source_links: [...String(body.body_markdown).matchAll(/https?:\/\/[^\s)>\]]+/g)].map(m => m[0].replace(/[.,;]$/, "")),
           revision: Number(revision) + 1, reviewed_by: null, reviewed_at: null,
           updated_at: new Date().toISOString(),
         })
