@@ -166,8 +166,14 @@ Deno.serve(async req => {
     const result = await client.rpc("newsletter_scheduler_authorized", { p_token: schedulerToken });
     scheduled = !result.error && result.data === true;
   }
-  const admin = equalSecret(Deno.env.get("ADMIN_MASTER_KEY"), req.headers.get("x-admin-key"));
-  if (!admin && !scheduled) return reply({ error: "Unauthorized" }, 401);
+  const configuredAdminKey = Deno.env.get("ADMIN_MASTER_KEY");
+  if (!configuredAdminKey && !scheduled) {
+    // A missing environment secret is a deployment/configuration failure, not
+    // evidence that the visitor mistyped an otherwise valid master key.
+    return reply({ error: "Newsletter administrator configuration is missing." }, 503);
+  }
+  const admin = equalSecret(configuredAdminKey, req.headers.get("x-admin-key"));
+  if (!admin && !scheduled) return reply({ error: "Incorrect TradeHQ admin master key." }, 401);
   let body: Record<string, unknown>;
   try { const raw = await req.text(); if (raw.length > 14000) return reply({ error: "Too large" }, 413); body = JSON.parse(raw); }
   catch { return reply({ error: "Invalid JSON" }, 400); }
