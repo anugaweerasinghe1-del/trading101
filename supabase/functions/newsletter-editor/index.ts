@@ -1,6 +1,6 @@
 import { createClient } from "npm:@supabase/supabase-js@2.75.1";
 import { allow, clientIp } from "../_shared/rateLimit.ts";
-import { NEWSLETTER_LABS, newsletterLab, appendVerifiedLab, validateNewsletterCopy } from "../_shared/newsletterLabs.ts";
+import { NEWSLETTER_LABS, newsletterLab, newsletterFormat, appendVerifiedLab, validateNewsletterCopy } from "../_shared/newsletterLabs.ts";
 
 // Editorial-only AI draft generator. NEVER sends emails or reads subscribers.
 // Requires independently deployed SQL, Edge function, provider key and scheduler secret.
@@ -57,6 +57,12 @@ function validateDraft(subject: unknown, preheader: unknown, body: unknown): boo
 type LessonDraft = { subject: string; preheader: string; body_markdown: string; source_links: string[]; ai_model: string };
 async function composeOriginalNewsletter(week: string, topicId?: string): Promise<LessonDraft> {
   const lab = newsletterLab(week, topicId);
+  const format = newsletterFormat(week);
+  // The previous subjects are used only to prevent repeating framing, not to
+  // summarize previous articles or to fabricate continuity.
+  const { data: recent } = await client.from("newsletter_editions")
+    .select("subject").lt("week_of", week).in("status", ["draft", "approved"])
+    .order("week_of", { ascending: false }).limit(5);
   const { data: credentials, error: credentialError } = await client.rpc("newsletter_ai_credentials");
   const key = credentialError ? null : (credentials?.apiKey as string | null);
   const model = credentialError ? "" : (credentials?.model as string || "");
@@ -64,21 +70,32 @@ async function composeOriginalNewsletter(week: string, topicId?: string): Promis
     throw Error("Free-tier Gemini credentials are not configured");
   const request = {
     contents: [{ role: "user", parts: [{ text: JSON.stringify({
-      task: "Write a genuinely useful, ORIGINAL standalone financial-literacy email lesson. Return JSON only. This is an UNPUBLISHED draft; never email or publish.",
+      task: "Write an ORIGINAL, genuinely interesting, zero-prerequisite financial-literacy newsletter for a complete beginner. Output JSON only. This is a private DRAFT for human approval, never an email send.",
       weekOf: week,
-      editorialAngle: lab.title,
+      intendedReader: "Someone who has NEVER invested, never studied economics, and may not know what a stock, ETF, broker, stop order or percentage return means. Suitable for roughly ages 14+ and curious adults, with no assumption of financial knowledge.",
+      topic: lab.title,
+      thisWeeksFormat: {
+        name: format.title,
+        requiredMarkdownHeading: format.requiredHeading,
+        approach: format.teachingApproach,
+      },
+      recentSubjectsToAvoidImitating: (recent ?? []).map(e => e.subject).filter(Boolean),
       primarySource: { name: lab.sourceTitle, url: lab.sourceUrl, supports: lab.sourceScope },
-      authorPreparedWorkedExample: { assumptions: lab.puzzle, answerToRespect: lab.answer, limitations: lab.limitation, takeaway: lab.takeaway },
+      authorVerifiedScenario: { assumptions: lab.puzzle, solution: lab.answer, limitations: lab.limitation, takeaway: lab.takeaway },
       instructions: [
-        "The reader should gain a reusable analytical habit, not hear about the TradeHQ product. Never repeat or advertise existing site articles, features, $100,000 virtual cash or trading terminal.",
-        "Teach ONE subtle, non-obvious distinction in substantial depth. No generic 'learn trading' tips, buzzword lists, filler greetings, hype, or product CTA. Prefer a vivid fictional dilemma, counterintuitive insight and realistic alternatives/tradeoffs.",
-        "Write 330–460 words in body_markdown, exclusive of the verified worksheet the server appends. Friendly, precise, curious and human. Use ## The hidden trap; ## What changes the decision; ## A useful habit. Include one thought-provoking question.",
-        "Use ONLY the supplied source scope and fictional arithmetic. Do not invent regulators' exact statements, dates, market prices, headlines, backtests, success probabilities or financial credentials.",
-        "Do not provide personally tailored buy/sell recommendations or claim profitability. Explain mechanisms, assumptions, uncertainty and the main failure case. No claims that the advice is exclusive to this newsletter.",
-        "Do not include Markdown links or any URLs in body_markdown—the server supplies a verified primary reference and exact checked numerical worksheet. Do not repeat the full numerical answer; refer to the worksheet following your explanation.",
-        "Do NOT mention TradeHQ at all in the body. Branding belongs to the email sender; if adding promotional copy would displace education, omit it.",
-        "Give the subject a concrete intellectual hook, not 'Your TradeHQ Weekly' or 'Latest Guides'. The preheader should promise a tangible lesson, not a product update.",
-        "Avoid guarantees, affiliate offers, urgency and personalized investment advice."
+        "VARIETY IS A CORE REQUIREMENT. Follow this week's specified format; do not default to an article recap, the same three-part template, a risk worksheet, the same opening, or generic financial advice. Different weeks must feel like genuinely different editorial features, not renamed sections.",
+        "Use the exact requiredMarkdownHeading once as a ## heading. Other headings and the opening are your choice and must suit the assigned teaching approach. Do not use the old headings 'The hidden trap', 'What changes the decision' or 'A useful habit'.",
+        "Begin with a concrete curiosity, question, story, mistaken assumption, or surprising everyday detail appropriate to the assigned format. Avoid repetitive 'Welcome', 'This week', 'Hello traders' and product mentions.",
+        "Explain ONE genuinely useful thing a total beginner can understand and remember. Any unavoidable jargon must be defined immediately in one plain-English sentence, before using it. Prefer everyday analogies, vivid fictional situations and clear examples over formulas, finance jargon and intimidating acronyms.",
+        "Use short paragraphs, conversational natural English, and clear transitions. Treat the reader as intelligent but NEW, never condescending. Avoid unexplained terms such as spread, bid, ETF, NAV, diversification or stop-limit.",
+        "Write approximately 260–370 words of body_markdown, not counting the source-backed interactive activity that the server will append. Prefer quality over filler. Use no more than three short section headings including the required one.",
+        "Give readers a tiny reusable insight and one accessible mental question. The server will append an original prechecked activity and answer. Do not copy its full question or numerical solution into your narrative.",
+        "Use ONLY the supplied primary source scope and the hypothetical scenario, do not invent external facts, news, performance statistics, market prices, forecasts, professional endorsements or specific regulatory claims.",
+        "Never promise money, recommend what to buy or sell, imply safety or certainty, or glorify quick profits. Explain the key trade-off and where the fictional assumptions could fail.",
+        "The piece must stand alone in the inbox; never recap or promote TradeHQ articles, tools, services or a $100,000 demo balance. Do not mention TradeHQ in body_markdown; publisher identity belongs in the email footer.",
+        "Do not include external URLs or Markdown links in body_markdown; the server attaches the verified cited source and an answer checked independently of the model.",
+        "The subject must be short, distinctive and compelling without clickbait, panic or hype. Avoid 'Weekly Update', 'Mastering Basics', 'Learn About' and similar formulaic openings. The preheader should reveal the specific beginner takeaway.",
+        "Return only subject, preheader and body_markdown as JSON. This is not personalized financial advice; no live trades or signup instructions."
       ],
     }) }] }],
     generationConfig: {
@@ -109,8 +126,8 @@ async function composeOriginalNewsletter(week: string, topicId?: string): Promis
   const draft = JSON.parse(result?.candidates?.[0]?.content?.parts?.[0]?.text ?? "{}");
   if (typeof draft.body_markdown !== "string" || /https?:\/\/|TradeHQ/i.test(draft.body_markdown))
     throw Error("Generated narrative included prohibited links or promotion");
-  const body = appendVerifiedLab(draft.body_markdown, lab);
-  if (!validateNewsletterCopy(draft.subject, draft.preheader, body, lab))
+  const body = appendVerifiedLab(draft.body_markdown, lab, format);
+  if (!validateNewsletterCopy(draft.subject, draft.preheader, body, lab, format))
     throw Error("Newsletter failed original-value and source checks");
   return {
     subject: draft.subject.trim(), preheader: draft.preheader.trim(),
@@ -193,6 +210,21 @@ Deno.serve(async req => {
       return reply({ data: data as Draft[] });
     }
     if (action === "generate-weekly") return reply({ data: await generate(thisMondayColombo()) });
+    if (action === "preview-upcoming" && admin) {
+      // Generate a NEW AI sample for next Monday without creating an edition,
+      // altering an approved issue, sending mail, or consuming a mailing list.
+      const currentMonday = thisMondayColombo();
+      const followingMonday = new Date(Date.parse(currentMonday + "T00:00:00Z") + 7 * 86_400_000)
+        .toISOString().slice(0, 10);
+      try {
+        const draft = await composeOriginalNewsletter(followingMonday);
+        return reply({ data: { week_of: followingMonday, subject: draft.subject,
+          preheader: draft.preheader, body_markdown: draft.body_markdown,
+          note: "Unsaved AI-generated preview. No edition was approved and no email was sent." } });
+      } catch {
+        return reply({ error: "AI preview failed free-provider or source-quality checks. Existing approved issue is unchanged." }, 422);
+      }
+    }
     if (action === "topics" && admin) {
       return reply({ data: NEWSLETTER_LABS.map(t => ({ id: t.id, title: t.title, sourceTitle: t.sourceTitle })) });
     }
@@ -228,7 +260,7 @@ Deno.serve(async req => {
     }
     if (action === "save") {
       if (!validateDraft(body.subject, body.preheader, body.body_markdown))
-        return reply({ error: "Draft needs a subject, preheader, 250+ words of useful copy and approved article links." }, 400);
+        return reply({ error: "Draft needs a clear subject, preheader, useful content and a verified educational source link." }, 400);
       const { data, error } = await client.from("newsletter_editions")
         .update({
           subject: String(body.subject).trim(), preheader: String(body.preheader).trim(),

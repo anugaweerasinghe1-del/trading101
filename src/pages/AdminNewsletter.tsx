@@ -11,6 +11,15 @@ import { Label } from "@/components/ui/label";
 import { CheckCircle2, RefreshCw, Sparkles, Lock, Mail } from "lucide-react";
 
 type LessonTopic = { id: string; title: string; sourceTitle: string };
+type NextIssuePreview = { week_of: string; subject: string; preheader: string; body_markdown: string; note: string };
+type TestSendStatus = {
+  configured: boolean; provider: string; apiKeyConfigured: boolean; senderConfigured: boolean;
+  testInboxConfigured: boolean; testInbox: string | null; subscriberPublishingEnabled: false;
+  recent: { edition_id: string; edition_revision: number; test_to: string;
+    status: string; provider_id: string | null; created_at: string; error_code: string | null }[];
+};
+type TestSendResult = { status?: string; providerId?: string | null; note?: string;
+  duplicatePrevented?: boolean; previous?: { status: string; provider_id: string | null } };
 type Edition = {
   id: string; week_of: string; status: "generating" | "draft" | "approved" | "failed";
   revision: number; subject: string; preheader: string; body_markdown: string;
@@ -18,7 +27,6 @@ type Edition = {
   ai_model: string | null; generator_error: string | null;
 };
 const border = "rounded-2xl border border-border bg-card/70 p-5";
-const canonical = "https://www.thetradehq.com";
 export default function AdminNewsletter() {
   const [key, setKey] = useState("");
   const [unlocked, setUnlocked] = useState(false);
@@ -32,6 +40,9 @@ export default function AdminNewsletter() {
   const [topics, setTopics] = useState<LessonTopic[]>([]);
   const [topicId, setTopicId] = useState("stop-gap");
   const [previewGenerated, setPreviewGenerated] = useState(false);
+  const [nextPreview, setNextPreview] = useState<NextIssuePreview | null>(null);
+  const [testStatus, setTestStatus] = useState<TestSendStatus | null>(null);
+  const [testResult, setTestResult] = useState<TestSendResult | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
 
@@ -49,6 +60,35 @@ export default function AdminNewsletter() {
     return data.data;
   }, [key]);
 
+  const testCall = useCallback(async (action: string, payload: Record<string, unknown> = {}) => {
+    const { data, error: invokeError } = await supabase.functions.invoke("newsletter-test-send", {
+      body: { action, ...payload }, headers: { "x-admin-key": key },
+    });
+    if (invokeError || data?.error) {
+      throw Error(typeof data?.error === "string" ? data.error :
+        "Newsletter test service is unavailable. Check the sender configuration.");
+    }
+    return data.data;
+  }, [key]);
+  const loadTestStatus = useCallback(async () => {
+    setTestStatus(await testCall("status") as TestSendStatus);
+  }, [testCall]);
+  const previewNextIssue = () => void run(async () => {
+    const next = await call("preview-upcoming") as NextIssuePreview;
+    setNextPreview(next);
+    toast.message("Generated an unsaved AI sample. No email was approved or sent.");
+  });
+  const sendOwnerTest = () => void run(async () => {
+    if (!current || current.status !== "approved" || !testStatus?.configured) return;
+    setTestResult(null);
+    const result = await testCall("send-test", {
+      editionId: current.id, revision: current.revision,
+    }) as TestSendResult;
+    setTestResult(result);
+    await loadTestStatus();
+    toast.message(result.note || "Test request completed. Check the provider result below.");
+  });
+
   const pick = (edition: Edition) => {
     setCurrent(edition);
     setSubject(edition.subject);
@@ -56,6 +96,7 @@ export default function AdminNewsletter() {
     setBody(edition.body_markdown);
     setReviewed(false);
     setPreviewGenerated(false);
+    setTestResult(null);
     setError("");
   };
   const refresh = useCallback(async (preferId?: string) => {
@@ -82,6 +123,7 @@ export default function AdminNewsletter() {
       setTopics(available);
       setTopicId(available[0].id);
       setUnlocked(true);
+      void loadTestStatus().catch(() => setTestStatus(null));
     });
   };
   const generate = () => void run(async () => {
@@ -159,11 +201,60 @@ export default function AdminNewsletter() {
         <Button type="submit" disabled={busy || key.length < 8}>{busy ? "Checking…" : "Unlock drafts"}</Button>
       </form> : <>
         <div className="flex flex-wrap items-center gap-3">
+          <Button onClick={previewNextIssue} variant="outline" disabled={busy}>
+            <Sparkles className="mr-2 h-4 w-4"/> Preview next week's AI issue
+          </Button>
           <Button onClick={generate} disabled={busy}><Sparkles className="mr-2 h-4 w-4"/> Generate this week's draft</Button>
           <Button onClick={() => void run(async () => refresh(current?.id))} variant="outline" disabled={busy}><RefreshCw className="mr-2 h-4 w-4"/> Refresh</Button>
-          <Button variant="outline" onClick={() => { setUnlocked(false); setKey(""); setCurrent(null); setEditions([]); setTopics([]); }} disabled={busy}>Lock</Button>
+          <Button variant="outline" onClick={() => { setUnlocked(false); setKey(""); setCurrent(null); setEditions([]); setTopics([]); setTestStatus(null); setTestResult(null); setNextPreview(null); }} disabled={busy}>Lock</Button>
         </div>
         {error && <p role="alert" className="text-sm text-destructive">{error}</p>}
+        <section className={border+" space-y-3"}>
+          <h2 className="font-semibold">Preview a new AI-generated issue</h2>
+          <p className="text-xs text-muted-foreground">
+            Generate a genuine beginner issue for next Monday without saving, approving or emailing it.
+          </p>
+          {nextPreview && <div className="space-y-2">
+            <p className="text-xs text-primary">Week of {nextPreview.week_of} · unsaved</p>
+            <h3 className="text-lg font-semibold">{nextPreview.subject}</h3>
+            <p className="text-sm text-muted-foreground">{nextPreview.preheader}</p>
+            <Textarea readOnly value={nextPreview.body_markdown} rows={18} className="font-mono text-sm" />
+          </div>}
+        </section>
+        <section className={border+" space-y-3"}>
+          <h2 className="font-semibold">Test actual email delivery</h2>
+          <p className="text-xs text-muted-foreground">
+            Tests send only the selected approved issue to your configured private inbox.
+            No legacy subscribers are contacted and one test per revision prevents duplicate sends.
+          </p>
+          <p className="text-sm">
+            {!testStatus ? "Sender status unavailable." : testStatus.configured
+              ? "Resend configured · fixed test inbox: " + testStatus.testInbox
+              : "Sending is not configured. Add RESEND_API_KEY, NEWSLETTER_FROM_EMAIL and NEWSLETTER_TEST_TO_EMAIL to Supabase Edge Function secrets."}
+          </p>
+          <div className="flex flex-wrap items-center gap-3">
+            <Button variant="outline" disabled={busy} onClick={() => void run(loadTestStatus)}>Check sender status</Button>
+            <Button disabled={busy || !testStatus?.configured || current?.status !== "approved"} onClick={sendOwnerTest}>
+              <Mail className="mr-2 h-4 w-4"/> Send test to my inbox
+            </Button>
+          </div>
+          {testResult && <p role="status" className="text-sm">
+            {testResult.duplicatePrevented
+              ? "Duplicate prevented; previous status: " + (testResult.previous?.status || "unknown")
+              : "Provider: " + testResult.status + ". " + (testResult.note || "")}
+          </p>}
+          {testStatus?.recent && testStatus.recent.length > 0 && <div className="space-y-1">
+            <p className="text-xs font-semibold">Recent provider test attempts</p>
+            {testStatus.recent.map(item => <p key={item.edition_id + item.edition_revision}
+              className="text-xs text-muted-foreground">
+              {new Date(item.created_at).toLocaleString()} · {item.status} · {item.test_to}
+            </p>)}
+          </div>}
+          <p className="text-xs text-muted-foreground">
+            Provider acceptance does not prove inbox delivery. Check the inbox and spam folder.
+            Subscriber campaigns remain disabled until consent and unsubscribe safeguards are active.
+          </p>
+        </section>
         <div className="grid gap-5 lg:grid-cols-[240px_minmax(0,1fr)]">
           <aside className={border+" space-y-3"}>
             <h2 className="font-semibold">Weekly editions</h2>
@@ -219,7 +310,7 @@ export default function AdminNewsletter() {
               <Input id="newsletter-preheader" value={preheader} onChange={e => setPreheader(e.target.value)} maxLength={240} disabled={current.status !== "draft"} />
               <Label htmlFor="newsletter-body">Newsletter text (Markdown)</Label>
               <Textarea id="newsletter-body" value={body} onChange={e => setBody(e.target.value)} rows={19} className="font-mono text-sm" disabled={current.status !== "draft"} />
-              <p className="text-xs text-muted-foreground">Article links must point to approved {canonical} learning pages. Prioritize clear examples and trustworthy primary sources. Verify the calculations and claims before approving.</p>
+              <p className="text-xs text-muted-foreground">Check independent sources, calculations and links before approving.</p>
               {current.status === "draft" && <>
                 <Button onClick={save} disabled={busy} variant="outline">Save edits</Button>
                 <div className="border-t border-border pt-4 space-y-3">
