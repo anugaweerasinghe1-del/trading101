@@ -8,7 +8,7 @@ import { GLOSSARY_WORKSHEETS } from "@/lib/glossaryWorksheets";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, BookOpen, Clock, Share2, Zap, CheckCircle2, Lightbulb, TrendingUp } from "lucide-react";
+import { ArrowRight, BookOpen, Clock, Share2, Zap, CheckCircle2, TrendingUp } from "lucide-react";
 import { motion } from "framer-motion";
 import NotFound from "./NotFound";
 
@@ -141,6 +141,9 @@ const WikiTerm = () => {
                 This page has no recorded editorial review date.
               </p>
 
+          {/* Short glossary definition retained for readers and content parity; the duplicate card is removed. */}
+          <p className="mt-4 text-sm leading-relaxed text-foreground/85">{term.definition}</p>
+
           {/* Detailed Definition */}
           <Card className="mt-8 p-6 md:p-8 bg-card border-border rounded-2xl backdrop-blur-md">
             <div className="flex items-center gap-2 mb-4">
@@ -156,15 +159,6 @@ const WikiTerm = () => {
             <h2 className="text-lg font-semibold">References</h2>
             <ul className="list-disc pl-5">{term.sources.map(source => <li key={source.href}><a className="text-primary underline" href={source.href}>{source.label}</a></li>)}</ul>
           </section>}
-
-          {/* Pro Tip Box */}
-          <Card className="mt-4 p-6 md:p-8 bg-primary/[0.04] border-primary/20 rounded-2xl">
-            <div className="flex items-center gap-2 mb-3">
-              <Lightbulb className="w-4 h-4 text-primary" />
-              <h2 className="text-xs uppercase tracking-[0.15em] font-black text-primary">How It Works</h2>
-            </div>
-            <p className="text-sm text-foreground/80 leading-relaxed font-medium">{term.definition}</p>
-          </Card>
 
           {/* Key Points */}
           <Card className="mt-4 p-6 md:p-8 bg-card border-border rounded-2xl">
