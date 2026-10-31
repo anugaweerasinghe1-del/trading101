@@ -233,6 +233,7 @@ Deno.serve(async req => {
         .update({
           subject: String(body.subject).trim(), preheader: String(body.preheader).trim(),
           body_markdown: String(body.body_markdown).trim(),
+          source_links: [...String(body.body_markdown).matchAll(/https?:\/\/[^\s)>\]]+/g)].map(m => m[0].replace(/[.,;]$/, "")),
           revision: Number(revision) + 1, reviewed_by: null, reviewed_at: null,
           updated_at: new Date().toISOString(),
         })
