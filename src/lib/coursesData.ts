@@ -443,6 +443,7 @@ const futuresTrack: CourseTrack = {
       ],
       sources: [
         { label: "CME — Micro E-mini", url: "https://www.cmegroup.com/markets/equities/sp/micro-e-mini-sandp-500.html" },
+        { label: "CFTC — Basics of Futures Trading and risk disclosures", url: "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/FuturesMarketBasics/index.htm" },
       ],
       quiz: [
         { question: "A micro E-mini S&P (MES) is what fraction of a standard e-mini?", options: ["1/2", "1/5", "1/10", "1/100"], correctAnswer: 2, explanation: "MES has a $5 multiplier versus $50 for ES; margin requirements are checked separately." },
@@ -743,6 +744,7 @@ const psychologyTrack: CourseTrack = {
       sources: [
         { label: "TradeHQ — Revenge Trading Blocker", url: "/portfolio" },
         { label: "Kahneman and Tversky — decision-making under uncertainty", url: "https://doi.org/10.1007/BF00122574" },
+        { label: "FINRA — Social sentiment and impulsive-investment risks", url: "https://www.finra.org/investors/insights/social-sentiment-investing-tools" },
       ],
       quiz: [
         { question: "Tilt is:", options: ["A strategy", "Emotional state driving reckless trades", "A chart pattern", "A fee"], correctAnswer: 1, explanation: "Post-loss unplanned oversized trading." },
