@@ -101,7 +101,7 @@ Deno.serve(async (req: Request) => {
     }
     const apiKey=Deno.env.get("RESEND_API_KEY"),sender=Deno.env.get("NEWSLETTER_FROM_EMAIL");
     if(!apiKey || !sender) return json({error:"Confirmation email service is not configured"},503);
-    const link=SITE+"/newsletter/confirm?token="+token;
+    const link=SITE+"/newsletter/confirm#token="+token;
     const send=await fetch("https://api.resend.com/emails",{
       method:"POST",
       headers:{"Authorization":"Bearer "+apiKey,"Content-Type":"application/json",
