@@ -2,6 +2,7 @@ import { getRealizedTradeResults } from './realizedTrades';
 import { Portfolio, Trade, Position, Asset } from './types';
 import { INITIAL_CASH, ASSETS } from './assets';
 import { recordSnapshot, getPortfolioHistory } from './portfolioHistory';
+import { parsePracticePortfolio, readRecoveryPortfolio, writeRecoveryPortfolio } from './portfolioRecovery';
 
 const STORAGE_KEY = 'tradehq_portfolio';
 const HISTORY_KEY = 'tradehq_history';
@@ -9,37 +10,44 @@ const BALANCE_MIGRATION_KEY = 'tradehq:balance-migration:v2';
 const LEGACY_INITIAL_CASH = 10000;
 
 export function getPortfolio(): Portfolio {
-  const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored) {
-    const portfolio = JSON.parse(stored);
-    // Convert timestamp strings back to Date objects
-    portfolio.trades = portfolio.trades.map((t: Trade) => ({
-      ...t,
-      timestamp: new Date(t.timestamp),
-    }));
-    // One-shot migration: bump existing users from $10K baseline to $100K
-    // so they're not disadvantaged after the rebrand. Only runs once per browser.
-    try {
-      if (!localStorage.getItem(BALANCE_MIGRATION_KEY)) {
-        const bump = INITIAL_CASH - LEGACY_INITIAL_CASH;
-        if (bump > 0) {
-          portfolio.cash = (portfolio.cash ?? 0) + bump;
-          portfolio.totalValue = (portfolio.totalValue ?? 0) + bump;
-          localStorage.setItem(STORAGE_KEY, JSON.stringify(portfolio));
-        }
-        localStorage.setItem(BALANCE_MIGRATION_KEY, '1');
+  let portfolio: Portfolio | null = null;
+  let hasMainRecord = false;
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    hasMainRecord = Boolean(stored);
+    if (stored) portfolio = parsePracticePortfolio(JSON.parse(stored));
+  } catch { /* Corrupted JSON or browser storage denied: try the recovery copy. */ }
+
+  if (!portfolio) {
+    portfolio = readRecoveryPortfolio();
+    if (portfolio) {
+      // Never erase a known-good recovery record. This also repairs malformed
+      // primary JSON after an interrupted deployment/browser write.
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(portfolio)); } catch {}
+      if (typeof window !== "undefined") {
+        queueMicrotask(() => window.dispatchEvent(new CustomEvent("tradehq:portfolio-recovered")));
       }
-    } catch { /* localStorage unavailable */ }
+    }
+  }
+  if (portfolio) {
+    // Preserve the existing 10K-to-100K one-shot migration only for records
+    // found in the original primary slot (never rebump a recovery snapshot).
+    try {
+      if (hasMainRecord && !localStorage.getItem(BALANCE_MIGRATION_KEY)) {
+        const bump = INITIAL_CASH - LEGACY_INITIAL_CASH;
+        if (bump > 0 && portfolio.totalValue < 80000) {
+          portfolio.cash += bump;
+          portfolio.totalValue += bump;
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(portfolio));
+          writeRecoveryPortfolio(portfolio);
+        }
+        localStorage.setItem(BALANCE_MIGRATION_KEY, "1");
+      }
+    } catch {}
     return portfolio;
   }
-
-  try { localStorage.setItem(BALANCE_MIGRATION_KEY, '1'); } catch {}
-  return {
-    cash: INITIAL_CASH,
-    totalValue: INITIAL_CASH,
-    positions: [],
-    trades: [],
-  };
+  try { localStorage.setItem(BALANCE_MIGRATION_KEY, "1"); } catch {}
+  return { cash: INITIAL_CASH, totalValue: INITIAL_CASH, positions: [], trades: [] };
 }
 
 const UPDATED_AT_KEY = 'tradehq_portfolio_updated_at';
@@ -55,8 +63,15 @@ export function getLocalUpdatedAt(): number {
 }
 
 export function savePortfolio(portfolio: Portfolio, opts: { silent?: boolean } = {}): void {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(portfolio));
-  try { localStorage.setItem(UPDATED_AT_KEY, String(Date.now())); } catch { /* ignore */ }
+  let persisted = false;
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(portfolio));
+    localStorage.setItem(UPDATED_AT_KEY, String(Date.now()));
+    persisted = true;
+  } catch { /* Warn the visitor; don't falsely promise a durable saved trade. */ }
+  const recoverySaved = writeRecoveryPortfolio(portfolio);
+  if ((!persisted || !recoverySaved) && typeof window !== "undefined")
+    window.dispatchEvent(new Event("tradehq:portfolio-storage-warning"));
   if (!opts.silent) saveListener?.(portfolio);
   if (typeof window !== 'undefined') window.dispatchEvent(new Event('tradehq:portfolio-updated'));
 }
