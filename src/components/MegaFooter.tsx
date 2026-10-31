@@ -34,7 +34,7 @@ export function MegaFooter() {
   const { pathname } = useLocation();
   // Home and /newsletter already provide a prominent signup in their content.
   // The shared footer must not render a second form on those pages.
-  const hasPrimaryNewsletterSignup = pathname === "/" || pathname === "/newsletter";
+  const hasPrimaryNewsletterSignup = pathname === "/" || pathname.startsWith("/newsletter");
   const assetCategories = {
     crypto: {
       title: "Top Crypto",
