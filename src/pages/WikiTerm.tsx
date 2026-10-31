@@ -141,6 +141,9 @@ const WikiTerm = () => {
                 This page has no recorded editorial review date.
               </p>
 
+          {/* Short glossary definition retained for readers and content parity; the duplicate card is removed. */}
+          <p className="mt-4 text-sm leading-relaxed text-foreground/85">{term.definition}</p>
+
           {/* Detailed Definition */}
           <Card className="mt-8 p-6 md:p-8 bg-card border-border rounded-2xl backdrop-blur-md">
             <div className="flex items-center gap-2 mb-4">
