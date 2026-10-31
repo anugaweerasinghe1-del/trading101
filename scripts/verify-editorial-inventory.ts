@@ -3,6 +3,8 @@ import { loadSiteData } from "./loadData";
 import { uniqueRoutes } from "./routes";
 import { buildContentMap } from "./content";
 import { ASSET_REFERENCES } from "../src/lib/assetReferences";
+import { LEARN_ARTICLES } from "../src/lib/learnArticles";
+import { ARTICLE_REFERENCES } from "../src/lib/articleReferences";
 import { GLOSSARY_WORKSHEETS } from "../src/lib/glossaryWorksheets";
 import { ARTICLE_REFERENCES } from "../src/lib/articleReferences";
 const data = await loadSiteData();
@@ -19,6 +21,15 @@ for (const track of data.courseTracks) for (const lesson of track.lessons) {
   assert.ok(lesson.sources.some(source => /^https:\/\/[^\s]+$/.test(source.url)),
     `${path}: lesson must provide an external source with an HTTPS URL`);
 }
+for (const article of LEARN_ARTICLES) {
+  assert.ok(article.sourceCheck && /^2026-\d{2}-\d{2}$/.test(article.sourceCheck.date),
+    `${article.slug}: source-check date must reflect a documented actual check`);
+  assert.ok(article.sourceCheck.scope.startsWith("Limited "),
+    `${article.slug}: explain narrow scope rather than asserting independent professional review`);
+  assert.ok((ARTICLE_REFERENCES[article.slug] || []).some(reference => /^https:\/\//.test(reference.href)),
+    `${article.slug}: published article must retain a real external HTTPS source`);
+}
+console.log("PASS all static article source checks are scoped and references retained");
 for (const route of routes.filter(route => route.path.startsWith("/trade/") && !route.noindex)) {
   const id = route.path.split("/").pop()!;
   const reference = ASSET_REFERENCES[id];
