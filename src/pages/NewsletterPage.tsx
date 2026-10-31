@@ -9,7 +9,7 @@ import { supabase } from "@/integrations/supabase/client";
 export default function NewsletterPage() {
   const [params] = useSearchParams();
   const pageLocation = useLocation();
-  const token = params.get("token") || "";
+  const token = params.get("token") || new URLSearchParams(pageLocation.hash.replace(/^#/, "")).get("token") || "";
   const confirm = pageLocation.pathname.endsWith("/confirm");
   const remove = pageLocation.pathname.endsWith("/unsubscribe");
   const special = confirm || remove;
