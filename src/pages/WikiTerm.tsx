@@ -8,7 +8,7 @@ import { GLOSSARY_WORKSHEETS } from "@/lib/glossaryWorksheets";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, BookOpen, Clock, Share2, Zap, CheckCircle2, Lightbulb, TrendingUp } from "lucide-react";
+import { ArrowRight, BookOpen, Clock, Share2, Zap, CheckCircle2, TrendingUp } from "lucide-react";
 import { motion } from "framer-motion";
 import NotFound from "./NotFound";
 
@@ -134,6 +134,7 @@ const WikiTerm = () => {
             <h1 className="text-3xl md:text-4xl font-black text-foreground tracking-tight mb-2 leading-tight">
               What is <span className="text-primary">{term.term}</span>?
             </h1>
+            <p className="mt-3 text-base leading-relaxed text-foreground/90">{term.definition}</p>
           </motion.div>
 
               <p className="text-sm text-muted-foreground mb-6">
@@ -156,15 +157,6 @@ const WikiTerm = () => {
             <h2 className="text-lg font-semibold">References</h2>
             <ul className="list-disc pl-5">{term.sources.map(source => <li key={source.href}><a className="text-primary underline" href={source.href}>{source.label}</a></li>)}</ul>
           </section>}
-
-          {/* Pro Tip Box */}
-          <Card className="mt-4 p-6 md:p-8 bg-primary/[0.04] border-primary/20 rounded-2xl">
-            <div className="flex items-center gap-2 mb-3">
-              <Lightbulb className="w-4 h-4 text-primary" />
-              <h2 className="text-xs uppercase tracking-[0.15em] font-black text-primary">How It Works</h2>
-            </div>
-            <p className="text-sm text-foreground/80 leading-relaxed font-medium">{term.definition}</p>
-          </Card>
 
           {/* Key Points */}
           <Card className="mt-4 p-6 md:p-8 bg-card border-border rounded-2xl">
