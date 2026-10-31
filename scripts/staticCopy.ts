@@ -91,6 +91,46 @@ export const STATIC_COPY: Record<string, PageContent> = {
     ],
   },
 
+  "/start": {
+    sections: [
+      {
+        h: "Step 1 — Understand an order before placing one",
+        p: [
+          "TradeHQ's starter exercise begins with the difference between a displayed quote and an actual execution price. Consider two fictional shares showing $50 each. Their quoted purchase value is $100, and a 0.1% simulated fee adds $0.10. The estimated debit is therefore $100.10, assuming a $50 fill. The U.S. Securities and Exchange Commission's Investor.gov guidance explains that a real market order's execution price is not guaranteed by the last quote. The simulator is simpler, and must not be mistaken for a live brokerage.",
+          "The learner answers a short understanding check before entering the trading desk. The exercise presents an invented scenario for reading costs and uncertainty, not a stock recommendation or a return promise.",
+        ],
+      },
+      {
+        h: "Steps 2 and 3 — Place a voluntary virtual trade, then inspect the numbers",
+        p: [
+          "The guided link opens the normal virtual trading terminal, optionally selecting an illustrative asset. It never places an order on the learner's behalf. The visitor chooses a quantity and explicitly confirms any simulated transaction. A successful saved trade advances the journey; merely pressing a guide button does not.",
+          "The next stage reads the learner's actual saved practice data. It shows remaining virtual cash, total account value, number of holdings, and the chosen trade's quantity, execution price, calculated fee and cash movement. Open-position returns change with the available reference price and are not guaranteed cash profits. A refreshed or delayed quote can differ from an earlier reference.",
+        ],
+      },
+      {
+        h: "Steps 4 and 5 — Reflect and return for daily practice",
+        p: [
+          "Learners write a private reflection explaining what surprised them about the price or fee and what they will check before another exercise. This reflection remains in the browser and is never posted to a public leaderboard. TradeHQ then recommends a risk-management lesson and the existing Daily Practice exercises; completion does not certify readiness to risk real money.",
+          "The journey records the completed steps in local browser storage so a visitor who leaves halfway can return later on the same browser. Structured courses maintain their own most-recent-lesson record, which the journey links to for continued study. Clearing all browser site data can remove local progress, so TradeHQ does not promise permanent cross-device recovery without an account.",
+        ],
+      },
+      {
+        h: "What a first practice result can and cannot show",
+        p: [
+          "A fictional profit or loss is useful for checking arithmetic, exposure, and whether the learner understood their own decision. It does not reproduce real transaction liquidity, bid/ask spreads, slippage, tax obligations or the consequences of risking money. A short winning streak is not evidence of an investing skill. The intended result of this lesson is a better explanation of the order and its limitations, not a trade signal.",
+        ],
+      },
+    ],
+    links: [
+      { href: "/trade", label: "Voluntary virtual trading terminal" },
+      { href: "/portfolio", label: "Inspect your simulated portfolio and fee records" },
+      { href: "/daily", label: "Daily Practice exercises" },
+      { href: "/courses", label: "Resume a structured course" },
+      { href: "/learn/article/risk-management-in-trading", label: "Risk-management lesson" },
+      { href: "https://www.investor.gov/introduction-investing/investing-basics/how-stock-markets-work/types-orders", label: "SEC Investor.gov: Types of Orders" },
+    ],
+  },
+
   "/markets": {
     sections: [
       {
