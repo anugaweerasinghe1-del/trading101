@@ -360,6 +360,17 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
       source: "Yahoo Finance"
     }
   },
+  avgo: {
+    whatIs: "Broadcom Inc. designs semiconductor and infrastructure software products. Its fiscal 2025 Form 10-K reports two business segments: Semiconductor Solutions (including networking and custom AI accelerators) and Infrastructure Software (including private cloud and enterprise software). This is a dated company description, not evidence of a current stock valuation or price trend.",
+    strategy: "Open Broadcom's fiscal 2025 annual report and compare its two segment revenue totals using the same fiscal year. Calculate each segment's share of consolidated revenue, then distinguish revenue growth from profit, cash flow and the price investors pay for AVGO shares. Use TradeHQ's virtual market order only for a separate position-value and fee exercise; the simulation does not recreate financial results or predict AVGO.",
+    category: "Technology Stock",
+    keywords: ["Broadcom", "AVGO", "semiconductors", "infrastructure software", "segment revenue"],
+    stats: {
+      sector: "Semiconductors and Infrastructure Software",
+      primaryDriver: "Semiconductor and enterprise-software demand",
+      source: "Broadcom fiscal 2025 Form 10-K (historical context)"
+    }
+  },
   aapl: {
     whatIs: "Apple designs products including iPhone, Mac and iPad and provides related services. Its financial reports separate product and services revenue. Changes in revenue, margins and valuation expectations can have different implications for a share price.",
     strategy: "Compare revenue, guidance and product expectations with what was known before an earnings release. A buy-the-rumour narrative is a hypothesis that can fail. Educational simulation only; not financial advice.",

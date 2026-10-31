@@ -41,6 +41,7 @@ import {
 } from "@/lib/assetContent";
 import { AlertTriangle, Wifi, WifiOff, Clock } from "lucide-react";
 import { EducationalDisclaimer } from "@/components/EducationalDisclaimer";
+import { ASSET_REFERENCES } from "@/lib/assetReferences";
 
 // Wrapper component to provide live data to AssetIntelligence
 function AssetIntelligenceWithLiveData({ asset }: { asset: Asset }) {
@@ -605,6 +606,27 @@ export default function TradeAsset() {
               <p className="text-xs text-muted-foreground/60 mt-3 italic">
                 Student perspective: Study {selectedAsset.symbol} order mechanics with virtual cash in Colombo or anywhere. Simulation does not predict real returns.
               </p>
+            </section>
+          )}
+
+          {/* Published instrument-specific worksheet. No fabricated research for other assets. */}
+          {selectedAsset && !showSeoBlocks && ASSET_REFERENCES[selectedAsset.id] && (
+            <section className="mt-8 rounded-2xl border border-border bg-card p-5 md:p-6" aria-label={`Published research worksheet for ${selectedAsset.symbol}`}>
+              <h2 className="text-lg font-bold text-foreground">Source-backed worksheet: {selectedAsset.symbol}</h2>
+              <p className="mt-3 text-sm leading-relaxed text-foreground/80">
+                {ASSET_REFERENCES[selectedAsset.id].exercise}
+              </p>
+              <p className="mt-3 text-xs text-muted-foreground">
+                Historical issuer evidence for an educational comparison; not a market price, investment recommendation or completed review of the company.
+              </p>
+              <a
+                href={ASSET_REFERENCES[selectedAsset.id].href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-block break-words text-sm font-medium text-primary underline underline-offset-4"
+              >
+                Read primary source: {ASSET_REFERENCES[selectedAsset.id].label}
+              </a>
             </section>
           )}
 
