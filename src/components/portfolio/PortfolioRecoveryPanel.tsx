@@ -141,7 +141,7 @@ export function PortfolioRecoveryPanel({ signedIn, authLoading = false }: { sign
               ? "Signed-in portfolios come from server-recorded trades. Sign out to restore a separate guest backup; imports cannot replace account history."
               : "Choose a previously downloaded TradeHQ .json file. Inspect its values before replacing this browser's guest portfolio."}
           </p>
-          <input ref={fileRef} id="portfolio-restore-file" type="file" accept=".json,application/json"
+          <input ref={fileRef} id="portfolio-restore-file" type="file" aria-label="Select TradeHQ JSON backup file" accept=".json,application/json"
             onChange={e=>void selectBackup(e.currentTarget.files?.[0])}
             className="sr-only" disabled={authLoading || signedIn}/>
           <Button type="button" variant="outline" size="lg" className="w-full"
