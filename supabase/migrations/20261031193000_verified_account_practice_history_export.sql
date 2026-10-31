@@ -11,6 +11,18 @@ INSERT INTO tradehq_private.practice_export_keys(key_id,signing_key)
 VALUES('v1',extensions.gen_random_bytes(32))
 ON CONFLICT(key_id) DO NOTHING;
 
+CREATE OR REPLACE FUNCTION public.get_my_account_practice_snapshot()
+RETURNS jsonb LANGUAGE plpgsql STABLE SECURITY DEFINER SET search_path TO '' AS $
+DECLARE uid uuid:=auth.uid();
+BEGIN
+  IF uid IS NULL THEN RAISE EXCEPTION 'Authentication required'; END IF;
+  -- Read only: never create a portfolio or import local browser values.
+  RETURN tradehq_private.portfolio_snapshot(uid);
+END;
+$;
+REVOKE ALL ON FUNCTION public.get_my_account_practice_snapshot() FROM PUBLIC, anon;
+GRANT EXECUTE ON FUNCTION public.get_my_account_practice_snapshot() TO authenticated;
+
 CREATE OR REPLACE FUNCTION public.export_my_verified_practice_history()
 RETURNS jsonb LANGUAGE plpgsql VOLATILE SECURITY DEFINER SET search_path TO '' AS $$
 DECLARE
