@@ -183,8 +183,8 @@ export default function AdminNewsletter() {
               TradeHQ's Supabase scheduler prepares a private AI draft every Monday.
               Each issue now explores an original, hypothetical decision problem with a verified calculation
               and a primary investor-education source—not a list of TradeHQ product links. Your approval
-              <strong> does not send emails</strong>. Only your explicit Publish action sends to
-              confirmed subscribers receive only issues you explicitly publish after review.
+              <strong> does not send emails</strong>. Only your explicit Publish action sends
+              the reviewed issue to readers who have confirmed their subscription.
             </p>
           </div>
         </div>
