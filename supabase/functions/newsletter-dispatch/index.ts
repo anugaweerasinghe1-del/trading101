@@ -127,7 +127,7 @@ Deno.serve(async req => {
        .eq("id",reservation.id);
       skipped++;continue;
     }
-    const url=SITE+"/newsletter/unsubscribe?token="+contact.unsubscribe_token;
+    const url=SITE+"/newsletter/unsubscribe#token="+contact.unsubscribe_token;
     const oneClick=Deno.env.get("SUPABASE_URL")+"/functions/v1/newsletter-public?token="+contact.unsubscribe_token;
     let state:"accepted"|"rejected"|"unknown"="unknown",providerId:string|null=null,errorCode:string|null=null;
     try {
