@@ -112,14 +112,15 @@ async function generate(week: string) {
       }) }] }],
       generationConfig: {
         temperature: 0.7,
-        maxOutputTokens: 1700,
+        maxOutputTokens: 8192,
+        thinkingConfig: { thinkingLevel: "LOW" },
         responseMimeType: "application/json",
-        responseSchema: {
-          type: "OBJECT",
+        responseJsonSchema: {
+          type: "object",
           properties: {
-            subject: { type: "STRING" },
-            preheader: { type: "STRING" },
-            body_markdown: { type: "STRING" },
+            subject: { type: "string" },
+            preheader: { type: "string" },
+            body_markdown: { type: "string" },
           },
           required: ["subject", "preheader", "body_markdown"],
         },
@@ -127,7 +128,7 @@ async function generate(week: string) {
     };
     const response = await fetch(
       "https://generativelanguage.googleapis.com/v1beta/models/" + model + ":generateContent",
-      { method: "POST", headers: { "Content-Type": "application/json", "x-goog-api-key": key }, body: JSON.stringify(request), signal: AbortSignal.timeout(25000) },
+      { method: "POST", headers: { "Content-Type": "application/json", "x-goog-api-key": key }, body: JSON.stringify(request), signal: AbortSignal.timeout(52000) },
     );
     if (!response.ok) throw Error("AI provider rejected request");
     const raw = await response.text();
