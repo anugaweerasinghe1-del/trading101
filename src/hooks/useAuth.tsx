@@ -9,6 +9,7 @@ export interface Profile {
   country: string | null;
   bio: string | null;
   is_public: boolean;
+  show_public_trades: boolean;
 }
 
 interface AuthContextValue {
@@ -40,7 +41,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const loadProfile = useCallback(async (uid: string, generation = authGeneration.current) => {
     const { data } = await supabase
       .from("profiles")
-      .select("id, username, country, bio, is_public")
+      .select("id, username, country, bio, is_public, show_public_trades")
       .eq("id", uid)
       .maybeSingle();
     if (generation === authGeneration.current && currentUserId.current === uid) setProfile((data as Profile) ?? null);
