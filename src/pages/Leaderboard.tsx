@@ -212,7 +212,7 @@ export default function Leaderboard() {
   return (
     <>
       <Helmet>
-        <title>Community Practice Board — TradeHQ Practice Stats</title>
+        <title>Community Practice Board — Learn From Virtual Trading | TradeHQ</title>
         <meta name="description" content="Community practice board of public TradeHQ accounts using server-recorded simulated trades. Results are not independently verified or audited performance records." />
         <link rel="canonical" href="https://www.thetradehq.com/leaderboard" />
         <meta name="robots" content="index, follow" />
@@ -348,65 +348,53 @@ export default function Leaderboard() {
               </div>
             </details>
             {tab === "traders" ? (
-              <section aria-label="Public members" className="bg-card border border-border rounded-2xl overflow-hidden shadow-[0_12px_40px_-24px_rgba(0,0,0,0.5)]">
-                <div className="flex flex-wrap items-center justify-between gap-3 px-4 sm:px-6 py-5 border-b border-border">
-                  <div>
-                    <h2 className="font-semibold text-sm">Public members <span className="ml-1.5 rounded-md bg-muted px-2 py-0.5 text-xs tabular-nums text-muted-foreground">{loading || loadError ? "—" : rows.length}</span></h2>
-                    <p className="mt-1 text-xs text-muted-foreground">No minimum trades to appear</p>
-                  </div>
-                  <span className="rounded-full border border-border px-3 py-1.5 text-xs text-muted-foreground">Sorted by return rank</span>
+              <section aria-label="Community practice leaderboard" className="bg-card border border-border rounded-2xl overflow-hidden shadow-[0_12px_40px_-24px_rgba(0,0,0,0.5)]">
+                <div className="px-4 sm:px-6 py-5 border-b border-border">
+                  <p className="text-xs uppercase tracking-wider text-primary font-semibold">Community Practice Board</p>
+                  <h2 className="text-lg font-semibold mt-1">Learn from how people practise</h2>
+                  <p className="mt-2 text-sm text-muted-foreground max-w-2xl">These are educational practice results, not evidence of real-money investing skill. Ranked members have server-recorded simulated trades; unranked members are shown separately.</p>
                 </div>
-                <div className="hidden md:grid grid-cols-[minmax(0,1fr)_140px_110px_90px] gap-4 px-6 py-3 text-[11px] font-medium tracking-wider text-muted-foreground uppercase border-b border-border/60 bg-muted/20">
-                  <span>Member / return rank</span><span className="text-right">Virtual value</span><span className="text-right">Ranked return</span><span className="text-right">Trades</span>
+                <div className="grid grid-cols-[45px_minmax(0,1fr)_96px_54px] sm:grid-cols-[75px_minmax(0,1fr)_130px_80px] gap-2 sm:gap-4 px-4 sm:px-6 py-3 text-xs font-semibold text-muted-foreground border-b bg-muted/20">
+                  <span>Rank</span><span>Member</span><span className="text-right">Sim. return</span><span className="text-right">Trades</span>
                 </div>
                 {loading ? <p className="p-8 text-center">Loading public members…</p>
-                  : loadError ? <div className="p-8 text-center"><p>Could not load public members.</p><Button variant="outline" onClick={() => void load()}>Try again</Button></div>
-                  : rows.length === 0 ? <p className="p-8 text-center">No public members yet.</p>
-                  : rows.map(trader => (
-                    <article key={trader.userId} aria-label={`Practice portfolio of ${trader.username}`} className={`border-b border-border/60 last:border-b-0 ${profile?.id === trader.userId ? "bg-primary/[0.05] border-l-2 border-l-primary" : ""}`}>
-                      <Link to={`/trader/${trader.username}`} className="grid grid-cols-3 md:grid-cols-[minmax(0,1fr)_140px_110px_90px] items-center gap-x-4 gap-y-4 px-4 md:px-6 pt-4 pb-2 hover:bg-muted/30 transition-colors">
-                        <div className="col-span-3 md:col-span-1 flex items-center gap-3 min-w-0">
-                          <span aria-hidden="true" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-border bg-muted/40 text-sm font-semibold text-muted-foreground">{trader.username.slice(0, 1).toUpperCase()}</span>
-                          <div className="min-w-0 flex-1">
-                            <div className="flex items-center gap-2">
-                              <span className="truncate font-semibold text-sm" title={trader.username}>{trader.username}</span>
-                              {profile?.id === trader.userId && <span className="rounded-md bg-primary/10 px-1.5 py-0.5 text-[10px] font-medium text-primary">You</span>}
-                            </div>
-                            <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] text-muted-foreground">
-                              {trader.practiceRank !== null ? <span className="inline-flex items-center gap-1.5">{trader.practiceRank <= 3 && <span aria-hidden="true" className="[&>svg]:h-3.5 [&>svg]:w-3.5">{getRankIcon(trader.practiceRank)}</span>}Return rank #{trader.practiceRank}</span> : <span>{trader.portfolioStatus === "imported" ? "Imported · unranked" : trader.trades === 0 && trader.previousTrades === 0 ? "No trades yet · unranked" : "Unranked"}</span>}
-                              {trader.country && <span>· {trader.country}</span>}
-                            </div>
-                          </div>
-                          <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground md:hidden" aria-hidden="true" />
-                        </div>
-                        <div className="md:text-right">
-                          <span className="block mb-1 text-[10px] text-muted-foreground md:hidden">Virtual value</span>
-                          <span className="font-mono text-sm tabular-nums">{trader.portfolioValue === null ? "—" : `$${trader.portfolioValue.toLocaleString(undefined, { maximumFractionDigits: 0 })}`}</span>
-                        </div>
-                        <div className="text-center md:text-right">
-                          <span className="block mb-1 text-[10px] text-muted-foreground md:hidden">Ranked return</span>
-                          <span className={`font-mono text-sm tabular-nums ${trader.pnlPct === null || trader.pnlPct === 0 ? "text-muted-foreground" : trader.pnlPct > 0 ? "text-profit" : "text-loss"}`}>{trader.pnlPct === null ? "—" : `${trader.pnlPct >= 0 ? "+" : ""}${trader.pnlPct.toFixed(1)}%`}</span>
-                        </div>
-                        <div className="text-right">
-                          <span className="block mb-1 text-[10px] text-muted-foreground md:hidden">Server trades</span>
-                          <span className="font-mono text-sm tabular-nums text-muted-foreground">{trader.trades}</span>
-                        </div>
+                  : loadError ? <div className="p-8 text-center"><p>Could not load the practice board.</p><Button variant="outline" onClick={() => void load()}>Try again</Button></div>
+                  : rows.filter(t => t.practiceRank !== null).length === 0
+                    ? <p className="p-6 text-sm text-muted-foreground">No comparable ranked practice portfolios yet. New participants can still learn without signing in.</p>
+                    : rows.filter(t => t.practiceRank !== null).map(trader => (
+                      <Link key={trader.userId} to={`/trader/${trader.username}`}
+                        className={`grid grid-cols-[45px_minmax(0,1fr)_96px_54px] sm:grid-cols-[75px_minmax(0,1fr)_130px_80px] gap-2 sm:gap-4 items-center px-4 sm:px-6 py-4 border-b border-border/50 hover:bg-muted/30 ${profile?.id === trader.userId ? "bg-primary/5" : ""}`}>
+                        <span className="font-medium tabular-nums flex items-center gap-1.5">
+                          {trader.practiceRank && trader.practiceRank <= 3 ? getRankIcon(trader.practiceRank) : `#${trader.practiceRank}`}
+                        </span>
+                        <span className="min-w-0"><span className="block truncate font-semibold text-sm">{trader.username}</span>
+                          <span className="block mt-1 text-xs text-muted-foreground truncate">{profile?.id === trader.userId ? "You · " : ""}{trader.country ? `${trader.country} · ` : ""}Virtual practice only</span></span>
+                        <span className={`text-right font-mono tabular-nums text-sm ${trader.pnlPct === null ? "text-muted-foreground" : trader.pnlPct >= 0 ? "text-profit" : "text-loss"}`}>
+                          {trader.pnlPct === null ? "—" : `${trader.pnlPct >= 0 ? "+" : ""}${trader.pnlPct.toFixed(1)}%`}
+                        </span>
+                        <span className="text-right font-mono tabular-nums text-sm text-muted-foreground">{trader.trades}</span>
                       </Link>
-                      <details className="group px-4 md:px-6 pb-3 text-[11px] text-muted-foreground">
-                        <summary className="flex w-fit cursor-pointer list-none items-center gap-1 py-1 hover:text-foreground [&::-webkit-details-marker]:hidden">
-                          Portfolio details<span className="sr-only"> for {trader.username}</span><ChevronDown className="h-3 w-3 transition-transform group-open:rotate-180" aria-hidden="true" />
-                        </summary>
-                        <div className="mt-2 rounded-xl border border-border/60 bg-background/50 p-3 space-y-1.5 leading-relaxed">
-                          <p>{trader.portfolioStatus === "imported" ? "Imported practice · unranked" : trader.trades === 0 ? trader.previousTrades > 0 ? "Previous reported activity · unranked" : "No server-recorded trades yet" : "Server-recorded practice"}</p>
-                          <p>{priceLabel(trader.priceStatus)}</p>
-                          {quoteTimeLabel(trader.pricedAt, trader.observedAt) && <p>{quoteTimeLabel(trader.pricedAt, trader.observedAt)}</p>}
-                          {trader.previousTrades > 0 && <p>{trader.previousTrades} previous reported trades · unverified</p>}
-                          <Link to={`/trader/${trader.username}`} className="inline-flex items-center gap-1 text-primary hover:underline">View profile<ArrowRight className="h-3 w-3" aria-hidden="true" /></Link>
-                        </div>
-                      </details>
-                    </article>
+                    ))}
+                {!loading && !loadError && rows.some(t => t.practiceRank === null) && <div className="border-t border-border">
+                  <div className="bg-muted/20 px-4 sm:px-6 py-3">
+                    <h3 className="font-semibold text-sm">Learning members · not yet ranked</h3>
+                    <p className="text-xs text-muted-foreground mt-1">New members and imported browser portfolios appear here; their results are not directly comparable to ranked server-recorded practice.</p>
+                  </div>
+                  {rows.filter(t => t.practiceRank === null).map(trader => (
+                    <Link key={trader.userId} to={`/trader/${trader.username}`}
+                      className="grid grid-cols-[45px_minmax(0,1fr)_96px_54px] sm:grid-cols-[75px_minmax(0,1fr)_130px_80px] gap-2 sm:gap-4 items-center px-4 sm:px-6 py-3 border-b border-border/40 hover:bg-muted/30 text-sm">
+                      <span className="text-muted-foreground">—</span>
+                      <span className="min-w-0"><span className="block truncate font-medium">{trader.username}</span><span className="block text-xs text-muted-foreground">{trader.portfolioStatus === "imported" ? "Imported guest portfolio" : "Still learning"}</span></span>
+                      <span className="text-right text-muted-foreground text-xs">Unranked</span>
+                      <span className="text-right tabular-nums">{trader.trades}</span>
+                    </Link>
                   ))}
-                <p className="border-t border-border/60 px-4 sm:px-6 py-3 text-[11px] text-muted-foreground leading-relaxed">Ranked members first, by simulated return. Unranked members follow, ordered by practice activity. Order updates automatically every minute while this page is visible.</p>
+                </div>}
+                <details className="border-t border-border px-4 sm:px-6 py-4 text-sm text-muted-foreground">
+                  <summary className="cursor-pointer font-medium text-foreground">How are practice returns and rankings calculated?</summary>
+                  <p className="mt-3 leading-relaxed">Return compares the marked simulated portfolio value against a $100,000 virtual starting balance. A rank is available after the first server-recorded trade in the current comparable practice cycle. Positions may use live, delayed, cached or simulated reference prices. The percent shown does not account for the many risks and frictions of real trading.</p>
+                  <p className="mt-2">Previous browser-reported results and head-to-head duels are available in separate tabs. Trade history appears on a public profile only when the member has independently opted in.</p>
+                </details>
               </section>
             ) : tab === "previous" ? (
               <section aria-labelledby="previous-results-heading" className="rounded-2xl border border-border bg-card overflow-hidden">
