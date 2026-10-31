@@ -80,9 +80,12 @@ async function generate(week: string) {
       .eq("id", id).eq("status", "failed").select("id").maybeSingle();
     if (error || !data) return { weekOf: week, status: "already-running", created: false };
   }
-  const key = Deno.env.get("GEMINI_API_KEY");
-  const model = Deno.env.get("NEWSLETTER_GEMINI_MODEL") || "gemini-3.5-flash-lite";
-  if (!key || !/^[a-z0-9.-]+$/i.test(model)) {
+  // Existing course-generation settings explicitly confirm free tier.
+  // The service-role-only RPC decrypts the existing Vault key in Edge memory.
+  const { data: credentials, error: credentialError } = await client.rpc("newsletter_ai_credentials");
+  const key = credentialError ? null : (credentials?.apiKey as string | null);
+  const model = credentialError ? "" : (credentials?.model as string || "");
+  if (!credentials?.freeConfirmed || !key || !["gemini-3.5-flash","gemini-3.5-flash-lite"].includes(model)) {
     await client.from("newsletter_editions").update({
       status: "failed", generator_error: "Configure a free Gemini API key and model first.",
     }).eq("id", id).eq("status", "generating");
@@ -155,7 +158,13 @@ Deno.serve(async req => {
      || !(await allow("newsletter-admin-ip:" + clientIp(req), "newsletter-ip", 60, 10))) {
     return reply({ error: "Too many requests" }, 429);
   }
-  const scheduled = equalSecret(Deno.env.get("NEWSLETTER_SCHEDULER_TOKEN"), req.headers.get("x-newsletter-scheduler"));
+  const schedulerToken = req.headers.get("x-newsletter-scheduler");
+  let scheduled = equalSecret(Deno.env.get("NEWSLETTER_SCHEDULER_TOKEN"), schedulerToken);
+  if (!scheduled && schedulerToken && schedulerToken.length === 64) {
+    // SQL only grants this check to the Edge function's service role.
+    const result = await client.rpc("newsletter_scheduler_authorized", { p_token: schedulerToken });
+    scheduled = !result.error && result.data === true;
+  }
   const admin = equalSecret(Deno.env.get("ADMIN_MASTER_KEY"), req.headers.get("x-admin-key"));
   if (!admin && !scheduled) return reply({ error: "Unauthorized" }, 401);
   let body: Record<string, unknown>;
