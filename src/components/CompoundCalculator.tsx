@@ -169,7 +169,7 @@ export function CompoundCalculator() {
             <div
               key={i}
               className="flex-1 bg-emerald-500/20 rounded-t-[1px]"
-              style={{ height: `${(data.value / result.finalValue) * 100}%` }}
+              style={{ height: `${Math.max(0, Math.min(100, (data.value / Math.max(result.finalValue, 1)) * 100))}%` }}
             />
           ))}
         </div>
