@@ -3,6 +3,8 @@ import { loadSiteData } from "./loadData";
 import { uniqueRoutes } from "./routes";
 import { buildContentMap } from "./content";
 import { ASSET_REFERENCES } from "../src/lib/assetReferences";
+import { GLOSSARY_WORKSHEETS } from "../src/lib/glossaryWorksheets";
+import { ARTICLE_REFERENCES } from "../src/lib/articleReferences";
 const data = await loadSiteData();
 const routes = uniqueRoutes();
 const content = await buildContentMap();
@@ -26,4 +28,12 @@ for (const route of routes.filter(route => route.path.startsWith("/trade/") && !
 }
 assert.equal(new Set(Object.values(ASSET_REFERENCES).map(reference => reference.exercise)).size, Object.keys(ASSET_REFERENCES).length);
 for (const country of data.COUNTRY_GUIDES) assert.ok(country.sources.length && country.sourceCheck.scope.includes("no verification"));
+// DeepSeek's two named "empty sources" examples must stay visibly source-backed.
+const fomo = GLOSSARY_WORKSHEETS.fomo;
+assert.ok(fomo?.references.length > 0, "FOMO worksheet must have an actual citation");
+assert.ok(fomo.references.every(reference => /^https:\/\//.test(reference.href)), "FOMO references must have HTTPS URLs");
+const paperSources = ARTICLE_REFERENCES["what-is-paper-trading"];
+assert.ok(paperSources?.length > 0, "Paper-trading article must have real source links");
+assert.ok(paperSources.every(source => /^https:\/\//.test(source.href)), "Paper-trading references must have HTTPS URLs");
+console.log("PASS curated FOMO and paper trading references are non-empty and HTTPS");
 console.log("PASS complete published course manifest/quizzes, individual asset references/worksheets and scoped country sourcing");
