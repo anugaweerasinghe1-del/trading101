@@ -10,6 +10,7 @@ import { TopAssetsGrid } from "@/components/TopAssetsGrid";
 import { WhatIsTradeHQ } from "@/components/WhatIsTradeHQ";
 import { MarketTrends2026 } from "@/components/MarketTrends2026";
 import { PremiumFAQ } from "@/components/PremiumFAQ";
+import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { MegaFooter } from "@/components/MegaFooter";
 import { SocialProofTicker } from "@/components/SocialProofTicker";
 import { HowItWorks } from "@/components/HowItWorks";
@@ -226,6 +227,10 @@ const Index = () => {
         <MarketTrends2026 />
         <PremiumFAQ />
         </div>
+
+        <section aria-label="Free weekly newsletter" className="container mx-auto max-w-5xl px-6 py-12">
+          <NewsletterSignup prominent />
+        </section>
 
         {/* Roadmap teaser — only linked from homepage + /learn (not navigation) */}
         <section className="container mx-auto px-6 max-w-7xl py-12">
