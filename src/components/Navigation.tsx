@@ -95,6 +95,11 @@ export function Navigation() {
       { to: "/about", label: "About", icon: Info },
       { to: "/contact", label: "Contact", icon: Contact },
     ] },
+    { label: "Legal & Trust", items: [
+      { to: "/privacy", label: "Privacy Policy", icon: Info },
+      { to: "/terms", label: "Terms of Service", icon: BookOpen },
+      { to: "/about#disclaimer", label: "Educational Disclaimer", icon: Info },
+    ] },
   ];
   const isActive = (path: string) => path === "/"
     ? location.pathname === "/"
