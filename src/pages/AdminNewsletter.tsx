@@ -16,7 +16,7 @@ type Audience = {
   counts: { confirmed: number; unsubscribed: number; pending: number; bounced: number };
   subscribers: { id: string; email: string; status: string; confirmed_at: string | null; unsubscribed_at: string | null; source: string }[];
   recentDeliveries: { edition_id: string; status: string; provider_id: string | null; created_at: string }[];
-  limitInfo: string;
+  limitInfo: string; webhookConfigured: boolean;
 };
 type PublishResult = { accepted: number; rejected: number; unknown: number; skipped: number; eligible: number; note: string };
 type Edition = {
@@ -238,10 +238,14 @@ export default function AdminNewsletter() {
           </div>
           <div className="flex flex-wrap items-center gap-3">
             <Button variant="outline" disabled={busy} onClick={() => void run(loadAudience)}>Refresh subscribers</Button>
-            <Button disabled={busy || current?.status !== "approved"} onClick={publishEdition}>
+            <Button disabled={busy || current?.status !== "approved" || !audience?.webhookConfigured} onClick={publishEdition}>
               <Mail className="mr-2 h-4 w-4"/> Publish approved issue to subscribers
             </Button>
           </div>
+          {!audience?.webhookConfigured && <p className="text-xs text-amber-600">
+            Publishing is safety-locked until the signed Resend delivery webhook is configured.
+            Signup and confirmation work independently.
+          </p>}
           <p className="text-xs text-muted-foreground">
             Publishing is a separate deliberate action after approval. Maximum 20 unique recipients
             per request, with conservative free-tier limits. The same edition cannot be resent to
