@@ -6,7 +6,7 @@
 - The separate `newsletter-public` Supabase function accepts an explicit opt-in, sends an email confirmation through the already verified Resend sender, confirms only after a token action, and supports unsubscribe with a long random token.
 - `newsletter-dispatch` is private and requires the existing TradeHQ admin master key, exact approved edition revision, and explicit Publish confirmation.
 - `newsletter-provider-events` verifies the provider's Svix signature, records delivered/bounced/complained events and removes problematic recipients from eligible sends.
-- Application limits: at most 20 unique recipients per Publish call, no more than 60 newsletter recipients per UTC day and 2,500 per UTC month (by the app's receipt ledger). Public confirmation emails are also capped at 30/day. Resend's own limits take precedence.
+- Application limits: at most 20 unique recipients per Publish call, no more than 60 newsletter recipients per UTC day and 2,000 per UTC month (by the app's receipt ledger). Public confirmation emails are also capped at 30/day. Resend's own limits take precedence.
 - Every published email has a visible unsubscribe link and one-click List-Unsubscribe headers, using the existing verified domain. Unsubscribe is effective immediately without a login.
 - The footer and home page now link to a true independent educational newsletter, not the old unused contact-card proxy.
 
