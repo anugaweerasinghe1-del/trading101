@@ -1,0 +1,45 @@
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import { buildLearningOverview } from "../src/lib/learningOverview.ts";
+import type { CourseProgressState } from "../src/lib/courseProgress.ts";
+import type { BeginnerJourneyProgress } from "../src/lib/beginnerJourney.ts";
+const tracks=[
+  {slug:"trading-psychology-mastery",title:"Psychology",lessons:[{slug:"one",title:"First",readingMinutes:4},{slug:"two",title:"Second",readingMinutes:5}]},
+  {slug:"risk",title:"Risk",lessons:[{slug:"one",title:"Risk one",readingMinutes:6}]},
+];
+const course:CourseProgressState={v:1,tracks:{},updatedAt:"2026-10-31T00:00:00Z"};
+const journey:BeginnerJourneyProgress={version:1,lessonCompleted:false,tradeId:null,portfolioExplained:false,reflection:"",completedAt:null,updatedAt:"2026-10-31T00:00:00Z"};
+let summary=buildLearningOverview(tracks,course,journey);
+assert.deepEqual([summary.lessonsDone,summary.lessonsTotal,summary.lessonsInProgress,summary.journeyDone],[0,3,0,0]);
+assert.equal(summary.next?.href,"/courses/trading-psychology-mastery/one");
+course.tracks["trading-psychology-mastery"]={lessons:{one:{status:"completed",score:2,completedAt:"2026-10-30T12:00:00Z"},two:{status:"in-progress",scrolledPct:45,quizAnswers:{"0":1}}}};
+course.lastLesson={track:"trading-psychology-mastery",lesson:"two",at:"2026-10-31T00:00:00Z"};
+summary=buildLearningOverview(tracks,course,journey);
+assert.deepEqual([summary.lessonsDone,summary.lessonsInProgress],[1,1]);
+assert.equal(summary.next?.href,"/courses/trading-psychology-mastery/two");
+assert.equal(summary.next?.inProgress,true);
+course.tracks["trading-psychology-mastery"].lessons.two={status:"completed",score:3};
+summary=buildLearningOverview(tracks,course,journey);
+assert.equal(summary.lessonsDone,2);
+assert.equal(summary.next?.href,"/courses/risk/one");
+course.tracks.risk={lessons:{one:{status:"completed"}}};
+summary=buildLearningOverview(tracks,course,journey);
+assert.equal(summary.next,null);
+assert.equal(summary.lessonsDone,3);
+journey.lessonCompleted=true;
+journey.tradeId="sample";
+journey.portfolioExplained=true;
+journey.reflection="I checked the quote and simulated cost.";
+assert.equal(buildLearningOverview(tracks,course,journey).journeyDone,4);
+journey.completedAt="2026-10-31T08:00:00Z";
+assert.equal(buildLearningOverview(tracks,course,journey).journeyDone,5);
+assert.equal(course.tracks["trading-psychology-mastery"].lessons.two.status,"completed","overview is read only");
+const page=readFileSync("src/pages/Learn.tsx","utf8");
+const component=readFileSync("src/components/LearningJourneyDashboard.tsx","utf8");
+assert.match(page,/<LearningJourneyDashboard tracks=\{tracks\} \/>/);
+assert.match(component,/COURSE_PROGRESS_EVENT/);
+assert.match(component,/JOURNEY_EVENT/);
+assert.match(component,/role="progressbar"/);
+assert.match(component,/Clearing site data may erase them/);
+assert.doesNotMatch(component,/record_practice_trade|initialize_practice_portfolio|supabase\.rpc/);
+console.log("PASS combined dashboard for fresh/partial/completed learners, correct lesson progression and browser-only safety");

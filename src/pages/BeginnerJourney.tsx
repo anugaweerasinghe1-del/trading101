@@ -177,7 +177,7 @@ export default function BeginnerJourney() {
         <section className="mt-6 grid md:grid-cols-2 gap-4">
           <Card className="p-5">
             <h2 className="font-semibold flex gap-2 items-center"><RotateCcw className="w-4 h-4 text-primary" /> Resume a course</h2>
-            <p className="mt-2 text-sm text-muted-foreground">Your existing course progress is separate from this guided journey. Continue a half-finished lesson tomorrow without starting over.</p>
+            <p className="mt-2 text-sm text-muted-foreground">Your course and five-step journey progress appear together on the Learn dashboard. Resume a half-finished lesson here or see everything you have completed.</p>
             <Link className="mt-3 inline-flex gap-1 text-sm font-semibold text-primary" to={recentCourse?.href ?? "/courses"}>
               {recentCourse ? `Continue: ${recentCourse.title}` : "Browse structured courses"} <ArrowRight className="w-4 h-4" />
             </Link>
