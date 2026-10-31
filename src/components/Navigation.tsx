@@ -123,20 +123,20 @@ export function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden xl:flex min-w-0 items-center gap-1">
+          <div className="hidden xl:flex min-w-0 items-center gap-1 2xl:gap-1.5">
             {navItems.map((item) => (
               <Button
                   variant="ghost"
                   size="sm"
                   className={cn(
-                    "h-9 px-2 text-sm font-medium rounded-xl transition-all duration-300",
+                    "h-10 px-2.5 text-[15px] 2xl:text-base font-medium rounded-xl transition-all duration-300",
                     isActive(item.to)
                       ? "bg-primary/10 text-primary"
                       : "text-muted-foreground hover:text-foreground hover:bg-white/[0.05]"
                   )}
                  asChild key={item.to}>
 <Link to={item.to} aria-current={isActive(item.to) ? "page" : undefined}>
-                  <item.icon className="w-4 h-4 mr-2" />
+                  <item.icon className="w-[18px] h-[18px] mr-2" />
                   {item.label}
                 </Link>
 </Button>
@@ -144,13 +144,13 @@ export function Navigation() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="sm" aria-label="More site pages"
-                  className={cn("h-9 px-3 text-sm font-medium rounded-xl",
+                  className={cn("h-10 px-3 text-[15px] 2xl:text-base font-medium rounded-xl",
                     moreActive ? "bg-primary/10 text-primary" : "text-muted-foreground hover:text-foreground hover:bg-white/[0.05]")}>
-                  More <ChevronDown className="ml-1.5 w-4 h-4" />
+                  More <ChevronDown className="ml-1.5 w-[18px] h-[18px]" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" sideOffset={10}
-                className="w-56 rounded-xl border border-border bg-popover/95 p-2 shadow-2xl backdrop-blur-xl">
+                className="w-60 rounded-xl border border-border bg-popover/95 p-2 shadow-2xl backdrop-blur-xl">
                 {moreGroups.map((group, index) => (
                   <div key={group.label}>
                     {index > 0 && <DropdownMenuSeparator className="my-1.5" />}
@@ -159,7 +159,7 @@ export function Navigation() {
                     </DropdownMenuLabel>
                     {group.items.map(item => (
                       <DropdownMenuItem key={item.to} asChild
-                        className={cn("rounded-lg cursor-pointer text-sm", isActive(item.to) && "bg-primary/10 text-primary")}>
+                        className={cn("rounded-lg cursor-pointer text-[15px] min-h-10", isActive(item.to) && "bg-primary/10 text-primary")}>
                         <Link to={item.to} aria-current={isActive(item.to) ? "page" : undefined}>
                           <item.icon className="mr-2.5 h-4 w-4" /> {item.label}
                         </Link>
@@ -259,7 +259,7 @@ export function Navigation() {
             <Button
                 variant="ghost"
                 className={cn(
-                  "w-full justify-start h-12 px-4 text-sm font-medium rounded-xl transition-all",
+                  "w-full justify-start h-12 px-4 text-base font-medium rounded-xl transition-all",
                   isActive(item.to)
                     ? "bg-primary/10 text-primary"
                     : "text-muted-foreground hover:text-foreground hover:bg-white/[0.05]"
@@ -272,7 +272,7 @@ export function Navigation() {
 </Button>
           ))}
           <button type="button"
-            className={cn("w-full flex items-center h-12 px-4 text-sm font-medium rounded-xl text-left transition-all",
+            className={cn("w-full flex items-center h-12 px-4 text-base font-medium rounded-xl text-left transition-all",
               moreActive ? "text-primary bg-primary/10" : "text-muted-foreground hover:text-foreground hover:bg-white/[0.05]")}
             aria-expanded={mobileMoreOpen} aria-controls="mobile-more-pages"
             onClick={() => setMobileMoreOpen(open => !open)}>
@@ -288,7 +288,7 @@ export function Navigation() {
                 {group.items.map(item => (
                   <Link key={item.to} to={item.to} onClick={() => setMobileMenuOpen(false)}
                     aria-current={isActive(item.to) ? "page" : undefined}
-                    className={cn("flex w-full items-center min-h-11 rounded-lg px-4 py-2 text-sm",
+                    className={cn("flex w-full items-center min-h-11 rounded-lg px-4 py-2 text-[15px]",
                       isActive(item.to) ? "bg-primary/10 text-primary" : "text-muted-foreground hover:text-foreground hover:bg-white/[0.05]")}>
                     <item.icon className="mr-3 h-4 w-4" /> {item.label}
                   </Link>
