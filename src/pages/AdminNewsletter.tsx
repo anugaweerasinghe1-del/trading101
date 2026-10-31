@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
+import { newsletterAdminError } from "@/lib/newsletterAdminError";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -35,7 +36,12 @@ export default function AdminNewsletter() {
       body: { action, ...payload },
       headers: { "x-admin-key": key },
     });
-    if (invokeError || data?.error) throw Error(data?.error || "Newsletter backend unavailable; check its deployment.");
+    if (invokeError || data?.error) {
+      // Supabase returns a FunctionsHttpError on 4xx/5xx; data is null on that
+      // path. The old UI misreported rejected master keys as missing backend.
+      const context = (invokeError as { context?: { status?: number } } | null)?.context;
+      throw Error(newsletterAdminError(context?.status, typeof data?.error === "string" ? data.error : null));
+    }
     return data.data;
   }, [key]);
 
@@ -104,10 +110,10 @@ export default function AdminNewsletter() {
           <div className="space-y-2">
             <h2 className="font-semibold">Editorial mode only</h2>
             <p className="text-sm text-muted-foreground">
-              Weekly scheduling requires the newsletter backend, free Gemini key and GitHub scheduling secret.
-              Approving here does <strong>not</strong> send emails. Before sending any newsletter,
-              TradeHQ needs verified subscriptions, unsubscribe links, delivery records and an approved email sender.
-              Existing legacy email records are never imported automatically.
+              TradeHQ's Supabase scheduler prepares a private AI draft every Monday.
+              Your review and approval do <strong>not</strong> send any emails. Subscriber delivery
+              remains disabled until verified subscriptions, unsubscribe links and a
+              legitimate sending provider are configured.
             </p>
           </div>
         </div>
@@ -115,7 +121,7 @@ export default function AdminNewsletter() {
 
       {!unlocked ? <form onSubmit={unlock} className={border + " max-w-md space-y-4"}>
         <div className="flex items-center gap-2 font-semibold"><Lock className="h-4 w-4"/> Admin access</div>
-        <Label htmlFor="newsletter-key">Existing TradeHQ master key</Label>
+        <Label htmlFor="newsletter-key">TradeHQ Admin Dashboard master key</Label>
         <Input id="newsletter-key" type="password" value={key} onChange={event => setKey(event.target.value)} required autoComplete="off" />
         {error && <p role="alert" className="text-sm text-destructive">{error}</p>}
         <Button type="submit" disabled={busy || key.length < 8}>{busy ? "Checking…" : "Unlock drafts"}</Button>
