@@ -75,6 +75,7 @@ Deno.serve(async req => {
      counts:{confirmed:allConfirmed.count??0,unsubscribed:allUnsub.count??0,
        pending:allPending.count??0,bounced:allBounce.count??0},
      subscribers:rows, recentDeliveries:delivered.data??[],
+     webhookConfigured:Boolean(Deno.env.get("RESEND_WEBHOOK_SECRET")), 
      limitInfo:"At most 20 recipients per manual publish request; 60 newsletters/day and 2500/month by application guard. Confirmation emails also consume Resend's provider quota.",
     }});
   }
@@ -88,6 +89,7 @@ Deno.serve(async req => {
   if(edError||!edition)return reply({error:"Only the exact approved revision can be published"},409);
   const key=Deno.env.get("RESEND_API_KEY"),from=Deno.env.get("NEWSLETTER_FROM_EMAIL");
   if(!key||!from)return reply({error:"Resend provider not configured"},503);
+  if(!Deno.env.get("RESEND_WEBHOOK_SECRET"))return reply({error:"Resend signed delivery webhook not configured. Publishing stays disabled until bounce and complaint suppression is connected."},503);
 
   // Free-tier headroom: reserve at least 40 daily / 500 monthly API messages
   // for double-opt-in confirmations, other testing and provider uncertainty.
