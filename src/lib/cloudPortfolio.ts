@@ -28,12 +28,12 @@ function ownerOfLocal(): string | null {
 function backUpLocal() {
   try { localStorage.setItem(`${BACKUP_KEY}:${ownerOfLocal() ?? "guest"}:${crypto.randomUUID()}`, JSON.stringify({ savedAt: new Date().toISOString(), portfolio: getPortfolio() })); } catch { /* unavailable storage */ }
 }
-export function applyServerSnapshot(snapshot: ServerSnapshot, userId: string): Portfolio {
+export function applyServerSnapshot(snapshot: ServerSnapshot, userId: string, opts: { force?: boolean } = {}): Portfolio {
   const local = getPortfolio();
   const sameOwner = ownerOfLocal() === userId;
   const quoteTimes = snapshot.positions.map(p => p.priced_at).filter((t): t is string => !!t).sort();
   const version = { cycle: snapshot.cycle_id, count: snapshot.trades?.length ?? 0, updatedAt: snapshot.updated_at, pricedAt: quoteTimes.at(-1) ?? null };
-  if (sameOwner && snapshotIsStale(version, snapshotVersions.get(userId) ?? null)) return local;
+  if (sameOwner && !opts.force && snapshotIsStale(version, snapshotVersions.get(userId) ?? null)) return local;
   const serverIds = new Set((snapshot.trades ?? []).map(t => t.id));
   if (sameOwner && local.trades.some(t => !serverIds.has(t.id))) backUpLocal();
   if (!sameOwner && (local.trades.length || local.positions.length || local.cash !== INITIAL_CASH)) backUpLocal();
@@ -104,4 +104,16 @@ export async function startCloudSync(userId: string | null): Promise<ServerSnaps
     console.warn("Account portfolio restoration failed", error);
     return null;
   }
+}
+
+/** Explicit recovery is read-only on the server and never imports browser JSON. */
+export async function restoreAccountPortfolioFromServer(userId: string): Promise<Portfolio> {
+  const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+  if (sessionError || !session || session.user.id !== userId) throw new Error("Sign in to your own account to restore its portfolio.");
+  const { data, error } = await supabase.rpc("get_my_account_practice_snapshot");
+  if (error) throw error;
+  if (!data) throw new Error("This account has no server-recorded practice portfolio to recover.");
+  const { data: { session: currentSession } } = await supabase.auth.getSession();
+  if (currentSession?.user.id !== userId) throw new Error("Your signed-in account changed during recovery.");
+  return applyServerSnapshot(data as unknown as ServerSnapshot,userId,{force:true});
 }
