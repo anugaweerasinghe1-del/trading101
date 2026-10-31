@@ -21,7 +21,7 @@ assert.match(routes, /path="\/roadmap"/);
 
 assert.match(home, /<NewsletterSignup prominent\s*\/>/);
 assert.match(weekly, /<NewsletterSignup prominent\s*\/>/);
-assert.match(footer, /pathname === "\/" \|\| pathname === "\/newsletter"/);
+assert.match(footer, /pathname === "\/" \|\| pathname\.startsWith\("\/newsletter"\)/);
 assert.match(footer, /hasPrimaryNewsletterSignup \? \(/);
 assert.match(footer, /Contact TradeHQ/);
 assert.match(footer, /mailto:anugaweerasinghe1@gmail\.com/);
@@ -36,6 +36,7 @@ assert.match(calculator, /target\.focus/);
 assert.match(calculator, /addEventListener\("hashchange"/);
 assert.match(calculator, /Math\.min\(100000000/);
 assert.match(calculator, /Math\.min\(1000000/);
+assert.match(calculator, /Math\.max\(result\.finalValue, 1\)/);
 assert.match(calculator, /useState\(1000\)/);
 assert.match(clusters, /a\.changePercent/);
 assert.doesNotMatch(clusters, /sum \+ \(a\.change \|\| 0\)/);
