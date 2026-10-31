@@ -15,7 +15,7 @@ interface Candidate { filename: string; portfolio: Portfolio; date: string | nul
 export function PortfolioRecoveryPanel({ signedIn, authLoading = false }: { signedIn: boolean; authLoading?: boolean }) {
   const fileRef = useRef<HTMLInputElement>(null);
   const [warning, setWarning] = useState(false);
-  const [unreadable, setUnreadable] = useState(() => { try { return Boolean(localStorage.getItem(UNREADABLE_KEY)); } catch { return false; } });
+  const [unreadable] = useState(() => { try { return Boolean(localStorage.getItem(UNREADABLE_KEY)); } catch { return false; } });
   const [imported, setImported] = useState(isGuestImportUnverified);
   const [undoAvailable, setUndoAvailable] = useState(() => Boolean(readPreviousGuestPortfolio()));
   const [message, setMessage] = useState("");
@@ -89,7 +89,7 @@ export function PortfolioRecoveryPanel({ signedIn, authLoading = false }: { sign
     )) return;
     setBusy(true);
     try {
-      applyUnverifiedGuestRestore(candidate.portfolio,previous,savePortfolio);
+      applyUnverifiedGuestRestore(candidate.portfolio,previous,(p) => savePortfolio(p, { silent: true }));
       setCandidate(null);
       setImported(true);
       setUndoAvailable(Boolean(readPreviousGuestPortfolio()));
@@ -105,7 +105,7 @@ export function PortfolioRecoveryPanel({ signedIn, authLoading = false }: { sign
     if (!previous) { setUndoAvailable(false); return; }
     if (!window.confirm("Undo your last guest backup restore? This will replace the currently displayed guest portfolio.")) return;
     try {
-      savePortfolio(previous);
+      savePortfolio(previous, { silent: true });
       restorePreviousProvenance();
       setImported(isGuestImportUnverified());
       setUndoAvailable(false);
