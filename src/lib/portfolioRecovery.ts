@@ -21,6 +21,8 @@ export function parsePracticePortfolio(input: unknown): Portfolio | null {
   const raw = input as Record<string, unknown>;
   if (!validAmount(raw.cash) || !validAmount(raw.totalValue) || !Array.isArray(raw.positions) || !Array.isArray(raw.trades)) return null;
   if (raw.positions.length > 1000 || raw.trades.length > 20000) return null;
+  const tradeIds = new Set<string>();
+  const positionIds = new Set<string>();
   const positions = [];
   for (const value of raw.positions) {
     if (!value || typeof value !== "object") return null;
@@ -29,6 +31,8 @@ export function parsePracticePortfolio(input: unknown): Portfolio | null {
     if (!a || typeof a.id !== "string" || a.id.length > 80 || typeof a.symbol !== "string" ||
         !validAmount(a.price) || !validAmount(p.quantity) || !validAmount(p.avgPrice) ||
         !finite(p.currentValue) || !finite(p.profitLoss) || !finite(p.profitLossPercent)) return null;
+    if (!p.quantity || !p.avgPrice || positionIds.has(a.id)) return null;
+    positionIds.add(a.id);
     positions.push(value as Portfolio["positions"][number]);
   }
   const trades: Trade[] = [];
@@ -39,7 +43,9 @@ export function parsePracticePortfolio(input: unknown): Portfolio | null {
     if (typeof t.id !== "string" || t.id.length > 100 || typeof t.assetId !== "string" ||
         typeof t.symbol !== "string" || t.symbol.length > 40 ||
         !["buy", "sell"].includes(t.type) || !validAmount(t.quantity) ||
-        !validAmount(t.price) || !finite(t.total) || !Number.isFinite(timestamp.getTime())) return null;
+        !validAmount(t.price) || !validAmount(t.total) || !Number.isFinite(timestamp.getTime()) ||
+        !t.id || tradeIds.has(t.id) || !t.quantity || !t.price) return null;
+    tradeIds.add(t.id);
     trades.push({ ...t, timestamp } as Trade);
   }
   return { cash: raw.cash as number, totalValue: raw.totalValue as number, positions, trades };
@@ -76,6 +82,8 @@ export function parsePracticeBackup(text: string): Portfolio {
   try { candidate = JSON.parse(text); } catch { throw new Error("This is not a valid JSON backup."); }
   if (candidate?.format !== BACKUP_FORMAT || candidate?.version !== 1)
     throw new Error("This is not a TradeHQ practice portfolio backup.");
+  if (typeof candidate.exportedAt !== "string" || !Number.isFinite(Date.parse(candidate.exportedAt)))
+    throw new Error("Backup export date is missing or invalid.");
   const portfolio = parsePracticePortfolio(candidate.portfolio);
   if (!portfolio) throw new Error("The backup is missing valid portfolio information.");
   return portfolio;
