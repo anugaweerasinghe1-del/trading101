@@ -185,9 +185,12 @@ export function applyUnverifiedGuestRestore(
     if (!persisted || JSON.stringify(persisted) !== JSON.stringify(imported))
       throw new Error("The browser could not verify the saved portfolio. Restore was cancelled.");
   } catch (error) {
-    // Roll back the previous guest portfolio; preserve the rollback record
-    // if browser writes fail so recovery is still possible.
-    try { saveLocal(current); restorePreviousProvenance(); } catch {}
+    // If rollback cannot be confirmed, retain the one-step undo record.
+    try {
+      saveLocal(current);
+      const rolledBack=parsePracticePortfolio(JSON.parse(localStorage.getItem("tradehq_portfolio") ?? "null"));
+      if (rolledBack && JSON.stringify(rolledBack)===JSON.stringify(current)) restorePreviousProvenance();
+    } catch {}
     throw error;
   }
 }
