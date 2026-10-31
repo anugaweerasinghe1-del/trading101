@@ -35,8 +35,8 @@ The old `public.subscribers` table has two unverified legacy email records, stil
 
 Public URLs:
 - `https://www.thetradehq.com/newsletter`
-- `https://www.thetradehq.com/newsletter/confirm?token=...`
-- `https://www.thetradehq.com/newsletter/unsubscribe?token=...`
+- `https://www.thetradehq.com/newsletter/confirm#token=...`
+- `https://www.thetradehq.com/newsletter/unsubscribe#token=...`
 
 ## Known rollout gates
 
