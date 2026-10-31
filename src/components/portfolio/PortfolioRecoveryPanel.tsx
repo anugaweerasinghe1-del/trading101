@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { Download, Upload, ShieldCheck, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getPortfolio, savePortfolio } from "@/lib/portfolio";
-import { browserCanPersistPortfolio, exportPracticeBackup, parsePracticeBackup } from "@/lib/portfolioRecovery";
+import { browserCanPersistPortfolio, exportPracticeBackup, parsePracticeBackup, UNREADABLE_KEY } from "@/lib/portfolioRecovery";
 import type { Portfolio } from "@/lib/types";
 
 export function PortfolioRecoveryPanel({ signedIn, authLoading = false }: { signedIn: boolean; authLoading?: boolean }) {
   const [warning, setWarning] = useState(false);
+  const [unreadable, setUnreadable] = useState(() => { try { return Boolean(localStorage.getItem(UNREADABLE_KEY)); } catch { return false; } });
   const [message, setMessage] = useState("");
   const [candidate, setCandidate] = useState<{ name: string; portfolio: Portfolio } | null>(null);
 
@@ -37,6 +38,17 @@ export function PortfolioRecoveryPanel({ signedIn, authLoading = false }: { sign
     } catch {
       setMessage("Could not create a backup in this browser. Check your browser permissions.");
     }
+  };
+
+  const downloadOriginal = () => {
+    const raw = localStorage.getItem(UNREADABLE_KEY);
+    if (!raw) return;
+    const url = URL.createObjectURL(new Blob([raw], { type: "application/json" }));
+    const a = document.createElement("a");
+    a.href = url; a.download = "tradehq-original-unreadable-portfolio.json";
+    document.body.appendChild(a); a.click(); a.remove();
+    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+    setMessage("The original, unreadable data was downloaded for manual recovery. It was not silently overwritten.");
   };
 
   const chooseFile = async (file?: File) => {
@@ -72,6 +84,10 @@ export function PortfolioRecoveryPanel({ signedIn, authLoading = false }: { sign
         </div>
         <Button type="button" variant="outline" onClick={download} className="shrink-0"><Download className="w-4 h-4 mr-2" /> Download backup</Button>
       </div>
+      {unreadable && <div role="alert" className="mt-3 rounded-xl border border-amber-500/30 p-3 text-sm">
+        An older practice portfolio record could not be safely interpreted. Its original bytes were preserved separately in this browser.
+        <button type="button" className="ml-2 underline text-primary" onClick={downloadOriginal}>Download original for manual recovery</button>
+      </div>}
       {warning && <p role="alert" className="mt-3 text-sm text-amber-500 flex items-start gap-2"><AlertTriangle className="w-4 h-4 shrink-0 mt-0.5" /> Browser storage isn't available. Your practice activity might not survive a reload. Download a backup before leaving.</p>}
       {!signedIn && !authLoading && <div className="mt-4 flex flex-col sm:flex-row sm:items-center gap-3">
         <label htmlFor="portfolio-restore-file" className="text-sm font-medium flex items-center gap-2"><Upload className="w-4 h-4" /> Restore a guest backup</label>
