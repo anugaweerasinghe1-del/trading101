@@ -3,6 +3,8 @@ export function newsletterAdminError(status: number | undefined, remote?: string
   if (status === 401) return "Incorrect TradeHQ admin master key. Use the SAME master key you enter at the main Admin Dashboard (not your website login password).";
   if (status === 403) return "This administrator action is not permitted.";
   if (status === 429) return "Too many unlock attempts. Please try again after a short break.";
+  if (status === 409) return "This edition was changed or needs reopening for edits. Refresh the draft and retry.";
+  if (status === 422) return "The new lesson failed educational or source checks. Your saved draft is unchanged; try another preview.";
   if (status === 503) return "The private newsletter service is temporarily unavailable or its admin key is not configured. Other admin pages should still work.";
   if (status === 404) return "The newsletter service could not be found. Check the deployment.";
   if (status && status >= 500) return "Newsletter service error (HTTP " + status + "). Your draft has not been sent.";
