@@ -1,4 +1,3 @@
-import type { CSSProperties } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { EducationalDisclaimer } from "@/components/EducationalDisclaimer";
@@ -118,13 +117,7 @@ export function MegaFooter() {
 
   return (
     <footer
-      className="border-t border-white/[0.04] bg-[hsl(0_0%_2%)]"
-      // This footer keeps its dark surface in both themes; keep its text palette dark-theme too.
-      style={{
-        "--foreground": "220 15% 93%",
-        "--muted-foreground": "220 14% 68%",
-        "--primary": "168 100% 50%",
-      } as CSSProperties}
+      className="border-t border-border/70 bg-card text-card-foreground"
     >
       <div className="container mx-auto px-6 py-16">
         {/* Asset Categories Grid */}
@@ -286,7 +279,7 @@ export function MegaFooter() {
           </div>
         </div>
       </div>
-      <div className="border-t border-white/[0.04] bg-[hsl(0_0%_1.5%)]">
+      <div className="border-t border-white/[0.04] bg-background">
         <div className="container mx-auto px-6 py-6">
           <div className="flex items-center justify-center gap-4 mb-4">
             <Link to="/privacy" className="text-xs text-muted-foreground hover:text-primary transition-colors">Privacy Policy</Link>
