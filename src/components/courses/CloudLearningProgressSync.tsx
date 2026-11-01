@@ -19,29 +19,42 @@ const stable = (value: unknown) => JSON.stringify(value, (_key, part) =>
  * account's local lesson records into a different account.
  * Preserve the original guest record for subsequent signed-out sessions.
  */
+const GUEST_IMPORT_CLAIMED = "tradehq:guest-learning-claimed:v1";
 function activateLearningOwner(uid: string | null) {
   try {
     const previous = localStorage.getItem(OWNER_KEY);
     if (previous === uid) return;
-    if (previous && previous !== uid) {
+    // Archive the current account before switching identities.
+    if (previous) {
       localStorage.setItem(STORAGE_PREFIX + previous, JSON.stringify({
         courses: loadProgress(), journey: readJourney(),
       }));
-    } else if (!previous && uid && !localStorage.getItem(STORAGE_PREFIX + "guest")) {
+    } else if (!localStorage.getItem(STORAGE_PREFIX + "guest")) {
       localStorage.setItem(STORAGE_PREFIX + "guest", JSON.stringify({
         courses: loadProgress(), journey: readJourney(),
       }));
     }
-    if (previous && previous !== uid) {
-      let cached: { courses?: unknown; journey?: unknown } | null = null;
-      try { cached = JSON.parse(localStorage.getItem(STORAGE_PREFIX + (uid ?? "guest")) ?? "null"); }
-      catch { cached = null; }
-      replaceCourseProgressSnapshot(parseCourseProgress(cached?.courses ? JSON.stringify(cached.courses) : null));
-      replaceJourneySnapshot(parseJourneyProgress(cached?.journey ?? null));
+    let saved: { courses?: unknown; journey?: unknown } | null = null;
+    try { saved = JSON.parse(localStorage.getItem(STORAGE_PREFIX + (uid ?? "guest")) ?? "null"); }
+    catch { saved = null; }
+
+    // A guest may migrate its learning history once, to its first signed-in
+    // account. Later sign-ins on a shared browser must never inherit that
+    // previous guest's work or another account's record.
+    const firstGuestImport = !!uid && !previous &&
+      !localStorage.getItem(GUEST_IMPORT_CLAIMED) && !saved;
+    if (firstGuestImport) {
+      saved = {
+        courses: loadProgress(), journey: readJourney(),
+      };
+      localStorage.setItem(GUEST_IMPORT_CLAIMED, "1");
     }
+    replaceCourseProgressSnapshot(parseCourseProgress(saved?.courses ? JSON.stringify(saved.courses) : null));
+    replaceJourneySnapshot(parseJourneyProgress(saved?.journey ?? null));
+
     if (uid) localStorage.setItem(OWNER_KEY, uid);
     else localStorage.removeItem(OWNER_KEY);
-  } catch { /* Disabled storage must not leak credentials or block lessons. */ }
+  } catch { /* Disabled storage must not block lessons. */ }
 }
 
 /** Authenticated educational progress only; does not touch verified trades,
