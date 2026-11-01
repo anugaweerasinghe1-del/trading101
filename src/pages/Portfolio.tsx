@@ -617,7 +617,7 @@ export default function Portfolio() {
                 {
                   question: "How do I reset my virtual portfolio?",
                   answer:
-                    "Guest records are browser-held; clearing site data removes the local copy. Signed-in cash, positions and server-recorded trades can restore from the account copy when the service is available. Clearing browser data does not delete or reset that account copy. Earlier guest history, journals and course progress remain browser-held.",
+                    "Guest records are browser-held; clearing site data removes the local copy. Signed-in cash, positions and server-recorded trades can restore from the account copy when the service is available. Clearing browser data does not delete or reset that account copy. Earlier guest trade history and journals remain browser-held. Signed-in lessons and beginner-journey progress can sync privately when online.",
                 },
               ]}
             />

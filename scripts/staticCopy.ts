@@ -110,8 +110,8 @@ export const STATIC_COPY: Record<string, PageContent> = {
       {
         h: "Steps 4 and 5 — Reflect and return for daily practice",
         p: [
-          "Learners write a private reflection explaining what surprised them about the price or fee and what they will check before another exercise. This reflection remains in the browser and is never posted to a public leaderboard. TradeHQ then recommends a risk-management lesson and the existing Daily Practice exercises; completion does not certify readiness to risk real money.",
-          "The journey records the completed steps in local browser storage so a visitor who leaves halfway can return later on the same browser. Structured courses maintain their own most-recent-lesson record, which the journey links to for continued study. Clearing all browser site data can remove local progress, so TradeHQ does not promise permanent cross-device recovery without an account.",
+          "Learners write a private reflection explaining what surprised them about the price or fee and what they will check before another exercise. Guest reflections remain in the browser; signed-in journey reflections may sync privately to the user's account, but are never posted to a public leaderboard. TradeHQ then recommends a risk-management lesson and the existing Daily Practice exercises; completion does not certify readiness to risk real money.",
+          "The journey records completed steps in browser storage so guest visitors can return later on the same browser. Signed-in members can also privately sync supported lessons, quiz drafts, reading position and journey progress between devices when online. A course's most-recent-lesson record helps resume the right lesson. Clearing guest browser data can remove that guest's progress; portfolio backups do not include learning records.",
         ],
       },
       {

@@ -120,7 +120,7 @@ export default function Auth() {
 
   const title = "Sign in or create a free TradeHQ account";
   const description =
-    "Optional free account for TradeHQ. Account cash, positions and server-recorded trades restore across devices when the service is available; journals and course progress remain browser-held. Public profiles can use community features. Core learning tools remain usable without an account.";
+    "Optional free account for TradeHQ. Account cash, positions and server-recorded trades restore across devices when the service is available; journals remain browser-held while signed-in lessons and journey progress sync privately when online. Public profiles can use community features. Core learning tools remain usable without an account.";
 
   return (
     <>
