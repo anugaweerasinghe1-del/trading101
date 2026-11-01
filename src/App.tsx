@@ -77,7 +77,7 @@ const queryClient = new QueryClient({
  * Deliberate #section deep links are the only exception.
  */
 function RouteScrollManager() {
-  const { pathname, hash, key } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useLayoutEffect(() => {
     const previous = window.history.scrollRestoration;
@@ -87,10 +87,10 @@ function RouteScrollManager() {
 
   useLayoutEffect(() => {
     if (!hash) {
-      window.scrollTo(0, 0);
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
       // A lazy route may complete after navigation. The next frame keeps
       // the viewport anchored to the beginning instead of the previous page.
-      const frame = requestAnimationFrame(() => window.scrollTo(0, 0));
+      const frame = requestAnimationFrame(() => window.scrollTo({ top: 0, left: 0, behavior: "instant" }));
       return () => cancelAnimationFrame(frame);
     }
 
@@ -101,12 +101,12 @@ function RouteScrollManager() {
     const jumpToAnchor = () => {
       const element = document.getElementById(id);
       if (!element) return false;
-      window.scrollTo(0, Math.max(0, element.getBoundingClientRect().top + window.scrollY - 88));
+      window.scrollTo({ top: Math.max(0, element.getBoundingClientRect().top + window.scrollY - 88), behavior: "instant" });
       return true;
     };
     const attempts = [0, 250, 750].map(delay => window.setTimeout(jumpToAnchor, delay));
     return () => attempts.forEach(window.clearTimeout);
-  }, [pathname, hash, key]);
+  }, [pathname, hash]);
 
   return null;
 }
@@ -117,7 +117,7 @@ function RouteScrollManager() {
 function CrossTabPortfolioSync() {
   useEffect(() => {
     const onStorage = (event: StorageEvent) => {
-      if (event.storageArea === localStorage && event.key === "tradehq_portfolio") {
+      if (event.key === "tradehq_portfolio") {
         window.dispatchEvent(new Event("tradehq:portfolio-updated"));
       }
     };
