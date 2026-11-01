@@ -279,7 +279,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
       {
         h: "What the leaderboard shows",
         p: [
-          "All public practice profiles can appear without a minimum trade count. Comparable portfolios receive numbered practice ranks after their first server-recorded trade, ordered by simulated return. Unranked members appear separately. New accounts start public and can switch private from their profile. Values use a $100,000 virtual starting balance and display quote freshness and simulation status.",
+          "All public practice profiles can appear without a minimum trade count. Comparable portfolios receive numbered practice ranks after their first server-recorded trade, ordered by simulated return. Unranked members appear separately. New accounts start private and may opt in to public visibility from their profile. Values use a $100,000 virtual starting balance and display quote freshness and simulation status.",
           "There is no prize, no fee and no real money involved. Use the scoreboard as a prompt to review exposure, costs and assumptions; rank alone does not measure a reliable method.",
         ],
       },
@@ -362,7 +362,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
       {
         h: "Community reviews",
         p: [
-          "This page collects visitor-submitted feedback about the practice simulator. Submissions appear automatically and can be moderated after publication. Browser and server-side duplicate checks limit repeat submissions, but identity and usage are not independently verified. Reviews are feedback about the product, not verified investment-performance testimonials.",
+          "This page collects visitor-submitted feedback about the practice simulator. New submissions remain private pending moderation; approved reviews may appear publicly, including criticism. Browser and server-side duplicate checks limit repeat submissions, but identity and usage are not independently verified. Reviews are feedback about the product, not verified investment-performance testimonials.",
           "Signed-in visitors can like or unlike reviews once per account. Like totals are public; individual liker identities are private. Replies from the site owner are labelled separately from visitor feedback.",
           "A visible rating summarises the submissions currently displayed; it does not establish that each author used every feature or that the feedback represents all visitors. Read the specific task and experience described. For a factual correction or a privacy concern, the contact page provides a direct way to reach the maintainer.",
         ],
