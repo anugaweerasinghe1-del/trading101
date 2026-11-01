@@ -66,7 +66,7 @@ export function PremiumHero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-profit opacity-75" />
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-profit" />
             </span>
-            <span className="text-xs font-medium text-muted-foreground tracking-wide uppercase">
+            <span className="text-xs font-semibold text-foreground tracking-wide uppercase">
               Simulator Active • 170 Markets
             </span>
           </div>
