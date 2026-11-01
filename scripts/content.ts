@@ -200,7 +200,9 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
     const related = (g.relatedTerms || []).filter((r: string) => bySlug.has(r));
     map.set(`/wiki/${g.slug}`, {
       sections: [
-        { h: "Publisher and editorial transparency", p: ["Published by TradeHQ. Site creator: Anuga Weerasinghe. This page has no recorded editorial review date; the About page explains the site's editorial approach."] },
+        { h: "Publisher and editorial transparency", p: [GLOSSARY_WORKSHEETS[g.slug]?.sourceCheck
+          ? `Published by TradeHQ. Site creator: Anuga Weerasinghe. Limited source check: ${GLOSSARY_WORKSHEETS[g.slug].sourceCheck!.date}. ${GLOSSARY_WORKSHEETS[g.slug].sourceCheck!.scope} This is not independent professional review.`
+          : "Published by TradeHQ. Site creator: Anuga Weerasinghe. This page has no recorded editorial review date; the About page explains the site's editorial approach."] },
         { h: `What ${g.term} means`, p: [g.definition] },
         { h: "In depth", p: splitParagraphs(g.expertDefinition) },
         { h: "Key points", list: g.keyPoints },
