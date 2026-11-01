@@ -493,7 +493,7 @@ export default function TradeAsset() {
                 {lastUpdated && (
                   <span className="inline-flex items-center gap-1 text-muted-foreground">
                     <Clock className="w-3 h-3" />
-                    Updated {Math.floor((Date.now() - lastUpdated.getTime()) / 1000)}s ago
+                    Quote checked at {lastUpdated.toLocaleTimeString()} (not the provider observation time)
                   </span>
                 )}
               </div>
