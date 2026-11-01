@@ -301,6 +301,12 @@ export default function Courses() {
                         <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                           {track.description || track.tagline}
                         </p>
+                        {(track.slug === "options-trading-fundamentals" || track.slug === "futures-and-derivatives") && (
+                          <p className="text-xs font-medium text-amber-300 mb-4" role="note">
+                            Intermediate theory only: these contracts cannot be traded in the TradeHQ simulator.
+                            If you are new, start with basic spot-market order practice first.
+                          </p>
+                        )}
 
                         <div className="mb-4">
                           <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-2">
