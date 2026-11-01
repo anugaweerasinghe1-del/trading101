@@ -57,7 +57,7 @@ export function PremiumFeatures() {
   ];
 
   return (
-    <section className="py-28 bg-[hsl(0_0%_2%)] relative overflow-hidden">
+    <section className="py-28 bg-background relative overflow-hidden">
       {/* Subtle ambient glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
 
@@ -75,7 +75,7 @@ export function PremiumFeatures() {
             </span>
             <h2 className="text-3xl md:text-5xl font-bold mb-5 tracking-tight">
               Everything You Need to{' '}
-              <span className="text-transparent bg-clip-text" style={{
+              <span className="thq-gradient-heading text-transparent bg-clip-text" style={{
                 backgroundImage: 'linear-gradient(135deg, hsl(180 70% 50%), hsl(152 60% 50%))'
               }}>
                 Learn by Practicing
