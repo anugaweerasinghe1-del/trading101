@@ -33,6 +33,8 @@ assert.equal(combined.portfolioExplained,true);
 assert.ok(combined.reflection.includes("virtual"));
 const component=readFileSync("src/components/courses/CloudLearningProgressSync.tsx","utf8");
 assert.match(component,/activateLearningOwner\(uid\)/);
+assert.match(component,/STORAGE_PREFIX \+ previous/,"Account changes archive prior local lesson records");
+assert.match(component,/readJourney\(\)/);
 assert.match(component,/user_learning_progress/);
 assert.match(component,/replaceCourseProgressSnapshot/);
 assert.match(component,/onConflict:"user_id"/);
