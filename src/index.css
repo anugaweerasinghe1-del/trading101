@@ -19,7 +19,7 @@
 
     /* Electric Neon primary */
     --primary: 168 100% 50%;
-    --primary-foreground: 0 0% 3%;
+    --primary-foreground: 0 0% 100%;
 
     /* Sunset Coral secondary */
     --secondary: 12 90% 62%;
@@ -68,6 +68,8 @@
     --gradient-subtle-cyan: linear-gradient(135deg, hsl(168 100% 50%) 0%, hsl(180 80% 42%) 100%);
     --gradient-subtle-purple: linear-gradient(135deg, hsl(12 90% 62%) 0%, hsl(350 85% 55%) 100%);
     --gradient-cyber: linear-gradient(135deg, hsl(168 100% 50%) 0%, hsl(12 90% 62%) 100%);
+    --gradient-neon-cyan: var(--gradient-subtle-cyan);
+    --gradient-neon-purple: var(--gradient-subtle-purple);
     --gradient-holographic: linear-gradient(135deg, hsl(240 10% 72% / 0.2) 0%, hsl(168 100% 50% / 0.1) 50%, hsl(12 90% 62% / 0.15) 100%);
     
     /* Tactile shadows */
@@ -91,57 +93,57 @@
   }
 
   .light {
-    --background: 0 0% 97%;
-    --foreground: 0 0% 6%;
+    --background: 210 30% 97%;
+    --foreground: 220 31% 13%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 6%;
+    --card-foreground: 220 31% 13%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 6%;
+    --popover-foreground: 220 31% 13%;
 
-    --primary: 168 100% 32%;
+    --primary: 169 80% 27%;
     --primary-foreground: 0 0% 3%;
 
     --secondary: 12 85% 52%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 14% 93%;
-    --muted-foreground: 220 9% 46%;
+    --muted: 210 24% 94%;
+    --muted-foreground: 215 15% 38%;
 
-    --accent: 240 8% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 169 32% 90%;
+    --accent-foreground: 170 71% 18%;
 
-    --success: 152 69% 35%;
+    --success: 154 70% 29%;
     --success-foreground: 0 0% 3%;
     
     --destructive: 0 75% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --profit: 152 69% 35%;
+    --profit: 154 70% 29%;
     --loss: 0 75% 50%;
-    --buy: 152 69% 35%;
+    --buy: 154 70% 29%;
     --sell: 0 75% 50%;
-    --warning: 38 92% 45%;
+    --warning: 36 86% 37%;
     --profit-foreground: 0 0% 100%;
     --loss-foreground: 0 0% 100%;
     --warning-foreground: 0 0% 3%;
 
-    --coral: 12 85% 52%;
-    --neon: 168 100% 32%;
-    --silver: 240 8% 60%;
+    --coral: 12 79% 45%;
+    --neon: 169 80% 27%;
+    --silver: 215 15% 46%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 168 100% 32%;
+    --border: 214 20% 85%;
+    --input: 214 20% 85%;
+    --ring: 169 80% 27%;
 
     --gradient-profit: linear-gradient(135deg, hsl(152 69% 35%) 0%, hsl(152 69% 28%) 100%);
     --gradient-loss: linear-gradient(135deg, hsl(0 75% 50%) 0%, hsl(0 75% 42%) 100%);
     --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 14% 98%) 100%);
     --gradient-sidebar: linear-gradient(180deg, hsl(220 14% 98%) 0%, hsl(220 14% 96%) 100%);
-    --gradient-neon-cyan: linear-gradient(135deg, hsl(168 100% 32%) 0%, hsl(180 90% 28%) 100%);
-    --gradient-neon-purple: linear-gradient(135deg, hsl(12 85% 52%) 0%, hsl(350 80% 48%) 100%);
-    --gradient-cyber: linear-gradient(135deg, hsl(168 100% 32%) 0%, hsl(12 85% 52%) 100%);
+    --gradient-neon-cyan: linear-gradient(135deg, #075b50 0%, #0f766e 100%);
+    --gradient-neon-purple: linear-gradient(135deg, #9a3412 0%, #9f1239 100%);
+    --gradient-cyber: linear-gradient(135deg, #075b50 0%, #0f766e 55%, #9a3412 100%);
     --gradient-holographic: linear-gradient(135deg, hsl(240 8% 60% / 0.15) 0%, hsl(168 100% 32% / 0.1) 50%, hsl(12 85% 52% / 0.1) 100%);
     
     --shadow-card: 0 4px 20px -4px hsl(220 13% 70% / 0.3);
@@ -611,4 +613,85 @@ textarea:focus-visible {
 .pnl-radiance,
 .pnl-bleed {
   will-change: transform, text-shadow;
+}
+
+/* Light theme: calm paper surfaces and accessible contrast.
+   Dark mode is deliberately unchanged by the overrides below. */
+@layer utilities {
+  .light {
+    color-scheme: light;
+  }
+
+  .light .thq-gradient-heading {
+    background-image: linear-gradient(120deg, #075b50 0%, #047857 50%, #6d28d9 100%) !important;
+  }
+
+  .light .glass-liquid,
+  .light .glass-liquid-dark,
+  .light .glass-tactile {
+    background: linear-gradient(145deg, hsl(var(--card) / .96), hsl(var(--background) / .88));
+    border-color: hsl(var(--border) / .95);
+    box-shadow: 0 12px 32px -18px hsl(210 28% 25% / .22), inset 0 1px 0 hsl(0 0% 100% / .95);
+  }
+
+  .light .glass-liquid-card:hover {
+    border-color: hsl(var(--primary) / .35);
+    box-shadow: 0 15px 36px -20px hsl(169 40% 25% / .24);
+  }
+
+  .light .border-glass,
+  .light .border-chrome {
+    border-color: hsl(var(--border));
+  }
+
+  .light .bg-gradient-hero {
+    background: radial-gradient(ellipse 80% 55% at 50% 0%, hsl(var(--primary) / .09), transparent 72%),
+                radial-gradient(ellipse 55% 40% at 85% 50%, hsl(var(--secondary) / .04), transparent);
+  }
+
+  /* Legacy dark-only utility surfaces; select exact class tokens to avoid
+     altering black modal scrims, chart graphics, or primary CTA buttons. */
+  .light [class~="bg-white/[0.02]"],
+  .light [class~="bg-white/[0.03]"],
+  .light [class~="bg-white/[0.04]"],
+  .light [class~="bg-white/[0.05]"],
+  .light [class~="bg-white/[0.06]"],
+  .light [class~="bg-white/[0.08]"],
+  .light [class~="bg-black/30"],
+  .light [class~="bg-black/40"] {
+    background-color: hsl(var(--card) / .88);
+  }
+
+  .light [class~="border-white/[0.04]"],
+  .light [class~="border-white/[0.06]"],
+  .light [class~="border-white/[0.08]"],
+  .light [class~="border-white/10"],
+  .light [class~="border-white/20"] {
+    border-color: hsl(var(--border) / .94);
+  }
+
+  .light .thq-premium-hero .bg-primary,
+  .light .thq-premium-hero [class~="bg-primary"] {
+    box-shadow: 0 12px 28px -10px hsl(var(--primary) / .3);
+  }
+
+  .thq-market-pulse {
+    background: linear-gradient(135deg, hsl(0 0% 6% / .9), hsl(0 0% 4% / .95));
+    backdrop-filter: blur(24px);
+    box-shadow: 0 8px 40px -10px hsl(0 0% 0% / .5), inset 0 1px 0 hsl(0 0% 100% / .05);
+  }
+
+  .light .thq-market-pulse {
+    background: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(210 30% 96%) 100%);
+    box-shadow: 0 16px 32px -22px hsl(210 28% 25% / .25), inset 0 1px 0 #fff;
+  }
+
+  .light .thq-market-pulse circle[stroke="hsl(0 0% 100% / 0.06)"] {
+    stroke: hsl(var(--border));
+  }
+
+  .light .thq-daily-challenge {
+    background: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(169 43% 95%) 100%) !important;
+    box-shadow: 0 14px 36px -22px hsl(169 40% 25% / .25) !important;
+  }
 }
