@@ -28,6 +28,10 @@ for (const path of links) assert.ok(routes.includes('path="'+path.split("#")[0]+
 
 assert.match(navigation, /<DropdownMenuTrigger asChild>/);
 assert.match(navigation, /<DropdownMenuContent align="end"/);
+assert.match(navigation, /max-h-\[calc\(100dvh-7rem\)\]/, "More menu must fit the viewport at 100% zoom");
+assert.match(navigation, /overflow-y-auto overscroll-contain/, "Short desktop windows still need access to every menu link");
+assert.match(navigation, /rounded-md cursor-pointer text-\[14px\] min-h-9 py-1\.5/, "Compact menu items remain legible and clickable");
+assert.match(navigation, /<DropdownMenuLabel className="px-2 py-0\.5/, "Headings use compact but legible padding");
 assert.match(navigation, /<DropdownMenuItem key=\{item\.to\} asChild/);
 assert.match(navigation, /aria-current=\{isActive\(item\.to\) \? "page" : undefined\}/);
 assert.match(navigation, /aria-expanded=\{mobileMoreOpen\} aria-controls="mobile-more-pages"/);
