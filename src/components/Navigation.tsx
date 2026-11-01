@@ -238,12 +238,12 @@ export function Navigation() {
         aria-label="Site menu"
         className={cn(
           "absolute right-0 top-0 h-full w-[82%] max-w-xs flex flex-col",
-          "bg-[hsl(0_0%_4%)] border-l border-white/10 shadow-2xl",
+          "bg-popover text-popover-foreground border-l border-border shadow-2xl",
           "transition-transform duration-300 ease-out",
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
-        <div className="flex items-center justify-between px-4 h-16 border-b border-white/[0.06] shrink-0">
+        <div className="flex items-center justify-between px-4 h-16 border-b border-border shrink-0">
           <BrandMark size="sm" />
           <Button
             variant="ghost"
