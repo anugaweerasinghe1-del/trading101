@@ -38,7 +38,7 @@ export function PremiumFAQ() {
     },
     {
       question: "Do I need to create an account?",
-      answer: "No. TradeHQ requires no signup, no email, and no account creation. Guest practice records stay in your browser. Optional accounts store cash, positions and server-recorded trades for restoration across devices; earlier guest history, journals and course progress remain browser-held."
+      answer: "No. TradeHQ requires no signup, no email, and no account creation. Guest practice records stay in your browser. Optional accounts store cash, positions and server-recorded trades for restoration across devices; earlier guest trade history and journals remain browser-held; signed-in lessons and beginner-journey progress can sync privately when online."
     },
     {
       question: "What can I practise with TradeHQ?",

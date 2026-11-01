@@ -19,11 +19,11 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
       h: "Common questions",
       list: [
         "Is TradeHQ free? Yes, entirely. There is no paid tier, no trial and no card required.",
-        "Do I need an account? No. Practice trading, courses and the glossary work without signing up. An optional account supports profiles and community features. Account cash, positions and server-recorded trades restore across devices when available; earlier guest trade history, journals and course progress remain on the original browser.",
+        "Do I need an account? No. Practice trading, courses and the glossary work without signing up. An optional account supports profiles and community features. Account cash, positions and server-recorded trades restore across devices when available; earlier guest trade history and journals remain on the original browser, while signed-in lessons and journey progress can sync privately when online.",
         "Is the money real? No. Every balance, order and result is simulated, and the platform holds no funds.",
         "Are the prices real? Supported assets use periodically refreshed provider observations. Unsupported assets can use fixed simulator prices; charts may be synthetic. Check each source and timestamp rather than assuming a continuous exchange feed.",
         "Does TradeHQ execute investments or provide personalized advice? No. Trading examples and educational indicator labels are illustrative, not personal recommendations, and the simulator places virtual orders only.",
-        "Where is my data? Guest practice records stay in your browser. Signed-in cash, positions and server-recorded trades are stored in Supabase and restored when the service is available. Earlier guest trade history, journal entries, course progress and streaks remain browser-held; a synced badge count does not restore the course record.",
+        "Where is my data? Guest practice records stay in your browser. Signed-in cash, positions and server-recorded trades are stored in Supabase and restored when the service is available. Guest trade history, journal entries and streaks remain browser-held; signed-in lessons and journey progress can sync privately. A badge count alone is not the complete course record.",
       ],
     },
   ],
@@ -308,7 +308,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
     {
       h: "How to influence it",
       p: [
-        "Guest portfolios, journals and course progress use browser storage. Optional sign-in stores account cash, positions and server-recorded trades for restoration on another device, alongside profile and community features. Earlier guest trade history, journals and course progress remain browser-held.",
+        "Guest portfolios, journals and learning progress use browser storage. Signed-in lessons and journey progress can additionally sync to a private account record. Optional sign-in stores account cash, positions and server-recorded trades for restoration on another device, alongside profile and community features. Earlier guest trade history, journals and course progress remain browser-held.",
         "The contact page is the roadmap's real input. Describe the thing you were trying to learn and where the site failed you — that is far more actionable than a feature name, and it is how most of the items above ended up on the list.",
       ],
     },
@@ -344,7 +344,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
     {
       h: "Support questions we answer most often",
       list: [
-        "My portfolio disappeared — check which account, browser and device you are using. Guest records are browser-held. Account cash, positions and server-recorded trades can be restored when the service is available. Earlier guest history, journals and course progress stay on the original browser. If sync fails, contact the maintainer before resetting the practice account.",
+        "My portfolio disappeared — check which account, browser and device you are using. Guest records are browser-held. Account cash, positions and server-recorded trades can be restored when the service is available. Earlier guest trade history and journals stay on the original browser; signed-in lesson and journey progress can sync privately. If sync fails, contact the maintainer before resetting the practice account.",
         "How do I reset my practice balance? The portfolio help explains browser-held guest records and account restoration. Clearing site data removes the local copy, including browser-only history and progress, but does not delete or reset the server account copy.",
         "A price looks wrong — quotes refresh periodically, can be stale or use a labelled fixed fallback, and need not match a broker’s executable price.",
         "Can I use TradeHQ on my phone? Yes, the whole site works on mobile browsers; there is no app to install.",
@@ -377,7 +377,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
       list: [
         "Contact messages: kept only as long as needed to answer you.",
         "Reviews: published with your chosen display name, and removable on request.",
-        "Accounts: email address and server-recorded practice trades and holdings; deletable on request. Guest practice, journal notes, course progress and Daily reflections remain browser-specific unless a feature explicitly states otherwise.",
+        "Accounts: email address and server-recorded practice trades and holdings; deletable on request. Guest practice, journal notes and Daily reflections remain browser-specific; signed-in lessons and beginner-journey progress can sync privately between devices when online.",
         "Public trader profiles and duels: profile fields and selected simulated statistics can be public. New accounts start private; you can make your profile public from your profile page.",
       ],
     },

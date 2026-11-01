@@ -59,7 +59,7 @@ const LEADERBOARD_FAQS = [
   {
     question: "Do I need an account to compete?",
     answer:
-      "An account and a public profile are needed to appear on the board. Account cash, positions and server-recorded trades restore across devices when available; earlier guest history, journals and course progress remain browser-held. Core learning tools work without signing up.",
+      "An account and a public profile are needed to appear on the board. Account cash, positions and server-recorded trades restore across devices when available; earlier guest trade history and journals remain browser-held; signed-in lessons and beginner-journey progress can sync privately when online. Core learning tools work without signing up.",
   },
   {
     question: "What data does TradeHQ store if I sign up?",

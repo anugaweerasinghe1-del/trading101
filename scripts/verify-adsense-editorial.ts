@@ -37,11 +37,27 @@ assert.ok(seoAudit.includes("fetch(route,") &&
 for (const falseCertification of ["Certified {", "System Stable v2.0", "verification passes", "TOTAL_PASSES", "All expected metadata by route"]) {
   assert.ok(!seoAudit.includes(falseCertification), "Fake SEO audit evidence must not return: " + falseCertification);
 }
+const prerenderHome = routes.find(route => route.path === "/");
+assert.ok(prerenderHome?.description.includes("Rule-based learning mentor") &&
+  !/AI mentor|personalized market predictions|live advice/i.test(prerenderHome.description),
+  "Crawler-visible homepage description must describe the rule-based mentor accurately");
+
 const homepageHtml = readFileSync("index.html", "utf8");
 const homepageClient = readFileSync("src/pages/Index.tsx", "utf8");
 assert.ok(homepageHtml.includes("Rule-based educational mentor") &&
   homepageClient.includes("Rule-based learning mentor"),
   "Homepage meta copy must identify the actual authored rule-based educational feature");
+
+// Privacy copy must track the live optional account learning-sync feature.
+// Contradicting the storage model would mislead learners and site reviewers.
+const privacyCopy = readFileSync("src/lib/privacyCopy.ts", "utf8");
+const crawlerCopy = readFileSync("scripts/staticCopyExtra.ts", "utf8");
+assert.match(privacyCopy, /lesson completion, unfinished quiz answers, reading position and first-trade journey progress/);
+assert.match(privacyCopy, /saved privately in Supabase/);
+assert.ok(!privacyCopy.includes("Journals and course progress remain browser-held."),
+  "Outdated browser-only course retention statement must not reappear");
+assert.ok(!crawlerCopy.includes("course progress and streaks remain browser-held"),
+  "Crawler text must disclose signed-in private learning sync");
 
 const wikiClientSource = readFileSync("src/pages/WikiTerm.tsx", "utf8");
 assert.ok(

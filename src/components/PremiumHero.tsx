@@ -138,6 +138,14 @@ export function PremiumHero() {
           No signup required · No credit card · Instant access
         </motion.p>
 
+        <div className="mx-auto mb-12 max-w-lg rounded-2xl border border-primary/25 bg-primary/5 px-5 py-4 text-center">
+          <p className="text-sm font-semibold text-foreground">Never placed a virtual trade before?</p>
+          <p className="mt-1 text-xs text-muted-foreground">Five guided steps: learn an order, practise once, see your portfolio, reflect, and continue a free course.</p>
+          <Link to="/start" className="mt-3 inline-flex items-center gap-2 text-sm font-bold text-primary underline underline-offset-4 hover:opacity-80">
+            Follow the first-trade journey <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+
         {/* Stats grid */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
