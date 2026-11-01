@@ -388,7 +388,7 @@ export default function Portfolio() {
                   </p>
                   {user && <div className="text-xs text-muted-foreground mt-3 max-w-2xl leading-relaxed">
                     <p>{PRICE_REFRESH_COPY} Account values are checked while TradeHQ is open and whenever supported server updates arrive.</p>
-                    <p className="mt-1">{accountPricing ? `${priceLabel(accountPricing.status)}. ${quoteTimeLabel(accountPricing.fetched, accountPricing.observed)}` : "Loading account prices…"}</p>
+                    <p className="mt-1">{accountPricing ? `${priceLabel(accountPricing.status, accountPricing.observed)}. ${quoteTimeLabel(accountPricing.fetched, accountPricing.observed)}` : "Loading account prices…"}</p>
                     {accountError && <p role="status">Account refresh failed. Showing the last loaded account snapshot; retrying automatically.</p>}
                   </div>}
                   <div className="flex items-center gap-3 mt-3 flex-wrap">
