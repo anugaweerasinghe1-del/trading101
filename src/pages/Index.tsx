@@ -95,7 +95,7 @@ const webAppSchema = {
   operatingSystem: "Web Browser",
   creator: { "@type": "Person", name: "Anuga Weerasinghe", url: "https://www.thetradehq.com/about" },
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-  description: "Practice stock & crypto trading free with $100,000 virtual cash. No signup needed. 170 assets, AI mentor, leaderboard.",
+  description: "Practice stock & crypto trading free with $100,000 virtual cash. No signup needed. 170 assets, rule-based learning mentor, leaderboard.",
 };
 
 // WebSite identity schema. No SearchAction is declared because TradeHQ does not
@@ -157,12 +157,12 @@ const Index = () => {
     <>
       <Helmet>
         <title>TradeHQ — Free Paper Trading Simulator | $100K Virtual Cash (No Signup)</title>
-        <meta name="description" content="Practice stocks, crypto, ETFs & forex with $100,000 virtual cash. Zero signup. AI mentor, simulated charts, leaderboard & 170 assets. Free educational trading simulator." />
+        <meta name="description" content="Practice stocks, crypto, ETFs & forex with $100,000 virtual cash. Zero signup. Rule-based learning mentor, simulated charts, leaderboard & 170 assets. Free educational trading simulator." />
         <link rel="canonical" href="https://www.thetradehq.com/" />
         <meta name="robots" content="index, follow" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="TradeHQ — Free Paper Trading Simulator | $100K Virtual Cash (No Signup)" />
-        <meta property="og:description" content="Practice simulated trading with $100K virtual money. AI mentor + simulated charts. No signup needed. Start in seconds." />
+        <meta property="og:description" content="Practice simulated trading with $100K virtual money. Rule-based mentor + simulated charts. No signup needed. Start in seconds." />
         <meta property="og:url" content="https://www.thetradehq.com/" />
         <meta property="og:image" content="https://www.thetradehq.com/tradehq-preview-2026.png" />
         <meta property="og:image:width" content="1200" />
