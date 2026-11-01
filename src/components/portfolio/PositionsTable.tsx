@@ -128,6 +128,7 @@ function MobileCard({ position, quote }: { position: Position; quote?: QuoteCove
           <p className="mt-1 text-sm text-muted-foreground">
             {position.asset.name}
           </p>
+          <QuoteBadge quote={quote} />
         </div>
 
         <div
