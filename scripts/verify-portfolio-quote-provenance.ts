@@ -19,8 +19,8 @@ assert.equal(status.iwm.status,"previous_close", "recent prior session close sur
 assert.equal(normalizePortfolioPriceStatus("previous_close", "2026-10-07T20:00:00Z", now),"stale");
 assert.equal(normalizePortfolioPriceStatus("previous_close", "2026-10-29T20:00:00Z", now),"previous_close");
 assert.equal(normalizePortfolioPriceStatus("previous_close", null, now),"stale");
-assert.equal(priceLabel("previous_close", "2026-10-07T20:00:00Z"), "Older cached quotes");
-assert.equal(priceLabel("previous_close", "2026-10-29T20:00:00Z"), "Provider session-close prices");
+assert.equal(priceLabel("previous_close", "2026-10-07T20:00:00Z", now), "Older cached quotes");
+assert.equal(priceLabel("previous_close", "2026-10-29T20:00:00Z", now), "Provider session-close prices");
 assert.equal(snapshotPriceInfo([{priced_at:"2026-11-01T09:58:00Z",observed_at:"2026-10-07T20:00:00Z",quote_status:"previous_close"}],now).status,"stale");
 assert.equal(snapshotPriceInfo([{priced_at:"2026-11-01T09:58:00Z",observed_at:"2026-10-29T20:00:00Z",quote_status:"previous_close"}],now).status,"previous_close");
 assert.equal(status.eth.status,"stale");
