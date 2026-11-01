@@ -8,7 +8,9 @@ import { applyCourseEditorialCorrections } from "@/lib/courseEditorialCorrection
 const reader = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, { auth: { persistSession: false, autoRefreshToken: false } });
 export function useCourseCatalog() {
   const query = useQuery({
-    queryKey: ["approved-course-catalog"], staleTime: 60000, retry: 1,
+    queryKey: ["approved-course-catalog"], staleTime: 30000, retry: 1,
+    refetchOnWindowFocus: "always", refetchOnReconnect: true,
+    refetchInterval: 45000, refetchIntervalInBackground: false,
     queryFn: async (): Promise<CourseTrack[]> => {
       const { data, error } = await reader.rpc("get_published_course_catalog");
       if (error) throw error;

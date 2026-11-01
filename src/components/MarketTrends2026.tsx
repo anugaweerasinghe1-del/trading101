@@ -37,7 +37,7 @@ const trends = [
 
 export function MarketTrends2026() {
   return (
-    <section className="py-28 bg-[hsl(0_0%_3%)] relative overflow-hidden">
+    <section className="py-28 bg-background relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[1px] bg-gradient-to-r from-transparent via-secondary/15 to-transparent" />
 
       <div className="container mx-auto px-6">
@@ -53,7 +53,7 @@ export function MarketTrends2026() {
             Market Intelligence
           </Badge>
           <h2 className="text-3xl md:text-5xl font-bold mb-5 tracking-tight">
-            <span className="text-transparent bg-clip-text" style={{
+            <span className="thq-gradient-heading text-transparent bg-clip-text" style={{
               backgroundImage: 'linear-gradient(135deg, hsl(180 70% 50%), hsl(280 60% 55%))'
             }}>
               Market Themes

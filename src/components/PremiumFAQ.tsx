@@ -47,7 +47,7 @@ export function PremiumFAQ() {
   ];
 
   return (
-    <section className="py-28 bg-[hsl(0_0%_2.5%)] relative overflow-hidden">
+    <section className="py-28 bg-background relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[1px] bg-gradient-to-r from-transparent via-primary/15 to-transparent" />
 
       <div className="container mx-auto px-6 max-w-3xl">

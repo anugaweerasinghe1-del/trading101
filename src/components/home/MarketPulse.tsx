@@ -111,13 +111,7 @@ export function MarketPulse() {
 
   return (
     <div
-      className="rounded-3xl p-6 md:p-8 border border-white/[0.06]"
-      style={{
-        background:
-          "linear-gradient(135deg, hsl(0 0% 6% / 0.9) 0%, hsl(0 0% 4% / 0.95) 100%)",
-        backdropFilter: "blur(24px)",
-        boxShadow: "0 8px 40px -10px hsl(0 0% 0% / 0.5), inset 0 1px 0 0 hsl(0 0% 100% / 0.05)",
-      }}
+      className="thq-market-pulse rounded-3xl p-6 md:p-8 border border-border/70"
     >
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-2">

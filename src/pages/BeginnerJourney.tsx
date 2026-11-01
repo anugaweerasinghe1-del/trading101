@@ -8,8 +8,9 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { getPortfolio } from "@/lib/portfolio";
 import { JOURNEY_EVENT, journeyStage, readJourney, saveJourney } from "@/lib/beginnerJourney";
-import { loadProgress } from "@/lib/courseProgress";
-import { getTrack } from "@/lib/coursesData";
+import { COURSE_PROGRESS_EVENT, COURSE_PROGRESS_KEY, loadProgress } from "@/lib/courseProgress";
+import { buildLearningOverview } from "@/lib/learningOverview";
+import { useCourseCatalog } from "@/hooks/useCourseCatalog";
 import type { Portfolio } from "@/lib/types";
 
 const steps = [
@@ -27,24 +28,32 @@ export default function BeginnerJourney() {
   const [answer, setAnswer] = useState("");
   const [reflection, setReflection] = useState(() => readJourney().reflection);
   const stage = journeyStage(progress);
-  const recentCourse = (() => {
-    try {
-      const last = loadProgress().lastLesson;
-      const track = last && getTrack(last.track);
-      const lesson = track?.lessons.find(l => l.slug === last?.lesson);
-      return track && lesson ? { href: `/courses/${track.slug}/${lesson.slug}`, title: lesson.title } : null;
-    } catch { return null; }
-  })();
+  const { data: publishedCourses, tracks, isError: courseCatalogError, refetch: refreshCatalog } = useCourseCatalog();
+  const [courseProgress, setCourseProgress] = useState(loadProgress);
+  const courseOverview = buildLearningOverview(tracks, courseProgress, progress);
+  const recentCourse = courseOverview.next;
+  const newPublishedCourses = publishedCourses ?? [];
 
   useEffect(() => {
-    const refresh = () => { setProgress(readJourney()); setPortfolio(getPortfolio()); };
+    const refresh = () => {
+      setProgress(readJourney());
+      setPortfolio(getPortfolio());
+      setCourseProgress(loadProgress());
+    };
+    const onStorage = (event: StorageEvent) => {
+      if (!event.key || [COURSE_PROGRESS_KEY, "tradehq:beginner-journey:v1"].includes(event.key)) refresh();
+    };
     window.addEventListener(JOURNEY_EVENT, refresh);
+    window.addEventListener(COURSE_PROGRESS_EVENT, refresh);
     window.addEventListener("tradehq:portfolio-updated", refresh);
     window.addEventListener("focus", refresh);
+    window.addEventListener("storage", onStorage);
     return () => {
       window.removeEventListener(JOURNEY_EVENT, refresh);
+      window.removeEventListener(COURSE_PROGRESS_EVENT, refresh);
       window.removeEventListener("tradehq:portfolio-updated", refresh);
       window.removeEventListener("focus", refresh);
+      window.removeEventListener("storage", onStorage);
     };
   }, []);
 
@@ -177,9 +186,9 @@ export default function BeginnerJourney() {
         <section className="mt-6 grid md:grid-cols-2 gap-4">
           <Card className="p-5">
             <h2 className="font-semibold flex gap-2 items-center"><RotateCcw className="w-4 h-4 text-primary" /> Resume a course</h2>
-            <p className="mt-2 text-sm text-muted-foreground">Your course and five-step journey progress appear together on the Learn dashboard. Resume a half-finished lesson here or see everything you have completed.</p>
+            <p className="mt-2 text-sm text-muted-foreground">Resume your unfinished lesson, or follow the next approved course in your learning path. When a new course is published, this recommendation refreshes automatically without erasing your saved progress.</p>
             <Link className="mt-3 inline-flex gap-1 text-sm font-semibold text-primary" to={recentCourse?.href ?? "/courses"}>
-              {recentCourse ? `Continue: ${recentCourse.title}` : "Browse structured courses"} <ArrowRight className="w-4 h-4" />
+              {recentCourse ? `${recentCourse.inProgress ? "Resume" : "Next lesson"}: ${recentCourse.title}` : "Browse structured courses"} <ArrowRight className="w-4 h-4" />
             </Link>
           </Card>
           <Card className="p-5">
@@ -187,6 +196,31 @@ export default function BeginnerJourney() {
             <p className="mt-2 text-sm text-muted-foreground">Daily Practice is available throughout the journey, not only after completion. Use its short exercises to reinforce lessons.</p>
             <Link className="mt-3 inline-flex gap-1 text-sm font-semibold text-primary" to="/daily">Open Daily Practice <ArrowRight className="w-4 h-4" /></Link>
           </Card>
+        </section>
+        <section className="mt-6 rounded-2xl border border-border bg-card/80 p-5 sm:p-6" aria-label="Approved course releases in your journey">
+          <div className="flex items-start justify-between gap-3 flex-wrap">
+            <div>
+              <h2 className="font-semibold text-lg flex items-center gap-2"><BookOpen className="w-5 h-5 text-primary" /> Courses added to your journey</h2>
+              <p className="mt-1 text-sm text-muted-foreground max-w-2xl">Owner-approved course releases appear here automatically—including monthly releases. AI-generated drafts never enter your journey before publication. Your earlier lesson completions stay saved.</p>
+            </div>
+            <Button type="button" variant="outline" size="sm" onClick={() => void refreshCatalog()}>Check for courses</Button>
+          </div>
+          {courseCatalogError && <p role="status" className="mt-3 text-sm text-amber-600">The newest approved catalog could not be loaded. Existing courses are still available.</p>}
+          {newPublishedCourses.length > 0 ? (
+            <div className="grid md:grid-cols-2 gap-3 mt-4">
+              {newPublishedCourses.map(course => {
+                const lessonsDone = course.lessons.filter(lesson => courseProgress.tracks[course.slug]?.lessons[lesson.slug]?.status === "completed").length;
+                const inProgress = course.lessons.find(lesson => courseProgress.tracks[course.slug]?.lessons[lesson.slug]?.status === "in-progress");
+                return (
+                  <Link key={course.slug} to={inProgress ? `/courses/${course.slug}/${inProgress.slug}` : `/courses/${course.slug}`} className="rounded-xl border border-border p-4 hover:border-primary/60 transition-colors">
+                    <strong className="block text-sm">{course.title}</strong>
+                    <p className="mt-1 text-xs text-muted-foreground">{lessonsDone}/{course.lessons.length} lessons complete · {inProgress ? "Resume current lesson" : "Explore course"} </p>
+                    <span className="mt-2 inline-flex items-center gap-1 text-sm text-primary font-semibold">Continue learning <ArrowRight className="w-4 h-4" /></span>
+                  </Link>
+                );
+              })}
+            </div>
+          ) : !courseCatalogError ? <p className="mt-4 text-sm text-muted-foreground">No newly published catalog additions loaded yet. Your existing courses and progress remain available.</p> : null}
         </section>
         <p className="mt-6 text-xs text-muted-foreground flex gap-2 items-center"><ShieldCheck className="h-4 w-4" /> TradeHQ is educational simulation software. No investment returns or market execution are promised.</p>
       </main>
