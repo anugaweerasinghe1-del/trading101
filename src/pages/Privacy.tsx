@@ -109,7 +109,7 @@ export default function Privacy() {
               },
               {
                 question: "Where is my simulated portfolio stored?",
-                answer: "Guest portfolios are stored in your browser. Account cash, positions and server-recorded trades are stored with Supabase and restore across devices when available. Earlier guest history, journals and course progress remain browser-held.",
+                answer: "Guest portfolios are stored in your browser. Account cash, positions and server-recorded trades are stored with Supabase and restore across devices when available. Earlier guest trading history and journals remain browser-held; signed-in lesson and beginner-journey progress may also be saved to your private account and synchronized between devices.",
               },
               {
                 question: "Does TradeHQ use analytics or advertising cookies?",
