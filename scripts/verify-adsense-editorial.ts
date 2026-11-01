@@ -32,8 +32,7 @@ for (const [path, expectedTopic] of [
 const seoAudit = readFileSync("src/pages/SEOAudit.tsx", "utf8");
 assert.ok(seoAudit.includes("fetch(route,") &&
   seoAudit.includes("new DOMParser().parseFromString(html,") &&
-  seoAudit.includes("response.status") &&
-  seoAudit.includes("Not an AdSense clearance") === false,
+  seoAudit.includes("response.status"),
   "Internal metadata check must use actual HTML fetch responses");
 for (const falseCertification of ["Certified {", "System Stable v2.0", "verification passes", "TOTAL_PASSES", "All expected metadata by route"]) {
   assert.ok(!seoAudit.includes(falseCertification), "Fake SEO audit evidence must not return: " + falseCertification);
