@@ -29,6 +29,10 @@ export function GuidedNextLesson() {
   }, []);
 
   const next = buildLearningOverview(tracks, progress, readJourney()).next;
+  const hasCourseActivity = Object.values(progress.tracks).some(track =>
+    Object.values(track.lessons).some(lesson => lesson.status === "completed" || lesson.status === "in-progress"));
+  const action = next?.reason === "Resume your unfinished lesson" ? "Continue lesson"
+    : hasCourseActivity ? "Take next lesson" : "Start your first lesson";
   if (!next) {
     return isPending ? null : (
       <Card className="p-5 border border-border">
@@ -54,7 +58,7 @@ export function GuidedNextLesson() {
         </div>
         <Link to={next.href}
           className="inline-flex shrink-0 max-w-full items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-primary text-primary-foreground font-semibold hover:opacity-90 transition whitespace-normal">
-          {next.inProgress ? "Resume lesson" : "Take next lesson"} <ArrowRight className="w-4 h-4" />
+          {action} <ArrowRight className="w-4 h-4" />
         </Link>
       </div>
     </Card>
