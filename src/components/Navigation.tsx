@@ -152,7 +152,7 @@ export function Navigation() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" sideOffset={10}
-                className="w-60 max-h-[calc(100dvh-7rem)] overflow-y-auto overscroll-contain rounded-xl border border-border bg-popover/95 p-1.5 shadow-2xl backdrop-blur-xl" aria-label="More site pages"
+                className="w-60 max-h-[calc(100dvh-7rem)] overflow-y-auto overscroll-contain rounded-xl border border-border bg-popover/95 p-1.5 shadow-2xl backdrop-blur-xl" aria-label="More site pages">
                 {moreGroups.map((group, index) => (
                   <div key={group.label}>
                     {index > 0 && <DropdownMenuSeparator className="my-1" />}
