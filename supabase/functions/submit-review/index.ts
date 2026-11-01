@@ -57,6 +57,7 @@ serve(async (req) => {
       content: cleanContent,
       rating: r,
       ip_hash,
+      is_visible: false,
     });
 
     if (error) {
@@ -68,7 +69,7 @@ serve(async (req) => {
       throw error;
     }
 
-    return new Response(JSON.stringify({ ok: true }), {
+    return new Response(JSON.stringify({ ok: true, status: "pending_moderation" }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   } catch (e) {
