@@ -19,6 +19,7 @@ const remote=parseCourseProgress(JSON.stringify({
 }));
 const merged=mergeCourseRecords(local,remote);
 assert.equal(merged.tracks.intro.lessons.first.status,"completed");
+assert.deepEqual(merged.tracks.intro.lessons.first,local.tracks.intro.lessons.first,"Do not add or rewrite fields on completed lessons");
 assert.equal(merged.tracks.intro.lessons.second.scrolledPct,81);
 assert.equal(merged.tracks.intro.lessons.second.quizAnswers?.["0"],2);
 assert.equal(merged.tracks.intro.lessons.second.quizAnswers?.["1"],1);
