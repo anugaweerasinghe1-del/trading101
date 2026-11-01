@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense, useEffect, useLayoutEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -71,6 +71,61 @@ const Challenge = lazy(() => import("./pages/Challenge"));
 const queryClient = new QueryClient({
   defaultOptions: { queries: { staleTime: 1000 * 60 * 5 } },
 });
+
+/** React Router does not reset the browser's scroll position automatically.
+ * Force new page visits (including browser back/forward) to begin at the top.
+ * Deliberate #section deep links are the only exception.
+ */
+function RouteScrollManager() {
+  const { pathname, hash } = useLocation();
+
+  useLayoutEffect(() => {
+    const previous = window.history.scrollRestoration;
+    window.history.scrollRestoration = "manual";
+    return () => { window.history.scrollRestoration = previous; };
+  }, []);
+
+  useLayoutEffect(() => {
+    if (!hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      // A lazy route may complete after navigation. The next frame keeps
+      // the viewport anchored to the beginning instead of the previous page.
+      const frame = requestAnimationFrame(() => window.scrollTo({ top: 0, left: 0, behavior: "instant" }));
+      return () => cancelAnimationFrame(frame);
+    }
+
+    // Respect intentional deep links after the lazy route has rendered.
+    let id: string;
+    try { id = decodeURIComponent(hash.slice(1)); }
+    catch { id = hash.slice(1); }
+    const jumpToAnchor = () => {
+      const element = document.getElementById(id);
+      if (!element) return false;
+      window.scrollTo({ top: Math.max(0, element.getBoundingClientRect().top + window.scrollY - 88), behavior: "instant" });
+      return true;
+    };
+    const attempts = [0, 250, 750].map(delay => window.setTimeout(jumpToAnchor, delay));
+    return () => attempts.forEach(window.clearTimeout);
+  }, [pathname, hash]);
+
+  return null;
+}
+
+/** Sync a trade made in a different browser tab without writing back to
+ * storage. The same-tab event is already emitted by savePortfolio().
+ */
+function CrossTabPortfolioSync() {
+  useEffect(() => {
+    const onStorage = (event: StorageEvent) => {
+      if (event.key === "tradehq_portfolio") {
+        window.dispatchEvent(new Event("tradehq:portfolio-updated"));
+      }
+    };
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
+  }, []);
+  return null;
+}
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -188,6 +243,8 @@ const App = () => (
         <Sonner position="top-center" richColors closeButton />
         <BrowserRouter>
           <AuthProvider>
+            <RouteScrollManager />
+            <CrossTabPortfolioSync />
             <AnimatedRoutes />
             <RoutePublisherNotes />
             <MobileBottomNav />
