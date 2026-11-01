@@ -152,18 +152,18 @@ export function Navigation() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" sideOffset={10}
-                className="w-60 rounded-xl border border-border bg-popover/95 p-2 shadow-2xl backdrop-blur-xl">
+                className="w-60 max-h-[calc(100dvh-7rem)] overflow-y-auto overscroll-contain rounded-xl border border-border bg-popover/95 p-1.5 shadow-2xl backdrop-blur-xl" aria-label="More site pages">
                 {moreGroups.map((group, index) => (
                   <div key={group.label}>
-                    {index > 0 && <DropdownMenuSeparator className="my-1.5" />}
-                    <DropdownMenuLabel className="px-2 py-1 text-[10px] uppercase tracking-[0.15em] text-muted-foreground">
+                    {index > 0 && <DropdownMenuSeparator className="my-1" />}
+                    <DropdownMenuLabel className="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-muted-foreground">
                       {group.label}
                     </DropdownMenuLabel>
                     {group.items.map(item => (
                       <DropdownMenuItem key={item.to} asChild
-                        className={cn("rounded-lg cursor-pointer text-[15px] min-h-10", isActive(item.to) && "bg-primary/10 text-primary")}>
+                        className={cn("rounded-md cursor-pointer text-[14px] min-h-9 py-1.5", isActive(item.to) && "bg-primary/10 text-primary")}>
                         <Link to={item.to} aria-current={isActive(item.to) ? "page" : undefined}>
-                          <item.icon className="mr-2.5 h-4 w-4" /> {item.label}
+                          <item.icon className="mr-2.5 h-4 w-4 shrink-0" /> {item.label}
                         </Link>
                       </DropdownMenuItem>
                     ))}
