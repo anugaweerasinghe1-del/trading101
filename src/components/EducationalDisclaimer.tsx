@@ -27,7 +27,7 @@ export function EducationalDisclaimer({ variant = "inline", className }: Props) 
         role="note"
         aria-label="Educational disclaimer"
         className={cn(
-          "text-[11px] leading-relaxed text-muted-foreground/80 text-center",
+          "text-[11px] leading-relaxed text-muted-foreground text-center",
           className
         )}
       >
@@ -42,7 +42,7 @@ export function EducationalDisclaimer({ variant = "inline", className }: Props) 
         role="note"
         aria-label="Educational disclaimer"
         className={cn(
-          "p-4 rounded-xl bg-white/[0.02] border border-white/[0.04] max-w-4xl mx-auto",
+          "p-4 rounded-xl bg-muted/60 border border-border/80 max-w-4xl mx-auto",
           className
         )}
       >
