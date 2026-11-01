@@ -27,6 +27,23 @@ for (const [path, expectedTopic] of [
 }
 
 
+// Prevent an internal SEO report from claiming certification based on guessed,
+// hard-coded titles rather than reading real response HTML.
+const seoAudit = readFileSync("src/pages/SEOAudit.tsx", "utf8");
+assert.ok(seoAudit.includes("fetch(route,") &&
+  seoAudit.includes("new DOMParser().parseFromString(html,") &&
+  seoAudit.includes("response.status") &&
+  seoAudit.includes("Not an AdSense clearance") === false,
+  "Internal metadata check must use actual HTML fetch responses");
+for (const falseCertification of ["Certified {", "System Stable v2.0", "verification passes", "TOTAL_PASSES", "All expected metadata by route"]) {
+  assert.ok(!seoAudit.includes(falseCertification), "Fake SEO audit evidence must not return: " + falseCertification);
+}
+const homepageHtml = readFileSync("index.html", "utf8");
+const homepageClient = readFileSync("src/pages/Index.tsx", "utf8");
+assert.ok(homepageHtml.includes("Rule-based educational mentor") &&
+  homepageClient.includes("Rule-based learning mentor"),
+  "Homepage meta copy must identify the actual authored rule-based educational feature");
+
 const wikiClientSource = readFileSync("src/pages/WikiTerm.tsx", "utf8");
 assert.ok(
   wikiClientSource.includes("<title>{term.term} — Explanation & Learning Exercise | TradeHQ Wiki</title>"),
