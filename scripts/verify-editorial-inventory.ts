@@ -6,7 +6,6 @@ import { ASSET_REFERENCES } from "../src/lib/assetReferences";
 import { LEARN_ARTICLES } from "../src/lib/learnArticles";
 import { ARTICLE_REFERENCES } from "../src/lib/articleReferences";
 import { GLOSSARY_WORKSHEETS } from "../src/lib/glossaryWorksheets";
-import { ARTICLE_REFERENCES } from "../src/lib/articleReferences";
 const data = await loadSiteData();
 const routes = uniqueRoutes();
 const content = await buildContentMap();
