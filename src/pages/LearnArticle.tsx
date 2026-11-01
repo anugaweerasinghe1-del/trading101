@@ -48,7 +48,7 @@ export default function LearnArticle() {
     mainEntityOfPage: { "@type": "WebPage", "@id": articleUrl },
     url: articleUrl,
 
-    author: { "@type": "Organization", name: "TradeHQ" },
+    author: { "@type": "Person", name: "Anuga Weerasinghe", url: `${DOMAIN}/about` },
     publisher: {
       "@type": "Organization",
       name: "TradeHQ",
