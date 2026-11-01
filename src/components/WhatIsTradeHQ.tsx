@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
  */
 export function WhatIsTradeHQ() {
   return (
-    <section className="py-24 bg-[hsl(0_0%_3%)] relative overflow-hidden">
+    <section className="py-24 bg-background relative overflow-hidden">
       {/* Top divider glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[1px] bg-gradient-to-r from-transparent via-primary/15 to-transparent" />
 
