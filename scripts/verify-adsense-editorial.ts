@@ -52,6 +52,10 @@ assert.ok(homepageHtml.includes("Rule-based educational mentor") &&
 // Contradicting the storage model would mislead learners and site reviewers.
 const privacyCopy = readFileSync("src/lib/privacyCopy.ts", "utf8");
 const crawlerCopy = readFileSync("scripts/staticCopyExtra.ts", "utf8");
+const contactCopy = readFileSync("src/pages/Contact.tsx", "utf8");
+assert.match(contactCopy, /signed-in lesson completion/);
+assert.match(contactCopy, /synced privately between devices/);
+assert.ok(!contactCopy.includes("badges and lesson progress remain browser-held"), "Contact page must not contradict signed-in learning sync");
 assert.match(privacyCopy, /lesson completion, unfinished quiz answers, reading position and first-trade journey progress/);
 assert.match(privacyCopy, /saved privately in Supabase/);
 assert.ok(!privacyCopy.includes("Journals and course progress remain browser-held."),
