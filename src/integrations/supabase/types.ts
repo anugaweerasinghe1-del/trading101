@@ -14,6 +14,12 @@ export type Database = {
   }
   public: {
     Tables: {
+      user_learning_progress: {
+        Row: { user_id: string; courses: Json; journey: Json; updated_at: string }
+        Insert: { user_id: string; courses?: Json; journey?: Json; updated_at?: string }
+        Update: { user_id?: string; courses?: Json; journey?: Json; updated_at?: string }
+        Relationships: []
+      }
       api_rate_limits: {
         Row: {
           bucket: string
