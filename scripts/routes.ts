@@ -254,7 +254,7 @@ export function buildRoutes(): RouteMeta[] {
     title: "Trader Leaderboard — Top Practice Portfolios | TradeHQ",
     description: `Community practice board for public TradeHQ accounts. Ranked portfolios use server-recorded simulated trades, cached provider quotes or fixed simulator prices. Earlier browser-reported summaries appear separately as previous results.`,
     h1: "Trader Leaderboard",
-    summary: `New accounts start public and can switch private. All public members appear without a minimum trade count. Comparable portfolios receive practice ranks after their first server-recorded trade. Held asset prices are refreshed in the background, with quote age and simulation labels. Previous browser-reported results are labelled separately from current rankings; practice results are not audited investment returns.`,
+    summary: `New accounts start private and can opt into public visibility. All public members appear without a minimum trade count. Comparable portfolios receive practice ranks after their first server-recorded trade. Held asset prices are refreshed in the background, with quote age and simulation labels. Previous browser-reported results are labelled separately from current rankings; practice results are not audited investment returns.`,
     priority: "0.7",
     changefreq: "daily",
   });

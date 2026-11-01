@@ -511,7 +511,7 @@ export default function Leaderboard() {
                 },
                 {
                   title: "You control visibility",
-                  body: "New profiles start public and appear without a minimum trade count. You can make your profile private at any time from your trader profile page.",
+                  body: "New profiles start private. To appear in community results, you can explicitly enable public visibility from your trader profile page. Existing members keep their current choice.",
                 },
               ].map((c) => (
                 <div key={c.title} className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5">

@@ -167,7 +167,7 @@ export default function Reviews() {
     setName("");
     setContent("");
     setRating(5);
-    toast.success("Thanks! Your review was submitted.");
+    toast.success("Thanks! Your review was received and is awaiting moderation before public display.");
     load();
   };
 
