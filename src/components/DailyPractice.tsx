@@ -8,7 +8,7 @@ import { practiceDate, validateBatch, type DailyBatch, type DailyExercise } from
 
 export function PracticeVisual({ exercise }: { exercise: DailyExercise }) {
   const max = Math.max(1, ...exercise.visual.bars.map(b => b.value));
-  return <figure className="rounded-2xl border border-white/10 bg-black/20 p-4 my-6">
+  return <figure className="rounded-2xl border border-border/70 bg-card/80 p-4 my-6">
     <figcaption className="text-xs text-muted-foreground mb-4">{exercise.visual.caption} · {exercise.visual.unit}</figcaption>
     <div className="space-y-3">{exercise.visual.bars.map((b, i) => <div key={i}>
       <div className="flex justify-between gap-4 text-sm mb-1"><span>{b.label}</span><span className="font-mono tabular-nums">{b.value.toLocaleString(undefined, { maximumFractionDigits: 4 })}</span></div>
@@ -62,7 +62,7 @@ export function DailyPractice({ date, open, onOpen, onClose, onComplete }: { dat
       <button onClick={onOpen} aria-expanded={false} aria-controls="case-study-content" className="shrink-0 inline-flex justify-center items-center gap-2 bg-primary text-primary-foreground rounded-xl px-5 py-3 font-semibold text-sm">{answered ? done ? 'Review case study' : 'Continue case study' : 'Start case study'}<ArrowRight className="w-4 h-4" /></button>
     </div> : <div id="case-study-content" className="mt-5">
       <div className="flex justify-between items-center gap-3 mb-4"><p className="text-xs text-muted-foreground">Read the case first. Use its assumptions; these are not live market prices.</p><button onClick={onClose} aria-expanded={true} aria-controls="case-study-content" className="text-xs text-muted-foreground inline-flex items-center gap-1 shrink-0">Close case<ChevronDown className="w-3 h-3" /></button></div>
-      <details open className="rounded-2xl border border-white/10 px-4 py-3">
+      <details open className="rounded-2xl border border-border/70 px-4 py-3">
         <summary className="cursor-pointer font-medium text-sm">Case briefing and follow-up situation</summary>
         <div className="space-y-4 mt-4">{exercise.scenario.split('\n\n').map((p, i) => <p key={i} className="text-base leading-relaxed text-foreground/85">{p}</p>)}</div>
         <PracticeVisual exercise={exercise} />
@@ -71,10 +71,10 @@ export function DailyPractice({ date, open, onOpen, onClose, onComplete }: { dat
         <div className="flex justify-between text-xs text-muted-foreground mb-2"><span>Case progress</span><span>{answered} of {total} answers checked</span></div>
         <div role="progressbar" aria-label="Case progress" aria-valuenow={answered} aria-valuemin={0} aria-valuemax={total} className="h-1.5 rounded-full bg-white/10"><div className="h-full rounded-full bg-primary transition-all" style={{ width: `${answered / total * 100}%` }} /></div>
       </div>
-      <div key={`${exercise.id}-${index}`} className="rounded-2xl border border-white/10 p-4 md:p-6">
+      <div key={`${exercise.id}-${index}`} className="rounded-2xl border border-border/70 p-4 md:p-6">
         <p className="text-xs text-primary mb-2">Question {index + 1} of {total} · {index < 3 ? 'Understand the starting case' : index < 7 ? 'Apply the follow-up' : 'Check the conclusions'}</p>
         <fieldset disabled={reviewed}><legend className="font-semibold leading-relaxed mb-4">{q.prompt}</legend>
-          <div className="space-y-2">{q.options.map((option, n) => <label key={n} className={`flex gap-3 items-start p-3 rounded-xl border ${reviewed ? '' : 'cursor-pointer'} ${reviewed && n === q.correctAnswer ? 'border-primary/50 bg-primary/10' : 'border-white/10 bg-black/10'}`}>
+          <div className="space-y-2">{q.options.map((option, n) => <label key={n} className={`flex gap-3 items-start p-3 rounded-xl border ${reviewed ? '' : 'cursor-pointer'} ${reviewed && n === q.correctAnswer ? 'border-primary/50 bg-primary/10' : 'border-border/70 bg-muted/60'}`}>
             <input type="radio" name={`practice-${exercise.id}-${index}`} checked={reviewed ? progress.answers[index] === n : pick === n} onChange={() => setPick(n)} className="mt-1 accent-primary shrink-0" />
             <span className="text-sm leading-relaxed">{option}{reviewed && n === q.correctAnswer && <span className="block text-primary text-xs mt-1">Correct answer</span>}{reviewed && progress.answers[index] === n && n !== q.correctAnswer && <span className="block text-muted-foreground text-xs mt-1">Your answer</span>}</span>
           </label>)}</div>
@@ -92,7 +92,7 @@ export function DailyPractice({ date, open, onOpen, onClose, onComplete }: { dat
         <nav aria-label="Review case answers" className="flex flex-wrap gap-2">{exercise.questions.map((item, i) => <button key={i} onClick={() => move(i)} aria-label={`Review question ${i + 1}: ${progress.answers[i] === item.correctAnswer ? 'correct' : 'needs review'}`} className={`w-9 h-9 rounded-lg text-sm border ${progress.answers[i] === item.correctAnswer ? 'border-primary/40 text-primary' : 'border-amber-400/40 text-amber-300'}`}>{i + 1}</button>)}</nav>
         <p className="text-sm font-medium">Case takeaway</p><p className="text-sm text-muted-foreground leading-relaxed">{exercise.reflectionGuide}</p>
       </div>}
-      <div className="mt-6 border-t border-white/10 pt-4"><p className="text-xs text-muted-foreground">Further reading</p><ul className="mt-2 space-y-1">{exercise.sources.map(s => <li key={s.url}><a href={s.url} target="_blank" rel="noopener noreferrer" className="text-xs text-primary underline underline-offset-4">{s.label}</a></li>)}</ul></div>
+      <div className="mt-6 border-t border-border/70 pt-4"><p className="text-xs text-muted-foreground">Further reading</p><ul className="mt-2 space-y-1">{exercise.sources.map(s => <li key={s.url}><a href={s.url} target="_blank" rel="noopener noreferrer" className="text-xs text-primary underline underline-offset-4">{s.label}</a></li>)}</ul></div>
     </div>}
     <p className="text-xs leading-relaxed text-muted-foreground mt-5">50 rotating cases. New banks are prepared every two months and wait for owner approval; revisits are review practice. Answers stay on this browser. {bank?.reviewer ? `Bank reviewed by ${bank.reviewer}.` : 'Authored starter bank.'}</p>
     {!storageOk && <p role="alert" className="text-xs text-amber-400 mt-2">Browser storage is unavailable. This attempt may not survive a refresh.</p>}
