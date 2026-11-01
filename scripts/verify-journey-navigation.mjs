@@ -2,6 +2,9 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 
 const navigation = readFileSync("src/components/Navigation.tsx", "utf8");
+const hero = readFileSync("src/components/PremiumHero.tsx", "utf8");
+assert.match(hero,/to="\/start"/, "Guided first-trade journey must be discoverable from the homepage");
+assert.match(hero,/to="\/trade"/, "Keep direct access to guest virtual trading");
 const bottom = readFileSync("src/components/MobileBottomNav.tsx", "utf8");
 const routes = readFileSync("src/App.tsx", "utf8");
 

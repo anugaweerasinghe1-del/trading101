@@ -168,7 +168,7 @@ export function buildRoutes(): RouteMeta[] {
   routes.push({
     path: "/",
     title: "TradeHQ — Free Paper Trading Simulator | $100K Virtual Cash (No Signup)",
-    description: `Practice stock, crypto, ETF, forex & commodities trading with ${BALANCE} virtual cash. No signup. AI mentor, simulated charts, portfolio tracking & 170 assets. Free educational trading simulator.`,
+    description: `Practise 170 simulated stocks, crypto, ETFs, forex and commodities with ${BALANCE} virtual cash. Rule-based learning mentor. No signup.`,
     h1: "TradeHQ — Free Paper Trading Simulator",
     summary: `Practice simulated trading across 170 assets with ${BALANCE} in virtual cash. No real money is involved. Learn order mechanics, portfolio tracking, and risk concepts across stocks, crypto, ETFs, forex and commodities.`,
     priority: "1.0",

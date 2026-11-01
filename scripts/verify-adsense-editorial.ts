@@ -37,6 +37,11 @@ assert.ok(seoAudit.includes("fetch(route,") &&
 for (const falseCertification of ["Certified {", "System Stable v2.0", "verification passes", "TOTAL_PASSES", "All expected metadata by route"]) {
   assert.ok(!seoAudit.includes(falseCertification), "Fake SEO audit evidence must not return: " + falseCertification);
 }
+const prerenderHome = routes.find(route => route.path === "/");
+assert.ok(prerenderHome?.description.includes("Rule-based learning mentor") &&
+  !/AI mentor|personalized market predictions|live advice/i.test(prerenderHome.description),
+  "Crawler-visible homepage description must describe the rule-based mentor accurately");
+
 const homepageHtml = readFileSync("index.html", "utf8");
 const homepageClient = readFileSync("src/pages/Index.tsx", "utf8");
 assert.ok(homepageHtml.includes("Rule-based educational mentor") &&
