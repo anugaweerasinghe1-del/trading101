@@ -4,9 +4,11 @@ import { ArrowRight, BookOpenCheck, Compass, RotateCcw, ShieldCheck } from "luci
 import { COURSE_PROGRESS_EVENT, COURSE_PROGRESS_KEY, loadProgress } from "@/lib/courseProgress";
 import { JOURNEY_EVENT, JOURNEY_KEY, readJourney } from "@/lib/beginnerJourney";
 import { buildLearningOverview, type LearningTrack } from "@/lib/learningOverview";
+import { useAuth } from "@/hooks/useAuth";
 
 /** One read-only dashboard for previously saved journey and structured-course progress. */
 export function LearningJourneyDashboard({ tracks }: { tracks: LearningTrack[] }) {
+  const { user } = useAuth();
   const [snapshot, setSnapshot] = useState(() => ({ course: loadProgress(), journey: readJourney() }));
   useEffect(() => {
     const refresh = () => setSnapshot({ course: loadProgress(), journey: readJourney() });
@@ -37,7 +39,7 @@ export function LearningJourneyDashboard({ tracks }: { tracks: LearningTrack[] }
           <p className="text-xs font-semibold uppercase tracking-[0.15em] text-primary">Your learning, connected</p>
           <h2 className="mt-1 text-2xl sm:text-3xl font-bold tracking-tight">Continue Learning</h2>
           <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-            Pick up your five-step first-trade journey and any unfinished course. Your progress is based on this browser's saved learning records.
+            Pick up your five-step first-trade journey and any unfinished course. Your learning progress is stored on this browser and, when signed in, synchronized privately to your account.
           </p>
         </div>
         <Link to="/courses" className="inline-flex items-center gap-2 text-sm font-semibold text-primary underline underline-offset-4">
@@ -78,7 +80,7 @@ export function LearningJourneyDashboard({ tracks }: { tracks: LearningTrack[] }
 
       <p className="mt-4 flex gap-2 items-start text-xs text-muted-foreground">
         <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0" />
-        Browser-only learning records are separate from verified account trades and portfolio JSON backups. Clearing site data may erase them; this dashboard does not award public rankings or certify investment ability.
+        {user ? "Signed-in learning records can synchronize across devices while online; they are separate from server-verified trades and public rankings." : "Guest learning records stay in this browser. Clearing site data may erase them; they do not award public rankings or certify investment ability."}
       </p>
     </section>
   );
