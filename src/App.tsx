@@ -14,6 +14,7 @@ import { recordVisit } from "@/lib/lastVisit";
 import { snapshotWatchlist } from "@/lib/watchlistDiff";
 import { ConsentBanner } from "@/components/ConsentBanner";
 import { CoursePublicationNotices } from "@/components/courses/CoursePublicationNotices";
+import { PortfolioLiveUpdates } from "@/components/PortfolioLiveUpdates";
 
 import Index from "./pages/Index";
 import { RoutePublisherNotes } from "./components/RoutePublisherNotes";
@@ -253,6 +254,7 @@ const App = () => (
             <WatchlistSnapshot />
             <ConsentBanner />
             <CoursePublicationNotices />
+            <PortfolioLiveUpdates />
           </AuthProvider>
         </BrowserRouter>
       </TooltipProvider>
