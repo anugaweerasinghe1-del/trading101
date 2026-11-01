@@ -93,7 +93,7 @@ export default function BeginnerJourney() {
               </div>
             ))}
           </div>
-          <p className="mt-3 text-xs text-muted-foreground">Your place is saved in this browser between visits. Downloading a portfolio backup protects the trading history; clearing all site data can still remove local learning progress.</p>
+          <p className="mt-3 text-xs text-muted-foreground">Your place is saved on this browser; when signed in, lesson and journey progress also sync privately to your account when online. Portfolio backups protect separate trading history, not course progress.</p>
         </Card>
 
         <Card className="p-5 sm:p-8 space-y-5" aria-live="polite">
