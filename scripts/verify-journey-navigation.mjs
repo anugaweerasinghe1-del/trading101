@@ -32,6 +32,9 @@ for (const path of links) assert.ok(routes.includes('path="'+path.split("#")[0]+
 assert.match(navigation, /<DropdownMenuTrigger asChild>/);
 assert.match(navigation, /<DropdownMenuContent align="end"/);
 assert.match(navigation, /max-h-\[calc\(100dvh-7rem\)\]/, "More menu must fit the viewport at 100% zoom");
+assert.match(navigation, /w-\[30rem\] max-w-\[calc\(100vw-1rem\)\]/, "Desktop More has two readable columns within viewport width");
+assert.match(navigation, /grid grid-cols-2 gap-x-2 gap-y-2/, "Keep sections visible without scrolling at ordinary desktop height");
+assert.ok(!navigation.includes('<DropdownMenuSeparator className="my-1" />'), "Section separators must not waste vertical space");
 assert.match(navigation, /overflow-y-auto overscroll-contain/, "Short desktop windows still need access to every menu link");
 assert.match(navigation, /rounded-md cursor-pointer text-\[14px\] min-h-9 py-1\.5/, "Compact menu items remain legible and clickable");
 assert.match(navigation, /<DropdownMenuLabel className="px-2 py-0\.5/, "Headings use compact but legible padding");
