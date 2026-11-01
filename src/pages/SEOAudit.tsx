@@ -1,203 +1,187 @@
-import { useState, useCallback } from "react";
+import { useCallback, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { NICHE_SYMBOLS } from "@/lib/nicheData";
-import { CheckCircle, XCircle, Loader2, Shield } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { CheckCircle, XCircle, Loader2, ShieldAlert } from "lucide-react";
 
 interface AuditResult {
   route: string;
   status: "pass" | "fail";
+  httpStatus: number;
   title: string;
-  titleLength: number;
   description: string;
-  descriptionLength: number;
+  canonical: string;
+  robots: string;
   errors: string[];
 }
 
-// All expected metadata by route
-const ROUTE_META: Record<string, { title: string; description: string }> = {
-  "/": {
-    title: "TradeHQ | The Ultimate AI-Powered Trading Simulator & Journal",
-    description: "Master the markets with TradeHQ. Practice trading Crypto, Stocks, and Forex with real-time data, AI-driven mentorship, and an automated trading journal. Start your legacy today.",
-  },
-  "/trade": {
-    title: "Real-Time Trading Terminal | Execute Simulator Trades on TradeHQ",
-    description: "Experience high-performance trading with our Obsidian Terminal. Features TradingView charts, one-click execution, and a Neural Mentor to guide your strategy and block revenge trading.",
-  },
-  "/markets": {
-    title: "Live Market Dashboard | Track Crypto, Stocks & Forex Trends",
-    description: "Stay ahead of the curve with our comprehensive market dashboard. Real-time price tracking, volatility alerts, and deep-dive technical analysis for over 50 global assets.",
-  },
-  "/portfolio": {
-    title: "Trading Portfolio & AI Journal | Track Your Performance Data",
-    description: "Analyze your trading history with advanced performance metrics. View your Ghost Journal entries, win/loss ratios, and personalized AI growth suggestions in one sleek dashboard.",
-  },
-  "/ai-mentor": {
-    title: "Neural AI Trading Mentor | Personalized Behavioral Analyst",
-    description: "Meet your personal trading coach. Our AI analyzes your portfolio to provide trend predictions, risk management warnings, and psychological support to improve your win rate.",
-  },
-  "/learn": {
-    title: "Learn Trading Strategy | Free Educational Guide for Beginners",
-    description: "From Pips to Portfolio management, master the art of trading. Our structured guides cover technical analysis, success psychology, and market mechanics for future-proof traders.",
-  },
-  "/learn-trading-guide": {
-    title: "Learn Trading Strategy | Free Educational Guide for Beginners",
-    description: "From Pips to Portfolio management, master the art of trading. Our structured guides cover technical analysis, success psychology, and market mechanics for future-proof traders.",
-  },
-  "/privacy": {
-    title: "Privacy Policy & Terms of Service | TradeHQ Transparency",
-    description: "Read the official terms and privacy guidelines for TradeHQ. We prioritize data transparency and provide a safe, simulated environment for financial education and practice.",
-  },
-  "/terms": {
-    title: "Privacy Policy & Terms of Service | TradeHQ Transparency",
-    description: "Read the official terms and privacy guidelines for TradeHQ. We prioritize data transparency and provide a safe, simulated environment for financial education and practice.",
-  },
-};
-
 const ALL_ROUTES = [
   "/", "/trade", "/markets", "/portfolio", "/learn", "/learn-trading-guide",
-  "/ai-mentor", "/privacy", "/terms",
-  ...NICHE_SYMBOLS.map(s => `/niche/${s.toLowerCase().replace('/', '-')}`),
+  "/ai-mentor", "/privacy", "/terms", "/about", "/contact", "/courses",
+  "/wiki/short-squeeze", "/wiki/rsi-divergence",
+  ...NICHE_SYMBOLS.map((symbol) => `/niche/${symbol.toLowerCase().replace("/", "-")}`),
 ];
+const ROUTES = [...new Set(ALL_ROUTES)];
+
+/**
+ * Read actual same-origin production-style HTML, not a hard-coded metadata
+ * table. This is a limited HTTP/HTML check; it is NOT a Google AdSense policy
+ * review, Search Console coverage report, JS UX audit, or CMP certification.
+ */
+async function inspect(route: string): Promise<AuditResult> {
+  const errors: string[] = [];
+  const base: AuditResult = {
+    route, status: "fail", httpStatus: 0, title: "", description: "",
+    canonical: "", robots: "", errors,
+  };
+  const controller = new AbortController();
+  const timeout = window.setTimeout(() => controller.abort(), 15000);
+  try {
+    const response = await fetch(route, {
+      method: "GET",
+      redirect: "follow",
+      cache: "no-store",
+      credentials: "same-origin",
+      signal: controller.signal,
+    });
+    base.httpStatus = response.status;
+    const finalUrl = new URL(response.url, window.location.origin);
+    if (!response.ok) errors.push(`HTTP ${response.status}`);
+    if (!response.headers.get("Content-Type")?.includes("text/html")) {
+      errors.push("Response did not declare HTML content");
+      return { ...base, status: "fail" };
+    }
+    const html = await response.text();
+    const page = new DOMParser().parseFromString(html, "text/html");
+    base.title = page.querySelector("head title")?.textContent?.trim() || "";
+    base.description = page.querySelector('head meta[name="description"]')?.getAttribute("content")?.trim() || "";
+    base.canonical = page.querySelector('head link[rel="canonical"]')?.getAttribute("href")?.trim() || "";
+    base.robots = page.querySelector('head meta[name="robots"]')?.getAttribute("content")?.trim() || "";
+    if (!base.title) errors.push("Missing HTML title");
+    if (!base.description) errors.push("Missing HTML meta description");
+    if (!base.robots) errors.push("No explicit robots meta; inspect default indexing");
+    // Non-indexable dynamic asset pages may intentionally lack a canonical.
+    // Report missing canonicals only when the response explicitly requests indexing.
+    if (base.robots.toLowerCase().includes("index") &&
+        !base.robots.toLowerCase().includes("noindex")) {
+      if (!base.canonical) {
+        errors.push("Indexed page missing canonical URL");
+      } else {
+        try {
+          const canonicalUrl = new URL(base.canonical, window.location.origin);
+          if (canonicalUrl.origin !== window.location.origin ||
+              canonicalUrl.pathname.replace(/\\/+$/, "") !== finalUrl.pathname.replace(/\\/+$/, "")) {
+            errors.push("Canonical differs from fetched URL: " + base.canonical);
+          }
+        } catch { errors.push("Invalid canonical URL"); }
+      }
+    }
+    // The fetch may have been redirected. That fact alone is not a failure.
+    return { ...base, status: errors.length ? "fail" : "pass" };
+  } catch (error) {
+    errors.push(error instanceof Error ? error.message : "Could not retrieve route");
+    return base;
+  } finally {
+    window.clearTimeout(timeout);
+  }
+}
 
 export default function SEOAudit() {
   const [results, setResults] = useState<AuditResult[]>([]);
   const [isRunning, setIsRunning] = useState(false);
-  const [passCount, setPassCount] = useState(0);
-  const [currentPass, setCurrentPass] = useState(0);
-  const TOTAL_PASSES = 5;
+  const [completed, setCompleted] = useState(0);
+  const [ran, setRan] = useState(false);
 
   const runAudit = useCallback(async () => {
+    if (isRunning) return;
     setIsRunning(true);
     setResults([]);
-    let allPassCount = 0;
-
-    for (let pass = 1; pass <= TOTAL_PASSES; pass++) {
-      setCurrentPass(pass);
-
-      const passResults: AuditResult[] = ALL_ROUTES.map(route => {
-        const errors: string[] = [];
-        const isNiche = route.startsWith("/niche/");
-        const symbol = isNiche ? route.split("/niche/")[1]?.toUpperCase().replace('-', '/') : null;
-
-        let titleEst = "";
-        let descEst = "";
-
-        if (ROUTE_META[route]) {
-          titleEst = ROUTE_META[route].title;
-          descEst = ROUTE_META[route].description;
-        } else if (isNiche && symbol) {
-          titleEst = `${symbol} — Asset Overview & Scenario Drivers | TradeHQ`;
-          descEst = `Practise ${symbol} with $100K virtual cash, simulated charts, portfolio tracking and educational mentor explanations. No real trades.`;
-        }
-
-        if (titleEst.length < 50) errors.push(`Title too short (${titleEst.length} chars, need 50+)`);
-        if (descEst.length < 120) errors.push(`Description under 120 chars (${descEst.length})`);
-
-        return {
-          route,
-          status: errors.length === 0 ? "pass" : "fail",
-          title: titleEst,
-          titleLength: titleEst.length,
-          description: descEst,
-          descriptionLength: descEst.length,
-          errors,
-        } as AuditResult;
-      });
-
-      allPassCount = passResults.filter(r => r.status === "pass").length;
-      setResults(passResults);
-
-      if (pass < TOTAL_PASSES) {
-        await new Promise(resolve => setTimeout(resolve, 400));
-      }
+    setCompleted(0);
+    setRan(false);
+    const checked: AuditResult[] = [];
+    // Bounded parallel requests avoid hammering the production host.
+    for (let offset = 0; offset < ROUTES.length; offset += 4) {
+      const batch = await Promise.all(ROUTES.slice(offset, offset + 4).map(inspect));
+      checked.push(...batch);
+      setResults([...checked]);
+      setCompleted(checked.length);
     }
-
-    setPassCount(allPassCount);
     setIsRunning(false);
-  }, []);
+    setRan(true);
+  }, [isRunning]);
 
-  const totalRoutes = ALL_ROUTES.length;
-  const allPassed = passCount === totalRoutes && !isRunning && results.length > 0;
+  const passing = results.filter(result => result.status === "pass").length;
+  const failing = results.length - passing;
 
   return (
     <>
       <Helmet>
-        <title>SEO Audit — Admin | TradeHQ</title>
+        <title>Live HTML Metadata Check — Admin | TradeHQ</title>
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
-
       <div className="min-h-screen bg-background flex flex-col">
         <Navigation />
-
-        <main className="flex-1 container mx-auto px-4 pt-24 pb-12 max-w-5xl space-y-8">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl font-bold tracking-tight-cyber">SEO Audit</h1>
-              <p className="text-sm text-muted-foreground mt-1">{totalRoutes} routes · {TOTAL_PASSES} verification passes</p>
-            </div>
-            <button
-              onClick={runAudit}
-              disabled={isRunning}
-              className="px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-primary/90 disabled:opacity-50 transition-all btn-squeeze"
-            >
-              {isRunning ? (
-                <span className="flex items-center gap-2"><Loader2 className="w-4 h-4 animate-spin" />Pass {currentPass}/{TOTAL_PASSES}...</span>
-              ) : "Run Audit"}
-            </button>
-          </div>
-
+        <main className="flex-1 container mx-auto px-4 pt-24 pb-12 max-w-5xl space-y-6">
+          <header>
+            <h1 className="text-2xl font-bold">Live HTML metadata check</h1>
+            <p className="text-sm text-muted-foreground mt-2">
+              Reads initial same-origin HTML of {ROUTES.length} routes and reports
+              HTTP status, title, description, canonical, and robots directives.
+              This is not an AdSense clearance certificate or a full rendered-page audit.
+            </p>
+          </header>
+          <button
+            type="button"
+            onClick={() => void runAudit()}
+            disabled={isRunning}
+            className="rounded-xl bg-primary px-5 py-3 font-semibold text-primary-foreground disabled:opacity-50"
+          >
+            {isRunning ? <span className="inline-flex items-center gap-2"><Loader2 className="h-4 w-4 animate-spin" /> Checking {completed}/{ROUTES.length}</span> : "Check live page HTML"}
+          </button>
           {results.length > 0 && (
-            <div className="space-y-3">
-              <div className="flex items-center gap-4 text-sm">
-                <span className="text-profit font-medium">{passCount} passed</span>
-                <span className="text-loss font-medium">{totalRoutes - passCount} failed</span>
-              </div>
-
-              <div className="glass-tactile border-chrome rounded-2xl overflow-hidden">
-                <table className="w-full text-xs">
-                  <thead>
-                    <tr className="border-b border-white/10">
-                      <th className="text-left px-4 py-3 text-muted-foreground">Route</th>
-                      <th className="text-left px-4 py-3 text-muted-foreground">Status</th>
-                      <th className="text-left px-4 py-3 text-muted-foreground hidden md:table-cell">Title (len)</th>
-                      <th className="text-left px-4 py-3 text-muted-foreground hidden md:table-cell">Desc (len)</th>
-                      <th className="text-left px-4 py-3 text-muted-foreground">Errors</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {results.map((r, i) => (
-                      <tr key={i} className="border-b border-white/5 last:border-0">
-                        <td className="px-4 py-2 font-mono text-foreground">{r.route}</td>
-                        <td className="px-4 py-2">
-                          {r.status === "pass" ? (
-                            <CheckCircle className="w-4 h-4 text-profit" />
-                          ) : (
-                            <XCircle className="w-4 h-4 text-loss" />
-                          )}
-                        </td>
-                        <td className="px-4 py-2 text-muted-foreground hidden md:table-cell truncate max-w-[200px]">{r.titleLength}</td>
-                        <td className="px-4 py-2 text-muted-foreground hidden md:table-cell">{r.descriptionLength}</td>
-                        <td className="px-4 py-2 text-loss">{r.errors.join(", ") || "—"}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+            <p className="text-sm text-muted-foreground" role="status">
+              {completed}/{ROUTES.length} checked · {passing} without detected metadata issues · {failing} requiring inspection
+            </p>
+          )}
+          {ran && (
+            <div className="rounded-xl border border-border bg-muted/30 p-4 text-sm" role="note">
+              <div className="flex items-center gap-2 font-semibold"><ShieldAlert className="h-4 w-4" /> Limited evidence only</div>
+              <p className="mt-2 text-muted-foreground">
+                {failing ? `${failing} routes need technical review.` : "No metadata errors detected among the inspected responses."}
+                {" "}A successful check does not verify Google indexing, original content,
+                consent messages, financial accuracy, browser hydration, all routes,
+                account status, or AdSense programme policies. Do not resubmit on this result alone.
+              </p>
             </div>
           )}
-
-          {allPassed && (
-            <div className="flex items-center justify-center py-8">
-              <div className="glass-tactile border-chrome rounded-2xl p-8 text-center space-y-3 animate-scale-in">
-                <Shield className="w-12 h-12 text-profit mx-auto" />
-                <h2 className="text-xl font-bold text-profit">System Stable v2.0</h2>
-                <p className="text-sm text-muted-foreground">All {totalRoutes} routes verified · {TOTAL_PASSES} passes completed · 0 errors</p>
-                <p className="text-xs text-muted-foreground/60">Certified {new Date().toISOString().split('T')[0]}</p>
-              </div>
-            </div>
-          )}
+          <div className="overflow-x-auto rounded-xl border border-border">
+            <table className="w-full min-w-[740px] text-xs">
+              <thead className="bg-muted/50">
+                <tr>
+                  {["Route", "HTTP", "Result", "Title", "Description", "Robots", "Findings"].map(h => (
+                    <th key={h} className="px-3 py-3 text-left">{h}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {results.map(result => (
+                  <tr key={result.route} className="border-t border-border align-top">
+                    <td className="px-3 py-3 font-mono">{result.route}</td>
+                    <td className="px-3 py-3">{result.httpStatus || "—"}</td>
+                    <td className="px-3 py-3">
+                      {result.status === "pass"
+                        ? <CheckCircle className="h-4 w-4 text-emerald-500" aria-label="No detected metadata issue" />
+                        : <XCircle className="h-4 w-4 text-red-500" aria-label="Needs review" />}
+                    </td>
+                    <td className="px-3 py-3">{result.title || "—"}</td>
+                    <td className="px-3 py-3">{result.description.slice(0, 130) || "—"}</td>
+                    <td className="px-3 py-3">{result.robots || "Unspecified"}</td>
+                    <td className="px-3 py-3">{result.errors.join("; ") || "—"}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </main>
       </div>
     </>
