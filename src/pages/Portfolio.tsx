@@ -348,10 +348,10 @@ export default function Portfolio() {
                     Track your virtual investments, analyze performance, and manage simulated risk.
                   </p>
                   <p className="mt-3 text-xs text-muted-foreground max-w-2xl leading-relaxed" data-portfolio-refresh-policy>
-                    Confirmed virtual trades update your cash, holdings and trade history immediately. While this dashboard is visible, available quotes are checked about once a minute; they may be delayed, cached or simulated. Closed markets, unavailable providers and a closed browser do not supply continuous live prices.
+                    Confirmed virtual trades update cash, holdings and trade history immediately. While TradeHQ is open, your portfolio syncs about every minute and when relevant server updates arrive. The server checks supported holdings' reference prices about every five minutes, even while you're offline. Provider data may be delayed, cached or unavailable; this is not a tick-by-tick live trading feed.
                   </p>
                   {user && <div className="text-xs text-muted-foreground mt-3 max-w-2xl leading-relaxed">
-                    <p>{PRICE_REFRESH_COPY} Account values reload every minute while this page is visible.</p>
+                    <p>{PRICE_REFRESH_COPY} Account values are checked while TradeHQ is open and whenever supported server updates arrive.</p>
                     <p className="mt-1">{accountPricing ? `${priceLabel(accountPricing.status)}. ${quoteTimeLabel(accountPricing.fetched, accountPricing.observed)}` : "Loading account prices…"}</p>
                     {accountError && <p role="status">Account refresh failed. Showing the last loaded account snapshot; retrying automatically.</p>}
                   </div>}
