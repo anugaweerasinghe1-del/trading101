@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS public.user_learning_progress (
   CONSTRAINT user_learning_journey_object CHECK (jsonb_typeof(journey)='object' AND pg_column_size(journey)<=10000)
 );
 ALTER TABLE public.user_learning_progress ENABLE ROW LEVEL SECURITY;
-REVOKE ALL ON TABLE public.user_learning_progress FROM PUBLIC,anon;
+REVOKE ALL ON TABLE public.user_learning_progress FROM PUBLIC,anon,authenticated;
 GRANT SELECT, INSERT, UPDATE ON TABLE public.user_learning_progress TO authenticated;
 DROP POLICY IF EXISTS "Read own educational progress" ON public.user_learning_progress;
 CREATE POLICY "Read own educational progress" ON public.user_learning_progress
