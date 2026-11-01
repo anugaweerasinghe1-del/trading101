@@ -138,7 +138,9 @@ const WikiTerm = () => {
 
               <p className="text-sm text-muted-foreground mb-6">
                 Published by TradeHQ. <Link to="/about" className="underline underline-offset-4">Site creator and editorial approach: Anuga Weerasinghe</Link>.
-                This page has no recorded editorial review date.
+                {" "}{worksheet?.sourceCheck
+                  ? `Limited source check: ${worksheet.sourceCheck.date}. ${worksheet.sourceCheck.scope} This is not independent professional review.`
+                  : "This page has no recorded editorial review date."}
               </p>
 
           {/* Short glossary definition retained for readers and content parity; the duplicate card is removed. */}

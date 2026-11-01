@@ -48,7 +48,7 @@ const DISC =
 const optionsTrack: CourseTrack = {
   slug: "options-trading-fundamentals",
   title: "Options Trading Fundamentals",
-  tagline: "Calls, puts, spreads and Greeks — decoded for beginners.",
+  tagline: "Intermediate options theory — contract and payoff worksheets, not executable orders.",
   description:
     "A structured introduction to listed options — from call contracts and the Greeks to defined-risk spread examples. Work through contract payoffs on paper; TradeHQ's spot simulator does not execute options contracts.",
   hero: optionsHero,
