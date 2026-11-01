@@ -180,7 +180,7 @@ export default function PublicTrader() {
                       color: data.stats.pnl_pct === null || data.stats.pnl_pct >= 0 ? "text-profit" : "text-loss",
                     },
                     { label: "Trades placed", value: String(data.stats.trades) },
-                    { label: "Price basis", value: priceLabel(data.stats.price_status) },
+                    { label: "Price basis", value: priceLabel(data.stats.price_status, data.stats.observed_at) },
                   ].map((k) => (
                     <Card key={k.label} className="p-5 bg-white/[0.02] border-white/10">
                       <p className="text-2xs uppercase tracking-widest text-muted-foreground mb-1">{k.label}</p>
