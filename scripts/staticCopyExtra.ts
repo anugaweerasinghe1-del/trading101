@@ -138,7 +138,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
     {
       h: "Privacy on the leaderboard",
       list: [
-        "New accounts start public. Your profile display name, profile fields and selected simulated statistics can appear on public pages; make your profile private to hide them.",
+        "New accounts start private. Only profiles that their owners explicitly make public show selected profile fields and simulated statistics.",
         "Only your chosen display name and simulated statistics appear — never an email address.",
         "You can stop publishing at any time and the entry is removed.",
       ],
@@ -146,7 +146,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
     {
       h: "Frequently asked",
       list: [
-        "Do I have to appear here? No. New profiles start public, but you can switch public visibility off at any time from your profile page.",
+        "Do I have to appear here? No. New profiles start private, and you may opt into public visibility at any time from your profile page.",
         "Is there a prize? No. There is no money, no entry fee and nothing to win.",
         "Can I see someone's trades? Only if that member independently opts in to showing recent current-cycle server-recorded practice orders on an otherwise public profile. Private journal entries and browser-only history never appear.",
         "How often does it update? Held assets are checked in the background every five minutes, with traditional instruments rotating through a limited batch. The visible board refreshes every minute. Provider delays and outages can leave older quotes; unsupported assets use fixed simulator prices.",
@@ -220,7 +220,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
       h: "How reviews are handled",
       list: [
         "Browser storage and server-side duplicate checks limit repeat submissions; these checks do not verify identity.",
-        "Submissions appear automatically and can be moderated after publication.",
+        "New reviews are held for moderation before appearing publicly; truthful critical feedback may be approved.",
         "We publish criticism. A page of only five-star reviews would tell you nothing.",
         "Reviews are about the software — usability, content quality, bugs — not about trading returns.",
       ],
@@ -302,7 +302,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
         "Portfolio projections are proposed as a way to explore hypothetical inputs, not as a promise of future returns.",
         "Embeddable price widgets are proposed; their data sources, update frequency and access requirements are not specified.",
         "These proposals are not available execution tools. Options and futures lessons remain conceptual; current simulator practice uses supported spot instruments.",
-        "Public profile sharing requires public visibility and uses the /trader/{username} address. New profiles start public; visibility can be switched off at any time. The /trader/me route is an account view, not a public profile link.",
+        "Public profile sharing requires public visibility and uses the /trader/{username} address. New profiles start private; members can opt into public visibility at any time. The /trader/me route is an account view, not a public profile link.",
       ],
     },
     {
@@ -378,7 +378,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
         "Contact messages: kept only as long as needed to answer you.",
         "Reviews: published with your chosen display name, and removable on request.",
         "Accounts: email address and server-recorded practice trades and holdings; deletable on request. Guest practice, journal notes, course progress and Daily reflections remain browser-specific unless a feature explicitly states otherwise.",
-        "Public trader profiles and duels: profile fields and selected simulated statistics can be public. New accounts start public, and you can make your profile private at any time.",
+        "Public trader profiles and duels: profile fields and selected simulated statistics can be public. New accounts start private; you can make your profile public from your profile page.",
       ],
     },
     {
