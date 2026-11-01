@@ -9,9 +9,9 @@ import { motion } from "framer-motion";
  */
 export function PremiumHero() {
   return (
-    <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden">
+    <section className="thq-premium-hero relative min-h-[100vh] flex items-center justify-center overflow-hidden">
       {/* Deep space base */}
-      <div className="absolute inset-0 bg-[hsl(0_0%_2%)]" />
+      <div className="absolute inset-0 bg-background" />
 
       {/* Animated mesh gradient background */}
       <div className="absolute inset-0">
@@ -51,7 +51,7 @@ export function PremiumHero() {
       />
 
       {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[hsl(0_0%_2%)] to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-background to-transparent" />
 
       <div className="relative z-10 container mx-auto px-6 text-center max-w-6xl pt-24">
         {/* Live status pill */}
@@ -81,7 +81,7 @@ export function PremiumHero() {
         >
           <span className="text-foreground">Free Paper Trading.</span>
           <br />
-          <span className="text-transparent bg-clip-text" style={{
+          <span className="thq-gradient-heading text-transparent bg-clip-text" style={{
             backgroundImage: 'linear-gradient(135deg, hsl(180 70% 50%) 0%, hsl(152 60% 50%) 50%, hsl(280 60% 55%) 100%)'
           }}>
             Use Virtual Cash.
@@ -107,13 +107,13 @@ export function PremiumHero() {
         >
           <Button
               size="lg"
-              className="group relative text-base px-12 py-7 bg-primary hover:bg-primary/90 transition-all duration-300 rounded-2xl min-h-[60px] font-bold overflow-hidden text-black"
-              style={{ boxShadow: '0 0 40px hsl(168 100% 50% / 0.45), 0 0 80px hsl(168 100% 50% / 0.18)', color: '#000' }}
+              className="group relative text-base px-12 py-7 bg-primary hover:bg-primary/90 transition-all duration-300 rounded-2xl min-h-[60px] font-bold overflow-hidden text-primary-foreground"
+              style={{ boxShadow: '0 0 40px hsl(var(--primary) / 0.25)' }}
              asChild>
 <Link to="/trade">
-              <span className="relative z-10 flex items-center text-black font-bold tracking-tight">
+              <span className="relative z-10 flex items-center text-primary-foreground font-bold tracking-tight">
                 Start Trading Free
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1.5 transition-transform text-black" />
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1.5 transition-transform text-primary-foreground" />
               </span>
             </Link>
 </Button>
