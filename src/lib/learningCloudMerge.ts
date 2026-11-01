@@ -8,10 +8,13 @@ function mergeLesson(a: LessonProgress | undefined,b: LessonProgress | undefined
   if (!a) return b!;
   if (!b) return a;
   if (a.status==="completed" || b.status==="completed") {
-    const selected = a.status==="completed" ? a : b;
-    const other = a.status==="completed" && b.status==="completed" ? b : undefined;
-    return {...selected, score: Math.max(selected.score ?? 0, other?.score ?? 0),
-      completedAt: selected.completedAt ?? other?.completedAt, scrolledPct:100, quizAnswers:undefined};
+    // An existing completion is immutable relative to an unfinished state:
+    // changing even a seemingly harmless field breaks exact saved progress.
+    if (a.status==="completed" && b.status!=="completed") return a;
+    if (b.status==="completed" && a.status!=="completed") return b;
+    const selected = preferA ? a : b;
+    const higherScore = Math.max(a.score ?? -1, b.score ?? -1);
+    return higherScore > (selected.score ?? -1) ? {...selected, score:higherScore} : selected;
   }
   if (a.status==="in-progress" || b.status==="in-progress") return {
     ...(preferA ? a:b), status:"in-progress", scrolledPct: Math.max(a.scrolledPct??0,b.scrolledPct??0),
