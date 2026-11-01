@@ -561,7 +561,9 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
   for (const a of d.LEARN_ARTICLES as any[]) {
     map.set(`/learn/article/${a.slug}`, {
       sections: [
-        { h: "Publisher and editorial transparency", p: ["Published by TradeHQ. Site creator: Anuga Weerasinghe. This page has no recorded editorial review date; the About page explains the site's editorial approach."] },
+        { h: "Publisher and editorial transparency", p: [a.sourceCheck
+          ? `Published by TradeHQ. Site creator: Anuga Weerasinghe. A limited source check dated ${a.sourceCheck.date} is documented below, with its precise scope. This is not a full independent editorial or professional review; no independent professional review is claimed.`
+          : "Published by TradeHQ. Site creator: Anuga Weerasinghe. This page has no recorded editorial review date. No independent professional review is claimed; see About for the editorial approach."] },
         { h: "Summary", p: [a.summary] },
         ...(a.sourceCheck ? [{ h: "Source-check scope", p: [`Source check: ${a.sourceCheck.date}. ${a.sourceCheck.scope}`] }] : []),
         ...a.sections.map((s: any) => ({ h: s.heading, p: s.paragraphs })),

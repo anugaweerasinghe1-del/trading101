@@ -29,6 +29,14 @@ for (const article of LEARN_ARTICLES) {
   assert.ok((ARTICLE_REFERENCES[article.slug] || []).some(reference => /^https:\/\//.test(reference.href)),
     `${article.slug}: published article must retain a real external HTTPS source`);
 }
+for (const article of LEARN_ARTICLES) {
+  const editorial = content.get(`/learn/article/${article.slug}`)?.sections.find(section => section.h === "Publisher and editorial transparency");
+  assert.ok(editorial?.p?.some(paragraph =>
+    paragraph.includes(`limited source check dated ${article.sourceCheck!.date}`) &&
+    paragraph.includes("no independent professional review is claimed") &&
+    !paragraph.includes("no recorded editorial review date")),
+    `${article.slug}: show limited dated source check accurately in crawler-visible note`);
+}
 console.log("PASS all static article source checks are scoped and references retained");
 for (const route of routes.filter(route => route.path.startsWith("/trade/") && !route.noindex)) {
   const id = route.path.split("/").pop()!;
