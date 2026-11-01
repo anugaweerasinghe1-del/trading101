@@ -48,6 +48,17 @@ assert.ok(homepageHtml.includes("Rule-based educational mentor") &&
   homepageClient.includes("Rule-based learning mentor"),
   "Homepage meta copy must identify the actual authored rule-based educational feature");
 
+// Privacy copy must track the live optional account learning-sync feature.
+// Contradicting the storage model would mislead learners and site reviewers.
+const privacyCopy = readFileSync("src/lib/privacyCopy.ts", "utf8");
+const crawlerCopy = readFileSync("scripts/staticCopyExtra.ts", "utf8");
+assert.match(privacyCopy, /lesson completion, unfinished quiz answers, reading position and first-trade journey progress/);
+assert.match(privacyCopy, /saved privately in Supabase/);
+assert.ok(!privacyCopy.includes("Journals and course progress remain browser-held."),
+  "Outdated browser-only course retention statement must not reappear");
+assert.ok(!crawlerCopy.includes("course progress and streaks remain browser-held"),
+  "Crawler text must disclose signed-in private learning sync");
+
 const wikiClientSource = readFileSync("src/pages/WikiTerm.tsx", "utf8");
 assert.ok(
   wikiClientSource.includes("<title>{term.term} — Explanation & Learning Exercise | TradeHQ Wiki</title>"),
