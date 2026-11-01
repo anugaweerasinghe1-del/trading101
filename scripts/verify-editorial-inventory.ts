@@ -64,4 +64,14 @@ for (const term of data.tradingGlossary) {
   }
 }
 console.log("PASS all glossary exercises and visible HTTPS references");
+for (const slug of ["short-squeeze", "rsi-divergence"]) {
+  const note = GLOSSARY_WORKSHEETS[slug]?.sourceCheck;
+  assert.equal(note?.date, "2026-11-01", `${slug}: expected real, scoped check date`);
+  assert.ok(note.scope.length > 130 && /no |not /i.test(note.scope),
+    `${slug}: source-check limitations missing`);
+  const published = content.get(`/wiki/${slug}`)?.sections.find(section => section.h === "Publisher and editorial transparency");
+  assert.ok(published?.p?.some(p => p.includes("2026-11-01") && p.includes("not independent professional review")),
+    `${slug}: limited check not visible to crawlers`);
+}
+console.log("PASS narrow, truthful dated glossary checks");
 console.log("PASS complete published course manifest/quizzes, individual asset references/worksheets and scoped country sourcing");
