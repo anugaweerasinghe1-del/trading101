@@ -140,8 +140,8 @@ export default function TraderProfile() {
                 <div>
                   <h2 className="font-semibold">Public profile visibility</h2>
                   <p className="text-xs text-muted-foreground mt-1 max-w-xl">
-                    Profiles start public so they can appear in TradeHQ's community features. Turn this off at any
-                    time to hide your username, profile details and selected practice statistics from public pages.
+                    New accounts start private. Turn this on only if you want your username, profile details and
+                    selected simulated statistics to appear on public community pages. Existing members keep their chosen visibility.
                   </p>
                 </div>
                 <Switch
