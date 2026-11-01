@@ -16,8 +16,14 @@ export function quoteCoverageForHoldings(
       return [id, { status: "simulator", note: "No provider quote; fixed simulator reference used", fetchedAt: null }];
     const fetchedAt = typeof row.updated_at === "string" ? row.updated_at : null;
     const observedAt = typeof row.observed_at === "string" ? row.observed_at : null;
-    if (row.quote_status === "previous_close")
+    if (row.quote_status === "previous_close") {
+      // Weekends and holidays can legitimately span several calendar days,
+      // but a weeks-old observation is not an up-to-date previous close.
+      // A fresh cache write must never disguise an old provider observation.
+      if (!Number.isFinite(age(observedAt, now)) || age(observedAt, now) > 7 * 24 * 60 * 60_000)
+        return [id, { status: "stale", note: "Last reported session close is over 7 days old or undated", fetchedAt }];
       return [id, { status: "previous_close", note: "Previous trading-session close; not a live price", fetchedAt }];
+    }
     if (!Number.isFinite(age(fetchedAt,now)) || age(fetchedAt,now) > 15*60_000)
       return [id, { status: "stale", note: "Provider cache last refreshed over 15 minutes ago", fetchedAt }];
     if (!Number.isFinite(age(observedAt,now)) || age(observedAt,now) > 15*60_000)
