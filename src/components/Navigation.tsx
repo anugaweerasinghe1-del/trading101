@@ -8,7 +8,7 @@ import { createPortal } from "react-dom";
 import { BrandMark } from "@/components/brand/BrandMark";
 import { StreakBadge } from "@/components/badges/StreakBadge";
 import { useAuth } from "@/hooks/useAuth";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { toast } from "sonner";
 
 export function Navigation() {
@@ -152,10 +152,10 @@ export function Navigation() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" sideOffset={10}
-                className="w-[30rem] max-w-[calc(100vw-1rem)] max-h-[calc(100dvh-7rem)] overflow-y-auto overscroll-contain rounded-xl border border-border bg-popover/95 p-2 shadow-2xl backdrop-blur-xl" aria-label="More site pages">
-                <div className="grid grid-cols-2 gap-x-2 gap-y-2">
-                {moreGroups.map((group) => (
-                  <div key={group.label} className="min-w-0">
+                className="w-60 max-h-[calc(100dvh-7rem)] overflow-y-auto overscroll-contain rounded-xl border border-border bg-popover/95 p-1.5 shadow-2xl backdrop-blur-xl" aria-label="More site pages">
+                {moreGroups.map((group, index) => (
+                  <div key={group.label}>
+                    {index > 0 && <DropdownMenuSeparator className="my-1" />}
                     <DropdownMenuLabel className="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-muted-foreground">
                       {group.label}
                     </DropdownMenuLabel>
@@ -169,7 +169,6 @@ export function Navigation() {
                     ))}
                   </div>
                 ))}
-                </div>
               </DropdownMenuContent>
             </DropdownMenu>
             <div className="ml-2 pl-2 border-l border-white/[0.06]">
