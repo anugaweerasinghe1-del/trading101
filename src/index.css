@@ -115,7 +115,7 @@
     --accent-foreground: 170 71% 18%;
 
     --success: 154 70% 29%;
-    --success-foreground: 0 0% 3%;
+    --success-foreground: 0 0% 100%;
     
     --destructive: 0 75% 50%;
     --destructive-foreground: 0 0% 100%;
@@ -688,6 +688,15 @@ textarea:focus-visible {
 
   .light .thq-market-pulse circle[stroke="hsl(0 0% 100% / 0.06)"] {
     stroke: hsl(var(--border));
+  }
+
+  /* Keep educational guide accent labels readable on paper surfaces. */
+  .light .thq-trading-guide [class~="text-emerald-400"] {
+    color: hsl(var(--primary));
+  }
+
+  .light .thq-trading-guide [class~="text-red-400"] {
+    color: hsl(var(--destructive));
   }
 
   .light .thq-daily-challenge {
