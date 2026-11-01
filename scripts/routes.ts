@@ -261,9 +261,9 @@ export function buildRoutes(): RouteMeta[] {
 
   routes.push({
     path: "/ai-mentor",
-    title: "AI Trading Mentor — Free Practice Coach | TradeHQ",
+    title: "Rule-Based Trading Learning Mentor — Educational Answers | TradeHQ",
     description: `Ask educational trading questions using a built-in answer library and local topic matching. This chat makes no AI API request.`,
-    h1: "AI Trading Mentor",
+    h1: "Trading Mentor — Curated Knowledge",
     summary: `Ask the mentor about trading concepts. This chat uses a built-in answer library and local topic matching, with no AI API request. Answers can miss your question and are educational only. Practice what you learn on the free simulator with ${BALANCE} virtual cash.`,
     priority: "0.7",
     changefreq: "weekly",
