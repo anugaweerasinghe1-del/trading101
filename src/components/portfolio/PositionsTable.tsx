@@ -3,9 +3,11 @@ import { Position } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
 import { TrendingDown, TrendingUp } from "lucide-react";
 import { cn } from "@/lib/utils";
+import type { QuoteCoverage } from "@/lib/quoteCoverage";
 
 interface PositionsTableProps {
   positions: Position[];
+  quoteCoverage?: Record<string, QuoteCoverage>;
 }
 
 function formatMoney(value: number) {
@@ -41,7 +43,22 @@ function TypeBadge({ type }: { type: string }) {
   );
 }
 
-function DesktopRow({ position }: { position: Position }) {
+function QuoteBadge({ quote }: { quote?: QuoteCoverage }) {
+  if (!quote) return <span className="text-xs text-muted-foreground">Checking quote source…</span>;
+  const labels: Record<QuoteCoverage["status"], string> = {
+    provider: "Provider snapshot", previous_close: "Previous close", delayed: "Delayed quote",
+    stale: "Stale quote", simulator: "Simulator-only",
+  };
+  return (
+    <span className={cn("block text-[11px] leading-tight", quote.status === "simulator" || quote.status === "stale" ? "text-amber-600 dark:text-amber-400" : "text-muted-foreground")}
+      title={quote.note + (quote.fetchedAt ? " · Fetched " + new Date(quote.fetchedAt).toLocaleString() : "")}
+      aria-label={"Quote status: " + quote.note}>
+      {labels[quote.status]}
+    </span>
+  );
+}
+
+function DesktopRow({ position, quote }: { position: Position; quote?: QuoteCoverage }) {
   const isUp = position.profitLoss >= 0;
 
   return (
@@ -60,6 +77,7 @@ function DesktopRow({ position }: { position: Position }) {
           <span className="text-sm text-muted-foreground">
             {position.asset.name}
           </span>
+          <QuoteBadge quote={quote} />
         </div>
       </td>
       <td className="px-4 py-4 tabular-nums">{formatMoney(position.avgPrice)}</td>
@@ -96,7 +114,7 @@ function DesktopRow({ position }: { position: Position }) {
   );
 }
 
-function MobileCard({ position }: { position: Position }) {
+function MobileCard({ position, quote }: { position: Position; quote?: QuoteCoverage }) {
   const isUp = position.profitLoss >= 0;
 
   return (
@@ -110,6 +128,7 @@ function MobileCard({ position }: { position: Position }) {
           <p className="mt-1 text-sm text-muted-foreground">
             {position.asset.name}
           </p>
+          <QuoteBadge quote={quote} />
         </div>
 
         <div
@@ -164,7 +183,7 @@ function MobileCard({ position }: { position: Position }) {
   );
 }
 
-export function PositionsTable({ positions }: PositionsTableProps) {
+export function PositionsTable({ positions, quoteCoverage }: PositionsTableProps) {
   if (positions.length === 0) {
     return (
       <div className="glass-tactile border-chrome rounded-2xl p-8 text-center">
@@ -207,6 +226,7 @@ export function PositionsTable({ positions }: PositionsTableProps) {
               <DesktopRow
                 key={`${position.asset.id}-${position.quantity}-${position.avgPrice}`}
                 position={position}
+                quote={quoteCoverage?.[position.asset.id]}
               />
             ))}
           </tbody>
@@ -218,6 +238,7 @@ export function PositionsTable({ positions }: PositionsTableProps) {
           <MobileCard
             key={`${position.asset.id}-${position.quantity}-${position.avgPrice}`}
             position={position}
+            quote={quoteCoverage?.[position.asset.id]}
           />
         ))}
       </div>

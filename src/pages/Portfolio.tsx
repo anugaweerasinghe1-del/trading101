@@ -21,6 +21,7 @@ import { updatePortfolioOverTime } from "@/lib/portfolioHistory";
 import { ASSETS } from "@/lib/assets";
 import { persistPrice, getPersistedPrices } from "@/lib/pricePersistence";
 import { marketRequests } from "@/lib/marketDataClient";
+import { quoteCoverageForHoldings, type QuoteCoverage } from "@/lib/quoteCoverage";
 import { recordSnapshot } from "@/lib/portfolioHistory";
 import { calculateDayChange } from "@/lib/portfolio";
 import { Card } from "@/components/ui/card";
@@ -60,6 +61,8 @@ export default function Portfolio() {
   const refreshBusy = useRef(false);
   const [accountPricing, setAccountPricing] = useState<{ status: string; fetched: string | null; observed: string | null } | null>(null);
   const [accountError, setAccountError] = useState(false);
+  const [quoteCoverage, setQuoteCoverage] = useState<Record<string, QuoteCoverage>>({});
+  const [quoteLookupFailed, setQuoteLookupFailed] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
   const [portfolio, setPortfolio] = useState(getPortfolio());
   const [assets, setAssets] = useState(() => {
@@ -92,6 +95,32 @@ export default function Portfolio() {
     window.addEventListener('tradehq:portfolio-updated', refresh);
     return () => window.removeEventListener('tradehq:portfolio-updated', refresh);
   }, []);
+
+  // Inspect the shared quote cache separately from the virtual valuation.
+  // A simulator fallback is NOT live pricing. One batched read avoids exhausting
+  // stock-provider quotas for every visitor.
+  useEffect(() => {
+    let active = true;
+    const refreshCoverage = async () => {
+      if (document.hidden) return;
+      try {
+        const rows = await marketRequests.snapshots();
+        if (!active) return;
+        const ids = getPortfolio().positions.map(p => p.asset.id);
+        setQuoteCoverage(quoteCoverageForHoldings(ids, rows));
+        setQuoteLookupFailed(false);
+      } catch {
+        if (active) setQuoteLookupFailed(true);
+      }
+    };
+    void refreshCoverage();
+    const timer = window.setInterval(() => void refreshCoverage(), 120_000);
+    window.addEventListener("focus", refreshCoverage);
+    return () => {
+      active = false; clearInterval(timer);
+      window.removeEventListener("focus", refreshCoverage);
+    };
+  }, [portfolio.positions.map(p => p.asset.id).join(",")]);
 
   // Fetch real price for a single held asset
   const fetchLivePrice = useCallback(async (asset: typeof ASSETS[number]) => {
@@ -347,6 +376,13 @@ export default function Portfolio() {
                   <p className="text-sm text-muted-foreground mt-1.5">
                     Track your virtual investments, analyze performance, and manage simulated risk.
                   </p>
+                  {portfolio.positions.length > 0 && (
+                    <p className="mt-2 text-xs text-muted-foreground" role="status" aria-live="polite">
+                      {quoteLookupFailed ? "Provider status could not be checked; valuations may rely on older data." :
+                        Object.keys(quoteCoverage).length === 0 ? "Checking quote sources for your holdings…" :
+                        `${Object.values(quoteCoverage).filter(q => q.status === "simulator").length} simulator-only · ${Object.values(quoteCoverage).filter(q => q.status === "stale").length} stale · ${Object.values(quoteCoverage).filter(q => q.status === "previous_close").length} previous-close holdings. See each asset below.`}
+                    </p>
+                  )}
                   <p className="mt-3 text-xs text-muted-foreground max-w-2xl leading-relaxed" data-portfolio-refresh-policy>
                     Confirmed virtual trades update cash, holdings and trade history immediately. While TradeHQ is open, your portfolio syncs about every minute and when relevant server updates arrive. The server checks supported holdings' reference prices about every five minutes, even while you're offline. Provider data may be delayed, cached or unavailable; this is not a tick-by-tick live trading feed.
                   </p>
@@ -545,7 +581,7 @@ export default function Portfolio() {
 
             <div className="mb-12">
               <h2 className="text-2xl font-bold mb-5">Positions</h2>
-              <PositionsTable positions={portfolio.positions} />
+              <PositionsTable positions={portfolio.positions} quoteCoverage={quoteCoverage} />
             </div>
 
             <div className="mb-12">
