@@ -617,7 +617,6 @@ textarea:focus-visible {
 
 /* Light theme: calm paper surfaces and accessible contrast.
    Dark mode is deliberately unchanged by the overrides below. */
-@layer utilities {
   .light {
     color-scheme: light;
   }
@@ -703,4 +702,3 @@ textarea:focus-visible {
     background: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(169 43% 95%) 100%) !important;
     box-shadow: 0 14px 36px -22px hsl(169 40% 25% / .25) !important;
   }
-}
