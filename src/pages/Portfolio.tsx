@@ -35,6 +35,7 @@ import {
   BellOff,
   Activity,
   Clock,
+  RefreshCw,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AIInsightSummary } from "@/components/portfolio/AIInsightSummary";
@@ -59,6 +60,7 @@ export default function Portfolio() {
   const refreshBusy = useRef(false);
   const [accountPricing, setAccountPricing] = useState<{ status: string; fetched: string | null; observed: string | null } | null>(null);
   const [accountError, setAccountError] = useState(false);
+  const [refreshing, setRefreshing] = useState(false);
   const [portfolio, setPortfolio] = useState(getPortfolio());
   const [assets, setAssets] = useState(() => {
     // Hydrate from persisted prices for continuity
@@ -118,24 +120,25 @@ export default function Portfolio() {
 
   // Refresh held positions in staggered batches of 5
   const refreshHeldAssets = useCallback(async () => {
-    if (userRef.current) {
-      if (refreshBusy.current) return;
-      refreshBusy.current = true;
-      try {
-        const snapshot = await pushPortfolio(userRef.current.id);
-        if (!isMounted.current) return;
-        setPortfolio(getPortfolio());
-        setAccountPricing(snapshotPriceInfo(snapshot.positions));
-        setAccountError(false);
-        setDataStatus("cached");
-        setLastUpdated(new Date());
-      } catch { if (isMounted.current) setAccountError(true); }
-      finally { refreshBusy.current = false; }
-      return;
-    }
-    const heldIds = new Set(getPortfolio().positions.map((p) => p.asset.id));
-    if (heldIds.size === 0) return;
-    const heldAssets = assetsRef.current.filter((a) => heldIds.has(a.id));
+    if (refreshBusy.current) return;
+    refreshBusy.current = true;
+    if (isMounted.current) setRefreshing(true);
+    try {
+      if (userRef.current) {
+        try {
+          const snapshot = await pushPortfolio(userRef.current.id);
+          if (!isMounted.current) return;
+          setPortfolio(getPortfolio());
+          setAccountPricing(snapshotPriceInfo(snapshot.positions));
+          setAccountError(false);
+          setDataStatus("cached");
+          setLastUpdated(new Date());
+        } catch { if (isMounted.current) setAccountError(true); }
+        return;
+      }
+      const heldIds = new Set(getPortfolio().positions.map((p) => p.asset.id));
+      if (heldIds.size === 0) return;
+      const heldAssets = assetsRef.current.filter((a) => heldIds.has(a.id));
     const batchSize = 5;
     let anyLive = false;
     let anyDelayed = false;
@@ -186,6 +189,10 @@ export default function Portfolio() {
         variant: type === "danger" ? "destructive" : "default",
       });
     });
+    } finally {
+      refreshBusy.current = false;
+      if (isMounted.current) setRefreshing(false);
+    }
   }, [fetchLivePrice, toast]);
 
   useEffect(() => {
@@ -340,6 +347,9 @@ export default function Portfolio() {
                   <p className="text-sm text-muted-foreground mt-1.5">
                     Track your virtual investments, analyze performance, and manage simulated risk.
                   </p>
+                  <p className="mt-3 text-xs text-muted-foreground max-w-2xl leading-relaxed" data-portfolio-refresh-policy>
+                    Confirmed virtual trades update your cash, holdings and trade history immediately. While this dashboard is visible, available quotes are checked about once a minute; they may be delayed, cached or simulated. Closed markets, unavailable providers and a closed browser do not supply continuous live prices.
+                  </p>
                   {user && <div className="text-xs text-muted-foreground mt-3 max-w-2xl leading-relaxed">
                     <p>{PRICE_REFRESH_COPY} Account values reload every minute while this page is visible.</p>
                     <p className="mt-1">{accountPricing ? `${priceLabel(accountPricing.status)}. ${quoteTimeLabel(accountPricing.fetched, accountPricing.observed)}` : "Loading account prices…"}</p>
@@ -383,6 +393,18 @@ export default function Portfolio() {
                 </div>
 
                 <div className="flex items-center gap-2 shrink-0">
+                  <Button
+                    type="button"
+                    onClick={() => void refreshHeldAssets()}
+                    disabled={refreshing}
+                    size="sm"
+                    variant="outline"
+                    className="gap-1.5 text-xs"
+                    aria-label="Refresh portfolio and available quotes"
+                  >
+                    <RefreshCw className={cn("w-4 h-4", refreshing && "animate-spin")} />
+                    {refreshing ? "Refreshing…" : "Refresh now"}
+                  </Button>
                   <Button
                     onClick={handleToggleNotifications}
                     size="sm"
