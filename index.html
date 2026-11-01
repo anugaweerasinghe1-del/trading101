@@ -3,6 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Apply the saved colour scheme before styles and React load to prevent a
+         bright/dark flash and keep the browser's native controls in sync. -->
+    <script>
+      try {
+        if (localStorage.getItem('theme') === 'light') {
+          document.documentElement.classList.add('light');
+        }
+      } catch (_) { /* Storage may be unavailable in private contexts. */ }
+    </script>
 
     <!-- ULTIMATE TITLE & META (max CTR + ranking) -->
     <title>TradeHQ — Free Paper Trading Simulator | $100K Virtual Cash (No Signup)</title>

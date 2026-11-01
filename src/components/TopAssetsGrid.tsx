@@ -53,7 +53,7 @@ const TOP_ASSETS: TopAsset[] = [
  */
 export function TopAssetsGrid() {
   return (
-    <section className="py-28 bg-[hsl(0_0%_2.5%)] relative overflow-hidden">
+    <section className="py-28 bg-background relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[1px] bg-gradient-to-r from-transparent via-primary/15 to-transparent" />
 
       <div className="container mx-auto px-6">
@@ -69,7 +69,7 @@ export function TopAssetsGrid() {
           </span>
           <h2 className="text-3xl md:text-5xl font-bold mb-5 tracking-tight">
             Start Trading{' '}
-            <span className="text-transparent bg-clip-text" style={{
+            <span className="thq-gradient-heading text-transparent bg-clip-text" style={{
               backgroundImage: 'linear-gradient(135deg, hsl(180 70% 50%), hsl(152 60% 50%))'
             }}>
               Top Assets

@@ -22,7 +22,7 @@ export function DailyChallengeCard() {
 
   return (
     <div
-      className="relative overflow-hidden rounded-3xl p-6 md:p-8 border border-primary/20"
+      className="thq-daily-challenge relative overflow-hidden rounded-3xl p-6 md:p-8 border border-primary/20"
       style={{
         background:
           "linear-gradient(135deg, hsl(168 100% 50% / 0.08) 0%, hsl(280 60% 55% / 0.05) 50%, hsl(12 90% 62% / 0.04) 100%)",

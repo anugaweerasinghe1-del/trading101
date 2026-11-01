@@ -1,4 +1,3 @@
-import type { CSSProperties } from "react";
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Link } from "react-router-dom";
@@ -20,15 +19,6 @@ import { ContinueBanner } from "@/components/retention/ContinueBanner";
 import { WatchlistAlerts } from "@/components/retention/WatchlistAlerts";
 import { WeeklyRecap } from "@/components/retention/WeeklyRecap";
 import { AIAnswerBlock } from "@/components/seo/AIAnswerBlock";
-
-// These homepage sections keep fixed dark surfaces in both themes.
-const homeDarkPalette = {
-  "--foreground": "220 15% 93%",
-  "--card-foreground": "220 15% 93%",
-  "--muted-foreground": "220 14% 68%",
-  "--primary": "168 100% 50%",
-  color: "hsl(220 15% 93%)",
-} as CSSProperties;
 
 // ORIGINAL schemas — unchanged
 const homeFaqSchema = {
@@ -183,7 +173,7 @@ const Index = () => {
 
         <main id="main-content">
         {/* 1. Premium hero (above fold) */}
-        <div style={homeDarkPalette}>
+        <div>
           <PremiumHero />
         </div>
 
@@ -214,7 +204,7 @@ const Index = () => {
             <div className="lg:col-span-2">
               <DailyChallengeCard />
             </div>
-            <div className="lg:col-span-3" style={homeDarkPalette}>
+            <div className="lg:col-span-3">
               <MarketPulse />
             </div>
           </div>
@@ -230,7 +220,7 @@ const Index = () => {
 
         {/* 3. Original homepage flow continues */}
         <SocialProofTicker />
-        <div style={homeDarkPalette}>
+        <div>
         <WhatIsTradeHQ />
         <HowItWorks />
         <PremiumFeatures />
@@ -247,18 +237,18 @@ const Index = () => {
         <section className="container mx-auto px-6 max-w-7xl py-12">
           <Link
             to="/roadmap"
-            className="group block relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-emerald-500/10 via-background to-fuchsia-500/10 backdrop-blur-xl p-8 md:p-10 hover:border-emerald-500/40 transition-all"
+            className="group block relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-primary/10 via-background to-secondary/5 backdrop-blur-xl p-8 md:p-10 hover:border-emerald-500/40 transition-all"
           >
             <div className="absolute -top-20 -right-20 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl group-hover:bg-emerald-500/20 transition" />
             <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-6">
               <div>
-                <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-emerald-400 mb-3">
+                <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-primary mb-3">
                   <Sparkles className="h-3 w-3" /> What's coming next
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold tracking-tight">The Future of TradeHQ</h3>
                 <p className="mt-2 text-muted-foreground max-w-xl">Explore proposed portfolio worksheets and price widgets, alongside the features already available. Planned work has no confirmed release date.</p>
               </div>
-              <div className="inline-flex items-center gap-2 text-emerald-400 font-medium whitespace-nowrap">
+              <div className="inline-flex items-center gap-2 text-primary font-medium whitespace-nowrap">
                 See the roadmap <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition" />
               </div>
             </div>
@@ -268,7 +258,7 @@ const Index = () => {
         {/* ── NEW: Internal link hub (below fold, Googlebot crawls this) ── */}
         <section
           aria-label="Explore TradeHQ"
-          className="container mx-auto px-6 max-w-7xl py-16 border-t border-white/[0.04]"
+          className="container mx-auto px-6 max-w-7xl py-16 border-t border-border/70"
         >
           {/* Popular assets */}
           <div className="mb-10 p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06]" style={{ backdropFilter: "blur(12px)" }}>
@@ -329,7 +319,7 @@ const Index = () => {
             <h2 className="text-lg font-bold mb-4 text-foreground">Asset Comparisons</h2>
             <div className="flex flex-wrap gap-2">
               {COMPARE_PAIRS.map(p => (
-                <Link key={p.slug} to={`/compare/${p.slug}`} className="inline-flex items-center px-3 py-1.5 text-xs font-medium rounded-full bg-white/[0.03] border border-white/[0.08] hover:border-emerald-500/30 hover:text-emerald-400 transition-all">
+                <Link key={p.slug} to={`/compare/${p.slug}`} className="inline-flex items-center px-3 py-1.5 text-xs font-medium rounded-full bg-white/[0.03] border border-white/[0.08] hover:border-emerald-500/30 hover:text-primary transition-all">
                   {p.a.name} vs {p.b.name}
                 </Link>
               ))}
@@ -341,7 +331,7 @@ const Index = () => {
             <h2 className="text-lg font-bold mb-4 text-foreground">How-to Guides</h2>
             <div className="flex flex-wrap gap-2">
               {HOWTO_ASSETS.map(a => (
-                <Link key={a.symbol} to={`/how-to-trade/${a.symbol}`} className="inline-flex items-center px-3 py-1.5 text-xs font-medium rounded-full bg-white/[0.03] border border-white/[0.08] hover:border-emerald-500/30 hover:text-emerald-400 transition-all">
+                <Link key={a.symbol} to={`/how-to-trade/${a.symbol}`} className="inline-flex items-center px-3 py-1.5 text-xs font-medium rounded-full bg-white/[0.03] border border-white/[0.08] hover:border-emerald-500/30 hover:text-primary transition-all">
                   How to trade {a.fullName}
                 </Link>
               ))}
@@ -353,7 +343,7 @@ const Index = () => {
             <h2 className="text-lg font-bold mb-4 text-foreground">Trading Strategies</h2>
             <div className="flex flex-wrap gap-2">
               {STRATEGIES.map(s => (
-                <Link key={s.slug} to={`/strategy/${s.slug}`} className="inline-flex items-center px-3 py-1.5 text-xs font-medium rounded-full bg-white/[0.03] border border-white/[0.08] hover:border-emerald-500/30 hover:text-emerald-400 transition-all">
+                <Link key={s.slug} to={`/strategy/${s.slug}`} className="inline-flex items-center px-3 py-1.5 text-xs font-medium rounded-full bg-white/[0.03] border border-white/[0.08] hover:border-emerald-500/30 hover:text-primary transition-all">
                   {s.name}
                 </Link>
               ))}
