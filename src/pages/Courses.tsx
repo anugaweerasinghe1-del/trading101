@@ -62,7 +62,7 @@ const HOW_IT_WORKS = [
   { step: "2", title: "Read the lesson", body: "Check each lesson’s reading-time estimate. Read the worked examples, assumptions and linked sources at your own pace." },
   { step: "3", title: "Take the quiz", body: "A 4–6 question knowledge check. Explanations for every answer — you learn from mistakes." },
   { step: "4", title: "Work through an example", body: "Practise supported spot trades with virtual cash. For options and futures, calculate hypothetical contract payoffs and margin changes in a worksheet." },
-  { step: "5", title: "Earn the badge", body: "Complete every lesson in a track to record a completion badge in this browser. Clearing browser storage can remove this progress; it is not a permanent profile credential." },
+  { step: "5", title: "Earn the badge", body: "Complete every lesson in a track to record a learning badge. Guest completion is browser-held; signed-in progress synchronizes privately and is not a professional credential." },
 ];
 
 const FAQ = [
@@ -80,11 +80,11 @@ const FAQ = [
   },
   {
     q: "How long does a track take?",
-    a: "Lesson counts vary by track. Each course card lists its syllabus and estimated reading time; allow additional time for quizzes and worksheet exercises. Progress is saved in your browser so you can resume on the same browser.",
+    a: "Lesson counts vary by track. Each course card lists its syllabus and estimated reading time; allow additional time for quizzes and worksheet exercises. Guest progress stays on the browser. Signed-in progress can also resume across devices when online.",
   },
   {
     q: "What do I get for completing a track?",
-    a: "A completion badge records your course progress. Lessons and quizzes help you explain concepts, but completion does not certify trading competence. Options and futures exercises are conceptual; simulator execution is limited to supported spot instruments.",
+    a: "A completion badge records your learning progress. Lessons and quizzes help you explain concepts, but completion does not certify trading competence. Options and futures exercises are conceptual; simulator execution is limited to supported spot instruments.",
   },
   {
     q: "Where does the content come from?",
