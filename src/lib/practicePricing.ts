@@ -6,8 +6,8 @@ export function normalizePortfolioPriceStatus(status: string, observedAt: string
   const observed = observedAt ? Date.parse(observedAt) : NaN;
   return !Number.isFinite(observed) || now - observed > 7 * 24 * 60 * 60_000 ? "stale" : status;
 }
-export function priceLabel(status: string, observedAt: string | null = null) {
-  const safeStatus = normalizePortfolioPriceStatus(status, observedAt);
+export function priceLabel(status: string, observedAt: string | null = null, now = Date.now()) {
+  const safeStatus = normalizePortfolioPriceStatus(status, observedAt, now);
   return ({ not_started: "No account portfolio yet", cash_only: "Cash only", simulator: "Includes fixed simulator prices",
     stale: "Older cached quotes", previous_close: "Provider session-close prices", unknown_time: "Quote time unavailable",
     delayed: "Delayed provider quotes", provider: "Provider snapshots" } as Record<string, string>)[safeStatus] ?? "Cached practice prices";
