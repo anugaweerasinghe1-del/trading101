@@ -70,7 +70,7 @@ async function inspect(route: string): Promise<AuditResult> {
         try {
           const canonicalUrl = new URL(base.canonical, window.location.origin);
           if (canonicalUrl.origin !== window.location.origin ||
-              canonicalUrl.pathname.replace(/\\/+$/, "") !== finalUrl.pathname.replace(/\\/+$/, "")) {
+              canonicalUrl.pathname.replace(new RegExp("/+$"), "") !== finalUrl.pathname.replace(new RegExp("/+$"), "")) {
             errors.push("Canonical differs from fetched URL: " + base.canonical);
           }
         } catch { errors.push("Invalid canonical URL"); }
