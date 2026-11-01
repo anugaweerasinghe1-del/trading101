@@ -84,6 +84,16 @@ export function loadProgress(): CourseProgressState {
   catch { return empty(); }
 }
 
+/** Restore a validated cloud snapshot without changing completion timestamps. */
+export function replaceCourseProgressSnapshot(progress: CourseProgressState) {
+  if (typeof window === "undefined") return;
+  try {
+    const normalized = parseCourseProgress(JSON.stringify(progress));
+    localStorage.setItem(KEY, JSON.stringify(normalized));
+    window.dispatchEvent(new Event(COURSE_PROGRESS_EVENT));
+  } catch { /* Keep existing browser data when storage is unavailable. */ }
+}
+
 function save(state: CourseProgressState) {
   if (typeof window === "undefined") return;
   state.updatedAt = new Date().toISOString();
