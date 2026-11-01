@@ -62,21 +62,21 @@ export default function AIMentor() {
   return (
     <>
       <Helmet>
-        <title>Smart Trading Mentor — Free Strategy, Risk & Psychology Coach | TradeHQ</title>
-        <meta name="description" content="Chat with TradeHQ's Smart Mentor — a curated knowledge engine covering stop-losses, RSI, position sizing, psychology, crypto, ETFs and more. Free, instant, no signup." />
+        <title>Rule-Based Trading Learning Mentor — Educational Explanations | TradeHQ</title>
+        <meta name="description" content="Ask educational trading questions using a built-in authored-answer library and topic matching. No live AI model, investment recommendations or price predictions." />
         <link rel="canonical" href="https://www.thetradehq.com/ai-mentor" />
         <meta name="robots" content="index, follow" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Smart Trading Mentor — Your Free Trading Coach | TradeHQ" />
-        <meta property="og:description" content="Ask anything about trading, risk, psychology, or markets. Rule-based educational explanations. Free on TradeHQ." />
+        <meta property="og:title" content="Rule-Based Trading Mentor — Educational Answers | TradeHQ" />
+        <meta property="og:description" content="Explore supported trading concepts using a predefined answer library. No live AI model, market predictions or personal advice." />
         <meta property="og:url" content="https://www.thetradehq.com/ai-mentor" />
         <meta property="og:image" content="https://www.thetradehq.com/tradehq-preview-2026.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="TradeHQ" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Smart Trading Mentor — Your Free Trading Coach | TradeHQ" />
-        <meta name="twitter:description" content="Ask anything about trading, risk, psychology, or markets. Rule-based educational explanations." />
+        <meta name="twitter:title" content="Rule-Based Trading Mentor — Educational Answers | TradeHQ" />
+        <meta name="twitter:description" content="Built-in educational answers and topic matching. No live AI model, price prediction or personal advice." />
         <meta name="twitter:image" content="https://www.thetradehq.com/tradehq-preview-2026.png" />
       </Helmet>
 
@@ -88,13 +88,13 @@ export default function AIMentor() {
           <div className="text-center mb-8 animate-fade-in">
             <div className="inline-flex items-center gap-2 px-4 py-2 mb-4 rounded-full bg-primary/10 border border-primary/20">
               <Brain className="w-5 h-5 text-primary" />
-              <span className="text-sm font-medium text-primary">Smart Trading Mentor</span>
+              <span className="text-sm font-medium text-primary">Rule-based Learning Mentor</span>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold mb-2">
               Trading Mentor <span className="text-primary">— Curated Knowledge</span>
             </h1>
             <p className="text-muted-foreground">
-              Educational answers — strategy, risk, psychology, technicals
+              Built-in educational answers about risk, trading mechanics and psychology — not a live AI assistant
             </p>
           </div>
 

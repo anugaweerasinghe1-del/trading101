@@ -303,7 +303,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
   "/ai-mentor": {
     sections: [
       {
-        h: "What the AI mentor does",
+        h: "What the rule-based mentor does",
         p: [
           "This chat matches your question to a built-in library of educational answers about trading concepts, indicators and order types. It does not call a language model, read your journal or assess a proposed investment. Separate portfolio mentor tools can use the simulated figures shown on that page.",
         ],
