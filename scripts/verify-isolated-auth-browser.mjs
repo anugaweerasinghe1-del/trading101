@@ -75,6 +75,7 @@ async function main(){
   const dist=join(temp,"dist"),profile=join(temp,"chrome");
   let server,browser,devtools;let attempts=0,approved=0,rejected=0,dataWrites=0,portfolioInitialized=0,logouts=0,refreshRejected=0,dailyReads=0,adminChatRequests=0;
   let showPublications=false,publicationReads=0;
+  let learningWrites=0, learningReads=0, savedLearning=null;
   let holdLearnModule=true;
   const releaseLearnModules=[];
   const rejectedWrites=[];
@@ -210,6 +211,37 @@ async function main(){
         setTimeout(()=>json(200,fixtureBank),200);return;
       }
       if(route==='/rest/v1/rpc/get_published_course_catalog' && req.method==='POST')return json(200,[]);
+      if(route==="/rest/v1/user_learning_progress"){
+        // The isolated fixture permits learning-only writes for its authenticated
+        // owner; no portfolio, ranking, trade or profile mutations are allowed.
+        if(req.headers.authorization!=="Bearer "+JWT)return json(401,{error:"fixture_owner_required"});
+        if(req.method==="GET"){
+          if(parsed.searchParams.get("user_id")!=="eq."+USER_ID)return json(403,{error:"fixture_owner_filter_required"});
+          learningReads++;
+          return json(200,savedLearning?[savedLearning]:[]);
+        }
+        if(req.method!=="POST" && req.method!=="PATCH"){
+          dataWrites++;rejectedWrites.push(route+":"+req.method);return json(403,{error:"fixture_forbidden_mutation"});
+        }
+        if(req.method==="POST" && parsed.searchParams.get("on_conflict")!=="user_id"){
+          dataWrites++;rejectedWrites.push(route+":missing_conflict_key");return json(403,{error:"fixture_conflict_guard"});
+        }
+        let content="";
+        req.on("data",chunk=>{content+=chunk;if(content.length>120000)req.destroy();});
+        req.on("end",()=>{
+          let payload;try{payload=JSON.parse(content)}catch{return json(400,{error:"fixture_invalid_learning_data"})}
+          if(!payload || payload.user_id!==USER_ID ||
+             Object.keys(payload).some(k=>!["user_id","courses","journey"].includes(k))||
+             !payload.courses || !payload.journey ||
+             payload.courses.v!==1 || payload.journey.version!==1){
+            dataWrites++;rejectedWrites.push(route+":unsafe_payload");return json(403,{error:"fixture_learning_owner_or_shape_denied"});
+          }
+          savedLearning={...payload,updated_at:new Date().toISOString()};
+          learningWrites++;
+          return json(req.method==="POST"?201:200,[]);
+        });
+        return;
+      }
       if(route.startsWith("/rest/v1/")){
         if(!["GET","HEAD"].includes(req.method||"")){dataWrites++;rejectedWrites.push(route);return json(403,{error:"fixture_never_mutates"})}
         if(route==='/rest/v1/published_courses' && parsed.searchParams.get('select')?.includes('published_at')){
@@ -416,6 +448,8 @@ async function main(){
     assert.equal(await devtools.evaluate("JSON.parse(localStorage.getItem("+JSON.stringify(streakKey)+")).totalCompleted"),1,"Quick and deeper completion must not double-count the day");
     assert.equal(attempts,3,"Both negative and positive real UI attempts required");
     assert.equal(dataWrites,0,"No profile/trade/portfolio writes permitted, even to fixture");
+    assert.ok(learningReads>=1,"Authenticated course sync must read the private fixture");
+    assert.ok(learningWrites>=1,"Authenticated course sync must save owner-only learning records");
     // Actual compiled admin chat: paused mode, escaped suggestions, explicit draft
     // transfer, forged authority rejection, and late response after lock.
     await loadDocument(origin+'/admin/ai');
