@@ -47,4 +47,21 @@ const paperSources = ARTICLE_REFERENCES["what-is-paper-trading"];
 assert.ok(paperSources?.length > 0, "Paper-trading article must have real source links");
 assert.ok(paperSources.every(source => /^https:\/\//.test(source.href)), "Paper-trading references must have HTTPS URLs");
 console.log("PASS curated FOMO and paper trading references are non-empty and HTTPS");
+// Every published glossary entry must retain a substantive exercise and a
+// visible, labelled external HTTPS reference. Prevent future empty-source pages.
+for (const term of data.tradingGlossary) {
+  const path = `/wiki/${term.slug}`;
+  const worksheet = GLOSSARY_WORKSHEETS[term.slug];
+  assert.ok(worksheet?.exercise?.length >= 80,
+    `${path}: missing substantive authored exercise`);
+  assert.ok(worksheet.references.length > 0,
+    `${path}: no external reference entries`);
+  for (const source of worksheet.references) {
+    assert.ok(/^https:\/\/[^\s]+$/.test(source.href) && source.label?.trim(),
+      `${path}: missing labelled HTTPS reference`);
+    assert.ok(content.get(path)?.links.some(link => link.href === source.href),
+      `${path}: source not visible in publisher content`);
+  }
+}
+console.log("PASS all glossary exercises and visible HTTPS references");
 console.log("PASS complete published course manifest/quizzes, individual asset references/worksheets and scoped country sourcing");
