@@ -36,7 +36,7 @@ for (const name of ["course-a", "course-b"]) {
 }
 assert.equal(writes, 1);
 await assert.rejects(
-  convergeLearningProgress(() => a, { ...io, updateIfUnchanged: async () => false }, () => true, 2),
+  convergeLearningProgress(() => state("course-c"), { ...io, updateIfUnchanged: async () => false }, () => true, 2),
   /changed on another device/,
 );
 assert.equal(writes, 1, "A failed write must never overwrite server data");
