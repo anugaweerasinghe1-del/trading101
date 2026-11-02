@@ -21,6 +21,30 @@ DO $$ BEGIN
  IF has_function_privilege(current_user,'public.claim_portfolio_price_refresh(text)','EXECUTE') THEN RAISE EXCEPTION 'Client can claim job'; END IF;
 END; $$;
 RESET ROLE;
+-- Simulate a stale provider cache WITHOUT altering durable production history.
+-- Seed a real cache row: the first account trade above can use a fixed simulator price.
+SELECT public.store_practice_quote('btc',95000,'Isolated fixture',now()-interval '2 minutes','provider');
+-- Existing server auth remains in force and a blocked order must not mutate funds.
+UPDATE public.market_prices SET observed_at=now()-interval '60 days', updated_at=now(),quote_status='provider'
+ WHERE asset_id='btc';
+SET LOCAL ROLE authenticated;
+DO $$ DECLARE cash_before numeric; count_before integer; denied boolean:=false;
+BEGIN
+ SELECT cash,trades_count INTO cash_before,count_before FROM public.practice_portfolios WHERE user_id=auth.uid();
+ BEGIN
+   PERFORM public.record_practice_trade('btc','buy',0.001,gen_random_uuid());
+ EXCEPTION WHEN others THEN
+   IF SQLERRM LIKE '%quote is stale%' THEN denied:=true;
+   ELSE RAISE; END IF;
+ END;
+ IF NOT denied THEN RAISE EXCEPTION 'Stale provider observation allowed an account trade'; END IF;
+ IF EXISTS(SELECT 1 FROM public.practice_portfolios WHERE user_id=auth.uid()
+   AND (cash<>cash_before OR trades_count<>count_before)) THEN
+   RAISE EXCEPTION 'Rejected stale trade mutated cash or trade count'; END IF;
+END; $$;
+RESET ROLE;
+UPDATE public.market_prices SET observed_at=now()-interval '1 minute',updated_at=now()
+ WHERE asset_id='btc';
 DO $$ DECLARE before numeric; after numeric; saved_cash numeric; saved_trades integer;
 BEGIN
  SELECT portfolio_value INTO before FROM public.get_public_practice_members(500) WHERE user_id='00000000-0000-4000-8000-000000000481';
@@ -34,6 +58,12 @@ BEGIN
  IF public.store_practice_quote('btc',1,'Simulation',now(),'simulated') THEN RAISE EXCEPTION 'Simulated quote accepted'; END IF;
  IF public.store_practice_quote('btc',1,'Proxy',now(),'proxy') THEN RAISE EXCEPTION 'Proxy quote accepted'; END IF;
  IF public.store_practice_quote('btc',1,'Future',now()+interval '1 day','provider') THEN RAISE EXCEPTION 'Future quote accepted'; END IF;
+ IF public.store_practice_quote('btc',1,'Old upstream observation',now()-interval '40 minutes','provider') THEN
+   RAISE EXCEPTION 'Old observation incorrectly refreshed provider cache'; END IF;
+ IF public.store_practice_quote('btc',1,'Undated upstream observation',NULL,'provider') THEN
+   RAISE EXCEPTION 'Undated observation incorrectly accepted'; END IF;
+ IF public.store_practice_quote('msft',1,'Weeks-old close',now()-interval '20 days','previous_close') THEN
+   RAISE EXCEPTION 'Weeks-old previous close incorrectly accepted'; END IF;
 END; $$;
 SET LOCAL ROLE anon;
 DO $$ BEGIN
