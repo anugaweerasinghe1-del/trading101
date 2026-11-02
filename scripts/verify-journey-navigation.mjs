@@ -51,4 +51,16 @@ for (const path of ["/","/learn","/trade","/portfolio","/markets"])
 assert.match(readFileSync("src/components/MegaFooter.tsx", "utf8"), /to="\/privacy"/);
 assert.match(readFileSync("src/components/MegaFooter.tsx", "utf8"), /to="\/terms"/);
 assert.match(readFileSync("src/components/MegaFooter.tsx", "utf8"), /EducationalDisclaimer/);
+// Guest journey re-entry must show its progress card, not old scroll position.
+assert.match(routes, /const timeouts = \[150, 500, 900\]/,
+  "Scroll reset retries after a lazy-loaded route renders");
+assert.match(routes, /window\.addEventListener\("wheel", interacted/,
+  "Do not override user-initiated wheel scrolling after route navigation");
+assert.match(routes, /window\.addEventListener\("touchstart", interacted/,
+  "Do not override user-initiated touch scrolling after route navigation");
+assert.match(routes, /window\.addEventListener\("keydown", keyboardScroll/,
+  "Do not override keyboard scrolling after route navigation");
+const journey = readFileSync("src/pages/BeginnerJourney.tsx", "utf8");
+assert.match(journey, /aria-label="Learning journey progress"/,
+  "Five-step journey progress card remains present on every render");
 console.log("PASS beginner-first nav, grouped More with legal policies, footer legal links, mobile disclosure, account controls");
