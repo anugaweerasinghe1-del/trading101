@@ -60,7 +60,7 @@ export default function Auth() {
       username: mode === "signup" ? username : undefined,
     });
     if (!parsed.success) {
-      toast.error(parsed.error.errors[0].message);
+      toast.error(parsed.error.issues[0].message);
       return;
     }
     setBusy(true);
