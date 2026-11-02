@@ -4,6 +4,7 @@ import { PGlite } from "@electric-sql/pglite";
 import { courseCovers, lessonWordCount, validateCourseDocument, type CourseDocument } from "../supabase/functions/_shared/courseDocument.ts";
 import { createCourseAdminHandler } from "../supabase/functions/_shared/courseAdmin.ts";
 import { generateCourse, courseReferences, GENERATION_READ_LIMITS } from "../supabase/functions/_shared/courseGenerator.ts";
+import { reviewCourseQuality } from "../supabase/functions/_shared/courseQualityGate.ts";
 import { checkCourseDemand } from "../supabase/functions/_shared/courseDemandCheck.ts";
 import { renderApprovedCourse } from "../src/lib/courseHtml.ts";
 import { sharedQuote } from "../supabase/functions/_shared/sharedQuote.ts";
@@ -127,6 +128,24 @@ const quote = { price: 100, change24h: 2, changePercent24h: 2, volume24h: 1234, 
 assert.equal(sharedQuote({ ...row, observed_at: current.replace("Z", "+00:00"), quote_data: quote }, now)?.change24h, 2);
 assert.equal(sharedQuote({ ...row, observed_at: current, price: 101, quote_data: quote }, now)?.change24h, null);
 
+const generatedFixture = structuredClone(document);
+generatedFixture.lessons.forEach((lesson, i) => {
+  lesson.body = Array.from({ length: 4 }, (_, h) => [
+    "## Understanding practice assumptions " + h,
+    "For this hypothetical TradeHQ practice exercise, calculate a virtual $10,000 amount and consider the 0.1% fee. " +
+      Array.from({ length: 70 }, (_, n) => "example" + i + h + "a" + n).join(" ") + ". These assumptions may differ from market observations.",
+    "In the hypothetical worksheet, divide $10,000 into chosen portions, then calculate and debrief the results. " +
+      Array.from({ length: 70 }, (_, n) => "example" + i + h + "b" + n).join(" ") + ". TradeHQ does not promise real returns.",
+  ]).flat();
+  lesson.quiz = lesson.quiz.map(q => ({ ...q, explanation: "Compare this answer with the stipulated hypothetical worksheet assumptions and the effect of virtual fees. " + q.explanation }));
+});
+assert.deepEqual(reviewCourseQuality(generatedFixture, courseReferences.map(s => s.url)), []);
+const misleading = structuredClone(generatedFixture);
+misleading.lessons[0].quiz[0].explanation = "TradeHQ does not simulate transaction fees.";
+assert.ok(reviewCourseQuality(misleading).some(issue => issue.includes("fee")));
+const wrongSource = structuredClone(generatedFixture);
+wrongSource.lessons[0].sources[1] = courseReferences[6]; // Unrelated monetary policy link.
+assert.ok(reviewCourseQuality(wrongSource).some(issue => issue.includes("monetary-policy")));
 let aiCalls = 0;
 const claim = { lease: "test", period: "2026-10", slot: 1, apiKey: "test-free-key", model: "gemini-3.8-flash",
   gscProperty: "", gscCredentials: null, topicRequests: ["Price snapshots"], existing: [] };
@@ -137,17 +156,21 @@ const fetcher = (async (url: string | URL | Request, init?: RequestInit) => {
     const request = JSON.parse(String(init!.body));
     assert.equal(request.generationConfig.thinkingConfig.thinkingLevel, 'LOW');
     const prompt = JSON.parse(request.contents[0].parts[0].text);
-    assert.equal(prompt.covers.length, 4);
-    assert.ok(prompt.style.some((s: string) => s.includes("TradeHQ")));
     assert.equal((init!.headers as Record<string, string>)["x-goog-api-key"], claim.apiKey);
-    return new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: JSON.stringify(document) }] } }] }));
+    if (aiCalls % 2 === 1) {
+      assert.equal(prompt.covers.length, 4);
+      assert.ok(prompt.style.some((s: string) => s.includes("TradeHQ")));
+      return new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: JSON.stringify(generatedFixture) }] } }] }));
+    }
+    assert.ok(prompt.task.includes("Independent"));
+    return new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: JSON.stringify({ verdict: "PASS", findings: [] }) }] } }] }));
   }
   return new Response("<main>" + "Trusted test-only reference. ".repeat(100) + "</main>", { headers: { "Content-Type": "text/html" } });
 }) as typeof fetch;
 const generated = await generateCourse(claim, fetcher);
-assert.equal(generated.research.method, "Owner topic requests"); assert.equal(aiCalls, 1);
+assert.equal(generated.research.method, "Owner topic requests"); assert.equal(aiCalls, 2);
 await assert.rejects(generateCourse({ ...claim, topicRequests: [] }, fetcher), /Connect Search Console/);
-assert.equal(aiCalls, 1);
+assert.equal(aiCalls, 2);
 const rejectedFixture = JSON.stringify({ error: { status: "INVALID_ARGUMENT", message: "provider-private-test-value",
   details: [{ fieldViolations: [{ field: "generationConfig.thinkingConfig.thinkingLevel", description: "provider-private-test-value" }] }] } });
 let rejectedCalls = 0;
