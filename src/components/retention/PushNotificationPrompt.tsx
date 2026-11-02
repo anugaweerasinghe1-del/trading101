@@ -28,7 +28,8 @@ export function PushNotificationPrompt() {
     <div
       role="dialog"
       aria-label="Enable notifications"
-      className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:bottom-6 z-40 max-w-sm rounded-2xl border border-primary/25 bg-background/95 backdrop-blur-xl p-4 shadow-2xl"
+      data-testid="notification-prompt"
+      className="fixed bottom-[calc(4.5rem+env(safe-area-inset-bottom,0px))] left-3 right-3 z-40 max-h-[calc(100dvh-9rem)] overflow-y-auto overscroll-contain rounded-2xl border border-primary/35 bg-background/95 p-4 shadow-2xl backdrop-blur-xl md:bottom-6 md:left-auto md:right-6 md:max-h-[calc(100dvh-3rem)] md:max-w-sm"
     >
       <div className="flex items-start gap-3">
         <div className="p-2 rounded-lg bg-primary/10">
