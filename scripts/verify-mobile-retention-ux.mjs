@@ -85,6 +85,8 @@ export async function verifyMobileRetentionUx({send,evaluate,waitUntil,origin,de
         "Prompt is independently scrollable on short displays");
       assert.ok(overlay.buttons.some(x=>x.text?.includes("Enable")) &&
         overlay.buttons.some(x=>x.text?.includes("Not now")), "Both permission decisions remain available");
+      assert.ok(overlay.buttons.every(x=>x.rect.height>=44 && x.rect.width>=44),
+        `Prompt decision and dismissal controls have 44px touch targets at ${width}px`);
     }
   }
   await evaluate(`(()=>{
