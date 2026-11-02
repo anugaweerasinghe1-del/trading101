@@ -26,7 +26,7 @@ RESET ROLE;
 UPDATE public.market_prices SET observed_at=now()-interval '60 days', updated_at=now(),quote_status='provider'
  WHERE asset_id='btc';
 SET LOCAL ROLE authenticated;
-DO $ DECLARE cash_before numeric; count_before integer; denied boolean:=false;
+DO $$ DECLARE cash_before numeric; count_before integer; denied boolean:=false;
 BEGIN
  SELECT cash,trades_count INTO cash_before,count_before FROM public.practice_portfolios WHERE user_id=auth.uid();
  BEGIN
@@ -39,11 +39,11 @@ BEGIN
  IF EXISTS(SELECT 1 FROM public.practice_portfolios WHERE user_id=auth.uid()
    AND (cash<>cash_before OR trades_count<>count_before)) THEN
    RAISE EXCEPTION 'Rejected stale trade mutated cash or trade count'; END IF;
-END; $;
+END; $$;
 RESET ROLE;
 UPDATE public.market_prices SET observed_at=now()-interval '1 minute',updated_at=now()
  WHERE asset_id='btc';
-DO $ DECLARE before numeric; after numeric; saved_cash numeric; saved_trades integer;
+DO $$ DECLARE before numeric; after numeric; saved_cash numeric; saved_trades integer;
 BEGIN
  SELECT portfolio_value INTO before FROM public.get_public_practice_members(500) WHERE user_id='00000000-0000-4000-8000-000000000481';
  SELECT p.cash,p.trades_count INTO saved_cash,saved_trades FROM public.practice_portfolios p WHERE p.user_id='00000000-0000-4000-8000-000000000481';
