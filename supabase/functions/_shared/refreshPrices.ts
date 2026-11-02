@@ -10,7 +10,14 @@ export async function refreshHeldQuotes(assets: HeldAsset[], deps: Dependencies)
   const unique = [...new Map(assets.map(a => [a.assetId, a])).values()];
   let updated = 0, unavailable = 0;
   const save = async (asset: string, quote: MarketData | null) => {
-    if (!quote || quote.source !== "live" || quote.provenance.status === "proxy" || quote.provenance.status === "simulated") {
+    const observedAt = quote?.provenance.observedAt ? Date.parse(quote.provenance.observedAt) : NaN;
+    const now = Date.now();
+    // Upstream HTTP success does not establish quote freshness. In particular,
+    // legacy CoinGecko assets can return years-old observations indefinitely.
+    const fresh = Number.isFinite(observedAt) && observedAt <= now + 60_000
+      && now - observedAt <= (quote?.provenance.status === "previous_close" ? 7 * 86400_000 : 15 * 60_000);
+    if (!quote || quote.source !== "live" || !fresh
+      || quote.provenance.status === "proxy" || quote.provenance.status === "simulated") {
       unavailable++; return;
     }
     if (await deps.store(asset, quote)) updated++; else unavailable++;
