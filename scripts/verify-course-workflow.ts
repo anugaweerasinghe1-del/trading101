@@ -140,6 +140,10 @@ generatedFixture.lessons.forEach((lesson, i) => {
   lesson.quiz = lesson.quiz.map((q, j) => ({ ...q, question: q.question + " Lesson " + i + " check " + j, explanation: "Compare this answer with the stipulated hypothetical worksheet assumptions and the effect of virtual fees. " + q.explanation }));
 });
 assert.deepEqual(reviewCourseQuality(generatedFixture, courseReferences.map(s => s.url)), []);
+const distractor = structuredClone(generatedFixture);
+distractor.lessons[0].quiz[0].options[0] = "TradeHQ does not simulate transaction fees";
+assert.deepEqual(reviewCourseQuality(distractor, courseReferences.map(s => s.url)), [],
+  "Incorrect multiple-choice distractors must not be treated as endorsed claims");
 const misleading = structuredClone(generatedFixture);
 misleading.lessons[0].quiz[0].explanation = "TradeHQ does not simulate transaction fees.";
 assert.ok(reviewCourseQuality(misleading).some(issue => issue.includes("fee")));
