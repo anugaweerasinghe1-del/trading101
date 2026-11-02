@@ -94,9 +94,14 @@ function RouteScrollManager() {
       // Retry briefly, but NEVER fight an intentional wheel/touch/key scroll.
       let userInteracted = false;
       const interacted = () => { userInteracted = true; };
+      // Honour explicit scrolling by the user, browser and other UI controls.
+      // A position above zero during the next scroll event cannot be caused
+      // by our own scroll-to-top action, which always targets zero.
+      const onScroll = () => { if (window.scrollY > 1) interacted(); };
       const keyboardScroll = (event: KeyboardEvent) => {
         if (["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End", " "].includes(event.key)) interacted();
       };
+      window.addEventListener("scroll", onScroll, { passive: true });
       window.addEventListener("wheel", interacted, { passive: true });
       window.addEventListener("touchstart", interacted, { passive: true });
       window.addEventListener("keydown", keyboardScroll);
@@ -109,6 +114,7 @@ function RouteScrollManager() {
       return () => {
         cancelAnimationFrame(frame);
         timeouts.forEach(window.clearTimeout);
+        window.removeEventListener("scroll", onScroll);
         window.removeEventListener("wheel", interacted);
         window.removeEventListener("touchstart", interacted);
         window.removeEventListener("keydown", keyboardScroll);

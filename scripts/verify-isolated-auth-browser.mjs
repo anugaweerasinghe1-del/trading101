@@ -223,22 +223,39 @@ async function main(){
         if(req.method!=="POST" && req.method!=="PATCH"){
           dataWrites++;rejectedWrites.push(route+":"+req.method);return json(403,{error:"fixture_forbidden_mutation"});
         }
-        if(req.method==="POST" && parsed.searchParams.get("on_conflict")!=="user_id"){
-          dataWrites++;rejectedWrites.push(route+":missing_conflict_key");return json(403,{error:"fixture_conflict_guard"});
+        // The real client now uses an INSERT followed by a timestamp-guarded
+        // PATCH, not a blind UPSERT. Simulate the unique-key and CAS semantics.
+        if(req.method==="POST" && parsed.searchParams.has("on_conflict")){
+          dataWrites++;rejectedWrites.push(route+":blind_upsert");
+          return json(403,{error:"fixture_requires_versioned_learning_write"});
+        }
+        if(req.method==="PATCH" &&
+          (parsed.searchParams.get("user_id")!=="eq."+USER_ID ||
+           !parsed.searchParams.get("updated_at")?.startsWith("eq."))){
+          dataWrites++;rejectedWrites.push(route+":unguarded_update");
+          return json(403,{error:"fixture_requires_owner_and_version"});
         }
         let content="";
         req.on("data",chunk=>{content+=chunk;if(content.length>120000)req.destroy();});
         req.on("end",()=>{
           let payload;try{payload=JSON.parse(content)}catch{return json(400,{error:"fixture_invalid_learning_data"})}
-          if(!payload || payload.user_id!==USER_ID ||
-             Object.keys(payload).some(k=>!["user_id","courses","journey"].includes(k))||
+          if(!payload || (req.method==="POST" && payload.user_id!==USER_ID) ||
+             (req.method==="PATCH" && payload.user_id!==undefined) ||
+             Object.keys(payload).some(k=>!["user_id","courses","journey"].includes(k)) ||
              !payload.courses || !payload.journey ||
              payload.courses.v!==1 || payload.journey.version!==1){
-            dataWrites++;rejectedWrites.push(route+":unsafe_payload");return json(403,{error:"fixture_learning_owner_or_shape_denied"});
+            dataWrites++;rejectedWrites.push(route+":unsafe_payload");
+            return json(403,{error:"fixture_learning_owner_or_shape_denied"});
           }
-          savedLearning={...payload,updated_at:new Date().toISOString()};
+          if(req.method==="POST" && savedLearning)
+            return json(409,{code:"23505",message:"duplicate key on learning owner"});
+          if(req.method==="PATCH" &&
+             (!savedLearning || savedLearning.updated_at!==parsed.searchParams.get("updated_at")?.slice(3)))
+            return json(200,[]);
+          const stamp=new Date(Date.now()+learningWrites*1000).toISOString();
+          savedLearning={...payload,user_id:USER_ID,updated_at:stamp};
           learningWrites++;
-          return json(req.method==="POST"?201:200,[]);
+          return json(req.method==="POST"?201:200,req.method==="POST"?[]:[{updated_at:stamp}]);
         });
         return;
       }

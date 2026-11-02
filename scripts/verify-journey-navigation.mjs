@@ -60,6 +60,10 @@ assert.match(routes, /window\.addEventListener\("touchstart", interacted/,
   "Do not override user-initiated touch scrolling after route navigation");
 assert.match(routes, /window\.addEventListener\("keydown", keyboardScroll/,
   "Do not override keyboard scrolling after route navigation");
+assert.match(routes, /window\.addEventListener\("scroll", onScroll/,
+  "Do not override browser or programmatic scrolling during lazy hydration");
+assert.match(routes, /window\.scrollY > 1/,
+  "Scroll restoration must detect nonzero scroll position");
 const journey = readFileSync("src/pages/BeginnerJourney.tsx", "utf8");
 assert.match(journey, /aria-label="Learning journey progress"/,
   "Five-step journey progress card remains present on every render");
