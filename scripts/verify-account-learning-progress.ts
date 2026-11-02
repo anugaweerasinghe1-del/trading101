@@ -38,7 +38,10 @@ assert.match(component,/STORAGE_PREFIX \+ previous/,"Account changes archive pri
 assert.match(component,/readJourney\(\)/);
 assert.match(component,/user_learning_progress/);
 assert.match(component,/replaceCourseProgressSnapshot/);
-assert.match(component,/onConflict:"user_id"/);
+assert.match(component,/\.eq\("updated_at",expectedUpdatedAt\)/,
+  "Concurrent account writes must compare the prior server timestamp");
+assert.match(component,/result\.error\?\.code === "23505"/,
+  "Concurrent first insert must retry without overwriting another device");
 assert.doesNotMatch(component,/record_practice_trade|start_ranked_practice|service_role/);
 const schema=readFileSync("supabase/migrations/20261101120000_private_user_learning_progress.sql","utf8");
 assert.match(schema,/ENABLE ROW LEVEL SECURITY/);
