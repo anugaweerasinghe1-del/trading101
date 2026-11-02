@@ -39,7 +39,7 @@ export default function ResetPassword() {
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     const parsed = z.string().min(8, "Use at least 8 characters").max(72).safeParse(password);
-    if (!parsed.success) return toast.error(parsed.error.errors[0].message);
+    if (!parsed.success) return toast.error(parsed.error.issues[0].message);
     setBusy(true);
     const { error } = await supabase.auth.updateUser({ password: parsed.data });
     setBusy(false);
