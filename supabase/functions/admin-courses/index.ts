@@ -2,6 +2,7 @@ import { createClient } from "npm:@supabase/supabase-js@2.75.1";
 import { createCourseAdminHandler } from "../_shared/courseAdmin.ts";
 import { validateBatch } from "../_shared/dailyPractice.ts";
 import { validateCourseDocument } from "../_shared/courseDocument.ts";
+import { reviewCourseQuality } from "../_shared/courseQualityGate.ts";
 import { clientIp, allow } from "../_shared/rateLimit.ts";
 
 const client = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!, { auth: { persistSession: false } });
@@ -48,7 +49,7 @@ Deno.serve(createCourseAdminHandler({
     async publish(id, revision, reviewer) {
       const { data, error } = await client.from("course_drafts").select("document").eq("id", id).single();
       if (error) throw error;
-      const errors = validateCourseDocument(data.document, true);
+      const errors = [...validateCourseDocument(data.document, true), ...reviewCourseQuality(data.document)];
       if (errors.length) throw new Error("Course is incomplete: " + errors.join(" "));
       return rpc("publish_course_draft", { p_id: id, p_revision: revision, p_reviewer: reviewer });
     },

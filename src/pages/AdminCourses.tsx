@@ -8,6 +8,7 @@ import { CourseDraftEditor, blankCourse } from "@/components/courses/CourseDraft
 import { CoursePreview } from "@/components/courses/CoursePreview";
 import { CourseGenerationSettings, type GenerationSettings } from "@/components/courses/CourseGenerationSettings";
 import { validateCourseDocument, type CourseDocument } from "../../supabase/functions/_shared/courseDocument";
+import { reviewCourseQuality } from "../../supabase/functions/_shared/courseQualityGate";
 
 interface Draft {
   id: string; status: string; revision: number; published_revision: number; document: CourseDocument;
@@ -24,7 +25,7 @@ export default function AdminCourses() {
   const [reviewer, setReviewer] = useState("Anuga Weerasinghe");
   const pending = useRef(false);
   const dirty = !!document && JSON.stringify(document) !== JSON.stringify(selected?.document);
-  const errors = document ? validateCourseDocument(document, true) : [];
+  const errors = document ? [...validateCourseDocument(document, true), ...reviewCourseQuality(document)] : [];
   const call = useCallback(async (action: string, payload: Record<string, unknown> = {}) => {
     const { data, error } = await supabase.functions.invoke("admin-courses", { body: { action, ...payload }, headers: { "x-admin-key": key } });
     if (error || data?.error) throw new Error(data?.error || "Could not connect. Check your master key and retry.");
