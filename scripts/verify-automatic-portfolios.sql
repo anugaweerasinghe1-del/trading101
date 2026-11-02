@@ -22,6 +22,8 @@ DO $$ BEGIN
 END; $$;
 RESET ROLE;
 -- Simulate a stale provider cache WITHOUT altering durable production history.
+-- Seed a real cache row: the first account trade above can use a fixed simulator price.
+SELECT public.store_practice_quote('btc',95000,'Isolated fixture',now()-interval '2 minutes','provider');
 -- Existing server auth remains in force and a blocked order must not mutate funds.
 UPDATE public.market_prices SET observed_at=now()-interval '60 days', updated_at=now(),quote_status='provider'
  WHERE asset_id='btc';
