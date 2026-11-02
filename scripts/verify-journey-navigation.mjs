@@ -75,6 +75,9 @@ assert.ok(notifications.includes("bottom-[calc(4.5rem+env(safe-area-inset-bottom
   "Notification prompt clears the fixed 4rem mobile bar and safe area");
 assert.ok(notifications.includes("max-h-[calc(100dvh-9rem)] overflow-y-auto"),
   "Mobile notification prompt must scroll in a short viewport");
+assert.ok(notifications.includes("flex flex-wrap items-center gap-2") &&
+  notifications.includes("min-h-11") && notifications.includes("h-11 w-11"),
+  "Notification prompt decisions and dismiss control remain touch sized on mobile");
 const journey = readFileSync("src/pages/BeginnerJourney.tsx", "utf8");
 assert.match(journey, /aria-label="Learning journey progress"/,
   "Five-step journey progress card remains present on every render");
