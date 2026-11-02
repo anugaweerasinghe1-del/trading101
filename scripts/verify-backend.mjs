@@ -24,7 +24,7 @@ try {
     }
     await db.exec(readFileSync(repo + 'supabase/migrations/' + path, 'utf8'));
   }
-  for (const path of ['scripts/verify-server-practice.sql', 'scripts/verify-server-duels.sql', 'scripts/verify-automatic-portfolios.sql']) {
+  for (const path of ['scripts/verify-server-practice.sql', 'scripts/verify-server-duels.sql', 'scripts/verify-automatic-portfolios.sql', 'scripts/verify-phase2-security.sql']) {
     const results = await db.exec(readFileSync(repo + path, 'utf8'));
     for (const result of results) for (const row of result.rows) if (row.verification) console.log(row.verification);
     console.log('PASS', path);
