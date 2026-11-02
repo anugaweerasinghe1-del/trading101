@@ -89,11 +89,30 @@ function RouteScrollManager() {
 
   useLayoutEffect(() => {
     if (!hash) {
-      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-      // A lazy route may complete after navigation. The next frame keeps
-      // the viewport anchored to the beginning instead of the previous page.
-      const frame = requestAnimationFrame(() => window.scrollTo({ top: 0, left: 0, behavior: "instant" }));
-      return () => cancelAnimationFrame(frame);
+      // Scroll restoration can run before the lazy destination mounts. Later
+      // page hydration may restore the previous page's lower scroll position.
+      // Retry briefly, but NEVER fight an intentional wheel/touch/key scroll.
+      let userInteracted = false;
+      const interacted = () => { userInteracted = true; };
+      const keyboardScroll = (event: KeyboardEvent) => {
+        if (["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End", " "].includes(event.key)) interacted();
+      };
+      window.addEventListener("wheel", interacted, { passive: true });
+      window.addEventListener("touchstart", interacted, { passive: true });
+      window.addEventListener("keydown", keyboardScroll);
+      const scrollToTopIfIdle = () => {
+        if (!userInteracted) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      };
+      scrollToTopIfIdle();
+      const frame = requestAnimationFrame(scrollToTopIfIdle);
+      const timeouts = [150, 500, 900].map(ms => window.setTimeout(scrollToTopIfIdle, ms));
+      return () => {
+        cancelAnimationFrame(frame);
+        timeouts.forEach(window.clearTimeout);
+        window.removeEventListener("wheel", interacted);
+        window.removeEventListener("touchstart", interacted);
+        window.removeEventListener("keydown", keyboardScroll);
+      };
     }
 
     // Respect intentional deep links after the lazy route has rendered.
