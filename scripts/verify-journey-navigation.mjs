@@ -64,6 +64,20 @@ assert.match(routes, /window\.addEventListener\("scroll", onScroll/,
   "Do not override browser or programmatic scrolling during lazy hydration");
 assert.match(routes, /window\.scrollY > 1/,
   "Scroll restoration must detect nonzero scroll position");
+const resume = readFileSync("src/components/retention/ContinueBanner.tsx", "utf8");
+const notifications = readFileSync("src/components/retention/PushNotificationPrompt.tsx", "utf8");
+assert.ok(!resume.includes(" truncate") && !resume.includes("whitespace-nowrap"),
+  "Do not truncate the returning visitor message on mobile");
+assert.ok(resume.includes("sm:flex-row"), "Mobile resume CTA stacks beneath message");
+assert.ok(resume.includes("min-h-11"), "Continue CTA has a touch-sized target");
+assert.ok(resume.includes("h-11 w-11"), "Dismiss control has a touch-sized target");
+assert.ok(notifications.includes("bottom-[calc(4.5rem+env(safe-area-inset-bottom,0px))]"),
+  "Notification prompt clears the fixed 4rem mobile bar and safe area");
+assert.ok(notifications.includes("max-h-[calc(100dvh-9rem)] overflow-y-auto"),
+  "Mobile notification prompt must scroll in a short viewport");
+assert.ok(notifications.includes("flex flex-wrap items-center gap-2") &&
+  notifications.includes("min-h-11") && notifications.includes("h-11 w-11"),
+  "Notification prompt decisions and dismiss control remain touch sized on mobile");
 const journey = readFileSync("src/pages/BeginnerJourney.tsx", "utf8");
 assert.match(journey, /aria-label="Learning journey progress"/,
   "Five-step journey progress card remains present on every render");

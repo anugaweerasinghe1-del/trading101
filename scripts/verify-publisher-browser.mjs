@@ -15,6 +15,7 @@ import { ASSETS } from "../src/lib/assets.ts";
 import { lessonData } from "../src/lib/lessonData.ts";
 import { verifyChartWindows } from "./verify-chart-windows.mjs";
 import { verifyMobileNavigation } from "./verify-mobile-navigation.mjs";
+import { verifyMobileRetentionUx } from "./verify-mobile-retention-ux.mjs";
 import { verifyGuidedLesson } from "./verify-guided-lesson.mjs";
 import { verifyComparisonArticle } from "./verify-comparison-article.mjs";
 import { verifyCourseOverviewArticle } from "./verify-course-overview-article.mjs";
@@ -319,6 +320,7 @@ try {
   await verifyGuidedLesson({send,evaluate,waitUntil,origin,delay});
   await verifyMarketsSidebar({send,evaluate,waitUntil,origin,delay});
   await verifyMobileNavigation({send,evaluate,waitUntil,origin,delay});
+  await verifyMobileRetentionUx({send,evaluate,waitUntil,origin,delay});
   // Fixed positive chart candles isolate display precision from live providers
   // and from synthetic chart-data generation. Never submit an order.
   chartPriceFixture = true;
