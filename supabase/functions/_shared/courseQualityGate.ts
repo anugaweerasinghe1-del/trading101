@@ -27,7 +27,7 @@ export function reviewCourseQuality(
   }
   const prose = doc.lessons.map(l => l.body.filter(s => !s.trimStart().startsWith("## ")).join(" "));
   const all = [doc.title, doc.tagline, doc.description, ...doc.outcomes, ...doc.lessons.flatMap(l =>
-    [l.title, l.summary, ...l.body, ...l.keyTakeaways, ...l.quiz.flatMap(q => [q.question, ...q.options, q.explanation])])].join("\n");
+    [l.title, l.summary, ...l.body, ...l.keyTakeaways, ...l.quiz.flatMap(q => [q.question, q.options[q.correctAnswer] ?? "", q.explanation])])].join("\n");
   const prohibited: { test: RegExp; reason: string }[] = [
     { test: /\b(?:zero[- ]risk|risk[- ]free (?:trading|strategy|experiment|environment|practice)|absolute psychological freedom)\b/i, reason: "Unqualified risk-free or psychological claim." },
     { test: /\b(?:live price feeds|continuous(?:ly)? (?:live|updated|real[- ]time) (?:feeds|data|prices)|real[- ]time price feeds)\b/i, reason: "Misleading continuous or live quote claim." },
