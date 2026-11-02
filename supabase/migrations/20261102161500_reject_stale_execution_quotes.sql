@@ -54,11 +54,15 @@ BEGIN
  SELECT price,'Cached provider quote: '||m.source INTO q,source FROM public.market_prices m
  WHERE asset_id=p_asset_id
  AND m.observed_at IS NOT NULL
- AND m.updated_at BETWEEN clock_timestamp()-interval '15 minutes' AND clock_timestamp()+interval '1 minute'
  AND m.observed_at <= clock_timestamp()+interval '1 minute'
+ AND m.updated_at <= clock_timestamp()+interval '1 minute'
  AND (
-   (m.quote_status='previous_close' AND m.observed_at >= clock_timestamp()-interval '7 days')
-   OR (m.quote_status <> 'previous_close' AND m.observed_at >= clock_timestamp()-interval '15 minutes')
+   (m.quote_status='previous_close'
+    AND m.observed_at >= clock_timestamp()-interval '7 days'
+    AND m.updated_at >= clock_timestamp()-interval '7 days')
+   OR (m.quote_status <> 'previous_close'
+    AND m.observed_at >= clock_timestamp()-interval '15 minutes'
+    AND m.updated_at >= clock_timestamp()-interval '15 minutes')
  );
  IF q IS NULL AND EXISTS(SELECT 1 FROM public.market_prices m WHERE m.asset_id=p_asset_id) THEN
   RAISE EXCEPTION 'Price quote is stale or unavailable for %. Orders are paused until the provider refreshes.',p_asset_id;
