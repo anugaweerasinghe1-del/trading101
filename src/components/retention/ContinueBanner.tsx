@@ -56,20 +56,20 @@ export function ContinueBanner() {
   if (!show || !route) return null;
 
   return (
-    <div className="container mx-auto px-6 max-w-7xl pt-6">
-      <div className="relative flex items-center justify-between gap-4 rounded-xl border border-emerald-500/20 bg-emerald-500/5 px-4 py-3 backdrop-blur">
-        <div className="flex items-center gap-3 min-w-0">
-          <RotateCcw className="h-4 w-4 text-emerald-400 shrink-0" />
-          <p className="text-sm text-foreground/90 truncate">
+    <div className="container mx-auto px-4 sm:px-6 max-w-7xl pt-6">
+      <div className="relative flex flex-col items-stretch gap-3 rounded-xl border border-emerald-500/20 bg-emerald-500/5 px-4 py-4 backdrop-blur sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+        <div className="flex min-w-0 items-start gap-3 sm:items-center">
+          <RotateCcw className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400 sm:mt-0" />
+          <p className="min-w-0 break-words text-sm leading-relaxed text-foreground/90">
             Welcome back — jump straight to <span className="font-semibold">{label}</span>.
           </p>
         </div>
-        <div className="flex items-center gap-2 shrink-0">
+        <div className="flex items-center justify-between gap-3 border-t border-emerald-500/10 pt-2 pl-7 sm:shrink-0 sm:justify-end sm:border-0 sm:p-0">
           <Link
             to={route}
-            className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-400 hover:text-emerald-300"
+            className="inline-flex min-h-10 items-center gap-2 rounded-lg px-2 text-sm font-semibold text-emerald-400 hover:bg-emerald-500/10 hover:text-emerald-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
           >
-            Continue <ArrowRight className="w-3 h-3" />
+            Continue <ArrowRight className="h-4 w-4" />
           </Link>
           <button
             type="button"
@@ -78,7 +78,7 @@ export function ContinueBanner() {
               localStorage.setItem(DISMISS_KEY, new Date().toISOString());
               setShow(false);
             }}
-            className="p-1 rounded hover:bg-white/[0.05]"
+            className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg hover:bg-white/[0.05] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
           >
             <X className="w-3.5 h-3.5 text-muted-foreground" />
           </button>
