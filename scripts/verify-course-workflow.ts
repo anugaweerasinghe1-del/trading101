@@ -137,7 +137,7 @@ generatedFixture.lessons.forEach((lesson, i) => {
     "In the hypothetical worksheet, divide $10,000 into chosen portions, then calculate and debrief the results. " +
       Array.from({ length: 70 }, (_, n) => "example" + i + h + "b" + n).join(" ") + ". TradeHQ does not promise real returns.",
   ]).flat();
-  lesson.quiz = lesson.quiz.map(q => ({ ...q, explanation: "Compare this answer with the stipulated hypothetical worksheet assumptions and the effect of virtual fees. " + q.explanation }));
+  lesson.quiz = lesson.quiz.map((q, j) => ({ ...q, question: q.question + " Lesson " + i + " check " + j, explanation: "Compare this answer with the stipulated hypothetical worksheet assumptions and the effect of virtual fees. " + q.explanation }));
 });
 assert.deepEqual(reviewCourseQuality(generatedFixture, courseReferences.map(s => s.url)), []);
 const misleading = structuredClone(generatedFixture);
