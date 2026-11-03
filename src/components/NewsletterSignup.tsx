@@ -31,7 +31,7 @@ export function NewsletterSignup({ prominent = false }: { prominent?: boolean })
       ? "rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/[0.10] via-card to-card p-7 md:p-10"
       : "rounded-2xl border border-white/10 bg-white/[0.03] p-6"}>
       <div className="flex gap-2 items-center text-primary text-xs uppercase font-semibold tracking-[0.18em]">
-        <Mail className="h-4 w-4"/> TradeHQ Weekly
+        <Mail className="h-4 w-4"/> TradeHQ Newsletter
       </div>
       <h2 className="mt-3 text-2xl font-semibold text-foreground">
         Understand money, one useful idea at a time.
@@ -59,7 +59,7 @@ export function NewsletterSignup({ prominent = false }: { prominent?: boolean })
         <label className="flex items-start gap-2 text-xs text-muted-foreground cursor-pointer">
           <input type="checkbox" checked={consent} onChange={e=>setConsent(e.target.checked)} required
             className="mt-0.5 accent-primary" />
-          <span>I agree to receive the free TradeHQ Weekly newsletter. I'll confirm my email and can unsubscribe anytime. See the <Link to="/privacy" className="underline hover:text-foreground">Privacy Policy</Link>.</span>
+          <span>I agree to receive the free weekly TradeHQ Newsletter. I'll confirm my email and can unsubscribe anytime. See the <Link to="/privacy" className="underline hover:text-foreground">Privacy Policy</Link>.</span>
         </label>
         {notice && <p role="status" aria-live="polite" className="text-sm text-foreground">{notice}</p>}
       </form>
