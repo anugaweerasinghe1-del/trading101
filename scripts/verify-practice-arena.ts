@@ -90,6 +90,8 @@ assert.match(styles, /prefers-reduced-motion: reduce/, "CSS transitions respect 
 assert.match(page, /role="group" aria-label="Select an exercise action"/);
 assert.match(page, /disabled=\{\(action === "sell"/);
 assert.match(page, /No historical or live market data/);
+assert.match(page, /Resume unfinished session/, "Browsing the scenario catalog must offer a non-destructive resume control.");
+assert.match(page, /setShowCatalog\(true\)/, "Browsing scenarios must not clear the active session.");
 assert.match(page, /Not added to your real TradeHQ portfolio or public profile/);
 assert.doesNotMatch(page, /localStorage\.clear\(/, "Never erase the user's other browser data.");
 console.log("PASS Practice Arena: fictional data integrity, fees, no short sells, completed-state persistence, idempotence, privacy, route discovery, Newsletter rename, accessible UI, reduced motion.");
