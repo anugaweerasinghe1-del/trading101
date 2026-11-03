@@ -1,0 +1,43 @@
+/* TradeHQ Practice Arena — intentionally scoped design primitives.
+   Short transforms/opacity only; no forced scroll, no layout jank, no timers. */
+.arena-root { color-scheme: inherit; position: relative; isolation: isolate; }
+.arena-halo {
+  background: radial-gradient(ellipse 65% 45% at 24% 8%, hsl(var(--primary) / .12), transparent 75%),
+    radial-gradient(ellipse 55% 30% at 85% 6%, hsl(var(--primary) / .045), transparent 80%);
+}
+.arena-heading-accent {
+  background: linear-gradient(115deg, hsl(var(--foreground)) 0%, hsl(var(--primary)) 68%, hsl(var(--foreground)) 130%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.arena-track, .arena-action, .arena-primary, .arena-back {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.arena-track {
+  box-shadow: 0 12px 34px -28px hsl(var(--foreground) / .26);
+  transition: box-shadow .3s cubic-bezier(.22,1,.36,1), border-color .22s ease, background-color .22s ease;
+}
+.arena-track:hover { border-color: hsl(var(--primary) / .5); box-shadow: 0 18px 52px -30px hsl(var(--primary) / .2); }
+.arena-primary { box-shadow: 0 10px 24px -14px hsl(var(--primary) / .56); transition: filter .2s ease, box-shadow .2s ease, transform .2s cubic-bezier(.22,1,.36,1); }
+.arena-primary:not(:disabled):hover { filter: brightness(1.05); box-shadow: 0 14px 30px -16px hsl(var(--primary) / .7); }
+.arena-primary:not(:disabled):active { transform: scale(.985); }
+.arena-action { transition: background-color .18s ease, border-color .18s ease, transform .18s ease; }
+.arena-action:active { transform: scale(.985); }
+.arena-metric { box-shadow: inset 0 1px hsl(var(--foreground) / .035); }
+.arena-textarea { min-height: 76px; }
+.arena-rail { scroll-padding-inline: 1rem; }
+@media (max-width: 767px) {
+  .arena-rail { display: flex; overflow-x: auto; padding: 4px 3px 16px; margin-inline: -3px; gap: 12px; scroll-snap-type: x proximity; overscroll-behavior-inline: contain; scrollbar-width: thin; }
+  .arena-track { flex: 0 0 min(85vw, 320px); scroll-snap-align: center; }
+  .arena-root .arena-main { padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .arena-root *, .arena-root *::before, .arena-root *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
