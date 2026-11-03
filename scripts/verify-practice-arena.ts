@@ -192,6 +192,8 @@ assert.doesNotMatch(study, /href=\{.*report|emailHref/, "Participant answers mus
 assert.doesNotMatch(study, /(?:fetch\(|sendBeacon\(|supabase|\.insert\()/,
   "No automatic survey submission or database write is permitted.");
 assert.match(study, /Date.parse\(completedAt\) >= pageOpenedAt/, "A previous completed session is not a valid current study.");
+assert.match(study, /if \(!invited\) return/, "Normal Arena loads must never scroll to a study prompt.");
+assert.match(study, /requestAnimationFrame/, "Explicit study links should show the research panel after it mounts.");
 assert.match(telemetry, /ARENA_ANALYTICS_CONSENT_KEY/, "Telemetry must consult existing opt-in choice.");
 assert.doesNotMatch(telemetry, /props\.(?:user_id|email|note|cash|amount|portfolio_id|trade_action)\s*=/,
   "Custom event payloads must not include private values or user identity.");
