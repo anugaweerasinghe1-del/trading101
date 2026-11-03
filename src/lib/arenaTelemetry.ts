@@ -77,6 +77,11 @@ export function trackArenaMilestone(event: ArenaMilestone, scenarioId?: string, 
  */
 export function recordConsentedArenaVisit(date = new Date()): boolean {
   if (!hasConsent()) return false;
+  // Do not record a "last visit" when the SDK is blocked or not initialized.
+  // Otherwise a later working visit could be misclassified as a return despite
+  // no earlier event ever reaching Amplitude.
+  const w = window as ArenaWindow;
+  if (!w.__tradehqAmplitudeStarted || typeof w.amplitude?.track !== "function") return false;
   const day = date.toISOString().slice(0, 10);
   trackArenaMilestone("Arena Viewed");
   try {
