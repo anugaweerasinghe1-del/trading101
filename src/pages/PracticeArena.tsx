@@ -30,7 +30,7 @@ function PriceChart({ prices, reduced }: { prices: number[]; reduced: boolean })
   const line = xy.map((p, i) => (i ? "L" : "M") + p.x.toFixed(2) + " " + p.y.toFixed(2)).join(" ");
   const area = line + " L 576 196 L 24 196 Z";
   const last = xy[xy.length - 1];
-  const rising = prices.at(-1)! >= prices[0];
+  const rising = prices[prices.length - 1] >= prices[0];
   return (
     <div className="arena-chart relative overflow-hidden rounded-[1.5rem] border border-border/70 bg-card/75 p-3 sm:p-5">
       <div className="flex flex-wrap items-center justify-between gap-2 px-1 pb-3">
@@ -80,7 +80,7 @@ export default function PracticeArena() {
   const contentRef = useRef<HTMLDivElement>(null);
   const active = stored.active;
   const scenario = active ? scenarioById(active.scenarioId) : undefined;
-  const last = active?.decisions.at(-1);
+  const last = active?.decisions[active.decisions.length - 1];
   const finished = !!active?.finishedAt;
   const totalRounds = scenario ? scenario.scenes.length - 1 : 0;
   const currentScene = scenario && active ? scenario.scenes[Math.min(active.index, totalRounds)] : undefined;
@@ -130,15 +130,8 @@ export default function PracticeArena() {
     apply(next.finishedAt ? completeArena(stored, next) : { ...stored, active: next });
     setAction("hold"); setUnits(1); setNote(""); setError("");
   }
-  function leaveArena() {
-    if (!active || (active.decisions.length > 0 && !active.finishedAt &&
-        !window.confirm("Leave this scenario? Your choices stay saved in this browser and you can resume later."))) return;
-    // Keep the ongoing session; returning users can resume immediately.
-    window.location.assign("/daily");
-  }
   const transition = { duration: reducedMotion ? 0 : 0.36, ease: [0.22, 1, 0.36, 1] as const };
-  const phaseKey = !active ? "choose" : finished ? "finished" : active.pendingReview ? "review" : "round-" + active.index;
-
+  
   return <>
     <Helmet>
       <title>Practice Arena — Interactive Virtual Trading Decisions | TradeHQ</title>
