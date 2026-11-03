@@ -15,8 +15,8 @@ interface RoadmapItem {
 }
 
 const ITEMS: RoadmapItem[] = [
-  { icon: Bell, title: "TradeHQ Weekly", desc: "Free original beginner lessons. Voluntary subscription, confirmation and unsubscribe; only editor-approved issues are published. See /newsletter.", status: "shipped", eta: "Live · Oct 2026" },
-  { icon: GraduationCap, title: "Clearer Navigation", desc: "Home, Learn, Trade, Portfolio and Weekly are front and centre. Everything else is accessible from More, on desktop and mobile.", status: "shipped", eta: "Live · Oct 2026" },
+  { icon: Bell, title: "TradeHQ Newsletter", desc: "Free original beginner lessons. Voluntary subscription, confirmation and unsubscribe; only editor-approved issues are published. See /newsletter.", status: "shipped", eta: "Live · Oct 2026" },
+  { icon: GraduationCap, title: "Clearer Navigation", desc: "Home, Learn, Trade, Portfolio and Newsletter are front and centre. Everything else is accessible from More, on desktop and mobile.", status: "shipped", eta: "Live · Oct 2026" },
   { icon: BookOpenCheck, title: "Courses and Learning Tools", desc: "Structured tracks, the trading guide, practice lessons and local progress tracking are already available.", status: "shipped", eta: "Already available" },
   { icon: Trophy, title: "Virtual Trading and Daily Practice", desc: "Practice with virtual funds, review your portfolio, try daily exercises and optionally challenge a friend.", status: "shipped", eta: "Already available" },
   { icon: Sparkles, title: "One Beginner Journey", desc: "The /start pathway connects a sourced lesson, voluntary virtual trade, portfolio explanation, private reflection, next lesson, and Daily Practice. Browser-stored progress resumes on return without requiring an account.", status: "shipped", eta: "Live · Oct 2026" },
