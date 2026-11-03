@@ -398,7 +398,7 @@ export default function PracticeArena() {
               <s.Icon className="h-5 w-5 text-primary" /><h2 className="mt-3 text-sm font-semibold">{s.title}</h2><p className="mt-1 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
             </div>)}
           </section>}
-          <ArenaStudy completedScenario={active?.finishedAt ? active.scenarioId : null} />
+          <ArenaStudy completedScenario={active?.finishedAt ? active.scenarioId : null} completedAt={active?.finishedAt ?? null} />
           <p className="mt-8 text-xs text-muted-foreground text-center">Practice Arena progress is kept in this browser, separate from both guest and signed-in trading portfolios. Nothing here can enter leaderboards. Optional Arena usage measurement follows the separate analytics consent choice.</p>
         </div>
       </main>
