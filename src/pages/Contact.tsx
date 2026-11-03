@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { z } from "zod";
 import { Navigation } from "@/components/Navigation";
@@ -40,9 +41,26 @@ const contactSchema = z.object({
 });
 
 export default function Contact() {
+  const [searchParams] = useSearchParams();
   const [loadedAt] = useState<number>(() => Date.now());
   const [submitting, setSubmitting] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "", website: "" });
+  // Only a small allowlist of public, non-identifying Arena feedback values is
+  // accepted. The query never triggers an email or sends any data by itself.
+  const [form, setForm] = useState(() => {
+    const rating = searchParams.get("source") === "practice-arena" ? searchParams.get("rating") : null;
+    const descriptions: Record<string, string> = {
+      useful: "useful", confusing: "confusing", "too-easy": "too easy",
+    };
+    const description = rating && Object.prototype.hasOwnProperty.call(descriptions, rating)
+      ? descriptions[rating] : null;
+    return {
+      name: "", email: "", website: "",
+      subject: description ? "Practice Arena feedback" : "",
+      message: description
+        ? "I found the Practice Arena " + description + ".\n\nWhat I'd like improved:\n"
+        : "",
+    };
+  });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [manualDraft, setManualDraft] = useState<string | null>(null);
 

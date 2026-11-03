@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import {
   ARENA_SCENARIOS, ARENA_SIZES, ARENA_FEE_RATE, ARENA_START_CASH,
-  beginArena, completeArena, continueArena, currentMark, markedEquity,
+  arenaOutcome, beginArena, completeArena, continueArena, currentMark, markedEquity,
   parseArena, recordArenaDecision, roundMoney, scenarioById,
   type ArenaSession,
 } from "../src/lib/practiceArena.ts";
@@ -65,7 +65,29 @@ s = recordArenaDecision(s, "buy", 5);
 assert.equal(s.holdings, 5);
 assert.equal(s.decisions[0].units, 5);
 
+// Exact browser-observed beginner trade: $100 buy, observe, $99 sale, then two observes.
+// The $1.20 exercise loss consists of $1.00 price movement and $0.20 in fees.
+let feeExample = beginArena("first-order");
+feeExample = continueArena(recordArenaDecision(feeExample, "buy", 1, "Testing an initial order."));
+feeExample = continueArena(recordArenaDecision(feeExample, "hold", 1));
+feeExample = continueArena(recordArenaDecision(feeExample, "sell", 1));
+feeExample = continueArena(recordArenaDecision(feeExample, "hold", 1));
+feeExample = continueArena(recordArenaDecision(feeExample, "hold", 1), "2026-11-03T10:00:00.000Z");
+const result = arenaOutcome(feeExample);
+assert.deepEqual(result, { equity: 9998.8, totalChange: -1.2, fees: 0.2, priceEffect: -1 },
+  "The completed debrief must separate price effect from fees, not call a sale a $1.20 price loss.");
+const withReflection = parseArena(JSON.stringify({
+  version: 1, active: { ...feeExample, finalReflection: "Next time I will compare sizes." }, completions: {},
+}));
+assert.equal(withReflection.active?.finalReflection, "Next time I will compare sizes.",
+  "Closing notes should survive a browser reload.");
+const invalidReflection = parseArena(JSON.stringify({
+  version: 1, active: { ...feeExample, finalReflection: "x".repeat(401) }, completions: {},
+}));
+assert.equal(invalidReflection.active, null, "Unreasonably long local notes must not be trusted.");
 const page = readFileSync("src/pages/PracticeArena.tsx", "utf8");
+const review = readFileSync("src/components/arena/ArenaSessionReview.tsx", "utf8");
+const contact = readFileSync("src/pages/Contact.tsx", "utf8");
 const engine = readFileSync("src/lib/practiceArena.ts", "utf8");
 const styles = readFileSync("src/pages/PracticeArena.css", "utf8");
 const app = readFileSync("src/App.tsx", "utf8");
@@ -90,6 +112,18 @@ assert.match(styles, /prefers-reduced-motion: reduce/, "CSS transitions respect 
 assert.match(page, /role="group" aria-label="Select an exercise action"/);
 assert.match(page, /disabled=\{\(action === "sell"/);
 assert.match(page, /No historical or live market data/);
+assert.match(page, /ArenaSessionReview session=\{active\}/, "Completed lessons must contain an expanded review.");
+assert.match(page, /order-1 lg:order-2/, "The exercise panel must be first on mobile.");
+assert.match(page, /scrollIntoView/, "Advancing a round should keep the next action in view.");
+assert.match(styles, /scroll-margin-top/, "Action panel scrolling must leave room for the fixed navbar.");
+assert.match(review, /arenaOutcome\(session\)/, "Fee and price effects must be based on the recorded ledger.");
+assert.match(review, /Review all five decisions and my reasons/, "Learners should see their own earlier reasoning.");
+assert.match(review, /Saved in this browser only/, "Private closing note storage must be explicit.");
+assert.match(review, /Your choice has <strong>not<\/strong> been sent/, "Feedback must never pretend to have been submitted.");
+assert.match(review, /\/contact\?source=practice-arena&rating=/, "Feedback requires voluntary navigation.");
+assert.match(contact, /source.*practice-arena/, "Contact page must offer a prefilled feedback draft.");
+assert.match(contact, /mailto:/, "Feedback must remain a user-initiated email draft, not an automatic send.");
+assert.match(page, /Review last session/, "Completed review must remain accessible after reloading the catalog.");
 assert.match(page, /Resume unfinished session/, "Browsing the scenario catalog must offer a non-destructive resume control.");
 assert.match(page, /setShowCatalog\(true\)/, "Browsing scenarios must not clear the active session.");
 assert.match(page, /Not added to your real TradeHQ portfolio or public profile/);

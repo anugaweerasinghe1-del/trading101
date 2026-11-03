@@ -14,6 +14,7 @@ import {
   recordArenaDecision, scenarioById, storeArena,
   type ArenaAction, type ArenaStored, type ArenaUnits,
 } from "@/lib/practiceArena";
+import { ArenaSessionReview } from "@/components/arena/ArenaSessionReview";
 import "./PracticeArena.css";
 
 const fmt = (n: number) => n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 });
@@ -76,7 +77,8 @@ export default function PracticeArena() {
   const [note, setNote] = useState("");
   const [error, setError] = useState("");
   const [showHelp, setShowHelp] = useState(false);
-  const [showCatalog, setShowCatalog] = useState(false);
+  // On return, show fresh choices rather than leaving learners at an old completed session.
+  const [showCatalog, setShowCatalog] = useState(() => Boolean(loadArena().active?.finishedAt));
   const reducedMotion = useReducedMotion() ?? false;
   const contentRef = useRef<HTMLDivElement>(null);
   const active = stored.active;
@@ -103,11 +105,13 @@ export default function PracticeArena() {
     return () => window.removeEventListener("storage", onStorage);
   }, []);
   useEffect(() => {
-    if (active && (active.pendingReview || active.finishedAt)) {
-      // Live announcements and stable focus work without forcibly scrolling or trapping focus.
-      contentRef.current?.focus({ preventScroll: true });
-    }
-  }, [active?.index, active?.pendingReview, active?.finishedAt]);
+    if (!active || showCatalog) return;
+    // One gentle scroll per deliberate round transition; no scrolling while typing.
+    const panel = contentRef.current;
+    if (!panel) return;
+    panel.focus({ preventScroll: true });
+    panel.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "start" });
+  }, [active?.scenarioId, active?.index, active?.pendingReview, active?.finishedAt, showCatalog, reducedMotion]);
 
   function begin(id: string) {
     if (active && !active.finishedAt && active.decisions.length > 0 &&
@@ -131,6 +135,10 @@ export default function PracticeArena() {
     const next = continueArena(active);
     apply(next.finishedAt ? completeArena(stored, next) : { ...stored, active: next });
     setAction("hold"); setUnits(1); setNote(""); setError("");
+  }
+  function saveFinalReflection(value: string) {
+    if (!active?.finishedAt) return;
+    apply({ ...stored, active: { ...active, finalReflection: value.slice(0, 400) } });
   }
   const transition = { duration: reducedMotion ? 0 : 0.36, ease: [0.22, 1, 0.36, 1] as const };
   
@@ -170,14 +178,28 @@ export default function PracticeArena() {
           <AnimatePresence mode="wait" initial={false}>
             {(!active || showCatalog) ? (
               <motion.section key="choose" initial={reducedMotion ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={reducedMotion ? undefined : { opacity: 0, y: -8 }}
-                transition={transition} aria-label="Choose a practice scenario">
+                transition={transition} id="arena-chooser" aria-label="Choose a practice scenario"
+                onAnimationComplete={() => {
+                  if (active && showCatalog) document.getElementById("arena-chooser")?.scrollIntoView({
+                    behavior: reducedMotion ? "auto" : "smooth", block: "start",
+                  });
+                }}>
                 <div className="mb-5 flex items-end justify-between gap-4">
                   <div><h2 className="text-xl font-semibold">Choose your next exercise</h2><p className="text-sm text-muted-foreground mt-1">Three self-contained paths. Every price is deliberately fictional.</p></div>
                   <span className="hidden sm:inline text-xs text-muted-foreground"><Clock3 className="inline h-4 w-4 mr-1" /> About 3–5 minutes each</span>
+                  <span className="sm:hidden text-xs text-muted-foreground">Swipe to explore the three paths</span>
                 </div>
                 {active && !active.finishedAt && <div className="mb-5 rounded-2xl border border-primary/35 bg-primary/5 px-5 py-4 sm:flex items-center justify-between gap-4">
                   <div><p className="text-sm font-semibold">Unfinished practice saved on this device</p><p className="mt-1 text-xs text-muted-foreground">{scenarioById(active.scenarioId)?.title} · {active.index} of {scenarioById(active.scenarioId)!.scenes.length - 1} rounds · Same session, no reset</p></div>
                   <button type="button" onClick={() => setShowCatalog(false)} className="mt-3 sm:mt-0 min-h-11 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Resume unfinished session</button>
+                </div>}
+                {active?.finishedAt && <div className="mb-5 rounded-2xl border border-primary/25 bg-primary/5 px-5 py-4 sm:flex sm:items-center sm:justify-between gap-3">
+                  <div>
+                    <p className="text-sm font-semibold">Your last completed exercise is available</p>
+                    <p className="mt-1 text-xs text-muted-foreground">{scenarioById(active.scenarioId)?.title} · Review your decisions and private closing note before starting something new.</p>
+                    <p className="mt-1 text-xs text-muted-foreground">Starting another exercise replaces this detailed review; your completion count remains saved.</p>
+                  </div>
+                  <button type="button" onClick={() => setShowCatalog(false)} className="mt-3 sm:mt-0 shrink-0 min-h-11 rounded-xl border border-primary/40 px-4 text-xs font-semibold text-primary hover:bg-primary/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">Review last session</button>
                 </div>}
                 <div className="arena-rail grid md:grid-cols-3 gap-4">
                   {ARENA_SCENARIOS.map((item, i) => {
@@ -204,7 +226,13 @@ export default function PracticeArena() {
                 </div>
               </motion.section>
             ) : (
-              <motion.div key={"active-" + active.scenarioId} initial={reducedMotion ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={reducedMotion ? undefined : { opacity: 0, y: -8 }} transition={transition}>
+              <motion.div key={"active-" + active.scenarioId} initial={reducedMotion ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={reducedMotion ? undefined : { opacity: 0, y: -8 }} transition={transition} onAnimationComplete={() => {
+                // AnimatePresence waits for the old catalog to exit before mounting this
+                // panel; the initial useEffect may therefore run before the ref exists.
+                if (!showCatalog) contentRef.current?.scrollIntoView({
+                  behavior: reducedMotion ? "auto" : "smooth", block: "start",
+                });
+              }}>
                 <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="text-xs text-primary font-semibold uppercase tracking-[0.14em]">{scenario?.level}</span>
@@ -228,7 +256,7 @@ export default function PracticeArena() {
                 </div>
 
                 <div className="grid lg:grid-cols-[1.24fr_0.76fr] gap-4 sm:gap-5 items-start">
-                  <div className="space-y-4 min-w-0">
+                  <div className="space-y-4 min-w-0 order-2 lg:order-1">
                     <PriceChart prices={visiblePrices} reduced={reducedMotion} />
                     <div className="rounded-2xl border border-border bg-card/60 p-5">
                       <div className="flex items-center justify-between gap-3">
@@ -246,7 +274,11 @@ export default function PracticeArena() {
                     </div>
                   </div>
 
-                  <div className="min-w-0 rounded-[1.6rem] border border-border bg-card/85 p-5 sm:p-6 shadow-[0_18px_70px_-42px_rgba(0,0,0,.6)]" ref={contentRef} tabIndex={-1}>
+                  <div className="arena-decision-panel min-w-0 order-1 lg:order-2 rounded-[1.6rem] border border-border bg-card/85 p-5 sm:p-6 shadow-[0_18px_70px_-42px_rgba(0,0,0,.6)]" ref={contentRef} tabIndex={-1}>
+                    <div className="mb-4 flex items-center justify-between gap-2 rounded-xl bg-muted/35 px-3 py-2 lg:hidden" aria-label={"Current fictional mark " + fmt(current)}>
+                      <span className="text-[11px] text-muted-foreground">Current fictional mark</span>
+                      <strong className="text-sm font-semibold tabular-nums">{fmt(current)}</strong>
+                    </div>
                     <AnimatePresence mode="wait" initial={false}>
                       {finished ? <motion.section key="finished" initial={reducedMotion ? false : { opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={reducedMotion ? undefined : { opacity: 0 }} transition={transition} aria-labelledby="arena-finished">
                         <div className="inline-flex items-center justify-center h-12 w-12 rounded-2xl bg-primary/10 text-primary"><CheckCircle2 className="w-6 h-6" /></div>
@@ -257,6 +289,7 @@ export default function PracticeArena() {
                           <div className="rounded-xl bg-muted/40 p-3"><p className="text-xs text-muted-foreground">Exercise result</p><p className="font-semibold mt-1 tabular-nums">{fmt(equity - ARENA_START_CASH)}</p></div>
                         </div>
                         <p className="text-xs text-muted-foreground mt-3">An invented scenario result is not a score of your competence or a prediction of real investment returns.</p>
+                        <ArenaSessionReview session={active} onReflectionChange={saveFinalReflection} />
                         <div className="space-y-2 mt-6">
                           <Link to={scenario?.nextHref ?? "/learn"} className="arena-primary inline-flex w-full min-h-12 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground">
                             {scenario?.nextLabel} <ArrowRight className="h-4 w-4" />

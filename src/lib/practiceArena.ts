@@ -106,6 +106,8 @@ export interface ArenaSession {
   decisions: ArenaDecision[];
   pendingReview: boolean;
   finishedAt: string | null;
+  /** Optional learner-authored closing reflection; remains browser-local. */
+  finalReflection?: string;
 }
 
 export interface ArenaStored {
@@ -125,6 +127,14 @@ export function currentMark(session: ArenaSession): number {
   return scenarioById(session.scenarioId)?.scenes[Math.min(session.index, scenarioById(session.scenarioId)!.scenes.length - 1)].price ?? 0;
 }
 export function markedEquity(session: ArenaSession): number { return roundMoney(session.cash + session.holdings * currentMark(session)); }
+
+/** Price effect includes marks on open positions, so it is NOT labelled realized P&L. */
+export function arenaOutcome(session: ArenaSession) {
+  const equity = markedEquity(session);
+  const totalChange = roundMoney(equity - ARENA_START_CASH);
+  const fees = roundMoney(session.fees);
+  return { equity, totalChange, fees, priceEffect: roundMoney(totalChange + fees) };
+}
 
 export function recordArenaDecision(session: ArenaSession, action: ArenaAction, units: ArenaUnits, note = ""): ArenaSession {
   const scenario = scenarioById(session.scenarioId);
@@ -164,6 +174,7 @@ export function isArenaSession(value: unknown): value is ArenaSession {
   if (!Array.isArray(s.decisions) || s.decisions.length !== s.index || typeof s.pendingReview !== "boolean") return false;
   if (!(s.finishedAt === null || (typeof s.finishedAt === "string" && !Number.isNaN(Date.parse(s.finishedAt))))) return false;
   if (s.pendingReview && !s.decisions.length) return false;
+  if (s.finalReflection !== undefined && (typeof s.finalReflection !== "string" || s.finalReflection.length > 400)) return false;
   if (s.finishedAt && (s.index !== scenario.scenes.length - 1 || s.pendingReview)) return false;
   return s.decisions.every((d, i) => d && typeof d === "object" && d.step === i + 1 &&
     ["buy", "sell", "hold"].includes(d.action) && typeof d.note === "string" && d.note.length <= 240 &&
