@@ -25,6 +25,11 @@ const run=async(mutate=(x)=>x,routeMutate=x=>x,githubToken)=>{
 const ok=await run();assert.equal(ok.routes.length,12);assert.equal(ok.releaseAuthorized,false);assert.equal(ok.productionDeployment,false);
 const authed=await run(x=>x,x=>x,'read-only-fixture');
 assert.equal(authed.routes.length,12);
+// A genuine Cloudflare check stuck for an hour fails with actionable provider
+// diagnostics; its in-progress status must never turn green via local success.
+await assert.rejects(run(x=>{
+  x.check_runs[0].status='in_progress';x.check_runs[0].conclusion=null;return x;
+}),/Cloudflare Pages preview stalled for 60 minutes/);
 assert.equal(authed.releaseAuthorized,false);
 for(const mutate of [x=>({...x,total_count:2}),x=>({...x,check_runs:[]}),x=>({...x,check_runs:[...x.check_runs,...x.check_runs]}),
   x=>{x.check_runs[0].head_sha='b'.repeat(40);return x;},x=>{x.check_runs[0].app.id++;return x;},
