@@ -25,6 +25,7 @@ export function ArenaStudy({ completedScenario, completedAt, inProgress }: { com
     });
     return () => window.cancelAnimationFrame(frame);
   }, [invited]);
+  const [adultParticipant, setAdultParticipant] = useState(false);
   const [experience, setExperience] = useState<Experience>("");
   const [before, setBefore] = useState<BeforeAnswer>("");
   const [after, setAfter] = useState<AfterAnswer>("");
@@ -34,7 +35,7 @@ export function ArenaStudy({ completedScenario, completedAt, inProgress }: { com
   const [copyState, setCopyState] = useState<"idle" | "copied" | "unavailable">("idle");
   const finished = completedScenario !== null && completedAt !== null &&
     Number.isFinite(Date.parse(completedAt)) && Date.parse(completedAt) >= pageOpenedAt;
-  const canShare = finished && experience !== "" && before !== "" && after !== "" &&
+  const canShare = adultParticipant && finished && experience !== "" && before !== "" && after !== "" &&
     clarity > 0 && comeBack !== "";
 
   const report = useMemo(() => [
@@ -48,7 +49,7 @@ export function ArenaStudy({ completedScenario, completedAt, inProgress }: { com
     "Would voluntarily return: " + (comeBack || "not answered"),
     "One thing to improve: " + (friction.trim() || "not provided"),
     "",
-    "This email was explicitly prepared by the participant. No name, username, account, holdings, or private trading notes were automatically included.",
+    "This email was explicitly prepared by the participant. Sending it reveals the sender's email address to the recipient and may include email-provider metadata. No account holdings or private trading notes were automatically included.",
   ].join("\n"), [experience, completedScenario, before, after, clarity, comeBack, friction]);
 
   function prepareEmail() {
@@ -85,6 +86,11 @@ export function ArenaStudy({ completedScenario, completedAt, inProgress }: { com
         </button>
       </div>
       {open && <div id="arena-study-content" className="amp-block mt-6 border-t border-border pt-6 space-y-6">
+        <label className="flex cursor-pointer gap-3 rounded-xl border border-primary/30 bg-primary/5 p-4 text-sm leading-relaxed">
+          <input type="checkbox" checked={adultParticipant} onChange={e => setAdultParticipant(e.target.checked)}
+            className="mt-1 h-4 w-4 accent-primary shrink-0" />
+          <span><strong>Adult research volunteers only.</strong> I confirm I am at least 18 and choose to take part. This is a self-declaration, not age verification. Visitors under 18 can use all Arena exercises without joining this study or sharing answers.</span>
+        </label>
         <p className="flex items-start gap-2 text-xs leading-relaxed text-muted-foreground">
           <ShieldCheck className="h-4 w-4 text-primary shrink-0" aria-hidden />
           Answers stay in this open page until you choose to copy or open an email draft. They aren't saved to the TradeHQ database. Do not include names, contact details or financial information. General analytics have separate consent controls.
@@ -169,7 +175,7 @@ export function ArenaStudy({ completedScenario, completedAt, inProgress }: { com
           </div>
           <div className="border-t border-border pt-5">
             <h3 className="text-sm font-semibold">Share the feedback only if you choose to</h3>
-            <p className="mt-1 text-xs leading-relaxed text-muted-foreground">The study doesn't automatically submit anything. Opening an email draft isn't sending it; you must press Send in your email app. Your ordinary analytics choice is separate.</p>
+            <p className="mt-1 text-xs leading-relaxed text-muted-foreground">The study doesn't automatically submit anything. Opening an email draft isn't sending it; you must press Send in your email app. If you send, your email address and provider metadata will be visible to the recipient. Avoid personal information in written answers. Analytics consent is separate.</p>
             <div className="mt-3 flex flex-col sm:flex-row gap-2">
               <button type="button" disabled={!canShare} onClick={prepareEmail}
                 className="min-h-11 inline-flex justify-center items-center gap-2 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground disabled:bg-muted disabled:text-muted-foreground disabled:cursor-not-allowed hover:brightness-105">
@@ -177,10 +183,10 @@ export function ArenaStudy({ completedScenario, completedAt, inProgress }: { com
               </button>
               <button type="button" disabled={!canShare} onClick={() => void copyReport()}
                 className="min-h-11 inline-flex justify-center items-center gap-2 rounded-xl border border-border px-4 text-sm font-semibold disabled:opacity-50">
-                <Clipboard className="h-4 w-4" /> Copy anonymous responses
+                <Clipboard className="h-4 w-4" /> Copy answers without account details
               </button>
             </div>
-            {!canShare && <p className="mt-2 text-xs text-muted-foreground">To enable sharing, choose an experience level, both concept-check answers, clarity and return intention. The optional written comment can stay blank.</p>}
+            {!canShare && <p className="mt-2 text-xs text-muted-foreground">To enable sharing, confirm adult participation and select an experience level, both concept-check answers, clarity and return intention. The optional written comment can stay blank. You can still practise without participating.</p>}
             {copyState !== "idle" && <p className="mt-2 text-xs text-muted-foreground" role="status">{copyState === "copied" ? "Copied locally. Nothing was submitted." : "Clipboard unavailable; you can still prepare an email draft."}</p>}
           </div>
         </>}
