@@ -84,7 +84,7 @@ export function ArenaSessionReview({
           placeholder="A short note for your next practice session (optional)"
           className="arena-textarea mt-3 block w-full rounded-xl border border-border bg-background/75 p-3 text-sm leading-relaxed resize-y focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
         />
-        <p className="mt-1 text-xs text-muted-foreground">Saved in this browser only. Not submitted or shared.</p>
+        <p className="mt-1 text-xs text-muted-foreground">Saved in this browser only, until you start a different exercise. Not submitted or shared.</p>
       </section>
 
       <section className="mt-4 rounded-2xl border border-border p-4" aria-labelledby="arena-feedback-heading">
