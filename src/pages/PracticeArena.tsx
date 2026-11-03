@@ -76,6 +76,7 @@ export default function PracticeArena() {
   const [note, setNote] = useState("");
   const [error, setError] = useState("");
   const [showHelp, setShowHelp] = useState(false);
+  const [showCatalog, setShowCatalog] = useState(false);
   const reducedMotion = useReducedMotion() ?? false;
   const contentRef = useRef<HTMLDivElement>(null);
   const active = stored.active;
@@ -112,6 +113,7 @@ export default function PracticeArena() {
     if (active && !active.finishedAt && active.decisions.length > 0 &&
         !window.confirm("Start a different practice scenario? Your unfinished Arena round will be replaced. Your main trading portfolio will not change.")) return;
     apply({ ...stored, active: beginArena(id) });
+    setShowCatalog(false);
     setAction("hold"); setUnits(1); setNote(""); setError("");
   }
   function decide() {
@@ -166,13 +168,17 @@ export default function PracticeArena() {
           </header>
 
           <AnimatePresence mode="wait" initial={false}>
-            {!active ? (
+            {(!active || showCatalog) ? (
               <motion.section key="choose" initial={reducedMotion ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={reducedMotion ? undefined : { opacity: 0, y: -8 }}
                 transition={transition} aria-label="Choose a practice scenario">
                 <div className="mb-5 flex items-end justify-between gap-4">
                   <div><h2 className="text-xl font-semibold">Choose your next exercise</h2><p className="text-sm text-muted-foreground mt-1">Three self-contained paths. Every price is deliberately fictional.</p></div>
                   <span className="hidden sm:inline text-xs text-muted-foreground"><Clock3 className="inline h-4 w-4 mr-1" /> About 3–5 minutes each</span>
                 </div>
+                {active && !active.finishedAt && <div className="mb-5 rounded-2xl border border-primary/35 bg-primary/5 px-5 py-4 sm:flex items-center justify-between gap-4">
+                  <div><p className="text-sm font-semibold">Unfinished practice saved on this device</p><p className="mt-1 text-xs text-muted-foreground">{scenarioById(active.scenarioId)?.title} · {active.index} of {scenarioById(active.scenarioId)!.scenes.length - 1} rounds · Same session, no reset</p></div>
+                  <button type="button" onClick={() => setShowCatalog(false)} className="mt-3 sm:mt-0 min-h-11 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Resume unfinished session</button>
+                </div>}
                 <div className="arena-rail grid md:grid-cols-3 gap-4">
                   {ARENA_SCENARIOS.map((item, i) => {
                     const past = stored.completions[item.id];
@@ -205,11 +211,7 @@ export default function PracticeArena() {
                     <span className="h-1 w-1 rounded-full bg-border" />
                     <span className="text-sm text-muted-foreground">{scenario?.title}</span>
                   </div>
-                  <button type="button" onClick={() => {
-                    if (window.confirm("Leave the current Arena session? Your decisions will remain saved in this browser until you choose another scenario.")) {
-                      apply({ ...stored, active: null });
-                    }
-                  }} className="min-h-11 rounded-xl border border-border px-4 text-xs font-medium text-muted-foreground hover:bg-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">
+                  <button type="button" onClick={() => setShowCatalog(true)} className="min-h-11 rounded-xl border border-border px-4 text-xs font-medium text-muted-foreground hover:bg-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">
                     Browse scenarios
                   </button>
                 </div>
@@ -262,7 +264,7 @@ export default function PracticeArena() {
                           <button type="button" onClick={() => begin(active.scenarioId)} className="inline-flex w-full min-h-12 items-center justify-center gap-2 rounded-xl border border-border text-sm font-medium hover:bg-muted">
                             <RotateCcw className="h-4 w-4" /> Practise this scenario again
                           </button>
-                          <button type="button" onClick={() => apply({ ...stored, active: null })} className="w-full min-h-11 text-xs text-muted-foreground underline underline-offset-4">Browse another exercise</button>
+                          <button type="button" onClick={() => setShowCatalog(true)} className="w-full min-h-11 text-xs text-muted-foreground underline underline-offset-4">Browse another exercise</button>
                         </div>
                       </motion.section> : active.pendingReview && last ? <motion.section key={"review-" + active.index} initial={reducedMotion ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={reducedMotion ? undefined : { opacity: 0, y: -8 }} transition={transition} aria-labelledby="arena-review">
                         <div className="inline-flex items-center gap-2 text-primary font-semibold text-xs uppercase tracking-[.14em]"><Check className="h-4 w-4" /> Decision recorded</div>
@@ -339,7 +341,7 @@ export default function PracticeArena() {
             )}
           </AnimatePresence>
 
-          {!active && <section className="mt-10 grid md:grid-cols-3 gap-4" aria-label="How the Arena works">
+          {(!active || showCatalog) && <section className="mt-10 grid md:grid-cols-3 gap-4" aria-label="How the Arena works">
             {[
               { Icon: Target, title: "Choose a question", text: "Pick one small skill to practise, from your first order to following a stated plan." },
               { Icon: ChevronRight, title: "Reveal one step", text: "Decide to buy, sell or observe before the next fictional price becomes visible." },
