@@ -270,6 +270,16 @@ export function buildRoutes(): RouteMeta[] {
   });
 
   routes.push({
+    path: "/newsletter",
+    title: "TradeHQ Newsletter — Free Weekly Financial-Literacy Lessons",
+    description: "Subscribe to the free TradeHQ Newsletter for original beginner-friendly financial-literacy lessons. Email confirmation required, unsubscribe whenever you wish.",
+    h1: "TradeHQ Newsletter",
+    summary: "TradeHQ publishes a free educational newsletter with standalone lessons about virtual trading concepts, fees, price snapshots, portfolio arithmetic and thoughtful practice. Subscribe voluntarily using the public form, confirm your email address, and unsubscribe using the link in every issue. An editor reviews each issue before it is sent. The newsletter contains educational explanations, not stock picks, brokerage orders, price guarantees or personalized financial advice.",
+    priority: "0.7",
+    changefreq: "weekly",
+  });
+
+  routes.push({
     path: "/daily",
     title: "Daily Trading Challenge — Build Your Streak | TradeHQ",
     description: `A quick daily scenario plus 8–12 minute case study with visuals, ${starterPracticeBank.exercises[0].questions.length} linked questions and worked answers. Learn from ${starterPracticeBank.exercises.length} rotating exercises for free.`,
