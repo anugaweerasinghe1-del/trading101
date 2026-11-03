@@ -12,7 +12,7 @@ const header = navigation.match(/const navItems = \[([\s\S]*?)\];/)?.[1] ?? "";
 const primary = [...header.matchAll(/to: "([^"]+)", label: "([^"]+)"/g)].map(m => [m[1],m[2]]);
 assert.deepEqual(primary, [
   ["/","Home"], ["/learn","Learn"], ["/trade","Trade"],
-  ["/portfolio","Portfolio"], ["/newsletter","Weekly"]
+  ["/portfolio","Portfolio"], ["/newsletter","Newsletter"]
 ], "Primary navigation follows the beginner learning journey without clutter");
 
 const more = navigation.match(/const moreGroups = \[([\s\S]*?)\];/)?.[1] ?? "";
@@ -20,7 +20,7 @@ const sectionLabels = [...more.matchAll(/\{ label: "(Explore|Community|Company|L
 assert.deepEqual(sectionLabels,["Explore","Community","Company","Legal & Trust"]);
 const secondary = [...more.matchAll(/to: "([^"]+)", label: "([^"]+)"/g)].map(m=>m[1]);
 assert.deepEqual(secondary, [
-  "/start","/courses","/ai-mentor","/markets","/daily",
+  "/start","/practice","/courses","/ai-mentor","/markets","/daily",
   "/leaderboard","/reviews","/about","/contact","/roadmap",
   "/privacy","/terms","/about#disclaimer"
 ], "All useful secondary pages remain discoverable inside More");
