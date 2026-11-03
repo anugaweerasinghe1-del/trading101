@@ -9,6 +9,12 @@ const form = read("src/components/NewsletterSignup.tsx");
 const ui = read("src/pages/AdminNewsletter.tsx");
 const app = read("src/App.tsx");
 const privacy = read("src/lib/privacyCopy.ts");
+const newsletter = read("src/pages/NewsletterPage.tsx");
+const routeManifest = read("scripts/routes.ts");
+const publicCopy = read("scripts/staticCopy.ts");
+const cloudflare = read("scripts/prepare-cloudflare.mjs");
+const vercel = JSON.parse(read("vercel.json"));
+
 for (const action of ["subscribe","confirm","unsubscribe"]) assert.match(publicApi,new RegExp('"'+action+'"'));
 assert.match(publicApi,/confirmation_token_hash/);
 assert.match(publicApi,/confirmation_expires_at/);
@@ -44,4 +50,16 @@ assert.match(app,/path="\/newsletter\/unsubscribe"/);
 assert.match(ui,/Publish approved issue to subscribers/);
 assert.doesNotMatch(ui,/Send test to my inbox/);
 assert.match(privacy,/TradeHQ Weekly/);
+
+// Public signup needs a real prerendered response; confirmation/unsubscribe
+// must be valid, noindex client fallback URLs on BOTH hosting providers.
+assert.match(routeManifest, /path: "\/newsletter"/);
+assert.match(publicCopy, /"\/newsletter": \{/);
+assert.match(newsletter, /<h1 className="text-4xl font-semibold mb-5">TradeHQ Newsletter<\/h1>/);
+assert.doesNotMatch(newsletter, /TradeHQ Weekly/);
+for (const path of ["/newsletter/confirm", "/newsletter/unsubscribe"]) {
+  assert.ok(cloudflare.includes('"' + path + '"'), "Cloudflare Pages must route " + path);
+  assert.ok(vercel.rewrites.some(item => item.source === path && item.destination === "/app-shell.html"), "Vercel must route " + path);
+  assert.ok(app.includes('path="' + path + '"'), "React must mount " + path);
+}
 console.log("PASS public confirmed-only newsletter, unsubscribe, owner publishing limits, signed bounce handling and privacy");
