@@ -124,6 +124,15 @@ export default function Daily() {
               </p>
             </header>
 
+            <Link to="/practice" className="group mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 rounded-[24px] border border-primary/30 bg-primary/[0.045] p-5 sm:p-6 hover:border-primary/60 hover:bg-primary/[0.07] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary" aria-label="Open the free TradeHQ Practice Arena">
+              <div>
+                <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[.15em] font-semibold text-primary"><Sparkles className="h-4 w-4" /> New · Interactive Practice Arena</span>
+                <h2 className="text-lg sm:text-xl font-semibold mt-2 tracking-tight">Don't just answer a scenario. Make the decisions.</h2>
+                <p className="mt-1 text-sm text-muted-foreground leading-relaxed max-w-lg">Reveal one fictional price at a time, practise a virtual choice and understand what changed. Free, private, no signup.</p>
+              </div>
+              <span className="shrink-0 inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground group-hover:brightness-105 transition-all">Open Arena <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" /></span>
+            </Link>
+
             {/* Streak stats — premium */}
             {streak && (
               <div className="grid grid-cols-3 gap-3 md:gap-4 mb-8">

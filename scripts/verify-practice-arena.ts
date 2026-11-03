@@ -1,0 +1,97 @@
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import {
+  ARENA_SCENARIOS, ARENA_SIZES, ARENA_FEE_RATE, ARENA_START_CASH,
+  beginArena, completeArena, continueArena, currentMark, markedEquity,
+  parseArena, recordArenaDecision, roundMoney, scenarioById,
+  type ArenaSession,
+} from "../src/lib/practiceArena.ts";
+
+assert.equal(ARENA_SCENARIOS.length, 3, "Three distinct, authored learning paths are available.");
+assert.deepEqual(ARENA_SIZES, [1, 5, 10]);
+assert.equal(new Set(ARENA_SCENARIOS.map(s => s.id)).size, 3, "Scenario IDs must be unique.");
+for (const scenario of ARENA_SCENARIOS) {
+  assert.ok(scenario.scenes.length >= 6, scenario.id + ": no five-round learning path");
+  assert.ok(scenario.intro.length > 70 && scenario.completion.length > 80, scenario.id + ": need meaningful educational copy");
+  assert.ok(scenario.scenes.every(s => s.price > 0 && Number.isFinite(s.price) && s.context.length > 65 && s.insight.length > 65), scenario.id + ": authored pricing and explanation");
+  assert.ok(["/daily","/start","/learn/article/risk-management-in-trading"].includes(scenario.nextHref));
+  let session = beginArena(scenario.id);
+  assert.equal(currentMark(session), scenario.scenes[0].price);
+  assert.equal(markedEquity(session), ARENA_START_CASH);
+  assert.throws(() => recordArenaDecision(session, "sell", 1), /cannot sell/);
+  const first = recordArenaDecision(session, "buy", 1, "Test only; private journal.");
+  assert.equal(first.pendingReview, true);
+  assert.equal(first.holdings, 1);
+  const expectedFee = roundMoney(scenario.scenes[0].price * ARENA_FEE_RATE);
+  assert.equal(first.fees, expectedFee, "A virtual buy must charge exactly 0.1% with cent rounding.");
+  assert.equal(first.cash, roundMoney(ARENA_START_CASH - scenario.scenes[0].price - expectedFee));
+  assert.equal(first.decisions[0].markedEquity, roundMoney(first.cash + scenario.scenes[1].price));
+  assert.throws(() => recordArenaDecision(first, "hold", 1), /not available/, "A new choice requires reviewing the revealed round.");
+  session = continueArena(first, "2026-11-03T10:00:00.000Z");
+  assert.equal(session.finishedAt, null);
+  const sale = recordArenaDecision(session, "sell", 1);
+  assert.equal(sale.holdings, 0);
+  assert.equal(sale.cash, roundMoney(first.cash + scenario.scenes[1].price - roundMoney(scenario.scenes[1].price * ARENA_FEE_RATE)));
+  assert.equal(sale.fees, roundMoney(first.fees + sale.decisions[1].fee));
+  session = continueArena(sale);
+  for (let i = 2; i < scenario.scenes.length - 1; i++) {
+    const beforeCash = session.cash;
+    const beforeShares = session.holdings;
+    const beforeFee = session.fees;
+    const next = recordArenaDecision(session, "hold", 1, "Waiting is also a decision.");
+    assert.equal(next.cash, beforeCash, "Observing must never spend virtual cash.");
+    assert.equal(next.holdings, beforeShares);
+    assert.equal(next.fees, beforeFee, "Observing has zero fee.");
+    session = continueArena(next, "2026-11-03T10:00:00.000Z");
+  }
+  assert.equal(session.finishedAt, "2026-11-03T10:00:00.000Z");
+  assert.equal(session.decisions.length, scenario.scenes.length - 1);
+  assert.equal(markedEquity(session), roundMoney(session.cash + session.holdings * scenario.scenes.at(-1)!.price));
+  const stored = completeArena({ version: 1, active: session, completions: {} }, session);
+  assert.equal(stored.completions[scenario.id].count, 1);
+  const duplicate = completeArena(stored, session);
+  assert.equal(duplicate.completions[scenario.id].count, 1, "Final review must not increment completion twice.");
+  const recovered = parseArena(JSON.stringify(stored));
+  assert.equal(recovered.active?.scenarioId, scenario.id);
+  assert.equal(recovered.active?.decisions.length, scenario.scenes.length - 1);
+  assert.equal(recovered.completions[scenario.id].count, 1);
+}
+for (const raw of [null, "", "[]", "null", "true", "99", "{bad", JSON.stringify({ version: 12, active: beginArena("first-order") }), "a".repeat(130_000)]) {
+  assert.deepEqual(Object.keys(parseArena(raw).completions), [], "Bad local storage must recover without a crash.");
+}
+assert.equal(scenarioById("not-a-real-scenario"), undefined);
+let s: ArenaSession = beginArena("first-order");
+s = recordArenaDecision(s, "buy", 5);
+assert.equal(s.holdings, 5);
+assert.equal(s.decisions[0].units, 5);
+
+const page = readFileSync("src/pages/PracticeArena.tsx", "utf8");
+const engine = readFileSync("src/lib/practiceArena.ts", "utf8");
+const styles = readFileSync("src/pages/PracticeArena.css", "utf8");
+const app = readFileSync("src/App.tsx", "utf8");
+const nav = readFileSync("src/components/Navigation.tsx", "utf8");
+const daily = readFileSync("src/pages/Daily.tsx", "utf8");
+const journey = readFileSync("src/pages/BeginnerJourney.tsx", "utf8");
+const hero = readFileSync("src/components/PremiumHero.tsx", "utf8");
+const routes = readFileSync("scripts/routes.ts", "utf8");
+assert.match(app, /path="\/practice" element=\{<PracticeArena \/>\}/, "Practice route must load.");
+assert.match(routes, /path: "\/practice"/, "Arena must be in the prerender route manifest.");
+assert.match(nav, /to: "\/newsletter", label: "Newsletter"/, "Weekly label must be Newsletter.");
+assert.match(nav, /to: "\/practice", label: "Practice Arena"/, "Discover Arena in navigation.");
+assert.match(daily, /to="\/practice"/);
+assert.match(journey, /to="\/practice"/);
+assert.match(hero, /to="\/practice"/);
+for (const source of [engine, page]) {
+  assert.doesNotMatch(source, /(?:from\(["'](?:practice_portfolios|practice_trades)|startRankedPractice\(|placeTrade\(|savePortfolio\()/,
+    "Arena must not write to a user's actual simulated trading balance or ranked history.");
+}
+assert.match(page, /prefers-reduced-motion|useReducedMotion/, "Animations respect user motion preferences.");
+assert.match(styles, /prefers-reduced-motion: reduce/, "CSS transitions respect reduced motion.");
+assert.match(page, /role="group" aria-label="Select an exercise action"/);
+assert.match(page, /disabled=\{\(action === "sell"/);
+assert.match(page, /No historical or live market data/);
+assert.match(page, /Resume unfinished session/, "Browsing the scenario catalog must offer a non-destructive resume control.");
+assert.match(page, /setShowCatalog\(true\)/, "Browsing scenarios must not clear the active session.");
+assert.match(page, /Not added to your real TradeHQ portfolio or public profile/);
+assert.doesNotMatch(page, /localStorage\.clear\(/, "Never erase the user's other browser data.");
+console.log("PASS Practice Arena: fictional data integrity, fees, no short sells, completed-state persistence, idempotence, privacy, route discovery, Newsletter rename, accessible UI, reduced motion.");

@@ -29,7 +29,7 @@ export default function NewsletterPage() {
   };
   return <>
     <Helmet>
-      <title>{confirm ? "Confirm subscription" : remove ? "Unsubscribe" : "TradeHQ Weekly Newsletter"} | TradeHQ</title>
+      <title>{confirm ? "Confirm subscription" : remove ? "Unsubscribe" : "TradeHQ Newsletter"} | TradeHQ</title>
       <meta name="description" content="Original beginner-friendly weekly financial lessons, with email confirmation and an easy unsubscribe."/>
       <meta name="robots" content={special ? "noindex,nofollow" : "index,follow"}/>
       {!special && <link rel="canonical" href="https://www.thetradehq.com/newsletter"/>}

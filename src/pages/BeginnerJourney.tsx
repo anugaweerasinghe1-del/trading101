@@ -178,6 +178,7 @@ export default function BeginnerJourney() {
             <div className="grid sm:grid-cols-2 gap-3">
               <Link to="/learn/article/risk-management-in-trading" className="rounded-xl border border-border p-4 hover:border-primary/60"><BookOpen className="w-5 h-5 text-primary mb-2" /><strong>Next lesson: risk</strong><p className="text-sm text-muted-foreground mt-1">Learn why an exit price is not always guaranteed.</p></Link>
               <Link to="/daily" className="rounded-xl border border-primary/50 p-4 bg-primary/5 hover:bg-primary/10"><ClipboardList className="w-5 h-5 text-primary mb-2" /><strong>Try today's Daily Practice</strong><p className="text-sm text-muted-foreground mt-1">Build a habit using short educational challenges.</p></Link>
+              <Link to="/practice" className="rounded-xl border border-border p-4 hover:border-primary/60 transition-colors"><RotateCcw className="w-5 h-5 text-primary mb-2" /><strong>Practice Arena: decide and reveal</strong><p className="text-sm text-muted-foreground mt-1">Try small fictional market decisions without changing your real practice portfolio.</p></Link>
             </div>
             <Button variant="outline" asChild><Link to="/portfolio"><Wallet className="w-4 h-4 mr-2" /> Review my portfolio again</Link></Button>
           </>}

@@ -280,6 +280,16 @@ export function buildRoutes(): RouteMeta[] {
   });
 
   routes.push({
+    path: "/practice",
+    title: "Practice Arena — Interactive Virtual Trading Decisions | TradeHQ",
+    description: "Practise five fictional trading decisions in minutes. Reveal price changes, see virtual cash and fees, and review your reasoning. Free, private, no signup.",
+    h1: "TradeHQ Practice Arena",
+    summary: "Practice Arena is a free, self-contained interactive training exercise. Choose a beginner or intermediate scenario, observe deliberately fictional prices, and decide whether to buy a small exercise position, sell already held units or wait. Each decision reveals another invented observation and explains the accounting and assumptions. The Arena begins with its own $10,000 fictional cash ledger. The model charges a 0.1% fee on virtual buys and sells, and records exercise choices privately in this browser. It never places an order on TradeHQ's normal virtual trading terminal, changes a user portfolio, alters a public leaderboard, or consults a real-market quote. A favorable exercise result cannot establish trading competence or forecast real performance. After reviewing a scenario, continue with the beginner journey, risk lesson or deeper Daily Practice.",
+    priority: "0.7",
+    changefreq: "monthly",
+  });
+
+  routes.push({
     path: "/reviews",
     title: "TradeHQ Reviews — What Traders Are Saying | TradeHQ",
     description: `Read honest reviews from TradeHQ practice traders. Free educational simulator with ${BALANCE} virtual cash — no signup.`,

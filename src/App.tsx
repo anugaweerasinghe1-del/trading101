@@ -42,6 +42,7 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 const Leaderboard = lazy(() => import("./pages/Leaderboard"));
 const LearnArticle = lazy(() => import("./pages/LearnArticle"));
 const Daily = lazy(() => import("./pages/Daily"));
+const PracticeArena = lazy(() => import("./pages/PracticeArena"));
 const Reviews = lazy(() => import("./pages/Reviews"));
 const AdminReviews = lazy(() => import("./pages/AdminReviews"));
 const AdminDaily = lazy(() => import("./pages/AdminDaily"));
@@ -196,6 +197,7 @@ function AnimatedRoutes() {
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/ai-mentor" element={<AIMentor />} />
           <Route path="/daily" element={<Daily />} />
+          <Route path="/practice" element={<PracticeArena />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/roadmap" element={<Roadmap />} />
           <Route path="/about" element={<About />} />

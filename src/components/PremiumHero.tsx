@@ -144,6 +144,7 @@ export function PremiumHero() {
           <Link to="/start" className="mt-3 inline-flex items-center gap-2 text-sm font-bold text-primary underline underline-offset-4 hover:opacity-80">
             Follow the first-trade journey <ArrowRight className="h-4 w-4" />
           </Link>
+          <p className="mt-3 text-xs text-muted-foreground">Prefer a short interactive challenge? <Link to="/practice" className="text-primary font-semibold underline underline-offset-4">Explore the Practice Arena</Link>.</p>
         </div>
 
         {/* Stats grid */}
