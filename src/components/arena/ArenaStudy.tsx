@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ArrowRight, CheckCircle2, Clipboard, FlaskConical, Mail, ShieldCheck } from "lucide-react";
 
 type Experience = "" | "new" | "returning" | "intermediate";
@@ -13,8 +13,18 @@ type ComeBack = "" | "yes" | "maybe" | "no";
  */
 export function ArenaStudy({ completedScenario, completedAt, inProgress }: { completedScenario: string | null; completedAt: string | null; inProgress: boolean }) {
   const [pageOpenedAt] = useState(() => Date.now());
-  const [open, setOpen] = useState(() =>
+  const [invited] = useState(() =>
     typeof window !== "undefined" && new URLSearchParams(window.location.search).get("study") === "1");
+  const [open, setOpen] = useState(invited);
+  useEffect(() => {
+    // Explicit ?study=1 invitation opens the study first; normal /practice
+    // never jumps down the page on load.
+    if (!invited) return;
+    const frame = window.requestAnimationFrame(() => {
+      document.getElementById("arena-study")?.scrollIntoView({ behavior: "auto", block: "start" });
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [invited]);
   const [experience, setExperience] = useState<Experience>("");
   const [before, setBefore] = useState<BeforeAnswer>("");
   const [after, setAfter] = useState<AfterAnswer>("");
