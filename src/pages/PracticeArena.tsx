@@ -178,7 +178,12 @@ export default function PracticeArena() {
           <AnimatePresence mode="wait" initial={false}>
             {(!active || showCatalog) ? (
               <motion.section key="choose" initial={reducedMotion ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={reducedMotion ? undefined : { opacity: 0, y: -8 }}
-                transition={transition} aria-label="Choose a practice scenario">
+                transition={transition} id="arena-chooser" aria-label="Choose a practice scenario"
+                onAnimationComplete={() => {
+                  if (active && showCatalog) document.getElementById("arena-chooser")?.scrollIntoView({
+                    behavior: reducedMotion ? "auto" : "smooth", block: "start",
+                  });
+                }}>
                 <div className="mb-5 flex items-end justify-between gap-4">
                   <div><h2 className="text-xl font-semibold">Choose your next exercise</h2><p className="text-sm text-muted-foreground mt-1">Three self-contained paths. Every price is deliberately fictional.</p></div>
                   <span className="hidden sm:inline text-xs text-muted-foreground"><Clock3 className="inline h-4 w-4 mr-1" /> About 3–5 minutes each</span>
@@ -221,7 +226,13 @@ export default function PracticeArena() {
                 </div>
               </motion.section>
             ) : (
-              <motion.div key={"active-" + active.scenarioId} initial={reducedMotion ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={reducedMotion ? undefined : { opacity: 0, y: -8 }} transition={transition}>
+              <motion.div key={"active-" + active.scenarioId} initial={reducedMotion ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={reducedMotion ? undefined : { opacity: 0, y: -8 }} transition={transition} onAnimationComplete={() => {
+                // AnimatePresence waits for the old catalog to exit before mounting this
+                // panel; the initial useEffect may therefore run before the ref exists.
+                if (!showCatalog) contentRef.current?.scrollIntoView({
+                  behavior: reducedMotion ? "auto" : "smooth", block: "start",
+                });
+              }}>
                 <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="text-xs text-primary font-semibold uppercase tracking-[0.14em]">{scenario?.level}</span>
