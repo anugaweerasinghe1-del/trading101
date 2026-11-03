@@ -41,9 +41,14 @@ export function ArenaStudy({ completedScenario, completedAt }: { completedScenar
     "This email was explicitly prepared by the participant. No name, username, account, holdings, or private trading notes were automatically included.",
   ].join("\n"), [experience, completedScenario, before, after, clarity, comeBack, friction]);
 
-  const emailHref = "mailto:anugaweerasinghe1@gmail.com?subject=" +
-    encodeURIComponent("TradeHQ Practice Arena — voluntary user test") +
-    "&body=" + encodeURIComponent(report);
+  function prepareEmail() {
+    if (!canShare) return;
+    // Compute the mailto URL *only on click*. Personal observations must never
+    // appear in a rendered href/DOM attribute: replay masking does not cover attributes.
+    const subject = encodeURIComponent("TradeHQ Practice Arena — voluntary user test");
+    window.location.href = "mailto:anugaweerasinghe1@gmail.com?subject=" +
+      subject + "&body=" + encodeURIComponent(report);
+  }
 
   async function copyReport() {
     if (!canShare) return;
@@ -154,10 +159,10 @@ export function ArenaStudy({ completedScenario, completedAt }: { completedScenar
             <h3 className="text-sm font-semibold">Share the feedback only if you choose to</h3>
             <p className="mt-1 text-xs leading-relaxed text-muted-foreground">The study doesn't automatically submit anything. Opening an email draft isn't sending it; you must press Send in your email app. Your ordinary analytics choice is separate.</p>
             <div className="mt-3 flex flex-col sm:flex-row gap-2">
-              <a href={canShare ? emailHref : undefined} aria-disabled={!canShare} onClick={e => { if (!canShare) e.preventDefault(); }}
-                className={"min-h-11 inline-flex justify-center items-center gap-2 rounded-xl px-4 text-sm font-semibold " + (canShare ? "bg-primary text-primary-foreground hover:brightness-105" : "bg-muted text-muted-foreground cursor-not-allowed")}>
+              <button type="button" disabled={!canShare} onClick={prepareEmail}
+                className="min-h-11 inline-flex justify-center items-center gap-2 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground disabled:bg-muted disabled:text-muted-foreground disabled:cursor-not-allowed hover:brightness-105">
                 <Mail className="h-4 w-4" /> Prepare voluntary feedback email
-              </a>
+              </button>
               <button type="button" disabled={!canShare} onClick={() => void copyReport()}
                 className="min-h-11 inline-flex justify-center items-center gap-2 rounded-xl border border-border px-4 text-sm font-semibold disabled:opacity-50">
                 <Clipboard className="h-4 w-4" /> Copy anonymous responses
