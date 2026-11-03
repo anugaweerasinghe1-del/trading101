@@ -305,6 +305,9 @@ export default function PracticeArena() {
                         </div>
                         <p className="text-xs text-muted-foreground mt-3">An invented scenario result is not a score of your competence or a prediction of real investment returns.</p>
                         <div className="amp-block"><ArenaSessionReview session={active} onReflectionChange={saveFinalReflection} /></div>
+                        <a href="#arena-study" className="mt-3 inline-flex min-h-11 items-center gap-2 text-xs font-semibold text-primary underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">
+                          Help test whether this exercise is useful <ArrowRight className="h-4 w-4" />
+                        </a>
                         <div className="space-y-2 mt-6">
                           <Link to={scenario?.nextHref ?? "/learn"} className="arena-primary inline-flex w-full min-h-12 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground">
                             {scenario?.nextLabel} <ArrowRight className="h-4 w-4" />
