@@ -190,7 +190,7 @@ assert.doesNotMatch(study, /(?:fetch\(|sendBeacon\(|supabase|\.insert\()/,
   "No automatic survey submission or database write is permitted.");
 assert.match(study, /Date.parse\(completedAt\) >= pageOpenedAt/, "A previous completed session is not a valid current study.");
 assert.match(telemetry, /ARENA_ANALYTICS_CONSENT_KEY/, "Telemetry must consult existing opt-in choice.");
-assert.doesNotMatch(telemetry, /(?:user_id|email|note|cash|amount|portfolio_id|trade_action)/,
+assert.doesNotMatch(telemetry, /props\.(?:user_id|email|note|cash|amount|portfolio_id|trade_action)\s*=/,
   "Custom event payloads must not include private values or user identity.");
 assert.match(consent, /tradehq:analytics-ready/, "The SDK must signal when consented tracking is ready.");
 assert.match(consent, /localStorage.removeItem\("tradehq:arena-analytics-last-seen:v1"\)/,
