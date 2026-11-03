@@ -137,6 +137,9 @@ trackArenaMilestone("Arena Completed", "first-order");
 assert.equal(sent.length, beforeRevoke, "Rejected consent cannot generate a milestone.");
 fakeStorage.set("tradehq_consent_v1", "accepted");
 fakeWindow.__tradehqAmplitudeStarted = false;
+assert.equal(recordConsentedArenaVisit(new Date("2026-11-05T10:00:00.000Z")), false,
+  "If the SDK is not ready, a visit should not falsely create future return evidence.");
+assert.equal(fakeStorage.get(ARENA_VISIT_KEY), "2026-11-04");
 trackArenaMilestone("Arena Completed", "first-order");
 assert.equal(sent.length, beforeRevoke, "SDK-not-ready events cannot send immediately.");
 fakeStorage.set("tradehq_consent_v1", "rejected");
