@@ -331,6 +331,49 @@ export const STATIC_COPY: Record<string, PageContent> = {
     ],
   },
 
+  "/practice": {
+    sections: [
+      {
+        h: "How Practice Arena works",
+        p: [
+          "Practice Arena is an interactive training exercise built around deliberate choices rather than trading predictions. Choose one of three authored paths: Your First Decision, Size Changes Everything, or Stay With the Plan. Each path contains five small decision rounds. The next hypothetical observation is hidden until you choose to buy a fictional unit, sell units you already hold, or wait without making an order. This helps you practise noticing assumptions without claiming that a particular price direction is objectively correct.",
+          "All instruments and prices in the Arena are invented classroom examples. They are not historical exchange observations, live quotes, market forecasts or recommendations to buy or sell any real security. A user can enter the exercise without an account, paying a fee or connecting a brokerage. The separate practice balance begins with 10,000 fictional dollars for the purposes of these specific decisions. This is not the main TradeHQ simulator's 100,000-dollar balance, and nothing in the Arena sends an order to the main trading terminal.",
+        ],
+      },
+      {
+        h: "A worked illustration of the virtual ledger",
+        p: [
+          "Imagine a fictional asset displayed at $100 a unit, an exercise cash balance of $10,000 and an order to purchase one unit. The classroom calculation uses the purchase notional of $100 plus a 0.1% transaction fee of $0.10. Exercise cash becomes $9,899.90 and the held unit is initially worth $100 at the same fictional mark, leaving marked equity of $9,999.90. The decrease is the modelled fee, not the loss of the entire purchase value.",
+          "If the next invented observation is $102, the one held unit is marked at $102 and the combined exercise equity would be $10,001.90. If a user simply observes instead of buying, no units are purchased or sold, cash stays unchanged and no transaction fee is charged. A sale is allowed only for units actually held; a user cannot open a short position in this teaching exercise. Costs and changes are displayed immediately after each decision. These examples describe arithmetic, not actual exchange settlement, liquidity, taxes or execution.",
+        ],
+      },
+      {
+        h: "Why the Arena asks for a reason",
+        p: [
+          "Before revealing the next scenario observation, you may write what you are trying to test or why you would prefer to observe without placing an order. Afterward, the review panel compares the recorded action with the next invented mark, the modelled fee, remaining cash and the value of any held units. A profitable fictional decision is not declared a good decision, and an unprofitable one is not automatically described as a mistake. The purpose is to examine what is known, what was assumed and how the decision affects the ledger.",
+          "The first path focuses on basic cash and fee accounting, the second on the dollar effect of position quantity, and the intermediate path on distinguishing evidence from unsupported claims under changing conditions. The next step can be an existing beginner journey, a risk-management lesson or a deeper Daily Practice case. The three paths are finite and can be repeated; TradeHQ does not advertise unlimited new historical market scenarios.",
+        ],
+      },
+      {
+        h: "Privacy, limitations and what the result means",
+        list: [
+          "Arena exercises use intentionally fictional prices and an isolated local ledger. They never change the signed-in practice portfolio, guest simulator balance, public rankings or verified competition records.",
+          "Decisions, optional notes and completion history stay in the same browser. Clearing site data may erase them, and signing in does not currently synchronize Arena sessions across devices.",
+          "The exercise does not simulate market spreads, order-book depth, slippage, broker regulation, borrowing, stop execution, tax costs or the emotional consequences of risking real savings.",
+          "A finished session is a record of educational participation, not investment advice, a skill certification, a personalized trading recommendation or evidence of likely real financial returns.",
+          "Visitors can leave without making a trade. Waiting is a deliberate choice and carries no fictional transaction fee.",
+        ],
+      },
+    ],
+    links: [
+      { href: "/start", label: "First virtual trade journey" },
+      { href: "/daily", label: "Daily practice with worked answers" },
+      { href: "/learn/article/risk-management-in-trading", label: "Risk-management lesson" },
+      { href: "/courses", label: "Structured trading courses" },
+      { href: "/privacy", label: "Browser storage and privacy choices" },
+    ],
+  },
+
   "/daily": {
     sections: [
       {
