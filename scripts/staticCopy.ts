@@ -374,6 +374,49 @@ export const STATIC_COPY: Record<string, PageContent> = {
     ],
   },
 
+  "/newsletter": {
+    sections: [
+      {
+        h: "What the TradeHQ Newsletter teaches",
+        p: [
+          "The TradeHQ Newsletter is a free series of independent, beginner-friendly financial-literacy lessons. Each issue is written to be useful on its own, without requiring an account or a return visit to the website. Topics focus on concepts learners can check for themselves: how a market order differs from a displayed reference price, why a transaction fee changes virtual cash and portfolio equity, and what a simulation can and cannot say about real financial decisions.",
+          "Rather than encouraging a purchase or predicting a price, the newsletter uses hypothetical numbers and clear explanations to explore trading mechanics. For example, buying two fictional units displayed at $50 each has a $100 notional. If a simulator models a 0.1% fee, the illustrative cash debit is $100.10. That ten-cent cost is separate from any later change in the marked value of the two units. Such an example teaches arithmetic rather than endorsing an asset or forecasting a return.",
+        ],
+      },
+      {
+        h: "Subscription, confirmation and privacy",
+        p: [
+          "Subscription is voluntary. Enter your email address in the public form and explicitly agree to receive educational emails; TradeHQ then asks you to confirm the address before the subscription becomes active. The confirmation prevents a submitted address alone from triggering a series of emails. A completed sign-up does not create a trading account or enroll you in a paid tier.",
+          "Every issue includes a way to unsubscribe. You can stop receiving emails without signing in to TradeHQ or making a virtual trade. Email address and consent-related information are handled as described in the privacy policy. The newsletter is separate from the optional public trader profile, simulated portfolio and virtual leaderboard; subscribing does not make your practice activity public.",
+        ],
+      },
+      {
+        h: "How issues are produced and reviewed",
+        p: [
+          "TradeHQ uses an AI-assisted drafting workflow for some educational content, but drafts are not automatically sent to subscribers. The publisher reviews the work and must explicitly approve the issue for release. Source claims and calculated examples can be corrected before publication. Descriptions of a particular trading instrument should be read as general background, not as independently audited research, a professional qualification or investment advice.",
+          "Weekly refers to the intended educational publishing cadence. An issue may be delayed when it is still awaiting review or if email service limits or delivery problems arise. The site does not promise a specific delivery time or guarantee that every proposed edition is published. When you receive a lesson, you can use the worked example independently, visit the glossary for definitions, or practise the concept in TradeHQ's virtual tools.",
+        ],
+      },
+      {
+        h: "What the newsletter does not provide",
+        list: [
+          "No real-money broker service, custody of funds, order execution or subscription charge.",
+          "No trading signals, stock picks, personal portfolio recommendations or guaranteed profitable strategies.",
+          "No claim that simulation performance establishes real-world trading competence or removes market risks.",
+          "No obligation to create an account or appear on a public leaderboard to receive educational email.",
+        ],
+      },
+    ],
+    links: [
+      { href: "/privacy", label: "Privacy policy and subscriber data" },
+      { href: "/terms", label: "Educational terms of service" },
+      { href: "/start", label: "Learn the first virtual trade" },
+      { href: "/practice", label: "Try the interactive Practice Arena" },
+      { href: "/learn", label: "More free lessons" },
+      { href: "/contact", label: "Report an error in an issue" },
+    ],
+  },
+
   "/daily": {
     sections: [
       {
