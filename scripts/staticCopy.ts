@@ -374,6 +374,48 @@ export const STATIC_COPY: Record<string, PageContent> = {
     ],
   },
 
+  "/newsletter": {
+    sections: [
+      {
+        h: "A weekly lesson, delivered only if you want it",
+        p: [
+          "The TradeHQ Newsletter is a free, optional educational email for readers who want to understand financial concepts one useful idea at a time. Each issue is designed to explain a beginner-friendly topic in plain language, with a specific example and an honest account of what the example does not show. The newsletter is intended as a separate educational resource; no TradeHQ account, brokerage account or real-money trade is necessary to read it.",
+          "Issues are prepared through an editorial process and sent only after the owner has approved their content. Drafts are not automatically distributed. The intended frequency is one lesson per week, but provider outages, review delays or quota limits can interrupt the schedule. An email subscription is not a course enrolment and does not guarantee a new lesson on a particular date.",
+        ],
+      },
+      {
+        h: "What readers can expect",
+        list: [
+          "A focused beginner-level explanation about topics such as order mechanics, portfolio accounting, market data, risk concepts and common assumptions.",
+          "Concrete arithmetic or a worked hypothetical example when it helps clarify a concept, with its simplifications made explicit.",
+          "Educational context instead of individual investment recommendations, price predictions, 'buy now' messages or promotions of a brokerage account.",
+          "A free and optional subscription. Core TradeHQ learning pages and simulated practice tools remain available without signing up for the newsletter.",
+        ],
+      },
+      {
+        h: "How subscribing and unsubscribing work",
+        p: [
+          "To request the newsletter, enter an email address and explicitly agree to receive the lessons. TradeHQ sends a confirmation link to the address supplied. The subscription is not active until the recipient confirms using that link. An unconfirmed email address is not placed into the confirmed delivery list. This double opt-in process is intended to reduce unwanted mail and accidental sign-ups.",
+          "Every confirmed recipient can unsubscribe using the link in an email. The unsubscribe page does not require a TradeHQ account. Unsubscribing stops future educational mailings through this list; it does not erase an unrelated account or a browser-held virtual portfolio. If you want more information about how newsletter contact data and service providers are handled, read the Privacy Policy.",
+        ],
+      },
+      {
+        h: "Educational purpose and limitations",
+        p: [
+          "TradeHQ is a virtual-trading education project, not a brokerage or a registered investment advisory service. Newsletter content cannot assess your finances, risk tolerance or suitability for a particular trade. Descriptions of historical events require their own checked sources and dates, while invented practice examples should never be treated as market history. Reading a lesson is not evidence of trading competence or a promise of investment returns.",
+          "The best way to use an issue is to understand one idea, work through its example yourself and then practise the relevant concept in a clearly labelled fictional scenario or a voluntary virtual order. The Practice Arena and Daily Practice give you those options without asking you to risk real savings.",
+        ],
+      },
+    ],
+    links: [
+      { href: "/privacy", label: "How newsletter information is used" },
+      { href: "/contact", label: "Questions about your subscription" },
+      { href: "/practice", label: "Try a free fictional Practice Arena exercise" },
+      { href: "/daily", label: "Explore Daily Practice" },
+      { href: "/learn", label: "Read free educational lessons" },
+    ],
+  },
+
   "/daily": {
     sections: [
       {
