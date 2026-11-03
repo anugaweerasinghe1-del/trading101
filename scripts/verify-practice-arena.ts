@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { arenaAnalyticsAllowed, utcDayGap, recordConsentedArenaVisit, trackArenaMilestone, ARENA_READY_EVENT, ARENA_VISIT_KEY } from "../src/lib/arenaTelemetry.ts";
 import { readFileSync } from "node:fs";
 import {
   ARENA_SCENARIOS, ARENA_SIZES, ARENA_FEE_RATE, ARENA_START_CASH,
@@ -85,7 +86,71 @@ const invalidReflection = parseArena(JSON.stringify({
   version: 1, active: { ...feeExample, finalReflection: "x".repeat(401) }, completions: {},
 }));
 assert.equal(invalidReflection.active, null, "Unreasonably long local notes must not be trusted.");
+// No milestone or research state is created when analytics are rejected.
+assert.equal(arenaAnalyticsAllowed(null), false);
+assert.equal(arenaAnalyticsAllowed("rejected"), false);
+assert.equal(arenaAnalyticsAllowed("accepted"), true);
+assert.equal(utcDayGap("2026-11-03", "2026-11-03"), 0);
+assert.equal(utcDayGap("2026-11-03", "2026-11-04"), 1);
+assert.equal(utcDayGap("2026-11-03", "2026-11-10"), 7);
+assert.equal(utcDayGap("not-a-date", "2026-11-04"), null);
+assert.equal(utcDayGap("2026-11-05", "2026-11-04"), null);
+const fakeStorage = new Map<string, string>();
+const sent: {event:string; props:Record<string,string|number>}[] = [];
+const fakeListeners: (() => void)[] = [];
+const fakeWindow = {
+  localStorage: {
+    getItem: (key: string) => fakeStorage.get(key) ?? null,
+    setItem: (key: string, val: string) => { fakeStorage.set(key, val); },
+    removeItem: (key: string) => { fakeStorage.delete(key); },
+  },
+  __tradehqAmplitudeStarted: true,
+  amplitude: {
+    track: (event: string, props: Record<string,string|number> = {}) => { sent.push({event,props}); },
+  },
+  addEventListener: (type: string, callback: () => void) => {
+    if (type === ARENA_READY_EVENT) fakeListeners.push(callback);
+  },
+};
+Object.defineProperty(globalThis, "window", { configurable: true, value: fakeWindow });
+assert.equal(recordConsentedArenaVisit(new Date("2026-11-03T09:00:00.000Z")), false);
+assert.equal(fakeStorage.get(ARENA_VISIT_KEY), undefined);
+assert.equal(sent.length, 0);
+fakeStorage.set("tradehq_consent_v1", "accepted");
+assert.equal(recordConsentedArenaVisit(new Date("2026-11-03T09:00:00.000Z")), true);
+assert.equal(fakeStorage.get(ARENA_VISIT_KEY), "2026-11-03");
+assert.deepEqual(sent.at(-1), {event:"TradeHQ Arena Viewed",props:{}});
+assert.equal(recordConsentedArenaVisit(new Date("2026-11-03T20:00:00.000Z")), true);
+assert.equal(sent.some(e => e.event === "TradeHQ Arena Returned"), false, "Same day should not count as return.");
+assert.equal(recordConsentedArenaVisit(new Date("2026-11-04T09:00:00.000Z")), true);
+assert.deepEqual(sent.at(-1), {
+  event:"TradeHQ Arena Returned",props:{days_since_last_arena_visit:1},
+});
+trackArenaMilestone("Arena Started", "first-order");
+assert.deepEqual(sent.at(-1), {
+  event:"TradeHQ Arena Started", props:{scenario_id:"first-order",difficulty:"Beginner"},
+});
+assert.deepEqual(Object.keys(sent.at(-1)!.props).sort(), ["difficulty","scenario_id"]);
+const beforeRevoke = sent.length;
+fakeStorage.set("tradehq_consent_v1", "rejected");
+trackArenaMilestone("Arena Completed", "first-order");
+assert.equal(sent.length, beforeRevoke, "Rejected consent cannot generate a milestone.");
+fakeStorage.set("tradehq_consent_v1", "accepted");
+fakeWindow.__tradehqAmplitudeStarted = false;
+trackArenaMilestone("Arena Completed", "first-order");
+assert.equal(sent.length, beforeRevoke, "SDK-not-ready events cannot send immediately.");
+fakeStorage.set("tradehq_consent_v1", "rejected");
+fakeWindow.__tradehqAmplitudeStarted = true;
+for (const callback of fakeListeners) callback();
+assert.equal(sent.length, beforeRevoke, "Consent revoked while loading must prevent queued events.");
+Reflect.deleteProperty(globalThis, "window");
+
 const page = readFileSync("src/pages/PracticeArena.tsx", "utf8");
+const study = readFileSync("src/components/arena/ArenaStudy.tsx", "utf8");
+const telemetry = readFileSync("src/lib/arenaTelemetry.ts", "utf8");
+const consent = readFileSync("src/components/ConsentBanner.tsx", "utf8");
+const privacy = readFileSync("src/lib/privacyCopy.ts", "utf8");
+const protocol = readFileSync("docs/practice-arena-usability-pilot-2026-11-03.md", "utf8");
 const review = readFileSync("src/components/arena/ArenaSessionReview.tsx", "utf8");
 const contact = readFileSync("src/pages/Contact.tsx", "utf8");
 const engine = readFileSync("src/lib/practiceArena.ts", "utf8");
@@ -112,6 +177,27 @@ assert.match(styles, /prefers-reduced-motion: reduce/, "CSS transitions respect 
 assert.match(page, /role="group" aria-label="Select an exercise action"/);
 assert.match(page, /disabled=\{\(action === "sell"/);
 assert.match(page, /No historical or live market data/);
+assert.match(page, /recordConsentedArenaVisit\(\)/, "Arena view events must be consented.");
+assert.match(page, /trackArenaMilestone\("Arena Started", id\)/);
+assert.match(page, /trackArenaMilestone\("Arena Completed", next.scenarioId\)/);
+assert.match(page, /ArenaStudy completedScenario=/, "The voluntary study must be discoverable.");
+assert.match(page, /amp-block mt-5/, "Private exercise notes must be masked in consented replay.");
+assert.match(page, /className="amp-block"/, "Private session reviews must be masked.");
+assert.match(study, /className="amp-block/, "Study answers must be masked from replay.");
+assert.match(study, /function prepareEmail\(\)/, "Email body should be composed only on click.");
+assert.doesNotMatch(study, /href=\{.*report|emailHref/, "Participant answers must not be stored in DOM href attributes.");
+assert.doesNotMatch(study, /(?:fetch\(|sendBeacon\(|supabase|\.insert\()/,
+  "No automatic survey submission or database write is permitted.");
+assert.match(study, /Date.parse\(completedAt\) >= pageOpenedAt/, "A previous completed session is not a valid current study.");
+assert.match(telemetry, /ARENA_ANALYTICS_CONSENT_KEY/, "Telemetry must consult existing opt-in choice.");
+assert.doesNotMatch(telemetry, /(?:user_id|email|note|cash|amount|portfolio_id|trade_action)/,
+  "Custom event payloads must not include private values or user identity.");
+assert.match(consent, /tradehq:analytics-ready/, "The SDK must signal when consented tracking is ready.");
+assert.match(consent, /localStorage.removeItem\("tradehq:arena-analytics-last-seen:v1"\)/,
+  "Withdrawal must clear the optional Arena return-day marker.");
+assert.match(privacy, /Practice Arena research:/, "Privacy page must explain this new data flow.");
+assert.match(protocol, /no real participant results have been collected/i,
+  "A study implementation must not claim participant evidence already exists.");
 assert.match(page, /ArenaSessionReview session=\{active\}/, "Completed lessons must contain an expanded review.");
 assert.match(page, /order-1 lg:order-2/, "The exercise panel must be first on mobile.");
 assert.match(page, /scrollIntoView/, "Advancing a round should keep the next action in view.");
