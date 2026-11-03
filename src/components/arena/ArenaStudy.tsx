@@ -11,7 +11,7 @@ type ComeBack = "" | "yes" | "maybe" | "no";
  * Form state stays in React memory; no HTTP POST, hidden tracking API,
  * participant identity, portfolio import or automatically sent email.
  */
-export function ArenaStudy({ completedScenario, completedAt }: { completedScenario: string | null; completedAt: string | null }) {
+export function ArenaStudy({ completedScenario, completedAt, inProgress }: { completedScenario: string | null; completedAt: string | null; inProgress: boolean }) {
   const [pageOpenedAt] = useState(() => Date.now());
   const [open, setOpen] = useState(() =>
     typeof window !== "undefined" && new URLSearchParams(window.location.search).get("study") === "1");
