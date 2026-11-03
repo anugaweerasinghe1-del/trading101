@@ -46,6 +46,8 @@ const routes = [
   "/privacy",
   "/terms",
   "/about",
+  "/newsletter",
+  "/practice",
 ];
 
 function pick(html, re) {
