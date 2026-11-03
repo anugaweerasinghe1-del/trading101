@@ -123,6 +123,7 @@ assert.match(review, /Your choice has <strong>not<\/strong> been sent/, "Feedbac
 assert.match(review, /\/contact\?source=practice-arena&rating=/, "Feedback requires voluntary navigation.");
 assert.match(contact, /source.*practice-arena/, "Contact page must offer a prefilled feedback draft.");
 assert.match(contact, /mailto:/, "Feedback must remain a user-initiated email draft, not an automatic send.");
+assert.match(page, /Review last session/, "Completed review must remain accessible after reloading the catalog.");
 assert.match(page, /Resume unfinished session/, "Browsing the scenario catalog must offer a non-destructive resume control.");
 assert.match(page, /setShowCatalog\(true\)/, "Browsing scenarios must not clear the active session.");
 assert.match(page, /Not added to your real TradeHQ portfolio or public profile/);
