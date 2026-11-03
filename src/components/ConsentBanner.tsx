@@ -33,6 +33,8 @@ function loadConsentedAnalytics() {
           if (w.engagement?.plugin) w.amplitude.add(w.engagement.plugin());
           if (w.sessionReplay?.plugin) w.amplitude.add(w.sessionReplay.plugin({ sampleRate: 1 }));
           w.amplitude.init(AMPLITUDE_API_KEY, { fetchRemoteConfig: true, autocapture: true });
+          // Custom Arena milestones may now send; they still check the stored consent at dispatch time.
+          window.dispatchEvent(new Event("tradehq:analytics-ready"));
         },
       );
     },
@@ -58,6 +60,7 @@ export function ConsentBanner() {
   const save = (next: ConsentChoice) => {
     const previous = window.localStorage.getItem(STORAGE_KEY);
     window.localStorage.setItem(STORAGE_KEY, next);
+    if (next === "rejected") window.localStorage.removeItem("tradehq:arena-analytics-last-seen:v1");
     setChoice(next);
     // An already initialized SDK keeps running when its script tag is removed.
     // Reload with the stored rejection so no optional SDK is initialized again.
