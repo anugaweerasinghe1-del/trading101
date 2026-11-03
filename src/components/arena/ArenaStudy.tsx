@@ -22,7 +22,8 @@ export function ArenaStudy({ completedScenario, completedAt }: { completedScenar
   const [comeBack, setComeBack] = useState<ComeBack>("");
   const [friction, setFriction] = useState("");
   const [copyState, setCopyState] = useState<"idle" | "copied" | "unavailable">("idle");
-  const finished = completedScenario !== null;
+  const finished = completedScenario !== null && completedAt !== null &&
+    Number.isFinite(Date.parse(completedAt)) && Date.parse(completedAt) >= pageOpenedAt;
   const canShare = finished && experience !== "" && before !== "" && after !== "" &&
     clarity > 0 && comeBack !== "";
 
