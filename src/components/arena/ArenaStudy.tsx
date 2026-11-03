@@ -108,7 +108,9 @@ export function ArenaStudy({ completedScenario, completedAt, inProgress }: { com
         {!finished ? <div className="rounded-xl bg-muted/40 p-4 text-sm">
           <p className="font-semibold">3. Complete one Arena scenario.</p>
           <p className="mt-1 text-muted-foreground leading-relaxed">Select an exercise above. Make the five decisions yourself, review the outcome, and notice whether the explanations clarify the virtual cash movements. You can observe without trading.</p>
-          <a href="#arena-chooser" className="mt-3 inline-flex min-h-11 items-center gap-1.5 font-semibold text-primary underline underline-offset-4">Browse exercises <ArrowRight className="h-4 w-4" /></a>
+          {inProgress
+            ? <p className="mt-2 text-xs text-muted-foreground">You already have an exercise open above. Finish its five decisions to unlock the after-exercise questions.</p>
+            : <a href="#arena-chooser" className="mt-3 inline-flex min-h-11 items-center gap-1.5 font-semibold text-primary underline underline-offset-4">Browse exercises <ArrowRight className="h-4 w-4" /></a>}
         </div> : <>
           <div className="flex items-start gap-2 rounded-xl border border-primary/25 bg-primary/5 p-4 text-sm">
             <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" aria-hidden />
