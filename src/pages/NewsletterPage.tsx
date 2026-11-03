@@ -38,7 +38,7 @@ export default function NewsletterPage() {
     <main className="container mx-auto max-w-3xl px-4 pt-32 pb-20 min-h-[70vh]">
       {special ? <section className="rounded-2xl border border-border bg-card p-8 space-y-4">
         <h1 className="text-3xl font-semibold">
-          {confirm ? "Confirm your TradeHQ Weekly subscription" : "Unsubscribe from TradeHQ Weekly"}
+          {confirm ? "Confirm your TradeHQ Newsletter subscription" : "Unsubscribe from the TradeHQ Newsletter"}
         </h1>
         <p className="text-muted-foreground">
           {confirm ? "Only your confirmation activates the free educational newsletter." :
@@ -52,7 +52,7 @@ export default function NewsletterPage() {
         {status && <p role="status" className="text-foreground">{status}</p>}
         <Link to="/" className="block text-primary underline text-sm">Return to TradeHQ</Link>
       </section> : <>
-        <h1 className="text-4xl font-semibold mb-5">TradeHQ Weekly</h1>
+        <h1 className="text-4xl font-semibold mb-5">TradeHQ Newsletter</h1>
         <p className="text-muted-foreground mb-8">One genuinely useful financial-literacy lesson every week. Written for beginners. Each issue stands alone, without visiting the site.</p>
         <NewsletterSignup prominent/>
       </>}
