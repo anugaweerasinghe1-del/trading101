@@ -15,6 +15,8 @@ import {
   type ArenaAction, type ArenaStored, type ArenaUnits,
 } from "@/lib/practiceArena";
 import { ArenaSessionReview } from "@/components/arena/ArenaSessionReview";
+import { ArenaStudy } from "@/components/arena/ArenaStudy";
+import { recordConsentedArenaVisit, trackArenaMilestone, ARENA_READY_EVENT } from "@/lib/arenaTelemetry";
 import "./PracticeArena.css";
 
 const fmt = (n: number) => n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 });
@@ -81,6 +83,7 @@ export default function PracticeArena() {
   const [showCatalog, setShowCatalog] = useState(() => Boolean(loadArena().active?.finishedAt));
   const reducedMotion = useReducedMotion() ?? false;
   const contentRef = useRef<HTMLDivElement>(null);
+  const visitTrackedRef = useRef(false);
   const active = stored.active;
   const scenario = active ? scenarioById(active.scenarioId) : undefined;
   const last = active?.decisions[active.decisions.length - 1];
@@ -97,6 +100,16 @@ export default function PracticeArena() {
   function apply(next: ArenaStored) {
     setStored(next); storeArena(next);
   }
+  useEffect(() => {
+    // Browser visits are measured only after the existing Amplitude analytics
+    // consent. No new visitor ID or identifying Arena event properties.
+    const record = () => {
+      if (!visitTrackedRef.current && recordConsentedArenaVisit()) visitTrackedRef.current = true;
+    };
+    record();
+    window.addEventListener(ARENA_READY_EVENT, record);
+    return () => window.removeEventListener(ARENA_READY_EVENT, record);
+  }, []);
   useEffect(() => {
     const onStorage = (e: StorageEvent) => {
       if (e.key === ARENA_STORAGE_KEY) setStored(loadArena());
@@ -117,6 +130,7 @@ export default function PracticeArena() {
     if (active && !active.finishedAt && active.decisions.length > 0 &&
         !window.confirm("Start a different practice scenario? Your unfinished Arena round will be replaced. Your main trading portfolio will not change.")) return;
     apply({ ...stored, active: beginArena(id) });
+    trackArenaMilestone("Arena Started", id);
     setShowCatalog(false);
     setAction("hold"); setUnits(1); setNote(""); setError("");
   }
@@ -134,6 +148,7 @@ export default function PracticeArena() {
     if (!active?.pendingReview) return;
     const next = continueArena(active);
     apply(next.finishedAt ? completeArena(stored, next) : { ...stored, active: next });
+    if (next.finishedAt) trackArenaMilestone("Arena Completed", next.scenarioId);
     setAction("hold"); setUnits(1); setNote(""); setError("");
   }
   function saveFinalReflection(value: string) {
@@ -191,7 +206,7 @@ export default function PracticeArena() {
                 </div>
                 {active && !active.finishedAt && <div className="mb-5 rounded-2xl border border-primary/35 bg-primary/5 px-5 py-4 sm:flex items-center justify-between gap-4">
                   <div><p className="text-sm font-semibold">Unfinished practice saved on this device</p><p className="mt-1 text-xs text-muted-foreground">{scenarioById(active.scenarioId)?.title} · {active.index} of {scenarioById(active.scenarioId)!.scenes.length - 1} rounds · Same session, no reset</p></div>
-                  <button type="button" onClick={() => setShowCatalog(false)} className="mt-3 sm:mt-0 min-h-11 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Resume unfinished session</button>
+                  <button type="button" onClick={() => { trackArenaMilestone("Arena Resumed", active.scenarioId); setShowCatalog(false); }} className="mt-3 sm:mt-0 min-h-11 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Resume unfinished session</button>
                 </div>}
                 {active?.finishedAt && <div className="mb-5 rounded-2xl border border-primary/25 bg-primary/5 px-5 py-4 sm:flex sm:items-center sm:justify-between gap-3">
                   <div>
@@ -289,7 +304,10 @@ export default function PracticeArena() {
                           <div className="rounded-xl bg-muted/40 p-3"><p className="text-xs text-muted-foreground">Exercise result</p><p className="font-semibold mt-1 tabular-nums">{fmt(equity - ARENA_START_CASH)}</p></div>
                         </div>
                         <p className="text-xs text-muted-foreground mt-3">An invented scenario result is not a score of your competence or a prediction of real investment returns.</p>
-                        <ArenaSessionReview session={active} onReflectionChange={saveFinalReflection} />
+                        <div className="amp-block"><ArenaSessionReview session={active} onReflectionChange={saveFinalReflection} /></div>
+                        <a href="#arena-study" className="mt-3 inline-flex min-h-11 items-center gap-2 text-xs font-semibold text-primary underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">
+                          Help test whether this exercise is useful <ArrowRight className="h-4 w-4" />
+                        </a>
                         <div className="space-y-2 mt-6">
                           <Link to={scenario?.nextHref ?? "/learn"} className="arena-primary inline-flex w-full min-h-12 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground">
                             {scenario?.nextLabel} <ArrowRight className="h-4 w-4" />
@@ -310,7 +328,7 @@ export default function PracticeArena() {
                           <div className="flex justify-between gap-4"><span className="text-muted-foreground">Fee on this decision</span><strong className="tabular-nums">{fmt(last.fee)}</strong></div>
                           <div className="flex justify-between gap-4"><span className="text-muted-foreground">Marked equity</span><strong className="tabular-nums">{fmt(last.markedEquity)}</strong></div>
                         </div>
-                        {last.note && <div className="mt-4 rounded-xl border border-primary/20 bg-primary/5 p-4"><p className="text-xs font-semibold text-primary mb-2">Your own reason</p><p className="text-sm whitespace-pre-wrap break-words">{last.note}</p></div>}
+                        {last.note && <div className="amp-block mt-4 rounded-xl border border-primary/20 bg-primary/5 p-4"><p className="text-xs font-semibold text-primary mb-2">Your own reason</p><p className="text-sm whitespace-pre-wrap break-words">{last.note}</p></div>}
                         <div className="mt-4 rounded-xl border border-border p-4"><p className="text-xs font-semibold text-primary mb-2">What this round illustrates</p><p className="text-sm leading-relaxed text-muted-foreground">{scenario?.scenes[active.index - 1].insight}</p></div>
                         <button type="button" onClick={advance} className="arena-primary mt-6 inline-flex w-full min-h-12 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
                           {active.index >= totalRounds ? "Finish & reflect" : "Continue to next round"} <ArrowRight className="h-4 w-4" />
@@ -340,7 +358,7 @@ export default function PracticeArena() {
                               </button>)}
                           </div>
                         </div>}
-                        <div className="mt-5">
+                        <div className="amp-block mt-5">
                           <label htmlFor="arena-reason" className="block text-xs font-semibold text-muted-foreground mb-2">Your reason <span className="font-normal">(optional, private)</span></label>
                           <textarea id="arena-reason" rows={2} maxLength={240} value={note} onChange={e => setNote(e.target.value)}
                             placeholder="What am I testing or waiting for?"
@@ -383,7 +401,8 @@ export default function PracticeArena() {
               <s.Icon className="h-5 w-5 text-primary" /><h2 className="mt-3 text-sm font-semibold">{s.title}</h2><p className="mt-1 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
             </div>)}
           </section>}
-          <p className="mt-8 text-xs text-muted-foreground text-center">Practice Arena progress is kept in this browser, separate from both guest and signed-in trading portfolios. Nothing here can enter leaderboards.</p>
+          <ArenaStudy completedScenario={active?.finishedAt ? active.scenarioId : null} completedAt={active?.finishedAt ?? null} inProgress={Boolean(active && !active.finishedAt && !showCatalog)} />
+          <p className="mt-8 text-xs text-muted-foreground text-center">Practice Arena progress is kept in this browser, separate from both guest and signed-in trading portfolios. Nothing here can enter leaderboards. Optional Arena usage measurement follows the separate analytics consent choice.</p>
         </div>
       </main>
       <MegaFooter />
