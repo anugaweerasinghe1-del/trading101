@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Wallet, Home, GraduationCap, BookOpen, BarChart3, Bot, Menu, X, Star, Info, UserRound, LogOut, ChevronDown, Mail, CalendarCheck, Contact, TrendingUp, Layers } from "lucide-react";
+import { Wallet, Home, GraduationCap, BookOpen, BarChart3, Bot, Menu, X, Star, Info, UserRound, LogOut, ChevronDown, Mail, CalendarCheck, Contact, TrendingUp, Layers, Target } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { cn } from "@/lib/utils";
 import { useState, useEffect, useRef } from "react";
@@ -78,11 +78,12 @@ export function Navigation() {
     { to: "/learn", label: "Learn", icon: GraduationCap },
     { to: "/trade", label: "Trade", icon: BarChart3 },
     { to: "/portfolio", label: "Portfolio", icon: Wallet },
-    { to: "/newsletter", label: "Weekly", icon: Mail },
+    { to: "/newsletter", label: "Newsletter", icon: Mail },
   ];
   const moreGroups = [
     { label: "Explore", items: [
       { to: "/start", label: "Start Here", icon: GraduationCap },
+      { to: "/practice", label: "Practice Arena", icon: Target },
       { to: "/courses", label: "Courses", icon: BookOpen },
       { to: "/ai-mentor", label: "AI Mentor", icon: Bot },
       { to: "/markets", label: "Markets", icon: TrendingUp },
