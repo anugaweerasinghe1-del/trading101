@@ -1,47 +1,21 @@
-import { ReactNode, useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { ReactNode } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 
-interface PageTransitionProps {
-  children: ReactNode;
-}
-
-export function PageTransition({ children }: PageTransitionProps) {
-  const location = useLocation();
-  const [isVisible, setIsVisible] = useState(false);
-  const [displayChildren, setDisplayChildren] = useState(children);
-
-  useEffect(() => {
-    // Start exit animation
-    setIsVisible(false);
-
-    // After exit animation, swap children and start enter animation
-    const timer = setTimeout(() => {
-      setDisplayChildren(children);
-      requestAnimationFrame(() => {
-        setIsVisible(true);
-      });
-    }, 200);
-
-    return () => clearTimeout(timer);
-  }, [location.pathname, children]);
-
-  // Initial mount
-  useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 50);
-    return () => clearTimeout(timer);
-  }, []);
-
+/**
+ * Routes already remount this component on pathname changes. An immediate,
+ * short opacity transition avoids the old 200ms blank/delayed-child swap,
+ * while leaving fixed navbars anchored to the viewport.
+ * No transformed ancestor, forced scroll or exit-state timer.
+ */
+export function PageTransition({ children }: { children: ReactNode }) {
+  const reduced = useReducedMotion();
   return (
-    <div
-      // A transformed ancestor becomes the containing block for CSS fixed
-      // descendants, causing the shared navbar to shrink/shift on mobile.
-      // Fade route content without scale/translate/filter so fixed headers
-      // remain viewport-anchored on every route during navigation.
-      className={`transition-opacity duration-300 ease-out ${
-        isVisible ? "opacity-100" : "opacity-0"
-      }`}
+    <motion.div
+      initial={reduced ? false : { opacity: 0.84 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: reduced ? 0 : 0.2, ease: "easeOut" }}
     >
-      {displayChildren}
-    </div>
+      {children}
+    </motion.div>
   );
 }
