@@ -188,6 +188,14 @@ export default function PracticeArena() {
                   <div><p className="text-sm font-semibold">Unfinished practice saved on this device</p><p className="mt-1 text-xs text-muted-foreground">{scenarioById(active.scenarioId)?.title} · {active.index} of {scenarioById(active.scenarioId)!.scenes.length - 1} rounds · Same session, no reset</p></div>
                   <button type="button" onClick={() => setShowCatalog(false)} className="mt-3 sm:mt-0 min-h-11 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Resume unfinished session</button>
                 </div>}
+                {active?.finishedAt && <div className="mb-5 rounded-2xl border border-primary/25 bg-primary/5 px-5 py-4 sm:flex sm:items-center sm:justify-between gap-3">
+                  <div>
+                    <p className="text-sm font-semibold">Your last completed exercise is available</p>
+                    <p className="mt-1 text-xs text-muted-foreground">{scenarioById(active.scenarioId)?.title} · Review your decisions and private closing note before starting something new.</p>
+                    <p className="mt-1 text-xs text-muted-foreground">Starting another exercise replaces this detailed review; your completion count remains saved.</p>
+                  </div>
+                  <button type="button" onClick={() => setShowCatalog(false)} className="mt-3 sm:mt-0 shrink-0 min-h-11 rounded-xl border border-primary/40 px-4 text-xs font-semibold text-primary hover:bg-primary/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">Review last session</button>
+                </div>}
                 <div className="arena-rail grid md:grid-cols-3 gap-4">
                   {ARENA_SCENARIOS.map((item, i) => {
                     const past = stored.completions[item.id];
