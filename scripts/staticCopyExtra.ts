@@ -370,7 +370,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
       h: "Cookies and analytics",
       p: [
         "TradeHQ stores guest practice records in local browser storage. Account cash, positions and server-recorded trades are stored with Supabase. Optional analytics and advertising services can use cookies or similar identifiers after the applicable consent choice; the privacy policy explains those providers and controls.",
-        "If a visitor accepts optional analytics, the Practice Arena can send minimal Amplitude events recording exercises viewed, started, completed or resumed, plus a same-browser day-to-day return proxy. These custom event properties do not include virtual account balances, trading decisions, notes or questionnaire answers. Declining analytics blocks the events. A separate, voluntary five-minute user test prepares feedback only if the participant chooses to share it by email.",
+        "Only after a visitor confirms they are 18 or older and explicitly accepts the renewed optional analytics choice, the Practice Arena can send limited Amplitude events recording exercises viewed, started, completed or resumed, plus a same-browser day-to-day return proxy. The website disables analytics session replay and automatic click, page and form capture. These custom event properties do not include virtual account balances, trading decisions, notes or questionnaire answers. Declining analytics blocks the events. A separate, voluntary five-minute user test prepares feedback only if the participant chooses to share it by email.",
       ],
     },
     {
