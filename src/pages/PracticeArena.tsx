@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import {
   ArrowLeft, ArrowRight, ArrowUpRight, BookOpen, Check, CheckCircle2, ChevronRight,
-  CircleHelp, Clock3, RotateCcw, ShieldCheck, Sparkles, Target, TrendingDown, TrendingUp, Wallet,
+  CircleHelp, Clock3, MessageSquare, RotateCcw, ShieldCheck, Sparkles, Target, TrendingDown, TrendingUp, Wallet,
 } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { MegaFooter } from "@/components/MegaFooter";
 import {
   ARENA_SCENARIOS, ARENA_SIZES, ARENA_START_CASH, ARENA_STORAGE_KEY,
-  beginArena, completeArena, continueArena, currentMark, loadArena, markedEquity,
+  arenaOutcome, beginArena, completeArena, continueArena, currentMark, loadArena, markedEquity,
   recordArenaDecision, scenarioById, storeArena,
   type ArenaAction, type ArenaStored, type ArenaUnits,
 } from "@/lib/practiceArena";
@@ -76,7 +76,9 @@ export default function PracticeArena() {
   const [note, setNote] = useState("");
   const [error, setError] = useState("");
   const [showHelp, setShowHelp] = useState(false);
-  const [showCatalog, setShowCatalog] = useState(false);
+  // On return, show fresh choices rather than leaving learners at an old completed session.
+  const [showCatalog, setShowCatalog] = useState(() => Boolean(loadArena().active?.finishedAt));
+  const [feedback, setFeedback] = useState<"useful" | "confusing" | "too-easy" | null>(null);
   const reducedMotion = useReducedMotion() ?? false;
   const contentRef = useRef<HTMLDivElement>(null);
   const active = stored.active;
@@ -91,6 +93,7 @@ export default function PracticeArena() {
     : [], [scenario, active]);
   const current = active ? currentMark(active) : 0;
   const equity = active ? markedEquity(active) : ARENA_START_CASH;
+  const outcome = active ? arenaOutcome(active) : null;
 
   function apply(next: ArenaStored) {
     setStored(next); storeArena(next);
@@ -103,17 +106,19 @@ export default function PracticeArena() {
     return () => window.removeEventListener("storage", onStorage);
   }, []);
   useEffect(() => {
-    if (active && (active.pendingReview || active.finishedAt)) {
-      // Live announcements and stable focus work without forcibly scrolling or trapping focus.
-      contentRef.current?.focus({ preventScroll: true });
-    }
-  }, [active?.index, active?.pendingReview, active?.finishedAt]);
+    if (!active || showCatalog) return;
+    // One gentle scroll per deliberate round transition; no scrolling while typing.
+    const panel = contentRef.current;
+    if (!panel) return;
+    panel.focus({ preventScroll: true });
+    panel.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "start" });
+  }, [active?.scenarioId, active?.index, active?.pendingReview, active?.finishedAt, showCatalog, reducedMotion]);
 
   function begin(id: string) {
     if (active && !active.finishedAt && active.decisions.length > 0 &&
         !window.confirm("Start a different practice scenario? Your unfinished Arena round will be replaced. Your main trading portfolio will not change.")) return;
     apply({ ...stored, active: beginArena(id) });
-    setShowCatalog(false);
+    setShowCatalog(false); setFeedback(null);
     setAction("hold"); setUnits(1); setNote(""); setError("");
   }
   function decide() {
@@ -131,6 +136,10 @@ export default function PracticeArena() {
     const next = continueArena(active);
     apply(next.finishedAt ? completeArena(stored, next) : { ...stored, active: next });
     setAction("hold"); setUnits(1); setNote(""); setError("");
+  }
+  function saveFinalReflection(value: string) {
+    if (!active?.finishedAt) return;
+    apply({ ...stored, active: { ...active, finalReflection: value.slice(0, 400) } });
   }
   const transition = { duration: reducedMotion ? 0 : 0.36, ease: [0.22, 1, 0.36, 1] as const };
   
@@ -174,6 +183,7 @@ export default function PracticeArena() {
                 <div className="mb-5 flex items-end justify-between gap-4">
                   <div><h2 className="text-xl font-semibold">Choose your next exercise</h2><p className="text-sm text-muted-foreground mt-1">Three self-contained paths. Every price is deliberately fictional.</p></div>
                   <span className="hidden sm:inline text-xs text-muted-foreground"><Clock3 className="inline h-4 w-4 mr-1" /> About 3–5 minutes each</span>
+                  <span className="sm:hidden text-xs text-muted-foreground">Swipe to explore the three paths</span>
                 </div>
                 {active && !active.finishedAt && <div className="mb-5 rounded-2xl border border-primary/35 bg-primary/5 px-5 py-4 sm:flex items-center justify-between gap-4">
                   <div><p className="text-sm font-semibold">Unfinished practice saved on this device</p><p className="mt-1 text-xs text-muted-foreground">{scenarioById(active.scenarioId)?.title} · {active.index} of {scenarioById(active.scenarioId)!.scenes.length - 1} rounds · Same session, no reset</p></div>
@@ -228,7 +238,7 @@ export default function PracticeArena() {
                 </div>
 
                 <div className="grid lg:grid-cols-[1.24fr_0.76fr] gap-4 sm:gap-5 items-start">
-                  <div className="space-y-4 min-w-0">
+                  <div className="space-y-4 min-w-0 order-2 lg:order-1">
                     <PriceChart prices={visiblePrices} reduced={reducedMotion} />
                     <div className="rounded-2xl border border-border bg-card/60 p-5">
                       <div className="flex items-center justify-between gap-3">
@@ -246,7 +256,11 @@ export default function PracticeArena() {
                     </div>
                   </div>
 
-                  <div className="min-w-0 rounded-[1.6rem] border border-border bg-card/85 p-5 sm:p-6 shadow-[0_18px_70px_-42px_rgba(0,0,0,.6)]" ref={contentRef} tabIndex={-1}>
+                  <div className="arena-decision-panel min-w-0 order-1 lg:order-2 rounded-[1.6rem] border border-border bg-card/85 p-5 sm:p-6 shadow-[0_18px_70px_-42px_rgba(0,0,0,.6)]" ref={contentRef} tabIndex={-1}>
+                    <div className="mb-4 flex items-center justify-between gap-2 rounded-xl bg-muted/35 px-3 py-2 lg:hidden" aria-label={"Current fictional mark " + fmt(current)}>
+                      <span className="text-[11px] text-muted-foreground">Current fictional mark</span>
+                      <strong className="text-sm font-semibold tabular-nums">{fmt(current)}</strong>
+                    </div>
                     <AnimatePresence mode="wait" initial={false}>
                       {finished ? <motion.section key="finished" initial={reducedMotion ? false : { opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={reducedMotion ? undefined : { opacity: 0 }} transition={transition} aria-labelledby="arena-finished">
                         <div className="inline-flex items-center justify-center h-12 w-12 rounded-2xl bg-primary/10 text-primary"><CheckCircle2 className="w-6 h-6" /></div>
