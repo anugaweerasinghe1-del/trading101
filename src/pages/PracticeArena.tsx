@@ -4,16 +4,17 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import {
   ArrowLeft, ArrowRight, ArrowUpRight, BookOpen, Check, CheckCircle2, ChevronRight,
-  CircleHelp, Clock3, MessageSquare, RotateCcw, ShieldCheck, Sparkles, Target, TrendingDown, TrendingUp, Wallet,
+  CircleHelp, Clock3, RotateCcw, ShieldCheck, Sparkles, Target, TrendingDown, TrendingUp, Wallet,
 } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { MegaFooter } from "@/components/MegaFooter";
 import {
   ARENA_SCENARIOS, ARENA_SIZES, ARENA_START_CASH, ARENA_STORAGE_KEY,
-  arenaOutcome, beginArena, completeArena, continueArena, currentMark, loadArena, markedEquity,
+  beginArena, completeArena, continueArena, currentMark, loadArena, markedEquity,
   recordArenaDecision, scenarioById, storeArena,
   type ArenaAction, type ArenaStored, type ArenaUnits,
 } from "@/lib/practiceArena";
+import { ArenaSessionReview } from "@/components/arena/ArenaSessionReview";
 import "./PracticeArena.css";
 
 const fmt = (n: number) => n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 });
@@ -78,7 +79,6 @@ export default function PracticeArena() {
   const [showHelp, setShowHelp] = useState(false);
   // On return, show fresh choices rather than leaving learners at an old completed session.
   const [showCatalog, setShowCatalog] = useState(() => Boolean(loadArena().active?.finishedAt));
-  const [feedback, setFeedback] = useState<"useful" | "confusing" | "too-easy" | null>(null);
   const reducedMotion = useReducedMotion() ?? false;
   const contentRef = useRef<HTMLDivElement>(null);
   const active = stored.active;
@@ -93,7 +93,6 @@ export default function PracticeArena() {
     : [], [scenario, active]);
   const current = active ? currentMark(active) : 0;
   const equity = active ? markedEquity(active) : ARENA_START_CASH;
-  const outcome = active ? arenaOutcome(active) : null;
 
   function apply(next: ArenaStored) {
     setStored(next); storeArena(next);
@@ -118,7 +117,7 @@ export default function PracticeArena() {
     if (active && !active.finishedAt && active.decisions.length > 0 &&
         !window.confirm("Start a different practice scenario? Your unfinished Arena round will be replaced. Your main trading portfolio will not change.")) return;
     apply({ ...stored, active: beginArena(id) });
-    setShowCatalog(false); setFeedback(null);
+    setShowCatalog(false);
     setAction("hold"); setUnits(1); setNote(""); setError("");
   }
   function decide() {
@@ -271,6 +270,7 @@ export default function PracticeArena() {
                           <div className="rounded-xl bg-muted/40 p-3"><p className="text-xs text-muted-foreground">Exercise result</p><p className="font-semibold mt-1 tabular-nums">{fmt(equity - ARENA_START_CASH)}</p></div>
                         </div>
                         <p className="text-xs text-muted-foreground mt-3">An invented scenario result is not a score of your competence or a prediction of real investment returns.</p>
+                        <ArenaSessionReview session={active} onReflectionChange={saveFinalReflection} />
                         <div className="space-y-2 mt-6">
                           <Link to={scenario?.nextHref ?? "/learn"} className="arena-primary inline-flex w-full min-h-12 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground">
                             {scenario?.nextLabel} <ArrowRight className="h-4 w-4" />
