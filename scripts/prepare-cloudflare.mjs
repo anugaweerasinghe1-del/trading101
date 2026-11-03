@@ -49,7 +49,7 @@ writeFileSync(resolve(dir, "_headers"), productionApproved
   ? pagesDevNoindex
   : "/*\n  X-Robots-Tag: noindex\n" + pagesDevNoindex, "utf8");
 const include = [
-  "/auth", "/reset-password", "/admin", "/admin/*",
+  "/auth", "/reset-password", "/newsletter/confirm", "/newsletter/unsubscribe", "/admin", "/admin/*",
   "/trader/*", "/trade/*", "/challenge", "/challenge/*",
   "/courses/*", "/course-sitemap.xml", "/learn/article/*",
   "/api/contact"
