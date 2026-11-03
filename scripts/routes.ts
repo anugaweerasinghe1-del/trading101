@@ -289,6 +289,39 @@ export function buildRoutes(): RouteMeta[] {
     changefreq: "monthly",
   });
 
+  // Public newsletter destinations must be actual static routes on Cloudflare
+  // and Vercel. A React Router path alone does not make a direct URL loadable.
+  routes.push({
+    path: "/newsletter",
+    title: "TradeHQ Newsletter — Free Weekly Financial-Literacy Lessons",
+    description: "Subscribe to the free TradeHQ Newsletter for original, beginner-friendly financial-literacy lessons. Optional email confirmation, easy unsubscribe and no account.",
+    h1: "TradeHQ Newsletter",
+    summary: "Read about the TradeHQ Newsletter and choose whether to subscribe to original, beginner-friendly financial-literacy lessons. Emails are sent only to confirmed subscribers after the editor approves an issue. A TradeHQ account is not required; a subscriber may opt out at any time. This page does not provide financial recommendations, trading signals or real-money brokerage services.",
+    priority: "0.7",
+    changefreq: "weekly",
+  });
+  // Email action URLs must load by a direct link, but cannot be indexed.
+  // Keep the token in the original URL and require the existing explicit
+  // button action; merely visiting these pages never changes subscription.
+  routes.push({
+    path: "/newsletter/confirm",
+    title: "Confirm Newsletter Subscription | TradeHQ",
+    description: "Confirm a TradeHQ newsletter request using the confirmation link received by email.",
+    h1: "Confirm your newsletter subscription",
+    summary: "This is a one-time email confirmation action. The visitor must use a valid link and explicitly confirm; visiting this page alone does not subscribe them.",
+    changefreq: "monthly",
+    noindex: true,
+  });
+  routes.push({
+    path: "/newsletter/unsubscribe",
+    title: "Unsubscribe from the TradeHQ Newsletter",
+    description: "Unsubscribe from the free TradeHQ newsletter using your email link.",
+    h1: "Unsubscribe from the TradeHQ Newsletter",
+    summary: "This page accepts a valid opt-out link. A visitor must choose to unsubscribe, and no sign-in is needed. Visiting the page alone does not change their subscription.",
+    changefreq: "monthly",
+    noindex: true,
+  });
+
   routes.push({
     path: "/reviews",
     title: "TradeHQ Reviews — What Traders Are Saying | TradeHQ",

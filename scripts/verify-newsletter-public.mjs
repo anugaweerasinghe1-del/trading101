@@ -43,5 +43,21 @@ assert.match(app,/path="\/newsletter\/confirm"/);
 assert.match(app,/path="\/newsletter\/unsubscribe"/);
 assert.match(ui,/Publish approved issue to subscribers/);
 assert.doesNotMatch(ui,/Send test to my inbox/);
-assert.match(privacy,/TradeHQ Weekly/);
+assert.match(privacy,/TradeHQ Newsletter/);
+const page = read("src/pages/NewsletterPage.tsx");
+const navigation = read("src/components/Navigation.tsx");
+assert.match(navigation,/to: "\/newsletter", label: "Newsletter"/);
+assert.match(page,/TradeHQ Newsletter<\/h1>/, "The public newsletter page should have the formal Newsletter heading.");
+assert.match(form,/free weekly TradeHQ Newsletter/, "Opt-in copy clearly states frequency and brand.");
+for (const path of ["/newsletter", "/newsletter/confirm", "/newsletter/unsubscribe"]) {
+  const html = read("dist" + path + "/index.html");
+  const noindex = path !== "/newsletter";
+  assert.equal(/name="robots" content="noindex/.test(html), noindex,
+    "Public newsletter indexable, token action URLs noindex: " + path);
+  assert.ok(html.includes('href="https://www.thetradehq.com' + path + '"'),
+    "Static newsletter path must have its own canonical: " + path);
+  assert.ok(html.includes('<h1>'), "Static route must present a heading to no-JS visitors: " + path);
+}
+assert.match(page, /onClick={execute}/, "Subscription actions must require an explicit click.");
+
 console.log("PASS public confirmed-only newsletter, unsubscribe, owner publishing limits, signed bounce handling and privacy");
