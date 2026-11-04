@@ -67,7 +67,7 @@ export default function AdminValidator() {
             {isRunning ? (
               <span className="flex items-center gap-2"><Loader2 className="w-4 h-4 animate-spin" /> Scanning...</span>
             ) : (
-              <span className="flex items-center gap-2"><LinkIcon className="w-4 h-4" /> Run Validation</span>
+              <span className="flex items-center gap-2"><LinkIcon className="w-4 h-4" /> Check Local Routes</span>
             )}
           </button>
 
@@ -84,7 +84,7 @@ export default function AdminValidator() {
 
               {invalidCount === 0 ? (
                 <div className="p-4 rounded-xl bg-success/10 border border-success/20 text-success text-sm font-medium">
-                  ✅ All {validCount} internal links are valid — BUILD STABLE
+                  All {validCount} related-market targets exist in the local asset definitions. Deployed URLs, HTTP responses and build stability have not been checked.
                 </div>
               ) : (
                 <div className="space-y-2 max-h-[500px] overflow-y-auto">
