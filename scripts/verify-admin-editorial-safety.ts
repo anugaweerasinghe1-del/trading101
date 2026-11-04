@@ -7,6 +7,7 @@ const courses = source('src/pages/AdminCourses.tsx');
 const generator = source('src/components/courses/CourseGenerationSettings.tsx');
 const queue = source('src/components/AdminCodeQueue.tsx');
 const controls = source('src/components/AdminRepairControls.tsx');
+const dashboard = source('src/pages/AdminDashboard.tsx');
 
 // All actions that can replace the newsletter editor must ask before
 // discarding a pending owner change, BEFORE calling the backend/model.
@@ -44,4 +45,9 @@ for (const value of ['setRows([])', 'setPublications([])', 'setReviews([])', 'se
 assert.match(controls, /onAuthStateChange\(event =>/);
 assert.match(controls, /request\.current\?\.abort\(\); request\.current = null/);
 assert.match(controls, /setState\(null\); setPending\(null\)/);
-console.log('ADMIN_EDITORIAL_SAFETY_PASS: unsaved editorial review, saved-only generation, owner sign-out and late-response fencing');
+// Each dashboard service reports unknown rather than zero when its own read fails.
+assert.match(dashboard, /subscriberStatus\.status === "fulfilled"/);
+assert.match(dashboard, /Number\.isSafeInteger\(counts\[field\]\)/);
+assert.match(dashboard, /setNewsletterSummary\(null\); warnings\.push/);
+assert.match(dashboard, /setNewsletterSummary\(null\); setIssues\(\[\]\)/);
+console.log('ADMIN_EDITORIAL_SAFETY_PASS: unsaved editorial review, saved-only generation, owner sign-out late-response fencing and independent newsletter totals');
