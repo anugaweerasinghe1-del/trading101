@@ -85,6 +85,7 @@ async function main(){
   let dailyDrafts=[],dailyEditorialWrites=0;
   let newsletterRevision=1,newsletterReads=0,newsletterWrites=0,newsletterConfirmed=1;
   let dashboardHold=false,dashboardHeldRequests=0;
+  let courseDeskFixture=false,reviewDeskFixture=false,courseDeskWrites=0,reviewDeskWrites=0;
   let dashboardFixture=false,dailyQueueUnavailable=false,newsletterQueueUnavailable=false,dashboardSettingsUnavailable=false;
   let dashboardMetadataRequests=0;
   let dailyStatus={enabled:false,nextDue:'2026-12-09',prepareAfter:'2026-12-02',completed:20,attempts:2,
@@ -107,6 +108,14 @@ async function main(){
         let content='';req.on('data',chunk=>{content+=chunk;});
         req.on('end',()=>{
           let body;try{body=JSON.parse(content);}catch{return json(400,{error:'fixture_invalid_json'});}
+          if(courseDeskFixture && body.action==='list')return json(200,{data:[]});
+          if(courseDeskFixture && body.action==='settings')return json(200,{data:{
+            enabled:false,freeConfirmed:false,model:'gemini-3.5-flash-lite',hasApiKey:false,
+            hasGscCredentials:false,gscProperty:'',topicRequests:[],lastStarted:null,
+            lastFinished:null,runs:[]}});
+          if(courseDeskFixture && !['list','settings'].includes(body.action)){
+            courseDeskWrites++;return json(409,{error:'Read-only course fixture'});
+          }
           if(dashboardFixture && ['list','daily-list'].includes(body.action)){assert.equal(body.summary,true,'Dashboard must request metadata without full documents');dashboardMetadataRequests++;}
           if(dashboardFixture && body.action==='settings' && dashboardHold){dashboardHeldRequests++;setTimeout(()=>json(200,{data:{enabled:true,runs:[]}}),600);return;}
           if(dashboardFixture && body.action==='settings')return dashboardSettingsUnavailable
@@ -136,7 +145,16 @@ async function main(){
       }
       if(route==='/functions/v1/admin-reviews' && req.method==='POST'){
         if(req.headers['x-admin-key']!==ADMIN_FIXTURE_KEY)return json(401,{error:'fixture_admin_denied'});
-        return json(200,{data:[]});
+        let content='';req.on('data',part=>{content+=part;});req.on('end',()=>{
+          let input;try{input=JSON.parse(content);}catch{return json(400,{error:'invalid_fixture_json'});}
+          if(input.action!=='list'){reviewDeskWrites++;return json(409,{error:'Read-only moderation fixture'});}
+          return json(200,{data:reviewDeskFixture?[{
+            id:'aaaa1111-2222-4333-8444-555555555555',name:'Fixture reviewer',
+            content:'An isolated review used solely to test the owner UI.',rating:4,
+            is_visible:true,is_featured:false,created_at:new Date().toISOString(),
+            owner_reply:null,owner_reply_updated_at:null,deleted_at:null
+          }]:[]});
+        });return;
       }
       if(route==='/functions/v1/admin-code-queue' && req.method==='POST'){
         if(req.headers['x-admin-key']!==ADMIN_FIXTURE_KEY||req.headers.authorization!=='Bearer '+JWT)return json(401,{code:'OWNER_SESSION_REQUIRED'});
@@ -756,6 +774,68 @@ async function main(){
     await wait(()=>devtools.evaluate("[...document.querySelectorAll('p')].some(e=>e.textContent==='Confirmed' && e.parentElement.textContent.includes('7'))"),'Subscriber counts updated on reconnect');
     assert.equal(newsletterWrites,0,'Polling must not generate, approve, publish or send');
     console.log('ISOLATED_ADMIN_REFRESH_PASS: late dashboard refresh cannot reopen lock; newsletter reconnect refresh preserves unsaved writing and reports remote revision; no editorial or email mutations.');
+    // Browser-only admin acceptance: exercise the actual Course desk with a
+    // strictly read-only loopback backend. These interactions must never send
+    // generation, draft-save, publication or configuration writes.
+    dashboardFixture=false;courseDeskFixture=true;
+    await loadDocument(origin+'/admin/courses');
+    await wait(()=>devtools.evaluate("!!document.querySelector('main form input[type=password]')"),'Course admin unlock');
+    await adminInput('main form input[type=password]',ADMIN_FIXTURE_KEY);await adminClick('Open course desk');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Draft inbox (0)')"),'Compiled empty Course inbox');
+    await adminClick('Generation settings');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Monthly course drafts')"),'Compiled generation settings');
+    assert.equal(await devtools.evaluate("[...document.querySelectorAll('button')].find(x=>x.textContent.trim()==='Generate next draft')?.disabled"),true,
+      'Course generation must be disabled without saved free-tier owner configuration');
+    await adminClick('Draft inbox (0)');
+    await adminClick('+ Create a draft');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Final approval')"),'Course draft editor');
+    assert.equal(await devtools.evaluate("[...document.querySelectorAll('button')].find(x=>x.textContent.trim()==='Approve and publish')?.disabled"),true,
+      'An unsaved Course draft can never be approved');
+    await devtools.evaluate("window.confirm=()=>false");
+    await adminClick('Lock');
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('Final approval')"),true,
+      'Course lock must respect rejected discard confirmation');
+    await devtools.evaluate("window.confirm=()=>true");
+    await adminClick('Lock');
+    await wait(()=>devtools.evaluate("!!document.querySelector('main form input[type=password]')"),'Course locked and private editor gone');
+    assert.equal(await devtools.evaluate("document.querySelector('main form input[type=password]').value"),'');
+    assert.equal(courseDeskWrites,0,'Course read/edit/lock smoke cannot mutate drafts or launch AI');
+    courseDeskFixture=false;
+    console.log('ISOLATED_ADMIN_COURSE_DESK_BROWSER_PASS: open, inspect settings, disabled generation, new unsaved draft, blocked publish, protected lock, key clearing, zero course writes; fixture only.');
+
+    // The Reviews desk is also exercised with a real rendered review, an
+    // unsaved local edit and both branches of the owner discard confirmation.
+    reviewDeskFixture=true;
+    await loadDocument(origin+'/admin/reviews');
+    await wait(()=>devtools.evaluate("!!document.querySelector('input[aria-label=\"Master key\"]')"),'Reviews admin unlock');
+    await adminInput('input[aria-label="Master key"]',ADMIN_FIXTURE_KEY);await adminClick('Unlock');
+    await wait(()=>devtools.evaluate("document.querySelector('h1')?.textContent==='Reviews (1)'"),'Private moderation row visible');
+    await adminInput('input[aria-label="Review author name"]','Unsaved isolated review name');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('You have unsaved review changes')"),'Review edit marked unsaved');
+    await devtools.evaluate("window.confirm=()=>false");
+    await adminClick('Lock admin panel');
+    assert.equal(await devtools.evaluate("document.querySelector('h1')?.textContent==='Reviews (1)'"),true,
+      'Review lock must preserve unsaved changes when discard denied');
+    await devtools.evaluate("window.confirm=()=>true");
+    await adminClick('Lock admin panel');
+    await wait(()=>devtools.evaluate("!!document.querySelector('input[aria-label=\"Master key\"]')"),'Review desk locked');
+    assert.equal(await devtools.evaluate("document.querySelector('input[aria-label=\"Master key\"]').value"),'');
+    assert.equal(reviewDeskWrites,0,'Review read/edit/lock smoke cannot publish replies or modify reviews');
+    reviewDeskFixture=false;
+    console.log('ISOLATED_ADMIN_REVIEWS_BROWSER_PASS: real review loaded, unsaved moderation protected on lock, private content and key cleared, no moderation writes; fixture only.');
+
+    // Development-only utility routes still mount and communicate their
+    // deliberately limited scope without automatically contacting a provider.
+    await loadDocument(origin+'/admin/validator');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Asset Route Definition Check')"),'Local link validator page');
+    await adminClick('Check Local Routes');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('related-market targets exist')"),'Local route definitions evaluated');
+    await loadDocument(origin+'/admin/editor');
+    await wait(()=>devtools.evaluate("location.pathname==='/admin/courses'"),'Legacy editor redirects to Course desk');
+    await loadDocument(origin+'/admin/seo-audit');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Live HTML metadata check')"),'Live HTML audit utility mounts');
+    console.log('ISOLATED_ADMIN_UTILITIES_BROWSER_PASS: asset validator, legacy editor redirect and HTML audit route mount; no production URL scan or privileged backend writes.');
+
     console.log('ISOLATED_AUTOMATION_INBOX_PASS: compiled dashboard combines course, Daily and Newsletter drafts, failures, cooldown, open findings and proposals; collector evidence linked to commit; partial outage stays unknown; stale refresh disclosed; zero mutations. Fixture only.');
     console.log('ISOLATED_COURSE_PROGRESS_BROWSER_PASS: null tracks, null lessons and invalid lesson rows recovered; valid unrelated completion/badge retained after real lesson save and reload; fixture only.');
     console.log("ISOLATED_AUTH_BROWSER_PASS: reload persistence; real UI sign-out; no resurrected session; expired refresh rejected; ten Daily answers persisted/resumed/locked; one streak per day; actual built TradeHQ login in real Chromium; negative password refused; fake Supabase grant accepted; authenticated profile navigation observed; isolated account initialization executed; zero non-allowlisted backend writes; zero real provider calls.");
