@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
-import { compareMemberRank } from "../src/lib/memberActivity";
+import { readFileSync } from "node:fs";
+import { compareMemberRank, withPublicMemberPositions } from "../src/lib/memberActivity";
 
 const members = [
   { userId: "zero", username: "aaa", trades: 0, previousTrades: 0, portfolioStatus: "not_started", practiceRank: null },
@@ -25,3 +26,32 @@ const tied = [
 assert.deepEqual(tied.sort(compareMemberRank).map(m => m.userId), ["tie-high", "tie-low", "third"], "activity may break a shared-rank tie without moving lower ranks above it");
 assert.deepEqual(tied.map(m => m.practiceRank), [1, 1, 3], "display sorting must preserve shared ranks and gaps supplied by the server");
 console.log("Member order passed: return ranks first, automatic reordering, shared ranks preserved, unranked activity retained");
+
+const listed = withPublicMemberPositions(members);
+assert.deepEqual(listed.map(m => [m.userId, m.listPosition, m.practiceRank]), [
+  ["return", 1, 1], ["active", 2, 2], ["past", 3, null],
+  ["import", 4, null], ["zero", 5, null],
+], "every public member, even zero-trade members, gets a continuing directory position");
+assert.equal("listPosition" in members[0], false, "server data must remain unmodified");
+const seventyFive = [
+  ...Array.from({ length: 17 }, (_, i) => ({...members[3], userId: "ranked-" + i, username: "ranked-" + i, practiceRank: i + 1})),
+  ...Array.from({ length: 58 }, (_, i) => ({...members[0], userId: "learning-" + i, username: "learning-" + i})),
+];
+const fullBoard = withPublicMemberPositions(seventyFive);
+assert.deepEqual([fullBoard[16].listPosition, fullBoard[17].listPosition, fullBoard[74].listPosition], [17,18,75]);
+assert.equal(fullBoard[74].practiceRank, null, "a directory position must not invent a verified return rank");
+const withTies = withPublicMemberPositions(tied);
+assert.deepEqual(withTies.map(m => m.listPosition), [1,2,3]);
+assert.deepEqual(withTies.map(m => m.practiceRank), [1,1,3], "return rank ties remain distinct from numbered positions");
+console.log("PASS: continuous 1–75 public member positions, zero-trade members and shared return-rank integrity");
+
+const boardSource = readFileSync("src/pages/Leaderboard.tsx", "utf8");
+assert.ok(boardSource.includes("if (!cloud.error) setLastRefreshed(new Date());"),
+  "Current leaderboard freshness must not depend on unrelated historical results");
+assert.ok(boardSource.includes('if (tab !== "duels") return;') && boardSource.includes('get_public_practice_duels')
+  && boardSource.includes('window.setInterval(() => void loadDuels(), 60000)')
+  && boardSource.includes("Previously shown scores may be stale"),
+  "Duels need visible-tab refresh and honest stale-error reporting");
+
+assert.ok(boardSource.includes("navigator.onLine === false) { setDuelsError(true); setDuelsLoading(false); return; }"),
+  "An offline Duel tab must not display an indefinite loading spinner");
