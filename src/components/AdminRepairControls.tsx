@@ -13,7 +13,13 @@ export default function AdminRepairControls({ adminKey }: { adminKey: string }) 
   const requestAction = useRef<'status' | 'stop' | null>(null);
   useEffect(() => {
     active.current = true;
-    return () => { active.current = false; request.current?.abort(); };
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(event => {
+      if (event !== 'SIGNED_OUT' || !active.current) return;
+      request.current?.abort(); request.current = null; requestAction.current = null;
+      setState(null); setPending(null);
+      setMessage('Owner session ended. Repair status is no longer verified; any requested stop must be checked again after sign-in.');
+    });
+    return () => { active.current = false; request.current?.abort(); subscription.unsubscribe(); };
   }, []);
   async function run(action: 'status' | 'stop') {
     if (request.current) {
