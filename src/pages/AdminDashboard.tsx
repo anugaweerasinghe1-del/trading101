@@ -18,6 +18,7 @@ type Run = { id: number; status: string; conclusion: string | null; html_url: st
 type Proposal = { number: number; title: string; html_url: string; draft: boolean; created_at: string };
 type AgentJob = { id: number; runId: number; workflow: string; name: string; status: string; conclusion: string | null; html_url: string; started_at: string };
 type DeployCheck = { name: string; status: string; conclusion: string | null; details_url: string };
+type NewsletterSummary = { confirmed: number; pending: number; bounced: number; unsubscribed: number };
 const repo = "anugaweerasinghe1-del/trading101";
 const card = "rounded-2xl border border-border bg-card/60 p-5 space-y-3";
 const linkStyle = "inline-flex items-center gap-1 text-sm text-primary hover:underline";
@@ -35,6 +36,7 @@ export default function AdminDashboard() {
   const [daily, setDaily] = useState<DailyStatus | null>(null);
   const [courseStatus, setCourseStatus] = useState<CourseStatus | null>(null);
   const [reviews, setReviews] = useState<number | null>(null);
+  const [newsletterSummary, setNewsletterSummary] = useState<NewsletterSummary | null>(null);
   const [issues, setIssues] = useState<AgentIssue[]>([]);
   const [run, setRun] = useState<Run | null>(null);
   const [codeRun, setCodeRun] = useState<Run | null>(null);
@@ -64,10 +66,11 @@ export default function AdminDashboard() {
     const settings = await adminCall("settings");
     if (!settings) throw new Error("Administrator verification failed.");
     guard.assert(); setCourseStatus(settings);
-    const [drafts, practice, result, banks] = await Promise.allSettled([
+    const [drafts, practice, result, banks, subscriberStatus] = await Promise.allSettled([
       adminCall("list", { summary: true }), adminCall("daily-status"),
       supabase.functions.invoke("admin-reviews", { body: { action: "list" }, headers: { "x-admin-key": key } }),
       adminCall("daily-list", { summary: true }),
+      supabase.functions.invoke("newsletter-dispatch", { body: { action: "status" }, headers: { "x-admin-key": key } }),
     ]);
     guard.assert();
     const warnings: string[] = [];
@@ -80,6 +83,12 @@ export default function AdminDashboard() {
     if (result.status === "fulfilled" && !result.value.error && !result.value.data?.error &&
         Array.isArray(result.value.data?.data)) setReviews(result.value.data.data.length);
     else { setReviews(null); warnings.push("Review moderation status is temporarily unavailable."); }
+    const counts = subscriberStatus.status === "fulfilled" && !subscriberStatus.value.error && !subscriberStatus.value.data?.error
+      ? subscriberStatus.value.data?.data?.counts as Record<string, unknown> | undefined : undefined;
+    if (counts && ["confirmed", "pending", "unsubscribed", "bounced"].every(field => Number.isSafeInteger(counts[field]) && Number(counts[field]) >= 0)) {
+      setNewsletterSummary({ confirmed: Number(counts.confirmed), pending: Number(counts.pending),
+        unsubscribed: Number(counts.unsubscribed), bounced: Number(counts.bounced) });
+    } else { setNewsletterSummary(null); warnings.push("Newsletter subscriber totals are temporarily unavailable."); }
     setDeskWarnings(warnings); setCheckedAt(new Date()); setError("");
   }, [adminCall, key]);
   // Public GitHub data is used only for observability, never for authorization.
@@ -185,7 +194,7 @@ export default function AdminDashboard() {
     <div className="mx-auto max-w-6xl space-y-7">
       <header className="flex flex-wrap items-center justify-between gap-4">
         <div><p className="text-xs tracking-[0.2em] text-primary uppercase mb-2">TradeHQ · private workspace</p><h1 className="text-3xl font-semibold">Admin dashboard</h1><p className="text-sm text-muted-foreground mt-2">Editorial controls, community moderation, automated checks and proposed improvements in one place.</p></div>
-        <div className="flex gap-3">{unlocked && <button type="button" onClick={() => { scope.invalidate(); pending.current = false; setBusy(false); setCheckedAt(null); setError(""); setUnlocked(false); setKey(""); setCourses(null); setDailyBanks(null); setDeskWarnings([]); setDaily(null); setCourseStatus(null); setReviews(null); setIssues([]); setRun(null); setCodeRun(null); setCollectorRun(null); setPreviousSuccess(null); setPreviousFailure(null); setPreviousCodeFailure(null); setProposals([]); setAgentError(""); setLastGitHubChecked(null); setJobHistory([]); setJobHistoryError(""); setDeploymentChecks(null); }} className="rounded-xl border border-border px-4 py-2 flex items-center gap-2 text-sm"><Lock className="w-4 h-4"/> Lock</button>}<Link to="/" className={linkStyle}>View website <ExternalLink className="h-3 w-3"/></Link></div>
+        <div className="flex gap-3">{unlocked && <button type="button" onClick={() => { scope.invalidate(); pending.current = false; setBusy(false); setCheckedAt(null); setError(""); setUnlocked(false); setKey(""); setCourses(null); setDailyBanks(null); setDeskWarnings([]); setDaily(null); setCourseStatus(null); setReviews(null); setNewsletterSummary(null); setIssues([]); setRun(null); setCodeRun(null); setCollectorRun(null); setPreviousSuccess(null); setPreviousFailure(null); setPreviousCodeFailure(null); setProposals([]); setAgentError(""); setLastGitHubChecked(null); setJobHistory([]); setJobHistoryError(""); setDeploymentChecks(null); }} className="rounded-xl border border-border px-4 py-2 flex items-center gap-2 text-sm"><Lock className="w-4 h-4"/> Lock</button>}<Link to="/" className={linkStyle}>View website <ExternalLink className="h-3 w-3"/></Link></div>
       </header>
       {!unlocked ? <form onSubmit={unlock} className="max-w-md rounded-2xl border border-border bg-card p-6 space-y-5">
         <div className="flex gap-3 items-center"><ShieldCheck className="w-6 h-6 text-primary"/><h2 className="font-semibold">Verify administrator access</h2></div>
@@ -206,7 +215,9 @@ export default function AdminDashboard() {
           <section className={card}>
             <Mail className="w-6 h-6 text-primary" />
             <h3 className="font-semibold">Weekly Newsletter</h3>
-            <p className="text-xs text-muted-foreground">AI-powered educational draft, your edits and explicit approval. No automatic sending or legacy list imports.</p>
+            <p className="text-2xl font-semibold">{newsletterSummary ? newsletterSummary.confirmed : "—"} <span className="text-sm font-normal text-muted-foreground">confirmed subscribers</span></p>
+            <p className="text-xs text-muted-foreground">{newsletterSummary ? `Pending ${newsletterSummary.pending} · Bounced ${newsletterSummary.bounced} · Unsubscribed ${newsletterSummary.unsubscribed}` : "Subscriber counts unavailable; check Newsletter Desk."}</p>
+            <p className="text-xs text-muted-foreground">Verified opt-in only. Owner approval and a separate send action are required.</p>
             <Link className={linkStyle} to="/admin/newsletter">Open Newsletter Desk →</Link>
           </section>
           <section className={card}><CalendarCheck className="w-6 h-6 text-primary"/><h3 className="font-semibold">Daily practice</h3><p className="text-2xl font-semibold">{daily ? (daily.completed ?? 0) + "/50" : "—"} <span className="text-sm font-normal text-muted-foreground">next bank ready</span></p><p className="text-xs text-muted-foreground">{daily ? (daily.enabled ? "Schedule enabled" : "Schedule paused") : "Schedule unavailable"} · Next due {daily?.nextDue || "unknown"}</p>{daily?.lastError && <p className="text-xs text-amber-400">{daily.lastError}</p>}<Link className={linkStyle} to="/admin/daily">Review questions and schedule →</Link></section>
