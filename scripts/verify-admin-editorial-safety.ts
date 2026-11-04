@@ -58,4 +58,6 @@ assert.match(dashboard, /newsletterEdits=\{newsletterEdits\}/);
 assert.match(inbox, /newsletterEdits: EditorialQueueRow\[\] \| null/);
 assert.match(inbox, /\[newsletterEdits, 'Newsletter', '\/admin\/newsletter'\]/);
 assert.match(inbox, /item\.to\.endsWith\('newsletter'\) \? 'Newsletter desk'/);
+assert.match(inbox, /name === 'Newsletter' && rows\.length >= 16/);
+assert.match(inbox, /Newsletter review list may be incomplete/);
 console.log('ADMIN_EDITORIAL_SAFETY_PASS: unsaved editorial review, saved-only generation, owner sign-out late-response fencing and independent newsletter totals');
