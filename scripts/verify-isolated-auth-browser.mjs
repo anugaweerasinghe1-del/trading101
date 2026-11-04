@@ -86,6 +86,12 @@ async function main(){
   let newsletterRevision=1,newsletterReads=0,newsletterWrites=0,newsletterConfirmed=1;
   let dashboardHold=false,dashboardHeldRequests=0;
   let courseDeskFixture=false,reviewDeskFixture=false,courseDeskWrites=0,reviewDeskWrites=0;
+  let courseMutationFixture=false,reviewMutationFixture=false;
+  let courseDeskRows=[],courseWriteLog=[],reviewWriteLog=[];
+  let reviewFixtureRow={id:'aaaa1111-2222-4333-8444-555555555555',name:'Fixture reviewer',
+    content:'An isolated review used solely to test the owner UI.',rating:4,
+    is_visible:true,is_featured:false,created_at:new Date().toISOString(),
+    owner_reply:null,owner_reply_updated_at:null,deleted_at:null};
   let dashboardFixture=false,dailyQueueUnavailable=false,newsletterQueueUnavailable=false,dashboardSettingsUnavailable=false;
   let dashboardMetadataRequests=0;
   let dailyStatus={enabled:false,nextDue:'2026-12-09',prepareAfter:'2026-12-02',completed:20,attempts:2,
@@ -108,13 +114,18 @@ async function main(){
         let content='';req.on('data',chunk=>{content+=chunk;});
         req.on('end',()=>{
           let body;try{body=JSON.parse(content);}catch{return json(400,{error:'fixture_invalid_json'});}
-          if(courseDeskFixture && body.action==='list')return json(200,{data:[]});
+          if(courseDeskFixture && body.action==='list')return json(200,{data:courseDeskRows});
           if(courseDeskFixture && body.action==='settings')return json(200,{data:{
             enabled:false,freeConfirmed:false,model:'gemini-3.5-flash-lite',hasApiKey:false,
             hasGscCredentials:false,gscProperty:'',topicRequests:[],lastStarted:null,
             lastFinished:null,runs:[]}});
           if(courseDeskFixture && !['list','settings'].includes(body.action)){
-            courseDeskWrites++;return json(409,{error:'Read-only course fixture'});
+            courseDeskWrites++;courseWriteLog.push(body.action);
+            if(courseMutationFixture && body.action==='save' && body.id===null && body.revision===null && body.document){
+              const row={id:'fixture-course-private-draft',status:'draft',revision:1,published_revision:0,document:body.document};
+              courseDeskRows=[row];return json(200,{data:row});
+            }
+            return json(409,{error:'No other course mutation permitted in this fixture'});
           }
           if(dashboardFixture && ['list','daily-list'].includes(body.action)){assert.equal(body.summary,true,'Dashboard must request metadata without full documents');dashboardMetadataRequests++;}
           if(dashboardFixture && body.action==='settings' && dashboardHold){dashboardHeldRequests++;setTimeout(()=>json(200,{data:{enabled:true,runs:[]}}),600);return;}
@@ -147,13 +158,20 @@ async function main(){
         if(req.headers['x-admin-key']!==ADMIN_FIXTURE_KEY)return json(401,{error:'fixture_admin_denied'});
         let content='';req.on('data',part=>{content+=part;});req.on('end',()=>{
           let input;try{input=JSON.parse(content);}catch{return json(400,{error:'invalid_fixture_json'});}
-          if(input.action!=='list'){reviewDeskWrites++;return json(409,{error:'Read-only moderation fixture'});}
-          return json(200,{data:reviewDeskFixture?[{
-            id:'aaaa1111-2222-4333-8444-555555555555',name:'Fixture reviewer',
-            content:'An isolated review used solely to test the owner UI.',rating:4,
-            is_visible:true,is_featured:false,created_at:new Date().toISOString(),
-            owner_reply:null,owner_reply_updated_at:null,deleted_at:null
-          }]:[]});
+          if(input.action!=='list'){
+            reviewDeskWrites++;reviewWriteLog.push(input.action);
+            if(reviewMutationFixture && input.id===reviewFixtureRow.id && input.action==='update' &&
+              input.patch && Object.keys(input.patch).length===1 && typeof input.patch.name==='string'){
+              reviewFixtureRow={...reviewFixtureRow,name:input.patch.name};return json(200,{ok:true});
+            }
+            if(reviewMutationFixture && input.id===reviewFixtureRow.id && input.action==='reply' &&
+              typeof input.reply==='string'){
+              reviewFixtureRow={...reviewFixtureRow,owner_reply:input.reply,owner_reply_updated_at:new Date().toISOString()};
+              return json(200,{ok:true});
+            }
+            return json(409,{error:'Other moderation mutations denied by fixture'});
+          }
+          return json(200,{data:reviewDeskFixture?[reviewFixtureRow]:[]});
         });return;
       }
       if(route==='/functions/v1/admin-code-queue' && req.method==='POST'){
@@ -802,6 +820,27 @@ async function main(){
     assert.equal(courseDeskWrites,0,'Course read/edit/lock smoke cannot mutate drafts or launch AI');
     courseDeskFixture=false;
     console.log('ISOLATED_ADMIN_COURSE_DESK_BROWSER_PASS: open, inspect settings, disabled generation, new unsaved draft, blocked publish, protected lock, key clearing, zero course writes; fixture only.');
+    // A separate disposable branch of this fixture also verifies successful
+    // owner-click draft-save wiring. Never accept publish or configure actions.
+    courseMutationFixture=true;courseDeskFixture=true;
+    await loadDocument(origin+'/admin/courses');
+    await wait(()=>devtools.evaluate("!!document.querySelector('main form input[type=password]')"),'Course save unlock');
+    await adminInput('main form input[type=password]',ADMIN_FIXTURE_KEY);await adminClick('Open course desk');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Draft inbox (0)')"),'Course save inbox loaded');
+    await adminClick('+ Create a draft');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Final approval')"),'Course save editor opened');
+    await adminClick('Save draft');
+    await wait(()=>courseDeskRows.length===1,'One explicit private course draft saved');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Draft inbox (1)')"),'Course saved draft appears in the real inbox');
+    assert.deepEqual(courseWriteLog,['save'],'Creating a private course draft must not request approval or generation');
+    assert.equal(courseDeskRows[0].status,'draft');
+    assert.equal(await devtools.evaluate("[...document.querySelectorAll('button')].find(x=>x.textContent.trim()==='Approve and publish')?.disabled"),true,
+      'A newly saved but unreviewed draft must not publish');
+    await adminClick('Lock');
+    await wait(()=>devtools.evaluate("!!document.querySelector('main form input[type=password]')"),'Saved draft desk locked');
+    courseMutationFixture=false;courseDeskFixture=false;
+    console.log('ISOLATED_ADMIN_COURSE_SAVE_BROWSER_PASS: owner-click private draft saved exactly once, reflected in inbox, no generation or publish. No production writes.');
+
 
     // The Reviews desk is also exercised with a real rendered review, an
     // unsaved local edit and both branches of the owner discard confirmation.
@@ -823,6 +862,27 @@ async function main(){
     assert.equal(reviewDeskWrites,0,'Review read/edit/lock smoke cannot publish replies or modify reviews');
     reviewDeskFixture=false;
     console.log('ISOLATED_ADMIN_REVIEWS_BROWSER_PASS: real review loaded, unsaved moderation protected on lock, private content and key cleared, no moderation writes; fixture only.');
+    // Exercise intentional update + public reply submissions only inside the
+    // disposable mock. The server still rejects delete/restore and other writes.
+    reviewMutationFixture=true;reviewDeskFixture=true;
+    await loadDocument(origin+'/admin/reviews');
+    await wait(()=>devtools.evaluate("!!document.querySelector('input[aria-label=\"Master key\"]')"),'Review write unlock');
+    await adminInput('input[aria-label="Master key"]',ADMIN_FIXTURE_KEY);await adminClick('Unlock');
+    await wait(()=>devtools.evaluate("document.querySelector('h1')?.textContent==='Reviews (1)'"),'Review writable fixture loaded');
+    await adminInput('input[aria-label="Review author name"]','Updated fixture reviewer');
+    await adminClick('Save');
+    await wait(()=>reviewFixtureRow.name==='Updated fixture reviewer','Intentional review edit reached server');
+    await wait(()=>devtools.evaluate("document.querySelector('input[aria-label=\"Review author name\"]')?.value==='Updated fixture reviewer'"),'Saved review returned to actual input');
+    await adminInput('#reply-aaaa1111-2222-4333-8444-555555555555','Fixture owner public reply');
+    await adminClick('Save reply');
+    await wait(()=>reviewFixtureRow.owner_reply==='Fixture owner public reply','Intentional review reply reached server');
+    assert.deepEqual(reviewWriteLog,['update','reply'],'No unexpected moderation actions, delete or restore');
+    await wait(()=>devtools.evaluate("document.querySelector('#reply-aaaa1111-2222-4333-8444-555555555555')?.value==='Fixture owner public reply'"),'Saved reply persisted in UI');
+    await adminClick('Lock admin panel');
+    await wait(()=>devtools.evaluate("!!document.querySelector('input[aria-label=\"Master key\"]')"),'Review mutation desk locked');
+    reviewMutationFixture=false;reviewDeskFixture=false;
+    console.log('ISOLATED_ADMIN_REVIEW_SAVE_BROWSER_PASS: intentional edit and owner reply persist in UI, no delete/restore or production writes.');
+
 
     // Development-only utility routes still mount and communicate their
     // deliberately limited scope without automatically contacting a provider.
