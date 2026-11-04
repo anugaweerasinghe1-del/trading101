@@ -29,7 +29,8 @@ const schema = z.object({
 });
 
 export default function Auth() {
-  const [mode, setMode] = useState<"signin" | "signup">("signin");
+  const [mode, setMode] = useState<"signin" | "signup">(() =>
+    new URLSearchParams(window.location.search).get("mode") === "signup" ? "signup" : "signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -119,6 +120,8 @@ export default function Auth() {
   };
 
   const title = "Sign in or create a free TradeHQ account";
+  // The signup form is reached directly from /auth?mode=signup; existing logins
+  // never become attributed registrations just because a CTA was clicked.
   const description =
     "Optional free account for TradeHQ. Account cash, positions and server-recorded trades restore across devices when the service is available; journals remain browser-held while signed-in lessons and journey progress sync privately when online. Public profiles can use community features. Core learning tools remain usable without an account.";
 
