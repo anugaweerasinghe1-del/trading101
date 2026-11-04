@@ -32,6 +32,7 @@ export default function AdminDashboard() {
   const [error, setError] = useState("");
   const [courses, setCourses] = useState<Course[] | null>(null);
   const [dailyBanks, setDailyBanks] = useState<EditorialQueueRow[] | null>(null);
+  const [newsletterEdits, setNewsletterEdits] = useState<EditorialQueueRow[] | null>(null);
   const [deskWarnings, setDeskWarnings] = useState<string[]>([]);
   const [daily, setDaily] = useState<DailyStatus | null>(null);
   const [courseStatus, setCourseStatus] = useState<CourseStatus | null>(null);
@@ -66,11 +67,12 @@ export default function AdminDashboard() {
     const settings = await adminCall("settings");
     if (!settings) throw new Error("Administrator verification failed.");
     guard.assert(); setCourseStatus(settings);
-    const [drafts, practice, result, banks, subscriberStatus] = await Promise.allSettled([
+    const [drafts, practice, result, banks, subscriberStatus, newsletterDrafts] = await Promise.allSettled([
       adminCall("list", { summary: true }), adminCall("daily-status"),
       supabase.functions.invoke("admin-reviews", { body: { action: "list" }, headers: { "x-admin-key": key } }),
       adminCall("daily-list", { summary: true }),
       supabase.functions.invoke("newsletter-dispatch", { body: { action: "status" }, headers: { "x-admin-key": key } }),
+      supabase.functions.invoke("newsletter-editor", { body: { action: "list" }, headers: { "x-admin-key": key } }),
     ]);
     guard.assert();
     const warnings: string[] = [];
@@ -83,6 +85,11 @@ export default function AdminDashboard() {
     if (result.status === "fulfilled" && !result.value.error && !result.value.data?.error &&
         Array.isArray(result.value.data?.data)) setReviews(result.value.data.data.length);
     else { setReviews(null); warnings.push("Review moderation status is temporarily unavailable."); }
+    const editorialItems = newsletterDrafts.status === "fulfilled" && !newsletterDrafts.value.error && !newsletterDrafts.value.data?.error
+      ? newsletterDrafts.value.data?.data : null;
+    if (Array.isArray(editorialItems) && editorialItems.every(item => typeof item?.id === "string" && typeof item?.status === "string"))
+      setNewsletterEdits(editorialItems);
+    else { setNewsletterEdits(null); warnings.push("Newsletter editorial queue is temporarily unavailable."); }
     const counts = subscriberStatus.status === "fulfilled" && !subscriberStatus.value.error && !subscriberStatus.value.data?.error
       ? subscriberStatus.value.data?.data?.counts as Record<string, unknown> | undefined : undefined;
     if (counts && ["confirmed", "pending", "unsubscribed", "bounced"].every(field => Number.isSafeInteger(counts[field]) && Number(counts[field]) >= 0)) {
@@ -194,7 +201,7 @@ export default function AdminDashboard() {
     <div className="mx-auto max-w-6xl space-y-7">
       <header className="flex flex-wrap items-center justify-between gap-4">
         <div><p className="text-xs tracking-[0.2em] text-primary uppercase mb-2">TradeHQ · private workspace</p><h1 className="text-3xl font-semibold">Admin dashboard</h1><p className="text-sm text-muted-foreground mt-2">Editorial controls, community moderation, automated checks and proposed improvements in one place.</p></div>
-        <div className="flex gap-3">{unlocked && <button type="button" onClick={() => { scope.invalidate(); pending.current = false; setBusy(false); setCheckedAt(null); setError(""); setUnlocked(false); setKey(""); setCourses(null); setDailyBanks(null); setDeskWarnings([]); setDaily(null); setCourseStatus(null); setReviews(null); setNewsletterSummary(null); setIssues([]); setRun(null); setCodeRun(null); setCollectorRun(null); setPreviousSuccess(null); setPreviousFailure(null); setPreviousCodeFailure(null); setProposals([]); setAgentError(""); setLastGitHubChecked(null); setJobHistory([]); setJobHistoryError(""); setDeploymentChecks(null); }} className="rounded-xl border border-border px-4 py-2 flex items-center gap-2 text-sm"><Lock className="w-4 h-4"/> Lock</button>}<Link to="/" className={linkStyle}>View website <ExternalLink className="h-3 w-3"/></Link></div>
+        <div className="flex gap-3">{unlocked && <button type="button" onClick={() => { scope.invalidate(); pending.current = false; setBusy(false); setCheckedAt(null); setError(""); setUnlocked(false); setKey(""); setCourses(null); setDailyBanks(null); setNewsletterEdits(null); setDeskWarnings([]); setDaily(null); setCourseStatus(null); setReviews(null); setNewsletterSummary(null); setIssues([]); setRun(null); setCodeRun(null); setCollectorRun(null); setPreviousSuccess(null); setPreviousFailure(null); setPreviousCodeFailure(null); setProposals([]); setAgentError(""); setLastGitHubChecked(null); setJobHistory([]); setJobHistoryError(""); setDeploymentChecks(null); }} className="rounded-xl border border-border px-4 py-2 flex items-center gap-2 text-sm"><Lock className="w-4 h-4"/> Lock</button>}<Link to="/" className={linkStyle}>View website <ExternalLink className="h-3 w-3"/></Link></div>
       </header>
       {!unlocked ? <form onSubmit={unlock} className="max-w-md rounded-2xl border border-border bg-card p-6 space-y-5">
         <div className="flex gap-3 items-center"><ShieldCheck className="w-6 h-6 text-primary"/><h2 className="font-semibold">Verify administrator access</h2></div>
@@ -207,7 +214,7 @@ export default function AdminDashboard() {
         {deskWarnings.length > 0 && <div role="status" className="rounded-xl border border-amber-500/30 px-4 py-3 text-sm text-amber-400"><strong>Some admin services are unavailable.</strong> {deskWarnings.join(" ")} Verified services remain accessible.</div>}
         <div className="flex flex-wrap justify-between gap-3 items-center"><h2 className="text-lg font-semibold">Operations overview</h2><button type="button" disabled={busy} className="text-sm border border-border rounded-xl px-4 py-2 flex items-center gap-2 disabled:opacity-40" onClick={() => void refreshDashboard()}><RefreshCw className="w-4 h-4"/> Refresh</button></div>
         <AdminFreshness checkedAt={checkedAt} error={error} />
-        <AutomationInbox courses={courses} dailyBanks={dailyBanks} daily={daily}
+        <AutomationInbox courses={courses} dailyBanks={dailyBanks} newsletterEdits={newsletterEdits} daily={daily}
           failedCourseRuns={courseStatus?.runs?.filter(item => item.status === 'paused' && item.last_error).length ?? 0}
           findingCount={agentFindings.length} proposalCount={proposals.length} githubAvailable={!agentError && !!lastGitHubChecked} />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
