@@ -15,7 +15,7 @@ import { PRICE_REFRESH_COPY, priceLabel, quoteTimeLabel } from "@/lib/practicePr
 import { pushPortfolio, reconcilePortfolio, startRankedPractice } from "@/lib/cloudPortfolio";
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
 import { STARTING_BALANCE_LABEL } from "@/lib/constants";
-import { compareMemberRank } from "@/lib/memberActivity";
+import { withPublicMemberPositions } from "@/lib/memberActivity";
 
 interface BoardRow {
   userId: string;
@@ -30,6 +30,7 @@ interface BoardRow {
   priceStatus: string;
   portfolioStatus: string;
   practiceRank: number | null;
+  listPosition: number;
 }
 
 interface PreviousRow { userId: string; username: string; country: string | null; portfolioValue: number; pnlPct: number; trades: number; reportedAt: string }
@@ -117,12 +118,12 @@ export default function Leaderboard() {
         supabase.rpc("get_previous_practice_results", { p_limit: 500 }),
       ]);
       const previousTrades = new Map((previous.error ? [] : previous.data ?? []).map(row => [row.user_id, Number(row.trades)]));
-      const rankedRows = cloud.error ? [] : (cloud.data ?? []).map(row => ({
+      const rankedRows = cloud.error ? [] : withPublicMemberPositions((cloud.data ?? []).map(row => ({
         userId: row.user_id, username: row.username, country: row.country,
         portfolioValue: row.portfolio_value === null ? null : Number(row.portfolio_value), pnlPct: row.pnl_pct === null ? null : Number(row.pnl_pct),
         trades: Number(row.trades), previousTrades: previousTrades.get(row.user_id) ?? 0, pricedAt: row.priced_at ?? null, observedAt: row.observed_at ?? null,
         priceStatus: row.price_status, portfolioStatus: row.portfolio_status, practiceRank: row.practice_rank,
-      })).sort(compareMemberRank);
+      })));
       const historicRows = previous.error ? [] : (previous.data ?? []).map(row => ({
         userId: row.user_id, username: row.username, country: row.country,
         portfolioValue: Number(row.portfolio_value), pnlPct: Number(row.pnl_pct),
@@ -200,6 +201,9 @@ export default function Leaderboard() {
     }
   };
 
+  const rankedMemberCount = rows.filter(member => member.practiceRank !== null).length;
+  const learningMemberCount = rows.length - rankedMemberCount;
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -255,9 +259,9 @@ export default function Leaderboard() {
                 Leaderboard<span className="text-primary">.</span>
               </h1>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                A place for every public member. Follow the community's practice portfolios and see how your progress compares.
+                Explore public learning profiles and comparable virtual-trading results. Participation is optional, and new accounts start private.
               </p>
-              <p className="mt-3 text-xs text-muted-foreground">Educational simulations · not audited investment performance.</p>
+              <p className="mt-3 text-xs text-muted-foreground">Educational simulations · not audited investment performance. Free accounts can restore eligible practice across devices, and public visibility is always your choice.</p>
               </div>
               <div className="flex flex-wrap items-center gap-2 lg:max-w-xs lg:justify-end">
                 {user ? (
@@ -283,6 +287,20 @@ export default function Leaderboard() {
               </div>
             </header>
 
+            {user && profile?.is_public === false && (
+              <div className="mb-6 rounded-xl border border-border bg-card/60 p-4 text-sm">
+                <p className="font-semibold">Your profile is private</p>
+                <p className="mt-1 text-muted-foreground">You can practise and save progress without appearing here. To join the public directory, choose that explicitly in your profile settings.</p>
+                <Button variant="outline" size="sm" className="mt-3" asChild><Link to="/trader/me">Review profile visibility</Link></Button>
+              </div>
+            )}
+            {user && profile?.is_public === true && ranked === true && !loadError && !loading && rows.some(member => member.userId === user.id && member.practiceRank === null) && (
+              <div className="mb-6 rounded-xl border border-border bg-card/60 p-4 text-sm">
+                <p className="font-semibold">You are on the public member list</p>
+                <p className="mt-1 text-muted-foreground">Your first eligible server-recorded virtual trade can unlock a comparable practice-return rank. You do not need a rank to participate.</p>
+                <Button variant="outline" size="sm" className="mt-3" asChild><Link to="/trade">Explore practice trading</Link></Button>
+              </div>
+            )}
             {user && ranked === false && (
               <div className="mb-6 rounded-xl border border-white/10 p-4 text-sm">
                 <p>Your imported practice portfolio is saved to your account. It cannot enter rankings because its earlier trades were recorded in your browser.</p>
@@ -353,9 +371,11 @@ export default function Leaderboard() {
                   <p className="text-xs uppercase tracking-wider text-primary font-semibold">Community Practice Board</p>
                   <h2 className="text-lg font-semibold mt-1">Learn from how people practise</h2>
                   <p className="mt-2 text-sm text-muted-foreground max-w-2xl">These are educational practice results, not evidence of real-money investing skill. Ranked members have server-recorded simulated trades; unranked members are shown separately.</p>
+                  {!loading && !loadError && <p className="mt-2 text-sm font-medium" role="status">{rows.length} public members · {rankedMemberCount} with return ranks · {learningMemberCount} learning members</p>}
+                  <p className="mt-1 text-xs text-muted-foreground">Position numbers include every public member. They are not verified simulated-return ranks. Private accounts never appear.</p>
                 </div>
                 <div className="grid grid-cols-[45px_minmax(0,1fr)_96px_54px] sm:grid-cols-[75px_minmax(0,1fr)_130px_80px] gap-2 sm:gap-4 px-4 sm:px-6 py-3 text-xs font-semibold text-muted-foreground border-b bg-muted/20">
-                  <span>Rank</span><span>Member</span><span className="text-right">Sim. return</span><span className="text-right">Trades</span>
+                  <span>Position</span><span>Member</span><span className="text-right">Sim. return</span><span className="text-right">Trades</span>
                 </div>
                 {loading ? <p className="p-8 text-center">Loading public members…</p>
                   : loadError ? <div className="p-8 text-center"><p>Could not load the practice board.</p><Button variant="outline" onClick={() => void load()}>Try again</Button></div>
@@ -365,7 +385,8 @@ export default function Leaderboard() {
                       <Link key={trader.userId} to={`/trader/${trader.username}`}
                         className={`grid grid-cols-[45px_minmax(0,1fr)_96px_54px] sm:grid-cols-[75px_minmax(0,1fr)_130px_80px] gap-2 sm:gap-4 items-center px-4 sm:px-6 py-4 border-b border-border/50 hover:bg-muted/30 ${profile?.id === trader.userId ? "bg-primary/5" : ""}`}>
                         <span className="font-medium tabular-nums flex items-center gap-1.5">
-                          {trader.practiceRank && trader.practiceRank <= 3 ? getRankIcon(trader.practiceRank) : `#${trader.practiceRank}`}
+                          <span aria-label={`Public member position ${trader.listPosition}`}>#{trader.listPosition}</span>
+                          {trader.practiceRank !== null && trader.practiceRank <= 3 && <span aria-hidden="true">{getRankIcon(trader.practiceRank)}</span>}
                         </span>
                         <span className="min-w-0"><span className="block truncate font-semibold text-sm">{trader.username}</span>
                           <span className="block mt-1 text-xs text-muted-foreground truncate">{profile?.id === trader.userId ? "You · " : ""}{trader.country ? `${trader.country} · ` : ""}Virtual practice only</span></span>
@@ -378,12 +399,12 @@ export default function Leaderboard() {
                 {!loading && !loadError && rows.some(t => t.practiceRank === null) && <div className="border-t border-border">
                   <div className="bg-muted/20 px-4 sm:px-6 py-3">
                     <h3 className="font-semibold text-sm">Learning members · not yet ranked</h3>
-                    <p className="text-xs text-muted-foreground mt-1">New members and imported browser portfolios appear here; their results are not directly comparable to ranked server-recorded practice.</p>
+                    <p className="text-xs text-muted-foreground mt-1">New members and imported portfolios are numbered after ranked members. These are directory positions, not comparable return ranks.</p>
                   </div>
                   {rows.filter(t => t.practiceRank === null).map(trader => (
                     <Link key={trader.userId} to={`/trader/${trader.username}`}
                       className="grid grid-cols-[45px_minmax(0,1fr)_96px_54px] sm:grid-cols-[75px_minmax(0,1fr)_130px_80px] gap-2 sm:gap-4 items-center px-4 sm:px-6 py-3 border-b border-border/40 hover:bg-muted/30 text-sm">
-                      <span className="text-muted-foreground">—</span>
+                      <span className="text-muted-foreground font-mono tabular-nums" aria-label={`Public member position ${trader.listPosition}, not a return rank`}>#{trader.listPosition}</span>
                       <span className="min-w-0"><span className="block truncate font-medium">{trader.username}</span><span className="block text-xs text-muted-foreground">{trader.portfolioStatus === "imported" ? "Imported guest portfolio" : "Still learning"}</span></span>
                       <span className="text-right text-muted-foreground text-xs">Unranked</span>
                       <span className="text-right tabular-nums">{trader.trades}</span>
@@ -392,7 +413,7 @@ export default function Leaderboard() {
                 </div>}
                 <details className="border-t border-border px-4 sm:px-6 py-4 text-sm text-muted-foreground">
                   <summary className="cursor-pointer font-medium text-foreground">How are practice returns and rankings calculated?</summary>
-                  <p className="mt-3 leading-relaxed">Return compares the marked simulated portfolio value against a $100,000 virtual starting balance. A rank is available after the first server-recorded trade in the current comparable practice cycle. Positions may use live, delayed, cached or simulated reference prices. The percent shown does not account for the many risks and frictions of real trading.</p>
+                  <p className="mt-3 leading-relaxed">The Position column counts all public members, including people who have not traded. It is separate from verified return ranking. Return compares the marked simulated portfolio value against a $100,000 virtual starting balance. A rank is available after the first server-recorded trade in the current comparable practice cycle. Positions may use live, delayed, cached or simulated reference prices. The percent shown does not account for the many risks and frictions of real trading.</p>
                   <p className="mt-2">Previous browser-reported results and head-to-head duels are available in separate tabs. Trade history appears on a public profile only when the member has independently opted in.</p>
                 </details>
               </section>
