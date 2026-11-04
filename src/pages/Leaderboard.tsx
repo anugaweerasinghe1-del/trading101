@@ -16,6 +16,7 @@ import { pushPortfolio, reconcilePortfolio, startRankedPractice } from "@/lib/cl
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
 import { STARTING_BALANCE_LABEL } from "@/lib/constants";
 import { withPublicMemberPositions } from "@/lib/memberActivity";
+import { recordConsentedLeaderboardVisit, LEADERBOARD_FUNNEL_READY_EVENT } from "@/lib/leaderboardFunnelTelemetry";
 
 interface BoardRow {
   userId: string;
@@ -92,7 +93,7 @@ function getRankIcon(rank: number) {
 }
 
 export default function Leaderboard() {
-  const { user, profile } = useAuth();
+  const { user, profile, loading: authLoading } = useAuth();
   const userId = user?.id;
   const [rows, setRows] = useState<BoardRow[]>([]);
   const [loading, setLoading] = useState(true);
@@ -108,6 +109,17 @@ export default function Leaderboard() {
   const [duels, setDuels] = useState<DuelRow[]>([]);
   const [duelsLoading, setDuelsLoading] = useState(true);
   const [duelsError, setDuelsError] = useState(false);
+
+  // Count only opt-in, signed-out views, after the auth provider resolves.
+  // If consent is granted while the visitor is here, the SDK-ready event
+  // records the current visit; no previously unconsented visit is backfilled.
+  useEffect(() => {
+    if (authLoading || user) return;
+    const record = () => { recordConsentedLeaderboardVisit(); };
+    record();
+    window.addEventListener(LEADERBOARD_FUNNEL_READY_EVENT, record);
+    return () => window.removeEventListener(LEADERBOARD_FUNNEL_READY_EVENT, record);
+  }, [authLoading, user]);
 
   const load = useCallback(async (quiet = false) => {
     if (loadBusy.current) return;
@@ -303,7 +315,7 @@ export default function Leaderboard() {
                   </>
                 ) : (
                   <Button size="sm" className="!text-black font-semibold rounded-xl" asChild>
-<Link to="/auth">Create a free account to join</Link>
+<Link to="/auth?mode=signup">Create a free account to join</Link>
 </Button>
                 )}
                 <Button variant="outline" size="sm" className="rounded-xl" asChild>

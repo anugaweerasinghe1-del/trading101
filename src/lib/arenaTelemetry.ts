@@ -7,7 +7,7 @@
 import { scenarioById } from "./practiceArena";
 
 export const ARENA_VISIT_KEY = "tradehq:arena-analytics-last-seen:v1";
-export const ARENA_ANALYTICS_CONSENT_KEY = "tradehq_consent_v2";
+export const ARENA_ANALYTICS_CONSENT_KEY = "tradehq_consent_v3";
 export const ARENA_READY_EVENT = "tradehq:analytics-ready";
 
 export type ArenaMilestone =

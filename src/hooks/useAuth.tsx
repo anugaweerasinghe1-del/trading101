@@ -3,6 +3,7 @@ import type { Session, User } from "@supabase/supabase-js";
 import { supabase } from "@/integrations/supabase/client";
 import { startCloudSync } from "@/lib/cloudPortfolio";
 import { activatePortfolioOwner } from "@/lib/portfolioOwner";
+import { recordConsentedLeaderboardRegistration, LEADERBOARD_FUNNEL_READY_EVENT } from "@/lib/leaderboardFunnelTelemetry";
 
 export interface Profile {
   id: string;
@@ -83,6 +84,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     return () => { invalidatePendingWork(); sub.subscription.unsubscribe(); };
   }, [loadProfile]);
+
+  // An actual, newly-created Supabase account can complete an opt-in,
+  // same-browser leaderboard funnel after OAuth or email verification.
+  // This is deliberately a site-wide auth effect: an immediate route redirect
+  // must not drop the conversion event or cause a second registration count.
+  useEffect(() => {
+    if (!user?.created_at) return;
+    const record = () => { recordConsentedLeaderboardRegistration(user.created_at); };
+    record();
+    window.addEventListener(LEADERBOARD_FUNNEL_READY_EVENT, record);
+    return () => window.removeEventListener(LEADERBOARD_FUNNEL_READY_EVENT, record);
+  }, [user?.id, user?.created_at]);
 
   const refreshProfile = async () => {
     if (user) await loadProfile(user.id);

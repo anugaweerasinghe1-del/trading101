@@ -47,7 +47,7 @@ export default function Privacy() {
               <li className="flex items-start gap-2"><span className="text-profit">✓</span><span>Core simulator features can be used without creating an account.</span></li>
               <li className="flex items-start gap-2"><span className="text-profit">✓</span><span>Guest portfolios stay in your browser; account cash, positions and server-recorded trades restore from Supabase.</span></li>
               <li className="flex items-start gap-2"><span className="text-profit">✓</span><span>Optional accounts and community features can store data with Supabase.</span></li>
-              <li className="flex items-start gap-2"><span className="text-profit">✓</span><span>Amplitude's limited milestone analytics require fresh adult opt-in; session replay and automatic interaction capture are disabled. Google advertising has separate privacy choices.</span></li>
+              <li className="flex items-start gap-2"><span className="text-profit">✓</span><span>Optional Arena and leaderboard-to-registration analytics require fresh adult opt-in; session replay and automatic interaction capture are disabled. Google advertising has separate privacy choices.</span></li>
               <li className="flex items-start gap-2"><span className="text-profit">✓</span><span>No real-money deposit or brokerage account is required for simulated trading.</span></li>
             </ul>
           </div>
@@ -113,7 +113,7 @@ export default function Privacy() {
               },
               {
                 question: "Does TradeHQ use analytics or advertising cookies?",
-                answer: "Optional Amplitude milestone analytics use a pseudonymous browser identifier only after renewed consent from a visitor confirming they are at least 18; this site's replay and automatic interaction capture are disabled. Google provides separate regional advertising privacy messages and controls. You can change analytics choices here and use Advertising privacy choices when Google's European message applies, or its Do Not Sell or Share link in supported US states.",
+                answer: "Optional Arena and leaderboard new-account registration analytics use a pseudonymous browser identifier only after renewed consent from a visitor confirming they are at least 18; no account ID, email or portfolio is included in the custom funnel events. The site's replay and automatic interaction capture are disabled. Google provides separate regional advertising privacy messages and controls. You can change analytics choices here and use Advertising privacy choices when Google's European message applies, or its Do Not Sell or Share link in supported US states.",
               },
             ]}
           />

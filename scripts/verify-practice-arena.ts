@@ -120,6 +120,9 @@ fakeStorage.set("tradehq_consent_v1", "accepted");
 assert.equal(recordConsentedArenaVisit(new Date("2026-11-03T09:00:00.000Z")), false,
   "Legacy consent granted for replay/autocapture must never authorize new measurement.");
 fakeStorage.set("tradehq_consent_v2", "accepted");
+assert.equal(recordConsentedArenaVisit(new Date("2026-11-03T09:00:00.000Z")), false,
+  "The previous Arena-only analytics permission must not authorize the new leaderboard funnel.");
+fakeStorage.set("tradehq_consent_v3", "accepted");
 assert.equal(recordConsentedArenaVisit(new Date("2026-11-03T09:00:00.000Z")), true);
 assert.equal(fakeStorage.get(ARENA_VISIT_KEY), "2026-11-03");
 assert.deepEqual(sent.at(-1), {event:"TradeHQ Arena Viewed",props:{}});
@@ -135,17 +138,17 @@ assert.deepEqual(sent.at(-1), {
 });
 assert.deepEqual(Object.keys(sent.at(-1)!.props).sort(), ["difficulty","scenario_id"]);
 const beforeRevoke = sent.length;
-fakeStorage.set("tradehq_consent_v2", "rejected");
+fakeStorage.set("tradehq_consent_v3", "rejected");
 trackArenaMilestone("Arena Completed", "first-order");
 assert.equal(sent.length, beforeRevoke, "Rejected consent cannot generate a milestone.");
-fakeStorage.set("tradehq_consent_v2", "accepted");
+fakeStorage.set("tradehq_consent_v3", "accepted");
 fakeWindow.__tradehqAmplitudeStarted = false;
 assert.equal(recordConsentedArenaVisit(new Date("2026-11-05T10:00:00.000Z")), false,
   "If the SDK is not ready, a visit should not falsely create future return evidence.");
 assert.equal(fakeStorage.get(ARENA_VISIT_KEY), "2026-11-04");
 trackArenaMilestone("Arena Completed", "first-order");
 assert.equal(sent.length, beforeRevoke, "SDK-not-ready events cannot send immediately.");
-fakeStorage.set("tradehq_consent_v2", "rejected");
+fakeStorage.set("tradehq_consent_v3", "rejected");
 fakeWindow.__tradehqAmplitudeStarted = true;
 for (const callback of fakeListeners) callback();
 assert.equal(sent.length, beforeRevoke, "Consent revoked while loading must prevent queued events.");
@@ -223,8 +226,8 @@ assert.doesNotMatch(telemetry, /props\.(?:user_id|email|note|cash|amount|portfol
 assert.match(consent, /tradehq:analytics-ready/, "The SDK must signal when consented tracking is ready.");
 assert.match(consent, /localStorage.removeItem\(ARENA_VISIT_KEY\)/,
   "Withdrawal must clear the optional Arena return-day marker.");
-assert.match(consent, /STORAGE_KEY = "tradehq_consent_v2"/, "Legacy broad analytics choice must not be inherited.");
-assert.match(telemetry, /ARENA_ANALYTICS_CONSENT_KEY = "tradehq_consent_v2"/);
+assert.match(consent, /STORAGE_KEY = "tradehq_consent_v3"/, "Previous Arena-only consent must not be inherited.");
+assert.match(telemetry, /ARENA_ANALYTICS_CONSENT_KEY = "tradehq_consent_v3"/);
 assert.match(consent, /autocapture: false/, "Automatic page, click and form capture must be off.");
 assert.match(consent, /fetchRemoteConfig: false/, "Remote project config must not re-enable autocapture.");
 assert.doesNotMatch(consent, /sessionReplay\.plugin|engagement\.plugin|sampleRate:\s*1/, "No session replay, including when consent is granted.");

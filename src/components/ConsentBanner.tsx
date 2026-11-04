@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { LEADERBOARD_FUNNEL_MARKER_KEY } from "@/lib/leaderboardFunnelTelemetry";
 
 /**
  * Privacy-first optional measurement. Legacy v1 acceptances are deliberately
- * NOT grandfathered in: that consent covered replay/autocapture, not the
- * narrower adult-only event model now offered.
+ * NOT grandfathered in: the renewed consent covers narrowly defined
+ * Arena and leaderboard-registration events, not replay/autocapture.
  */
 type ConsentChoice = "accepted" | "rejected";
-const STORAGE_KEY = "tradehq_consent_v2";
+const STORAGE_KEY = "tradehq_consent_v3";
 const ARENA_VISIT_KEY = "tradehq:arena-analytics-last-seen:v1";
 const AMPLITUDE_API_KEY = "44108a3c4bd34ff14004fa66198d9f20";
 
@@ -64,7 +65,10 @@ export function ConsentBanner() {
     const previous = readChoice();
     try {
       window.localStorage.setItem(STORAGE_KEY, next);
-      if (next === "rejected") window.localStorage.removeItem(ARENA_VISIT_KEY);
+      if (next === "rejected") {
+        window.localStorage.removeItem(ARENA_VISIT_KEY);
+        window.localStorage.removeItem(LEADERBOARD_FUNNEL_MARKER_KEY);
+      }
     } catch {
       // If consent cannot be persisted, optional tracking must remain off.
       if (next === "accepted") return;
@@ -86,10 +90,13 @@ export function ConsentBanner() {
       <p className="text-sm font-semibold text-foreground">Optional analytics choices</p>
       <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
         TradeHQ uses essential local storage to run its virtual simulator. Optional
-        Amplitude measurement records limited Practice Arena milestones, with a
-        pseudonymous identifier in this browser. No session replay, automatic click
-        or form capture, or personalised trading data is sent by our custom events.
-        The site works fully when you reject. <Link to="/privacy" className="text-primary underline">Read the privacy policy</Link>.
+        Amplitude measurement records limited Practice Arena milestones and whether
+        a consenting leaderboard visitor later registers a new account in the same
+        browser (within seven days). The provider uses a pseudonymous browser ID and
+        normal network metadata; our custom events send no account IDs, email,
+        portfolio data, or form content. Session replay and automatic click/form
+        capture are disabled. The site works fully when you reject.
+        <Link to="/privacy" className="text-primary underline"> Read the privacy policy</Link>.
       </p>
       <label className="mt-3 flex cursor-pointer items-start gap-2.5 rounded-xl border border-border bg-muted/30 p-3 text-xs leading-relaxed">
         <input type="checkbox" checked={isAdult} onChange={e => setIsAdult(e.target.checked)}
@@ -107,7 +114,7 @@ export function ConsentBanner() {
         </button>
       </div>
       <p className="mt-2 text-[10px] leading-relaxed text-muted-foreground">
-        Previous analytics choices must be renewed for this narrower setting. The age
+        Previous analytics choices, including the Arena-only choice, must be renewed. The age
         confirmation is not identity verification. Google advertising has separate
         regional privacy choices where applicable.
       </p>
