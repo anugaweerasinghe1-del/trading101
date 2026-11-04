@@ -23,6 +23,8 @@ export function AutomationInbox({ courses, dailyBanks, newsletterEdits, daily, f
     if (rows === null) items.push({ title: `${name} review queue unavailable`, detail: 'This queue could not be loaded. Open its desk to check; an unavailable count is not zero.', to, priority: 0 });
     else {
       const count = rows.filter(row => row.status === 'draft').length;
+      if (name === 'Newsletter' && rows.length >= 16)
+        items.push({ title: 'Newsletter review list may be incomplete', detail: 'The editorial API returns only the latest 16 editions. Older pending drafts cannot be ruled out from this dashboard; this is not a full historical count.', to, priority: 0 });
       if (count) items.push({ title: `${count} ${name.toLowerCase()} draft${count === 1 ? '' : 's'} awaiting review`, detail: 'Saved drafts stay private until an administrator reviews and approves them.', to, priority: 1 });
     }
   }
