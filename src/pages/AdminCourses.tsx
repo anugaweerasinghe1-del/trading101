@@ -102,7 +102,7 @@ export default function AdminCourses() {
         settings={settings} busy={busy} save={values => action(async () => { await call("configure", { settings: values }); await load(); toast.success("Generation settings saved."); })}
         generate={async () => { await action(async () => { const request = await call("generate"); await load(); toast.success(request ? "Generation queued. Refresh the inbox in a few minutes." : "No draft queued. Check setup, monthly slots and retry limits."); }); }} />
         : <div className="grid lg:grid-cols-[280px_minmax(0,1fr)] gap-6">
-          <aside className="space-y-3"><button type="button" disabled={busy} disabled={busy} className="w-full rounded-xl border border-primary/30 text-primary py-3 text-sm" onClick={() => choose(null)}>+ Create a draft</button>
+          <aside className="space-y-3"><button type="button" disabled={busy} className="w-full rounded-xl border border-primary/30 text-primary py-3 text-sm" onClick={() => choose(null)}>+ Create a draft</button>
             {!drafts.length && <div className="rounded-2xl border border-border p-5 text-sm text-muted-foreground">Your draft inbox is empty. Set up the free API to receive monthly courses, or create a draft here.</div>}
             {drafts.map(d => <button disabled={busy} key={d.id} type="button" onClick={() => choose(d)} className={"w-full text-left rounded-2xl border p-4 space-y-2 " + (selected?.id === d.id ? "border-primary/50 bg-primary/5" : "border-border bg-card")}>
               <span className="block text-xs text-muted-foreground">{d.status === "draft" && d.published_revision > 0 ? "Changes awaiting approval" : d.status === "draft" ? "Awaiting review" : d.status}</span>
@@ -117,7 +117,7 @@ export default function AdminCourses() {
                     <button type="button" disabled={busy || !dirty} onClick={() => void action(save)} className="rounded-xl bg-primary text-primary-foreground px-3 py-2 text-sm inline-flex items-center gap-2 disabled:opacity-50"><Save className="w-4 h-4" />Save draft</button></div></div>
                 {selected?.research?.method && <details className="rounded-xl bg-muted/30 p-4 text-sm"><summary className="cursor-pointer">Research and checks · {selected.research.method}</summary>
                   <div className="mt-3 space-y-2 text-muted-foreground">{selected.research.demandNote && <p>{selected.research.demandNote}</p>}{selected.research.checks?.map((c, i) => <p key={i}>{c}</p>)}</div></details>}
-                {mode === "preview" ? <CoursePreview document={document} /> : <fieldset disabled={busy}><fieldset disabled={busy}><CourseDraftEditor document={document} setDocument={setDocument} published={(selected?.published_revision ?? 0) > 0} /></fieldset></fieldset>}
+                {mode === "preview" ? <CoursePreview document={document} /> : <fieldset disabled={busy}><CourseDraftEditor document={document} setDocument={setDocument} published={(selected?.published_revision ?? 0) > 0} /></fieldset>}
                 <section className="border-t border-border pt-6 space-y-4"><h2 className="font-semibold">Final approval</h2>
                   {errors.length > 0 && <details className="text-sm rounded-xl bg-muted/30 p-4"><summary className="cursor-pointer">{errors.length} items to resolve before approval</summary><ul className="mt-3 list-disc pl-5 space-y-2 text-muted-foreground">{errors.map((e, i) => <li key={i}>{e}</li>)}</ul></details>}
                   <label className="block text-sm space-y-2"><span className="text-muted-foreground">Reviewer name</span><input value={reviewer} onChange={e => setReviewer(e.target.value)} className="rounded-xl border border-border bg-background px-3 py-2 w-full" /></label>
@@ -125,8 +125,8 @@ export default function AdminCourses() {
                     <span>I have reviewed the sources, calculations, originality and lesson quality.</span></label>
                   <div className="flex flex-wrap gap-3"><button type="button" disabled={busy || dirty || !selected || !reviewed || errors.length > 0 || selected.status === "rejected"}
                     onClick={() => void action(publish)} className="rounded-xl bg-primary text-primary-foreground px-4 py-3 text-sm inline-flex items-center gap-2 disabled:opacity-50"><CheckCircle2 className="w-4 h-4" />Approve and publish</button>
-                    {selected && <button type="button" disabled={busy} onClick={() => {
-                      if (!confirm("Reject these proposed changes? Any existing published version will stay available.")) return;
+                    {selected && <button type="button" disabled={busy || dirty} onClick={() => {
+                      if (dirty || !confirm("Reject this saved revision? Any existing published version will stay available. Save or discard unsaved edits first.")) return;
                       void action(async () => { await call("reject", { id: selected.id, revision: selected.revision }); const rows = await load(); const row = rows.find(d => d.id === selected.id); if (row) { setSelected(row); setDocument(row.document); } setReviewed(false); toast.success("Draft rejected."); });
                     }} className="rounded-xl border border-border px-4 py-3 text-sm disabled:opacity-50">Reject draft</button>}
                     {selected?.published_revision > 0 && <Link to={"/courses/" + selected.document.slug} className="text-sm text-primary py-3" target="_blank">View published course →</Link>}

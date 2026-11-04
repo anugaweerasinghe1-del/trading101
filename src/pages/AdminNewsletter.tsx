@@ -162,6 +162,7 @@ export default function AdminNewsletter() {
     });
   };
   const generate = () => void run(async () => {
+    if (editor.current.dirty && !window.confirm("Generating a weekly draft will replace your unsaved newsletter edits. Discard those edits?")) return;
     const result = await call("generate-weekly") as { created: boolean; status: string };
     await refresh();
     toast.message(result.created ? "Weekly AI draft created. Review it before approval." : "Weekly draft already exists or needs provider configuration.");
@@ -175,12 +176,14 @@ export default function AdminNewsletter() {
   });
   const reopen = () => void run(async () => {
     if (!current || current.status !== "approved") return;
+    if (editor.current.dirty && !window.confirm("Reopening this edition will discard your unsaved newsletter edits. Continue?")) return;
     await call("reopen", { id: current.id, revision: current.revision });
     await refresh(current.id);
     toast.message("Editorial approval withdrawn for revisions. Nothing was emailed.");
   });
   const previewLesson = () => void run(async () => {
     if (!current || current.status !== "draft") return;
+    if (editor.current.dirty && !window.confirm("This AI preview will replace your unsaved newsletter edits in the editor. Discard them?")) return;
     const response = await call("preview-rewrite", {
       id: current.id, revision: current.revision, topicId,
     }) as { subject: string; preheader: string; body_markdown: string };
@@ -309,7 +312,7 @@ export default function AdminNewsletter() {
             <h2 className="font-semibold">Newsletter editions</h2>
             {!editions.length && <p className="text-sm text-muted-foreground">No drafts stored. Generate one once the backend is ready.</p>}
             {editions.map(edition => (
-              <button type="button" disabled={busy} disabled={busy} key={edition.id} onClick={() => { if (dirty && !confirm('Discard unsaved newsletter edits?')) return; pick(edition); }}
+              <button type="button" disabled={busy} key={edition.id} onClick={() => { if (dirty && !confirm('Discard unsaved newsletter edits?')) return; pick(edition); }}
                 className={"block w-full rounded-xl border px-3 py-3 text-left text-sm transition-colors " +
                   (edition.id === current?.id ? "border-primary bg-primary/5" : "border-border hover:bg-muted/40")}>
                 <span className="block font-semibold">{edition.week_of}</span>
