@@ -332,12 +332,30 @@ assert.equal(incidentHandoff.cases[0].evidenceDigest,offline.cases[0].evidenceDi
 assert.equal(incidentHandoff.cases[0].symptom,"BLANK_ROOT");
 assert.ok(Object.values(incidentHandoff.authorization).every(v=>v===false));
 assert.match(incidentHandoff.sha256,/^[a-f0-9]{64}$/);
-const healthyHandoff=summarizeInvestigation(await collectOfflineRepairReview({
+const healthyReview=await collectOfflineRepairReview({
   ...options,reader:readerFor(fixture())
-}));
+});
+const healthyHandoff=summarizeInvestigation(healthyReview);
 assert.equal(healthyHandoff.status,"NO_VERIFIED_INCIDENT");
 assert.equal(healthyHandoff.ownerReviewRequired,false);
 assert.equal(healthyHandoff.cases.length,0);
+// Healthy, independently verified monitoring does not need old incident
+// feedback. An actual incident must still fail closed on history errors.
+const {feedbackForVerifiedHandoff}=await import("./agent-operational-investigation-handoff.mjs");
+let historyReads=0;
+const cleanHistory=await feedbackForVerifiedHandoff(healthyReview,async()=>{
+  historyReads++;throw Error("No incident must not read unrelated owner history");
+});
+assert.equal(historyReads,0);
+assert.equal(cleanHistory.status,"NOT_CONSULTED_NO_VERIFIED_INCIDENT");
+assert.deepEqual(cleanHistory.memory,{version:1,records:[]});
+assert.equal(cleanHistory.confirmedRepairOutcomes,0);
+await assert.rejects(feedbackForVerifiedHandoff(offline,async()=>{
+  historyReads++;throw Error("Untrusted historical feedback denied");
+}),/Untrusted historical feedback denied/);
+assert.equal(historyReads,1,"Incident must require authenticated history and propagate denial");
+await assert.rejects(feedbackForVerifiedHandoff(offline,async()=>({schema:"wrong",confirmedRepairOutcomes:0})),/Untrusted incident history/);
+
 for(const mutate of [
   x=>x.cases[0].rootCauseVerified=true,
   x=>x.cases[0].repairRisk="LOW",
