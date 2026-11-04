@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Lock, Trash2, Eye, EyeOff, Star, Save, MessageSquare, RotateCcw } from "lucide-react";
+
+import { useAdminRefresh, useAdminRequestScope } from '@/hooks/useAdminRefresh';
+import { isAdminRequestCancelled } from '@/lib/adminRequestScope';
+import { AdminFreshness } from '@/components/admin/AdminFreshness';
 
 interface Review {
   id: string;
@@ -21,6 +25,8 @@ interface Review {
 export default function AdminReviews() {
   const [unlocked, setUnlocked] = useState(false);
   const [key, setKey] = useState("");
+  const scope = useAdminRequestScope(key);
+  const [checkedAt, setCheckedAt] = useState<Date | null>(null), [refreshError, setRefreshError] = useState('');
   const [verifying, setVerifying] = useState(false);
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState(false);
@@ -28,27 +34,50 @@ export default function AdminReviews() {
   const [busy, setBusy] = useState<Record<string, boolean>>({});
   const pending = useRef(new Set<string>());
   const [edits, setEdits] = useState<Record<string, Partial<Review>>>({});
+  const hasUnsaved = Object.keys(edits).length > 0 || Object.entries(replies).some(
+    ([id, value]) => value !== (reviews.find(review => review.id === id)?.owner_reply ?? "")
+  );
+  useEffect(() => {
+    if (!unlocked || !hasUnsaved) return;
+    const warn = (event: BeforeUnloadEvent) => { event.preventDefault(); event.returnValue = ""; };
+    window.addEventListener("beforeunload", warn);
+    return () => window.removeEventListener("beforeunload", warn);
+  }, [unlocked, hasUnsaved]);
 
-  const load = async (): Promise<boolean> => {
+  const lockAdmin = () => {
+    if (hasUnsaved && !window.confirm("Discard unsaved moderation changes and public replies?")) return;
+    scope.invalidate();
+    pending.current.clear();
+    setBusy({}); setVerifying(false); setLoading(false); setCheckedAt(null); setRefreshError("");
+    setUnlocked(false); setKey(""); setReviews([]); setEdits({}); setReplies({});
+  };
+
+  const load = useCallback(async (silent = false): Promise<boolean> => {
+    const guard = scope.capture(key, 'reviews');
     setLoading(true);
     try {
       const { data, error } = await supabase.functions.invoke("admin-reviews", {
         body: { action: "list" }, headers: { "x-admin-key": key },
       });
+      guard.assert();
       if (error || data?.error || !Array.isArray(data?.data)) throw new Error("Could not load reviews. Check your master key and retry.");
-      setReviews(data.data);
+      setReviews(data.data); setCheckedAt(new Date()); setRefreshError("");
       return true;
     } catch (error) {
-      toast.error(error instanceof Error ? error.message : "Could not load reviews");
+      if (guard.current() && !isAdminRequestCancelled(error)) {
+        setRefreshError('Could not refresh reviews.');
+        if (!silent) toast.error(error instanceof Error ? error.message : 'Could not load reviews');
+      }
       return false;
-    } finally { setLoading(false); }
-  };
+    } finally { if (guard.current()) setLoading(false); }
+  }, [key, scope]);
+  useAdminRefresh(unlocked, async () => { await load(true); }, { paused: () => pending.current.size > 0 });
 
   const verify = async (e: React.FormEvent) => {
     e.preventDefault();
-    setVerifying(true);
-    try { if (await load()) setUnlocked(true); }
-    finally { setVerifying(false); }
+    if (verifying) return; const guard = scope.capture(key); setVerifying(true);
+    try { if (await load()) { guard.assert(); setUnlocked(true); } }
+    finally { if (guard.current()) setVerifying(false); }
   };
 
   const patchField = (id: string, patch: Partial<Review>) => {
@@ -56,23 +85,24 @@ export default function AdminReviews() {
   };
 
   const mutate = async (id: string, action: string, payload: Record<string, unknown> = {}) => {
-    if (pending.current.has(id)) return;
+    if (pending.current.has(id)) return; const guard = scope.capture(key);
     pending.current.add(id);
     setBusy(prev => ({ ...prev, [id]: true }));
     try {
       const { data, error } = await supabase.functions.invoke("admin-reviews", {
         body: { action, id, ...payload }, headers: { "x-admin-key": key },
       });
+      guard.assert();
       if (error || data?.error || data?.ok !== true) throw new Error(data?.error || "Could not save changes. Please retry.");
       toast.success(action === "delete" ? "Review deleted from public view" : action === "restore" ? "Review restored" : "Saved");
       if (action === "update") setEdits(prev => { const next = { ...prev }; delete next[id]; return next; });
       if (action === "reply") setReplies(prev => { const next = { ...prev }; delete next[id]; return next; });
       await load();
     } catch (error) {
-      toast.error(error instanceof Error ? error.message : "Could not save changes");
+      if (guard.current() && !isAdminRequestCancelled(error)) toast.error(error instanceof Error ? error.message : "Could not save changes");
     } finally {
       pending.current.delete(id);
-      setBusy(prev => ({ ...prev, [id]: false }));
+      if (guard.current()) setBusy(prev => ({ ...prev, [id]: false }));
     }
   };
 
@@ -95,6 +125,7 @@ export default function AdminReviews() {
               <h1 className="text-lg font-bold">Admin Reviews</h1>
             </div>
             <input
+              disabled={verifying}
               type="password"
               value={key}
               onChange={(e) => setKey(e.target.value)}
@@ -126,10 +157,12 @@ export default function AdminReviews() {
         <div className="max-w-5xl mx-auto space-y-4">
           <div className="flex items-center justify-between gap-3">
             <h1 className="text-xl font-bold">Reviews ({reviews.length})</h1>
-            <button type="button" onClick={() => { setUnlocked(false); setKey(""); setReviews([]); setEdits({}); setReplies({}); }} disabled={Object.values(busy).some(Boolean)} className="text-sm underline">Lock admin panel</button>
+            <button type="button" onClick={lockAdmin} disabled={Object.values(busy).some(Boolean)} className="text-sm underline">Lock admin panel</button>
           </div>
           <p className="text-sm text-muted-foreground">Replies are public and labelled as yours. Deleted reviews stay here so you can restore them.</p>
+          {hasUnsaved && <p role="status" className="text-sm text-amber-600 dark:text-amber-400">You have unsaved review changes or a public reply. Save them before leaving or locking this desk.</p>}
           <button type="button" disabled={loading} className="text-sm underline" onClick={() => void load()}>Refresh reviews</button>
+          <AdminFreshness checkedAt={checkedAt} error={refreshError} />
           {loading && <p className="text-sm text-muted-foreground">Loading…</p>}
           {reviews.map((r) => {
             const e = edits[r.id] ?? {};

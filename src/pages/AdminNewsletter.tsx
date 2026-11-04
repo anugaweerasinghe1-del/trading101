@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
@@ -9,6 +9,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { CheckCircle2, RefreshCw, Sparkles, Lock, Mail } from "lucide-react";
+
+import { useAdminRefresh, useAdminRequestScope } from '@/hooks/useAdminRefresh';
+import { isAdminRequestCancelled } from '@/lib/adminRequestScope';
+import { AdminFreshness } from '@/components/admin/AdminFreshness';
 
 type LessonTopic = { id: string; title: string; sourceTitle: string };
 type NextIssuePreview = { week_of: string; subject: string; preheader: string; body_markdown: string; note: string };
@@ -28,6 +32,9 @@ type Edition = {
 const border = "rounded-2xl border border-border bg-card/70 p-5";
 export default function AdminNewsletter() {
   const [key, setKey] = useState("");
+  const scope = useAdminRequestScope(key);
+  const pending = useRef(false);
+  const [checkedAt, setCheckedAt] = useState<Date | null>(null), [refreshError, setRefreshError] = useState('');
   const [unlocked, setUnlocked] = useState(false);
   const [editions, setEditions] = useState<Edition[]>([]);
   const [current, setCurrent] = useState<Edition | null>(null);
@@ -45,11 +52,21 @@ export default function AdminNewsletter() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
 
+  const dirty = !!current && (current.subject !== subject || current.preheader !== preheader || current.body_markdown !== body);
+  const editor = useRef({ current, dirty }); editor.current = { current, dirty };
+  useEffect(() => {
+    if (!dirty) return;
+    const warn = (event: BeforeUnloadEvent) => { event.preventDefault(); event.returnValue = ''; };
+    window.addEventListener('beforeunload', warn);
+    return () => window.removeEventListener('beforeunload', warn);
+  }, [dirty]);
   const call = useCallback(async (action: string, payload: Record<string, unknown> = {}) => {
+    const guard = scope.capture(key);
     const { data, error: invokeError } = await supabase.functions.invoke("newsletter-editor", {
       body: { action, ...payload },
       headers: { "x-admin-key": key },
     });
+    guard.assert();
     if (invokeError || data?.error) {
       // Supabase returns a FunctionsHttpError on 4xx/5xx; data is null on that
       // path. The old UI misreported rejected master keys as missing backend.
@@ -60,14 +77,18 @@ export default function AdminNewsletter() {
   }, [key]);
 
   const distributionCall = useCallback(async (action: string, payload: Record<string, unknown> = {}) => {
+    const guard = scope.capture(key);
     const { data, error: invokeError } = await supabase.functions.invoke("newsletter-dispatch", {
       body: { action, ...payload }, headers: { "x-admin-key": key },
     });
+    guard.assert();
     if (invokeError || data?.error) throw Error(data?.error || "Subscriber delivery service unavailable.");
     return data.data;
   }, [key]);
   const loadAudience = useCallback(async () => {
-    setAudience(await distributionCall("status") as Audience);
+    const guard = scope.capture(key, 'audience');
+    const result = await distributionCall('status') as Audience;
+    guard.assert(); setAudience(result);
   }, [distributionCall]);
   const previewNextIssue = () => void run(async () => {
     const next = await call("preview-upcoming") as NextIssuePreview;
@@ -76,7 +97,7 @@ export default function AdminNewsletter() {
   });
   const publishEdition = () => void run(async () => {
     if (!current || current.status !== "approved") return;
-    if (!window.confirm("Send this approved educational issue to confirmed TradeHQ Weekly subscribers? Sending cannot be undone.")) return;
+    if (!window.confirm("Send this approved educational issue to confirmed TradeHQ Newsletter subscribers? Sending cannot be undone.")) return;
     setPublishResult(null);
     const result = await distributionCall("publish", {
       editionId: current.id, revision: current.revision, confirmed: true,
@@ -97,20 +118,36 @@ export default function AdminNewsletter() {
     setError("");
   };
   const refresh = useCallback(async (preferId?: string) => {
+    const guard = scope.capture(key, 'editions');
     const list = await call("list") as Edition[];
+    guard.assert();
     if (!Array.isArray(list)) throw Error("Invalid newsletter response");
-    setEditions(list);
+    setEditions(list); setCheckedAt(new Date()); setRefreshError("");
     const active = list.find(item => item.id === preferId) || list[0];
     if (active) pick(active);
     else setCurrent(null);
   }, [call]);
   const run = async (work: () => Promise<void>) => {
-    if (busy) return;
+    if (pending.current) return; pending.current = true; const guard = scope.capture(key);
     setBusy(true); setError("");
     try { await work(); }
-    catch (failure) { setError(failure instanceof Error ? failure.message : "Newsletter operation failed"); }
-    finally { setBusy(false); }
+    catch (failure) { if (guard.current() && !isAdminRequestCancelled(failure)) setError(failure instanceof Error ? failure.message : "Newsletter operation failed"); }
+    finally { if (guard.current()) { pending.current = false; setBusy(false); } }
   };
+  const refreshMetadata = useCallback(async () => {
+    const guard = scope.capture(key, 'editions');
+    const list = await call('list') as Edition[];
+    guard.assert();
+    if (!Array.isArray(list)) throw Error('Invalid newsletter response');
+    setEditions(list); setCheckedAt(new Date()); setRefreshError('');
+    const state = editor.current;
+    const updated = list.find(item => item.id === state.current?.id);
+    if (!state.current && list[0]) pick(list[0]);
+    else if (!state.dirty && updated && (updated.revision !== state.current?.revision || updated.status !== state.current?.status)) pick(updated);
+    await loadAudience();
+  }, [call, key, loadAudience, scope]);
+  useAdminRefresh(unlocked, refreshMetadata, { paused: () => pending.current,
+    onError: () => setRefreshError('Could not refresh newsletter or subscriber status.') });
   const unlock = (event: React.FormEvent) => {
     event.preventDefault();
     void run(async () => {
@@ -120,7 +157,8 @@ export default function AdminNewsletter() {
       setTopics(available);
       setTopicId(available[0].id);
       setUnlocked(true);
-      void loadAudience().catch(() => setAudience(null));
+      const audienceGuard = scope.capture(key);
+      void loadAudience().catch(() => { if (audienceGuard.current()) { setAudience(null); setRefreshError('Subscriber status is unavailable.'); } });
     });
   };
   const generate = () => void run(async () => {
@@ -193,7 +231,7 @@ export default function AdminNewsletter() {
       {!unlocked ? <form onSubmit={unlock} className={border + " max-w-md space-y-4"}>
         <div className="flex items-center gap-2 font-semibold"><Lock className="h-4 w-4"/> Admin access</div>
         <Label htmlFor="newsletter-key">TradeHQ Admin Dashboard master key</Label>
-        <Input id="newsletter-key" type="password" value={key} onChange={event => setKey(event.target.value)} required autoComplete="off" />
+        <Input id="newsletter-key" type="password" disabled={busy} value={key} onChange={event => setKey(event.target.value)} required autoComplete="off" />
         {error && <p role="alert" className="text-sm text-destructive">{error}</p>}
         <Button type="submit" disabled={busy || key.length < 8}>{busy ? "Checking…" : "Unlock drafts"}</Button>
       </form> : <>
@@ -202,10 +240,12 @@ export default function AdminNewsletter() {
             <Sparkles className="mr-2 h-4 w-4"/> Preview next week's AI issue
           </Button>
           <Button onClick={generate} disabled={busy}><Sparkles className="mr-2 h-4 w-4"/> Generate this week's draft</Button>
-          <Button onClick={() => void run(async () => refresh(current?.id))} variant="outline" disabled={busy}><RefreshCw className="mr-2 h-4 w-4"/> Refresh</Button>
-          <Button variant="outline" onClick={() => { setUnlocked(false); setKey(""); setCurrent(null); setEditions([]); setTopics([]); setAudience(null); setPublishResult(null); setNextPreview(null); }} disabled={busy}>Lock</Button>
+          <Button onClick={() => { if (dirty && !confirm('Discard unsaved newsletter edits and load the latest revision?')) return; void run(async () => { await refresh(current?.id); await loadAudience(); }); }} variant="outline" disabled={busy}><RefreshCw className="mr-2 h-4 w-4"/> Refresh</Button>
+          <Button variant="outline" onClick={() => { if (dirty && !confirm('Discard unsaved newsletter edits and lock?')) return; scope.invalidate(); pending.current = false; setBusy(false); setCheckedAt(null); setRefreshError(''); setSubject(''); setPreheader(''); setBody(''); setReviewed(false); setReviewer(''); setUnlocked(false); setKey(""); setCurrent(null); setEditions([]); setTopics([]); setAudience(null); setPublishResult(null); setNextPreview(null); }} disabled={busy}>Lock</Button>
         </div>
         {error && <p role="alert" className="text-sm text-destructive">{error}</p>}
+        <AdminFreshness checkedAt={checkedAt} error={refreshError} />
+        {current && editions.some(item => item.id === current.id && item.revision !== current.revision) && <p role="status" className="text-sm text-amber-600 dark:text-amber-400">This edition changed on the server. Your edits are preserved. Load the latest revision before approval.</p>}
         <section className={border+" space-y-3"}>
           <h2 className="font-semibold">Preview a new AI-generated issue</h2>
           <p className="text-xs text-muted-foreground">
@@ -219,7 +259,7 @@ export default function AdminNewsletter() {
           </div>}
         </section>
         <section className={border+" space-y-3"}>
-          <h2 className="font-semibold">TradeHQ Weekly · confirmed subscribers</h2>
+          <h2 className="font-semibold">TradeHQ Newsletter · confirmed subscribers</h2>
           <p className="text-sm text-muted-foreground">
             Readers must actively subscribe and confirm their email. The previous test-only inbox
             has been replaced by a real subscriber registry. Historical addresses with no proven permission
@@ -266,10 +306,10 @@ export default function AdminNewsletter() {
         </section>
         <div className="grid gap-5 lg:grid-cols-[240px_minmax(0,1fr)]">
           <aside className={border+" space-y-3"}>
-            <h2 className="font-semibold">Weekly editions</h2>
+            <h2 className="font-semibold">Newsletter editions</h2>
             {!editions.length && <p className="text-sm text-muted-foreground">No drafts stored. Generate one once the backend is ready.</p>}
             {editions.map(edition => (
-              <button type="button" key={edition.id} onClick={() => pick(edition)}
+              <button type="button" disabled={busy} disabled={busy} key={edition.id} onClick={() => { if (dirty && !confirm('Discard unsaved newsletter edits?')) return; pick(edition); }}
                 className={"block w-full rounded-xl border px-3 py-3 text-left text-sm transition-colors " +
                   (edition.id === current?.id ? "border-primary bg-primary/5" : "border-border hover:bg-muted/40")}>
                 <span className="block font-semibold">{edition.week_of}</span>
@@ -288,7 +328,7 @@ export default function AdminNewsletter() {
               {current.generator_error && <p className="text-sm text-destructive">{current.generator_error}</p>}
               {current.status === "approved" && (
                 <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-border p-3">
-                  <p className="text-sm text-muted-foreground">This issue is approved but not sent. Reopen it to replace repetitive content with a more useful educational lesson.</p>
+                  <p className="text-sm text-muted-foreground">This edition is approved. Check delivery history for any sends already recorded. Reopen it to revise the content before a new approval.</p>
                   <Button variant="outline" onClick={reopen} disabled={busy}>Reopen for revisions</Button>
                 </div>
               )}
@@ -301,7 +341,7 @@ export default function AdminNewsletter() {
                     This previews new text; your stored draft is not replaced until you click Save edits.
                   </p>
                   <Label htmlFor="lesson-topic">This week's learning focus</Label>
-                  <select id="lesson-topic" value={topicId} onChange={e => setTopicId(e.target.value)}
+                  <select id="lesson-topic" disabled={busy} value={topicId} onChange={e => setTopicId(e.target.value)}
                     className="w-full rounded-lg border border-input bg-background p-2 text-sm">
                     {topics.map(topic => <option key={topic.id} value={topic.id}>{topic.title}</option>)}
                   </select>
@@ -314,19 +354,19 @@ export default function AdminNewsletter() {
                 </div>
               )}
               <Label htmlFor="newsletter-subject">Email subject</Label>
-              <Input id="newsletter-subject" value={subject} onChange={e => setSubject(e.target.value)} maxLength={140} disabled={current.status !== "draft"} />
+              <Input id="newsletter-subject" value={subject} onChange={e => setSubject(e.target.value)} maxLength={140} disabled={busy || current.status !== "draft"} />
               <Label htmlFor="newsletter-preheader">Short preview line</Label>
-              <Input id="newsletter-preheader" value={preheader} onChange={e => setPreheader(e.target.value)} maxLength={240} disabled={current.status !== "draft"} />
+              <Input id="newsletter-preheader" value={preheader} onChange={e => setPreheader(e.target.value)} maxLength={240} disabled={busy || current.status !== "draft"} />
               <Label htmlFor="newsletter-body">Newsletter text (Markdown)</Label>
-              <Textarea id="newsletter-body" value={body} onChange={e => setBody(e.target.value)} rows={19} className="font-mono text-sm" disabled={current.status !== "draft"} />
+              <Textarea id="newsletter-body" value={body} onChange={e => setBody(e.target.value)} rows={19} className="font-mono text-sm" disabled={busy || current.status !== "draft"} />
               <p className="text-xs text-muted-foreground">Check independent sources, calculations and links before approving.</p>
               {current.status === "draft" && <>
                 <Button onClick={save} disabled={busy} variant="outline">Save edits</Button>
                 <div className="border-t border-border pt-4 space-y-3">
-                  <label className="flex items-start gap-2 text-sm"><input type="checkbox" checked={reviewed} onChange={e => setReviewed(e.target.checked)} className="mt-1" />
+                  <label className="flex items-start gap-2 text-sm"><input type="checkbox" disabled={busy} checked={reviewed} onChange={e => setReviewed(e.target.checked)} className="mt-1" />
                     I reviewed this exact draft, its links and financial statements, and approve it for editorial use.</label>
                   <Label htmlFor="newsletter-reviewer">Reviewer name</Label>
-                  <Input id="newsletter-reviewer" value={reviewer} onChange={e => setReviewer(e.target.value)} maxLength={80} />
+                  <Input id="newsletter-reviewer" disabled={busy} value={reviewer} onChange={e => setReviewer(e.target.value)} maxLength={80} />
                   <Button disabled={busy || !reviewed || reviewer.trim().length < 2} onClick={approve}>Approve draft (no email sent)</Button>
                 </div>
               </>}

@@ -1,0 +1,24 @@
+import assert from 'node:assert/strict';
+import { createAdminRequestScope, AdminRequestCancelled } from '../src/lib/adminRequestScope.ts';
+
+const scope = createAdminRequestScope();
+scope.setKey('isolated-owner-key');
+const beforeLock = scope.capture('isolated-owner-key');
+assert.equal(beforeLock.current(), true);
+scope.invalidate();
+assert.throws(() => beforeLock.assert(), AdminRequestCancelled, 'a late response must not reopen a locked desk');
+scope.setKey('new-isolated-owner-key');
+assert.equal(scope.capture('isolated-owner-key').current(), false, 'a callback with the previous key cannot start work in a new session');
+const older = scope.capture('new-isolated-owner-key', 'drafts');
+const unrelated = scope.capture('new-isolated-owner-key', 'audience');
+const newer = scope.capture('new-isolated-owner-key', 'drafts');
+assert.equal(older.current(), false, 'a slower earlier read must not overwrite newer queue data');
+assert.equal(newer.current(), true);
+assert.equal(unrelated.current(), true, 'independent subscriber reads must not cancel draft reads');
+scope.dispose();
+assert.equal(newer.current(), false);
+scope.activate();
+assert.equal(newer.current(), false, 'remounting cannot revive an old response');
+scope.setKey('');
+assert.equal(scope.capture('').current(), false, 'an empty admin key never authorizes UI state');
+console.log('PASS admin lock/key-change/unmount response fencing and independent latest-read channels');

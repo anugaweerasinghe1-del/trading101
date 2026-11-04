@@ -8,6 +8,9 @@ import AdminRepairControls from "@/components/AdminRepairControls";
 import AdminCodeQueue from "@/components/AdminCodeQueue";
 import { Bot, CheckCircle2, Code2, ExternalLink, GitPullRequest, KeyRound, Lock, MessageSquare, ShieldCheck, Sparkles } from "lucide-react";
 
+import { useAdminRefresh, useAdminRequestScope } from '@/hooks/useAdminRefresh';
+import { isAdminRequestCancelled } from '@/lib/adminRequestScope';
+
 type GithubIssue = { number: number; title: string; html_url: string; created_at: string; state: string; user?: { login: string }; pull_request?: unknown };
 type GithubPr = { number: number; title: string; html_url: string; draft: boolean; created_at: string; head: { sha: string } };
 type PrChecks = { summary: string; failed: boolean; link: string };
@@ -19,6 +22,7 @@ const gitRoot = "https://github.com/" + repo;
 const ISSUE_TITLE = "[TradeHQ Code Request]";
 export default function AdminAIAssistant() {
   const [key, setKey] = useState("");
+  const scope = useAdminRequestScope(key);
   const [unlocked, setUnlocked] = useState(false);
   const [checking, setChecking] = useState(false);
   const [error, setError] = useState("");
@@ -30,18 +34,20 @@ export default function AdminAIAssistant() {
   const [githubCheckedAt, setGithubCheckedAt] = useState<Date | null>(null);
   const [tab, setTab] = useState<"requests" | "ideas" | "chat">("requests");
   const verify = async (event: React.FormEvent) => {
-    event.preventDefault(); setChecking(true); setError("");
+    event.preventDefault(); if (checking) return; const guard = scope.capture(key); setChecking(true); setError("");
     try {
       const { data, error: remote } = await supabase.functions.invoke("admin-courses", {
         body: { action: "settings" }, headers: { "x-admin-key": key },
       });
+      guard.assert();
       if (remote || data?.error || !data?.data) throw new Error("Could not verify your administrator key.");
       setUnlocked(true);
     } catch (failure) {
-      setError(failure instanceof Error ? failure.message : "Unable to open this workspace.");
-    } finally { setChecking(false); }
+      if (guard.current() && !isAdminRequestCancelled(failure)) setError(failure instanceof Error ? failure.message : "Unable to open this workspace.");
+    } finally { if (guard.current()) setChecking(false); }
   };
   const refresh = useCallback(async () => {
+    const guard = scope.capture(key, 'github');
     const root = "https://api.github.com/repos/" + repo;
     try {
       const [issueResponse, prResponse] = await Promise.all([
@@ -53,6 +59,7 @@ export default function AdminAIAssistant() {
         issueResponse.json() as Promise<GithubIssue[]>,
         prResponse.json() as Promise<GithubPr[]>,
       ]);
+      guard.assert();
       if (!Array.isArray(allIssues) || !Array.isArray(allPrs)) throw new Error("GitHub returned invalid operational records.");
       setIssues(allIssues.filter(x => !x.pull_request &&
         ((x.title === ISSUE_TITLE && [owner, legacyOwner].includes(x.user?.login || "")) ||
@@ -78,6 +85,7 @@ export default function AdminAIAssistant() {
         const evidence = summarizeReleaseEvidence(pr.head.sha, result.check_runs, runResult.workflow_runs);
         return { number: pr.number, ...evidence, link: pr.html_url + "/checks" };
       }));
+      guard.assert();
       const next: Record<number, PrChecks> = {};
       summaries.forEach((result, index) => {
         if (result.status === "fulfilled") next[result.value.number] = result.value;
@@ -87,9 +95,10 @@ export default function AdminAIAssistant() {
       setGithubError(summaries.some(x => x.status === "rejected") ? "Some PR check results could not be fetched; verify directly on GitHub." : "");
       setGithubCheckedAt(new Date());
     } catch (failure) {
-      setGithubError(failure instanceof Error ? failure.message : "GitHub status unavailable. Open GitHub to verify.");
+      if (guard.current()) setGithubError(failure instanceof Error ? failure.message : "GitHub status unavailable. Open GitHub to verify.");
     }
-  }, []);
+  }, [key, scope]);
+  useAdminRefresh(unlocked, refresh, { intervalMs: 900000, minGapMs: 900000 });
   useEffect(() => { if (unlocked) void refresh(); }, [unlocked, refresh]);
   const issueUrl = gitRoot + "/issues/new?" + new URLSearchParams({ title: ISSUE_TITLE, body: prompt.trim() }).toString();
   const canSend = prompt.trim().length >= 20 && prompt.trim().length <= 2500;
@@ -100,13 +109,13 @@ export default function AdminAIAssistant() {
     <div className="max-w-5xl mx-auto space-y-6">
       <header className="flex flex-wrap items-center justify-between gap-4">
         <div><p className="text-xs uppercase tracking-widest text-primary">TradeHQ / Admin</p><h1 className="text-3xl font-semibold mt-2">AI development desk</h1><p className="text-sm text-muted-foreground mt-2">Free-tier Gemini suggestions and a human-reviewed code-change queue.</p></div>
-        <div className="flex items-center gap-4"><Link className="text-sm text-primary hover:underline" to="/admin">← Admin dashboard</Link>{unlocked && <button type="button" className="border border-border rounded-xl px-3 py-2 text-sm flex items-center gap-2" onClick={() => { setKey(""); setUnlocked(false); setPrompt(""); setIssues([]); setPrs([]); setChecks({}); setGithubError(""); setGithubCheckedAt(null); }}><Lock className="w-4 h-4"/> Lock</button>}</div>
+        <div className="flex items-center gap-4"><Link className="text-sm text-primary hover:underline" to="/admin">← Admin dashboard</Link>{unlocked && <button type="button" className="border border-border rounded-xl px-3 py-2 text-sm flex items-center gap-2" onClick={() => { scope.invalidate(); setChecking(false); setKey(""); setUnlocked(false); setPrompt(""); setIssues([]); setPrs([]); setChecks({}); setGithubError(""); setGithubCheckedAt(null); }}><Lock className="w-4 h-4"/> Lock</button>}</div>
       </header>
       {!unlocked ? <form className={borderCard+" max-w-md space-y-4"} onSubmit={verify}>
         <ShieldCheck className="w-7 h-7 text-primary"/>
         <h2 className="font-semibold">Private admin access</h2>
         <p className="text-sm text-muted-foreground">Use the existing master key. Your key remains only in this page's temporary memory.</p>
-        <input required type="password" autoComplete="off" aria-label="Admin master key" value={key} onChange={e => setKey(e.target.value)} className="w-full rounded-xl border border-border bg-background p-3"/>
+        <input required disabled={checking} type="password" autoComplete="off" aria-label="Admin master key" value={key} onChange={e => setKey(e.target.value)} className="w-full rounded-xl border border-border bg-background p-3"/>
         {error && <p role="alert" className="text-destructive text-sm">{error}</p>}
         <button disabled={checking} className="rounded-xl bg-primary text-primary-foreground px-4 py-3 text-sm w-full disabled:opacity-50">{checking ? "Checking…" : "Unlock AI workspace"}</button>
       </form> : <>
