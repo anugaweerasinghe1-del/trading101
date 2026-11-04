@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
@@ -34,6 +34,23 @@ export default function AdminReviews() {
   const [busy, setBusy] = useState<Record<string, boolean>>({});
   const pending = useRef(new Set<string>());
   const [edits, setEdits] = useState<Record<string, Partial<Review>>>({});
+  const hasUnsaved = Object.keys(edits).length > 0 || Object.entries(replies).some(
+    ([id, value]) => value !== (reviews.find(review => review.id === id)?.owner_reply ?? "")
+  );
+  useEffect(() => {
+    if (!unlocked || !hasUnsaved) return;
+    const warn = (event: BeforeUnloadEvent) => { event.preventDefault(); event.returnValue = ""; };
+    window.addEventListener("beforeunload", warn);
+    return () => window.removeEventListener("beforeunload", warn);
+  }, [unlocked, hasUnsaved]);
+
+  const lockAdmin = () => {
+    if (hasUnsaved && !window.confirm("Discard unsaved moderation changes and public replies?")) return;
+    scope.invalidate();
+    pending.current.clear();
+    setBusy({}); setVerifying(false); setLoading(false); setCheckedAt(null); setRefreshError("");
+    setUnlocked(false); setKey(""); setReviews([]); setEdits({}); setReplies({});
+  };
 
   const load = useCallback(async (silent = false): Promise<boolean> => {
     const guard = scope.capture(key, 'reviews');
@@ -140,9 +157,10 @@ export default function AdminReviews() {
         <div className="max-w-5xl mx-auto space-y-4">
           <div className="flex items-center justify-between gap-3">
             <h1 className="text-xl font-bold">Reviews ({reviews.length})</h1>
-            <button type="button" onClick={() => { scope.invalidate(); setLoading(false); setCheckedAt(null); setRefreshError(""); setUnlocked(false); setKey(""); setReviews([]); setEdits({}); setReplies({}); }} disabled={Object.values(busy).some(Boolean)} className="text-sm underline">Lock admin panel</button>
+            <button type="button" onClick={lockAdmin} disabled={Object.values(busy).some(Boolean)} className="text-sm underline">Lock admin panel</button>
           </div>
           <p className="text-sm text-muted-foreground">Replies are public and labelled as yours. Deleted reviews stay here so you can restore them.</p>
+          {hasUnsaved && <p role="status" className="text-sm text-amber-600 dark:text-amber-400">You have unsaved review changes or a public reply. Save them before leaving or locking this desk.</p>}
           <button type="button" disabled={loading} className="text-sm underline" onClick={() => void load()}>Refresh reviews</button>
           <AdminFreshness checkedAt={checkedAt} error={refreshError} />
           {loading && <p className="text-sm text-muted-foreground">Loading…</p>}
