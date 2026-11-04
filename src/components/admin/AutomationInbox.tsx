@@ -6,8 +6,8 @@ interface DailySnapshot {
   enabled?: boolean; attempts?: number; retryAfter?: string | null; lastError?: string | null;
   freeConfirmed?: boolean; hasApiKey?: boolean;
 }
-export function AutomationInbox({ courses, dailyBanks, daily, failedCourseRuns, findingCount, proposalCount, githubAvailable }: {
-  courses: EditorialQueueRow[] | null; dailyBanks: EditorialQueueRow[] | null;
+export function AutomationInbox({ courses, dailyBanks, newsletterEdits, daily, failedCourseRuns, findingCount, proposalCount, githubAvailable }: {
+  courses: EditorialQueueRow[] | null; dailyBanks: EditorialQueueRow[] | null; newsletterEdits: EditorialQueueRow[] | null;
   daily: DailySnapshot | null; failedCourseRuns: number;
   findingCount: number; proposalCount: number; githubAvailable: boolean;
 }) {
@@ -19,10 +19,12 @@ export function AutomationInbox({ courses, dailyBanks, daily, failedCourseRuns, 
     if (findingCount) items.push({ title: `${findingCount} open monitoring finding${findingCount === 1 ? '' : 's'}`, detail: 'Inspect the evidence and investigate the cause before requesting a repair.', to: '#monitor-findings', priority: 0 });
     if (proposalCount) items.push({ title: `${proposalCount} open AI code proposal${proposalCount === 1 ? '' : 's'}`, detail: 'Check the proposed commit, tests and recorded owner decision. An open PR may already have a review.', to: '/admin/ai', priority: 1 });
   }
-  for (const [rows, name, to] of [[courses, 'Course', '/admin/courses'], [dailyBanks, 'Daily bank', '/admin/daily']] as const) {
+  for (const [rows, name, to] of [[courses, 'Course', '/admin/courses'], [dailyBanks, 'Daily bank', '/admin/daily'], [newsletterEdits, 'Newsletter', '/admin/newsletter']] as const) {
     if (rows === null) items.push({ title: `${name} review queue unavailable`, detail: 'This queue could not be loaded. Open its desk to check; an unavailable count is not zero.', to, priority: 0 });
     else {
       const count = rows.filter(row => row.status === 'draft').length;
+      if (name === 'Newsletter' && rows.length >= 16)
+        items.push({ title: 'Newsletter review list may be incomplete', detail: 'The editorial API returns only the latest 16 editions. Older pending drafts cannot be ruled out from this dashboard; this is not a full historical count.', to, priority: 0 });
       if (count) items.push({ title: `${count} ${name.toLowerCase()} draft${count === 1 ? '' : 's'} awaiting review`, detail: 'Saved drafts stay private until an administrator reviews and approves them.', to, priority: 1 });
     }
   }
@@ -44,7 +46,7 @@ export function AutomationInbox({ courses, dailyBanks, daily, failedCourseRuns, 
     <div><h2 className="font-semibold">Needs your attention</h2><p className="text-xs text-muted-foreground mt-1">Based on the latest dashboard reads. Opening a desk does not approve, retry, publish or repair anything.</p></div>
     {items.length ? <ul className="grid gap-3 md:grid-cols-2">{items.map(item => <li key={item.title} className="rounded-xl border border-border p-4 space-y-2"><h3 className="font-medium text-sm">{item.title}</h3><p className="text-xs text-muted-foreground leading-relaxed">{item.detail}</p>
       {item.to.startsWith('#') ? <button type="button" className="text-sm text-primary hover:underline" onClick={() => { const panel = document.getElementById(item.to.slice(1)); panel?.scrollIntoView({ block: 'start' }); panel?.focus({ preventScroll: true }); }}>Inspect monitoring evidence ↓</button>
-        : <Link to={item.to} className="text-sm text-primary hover:underline">Open {item.to.endsWith('daily') ? 'Daily desk' : item.to.endsWith('courses') ? 'course desk' : 'AI workspace'} →</Link>}
+        : <Link to={item.to} className="text-sm text-primary hover:underline">Open {item.to.endsWith('daily') ? 'Daily desk' : item.to.endsWith('courses') ? 'course desk' : item.to.endsWith('newsletter') ? 'Newsletter desk' : 'AI workspace'} →</Link>}
     </li>)}</ul>
       : <p className="text-sm text-muted-foreground">No pending items were returned by the loaded queues. This is not a production health or release approval.</p>}
   </section>;
