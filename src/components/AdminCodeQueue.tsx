@@ -24,17 +24,33 @@ export default function AdminCodeQueue({adminKey,initialPrompt=''}:{adminKey:str
  const [reviews,setReviews]=useState<Review[]>([]),[diff,setDiff]=useState<Diff|null>(null);
  const [busy,setBusy]=useState(false),[message,setMessage]=useState(''),[checked,setChecked]=useState<Date|null>(null);
  const active=useRef(true),pending=useRef(false),requestKey=useRef(crypto.randomUUID());
+ const sessionEpoch=useRef(0);
  const call=useCallback(async(action:string,payload:Record<string,unknown>={})=>{
+  const epoch=sessionEpoch.current;
   const {data,error}=await supabase.auth.getSession();
   if(error||!data.session?.access_token)throw Error(messages.OWNER_SESSION_REQUIRED);
   const response=await fetch(SUPABASE_URL+'/functions/v1/admin-code-queue',{method:'POST',redirect:'error',signal:AbortSignal.timeout(20000),
    headers:{'Content-Type':'application/json',apikey:SUPABASE_PUBLISHABLE_KEY,authorization:'Bearer '+data.session.access_token,'x-admin-key':adminKey},body:JSON.stringify({action,...payload})});
-  const value=await response.json();if(!response.ok)throw Error(messages[value.code]??'The coding queue could not confirm this action. Refresh activity before submitting again.');return value.data;
+  const value=await response.json().catch(()=>null);
+  if(sessionEpoch.current!==epoch||!active.current)throw Error(messages.OWNER_SESSION_REQUIRED);
+  if(!value||typeof value!=='object')throw Error('The coding queue returned an unreadable response. No action is confirmed; refresh activity before retrying.');
+  if(!response.ok)throw Error(messages[value.code]??'The coding queue could not confirm this action. Refresh activity before submitting again.');return value.data;
  },[adminKey]);
  const load=useCallback(async()=>{
+  const epoch=sessionEpoch.current;
   const data=await call('list');if(!Array.isArray(data?.requests)||!Array.isArray(data?.events))throw Error('Coding history is unavailable.');
-  if(active.current){setRows(data.requests);setPublications(data.publications??[]);setEvents(data.events);setReviews(data.reviews??[]);setWorkerRuns(data.workerRuns??[]);setLearning(data.learning??null);setDecisions(data.learningDecisions??[]);setChecked(new Date());}
+  if(active.current&&sessionEpoch.current===epoch){setRows(data.requests);setPublications(data.publications??[]);setEvents(data.events);setReviews(data.reviews??[]);setWorkerRuns(data.workerRuns??[]);setLearning(data.learning??null);setDecisions(data.learningDecisions??[]);setChecked(new Date());}
  },[call]);
+ useEffect(()=>{
+  const {data:{subscription}}=supabase.auth.onAuthStateChange(event=>{
+   if(event!=='SIGNED_OUT'||!active.current)return;
+   sessionEpoch.current++;
+   prCache.current={};setPrStates({});setRows([]);setEvents([]);setWorkerRuns([]);
+   setPublications([]);setReviews([]);setDiff(null);setLearning(null);setDecisions([]);
+   setChecked(null);setMessage(messages.OWNER_SESSION_REQUIRED);
+  });
+  return()=>subscription.unsubscribe();
+ },[]);
  useEffect(()=>{active.current=true;void load().catch(e=>{if(active.current)setMessage(e.message);});
   const timer=window.setInterval(()=>{if(!pending.current&&document.visibilityState!=='hidden')void load().catch(e=>{if(active.current)setMessage(e.message);});},60000);
   return()=>{active.current=false;window.clearInterval(timer);};
