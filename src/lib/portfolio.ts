@@ -1,5 +1,5 @@
 import { getRealizedTradeResults } from './realizedTrades';
-import { Portfolio, Trade, Position, Asset } from './types';
+import type { Portfolio, Trade, Asset } from './types';
 import { INITIAL_CASH, ASSETS } from './assets';
 import { recordSnapshot, getPortfolioHistory } from './portfolioHistory';
 import { parsePracticePortfolio, readRecoveryPortfolio, writeRecoveryPortfolio, UNREADABLE_KEY } from './portfolioRecovery';
@@ -69,144 +69,89 @@ export function getLocalUpdatedAt(): number {
   try { return Number(localStorage.getItem(UPDATED_AT_KEY) || 0); } catch { return 0; }
 }
 
-export function savePortfolio(portfolio: Portfolio, opts: { silent?: boolean } = {}): void {
+export function savePortfolio(portfolio: Portfolio, opts: { silent?: boolean } = {}): boolean {
   let persisted = false;
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(portfolio));
-    localStorage.setItem(UPDATED_AT_KEY, String(Date.now()));
     persisted = true;
+    localStorage.setItem(UPDATED_AT_KEY, String(Date.now()));
   } catch { /* Warn the visitor; don't falsely promise a durable saved trade. */ }
   const recoverySaved = writeRecoveryPortfolio(portfolio);
   if ((!persisted || !recoverySaved) && typeof window !== "undefined")
     window.dispatchEvent(new Event("tradehq:portfolio-storage-warning"));
   if (!opts.silent) saveListener?.(portfolio);
   if (typeof window !== 'undefined') window.dispatchEvent(new Event('tradehq:portfolio-updated'));
+  return persisted || recoverySaved;
 }
 
-function executeLocalTrade(
-  portfolio: Portfolio,
-  asset: Asset,
-  type: 'buy' | 'sell',
-  quantity: number
-): { success: boolean; message: string; portfolio?: Portfolio } {
-  if (!Number.isFinite(quantity) || quantity <= 0 || !Number.isFinite(asset.price) || asset.price <= 0) {
+/** Commit against the latest persisted guest state, never a page's stale render. */
+export function executeGuestTrade(asset: Asset, type: 'buy' | 'sell', quantity: number) {
+  if (type !== 'buy' && type !== 'sell') return { success: false, message: 'Invalid order side' };
+  if (!Number.isFinite(quantity) || quantity <= 0 || quantity >= 1e15 ||
+      !Number.isFinite(asset.price) || asset.price <= 0) {
     return { success: false, message: 'Enter a valid positive quantity and price' };
   }
   const total = asset.price * quantity;
-  const fee = total * 0.001; // 0.1% fee
-  const totalWithFee = total + fee;
+  const fee = total * 0.001;
+  if (!Number.isFinite(total + fee) || total + fee >= 1e13)
+    return { success: false, message: 'Order value is too large' };
 
+  const current = getPortfolio();
+  // The account cache must never become a writable guest portfolio on sign-out.
+  try {
+    if (localStorage.getItem('tradehq:portfolio-owner'))
+      return { success: false, message: 'Sign in to restore your account before trading.' };
+  } catch { return { success: false, message: 'Browser storage is unavailable. Your order was not saved.' }; }
+  const portfolio: Portfolio = { ...current, positions: current.positions.map(p => ({ ...p, asset: { ...p.asset } })), trades: [...current.trades] };
+  const position = portfolio.positions.find(p => p.asset.id === asset.id);
   if (type === 'buy') {
-    if (portfolio.cash < totalWithFee) {
-      return { success: false, message: 'Insufficient funds' };
-    }
-
-    const newPortfolio = { ...portfolio };
-    newPortfolio.cash -= totalWithFee;
-
-    // Update or create position
-    const existingPosition = newPortfolio.positions.find(
-      (p) => p.asset.id === asset.id
-    );
-
-    if (existingPosition) {
-      const totalQuantity = existingPosition.quantity + quantity;
-      const totalCost =
-        existingPosition.avgPrice * existingPosition.quantity + total;
-      existingPosition.quantity = totalQuantity;
-      existingPosition.avgPrice = totalCost / totalQuantity;
-      existingPosition.currentValue = asset.price * totalQuantity;
-      existingPosition.profitLoss =
-        existingPosition.currentValue - totalCost;
-      existingPosition.profitLossPercent =
-        (existingPosition.profitLoss / totalCost) * 100;
+    if (portfolio.cash < total + fee) return { success: false, message: 'Insufficient funds' };
+    portfolio.cash -= total + fee;
+    if (position) {
+      const cost = position.avgPrice * position.quantity + total + fee;
+      position.quantity += quantity;
+      position.avgPrice = cost / position.quantity;
     } else {
-      newPortfolio.positions.push({
-        asset,
-        quantity,
-        avgPrice: asset.price,
-        currentValue: total,
-        profitLoss: 0,
-        profitLossPercent: 0,
-      });
+      portfolio.positions.push({ asset: { ...asset }, quantity, avgPrice: (total + fee) / quantity,
+        currentValue: total, profitLoss: -fee, profitLossPercent: -fee / (total + fee) * 100 });
     }
-
-    // Add trade
-    const trade: Trade = {
-      id: Date.now().toString(),
-      assetId: asset.id,
-      symbol: asset.symbol,
-      type,
-      quantity,
-      price: asset.price,
-      total: totalWithFee,
-      timestamp: new Date(),
-    };
-    newPortfolio.trades.unshift(trade);
-
-    // Update total value
-    const positionsValue = newPortfolio.positions.reduce((sum, p) => sum + p.currentValue, 0);
-    newPortfolio.totalValue = newPortfolio.cash + positionsValue;
-
-    // Record snapshot for chart
-    recordSnapshot(newPortfolio.cash, positionsValue);
-
-    savePortfolio(newPortfolio);
-    return {
-      success: true,
-      message: `Bought ${quantity} ${asset.symbol}`,
-      portfolio: newPortfolio,
-    };
   } else {
-    // Sell
-    const position = portfolio.positions.find((p) => p.asset.id === asset.id);
-    if (!position || position.quantity < quantity) {
-      return { success: false, message: 'Insufficient shares' };
-    }
-
-    const newPortfolio = { ...portfolio };
-    newPortfolio.cash += total - fee;
-
-    // Update position
+    if (!position || position.quantity < quantity) return { success: false, message: 'Insufficient shares' };
+    portfolio.cash += total - fee;
     position.quantity -= quantity;
-    if (position.quantity === 0) {
-      newPortfolio.positions = newPortfolio.positions.filter(
-        (p) => p.asset.id !== asset.id
-      );
-    } else {
-      position.currentValue = asset.price * position.quantity;
-      const totalCost = position.avgPrice * position.quantity;
-      position.profitLoss = position.currentValue - totalCost;
-      position.profitLossPercent = (position.profitLoss / totalCost) * 100;
-    }
-
-    // Add trade
-    const trade: Trade = {
-      id: Date.now().toString(),
-      assetId: asset.id,
-      symbol: asset.symbol,
-      type,
-      quantity,
-      price: asset.price,
-      total: total - fee,
-      timestamp: new Date(),
-    };
-    newPortfolio.trades.unshift(trade);
-
-    // Update total value
-    const positionsValue = newPortfolio.positions.reduce((sum, p) => sum + p.currentValue, 0);
-    newPortfolio.totalValue = newPortfolio.cash + positionsValue;
-
-    // Record snapshot for chart
-    recordSnapshot(newPortfolio.cash, positionsValue);
-
-    savePortfolio(newPortfolio);
-    return {
-      success: true,
-      message: `Sold ${quantity} ${asset.symbol}`,
-      portfolio: newPortfolio,
-    };
+    if (position.quantity === 0) portfolio.positions = portfolio.positions.filter(p => p !== position);
   }
+  // Both buy and sell revalue remaining units at this order's execution price.
+  const remaining = portfolio.positions.find(p => p.asset.id === asset.id);
+  if (remaining) {
+    remaining.asset = { ...asset };
+    remaining.currentValue = asset.price * remaining.quantity;
+    const cost = remaining.avgPrice * remaining.quantity;
+    remaining.profitLoss = remaining.currentValue - cost;
+    remaining.profitLossPercent = cost ? remaining.profitLoss / cost * 100 : 0;
+  }
+  // Preserve execution order even when two orders land in one millisecond.
+  const lastTradeTime = current.trades.reduce((latest, t) => Math.max(latest, new Date(t.timestamp).getTime()), 0);
+  portfolio.trades.unshift({ id: crypto.randomUUID(), assetId: asset.id, symbol: asset.symbol, type,
+    quantity, price: asset.price, total: type === 'buy' ? total + fee : total - fee,
+    timestamp: new Date(Math.max(Date.now(), lastTradeTime + 1)) });
+  const positionsValue = portfolio.positions.reduce((sum, p) => sum + p.currentValue, 0);
+  portfolio.totalValue = portfolio.cash + positionsValue;
+  if (!savePortfolio(portfolio))
+    return { success: false, message: 'Browser storage is full or unavailable. Your order was not saved.' };
+  // Chart storage is auxiliary: corruption/quota failures must not invalidate an order.
+  try { recordSnapshot(portfolio.cash, positionsValue); } catch { /* Keep the saved order. */ }
+  return { success: true, message: `${type === 'buy' ? 'Bought' : 'Sold'} ${quantity} ${asset.symbol}`, portfolio };
+}
+
+let guestOrderQueue: Promise<unknown> = Promise.resolve();
+async function withGuestOrderLock<T>(order: () => Promise<T>): Promise<T> {
+  // Web Locks serialize same-origin tabs. The queue also covers browsers without it.
+  const run = () => typeof navigator !== 'undefined' && navigator.locks
+    ? navigator.locks.request('tradehq:guest-order', order) : order();
+  const pending = guestOrderQueue.then(run, run);
+  guestOrderQueue = pending.catch(() => {});
+  return pending;
 }
 
 /** Signed-in orders are atomic server transactions; failures never execute locally. */
@@ -214,7 +159,11 @@ export async function executeTrade(portfolio: Portfolio, asset: Asset, side: 'bu
   const { supabase } = await import('@/integrations/supabase/client');
   const { data: { session }, error: authError } = await supabase.auth.getSession();
   if (authError) return { success: false, message: 'Could not verify your account. Try again.' };
-  if (!session) return executeLocalTrade(portfolio, asset, side, quantity);
+  if (!session) return withGuestOrderLock(async () => {
+    const { data: current, error } = await supabase.auth.getSession();
+    if (error || current.session) return { success: false, message: 'Account changed during order. Please try again.' };
+    return executeGuestTrade(asset, side, quantity);
+  });
   try {
     const { reconcilePortfolio, applyServerSnapshot } = await import('./cloudPortfolio');
     await reconcilePortfolio(session.user.id);
