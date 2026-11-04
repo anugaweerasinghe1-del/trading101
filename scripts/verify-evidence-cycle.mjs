@@ -23,7 +23,7 @@ assert.equal(y.jobs.collect.steps[0].with['persist-credentials'],false);
 assert.ok(y.jobs.collect.if.includes('head_repository.full_name == github.repository'));
 assert.ok(y.jobs.collect.steps.some(s=>String(s.run).includes('agent-evidence-run-gate.mjs')));
 assert.ok(y.jobs.collect.steps.some(s=>String(s.run).includes('agent-trusted-evidence.mjs')));
-assert.equal(y.jobs.collect['timeout-minutes'],8);
+assert.equal(y.jobs.collect['timeout-minutes'],16,'Collector needs bounded time for the complete Chrome CI and release gate');
 const handoff=y.jobs.collect.steps.find(s=>String(s.run).includes('agent-operational-investigation-handoff.mjs'));
 assert.equal(handoff.if,"${{ steps.gate.outputs.ready == 'true' }}");
 const deny={codeWrites:false,modelCalls:false,ownerApproval:false,merge:false,productionRelease:false};
