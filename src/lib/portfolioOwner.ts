@@ -11,6 +11,7 @@ const KEYS = [
 ] as const;
 type Cache = Record<string, string | null>;
 let viewOwner: string | null = null;
+let sessionRevision = 0;
 let pendingGuest: { owner: string; portfolio: string | null; recovery: string | null } | null = null;
 
 export function portfolioViewMatchesOwner(): boolean {
@@ -42,6 +43,7 @@ export function activatePortfolioOwner(owner: string | null): void {
   const priorView = viewOwner;
   viewOwner = owner;
   const previous = localStorage.getItem(PORTFOLIO_OWNER_KEY);
+  if (priorView !== owner || previous !== owner) sessionRevision++;
   if (previous === owner) {
     if (priorView !== owner && typeof window !== 'undefined') window.dispatchEvent(new Event('tradehq:portfolio-updated'));
     return;
@@ -85,3 +87,4 @@ export function clearPendingGuestPortfolio(owner: string): void {
 export function portfolioOwnerIs(owner: string | null): boolean {
   return viewOwner === owner && portfolioViewMatchesOwner();
 }
+export function portfolioSessionRevision(): number { return sessionRevision; }

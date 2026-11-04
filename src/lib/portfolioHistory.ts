@@ -1,5 +1,6 @@
 import { PortfolioSnapshot, Portfolio, Position } from './types';
 import { ASSETS } from './assets';
+import { portfolioViewMatchesOwner, portfolioSessionRevision } from './portfolioOwner';
 import { 
   getHoursSinceLastUpdate, 
   setLastUpdateTime, 
@@ -10,18 +11,18 @@ import {
 const HISTORY_KEY = 'tradesandbox_history';
 
 export function getPortfolioHistory(): PortfolioSnapshot[] {
-  const stored = localStorage.getItem(HISTORY_KEY);
-  if (stored) {
-    const history = JSON.parse(stored);
-    return history.map((snapshot: PortfolioSnapshot) => ({
-      ...snapshot,
-      timestamp: new Date(snapshot.timestamp),
-    }));
-  }
-  return [];
+  if (!portfolioViewMatchesOwner()) return [];
+  try {
+    const history = JSON.parse(localStorage.getItem(HISTORY_KEY) ?? '[]');
+    if (!Array.isArray(history)) return [];
+    return history.filter(snapshot => snapshot && Number.isFinite(new Date(snapshot.timestamp).getTime()) &&
+      ['totalValue','cash','positionsValue'].every(key => typeof snapshot[key] === 'number' && Number.isFinite(snapshot[key])))
+      .slice(-500).map(snapshot => ({ ...snapshot, timestamp: new Date(snapshot.timestamp) }));
+  } catch { return []; }
 }
 
 export function addPortfolioSnapshot(snapshot: PortfolioSnapshot): void {
+  if (!portfolioViewMatchesOwner()) return;
   const history = getPortfolioHistory();
   history.push(snapshot);
   
@@ -30,7 +31,7 @@ export function addPortfolioSnapshot(snapshot: PortfolioSnapshot): void {
     history.shift();
   }
   
-  localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+  try { localStorage.setItem(HISTORY_KEY, JSON.stringify(history)); } catch { /* Chart storage is optional. */ }
 }
 
 export function recordSnapshot(cash: number, positionsValue: number): void {
@@ -49,6 +50,7 @@ export function recordSnapshot(cash: number, positionsValue: number): void {
  * Creates synthetic hourly backfill, not observed account history or an AI forecast.
  */
 export async function updatePortfolioOverTime(portfolio: Portfolio): Promise<Portfolio> {
+  const revision = portfolioSessionRevision();
   const hoursElapsed = getHoursSinceLastUpdate();
   
   // If less than 1 hour has passed, no update needed
@@ -65,6 +67,7 @@ export async function updatePortfolioOverTime(portfolio: Portfolio): Promise<Por
   
   // The retired prediction fetch returns no parameters; use the practice model.
   const predictions = await fetchMarketPredictions(ASSETS);
+  if (revision !== portfolioSessionRevision() || !portfolioViewMatchesOwner()) return portfolio;
   console.log('Using practice model parameters for portfolio backfill:', Object.keys(predictions).length, 'assets');
   
   // Get current asset prices

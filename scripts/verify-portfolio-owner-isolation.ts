@@ -3,6 +3,8 @@ import { activatePortfolioOwner, portfolioOwnerIs, PORTFOLIO_OWNER_KEY, PORTFOLI
 import { getPortfolio, savePortfolio, executeGuestTrade, saveTradeJournal } from '../src/lib/portfolio.ts';
 import { applyUnverifiedGuestRestore, readPreviousGuestPortfolio } from '../src/lib/portfolioRecovery.ts';
 import type { Portfolio } from '../src/lib/types.ts';
+import { getPortfolioHistory } from '../src/lib/portfolioHistory.ts';
+import { getAnalysis } from '../src/lib/tradingJournal.ts';
 const values = new Map<string, string>();
 const storage = {
   getItem: (key: string) => values.get(key) ?? null,
@@ -53,6 +55,8 @@ Object.defineProperty(globalThis, 'localStorage', { configurable: true, value: {
 } });
 assert.throws(() => activatePortfolioOwner('fixture-c'), /quota/);
 assert.equal(getPortfolio().trades.length, 0);
+assert.deepEqual(getPortfolioHistory(), []);
+assert.equal(getAnalysis(), null);
 assert.equal(savePortfolio(guest), false, 'a failed owner switch must fail closed for writes');
 assert.ok(values.get(PORTFOLIO_CACHE_PREFIX + 'fixture-a'));
 Object.defineProperty(globalThis, 'localStorage', { configurable: true, value: storage });
@@ -61,5 +65,7 @@ assert.equal(getPortfolio().trades[0].journal?.notes, 'PRIVATE ACCOUNT A');
 // A new tab whose auth does not match the shared storage owner must hide it.
 values.set(PORTFOLIO_OWNER_KEY, 'fixture-other-tab');
 assert.equal(getPortfolio().trades.length, 0);
+assert.deepEqual(getPortfolioHistory(), []);
+assert.equal(getAnalysis(), null);
 assert.equal(savePortfolio(guest), false);
 console.log('PASS account/guest switch, sign-out/sign-in recovery, private journal/chart/undo isolation, restore guard, late notes, failed storage and cross-tab owner mismatch');
