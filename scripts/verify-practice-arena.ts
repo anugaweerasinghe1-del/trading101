@@ -169,12 +169,30 @@ const daily = readFileSync("src/pages/Daily.tsx", "utf8");
 const journey = readFileSync("src/pages/BeginnerJourney.tsx", "utf8");
 const hero = readFileSync("src/components/PremiumHero.tsx", "utf8");
 const routes = readFileSync("scripts/routes.ts", "utf8");
+const staticCopy = readFileSync("scripts/staticCopy.ts", "utf8");
 assert.match(app, /path="\/practice" element=\{<PracticeArena \/>\}/, "Practice route must load.");
 assert.match(routes, /path: "\/practice"/, "Arena must be in the prerender route manifest.");
 assert.match(nav, /to: "\/newsletter", label: "Newsletter"/, "Weekly label must be Newsletter.");
 assert.match(nav, /to: "\/practice", label: "Practice Arena"/, "Discover Arena in navigation.");
 assert.match(daily, /to="\/practice"/);
 assert.match(journey, /to="\/practice"/);
+assert.match(journey, /to="\/practice\?from=start"/, "Beginner journey should offer a contextual Arena warm-up before the first terminal order.");
+assert.match(journey, /Try fictional practice first/, "Beginner warm-up must explain the opt-in action.");
+assert.match(journey, /You may skip this warm-up entirely/, "Warm-up must be genuinely optional.");
+assert.match(staticCopy, /optional.*five-round fictional Practice Arena warm-up/, "Public static beginner-journey copy must disclose the optional fictional practice.");
+assert.match(staticCopy, /do not advance the five-step journey/, "No-JS educational copy must not misrepresent Arena as a saved trade.");
+assert.match(journey, /to="\/trade\?journey=1"/, "Existing guided main-portfolio trade must remain available.");
+assert.match(journey, /const beginnerWarmupCompleted = Boolean\(arenaWarmup\.completions\["first-order"\]\)/,
+  "Previously completed browser-local practice is recognized without altering journey progress.");
+assert.match(page, /new URLSearchParams\(location\.search\)\.get\("from"\) === "start"/,
+  "Arena must recognize journey visitors without storing a tracking identity.");
+assert.match(page, /to=\{fromBeginnerJourney \? "\/start" : "\/daily"\}/,
+  "Journey visitors need a visible route back to the first-trade journey.");
+assert.match(page, /onClick=\{\(\) => begin\("first-order"\)\}/, "First-trade warm-up should recommend the actual beginner scenario.");
+assert.match(page, /Skip warm-up/, "The integrated Arena must allow returning without any fictional trade.");
+const journeyEngine = readFileSync("src/lib/beginnerJourney.ts", "utf8");
+assert.match(journeyEngine, /if \(!progress\.tradeId\) return 1;/, "Optional Arena completion must not advance the real-trade stage.");
+assert.match(journeyEngine, /markJourneyTrade\(trade: Trade\)/, "Only a recorded trade counts as first guided portfolio order.");
 assert.match(hero, /to="\/practice"/);
 for (const source of [engine, page]) {
   assert.doesNotMatch(source, /(?:from\(["'](?:practice_portfolios|practice_trades)|startRankedPractice\(|placeTrade\(|savePortfolio\()/,

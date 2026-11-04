@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import {
   ArrowLeft, ArrowRight, ArrowUpRight, BookOpen, Check, CheckCircle2, ChevronRight,
@@ -73,6 +73,8 @@ function Metric({ label, value, hint, icon: Icon }: { label: string; value: stri
 }
 
 export default function PracticeArena() {
+  const location = useLocation();
+  const fromBeginnerJourney = new URLSearchParams(location.search).get("from") === "start";
   const [stored, setStored] = useState<ArenaStored>(loadArena);
   const [action, setAction] = useState<ArenaAction>("hold");
   const [units, setUnits] = useState<ArenaUnits>(1);
@@ -172,8 +174,8 @@ export default function PracticeArena() {
         <div className="absolute inset-x-0 top-0 h-[440px] pointer-events-none arena-halo" aria-hidden />
         <div className="relative">
           <div className="flex items-center justify-between gap-3 mb-7">
-            <Link to="/daily" className="arena-back group inline-flex min-h-11 items-center gap-2 rounded-xl px-3 text-sm font-medium text-muted-foreground hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">
-              <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-0.5" aria-hidden /> Daily Practice
+            <Link to={fromBeginnerJourney ? "/start" : "/daily"} className="arena-back group inline-flex min-h-11 items-center gap-2 rounded-xl px-3 text-sm font-medium text-muted-foreground hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">
+              <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-0.5" aria-hidden /> {fromBeginnerJourney ? "Back to first-trade journey" : "Daily Practice"}
             </Link>
             <span className="inline-flex items-center gap-2 text-[11px] sm:text-xs text-muted-foreground"><ShieldCheck className="h-4 w-4 text-primary" /> Free · Private · No signup</span>
           </div>
@@ -204,6 +206,25 @@ export default function PracticeArena() {
                   <span className="hidden sm:inline text-xs text-muted-foreground"><Clock3 className="inline h-4 w-4 mr-1" /> About 3–5 minutes each</span>
                   <span className="sm:hidden text-xs text-muted-foreground">Swipe to explore the three paths</span>
                 </div>
+                {fromBeginnerJourney && <div className="mb-5 rounded-2xl border border-primary/40 bg-primary/[0.055] px-5 py-4 sm:flex sm:items-center sm:justify-between gap-4">
+                  <div>
+                    <p className="text-[11px] font-semibold uppercase tracking-[.12em] text-primary">Optional first-trade warm-up</p>
+                    <h3 className="mt-1 font-semibold">Start with “Your first decision”</h3>
+                    <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                      Five fictional snapshots about cash, holdings and fees. This won't place a trade or change your main virtual portfolio.
+                      {stored.completions["first-order"] ? " You've already finished this warm-up in this browser." : " You can return to the guided terminal at any time."}
+                    </p>
+                  </div>
+                  <div className="mt-3 sm:mt-0 flex flex-col sm:flex-row gap-2 sm:shrink-0">
+                    <button type="button" onClick={() => begin("first-order")}
+                      className="min-h-11 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">
+                      {stored.completions["first-order"] ? "Practise beginner exercise again" : "Begin beginner exercise"}
+                    </button>
+                    <Link to="/start" className="min-h-11 inline-flex items-center justify-center rounded-xl border border-border px-4 text-sm font-medium text-foreground hover:bg-muted">
+                      Skip warm-up
+                    </Link>
+                  </div>
+                </div>}
                 {active && !active.finishedAt && <div className="mb-5 rounded-2xl border border-primary/35 bg-primary/5 px-5 py-4 sm:flex items-center justify-between gap-4">
                   <div><p className="text-sm font-semibold">Unfinished practice saved on this device</p><p className="mt-1 text-xs text-muted-foreground">{scenarioById(active.scenarioId)?.title} · {active.index} of {scenarioById(active.scenarioId)!.scenes.length - 1} rounds · Same session, no reset</p></div>
                   <button type="button" onClick={() => { trackArenaMilestone("Arena Resumed", active.scenarioId); setShowCatalog(false); }} className="mt-3 sm:mt-0 min-h-11 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Resume unfinished session</button>
