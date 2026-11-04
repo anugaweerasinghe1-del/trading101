@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { activatePortfolioOwner, portfolioOwnerIs, PORTFOLIO_OWNER_KEY, PORTFOLIO_CACHE_PREFIX, pendingGuestPortfolio } from '../src/lib/portfolioOwner.ts';
+import { activatePortfolioOwner, portfolioOwnerIs, PORTFOLIO_OWNER_KEY, PORTFOLIO_CACHE_PREFIX, PORTFOLIO_SWITCH_KEY, pendingGuestPortfolio } from '../src/lib/portfolioOwner.ts';
 import { getPortfolio, savePortfolio, executeGuestTrade, saveTradeJournal } from '../src/lib/portfolio.ts';
 import { applyUnverifiedGuestRestore, readPreviousGuestPortfolio } from '../src/lib/portfolioRecovery.ts';
 import type { Portfolio } from '../src/lib/types.ts';
@@ -35,6 +35,14 @@ assert.equal(values.get('tradesandbox_history'), undefined);
 assert.equal(saveTradeJournal('server-trade-a', { notes: 'late callback', reasoning: '', emotions: [] }, 'fixture-a'), null);
 activatePortfolioOwner('fixture-a');
 assert.equal(getPortfolio().trades[0].journal?.notes, 'PRIVATE ACCOUNT A');
+// Simulate a browser closing halfway through a prior identity switch.
+values.set(PORTFOLIO_SWITCH_KEY, JSON.stringify({ version: 1, previous: 'fixture-a' }));
+values.set('tradehq_portfolio', JSON.stringify(guest));
+values.set(PORTFOLIO_OWNER_KEY, 'fixture-partial-switch');
+assert.equal(getPortfolio().trades.length, 0, 'an unfinished switch is never visible');
+activatePortfolioOwner('fixture-a');
+assert.equal(getPortfolio().trades[0].journal?.notes, 'PRIVATE ACCOUNT A', 'recovery must use archived bytes before any new archive overwrites them');
+assert.equal(values.get(PORTFOLIO_SWITCH_KEY), undefined);
 assert.equal(values.get('trading_journal_analysis'), 'PRIVATE ANALYSIS A');
 activatePortfolioOwner(null);
 assert.equal(values.get('tradehq_portfolio'), guestBytes, 'sign-out restores the exact guest record');
