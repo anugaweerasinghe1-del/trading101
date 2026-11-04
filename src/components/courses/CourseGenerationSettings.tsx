@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CourseField } from "./CourseDraftEditor";
 
 export interface GenerationSettings {
@@ -6,8 +6,8 @@ export interface GenerationSettings {
   gscProperty: string; topicRequests: string[]; lastStarted: string | null; lastFinished: string | null;
   runs: { period: string; slot: number; status: string; attempts: number; last_error: string | null }[];
 }
-export function CourseGenerationSettings({ settings, busy, save, generate }: {
-  settings: GenerationSettings; busy: boolean;
+export function CourseGenerationSettings({ settings, busy, save, generate, onDirtyChange }: {
+  settings: GenerationSettings; busy: boolean; onDirtyChange?: (dirty: boolean) => void;
   save: (values: Record<string, unknown>) => Promise<boolean>; generate: () => Promise<void>;
 }) {
   const [enabled, setEnabled] = useState(settings.enabled);
@@ -19,16 +19,32 @@ export function CourseGenerationSettings({ settings, busy, save, generate }: {
   const [credentialName, setCredentialName] = useState("");
   const [topics, setTopics] = useState(settings.topicRequests.join("\n"));
   const [fileError, setFileError] = useState("");
+  const signature = (values: { enabled: boolean; freeConfirmed: boolean; model: string; gscProperty: string; topicRequests: string[] }) =>
+    JSON.stringify([values.enabled, values.freeConfirmed, values.model, values.gscProperty, values.topicRequests]);
+  const baseline = useRef(signature(settings));
+  const localValues = { enabled, freeConfirmed: confirmed, model, gscProperty: property.trim(),
+    topicRequests: topics.split('\n').map(t => t.trim()).filter(Boolean).slice(0,20) };
+  const dirty = !!apiKey || !!credentials || signature(localValues) !== baseline.current;
+  const remoteSignature = signature(settings);
+  useEffect(() => { onDirtyChange?.(dirty); return () => onDirtyChange?.(false); }, [dirty, onDirtyChange]);
+  useEffect(() => {
+    if (dirty || remoteSignature === baseline.current) return;
+    baseline.current = remoteSignature;
+    setEnabled(settings.enabled); setConfirmed(settings.freeConfirmed); setModel(settings.model);
+    setProperty(settings.gscProperty); setTopics(settings.topicRequests.join('\n'));
+  }, [remoteSignature, dirty, settings]);
   const submit = async () => {
     const saved = await save({ enabled, freeConfirmed: confirmed, model, apiKey: apiKey || null,
       gscProperty: property.trim(), gscCredentials: credentials,
       topicRequests: topics.split("\n").map(t => t.trim()).filter(Boolean).slice(0, 20) });
-    if (saved) { setApiKey(""); setCredentials(null); setCredentialName(""); }
+    if (saved) { baseline.current = signature(localValues); setProperty(localValues.gscProperty); setTopics(localValues.topicRequests.join("\n")); setApiKey(""); setCredentials(null); setCredentialName(""); }
   };
   return <section className="rounded-2xl border border-border p-5 sm:p-6 space-y-5">
     <div><h2 className="text-lg font-semibold">Monthly course drafts</h2><p className="text-sm text-muted-foreground mt-2">
       One draft after the 1st and one after the 15th. Courses always wait for your approval.
       Checks run daily at 09:00 Sri Lanka time; completed months use no AI requests.</p></div>
+    {dirty && remoteSignature !== baseline.current && <p role="status" className="text-sm text-amber-600 dark:text-amber-400">Generation settings changed on the server. Your unsaved values are preserved; review the current schedule before saving.</p>}
+    <fieldset disabled={busy} className="space-y-5">
     <div className="grid sm:grid-cols-2 gap-4">
       <label className="space-y-2 text-sm"><span className="block text-muted-foreground">Free Gemini API key {settings.hasApiKey ? "(saved securely)" : ""}</span>
         <input type="password" autoComplete="off" value={apiKey} onChange={e => setApiKey(e.target.value)}
@@ -69,6 +85,7 @@ export function CourseGenerationSettings({ settings, busy, save, generate }: {
       <button type="button" disabled={busy || (enabled && !confirmed)} onClick={() => void submit()} className="rounded-xl bg-primary text-primary-foreground px-4 py-2 text-sm disabled:opacity-50">Save generation settings</button>
       <button type="button" disabled={busy || !settings.enabled || !settings.hasApiKey} onClick={() => void generate()} className="rounded-xl border border-border px-4 py-2 text-sm disabled:opacity-50">Generate next draft</button>
     </div>
+    </fieldset>
     <div className="border-t border-border pt-4 text-sm space-y-2">
       <p>Schedule: <span className="text-primary">{settings.enabled && settings.hasApiKey ? "Enabled" : "Awaiting setup"}</span></p>
       {settings.runs.map(run => <div key={run.period + run.slot} className="rounded-xl bg-muted/30 p-3">
