@@ -8,6 +8,7 @@ const generator = source('src/components/courses/CourseGenerationSettings.tsx');
 const queue = source('src/components/AdminCodeQueue.tsx');
 const controls = source('src/components/AdminRepairControls.tsx');
 const dashboard = source('src/pages/AdminDashboard.tsx');
+const inbox = source('src/components/admin/AutomationInbox.tsx');
 
 // All actions that can replace the newsletter editor must ask before
 // discarding a pending owner change, BEFORE calling the backend/model.
@@ -50,4 +51,11 @@ assert.match(dashboard, /subscriberStatus\.status === "fulfilled"/);
 assert.match(dashboard, /Number\.isSafeInteger\(counts\[field\]\)/);
 assert.match(dashboard, /setNewsletterSummary\(null\); warnings\.push/);
 assert.match(dashboard, /setNewsletterSummary\(null\); setIssues\(\[\]\)/);
+// Unavailable newsletter editorial reads are not silently displayed as zero.
+assert.match(dashboard, /newsletterDrafts\.status === "fulfilled"/);
+assert.match(dashboard, /setNewsletterEdits\(null\); warnings\.push/);
+assert.match(dashboard, /newsletterEdits=\{newsletterEdits\}/);
+assert.match(inbox, /newsletterEdits: EditorialQueueRow\[\] \| null/);
+assert.match(inbox, /\[newsletterEdits, 'Newsletter', '\/admin\/newsletter'\]/);
+assert.match(inbox, /item\.to\.endsWith\('newsletter'\) \? 'Newsletter desk'/);
 console.log('ADMIN_EDITORIAL_SAFETY_PASS: unsaved editorial review, saved-only generation, owner sign-out late-response fencing and independent newsletter totals');
