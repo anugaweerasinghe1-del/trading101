@@ -4,6 +4,10 @@ import {pathToFileURL} from 'node:url';
 import {setTimeout as sleep} from 'node:timers/promises';
 const REPO='anugaweerasinghe1-del/trading101';
 const REQUIRED=['TradeHQ Phase 3 tests','TradeHQ Cloudflare compatibility / Cloudflare build and SEO','TradeHQ Required validation'];
+// Full Cloudflare-compatible Chromium runs may outlast the old 18 x 8s window.
+// Keep a finite, read-only wait; failed CI, changed main, wrong identity and
+// ambiguous checks still abort immediately. Never trigger reruns here.
+export const CI_WAIT_POLL_LIMIT = 90;
 export function requiredCiReady(checks,sha){
   assert.match(sha,/^[a-f0-9]{40}$/);assert.ok(Array.isArray(checks));
   let ready=true;
@@ -28,7 +32,7 @@ export function validationRunReady(runs,sha){
   return false;
 }
 export async function waitForRequiredCi({sha,read,wait=sleep}){
-  for(let attempt=0;attempt<18;attempt++){
+  for(let attempt=0;attempt<CI_WAIT_POLL_LIMIT;attempt++){
     const main=await read('/branches/main');assert.equal(main.commit?.sha,sha,'Main changed; wait rejected');
     const response=await read('/commits/'+sha+'/check-runs?filter=latest&per_page=100');
     assert.ok(response.total_count<=100&&Array.isArray(response.check_runs),'Incomplete check pagination');
@@ -40,7 +44,7 @@ export async function waitForRequiredCi({sha,read,wait=sleep}){
       assert.ok(runs.total_count<=100&&Array.isArray(runs.workflow_runs),'Incomplete validation run pagination');
       if(validationRunReady(runs.workflow_runs,sha))return;
     }
-    if(attempt<17)await wait(8000);
+    if(attempt<CI_WAIT_POLL_LIMIT-1)await wait(8000);
   }
   throw Error('Required upstream CI did not complete within the bounded wait');
 }
