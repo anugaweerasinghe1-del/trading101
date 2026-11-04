@@ -93,6 +93,26 @@ export function summarizeInvestigation(packet) {
   return {...summary, sha256:createHash("sha256").update(JSON.stringify(summary)).digest("hex")};
 }
 
+/**
+ * No verified incident means there is no incident-specific recommendation to
+ * suppress or train. Do not make unrelated historical owner feedback a new
+ * prerequisite for a clean monitoring cycle. Any real incident still requires
+ * the full authenticated history read, and malformed history fails closed.
+ */
+export async function feedbackForVerifiedHandoff(packet, readFeedback) {
+  const handoff = summarizeInvestigation(packet);
+  if (!handoff.ownerReviewRequired) return {
+    schema: 'tradehq-incident-feedback-v1',
+    status: 'NOT_CONSULTED_NO_VERIFIED_INCIDENT',
+    memory: { version: 1, records: [] }, sources: [], confirmedRepairOutcomes: 0,
+  };
+  assert.ok(typeof readFeedback === 'function', 'Authenticated incident history reader required');
+  const history = await readFeedback();
+  assert.ok(history?.schema === 'tradehq-incident-feedback-v1'
+    && history.confirmedRepairOutcomes === 0, 'Untrusted incident history');
+  return history;
+}
+
 export async function investigationBrowserFollowup(packet,options) {
   const summary=summarizeInvestigation(packet);
   const followup=await observePublicIncidentRoutes([...new Set(packet.cases
@@ -149,7 +169,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     const {summary,jobSummary,failJob}=investigationOutcome(packet);
     // Missing or malformed referenced history stops the cycle visibly. A missing
     // owner journal is an explicit empty-history bootstrap, never invented data.
-    const history=await collectIncidentFeedback({mainSha:MAIN_SHA});
+    const history=await feedbackForVerifiedHandoff(packet, () => collectIncidentFeedback({mainSha:MAIN_SHA}));
     const advice=investigationAdvice(packet,history);
     const learning=investigationLearning(packet,history);
     console.log("TRADEHQ_READONLY_INCIDENT_HANDOFF_V1 "+JSON.stringify(summary));
