@@ -2,7 +2,7 @@ import fs from "node:fs";
 import assert from "node:assert/strict";
 import ts from "typescript";
 
-const pages = ["src/pages/AdminDashboard.tsx", "src/pages/AdminAIAssistant.tsx", "src/pages/AdminReviews.tsx"];
+const pages = ["src/pages/AdminDashboard.tsx", "src/pages/AdminAIAssistant.tsx", "src/pages/AdminReviews.tsx", "src/pages/AdminValidator.tsx"];
 for (const file of pages) {
   const source = fs.readFileSync(file, "utf8");
   const ast = ts.createSourceFile(file, source, ts.ScriptTarget.Latest, true, ts.ScriptKind.TSX);
@@ -22,6 +22,10 @@ for (const file of pages) {
       source.includes("Discard unsaved moderation changes and public replies?") &&
       source.includes("onClick={lockAdmin}"),
       "Review moderation must warn before navigation or lock discards unsaved changes.");
+  }
+  if (file.endsWith("AdminValidator.tsx")) {
+    assert.ok(!source.includes("BUILD STABLE") && source.includes("Deployed URLs, HTTP responses and build stability have not been checked."),
+      "Local route checks must never claim that production URLs or builds are healthy.");
   }
   const known = new Set();
   function bindNames(binding) {
