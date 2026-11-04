@@ -95,6 +95,7 @@ assert.match(leaderboard,/LEADERBOARD_FUNNEL_READY_EVENT/);
 assert.match(authProvider,/recordConsentedLeaderboardRegistration\(user\.created_at\)/,
   "New account confirmation is measured from the persistent auth provider, including OAuth redirects");
 assert.match(authPage,/mode=signup/,"The leaderboard should offer a direct signup path");
+assert.match(authPage,/typeof window !== "undefined"/,"Prerendering must not read window while rendering the Auth page");
 assert.match(consent,/tradehq_consent_v3/,"Fresh consent required for the broader measured purpose");
 assert.match(arena,/ARENA_ANALYTICS_CONSENT_KEY = "tradehq_consent_v3"/,
   "Practice Arena must follow the same freshly scoped adult consent");
