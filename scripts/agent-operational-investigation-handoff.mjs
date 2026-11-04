@@ -157,19 +157,24 @@ export function investigationOutcome(packet) {
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  // Enumeration only: never print private GitHub bodies or authentication data.
+  let stage='INPUT';
   try {
     assert.equal(process.argv.length, 2, "No CLI arguments accepted");
     const {MONITOR_RUN_ID,MONITOR_SHA,MAIN_SHA}=process.env;
     assert.ok(/^[1-9][0-9]*$/.test(MONITOR_RUN_ID||"")
       && /^[a-f0-9]{40}$/.test(MONITOR_SHA||"")
       && /^[a-f0-9]{40}$/.test(MAIN_SHA||""),"Missing trusted producer coordinates");
+    stage='ATTESTED_RECOLLECTION';
     const packet=await collectOfflineRepairReview({
       runId:Number(MONITOR_RUN_ID),monitorSha:MONITOR_SHA,mainSha:MAIN_SHA
     });
     const {summary,jobSummary,failJob}=investigationOutcome(packet);
     // Missing or malformed referenced history stops the cycle visibly. A missing
     // owner journal is an explicit empty-history bootstrap, never invented data.
+    stage='HISTORY_WHEN_NEEDED';
     const history=await feedbackForVerifiedHandoff(packet, () => collectIncidentFeedback({mainSha:MAIN_SHA}));
+    stage='SAFE_ADVICE';
     const advice=investigationAdvice(packet,history);
     const learning=investigationLearning(packet,history);
     console.log("TRADEHQ_READONLY_INCIDENT_HANDOFF_V1 "+JSON.stringify(summary));
@@ -177,6 +182,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     console.log("TRADEHQ_INCIDENT_SHADOW_LEARNING_V1 "+JSON.stringify(learning));
     // Current read-only observations never clear an original finding, change
     // risk/authorization, become training outcomes, or make this job healthy.
+    stage='PUBLIC_FOLLOWUP';
     const followup=await investigationBrowserFollowup(packet);
     console.log('TRADEHQ_READONLY_BROWSER_FOLLOWUP_V1 '+JSON.stringify(followup));
     if(process.env.GITHUB_STEP_SUMMARY)
@@ -194,7 +200,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
       process.exitCode=1;
     }
   } catch {
-    console.error("Read-only incident handoff rejected: verification, source identity or freshness missing.");
+    console.error("Read-only incident handoff rejected at "+stage+": verification, source identity or freshness missing.");
     process.exitCode=1;
   }
 }
