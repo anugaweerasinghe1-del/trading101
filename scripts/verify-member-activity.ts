@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import { compareMemberRank, withPublicMemberPositions } from "../src/lib/memberActivity";
 
 const members = [
@@ -43,3 +44,11 @@ const withTies = withPublicMemberPositions(tied);
 assert.deepEqual(withTies.map(m => m.listPosition), [1,2,3]);
 assert.deepEqual(withTies.map(m => m.practiceRank), [1,1,3], "return rank ties remain distinct from numbered positions");
 console.log("PASS: continuous 1–75 public member positions, zero-trade members and shared return-rank integrity");
+
+const boardSource = readFileSync("src/pages/Leaderboard.tsx", "utf8");
+assert.ok(boardSource.includes("if (!cloud.error) setLastRefreshed(new Date());"),
+  "Current leaderboard freshness must not depend on unrelated historical results");
+assert.ok(boardSource.includes('if (tab !== "duels") return;') && boardSource.includes('get_public_practice_duels')
+  && boardSource.includes('window.setInterval(() => void loadDuels(), 60000)')
+  && boardSource.includes("Previously shown scores may be stale"),
+  "Duels need visible-tab refresh and honest stale-error reporting");
