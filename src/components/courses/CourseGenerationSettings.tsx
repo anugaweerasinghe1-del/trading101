@@ -83,8 +83,9 @@ export function CourseGenerationSettings({ settings, busy, save, generate, onDir
     <label className="flex items-center gap-3 text-sm"><input type="checkbox" checked={enabled} onChange={e => setEnabled(e.target.checked)} />Enable monthly generation</label>
     <div className="flex flex-wrap gap-3">
       <button type="button" disabled={busy || (enabled && !confirmed)} onClick={() => void submit()} className="rounded-xl bg-primary text-primary-foreground px-4 py-2 text-sm disabled:opacity-50">Save generation settings</button>
-      <button type="button" disabled={busy || !settings.enabled || !settings.hasApiKey} onClick={() => void generate()} className="rounded-xl border border-border px-4 py-2 text-sm disabled:opacity-50">Generate next draft</button>
+      <button type="button" disabled={busy || dirty || !settings.enabled || !settings.hasApiKey} onClick={() => void generate()} className="rounded-xl border border-border px-4 py-2 text-sm disabled:opacity-50">Generate next draft</button>
     </div>
+    {dirty && <p role="status" className="text-xs text-amber-600 dark:text-amber-400">Save or discard pending generation settings before generating; the worker uses the saved server configuration.</p>}
     </fieldset>
     <div className="border-t border-border pt-4 text-sm space-y-2">
       <p>Schedule: <span className="text-primary">{settings.enabled && settings.hasApiKey ? "Enabled" : "Awaiting setup"}</span></p>
