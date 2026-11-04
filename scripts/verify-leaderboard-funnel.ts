@@ -91,7 +91,7 @@ const arena = readFileSync("src/lib/arenaTelemetry.ts","utf8");
 const privacy = readFileSync("src/lib/privacyCopy.ts","utf8");
 assert.match(leaderboard,/recordConsentedLeaderboardVisit/);
 assert.match(leaderboard,/authLoading/,"Wait for account session initialization before labeling a visit signed out");
-assert.match(leaderboard,/tradehq:analytics-ready/);
+assert.match(leaderboard,/LEADERBOARD_FUNNEL_READY_EVENT/);
 assert.match(authProvider,/recordConsentedLeaderboardRegistration\(user\.created_at\)/,
   "New account confirmation is measured from the persistent auth provider, including OAuth redirects");
 assert.match(authPage,/mode=signup/,"The leaderboard should offer a direct signup path");
