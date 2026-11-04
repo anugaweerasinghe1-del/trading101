@@ -107,6 +107,7 @@ export default function Leaderboard() {
   const [loadError, setLoadError] = useState(false);
   const [duels, setDuels] = useState<DuelRow[]>([]);
   const [duelsLoading, setDuelsLoading] = useState(true);
+  const [duelsError, setDuelsError] = useState(false);
 
   const load = useCallback(async (quiet = false) => {
     if (loadBusy.current) return;
@@ -133,7 +134,8 @@ export default function Leaderboard() {
       setPreviousRows(historicRows);
       setPreviousError(!!previous.error);
       setLoadError(!!cloud.error);
-      if (!cloud.error && !previous.error) setLastRefreshed(new Date());
+      // An unrelated historical-snapshot outage must not make the current board appear stale.
+      if (!cloud.error) setLastRefreshed(new Date());
       if (cloud.error && !quiet) toast.error("Could not load current rankings. Please try again.");
     } catch (error) {
       console.error("Leaderboard load failed", error);
@@ -164,27 +166,51 @@ export default function Leaderboard() {
     return () => { cancelled = true; };
   }, [userId]);
 
-  // Head-to-head duels between members with public profiles.
+  // Duels change while a visitor is on this page. Refresh only the visible tab,
+  // preserve the last confirmed results on transient errors and avoid overlapping RPCs.
   useEffect(() => {
-    (async () => {
-      setDuelsLoading(true);
-      const { data, error } = await supabase.rpc("get_public_practice_duels", { p_limit: 50 });
-      if (error) { setDuels([]); setDuelsLoading(false); return; }
-      const list = (data ?? []) as unknown as {
-        id: string; code: string; creator_name: string; opponent_name: string;
-        creator_start_value: number; opponent_start_value: number;
-        creator_value: number; opponent_value: number; ends_at: string; settled_at: string | null;
-      }[];
-      const mapped = list.filter(Boolean).map(d => ({
-        id: d.id, code: d.code, creatorName: d.creator_name, opponentName: d.opponent_name,
-        creatorPct: (Number(d.creator_value) - Number(d.creator_start_value)) / Number(d.creator_start_value) * 100,
-        opponentPct: (Number(d.opponent_value) - Number(d.opponent_start_value)) / Number(d.opponent_start_value) * 100,
-        endsAt: d.ends_at, finished: !!d.settled_at,
-      }));
-      setDuels(mapped);
-      setDuelsLoading(false);
-    })();
-  }, []);
+    if (tab !== "duels") return;
+    let active = true, inFlight = false;
+    const loadDuels = async () => {
+      if (!active || inFlight || document.hidden || navigator.onLine === false) return;
+      inFlight = true;
+      try {
+        const { data, error } = await supabase.rpc("get_public_practice_duels", { p_limit: 50 });
+        if (error) throw error;
+        const list = (data ?? []) as unknown as {
+          id: string; code: string; creator_name: string; opponent_name: string;
+          creator_start_value: number; opponent_start_value: number;
+          creator_value: number; opponent_value: number; ends_at: string; settled_at: string | null;
+        }[];
+        const mapped = list.filter(Boolean).map(d => ({
+          id: d.id, code: d.code, creatorName: d.creator_name, opponentName: d.opponent_name,
+          creatorPct: (Number(d.creator_value) - Number(d.creator_start_value)) / Number(d.creator_start_value) * 100,
+          opponentPct: (Number(d.opponent_value) - Number(d.opponent_start_value)) / Number(d.opponent_start_value) * 100,
+          endsAt: d.ends_at, finished: !!d.settled_at,
+        }));
+        if (active) { setDuels(mapped); setDuelsError(false); }
+      } catch {
+        if (active) setDuelsError(true);
+      } finally {
+        inFlight = false;
+        if (active) setDuelsLoading(false);
+      }
+    };
+    setDuelsLoading(true);
+    void loadDuels();
+    const timer = window.setInterval(() => void loadDuels(), 60000);
+    const resume = () => { if (!document.hidden) void loadDuels(); };
+    window.addEventListener("focus", resume);
+    window.addEventListener("online", resume);
+    document.addEventListener("visibilitychange", resume);
+    return () => {
+      active = false;
+      window.clearInterval(timer);
+      window.removeEventListener("focus", resume);
+      window.removeEventListener("online", resume);
+      document.removeEventListener("visibilitychange", resume);
+    };
+  }, [tab]);
 
   const handleSync = async () => {
     if (!user) return;
@@ -459,6 +485,7 @@ export default function Leaderboard() {
               </section>
             ) : (
               <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                {duelsError && <p role="status" className="px-4 sm:px-6 py-3 border-b border-border text-xs text-amber-600 dark:text-amber-400">Could not refresh duels. Previously shown scores may be stale; this page checks again when visible or reconnected.</p>}
                 {duelsLoading ? (
                   <div className="py-16 text-center text-muted-foreground text-sm">
                     <Loader2 className="w-5 h-5 animate-spin mx-auto mb-3" />
@@ -467,8 +494,9 @@ export default function Leaderboard() {
                 ) : duels.length === 0 ? (
                   <div className="py-16 px-6 text-center">
                     <Swords className="w-10 h-10 text-primary/60 mx-auto mb-4" />
-                    <h2 className="text-lg font-semibold mb-2">No public duels yet</h2>
+                    <h2 className="text-lg font-semibold mb-2">{duelsError ? "Duels unavailable" : "No public duels yet"}</h2>
                     <p className="text-sm text-muted-foreground max-w-md mx-auto mb-6">
+                      {duelsError && "Could not confirm whether any public duels are available. "}
                       Duels are 30-day head-to-head practice challenges between two members.
                       Both sides are compared by percentage change from their own recorded starting balance.
                       Scores are simulated practice statistics and are not independently verified.
