@@ -52,3 +52,6 @@ assert.ok(boardSource.includes('if (tab !== "duels") return;') && boardSource.in
   && boardSource.includes('window.setInterval(() => void loadDuels(), 60000)')
   && boardSource.includes("Previously shown scores may be stale"),
   "Duels need visible-tab refresh and honest stale-error reporting");
+
+assert.ok(boardSource.includes("navigator.onLine === false) { setDuelsError(true); setDuelsLoading(false); return; }"),
+  "An offline Duel tab must not display an indefinite loading spinner");
