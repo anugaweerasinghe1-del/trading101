@@ -7,6 +7,8 @@ import { ASSETS, INITIAL_CASH } from "./assets";
 import { getPortfolio, savePortfolio } from "./portfolio";
 import type { Portfolio, Position, Trade } from "./types";
 import type { Json } from "@/integrations/supabase/types";
+import { activatePortfolioOwner, pendingGuestPortfolio, clearPendingGuestPortfolio } from './portfolioOwner';
+import { parsePracticePortfolio } from './portfolioRecovery';
 const OWNER_KEY = "tradehq:portfolio-owner";
 const BACKUP_KEY = "tradehq_portfolio_backup";
 let activeUser: string | null = null;
@@ -29,6 +31,7 @@ function backUpLocal() {
   try { localStorage.setItem(`${BACKUP_KEY}:${ownerOfLocal() ?? "guest"}:${crypto.randomUUID()}`, JSON.stringify({ savedAt: new Date().toISOString(), portfolio: getPortfolio() })); } catch { /* unavailable storage */ }
 }
 export function applyServerSnapshot(snapshot: ServerSnapshot, userId: string, opts: { force?: boolean } = {}): Portfolio {
+  activatePortfolioOwner(userId);
   const local = getPortfolio();
   const sameOwner = ownerOfLocal() === userId;
   const quoteTimes = snapshot.positions.map(p => p.priced_at).filter((t): t is string => !!t).sort();
@@ -61,7 +64,9 @@ export function applyServerSnapshot(snapshot: ServerSnapshot, userId: string, op
   return portfolio;
 }
 export async function reconcilePortfolio(userId: string): Promise<ServerSnapshot> {
-  const local = getPortfolio();
+  const { data: { session }, error: authError } = await supabase.auth.getSession();
+  if (authError || session?.user.id !== userId) throw new Error('Account changed before portfolio refresh');
+  const local = parsePracticePortfolio(pendingGuestPortfolio(userId)) ?? getPortfolio();
   const p_import: Json = { cash: local.cash,
     has_activity: local.trades.length > 0 || !!localStorage.getItem("tradesandbox_last_bonus"),
     positions: local.positions.map((p) => ({ asset_id: p.asset.id, quantity: p.quantity, avg_price: p.avgPrice })),
@@ -69,6 +74,7 @@ export async function reconcilePortfolio(userId: string): Promise<ServerSnapshot
   const { data, error } = await supabase.rpc("initialize_practice_portfolio", { p_import: ownerOfLocal() && ownerOfLocal() !== userId ? null : p_import });
   if (error) throw error;
   if (!data) throw new Error("Account portfolio unavailable");
+  clearPendingGuestPortfolio(userId);
   return data as unknown as ServerSnapshot;
 }
 /** Refreshes account state; never uploads client cash or scores. */
@@ -94,8 +100,9 @@ export async function startRankedPractice(userId: string): Promise<void> {
 export async function startCloudSync(userId: string | null): Promise<ServerSnapshot | null> {
   activeUser = userId;
   const generation = ++syncGeneration;
-  if (!userId) return null;
   try {
+    activatePortfolioOwner(userId);
+    if (!userId) return null;
     const snapshot = await reconcilePortfolio(userId);
     if (activeUser !== userId || generation !== syncGeneration) return null;
     applyServerSnapshot(snapshot, userId);

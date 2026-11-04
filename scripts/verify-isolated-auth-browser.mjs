@@ -201,8 +201,10 @@ async function main(){
       if(route==="/rest/v1/rpc/initialize_practice_portfolio" && req.method==="POST"){
         if(req.headers.authorization!=="Bearer "+JWT)return json(401,{error:"invalid_token"});
         portfolioInitialized++;
-        return json(200,{trades:[],cash:100000,ranked:false,cycle_id:"fixture",
-          updated_at:new Date().toISOString(),positions:[]});
+        return json(200,{trades:[{id:'fixture-account-trade',asset_id:'aapl',side:'buy',quantity:1,
+          price:100,total:100.1,created_at:'2026-11-01T10:00:00Z',price_source:'Fixture only'}],
+          cash:99899.9,ranked:false,cycle_id:"fixture",updated_at:'2026-11-01T10:00:00Z',
+          positions:[{asset_id:'aapl',symbol:'AAPL',asset_type:'stock',quantity:1,avg_price:100.1,last_price:100}]});
       }
       if(route==="/rest/v1/rpc/get_daily_practice_bank" && req.method==="POST"){
         dailyReads++;
@@ -384,16 +386,23 @@ async function main(){
     await wait(()=>approved===1,"positive Supabase fixture login");
     await wait(()=>devtools.evaluate("location.pathname==='/trader/me'"),"authenticated profile redirect");
     await wait(()=>portfolioInitialized>=1,"isolated account portfolio initialization");
+    await wait(()=>devtools.evaluate("localStorage.getItem('tradehq:portfolio-owner')==="+JSON.stringify(USER_ID)+" && JSON.parse(localStorage.getItem('tradehq_portfolio')||'{}').trades?.[0]?.id==='fixture-account-trade'"),'account cache restored separately from guest orders');
+    await devtools.evaluate("(()=>{const p=JSON.parse(localStorage.getItem('tradehq_portfolio'));p.trades[0].journal={notes:'PRIVATE ACCOUNT FIXTURE',reasoning:'private',emotions:[]};localStorage.setItem('tradehq_portfolio',JSON.stringify(p));})()");
     // Reload verifies a real persisted SDK session, with no second login grant.
     await loadDocument();
     await wait(()=>devtools.evaluate("!!document.querySelector('[aria-label=\"Account menu\"]')"),"session restored after reload");
     assert.equal(approved,1,"Reload must restore the session without another password grant");
+    await wait(()=>devtools.evaluate("JSON.parse(localStorage.getItem('tradehq_portfolio')||'{}').trades?.[0]?.journal?.notes==='PRIVATE ACCOUNT FIXTURE'"),'private account journal retained after reload');
     // Exercise the real account menu and Supabase local sign-out request.
     await devtools.evaluate("(()=>{const e=document.querySelector('[aria-label=\"Account menu\"]');if(!e)throw Error('Restored account menu missing');e.dispatchEvent(new PointerEvent('pointerdown',{bubbles:true,button:0,ctrlKey:false}));return true;})()");
     await wait(()=>devtools.evaluate("[...document.querySelectorAll('[role=menuitem]')].some(e=>e.textContent.trim()==='Sign out')"),"account sign-out menu");
     await devtools.evaluate("[...document.querySelectorAll('[role=menuitem]')].find(e=>e.textContent.trim()==='Sign out').click()");
     await wait(()=>logouts===1,"fixture backend sign-out");
     await wait(()=>devtools.evaluate("!document.querySelector('[aria-label=\"Account menu\"]')"),"signed-out UI");
+    const signedOutPortfolio=await devtools.evaluate("JSON.parse(localStorage.getItem('tradehq_portfolio'))");
+    assert.equal(signedOutPortfolio.trades.length,2,'sign-out must restore guest orders instead of account trades');
+    assert.equal(signedOutPortfolio.cash,guestSold.cash);
+    assert.ok(!JSON.stringify(signedOutPortfolio).includes('PRIVATE ACCOUNT FIXTURE'),'private account journal leaked into guest practice');
     await loadDocument();
     await wait(()=>devtools.evaluate("!!document.querySelector('a[href=\"/auth\"]') && !document.querySelector('[aria-label=\"Account menu\"]')"),"no session resurrection after reload");
     // Find the actual configured SDK key; seed an expired test session and

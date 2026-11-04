@@ -1,8 +1,9 @@
 import { getRealizedTradeResults } from './realizedTrades';
-import type { Portfolio, Trade, Asset } from './types';
+import type { Portfolio, Trade, Asset, JournalEntry } from './types';
 import { INITIAL_CASH, ASSETS } from './assets';
 import { recordSnapshot, getPortfolioHistory } from './portfolioHistory';
 import { parsePracticePortfolio, readRecoveryPortfolio, writeRecoveryPortfolio, UNREADABLE_KEY } from './portfolioRecovery';
+import { portfolioViewMatchesOwner, portfolioOwnerIs } from './portfolioOwner';
 
 const STORAGE_KEY = 'tradehq_portfolio';
 const HISTORY_KEY = 'tradehq_history';
@@ -10,6 +11,8 @@ const BALANCE_MIGRATION_KEY = 'tradehq:balance-migration:v2';
 const LEGACY_INITIAL_CASH = 10000;
 
 export function getPortfolio(): Portfolio {
+  // Never render another account's cache while auth restores or changes.
+  if (!portfolioViewMatchesOwner()) return { cash: INITIAL_CASH, totalValue: INITIAL_CASH, positions: [], trades: [] };
   let portfolio: Portfolio | null = null;
   let hasMainRecord = false;
   try {
@@ -70,6 +73,7 @@ export function getLocalUpdatedAt(): number {
 }
 
 export function savePortfolio(portfolio: Portfolio, opts: { silent?: boolean } = {}): boolean {
+  if (!portfolioViewMatchesOwner()) return false;
   let persisted = false;
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(portfolio));
@@ -155,14 +159,16 @@ async function withGuestOrderLock<T>(order: () => Promise<T>): Promise<T> {
 }
 
 /** Signed-in orders are atomic server transactions; failures never execute locally. */
-export async function executeTrade(portfolio: Portfolio, asset: Asset, side: 'buy' | 'sell', quantity: number) {
+interface TradeExecutionResult { success: boolean; message: string; portfolio?: Portfolio; ownerId?: string | null; tradeId?: string }
+export async function executeTrade(portfolio: Portfolio, asset: Asset, side: 'buy' | 'sell', quantity: number): Promise<TradeExecutionResult> {
   const { supabase } = await import('@/integrations/supabase/client');
   const { data: { session }, error: authError } = await supabase.auth.getSession();
   if (authError) return { success: false, message: 'Could not verify your account. Try again.' };
   if (!session) return withGuestOrderLock(async () => {
     const { data: current, error } = await supabase.auth.getSession();
     if (error || current.session) return { success: false, message: 'Account changed during order. Please try again.' };
-    return executeGuestTrade(asset, side, quantity);
+    const result = executeGuestTrade(asset, side, quantity);
+    return { ...result, ownerId: null, tradeId: result.portfolio?.trades[0]?.id };
   });
   try {
     const { reconcilePortfolio, applyServerSnapshot } = await import('./cloudPortfolio');
@@ -175,17 +181,22 @@ export async function executeTrade(portfolio: Portfolio, asset: Asset, side: 'bu
     const { data: current } = await supabase.auth.getSession();
     if (current.session?.user.id !== session.user.id) throw new Error('Account changed during order');
     const restored = applyServerSnapshot(result.portfolio, session.user.id);
-    if (!restored.trades.some(t => t.id === result.trade.id)) restored.trades.unshift({
-      id: result.trade.id, assetId: asset.id, symbol: asset.symbol, type: side,
-      quantity: Number(result.trade.quantity), price: Number(result.trade.price),
-      total: Number(result.trade.total), timestamp: new Date(result.trade.created_at),
-    });
-    savePortfolio(restored, { silent: true });
-    return { success: true, portfolio: restored,
+    // A delayed response from a prior practice cycle must not append its trade
+    // after the snapshot version guard has rejected that older cycle.
+    return { success: true, portfolio: restored, ownerId: session.user.id, tradeId: result.trade.id,
       message: `${side === 'buy' ? 'Bought' : 'Sold'} ${quantity} ${asset.symbol} at $${Number(result.trade.price).toLocaleString()} · ${result.trade.price_source}` };
   } catch (error) {
     return { success: false, message: error instanceof Error ? error.message : (error as { message?: string })?.message || 'Account order failed. Try again.' };
   }
+}
+
+/** Attach notes to the matching latest trade, never re-save an old order result. */
+export function saveTradeJournal(tradeId: string, journal: JournalEntry, owner: string | null): Portfolio | null {
+  if (!portfolioOwnerIs(owner)) return null;
+  const latest = getPortfolio();
+  if (!latest.trades.some(trade => trade.id === tradeId)) return null;
+  const next = { ...latest, trades: latest.trades.map(trade => trade.id === tradeId ? { ...trade, journal } : trade) };
+  return savePortfolio(next, { silent: true }) ? next : null;
 }
 
 export function updatePositionPrices(

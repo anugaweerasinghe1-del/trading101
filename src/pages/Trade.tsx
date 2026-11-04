@@ -22,7 +22,9 @@ import {
   executeTrade,
   updatePositionPrices,
   savePortfolio,
+  saveTradeJournal,
 } from "@/lib/portfolio";
+import { portfolioOwnerIs } from '@/lib/portfolioOwner';
 import { getFavorites, toggleFavorite } from "@/lib/favorites";
 import { recordLoss } from "@/components/trading/RevengeTradingBlocker";
 import { useToast } from "@/hooks/use-toast";
@@ -148,6 +150,7 @@ export default function Trade() {
       const result = await executeTrade(portfolio, asset, type, quantity);
 
       if (result.success && result.portfolio) {
+        if (!portfolioOwnerIs(result.ownerId ?? null)) return;
         if (rationale && result.portfolio.trades.length > 0) {
           const journalEntry: JournalEntry = {
             notes: "",
@@ -155,8 +158,8 @@ export default function Trade() {
             reasoning: rationale,
           };
 
-          result.portfolio.trades[0].journal = journalEntry;
-          savePortfolio(result.portfolio);
+          const updated = saveTradeJournal(result.tradeId ?? result.portfolio.trades[0].id, journalEntry, result.ownerId ?? null);
+          if (updated) result.portfolio = updated;
         }
 
         if (type === "sell") {
@@ -168,7 +171,7 @@ export default function Trade() {
           }
         }
 
-        setPortfolio(result.portfolio);
+        setPortfolio(getPortfolio());
         if (guidedPractice && result.portfolio.trades[0]) {
           markJourneyTrade(result.portfolio.trades[0]);
           setGuidedOrderComplete(true);
