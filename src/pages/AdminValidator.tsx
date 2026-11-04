@@ -53,10 +53,10 @@ export default function AdminValidator() {
         <Navigation />
         <main className="container mx-auto px-4 py-8 pt-24 max-w-4xl">
           <h1 className="text-2xl font-bold text-foreground mb-2">
-            Internal Link Validator
+            Asset Route Definition Check
           </h1>
           <p className="text-sm text-muted-foreground mb-6">
-            Checks all "Related Markets" links across {ASSETS.length} asset pages for valid href targets.
+            Checks the local route definitions used by Related Markets across {ASSETS.length} assets. This does not request production pages or verify their HTTP status, content or deployment.
           </p>
 
           <button
@@ -67,7 +67,7 @@ export default function AdminValidator() {
             {isRunning ? (
               <span className="flex items-center gap-2"><Loader2 className="w-4 h-4 animate-spin" /> Scanning...</span>
             ) : (
-              <span className="flex items-center gap-2"><LinkIcon className="w-4 h-4" /> Run Validation</span>
+              <span className="flex items-center gap-2"><LinkIcon className="w-4 h-4" /> Check Local Routes</span>
             )}
           </button>
 
@@ -84,7 +84,7 @@ export default function AdminValidator() {
 
               {invalidCount === 0 ? (
                 <div className="p-4 rounded-xl bg-success/10 border border-success/20 text-success text-sm font-medium">
-                  ✅ All {validCount} internal links are valid — BUILD STABLE
+                  All {validCount} related-market targets exist in the local asset definitions. Deployed URLs, HTTP responses and build stability have not been checked.
                 </div>
               ) : (
                 <div className="space-y-2 max-h-[500px] overflow-y-auto">

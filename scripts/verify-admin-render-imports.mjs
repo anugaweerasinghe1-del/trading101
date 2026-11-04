@@ -2,7 +2,7 @@ import fs from "node:fs";
 import assert from "node:assert/strict";
 import ts from "typescript";
 
-const pages = ["src/pages/AdminDashboard.tsx", "src/pages/AdminAIAssistant.tsx"];
+const pages = ["src/pages/AdminDashboard.tsx", "src/pages/AdminAIAssistant.tsx", "src/pages/AdminReviews.tsx", "src/pages/AdminValidator.tsx", "src/components/AdminChatPilot.tsx", "src/components/daily/GenerationReadiness.tsx"];
 for (const file of pages) {
   const source = fs.readFileSync(file, "utf8");
   const ast = ts.createSourceFile(file, source, ts.ScriptTarget.Latest, true, ts.ScriptKind.TSX);
@@ -16,6 +16,24 @@ for (const file of pages) {
       "Dashboard must expose live monitor and code-proposal history.");
     assert.ok(source.includes("agentError") && source.includes("deskWarnings"),
       "Dashboard must disclose incomplete reporting rather than invent success or zero counts.");
+  }
+  if (file.endsWith("AdminReviews.tsx")) {
+    assert.ok(source.includes("hasUnsaved") && source.includes("beforeunload") &&
+      source.includes("Discard unsaved moderation changes and public replies?") &&
+      source.includes("onClick={lockAdmin}"),
+      "Review moderation must warn before navigation or lock discards unsaved changes.");
+  }
+  if (file.endsWith("AdminValidator.tsx")) {
+    assert.ok(!source.includes("BUILD STABLE") && source.includes("Deployed URLs, HTTP responses and build stability have not been checked."),
+      "Local route checks must never claim that production URLs or builds are healthy.");
+  }
+  if (file.endsWith("AdminChatPilot.tsx")) {
+    assert.ok(source.includes("pending.current") && source.includes("DAILY_LIMIT") && source.includes("PILOT_PAUSED") && source.includes("status === 401"),
+      "Chat must distinguish paused/quota/auth errors without repeating provider attempts.");
+  }
+  if (file.endsWith("GenerationReadiness.tsx")) {
+    assert.ok(source.includes("providerBadRequest") && source.includes("newer code is fixed"),
+      "Daily generation must display historic HTTP 400 honestly without claiming the current provider works.");
   }
   const known = new Set();
   function bindNames(binding) {

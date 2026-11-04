@@ -1,10 +1,14 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { supabase } from "@/integrations/supabase/client";
 import { AutomationInbox, type EditorialQueueRow } from "@/components/admin/AutomationInbox";
 import { Mail } from "lucide-react";
 import { Activity, BookOpen, Bot, CalendarCheck, CheckCircle2, ExternalLink, Lock, MessageSquare, RefreshCw, ShieldCheck, Sparkles, Wrench } from "lucide-react";
+
+import { useAdminRefresh, useAdminRequestScope } from '@/hooks/useAdminRefresh';
+import { isAdminRequestCancelled } from '@/lib/adminRequestScope';
+import { AdminFreshness } from '@/components/admin/AdminFreshness';
 
 type Course = { id: string; status: string; document?: { title?: string }; updated_at?: string };
 type DailyStatus = { enabled?: boolean; nextDue?: string; prepareAfter?: string; completed?: number; attempts?: number; retryAfter?: string | null; lastStarted?: string | null; lastFinished?: string | null; lastError?: string | null; model?: string; hasApiKey?: boolean; freeConfirmed?: boolean };
@@ -19,6 +23,9 @@ const card = "rounded-2xl border border-border bg-card/60 p-5 space-y-3";
 const linkStyle = "inline-flex items-center gap-1 text-sm text-primary hover:underline";
 export default function AdminDashboard() {
   const [key, setKey] = useState("");
+  const scope = useAdminRequestScope(key);
+  const pending = useRef(false);
+  const [checkedAt, setCheckedAt] = useState<Date | null>(null);
   const [unlocked, setUnlocked] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
@@ -42,23 +49,27 @@ export default function AdminDashboard() {
   const [jobHistoryError, setJobHistoryError] = useState("");
   const [deploymentChecks, setDeploymentChecks] = useState<{ pages: DeployCheck | null; worker: DeployCheck | null; error: string } | null>(null);
   const adminCall = useCallback(async (action: string, payload: Record<string, unknown> = {}) => {
+    const guard = scope.capture(key);
     const { data, error: callError } = await supabase.functions.invoke("admin-courses", {
       body: { ...payload, action }, headers: { "x-admin-key": key },
     });
+    guard.assert();
     if (callError || data?.error) throw new Error(data?.error || "Admin verification failed.");
     return data.data;
   }, [key]);
   // Verify one privileged endpoint before displaying any administration data.
   // An unrelated review or practice outage must never be interpreted as a bad master key.
   const refresh = useCallback(async () => {
+    const guard = scope.capture(key, 'editorial');
     const settings = await adminCall("settings");
     if (!settings) throw new Error("Administrator verification failed.");
-    setCourseStatus(settings);
+    guard.assert(); setCourseStatus(settings);
     const [drafts, practice, result, banks] = await Promise.allSettled([
       adminCall("list", { summary: true }), adminCall("daily-status"),
       supabase.functions.invoke("admin-reviews", { body: { action: "list" }, headers: { "x-admin-key": key } }),
       adminCall("daily-list", { summary: true }),
     ]);
+    guard.assert();
     const warnings: string[] = [];
     if (drafts.status === "fulfilled" && Array.isArray(drafts.value)) setCourses(drafts.value);
     else { setCourses(null); warnings.push("Course drafts are temporarily unavailable."); }
@@ -69,11 +80,12 @@ export default function AdminDashboard() {
     if (result.status === "fulfilled" && !result.value.error && !result.value.data?.error &&
         Array.isArray(result.value.data?.data)) setReviews(result.value.data.data.length);
     else { setReviews(null); warnings.push("Review moderation status is temporarily unavailable."); }
-    setDeskWarnings(warnings);
+    setDeskWarnings(warnings); setCheckedAt(new Date()); setError("");
   }, [adminCall, key]);
   // Public GitHub data is used only for observability, never for authorization.
   // No PAT or administrative credentials are exposed in the browser.
   const loadAgents = useCallback(async () => {
+    const guard = scope.capture(key, 'github');
     const base = "https://api.github.com/repos/" + repo;
     const targets = [
       base + "/issues?state=all&per_page=100",
@@ -86,6 +98,7 @@ export default function AdminDashboard() {
       const responses = await Promise.all(targets.map(url => fetch(url, { headers: { Accept: "application/vnd.github+json" } })));
       const failures = responses.map((response, i) => response.ok ? "" : ["issue reports", "monitor runs", "coding runs", "approval PRs", "trusted collector"][i] + " HTTP " + response.status).filter(Boolean);
       const values = await Promise.all(responses.map(response => response.ok ? response.json() : Promise.resolve(null)));
+      guard.assert();
       if (Array.isArray(values[0])) setIssues(values[0].filter((i: AgentIssue) => !i.pull_request && /^\[TradeHQ (Agent|Ideas)\]/.test(i.title)));
       if (Array.isArray(values[1]?.workflow_runs)) {
         const runs = values[1].workflow_runs as Run[];
@@ -114,6 +127,7 @@ export default function AdminDashboard() {
           if (!Array.isArray(data.jobs)) throw new Error("Invalid GitHub job response");
           return data.jobs.map(job => ({ ...job, runId: entry.run.id, workflow: entry.workflow }));
         }));
+        guard.assert();
         setJobHistory(jobResponses.flatMap(item => item.status === "fulfilled" ? item.value : []).sort((a, b) => (b.started_at || "").localeCompare(a.started_at || "")).slice(0, 16));
         setJobHistoryError(jobResponses.some(x => x.status === "rejected") ? "Some job histories are unavailable; verify full details on GitHub Actions." : "");
       } else {
@@ -126,39 +140,43 @@ export default function AdminDashboard() {
         if (!response.ok) throw new Error("GitHub deployment status HTTP " + response.status);
         const payload = await response.json() as { check_runs?: DeployCheck[] };
         if (!Array.isArray(payload.check_runs)) throw new Error("Invalid deployment status response");
+        guard.assert();
         setDeploymentChecks({
           pages: payload.check_runs.find(check => check.name === "Cloudflare Pages") || null,
           worker: payload.check_runs.find(check => check.name.startsWith("Workers Builds:")) || null,
           error: "",
         });
       } catch (failure) {
+        guard.assert();
         setDeploymentChecks({ pages: null, worker: null, error: failure instanceof Error ? failure.message : "GitHub deployment checks unavailable" });
       }
+      guard.assert();
       setAgentError(failures.length ? "GitHub status unavailable for " + failures.join(", ") + ". Use the linked GitHub history for confirmation." : "");
       setLastGitHubChecked(new Date());
     } catch {
+      if (!guard.current()) return;
       setAgentError("GitHub operational data could not be loaded. Statuses may be stale; verify in GitHub Actions.");
     }
-  }, []);
+  }, [key, scope]);
   const unlock = async (event: React.FormEvent) => {
-    event.preventDefault(); setError(""); setBusy(true);
-    try { await refresh(); setUnlocked(true); await loadAgents(); }
-    catch (failure) { setError(failure instanceof Error ? failure.message : "Could not open dashboard."); }
-    finally { setBusy(false); }
+    event.preventDefault(); if (pending.current) return; pending.current = true;
+    const guard = scope.capture(key); setError(""); setBusy(true);
+    try { await refresh(); guard.assert(); setUnlocked(true); await loadAgents(); }
+    catch (failure) { if (guard.current() && !isAdminRequestCancelled(failure)) setError(failure instanceof Error ? failure.message : "Could not open dashboard."); }
+    finally { if (guard.current()) { pending.current = false; setBusy(false); } }
   };
   const refreshDashboard = async () => {
+    if (pending.current) return; pending.current = true; const guard = scope.capture(key);
     setBusy(true); setError("");
     try { await Promise.all([refresh(), loadAgents()]); }
-    catch { setError("Dashboard refresh failed. Previous data may be stale; open the relevant desk to verify."); }
-    finally { setBusy(false); }
+    catch { if (guard.current()) setError("Dashboard refresh failed. Previous data may be stale; open the relevant desk to verify."); }
+    finally { if (guard.current()) { pending.current = false; setBusy(false); } }
   };
-  useEffect(() => {
-    if (!unlocked) return;
-    const interval = window.setInterval(() => {
-      if (document.visibilityState === "visible") { void refresh().catch(() => setError("Dashboard data refresh failed.")); void loadAgents(); }
-    }, 900000);
-    return () => window.clearInterval(interval);
-  }, [unlocked, refresh, loadAgents]);
+  useAdminRefresh(unlocked, refresh, { paused: () => pending.current,
+    onError: () => setError('Dashboard data refresh failed.') });
+  // Keep public GitHub polling within its unauthenticated free API budget.
+  useAdminRefresh(unlocked, loadAgents, { intervalMs: 900000, minGapMs: 900000,
+    paused: () => pending.current });
   const agentFindings = issues.filter(item => item.state === "open" && item.title.startsWith("[TradeHQ Agent]") && (item.title.endsWith("failures") || item.title.endsWith("failed")));
   const agentReports = issues.filter(item => item.state === "open" && item.title.startsWith("[TradeHQ Agent]") && item.title.endsWith("report"));
   const ideas = issues.filter(item => item.title.startsWith("[TradeHQ Ideas]"));
@@ -167,18 +185,19 @@ export default function AdminDashboard() {
     <div className="mx-auto max-w-6xl space-y-7">
       <header className="flex flex-wrap items-center justify-between gap-4">
         <div><p className="text-xs tracking-[0.2em] text-primary uppercase mb-2">TradeHQ · private workspace</p><h1 className="text-3xl font-semibold">Admin dashboard</h1><p className="text-sm text-muted-foreground mt-2">Editorial controls, community moderation, automated checks and proposed improvements in one place.</p></div>
-        <div className="flex gap-3">{unlocked && <button type="button" onClick={() => { setUnlocked(false); setKey(""); setCourses(null); setDailyBanks(null); setDeskWarnings([]); setDaily(null); setCourseStatus(null); setReviews(null); setIssues([]); setRun(null); setCodeRun(null); setCollectorRun(null); setPreviousSuccess(null); setPreviousFailure(null); setPreviousCodeFailure(null); setProposals([]); setAgentError(""); setLastGitHubChecked(null); setJobHistory([]); setJobHistoryError(""); setDeploymentChecks(null); }} className="rounded-xl border border-border px-4 py-2 flex items-center gap-2 text-sm"><Lock className="w-4 h-4"/> Lock</button>}<Link to="/" className={linkStyle}>View website <ExternalLink className="h-3 w-3"/></Link></div>
+        <div className="flex gap-3">{unlocked && <button type="button" onClick={() => { scope.invalidate(); pending.current = false; setBusy(false); setCheckedAt(null); setError(""); setUnlocked(false); setKey(""); setCourses(null); setDailyBanks(null); setDeskWarnings([]); setDaily(null); setCourseStatus(null); setReviews(null); setIssues([]); setRun(null); setCodeRun(null); setCollectorRun(null); setPreviousSuccess(null); setPreviousFailure(null); setPreviousCodeFailure(null); setProposals([]); setAgentError(""); setLastGitHubChecked(null); setJobHistory([]); setJobHistoryError(""); setDeploymentChecks(null); }} className="rounded-xl border border-border px-4 py-2 flex items-center gap-2 text-sm"><Lock className="w-4 h-4"/> Lock</button>}<Link to="/" className={linkStyle}>View website <ExternalLink className="h-3 w-3"/></Link></div>
       </header>
       {!unlocked ? <form onSubmit={unlock} className="max-w-md rounded-2xl border border-border bg-card p-6 space-y-5">
         <div className="flex gap-3 items-center"><ShieldCheck className="w-6 h-6 text-primary"/><h2 className="font-semibold">Verify administrator access</h2></div>
         <p className="text-sm text-muted-foreground">Uses the same server-checked master key as the existing Course and Review desks. The key is held only in memory on this page.</p>
-        <label className="block text-sm space-y-2"><span>Admin master key</span><input type="password" autoComplete="off" required value={key} onChange={event => setKey(event.target.value)} className="w-full rounded-xl border border-border bg-background px-4 py-3"/></label>
+        <label className="block text-sm space-y-2"><span>Admin master key</span><input type="password" disabled={busy} autoComplete="off" required value={key} onChange={event => setKey(event.target.value)} className="w-full rounded-xl border border-border bg-background px-4 py-3"/></label>
         {error && <p role="alert" className="text-sm text-destructive">{error}</p>}
         <button type="submit" disabled={busy} className="w-full rounded-xl bg-primary text-primary-foreground py-3 text-sm font-medium disabled:opacity-50">{busy ? "Verifying…" : "Open dashboard"}</button>
       </form> : <>
         {error && <p role="alert" className="text-sm text-amber-400">{error}</p>}
         {deskWarnings.length > 0 && <div role="status" className="rounded-xl border border-amber-500/30 px-4 py-3 text-sm text-amber-400"><strong>Some admin services are unavailable.</strong> {deskWarnings.join(" ")} Verified services remain accessible.</div>}
         <div className="flex flex-wrap justify-between gap-3 items-center"><h2 className="text-lg font-semibold">Operations overview</h2><button type="button" disabled={busy} className="text-sm border border-border rounded-xl px-4 py-2 flex items-center gap-2 disabled:opacity-40" onClick={() => void refreshDashboard()}><RefreshCw className="w-4 h-4"/> Refresh</button></div>
+        <AdminFreshness checkedAt={checkedAt} error={error} />
         <AutomationInbox courses={courses} dailyBanks={dailyBanks} daily={daily}
           failedCourseRuns={courseStatus?.runs?.filter(item => item.status === 'paused' && item.last_error).length ?? 0}
           findingCount={agentFindings.length} proposalCount={proposals.length} githubAvailable={!agentError && !!lastGitHubChecked} />
