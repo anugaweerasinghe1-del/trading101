@@ -13,7 +13,9 @@ jobs:
   collect:
     if: ${{ github.event.workflow_run.head_repository.full_name == github.repository && github.event.workflow_run.head_branch == 'main' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    # Full main CI includes a lengthy isolated Chromium sweep; the original
+    # eight-minute job cap outlived neither that sweep nor its required release gate.
+    timeout-minutes: 16
     permissions:
       contents: read
       actions: read
