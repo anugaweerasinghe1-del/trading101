@@ -172,7 +172,8 @@ export default function Leaderboard() {
     if (tab !== "duels") return;
     let active = true, inFlight = false;
     const loadDuels = async () => {
-      if (!active || inFlight || document.hidden || navigator.onLine === false) return;
+      if (!active || inFlight || document.hidden) return;
+      if (navigator.onLine === false) { setDuelsError(true); setDuelsLoading(false); return; }
       inFlight = true;
       try {
         const { data, error } = await supabase.rpc("get_public_practice_duels", { p_limit: 50 });
