@@ -5,7 +5,7 @@ import { getPortfolio, savePortfolio } from "@/lib/portfolio";
 import {
   applyUnverifiedGuestRestore, browserCanPersistPortfolio, exportPracticeBackup,
   isGuestImportUnverified, parsePracticeBackup, readPreviousGuestPortfolio,
-  restorePreviousProvenance, UNREADABLE_KEY
+  restorePreviousProvenance, UNREADABLE_KEY, assertGuestPortfolioOwner
 } from "@/lib/portfolioRecovery";
 import type { Portfolio } from "@/lib/types";
 import { VerifiedAccountRecovery } from "./VerifiedAccountRecovery";
@@ -106,7 +106,8 @@ export function PortfolioRecoveryPanel({ signedIn, authLoading = false, userId =
     if (!previous) { setUndoAvailable(false); return; }
     if (!window.confirm("Undo your last guest backup restore? This will replace the currently displayed guest portfolio.")) return;
     try {
-      savePortfolio(previous, { silent: true });
+      assertGuestPortfolioOwner();
+      if (!savePortfolio(previous, { silent: true })) throw new Error('Could not save the previous guest portfolio.');
       restorePreviousProvenance();
       setImported(isGuestImportUnverified());
       setUndoAvailable(false);

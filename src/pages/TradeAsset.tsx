@@ -23,6 +23,7 @@ import { MobileOrderDrawer } from "@/components/trading/MobileOrderDrawer";
 import { ASSETS } from "@/lib/assets";
 import { Asset } from "@/lib/types";
 import { getPortfolio, executeTrade, updatePositionPrices } from "@/lib/portfolio";
+import { portfolioOwnerIs } from '@/lib/portfolioOwner';
 import { getFavorites, toggleFavorite } from "@/lib/favorites";
 import { useToast } from "@/hooks/use-toast";
 import { useLiveMarketData } from "@/hooks/useLiveMarketData";
@@ -197,7 +198,8 @@ export default function TradeAsset() {
     const result = await executeTrade(portfolio, asset, type, quantity);
     
     if (result.success && result.portfolio) {
-      setPortfolio(result.portfolio);
+      if (!portfolioOwnerIs(result.ownerId ?? null)) return;
+      setPortfolio(getPortfolio());
       toast({
         title: `${type === 'buy' ? '🟢' : '🔴'} Order Executed`,
         description: result.message,

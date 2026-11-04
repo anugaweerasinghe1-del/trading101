@@ -1,4 +1,5 @@
 import { Trade, JournalEntry } from "./types";
+import { portfolioViewMatchesOwner } from './portfolioOwner';
 
 const JOURNAL_STORAGE_KEY = 'trading_journal_analysis';
 
@@ -45,10 +46,13 @@ export const getEmotionalBreakdown = (trades: Trade[]): Record<string, number> =
 };
 
 export const saveAnalysis = (analysis: JournalAnalysis) => {
+  if (!portfolioViewMatchesOwner()) return;
   localStorage.setItem(JOURNAL_STORAGE_KEY, JSON.stringify(analysis));
 };
 
 export const getAnalysis = (): JournalAnalysis | null => {
+  if (!portfolioViewMatchesOwner()) return null;
+  try {
   const stored = localStorage.getItem(JOURNAL_STORAGE_KEY);
   if (!stored) return null;
   
@@ -57,6 +61,7 @@ export const getAnalysis = (): JournalAnalysis | null => {
     ...parsed,
     lastUpdated: new Date(parsed.lastUpdated)
   };
+  } catch { return null; }
 };
 
 export const AVAILABLE_EMOTIONS = [

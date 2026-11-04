@@ -1,4 +1,5 @@
 import type { Portfolio, Trade } from "./types";
+import { PORTFOLIO_OWNER_KEY, portfolioViewMatchesOwner } from './portfolioOwner';
 
 /**
  * Browser backup is a convenience copy, not a cloud backup. It disappears when
@@ -173,6 +174,7 @@ export function isGuestImportUnverified(): boolean {
 export function applyUnverifiedGuestRestore(
   imported: Portfolio, current: Portfolio, saveLocal: (p: Portfolio) => void
 ): void {
+  assertGuestPortfolioOwner();
   validateImportedPracticePortfolio(imported);
   if (!browserCanPersistPortfolio()) throw new Error("Browser storage is unavailable. Nothing was restored.");
   savePreRestoreCopy(current);
@@ -193,4 +195,10 @@ export function applyUnverifiedGuestRestore(
     } catch {}
     throw error;
   }
+}
+
+/** Recheck at the mutation, even if a stale UI still offers guest controls. */
+export function assertGuestPortfolioOwner(): void {
+  if (!portfolioViewMatchesOwner() || localStorage.getItem(PORTFOLIO_OWNER_KEY))
+    throw new Error('Guest backups cannot replace a signed-in account portfolio.');
 }
