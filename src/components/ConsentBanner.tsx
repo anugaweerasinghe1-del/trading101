@@ -1,71 +1,79 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+/**
+ * Privacy-first optional measurement. Legacy v1 acceptances are deliberately
+ * NOT grandfathered in: that consent covered replay/autocapture, not the
+ * narrower adult-only event model now offered.
+ */
 type ConsentChoice = "accepted" | "rejected";
-const STORAGE_KEY = "tradehq_consent_v1";
+const STORAGE_KEY = "tradehq_consent_v2";
+const ARENA_VISIT_KEY = "tradehq:arena-analytics-last-seen:v1";
 const AMPLITUDE_API_KEY = "44108a3c4bd34ff14004fa66198d9f20";
 
-function appendScript(id: string, src: string, onload?: () => void) {
-  if (document.getElementById(id)) {
-    onload?.();
-    return;
-  }
-  const script = document.createElement("script");
-  script.id = id;
-  script.src = src;
-  script.async = true;
-  if (onload) script.onload = onload;
-  document.head.appendChild(script);
+function readChoice(): ConsentChoice | null {
+  try {
+    const stored = window.localStorage.getItem(STORAGE_KEY);
+    return stored === "accepted" || stored === "rejected" ? stored : null;
+  } catch { return null; }
 }
 
 function loadConsentedAnalytics() {
-  appendScript(
-    "tradehq-amplitude",
-    `https://cdn.amplitude.com/script/${AMPLITUDE_API_KEY}.js`,
-    () => {
-      appendScript(
-        "tradehq-amplitude-engagement",
-        `https://cdn.amplitude.com/script/${AMPLITUDE_API_KEY}.engagement.js`,
-        () => {
-          const w = window as any;
-          if (!w.amplitude || w.__tradehqAmplitudeStarted) return;
-          w.__tradehqAmplitudeStarted = true;
-          if (w.engagement?.plugin) w.amplitude.add(w.engagement.plugin());
-          if (w.sessionReplay?.plugin) w.amplitude.add(w.sessionReplay.plugin({ sampleRate: 1 }));
-          w.amplitude.init(AMPLITUDE_API_KEY, { fetchRemoteConfig: true, autocapture: true });
-          // Custom Arena milestones may now send; they still check the stored consent at dispatch time.
-          window.dispatchEvent(new Event("tradehq:analytics-ready"));
-        },
-      );
-    },
-  );
+  if (readChoice() !== "accepted") return;
+  const initialize = () => {
+    if (readChoice() !== "accepted") return;
+    const w = window as any;
+    if (!w.amplitude || w.__tradehqAmplitudeStarted) return;
+    // No session replay, no user-interaction recording, no background pageview
+    // or form capture, and no remotely enabled autocapture on this site.
+    w.amplitude.init(AMPLITUDE_API_KEY, {
+      fetchRemoteConfig: false,
+      autocapture: false,
+      trackingOptions: { ipAddress: false, language: false, platform: false },
+      identityStorage: "localStorage",
+    });
+    w.amplitude.setOptOut?.(false);
+    w.__tradehqAmplitudeStarted = true;
+    window.dispatchEvent(new Event("tradehq:analytics-ready"));
+  };
+  if (document.getElementById("tradehq-amplitude")) { initialize(); return; }
+  const script = document.createElement("script");
+  script.id = "tradehq-amplitude";
+  script.src = `https://cdn.amplitude.com/script/${AMPLITUDE_API_KEY}.js`;
+  script.async = true;
+  script.onload = initialize;
+  document.head.appendChild(script);
 }
 
 export function ConsentBanner() {
-  const [choice, setChoice] = useState<ConsentChoice | null>(() => {
-    const stored = window.localStorage.getItem(STORAGE_KEY);
-    return stored === "accepted" || stored === "rejected" ? stored : null;
-  });
+  const [choice, setChoice] = useState<ConsentChoice | null>(readChoice);
+  const [isAdult, setIsAdult] = useState(false);
 
   useEffect(() => {
     if (choice === "accepted") loadConsentedAnalytics();
   }, [choice]);
 
   useEffect(() => {
-    const reopen = () => setChoice(null);
+    const reopen = () => { setIsAdult(false); setChoice(null); };
     window.addEventListener("tradehq:open-consent", reopen);
     return () => window.removeEventListener("tradehq:open-consent", reopen);
   }, []);
 
   const save = (next: ConsentChoice) => {
-    const previous = window.localStorage.getItem(STORAGE_KEY);
-    window.localStorage.setItem(STORAGE_KEY, next);
-    if (next === "rejected") window.localStorage.removeItem("tradehq:arena-analytics-last-seen:v1");
+    if (next === "accepted" && !isAdult) return;
+    const previous = readChoice();
+    try {
+      window.localStorage.setItem(STORAGE_KEY, next);
+      if (next === "rejected") window.localStorage.removeItem(ARENA_VISIT_KEY);
+    } catch {
+      // If consent cannot be persisted, optional tracking must remain off.
+      if (next === "accepted") return;
+    }
     setChoice(next);
-    // An already initialized SDK keeps running when its script tag is removed.
-    // Reload with the stored rejection so no optional SDK is initialized again.
+    setIsAdult(false);
     if (next === "rejected" && previous === "accepted") {
       (window as any).amplitude?.setOptOut?.(true);
+      // Unload initialized SDK listeners; deleting its script would not stop it.
       window.location.reload();
     }
   };
@@ -73,36 +81,35 @@ export function ConsentBanner() {
   if (choice) return null;
 
   return (
-    <div
-      role="dialog"
-      aria-label="Analytics choices"
-      className="fixed inset-x-3 bottom-[calc(5rem+env(safe-area-inset-bottom,0px))] z-[120] mx-auto max-h-[65dvh] overflow-y-auto rounded-2xl border border-border bg-background/95 p-3 shadow-2xl backdrop-blur-xl md:inset-x-auto md:bottom-5 md:right-5 md:mx-0 md:w-[min(25rem,calc(100vw-2.5rem))] md:p-4"
-    >
-      <p className="text-sm font-semibold text-foreground">Analytics choices</p>
+    <div role="dialog" aria-label="Optional analytics choices"
+      className="fixed inset-x-3 bottom-[calc(5rem+env(safe-area-inset-bottom,0px))] z-[120] mx-auto max-h-[65dvh] overflow-y-auto rounded-2xl border border-border bg-background/95 p-3 shadow-2xl backdrop-blur-xl md:inset-x-auto md:bottom-5 md:right-5 md:mx-0 md:w-[min(25rem,calc(100vw-2.5rem))] md:p-4">
+      <p className="text-sm font-semibold text-foreground">Optional analytics choices</p>
       <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-        TradeHQ uses essential browser storage for the simulator. Optional analytics are blocked
-        until you accept them. You can reject analytics and still use the core site.
-        See the <Link to="/privacy" className="text-primary hover:underline">privacy policy</Link>.
+        TradeHQ uses essential local storage to run its virtual simulator. Optional
+        Amplitude measurement records limited Practice Arena milestones, with a
+        pseudonymous identifier in this browser. No session replay, automatic click
+        or form capture, or personalised trading data is sent by our custom events.
+        The site works fully when you reject. <Link to="/privacy" className="text-primary underline">Read the privacy policy</Link>.
       </p>
+      <label className="mt-3 flex cursor-pointer items-start gap-2.5 rounded-xl border border-border bg-muted/30 p-3 text-xs leading-relaxed">
+        <input type="checkbox" checked={isAdult} onChange={e => setIsAdult(e.target.checked)}
+          className="mt-0.5 h-4 w-4 accent-primary" />
+        <span>I confirm I am 18 or older and choose to permit this optional analytics measurement. If you are under 18, select Reject; you can still use the whole simulator.</span>
+      </label>
       <div className="mt-3 flex flex-wrap gap-2">
-        <button
-          type="button"
-          onClick={() => save("rejected")}
-          className="rounded-lg border border-border px-4 py-2 text-xs font-semibold text-foreground hover:bg-muted"
-        >
+        <button type="button" onClick={() => save("rejected")}
+          className="min-h-11 rounded-lg border border-border px-4 py-2 text-xs font-semibold text-foreground hover:bg-muted">
           Reject analytics
         </button>
-        <button
-          type="button"
-          onClick={() => save("accepted")}
-          className="rounded-lg bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground hover:bg-primary/90"
-        >
-          Accept analytics
+        <button type="button" disabled={!isAdult} onClick={() => save("accepted")}
+          className="min-h-11 rounded-lg bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-40">
+          Accept optional analytics
         </button>
       </div>
       <p className="mt-2 text-[10px] leading-relaxed text-muted-foreground">
-        This choice controls Amplitude analytics. Google provides separate advertising privacy
-        choices where they apply.
+        Previous analytics choices must be renewed for this narrower setting. The age
+        confirmation is not identity verification. Google advertising has separate
+        regional privacy choices where applicable.
       </p>
     </div>
   );

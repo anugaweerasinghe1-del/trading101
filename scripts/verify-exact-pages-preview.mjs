@@ -56,7 +56,17 @@ export async function verifyExactPagesPreview(sha, { fetchImpl=fetch, now=Date.n
   let identity;
   for(let i=0;i<6;i++){
     const data=await json(path);identity=identify(data,sha,now());if(identity)break;
-    assert.ok(i<5,'Pages is still pending; do not claim verification.');await pause(10000);
+    const pending = data.check_runs.find(c => c.name === 'Cloudflare Pages' &&
+      c.app?.id === 85455 && c.app?.slug === 'cloudflare-workers-and-pages');
+    const started = Date.parse(pending?.started_at || '');
+    // Stop a retry loop that cannot solve a stalled external provider build.
+    // Never fabricate a green result or substitute a local preview for the
+    // exact-head Cloudflare Pages deployment.
+    if (pending?.status === 'in_progress' && Number.isFinite(started) && now()-started > 20*60_000) {
+      const minutes = Math.floor((now()-started)/60_000);
+      throw Error(`Cloudflare Pages preview stalled for ${minutes} minutes (deployment ${pending.external_id || 'unknown'}). Inspect Pages build logs and provider limits; no release authority.`);
+    }
+    assert.ok(i<5,'Pages is still pending; inspect Cloudflare build logs; do not claim verification.');await pause(10000);
   }
   const routes=[];
   for(const [path,status,canonical] of previewRoutes){

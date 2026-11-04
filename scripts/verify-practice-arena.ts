@@ -117,6 +117,9 @@ assert.equal(recordConsentedArenaVisit(new Date("2026-11-03T09:00:00.000Z")), fa
 assert.equal(fakeStorage.get(ARENA_VISIT_KEY), undefined);
 assert.equal(sent.length, 0);
 fakeStorage.set("tradehq_consent_v1", "accepted");
+assert.equal(recordConsentedArenaVisit(new Date("2026-11-03T09:00:00.000Z")), false,
+  "Legacy consent granted for replay/autocapture must never authorize new measurement.");
+fakeStorage.set("tradehq_consent_v2", "accepted");
 assert.equal(recordConsentedArenaVisit(new Date("2026-11-03T09:00:00.000Z")), true);
 assert.equal(fakeStorage.get(ARENA_VISIT_KEY), "2026-11-03");
 assert.deepEqual(sent.at(-1), {event:"TradeHQ Arena Viewed",props:{}});
@@ -132,17 +135,17 @@ assert.deepEqual(sent.at(-1), {
 });
 assert.deepEqual(Object.keys(sent.at(-1)!.props).sort(), ["difficulty","scenario_id"]);
 const beforeRevoke = sent.length;
-fakeStorage.set("tradehq_consent_v1", "rejected");
+fakeStorage.set("tradehq_consent_v2", "rejected");
 trackArenaMilestone("Arena Completed", "first-order");
 assert.equal(sent.length, beforeRevoke, "Rejected consent cannot generate a milestone.");
-fakeStorage.set("tradehq_consent_v1", "accepted");
+fakeStorage.set("tradehq_consent_v2", "accepted");
 fakeWindow.__tradehqAmplitudeStarted = false;
 assert.equal(recordConsentedArenaVisit(new Date("2026-11-05T10:00:00.000Z")), false,
   "If the SDK is not ready, a visit should not falsely create future return evidence.");
 assert.equal(fakeStorage.get(ARENA_VISIT_KEY), "2026-11-04");
 trackArenaMilestone("Arena Completed", "first-order");
 assert.equal(sent.length, beforeRevoke, "SDK-not-ready events cannot send immediately.");
-fakeStorage.set("tradehq_consent_v1", "rejected");
+fakeStorage.set("tradehq_consent_v2", "rejected");
 fakeWindow.__tradehqAmplitudeStarted = true;
 for (const callback of fakeListeners) callback();
 assert.equal(sent.length, beforeRevoke, "Consent revoked while loading must prevent queued events.");
@@ -152,6 +155,8 @@ const page = readFileSync("src/pages/PracticeArena.tsx", "utf8");
 const study = readFileSync("src/components/arena/ArenaStudy.tsx", "utf8");
 const telemetry = readFileSync("src/lib/arenaTelemetry.ts", "utf8");
 const consent = readFileSync("src/components/ConsentBanner.tsx", "utf8");
+const terms = readFileSync("src/pages/Terms.tsx", "utf8");
+const privacyCheckpoint = readFileSync("docs/privacy-youth-safeguards-checkpoint-2026-11-03.md", "utf8");
 const privacy = readFileSync("src/lib/privacyCopy.ts", "utf8");
 const protocol = readFileSync("docs/practice-arena-usability-pilot-2026-11-03.md", "utf8");
 const review = readFileSync("src/components/arena/ArenaSessionReview.tsx", "utf8");
@@ -198,8 +203,23 @@ assert.match(telemetry, /ARENA_ANALYTICS_CONSENT_KEY/, "Telemetry must consult e
 assert.doesNotMatch(telemetry, /props\.(?:user_id|email|note|cash|amount|portfolio_id|trade_action)\s*=/,
   "Custom event payloads must not include private values or user identity.");
 assert.match(consent, /tradehq:analytics-ready/, "The SDK must signal when consented tracking is ready.");
-assert.match(consent, /localStorage.removeItem\("tradehq:arena-analytics-last-seen:v1"\)/,
+assert.match(consent, /localStorage.removeItem\(ARENA_VISIT_KEY\)/,
   "Withdrawal must clear the optional Arena return-day marker.");
+assert.match(consent, /STORAGE_KEY = "tradehq_consent_v2"/, "Legacy broad analytics choice must not be inherited.");
+assert.match(telemetry, /ARENA_ANALYTICS_CONSENT_KEY = "tradehq_consent_v2"/);
+assert.match(consent, /autocapture: false/, "Automatic page, click and form capture must be off.");
+assert.match(consent, /fetchRemoteConfig: false/, "Remote project config must not re-enable autocapture.");
+assert.doesNotMatch(consent, /sessionReplay\.plugin|engagement\.plugin|sampleRate:\s*1/, "No session replay, including when consent is granted.");
+assert.match(consent, /trackingOptions: \{ ipAddress: false/, "Explicit IP property must be suppressed.");
+assert.match(consent, /if \(next === "accepted" && !isAdult\) return;/, "Age self-confirmation required before analytics opt-in.");
+assert.match(consent, /if \(next === "rejected" && previous === "accepted"\)/, "Revoke must immediately shut down active SDK.");
+assert.match(study, /const \[adultParticipant, setAdultParticipant\]/, "Research must be limited to adult volunteers.");
+assert.match(study, /const canShare = adultParticipant && finished/, "Non-confirming visitors cannot prepare survey submissions.");
+assert.match(study, /email address and provider metadata/, "Volunteers must be warned that email is identifying.");
+assert.doesNotMatch(study, /Copy anonymous responses/, "Copied or emailed feedback is not guaranteed anonymous.");
+assert.doesNotMatch(terms, /binding arbitration or in courts of competent jurisdiction/, "Terms must not imply blanket mandatory arbitration.");
+assert.match(terms, /courts? or regulator|court or regulator/, "Terms should preserve access to legal remedies.");
+assert.match(privacyCheckpoint, /NOT.*declaration of legal compliance/, "Document residual legal uncertainty honestly.");
 assert.match(privacy, /Practice Arena research:/, "Privacy page must explain this new data flow.");
 assert.match(protocol, /no real participant results have been collected/i,
   "A study implementation must not claim participant evidence already exists.");

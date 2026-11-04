@@ -14,7 +14,7 @@
 
 ## 2. Participant plan
 
-Recruit **8–12 voluntary participants** outside the founder's usual circle when possible, ideally **6–8 genuine beginners and 3–4 intermediate learners**. Do not announce "the correct answer" or frame participation as a test of intelligence. Invite participants who can freely decline; do not request ages, names, school identification, income, credentials or actual portfolio balances. For minors, use appropriate guardian/teacher permission and follow the relevant privacy and safeguarding requirements. Never pressure users to enable analytics or subscribe to newsletters.
+Recruit **8–12 voluntary adult (18+) participants** outside the founder's usual circle when possible, ideally **6–8 genuine beginners and 3–4 intermediate learners**. The form asks for adult self-confirmation but does not verify age, so the owner must recruit adults independently and must not invite minors to the research pilot pending an appropriate child-safety/parental-consent assessment. Do not announce the correct answer or frame participation as a test of intelligence. Invite adults who can freely decline; do not collect names, date of birth, school identification, income, credentials or actual portfolio balances. Never pressure people to enable analytics or subscribe to newsletters.
 
 Suggested sharing link: **https://www.thetradehq.com/practice?study=1**. The query only opens a voluntary on-page prompt; it does not include an identity or collected answers.
 
@@ -64,7 +64,7 @@ Do not treat a positive answer on these two similar questions as proof of sustai
 
 ## 5. Minimal product event plan (existing Amplitude consent only)
 
-The site uses its **existing analytics consent choice**. No new database, client-side fingerprint, location field, identity field, or Arena-specific device identifier is introduced.
+The site requires **fresh analytics consent from visitors self-confirming they are 18 or older** (old consent does not carry forward). The SDK is configured with no replay, no automatic interaction capture and no remote auto-enablement. The consented SDK still uses a pseudonymous browser identifier; it is not anonymous. No new application database, fingerprint, location field, identity field or Arena-specific identifier is introduced.
 
 | Event name in Amplitude | Trigger | Properties sent |
 | --- | --- | --- |
@@ -74,7 +74,7 @@ The site uses its **existing analytics consent choice**. No new database, client
 | `TradeHQ Arena Resumed` | Explicitly resuming an unfinished saved exercise | `scenario_id`, `difficulty` |
 | `TradeHQ Arena Returned` | A consented browser revisits on a later UTC day, within 30 days of its prior recorded Arena visit | `days_since_last_arena_visit` (1–30) |
 
-These **custom** events never contain virtual P&L, trade action, order size, free text, private journal, survey answers, email or account ID. The existing Amplitude SDK supplies its own consented session/visitor identity; its automatic instrumentation and session-replay behavior follow the separately disclosed general analytics policy. Private Arena note and survey regions are explicitly blocked from replay capture.
+These **custom** events never contain virtual P&L, trade action, order size, free text, private journal, survey answers, email or account ID. The existing, explicitly opted-in Amplitude SDK supplies its own pseudonymous browser identity, but its automatic interaction collection and session replay are disabled in the current website code. Arena note and study regions retain defensive exclusion markers should replay ever be evaluated under a separate future review.
 
 **If analytics are rejected, none of the custom Arena events are sent**, and the Arena still works normally. There is no attempt to bypass the browser's preferences. If the Amplitude SDK is blocked, offline or fails to load, the instrument does not interfere with the learning experience. No historical visits can be reconstructed.
 
@@ -93,10 +93,10 @@ If the exercise is too repetitive, **do not** simply add dozens of AI-generated 
 ## 7. Release / privacy checklist
 
 - The test link works with JavaScript and is not a new indexable, thin public route.
-- Anonymous participants can choose not to submit any answers.
+- Adult research participants can choose not to submit any answers. Responses do not ask for names, but sending by email reveals the sender address and may include identifying mail metadata; do not call sent feedback anonymous.
 - No participant answers appear in generated HTML attributes, browser URL query strings, custom analytics properties or database writes.
-- Private notes and reflection panels are blocked from the existing consented replay capture.
-- The consent banner's Reject choice prevents custom Arena events; revoking consent clears the temporary Arena last-seen day.
+- Private notes and reflection panels retain defensive replay exclusion markers; sitewide session replay and automatic interaction collection are currently disabled.
+- The consent banner requires fresh adult self-confirmation for optional analytics; Reject prevents custom Arena events, and revoking consent clears the temporary Arena last-seen day. Self-confirmation is not legally verified age assurance.
 - The metrics have tests for invalid dates, same-day revisits and consent rejection.
 - Browser reload, dark/light themes and narrow viewport still work.
 - Existing main simulated portfolios, leaderboards, subscriptions and approved courses remain unchanged.

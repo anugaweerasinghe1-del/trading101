@@ -106,7 +106,7 @@ Reuse must respect the applicable rights and license terms. This statement does 
               Please read these terms carefully before using TradeHQ. By using our service, you agree to these terms.
             </p>
             <p className="text-sm text-muted-foreground mt-4">
-              Effective Date: January 26, 2026
+              Effective Date: November 3, 2026
             </p>
           </div>
 
@@ -159,9 +159,7 @@ Reuse must respect the applicable rights and license terms. This statement does 
           <section className="mt-8 glass-liquid-card p-6">
             <h2 className="text-xl font-semibold mb-4">8. Governing Law</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              These Terms shall be governed by and construed in accordance with applicable laws, without regard 
-              to conflict of law principles. Any disputes arising from these Terms shall be resolved through 
-              binding arbitration or in courts of competent jurisdiction.
+              TradeHQ is operated from Sri Lanka. These Terms are intended to be interpreted under Sri Lankan law, subject to any mandatory consumer-protection or other rights that apply in your location. Please use the contact page to raise a dispute in the first instance. These Terms do not impose mandatory arbitration or prevent a user from applying to a court or regulator with jurisdiction under applicable law.
             </p>
           </section>
 

@@ -1,13 +1,13 @@
 /**
  * Explicitly consent-gated Practice Arena milestones.
  * No user ID, account ID, email, rationale, score, position, equity or note
- * enters custom event properties. Existing Amplitude SDK alone handles its
+ * enters custom event properties. Only the freshly consented, no-autocapture Amplitude SDK handles its
  * own consented visitor/session identity.
  */
 import { scenarioById } from "./practiceArena";
 
 export const ARENA_VISIT_KEY = "tradehq:arena-analytics-last-seen:v1";
-export const ARENA_ANALYTICS_CONSENT_KEY = "tradehq_consent_v1";
+export const ARENA_ANALYTICS_CONSENT_KEY = "tradehq_consent_v2";
 export const ARENA_READY_EVENT = "tradehq:analytics-ready";
 
 export type ArenaMilestone =
