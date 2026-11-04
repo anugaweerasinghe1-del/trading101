@@ -103,6 +103,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
       {
         h: "Steps 2 and 3 — Place a voluntary virtual trade, then inspect the numbers",
         p: [
+          "Before opening the main virtual trading terminal, learners can optionally try a five-round fictional Practice Arena warm-up covering cash, holdings and a model fee. The warm-up's invented prices and browser-local balances are separate from the $100,000 trading portfolio, do not enter leaderboards, and do not advance the five-step journey. It can be skipped at any time; an Arena completion is not a saved guided trade.",
           "The guided link opens the normal virtual trading terminal, optionally selecting an illustrative asset. It never places an order on the learner's behalf. The visitor chooses a quantity and explicitly confirms any simulated transaction. A successful saved trade advances the journey; merely pressing a guide button does not.",
           "The next stage reads the learner's actual saved practice data. It shows remaining virtual cash, total account value, number of holdings, and the chosen trade's quantity, execution price, calculated fee and cash movement. Open-position returns change with the available reference price and are not guaranteed cash profits. A refreshed or delayed quote can differ from an earlier reference.",
         ],
@@ -122,6 +123,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
       },
     ],
     links: [
+      { href: "/practice", label: "Optional fictional decision warm-up before the first virtual trade" },
       { href: "/trade", label: "Voluntary virtual trading terminal" },
       { href: "/portfolio", label: "Inspect your simulated portfolio and fee records" },
       { href: "/daily", label: "Daily Practice exercises" },

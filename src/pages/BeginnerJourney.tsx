@@ -7,6 +7,7 @@ import { MegaFooter } from "@/components/MegaFooter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { getPortfolio } from "@/lib/portfolio";
+import { loadArena } from "@/lib/practiceArena";
 import { JOURNEY_EVENT, journeyStage, readJourney, saveJourney } from "@/lib/beginnerJourney";
 import { COURSE_PROGRESS_EVENT, COURSE_PROGRESS_KEY, loadProgress } from "@/lib/courseProgress";
 import { buildLearningOverview } from "@/lib/learningOverview";
@@ -33,6 +34,12 @@ export default function BeginnerJourney() {
   const courseOverview = buildLearningOverview(tracks, courseProgress, progress);
   const recentCourse = courseOverview.next;
   const newPublishedCourses = publishedCourses ?? [];
+  // The optional warm-up does not change the five-stage beginner progress,
+  // record an actual portfolio trade, or sync any Arena decision to Supabase.
+  const arenaWarmup = loadArena();
+  const beginnerWarmupCompleted = Boolean(arenaWarmup.completions["first-order"]);
+  const beginnerWarmupInProgress = Boolean(arenaWarmup.active?.scenarioId === "first-order" &&
+    !arenaWarmup.active.finishedAt && arenaWarmup.active.decisions.length > 0);
 
   useEffect(() => {
     const refresh = () => {
@@ -133,7 +140,32 @@ export default function BeginnerJourney() {
               Open the existing trading terminal with AAPL selected as an illustration. Check the displayed quote source, quantity, estimated total and the fee before confirming.
               The price can change; the displayed symbol is an exercise, <strong>not a recommendation</strong>. You can choose another asset.
             </p>
-            <p className="rounded-xl border border-border p-4 text-sm">Your $100,000 practice portfolio will be used. This journey never submits an order automatically. Once your order succeeds, return here to see its recorded numbers.</p>
+            <section aria-label="Optional fictional warm-up before your first virtual trade" className="rounded-2xl border border-primary/30 bg-primary/[0.045] p-4 sm:p-5 space-y-3">
+              <div className="flex items-center gap-2 text-xs font-semibold text-primary">
+                <RotateCcw className="h-4 w-4 shrink-0" aria-hidden />
+                Optional warm-up · About 3–5 minutes
+              </div>
+              <h3 className="text-lg font-semibold tracking-tight">Want to try a fictional decision first?</h3>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                Before using your main virtual portfolio, practise five invented price snapshots.
+                See how a purchase changes cash, holdings and a model fee. Nothing from this
+                exercise can alter your $100,000 practice balance or leaderboard.
+              </p>
+              {beginnerWarmupCompleted && <p className="text-xs font-medium text-primary" role="status">
+                You've completed this fictional warm-up in this browser. You can revisit it, or continue straight to the terminal.
+              </p>}
+              {!beginnerWarmupCompleted && beginnerWarmupInProgress && <p className="text-xs font-medium text-primary" role="status">
+                Your unfinished fictional warm-up is saved on this device. Resume whenever you're ready.
+              </p>}
+              <Button asChild variant="outline">
+                <Link to="/practice?from=start">
+                  {beginnerWarmupInProgress ? "Resume fictional warm-up" : beginnerWarmupCompleted ? "Review fictional practice" : "Try fictional practice first"}
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <p className="text-xs text-muted-foreground">You may skip this warm-up entirely. It doesn't add a sixth requirement or count as a trade.</p>
+            </section>
+            <p className="rounded-xl border border-border p-4 text-sm">Your $100,000 practice portfolio will be used in the guided terminal below, not in the fictional warm-up. This journey never submits an order automatically. Once your order succeeds, return here to see its recorded numbers.</p>
             <Button asChild><Link to="/trade?journey=1">Open guided practice terminal <ArrowRight className="ml-2 h-4 w-4" /></Link></Button>
             <p className="text-xs text-muted-foreground">If you leave halfway, return to /start tomorrow; this step remains available.</p>
           </>}
