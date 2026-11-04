@@ -83,6 +83,8 @@ async function main(){
   const ADMIN_FIXTURE_KEY='isolated-admin-fixture-only';
   let dailyGenerationRequests=0;
   let dailyDrafts=[],dailyEditorialWrites=0;
+  let newsletterRevision=1,newsletterReads=0,newsletterWrites=0,newsletterConfirmed=1;
+  let dashboardHold=false,dashboardHeldRequests=0;
   let dashboardFixture=false,dailyQueueUnavailable=false,dashboardSettingsUnavailable=false;
   let dashboardMetadataRequests=0;
   let dailyStatus={enabled:false,nextDue:'2026-12-09',prepareAfter:'2026-12-02',completed:20,attempts:2,
@@ -106,6 +108,7 @@ async function main(){
         req.on('end',()=>{
           let body;try{body=JSON.parse(content);}catch{return json(400,{error:'fixture_invalid_json'});}
           if(dashboardFixture && ['list','daily-list'].includes(body.action)){assert.equal(body.summary,true,'Dashboard must request metadata without full documents');dashboardMetadataRequests++;}
+          if(dashboardFixture && body.action==='settings' && dashboardHold){dashboardHeldRequests++;setTimeout(()=>json(200,{data:{enabled:true,runs:[]}}),600);return;}
           if(dashboardFixture && body.action==='settings')return dashboardSettingsUnavailable
             ? json(503,{error:'Fixture settings unavailable'})
             : json(200,{data:{enabled:true,model:'fixture-only',runs:[{period:'2026-10-01',slot:1,status:'paused',last_error:'Fixture HTTP503'}]}});
@@ -116,6 +119,16 @@ async function main(){
           if(body.action==='daily-generate'){dailyGenerationRequests++;return json(200,{data:null});}
           if(['daily-save','daily-publish','daily-reject'].includes(body.action)){dailyEditorialWrites++;return json(409,{error:'No editorial mutation permitted in this read-only fixture'});}
           return json(200,{data:{}});
+        });return;
+      }
+      if(['/functions/v1/newsletter-editor','/functions/v1/newsletter-dispatch'].includes(route) && req.method==='POST'){
+        if(req.headers['x-admin-key']!==ADMIN_FIXTURE_KEY)return json(401,{error:'fixture_admin_denied'});
+        let content='';req.on('data',chunk=>{content+=chunk;});req.on('end',()=>{
+          const body=JSON.parse(content);
+          if(route.endsWith('newsletter-dispatch') && body.action==='status')return json(200,{data:{counts:{confirmed:newsletterConfirmed,pending:0,unsubscribed:0,bounced:0},subscribers:[],recentDeliveries:[],webhookConfigured:true,limitInfo:'Isolated fixture only'}});
+          if(body.action==='topics')return json(200,{data:[{id:'fixture',title:'Fixture topic',sourceTitle:'Fixture source'}]});
+          if(body.action==='list'){newsletterReads++;return json(200,{data:[{id:'fixture-newsletter',week_of:'2026-11-02',status:'draft',revision:newsletterRevision,subject:'Server lesson title',preheader:'Fixture preview',body_markdown:'Fixture educational draft',reviewed_by:null,reviewed_at:null,updated_at:new Date().toISOString(),ai_model:null,generator_error:null}]});}
+          newsletterWrites++;return json(409,{error:'No generation, approval or email sending permitted in this fixture'});
         });return;
       }
       if(route==='/functions/v1/admin-reviews' && req.method==='POST'){
@@ -713,8 +726,29 @@ async function main(){
     dashboardSettingsUnavailable=true;await refreshInbox();
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Previous data may be stale')"),'Failed refresh discloses stale snapshot');
     assert.equal(dailyEditorialWrites,0);assert.equal(dailyGenerationRequests,1);assert.ok(dashboardMetadataRequests>=6);
+    dashboardSettingsUnavailable=false;dashboardHold=true;await refreshInbox();
+    await wait(()=>dashboardHeldRequests>0,'Held dashboard request before lock');
     await adminClick('Lock');
-    assert.equal(await devtools.evaluate('!!'+inbox),false,'Lock removes private inbox');
+    await sleep(800);
+    assert.equal(await devtools.evaluate('!!'+inbox),false,'Lock removes private inbox and ignores a late refresh');
+    assert.equal(await devtools.evaluate("document.querySelector('main form input[type=password]')?.value"),'','Lock clears the in-memory master key');
+    // Actual compiled newsletter: reconnect updates counters/revisions while
+    // preserving local writing, without generation, approval or distribution.
+    await loadDocument(origin+'/admin/newsletter');
+    await wait(()=>devtools.evaluate("!!document.querySelector('#newsletter-key')"),'Newsletter unlock');
+    await adminInput('#newsletter-key',ADMIN_FIXTURE_KEY);await adminClick('Unlock drafts');
+    await wait(()=>devtools.evaluate("!!document.querySelector('#newsletter-subject')"),'Newsletter editor loaded');
+    await wait(()=>devtools.evaluate("[...document.querySelectorAll('button')].some(e=>e.textContent.trim()==='Refresh'&&!e.disabled)"),'Newsletter reads idle');
+    await adminInput('#newsletter-subject','Unsaved isolated owner writing');
+    newsletterRevision=2;newsletterConfirmed=7;const beforeNewsletterReads=newsletterReads;
+    await devtools.evaluate("window.dispatchEvent(new Event('online'))");
+    await wait(()=>newsletterReads>beforeNewsletterReads,'Reconnect requests fresh newsletter metadata');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('This edition changed on the server')"),'Newsletter conflict shown without replacing edits');
+    assert.equal(await devtools.evaluate("document.querySelector('#newsletter-subject').value"),'Unsaved isolated owner writing');
+    await wait(()=>devtools.evaluate("[...document.querySelectorAll('p')].some(e=>e.textContent==='Confirmed' && e.parentElement.textContent.includes('7'))"),'Subscriber counts updated on reconnect');
+    await wait(()=>devtools.evaluate("[...document.querySelectorAll('p')].some(e=>e.textContent==='Confirmed' && e.parentElement.textContent.includes('7'))"),'Subscriber counts updated on reconnect');
+    assert.equal(newsletterWrites,0,'Polling must not generate, approve, publish or send');
+    console.log('ISOLATED_ADMIN_REFRESH_PASS: late dashboard refresh cannot reopen lock; newsletter reconnect refresh preserves unsaved writing and reports remote revision; no editorial or email mutations.');
     console.log('ISOLATED_AUTOMATION_INBOX_PASS: compiled dashboard combines editorial drafts, failures, cooldown, open findings and proposals; collector evidence linked to commit; partial outage stays unknown; stale refresh disclosed; zero mutations. Fixture only.');
     console.log('ISOLATED_COURSE_PROGRESS_BROWSER_PASS: null tracks, null lessons and invalid lesson rows recovered; valid unrelated completion/badge retained after real lesson save and reload; fixture only.');
     console.log("ISOLATED_AUTH_BROWSER_PASS: reload persistence; real UI sign-out; no resurrected session; expired refresh rejected; ten Daily answers persisted/resumed/locked; one streak per day; actual built TradeHQ login in real Chromium; negative password refused; fake Supabase grant accepted; authenticated profile navigation observed; isolated account initialization executed; zero non-allowlisted backend writes; zero real provider calls.");

@@ -53,10 +53,10 @@ export default function AdminValidator() {
         <Navigation />
         <main className="container mx-auto px-4 py-8 pt-24 max-w-4xl">
           <h1 className="text-2xl font-bold text-foreground mb-2">
-            Internal Link Validator
+            Asset Route Definition Check
           </h1>
           <p className="text-sm text-muted-foreground mb-6">
-            Checks all "Related Markets" links across {ASSETS.length} asset pages for valid href targets.
+            Checks the local route definitions used by Related Markets across {ASSETS.length} assets. This does not request production pages or verify their HTTP status, content or deployment.
           </p>
 
           <button
