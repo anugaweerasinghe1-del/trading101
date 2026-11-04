@@ -62,7 +62,11 @@ function bindReport(source, issue, job, logs, run, now, expectedRoutes, purpose)
     && a.issueId === issue.id && a.issueNumber === issue.number && a.updatedAt === issue.updated_at
     && a.bodySha256 === bodyDigest(issue.body) && a.observedAt === f.observedAt && a.runId === f.runId
     && a.checked === f.checked && a.failed === f.failed, "Tampered, edited, conflicting or mismatched report evidence.");
-  assert.equal(f.checked, source === "route" ? expectedRoutes : 12, "Monitoring coverage differs from the reviewed inventory.");
+  // Sitemap additions expand the scanner's dynamic URL inventory. Never reject
+  // stronger attested coverage, but fail closed if it falls below the reviewed
+  // baseline or exceeds the scanner/report parser's fixed 400-URL ceiling.
+  assert.ok(source === "route" ? f.checked >= expectedRoutes && f.checked <= 400 : f.checked === 12,
+    "Monitoring coverage falls below the reviewed minimum or browser inventory changed.");
   assert.equal(job.conclusion, f.failed > 0 ? "failure" : "success", "Report outcome contradicts monitor job.");
   if (purpose === "healthy") assert.equal(f.failed, 0, "Failed monitor evidence cannot authorize downstream automation.");
   const observed = isoTime(f.observedAt), updated = isoTime(issue.updated_at);

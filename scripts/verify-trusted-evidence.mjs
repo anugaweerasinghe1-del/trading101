@@ -87,6 +87,25 @@ assert.equal(packet.githubActions[0].checks.length, 3, "Reusable Cloudflare evid
 assert.deepEqual(Object.values(packet.authorization), [false, false, false, false, false]);
 assert.ok(!/PRIVATE_(?:TOKEN|REPORT|LOG)_SENTINEL/.test(JSON.stringify(packet)));
 assert.ok(f.calls.every(x => x.startsWith(root)));
+// Production's dynamic sitemap grew from 352 to 357 checked URLs. Accept
+// extra attested coverage without lowering the fixed reviewed minimum.
+f = fixture();
+f.reports[0].body = f.reports[0].body.replace("**URLs checked:** 352", "**URLs checked:** 357");
+f.logs[0] = "2026-10-11T05:04:00.0000000Z " + ATTESTATION_PREFIX
+  + JSON.stringify(makeAttestation("route", f.reports[0].body, f.reports[0], {
+    GITHUB_REPOSITORY: EVIDENCE_REPOSITORY, GITHUB_REPOSITORY_ID: String(EVIDENCE_REPOSITORY_ID),
+    GITHUB_RUN_ID: String(runId), GITHUB_RUN_ATTEMPT: "2", GITHUB_SHA: monitorSha,
+  }));
+const expandedCoverage = await collectTrustedEvidence({ ...options, reader: readerFor(f) });
+assert.equal(expandedCoverage.monitoring.reports.find(report => report.source === "route").checked, 357);
+f = fixture();
+f.reports[0].body = f.reports[0].body.replace("**URLs checked:** 352", "**URLs checked:** 351");
+f.logs[0] = "2026-10-11T05:04:00.0000000Z " + ATTESTATION_PREFIX
+  + JSON.stringify(makeAttestation("route", f.reports[0].body, f.reports[0], {
+    GITHUB_REPOSITORY: EVIDENCE_REPOSITORY, GITHUB_REPOSITORY_ID: String(EVIDENCE_REPOSITORY_ID),
+    GITHUB_RUN_ID: String(runId), GITHUB_RUN_ATTEMPT: "2", GITHUB_SHA: monitorSha,
+  }));
+await assert.rejects(collectTrustedEvidence({ ...options, reader: readerFor(f) }), /coverage falls below/);
 // PR #125: only release readiness was rerun; required successes were retained.
 // GitHub updates run_started_at, but the effective jobs still bind these checks
 // to the exact same immutable run. Rerun timestamps cannot prove membership.
