@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
-import {requiredCiReady,validationRunReady,waitForRequiredCi} from './agent-evidence-ci-wait.mjs';
+import {CI_WAIT_POLL_LIMIT,requiredCiReady,validationRunReady,waitForRequiredCi} from './agent-evidence-ci-wait.mjs';
+assert.equal(CI_WAIT_POLL_LIMIT,90,'The collector needs enough bounded time for the real Chromium CI sweep');
 const sha='a'.repeat(40),names=['TradeHQ Phase 3 tests','TradeHQ Cloudflare compatibility / Cloudflare build and SEO','TradeHQ Required validation'];
 const checks=names.map(name=>({name,head_sha:sha,app:{id:15368,slug:'github-actions'},status:'completed',conclusion:'success'}));
 assert.equal(requiredCiReady(checks,sha),true);assert.equal(requiredCiReady([],sha),false);
@@ -22,5 +23,5 @@ polls=0;waits=0;
 await waitForRequiredCi({sha,read:async path=>path==='/branches/main'?{commit:{sha}}:path.startsWith('/actions/runs?')?{total_count:1,workflow_runs:[++polls===1?{...run,status:'in_progress',conclusion:null}:run]}:{total_count:3,check_runs:checks},wait:async()=>{waits++}});
 assert.equal(waits,1,'Successful required gates must still wait for release verification and complete upstream run');
 await assert.rejects(waitForRequiredCi({sha,read:async()=>({commit:{sha:'b'.repeat(40)}}),wait:async()=>{throw Error('Should not wait')}}),/Main changed/);
-polls=0;await assert.rejects(waitForRequiredCi({sha,read:async path=>path==='/branches/main'?{commit:{sha}}:{total_count:0,check_runs:[]},wait:async()=>{polls++}}),/bounded wait/);assert.equal(polls,17);
+polls=0;await assert.rejects(waitForRequiredCi({sha,read:async path=>path==='/branches/main'?{commit:{sha}}:{total_count:0,check_runs:[]},wait:async()=>{polls++}}),/bounded wait/);assert.equal(polls,CI_WAIT_POLL_LIMIT-1);
 console.log('Read-only CI wait: pending may finish; explicit failure/skipped/wrong app/SHA/duplicate/race and bounded exhaustion deny');
