@@ -30,7 +30,7 @@ const schema = z.object({
 
 export default function Auth() {
   const [mode, setMode] = useState<"signin" | "signup">(() =>
-    new URLSearchParams(window.location.search).get("mode") === "signup" ? "signup" : "signin");
+    typeof window !== "undefined" && new URLSearchParams(window.location.search).get("mode") === "signup" ? "signup" : "signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
