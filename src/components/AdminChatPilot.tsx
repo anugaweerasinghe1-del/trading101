@@ -7,9 +7,23 @@ export default function AdminChatPilot({ adminKey, onDraft }: { adminKey: string
   const [reply, setReply] = useState<Reply | null>(null);
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
+  const [readiness, setReadiness] = useState<'checking' | 'configured' | 'paused' | 'unavailable'>('checking');
   const active = useRef(true);
   const pending = useRef(false);
   useEffect(() => { active.current = true; return () => { active.current = false; }; }, []);
+  useEffect(() => {
+    let current = true;
+    setReadiness('checking');
+    // This checks configuration only: no model call, quota debit or provider claim.
+    void supabase.functions.invoke('admin-agent-chat', {
+      body: { action: 'status' }, headers: { 'x-admin-key': adminKey },
+    }).then(({ data, error }) => {
+      if (!current || !active.current) return;
+      setReadiness(error ? 'unavailable' : data?.code === 'CONFIGURED_NOT_TESTED'
+        ? 'configured' : data?.code === 'PILOT_PAUSED' ? 'paused' : 'unavailable');
+    }).catch(() => { if (current && active.current) setReadiness('unavailable'); });
+    return () => { current = false; };
+  }, [adminKey]);
   async function submit(event: React.FormEvent) {
     event.preventDefault(); if (pending.current || message.trim().length < 10) return;
     pending.current = true;
@@ -40,13 +54,19 @@ export default function AdminChatPilot({ adminKey, onDraft }: { adminKey: string
   return <section className="rounded-2xl border border-border bg-card/60 p-5 sm:p-6 space-y-4">
     <h2 className="text-xl font-semibold">Admin assistant · pilot</h2>
     <p className="text-sm text-muted-foreground">Ask for help drafting a narrow frontend change or planning an investigation. Suggestions are unverified; the assistant cannot change code or release anything.</p>
+    <p role="status" className="text-xs text-muted-foreground">{
+      readiness === 'configured' ? 'Configuration present (provider response and remaining quota not yet verified).' :
+      readiness === 'paused' ? 'Pilot paused: fresh free-tier key/quota review configuration is needed before a provider request.' :
+      readiness === 'checking' ? 'Checking pilot configuration without using a model attempt…' :
+      'Could not verify pilot configuration. No model attempt was used.'
+    }</p>
     <p className="text-xs text-muted-foreground">Initial pilot: one provider attempt per UTC day, including failed attempts. No automatic retries. Messages stay in this page's temporary memory and are sent to Gemini only when you submit. A successful reply is not proof that its claims are correct; verify before implementing.</p>
     <form onSubmit={submit} className="space-y-3">
       <label className="block text-sm space-y-2"><span>Website question or change description</span>
         <textarea value={message} onChange={e => setMessage(e.target.value)} maxLength={1200} rows={4} required minLength={10} placeholder="Help me write a request to improve the About page spacing on mobile." className="w-full rounded-xl border border-border bg-background p-3" />
       </label>
       <p className="text-xs text-muted-foreground">Use general website descriptions. Do not include keys, passwords, contact details, private logs or account records.</p>
-      <button type="submit" disabled={busy || message.trim().length < 10} className="rounded-xl bg-primary text-primary-foreground px-4 py-3 text-sm disabled:opacity-50">{busy ? 'Preparing a suggestion…' : 'Ask assistant'}</button>
+      <button type="submit" disabled={busy || readiness !== 'configured' || message.trim().length < 10} className="rounded-xl bg-primary text-primary-foreground px-4 py-3 text-sm disabled:opacity-50">{busy ? 'Preparing a suggestion…' : 'Ask assistant'}</button>
     </form>
     {error && <p role="alert" className="text-sm text-amber-500">{error}</p>}
     {reply && <div role="status" aria-live="polite" className="rounded-xl border border-border p-4 space-y-3">
