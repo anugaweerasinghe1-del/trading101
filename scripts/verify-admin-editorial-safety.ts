@@ -8,6 +8,8 @@ const generator = source('src/components/courses/CourseGenerationSettings.tsx');
 const queue = source('src/components/AdminCodeQueue.tsx');
 const controls = source('src/components/AdminRepairControls.tsx');
 const dashboard = source('src/pages/AdminDashboard.tsx');
+const dailyDesk = source('src/pages/AdminDaily.tsx');
+const adminHandler = source('supabase/functions/_shared/courseAdmin.ts');
 const inbox = source('src/components/admin/AutomationInbox.tsx');
 
 // All actions that can replace the newsletter editor must ask before
@@ -60,4 +62,16 @@ assert.match(inbox, /\[newsletterEdits, 'Newsletter', '\/admin\/newsletter'\]/);
 assert.match(inbox, /item\.to\.endsWith\('newsletter'\) \? 'Newsletter desk'/);
 assert.match(inbox, /name === 'Newsletter' && rows\.length >= 16/);
 assert.match(inbox, /Newsletter review list may be incomplete/);
+// The two publishing desks must now require a live owner login as well as a
+// private admin key. No model call or publication occurs in dashboard readiness.
+assert.match(dailyDesk, /supabase\.auth\.getSession\(\)/);
+assert.match(dailyDesk, /bearerToken = auth\.session\.access_token/);
+assert.match(dailyDesk, /registered owner's website login alongside the master key/);
+assert.match(adminHandler, /if \(body\.action === "daily-publish"\) \{/);
+assert.match(adminHandler, /body\.reviewer = "TradeHQ owner \(authenticated\)"/);
+assert.match(dashboard, /body: \{ action: "status" \}/);
+assert.match(dashboard, /CONFIGURED_NOT_TESTED/);
+assert.match(dashboard, /PILOT_PAUSED/);
+assert.match(dashboard, /setChatReadiness\(null\); warnings\.push/);
+assert.doesNotMatch(dashboard, />Weekly Newsletter</);
 console.log('ADMIN_EDITORIAL_SAFETY_PASS: unsaved editorial review, saved-only generation, owner sign-out late-response fencing and independent newsletter totals');
