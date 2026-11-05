@@ -234,6 +234,8 @@ const fetcher = (async (url: string | URL | Request, init?: RequestInit) => {
 }) as typeof fetch;
 const generated = await generateCourse(claim, fetcher);
 assert.equal(generated.research.method, "Owner topic requests"); assert.equal(aiCalls, 2);
+assert.equal(generated.research.independentReviewStatus, "PASS");
+assert.equal(generated.research.independentReviewDigest, await courseReviewDigest(generated.document));
 await assert.rejects(generateCourse({ ...claim, topicRequests: [] }, fetcher), /Connect Search Console/);
 assert.equal(aiCalls, 2);
 const rejectedFixture = JSON.stringify({ error: { status: "INVALID_ARGUMENT", message: "provider-private-test-value",
