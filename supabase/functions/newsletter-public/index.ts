@@ -108,10 +108,10 @@ Deno.serve(async (req: Request) => {
        "Idempotency-Key":"tradehq-optin-"+confirmationHash.slice(0,32)},
       body:JSON.stringify({
         from:"TradeHQ <"+sender+">",to:[email],
-        subject:"Confirm your TradeHQ Weekly subscription",
-        text:"Please confirm that you requested TradeHQ Weekly. Confirm: "+link+
+        subject:"Confirm your TradeHQ Newsletter subscription",
+        text:"Please confirm that you requested TradeHQ Newsletter. Confirm: "+link+
           "\n\nIf you didn't ask for this, ignore this email. No subscription is active until you confirm.",
-        html:'<!doctype html><html><body style="font-family:Arial,sans-serif;background:#f5f7fa;padding:32px"><div style="max-width:520px;margin:auto;padding:28px;background:#fff;color:#152238;border-radius:12px"><h1 style="font-size:23px">One click to confirm</h1><p>You requested the free TradeHQ Weekly newsletter. Confirm your email address to receive educational lessons.</p><p><a href="'+link+'" style="display:inline-block;padding:12px 18px;border-radius:8px;background:#165f9d;color:#fff">Confirm my subscription</a></p><p style="font-size:12px;color:#64748b">If you did not request this, simply ignore the message.</p></div></body></html>',
+        html:'<!doctype html><html><body style="font-family:Arial,sans-serif;background:#f5f7fa;padding:32px"><div style="max-width:520px;margin:auto;padding:28px;background:#fff;color:#152238;border-radius:12px"><h1 style="font-size:23px">One click to confirm</h1><p>You requested the free TradeHQ Newsletter newsletter. Confirm your email address to receive educational lessons.</p><p><a href="'+link+'" style="display:inline-block;padding:12px 18px;border-radius:8px;background:#165f9d;color:#fff">Confirm my subscription</a></p><p style="font-size:12px;color:#64748b">If you did not request this, simply ignore the message.</p></div></body></html>',
       }),
       signal:AbortSignal.timeout(12000),
     }).catch(()=>null);
