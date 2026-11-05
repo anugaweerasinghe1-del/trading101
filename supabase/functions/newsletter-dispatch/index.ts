@@ -40,11 +40,11 @@ function mailHtml(title:string,preheader:string,md:string,unsubscribeUrl:string)
  return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="color-scheme" content="light"><title>'+
  escape(title)+'</title></head><body style="margin:0;padding:28px 12px;background:#f4f6fa;font-family:Arial,sans-serif;color:#243047">'+
  '<div style="max-width:640px;margin:auto;background:#ffffff;border:1px solid #e5eaf1;border-radius:14px;padding:35px">'+
- '<div style="font-size:11px;letter-spacing:3px;color:#3d6185;font-weight:bold">TRADEHQ WEEKLY</div>'+
+ '<div style="font-size:11px;letter-spacing:3px;color:#3d6185;font-weight:bold">TRADEHQ NEWSLETTER</div>'+
  '<p style="font-size:13px;color:#627184;margin:22px 0">'+escape(preheader)+'</p>'+
  '<div style="font-size:15px;line-height:1.8">'+content+'</div>'+
  '<div style="border-top:1px solid #e5eaf1;margin-top:28px;padding-top:18px;color:#6b7789;font-size:12px;line-height:1.6">'+
- 'You subscribed to TradeHQ Weekly, an independent beginner financial-education newsletter. '+
+ 'You subscribed to TradeHQ Newsletter, an independent beginner financial-education newsletter. '+
  '<a href="'+unsubscribeUrl+'" style="color:#145baf">Unsubscribe instantly</a> · '+
  '<a href="'+SITE+'/privacy" style="color:#145baf">Privacy</a>. Financial education only.</div>'+
  '</div></body></html>';

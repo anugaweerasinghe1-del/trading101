@@ -26,6 +26,14 @@ assert.match(migration,/REVOKE ALL ON public.newsletter_contacts FROM PUBLIC, an
 assert.match(publisher,/ADMIN_MASTER_KEY/);
 assert.match(publisher,/RESEND_WEBHOOK_SECRET/);
 assert.match(publisher,/List-Unsubscribe-Post/);
+// Outbound branding must match the public TradeHQ Newsletter name, not the
+// legacy "TradeHQ Weekly" title. Cadence can still be weekly.
+assert.match(publicApi, /Confirm your TradeHQ Newsletter subscription/);
+assert.match(publicApi, /Please confirm that you requested TradeHQ Newsletter/);
+assert.match(publisher, /TRADEHQ NEWSLETTER/);
+assert.match(publisher, /You subscribed to TradeHQ Newsletter/);
+assert.doesNotMatch(publicApi, /TradeHQ Weekly/);
+assert.doesNotMatch(publisher, /TradeHQ Weekly|TRADEHQ WEEKLY/);
 assert.match(publisher,/Idempotency-Key/);
 assert.match(publisher,/eq\("status","confirmed"\)/);
 assert.match(publisher,/60-\(today.count/);
