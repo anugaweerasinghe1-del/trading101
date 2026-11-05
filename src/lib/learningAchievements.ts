@@ -1,7 +1,12 @@
 import type { CourseProgressState } from "./courseProgress";
-import type { CourseTrack } from "./coursesData";
-
-export type TrophyCatalogTrack = Pick<CourseTrack, "slug" | "title" | "badge" | "lessons">;
+// Keep the calculation import-free and compatible with both built-in and
+// newly published courses; it does not need the course's body or quiz answers.
+export type TrophyCatalogTrack = {
+  slug: string;
+  title: string;
+  badge: { name: string };
+  lessons: { slug: string }[];
+};
 
 export type PersonalMilestone = {
   id: string;
