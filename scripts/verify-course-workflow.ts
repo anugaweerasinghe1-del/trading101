@@ -137,6 +137,35 @@ assert.equal((await handler(request({ action: "publish", id: "12345678-1234-1234
 assert.equal(writes, 0);
 assert.equal((await handler(request({ action: "save", document }))).status, 200);
 assert.equal(writes, 1);
+// Publication requires BOTH master key and a Supabase-verified designated owner.
+let authorizedPublishes = 0; let publishedReviewer = '';
+const ownerHandler = createCourseAdminHandler({
+  getKey: () => 'test-owner-key', rateLimit: async () => true,
+  authorizePublish: req => verifyCoursePublicationOwner(req, ownerUuid,
+    async jwt => jwt === jwtFixture ? ownerUuid : null),
+  store: {
+    list: async () => [], save: async () => ({}),
+    publish: async (_id, _revision, reviewer) => {
+      authorizedPublishes++; publishedReviewer = reviewer; return {};
+    },
+    reject: async () => ({}), settings: async () => ({}),
+    configure: async () => ({}), run: async () => ({}),
+  },
+});
+const publicationBody = { action: 'publish', id: ownerUuid,
+  revision: 1, reviewed: true, reviewer: 'User-typed impersonated reviewer' };
+const publicationRequest = (jwt: string | null, key = 'test-owner-key') =>
+  new Request('https://example.test', { method: 'POST',
+    headers: { 'x-admin-key': key, ...(jwt ? { authorization: 'Bearer ' + jwt } : {}) },
+    body: JSON.stringify(publicationBody) });
+assert.equal((await ownerHandler(publicationRequest(null))).status, 403);
+assert.equal((await ownerHandler(publicationRequest('wrong-token-value-for-test'))).status, 403);
+assert.equal((await ownerHandler(publicationRequest(jwtFixture, 'wrong-key'))).status, 401);
+assert.equal(authorizedPublishes, 0);
+assert.equal((await ownerHandler(publicationRequest(jwtFixture))).status, 200);
+assert.equal(authorizedPublishes, 1);
+assert.equal(publishedReviewer, 'TradeHQ owner (authenticated)');
+assert.notEqual(publishedReviewer, publicationBody.reviewer);
 
 const shell = '<html><head><title>Shell</title><meta name="robots" content="noindex, follow"></head><body><div id="root"></div></body></html>';
 const hostile = structuredClone(document); hostile.title = "</script><script>alert(1)</script>";
