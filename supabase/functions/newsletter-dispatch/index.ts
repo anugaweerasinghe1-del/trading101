@@ -1,5 +1,6 @@
 import { createClient } from "npm:@supabase/supabase-js@2.75.1";
 import { allow, clientIp } from "../_shared/rateLimit.ts";
+import { verifyNewsletterDispatchOwner } from "../_shared/newsletterDispatchAuth.ts";
 
 const db = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!, {
   auth:{persistSession:false},
@@ -20,6 +21,17 @@ const validKey=(expect:string|undefined,actual:string|null)=>{
  return d===0;
 };
 const SITE="https://www.thetradehq.com";
+
+// Reuse the same private owner registration as course and Daily publication.
+async function authorizedOwner(req: Request): Promise<boolean> {
+  return verifyNewsletterDispatchOwner(req, async () => {
+    const { data, error } = await db.rpc("tradehq_repair_registered_owner");
+    return error || typeof data !== "string" ? null : data;
+  }, async jwt => {
+    const { data, error } = await db.auth.getUser(jwt);
+    return error ? null : data.user?.id ?? null;
+  });
+}
 function safeInline(raw:string){
  let s=escape(raw);
  s=s.replace(/\[([^\]\n]{1,120})\]\((https:\/\/[a-z0-9.-]+\/[^\s)<>]{0,400})\)/gi,
@@ -79,7 +91,15 @@ Deno.serve(async req => {
      limitInfo:"At most 20 recipients per manual publish request; 60 newsletters/day and 2000/month by application guard. Confirmation emails also consume Resend's provider quota.",
     }});
   }
+  if(input?.action==="publish-readiness") {
+    if(Object.keys(input).length!==1) return reply({error:"Invalid readiness request"},400);
+    if(!await authorizedOwner(req)) return reply({error:"Registered owner login required in addition to the admin key"},403);
+    // Read-only identity check; no delivery ledger read, Resend call, or send.
+    return reply({data:{ownerVerified:true,emailsSent:0,providerAttemptMade:false}});
+  }
   if(input?.action!=="publish"||input?.confirmed!==true)return reply({error:"Explicit publish confirmation required"},400);
+  // Authorization must precede edition, subscriber and delivery ledger access.
+  if(!await authorizedOwner(req)) return reply({error:"Registered owner login required in addition to the admin key"},403);
   const id=input.editionId,rev=input.revision;
   if(typeof id!=="string"||!/^[a-f0-9-]{36}$/i.test(id)||!Number.isInteger(rev))
    return reply({error:"Invalid edition"},400);
