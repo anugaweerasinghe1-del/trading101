@@ -633,6 +633,7 @@ function extraRoutes(): RouteMeta[] {
     out.push({ path: entry[0], title: entry[1] + " | TradeHQ", description: "Restricted TradeHQ administration utility.", h1: entry[1], summary: "Owner-only workspace for TradeHQ administration.", priority: "0.1", changefreq: "monthly", noindex: true });
   }
   out.push({ path: "/admin/daily", title: "Daily Practice Administration | TradeHQ", description: "Private owner editing and approval for daily practice banks.", h1: "Daily practice administration", summary: "Owner administration requires the master key.", priority: "0.1", changefreq: "monthly", noindex: true });
+  out.push({ path: "/achievements", title: "My Trophy Cabinet — Personal Learning | TradeHQ", description: "Private, personal progress and learning milestones. No independently verified public trophies.", h1: "My Trophy Cabinet", summary: "A personal, private reflection of saved course lessons. No public trophies or rankings are awarded here.", priority: "0.1", changefreq: "monthly", noindex: true });
   return out;
 }
 
