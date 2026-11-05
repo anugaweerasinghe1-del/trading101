@@ -158,6 +158,24 @@ const publicationRequest = (jwt: string | null, key = 'test-owner-key') =>
   new Request('https://example.test', { method: 'POST',
     headers: { 'x-admin-key': key, ...(jwt ? { authorization: 'Bearer ' + jwt } : {}) },
     body: JSON.stringify(publicationBody) });
+// A real owner can validate authorization without touching any course revision.
+const readinessRequest = (jwt: string | null, key = 'test-owner-key', extras = {}) =>
+  new Request('https://example.test', { method: 'POST',
+    headers: { 'x-admin-key': key, ...(jwt ? { authorization: 'Bearer ' + jwt } : {}) },
+    body: JSON.stringify({ action: 'publish-readiness', ...extras }) });
+assert.equal((await handler(readinessRequest(jwtFixture))).status, 503,
+  'A handler without an owner verifier must fail closed');
+assert.equal((await ownerHandler(readinessRequest(null))).status, 403);
+assert.equal((await ownerHandler(readinessRequest('wrong-token-value-for-test'))).status, 403);
+assert.equal((await ownerHandler(readinessRequest(jwtFixture, 'wrong-key'))).status, 401);
+assert.equal((await ownerHandler(readinessRequest(jwtFixture, 'test-owner-key', { reviewed: true }))).status, 400);
+const readinessResponse = await ownerHandler(readinessRequest(jwtFixture));
+assert.equal(readinessResponse.status, 200);
+assert.deepEqual(await readinessResponse.json(), {
+  data: { ownerVerified: true, publicationPerformed: false, aiAttemptMade: false },
+});
+assert.equal(authorizedPublishes, 0, 'Owner preflight never calls publication');
+assert.equal(writes, 1, 'Owner preflight leaves drafts untouched');
 assert.equal((await ownerHandler(publicationRequest(null))).status, 403);
 assert.equal((await ownerHandler(publicationRequest('wrong-token-value-for-test'))).status, 403);
 assert.equal((await ownerHandler(publicationRequest(jwtFixture, 'wrong-key'))).status, 401);

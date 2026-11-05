@@ -49,6 +49,15 @@ export function createCourseAdminHandler(options: {
       if (body.action === "settings") return response({ data: await options.store.settings() });
       if (body.action === "configure") return response({ data: await options.store.configure(body.settings) });
       if (body.action === "generate") return response({ data: await options.store.run() });
+      // Identity-only preflight: same protected owner gate as publication, without
+      // reading or changing a draft, spending an AI attempt, or publishing content.
+      if (body.action === "publish-readiness") {
+        if (Object.keys(body).length !== 1) return response({ error: "Invalid readiness request." }, 400);
+        if (!options.authorizePublish) return response({ error: "Owner verification is unavailable." }, 503);
+        if (!await options.authorizePublish(req))
+          return response({ error: "Sign in with the registered owner account in addition to providing the admin key." }, 403);
+        return response({ data: { ownerVerified: true, publicationPerformed: false, aiAttemptMade: false } });
+      }
       const id = typeof body.id === "string" && /^[0-9a-f-]{36}$/i.test(body.id) ? body.id : null;
       const revision = Number.isInteger(body.revision) && Number(body.revision) > 0 ? Number(body.revision) : null;
       if (body.action === "save") {
