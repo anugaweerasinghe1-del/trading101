@@ -12,7 +12,8 @@ export interface CourseAdminStore {
   run: () => Promise<unknown>;
 }
 export function createCourseAdminHandler(options: {
-  getKey: () => string | undefined; rateLimit: (req: Request) => Promise<boolean>; store: CourseAdminStore;
+  getKey: () => string | undefined; rateLimit: (req: Request) => Promise<boolean>;
+  authorizePublish?: (req: Request) => Promise<boolean>; store: CourseAdminStore;
 }) {
   const headers = { "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-admin-key",
@@ -61,13 +62,19 @@ export function createCourseAdminHandler(options: {
         if (body.reviewed !== true || typeof body.reviewer !== "string" || body.reviewer.trim().length < 2 || body.reviewer.length > 80) {
           return response({ error: "Confirm your review and enter the reviewer's name." }, 400);
         }
-        return response({ data: await options.store.publish(id, revision, body.reviewer.trim()) });
+        if (options.authorizePublish && !await options.authorizePublish(req))
+          return response({ error: "Course approval requires the designated owner to be signed in as well as the master key." }, 403);
+        // Typed display names are not authorization evidence. Store a stable,
+        // accurate attribution only after the owner identity was authenticated.
+        return response({ data: await options.store.publish(id, revision,
+          options.authorizePublish ? "TradeHQ owner (authenticated)" : body.reviewer.trim()) });
       }
       if (body.action === "reject") return response({ data: await options.store.reject(id, revision) });
       return response({ error: "Unknown action." }, 400);
     } catch (error) {
       const message = error instanceof Error ? error.message : "";
-      const known = ["Course changed", "Course URL", "Published lesson", "Course is incomplete", "Course not found", "Daily bank"];
+      const known = ["Course changed", "Course URL", "Published lesson", "Course is incomplete", "Course not found", "Daily bank",
+        "Independent course review", "Free AI quota", "Course publication configuration", "Too few verified sources"];
       return response({ error: known.some(s => message.startsWith(s)) ? message : "Could not save the course. Please retry." }, 409);
     }
   };
