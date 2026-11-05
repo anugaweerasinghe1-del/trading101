@@ -3,6 +3,7 @@ import { readFileSync, readdirSync } from "node:fs";
 import { PGlite } from "@electric-sql/pglite";
 import { courseCovers, lessonWordCount, validateCourseDocument, type CourseDocument } from "../supabase/functions/_shared/courseDocument.ts";
 import { createCourseAdminHandler } from "../supabase/functions/_shared/courseAdmin.ts";
+import { courseReviewDigest, requireExactRevisionReview, stableCourseJson, verifyCoursePublicationOwner } from "../supabase/functions/_shared/coursePublicationGate.ts";
 import { generateCourse, courseReferences, GENERATION_READ_LIMITS } from "../supabase/functions/_shared/courseGenerator.ts";
 import { reviewCourseQuality } from "../supabase/functions/_shared/courseQualityGate.ts";
 import { checkCourseDemand } from "../supabase/functions/_shared/courseDemandCheck.ts";
@@ -68,6 +69,37 @@ const document: CourseDocument = {
   })),
 };
 assert.deepEqual(validateCourseDocument(document, true), []);
+// Exact content attestations survive JSONB key reordering and never trigger
+// an extra model call for the same reviewed content.
+const originalDigest = await courseReviewDigest(document);
+assert.match(originalDigest, /^[a-f0-9]{64}$/);
+assert.equal(await courseReviewDigest(JSON.parse(stableCourseJson(document))), originalDigest);
+let independentReviewCalls = 0;
+const independentReview = async () => { independentReviewCalls++; };
+assert.equal(await requireExactRevisionReview(document,
+  { independentReviewStatus: "PASS", independentReviewDigest: originalDigest },
+  independentReview), "original_review_verified");
+assert.equal(independentReviewCalls, 0);
+const editedRevision = structuredClone(document); editedRevision.title = "A changed title";
+assert.equal(await requireExactRevisionReview(editedRevision,
+  { independentReviewStatus: "PASS", independentReviewDigest: originalDigest },
+  independentReview), "fresh_review_passed");
+assert.equal(independentReviewCalls, 1);
+await requireExactRevisionReview(document, { independentReviewStatus: "PASS" }, independentReview);
+assert.equal(independentReviewCalls, 2, "Legacy drafts require new independent review");
+await assert.rejects(requireExactRevisionReview(editedRevision,
+  { independentReviewStatus: "PASS", independentReviewDigest: originalDigest },
+  async () => { throw Error("Free AI quota exhausted"); }), /quota exhausted/);
+const ownerUuid = "12345678-1234-1234-1234-123456789012";
+const jwtFixture = "test-fixture-jwt-no-secrets";
+const ownerRequest = (jwt: string | null) => new Request("https://example.test", {
+  headers: jwt ? { Authorization: "Bearer " + jwt } : {},
+});
+assert.equal(await verifyCoursePublicationOwner(ownerRequest(jwtFixture), undefined, async () => ownerUuid), false);
+assert.equal(await verifyCoursePublicationOwner(ownerRequest(null), ownerUuid, async () => ownerUuid), false);
+assert.equal(await verifyCoursePublicationOwner(ownerRequest(jwtFixture), ownerUuid, async () => "other"), false);
+assert.equal(await verifyCoursePublicationOwner(ownerRequest(jwtFixture), ownerUuid, async () => ownerUuid), true);
+assert.equal(await verifyCoursePublicationOwner(ownerRequest(jwtFixture), ownerUuid, async () => { throw Error("Auth outage"); }), false);
 const boundary = structuredClone(document);
 boundary.lessons[0].body = [Array(550).fill("word").join(" "), "## Heading words do not make a short lesson long enough"];
 assert.equal(lessonWordCount(boundary.lessons[0].body), 550);
@@ -105,6 +137,35 @@ assert.equal((await handler(request({ action: "publish", id: "12345678-1234-1234
 assert.equal(writes, 0);
 assert.equal((await handler(request({ action: "save", document }))).status, 200);
 assert.equal(writes, 1);
+// Publication requires BOTH master key and a Supabase-verified designated owner.
+let authorizedPublishes = 0; let publishedReviewer = '';
+const ownerHandler = createCourseAdminHandler({
+  getKey: () => 'test-owner-key', rateLimit: async () => true,
+  authorizePublish: req => verifyCoursePublicationOwner(req, ownerUuid,
+    async jwt => jwt === jwtFixture ? ownerUuid : null),
+  store: {
+    list: async () => [], save: async () => ({}),
+    publish: async (_id, _revision, reviewer) => {
+      authorizedPublishes++; publishedReviewer = reviewer; return {};
+    },
+    reject: async () => ({}), settings: async () => ({}),
+    configure: async () => ({}), run: async () => ({}),
+  },
+});
+const publicationBody = { action: 'publish', id: ownerUuid,
+  revision: 1, reviewed: true, reviewer: 'User-typed impersonated reviewer' };
+const publicationRequest = (jwt: string | null, key = 'test-owner-key') =>
+  new Request('https://example.test', { method: 'POST',
+    headers: { 'x-admin-key': key, ...(jwt ? { authorization: 'Bearer ' + jwt } : {}) },
+    body: JSON.stringify(publicationBody) });
+assert.equal((await ownerHandler(publicationRequest(null))).status, 403);
+assert.equal((await ownerHandler(publicationRequest('wrong-token-value-for-test'))).status, 403);
+assert.equal((await ownerHandler(publicationRequest(jwtFixture, 'wrong-key'))).status, 401);
+assert.equal(authorizedPublishes, 0);
+assert.equal((await ownerHandler(publicationRequest(jwtFixture))).status, 200);
+assert.equal(authorizedPublishes, 1);
+assert.equal(publishedReviewer, 'TradeHQ owner (authenticated)');
+assert.notEqual(publishedReviewer, publicationBody.reviewer);
 
 const shell = '<html><head><title>Shell</title><meta name="robots" content="noindex, follow"></head><body><div id="root"></div></body></html>';
 const hostile = structuredClone(document); hostile.title = "</script><script>alert(1)</script>";
@@ -173,6 +234,8 @@ const fetcher = (async (url: string | URL | Request, init?: RequestInit) => {
 }) as typeof fetch;
 const generated = await generateCourse(claim, fetcher);
 assert.equal(generated.research.method, "Owner topic requests"); assert.equal(aiCalls, 2);
+assert.equal(generated.research.independentReviewStatus, "PASS");
+assert.equal(generated.research.independentReviewDigest, await courseReviewDigest(generated.document));
 await assert.rejects(generateCourse({ ...claim, topicRequests: [] }, fetcher), /Connect Search Console/);
 assert.equal(aiCalls, 2);
 const rejectedFixture = JSON.stringify({ error: { status: "INVALID_ARGUMENT", message: "provider-private-test-value",

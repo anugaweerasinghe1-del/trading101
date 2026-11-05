@@ -42,6 +42,19 @@ export function createAdminAgentChat(options: Options) {
       if (!keyMatches(options.getAdminKey(), req.headers.get('x-admin-key'))) return response({ error: 'Administrator verification required.' }, 401);
       let body: unknown;
       try { body = JSON.parse(await boundedText(req.body, ADMIN_CHAT_LIMITS.bodyBytes)); } catch { return response({ error: 'Invalid or oversized request.' }, 400); }
+      // Readiness is a free, non-provider diagnostic. It does not reserve the
+      // once-daily pilot quota, reveal keys, or claim the provider is reachable.
+      if (exact(body, ['action']) && body.action === 'status') {
+        const review = options.getFreeReviewAt();
+        const reviewedAt = Date.parse(review ?? '');
+        const current = now();
+        const configured = !!options.getGeminiKey() && !!review &&
+          /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/.test(review) &&
+          Number.isFinite(reviewedAt) && reviewedAt <= current &&
+          current - reviewedAt <= ADMIN_CHAT_LIMITS.reviewDays * 86400000;
+        return response({ code: configured ? 'CONFIGURED_NOT_TESTED' : 'PILOT_PAUSED',
+          providerAttemptMade: false, quotaVerified: false });
+      }
       if (!exact(body, ['message']) || typeof body.message !== 'string' || body.message.trim().length < 10 || body.message.length > ADMIN_CHAT_LIMITS.messageChars || /[\u0000-\u001f\u007f]/.test(body.message) || privateInput(body.message)) return response({ error: 'Use a short website-change description without credentials, contact details, URLs or private records.' }, 400);
       const apiKey = options.getGeminiKey(); const review = options.getFreeReviewAt(); const at = Date.parse(review ?? ''); const current = now();
       if (!apiKey || !review || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/.test(review) || !Number.isFinite(at) || new Date(at).toISOString() !== review || at > current || current - at > ADMIN_CHAT_LIMITS.reviewDays * 86400000) return response({ code: 'PILOT_PAUSED', error: 'Chat is paused until its Free-project key and current quota review are configured.' }, 503);

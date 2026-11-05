@@ -9,10 +9,34 @@ import { recordChallenge, getStreak, hasPlayedQuickToday, getTodayChallenge } fr
 import { newPractice, readPractice, savePractice, upgradePractice, validProgress } from '../src/lib/dailyPracticeProgress.ts';
 import { createCourseAdminHandler } from '../supabase/functions/_shared/courseAdmin.ts';
 import { generatePractice } from '../supabase/functions/_shared/dailyPracticeGenerator.ts';
+import { checkGeminiModelMetadata } from '../supabase/functions/_shared/geminiModelPreflight.ts';
 import { hasRepeatedPracticeCase, reviewPracticeExercises } from '../supabase/functions/_shared/dailyPracticeReview.ts';
 import { readGenerationResponse, GENERATION_READ_LIMITS } from '../supabase/functions/_shared/courseGenerator.ts';
 import { createServer } from 'node:http';
 import { dailyGenerationReadiness, type DailyGenerationStatus } from '../src/lib/dailyGenerationStatus.ts';
+// Non-generating metadata probe: no paid model call and no generation counters.
+let metadataCalls = 0;
+const checkSettings = { freeConfirmed: true, model: 'gemini-3.5-flash-lite', apiKey: 'test-key' };
+const metadataFetcher = (async (url: string | URL | Request, init?: RequestInit) => {
+  metadataCalls++;
+  assert.equal(String(url), 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite');
+  assert.equal(init?.method, 'GET');
+  assert.equal(init?.body, undefined);
+  assert.equal(new Headers(init?.headers).get('x-goog-api-key'), checkSettings.apiKey);
+  return new Response(JSON.stringify({ name: 'models/gemini-3.5-flash-lite',
+    supportedGenerationMethods: ['generateContent'] }));
+}) as typeof fetch;
+assert.equal((await checkGeminiModelMetadata(checkSettings, metadataFetcher)).code, 'MODEL_REACHABLE');
+assert.equal(metadataCalls, 1);
+assert.deepEqual(await checkGeminiModelMetadata({ ...checkSettings, freeConfirmed: false }, metadataFetcher), {
+  code: 'NOT_CONFIGURED', providerGenerationAttempted: false, generationWorkingVerified: false,
+});
+assert.equal(metadataCalls, 1, 'Missing/unsafe configuration must not touch provider');
+const rejected = await checkGeminiModelMetadata(checkSettings, (async () =>
+  new Response('secret must not appear', { status: 400 })) as typeof fetch);
+assert.deepEqual(rejected, { code: 'PROVIDER_REJECTED', httpStatus: 400,
+  providerGenerationAttempted: false, generationWorkingVerified: false });
+assert.ok(!JSON.stringify(rejected).includes('secret'));
 const clock = Date.parse('2026-10-15T16:14:33Z');
 const operatorStatus: DailyGenerationStatus = { enabled: true, nextDue: '2026-12-09', prepareAfter: '2026-12-02', completed: 20, attempts: 2, freeConfirmed: true, hasApiKey: true, model: 'gemini-3.5-flash' };
 assert.equal(dailyGenerationReadiness({ ...operatorStatus, enabled: false }, clock).available, false);

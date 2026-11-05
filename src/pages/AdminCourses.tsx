@@ -32,9 +32,10 @@ export default function AdminCourses() {
   const [settingsDirty, setSettingsDirty] = useState(false);
   const dirty = settingsDirty || !!document && JSON.stringify(document) !== JSON.stringify(selected?.document);
   const errors = document ? [...validateCourseDocument(document, true), ...reviewCourseQuality(document)] : [];
-  const call = useCallback(async (action: string, payload: Record<string, unknown> = {}) => {
+  const call = useCallback(async (action: string, payload: Record<string, unknown> = {}, bearerToken?: string) => {
     const guard = scope.capture(key);
-    const { data, error } = await supabase.functions.invoke("admin-courses", { body: { action, ...payload }, headers: { "x-admin-key": key } });
+    const { data, error } = await supabase.functions.invoke("admin-courses", { body: { action, ...payload },
+      headers: { "x-admin-key": key, ...(bearerToken ? { authorization: "Bearer " + bearerToken } : {}) } });
     guard.assert();
     if (error || data?.error) throw new Error(data?.error || "Could not connect. Check your master key and retry.");
     return data?.data;
@@ -72,7 +73,13 @@ export default function AdminCourses() {
   };
   const publish = async () => {
     if (!selected || dirty) return;
-    await call("publish", { id: selected.id, revision: selected.revision, reviewed, reviewer });
+    const guard = scope.capture(key);
+    const { data: auth, error: authError } = await supabase.auth.getSession();
+    guard.assert();
+    if (authError || !auth.session?.access_token)
+      throw new Error("Sign in with the registered TradeHQ owner account before publishing a course. Your admin key alone cannot publish.");
+    await call("publish", { id: selected.id, revision: selected.revision, reviewed, reviewer },
+      auth.session.access_token);
     const rows = await load(), row = rows.find(d => d.id === selected.id);
     if (row) { setSelected(row); setDocument(structuredClone(row.document)); }
     setReviewed(false); toast.success("Course approved and published.");
@@ -122,7 +129,7 @@ export default function AdminCourses() {
                   {errors.length > 0 && <details className="text-sm rounded-xl bg-muted/30 p-4"><summary className="cursor-pointer">{errors.length} items to resolve before approval</summary><ul className="mt-3 list-disc pl-5 space-y-2 text-muted-foreground">{errors.map((e, i) => <li key={i}>{e}</li>)}</ul></details>}
                   <label className="block text-sm space-y-2"><span className="text-muted-foreground">Reviewer name</span><input value={reviewer} onChange={e => setReviewer(e.target.value)} className="rounded-xl border border-border bg-background px-3 py-2 w-full" /></label>
                   <label className="flex items-start gap-3 text-sm"><input type="checkbox" checked={reviewed} onChange={e => setReviewed(e.target.checked)} className="mt-1" />
-                    <span>I have reviewed the sources, calculations, originality and lesson quality.</span></label>
+                    <span>I have reviewed the sources, calculations, originality and lesson quality. Publishing also requires signing in with the registered owner account; the master key alone is insufficient. Edited drafts receive a fresh independent review before publication.</span></label>
                   <div className="flex flex-wrap gap-3"><button type="button" disabled={busy || dirty || !selected || !reviewed || errors.length > 0 || selected.status === "rejected"}
                     onClick={() => void action(publish)} className="rounded-xl bg-primary text-primary-foreground px-4 py-3 text-sm inline-flex items-center gap-2 disabled:opacity-50"><CheckCircle2 className="w-4 h-4" />Approve and publish</button>
                     {selected && <button type="button" disabled={busy || dirty} onClick={() => {

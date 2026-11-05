@@ -3,6 +3,10 @@ import { createCourseAdminHandler } from "../_shared/courseAdmin.ts";
 import { validateBatch } from "../_shared/dailyPractice.ts";
 import { validateCourseDocument } from "../_shared/courseDocument.ts";
 import { reviewCourseQuality } from "../_shared/courseQualityGate.ts";
+import { independentCourseReview, readCourseReferences } from "../_shared/courseGenerator.ts";
+import { requireExactRevisionReview, verifyCoursePublicationOwner } from "../_shared/coursePublicationGate.ts";
+import type { CourseDocument } from "../_shared/courseDocument.ts";
+import { checkGeminiModelMetadata } from "../_shared/geminiModelPreflight.ts";
 import { clientIp, allow } from "../_shared/rateLimit.ts";
 
 const client = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!, { auth: { persistSession: false } });
@@ -13,6 +17,18 @@ async function rpc(name: string, args: Record<string, unknown>) {
 }
 Deno.serve(createCourseAdminHandler({
   getKey: () => Deno.env.get("ADMIN_MASTER_KEY"),
+  // Reuse the private, already installed owner registration used by the
+  // existing repair-control gate. Neither a browser-submitted owner ID nor a
+  // second manually configured secret can assert publication authority.
+  authorizePublish: async request => {
+    const { data: registeredOwner, error: ownerError } =
+      await client.rpc("tradehq_repair_registered_owner");
+    if (ownerError || typeof registeredOwner !== "string") return false;
+    return verifyCoursePublicationOwner(request, registeredOwner, async jwt => {
+      const { data, error } = await client.auth.getUser(jwt);
+      return error ? null : data.user?.id ?? null;
+    });
+  },
   rateLimit: async req => await allow("course-admin-global", "course-admin-global", 300, 60)
     && await allow("course-admin:" + clientIp(req), "course-admin", 300, 30),
   store: {
@@ -23,6 +39,13 @@ Deno.serve(createCourseAdminHandler({
         if (error) throw error; return data ?? [];
       }
       if (action === "daily-status") return rpc("daily_practice_status", {});
+      if (action === "daily-preflight") {
+        // Key is obtained only inside a service-role endpoint, never returned.
+        const settings = await rpc("newsletter_ai_credentials", {}) as {
+          model?: string; apiKey?: string; freeConfirmed?: boolean;
+        } | null;
+        return checkGeminiModelMetadata(settings);
+      }
       if (action === "daily-configure") return rpc("configure_daily_practice", { p_enabled: body.enabled });
       if (action === "daily-generate") return rpc("request_daily_practice", { p_manual: true });
       if (action === "daily-save") return rpc("save_daily_practice", { p_id: body.id, p_revision: body.revision, p_document: body.document });
@@ -47,10 +70,28 @@ Deno.serve(createCourseAdminHandler({
     },
     save: (id, revision, document) => rpc("save_course_draft", { p_id: id, p_revision: revision, p_document: document }),
     async publish(id, revision, reviewer) {
-      const { data, error } = await client.from("course_drafts").select("document").eq("id", id).single();
+      const { data, error } = await client.from("course_drafts")
+        .select("document,research,revision").eq("id", id).single();
       if (error) throw error;
+      if (data.revision !== revision) throw new Error("Course changed since review. Reload before publishing.");
       const errors = [...validateCourseDocument(data.document, true), ...reviewCourseQuality(data.document)];
       if (errors.length) throw new Error("Course is incomplete: " + errors.join(" "));
+      await requireExactRevisionReview(data.document, data.research, async document => {
+        // Use the existing service-role-only free Gemini configuration, shared
+        // with the newsletter. Credentials are never sent to the browser.
+        const cfg = await rpc("newsletter_ai_credentials", {}) as {
+          model?: string; apiKey?: string; freeConfirmed?: boolean;
+        } | null;
+        if (!cfg?.freeConfirmed || !cfg.apiKey ||
+          !["gemini-3.5-flash", "gemini-3.5-flash-lite"].includes(cfg.model ?? ""))
+          throw new Error("Course publication configuration requires a verified free Gemini model.");
+        const sources = await readCourseReferences();
+        if (sources.length < 2) throw new Error("Too few verified sources for independent course review.");
+        await independentCourseReview(document as CourseDocument, sources,
+          { model: cfg.model!, apiKey: cfg.apiKey });
+      });
+      // Optimistic revision check inside the RPC prevents concurrent edits
+      // between the source read, external review and final publication.
       return rpc("publish_course_draft", { p_id: id, p_revision: revision, p_reviewer: reviewer });
     },
     reject: (id, revision) => rpc("reject_course_draft", { p_id: id, p_revision: revision }),
