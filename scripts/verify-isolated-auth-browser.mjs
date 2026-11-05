@@ -201,12 +201,22 @@ async function main(){
       }
       if(route==='/functions/v1/admin-agent-chat' && req.method==='POST'){
         if(req.headers['x-admin-key']!==ADMIN_FIXTURE_KEY)return json(401,{error:'fixture_admin_denied'});
-        adminChatRequests++;
-        if(adminChatRequests===1)return json(503,{code:'PILOT_PAUSED',error:'Fixture pilot paused'});
-        const output={reply:'<img src=x onerror="window.__modelHtmlExecuted=true">',draftRequest:chatDraft,mode:'READ_ONLY_PILOT',claim:'UNVERIFIED_SUGGESTION',rootCauseVerified:false,historyAvailable:false,authorization:{codeWrites:false,modelTools:false,merge:false,productionRelease:false}};
-        if(adminChatRequests===3)output.authorization.merge=true;
-        if(adminChatRequests===4){setTimeout(()=>json(200,output),500);return;}
-        return json(200,output);
+        let raw='';req.on('data',chunk=>{raw+=chunk;});
+        req.on('end',()=>{
+          let body;try{body=JSON.parse(raw);}catch{return json(400,{error:'bad fixture body'});}
+          if(body?.action==='status'){
+            // Metadata probes never spend the one-request model fixture budget.
+            return json(200,{code:'CONFIGURED_NOT_TESTED',providerAttemptMade:false,quotaVerified:false});
+          }
+          if(typeof body?.message!=='string')return json(400,{error:'invalid chat body'});
+          adminChatRequests++;
+          if(adminChatRequests===1)return json(503,{code:'PILOT_PAUSED',error:'Fixture pilot paused'});
+          const output={reply:'<img src=x onerror="window.__modelHtmlExecuted=true">',draftRequest:chatDraft,mode:'READ_ONLY_PILOT',claim:'UNVERIFIED_SUGGESTION',rootCauseVerified:false,historyAvailable:false,authorization:{codeWrites:false,modelTools:false,merge:false,productionRelease:false}};
+          if(adminChatRequests===3)output.authorization.merge=true;
+          if(adminChatRequests===4){setTimeout(()=>json(200,output),500);return;}
+          return json(200,output);
+        });
+        return;
       }
       if(route==='/functions/v1/repair-owner-control' && req.method==='POST'){
         if(req.headers['x-admin-key']!==ADMIN_FIXTURE_KEY || req.headers.authorization!=='Bearer '+JWT)return json(401,{code:'OWNER_REQUIRED'});
