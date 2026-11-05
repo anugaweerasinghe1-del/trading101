@@ -5,7 +5,7 @@ import { MegaFooter } from "@/components/MegaFooter";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { BookOpen, TrendingUp, Shield, PieChart, LineChart, Target, ArrowRight, Zap, Coins, Brain, ChevronRight, Home, Clock, GraduationCap } from "lucide-react";
+import { BookOpen, TrendingUp, Shield, PieChart, LineChart, Target, ArrowRight, Zap, Coins, Brain, ChevronRight, Home, Clock, GraduationCap, Trophy } from "lucide-react";
 import { Link } from "react-router-dom";
 import { LEARN_ARTICLES } from "@/lib/learnArticles";
 import { SEOSection } from "@/components/SEOSection";
@@ -146,6 +146,25 @@ export default function Learn() {
               <GuidedNextLesson />
             </div>
             <LearningJourneyDashboard tracks={tracks} />
+
+            <Link to="/achievements" className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between
+              rounded-2xl border border-primary/20 bg-primary/5 p-5 sm:p-6
+              hover:border-primary/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary
+              transition-colors" aria-label="Open your private Trophy Cabinet and personal learning milestones">
+              <span className="flex gap-4 items-center">
+                <span className="shrink-0 rounded-xl bg-primary/10 p-3 text-primary">
+                  <Trophy className="w-6 h-6" aria-hidden="true" />
+                </span>
+                <span>
+                  <span className="block text-xs font-semibold uppercase tracking-[0.13em] text-primary">Learning milestones</span>
+                  <span className="block mt-1 text-lg font-bold text-foreground">Your Trophy Cabinet</span>
+                  <span className="block mt-1 text-sm text-muted-foreground">See your private course badges and lessons completed. No public rankings or profit trophies.</span>
+                </span>
+              </span>
+              <span className="inline-flex items-center gap-2 shrink-0 text-sm font-semibold text-primary">
+                Open my cabinet <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </span>
+            </Link>
 
             {/* Structured Courses — top-of-page discovery */}
             <section className="mb-14" aria-label="Structured Courses">

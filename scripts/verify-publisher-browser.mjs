@@ -425,7 +425,7 @@ try {
   // records when the current catalog cannot supply their display names.
   await send('Emulation.setDeviceMetricsOverride',{width:360,height:900,deviceScaleFactor:1,mobile:true});
   await send('Page.navigate',{url:origin+'/trader/me'});
-  await waitUntil(`document.querySelector('main')?.innerText.includes('Course badges earned')`, 'Own fixture profile renders');
+  await waitUntil(`document.querySelector('main')?.innerText.includes('Personal course badges')`, 'Own fixture profile renders');
   const financialTiles = await evaluate(`[...document.querySelectorAll('main section')].find(s=>s.innerText.includes('PORTFOLIO VALUE'))?.innerText`);
   assert.ok(financialTiles?.includes('$100,000'), 'Fresh fixture has its original virtual balance');
   const badgeSeed = {v:1,tracks:{
@@ -454,6 +454,21 @@ try {
   await waitUntil(`document.querySelector('main')?.innerText.includes(${JSON.stringify(docs[0].document.badge.name)}) && document.querySelector('main')?.innerText.includes(${JSON.stringify(docs[1].document.badge.name)})`, 'Own profile displays both published-course badges');
   assert.ok(await evaluate(`document.querySelector('main').innerText.includes('Options Fundamentals Completion') && document.querySelector('main').innerText.includes('Course completion: retired study track')`), 'Native and retired completion records remain visible');
   assert.equal(await evaluate(`[...document.querySelectorAll('main section')].find(s=>s.innerText.includes('PORTFOLIO VALUE'))?.innerText`),financialTiles,'Badge display does not change financial tiles');
+  // The new private Trophy Cabinet must hydrate, remain noindex and preserve
+  // legacy badges without making any independently verified public claims.
+  await send('Page.navigate',{url:origin+'/achievements'});
+  await waitUntil(`location.pathname==='/achievements' && document.querySelector('main h1')?.innerText==='My Trophy Cabinet' && !document.querySelector('#prerender-seo')`,
+    'Private Trophy Cabinet hydrates');
+  assert.equal(await evaluate(`document.querySelector('meta[name="robots"]')?.content.includes('noindex')`),true,
+    'Private achievement page remains noindex after hydration');
+  assert.equal(await evaluate(`document.querySelector('main')?.innerText.includes('not a verified public award')`),true,
+    'Private Trophy Cabinet never describes editable records as public verified awards');
+  for (const width of [360,390,768,1280]) {
+    await send('Emulation.setDeviceMetricsOverride',{width,height:850,deviceScaleFactor:1,mobile:width<500});
+    assert.equal(await evaluate(`document.documentElement.scrollWidth > innerWidth + 1`),false,
+      'Trophy Cabinet fits at '+width+'px');
+  }
+
   catalogAvailable = false;
   await send('Page.navigate',{url:origin+'/trader/me'});
   await waitUntil(`document.querySelector('main')?.innerText.includes('Course completion: cryptocurrency price feeds and valuation') && document.querySelector('main')?.innerText.includes('Course completion: diversification and position sizing')`, 'Stored badges remain visible without catalog names');
