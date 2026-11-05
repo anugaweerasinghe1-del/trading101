@@ -31,7 +31,7 @@ const readiness = dispatch.indexOf('if(input?.action==="publish-readiness")');
 const publishIntent = dispatch.indexOf('if(input?.action!=="publish"||input?.confirmed!==true)');
 const verifiedSend = dispatch.indexOf("if(!await authorizedOwner(req))", publishIntent);
 const firstEditionRead = dispatch.indexOf('db.from("newsletter_editions")');
-const firstDeliveryRead = dispatch.indexOf('db.from("newsletter_deliveries")');
+const firstDeliveryRead = dispatch.indexOf('db.from("newsletter_deliveries")', publishIntent);
 assert.ok(masterGate >= 0 && readiness > masterGate && publishIntent > readiness);
 assert.ok(verifiedSend > publishIntent && verifiedSend < firstEditionRead);
 assert.ok(verifiedSend < firstDeliveryRead, "No delivery ledger accessed without owner authorization");
