@@ -43,6 +43,14 @@ export function createCourseAdminHandler(options: {
           if (body.action === "daily-save" && (!validateBatch(body.document) || validateExercises(body.document.exercises, 50, 10).length > 0)) return response({ error: "Complete all 50 exercises before saving." }, 400);
           if (body.action === "daily-publish" && (body.reviewed !== true || typeof body.reviewer !== "string" || body.reviewer.trim().length < 2 || body.reviewer.length > 80)) return response({ error: "Confirm your review and enter your name." }, 400);
         }
+        if (body.action === "daily-publish") {
+          // The same registered-owner JWT check protects both kinds of publication.
+          // Fail closed if it was not configured, even when the admin key is valid.
+          if (!options.authorizePublish) return response({ error: "Owner verification is unavailable." }, 503);
+          if (!await options.authorizePublish(req))
+            return response({ error: "Daily Practice publication requires signing in as the registered owner in addition to the admin key." }, 403);
+          body.reviewer = "TradeHQ owner (authenticated)";
+        }
         return response({ data: await options.store.daily(body.action, body) });
       }
       if (body.action === "list") return response({ data: await options.store.list(body.summary === true) });

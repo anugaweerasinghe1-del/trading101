@@ -117,6 +117,38 @@ assert.equal((await handler(req({ action: 'daily-list' }, 'wrong'))).status, 401
 assert.equal((await handler(req({ action: 'daily-publish', id, revision: 1, reviewer: 'Owner', reviewed: false }))).status, 400);
 assert.equal((await handler(req({ action: 'daily-save', id, revision: 1, document: invalid }))).status, 400); assert.equal(writes, 0);
 assert.equal((await handler(req({ action: 'daily-save', id, revision: 1, document: bank }))).status, 200); assert.equal(writes, 1);
+// Publishing Daily Practice must require a registered owner session as well as
+// the existing master key; a typed reviewer string never proves identity.
+const dailyApproval = { action: 'daily-publish', id, revision: 1, reviewed: true,
+  reviewer: 'An impersonated reviewer' };
+assert.equal((await handler(req(dailyApproval))).status, 503,
+  'Missing owner-verifier configuration must fail closed');
+assert.equal(writes, 1);
+let dailyPublishes = 0; let attributedReviewer: string | undefined;
+const protectedDaily = createCourseAdminHandler({
+  getKey: () => 'test-key', rateLimit: async () => true,
+  authorizePublish: async request => request.headers.get('authorization') === 'Bearer owner-fixture',
+  store: {
+    list: async () => [], save: async () => null, publish: async () => null,
+    reject: async () => null, settings: async () => null, configure: async () => null, run: async () => null,
+    daily: async (action, body) => {
+      if (action === 'daily-publish') { dailyPublishes++; attributedReviewer = String(body.reviewer); }
+      return {};
+    },
+  },
+});
+const publishRequest = (jwt: string | null, key = 'test-key') => new Request('https://example.test', {
+  method: 'POST', headers: { 'x-admin-key': key, ...(jwt ? { authorization: 'Bearer ' + jwt } : {}) },
+  body: JSON.stringify(dailyApproval),
+});
+assert.equal((await protectedDaily(publishRequest(null))).status, 403);
+assert.equal((await protectedDaily(publishRequest('other-user-fixture'))).status, 403);
+assert.equal((await protectedDaily(publishRequest('owner-fixture', 'incorrect'))).status, 401);
+assert.equal(dailyPublishes, 0, 'Unauthorized attempts must never publish');
+assert.equal((await protectedDaily(publishRequest('owner-fixture'))).status, 200);
+assert.equal(dailyPublishes, 1);
+assert.equal(attributedReviewer, 'TradeHQ owner (authenticated)');
+assert.notEqual(attributedReviewer, dailyApproval.reviewer);
 
 const chunk = (part: number) => bank.exercises.slice(0, 10).map((e, i) => ({ ...structuredClone(e), id: `test-part-${part}-${i}`, title: `Private test part ${part} case ${i}`, questions: e.questions.map((q, n) => ({ ...q, prompt: `Part ${part} case ${i} question ${n}: ${q.prompt}` })) }));
 let calls = 0;

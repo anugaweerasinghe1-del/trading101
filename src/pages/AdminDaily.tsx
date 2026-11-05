@@ -32,9 +32,10 @@ export default function AdminDaily() {
   const [modelCheck, setModelCheck] = useState<string | null>(null);
   const exercisePanel = useRef<HTMLElement>(null);
   const pending = useRef(false), dirty = !!doc && JSON.stringify(doc) !== JSON.stringify(selected?.document);
-  const call = useCallback(async (action: string, payload: Record<string, unknown> = {}) => {
+  const call = useCallback(async (action: string, payload: Record<string, unknown> = {}, bearerToken?: string) => {
     const guard = scope.capture(key);
-    const { data, error } = await supabase.functions.invoke('admin-courses', { body: { action: 'daily-' + action, ...payload }, headers: { 'x-admin-key': key } });
+    const { data, error } = await supabase.functions.invoke('admin-courses', { body: { action: 'daily-' + action, ...payload },
+      headers: { 'x-admin-key': key, ...(bearerToken ? { authorization: 'Bearer ' + bearerToken } : {}) } });
     guard.assert();
     if (error || data?.error) throw new Error(data?.error ?? 'Could not connect. Check your master key and retry.');
     return data.data;
@@ -62,7 +63,16 @@ export default function AdminDaily() {
   };
   const updateRow = async (action: string) => {
     if (!doc || !selected) return;
-    const row = await call(action, { id: selected.id, revision: selected.revision, document: doc, reviewer: reviewer.trim(), reviewed }) as Draft;
+    const guard = scope.capture(key);
+    let bearerToken: string | undefined;
+    if (action === 'publish') {
+      const { data: auth, error: authError } = await supabase.auth.getSession();
+      guard.assert();
+      if (authError || !auth.session?.access_token)
+        throw new Error('Sign in with the registered TradeHQ owner account before approving this Daily bank. No content was published.');
+      bearerToken = auth.session.access_token;
+    }
+    const row = await call(action, { id: selected.id, revision: selected.revision, document: doc, reviewer: reviewer.trim(), reviewed }, bearerToken) as Draft;
     setSelected(row); setDoc(structuredClone(row.document)); setReviewed(false); await load();
     toast.success(action === 'publish' ? 'Approved snapshot saved. It becomes available on its start date.' : action === 'reject' ? 'Draft rejected. Existing approved practice continues.' : 'Private draft saved. Approval is required for edited content.');
   };
@@ -110,7 +120,7 @@ export default function AdminDaily() {
         {preview ? <article className="rounded-2xl border border-white/10 p-5 space-y-4"><h2 className="text-xl font-bold">{e.title}</h2><p className="text-sm leading-relaxed">{e.scenario}</p><PracticeVisual exercise={e} />{e.questions.map((q, i) => <div key={i} className="border-t border-white/10 pt-4 space-y-2"><h3 className="font-medium text-sm">{i + 1}. {q.prompt}</h3><ul className="space-y-1 text-sm">{q.options.map((o, n) => <li key={n} className={n === q.correctAnswer ? 'text-primary' : 'text-muted-foreground'}>{n + 1}. {o}{n === q.correctAnswer ? ' — correct' : ''}</li>)}</ul><p className="text-sm leading-relaxed text-muted-foreground">{q.explanation}</p></div>)}<h3 className="font-medium text-sm">{e.reflection}</h3><p className="text-sm text-muted-foreground leading-relaxed">{e.reflectionGuide}</p>{e.sources.map(s => <a key={s.url} className="block text-primary text-xs underline" href={s.url} target="_blank" rel="noopener noreferrer">{s.label}</a>)}</article>
           : <PracticeEditor exercise={e} onChange={value => { setDoc({ ...doc, exercises: doc.exercises.map((old, i) => i === index ? value : old) }); setReviewed(false); }} />}
         </section>
-        <footer className="rounded-2xl border border-white/15 p-5 space-y-4"><p className="text-xs text-muted-foreground">{selected?.research?.method ?? 'AI-assisted draft'} · Saving edits keeps them private. The previous approved snapshot stays public until you approve this revision. Review every exercise, calculation, source and answer before approving.</p>
+        <footer className="rounded-2xl border border-white/15 p-5 space-y-4"><p className="text-xs text-muted-foreground">{selected?.research?.method ?? 'AI-assisted draft'} · Saving edits keeps them private. The previous approved snapshot stays public until you approve this revision. Review every exercise, calculation, source and answer before approving. Approval also requires the registered owner's website login alongside the master key; the server records verified owner attribution instead of trusting the typed reviewer name.</p>
           {errors.length > 0 && <p role="alert" className="text-sm text-amber-400">{errors.slice(0, 3).join(' ')}</p>}
           <button className={button} disabled={busy || !dirty || !validateBatch(doc)} onClick={() => void run(() => updateRow('save'))}>Save private edits</button>
           <label className="block text-sm">Reviewer name<input value={reviewer} maxLength={80} onChange={v => setReviewer(v.target.value)} className="mt-2 block w-full rounded-xl border border-white/15 p-3 bg-background" /></label>
