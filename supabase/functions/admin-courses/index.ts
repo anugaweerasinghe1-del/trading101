@@ -17,14 +17,18 @@ async function rpc(name: string, args: Record<string, unknown>) {
 }
 Deno.serve(createCourseAdminHandler({
   getKey: () => Deno.env.get("ADMIN_MASTER_KEY"),
-  // Auth is verified against the server-side Supabase Auth service. The admin
-  // key alone cannot attribute or authorize publication. Missing owner ID denies.
-  authorizePublish: async request => verifyCoursePublicationOwner(
-    request, Deno.env.get("TRADEHQ_COURSE_OWNER_USER_ID"), async jwt => {
+  // Reuse the private, already installed owner registration used by the
+  // existing repair-control gate. Neither a browser-submitted owner ID nor a
+  // second manually configured secret can assert publication authority.
+  authorizePublish: async request => {
+    const { data: registeredOwner, error: ownerError } =
+      await client.rpc("tradehq_repair_registered_owner");
+    if (ownerError || typeof registeredOwner !== "string") return false;
+    return verifyCoursePublicationOwner(request, registeredOwner, async jwt => {
       const { data, error } = await client.auth.getUser(jwt);
       return error ? null : data.user?.id ?? null;
-    },
-  ),
+    });
+  },
   rateLimit: async req => await allow("course-admin-global", "course-admin-global", 300, 60)
     && await allow("course-admin:" + clientIp(req), "course-admin", 300, 30),
   store: {
