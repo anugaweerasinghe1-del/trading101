@@ -29,6 +29,7 @@ export default function AdminDaily() {
   const [selected, setSelected] = useState<Draft | null>(null), [doc, setDoc] = useState<DailyBatch | null>(null);
   const [index, setIndex] = useState(0), [preview, setPreview] = useState(false), [reviewed, setReviewed] = useState(false), [reviewer, setReviewer] = useState('');
   const [filter, setFilter] = useState('all');
+  const [modelCheck, setModelCheck] = useState<string | null>(null);
   const exercisePanel = useRef<HTMLElement>(null);
   const pending = useRef(false), dirty = !!doc && JSON.stringify(doc) !== JSON.stringify(selected?.document);
   const call = useCallback(async (action: string, payload: Record<string, unknown> = {}) => {
@@ -67,7 +68,7 @@ export default function AdminDaily() {
   };
   const errors = doc ? validateExercises(doc.exercises) : [], e = doc?.exercises[index];
   return <main className="min-h-screen bg-background text-foreground px-5 py-10"><Helmet><title>Daily Practice Administration | TradeHQ</title><meta name="robots" content="noindex, nofollow" /></Helmet><div className="max-w-6xl mx-auto space-y-6">
-    <header className="flex flex-wrap justify-between gap-4"><div><h1 className="text-2xl font-bold">Daily practice</h1><p className="text-sm text-muted-foreground mt-1">50 deeper exercises · a new private bank every two months</p></div><nav className="flex gap-4 text-sm"><Link to="/admin" className="text-primary">Dashboard</Link><Link to="/admin/courses" className="text-primary">Courses</Link><Link to="/admin/reviews" className="text-primary">Reviews</Link>{unlocked && <button onClick={() => { if (dirty && !confirm('Discard unsaved edits and lock?')) return; scope.invalidate(); pending.current = false; setBusy(false); setCheckedAt(null); setRefreshError(''); setReviewed(false); setKey(''); setUnlocked(false); setDoc(null); setSelected(null); setRows([]); setStatus(null); }}>Lock</button>}</nav></header>
+    <header className="flex flex-wrap justify-between gap-4"><div><h1 className="text-2xl font-bold">Daily practice</h1><p className="text-sm text-muted-foreground mt-1">50 deeper exercises · a new private bank every two months</p></div><nav className="flex gap-4 text-sm"><Link to="/admin" className="text-primary">Dashboard</Link><Link to="/admin/courses" className="text-primary">Courses</Link><Link to="/admin/reviews" className="text-primary">Reviews</Link>{unlocked && <button onClick={() => { if (dirty && !confirm('Discard unsaved edits and lock?')) return; scope.invalidate(); pending.current = false; setBusy(false); setCheckedAt(null); setRefreshError(''); setReviewed(false); setKey(''); setUnlocked(false); setDoc(null); setSelected(null); setRows([]); setStatus(null); setModelCheck(null); }}>Lock</button>}</nav></header>
     {!unlocked ? <form className="max-w-md border border-white/10 rounded-2xl p-6 space-y-4" onSubmit={ev => { ev.preventDefault(); void run(async () => { const drafts = await load(); setUnlocked(true); if (drafts[0]) choose(drafts[0]); }); }}>
       <label className="block text-sm">Admin master key<input required type="password" disabled={busy} autoComplete="off" value={key} onChange={e => setKey(e.target.value)} className="mt-2 w-full bg-background rounded-xl border border-white/15 p-3" /></label><button disabled={busy} className={button}>Unlock</button>
     </form> : <>
@@ -76,6 +77,20 @@ export default function AdminDaily() {
       {status && <section className="border border-white/10 rounded-2xl p-5 space-y-3"><div className="flex flex-wrap justify-between gap-4"><h2 className="font-semibold">Generation schedule</h2><button disabled={busy} className={button} onClick={() => void run(async () => { setStatus(await call('configure', { enabled: !status.enabled })); })}>{status.enabled ? 'Pause generation' : 'Enable generation'}</button></div>
         <p className="text-sm text-muted-foreground leading-relaxed">{status.enabled ? 'Enabled' : 'Paused'} · next bank starts {status.nextDue}. Preparation begins {status.prepareAfter}. Daily checks run at 09:15 Sri Lanka time. Each case has ten scored questions and a final takeaway. One standard Gemini request writes ten cases; five successful parts make a bank. Completed months use no AI requests.</p>
         <GenerationReadiness status={status} busy={busy} onGenerate={() => void run(async () => { const queued = await call('generate'); await load(); toast.message(queued ? 'Next part queued. Refresh in about two minutes.' : 'Nothing queued: another request, cooldown or attempt cap is active.'); })} onRefresh={() => void run(async () => { await load(); })} />
+         <div className="space-y-2 border-t border-border pt-3">
+           <button type="button" disabled={busy} className={button} onClick={() => void run(async () => {
+             setModelCheck(null);
+             const result = await call('preflight') as { code?: string; httpStatus?: number };
+             setModelCheck(result?.code === 'MODEL_REACHABLE'
+               ? 'Gemini key and model metadata responded successfully. Structured generation remains unverified; attempts were not reset.'
+               : result?.code === 'NOT_CONFIGURED'
+                 ? 'The free-tier model or key is missing. No generation was attempted.'
+                 : result?.code === 'PROVIDER_REJECTED'
+                   ? 'Gemini rejected the metadata check (HTTP ' + result.httpStatus + '). No generation was attempted.'
+                   : 'Gemini model metadata could not be verified. No generation was attempted.');
+           })}>Verify Gemini key/model (no generation)</button>
+           {modelCheck && <p role="status" className="text-sm text-muted-foreground">{modelCheck}</p>}
+         </div>
       </section>}
       <div className="grid md:grid-cols-[230px_1fr] gap-6"><aside className="space-y-2"><h2 className="text-sm font-semibold mb-3">Banks</h2>
         <label className="block text-sm pb-2">Show banks<select className="block mt-2 w-full bg-background rounded-xl border border-white/15 p-3" value={filter} onChange={event => setFilter(event.target.value)}>{[['all', 'All'], ['draft', 'Awaiting review'], ['published', 'Approved'], ['rejected', 'Rejected']].map(([value, label]) => <option key={value} value={value}>{label} ({rows.filter(row => value === 'all' || row.status === value).length})</option>)}</select></label>
