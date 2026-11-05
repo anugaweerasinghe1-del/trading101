@@ -53,7 +53,7 @@ const profile = read("src/pages/TraderProfile.tsx");
 const routes = read("scripts/routes.ts");
 const fallback = read("src/lib/clientFallbackRoutes.ts");
 const publicProfile = read("src/pages/PublicTrader.tsx");
-assert.match(app, /path="\/achievements" element={<TrophyCabinet\/>}/);
+assert.match(app, /path="\/achievements"\s+element=\{<TrophyCabinet\s*\/>\}/);
 assert.match(page, /noindex, follow/);
 assert.match(page, /not a verified public award/i);
 assert.match(page, /does not publish trophies/i);
