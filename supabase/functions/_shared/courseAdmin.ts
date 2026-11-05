@@ -36,7 +36,7 @@ export function createCourseAdminHandler(options: {
       try { body = JSON.parse(raw); if (!body || typeof body !== "object" || Array.isArray(body)) throw new Error(); }
       catch { return response({ error: "Invalid request." }, 400); }
       if (typeof body.action === "string" && body.action.startsWith("daily-") && options.store.daily) {
-        if (!["daily-list", "daily-status", "daily-configure", "daily-generate", "daily-save", "daily-publish", "daily-reject"].includes(body.action)) return response({ error: "Unknown action." }, 400);
+        if (!["daily-list", "daily-status", "daily-preflight", "daily-configure", "daily-generate", "daily-save", "daily-publish", "daily-reject"].includes(body.action)) return response({ error: "Unknown action." }, 400);
         if (body.action === "daily-configure" && typeof body.enabled !== "boolean") return response({ error: "Invalid settings." }, 400);
         if (["daily-save", "daily-publish", "daily-reject"].includes(body.action)) {
           if (typeof body.id !== "string" || !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(body.id) || !Number.isInteger(body.revision) || Number(body.revision) < 1) return response({ error: "Invalid daily revision." }, 400);
