@@ -1,5 +1,6 @@
 import { courseCovers, validateCourseDocument, type CourseDocument } from "./courseDocument.ts";
 import { reviewCourseQuality } from "./courseQualityGate.ts";
+import { courseReviewDigest } from "./coursePublicationGate.ts";
 
 export const courseReferences = [
   { label: "Investor.gov — Introduction to Investing", url: "https://www.investor.gov/introduction-investing" },
@@ -289,7 +290,9 @@ export async function generateCourse(claim: GenerationClaim, fetcher = fetch) {
   const qualityIssues = reviewCourseQuality(document, references.map(r => r.url), claim.existing);
   if (duplicateParagraphs || qualityIssues.length) throw new Error("Draft failed course quality controls: " + qualityIssues.slice(0, 2).join("; "));
   await independentCourseReview(document, references, claim, fetcher);
+  const independentReviewDigest = await courseReviewDigest(document);
   return { document, research: {
+    independentReviewStatus: "PASS", independentReviewDigest,
     method: queries.length ? "Google Search Console" : "Owner topic requests",
     demand: queries.length ? queries : topics, demandNote: demandNote || (queries.length ? "" : "No measured search volumes were supplied."),
     sources: references.map(({ label, url, checkedAt }) => ({ label, url, checkedAt })),
