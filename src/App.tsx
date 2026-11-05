@@ -66,6 +66,7 @@ const CourseLesson = lazy(() => import("./pages/CourseLesson"));
 const CountryGuide = lazy(() => import("./pages/CountryGuide"));
 const CountryGuideIndex = lazy(() => import("./pages/CountryGuide").then(m => ({ default: m.CountryGuideIndex })));
 const TraderProfile = lazy(() => import("./pages/TraderProfile"));
+const TrophyCabinet = lazy(() => import("./pages/TrophyCabinet"));
 const PublicTrader = lazy(() => import("./pages/PublicTrader"));
 const Auth = lazy(() => import("./pages/Auth"));
 const ResetPassword = lazy(() => import("./pages/ResetPassword"));
@@ -214,6 +215,7 @@ function AnimatedRoutes() {
           <Route path="/learn/country" element={<CountryGuideIndex />} />
           <Route path="/learn/country/:country" element={<CountryGuide />} />
           <Route path="/trader/me" element={<TraderProfile />} />
+          <Route path="/achievements" element={<TrophyCabinet />} />
           <Route path="/trader/:username" element={<PublicTrader />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/reset-password" element={<ResetPassword />} />
