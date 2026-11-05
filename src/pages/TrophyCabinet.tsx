@@ -8,6 +8,7 @@ import { Card } from "@/components/ui/card";
 import { COURSE_PROGRESS_EVENT, COURSE_PROGRESS_KEY, loadProgress } from "@/lib/courseProgress";
 import { buildPersonalTrophyCabinet } from "@/lib/learningAchievements";
 import { useCourseCatalog } from "@/hooks/useCourseCatalog";
+import { FirstRecordedTradeMilestone } from "@/components/achievements/FirstRecordedTradeMilestone";
 
 export default function TrophyCabinet() {
   const [progress, setProgress] = useState(loadProgress);
@@ -84,6 +85,8 @@ export default function TrophyCabinet() {
               </Card>
             ))}
           </div>
+
+          <FirstRecordedTradeMilestone />
 
           <section aria-labelledby="milestone-heading" className="mb-12">
             <div className="flex items-start justify-between gap-3 flex-wrap mb-5">
