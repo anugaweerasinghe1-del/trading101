@@ -2,14 +2,26 @@ export interface ReviewAdminStore {
   list: () => Promise<unknown[]>;
   update: (id: string, patch: Record<string, unknown>, state: "active" | "deleted") => Promise<boolean>;
 }
-export function createReviewAdminHandler(options: { getKey: () => string | undefined; getStore: () => ReviewAdminStore }) {
+export function createReviewAdminHandler(options: {
+  getKey: () => string | undefined;
+  rateLimit: (req: Request) => Promise<boolean>;
+  getStore: () => ReviewAdminStore;
+}) {
   const headers = { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-admin-key", "Access-Control-Allow-Methods": "POST, OPTIONS", "Content-Type": "application/json" };
   const response = (body: unknown, status = 200) => new Response(JSON.stringify(body), { status, headers });
   return async (req: Request): Promise<Response> => {
     if (req.method === "OPTIONS") return new Response(null, { headers });
     if (req.method !== "POST") return response({ error: "Method not allowed" }, 405);
-    const master = options.getKey();
-    if (!master || req.headers.get("x-admin-key") !== master) return response({ error: "Unauthorized" }, 401);
+    // Shared server-side and IP-scoped budgets protect the key even when the
+    // request's forwarded IP is forged. Any limiter outage fails closed.
+    try {
+      if (!await options.rateLimit(req)) return response({ error: "Too many attempts" }, 429);
+    } catch { return response({ error: "Administrator verification is temporarily unavailable" }, 503); }
+    const master = options.getKey(), supplied = req.headers.get("x-admin-key");
+    if (!master || !supplied || master.length !== supplied.length) return response({ error: "Unauthorized" }, 401);
+    let mismatch = 0;
+    for (let i = 0; i < master.length; i++) mismatch |= master.charCodeAt(i) ^ supplied.charCodeAt(i);
+    if (mismatch !== 0) return response({ error: "Unauthorized" }, 401);
     let body: Record<string, unknown>;
     try {
       const raw = await req.text();
