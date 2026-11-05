@@ -189,8 +189,14 @@ export default function TraderProfile() {
 
           <section className="mb-10">
             <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
-              <Award className="w-5 h-5 text-emerald-400" /> Course badges earned
+              <Award className="w-5 h-5 text-primary" /> Personal course badges
             </h2>
+            <p className="mb-4 text-sm text-muted-foreground">
+              Saved course badges are personal progress only, not independently verified achievements or public rankings.
+            </p>
+            <Link to="/achievements" className="mb-5 inline-flex items-center gap-2 text-sm font-semibold text-primary underline underline-offset-4">
+              Open my Trophy Cabinet <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </Link>
             {badges.length === 0 ? (
               <Card className="p-6 bg-white/[0.02] border-white/10 text-center">
                 <p className="text-sm text-muted-foreground mb-3">
