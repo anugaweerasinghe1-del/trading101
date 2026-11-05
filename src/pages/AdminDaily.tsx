@@ -32,9 +32,10 @@ export default function AdminDaily() {
   const [modelCheck, setModelCheck] = useState<string | null>(null);
   const exercisePanel = useRef<HTMLElement>(null);
   const pending = useRef(false), dirty = !!doc && JSON.stringify(doc) !== JSON.stringify(selected?.document);
-  const call = useCallback(async (action: string, payload: Record<string, unknown> = {}) => {
+  const call = useCallback(async (action: string, payload: Record<string, unknown> = {}, bearerToken?: string) => {
     const guard = scope.capture(key);
-    const { data, error } = await supabase.functions.invoke('admin-courses', { body: { action: 'daily-' + action, ...payload }, headers: { 'x-admin-key': key } });
+    const { data, error } = await supabase.functions.invoke('admin-courses', { body: { action: 'daily-' + action, ...payload },
+      headers: { 'x-admin-key': key, ...(bearerToken ? { authorization: 'Bearer ' + bearerToken } : {}) } });
     guard.assert();
     if (error || data?.error) throw new Error(data?.error ?? 'Could not connect. Check your master key and retry.');
     return data.data;
@@ -62,7 +63,16 @@ export default function AdminDaily() {
   };
   const updateRow = async (action: string) => {
     if (!doc || !selected) return;
-    const row = await call(action, { id: selected.id, revision: selected.revision, document: doc, reviewer: reviewer.trim(), reviewed }) as Draft;
+    const guard = scope.capture(key);
+    let bearerToken: string | undefined;
+    if (action === 'publish') {
+      const { data: auth, error: authError } = await supabase.auth.getSession();
+      guard.assert();
+      if (authError || !auth.session?.access_token)
+        throw new Error('Sign in with the registered TradeHQ owner account before approving this Daily bank. No content was published.');
+      bearerToken = auth.session.access_token;
+    }
+    const row = await call(action, { id: selected.id, revision: selected.revision, document: doc, reviewer: reviewer.trim(), reviewed }, bearerToken) as Draft;
     setSelected(row); setDoc(structuredClone(row.document)); setReviewed(false); await load();
     toast.success(action === 'publish' ? 'Approved snapshot saved. It becomes available on its start date.' : action === 'reject' ? 'Draft rejected. Existing approved practice continues.' : 'Private draft saved. Approval is required for edited content.');
   };
