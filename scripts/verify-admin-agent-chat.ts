@@ -16,6 +16,17 @@ function fixture({ status = 200, value, review = '2026-10-13T00:00:00.000Z', ava
   });
   return { handler, calls: () => calls, attempts: () => attempts, admissions };
 }
+// Read-only configuration probe must never reserve or send an AI request.
+const probe = fixture();
+const ready = await probe.handler(request({ action: 'status' }));
+assert.equal(ready.status, 200);
+assert.deepEqual(await ready.json(), { code: 'CONFIGURED_NOT_TESTED', providerAttemptMade: false, quotaVerified: false });
+assert.equal(probe.calls(), 0); assert.equal(probe.attempts(), 0);
+const pausedProbe = fixture({ review: '2026-10-01T00:00:00.000Z' });
+assert.equal((await (await pausedProbe.handler(request({ action: 'status' }))).json()).code, 'PILOT_PAUSED');
+assert.equal(pausedProbe.attempts(), 0);
+assert.equal((await probe.handler(request({ action: 'status' }, 'wrong'))).status, 401);
+assert.equal(probe.calls(), 0);
 const happy = fixture(); const success = await happy.handler(request()); assert.equal(success.status, 200);
 const data = await success.json(); assert.equal(data.rootCauseVerified, false); assert.equal(data.historyAvailable, false); assert.equal(data.claim, 'UNVERIFIED_SUGGESTION'); assert.ok(Object.values(data.authorization).every(x => x === false));
 const signed = createAdminAgentChat({ getAdminKey: () => key, getGeminiKey: () => provider, getFreeReviewAt: () => '2026-10-13T00:00:00.000Z', now: () => now, allow: async () => true, fetcher: async () => upstream(undefined, true) });
