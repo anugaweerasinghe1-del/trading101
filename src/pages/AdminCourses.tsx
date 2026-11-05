@@ -28,6 +28,7 @@ export default function AdminCourses() {
   const [mode, setMode] = useState<"edit" | "preview" | "settings">("edit");
   const [busy, setBusy] = useState(false), [reviewed, setReviewed] = useState(false);
   const [reviewer, setReviewer] = useState("Anuga Weerasinghe");
+  const [ownerCheck, setOwnerCheck] = useState<"verified" | "denied" | null>(null);
   const pending = useRef(false);
   const [settingsDirty, setSettingsDirty] = useState(false);
   const dirty = settingsDirty || !!document && JSON.stringify(document) !== JSON.stringify(selected?.document);
@@ -71,6 +72,29 @@ export default function AdminCourses() {
     setSelected(row); setDocument(structuredClone(row.document)); setReviewed(false); await load();
     toast.success("Draft saved. Approval is required before publication.");
   };
+  const checkOwnerAccess = async () => {
+    setOwnerCheck(null);
+    const guard = scope.capture(key);
+    const { data: auth, error: authError } = await supabase.auth.getSession();
+    guard.assert();
+    if (authError || !auth.session?.access_token) {
+      setOwnerCheck("denied");
+      throw new Error("Sign in with the registered TradeHQ owner account first. No course was published.");
+    }
+    try {
+      const result = await call("publish-readiness", {}, auth.session.access_token) as {
+        ownerVerified?: boolean; publicationPerformed?: boolean; aiAttemptMade?: boolean;
+      };
+      guard.assert();
+      if (result?.ownerVerified !== true || result?.publicationPerformed !== false || result?.aiAttemptMade !== false)
+        throw new Error("Owner verification returned an unexpected result.");
+      setOwnerCheck("verified");
+      toast.success("Registered owner verified. No course was published or generated.");
+    } catch (error) {
+      if (guard.current()) setOwnerCheck("denied");
+      throw error;
+    }
+  };
   const publish = async () => {
     if (!selected || dirty) return;
     const guard = scope.capture(key);
@@ -97,13 +121,19 @@ export default function AdminCourses() {
       </form>
     </main> : <main className="min-h-screen bg-background px-4 sm:px-6 py-8 max-w-7xl mx-auto">
       <header className="flex items-center justify-between gap-4 mb-8"><div><p className="text-xs uppercase tracking-widest text-primary mb-2">TradeHQ · Admin</p><h1 className="text-2xl font-semibold">Course desk</h1></div>
-        <div className="flex items-center gap-4 text-sm"><Link to="/admin" className="text-primary">Dashboard</Link><Link to="/admin/daily" className="text-primary">Daily practice</Link><Link to="/admin/reviews" className="text-muted-foreground">Reviews</Link><button onClick={() => { if (dirty && !confirm("Discard unsaved edits and lock?")) return; scope.invalidate(); pending.current = false; setBusy(false); setUnlocked(false); setKey(""); setDocument(null); setSelected(null); setDrafts([]); setSettings(null); setReviewed(false); setCheckedAt(null); setRefreshError(''); }} className="flex items-center gap-2"><Lock className="w-4 h-4" />Lock</button></div></header>
+        <div className="flex items-center gap-4 text-sm"><Link to="/admin" className="text-primary">Dashboard</Link><Link to="/admin/daily" className="text-primary">Daily practice</Link><Link to="/admin/reviews" className="text-muted-foreground">Reviews</Link><button onClick={() => { if (dirty && !confirm("Discard unsaved edits and lock?")) return; scope.invalidate(); pending.current = false; setBusy(false); setUnlocked(false); setKey(""); setDocument(null); setSelected(null); setDrafts([]); setSettings(null); setReviewed(false); setCheckedAt(null); setRefreshError(''); setOwnerCheck(null); }} className="flex items-center gap-2"><Lock className="w-4 h-4" />Lock</button></div></header>
       <div className="flex flex-wrap gap-3 mb-6">
         <button type="button" onClick={() => { if (settingsDirty && !confirm("Discard unsaved generation settings?")) return; setMode("edit"); }} className="rounded-xl border border-border px-4 py-2 text-sm">Draft inbox ({drafts.filter(d => d.status === "draft").length})</button>
         <button type="button" onClick={() => setMode("settings")} className="rounded-xl border border-border px-4 py-2 text-sm inline-flex items-center gap-2"><Settings2 className="w-4 h-4" />Generation settings</button>
         <button type="button" disabled={busy} onClick={() => void action(async () => { await load(); toast.success("Inbox refreshed"); })} className="text-sm text-muted-foreground inline-flex items-center gap-2"><RefreshCw className="w-4 h-4" />Refresh</button>
+        <button type="button" disabled={busy} onClick={() => void action(checkOwnerAccess)}
+          className="rounded-xl border border-border px-3 py-2 text-sm">Verify owner access (no publication)</button>
       </div>
       <AdminFreshness checkedAt={checkedAt} error={refreshError} />
+      {ownerCheck && <p role="status" className="mb-4 text-sm text-muted-foreground">
+        {ownerCheck === "verified" ? "Registered owner's current sign-in verified. No course, AI or publication state was changed." :
+          "Owner access could not be verified. No course was published or generated."}
+      </p>}
       {selected && drafts.some(row => row.id === selected.id && row.revision !== selected.revision) && <p role="status" className="text-sm text-amber-600 dark:text-amber-400 mb-4">This draft changed on the server. Your edits are preserved. Reopen the latest revision before saving or approving.</p>}
       {mode === "settings" && settings ? <CourseGenerationSettings onDirtyChange={setSettingsDirty}
         settings={settings} busy={busy} save={values => action(async () => { await call("configure", { settings: values }); await load(); toast.success("Generation settings saved."); })}
