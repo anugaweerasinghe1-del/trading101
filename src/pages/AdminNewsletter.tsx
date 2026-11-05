@@ -49,6 +49,7 @@ export default function AdminNewsletter() {
   const [nextPreview, setNextPreview] = useState<NextIssuePreview | null>(null);
   const [audience, setAudience] = useState<Audience | null>(null);
   const [publishResult, setPublishResult] = useState<PublishResult | null>(null);
+  const [sendOwnerVerified, setSendOwnerVerified] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
 
@@ -76,13 +77,18 @@ export default function AdminNewsletter() {
     return data.data;
   }, [key]);
 
-  const distributionCall = useCallback(async (action: string, payload: Record<string, unknown> = {}) => {
+  const distributionCall = useCallback(async (action: string, payload: Record<string, unknown> = {}, bearerToken?: string) => {
     const guard = scope.capture(key);
     const { data, error: invokeError } = await supabase.functions.invoke("newsletter-dispatch", {
-      body: { action, ...payload }, headers: { "x-admin-key": key },
+      body: { action, ...payload }, headers: { "x-admin-key": key, ...(bearerToken ? { authorization: "Bearer " + bearerToken } : {}) },
     });
     guard.assert();
-    if (invokeError || data?.error) throw Error(data?.error || "Subscriber delivery service unavailable.");
+    if (invokeError || data?.error) {
+      const status = (invokeError as { context?: { status?: number } } | null)?.context?.status;
+      if (status === 403) throw Error("Newsletter sending requires the registered owner's current TradeHQ login in addition to the master key.");
+      if (status === 401) throw Error("The TradeHQ admin master key was rejected.");
+      throw Error(data?.error || "Subscriber delivery service unavailable.");
+    }
     return data.data;
   }, [key]);
   const loadAudience = useCallback(async () => {
@@ -95,13 +101,35 @@ export default function AdminNewsletter() {
     setNextPreview(next);
     toast.message("Unsaved AI sample generated. No emails sent.");
   });
+  const ownerToken = async (): Promise<string> => {
+    const guard = scope.capture(key);
+    const { data, error: authError } = await supabase.auth.getSession();
+    guard.assert();
+    if (authError || !data.session?.access_token)
+      throw Error("Sign in with the registered TradeHQ owner account before sending. No emails were sent.");
+    return data.session.access_token;
+  };
+  const verifyOwnerSend = () => void run(async () => {
+    setSendOwnerVerified(false);
+    const token = await ownerToken();
+    const result = await distributionCall("publish-readiness", {}, token) as {
+      ownerVerified?: boolean; emailsSent?: number; providerAttemptMade?: boolean;
+    };
+    if (result?.ownerVerified !== true || result?.emailsSent !== 0 || result?.providerAttemptMade !== false)
+      throw Error("Unexpected owner verification result. No email was sent.");
+    setSendOwnerVerified(true);
+    toast.success("Registered owner verified. No newsletter was sent.");
+  });
   const publishEdition = () => void run(async () => {
     if (!current || current.status !== "approved") return;
+    if (editor.current.dirty)
+      throw Error("Save and approve the exact newsletter revision before sending. Unsaved changes cannot be sent.");
+    const token = await ownerToken();
     if (!window.confirm("Send this approved educational issue to confirmed TradeHQ Newsletter subscribers? Sending cannot be undone.")) return;
     setPublishResult(null);
     const result = await distributionCall("publish", {
       editionId: current.id, revision: current.revision, confirmed: true,
-    }) as PublishResult;
+    }, token) as PublishResult;
     setPublishResult(result);
     await loadAudience();
     toast.message(result.note);
@@ -244,7 +272,7 @@ export default function AdminNewsletter() {
           </Button>
           <Button onClick={generate} disabled={busy}><Sparkles className="mr-2 h-4 w-4"/> Generate this week's draft</Button>
           <Button onClick={() => { if (dirty && !confirm('Discard unsaved newsletter edits and load the latest revision?')) return; void run(async () => { await refresh(current?.id); await loadAudience(); }); }} variant="outline" disabled={busy}><RefreshCw className="mr-2 h-4 w-4"/> Refresh</Button>
-          <Button variant="outline" onClick={() => { if (dirty && !confirm('Discard unsaved newsletter edits and lock?')) return; scope.invalidate(); pending.current = false; setBusy(false); setCheckedAt(null); setRefreshError(''); setSubject(''); setPreheader(''); setBody(''); setReviewed(false); setReviewer(''); setUnlocked(false); setKey(""); setCurrent(null); setEditions([]); setTopics([]); setAudience(null); setPublishResult(null); setNextPreview(null); }} disabled={busy}>Lock</Button>
+          <Button variant="outline" onClick={() => { if (dirty && !confirm('Discard unsaved newsletter edits and lock?')) return; scope.invalidate(); pending.current = false; setBusy(false); setCheckedAt(null); setRefreshError(''); setSubject(''); setPreheader(''); setBody(''); setReviewed(false); setReviewer(''); setUnlocked(false); setKey(""); setCurrent(null); setEditions([]); setTopics([]); setAudience(null); setPublishResult(null); setNextPreview(null); setSendOwnerVerified(false); }} disabled={busy}>Lock</Button>
         </div>
         {error && <p role="alert" className="text-sm text-destructive">{error}</p>}
         <AdminFreshness checkedAt={checkedAt} error={refreshError} />
@@ -281,16 +309,20 @@ export default function AdminNewsletter() {
           </div>
           <div className="flex flex-wrap items-center gap-3">
             <Button variant="outline" disabled={busy} onClick={() => void run(loadAudience)}>Refresh subscribers</Button>
+            <Button variant="outline" disabled={busy} onClick={verifyOwnerSend}>Verify owner access (no email)</Button>
             <Button disabled={busy || current?.status !== "approved" || !audience?.webhookConfigured} onClick={publishEdition}>
               <Mail className="mr-2 h-4 w-4"/> Publish approved issue to subscribers
             </Button>
           </div>
+          {sendOwnerVerified && <p role="status" className="text-sm text-muted-foreground">
+            Registered owner verified for this session. No email was sent; the protected send action still requires confirmation.
+          </p>}
           {!audience?.webhookConfigured && <p className="text-xs text-amber-600">
             Publishing is safety-locked until the signed Resend delivery webhook is configured.
             Signup and confirmation work independently.
           </p>}
           <p className="text-xs text-muted-foreground">
-            Publishing is a separate deliberate action after approval. Maximum 20 unique recipients
+            Publishing requires the registered owner’s current website login plus the admin key, and a separate deliberate confirmation after approval. Maximum 20 unique recipients
             per request, with conservative free-tier limits. The same edition cannot be resent to
             a person by clicking again. No email is sent merely by approving a draft.
           </p>
