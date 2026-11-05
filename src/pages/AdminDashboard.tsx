@@ -13,6 +13,7 @@ import { AdminFreshness } from '@/components/admin/AdminFreshness';
 type Course = { id: string; status: string; document?: { title?: string }; updated_at?: string };
 type DailyStatus = { enabled?: boolean; nextDue?: string; prepareAfter?: string; completed?: number; attempts?: number; retryAfter?: string | null; lastStarted?: string | null; lastFinished?: string | null; lastError?: string | null; model?: string; hasApiKey?: boolean; freeConfirmed?: boolean };
 type CourseStatus = { enabled?: boolean; model?: string; lastStarted?: string | null; lastFinished?: string | null; runs?: Array<{ status?: string; last_error?: string | null; period?: string; slot?: number }> };
+type ChatReadiness = 'CONFIGURED_NOT_TESTED' | 'PILOT_PAUSED';
 type AgentIssue = { id: number; title: string; html_url: string; created_at: string; state: string; body?: string | null; pull_request?: unknown };
 type Run = { id: number; status: string; conclusion: string | null; html_url: string; created_at: string; updated_at?: string; head_sha?: string };
 type Proposal = { number: number; title: string; html_url: string; draft: boolean; created_at: string };
@@ -36,6 +37,7 @@ export default function AdminDashboard() {
   const [deskWarnings, setDeskWarnings] = useState<string[]>([]);
   const [daily, setDaily] = useState<DailyStatus | null>(null);
   const [courseStatus, setCourseStatus] = useState<CourseStatus | null>(null);
+  const [chatReadiness, setChatReadiness] = useState<ChatReadiness | null>(null);
   const [reviews, setReviews] = useState<number | null>(null);
   const [newsletterSummary, setNewsletterSummary] = useState<NewsletterSummary | null>(null);
   const [issues, setIssues] = useState<AgentIssue[]>([]);
@@ -67,12 +69,14 @@ export default function AdminDashboard() {
     const settings = await adminCall("settings");
     if (!settings) throw new Error("Administrator verification failed.");
     guard.assert(); setCourseStatus(settings);
-    const [drafts, practice, result, banks, subscriberStatus, newsletterDrafts] = await Promise.allSettled([
+    const [drafts, practice, result, banks, subscriberStatus, newsletterDrafts, chat] = await Promise.allSettled([
       adminCall("list", { summary: true }), adminCall("daily-status"),
       supabase.functions.invoke("admin-reviews", { body: { action: "list" }, headers: { "x-admin-key": key } }),
       adminCall("daily-list", { summary: true }),
       supabase.functions.invoke("newsletter-dispatch", { body: { action: "status" }, headers: { "x-admin-key": key } }),
       supabase.functions.invoke("newsletter-editor", { body: { action: "list" }, headers: { "x-admin-key": key } }),
+      // Readiness does not invoke Gemini or reserve the daily provider attempt.
+      supabase.functions.invoke("admin-agent-chat", { body: { action: "status" }, headers: { "x-admin-key": key } }),
     ]);
     guard.assert();
     const warnings: string[] = [];
@@ -96,6 +100,11 @@ export default function AdminDashboard() {
       setNewsletterSummary({ confirmed: Number(counts.confirmed), pending: Number(counts.pending),
         unsubscribed: Number(counts.unsubscribed), bounced: Number(counts.bounced) });
     } else { setNewsletterSummary(null); warnings.push("Newsletter subscriber totals are temporarily unavailable."); }
+    const chatCode = chat.status === 'fulfilled' && !chat.value.error
+      ? chat.value.data?.code : null;
+    if (chatCode === 'CONFIGURED_NOT_TESTED' || chatCode === 'PILOT_PAUSED')
+      setChatReadiness(chatCode);
+    else { setChatReadiness(null); warnings.push("Admin AI chatbot readiness is temporarily unavailable."); }
     setDeskWarnings(warnings); setCheckedAt(new Date()); setError("");
   }, [adminCall, key]);
   // Public GitHub data is used only for observability, never for authorization.
@@ -221,13 +230,18 @@ export default function AdminDashboard() {
           <section className={card}><BookOpen className="w-6 h-6 text-primary"/><h3 className="font-semibold">Courses</h3><p className="text-2xl font-semibold">{courses === null ? "—" : courses.filter(c => c.status === "draft").length} <span className="text-sm font-normal text-muted-foreground">drafts awaiting review</span></p><p className="text-xs text-muted-foreground">Generation: {courseStatus ? (courseStatus.enabled ? "enabled" : "paused") : "unavailable"} · {courseStatus?.model || "unknown"}</p><Link className={linkStyle} to="/admin/courses">Manage drafts and approvals →</Link></section>
           <section className={card}>
             <Mail className="w-6 h-6 text-primary" />
-            <h3 className="font-semibold">Weekly Newsletter</h3>
+            <h3 className="font-semibold">Newsletter</h3>
             <p className="text-2xl font-semibold">{newsletterSummary ? newsletterSummary.confirmed : "—"} <span className="text-sm font-normal text-muted-foreground">confirmed subscribers</span></p>
             <p className="text-xs text-muted-foreground">{newsletterSummary ? `Pending ${newsletterSummary.pending} · Bounced ${newsletterSummary.bounced} · Unsubscribed ${newsletterSummary.unsubscribed}` : "Subscriber counts unavailable; check Newsletter Desk."}</p>
             <p className="text-xs text-muted-foreground">Verified opt-in only. Owner approval and a separate send action are required.</p>
             <Link className={linkStyle} to="/admin/newsletter">Open Newsletter Desk →</Link>
           </section>
           <section className={card}><CalendarCheck className="w-6 h-6 text-primary"/><h3 className="font-semibold">Daily practice</h3><p className="text-2xl font-semibold">{daily ? (daily.completed ?? 0) + "/50" : "—"} <span className="text-sm font-normal text-muted-foreground">next bank ready</span></p><p className="text-xs text-muted-foreground">{daily ? (daily.enabled ? "Schedule enabled" : "Schedule paused") : "Schedule unavailable"} · Next due {daily?.nextDue || "unknown"}</p>{daily?.lastError && <p className="text-xs text-amber-400">{daily.lastError}</p>}<Link className={linkStyle} to="/admin/daily">Review questions and schedule →</Link></section>
+          <section className={card}><Bot className="w-6 h-6 text-primary"/><h3 className="font-semibold">Admin chatbot</h3>
+            <p className="text-sm font-medium">{chatReadiness === 'CONFIGURED_NOT_TESTED'
+              ? 'Configured · live response unverified' : chatReadiness === 'PILOT_PAUSED' ? 'Pilot paused' : 'Status unavailable'}</p>
+            <p className="text-xs text-muted-foreground">Read-only configuration check. No Gemini request, diagnosis, coding, approval or publication was performed. Pilot allows one provider attempt per UTC day.</p>
+            <Link className={linkStyle} to="/admin/ai">Open AI Development Desk →</Link></section>
           <section className={card}><MessageSquare className="w-6 h-6 text-primary"/><h3 className="font-semibold">Community reviews</h3><p className="text-2xl font-semibold">{reviews ?? "—"} <span className="text-sm font-normal text-muted-foreground">reviews in moderation desk</span></p><Link className={linkStyle} to="/admin/reviews">Reply, feature or moderate →</Link></section>
         </div>
         <section id="monitor-findings" tabIndex={-1} className={card}>
