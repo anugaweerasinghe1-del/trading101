@@ -3,6 +3,7 @@ import { readFileSync, readdirSync } from "node:fs";
 import { PGlite } from "@electric-sql/pglite";
 import { courseCovers, lessonWordCount, validateCourseDocument, type CourseDocument } from "../supabase/functions/_shared/courseDocument.ts";
 import { createCourseAdminHandler } from "../supabase/functions/_shared/courseAdmin.ts";
+import { courseReviewDigest, requireExactRevisionReview, stableCourseJson, verifyCoursePublicationOwner } from "../supabase/functions/_shared/coursePublicationGate.ts";
 import { generateCourse, courseReferences, GENERATION_READ_LIMITS } from "../supabase/functions/_shared/courseGenerator.ts";
 import { reviewCourseQuality } from "../supabase/functions/_shared/courseQualityGate.ts";
 import { checkCourseDemand } from "../supabase/functions/_shared/courseDemandCheck.ts";
@@ -68,6 +69,37 @@ const document: CourseDocument = {
   })),
 };
 assert.deepEqual(validateCourseDocument(document, true), []);
+// Exact content attestations survive JSONB key reordering and never trigger
+// an extra model call for the same reviewed content.
+const originalDigest = await courseReviewDigest(document);
+assert.match(originalDigest, /^[a-f0-9]{64}$/);
+assert.equal(await courseReviewDigest(JSON.parse(stableCourseJson(document))), originalDigest);
+let independentReviewCalls = 0;
+const independentReview = async () => { independentReviewCalls++; };
+assert.equal(await requireExactRevisionReview(document,
+  { independentReviewStatus: "PASS", independentReviewDigest: originalDigest },
+  independentReview), "original_review_verified");
+assert.equal(independentReviewCalls, 0);
+const editedRevision = structuredClone(document); editedRevision.title = "A changed title";
+assert.equal(await requireExactRevisionReview(editedRevision,
+  { independentReviewStatus: "PASS", independentReviewDigest: originalDigest },
+  independentReview), "fresh_review_passed");
+assert.equal(independentReviewCalls, 1);
+await requireExactRevisionReview(document, { independentReviewStatus: "PASS" }, independentReview);
+assert.equal(independentReviewCalls, 2, "Legacy drafts require new independent review");
+await assert.rejects(requireExactRevisionReview(editedRevision,
+  { independentReviewStatus: "PASS", independentReviewDigest: originalDigest },
+  async () => { throw Error("Free AI quota exhausted"); }), /quota exhausted/);
+const ownerUuid = "12345678-1234-1234-1234-123456789012";
+const jwtFixture = "test-fixture-jwt-no-secrets";
+const ownerRequest = (jwt: string | null) => new Request("https://example.test", {
+  headers: jwt ? { Authorization: "Bearer " + jwt } : {},
+});
+assert.equal(await verifyCoursePublicationOwner(ownerRequest(jwtFixture), undefined, async () => ownerUuid), false);
+assert.equal(await verifyCoursePublicationOwner(ownerRequest(null), ownerUuid, async () => ownerUuid), false);
+assert.equal(await verifyCoursePublicationOwner(ownerRequest(jwtFixture), ownerUuid, async () => "other"), false);
+assert.equal(await verifyCoursePublicationOwner(ownerRequest(jwtFixture), ownerUuid, async () => ownerUuid), true);
+assert.equal(await verifyCoursePublicationOwner(ownerRequest(jwtFixture), ownerUuid, async () => { throw Error("Auth outage"); }), false);
 const boundary = structuredClone(document);
 boundary.lessons[0].body = [Array(550).fill("word").join(" "), "## Heading words do not make a short lesson long enough"];
 assert.equal(lessonWordCount(boundary.lessons[0].body), 550);
