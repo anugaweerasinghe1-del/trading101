@@ -3,6 +3,9 @@ import { createCourseAdminHandler } from "../_shared/courseAdmin.ts";
 import { validateBatch } from "../_shared/dailyPractice.ts";
 import { validateCourseDocument } from "../_shared/courseDocument.ts";
 import { reviewCourseQuality } from "../_shared/courseQualityGate.ts";
+import { independentCourseReview, readCourseReferences } from "../_shared/courseGenerator.ts";
+import { requireExactRevisionReview, verifyCoursePublicationOwner } from "../_shared/coursePublicationGate.ts";
+import type { CourseDocument } from "../_shared/courseDocument.ts";
 import { clientIp, allow } from "../_shared/rateLimit.ts";
 
 const client = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!, { auth: { persistSession: false } });
@@ -13,6 +16,14 @@ async function rpc(name: string, args: Record<string, unknown>) {
 }
 Deno.serve(createCourseAdminHandler({
   getKey: () => Deno.env.get("ADMIN_MASTER_KEY"),
+  // Auth is verified against the server-side Supabase Auth service. The admin
+  // key alone cannot attribute or authorize publication. Missing owner ID denies.
+  authorizePublish: async request => verifyCoursePublicationOwner(
+    request, Deno.env.get("TRADEHQ_COURSE_OWNER_USER_ID"), async jwt => {
+      const { data, error } = await client.auth.getUser(jwt);
+      return error ? null : data.user?.id ?? null;
+    },
+  ),
   rateLimit: async req => await allow("course-admin-global", "course-admin-global", 300, 60)
     && await allow("course-admin:" + clientIp(req), "course-admin", 300, 30),
   store: {
@@ -47,10 +58,28 @@ Deno.serve(createCourseAdminHandler({
     },
     save: (id, revision, document) => rpc("save_course_draft", { p_id: id, p_revision: revision, p_document: document }),
     async publish(id, revision, reviewer) {
-      const { data, error } = await client.from("course_drafts").select("document").eq("id", id).single();
+      const { data, error } = await client.from("course_drafts")
+        .select("document,research,revision").eq("id", id).single();
       if (error) throw error;
+      if (data.revision !== revision) throw new Error("Course changed since review. Reload before publishing.");
       const errors = [...validateCourseDocument(data.document, true), ...reviewCourseQuality(data.document)];
       if (errors.length) throw new Error("Course is incomplete: " + errors.join(" "));
+      await requireExactRevisionReview(data.document, data.research, async document => {
+        // Use the existing service-role-only free Gemini configuration, shared
+        // with the newsletter. Credentials are never sent to the browser.
+        const cfg = await rpc("newsletter_ai_credentials", {}) as {
+          model?: string; apiKey?: string; freeConfirmed?: boolean;
+        } | null;
+        if (!cfg?.freeConfirmed || !cfg.apiKey ||
+          !["gemini-3.5-flash", "gemini-3.5-flash-lite"].includes(cfg.model ?? ""))
+          throw new Error("Course publication configuration requires a verified free Gemini model.");
+        const sources = await readCourseReferences();
+        if (sources.length < 2) throw new Error("Too few verified sources for independent course review.");
+        await independentCourseReview(document as CourseDocument, sources,
+          { model: cfg.model!, apiKey: cfg.apiKey });
+      });
+      // Optimistic revision check inside the RPC prevents concurrent edits
+      // between the source read, external review and final publication.
       return rpc("publish_course_draft", { p_id: id, p_revision: revision, p_reviewer: reviewer });
     },
     reject: (id, revision) => rpc("reject_course_draft", { p_id: id, p_revision: revision }),
