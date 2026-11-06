@@ -95,7 +95,16 @@ export default function AdminAIAssistant() {
       setGithubError(summaries.some(x => x.status === "rejected") ? "Some PR check results could not be fetched; verify directly on GitHub." : "");
       setGithubCheckedAt(new Date());
     } catch (failure) {
-      if (guard.current()) setGithubError(failure instanceof Error ? failure.message : "GitHub status unavailable. Open GitHub to verify.");
+      if (!guard.current()) return;
+      // A failed GitHub fetch cannot leave old proposal and validation results
+      // visible as though they were a current check. Fail closed independently
+      // of the privileged owner session or editorial state.
+      setIssues([]);
+      setPrs([]);
+      setChecks({});
+      setGithubCheckedAt(null);
+      setGithubError((failure instanceof Error ? failure.message : "GitHub status unavailable.") +
+        " Previous GitHub proposal and validation snapshots were cleared; verify directly on GitHub.");
     }
   }, [key, scope]);
   useAdminRefresh(unlocked, refresh, { intervalMs: 900000, minGapMs: 900000 });

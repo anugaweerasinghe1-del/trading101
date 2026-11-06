@@ -73,6 +73,13 @@ assert.match(dashboard, /body: \{ action: "status" \}/);
 assert.match(dashboard, /CONFIGURED_NOT_TESTED/);
 assert.match(dashboard, /PILOT_PAUSED/);
 assert.match(dashboard, /setChatReadiness\(null\); warnings\.push/);
+// The AI Development Desk must fail closed on a total GitHub read failure:
+ // no earlier approval proposal, check status, or freshness timestamp remains.
+const aiDesk = source('src/pages/AdminAIAssistant.tsx');
+assert.match(aiDesk, /if \(!guard\.current\(\)\) return;\s*\/\/ A failed GitHub fetch/);
+assert.match(aiDesk, /setIssues\(\[\]\);\s*setPrs\(\[\]\);\s*setChecks\(\{\}\);\s*setGithubCheckedAt\(null\);/);
+assert.match(aiDesk, /Previous GitHub proposal and validation snapshots were cleared/);
+assert.match(aiDesk, /setChecks\(next\);/);
 // Public GitHub polling must clear outdated status after partial and total outages.
 // A cached green agent run cannot masquerade as a current provider or deployment check.
 assert.match(dashboard, /else setIssues\(\[\]\); \/\/ Do not show an earlier issue feed/);
