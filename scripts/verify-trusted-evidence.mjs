@@ -332,12 +332,31 @@ assert.equal(incidentHandoff.cases[0].evidenceDigest,offline.cases[0].evidenceDi
 assert.equal(incidentHandoff.cases[0].symptom,"BLANK_ROOT");
 assert.ok(Object.values(incidentHandoff.authorization).every(v=>v===false));
 assert.match(incidentHandoff.sha256,/^[a-f0-9]{64}$/);
-const healthyHandoff=summarizeInvestigation(await collectOfflineRepairReview({
+const healthyReview=await collectOfflineRepairReview({
   ...options,reader:readerFor(fixture())
-}));
+});
+const healthyHandoff=summarizeInvestigation(healthyReview);
 assert.equal(healthyHandoff.status,"NO_VERIFIED_INCIDENT");
 assert.equal(healthyHandoff.ownerReviewRequired,false);
 assert.equal(healthyHandoff.cases.length,0);
+// A clean verified handoff cannot be blocked by unrelated legacy feedback.
+const {feedbackForVerifiedHandoff}=await import("./agent-operational-investigation-handoff.mjs");
+let feedbackReads=0;
+const cleanHistory=await feedbackForVerifiedHandoff(healthyReview, async()=>{
+  feedbackReads++; throw Error("Clean run must not read incident history");
+});
+assert.equal(feedbackReads,0);
+assert.equal(cleanHistory.status,"NOT_CONSULTED_NO_VERIFIED_INCIDENT");
+assert.deepEqual(cleanHistory.memory,{version:1,records:[]});
+assert.equal(cleanHistory.confirmedRepairOutcomes,0);
+// Verified incidents still fail closed on inaccessible or malformed history.
+await assert.rejects(feedbackForVerifiedHandoff(offline,async()=>{
+  feedbackReads++; throw Error("Authenticated history unavailable");
+}),/Authenticated history unavailable/);
+assert.equal(feedbackReads,1);
+await assert.rejects(feedbackForVerifiedHandoff(offline,async()=>({
+  schema:"invalid-history",confirmedRepairOutcomes:0
+})),/Untrusted incident history/);
 for(const mutate of [
   x=>x.cases[0].rootCauseVerified=true,
   x=>x.cases[0].repairRisk="LOW",
