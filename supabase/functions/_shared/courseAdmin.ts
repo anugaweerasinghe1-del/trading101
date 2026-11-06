@@ -79,12 +79,15 @@ export function createCourseAdminHandler(options: {
         if (body.reviewed !== true || typeof body.reviewer !== "string" || body.reviewer.trim().length < 2 || body.reviewer.length > 80) {
           return response({ error: "Confirm your review and enter the reviewer's name." }, 400);
         }
-        if (options.authorizePublish && !await options.authorizePublish(req))
+        // Match Daily Practice: owner verification is mandatory, not an
+        // optional enhancement. An omitted integration must never turn the
+        // master key and a typed reviewer name into publication authority.
+        if (!options.authorizePublish)
+          return response({ error: "Owner verification is unavailable." }, 503);
+        if (!await options.authorizePublish(req))
           return response({ error: "Course approval requires the designated owner to be signed in as well as the master key." }, 403);
-        // Typed display names are not authorization evidence. Store a stable,
-        // accurate attribution only after the owner identity was authenticated.
         return response({ data: await options.store.publish(id, revision,
-          options.authorizePublish ? "TradeHQ owner (authenticated)" : body.reviewer.trim()) });
+          "TradeHQ owner (authenticated)") });
       }
       if (body.action === "reject") return response({ data: await options.store.reject(id, revision) });
       return response({ error: "Unknown action." }, 400);
