@@ -53,6 +53,8 @@ jobs:
         run: node scripts/verify-cloudflare-seo.mjs
       - name: Bundle Cloudflare Pages Functions using Wrangler
         run: npx --yes wrangler@4 pages functions build functions --outfile /tmp/tradehq-pages-worker.js
+      - name: Verify actual Workers daily reference runtime with a stub upstream
+        run: node scripts/verify-fx-reference-worker.mjs
       - name: Validate non-indexable fallback and narrow function routing
         run: |
           node --check scripts/prepare-cloudflare.mjs

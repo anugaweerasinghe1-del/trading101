@@ -74,6 +74,10 @@ async function main(){
   const temp=mkdtempSync(join(tmpdir(),"tradehq-isolated-auth-"));
   const dist=join(temp,"dist"),profile=join(temp,"chrome");
   let server,browser,devtools;let attempts=0,approved=0,rejected=0,dataWrites=0,portfolioInitialized=0,logouts=0,refreshRejected=0,dailyReads=0,adminChatRequests=0;
+  let fxReferenceReads=0,fxReferenceMode='valid';
+  const fxDate=new Date(Date.now()-3*86400000).toISOString().slice(0,10);
+  const fxBatch={kind:'daily_fx_reference',source:'Frankfurter blended daily reference',requestedDate:fxDate,
+    rates:{eurusd:{rate:1.234567,date:fxDate},gbpusd:{rate:1.345678,date:fxDate}}};
   let showPublications=false,publicationReads=0;
   let learningWrites=0, learningReads=0, savedLearning=null;
   let privateTradeReads=0, privateTradeRejected=0;
@@ -115,6 +119,13 @@ async function main(){
         res.writeHead(status,{"Content-Type":"application/json","Cache-Control":"no-store"});
         res.end(JSON.stringify(body));
       };
+      if(route==='/api/fx-reference'){
+        assert.equal(req.method,'GET');fxReferenceReads++;
+        if(fxReferenceMode==='unavailable')return json(503,{error:'Reference unavailable'});
+        if(fxReferenceMode==='future')return json(200,{...fxBatch,requestedDate:'2099-01-01'});
+        // Deliberate delay makes the actual accessible loading state observable.
+        setTimeout(()=>json(200,fxBatch),500);return;
+      }
       if(route==='/functions/v1/admin-courses' && req.method==='POST'){
         if(req.headers['x-admin-key']!==ADMIN_FIXTURE_KEY)return json(401,{error:'fixture_admin_denied'});
         let content='';req.on('data',chunk=>{content+=chunk;});
@@ -1206,6 +1217,56 @@ async function main(){
     await loadDocument(origin+'/admin/seo-audit');
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Live HTML metadata check')"),'Live HTML audit utility mounts');
     console.log('ISOLATED_ADMIN_UTILITIES_BROWSER_PASS: asset validator, legacy editor redirect and HTML audit route mount; no production URL scan or privileged backend writes.');
+
+    // Reference information cannot become an execution quote or account write.
+    await loadDocument(origin+'/trade/eurusd');
+    if(await devtools.evaluate("!!document.querySelector('[aria-label=\"Account menu\"]')")){
+      await devtools.evaluate("document.querySelector('[aria-label=\"Account menu\"]').dispatchEvent(new PointerEvent('pointerdown',{bubbles:true,button:0,ctrlKey:false}))");
+      await wait(()=>devtools.evaluate("[...document.querySelectorAll('[role=menuitem]')].some(e=>e.textContent.trim()==='Sign out')"),'FX fixture sign-out menu');
+      await devtools.evaluate("[...document.querySelectorAll('[role=menuitem]')].find(e=>e.textContent.trim()==='Sign out').click()");
+      await wait(()=>devtools.evaluate("!document.querySelector('[aria-label=\"Account menu\"]')"),'FX fixture guest');
+      await loadDocument(origin+'/trade/eurusd');
+    }
+    const fxPanel="document.querySelector('[aria-label=\"Daily forex reference\"]')";
+    await wait(()=>devtools.evaluate(fxPanel+"?.textContent.includes('Reference date:')"),'Dated FX reference renders');
+    const beforeFx=await devtools.evaluate("JSON.parse(localStorage.getItem('tradehq_portfolio'))");
+    assert.ok(await devtools.evaluate(fxPanel+".textContent.includes('1.234567') && "+fxPanel+".querySelector('time').dateTime==="+JSON.stringify(fxDate)), 'Actual source date and rate are visible');
+    assert.ok(await devtools.evaluate(fxPanel+".textContent.includes('does not set trade prices or portfolio values')"));
+    const readsBeforeNavigation=fxReferenceReads;
+    await devtools.evaluate("document.querySelector('[aria-label^=\"Choose an asset\"]').click()");
+    await wait(()=>devtools.evaluate("!!document.querySelector('#asset-search-panel input')"),'FX asset chooser');
+    await adminInput('#asset-search-panel input','GBP/USD');
+    await wait(()=>devtools.evaluate("[...document.querySelectorAll('#asset-search-panel button')].some(e=>e.textContent.includes('GBP/USD'))"),'GBP choice');
+    await devtools.evaluate("[...document.querySelectorAll('#asset-search-panel button')].find(e=>e.textContent.includes('GBP/USD')).click()");
+    await wait(()=>devtools.evaluate("location.pathname==='/trade/gbpusd' && "+fxPanel+"?.textContent.includes('1.345678')"),'Client FX navigation shares cached batch');
+    assert.equal(fxReferenceReads,readsBeforeNavigation,'Changing pair reuses one reference read');
+    assert.deepEqual(await devtools.evaluate("JSON.parse(localStorage.getItem('tradehq_portfolio'))"),beforeFx,'Reading references cannot revalue or mutate the portfolio');
+    await adminInput('input[aria-label="Amount in GBP/USD"]','1');
+    await wait(()=>guestClick('Buy GBP/USD'),'Guest FX execution');
+    await wait(()=>devtools.evaluate("JSON.parse(localStorage.getItem('tradehq_portfolio')).trades.length>"+beforeFx.trades.length),'FX trade saved locally');
+    const afterFx=await devtools.evaluate("JSON.parse(localStorage.getItem('tradehq_portfolio'))");
+    assert.equal(afterFx.trades[0].assetId,'gbpusd');
+    assert.notEqual(afterFx.trades[0].price,1.345678,'Daily reference never supplies executable price');
+    assert.equal(dataWrites,0,'Reference browsing/trading must not add forbidden backend writes');
+    for(const mode of ['unavailable','future']){
+      fxReferenceMode=mode;await loadDocument(origin+'/trade/eurusd');
+      await wait(()=>devtools.evaluate(fxPanel+"?.textContent.includes('temporarily unavailable')"),'FX '+mode+' information disclosed');
+      assert.equal(await devtools.evaluate(fxPanel+".querySelector('time')===null"),true,'Unavailable or future data cannot display a dated rate');
+      assert.ok(await devtools.evaluate("!!document.querySelector('input[aria-label=\"Amount in EUR/USD\"]')"),'Order panel remains available');
+    }
+    fxReferenceMode='valid';await loadDocument(origin+'/trade/eurusd');
+    await wait(()=>devtools.evaluate(fxPanel+"?.textContent.includes('Loading reference information')"),'Accessible FX loading status');
+    await wait(()=>devtools.evaluate(fxPanel+"?.querySelector('time')!==null"),'Reference returns after outage');
+    await devtools.send('Emulation.setDeviceMetricsOverride',{width:320,height:850,deviceScaleFactor:1,mobile:true});
+    for(const theme of ['light','dark']){
+      await devtools.evaluate("document.documentElement.classList.toggle('dark',"+(theme==='dark')+")");
+      assert.ok(await devtools.evaluate("document.documentElement.scrollWidth<=innerWidth+1"),'320px '+theme+' reference fits');
+      assert.ok(await devtools.evaluate(fxPanel+".getBoundingClientRect().width<=320"));
+    }
+    await loadDocument(origin+'/trade/btc');
+    await wait(()=>devtools.evaluate("!!document.querySelector('input[aria-label=\"Amount in BTC\"]')"),'BTC remains usable');
+    assert.equal(await devtools.evaluate(fxPanel+'===null'),true,'Reference panel is forex only');
+    console.log('ISOLATED_FX_REFERENCE_BROWSER_PASS: dated source, shared pair cache, real guest trade uses independent execution price, unchanged portfolio on reads, outage/future rejection, loading, 320px light/dark; no real provider calls.');
 
     console.log('ISOLATED_AUTOMATION_INBOX_PASS: compiled dashboard combines course, Daily and Newsletter drafts, failures, cooldown, open findings and proposals; collector evidence linked to commit; partial outage stays unknown; stale refresh disclosed; zero mutations. Fixture only.');
     console.log('ISOLATED_COURSE_PROGRESS_BROWSER_PASS: null tracks, null lessons and invalid lesson rows recovered; valid unrelated completion/badge retained after real lesson save and reload; fixture only.');

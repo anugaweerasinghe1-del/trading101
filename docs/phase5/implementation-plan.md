@@ -21,9 +21,9 @@ Issues remain open until their real acceptance gaps are resolved.
 | A–B / #332/#335 Daily | Schedule, attempts, saved-revision editing/review, effective-date delivery, failure recovery and approved free-tier generation work. Preserve published 50-case/500-question bank. | #362 UI fixture-tested. Prior evidence v16 source parity; historical HTTP400, 3/3 attempts, next bank 9 Dec. | Do not reset exhausted cycle or call AI without authorization. Metadata connectivity cannot prove generation. |
 | A / #332 newsletter | Confirmation/unsubscribe, private drafts, preview, approval, authorized recipients, receipts and recovery. | #362 editor fixtures; #365/#366 legacy endpoint restoration/CORS and registered-owner gate tested/merged; prior v7 source parity. | Actual subscriber delivery excluded from tests. Genuine owner no-send acceptance and disposable opt-in lifecycle remain open. |
 | A / #332 chatbot | Owner/provider configuration, free-tier quota, inert valid replies, auth/error handling, request fencing and lock. | #362 real Chromium fixture cases cover quota/401/403/paused/empty/forged/late replies. | Actual registered owner + permitted provider request required for genuine reply acceptance. |
-| A / #332 reviews | Moderation edit/reply/delete/restore persist; failed reads do not erase confirmed writes; privacy, duplicate prevention, keyboard/mobile/theme controls pass. | #367 deployed with confirmed-write/read-outage recovery; executable handler and Chromium fixtures pass, genuine owner acceptance pending. | Implement recovery and exercise disposable fixture, then PR/CI/merge/deployment. |
+| A / #332 reviews | Moderation edit/reply/delete/restore persist; failed reads do not erase confirmed writes; privacy, duplicate prevention, keyboard/mobile/theme controls pass. | #367 deployed with confirmed-write/read-outage recovery; executable handler and Chromium fixtures pass, genuine owner acceptance pending. | Recovery deployed in #367; genuine owner moderation acceptance remains pending. |
 | A / #332 code controls | Queue/diagnostics/approval/stop and GitHub/deployment evidence accurate; private state fenced on sign-out. | Existing isolated queue/control tests, prior worker diagnostics; live privileged controls unaccepted. | Do not retry real owner jobs or stop production for testing. Inspect durable state with authorization. |
-| A / #332 mobile/accessibility/utilities | Real existing controls work at narrow widths, light/dark, keyboard, loading/repeats; tools accurately describe scope. | #362 320px course/Daily/newsletter and utility-route fixtures. | Extend moderation recovery coverage; remaining actual owner workflow acceptance pending. |
+| A / #332 mobile/accessibility/utilities | Real existing controls work at narrow widths, light/dark, keyboard, loading/repeats; tools accurately describe scope. | #362 320px course/Daily/newsletter and utility-route fixtures. | Moderation and cross-desk navigation browser coverage now pass; actual owner acceptance pending. |
 | C / #335 markets/portfolio | Persist/recover portfolios/trades; accurate provenance/freshness and leaderboard; one failed refresh cannot erase other successes. | #363 isolation fix tested/merged; prior v16 parity and scheduled HTTP200. Prior evidence: 15/15 held crypto fresh; 0/17 traditional fresh. | Provider entitlement/budget evidence missing. Do not fabricate observations or label old prices live. |
 | D / #335 beginner/arena/leaderboard | Guest/account learn→trade→reflect→resume journey and consent-based aggregate funnel, private defaults, eligibility/rank distinctions and recovery. | Earlier journey/privacy/funnel code and fixtures exist (#334/#336/#361 etc.); whole real journey not accepted. | Exercise disposable fixtures; genuine account confirmation requires legitimate session. No invented conversion metrics. |
 | E / #353 trophy cabinet | Agreed approximately 20 educational trophies, premium tiers/animation/placement; server authority, default private, separate opt-in/revocation and anti-abuse. | Existing private cabinet and first server-recorded trade milestone; major redesign explicitly deferred for later user discussion. | Owner prefers distinct sculpted trophies/richer animation; implementation deferred. No public awards from editable browser progress; no profit-chasing incentives. |
@@ -299,3 +299,54 @@ Issues remain open until their real acceptance gaps are resolved.
   infer provider key validity/free-tier entitlement from a true presence flag.
 - Rollback: restore the preceding verified refresh-worker bundle; no schema/data
   rollback. Next safe action: submit this PR and finish #371 postmerge proof.
+
+
+### 6 Nov — provider diagnostics released; daily FX references authorized
+
+- #372 merged as `d6d0dd3bda8c385b45e5171b6cb5cdb4ca5204e9`; full main run
+  [42234815755](https://github.com/anugaweerasinghe1-del/trading101/actions/runs/42234815755)
+  passed. Native Cloudflare production `f5c00c11-8812-4f21-ab68-1f801d6ece13`
+  and Vercel `dpl_2EvDqk7rY8FNXxRFPspXpTeWmdPb` both proved that main SHA.
+- Refresh worker v17 ACTIVE returned all seven reviewed source files unchanged.
+  Ordinary scheduled 14:35 UTC result: HTTP200, 53 requested / 50 updated /
+  3 unavailable; private configuration flags both false. No forced refresh,
+  extra upstream requests or production position changes. Public live-market-data
+  v18 still matches all eight reviewed files. Native proof and remaining gates:
+  [#332 checkpoint](https://github.com/anugaweerasinghe1-del/trading101/issues/332#issuecomment-6687716549).
+- Owner requests a free-tier provider and explicitly approved **daily reference
+  information only**. [Frankfurter documentation](https://frankfurter.dev/) permits
+  free commercial blended daily references without a key; bounded cached requests
+  are appropriate. A fixed-date public read returned all 12 USD quotes needed to
+  derive the 15 existing pairs. An unfiltered latest response included dates later
+  than the current date, so latest is unsuitable: request only the previous
+  completed weekday in Asia/Colombo and reject future, invalid, old or inconsistent
+  cross-rate dates. Show the actual per-pair source date, not a live timestamp.
+- Implement a same-origin GET-only reference API for both hosting platforms, shared
+  pure validation, bounded 32KB/8s upstream read, fixed provider URL/headers,
+  coalescing, daily edge/in-memory cache and short failure cooldown. No visitor
+  cookies, IP headers, credentials or user-selected upstream URLs are forwarded.
+- Forex-only UI names Frankfurter and labels the rate for learning/comparison.
+  Reference data never enters price history, execution, valuation or holdings.
+  Invalid/unavailable responses produce an explicit unavailable state. No schema,
+  Supabase function, secrets, scheduler cadence, paid service or provider key change.
+- Ordinary Alpha Vantage free quota is 25/day versus up to 576 traditional asset
+  attempts/day at current cadence, and public-display rights need confirmation;
+  Twelve Basic is internal non-display. Do not activate traditional execution
+  providers based on a free-account label. Research is recorded in
+  [#335](https://github.com/anugaweerasinghe1-del/trading101/issues/335#issuecomment-6687717254).
+- Acceptance: all 15 conversions and invalid/partial/future/duplicate-date fixtures;
+  both real hosting adapters; upstream header/privacy/cache/error bounds; actual
+  compiled browser source/date/outage/320px themes and an independent-price guest
+  trade; full required PR/main checks and native deployment/live endpoint proof.
+  Tests use loopback fixtures and make no real provider calls.
+- Rollback: revert this isolated reference panel/API commit; execution and stored
+  portfolios need no data rollback. Trophy work remains deferred. Real owner auth,
+  exhausted Daily cycle and public-display stock-provider rights remain open gates.
+
+- Real Pages preview initially returned HTTP503 despite passing Node fixtures and
+  a successful bundle. A workerd reproduction identified unsupported
+  `redirect: error`; use `manual` and reject non-2xx, including redirect responses.
+  Cache plain body/status/header values rather than sharing request-bound Response
+  streams. Added a required actual-workerd regression using the real handler,
+  independent request contexts and a stub upstream (no external provider calls).
+  New exact-head checks and a successful real preview read are required before merge.
