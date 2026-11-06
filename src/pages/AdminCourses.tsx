@@ -1,4 +1,4 @@
-import { AdminDraftLink } from "@/components/admin/AdminDraftLink";
+import { useAdminDraftNavigation } from "@/hooks/useAdminDraftNavigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -34,6 +34,7 @@ export default function AdminCourses() {
   const pending = useRef(false);
   const [settingsDirty, setSettingsDirty] = useState(false);
   const dirty = settingsDirty || !!document && JSON.stringify(document) !== JSON.stringify(selected?.document);
+  useAdminDraftNavigation(dirty);
   const stale = !!selected && !drafts.some(row => row.id === selected.id && row.revision === selected.revision && row.status === selected.status);
   const errors = document ? [...validateCourseDocument(document, true), ...reviewCourseQuality(document)] : [];
   const call = useCallback(async (action: string, payload: Record<string, unknown> = {}, bearerToken?: string) => {
@@ -140,7 +141,7 @@ export default function AdminCourses() {
       </form>
     </main> : <main className="min-h-screen bg-background px-4 sm:px-6 py-8 max-w-7xl mx-auto">
       <header className="flex flex-wrap items-center justify-between gap-4 mb-8"><div><p className="text-xs uppercase tracking-widest text-primary mb-2">TradeHQ · Admin</p><h1 className="text-2xl font-semibold">Course desk</h1></div>
-        <div className="flex flex-wrap items-center gap-4 text-sm"><AdminDraftLink dirty={dirty} to="/admin" className="text-primary">Dashboard</AdminDraftLink><AdminDraftLink dirty={dirty} to="/admin/daily" className="text-primary">Daily practice</AdminDraftLink><AdminDraftLink dirty={dirty} to="/admin/reviews" className="text-muted-foreground">Reviews</AdminDraftLink><button onClick={() => { if (dirty && !confirm("Discard unsaved edits and lock?")) return; scope.invalidate(); pending.current = false; setBusy(false); setUnlocked(false); setKey(""); setDocument(null); setSelected(null); setDrafts([]); setSettings(null); setReviewed(false); setCheckedAt(null); setRefreshError(''); setOwnerCheck(null); setSettingsDirty(false); }} className="flex items-center gap-2"><Lock className="w-4 h-4" />Lock</button></div></header>
+        <div className="flex flex-wrap items-center gap-4 text-sm"><Link to="/admin" className="text-primary">Dashboard</Link><Link to="/admin/daily" className="text-primary">Daily practice</Link><Link to="/admin/reviews" className="text-muted-foreground">Reviews</Link><button onClick={() => { if (dirty && !confirm("Discard unsaved edits and lock?")) return; scope.invalidate(); pending.current = false; setBusy(false); setUnlocked(false); setKey(""); setDocument(null); setSelected(null); setDrafts([]); setSettings(null); setReviewed(false); setCheckedAt(null); setRefreshError(''); setOwnerCheck(null); setSettingsDirty(false); }} className="flex items-center gap-2"><Lock className="w-4 h-4" />Lock</button></div></header>
       <div className="flex flex-wrap gap-3 mb-6">
         <button type="button" onClick={() => { if (settingsDirty && !confirm("Discard unsaved generation settings?")) return; setMode("edit"); }} className="rounded-xl border border-border px-4 py-2 text-sm">Draft inbox ({drafts.filter(d => d.status === "draft").length})</button>
         <button type="button" onClick={() => setMode("settings")} className="rounded-xl border border-border px-4 py-2 text-sm inline-flex items-center gap-2"><Settings2 className="w-4 h-4" />Generation settings</button>

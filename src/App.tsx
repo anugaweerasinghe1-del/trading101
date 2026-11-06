@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { PageTransition } from "@/components/PageTransition";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
@@ -266,28 +266,33 @@ function WatchlistSnapshot() {
   return null;
 }
 
+function AppRuntime() {
+  return <AuthProvider>
+    <RouteScrollManager />
+    <CrossTabPortfolioSync />
+    <AnimatedRoutes />
+    <RoutePublisherNotes />
+    <MobileBottomNav />
+    <BackgroundMusic />
+    <PushNotificationPrompt />
+    <WatchlistSnapshot />
+    <ConsentBanner />
+    <CoursePublicationNotices />
+    <CloudLearningProgressSync />
+    <PortfolioLiveUpdates />
+  </AuthProvider>;
+}
+
+// The data router supplies supported blockers for SPA links and history traversal.
+// Existing route definitions and application providers retain their boundaries.
+const appRouter = createBrowserRouter([{ path: "*", element: <AppRuntime /> }]);
 const App = () => (
   <HelmetProvider>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
         <Sonner position="top-center" richColors closeButton />
-        <BrowserRouter>
-          <AuthProvider>
-            <RouteScrollManager />
-            <CrossTabPortfolioSync />
-            <AnimatedRoutes />
-            <RoutePublisherNotes />
-            <MobileBottomNav />
-            <BackgroundMusic />
-            <PushNotificationPrompt />
-            <WatchlistSnapshot />
-            <ConsentBanner />
-            <CoursePublicationNotices />
-            <CloudLearningProgressSync />
-            <PortfolioLiveUpdates />
-          </AuthProvider>
-        </BrowserRouter>
+        <RouterProvider router={appRouter} />
       </TooltipProvider>
     </QueryClientProvider>
   </HelmetProvider>

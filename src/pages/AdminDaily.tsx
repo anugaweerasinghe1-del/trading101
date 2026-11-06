@@ -1,4 +1,5 @@
-import { AdminDraftLink } from "@/components/admin/AdminDraftLink";
+import { Link } from "react-router-dom";
+import { useAdminDraftNavigation } from "@/hooks/useAdminDraftNavigation";
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { toast } from 'sonner';
@@ -33,6 +34,7 @@ export default function AdminDaily() {
   const [modelCheck, setModelCheck] = useState<string | null>(null);
   const exercisePanel = useRef<HTMLElement>(null);
   const pending = useRef(false), dirty = !!doc && JSON.stringify(doc) !== JSON.stringify(selected?.document);
+  useAdminDraftNavigation(dirty);
   const stale = !!selected && !rows.some(row => row.id === selected.id && row.revision === selected.revision && row.status === selected.status);
   const call = useCallback(async (action: string, payload: Record<string, unknown> = {}, bearerToken?: string) => {
     const guard = scope.capture(key);
@@ -94,7 +96,7 @@ export default function AdminDaily() {
   };
   const errors = doc ? validateExercises(doc.exercises) : [], e = doc?.exercises[index];
   return <main className="min-h-screen bg-background text-foreground px-5 py-10"><Helmet><title>Daily Practice Administration | TradeHQ</title><meta name="robots" content="noindex, nofollow" /></Helmet><div className="max-w-6xl mx-auto space-y-6">
-    <header className="flex flex-wrap justify-between gap-4"><div><h1 className="text-2xl font-bold">Daily practice</h1><p className="text-sm text-muted-foreground mt-1">50 deeper exercises · a new private bank every two months</p></div><nav className="flex flex-wrap gap-4 text-sm"><AdminDraftLink dirty={dirty} to="/admin" className="text-primary">Dashboard</AdminDraftLink><AdminDraftLink dirty={dirty} to="/admin/courses" className="text-primary">Courses</AdminDraftLink><AdminDraftLink dirty={dirty} to="/admin/reviews" className="text-primary">Reviews</AdminDraftLink>{unlocked && <button onClick={() => { if (dirty && !confirm('Discard unsaved edits and lock?')) return; scope.invalidate(); pending.current = false; setBusy(false); setCheckedAt(null); setRefreshError(''); setReviewed(false); setKey(''); setUnlocked(false); setDoc(null); setSelected(null); setRows([]); setStatus(null); setModelCheck(null); }}>Lock</button>}</nav></header>
+    <header className="flex flex-wrap justify-between gap-4"><div><h1 className="text-2xl font-bold">Daily practice</h1><p className="text-sm text-muted-foreground mt-1">50 deeper exercises · a new private bank every two months</p></div><nav className="flex flex-wrap gap-4 text-sm"><Link to="/admin" className="text-primary">Dashboard</Link><Link to="/admin/courses" className="text-primary">Courses</Link><Link to="/admin/reviews" className="text-primary">Reviews</Link>{unlocked && <button onClick={() => { if (dirty && !confirm('Discard unsaved edits and lock?')) return; scope.invalidate(); pending.current = false; setBusy(false); setCheckedAt(null); setRefreshError(''); setReviewed(false); setKey(''); setUnlocked(false); setDoc(null); setSelected(null); setRows([]); setStatus(null); setModelCheck(null); }}>Lock</button>}</nav></header>
     {!unlocked ? <form className="max-w-md border border-border rounded-2xl p-6 space-y-4" onSubmit={ev => { ev.preventDefault(); void run(async () => { const drafts = await load(); setUnlocked(true); if (drafts[0]) choose(drafts[0]); }); }}>
       <label className="block text-sm">Admin master key<input required type="password" disabled={busy} autoComplete="off" value={key} onChange={e => setKey(e.target.value)} className="mt-2 w-full bg-background rounded-xl border border-border p-3" /></label><button disabled={busy} className={button}>Unlock</button>
     </form> : <>

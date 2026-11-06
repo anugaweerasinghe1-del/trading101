@@ -1,3 +1,4 @@
+import { useAdminDraftNavigation } from "@/hooks/useAdminDraftNavigation";
 import { Link } from "react-router-dom";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
@@ -41,6 +42,7 @@ export default function AdminReviews() {
   const hasUnsaved = Object.keys(edits).some(id => confirmed.current.get(id) !== "update") || Object.entries(replies).some(
     ([id, value]) => confirmed.current.get(id) !== "reply" && value !== (reviews.find(review => review.id === id)?.owner_reply ?? "")
   );
+  useAdminDraftNavigation(unlocked && hasUnsaved);
   useEffect(() => {
     if (!unlocked || !hasUnsaved) return;
     const warn = (event: BeforeUnloadEvent) => { event.preventDefault(); event.returnValue = ""; };

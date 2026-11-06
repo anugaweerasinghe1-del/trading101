@@ -910,6 +910,8 @@ async function main(){
     await devtools.send('Input.dispatchKeyEvent',{type:'keyUp',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});
     assert.equal(await devtools.evaluate('location.pathname'),'/admin/newsletter' ,'Denied navigation must preserve unsaved newsletter writing');
     assert.equal(await devtools.evaluate("document.querySelector('#newsletter-subject').value"),'Unsaved isolated owner writing');
+    // Keyboard focus may itself refresh; respect the hook's 1s event coalescing.
+    await sleep(1100);
     newsletterRevision=2;newsletterConfirmed=7;const beforeNewsletterReads=newsletterReads;
     await devtools.evaluate("window.dispatchEvent(new Event('online'))");
     await wait(()=>newsletterReads>beforeNewsletterReads,'Reconnect requests fresh newsletter metadata');
@@ -965,7 +967,15 @@ async function main(){
     // strictly read-only loopback backend. These interactions must never send
     // generation, draft-save, publication or configuration writes.
     dashboardFixture=false;courseDeskFixture=true;
-    await loadDocument(origin+'/admin/courses');
+    // Seed real Router history on both sides of the Course desk.
+    await loadDocument(origin+'/admin/daily');
+    await wait(()=>devtools.evaluate("!!document.querySelector('header a[href=\"/admin/courses\"]')"),'Daily to Course history link');
+    await devtools.evaluate("document.querySelector('header a[href=\"/admin/courses\"]').click()");
+    await wait(()=>devtools.evaluate("location.pathname==='/admin/courses' && !!document.querySelector('main form input[type=password]')"),'Course history entry');
+    await devtools.evaluate("document.querySelector('a[href=\"/admin/daily\"]').click()");
+    await wait(()=>devtools.evaluate("location.pathname==='/admin/daily'"),'Forward Daily entry');
+    await devtools.evaluate('history.back()');
+    await wait(()=>devtools.evaluate("location.pathname==='/admin/courses' && !!document.querySelector('main form input[type=password]')"),'Clean Back returns to Course');
     await wait(()=>devtools.evaluate("!!document.querySelector('main form input[type=password]')"),'Course admin unlock');
     await adminInput('main form input[type=password]',ADMIN_FIXTURE_KEY);await adminClick('Open course desk');
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Draft inbox (0)')"),'Compiled empty Course inbox');
@@ -981,6 +991,13 @@ async function main(){
     await devtools.evaluate("window.confirm=()=>false");
     await devtools.evaluate("document.querySelector('header a[href=\"/admin\"]').click()");
     assert.equal(await devtools.evaluate('location.pathname'),'/admin/courses','Denied navigation must preserve unsaved course draft');
+    await devtools.evaluate('window.__draftPrompts=0;window.confirm=()=>{window.__draftPrompts++;return false};history.back()');
+    await wait(()=>devtools.evaluate("window.__draftPrompts===1 && location.pathname==='/admin/courses'"),'Denied browser Back restores current entry');
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('Final approval')"),true,'Back denial preserves the private draft');
+    await devtools.evaluate('history.forward()');
+    await wait(()=>devtools.evaluate("window.__draftPrompts===2 && location.pathname==='/admin/courses'"),'Denied browser Forward restores current entry');
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('Final approval')"),true,'Forward denial preserves the private draft');
+
     await adminClick('Lock');
     assert.equal(await devtools.evaluate("document.body.textContent.includes('Final approval')"),true,
       'Course lock must respect rejected discard confirmation');
@@ -989,6 +1006,18 @@ async function main(){
     await wait(()=>devtools.evaluate("!!document.querySelector('main form input[type=password]')"),'Course locked and private editor gone');
     assert.equal(await devtools.evaluate("document.querySelector('main form input[type=password]').value"),'');
     assert.equal(courseDeskWrites,0,'Course read/edit/lock smoke cannot mutate drafts or launch AI');
+    await devtools.evaluate("window.confirm=()=>{throw Error('Clean Back must not prompt')};history.back()");
+    await wait(()=>devtools.evaluate("location.pathname==='/admin/daily'"),'Clean browser Back navigates after Lock');
+    await devtools.evaluate('history.forward()');
+    await wait(()=>devtools.evaluate("location.pathname==='/admin/courses' && !!document.querySelector('main form input[type=password]')"),'Clean browser Forward');
+    await adminInput('main form input[type=password]',ADMIN_FIXTURE_KEY);await adminClick('Open course desk');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Draft inbox (0)')"),'Course reopened for approved Back');
+    await adminClick('+ Create a draft');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Final approval')"),'Unsaved draft before approved Back');
+    await devtools.evaluate('window.confirm=()=>true;history.back()');
+    await wait(()=>devtools.evaluate("location.pathname==='/admin/daily'"),'Approved browser Back discards and navigates');
+    assert.equal(courseDeskWrites,0,'History navigation cannot save, publish or generate');
+
     courseDeskFixture=false;
     console.log('ISOLATED_ADMIN_COURSE_DESK_BROWSER_PASS: open, inspect settings, disabled generation, new unsaved draft, blocked publish, protected lock, key clearing, zero course writes; fixture only.');
     // A separate disposable branch of this fixture also verifies successful
@@ -1050,12 +1079,19 @@ async function main(){
     // The Reviews desk is also exercised with a real rendered review, an
     // unsaved local edit and both branches of the owner discard confirmation.
     reviewDeskFixture=true;
-    await loadDocument(origin+'/admin/reviews');
+    await loadDocument(origin+'/admin/daily');
+    await wait(()=>devtools.evaluate("!!document.querySelector('header a[href=\"/admin/reviews\"]')"),'Daily to Review history link');
+    await devtools.evaluate("document.querySelector('header a[href=\"/admin/reviews\"]').click()");
+
     await wait(()=>devtools.evaluate("!!document.querySelector('input[aria-label=\"Master key\"]')"),'Reviews admin unlock');
     await adminInput('input[aria-label="Master key"]',ADMIN_FIXTURE_KEY);await adminClick('Unlock');
     await wait(()=>devtools.evaluate("document.querySelector('h1')?.textContent==='Reviews (1)'"),'Private moderation row visible');
     await adminInput('input[aria-label="Review author name"]','Unsaved isolated review name');
     await wait(()=>devtools.evaluate("document.body.textContent.includes('You have unsaved review changes')"),'Review edit marked unsaved');
+    await devtools.evaluate('window.__reviewPrompts=0;window.confirm=()=>{window.__reviewPrompts++;return false};history.back()');
+    await wait(()=>devtools.evaluate("window.__reviewPrompts===1 && location.pathname==='/admin/reviews'"),'Review Back denial preserves the desk');
+    assert.equal(await devtools.evaluate("document.querySelector('input[aria-label=\"Review author name\"]').value"),'Unsaved isolated review name','Back denial preserves unsaved moderation text');
+
     await devtools.evaluate("window.confirm=()=>false");
     await adminClick('Lock admin panel');
     assert.equal(await devtools.evaluate("document.querySelector('h1')?.textContent==='Reviews (1)'"),true,
@@ -1069,6 +1105,11 @@ async function main(){
     console.log('ISOLATED_ADMIN_REVIEWS_BROWSER_PASS: real review loaded, unsaved moderation protected on lock, private content and key cleared, no moderation writes; fixture only.');
     // Exercise intentional update + public reply submissions only inside the
     // disposable mock; only the explicit review fixture can be mutated.
+    const refreshReviews=async()=>{
+      // Confirmation can render before the following failed read releases busy.
+      await wait(()=>devtools.evaluate("[...document.querySelectorAll('button')].some(e=>e.textContent.trim()==='Refresh reviews'&&!e.disabled)"),'Reviews refresh idle');
+      await adminClick('Refresh reviews');
+    };
     reviewMutationFixture=true;reviewDeskFixture=true;
     await loadDocument(origin+'/admin/reviews');
     await wait(()=>devtools.evaluate("!!document.querySelector('input[aria-label=\"Master key\"]')"),'Review write unlock');
@@ -1080,7 +1121,7 @@ async function main(){
     await wait(()=>reviewFixtureRow.name==='Updated fixture reviewer','Intentional review edit reached server');
     await wait(()=>devtools.evaluate("document.querySelector('input[aria-label=\"Review author name\"]')?.value==='Updated fixture reviewer'"),'Saved review returned to actual input');
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Saved on the server; refresh reviews')"),'Confirmed review update survives read outage');
-    reviewListUnavailable=false;await adminClick('Refresh reviews');
+    reviewListUnavailable=false;await refreshReviews();
     await wait(()=>devtools.evaluate("!document.body.textContent.includes('Saved on the server; refresh reviews')"),'Review edit refresh recovers');
     reviewListUnavailable=true;
     await adminInput('#reply-aaaa1111-2222-4333-8444-555555555555','Fixture owner public reply');
@@ -1091,7 +1132,7 @@ async function main(){
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Saved on the server; refresh reviews before making another change to this review.')"),'Confirmed reply is distinct from failed list refresh');
     assert.equal(await devtools.evaluate("document.querySelector('#reply-aaaa1111-2222-4333-8444-555555555555').disabled || document.querySelector('#reply-aaaa1111-2222-4333-8444-555555555555').matches(':disabled')"),true,'Confirmed row cannot submit again while refresh is unavailable');
     assert.equal(await devtools.evaluate("document.body.textContent.includes('You have unsaved review changes')"),false,'Confirmed reply is not reported as an unsaved draft');
-    reviewListUnavailable=false;await adminClick('Refresh reviews');
+    reviewListUnavailable=false;await refreshReviews();
     await wait(()=>devtools.evaluate("!document.body.textContent.includes('Saved on the server; refresh reviews')"),'Confirmed moderation refresh recovers');
     assert.equal(await devtools.evaluate("document.querySelector('#reply-aaaa1111-2222-4333-8444-555555555555').value"),'Fixture owner public reply');
     assert.deepEqual(reviewWriteLog,['update','reply'],'Refresh recovery must not repeat any moderation write');
@@ -1102,7 +1143,7 @@ async function main(){
       await wait(()=>devtools.evaluate("document.body.textContent.includes('Saved on the server; refresh reviews')"),'Confirmed '+action+' survives read outage');
       assert.equal(!!reviewFixtureRow.deleted_at,action==='delete');
       assert.equal(await devtools.evaluate("[...document.querySelectorAll('button')].find(e=>/Delete review|Restore review/.test(e.textContent)).matches(':disabled')"),true,'Confirmed '+action+' cannot repeat');
-      reviewListUnavailable=false;await adminClick('Refresh reviews');
+      reviewListUnavailable=false;await refreshReviews();
       await wait(()=>devtools.evaluate("!document.body.textContent.includes('Saved on the server; refresh reviews')"),'Authoritative '+action+' refresh recovers');
       assert.equal(await devtools.evaluate("document.body.textContent.includes('Deleted from public view')"),action==='delete');
     }
@@ -1116,7 +1157,7 @@ async function main(){
     console.log('ISOLATED_ADMIN_REVIEW_SAVE_BROWSER_PASS: edit/reply/delete/restore survive list HTTP503, confirmed rows block repeat writes, authoritative recovery and 320px layout; disposable fixture only, zero production writes.');
 
 
-    console.log('ISOLATED_ADMIN_DRAFT_NAVIGATION_PASS: canceled Course/Daily links and keyboard Newsletter navigation retain unsaved writing, approved discard navigates, saved writing leaves without a prompt. No extra editorial/provider/email requests.');
+    console.log('ISOLATED_ADMIN_DRAFT_NAVIGATION_PASS: canceled Course/Daily links, keyboard Newsletter and browser Back/Forward retain unsaved writing; approved link/Back discards navigate; clean history and saved writing never prompt. No extra editorial/provider/email requests.');
     // The actual AI desk must find requests older than a page of newer PRs.
     await devtools.send('Page.addScriptToEvaluateOnNewDocument',{source:'window.__fixtureGithubHistory=true'});
     await loadDocument(origin+'/admin/ai');

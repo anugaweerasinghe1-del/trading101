@@ -1,4 +1,5 @@
-import { AdminDraftLink } from "@/components/admin/AdminDraftLink";
+import { Link } from "react-router-dom";
+import { useAdminDraftNavigation } from "@/hooks/useAdminDraftNavigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { supabase } from "@/integrations/supabase/client";
@@ -56,6 +57,7 @@ export default function AdminNewsletter() {
   const [error, setError] = useState("");
 
   const dirty = !!current && (current.subject !== subject || current.preheader !== preheader || current.body_markdown !== body);
+  useAdminDraftNavigation(dirty);
   const stale = syncRequired || !!current && !editions.some(row => row.id === current.id && row.revision === current.revision && row.status === current.status);
   const editor = useRef({ current, dirty }); editor.current = { current, dirty };
   useEffect(() => {
@@ -262,7 +264,7 @@ export default function AdminNewsletter() {
           <h1 className="mt-2 text-3xl font-semibold">Newsletter Desk</h1>
           <p className="mt-2 text-sm text-muted-foreground">One original beginner lesson a week. You review, approve, then publish to confirmed readers.</p>
         </div>
-        <AdminDraftLink dirty={dirty} to="/admin" className="text-sm text-primary underline underline-offset-4">Back to dashboard</AdminDraftLink>
+        <Link to="/admin" className="text-sm text-primary underline underline-offset-4">Back to dashboard</Link>
       </header>
 
       <section className={border}>
