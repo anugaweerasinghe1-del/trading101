@@ -37,7 +37,7 @@ assert.equal(future.rates.eurusd,null);assert.ok(future.rates.usdjpy);
 let calls=0;
 const fetcher: typeof fetch=async(input,init)=>{
   calls++;assert.equal(String(input),'https://api.frankfurter.dev/v2/rates?date=2026-11-05&base=USD&quotes=EUR,GBP,JPY,CHF,AUD,CAD,NZD,HKD,SGD,MXN,ZAR,TRY');
-  assert.equal(init?.method,'GET');assert.equal(init?.redirect,'error');assert.equal(init?.credentials,undefined,'Cloudflare Workers does not implement RequestInit.credentials');
+  assert.equal(init?.method,'GET');assert.equal(init?.redirect,'manual');assert.equal(init?.credentials,undefined,'Cloudflare Workers does not implement RequestInit.credentials');
   assert.deepEqual(init?.headers,{Accept:'application/json'});
   return new Response(JSON.stringify(rows),{headers:{'Content-Type':'application/json'}});
 };
@@ -55,11 +55,11 @@ assert.equal((await handle(req(),cache)).status,200);assert.equal(calls,1);
 const cold=createFxReferenceHandler({fetchImpl:fetcher,now:()=>now});
 assert.deepEqual(await (await cold(req(),cache)).json(),batch);assert.equal(calls,1,'Cold edge uses stored dated batch');
 let failCalls=0;
-for (const failure of [()=>new Response('{}',{status:429}),()=>new Response('HTML',{headers:{'Content-Type':'text/html'}}),()=>new Response('x'.repeat(40000),{headers:{'Content-Type':'application/json'}}),()=>new Response(JSON.stringify(rows.map(row=>({...row,date:'2099-01-01'}))),{headers:{'Content-Type':'application/json'}}),()=>{throw Error('PRIVATE_UPSTREAM_ERROR_SENTINEL');}]) {
+for (const failure of [()=>new Response(null,{status:302,headers:{Location:'https://private.invalid'}}),()=>new Response('{}',{status:429}),()=>new Response('HTML',{headers:{'Content-Type':'text/html'}}),()=>new Response('x'.repeat(40000),{headers:{'Content-Type':'application/json'}}),()=>new Response(JSON.stringify(rows.map(row=>({...row,date:'2099-01-01'}))),{headers:{'Content-Type':'application/json'}}),()=>{throw Error('PRIVATE_UPSTREAM_ERROR_SENTINEL');}]) {
   const failed=createFxReferenceHandler({now:()=>now,fetchImpl:async()=>{failCalls++;return failure();}});
   const before=failCalls;const response=await failed(req());
   assert.equal(response.status,503);assert.match(response.headers.get('Retry-After')!,/60/);
-  assert.match(response.headers.get('X-Forex-Reference-Status')!,/^(request-failed|upstream-http-429|upstream-format|upstream-body|invalid-reference-data)$/,'Diagnostics expose only bounded classifications');
+  assert.match(response.headers.get('X-Forex-Reference-Status')!,/^(request-failed|upstream-http-429|upstream-http-302|upstream-format|upstream-body|invalid-reference-data)$/,'Diagnostics expose only bounded classifications');
   assert.doesNotMatch(await response.text(),/PRIVATE_|2099|HTML/);
   assert.equal((await failed(req())).status,503);assert.equal(failCalls,before+1,'Failure cooldown prevents immediate upstream repetition');
 }
