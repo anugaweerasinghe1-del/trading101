@@ -609,7 +609,14 @@ async function main(){
     // Actual compiled admin chat: paused mode, escaped suggestions, explicit draft
     // transfer, forged authority rejection, and late response after lock.
     await loadDocument(origin+'/admin/ai');
-    const adminClick=async text=>devtools.evaluate("(()=>{const e=[...document.querySelectorAll('button')].find(e=>e.textContent.trim()==="+JSON.stringify(text)+"&&!e.disabled);if(!e)throw Error('Admin button missing');e.click();return true})()");
+    const adminClick=async text=>{
+      const target="[...document.querySelectorAll('button')].find(e=>e.textContent.trim()==="+JSON.stringify(text)+"&&!e.matches(':disabled'))";
+      // Messages and HTTP receipts can render before busy controls become usable.
+      // Waiting never clicks twice; bounded failures identify the actual control.
+      if (!await devtools.evaluate("!!"+target)) console.log('ISOLATED_ADMIN_CONTROL_WAIT: '+text);
+      await wait(()=>devtools.evaluate("!!"+target),'enabled admin control: '+text);
+      return devtools.evaluate("(()=>{const e="+target+";if(!e)throw Error("+JSON.stringify('Admin control unavailable: '+text)+");e.click();return true})()");
+    };
     const adminInput=async(selector,value)=>devtools.evaluate("(()=>{const e=document.querySelector("+JSON.stringify(selector)+");if(!e)throw Error('Admin input missing');const proto=e.tagName==='TEXTAREA'?HTMLTextAreaElement.prototype:HTMLInputElement.prototype;Object.getOwnPropertyDescriptor(proto,'value').set.call(e,"+JSON.stringify(value)+");e.dispatchEvent(new Event('input',{bubbles:true}));return true})()");
     const openChat=async()=>{await adminClick('Assistant pilot');await wait(()=>devtools.evaluate("document.body.textContent.includes('Admin assistant · pilot')"),'admin pilot tab');};
     const askChat=async()=>{await adminInput('textarea','Help me draft a mobile spacing improvement for the About page.');await wait(()=>devtools.evaluate("[...document.querySelectorAll('button')].some(e=>e.textContent.trim()==='Ask assistant'&&!e.disabled)"),'chat input accepted');await adminClick('Ask assistant');};

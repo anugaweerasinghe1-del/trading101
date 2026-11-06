@@ -244,3 +244,23 @@ Issues remain open until their real acceptance gaps are resolved.
   authorization; earlier runtime admin HTTP401 remains an actual access blocker.
 - Concurrent #370 changes trophy catalog validation in disjoint files. Recorded
   owner trophy deferral in #332 and have neither edited nor merged that PR.
+
+### 6 Nov — control-readiness waits and faster unchanged CI gates
+
+- Exact-head #371 run 42228424570 exposed a second immediate `Admin button missing`
+  in the newsletter fixture sequence; application/database/hosting previews passed,
+  and the PR remained unmerged. The browser helper had attempted actions before
+  busy controls became usable, despite a preceding receipt/message being visible.
+- `adminClick` now waits for the named button to be enabled (including disabled
+  parent fieldsets), reports any wait and names the control on bounded timeout,
+  then clicks exactly once. All mutation-count and disabled-state assertions remain.
+  The complete local compiled browser suite passes with this helper.
+- Moved that targeted browser check immediately after the Cloudflare build and
+  before the broad seven-phase editorial route matrix. All checks, identities,
+  permissions and trusted production gates remain mandatory. CI contract and
+  release/recovery offline regressions pass; this changes order, not requirements.
+- The full historical worker archive was recovered via the normal run-archive API:
+  only `Owner proposal review: idle` then generic safe stop is recorded. There is no
+  worker or request row for that run. Original cause remains unproven; no replay.
+- Next: required CI on the new head, merge only after success, then final current-main
+  validation/native production evidence. Earlier failed heads are not passing evidence.
