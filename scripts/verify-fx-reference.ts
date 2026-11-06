@@ -59,6 +59,7 @@ for (const failure of [()=>new Response('{}',{status:429}),()=>new Response('HTM
   const failed=createFxReferenceHandler({now:()=>now,fetchImpl:async()=>{failCalls++;return failure();}});
   const before=failCalls;const response=await failed(req());
   assert.equal(response.status,503);assert.match(response.headers.get('Retry-After')!,/60/);
+  assert.match(response.headers.get('X-Forex-Reference-Status')!,/^(request-failed|upstream-http-429|upstream-format|upstream-body|invalid-reference-data)$/,'Diagnostics expose only bounded classifications');
   assert.doesNotMatch(await response.text(),/PRIVATE_|2099|HTML/);
   assert.equal((await failed(req())).status,503);assert.equal(failCalls,before+1,'Failure cooldown prevents immediate upstream repetition');
 }
