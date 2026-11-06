@@ -821,6 +821,9 @@ async function main(){
     await devtools.evaluate("document.querySelector('footer input[type=checkbox]').click()");
     await adminInput('input[type=date]','2027-01-01');
     assert.equal(await devtools.evaluate("document.querySelector('footer input[type=checkbox]').checked"),false,'Daily edit invalidates exact-bank review');
+    await devtools.evaluate("window.confirm=()=>false;document.querySelector('header a[href=\"/admin\"]').click()");
+    assert.equal(await devtools.evaluate('location.pathname'),'/admin/daily','Denied navigation must preserve unsaved Daily draft');
+
     await adminInput('input[type=date]',fixtureBank.effectiveFrom);
     dailyDrafts[1]={...dailyDrafts[1],revision:3};await refreshDaily();
     await wait(()=>devtools.evaluate("document.body.textContent.includes('This bank changed on the server')"),'Daily remote revision conflict');
@@ -829,6 +832,8 @@ async function main(){
     await devtools.send('Emulation.setDeviceMetricsOverride',{width:320,height:900,deviceScaleFactor:1,mobile:true});
     assert.equal(await devtools.evaluate("document.documentElement.scrollWidth <= innerWidth+1"),true,'Daily desk fits a 320px viewport');
     await devtools.send('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false});
+    await devtools.evaluate("window.confirm=()=>true;document.querySelector('header a[href=\"/admin/courses\"]').click()");
+    assert.equal(await devtools.evaluate('location.pathname'),'/admin/courses','Approved discard follows the Daily desk link');
     console.log('ISOLATED_DAILY_REVISION_RECOVERY_PASS: edits clear review; new remote revision blocks review/reject; 320px layout; no editorial writes.');
     console.log('ISOLATED_DAILY_EDITORIAL_REVIEW_PASS: 50-case/500-question overview, duplicate-case/question/explanation triage, correct preview/focus, three queue filters; zero editorial mutations or extra generation requests. Fixture only.');
     // The compiled dashboard consumes existing desks and bounded GitHub reads.
@@ -891,6 +896,11 @@ async function main(){
     await wait(()=>devtools.evaluate("!!document.querySelector('#newsletter-subject')"),'Newsletter editor loaded');
     await wait(()=>devtools.evaluate("[...document.querySelectorAll('button')].some(e=>e.textContent.trim()==='Refresh'&&!e.disabled)"),'Newsletter reads idle');
     await adminInput('#newsletter-subject','Unsaved isolated owner writing');
+    await devtools.evaluate("window.confirm=()=>false;document.querySelector('header a[href=\"/admin\"]').focus()");
+    await devtools.send('Input.dispatchKeyEvent',{type:'keyDown',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});
+    await devtools.send('Input.dispatchKeyEvent',{type:'keyUp',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});
+    assert.equal(await devtools.evaluate('location.pathname'),'/admin/newsletter' ,'Denied navigation must preserve unsaved newsletter writing');
+    assert.equal(await devtools.evaluate("document.querySelector('#newsletter-subject').value"),'Unsaved isolated owner writing');
     newsletterRevision=2;newsletterConfirmed=7;const beforeNewsletterReads=newsletterReads;
     await devtools.evaluate("window.dispatchEvent(new Event('online'))");
     await wait(()=>newsletterReads>beforeNewsletterReads,'Reconnect requests fresh newsletter metadata');
@@ -938,6 +948,8 @@ async function main(){
     assert.equal(newsletterWrites,2,'Exactly one private save and one approval; no automatic writes');
     assert.equal(newsletterPublishRequests,0,'No email dispatch request during preview/save/approval/readiness');
     newsletterEditorialFixture=false;
+    await devtools.evaluate("window.confirm=()=>{throw Error('Clean navigation must not prompt')};document.querySelector('header a[href=\"/admin\"]').click()");
+    assert.equal(await devtools.evaluate('location.pathname'),'/admin','Saved newsletter can navigate without a discard prompt');
     console.log('ISOLATED_NEWSLETTER_EDITORIAL_PREVIEW_PASS: upcoming sample and rewrite remain unsaved; canceled discard prevents model request; inert HTML; exact revision save then separate approval; owner-readiness denial; zero email dispatch requests. Loopback only.');
     console.log('ISOLATED_ADMIN_REFRESH_PASS: late dashboard refresh cannot reopen lock; newsletter reconnect refresh preserves unsaved writing and reports remote revision; no editorial or email mutations.');
     // Browser-only admin acceptance: exercise the actual Course desk with a
@@ -958,6 +970,8 @@ async function main(){
     assert.equal(await devtools.evaluate("[...document.querySelectorAll('button')].find(x=>x.textContent.trim()==='Approve and publish')?.disabled"),true,
       'An unsaved Course draft can never be approved');
     await devtools.evaluate("window.confirm=()=>false");
+    await devtools.evaluate("document.querySelector('header a[href=\"/admin\"]').click()");
+    assert.equal(await devtools.evaluate('location.pathname'),'/admin/courses','Denied navigation must preserve unsaved course draft');
     await adminClick('Lock');
     assert.equal(await devtools.evaluate("document.body.textContent.includes('Final approval')"),true,
       'Course lock must respect rejected discard confirmation');
@@ -1092,6 +1106,8 @@ async function main(){
     reviewMutationFixture=false;reviewDeskFixture=false;
     console.log('ISOLATED_ADMIN_REVIEW_SAVE_BROWSER_PASS: edit/reply/delete/restore survive list HTTP503, confirmed rows block repeat writes, authoritative recovery and 320px layout; disposable fixture only, zero production writes.');
 
+
+    console.log('ISOLATED_ADMIN_DRAFT_NAVIGATION_PASS: canceled Course/Daily links and keyboard Newsletter navigation retain unsaved writing, approved discard navigates, saved writing leaves without a prompt. No extra editorial/provider/email requests.');
 
     // Development-only utility routes still mount and communicate their
     // deliberately limited scope without automatically contacting a provider.

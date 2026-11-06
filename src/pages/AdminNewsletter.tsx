@@ -1,6 +1,6 @@
+import { AdminDraftLink } from "@/components/admin/AdminDraftLink";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { newsletterAdminError } from "@/lib/newsletterAdminError";
 import { toast } from "sonner";
@@ -262,7 +262,7 @@ export default function AdminNewsletter() {
           <h1 className="mt-2 text-3xl font-semibold">Newsletter Desk</h1>
           <p className="mt-2 text-sm text-muted-foreground">One original beginner lesson a week. You review, approve, then publish to confirmed readers.</p>
         </div>
-        <Link to="/admin" className="text-sm text-primary underline underline-offset-4">Back to dashboard</Link>
+        <AdminDraftLink dirty={dirty} to="/admin" className="text-sm text-primary underline underline-offset-4">Back to dashboard</AdminDraftLink>
       </header>
 
       <section className={border}>
