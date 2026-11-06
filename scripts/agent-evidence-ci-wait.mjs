@@ -20,6 +20,26 @@ export function requiredCiReady(checks,sha){
   }
   return ready;
 }
+/** Wait for the most recent provider Pages check, not an older green deploy.
+ * GitHub required CI may finish while Cloudflare creates a newer in-progress
+ * check. The trusted collector rejects that incomplete latest provider proof.
+ */
+export function latestPagesReady(checks, sha) {
+  assert.match(sha, /^[a-f0-9]{40}$/);
+  assert.ok(Array.isArray(checks));
+  const pages = checks.filter(c => c.name === 'Cloudflare Pages').sort((a,b) => b.id - a.id)[0];
+  if (!pages) return false;
+  assert.ok(Number.isSafeInteger(pages.id) && pages.id > 0
+    && pages.head_sha === sha && pages.app?.id === 85455
+    && pages.app?.slug === 'cloudflare-workers-and-pages', 'Untrusted Cloudflare Pages check');
+  if (pages.status === 'completed') {
+    assert.equal(pages.conclusion, 'success', 'Latest Cloudflare Pages check failed or skipped');
+    return true;
+  }
+  assert.ok(['queued','in_progress','pending','waiting','requested'].includes(pages.status),
+    'Unknown Cloudflare Pages status');
+  return false;
+}
 export function validationRunReady(runs,sha){
   assert.ok(Array.isArray(runs));assert.match(sha,/^[a-f0-9]{40}$/);
   const run=runs.filter(r=>r.path==='.github/workflows/phase3-high-check.yml').sort((a,b)=>b.id-a.id)[0];
@@ -36,7 +56,9 @@ export async function waitForRequiredCi({sha,read,wait=sleep}){
     const main=await read('/branches/main');assert.equal(main.commit?.sha,sha,'Main changed; wait rejected');
     const response=await read('/commits/'+sha+'/check-runs?filter=latest&per_page=100');
     assert.ok(response.total_count<=100&&Array.isArray(response.check_runs),'Incomplete check pagination');
-    if(requiredCiReady(response.check_runs,sha)){
+    // Do not start the collector before the latest provider deployment settles.
+    // Waiting on CI alone created a reproducible race with a newer Pages check.
+    if(requiredCiReady(response.check_runs,sha) && latestPagesReady(response.check_runs,sha)){
       // The final required gate finishes before the read-only release job.
       // The independent collector requires the whole current CI attempt to
       // finish, so gate success alone must not release this wait.
@@ -59,6 +81,6 @@ if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
       assert.equal(r.status,200,'Upstream CI evidence unavailable');
       const body=await r.text();assert.ok(Buffer.byteLength(body)<1500000,'Oversized CI metadata');return JSON.parse(body);
     }});
-    console.log('Required exact-main CI completed successfully; independent collector must still verify all evidence');
+    console.log('Required exact-main CI and latest Cloudflare Pages check completed successfully; independent collector must still verify all evidence');
   }catch{console.error('Trusted cycle blocked: failed, changed, ambiguous or incomplete upstream CI');process.exitCode=1}
 }
