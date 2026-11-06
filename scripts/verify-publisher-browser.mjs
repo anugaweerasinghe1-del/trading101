@@ -44,6 +44,12 @@ assert.equal(new Set(routes).size, routes.length);
 const mime = { ".js": "application/javascript", ".css": "text/css", ".json": "application/json", ".svg": "image/svg+xml", ".png": "image/png", ".jpg": "image/jpeg", ".html": "text/html" };
 const server = createServer((request, response) => {
   const path = new URL(request.url, "http://localhost").pathname;
+  if(path==='/api/fx-reference'){
+    const date=new Date(Date.now()-3*86400000).toISOString().slice(0,10);
+    response.writeHead(200,{'Content-Type':'application/json','Cache-Control':'no-store'});
+    response.end(JSON.stringify({kind:'daily_fx_reference',source:'Frankfurter blended daily reference',requestedDate:date,
+      rates:Object.fromEntries(ASSETS.filter(asset=>asset.type==='forex').map(asset=>[asset.id,{rate:1.234567,date}]))}));return;
+  }
   if (path === "/api/contact") {
     // Real production backend is fail-closed before the owner configures all
     // five provider/Turnstile bindings. Preserve that behavior in isolated

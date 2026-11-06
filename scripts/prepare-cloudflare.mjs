@@ -52,7 +52,7 @@ const include = [
   "/auth", "/reset-password", "/admin", "/admin/*",
   "/trader/*", "/trade/*", "/challenge", "/challenge/*",
   "/courses/*", "/course-sitemap.xml", "/learn/article/*",
-  "/api/contact"
+  "/api/contact", "/api/fx-reference"
 ];
 if (include.length > 100 || include.some((x) => x.length > 100)) {
   throw new Error("Cloudflare Pages Functions routing limit exceeded.");

@@ -299,3 +299,46 @@ Issues remain open until their real acceptance gaps are resolved.
   infer provider key validity/free-tier entitlement from a true presence flag.
 - Rollback: restore the preceding verified refresh-worker bundle; no schema/data
   rollback. Next safe action: submit this PR and finish #371 postmerge proof.
+
+
+### 6 Nov — provider diagnostics released; daily FX references authorized
+
+- #372 merged as `d6d0dd3bda8c385b45e5171b6cb5cdb4ca5204e9`; full main run
+  [42234815755](https://github.com/anugaweerasinghe1-del/trading101/actions/runs/42234815755)
+  passed. Native Cloudflare production `f5c00c11-8812-4f21-ab68-1f801d6ece13`
+  and Vercel `dpl_2EvDqk7rY8FNXxRFPspXpTeWmdPb` both proved that main SHA.
+- Refresh worker v17 ACTIVE returned all seven reviewed source files unchanged.
+  Ordinary scheduled 14:35 UTC result: HTTP200, 53 requested / 50 updated /
+  3 unavailable; private configuration flags both false. No forced refresh,
+  extra upstream requests or production position changes. Public live-market-data
+  v18 still matches all eight reviewed files. Native proof and remaining gates:
+  [#332 checkpoint](https://github.com/anugaweerasinghe1-del/trading101/issues/332#issuecomment-6687716549).
+- Owner requests a free-tier provider and explicitly approved **daily reference
+  information only**. [Frankfurter documentation](https://frankfurter.dev/) permits
+  free commercial blended daily references without a key; bounded cached requests
+  are appropriate. A fixed-date public read returned all 12 USD quotes needed to
+  derive the 15 existing pairs. An unfiltered latest response included dates later
+  than the current date, so latest is unsuitable: request only the previous
+  completed weekday in Asia/Colombo and reject future, invalid, old or inconsistent
+  cross-rate dates. Show the actual per-pair source date, not a live timestamp.
+- Implement a same-origin GET-only reference API for both hosting platforms, shared
+  pure validation, bounded 32KB/8s upstream read, fixed provider URL/headers,
+  coalescing, daily edge/in-memory cache and short failure cooldown. No visitor
+  cookies, IP headers, credentials or user-selected upstream URLs are forwarded.
+- Forex-only UI names Frankfurter and labels the rate for learning/comparison.
+  Reference data never enters price history, execution, valuation or holdings.
+  Invalid/unavailable responses produce an explicit unavailable state. No schema,
+  Supabase function, secrets, scheduler cadence, paid service or provider key change.
+- Ordinary Alpha Vantage free quota is 25/day versus up to 576 traditional asset
+  attempts/day at current cadence, and public-display rights need confirmation;
+  Twelve Basic is internal non-display. Do not activate traditional execution
+  providers based on a free-account label. Research is recorded in
+  [#335](https://github.com/anugaweerasinghe1-del/trading101/issues/335#issuecomment-6687717254).
+- Acceptance: all 15 conversions and invalid/partial/future/duplicate-date fixtures;
+  both real hosting adapters; upstream header/privacy/cache/error bounds; actual
+  compiled browser source/date/outage/320px themes and an independent-price guest
+  trade; full required PR/main checks and native deployment/live endpoint proof.
+  Tests use loopback fixtures and make no real provider calls.
+- Rollback: revert this isolated reference panel/API commit; execution and stored
+  portfolios need no data rollback. Trophy work remains deferred. Real owner auth,
+  exhausted Daily cycle and public-display stock-provider rights remain open gates.
