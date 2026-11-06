@@ -15,7 +15,7 @@ export function GenerationReadiness({ status, busy, onGenerate, onRefresh }: {
   const readiness = dailyGenerationReadiness(status, now);
   const time = (value?: string | null) => value && Number.isFinite(Date.parse(value))
     ? new Date(value).toLocaleString() : 'Not reported';
-  const button = 'rounded-xl border border-white/15 px-4 py-2 text-sm disabled:opacity-40';
+  const button = 'rounded-xl border border-border px-4 py-2 text-sm disabled:opacity-40';
   const parts = Math.floor(status.completed / 10);
   const providerUnavailable = /HTTP 503/.test(status.lastError ?? '');
   const providerBadRequest = /HTTP 400/.test(status.lastError ?? '');
@@ -27,7 +27,7 @@ export function GenerationReadiness({ status, busy, onGenerate, onRefresh }: {
       <div><dt className="text-muted-foreground">Last attempt finished</dt><dd>{time(status.lastFinished)}</dd></div>
       {status.retryAfter && <div><dt className="text-muted-foreground">Retry after (your local time)</dt><dd>{time(status.retryAfter)}</dd></div>}
     </dl>
-    {status.lastError && <div role="alert" className="text-amber-400 text-sm space-y-1"><p>{status.lastError}</p>{providerUnavailable && <p>The provider returned HTTP 503. This attempt did not produce a valid part; this response alone does not establish quota exhaustion.</p>}{providerBadRequest && <p>Google rejected the most recent recorded generation request. That error does not verify whether newer code is fixed. The next test must use an authorized request within the server’s attempt and preparation limits.</p>}</div>}
+    {status.lastError && <div role="alert" className="text-amber-600 dark:text-amber-400 text-sm space-y-1"><p>{status.lastError}</p>{providerUnavailable && <p>The provider returned HTTP 503. This attempt did not produce a valid part; this response alone does not establish quota exhaustion.</p>}{providerBadRequest && <p>Google rejected the most recent recorded generation request. That error does not verify whether newer code is fixed. The next test must use an authorized request within the server’s attempt and preparation limits.</p>}</div>}
     <p role="status" className="text-sm">{readiness.message}</p>
     <p className="text-xs text-muted-foreground">Keep billing disabled. Failed requests retain the server cooldown and saved parts. Existing approved practice remains available. There is no paid fallback or automatic retry from this page.</p>
     <div className="flex gap-3 flex-wrap"><button className={button} disabled={busy || !readiness.available} onClick={onGenerate}>Prepare next part now</button><button className={button} disabled={busy} onClick={onRefresh}>Refresh</button></div>
