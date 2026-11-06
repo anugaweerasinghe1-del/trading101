@@ -350,3 +350,44 @@ Issues remain open until their real acceptance gaps are resolved.
   streams. Added a required actual-workerd regression using the real handler,
   independent request contexts and a stub upstream (no external provider calls).
   New exact-head checks and a successful real preview read are required before merge.
+
+
+### 6 Nov — genuine owner-guided checks and bounded private Daily test
+
+- Owner reports the actual Course `Verify owner access` response: registered owner
+  verified, no publication/generation. This is owner-reported live evidence, not an
+  independently controlled browser session. The environment's separate binding
+  still returned HTTP401 on its last settings-only read. Never request a key in chat.
+- Owner's Daily screenshot shows successful Gemini key/model metadata preflight,
+  saved Gemini 3.5 Flash Lite, 0/50 exercises, 0/5 parts, 3/3 consumed attempts,
+  preparation 2 Dec / effective bank 9 Dec. Historical HTTP400 remains historical;
+  metadata success does not prove structured generation or authorize a reset.
+- Current owner-supplied AI Studio screenshots show project Free tier and model
+  limits 15 RPM / 250K TPM / 500 RPD. The 28-day displayed peaks 2 RPM, 31.54K TPM,
+  6 RPD do not establish today's remaining allowance. Do not enable billing.
+- Implement a separate owner-only `daily-practice-test` function and explicit Daily
+  test UI. Reuse saved free Gemini 3.5 Flash Lite credentials, registered-owner Auth
+  verification and the existing atomic limiter. No production claim/finish/request
+  RPC, cycle reset, draft write, publication, schema migration or schedule.
+- One global test admission per UTC day, including failed/unconfirmed tests. Calls
+  require master key AND legitimate registered-owner bearer, free-tier confirmation
+  AND a deliberate browser confirmation. No automatic request/retry/fallback. Eight
+  fixed public references and at most ONE Gemini generation call; serialized request
+  max 120,000 bytes, output max 32,768 tokens; source/provider time/body bounds remain
+  those of the real production generator. Shared project usage can still cause 429.
+- Use the actual first-part generator with no user/private draft inputs; validate
+  ten exercises/100 questions, discard all generated text, return only bounded
+  validation/failure/usage metadata. This tests structured generation, not complete
+  five-part bank persistence or factual/editorial acceptance. Preserve the published
+  50-case/500-question bank and exhausted production attempt history.
+- Backend regressions exercise the real generator against fixture sources/model:
+  wrong key/non-owner/body/config denial before quota/config reads; racing admission;
+  one provider request, no response-text/key leakage; oversized request blocks the
+  provider; 400/429/invalid output/network errors consume admission without retry.
+  Browser acceptance covers explicit consent/cancel, real fixture owner JWT,
+  disabled repeat, pass/failure/used-limit messages, unchanged bank/cycle fixtures,
+  lock fencing and 320px themes. No test invokes a real provider.
+- Done requires required exact-head PR/main checks, native CF/Vercel deployment
+  proof, dedicated function deployment with reviewed-source parity and safe auth
+  denial. Real Gemini acceptance remains pending the owner's deliberate live test.
+  Rollback: remove this isolated UI/endpoint; no bank/data rollback or quota reset.
