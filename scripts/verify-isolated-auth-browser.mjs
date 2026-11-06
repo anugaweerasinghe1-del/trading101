@@ -967,15 +967,16 @@ async function main(){
     // strictly read-only loopback backend. These interactions must never send
     // generation, draft-save, publication or configuration writes.
     dashboardFixture=false;courseDeskFixture=true;
-    // Seed real Router history on both sides of the Course desk.
+    // Seed real Router history on both sides of the Course desk. Wait for each
+    // actual target desk: URL changes can precede the preceding form unmounting.
     await loadDocument(origin+'/admin/daily');
     await wait(()=>devtools.evaluate("!!document.querySelector('header a[href=\"/admin/courses\"]')"),'Daily to Course history link');
     await devtools.evaluate("document.querySelector('header a[href=\"/admin/courses\"]').click()");
-    await wait(()=>devtools.evaluate("location.pathname==='/admin/courses' && !!document.querySelector('main form input[type=password]')"),'Course history entry');
+    await wait(()=>devtools.evaluate("location.pathname==='/admin/courses' && [...document.querySelectorAll('button')].some(e=>e.textContent.trim()==='Open course desk')"),'Course history entry');
     await devtools.evaluate("document.querySelector('a[href=\"/admin/daily\"]').click()");
-    await wait(()=>devtools.evaluate("location.pathname==='/admin/daily'"),'Forward Daily entry');
+    await wait(()=>devtools.evaluate("location.pathname==='/admin/daily' && !!document.querySelector('header a[href=\"/admin/courses\"]')"),'Forward Daily entry');
     await devtools.evaluate('history.back()');
-    await wait(()=>devtools.evaluate("location.pathname==='/admin/courses' && !!document.querySelector('main form input[type=password]')"),'Clean Back returns to Course');
+    await wait(()=>devtools.evaluate("location.pathname==='/admin/courses' && [...document.querySelectorAll('button')].some(e=>e.textContent.trim()==='Open course desk')"),'Clean Back returns to Course');
     await wait(()=>devtools.evaluate("!!document.querySelector('main form input[type=password]')"),'Course admin unlock');
     await adminInput('main form input[type=password]',ADMIN_FIXTURE_KEY);await adminClick('Open course desk');
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Draft inbox (0)')"),'Compiled empty Course inbox');
@@ -1007,15 +1008,15 @@ async function main(){
     assert.equal(await devtools.evaluate("document.querySelector('main form input[type=password]').value"),'');
     assert.equal(courseDeskWrites,0,'Course read/edit/lock smoke cannot mutate drafts or launch AI');
     await devtools.evaluate("window.confirm=()=>{throw Error('Clean Back must not prompt')};history.back()");
-    await wait(()=>devtools.evaluate("location.pathname==='/admin/daily'"),'Clean browser Back navigates after Lock');
+    await wait(()=>devtools.evaluate("location.pathname==='/admin/daily' && !!document.querySelector('header a[href=\"/admin/courses\"]')"),'Clean browser Back navigates after Lock');
     await devtools.evaluate('history.forward()');
-    await wait(()=>devtools.evaluate("location.pathname==='/admin/courses' && !!document.querySelector('main form input[type=password]')"),'Clean browser Forward');
+    await wait(()=>devtools.evaluate("location.pathname==='/admin/courses' && [...document.querySelectorAll('button')].some(e=>e.textContent.trim()==='Open course desk')"),'Clean browser Forward');
     await adminInput('main form input[type=password]',ADMIN_FIXTURE_KEY);await adminClick('Open course desk');
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Draft inbox (0)')"),'Course reopened for approved Back');
     await adminClick('+ Create a draft');
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Final approval')"),'Unsaved draft before approved Back');
     await devtools.evaluate('window.confirm=()=>true;history.back()');
-    await wait(()=>devtools.evaluate("location.pathname==='/admin/daily'"),'Approved browser Back discards and navigates');
+    await wait(()=>devtools.evaluate("location.pathname==='/admin/daily' && !!document.querySelector('header a[href=\"/admin/courses\"]')"),'Approved browser Back discards and navigates');
     assert.equal(courseDeskWrites,0,'History navigation cannot save, publish or generate');
 
     courseDeskFixture=false;

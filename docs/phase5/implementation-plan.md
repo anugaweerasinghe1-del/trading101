@@ -223,3 +223,24 @@ Issues remain open until their real acceptance gaps are resolved.
   native rollout, merge the assurance repair only when permitted, then record final
   main SHA/production proof in #332. Outstanding genuine owner/provider gates remain
   as recorded above; trophies explicitly deferred, no quota resets or paid upgrades.
+
+
+### 6 Nov — postmerge browser failure diagnosed; assurance PR extended
+
+- #369 main run 42226392903 failed in the isolated browser step; its release jobs
+  were skipped. Do not claim that run passed or that it supplied native production
+  proof. Broad editorial route matrix and application checks passed; public code
+  and guest checks above remain observations of their stated scope.
+- Retrieved the complete run archive after the individual reusable-job log request
+  returned HTTP403. The failure was a null link click immediately after seeding
+  Course/Daily history. The fixture accepted a changed URL plus a generic password
+  form still belonging to the preceding desk, then clicked a Course-only link.
+- Assurance PR #371 now waits for the real Course unlock control and Daily-specific
+  header before acting after transitions. No sleep-based route workaround or test
+  assertion removal; all Back/Forward/draft-retention assertions remain. The fix
+  is test setup only; the supported application blocker is unchanged.
+- Rechecked runtime setup: enforced unrestricted policy and ready credential
+  bindings on the same configuration revision. Readiness is not successful API
+  authorization; earlier runtime admin HTTP401 remains an actual access blocker.
+- Concurrent #370 changes trophy catalog validation in disjoint files. Recorded
+  owner trophy deferral in #332 and have neither edited nor merged that PR.
