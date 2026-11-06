@@ -199,5 +199,73 @@
     "Daily attempts remain 3/3; historical HTTP400 and successful generation unverified.",
     "Traditional quote entitlement/coverage remains unverified.",
     "No whole-account journey or full semantic audit of all educational questions is implied."
-  ]
+  ],
+  "subsequent_production_browser_check": {
+    "sha": "47dcf541cc8572c1a33f01509b41d7a27d06e4fb",
+    "mobile_width": 390,
+    "results": [
+      {
+        "route": "/admin",
+        "hydrated": true,
+        "failure": null,
+        "title": "Administration | TradeHQ",
+        "navigationError": null
+      },
+      {
+        "route": "/admin/ai",
+        "hydrated": true,
+        "failure": null,
+        "title": "AI Development Desk | TradeHQ Admin",
+        "navigationError": null
+      },
+      {
+        "route": "/admin/courses",
+        "hydrated": true,
+        "failure": null,
+        "title": "Course drafts \u00b7 TradeHQ Admin",
+        "navigationError": null
+      },
+      {
+        "route": "/admin/daily",
+        "hydrated": true,
+        "failure": null,
+        "title": "Daily Practice Administration | TradeHQ",
+        "navigationError": null
+      },
+      {
+        "route": "/admin/newsletter",
+        "hydrated": true,
+        "failure": null,
+        "title": "Newsletter Desk | TradeHQ Admin",
+        "navigationError": null
+      },
+      {
+        "route": "/admin/reviews",
+        "hydrated": true,
+        "failure": null,
+        "title": "Admin Reviews \u2014 TradeHQ",
+        "navigationError": null
+      },
+      {
+        "route": "/daily",
+        "hydrated": true,
+        "failure": null,
+        "title": "Daily Trading Challenge \u2014 Build Your Streak | TradeHQ",
+        "navigationError": null
+      },
+      {
+        "liveDraftGuardModuleFound": true,
+        "loadedAssetScripts": 6
+      }
+    ],
+    "guest_trade_result": {
+      "productionGuestBuySell": true,
+      "feeArithmetic": true,
+      "portfolioReloadPersistence": true,
+      "mobileWidth": 390,
+      "serverWriteRequestsBlocked": 0,
+      "scope": "Fresh disposable guest browser; local storage only. No registered account, real funds, email or content changes."
+    },
+    "method_note": "Read the guard text from a currently loaded first-party JS module via CDP while the Daily admin route was active. The first diagnostic attempt held stale script IDs across documents; its seven hydration checks passed but source lookup failed. Revised instrumentation scopes IDs to each current document and the guard was found. No production auth was fabricated."
+  }
 }
