@@ -76,6 +76,7 @@ async function main(){
   let server,browser,devtools;let attempts=0,approved=0,rejected=0,dataWrites=0,portfolioInitialized=0,logouts=0,refreshRejected=0,dailyReads=0,adminChatRequests=0;
   let showPublications=false,publicationReads=0;
   let learningWrites=0, learningReads=0, savedLearning=null;
+  let privateTradeReads=0, privateTradeRejected=0;
   let holdLearnModule=true;
   const releaseLearnModules=[];
   const rejectedWrites=[];
@@ -260,6 +261,16 @@ async function main(){
       if(route==="/auth/v1/user")
         return req.headers.authorization==="Bearer "+JWT?json(200,USER):json(401,{error:"invalid_token"});
       if(route.startsWith("/auth/v1/"))return json(403,{error:"blocked_fixture_auth"});
+      if(route==="/rest/v1/practice_trades" && req.method==="GET"){
+        if(req.headers.authorization!=="Bearer "+JWT ||
+          parsed.searchParams.get("user_id")!=="eq."+USER_ID ||
+          parsed.searchParams.get("select")!=="id" ||
+          parsed.searchParams.get("limit")!=="1"){
+          privateTradeRejected++;return json(403,{error:"fixture_owner_id_only_required"});
+        }
+        privateTradeReads++;
+        return json(200,[{id:"fixture-server-recorded-trade"}]);
+      }
       if(route==="/rest/v1/rpc/initialize_practice_portfolio" && req.method==="POST"){
         if(req.headers.authorization!=="Bearer "+JWT)return json(401,{error:"invalid_token"});
         portfolioInitialized++;
@@ -428,6 +439,10 @@ async function main(){
     assert.equal(await devtools.evaluate("JSON.parse(localStorage.getItem('tradehq_portfolio')).trades.length"),2);
     await devtools.evaluate("localStorage.removeItem('tradehq_portfolio')");
     console.log('ISOLATED_GUEST_ORDER_PASS: actual compiled asset-page buy/sell, holdings, fee arithmetic and reload persistence; loopback only.');
+    await loadDocument(origin+"/achievements");
+    await wait(()=>devtools.evaluate("document.querySelector('main h1')?.textContent==='My Trophy Cabinet'"),"guest private Trophy Cabinet");
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Sign-in required')"),"guest trophy cannot read trade evidence");
+    assert.equal(privateTradeReads,0,"Guest must not query the protected trade ledger");
     await loadDocument(origin+"/auth");
     await wait(()=>devtools.evaluate("!!(document.querySelector('input[type=email]')&&document.querySelector('input[type=password]'))"),"real TradeHQ login form");
     const submit=(mail,pass)=>{
@@ -449,6 +464,13 @@ async function main(){
     await wait(()=>devtools.evaluate("location.pathname==='/trader/me'"),"authenticated profile redirect");
     await wait(()=>portfolioInitialized>=1,"isolated account portfolio initialization");
     await wait(()=>devtools.evaluate("localStorage.getItem('tradehq:portfolio-owner')==="+JSON.stringify(USER_ID)+" && JSON.parse(localStorage.getItem('tradehq_portfolio')||'{}').trades?.[0]?.id==='fixture-account-trade'"),'account cache restored separately from guest orders');
+    await loadDocument(origin+"/achievements");
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('First Recorded Practice Trade')"),"authenticated Trophy milestone");
+    await wait(()=>devtools.evaluate("document.querySelector('section[aria-labelledby=recorded-practice-heading] [role=status]')?.textContent.includes('Account-recorded')"),"server-recorded milestone proven");
+    assert.ok(privateTradeReads>=1,"Signed-in owner must fetch account-bound evidence");
+    assert.equal(privateTradeRejected,0,"No unauthorized or unscoped trade reads allowed");
+    await loadDocument(origin+"/trader/me");
+    await wait(()=>devtools.evaluate("document.querySelector('main h1')?.textContent.includes('My TradeHQ profile')"),"profile after verified milestone");
     await devtools.evaluate("(()=>{const p=JSON.parse(localStorage.getItem('tradehq_portfolio'));p.trades[0].journal={notes:'PRIVATE ACCOUNT FIXTURE',reasoning:'private',emotions:[]};localStorage.setItem('tradehq_portfolio',JSON.stringify(p));})()");
     // Reload verifies a real persisted SDK session, with no second login grant.
     await loadDocument();
@@ -465,6 +487,10 @@ async function main(){
     assert.equal(signedOutPortfolio.trades.length,2,'sign-out must restore guest orders instead of account trades');
     assert.equal(signedOutPortfolio.cash,guestSold.cash);
     assert.ok(!JSON.stringify(signedOutPortfolio).includes('PRIVATE ACCOUNT FIXTURE'),'private account journal leaked into guest practice');
+    const readsBeforeSignedOutCabinet=privateTradeReads;
+    await loadDocument(origin+"/achievements");
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Sign-in required')"),"signed-out milestone hidden");
+    assert.equal(privateTradeReads,readsBeforeSignedOutCabinet,"Signed-out cabinet must not query the protected trade ledger");
     await loadDocument();
     await wait(()=>devtools.evaluate("!!document.querySelector('a[href=\"/auth\"]') && !document.querySelector('[aria-label=\"Account menu\"]')"),"no session resurrection after reload");
     // Find the actual configured SDK key; seed an expired test session and
