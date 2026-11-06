@@ -33,9 +33,13 @@ export default function AdminReviews() {
   const [replies, setReplies] = useState<Record<string, string>>({});
   const [busy, setBusy] = useState<Record<string, boolean>>({});
   const pending = useRef(new Set<string>());
+  // A successful write is not undone by a failed list request. Keep its submitted
+  // fields visible and prevent another mutation until the server list catches up.
+  const confirmed = useRef(new Map<string, string>());
+  const [awaitingRefresh, setAwaitingRefresh] = useState<string[]>([]);
   const [edits, setEdits] = useState<Record<string, Partial<Review>>>({});
-  const hasUnsaved = Object.keys(edits).length > 0 || Object.entries(replies).some(
-    ([id, value]) => value !== (reviews.find(review => review.id === id)?.owner_reply ?? "")
+  const hasUnsaved = Object.keys(edits).some(id => confirmed.current.get(id) !== "update") || Object.entries(replies).some(
+    ([id, value]) => confirmed.current.get(id) !== "reply" && value !== (reviews.find(review => review.id === id)?.owner_reply ?? "")
   );
   useEffect(() => {
     if (!unlocked || !hasUnsaved) return;
@@ -47,7 +51,7 @@ export default function AdminReviews() {
   const lockAdmin = () => {
     if (hasUnsaved && !window.confirm("Discard unsaved moderation changes and public replies?")) return;
     scope.invalidate();
-    pending.current.clear();
+    pending.current.clear(); confirmed.current.clear(); setAwaitingRefresh([]);
     setBusy({}); setVerifying(false); setLoading(false); setCheckedAt(null); setRefreshError("");
     setUnlocked(false); setKey(""); setReviews([]); setEdits({}); setReplies({});
   };
@@ -62,6 +66,18 @@ export default function AdminReviews() {
       guard.assert();
       if (error || data?.error || !Array.isArray(data?.data)) throw new Error("Could not load reviews. Check your master key and retry.");
       setReviews(data.data); setCheckedAt(new Date()); setRefreshError("");
+      const settled = new Map(confirmed.current);
+      setEdits(prev => {
+        const next = { ...prev };
+        for (const [id, action] of settled) if (action === "update") delete next[id];
+        return next;
+      });
+      setReplies(prev => {
+        const next = { ...prev };
+        for (const [id, action] of settled) if (action === "reply") delete next[id];
+        return next;
+      });
+      confirmed.current.clear(); setAwaitingRefresh([]);
       return true;
     } catch (error) {
       if (guard.current() && !isAdminRequestCancelled(error)) {
@@ -85,7 +101,11 @@ export default function AdminReviews() {
   };
 
   const mutate = async (id: string, action: string, payload: Record<string, unknown> = {}) => {
-    if (pending.current.has(id)) return; const guard = scope.capture(key);
+    if (pending.current.has(id) || confirmed.current.has(id)) return;
+    const guard = scope.capture(key);
+    // A list started before this write must not overwrite its confirmed outcome.
+    scope.capture(key, 'reviews');
+    setLoading(false);
     pending.current.add(id);
     setBusy(prev => ({ ...prev, [id]: true }));
     try {
@@ -95,8 +115,8 @@ export default function AdminReviews() {
       guard.assert();
       if (error || data?.error || data?.ok !== true) throw new Error(data?.error || "Could not save changes. Please retry.");
       toast.success(action === "delete" ? "Review deleted from public view" : action === "restore" ? "Review restored" : "Saved");
-      if (action === "update") setEdits(prev => { const next = { ...prev }; delete next[id]; return next; });
-      if (action === "reply") setReplies(prev => { const next = { ...prev }; delete next[id]; return next; });
+      confirmed.current.set(id, action);
+      setAwaitingRefresh([...confirmed.current.keys()]);
       await load();
     } catch (error) {
       if (guard.current() && !isAdminRequestCancelled(error)) toast.error(error instanceof Error ? error.message : "Could not save changes");
@@ -161,14 +181,14 @@ export default function AdminReviews() {
           </div>
           <p className="text-sm text-muted-foreground">Replies are public and labelled as yours. Deleted reviews stay here so you can restore them.</p>
           {hasUnsaved && <p role="status" className="text-sm text-amber-600 dark:text-amber-400">You have unsaved review changes or a public reply. Save them before leaving or locking this desk.</p>}
-          <button type="button" disabled={loading} className="text-sm underline" onClick={() => void load()}>Refresh reviews</button>
+          <button type="button" disabled={loading || Object.values(busy).some(Boolean)} className="text-sm underline" onClick={() => void load()}>Refresh reviews</button>
           <AdminFreshness checkedAt={checkedAt} error={refreshError} />
           {loading && <p className="text-sm text-muted-foreground">Loading…</p>}
           {reviews.map((r) => {
             const e = edits[r.id] ?? {};
             const merged = { ...r, ...e };
             return (
-              <fieldset disabled={!!busy[r.id]} key={r.id} className="p-4 rounded-xl border border-border bg-white/[0.02] space-y-3">
+              <fieldset disabled={!!busy[r.id] || awaitingRefresh.includes(r.id)} key={r.id} className="p-4 rounded-xl border border-border bg-white/[0.02] space-y-3">
                 <div className="flex items-center justify-between text-xs text-muted-foreground">
                   <span>{new Date(r.created_at).toLocaleString()}</span>
                   <span className="font-mono">{r.id.slice(0, 8)}</span>
@@ -243,6 +263,7 @@ export default function AdminReviews() {
                 <div className="flex justify-end">
                   {r.deleted_at ? <button type="button" onClick={() => void mutate(r.id, "restore")} className="text-xs px-3 py-1.5 rounded-lg border border-border"><RotateCcw className="w-3 h-3 inline mr-1" />Restore review</button> : <button type="button" onClick={() => remove(r.id)} className="text-xs px-3 py-1.5 rounded-lg bg-destructive/10 text-destructive border border-destructive/30"><Trash2 className="w-3 h-3 inline mr-1" />Delete review</button>}
                 </div>
+                {awaitingRefresh.includes(r.id) && <p role="status" className="text-sm text-amber-600 dark:text-amber-400">Saved on the server; refresh reviews before making another change to this review.</p>}
                 {busy[r.id] && <p className="text-xs text-muted-foreground" role="status">Saving…</p>}
               </fieldset>
             );
