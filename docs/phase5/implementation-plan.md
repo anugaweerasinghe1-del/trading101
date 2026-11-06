@@ -2,7 +2,7 @@
 
 Target: 21 November 2026. Reconstructed on 6 November from fresh protected main
 `69cc403c6ffd06dd357afa37a68d2947bc37930f`, open PRs and issue discussions.
-This is the resumption entry point; retain the existing detailed
+For postmerge rollout evidence, also read the newest release checkpoint in [#332](https://github.com/anugaweerasinghe1-del/trading101/issues/332). This is the resumption entry point; retain the existing detailed
 [admin workflow inventory](../phase5-admin-workflow-reliability.md).
 
 ## Status rules
@@ -21,12 +21,12 @@ Issues remain open until their real acceptance gaps are resolved.
 | A–B / #332/#335 Daily | Schedule, attempts, saved-revision editing/review, effective-date delivery, failure recovery and approved free-tier generation work. Preserve published 50-case/500-question bank. | #362 UI fixture-tested. Prior evidence v16 source parity; historical HTTP400, 3/3 attempts, next bank 9 Dec. | Do not reset exhausted cycle or call AI without authorization. Metadata connectivity cannot prove generation. |
 | A / #332 newsletter | Confirmation/unsubscribe, private drafts, preview, approval, authorized recipients, receipts and recovery. | #362 editor fixtures; #365/#366 legacy endpoint restoration/CORS and registered-owner gate tested/merged; prior v7 source parity. | Actual subscriber delivery excluded from tests. Genuine owner no-send acceptance and disposable opt-in lifecycle remain open. |
 | A / #332 chatbot | Owner/provider configuration, free-tier quota, inert valid replies, auth/error handling, request fencing and lock. | #362 real Chromium fixture cases cover quota/401/403/paused/empty/forged/late replies. | Actual registered owner + permitted provider request required for genuine reply acceptance. |
-| A / #332 reviews | Moderation edit/reply/delete/restore persist; failed reads do not erase confirmed writes; privacy, duplicate prevention, keyboard/mobile/theme controls pass. | Existing executable handler and Chromium fixtures; confirmed-write/read-outage recovery defect selected this session. | Implement recovery and exercise disposable fixture, then PR/CI/merge/deployment. |
+| A / #332 reviews | Moderation edit/reply/delete/restore persist; failed reads do not erase confirmed writes; privacy, duplicate prevention, keyboard/mobile/theme controls pass. | #367 deployed with confirmed-write/read-outage recovery; executable handler and Chromium fixtures pass, genuine owner acceptance pending. | Implement recovery and exercise disposable fixture, then PR/CI/merge/deployment. |
 | A / #332 code controls | Queue/diagnostics/approval/stop and GitHub/deployment evidence accurate; private state fenced on sign-out. | Existing isolated queue/control tests, prior worker diagnostics; live privileged controls unaccepted. | Do not retry real owner jobs or stop production for testing. Inspect durable state with authorization. |
 | A / #332 mobile/accessibility/utilities | Real existing controls work at narrow widths, light/dark, keyboard, loading/repeats; tools accurately describe scope. | #362 320px course/Daily/newsletter and utility-route fixtures. | Extend moderation recovery coverage; remaining actual owner workflow acceptance pending. |
 | C / #335 markets/portfolio | Persist/recover portfolios/trades; accurate provenance/freshness and leaderboard; one failed refresh cannot erase other successes. | #363 isolation fix tested/merged; prior v16 parity and scheduled HTTP200. Prior evidence: 15/15 held crypto fresh; 0/17 traditional fresh. | Provider entitlement/budget evidence missing. Do not fabricate observations or label old prices live. |
 | D / #335 beginner/arena/leaderboard | Guest/account learn→trade→reflect→resume journey and consent-based aggregate funnel, private defaults, eligibility/rank distinctions and recovery. | Earlier journey/privacy/funnel code and fixtures exist (#334/#336/#361 etc.); whole real journey not accepted. | Exercise disposable fixtures; genuine account confirmation requires legitimate session. No invented conversion metrics. |
-| E / #353 trophy cabinet | Agreed approximately 20 educational trophies, premium tiers/animation/placement; server authority, default private, separate opt-in/revocation and anti-abuse. | Existing private cabinet and first server-recorded trade milestone; major redesign specification pending user discussion. | Owner prefers distinct sculpted trophies/richer animation; implementation deferred. No public awards from editable browser progress; no profit-chasing incentives. |
+| E / #353 trophy cabinet | Agreed approximately 20 educational trophies, premium tiers/animation/placement; server authority, default private, separate opt-in/revocation and anti-abuse. | Existing private cabinet and first server-recorded trade milestone; major redesign explicitly deferred for later user discussion. | Owner prefers distinct sculpted trophies/richer animation; implementation deferred. No public awards from editable browser progress; no profit-chasing incentives. |
 | F / #321/#332/#335/#353 release | Security/RLS/privacy/rate limits, integrity/content trust, admin/browser/mobile/accessibility/SEO/performance and recovery evidence; all mandatory gates green; production matches reviewed main. | Main application, database and Cloudflare workflow runs completed success at checkpoint SHA; full release acceptance remains OPEN. | Resolve genuine owner/provider gates; track each PR SHA, active provider deployment and scope of smoke tests. No AdSense actions or paid dependencies. |
 
 ## Current blockers and authorization boundaries
@@ -129,3 +129,59 @@ Issues remain open until their real acceptance gaps are resolved.
   checks and verify #367 production. Then fix unsaved editorial navigation: course,
   Daily and newsletter header links currently bypass beforeunload/Lock confirmations
   during client-side navigation. Reproduce in compiled browser before editing.
+
+
+### 6 Nov — verified moderation release, merged history repair, navigation fix
+
+- **#367 is deployed and postmerge verified:** main SHA
+  `8fa5632da717114e7122f63814e9d52ec99917de`, all main checks passed in
+  [42221772662](https://github.com/anugaweerasinghe1-del/trading101/actions/runs/42221772662).
+  Native release job confirms Vercel `dpl_5o2i9UvKAZvRkRVq5GauSXzhCmQC` READY on
+  the active production alias and Cloudflare production `8cddfe28-c69c-49c0-99cd-1d8ed2e4c2d2`
+  success for that SHA. Local Cloudflare token returned HTTP401; repository CI's
+  separate native token supplied the successful proof. No credential was changed.
+- [#368](https://github.com/anugaweerasinghe1-del/trading101/pull/368) merged as
+  `1c69cc8e8777403babd265ccece6ee04daab8441` after exact-head application,
+  PostgreSQL, full browser/SEO (8m46s), required validation and provider previews
+  passed. Postmerge production verification pending at this checkpoint.
+- **Actual production checks**, saved in
+  [release evidence](evidence/2026-11-06-release-checks.json): fresh mobile Chromium
+  hydrated all six locked admin desks and Daily; live Courses/Reviews/legacy audience
+  CORS preflight passed; guest BTC buy/sell, fee arithmetic, cash reconciliation,
+  portfolio reload persistence and 390px layout passed. All server write requests
+  were blocked in the guest test; zero were attempted. Only disposable guest local
+  storage changed. These results do not establish account or owner acceptance.
+- Third selected defect reproduced against unchanged code: declining navigation
+  still changed Daily's path to `/admin`, losing the private draft. Existing
+  beforeunload does not handle SPA links or browser Back/Forward. Added shared
+  `useAdminDraftNavigation` to Courses, Daily, Newsletter and Reviews. Uses React
+  Router's supported blocker; data-router setup retains existing route definitions
+  and application providers. Discard denial retains draft state; approved discard
+  navigates; clean editors and new tabs remain ordinary navigation. Native unload
+  and explicit Lock safeguards remain.
+- Compiled Chromium passes canceled Course/Daily links, Newsletter keyboard Enter,
+  browser Back/Forward denial preserving Course draft, approved Back, clean history
+  and saved Newsletter navigation. Existing auth/guest/learning/admin regressions
+  pass with the data router and history repair. Reviews history denial also preserves the unsaved moderation text. TypeScript, admin/request checks, changed-file ESLint
+  (no errors; pre-existing warnings) and full Cloudflare build pass.
+- Combined regression sequencing repaired without removing assertions: keyboard
+  focus may trigger refresh, so reconnect waits the real 1s coalescing interval;
+  moderation refresh waits its busy button to become enabled after the deliberate
+  HTTP503 read. Existing application behavior remains authoritative in these tests.
+- Reconciled #368, retaining both adjacent browser insertions. Broad routing change
+  requires all exact-head browser/SEO and account/guest regressions before merge.
+- Supabase docs confirm leaked-password protection is Pro-plan-only; existing free
+  tier/no-purchase constraint blocks enabling it. No plan/auth setting changes.
+- Migration reconstruction: 48 repository files versus 43 recorded migrations,
+  37 names match; many historical timestamps differ, with schema-recreation/auth
+  recovery entries only in hosted history and old baseline names only in repo.
+  Do not infer missing live objects or replay migrations from filename differences.
+  Critical current source/RPC grants/public bank were checked directly; complete
+  historical schema reconciliation remains a separate release-assurance item.
+- Next: finish combined browser check, submit navigation PR, pass exact-head CI,
+  merge and verify production; update this log and #332 with final SHA/evidence.
+
+- Final combined compiled Chromium run PASSED, including Reviews Back denial,
+  all new history/link/keyboard cases and every existing auth/guest/admin journey.
+  The first header-only implementation was replaced before PR submission by the
+  supported router blocker so browser history is covered by the reviewed change.

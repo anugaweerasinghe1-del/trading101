@@ -1,0 +1,203 @@
+{
+  "date": "2026-11-06",
+  "verified_production_sha": "8fa5632da717114e7122f63814e9d52ec99917de",
+  "release_job": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/42221772662/job/127909794460",
+  "native_release": {
+    "vercel": {
+      "schema": "tradehq-vercel-production-evidence-v1",
+      "deploymentId": "dpl_5o2i9UvKAZvRkRVq5GauSXzhCmQC",
+      "teamId": "team_fjZ5ggg0P43MsYFSIHbeHAAO",
+      "projectId": "prj_PjOhFr0eppPg8hZQhdeBwTniZWOy",
+      "commitSha": "8fa5632da717114e7122f63814e9d52ec99917de",
+      "target": "production",
+      "state": "READY",
+      "activeAlias": "thetradehq.com",
+      "createdAt": 1793969917694,
+      "observedAt": 1793970534204,
+      "requests": 2,
+      "authorization": {
+        "merge": false,
+        "productionRelease": false
+      }
+    },
+    "cloudflare": {
+      "schema": "tradehq-cloudflare-account-observation-v1",
+      "observedAt": "2026-11-06T13:08:54.205Z",
+      "accountId": "01087d56e4cb7b728a7a9ddbcb12b9bb",
+      "project": "tradehq-preview",
+      "nativeTokenActive": true,
+      "activeProduction": {
+        "id": "8cddfe28-c69c-49c0-99cd-1d8ed2e4c2d2",
+        "sha": "8fa5632da717114e7122f63814e9d52ec99917de",
+        "environment": "production",
+        "branch": "main",
+        "status": "success",
+        "createdAt": "2026-11-06T12:58:36.984856Z"
+      },
+      "previousSuccessfulProduction": {
+        "id": "0abff5fc-e814-4ae2-8d51-fa99d0e33da8",
+        "sha": "69cc403c6ffd06dd357afa37a68d2947bc37930f",
+        "environment": "production",
+        "branch": "main",
+        "status": "success",
+        "createdAt": "2026-11-06T12:03:00.207728Z"
+      },
+      "historyWindow": {
+        "page": 1,
+        "perPage": 25,
+        "rows": 25,
+        "completeAccountHistory": false
+      },
+      "subscriptions": [],
+      "usage": {
+        "from": "2026-11-01T00:00:00Z",
+        "to": "2026-11-06T13:08:54.205Z",
+        "dataset": "pagesFunctionsInvocationsAdaptiveGroups",
+        "groups": 2,
+        "accountRequests": 7709,
+        "accountErrors": 0,
+        "projectScriptMatched": true,
+        "projectRequests": 7072
+      },
+      "quotaHeadroomVerified": false,
+      "rollbackPerformed": false,
+      "authorization": {
+        "providerWrite": false,
+        "modelCall": false,
+        "merge": false,
+        "productionRelease": false
+      },
+      "limitations": [
+        "Adaptive analytics are sampled observations, not authoritative billing counters.",
+        "Subscription metadata does not establish remaining Pages builds or all provider/model quota.",
+        "Previous successful production is a candidate under Cloudflare documentation; an actual authorized rollback/restore remains unperformed."
+      ]
+    }
+  },
+  "mobile_public_browser": {
+    "width": 390,
+    "method": "Fresh Chromium profile, real www.thetradehq.com HTML/JS through the configured proxy with TLS verification; CDP hydration polling. Initial dump-dom attempt timed out; CDP resolved the observation without changing TLS controls. Locked desks only; no owner login or admin actions.",
+    "results": [
+      {
+        "route": "/admin",
+        "hydrated": true,
+        "failure": null,
+        "title": "Administration | TradeHQ",
+        "navigationError": null
+      },
+      {
+        "route": "/admin/ai",
+        "hydrated": true,
+        "failure": null,
+        "title": "AI Development Desk | TradeHQ Admin",
+        "navigationError": null
+      },
+      {
+        "route": "/admin/courses",
+        "hydrated": true,
+        "failure": null,
+        "title": "Course drafts \u00b7 TradeHQ Admin",
+        "navigationError": null
+      },
+      {
+        "route": "/admin/daily",
+        "hydrated": true,
+        "failure": null,
+        "title": "Daily Practice Administration | TradeHQ",
+        "navigationError": null
+      },
+      {
+        "route": "/admin/newsletter",
+        "hydrated": true,
+        "failure": null,
+        "title": "Newsletter Desk | TradeHQ Admin",
+        "navigationError": null
+      },
+      {
+        "route": "/admin/reviews",
+        "hydrated": true,
+        "failure": null,
+        "title": "Admin Reviews \u2014 TradeHQ",
+        "navigationError": null
+      },
+      {
+        "route": "/daily",
+        "hydrated": true,
+        "failure": null,
+        "title": "Daily Trading Challenge \u2014 Build Your Streak | TradeHQ",
+        "navigationError": null
+      }
+    ]
+  },
+  "production_guest_trade": {
+    "productionGuestBuySell": true,
+    "feeArithmetic": true,
+    "portfolioReloadPersistence": true,
+    "mobileWidth": 390,
+    "serverWriteRequestsBlocked": 0,
+    "scope": "Fresh disposable guest browser; local storage only. No registered account, real funds, email or content changes."
+  },
+  "guest_method": [
+    "Fresh Chromium profile; Fetch interception denies all non-GET/HEAD/OPTIONS requests.",
+    "Open /trade/btc; enter 0.001; click Buy BTC; confirm one local trade and holding.",
+    "Verify cash and 0.1 percent fee arithmetic against the actual execution price.",
+    "Choose Sell, enter 0.001, click Sell BTC; verify no remaining position and reconciled cash.",
+    "Navigate /portfolio; verify two persisted local trades and no overflow at 390px.",
+    "Destroy disposable profile. No account login, server writes, user records, email, publication or AI generation."
+  ],
+  "backend_source_parity": [
+    {
+      "function": "admin-courses",
+      "version": 17,
+      "matching_returned_files": 10,
+      "total_returned_files": 10
+    },
+    {
+      "function": "generate-daily-practice",
+      "version": 16,
+      "matching_returned_files": 8,
+      "total_returned_files": 8
+    },
+    {
+      "function": "refresh-portfolio-prices",
+      "version": 16,
+      "matching_returned_files": 6,
+      "total_returned_files": 6
+    },
+    {
+      "function": "newsletter-audience-admin",
+      "version": 7,
+      "matching_returned_files": 5,
+      "total_returned_files": 5
+    },
+    {
+      "function": "admin-reviews",
+      "version": 12,
+      "matching_returned_files": 4,
+      "total_returned_files": 4
+    }
+  ],
+  "live_preflight": [
+    {
+      "function": "admin-courses",
+      "http": 200,
+      "empty_body": true
+    },
+    {
+      "function": "admin-reviews",
+      "http": 200,
+      "empty_body": true
+    },
+    {
+      "function": "newsletter-audience-admin",
+      "http": 204,
+      "empty_body": true
+    }
+  ],
+  "limitations": [
+    "No real registered-owner admin acceptance: configured runtime credentials return HTTP401; MCP SQL remains available.",
+    "Daily attempts remain 3/3; historical HTTP400 and successful generation unverified.",
+    "Traditional quote entitlement/coverage remains unverified.",
+    "No whole-account journey or full semantic audit of all educational questions is implied."
+  ]
+}

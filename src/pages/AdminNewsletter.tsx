@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
+import { useAdminDraftNavigation } from "@/hooks/useAdminDraftNavigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { newsletterAdminError } from "@/lib/newsletterAdminError";
 import { toast } from "sonner";
@@ -56,6 +57,7 @@ export default function AdminNewsletter() {
   const [error, setError] = useState("");
 
   const dirty = !!current && (current.subject !== subject || current.preheader !== preheader || current.body_markdown !== body);
+  useAdminDraftNavigation(dirty);
   const stale = syncRequired || !!current && !editions.some(row => row.id === current.id && row.revision === current.revision && row.status === current.status);
   const editor = useRef({ current, dirty }); editor.current = { current, dirty };
   useEffect(() => {

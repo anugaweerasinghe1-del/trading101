@@ -1,3 +1,4 @@
+import { useAdminDraftNavigation } from "@/hooks/useAdminDraftNavigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -33,6 +34,7 @@ export default function AdminCourses() {
   const pending = useRef(false);
   const [settingsDirty, setSettingsDirty] = useState(false);
   const dirty = settingsDirty || !!document && JSON.stringify(document) !== JSON.stringify(selected?.document);
+  useAdminDraftNavigation(dirty);
   const stale = !!selected && !drafts.some(row => row.id === selected.id && row.revision === selected.revision && row.status === selected.status);
   const errors = document ? [...validateCourseDocument(document, true), ...reviewCourseQuality(document)] : [];
   const call = useCallback(async (action: string, payload: Record<string, unknown> = {}, bearerToken?: string) => {

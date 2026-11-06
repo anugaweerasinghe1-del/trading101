@@ -1,5 +1,6 @@
+import { Link } from "react-router-dom";
+import { useAdminDraftNavigation } from "@/hooks/useAdminDraftNavigation";
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { toast } from 'sonner';
 import { supabase } from '@/integrations/supabase/client';
@@ -33,6 +34,7 @@ export default function AdminDaily() {
   const [modelCheck, setModelCheck] = useState<string | null>(null);
   const exercisePanel = useRef<HTMLElement>(null);
   const pending = useRef(false), dirty = !!doc && JSON.stringify(doc) !== JSON.stringify(selected?.document);
+  useAdminDraftNavigation(dirty);
   const stale = !!selected && !rows.some(row => row.id === selected.id && row.revision === selected.revision && row.status === selected.status);
   const call = useCallback(async (action: string, payload: Record<string, unknown> = {}, bearerToken?: string) => {
     const guard = scope.capture(key);
