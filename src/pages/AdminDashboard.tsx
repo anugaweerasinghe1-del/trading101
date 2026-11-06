@@ -125,18 +125,20 @@ export default function AdminDashboard() {
       const values = await Promise.all(responses.map(response => response.ok ? response.json() : Promise.resolve(null)));
       guard.assert();
       if (Array.isArray(values[0])) setIssues(values[0].filter((i: AgentIssue) => !i.pull_request && /^\[TradeHQ (Agent|Ideas)\]/.test(i.title)));
+      else setIssues([]); // Do not show an earlier issue feed as current.
       if (Array.isArray(values[1]?.workflow_runs)) {
         const runs = values[1].workflow_runs as Run[];
         setRun(runs[0] ?? null);
         setPreviousSuccess(runs.find(item => item.conclusion === "success") ?? null);
         setPreviousFailure(runs.find(item => item.conclusion === "failure") ?? null);
-      }
+      } else { setRun(null); setPreviousSuccess(null); setPreviousFailure(null); }
       if (Array.isArray(values[2]?.workflow_runs)) {
         const history = values[2].workflow_runs as Run[];
         setCodeRun(history[0] ?? null);
         setPreviousCodeFailure(history.find(item => item.conclusion === "failure") ?? null);
-      }
+      } else { setCodeRun(null); setPreviousCodeFailure(null); }
       if (Array.isArray(values[3])) setProposals((values[3] as Proposal[]).filter(item => /^AI (smoke-test |proposal:)/i.test(item.title)));
+      else setProposals([]);
       if (Array.isArray(values[4]?.workflow_runs)) setCollectorRun(values[4].workflow_runs[0] ?? null);
       else setCollectorRun(null);
       // Read only recent jobs and label sampled history honestly. Never infer that a green run means every function works.
@@ -176,11 +178,19 @@ export default function AdminDashboard() {
         setDeploymentChecks({ pages: null, worker: null, error: failure instanceof Error ? failure.message : "GitHub deployment checks unavailable" });
       }
       guard.assert();
-      setAgentError(failures.length ? "GitHub status unavailable for " + failures.join(", ") + ". Use the linked GitHub history for confirmation." : "");
+      const missing = ["issue reports", "monitor runs", "coding runs", "approval PRs", "trusted collector"].filter((_, i) =>
+        i === 0 || i === 3 ? !Array.isArray(values[i]) : !Array.isArray(values[i]?.workflow_runs));
+      const unavailable = [...new Set([...failures, ...missing])];
+      setAgentError(unavailable.length ? "GitHub status unavailable for " + unavailable.join(", ") + ". Missing feeds have been cleared; verify in GitHub Actions." : "");
       setLastGitHubChecked(new Date());
     } catch {
       if (!guard.current()) return;
-      setAgentError("GitHub operational data could not be loaded. Statuses may be stale; verify in GitHub Actions.");
+      // A total fetch failure must not leave the previous successful snapshot visible.
+      setIssues([]); setRun(null); setCodeRun(null); setCollectorRun(null);
+      setPreviousSuccess(null); setPreviousFailure(null); setPreviousCodeFailure(null);
+      setProposals([]); setJobHistory([]); setJobHistoryError("GitHub job history unavailable.");
+      setDeploymentChecks(null); setLastGitHubChecked(null);
+      setAgentError("GitHub operational data could not be loaded. Previous snapshots were cleared; verify in GitHub Actions.");
     }
   }, [key, scope]);
   const unlock = async (event: React.FormEvent) => {
