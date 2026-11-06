@@ -1,5 +1,6 @@
 import { createClient } from "npm:@supabase/supabase-js@2.75.1";
 import { allow, clientIp } from "../_shared/rateLimit.ts";
+import { verifyNewsletterDispatchOwner } from "../_shared/newsletterDispatchAuth.ts";
 
 // Read-only owner-only overview. Legacy rows are not confirmed subscriptions.
 const db = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!, {
@@ -30,6 +31,17 @@ Deno.serve(async req => {
       return reply({error:"Incorrect TradeHQ admin master key"},401);
     const input = await req.json().catch(()=>null);
     if (input?.action !== "summary") return reply({error:"Unknown action"},400);
+    // Historical subscriber email addresses are sensitive even when no
+    // addresses are authorized for sending. Require the current registered
+    // owner session as well as the admin key before any subscriber query.
+    const ownerVerified = await verifyNewsletterDispatchOwner(req, async () => {
+      const { data, error } = await db.rpc("tradehq_repair_registered_owner");
+      return error || typeof data !== "string" ? null : data;
+    }, async jwt => {
+      const { data, error } = await db.auth.getUser(jwt);
+      return error ? null : data.user?.id ?? null;
+    });
+    if (!ownerVerified) return reply({error:"Registered owner login required in addition to the admin key"},403);
     const [{count,error:counterError},{data,error:listError}] = await Promise.all([
       db.from("subscribers").select("id",{count:"exact",head:true}),
       db.from("subscribers").select("email,subscribed_at,source").order("subscribed_at",{ascending:false}).limit(250),
