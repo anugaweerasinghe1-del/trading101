@@ -1,4 +1,9 @@
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+// A fix to the CI wait itself must trigger fresh public monitoring on protected main.
+const monitorWorkflow=readFileSync('.github/workflows/tradehq-agents.yml','utf8');
+assert.ok(monitorWorkflow.includes('      - scripts/agent-evidence-ci-wait.mjs'),
+  'Trusted evidence wait edits must trigger the independent monitoring cycle');
 import {CI_WAIT_POLL_LIMIT,requiredCiReady,latestPagesReady,validationRunReady,waitForRequiredCi} from './agent-evidence-ci-wait.mjs';
 assert.equal(CI_WAIT_POLL_LIMIT,90,'The collector needs enough bounded time for the real Chromium CI sweep');
 const sha='a'.repeat(40),names=['TradeHQ Phase 3 tests','TradeHQ Cloudflare compatibility / Cloudflare build and SEO','TradeHQ Required validation'];
