@@ -11,6 +11,7 @@ import { PracticeVisual } from '@/components/DailyPractice';
 import { validateBatch, validateExercises, type DailyBatch } from '../../supabase/functions/_shared/dailyPractice';
 import { useAdminRefresh, useAdminRequestScope } from '@/hooks/useAdminRefresh';
 import { isAdminRequestCancelled } from '@/lib/adminRequestScope';
+import { courseAdminError } from "@/lib/adminFunctionError";
 import { AdminFreshness } from '@/components/admin/AdminFreshness';
 interface Draft {
   id: string; status: string; revision: number; document: DailyBatch;
@@ -32,14 +33,22 @@ export default function AdminDaily() {
   const [modelCheck, setModelCheck] = useState<string | null>(null);
   const exercisePanel = useRef<HTMLElement>(null);
   const pending = useRef(false), dirty = !!doc && JSON.stringify(doc) !== JSON.stringify(selected?.document);
+  const stale = !!selected && !rows.some(row => row.id === selected.id && row.revision === selected.revision && row.status === selected.status);
   const call = useCallback(async (action: string, payload: Record<string, unknown> = {}, bearerToken?: string) => {
     const guard = scope.capture(key);
     const { data, error } = await supabase.functions.invoke('admin-courses', { body: { action: 'daily-' + action, ...payload },
       headers: { 'x-admin-key': key, ...(bearerToken ? { authorization: 'Bearer ' + bearerToken } : {}) } });
     guard.assert();
-    if (error || data?.error) throw new Error(data?.error ?? 'Could not connect. Check your master key and retry.');
+    if (error || data?.error) throw new Error(await courseAdminError(error, data));
     return data.data;
   }, [key]);
+  useEffect(() => {
+    const { data } = supabase.auth.onAuthStateChange(event => {
+      if (event !== 'SIGNED_OUT') return;
+      scope.invalidate(); pending.current = false; setBusy(false); setReviewed(false);
+    });
+    return () => data.subscription.unsubscribe();
+  }, [scope]);
   const load = useCallback(async () => {
     const guard = scope.capture(key, 'metadata');
     const [drafts, settings] = await Promise.all([call('list'), call('status')]);
@@ -61,8 +70,15 @@ export default function AdminDaily() {
     if (dirty && !confirm('Discard your unsaved edits?')) return;
     setSelected(row); setDoc(structuredClone(row.document)); setIndex(0); setReviewed(false);
   };
+  const refreshAfterWrite = async () => {
+    try { await load(); }
+    catch (error) {
+      if (isAdminRequestCancelled(error)) throw error;
+      setRefreshError('The action was confirmed, but bank status could not refresh. Refresh before another action.');
+    }
+  };
   const updateRow = async (action: string) => {
-    if (!doc || !selected) return;
+    if (!doc || !selected || stale || (action !== 'save' && dirty)) return;
     const guard = scope.capture(key);
     let bearerToken: string | undefined;
     if (action === 'publish') {
@@ -73,20 +89,20 @@ export default function AdminDaily() {
       bearerToken = auth.session.access_token;
     }
     const row = await call(action, { id: selected.id, revision: selected.revision, document: doc, reviewer: reviewer.trim(), reviewed }, bearerToken) as Draft;
-    setSelected(row); setDoc(structuredClone(row.document)); setReviewed(false); await load();
+    setSelected(row); setDoc(structuredClone(row.document)); setReviewed(false); await refreshAfterWrite();
     toast.success(action === 'publish' ? 'Approved snapshot saved. It becomes available on its start date.' : action === 'reject' ? 'Draft rejected. Existing approved practice continues.' : 'Private draft saved. Approval is required for edited content.');
   };
   const errors = doc ? validateExercises(doc.exercises) : [], e = doc?.exercises[index];
   return <main className="min-h-screen bg-background text-foreground px-5 py-10"><Helmet><title>Daily Practice Administration | TradeHQ</title><meta name="robots" content="noindex, nofollow" /></Helmet><div className="max-w-6xl mx-auto space-y-6">
-    <header className="flex flex-wrap justify-between gap-4"><div><h1 className="text-2xl font-bold">Daily practice</h1><p className="text-sm text-muted-foreground mt-1">50 deeper exercises · a new private bank every two months</p></div><nav className="flex gap-4 text-sm"><Link to="/admin" className="text-primary">Dashboard</Link><Link to="/admin/courses" className="text-primary">Courses</Link><Link to="/admin/reviews" className="text-primary">Reviews</Link>{unlocked && <button onClick={() => { if (dirty && !confirm('Discard unsaved edits and lock?')) return; scope.invalidate(); pending.current = false; setBusy(false); setCheckedAt(null); setRefreshError(''); setReviewed(false); setKey(''); setUnlocked(false); setDoc(null); setSelected(null); setRows([]); setStatus(null); setModelCheck(null); }}>Lock</button>}</nav></header>
+    <header className="flex flex-wrap justify-between gap-4"><div><h1 className="text-2xl font-bold">Daily practice</h1><p className="text-sm text-muted-foreground mt-1">50 deeper exercises · a new private bank every two months</p></div><nav className="flex flex-wrap gap-4 text-sm"><Link to="/admin" className="text-primary">Dashboard</Link><Link to="/admin/courses" className="text-primary">Courses</Link><Link to="/admin/reviews" className="text-primary">Reviews</Link>{unlocked && <button onClick={() => { if (dirty && !confirm('Discard unsaved edits and lock?')) return; scope.invalidate(); pending.current = false; setBusy(false); setCheckedAt(null); setRefreshError(''); setReviewed(false); setKey(''); setUnlocked(false); setDoc(null); setSelected(null); setRows([]); setStatus(null); setModelCheck(null); }}>Lock</button>}</nav></header>
     {!unlocked ? <form className="max-w-md border border-border rounded-2xl p-6 space-y-4" onSubmit={ev => { ev.preventDefault(); void run(async () => { const drafts = await load(); setUnlocked(true); if (drafts[0]) choose(drafts[0]); }); }}>
       <label className="block text-sm">Admin master key<input required type="password" disabled={busy} autoComplete="off" value={key} onChange={e => setKey(e.target.value)} className="mt-2 w-full bg-background rounded-xl border border-border p-3" /></label><button disabled={busy} className={button}>Unlock</button>
     </form> : <>
       <AdminFreshness checkedAt={checkedAt} error={refreshError} />
-      {selected && rows.some(row => row.id === selected.id && row.revision !== selected.revision) && <p role="status" className="text-sm text-amber-600 dark:text-amber-400">This bank changed on the server. Your edits are preserved. Reopen the latest revision before saving or approving.</p>}
+      {stale && <p role="status" className="text-sm text-amber-600 dark:text-amber-400">This bank changed on the server. Your edits are preserved. Reopen the latest revision before saving or approving.</p>}
       {status && <section className="border border-border rounded-2xl p-5 space-y-3"><div className="flex flex-wrap justify-between gap-4"><h2 className="font-semibold">Generation schedule</h2><button disabled={busy} className={button} onClick={() => void run(async () => { setStatus(await call('configure', { enabled: !status.enabled })); })}>{status.enabled ? 'Pause generation' : 'Enable generation'}</button></div>
         <p className="text-sm text-muted-foreground leading-relaxed">{status.enabled ? 'Enabled' : 'Paused'} · next bank starts {status.nextDue}. Preparation begins {status.prepareAfter}. Daily checks run at 09:15 Sri Lanka time. Each case has ten scored questions and a final takeaway. One standard Gemini request writes ten cases; five successful parts make a bank. Completed months use no AI requests.</p>
-        <GenerationReadiness status={status} busy={busy} onGenerate={() => void run(async () => { const queued = await call('generate'); await load(); toast.message(queued ? 'Next part queued. Refresh in about two minutes.' : 'Nothing queued: another request, cooldown or attempt cap is active.'); })} onRefresh={() => void run(async () => { await load(); })} />
+        <GenerationReadiness status={status} busy={busy} onGenerate={() => void run(async () => { const queued = await call('generate'); await refreshAfterWrite(); toast.message(queued ? 'Next part queued. Refresh in about two minutes.' : 'Nothing queued: another request, cooldown or attempt cap is active.'); })} onRefresh={() => void run(async () => { await load(); })} />
          <div className="space-y-2 border-t border-border pt-3">
            <button type="button" disabled={busy} className={button} onClick={() => void run(async () => {
              setModelCheck(null);
@@ -102,7 +118,7 @@ export default function AdminDaily() {
            {modelCheck && <p role="status" className="text-sm text-muted-foreground">{modelCheck}</p>}
          </div>
       </section>}
-      <div className="grid md:grid-cols-[230px_1fr] gap-6"><aside className="space-y-2"><h2 className="text-sm font-semibold mb-3">Banks</h2>
+      <div className="grid md:grid-cols-[230px_minmax(0,1fr)] gap-6"><aside className="space-y-2"><h2 className="text-sm font-semibold mb-3">Banks</h2>
         <label className="block text-sm pb-2">Show banks<select className="block mt-2 w-full bg-background rounded-xl border border-border p-3" value={filter} onChange={event => setFilter(event.target.value)}>{[['all', 'All'], ['draft', 'Awaiting review'], ['published', 'Approved'], ['rejected', 'Rejected']].map(([value, label]) => <option key={value} value={value}>{label} ({rows.filter(row => value === 'all' || row.status === value).length})</option>)}</select></label>
         {rows.filter(row => filter === 'all' || row.status === filter).map(row => <button key={row.id} disabled={busy} className={`w-full text-left rounded-xl border p-3 ${selected?.id === row.id ? 'border-primary/40 bg-primary/5' : 'border-border'}`} onClick={() => choose(row)}><span className="block text-sm">{row.document.effectiveFrom}</span><span className="text-xs text-muted-foreground">{row.status === 'draft' ? 'Awaiting review' : row.status === 'published' ? 'Approved' : row.status} · revision {row.revision}</span></button>)}
         {!rows.some(row => filter === 'all' || row.status === filter) && <p className="text-sm text-muted-foreground py-3">No banks in this view. Previously approved practice stays available.</p>}</aside>
@@ -122,10 +138,10 @@ export default function AdminDaily() {
         </section>
         <footer className="rounded-2xl border border-border p-5 space-y-4"><p className="text-xs text-muted-foreground">{selected?.research?.method ?? 'AI-assisted draft'} · Saving edits keeps them private. The previous approved snapshot stays public until you approve this revision. Review every exercise, calculation, source and answer before approving. Approval also requires the registered owner's website login alongside the master key; the server records verified owner attribution instead of trusting the typed reviewer name.</p>
           {errors.length > 0 && <p role="alert" className="text-sm text-amber-600 dark:text-amber-400">{errors.slice(0, 3).join(' ')}</p>}
-          <button className={button} disabled={busy || !dirty || !validateBatch(doc)} onClick={() => void run(() => updateRow('save'))}>Save private edits</button>
+          <button className={button} disabled={busy || stale || !dirty || !validateBatch(doc) || errors.length > 0} onClick={() => void run(() => updateRow('save'))}>Save private edits</button>
           <label className="block text-sm">Reviewer name<input value={reviewer} maxLength={80} onChange={v => setReviewer(v.target.value)} className="mt-2 block w-full rounded-xl border border-border p-3 bg-background" /></label>
-          <label className="flex gap-3 text-sm leading-relaxed"><input type="checkbox" checked={reviewed} onChange={v => setReviewed(v.target.checked)} className="mt-1" /><span>I reviewed all 50 exercises for originality, factual accuracy, calculations, answers and teaching quality.</span></label>
-          <div className="flex flex-wrap gap-3"><button className={`${button} bg-primary text-primary-foreground`} disabled={busy || dirty || !reviewed || reviewer.trim().length < 2 || !validateBatch(doc) || selected?.status === 'rejected'} onClick={() => void run(() => updateRow('publish'))}>Approve this bank</button><button className={button} disabled={busy || dirty || selected?.status === 'rejected'} onClick={() => void run(() => updateRow('reject'))}>Reject private draft</button></div>
+          <label className="flex gap-3 text-sm leading-relaxed"><input type="checkbox" disabled={busy || dirty || stale} checked={reviewed} onChange={v => setReviewed(v.target.checked)} className="mt-1" /><span>I reviewed all 50 exercises for originality, factual accuracy, calculations, answers and teaching quality.</span></label>
+          <div className="flex flex-wrap gap-3"><button className={`${button} bg-primary text-primary-foreground`} disabled={busy || dirty || stale || errors.length > 0 || !reviewed || reviewer.trim().length < 2 || !validateBatch(doc) || selected?.status === 'rejected'} onClick={() => void run(() => updateRow('publish'))}>Approve this bank</button><button className={button} disabled={busy || dirty || stale || selected?.status === 'rejected'} onClick={() => void run(() => updateRow('reject'))}>Reject private draft</button></div>
           {dirty && <p className="text-xs text-amber-600 dark:text-amber-400">Save your edits before approving.</p>}
         </footer></fieldset>
       </section>}</div>

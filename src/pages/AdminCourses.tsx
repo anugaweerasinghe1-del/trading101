@@ -12,6 +12,7 @@ import { reviewCourseQuality } from "../../supabase/functions/_shared/courseQual
 
 import { useAdminRefresh, useAdminRequestScope } from '@/hooks/useAdminRefresh';
 import { isAdminRequestCancelled } from '@/lib/adminRequestScope';
+import { courseAdminError } from "@/lib/adminFunctionError";
 import { AdminFreshness } from '@/components/admin/AdminFreshness';
 interface Draft {
   id: string; status: string; revision: number; published_revision: number; document: CourseDocument;
@@ -32,15 +33,24 @@ export default function AdminCourses() {
   const pending = useRef(false);
   const [settingsDirty, setSettingsDirty] = useState(false);
   const dirty = settingsDirty || !!document && JSON.stringify(document) !== JSON.stringify(selected?.document);
+  const stale = !!selected && !drafts.some(row => row.id === selected.id && row.revision === selected.revision && row.status === selected.status);
   const errors = document ? [...validateCourseDocument(document, true), ...reviewCourseQuality(document)] : [];
   const call = useCallback(async (action: string, payload: Record<string, unknown> = {}, bearerToken?: string) => {
     const guard = scope.capture(key);
     const { data, error } = await supabase.functions.invoke("admin-courses", { body: { action, ...payload },
       headers: { "x-admin-key": key, ...(bearerToken ? { authorization: "Bearer " + bearerToken } : {}) } });
     guard.assert();
-    if (error || data?.error) throw new Error(data?.error || "Could not connect. Check your master key and retry.");
+    if (error || data?.error) throw new Error(await courseAdminError(error, data));
     return data?.data;
   }, [key]);
+  useEffect(() => {
+    const { data } = supabase.auth.onAuthStateChange(event => {
+      if (event !== 'SIGNED_OUT') return;
+      scope.invalidate(); pending.current = false; setBusy(false);
+      setOwnerCheck(null); setReviewed(false);
+    });
+    return () => data.subscription.unsubscribe();
+  }, [scope]);
   const load = useCallback(async () => {
     const guard = scope.capture(key, 'metadata');
     const [rows, status] = await Promise.all([call("list"), call("settings")]);
@@ -66,10 +76,18 @@ export default function AdminCourses() {
     if (dirty && !confirm("Discard your unsaved edits?")) return;
     setSelected(draft); setDocument(draft ? structuredClone(draft.document) : blankCourse()); setReviewed(false); setMode("edit");
   };
+  const refreshAfterWrite = async () => {
+    try { return await load(); }
+    catch (error) {
+      if (isAdminRequestCancelled(error)) throw error;
+      setRefreshError('The action was confirmed, but the inbox could not refresh. Refresh before another action.');
+      return null;
+    }
+  };
   const save = async () => {
-    if (!document) return;
+    if (!document || stale) return;
     const row = await call("save", { id: selected?.id ?? null, revision: selected?.revision ?? null, document }) as Draft;
-    setSelected(row); setDocument(structuredClone(row.document)); setReviewed(false); await load();
+    setSelected(row); setDocument(structuredClone(row.document)); setReviewed(false); await refreshAfterWrite();
     toast.success("Draft saved. Approval is required before publication.");
   };
   const checkOwnerAccess = async () => {
@@ -96,7 +114,7 @@ export default function AdminCourses() {
     }
   };
   const publish = async () => {
-    if (!selected || dirty) return;
+    if (!selected || dirty || stale || !reviewed || errors.length) return;
     const guard = scope.capture(key);
     const { data: auth, error: authError } = await supabase.auth.getSession();
     guard.assert();
@@ -104,7 +122,7 @@ export default function AdminCourses() {
       throw new Error("Sign in with the registered TradeHQ owner account before publishing a course. Your admin key alone cannot publish.");
     await call("publish", { id: selected.id, revision: selected.revision, reviewed, reviewer },
       auth.session.access_token);
-    const rows = await load(), row = rows.find(d => d.id === selected.id);
+    const rows = await refreshAfterWrite(), row = rows?.find(d => d.id === selected.id);
     if (row) { setSelected(row); setDocument(structuredClone(row.document)); }
     setReviewed(false); toast.success("Course approved and published.");
   };
@@ -120,8 +138,8 @@ export default function AdminCourses() {
         <Link className="block text-sm text-muted-foreground" to="/admin/reviews">Review administration →</Link>
       </form>
     </main> : <main className="min-h-screen bg-background px-4 sm:px-6 py-8 max-w-7xl mx-auto">
-      <header className="flex items-center justify-between gap-4 mb-8"><div><p className="text-xs uppercase tracking-widest text-primary mb-2">TradeHQ · Admin</p><h1 className="text-2xl font-semibold">Course desk</h1></div>
-        <div className="flex items-center gap-4 text-sm"><Link to="/admin" className="text-primary">Dashboard</Link><Link to="/admin/daily" className="text-primary">Daily practice</Link><Link to="/admin/reviews" className="text-muted-foreground">Reviews</Link><button onClick={() => { if (dirty && !confirm("Discard unsaved edits and lock?")) return; scope.invalidate(); pending.current = false; setBusy(false); setUnlocked(false); setKey(""); setDocument(null); setSelected(null); setDrafts([]); setSettings(null); setReviewed(false); setCheckedAt(null); setRefreshError(''); setOwnerCheck(null); }} className="flex items-center gap-2"><Lock className="w-4 h-4" />Lock</button></div></header>
+      <header className="flex flex-wrap items-center justify-between gap-4 mb-8"><div><p className="text-xs uppercase tracking-widest text-primary mb-2">TradeHQ · Admin</p><h1 className="text-2xl font-semibold">Course desk</h1></div>
+        <div className="flex flex-wrap items-center gap-4 text-sm"><Link to="/admin" className="text-primary">Dashboard</Link><Link to="/admin/daily" className="text-primary">Daily practice</Link><Link to="/admin/reviews" className="text-muted-foreground">Reviews</Link><button onClick={() => { if (dirty && !confirm("Discard unsaved edits and lock?")) return; scope.invalidate(); pending.current = false; setBusy(false); setUnlocked(false); setKey(""); setDocument(null); setSelected(null); setDrafts([]); setSettings(null); setReviewed(false); setCheckedAt(null); setRefreshError(''); setOwnerCheck(null); setSettingsDirty(false); }} className="flex items-center gap-2"><Lock className="w-4 h-4" />Lock</button></div></header>
       <div className="flex flex-wrap gap-3 mb-6">
         <button type="button" onClick={() => { if (settingsDirty && !confirm("Discard unsaved generation settings?")) return; setMode("edit"); }} className="rounded-xl border border-border px-4 py-2 text-sm">Draft inbox ({drafts.filter(d => d.status === "draft").length})</button>
         <button type="button" onClick={() => setMode("settings")} className="rounded-xl border border-border px-4 py-2 text-sm inline-flex items-center gap-2"><Settings2 className="w-4 h-4" />Generation settings</button>
@@ -134,10 +152,10 @@ export default function AdminCourses() {
         {ownerCheck === "verified" ? "Registered owner's current sign-in verified. No course, AI or publication state was changed." :
           "Owner access could not be verified. No course was published or generated."}
       </p>}
-      {selected && drafts.some(row => row.id === selected.id && row.revision !== selected.revision) && <p role="status" className="text-sm text-amber-600 dark:text-amber-400 mb-4">This draft changed on the server. Your edits are preserved. Reopen the latest revision before saving or approving.</p>}
+      {stale && <p role="status" className="text-sm text-amber-600 dark:text-amber-400 mb-4">This draft changed on the server. Your edits are preserved. Reopen the latest revision before saving or approving.</p>}
       {mode === "settings" && settings ? <CourseGenerationSettings onDirtyChange={setSettingsDirty}
-        settings={settings} busy={busy} save={values => action(async () => { await call("configure", { settings: values }); await load(); toast.success("Generation settings saved."); })}
-        generate={async () => { await action(async () => { const request = await call("generate"); await load(); toast.success(request ? "Generation queued. Refresh the inbox in a few minutes." : "No draft queued. Check setup, monthly slots and retry limits."); }); }} />
+        settings={settings} busy={busy} save={values => action(async () => { await call("configure", { settings: values }); await refreshAfterWrite(); toast.success("Generation settings saved."); })}
+        generate={async () => { await action(async () => { const request = await call("generate"); await refreshAfterWrite(); toast.success(request ? "Generation queued. Refresh the inbox in a few minutes." : "No draft queued. Check setup, monthly slots and retry limits."); }); }} />
         : <div className="grid lg:grid-cols-[280px_minmax(0,1fr)] gap-6">
           <aside className="space-y-3"><button type="button" disabled={busy} className="w-full rounded-xl border border-primary/30 text-primary py-3 text-sm" onClick={() => choose(null)}>+ Create a draft</button>
             {!drafts.length && <div className="rounded-2xl border border-border p-5 text-sm text-muted-foreground">Your draft inbox is empty. Set up the free API to receive monthly courses, or create a draft here.</div>}
@@ -150,21 +168,21 @@ export default function AdminCourses() {
             {!document ? <div className="py-16 text-center space-y-4"><BookOpen className="w-9 h-9 mx-auto text-primary" /><h2 className="text-xl font-semibold">Your editorial workspace</h2><p className="text-sm text-muted-foreground">Choose a draft to edit or preview. Courses become public only after your approval.</p></div>
               : <div className="space-y-6">
                 <div className="flex flex-wrap items-center justify-between gap-3"><p className="text-xs text-muted-foreground">{dirty ? "Unsaved changes" : selected ? "Saved · Revision " + selected.revision : "New draft"}</p>
-                  <div className="flex gap-2"><button type="button" onClick={() => setMode(mode === "preview" ? "edit" : "preview")} className="rounded-xl border border-border px-3 py-2 text-sm inline-flex items-center gap-2"><Eye className="w-4 h-4" />{mode === "preview" ? "Edit" : "Reader preview"}</button>
-                    <button type="button" disabled={busy || !dirty} onClick={() => void action(save)} className="rounded-xl bg-primary text-primary-foreground px-3 py-2 text-sm inline-flex items-center gap-2 disabled:opacity-50"><Save className="w-4 h-4" />Save draft</button></div></div>
+                  <div className="flex flex-wrap gap-2"><button type="button" onClick={() => setMode(mode === "preview" ? "edit" : "preview")} className="rounded-xl border border-border px-3 py-2 text-sm inline-flex items-center gap-2"><Eye className="w-4 h-4" />{mode === "preview" ? "Edit" : "Reader preview"}</button>
+                    <button type="button" disabled={busy || stale || !dirty} onClick={() => void action(save)} className="rounded-xl bg-primary text-primary-foreground px-3 py-2 text-sm inline-flex items-center gap-2 disabled:opacity-50"><Save className="w-4 h-4" />Save draft</button></div></div>
                 {selected?.research?.method && <details className="rounded-xl bg-muted/30 p-4 text-sm"><summary className="cursor-pointer">Research and checks · {selected.research.method}</summary>
                   <div className="mt-3 space-y-2 text-muted-foreground">{selected.research.demandNote && <p>{selected.research.demandNote}</p>}{selected.research.checks?.map((c, i) => <p key={i}>{c}</p>)}</div></details>}
-                {mode === "preview" ? <CoursePreview document={document} /> : <fieldset disabled={busy}><CourseDraftEditor document={document} setDocument={setDocument} published={(selected?.published_revision ?? 0) > 0} /></fieldset>}
+                {mode === "preview" ? <CoursePreview document={document} /> : <fieldset disabled={busy}><CourseDraftEditor document={document} setDocument={value => { setDocument(value); setReviewed(false); }} published={(selected?.published_revision ?? 0) > 0} /></fieldset>}
                 <section className="border-t border-border pt-6 space-y-4"><h2 className="font-semibold">Final approval</h2>
                   {errors.length > 0 && <details className="text-sm rounded-xl bg-muted/30 p-4"><summary className="cursor-pointer">{errors.length} items to resolve before approval</summary><ul className="mt-3 list-disc pl-5 space-y-2 text-muted-foreground">{errors.map((e, i) => <li key={i}>{e}</li>)}</ul></details>}
-                  <label className="block text-sm space-y-2"><span className="text-muted-foreground">Reviewer name</span><input value={reviewer} onChange={e => setReviewer(e.target.value)} className="rounded-xl border border-border bg-background px-3 py-2 w-full" /></label>
-                  <label className="flex items-start gap-3 text-sm"><input type="checkbox" checked={reviewed} onChange={e => setReviewed(e.target.checked)} className="mt-1" />
+                  <label className="block text-sm space-y-2"><span className="text-muted-foreground">Reviewer name</span><input maxLength={80} disabled={busy} value={reviewer} onChange={e => setReviewer(e.target.value)} className="rounded-xl border border-border bg-background px-3 py-2 w-full" /></label>
+                  <label className="flex items-start gap-3 text-sm"><input type="checkbox" disabled={busy || dirty || stale} checked={reviewed} onChange={e => setReviewed(e.target.checked)} className="mt-1" />
                     <span>I have reviewed the sources, calculations, originality and lesson quality. Publishing also requires signing in with the registered owner account; the master key alone is insufficient. Edited drafts receive a fresh independent review before publication.</span></label>
-                  <div className="flex flex-wrap gap-3"><button type="button" disabled={busy || dirty || !selected || !reviewed || errors.length > 0 || selected.status === "rejected"}
+                  <div className="flex flex-wrap gap-3"><button type="button" disabled={busy || dirty || stale || !selected || reviewer.trim().length < 2 || !reviewed || errors.length > 0 || selected.status === "rejected"}
                     onClick={() => void action(publish)} className="rounded-xl bg-primary text-primary-foreground px-4 py-3 text-sm inline-flex items-center gap-2 disabled:opacity-50"><CheckCircle2 className="w-4 h-4" />Approve and publish</button>
-                    {selected && <button type="button" disabled={busy || dirty} onClick={() => {
+                    {selected && <button type="button" disabled={busy || dirty || stale} onClick={() => {
                       if (dirty || !confirm("Reject this saved revision? Any existing published version will stay available. Save or discard unsaved edits first.")) return;
-                      void action(async () => { await call("reject", { id: selected.id, revision: selected.revision }); const rows = await load(); const row = rows.find(d => d.id === selected.id); if (row) { setSelected(row); setDocument(row.document); } setReviewed(false); toast.success("Draft rejected."); });
+                      void action(async () => { await call("reject", { id: selected.id, revision: selected.revision }); const rows = await refreshAfterWrite(); const row = rows?.find(d => d.id === selected.id); if (row) { setSelected(row); setDocument(row.document); } setReviewed(false); toast.success("Draft rejected."); });
                     }} className="rounded-xl border border-border px-4 py-3 text-sm disabled:opacity-50">Reject draft</button>}
                     {selected?.published_revision > 0 && <Link to={"/courses/" + selected.document.slug} className="text-sm text-primary py-3" target="_blank">View published course →</Link>}
                   </div><p className="text-xs text-muted-foreground">Save your edits before approval. Approval publishes this saved revision and records your name and review date.</p>

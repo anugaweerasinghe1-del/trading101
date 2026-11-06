@@ -85,10 +85,14 @@ async function main(){
   let dailyGenerationRequests=0;
   let dailyDrafts=[],dailyEditorialWrites=0;
   let newsletterRevision=1,newsletterReads=0,newsletterWrites=0,newsletterConfirmed=1;
+  let newsletterEditorialFixture=false,newsletterPreviewCalls=0,newsletterPublishRequests=0;
+  let newsletterEdition={id:'fixture-newsletter',week_of:'2026-11-02',status:'draft',revision:2,subject:'Saved fixture subject',preheader:'Saved preview line',body_markdown:'Saved fixture text',reviewed_by:null,reviewed_at:null,updated_at:new Date().toISOString(),ai_model:null,generator_error:null};
+  const newsletterPreview={subject:'Preview fixture subject',preheader:'A source-backed fixture preview',body_markdown:'## Fixture lesson\n<img src=x onerror=window.__newsletterHtmlExecuted=true>\nHypothetical worksheet: 1% of $100 equals $1.'};
   let dashboardHold=false,dashboardHeldRequests=0;
   let courseDeskFixture=false,reviewDeskFixture=false,courseDeskWrites=0,reviewDeskWrites=0;
   let courseMutationFixture=false,reviewMutationFixture=false;
   let courseDeskRows=[],courseWriteLog=[],reviewWriteLog=[];
+  let courseListUnavailable=false,courseFailRefreshAfterSave=false;
   let reviewFixtureRow={id:'aaaa1111-2222-4333-8444-555555555555',name:'Fixture reviewer',
     content:'An isolated review used solely to test the owner UI.',rating:4,
     is_visible:true,is_featured:false,created_at:new Date().toISOString(),
@@ -115,16 +119,21 @@ async function main(){
         let content='';req.on('data',chunk=>{content+=chunk;});
         req.on('end',()=>{
           let body;try{body=JSON.parse(content);}catch{return json(400,{error:'fixture_invalid_json'});}
-          if(courseDeskFixture && body.action==='list')return json(200,{data:courseDeskRows});
+          if(courseDeskFixture && body.action==='list')return courseListUnavailable ? json(503,{error:'Fixture inbox outage'}) : json(200,{data:courseDeskRows});
           if(courseDeskFixture && body.action==='settings')return json(200,{data:{
             enabled:false,freeConfirmed:false,model:'gemini-3.5-flash-lite',hasApiKey:false,
             hasGscCredentials:false,gscProperty:'',topicRequests:[],lastStarted:null,
             lastFinished:null,runs:[]}});
           if(courseDeskFixture && !['list','settings'].includes(body.action)){
             courseDeskWrites++;courseWriteLog.push(body.action);
-            if(courseMutationFixture && body.action==='save' && body.id===null && body.revision===null && body.document){
-              const row={id:'fixture-course-private-draft',status:'draft',revision:1,published_revision:0,document:body.document};
-              courseDeskRows=[row];return json(200,{data:row});
+            if(courseMutationFixture && body.action==='publish'){
+              assert.equal(req.headers.authorization,'Bearer '+JWT,'Owner UI must attach its current session for publication');
+              return json(403,{error:'Fixture registered-owner denial'});
+            }
+            if(courseMutationFixture && body.action==='save' && body.document){
+              assert.ok(body.id===null || body.revision===courseDeskRows[0].revision,'Only exact revision can save');
+              const row={id:'fixture-course-private-draft',status:'draft',revision:body.id===null?1:body.revision+1,published_revision:0,document:body.document};
+              courseDeskRows=[row];if(courseFailRefreshAfterSave)courseListUnavailable=true;return json(200,{data:row});
             }
             return json(409,{error:'No other course mutation permitted in this fixture'});
           }
@@ -146,12 +155,36 @@ async function main(){
         if(req.headers['x-admin-key']!==ADMIN_FIXTURE_KEY)return json(401,{error:'fixture_admin_denied'});
         let content='';req.on('data',chunk=>{content+=chunk;});req.on('end',()=>{
           const body=JSON.parse(content);
-          if(route.endsWith('newsletter-dispatch') && body.action==='status')return json(200,{data:{counts:{confirmed:newsletterConfirmed,pending:0,unsubscribed:0,bounced:0},subscribers:[],recentDeliveries:[],webhookConfigured:true,limitInfo:'Isolated fixture only'}});
+          if(route.endsWith('newsletter-dispatch') && body.action==='status')return json(200,{data:{counts:{confirmed:newsletterConfirmed,pending:0,unsubscribed:0,bounced:0},subscribers:[],recentDeliveries:[{edition_id:'fixture-newsletter',status:'accepted',provider_id:'private-provider-id',created_at:new Date().toISOString()},{edition_id:'fixture-newsletter',status:'delivered',provider_id:'other-private-id',created_at:new Date().toISOString()},{edition_id:'fixture-newsletter',status:'unknown',provider_id:null,created_at:new Date().toISOString()}],webhookConfigured:true,limitInfo:'Isolated fixture only'}});
+          if(route.endsWith('newsletter-dispatch')){
+            if(body.action==='publish')newsletterPublishRequests++;
+            assert.equal(body.action,'publish-readiness','No subscriber send action permitted in fixture');
+            assert.equal(req.headers.authorization,'Bearer '+JWT,'Owner readiness must use current Auth token');
+            return json(403,{error:'Fixture registered-owner denial'});
+          }
           if(body.action==='topics')return json(200,{data:[{id:'fixture',title:'Fixture topic',sourceTitle:'Fixture source'}]});
           if(body.action==='list'){
             newsletterReads++;
             if(dashboardFixture && newsletterQueueUnavailable)return json(503,{error:'Fixture Newsletter inbox unavailable'});
+            if(newsletterEditorialFixture)return json(200,{data:[newsletterEdition]});
             return json(200,{data:[{id:'fixture-newsletter',week_of:'2026-11-02',status:'draft',revision:newsletterRevision,subject:'Server lesson title',preheader:'Fixture preview',body_markdown:'Fixture educational draft',reviewed_by:null,reviewed_at:null,updated_at:new Date().toISOString(),ai_model:null,generator_error:null}]});}
+          if(newsletterEditorialFixture && ['preview-upcoming','preview-rewrite'].includes(body.action)){
+            newsletterPreviewCalls++;
+            if(body.action==='preview-rewrite')assert.equal(body.revision,newsletterEdition.revision,'AI preview uses saved revision');
+            return json(200,{data:{...newsletterPreview,week_of:'2026-11-09',note:'Unsaved fixture only'}});
+          }
+          if(newsletterEditorialFixture && body.action==='save'){
+            newsletterWrites++;assert.equal(body.revision,newsletterEdition.revision);
+            assert.equal(newsletterEdition.status,'draft');
+            newsletterEdition={...newsletterEdition,subject:body.subject,preheader:body.preheader,body_markdown:body.body_markdown,revision:body.revision+1};
+            return json(200,{data:{id:newsletterEdition.id,revision:newsletterEdition.revision}});
+          }
+          if(newsletterEditorialFixture && body.action==='approve'){
+            newsletterWrites++;assert.equal(body.revision,newsletterEdition.revision);
+            assert.equal(body.reviewed,true);assert.equal(newsletterEdition.status,'draft');
+            newsletterEdition={...newsletterEdition,status:'approved',reviewed_by:body.reviewer};
+            return json(200,{data:{id:newsletterEdition.id,status:'approved'}});
+          }
           newsletterWrites++;return json(409,{error:'No generation, approval or email sending permitted in this fixture'});
         });return;
       }
@@ -211,9 +244,13 @@ async function main(){
           }
           if(typeof body?.message!=='string')return json(400,{error:'invalid chat body'});
           adminChatRequests++;
+          if(adminChatRequests===5)return json(429,{code:'DAILY_LIMIT',error:'Fixture exhausted'});
+          if(adminChatRequests===6)return json(403,{error:'Fixture denied'});
+          if(adminChatRequests===7)return json(401,{error:'Fixture key rejected'});
           if(adminChatRequests===1)return json(503,{code:'PILOT_PAUSED',error:'Fixture pilot paused'});
           const output={reply:'<img src=x onerror="window.__modelHtmlExecuted=true">',draftRequest:chatDraft,mode:'READ_ONLY_PILOT',claim:'UNVERIFIED_SUGGESTION',rootCauseVerified:false,historyAvailable:false,authorization:{codeWrites:false,modelTools:false,merge:false,productionRelease:false}};
           if(adminChatRequests===3)output.authorization.merge=true;
+          if(adminChatRequests===8)output.reply='';
           if(adminChatRequests===4){setTimeout(()=>json(200,output),500);return;}
           return json(200,output);
         });
@@ -657,6 +694,20 @@ async function main(){
     assert.equal(await devtools.evaluate("document.body.textContent.includes('Unverified suggestion')"),false,'Late reply cannot revive locked workspace');
     assert.equal(await devtools.evaluate("Object.values(localStorage).some(x=>x.includes("+JSON.stringify(ADMIN_FIXTURE_KEY)+"))"),false,'Admin key cannot be persisted');
     assert.equal(adminChatRequests,4);assert.equal(dataWrites,0);
+    await adminInput('input[aria-label="Admin master key"]',ADMIN_FIXTURE_KEY);await adminClick('Unlock AI workspace');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Assistant pilot')"),'chat error matrix unlock');
+    await openChat();await askChat();
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('daily AI-chat attempt has been used.')"),'Daily limit code read from HTTP error body');
+    assert.equal(await devtools.evaluate("[...document.querySelectorAll('button')].find(e=>e.textContent.trim()==='Ask assistant').disabled"),true,'Known consumed attempt cannot be submitted again');
+    await adminClick('Refresh configuration (no AI attempt)');await sleep(200);
+    assert.equal(adminChatRequests,5,'Configuration refresh must not retry AI');
+    await adminClick('Lock');await adminInput('input[aria-label="Admin master key"]',ADMIN_FIXTURE_KEY);await adminClick('Unlock AI workspace');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Assistant pilot')"),'chat permission matrix unlock');
+    await openChat();await askChat();await wait(()=>devtools.evaluate("document.body.textContent.includes('Permission denied.')"),'HTTP 403 permission denial');
+    await askChat();await wait(()=>devtools.evaluate("document.body.textContent.includes('Administrator access was not verified.')"),'HTTP 401 key denial');
+    await askChat();await wait(()=>devtools.evaluate("document.body.textContent.includes('assistant response could not be validated')"),'Empty model reply rejected');
+    assert.equal(adminChatRequests,8);await adminClick('Lock');
+    console.log('ISOLATED_ADMIN_CHAT_HTTP_ERRORS_PASS: actual HTTP JSON quota, permission/key denial, empty reply and config-only refresh; zero provider requests.');
     console.log('ISOLATED_ADMIN_CHAT_BROWSER_PASS: paused pilot, literal model text, owner-click draft transfer, forged authority denial and late-response lock isolation; fixture only; no real provider calls.');
     // Actual compiled announcements must recover from valid JSON of the wrong
     // shape, retain revision markers across reload and avoid replay on focus.
@@ -758,6 +809,22 @@ async function main(){
     }
     assert.equal(JSON.stringify(dailyDrafts),documentsBefore,'Review and filtering cannot edit draft documents');
     assert.equal(dailyEditorialWrites,0);assert.equal(dailyGenerationRequests,1,'Review must not request regeneration');
+    await devtools.evaluate("(()=>{const e=document.querySelector('aside select');e.value='published';e.dispatchEvent(new Event('change',{bubbles:true}));})()");
+    await wait(()=>devtools.evaluate("document.querySelector('aside button')?.textContent.includes('Approved')"),'approved fixture filter');
+    await devtools.evaluate("document.querySelector('aside button').click()");
+    await wait(()=>devtools.evaluate("!document.querySelector('footer input[type=checkbox]').disabled"),'saved bank review available');
+    await devtools.evaluate("document.querySelector('footer input[type=checkbox]').click()");
+    await adminInput('input[type=date]','2027-01-01');
+    assert.equal(await devtools.evaluate("document.querySelector('footer input[type=checkbox]').checked"),false,'Daily edit invalidates exact-bank review');
+    await adminInput('input[type=date]',fixtureBank.effectiveFrom);
+    dailyDrafts[1]={...dailyDrafts[1],revision:3};await refreshDaily();
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('This bank changed on the server')"),'Daily remote revision conflict');
+    assert.equal(await devtools.evaluate("[...document.querySelectorAll('button')].find(e=>e.textContent==='Reject private draft').disabled"),true,'Stale bank cannot be rejected');
+    assert.equal(await devtools.evaluate("document.querySelector('footer input[type=checkbox]').disabled"),true,'Stale bank cannot be reviewed');
+    await devtools.send('Emulation.setDeviceMetricsOverride',{width:320,height:900,deviceScaleFactor:1,mobile:true});
+    assert.equal(await devtools.evaluate("document.documentElement.scrollWidth <= innerWidth+1"),true,'Daily desk fits a 320px viewport');
+    await devtools.send('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false});
+    console.log('ISOLATED_DAILY_REVISION_RECOVERY_PASS: edits clear review; new remote revision blocks review/reject; 320px layout; no editorial writes.');
     console.log('ISOLATED_DAILY_EDITORIAL_REVIEW_PASS: 50-case/500-question overview, duplicate-case/question/explanation triage, correct preview/focus, three queue filters; zero editorial mutations or extra generation requests. Fixture only.');
     // The compiled dashboard consumes existing desks and bounded GitHub reads.
     // GitHub responses are intercepted in this fixture document; HTTPS remains blocked.
@@ -827,6 +894,46 @@ async function main(){
     await wait(()=>devtools.evaluate("[...document.querySelectorAll('p')].some(e=>e.textContent==='Confirmed' && e.parentElement.textContent.includes('7'))"),'Subscriber counts updated on reconnect');
     await wait(()=>devtools.evaluate("[...document.querySelectorAll('p')].some(e=>e.textContent==='Confirmed' && e.parentElement.textContent.includes('7'))"),'Subscriber counts updated on reconnect');
     assert.equal(newsletterWrites,0,'Polling must not generate, approve, publish or send');
+    for(const status of ['accepted','delivered','unknown'])assert.equal(await devtools.evaluate("document.querySelector('[aria-label=\"Newsletter delivery history\"]').textContent.includes("+JSON.stringify('Recorded status: '+status)+")"),true,'Newsletter renders recorded '+status);
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('private-provider-id')"),false,'Provider IDs stay out of rendered receipts');
+    assert.equal(await devtools.evaluate("[...document.querySelectorAll('button')].find(e=>e.textContent==='Save edits').disabled"),true,'Conflicting newsletter revision cannot save');
+    await devtools.send('Emulation.setDeviceMetricsOverride',{width:320,height:900,deviceScaleFactor:1,mobile:true});
+    assert.equal(await devtools.evaluate("document.documentElement.scrollWidth <= innerWidth+1"),true,'Newsletter desk fits a 320px viewport');
+    await devtools.send('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false});
+    newsletterEditorialFixture=true;
+    await devtools.evaluate("window.confirm=()=>true");await adminClick('Refresh');
+    await wait(()=>devtools.evaluate("document.querySelector('#newsletter-subject').value==='Saved fixture subject'"),'Newsletter saved revision reopened');
+    await adminClick("Preview next week's AI issue");
+    await wait(()=>newsletterPreviewCalls===1,'One unsaved upcoming preview requested');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Week of 2026-11-09 · unsaved')"),'Upcoming preview marked unsaved');
+    assert.equal(newsletterWrites,0,'Upcoming preview cannot store or approve an edition');
+    assert.equal(await devtools.evaluate("document.querySelector('#newsletter-subject').value"),'Saved fixture subject','Upcoming sample cannot overwrite current editor');
+    await adminInput('#newsletter-subject','Unsaved draft that must survive a canceled preview');
+    await devtools.evaluate("window.confirm=()=>false");await adminClick('Draft a deeper lesson (preview only)');
+    await wait(()=>devtools.evaluate("[...document.querySelectorAll('button')].some(e=>e.textContent.trim()==='Draft a deeper lesson (preview only)'&&!e.disabled)"),'Canceled preview returns control');
+    assert.equal(newsletterPreviewCalls,1,'Declining discard must prevent the provider request');
+    assert.equal(await devtools.evaluate("document.querySelector('#newsletter-subject').value"),'Unsaved draft that must survive a canceled preview');
+    await devtools.evaluate("window.confirm=()=>true");await adminClick('Draft a deeper lesson (preview only)');
+    await wait(()=>devtools.evaluate("document.querySelector('#newsletter-subject').value==='Preview fixture subject'"),'AI rewrite reaches temporary editor');
+    assert.equal(newsletterPreviewCalls,2);assert.equal(newsletterWrites,0,'Rewrite preview remains unsaved');
+    assert.equal(await devtools.evaluate("window.__newsletterHtmlExecuted===true || document.querySelectorAll('img[src=x]').length>0"),false,'Preview HTML remains inert textarea text');
+    assert.equal(await devtools.evaluate("[...document.querySelectorAll('button')].find(e=>e.textContent==='Approve draft (no email sent)').disabled"),true,'Unsaved preview cannot be approved');
+    await adminClick('Save edits');
+    await wait(()=>newsletterEdition.revision===3,'Private preview saved as one new revision');
+    await wait(()=>devtools.evaluate("!document.body.textContent.includes('Unsaved AI preview.')"),'Saved preview label cleared');
+    assert.equal(newsletterEdition.status,'draft','Save cannot approve');
+    assert.equal(await devtools.evaluate("document.querySelector('input[type=checkbox]').checked"),false,'Saved revision requires fresh owner review');
+    await adminInput('#newsletter-reviewer','Fixture editorial reviewer');
+    await devtools.evaluate("document.querySelector('input[type=checkbox]').click()");
+    await adminClick('Approve draft (no email sent)');
+    await wait(()=>newsletterEdition.status==='approved','Explicit editorial approval stored');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Approved by Fixture editorial reviewer')"),'Approved reviewer shown accurately');
+    await adminClick('Verify owner access (no email)');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes("+JSON.stringify("Newsletter sending requires the registered owner's current TradeHQ login")+")"),'Owner send authorization denial visible');
+    assert.equal(newsletterWrites,2,'Exactly one private save and one approval; no automatic writes');
+    assert.equal(newsletterPublishRequests,0,'No email dispatch request during preview/save/approval/readiness');
+    newsletterEditorialFixture=false;
+    console.log('ISOLATED_NEWSLETTER_EDITORIAL_PREVIEW_PASS: upcoming sample and rewrite remain unsaved; canceled discard prevents model request; inert HTML; exact revision save then separate approval; owner-readiness denial; zero email dispatch requests. Loopback only.');
     console.log('ISOLATED_ADMIN_REFRESH_PASS: late dashboard refresh cannot reopen lock; newsletter reconnect refresh preserves unsaved writing and reports remote revision; no editorial or email mutations.');
     // Browser-only admin acceptance: exercise the actual Course desk with a
     // strictly read-only loopback backend. These interactions must never send
@@ -876,6 +983,40 @@ async function main(){
     await wait(()=>devtools.evaluate("!!document.querySelector('main form input[type=password]')"),'Saved draft desk locked');
     courseMutationFixture=false;courseDeskFixture=false;
     console.log('ISOLATED_ADMIN_COURSE_SAVE_BROWSER_PASS: owner-click private draft saved exactly once, reflected in inbox, no generation or publish. No production writes.');
+
+    courseMutationFixture=true;courseDeskFixture=true;
+    const reviewedCourse=JSON.parse(readFileSync('scripts/fixtures/published-course-editorial.json','utf8'))[0].document;
+    reviewedCourse.lessons.forEach((lesson, index)=>{lesson.body[1]+=' Hypothetical worksheet '+(index+1)+': calculate a 1% change on $100; the amount equals $1 before fees.';});
+    courseDeskRows=[{id:'fixture-course-private-draft',status:'draft',revision:1,published_revision:0,document:reviewedCourse}];
+    await loadDocument(origin+'/admin/courses');
+    await wait(()=>devtools.evaluate("!!document.querySelector('main form input[type=password]')"),'Course revision fixture unlock');
+    await adminInput('main form input[type=password]',ADMIN_FIXTURE_KEY);await adminClick('Open course desk');
+    await wait(()=>devtools.evaluate("document.querySelectorAll('aside button').length===2"),'Course revision fixture inbox');
+    await devtools.evaluate("document.querySelectorAll('aside button')[1].click()");
+    await wait(()=>devtools.evaluate("!!document.querySelector('input[type=checkbox]')"),'Course exact-revision review');
+    await devtools.evaluate("document.querySelector('input[type=checkbox]').click()");
+    await adminClick('Approve and publish');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('No publication was authorized.')"),'Registered-owner denial displayed from HTTP 403');
+    assert.equal(courseDeskRows[0].status,'draft','Unauthorized fixture publication must stay private');
+    await adminInput('section fieldset input',reviewedCourse.title+' edited');
+    assert.equal(await devtools.evaluate("document.querySelector('input[type=checkbox]').checked"),false,'Course edit clears prior exact-revision approval');
+    courseFailRefreshAfterSave=true;
+    await adminClick('Save draft');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('action was confirmed, but the inbox could not refresh')"),'Confirmed save followed by refresh failure is recoverable');
+    assert.equal(courseDeskRows[0].revision,2,'Private draft saved once despite refresh outage');
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('Saved · Revision 2')"),true,'Confirmed revision retained in editor');
+    assert.equal(await devtools.evaluate("[...document.querySelectorAll('button')].find(e=>e.textContent.trim()==='Save draft').disabled"),true,'No duplicate save while inbox is unconfirmed');
+    courseListUnavailable=false;courseFailRefreshAfterSave=false;await adminClick('Refresh');
+    await wait(()=>devtools.evaluate("!document.body.textContent.includes('action was confirmed, but the inbox could not refresh')"),'Course inbox recovers');
+    await devtools.evaluate("document.querySelector('input[type=checkbox]').click()");
+    courseDeskRows[0]={...courseDeskRows[0],revision:3};await adminClick('Refresh');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('This draft changed on the server')"),'Remote course revision displayed');
+    assert.equal(await devtools.evaluate("[...document.querySelectorAll('button')].find(e=>e.textContent.trim()==='Approve and publish').disabled"),true,'Stale saved course cannot publish');
+    await devtools.send('Emulation.setDeviceMetricsOverride',{width:320,height:900,deviceScaleFactor:1,mobile:true});
+    assert.equal(await devtools.evaluate("document.documentElement.scrollWidth <= innerWidth+1"),true,'Course desk fits a 320px viewport');
+    await devtools.send('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false});
+    await adminClick('Lock');courseMutationFixture=false;courseDeskFixture=false;
+    console.log('ISOLATED_ADMIN_COURSE_REVISION_RECOVERY_PASS: owner-denied publish with JWT; edit clears approval; confirmed private save survives inbox outage; stale revision blocks publication; 320px layout. Fixture only.');
 
 
     // The Reviews desk is also exercised with a real rendered review, an
