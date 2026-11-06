@@ -22,6 +22,29 @@ assert.deepEqual(await refreshHeldQuotes([{assetId:"btc",type:"crypto"},{assetId
  {requested:2,updated:1,unavailable:1}, "Ancient provider time must not be rescued by a fresh fetch");
 assert.deepEqual(stored, ["eth"], "Reject stale BTC cache writes while keeping fresh ETH");
 stored.length=0;
+// A cache failure for one held asset must neither suppress independent fresh
+// holdings nor inflate unavailable counts after earlier writes succeeded.
+for (const failedAsset of ["btc", "eth"]) {
+  stored.length = 0;
+  const partial = await refreshHeldQuotes([
+    { assetId: "btc", type: "crypto" }, { assetId: "eth", type: "crypto" },
+  ], { ...deps, store: async (asset: string) => {
+    if (asset === failedAsset) throw new Error("synthetic cache write failure");
+    stored.push(asset); return true;
+  } });
+  assert.deepEqual(partial, { requested: 2, updated: 1, unavailable: 1 },
+    "A single failed cache write must count one unavailable asset");
+  assert.deepEqual(stored, [failedAsset === "btc" ? "eth" : "btc"],
+    "Other holdings must still receive their independently fresh provider quote");
+}
+stored.length = 0;
+const invalidBatch = await refreshHeldQuotes([
+  { assetId: "btc", type: "crypto" }, { assetId: "eth", type: "crypto" },
+], { ...deps, fetch: (async () => new Response(JSON.stringify(["malformed", "batch"]))) as typeof fetch });
+assert.deepEqual(invalidBatch, { requested: 2, updated: 0, unavailable: 2 },
+  "Unexpected batch envelopes may not be treated as a fresh quote");
+assert.equal(stored.length, 0);
+stored.length=0;
 const unknownTimestamp={...deps,fetch:(async()=>new Response(JSON.stringify({bitcoin:{usd:50000}}))) as typeof fetch};
 assert.deepEqual(await refreshHeldQuotes([{assetId:"btc",type:"crypto"}],unknownTimestamp),
  {requested:1,updated:0,unavailable:1}, "Undated quotes cannot be treated as current");
