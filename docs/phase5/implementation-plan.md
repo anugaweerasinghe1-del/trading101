@@ -185,3 +185,82 @@ Issues remain open until their real acceptance gaps are resolved.
   all new history/link/keyboard cases and every existing auth/guest/admin journey.
   The first header-only implementation was replaced before PR submission by the
   supported router blocker so browser history is covered by the reviewed change.
+
+
+### 6 Nov — navigation shipped; privacy regression alignment
+
+- [#369](https://github.com/anugaweerasinghe1-del/trading101/pull/369) merged as
+  `47dcf541cc8572c1a33f01509b41d7a27d06e4fb` after all exact-head required checks,
+  including 10m42s browser/SEO, application, database and hosting previews passed.
+  Main validation [42226392903](https://github.com/anugaweerasinghe1-del/trading101/actions/runs/42226392903)
+  is running; do not infer final native production proof until its release job passes.
+- Public production mobile browser checks after the merge passed all six locked
+  admin routes and Daily again. The loaded first-party Daily admin module contains
+  the new draft-guard text. Actual fresh guest buy/sell, fee/cash reconciliation,
+  portfolio reload and 390px width passed again; zero browser server-write requests.
+  Evidence appended to the existing credential-free JSON artifact. This supports
+  deployed public code; genuine owner-authenticated draft acceptance stays open.
+- Core database comparison checked 38 functions against the disposable fixture:
+  every one exists in production; 36 definitions match exactly. `hit_rate_limit`
+  differs only in whitespace. Production `handle_new_user` correctly forces private
+  signup; the old test fixture used the earlier public-by-default trigger. This is
+  not a confirmed production privacy failure and does not justify replaying migrations.
+- Found and repaired a real release-assurance defect: `verify-backend.mjs` omitted
+  the existing private-profile/review-default migration, and its portfolio fixture
+  explicitly demanded public signup. Adding the live migration alone reproduced
+  `Valid server ledger not ranked`, exposing implicit-public test assumptions.
+- The local runner now applies the existing reviews foundation and privacy migration.
+  New rolled-back SQL exercises absent/true/false/malformed signup visibility
+  metadata, private anonymous/directory reads, authenticated own opt-in, denied
+  cross-account update, zero-trade unranked membership, revocation and moderation
+  defaults. Earlier public/private profile choices remain unchanged. Existing public
+  ranking/duel scenarios now opt their synthetic members in explicitly.
+- All local backend suites PASS, including private signup, trades, duels, automatic
+  valuation, security grants, Phase 4A and public trade consent; TypeScript and
+  privacy-default guards pass. No app, production schema, subscriber, user visibility
+  or review state was changed. Rollback is a PR revert; no database rollback needed.
+- Next: PR/required exact-head checks for the privacy-fixture repair, verify #369
+  native rollout, merge the assurance repair only when permitted, then record final
+  main SHA/production proof in #332. Outstanding genuine owner/provider gates remain
+  as recorded above; trophies explicitly deferred, no quota resets or paid upgrades.
+
+
+### 6 Nov — postmerge browser failure diagnosed; assurance PR extended
+
+- #369 main run 42226392903 failed in the isolated browser step; its release jobs
+  were skipped. Do not claim that run passed or that it supplied native production
+  proof. Broad editorial route matrix and application checks passed; public code
+  and guest checks above remain observations of their stated scope.
+- Retrieved the complete run archive after the individual reusable-job log request
+  returned HTTP403. The failure was a null link click immediately after seeding
+  Course/Daily history. The fixture accepted a changed URL plus a generic password
+  form still belonging to the preceding desk, then clicked a Course-only link.
+- Assurance PR #371 now waits for the real Course unlock control and Daily-specific
+  header before acting after transitions. No sleep-based route workaround or test
+  assertion removal; all Back/Forward/draft-retention assertions remain. The fix
+  is test setup only; the supported application blocker is unchanged.
+- Rechecked runtime setup: enforced unrestricted policy and ready credential
+  bindings on the same configuration revision. Readiness is not successful API
+  authorization; earlier runtime admin HTTP401 remains an actual access blocker.
+- Concurrent #370 changes trophy catalog validation in disjoint files. Recorded
+  owner trophy deferral in #332 and have neither edited nor merged that PR.
+
+### 6 Nov — control-readiness waits and faster unchanged CI gates
+
+- Exact-head #371 run 42228424570 exposed a second immediate `Admin button missing`
+  in the newsletter fixture sequence; application/database/hosting previews passed,
+  and the PR remained unmerged. The browser helper had attempted actions before
+  busy controls became usable, despite a preceding receipt/message being visible.
+- `adminClick` now waits for the named button to be enabled (including disabled
+  parent fieldsets), reports any wait and names the control on bounded timeout,
+  then clicks exactly once. All mutation-count and disabled-state assertions remain.
+  The complete local compiled browser suite passes with this helper.
+- Moved that targeted browser check immediately after the Cloudflare build and
+  before the broad seven-phase editorial route matrix. All checks, identities,
+  permissions and trusted production gates remain mandatory. CI contract and
+  release/recovery offline regressions pass; this changes order, not requirements.
+- The full historical worker archive was recovered via the normal run-archive API:
+  only `Owner proposal review: idle` then generic safe stop is recorded. There is no
+  worker or request row for that run. Original cause remains unproven; no replay.
+- Next: required CI on the new head, merge only after success, then final current-main
+  validation/native production evidence. Earlier failed heads are not passing evidence.

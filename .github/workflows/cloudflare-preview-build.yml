@@ -39,13 +39,13 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build:cloudflare
+      - name: Verify isolated authenticated browser flow (no production accounts)
+        run: node scripts/verify-isolated-auth-browser.mjs
       - name: Verify all editorial routes on desktop and mobile with and without JavaScript
         run: |
           for phase in 0 1 2 3 4 5 6; do
             TRADEHQ_BROWSER_PHASE="$phase" node --import tsx scripts/verify-publisher-browser.mjs
           done
-      - name: Verify isolated authenticated browser flow (no production accounts)
-        run: node scripts/verify-isolated-auth-browser.mjs
       - name: Verify read-only incident follow-up against isolated pages
         run: node scripts/verify-browser-investigation.mjs
       - run: node --import tsx scripts/verify-cloudflare-courses-root.ts

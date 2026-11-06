@@ -3,6 +3,8 @@ BEGIN;
 INSERT INTO auth.users(id,email,raw_user_meta_data) VALUES
  ('00000000-0000-4000-8000-000000000171','audit-c17-a@example.invalid','{"username":"audit_c17_a"}'),
  ('00000000-0000-4000-8000-000000000172','audit-c17-b@example.invalid','{"username":"audit_c17_b"}');
+-- These scenarios test public rankings/duels after explicit fixture opt-in.
+UPDATE public.profiles SET is_public=true WHERE id IN ('00000000-0000-4000-8000-000000000171','00000000-0000-4000-8000-000000000172');
 SELECT set_config('request.jwt.claim.sub','00000000-0000-4000-8000-000000000171',true);
 SET LOCAL ROLE authenticated;
 SELECT public.initialize_practice_portfolio();
