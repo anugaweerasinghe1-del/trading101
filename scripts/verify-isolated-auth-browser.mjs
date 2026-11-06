@@ -834,6 +834,15 @@ async function main(){
       window.fetch=async(input,init)=>{
         const url=String(input);if(!url.startsWith('https://api.github.com/repos/anugaweerasinghe1-del/trading101/'))return original(input,init);
         if(window.__fixtureGitHubUnavailable)return new Response('{}',{status:503,headers:{'Content-Type':'application/json'}});
+        if(window.__fixtureGithubHistory && url.includes('/issues?')){
+          const page=Number(new URL(url).searchParams.get('page')||1);
+          const data=window.__fixtureGithubCap||page===1?Array.from({length:100},(_,i)=>({id:2000+i,number:2000+i,title:'Newer PR',pull_request:{}})):[
+            {number:94,title:'[TradeHQ Code Request]',state:'open',user:{login:'anugaweerasinghe1-del'},html_url:'https://github.com/anugaweerasinghe1-del/trading101/issues/94'},
+            {id:69,number:69,title:'[TradeHQ Ideas] Fixture older ideas',state:'open',user:{login:'github-actions[bot]'},html_url:'https://github.com/anugaweerasinghe1-del/trading101/issues/69'},
+            {id:70,number:70,title:'[TradeHQ Agent] Older fixture failures',state:'open',created_at:new Date().toISOString(),html_url:'https://github.com/anugaweerasinghe1-del/trading101/issues/70'}];
+          return new Response(JSON.stringify(data),{status:200,headers:{'Content-Type':'application/json'}});
+        }
+        if(window.__fixtureGithubHistory && url.includes('/pulls?'))return new Response('[]',{status:200,headers:{'Content-Type':'application/json'}});
         const run={id:700,status:'completed',conclusion:'success',html_url:'https://github.com/anugaweerasinghe1-del/trading101/actions/runs/700',created_at:new Date().toISOString(),head_sha:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'};
         const data=url.includes('/issues?')?[{id:900,title:'[TradeHQ Agent] Fixture browser failures',state:'open',created_at:new Date().toISOString(),html_url:'https://github.com/anugaweerasinghe1-del/trading101/issues/900'}]
           :url.includes('/pulls?')?[{number:901,title:'AI proposal: isolated fixture',draft:false,created_at:new Date().toISOString(),html_url:'https://github.com/anugaweerasinghe1-del/trading101/pull/901'}]
@@ -1060,6 +1069,35 @@ async function main(){
     reviewMutationFixture=false;reviewDeskFixture=false;
     console.log('ISOLATED_ADMIN_REVIEW_SAVE_BROWSER_PASS: intentional edit and owner reply persist in UI, no delete/restore or production writes.');
 
+
+    // The actual AI desk must find requests older than a page of newer PRs.
+    await devtools.send('Page.addScriptToEvaluateOnNewDocument',{source:'window.__fixtureGithubHistory=true'});
+    await loadDocument(origin+'/admin/ai');
+    await wait(()=>devtools.evaluate("!!document.querySelector('input[aria-label=\"Admin master key\"]')"),'AI history desk unlock');
+    await adminInput('input[aria-label="Admin master key"]',ADMIN_FIXTURE_KEY);await adminClick('Unlock AI workspace');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Request #94')"),'Older owner request visible beyond first page');
+    await adminClick('Monthly ideas');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('[TradeHQ Ideas] Fixture older ideas')"),'Older monthly report visible');
+    await adminClick('AI code requests');
+    await devtools.evaluate('window.__fixtureGithubCap=true');await adminClick('Refresh activity');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Issue history is partial')"),'Capped history disclosed');
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('No code requests submitted yet') || document.body.textContent.includes('No code requests returned.')"),false,'Partial empty history is never a verified empty request list');
+    await devtools.evaluate('window.__fixtureGitHubUnavailable=true');await adminClick('Refresh activity');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Previous GitHub proposal and validation snapshots were cleared')"),'GitHub page error clears earlier history');
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('Request #94')"),false,'Failed refresh cannot retain stale request evidence');
+    await adminClick('Monthly ideas');
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('Idea history cannot be verified')"),true,'Unknown idea history is not a claim that no report was ever generated');
+    dashboardFixture=true;dashboardHold=false;
+    await loadDocument(origin+'/admin');
+    await wait(()=>devtools.evaluate("!!document.querySelector('main form input[type=password]')"),'Paginated dashboard unlock');
+    await adminInput('main form input[type=password]',ADMIN_FIXTURE_KEY);await adminClick('Open dashboard');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('[TradeHQ Agent] Older fixture failures')"),'Dashboard includes older open findings beyond first page');
+    await devtools.evaluate('window.__fixtureGithubCap=true');await refreshInbox();
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('issue reports partial (read limit reached)')"),'Dashboard read cap is disclosed');
+    assert.equal(await devtools.evaluate(inbox+".textContent.includes('Agent findings and code queue unavailable')"),true,'Partial issue history cannot become an authoritative zero queue count');
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('No open findings reported.')"),false,'Partial history cannot claim no findings');
+    await adminClick('Lock');dashboardFixture=false;
+    console.log('ISOLATED_ADMIN_GITHUB_HISTORY_PASS: actual AI desk paginates older requests/ideas, discloses bounded incomplete history and clears failed snapshots; public loopback fixtures only.');
 
     // Development-only utility routes still mount and communicate their
     // deliberately limited scope without automatically contacting a provider.
