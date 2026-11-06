@@ -24,9 +24,10 @@ export function createFxReferenceHandler(options: { fetchImpl?: typeof fetch; no
       let response: Response, failure = 'request-failed';
       try {
         // Fixed server-side request; no visitor IP, cookies, auth, or arbitrary URL forwarding.
+        // Workers does not implement RequestInit.credentials; explicit headers contain no credentials.
         const quotes = 'EUR,GBP,JPY,CHF,AUD,CAD,NZD,HKD,SGD,MXN,ZAR,TRY';
         const upstream = await (options.fetchImpl ?? fetch)('https://api.frankfurter.dev/v2/rates?date=' + date + '&base=USD&quotes=' + quotes, {
-          method: 'GET', headers: { Accept: 'application/json' }, redirect: 'error', credentials: 'omit', signal: AbortSignal.timeout(8000),
+          method: 'GET', headers: { Accept: 'application/json' }, redirect: 'error', signal: AbortSignal.timeout(8000),
         });
         if (!upstream.ok) { failure = 'upstream-http-' + upstream.status; throw Error('unavailable'); }
         if (!upstream.headers.get('content-type')?.includes('application/json') || !upstream.body) { failure = 'upstream-format'; throw Error('unavailable'); }

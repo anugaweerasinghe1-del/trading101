@@ -37,7 +37,7 @@ assert.equal(future.rates.eurusd,null);assert.ok(future.rates.usdjpy);
 let calls=0;
 const fetcher: typeof fetch=async(input,init)=>{
   calls++;assert.equal(String(input),'https://api.frankfurter.dev/v2/rates?date=2026-11-05&base=USD&quotes=EUR,GBP,JPY,CHF,AUD,CAD,NZD,HKD,SGD,MXN,ZAR,TRY');
-  assert.equal(init?.method,'GET');assert.equal(init?.redirect,'error');assert.equal(init?.credentials,'omit');
+  assert.equal(init?.method,'GET');assert.equal(init?.redirect,'error');assert.equal(init?.credentials,undefined,'Cloudflare Workers does not implement RequestInit.credentials');
   assert.deepEqual(init?.headers,{Accept:'application/json'});
   return new Response(JSON.stringify(rows),{headers:{'Content-Type':'application/json'}});
 };
