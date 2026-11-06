@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { adminFailureDetails, courseAdminError } from '../src/lib/adminFunctionError';
 
 const source = (path: string) => readFileSync(path, 'utf8');
 const newsletter = source('src/pages/AdminNewsletter.tsx');
@@ -26,7 +27,7 @@ assert.doesNotMatch(newsletter, /disabled=\{busy\}\s+disabled=\{busy\}/,
   'a button must not silently declare disabled twice');
 
 // Rejecting a course revision must never disregard unsaved editor changes.
-assert.match(courses, /disabled=\{busy \|\| dirty\} onClick=\{\(\) => \{/);
+assert.match(courses, /disabled=\{busy \|\| dirty \|\| stale\} onClick=\{\(\) => \{/);
 assert.match(courses, /if \(dirty \|\| !confirm\("Reject this saved revision/);
 assert.doesNotMatch(courses, /<fieldset disabled=\{busy\}><fieldset disabled=\{busy\}>/);
 assert.doesNotMatch(courses, /disabled=\{busy\}\s+disabled=\{busy\}/);
@@ -91,3 +92,16 @@ assert.match(dashboard, /setDeploymentChecks\(null\); setLastGitHubChecked\(null
 assert.match(dashboard, /Previous snapshots were cleared/);
 assert.doesNotMatch(dashboard, />Weekly Newsletter</);
 console.log('ADMIN_EDITORIAL_SAFETY_PASS: unsaved editorial review, saved-only generation, owner sign-out late-response fencing and independent newsletter totals');
+
+// Real FunctionsHttpError response bodies: codes are available on context, not data.
+const failed = (status: number, body: unknown) => ({ context: new Response(JSON.stringify(body), { status }) });
+assert.equal((await adminFailureDetails(failed(429, { code: 'DAILY_LIMIT' }), null)).code, 'DAILY_LIMIT');
+assert.match(await courseAdminError(failed(403, { error: 'private provider payload' })), /registered owner/);
+assert.match(await courseAdminError(failed(409, { error: 'Independent course review failed' })), /Publication is blocked/);
+assert.match(await courseAdminError(failed(409, { error: 'Course changed since review' })), /saved revision changed/);
+assert.match(await courseAdminError(failed(429, {})), /rate-limited/);
+assert.match(await courseAdminError(new Error('network failed')), /could not confirm/);
+for (const status of [400, 401, 403, 409, 422, 429, 503])
+  assert.doesNotMatch(await courseAdminError(failed(status, { error: 'PRIVATE_TOKEN_MUST_NOT_RENDER' })), /PRIVATE_TOKEN/);
+assert.equal((await adminFailureDetails({ context: new Response('not JSON', { status: 503 }) })).code, '');
+console.log('ADMIN_FUNCTION_ERRORS_PASS: HTTP response-body codes, owner/quota/revision/review denials, malformed/transport failures, no raw provider payload exposure.');
