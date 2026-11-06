@@ -26,13 +26,36 @@ export async function refreshHeldQuotes(assets: HeldAsset[], deps: Dependencies)
   const mapped = crypto.filter(a => CRYPTO_ID_MAP[a.assetId]);
   unavailable += crypto.length - mapped.length;
   if (mapped.length) {
+    // Separate the upstream batch failure from per-asset decoding and cache
+    // writes. A single bad response entry or failed store must not prevent
+    // independent fresh quotes from reaching other accounts' portfolios.
+    let body: Record<string, unknown> | null = null;
     try {
       const ids = mapped.map(a => CRYPTO_ID_MAP[a.assetId]).join(",");
       const response = await deps.fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd&include_last_updated_at=true&include_24hr_change=true&include_24hr_vol=true&include_market_cap=true`,
         { headers: { Accept: "application/json" }, signal: AbortSignal.timeout(12000) });
-      const body = response.ok ? await response.json() : {};
-      for (const asset of mapped) await save(asset.assetId, body[CRYPTO_ID_MAP[asset.assetId]] ? coinQuote(body[CRYPTO_ID_MAP[asset.assetId]]) : null);
-    } catch { unavailable += mapped.length; }
+      if (response.ok) {
+        const decoded: unknown = await response.json();
+        if (decoded && typeof decoded === "object" && !Array.isArray(decoded))
+          body = decoded as Record<string, unknown>;
+      } else {
+        void response.body?.cancel().catch(() => {});
+      }
+    } catch {
+      // No trusted quotes arrived; do not substitute simulated prices.
+    }
+    if (!body) unavailable += mapped.length;
+    else for (const asset of mapped) {
+      try {
+        const raw = body[CRYPTO_ID_MAP[asset.assetId]];
+        const quote = raw && typeof raw === "object" && !Array.isArray(raw)
+          ? coinQuote(raw as Record<string, unknown>) : null;
+        await save(asset.assetId, quote);
+      } catch {
+        // Preserve the already-saved quotes and continue with the next asset.
+        unavailable++;
+      }
+    }
   }
   for (const asset of unique.filter(a => a.type !== "crypto").slice(0, 2)) {
     try {
