@@ -264,3 +264,38 @@ Issues remain open until their real acceptance gaps are resolved.
   worker or request row for that run. Original cause remains unproven; no replay.
 - Next: required CI on the new head, merge only after success, then final current-main
   validation/native production evidence. Earlier failed heads are not passing evidence.
+
+### 6 Nov — assurance repair merged; private quote-provider diagnostics
+
+- #371 merged as `2eb6067567ad51d5992a76f44d884577cdcc593b` after every required
+  exact-head check passed: focused authenticated browser, broad route/SEO matrix
+  (9m18s), application, PostgreSQL and provider previews. Main run
+  [42231764485](https://github.com/anugaweerasinghe1-del/trading101/actions/runs/42231764485)
+  is in progress; its final native production proof remains separate.
+- Read-only production catalog confirms `profiles.is_public` and `reviews.is_visible`
+  defaults are false. 38 checked core functions all exist; the two earlier
+  differences were formatting and the stronger live private-signup trigger. No
+  production migration replay or schema/visibility mutation was needed.
+- Owner is arranging a secure admin-key binding refresh; do not infer success from
+  that intention. Genuine endpoint authentication must pass before live acceptance.
+  Registered owner JWT is still a separate requirement for protected actions.
+- Next selected C work: refresh results cannot distinguish missing provider config
+  from upstream entitlement/availability. Add only private `providerConfiguration`
+  flags after scheduler token/lease admission, preserving all quote counts. Missing
+  keys/Alpha Vantage demo are false; unreadable environment metadata is null and
+  cannot invalidate successful quote writes. No secret values, extra provider
+  requests, cadence changes, paid fallbacks, user positions or fabricated prices.
+- Public `live-market-data` v18 ACTIVE was fetched independently: all eight returned
+  source files match current reviewed main. Keep the new diagnostics helper in a
+  separate module so this unrelated live bundle needs no replacement.
+- Provider parsing/refresh regressions and actual transpiled scheduler handler
+  fixtures PASS: unauthenticated/denied/error claims cannot read configuration;
+  admitted results retain counts and persist boolean flags; unknown metadata does
+  not fail updates; finish failure is generic; extra fetch/secret disclosure fail
+  the test. TypeScript passes. Source review preserves existing admission and RPCs.
+- Done requires PR/required exact-head checks, merged main and native deployment
+  proof; deploy only reviewed refresh-worker files, re-fetch to compare source,
+  then read the next ordinary scheduled result. Do not manually invoke refresh or
+  infer provider key validity/free-tier entitlement from a true presence flag.
+- Rollback: restore the preceding verified refresh-worker bundle; no schema/data
+  rollback. Next safe action: submit this PR and finish #371 postmerge proof.

@@ -1,3 +1,4 @@
+import { priceProviderConfiguration } from "../_shared/priceProviderConfiguration.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.75.1";
 import { refreshHeldQuotes, type HeldAsset } from "../_shared/refreshPrices.ts";
 import { fetchStockData, fetchForexData } from "../_shared/marketProviders.ts";
@@ -13,10 +14,12 @@ Deno.serve(async req => {
   if (error) return json({ error: "Refresh service unavailable" }, 503);
   if (!claim) return json({ error: "Unauthorized or refresh already running" }, 401);
   try {
-    const result = await refreshHeldQuotes(claim.assets as HeldAsset[], {
+    const quotes = await refreshHeldQuotes(claim.assets as HeldAsset[], {
       fetch, stock: fetchStockData, forex: fetchForexData,
       store: (asset, q) => cachePrice(asset, q.price, q.provenance.provider, q.provenance.observedAt ?? null, q.provenance.status, q),
     });
+    // Scheduler-only result; no extra provider request, secret value or user position.
+    const result = { ...quotes, providerConfiguration: priceProviderConfiguration(name => Deno.env.get(name)) };
     const { error: finishError } = await admin.rpc("finish_portfolio_price_refresh", { p_lease: claim.lease, p_result: result });
     if (finishError) return json({ error: "Refresh status could not be saved" }, 503);
     console.log("Portfolio quote refresh", result);
