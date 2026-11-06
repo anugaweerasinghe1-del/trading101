@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { readAdminGithubList } from "@/lib/adminGithubList";
 import { summarizeReleaseEvidence, type ReleaseCheck, type ReleaseRun } from "@/lib/aiReleaseEvidence";
 import { supabase } from "@/integrations/supabase/client";
 import AdminChatPilot from "@/components/AdminChatPilot";
@@ -50,17 +51,15 @@ export default function AdminAIAssistant() {
     const guard = scope.capture(key, 'github');
     const root = "https://api.github.com/repos/" + repo;
     try {
-      const [issueResponse, prResponse] = await Promise.all([
-        fetch(root + "/issues?state=all&per_page=100"),
-        fetch(root + "/pulls?state=open&per_page=50"),
-      ]);
-      if (!issueResponse.ok || !prResponse.ok) throw new Error("GitHub reporting unavailable (issues HTTP " + issueResponse.status + ", PRs HTTP " + prResponse.status + ").");
-      const [allIssues, allPrs] = await Promise.all([
-        issueResponse.json() as Promise<GithubIssue[]>,
-        prResponse.json() as Promise<GithubPr[]>,
+      const [issueList, prList] = await Promise.all([
+        readAdminGithubList<GithubIssue>('issues', guard.assert),
+        readAdminGithubList<GithubPr>('pulls', guard.assert),
       ]);
       guard.assert();
-      if (!Array.isArray(allIssues) || !Array.isArray(allPrs)) throw new Error("GitHub returned invalid operational records.");
+      const allIssues = issueList.items, allPrs = prList.items;
+      const warnings: string[] = [];
+      if (!issueList.complete) warnings.push("Issue history is partial; older requests and ideas may be missing. View the full history on GitHub.");
+      if (!prList.complete) warnings.push("The proposal list is partial; view all open pull requests on GitHub.");
       setIssues(allIssues.filter(x => !x.pull_request &&
         ((x.title === ISSUE_TITLE && [owner, legacyOwner].includes(x.user?.login || "")) ||
          (x.title.startsWith("[TradeHQ Ideas]") && x.user?.login === "github-actions[bot]"))));
@@ -92,7 +91,8 @@ export default function AdminAIAssistant() {
         else next[proposals[index].number] = { summary: "Validation unavailable; do not merge", failed: true, link: proposals[index].html_url + "/checks" };
       });
       setChecks(next);
-      setGithubError(summaries.some(x => x.status === "rejected") ? "Some PR check results could not be fetched; verify directly on GitHub." : "");
+      if (summaries.some(x => x.status === "rejected")) warnings.push("Some PR check results could not be fetched; verify directly on GitHub.");
+      setGithubError(warnings.join(" "));
       setGithubCheckedAt(new Date());
     } catch (failure) {
       if (!guard.current()) return;
@@ -160,7 +160,7 @@ export default function AdminAIAssistant() {
               {checks[pr.number]?.failed && <p className="text-xs text-amber-400">Do not merge until CI and the actual Cloudflare Pages deployment are verified. Inspect failing or missing checks.</p>}
             </div>)}
             <h3 className="font-semibold text-sm pt-2">Previous requests</h3>
-            {codeIssues.length === 0 ? <p className="text-sm text-muted-foreground">No code requests submitted yet.</p> : codeIssues.slice(0,8).map(issue=><a key={issue.number} href={issue.html_url} target="_blank" rel="noopener noreferrer" className="block rounded-xl border border-border p-3 text-sm hover:border-primary/40">Request #{issue.number} · {issue.state}{issue.user?.login === legacyOwner ? " · Legacy owner (historical only)" : ""}<span className="block text-xs text-muted-foreground mt-1">Open GitHub issue for agent replies and test results ↗</span></a>)}
+            {codeIssues.length === 0 ? <p className="text-sm text-muted-foreground">{githubError ? "Request history cannot be verified; view it on GitHub." : "No code requests returned."}</p> : codeIssues.slice(0,8).map(issue=><a key={issue.number} href={issue.html_url} target="_blank" rel="noopener noreferrer" className="block rounded-xl border border-border p-3 text-sm hover:border-primary/40">Request #{issue.number} · {issue.state}{issue.user?.login === legacyOwner ? " · Legacy owner (historical only)" : ""}<span className="block text-xs text-muted-foreground mt-1">Open GitHub issue for agent replies and test results ↗</span></a>)}
           </section>
         </> : <>
           <section className={borderCard+" space-y-4"}>
@@ -173,7 +173,7 @@ export default function AdminAIAssistant() {
             </div>
             <p className="text-xs text-muted-foreground">To replace an older weak monthly report, use <strong>Run workflow → task: ideas_refresh</strong>. The existing report is updated rather than creating duplicates. Choose <strong>ideas</strong> for its normal monthly run.</p>
             <h3 className="font-semibold text-sm">Research reports</h3>
-            {ideaIssues.length ? ideaIssues.map(issue=><a href={issue.html_url} key={issue.number} target="_blank" rel="noopener noreferrer" className="block rounded-xl border border-border p-3 text-sm hover:border-primary/40">{issue.title} <ExternalLink className="w-3 h-3 inline"/></a>):<p className="text-sm text-muted-foreground">No generated suggestions yet; the scheduled workflow has not produced a report.</p>}
+            {ideaIssues.length ? ideaIssues.map(issue=><a href={issue.html_url} key={issue.number} target="_blank" rel="noopener noreferrer" className="block rounded-xl border border-border p-3 text-sm hover:border-primary/40">{issue.title} <ExternalLink className="w-3 h-3 inline"/></a>):<p className="text-sm text-muted-foreground">{githubError ? "Idea history cannot be verified; view it on GitHub." : "No idea reports returned."}</p>}
           </section>
         </>}
         <section className={borderCard+" space-y-3"}>

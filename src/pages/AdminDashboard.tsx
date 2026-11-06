@@ -1,3 +1,4 @@
+import { readAdminGithubList } from "@/lib/adminGithubList";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -120,9 +121,17 @@ export default function AdminDashboard() {
       base + "/actions/workflows/tradehq-verified-evidence.yml/runs?per_page=1",
     ];
     try {
-      const responses = await Promise.all(targets.map(url => fetch(url, { headers: { Accept: "application/vnd.github+json" } })));
-      const failures = responses.map((response, i) => response.ok ? "" : ["issue reports", "monitor runs", "coding runs", "approval PRs", "trusted collector"][i] + " HTTP " + response.status).filter(Boolean);
-      const values = await Promise.all(responses.map(response => response.ok ? response.json() : Promise.resolve(null)));
+      const responses = await Promise.allSettled(targets.map(async (url, i) => {
+        if (i === 0) return readAdminGithubList<AgentIssue>('issues', guard.assert).then(result => ({ value: result.items, complete: result.complete }));
+        if (i === 3) return readAdminGithubList<Proposal>('pulls', guard.assert).then(result => ({ value: result.items, complete: result.complete }));
+        const response = await fetch(url, { headers: { Accept: "application/vnd.github+json" } });
+        if (!response.ok) throw new Error("HTTP " + response.status);
+        return { value: await response.json(), complete: true };
+      }));
+      const labels = ["issue reports", "monitor runs", "coding runs", "approval PRs", "trusted collector"];
+      const failures = responses.flatMap((response, i) => response.status === "rejected"
+        ? [labels[i] + " unavailable"] : !response.value.complete ? [labels[i] + " partial (read limit reached)"] : []);
+      const values = responses.map(response => response.status === "fulfilled" ? response.value.value : null);
       guard.assert();
       if (Array.isArray(values[0])) setIssues(values[0].filter((i: AgentIssue) => !i.pull_request && /^\[TradeHQ (Agent|Ideas)\]/.test(i.title)));
       else setIssues([]); // Do not show an earlier issue feed as current.
@@ -332,8 +341,8 @@ export default function AdminDashboard() {
         </section>
         <section className={card}>
           <div className="flex items-center gap-3"><Sparkles className="w-5 h-5 text-primary"/><h2 className="font-semibold">Monthly AI improvement ideas</h2></div>
-          <p className="text-sm text-muted-foreground">Historical open and closed idea reports from the latest 100 GitHub issues (not a complete archive). Two free-tier Gemini suggestions may be drafted each month. Ideas are proposals, not deployed features.</p>
-          {ideas.length ? ideas.map(item => <a key={item.id} href={item.html_url} target="_blank" rel="noopener noreferrer" className="block border border-border rounded-xl p-3 text-sm hover:border-primary/40">{item.title} <ExternalLink className="w-3 h-3 inline"/></a>) : <p className="text-sm text-muted-foreground">No monthly idea report has been published by the workflow yet.</p>}
+          <p className="text-sm text-muted-foreground">Open and closed idea reports from bounded GitHub history; incomplete reads are flagged above. Two free-tier Gemini suggestions may be drafted each month. Ideas are proposals, not deployed features.</p>
+          {ideas.length ? ideas.map(item => <a key={item.id} href={item.html_url} target="_blank" rel="noopener noreferrer" className="block border border-border rounded-xl p-3 text-sm hover:border-primary/40">{item.title} <ExternalLink className="w-3 h-3 inline"/></a>) : <p className="text-sm text-muted-foreground">{agentError ? "Idea reports cannot be verified; view the history on GitHub." : "No monthly idea reports returned."}</p>}
         </section>
         <section className={card}>
           <div className="flex items-center gap-3"><Wrench className="w-5 h-5 text-primary"/><h2 className="font-semibold">Development and validation tools</h2></div>
