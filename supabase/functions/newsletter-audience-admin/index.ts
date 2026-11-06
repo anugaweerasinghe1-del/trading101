@@ -5,7 +5,7 @@ import { allow, clientIp } from "../_shared/rateLimit.ts";
 const db = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!, {
   auth: { persistSession: false },
 });
-const reply = (data: unknown, status=200) => new Response(JSON.stringify(data), {
+const reply = (data: unknown, status=200) => new Response(status === 204 ? null : JSON.stringify(data), {
   status, headers: {
     "Content-Type": "application/json; charset=utf-8",
     "Cache-Control": "no-store",
