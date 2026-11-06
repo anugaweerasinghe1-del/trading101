@@ -88,7 +88,7 @@ export function CourseGenerationSettings({ settings, busy, save, generate, onDir
     {dirty && <p role="status" className="text-xs text-amber-600 dark:text-amber-400">Save or discard pending generation settings before generating; the worker uses the saved server configuration.</p>}
     </fieldset>
     <div className="border-t border-border pt-4 text-sm space-y-2">
-      <p>Schedule: <span className="text-primary">{settings.enabled && settings.hasApiKey ? "Enabled" : "Awaiting setup"}</span></p>
+      <p>Schedule: <span className="text-primary">{!settings.enabled ? "Paused" : !settings.hasApiKey || !settings.freeConfirmed ? "Awaiting free-tier setup" : "Enabled"}</span></p>
       {settings.runs.map(run => <div key={run.period + run.slot} className="rounded-xl bg-muted/30 p-3">
         <p>{run.period} · Draft {run.slot} · {run.status.replace(/_/g, " ")} · {run.attempts}/3 attempts</p>
         {run.last_error && <p className="text-muted-foreground mt-1">{run.last_error}</p>}

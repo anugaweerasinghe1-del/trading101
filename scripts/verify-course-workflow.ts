@@ -165,6 +165,11 @@ const readinessRequest = (jwt: string | null, key = 'test-owner-key', extras = {
     body: JSON.stringify({ action: 'publish-readiness', ...extras }) });
 assert.equal((await handler(readinessRequest(jwtFixture))).status, 503,
   'A handler without an owner verifier must fail closed');
+// A missing integration must fail CLOSED for publication itself, even when
+// a master key, valid-looking owner session and typed reviewer are supplied.
+assert.equal((await handler(publicationRequest(null))).status, 503);
+assert.equal((await handler(publicationRequest(jwtFixture))).status, 503);
+assert.equal(writes, 1, 'Missing owner verification must never call the publish store');
 assert.equal((await ownerHandler(readinessRequest(null))).status, 403);
 assert.equal((await ownerHandler(readinessRequest('wrong-token-value-for-test'))).status, 403);
 assert.equal((await ownerHandler(readinessRequest(jwtFixture, 'wrong-key'))).status, 401);
