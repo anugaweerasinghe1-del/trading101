@@ -105,3 +105,45 @@ for (const status of [400, 401, 403, 409, 422, 429, 503])
   assert.doesNotMatch(await courseAdminError(failed(status, { error: 'PRIVATE_TOKEN_MUST_NOT_RENDER' })), /PRIVATE_TOKEN/);
 assert.equal((await adminFailureDetails({ context: new Response('not JSON', { status: 503 }) })).code, '');
 console.log('ADMIN_FUNCTION_ERRORS_PASS: HTTP response-body codes, owner/quota/revision/review denials, malformed/transport failures, no raw provider payload exposure.');
+
+// Older owner requests must survive pages filled with newer pull requests.
+const { readAdminGithubList } = await import('../src/lib/adminGithubList');
+const listCalls: string[] = [];
+const listFetcher = (pages: unknown[], next = false): typeof fetch => async (input, init) => {
+  const url = String(input); listCalls.push(url);
+  assert.match(url, /^https:\/\/api\.github\.com\/repos\/anugaweerasinghe1-del\/trading101\/(issues|pulls)\?/);
+  assert.equal(init?.credentials, 'omit'); assert.equal(init?.redirect, 'error');
+  assert.deepEqual(init?.headers, { Accept: 'application/vnd.github+json' });
+  return new Response(JSON.stringify(pages.shift()), { headers: next ? { Link: '<https://untrusted.invalid/page>; rel="next"' } : {} });
+};
+const full = Array.from({ length: 100 }, (_, i) => ({ number: 1000 + i, title: 'Newer PR', pull_request: {} }));
+const old = { number: 94, title: '[TradeHQ Code Request]', user: { login: 'anugaweerasinghe1-del' } };
+let listed = await readAdminGithubList('issues', () => {}, listFetcher([full, [old]]));
+assert.equal(listed.complete, true); assert.equal(listed.items.length, 101);
+assert.deepEqual(listed.items.at(-1), old); assert.equal(listCalls.length, 2);
+assert.match(listCalls[1], /state=all&per_page=100&page=2$/);
+for (const [resource, limit] of [['issues', 4], ['pulls', 2]] as const) {
+  listCalls.length = 0;
+  listed = await readAdminGithubList(resource, () => {}, listFetcher(Array(limit).fill(full)));
+  assert.equal(listed.complete, false); assert.equal(listCalls.length, limit);
+}
+for (const status of [401, 403, 429, 500, 503]) {
+  let calls = 0;
+  await assert.rejects(readAdminGithubList('issues', () => {}, async () => {
+    calls++; return calls === 1 ? new Response(JSON.stringify(full)) : new Response('{}', { status });
+  }), new RegExp('HTTP ' + status));
+  assert.equal(calls, 2, 'Failed page never retries or returns a complete empty history');
+}
+for (const bad of [null, {}, Array(101).fill(old)]) {
+  await assert.rejects(readAdminGithubList('issues', () => {}, listFetcher([bad])), /invalid/);
+}
+// A Link header can request another bounded page, but cannot select its origin.
+listCalls.length = 0;
+await readAdminGithubList('pulls', () => {}, listFetcher([[old], []], true));
+assert.equal(listCalls.length, 2); assert.ok(listCalls.every(url => !url.includes('untrusted')));
+let locked = false, lockCalls = 0;
+await assert.rejects(readAdminGithubList('issues', () => { if (locked) throw Error('locked'); }, async () => {
+  lockCalls++; locked = true; return new Response(JSON.stringify(full));
+}), /locked/);
+assert.equal(lockCalls, 1, 'Lock fences the response before another public page request');
+console.log('ADMIN_GITHUB_HISTORY_PASS: older requests, bounded partial lists, page errors, malformed data, fixed-origin pagination, no credentials and lock cancellation.');
