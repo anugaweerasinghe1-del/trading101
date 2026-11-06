@@ -91,6 +91,7 @@ async function main(){
   let dashboardHold=false,dashboardHeldRequests=0;
   let courseDeskFixture=false,reviewDeskFixture=false,courseDeskWrites=0,reviewDeskWrites=0;
   let courseMutationFixture=false,reviewMutationFixture=false;
+  let reviewListUnavailable=false;
   let courseDeskRows=[],courseWriteLog=[],reviewWriteLog=[];
   let courseListUnavailable=false,courseFailRefreshAfterSave=false;
   let reviewFixtureRow={id:'aaaa1111-2222-4333-8444-555555555555',name:'Fixture reviewer',
@@ -203,9 +204,13 @@ async function main(){
               reviewFixtureRow={...reviewFixtureRow,owner_reply:input.reply,owner_reply_updated_at:new Date().toISOString()};
               return json(200,{ok:true});
             }
+            if(reviewMutationFixture && input.id===reviewFixtureRow.id && ['delete','restore'].includes(input.action)){
+              reviewFixtureRow={...reviewFixtureRow,deleted_at:input.action==='delete'?new Date().toISOString():null};
+              return json(200,{ok:true});
+            }
             return json(409,{error:'Other moderation mutations denied by fixture'});
           }
-          return json(200,{data:reviewDeskFixture?[reviewFixtureRow]:[]});
+          return reviewListUnavailable ? json(503,{error:'Fixture moderation list outage'}) : json(200,{data:reviewDeskFixture?[reviewFixtureRow]:[]});
         });return;
       }
       if(route==='/functions/v1/admin-code-queue' && req.method==='POST'){
@@ -1049,25 +1054,52 @@ async function main(){
     reviewDeskFixture=false;
     console.log('ISOLATED_ADMIN_REVIEWS_BROWSER_PASS: real review loaded, unsaved moderation protected on lock, private content and key cleared, no moderation writes; fixture only.');
     // Exercise intentional update + public reply submissions only inside the
-    // disposable mock. The server still rejects delete/restore and other writes.
+    // disposable mock; only the explicit review fixture can be mutated.
     reviewMutationFixture=true;reviewDeskFixture=true;
     await loadDocument(origin+'/admin/reviews');
     await wait(()=>devtools.evaluate("!!document.querySelector('input[aria-label=\"Master key\"]')"),'Review write unlock');
     await adminInput('input[aria-label="Master key"]',ADMIN_FIXTURE_KEY);await adminClick('Unlock');
     await wait(()=>devtools.evaluate("document.querySelector('h1')?.textContent==='Reviews (1)'"),'Review writable fixture loaded');
+    reviewListUnavailable=true;
     await adminInput('input[aria-label="Review author name"]','Updated fixture reviewer');
     await adminClick('Save');
     await wait(()=>reviewFixtureRow.name==='Updated fixture reviewer','Intentional review edit reached server');
     await wait(()=>devtools.evaluate("document.querySelector('input[aria-label=\"Review author name\"]')?.value==='Updated fixture reviewer'"),'Saved review returned to actual input');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Saved on the server; refresh reviews')"),'Confirmed review update survives read outage');
+    reviewListUnavailable=false;await adminClick('Refresh reviews');
+    await wait(()=>devtools.evaluate("!document.body.textContent.includes('Saved on the server; refresh reviews')"),'Review edit refresh recovers');
+    reviewListUnavailable=true;
     await adminInput('#reply-aaaa1111-2222-4333-8444-555555555555','Fixture owner public reply');
     await adminClick('Save reply');
     await wait(()=>reviewFixtureRow.owner_reply==='Fixture owner public reply','Intentional review reply reached server');
     assert.deepEqual(reviewWriteLog,['update','reply'],'No unexpected moderation actions, delete or restore');
     await wait(()=>devtools.evaluate("document.querySelector('#reply-aaaa1111-2222-4333-8444-555555555555')?.value==='Fixture owner public reply'"),'Saved reply persisted in UI');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Saved on the server; refresh reviews before making another change to this review.')"),'Confirmed reply is distinct from failed list refresh');
+    assert.equal(await devtools.evaluate("document.querySelector('#reply-aaaa1111-2222-4333-8444-555555555555').disabled || document.querySelector('#reply-aaaa1111-2222-4333-8444-555555555555').matches(':disabled')"),true,'Confirmed row cannot submit again while refresh is unavailable');
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('You have unsaved review changes')"),false,'Confirmed reply is not reported as an unsaved draft');
+    reviewListUnavailable=false;await adminClick('Refresh reviews');
+    await wait(()=>devtools.evaluate("!document.body.textContent.includes('Saved on the server; refresh reviews')"),'Confirmed moderation refresh recovers');
+    assert.equal(await devtools.evaluate("document.querySelector('#reply-aaaa1111-2222-4333-8444-555555555555').value"),'Fixture owner public reply');
+    assert.deepEqual(reviewWriteLog,['update','reply'],'Refresh recovery must not repeat any moderation write');
+    for (const action of ['delete','restore']) {
+      reviewListUnavailable=true;
+      await devtools.evaluate("window.confirm=()=>true");
+      await adminClick(action==='delete'?'Delete review':'Restore review');
+      await wait(()=>devtools.evaluate("document.body.textContent.includes('Saved on the server; refresh reviews')"),'Confirmed '+action+' survives read outage');
+      assert.equal(!!reviewFixtureRow.deleted_at,action==='delete');
+      assert.equal(await devtools.evaluate("[...document.querySelectorAll('button')].find(e=>/Delete review|Restore review/.test(e.textContent)).matches(':disabled')"),true,'Confirmed '+action+' cannot repeat');
+      reviewListUnavailable=false;await adminClick('Refresh reviews');
+      await wait(()=>devtools.evaluate("!document.body.textContent.includes('Saved on the server; refresh reviews')"),'Authoritative '+action+' refresh recovers');
+      assert.equal(await devtools.evaluate("document.body.textContent.includes('Deleted from public view')"),action==='delete');
+    }
+    assert.deepEqual(reviewWriteLog,['update','reply','delete','restore'],'Read outages never repeat confirmed mutations');
+    await devtools.send('Emulation.setDeviceMetricsOverride',{width:320,height:900,deviceScaleFactor:1,mobile:true});
+    assert.equal(await devtools.evaluate("document.documentElement.scrollWidth <= innerWidth+1"),true,'Reviews recovery fits 320px');
+    await devtools.send('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false});
     await adminClick('Lock admin panel');
     await wait(()=>devtools.evaluate("!!document.querySelector('input[aria-label=\"Master key\"]')"),'Review mutation desk locked');
     reviewMutationFixture=false;reviewDeskFixture=false;
-    console.log('ISOLATED_ADMIN_REVIEW_SAVE_BROWSER_PASS: intentional edit and owner reply persist in UI, no delete/restore or production writes.');
+    console.log('ISOLATED_ADMIN_REVIEW_SAVE_BROWSER_PASS: edit/reply/delete/restore survive list HTTP503, confirmed rows block repeat writes, authoritative recovery and 320px layout; disposable fixture only, zero production writes.');
 
 
     // The actual AI desk must find requests older than a page of newer PRs.
