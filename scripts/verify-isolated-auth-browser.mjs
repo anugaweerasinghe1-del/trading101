@@ -85,6 +85,9 @@ async function main(){
   let dailyGenerationRequests=0;
   let dailyDrafts=[],dailyEditorialWrites=0;
   let newsletterRevision=1,newsletterReads=0,newsletterWrites=0,newsletterConfirmed=1;
+  let newsletterEditorialFixture=false,newsletterPreviewCalls=0,newsletterPublishRequests=0;
+  let newsletterEdition={id:'fixture-newsletter',week_of:'2026-11-02',status:'draft',revision:2,subject:'Saved fixture subject',preheader:'Saved preview line',body_markdown:'Saved fixture text',reviewed_by:null,reviewed_at:null,updated_at:new Date().toISOString(),ai_model:null,generator_error:null};
+  const newsletterPreview={subject:'Preview fixture subject',preheader:'A source-backed fixture preview',body_markdown:'## Fixture lesson\n<img src=x onerror=window.__newsletterHtmlExecuted=true>\nHypothetical worksheet: 1% of $100 equals $1.'};
   let dashboardHold=false,dashboardHeldRequests=0;
   let courseDeskFixture=false,reviewDeskFixture=false,courseDeskWrites=0,reviewDeskWrites=0;
   let courseMutationFixture=false,reviewMutationFixture=false;
@@ -153,11 +156,35 @@ async function main(){
         let content='';req.on('data',chunk=>{content+=chunk;});req.on('end',()=>{
           const body=JSON.parse(content);
           if(route.endsWith('newsletter-dispatch') && body.action==='status')return json(200,{data:{counts:{confirmed:newsletterConfirmed,pending:0,unsubscribed:0,bounced:0},subscribers:[],recentDeliveries:[{edition_id:'fixture-newsletter',status:'accepted',provider_id:'private-provider-id',created_at:new Date().toISOString()},{edition_id:'fixture-newsletter',status:'delivered',provider_id:'other-private-id',created_at:new Date().toISOString()},{edition_id:'fixture-newsletter',status:'unknown',provider_id:null,created_at:new Date().toISOString()}],webhookConfigured:true,limitInfo:'Isolated fixture only'}});
+          if(route.endsWith('newsletter-dispatch')){
+            if(body.action==='publish')newsletterPublishRequests++;
+            assert.equal(body.action,'publish-readiness','No subscriber send action permitted in fixture');
+            assert.equal(req.headers.authorization,'Bearer '+JWT,'Owner readiness must use current Auth token');
+            return json(403,{error:'Fixture registered-owner denial'});
+          }
           if(body.action==='topics')return json(200,{data:[{id:'fixture',title:'Fixture topic',sourceTitle:'Fixture source'}]});
           if(body.action==='list'){
             newsletterReads++;
             if(dashboardFixture && newsletterQueueUnavailable)return json(503,{error:'Fixture Newsletter inbox unavailable'});
+            if(newsletterEditorialFixture)return json(200,{data:[newsletterEdition]});
             return json(200,{data:[{id:'fixture-newsletter',week_of:'2026-11-02',status:'draft',revision:newsletterRevision,subject:'Server lesson title',preheader:'Fixture preview',body_markdown:'Fixture educational draft',reviewed_by:null,reviewed_at:null,updated_at:new Date().toISOString(),ai_model:null,generator_error:null}]});}
+          if(newsletterEditorialFixture && ['preview-upcoming','preview-rewrite'].includes(body.action)){
+            newsletterPreviewCalls++;
+            if(body.action==='preview-rewrite')assert.equal(body.revision,newsletterEdition.revision,'AI preview uses saved revision');
+            return json(200,{data:{...newsletterPreview,week_of:'2026-11-09',note:'Unsaved fixture only'}});
+          }
+          if(newsletterEditorialFixture && body.action==='save'){
+            newsletterWrites++;assert.equal(body.revision,newsletterEdition.revision);
+            assert.equal(newsletterEdition.status,'draft');
+            newsletterEdition={...newsletterEdition,subject:body.subject,preheader:body.preheader,body_markdown:body.body_markdown,revision:body.revision+1};
+            return json(200,{data:{id:newsletterEdition.id,revision:newsletterEdition.revision}});
+          }
+          if(newsletterEditorialFixture && body.action==='approve'){
+            newsletterWrites++;assert.equal(body.revision,newsletterEdition.revision);
+            assert.equal(body.reviewed,true);assert.equal(newsletterEdition.status,'draft');
+            newsletterEdition={...newsletterEdition,status:'approved',reviewed_by:body.reviewer};
+            return json(200,{data:{id:newsletterEdition.id,status:'approved'}});
+          }
           newsletterWrites++;return json(409,{error:'No generation, approval or email sending permitted in this fixture'});
         });return;
       }
@@ -873,6 +900,40 @@ async function main(){
     await devtools.send('Emulation.setDeviceMetricsOverride',{width:320,height:900,deviceScaleFactor:1,mobile:true});
     assert.equal(await devtools.evaluate("document.documentElement.scrollWidth <= innerWidth+1"),true,'Newsletter desk fits a 320px viewport');
     await devtools.send('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false});
+    newsletterEditorialFixture=true;
+    await devtools.evaluate("window.confirm=()=>true");await adminClick('Refresh');
+    await wait(()=>devtools.evaluate("document.querySelector('#newsletter-subject').value==='Saved fixture subject'"),'Newsletter saved revision reopened');
+    await adminClick("Preview next week's AI issue");
+    await wait(()=>newsletterPreviewCalls===1,'One unsaved upcoming preview requested');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Week of 2026-11-09 · unsaved')"),'Upcoming preview marked unsaved');
+    assert.equal(newsletterWrites,0,'Upcoming preview cannot store or approve an edition');
+    assert.equal(await devtools.evaluate("document.querySelector('#newsletter-subject').value"),'Saved fixture subject','Upcoming sample cannot overwrite current editor');
+    await adminInput('#newsletter-subject','Unsaved draft that must survive a canceled preview');
+    await devtools.evaluate("window.confirm=()=>false");await adminClick('Draft a deeper lesson (preview only)');
+    await wait(()=>devtools.evaluate("[...document.querySelectorAll('button')].some(e=>e.textContent.trim()==='Draft a deeper lesson (preview only)'&&!e.disabled)"),'Canceled preview returns control');
+    assert.equal(newsletterPreviewCalls,1,'Declining discard must prevent the provider request');
+    assert.equal(await devtools.evaluate("document.querySelector('#newsletter-subject').value"),'Unsaved draft that must survive a canceled preview');
+    await devtools.evaluate("window.confirm=()=>true");await adminClick('Draft a deeper lesson (preview only)');
+    await wait(()=>devtools.evaluate("document.querySelector('#newsletter-subject').value==='Preview fixture subject'"),'AI rewrite reaches temporary editor');
+    assert.equal(newsletterPreviewCalls,2);assert.equal(newsletterWrites,0,'Rewrite preview remains unsaved');
+    assert.equal(await devtools.evaluate("window.__newsletterHtmlExecuted===true || document.querySelectorAll('img[src=x]').length>0"),false,'Preview HTML remains inert textarea text');
+    assert.equal(await devtools.evaluate("[...document.querySelectorAll('button')].find(e=>e.textContent==='Approve draft (no email sent)').disabled"),true,'Unsaved preview cannot be approved');
+    await adminClick('Save edits');
+    await wait(()=>newsletterEdition.revision===3,'Private preview saved as one new revision');
+    await wait(()=>devtools.evaluate("!document.body.textContent.includes('Unsaved AI preview.')"),'Saved preview label cleared');
+    assert.equal(newsletterEdition.status,'draft','Save cannot approve');
+    assert.equal(await devtools.evaluate("document.querySelector('input[type=checkbox]').checked"),false,'Saved revision requires fresh owner review');
+    await adminInput('#newsletter-reviewer','Fixture editorial reviewer');
+    await devtools.evaluate("document.querySelector('input[type=checkbox]').click()");
+    await adminClick('Approve draft (no email sent)');
+    await wait(()=>newsletterEdition.status==='approved','Explicit editorial approval stored');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Approved by Fixture editorial reviewer')"),'Approved reviewer shown accurately');
+    await adminClick('Verify owner access (no email)');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes("+JSON.stringify("Newsletter sending requires the registered owner's current TradeHQ login")+")"),'Owner send authorization denial visible');
+    assert.equal(newsletterWrites,2,'Exactly one private save and one approval; no automatic writes');
+    assert.equal(newsletterPublishRequests,0,'No email dispatch request during preview/save/approval/readiness');
+    newsletterEditorialFixture=false;
+    console.log('ISOLATED_NEWSLETTER_EDITORIAL_PREVIEW_PASS: upcoming sample and rewrite remain unsaved; canceled discard prevents model request; inert HTML; exact revision save then separate approval; owner-readiness denial; zero email dispatch requests. Loopback only.');
     console.log('ISOLATED_ADMIN_REFRESH_PASS: late dashboard refresh cannot reopen lock; newsletter reconnect refresh preserves unsaved writing and reports remote revision; no editorial or email mutations.');
     // Browser-only admin acceptance: exercise the actual Course desk with a
     // strictly read-only loopback backend. These interactions must never send
