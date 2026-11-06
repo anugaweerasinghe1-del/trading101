@@ -73,5 +73,14 @@ assert.match(dashboard, /body: \{ action: "status" \}/);
 assert.match(dashboard, /CONFIGURED_NOT_TESTED/);
 assert.match(dashboard, /PILOT_PAUSED/);
 assert.match(dashboard, /setChatReadiness\(null\); warnings\.push/);
+// Public GitHub polling must clear outdated status after partial and total outages.
+// A cached green agent run cannot masquerade as a current provider or deployment check.
+assert.match(dashboard, /else setIssues\(\[\]\); \/\/ Do not show an earlier issue feed/);
+assert.match(dashboard, /else \{ setRun\(null\); setPreviousSuccess\(null\); setPreviousFailure\(null\); \}/);
+assert.match(dashboard, /else \{ setCodeRun\(null\); setPreviousCodeFailure\(null\); \}/);
+assert.match(dashboard, /else setProposals\(\[\]\);/);
+assert.match(dashboard, /Missing feeds have been cleared/);
+assert.match(dashboard, /setDeploymentChecks\(null\); setLastGitHubChecked\(null\);/);
+assert.match(dashboard, /Previous snapshots were cleared/);
 assert.doesNotMatch(dashboard, />Weekly Newsletter</);
 console.log('ADMIN_EDITORIAL_SAFETY_PASS: unsaved editorial review, saved-only generation, owner sign-out late-response fencing and independent newsletter totals');
