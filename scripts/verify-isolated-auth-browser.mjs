@@ -612,7 +612,8 @@ async function main(){
     assert.ok(privateTradeReads>=1,"Signed-in owner must fetch account-bound evidence");
     assert.equal(privateTradeRejected,0,"No unauthorized or unscoped trade reads allowed");
     const programme="document.querySelector('section[aria-labelledby=foundations-programme-title]')";
-    const programmeClick=label=>devtools.evaluate("[..."+programme+".querySelectorAll('button')].find(e=>e.textContent.trim()==="+JSON.stringify(label)+")?.click()");
+    const programmeButton=label=>"[..."+programme+".querySelectorAll('button')].find(e=>e.textContent.trim()==="+JSON.stringify(label)+")";
+    const programmeClick=label=>devtools.evaluate(programmeButton(label)+"?.click()");
     const collection="document.querySelector('section[aria-labelledby=trophy-collection-title]')";
     await wait(()=>devtools.evaluate(collection+"?.querySelectorAll('img').length===20"),'Twenty trophy illustrations rendered');
     assert.equal(await devtools.evaluate("new Set([..."+collection+".querySelectorAll('img')].map(x=>x.getAttribute('src'))).size"),20);
@@ -652,7 +653,7 @@ async function main(){
     if(process.env.TRADEHQ_CERTIFICATE_FIXTURE_PATH)copyFileSync(pdfPath,process.env.TRADEHQ_CERTIFICATE_FIXTURE_PATH);
     rmSync(pdfPath);
     await loadDocument(origin+"/achievements");
-    await wait(()=>devtools.evaluate(programme+".textContent.includes('First Course Certificate')"),'Certificate eligibility restored');
+    await wait(()=>devtools.evaluate("Boolean("+programmeButton('First Course Certificate')+")"),'Certificate eligibility restored');
     await programmeClick('First Course Certificate');
     await wait(()=>devtools.evaluate(programme+".textContent.includes('Issued to මායා පෙරේරා')"),'Same persisted issuance after reload');
     await devtools.send('Page.setDownloadBehavior',{behavior:'allow',downloadPath});
@@ -674,7 +675,7 @@ async function main(){
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Certificate verified')"),'Shared public proof verified');
     assert.equal(await devtools.evaluate("document.body.textContent.includes('Maya Corrected')"),false,'Public verification hides the private name');
     await loadDocument(origin+"/achievements");
-    await wait(()=>devtools.evaluate(programme+".textContent.includes('First Course Certificate')"),'Account cabinet restored after public verification');
+    await wait(()=>devtools.evaluate("Boolean("+programmeButton('First Course Certificate')+")"),'Account cabinet restored after public verification');
     await programmeClick('First Course Certificate');
     await wait(()=>devtools.evaluate(programme+".textContent.includes('Public verification is on')"),'Persisted verification consent shown');
     await programmeClick('Withdraw verification');
@@ -682,7 +683,7 @@ async function main(){
     await loadDocument(verificationLink);
     await wait(()=>devtools.evaluate("document.body.textContent.includes('invalid or has been withdrawn')"),'Withdrawn public proof rejected');
     await loadDocument(origin+"/achievements");
-    await wait(()=>devtools.evaluate(programme+".textContent.includes('Core Studies Certificate')"),'Return to cabinet for mobile certificate checks');
+    await wait(()=>devtools.evaluate("Boolean("+programmeButton('Core Studies Certificate')+")"),'Return to cabinet for mobile certificate checks');
     console.log('ISOLATED_CERTIFICATE_VERIFICATION_PASS: explicit opt-in, anonymous minimal proof and withdrawal.');
 
 
