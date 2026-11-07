@@ -46,6 +46,27 @@ assert.equal(after.milestones.find(x => x.id === "three-courses")?.earned, false
 assert.equal(after.badges.find(x => x.slug === "course-b")?.complete, true);
 assert.equal(buildPersonalTrophyCabinet([], progress).milestonesEarned, 0);
 
+// Invalid first duplicates must not shadow a later valid course. Malformed
+// catalog entries and inherited object keys must never inflate milestones.
+const malformedCatalog = [
+  { slug: "course-a", title: "Broken first entry", badge: { name: "Broken" }, lessons: [] },
+  { slug: "course-a", title: "Valid replacement", badge: { name: "Valid" }, lessons: [{ slug: "one" }] },
+  { slug: "", title: "Empty slug", badge: { name: "Invalid" }, lessons: [{ slug: "one" }] },
+  { slug: "bad-lessons", title: "Missing lessons", badge: { name: "Invalid" }, lessons: null as unknown as { slug: string }[] },
+  { slug: "bad-item", title: "Invalid lesson", badge: { name: "Invalid" }, lessons: [null as unknown as { slug: string }] },
+];
+const recovered = buildPersonalTrophyCabinet(malformedCatalog, progress);
+assert.equal(recovered.badges.length, 1);
+assert.equal(recovered.badges[0].name, "Valid");
+assert.equal(recovered.completedLessons, 1);
+assert.equal(recovered.availableLessons, 1);
+assert.equal(recovered.archivedBadgeCount, 1);
+const inherited = buildPersonalTrophyCabinet([
+  { slug: "__proto__", title: "Prototype key", badge: { name: "Private" }, lessons: [{ slug: "toString" }] },
+], progress);
+assert.equal(inherited.completedLessons, 0);
+assert.equal(inherited.completedCourses, 0);
+
 
 const accountA = "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa";
 const accountB = "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb";

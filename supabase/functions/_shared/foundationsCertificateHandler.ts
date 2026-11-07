@@ -1,9 +1,14 @@
-import { issueFoundationsCertificate } from "./foundationsCertificate.ts";
+import { isCertificateMilestone, issueFoundationsCertificate } from "./foundationsCertificate.ts";
 import { assessmentSize, gradeFoundationsAssessment, parseFoundationsAssessment, publicFoundationsAssessment } from "./foundationsAssessment.ts";
 import { FOUNDATIONS_VERSION, getFoundationsEligibility, type GradedFoundationsAttempt } from "./foundationsProgramme.ts";
 
 type CertificateStore = Parameters<typeof issueFoundationsCertificate>[0];
 const maxBodyBytes = 1024;
+type Certificate = NonNullable<Awaited<ReturnType<CertificateStore["findPrivateCertificate"]>>>;
+
+function privateDownloadMetadata({ id, issuedAt, recipientName, milestone, templateVersion, programmeVersion }: Certificate) {
+  return { id, issuedAt, recipientName, milestone, templateVersion, programmeVersion };
+}
 
 async function readBody(request: Request): Promise<unknown> {
   if (Number(request.headers.get("content-length")) > maxBodyBytes) throw new RangeError();
@@ -94,11 +99,16 @@ export function createFoundationsCertificateHandler(options: {
         await options.recordGrade(userId, grade);
         return reply({ status: "graded", grade }, 200);
       }
+      if (action === "certificate" && onlyKeys(["action", "milestone"]) && isCertificateMilestone(milestone)) {
+        const certificate = await options.store.findPrivateCertificate({ userId, programmeVersion: FOUNDATIONS_VERSION, milestone });
+        return certificate
+          ? reply({ status: "available", certificate: privateDownloadMetadata(certificate) }, 200)
+          : reply({ status: "not_issued" }, 200);
+      }
       if (!onlyKeys(["milestone", "recipientName"])) return reply({ status: "invalid_request" }, 400);
       const result = await issueFoundationsCertificate(options.store, userId, milestone, recipientName);
       if (result.status === "available") {
-        const { id, issuedAt, recipientName, milestone, templateVersion, programmeVersion } = result.certificate;
-        return reply({ status: result.status, certificate: { id, issuedAt, recipientName, milestone, templateVersion, programmeVersion } }, 200);
+        return reply({ status: result.status, certificate: privateDownloadMetadata(result.certificate) }, 200);
       }
       return reply(result, result.status === "ineligible" ? 409 : 400);
     } catch {

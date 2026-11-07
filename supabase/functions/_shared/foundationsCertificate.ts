@@ -32,7 +32,7 @@ type CertificateStore = {
   }): Promise<CertificateRecord>;
 };
 
-function isCertificateMilestone(value: unknown): value is CertificateMilestone {
+export function isCertificateMilestone(value: unknown): value is CertificateMilestone {
   return value === "first-course" || value === "core-studies" || value === "foundations";
 }
 

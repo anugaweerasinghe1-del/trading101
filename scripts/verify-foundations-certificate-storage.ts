@@ -89,6 +89,21 @@ try {
   assert.equal((await db.query("select * from public.foundations_private_certificates")).rows.length, 0);
   assert.equal((await db.query("select * from public.foundations_assessment_results")).rows.length, 0);
   console.log("FOUNDATIONS_STORAGE_PASS: disposable PostgreSQL, role denial, scoring bounds, policy parity, immutable retry, isolation, evidence and account erasure.");
+  const sample = Array.from({ length: 200 }, () => crypto.randomUUID());
+  await db.query("insert into auth.users select unnest($1::uuid[])", [sample]);
+  await db.exec("set role service_role");
+  await db.query("insert into public.foundations_assessment_results select unnest($1::uuid[]), 'foundations-v1', 'quotes', 4, 5", [sample]);
+  const bulk = `select cert.id from unnest($1::uuid[]) learner
+    cross join lateral public.create_or_read_foundations_certificate(
+      learner, 'foundations-v1', 'first-course', 'Fictional Capacity Learner', 'trade-hq-white-teal-v1'
+    ) cert`;
+  const started = performance.now();
+  const issuedSample = await db.query<{ id: string }>(bulk, [sample]);
+  const retriedSample = await db.query<{ id: string }>(bulk, [sample]);
+  assert.equal(new Set(issuedSample.rows.map(row => row.id)).size, sample.length);
+  assert.deepEqual(retriedSample.rows, issuedSample.rows);
+  console.log(`FOUNDATIONS_STORAGE_CAPACITY_FIXTURE: ${sample.length} isolated issuances and ${sample.length} repeat reads in ${Math.round(performance.now() - started)}ms; no hosted capacity claim.`);
+
 } finally {
   await db.close();
 }

@@ -6,7 +6,7 @@
 import assert from "node:assert/strict";
 import { createServer } from "node:http";
 import { spawn, spawnSync } from "node:child_process";
-import { mkdtempSync, readFileSync, existsSync, rmSync, statSync } from "node:fs";
+import { mkdtempSync, mkdirSync, copyFileSync, readFileSync, existsSync, rmSync, statSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve, extname, sep } from "node:path";
 import { setTimeout as sleep } from "node:timers/promises";
@@ -82,7 +82,8 @@ async function main(){
   let showPublications=false,publicationReads=0;
   let learningWrites=0, learningReads=0, savedLearning=null;
   let privateTradeReads=0, privateTradeRejected=0;
-  let foundationsReads=0, foundationsGradeCalls=0, foundationsPassed=false;
+  let foundationsReads=0, foundationsGradeCalls=0, foundationsPassed=false, certificateIssues=0;
+  let issuedCertificate=null;
   const foundationsVersion="foundations-v1";
   let holdLearnModule=true;
   const releaseLearnModules=[];
@@ -133,11 +134,28 @@ async function main(){
           const input=JSON.parse(text);
           foundationsReads++;
           if(input.action==='progress')return json(200,{status:'available',programmeVersion:foundationsVersion,
-            completedCourses:[],finalCasePassed:false,perfectSizing:false,milestones:[],passedCheckpoints:foundationsPassed?['markets']:[]});
+            completedCourses:foundationsPassed?['market-and-orders']:[],finalCasePassed:false,perfectSizing:false,milestones:foundationsPassed?['first-course','core-studies','foundations']:[],passedCheckpoints:foundationsPassed?['markets']:[]});
           if(input.action==='assessment'){
             assert.deepEqual(input,{action:'assessment',programmeVersion:foundationsVersion,assessmentId:'markets'});
             return json(200,{status:'available',assessment:{programmeVersion:foundationsVersion,assessmentId:'markets',
               title:'Fixture checkpoint',questions:Array.from({length:5},(_,i)=>({prompt:'Practice fixture '+i,choices:['Choice A','Choice B']}))}});
+          }
+          if(input.action==='certificate') {
+            if(input.milestone==='first-course')return json(200,issuedCertificate?{status:'available',certificate:issuedCertificate}:{status:'not_issued'});
+            assert.ok(['core-studies','foundations'].includes(input.milestone));
+            return json(200,{status:'available',certificate:{
+              id:'8bc992ee-50ba-44b3-ab63-926aaea45b21',issuedAt:'2026-11-08T00:30:00Z',
+              recipientName:input.milestone==='core-studies'?'மாயா பெரேரா':'Alexandria Catherine Elizabeth Francesca Isabella Johanna Marguerite Penelope Rose Perera',
+              milestone:input.milestone,programmeVersion:foundationsVersion,templateVersion:'trade-hq-white-teal-v1',
+            }});
+          }
+          if(input.milestone==='first-course') {
+            assert.equal(input.recipientName,'මායා පෙරේරා');
+            certificateIssues++;
+            issuedCertificate={id:'7bc992ee-50ba-44b3-ab63-926aaea45b21',issuedAt:'2026-11-08T00:30:00Z',
+              recipientName:input.recipientName,milestone:input.milestone,programmeVersion:foundationsVersion,
+              templateVersion:'trade-hq-white-teal-v1'};
+            return json(200,{status:'available',certificate:issuedCertificate});
           }
           assert.deepEqual(input,{action:'grade',programmeVersion:foundationsVersion,assessmentId:'markets',answers:[0,0,0,0,0]});
           foundationsGradeCalls++;
@@ -583,6 +601,48 @@ async function main(){
     await wait(()=>devtools.evaluate(programme+".textContent.includes('Score 5/5. Passed.')"),'Server-graded score rendered');
     await wait(()=>devtools.evaluate(programme+".textContent.includes('Markets and instruments · Passed')"),'Server progress refreshes after grading');
     assert.equal(foundationsGradeCalls,2,'One failed deliberate submission and one deliberate retry');
+    const downloadPath=join(temp,'certificate-download');
+    mkdirSync(downloadPath);
+    await devtools.send('Page.setDownloadBehavior',{behavior:'allow',downloadPath});
+    await programmeClick('First Course Certificate');
+    const nameField=programme+".querySelector('input[autocomplete=name]')";
+    await wait(()=>devtools.evaluate("!!"+nameField),'Certificate recipient name review');
+    await devtools.evaluate("(()=>{const input="+nameField+";Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(input,'මායා පෙරේරා');input.dispatchEvent(new Event('input',{bubbles:true}));})()");
+    await wait(()=>devtools.evaluate(programme+".textContent.includes('Confirm the name as it should appear')"),'Certificate shows confirmed name before issuance');
+    await programmeClick('Confirm name and issue');
+    await wait(()=>devtools.evaluate(programme+".textContent.includes('Issued to මායා පෙරේරා')"),'Authoritative private issuance receipt');
+    await programmeClick('Download PDF');
+    const pdfPath=join(downloadPath,'The-Trade-HQ-first-course.pdf');
+    await wait(()=>existsSync(pdfPath),'Generated one-page certificate downloaded');
+    const pdf=readFileSync(pdfPath);
+    assert.equal(pdf.subarray(0,8).toString(),'%PDF-1.4');
+    assert.ok(pdf.length<2000000 && pdf.length>50000,'Certificate PDF has bounded and meaningful file size');
+    assert.ok(pdf.subarray(-100).toString().endsWith('%%EOF\n'));
+    if(process.env.TRADEHQ_CERTIFICATE_FIXTURE_PATH)copyFileSync(pdfPath,process.env.TRADEHQ_CERTIFICATE_FIXTURE_PATH);
+    rmSync(pdfPath);
+    await loadDocument(origin+"/achievements");
+    await wait(()=>devtools.evaluate(programme+".textContent.includes('First Course Certificate')"),'Certificate eligibility restored');
+    await programmeClick('First Course Certificate');
+    await wait(()=>devtools.evaluate(programme+".textContent.includes('Issued to මායා පෙරේරා')"),'Same persisted issuance after reload');
+    await devtools.send('Page.setDownloadBehavior',{behavior:'allow',downloadPath});
+    await programmeClick('Download PDF');
+    await wait(()=>existsSync(pdfPath),'Repeat certificate download');
+    assert.deepEqual(readFileSync(pdfPath),pdf,'Repeat downloads in the same browser produce identical PDF bytes');
+    assert.equal(certificateIssues,1,'Repeat download reads the certificate and never issues twice');
+    await devtools.send('Emulation.setDeviceMetricsOverride',{width:320,height:860,deviceScaleFactor:1,mobile:true});
+    for(const [label,slug] of [['Core Studies Certificate','core-studies'],['Foundations Completion Certificate','foundations']]){
+      await programmeClick(label);
+      await wait(()=>devtools.evaluate("[..."+programme+".querySelectorAll('button')].some(e=>e.textContent.trim()==='Download PDF')"),label+' ready on mobile viewport');
+      await programmeClick('Download PDF');
+      const savedPath=join(downloadPath,'The-Trade-HQ-'+slug+'.pdf');
+      await wait(()=>existsSync(savedPath),label+' downloaded');
+      assert.equal(readFileSync(savedPath).subarray(0,8).toString(),'%PDF-1.4');
+      if(process.env.TRADEHQ_CERTIFICATE_FIXTURE_PATH)copyFileSync(savedPath,process.env.TRADEHQ_CERTIFICATE_FIXTURE_PATH.replace(/\.pdf$/,'-'+slug+'.pdf'));
+    }
+    await devtools.send('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false});
+
+    console.log('ISOLATED_CERTIFICATE_PDF_PASS: explicit Sinhala name review, private issuance, three PDFs, Tamil and long names on a narrow viewport, stable repeat bytes and one issuance.');
+
     console.log('ISOLATED_FOUNDATIONS_BROWSER_PASS: guest denial, private JWT, retained answers on outage and authoritative score/progress after retry.');
 
     await loadDocument(origin+"/trader/me");
@@ -937,6 +997,15 @@ async function main(){
             {id:70,number:70,title:'[TradeHQ Agent] Older fixture failures',state:'open',created_at:new Date().toISOString(),html_url:'https://github.com/anugaweerasinghe1-del/trading101/issues/70'}];
           return new Response(JSON.stringify(data),{status:200,headers:{'Content-Type':'application/json'}});
         }
+        if(window.__fixtureProposalSha){
+          if(url.includes('/pulls?'))return Response.json([{number:902,title:'AI proposal: revision fixture',draft:false,
+            created_at:new Date().toISOString(),html_url:'https://github.com/anugaweerasinghe1-del/trading101/pull/902',head:{sha:window.__fixtureProposalSha}}]);
+          if(url.includes('/check-runs?')){
+            if(window.__fixtureHoldProposalChecks)await new Promise(resolve=>{window.__releaseProposalChecks=resolve});
+            return Response.json({total_count:0,check_runs:[]});
+          }
+          if(url.includes('/actions/runs?') && url.includes('head_sha='))return Response.json({total_count:0,workflow_runs:[]});
+        }
         if(window.__fixtureGithubHistory && url.includes('/pulls?'))return new Response('[]',{status:200,headers:{'Content-Type':'application/json'}});
         const run={id:700,status:'completed',conclusion:'success',html_url:'https://github.com/anugaweerasinghe1-del/trading101/actions/runs/700',created_at:new Date().toISOString(),head_sha:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'};
         const data=url.includes('/issues?')?[{id:900,title:'[TradeHQ Agent] Fixture browser failures',state:'open',created_at:new Date().toISOString(),html_url:'https://github.com/anugaweerasinghe1-del/trading101/issues/900'}]
@@ -1277,6 +1346,14 @@ async function main(){
     await devtools.evaluate('window.__fixtureGithubCap=true');await adminClick('Refresh activity');
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Issue history is partial')"),'Capped history disclosed');
     assert.equal(await devtools.evaluate("document.body.textContent.includes('No code requests submitted yet') || document.body.textContent.includes('No code requests returned.')"),false,'Partial empty history is never a verified empty request list');
+    await devtools.evaluate("window.__fixtureProposalSha='a'.repeat(40)");await adminClick('Refresh activity');
+    const proposalText="document.querySelector('a[href$=\"/pull/902/files\"]')?.parentElement.parentElement.textContent";
+    await wait(()=>devtools.evaluate(proposalText+"?.includes('Commit aaaaaaa · Phase 3 validation not reported')"),'First proposal revision validation');
+    await devtools.evaluate("window.__fixtureProposalSha='b'.repeat(40);window.__fixtureHoldProposalChecks=true");await adminClick('Refresh activity');
+    await wait(()=>devtools.evaluate(proposalText+"?.includes('Commit bbbbbbb') && !!window.__releaseProposalChecks"),'New proposal commit while validation is pending');
+    assert.equal(await devtools.evaluate(proposalText+"?.includes('Validation not checked; do not merge')"),true,'Prior validation must not be displayed for a changed PR head');
+    await devtools.evaluate('window.__releaseProposalChecks()');
+    await wait(()=>devtools.evaluate(proposalText+"?.includes('Commit bbbbbbb · Phase 3 validation not reported')"),'New proposal revision validation');
     await devtools.evaluate('window.__fixtureGitHubUnavailable=true');await adminClick('Refresh activity');
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Previous GitHub proposal and validation snapshots were cleared')"),'GitHub page error clears earlier history');
     assert.equal(await devtools.evaluate("document.body.textContent.includes('Request #94')"),false,'Failed refresh cannot retain stale request evidence');

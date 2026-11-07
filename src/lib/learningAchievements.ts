@@ -43,11 +43,17 @@ export function buildPersonalTrophyCabinet(
   let completedCourses = 0;
 
   for (const track of catalog) {
-    if (!track || typeof track.slug !== "string" || known.has(track.slug)) continue;
-    known.add(track.slug);
-    const lessons = [...new Set(track.lessons.map(lesson => lesson.slug).filter(Boolean))];
+    if (!track || typeof track.slug !== "string" || !track.slug.trim() || known.has(track.slug)) continue;
+    // Reject empty/invalid catalog entries before reserving a course slug. A
+    // malformed first duplicate must not hide a later valid published course.
+    const lessons = [...new Set((Array.isArray(track.lessons) ? track.lessons : [])
+      .map(lesson => lesson?.slug)
+      .filter((slug): slug is string => typeof slug === "string" && Boolean(slug.trim())))];
     if (lessons.length === 0) continue;
-    const recorded = progress.tracks[track.slug];
+    known.add(track.slug);
+    // A catalog slug must be an own progress key; never read inherited object
+    // properties such as "__proto__" as learner-controlled progress.
+    const recorded = Object.prototype.hasOwnProperty.call(progress.tracks, track.slug) ? progress.tracks[track.slug] : undefined;
     const done = lessons.filter(slug => recorded?.lessons[slug]?.status === "completed").length;
     const complete = done === lessons.length;
     if (complete) completedCourses++;

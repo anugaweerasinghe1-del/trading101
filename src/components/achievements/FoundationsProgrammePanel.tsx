@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -8,8 +8,9 @@ import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import {
   FOUNDATIONS_COURSES, FOUNDATIONS_FINAL_CASE, FOUNDATIONS_VERSION,
-  type GradedFoundationsAttempt, type getFoundationsEligibility,
+  type CertificateMilestone, type GradedFoundationsAttempt, type getFoundationsEligibility,
 } from "../../../supabase/functions/_shared/foundationsProgramme";
+import type { DownloadableCertificate } from "@/lib/foundationsCertificatePdf";
 import type { publicFoundationsAssessment } from "../../../supabase/functions/_shared/foundationsAssessment";
 
 const checkpointLabels: Record<string, string> = {
@@ -108,6 +109,7 @@ function Programme({ userId, token }: { userId: string; token: string }) {
       {openCheckpoint && <Checkpoint key={openCheckpoint} id={openCheckpoint} userId={userId} token={token}
         refresh={() => void queryClient.invalidateQueries({ queryKey: progressKey })}
         close={() => setOpenCheckpoint(null)} />}
+      <CertificateDownloads userId={userId} token={token} eligible={progress.isError ? [] : progress.data?.milestones ?? []} />
       <TrophyCollection progress={progress.isError ? undefined : progress.data} checking={progress.isPending} />
     </>
   );
@@ -174,6 +176,127 @@ function Checkpoint({ id, userId, token, refresh, close }: {
         </Button>
         {grade.isSuccess && <p role="status">Score {grade.data.points}/{grade.data.possible}. {grade.data.points >= grade.data.possible * 0.8 ? "Passed." : "Keep practising and try again when ready."}</p>}
         {grade.isError && <p role="alert">Your result could not be confirmed. Your selected answers are still here.</p>}
+      </form>}
+    </Card>
+  );
+}
+
+const certificateTitles = {
+  "first-course": "First Course Certificate",
+  "core-studies": "Core Studies Certificate",
+  foundations: "Foundations Completion Certificate",
+} satisfies Record<CertificateMilestone, string>;
+
+function CertificateDownloads({ userId, token, eligible }: {
+  userId: string; token: string; eligible: CertificateMilestone[];
+}) {
+  const [selected, select] = useState<CertificateMilestone | null>(null);
+  if (!eligible.length) return null;
+  return (
+    <section className="space-y-3" aria-labelledby="foundation-certificates-heading">
+      <h3 id="foundation-certificates-heading" className="text-lg font-semibold">Your private certificates</h3>
+      <div className="flex flex-wrap gap-2">
+        {eligible.map(milestone => <Button key={milestone} variant="outline" className="h-auto whitespace-normal"
+          aria-pressed={selected === milestone} onClick={() => select(milestone)}>{certificateTitles[milestone]}</Button>)}
+      </div>
+      {selected && <CertificateDownload key={selected} userId={userId} token={token} milestone={selected} />}
+    </section>
+  );
+}
+
+function CertificateDownload({ userId, token, milestone }: {
+  userId: string; token: string; milestone: CertificateMilestone;
+}) {
+  const [name, setName] = useState("");
+  const [renderError, setRenderError] = useState(false);
+  const [downloading, setDownloading] = useState(false);
+  const active = useRef(false);
+  const submitting = useRef(false);
+  const downloadPending = useRef(false);
+  useEffect(() => {
+    active.current = true;
+    return () => { active.current = false; };
+  }, []);
+  const queryClient = useQueryClient();
+  const key = ["foundations-certificate", userId, milestone];
+  type CertificateResponse = { status: "available"; certificate: DownloadableCertificate } | { status: "not_issued" };
+  const query = useQuery({
+    queryKey: key, gcTime: 0, retry: false,
+    queryFn: async ({ signal }) => {
+      const result = await request<CertificateResponse>(token, { action: "certificate", milestone }, signal);
+      if (result.status === "not_issued") return null;
+      if (result.status !== "available" || result.certificate?.milestone !== milestone) {
+        throw Error("Certificate unavailable.");
+      }
+      return result.certificate;
+    },
+  });
+  const issue = useMutation({
+    mutationFn: async (recipientName: string) => {
+      const result = await request<CertificateResponse>(token, { milestone, recipientName });
+      if (result.status !== "available" || result.certificate?.milestone !== milestone) {
+        throw Error("Certificate could not be confirmed.");
+      }
+      return result.certificate;
+    },
+    onSuccess: certificate => {
+      if (active.current) queryClient.setQueryData(key, certificate);
+    },
+    onSettled: () => { submitting.current = false; },
+  });
+  const download = async (certificate: DownloadableCertificate) => {
+    if (downloadPending.current) return;
+    downloadPending.current = true;
+    setDownloading(true);
+    setRenderError(false);
+    try {
+      const { renderFoundationsCertificatePdf } = await import("@/lib/foundationsCertificatePdf");
+      const file = await renderFoundationsCertificatePdf(certificate);
+      if (!active.current) return;
+      const url = URL.createObjectURL(file);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "The-Trade-HQ-" + milestone + ".pdf";
+      document.body.append(link);
+      link.click();
+      link.remove();
+      window.setTimeout(() => URL.revokeObjectURL(url), 30000);
+    } catch {
+      if (active.current) setRenderError(true);
+    } finally {
+      downloadPending.current = false;
+      if (active.current) setDownloading(false);
+    }
+  };
+
+  return (
+    <Card className="space-y-3 p-4">
+      {query.isPending && <p role="status">Checking your private certificate…</p>}
+      {query.isError && <p role="status">Your certificate is temporarily unavailable.{" "}
+        <button className="underline" onClick={() => void query.refetch()}>Retry</button></p>}
+      {query.isSuccess && query.data && <>
+        <p className="text-sm">Issued to <strong>{query.data.recipientName}</strong></p>
+        <Button disabled={downloading} onClick={() => void download(query.data!)}>
+          {downloading ? "Preparing PDF…" : "Download PDF"}
+        </Button>
+        {renderError && <p role="alert">Your certificate is saved. The PDF could not be rendered. Please retry.</p>}
+      </>}
+      {query.isSuccess && !query.data && <form className="space-y-3" onSubmit={event => {
+        event.preventDefault();
+        if (submitting.current || !name.trim()) return;
+        submitting.current = true;
+        issue.mutate(name.trim());
+      }}>
+        <label className="block text-sm font-medium">Recipient name
+          <input required value={name} maxLength={150} autoComplete="name" disabled={issue.isPending}
+            onChange={event => setName(event.target.value)} className="mt-1 block w-full rounded-md border bg-background px-3 py-2" />
+        </label>
+        <p className="text-sm text-muted-foreground">
+          {name.trim() ? <>Confirm the name as it should appear on the certificate. <strong>{name.trim()}</strong></> :
+            "Enter and review the name to be printed. This certificate is private by default."}
+        </p>
+        <Button type="submit" disabled={issue.isPending || !name.trim()}>{issue.isPending ? "Issuing…" : "Confirm name and issue"}</Button>
+        {issue.isError && <p role="alert">Issuance could not be confirmed. Your name is still here. You can retry.</p>}
       </form>}
     </Card>
   );

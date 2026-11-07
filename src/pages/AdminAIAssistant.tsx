@@ -14,7 +14,7 @@ import { isAdminRequestCancelled } from '@/lib/adminRequestScope';
 
 type GithubIssue = { number: number; title: string; html_url: string; created_at: string; state: string; user?: { login: string }; pull_request?: unknown };
 type GithubPr = { number: number; title: string; html_url: string; draft: boolean; created_at: string; head: { sha: string } };
-type PrChecks = { summary: string; failed: boolean; link: string };
+type PrChecks = { sha: string; summary: string; failed: boolean; link: string };
 const repo = "anugaweerasinghe1-del/trading101";
 const owner = "anugaweerasinghe1-del";
 const legacyOwner = "anugaweerasinghe-wq";
@@ -82,13 +82,13 @@ export default function AdminAIAssistant() {
           throw new Error("Incomplete release evidence; verify all results on GitHub");
         }
         const evidence = summarizeReleaseEvidence(pr.head.sha, result.check_runs, runResult.workflow_runs);
-        return { number: pr.number, ...evidence, link: pr.html_url + "/checks" };
+        return { number: pr.number, sha: pr.head.sha, ...evidence, link: pr.html_url + "/checks" };
       }));
       guard.assert();
       const next: Record<number, PrChecks> = {};
       summaries.forEach((result, index) => {
         if (result.status === "fulfilled") next[result.value.number] = result.value;
-        else next[proposals[index].number] = { summary: "Validation unavailable; do not merge", failed: true, link: proposals[index].html_url + "/checks" };
+        else next[proposals[index].number] = { sha: proposals[index].head.sha, summary: "Validation unavailable; do not merge", failed: true, link: proposals[index].html_url + "/checks" };
       });
       setChecks(next);
       if (summaries.some(x => x.status === "rejected")) warnings.push("Some PR check results could not be fetched; verify directly on GitHub.");
@@ -153,12 +153,15 @@ export default function AdminAIAssistant() {
           </details>
           <section className={borderCard+" space-y-4"}>
             <div className="flex items-center gap-3"><GitPullRequest className="w-5 h-5 text-primary"/><h2 className="font-semibold">Pending AI code proposals</h2></div>
-            {prs.length === 0 ? <p className="text-sm text-muted-foreground">{githubError ? "Approval queue cannot be verified." : "No open AI pull requests returned."}</p> : prs.map(pr => <div key={pr.number} className="rounded-xl border border-border p-3 text-sm space-y-2">
-              <strong>#{pr.number} {pr.title}</strong>
-              <p className="text-xs text-muted-foreground">{pr.draft ? "DRAFT — owner review required" : "Open — owner review still required"} · Commit {pr.head.sha.slice(0, 7)} · {checks[pr.number]?.summary || "Validation not checked; do not merge"} · {new Date(pr.created_at).toLocaleDateString()}</p>
-              <div className="flex flex-wrap gap-4"><a href={pr.html_url + "/files"} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Review exact diff ↗</a><a href={checks[pr.number]?.link || pr.html_url + "/checks"} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Inspect tests ↗</a><a href={pr.html_url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Approve or close on GitHub ↗</a></div>
-              {checks[pr.number]?.failed && <p className="text-xs text-amber-400">Do not merge until CI and the actual Cloudflare Pages deployment are verified. Inspect failing or missing checks.</p>}
-            </div>)}
+            {prs.length === 0 ? <p className="text-sm text-muted-foreground">{githubError ? "Approval queue cannot be verified." : "No open AI pull requests returned."}</p> : prs.map(pr => {
+              const evidence = checks[pr.number]?.sha === pr.head.sha ? checks[pr.number] : undefined;
+              return <div key={pr.number} className="rounded-xl border border-border p-3 text-sm space-y-2">
+                <strong>#{pr.number} {pr.title}</strong>
+                <p className="text-xs text-muted-foreground">{pr.draft ? "DRAFT — owner review required" : "Open — owner review still required"} · Commit {pr.head.sha.slice(0, 7)} · {evidence?.summary || "Validation not checked; do not merge"} · {new Date(pr.created_at).toLocaleDateString()}</p>
+                <div className="flex flex-wrap gap-4"><a href={pr.html_url + "/files"} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Review exact diff ↗</a><a href={evidence?.link || pr.html_url + "/checks"} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Inspect tests ↗</a><a href={pr.html_url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Approve or close on GitHub ↗</a></div>
+                {evidence?.failed && <p className="text-xs text-amber-400">Do not merge until CI and the actual Cloudflare Pages deployment are verified. Inspect failing or missing checks.</p>}
+              </div>;
+            })}
             <h3 className="font-semibold text-sm pt-2">Previous requests</h3>
             {codeIssues.length === 0 ? <p className="text-sm text-muted-foreground">{githubError ? "Request history cannot be verified; view it on GitHub." : "No code requests returned."}</p> : codeIssues.slice(0,8).map(issue=><a key={issue.number} href={issue.html_url} target="_blank" rel="noopener noreferrer" className="block rounded-xl border border-border p-3 text-sm hover:border-primary/40">Request #{issue.number} · {issue.state}{issue.user?.login === legacyOwner ? " · Legacy owner (historical only)" : ""}<span className="block text-xs text-muted-foreground mt-1">Open GitHub issue for agent replies and test results ↗</span></a>)}
           </section>
