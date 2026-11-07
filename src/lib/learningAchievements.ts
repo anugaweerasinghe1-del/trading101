@@ -53,7 +53,7 @@ export function buildPersonalTrophyCabinet(
     known.add(track.slug);
     // A catalog slug must be an own progress key; never read inherited object
     // properties such as "__proto__" as learner-controlled progress.
-    const recorded = Object.hasOwn(progress.tracks, track.slug) ? progress.tracks[track.slug] : undefined;
+    const recorded = Object.prototype.hasOwnProperty.call(progress.tracks, track.slug) ? progress.tracks[track.slug] : undefined;
     const done = lessons.filter(slug => recorded?.lessons[slug]?.status === "completed").length;
     const complete = done === lessons.length;
     if (complete) completedCourses++;
