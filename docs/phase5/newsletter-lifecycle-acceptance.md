@@ -44,3 +44,8 @@ Cases cover every returned contact status and denied master-key reads, with no
 mail/provider request. No send, approval, recipient selection, quota, owner gate
 or private-contact mutation behavior changes. Deploy only the reviewed dispatch
 bundle after exact-head CI/merge, then verify source parity and safe auth denial.
+
+The compiled Chromium fixture also covers HTTP503 audience recovery: the old
+confirmed total and its successful refresh timestamp remain intact with a visible
+error, and a later successful read updates the total. No editorial mutation or
+email dispatch occurs while refreshing or recovering counts.

@@ -90,7 +90,7 @@ async function main(){
   let dailyGenerationRequests=0;
   let dailyDrafts=[],dailyEditorialWrites=0;
   let newsletterRevision=1,newsletterReads=0,newsletterWrites=0,newsletterConfirmed=1;
-  let newsletterEditorialFixture=false,newsletterPreviewCalls=0,newsletterPublishRequests=0;
+  let newsletterEditorialFixture=false,newsletterPreviewCalls=0,newsletterPublishRequests=0,newsletterAudienceUnavailable=false;
   let newsletterEdition={id:'fixture-newsletter',week_of:'2026-11-02',status:'draft',revision:2,subject:'Saved fixture subject',preheader:'Saved preview line',body_markdown:'Saved fixture text',reviewed_by:null,reviewed_at:null,updated_at:new Date().toISOString(),ai_model:null,generator_error:null};
   const newsletterPreview={subject:'Preview fixture subject',preheader:'A source-backed fixture preview',body_markdown:'## Fixture lesson\n<img src=x onerror=window.__newsletterHtmlExecuted=true>\nHypothetical worksheet: 1% of $100 equals $1.'};
   let dashboardHold=false,dashboardHeldRequests=0;
@@ -182,6 +182,7 @@ async function main(){
         if(req.headers['x-admin-key']!==ADMIN_FIXTURE_KEY)return json(401,{error:'fixture_admin_denied'});
         let content='';req.on('data',chunk=>{content+=chunk;});req.on('end',()=>{
           const body=JSON.parse(content);
+          if(route.endsWith('newsletter-dispatch') && body.action==='status' && newsletterAudienceUnavailable)return json(503,{error:'Fixture exact-count outage'});
           if(route.endsWith('newsletter-dispatch') && body.action==='status')return json(200,{data:{counts:{confirmed:newsletterConfirmed,pending:0,unsubscribed:0,bounced:0},subscribers:[],recentDeliveries:[{edition_id:'fixture-newsletter',status:'accepted',provider_id:'private-provider-id',created_at:new Date().toISOString()},{edition_id:'fixture-newsletter',status:'delivered',provider_id:'other-private-id',created_at:new Date().toISOString()},{edition_id:'fixture-newsletter',status:'unknown',provider_id:null,created_at:new Date().toISOString()}],webhookConfigured:true,limitInfo:'Isolated fixture only'}});
           if(route.endsWith('newsletter-dispatch')){
             if(body.action==='publish')newsletterPublishRequests++;
@@ -959,6 +960,16 @@ async function main(){
     await devtools.send('Emulation.setDeviceMetricsOverride',{width:320,height:900,deviceScaleFactor:1,mobile:true});
     assert.equal(await devtools.evaluate("document.documentElement.scrollWidth <= innerWidth+1"),true,'Newsletter desk fits a 320px viewport');
     await devtools.send('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false});
+    const audienceStamp=await devtools.evaluate("[...document.querySelectorAll('p')].find(p=>p.textContent.startsWith('Subscriber and delivery data last refreshed:')).textContent");
+    newsletterAudienceUnavailable=true;await adminClick('Refresh subscribers');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Subscriber delivery service unavailable')"),'Exact-count outage disclosed by Newsletter UI');
+    assert.equal(await devtools.evaluate("[...document.querySelectorAll('p')].some(p=>p.textContent==='Confirmed' && p.parentElement.textContent.includes('7'))"),true,'Unavailable counts must not erase the previous confirmed total or display zero');
+    assert.equal(await devtools.evaluate("[...document.querySelectorAll('p')].find(p=>p.textContent.startsWith('Subscriber and delivery data last refreshed:')).textContent"),audienceStamp,'Failed counts must not advance successful audience refresh time');
+    assert.equal(newsletterWrites,0,'Count outage must not cause any newsletter mutation');
+    newsletterAudienceUnavailable=false;newsletterConfirmed=9;await adminClick('Refresh subscribers');
+    await wait(()=>devtools.evaluate("[...document.querySelectorAll('p')].some(p=>p.textContent==='Confirmed' && p.parentElement.textContent.includes('9'))"),'Authoritative subscriber total recovers after count outage');
+    assert.equal(newsletterPublishRequests,0,'Count recovery never dispatches email');
+    console.log('ISOLATED_NEWSLETTER_COUNT_RECOVERY_PASS: HTTP503 preserves last confirmed audience/time, reports unavailable, successful retry updates totals; zero writes or emails.');
     newsletterEditorialFixture=true;
     await devtools.evaluate("window.confirm=()=>true");await adminClick('Refresh');
     await wait(()=>devtools.evaluate("document.querySelector('#newsletter-subject').value==='Saved fixture subject'"),'Newsletter saved revision reopened');
