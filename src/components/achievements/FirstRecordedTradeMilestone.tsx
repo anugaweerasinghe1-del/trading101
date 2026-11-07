@@ -15,8 +15,7 @@ import { hasOwnServerRecordedPracticeTrade } from "@/lib/serverPracticeAchieveme
 const privateTradeReader = supabase as unknown as SupabaseClient;
 const keyFor = (id: string | null) => ["private-first-recorded-practice-trade", id] as const;
 
-/** A *private* account-recorded milestone, not a badge minted or shared by the browser. */
-export function FirstRecordedTradeMilestone() {
+export function useFirstRecordedPracticeTrade() {
   const { user, loading: authLoading } = useAuth();
   const userId = user?.id ?? null;
   const queryClient = useQueryClient();
@@ -56,6 +55,12 @@ export function FirstRecordedTradeMilestone() {
     return () => window.removeEventListener("tradehq:portfolio-updated", refresh);
   }, [queryClient, userId]);
 
+  return { userId, authLoading, record };
+}
+
+/** A private account-recorded milestone backed by the protected ledger. */
+export function FirstRecordedTradeMilestone() {
+  const { userId, authLoading, record } = useFirstRecordedPracticeTrade();
   const unlocked = Boolean(userId && !authLoading && !record.isError && record.data === true);
   const pending = authLoading || Boolean(userId && record.isPending);
   const description = pending

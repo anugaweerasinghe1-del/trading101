@@ -6,7 +6,7 @@
 import assert from "node:assert/strict";
 import { createServer } from "node:http";
 import { spawn, spawnSync } from "node:child_process";
-import { mkdtempSync, readFileSync, existsSync, rmSync, statSync } from "node:fs";
+import { mkdtempSync, mkdirSync, copyFileSync, readFileSync, existsSync, rmSync, statSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve, extname, sep } from "node:path";
 import { setTimeout as sleep } from "node:timers/promises";
@@ -82,6 +82,9 @@ async function main(){
   let showPublications=false,publicationReads=0;
   let learningWrites=0, learningReads=0, savedLearning=null;
   let privateTradeReads=0, privateTradeRejected=0;
+  let foundationsReads=0, foundationsGradeCalls=0, foundationsPassed=false, certificateIssues=0;
+  let issuedCertificate=null;
+  const foundationsVersion="foundations-v1";
   let holdLearnModule=true;
   const releaseLearnModules=[];
   const rejectedWrites=[];
@@ -124,6 +127,49 @@ async function main(){
         '/functions/v1/admin-courses','/functions/v1/admin-reviews','/functions/v1/newsletter-dispatch',
         '/functions/v1/newsletter-editor','/functions/v1/admin-agent-chat',
       ].includes(route)) return json(503,{error:'Fixture dashboard feeds unavailable'});
+      if(route==='/functions/v1/foundations-certificate'){
+        assert.equal(req.method,'POST');
+        assert.equal(req.headers.authorization,'Bearer '+JWT,'Foundations reads and grades use the account JWT');
+        let text='';req.on('data',chunk=>{text+=chunk});req.on('end',()=>{
+          const input=JSON.parse(text);
+          foundationsReads++;
+          if(input.action==='progress')return json(200,{status:'available',programmeVersion:foundationsVersion,
+            completedCourses:foundationsPassed?['market-and-orders']:[],finalCasePassed:false,perfectSizing:false,milestones:foundationsPassed?['first-course','core-studies','foundations']:[],passedCheckpoints:foundationsPassed?['markets']:[]});
+          if(input.action==='assessment'){
+            assert.deepEqual(input,{action:'assessment',programmeVersion:foundationsVersion,assessmentId:'markets'});
+            return json(200,{status:'available',assessment:{programmeVersion:foundationsVersion,assessmentId:'markets',
+              title:'Fixture checkpoint',questions:Array.from({length:5},(_,i)=>({prompt:'Practice fixture '+i,choices:['Choice A','Choice B']}))}});
+          }
+          if(input.action==='certificate') {
+            if(input.milestone==='first-course')return json(200,issuedCertificate?{status:'available',certificate:issuedCertificate}:{status:'not_issued'});
+            assert.ok(['core-studies','foundations'].includes(input.milestone));
+            return json(200,{status:'available',certificate:{
+              id:'8bc992ee-50ba-44b3-ab63-926aaea45b21',issuedAt:'2026-11-08T00:30:00Z',
+              nameRevision:0,recipientName:input.milestone==='core-studies'?'மாயா பெரேரா':'Alexandria Catherine Elizabeth Francesca Isabella Johanna Marguerite Penelope Rose Perera',
+              milestone:input.milestone,programmeVersion:foundationsVersion,templateVersion:'trade-hq-white-teal-v1',
+            }});
+          }
+          if(input.action==='correct_name') {
+            assert.equal(input.milestone,'first-course');
+            assert.equal(input.expectedRevision,issuedCertificate.nameRevision);
+            issuedCertificate={...issuedCertificate,recipientName:input.recipientName,nameRevision:1};
+            return json(200,{status:'available',certificate:issuedCertificate});
+          }
+          if(input.milestone==='first-course') {
+            assert.equal(input.recipientName,'මායා පෙරේරා');
+            certificateIssues++;
+            issuedCertificate={id:'7bc992ee-50ba-44b3-ab63-926aaea45b21',issuedAt:'2026-11-08T00:30:00Z',
+              recipientName:input.recipientName,nameRevision:0,milestone:input.milestone,programmeVersion:foundationsVersion,
+              templateVersion:'trade-hq-white-teal-v1'};
+            return json(200,{status:'available',certificate:issuedCertificate});
+          }
+          assert.deepEqual(input,{action:'grade',programmeVersion:foundationsVersion,assessmentId:'markets',answers:[0,0,0,0,0]});
+          foundationsGradeCalls++;
+          if(foundationsGradeCalls===1)return json(503,{status:'unavailable'});
+          foundationsPassed=true;
+          return json(200,{status:'graded',grade:{programmeVersion:foundationsVersion,assessmentId:'markets',points:5,possible:5}});
+        });return;
+      }
       if(route==='/functions/v1/daily-practice-test'){
         assert.equal(req.method,'POST');assert.equal(req.headers['x-admin-key'],ADMIN_FIXTURE_KEY);
         assert.equal(req.headers.authorization,'Bearer '+JWT,'Private test requires the genuine fixture owner session');
@@ -517,6 +563,7 @@ async function main(){
     await wait(()=>devtools.evaluate("document.querySelector('main h1')?.textContent==='My Trophy Cabinet'"),"guest private Trophy Cabinet");
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Sign-in required')"),"guest trophy cannot read trade evidence");
     assert.equal(privateTradeReads,0,"Guest must not query the protected trade ledger");
+    assert.equal(foundationsReads,0,"Guest must not request Foundations evidence");
     await loadDocument(origin+"/auth");
     await wait(()=>devtools.evaluate("!!(document.querySelector('input[type=email]')&&document.querySelector('input[type=password]'))"),"real TradeHQ login form");
     const submit=(mail,pass)=>{
@@ -543,6 +590,75 @@ async function main(){
     await wait(()=>devtools.evaluate("document.querySelector('section[aria-labelledby=recorded-practice-heading] [role=status]')?.textContent.includes('Account-recorded')"),"server-recorded milestone proven");
     assert.ok(privateTradeReads>=1,"Signed-in owner must fetch account-bound evidence");
     assert.equal(privateTradeRejected,0,"No unauthorized or unscoped trade reads allowed");
+    const programme="document.querySelector('section[aria-labelledby=foundations-programme-title]')";
+    const programmeClick=label=>devtools.evaluate("[..."+programme+".querySelectorAll('button')].find(e=>e.textContent.trim()==="+JSON.stringify(label)+")?.click()");
+    const collection="document.querySelector('section[aria-labelledby=trophy-collection-title]')";
+    await wait(()=>devtools.evaluate(collection+"?.querySelectorAll('svg use').length===20"),'Twenty distinct trophy illustrations rendered');
+    assert.equal(await devtools.evaluate("new Set([..."+collection+".querySelectorAll('svg use')].map(x=>x.getAttribute('href'))).size"),20);
+    await wait(()=>devtools.evaluate("[..."+collection+".querySelectorAll('svg')].every(icon=>icon.getBBox().width>0)"),'All approved trophy SVG silhouettes loaded');
+    assert.equal(await devtools.evaluate(collection+".textContent.includes('Evidence unavailable')"),true,'Unwired evidence must not display false zero progress');
+    await programmeClick('Markets and instruments');
+    await wait(()=>devtools.evaluate(programme+".querySelectorAll('fieldset').length===5"),'Private Foundations checkpoint ready');
+    await devtools.evaluate(programme+".querySelectorAll('fieldset').forEach(el=>el.querySelector('input').click())");
+    await programmeClick('Submit answers');
+    await wait(()=>devtools.evaluate(programme+".textContent.includes('Your result could not be confirmed')"),'Foundations grade outage shown');
+    assert.equal(await devtools.evaluate(programme+".querySelectorAll('input:checked').length"),5,'Keep answers after score outage');
+    await programmeClick('Submit answers');
+    await wait(()=>devtools.evaluate(programme+".textContent.includes('Score 5/5. Passed.')"),'Server-graded score rendered');
+    await wait(()=>devtools.evaluate(programme+".textContent.includes('Markets and instruments · Passed')"),'Server progress refreshes after grading');
+    assert.equal(foundationsGradeCalls,2,'One failed deliberate submission and one deliberate retry');
+    const downloadPath=join(temp,'certificate-download');
+    mkdirSync(downloadPath);
+    await devtools.send('Page.setDownloadBehavior',{behavior:'allow',downloadPath});
+    await programmeClick('First Course Certificate');
+    const nameField=programme+".querySelector('input[autocomplete=name]')";
+    await wait(()=>devtools.evaluate("!!"+nameField),'Certificate recipient name review');
+    await devtools.evaluate("(()=>{const input="+nameField+";Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(input,'මායා පෙරේරා');input.dispatchEvent(new Event('input',{bubbles:true}));})()");
+    await wait(()=>devtools.evaluate(programme+".textContent.includes('Confirm the name as it should appear')"),'Certificate shows confirmed name before issuance');
+    await programmeClick('Confirm name and issue');
+    await wait(()=>devtools.evaluate(programme+".textContent.includes('Issued to මායා පෙරේරා')"),'Authoritative private issuance receipt');
+    await programmeClick('Download PDF');
+    const pdfPath=join(downloadPath,'The-Trade-HQ-first-course.pdf');
+    await wait(()=>existsSync(pdfPath),'Generated one-page certificate downloaded');
+    const pdf=readFileSync(pdfPath);
+    assert.equal(pdf.subarray(0,8).toString(),'%PDF-1.4');
+    assert.ok(pdf.length<2000000 && pdf.length>50000,'Certificate PDF has bounded and meaningful file size');
+    assert.ok(pdf.subarray(-100).toString().endsWith('%%EOF\n'));
+    if(process.env.TRADEHQ_CERTIFICATE_FIXTURE_PATH)copyFileSync(pdfPath,process.env.TRADEHQ_CERTIFICATE_FIXTURE_PATH);
+    rmSync(pdfPath);
+    await loadDocument(origin+"/achievements");
+    await wait(()=>devtools.evaluate(programme+".textContent.includes('First Course Certificate')"),'Certificate eligibility restored');
+    await programmeClick('First Course Certificate');
+    await wait(()=>devtools.evaluate(programme+".textContent.includes('Issued to මායා පෙරේරා')"),'Same persisted issuance after reload');
+    await devtools.send('Page.setDownloadBehavior',{behavior:'allow',downloadPath});
+    await programmeClick('Download PDF');
+    await wait(()=>existsSync(pdfPath),'Repeat certificate download');
+    assert.deepEqual(readFileSync(pdfPath),pdf,'Repeat downloads in the same browser produce identical PDF bytes');
+    assert.equal(certificateIssues,1,'Repeat download reads the certificate and never issues twice');
+    await programmeClick('Correct recipient name');
+    await wait(()=>devtools.evaluate("!!"+nameField),'Certificate correction name field');
+    await devtools.evaluate("(()=>{const input="+nameField+";Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(input,'Maya Corrected');input.dispatchEvent(new Event('input',{bubbles:true}));})()");
+    await programmeClick('Save corrected name');
+    await wait(()=>devtools.evaluate(programme+".textContent.includes('Issued to Maya Corrected')"),'Certificate correction confirmed');
+    assert.equal(issuedCertificate.id,'7bc992ee-50ba-44b3-ab63-926aaea45b21');
+    assert.equal(certificateIssues,1,'Name correction does not reissue a certificate');
+
+    await devtools.send('Emulation.setDeviceMetricsOverride',{width:320,height:860,deviceScaleFactor:1,mobile:true});
+    for(const [label,slug] of [['Core Studies Certificate','core-studies'],['Foundations Completion Certificate','foundations']]){
+      await programmeClick(label);
+      await wait(()=>devtools.evaluate("[..."+programme+".querySelectorAll('button')].some(e=>e.textContent.trim()==='Download PDF')"),label+' ready on mobile viewport');
+      await programmeClick('Download PDF');
+      const savedPath=join(downloadPath,'The-Trade-HQ-'+slug+'.pdf');
+      await wait(()=>existsSync(savedPath),label+' downloaded');
+      assert.equal(readFileSync(savedPath).subarray(0,8).toString(),'%PDF-1.4');
+      if(process.env.TRADEHQ_CERTIFICATE_FIXTURE_PATH)copyFileSync(savedPath,process.env.TRADEHQ_CERTIFICATE_FIXTURE_PATH.replace(/\.pdf$/,'-'+slug+'.pdf'));
+    }
+    await devtools.send('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false});
+
+    console.log('ISOLATED_CERTIFICATE_PDF_PASS: explicit Sinhala name review, private issuance, three PDFs, Tamil and long names on a narrow viewport, stable repeat bytes and one issuance.');
+
+    console.log('ISOLATED_FOUNDATIONS_BROWSER_PASS: guest denial, private JWT, retained answers on outage and authoritative score/progress after retry.');
+
     await loadDocument(origin+"/trader/me");
     await wait(()=>devtools.evaluate("document.querySelector('main h1')?.textContent.includes('My TradeHQ profile')"),"profile after verified milestone");
     await devtools.evaluate("(()=>{const p=JSON.parse(localStorage.getItem('tradehq_portfolio'));p.trades[0].journal={notes:'PRIVATE ACCOUNT FIXTURE',reasoning:'private',emotions:[]};localStorage.setItem('tradehq_portfolio',JSON.stringify(p));})()");
@@ -562,9 +678,13 @@ async function main(){
     assert.equal(signedOutPortfolio.cash,guestSold.cash);
     assert.ok(!JSON.stringify(signedOutPortfolio).includes('PRIVATE ACCOUNT FIXTURE'),'private account journal leaked into guest practice');
     const readsBeforeSignedOutCabinet=privateTradeReads;
+    const foundationsBeforeSignedOutCabinet=foundationsReads;
     await loadDocument(origin+"/achievements");
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Sign-in required')"),"signed-out milestone hidden");
     assert.equal(privateTradeReads,readsBeforeSignedOutCabinet,"Signed-out cabinet must not query the protected trade ledger");
+    assert.equal(foundationsReads,foundationsBeforeSignedOutCabinet,"Signed-out cabinet must not read account assessment evidence");
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('Markets and instruments · Passed')"),false);
+
     await loadDocument();
     await wait(()=>devtools.evaluate("!!document.querySelector('a[href=\"/auth\"]') && !document.querySelector('[aria-label=\"Account menu\"]')"),"no session resurrection after reload");
     // Find the actual configured SDK key; seed an expired test session and

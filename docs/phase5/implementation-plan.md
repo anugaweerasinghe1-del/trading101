@@ -516,3 +516,33 @@ Issues remain open until their real acceptance gaps are resolved.
 - #379 exact-head CI passed and the commit merged as
   `5d47f3db2e960e52d1e2dfc2de41008015347612`. Native rollout verification
   is recorded separately on the PR.
+
+### 7 Nov — rewards draft and protected releases
+
+- #379 merged as `5d47f3db2e960e52d1e2dfc2de41008015347612`.
+  [Native production evidence](https://github.com/anugaweerasinghe1-del/trading101/actions/runs/42349522498/job/128336647563)
+  confirms that exact SHA on Cloudflare `06d04b03-d1d5-452d-8fff-8cda2009acac`
+  and Vercel `dpl_CAcntijiceazf8peWqTNaHSF68Ch`. The live AI Desk
+  hydrated with its admin gate. The held-response regression passed in isolation.
+- #370 merged as `82a3f56269eecc84682be8dea20fe588b90c9475` after required
+  checks. [Native production proof](https://github.com/anugaweerasinghe1-del/trading101/actions/runs/42350506756/job/128339839085)
+  confirmed the exact SHA on Cloudflare and Vercel. The live Trophy Cabinet
+  hydrated its private progress, protected trade activity and course badges. #380 tracks the TypeScript ES2020 compatibility follow-up for its
+  own-key check. The local application TypeScript and catalog checks passed.
+- #378 renders all 20 approved trophy illustrations. Ten have connected
+  evidence (nine Foundations criteria and First Practice Trade); the other
+  ten show unavailable and require authoritative evidence producers. Durable
+  trophies and opt-in flair, pins, sharing and withdrawal are still open.
+- #378 implements a private, account-scoped assessment bank and grading,
+  service-only score and issuance records, name confirmation, and three
+  PDFs using the approved artwork. Isolated coverage includes account scope,
+  forged input, outage/retry, duplicate issuance, a 200-account SQL fixture,
+  and Chromium PDF downloads on desktop and a 320px viewport. Hosted schema,
+  assessment content and certificate issuance remain unreleased. Editorial
+  review and seeding, correction history and public verification consent and
+  withdrawal remain open.
+
+- The rewards draft now preserves the original certificate while appending private
+  name revisions. New downloads use the latest name and keep the ID and date.
+  Disposable SQL and handler fixtures cover account isolation, stale revisions
+  and retry without duplicate changes.
