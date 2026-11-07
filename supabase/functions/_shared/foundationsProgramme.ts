@@ -20,6 +20,8 @@ export type GradedFoundationsAttempt = Readonly<{
   possible: number;
 }>;
 
+const knownCheckpoints = new Set<string>(FOUNDATIONS_COURSES.flatMap(course => [...course.checkpoints]));
+
 export function getFoundationsEligibility(attempts: readonly GradedFoundationsAttempt[]) {
   const passedCheckpoints = new Set<string>();
   let finalCasePassed = false;
@@ -32,7 +34,7 @@ export function getFoundationsEligibility(attempts: readonly GradedFoundationsAt
 
     if (attempt.assessmentId === FOUNDATIONS_FINAL_CASE) {
       if (attempt.possible === 10 && attempt.points >= 8) finalCasePassed = true;
-    } else if (attempt.possible === 5 && attempt.points >= 4) {
+    } else if (knownCheckpoints.has(attempt.assessmentId) && attempt.possible === 5 && attempt.points >= 4) {
       passedCheckpoints.add(attempt.assessmentId);
       if (attempt.assessmentId === "sizing" && attempt.points === 5) perfectSizing = true;
     }
