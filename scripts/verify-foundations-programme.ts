@@ -16,6 +16,11 @@ const finalCase = score(FOUNDATIONS_FINAL_CASE, 8, 10);
 
 assert.deepEqual(getFoundationsEligibility([]).milestones, []);
 assert.deepEqual(getFoundationsEligibility([score("markets")]).milestones, []);
+// Unknown or retired identifiers must not inflate private trophy totals, even if
+// a stored score otherwise has the expected version, range and threshold.
+assert.deepEqual(getFoundationsEligibility([score("not-a-checkpoint"), score("__proto__")]).passedCheckpoints, []);
+assert.deepEqual(getFoundationsEligibility([...checkpoints, score("future-checkpoint")]).passedCheckpoints.sort(),
+  checkpoints.map(item => item.assessmentId).sort());
 assert.deepEqual(getFoundationsEligibility(checkpoints.slice(0, 2)).milestones, ["first-course"]);
 assert.deepEqual(getFoundationsEligibility([score("quotes"), score("quotes"), score("quotes")]).milestones, ["first-course"]);
 assert.deepEqual(getFoundationsEligibility(checkpoints.slice(0, -1)).milestones, ["first-course", "core-studies"]);
