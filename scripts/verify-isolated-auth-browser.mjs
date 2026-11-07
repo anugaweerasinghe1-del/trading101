@@ -923,10 +923,14 @@ async function main(){
     await wait(()=>devtools.evaluate(inbox+".textContent.includes('Newsletter review queue unavailable')"),'Unavailable Newsletter desk cannot masquerade as an empty queue');
     assert.equal(await devtools.evaluate(inbox+".textContent.includes('2 course drafts awaiting review')"),true,'Course review remains accessible during a Newsletter outage');
     newsletterQueueUnavailable=false;
-    dashboardSettingsUnavailable=true;await refreshInbox();
-    await wait(()=>devtools.evaluate("document.body.textContent.includes('Previous data may be stale')"),'Failed refresh discloses stale snapshot');
+    dashboardSettingsUnavailable=true;dailyStatus={...dailyStatus,attempts:3};await refreshInbox();
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Course generation status is temporarily unavailable.') && "+inbox+".textContent.includes('three-attempt limit')"),'Failed Course settings do not prevent fresh Daily status');
+    assert.equal(await devtools.evaluate(inbox+".textContent.includes('1 course generation failure')"),false,'Old Course generation status is cleared');
+    assert.equal(await devtools.evaluate(inbox+".textContent.includes('1 newsletter draft awaiting review')"),true,'Newsletter recovers independently from its prior outage');
     assert.equal(dailyEditorialWrites,0);assert.equal(dailyGenerationRequests,1);assert.ok(dashboardMetadataRequests>=6);
-    dashboardSettingsUnavailable=false;dashboardHold=true;await refreshInbox();
+    dashboardSettingsUnavailable=false;await refreshInbox();
+    await wait(()=>devtools.evaluate(inbox+".textContent.includes('1 course generation failure')"),'Course settings recover on the next refresh');
+    dashboardHold=true;await refreshInbox();
     await wait(()=>dashboardHeldRequests>0,'Held dashboard request before lock');
     await adminClick('Lock');
     await sleep(800);
@@ -1351,7 +1355,7 @@ async function main(){
     assert.equal(await devtools.evaluate(fxPanel+'===null'),true,'Reference panel is forex only');
     console.log('ISOLATED_FX_REFERENCE_BROWSER_PASS: dated source, shared pair cache, real guest trade uses independent execution price, unchanged portfolio on reads, outage/future rejection, loading, 320px light/dark; no real provider calls.');
 
-    console.log('ISOLATED_AUTOMATION_INBOX_PASS: compiled dashboard combines course, Daily and Newsletter drafts, failures, cooldown, open findings and proposals; collector evidence linked to commit; partial outage stays unknown; stale refresh disclosed; zero mutations. Fixture only.');
+    console.log('ISOLATED_AUTOMATION_INBOX_PASS: compiled dashboard combines course, Daily and Newsletter drafts, failures, cooldown, open findings and proposals; collector evidence linked to commit; partial outages stay unknown while other feeds update; zero mutations. Fixture only.');
     console.log('ISOLATED_COURSE_PROGRESS_BROWSER_PASS: null tracks, null lessons and invalid lesson rows recovered; valid unrelated completion/badge retained after real lesson save and reload; fixture only.');
     console.log("ISOLATED_AUTH_BROWSER_PASS: reload persistence; real UI sign-out; no resurrected session; expired refresh rejected; ten Daily answers persisted/resumed/locked; one streak per day; actual built TradeHQ login in real Chromium; negative password refused; fake Supabase grant accepted; authenticated profile navigation observed; isolated account initialization executed; zero non-allowlisted backend writes; zero real provider calls.");
   }finally{
