@@ -4,13 +4,22 @@ import { readFileSync } from 'node:fs';
 const id = '00000000-0000-4000-8000-000000000501';
 const calls: { id: string; patch: Record<string,unknown>; state: string }[] = [];
 let listed = 0;
+let counted = 0;
+let countUnavailable = false;
 const handle = createReviewAdminHandler({getKey:()=> 'isolated-test-key',rateLimit:async()=>true,getStore:()=>({
  list:async()=> { listed++; return [{id}]; },
+ count:async()=> { counted++; if (countUnavailable) throw new Error('private failure'); return 1_234; },
  update:async(id,patch,state)=> { calls.push({id,patch,state}); return true; }
 })});
 const request = (body:unknown,key?:string) => handle(new Request('https://example.invalid', {method:'POST',headers: key ? {'x-admin-key':key} : {},body:JSON.stringify(body)}));
-for(const action of ['list','reply','delete','restore','update']) for(const key of [undefined,'wrong-key']) assert.equal((await request({action,id,reply:'Forged',patch:{owner_reply:'Forged'}},key)).status,401);
-assert.equal(calls.length,0); assert.equal(listed,0);
+for(const action of ['count','list','reply','delete','restore','update']) for(const key of [undefined,'wrong-key']) assert.equal((await request({action,id,reply:'Forged',patch:{owner_reply:'Forged'}},key)).status,401);
+assert.equal(calls.length,0); assert.equal(listed,0); assert.equal(counted,0);
+const summary = await request({action:'count'},'isolated-test-key');
+assert.equal(summary.status,200);
+assert.deepEqual(await summary.json(),{data:{count:1_234}});
+assert.equal(listed,0);
+countUnavailable = true;
+assert.equal((await request({action:'count'},'isolated-test-key')).status,500);
 assert.equal((await request({action:'list'},'isolated-test-key')).status,200);
 assert.equal((await request({action:'reply',id,reply:' Hello owner reply '},'isolated-test-key')).status,200);
 assert.equal(calls.at(-1)?.patch.owner_reply,'Hello owner reply');

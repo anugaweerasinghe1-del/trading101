@@ -99,6 +99,7 @@ async function main(){
   const newsletterPreview={subject:'Preview fixture subject',preheader:'A source-backed fixture preview',body_markdown:'## Fixture lesson\n<img src=x onerror=window.__newsletterHtmlExecuted=true>\nHypothetical worksheet: 1% of $100 equals $1.'};
   let dashboardHold=false,dashboardHeldRequests=0;
   let courseDeskFixture=false,reviewDeskFixture=false,courseDeskWrites=0,reviewDeskWrites=0;
+  let reviewCountUnavailable=false,reviewListRequests=0;
   let courseMutationFixture=false,reviewMutationFixture=false;
   let reviewListUnavailable=false;
   let courseDeskRows=[],courseWriteLog=[],reviewWriteLog=[];
@@ -289,6 +290,7 @@ async function main(){
         if(req.headers['x-admin-key']!==ADMIN_FIXTURE_KEY)return json(401,{error:'fixture_admin_denied'});
         let content='';req.on('data',part=>{content+=part;});req.on('end',()=>{
           let input;try{input=JSON.parse(content);}catch{return json(400,{error:'invalid_fixture_json'});}
+          if(input.action==='count')return reviewCountUnavailable ? json(503,{error:'Fixture review count outage'}) : json(200,{data:{count:1234}});
           if(input.action!=='list'){
             reviewDeskWrites++;reviewWriteLog.push(input.action);
             if(reviewMutationFixture && input.id===reviewFixtureRow.id && input.action==='update' &&
@@ -306,6 +308,7 @@ async function main(){
             }
             return json(409,{error:'Other moderation mutations denied by fixture'});
           }
+          reviewListRequests++;
           return reviewListUnavailable ? json(503,{error:'Fixture moderation list outage'}) : json(200,{data:reviewDeskFixture?[reviewFixtureRow]:[]});
         });return;
       }
@@ -1075,6 +1078,14 @@ async function main(){
       await adminClick('Refresh');
     };
     await wait(()=>devtools.evaluate(inbox+"?.textContent.includes('1 open AI code proposal')"),'Unified live-source work queue');
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('1234 review records')"),true);
+    assert.equal(reviewListRequests,0,'Dashboard loads only the review count');
+    reviewCountUnavailable=true;await refreshInbox();
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Review moderation status is temporarily unavailable.')"),'Review count outage is visible');
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('1234 review records')"),false);
+    assert.equal(await devtools.evaluate(inbox+".textContent.includes('2 course drafts awaiting review')"),true);
+    reviewCountUnavailable=false;await refreshInbox();
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('1234 review records')"),'Review count recovers');
     for(const text of ['2 course drafts awaiting review','1 daily bank draft awaiting review','1 newsletter draft awaiting review','1 course generation failure','1 open monitoring finding','Cooldown ends'])assert.equal(await devtools.evaluate(inbox+'.textContent.includes('+JSON.stringify(text)+')'),true,text);
     assert.equal(await devtools.evaluate("document.body.textContent.includes('Commit aaaaaaaaaaaa')"),true,'Collector evidence shows the sampled immutable commit');
     assert.equal(await devtools.evaluate("[..."+inbox+".querySelectorAll('a')].every(link=>['/admin/courses','/admin/daily','/admin/newsletter','/admin/ai'].includes(link.getAttribute('href')))"),true);

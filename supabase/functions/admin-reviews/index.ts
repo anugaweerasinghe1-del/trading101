@@ -9,6 +9,11 @@ Deno.serve(createReviewAdminHandler({
   getStore: () => {
     const client = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
     return {
+      async count() {
+        const { count, error } = await client.from("reviews").select("id", { count: "exact", head: true });
+        if (error || count === null) throw error ?? new Error("Review count unavailable");
+        return count;
+      },
       async list() {
         const { data, error } = await client.from("reviews")
           .select("id,name,content,rating,is_visible,is_featured,created_at,owner_reply,owner_reply_updated_at,deleted_at")
