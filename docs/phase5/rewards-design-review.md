@@ -41,13 +41,13 @@ Proposed sharing is private by default. Let a user explicitly select one earned 
 
 ## Foundations certificates
 
-Use Trade HQ's existing Apex logo on a dark, obsidian certificate with platinum lettering, a restrained accent and the original gold seal. Three fictional previews use the same layout.
+The owner approved the white-and-teal artwork with the Apex logo, rising candlestick chart and teal seal. These exact, unmodified PNGs are fictional design references. Production rendering must set the name, date and ID from the issued record.
 
 | Certificate | Issuance milestone | Preview |
 | --- | --- | --- |
-| First Course Certificate | Complete one course in Foundations v1. | [Obsidian and emerald](first-course-certificate-preview.svg) |
-| Core Studies Certificate | Complete three distinct courses in Foundations v1. | [Obsidian and platinum blue](core-studies-certificate-preview.svg) |
-| Foundations Completion Certificate | Complete all four courses in Foundations v1 and score at least 8/10 on the final case. | [Obsidian and gold](foundations-certificate-preview.svg) |
+| First Course Certificate | Complete one course in Foundations v1. | [Approved First Course](first-course-certificate-preview.png) |
+| Core Studies Certificate | Complete three distinct courses in Foundations v1. | [Approved Core Studies](core-studies-certificate-preview.png) |
+| Foundations Completion Certificate | Complete all four courses in Foundations v1 and score at least 8/10 on the final case. | [Approved Foundations Completion](foundations-certificate-preview.png) |
 
 ### Fixed v1 curriculum
 
@@ -60,7 +60,7 @@ Use Trade HQ's existing Apex logo on a dark, obsidian certificate with platinum 
 
 Every required checkpoint passes at 4/5 or better. The final case combines virtual order and price interpretation, fees, sizing and a decision review. The first two milestones count any distinct completed v1 course. Additional courses or content outside this fixed version cannot change previously earned milestones. The Foundations Graduate trophy uses the full completion rule.
 
-The server eligibility policy is executable and has tests for partial courses, repeats, incorrect scores, version separation, and final-case requirements. It assumes authenticated, account-scoped, server-graded evidence. The programme lessons, server-side assessment delivery and evidence persistence, issuance, PDF rendering and verification flows still require implementation and acceptance.
+The server eligibility policy is executable and has tests for partial courses, repeats, incorrect scores, version separation, and final-case requirements. It assumes authenticated, account-scoped, server-graded evidence. The private issuance service gates new records on this policy, handles confirmed recipient names, and delegates atomic creation to a store. Tests use an in-memory store. The programme lessons, server-side assessment delivery, durable evidence and certificate storage, authenticated endpoint, PDF rendering and verification flows still require implementation and acceptance.
 
 Once eligibility is proven, the learner reviews the recipient name before first issuance. Use an authoritative record keyed by account, programme version and milestone. Generate repeat PDFs from the same name snapshot, certificate ID, date and template version. Maintain an auditable correction history and invalidate superseded verification links. A separate opaque verification token is voluntary. By default show only the milestone, programme version, date and validity, with no name or account identifier. Withdraw verification on request. Recipients retain downloaded copies.
 

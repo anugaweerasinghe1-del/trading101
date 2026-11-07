@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { issueFoundationsCertificate } from "../supabase/functions/_shared/foundationsCertificate.ts";
 import {
   FOUNDATIONS_COURSES,
   FOUNDATIONS_FINAL_CASE,
@@ -28,3 +29,44 @@ assert.deepEqual(getFoundationsEligibility([
 assert.equal(new Set(FOUNDATIONS_COURSES.map(course => course.id)).size, 4);
 assert.equal(new Set(FOUNDATIONS_COURSES.flatMap(course => course.checkpoints)).size, 6);
 console.log("Foundations v1 eligibility passed: one course, three courses, and four courses plus final case.");
+
+const records = new Map<string, Extract<Awaited<ReturnType<typeof issueFoundationsCertificate>>, { status: "available" }>["certificate"]>();
+const keyFor = (key: { userId: string; programmeVersion: string; milestone: string }) =>
+  JSON.stringify([key.userId, key.programmeVersion, key.milestone]);
+const certificateStore: Parameters<typeof issueFoundationsCertificate>[0] = {
+  async findPrivateCertificate(key) { return records.get(keyFor(key)) ?? null; },
+  async readServerGradedAttempts(userId) {
+    if (userId === "outage") throw new Error("graded records unavailable");
+    return userId === "learner" ? [...checkpoints, finalCase] : [];
+  },
+  async createOrReadPrivateCertificate(candidate) {
+    const key = keyFor(candidate);
+    const existing = records.get(key);
+    if (existing) return existing;
+    const record = { ...candidate, id: "test-certificate", issuedAt: "2026-11-07T00:00:00Z" };
+    records.set(key, record);
+    return record;
+  },
+};
+
+assert.deepEqual(await issueFoundationsCertificate(certificateStore, null, "foundations", "Maya Perera"), { status: "unauthenticated" });
+assert.deepEqual(await issueFoundationsCertificate(certificateStore, "learner", "__proto__", "Maya Perera"), { status: "invalid_milestone" });
+assert.deepEqual(await issueFoundationsCertificate(certificateStore, "learner", "foundations", "Maya\nPerera"), { status: "invalid_recipient_name" });
+assert.deepEqual(await issueFoundationsCertificate(certificateStore, "other-account", "foundations", "Maya Perera"), { status: "ineligible" });
+await assert.rejects(issueFoundationsCertificate(certificateStore, "outage", "foundations", "Maya Perera"), /graded records unavailable/);
+assert.equal(records.size, 0);
+
+const [issued, retry] = await Promise.all([
+  issueFoundationsCertificate(certificateStore, "learner", "foundations", "  මායා පෙරේරා  "),
+  issueFoundationsCertificate(certificateStore, "learner", "foundations", "Different Name"),
+]);
+assert.equal(issued.status, "available");
+assert.deepEqual(retry, issued);
+assert.equal(records.size, 1);
+if (issued.status === "available") {
+  assert.equal(issued.certificate.recipientName, "මායා පෙරේරා");
+  assert.equal(issued.certificate.templateVersion, "trade-hq-white-teal-v1");
+}
+assert.deepEqual(await issueFoundationsCertificate(certificateStore, "learner", "foundations", null), issued);
+assert.deepEqual(await issueFoundationsCertificate(certificateStore, "other-account", "foundations", "Maya Perera"), { status: "ineligible" });
+console.log("Private issuance policy passed: trusted evidence, account scope, immutable retry and Unicode name.");
