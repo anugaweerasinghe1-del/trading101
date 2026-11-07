@@ -26,7 +26,8 @@ Issues remain open until their real acceptance gaps are resolved.
 | A / #332 mobile/accessibility/utilities | Real existing controls work at narrow widths, light/dark, keyboard, loading/repeats; tools accurately describe scope. | #362 320px course/Daily/newsletter and utility-route fixtures. | Moderation and cross-desk navigation browser coverage now pass; actual owner acceptance pending. |
 | C / #335 markets/portfolio | Persist/recover portfolios/trades; accurate provenance/freshness and leaderboard; one failed refresh cannot erase other successes. | #363 isolation fix tested/merged; prior v16 parity and scheduled HTTP200. Prior evidence: 15/15 held crypto fresh; 0/17 traditional fresh. | Provider entitlement/budget evidence missing. Do not fabricate observations or label old prices live. |
 | D / #335 beginner/arena/leaderboard | Guest/account learn→trade→reflect→resume journey and consent-based aggregate funnel, private defaults, eligibility/rank distinctions and recovery. | Earlier journey/privacy/funnel code and fixtures exist (#334/#336/#361 etc.); whole real journey not accepted. | Exercise disposable fixtures; genuine account confirmation requires legitimate session. No invented conversion metrics. |
-| E / #353 trophy cabinet | Agreed approximately 20 educational trophies, premium tiers/animation/placement; server authority, default private, separate opt-in/revocation and anti-abuse. | Existing private cabinet and first server-recorded trade milestone; major redesign explicitly deferred for later user discussion. | Owner prefers distinct sculpted trophies/richer animation; implementation deferred. No public awards from editable browser progress; no profit-chasing incentives. |
+| E / #353 trophy cabinet | Exactly 20 distinct educational trophies with original sculpted silhouettes, accessible locked/earned/loading/unavailable states, criteria and progress, restrained reduced-motion celebration, optional profile flair/pins/share cards. Preserve personal progress. Verified evidence must be server-authoritative, private by default, idempotent, isolated by account and revocable from public display. | Existing private cabinet and first server-recorded practice trade milestone. #370 addresses malformed catalog entries only. Full catalog, designs, evidence, tests, rollout and acceptance open. | Present 20 criteria, evidence mapping and representative mockups for design review. Confirm public presentation. No profit, leverage or click-farming awards. Continue admin work in parallel. |
+| E / #353 completion certificate | Versioned The Trade HQ Foundations Learning Programme with server-side eligibility and idempotent private issuance, stable ID/date/evidence, name preview, correction history, deterministic original ivory/gold PDF, repeat downloads and optional minimal revocable verification. | Template, eligibility contract, implementation, tests, rollout and acceptance open. | Review fictional rendered sample, curriculum, assessment threshold and wording before enabling issuance. Test forgery, account isolation, duplicate/racing requests, outage/retry, fonts/escaping/overflow, print/download, capacity and verification withdrawal. No email by default. |
 | F / #321/#332/#335/#353 release | Security/RLS/privacy/rate limits, integrity/content trust, admin/browser/mobile/accessibility/SEO/performance and recovery evidence; all mandatory gates green; production matches reviewed main. | Main application, database and Cloudflare workflow runs completed success at checkpoint SHA; full release acceptance remains OPEN. | Resolve genuine owner/provider gates; track each PR SHA, active provider deployment and scope of smoke tests. No AdSense actions or paid dependencies. |
 
 ## Current blockers and authorization boundaries
@@ -39,8 +40,9 @@ Issues remain open until their real acceptance gaps are resolved.
   access works. This is an access-path blocker, not proof of owner authentication.
 - Daily historical exhausted cycle cannot be reset or forced. No real model call,
   newsletter send, publication, user mutation or paid service is authorized as a test.
-- Owner explicitly deferred trophies for a later discussion; prefers approximately
-  20 distinct sculpted learning trophies with richer animation. No redesign work.
+- The current scope includes exactly 20 distinct trophies and the completion
+  certificate. Product review gates only dependent reward decisions and issuance;
+  independent admin and application acceptance continues.
 - Concurrent automation may act: fetch main and open PRs before each cycle; review
   incoming changes. Initial open PRs #1/#3/#7/#23/#72/#95/#97/#104 are older proposals,
   none newly owns this moderation recovery scope. No other PR was merged or edited.
@@ -456,3 +458,25 @@ Issues remain open until their real acceptance gaps are resolved.
   Chromium covers safe metadata display, forged diagnostics rejection, lock fencing
   and 320px themes. Neither test calls a real model. Real provider acceptance
   remains open until a permitted live request actually passes.
+
+### 7 Nov — dashboard partial outage follow-up
+
+- A Course settings outage blocked unrelated editorial and moderation reads after
+  unlock. Keep the initial privileged settings check, then settle each read
+  independently on refresh and clear unavailable Course generation data. Clear
+  chat readiness on Lock as part of the existing private state cleanup.
+- Compiled browser fixture now exercises a failed Course settings read while
+  Daily and Newsletter change, recovery on a later refresh, and the existing
+  late-response Lock case. Record the PR and deployment outcomes before marking
+  this fix deployed or any genuine owner workflow accepted.
+- Rewards now explicitly include the 20-trophy redesign and the versioned
+  completion certificate in this same acceptance checklist.
+
+- With the user's in-browser unlock, the real production dashboard showed
+  live Course, Newsletter, Daily, Reviews and Chat readiness feeds. A read-only
+  Refresh advanced editorial freshness from 10:55:05 to 10:55:34 and GitHub
+  freshness to 10:55:31 (Asia/Colombo). This accepts the normal dashboard read
+  and manual refresh on the deployed baseline; outage, recovery, separate desk
+  authorization, and editorial actions still need their own evidence.
+- A complete editorial outage also retains the last successful refresh time.
+  The isolated browser fixture checks the timestamp and subsequent recovery.
