@@ -39,7 +39,7 @@ try {
     await db.exec("set role " + role);
     await assert.rejects(record(learner, "quotes", 5), /permission denied/);
     await assert.rejects(issue(learner, "first-course", "Fictional Learner"), /permission denied/);
-    for (const table of ["foundations_assessment_items", "foundations_assessment_results", "foundations_private_certificates"]) {
+    for (const table of ["foundations_assessment_items", "foundations_assessment_results", "foundations_private_certificates", "foundations_certificate_name_revisions"]) {
       await assert.rejects(db.query("select * from public." + table), /permission denied/);
     }
     await db.exec("reset role");
@@ -84,8 +84,24 @@ try {
   assert.equal((await db.query("select * from public.foundations_private_certificates")).rows.length, 3);
   await assert.rejects(db.query("update public.foundations_private_certificates set recipient_name = 'Replacement'"), /permission denied/);
 
+  const correct = (account: string, expected: number, name: string) => db.query<{ corrected: boolean }>(
+    "select public.correct_foundations_certificate_name($1, 'foundations-v1', 'foundations', $2, $3) corrected",
+    [account, expected, name]);
+  assert.equal((await correct(other, 0, "Forged Name")).rows[0].corrected, false);
+  assert.equal((await correct(learner, 0, "Maya Corrected")).rows[0].corrected, true);
+  assert.equal((await correct(learner, 0, "Maya Corrected")).rows[0].corrected, true);
+  assert.equal((await correct(learner, 0, "Stale Name")).rows[0].corrected, false);
+  const corrected = await issue(learner, "foundations", "Ignored replacement");
+  assert.equal(corrected.rows[0].id, original.rows[0].id);
+  assert.deepEqual(corrected.rows[0].issued_at, original.rows[0].issued_at);
+  assert.equal(corrected.rows[0].recipient_name, "Maya Corrected");
+  assert.equal((await db.query("select * from public.foundations_certificate_name_revisions")).rows.length, 1);
+  const baseline = await db.query<{ recipient_name: string }>(
+    "select recipient_name from public.foundations_private_certificates where id = $1", [original.rows[0].id]);
+  assert.equal(baseline.rows[0].recipient_name, "මායා පෙරේරා");
   await db.exec("reset role");
   await db.query("delete from auth.users where id = $1", [learner]);
+  assert.equal((await db.query("select * from public.foundations_certificate_name_revisions")).rows.length, 0);
   assert.equal((await db.query("select * from public.foundations_private_certificates")).rows.length, 0);
   assert.equal((await db.query("select * from public.foundations_assessment_results")).rows.length, 0);
   console.log("FOUNDATIONS_STORAGE_PASS: disposable PostgreSQL, role denial, scoring bounds, policy parity, immutable retry, isolation, evidence and account erasure.");

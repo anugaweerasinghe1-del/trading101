@@ -44,7 +44,7 @@ const certificateStore: Parameters<typeof issueFoundationsCertificate>[0] = {
     const key = keyFor(candidate);
     const existing = records.get(key);
     if (existing) return existing;
-    const record = { ...candidate, id: "test-certificate", issuedAt: "2026-11-07T00:00:00Z" };
+    const record = { ...candidate, id: "test-certificate", nameRevision: 0, issuedAt: "2026-11-07T00:00:00Z" };
     records.set(key, record);
     return record;
   },
@@ -91,6 +91,14 @@ const handler = createFoundationsCertificateHandler({
   },
   admit: async () => rateAllowed,
   store: certificateStore,
+  correctName: async (key, expected, recipientName) => {
+    const current = records.get(keyFor(key));
+    if (!current) return false;
+    if (current.recipientName === recipientName) return true;
+    if (current.nameRevision !== expected) return false;
+    records.set(keyFor(key), { ...current, recipientName, nameRevision: expected + 1 });
+    return true;
+  },
   readAssessment: async () => {
     if (assessmentOutage) return null;
     return { title: "Private scoring fixture", questions: fixtureQuestions };
@@ -152,3 +160,17 @@ assert.deepEqual(savedGrades, [{ account: "other-account", grade: score("markets
 assert.equal((await call({ action: "progress" })).status, 200);
 assert.deepEqual((await (await call({ action: "progress" }, otherToken)).json()).milestones, []);
 console.log("Assessment handler passed: answer-key omission, strict version and shape, server scoring, wrong-account protection, and unavailable evidence.");
+
+const correction = { action: "correct_name", milestone: "foundations", expectedRevision: 0, recipientName: "Maya Corrected" };
+assert.equal((await call(correction, otherToken)).status, 409);
+assert.equal((await call({ ...correction, userId: "learner" }, otherToken)).status, 400);
+const corrected = await call(correction);
+assert.equal(corrected.status, 200);
+const correctedBody = await corrected.json();
+assert.equal(correctedBody.certificate.id, "test-certificate");
+assert.equal(correctedBody.certificate.nameRevision, 1);
+assert.equal(correctedBody.certificate.recipientName, "Maya Corrected");
+assert.deepEqual(await (await call(correction)).json(), correctedBody);
+assert.equal((await call({ ...correction, recipientName: "Late Name" })).status, 409);
+assert.deepEqual(await (await call({ action: "certificate", milestone: "foundations" })).json(), correctedBody);
+console.log("Certificate correction handler passed: authenticated ownership, immutable ID, retries, stale conflicts and repeat reads.");

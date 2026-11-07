@@ -525,7 +525,9 @@ Issues remain open until their real acceptance gaps are resolved.
   and Vercel `dpl_CAcntijiceazf8peWqTNaHSF68Ch`. The live AI Desk
   hydrated with its admin gate. The held-response regression passed in isolation.
 - #370 merged as `82a3f56269eecc84682be8dea20fe588b90c9475` after required
-  checks. #380 tracks the TypeScript ES2020 compatibility follow-up for its
+  checks. [Native production proof](https://github.com/anugaweerasinghe1-del/trading101/actions/runs/42350506756/job/128339839085)
+  confirmed the exact SHA on Cloudflare and Vercel. The live Trophy Cabinet
+  hydrated its private progress, protected trade activity and course badges. #380 tracks the TypeScript ES2020 compatibility follow-up for its
   own-key check. The local application TypeScript and catalog checks passed.
 - #378 renders all 20 approved trophy illustrations. Ten have connected
   evidence (nine Foundations criteria and First Practice Trade); the other
@@ -539,3 +541,8 @@ Issues remain open until their real acceptance gaps are resolved.
   assessment content and certificate issuance remain unreleased. Editorial
   review and seeding, correction history and public verification consent and
   withdrawal remain open.
+
+- The rewards draft now preserves the original certificate while appending private
+  name revisions. New downloads use the latest name and keep the ID and date.
+  Disposable SQL and handler fixtures cover account isolation, stale revisions
+  and retry without duplicate changes.

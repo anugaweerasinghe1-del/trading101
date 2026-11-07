@@ -208,6 +208,7 @@ function CertificateDownload({ userId, token, milestone }: {
   userId: string; token: string; milestone: CertificateMilestone;
 }) {
   const [name, setName] = useState("");
+  const [editing, setEditing] = useState(false);
   const [renderError, setRenderError] = useState(false);
   const [downloading, setDownloading] = useState(false);
   const active = useRef(false);
@@ -225,22 +226,32 @@ function CertificateDownload({ userId, token, milestone }: {
     queryFn: async ({ signal }) => {
       const result = await request<CertificateResponse>(token, { action: "certificate", milestone }, signal);
       if (result.status === "not_issued") return null;
-      if (result.status !== "available" || result.certificate?.milestone !== milestone) {
+      if (result.status !== "available" || result.certificate?.milestone !== milestone
+          || !Number.isInteger(result.certificate.nameRevision)) {
         throw Error("Certificate unavailable.");
       }
       return result.certificate;
     },
   });
   const issue = useMutation({
-    mutationFn: async (recipientName: string) => {
-      const result = await request<CertificateResponse>(token, { milestone, recipientName });
-      if (result.status !== "available" || result.certificate?.milestone !== milestone) {
+    mutationFn: async ({ recipientName, expectedRevision }: { recipientName: string; expectedRevision?: number }) => {
+      const body = expectedRevision === undefined ? { milestone, recipientName } :
+        { action: "correct_name", milestone, recipientName, expectedRevision };
+      const result = await request<CertificateResponse>(token, body);
+      if (result.status !== "available" || result.certificate?.milestone !== milestone
+          || !Number.isInteger(result.certificate.nameRevision)) {
         throw Error("Certificate could not be confirmed.");
       }
       return result.certificate;
     },
     onSuccess: certificate => {
-      if (active.current) queryClient.setQueryData(key, certificate);
+      if (active.current) {
+        queryClient.setQueryData(key, certificate);
+        setEditing(false);
+      }
+    },
+    onError: (_, variables) => {
+      if (active.current && variables.expectedRevision !== undefined) void query.refetch();
     },
     onSettled: () => { submitting.current = false; },
   });
@@ -274,18 +285,23 @@ function CertificateDownload({ userId, token, milestone }: {
       {query.isPending && <p role="status">Checking your private certificate…</p>}
       {query.isError && <p role="status">Your certificate is temporarily unavailable.{" "}
         <button className="underline" onClick={() => void query.refetch()}>Retry</button></p>}
-      {query.isSuccess && query.data && <>
+      {query.isSuccess && query.data && !editing && <>
         <p className="text-sm">Issued to <strong>{query.data.recipientName}</strong></p>
         <Button disabled={downloading} onClick={() => void download(query.data!)}>
           {downloading ? "Preparing PDF…" : "Download PDF"}
         </Button>
+        <Button variant="ghost" disabled={downloading} onClick={() => {
+          issue.reset();
+          setName(query.data!.recipientName);
+          setEditing(true);
+        }}>Correct recipient name</Button>
         {renderError && <p role="alert">Your certificate is saved. The PDF could not be rendered. Please retry.</p>}
       </>}
-      {query.isSuccess && !query.data && <form className="space-y-3" onSubmit={event => {
+      {query.isSuccess && (!query.data || editing) && <form className="space-y-3" onSubmit={event => {
         event.preventDefault();
-        if (submitting.current || !name.trim()) return;
+        if (submitting.current || !name.trim() || query.isFetching) return;
         submitting.current = true;
-        issue.mutate(name.trim());
+        issue.mutate({ recipientName: name.trim(), expectedRevision: query.data?.nameRevision });
       }}>
         <label className="block text-sm font-medium">Recipient name
           <input required value={name} maxLength={150} autoComplete="name" disabled={issue.isPending}
@@ -295,8 +311,14 @@ function CertificateDownload({ userId, token, milestone }: {
           {name.trim() ? <>Confirm the name as it should appear on the certificate. <strong>{name.trim()}</strong></> :
             "Enter and review the name to be printed. This certificate is private by default."}
         </p>
-        <Button type="submit" disabled={issue.isPending || !name.trim()}>{issue.isPending ? "Issuing…" : "Confirm name and issue"}</Button>
-        {issue.isError && <p role="alert">Issuance could not be confirmed. Your name is still here. You can retry.</p>}
+        {editing && <p className="text-sm text-muted-foreground">
+          Future downloads will use the corrected name. The certificate ID and issue date stay the same. Earlier copies remain with their holders.
+        </p>}
+        <Button type="submit" disabled={issue.isPending || query.isFetching || !name.trim()}>
+          {issue.isPending ? "Saving…" : editing ? "Save corrected name" : "Confirm name and issue"}
+        </Button>
+        {editing && <Button type="button" variant="ghost" disabled={issue.isPending} onClick={() => setEditing(false)}>Cancel</Button>}
+        {issue.isError && <p role="alert">The change could not be confirmed. Review the name and retry.</p>}
       </form>}
     </Card>
   );

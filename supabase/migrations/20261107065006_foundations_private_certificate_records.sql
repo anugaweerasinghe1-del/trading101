@@ -48,6 +48,73 @@ revoke all on public.foundations_assessment_results, public.foundations_private_
 grant select, insert, update on public.foundations_assessment_results to service_role;
 grant select, insert on public.foundations_private_certificates to service_role;
 
+-- Keep the original issuance immutable. Corrections affect later downloads.
+create table public.foundations_certificate_name_revisions (
+  certificate_id uuid not null references public.foundations_private_certificates(id) on delete cascade,
+  revision integer not null check (revision >= 1),
+  recipient_name text not null check (
+    char_length(recipient_name) between 1 and 100 and recipient_name = btrim(recipient_name)
+    and recipient_name !~ '[[:cntrl:]]'
+  ),
+  corrected_at timestamptz not null default now(),
+  primary key (certificate_id, revision)
+);
+alter table public.foundations_certificate_name_revisions enable row level security;
+revoke all on public.foundations_certificate_name_revisions from public, anon, authenticated, service_role;
+grant select, insert on public.foundations_certificate_name_revisions to service_role;
+
+create function public.read_foundations_private_certificate(p_user_id uuid, p_programme_version text, p_milestone text)
+returns table (
+  id uuid, user_id uuid, programme_version text, milestone text, recipient_name text,
+  template_version text, issued_at timestamptz, name_revision integer
+)
+language sql
+set search_path = ''
+as $$
+  select c.id, c.user_id, c.programme_version, c.milestone, coalesce(r.recipient_name, c.recipient_name),
+    c.template_version, c.issued_at, coalesce(r.revision, 0)
+  from public.foundations_private_certificates c
+  left join lateral (
+    select h.recipient_name, h.revision from public.foundations_certificate_name_revisions h
+    where h.certificate_id = c.id order by h.revision desc limit 1
+  ) r on true
+  where c.user_id = p_user_id and c.programme_version = p_programme_version and c.milestone = p_milestone;
+$$;
+
+create function public.correct_foundations_certificate_name(
+  p_user_id uuid, p_programme_version text, p_milestone text, p_expected_revision integer, p_recipient_name text
+) returns boolean
+language plpgsql
+set search_path = ''
+as $$
+declare
+  certificate_id uuid;
+  current_revision integer;
+  current_name text;
+begin
+  select c.id into certificate_id from public.foundations_private_certificates c
+    where c.user_id = p_user_id and c.programme_version = p_programme_version and c.milestone = p_milestone;
+  if not found or p_expected_revision is null or p_expected_revision < 0 then
+    return false;
+  end if;
+  perform pg_advisory_xact_lock(hashtextextended(certificate_id::text, 0));
+  select c.name_revision, c.recipient_name into current_revision, current_name
+    from public.read_foundations_private_certificate(p_user_id, p_programme_version, p_milestone) c;
+  if not found then return false; end if;
+  if current_name = p_recipient_name then return true; end if;
+  if current_revision <> p_expected_revision then return false; end if;
+  insert into public.foundations_certificate_name_revisions (certificate_id, revision, recipient_name)
+    values (certificate_id, current_revision + 1, p_recipient_name);
+  return true;
+end;
+$$;
+
+revoke all on function public.read_foundations_private_certificate(uuid, text, text) from public, anon, authenticated, service_role;
+revoke all on function public.correct_foundations_certificate_name(uuid, text, text, integer, text)
+  from public, anon, authenticated, service_role;
+grant execute on function public.read_foundations_private_certificate(uuid, text, text) to service_role;
+grant execute on function public.correct_foundations_certificate_name(uuid, text, text, integer, text) to service_role;
+
 -- Only a trusted grader may submit a result. A lower retry never removes a pass.
 create function public.record_foundations_assessment(
   p_user_id uuid, p_programme_version text, p_assessment_id text, p_points integer, p_possible integer
@@ -70,7 +137,7 @@ create function public.create_or_read_foundations_certificate(
   p_recipient_name text, p_template_version text
 ) returns table (
   id uuid, user_id uuid, programme_version text, milestone text,
-  recipient_name text, template_version text, issued_at timestamptz
+  recipient_name text, template_version text, issued_at timestamptz, name_revision integer
 )
 language plpgsql
 set search_path = ''
@@ -120,8 +187,7 @@ begin
     end if;
   end if;
 
-  return query select record_snapshot.id, record_snapshot.user_id, record_snapshot.programme_version,
-    record_snapshot.milestone, record_snapshot.recipient_name, record_snapshot.template_version, record_snapshot.issued_at;
+  return query select * from public.read_foundations_private_certificate(p_user_id, p_programme_version, p_milestone);
 end;
 $$;
 

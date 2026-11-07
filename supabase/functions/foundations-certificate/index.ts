@@ -7,17 +7,16 @@ import { allow } from "../_shared/rateLimit.ts";
 const client = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!, {
   auth: { persistSession: false, autoRefreshToken: false },
 });
-const columns = "id,user_id,programme_version,milestone,recipient_name,template_version,issued_at";
 
 type CertificateStore = Parameters<typeof issueFoundationsCertificate>[0];
 type Certificate = NonNullable<Awaited<ReturnType<CertificateStore["findPrivateCertificate"]>>>;
 function toCertificate(row: {
   id: string; user_id: string; programme_version: Certificate["programmeVersion"];
-  milestone: Certificate["milestone"]; recipient_name: string; template_version: string; issued_at: string;
+  milestone: Certificate["milestone"]; recipient_name: string; name_revision: number; template_version: string; issued_at: string;
 }): Certificate {
   return {
     id: row.id, userId: row.user_id, programmeVersion: row.programme_version, milestone: row.milestone,
-    recipientName: row.recipient_name, templateVersion: row.template_version, issuedAt: row.issued_at,
+    recipientName: row.recipient_name, nameRevision: row.name_revision, templateVersion: row.template_version, issuedAt: row.issued_at,
   };
 }
 
@@ -42,11 +41,19 @@ Deno.serve(createFoundationsCertificateHandler({
     });
     if (error) throw error;
   },
+  async correctName(key, expected, recipientName) {
+    const { data, error } = await client.rpc("correct_foundations_certificate_name", {
+      p_user_id: key.userId, p_programme_version: key.programmeVersion, p_milestone: key.milestone,
+      p_expected_revision: expected, p_recipient_name: recipientName,
+    });
+    if (error) throw error;
+    return data === true;
+  },
   store: {
     async findPrivateCertificate(key) {
-      const { data, error } = await client.from("foundations_private_certificates")
-        .select(columns).eq("user_id", key.userId).eq("programme_version", key.programmeVersion)
-        .eq("milestone", key.milestone).maybeSingle();
+      const { data, error } = await client.rpc("read_foundations_private_certificate", {
+        p_user_id: key.userId, p_programme_version: key.programmeVersion, p_milestone: key.milestone,
+      }).maybeSingle();
       if (error) throw error;
       return data ? toCertificate(data as Parameters<typeof toCertificate>[0]) : null;
     },

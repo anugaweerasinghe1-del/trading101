@@ -1,4 +1,4 @@
-import { isCertificateMilestone, issueFoundationsCertificate } from "./foundationsCertificate.ts";
+import { isCertificateMilestone, issueFoundationsCertificate, readRecipientName } from "./foundationsCertificate.ts";
 import { assessmentSize, gradeFoundationsAssessment, parseFoundationsAssessment, publicFoundationsAssessment } from "./foundationsAssessment.ts";
 import { FOUNDATIONS_VERSION, getFoundationsEligibility, type GradedFoundationsAttempt } from "./foundationsProgramme.ts";
 
@@ -6,8 +6,8 @@ type CertificateStore = Parameters<typeof issueFoundationsCertificate>[0];
 const maxBodyBytes = 1024;
 type Certificate = NonNullable<Awaited<ReturnType<CertificateStore["findPrivateCertificate"]>>>;
 
-function privateDownloadMetadata({ id, issuedAt, recipientName, milestone, templateVersion, programmeVersion }: Certificate) {
-  return { id, issuedAt, recipientName, milestone, templateVersion, programmeVersion };
+function privateDownloadMetadata({ id, issuedAt, recipientName, nameRevision, milestone, templateVersion, programmeVersion }: Certificate) {
+  return { id, issuedAt, recipientName, nameRevision, milestone, templateVersion, programmeVersion };
 }
 
 async function readBody(request: Request): Promise<unknown> {
@@ -39,6 +39,7 @@ export function createFoundationsCertificateHandler(options: {
   authenticate: (token: string) => Promise<string | null>;
   admit: (userId: string) => Promise<boolean>;
   store: CertificateStore;
+  correctName: (key: Parameters<CertificateStore["findPrivateCertificate"]>[0], expected: number, recipientName: string) => Promise<boolean>;
   readAssessment: (assessmentId: string) => Promise<unknown>;
   recordGrade: (userId: string, grade: GradedFoundationsAttempt) => Promise<void>;
 }) {
@@ -104,6 +105,20 @@ export function createFoundationsCertificateHandler(options: {
         return certificate
           ? reply({ status: "available", certificate: privateDownloadMetadata(certificate) }, 200)
           : reply({ status: "not_issued" }, 200);
+      }
+      if (action === "correct_name" && onlyKeys(["action", "milestone", "recipientName", "expectedRevision"])
+          && isCertificateMilestone(milestone)) {
+        const name = readRecipientName(recipientName);
+        const { expectedRevision } = body;
+        if (!name || typeof expectedRevision !== "number" || !Number.isInteger(expectedRevision)
+            || expectedRevision < 0 || expectedRevision >= 2147483647) {
+          return reply({ status: "invalid_request" }, 400);
+        }
+        const key = { userId, programmeVersion: FOUNDATIONS_VERSION, milestone } as const;
+        if (!await options.correctName(key, expectedRevision, name)) return reply({ status: "revision_conflict" }, 409);
+        const certificate = await options.store.findPrivateCertificate(key);
+        if (!certificate) return reply({ status: "unavailable" }, 503);
+        return reply({ status: "available", certificate: privateDownloadMetadata(certificate) }, 200);
       }
       if (!onlyKeys(["milestone", "recipientName"])) return reply({ status: "invalid_request" }, 400);
       const result = await issueFoundationsCertificate(options.store, userId, milestone, recipientName);

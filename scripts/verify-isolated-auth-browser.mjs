@@ -145,15 +145,21 @@ async function main(){
             assert.ok(['core-studies','foundations'].includes(input.milestone));
             return json(200,{status:'available',certificate:{
               id:'8bc992ee-50ba-44b3-ab63-926aaea45b21',issuedAt:'2026-11-08T00:30:00Z',
-              recipientName:input.milestone==='core-studies'?'மாயா பெரேரா':'Alexandria Catherine Elizabeth Francesca Isabella Johanna Marguerite Penelope Rose Perera',
+              nameRevision:0,recipientName:input.milestone==='core-studies'?'மாயா பெரேரா':'Alexandria Catherine Elizabeth Francesca Isabella Johanna Marguerite Penelope Rose Perera',
               milestone:input.milestone,programmeVersion:foundationsVersion,templateVersion:'trade-hq-white-teal-v1',
             }});
+          }
+          if(input.action==='correct_name') {
+            assert.equal(input.milestone,'first-course');
+            assert.equal(input.expectedRevision,issuedCertificate.nameRevision);
+            issuedCertificate={...issuedCertificate,recipientName:input.recipientName,nameRevision:1};
+            return json(200,{status:'available',certificate:issuedCertificate});
           }
           if(input.milestone==='first-course') {
             assert.equal(input.recipientName,'මායා පෙරේරා');
             certificateIssues++;
             issuedCertificate={id:'7bc992ee-50ba-44b3-ab63-926aaea45b21',issuedAt:'2026-11-08T00:30:00Z',
-              recipientName:input.recipientName,milestone:input.milestone,programmeVersion:foundationsVersion,
+              recipientName:input.recipientName,nameRevision:0,milestone:input.milestone,programmeVersion:foundationsVersion,
               templateVersion:'trade-hq-white-teal-v1'};
             return json(200,{status:'available',certificate:issuedCertificate});
           }
@@ -629,6 +635,14 @@ async function main(){
     await wait(()=>existsSync(pdfPath),'Repeat certificate download');
     assert.deepEqual(readFileSync(pdfPath),pdf,'Repeat downloads in the same browser produce identical PDF bytes');
     assert.equal(certificateIssues,1,'Repeat download reads the certificate and never issues twice');
+    await programmeClick('Correct recipient name');
+    await wait(()=>devtools.evaluate("!!"+nameField),'Certificate correction name field');
+    await devtools.evaluate("(()=>{const input="+nameField+";Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(input,'Maya Corrected');input.dispatchEvent(new Event('input',{bubbles:true}));})()");
+    await programmeClick('Save corrected name');
+    await wait(()=>devtools.evaluate(programme+".textContent.includes('Issued to Maya Corrected')"),'Certificate correction confirmed');
+    assert.equal(issuedCertificate.id,'7bc992ee-50ba-44b3-ab63-926aaea45b21');
+    assert.equal(certificateIssues,1,'Name correction does not reissue a certificate');
+
     await devtools.send('Emulation.setDeviceMetricsOverride',{width:320,height:860,deviceScaleFactor:1,mobile:true});
     for(const [label,slug] of [['Core Studies Certificate','core-studies'],['Foundations Completion Certificate','foundations']]){
       await programmeClick(label);

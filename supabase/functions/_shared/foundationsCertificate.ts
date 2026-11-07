@@ -17,6 +17,7 @@ type CertificateRecord = Readonly<CertificateKey & {
   id: string;
   issuedAt: string;
   recipientName: string;
+  nameRevision: number;
   templateVersion: string;
 }>;
 
@@ -36,7 +37,7 @@ export function isCertificateMilestone(value: unknown): value is CertificateMile
   return value === "first-course" || value === "core-studies" || value === "foundations";
 }
 
-function readRecipientName(value: unknown): string | null {
+export function readRecipientName(value: unknown): string | null {
   if (typeof value !== "string" || value.length > 200 ||
       /[\u0000-\u001f\u007f-\u009f\u2028-\u202e\u2066-\u2069]/u.test(value)) return null;
   const name = value.normalize("NFC").trim();
