@@ -1,0 +1,279 @@
+-- Only the reviewed release process may seed these immutable programme items.
+-- The Edge Function returns a projection without correct answers.
+create table public.foundations_assessment_items (
+  programme_version text not null check (programme_version = 'foundations-v1'),
+  assessment_id text not null check (
+    assessment_id in ('markets', 'execution', 'quotes', 'risk', 'sizing', 'reflection', 'final-case')
+  ),
+  reviewed_content jsonb not null check (jsonb_typeof(reviewed_content) = 'object'),
+  primary key (programme_version, assessment_id)
+);
+alter table public.foundations_assessment_items enable row level security;
+revoke all on public.foundations_assessment_items from public, anon, authenticated, service_role;
+grant select on public.foundations_assessment_items to service_role;
+
+-- Server-owned, versioned results. Keep one best score per assessment.
+create table public.foundations_assessment_results (
+  user_id uuid not null references auth.users(id) on delete cascade,
+  programme_version text not null check (programme_version = 'foundations-v1'),
+  assessment_id text not null,
+  points integer not null check (points between 0 and possible),
+  possible integer not null,
+  primary key (user_id, programme_version, assessment_id),
+  check (
+    (assessment_id in ('markets', 'execution', 'quotes', 'risk', 'sizing', 'reflection') and possible = 5)
+    or (assessment_id = 'final-case' and possible = 10)
+  )
+);
+
+create table public.foundations_private_certificates (
+  id uuid not null default gen_random_uuid() unique,
+  user_id uuid not null references auth.users(id) on delete cascade,
+  programme_version text not null check (programme_version = 'foundations-v1'),
+  milestone text not null check (milestone in ('first-course', 'core-studies', 'foundations')),
+  recipient_name text not null check (
+    char_length(recipient_name) between 1 and 100 and recipient_name = btrim(recipient_name)
+    and recipient_name !~ '[[:cntrl:]]'
+  ),
+  template_version text not null check (template_version = 'trade-hq-white-teal-v1'),
+  issued_at timestamptz not null default now(),
+  evidence jsonb not null check (jsonb_typeof(evidence) = 'array'),
+  primary key (user_id, programme_version, milestone)
+);
+
+alter table public.foundations_assessment_results enable row level security;
+alter table public.foundations_private_certificates enable row level security;
+revoke all on public.foundations_assessment_results, public.foundations_private_certificates
+  from public, anon, authenticated, service_role;
+grant select, insert, update on public.foundations_assessment_results to service_role;
+grant select, insert on public.foundations_private_certificates to service_role;
+
+-- Keep the original issuance immutable. Corrections affect later downloads.
+create table public.foundations_certificate_name_revisions (
+  certificate_id uuid not null references public.foundations_private_certificates(id) on delete cascade,
+  revision integer not null check (revision >= 1),
+  recipient_name text not null check (
+    char_length(recipient_name) between 1 and 100 and recipient_name = btrim(recipient_name)
+    and recipient_name !~ '[[:cntrl:]]'
+  ),
+  corrected_at timestamptz not null default now(),
+  primary key (certificate_id, revision)
+);
+alter table public.foundations_certificate_name_revisions enable row level security;
+revoke all on public.foundations_certificate_name_revisions from public, anon, authenticated, service_role;
+grant select, insert on public.foundations_certificate_name_revisions to service_role;
+
+create table public.foundations_certificate_verification (
+  certificate_id uuid primary key references public.foundations_private_certificates(id) on delete cascade,
+  token_hash text not null unique check (token_hash ~ '^[0-9a-f]{64}$'),
+  name_revision integer not null check (name_revision >= 0)
+);
+alter table public.foundations_certificate_verification enable row level security;
+revoke all on public.foundations_certificate_verification from public, anon, authenticated, service_role;
+grant select, insert, update, delete on public.foundations_certificate_verification to service_role;
+
+create function public.read_foundations_private_certificate(p_user_id uuid, p_programme_version text, p_milestone text)
+returns table (
+  id uuid, user_id uuid, programme_version text, milestone text, recipient_name text,
+  template_version text, issued_at timestamptz, name_revision integer, verification_active boolean
+)
+language sql
+set search_path = ''
+as $$
+  select c.id, c.user_id, c.programme_version, c.milestone, coalesce(r.recipient_name, c.recipient_name),
+    c.template_version, c.issued_at, coalesce(r.revision, 0),
+    exists (select 1 from public.foundations_certificate_verification v
+      where v.certificate_id = c.id and v.name_revision = coalesce(r.revision, 0))
+  from public.foundations_private_certificates c
+  left join lateral (
+    select h.recipient_name, h.revision from public.foundations_certificate_name_revisions h
+    where h.certificate_id = c.id order by h.revision desc limit 1
+  ) r on true
+  where c.user_id = p_user_id and c.programme_version = p_programme_version and c.milestone = p_milestone;
+$$;
+
+create function public.correct_foundations_certificate_name(
+  p_user_id uuid, p_programme_version text, p_milestone text, p_expected_revision integer, p_recipient_name text
+) returns boolean
+language plpgsql
+set search_path = ''
+as $$
+declare
+  certificate_id uuid;
+  current_revision integer;
+  current_name text;
+begin
+  select c.id into certificate_id from public.foundations_private_certificates c
+    where c.user_id = p_user_id and c.programme_version = p_programme_version and c.milestone = p_milestone;
+  if not found or p_expected_revision is null or p_expected_revision < 0 then
+    return false;
+  end if;
+  perform pg_advisory_xact_lock(hashtextextended(certificate_id::text, 0));
+  select c.name_revision, c.recipient_name into current_revision, current_name
+    from public.read_foundations_private_certificate(p_user_id, p_programme_version, p_milestone) c;
+  if not found then return false; end if;
+  if current_name = p_recipient_name then return true; end if;
+  if current_revision <> p_expected_revision then return false; end if;
+  insert into public.foundations_certificate_name_revisions (certificate_id, revision, recipient_name)
+    values (certificate_id, current_revision + 1, p_recipient_name);
+  return true;
+end;
+$$;
+
+-- A new link rotates the previous token. Its revision binding invalidates links
+-- from before a name correction. Null means withdraw.
+create function public.set_foundations_certificate_verification(
+  p_user_id uuid, p_programme_version text, p_milestone text, p_expected_revision integer, p_token_hash text
+) returns boolean
+language plpgsql
+set search_path = ''
+as $$
+declare
+  certificate_key uuid;
+  current_revision integer;
+begin
+  select c.id into certificate_key from public.foundations_private_certificates c
+    where c.user_id = p_user_id and c.programme_version = p_programme_version and c.milestone = p_milestone;
+  if not found then return false; end if;
+  perform pg_advisory_xact_lock(hashtextextended(certificate_key::text, 0));
+  select c.name_revision into current_revision
+    from public.read_foundations_private_certificate(p_user_id, p_programme_version, p_milestone) c;
+  if not found then return false; end if;
+  if p_token_hash is null then
+    delete from public.foundations_certificate_verification where certificate_id = certificate_key;
+    return true;
+  end if;
+  if p_expected_revision is distinct from current_revision then return false; end if;
+  insert into public.foundations_certificate_verification (certificate_id, token_hash, name_revision)
+    values (certificate_key, p_token_hash, current_revision)
+    on conflict (certificate_id) do update
+    set token_hash = excluded.token_hash, name_revision = excluded.name_revision;
+  return true;
+end;
+$$;
+
+create function public.verify_foundations_certificate(p_token_hash text)
+returns table (programme_version text, milestone text, issued_on date)
+language sql
+set search_path = ''
+as $$
+  select c.programme_version, c.milestone, (c.issued_at at time zone 'Asia/Colombo')::date
+  from public.foundations_certificate_verification v
+  join public.foundations_private_certificates c on c.id = v.certificate_id
+  where v.token_hash = p_token_hash and v.name_revision = coalesce((
+    select max(r.revision) from public.foundations_certificate_name_revisions r where r.certificate_id = c.id
+  ), 0);
+$$;
+
+revoke all on function public.set_foundations_certificate_verification(uuid, text, text, integer, text)
+  from public, anon, authenticated, service_role;
+revoke all on function public.verify_foundations_certificate(text) from public, anon, authenticated, service_role;
+grant execute on function public.set_foundations_certificate_verification(uuid, text, text, integer, text) to service_role;
+grant execute on function public.verify_foundations_certificate(text) to service_role;
+
+revoke all on function public.read_foundations_private_certificate(uuid, text, text) from public, anon, authenticated, service_role;
+revoke all on function public.correct_foundations_certificate_name(uuid, text, text, integer, text)
+  from public, anon, authenticated, service_role;
+grant execute on function public.read_foundations_private_certificate(uuid, text, text) to service_role;
+grant execute on function public.correct_foundations_certificate_name(uuid, text, text, integer, text) to service_role;
+
+-- A passed checkpoint is a qualifying action. Store at most one entry per
+-- account, programme and Sri Lanka calendar day. The browser supplies no date.
+create table public.foundations_learning_days (
+  user_id uuid not null references auth.users(id) on delete cascade,
+  programme_version text not null check (programme_version = 'foundations-v1'),
+  learning_day date not null,
+  primary key (user_id, programme_version, learning_day)
+);
+alter table public.foundations_learning_days enable row level security;
+revoke all on public.foundations_learning_days from public, anon, authenticated, service_role;
+grant select, insert on public.foundations_learning_days to service_role;
+
+-- Only a trusted grader may submit a result. A lower retry never removes a pass.
+create function public.record_foundations_assessment(
+  p_user_id uuid, p_programme_version text, p_assessment_id text, p_points integer, p_possible integer
+) returns void
+language sql
+set search_path = ''
+as $$
+  insert into public.foundations_assessment_results as current_result
+    (user_id, programme_version, assessment_id, points, possible)
+  values (p_user_id, p_programme_version, p_assessment_id, p_points, p_possible)
+  on conflict (user_id, programme_version, assessment_id) do update
+    set points = excluded.points
+    where excluded.points > current_result.points;
+  insert into public.foundations_learning_days (user_id, programme_version, learning_day)
+  select p_user_id, p_programme_version, (statement_timestamp() at time zone 'Asia/Colombo')::date
+  where p_points >= case when p_possible = 10 then 8 else 4 end
+    and (select count(*) from public.foundations_learning_days d
+      where d.user_id = p_user_id and d.programme_version = p_programme_version) < 7
+  on conflict do nothing;
+$$;
+
+-- The Edge policy supplies learner-friendly eligibility. Enforce the same rules
+-- here from a single evidence snapshot and retain that snapshot with issuance.
+create function public.create_or_read_foundations_certificate(
+  p_user_id uuid, p_programme_version text, p_milestone text,
+  p_recipient_name text, p_template_version text
+) returns table (
+  id uuid, user_id uuid, programme_version text, milestone text,
+  recipient_name text, template_version text, issued_at timestamptz, name_revision integer, verification_active boolean
+)
+language plpgsql
+set search_path = ''
+as $$
+declare
+  record_snapshot public.foundations_private_certificates%rowtype;
+  passed_ids text[];
+  passed_evidence jsonb;
+  courses_completed integer;
+begin
+  select c.* into record_snapshot from public.foundations_private_certificates c
+    where c.user_id = p_user_id and c.programme_version = p_programme_version and c.milestone = p_milestone;
+
+  if not found then
+    select coalesce(array_agg(a.assessment_id), '{}'::text[]),
+      coalesce(jsonb_agg(jsonb_build_object('assessment_id', a.assessment_id, 'points', a.points, 'possible', a.possible)
+        order by a.assessment_id), '[]'::jsonb)
+    into passed_ids, passed_evidence
+    from public.foundations_assessment_results a
+    where a.user_id = p_user_id and a.programme_version = p_programme_version
+      and ((a.possible = 5 and a.points >= 4) or (a.possible = 10 and a.points >= 8));
+
+    courses_completed :=
+      (array['markets', 'execution'] <@ passed_ids)::integer
+      + ('quotes' = any(passed_ids))::integer
+      + (array['risk', 'sizing'] <@ passed_ids)::integer
+      + ('reflection' = any(passed_ids))::integer;
+
+    if not coalesce(case p_milestone
+      when 'first-course' then courses_completed >= 1
+      when 'core-studies' then courses_completed >= 3
+      when 'foundations' then courses_completed = 4 and 'final-case' = any(passed_ids)
+      else false
+    end, false) then
+      return;
+    end if;
+
+    insert into public.foundations_private_certificates
+      (user_id, programme_version, milestone, recipient_name, template_version, evidence)
+    values (p_user_id, p_programme_version, p_milestone, p_recipient_name, p_template_version, passed_evidence)
+    on conflict on constraint foundations_private_certificates_pkey do nothing
+    returning * into record_snapshot;
+
+    if not found then
+      select c.* into strict record_snapshot from public.foundations_private_certificates c
+        where c.user_id = p_user_id and c.programme_version = p_programme_version and c.milestone = p_milestone;
+    end if;
+  end if;
+
+  return query select * from public.read_foundations_private_certificate(p_user_id, p_programme_version, p_milestone);
+end;
+$$;
+
+revoke all on function public.record_foundations_assessment(uuid, text, text, integer, integer)
+  from public, anon, authenticated, service_role;
+revoke all on function public.create_or_read_foundations_certificate(uuid, text, text, text, text)
+  from public, anon, authenticated, service_role;
+grant execute on function public.record_foundations_assessment(uuid, text, text, integer, integer) to service_role;
+grant execute on function public.create_or_read_foundations_certificate(uuid, text, text, text, text) to service_role;

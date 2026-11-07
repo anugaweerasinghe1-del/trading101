@@ -26,8 +26,8 @@ Issues remain open until their real acceptance gaps are resolved.
 | A / #332 mobile/accessibility/utilities | Real existing controls work at narrow widths, light/dark, keyboard, loading/repeats; tools accurately describe scope. | #362 320px course/Daily/newsletter and utility-route fixtures. | Moderation and cross-desk navigation browser coverage now pass; actual owner acceptance pending. |
 | C / #335 markets/portfolio | Persist/recover portfolios/trades; accurate provenance/freshness and leaderboard; one failed refresh cannot erase other successes. | #363 isolation fix tested/merged; prior v16 parity and scheduled HTTP200. Prior evidence: 15/15 held crypto fresh; 0/17 traditional fresh. | Provider entitlement/budget evidence missing. Do not fabricate observations or label old prices live. |
 | D / #335 beginner/arena/leaderboard | Guest/account learn→trade→reflect→resume journey and consent-based aggregate funnel, private defaults, eligibility/rank distinctions and recovery. | Earlier journey/privacy/funnel code and fixtures exist (#334/#336/#361 etc.); #377 live read confirmed 75 opted-in entries including 53 zero-trade profiles. Full real journey not accepted. | Exercise disposable fixtures; genuine account confirmation requires legitimate session. No invented conversion metrics. |
-| E / #353 trophy cabinet | Exactly 20 distinct educational trophies with original sculpted silhouettes, accessible locked/earned/loading/unavailable states, criteria and progress, restrained reduced-motion celebration, optional profile flair/pins/share cards. Preserve personal progress. Verified evidence must be server-authoritative, private by default, idempotent, isolated by account and revocable from public display. | Existing private cabinet and first server-recorded practice trade milestone. #370 addresses malformed catalog entries only. #378 draft holds all 20 approved designs and earning rules. Runtime catalog, verified evidence, sharing, tests, rollout and acceptance open. | Implement approved rules against trusted evidence. Profile flair/pins/share cards remain proposed, with explicit opt-in and withdrawal. No profit, leverage or click-farming awards. Continue admin work in parallel. |
-| E / #353 completion certificate | Versioned The Trade HQ Foundations Learning Programme with server-side eligibility and idempotent private issuance, stable ID/date/evidence, name preview, correction history, deterministic PDF matching the approved white-and-teal designs, repeat downloads and optional minimal revocable verification. | #378 draft contains the three approved PNG references and isolated eligibility/private issuance logic. No learner-facing release. | Connect fixed Foundations v1 checkpoints (4/5), four courses and final case (8/10) to durable server grading. Render production PDFs and implement name confirmation, correction, repeat downloads and verification. Test forgery, account isolation, duplicate/racing requests, outage/retry, fonts/escaping/overflow, print/download, capacity and verification withdrawal. No email by default. |
+| E / #353 trophy cabinet | Exactly 20 distinct educational trophies with original sculpted silhouettes, accessible locked/earned/loading/unavailable states, criteria and progress, restrained reduced-motion celebration, optional profile flair/pins/share cards. Preserve personal progress. Verified evidence must be server-authoritative, private by default, idempotent, isolated by account and revocable from public display. | #378 renders all 20 approved trophies. Eleven read trusted evidence and the other nine show unavailable. Isolated browser and database checks pass. | Finish the nine evidence sources, durable award records and opt-in trophy sharing. Hosted rollout and acceptance are open. |
+| E / #353 completion certificate | Versioned The Trade HQ Foundations Learning Programme with server-side eligibility and idempotent private issuance, stable ID/date/evidence, name preview, correction history, deterministic PDF matching the approved white-and-teal designs, repeat downloads and optional minimal revocable verification. | #378 implements private scoring and issuance, all three PDFs, append-only name correction and optional revocable verification. Isolated SQL, handler, build and browser coverage pass. | Review and seed the fixed curriculum, deploy the hosted schema and functions, and verify live acceptance. |
 | F / #321/#332/#335/#353 release | Security/RLS/privacy/rate limits, integrity/content trust, admin/browser/mobile/accessibility/SEO/performance and recovery evidence; all mandatory gates green; production matches reviewed main. | Main application, database and Cloudflare workflow runs completed success at checkpoint SHA; full release acceptance remains OPEN. | Resolve genuine owner/provider gates; track each PR SHA, active provider deployment and scope of smoke tests. No AdSense actions or paid dependencies. |
 
 ## Current blockers and authorization boundaries
@@ -516,3 +516,48 @@ Issues remain open until their real acceptance gaps are resolved.
 - #379 exact-head CI passed and the commit merged as
   `5d47f3db2e960e52d1e2dfc2de41008015347612`. Native rollout verification
   is recorded separately on the PR.
+
+### 7 Nov — rewards draft and protected releases
+
+- #379 merged as `5d47f3db2e960e52d1e2dfc2de41008015347612`.
+  [Native production evidence](https://github.com/anugaweerasinghe1-del/trading101/actions/runs/42349522498/job/128336647563)
+  confirms that exact SHA on Cloudflare `06d04b03-d1d5-452d-8fff-8cda2009acac`
+  and Vercel `dpl_CAcntijiceazf8peWqTNaHSF68Ch`. The live AI Desk
+  hydrated with its admin gate. The held-response regression passed in isolation.
+- #370 merged as `82a3f56269eecc84682be8dea20fe588b90c9475` after required
+  checks. [Native production proof](https://github.com/anugaweerasinghe1-del/trading101/actions/runs/42350506756/job/128339839085)
+  confirmed the exact SHA on Cloudflare and Vercel. The live Trophy Cabinet
+  hydrated its private progress, protected trade activity and course badges. #380 tracks the TypeScript ES2020 compatibility follow-up for its
+  own-key check. The local application TypeScript and catalog checks passed.
+- #378 renders all 20 approved trophy illustrations. Ten have connected
+  evidence (nine Foundations criteria and First Practice Trade); the other
+  ten show unavailable and require authoritative evidence producers. Durable
+  trophies and opt-in flair, pins, sharing and withdrawal are still open.
+- #378 implements a private, account-scoped assessment bank and grading,
+  service-only score and issuance records, name confirmation, and three
+  PDFs using the approved artwork. Isolated coverage includes account scope,
+  forged input, outage/retry, duplicate issuance, a 200-account SQL fixture,
+  and Chromium PDF downloads on desktop and a 320px viewport. Hosted schema,
+  assessment content and certificate issuance remain unreleased. Editorial
+  review and seeding remain open.
+
+- The rewards draft now preserves the original certificate while appending private
+  name revisions. New downloads use the latest name and keep the ID and date.
+  Disposable SQL and handler fixtures cover account isolation, stale revisions
+  and retry without duplicate changes.
+
+- The rewards draft now implements optional verification. The learner explicitly
+  creates or withdraws a link. The service stores only its hash and verification
+  returns the certificate type, programme version and date. Correction and link
+  rotation invalidate prior links. The public route skips account and analytics
+  providers and its built document excludes the ad tag. Hosted acceptance still
+  depends on the reviewed curriculum and reward rollout.
+- #380 passed required pull-request checks and merged as
+  `cf5af3722d14e99fc0ac8cfc53850338fb77d277`. Native rollout is tracked on
+  that pull request.
+
+- Steady Learner now reads service-only records of passing Foundations scores on
+  seven distinct Sri Lanka calendar days. Duplicate same-day scores count once,
+  failed scores do not qualify and the count remains account scoped. This adds
+  an eleventh trophy with a trusted evidence source in the draft. Nine sources
+  and the durable trophy award and sharing records remain open.

@@ -8,6 +8,7 @@ import { Card } from "@/components/ui/card";
 import { COURSE_PROGRESS_EVENT, COURSE_PROGRESS_KEY, loadProgress } from "@/lib/courseProgress";
 import { buildPersonalTrophyCabinet } from "@/lib/learningAchievements";
 import { useCourseCatalog } from "@/hooks/useCourseCatalog";
+import { FoundationsProgrammePanel } from "@/components/achievements/FoundationsProgrammePanel";
 import { FirstRecordedTradeMilestone } from "@/components/achievements/FirstRecordedTradeMilestone";
 
 export default function TrophyCabinet() {
@@ -85,6 +86,8 @@ export default function TrophyCabinet() {
               </Card>
             ))}
           </div>
+
+          <FoundationsProgrammePanel />
 
           <FirstRecordedTradeMilestone />
 

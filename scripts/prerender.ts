@@ -188,7 +188,12 @@ async function main() {
     const words = wordCount(body);
 
 
-    const html = renderHead(r, shell, body, page);
+    // Verification links carry an opt-in capability in the URL fragment.
+    const routeShell = r.path === "/certificate/verify"
+      ? shell.replace(/<script\b[^>]*\bid="tradehq-adsense"[^>]*><\/script>/i, "")
+        .replace("</head>", '<meta name="referrer" content="no-referrer" /></head>')
+      : shell;
+    const html = renderHead(r, routeShell, body, page);
 
     const outDir = r.path === "/" ? DIST : path.join(DIST, r.path);
     fs.mkdirSync(outDir, { recursive: true });

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title description">
+<title id="title">The Trade HQ Trophy Cabinet mockup</title>
+<desc id="description">Four representative sculpted awards: earned First Light and Risk Aware, locked Market Compass and Foundations Graduate.</desc>
+<defs>
+  <linearGradient id="wall" x2="0" y2="1"><stop stop-color="#171e2d"/><stop offset="1" stop-color="#0b101a"/></linearGradient>
+  <linearGradient id="bronze"><stop stop-color="#72442e"/><stop offset=".5" stop-color="#e5ac72"/><stop offset="1" stop-color="#8c5433"/></linearGradient>
+  <linearGradient id="jade" x2=".8" y2="1"><stop stop-color="#78bfae"/><stop offset=".5" stop-color="#2e6a64"/><stop offset="1" stop-color="#163b40"/></linearGradient>
+  <linearGradient id="stone"><stop stop-color="#373f51"/><stop offset=".5" stop-color="#7d8a9e"/><stop offset="1" stop-color="#333b4a"/></linearGradient>
+  <radialGradient id="lamp"><stop stop-color="#fff2bc"/><stop offset="1" stop-color="#a75d31"/></radialGradient>
+  <rect id="card" width="258" height="354" rx="19" fill="#151e2d" stroke="#344055"/>
+  <g id="base"><ellipse cx="0" cy="51" rx="60" ry="10" fill="#080c14" opacity=".7"/><path d="M-44 36h88l8 12H-52z" fill="#586172"/><path d="M-52 48H52v8H-52z" fill="#30394b"/></g>
+  <path id="check" d="m0 4 4 4 8-8" fill="none" stroke="#a1e1bf" stroke-width="2"/>
+  <path id="lock" d="M2 5V3a3 3 0 0 1 6 0v2M0 5h10v8H0z" fill="none" stroke="#c0c9da" stroke-width="1.2"/>
+</defs>
+<rect width="1200" height="650" fill="url(#wall)"/>
+<g font-family="Arial, sans-serif">
+  <text x="60" y="65" fill="#dbc397" font-size="13" font-weight="700" letter-spacing="4">THE TRADE HQ · LEARN</text>
+  <text x="60" y="122" fill="#f5f7fc" font-family="Georgia, serif" font-size="48">Trophy Cabinet</text>
+  <text x="62" y="160" fill="#c1cbdd" font-size="17">Awards for learning, reflection and thoughtful simulated practice.</text>
+  <text x="1140" y="115" fill="#c1cbdd" font-size="14" text-anchor="end">Design preview · 4 of 20 shown</text>
+  <g transform="translate(60 201)"><use href="#card"/><g transform="translate(129 120)">
+    <use href="#base"/><path d="M-35 32h70L25-44h-50z" fill="url(#bronze)" stroke="#e6ba87"/><path d="M-23 21h46L17-30h-34z" fill="url(#lamp)"/><path d="M0-30v51M-21-6h42" stroke="#7e4b2c" stroke-width="4"/><path d="M-31-44h62l-10-13h-42z" fill="url(#bronze)"/><path d="M-8-57v-8a8 8 0 0 1 16 0v8" fill="none" stroke="#d9a872" stroke-width="4"/>
+  </g><use href="#check" x="24" y="207"/><text x="46" y="216" fill="#a1e1bf" font-size="12" letter-spacing="2">EARNED</text><text x="24" y="256" fill="#fff" font-size="25" font-family="Georgia, serif">First Light</text><text x="24" y="286" fill="#c8d0df" font-size="14">First Foundations checkpoint</text><text x="24" y="323" fill="#c8d0df" font-size="13">1 of 1 passed</text></g>
+  <g transform="translate(334 201)"><use href="#card"/><g transform="translate(129 120)">
+    <use href="#base"/><path d="M-36-59q36 12 72 0v45c0 22-14 38-36 50-22-12-36-28-36-50z" fill="url(#bronze)"/><path d="M-28-49q28 9 56 0v35c0 17-10 29-28 40-18-11-28-23-28-40z" fill="url(#jade)" stroke="#e3bc87"/><path d="m-15-8 10 10 21-22" fill="none" stroke="#e6d4a4" stroke-width="4"/>
+  </g><use href="#check" x="24" y="207"/><text x="46" y="216" fill="#a1e1bf" font-size="12" letter-spacing="2">EARNED</text><text x="24" y="256" fill="#fff" font-size="25" font-family="Georgia, serif">Risk Aware</text><text x="24" y="286" fill="#c8d0df" font-size="14">Downside and risk checkpoint</text><text x="24" y="323" fill="#c8d0df" font-size="13">1 of 1 passed</text></g>
+  <g transform="translate(608 201)"><use href="#card"/><g transform="translate(129 120)">
+    <use href="#base"/><path d="M-35 36h70M0 36v-10" stroke="#7d8a9e" stroke-width="5"/><circle cy="-16" r="42" fill="url(#stone)"/><circle cy="-16" r="34" fill="#202b3c" stroke="#a7b0c1"/><path d="m-16 2 10-24 22-12-10 25z" fill="#aab5c7"/><path d="M0-45v5m0 47v5m-29-28h5m48 0h5" stroke="#9fadc2" stroke-width="2"/>
+  </g><use href="#lock" x="24" y="204"/><text x="46" y="216" fill="#c0c9da" font-size="12" letter-spacing="2">LOCKED</text><text x="24" y="256" fill="#fff" font-size="25" font-family="Georgia, serif">Market Compass</text><text x="24" y="286" fill="#c8d0df" font-size="14">Markets and instruments</text><text x="24" y="323" fill="#c8d0df" font-size="13">Checkpoint available</text></g>
+  <g transform="translate(882 201)"><use href="#card"/><g transform="translate(129 120)">
+    <use href="#base"/><path d="M0-59 32-40v38L0 17-32-2v-38z" fill="url(#stone)" stroke="#b2bbcd"/><path d="M0-49 23-35v28L0 7-23-7v-28z" fill="#293448" stroke="#b2bbcd"/><path d="M-43-38q-23 40 42 66m44-66Q66 2 1 28M-45-25l-9-9m12 26-12-5m22 19-13 1m90-32 9-9M42-8l12-5M32 6l13 1" fill="none" stroke="#8696af" stroke-width="4"/>
+  </g><use href="#lock" x="24" y="204"/><text x="46" y="216" fill="#c0c9da" font-size="12" letter-spacing="2">LOCKED</text><text x="24" y="256" fill="#fff" font-size="22" font-family="Georgia, serif">Foundations Graduate</text><text x="24" y="286" fill="#c8d0df" font-size="14">Foundations v1 completion</text><text x="24" y="323" fill="#c8d0df" font-size="13">Continue the programme</text></g>
+  <text x="61" y="603" fill="#c1cbdd" font-size="14">Private by default · Progress is visible only when evidence is available</text>
+</g>
+</svg>
