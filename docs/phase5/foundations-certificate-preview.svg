@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1188" height="840" viewBox="0 0 1188 840" role="img" aria-labelledby="title description">
+<title id="title">The Trade HQ Foundations certificate design preview</title>
+<desc id="description">Landscape ivory certificate with gold border and original gold seal. Fictional example for Maya Perera.</desc>
+<defs>
+  <linearGradient id="seal" x2="0.8" y2="1"><stop stop-color="#f5dfa0"/><stop offset=".55" stop-color="#c29a4a"/><stop offset="1" stop-color="#946528"/></linearGradient>
+  <path id="corner" d="M0 44V0H44M10 44V10H44M18 28l10-10 10 10-10 10z" fill="none" stroke="#a87c38" stroke-width="1.2"/>
+</defs>
+<rect width="1188" height="840" fill="#faf6eb"/>
+<g fill="none" stroke="#ad874b"><rect x="32" y="32" width="1124" height="776" stroke-width="1.8"/><rect x="42" y="42" width="1104" height="756" stroke-width=".8"/><rect x="52" y="52" width="1084" height="736" stroke-width=".5"/></g>
+<use href="#corner" x="62" y="62"/><use href="#corner" transform="translate(1126 62) scale(-1 1)"/><use href="#corner" transform="translate(62 778) scale(1 -1)"/><use href="#corner" transform="translate(1126 778) scale(-1 -1)"/>
+<g text-anchor="middle" fill="#2b2a24">
+  <text x="594" y="131" font-family="Arial, sans-serif" font-size="16" letter-spacing="6" font-weight="700">THE TRADE HQ</text>
+  <path d="M508 154h70m32 0h70m-91 0 5-5 5 5-5 5z" fill="none" stroke="#a87c38" stroke-width="1.4"/>
+  <text x="594" y="227" font-family="Georgia, Times New Roman, serif" font-size="56">Certificate of Completion</text>
+  <text x="594" y="293" font-family="Georgia, Times New Roman, serif" font-size="22">This certifies that</text>
+  <text x="594" y="377" font-family="Georgia, Times New Roman, serif" font-size="72" fill="#402d23">Maya Perera</text>
+  <path d="M362 404h464" stroke="#c1a371" stroke-width="1"/>
+  <text x="594" y="453" font-family="Georgia, Times New Roman, serif" font-size="22">has successfully completed</text>
+  <text x="594" y="501" font-family="Georgia, Times New Roman, serif" font-size="33">The Trade HQ’s Foundations Learning Programme</text>
+  <text x="594" y="537" font-family="Arial, sans-serif" font-size="11" letter-spacing="3" fill="#6b5131">FOUNDATIONS · VERSION 1</text>
+</g>
+<g transform="translate(594 627)">
+  <path d="M-26 28l-12 42 27-12 11 9 11-9 27 12-12-42" fill="#7b3b2e"/>
+  <path d="M0-49l10 5 12 1 6 9 11 6 1 12 6 10-4 11 1 12-10 8-4 11-12 3-10 8-11-3-12 3-9-8-11-3-4-11-10-8 1-12-4-11 6-10 1-12 11-6 6-9 12-1z" fill="url(#seal)" stroke="#8b5f27" stroke-width="1.1"/>
+  <circle r="32" fill="none" stroke="#79511f" stroke-width="1.1"/><circle r="28" fill="none" stroke="#f9ebbc" stroke-width=".9"/>
+  <path d="M-12 10h24M-8 5v-15m8 15v-21m8 21v-15M-14-10 0-18l14 8" fill="none" stroke="#563918" stroke-width="2"/>
+  <path d="m0 15 3 4-3 4-3-4z" fill="#563918"/>
+</g>
+<g text-anchor="middle" font-family="Arial, sans-serif" fill="#5b4933">
+  <text x="288" y="617" font-size="11" letter-spacing="2">ISSUE DATE</text><text x="288" y="641" font-size="17">7 November 2026</text>
+  <text x="900" y="617" font-size="11" letter-spacing="2">CERTIFICATE ID</text><text x="900" y="641" font-size="17">SAMPLE-FOUNDATIONS-001</text>
+  <text x="594" y="729" font-size="13">Fictional design preview · Verification is unavailable for this sample</text>
+</g>
+</svg>
