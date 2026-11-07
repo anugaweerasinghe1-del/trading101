@@ -19,7 +19,7 @@ Issues remain open until their real acceptance gaps are resolved.
 | A / #332 dashboard | Each feed has independent loading/error, authoritative counts and timestamps; reconnect/refresh and lock fence late responses. | Implemented and fixture-tested in #333/#337/#362/#377. The owner unlocked production and the normal dashboard refresh passed on the #377 release. | Outage and recovery passed in isolated Chromium. Verify any remaining desk-specific owner access separately. |
 | A / #321 courses | Private draft edits clear review; exact saved revision has independent factual review; authenticated registered owner explicitly approves publication; stale revisions fail closed; confirmed writes recover. | #345/#346/#362/#364 implemented; isolated CI passes. Historical deployment evidence: admin-courses v17. | Recheck live source/version; owner-reported registered access passed; exact-revision provider/editorial acceptance remains open. Never publish content as a test. |
 | A–B / #332/#335 Daily | Schedule, attempts, saved-revision editing/review, effective-date delivery, failure recovery and approved free-tier generation work. Preserve published 50-case/500-question bank. | #362 UI fixture-tested. Prior evidence v16 source parity; historical HTTP400, 3/3 attempts, next bank 9 Dec. | Do not reset exhausted cycle or call AI without authorization. Metadata connectivity cannot prove generation. |
-| A / #332 newsletter | Confirmation/unsubscribe, private drafts, preview, approval, authorized recipients, receipts and recovery. | #362 editor fixtures; #365/#366 legacy endpoint restoration/CORS and registered-owner gate tested/merged; prior v7 source parity. | Actual subscriber delivery excluded from tests. Genuine owner no-send acceptance and disposable opt-in lifecycle remain open. |
+| A / #332 newsletter | Confirmation/unsubscribe, private drafts, preview, approval, authorized recipients, receipts and recovery. | #362 editor fixtures; #365/#366 legacy endpoint restoration/CORS and registered-owner gate tested/merged; prior v7 source parity. | Actual subscriber delivery excluded from tests. Production registered-owner no-email check passed. Disposable opt-in mailbox and delivery acceptance remain open. |
 | A / #332 chatbot | Owner/provider configuration, free-tier quota, inert valid replies, auth/error handling, request fencing and lock. | #362 real Chromium fixture cases cover quota/401/403/paused/empty/forged/late replies. | Actual registered owner + permitted provider request required for genuine reply acceptance. |
 | A / #332 reviews | Moderation edit/reply/delete/restore persist; failed reads do not erase confirmed writes; privacy, duplicate prevention, keyboard/mobile/theme controls pass. | #367 deployed with confirmed-write/read-outage recovery; executable handler and Chromium fixtures pass, genuine owner acceptance pending. | Recovery deployed in #367; genuine owner moderation acceptance remains pending. |
 | A / #332 code controls | Queue/diagnostics/approval/stop and GitHub/deployment evidence accurate; private state fenced on sign-out. | Existing isolated queue/control tests, prior worker diagnostics; live privileged controls unaccepted. | Do not retry real owner jobs or stop production for testing. Inspect durable state with authorization. |
@@ -508,3 +508,11 @@ Issues remain open until their real acceptance gaps are resolved.
   validation. Keep the allowance and approved 50-case/500-question bank intact.
   Next Daily test requires a fresh deliberate owner free-tier/quota confirmation
   and can occur no earlier than 8 Nov at 05:30 Asia/Colombo.
+
+- The shared browser signed in to the existing TradeHQ account via Google OAuth.
+  The production Newsletter Desk returned **Registered owner verified. No
+  newsletter was sent.** This accepts registered-owner readiness. New signup,
+  mailbox delivery and consent-based leaderboard conversion remain distinct.
+- #379 exact-head CI passed and the commit merged as
+  `5d47f3db2e960e52d1e2dfc2de41008015347612`. Native rollout verification
+  is recorded separately on the PR.
