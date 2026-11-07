@@ -391,3 +391,32 @@ Issues remain open until their real acceptance gaps are resolved.
   proof, dedicated function deployment with reviewed-source parity and safe auth
   denial. Real Gemini acceptance remains pending the owner's deliberate live test.
   Rollback: remove this isolated UI/endpoint; no bank/data rollback or quota reset.
+
+### 7 Nov — completion review and Daily private-test admission race
+
+- Fresh main is `55916bd5af73f040d68424604d07c18efb267c46`; #374 is the
+  outstanding bounded Daily private-test workstream. Trophy #370 remains deferred.
+- Independent compiled Chromium reproduction: two clicks in one event turn sent
+  two test requests before React applied the disabled button. The server's atomic
+  one-test allowance still prevents a second admitted model call, but competing
+  UI outcomes were possible. Added an immediate in-memory submission guard;
+  request completion and sign-out release the guard under existing scope fencing.
+- Extended browser acceptance covers that exact two-click reproduction, forged
+  success metadata, and a held success response across Lock/unlock. Old replies
+  cannot populate the new desk or retain the old confirmation. No model request
+  or production editorial mutation is made by these fixtures.
+- Fresh read-only runtime source parity: admin-courses v17 10/10 files,
+  generate-daily-practice v16 8/8, admin-agent-chat v9 4/4 equal current main.
+  Approved public bank remains 50 exercises / 500 questions; three course drafts
+  are published, two Daily banks published, two newsletter editions approved.
+- Daily remains enabled, attempts 3, completed 0, nextDue 2026-12-09, historical
+  error present. The new endpoint is not deployed at this checkpoint; do not reset
+  the real cycle, fabricate owner auth or infer semantic quality from fixtures.
+- One operational settings read with the configured runtime master key still
+  returned HTTP401. The owner offered to sign in to shared Chrome for genuine
+  acceptance. Shared desktop is enabled but control tools are absent/cold in this
+  session; the owner was given the Desktop/sign-in instructions. A real browser
+  session and explicit owner initiation remain necessary for the real test.
+- Next: exact-head CI, fresh-main check and merge #374, dedicated Edge deployment
+  with source parity, native hosting proof and non-generating production smoke.
+  Only then can the owner deliberately run the quota-confirmed private test.

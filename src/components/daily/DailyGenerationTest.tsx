@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useAdminRequestScope } from '@/hooks/useAdminRefresh';
 import { isAdminRequestCancelled } from '@/lib/adminRequestScope';
@@ -6,17 +6,19 @@ import { adminFailureDetails, courseAdminError } from '@/lib/adminFunctionError'
 import type { DailyProbeResult } from '../../../supabase/functions/_shared/dailyPracticeProbe';
 export function DailyGenerationTest({ masterKey, disabled, onBusyChange }: { masterKey: string; disabled: boolean; onBusyChange: (busy: boolean) => void }) {
   const scope = useAdminRequestScope(masterKey);
+  const pending = useRef(false);
   const [confirmed, setConfirmed] = useState(false), [spent, setSpent] = useState(false);
   const [result, setResult] = useState<DailyProbeResult | null>(null), [error, setError] = useState('');
   useEffect(() => {
     const { data } = supabase.auth.onAuthStateChange(event => {
       if (event !== 'SIGNED_OUT') return;
-      scope.invalidate(); setConfirmed(false); setSpent(false); setResult(null); setError(''); onBusyChange(false);
+      scope.invalidate(); pending.current = false; setConfirmed(false); setSpent(false); setResult(null); setError(''); onBusyChange(false);
     });
     return () => data.subscription.unsubscribe();
   }, [scope, onBusyChange]);
   const run = async () => {
-    if (!confirmed || spent || disabled || !window.confirm('Make one real Gemini request using the saved free-tier Gemini 3.5 Flash Lite key? The result is discarded after validation. No bank, draft, attempt counter or publication will be changed. There is no automatic retry.')) return;
+    if (pending.current || !confirmed || spent || disabled || !window.confirm('Make one real Gemini request using the saved free-tier Gemini 3.5 Flash Lite key? The result is discarded after validation. No bank, draft, attempt counter or publication will be changed. There is no automatic retry.')) return;
+    pending.current = true;
     const guard = scope.capture(masterKey);
     setSpent(true); setResult(null); setError(''); onBusyChange(true);
     try {
@@ -39,7 +41,7 @@ export function DailyGenerationTest({ masterKey, disabled, onBusyChange }: { mas
       setResult(value);
     } catch (failure) {
       if (guard.current() && !isAdminRequestCancelled(failure)) setError(failure instanceof Error ? failure.message : 'The private test could not be confirmed.');
-    } finally { if (guard.current()) onBusyChange(false); }
+    } finally { if (guard.current()) { pending.current = false; onBusyChange(false); } }
   };
   return <section aria-label="Private Daily generation test" className="rounded-2xl border border-border p-5 space-y-3">
     <h2 className="font-semibold">Private generation test</h2>

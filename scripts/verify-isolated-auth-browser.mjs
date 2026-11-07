@@ -126,9 +126,12 @@ async function main(){
         let text='';req.on('data',chunk=>{text+=chunk});req.on('end',()=>{
           assert.deepEqual(JSON.parse(text),{confirmFreeTier:true});dailyProbeCalls++;
           if(dailyProbeMode==='used')return json(429,{code:'TEST_ALLOWANCE_USED',error:'Fixture allowance used'});
-          return json(200,{data:{outcome:dailyProbeMode,model:'gemini-3.5-flash-lite',providerGenerationAttempted:true,
-            productionCycleChanged:false,published:false,saved:false,exercises:dailyProbeMode==='passed'?10:0,
-            questions:dailyProbeMode==='passed'?100:0,...(dailyProbeMode==='failed'?{code:'PROVIDER_REJECTED',httpStatus:400,field:'thinkingLevel'}:{})}});
+          if(dailyProbeMode==='malformed')return json(200,{data:{outcome:'passed',productionCycleChanged:true,published:false,saved:false}});
+          const payload={data:{outcome:dailyProbeMode==='held'?'passed':dailyProbeMode,model:'gemini-3.5-flash-lite',providerGenerationAttempted:true,
+            productionCycleChanged:false,published:false,saved:false,exercises:dailyProbeMode==='passed'||dailyProbeMode==='held'?10:0,
+            questions:dailyProbeMode==='passed'||dailyProbeMode==='held'?100:0,...(dailyProbeMode==='failed'?{code:'PROVIDER_REJECTED',httpStatus:400,field:'thinkingLevel'}:{})}};
+          if(dailyProbeMode==='held'){setTimeout(()=>json(200,payload),600);return;}
+          return json(200,payload);
         });return;
       }
       if(route==='/api/fx-reference'){
@@ -1241,19 +1244,19 @@ async function main(){
     assert.equal(await devtools.evaluate("[...document.querySelectorAll('button')].find(b=>b.textContent.trim()==='Run one private generation test').disabled"),true,'Explicit free-tier review required');
     await devtools.evaluate(probe+".querySelector('input[type=checkbox]').click();window.confirm=()=>false");
     await adminClick('Run one private generation test');assert.equal(dailyProbeCalls,0,'Cancel confirmation is inert');
-    await devtools.evaluate('window.confirm=()=>true');await adminClick('Run one private generation test');
+    await devtools.evaluate("window.confirm=()=>true;(()=>{const b=[...document.querySelectorAll('button')].find(b=>b.textContent.trim()==='Run one private generation test');b.click();b.click();})()");
     await wait(()=>devtools.evaluate(probe+".textContent.includes('Private test passed: 10 exercises and 100 questions')"),'Private test success metadata');
     assert.equal(dailyProbeCalls,1);
     assert.equal(await devtools.evaluate("[...document.querySelectorAll('button')].find(b=>b.textContent.trim()==='Run one private generation test').disabled"),true,'No immediate repeat');
     assert.deepEqual({requests:dailyGenerationRequests,drafts:JSON.stringify(dailyDrafts),status:JSON.stringify(dailyStatus)},productionBeforeProbe,'Test cannot reset, queue, save or publish the actual bank');
-    for(const mode of ['failed','used']){
+    for(const mode of ['failed','used','malformed']){
       dailyProbeMode=mode;await loadDocument();
       await wait(()=>devtools.evaluate("!!document.querySelector('main form input[type=password]')"),'Private test reload unlock');
       await adminInput('main form input[type=password]',ADMIN_FIXTURE_KEY);await adminClick('Unlock');
       await wait(()=>devtools.evaluate('!!'+probe),'Private test panel reload');
       await devtools.evaluate(probe+".querySelector('input[type=checkbox]').click();window.confirm=()=>true");
       await adminClick('Run one private generation test');
-      await wait(()=>devtools.evaluate(probe+".textContent.includes("+JSON.stringify(mode==='failed'?'Private test failed: PROVIDER_REJECTED (HTTP 400)':'one-test allowance is already used')+")"),'Private test '+mode+' disclosed');
+      await wait(()=>devtools.evaluate(probe+".textContent.includes("+JSON.stringify(mode==='failed'?'Private test failed: PROVIDER_REJECTED (HTTP 400)':mode==='used'?'one-test allowance is already used':'private test result could not be verified')+")"),'Private test '+mode+' disclosed');
     }
     await devtools.send('Emulation.setDeviceMetricsOverride',{width:320,height:850,deviceScaleFactor:1,mobile:true});
     for(const theme of ['light','dark']){
@@ -1262,7 +1265,21 @@ async function main(){
     }
     await adminClick('Lock');
     await wait(()=>devtools.evaluate('!'+probe),'Private test results cleared by lock');
-    dailyProbeMode='passed';
+    dailyProbeMode='held';
+    await adminInput('main form input[type=password]',ADMIN_FIXTURE_KEY);await adminClick('Unlock');
+    await wait(()=>devtools.evaluate('!!'+probe),'Private test late-response panel');
+    await devtools.evaluate(probe+".querySelector('input[type=checkbox]').click();window.confirm=()=>true");
+    const beforeHeldProbe=dailyProbeCalls;
+    await adminClick('Run one private generation test');await wait(()=>dailyProbeCalls===beforeHeldProbe+1,'Private request held');
+    await adminClick('Lock');
+    await wait(()=>devtools.evaluate('!'+probe),'Private request locks while pending');
+    await adminInput('main form input[type=password]',ADMIN_FIXTURE_KEY);await adminClick('Unlock');
+    await wait(()=>devtools.evaluate('!!'+probe),'New private test session opened');
+    await sleep(700);
+    assert.equal(await devtools.evaluate(probe+".textContent.includes('Private test passed:')"),false,'Old reply cannot restore a result in the new session');
+    assert.equal(await devtools.evaluate(probe+".querySelector('input[type=checkbox]').checked"),false,'New session retains fresh consent requirement');
+    assert.equal(dailyProbeCalls,beforeHeldProbe+1,'Unlock never retries an earlier request');
+    await adminClick('Lock');dailyProbeMode='passed';
     await devtools.send('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false});
     console.log('ISOLATED_DAILY_PRIVATE_TEST_PASS: explicit review+confirmation, real owner JWT attached, no automatic invocation/repeat, pass/400/quota states, unchanged production-cycle fixtures, lock clears result, 320px themes; fake backend/provider only.');
 
