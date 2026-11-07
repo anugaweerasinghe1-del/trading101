@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createFoundationsCertificateHandler } from "../supabase/functions/_shared/foundationsCertificateHandler.ts";
 import { issueFoundationsCertificate } from "../supabase/functions/_shared/foundationsCertificate.ts";
 import {
   FOUNDATIONS_COURSES,
@@ -70,3 +71,44 @@ if (issued.status === "available") {
 assert.deepEqual(await issueFoundationsCertificate(certificateStore, "learner", "foundations", null), issued);
 assert.deepEqual(await issueFoundationsCertificate(certificateStore, "other-account", "foundations", "Maya Perera"), { status: "ineligible" });
 console.log("Private issuance policy passed: trusted evidence, account scope, immutable retry and Unicode name.");
+
+const learnerToken = "fixture-learner-token";
+const otherToken = "fixture-other-account-token";
+let rateAllowed = true;
+const handler = createFoundationsCertificateHandler({
+  authenticate: async token => {
+    if (token === "fixture-service-outage") throw Error("Private Auth outage metadata");
+    if (token === "fixture-evidence-outage") return "outage";
+    if (token === learnerToken) return "learner";
+    return token === otherToken ? "other-account" : null;
+  },
+  admit: async () => rateAllowed,
+  store: certificateStore,
+});
+const call = (input: unknown, token = learnerToken) => handler(new Request("http://localhost/foundations-certificate", {
+  method: "POST", body: JSON.stringify(input),
+  headers: token ? { Authorization: "Bearer " + token } : {},
+}));
+const clean = { milestone: "foundations", recipientName: "Maya Perera" };
+assert.equal((await call(clean, "")).status, 401);
+assert.equal((await call(clean, "fixture-forged-jwt-token")).status, 401);
+assert.equal((await call({ ...clean, userId: "learner", points: 10 }, otherToken)).status, 400);
+assert.equal((await call(clean, otherToken)).status, 409);
+assert.equal((await call({ ...clean, recipientName: "a".repeat(1100) })).status, 413);
+for (const token of ["fixture-service-outage", "fixture-evidence-outage"]) {
+  const failure = await call(clean, token);
+  assert.equal(failure.status, 503);
+  assert.deepEqual(await failure.json(), { status: "unavailable" });
+}
+rateAllowed = false;
+assert.equal((await call(clean)).status, 429);
+rateAllowed = true;
+const response = await call({ milestone: "foundations" });
+assert.equal(response.status, 200);
+assert.equal(response.headers.get("cache-control"), "no-store");
+const body = await response.json();
+assert.equal(body.certificate.recipientName, "මායා පෙරේරා");
+assert.equal(body.certificate.id, "test-certificate");
+assert.equal("userId" in body.certificate, false);
+assert.equal("evidence" in body.certificate, false);
+console.log("Certificate handler passed: session binding, forged inputs, throttling, body bounds, outages and private repeat download metadata.");

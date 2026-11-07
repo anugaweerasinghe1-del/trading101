@@ -68,3 +68,7 @@ verify_jwt = false
 [functions.daily-practice-test]
 # Private test verifies master key AND the registered owner via Auth before admission.
 verify_jwt = false
+
+[functions.foundations-certificate]
+# The handler independently verifies the signed-in account with Auth.getUser.
+verify_jwt = false
