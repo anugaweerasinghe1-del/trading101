@@ -1,5 +1,6 @@
 import { createClient } from "npm:@supabase/supabase-js@2.75.1";
 import { createFoundationsCertificateHandler } from "../_shared/foundationsCertificateHandler.ts";
+import { FOUNDATIONS_VERSION } from "../_shared/foundationsProgramme.ts";
 import { issueFoundationsCertificate } from "../_shared/foundationsCertificate.ts";
 import { allow } from "../_shared/rateLimit.ts";
 
@@ -28,6 +29,19 @@ Deno.serve(createFoundationsCertificateHandler({
     return data.user.id;
   },
   admit: userId => allow(userId, "foundations-certificate", 60, 12),
+  async readAssessment(assessmentId) {
+    const { data, error } = await client.from("foundations_assessment_items")
+      .select("reviewed_content").eq("programme_version", FOUNDATIONS_VERSION).eq("assessment_id", assessmentId).single();
+    if (error) throw error;
+    return data.reviewed_content;
+  },
+  async recordGrade(userId, grade) {
+    const { error } = await client.rpc("record_foundations_assessment", {
+      p_user_id: userId, p_programme_version: grade.programmeVersion, p_assessment_id: grade.assessmentId,
+      p_points: grade.points, p_possible: grade.possible,
+    });
+    if (error) throw error;
+  },
   store: {
     async findPrivateCertificate(key) {
       const { data, error } = await client.from("foundations_private_certificates")

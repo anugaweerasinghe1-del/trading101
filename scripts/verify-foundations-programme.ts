@@ -75,6 +75,13 @@ console.log("Private issuance policy passed: trusted evidence, account scope, im
 const learnerToken = "fixture-learner-token";
 const otherToken = "fixture-other-account-token";
 let rateAllowed = true;
+let assessmentOutage = false;
+const savedGrades: { account: string; grade: GradedFoundationsAttempt }[] = [];
+const fixtureQuestions = Array.from({ length: 5 }, (_, index) => ({
+  prompt: "Fixture prompt " + (index + 1),
+  choices: ["First", "Second", "Third", "Fourth"],
+  correctIndex: index % 4,
+}));
 const handler = createFoundationsCertificateHandler({
   authenticate: async token => {
     if (token === "fixture-service-outage") throw Error("Private Auth outage metadata");
@@ -84,6 +91,11 @@ const handler = createFoundationsCertificateHandler({
   },
   admit: async () => rateAllowed,
   store: certificateStore,
+  readAssessment: async () => {
+    if (assessmentOutage) return null;
+    return { title: "Private scoring fixture", questions: fixtureQuestions };
+  },
+  recordGrade: async (account, grade) => { savedGrades.push({ account, grade }); },
 });
 const call = (input: unknown, token = learnerToken) => handler(new Request("http://localhost/foundations-certificate", {
   method: "POST", body: JSON.stringify(input),
@@ -112,3 +124,31 @@ assert.equal(body.certificate.id, "test-certificate");
 assert.equal("userId" in body.certificate, false);
 assert.equal("evidence" in body.certificate, false);
 console.log("Certificate handler passed: session binding, forged inputs, throttling, body bounds, outages and private repeat download metadata.");
+
+const assessment = { action: "assessment", assessmentId: "markets", programmeVersion: FOUNDATIONS_VERSION };
+const assessmentResponse = await call(assessment);
+assert.equal(assessmentResponse.status, 200);
+const publicAssessment = (await assessmentResponse.json()).assessment;
+assert.equal(publicAssessment.questions.length, 5);
+assert.ok(publicAssessment.questions.every(question => !("correctIndex" in question)));
+assert.equal((await call({ ...assessment, assessmentId: "__proto__" })).status, 400);
+assert.equal((await call({ ...assessment, programmeVersion: "foundations-v2" })).status, 400);
+const grade = { ...assessment, action: "grade", answers: [0, 1, 2, 3, 0] };
+for (const input of [
+  { ...grade, answers: [0, 1, 2, 3] },
+  { ...grade, answers: [0, 1, 2, 3, 4] },
+  { ...grade, answers: ["0", 1, 2, 3, 0] },
+  { ...grade, points: 5 },
+  { ...grade, userId: "learner" },
+]) assert.equal((await call(input, otherToken)).status, 400);
+assessmentOutage = true;
+assert.equal((await call(grade)).status, 503);
+assessmentOutage = false;
+assert.equal(savedGrades.length, 0);
+const graded = await call(grade, otherToken);
+assert.equal(graded.status, 200);
+assert.deepEqual(await graded.json(), { status: "graded", grade: score("markets", 5) });
+assert.deepEqual(savedGrades, [{ account: "other-account", grade: score("markets", 5) }]);
+assert.equal((await call({ action: "progress" })).status, 200);
+assert.deepEqual((await (await call({ action: "progress" }, otherToken)).json()).milestones, []);
+console.log("Assessment handler passed: answer-key omission, strict version and shape, server scoring, wrong-account protection, and unavailable evidence.");

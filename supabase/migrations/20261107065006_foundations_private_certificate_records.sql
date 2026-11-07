@@ -1,3 +1,17 @@
+-- Only the reviewed release process may seed these immutable programme items.
+-- The Edge Function returns a projection without correct answers.
+create table public.foundations_assessment_items (
+  programme_version text not null check (programme_version = 'foundations-v1'),
+  assessment_id text not null check (
+    assessment_id in ('markets', 'execution', 'quotes', 'risk', 'sizing', 'reflection', 'final-case')
+  ),
+  reviewed_content jsonb not null check (jsonb_typeof(reviewed_content) = 'object'),
+  primary key (programme_version, assessment_id)
+);
+alter table public.foundations_assessment_items enable row level security;
+revoke all on public.foundations_assessment_items from public, anon, authenticated, service_role;
+grant select on public.foundations_assessment_items to service_role;
+
 -- Server-owned, versioned results. Keep one best score per assessment.
 create table public.foundations_assessment_results (
   user_id uuid not null references auth.users(id) on delete cascade,

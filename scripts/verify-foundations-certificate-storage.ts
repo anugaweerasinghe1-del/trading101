@@ -39,13 +39,14 @@ try {
     await db.exec("set role " + role);
     await assert.rejects(record(learner, "quotes", 5), /permission denied/);
     await assert.rejects(issue(learner, "first-course", "Fictional Learner"), /permission denied/);
-    for (const table of ["foundations_assessment_results", "foundations_private_certificates"]) {
+    for (const table of ["foundations_assessment_items", "foundations_assessment_results", "foundations_private_certificates"]) {
       await assert.rejects(db.query("select * from public." + table), /permission denied/);
     }
     await db.exec("reset role");
   }
 
   await db.exec("set role service_role");
+  await assert.rejects(db.query("insert into public.foundations_assessment_items values ('foundations-v1', 'markets', '{}')"), /permission denied/);
   assert.deepEqual((await issue(learner, "first-course", "Fictional Learner")).rows, []);
   await assert.rejects(record(learner, "unknown", 5), /check constraint/);
   await assert.rejects(record(learner, "quotes", 5, 10), /check constraint/);

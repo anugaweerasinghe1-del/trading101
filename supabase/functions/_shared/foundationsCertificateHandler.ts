@@ -1,4 +1,6 @@
 import { issueFoundationsCertificate } from "./foundationsCertificate.ts";
+import { assessmentSize, gradeFoundationsAssessment, parseFoundationsAssessment, publicFoundationsAssessment } from "./foundationsAssessment.ts";
+import { FOUNDATIONS_VERSION, getFoundationsEligibility, type GradedFoundationsAttempt } from "./foundationsProgramme.ts";
 
 type CertificateStore = Parameters<typeof issueFoundationsCertificate>[0];
 const maxBodyBytes = 1024;
@@ -32,6 +34,8 @@ export function createFoundationsCertificateHandler(options: {
   authenticate: (token: string) => Promise<string | null>;
   admit: (userId: string) => Promise<boolean>;
   store: CertificateStore;
+  readAssessment: (assessmentId: string) => Promise<unknown>;
+  recordGrade: (userId: string, grade: GradedFoundationsAttempt) => Promise<void>;
 }) {
   const headers = {
     "Content-Type": "application/json",
@@ -63,11 +67,34 @@ export function createFoundationsCertificateHandler(options: {
           ? reply({ status: "request_too_large" }, 413)
           : reply({ status: "invalid_request" }, 400);
       }
-      if (!input || typeof input !== "object" || Array.isArray(input)
-          || Object.keys(input).some(key => key !== "milestone" && key !== "recipientName")) {
+      if (!input || typeof input !== "object" || Array.isArray(input)) {
         return reply({ status: "invalid_request" }, 400);
       }
-      const { milestone, recipientName } = input as Record<string, unknown>;
+      const body = input as Record<string, unknown>;
+      const { action, assessmentId, answers, programmeVersion, milestone, recipientName } = body;
+      const onlyKeys = (keys: string[]) => Object.keys(body).every(key => keys.includes(key));
+
+      if (action === "progress" && onlyKeys(["action"])) {
+        const evidence = await options.store.readServerGradedAttempts(userId, FOUNDATIONS_VERSION);
+        return reply({ status: "available", programmeVersion: FOUNDATIONS_VERSION, ...getFoundationsEligibility(evidence) }, 200);
+      }
+      if (action === "assessment" || action === "grade") {
+        const keys = ["action", "assessmentId", "programmeVersion"];
+        const size = assessmentSize(assessmentId);
+        if (typeof assessmentId !== "string" || !size || programmeVersion !== FOUNDATIONS_VERSION
+            || !onlyKeys(action === "grade" ? [...keys, "answers"] : keys)) {
+          return reply({ status: "invalid_request" }, 400);
+        }
+        const assessment = parseFoundationsAssessment(await options.readAssessment(assessmentId), size);
+        if (action === "assessment") {
+          return reply({ status: "available", assessment: publicFoundationsAssessment(assessmentId, assessment) }, 200);
+        }
+        const grade = gradeFoundationsAssessment(assessmentId, assessment, answers);
+        if (!grade) return reply({ status: "invalid_request" }, 400);
+        await options.recordGrade(userId, grade);
+        return reply({ status: "graded", grade }, 200);
+      }
+      if (!onlyKeys(["milestone", "recipientName"])) return reply({ status: "invalid_request" }, 400);
       const result = await issueFoundationsCertificate(options.store, userId, milestone, recipientName);
       if (result.status === "available") {
         const { id, issuedAt, recipientName, milestone, templateVersion, programmeVersion } = result.certificate;
