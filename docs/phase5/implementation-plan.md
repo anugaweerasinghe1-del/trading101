@@ -16,8 +16,8 @@ Issues remain open until their real acceptance gaps are resolved.
 
 | Priority / issue | Acceptance criteria | Verified evidence / status | Dependencies / risks / next action |
 | --- | --- | --- | --- |
-| A / #332 dashboard | Each feed has independent loading/error, authoritative counts and timestamps; reconnect/refresh and lock fence late responses. | Implemented and fixture-tested in #333/#337/#362; genuine owner acceptance pending. | Registered owner session; exercise read-only dashboard and outages without user data exposure. |
-| A / #321 courses | Private draft edits clear review; exact saved revision has independent factual review; authenticated registered owner explicitly approves publication; stale revisions fail closed; confirmed writes recover. | #345/#346/#362/#364 implemented; isolated CI passes. Historical deployment evidence: admin-courses v17. | Recheck live source/version; genuine owner readiness and provider acceptance missing. Never publish content as a test. |
+| A / #332 dashboard | Each feed has independent loading/error, authoritative counts and timestamps; reconnect/refresh and lock fence late responses. | Implemented and fixture-tested in #333/#337/#362/#377. The owner unlocked production and the normal dashboard refresh passed on the #377 release. | Outage and recovery passed in isolated Chromium. Verify any remaining desk-specific owner access separately. |
+| A / #321 courses | Private draft edits clear review; exact saved revision has independent factual review; authenticated registered owner explicitly approves publication; stale revisions fail closed; confirmed writes recover. | #345/#346/#362/#364 implemented; isolated CI passes. Historical deployment evidence: admin-courses v17. | Recheck live source/version; owner-reported registered access passed; exact-revision provider/editorial acceptance remains open. Never publish content as a test. |
 | A–B / #332/#335 Daily | Schedule, attempts, saved-revision editing/review, effective-date delivery, failure recovery and approved free-tier generation work. Preserve published 50-case/500-question bank. | #362 UI fixture-tested. Prior evidence v16 source parity; historical HTTP400, 3/3 attempts, next bank 9 Dec. | Do not reset exhausted cycle or call AI without authorization. Metadata connectivity cannot prove generation. |
 | A / #332 newsletter | Confirmation/unsubscribe, private drafts, preview, approval, authorized recipients, receipts and recovery. | #362 editor fixtures; #365/#366 legacy endpoint restoration/CORS and registered-owner gate tested/merged; prior v7 source parity. | Actual subscriber delivery excluded from tests. Genuine owner no-send acceptance and disposable opt-in lifecycle remain open. |
 | A / #332 chatbot | Owner/provider configuration, free-tier quota, inert valid replies, auth/error handling, request fencing and lock. | #362 real Chromium fixture cases cover quota/401/403/paused/empty/forged/late replies. | Actual registered owner + permitted provider request required for genuine reply acceptance. |
@@ -25,15 +25,15 @@ Issues remain open until their real acceptance gaps are resolved.
 | A / #332 code controls | Queue/diagnostics/approval/stop and GitHub/deployment evidence accurate; private state fenced on sign-out. | Existing isolated queue/control tests, prior worker diagnostics; live privileged controls unaccepted. | Do not retry real owner jobs or stop production for testing. Inspect durable state with authorization. |
 | A / #332 mobile/accessibility/utilities | Real existing controls work at narrow widths, light/dark, keyboard, loading/repeats; tools accurately describe scope. | #362 320px course/Daily/newsletter and utility-route fixtures. | Moderation and cross-desk navigation browser coverage now pass; actual owner acceptance pending. |
 | C / #335 markets/portfolio | Persist/recover portfolios/trades; accurate provenance/freshness and leaderboard; one failed refresh cannot erase other successes. | #363 isolation fix tested/merged; prior v16 parity and scheduled HTTP200. Prior evidence: 15/15 held crypto fresh; 0/17 traditional fresh. | Provider entitlement/budget evidence missing. Do not fabricate observations or label old prices live. |
-| D / #335 beginner/arena/leaderboard | Guest/account learn→trade→reflect→resume journey and consent-based aggregate funnel, private defaults, eligibility/rank distinctions and recovery. | Earlier journey/privacy/funnel code and fixtures exist (#334/#336/#361 etc.); whole real journey not accepted. | Exercise disposable fixtures; genuine account confirmation requires legitimate session. No invented conversion metrics. |
-| E / #353 trophy cabinet | Exactly 20 distinct educational trophies with original sculpted silhouettes, accessible locked/earned/loading/unavailable states, criteria and progress, restrained reduced-motion celebration, optional profile flair/pins/share cards. Preserve personal progress. Verified evidence must be server-authoritative, private by default, idempotent, isolated by account and revocable from public display. | Existing private cabinet and first server-recorded practice trade milestone. #370 addresses malformed catalog entries only. Full catalog, designs, evidence, tests, rollout and acceptance open. | Present 20 criteria, evidence mapping and representative mockups for design review. Confirm public presentation. No profit, leverage or click-farming awards. Continue admin work in parallel. |
-| E / #353 completion certificate | Versioned The Trade HQ Foundations Learning Programme with server-side eligibility and idempotent private issuance, stable ID/date/evidence, name preview, correction history, deterministic original ivory/gold PDF, repeat downloads and optional minimal revocable verification. | Template, eligibility contract, implementation, tests, rollout and acceptance open. | Review fictional rendered sample, curriculum, assessment threshold and wording before enabling issuance. Test forgery, account isolation, duplicate/racing requests, outage/retry, fonts/escaping/overflow, print/download, capacity and verification withdrawal. No email by default. |
+| D / #335 beginner/arena/leaderboard | Guest/account learn→trade→reflect→resume journey and consent-based aggregate funnel, private defaults, eligibility/rank distinctions and recovery. | Earlier journey/privacy/funnel code and fixtures exist (#334/#336/#361 etc.); #377 live read confirmed 75 opted-in entries including 53 zero-trade profiles. Full real journey not accepted. | Exercise disposable fixtures; genuine account confirmation requires legitimate session. No invented conversion metrics. |
+| E / #353 trophy cabinet | Exactly 20 distinct educational trophies with original sculpted silhouettes, accessible locked/earned/loading/unavailable states, criteria and progress, restrained reduced-motion celebration, optional profile flair/pins/share cards. Preserve personal progress. Verified evidence must be server-authoritative, private by default, idempotent, isolated by account and revocable from public display. | Existing private cabinet and first server-recorded practice trade milestone. #370 addresses malformed catalog entries only. #378 draft holds all 20 approved designs and earning rules. Runtime catalog, verified evidence, sharing, tests, rollout and acceptance open. | Implement approved rules against trusted evidence. Profile flair/pins/share cards remain proposed, with explicit opt-in and withdrawal. No profit, leverage or click-farming awards. Continue admin work in parallel. |
+| E / #353 completion certificate | Versioned The Trade HQ Foundations Learning Programme with server-side eligibility and idempotent private issuance, stable ID/date/evidence, name preview, correction history, deterministic PDF matching the approved white-and-teal designs, repeat downloads and optional minimal revocable verification. | #378 draft contains the three approved PNG references and isolated eligibility/private issuance logic. No learner-facing release. | Connect fixed Foundations v1 checkpoints (4/5), four courses and final case (8/10) to durable server grading. Render production PDFs and implement name confirmation, correction, repeat downloads and verification. Test forgery, account isolation, duplicate/racing requests, outage/retry, fonts/escaping/overflow, print/download, capacity and verification withdrawal. No email by default. |
 | F / #321/#332/#335/#353 release | Security/RLS/privacy/rate limits, integrity/content trust, admin/browser/mobile/accessibility/SEO/performance and recovery evidence; all mandatory gates green; production matches reviewed main. | Main application, database and Cloudflare workflow runs completed success at checkpoint SHA; full release acceptance remains OPEN. | Resolve genuine owner/provider gates; track each PR SHA, active provider deployment and scope of smoke tests. No AdSense actions or paid dependencies. |
 
 ## Current blockers and authorization boundaries
 
-- No legitimate registered-owner browser session has been supplied. Admin master
-  key/service role cannot substitute for owner JWT or fabricated production auth.
+- The owner unlocked the production dashboard securely. A registered-owner account
+  session is required separately for protected Newsletter, Course and provider actions.
 - Owner authorized read-only operational credential use on 6 Nov. Endpoint calls
   from this runtime nevertheless return HTTP401 with configured credentials, both
   without and with standard Supabase routing headers; stopped retrying. MCP SQL
@@ -480,3 +480,31 @@ Issues remain open until their real acceptance gaps are resolved.
   authorization, and editorial actions still need their own evidence.
 - A complete editorial outage also retains the last successful refresh time.
   The isolated browser fixture checks the timestamp and subsequent recovery.
+
+
+### 7 Nov — resumed from verified production and rewards draft
+
+- Fresh protected main and production baseline: #377
+  `ff168c04d9e358b1586beae1e3013a285c440f8e`.
+  [Main CI](https://github.com/anugaweerasinghe1-del/trading101/actions/runs/42343914264)
+  passed. [Native release evidence](https://github.com/anugaweerasinghe1-del/trading101/actions/runs/42343914264/job/128319776352)
+  identifies Cloudflare deployment `4a76e847-2768-4af0-8b95-282575171ff2` and
+  Vercel `dpl_53Gnd2C2JbyJw5eCVZzC9XEdqtzj` READY at that SHA.
+- In the live browser, the owner unlocked the dashboard. Manual Refresh advanced
+  editorial freshness from 12:16:58 to 12:17:21 and GitHub freshness from
+  12:17:02 to 12:17:19 (Asia/Colombo). No editorial action or model request.
+  This accepts the deployed dashboard's normal read and manual refresh.
+- AI Desk refresh can reveal a new proposal head before its checks resolve. The
+  change binds each displayed check result to the exact head and shows validation
+  as unchecked until that head is read. Isolated release provenance and AI/admin
+  handler suites passed locally. Exact-head compiled browser CI remains required.
+- The #378 rewards draft at `bd8db36e38fad90107ed52a25dcf089ede41f08e` has a
+  successful Cloudflare preview and Vercel preview. Production acceptance
+  remains open. First Course requires one Foundations course, Core Studies
+  requires three, and Foundations Completion requires all four plus the final case.
+- #370 is a separate malformed-catalog fix and is behind/conflicting with main.
+  It still needs reconciliation and exact-head checks.
+- Keep #321, #332, #335 and #353 open. The earlier Daily private test failed
+  validation. Keep the allowance and approved 50-case/500-question bank intact.
+  Next Daily test requires a fresh deliberate owner free-tier/quota confirmation
+  and can occur no earlier than 8 Nov at 05:30 Asia/Colombo.

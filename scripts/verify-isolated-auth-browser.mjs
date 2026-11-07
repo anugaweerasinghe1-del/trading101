@@ -891,6 +891,15 @@ async function main(){
             {id:70,number:70,title:'[TradeHQ Agent] Older fixture failures',state:'open',created_at:new Date().toISOString(),html_url:'https://github.com/anugaweerasinghe1-del/trading101/issues/70'}];
           return new Response(JSON.stringify(data),{status:200,headers:{'Content-Type':'application/json'}});
         }
+        if(window.__fixtureProposalSha){
+          if(url.includes('/pulls?'))return Response.json([{number:902,title:'AI proposal: revision fixture',draft:false,
+            created_at:new Date().toISOString(),html_url:'https://github.com/anugaweerasinghe1-del/trading101/pull/902',head:{sha:window.__fixtureProposalSha}}]);
+          if(url.includes('/check-runs?')){
+            if(window.__fixtureHoldProposalChecks)await new Promise(resolve=>{window.__releaseProposalChecks=resolve});
+            return Response.json({total_count:0,check_runs:[]});
+          }
+          if(url.includes('/actions/runs?') && url.includes('head_sha='))return Response.json({total_count:0,workflow_runs:[]});
+        }
         if(window.__fixtureGithubHistory && url.includes('/pulls?'))return new Response('[]',{status:200,headers:{'Content-Type':'application/json'}});
         const run={id:700,status:'completed',conclusion:'success',html_url:'https://github.com/anugaweerasinghe1-del/trading101/actions/runs/700',created_at:new Date().toISOString(),head_sha:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'};
         const data=url.includes('/issues?')?[{id:900,title:'[TradeHQ Agent] Fixture browser failures',state:'open',created_at:new Date().toISOString(),html_url:'https://github.com/anugaweerasinghe1-del/trading101/issues/900'}]
@@ -1231,6 +1240,14 @@ async function main(){
     await devtools.evaluate('window.__fixtureGithubCap=true');await adminClick('Refresh activity');
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Issue history is partial')"),'Capped history disclosed');
     assert.equal(await devtools.evaluate("document.body.textContent.includes('No code requests submitted yet') || document.body.textContent.includes('No code requests returned.')"),false,'Partial empty history is never a verified empty request list');
+    await devtools.evaluate("window.__fixtureProposalSha='a'.repeat(40)");await adminClick('Refresh activity');
+    const proposalText="document.querySelector('a[href$=\"/pull/902/files\"]')?.parentElement.parentElement.textContent";
+    await wait(()=>devtools.evaluate(proposalText+"?.includes('Commit aaaaaaa · Phase 3 validation not reported')"),'First proposal revision validation');
+    await devtools.evaluate("window.__fixtureProposalSha='b'.repeat(40);window.__fixtureHoldProposalChecks=true");await adminClick('Refresh activity');
+    await wait(()=>devtools.evaluate(proposalText+"?.includes('Commit bbbbbbb') && !!window.__releaseProposalChecks"),'New proposal commit while validation is pending');
+    assert.equal(await devtools.evaluate(proposalText+"?.includes('Validation not checked; do not merge')"),true,'Prior validation must not be displayed for a changed PR head');
+    await devtools.evaluate('window.__releaseProposalChecks()');
+    await wait(()=>devtools.evaluate(proposalText+"?.includes('Commit bbbbbbb · Phase 3 validation not reported')"),'New proposal revision validation');
     await devtools.evaluate('window.__fixtureGitHubUnavailable=true');await adminClick('Refresh activity');
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Previous GitHub proposal and validation snapshots were cleared')"),'GitHub page error clears earlier history');
     assert.equal(await devtools.evaluate("document.body.textContent.includes('Request #94')"),false,'Failed refresh cannot retain stale request evidence');
