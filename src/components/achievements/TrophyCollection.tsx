@@ -57,9 +57,9 @@ export function TrophyCollection({ progress, checking = false }: { progress?: Pr
             count === undefined ? "Evidence unavailable" : earned ? "Earned" : "Locked";
           return (
             <Card className="flex flex-col gap-2 p-4" key={trophy.title}>
-              <svg aria-hidden="true" className={"mx-auto h-24 w-24 " + (earned ? "" : "opacity-60")} viewBox="-60 -60 120 122">
-                <use href={"/achievements/trophy-pieces.svg#trophy-" + (index + 1)} />
-              </svg>
+              <img src={"/achievements/trophies/" + String(index + 1).padStart(2, "0") + ".webp"} alt=""
+                width={232} height={232} loading="lazy" decoding="async"
+                className={"mx-auto h-28 w-28 object-contain " + (earned ? "" : "opacity-80")} />
               <p className={"text-xs font-semibold " + (earned ? "text-primary" : "text-muted-foreground")}>{status}</p>
               <h3 className="font-semibold">{trophy.title}</h3>
               <p className="flex-1 text-sm text-muted-foreground">{trophy.criterion}</p>
