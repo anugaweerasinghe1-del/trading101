@@ -63,24 +63,30 @@ export default function AdminDashboard() {
     if (callError || data?.error) throw new Error(data?.error || "Admin verification failed.");
     return data.data;
   }, [key]);
-  // Verify one privileged endpoint before displaying any administration data.
-  // An unrelated review or practice outage must never be interpreted as a bad master key.
-  const refresh = useCallback(async () => {
+  const refresh = useCallback(async (verifyAccess = false) => {
     const guard = scope.capture(key, 'editorial');
-    const settings = await adminCall("settings");
-    if (!settings) throw new Error("Administrator verification failed.");
-    guard.assert(); setCourseStatus(settings);
-    const [drafts, practice, result, banks, subscriberStatus, newsletterDrafts, chat] = await Promise.allSettled([
-      adminCall("list", { summary: true }), adminCall("daily-status"),
+    const settingsRequest = adminCall("settings");
+    // Verify one privileged endpoint before starting the other reads on unlock.
+    // After unlock, each endpoint still checks the key on every request.
+    if (verifyAccess) {
+      const settings = await settingsRequest;
+      if (!settings) throw new Error("Administrator verification failed.");
+      guard.assert();
+    }
+    const feeds = await Promise.allSettled([
+      settingsRequest, adminCall("list", { summary: true }), adminCall("daily-status"),
       supabase.functions.invoke("admin-reviews", { body: { action: "list" }, headers: { "x-admin-key": key } }),
       adminCall("daily-list", { summary: true }),
       supabase.functions.invoke("newsletter-dispatch", { body: { action: "status" }, headers: { "x-admin-key": key } }),
       supabase.functions.invoke("newsletter-editor", { body: { action: "list" }, headers: { "x-admin-key": key } }),
       // Readiness does not invoke Gemini or reserve the daily provider attempt.
       supabase.functions.invoke("admin-agent-chat", { body: { action: "status" }, headers: { "x-admin-key": key } }),
-    ]);
+    ] as const);
     guard.assert();
+    const [settings, drafts, practice, result, banks, subscriberStatus, newsletterDrafts, chat] = feeds;
     const warnings: string[] = [];
+    if (settings.status === "fulfilled" && typeof settings.value?.enabled === "boolean") setCourseStatus(settings.value);
+    else { setCourseStatus(null); warnings.push("Course generation status is temporarily unavailable."); }
     if (drafts.status === "fulfilled" && Array.isArray(drafts.value)) setCourses(drafts.value);
     else { setCourses(null); warnings.push("Course drafts are temporarily unavailable."); }
     if (practice.status === "fulfilled" && practice.value) setDaily(practice.value);
@@ -106,7 +112,12 @@ export default function AdminDashboard() {
     if (chatCode === 'CONFIGURED_NOT_TESTED' || chatCode === 'PILOT_PAUSED')
       setChatReadiness(chatCode);
     else { setChatReadiness(null); warnings.push("Admin AI chatbot readiness is temporarily unavailable."); }
-    setDeskWarnings(warnings); setCheckedAt(new Date()); setError("");
+    setDeskWarnings(warnings);
+    if (warnings.length === feeds.length) {
+      setError("Dashboard data refresh failed.");
+      return;
+    }
+    setCheckedAt(new Date()); setError("");
   }, [adminCall, key]);
   // Public GitHub data is used only for observability, never for authorization.
   // No PAT or administrative credentials are exposed in the browser.
@@ -205,7 +216,7 @@ export default function AdminDashboard() {
   const unlock = async (event: React.FormEvent) => {
     event.preventDefault(); if (pending.current) return; pending.current = true;
     const guard = scope.capture(key); setError(""); setBusy(true);
-    try { await refresh(); guard.assert(); setUnlocked(true); await loadAgents(); }
+    try { await refresh(true); guard.assert(); setUnlocked(true); await loadAgents(); }
     catch (failure) { if (guard.current() && !isAdminRequestCancelled(failure)) setError(failure instanceof Error ? failure.message : "Could not open dashboard."); }
     finally { if (guard.current()) { pending.current = false; setBusy(false); } }
   };
@@ -229,7 +240,7 @@ export default function AdminDashboard() {
     <div className="mx-auto max-w-6xl space-y-7">
       <header className="flex flex-wrap items-center justify-between gap-4">
         <div><p className="text-xs tracking-[0.2em] text-primary uppercase mb-2">TradeHQ · private workspace</p><h1 className="text-3xl font-semibold">Admin dashboard</h1><p className="text-sm text-muted-foreground mt-2">Editorial controls, community moderation, automated checks and proposed improvements in one place.</p></div>
-        <div className="flex gap-3">{unlocked && <button type="button" onClick={() => { scope.invalidate(); pending.current = false; setBusy(false); setCheckedAt(null); setError(""); setUnlocked(false); setKey(""); setCourses(null); setDailyBanks(null); setNewsletterEdits(null); setDeskWarnings([]); setDaily(null); setCourseStatus(null); setReviews(null); setNewsletterSummary(null); setIssues([]); setRun(null); setCodeRun(null); setCollectorRun(null); setPreviousSuccess(null); setPreviousFailure(null); setPreviousCodeFailure(null); setProposals([]); setAgentError(""); setLastGitHubChecked(null); setJobHistory([]); setJobHistoryError(""); setDeploymentChecks(null); }} className="rounded-xl border border-border px-4 py-2 flex items-center gap-2 text-sm"><Lock className="w-4 h-4"/> Lock</button>}<Link to="/" className={linkStyle}>View website <ExternalLink className="h-3 w-3"/></Link></div>
+        <div className="flex gap-3">{unlocked && <button type="button" onClick={() => { scope.invalidate(); pending.current = false; setBusy(false); setCheckedAt(null); setError(""); setUnlocked(false); setKey(""); setCourses(null); setDailyBanks(null); setNewsletterEdits(null); setDeskWarnings([]); setDaily(null); setCourseStatus(null); setChatReadiness(null); setReviews(null); setNewsletterSummary(null); setIssues([]); setRun(null); setCodeRun(null); setCollectorRun(null); setPreviousSuccess(null); setPreviousFailure(null); setPreviousCodeFailure(null); setProposals([]); setAgentError(""); setLastGitHubChecked(null); setJobHistory([]); setJobHistoryError(""); setDeploymentChecks(null); }} className="rounded-xl border border-border px-4 py-2 flex items-center gap-2 text-sm"><Lock className="w-4 h-4"/> Lock</button>}<Link to="/" className={linkStyle}>View website <ExternalLink className="h-3 w-3"/></Link></div>
       </header>
       {!unlocked ? <form onSubmit={unlock} className="max-w-md rounded-2xl border border-border bg-card p-6 space-y-5">
         <div className="flex gap-3 items-center"><ShieldCheck className="w-6 h-6 text-primary"/><h2 className="font-semibold">Verify administrator access</h2></div>

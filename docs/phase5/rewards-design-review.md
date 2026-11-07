@@ -1,10 +1,12 @@
 # The Trade HQ rewards design review
 
-Proposed for [Phase 5 issue #353](https://github.com/anugaweerasinghe1-del/trading101/issues/353). This design supports the [Phase 5 master checklist](implementation-plan.md).
+Tracked in [Phase 5 issue #353](https://github.com/anugaweerasinghe1-del/trading101/issues/353). This design supports the [Phase 5 master checklist](implementation-plan.md).
 
 ## Twenty trophies
 
-| Trophy | Sculpted silhouette | Proposed earning rule | Required evidence |
+The owner approved the 20 earning rules on 7 November. The implementation must honor these rules and the evidence boundaries below.
+
+| Trophy | Sculpted silhouette | Approved earning rule | Required evidence |
 | --- | --- | --- | --- |
 | First Light | Bronze lantern | Pass the first Foundations checkpoint | One passed checkpoint for the account |
 | Field Notes | Embossed open notebook | Pass any three different Foundations checkpoints | Three distinct passed checkpoint IDs |
@@ -37,12 +39,29 @@ The [cabinet mockup](trophy-cabinet-preview.svg) shows representative earned and
 
 Proposed sharing is private by default. Let a user explicitly select one earned trophy as optional username flair and pin up to three in a public profile. Public profile eligibility and trophy consent must both apply. Revocation takes effect at the source. Share cards expose only information the learner explicitly chose. No sharing exposes balances, trades, reflections, study dates or account identifiers. Awards never affect the return leaderboard.
 
-## Foundations certificate
+## Foundations certificates
 
-The [certificate template preview](foundations-certificate-preview.svg) uses a fictional recipient and a visibly invalid sample ID. The proposed programme freezes six topics in Foundations v1: markets and instruments, order execution, quote provenance and freshness, downside and risk, position sizing, and practice reflection. The sizing and reflection checkpoints are independent of the optional mastery trophies.
+Use Trade HQ's existing Apex logo on a dark, obsidian certificate with platinum lettering, a restrained accent and the original gold seal. Three fictional previews use the same layout.
 
-Proposed eligibility requires all six fixed checkpoints passed at 4/5 or better each, plus a scored final case at 8/10 or better. The final case combines virtual order and price interpretation, fees, sizing and a decision review. Curriculum, questions, and thresholds are proposals for owner review. Freeze the approved question/rubric revisions and store the programme version with each pass. Prior awards retain their original rules if a later version adds or changes requirements.
+| Certificate | Issuance milestone | Preview |
+| --- | --- | --- |
+| First Course Certificate | Complete one course in Foundations v1. | [Obsidian and emerald](first-course-certificate-preview.svg) |
+| Core Studies Certificate | Complete three distinct courses in Foundations v1. | [Obsidian and platinum blue](core-studies-certificate-preview.svg) |
+| Foundations Completion Certificate | Complete all four courses in Foundations v1 and score at least 8/10 on the final case. | [Obsidian and gold](foundations-certificate-preview.svg) |
 
-Once eligibility is proven, the learner reviews the name before issuance. Use a single authoritative record keyed by account and programme version. Generate repeat PDFs from the same name snapshot, ID, date and template version. Corrections replace an issuance through an auditable history, and superseded verification links should cease returning valid. Keep private downloads available without public verification. Enable optional verification using a separate opaque token, never a user ID or a predictable certificate number. Show only the programme, version, issue date and valid status by default, with the name excluded. Withdraw the token on request. A downloaded copy can remain on the recipient’s device.
+### Fixed v1 curriculum
 
-Before enabling issuance, review the curriculum, assessment threshold, wording, template and public presentation. Test Unicode and supported font fallback, long names, A4 landscape layout, repeat rendering, downloads on mobile and desktop, duplicate requests, retries, forged progress, sharing and withdrawal. Measure resource use on isolated fixtures. The current preview does not issue or verify certificates.
+| Course | Required checkpoints |
+| --- | --- |
+| Markets and Orders | Markets and instruments, order execution |
+| Reading Prices | Quote provenance and freshness |
+| Risk and Position Sizing | Downside and risk, position sizing |
+| Practice and Reflection | Simulated decisions and reflection |
+
+Every required checkpoint passes at 4/5 or better. The final case combines virtual order and price interpretation, fees, sizing and a decision review. The first two milestones count any distinct completed v1 course. Additional courses or content outside this fixed version cannot change previously earned milestones. The Foundations Graduate trophy uses the full completion rule.
+
+The server eligibility policy is executable and has tests for partial courses, repeats, incorrect scores, version separation, and final-case requirements. It assumes authenticated, account-scoped, server-graded evidence. The programme lessons, server-side assessment delivery and evidence persistence, issuance, PDF rendering and verification flows still require implementation and acceptance.
+
+Once eligibility is proven, the learner reviews the recipient name before first issuance. Use an authoritative record keyed by account, programme version and milestone. Generate repeat PDFs from the same name snapshot, certificate ID, date and template version. Maintain an auditable correction history and invalidate superseded verification links. A separate opaque verification token is voluntary. By default show only the milestone, programme version, date and validity, with no name or account identifier. Withdraw verification on request. Recipients retain downloaded copies.
+
+The templates are design previews. Test supported names and fonts, long-name layout, one-page landscape PDF output, phone and desktop downloads, duplicate/racing requests, retries, forged progress, sharing and withdrawal. Measure resource use with isolated fixtures. Public trophy display and certificate verification require explicit opt-in.

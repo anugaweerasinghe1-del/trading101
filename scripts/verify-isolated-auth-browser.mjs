@@ -104,7 +104,7 @@ async function main(){
     is_visible:true,is_featured:false,created_at:new Date().toISOString(),
     owner_reply:null,owner_reply_updated_at:null,deleted_at:null};
   let dashboardFixture=false,dailyQueueUnavailable=false,newsletterQueueUnavailable=false,dashboardSettingsUnavailable=false;
-  let dashboardMetadataRequests=0;
+  let dashboardMetadataRequests=0,dashboardFeedsUnavailable=false;
   let dailyStatus={enabled:false,nextDue:'2026-12-09',prepareAfter:'2026-12-02',completed:20,attempts:2,
     retryAfter:new Date(Date.now()+3600000).toISOString(),lastError:'Gemini rejected generation (HTTP 503). Check free-tier settings.',
     lastStarted:'2026-10-14T16:14:30Z',lastFinished:'2026-10-14T16:14:33Z',
@@ -120,6 +120,10 @@ async function main(){
         res.writeHead(status,{"Content-Type":"application/json","Cache-Control":"no-store"});
         res.end(JSON.stringify(body));
       };
+      if(dashboardFeedsUnavailable && req.method==='POST' && [
+        '/functions/v1/admin-courses','/functions/v1/admin-reviews','/functions/v1/newsletter-dispatch',
+        '/functions/v1/newsletter-editor','/functions/v1/admin-agent-chat',
+      ].includes(route)) return json(503,{error:'Fixture dashboard feeds unavailable'});
       if(route==='/functions/v1/daily-practice-test'){
         assert.equal(req.method,'POST');assert.equal(req.headers['x-admin-key'],ADMIN_FIXTURE_KEY);
         assert.equal(req.headers.authorization,'Bearer '+JWT,'Private test requires the genuine fixture owner session');
@@ -923,10 +927,21 @@ async function main(){
     await wait(()=>devtools.evaluate(inbox+".textContent.includes('Newsletter review queue unavailable')"),'Unavailable Newsletter desk cannot masquerade as an empty queue');
     assert.equal(await devtools.evaluate(inbox+".textContent.includes('2 course drafts awaiting review')"),true,'Course review remains accessible during a Newsletter outage');
     newsletterQueueUnavailable=false;
-    dashboardSettingsUnavailable=true;await refreshInbox();
-    await wait(()=>devtools.evaluate("document.body.textContent.includes('Previous data may be stale')"),'Failed refresh discloses stale snapshot');
+    dashboardSettingsUnavailable=true;dailyStatus={...dailyStatus,attempts:3};await refreshInbox();
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Course generation status is temporarily unavailable.') && "+inbox+".textContent.includes('three-attempt limit')"),'Failed Course settings do not prevent fresh Daily status');
+    assert.equal(await devtools.evaluate(inbox+".textContent.includes('1 course generation failure')"),false,'Old Course generation status is cleared');
+    assert.equal(await devtools.evaluate(inbox+".textContent.includes('1 newsletter draft awaiting review')"),true,'Newsletter recovers independently from its prior outage');
     assert.equal(dailyEditorialWrites,0);assert.equal(dailyGenerationRequests,1);assert.ok(dashboardMetadataRequests>=6);
-    dashboardSettingsUnavailable=false;dashboardHold=true;await refreshInbox();
+    dashboardSettingsUnavailable=false;await refreshInbox();
+    await wait(()=>devtools.evaluate(inbox+".textContent.includes('1 course generation failure')"),'Course settings recover on the next refresh');
+    const freshness="document.querySelector('[aria-label=\"Administration data freshness\"] p')";
+    const lastSuccessfulRefresh=await devtools.evaluate(freshness+".textContent");
+    dashboardFeedsUnavailable=true;await refreshInbox();
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Dashboard data refresh failed.')"),'Complete editorial outage is visible');
+    assert.equal(await devtools.evaluate(freshness+".textContent"),lastSuccessfulRefresh,'A complete outage cannot advance the last successful refresh');
+    dashboardFeedsUnavailable=false;await refreshInbox();
+    await wait(()=>devtools.evaluate(inbox+".textContent.includes('1 course generation failure') && !document.body.textContent.includes('Dashboard data refresh failed.')"),'All editorial feeds recover');
+    dashboardHold=true;await refreshInbox();
     await wait(()=>dashboardHeldRequests>0,'Held dashboard request before lock');
     await adminClick('Lock');
     await sleep(800);
@@ -1351,7 +1366,7 @@ async function main(){
     assert.equal(await devtools.evaluate(fxPanel+'===null'),true,'Reference panel is forex only');
     console.log('ISOLATED_FX_REFERENCE_BROWSER_PASS: dated source, shared pair cache, real guest trade uses independent execution price, unchanged portfolio on reads, outage/future rejection, loading, 320px light/dark; no real provider calls.');
 
-    console.log('ISOLATED_AUTOMATION_INBOX_PASS: compiled dashboard combines course, Daily and Newsletter drafts, failures, cooldown, open findings and proposals; collector evidence linked to commit; partial outage stays unknown; stale refresh disclosed; zero mutations. Fixture only.');
+    console.log('ISOLATED_AUTOMATION_INBOX_PASS: compiled dashboard combines course, Daily and Newsletter drafts, failures, cooldown, open findings and proposals; collector evidence linked to commit; partial outages stay unknown while other feeds update; zero mutations. Fixture only.');
     console.log('ISOLATED_COURSE_PROGRESS_BROWSER_PASS: null tracks, null lessons and invalid lesson rows recovered; valid unrelated completion/badge retained after real lesson save and reload; fixture only.');
     console.log("ISOLATED_AUTH_BROWSER_PASS: reload persistence; real UI sign-out; no resurrected session; expired refresh rejected; ten Daily answers persisted/resumed/locked; one streak per day; actual built TradeHQ login in real Chromium; negative password refused; fake Supabase grant accepted; authenticated profile navigation observed; isolated account initialization executed; zero non-allowlisted backend writes; zero real provider calls.");
   }finally{
