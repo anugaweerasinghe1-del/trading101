@@ -44,6 +44,7 @@ export function createFoundationsCertificateHandler(options: {
   store: CertificateStore;
   setVerification: (key: Parameters<CertificateStore["findPrivateCertificate"]>[0], expected: number, tokenHash: string | null) => Promise<boolean>;
   correctName: (key: Parameters<CertificateStore["findPrivateCertificate"]>[0], expected: number, recipientName: string) => Promise<boolean>;
+  readLearningDays: (userId: string) => Promise<number>;
   readAssessment: (assessmentId: string) => Promise<unknown>;
   recordGrade: (userId: string, grade: GradedFoundationsAttempt) => Promise<void>;
 }) {
@@ -85,8 +86,14 @@ export function createFoundationsCertificateHandler(options: {
       const onlyKeys = (keys: string[]) => Object.keys(body).every(key => keys.includes(key));
 
       if (action === "progress" && onlyKeys(["action"])) {
-        const evidence = await options.store.readServerGradedAttempts(userId, FOUNDATIONS_VERSION);
-        return reply({ status: "available", programmeVersion: FOUNDATIONS_VERSION, ...getFoundationsEligibility(evidence) }, 200);
+        const [evidence, learningDays] = await Promise.all([
+          options.store.readServerGradedAttempts(userId, FOUNDATIONS_VERSION),
+          options.readLearningDays(userId),
+        ]);
+        if (!Number.isInteger(learningDays) || learningDays < 0 || learningDays > 7) {
+          return reply({ status: "unavailable" }, 503);
+        }
+        return reply({ status: "available", programmeVersion: FOUNDATIONS_VERSION, ...getFoundationsEligibility(evidence), learningDays }, 200);
       }
       if (action === "assessment" || action === "grade") {
         const keys = ["action", "assessmentId", "programmeVersion"];

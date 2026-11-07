@@ -135,7 +135,7 @@ async function main(){
           const input=JSON.parse(text);
           foundationsReads++;
           if(input.action==='progress')return json(200,{status:'available',programmeVersion:foundationsVersion,
-            completedCourses:foundationsPassed?['market-and-orders']:[],finalCasePassed:false,perfectSizing:false,milestones:foundationsPassed?['first-course','core-studies','foundations']:[],passedCheckpoints:foundationsPassed?['markets']:[]});
+            completedCourses:foundationsPassed?['market-and-orders']:[],finalCasePassed:false,perfectSizing:false,learningDays:foundationsPassed?1:0,milestones:foundationsPassed?['first-course','core-studies','foundations']:[],passedCheckpoints:foundationsPassed?['markets']:[]});
           if(input.action==='assessment'){
             assert.deepEqual(input,{action:'assessment',programmeVersion:foundationsVersion,assessmentId:'markets'});
             return json(200,{status:'available',assessment:{programmeVersion:foundationsVersion,assessmentId:'markets',
@@ -625,6 +625,8 @@ async function main(){
     await wait(()=>devtools.evaluate(programme+".textContent.includes('Score 5/5. Passed.')"),'Server-graded score rendered');
     await wait(()=>devtools.evaluate(programme+".textContent.includes('Markets and instruments · Passed')"),'Server progress refreshes after grading');
     assert.equal(foundationsGradeCalls,2,'One failed deliberate submission and one deliberate retry');
+    await wait(()=>devtools.evaluate(collection+".querySelector('[aria-label=\"Steady Learner progress\"]')?.textContent.trim()==='1 / 7'"),'Private distinct-day count shown on Steady Learner');
+
     const downloadPath=join(temp,'certificate-download');
     mkdirSync(downloadPath);
     await devtools.send('Page.setDownloadBehavior',{behavior:'allow',downloadPath});

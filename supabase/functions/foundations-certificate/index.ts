@@ -28,6 +28,12 @@ Deno.serve(createFoundationsCertificateHandler({
     return data.user.id;
   },
   admit: userId => allow(userId, "foundations-certificate", 60, 12),
+  async readLearningDays(userId) {
+    const { data, error } = await client.from("foundations_learning_days")
+      .select("learning_day").eq("user_id", userId).eq("programme_version", FOUNDATIONS_VERSION).limit(7);
+    if (error) throw error;
+    return data.length;
+  },
   async readAssessment(assessmentId) {
     const { data, error } = await client.from("foundations_assessment_items")
       .select("reviewed_content").eq("programme_version", FOUNDATIONS_VERSION).eq("assessment_id", assessmentId).single();

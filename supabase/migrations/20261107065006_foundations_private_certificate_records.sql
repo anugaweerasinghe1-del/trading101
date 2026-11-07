@@ -177,6 +177,18 @@ revoke all on function public.correct_foundations_certificate_name(uuid, text, t
 grant execute on function public.read_foundations_private_certificate(uuid, text, text) to service_role;
 grant execute on function public.correct_foundations_certificate_name(uuid, text, text, integer, text) to service_role;
 
+-- A passed checkpoint is a qualifying action. Store at most one entry per
+-- account, programme and Sri Lanka calendar day. The browser supplies no date.
+create table public.foundations_learning_days (
+  user_id uuid not null references auth.users(id) on delete cascade,
+  programme_version text not null check (programme_version = 'foundations-v1'),
+  learning_day date not null,
+  primary key (user_id, programme_version, learning_day)
+);
+alter table public.foundations_learning_days enable row level security;
+revoke all on public.foundations_learning_days from public, anon, authenticated, service_role;
+grant select, insert on public.foundations_learning_days to service_role;
+
 -- Only a trusted grader may submit a result. A lower retry never removes a pass.
 create function public.record_foundations_assessment(
   p_user_id uuid, p_programme_version text, p_assessment_id text, p_points integer, p_possible integer
@@ -190,6 +202,12 @@ as $$
   on conflict (user_id, programme_version, assessment_id) do update
     set points = excluded.points
     where excluded.points > current_result.points;
+  insert into public.foundations_learning_days (user_id, programme_version, learning_day)
+  select p_user_id, p_programme_version, (statement_timestamp() at time zone 'Asia/Colombo')::date
+  where p_points >= case when p_possible = 10 then 8 else 4 end
+    and (select count(*) from public.foundations_learning_days d
+      where d.user_id = p_user_id and d.programme_version = p_programme_version) < 7
+  on conflict do nothing;
 $$;
 
 -- The Edge policy supplies learner-friendly eligibility. Enforce the same rules

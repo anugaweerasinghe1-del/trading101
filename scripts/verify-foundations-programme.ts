@@ -107,6 +107,7 @@ const handler = createFoundationsCertificateHandler({
     records.set(keyFor(key), { ...current, recipientName, nameRevision: expected + 1 });
     return true;
   },
+  readLearningDays: async account => account === "learner" ? 7 : 0,
   readAssessment: async () => {
     if (assessmentOutage) return null;
     return { title: "Private scoring fixture", questions: fixtureQuestions };
@@ -165,7 +166,9 @@ const graded = await call(grade, otherToken);
 assert.equal(graded.status, 200);
 assert.deepEqual(await graded.json(), { status: "graded", grade: score("markets", 5) });
 assert.deepEqual(savedGrades, [{ account: "other-account", grade: score("markets", 5) }]);
-assert.equal((await call({ action: "progress" })).status, 200);
+const learning = await call({ action: "progress" });
+assert.equal(learning.status, 200);
+assert.equal((await learning.json()).learningDays, 7);
 assert.deepEqual((await (await call({ action: "progress" }, otherToken)).json()).milestones, []);
 console.log("Assessment handler passed: answer-key omission, strict version and shape, server scoring, wrong-account protection, and unavailable evidence.");
 

@@ -555,3 +555,9 @@ Issues remain open until their real acceptance gaps are resolved.
 - #380 passed required pull-request checks and merged as
   `cf5af3722d14e99fc0ac8cfc53850338fb77d277`. Native rollout is tracked on
   that pull request.
+
+- Steady Learner now reads service-only records of passing Foundations scores on
+  seven distinct Sri Lanka calendar days. Duplicate same-day scores count once,
+  failed scores do not qualify and the count remains account scoped. This adds
+  an eleventh trophy with a trusted evidence source in the draft. Nine sources
+  and the durable trophy award and sharing records remain open.

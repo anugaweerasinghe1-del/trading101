@@ -37,7 +37,7 @@ async function request<T>(accessToken: string, body: Record<string, unknown>, si
   return data;
 }
 
-type Progress = ReturnType<typeof getFoundationsEligibility> & { status: string; programmeVersion: string };
+type Progress = ReturnType<typeof getFoundationsEligibility> & { status: string; programmeVersion: string; learningDays: number };
 type Assessment = ReturnType<typeof publicFoundationsAssessment>;
 
 export function FoundationsProgrammePanel() {
@@ -71,7 +71,8 @@ function Programme({ userId, token }: { userId: string; token: string }) {
       const snapshot = await request<Progress>(token, { action: "progress" }, signal);
       if (snapshot.status !== "available" || snapshot.programmeVersion !== FOUNDATIONS_VERSION
           || !Array.isArray(snapshot.passedCheckpoints) || !Array.isArray(snapshot.completedCourses)
-          || !Array.isArray(snapshot.milestones) || typeof snapshot.perfectSizing !== "boolean") {
+          || !Array.isArray(snapshot.milestones) || typeof snapshot.perfectSizing !== "boolean"
+          || !Number.isInteger(snapshot.learningDays) || snapshot.learningDays < 0 || snapshot.learningDays > 7) {
         throw Error("Foundations progress unavailable.");
       }
       return snapshot;

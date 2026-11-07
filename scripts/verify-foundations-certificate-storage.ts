@@ -39,7 +39,7 @@ try {
     await db.exec("set role " + role);
     await assert.rejects(record(learner, "quotes", 5), /permission denied/);
     await assert.rejects(issue(learner, "first-course", "Fictional Learner"), /permission denied/);
-    for (const table of ["foundations_assessment_items", "foundations_assessment_results", "foundations_private_certificates", "foundations_certificate_name_revisions", "foundations_certificate_verification"]) {
+    for (const table of ["foundations_assessment_items", "foundations_assessment_results", "foundations_private_certificates", "foundations_certificate_name_revisions", "foundations_certificate_verification", "foundations_learning_days"]) {
       await assert.rejects(db.query("select * from public." + table), /permission denied/);
     }
     await db.exec("reset role");
@@ -51,6 +51,10 @@ try {
   await assert.rejects(record(learner, "unknown", 5), /check constraint/);
   await assert.rejects(record(learner, "quotes", 5, 10), /check constraint/);
   await assert.rejects(record(learner, "quotes", 6), /check constraint/);
+  const days = (account: string) => db.query(
+    "select learning_day from public.foundations_learning_days where user_id = $1", [account]);
+  await record(other, "quotes", 3);
+  assert.equal((await days(other)).rows.length, 0, "Failed scores do not earn a learning day");
   const scores: GradedFoundationsAttempt[] = [];
   const assessments = FOUNDATIONS_COURSES.flatMap(course => course.checkpoints.map(id =>
     ({ assessmentId: id, points: 4, possible: 5, programmeVersion: FOUNDATIONS_VERSION })));
@@ -66,6 +70,13 @@ try {
       assert.equal(result.rows.length, Number(eligible.includes(milestone)), milestone);
     }
   }
+  assert.equal((await days(learner)).rows.length, 1, "Multiple passing scores on one calendar day count once");
+  await db.query(`insert into public.foundations_learning_days
+    select $1, 'foundations-v1', (statement_timestamp() at time zone 'Asia/Colombo')::date - n
+    from generate_series(1, 6) n`, [learner]);
+  await record(learner, "quotes", 4);
+  assert.equal((await days(learner)).rows.length, 7);
+  assert.equal((await days(other)).rows.length, 0, "Learning days stay account scoped");
   await record(learner, "quotes", 1);
   const best = await db.query<{ points: number }>(
     "select points from public.foundations_assessment_results where user_id = $1 and assessment_id = 'quotes'", [learner]);
@@ -122,7 +133,8 @@ try {
   await db.query("delete from auth.users where id = $1", [learner]);
   assert.equal((await db.query("select * from public.foundations_certificate_name_revisions")).rows.length, 0);
   assert.equal((await db.query("select * from public.foundations_private_certificates")).rows.length, 0);
-  assert.equal((await db.query("select * from public.foundations_assessment_results")).rows.length, 0);
+  assert.equal((await db.query("select * from public.foundations_learning_days")).rows.length, 0);
+  assert.equal((await db.query("select * from public.foundations_assessment_results where user_id = $1", [learner])).rows.length, 0);
   console.log("FOUNDATIONS_STORAGE_PASS: disposable PostgreSQL, role denial, scoring bounds, policy parity, immutable retry, isolation, evidence and account erasure.");
   const sample = Array.from({ length: 200 }, () => crypto.randomUUID());
   await db.query("insert into auth.users select unnest($1::uuid[])", [sample]);

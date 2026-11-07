@@ -5,6 +5,7 @@ type Progress = {
   passedCheckpoints: string[];
   perfectSizing: boolean;
   milestones: string[];
+  learningDays: number;
 };
 type Trophy = {
   title: string;
@@ -32,7 +33,7 @@ const trophies: Trophy[] = [
   { title: "Second Look", criterion: "Correct a missed concept on a different follow-up question.", target: 1 },
   { title: "Case Solver", criterion: "Pass a scored Daily Practice case.", target: 1 },
   { title: "Case Collector", criterion: "Pass five distinct scored Daily Practice cases.", target: 5 },
-  { title: "Steady Learner", criterion: "Complete a qualifying learning action on seven different days.", target: 7 },
+  { title: "Steady Learner", criterion: "Pass a scored Foundations activity on seven different Sri Lanka calendar days.", target: 7, progress: x => x.learningDays },
   { title: "Knowledge Builder", criterion: "Pass all six Foundations checkpoints.", target: 6, progress: x => x.passedCheckpoints.length },
   { title: "Foundations Graduate", criterion: "Complete all four Foundations courses and pass the final case.", target: 1, progress: x => Number(x.milestones.includes("foundations")) },
 ];
