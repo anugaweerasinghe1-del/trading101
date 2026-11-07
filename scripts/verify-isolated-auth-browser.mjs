@@ -104,7 +104,7 @@ async function main(){
     is_visible:true,is_featured:false,created_at:new Date().toISOString(),
     owner_reply:null,owner_reply_updated_at:null,deleted_at:null};
   let dashboardFixture=false,dailyQueueUnavailable=false,newsletterQueueUnavailable=false,dashboardSettingsUnavailable=false;
-  let dashboardMetadataRequests=0;
+  let dashboardMetadataRequests=0,dashboardFeedsUnavailable=false;
   let dailyStatus={enabled:false,nextDue:'2026-12-09',prepareAfter:'2026-12-02',completed:20,attempts:2,
     retryAfter:new Date(Date.now()+3600000).toISOString(),lastError:'Gemini rejected generation (HTTP 503). Check free-tier settings.',
     lastStarted:'2026-10-14T16:14:30Z',lastFinished:'2026-10-14T16:14:33Z',
@@ -120,6 +120,10 @@ async function main(){
         res.writeHead(status,{"Content-Type":"application/json","Cache-Control":"no-store"});
         res.end(JSON.stringify(body));
       };
+      if(dashboardFeedsUnavailable && req.method==='POST' && [
+        '/functions/v1/admin-courses','/functions/v1/admin-reviews','/functions/v1/newsletter-dispatch',
+        '/functions/v1/newsletter-editor','/functions/v1/admin-agent-chat',
+      ].includes(route)) return json(503,{error:'Fixture dashboard feeds unavailable'});
       if(route==='/functions/v1/daily-practice-test'){
         assert.equal(req.method,'POST');assert.equal(req.headers['x-admin-key'],ADMIN_FIXTURE_KEY);
         assert.equal(req.headers.authorization,'Bearer '+JWT,'Private test requires the genuine fixture owner session');
@@ -930,6 +934,13 @@ async function main(){
     assert.equal(dailyEditorialWrites,0);assert.equal(dailyGenerationRequests,1);assert.ok(dashboardMetadataRequests>=6);
     dashboardSettingsUnavailable=false;await refreshInbox();
     await wait(()=>devtools.evaluate(inbox+".textContent.includes('1 course generation failure')"),'Course settings recover on the next refresh');
+    const freshness="document.querySelector('[aria-label=\"Administration data freshness\"] p')";
+    const lastSuccessfulRefresh=await devtools.evaluate(freshness+".textContent");
+    dashboardFeedsUnavailable=true;await refreshInbox();
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Dashboard data refresh failed.')"),'Complete editorial outage is visible');
+    assert.equal(await devtools.evaluate(freshness+".textContent"),lastSuccessfulRefresh,'A complete outage cannot advance the last successful refresh');
+    dashboardFeedsUnavailable=false;await refreshInbox();
+    await wait(()=>devtools.evaluate(inbox+".textContent.includes('1 course generation failure') && !document.body.textContent.includes('Dashboard data refresh failed.')"),'All editorial feeds recover');
     dashboardHold=true;await refreshInbox();
     await wait(()=>dashboardHeldRequests>0,'Held dashboard request before lock');
     await adminClick('Lock');

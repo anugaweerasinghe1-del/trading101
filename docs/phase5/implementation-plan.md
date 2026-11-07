@@ -478,3 +478,5 @@ Issues remain open until their real acceptance gaps are resolved.
   freshness to 10:55:31 (Asia/Colombo). This accepts the normal dashboard read
   and manual refresh on the deployed baseline; outage, recovery, separate desk
   authorization, and editorial actions still need their own evidence.
+- A complete editorial outage also retains the last successful refresh time.
+  The isolated browser fixture checks the timestamp and subsequent recovery.

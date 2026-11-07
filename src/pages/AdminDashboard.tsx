@@ -73,7 +73,7 @@ export default function AdminDashboard() {
       if (!settings) throw new Error("Administrator verification failed.");
       guard.assert();
     }
-    const [settings, drafts, practice, result, banks, subscriberStatus, newsletterDrafts, chat] = await Promise.allSettled([
+    const feeds = await Promise.allSettled([
       settingsRequest, adminCall("list", { summary: true }), adminCall("daily-status"),
       supabase.functions.invoke("admin-reviews", { body: { action: "list" }, headers: { "x-admin-key": key } }),
       adminCall("daily-list", { summary: true }),
@@ -81,8 +81,9 @@ export default function AdminDashboard() {
       supabase.functions.invoke("newsletter-editor", { body: { action: "list" }, headers: { "x-admin-key": key } }),
       // Readiness does not invoke Gemini or reserve the daily provider attempt.
       supabase.functions.invoke("admin-agent-chat", { body: { action: "status" }, headers: { "x-admin-key": key } }),
-    ]);
+    ] as const);
     guard.assert();
+    const [settings, drafts, practice, result, banks, subscriberStatus, newsletterDrafts, chat] = feeds;
     const warnings: string[] = [];
     if (settings.status === "fulfilled" && typeof settings.value?.enabled === "boolean") setCourseStatus(settings.value);
     else { setCourseStatus(null); warnings.push("Course generation status is temporarily unavailable."); }
@@ -111,7 +112,12 @@ export default function AdminDashboard() {
     if (chatCode === 'CONFIGURED_NOT_TESTED' || chatCode === 'PILOT_PAUSED')
       setChatReadiness(chatCode);
     else { setChatReadiness(null); warnings.push("Admin AI chatbot readiness is temporarily unavailable."); }
-    setDeskWarnings(warnings); setCheckedAt(new Date()); setError("");
+    setDeskWarnings(warnings);
+    if (warnings.length === feeds.length) {
+      setError("Dashboard data refresh failed.");
+      return;
+    }
+    setCheckedAt(new Date()); setError("");
   }, [adminCall, key]);
   // Public GitHub data is used only for observability, never for authorization.
   // No PAT or administrative credentials are exposed in the browser.
