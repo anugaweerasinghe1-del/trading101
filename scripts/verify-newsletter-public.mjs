@@ -69,3 +69,6 @@ for (const path of ["/newsletter", "/newsletter/confirm", "/newsletter/unsubscri
 assert.match(page, /onClick={execute}/, "Subscription actions must require an explicit click.");
 
 console.log("PASS public confirmed-only newsletter, unsubscribe, owner publishing limits, signed bounce handling and privacy");
+
+// Exercise real handler branches, not just source/SEO assertions. No network email.
+await import('./verify-newsletter-lifecycle.mjs');

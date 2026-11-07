@@ -1,3 +1,4 @@
+import { DailyFxReference } from "@/components/trading/DailyFxReference";
 import NotFound from "./NotFound";
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useParams, Navigate, useNavigate } from "react-router-dom";
@@ -501,6 +502,8 @@ export default function TradeAsset() {
               </div>
             </header>
           )}
+
+          {selectedAsset?.type === "forex" && <DailyFxReference assetId={selectedAsset.id} />}
 
           {(selectedAsset?.id === "ftm" || selectedAsset?.id === "matic") && (
             <section className="rounded-2xl border border-border bg-card p-6 space-y-3" aria-label="Legacy token context">

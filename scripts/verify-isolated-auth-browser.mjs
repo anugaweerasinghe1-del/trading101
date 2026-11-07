@@ -74,6 +74,11 @@ async function main(){
   const temp=mkdtempSync(join(tmpdir(),"tradehq-isolated-auth-"));
   const dist=join(temp,"dist"),profile=join(temp,"chrome");
   let server,browser,devtools;let attempts=0,approved=0,rejected=0,dataWrites=0,portfolioInitialized=0,logouts=0,refreshRejected=0,dailyReads=0,adminChatRequests=0;
+  let dailyProbeCalls=0,dailyProbeMode='passed';
+  let fxReferenceReads=0,fxReferenceMode='valid';
+  const fxDate=new Date(Date.now()-3*86400000).toISOString().slice(0,10);
+  const fxBatch={kind:'daily_fx_reference',source:'Frankfurter blended daily reference',requestedDate:fxDate,
+    rates:{eurusd:{rate:1.234567,date:fxDate},gbpusd:{rate:1.345678,date:fxDate}}};
   let showPublications=false,publicationReads=0;
   let learningWrites=0, learningReads=0, savedLearning=null;
   let privateTradeReads=0, privateTradeRejected=0;
@@ -85,7 +90,7 @@ async function main(){
   let dailyGenerationRequests=0;
   let dailyDrafts=[],dailyEditorialWrites=0;
   let newsletterRevision=1,newsletterReads=0,newsletterWrites=0,newsletterConfirmed=1;
-  let newsletterEditorialFixture=false,newsletterPreviewCalls=0,newsletterPublishRequests=0;
+  let newsletterEditorialFixture=false,newsletterPreviewCalls=0,newsletterPublishRequests=0,newsletterAudienceUnavailable=false;
   let newsletterEdition={id:'fixture-newsletter',week_of:'2026-11-02',status:'draft',revision:2,subject:'Saved fixture subject',preheader:'Saved preview line',body_markdown:'Saved fixture text',reviewed_by:null,reviewed_at:null,updated_at:new Date().toISOString(),ai_model:null,generator_error:null};
   const newsletterPreview={subject:'Preview fixture subject',preheader:'A source-backed fixture preview',body_markdown:'## Fixture lesson\n<img src=x onerror=window.__newsletterHtmlExecuted=true>\nHypothetical worksheet: 1% of $100 equals $1.'};
   let dashboardHold=false,dashboardHeldRequests=0;
@@ -99,7 +104,7 @@ async function main(){
     is_visible:true,is_featured:false,created_at:new Date().toISOString(),
     owner_reply:null,owner_reply_updated_at:null,deleted_at:null};
   let dashboardFixture=false,dailyQueueUnavailable=false,newsletterQueueUnavailable=false,dashboardSettingsUnavailable=false;
-  let dashboardMetadataRequests=0;
+  let dashboardMetadataRequests=0,dashboardFeedsUnavailable=false;
   let dailyStatus={enabled:false,nextDue:'2026-12-09',prepareAfter:'2026-12-02',completed:20,attempts:2,
     retryAfter:new Date(Date.now()+3600000).toISOString(),lastError:'Gemini rejected generation (HTTP 503). Check free-tier settings.',
     lastStarted:'2026-10-14T16:14:30Z',lastFinished:'2026-10-14T16:14:33Z',
@@ -115,6 +120,32 @@ async function main(){
         res.writeHead(status,{"Content-Type":"application/json","Cache-Control":"no-store"});
         res.end(JSON.stringify(body));
       };
+      if(dashboardFeedsUnavailable && req.method==='POST' && [
+        '/functions/v1/admin-courses','/functions/v1/admin-reviews','/functions/v1/newsletter-dispatch',
+        '/functions/v1/newsletter-editor','/functions/v1/admin-agent-chat',
+      ].includes(route)) return json(503,{error:'Fixture dashboard feeds unavailable'});
+      if(route==='/functions/v1/daily-practice-test'){
+        assert.equal(req.method,'POST');assert.equal(req.headers['x-admin-key'],ADMIN_FIXTURE_KEY);
+        assert.equal(req.headers.authorization,'Bearer '+JWT,'Private test requires the genuine fixture owner session');
+        let text='';req.on('data',chunk=>{text+=chunk});req.on('end',()=>{
+          assert.deepEqual(JSON.parse(text),{confirmFreeTier:true});dailyProbeCalls++;
+          if(dailyProbeMode==='used')return json(429,{code:'TEST_ALLOWANCE_USED',error:'Fixture allowance used'});
+          if(dailyProbeMode==='bad-diagnostics')return json(200,{data:{outcome:'passed',model:'gemini-3.5-flash-lite',providerGenerationAttempted:true,productionCycleChanged:false,published:false,saved:false,exercises:10,questions:100,diagnostics:{provider:{finishReason:'PRIVATE_DIAGNOSTIC_VALUE'}}}});
+          if(dailyProbeMode==='malformed')return json(200,{data:{outcome:'passed',productionCycleChanged:true,published:false,saved:false}});
+          const payload={data:{outcome:dailyProbeMode==='held'?'passed':dailyProbeMode==='validation'?'failed':dailyProbeMode,model:'gemini-3.5-flash-lite',providerGenerationAttempted:true,
+            productionCycleChanged:false,published:false,saved:false,exercises:dailyProbeMode==='passed'||dailyProbeMode==='held'?10:0,
+            questions:dailyProbeMode==='passed'||dailyProbeMode==='held'?100:0,...(dailyProbeMode==='failed'?{code:'PROVIDER_REJECTED',httpStatus:400,field:'thinkingLevel'}:dailyProbeMode==='validation'?{code:'OUTPUT_VALIDATION_FAILED',diagnostics:{provider:{finishReason:'MAX_TOKENS',inputTokens:100,outputTokens:32768,totalTokens:32868,textChars:12000},validation:{stage:'EXERCISE_STRUCTURE',rules:['QUESTION_FIELDS'],exercise:3,question:5},structure:{exerciseCount:10,questionCounts:Array(10).fill(10),minExplanationChars:7,minScenarioChars:600,minGuideChars:140}}}:{})}};
+          if(dailyProbeMode==='held'){setTimeout(()=>json(200,payload),600);return;}
+          return json(200,payload);
+        });return;
+      }
+      if(route==='/api/fx-reference'){
+        assert.equal(req.method,'GET');fxReferenceReads++;
+        if(fxReferenceMode==='unavailable')return json(503,{error:'Reference unavailable'});
+        if(fxReferenceMode==='future')return json(200,{...fxBatch,requestedDate:'2099-01-01'});
+        // Deliberate delay makes the actual accessible loading state observable.
+        setTimeout(()=>json(200,fxBatch),500);return;
+      }
       if(route==='/functions/v1/admin-courses' && req.method==='POST'){
         if(req.headers['x-admin-key']!==ADMIN_FIXTURE_KEY)return json(401,{error:'fixture_admin_denied'});
         let content='';req.on('data',chunk=>{content+=chunk;});
@@ -156,6 +187,7 @@ async function main(){
         if(req.headers['x-admin-key']!==ADMIN_FIXTURE_KEY)return json(401,{error:'fixture_admin_denied'});
         let content='';req.on('data',chunk=>{content+=chunk;});req.on('end',()=>{
           const body=JSON.parse(content);
+          if(route.endsWith('newsletter-dispatch') && body.action==='status' && newsletterAudienceUnavailable)return json(503,{error:'Fixture exact-count outage'});
           if(route.endsWith('newsletter-dispatch') && body.action==='status')return json(200,{data:{counts:{confirmed:newsletterConfirmed,pending:0,unsubscribed:0,bounced:0},subscribers:[],recentDeliveries:[{edition_id:'fixture-newsletter',status:'accepted',provider_id:'private-provider-id',created_at:new Date().toISOString()},{edition_id:'fixture-newsletter',status:'delivered',provider_id:'other-private-id',created_at:new Date().toISOString()},{edition_id:'fixture-newsletter',status:'unknown',provider_id:null,created_at:new Date().toISOString()}],webhookConfigured:true,limitInfo:'Isolated fixture only'}});
           if(route.endsWith('newsletter-dispatch')){
             if(body.action==='publish')newsletterPublishRequests++;
@@ -609,7 +641,14 @@ async function main(){
     // Actual compiled admin chat: paused mode, escaped suggestions, explicit draft
     // transfer, forged authority rejection, and late response after lock.
     await loadDocument(origin+'/admin/ai');
-    const adminClick=async text=>devtools.evaluate("(()=>{const e=[...document.querySelectorAll('button')].find(e=>e.textContent.trim()==="+JSON.stringify(text)+"&&!e.disabled);if(!e)throw Error('Admin button missing');e.click();return true})()");
+    const adminClick=async text=>{
+      const target="[...document.querySelectorAll('button')].find(e=>e.textContent.trim()==="+JSON.stringify(text)+"&&!e.matches(':disabled'))";
+      // Messages and HTTP receipts can render before busy controls become usable.
+      // Waiting never clicks twice; bounded failures identify the actual control.
+      if (!await devtools.evaluate("!!"+target)) console.log('ISOLATED_ADMIN_CONTROL_WAIT: '+text);
+      await wait(()=>devtools.evaluate("!!"+target),'enabled admin control: '+text);
+      return devtools.evaluate("(()=>{const e="+target+";if(!e)throw Error("+JSON.stringify('Admin control unavailable: '+text)+");e.click();return true})()");
+    };
     const adminInput=async(selector,value)=>devtools.evaluate("(()=>{const e=document.querySelector("+JSON.stringify(selector)+");if(!e)throw Error('Admin input missing');const proto=e.tagName==='TEXTAREA'?HTMLTextAreaElement.prototype:HTMLInputElement.prototype;Object.getOwnPropertyDescriptor(proto,'value').set.call(e,"+JSON.stringify(value)+");e.dispatchEvent(new Event('input',{bubbles:true}));return true})()");
     const openChat=async()=>{await adminClick('Assistant pilot');await wait(()=>devtools.evaluate("document.body.textContent.includes('Admin assistant · pilot')"),'admin pilot tab');};
     const askChat=async()=>{await adminInput('textarea','Help me draft a mobile spacing improvement for the About page.');await wait(()=>devtools.evaluate("[...document.querySelectorAll('button')].some(e=>e.textContent.trim()==='Ask assistant'&&!e.disabled)"),'chat input accepted');await adminClick('Ask assistant');};
@@ -888,10 +927,21 @@ async function main(){
     await wait(()=>devtools.evaluate(inbox+".textContent.includes('Newsletter review queue unavailable')"),'Unavailable Newsletter desk cannot masquerade as an empty queue');
     assert.equal(await devtools.evaluate(inbox+".textContent.includes('2 course drafts awaiting review')"),true,'Course review remains accessible during a Newsletter outage');
     newsletterQueueUnavailable=false;
-    dashboardSettingsUnavailable=true;await refreshInbox();
-    await wait(()=>devtools.evaluate("document.body.textContent.includes('Previous data may be stale')"),'Failed refresh discloses stale snapshot');
+    dashboardSettingsUnavailable=true;dailyStatus={...dailyStatus,attempts:3};await refreshInbox();
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Course generation status is temporarily unavailable.') && "+inbox+".textContent.includes('three-attempt limit')"),'Failed Course settings do not prevent fresh Daily status');
+    assert.equal(await devtools.evaluate(inbox+".textContent.includes('1 course generation failure')"),false,'Old Course generation status is cleared');
+    assert.equal(await devtools.evaluate(inbox+".textContent.includes('1 newsletter draft awaiting review')"),true,'Newsletter recovers independently from its prior outage');
     assert.equal(dailyEditorialWrites,0);assert.equal(dailyGenerationRequests,1);assert.ok(dashboardMetadataRequests>=6);
-    dashboardSettingsUnavailable=false;dashboardHold=true;await refreshInbox();
+    dashboardSettingsUnavailable=false;await refreshInbox();
+    await wait(()=>devtools.evaluate(inbox+".textContent.includes('1 course generation failure')"),'Course settings recover on the next refresh');
+    const freshness="document.querySelector('[aria-label=\"Administration data freshness\"] p')";
+    const lastSuccessfulRefresh=await devtools.evaluate(freshness+".textContent");
+    dashboardFeedsUnavailable=true;await refreshInbox();
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Dashboard data refresh failed.')"),'Complete editorial outage is visible');
+    assert.equal(await devtools.evaluate(freshness+".textContent"),lastSuccessfulRefresh,'A complete outage cannot advance the last successful refresh');
+    dashboardFeedsUnavailable=false;await refreshInbox();
+    await wait(()=>devtools.evaluate(inbox+".textContent.includes('1 course generation failure') && !document.body.textContent.includes('Dashboard data refresh failed.')"),'All editorial feeds recover');
+    dashboardHold=true;await refreshInbox();
     await wait(()=>dashboardHeldRequests>0,'Held dashboard request before lock');
     await adminClick('Lock');
     await sleep(800);
@@ -926,6 +976,16 @@ async function main(){
     await devtools.send('Emulation.setDeviceMetricsOverride',{width:320,height:900,deviceScaleFactor:1,mobile:true});
     assert.equal(await devtools.evaluate("document.documentElement.scrollWidth <= innerWidth+1"),true,'Newsletter desk fits a 320px viewport');
     await devtools.send('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false});
+    const audienceStamp=await devtools.evaluate("[...document.querySelectorAll('p')].find(p=>p.textContent.startsWith('Subscriber and delivery data last refreshed:')).textContent");
+    newsletterAudienceUnavailable=true;await adminClick('Refresh subscribers');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Subscriber delivery service unavailable')"),'Exact-count outage disclosed by Newsletter UI');
+    assert.equal(await devtools.evaluate("[...document.querySelectorAll('p')].some(p=>p.textContent==='Confirmed' && p.parentElement.textContent.includes('7'))"),true,'Unavailable counts must not erase the previous confirmed total or display zero');
+    assert.equal(await devtools.evaluate("[...document.querySelectorAll('p')].find(p=>p.textContent.startsWith('Subscriber and delivery data last refreshed:')).textContent"),audienceStamp,'Failed counts must not advance successful audience refresh time');
+    assert.equal(newsletterWrites,0,'Count outage must not cause any newsletter mutation');
+    newsletterAudienceUnavailable=false;newsletterConfirmed=9;await adminClick('Refresh subscribers');
+    await wait(()=>devtools.evaluate("[...document.querySelectorAll('p')].some(p=>p.textContent==='Confirmed' && p.parentElement.textContent.includes('9'))"),'Authoritative subscriber total recovers after count outage');
+    assert.equal(newsletterPublishRequests,0,'Count recovery never dispatches email');
+    console.log('ISOLATED_NEWSLETTER_COUNT_RECOVERY_PASS: HTTP503 preserves last confirmed audience/time, reports unavailable, successful retry updates totals; zero writes or emails.');
     newsletterEditorialFixture=true;
     await devtools.evaluate("window.confirm=()=>true");await adminClick('Refresh');
     await wait(()=>devtools.evaluate("document.querySelector('#newsletter-subject').value==='Saved fixture subject'"),'Newsletter saved revision reopened');
@@ -967,15 +1027,16 @@ async function main(){
     // strictly read-only loopback backend. These interactions must never send
     // generation, draft-save, publication or configuration writes.
     dashboardFixture=false;courseDeskFixture=true;
-    // Seed real Router history on both sides of the Course desk.
+    // Seed real Router history on both sides of the Course desk. Wait for each
+    // actual target desk: URL changes can precede the preceding form unmounting.
     await loadDocument(origin+'/admin/daily');
     await wait(()=>devtools.evaluate("!!document.querySelector('header a[href=\"/admin/courses\"]')"),'Daily to Course history link');
     await devtools.evaluate("document.querySelector('header a[href=\"/admin/courses\"]').click()");
-    await wait(()=>devtools.evaluate("location.pathname==='/admin/courses' && !!document.querySelector('main form input[type=password]')"),'Course history entry');
+    await wait(()=>devtools.evaluate("location.pathname==='/admin/courses' && [...document.querySelectorAll('button')].some(e=>e.textContent.trim()==='Open course desk')"),'Course history entry');
     await devtools.evaluate("document.querySelector('a[href=\"/admin/daily\"]').click()");
-    await wait(()=>devtools.evaluate("location.pathname==='/admin/daily'"),'Forward Daily entry');
+    await wait(()=>devtools.evaluate("location.pathname==='/admin/daily' && !!document.querySelector('header a[href=\"/admin/courses\"]')"),'Forward Daily entry');
     await devtools.evaluate('history.back()');
-    await wait(()=>devtools.evaluate("location.pathname==='/admin/courses' && !!document.querySelector('main form input[type=password]')"),'Clean Back returns to Course');
+    await wait(()=>devtools.evaluate("location.pathname==='/admin/courses' && [...document.querySelectorAll('button')].some(e=>e.textContent.trim()==='Open course desk')"),'Clean Back returns to Course');
     await wait(()=>devtools.evaluate("!!document.querySelector('main form input[type=password]')"),'Course admin unlock');
     await adminInput('main form input[type=password]',ADMIN_FIXTURE_KEY);await adminClick('Open course desk');
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Draft inbox (0)')"),'Compiled empty Course inbox');
@@ -1007,15 +1068,15 @@ async function main(){
     assert.equal(await devtools.evaluate("document.querySelector('main form input[type=password]').value"),'');
     assert.equal(courseDeskWrites,0,'Course read/edit/lock smoke cannot mutate drafts or launch AI');
     await devtools.evaluate("window.confirm=()=>{throw Error('Clean Back must not prompt')};history.back()");
-    await wait(()=>devtools.evaluate("location.pathname==='/admin/daily'"),'Clean browser Back navigates after Lock');
+    await wait(()=>devtools.evaluate("location.pathname==='/admin/daily' && !!document.querySelector('header a[href=\"/admin/courses\"]')"),'Clean browser Back navigates after Lock');
     await devtools.evaluate('history.forward()');
-    await wait(()=>devtools.evaluate("location.pathname==='/admin/courses' && !!document.querySelector('main form input[type=password]')"),'Clean browser Forward');
+    await wait(()=>devtools.evaluate("location.pathname==='/admin/courses' && [...document.querySelectorAll('button')].some(e=>e.textContent.trim()==='Open course desk')"),'Clean browser Forward');
     await adminInput('main form input[type=password]',ADMIN_FIXTURE_KEY);await adminClick('Open course desk');
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Draft inbox (0)')"),'Course reopened for approved Back');
     await adminClick('+ Create a draft');
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Final approval')"),'Unsaved draft before approved Back');
     await devtools.evaluate('window.confirm=()=>true;history.back()');
-    await wait(()=>devtools.evaluate("location.pathname==='/admin/daily'"),'Approved browser Back discards and navigates');
+    await wait(()=>devtools.evaluate("location.pathname==='/admin/daily' && !!document.querySelector('header a[href=\"/admin/courses\"]')"),'Approved browser Back discards and navigates');
     assert.equal(courseDeskWrites,0,'History navigation cannot save, publish or generate');
 
     courseDeskFixture=false;
@@ -1199,7 +1260,113 @@ async function main(){
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Live HTML metadata check')"),'Live HTML audit utility mounts');
     console.log('ISOLATED_ADMIN_UTILITIES_BROWSER_PASS: asset validator, legacy editor redirect and HTML audit route mount; no production URL scan or privileged backend writes.');
 
-    console.log('ISOLATED_AUTOMATION_INBOX_PASS: compiled dashboard combines course, Daily and Newsletter drafts, failures, cooldown, open findings and proposals; collector evidence linked to commit; partial outage stays unknown; stale refresh disclosed; zero mutations. Fixture only.');
+    // Owner-only private generation test remains separate from exhausted live cycles.
+    await loadDocument(origin+'/admin/daily');
+    await wait(()=>devtools.evaluate("!!document.querySelector('main form input[type=password]')"),'Private test Daily unlock');
+    await adminInput('main form input[type=password]',ADMIN_FIXTURE_KEY);await adminClick('Unlock');
+    const probe="document.querySelector('[aria-label=\"Private Daily generation test\"]')";
+    await wait(()=>devtools.evaluate('!!'+probe),'Private test panel');
+    const productionBeforeProbe={requests:dailyGenerationRequests,drafts:JSON.stringify(dailyDrafts),status:JSON.stringify(dailyStatus)};
+    assert.equal(dailyProbeCalls,0,'Opening the test cannot call Gemini');
+    assert.equal(await devtools.evaluate("[...document.querySelectorAll('button')].find(b=>b.textContent.trim()==='Run one private generation test').disabled"),true,'Explicit free-tier review required');
+    await devtools.evaluate(probe+".querySelector('input[type=checkbox]').click();window.confirm=()=>false");
+    await adminClick('Run one private generation test');assert.equal(dailyProbeCalls,0,'Cancel confirmation is inert');
+    await devtools.evaluate("window.confirm=()=>true;(()=>{const b=[...document.querySelectorAll('button')].find(b=>b.textContent.trim()==='Run one private generation test');b.click();b.click();})()");
+    await wait(()=>devtools.evaluate(probe+".textContent.includes('Private test passed: 10 exercises and 100 questions')"),'Private test success metadata');
+    assert.equal(dailyProbeCalls,1);
+    assert.equal(await devtools.evaluate("[...document.querySelectorAll('button')].find(b=>b.textContent.trim()==='Run one private generation test').disabled"),true,'No immediate repeat');
+    assert.deepEqual({requests:dailyGenerationRequests,drafts:JSON.stringify(dailyDrafts),status:JSON.stringify(dailyStatus)},productionBeforeProbe,'Test cannot reset, queue, save or publish the actual bank');
+    for(const mode of ['failed','used','malformed','bad-diagnostics','validation']){
+      dailyProbeMode=mode;await loadDocument();
+      await wait(()=>devtools.evaluate("!!document.querySelector('main form input[type=password]')"),'Private test reload unlock');
+      await adminInput('main form input[type=password]',ADMIN_FIXTURE_KEY);await adminClick('Unlock');
+      await wait(()=>devtools.evaluate('!!'+probe),'Private test panel reload');
+      await devtools.evaluate(probe+".querySelector('input[type=checkbox]').click();window.confirm=()=>true");
+      await adminClick('Run one private generation test');
+      await wait(()=>devtools.evaluate(probe+".textContent.includes("+JSON.stringify(mode==='failed'?'Private test failed: PROVIDER_REJECTED (HTTP 400)':mode==='used'?'one-test allowance is already used':mode==='validation'?'Validation: EXERCISE_STRUCTURE':mode==='bad-diagnostics'?'diagnostic metadata could not be verified':'private test result could not be verified')+")"),'Private test '+mode+' disclosed');
+    }
+    assert.equal(await devtools.evaluate(probe+".textContent.includes('MAX_TOKENS') && "+probe+".textContent.includes('shortest explanation: 7 characters')"),true,'Safe stage/provider/length diagnostics render without model prose');
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('PRIVATE_DIAGNOSTIC_VALUE')"),false,'Forged diagnostic text cannot render');
+    await devtools.send('Emulation.setDeviceMetricsOverride',{width:320,height:850,deviceScaleFactor:1,mobile:true});
+    for(const theme of ['light','dark']){
+      await devtools.evaluate("document.documentElement.classList.toggle('dark',"+(theme==='dark')+")");
+      assert.ok(await devtools.evaluate('document.documentElement.scrollWidth<=innerWidth+1'),'Private test fits 320px '+theme);
+    }
+    await adminClick('Lock');
+    await wait(()=>devtools.evaluate('!'+probe),'Private test results cleared by lock');
+    dailyProbeMode='held';
+    await adminInput('main form input[type=password]',ADMIN_FIXTURE_KEY);await adminClick('Unlock');
+    await wait(()=>devtools.evaluate('!!'+probe),'Private test late-response panel');
+    await devtools.evaluate(probe+".querySelector('input[type=checkbox]').click();window.confirm=()=>true");
+    const beforeHeldProbe=dailyProbeCalls;
+    await adminClick('Run one private generation test');await wait(()=>dailyProbeCalls===beforeHeldProbe+1,'Private request held');
+    await adminClick('Lock');
+    await wait(()=>devtools.evaluate('!'+probe),'Private request locks while pending');
+    await adminInput('main form input[type=password]',ADMIN_FIXTURE_KEY);await adminClick('Unlock');
+    await wait(()=>devtools.evaluate('!!'+probe),'New private test session opened');
+    await sleep(700);
+    assert.equal(await devtools.evaluate(probe+".textContent.includes('Private test passed:')"),false,'Old reply cannot restore a result in the new session');
+    assert.equal(await devtools.evaluate(probe+".querySelector('input[type=checkbox]').checked"),false,'New session retains fresh consent requirement');
+    assert.equal(dailyProbeCalls,beforeHeldProbe+1,'Unlock never retries an earlier request');
+    await adminClick('Lock');dailyProbeMode='passed';
+    await devtools.send('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false});
+    console.log('ISOLATED_DAILY_PRIVATE_TEST_PASS: explicit review+confirmation, real owner JWT attached, no automatic invocation/repeat, pass/400/quota states, unchanged production-cycle fixtures, lock clears result, 320px themes; fake backend/provider only.');
+
+    // Reference information cannot become an execution quote or account write.
+    await loadDocument(origin+'/trade/eurusd');
+    // Prior owner-only cases intentionally retain the fixture session. Wait for
+    // hydrated auth before deciding to sign out; an early absent menu is not a guest.
+    await wait(()=>devtools.evaluate("!!document.querySelector('[aria-label=\"Account menu\"]')"),'FX owner fixture hydrated before sign-out');
+    {
+      await devtools.evaluate("document.querySelector('[aria-label=\"Account menu\"]').dispatchEvent(new PointerEvent('pointerdown',{bubbles:true,button:0,ctrlKey:false}))");
+      await wait(()=>devtools.evaluate("[...document.querySelectorAll('[role=menuitem]')].some(e=>e.textContent.trim()==='Sign out')"),'FX fixture sign-out menu');
+      await devtools.evaluate("[...document.querySelectorAll('[role=menuitem]')].find(e=>e.textContent.trim()==='Sign out').click()");
+      await wait(()=>devtools.evaluate("!document.querySelector('[aria-label=\"Account menu\"]') && !localStorage.getItem('tradehq:portfolio-owner')"),'FX fixture guest');
+      await loadDocument(origin+'/trade/eurusd');
+    }
+    const fxPanel="document.querySelector('[aria-label=\"Daily forex reference\"]')";
+    await wait(()=>devtools.evaluate(fxPanel+"?.textContent.includes('Reference date:')"),'Dated FX reference renders');
+    const beforeFx=await devtools.evaluate("JSON.parse(localStorage.getItem('tradehq_portfolio'))");
+    assert.ok(await devtools.evaluate(fxPanel+".textContent.includes('1.234567') && "+fxPanel+".querySelector('time').dateTime==="+JSON.stringify(fxDate)), 'Actual source date and rate are visible');
+    assert.ok(await devtools.evaluate(fxPanel+".textContent.includes('does not set trade prices or portfolio values')"));
+    const readsBeforeNavigation=fxReferenceReads;
+    await devtools.evaluate("document.querySelector('[aria-label^=\"Choose an asset\"]').click()");
+    await wait(()=>devtools.evaluate("!!document.querySelector('#asset-search-panel input')"),'FX asset chooser');
+    await adminInput('#asset-search-panel input','GBP/USD');
+    await wait(()=>devtools.evaluate("[...document.querySelectorAll('#asset-search-panel button')].some(e=>e.textContent.includes('GBP/USD'))"),'GBP choice');
+    await devtools.evaluate("[...document.querySelectorAll('#asset-search-panel button')].find(e=>e.textContent.includes('GBP/USD')).click()");
+    await wait(()=>devtools.evaluate("location.pathname==='/trade/gbpusd' && "+fxPanel+"?.textContent.includes('1.345678')"),'Client FX navigation shares cached batch');
+    assert.equal(fxReferenceReads,readsBeforeNavigation,'Changing pair reuses one reference read');
+    assert.deepEqual(await devtools.evaluate("JSON.parse(localStorage.getItem('tradehq_portfolio'))"),beforeFx,'Reading references cannot revalue or mutate the portfolio');
+    await adminInput('input[aria-label="Amount in GBP/USD"]','1');
+    await wait(()=>guestClick('Buy GBP/USD'),'Guest FX execution');
+    await wait(()=>devtools.evaluate("JSON.parse(localStorage.getItem('tradehq_portfolio')).trades.length>"+beforeFx.trades.length),'FX trade saved locally');
+    assert.equal(dataWrites,0,'FX guest transition must never attempt an account order');
+    const afterFx=await devtools.evaluate("JSON.parse(localStorage.getItem('tradehq_portfolio'))");
+    assert.equal(afterFx.trades[0].assetId,'gbpusd');
+    assert.notEqual(afterFx.trades[0].price,1.345678,'Daily reference never supplies executable price');
+    assert.equal(dataWrites,0,'Reference browsing/trading must not add forbidden backend writes');
+    for(const mode of ['unavailable','future']){
+      fxReferenceMode=mode;await loadDocument(origin+'/trade/eurusd');
+      await wait(()=>devtools.evaluate(fxPanel+"?.textContent.includes('temporarily unavailable')"),'FX '+mode+' information disclosed');
+      assert.equal(await devtools.evaluate(fxPanel+".querySelector('time')===null"),true,'Unavailable or future data cannot display a dated rate');
+      assert.ok(await devtools.evaluate("!!document.querySelector('input[aria-label=\"Amount in EUR/USD\"]')"),'Order panel remains available');
+    }
+    fxReferenceMode='valid';await loadDocument(origin+'/trade/eurusd');
+    await wait(()=>devtools.evaluate(fxPanel+"?.textContent.includes('Loading reference information')"),'Accessible FX loading status');
+    await wait(()=>devtools.evaluate(fxPanel+"?.querySelector('time')!==null"),'Reference returns after outage');
+    await devtools.send('Emulation.setDeviceMetricsOverride',{width:320,height:850,deviceScaleFactor:1,mobile:true});
+    for(const theme of ['light','dark']){
+      await devtools.evaluate("document.documentElement.classList.toggle('dark',"+(theme==='dark')+")");
+      assert.ok(await devtools.evaluate("document.documentElement.scrollWidth<=innerWidth+1"),'320px '+theme+' reference fits');
+      assert.ok(await devtools.evaluate(fxPanel+".getBoundingClientRect().width<=320"));
+    }
+    await loadDocument(origin+'/trade/btc');
+    await wait(()=>devtools.evaluate("!!document.querySelector('input[aria-label=\"Amount in BTC\"]')"),'BTC remains usable');
+    assert.equal(await devtools.evaluate(fxPanel+'===null'),true,'Reference panel is forex only');
+    console.log('ISOLATED_FX_REFERENCE_BROWSER_PASS: dated source, shared pair cache, real guest trade uses independent execution price, unchanged portfolio on reads, outage/future rejection, loading, 320px light/dark; no real provider calls.');
+
+    console.log('ISOLATED_AUTOMATION_INBOX_PASS: compiled dashboard combines course, Daily and Newsletter drafts, failures, cooldown, open findings and proposals; collector evidence linked to commit; partial outages stay unknown while other feeds update; zero mutations. Fixture only.');
     console.log('ISOLATED_COURSE_PROGRESS_BROWSER_PASS: null tracks, null lessons and invalid lesson rows recovered; valid unrelated completion/badge retained after real lesson save and reload; fixture only.');
     console.log("ISOLATED_AUTH_BROWSER_PASS: reload persistence; real UI sign-out; no resurrected session; expired refresh rejected; ten Daily answers persisted/resumed/locked; one streak per day; actual built TradeHQ login in real Chromium; negative password refused; fake Supabase grant accepted; authenticated profile navigation observed; isolated account initialization executed; zero non-allowlisted backend writes; zero real provider calls.");
   }finally{

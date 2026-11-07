@@ -3,6 +3,8 @@ BEGIN;
 INSERT INTO auth.users(id,email,raw_user_meta_data) VALUES
  ('00000000-0000-4000-8000-000000000151','audit-c15-a@example.invalid','{"username":"audit_c15_a"}'),
  ('00000000-0000-4000-8000-000000000152','audit-c15-b@example.invalid','{"username":"audit_c15_b"}');
+-- These scenarios test public rankings/duels after explicit fixture opt-in.
+UPDATE public.profiles SET is_public=true WHERE id IN ('00000000-0000-4000-8000-000000000151','00000000-0000-4000-8000-000000000152');
 SELECT set_config('request.jwt.claim.sub','00000000-0000-4000-8000-000000000151',true);
 SET LOCAL ROLE authenticated;
 DO $$

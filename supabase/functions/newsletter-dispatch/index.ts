@@ -83,9 +83,12 @@ Deno.serve(async req => {
       ["confirmed","unsubscribed","pending","bounced"].map(s=>
         db.from("newsletter_contacts").select("id",{count:"exact",head:true}).eq("status",s))
     );
+    if([allConfirmed,allUnsub,allPending,allBounce].some(result=>
+      result.error || typeof result.count!=="number" || !Number.isSafeInteger(result.count) || result.count<0))
+      return reply({error:"Newsletter subscriber totals unavailable"},503);
     return reply({data:{
-     counts:{confirmed:allConfirmed.count??0,unsubscribed:allUnsub.count??0,
-       pending:allPending.count??0,bounced:allBounce.count??0},
+     counts:{confirmed:allConfirmed.count,unsubscribed:allUnsub.count,
+       pending:allPending.count,bounced:allBounce.count},
      subscribers:rows, recentDeliveries:delivered.data??[],
      webhookConfigured:Boolean(Deno.env.get("RESEND_WEBHOOK_SECRET")), 
      limitInfo:"At most 20 recipients per manual publish request; 60 newsletters/day and 2000/month by application guard. Confirmation emails also consume Resend's provider quota.",

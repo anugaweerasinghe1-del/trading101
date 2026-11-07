@@ -21,12 +21,13 @@ Issues remain open until their real acceptance gaps are resolved.
 | A–B / #332/#335 Daily | Schedule, attempts, saved-revision editing/review, effective-date delivery, failure recovery and approved free-tier generation work. Preserve published 50-case/500-question bank. | #362 UI fixture-tested. Prior evidence v16 source parity; historical HTTP400, 3/3 attempts, next bank 9 Dec. | Do not reset exhausted cycle or call AI without authorization. Metadata connectivity cannot prove generation. |
 | A / #332 newsletter | Confirmation/unsubscribe, private drafts, preview, approval, authorized recipients, receipts and recovery. | #362 editor fixtures; #365/#366 legacy endpoint restoration/CORS and registered-owner gate tested/merged; prior v7 source parity. | Actual subscriber delivery excluded from tests. Genuine owner no-send acceptance and disposable opt-in lifecycle remain open. |
 | A / #332 chatbot | Owner/provider configuration, free-tier quota, inert valid replies, auth/error handling, request fencing and lock. | #362 real Chromium fixture cases cover quota/401/403/paused/empty/forged/late replies. | Actual registered owner + permitted provider request required for genuine reply acceptance. |
-| A / #332 reviews | Moderation edit/reply/delete/restore persist; failed reads do not erase confirmed writes; privacy, duplicate prevention, keyboard/mobile/theme controls pass. | #367 deployed with confirmed-write/read-outage recovery; executable handler and Chromium fixtures pass, genuine owner acceptance pending. | Implement recovery and exercise disposable fixture, then PR/CI/merge/deployment. |
+| A / #332 reviews | Moderation edit/reply/delete/restore persist; failed reads do not erase confirmed writes; privacy, duplicate prevention, keyboard/mobile/theme controls pass. | #367 deployed with confirmed-write/read-outage recovery; executable handler and Chromium fixtures pass, genuine owner acceptance pending. | Recovery deployed in #367; genuine owner moderation acceptance remains pending. |
 | A / #332 code controls | Queue/diagnostics/approval/stop and GitHub/deployment evidence accurate; private state fenced on sign-out. | Existing isolated queue/control tests, prior worker diagnostics; live privileged controls unaccepted. | Do not retry real owner jobs or stop production for testing. Inspect durable state with authorization. |
-| A / #332 mobile/accessibility/utilities | Real existing controls work at narrow widths, light/dark, keyboard, loading/repeats; tools accurately describe scope. | #362 320px course/Daily/newsletter and utility-route fixtures. | Extend moderation recovery coverage; remaining actual owner workflow acceptance pending. |
+| A / #332 mobile/accessibility/utilities | Real existing controls work at narrow widths, light/dark, keyboard, loading/repeats; tools accurately describe scope. | #362 320px course/Daily/newsletter and utility-route fixtures. | Moderation and cross-desk navigation browser coverage now pass; actual owner acceptance pending. |
 | C / #335 markets/portfolio | Persist/recover portfolios/trades; accurate provenance/freshness and leaderboard; one failed refresh cannot erase other successes. | #363 isolation fix tested/merged; prior v16 parity and scheduled HTTP200. Prior evidence: 15/15 held crypto fresh; 0/17 traditional fresh. | Provider entitlement/budget evidence missing. Do not fabricate observations or label old prices live. |
 | D / #335 beginner/arena/leaderboard | Guest/account learn→trade→reflect→resume journey and consent-based aggregate funnel, private defaults, eligibility/rank distinctions and recovery. | Earlier journey/privacy/funnel code and fixtures exist (#334/#336/#361 etc.); whole real journey not accepted. | Exercise disposable fixtures; genuine account confirmation requires legitimate session. No invented conversion metrics. |
-| E / #353 trophy cabinet | Agreed approximately 20 educational trophies, premium tiers/animation/placement; server authority, default private, separate opt-in/revocation and anti-abuse. | Existing private cabinet and first server-recorded trade milestone; major redesign explicitly deferred for later user discussion. | Owner prefers distinct sculpted trophies/richer animation; implementation deferred. No public awards from editable browser progress; no profit-chasing incentives. |
+| E / #353 trophy cabinet | Exactly 20 distinct educational trophies with original sculpted silhouettes, accessible locked/earned/loading/unavailable states, criteria and progress, restrained reduced-motion celebration, optional profile flair/pins/share cards. Preserve personal progress. Verified evidence must be server-authoritative, private by default, idempotent, isolated by account and revocable from public display. | Existing private cabinet and first server-recorded practice trade milestone. #370 addresses malformed catalog entries only. Full catalog, designs, evidence, tests, rollout and acceptance open. | Present 20 criteria, evidence mapping and representative mockups for design review. Confirm public presentation. No profit, leverage or click-farming awards. Continue admin work in parallel. |
+| E / #353 completion certificate | Versioned The Trade HQ Foundations Learning Programme with server-side eligibility and idempotent private issuance, stable ID/date/evidence, name preview, correction history, deterministic original ivory/gold PDF, repeat downloads and optional minimal revocable verification. | Template, eligibility contract, implementation, tests, rollout and acceptance open. | Review fictional rendered sample, curriculum, assessment threshold and wording before enabling issuance. Test forgery, account isolation, duplicate/racing requests, outage/retry, fonts/escaping/overflow, print/download, capacity and verification withdrawal. No email by default. |
 | F / #321/#332/#335/#353 release | Security/RLS/privacy/rate limits, integrity/content trust, admin/browser/mobile/accessibility/SEO/performance and recovery evidence; all mandatory gates green; production matches reviewed main. | Main application, database and Cloudflare workflow runs completed success at checkpoint SHA; full release acceptance remains OPEN. | Resolve genuine owner/provider gates; track each PR SHA, active provider deployment and scope of smoke tests. No AdSense actions or paid dependencies. |
 
 ## Current blockers and authorization boundaries
@@ -39,8 +40,9 @@ Issues remain open until their real acceptance gaps are resolved.
   access works. This is an access-path blocker, not proof of owner authentication.
 - Daily historical exhausted cycle cannot be reset or forced. No real model call,
   newsletter send, publication, user mutation or paid service is authorized as a test.
-- Owner explicitly deferred trophies for a later discussion; prefers approximately
-  20 distinct sculpted learning trophies with richer animation. No redesign work.
+- The current scope includes exactly 20 distinct trophies and the completion
+  certificate. Product review gates only dependent reward decisions and issuance;
+  independent admin and application acceptance continues.
 - Concurrent automation may act: fetch main and open PRs before each cycle; review
   incoming changes. Initial open PRs #1/#3/#7/#23/#72/#95/#97/#104 are older proposals,
   none newly owns this moderation recovery scope. No other PR was merged or edited.
@@ -185,3 +187,296 @@ Issues remain open until their real acceptance gaps are resolved.
   all new history/link/keyboard cases and every existing auth/guest/admin journey.
   The first header-only implementation was replaced before PR submission by the
   supported router blocker so browser history is covered by the reviewed change.
+
+
+### 6 Nov — navigation shipped; privacy regression alignment
+
+- [#369](https://github.com/anugaweerasinghe1-del/trading101/pull/369) merged as
+  `47dcf541cc8572c1a33f01509b41d7a27d06e4fb` after all exact-head required checks,
+  including 10m42s browser/SEO, application, database and hosting previews passed.
+  Main validation [42226392903](https://github.com/anugaweerasinghe1-del/trading101/actions/runs/42226392903)
+  is running; do not infer final native production proof until its release job passes.
+- Public production mobile browser checks after the merge passed all six locked
+  admin routes and Daily again. The loaded first-party Daily admin module contains
+  the new draft-guard text. Actual fresh guest buy/sell, fee/cash reconciliation,
+  portfolio reload and 390px width passed again; zero browser server-write requests.
+  Evidence appended to the existing credential-free JSON artifact. This supports
+  deployed public code; genuine owner-authenticated draft acceptance stays open.
+- Core database comparison checked 38 functions against the disposable fixture:
+  every one exists in production; 36 definitions match exactly. `hit_rate_limit`
+  differs only in whitespace. Production `handle_new_user` correctly forces private
+  signup; the old test fixture used the earlier public-by-default trigger. This is
+  not a confirmed production privacy failure and does not justify replaying migrations.
+- Found and repaired a real release-assurance defect: `verify-backend.mjs` omitted
+  the existing private-profile/review-default migration, and its portfolio fixture
+  explicitly demanded public signup. Adding the live migration alone reproduced
+  `Valid server ledger not ranked`, exposing implicit-public test assumptions.
+- The local runner now applies the existing reviews foundation and privacy migration.
+  New rolled-back SQL exercises absent/true/false/malformed signup visibility
+  metadata, private anonymous/directory reads, authenticated own opt-in, denied
+  cross-account update, zero-trade unranked membership, revocation and moderation
+  defaults. Earlier public/private profile choices remain unchanged. Existing public
+  ranking/duel scenarios now opt their synthetic members in explicitly.
+- All local backend suites PASS, including private signup, trades, duels, automatic
+  valuation, security grants, Phase 4A and public trade consent; TypeScript and
+  privacy-default guards pass. No app, production schema, subscriber, user visibility
+  or review state was changed. Rollback is a PR revert; no database rollback needed.
+- Next: PR/required exact-head checks for the privacy-fixture repair, verify #369
+  native rollout, merge the assurance repair only when permitted, then record final
+  main SHA/production proof in #332. Outstanding genuine owner/provider gates remain
+  as recorded above; trophies explicitly deferred, no quota resets or paid upgrades.
+
+
+### 6 Nov — postmerge browser failure diagnosed; assurance PR extended
+
+- #369 main run 42226392903 failed in the isolated browser step; its release jobs
+  were skipped. Do not claim that run passed or that it supplied native production
+  proof. Broad editorial route matrix and application checks passed; public code
+  and guest checks above remain observations of their stated scope.
+- Retrieved the complete run archive after the individual reusable-job log request
+  returned HTTP403. The failure was a null link click immediately after seeding
+  Course/Daily history. The fixture accepted a changed URL plus a generic password
+  form still belonging to the preceding desk, then clicked a Course-only link.
+- Assurance PR #371 now waits for the real Course unlock control and Daily-specific
+  header before acting after transitions. No sleep-based route workaround or test
+  assertion removal; all Back/Forward/draft-retention assertions remain. The fix
+  is test setup only; the supported application blocker is unchanged.
+- Rechecked runtime setup: enforced unrestricted policy and ready credential
+  bindings on the same configuration revision. Readiness is not successful API
+  authorization; earlier runtime admin HTTP401 remains an actual access blocker.
+- Concurrent #370 changes trophy catalog validation in disjoint files. Recorded
+  owner trophy deferral in #332 and have neither edited nor merged that PR.
+
+### 6 Nov — control-readiness waits and faster unchanged CI gates
+
+- Exact-head #371 run 42228424570 exposed a second immediate `Admin button missing`
+  in the newsletter fixture sequence; application/database/hosting previews passed,
+  and the PR remained unmerged. The browser helper had attempted actions before
+  busy controls became usable, despite a preceding receipt/message being visible.
+- `adminClick` now waits for the named button to be enabled (including disabled
+  parent fieldsets), reports any wait and names the control on bounded timeout,
+  then clicks exactly once. All mutation-count and disabled-state assertions remain.
+  The complete local compiled browser suite passes with this helper.
+- Moved that targeted browser check immediately after the Cloudflare build and
+  before the broad seven-phase editorial route matrix. All checks, identities,
+  permissions and trusted production gates remain mandatory. CI contract and
+  release/recovery offline regressions pass; this changes order, not requirements.
+- The full historical worker archive was recovered via the normal run-archive API:
+  only `Owner proposal review: idle` then generic safe stop is recorded. There is no
+  worker or request row for that run. Original cause remains unproven; no replay.
+- Next: required CI on the new head, merge only after success, then final current-main
+  validation/native production evidence. Earlier failed heads are not passing evidence.
+
+### 6 Nov — assurance repair merged; private quote-provider diagnostics
+
+- #371 merged as `2eb6067567ad51d5992a76f44d884577cdcc593b` after every required
+  exact-head check passed: focused authenticated browser, broad route/SEO matrix
+  (9m18s), application, PostgreSQL and provider previews. Main run
+  [42231764485](https://github.com/anugaweerasinghe1-del/trading101/actions/runs/42231764485)
+  is in progress; its final native production proof remains separate.
+- Read-only production catalog confirms `profiles.is_public` and `reviews.is_visible`
+  defaults are false. 38 checked core functions all exist; the two earlier
+  differences were formatting and the stronger live private-signup trigger. No
+  production migration replay or schema/visibility mutation was needed.
+- Owner is arranging a secure admin-key binding refresh; do not infer success from
+  that intention. Genuine endpoint authentication must pass before live acceptance.
+  Registered owner JWT is still a separate requirement for protected actions.
+- Next selected C work: refresh results cannot distinguish missing provider config
+  from upstream entitlement/availability. Add only private `providerConfiguration`
+  flags after scheduler token/lease admission, preserving all quote counts. Missing
+  keys/Alpha Vantage demo are false; unreadable environment metadata is null and
+  cannot invalidate successful quote writes. No secret values, extra provider
+  requests, cadence changes, paid fallbacks, user positions or fabricated prices.
+- Public `live-market-data` v18 ACTIVE was fetched independently: all eight returned
+  source files match current reviewed main. Keep the new diagnostics helper in a
+  separate module so this unrelated live bundle needs no replacement.
+- Provider parsing/refresh regressions and actual transpiled scheduler handler
+  fixtures PASS: unauthenticated/denied/error claims cannot read configuration;
+  admitted results retain counts and persist boolean flags; unknown metadata does
+  not fail updates; finish failure is generic; extra fetch/secret disclosure fail
+  the test. TypeScript passes. Source review preserves existing admission and RPCs.
+- Done requires PR/required exact-head checks, merged main and native deployment
+  proof; deploy only reviewed refresh-worker files, re-fetch to compare source,
+  then read the next ordinary scheduled result. Do not manually invoke refresh or
+  infer provider key validity/free-tier entitlement from a true presence flag.
+- Rollback: restore the preceding verified refresh-worker bundle; no schema/data
+  rollback. Next safe action: submit this PR and finish #371 postmerge proof.
+
+
+### 6 Nov — provider diagnostics released; daily FX references authorized
+
+- #372 merged as `d6d0dd3bda8c385b45e5171b6cb5cdb4ca5204e9`; full main run
+  [42234815755](https://github.com/anugaweerasinghe1-del/trading101/actions/runs/42234815755)
+  passed. Native Cloudflare production `f5c00c11-8812-4f21-ab68-1f801d6ece13`
+  and Vercel `dpl_2EvDqk7rY8FNXxRFPspXpTeWmdPb` both proved that main SHA.
+- Refresh worker v17 ACTIVE returned all seven reviewed source files unchanged.
+  Ordinary scheduled 14:35 UTC result: HTTP200, 53 requested / 50 updated /
+  3 unavailable; private configuration flags both false. No forced refresh,
+  extra upstream requests or production position changes. Public live-market-data
+  v18 still matches all eight reviewed files. Native proof and remaining gates:
+  [#332 checkpoint](https://github.com/anugaweerasinghe1-del/trading101/issues/332#issuecomment-6687716549).
+- Owner requests a free-tier provider and explicitly approved **daily reference
+  information only**. [Frankfurter documentation](https://frankfurter.dev/) permits
+  free commercial blended daily references without a key; bounded cached requests
+  are appropriate. A fixed-date public read returned all 12 USD quotes needed to
+  derive the 15 existing pairs. An unfiltered latest response included dates later
+  than the current date, so latest is unsuitable: request only the previous
+  completed weekday in Asia/Colombo and reject future, invalid, old or inconsistent
+  cross-rate dates. Show the actual per-pair source date, not a live timestamp.
+- Implement a same-origin GET-only reference API for both hosting platforms, shared
+  pure validation, bounded 32KB/8s upstream read, fixed provider URL/headers,
+  coalescing, daily edge/in-memory cache and short failure cooldown. No visitor
+  cookies, IP headers, credentials or user-selected upstream URLs are forwarded.
+- Forex-only UI names Frankfurter and labels the rate for learning/comparison.
+  Reference data never enters price history, execution, valuation or holdings.
+  Invalid/unavailable responses produce an explicit unavailable state. No schema,
+  Supabase function, secrets, scheduler cadence, paid service or provider key change.
+- Ordinary Alpha Vantage free quota is 25/day versus up to 576 traditional asset
+  attempts/day at current cadence, and public-display rights need confirmation;
+  Twelve Basic is internal non-display. Do not activate traditional execution
+  providers based on a free-account label. Research is recorded in
+  [#335](https://github.com/anugaweerasinghe1-del/trading101/issues/335#issuecomment-6687717254).
+- Acceptance: all 15 conversions and invalid/partial/future/duplicate-date fixtures;
+  both real hosting adapters; upstream header/privacy/cache/error bounds; actual
+  compiled browser source/date/outage/320px themes and an independent-price guest
+  trade; full required PR/main checks and native deployment/live endpoint proof.
+  Tests use loopback fixtures and make no real provider calls.
+- Rollback: revert this isolated reference panel/API commit; execution and stored
+  portfolios need no data rollback. Trophy work remains deferred. Real owner auth,
+  exhausted Daily cycle and public-display stock-provider rights remain open gates.
+
+- Real Pages preview initially returned HTTP503 despite passing Node fixtures and
+  a successful bundle. A workerd reproduction identified unsupported
+  `redirect: error`; use `manual` and reject non-2xx, including redirect responses.
+  Cache plain body/status/header values rather than sharing request-bound Response
+  streams. Added a required actual-workerd regression using the real handler,
+  independent request contexts and a stub upstream (no external provider calls).
+  New exact-head checks and a successful real preview read are required before merge.
+
+
+### 6 Nov — genuine owner-guided checks and bounded private Daily test
+
+- Owner reports the actual Course `Verify owner access` response: registered owner
+  verified, no publication/generation. This is owner-reported live evidence, not an
+  independently controlled browser session. The environment's separate binding
+  still returned HTTP401 on its last settings-only read. Never request a key in chat.
+- Owner's Daily screenshot shows successful Gemini key/model metadata preflight,
+  saved Gemini 3.5 Flash Lite, 0/50 exercises, 0/5 parts, 3/3 consumed attempts,
+  preparation 2 Dec / effective bank 9 Dec. Historical HTTP400 remains historical;
+  metadata success does not prove structured generation or authorize a reset.
+- Current owner-supplied AI Studio screenshots show project Free tier and model
+  limits 15 RPM / 250K TPM / 500 RPD. The 28-day displayed peaks 2 RPM, 31.54K TPM,
+  6 RPD do not establish today's remaining allowance. Do not enable billing.
+- Implement a separate owner-only `daily-practice-test` function and explicit Daily
+  test UI. Reuse saved free Gemini 3.5 Flash Lite credentials, registered-owner Auth
+  verification and the existing atomic limiter. No production claim/finish/request
+  RPC, cycle reset, draft write, publication, schema migration or schedule.
+- One global test admission per UTC day, including failed/unconfirmed tests. Calls
+  require master key AND legitimate registered-owner bearer, free-tier confirmation
+  AND a deliberate browser confirmation. No automatic request/retry/fallback. Eight
+  fixed public references and at most ONE Gemini generation call; serialized request
+  max 120,000 bytes, output max 32,768 tokens; source/provider time/body bounds remain
+  those of the real production generator. Shared project usage can still cause 429.
+- Use the actual first-part generator with no user/private draft inputs; validate
+  ten exercises/100 questions, discard all generated text, return only bounded
+  validation/failure/usage metadata. This tests structured generation, not complete
+  five-part bank persistence or factual/editorial acceptance. Preserve the published
+  50-case/500-question bank and exhausted production attempt history.
+- Backend regressions exercise the real generator against fixture sources/model:
+  wrong key/non-owner/body/config denial before quota/config reads; racing admission;
+  one provider request, no response-text/key leakage; oversized request blocks the
+  provider; 400/429/invalid output/network errors consume admission without retry.
+  Browser acceptance covers explicit consent/cancel, real fixture owner JWT,
+  disabled repeat, pass/failure/used-limit messages, unchanged bank/cycle fixtures,
+  lock fencing and 320px themes. No test invokes a real provider.
+- Done requires required exact-head PR/main checks, native CF/Vercel deployment
+  proof, dedicated function deployment with reviewed-source parity and safe auth
+  denial. Real Gemini acceptance remains pending the owner's deliberate live test.
+  Rollback: remove this isolated UI/endpoint; no bank/data rollback or quota reset.
+
+### 7 Nov — completion review and Daily private-test admission race
+
+- Fresh main is `55916bd5af73f040d68424604d07c18efb267c46`; #374 is the
+  outstanding bounded Daily private-test workstream. Trophy #370 remains deferred.
+- Independent compiled Chromium reproduction: two clicks in one event turn sent
+  two test requests before React applied the disabled button. The server's atomic
+  one-test allowance still prevents a second admitted model call, but competing
+  UI outcomes were possible. Added an immediate in-memory submission guard;
+  request completion and sign-out release the guard under existing scope fencing.
+- Extended browser acceptance covers that exact two-click reproduction, forged
+  success metadata, and a held success response across Lock/unlock. Old replies
+  cannot populate the new desk or retain the old confirmation. No model request
+  or production editorial mutation is made by these fixtures.
+- Fresh read-only runtime source parity: admin-courses v17 10/10 files,
+  generate-daily-practice v16 8/8, admin-agent-chat v9 4/4 equal current main.
+  Approved public bank remains 50 exercises / 500 questions; three course drafts
+  are published, two Daily banks published, two newsletter editions approved.
+- Daily remains enabled, attempts 3, completed 0, nextDue 2026-12-09, historical
+  error present. The new endpoint is not deployed at this checkpoint; do not reset
+  the real cycle, fabricate owner auth or infer semantic quality from fixtures.
+- One operational settings read with the configured runtime master key still
+  returned HTTP401. The owner offered to sign in to shared Chrome for genuine
+  acceptance. Shared desktop is enabled but control tools are absent/cold in this
+  session; the owner was given the Desktop/sign-in instructions. A real browser
+  session and explicit owner initiation remain necessary for the real test.
+- Next: exact-head CI, fresh-main check and merge #374, dedicated Edge deployment
+  with source parity, native hosting proof and non-generating production smoke.
+  Only then can the owner deliberately run the quota-confirmed private test.
+- The full browser run also exposed an existing FX test setup race: the test
+  interpreted an absent account menu before hydration as a guest session. It now
+  waits for the intentionally retained owner fixture, explicitly signs out and
+  waits for the portfolio owner marker to clear before the independent FX order.
+  The complete compiled suite then passed, retaining all guest-order/source-price,
+  Daily admission, malformed-result, late-reply and earlier admin assertions.
+
+### 7 Nov — owner acceptance reached Gemini; validation diagnostics needed
+
+- Owner again reports registered-owner Course readiness. This is genuine
+  owner-guided UI evidence, not an agent-controlled browser or a fabricated JWT.
+- #374 merged as `406a5a3fc2be75ab0eb16562e1f2b811c6a8e5c7` after exact-head
+  CI. All final-main/native hosting checks passed; private test v1 ACTIVE matched
+  all 11 reviewed files. Production browser rendered six routes and loaded the
+  new Daily bundle. Course/Daily/chat and other admin deployed sources matched main.
+- Owner explicitly initiated one quota-confirmed live private test. It reached
+  Gemini and returned `OUTPUT_VALIDATION_FAILED`; source content was discarded as
+  promised. Read-only admission count is 1, production attempts remain 3 and cases
+  0, next bank 9 Dec. See the credential-free owner-test evidence JSON. This is a
+  FAILED live generation check; do not mark the generator accepted or infer its
+  exact failed constraint. Version 1 collapsed several errors and retained no
+  detailed stage, so the discarded response cannot be retrospectively diagnosed.
+- Add private-test-only bounded diagnostics: response/envelope/schema/source/
+  category/repetition stage, fixed rule codes and numeric positions, provider
+  finish reason/usage and field-length/count summaries. Read the same bounded
+  provider response once, pass identical text to the unchanged real generator,
+  discard prose, and log only whitelisted metadata. No extra fetch, model request,
+  retries, paid fallback, bank/draft writes or changes to production validation.
+- Keep the same global `daily-practice-test-one-per-utc-day-v1` budget. A redeploy
+  cannot reset it. Earliest next test for this 7 Nov attempt is 8 Nov at 05:30
+  Sri Lanka time (00:00 UTC); the owner must deliberately reconfirm quota then.
+- Local actual-generator fixtures cover every stage and malformed/truncated output,
+  privacy-safe bounded logs, unchanged allowance and logger failure. Compiled
+  Chromium covers safe metadata display, forged diagnostics rejection, lock fencing
+  and 320px themes. Neither test calls a real model. Real provider acceptance
+  remains open until a permitted live request actually passes.
+
+### 7 Nov — dashboard partial outage follow-up
+
+- A Course settings outage blocked unrelated editorial and moderation reads after
+  unlock. Keep the initial privileged settings check, then settle each read
+  independently on refresh and clear unavailable Course generation data. Clear
+  chat readiness on Lock as part of the existing private state cleanup.
+- Compiled browser fixture now exercises a failed Course settings read while
+  Daily and Newsletter change, recovery on a later refresh, and the existing
+  late-response Lock case. Record the PR and deployment outcomes before marking
+  this fix deployed or any genuine owner workflow accepted.
+- Rewards now explicitly include the 20-trophy redesign and the versioned
+  completion certificate in this same acceptance checklist.
+
+- With the user's in-browser unlock, the real production dashboard showed
+  live Course, Newsletter, Daily, Reviews and Chat readiness feeds. A read-only
+  Refresh advanced editorial freshness from 10:55:05 to 10:55:34 and GitHub
+  freshness to 10:55:31 (Asia/Colombo). This accepts the normal dashboard read
+  and manual refresh on the deployed baseline; outage, recovery, separate desk
+  authorization, and editorial actions still need their own evidence.
+- A complete editorial outage also retains the last successful refresh time.
+  The isolated browser fixture checks the timestamp and subsequent recovery.

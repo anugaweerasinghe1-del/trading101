@@ -39,13 +39,13 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build:cloudflare
+      - name: Verify isolated authenticated browser flow (no production accounts)
+        run: node scripts/verify-isolated-auth-browser.mjs
       - name: Verify all editorial routes on desktop and mobile with and without JavaScript
         run: |
           for phase in 0 1 2 3 4 5 6; do
             TRADEHQ_BROWSER_PHASE="$phase" node --import tsx scripts/verify-publisher-browser.mjs
           done
-      - name: Verify isolated authenticated browser flow (no production accounts)
-        run: node scripts/verify-isolated-auth-browser.mjs
       - name: Verify read-only incident follow-up against isolated pages
         run: node scripts/verify-browser-investigation.mjs
       - run: node --import tsx scripts/verify-cloudflare-courses-root.ts
@@ -53,6 +53,8 @@ jobs:
         run: node scripts/verify-cloudflare-seo.mjs
       - name: Bundle Cloudflare Pages Functions using Wrangler
         run: npx --yes wrangler@4 pages functions build functions --outfile /tmp/tradehq-pages-worker.js
+      - name: Verify actual Workers daily reference runtime with a stub upstream
+        run: node scripts/verify-fx-reference-worker.mjs
       - name: Validate non-indexable fallback and narrow function routing
         run: |
           node --check scripts/prepare-cloudflare.mjs
