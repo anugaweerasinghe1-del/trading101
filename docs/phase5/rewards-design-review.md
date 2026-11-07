@@ -35,7 +35,7 @@ For the proposed scoreable actions, serve a versioned question/attempt identity,
 
 ## Cabinet and sharing
 
-The [cabinet mockup](trophy-cabinet-preview.svg) shows representative earned and locked states. Keep discovery in Learn and the learner profile. Render states with labels and accessible text. Display incremental progress only when its evidence is available. Keep the unlock animation short and respect reduced motion.
+The [twenty-piece collection](trophy-collection-preview.svg) shows all approved trophies. The [cabinet mockup](trophy-cabinet-preview.svg) shows representative earned and locked states. Keep discovery in Learn and the learner profile. Render states with labels and accessible text. Display incremental progress only when its evidence is available. Keep the unlock animation short and respect reduced motion.
 
 Proposed sharing is private by default. Let a user explicitly select one earned trophy as optional username flair and pin up to three in a public profile. Public profile eligibility and trophy consent must both apply. Revocation takes effect at the source. Share cards expose only information the learner explicitly chose. No sharing exposes balances, trades, reflections, study dates or account identifiers. Awards never affect the return leaderboard.
 
