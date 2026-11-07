@@ -50,6 +50,16 @@ export function FoundationsProgrammePanel() {
           Four short courses and a final case. Your scored checkpoints are private to your account.
         </p>
       </div>
+      <Card className="space-y-2 p-4 text-sm">
+        <h3 className="font-semibold">How to earn a certificate</h3>
+        <p className="text-muted-foreground">Sign in and score at least 4/5 on every checkpoint required by a course to complete it.</p>
+        <ul className="list-disc space-y-1 pl-5 text-muted-foreground">
+          <li><strong>{certificateTitles["first-course"]}</strong> after any one course.</li>
+          <li><strong>{certificateTitles["core-studies"]}</strong> after any three courses.</li>
+          <li><strong>{certificateTitles.foundations}</strong> after all four courses and at least 8/10 on the final case.</li>
+        </ul>
+        <p className="text-muted-foreground">When you qualify, open Your private certificates below the courses, confirm your name and download the PDF.</p>
+      </Card>
       {loading ? <p role="status">Checking your account…</p> :
         user && session?.user.id === user.id ?
           <Programme key={user.id} userId={user.id} token={session.access_token} /> :
