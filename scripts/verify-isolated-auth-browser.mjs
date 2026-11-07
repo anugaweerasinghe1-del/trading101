@@ -126,10 +126,11 @@ async function main(){
         let text='';req.on('data',chunk=>{text+=chunk});req.on('end',()=>{
           assert.deepEqual(JSON.parse(text),{confirmFreeTier:true});dailyProbeCalls++;
           if(dailyProbeMode==='used')return json(429,{code:'TEST_ALLOWANCE_USED',error:'Fixture allowance used'});
+          if(dailyProbeMode==='bad-diagnostics')return json(200,{data:{outcome:'passed',model:'gemini-3.5-flash-lite',providerGenerationAttempted:true,productionCycleChanged:false,published:false,saved:false,exercises:10,questions:100,diagnostics:{provider:{finishReason:'PRIVATE_DIAGNOSTIC_VALUE'}}}});
           if(dailyProbeMode==='malformed')return json(200,{data:{outcome:'passed',productionCycleChanged:true,published:false,saved:false}});
-          const payload={data:{outcome:dailyProbeMode==='held'?'passed':dailyProbeMode,model:'gemini-3.5-flash-lite',providerGenerationAttempted:true,
+          const payload={data:{outcome:dailyProbeMode==='held'?'passed':dailyProbeMode==='validation'?'failed':dailyProbeMode,model:'gemini-3.5-flash-lite',providerGenerationAttempted:true,
             productionCycleChanged:false,published:false,saved:false,exercises:dailyProbeMode==='passed'||dailyProbeMode==='held'?10:0,
-            questions:dailyProbeMode==='passed'||dailyProbeMode==='held'?100:0,...(dailyProbeMode==='failed'?{code:'PROVIDER_REJECTED',httpStatus:400,field:'thinkingLevel'}:{})}};
+            questions:dailyProbeMode==='passed'||dailyProbeMode==='held'?100:0,...(dailyProbeMode==='failed'?{code:'PROVIDER_REJECTED',httpStatus:400,field:'thinkingLevel'}:dailyProbeMode==='validation'?{code:'OUTPUT_VALIDATION_FAILED',diagnostics:{provider:{finishReason:'MAX_TOKENS',inputTokens:100,outputTokens:32768,totalTokens:32868,textChars:12000},validation:{stage:'EXERCISE_STRUCTURE',rules:['QUESTION_FIELDS'],exercise:3,question:5},structure:{exerciseCount:10,questionCounts:Array(10).fill(10),minExplanationChars:7,minScenarioChars:600,minGuideChars:140}}}:{})}};
           if(dailyProbeMode==='held'){setTimeout(()=>json(200,payload),600);return;}
           return json(200,payload);
         });return;
@@ -1260,15 +1261,17 @@ async function main(){
     assert.equal(dailyProbeCalls,1);
     assert.equal(await devtools.evaluate("[...document.querySelectorAll('button')].find(b=>b.textContent.trim()==='Run one private generation test').disabled"),true,'No immediate repeat');
     assert.deepEqual({requests:dailyGenerationRequests,drafts:JSON.stringify(dailyDrafts),status:JSON.stringify(dailyStatus)},productionBeforeProbe,'Test cannot reset, queue, save or publish the actual bank');
-    for(const mode of ['failed','used','malformed']){
+    for(const mode of ['failed','used','malformed','bad-diagnostics','validation']){
       dailyProbeMode=mode;await loadDocument();
       await wait(()=>devtools.evaluate("!!document.querySelector('main form input[type=password]')"),'Private test reload unlock');
       await adminInput('main form input[type=password]',ADMIN_FIXTURE_KEY);await adminClick('Unlock');
       await wait(()=>devtools.evaluate('!!'+probe),'Private test panel reload');
       await devtools.evaluate(probe+".querySelector('input[type=checkbox]').click();window.confirm=()=>true");
       await adminClick('Run one private generation test');
-      await wait(()=>devtools.evaluate(probe+".textContent.includes("+JSON.stringify(mode==='failed'?'Private test failed: PROVIDER_REJECTED (HTTP 400)':mode==='used'?'one-test allowance is already used':'private test result could not be verified')+")"),'Private test '+mode+' disclosed');
+      await wait(()=>devtools.evaluate(probe+".textContent.includes("+JSON.stringify(mode==='failed'?'Private test failed: PROVIDER_REJECTED (HTTP 400)':mode==='used'?'one-test allowance is already used':mode==='validation'?'Validation: EXERCISE_STRUCTURE':mode==='bad-diagnostics'?'diagnostic metadata could not be verified':'private test result could not be verified')+")"),'Private test '+mode+' disclosed');
     }
+    assert.equal(await devtools.evaluate(probe+".textContent.includes('MAX_TOKENS') && "+probe+".textContent.includes('shortest explanation: 7 characters')"),true,'Safe stage/provider/length diagnostics render without model prose');
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('PRIVATE_DIAGNOSTIC_VALUE')"),false,'Forged diagnostic text cannot render');
     await devtools.send('Emulation.setDeviceMetricsOverride',{width:320,height:850,deviceScaleFactor:1,mobile:true});
     for(const theme of ['light','dark']){
       await devtools.evaluate("document.documentElement.classList.toggle('dark',"+(theme==='dark')+")");
