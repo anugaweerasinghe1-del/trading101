@@ -3,6 +3,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useAdminRequestScope } from '@/hooks/useAdminRefresh';
 import { isAdminRequestCancelled } from '@/lib/adminRequestScope';
 import { adminFailureDetails, courseAdminError } from '@/lib/adminFunctionError';
+import { validProbeDiagnostics } from '../../../supabase/functions/_shared/dailyProbeDiagnostics';
 import type { DailyProbeResult } from '../../../supabase/functions/_shared/dailyPracticeProbe';
 export function DailyGenerationTest({ masterKey, disabled, onBusyChange }: { masterKey: string; disabled: boolean; onBusyChange: (busy: boolean) => void }) {
   const scope = useAdminRequestScope(masterKey);
@@ -35,6 +36,7 @@ export function DailyGenerationTest({ masterKey, disabled, onBusyChange }: { mas
         throw Error(await courseAdminError(error, data));
       }
       const value = data?.data as DailyProbeResult;
+      if (value?.diagnostics !== undefined && !validProbeDiagnostics(value.diagnostics)) throw Error('The private test diagnostic metadata could not be verified.');
       if (!value || !['passed', 'failed'].includes(value.outcome) || value.productionCycleChanged !== false || value.published !== false || value.saved !== false ||
         typeof value.providerGenerationAttempted !== 'boolean' || value.model !== 'gemini-3.5-flash-lite' || value.outcome === 'passed' && (!value.providerGenerationAttempted || value.exercises !== 10 || value.questions !== 100))
         throw Error('The private test result could not be verified. Do not retry blindly.');
@@ -53,6 +55,11 @@ export function DailyGenerationTest({ masterKey, disabled, onBusyChange }: { mas
       ? 'Private test passed: 10 exercises and 100 questions validated. Content discarded; production cycle and published bank unchanged.'
       : 'Private test failed: ' + result.code + (result.httpStatus ? ' (HTTP ' + result.httpStatus + ')' : '') + (result.field ? ' · ' + result.field : '') + '. Production cycle unchanged. No automatic retry.'}
       {' '}{result.providerGenerationAttempted ? 'One Gemini generation request was attempted.' : 'No Gemini generation request was attempted.'}</p>}
+    {result?.diagnostics && <aside aria-label="Private test diagnostics" className="space-y-1 text-xs text-muted-foreground">
+      {result.diagnostics.validation && <p>Validation: {result.diagnostics.validation.stage}{result.diagnostics.validation.rules.length ? ' · ' + result.diagnostics.validation.rules.join(', ') : ''}{result.diagnostics.validation.exercise ? ' · exercise ' + result.diagnostics.validation.exercise : ''}{result.diagnostics.validation.question ? ', question ' + result.diagnostics.validation.question : ''}.</p>}
+      {result.diagnostics.provider && <p>Provider finish: {result.diagnostics.provider.finishReason} · output tokens: {result.diagnostics.provider.outputTokens ?? 'not reported'}. These are this test’s metadata, not remaining quota or factual-accuracy evidence.</p>}
+      {result.diagnostics.structure && <p>Received exercises: {result.diagnostics.structure.exerciseCount} · question counts: {result.diagnostics.structure.questionCounts.map(n => n ?? '?').join(', ')} · shortest explanation: {result.diagnostics.structure.minExplanationChars ?? 'not reported'} characters. Generated text was discarded.</p>}
+    </aside>}
     {error && <p role="alert" className="text-sm text-destructive">{error} The result is unconfirmed; no automatic retry was made.</p>}
   </section>;
 }

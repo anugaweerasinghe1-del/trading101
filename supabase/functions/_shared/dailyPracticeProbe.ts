@@ -1,12 +1,13 @@
 import { generatePractice } from './dailyPracticeGenerator.ts';
-import { courseReferences } from './courseGenerator.ts';
+import { courseReferences, readGenerationResponse, GENERATION_READ_LIMITS } from './courseGenerator.ts';
+import { providerDiagnostics, validationDiagnostics, type ProbeDiagnostics } from './dailyProbeDiagnostics.ts';
 export const DAILY_PROBE_LIMITS = Object.freeze({ requestsPerUtcDay: 1, requestBytes: 120000, outputTokens: 32768 });
 type Config = { apiKey?: string; model?: string; freeConfirmed?: boolean };
 export type DailyProbeResult = {
   outcome: 'passed' | 'failed'; model: string; providerGenerationAttempted: boolean;
   productionCycleChanged: false; published: false; saved: false;
   exercises: number; questions: number; code?: string; httpStatus?: number; field?: string;
-  usage?: unknown;
+  usage?: unknown; diagnostics?: ProbeDiagnostics;
 };
 export function createDailyProbeHandler(options: {
   getKey: () => string | undefined;
@@ -16,6 +17,7 @@ export function createDailyProbeHandler(options: {
   admit: () => Promise<boolean>;
   fetcher?: typeof fetch;
   now?: () => number;
+  report?: (metadata: { outcome: string; code: string | null; providerGenerationAttempted: boolean; diagnostics: ProbeDiagnostics }) => void;
 }) {
   const headers = { 'Content-Type': 'application/json', 'Cache-Control': 'no-store',
     'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'POST, OPTIONS',
@@ -44,6 +46,12 @@ export function createDailyProbeHandler(options: {
       // Atomic, durable, global UTC-day admission. Failed/unknown outcomes consume it.
       if (!await options.admit()) return reply({ code: 'TEST_ALLOWANCE_USED', error: 'The private test allowance is used. Wait until the next UTC day; no automatic retry.' }, 429);
       let providerCalls = 0;
+      let diagnostics: ProbeDiagnostics = {};
+      const resultReply = (result: DailyProbeResult) => {
+        const metadata = { outcome: result.outcome, code: result.code ?? null, providerGenerationAttempted: result.providerGenerationAttempted, diagnostics };
+        try { (options.report ?? (value => console.info('DAILY_PRIVATE_TEST_RESULT', JSON.stringify(value))))(metadata); } catch { /* Telemetry cannot change an outcome. */ }
+        return reply({ data: result });
+      };
       const sources = new Set(courseReferences.map(source => source.url));
       const providerUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent';
       const guardedFetch: typeof fetch = async (input, init) => {
@@ -55,7 +63,14 @@ export function createDailyProbeHandler(options: {
           if (value.generationConfig?.maxOutputTokens !== DAILY_PROBE_LIMITS.outputTokens) throw Error('PROBE_REQUEST_BOUND');
           providerCalls++;
         } else if (!sources.has(url) || init?.method && init.method !== 'GET') throw Error('PROBE_REQUEST_BOUND');
-        return (options.fetcher ?? fetch)(input, init);
+        const response = await (options.fetcher ?? fetch)(input, init);
+        if (url === providerUrl && response.ok) {
+          const raw = await readGenerationResponse(response, GENERATION_READ_LIMITS.providerBytes, GENERATION_READ_LIMITS.providerReadMs);
+          diagnostics = providerDiagnostics(raw);
+          // One bounded upstream body read; only metadata survives the real generator.
+          return new Response(raw, { status: response.status, headers: { 'Content-Type': 'application/json' } });
+        }
+        return response;
       };
       const base = { model: config.model, productionCycleChanged: false, published: false, saved: false } as const;
       try {
@@ -65,12 +80,14 @@ export function createDailyProbeHandler(options: {
         // Generated text is discarded: only validation/usage metadata leaves this handler.
         const result: DailyProbeResult = { ...base, outcome: 'passed', providerGenerationAttempted: providerCalls === 1,
           exercises: generated.exercises.length, questions: generated.exercises.reduce((n, exercise) => n + exercise.questions.length, 0),
-          usage: generated.research.usage };
-        return reply({ data: result });
+          usage: generated.research.usage, diagnostics };
+        return resultReply(result);
       } catch (error) {
         const message = error instanceof Error ? error.message : '';
+        const validation = validationDiagnostics(message);
+        if (validation) diagnostics.validation = validation;
         const status = /^Gemini rejected generation \(HTTP (\d{3})/.exec(message);
-        const result: DailyProbeResult = { ...base, outcome: 'failed', providerGenerationAttempted: providerCalls === 1, exercises: 0, questions: 0,
+        const result: DailyProbeResult = { ...base, outcome: 'failed', providerGenerationAttempted: providerCalls === 1, exercises: 0, questions: 0, diagnostics,
           code: status ? 'PROVIDER_REJECTED' : message.startsWith('Free Gemini quota') ? 'PROVIDER_RATE_LIMIT'
             : message.startsWith('Too few primary') ? 'SOURCES_UNAVAILABLE'
               : message === 'PROBE_REQUEST_BOUND' ? 'REQUEST_BOUND_EXCEEDED'
@@ -79,7 +96,7 @@ export function createDailyProbeHandler(options: {
           result.httpStatus = Number(status[1]);
           result.field = ['thinkingLevel', 'responseJsonSchema', 'responseMimeType', 'maxOutputTokens'].find(field => message.includes(field));
         }
-        return reply({ data: result });
+        return resultReply(result);
       }
     } catch { return reply({ error: 'Private test service unavailable. No automatic retry.' }, 503); }
   };

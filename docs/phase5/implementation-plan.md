@@ -426,3 +426,33 @@ Issues remain open until their real acceptance gaps are resolved.
   waits for the portfolio owner marker to clear before the independent FX order.
   The complete compiled suite then passed, retaining all guest-order/source-price,
   Daily admission, malformed-result, late-reply and earlier admin assertions.
+
+### 7 Nov — owner acceptance reached Gemini; validation diagnostics needed
+
+- Owner again reports registered-owner Course readiness. This is genuine
+  owner-guided UI evidence, not an agent-controlled browser or a fabricated JWT.
+- #374 merged as `406a5a3fc2be75ab0eb16562e1f2b811c6a8e5c7` after exact-head
+  CI. All final-main/native hosting checks passed; private test v1 ACTIVE matched
+  all 11 reviewed files. Production browser rendered six routes and loaded the
+  new Daily bundle. Course/Daily/chat and other admin deployed sources matched main.
+- Owner explicitly initiated one quota-confirmed live private test. It reached
+  Gemini and returned `OUTPUT_VALIDATION_FAILED`; source content was discarded as
+  promised. Read-only admission count is 1, production attempts remain 3 and cases
+  0, next bank 9 Dec. See the credential-free owner-test evidence JSON. This is a
+  FAILED live generation check; do not mark the generator accepted or infer its
+  exact failed constraint. Version 1 collapsed several errors and retained no
+  detailed stage, so the discarded response cannot be retrospectively diagnosed.
+- Add private-test-only bounded diagnostics: response/envelope/schema/source/
+  category/repetition stage, fixed rule codes and numeric positions, provider
+  finish reason/usage and field-length/count summaries. Read the same bounded
+  provider response once, pass identical text to the unchanged real generator,
+  discard prose, and log only whitelisted metadata. No extra fetch, model request,
+  retries, paid fallback, bank/draft writes or changes to production validation.
+- Keep the same global `daily-practice-test-one-per-utc-day-v1` budget. A redeploy
+  cannot reset it. Earliest next test for this 7 Nov attempt is 8 Nov at 05:30
+  Sri Lanka time (00:00 UTC); the owner must deliberately reconfirm quota then.
+- Local actual-generator fixtures cover every stage and malformed/truncated output,
+  privacy-safe bounded logs, unchanged allowance and logger failure. Compiled
+  Chromium covers safe metadata display, forged diagnostics rejection, lock fencing
+  and 320px themes. Neither test calls a real model. Real provider acceptance
+  remains open until a permitted live request actually passes.
