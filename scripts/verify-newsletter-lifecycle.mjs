@@ -127,4 +127,50 @@ assert.equal((await full.request(input('over-budget@example.invalid'))).status, 
 assert.equal(unexpectedNetworkCalls, 0, 'No global network request is permitted');
 console.log('PASS actual newsletter HTTP lifecycle: consent, hash/expiry/single-use confirmation, no GET mutation, one-click/idempotent unsubscribe, no resubscribe, provider/config/database/quota failures, private headers excluded; synthetic storage and non-network email sink only.');
 
+// Exact-count failures must never become authoritative zero-subscriber totals.
+const dispatchSource = readFileSync('supabase/functions/newsletter-dispatch/index.ts', 'utf8');
+assert.equal(dispatchSource.match(/^import .*;$/gm)?.length, 3);
+const dispatchCode = ts.transpileModule(dispatchSource.replace(/^import .*;\r?\n/gm, ''), {
+  compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.None },
+}).outputText;
+function statusFixture(failedStatus, failure) {
+  let handler, requests = 0, providerCalls = 0;
+  class StatusQuery {
+    constructor(table) { assert.ok(['newsletter_contacts', 'newsletter_deliveries'].includes(table)); }
+    select(_columns, options = {}) { this.head = options.head; return this; }
+    eq(_key, status) { this.status = status; return this; }
+    order() { return this; } limit() { return this; }
+    then(resolve, reject) {
+      requests++;
+      return Promise.resolve(this.head ? this.status === failedStatus ? failure
+        : { count: this.status === 'confirmed' ? 3 : 0, error: null } : { data: [], error: null }).then(resolve, reject);
+    }
+  }
+  new Function('createClient', 'allow', 'clientIp', 'verifyNewsletterDispatchOwner', 'Deno', 'fetch', dispatchCode)(
+    () => ({ from: table => new StatusQuery(table) }), async () => true, () => 'synthetic',
+    async () => { throw Error('Status cannot invoke a publishing-owner action'); },
+    { env: { get: key => key === 'ADMIN_MASTER_KEY' ? sentinel : 'fixture' }, serve: value => { handler = value; } },
+    async () => { providerCalls++; throw Error('Status must never send mail'); },
+  );
+  return { call: key => handler(new Request('https://fixture.invalid/newsletter-dispatch', {
+    method: 'POST', headers: { 'x-admin-key': key ?? sentinel, 'Content-Type': 'application/json' }, body: '{"action":"status"}',
+  })), get requests() { return requests; }, get providerCalls() { return providerCalls; } };
+}
+const healthyStatus = statusFixture();
+const totals = await (await healthyStatus.call()).json();
+assert.deepEqual(totals.data.counts, { confirmed: 3, unsubscribed: 0, pending: 0, bounced: 0 }, 'Known zeros remain real zeros');
+for (const state of ['confirmed', 'unsubscribed', 'pending', 'bounced']) for (const fault of [
+  { count: null, error: { message: 'PRIVATE_COUNT_DETAIL' } }, { count: null, error: null },
+  { count: -1, error: null }, { count: 1.5, error: null },
+]) {
+  const failedCount = statusFixture(state, fault), response = await failedCount.call();
+  assert.equal(response.status, 503, state + ' failed count must be unavailable, not zero');
+  assert.doesNotMatch(await response.text(), /PRIVATE_COUNT_DETAIL/);
+  assert.equal(failedCount.providerCalls, 0);
+}
+const deniedStatus = statusFixture();assert.equal((await deniedStatus.call('incorrect')).status, 401);
+assert.equal(deniedStatus.requests, 0);assert.equal(deniedStatus.providerCalls, 0);
+assert.equal(unexpectedNetworkCalls, 0, 'No global network request during status tests');
+console.log('PASS actual newsletter status handler: exact counts, real zeros, count errors/null/invalid totals fail closed, denied key before reads, zero sends.');
+
 } finally { globalThis.fetch = realFetch; }

@@ -31,3 +31,16 @@ Covered workflows:
 No real confirmation/subscriber email, production editorial action or user-data
 mutation is part of this test. Genuine owner no-send readiness and real mailbox
 acceptance remain separate evidence; do not use this fixture to claim either.
+
+## Subscriber-count outage recovery
+
+The same fixture executes the real newsletter dispatch status handler. It
+reproduced HTTP200 with a false zero when any exact-count request failed.
+The handler now returns HTTP503 for errors, nulls, negative or fractional totals;
+the existing admin refresh/error handling keeps that feed unavailable or stale
+instead of presenting an invented zero. Valid zero counts remain valid.
+
+Cases cover every returned contact status and denied master-key reads, with no
+mail/provider request. No send, approval, recipient selection, quota, owner gate
+or private-contact mutation behavior changes. Deploy only the reviewed dispatch
+bundle after exact-head CI/merge, then verify source parity and safe auth denial.
