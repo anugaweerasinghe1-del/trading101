@@ -23,6 +23,7 @@ export type GradedFoundationsAttempt = Readonly<{
 export function getFoundationsEligibility(attempts: readonly GradedFoundationsAttempt[]) {
   const passedCheckpoints = new Set<string>();
   let finalCasePassed = false;
+  let perfectSizing = false;
 
   for (const attempt of attempts) {
     if (attempt.programmeVersion !== FOUNDATIONS_VERSION ||
@@ -33,6 +34,7 @@ export function getFoundationsEligibility(attempts: readonly GradedFoundationsAt
       if (attempt.possible === 10 && attempt.points >= 8) finalCasePassed = true;
     } else if (attempt.possible === 5 && attempt.points >= 4) {
       passedCheckpoints.add(attempt.assessmentId);
+      if (attempt.assessmentId === "sizing" && attempt.points === 5) perfectSizing = true;
     }
   }
 
@@ -47,5 +49,5 @@ export function getFoundationsEligibility(attempts: readonly GradedFoundationsAt
     milestones.push("foundations");
   }
 
-  return { completedCourses, finalCasePassed, milestones };
+  return { completedCourses, finalCasePassed, milestones, perfectSizing, passedCheckpoints: [...passedCheckpoints] };
 }

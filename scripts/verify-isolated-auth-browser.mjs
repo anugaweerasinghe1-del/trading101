@@ -82,6 +82,8 @@ async function main(){
   let showPublications=false,publicationReads=0;
   let learningWrites=0, learningReads=0, savedLearning=null;
   let privateTradeReads=0, privateTradeRejected=0;
+  let foundationsReads=0, foundationsGradeCalls=0, foundationsPassed=false;
+  const foundationsVersion="foundations-v1";
   let holdLearnModule=true;
   const releaseLearnModules=[];
   const rejectedWrites=[];
@@ -124,6 +126,26 @@ async function main(){
         '/functions/v1/admin-courses','/functions/v1/admin-reviews','/functions/v1/newsletter-dispatch',
         '/functions/v1/newsletter-editor','/functions/v1/admin-agent-chat',
       ].includes(route)) return json(503,{error:'Fixture dashboard feeds unavailable'});
+      if(route==='/functions/v1/foundations-certificate'){
+        assert.equal(req.method,'POST');
+        assert.equal(req.headers.authorization,'Bearer '+JWT,'Foundations reads and grades use the account JWT');
+        let text='';req.on('data',chunk=>{text+=chunk});req.on('end',()=>{
+          const input=JSON.parse(text);
+          foundationsReads++;
+          if(input.action==='progress')return json(200,{status:'available',programmeVersion:foundationsVersion,
+            completedCourses:[],finalCasePassed:false,perfectSizing:false,milestones:[],passedCheckpoints:foundationsPassed?['markets']:[]});
+          if(input.action==='assessment'){
+            assert.deepEqual(input,{action:'assessment',programmeVersion:foundationsVersion,assessmentId:'markets'});
+            return json(200,{status:'available',assessment:{programmeVersion:foundationsVersion,assessmentId:'markets',
+              title:'Fixture checkpoint',questions:Array.from({length:5},(_,i)=>({prompt:'Practice fixture '+i,choices:['Choice A','Choice B']}))}});
+          }
+          assert.deepEqual(input,{action:'grade',programmeVersion:foundationsVersion,assessmentId:'markets',answers:[0,0,0,0,0]});
+          foundationsGradeCalls++;
+          if(foundationsGradeCalls===1)return json(503,{status:'unavailable'});
+          foundationsPassed=true;
+          return json(200,{status:'graded',grade:{programmeVersion:foundationsVersion,assessmentId:'markets',points:5,possible:5}});
+        });return;
+      }
       if(route==='/functions/v1/daily-practice-test'){
         assert.equal(req.method,'POST');assert.equal(req.headers['x-admin-key'],ADMIN_FIXTURE_KEY);
         assert.equal(req.headers.authorization,'Bearer '+JWT,'Private test requires the genuine fixture owner session');
@@ -517,6 +539,7 @@ async function main(){
     await wait(()=>devtools.evaluate("document.querySelector('main h1')?.textContent==='My Trophy Cabinet'"),"guest private Trophy Cabinet");
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Sign-in required')"),"guest trophy cannot read trade evidence");
     assert.equal(privateTradeReads,0,"Guest must not query the protected trade ledger");
+    assert.equal(foundationsReads,0,"Guest must not request Foundations evidence");
     await loadDocument(origin+"/auth");
     await wait(()=>devtools.evaluate("!!(document.querySelector('input[type=email]')&&document.querySelector('input[type=password]'))"),"real TradeHQ login form");
     const submit=(mail,pass)=>{
@@ -543,6 +566,25 @@ async function main(){
     await wait(()=>devtools.evaluate("document.querySelector('section[aria-labelledby=recorded-practice-heading] [role=status]')?.textContent.includes('Account-recorded')"),"server-recorded milestone proven");
     assert.ok(privateTradeReads>=1,"Signed-in owner must fetch account-bound evidence");
     assert.equal(privateTradeRejected,0,"No unauthorized or unscoped trade reads allowed");
+    const programme="document.querySelector('section[aria-labelledby=foundations-programme-title]')";
+    const programmeClick=label=>devtools.evaluate("[..."+programme+".querySelectorAll('button')].find(e=>e.textContent.trim()==="+JSON.stringify(label)+")?.click()");
+    const collection="document.querySelector('section[aria-labelledby=trophy-collection-title]')";
+    await wait(()=>devtools.evaluate(collection+"?.querySelectorAll('svg use').length===20"),'Twenty distinct trophy illustrations rendered');
+    assert.equal(await devtools.evaluate("new Set([..."+collection+".querySelectorAll('svg use')].map(x=>x.getAttribute('href'))).size"),20);
+    await wait(()=>devtools.evaluate("[..."+collection+".querySelectorAll('svg')].every(icon=>icon.getBBox().width>0)"),'All approved trophy SVG silhouettes loaded');
+    assert.equal(await devtools.evaluate(collection+".textContent.includes('Evidence unavailable')"),true,'Unwired evidence must not display false zero progress');
+    await programmeClick('Markets and instruments');
+    await wait(()=>devtools.evaluate(programme+".querySelectorAll('fieldset').length===5"),'Private Foundations checkpoint ready');
+    await devtools.evaluate(programme+".querySelectorAll('fieldset').forEach(el=>el.querySelector('input').click())");
+    await programmeClick('Submit answers');
+    await wait(()=>devtools.evaluate(programme+".textContent.includes('Your result could not be confirmed')"),'Foundations grade outage shown');
+    assert.equal(await devtools.evaluate(programme+".querySelectorAll('input:checked').length"),5,'Keep answers after score outage');
+    await programmeClick('Submit answers');
+    await wait(()=>devtools.evaluate(programme+".textContent.includes('Score 5/5. Passed.')"),'Server-graded score rendered');
+    await wait(()=>devtools.evaluate(programme+".textContent.includes('Markets and instruments · Passed')"),'Server progress refreshes after grading');
+    assert.equal(foundationsGradeCalls,2,'One failed deliberate submission and one deliberate retry');
+    console.log('ISOLATED_FOUNDATIONS_BROWSER_PASS: guest denial, private JWT, retained answers on outage and authoritative score/progress after retry.');
+
     await loadDocument(origin+"/trader/me");
     await wait(()=>devtools.evaluate("document.querySelector('main h1')?.textContent.includes('My TradeHQ profile')"),"profile after verified milestone");
     await devtools.evaluate("(()=>{const p=JSON.parse(localStorage.getItem('tradehq_portfolio'));p.trades[0].journal={notes:'PRIVATE ACCOUNT FIXTURE',reasoning:'private',emotions:[]};localStorage.setItem('tradehq_portfolio',JSON.stringify(p));})()");
@@ -562,9 +604,13 @@ async function main(){
     assert.equal(signedOutPortfolio.cash,guestSold.cash);
     assert.ok(!JSON.stringify(signedOutPortfolio).includes('PRIVATE ACCOUNT FIXTURE'),'private account journal leaked into guest practice');
     const readsBeforeSignedOutCabinet=privateTradeReads;
+    const foundationsBeforeSignedOutCabinet=foundationsReads;
     await loadDocument(origin+"/achievements");
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Sign-in required')"),"signed-out milestone hidden");
     assert.equal(privateTradeReads,readsBeforeSignedOutCabinet,"Signed-out cabinet must not query the protected trade ledger");
+    assert.equal(foundationsReads,foundationsBeforeSignedOutCabinet,"Signed-out cabinet must not read account assessment evidence");
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('Markets and instruments · Passed')"),false);
+
     await loadDocument();
     await wait(()=>devtools.evaluate("!!document.querySelector('a[href=\"/auth\"]') && !document.querySelector('[aria-label=\"Account menu\"]')"),"no session resurrection after reload");
     // Find the actual configured SDK key; seed an expired test session and
