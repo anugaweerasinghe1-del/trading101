@@ -1,3 +1,4 @@
+import { DailyGenerationTest } from "@/components/daily/DailyGenerationTest";
 import { Link } from "react-router-dom";
 import { useAdminDraftNavigation } from "@/hooks/useAdminDraftNavigation";
 import { useCallback, useEffect, useRef, useState } from 'react';
@@ -120,6 +121,7 @@ export default function AdminDaily() {
            {modelCheck && <p role="status" className="text-sm text-muted-foreground">{modelCheck}</p>}
          </div>
       </section>}
+      <DailyGenerationTest masterKey={key} disabled={busy} onBusyChange={value => { pending.current = value; setBusy(value); }} />
       <div className="grid md:grid-cols-[230px_minmax(0,1fr)] gap-6"><aside className="space-y-2"><h2 className="text-sm font-semibold mb-3">Banks</h2>
         <label className="block text-sm pb-2">Show banks<select className="block mt-2 w-full bg-background rounded-xl border border-border p-3" value={filter} onChange={event => setFilter(event.target.value)}>{[['all', 'All'], ['draft', 'Awaiting review'], ['published', 'Approved'], ['rejected', 'Rejected']].map(([value, label]) => <option key={value} value={value}>{label} ({rows.filter(row => value === 'all' || row.status === value).length})</option>)}</select></label>
         {rows.filter(row => filter === 'all' || row.status === filter).map(row => <button key={row.id} disabled={busy} className={`w-full text-left rounded-xl border p-3 ${selected?.id === row.id ? 'border-primary/40 bg-primary/5' : 'border-border'}`} onClick={() => choose(row)}><span className="block text-sm">{row.document.effectiveFrom}</span><span className="text-xs text-muted-foreground">{row.status === 'draft' ? 'Awaiting review' : row.status === 'published' ? 'Approved' : row.status} · revision {row.revision}</span></button>)}

@@ -350,3 +350,79 @@ Issues remain open until their real acceptance gaps are resolved.
   streams. Added a required actual-workerd regression using the real handler,
   independent request contexts and a stub upstream (no external provider calls).
   New exact-head checks and a successful real preview read are required before merge.
+
+
+### 6 Nov — genuine owner-guided checks and bounded private Daily test
+
+- Owner reports the actual Course `Verify owner access` response: registered owner
+  verified, no publication/generation. This is owner-reported live evidence, not an
+  independently controlled browser session. The environment's separate binding
+  still returned HTTP401 on its last settings-only read. Never request a key in chat.
+- Owner's Daily screenshot shows successful Gemini key/model metadata preflight,
+  saved Gemini 3.5 Flash Lite, 0/50 exercises, 0/5 parts, 3/3 consumed attempts,
+  preparation 2 Dec / effective bank 9 Dec. Historical HTTP400 remains historical;
+  metadata success does not prove structured generation or authorize a reset.
+- Current owner-supplied AI Studio screenshots show project Free tier and model
+  limits 15 RPM / 250K TPM / 500 RPD. The 28-day displayed peaks 2 RPM, 31.54K TPM,
+  6 RPD do not establish today's remaining allowance. Do not enable billing.
+- Implement a separate owner-only `daily-practice-test` function and explicit Daily
+  test UI. Reuse saved free Gemini 3.5 Flash Lite credentials, registered-owner Auth
+  verification and the existing atomic limiter. No production claim/finish/request
+  RPC, cycle reset, draft write, publication, schema migration or schedule.
+- One global test admission per UTC day, including failed/unconfirmed tests. Calls
+  require master key AND legitimate registered-owner bearer, free-tier confirmation
+  AND a deliberate browser confirmation. No automatic request/retry/fallback. Eight
+  fixed public references and at most ONE Gemini generation call; serialized request
+  max 120,000 bytes, output max 32,768 tokens; source/provider time/body bounds remain
+  those of the real production generator. Shared project usage can still cause 429.
+- Use the actual first-part generator with no user/private draft inputs; validate
+  ten exercises/100 questions, discard all generated text, return only bounded
+  validation/failure/usage metadata. This tests structured generation, not complete
+  five-part bank persistence or factual/editorial acceptance. Preserve the published
+  50-case/500-question bank and exhausted production attempt history.
+- Backend regressions exercise the real generator against fixture sources/model:
+  wrong key/non-owner/body/config denial before quota/config reads; racing admission;
+  one provider request, no response-text/key leakage; oversized request blocks the
+  provider; 400/429/invalid output/network errors consume admission without retry.
+  Browser acceptance covers explicit consent/cancel, real fixture owner JWT,
+  disabled repeat, pass/failure/used-limit messages, unchanged bank/cycle fixtures,
+  lock fencing and 320px themes. No test invokes a real provider.
+- Done requires required exact-head PR/main checks, native CF/Vercel deployment
+  proof, dedicated function deployment with reviewed-source parity and safe auth
+  denial. Real Gemini acceptance remains pending the owner's deliberate live test.
+  Rollback: remove this isolated UI/endpoint; no bank/data rollback or quota reset.
+
+### 7 Nov — completion review and Daily private-test admission race
+
+- Fresh main is `55916bd5af73f040d68424604d07c18efb267c46`; #374 is the
+  outstanding bounded Daily private-test workstream. Trophy #370 remains deferred.
+- Independent compiled Chromium reproduction: two clicks in one event turn sent
+  two test requests before React applied the disabled button. The server's atomic
+  one-test allowance still prevents a second admitted model call, but competing
+  UI outcomes were possible. Added an immediate in-memory submission guard;
+  request completion and sign-out release the guard under existing scope fencing.
+- Extended browser acceptance covers that exact two-click reproduction, forged
+  success metadata, and a held success response across Lock/unlock. Old replies
+  cannot populate the new desk or retain the old confirmation. No model request
+  or production editorial mutation is made by these fixtures.
+- Fresh read-only runtime source parity: admin-courses v17 10/10 files,
+  generate-daily-practice v16 8/8, admin-agent-chat v9 4/4 equal current main.
+  Approved public bank remains 50 exercises / 500 questions; three course drafts
+  are published, two Daily banks published, two newsletter editions approved.
+- Daily remains enabled, attempts 3, completed 0, nextDue 2026-12-09, historical
+  error present. The new endpoint is not deployed at this checkpoint; do not reset
+  the real cycle, fabricate owner auth or infer semantic quality from fixtures.
+- One operational settings read with the configured runtime master key still
+  returned HTTP401. The owner offered to sign in to shared Chrome for genuine
+  acceptance. Shared desktop is enabled but control tools are absent/cold in this
+  session; the owner was given the Desktop/sign-in instructions. A real browser
+  session and explicit owner initiation remain necessary for the real test.
+- Next: exact-head CI, fresh-main check and merge #374, dedicated Edge deployment
+  with source parity, native hosting proof and non-generating production smoke.
+  Only then can the owner deliberately run the quota-confirmed private test.
+- The full browser run also exposed an existing FX test setup race: the test
+  interpreted an absent account menu before hydration as a guest session. It now
+  waits for the intentionally retained owner fixture, explicitly signs out and
+  waits for the portfolio owner marker to clear before the independent FX order.
+  The complete compiled suite then passed, retaining all guest-order/source-price,
+  Daily admission, malformed-result, late-reply and earlier admin assertions.

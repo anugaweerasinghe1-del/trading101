@@ -74,6 +74,7 @@ async function main(){
   const temp=mkdtempSync(join(tmpdir(),"tradehq-isolated-auth-"));
   const dist=join(temp,"dist"),profile=join(temp,"chrome");
   let server,browser,devtools;let attempts=0,approved=0,rejected=0,dataWrites=0,portfolioInitialized=0,logouts=0,refreshRejected=0,dailyReads=0,adminChatRequests=0;
+  let dailyProbeCalls=0,dailyProbeMode='passed';
   let fxReferenceReads=0,fxReferenceMode='valid';
   const fxDate=new Date(Date.now()-3*86400000).toISOString().slice(0,10);
   const fxBatch={kind:'daily_fx_reference',source:'Frankfurter blended daily reference',requestedDate:fxDate,
@@ -119,6 +120,20 @@ async function main(){
         res.writeHead(status,{"Content-Type":"application/json","Cache-Control":"no-store"});
         res.end(JSON.stringify(body));
       };
+      if(route==='/functions/v1/daily-practice-test'){
+        assert.equal(req.method,'POST');assert.equal(req.headers['x-admin-key'],ADMIN_FIXTURE_KEY);
+        assert.equal(req.headers.authorization,'Bearer '+JWT,'Private test requires the genuine fixture owner session');
+        let text='';req.on('data',chunk=>{text+=chunk});req.on('end',()=>{
+          assert.deepEqual(JSON.parse(text),{confirmFreeTier:true});dailyProbeCalls++;
+          if(dailyProbeMode==='used')return json(429,{code:'TEST_ALLOWANCE_USED',error:'Fixture allowance used'});
+          if(dailyProbeMode==='malformed')return json(200,{data:{outcome:'passed',productionCycleChanged:true,published:false,saved:false}});
+          const payload={data:{outcome:dailyProbeMode==='held'?'passed':dailyProbeMode,model:'gemini-3.5-flash-lite',providerGenerationAttempted:true,
+            productionCycleChanged:false,published:false,saved:false,exercises:dailyProbeMode==='passed'||dailyProbeMode==='held'?10:0,
+            questions:dailyProbeMode==='passed'||dailyProbeMode==='held'?100:0,...(dailyProbeMode==='failed'?{code:'PROVIDER_REJECTED',httpStatus:400,field:'thinkingLevel'}:{})}};
+          if(dailyProbeMode==='held'){setTimeout(()=>json(200,payload),600);return;}
+          return json(200,payload);
+        });return;
+      }
       if(route==='/api/fx-reference'){
         assert.equal(req.method,'GET');fxReferenceReads++;
         if(fxReferenceMode==='unavailable')return json(503,{error:'Reference unavailable'});
@@ -1218,13 +1233,66 @@ async function main(){
     await wait(()=>devtools.evaluate("document.body.textContent.includes('Live HTML metadata check')"),'Live HTML audit utility mounts');
     console.log('ISOLATED_ADMIN_UTILITIES_BROWSER_PASS: asset validator, legacy editor redirect and HTML audit route mount; no production URL scan or privileged backend writes.');
 
+    // Owner-only private generation test remains separate from exhausted live cycles.
+    await loadDocument(origin+'/admin/daily');
+    await wait(()=>devtools.evaluate("!!document.querySelector('main form input[type=password]')"),'Private test Daily unlock');
+    await adminInput('main form input[type=password]',ADMIN_FIXTURE_KEY);await adminClick('Unlock');
+    const probe="document.querySelector('[aria-label=\"Private Daily generation test\"]')";
+    await wait(()=>devtools.evaluate('!!'+probe),'Private test panel');
+    const productionBeforeProbe={requests:dailyGenerationRequests,drafts:JSON.stringify(dailyDrafts),status:JSON.stringify(dailyStatus)};
+    assert.equal(dailyProbeCalls,0,'Opening the test cannot call Gemini');
+    assert.equal(await devtools.evaluate("[...document.querySelectorAll('button')].find(b=>b.textContent.trim()==='Run one private generation test').disabled"),true,'Explicit free-tier review required');
+    await devtools.evaluate(probe+".querySelector('input[type=checkbox]').click();window.confirm=()=>false");
+    await adminClick('Run one private generation test');assert.equal(dailyProbeCalls,0,'Cancel confirmation is inert');
+    await devtools.evaluate("window.confirm=()=>true;(()=>{const b=[...document.querySelectorAll('button')].find(b=>b.textContent.trim()==='Run one private generation test');b.click();b.click();})()");
+    await wait(()=>devtools.evaluate(probe+".textContent.includes('Private test passed: 10 exercises and 100 questions')"),'Private test success metadata');
+    assert.equal(dailyProbeCalls,1);
+    assert.equal(await devtools.evaluate("[...document.querySelectorAll('button')].find(b=>b.textContent.trim()==='Run one private generation test').disabled"),true,'No immediate repeat');
+    assert.deepEqual({requests:dailyGenerationRequests,drafts:JSON.stringify(dailyDrafts),status:JSON.stringify(dailyStatus)},productionBeforeProbe,'Test cannot reset, queue, save or publish the actual bank');
+    for(const mode of ['failed','used','malformed']){
+      dailyProbeMode=mode;await loadDocument();
+      await wait(()=>devtools.evaluate("!!document.querySelector('main form input[type=password]')"),'Private test reload unlock');
+      await adminInput('main form input[type=password]',ADMIN_FIXTURE_KEY);await adminClick('Unlock');
+      await wait(()=>devtools.evaluate('!!'+probe),'Private test panel reload');
+      await devtools.evaluate(probe+".querySelector('input[type=checkbox]').click();window.confirm=()=>true");
+      await adminClick('Run one private generation test');
+      await wait(()=>devtools.evaluate(probe+".textContent.includes("+JSON.stringify(mode==='failed'?'Private test failed: PROVIDER_REJECTED (HTTP 400)':mode==='used'?'one-test allowance is already used':'private test result could not be verified')+")"),'Private test '+mode+' disclosed');
+    }
+    await devtools.send('Emulation.setDeviceMetricsOverride',{width:320,height:850,deviceScaleFactor:1,mobile:true});
+    for(const theme of ['light','dark']){
+      await devtools.evaluate("document.documentElement.classList.toggle('dark',"+(theme==='dark')+")");
+      assert.ok(await devtools.evaluate('document.documentElement.scrollWidth<=innerWidth+1'),'Private test fits 320px '+theme);
+    }
+    await adminClick('Lock');
+    await wait(()=>devtools.evaluate('!'+probe),'Private test results cleared by lock');
+    dailyProbeMode='held';
+    await adminInput('main form input[type=password]',ADMIN_FIXTURE_KEY);await adminClick('Unlock');
+    await wait(()=>devtools.evaluate('!!'+probe),'Private test late-response panel');
+    await devtools.evaluate(probe+".querySelector('input[type=checkbox]').click();window.confirm=()=>true");
+    const beforeHeldProbe=dailyProbeCalls;
+    await adminClick('Run one private generation test');await wait(()=>dailyProbeCalls===beforeHeldProbe+1,'Private request held');
+    await adminClick('Lock');
+    await wait(()=>devtools.evaluate('!'+probe),'Private request locks while pending');
+    await adminInput('main form input[type=password]',ADMIN_FIXTURE_KEY);await adminClick('Unlock');
+    await wait(()=>devtools.evaluate('!!'+probe),'New private test session opened');
+    await sleep(700);
+    assert.equal(await devtools.evaluate(probe+".textContent.includes('Private test passed:')"),false,'Old reply cannot restore a result in the new session');
+    assert.equal(await devtools.evaluate(probe+".querySelector('input[type=checkbox]').checked"),false,'New session retains fresh consent requirement');
+    assert.equal(dailyProbeCalls,beforeHeldProbe+1,'Unlock never retries an earlier request');
+    await adminClick('Lock');dailyProbeMode='passed';
+    await devtools.send('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false});
+    console.log('ISOLATED_DAILY_PRIVATE_TEST_PASS: explicit review+confirmation, real owner JWT attached, no automatic invocation/repeat, pass/400/quota states, unchanged production-cycle fixtures, lock clears result, 320px themes; fake backend/provider only.');
+
     // Reference information cannot become an execution quote or account write.
     await loadDocument(origin+'/trade/eurusd');
-    if(await devtools.evaluate("!!document.querySelector('[aria-label=\"Account menu\"]')")){
+    // Prior owner-only cases intentionally retain the fixture session. Wait for
+    // hydrated auth before deciding to sign out; an early absent menu is not a guest.
+    await wait(()=>devtools.evaluate("!!document.querySelector('[aria-label=\"Account menu\"]')"),'FX owner fixture hydrated before sign-out');
+    {
       await devtools.evaluate("document.querySelector('[aria-label=\"Account menu\"]').dispatchEvent(new PointerEvent('pointerdown',{bubbles:true,button:0,ctrlKey:false}))");
       await wait(()=>devtools.evaluate("[...document.querySelectorAll('[role=menuitem]')].some(e=>e.textContent.trim()==='Sign out')"),'FX fixture sign-out menu');
       await devtools.evaluate("[...document.querySelectorAll('[role=menuitem]')].find(e=>e.textContent.trim()==='Sign out').click()");
-      await wait(()=>devtools.evaluate("!document.querySelector('[aria-label=\"Account menu\"]')"),'FX fixture guest');
+      await wait(()=>devtools.evaluate("!document.querySelector('[aria-label=\"Account menu\"]') && !localStorage.getItem('tradehq:portfolio-owner')"),'FX fixture guest');
       await loadDocument(origin+'/trade/eurusd');
     }
     const fxPanel="document.querySelector('[aria-label=\"Daily forex reference\"]')";
@@ -1244,6 +1312,7 @@ async function main(){
     await adminInput('input[aria-label="Amount in GBP/USD"]','1');
     await wait(()=>guestClick('Buy GBP/USD'),'Guest FX execution');
     await wait(()=>devtools.evaluate("JSON.parse(localStorage.getItem('tradehq_portfolio')).trades.length>"+beforeFx.trades.length),'FX trade saved locally');
+    assert.equal(dataWrites,0,'FX guest transition must never attempt an account order');
     const afterFx=await devtools.evaluate("JSON.parse(localStorage.getItem('tradehq_portfolio'))");
     assert.equal(afterFx.trades[0].assetId,'gbpusd');
     assert.notEqual(afterFx.trades[0].price,1.345678,'Daily reference never supplies executable price');
