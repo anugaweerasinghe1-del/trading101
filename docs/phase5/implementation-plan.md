@@ -26,8 +26,8 @@ Issues remain open until their real acceptance gaps are resolved.
 | A / #332 mobile/accessibility/utilities | Real existing controls work at narrow widths, light/dark, keyboard, loading/repeats; tools accurately describe scope. | #362 320px course/Daily/newsletter and utility-route fixtures. | Moderation and cross-desk navigation browser coverage now pass; actual owner acceptance pending. |
 | C / #335 markets/portfolio | Persist/recover portfolios/trades; accurate provenance/freshness and leaderboard; one failed refresh cannot erase other successes. | #363 isolation fix tested/merged; prior v16 parity and scheduled HTTP200. Prior evidence: 15/15 held crypto fresh; 0/17 traditional fresh. | Provider entitlement/budget evidence missing. Do not fabricate observations or label old prices live. |
 | D / #335 beginner/arena/leaderboard | Guest/account learn→trade→reflect→resume journey and consent-based aggregate funnel, private defaults, eligibility/rank distinctions and recovery. | Earlier journey/privacy/funnel code and fixtures exist (#334/#336/#361 etc.); #377 live read confirmed 75 opted-in entries including 53 zero-trade profiles. Full real journey not accepted. | Exercise disposable fixtures; genuine account confirmation requires legitimate session. No invented conversion metrics. |
-| E / #353 trophy cabinet | Exactly 20 distinct educational trophies with original sculpted silhouettes, accessible locked/earned/loading/unavailable states, criteria and progress, restrained reduced-motion celebration, optional profile flair/pins/share cards. Preserve personal progress. Verified evidence must be server-authoritative, private by default, idempotent, isolated by account and revocable from public display. | #378 renders all 20 approved trophies. Eleven read trusted evidence and the other nine show unavailable. Isolated browser and database checks pass. | Finish the nine evidence sources, durable award records and opt-in trophy sharing. Hosted rollout and acceptance are open. |
-| E / #353 completion certificate | Versioned The Trade HQ Foundations Learning Programme with server-side eligibility and idempotent private issuance, stable ID/date/evidence, name preview, correction history, deterministic PDF matching the approved white-and-teal designs, repeat downloads and optional minimal revocable verification. | #378 implements private scoring and issuance, all three PDFs, append-only name correction and optional revocable verification. Isolated SQL, handler, build and browser coverage pass. | Review and seed the fixed curriculum, deploy the hosted schema and functions, and verify live acceptance. |
+| E / #353 trophy cabinet | Exactly 20 distinct educational trophies with original sculpted silhouettes, accessible locked/earned/loading/unavailable states, criteria and progress, restrained reduced-motion celebration, optional profile flair/pins/share cards. Preserve personal progress. Verified evidence must be server-authoritative, private by default, idempotent, isolated by account and revocable from public display. | #378 merged and the live cabinet route responds successfully. All 20 approved designs render in the browser fixture, eleven with trusted evidence sources and nine marked unavailable. | Finish the nine evidence sources, durable award records and opt-in trophy sharing. Verify the signed-in live experience. |
+| E / #353 completion certificate | Versioned The Trade HQ Foundations Learning Programme with server-side eligibility and idempotent private issuance, stable ID/date/evidence, name preview, correction history, deterministic PDF matching the approved white-and-teal designs, repeat downloads and optional minimal revocable verification. | #378 merged after required checks. The approved 40-question bank, private schema and both certificate functions are hosted. Isolated SQL, handler and browser checks passed. The live verifier rendered its invalid-link state, and unsigned progress and anonymous assessment-bank reads were rejected. | Verify authenticated eligibility, issuance, repeat downloads, correction and opt-in verification through an authorized production account workflow. |
 | F / #321/#332/#335/#353 release | Security/RLS/privacy/rate limits, integrity/content trust, admin/browser/mobile/accessibility/SEO/performance and recovery evidence; all mandatory gates green; production matches reviewed main. | Main application, database and Cloudflare workflow runs completed success at checkpoint SHA; full release acceptance remains OPEN. | Resolve genuine owner/provider gates; track each PR SHA, active provider deployment and scope of smoke tests. No AdSense actions or paid dependencies. |
 
 ## Current blockers and authorization boundaries
@@ -561,3 +561,26 @@ Issues remain open until their real acceptance gaps are resolved.
   failed scores do not qualify and the count remains account scoped. This adds
   an eleventh trophy with a trusted evidence source in the draft. Nine sources
   and the durable trophy award and sharing records remain open.
+
+### 7 Nov — approved assessment bank and rewards rollout
+
+- The owner approved the Foundations v1 bank. The hosted seed contains six
+  checkpoints and one final case with 40 questions in total. Browser roles
+  have no direct assessment-bank read grant. The seed can be retried with the
+  identical bank and rejects changed content for the same version.
+- Hosted migration `20261107142912` and both certificate functions were applied
+  before the web merge. The function source retrieved from hosting matched the
+  reviewed source. Anonymous progress and bank reads returned HTTP 401, and
+  an unknown proof returned HTTP 404. The public verification page rendered
+  the expected invalid-link state and served no ad tag or referrer.
+- Rewards [PR #378](https://github.com/anugaweerasinghe1-del/trading101/pull/378)
+  merged as `5401b015aeec90077a227d9affb741d0dae96d78` after required PR checks.
+  The Trophy Cabinet and verification page returned HTTP 200. Live signed-in
+  issuance remains an acceptance item. The admin, market freshness and beginner
+  journey workstreams retain their own gates above.
+- A read-only Supabase comparison matched all 58 deployed files across nine
+  admin functions to the merged commit. This covers Course administration,
+  Daily production generation and private test, Newsletter audience/editor/
+  dispatch, Chat, Reviews and the code queue. This verifies code deployment.
+  Signed-in workflows and provider outcomes retain their separate acceptance
+  criteria above.

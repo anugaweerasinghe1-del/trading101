@@ -75,7 +75,7 @@ export default function AdminDashboard() {
     }
     const feeds = await Promise.allSettled([
       settingsRequest, adminCall("list", { summary: true }), adminCall("daily-status"),
-      supabase.functions.invoke("admin-reviews", { body: { action: "list" }, headers: { "x-admin-key": key } }),
+      supabase.functions.invoke("admin-reviews", { body: { action: "count" }, headers: { "x-admin-key": key } }),
       adminCall("daily-list", { summary: true }),
       supabase.functions.invoke("newsletter-dispatch", { body: { action: "status" }, headers: { "x-admin-key": key } }),
       supabase.functions.invoke("newsletter-editor", { body: { action: "list" }, headers: { "x-admin-key": key } }),
@@ -93,8 +93,9 @@ export default function AdminDashboard() {
     else { setDaily(null); warnings.push("Daily Practice status is temporarily unavailable."); }
     if (banks.status === "fulfilled" && Array.isArray(banks.value)) setDailyBanks(banks.value);
     else { setDailyBanks(null); warnings.push("Daily bank review queue is temporarily unavailable."); }
-    if (result.status === "fulfilled" && !result.value.error && !result.value.data?.error &&
-        Array.isArray(result.value.data?.data)) setReviews(result.value.data.data.length);
+    const reviewCount = result.status === "fulfilled" && !result.value.error && !result.value.data?.error
+      ? result.value.data?.data?.count : null;
+    if (typeof reviewCount === "number" && Number.isSafeInteger(reviewCount) && reviewCount >= 0) setReviews(reviewCount);
     else { setReviews(null); warnings.push("Review moderation status is temporarily unavailable."); }
     const editorialItems = newsletterDrafts.status === "fulfilled" && !newsletterDrafts.value.error && !newsletterDrafts.value.data?.error
       ? newsletterDrafts.value.data?.data : null;
@@ -272,7 +273,7 @@ export default function AdminDashboard() {
               ? 'Configured · live response unverified' : chatReadiness === 'PILOT_PAUSED' ? 'Pilot paused' : 'Status unavailable'}</p>
             <p className="text-xs text-muted-foreground">Read-only configuration check. No Gemini request, diagnosis, coding, approval or publication was performed. Pilot allows one provider attempt per UTC day.</p>
             <Link className={linkStyle} to="/admin/ai">Open AI Development Desk →</Link></section>
-          <section className={card}><MessageSquare className="w-6 h-6 text-primary"/><h3 className="font-semibold">Community reviews</h3><p className="text-2xl font-semibold">{reviews ?? "—"} <span className="text-sm font-normal text-muted-foreground">reviews in moderation desk</span></p><Link className={linkStyle} to="/admin/reviews">Reply, feature or moderate →</Link></section>
+          <section className={card}><MessageSquare className="w-6 h-6 text-primary"/><h3 className="font-semibold">Community reviews</h3><p className="text-2xl font-semibold">{reviews ?? "—"} <span className="text-sm font-normal text-muted-foreground">review records</span></p><Link className={linkStyle} to="/admin/reviews">Reply, feature or moderate →</Link></section>
         </div>
         <section id="monitor-findings" tabIndex={-1} className={card}>
           <div className="flex gap-3 items-center"><Activity className="w-5 h-5 text-primary"/><h2 className="font-semibold">Automated website checks</h2></div>

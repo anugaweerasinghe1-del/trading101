@@ -1,5 +1,6 @@
 export interface ReviewAdminStore {
   list: () => Promise<unknown[]>;
+  count: () => Promise<number>;
   update: (id: string, patch: Record<string, unknown>, state: "active" | "deleted") => Promise<boolean>;
 }
 export function createReviewAdminHandler(options: {
@@ -31,6 +32,7 @@ export function createReviewAdminHandler(options: {
     } catch { return response({ error: "Invalid request" }, 400); }
     try {
       if (body.action === "list") return response({ data: await options.getStore().list() });
+      if (body.action === "count") return response({ data: { count: await options.getStore().count() } });
       if (!["update", "reply", "delete", "restore"].includes(String(body.action))) return response({ error: "Unknown action" }, 400);
       if (typeof body.id !== "string" || !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(body.id)) return response({ error: "Invalid review ID" }, 400);
       const now = new Date().toISOString();
