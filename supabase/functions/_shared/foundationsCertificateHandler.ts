@@ -4,10 +4,13 @@ import { FOUNDATIONS_VERSION, getFoundationsEligibility, type GradedFoundationsA
 
 type CertificateStore = Parameters<typeof issueFoundationsCertificate>[0];
 const maxBodyBytes = 1024;
+const tokenPattern = /^[a-f0-9]{64}$/;
+const toHex = (bytes: Uint8Array) => Array.from(bytes, byte => byte.toString(16).padStart(2, "0")).join("");
+const hashToken = async (token: string) => toHex(new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(token))));
 type Certificate = NonNullable<Awaited<ReturnType<CertificateStore["findPrivateCertificate"]>>>;
 
-function privateDownloadMetadata({ id, issuedAt, recipientName, nameRevision, milestone, templateVersion, programmeVersion }: Certificate) {
-  return { id, issuedAt, recipientName, nameRevision, milestone, templateVersion, programmeVersion };
+function privateDownloadMetadata({ id, issuedAt, recipientName, nameRevision, verificationActive, milestone, templateVersion, programmeVersion }: Certificate) {
+  return { id, issuedAt, recipientName, nameRevision, verificationActive, milestone, templateVersion, programmeVersion };
 }
 
 async function readBody(request: Request): Promise<unknown> {
@@ -39,6 +42,7 @@ export function createFoundationsCertificateHandler(options: {
   authenticate: (token: string) => Promise<string | null>;
   admit: (userId: string) => Promise<boolean>;
   store: CertificateStore;
+  setVerification: (key: Parameters<CertificateStore["findPrivateCertificate"]>[0], expected: number, tokenHash: string | null) => Promise<boolean>;
   correctName: (key: Parameters<CertificateStore["findPrivateCertificate"]>[0], expected: number, recipientName: string) => Promise<boolean>;
   readAssessment: (assessmentId: string) => Promise<unknown>;
   recordGrade: (userId: string, grade: GradedFoundationsAttempt) => Promise<void>;
@@ -120,12 +124,60 @@ export function createFoundationsCertificateHandler(options: {
         if (!certificate) return reply({ status: "unavailable" }, 503);
         return reply({ status: "available", certificate: privateDownloadMetadata(certificate) }, 200);
       }
+      if (action === "set_verification" && onlyKeys(["action", "milestone", "enabled", "expectedRevision"])
+          && isCertificateMilestone(milestone)) {
+        const { enabled, expectedRevision } = body;
+        if (typeof enabled !== "boolean" || typeof expectedRevision !== "number" ||
+            !Number.isInteger(expectedRevision) || expectedRevision < 0 || expectedRevision >= 2147483647) {
+          return reply({ status: "invalid_request" }, 400);
+        }
+        const key = { userId, programmeVersion: FOUNDATIONS_VERSION, milestone } as const;
+        const token = enabled ? toHex(crypto.getRandomValues(new Uint8Array(32))) : undefined;
+        if (!await options.setVerification(key, expectedRevision, token ? await hashToken(token) : null)) {
+          return reply({ status: "revision_conflict" }, 409);
+        }
+        return reply({ status: "available", verificationActive: enabled, token }, 200);
+      }
       if (!onlyKeys(["milestone", "recipientName"])) return reply({ status: "invalid_request" }, 400);
       const result = await issueFoundationsCertificate(options.store, userId, milestone, recipientName);
       if (result.status === "available") {
         return reply({ status: result.status, certificate: privateDownloadMetadata(result.certificate) }, 200);
       }
       return reply(result, result.status === "ineligible" ? 409 : 400);
+    } catch {
+      return reply({ status: "unavailable" }, 503);
+    }
+  };
+}
+
+
+export function createFoundationsVerificationHandler(options: {
+  admit: (request: Request) => Promise<boolean>;
+  lookup: (tokenHash: string) => Promise<{ programmeVersion: string; milestone: string; issuedOn: string } | null>;
+}) {
+  const headers = {
+    "Content-Type": "application/json", "Cache-Control": "no-store",
+    "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "apikey, content-type",
+  };
+  const reply = (body: unknown, status: number) => new Response(JSON.stringify(body), { status, headers });
+  return async (request: Request) => {
+    if (request.method === "OPTIONS") return new Response(null, { status: 204, headers });
+    if (request.method !== "POST") return reply({ status: "method_not_allowed" }, 405);
+    let input: unknown;
+    try { input = await readBody(request); }
+    catch { return reply({ status: "invalid_or_withdrawn" }, 404); }
+    const token = (input as { token?: unknown } | null)?.token;
+    if (typeof token !== "string" || !tokenPattern.test(token)) return reply({ status: "invalid_or_withdrawn" }, 404);
+    try {
+      if (!await options.admit(request)) return reply({ status: "rate_limited" }, 429);
+      const record = await options.lookup(await hashToken(token));
+      if (!record || !isCertificateMilestone(record.milestone) || record.programmeVersion !== FOUNDATIONS_VERSION
+          || !/^\d{4}-\d{2}-\d{2}$/.test(record.issuedOn)) {
+        return reply({ status: "invalid_or_withdrawn" }, 404);
+      }
+      const { programmeVersion, milestone, issuedOn } = record;
+      return reply({ status: "verified", programmeVersion, milestone, issuedOn }, 200);
     } catch {
       return reply({ status: "unavailable" }, 503);
     }

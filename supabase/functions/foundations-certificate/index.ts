@@ -12,11 +12,11 @@ type CertificateStore = Parameters<typeof issueFoundationsCertificate>[0];
 type Certificate = NonNullable<Awaited<ReturnType<CertificateStore["findPrivateCertificate"]>>>;
 function toCertificate(row: {
   id: string; user_id: string; programme_version: Certificate["programmeVersion"];
-  milestone: Certificate["milestone"]; recipient_name: string; name_revision: number; template_version: string; issued_at: string;
+  milestone: Certificate["milestone"]; recipient_name: string; name_revision: number; verification_active: boolean; template_version: string; issued_at: string;
 }): Certificate {
   return {
     id: row.id, userId: row.user_id, programmeVersion: row.programme_version, milestone: row.milestone,
-    recipientName: row.recipient_name, nameRevision: row.name_revision, templateVersion: row.template_version, issuedAt: row.issued_at,
+    recipientName: row.recipient_name, nameRevision: row.name_revision, verificationActive: row.verification_active, templateVersion: row.template_version, issuedAt: row.issued_at,
   };
 }
 
@@ -40,6 +40,14 @@ Deno.serve(createFoundationsCertificateHandler({
       p_points: grade.points, p_possible: grade.possible,
     });
     if (error) throw error;
+  },
+  async setVerification(key, expected, tokenHash) {
+    const { data, error } = await client.rpc("set_foundations_certificate_verification", {
+      p_user_id: key.userId, p_programme_version: key.programmeVersion, p_milestone: key.milestone,
+      p_expected_revision: expected, p_token_hash: tokenHash,
+    });
+    if (error) throw error;
+    return data === true;
   },
   async correctName(key, expected, recipientName) {
     const { data, error } = await client.rpc("correct_foundations_certificate_name", {

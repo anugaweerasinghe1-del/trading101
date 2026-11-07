@@ -39,7 +39,7 @@ try {
     await db.exec("set role " + role);
     await assert.rejects(record(learner, "quotes", 5), /permission denied/);
     await assert.rejects(issue(learner, "first-course", "Fictional Learner"), /permission denied/);
-    for (const table of ["foundations_assessment_items", "foundations_assessment_results", "foundations_private_certificates", "foundations_certificate_name_revisions"]) {
+    for (const table of ["foundations_assessment_items", "foundations_assessment_results", "foundations_private_certificates", "foundations_certificate_name_revisions", "foundations_certificate_verification"]) {
       await assert.rejects(db.query("select * from public." + table), /permission denied/);
     }
     await db.exec("reset role");
@@ -87,6 +87,16 @@ try {
   const correct = (account: string, expected: number, name: string) => db.query<{ corrected: boolean }>(
     "select public.correct_foundations_certificate_name($1, 'foundations-v1', 'foundations', $2, $3) corrected",
     [account, expected, name]);
+  const share = (account: string, revision: number, hash: string | null) => db.query<{ shared: boolean }>(
+    "select public.set_foundations_certificate_verification($1, 'foundations-v1', 'foundations', $2, $3) shared",
+    [account, revision, hash]);
+  const verify = (hash: string) => db.query("select * from public.verify_foundations_certificate($1)", [hash]);
+  const firstHash = "a".repeat(64), replacementHash = "b".repeat(64);
+  assert.equal((await verify(firstHash)).rows.length, 0);
+  assert.equal((await share(other, 0, firstHash)).rows[0].shared, false);
+  assert.equal((await share(learner, 0, firstHash)).rows[0].shared, true);
+  const proof = (await verify(firstHash)).rows[0];
+  assert.deepEqual(Object.keys(proof).sort(), ["issued_on", "milestone", "programme_version"]);
   assert.equal((await correct(other, 0, "Forged Name")).rows[0].corrected, false);
   assert.equal((await correct(learner, 0, "Maya Corrected")).rows[0].corrected, true);
   assert.equal((await correct(learner, 0, "Maya Corrected")).rows[0].corrected, true);
@@ -95,6 +105,15 @@ try {
   assert.equal(corrected.rows[0].id, original.rows[0].id);
   assert.deepEqual(corrected.rows[0].issued_at, original.rows[0].issued_at);
   assert.equal(corrected.rows[0].recipient_name, "Maya Corrected");
+  assert.equal((await verify(firstHash)).rows.length, 0, "Name correction invalidates the prior link");
+  assert.equal((await share(learner, 0, replacementHash)).rows[0].shared, false, "Stale share revision");
+  assert.equal((await share(learner, 1, firstHash)).rows[0].shared, true);
+  assert.equal((await share(learner, 1, replacementHash)).rows[0].shared, true);
+  assert.equal((await verify(firstHash)).rows.length, 0, "Rotating invalidates the prior token");
+  assert.equal((await verify(replacementHash)).rows.length, 1);
+  assert.equal((await share(learner, 1, null)).rows[0].shared, true);
+  assert.equal((await verify(replacementHash)).rows.length, 0, "Withdrawal invalidates the replacement token");
+
   assert.equal((await db.query("select * from public.foundations_certificate_name_revisions")).rows.length, 1);
   const baseline = await db.query<{ recipient_name: string }>(
     "select recipient_name from public.foundations_private_certificates where id = $1", [original.rows[0].id]);

@@ -209,6 +209,8 @@ function CertificateDownload({ userId, token, milestone }: {
 }) {
   const [name, setName] = useState("");
   const [editing, setEditing] = useState(false);
+  const [verificationLink, setVerificationLink] = useState("");
+  const verificationPending = useRef(false);
   const [renderError, setRenderError] = useState(false);
   const [downloading, setDownloading] = useState(false);
   const active = useRef(false);
@@ -247,6 +249,7 @@ function CertificateDownload({ userId, token, milestone }: {
     onSuccess: certificate => {
       if (active.current) {
         queryClient.setQueryData(key, certificate);
+        setVerificationLink("");
         setEditing(false);
       }
     },
@@ -255,6 +258,33 @@ function CertificateDownload({ userId, token, milestone }: {
     },
     onSettled: () => { submitting.current = false; },
   });
+  const verification = useMutation({
+    mutationFn: async (enabled: boolean) => {
+      const expectedRevision = query.data?.nameRevision;
+      const result = await request<{ status: string; verificationActive: boolean; token?: string }>(token,
+        { action: "set_verification", milestone, enabled, expectedRevision });
+      if (result.status !== "available" || result.verificationActive !== enabled
+          || (enabled && !/^[a-f0-9]{64}$/.test(result.token ?? ""))) {
+        throw Error("Verification sharing could not be confirmed.");
+      }
+      return result;
+    },
+    onSuccess: result => {
+      if (!active.current) return;
+      queryClient.setQueryData<DownloadableCertificate>(key, previous =>
+        previous && { ...previous, verificationActive: result.verificationActive });
+      setVerificationLink(result.token ? window.location.origin + "/certificate/verify#" + result.token : "");
+    },
+    onError: () => { if (active.current) void query.refetch(); },
+    onSettled: () => { verificationPending.current = false; },
+  });
+  const shareVerification = (enabled: boolean) => {
+    if (verificationPending.current) return;
+    verificationPending.current = true;
+    setVerificationLink("");
+    verification.mutate(enabled);
+  };
+
   const download = async (certificate: DownloadableCertificate) => {
     if (downloadPending.current) return;
     downloadPending.current = true;
@@ -290,12 +320,33 @@ function CertificateDownload({ userId, token, milestone }: {
         <Button disabled={downloading} onClick={() => void download(query.data!)}>
           {downloading ? "Preparing PDF…" : "Download PDF"}
         </Button>
-        <Button variant="ghost" disabled={downloading} onClick={() => {
+        <Button variant="ghost" disabled={downloading || verification.isPending} onClick={() => {
           issue.reset();
           setName(query.data!.recipientName);
           setEditing(true);
         }}>Correct recipient name</Button>
         {renderError && <p role="alert">Your certificate is saved. The PDF could not be rendered. Please retry.</p>}
+        <div className="space-y-2 border-t pt-3">
+          <p className="text-sm font-medium">Public verification is {query.data.verificationActive ? "on" : "off"}</p>
+          <p className="text-sm text-muted-foreground">
+            Anyone with the link can see the certificate type and issue date. Correcting the name or creating a new link makes earlier links stop working.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <Button type="button" variant="outline" disabled={verification.isPending || query.isFetching}
+              onClick={() => shareVerification(true)}>
+              {query.data.verificationActive ? "Create replacement verification link" : "Enable verification and create link"}
+            </Button>
+            {query.data.verificationActive && <Button type="button" variant="ghost"
+              disabled={verification.isPending || query.isFetching} onClick={() => shareVerification(false)}>
+              Withdraw verification
+            </Button>}
+          </div>
+          {verificationLink && <label className="block text-sm">Verification link
+            <input readOnly value={verificationLink} onFocus={event => event.currentTarget.select()}
+              className="mt-1 block w-full rounded-md border bg-background px-2 py-1" />
+          </label>}
+          {verification.isError && <p role="alert">Verification sharing could not be confirmed. Check its current state before retrying.</p>}
+        </div>
       </>}
       {query.isSuccess && (!query.data || editing) && <form className="space-y-3" onSubmit={event => {
         event.preventDefault();

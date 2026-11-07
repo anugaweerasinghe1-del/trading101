@@ -634,6 +634,7 @@ function extraRoutes(): RouteMeta[] {
   }
   out.push({ path: "/admin/daily", title: "Daily Practice Administration | TradeHQ", description: "Private owner editing and approval for daily practice banks.", h1: "Daily practice administration", summary: "Owner administration requires the master key.", priority: "0.1", changefreq: "monthly", noindex: true });
   out.push({ path: "/achievements", title: "My Trophy Cabinet — Personal Learning | TradeHQ", description: "Private, personal progress and learning milestones. No independently verified public trophies.", h1: "My Trophy Cabinet", summary: "A personal, private reflection of saved course lessons. No public trophies or rankings are awarded here.", priority: "0.1", changefreq: "monthly", noindex: true });
+  out.push({ path: "/certificate/verify", title: "Certificate verification | The Trade HQ", description: "Verify an opted-in Foundations certificate.", h1: "Certificate verification", summary: "Check the validity of a shared Foundations certificate link.", priority: "0.1", changefreq: "monthly", noindex: true });
   return out;
 }
 

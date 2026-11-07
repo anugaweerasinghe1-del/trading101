@@ -539,10 +539,19 @@ Issues remain open until their real acceptance gaps are resolved.
   forged input, outage/retry, duplicate issuance, a 200-account SQL fixture,
   and Chromium PDF downloads on desktop and a 320px viewport. Hosted schema,
   assessment content and certificate issuance remain unreleased. Editorial
-  review and seeding, correction history and public verification consent and
-  withdrawal remain open.
+  review and seeding remain open.
 
 - The rewards draft now preserves the original certificate while appending private
   name revisions. New downloads use the latest name and keep the ID and date.
   Disposable SQL and handler fixtures cover account isolation, stale revisions
   and retry without duplicate changes.
+
+- The rewards draft now implements optional verification. The learner explicitly
+  creates or withdraws a link. The service stores only its hash and verification
+  returns the certificate type, programme version and date. Correction and link
+  rotation invalidate prior links. The public route skips account and analytics
+  providers and its built document excludes the ad tag. Hosted acceptance still
+  depends on the reviewed curriculum and reward rollout.
+- #380 passed required pull-request checks and merged as
+  `cf5af3722d14e99fc0ac8cfc53850338fb77d277`. Native rollout is tracked on
+  that pull request.

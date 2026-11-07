@@ -63,16 +63,27 @@ alter table public.foundations_certificate_name_revisions enable row level secur
 revoke all on public.foundations_certificate_name_revisions from public, anon, authenticated, service_role;
 grant select, insert on public.foundations_certificate_name_revisions to service_role;
 
+create table public.foundations_certificate_verification (
+  certificate_id uuid primary key references public.foundations_private_certificates(id) on delete cascade,
+  token_hash text not null unique check (token_hash ~ '^[0-9a-f]{64}$'),
+  name_revision integer not null check (name_revision >= 0)
+);
+alter table public.foundations_certificate_verification enable row level security;
+revoke all on public.foundations_certificate_verification from public, anon, authenticated, service_role;
+grant select, insert, update, delete on public.foundations_certificate_verification to service_role;
+
 create function public.read_foundations_private_certificate(p_user_id uuid, p_programme_version text, p_milestone text)
 returns table (
   id uuid, user_id uuid, programme_version text, milestone text, recipient_name text,
-  template_version text, issued_at timestamptz, name_revision integer
+  template_version text, issued_at timestamptz, name_revision integer, verification_active boolean
 )
 language sql
 set search_path = ''
 as $$
   select c.id, c.user_id, c.programme_version, c.milestone, coalesce(r.recipient_name, c.recipient_name),
-    c.template_version, c.issued_at, coalesce(r.revision, 0)
+    c.template_version, c.issued_at, coalesce(r.revision, 0),
+    exists (select 1 from public.foundations_certificate_verification v
+      where v.certificate_id = c.id and v.name_revision = coalesce(r.revision, 0))
   from public.foundations_private_certificates c
   left join lateral (
     select h.recipient_name, h.revision from public.foundations_certificate_name_revisions h
@@ -109,6 +120,57 @@ begin
 end;
 $$;
 
+-- A new link rotates the previous token. Its revision binding invalidates links
+-- from before a name correction. Null means withdraw.
+create function public.set_foundations_certificate_verification(
+  p_user_id uuid, p_programme_version text, p_milestone text, p_expected_revision integer, p_token_hash text
+) returns boolean
+language plpgsql
+set search_path = ''
+as $$
+declare
+  certificate_key uuid;
+  current_revision integer;
+begin
+  select c.id into certificate_key from public.foundations_private_certificates c
+    where c.user_id = p_user_id and c.programme_version = p_programme_version and c.milestone = p_milestone;
+  if not found then return false; end if;
+  perform pg_advisory_xact_lock(hashtextextended(certificate_key::text, 0));
+  select c.name_revision into current_revision
+    from public.read_foundations_private_certificate(p_user_id, p_programme_version, p_milestone) c;
+  if not found then return false; end if;
+  if p_token_hash is null then
+    delete from public.foundations_certificate_verification where certificate_id = certificate_key;
+    return true;
+  end if;
+  if p_expected_revision is distinct from current_revision then return false; end if;
+  insert into public.foundations_certificate_verification (certificate_id, token_hash, name_revision)
+    values (certificate_key, p_token_hash, current_revision)
+    on conflict (certificate_id) do update
+    set token_hash = excluded.token_hash, name_revision = excluded.name_revision;
+  return true;
+end;
+$$;
+
+create function public.verify_foundations_certificate(p_token_hash text)
+returns table (programme_version text, milestone text, issued_on date)
+language sql
+set search_path = ''
+as $$
+  select c.programme_version, c.milestone, (c.issued_at at time zone 'Asia/Colombo')::date
+  from public.foundations_certificate_verification v
+  join public.foundations_private_certificates c on c.id = v.certificate_id
+  where v.token_hash = p_token_hash and v.name_revision = coalesce((
+    select max(r.revision) from public.foundations_certificate_name_revisions r where r.certificate_id = c.id
+  ), 0);
+$$;
+
+revoke all on function public.set_foundations_certificate_verification(uuid, text, text, integer, text)
+  from public, anon, authenticated, service_role;
+revoke all on function public.verify_foundations_certificate(text) from public, anon, authenticated, service_role;
+grant execute on function public.set_foundations_certificate_verification(uuid, text, text, integer, text) to service_role;
+grant execute on function public.verify_foundations_certificate(text) to service_role;
+
 revoke all on function public.read_foundations_private_certificate(uuid, text, text) from public, anon, authenticated, service_role;
 revoke all on function public.correct_foundations_certificate_name(uuid, text, text, integer, text)
   from public, anon, authenticated, service_role;
@@ -137,7 +199,7 @@ create function public.create_or_read_foundations_certificate(
   p_recipient_name text, p_template_version text
 ) returns table (
   id uuid, user_id uuid, programme_version text, milestone text,
-  recipient_name text, template_version text, issued_at timestamptz, name_revision integer
+  recipient_name text, template_version text, issued_at timestamptz, name_revision integer, verification_active boolean
 )
 language plpgsql
 set search_path = ''

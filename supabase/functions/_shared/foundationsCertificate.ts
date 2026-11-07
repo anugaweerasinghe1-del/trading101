@@ -18,6 +18,7 @@ type CertificateRecord = Readonly<CertificateKey & {
   issuedAt: string;
   recipientName: string;
   nameRevision: number;
+  verificationActive: boolean;
   templateVersion: string;
 }>;
 

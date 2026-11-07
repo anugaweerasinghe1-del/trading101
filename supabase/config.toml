@@ -72,3 +72,7 @@ verify_jwt = false
 [functions.foundations-certificate]
 # The handler independently verifies the signed-in account with Auth.getUser.
 verify_jwt = false
+
+[functions.foundations-certificate-verify]
+# Public verification accepts only a high-entropy opt-in token.
+verify_jwt = false

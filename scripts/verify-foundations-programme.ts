@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { createFoundationsCertificateHandler } from "../supabase/functions/_shared/foundationsCertificateHandler.ts";
+import { createFoundationsCertificateHandler, createFoundationsVerificationHandler } from "../supabase/functions/_shared/foundationsCertificateHandler.ts";
 import { issueFoundationsCertificate } from "../supabase/functions/_shared/foundationsCertificate.ts";
 import {
   FOUNDATIONS_COURSES,
@@ -44,7 +44,7 @@ const certificateStore: Parameters<typeof issueFoundationsCertificate>[0] = {
     const key = keyFor(candidate);
     const existing = records.get(key);
     if (existing) return existing;
-    const record = { ...candidate, id: "test-certificate", nameRevision: 0, issuedAt: "2026-11-07T00:00:00Z" };
+    const record = { ...candidate, id: "test-certificate", nameRevision: 0, verificationActive: false, issuedAt: "2026-11-07T00:00:00Z" };
     records.set(key, record);
     return record;
   },
@@ -76,6 +76,7 @@ const learnerToken = "fixture-learner-token";
 const otherToken = "fixture-other-account-token";
 let rateAllowed = true;
 let assessmentOutage = false;
+let savedVerificationHash: string | null = null;
 const savedGrades: { account: string; grade: GradedFoundationsAttempt }[] = [];
 const fixtureQuestions = Array.from({ length: 5 }, (_, index) => ({
   prompt: "Fixture prompt " + (index + 1),
@@ -91,6 +92,13 @@ const handler = createFoundationsCertificateHandler({
   },
   admit: async () => rateAllowed,
   store: certificateStore,
+  setVerification: async (key, expected, tokenHash) => {
+    const current = records.get(keyFor(key));
+    if (!current || current.nameRevision !== expected) return false;
+    savedVerificationHash = tokenHash;
+    records.set(keyFor(key), { ...current, verificationActive: tokenHash !== null });
+    return true;
+  },
   correctName: async (key, expected, recipientName) => {
     const current = records.get(keyFor(key));
     if (!current) return false;
@@ -174,3 +182,34 @@ assert.deepEqual(await (await call(correction)).json(), correctedBody);
 assert.equal((await call({ ...correction, recipientName: "Late Name" })).status, 409);
 assert.deepEqual(await (await call({ action: "certificate", milestone: "foundations" })).json(), correctedBody);
 console.log("Certificate correction handler passed: authenticated ownership, immutable ID, retries, stale conflicts and repeat reads.");
+
+const enable = { action: "set_verification", milestone: "foundations", expectedRevision: 1, enabled: true };
+assert.equal((await call(enable, otherToken)).status, 409);
+assert.equal((await call({ ...enable, token: "forged" })).status, 400);
+const shared = await call(enable);
+assert.equal(shared.status, 200);
+const { token: verificationToken } = await shared.json();
+assert.match(verificationToken, /^[a-f0-9]{64}$/);
+assert.notEqual(savedVerificationHash, verificationToken);
+let publicAdmitted = true;
+const publicVerify = createFoundationsVerificationHandler({
+  admit: async () => publicAdmitted,
+  lookup: async tokenHash => tokenHash === savedVerificationHash ? {
+    programmeVersion: FOUNDATIONS_VERSION, milestone: "foundations", issuedOn: "2026-11-07",
+    privateName: "Maya Corrected", privateAccount: "learner",
+  } : null,
+});
+const verify = (token: string) => publicVerify(new Request("http://localhost/verify", {
+  method: "POST", body: JSON.stringify({ token }),
+}));
+const proof = await verify(verificationToken);
+assert.equal(proof.status, 200);
+assert.equal(proof.headers.get("cache-control"), "no-store");
+assert.deepEqual(await proof.json(), { status: "verified", programmeVersion: FOUNDATIONS_VERSION, milestone: "foundations", issuedOn: "2026-11-07" });
+assert.equal((await verify("a".repeat(64))).status, 404);
+publicAdmitted = false;
+assert.equal((await verify(verificationToken)).status, 429);
+publicAdmitted = true;
+assert.equal((await call({ ...enable, enabled: false })).status, 200);
+assert.equal((await verify(verificationToken)).status, 404);
+console.log("Certificate verification handler passed: explicit consent, hash-only storage, minimal proof, throttling and withdrawal.");

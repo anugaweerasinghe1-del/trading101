@@ -5,6 +5,7 @@ export type DownloadableCertificate = {
   issuedAt: string;
   recipientName: string;
   nameRevision: number;
+  verificationActive: boolean;
   milestone: CertificateMilestone;
   templateVersion: string;
   programmeVersion: string;
