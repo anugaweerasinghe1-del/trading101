@@ -584,3 +584,10 @@ Issues remain open until their real acceptance gaps are resolved.
   dispatch, Chat, Reviews and the code queue. This verifies code deployment.
   Signed-in workflows and provider outcomes retain their separate acceptance
   criteria above.
+
+
+### 7 Nov — checkpoint-ID integrity regression and deferred post-release announcement request
+
+- Phase 5 certificate/trophy hardening: eligibility now counts only the six recognized Foundations v1 checkpoint IDs when reading service-recorded grades, and never inflates checkpoint-based trophy counts with unknown, retired or malformed IDs. Adds executable regression assertions. Verify on the exact PR head; this entry is NOT test, merge or deployment proof until actual CI and release evidence are recorded.
+- **Explicitly deferred until every Phase 5 acceptance gate has been genuinely completed:** add a permanent, automatic **What’s New** experience discoverable from the site navigation, linking to a cumulative release-history page. It should announce newly *published* courses, newly released features (including the Trophy Cabinet), improvements and future site updates, not merely the current launch. Design it to support every future release, avoid duplicate/false announcements, and exclude drafts/unreleased changes. This is a future post-Phase-5 product requirement, **not** permission to start its implementation before Phase 5 is complete. Keep it outside the Phase 5 completion percentage.
+- Sinhala/Tamil status clarity: the approved certificates have script/font support for recipient names; no repository evidence establishes full Sinhala/Tamil translations of TradeHQ pages or an installed language selector. Do not represent certificate font support as multilingual website support. Clarify translation release scope separately before claiming full multilingual acceptance.
