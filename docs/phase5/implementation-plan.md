@@ -420,3 +420,9 @@ Issues remain open until their real acceptance gaps are resolved.
 - Next: exact-head CI, fresh-main check and merge #374, dedicated Edge deployment
   with source parity, native hosting proof and non-generating production smoke.
   Only then can the owner deliberately run the quota-confirmed private test.
+- The full browser run also exposed an existing FX test setup race: the test
+  interpreted an absent account menu before hydration as a guest session. It now
+  waits for the intentionally retained owner fixture, explicitly signs out and
+  waits for the portfolio owner marker to clear before the independent FX order.
+  The complete compiled suite then passed, retaining all guest-order/source-price,
+  Daily admission, malformed-result, late-reply and earlier admin assertions.

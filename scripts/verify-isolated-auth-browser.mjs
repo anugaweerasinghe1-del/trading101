@@ -1285,11 +1285,14 @@ async function main(){
 
     // Reference information cannot become an execution quote or account write.
     await loadDocument(origin+'/trade/eurusd');
-    if(await devtools.evaluate("!!document.querySelector('[aria-label=\"Account menu\"]')")){
+    // Prior owner-only cases intentionally retain the fixture session. Wait for
+    // hydrated auth before deciding to sign out; an early absent menu is not a guest.
+    await wait(()=>devtools.evaluate("!!document.querySelector('[aria-label=\"Account menu\"]')"),'FX owner fixture hydrated before sign-out');
+    {
       await devtools.evaluate("document.querySelector('[aria-label=\"Account menu\"]').dispatchEvent(new PointerEvent('pointerdown',{bubbles:true,button:0,ctrlKey:false}))");
       await wait(()=>devtools.evaluate("[...document.querySelectorAll('[role=menuitem]')].some(e=>e.textContent.trim()==='Sign out')"),'FX fixture sign-out menu');
       await devtools.evaluate("[...document.querySelectorAll('[role=menuitem]')].find(e=>e.textContent.trim()==='Sign out').click()");
-      await wait(()=>devtools.evaluate("!document.querySelector('[aria-label=\"Account menu\"]')"),'FX fixture guest');
+      await wait(()=>devtools.evaluate("!document.querySelector('[aria-label=\"Account menu\"]') && !localStorage.getItem('tradehq:portfolio-owner')"),'FX fixture guest');
       await loadDocument(origin+'/trade/eurusd');
     }
     const fxPanel="document.querySelector('[aria-label=\"Daily forex reference\"]')";
@@ -1309,6 +1312,7 @@ async function main(){
     await adminInput('input[aria-label="Amount in GBP/USD"]','1');
     await wait(()=>guestClick('Buy GBP/USD'),'Guest FX execution');
     await wait(()=>devtools.evaluate("JSON.parse(localStorage.getItem('tradehq_portfolio')).trades.length>"+beforeFx.trades.length),'FX trade saved locally');
+    assert.equal(dataWrites,0,'FX guest transition must never attempt an account order');
     const afterFx=await devtools.evaluate("JSON.parse(localStorage.getItem('tradehq_portfolio'))");
     assert.equal(afterFx.trades[0].assetId,'gbpusd');
     assert.notEqual(afterFx.trades[0].price,1.345678,'Daily reference never supplies executable price');
