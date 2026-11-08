@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
+import { trophyDeniedStatus } from "@/lib/trophyFunctionErrors";
 
 export interface VerifiedTrophy {
   id: string; progress: number; target: number; earned: boolean; issuedAt: string | null;
@@ -20,7 +21,12 @@ export async function trophyRequest<T>(token: string, input: Record<string,unkno
     body: input,
     headers: { Authorization: "Bearer " + token },
   });
-  if (error || !data) throw new Error("Trophy verification is temporarily unavailable.");
+  if (error) {
+    const denied = await trophyDeniedStatus(error);
+    if (denied) return { status: denied } as T;
+    throw new Error("Trophy verification is temporarily unavailable.");
+  }
+  if (!data) throw new Error("Trophy verification is temporarily unavailable.");
   return data;
 }
 export function useVerifiedTrophyState() {
