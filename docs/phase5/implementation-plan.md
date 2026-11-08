@@ -788,3 +788,11 @@ accepted. Partial live and fixture outcomes are credited as evidence below.
   read. The catalog and track now subscribe to the existing progress event and
   render from the same restored snapshot. Compiled browser coverage exercises
   both views during a delayed restoration.
+
+
+### 8 Nov 2026 — independently recovered exact-main release proof
+
+- Protected `main` remains `b43cf3af7339ef433e3f54428c1ccee55184a7ab` after PR #393. The required Phase 3 High Validation workflow [42474946738](https://github.com/anugaweerasinghe1-del/trading101/actions/runs/42474946738) finished successfully, including application and browser/SEO/Cloudflare build checks. Trusted Evidence Cycle [42475046794](https://github.com/anugaweerasinghe1-del/trading101/actions/runs/42475046794) also succeeded.
+- Native release evidence in the read-only release/recovery job for that SHA confirms **Cloudflare Pages active production** deployment `b18e3a44-c789-41cb-be1f-2e853240356e` on branch `main`, status `success`, and **Vercel active production** deployment `dpl_8HWLLNViEg9QeNztzbEXB71Bz4oV` at alias `thetradehq.com`, state `READY`. These resolve the pending exact-SHA deployment check for #393; neither constitutes all Phase 5 owner acceptance.
+- A separate read-only production policy inspection confirms the `public.profiles` SELECT RLS still permits `is_public=true` or own `auth.uid()`, and the `tradehq_private.public_members`/ `previous_results` functions filter `is_public` without an account-confirmation or post-default-change consent attestation. Issue #335 documents the historical default-public cohort including 13 unconfirmed profiles. The evidence is a **release privacy acceptance blocker**, not authorization to rewrite users' visibility or to close #335.
+- Remaining non-code gates include genuine authenticated editorial/moderation/delivery/provider acceptance (#321/#332/#335), permitted traditional quote coverage, proof of any leaderboard/signup impact, and six additional distinct qualifying Sri Lanka dates for the seven-day award. Never substitute fixture results, fake activity, unapproved provider credentials or bulk privacy toggles for these requirements. **Phase 5 not fully accepted** at this checkpoint; no production mutation was performed by this evidence recovery.
