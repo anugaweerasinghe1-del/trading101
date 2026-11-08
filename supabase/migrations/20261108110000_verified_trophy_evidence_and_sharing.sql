@@ -66,4 +66,23 @@ grant select, insert on public.trophy_activity_v1 to service_role;
 grant select, insert, update on public.trophy_attempt_v1 to service_role;
 grant select, insert on public.trophy_awards_v1 to service_role;
 grant select, insert, update on public.trophy_share_v1 to service_role;
+-- Public leaderboard flair is a minimal allowlisted projection, never a profile
+-- visibility override. Browser roles cannot execute this privileged join.
+create or replace function public.list_verified_trophy_flairs_v1()
+returns table(username text, trophy_id text)
+language sql stable security definer set search_path = ''
+as $
+  select p.username, sh.flair
+  from public.trophy_share_v1 sh
+  join public.profiles p on p.id = sh.user_id and p.is_public is true
+  join auth.users u on u.id = sh.user_id and u.confirmed_at is not null
+  join public.trophy_awards_v1 a on a.user_id = sh.user_id and a.trophy_id = sh.flair
+  where sh.enabled is true and sh.flair is not null
+  order by lower(p.username),p.username
+  limit 500;
+$;
+revoke all on function public.list_verified_trophy_flairs_v1()
+  from public, anon, authenticated, service_role;
+grant execute on function public.list_verified_trophy_flairs_v1() to service_role;
+
 commit;
