@@ -170,11 +170,12 @@ async function main(){
           if(input.action==='list_daily')return json(200,{status:'available',cases:[{id:'practice-01',title:'Fixture case'}]});
           if(input.action==='challenge'&&input.challengeId==='exit-planning')return json(200,{status:'available',
             challenge:{id:'exit-planning',title:'Exit Planner',detail:'A harmless fictional scored exercise for browser verification.',
-              category:'case',questions:Array.from({length:3},(_,i)=>({prompt:'Choose the tested reasoning '+i,
+              category:'case',attemptId:'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa',questions:Array.from({length:3},(_,i)=>({prompt:'Choose the tested reasoning '+i,
                 options:['A valid fictional answer','An unsupported forecast','An invented confirmation']}))}});
           if(input.action==='grade'){
             assert.equal(input.challengeId,'exit-planning');
             assert.deepEqual(input.answers,[0,0,0]);
+            assert.equal(input.attemptId,'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa','Grade carries an issued attempt ID');
             trophyGrades++;trophyEarned=true;
             return json(200,{status:'graded',points:3,possible:3,passed:true,updated:true,
               explanations:['Scored in isolated fixture','No real market','No rank change']});
