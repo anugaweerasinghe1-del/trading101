@@ -38,7 +38,7 @@ export function PortfolioChart({ currentValue, history, account, receivedAt }: {
           </Button>}
         </div>
         <p className="text-xs text-muted-foreground mb-3">{account
-          ? "Account snapshots are recorded on this device when TradeHQ receives them. The reference line is for comparison."
+          ? "Account snapshots are recorded on this device when TradeHQ receives them. With multiple observations, the reference line provides a comparison."
           : "Earlier local practice snapshots may include simulated backfill. The reference line is for comparison."}</p>
         <div className="flex flex-wrap items-baseline gap-3">
           <span className="text-3xl font-bold" data-portfolio-chart-value>${currentValue.toFixed(2)}</span>
