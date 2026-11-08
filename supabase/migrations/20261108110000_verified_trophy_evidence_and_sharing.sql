@@ -71,7 +71,7 @@ grant select, insert, update on public.trophy_share_v1 to service_role;
 create or replace function public.list_verified_trophy_flairs_v1()
 returns table(username text, trophy_id text)
 language sql stable security definer set search_path = ''
-as $
+as $trophy_flair$
   select p.username, sh.flair
   from public.trophy_share_v1 sh
   join public.profiles p on p.id = sh.user_id and p.is_public is true
@@ -80,7 +80,7 @@ as $
   where sh.enabled is true and sh.flair is not null
   order by lower(p.username),p.username
   limit 500;
-$;
+$trophy_flair$;
 revoke all on function public.list_verified_trophy_flairs_v1()
   from public, anon, authenticated, service_role;
 grant execute on function public.list_verified_trophy_flairs_v1() to service_role;
