@@ -4,6 +4,7 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, ReferenceL
 import { TrendingUp, TrendingDown, Shield } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import { portfolioChartPoints } from "@/lib/portfolioChartPoints";
 import { Button } from "@/components/ui/button";
 
 export function PortfolioChart({ currentValue, history, account, receivedAt }: {
@@ -11,16 +12,9 @@ export function PortfolioChart({ currentValue, history, account, receivedAt }: {
 }) {
   const stopLossPercent = 10;
   const [showStopLoss, setShowStopLoss] = useState(true);
-  const data = history.map(snapshot => ({
-    time: snapshot.timestamp.toLocaleString(),
-    value: snapshot.totalValue,
-  }));
-  // If storage was unavailable, still plot the current confirmed observation
-  // after the existing samples. Never synthesize an earlier point.
-  const last = history[history.length - 1];
-  if (last && receivedAt && receivedAt > last.timestamp.getTime() && last.totalValue !== currentValue)
-    data.push({ time: new Date(receivedAt).toLocaleString(), value: currentValue });
+  const data = portfolioChartPoints(history, currentValue, account, receivedAt);
   const hasHistory = data.length >= 2;
+  const hasCurrentObservation = data.length === 1;
   const initialValue = data[0]?.value ?? currentValue;
   const change = currentValue - initialValue;
   const changePercent = initialValue > 0 ? ((change / initialValue) * 100).toFixed(2) : null;
@@ -66,9 +60,12 @@ export function PortfolioChart({ currentValue, history, account, receivedAt }: {
         )}
       </div>
 
-      {!hasHistory ? <p className="text-sm text-muted-foreground" role="status">
-        History is unavailable on this device until at least two snapshots are recorded.
-      </p> : <ResponsiveContainer width="100%" height={300}>
+      {!hasHistory && <p className="text-sm text-muted-foreground mb-4" role="status">
+        {hasCurrentObservation
+          ? "One real portfolio observation is available. The point below shows the current snapshot, not a historical trend. Later observations on this device will build the chart."
+          : "History is unavailable on this device until at least two snapshots are recorded. Your account portfolio value and recorded trades are separate from this optional local chart."}
+      </p>}
+      {data.length > 0 && <ResponsiveContainer width="100%" height={hasHistory ? 300 : 210}>
         <LineChart data={data}>
           <XAxis 
             dataKey="time" 
@@ -90,7 +87,7 @@ export function PortfolioChart({ currentValue, history, account, receivedAt }: {
           />
           
           {/* Stop Loss Line */}
-          {showStopLoss && (
+          {hasHistory && showStopLoss && (
             <ReferenceLine
               y={stopLossValue}
               stroke="hsl(var(--destructive))"
@@ -106,7 +103,7 @@ export function PortfolioChart({ currentValue, history, account, receivedAt }: {
           )}
           
           {/* Initial Value Line */}
-          <ReferenceLine
+          {hasHistory && <ReferenceLine
             y={initialValue}
             stroke="hsl(var(--muted-foreground))"
             strokeDasharray="3 3"
