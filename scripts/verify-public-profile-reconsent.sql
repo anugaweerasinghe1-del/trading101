@@ -12,6 +12,7 @@ DO $$ BEGIN
    ('00000000-0000-4000-8000-000000000711','00000000-0000-4000-8000-000000000712') AND public_visibility_confirmed)
  THEN RAISE EXCEPTION 'Legacy public flags inherited opt-in'; END IF;
 END $$;
+SELECT set_config('request.jwt.claim.sub','',true);
 SET LOCAL ROLE anon;
 DO $$ BEGIN
  IF EXISTS (SELECT 1 FROM public.profiles WHERE username IN ('legacy_public_fixture','pending_public_fixture'))
@@ -30,6 +31,7 @@ DO $$ DECLARE changed integer; BEGIN
  IF changed<>0 THEN RAISE EXCEPTION 'One user opted in another'; END IF;
 END $$;
 RESET ROLE;
+SELECT set_config('request.jwt.claim.sub','',true);
 SET LOCAL ROLE anon;
 DO $$ BEGIN
  IF NOT EXISTS (SELECT 1 FROM public.profiles WHERE username='legacy_public_fixture')
@@ -45,6 +47,7 @@ SELECT set_config('request.jwt.claim.sub','00000000-0000-4000-8000-000000000712'
 SET LOCAL ROLE authenticated;
 UPDATE public.profiles SET public_visibility_confirmed=true WHERE id=auth.uid();
 RESET ROLE;
+SELECT set_config('request.jwt.claim.sub','',true);
 SET LOCAL ROLE anon;
 DO $$ BEGIN
  IF EXISTS (SELECT 1 FROM public.profiles WHERE username='pending_public_fixture')
@@ -55,6 +58,7 @@ SELECT set_config('request.jwt.claim.sub','00000000-0000-4000-8000-000000000711'
 SET LOCAL ROLE authenticated;
 UPDATE public.profiles SET is_public=false, public_visibility_confirmed=false WHERE id=auth.uid();
 RESET ROLE;
+SELECT set_config('request.jwt.claim.sub','',true);
 SET LOCAL ROLE anon;
 DO $$ BEGIN
  IF EXISTS (SELECT 1 FROM public.profiles WHERE username='legacy_public_fixture')
