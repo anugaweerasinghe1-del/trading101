@@ -157,7 +157,7 @@ async function main(){
           if(input.action==='progress' && inconsistentFoundationsProgress)return json(200,{status:'available',programmeVersion:foundationsVersion,
             completedCourses:['market-and-orders'],finalCasePassed:false,perfectSizing:false,learningDays:0,milestones:['first-course'],passedCheckpoints:[]});
           if(input.action==='progress')return json(200,{status:'available',programmeVersion:foundationsVersion,
-            completedCourses:foundationsPassed?['market-and-orders']:[],finalCasePassed:false,perfectSizing:false,learningDays:foundationsPassed?1:0,milestones:foundationsPassed?['first-course','core-studies','foundations']:[],passedCheckpoints:foundationsPassed?['markets']:[]});
+            completedCourses:foundationsPassed?['market-and-orders','reading-prices','risk-and-position-sizing','practice-and-reflection']:[],finalCasePassed:foundationsPassed,perfectSizing:false,learningDays:foundationsPassed?1:0,milestones:foundationsPassed?['first-course','core-studies','foundations']:[],passedCheckpoints:foundationsPassed?['markets','execution','quotes','risk','sizing','reflection']:[]});
           if(input.action==='assessment'){
             assert.deepEqual(input,{action:'assessment',programmeVersion:foundationsVersion,assessmentId:'markets'});
             return json(200,{status:'available',assessment:{programmeVersion:foundationsVersion,assessmentId:'markets',
