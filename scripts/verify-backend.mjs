@@ -6,7 +6,7 @@ const repo = fileURLToPath(new URL('../', import.meta.url));
 const db = new PGlite();
 try {
   await db.exec(`CREATE ROLE anon; CREATE ROLE authenticated; CREATE ROLE service_role BYPASSRLS;
-    CREATE SCHEMA auth; CREATE TABLE auth.users(id uuid PRIMARY KEY,email text,raw_user_meta_data jsonb);
+    CREATE SCHEMA auth; CREATE TABLE auth.users(id uuid PRIMARY KEY,email text,raw_user_meta_data jsonb,confirmed_at timestamptz);
     CREATE FUNCTION auth.uid() RETURNS uuid LANGUAGE sql STABLE AS $$ SELECT nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;
     GRANT USAGE ON SCHEMA auth TO anon,authenticated; GRANT EXECUTE ON FUNCTION auth.uid() TO anon,authenticated;`);
   for (const path of [
@@ -31,6 +31,12 @@ try {
     for (const result of results) for (const row of result.rows) if (row.verification) console.log(row.verification);
     console.log('PASS', path);
   }
+  // Apply the new visibility gate only after legacy-fixture assertions, then run
+  // its dedicated regressions against the final migrated schema.
+  await db.exec(readFileSync(repo + 'supabase/migrations/20261108180000_explicit_public_profile_reconsent.sql', 'utf8'));
+  const consentResults = await db.exec(readFileSync(repo + 'scripts/verify-public-profile-reconsent.sql', 'utf8'));
+  for (const result of consentResults) for (const row of result.rows) if (row.verification) console.log(row.verification);
+  console.log('PASS scripts/verify-public-profile-reconsent.sql');
 } catch (error) {
   console.error('Backend verification failed:', error.message);
   process.exitCode = 1;
