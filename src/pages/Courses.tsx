@@ -19,7 +19,8 @@ import {
   AlertTriangle,
 } from "lucide-react";
 import { useCourseCatalog } from "@/hooks/useCourseCatalog";
-import { loadProgress, trackCompletionPct } from "@/lib/courseProgress";
+import { useCourseProgress } from "@/hooks/useCourseProgress";
+import { trackCompletionPct } from "@/lib/courseProgress";
 import { EducationalDisclaimer } from "@/components/EducationalDisclaimer";
 import { AIAnswerBlock } from "@/components/seo/AIAnswerBlock";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
@@ -99,7 +100,7 @@ const FAQ = [
 export default function Courses() {
   const { tracks: courseTracks } = useCourseCatalog();
   const lessonCount = courseTracks.reduce((total, track) => total + track.lessons.length, 0);
-  const progress = loadProgress();
+  const progress = useCourseProgress();
   const resume = progress.lastLesson;
 
   const title = "Free Trading Courses — Options, Futures, Macro & Psychology | TradeHQ";
@@ -269,7 +270,7 @@ export default function Courses() {
 
             <div className="grid md:grid-cols-2 gap-6">
               {courseTracks.map((track) => {
-                const pct = trackCompletionPct(track.slug, track.lessons.length);
+                const pct = trackCompletionPct(track.slug, track.lessons.length, progress);
                 return (
                   <Card
                     key={track.slug}

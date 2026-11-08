@@ -172,16 +172,16 @@ export function awardBadge(track: string) {
   }
 }
 
-export function getTrackProgress(track: string): TrackProgress {
-  return loadProgress().tracks[track] ?? emptyTrack();
+export function getTrackProgress(track: string, progress = loadProgress()): TrackProgress {
+  return progress.tracks[track] ?? emptyTrack();
 }
 
 export function isLessonCompleted(track: string, lesson: string): boolean {
   return getTrackProgress(track).lessons[lesson]?.status === "completed";
 }
 
-export function trackCompletionPct(track: string, totalLessons: number): number {
-  const p = getTrackProgress(track);
+export function trackCompletionPct(track: string, totalLessons: number, progress = loadProgress()): number {
+  const p = getTrackProgress(track, progress);
   const done = Object.values(p.lessons).filter((l) => l.status === "completed").length;
   return totalLessons === 0 ? 0 : Math.round((done / totalLessons) * 100);
 }

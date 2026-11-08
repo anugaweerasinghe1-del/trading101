@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle2, Circle, Clock, Award } from "lucide-react";
 import type { CourseTrack as Track } from "@/lib/coursesData";
 import { useCourseDocument } from "@/hooks/useCourseCatalog";
+import { useCourseProgress } from "@/hooks/useCourseProgress";
 import { getTrackProgress, trackCompletionPct } from "@/lib/courseProgress";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { EducationalDisclaimer } from "@/components/EducationalDisclaimer";
@@ -50,8 +51,9 @@ function CourseTrackContent({ track }: { track: Track }) {
     inLanguage: "en",
     url,
   };
-  const progress = getTrackProgress(track.slug);
-  const pct = trackCompletionPct(track.slug, track.lessons.length);
+  const snapshot = useCourseProgress();
+  const progress = getTrackProgress(track.slug, snapshot);
+  const pct = trackCompletionPct(track.slug, track.lessons.length, snapshot);
 
   return (
     <>
