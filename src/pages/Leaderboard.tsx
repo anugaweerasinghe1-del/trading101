@@ -57,7 +57,7 @@ const LEADERBOARD_FAQS = [
   {
     question: "How do I climb the leaderboard?",
     answer:
-      "Every public member appears, including accounts with no trades yet. Ranked members appear first in return-rank order; unranked members follow, ordered by practice activity. Comparable ranked portfolios receive a rank after their first server-recorded trade, calculated from simulated return against a $100,000 virtual starting balance. Ranks and display order update automatically when this page refreshes. Previous activity never changes a return rank. A rank is not evidence of real-money skill.",
+      "Every confirmed member who explicitly opts in appears, including accounts with no trades yet. Ranked members appear first in return-rank order; unranked members follow, ordered by practice activity. Comparable ranked portfolios receive a rank after their first server-recorded trade, calculated from simulated return against a $100,000 virtual starting balance. Ranks and display order update automatically when this page refreshes. Previous activity never changes a return rank. A rank is not evidence of real-money skill.",
   },
   {
     question: "Do I need an account to compete?",
@@ -184,7 +184,7 @@ export default function Leaderboard() {
     document.addEventListener("visibilitychange", refresh);
     window.addEventListener("focus", refresh);
     return () => { clearInterval(timer); document.removeEventListener("visibilitychange", refresh); window.removeEventListener("focus", refresh); };
-  }, [load, profile?.is_public]);
+  }, [load, profile?.is_public, profile?.public_visibility_confirmed]);
 
   useEffect(() => {
     let cancelled = false;
@@ -303,6 +303,21 @@ export default function Leaderboard() {
               <ChevronRight className="w-4 h-4" />
               <span className="text-foreground font-medium">Leaderboard</span>
             </nav>
+
+            {user && profile?.is_public && !profile.public_visibility_confirmed && (
+              <div role="status" className="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 rounded-xl border border-primary/30 bg-primary/5 px-4 py-3">
+                <div className="flex items-start gap-2">
+                  <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                  <p className="text-sm text-foreground">
+                    Your earlier public-profile preference is saved, but public sharing is paused.
+                    Confirm it again if you want to appear on this board.
+                  </p>
+                </div>
+                <Link to="/trader/me" className="shrink-0 text-sm font-semibold text-primary underline underline-offset-4">
+                  Review visibility settings
+                </Link>
+              </div>
+            )}
 
             <header className="mb-8 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
               <div className="max-w-xl">
@@ -595,7 +610,7 @@ export default function Leaderboard() {
                 },
                 {
                   title: "You control visibility",
-                  body: "New profiles start private. To appear in community results, you can explicitly enable public visibility from your trader profile page. Existing members keep their current choice.",
+                  body: "New profiles start private. To appear in community results, you can explicitly enable public visibility from your trader profile page. Earlier public profiles must confirm permission before returning to public listings.",
                 },
               ].map((c) => (
                 <div key={c.title} className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5">
