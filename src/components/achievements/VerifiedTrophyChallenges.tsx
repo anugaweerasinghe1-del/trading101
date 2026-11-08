@@ -91,7 +91,7 @@ export function VerifiedTrophyChallenges() {
     setWorking(true); setError("");
     try {
       const result=await trophyRequest<{status:string;points?:number;possible?:number;passed?:boolean;next?:string;explanations?:string[]}>(token,{
-        action:"grade",challengeId:challenge.id,answers,
+        action:"grade",challengeId:challenge.id,attemptId:challenge.attemptId,answers,
       });
       if(owner.current!==id)return;
       if(result.status==="requires_scored_arena") throw Error("Pass one scored Arena scenario before completing its Decision Review.");
