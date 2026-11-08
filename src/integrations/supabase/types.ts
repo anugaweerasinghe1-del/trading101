@@ -234,6 +234,7 @@ export type Database = {
           created_at: string
           id: string
           is_public: boolean
+          public_visibility_confirmed: boolean
           show_public_trades: boolean
           updated_at: string
           username: string
@@ -244,6 +245,7 @@ export type Database = {
           created_at?: string
           id: string
           is_public?: boolean
+          public_visibility_confirmed?: boolean
           show_public_trades?: boolean
           updated_at?: string
           username: string
@@ -254,6 +256,7 @@ export type Database = {
           created_at?: string
           id?: string
           is_public?: boolean
+          public_visibility_confirmed?: boolean
           show_public_trades?: boolean
           updated_at?: string
           username?: string
