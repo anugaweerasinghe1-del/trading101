@@ -39,12 +39,18 @@ export async function convergeLearningProgress(
       courses: mergeCourseRecords(local.courses, remoteCourses),
       journey: mergeJourneyRecords(local.journey, remoteJourney),
     };
+    // Keep the browser's reflection out of account writes. Retain any reflection
+    // already saved by an older client so syncing milestones cannot erase it.
+    const cloud = {
+      courses: merged.courses,
+      journey: { ...merged.journey, reflection: remote ? remoteJourney.reflection : "" },
+    };
     if (remote && learningStable(remoteCourses) === learningStable(merged.courses)
-      && learningStable(remoteJourney) === learningStable(merged.journey)) return merged;
+      && learningStable(remoteJourney) === learningStable(cloud.journey)) return merged;
     if (!stillActive()) throw new Error("Learning session changed during synchronization.");
     const committed = remote
-      ? await io.updateIfUnchanged(merged, remote.updated_at)
-      : await io.insert(merged);
+      ? await io.updateIfUnchanged(cloud, remote.updated_at)
+      : await io.insert(cloud);
     if (committed) return merged;
     // A concurrent writer won. Re-read and merge instead of overwriting it.
   }
