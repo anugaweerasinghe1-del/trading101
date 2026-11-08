@@ -80,7 +80,8 @@ export function VerifiedTrophyChallenges() {
     try {
       const result=await trophyRequest<{status:string;challenge?:ScoredChallenge}>(token,{action:"challenge",challengeId:nextId});
       if(owner.current!==id)return;
-      if(result.status!=="available"||!result.challenge||!Array.isArray(result.challenge.questions)) throw Error("This challenge is unavailable.");
+      if(result.status!=="available"||!result.challenge||!Array.isArray(result.challenge.questions)
+        ||typeof result.challenge.attemptId!=="string") throw Error("This challenge is unavailable.");
       setChallenge(result.challenge); setAnswers(result.challenge.questions.map(()=>null));
     } catch(e) {if(owner.current===id)setError(e instanceof Error?e.message:"Challenge unavailable.");}
     finally {if(owner.current===id)setWorking(false);}
