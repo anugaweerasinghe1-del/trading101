@@ -59,10 +59,8 @@ assert.match(dashboard, /newsletterDrafts\.status === "fulfilled"/);
 assert.match(dashboard, /setNewsletterEdits\(null\); warnings\.push/);
 assert.match(dashboard, /newsletterEdits=\{newsletterEdits\}/);
 assert.match(inbox, /newsletterEdits: EditorialQueueRow\[\] \| null/);
-assert.match(inbox, /\[newsletterEdits, 'Newsletter', '\/admin\/newsletter'\]/);
+// The compiled browser regression covers all three bounded review lists.
 assert.match(inbox, /item\.to\.endsWith\('newsletter'\) \? 'Newsletter desk'/);
-assert.match(inbox, /name === 'Newsletter' && rows\.length >= 16/);
-assert.match(inbox, /Newsletter review list may be incomplete/);
 // The two publishing desks must now require a live owner login as well as a
 // private admin key. No model call or publication occurs in dashboard readiness.
 assert.match(dailyDesk, /supabase\.auth\.getSession\(\)/);

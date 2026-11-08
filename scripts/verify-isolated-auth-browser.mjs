@@ -108,6 +108,7 @@ async function main(){
     content:'An isolated review used solely to test the owner UI.',rating:4,
     is_visible:true,is_featured:false,created_at:new Date().toISOString(),
     owner_reply:null,owner_reply_updated_at:null,deleted_at:null};
+  let dashboardQueuesAtLimit=false;
   let dashboardFixture=false,dailyQueueUnavailable=false,newsletterQueueUnavailable=false,dashboardSettingsUnavailable=false;
   let dashboardMetadataRequests=0,dashboardFeedsUnavailable=false;
   let dailyStatus={enabled:false,nextDue:'2026-12-09',prepareAfter:'2026-12-02',completed:20,attempts:2,
@@ -239,6 +240,10 @@ async function main(){
           if(dashboardFixture && body.action==='settings')return dashboardSettingsUnavailable
             ? json(503,{error:'Fixture settings unavailable'})
             : json(200,{data:{enabled:true,model:'fixture-only',runs:[{period:'2026-10-01',slot:1,status:'paused',last_error:'Fixture HTTP503'}]}});
+          if(dashboardFixture && dashboardQueuesAtLimit && ['list','daily-list'].includes(body.action)){
+            const limit=body.action==='list'?200:24;
+            return json(200,{data:Array.from({length:limit},(_,index)=>({id:'bounded-'+index,status:index===0?'draft':'published'}))});
+          }
           if(dashboardFixture && body.action==='list')return json(200,{data:[{id:'course-fixture-1',status:'draft'},{id:'course-fixture-2',status:'draft'},{id:'course-fixture-3',status:'published'}]});
           if(dashboardFixture && dailyQueueUnavailable && body.action==='daily-list')return json(503,{error:'Fixture Daily inbox unavailable'});
           if(body.action==='daily-list')return json(200,{data:body.summary===true?dailyDrafts.map(({document,research,...metadata})=>metadata):dailyDrafts});
@@ -264,6 +269,8 @@ async function main(){
           if(body.action==='list'){
             newsletterReads++;
             if(dashboardFixture && newsletterQueueUnavailable)return json(503,{error:'Fixture Newsletter inbox unavailable'});
+            if(dashboardFixture && dashboardQueuesAtLimit)
+              return json(200,{data:Array.from({length:16},(_,index)=>({id:'bounded-'+index,status:'approved'}))});
             if(newsletterEditorialFixture)return json(200,{data:[newsletterEdition]});
             return json(200,{data:[{id:'fixture-newsletter',week_of:'2026-11-02',status:'draft',revision:newsletterRevision,subject:'Server lesson title',preheader:'Fixture preview',body_markdown:'Fixture educational draft',reviewed_by:null,reviewed_at:null,updated_at:new Date().toISOString(),ai_model:null,generator_error:null}]});}
           if(newsletterEditorialFixture && ['preview-upcoming','preview-rewrite'].includes(body.action)){
@@ -1090,6 +1097,14 @@ async function main(){
     reviewCountUnavailable=false;await refreshInbox();
     await wait(()=>devtools.evaluate("document.body.textContent.includes('1234 review records')"),'Review count recovers');
     for(const text of ['2 course drafts awaiting review','1 daily bank draft awaiting review','1 newsletter draft awaiting review','1 course generation failure','1 open monitoring finding','Cooldown ends'])assert.equal(await devtools.evaluate(inbox+'.textContent.includes('+JSON.stringify(text)+')'),true,text);
+    dashboardQueuesAtLimit=true;await refreshInbox();
+    await wait(()=>devtools.evaluate(inbox+"?.textContent.includes('Course review list may be incomplete')"),'Capped Course review count is identified as partial');
+    for(const text of ['Daily bank review list may be incomplete','Newsletter review list may be incomplete',
+      '1 course draft awaiting review in the latest 200 records','1 daily bank draft awaiting review in the latest 24 records'])
+      assert.equal(await devtools.evaluate(inbox+'.textContent.includes('+JSON.stringify(text)+')'),true,text);
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('drafts awaiting review in the latest 200 records')"),true,'Course dashboard card identifies the sampled count');
+    dashboardQueuesAtLimit=false;await refreshInbox();
+    await wait(()=>devtools.evaluate(inbox+"?.textContent.includes('2 course drafts awaiting review') && !"+inbox+".textContent.includes('review list may be incomplete')"),'Below-cap queues recover ordinary counts');
     assert.equal(await devtools.evaluate("document.body.textContent.includes('Commit aaaaaaaaaaaa')"),true,'Collector evidence shows the sampled immutable commit');
     assert.equal(await devtools.evaluate("[..."+inbox+".querySelectorAll('a')].every(link=>['/admin/courses','/admin/daily','/admin/newsletter','/admin/ai'].includes(link.getAttribute('href')))"),true);
     await adminClick('Inspect monitoring evidence ↓');
