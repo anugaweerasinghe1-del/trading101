@@ -1,10 +1,28 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { PGlite } from "@electric-sql/pglite";
+import { trophyDeniedStatus } from "../src/lib/trophyFunctionErrors.ts";
 import {
   TROPHY_CHALLENGES, TROPHY_CHALLENGE_VERSION, publicTrophyChallenge,
   gradeTrophyChallenge, trophyChallenge,
 } from "../supabase/functions/_shared/trophyChallengeBank.ts";
+
+// A genuine Supabase FunctionsHttpError carries a Response in .context.
+const denied = (status:number, body:unknown) => ({
+  context: new Response(JSON.stringify(body),{status,headers:{"Content-Type":"application/json"}}),
+});
+assert.equal(await trophyDeniedStatus(denied(409,{status:"make_profile_public_first"})), "make_profile_public_first");
+assert.equal(await trophyDeniedStatus(denied(409,{status:"requires_first_miss"})), "requires_first_miss");
+assert.equal(await trophyDeniedStatus(denied(409,{status:"attempt_expired_or_used"})), "attempt_expired_or_used");
+assert.equal(await trophyDeniedStatus(denied(401,{status:"unauthenticated"})), "unauthenticated");
+assert.equal(await trophyDeniedStatus(denied(429,{status:"rate_limited"})), "rate_limited");
+assert.equal(await trophyDeniedStatus(denied(409,{status:"service_role_key"})), null,
+  "Arbitrary internal messages must not become visible UI statuses");
+assert.equal(await trophyDeniedStatus(denied(400,{status:"make_profile_public_first"})), null,
+  "Denial codes cannot be relabelled with a mismatched HTTP status");
+assert.equal(await trophyDeniedStatus(denied(503,{status:"unavailable",details:"private"})), null);
+assert.equal(await trophyDeniedStatus({context:new Response("Oops",{status:409})}),null);
+assert.equal(await trophyDeniedStatus(new Error("network error")),null);
 
 assert.equal(TROPHY_CHALLENGES.length,10);
 assert.equal(new Set(TROPHY_CHALLENGES.map(x=>x.id)).size,10);
