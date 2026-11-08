@@ -52,14 +52,22 @@ try {
   await db.exec(readFileSync("supabase/migrations/20261108110000_verified_trophy_evidence_and_sharing.sql","utf8"));
   for(const role of ["anon","authenticated"]) {
     await db.exec("set role "+role);
-    for(const table of ["trophy_activity_v1","trophy_awards_v1","trophy_share_v1"]) {
+    for(const table of ["trophy_activity_v1","trophy_awards_v1","trophy_share_v1","trophy_attempt_v1"]) {
       await assert.rejects(db.query("select * from public."+table),/permission denied/);
     }
     await assert.rejects(db.query(`insert into public.trophy_awards_v1(user_id,trophy_id) values ('${a}','first-light')`),/permission denied/);
     await db.exec("reset role");
   }
   await db.exec("set role service_role");
-  await db.query("insert into public.trophy_activity_v1(user_id,source,source_key,programme_version,result,points,possible) values ($1,'challenge','exit-planning',$2,'pass',3,3)",[a,TROPHY_CHALLENGE_VERSION]);
+  const attempt="cccccccc-cccc-4ccc-8ccc-cccccccccccc";
+  await db.query("insert into public.trophy_attempt_v1(user_id,challenge_id,attempt_id,evidence_version,issued_at,expires_at) values ($1,'exit-planning',$2,$3,now(),now()+interval '15 minutes')",[a,attempt,TROPHY_CHALLENGE_VERSION]);
+  const consume=() => db.query("update public.trophy_attempt_v1 set consumed_at=now() where user_id=$1 and attempt_id=$2 and consumed_at is null and expires_at>now() returning attempt_id",[a,attempt]);
+  assert.equal((await consume()).rows.length,1,"First account-bound claim succeeds");
+  assert.equal((await consume()).rows.length,0,"A replay cannot consume the attempt twice");
+  assert.equal((await db.query("select * from public.trophy_attempt_v1 where user_id=$1",[b])).rows.length,0,"No cross-account attempt disclosure");
+  await db.query("update public.trophy_attempt_v1 set attempt_id=$2,consumed_at=null where user_id=$1",[a,"dddddddd-dddd-4ddd-8ddd-dddddddddddd"]);
+  assert.equal((await consume()).rows.length,0,"Superseded attempt cannot be replayed");
+    await db.query("insert into public.trophy_activity_v1(user_id,source,source_key,programme_version,result,points,possible) values ($1,'challenge','exit-planning',$2,'pass',3,3)",[a,TROPHY_CHALLENGE_VERSION]);
   await assert.rejects(db.query("insert into public.trophy_activity_v1(user_id,source,source_key,programme_version,result,points,possible) values ($1,'daily','practice-01','daily:v1','pass',11,10)",[a]),/check constraint/);
   await assert.rejects(db.query("insert into public.trophy_awards_v1(user_id,trophy_id) values ($1,'fake-trophy')",[a]),/check constraint/);
   await db.query("insert into public.trophy_awards_v1(user_id,trophy_id) values ($1,'exit-planner') on conflict do nothing",[a]);
@@ -83,7 +91,7 @@ try {
   assert.equal((await db.query("select * from public.trophy_awards_v1 where user_id=$1",[b])).rows.length,0,"Other accounts cannot inherit awards");
   await db.exec("reset role");
   await db.query("delete from auth.users where id=$1",[a]);
-  for(const table of ["trophy_activity_v1","trophy_awards_v1","trophy_share_v1"])
+  for(const table of ["trophy_activity_v1","trophy_awards_v1","trophy_share_v1","trophy_attempt_v1"])
     assert.equal((await db.query("select * from public."+table+" where user_id=$1",[a])).rows.length,0,"Account erasure cascades");
 }finally{await db.close();}
 const backend=readFileSync("supabase/functions/trophy-evidence/index.ts","utf8");
