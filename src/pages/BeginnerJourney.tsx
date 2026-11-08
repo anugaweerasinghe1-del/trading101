@@ -43,7 +43,9 @@ export default function BeginnerJourney() {
 
   useEffect(() => {
     const refresh = () => {
-      setProgress(readJourney());
+      const savedJourney = readJourney();
+      setProgress(savedJourney);
+      setReflection(savedJourney.reflection);
       setPortfolio(getPortfolio());
       setCourseProgress(loadProgress());
     };
@@ -198,7 +200,7 @@ export default function BeginnerJourney() {
               onChange={e => { setReflection(e.target.value); update({ reflection: e.target.value }); }}
               placeholder="I expected ... I noticed ... Next time I will check ..."
               className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary" />
-            <p className="text-xs text-muted-foreground">Saved only in this browser. This reflection is never displayed on the public leaderboard or trader profile.</p>
+            <p className="text-xs text-muted-foreground">New reflection text stays in this browser. If you're signed in, your completed steps can sync privately across devices.</p>
             <Button disabled={reflection.trim().length < 15} onClick={() => update({ reflection: reflection.trim(), completedAt: new Date().toISOString() })}>
               Complete my first journey <CheckCircle2 className="ml-2 w-4 h-4" />
             </Button>

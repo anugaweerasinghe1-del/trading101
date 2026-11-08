@@ -763,3 +763,23 @@ accepted. Partial live and fixture outcomes are credited as evidence below.
   link and in-progress challenge state when the signed-in account changes.
   Release requires protected CI and a matching frontend and Edge deployment.
   Keep the existing issue open for final live and owner acceptance.
+
+### 8 Nov — certificates and beginner journey privacy
+
+- Native production and Supabase source parity passed for [#391](https://github.com/anugaweerasinghe1-del/trading101/pull/391).
+  Signed-in sharing, immediate withdrawal, expiry, cross-account denial and
+  the mobile settings link worked on production. Keep Steady Learner's
+  seven-day live observation and explicit owner sign-off open.
+- A disposable signed-in learner earned the required Foundations scores,
+  issued all three approved certificate types and downloaded each twice
+  with identical bytes. The live verification endpoint returned minimal
+  proof. Name correction preserved the ID and issue date and revoked the
+  old proof. Explicit withdrawal revoked the replacement.
+- Beginner journey sync was sending written reflection text even though
+  the interface described browser-only storage. Two account records
+  already contained written reflections. Preserve those legacy notes.
+  Strip new text from account writes and keep the synced completion
+  milestone independent of the note. Add a non-rewriting database guard
+  for older browser builds. The deployment requires protected CI and
+  migration verification. The guard can be rolled back by removing its
+  trigger and function without rewriting any learner record.

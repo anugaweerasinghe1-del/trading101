@@ -62,6 +62,6 @@ export function journeyStage(progress: BeginnerJourneyProgress): number {
   if (!progress.lessonCompleted) return 0;
   if (!progress.tradeId) return 1;
   if (!progress.portfolioExplained) return 2;
-  if (progress.reflection.trim().length < 15) return 3;
+  if (!progress.completedAt && progress.reflection.trim().length < 15) return 3;
   return 4;
 }

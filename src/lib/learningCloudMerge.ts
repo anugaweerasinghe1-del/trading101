@@ -41,7 +41,8 @@ export function mergeCourseRecords(local:CourseProgressState, remote:CourseProgr
   return parseCourseProgress(JSON.stringify(result));
 }
 
-/** Journey steps are local learning indicators, not proof of server-ranked trades. */
+/** Merge browser progress with the account copy. A legacy cloud note can fill
+ * an empty browser, but cannot replace a note already on that device. */
 export function mergeJourneyRecords(a:BeginnerJourneyProgress,b:BeginnerJourneyProgress):BeginnerJourneyProgress {
   const preferA=newer(a.updatedAt,b.updatedAt);
   const fresh=preferA?a:b,older=preferA?b:a;
@@ -49,7 +50,7 @@ export function mergeJourneyRecords(a:BeginnerJourneyProgress,b:BeginnerJourneyP
     version:1,lessonCompleted:a.lessonCompleted||b.lessonCompleted,
     tradeId:fresh.tradeId??older.tradeId,
     portfolioExplained:a.portfolioExplained||b.portfolioExplained,
-    reflection:fresh.reflection.trim()?fresh.reflection:older.reflection,
+    reflection:a.reflection || b.reflection,
     completedAt:a.completedAt??b.completedAt,
     updatedAt:later(a.updatedAt,b.updatedAt),
   });
