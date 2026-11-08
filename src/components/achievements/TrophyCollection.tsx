@@ -1,5 +1,12 @@
 import { Card } from "@/components/ui/card";
 import { useFirstRecordedPracticeTrade } from "./FirstRecordedTradeMilestone";
+import { useVerifiedTrophyState } from "@/lib/trophyEvidenceClient";
+const trophyIds = [
+  "first-light","field-notes","market-compass","order-desk","price-detective",
+  "risk-aware","position-architect","exit-planner","cost-counter","portfolio-lens",
+  "first-practice-trade","pause-button","scenario-explorer","decision-review",
+  "second-look","case-solver","case-collector","steady-learner","knowledge-builder","foundations-graduate",
+] as const;
 
 type Progress = {
   passedCheckpoints: string[];
@@ -40,6 +47,7 @@ const trophies: Trophy[] = [
 
 export function TrophyCollection({ progress, checking = false }: { progress?: Progress; checking?: boolean }) {
   const { userId, authLoading, record } = useFirstRecordedPracticeTrade();
+  const { query: durable } = useVerifiedTrophyState();
   return (
     <section className="mb-10 space-y-4" aria-labelledby="trophy-collection-title">
       <div>
@@ -48,11 +56,14 @@ export function TrophyCollection({ progress, checking = false }: { progress?: Pr
       </div>
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {trophies.map((trophy, index) => {
-          const count = trophy.trade
+          // Prefer the server-issued durable record over device/cache evidence.
+          // The legacy verified read is only a graceful rollout fallback.
+          const award = durable.data?.entries.find(entry => entry.id === trophyIds[index]);
+          const count = award ? award.progress : trophy.trade
             ? record.isSuccess && userId && !authLoading ? Number(record.data) : undefined
             : progress && trophy.progress ? trophy.progress(progress) : undefined;
-          const loading = authLoading || Boolean(userId && (trophy.trade ? record.isPending : checking && trophy.progress));
-          const earned = count !== undefined && count >= trophy.target;
+          const loading = authLoading || Boolean(userId && !award && (trophy.trade ? record.isPending : checking && trophy.progress));
+          const earned = award ? award.earned : count !== undefined && count >= trophy.target;
           const status = loading ? "Checking" : !userId ? "Sign-in required" :
             count === undefined ? "Evidence unavailable" : earned ? "Earned" : "Locked";
           return (
