@@ -209,6 +209,15 @@ Deno.serve(async request => {
     if (!data || typeof data!=="object" || Array.isArray(data)) return reply(400,{status:"invalid_request"});
     const input = data as Record<string,unknown>;
     const action = input.action;
+    if(action==="public_flairs" && Object.keys(input).length===1) {
+      if(!await allow(clientIp(request),"trophy-public-flairs",60,16))return reply(429,{status:"rate_limited"});
+      const {data: flairs,error}=await admin.rpc("list_verified_trophy_flairs_v1");
+      if(error)throw error;
+      return reply(200,{status:"available",flairs:(flairs??[])
+        .filter((row: {username:unknown;trophy_id:unknown})=>
+          typeof row.username==="string"&&typeof row.trophy_id==="string"&&ids.includes(row.trophy_id as Id))
+        .map((row:{username:string;trophy_id:string})=>({username:row.username,trophyId:row.trophy_id}))});
+    }
     if (action==="public" && Object.keys(input).every(k=>["action","username"].includes(k))) {
       if (!await allow(clientIp(request),"trophy-public",60,40)) return reply(429,{status:"rate_limited"});
       return reply(200,await publicShared(String(input.username??"")));
