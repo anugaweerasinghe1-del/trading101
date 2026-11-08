@@ -47,9 +47,16 @@ const db=new PGlite();
 const a="aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa", b="bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb";
 try {
   await db.exec(`create role anon;create role authenticated;create role service_role bypassrls;
-    create schema auth;create table auth.users(id uuid primary key);
-    insert into auth.users values ('${a}'),('${b}');`);
+    create schema auth;create table auth.users(id uuid primary key,confirmed_at timestamptz);
+    create table public.profiles(id uuid primary key references auth.users(id),username text unique,is_public boolean not null default false);
+    insert into auth.users values ('${a}',now()),('${b}',now());
+    insert into public.profiles values ('${a}','verified-learner',true),('${b}','private-learner',false);`);
   await db.exec(readFileSync("supabase/migrations/20261108110000_verified_trophy_evidence_and_sharing.sql","utf8"));
+  for(const role of ["anon","authenticated"]) {
+    await db.exec("set role "+role);
+    await assert.rejects(db.query("select * from public.list_verified_trophy_flairs_v1()"),/permission denied/);
+    await db.exec("reset role");
+  }
   for(const role of ["anon","authenticated"]) {
     await db.exec("set role "+role);
     for(const table of ["trophy_activity_v1","trophy_awards_v1","trophy_share_v1","trophy_attempt_v1"]) {
@@ -82,11 +89,24 @@ try {
   await assert.rejects(db.query("update public.trophy_share_v1 set enabled=true,pins=array['a','b','c','d'] where user_id=$1",[a]),/check constraint/);
   await db.query("update public.trophy_share_v1 set enabled=true,flair='exit-planner',pins=array['exit-planner'] where user_id=$1",[a]);
   const publicChoice=await db.query<{enabled:boolean}>("select enabled from public.trophy_share_v1 where user_id=$1",[a]);
+  const visible=await db.query<{username:string;trophy_id:string}>("select * from public.list_verified_trophy_flairs_v1()");
+  assert.deepEqual(visible.rows,[{username:"verified-learner",trophy_id:"exit-planner"}],
+    "Only separately opted-in confirmed public account shows a genuinely earned flair");
+  await db.query("update public.profiles set is_public=false where id=$1",[a]);
+  assert.equal((await db.query("select * from public.list_verified_trophy_flairs_v1()")).rows.length,0,
+    "Profile privacy revokes flair immediately");
+  await db.query("update public.profiles set is_public=true where id=$1",[a]);
+  await db.query("update auth.users set confirmed_at=null where id=$1",[a]);
+  assert.equal((await db.query("select * from public.list_verified_trophy_flairs_v1()")).rows.length,0,
+    "An unconfirmed account cannot expose trophies despite its public flag");
+  await db.query("update auth.users set confirmed_at=now() where id=$1",[a]);
   assert.equal(publicChoice.rows[0].enabled,true);
   await db.query("update public.trophy_share_v1 set enabled=false,flair=null,pins='{}'::text[] where user_id=$1",[a]);
   const withdrawn=await db.query<{enabled:boolean;flair:string|null;pins:string[]}>("select enabled,flair,pins from public.trophy_share_v1 where user_id=$1",[a]);
   assert.equal(withdrawn.rows[0].enabled,false);
   assert.equal(withdrawn.rows[0].flair,null);
+  assert.equal((await db.query("select * from public.list_verified_trophy_flairs_v1()")).rows.length,0,
+    "Revoking separate trophy permission immediately removes leaderboard flair");
   assert.deepEqual(withdrawn.rows[0].pins,[]);
   assert.equal((await db.query("select * from public.trophy_awards_v1 where user_id=$1",[b])).rows.length,0,"Other accounts cannot inherit awards");
   await db.exec("reset role");
