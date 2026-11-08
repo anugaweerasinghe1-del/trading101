@@ -73,6 +73,8 @@ try {
     grant select, update on public.profiles, auth.users to service_role;
     grant usage on schema auth to service_role;`);
   await db.exec(readFileSync("supabase/migrations/20261108110000_verified_trophy_evidence_and_sharing.sql","utf8"));
+  await db.exec("create function auth.uid() returns uuid language sql stable as $ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $");
+  await db.exec(readFileSync("supabase/migrations/20261108180000_explicit_public_profile_reconsent.sql","utf8"));
   for(const role of ["anon","authenticated"]) {
     await db.exec("set role "+role);
     await assert.rejects(db.query("select * from public.list_verified_trophy_flairs_v1()"),/permission denied/);
@@ -110,6 +112,9 @@ try {
   await assert.rejects(db.query("update public.trophy_share_v1 set enabled=true,pins=array['a','b','c','d'] where user_id=$1",[a]),/check constraint/);
   await db.query("update public.trophy_share_v1 set enabled=true,flair='exit-planner',pins=array['exit-planner'] where user_id=$1",[a]);
   const publicChoice=await db.query<{enabled:boolean}>("select enabled from public.trophy_share_v1 where user_id=$1",[a]);
+  assert.equal((await db.query("select * from public.list_verified_trophy_flairs_v1()")).rows.length,0,
+    "Old default-public flags must not expose trophies before fresh public-profile consent");
+  await db.query("update public.profiles set public_visibility_confirmed=true where id=$1",[a]);
   const visible=await db.query<{username:string;trophy_id:string}>("select * from public.list_verified_trophy_flairs_v1()");
   assert.deepEqual(visible.rows,[{username:"verified-learner",trophy_id:"exit-planner"}],
     "Only separately opted-in confirmed public account shows a genuinely earned flair");
@@ -139,6 +144,7 @@ const backend=readFileSync("supabase/functions/trophy-evidence/index.ts","utf8")
 assert.match(backend,/getUser\(match\[1\]\)/);
 assert.match(backend,/confirmed_at/);
 assert.match(backend,/\.eq\("is_public"|profile\.is_public/);
+assert.match(backend,/public_visibility_confirmed/);
 assert.match(backend,/pref\?\.enabled/);
 assert.match(backend,/award_not_earned/);
 assert.match(backend,/ignoreDuplicates:true/);
