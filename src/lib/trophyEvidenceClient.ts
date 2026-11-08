@@ -33,8 +33,17 @@ export function useVerifiedTrophyState() {
     queryFn: async () => {
       const result = await trophyRequest<TrophyState | {status:string}>(token!, { action: "state" });
       if (result.status !== "available" || !("entries" in result) || !Array.isArray(result.entries)
-          || result.entries.length !== 20) throw Error("Trophy evidence unavailable.");
-      return result;
+          || result.entries.length !== 20 || !("share" in result) || !result.share
+          || !("profilePublic" in result) || typeof result.profilePublic !== "boolean") {
+        throw Error("Trophy evidence unavailable.");
+      }
+      const payload = result as TrophyState;
+      if (typeof payload.share.enabled !== "boolean" || !Array.isArray(payload.share.pins)
+          || payload.entries.some(entry => typeof entry.id !== "string" ||
+            typeof entry.earned !== "boolean" || typeof entry.progress !== "number")) {
+        throw Error("Trophy evidence unavailable.");
+      }
+      return payload;
     },
     retry: false,
     staleTime: 0,
