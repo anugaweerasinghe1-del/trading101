@@ -8,11 +8,13 @@ import { Card } from "@/components/ui/card";
 import { COURSE_PROGRESS_EVENT, COURSE_PROGRESS_KEY, loadProgress } from "@/lib/courseProgress";
 import { buildPersonalTrophyCabinet } from "@/lib/learningAchievements";
 import { useCourseCatalog } from "@/hooks/useCourseCatalog";
+import { useAuth } from "@/hooks/useAuth";
 import { FoundationsProgrammePanel } from "@/components/achievements/FoundationsProgrammePanel";
 import { FirstRecordedTradeMilestone } from "@/components/achievements/FirstRecordedTradeMilestone";
 import { VerifiedTrophyChallenges } from "@/components/achievements/VerifiedTrophyChallenges";
 
 export default function TrophyCabinet() {
+  const { user } = useAuth();
   const [progress, setProgress] = useState(loadProgress);
   const { tracks, isError: catalogError } = useCourseCatalog();
 
@@ -92,7 +94,7 @@ export default function TrophyCabinet() {
 
           <FirstRecordedTradeMilestone />
 
-          <VerifiedTrophyChallenges />
+          <VerifiedTrophyChallenges key={user?.id ?? "guest"} />
 
           <section aria-labelledby="milestone-heading" className="mb-12">
             <div className="flex items-start justify-between gap-3 flex-wrap mb-5">

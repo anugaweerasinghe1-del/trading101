@@ -251,15 +251,16 @@ Deno.serve(async request => {
         Object.keys(input).every(k=>["action","challengeId","answers","attemptId"].includes(k))) {
       if (!await allow(user.id,"trophy-grade",300,16)) return reply(429,{status:"rate_limited"});
       const id=input.challengeId;
+      const answers=input.answers;
       if (id.startsWith("daily:")) {
         const bank=await loadReviewedDaily();
         const entry=bank.cases.find(c=>"daily:"+c.id===id);
         if (!entry) return reply(404,{status:"not_found"});
-        if (input.answers.length!==entry.questions.length ||
-            input.answers.some((x,i)=>!Number.isInteger(x) || Number(x)<0 || Number(x)>=entry.questions[i].options.length))
+        if (answers.length!==entry.questions.length ||
+            answers.some((x,i)=>!Number.isInteger(x) || Number(x)<0 || Number(x)>=entry.questions[i].options.length))
           return reply(400,{status:"invalid_answers"});
         if(!await claimAttempt(user.id,id,bank.version,input.attemptId))return reply(409,{status:"attempt_expired_or_used"});
-        const points=entry.questions.filter((q,i)=>q.correct===input.answers[i]).length;
+        const points=entry.questions.filter((q,i)=>q.correct===answers[i]).length;
         const passed=points>=8;
         if(passed) await record(user.id,"daily",entry.id,bank.version,"pass",points,entry.questions.length);
         return reply(200,{status:"graded",points,possible:entry.questions.length,passed,
@@ -267,7 +268,7 @@ Deno.serve(async request => {
       }
       const challenge=trophyChallenge(id);
       if (!challenge) return reply(404,{status:"not_found"});
-      const grade=gradeTrophyChallenge(challenge,input.answers);
+      const grade=gradeTrophyChallenge(challenge,answers);
       if (!grade) return reply(400,{status:"invalid_answers"});
       if (id==="arena-decision-review") {
         const { data: scenarios,error }=await admin.from("trophy_activity_v1")
@@ -295,19 +296,24 @@ Deno.serve(async request => {
     }
     if(action==="share" && typeof input.enabled==="boolean" && Object.keys(input).every(k=>["action","enabled","flair","pins"].includes(k))) {
       const enabled=input.enabled;
-      if (enabled && !user.confirmed) return reply(409,{status:"confirm_account_first"});
-      const {data: profile,error:profileError}=await admin.from("profiles").select("is_public").eq("id",user.id).maybeSingle();
-      if(profileError)throw profileError;
-      if(enabled && profile?.is_public!==true)return reply(409,{status:"make_profile_public_first"});
       const flair=input.flair===null||input.flair===undefined?null:input.flair;
       const pins=input.pins===undefined?[]:input.pins;
       if ((flair!==null && (typeof flair!=="string"||!ids.includes(flair as Id))) ||
           !Array.isArray(pins)||pins.length>3||new Set(pins).size!==pins.length||
           !pins.every(id=>typeof id==="string"&&ids.includes(id as Id))) return reply(400,{status:"invalid_awards"});
-      const state=await readState(user.id);
-      const awarded=new Set(state.entries.filter(x=>x.earned).map(x=>x.id));
-      if(enabled && ((flair!==null&&!awarded.has(flair as Id))||pins.some(id=>!awarded.has(id as Id))))
-        return reply(409,{status:"award_not_earned"});
+      // Withdrawal must work even if the profile or award evidence cannot be read.
+      if (enabled) {
+        if (!user.confirmed) return reply(409,{status:"confirm_account_first"});
+        const [profile, awards] = await Promise.all([
+          admin.from("profiles").select("is_public").eq("id",user.id).maybeSingle(),
+          admin.from("trophy_awards_v1").select("trophy_id").eq("user_id",user.id),
+        ]);
+        if (profile.error || awards.error) throw profile.error ?? awards.error;
+        if (profile.data?.is_public !== true) return reply(409,{status:"make_profile_public_first"});
+        const awarded = new Set((awards.data ?? []).map(row => row.trophy_id));
+        if ((flair !== null && !awarded.has(flair)) || pins.some(id => !awarded.has(id)))
+          return reply(409,{status:"award_not_earned"});
+      }
       const share:Share={enabled,flair:enabled?flair as string|null:null,pins:enabled?pins as string[]:[]};
       const {error}=await admin.from("trophy_share_v1").upsert({
         user_id:user.id,enabled:share.enabled,flair:share.flair,pins:share.pins,updated_at:new Date().toISOString(),

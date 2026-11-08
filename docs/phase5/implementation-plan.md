@@ -739,3 +739,27 @@ accepted. Partial live and fixture outcomes are credited as evidence below.
   The web panel now accepts only unique IDs from its versioned programme and
   rejects invalid flags before rendering progress. Rejection preserves the
   existing Retry path. This is a client safeguard, not a new evidence source.
+
+### 8 Nov — Trophy Cabinet production acceptance
+
+- [#389](https://github.com/anugaweerasinghe1-del/trading101/pull/389) integrated
+  all 20 earning rules and the separate sharing permission. [#390](https://github.com/anugaweerasinghe1-del/trading101/pull/390)
+  prevents unissued awards from appearing as earned. Native Cloudflare and
+  Vercel observations matched protected main `5da8db578c843ebd7c1184302d2bab43e1c56028`.
+  The hosted `trophy-evidence` v1 bundle matched all five source files. Its
+  migration was present and all four trophy tables denied direct browser access.
+- A confirmed disposable production account earned 19 trophies through the
+  signed-in scoring and simulated-trading endpoints. Six checkpoints, the final
+  Foundations case, ten challenge types and five distinct Daily cases worked.
+  Multiple passes on the same Colombo calendar day counted once. The isolated
+  handler kept Steady Learner locked at six days and issued it once at seven.
+  Live acceptance still requires six more distinct qualifying days.
+- Production browser acceptance confirmed the earned record after a reload
+  and in a separate signed-in mobile browser. Daily Practice and Practice
+  Arena rendered. Production abuse checks covered concurrent submissions,
+  replays, cross-account attempts, forged scores and direct award insertion.
+- [#391](https://github.com/anugaweerasinghe1-del/trading101/pull/391) repairs
+  sharing withdrawal during an evidence read failure, the profile settings
+  link and in-progress challenge state when the signed-in account changes.
+  Release requires protected CI and a matching frontend and Edge deployment.
+  Keep the existing issue open for final live and owner acceptance.

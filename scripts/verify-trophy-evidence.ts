@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { PGlite } from "@electric-sql/pglite";
+import ts from "typescript";
 import { trophyDeniedStatus } from "../src/lib/trophyFunctionErrors.ts";
 import {
   TROPHY_CHALLENGES, TROPHY_CHALLENGE_VERSION, publicTrophyChallenge,
@@ -142,4 +143,37 @@ assert.match(backend,/pref\?\.enabled/);
 assert.match(backend,/award_not_earned/);
 assert.match(backend,/ignoreDuplicates:true/);
 assert.doesNotMatch(backend,/localStorage|sessionStorage/);
+
+// Exercise the actual request handler with the evidence/profile reads offline.
+let handler!: (request: Request) => Promise<Response>;
+const owner = "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa";
+let storedShare: unknown;
+const isolatedAdmin = {
+  auth: { getUser: async () => ({ data: { user: { id: owner, aud: "authenticated" } } }) },
+  from(table: string) {
+    if (table !== "trophy_share_v1") throw Error("Evidence reads unavailable");
+    return { upsert: async (row: Record<string, unknown>) => { storedShare = row; return { error: null }; } };
+  },
+};
+const handlerCode = ts.transpileModule(backend.replace(/^import .*;\r?\n/gm, ""), {
+  compilerOptions: { target: ts.ScriptTarget.ES2022 },
+}).outputText;
+new Function("createClient", "Deno", "TROPHY_CHALLENGE_VERSION", "allow", handlerCode)(
+  () => isolatedAdmin,
+  { env: { get: () => "fixture" }, serve: (serve: typeof handler) => { handler = serve; } },
+  TROPHY_CHALLENGE_VERSION,
+  async () => true,
+);
+const shareRequest = (enabled: boolean) => new Request("https://fixture.invalid/trophy", {
+  method: "POST",
+  headers: { authorization: "Bearer isolated-user-token-value" },
+  body: JSON.stringify({ action: "share", enabled }),
+});
+assert.equal((await handler(shareRequest(true))).status, 409, "An unconfirmed account cannot share");
+assert.equal(storedShare, undefined);
+assert.equal((await handler(shareRequest(false))).status, 200, "Withdrawal must not depend on profile or trophy evidence");
+assert.deepEqual(storedShare, {
+  user_id: owner, enabled: false, flair: null, pins: [],
+  updated_at: (storedShare as { updated_at: string }).updated_at,
+});
 console.log("TROPHY_EVIDENCE_PASS: ten original case banks, safe scoring, privacy grants, durable idempotency, consent withdrawal, erasure and isolation.");
