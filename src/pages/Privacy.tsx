@@ -34,7 +34,7 @@ export default function Privacy() {
               This policy describes the data flows used by the current TradeHQ website, including optional analytics and advertising.
             </p>
             <p className="text-sm text-muted-foreground mt-4">
-              Last Updated: November 3, 2026
+              Last Updated: November 8, 2026
             </p>
           </div>
 
