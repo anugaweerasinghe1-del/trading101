@@ -76,3 +76,8 @@ verify_jwt = false
 [functions.foundations-certificate-verify]
 # Public verification accepts only a high-entropy opt-in token.
 verify_jwt = false
+
+[functions.trophy-evidence]
+# Public endpoint responds only with separately opted-in verified awards.
+# All owner writes independently verify a Supabase Auth user JWT in the handler.
+verify_jwt = false
