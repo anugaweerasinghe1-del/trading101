@@ -4,6 +4,7 @@ import { getPortfolio, savePortfolio, executeGuestTrade, saveTradeJournal } from
 import { applyUnverifiedGuestRestore, readPreviousGuestPortfolio } from '../src/lib/portfolioRecovery.ts';
 import type { Portfolio } from '../src/lib/types.ts';
 import { getAccountPortfolioHistory, getPortfolioHistory, recordAccountPortfolioSnapshot } from '../src/lib/portfolioHistory.ts';
+import { portfolioChartPoints } from '../src/lib/portfolioChartPoints.ts';
 import { getAnalysis } from '../src/lib/tradingJournal.ts';
 const values = new Map<string, string>();
 const storage = {
@@ -26,6 +27,20 @@ const privateAccount: Portfolio = { ...guest, cash: 98000, totalValue: 98100,
   trades: guest.trades.map(t => ({ ...t, id: 'server-trade-a', journal: { notes: 'PRIVATE ACCOUNT A', reasoning: 'private', emotions: [] } })) };
 savePortfolio(privateAccount, { silent: true });
 const today = Date.now();
+const only = { timestamp: new Date(today - 60_000), totalValue: 100031.20, cash: 98000, positionsValue: 2031.20 };
+assert.equal(portfolioChartPoints([], 100031.20, true, today).length, 1,
+  'A confirmed account valuation is a single real point when local history is empty');
+assert.equal(portfolioChartPoints([], 100031.20, true)[0], undefined,
+  'Never plot an account observation before a confirmed receipt');
+assert.equal(portfolioChartPoints([], 100031.20, false, today).length, 0,
+  'Guest graphs cannot borrow account observations');
+assert.deepEqual(portfolioChartPoints([only], 100031.20, true, today).map(p => p.value), [100031.20],
+  'The same valuation must not fabricate a second history point');
+assert.deepEqual(portfolioChartPoints([only], 100045.00, true, today).map(p => p.value), [100031.20, 100045],
+  'Two genuinely different received observations can show a trend');
+assert.equal(portfolioChartPoints([only], 99999.00, true, today - 2 * 60_000).length, 1,
+  'Older received observations cannot overwrite a newer chart point');
+
 recordAccountPortfolioSnapshot('fixture-a', 'cycle-1', privateAccount, today - 3 * 24 * 60 * 60_000);
 recordAccountPortfolioSnapshot('fixture-a', 'cycle-1', { ...privateAccount, totalValue: 98105 }, today);
 assert.deepEqual(getAccountPortfolioHistory('fixture-a', 'cycle-1').map(s => s.totalValue), [98100, 98105]);
