@@ -591,3 +591,57 @@ Issues remain open until their real acceptance gaps are resolved.
 - Phase 5 certificate/trophy hardening: eligibility now counts only the six recognized Foundations v1 checkpoint IDs when reading service-recorded grades, and never inflates checkpoint-based trophy counts with unknown, retired or malformed IDs. Adds executable regression assertions. Verify on the exact PR head; this entry is NOT test, merge or deployment proof until actual CI and release evidence are recorded.
 - **Explicitly deferred until every Phase 5 acceptance gate has been genuinely completed:** add a permanent, automatic **What’s New** experience discoverable from the site navigation, linking to a cumulative release-history page. It should announce newly *published* courses, newly released features (including the Trophy Cabinet), improvements and future site updates, not merely the current launch. Design it to support every future release, avoid duplicate/false announcements, and exclude drafts/unreleased changes. This is a future post-Phase-5 product requirement, **not** permission to start its implementation before Phase 5 is complete. Keep it outside the Phase 5 completion percentage.
 - Sinhala/Tamil status clarity: the approved certificates have script/font support for recipient names; no repository evidence establishes full Sinhala/Tamil translations of TradeHQ pages or an installed language selector. Do not represent certificate font support as multilingual website support. Clarify translation release scope separately before claiming full multilingual acceptance.
+
+### 8 Nov — verified #383 production and bounded dashboard counts
+
+- Fresh protected main was `852f6a1143dd18b5e5c1837733aaed4c54af0c16`.
+  Its source tree matched GitHub's tree SHA `f0be5ca2b464c1af515d5a9f7c5c8f63b7231434`.
+  The newest automation report predates the rewards merge. No open PR overlaps
+  the editorial review count change.
+- [Main CI](https://github.com/anugaweerasinghe1-del/trading101/actions/runs/42390479626)
+  and [disposable PostgreSQL](https://github.com/anugaweerasinghe1-del/trading101/actions/runs/42390479554)
+  passed. [Native release job](https://github.com/anugaweerasinghe1-del/trading101/actions/runs/42390479626/job/128459280676)
+  confirmed the exact SHA on Cloudflare Pages production
+  `5bc0a490-c9d3-4b15-bb4d-c32d5fdbfd16` and Vercel's active production alias
+  `dpl_4xGsa54ECL7WC5oZfpUZiGggxWXw`. Active Foundations certificate v2
+  matched all seven source files. The live admin access gate hydrated in Chrome.
+- Daily private-test admission read at 02:24 UTC showed zero attempts recorded
+  in the current UTC window. The previous test failed `OUTPUT_VALIDATION_FAILED`.
+  The count only describes TradeHQ's local allowance. A new model request
+  requires the owner to confirm remaining free Gemini quota and deliberately
+  initiate the test through the real signed-in desk.
+- Dashboard review feeds use bounded recent lists (200 Course drafts, 24 Daily
+  banks, 16 Newsletter editions). A full page previously made Course and Daily
+  counts look complete. The dashboard now labels the sample and reports possible
+  older drafts even when the sampled pending count is zero. The loopback
+  Chromium regression reproduced the bug on #383 and passed with the repair,
+  including recovery below the caps. The change is web-only. Revert the PR to
+  roll back. Full historical totals would require a separate authorized count
+  path, since the existing lists remain bounded.
+- Next: complete required PR CI and exact-production verification for the dashboard
+  fix. Then verify or repair the authoritative dashboard aggregates. In parallel
+  with owner-gated acceptance, identify which remaining trophies have eligible
+  server-side evidence. Keep unsupported awards unavailable.
+
+#### Strict completion snapshot at verified #383
+
+Each row is one equally weighted workstream. Credit implementation only when
+the planned application path exists. Accept a row only when all its production
+criteria are verified. This snapshot scores 8/13 implemented (62%) and 0/13 fully
+accepted. Partial live and fixture outcomes are credited as evidence below.
+
+| Workstream | Implementation and test evidence | Production evidence and remaining acceptance |
+| --- | --- | --- |
+| Dashboard | Partial. Feed isolation and refresh tested; bounded historical counts remain. | Normal owner read/refresh accepted on #377. Verify authoritative totals and recovery after release. |
+| Courses | Implemented. Exact revision, owner and failure gates tested. | Hosted v17 previously matched main. Owner access verified; live independent review and publication acceptance pending. |
+| Daily generation and delivery | Partial. Schedule, quotas, drafts and private diagnostics exist; live structured generation failed. | v16 generator and v2 private test hosted. Owner quota confirmation and successful private validation first; approved bank and schedule preserved. |
+| Newsletter | Implemented. Subscription, approval, no-email lifecycle and recovery tested. | Registered-owner readiness passed. Controlled delivery and resulting receipts pending. |
+| Admin chatbot | Implemented. Quota, rejection and response fencing tested. | Hosted v9 previously matched main. Authorized provider reply and limit acceptance pending. |
+| Reviews | Implemented. Moderation and confirmed-write recovery tested. | Released. Genuine owner moderation and recovery acceptance pending. |
+| Code controls | Implemented. Queue, cancellation and exact proposal evidence tested. | Released. Privileged queue, approvals and safe stop need authorized acceptance. |
+| Admin mobile, keyboard and isolation | Implemented. Real Chromium fixture coverage exists. | Locked admin gate observed live. Full signed-in cross-desk acceptance pending. |
+| Market data and portfolio | Partial. Protected execution, persistence and recovery tested; traditional quote freshness and entitlement unresolved. | Historical guest trade smoke passed. Verify fresh coverage and registered trade/leaderboard lifecycle. |
+| Beginner journey, Arena and leaderboard | Implemented. Journey, persistence, ranking and consent controls tested. | Historical public read included opted-in zero-trade profiles. Complete real registration and return journey. |
+| Trophy Cabinet | Partial. All 20 designs; 11 evidence sources. | Nine evidence producers, durable awards, public opt-in and withdrawal remain. |
+| Certificates | Implemented. Issuance, correction, repeat PDF, verification and withdrawal tested in isolation. | Web native release and certificate v2 parity confirmed. Complete authenticated production lifecycle. Sinhala/Tamil certificate names are supported; full site translations and a language selector are outside the currently agreed scope. |
+| Final release assurance | Partial. CI and native production match #383. | Remaining acceptance and final integrated security, privacy, usability and policy review are open. |

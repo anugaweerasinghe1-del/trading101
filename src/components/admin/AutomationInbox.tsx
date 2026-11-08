@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export interface EditorialQueueRow { id: string; status: string }
+
+// The existing admin endpoints return only the most recent records.
+export const COURSE_REVIEW_LIMIT = 200;
 interface DailySnapshot {
   enabled?: boolean; attempts?: number; retryAfter?: string | null; lastError?: string | null;
   freeConfirmed?: boolean; hasApiKey?: boolean;
@@ -19,13 +22,18 @@ export function AutomationInbox({ courses, dailyBanks, newsletterEdits, daily, f
     if (findingCount) items.push({ title: `${findingCount} open monitoring finding${findingCount === 1 ? '' : 's'}`, detail: 'Inspect the evidence and investigate the cause before requesting a repair.', to: '#monitor-findings', priority: 0 });
     if (proposalCount) items.push({ title: `${proposalCount} open AI code proposal${proposalCount === 1 ? '' : 's'}`, detail: 'Check the proposed commit, tests and recorded owner decision. An open PR may already have a review.', to: '/admin/ai', priority: 1 });
   }
-  for (const [rows, name, to] of [[courses, 'Course', '/admin/courses'], [dailyBanks, 'Daily bank', '/admin/daily'], [newsletterEdits, 'Newsletter', '/admin/newsletter']] as const) {
+  for (const [rows, name, to, limit] of [
+    [courses, 'Course', '/admin/courses', COURSE_REVIEW_LIMIT],
+    [dailyBanks, 'Daily bank', '/admin/daily', 24],
+    [newsletterEdits, 'Newsletter', '/admin/newsletter', 16],
+  ] as const) {
     if (rows === null) items.push({ title: `${name} review queue unavailable`, detail: 'This queue could not be loaded. Open its desk to check; an unavailable count is not zero.', to, priority: 0 });
     else {
       const count = rows.filter(row => row.status === 'draft').length;
-      if (name === 'Newsletter' && rows.length >= 16)
-        items.push({ title: 'Newsletter review list may be incomplete', detail: 'The editorial API returns only the latest 16 editions. Older pending drafts cannot be ruled out from this dashboard; this is not a full historical count.', to, priority: 0 });
-      if (count) items.push({ title: `${count} ${name.toLowerCase()} draft${count === 1 ? '' : 's'} awaiting review`, detail: 'Saved drafts stay private until an administrator reviews and approves them.', to, priority: 1 });
+      const atLimit = rows.length >= limit;
+      if (atLimit)
+        items.push({ title: `${name} review list may be incomplete`, detail: `The latest ${limit} records were returned. Older drafts may still be awaiting review.`, to, priority: 0 });
+      if (count) items.push({ title: `${count} ${name.toLowerCase()} draft${count === 1 ? '' : 's'} awaiting review${atLimit ? ` in the latest ${limit} records` : ''}`, detail: 'Saved drafts stay private until an administrator reviews and approves them.', to, priority: 1 });
     }
   }
   if (failedCourseRuns) items.push({ title: `${failedCourseRuns} course generation failure${failedCourseRuns === 1 ? '' : 's'}`, detail: 'Inspect the recorded failure and remaining attempts in course settings. Existing published courses remain available.', to: '/admin/courses', priority: 0 });
