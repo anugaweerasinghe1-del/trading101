@@ -56,16 +56,19 @@ export function TrophyCollection({ progress, checking = false }: { progress?: Pr
       </div>
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {trophies.map((trophy, index) => {
-          // Prefer the server-issued durable record over device/cache evidence.
-          // The legacy verified read is only a graceful rollout fallback.
+          // Only an issued server award can be labelled Earned. Older progress
+          // may describe a pending requirement but never prove issuance when
+          // the verified award service is unavailable.
           const award = durable.data?.entries.find(entry => entry.id === trophyIds[index]);
           const count = award ? award.progress : trophy.trade
             ? record.isSuccess && userId && !authLoading ? Number(record.data) : undefined
             : progress && trophy.progress ? trophy.progress(progress) : undefined;
           const loading = authLoading || Boolean(userId && !award && (trophy.trade ? record.isPending : checking && trophy.progress));
-          const earned = award ? award.earned : count !== undefined && count >= trophy.target;
+          const earned = award?.earned === true;
           const status = loading ? "Checking" : !userId ? "Sign-in required" :
-            count === undefined ? "Evidence unavailable" : earned ? "Earned" : "Locked";
+            earned ? "Earned" :
+            count !== undefined && count >= trophy.target && !award ? "Verification pending" :
+            count === undefined ? "Evidence unavailable" : "Locked";
           return (
             <Card className="flex flex-col gap-2 p-4" key={trophy.title}>
               <img src={"/achievements/trophies/" + String(index + 1).padStart(2, "0") + ".webp"} alt=""
