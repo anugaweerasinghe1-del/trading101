@@ -49,7 +49,7 @@ export default function TraderProfile() {
 
   const setPublicVisibility = async (isPublic: boolean) => {
     if (!user || visibilityBusy) return;
-    if (isPublic && !user.email_confirmed_at) {
+    if (isPublic && !(user.email_confirmed_at || user.confirmed_at)) {
       toast.error("Confirm your account email before making your profile public.");
       return;
     }
@@ -78,7 +78,7 @@ export default function TraderProfile() {
     }
     setVisibilityBusy(false);
   };
-  const isPubliclyVisible = profile?.is_public === true && profile.public_visibility_confirmed === true && !!user?.email_confirmed_at;
+  const isPubliclyVisible = profile?.is_public === true && profile.public_visibility_confirmed === true && !!(user?.email_confirmed_at || user?.confirmed_at);
   const path = "/trader/me";
   const title = "My Trader Profile — Practice Portfolio Stats | TradeHQ";
   const description = "Local snapshot of TradeHQ practice statistics. Signed-in users can choose whether their backend profile is public. Educational simulation only, not financial advice.";
