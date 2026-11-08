@@ -50,6 +50,28 @@ function hasValidIds(value: unknown, allowed: ReadonlySet<string>): value is str
     && value.every(id => typeof id === "string" && allowed.has(id));
 }
 
+/** A recognized ID alone is not proof that its prerequisite was passed.
+ * Fail closed if the account service returns contradictory course or award states.
+ * The server remains the authority for grading and certificate issuance. */
+function hasConsistentCompletion(snapshot: Progress): boolean {
+  const passed = new Set(snapshot.passedCheckpoints);
+  const expectedCourses = FOUNDATIONS_COURSES
+    .filter(course => course.checkpoints.every(id => passed.has(id)))
+    .map(course => course.id);
+  const completed = new Set(snapshot.completedCourses);
+  if (completed.size !== expectedCourses.length || expectedCourses.some(id => !completed.has(id))) return false;
+
+  const expectedMilestones: CertificateMilestone[] = [];
+  if (expectedCourses.length >= 1) expectedMilestones.push("first-course");
+  if (expectedCourses.length >= 3) expectedMilestones.push("core-studies");
+  if (expectedCourses.length === FOUNDATIONS_COURSES.length && snapshot.finalCasePassed) {
+    expectedMilestones.push("foundations");
+  }
+  const milestones = new Set(snapshot.milestones);
+  return milestones.size === expectedMilestones.length
+    && expectedMilestones.every(id => milestones.has(id));
+}
+
 export function FoundationsProgrammePanel() {
   const { user, session, loading } = useAuth();
   return (
@@ -94,7 +116,8 @@ function Programme({ userId, token }: { userId: string; token: string }) {
           || !hasValidIds(snapshot.completedCourses, courseIds) || !hasValidIds(snapshot.milestones, milestoneIds)
           || typeof snapshot.finalCasePassed !== "boolean" || typeof snapshot.perfectSizing !== "boolean"
           || (snapshot.perfectSizing && !snapshot.passedCheckpoints.includes("sizing"))
-          || !Number.isInteger(snapshot.learningDays) || snapshot.learningDays < 0 || snapshot.learningDays > 7) {
+          || !Number.isInteger(snapshot.learningDays) || snapshot.learningDays < 0 || snapshot.learningDays > 7
+          || !hasConsistentCompletion(snapshot)) {
         throw Error("Foundations progress unavailable.");
       }
       return snapshot;
