@@ -32,6 +32,12 @@ Deno.serve(createCourseAdminHandler({
   rateLimit: async req => await allow("course-admin-global", "course-admin-global", 300, 60)
     && await allow("course-admin:" + clientIp(req), "course-admin", 300, 30),
   store: {
+    async draftCount(queue) {
+      const { count, error } = await client.from(queue)
+        .select("id", { count: "exact", head: true }).eq("status", "draft");
+      if (error || count === null) throw new Error("Could not count drafts");
+      return count;
+    },
     async daily(action, body) {
       if (action === "daily-list") {
         const fields = body.summary === true ? "id,effective_from,revision,status,updated_at" : "id,effective_from,revision,status,document,research,updated_at";

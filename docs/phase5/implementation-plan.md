@@ -645,3 +645,33 @@ accepted. Partial live and fixture outcomes are credited as evidence below.
 | Trophy Cabinet | Partial. All 20 designs; 11 evidence sources. | Nine evidence producers, durable awards, public opt-in and withdrawal remain. |
 | Certificates | Implemented. Issuance, correction, repeat PDF, verification and withdrawal tested in isolation. | Web native release and certificate v2 parity confirmed. Complete authenticated production lifecycle. Sinhala/Tamil certificate names are supported; full site translations and a language selector are outside the currently agreed scope. |
 | Final release assurance | Partial. CI and native production match #383. | Remaining acceptance and final integrated security, privacy, usability and policy review are open. |
+
+### 8 Nov — exact draft totals follow-up
+
+- The Dashboard now asks the existing administrator-only list actions for exact
+  counts of records with draft status. The authorized count requests return
+  no rows or documents. Editor list actions retain the existing response and
+  limits. Older Edge deployments can still return their bounded lists and
+  the Dashboard labels those samples. A failed or malformed total is
+  unavailable while the other desk feeds remain usable.
+- Read-only production cross-check before rollout: Course 0 pending of 3,
+  Daily 0 of 2, Newsletter 0 of 2. The two existing hosted functions
+  matched the reviewed baseline (admin-courses v17, 10 files, and
+  newsletter-editor v12, 4 files). Read-only hosted aggregate counts
+  establish a baseline, not acceptance of the new endpoints.
+- The course handler fixture verifies master-key denial, count-only output,
+  a total beyond the list cap, zero, and a sanitized 503. Compiled Chromium
+  verified exact totals beyond the caps, zero, a malformed reply, the
+  staggered rollout fallback, and prior dashboard recovery. TypeScript and
+  the Cloudflare build passed. The exact totals PR and deployment gates
+  remain separate from these fixture results.
+- Rollout after protected merge: confirm new admin-courses and
+  newsletter-editor versions and every hosted source file. Verify no
+  editor behavior, newsletter dispatch, generation attempt or database
+  migration is involved. Use a genuine owner dashboard session for endpoint
+  acceptance. Web/Edge rollback may be done independently because the
+  response change is requested explicitly by the new dashboard.
+- Quote cache read-only snapshot on Sunday 8 Nov: 15/15 held crypto assets
+  and 0/17 held stock, ETF and FX assets had observations within 15 minutes.
+  This establishes coverage at the sample time. Recheck open-market coverage
+  and free public-display entitlements before enabling an execution source.

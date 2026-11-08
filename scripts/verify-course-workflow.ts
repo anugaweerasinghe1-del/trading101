@@ -116,9 +116,16 @@ assert.ok(validateCourseDocument(invalidQuiz).length > 0);
 
 let writes = 0;
 const summaryReads: boolean[] = [];
+const countReads: string[] = [];
+let countReadUnavailable = false;
 const handler = createCourseAdminHandler({
   getKey: () => "test-owner-key", rateLimit: async () => true,
   store: {
+    draftCount: async queue => {
+      countReads.push(queue);
+      if (countReadUnavailable) throw new Error("private fixture database error");
+      return queue === "course_drafts" ? 207 : 0;
+    },
     list: async (summary = false) => { summaryReads.push(summary); return []; }, save: async () => { writes++; return {}; }, publish: async () => { writes++; return {}; },
     reject: async () => { writes++; return {}; }, settings: async () => ({}), configure: async () => ({}), run: async () => 1,
   },
@@ -133,6 +140,17 @@ assert.deepEqual(summaryReads, [], 'Summary reads use the same verified master k
 assert.equal((await handler(request({ action: "list", summary: true }))).status, 200);
 assert.equal((await handler(request({ action: "list" }))).status, 200);
 assert.deepEqual(summaryReads, [true, false], 'Dashboard metadata and full editor reads stay distinct');
+const draftCountBody = { action: "list", summary: true, countDrafts: true };
+assert.equal((await handler(request(draftCountBody, "wrong"))).status, 401);
+assert.deepEqual(countReads, [], "Wrong key cannot read draft counts");
+assert.deepEqual(await (await handler(request(draftCountBody))).json(), { data: { count: 207 } });
+assert.deepEqual(await (await handler(request({ ...draftCountBody, action: "daily-list" }))).json(), { data: { count: 0 } });
+assert.deepEqual(countReads, ["course_drafts", "daily_practice_drafts"]);
+assert.deepEqual(summaryReads, [true, false], "Counts bypass draft reads");
+countReadUnavailable = true;
+const failedCount = await handler(request(draftCountBody));
+assert.equal(failedCount.status, 503);
+assert.deepEqual(await failedCount.json(), { error: "Draft count is temporarily unavailable." });
 assert.equal((await handler(request({ action: "publish", id: "12345678-1234-1234-1234-123456789012", revision: 1, reviewer: "Owner", reviewed: false }))).status, 400);
 assert.equal(writes, 0);
 assert.equal((await handler(request({ action: "save", document }))).status, 200);

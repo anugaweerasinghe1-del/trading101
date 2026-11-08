@@ -58,7 +58,7 @@ assert.match(dashboard, /setNewsletterSummary\(null\); setIssues\(\[\]\)/);
 assert.match(dashboard, /newsletterDrafts\.status === "fulfilled"/);
 assert.match(dashboard, /setNewsletterEdits\(null\); warnings\.push/);
 assert.match(dashboard, /newsletterEdits=\{newsletterEdits\}/);
-assert.match(inbox, /newsletterEdits: EditorialQueueRow\[\] \| null/);
+assert.match(inbox, /newsletterEdits: EditorialQueueCount \| null/);
 // The compiled browser regression covers all three bounded review lists.
 assert.match(inbox, /item\.to\.endsWith\('newsletter'\) \? 'Newsletter desk'/);
 // The two publishing desks must now require a live owner login as well as a

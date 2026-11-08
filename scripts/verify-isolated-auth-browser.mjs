@@ -108,7 +108,7 @@ async function main(){
     content:'An isolated review used solely to test the owner UI.',rating:4,
     is_visible:true,is_featured:false,created_at:new Date().toISOString(),
     owner_reply:null,owner_reply_updated_at:null,deleted_at:null};
-  let dashboardQueuesAtLimit=false;
+  let dashboardQueuesAtLimit=false,dashboardExactCounts=false,dashboardMalformedCount=false;
   let dashboardFixture=false,dailyQueueUnavailable=false,newsletterQueueUnavailable=false,dashboardSettingsUnavailable=false;
   let dashboardMetadataRequests=0,dashboardFeedsUnavailable=false;
   let dailyStatus={enabled:false,nextDue:'2026-12-09',prepareAfter:'2026-12-02',completed:20,attempts:2,
@@ -235,11 +235,17 @@ async function main(){
             }
             return json(409,{error:'No other course mutation permitted in this fixture'});
           }
-          if(dashboardFixture && ['list','daily-list'].includes(body.action)){assert.equal(body.summary,true,'Dashboard must request metadata without full documents');dashboardMetadataRequests++;}
+          if(dashboardFixture && ['list','daily-list'].includes(body.action)){
+            assert.equal(body.summary,true,'Dashboard must request metadata without full documents');
+            assert.equal(body.countDrafts,true,'Dashboard requests count-only mode');
+            dashboardMetadataRequests++;
+          }
           if(dashboardFixture && body.action==='settings' && dashboardHold){dashboardHeldRequests++;setTimeout(()=>json(200,{data:{enabled:true,runs:[]}}),600);return;}
           if(dashboardFixture && body.action==='settings')return dashboardSettingsUnavailable
             ? json(503,{error:'Fixture settings unavailable'})
             : json(200,{data:{enabled:true,model:'fixture-only',runs:[{period:'2026-10-01',slot:1,status:'paused',last_error:'Fixture HTTP503'}]}});
+          if(dashboardFixture && dashboardExactCounts && ['list','daily-list'].includes(body.action))
+            return json(200,{data:{count:body.action==='list'?(dashboardMalformedCount?null:217):31}});
           if(dashboardFixture && dashboardQueuesAtLimit && ['list','daily-list'].includes(body.action)){
             const limit=body.action==='list'?200:24;
             return json(200,{data:Array.from({length:limit},(_,index)=>({id:'bounded-'+index,status:index===0?'draft':'published'}))});
@@ -269,6 +275,8 @@ async function main(){
           if(body.action==='list'){
             newsletterReads++;
             if(dashboardFixture && newsletterQueueUnavailable)return json(503,{error:'Fixture Newsletter inbox unavailable'});
+            if(dashboardExactCounts || dashboardQueuesAtLimit)assert.equal(body.countDrafts,true,'Dashboard requests no newsletter content');
+            if(dashboardFixture && dashboardExactCounts)return json(200,{data:{count:0}});
             if(dashboardFixture && dashboardQueuesAtLimit)
               return json(200,{data:Array.from({length:16},(_,index)=>({id:'bounded-'+index,status:'approved'}))});
             if(newsletterEditorialFixture)return json(200,{data:[newsletterEdition]});
@@ -1103,6 +1111,14 @@ async function main(){
       '1 course draft awaiting review in the latest 200 records','1 daily bank draft awaiting review in the latest 24 records'])
       assert.equal(await devtools.evaluate(inbox+'.textContent.includes('+JSON.stringify(text)+')'),true,text);
     assert.equal(await devtools.evaluate("document.body.textContent.includes('drafts awaiting review in the latest 200 records')"),true,'Course dashboard card identifies the sampled count');
+    dashboardExactCounts=true;await refreshInbox();
+    await wait(()=>devtools.evaluate(inbox+"?.textContent.includes('217 course drafts awaiting review') && "+
+      inbox+".textContent.includes('31 daily bank drafts awaiting review') && !"+inbox+".textContent.includes('review list may be incomplete')"),'Exact counts supersede capped fallback without a warning');
+    assert.equal(await devtools.evaluate(inbox+".textContent.includes('Newsletter review queue unavailable')"),false,'Exact zero is a known newsletter count');
+    dashboardMalformedCount=true;await refreshInbox();
+    await wait(()=>devtools.evaluate(inbox+"?.textContent.includes('Course review queue unavailable') && "+
+      inbox+".textContent.includes('31 daily bank drafts awaiting review')"),'Malformed count is unavailable while a healthy feed remains usable');
+    dashboardExactCounts=false;dashboardMalformedCount=false;
     dashboardQueuesAtLimit=false;await refreshInbox();
     await wait(()=>devtools.evaluate(inbox+"?.textContent.includes('2 course drafts awaiting review') && !"+inbox+".textContent.includes('review list may be incomplete')"),'Below-cap queues recover ordinary counts');
     assert.equal(await devtools.evaluate("document.body.textContent.includes('Commit aaaaaaaaaaaa')"),true,'Collector evidence shows the sampled immutable commit');
