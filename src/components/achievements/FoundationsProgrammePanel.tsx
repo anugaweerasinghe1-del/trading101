@@ -40,6 +40,16 @@ async function request<T>(accessToken: string, body: Record<string, unknown>, si
 type Progress = ReturnType<typeof getFoundationsEligibility> & { status: string; programmeVersion: string; learningDays: number };
 type Assessment = ReturnType<typeof publicFoundationsAssessment>;
 
+const checkpointIds = new Set<string>(FOUNDATIONS_COURSES.flatMap(course => [...course.checkpoints]));
+const courseIds = new Set<string>(FOUNDATIONS_COURSES.map(course => course.id));
+const milestoneIds = new Set<string>(["first-course", "core-studies", "foundations"] satisfies CertificateMilestone[]);
+
+function hasValidIds(value: unknown, allowed: ReadonlySet<string>): value is string[] {
+  return Array.isArray(value) && value.length <= allowed.size
+    && new Set(value).size === value.length
+    && value.every(id => typeof id === "string" && allowed.has(id));
+}
+
 export function FoundationsProgrammePanel() {
   const { user, session, loading } = useAuth();
   return (
@@ -80,8 +90,10 @@ function Programme({ userId, token }: { userId: string; token: string }) {
     queryFn: async ({ signal }) => {
       const snapshot = await request<Progress>(token, { action: "progress" }, signal);
       if (snapshot.status !== "available" || snapshot.programmeVersion !== FOUNDATIONS_VERSION
-          || !Array.isArray(snapshot.passedCheckpoints) || !Array.isArray(snapshot.completedCourses)
-          || !Array.isArray(snapshot.milestones) || typeof snapshot.perfectSizing !== "boolean"
+          || !hasValidIds(snapshot.passedCheckpoints, checkpointIds)
+          || !hasValidIds(snapshot.completedCourses, courseIds) || !hasValidIds(snapshot.milestones, milestoneIds)
+          || typeof snapshot.finalCasePassed !== "boolean" || typeof snapshot.perfectSizing !== "boolean"
+          || (snapshot.perfectSizing && !snapshot.passedCheckpoints.includes("sizing"))
           || !Number.isInteger(snapshot.learningDays) || snapshot.learningDays < 0 || snapshot.learningDays > 7) {
         throw Error("Foundations progress unavailable.");
       }
