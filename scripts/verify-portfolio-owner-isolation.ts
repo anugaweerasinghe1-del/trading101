@@ -5,6 +5,7 @@ import { applyUnverifiedGuestRestore, readPreviousGuestPortfolio } from '../src/
 import type { Portfolio } from '../src/lib/types.ts';
 import { getAccountPortfolioHistory, getPortfolioHistory, recordAccountPortfolioSnapshot } from '../src/lib/portfolioHistory.ts';
 import { portfolioChartPoints } from '../src/lib/portfolioChartPoints.ts';
+import { portfolioChartDomain, formatPortfolioChartTick, isPortfolioReferenceVisible } from '../src/lib/portfolioChartDisplay.ts';
 import { getAnalysis } from '../src/lib/tradingJournal.ts';
 const values = new Map<string, string>();
 const storage = {
@@ -26,6 +27,18 @@ assert.equal(readPreviousGuestPortfolio(), null, 'guest undo cannot be used in a
 const privateAccount: Portfolio = { ...guest, cash: 98000, totalValue: 98100,
   trades: guest.trades.map(t => ({ ...t, id: 'server-trade-a', journal: { notes: 'PRIVATE ACCOUNT A', reasoning: 'private', emotions: [] } })) };
 savePortfolio(privateAccount, { silent: true });
+// A tightly clustered $100K portfolio chart must stay readable; a 10% downside
+// threshold is a separate comparison, not permission to flatten its Y axis.
+const narrow = portfolioChartDomain([{ value: 99995 }, { value: 100031.20 }]);
+assert.ok(narrow[0] < 99995 && narrow[1] > 100031.20 && narrow[0] > 90000,
+  'A far-away downside threshold cannot flatten actual portfolio movements');
+assert.equal(isPortfolioReferenceVisible(90000, narrow), false);
+assert.equal(isPortfolioReferenceVisible(100000, narrow), true);
+assert.equal(formatPortfolioChartTick(100031.20, 8), '$100,031.2');
+assert.equal(formatPortfolioChartTick(99995, 50), '$99,995');
+assert.ok(formatPortfolioChartTick(0.0042, 0.002).startsWith('$0.0042'),
+  'Tiny supported account values keep enough tick precision');
+assert.deepEqual(portfolioChartDomain([{ value: 100000 }]).length, 2);
 const today = Date.now();
 const only = { timestamp: new Date(today - 60_000), totalValue: 100031.20, cash: 98000, positionsValue: 2031.20 };
 assert.equal(portfolioChartPoints([], 100031.20, true, today).length, 1,
