@@ -162,13 +162,30 @@ async function publicShared(username: string) {
   const pinned = (Array.isArray(pref.pins)?pref.pins:[]).filter((id:string)=>eligible.has(id)).slice(0,3);
   return { status:"available", pinned, flair:pref.flair && eligible.has(pref.flair)?pref.flair:null };
 }
+async function readBoundedBody(request: Request): Promise<unknown> {
+  if (Number(request.headers.get("content-length")) > 4096) throw new RangeError("too large");
+  if (!request.body) throw Error("missing body");
+  const reader = request.body.getReader();
+  const decoder = new TextDecoder("utf-8",{fatal:true});
+  let bytes=0, text="";
+  try {
+    while (true) {
+      const chunk=await reader.read();
+      if (chunk.done) break;
+      bytes+=chunk.value.byteLength;
+      if (bytes>4096) { void reader.cancel().catch(()=>{}); throw new RangeError("too large"); }
+      text+=decoder.decode(chunk.value,{stream:true});
+    }
+    return JSON.parse(text+decoder.decode());
+  } finally { reader.releaseLock(); }
+}
 Deno.serve(async request => {
   if (request.method==="OPTIONS") return new Response(null,{status:204,headers});
   if (request.method!=="POST") return reply(405,{status:"method_not_allowed"});
   try {
-    const raw = await request.text();
-    if (new TextEncoder().encode(raw).length > 4096) return reply(413,{status:"too_large"});
-    const data: unknown = JSON.parse(raw);
+    let data: unknown;
+    try { data=await readBoundedBody(request); }
+    catch(error) { return reply(error instanceof RangeError?413:400,{status:"invalid_request"}); }
     if (!data || typeof data!=="object" || Array.isArray(data)) return reply(400,{status:"invalid_request"});
     const input = data as Record<string,unknown>;
     const action = input.action;
