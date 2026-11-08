@@ -720,3 +720,22 @@ accepted. Partial live and fixture outcomes are credited as evidence below.
 - Rollback: revert the web PR. Account records and existing archived data need
   no rollback. Resume the earlier Phase 5 checklist only after this repair's
   production gates are resolved.
+
+### 8 Nov — portfolio owner acceptance and trophy evidence follow-up
+
+- #386 deployed as `f1fe422b1b14e769c15c584e7712819315c7d7bf`.
+  [Native release verification](https://github.com/anugaweerasinghe1-del/trading101/actions/runs/42442080498/job/128615329607)
+  confirmed Cloudflare Pages and Vercel production. In the owner-authorized
+  signed-in browser, the chart and total matched after manual refresh and
+  reload. Two trades and two positions remained visible. Missing device
+  history was shown explicitly. This closes the portfolio incident acceptance
+  gate without closing traditional quote coverage or Phase 5.
+- The signed-in Trophy Cabinet loaded its account-recorded trade evidence and
+  Foundations progress. The 11 connected trophies rendered earned or locked
+  states. The other nine rendered Evidence unavailable. Certificate issuance,
+  durable award records and optional public sharing are separate gates.
+- A malformed progress reply previously passed the client array-shape checks.
+  Duplicate and retired checkpoint IDs could inflate Field Notes progress.
+  The web panel now accepts only unique IDs from its versioned programme and
+  rejects invalid flags before rendering progress. Rejection preserves the
+  existing Retry path. This is a client safeguard, not a new evidence source.

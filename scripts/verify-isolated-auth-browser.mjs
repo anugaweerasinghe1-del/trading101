@@ -82,7 +82,7 @@ async function main(){
   let showPublications=false,publicationReads=0;
   let learningWrites=0, learningReads=0, savedLearning=null;
   let privateTradeReads=0, privateTradeRejected=0;
-  let foundationsReads=0, foundationsGradeCalls=0, foundationsPassed=false, certificateIssues=0;
+  let foundationsReads=0, foundationsGradeCalls=0, foundationsPassed=false, malformedFoundationsProgress=true, certificateIssues=0;
   let issuedCertificate=null;
   let certificateShareToken=null;
   const foundationsVersion="foundations-v1";
@@ -152,6 +152,8 @@ async function main(){
         let text='';req.on('data',chunk=>{text+=chunk});req.on('end',()=>{
           const input=JSON.parse(text);
           foundationsReads++;
+          if(input.action==='progress' && malformedFoundationsProgress)return json(200,{status:'available',programmeVersion:foundationsVersion,
+            completedCourses:[],finalCasePassed:false,perfectSizing:false,learningDays:0,milestones:[],passedCheckpoints:['markets','markets','retired-checkpoint']});
           if(input.action==='progress')return json(200,{status:'available',programmeVersion:foundationsVersion,
             completedCourses:foundationsPassed?['market-and-orders']:[],finalCasePassed:false,perfectSizing:false,learningDays:foundationsPassed?1:0,milestones:foundationsPassed?['first-course','core-studies','foundations']:[],passedCheckpoints:foundationsPassed?['markets']:[]});
           if(input.action==='assessment'){
@@ -732,6 +734,12 @@ async function main(){
     const programmeClick=label=>devtools.evaluate(programmeButton(label)+"?.click()");
     const collection="document.querySelector('section[aria-labelledby=trophy-collection-title]')";
     await wait(()=>devtools.evaluate(collection+"?.querySelectorAll('img').length===20"),'Twenty trophy illustrations rendered');
+    await wait(()=>devtools.evaluate(programme+".textContent.includes('Foundations progress is temporarily unavailable.')"),'Malformed progress is rejected');
+    assert.equal(await devtools.evaluate("Boolean("+collection+".querySelector('[aria-label=\"Field Notes progress\"]'))"),false,'Duplicate or retired checkpoints cannot appear as earned evidence');
+    malformedFoundationsProgress=false;
+    await programmeClick('Retry');
+    await wait(()=>devtools.evaluate(collection+".querySelector('[aria-label=\"Field Notes progress\"]')?.textContent.trim()==='0 / 3'"),'Valid retry restores the verified zero state');
+
     assert.equal(await devtools.evaluate("new Set([..."+collection+".querySelectorAll('img')].map(x=>x.getAttribute('src'))).size"),20);
     await devtools.evaluate(collection+".querySelectorAll('img').forEach(icon=>icon.loading='eager')");
     await wait(()=>devtools.evaluate("[..."+collection+".querySelectorAll('img')].every(icon=>icon.complete && icon.naturalWidth===232 && icon.naturalHeight===232)"),'All twenty full-size trophy images loaded');
