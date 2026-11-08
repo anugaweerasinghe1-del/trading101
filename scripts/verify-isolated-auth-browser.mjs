@@ -83,6 +83,11 @@ async function main(){
   let learningWrites=0, learningReads=0, savedLearning=null;
   let privateTradeReads=0, privateTradeRejected=0;
   let foundationsReads=0, foundationsGradeCalls=0, foundationsPassed=false, malformedFoundationsProgress=true, inconsistentFoundationsProgress=true, inconsistentFoundationsReplySent=false, certificateIssues=0;
+  let trophyFixtureEnabled=false, trophyPrivateReads=0, trophyGrades=0, trophyShared=false, trophyEarned=false;
+  const trophyIds=["first-light","field-notes","market-compass","order-desk","price-detective","risk-aware",
+    "position-architect","exit-planner","cost-counter","portfolio-lens","first-practice-trade",
+    "pause-button","scenario-explorer","decision-review","second-look","case-solver","case-collector",
+    "steady-learner","knowledge-builder","foundations-graduate"];
   let issuedCertificate=null;
   let certificateShareToken=null;
   const foundationsVersion="foundations-v1";
@@ -146,6 +151,45 @@ async function main(){
         '/functions/v1/admin-courses','/functions/v1/admin-reviews','/functions/v1/newsletter-dispatch',
         '/functions/v1/newsletter-editor','/functions/v1/admin-agent-chat',
       ].includes(route)) return json(503,{error:'Fixture dashboard feeds unavailable'});
+      if(route==='/functions/v1/trophy-evidence'){
+        assert.equal(req.method,'POST');
+        let raw='';req.on('data',chunk=>{raw+=chunk});req.on('end',()=>{
+          const input=JSON.parse(raw);
+          if(input.action==='public')return json(200,trophyShared?
+            {status:'available',flair:'exit-planner',pinned:['exit-planner']}:
+            {status:'private',flair:null,pinned:[]});
+          assert.equal(req.headers.authorization,'Bearer '+JWT,'Trophy evidence uses the signed-in account JWT');
+          trophyPrivateReads++;
+          if(!trophyFixtureEnabled)return json(503,{status:'unavailable'});
+          if(input.action==='state')return json(200,{
+            status:'available',profilePublic:true,
+            share:{enabled:trophyShared,flair:trophyShared?'exit-planner':null,pins:trophyShared?['exit-planner']:[]},
+            entries:trophyIds.map(id=>({id,progress:Number(id==='exit-planner'&&trophyEarned),
+              target:1,earned:id==='exit-planner'&&trophyEarned,issuedAt:id==='exit-planner'&&trophyEarned?'2026-11-08T00:00:00Z':null})),
+          });
+          if(input.action==='list_daily')return json(200,{status:'available',cases:[{id:'practice-01',title:'Fixture case'}]});
+          if(input.action==='challenge'&&input.challengeId==='exit-planning')return json(200,{status:'available',
+            challenge:{id:'exit-planning',title:'Exit Planner',detail:'A harmless fictional scored exercise for browser verification.',
+              category:'case',questions:Array.from({length:3},(_,i)=>({prompt:'Choose the tested reasoning '+i,
+                options:['A valid fictional answer','An unsupported forecast','An invented confirmation']}))}});
+          if(input.action==='grade'){
+            assert.equal(input.challengeId,'exit-planning');
+            assert.deepEqual(input.answers,[0,0,0]);
+            trophyGrades++;trophyEarned=true;
+            return json(200,{status:'graded',points:3,possible:3,passed:true,updated:true,
+              explanations:['Scored in isolated fixture','No real market','No rank change']});
+          }
+          if(input.action==='share'){
+            assert.equal(input.enabled,!trophyShared,'Explicit user change required');
+            if(input.enabled){assert.equal(input.flair,null);assert.deepEqual(input.pins,['exit-planner']);}
+            else {assert.equal(input.flair,null);assert.deepEqual(input.pins,[]);}
+            trophyShared=input.enabled;
+            return json(200,{status:'available',share:{enabled:trophyShared,flair:null,
+              pins:trophyShared?['exit-planner']:[]}});
+          }
+          return json(400,{status:'invalid_request'});
+        });return;
+      }
       if(route==='/functions/v1/foundations-certificate'){
         assert.equal(req.method,'POST');
         assert.equal(req.headers.authorization,'Bearer '+JWT,'Foundations reads and grades use the account JWT');
@@ -823,6 +867,30 @@ async function main(){
     await loadDocument(origin+"/achievements");
     await wait(()=>devtools.evaluate("Boolean("+programmeButton('Core Studies Certificate')+")"),'Return to cabinet for mobile certificate checks');
     console.log('ISOLATED_CERTIFICATE_VERIFICATION_PASS: explicit opt-in, anonymous minimal proof and withdrawal.');
+    // New independent trophy service: private default, server-scored earned
+    // record, separate sharing consent and complete withdrawal in real Chromium.
+    trophyFixtureEnabled=true;
+    await loadDocument(origin+"/achievements");
+    await wait(()=>devtools.evaluate("document.querySelector('#trophy-challenges')?.textContent.includes('0 / 20 earned')"),'Authenticated twenty-award snapshot');
+    await devtools.evaluate("[...document.querySelectorAll('#trophy-challenges button')].find(b=>b.textContent.trim()==='Exit planning')?.click()");
+    await wait(()=>devtools.evaluate("document.querySelectorAll('#trophy-challenges fieldset').length===3"),'Scored Exit Planner loaded');
+    await devtools.evaluate("document.querySelectorAll('#trophy-challenges fieldset').forEach(f=>f.querySelector('input')?.click())");
+    await devtools.evaluate("[...document.querySelectorAll('#trophy-challenges button')].find(b=>b.textContent.trim()==='Submit to be scored')?.click()");
+    await wait(()=>trophyEarned&&trophyGrades===1,'Server-scored trophy earned exactly once');
+    await wait(()=>devtools.evaluate("document.querySelector('#trophy-challenges')?.textContent.includes('1 / 20 earned')"),'Durable trophy appears after server receipt');
+    await devtools.evaluate("document.querySelector('section[aria-labelledby=trophy-sharing-title] input[type=checkbox]')?.click()");
+    await wait(()=>devtools.evaluate("document.querySelectorAll('section[aria-labelledby=trophy-sharing-title] input[type=checkbox]').length===2"),'Explicit trophy sharing controls');
+    await devtools.evaluate("document.querySelectorAll('section[aria-labelledby=trophy-sharing-title] input[type=checkbox]')[1]?.click()");
+    await devtools.evaluate("[...document.querySelectorAll('section[aria-labelledby=trophy-sharing-title] button')].find(b=>b.textContent.trim()==='Save explicit trophy sharing')?.click()");
+    await wait(()=>trophyShared,'Separate explicit public trophy consent saved');
+    const publicProof=await devtools.evaluate("fetch('/functions/v1/trophy-evidence',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({action:'public',username:'test-trader'})}).then(r=>r.json()).then(r=>r.status==='available'&&r.pinned.includes('exit-planner'))");
+    assert.equal(publicProof,true,'Only selected earned trophy appears in the public response');
+    await devtools.evaluate("document.querySelector('section[aria-labelledby=trophy-sharing-title] input[type=checkbox]')?.click()");
+    await devtools.evaluate("[...document.querySelectorAll('section[aria-labelledby=trophy-sharing-title] button')].find(b=>b.textContent.trim()==='Withdraw trophy sharing')?.click()");
+    await wait(()=>!trophyShared,'Trophy public consent withdrawn immediately');
+    assert.equal(await devtools.evaluate("fetch('/functions/v1/trophy-evidence',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({action:'public',username:'test-trader'})}).then(r=>r.json()).then(r=>r.status)"),'private');
+    assert.equal(trophyGrades,1,'A share toggle never repeats a graded attempt');
+    console.log('ISOLATED_TROPHY_SHARING_PASS: signed-in scoring, durable render, explicit opt-in, public allowlist and revocation in Chromium.');
 
 
     await devtools.send('Emulation.setDeviceMetricsOverride',{width:320,height:860,deviceScaleFactor:1,mobile:true});
