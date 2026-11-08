@@ -80,6 +80,8 @@ export function VerifiedTrophyChallenges() {
     try {
       const result=await trophyRequest<{status:string;challenge?:ScoredChallenge}>(token,{action:"challenge",challengeId:nextId});
       if(owner.current!==id)return;
+      if(result.status==="rate_limited") throw Error("Too many challenge requests. Try again after the short cooldown.");
+      if(result.status==="unauthenticated") throw Error("Your session has expired. Sign in again.");
       if(result.status!=="available"||!result.challenge||!Array.isArray(result.challenge.questions)
         ||typeof result.challenge.attemptId!=="string") throw Error("This challenge is unavailable.");
       setChallenge(result.challenge); setAnswers(result.challenge.questions.map(()=>null));
@@ -96,6 +98,9 @@ export function VerifiedTrophyChallenges() {
       if(owner.current!==id)return;
       if(result.status==="requires_scored_arena") throw Error("Pass one scored Arena scenario before completing its Decision Review.");
       if(result.status==="requires_first_miss") throw Error("Start with an incorrect First Attempt, then correct the concept in the follow-up.");
+      if(result.status==="attempt_expired_or_used") throw Error("This attempt expired or was already submitted. Reopen the exercise for a fresh attempt.");
+      if(result.status==="rate_limited") throw Error("Too many submissions. Try again after the short cooldown.");
+      if(result.status==="unauthenticated") throw Error("Your session has expired. Sign in again.");
       if(result.status!=="graded"||typeof result.points!=="number"||typeof result.possible!=="number"||typeof result.passed!=="boolean") throw Error("Your scored result is unavailable.");
       setGrade({points:result.points,possible:result.possible,passed:result.passed,
         next:result.next,explanations:Array.isArray(result.explanations)?result.explanations:[]});
@@ -113,6 +118,9 @@ export function VerifiedTrophyChallenges() {
       if(owner.current!==id)return;
       if(result.status==="make_profile_public_first") throw Error("Set your trader profile to public before opting in to display trophies.");
       if(result.status==="confirm_account_first") throw Error("Confirm your account before sharing trophies.");
+      if(result.status==="award_not_earned") throw Error("Only server-issued trophies can be selected for public display.");
+      if(result.status==="rate_limited") throw Error("Too many sharing requests. Try again after the short cooldown.");
+      if(result.status==="unauthenticated") throw Error("Your session has expired. Sign in again.");
       if(result.status!=="available") throw Error("Trophy sharing was not saved.");
       setSavedShare(shareEnabled?"Your chosen earned trophies are now visible on your public trader profile.":"Trophy sharing has been withdrawn.");
       await cache.invalidateQueries({queryKey:trophyEvidenceKey(id)});
