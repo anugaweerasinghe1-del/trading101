@@ -11,7 +11,7 @@ export interface TrophyState {
   profilePublic: boolean;
 }
 export type ScoredChallenge = {
-  id: string; title: string; detail: string; category: string;
+  id: string; title: string; detail: string; category: string; attemptId: string;
   questions: Array<{ prompt: string; options: string[] }>;
 };
 export const trophyEvidenceKey = (userId: string | null) => ["server-trophy-evidence", userId] as const;
