@@ -11,6 +11,7 @@ export interface Profile {
   country: string | null;
   bio: string | null;
   is_public: boolean;
+  public_visibility_confirmed: boolean;
   show_public_trades: boolean;
 }
 
@@ -43,7 +44,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const loadProfile = useCallback(async (uid: string, generation = authGeneration.current) => {
     const { data } = await supabase
       .from("profiles")
-      .select("id, username, country, bio, is_public, show_public_trades")
+      .select("id, username, country, bio, is_public, public_visibility_confirmed, show_public_trades")
       .eq("id", uid)
       .maybeSingle();
     if (generation === authGeneration.current && currentUserId.current === uid) setProfile((data as Profile) ?? null);
