@@ -1799,6 +1799,26 @@ async function main(){
 
     console.log('ISOLATED_AUTOMATION_INBOX_PASS: compiled dashboard combines course, Daily and Newsletter drafts, failures, cooldown, open findings and proposals; collector evidence linked to commit; partial outages stay unknown while other feeds update; zero mutations. Fixture only.');
     console.log('ISOLATED_COURSE_PROGRESS_BROWSER_PASS: null tracks, null lessons and invalid lesson rows recovered; valid unrelated completion/badge retained after real lesson save and reload; fixture only.');
+    const courseLesson = coursePath + "/what-is-an-option";
+    const setRestoredProgress = async tracks => devtools.evaluate(`(() => {
+      localStorage.setItem("tradehq_course_progress_v1", JSON.stringify({v: 1, tracks: ${JSON.stringify(tracks)}}));
+      window.dispatchEvent(new Event("tradehq:course-progress-updated"));
+    })()`);
+    const restoredTrack = {
+      "options-trading-fundamentals": { lessons: { "what-is-an-option": {status: "completed", score: 4} } },
+    };
+    await setRestoredProgress({});
+    await loadDocument(origin + coursePath);
+    await wait(() => devtools.evaluate(`!!document.querySelector('a[href="${courseLesson}"] svg.lucide-circle')`), "Open course shows incomplete lesson before restoration");
+    await setRestoredProgress(restoredTrack);
+    await wait(() => devtools.evaluate(`!!document.querySelector('a[href="${courseLesson}"] svg[class*="check"]')`), "Open course reflects restored lesson without reload");
+    await setRestoredProgress({});
+    await loadDocument(origin + "/courses");
+    const card = `document.querySelector('a[href="${coursePath}"]')`;
+    await wait(() => devtools.evaluate(card + "?.textContent.includes('0% complete')"), "Open catalog shows initial completion");
+    await setRestoredProgress(restoredTrack);
+    await wait(() => devtools.evaluate(card + "?.textContent.includes('20% complete')"), "Open catalog reflects restored completion without reload");
+    console.log("ISOLATED_COURSE_RESTORATION_UI_PASS: track and catalog show asynchronous account progress without reload.");
     console.log("ISOLATED_AUTH_BROWSER_PASS: reload persistence; real UI sign-out; no resurrected session; expired refresh rejected; ten Daily answers persisted/resumed/locked; one streak per day; actual built TradeHQ login in real Chromium; negative password refused; fake Supabase grant accepted; authenticated profile navigation observed; isolated account initialization executed; zero non-allowlisted backend writes; zero real provider calls.");
   }finally{
     holdLearnModule=false;releaseLearnModules.splice(0).forEach(release=>release());

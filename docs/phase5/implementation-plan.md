@@ -783,3 +783,8 @@ accepted. Partial live and fixture outcomes are credited as evidence below.
   for older browser builds. The deployment requires protected CI and
   migration verification. The guard can be rolled back by removing its
   trigger and function without rewriting any learner record.
+- A hosted quiz completion restored to a separate mobile session. The open
+  course track kept its incomplete marker until reload after a delayed account
+  read. The catalog and track now subscribe to the existing progress event and
+  render from the same restored snapshot. Compiled browser coverage exercises
+  both views during a delayed restoration.
