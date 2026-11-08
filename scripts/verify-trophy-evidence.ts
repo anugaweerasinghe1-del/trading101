@@ -74,6 +74,7 @@ try {
     grant usage on schema auth to service_role;`);
   await db.exec(readFileSync("supabase/migrations/20261108110000_verified_trophy_evidence_and_sharing.sql","utf8"));
   await db.exec("create function auth.uid() returns uuid language sql stable as $auth_uid$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $auth_uid$");
+  await db.exec("create schema tradehq_private");
   await db.exec(readFileSync("supabase/migrations/20261108180000_explicit_public_profile_reconsent.sql","utf8"));
   for(const role of ["anon","authenticated"]) {
     await db.exec("set role "+role);
