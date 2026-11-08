@@ -37,17 +37,33 @@ create table public.trophy_share_v1 (
   constraint trophy_share_disabled_empty check (enabled or (flair is null and cardinality(pins) = 0))
 );
 
+-- A single account- and challenge-bound, short-lived, one-use scoring receipt.
+-- Re-opening the same exercise invalidates its previous outstanding attempt.
+create table public.trophy_attempt_v1 (
+  user_id uuid not null references auth.users(id) on delete cascade,
+  challenge_id text not null check (length(challenge_id) between 1 and 80),
+  attempt_id uuid not null unique,
+  evidence_version text not null check (length(evidence_version) between 1 and 100),
+  issued_at timestamptz not null default now(),
+  expires_at timestamptz not null,
+  consumed_at timestamptz,
+  primary key (user_id, challenge_id),
+  constraint trophy_attempt_expiration check (expires_at > issued_at)
+);
+
 create index trophy_activity_v1_user_pass on public.trophy_activity_v1(user_id, source, result);
 create index trophy_awards_v1_user on public.trophy_awards_v1(user_id);
 
 alter table public.trophy_activity_v1 enable row level security;
+alter table public.trophy_attempt_v1 enable row level security;
 alter table public.trophy_awards_v1 enable row level security;
 alter table public.trophy_share_v1 enable row level security;
 
 -- Browser roles cannot read, forge, erase or share awards with the Data API.
-revoke all on public.trophy_activity_v1, public.trophy_awards_v1, public.trophy_share_v1
+revoke all on public.trophy_activity_v1, public.trophy_awards_v1, public.trophy_share_v1, public.trophy_attempt_v1
   from public, anon, authenticated, service_role;
 grant select, insert on public.trophy_activity_v1 to service_role;
+grant select, insert, update on public.trophy_attempt_v1 to service_role;
 grant select, insert on public.trophy_awards_v1 to service_role;
 grant select, insert, update on public.trophy_share_v1 to service_role;
 commit;
