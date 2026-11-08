@@ -100,7 +100,7 @@ async function readState(userId: string) {
     admin.from("trophy_activity_v1").select("source,source_key,programme_version,result,points,possible").eq("user_id",userId),
     admin.from("trophy_awards_v1").select("trophy_id,issued_at").eq("user_id",userId),
     admin.from("trophy_share_v1").select("enabled,flair,pins").eq("user_id",userId).maybeSingle(),
-    admin.from("profiles").select("is_public").eq("id",userId).maybeSingle(),
+    admin.from("profiles").select("is_public,public_visibility_confirmed").eq("id",userId).maybeSingle(),
   ]);
   for (const x of [g,d,t,e,a,s,p]) if (x.error) throw x.error;
   const grades = (g.data ?? []).map(x => ({
@@ -158,14 +158,14 @@ async function readState(userId: string) {
   const entries = ids.map(id=>({ id, progress:Math.min(counts[id],targets[id]), target:targets[id],
     earned:awardDates.has(id), issuedAt:awardDates.get(id) ?? null }));
   const prefs = s.data as Share | null;
-  return { entries, share:prefs ?? emptyShare(), profilePublic:p.data?.is_public===true };
+  return { entries, share:prefs ?? emptyShare(), profilePublic:p.data?.is_public===true && p.data?.public_visibility_confirmed===true };
 }
 
 async function publicShared(username: string) {
   if (!/^[a-zA-Z0-9_-]{1,80}$/.test(username)) return { status:"private", pinned:[], flair:null };
-  const { data: profile, error } = await admin.from("profiles").select("id,is_public").eq("username",username).maybeSingle();
+  const { data: profile, error } = await admin.from("profiles").select("id,is_public,public_visibility_confirmed").eq("username",username).maybeSingle();
   if (error) throw error;
-  if (!profile || profile.is_public !== true) return { status:"private", pinned:[], flair:null };
+  if (!profile || profile.is_public !== true || profile.public_visibility_confirmed !== true) return { status:"private", pinned:[], flair:null };
   const { data: pref, error: prefError } = await admin.from("trophy_share_v1")
     .select("enabled,flair,pins").eq("user_id",profile.id).maybeSingle();
   if (prefError) throw prefError;
