@@ -5,6 +5,7 @@ import { TrendingUp, TrendingDown, Shield } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { portfolioChartPoints } from "@/lib/portfolioChartPoints";
+import { portfolioChartDomain, formatPortfolioChartTick, isPortfolioReferenceVisible } from "@/lib/portfolioChartDisplay";
 import { Button } from "@/components/ui/button";
 
 export function PortfolioChart({ currentValue, history, account, receivedAt }: {
@@ -15,12 +16,15 @@ export function PortfolioChart({ currentValue, history, account, receivedAt }: {
   const data = portfolioChartPoints(history, currentValue, account, receivedAt);
   const hasHistory = data.length >= 2;
   const hasCurrentObservation = data.length === 1;
+  // Scale the plotted observations, not the much lower 10% reference threshold.
+  const chartDomain = portfolioChartDomain(data);
   const initialValue = data[0]?.value ?? currentValue;
   const change = currentValue - initialValue;
   const changePercent = initialValue > 0 ? ((change / initialValue) * 100).toFixed(2) : null;
   const isPositive = change >= 0;
   const stopLossValue = initialValue * (1 - stopLossPercent / 100);
   const stopLossBreached = hasHistory && currentValue < stopLossValue;
+  const referenceInView = hasHistory && isPortfolioReferenceVisible(stopLossValue, chartDomain);
 
   return (
     <Card className="p-6 bg-card/50 backdrop-blur-sm">
@@ -30,11 +34,13 @@ export function PortfolioChart({ currentValue, history, account, receivedAt }: {
           {hasHistory && <Button
             variant="outline"
             size="sm"
-            onClick={() => setShowStopLoss(!showStopLoss)}
+            onClick={() => setShowStopLoss(visible => !visible)}
+            aria-pressed={showStopLoss}
+            aria-label="Toggle 10% downside reference"
             className="gap-2"
           >
             <Shield className="w-4 h-4" />
-            Reference line: {stopLossPercent}%
+            {showStopLoss ? "Hide" : "Show"} {stopLossPercent}% downside reference
           </Button>}
         </div>
         <p className="text-xs text-muted-foreground mb-3">{account
@@ -67,16 +73,20 @@ export function PortfolioChart({ currentValue, history, account, receivedAt }: {
       </p>}
       {data.length > 0 && <div className="min-w-0" data-portfolio-chart-state={hasHistory ? "trend" : "single-observation"}>
         <ResponsiveContainer width="100%" height={hasHistory ? 300 : 210}>
-        <LineChart data={data}>
+        <LineChart data={data} margin={{ top: 12, right: 18, bottom: 10, left: 10 }}>
           <XAxis 
             dataKey="time" 
             stroke="hsl(var(--muted-foreground))"
-            tick={{ fill: 'hsl(var(--muted-foreground))' }}
+            tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 11 }}
+            minTickGap={16}
           />
-          <YAxis 
+          <YAxis
+            width={108}
+            tickMargin={10}
             stroke="hsl(var(--muted-foreground))"
-            tick={{ fill: 'hsl(var(--muted-foreground))' }}
-            domain={['auto', 'auto']}
+            tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 11 }}
+            domain={chartDomain}
+            tickFormatter={(value: number) => formatPortfolioChartTick(value, chartDomain[1] - chartDomain[0])}
           />
           <Tooltip 
             contentStyle={{ 
@@ -88,18 +98,12 @@ export function PortfolioChart({ currentValue, history, account, receivedAt }: {
           />
           
           {/* Stop Loss Line */}
-          {hasHistory && showStopLoss && (
+          {hasHistory && showStopLoss && referenceInView && (
             <ReferenceLine
               y={stopLossValue}
               stroke="hsl(var(--destructive))"
               strokeDasharray="5 5"
               strokeWidth={2}
-              label={{
-                value: `Reference: $${stopLossValue.toFixed(0)}`,
-                position: 'right',
-                fill: 'hsl(var(--destructive))',
-                fontSize: 12,
-              }}
             />
           )}
           
@@ -109,12 +113,6 @@ export function PortfolioChart({ currentValue, history, account, receivedAt }: {
             stroke="hsl(var(--muted-foreground))"
             strokeDasharray="3 3"
             strokeWidth={1}
-            label={{
-              value: `First snapshot: $${initialValue.toFixed(0)}`,
-              position: 'left',
-              fill: 'hsl(var(--muted-foreground))',
-              fontSize: 12,
-            }}
           />}
           
           <Line 
@@ -127,6 +125,17 @@ export function PortfolioChart({ currentValue, history, account, receivedAt }: {
           />
         </LineChart>
         </ResponsiveContainer>
+        {hasHistory && <div className="mt-4 space-y-2 border-t border-border/50 pt-3 text-xs text-muted-foreground">
+          <p>First saved observation: <strong className="font-medium text-foreground">{initialValue.toLocaleString("en-US", { style: "currency", currency: "USD" })}</strong></p>
+          <p role="status" aria-live="polite" data-portfolio-reference-status>
+            {showStopLoss
+              ? <>10% downside reference: <strong className="font-medium text-foreground">{stopLossValue.toLocaleString("en-US", { style: "currency", currency: "USD" })}</strong>. {referenceInView
+                  ? "The dashed reference line is visible on the chart."
+                  : "The reference is below this chart's visible scale; it is shown here without flattening your actual portfolio changes."}</>
+              : "10% downside reference hidden."}
+          </p>
+          <p>This is an educational comparison, not a stop-loss order.</p>
+        </div>}
       </div>}
     </Card>
   );
