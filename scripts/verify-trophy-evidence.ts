@@ -50,7 +50,8 @@ try {
     create schema auth;create table auth.users(id uuid primary key,confirmed_at timestamptz);
     create table public.profiles(id uuid primary key references auth.users(id),username text unique,is_public boolean not null default false);
     insert into auth.users values ('${a}',now()),('${b}',now());
-    insert into public.profiles values ('${a}','verified-learner',true),('${b}','private-learner',false);`);
+    insert into public.profiles values ('${a}','verified-learner',true),('${b}','private-learner',false);
+    grant select, update on public.profiles, auth.users to service_role;`);
   await db.exec(readFileSync("supabase/migrations/20261108110000_verified_trophy_evidence_and_sharing.sql","utf8"));
   for(const role of ["anon","authenticated"]) {
     await db.exec("set role "+role);
