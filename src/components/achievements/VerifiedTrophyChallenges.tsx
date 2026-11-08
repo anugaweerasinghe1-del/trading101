@@ -225,7 +225,7 @@ export function VerifiedTrophyChallenges() {
               </h3>
               <p className="text-sm text-muted-foreground mt-2">Private by default and independent of trader-profile visibility. You control a single flair and up to three pinned trophies. No scores, study dates, trade activity or contact information are shared.</p>
             </div>
-            {!state?.profilePublic&&<p className="text-sm text-muted-foreground">Your profile is private. To share trophies you must first intentionally enable public profile visibility, then opt in here. <Link to="/profile" className="underline">Profile settings</Link>.</p>}
+            {state?.profilePublic === false && <p className="text-sm text-muted-foreground">Your profile is private. To share trophies you must first intentionally enable public profile visibility, then opt in here. <Link to="/trader/me" className="underline">Profile settings</Link>.</p>}
             <label className="flex min-h-11 items-center gap-3 text-sm font-medium">
               <input type="checkbox" checked={shareEnabled} onChange={e=>setShareEnabled(e.target.checked)} disabled={working||!state} />
               I choose to display only my selected earned trophies on my public profile.
