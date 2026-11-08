@@ -744,7 +744,9 @@ async function main(){
     portfolioReadFailure=false;
     await refreshPortfolio();
     await wait(()=>devtools.evaluate(chartValue+"==='$99999.85' && "+accountValue+"==='$99999.85'"),'Both account displays use the same server valuation');
-    await wait(()=>devtools.evaluate("document.body.textContent.includes('History is unavailable on this device')"),'Missing account history is stated explicitly');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('One real portfolio observation is available.')"),'One real account observation is explained');
+    await wait(()=>devtools.evaluate("!!document.querySelector('[data-portfolio-chart-state=single-observation] .recharts-wrapper')"),'A single real point has an accessible chart container');
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('since first saved snapshot')"),false,'A single observation never invents historical performance');
     assert.ok(portfolioReads>0);
     const initCount=portfolioInitialized;
     portfolioReadFailure=true;await refreshPortfolio();
