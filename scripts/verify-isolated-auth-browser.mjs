@@ -108,6 +108,22 @@ async function main(){
     content:'An isolated review used solely to test the owner UI.',rating:4,
     is_visible:true,is_featured:false,created_at:new Date().toISOString(),
     owner_reply:null,owner_reply_updated_at:null,deleted_at:null};
+  let portfolioReadFailure=false,portfolioPrice=100,portfolioReads=0,portfolioQuoteVersion=0;
+  const accountPortfolioFixture=()=>({
+    trades:[
+      {id:'fixture-account-trade',asset_id:'aapl',side:'buy',quantity:1,price:100,total:100.1,
+        created_at:'2026-11-01T10:00:00Z',price_source:'Fixture only'},
+      {id:'fixture-second-trade',asset_id:'btc',side:'buy',quantity:0.001,price:50000,total:50.05,
+        created_at:'2026-11-01T10:01:00Z',price_source:'Fixture only'},
+    ],
+    cash:99849.85,ranked:false,cycle_id:"fixture",updated_at:'2026-11-01T10:01:00Z',
+    positions:[
+      {asset_id:'aapl',symbol:'AAPL',asset_type:'stock',quantity:1,avg_price:100.1,last_price:100,
+        priced_at:new Date(epoch*1000).toISOString(),observed_at:new Date((epoch-12*3600)*1000).toISOString(),quote_status:'previous_close'},
+      {asset_id:'btc',symbol:'BTC',asset_type:'crypto',quantity:0.001,avg_price:50050,last_price:portfolioPrice*500,
+        priced_at:new Date((epoch+portfolioQuoteVersion)*1000).toISOString(),observed_at:new Date((epoch+portfolioQuoteVersion)*1000).toISOString(),quote_status:'realtime'},
+    ],
+  });
   let dashboardQueuesAtLimit=false,dashboardExactCounts=false,dashboardMalformedCount=false;
   let dashboardFixture=false,dailyQueueUnavailable=false,newsletterQueueUnavailable=false,dashboardSettingsUnavailable=false;
   let dashboardMetadataRequests=0,dashboardFeedsUnavailable=false;
@@ -427,13 +443,16 @@ async function main(){
         privateTradeReads++;
         return json(200,[{id:"fixture-server-recorded-trade"}]);
       }
+      if(route==="/rest/v1/rpc/get_my_account_practice_snapshot" && req.method==="POST"){
+        if(req.headers.authorization!=="Bearer "+JWT)return json(401,{error:"invalid_token"});
+        portfolioReads++;
+        if(portfolioReadFailure)return json(503,{message:"Fixture read unavailable"});
+        return json(200,portfolioInitialized?accountPortfolioFixture():null);
+      }
       if(route==="/rest/v1/rpc/initialize_practice_portfolio" && req.method==="POST"){
         if(req.headers.authorization!=="Bearer "+JWT)return json(401,{error:"invalid_token"});
         portfolioInitialized++;
-        return json(200,{trades:[{id:'fixture-account-trade',asset_id:'aapl',side:'buy',quantity:1,
-          price:100,total:100.1,created_at:'2026-11-01T10:00:00Z',price_source:'Fixture only'}],
-          cash:99899.9,ranked:false,cycle_id:"fixture",updated_at:'2026-11-01T10:00:00Z',
-          positions:[{asset_id:'aapl',symbol:'AAPL',asset_type:'stock',quantity:1,avg_price:100.1,last_price:100}]});
+        return json(200,accountPortfolioFixture());
       }
       if(route==="/rest/v1/rpc/get_daily_practice_bank" && req.method==="POST"){
         dailyReads++;
@@ -621,6 +640,88 @@ async function main(){
     await wait(()=>devtools.evaluate("location.pathname==='/trader/me'"),"authenticated profile redirect");
     await wait(()=>portfolioInitialized>=1,"isolated account portfolio initialization");
     await wait(()=>devtools.evaluate("localStorage.getItem('tradehq:portfolio-owner')==="+JSON.stringify(USER_ID)+" && JSON.parse(localStorage.getItem('tradehq_portfolio')||'{}').trades?.[0]?.id==='fixture-account-trade'"),'account cache restored separately from guest orders');
+    // Loopback Phoenix frames exercise the app's real Supabase channel callback.
+    await devtools.send('Page.addScriptToEvaluateOnNewDocument',{source:`(()=>{
+      if(location.pathname!=='/portfolio')return;
+      const channels=new Map();
+      const NativeSocket=window.WebSocket;
+      window.WebSocket=class FixtureRealtimeSocket extends EventTarget {
+        static CONNECTING=0;static OPEN=1;static CLOSING=2;static CLOSED=3;
+        readyState=0;
+        constructor(url){
+          super();
+          if(!new URL(url).pathname.startsWith('/realtime/v1/'))return new NativeSocket(url);
+          setTimeout(()=>{this.readyState=1;this.onopen?.({});},0);
+        }
+        close(){this.readyState=3;this.onclose?.({code:1000,reason:'fixture closed'});}
+        reply(message){this.onmessage?.({data:JSON.stringify(message)});}
+        send(raw){
+          const {topic,event,payload,ref}=JSON.parse(raw);
+          if(event==='phx_join'){
+            const bindings=(payload.config.postgres_changes||[]).map((filter,index)=>({...filter,id:index+1}));
+            channels.set(topic,{socket:this,bindings});
+            queueMicrotask(()=>this.reply({topic,event:'phx_reply',payload:{status:'ok',response:{postgres_changes:bindings}},ref}));
+          }else if(event==='heartbeat'||event==='phx_leave'){
+            if(event==='phx_leave')channels.delete(topic);
+            queueMicrotask(()=>this.reply({topic,event:'phx_reply',payload:{status:'ok',response:{}},ref}));
+          }
+        }
+      };
+      window.__fixtureQuoteUpdate=(assetId)=>{
+        for(const [topic,{socket,bindings}] of channels){
+          const binding=bindings.find(item=>item.table==='market_prices');
+          if(!binding)continue;
+          socket.reply({topic,event:'postgres_changes',payload:{ids:[binding.id],data:{
+            schema:'public',table:'market_prices',commit_timestamp:new Date().toISOString(),type:'UPDATE',
+            columns:[{name:'asset_id',type:'text'}],record:{asset_id:assetId},
+          }}});
+          return true;
+        }
+        return false;
+      };
+    })()`});
+    const chartValue = "document.querySelector('[data-portfolio-chart-value]')?.textContent";
+    const accountValue = "document.querySelector('[data-portfolio-total-value]')?.textContent";
+    const refreshPortfolio = () => devtools.evaluate("document.querySelector('[aria-label=\"Refresh portfolio and available quotes\"]')?.click()");
+    await devtools.evaluate("localStorage.removeItem('tradehq:account-portfolio-history:v1:" + USER_ID + ":fixture')");
+    portfolioReadFailure=true;
+    await loadDocument(origin+"/portfolio");
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('No confirmed account valuation is available.')"),'Account outage without a confirmed snapshot stays unavailable');
+    assert.equal(await devtools.evaluate(chartValue),undefined,'The account chart must never substitute the guest starting value');
+    portfolioReadFailure=false;
+    await refreshPortfolio();
+    await wait(()=>devtools.evaluate(chartValue+"==='$99999.85' && "+accountValue+"==='$99999.85'"),'Both account displays use the same server valuation');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('History is unavailable on this device')"),'Missing account history is stated explicitly');
+    assert.ok(portfolioReads>0);
+    const initCount=portfolioInitialized;
+    portfolioReadFailure=true;await refreshPortfolio();
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Showing the last confirmed account snapshot.')"),'Failed refresh keeps the confirmed account value');
+    assert.equal(await devtools.evaluate(chartValue),'$99999.85');
+    portfolioReadFailure=false;portfolioPrice=110;portfolioQuoteVersion=10;await refreshPortfolio();
+    await wait(()=>devtools.evaluate(chartValue+"==='$100004.85' && "+accountValue+"==='$100004.85'"),'A new crypto quote changes both views with previous close for equities');
+    await wait(()=>devtools.evaluate("!document.body.textContent.includes('Account refresh failed.')"),'Successful refresh clears the failure');
+    portfolioPrice=100;portfolioQuoteVersion=0;await refreshPortfolio();
+    await wait(()=>devtools.evaluate("!document.querySelector('[aria-label=\"Refresh portfolio and available quotes\"]')?.disabled"),'Old quote response settled');
+    assert.equal(await devtools.evaluate(chartValue),'$100004.85','Delayed quote must not roll back the account valuation');
+    assert.equal(portfolioInitialized,initCount,'An existing portfolio refresh must not call the initializer');
+    portfolioPrice=110;portfolioQuoteVersion=10;
+    await devtools.evaluate("localStorage.removeItem('tradehq_portfolio');localStorage.removeItem('tradehq:portfolio-recovery:v1')");
+    await loadDocument(origin+"/portfolio");
+    await wait(()=>devtools.evaluate(chartValue+"==='$100004.85'"),'Account value is restored on reload without a portfolio cache');
+    assert.equal(await devtools.evaluate("JSON.parse(localStorage.getItem('tradehq_portfolio')).trades.length"),2);
+    await devtools.evaluate(`(()=>{const saved=Storage.prototype.setItem;
+      Storage.prototype.setItem=function(key,value){
+        if(key==='tradehq_portfolio'||key==='tradehq:portfolio-recovery:v1'||key.startsWith('tradehq:account-portfolio-history:v1:'))throw new Error('Fixture storage quota');
+        return saved.call(this,key,value);
+      };window.__restorePortfolioStorage=()=>{Storage.prototype.setItem=saved;};})()`);
+    portfolioPrice=120;portfolioQuoteVersion=20;
+    await devtools.evaluate("window.dispatchEvent(new Event('online'))");
+    await wait(()=>devtools.evaluate(chartValue+"==='$100009.85' && "+accountValue+"==='$100009.85'"),'Confirmed values remain visible when portfolio cache storage fails');
+    await devtools.evaluate("window.__restorePortfolioStorage()");
+    portfolioPrice=130;portfolioQuoteVersion=30;
+    await wait(()=>devtools.evaluate("window.__fixtureQuoteUpdate?.('btc')"),'Portfolio channel subscribes to quote changes');
+    await wait(()=>devtools.evaluate(chartValue+"==='$100014.85' && "+accountValue+"==='$100014.85'"),'Realtime quote event refreshes the same account snapshot');
+    console.log('ISOLATED_ACCOUNT_PORTFOLIO_PASS: two protected trades, missing history, initial and cached outages, recovery, independent crypto update, older quote rejection, reload and a Realtime quote event. No live RPCs or orders.');
     await loadDocument(origin+"/achievements");
     await wait(()=>devtools.evaluate("document.body.textContent.includes('First Recorded Practice Trade')"),"authenticated Trophy milestone");
     await wait(()=>devtools.evaluate("document.querySelector('section[aria-labelledby=recorded-practice-heading] [role=status]')?.textContent.includes('Account-recorded')"),"server-recorded milestone proven");

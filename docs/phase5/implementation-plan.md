@@ -675,3 +675,48 @@ accepted. Partial live and fixture outcomes are credited as evidence below.
   and 0/17 held stock, ETF and FX assets had observations within 15 minutes.
   This establishes coverage at the sample time. Recheck open-market coverage
   and free public-display entitlements before enabling an execution source.
+
+### 8 Nov — urgent account portfolio consistency repair
+
+- The reported production account's snapshot and leaderboard agreed when read
+  together. The snapshot contained two trades and two positions. An earlier
+  screenshot and earlier database read used different observation times.
+- One reported account is confirmed affected by the chart display. Read-only
+  production inspection found 56 server portfolios, of which 37 currently
+  differ from the starting balance, including 33 with recorded trades. Those
+  users can encounter the same fallback if local history is empty. Browser
+  history, active sessions and other accounts' rendered values are unavailable
+  from these aggregates.
+- Confirmed cause: the chart previously sourced its current value from local
+  history, then used the starting balance and zero change when it was missing.
+  Normal server snapshot hydration did not supply that history. The real
+  compiled browser reproduced this against the baseline with an authenticated
+  fixture and a noninitial server value.
+- The aggregate 24-hour API log read found 568 HTTP 200 responses for the
+  initializer and no non-200 response in that sample. It cannot resolve the
+  reported browser warning. Code inspection found that sign-in, page refresh
+  and global realtime independently read the account, and that a successful
+  background read did not clear the page's separate error. The specific cause
+  of the reported production warning needs authorized browser observation.
+- The repair makes the page and chart consume one owner-bound accepted
+  snapshot. Existing accounts use the authenticated read-only snapshot RPC.
+  Refreshes coalesce, failures retain a confirmed snapshot when available, and
+  older per-asset observations, prior cycles and wrong-owner responses cannot
+  overwrite it. The account value is available even when chart cache writes
+  fail. A new browser has a current value once read and explicitly unavailable
+  history until real observations accumulate. Existing guest data and local
+  journals remain scoped to the owning session; new synthetic backfill stops.
+- Existing quote timestamps and fixed simulator references still drive
+  valuation. The schedule badge describes usual US equity hours separately.
+  Production database metadata confirms Realtime publication membership for
+  market_prices and practice_portfolios. No market write, account reset, SQL
+  migration, provider call or leaderboard mutation is needed for this repair.
+- Acceptance: browser tests cover two server-recorded trades, empty history,
+  reload, initial and cached failure/retry, stale quotes, closed-session stock
+  reference plus independent crypto change, storage quota failure, a loopback
+  Phoenix Realtime event through the compiled subscription, and guest isolation. Owner/cycle history and snapshot ordering fixtures cover switches,
+  old requests and history on a return visit. Full protected CI, native Pages
+  proof, and an authorized signed-in production read remain required.
+- Rollback: revert the web PR. Account records and existing archived data need
+  no rollback. Resume the earlier Phase 5 checklist only after this repair's
+  production gates are resolved.

@@ -9,4 +9,8 @@ assert.equal(snapshotIsStale(recent,null),false);
 const priced={...recent,pricedAt:'2026-10-07T12:05:00Z'};
 assert.equal(snapshotIsStale({...priced,pricedAt:'2026-10-07T12:04:00Z'},priced),true);
 assert.equal(snapshotIsStale({...priced,count:3,pricedAt:'2026-10-07T12:04:00Z'},priced),false);
+const perAsset = {...recent,prices:new Map([['btc','2026-10-07T12:05:00Z'],['aapl','2026-10-07T12:03:00Z']])};
+assert.equal(snapshotIsStale({...perAsset,prices:new Map([['btc','2026-10-07T12:05:00Z'],['aapl','2026-10-07T12:02:00Z']])},perAsset),true);
+assert.equal(snapshotIsStale({...perAsset,prices:new Map([['btc','2026-10-07T12:06:00Z'],['aapl','2026-10-07T12:03:00Z']])},perAsset),false);
+assert.equal(snapshotIsStale({...perAsset,updatedAt:'2026-10-07T11:59:00Z'},perAsset),true);
 console.log('PASS account snapshot races: older order response and prior cycle cannot replace newer state');

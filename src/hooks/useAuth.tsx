@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState, useCallback, useRef, ReactNode } from "react";
 import type { Session, User } from "@supabase/supabase-js";
 import { supabase } from "@/integrations/supabase/client";
-import { startCloudSync } from "@/lib/cloudPortfolio";
+import { setCloudPortfolioOwner, startCloudSync } from "@/lib/cloudPortfolio";
 import { activatePortfolioOwner } from "@/lib/portfolioOwner";
 import { recordConsentedLeaderboardRegistration, LEADERBOARD_FUNNEL_READY_EVENT } from "@/lib/leaderboardFunnelTelemetry";
 
@@ -54,6 +54,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const applySession = (s: Session | null) => {
       const generation = ++authGeneration.current;
       const uid = s?.user.id ?? null;
+      setCloudPortfolioOwner(uid);
       try { activatePortfolioOwner(uid); }
       catch { window.dispatchEvent(new Event('tradehq:portfolio-storage-warning')); }
       if (currentUserId.current !== uid) setProfile(null);

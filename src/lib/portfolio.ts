@@ -241,8 +241,7 @@ export function calculateRealizedPnL(portfolio: Portfolio): number {
 /**
  * Max drawdown from local snapshot history (peak-to-trough %).
  */
-export function calculateMaxDrawdown(): number {
-  const history = getPortfolioHistory();
+export function calculateMaxDrawdown(history = getPortfolioHistory()): number {
   if (history.length < 2) return 0;
   let peak = history[0].totalValue;
   let maxDd = 0;
@@ -259,8 +258,7 @@ export function calculateMaxDrawdown(): number {
 /**
  * Day change: total value now vs ~24h ago snapshot. Returns null if no snapshot ≥ 20h old.
  */
-export function calculateDayChange(currentValue: number): { dollars: number; percent: number } | null {
-  const history = getPortfolioHistory();
+export function calculateDayChange(currentValue: number, history = getPortfolioHistory()): { dollars: number; percent: number } | null {
   if (history.length === 0) return null;
   const cutoff = Date.now() - 20 * 60 * 60 * 1000;
   // Find oldest snapshot newer than cutoff... actually we want the snapshot closest to 24h ago

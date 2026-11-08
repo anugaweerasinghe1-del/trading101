@@ -3,7 +3,7 @@ import { activatePortfolioOwner, portfolioOwnerIs, PORTFOLIO_OWNER_KEY, PORTFOLI
 import { getPortfolio, savePortfolio, executeGuestTrade, saveTradeJournal } from '../src/lib/portfolio.ts';
 import { applyUnverifiedGuestRestore, readPreviousGuestPortfolio } from '../src/lib/portfolioRecovery.ts';
 import type { Portfolio } from '../src/lib/types.ts';
-import { getPortfolioHistory } from '../src/lib/portfolioHistory.ts';
+import { getAccountPortfolioHistory, getPortfolioHistory, recordAccountPortfolioSnapshot } from '../src/lib/portfolioHistory.ts';
 import { getAnalysis } from '../src/lib/tradingJournal.ts';
 const values = new Map<string, string>();
 const storage = {
@@ -25,15 +25,25 @@ assert.equal(readPreviousGuestPortfolio(), null, 'guest undo cannot be used in a
 const privateAccount: Portfolio = { ...guest, cash: 98000, totalValue: 98100,
   trades: guest.trades.map(t => ({ ...t, id: 'server-trade-a', journal: { notes: 'PRIVATE ACCOUNT A', reasoning: 'private', emotions: [] } })) };
 savePortfolio(privateAccount, { silent: true });
+const today = Date.now();
+recordAccountPortfolioSnapshot('fixture-a', 'cycle-1', privateAccount, today - 3 * 24 * 60 * 60_000);
+recordAccountPortfolioSnapshot('fixture-a', 'cycle-1', { ...privateAccount, totalValue: 98105 }, today);
+assert.deepEqual(getAccountPortfolioHistory('fixture-a', 'cycle-1').map(s => s.totalValue), [98100, 98105]);
+assert.deepEqual(getAccountPortfolioHistory('fixture-a', 'new-cycle'), []);
+
 values.set('trading_journal_analysis', 'PRIVATE ANALYSIS A');
 values.set('tradesandbox_history', 'PRIVATE CHART A');
 assert.throws(() => applyUnverifiedGuestRestore(guest, privateAccount, p => { savePortfolio(p); }), /cannot replace/);
 activatePortfolioOwner('fixture-b');
+assert.deepEqual(getAccountPortfolioHistory('fixture-a', 'cycle-1'), []);
+recordAccountPortfolioSnapshot('fixture-a', 'cycle-1', guest, today + 1);
+assert.deepEqual(getAccountPortfolioHistory('fixture-b', 'cycle-1'), []);
 assert.equal(getPortfolio().trades.length, 0, 'switching accounts must immediately hide the previous private records');
 assert.equal(values.get('trading_journal_analysis'), undefined);
 assert.equal(values.get('tradesandbox_history'), undefined);
 assert.equal(saveTradeJournal('server-trade-a', { notes: 'late callback', reasoning: '', emotions: [] }, 'fixture-a'), null);
 activatePortfolioOwner('fixture-a');
+assert.deepEqual(getAccountPortfolioHistory('fixture-a', 'cycle-1').map(s => s.totalValue), [98100, 98105]);
 assert.equal(getPortfolio().trades[0].journal?.notes, 'PRIVATE ACCOUNT A');
 // Simulate a browser closing halfway through a prior identity switch.
 values.set(PORTFOLIO_SWITCH_KEY, JSON.stringify({ version: 1, previous: 'fixture-a' }));
@@ -45,6 +55,7 @@ assert.equal(getPortfolio().trades[0].journal?.notes, 'PRIVATE ACCOUNT A', 'reco
 assert.equal(values.get(PORTFOLIO_SWITCH_KEY), undefined);
 assert.equal(values.get('trading_journal_analysis'), 'PRIVATE ANALYSIS A');
 activatePortfolioOwner(null);
+assert.deepEqual(getAccountPortfolioHistory('fixture-a', 'cycle-1'), []);
 assert.equal(values.get('tradehq_portfolio'), guestBytes, 'sign-out restores the exact guest record');
 assert.equal(values.get(PORTFOLIO_OWNER_KEY), undefined);
 assert.equal(getPortfolio().trades[0].journal, undefined, 'account journal never appears as guest data');
