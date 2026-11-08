@@ -126,10 +126,10 @@ export function PortfolioChart({ currentValue, history, account, receivedAt }: {
         </LineChart>
         </ResponsiveContainer>
         {hasHistory && <div className="mt-4 space-y-2 border-t border-border/50 pt-3 text-xs text-muted-foreground">
-          <p>First saved observation: <strong className="font-medium text-foreground">${initialValue.toLocaleString("en-US", { style: "currency", currency: "USD" })}</strong></p>
+          <p>First saved observation: <strong className="font-medium text-foreground">{initialValue.toLocaleString("en-US", { style: "currency", currency: "USD" })}</strong></p>
           <p role="status" aria-live="polite" data-portfolio-reference-status>
             {showStopLoss
-              ? <>10% downside reference: <strong className="font-medium text-foreground">${stopLossValue.toLocaleString("en-US", { style: "currency", currency: "USD" })}</strong>. {referenceInView
+              ? <>10% downside reference: <strong className="font-medium text-foreground">{stopLossValue.toLocaleString("en-US", { style: "currency", currency: "USD" })}</strong>. {referenceInView
                   ? "The dashed reference line is visible on the chart."
                   : "The reference is below this chart's visible scale; it is shown here without flattening your actual portfolio changes."}</>
               : "10% downside reference hidden."}
