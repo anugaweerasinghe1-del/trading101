@@ -58,6 +58,11 @@ BEGIN
       ('tradehq_private.public_duels(integer)', 'AND o.is_public', 'AND tradehq_private.profile_is_public(o.id)')
     ) AS changes(function_signature, find_text, replacement)
   LOOP
+    -- Some isolated fixtures intentionally omit optional trophy features.
+    -- A present function must match the audited privacy predicate or fail closed.
+    IF to_regprocedure(item.function_signature) IS NULL THEN
+      CONTINUE;
+    END IF;
     before_sql := pg_get_functiondef(item.function_signature::regprocedure);
     IF position(item.find_text in before_sql) = 0 THEN
       RAISE EXCEPTION 'Profile privacy review required for function %; expected predicate absent', item.function_signature;
