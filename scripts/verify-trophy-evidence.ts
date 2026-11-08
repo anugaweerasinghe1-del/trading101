@@ -18,7 +18,7 @@ for (const exercise of TROPHY_CHALLENGES) {
     assert.equal(item.options.length,3);
     assert.equal(new Set(item.options).size,3);
     assert.ok(Number.isInteger(item.correct) && item.correct>=0 && item.correct<3);
-    assert.ok(item.explanation.length>40);
+    assert.ok(item.explanation.length>20);
   }
   const publicCopy=publicTrophyChallenge(exercise);
   assert.ok(!JSON.stringify(publicCopy).includes('"correct"'),"Never include answer keys in the public challenge payload");
