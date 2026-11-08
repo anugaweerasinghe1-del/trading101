@@ -48,7 +48,7 @@ const a="aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa", b="bbbbbbbb-bbbb-4bbb-8bbb-bbbbb
 try {
   await db.exec(`create role anon;create role authenticated;create role service_role bypassrls;
     create schema auth;create table auth.users(id uuid primary key,confirmed_at timestamptz);
-    create table public.profiles(id uuid primary key references auth.users(id),username text unique,is_public boolean not null default false);
+    create table public.profiles(id uuid primary key references auth.users(id) on delete cascade,username text unique,is_public boolean not null default false);
     insert into auth.users values ('${a}',now()),('${b}',now());
     insert into public.profiles values ('${a}','verified-learner',true),('${b}','private-learner',false);
     grant select, update on public.profiles, auth.users to service_role;
