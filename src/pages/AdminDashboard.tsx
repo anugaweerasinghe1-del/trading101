@@ -247,6 +247,11 @@ export default function AdminDashboard() {
   // Keep public GitHub polling within its unauthenticated free API budget.
   useAdminRefresh(unlocked, loadAgents, { intervalMs: 900000, minGapMs: 900000,
     paused: () => pending.current });
+  // This count describes prepared *future* cases, not a bank approved or ready to publish.
+  // Missing or malformed service data must remain unknown instead of becoming zero.
+  const dailyPreparedCount = daily && Number.isSafeInteger(daily.completed) &&
+    daily.completed !== undefined && daily.completed >= 0 && daily.completed <= 50
+    ? daily.completed : null;
   const agentFindings = issues.filter(item => item.state === "open" && item.title.startsWith("[TradeHQ Agent]") && (item.title.endsWith("failures") || item.title.endsWith("failed")));
   const agentReports = issues.filter(item => item.state === "open" && item.title.startsWith("[TradeHQ Agent]") && item.title.endsWith("report"));
   const ideas = issues.filter(item => item.title.startsWith("[TradeHQ Ideas]"));
@@ -282,7 +287,7 @@ export default function AdminDashboard() {
             <p className="text-xs text-muted-foreground">Verified opt-in only. Owner approval and a separate send action are required.</p>
             <Link className={linkStyle} to="/admin/newsletter">Open Newsletter Desk →</Link>
           </section>
-          <section className={card}><CalendarCheck className="w-6 h-6 text-primary"/><h3 className="font-semibold">Daily practice</h3><p className="text-2xl font-semibold">{daily ? (daily.completed ?? 0) + "/50" : "—"} <span className="text-sm font-normal text-muted-foreground">next bank ready</span></p><p className="text-xs text-muted-foreground">{daily ? (daily.enabled ? "Schedule enabled" : "Schedule paused") : "Schedule unavailable"} · Next due {daily?.nextDue || "unknown"}</p>{daily?.lastError && <p className="text-xs text-amber-400">{daily.lastError}</p>}<Link className={linkStyle} to="/admin/daily">Review questions and schedule →</Link></section>
+          <section className={card}><CalendarCheck className="w-6 h-6 text-primary"/><h3 className="font-semibold">Daily practice</h3><p className="text-2xl font-semibold">{dailyPreparedCount !== null ? `${dailyPreparedCount}/50` : "—"} <span className="text-sm font-normal text-muted-foreground">cases prepared for the next bank</span></p><p className="text-xs text-muted-foreground">{daily ? (daily.enabled ? "Schedule enabled" : "Schedule paused") : "Schedule unavailable"} · Next due {daily?.nextDue || "unknown"}</p>{daily?.lastError && <p className="text-xs text-amber-400">{daily.lastError}</p>}<Link className={linkStyle} to="/admin/daily">Review questions and schedule →</Link></section>
           <section className={card}><Bot className="w-6 h-6 text-primary"/><h3 className="font-semibold">Admin chatbot</h3>
             <p className="text-sm font-medium">{chatReadiness === 'CONFIGURED_NOT_TESTED'
               ? 'Configured · live response unverified' : chatReadiness === 'PILOT_PAUSED' ? 'Pilot paused' : 'Status unavailable'}</p>

@@ -61,6 +61,12 @@ assert.match(dashboard, /newsletterEdits=\{newsletterEdits\}/);
 assert.match(inbox, /newsletterEdits: EditorialQueueCount \| null/);
 // The compiled browser regression covers all three bounded review lists.
 assert.match(inbox, /item\.to\.endsWith\('newsletter'\) \? 'Newsletter desk'/);
+// The dashboard must not call a zero/partial/unknown private Daily draft "ready".
+assert.doesNotMatch(dashboard, /next bank ready/);
+assert.match(dashboard, /cases prepared for the next bank/);
+assert.match(dashboard, /Number\.isSafeInteger\(daily\.completed\)/);
+assert.match(dashboard, /dailyPreparedCount !== null/);
+assert.doesNotMatch(dashboard, /daily\.completed \?\? 0/);
 // The two publishing desks must now require a live owner login as well as a
 // private admin key. No model call or publication occurs in dashboard readiness.
 assert.match(dailyDesk, /supabase\.auth\.getSession\(\)/);
