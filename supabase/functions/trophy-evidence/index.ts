@@ -251,15 +251,16 @@ Deno.serve(async request => {
         Object.keys(input).every(k=>["action","challengeId","answers","attemptId"].includes(k))) {
       if (!await allow(user.id,"trophy-grade",300,16)) return reply(429,{status:"rate_limited"});
       const id=input.challengeId;
+      const answers=input.answers;
       if (id.startsWith("daily:")) {
         const bank=await loadReviewedDaily();
         const entry=bank.cases.find(c=>"daily:"+c.id===id);
         if (!entry) return reply(404,{status:"not_found"});
-        if (input.answers.length!==entry.questions.length ||
-            input.answers.some((x,i)=>!Number.isInteger(x) || Number(x)<0 || Number(x)>=entry.questions[i].options.length))
+        if (answers.length!==entry.questions.length ||
+            answers.some((x,i)=>!Number.isInteger(x) || Number(x)<0 || Number(x)>=entry.questions[i].options.length))
           return reply(400,{status:"invalid_answers"});
         if(!await claimAttempt(user.id,id,bank.version,input.attemptId))return reply(409,{status:"attempt_expired_or_used"});
-        const points=entry.questions.filter((q,i)=>q.correct===input.answers[i]).length;
+        const points=entry.questions.filter((q,i)=>q.correct===answers[i]).length;
         const passed=points>=8;
         if(passed) await record(user.id,"daily",entry.id,bank.version,"pass",points,entry.questions.length);
         return reply(200,{status:"graded",points,possible:entry.questions.length,passed,
@@ -267,7 +268,7 @@ Deno.serve(async request => {
       }
       const challenge=trophyChallenge(id);
       if (!challenge) return reply(404,{status:"not_found"});
-      const grade=gradeTrophyChallenge(challenge,input.answers);
+      const grade=gradeTrophyChallenge(challenge,answers);
       if (!grade) return reply(400,{status:"invalid_answers"});
       if (id==="arena-decision-review") {
         const { data: scenarios,error }=await admin.from("trophy_activity_v1")
