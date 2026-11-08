@@ -344,6 +344,14 @@ export default function Daily() {
 
             <DailyPractice key={date} date={date} open={deeperOpen} onOpen={() => setDeeperOpen(true)} onClose={() => setDeeperOpen(false)} onComplete={() => setStreak(recordChallenge(0, "hold"))} />
 
+            <div className="rounded-2xl border border-primary/25 bg-primary/5 p-5">
+              <p className="font-semibold text-sm">Want a saved educational trophy?</p>
+              <p className="mt-2 text-sm text-foreground/70">The guest Daily answers above stay on your device. For Case Solver and Case Collector, sign in and take a separately scored version of these reviewed fictional cases. Your score never changes your simulated-trading rank.</p>
+              <Link to="/achievements#trophy-challenges" className="mt-3 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-primary underline underline-offset-4">
+                Open scored Daily Practice cases <ArrowRight className="h-4 w-4"/>
+              </Link>
+            </div>
+
             {/* Badges — premium */}
             <section
               className="rounded-[24px] p-6 md:p-7 border border-white/[0.08] backdrop-blur-xl"
