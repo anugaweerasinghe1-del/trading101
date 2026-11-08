@@ -83,7 +83,7 @@ async function main(){
   let learningWrites=0, learningReads=0, savedLearning=null;
   let privateTradeReads=0, privateTradeRejected=0;
   let foundationsReads=0, foundationsGradeCalls=0, foundationsPassed=false, malformedFoundationsProgress=true, inconsistentFoundationsProgress=true, inconsistentFoundationsReplySent=false, certificateIssues=0;
-  let trophyFixtureEnabled=false, trophyPrivateReads=0, trophyGrades=0, trophyShared=false, trophyEarned=false;
+  let trophyFixtureEnabled=false, trophyStateUnavailable=false, trophyPrivateReads=0, trophyGrades=0, trophyShared=false, trophyEarned=false;
   const trophyIds=["first-light","field-notes","market-compass","order-desk","price-detective","risk-aware",
     "position-architect","exit-planner","cost-counter","portfolio-lens","first-practice-trade",
     "pause-button","scenario-explorer","decision-review","second-look","case-solver","case-collector",
@@ -161,6 +161,7 @@ async function main(){
           assert.equal(req.headers.authorization,'Bearer '+JWT,'Trophy evidence uses the signed-in account JWT');
           trophyPrivateReads++;
           if(!trophyFixtureEnabled)return json(503,{status:'unavailable'});
+          if(input.action==='state'&&trophyStateUnavailable)return json(503,{status:'unavailable'});
           if(input.action==='state')return json(200,{
             status:'available',profilePublic:true,
             share:{enabled:trophyShared,flair:trophyShared?'exit-planner':null,pins:trophyShared?['exit-planner']:[]},
@@ -898,6 +899,17 @@ async function main(){
     await wait(()=>!trophyShared,'Trophy public consent withdrawn immediately');
     assert.equal(await devtools.evaluate("fetch('/functions/v1/trophy-evidence',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({action:'public',username:'test-trader'})}).then(r=>r.json()).then(r=>r.status)"),'private');
     assert.equal(trophyGrades,1,'A share toggle never repeats a graded attempt');
+    // An evidence read outage must not prevent an already-public learner opting out.
+    trophyShared=true;
+    trophyStateUnavailable=true;
+    await loadDocument(origin+"/achievements");
+    await wait(()=>devtools.evaluate("document.querySelector('#trophy-challenges')?.textContent.includes('Trophy evidence is temporarily unavailable')"),'Trophy evidence outage rendered');
+    await devtools.evaluate("[...document.querySelectorAll('section[aria-labelledby=trophy-sharing-title] button')].find(b=>b.textContent.trim()==='Withdraw trophy sharing')?.click()");
+    await wait(()=>!trophyShared,'Public trophy consent withdrawn during evidence outage');
+    await wait(()=>devtools.evaluate("document.querySelector('#trophy-challenges')?.textContent.includes('Trophy sharing has been withdrawn')"),'Withdrawal acknowledged independently of evidence refresh');
+    trophyStateUnavailable=false;
+    await loadDocument(origin+"/achievements");
+    await wait(()=>devtools.evaluate("Boolean("+programmeButton('Core Studies Certificate')+")"),'Return to cabinet after evidence outage');
     console.log('ISOLATED_TROPHY_SHARING_PASS: signed-in scoring, durable render, explicit opt-in, public allowlist and revocation in Chromium.');
 
 

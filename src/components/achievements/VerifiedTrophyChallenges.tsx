@@ -108,12 +108,12 @@ export function VerifiedTrophyChallenges() {
     } catch(e){if(owner.current===id)setError(e instanceof Error?e.message:"Could not score the case.");}
     finally{if(owner.current===id)setWorking(false);}
   }
-  async function saveSharing() {
+  async function saveSharing(enabled: boolean) {
     if (!id || !token || working) return;
     setWorking(true); setError("");setSavedShare("");
     try {
       const result=await trophyRequest<{status:string}>(token,{
-        action:"share",enabled:shareEnabled,flair:shareEnabled?(flair||null):null,pins:shareEnabled?pins:[],
+        action:"share",enabled,flair:enabled?(flair||null):null,pins:enabled?pins:[],
       });
       if(owner.current!==id)return;
       if(result.status==="make_profile_public_first") throw Error("Set your trader profile to public before opting in to display trophies.");
@@ -122,7 +122,10 @@ export function VerifiedTrophyChallenges() {
       if(result.status==="rate_limited") throw Error("Too many sharing requests. Try again after the short cooldown.");
       if(result.status==="unauthenticated") throw Error("Your session has expired. Sign in again.");
       if(result.status!=="available") throw Error("Trophy sharing was not saved.");
-      setSavedShare(shareEnabled?"Your chosen earned trophies are now visible on your public trader profile.":"Trophy sharing has been withdrawn.");
+      if (!enabled) {
+        setShareEnabled(false); setFlair(""); setPins([]);
+      }
+      setSavedShare(enabled?"Your chosen earned trophies are now visible on your public trader profile.":"Trophy sharing has been withdrawn.");
       await cache.invalidateQueries({queryKey:trophyEvidenceKey(id)});
     }catch(e){if(owner.current===id)setError(e instanceof Error?e.message:"Could not update sharing.");}
     finally{if(owner.current===id)setWorking(false);}
@@ -250,10 +253,10 @@ export function VerifiedTrophyChallenges() {
                 </div>
               </fieldset>
             </>}
-            <button type="button" disabled={working||!state||(shareEnabled&&!state.profilePublic)}
-              onClick={()=>void saveSharing()}
+            <button type="button" disabled={working||(!state&&!query.isError)||(!!state&&shareEnabled&&!state.profilePublic)}
+              onClick={()=>void saveSharing(Boolean(state && shareEnabled))}
               className="min-h-11 rounded-xl border border-primary/50 px-5 py-2 text-sm font-semibold text-primary disabled:opacity-50">
-              {working?"Saving…":shareEnabled?"Save explicit trophy sharing":"Withdraw trophy sharing"}
+              {working?"Saving…":state&&shareEnabled?"Save explicit trophy sharing":"Withdraw trophy sharing"}
             </button>
             {savedShare&&<p role="status" className="text-sm">{savedShare}</p>}
           </section>

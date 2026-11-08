@@ -11,7 +11,9 @@ const trophies = [
   ["case-solver","Case Solver"],["case-collector","Case Collector"],["steady-learner","Steady Learner"],
   ["knowledge-builder","Knowledge Builder"],["foundations-graduate","Foundations Graduate"],
 ] as const;
-const map = new Map(trophies.map(([id,title],index)=>[id,{title,image:"/achievements/trophies/"+String(index+1).padStart(2,"0")+".webp"}]));
+const map = new Map<string, { title: string; image: string }>(
+  trophies.map(([id,title],index)=>[id,{title,image:"/achievements/trophies/"+String(index+1).padStart(2,"0")+".webp"}]),
+);
 export function publicTrophyName(id:string): string | null { return map.get(id)?.title ?? null; }
 type Shared = { status:string; flair:string|null; pinned:string[] };
 

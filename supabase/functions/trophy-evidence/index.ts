@@ -295,19 +295,24 @@ Deno.serve(async request => {
     }
     if(action==="share" && typeof input.enabled==="boolean" && Object.keys(input).every(k=>["action","enabled","flair","pins"].includes(k))) {
       const enabled=input.enabled;
-      if (enabled && !user.confirmed) return reply(409,{status:"confirm_account_first"});
-      const {data: profile,error:profileError}=await admin.from("profiles").select("is_public").eq("id",user.id).maybeSingle();
-      if(profileError)throw profileError;
-      if(enabled && profile?.is_public!==true)return reply(409,{status:"make_profile_public_first"});
       const flair=input.flair===null||input.flair===undefined?null:input.flair;
       const pins=input.pins===undefined?[]:input.pins;
       if ((flair!==null && (typeof flair!=="string"||!ids.includes(flair as Id))) ||
           !Array.isArray(pins)||pins.length>3||new Set(pins).size!==pins.length||
           !pins.every(id=>typeof id==="string"&&ids.includes(id as Id))) return reply(400,{status:"invalid_awards"});
-      const state=await readState(user.id);
-      const awarded=new Set(state.entries.filter(x=>x.earned).map(x=>x.id));
-      if(enabled && ((flair!==null&&!awarded.has(flair as Id))||pins.some(id=>!awarded.has(id as Id))))
-        return reply(409,{status:"award_not_earned"});
+      // Withdrawal must work even if the profile or award evidence cannot be read.
+      if (enabled) {
+        if (!user.confirmed) return reply(409,{status:"confirm_account_first"});
+        const [profile, awards] = await Promise.all([
+          admin.from("profiles").select("is_public").eq("id",user.id).maybeSingle(),
+          admin.from("trophy_awards_v1").select("trophy_id").eq("user_id",user.id),
+        ]);
+        if (profile.error || awards.error) throw profile.error ?? awards.error;
+        if (profile.data?.is_public !== true) return reply(409,{status:"make_profile_public_first"});
+        const awarded = new Set((awards.data ?? []).map(row => row.trophy_id));
+        if ((flair !== null && !awarded.has(flair)) || pins.some(id => !awarded.has(id)))
+          return reply(409,{status:"award_not_earned"});
+      }
       const share:Share={enabled,flair:enabled?flair as string|null:null,pins:enabled?pins as string[]:[]};
       const {error}=await admin.from("trophy_share_v1").upsert({
         user_id:user.id,enabled:share.enabled,flair:share.flair,pins:share.pins,updated_at:new Date().toISOString(),
