@@ -3,6 +3,7 @@ import { validateCourseDocument } from "./courseDocument.ts";
 
 export interface CourseAdminStore {
   daily?: (action: string, body: Record<string, unknown>) => Promise<unknown>;
+  draftCount?: (queue: "course_drafts" | "daily_practice_drafts") => Promise<number>;
   list: (summary?: boolean) => Promise<unknown[]>;
   save: (id: string | null, revision: number | null, document: unknown) => Promise<unknown>;
   publish: (id: string, revision: number, reviewer: string) => Promise<unknown>;
@@ -35,6 +36,15 @@ export function createCourseAdminHandler(options: {
       let body: Record<string, unknown>;
       try { body = JSON.parse(raw); if (!body || typeof body !== "object" || Array.isArray(body)) throw new Error(); }
       catch { return response({ error: "Invalid request." }, 400); }
+      if (body.summary === true && body.countDrafts === true && options.store.draftCount &&
+        (body.action === "list" || body.action === "daily-list")) {
+        const queue = body.action === "list" ? "course_drafts" : "daily_practice_drafts";
+        try {
+          return response({ data: { count: await options.store.draftCount(queue) } });
+        } catch {
+          return response({ error: "Draft count is temporarily unavailable." }, 503);
+        }
+      }
       if (typeof body.action === "string" && body.action.startsWith("daily-") && options.store.daily) {
         if (!["daily-list", "daily-status", "daily-preflight", "daily-configure", "daily-generate", "daily-save", "daily-publish", "daily-reject"].includes(body.action)) return response({ error: "Unknown action." }, 400);
         if (body.action === "daily-configure" && typeof body.enabled !== "boolean") return response({ error: "Invalid settings." }, 400);

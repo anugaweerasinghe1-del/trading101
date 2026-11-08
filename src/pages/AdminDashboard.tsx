@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { supabase } from "@/integrations/supabase/client";
-import { AutomationInbox, COURSE_REVIEW_LIMIT, type EditorialQueueRow } from "@/components/admin/AutomationInbox";
+import { AutomationInbox, type EditorialQueueCount } from "@/components/admin/AutomationInbox";
 import { Mail } from "lucide-react";
 import { Activity, BookOpen, Bot, CalendarCheck, CheckCircle2, ExternalLink, Lock, MessageSquare, RefreshCw, ShieldCheck, Sparkles, Wrench } from "lucide-react";
 
@@ -11,7 +11,6 @@ import { useAdminRefresh, useAdminRequestScope } from '@/hooks/useAdminRefresh';
 import { isAdminRequestCancelled } from '@/lib/adminRequestScope';
 import { AdminFreshness } from '@/components/admin/AdminFreshness';
 
-type Course = { id: string; status: string; document?: { title?: string }; updated_at?: string };
 type DailyStatus = { enabled?: boolean; nextDue?: string; prepareAfter?: string; completed?: number; attempts?: number; retryAfter?: string | null; lastStarted?: string | null; lastFinished?: string | null; lastError?: string | null; model?: string; hasApiKey?: boolean; freeConfirmed?: boolean };
 type CourseStatus = { enabled?: boolean; model?: string; lastStarted?: string | null; lastFinished?: string | null; runs?: Array<{ status?: string; last_error?: string | null; period?: string; slot?: number }> };
 type ChatReadiness = 'CONFIGURED_NOT_TESTED' | 'PILOT_PAUSED';
@@ -24,6 +23,19 @@ type NewsletterSummary = { confirmed: number; pending: number; bounced: number; 
 const repo = "anugaweerasinghe1-del/trading101";
 const card = "rounded-2xl border border-border bg-card/60 p-5 space-y-3";
 const linkStyle = "inline-flex items-center gap-1 text-sm text-primary hover:underline";
+const COURSE_REVIEW_LIMIT = 200;
+const draftCountOptions = { summary: true, countDrafts: true };
+
+function readDraftCount(payload: unknown, limit: number): EditorialQueueCount | null {
+  // Older deployments return a bounded recent list. Keep the dashboard usable
+  // during a staggered Edge Function rollout or rollback.
+  if (Array.isArray(payload) && payload.every(item => typeof item?.id === "string" && typeof item?.status === "string")) {
+    return { count: payload.filter(item => item.status === "draft").length,
+      sampleLimit: payload.length >= limit ? limit : undefined };
+  }
+  const count = (payload as { count?: unknown } | null)?.count;
+  return typeof count === "number" && Number.isSafeInteger(count) && count >= 0 ? { count } : null;
+}
 export default function AdminDashboard() {
   const [key, setKey] = useState("");
   const scope = useAdminRequestScope(key);
@@ -32,9 +44,9 @@ export default function AdminDashboard() {
   const [unlocked, setUnlocked] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
-  const [courses, setCourses] = useState<Course[] | null>(null);
-  const [dailyBanks, setDailyBanks] = useState<EditorialQueueRow[] | null>(null);
-  const [newsletterEdits, setNewsletterEdits] = useState<EditorialQueueRow[] | null>(null);
+  const [courses, setCourses] = useState<EditorialQueueCount | null>(null);
+  const [dailyBanks, setDailyBanks] = useState<EditorialQueueCount | null>(null);
+  const [newsletterEdits, setNewsletterEdits] = useState<EditorialQueueCount | null>(null);
   const [deskWarnings, setDeskWarnings] = useState<string[]>([]);
   const [daily, setDaily] = useState<DailyStatus | null>(null);
   const [courseStatus, setCourseStatus] = useState<CourseStatus | null>(null);
@@ -74,11 +86,11 @@ export default function AdminDashboard() {
       guard.assert();
     }
     const feeds = await Promise.allSettled([
-      settingsRequest, adminCall("list", { summary: true }), adminCall("daily-status"),
+      settingsRequest, adminCall("list", draftCountOptions), adminCall("daily-status"),
       supabase.functions.invoke("admin-reviews", { body: { action: "count" }, headers: { "x-admin-key": key } }),
-      adminCall("daily-list", { summary: true }),
+      adminCall("daily-list", draftCountOptions),
       supabase.functions.invoke("newsletter-dispatch", { body: { action: "status" }, headers: { "x-admin-key": key } }),
-      supabase.functions.invoke("newsletter-editor", { body: { action: "list" }, headers: { "x-admin-key": key } }),
+      supabase.functions.invoke("newsletter-editor", { body: { action: "list", ...draftCountOptions }, headers: { "x-admin-key": key } }),
       // Readiness does not invoke Gemini or reserve the daily provider attempt.
       supabase.functions.invoke("admin-agent-chat", { body: { action: "status" }, headers: { "x-admin-key": key } }),
     ] as const);
@@ -87,11 +99,13 @@ export default function AdminDashboard() {
     const warnings: string[] = [];
     if (settings.status === "fulfilled" && typeof settings.value?.enabled === "boolean") setCourseStatus(settings.value);
     else { setCourseStatus(null); warnings.push("Course generation status is temporarily unavailable."); }
-    if (drafts.status === "fulfilled" && Array.isArray(drafts.value)) setCourses(drafts.value);
+    const courseDrafts = drafts.status === "fulfilled" ? readDraftCount(drafts.value, COURSE_REVIEW_LIMIT) : null;
+    if (courseDrafts) setCourses(courseDrafts);
     else { setCourses(null); warnings.push("Course drafts are temporarily unavailable."); }
     if (practice.status === "fulfilled" && practice.value) setDaily(practice.value);
     else { setDaily(null); warnings.push("Daily Practice status is temporarily unavailable."); }
-    if (banks.status === "fulfilled" && Array.isArray(banks.value)) setDailyBanks(banks.value);
+    const dailyDrafts = banks.status === "fulfilled" ? readDraftCount(banks.value, 24) : null;
+    if (dailyDrafts) setDailyBanks(dailyDrafts);
     else { setDailyBanks(null); warnings.push("Daily bank review queue is temporarily unavailable."); }
     const reviewCount = result.status === "fulfilled" && !result.value.error && !result.value.data?.error
       ? result.value.data?.data?.count : null;
@@ -99,8 +113,8 @@ export default function AdminDashboard() {
     else { setReviews(null); warnings.push("Review moderation status is temporarily unavailable."); }
     const editorialItems = newsletterDrafts.status === "fulfilled" && !newsletterDrafts.value.error && !newsletterDrafts.value.data?.error
       ? newsletterDrafts.value.data?.data : null;
-    if (Array.isArray(editorialItems) && editorialItems.every(item => typeof item?.id === "string" && typeof item?.status === "string"))
-      setNewsletterEdits(editorialItems);
+    const newsletterDraftCount = readDraftCount(editorialItems, 16);
+    if (newsletterDraftCount) setNewsletterEdits(newsletterDraftCount);
     else { setNewsletterEdits(null); warnings.push("Newsletter editorial queue is temporarily unavailable."); }
     const counts = subscriberStatus.status === "fulfilled" && !subscriberStatus.value.error && !subscriberStatus.value.data?.error
       ? subscriberStatus.value.data?.data?.counts as Record<string, unknown> | undefined : undefined;
@@ -258,8 +272,8 @@ export default function AdminDashboard() {
           failedCourseRuns={courseStatus?.runs?.filter(item => item.status === 'paused' && item.last_error).length ?? 0}
           findingCount={agentFindings.length} proposalCount={proposals.length} githubAvailable={!agentError && !!lastGitHubChecked} />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <section className={card}><BookOpen className="w-6 h-6 text-primary"/><h3 className="font-semibold">Courses</h3><p className="text-2xl font-semibold">{courses === null ? "—" : courses.filter(c => c.status === "draft").length} <span className="text-sm font-normal text-muted-foreground">drafts awaiting review{courses && courses.length >= COURSE_REVIEW_LIMIT
-            ? ` in the latest ${COURSE_REVIEW_LIMIT} records` : ''}</span></p><p className="text-xs text-muted-foreground">Generation: {courseStatus ? (courseStatus.enabled ? "enabled" : "paused") : "unavailable"} · {courseStatus?.model || "unknown"}</p><Link className={linkStyle} to="/admin/courses">Manage drafts and approvals →</Link></section>
+          <section className={card}><BookOpen className="w-6 h-6 text-primary"/><h3 className="font-semibold">Courses</h3><p className="text-2xl font-semibold">{courses?.count ?? "—"} <span className="text-sm font-normal text-muted-foreground">drafts awaiting review{courses?.sampleLimit
+            ? ` in the latest ${courses.sampleLimit} records` : ''}</span></p><p className="text-xs text-muted-foreground">Generation: {courseStatus ? (courseStatus.enabled ? "enabled" : "paused") : "unavailable"} · {courseStatus?.model || "unknown"}</p><Link className={linkStyle} to="/admin/courses">Manage drafts and approvals →</Link></section>
           <section className={card}>
             <Mail className="w-6 h-6 text-primary" />
             <h3 className="font-semibold">Newsletter</h3>

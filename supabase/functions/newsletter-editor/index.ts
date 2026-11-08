@@ -203,6 +203,12 @@ Deno.serve(async req => {
   if (scheduled && !admin && action !== "generate-weekly") return reply({ error: "Forbidden" }, 403);
   try {
     if (action === "list" && admin) {
+      if (body.summary === true && body.countDrafts === true) {
+        const { count, error } = await client.from("newsletter_editions")
+          .select("id", { count: "exact", head: true }).eq("status", "draft");
+        if (error || count === null) return reply({ error: "Draft count is temporarily unavailable." }, 503);
+        return reply({ data: { count } });
+      }
       const { data, error } = await client.from("newsletter_editions")
         .select("id,week_of,status,revision,subject,preheader,body_markdown,reviewed_by,reviewed_at,updated_at,generator_error,ai_model")
         .order("week_of", { ascending: false }).limit(16);
