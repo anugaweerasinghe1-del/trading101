@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { CheckCircle2, LockKeyhole, ShieldCheck, Trophy } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { trophyEvidenceKey, trophyRequest, useVerifiedTrophyState, type ScoredChallenge } from "@/lib/trophyEvidenceClient";
@@ -33,6 +33,7 @@ const labelFor = (id:string) => names[id] ?? "Trophy";
 
 export function VerifiedTrophyChallenges() {
   const { id, token, authLoading, query } = useVerifiedTrophyState();
+  const location = useLocation();
   const cache = useQueryClient();
   const owner = useRef(id);
   const [selected,setSelected] = useState<string|null>(null);
@@ -57,6 +58,12 @@ export function VerifiedTrophyChallenges() {
     setFlair(state.share.flair ?? "");
     setPins(state.share.pins);
   }, [state?.share.enabled,state?.share.flair,state?.share.pins.join("|")]);
+
+  useEffect(() => {
+    if (!id || !token) return;
+    const fromArena = new URLSearchParams(location.search).get("challenge");
+    if (fromArena && /^arena-(first-order|size-matters|plan-under-pressure)$/.test(fromArena)) void open(fromArena);
+  }, [id, token, location.search]);
 
   useEffect(() => {
     if (!id || !token) return;
