@@ -49,10 +49,14 @@ export default function TraderProfile() {
 
   const setPublicVisibility = async (isPublic: boolean) => {
     if (!user || visibilityBusy) return;
+    if (isPublic && !user.email_confirmed_at) {
+      toast.error("Confirm your account email before making your profile public.");
+      return;
+    }
     setVisibilityBusy(true);
     const { error } = await supabase
       .from("profiles")
-      .update({ is_public: isPublic })
+      .update({ is_public: isPublic, public_visibility_confirmed: isPublic })
       .eq("id", user.id);
     if (error) {
       toast.error("Could not update profile visibility.");
@@ -74,12 +78,13 @@ export default function TraderProfile() {
     }
     setVisibilityBusy(false);
   };
+  const isPubliclyVisible = profile?.is_public === true && profile.public_visibility_confirmed === true && !!user?.email_confirmed_at;
   const path = "/trader/me";
   const title = "My Trader Profile — Practice Portfolio Stats | TradeHQ";
   const description = "Local snapshot of TradeHQ practice statistics. Signed-in users can choose whether their backend profile is public. Educational simulation only, not financial advice.";
 
   const share = async () => {
-    if (!profile?.is_public || !profile.username) {
+    if (!isPubliclyVisible || !profile?.username) {
       toast.error("Turn on public profile visibility before sharing a public profile link.");
       return;
     }
@@ -126,7 +131,7 @@ export default function TraderProfile() {
               </div>
               <button
                 onClick={share}
-                disabled={!profile?.is_public}
+                disabled={!isPubliclyVisible}
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 text-black font-semibold hover:bg-emerald-400 transition disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 <Share2 className="w-4 h-4" /> Share public profile
@@ -139,13 +144,14 @@ export default function TraderProfile() {
               <div className="flex items-center justify-between gap-4">
                 <div>
                   <h2 className="font-semibold">Public profile visibility</h2>
+                  {profile.is_public && !profile.public_visibility_confirmed && <p role="status" className="mt-2 text-xs text-amber-500">Your older visibility setting is saved but sharing is paused until you explicitly enable it again.</p>}
                   <p className="text-xs text-muted-foreground mt-1 max-w-xl">
                     New accounts start private. Turn this on only if you want your username, profile details and
-                    selected simulated statistics to appear on public community pages. Existing members keep their chosen visibility.
+                    selected simulated statistics to appear on public community pages. Earlier public profiles need a fresh opt-in to appear publicly again. Your account email must be confirmed. You can withdraw permission at any time.
                   </p>
                 </div>
                 <Switch
-                  checked={profile.is_public}
+                  checked={isPubliclyVisible}
                   disabled={visibilityBusy}
                   onCheckedChange={setPublicVisibility}
                   aria-label="Public profile visibility"
@@ -166,7 +172,7 @@ export default function TraderProfile() {
                 </div>
                 <Switch aria-label="Share recent simulated trade history"
                   checked={profile.show_public_trades === true}
-                  disabled={visibilityBusy || !profile.is_public}
+                  disabled={visibilityBusy || !isPubliclyVisible}
                   onCheckedChange={setTradeVisibility} />
               </div>
             </Card>
