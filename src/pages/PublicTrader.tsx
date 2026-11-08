@@ -9,6 +9,7 @@ import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { EducationalDisclaimer } from "@/components/EducationalDisclaimer";
 import { Loader2, Trophy, UserX } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { PublicTrophies } from "@/components/achievements/PublicTrophies";
 import { PRICE_REFRESH_COPY, priceLabel, quoteTimeLabel } from "@/lib/practicePricing";
 import { SITE_DOMAIN, STARTING_BALANCE_LABEL } from "@/lib/constants";
 
@@ -169,6 +170,8 @@ export default function PublicTrader() {
                   Member since {new Date(data.createdAt).toLocaleDateString(undefined, { month: "long", year: "numeric" })}
                 </p>
               </header>
+
+              <PublicTrophies username={data.username} />
 
               {data.stats ? (
                 <section className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">

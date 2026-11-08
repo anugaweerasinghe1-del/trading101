@@ -330,6 +330,11 @@ export default function PracticeArena() {
                           Help test whether this exercise is useful <ArrowRight className="h-4 w-4" />
                         </a>
                         <div className="space-y-2 mt-6">
+                          <Link to={"/achievements?challenge=arena-"+encodeURIComponent(active.scenarioId)+"#trophy-challenges"}
+                            className="inline-flex w-full min-h-12 items-center justify-center gap-2 rounded-xl border border-primary/50 px-4 text-sm font-semibold text-primary">
+                            Score this fictional scenario for a private trophy <ArrowRight className="h-4 w-4"/>
+                          </Link>
+                          <p className="text-xs text-muted-foreground">Sign in to take a separate server-scored reasoning quiz. Your browser-only Arena outcome is not submitted as proof.</p>
                           <Link to={scenario?.nextHref ?? "/learn"} className="arena-primary inline-flex w-full min-h-12 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground">
                             {scenario?.nextLabel} <ArrowRight className="h-4 w-4" />
                           </Link>

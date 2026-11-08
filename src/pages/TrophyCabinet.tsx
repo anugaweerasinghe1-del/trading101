@@ -10,6 +10,7 @@ import { buildPersonalTrophyCabinet } from "@/lib/learningAchievements";
 import { useCourseCatalog } from "@/hooks/useCourseCatalog";
 import { FoundationsProgrammePanel } from "@/components/achievements/FoundationsProgrammePanel";
 import { FirstRecordedTradeMilestone } from "@/components/achievements/FirstRecordedTradeMilestone";
+import { VerifiedTrophyChallenges } from "@/components/achievements/VerifiedTrophyChallenges";
 
 export default function TrophyCabinet() {
   const [progress, setProgress] = useState(loadProgress);
@@ -90,6 +91,8 @@ export default function TrophyCabinet() {
           <FoundationsProgrammePanel />
 
           <FirstRecordedTradeMilestone />
+
+          <VerifiedTrophyChallenges />
 
           <section aria-labelledby="milestone-heading" className="mb-12">
             <div className="flex items-start justify-between gap-3 flex-wrap mb-5">
@@ -188,8 +191,8 @@ export default function TrophyCabinet() {
 
           <p className="flex items-start gap-2 rounded-xl border border-border bg-card/60 p-4 text-xs text-muted-foreground leading-relaxed">
             <ShieldCheck className="w-4 h-4 mt-0.5 shrink-0" aria-hidden="true" />
-            Awards for public sharing will require separate server-verified events and explicit opt-in.
-            No prize or achievement shown here is evidence of real investment returns, professional competence or financial performance.
+            Only awards backed by server-verified evidence can be shared, and only after explicit separate opt-in.
+            Device-saved lesson badges remain personal. No award indicates investment performance or professional certification.
           </p>
         </main>
         <MegaFooter />
