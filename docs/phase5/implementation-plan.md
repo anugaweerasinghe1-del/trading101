@@ -713,8 +713,8 @@ accepted. Partial live and fixture outcomes are credited as evidence below.
   migration, provider call or leaderboard mutation is needed for this repair.
 - Acceptance: browser tests cover two server-recorded trades, empty history,
   reload, initial and cached failure/retry, stale quotes, closed-session stock
-  reference plus independent crypto change, storage quota failure and guest
-  isolation. Owner/cycle history and snapshot ordering fixtures cover switches,
+  reference plus independent crypto change, storage quota failure, a loopback
+  Phoenix Realtime event through the compiled subscription, and guest isolation. Owner/cycle history and snapshot ordering fixtures cover switches,
   old requests and history on a return visit. Full protected CI, native Pages
   proof, and an authorized signed-in production read remain required.
 - Rollback: revert the web PR. Account records and existing archived data need

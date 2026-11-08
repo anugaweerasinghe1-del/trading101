@@ -640,6 +640,46 @@ async function main(){
     await wait(()=>devtools.evaluate("location.pathname==='/trader/me'"),"authenticated profile redirect");
     await wait(()=>portfolioInitialized>=1,"isolated account portfolio initialization");
     await wait(()=>devtools.evaluate("localStorage.getItem('tradehq:portfolio-owner')==="+JSON.stringify(USER_ID)+" && JSON.parse(localStorage.getItem('tradehq_portfolio')||'{}').trades?.[0]?.id==='fixture-account-trade'"),'account cache restored separately from guest orders');
+    // Loopback Phoenix frames exercise the app's real Supabase channel callback.
+    await devtools.send('Page.addScriptToEvaluateOnNewDocument',{source:`(()=>{
+      if(location.pathname!=='/portfolio')return;
+      const channels=new Map();
+      const NativeSocket=window.WebSocket;
+      window.WebSocket=class FixtureRealtimeSocket extends EventTarget {
+        static CONNECTING=0;static OPEN=1;static CLOSING=2;static CLOSED=3;
+        readyState=0;
+        constructor(url){
+          super();
+          if(!new URL(url).pathname.startsWith('/realtime/v1/'))return new NativeSocket(url);
+          setTimeout(()=>{this.readyState=1;this.onopen?.({});},0);
+        }
+        close(){this.readyState=3;this.onclose?.({code:1000,reason:'fixture closed'});}
+        reply(message){this.onmessage?.({data:JSON.stringify(message)});}
+        send(raw){
+          const {topic,event,payload,ref}=JSON.parse(raw);
+          if(event==='phx_join'){
+            const bindings=(payload.config.postgres_changes||[]).map((filter,index)=>({...filter,id:index+1}));
+            channels.set(topic,{socket:this,bindings});
+            queueMicrotask(()=>this.reply({topic,event:'phx_reply',payload:{status:'ok',response:{postgres_changes:bindings}},ref}));
+          }else if(event==='heartbeat'||event==='phx_leave'){
+            if(event==='phx_leave')channels.delete(topic);
+            queueMicrotask(()=>this.reply({topic,event:'phx_reply',payload:{status:'ok',response:{}},ref}));
+          }
+        }
+      };
+      window.__fixtureQuoteUpdate=(assetId)=>{
+        for(const [topic,{socket,bindings}] of channels){
+          const binding=bindings.find(item=>item.table==='market_prices');
+          if(!binding)continue;
+          socket.reply({topic,event:'postgres_changes',payload:{ids:[binding.id],data:{
+            schema:'public',table:'market_prices',commit_timestamp:new Date().toISOString(),type:'UPDATE',
+            columns:[{name:'asset_id',type:'text'}],record:{asset_id:assetId},
+          }}});
+          return true;
+        }
+        return false;
+      };
+    })()`});
     const chartValue = "document.querySelector('[data-portfolio-chart-value]')?.textContent";
     const accountValue = "document.querySelector('[data-portfolio-total-value]')?.textContent";
     const refreshPortfolio = () => devtools.evaluate("document.querySelector('[aria-label=\"Refresh portfolio and available quotes\"]')?.click()");
@@ -678,7 +718,10 @@ async function main(){
     await devtools.evaluate("window.dispatchEvent(new Event('online'))");
     await wait(()=>devtools.evaluate(chartValue+"==='$100009.85' && "+accountValue+"==='$100009.85'"),'Confirmed values remain visible when portfolio cache storage fails');
     await devtools.evaluate("window.__restorePortfolioStorage()");
-    console.log('ISOLATED_ACCOUNT_PORTFOLIO_PASS: two protected trades, missing history, initial and cached outages, recovery, independent crypto update, older quote rejection and reload. No live RPCs or orders.');
+    portfolioPrice=130;portfolioQuoteVersion=30;
+    await wait(()=>devtools.evaluate("window.__fixtureQuoteUpdate?.('btc')"),'Portfolio channel subscribes to quote changes');
+    await wait(()=>devtools.evaluate(chartValue+"==='$100014.85' && "+accountValue+"==='$100014.85'"),'Realtime quote event refreshes the same account snapshot');
+    console.log('ISOLATED_ACCOUNT_PORTFOLIO_PASS: two protected trades, missing history, initial and cached outages, recovery, independent crypto update, older quote rejection, reload and a Realtime quote event. No live RPCs or orders.');
     await loadDocument(origin+"/achievements");
     await wait(()=>devtools.evaluate("document.body.textContent.includes('First Recorded Practice Trade')"),"authenticated Trophy milestone");
     await wait(()=>devtools.evaluate("document.querySelector('section[aria-labelledby=recorded-practice-heading] [role=status]')?.textContent.includes('Account-recorded')"),"server-recorded milestone proven");
