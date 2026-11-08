@@ -72,6 +72,26 @@ async function record(userId: string, source: Evidence["source"], sourceKey: str
   }, { onConflict: "user_id,source,source_key,programme_version,result", ignoreDuplicates: true });
   if (error) throw error;
 }
+async function issueAttempt(userId: string, challengeId: string, version: string) {
+  const issued=new Date();
+  const {data,error}=await admin.from("trophy_attempt_v1").upsert({
+    user_id:userId,challenge_id:challengeId,evidence_version:version,
+    attempt_id:crypto.randomUUID(),issued_at:issued.toISOString(),
+    expires_at:new Date(issued.getTime()+15*60_000).toISOString(),consumed_at:null,
+  },{onConflict:"user_id,challenge_id"}).select("attempt_id").single();
+  if(error || !data)throw Error("Unable to create scored attempt");
+  return data.attempt_id as string;
+}
+async function claimAttempt(userId:string,challengeId:string,version:string,rawId:unknown) {
+  if(typeof rawId!=="string" || !/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i.test(rawId))return false;
+  const {data,error}=await admin.from("trophy_attempt_v1")
+    .update({consumed_at:new Date().toISOString()})
+    .eq("user_id",userId).eq("challenge_id",challengeId).eq("evidence_version",version)
+    .eq("attempt_id",rawId).is("consumed_at",null)
+    .gt("expires_at",new Date().toISOString()).select("attempt_id").maybeSingle();
+  if(error)throw error;
+  return Boolean(data);
+}
 async function readState(userId: string) {
   const [g, d, t, e, a, s, p] = await Promise.all([
     admin.from("foundations_assessment_results").select("programme_version,assessment_id,points,possible").eq("user_id",userId).eq("programme_version",FOUNDATIONS_VERSION),
@@ -209,15 +229,17 @@ Deno.serve(async request => {
         const entry=bank.cases.find(c=>"daily:"+c.id===id);
         return entry?reply(200,{status:"available",challenge:{
           id, title:entry.title,detail:entry.detail,category:"daily",
+          attemptId:await issueAttempt(user.id,id,bank.version),
           questions:entry.questions.map(({prompt,options})=>({prompt,options})),
         }}):reply(404,{status:"not_found"});
       }
       const challenge=trophyChallenge(id);
-      return challenge?reply(200,{status:"available",challenge:publicTrophyChallenge(challenge)})
-        :reply(404,{status:"not_found"});
+      return challenge?reply(200,{status:"available",challenge:{
+        ...publicTrophyChallenge(challenge),attemptId:await issueAttempt(user.id,id,ver),
+      }}):reply(404,{status:"not_found"});
     }
     if (action==="grade" && typeof input.challengeId==="string" && Array.isArray(input.answers) &&
-        Object.keys(input).every(k=>["action","challengeId","answers"].includes(k))) {
+        Object.keys(input).every(k=>["action","challengeId","answers","attemptId"].includes(k))) {
       if (!await allow(user.id,"trophy-grade",300,16)) return reply(429,{status:"rate_limited"});
       const id=input.challengeId;
       if (id.startsWith("daily:")) {
@@ -227,6 +249,7 @@ Deno.serve(async request => {
         if (input.answers.length!==entry.questions.length ||
             input.answers.some((x,i)=>!Number.isInteger(x) || Number(x)<0 || Number(x)>=entry.questions[i].options.length))
           return reply(400,{status:"invalid_answers"});
+        if(!await claimAttempt(user.id,id,bank.version,input.attemptId))return reply(409,{status:"attempt_expired_or_used"});
         const points=entry.questions.filter((q,i)=>q.correct===input.answers[i]).length;
         const passed=points>=8;
         if(passed) await record(user.id,"daily",entry.id,bank.version,"pass",points,entry.questions.length);
@@ -251,6 +274,7 @@ Deno.serve(async request => {
         if(error) throw error;
         if(!miss?.length) return reply(409,{status:"requires_first_miss"});
       }
+      if(!await claimAttempt(user.id,id,ver,input.attemptId))return reply(409,{status:"attempt_expired_or_used"});
       const source = id.startsWith("arena-") ? id==="arena-decision-review"?"review":"arena" :
         id.startsWith("second-look-") ? "reflection" : "challenge";
       const result = id==="second-look-initial" ? "miss" : "pass";
