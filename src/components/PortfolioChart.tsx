@@ -114,7 +114,7 @@ export function PortfolioChart({ currentValue, history, account, receivedAt }: {
               fill: 'hsl(var(--muted-foreground))',
               fontSize: 12,
             }}
-          />
+          />}
           
           <Line 
             type="monotone" 
