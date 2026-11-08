@@ -65,7 +65,8 @@ export function PortfolioChart({ currentValue, history, account, receivedAt }: {
           ? "One real portfolio observation is available. The point below shows the current snapshot, not a historical trend. Later observations on this device will build the chart."
           : "History is unavailable on this device until at least two snapshots are recorded. Your account portfolio value and recorded trades are separate from this optional local chart."}
       </p>}
-      {data.length > 0 && <ResponsiveContainer width="100%" height={hasHistory ? 300 : 210}>
+      {data.length > 0 && <div className="min-w-0" data-portfolio-chart-state={hasHistory ? "trend" : "single-observation"}>
+        <ResponsiveContainer width="100%" height={hasHistory ? 300 : 210}>
         <LineChart data={data}>
           <XAxis 
             dataKey="time" 
@@ -125,7 +126,8 @@ export function PortfolioChart({ currentValue, history, account, receivedAt }: {
             activeDot={{ r: 6 }}
           />
         </LineChart>
-      </ResponsiveContainer>}
+        </ResponsiveContainer>
+      </div>}
     </Card>
   );
 }
