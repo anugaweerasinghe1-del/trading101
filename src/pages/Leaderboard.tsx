@@ -10,6 +10,7 @@ import { EducationalDisclaimer } from "@/components/EducationalDisclaimer";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import { publicTrophyName } from "@/components/achievements/PublicTrophies";
 import { useAuth } from "@/hooks/useAuth";
 import { PRICE_REFRESH_COPY, priceLabel, quoteTimeLabel } from "@/lib/practicePricing";
 import { pushPortfolio, reconcilePortfolio, startRankedPractice } from "@/lib/cloudPortfolio";
@@ -96,6 +97,7 @@ export default function Leaderboard() {
   const { user, profile, loading: authLoading } = useAuth();
   const userId = user?.id;
   const [rows, setRows] = useState<BoardRow[]>([]);
+  const [publicFlairs, setPublicFlairs] = useState<Record<string,string>>({});
   const [loading, setLoading] = useState(true);
   const [ranked, setRanked] = useState<boolean | null>(null);
   const [restartOpen, setRestartOpen] = useState(false);
@@ -126,10 +128,23 @@ export default function Leaderboard() {
     loadBusy.current = true;
     if (!quiet) setLoading(true);
     try {
-      const [cloud, previous] = await Promise.all([
+      const [cloud, previous, sharedFlairs] = await Promise.all([
         supabase.rpc("get_public_practice_members", { p_limit: 500 }),
         supabase.rpc("get_previous_practice_results", { p_limit: 500 }),
+        supabase.functions.invoke<{status:string;flairs?:Array<{username:string;trophyId:string}>}>("trophy-evidence", {
+          body:{action:"public_flairs"},
+        }).catch(()=>({data:null,error:true})),
       ]);
+      // A trophy-service outage must never block the unrelated practice leaderboard.
+      // Only a separately enabled, confirmed account's earned flair is returned.
+      const allowedFlairs = sharedFlairs.data?.status === "available" &&
+        Array.isArray(sharedFlairs.data.flairs) ? sharedFlairs.data.flairs : [];
+      const flareMap:Record<string,string>={};
+      for(const item of allowedFlairs) {
+        if(typeof item.username==="string" && typeof item.trophyId==="string" &&
+          publicTrophyName(item.trophyId))flareMap[item.username]=item.trophyId;
+      }
+      setPublicFlairs(flareMap);
       const previousTrades = new Map((previous.error ? [] : previous.data ?? []).map(row => [row.user_id, Number(row.trades)]));
       const rankedRows = cloud.error ? [] : withPublicMemberPositions((cloud.data ?? []).map(row => ({
         userId: row.user_id, username: row.username, country: row.country,
@@ -428,6 +443,9 @@ export default function Leaderboard() {
                           {trader.practiceRank !== null && trader.practiceRank <= 3 && <span aria-hidden="true">{getRankIcon(trader.practiceRank)}</span>}
                         </span>
                         <span className="min-w-0"><span className="block truncate font-semibold text-sm">{trader.username}</span>
+                          {publicFlairs[trader.username] && <span className="inline-flex items-center gap-1 text-xs text-primary" aria-label={"Shared learning trophy "+publicTrophyName(publicFlairs[trader.username])}>
+                            <Trophy aria-hidden="true" className="h-3 w-3" />{publicTrophyName(publicFlairs[trader.username])}
+                          </span>}
                           <span className="block mt-1 text-xs text-muted-foreground truncate">{profile?.id === trader.userId ? "You · " : ""}{trader.country ? `${trader.country} · ` : ""}Virtual practice only</span></span>
                         <span className={`text-right font-mono tabular-nums text-sm ${trader.pnlPct === null ? "text-muted-foreground" : trader.pnlPct >= 0 ? "text-profit" : "text-loss"}`}>
                           {trader.pnlPct === null ? "—" : `${trader.pnlPct >= 0 ? "+" : ""}${trader.pnlPct.toFixed(1)}%`}
@@ -444,7 +462,11 @@ export default function Leaderboard() {
                     <Link key={trader.userId} to={`/trader/${trader.username}`}
                       className="grid grid-cols-[45px_minmax(0,1fr)_96px_54px] sm:grid-cols-[75px_minmax(0,1fr)_130px_80px] gap-2 sm:gap-4 items-center px-4 sm:px-6 py-3 border-b border-border/40 hover:bg-muted/30 text-sm">
                       <span className="text-muted-foreground font-mono tabular-nums" aria-label={`Public member position ${trader.listPosition}, not a return rank`}>#{trader.listPosition}</span>
-                      <span className="min-w-0"><span className="block truncate font-medium">{trader.username}</span><span className="block text-xs text-muted-foreground">{trader.portfolioStatus === "imported" ? "Imported guest portfolio" : "Still learning"}</span></span>
+                      <span className="min-w-0"><span className="block truncate font-medium">{trader.username}</span>
+                        {publicFlairs[trader.username] && <span className="block text-xs text-primary" aria-label={"Shared learning trophy "+publicTrophyName(publicFlairs[trader.username])}>
+                          <Trophy aria-hidden="true" className="inline h-3 w-3 mr-1" />{publicTrophyName(publicFlairs[trader.username])}
+                        </span>}
+                        <span className="block text-xs text-muted-foreground">{trader.portfolioStatus === "imported" ? "Imported guest portfolio" : "Still learning"}</span></span>
                       <span className="text-right text-muted-foreground text-xs">Unranked</span>
                       <span className="text-right tabular-nums">{trader.trades}</span>
                     </Link>
