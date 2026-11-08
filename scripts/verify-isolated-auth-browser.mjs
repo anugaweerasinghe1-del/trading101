@@ -779,6 +779,13 @@ async function main(){
     await wait(()=>devtools.evaluate("document.querySelector('section[aria-labelledby=recorded-practice-heading] [role=status]')?.textContent.includes('Account-recorded')"),"server-recorded milestone proven");
     assert.ok(privateTradeReads>=1,"Signed-in owner must fetch account-bound evidence");
     assert.equal(privateTradeRejected,0,"No unauthorized or unscoped trade reads allowed");
+    // The trophy API intentionally returns 503 until its later signed-in
+    // lifecycle fixture begins. No old progress or trade-read shortcut may
+    // label a new durable award as Earned during that outage.
+    const trophyCards="document.querySelector('section[aria-labelledby=trophy-collection-title]')";
+    await wait(()=>devtools.evaluate(trophyCards+"?.textContent.includes('Verification pending')"),'Recorded trade awaits its durable trophy award during API outage');
+    assert.equal(await devtools.evaluate(trophyCards+".textContent.includes('Earned')"),false,
+      'An unavailable trophy issuer must never render an unissued Earned award');
     const programme="document.querySelector('section[aria-labelledby=foundations-programme-title]')";
     const programmeButton=label=>"[..."+programme+".querySelectorAll('button')].find(e=>e.textContent.trim()==="+JSON.stringify(label)+")";
     const programmeClick=label=>devtools.evaluate(programmeButton(label)+"?.click()");
