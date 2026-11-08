@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import { getPortfolio, savePortfolio, updatePositionPrices } from "@/lib/portfolio";
-import { pushPortfolio } from "@/lib/cloudPortfolio";
+import { getAccountPortfolio, pushPortfolio } from "@/lib/cloudPortfolio";
+import { portfolioOwnerIs } from "@/lib/portfolioOwner";
 import { refreshAssetSnapshots } from "@/lib/marketDataClient";
 
 /** Account holdings stay server-authoritative. Guest portfolios remain on this device.
@@ -15,6 +16,7 @@ const MIN_REFRESH_GAP_MS = 10_000;
 
 export function PortfolioLiveUpdates() {
   const { user, loading } = useAuth();
+  const userId = user?.id;
   const [guestHasHoldings, setGuestHasHoldings] = useState(() => getPortfolio().positions.length > 0);
 
   // Activate a feed when a guest places their first order, restores a portfolio,
@@ -29,8 +31,9 @@ export function PortfolioLiveUpdates() {
     };
   }, []);
 
+  const shouldSubscribe = Boolean(userId || guestHasHoldings);
   useEffect(() => {
-    if (loading || (!user && !guestHasHoldings)) return;
+    if (loading || !shouldSubscribe) return;
     let active = true;
     let busy = false;
     let queued = false;
@@ -44,17 +47,18 @@ export function PortfolioLiveUpdates() {
       busy = true;
       lastAttempt = Date.now();
       try {
-        if (user) {
+        if (userId) {
           // Only the server may mutate signed-in cash and trade history.
-          await pushPortfolio(user.id);
+          await pushPortfolio(userId);
         } else {
+          if (!portfolioOwnerIs(null)) return;
           const before = getPortfolio();
           if (!before.positions.length) return;
           // One shared snapshot read for all held assets; never request an
           // individual third-party provider quote for every visitor's holding.
           const heldAssets = before.positions.map(position => position.asset);
           const { assets } = await refreshAssetSnapshots(heldAssets);
-          if (!active) return;
+          if (!active || !portfolioOwnerIs(null)) return;
           // Re-read after the await so a trade made during the quote request
           // is not overwritten by the old portfolio snapshot.
           const latest = getPortfolio();
@@ -94,19 +98,20 @@ export function PortfolioLiveUpdates() {
     // Allow auth restoration to complete before the first account read.
     const first = window.setTimeout(() => schedule(true), 1800);
 
-    const channel = supabase.channel("tradehq-portfolio-live-" + (user?.id ?? "guest"));
+    const channel = supabase.channel("tradehq-portfolio-live-" + (userId ?? "guest"));
     // All public cached market quotes are non-sensitive; only refresh a guest
     // or account if the changed asset belongs to that portfolio.
     channel.on("postgres_changes", { event: "*", schema: "public", table: "market_prices" }, payload => {
       const assetId = (payload.new as { asset_id?: string } | undefined)?.asset_id;
-      if (assetId && getPortfolio().positions.some(p => p.asset.id === assetId)) schedule();
+      const portfolio = userId ? getAccountPortfolio(userId)?.portfolio : getPortfolio();
+      if (assetId && portfolio?.positions.some(position => position.asset.id === assetId)) schedule();
     });
-    if (user) {
+    if (userId) {
       // Supabase RLS restricts account rows to auth.uid(); a remote trade
       // triggers a fresh authoritative snapshot rather than trusting a payload.
       channel.on("postgres_changes", {
         event: "*", schema: "public", table: "practice_portfolios",
-        filter: "user_id=eq." + user.id,
+        filter: "user_id=eq." + userId,
       }, () => schedule());
     }
     channel.subscribe();
@@ -121,7 +126,7 @@ export function PortfolioLiveUpdates() {
       document.removeEventListener("visibilitychange", onVisible);
       void supabase.removeChannel(channel);
     };
-  }, [user?.id, loading, guestHasHoldings]);
+  }, [userId, loading, shouldSubscribe]);
 
   return null;
 }

@@ -23,7 +23,7 @@ assert.match(sql,/RETURN tradehq_private\.portfolio_snapshot\(uid\)/);
 assert.doesNotMatch(sql,/INSERT INTO public\.practice_trades|UPDATE public\.practice_portfolios|DELETE FROM public\.practice_trades/);
 assert.match(cloud,/restoreAccountPortfolioFromServer/);
 assert.match(cloud,/supabase\.rpc\("get_my_account_practice_snapshot"\)/);
-assert.match(cloud,/applyServerSnapshot\(data as unknown as ServerSnapshot,userId,\{force:true\}\)/);
+assert.match(cloud,/applyServerSnapshot\(data as unknown as ServerSnapshot, userId\)/);
 assert.doesNotMatch(cloud.split("export async function restoreAccountPortfolioFromServer")[1],/initialize_practice_portfolio|record_practice_trade/);
 assert.match(ui,/export_my_verified_practice_history/);
 assert.match(ui,/verify_my_practice_history_export/);

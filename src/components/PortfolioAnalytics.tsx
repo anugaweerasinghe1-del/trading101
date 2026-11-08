@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { Portfolio } from "@/lib/types";
+import type { Portfolio, PortfolioSnapshot } from "@/lib/types";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
@@ -8,11 +8,12 @@ import { calculateMaxDrawdown, calculateRealizedPnL } from "@/lib/portfolio";
 
 interface PortfolioAnalyticsProps {
   portfolio: Portfolio;
+  history?: PortfolioSnapshot[];
 }
 
 const COLORS = ['hsl(45 100% 51%)', 'hsl(142 71% 45%)', 'hsl(217 91% 60%)', 'hsl(0 72% 51%)', 'hsl(280 100% 70%)'];
 
-export function PortfolioAnalytics({ portfolio }: PortfolioAnalyticsProps) {
+export function PortfolioAnalytics({ portfolio, history }: PortfolioAnalyticsProps) {
   const analytics = useMemo(() => {
     const totalInvested = portfolio.positions.reduce((sum, p) => sum + (p.avgPrice * p.quantity), 0);
     const currentValue = portfolio.positions.reduce((sum, p) => sum + p.currentValue, 0);
@@ -53,7 +54,7 @@ export function PortfolioAnalytics({ portfolio }: PortfolioAnalyticsProps) {
       (portfolio.positions.length * 5)
     );
 
-    const maxDrawdown = calculateMaxDrawdown();
+    const maxDrawdown = calculateMaxDrawdown(history);
     const realizedPnL = calculateRealizedPnL(portfolio);
 
     return {
@@ -70,7 +71,7 @@ export function PortfolioAnalytics({ portfolio }: PortfolioAnalyticsProps) {
       maxDrawdown,
       realizedPnL,
     };
-  }, [portfolio]);
+  }, [portfolio, history]);
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
@@ -106,7 +107,7 @@ export function PortfolioAnalytics({ portfolio }: PortfolioAnalyticsProps) {
               <TrendingDown className="w-3.5 h-3.5" /> Practice Max Drawdown
             </span>
             <span className="text-base font-semibold text-destructive tabular-nums">
-              -{analytics.maxDrawdown.toFixed(2)}%
+              {history && history.length < 2 ? "History unavailable" : `-${analytics.maxDrawdown.toFixed(2)}%`}
             </span>
           </div>
           <div className="flex justify-between items-center">

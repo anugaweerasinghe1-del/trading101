@@ -1,24 +1,37 @@
-import { PortfolioSnapshot, Portfolio, Position } from './types';
-import { ASSETS } from './assets';
-import { portfolioViewMatchesOwner, portfolioSessionRevision } from './portfolioOwner';
-import { 
-  getHoursSinceLastUpdate, 
-  setLastUpdateTime, 
-  simulateAssetPrices,
-  fetchMarketPredictions
-} from './priceSimulation';
+import type { PortfolioSnapshot, Portfolio } from './types';
+import { portfolioOwnerIs, portfolioViewMatchesOwner } from './portfolioOwner';
 
 const HISTORY_KEY = 'tradesandbox_history';
 
-export function getPortfolioHistory(): PortfolioSnapshot[] {
-  if (!portfolioViewMatchesOwner()) return [];
+function readSnapshots(key: string): PortfolioSnapshot[] {
   try {
-    const history = JSON.parse(localStorage.getItem(HISTORY_KEY) ?? '[]');
+    const history = JSON.parse(localStorage.getItem(key) ?? '[]');
     if (!Array.isArray(history)) return [];
     return history.filter(snapshot => snapshot && Number.isFinite(new Date(snapshot.timestamp).getTime()) &&
       ['totalValue','cash','positionsValue'].every(key => typeof snapshot[key] === 'number' && Number.isFinite(snapshot[key])))
       .slice(-500).map(snapshot => ({ ...snapshot, timestamp: new Date(snapshot.timestamp) }));
   } catch { return []; }
+}
+
+export function getPortfolioHistory(): PortfolioSnapshot[] {
+  return portfolioViewMatchesOwner() ? readSnapshots(HISTORY_KEY) : [];
+}
+
+const accountHistoryKey = (owner: string, cycle: string) => `tradehq:account-portfolio-history:v1:${owner}:${cycle}`;
+
+export function getAccountPortfolioHistory(owner: string, cycle: string): PortfolioSnapshot[] {
+  return portfolioOwnerIs(owner) ? readSnapshots(accountHistoryKey(owner, cycle)) : [];
+}
+
+export function recordAccountPortfolioSnapshot(owner: string, cycle: string, portfolio: Portfolio, receivedAt: number) {
+  if (!portfolioOwnerIs(owner)) return;
+  const history = getAccountPortfolioHistory(owner, cycle);
+  const last = history[history.length - 1];
+  if (last && receivedAt - last.timestamp.getTime() < 5 * 60_000 && last.totalValue === portfolio.totalValue) return;
+  history.push({ timestamp: new Date(receivedAt), cash: portfolio.cash, totalValue: portfolio.totalValue,
+    positionsValue: portfolio.positions.reduce((sum, position) => sum + position.currentValue, 0) });
+  try { localStorage.setItem(accountHistoryKey(owner, cycle), JSON.stringify(history.slice(-500))); }
+  catch { /* The current server valuation remains visible when chart storage is unavailable. */ }
 }
 
 export function addPortfolioSnapshot(snapshot: PortfolioSnapshot): void {
@@ -43,94 +56,4 @@ export function recordSnapshot(cash: number, positionsValue: number): void {
     positionsValue,
   };
   addPortfolioSnapshot(snapshot);
-}
-
-/**
- * Update portfolio with simulated price changes over time
- * Creates synthetic hourly backfill, not observed account history or an AI forecast.
- */
-export async function updatePortfolioOverTime(portfolio: Portfolio): Promise<Portfolio> {
-  const revision = portfolioSessionRevision();
-  const hoursElapsed = getHoursSinceLastUpdate();
-  
-  // If less than 1 hour has passed, no update needed
-  if (hoursElapsed < 1) {
-    return portfolio;
-  }
-  
-  // Calculate how many hourly snapshots to create (no max limit for long-term accuracy)
-  const hoursToSimulate = Math.floor(hoursElapsed);
-  
-  if (hoursToSimulate === 0) {
-    return portfolio;
-  }
-  
-  // The retired prediction fetch returns no parameters; use the practice model.
-  const predictions = await fetchMarketPredictions(ASSETS);
-  if (revision !== portfolioSessionRevision() || !portfolioViewMatchesOwner()) return portfolio;
-  console.log('Using practice model parameters for portfolio backfill:', Object.keys(predictions).length, 'assets');
-  
-  // Get current asset prices
-  let currentAssets = [...ASSETS];
-  
-  // Simulate price changes for each hour that passed
-  for (let i = 0; i < hoursToSimulate; i++) {
-    // Simulate one hour of practice movement using the supplied model parameters.
-    currentAssets = simulateAssetPrices(currentAssets, 1, predictions);
-    
-    // Calculate portfolio value with new prices
-    let positionsValue = 0;
-    const updatedPositions = portfolio.positions.map(position => {
-      const updatedAsset = currentAssets.find(a => a.id === position.asset.id);
-      if (updatedAsset) {
-        const currentValue = updatedAsset.price * position.quantity;
-        positionsValue += currentValue;
-        return {
-          ...position,
-          asset: updatedAsset,
-          currentValue,
-        };
-      }
-      return position;
-    });
-    
-    // Record a snapshot for this hour
-    const snapshotTime = new Date(Date.now() - (hoursToSimulate - i - 1) * 60 * 60 * 1000);
-    const snapshot: PortfolioSnapshot = {
-      timestamp: snapshotTime,
-      totalValue: portfolio.cash + positionsValue,
-      cash: portfolio.cash,
-      positionsValue,
-    };
-    addPortfolioSnapshot(snapshot);
-  }
-  
-  // Update the last update time
-  setLastUpdateTime(new Date());
-  
-  // Return updated portfolio with new prices
-  const finalAssets = currentAssets;
-  const updatedPositions: Position[] = portfolio.positions.map(position => {
-    const updatedAsset = finalAssets.find(a => a.id === position.asset.id);
-    if (updatedAsset) {
-      const currentValue = updatedAsset.price * position.quantity;
-      const totalCost = position.avgPrice * position.quantity;
-      return {
-        ...position,
-        asset: updatedAsset,
-        currentValue,
-        profitLoss: currentValue - totalCost,
-        profitLossPercent: ((currentValue - totalCost) / totalCost) * 100,
-      };
-    }
-    return position;
-  });
-  
-  const positionsValue = updatedPositions.reduce((sum, p) => sum + p.currentValue, 0);
-  
-  return {
-    ...portfolio,
-    positions: updatedPositions,
-    totalValue: portfolio.cash + positionsValue,
-  };
 }

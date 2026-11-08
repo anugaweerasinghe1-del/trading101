@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, useSyncExternalStore } from "react";
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { AIAssistant } from "@/components/AIAssistant";
@@ -17,12 +17,11 @@ import {
   updatePositionPrices,
   savePortfolio,
 } from "@/lib/portfolio";
-import { updatePortfolioOverTime } from "@/lib/portfolioHistory";
 import { ASSETS } from "@/lib/assets";
 import { persistPrice, getPersistedPrices } from "@/lib/pricePersistence";
 import { marketRequests } from "@/lib/marketDataClient";
 import { quoteCoverageForHoldings, type QuoteCoverage } from "@/lib/quoteCoverage";
-import { recordSnapshot } from "@/lib/portfolioHistory";
+import { getAccountPortfolioHistory, getPortfolioHistory, recordSnapshot } from "@/lib/portfolioHistory";
 import { calculateDayChange } from "@/lib/portfolio";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -52,19 +51,38 @@ import {
 } from "@/lib/notifications";
 
 import { useAuth } from "@/hooks/useAuth";
-import { pushPortfolio } from "@/lib/cloudPortfolio";
+import { getAccountPortfolio, pushPortfolio, subscribeAccountPortfolio } from "@/lib/cloudPortfolio";
+import { portfolioOwnerIs } from "@/lib/portfolioOwner";
 import { PRICE_REFRESH_COPY, priceLabel, quoteTimeLabel, snapshotPriceInfo } from "@/lib/practicePricing";
+const emptyPortfolio = { cash: 0, totalValue: 0, positions: [], trades: [] };
+
 export default function Portfolio() {
   const { user, loading: authLoading } = useAuth();
   const userRef = useRef(user);
   userRef.current = user;
   const refreshBusy = useRef(false);
-  const [accountPricing, setAccountPricing] = useState<{ status: string; fetched: string | null; observed: string | null } | null>(null);
-  const [accountError, setAccountError] = useState(false);
-  const [quoteCoverage, setQuoteCoverage] = useState<Record<string, QuoteCoverage>>({});
-  const [quoteLookupFailed, setQuoteLookupFailed] = useState(false);
+  const [guestQuoteCoverage, setQuoteCoverage] = useState<Record<string, QuoteCoverage>>({});
+  const [guestQuoteLookupFailed, setQuoteLookupFailed] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
-  const [portfolio, setPortfolio] = useState(getPortfolio());
+  const [browserPortfolio, setPortfolio] = useState(getPortfolio);
+  const account = useSyncExternalStore(subscribeAccountPortfolio, () => getAccountPortfolio(user?.id), () => null);
+  const accountUnavailable = authLoading || Boolean(user && !account?.portfolio);
+  const accountPricing = account?.snapshot ? snapshotPriceInfo(account.snapshot.positions) : null;
+  const portfolio = user ? account?.portfolio ?? emptyPortfolio : browserPortfolio;
+  const accountJournals = user && portfolioOwnerIs(user.id)
+    ? new Map(browserPortfolio.trades.map(trade => [trade.id, trade.journal]))
+    : null;
+  const tradesWithLocalNotes = accountJournals
+    ? portfolio.trades.map(trade => ({ ...trade, journal: accountJournals.get(trade.id) ?? trade.journal }))
+    : portfolio.trades;
+  const history = user ? account?.snapshot ? getAccountPortfolioHistory(user.id, account.snapshot.cycle_id) : [] : getPortfolioHistory();
+  const accountPositions = account?.snapshot?.positions ?? [];
+  const quoteCoverage = user ? quoteCoverageForHoldings(accountPositions.map(position => position.asset_id),
+    accountPositions.filter(position => position.priced_at).map(position => ({
+      asset_id: position.asset_id, price: position.last_price, updated_at: position.priced_at,
+      observed_at: position.observed_at, quote_status: position.quote_status,
+    }))) : guestQuoteCoverage;
+  const quoteLookupFailed = !user && guestQuoteLookupFailed;
   const [assets, setAssets] = useState(() => {
     // Hydrate from persisted prices for continuity
     const cached = getPersistedPrices();
@@ -96,10 +114,10 @@ export default function Portfolio() {
     return () => window.removeEventListener('tradehq:portfolio-updated', refresh);
   }, []);
 
-  // Inspect the shared quote cache separately from the virtual valuation.
-  // A simulator fallback is NOT live pricing. One batched read avoids exhausting
-  // stock-provider quotas for every visitor.
+  // Guests use the shared quote cache. Account provenance comes from the same
+  // server snapshot as its value, even when the public quote cache advances.
   useEffect(() => {
+    if (authLoading || user?.id) return;
     let active = true;
     const refreshCoverage = async () => {
       if (document.hidden) return;
@@ -120,7 +138,7 @@ export default function Portfolio() {
       active = false; clearInterval(timer);
       window.removeEventListener("focus", refreshCoverage);
     };
-  }, [portfolio.positions.map(p => p.asset.id).join(",")]);
+  }, [authLoading, user?.id, browserPortfolio.positions.map(p => p.asset.id).join(",")]);
 
   // Fetch real price for a single held asset
   const fetchLivePrice = useCallback(async (asset: typeof ASSETS[number]) => {
@@ -154,17 +172,11 @@ export default function Portfolio() {
     if (isMounted.current) setRefreshing(true);
     try {
       if (userRef.current) {
-        try {
-          const snapshot = await pushPortfolio(userRef.current.id);
-          if (!isMounted.current) return;
-          setPortfolio(getPortfolio());
-          setAccountPricing(snapshotPriceInfo(snapshot.positions));
-          setAccountError(false);
-          setDataStatus("cached");
-          setLastUpdated(new Date());
-        } catch { if (isMounted.current) setAccountError(true); }
+        try { await pushPortfolio(userRef.current.id); }
+        catch { /* The shared account view exposes the failure and last accepted snapshot. */ }
         return;
       }
+      if (!portfolioOwnerIs(null)) return;
       const heldIds = new Set(getPortfolio().positions.map((p) => p.asset.id));
       if (heldIds.size === 0) return;
       const heldAssets = assetsRef.current.filter((a) => heldIds.has(a.id));
@@ -196,7 +208,7 @@ export default function Portfolio() {
       if (i + batchSize < heldAssets.length) await new Promise((r) => setTimeout(r, 1000));
     }
 
-    if (!isMounted.current || userRef.current) return;
+    if (!isMounted.current || userRef.current || !portfolioOwnerIs(null)) return;
     const newAssets = assetsRef.current.map((a) => updates.get(a.id) ?? a);
     setAssets(newAssets);
     setDataStatus(anyLive ? "live" : anyDelayed ? "delayed" : "cached");
@@ -226,21 +238,13 @@ export default function Portfolio() {
 
   useEffect(() => {
     isMounted.current = true;
-    const initPortfolio = async () => {
-      await updatePortfolioOverTime(getPortfolio());
-      if (!isMounted.current || userRef.current) return;
-      const updated = updatePositionPrices(getPortfolio(), assetsRef.current);
-      setPortfolio(updated);
-      savePortfolio(updated);
-      initializeMilestones(updated.totalValue);
-    };
-
-    setAccountPricing(null);
-    if (!userRef.current) void initPortfolio();
-    void refreshHeldAssets();
-
-    // Real-data refresh every 60s
-    const refreshVisible = () => { if (!document.hidden) void refreshHeldAssets(); };
+    // The shared realtime feed owns automatic account refreshes.
+    // The guest dashboard retains its existing quote refresh.
+    const refreshVisible = () => { if (!document.hidden && !userRef.current) void refreshHeldAssets(); };
+    if (!authLoading && !userRef.current) {
+      initializeMilestones(getPortfolio().totalValue);
+      refreshVisible();
+    }
     const liveInterval = setInterval(refreshVisible, 60000);
     document.addEventListener("visibilitychange", refreshVisible);
     window.addEventListener("focus", refreshVisible);
@@ -257,7 +261,7 @@ export default function Portfolio() {
       window.removeEventListener("focus", refreshVisible);
       clearInterval(tickInterval);
     };
-  }, [user?.id, refreshHeldAssets]);
+  }, [user?.id, authLoading, refreshHeldAssets]);
 
   useEffect(() => {
     setSecondsAgo(Math.floor((Date.now() - lastUpdatedRef.current.getTime()) / 1000));
@@ -276,9 +280,9 @@ export default function Portfolio() {
       ? (totalProfitLoss / (totalPositionValue - totalProfitLoss)) * 100
       : 0;
 
-  const dayChange = calculateDayChange(portfolio.totalValue);
+  const dayChange = calculateDayChange(portfolio.totalValue, history);
 
-  // US market hours indicator (9:30 - 16:00 ET, Mon-Fri)
+  // Approximate regular US equity schedule. Quote provenance controls valuation independently.
   const isMarketOpen = (() => {
     const now = new Date();
     const et = new Date(now.toLocaleString("en-US", { timeZone: "America/New_York" }));
@@ -376,7 +380,7 @@ export default function Portfolio() {
                   <p className="text-sm text-muted-foreground mt-1.5">
                     Track your virtual investments, analyze performance, and manage simulated risk.
                   </p>
-                  {portfolio.positions.length > 0 && (
+                  {!accountUnavailable && portfolio.positions.length > 0 && (
                     <p className="mt-2 text-xs text-muted-foreground" role="status" aria-live="polite">
                       {quoteLookupFailed ? "Provider status could not be checked; valuations may rely on older data." :
                         Object.keys(quoteCoverage).length === 0 ? "Checking quote sources for your holdings…" :
@@ -388,8 +392,11 @@ export default function Portfolio() {
                   </p>
                   {user && <div className="text-xs text-muted-foreground mt-3 max-w-2xl leading-relaxed">
                     <p>{PRICE_REFRESH_COPY} Account values are checked while TradeHQ is open and whenever supported server updates arrive.</p>
-                    <p className="mt-1">{accountPricing ? `${priceLabel(accountPricing.status, accountPricing.observed)}. ${quoteTimeLabel(accountPricing.fetched, accountPricing.observed)}` : "Loading account prices…"}</p>
-                    {accountError && <p role="status">Account refresh failed. Showing the last loaded account snapshot; retrying automatically.</p>}
+                    {accountPricing && <p className="mt-1">{priceLabel(accountPricing.status, accountPricing.observed)}. {quoteTimeLabel(accountPricing.fetched, accountPricing.observed)}</p>}
+                    {account?.receivedAt && <p>Account snapshot received {new Date(account.receivedAt).toLocaleString()}.</p>}
+                    {account?.error && <p role="status">Account refresh failed. {account.error} {account.portfolio
+                      ? "Showing the last confirmed account snapshot. TradeHQ will retry automatically."
+                      : "Account values are unavailable until a refresh succeeds."}</p>}
                   </div>}
                   <div className="flex items-center gap-3 mt-3 flex-wrap">
                     <span
@@ -408,12 +415,12 @@ export default function Portfolio() {
                           dataStatus === "live" ? "bg-success animate-pulse" : "bg-current",
                         )}
                       />
-                      {dataStatus === "live" ? "Provider reference + simulation" : dataStatus === "delayed" ? "Provider reference + simulation" : dataStatus === "cached" ? "Cached practice data" : "Simulated"}
+                      {user ? account?.portfolio ? "Account snapshot" : "Account snapshot pending" : dataStatus === "live" ? "Provider reference + simulation" : dataStatus === "delayed" ? "Provider reference + simulation" : dataStatus === "cached" ? "Cached practice data" : "Simulated"}
                     </span>
-                    <span className="inline-flex items-center gap-1 text-2xs text-muted-foreground">
+                    {!user && <span className="inline-flex items-center gap-1 text-2xs text-muted-foreground">
                       <Clock className="w-3 h-3" />
-                      {user ? "Account loaded" : "Updated"} {secondsAgo}s ago
-                    </span>
+                      Updated {secondsAgo}s ago
+                    </span>}
                     <span
                       className={cn(
                         "inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-2xs font-medium border",
@@ -423,7 +430,7 @@ export default function Portfolio() {
                       )}
                     >
                       <Activity className="w-3 h-3" />
-                      {isMarketOpen ? "US Markets Open" : "After Hours"}
+                      <span title="Weekday schedule in New York time. Holidays and early closes may differ.">{isMarketOpen ? "Usual US equity hours" : "Outside usual US equity hours"}</span>
                     </span>
                   </div>
                 </div>
@@ -459,13 +466,16 @@ export default function Portfolio() {
               </div>
             </header>
 
+            {accountUnavailable ? <p role="status" className="mb-12 text-sm text-muted-foreground">
+              {account?.error ? "No confirmed account valuation is available." : "Loading your portfolio…"}
+            </p> : <>
             <div className="mb-12">
-              <PortfolioChart />
+              <PortfolioChart currentValue={portfolio.totalValue} history={history} account={Boolean(user)} receivedAt={account?.receivedAt} />
             </div>
 
             <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 mb-12">
               <div className="xl:col-span-2">
-                <PortfolioAnalytics portfolio={portfolio} />
+                <PortfolioAnalytics portfolio={portfolio} history={history} />
               </div>
               <div className="xl:col-span-1">
                 <RiskManagement portfolio={portfolio} />
@@ -485,7 +495,7 @@ export default function Portfolio() {
                   <span className="text-xs text-muted-foreground">Total Value</span>
                 </div>
                 <p className="text-2xl font-bold tabular-nums">
-                  ${portfolio.totalValue.toFixed(2)}
+                  <span data-portfolio-total-value>${portfolio.totalValue.toFixed(2)}</span>
                 </p>
                 {dayChange ? (
                   <p
@@ -590,13 +600,14 @@ export default function Portfolio() {
             </div>
 
             <div className="mb-12">
-              <TradingJournal trades={portfolio.trades} />
+              <TradingJournal trades={tradesWithLocalNotes} />
             </div>
 
             <div className="mb-12">
-              <TradeHistory trades={portfolio.trades} />
+              <TradeHistory trades={tradesWithLocalNotes} />
             </div>
 
+            </>}
             <ContextualLinks variant="portfolio" />
 
             <SEOSection
@@ -624,7 +635,7 @@ export default function Portfolio() {
           </div>
         </main>
 
-        <AIAssistant portfolio={portfolio} assets={assets} />
+        {!accountUnavailable && <AIAssistant portfolio={portfolio} assets={assets} />}
         <MegaFooter />
       </div>
     </>
