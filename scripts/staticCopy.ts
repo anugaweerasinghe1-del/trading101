@@ -6,6 +6,7 @@
 
 import type { PageContent } from "./content";
 import { PRIVACY_SECTIONS, PRIVACY_REFERENCES } from "../src/lib/privacyCopy";
+import { RELEASE_NOTES } from "../src/lib/releaseNotes";
 
 const D = "Educational simulation only — not financial advice.";
 
@@ -498,6 +499,11 @@ export const STATIC_COPY: Record<string, PageContent> = {
     ],
   },
 
+  "/whats-new": {
+    sections: RELEASE_NOTES.map(note => ({ h: note.title, p: [note.summary] })),
+    links: RELEASE_NOTES.map(note => ({ href: note.href, label: note.action })),
+  },
+
   "/roadmap": {
     sections: [
       {
@@ -517,6 +523,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
       },
     ],
     links: [
+      { href: "/whats-new", label: "What’s New" },
       { href: "/about", label: "About TradeHQ" },
       { href: "/contact", label: "Suggest a feature" },
     ],

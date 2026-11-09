@@ -287,22 +287,11 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
       ],
     },
     {
-      h: "Recently shipped",
+      h: "Current priorities",
       list: [
-        "Four structured course tracks with quizzes, cited sources and completion badges.",
-        "A full trading glossary with detailed explanations and related-term navigation.",
-        "Localised country guides covering official regulatory sources, market-access checks and country-specific practice worksheets.",
-        "Optional public trader profiles and a 30-day practice duel against a friend.",
-        "Daily challenges with a local-time streak counter, plus journal and portfolio analytics.",
-      ],
-    },
-    {
-      h: "Proposed features",
-      list: [
-        "Portfolio projections are proposed as a way to explore hypothetical inputs, not as a promise of future returns.",
-        "Embeddable price widgets are proposed; their data sources, update frequency and access requirements are not specified.",
-        "These proposals are not available execution tools. Options and futures lessons remain conceptual; current simulator practice uses supported spot instruments.",
-        "Public profile sharing requires public visibility and uses the /trader/{username} address. New profiles start private; members can opt into public visibility at any time. The /trader/me route is an account view, not a public profile link.",
+        "Improve worked examples, source notes, and labels for simulated data.",
+        "Make it easier to report a confusing page and use feedback to fix it.",
+        "Review mobile layouts, keyboard navigation, and links across the site.",
       ],
     },
     {

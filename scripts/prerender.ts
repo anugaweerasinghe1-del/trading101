@@ -54,6 +54,7 @@ const FOOTER = [
   { href: "/contact", label: "Contact" },
   { href: "/privacy", label: "Privacy policy" },
   { href: "/terms", label: "Terms of service" },
+  { href: "/whats-new", label: "What’s New" },
   { href: "/roadmap", label: "Roadmap" },
   { href: "/learn/country", label: "Country guides" },
 ];

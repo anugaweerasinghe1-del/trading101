@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Wallet, Home, GraduationCap, BookOpen, BarChart3, Bot, Menu, X, Star, Info, UserRound, LogOut, ChevronDown, Mail, CalendarCheck, Contact, TrendingUp, Layers, Target } from "lucide-react";
+import { Wallet, Home, GraduationCap, BookOpen, BarChart3, Bot, Menu, X, Star, Info, UserRound, LogOut, ChevronDown, Mail, CalendarCheck, Contact, TrendingUp, Layers, Target, Sparkles } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { cn } from "@/lib/utils";
 import { useState, useEffect, useRef } from "react";
@@ -96,6 +96,7 @@ export function Navigation() {
     { label: "Company", items: [
       { to: "/about", label: "About", icon: Info },
       { to: "/contact", label: "Contact", icon: Contact },
+      { to: "/whats-new", label: "What’s New", icon: Sparkles },
       { to: "/roadmap", label: "Roadmap", icon: CalendarCheck },
     ] },
     { label: "Legal & Trust", items: [
