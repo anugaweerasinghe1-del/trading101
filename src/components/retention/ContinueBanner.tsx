@@ -33,7 +33,7 @@ export function ContinueBanner() {
       // learners stuck on the same MCQ after they already passed it.
       const lesson = t && last && prog.tracks[t.slug]?.lessons[last.slug]?.status !== "completed"
         ? last
-        : t?.lessons.find(x => prog.tracks[t.slug]?.lessons[x.slug]?.status !== "completed");
+        : t ? t.lessons.find(x => prog.tracks[t.slug]?.lessons[x.slug]?.status !== "completed") : undefined;
       if (t && lesson) {
         const dismissedAt = localStorage.getItem(DISMISS_KEY);
         if (dismissedAt) {
