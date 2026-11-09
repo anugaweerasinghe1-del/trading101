@@ -8,7 +8,6 @@ import { HelmetProvider } from "react-helmet-async";
 import { PageTransition } from "@/components/PageTransition";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { BackgroundMusic } from "@/components/BackgroundMusic";
-import { PushNotificationPrompt } from "@/components/retention/PushNotificationPrompt";
 import { AuthProvider } from "@/hooks/useAuth";
 import { recordVisit } from "@/lib/lastVisit";
 import { snapshotWatchlist } from "@/lib/watchlistDiff";
@@ -280,7 +279,6 @@ function AppRuntime() {
     <RoutePublisherNotes />
     <MobileBottomNav />
     <BackgroundMusic />
-    <PushNotificationPrompt />
     <WatchlistSnapshot />
     <ConsentBanner />
     <CoursePublicationNotices />
