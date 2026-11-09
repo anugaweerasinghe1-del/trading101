@@ -72,8 +72,8 @@ export function LearningJourneyDashboard({ tracks }: { tracks: LearningTrack[] }
           ) : (
             <p className="mt-4 flex-1 text-sm text-muted-foreground">{hasCourseHistory ? "All available course lessons completed." : "Explore an introductory course when you're ready."}</p>
           )}
-          <Link to={overview.next?.href ?? "/courses"} className="mt-4 inline-flex items-center gap-2 font-semibold text-sm text-primary underline underline-offset-4">
-            {overview.next ? (overview.next.inProgress ? "Resume saved lesson" : "Open next lesson") : "Browse courses"} <ArrowRight className="w-4 h-4" />
+          <Link to={overview.next?.href ?? (hasCourseHistory ? "/daily" : "/courses")} className="mt-4 inline-flex min-h-11 items-center gap-2 font-semibold text-sm text-primary underline underline-offset-4">
+            {overview.next ? (overview.next.inProgress ? "Resume saved lesson" : "Open next lesson") : hasCourseHistory ? "Continue with Daily Practice" : "Browse courses"} <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>
