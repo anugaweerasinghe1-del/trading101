@@ -21,6 +21,9 @@ const upstream: typeof fetch = async (input, init) => {
     assert.equal(body.generationConfig.thinkingConfig.thinkingLevel, 'LOW');
     const prompt = JSON.parse(body.contents[0].parts[0].text);
     assert.deepEqual(prompt.previous, [], 'Test uses no user data or live private drafts');
+    const explanation = body.generationConfig.responseJsonSchema.properties.exercises.items.properties.questions.items.properties.explanation;
+    assert.match(explanation.description, /at least 100 characters after trimming/);
+    assert.ok(prompt.instructions.includes(explanation.description), 'The same character requirement appears in the prompt and schema');
     return Response.json({ candidates: [{ finishReason: 'STOP', content: { parts: [{ text: JSON.stringify({ exercises }) }] } }],
       usageMetadata: { promptTokenCount: 1000, candidatesTokenCount: 10000, totalTokenCount: 11000 } });
   }
@@ -93,7 +96,7 @@ assert.ok(validProbeDiagnostics(passed.data.diagnostics));
 const stages = [
   ['RESPONSE_ENVELOPE', () => new Response('not JSON')],
   ['MODEL_JSON', () => Response.json({ candidates: [{ finishReason: 'MAX_TOKENS', content: { parts: [{ text: '{"exercises":[' }] } }], usageMetadata: { candidatesTokenCount: 32768 } })],
-  ['EXERCISE_STRUCTURE', () => { const items = structuredClone(exercises); items[2].questions[4].explanation = 'PRIVATE'; return Response.json({ candidates: [{ finishReason: 'STOP', content: { parts: [{ text: JSON.stringify({ exercises: items }) }] } }] }); }],
+  ['EXERCISE_STRUCTURE', () => { const items = structuredClone(exercises); items[0].questions[3].explanation = 'PRIVATE'.padEnd(48, 'x'); return Response.json({ candidates: [{ finishReason: 'STOP', content: { parts: [{ text: JSON.stringify({ exercises: items }) }] } }] }); }],
   ['SOURCE_ALLOWLIST', () => { const items = structuredClone(exercises); items[0].sources[0].url = 'https://www.investor.gov/not-supplied-reference'; return Response.json({ candidates: [{ content: { parts: [{ text: JSON.stringify({ exercises: items }) }] } }] }); }],
   ['CATEGORY_COVERAGE', () => { const items = structuredClone(exercises); items[0].category = items[0].category === 'Price data' ? 'Decision habits' : 'Price data'; return Response.json({ candidates: [{ content: { parts: [{ text: JSON.stringify({ exercises: items }) }] } }] }); }],
   ['REPETITION', () => { const items = structuredClone(exercises); items[1].scenario = items[0].scenario; return Response.json({ candidates: [{ content: { parts: [{ text: JSON.stringify({ exercises: items }) }] } }] }); }],
@@ -110,8 +113,8 @@ for (const [stage, response] of stages) {
   if (stage === 'MODEL_JSON') { assert.equal(result.data.diagnostics.provider.finishReason, 'MAX_TOKENS'); assert.equal(result.data.diagnostics.provider.outputTokens, 32768); }
   if (stage === 'EXERCISE_STRUCTURE') {
     assert.deepEqual(result.data.diagnostics.validation.rules, ['QUESTION_FIELDS']);
-    assert.equal(result.data.diagnostics.validation.exercise, 3); assert.equal(result.data.diagnostics.validation.question, 5);
-    assert.equal(result.data.diagnostics.structure.minExplanationChars, 7);
+    assert.equal(result.data.diagnostics.validation.exercise, 1); assert.equal(result.data.diagnostics.validation.question, 4);
+    assert.equal(result.data.diagnostics.structure.minExplanationChars, 48);
   }
 }
 assert.equal(validationDiagnostics('PRIVATE unknown failure'), undefined);
