@@ -183,5 +183,8 @@ export function isLessonCompleted(track: string, lesson: string): boolean {
 export function trackCompletionPct(track: string, totalLessons: number, progress = loadProgress()): number {
   const p = getTrackProgress(track, progress);
   const done = Object.values(p.lessons).filter((l) => l.status === "completed").length;
-  return totalLessons === 0 ? 0 : Math.round((done / totalLessons) * 100);
+  // Imported or retired lessons may remain in saved progress. They must not
+  // produce impossible percentages (e.g. 150%) in the learner UI.
+  if (!Number.isSafeInteger(totalLessons) || totalLessons <= 0) return 0;
+  return Math.min(100, Math.round((done / totalLessons) * 100));
 }
