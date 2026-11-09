@@ -95,7 +95,7 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
     const doneCount = track.lessons.filter(
       (l) => l.slug === lesson.slug || progress.lessons[l.slug]?.status === "completed",
     ).length;
-    if (doneCount === track.lessons.length) {
+    if (doneCount === track.lessons.length && !progress.badgeEarnedAt) {
       awardBadge(track.slug);
       toast.success(`🏆 Badge earned: ${track.badge.name}`, {
         description: "Great work — every lesson complete.",
