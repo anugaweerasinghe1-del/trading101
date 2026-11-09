@@ -20,6 +20,19 @@ const progress = parseCourseProgress(JSON.stringify({
       lessons: { fake: { status: "completed" } } },
   }, updatedAt: "2026-10-04T00:00:00Z",
 }));
+// An invalid badge must not crash the cabinet or reserve a slug ahead of a
+// valid published version of the same course.
+const malformedBadgeCatalog: TrophyCatalogTrack[] = [
+  { slug: "course-a", title: "Course A", badge: null as unknown as { name: string }, lessons: [{ slug: "one" }] },
+  { slug: "course-b", title: "", badge: { name: "Empty title" }, lessons: [{ slug: "three" }] },
+  { slug: "course-c", title: "Course C", badge: { name: "" }, lessons: [{ slug: "four" }] },
+  catalog[0],
+];
+const malformedBadgeResult = buildPersonalTrophyCabinet(malformedBadgeCatalog, progress);
+assert.deepEqual(malformedBadgeResult.badges.map(badge => badge.slug), ["course-a"],
+  "Malformed badges and titles must be ignored without hiding a later valid course");
+assert.equal(malformedBadgeResult.availableLessons, 2);
+
 const snapshot = buildPersonalTrophyCabinet(catalog, progress);
 assert.equal(snapshot.completedLessons, 1, "Unknown lessons and courses cannot inflate milestones");
 assert.equal(snapshot.availableLessons, 3, "Duplicate tracks cannot inflate target counts");
