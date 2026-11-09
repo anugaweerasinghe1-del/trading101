@@ -133,10 +133,21 @@ for (const [resource, limit] of [['issues', 4], ['pulls', 2]] as const) {
 }
 for (const status of [401, 403, 429, 500, 503]) {
   let calls = 0;
-  await assert.rejects(readAdminGithubList('issues', () => {}, async () => {
+  const request = () => readAdminGithubList('issues', () => {}, async () => {
     calls++; return calls === 1 ? new Response(JSON.stringify(full)) : new Response('{}', { status });
-  }), new RegExp('HTTP ' + status));
-  assert.equal(calls, 2, 'Failed page never retries or returns a complete empty history');
+  });
+  if (status === 403 || status === 429) {
+    const partial = await request();
+    assert.equal(partial.complete, false, 'Later-page rate limiting cannot claim complete history');
+    assert.equal(partial.items.length, full.length, 'Already validated pages remain visible');
+  } else {
+    await assert.rejects(request(), new RegExp('HTTP ' + status));
+  }
+  assert.equal(calls, 2, 'Failed page is never retried and never claims complete history');
+}
+for (const status of [403, 429]) {
+  await assert.rejects(readAdminGithubList('issues', () => {}, async () => new Response('{}', { status })),
+    new RegExp('HTTP ' + status), 'A first-page rate limit must remain unavailable');
 }
 for (const bad of [null, {}, Array(101).fill(old)]) {
   await assert.rejects(readAdminGithubList('issues', () => {}, listFetcher([bad])), /invalid/);
