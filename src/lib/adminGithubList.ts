@@ -14,6 +14,11 @@ export async function readAdminGithubList<T>(
       headers: { Accept: 'application/vnd.github+json' }, redirect: 'error', credentials: 'omit',
     });
     assertCurrent();
+    // Preserve already validated pages if GitHub limits a later read. The caller
+    // must label this snapshot partial; a first-page failure is still unavailable.
+    if ((response.status === 403 || response.status === 429) && items.length > 0) {
+      return { items, complete: false };
+    }
     if (!response.ok) throw new Error('GitHub ' + resource + ' HTTP ' + response.status);
     const rows: unknown = await response.json();
     assertCurrent();
