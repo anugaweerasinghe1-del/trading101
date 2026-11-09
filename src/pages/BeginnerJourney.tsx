@@ -12,6 +12,7 @@ import { JOURNEY_EVENT, journeyStage, readJourney, saveJourney } from "@/lib/beg
 import { COURSE_PROGRESS_EVENT, COURSE_PROGRESS_KEY, loadProgress } from "@/lib/courseProgress";
 import { buildLearningOverview } from "@/lib/learningOverview";
 import { useCourseCatalog } from "@/hooks/useCourseCatalog";
+import { hasPlayedQuickToday } from "@/lib/dailyChallenge";
 import type { Portfolio } from "@/lib/types";
 
 const steps = [
@@ -89,6 +90,23 @@ export default function BeginnerJourney() {
             Every example is educational. No brokerage account or real money is involved.
           </p>
         </header>
+        {stage === 0 && (
+          <section aria-label="Begin with Daily Practice" className="mb-6 rounded-2xl border border-primary/40 bg-primary/5 p-5 sm:p-6 space-y-3">
+            <p className="text-xs font-semibold uppercase tracking-widest text-primary">First: Daily Practice</p>
+            <h2 className="text-xl font-semibold">Start with a short trading scenario</h2>
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              The daily exercise is a general scenario for everyone, not a personalized test of courses you've completed.
+              Afterwards, come back here to learn how your first virtual order works.
+              You can continue learning as much as you like today.
+            </p>
+            {hasPlayedQuickToday() ? (
+              <p role="status" className="text-sm text-primary font-medium">You've already completed today's quick scenario. Your next step is the first-trade explanation below.</p>
+            ) : (
+              <Button asChild size="lg"><Link to="/daily">Try today's Daily Practice <ArrowRight className="ml-2 h-4 w-4" /></Link></Button>
+            )}
+            <p className="text-xs text-muted-foreground">Daily Practice is optional. You can continue directly to the lesson below.</p>
+          </section>
+        )}
         <Card className="p-4 sm:p-6 mb-6">
           <div className="flex items-center justify-between gap-3 mb-3">
             <h2 className="font-semibold">Your progress</h2>
