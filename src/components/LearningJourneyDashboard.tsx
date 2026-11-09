@@ -34,7 +34,9 @@ export function LearningJourneyDashboard({ tracks }: { tracks: LearningTrack[] }
   const journeyPercent = overview.journeyDone * 20;
   const coursePercent = overview.lessonsTotal ? Math.round(overview.lessonsDone * 100 / overview.lessonsTotal) : 0;
   const hasCourseHistory = overview.lessonsDone > 0 || overview.lessonsInProgress > 0;
-  const mastery = chooseMasteryNextAction(hasPlayedQuickToday(), getPortfolio().trades.length > 0);
+  const mastery = typeof window !== "undefined"
+    ? chooseMasteryNextAction(hasPlayedQuickToday(), getPortfolio().trades.length > 0)
+    : chooseMasteryNextAction(false, false);
 
   return (
     <section aria-label="Continue Learning dashboard" className="mb-9 rounded-3xl border border-border bg-card/80 p-5 sm:p-7">
