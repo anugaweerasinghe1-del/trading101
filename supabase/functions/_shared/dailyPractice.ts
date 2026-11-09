@@ -1,4 +1,5 @@
 export const DAILY_CATEGORIES = ["Portfolio arithmetic", "Costs and orders", "Price data", "Risk and uncertainty", "Decision habits"] as const;
+export const MIN_DAILY_EXPLANATION_CHARS = 100;
 export interface PracticeQuestion { prompt: string; options: string[]; correctAnswer: number; explanation: string }
 export interface DailyExercise {
   id: string; title: string; category: string; scenario: string;
@@ -27,7 +28,7 @@ export function validateExercises(value: unknown, count = 50, questionCount?: nu
       || v.bars.some((b: { label: string; value: number }) => !b || !text(b.label, 1, 50) || !Number.isFinite(b.value) || b.value < 0 || b.value > 1e9)) errors.push(`${label} needs a labelled nonnegative illustration.`);
     if (!Array.isArray(e.questions) || (questionCount ? e.questions.length !== questionCount : ![3, 10].includes(e.questions.length))) errors.push(`${label} needs ${questionCount ?? 'three saved or ten new'} questions.`);
     else e.questions.forEach((q: PracticeQuestion, n: number) => {
-      if (!q || !text(q.prompt, 12, 450) || !text(q.explanation, 100, 2000) || !Array.isArray(q.options) || q.options.length !== 3
+      if (!q || !text(q.prompt, 12, 450) || !text(q.explanation, MIN_DAILY_EXPLANATION_CHARS, 2000) || !Array.isArray(q.options) || q.options.length !== 3
         || q.options.some(o => !text(o, 1, 350)) || new Set(q.options.map(normalized)).size !== 3
         || !Number.isInteger(q.correctAnswer) || q.correctAnswer < 0 || q.correctAnswer > 2) errors.push(`${label}, question ${n + 1} is incomplete.`);
       if (q && text(q.prompt, 12, 450)) { const p = normalized(q.prompt); if (prompts.has(p)) errors.push(`${label} repeats a question.`); prompts.add(p); }
