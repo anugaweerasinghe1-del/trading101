@@ -4,6 +4,8 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, ReferenceL
 import { TrendingUp, TrendingDown, Shield } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import { portfolioChartPoints } from "@/lib/portfolioChartPoints";
+import { portfolioChartDomain, formatPortfolioChartTick, isPortfolioReferenceVisible } from "@/lib/portfolioChartDisplay";
 import { Button } from "@/components/ui/button";
 
 export function PortfolioChart({ currentValue, history, account, receivedAt }: {
@@ -11,22 +13,18 @@ export function PortfolioChart({ currentValue, history, account, receivedAt }: {
 }) {
   const stopLossPercent = 10;
   const [showStopLoss, setShowStopLoss] = useState(true);
-  const data = history.map(snapshot => ({
-    time: snapshot.timestamp.toLocaleString(),
-    value: snapshot.totalValue,
-  }));
-  // If storage was unavailable, still plot the current confirmed observation
-  // after the existing samples. Never synthesize an earlier point.
-  const last = history[history.length - 1];
-  if (last && receivedAt && receivedAt > last.timestamp.getTime() && last.totalValue !== currentValue)
-    data.push({ time: new Date(receivedAt).toLocaleString(), value: currentValue });
+  const data = portfolioChartPoints(history, currentValue, account, receivedAt);
   const hasHistory = data.length >= 2;
+  const hasCurrentObservation = data.length === 1;
+  // Scale the plotted observations, not the much lower 10% reference threshold.
+  const chartDomain = portfolioChartDomain(data);
   const initialValue = data[0]?.value ?? currentValue;
   const change = currentValue - initialValue;
   const changePercent = initialValue > 0 ? ((change / initialValue) * 100).toFixed(2) : null;
   const isPositive = change >= 0;
   const stopLossValue = initialValue * (1 - stopLossPercent / 100);
   const stopLossBreached = hasHistory && currentValue < stopLossValue;
+  const referenceInView = hasHistory && isPortfolioReferenceVisible(stopLossValue, chartDomain);
 
   return (
     <Card className="p-6 bg-card/50 backdrop-blur-sm">
@@ -36,15 +34,17 @@ export function PortfolioChart({ currentValue, history, account, receivedAt }: {
           {hasHistory && <Button
             variant="outline"
             size="sm"
-            onClick={() => setShowStopLoss(!showStopLoss)}
+            onClick={() => setShowStopLoss(visible => !visible)}
+            aria-pressed={showStopLoss}
+            aria-label="Toggle 10% downside reference"
             className="gap-2"
           >
             <Shield className="w-4 h-4" />
-            Reference line: {stopLossPercent}%
+            {showStopLoss ? "Hide" : "Show"} {stopLossPercent}% downside reference
           </Button>}
         </div>
         <p className="text-xs text-muted-foreground mb-3">{account
-          ? "Account snapshots are recorded on this device when TradeHQ receives them. The reference line is for comparison."
+          ? "Account snapshots are recorded on this device when TradeHQ receives them. With multiple observations, the reference line provides a comparison."
           : "Earlier local practice snapshots may include simulated backfill. The reference line is for comparison."}</p>
         <div className="flex flex-wrap items-baseline gap-3">
           <span className="text-3xl font-bold" data-portfolio-chart-value>${currentValue.toFixed(2)}</span>
@@ -66,19 +66,27 @@ export function PortfolioChart({ currentValue, history, account, receivedAt }: {
         )}
       </div>
 
-      {!hasHistory ? <p className="text-sm text-muted-foreground" role="status">
-        History is unavailable on this device until at least two snapshots are recorded.
-      </p> : <ResponsiveContainer width="100%" height={300}>
-        <LineChart data={data}>
+      {!hasHistory && <p className="text-sm text-muted-foreground mb-4" role="status">
+        {hasCurrentObservation
+          ? "One real portfolio observation is available. The point below shows the current snapshot, not a historical trend. Later observations on this device will build the chart."
+          : "History is unavailable on this device until at least two snapshots are recorded. Your account portfolio value and recorded trades are separate from this optional local chart."}
+      </p>}
+      {data.length > 0 && <div className="min-w-0" data-portfolio-chart-state={hasHistory ? "trend" : "single-observation"}>
+        <ResponsiveContainer width="100%" height={hasHistory ? 300 : 210}>
+        <LineChart data={data} margin={{ top: 12, right: 18, bottom: 10, left: 10 }}>
           <XAxis 
             dataKey="time" 
             stroke="hsl(var(--muted-foreground))"
-            tick={{ fill: 'hsl(var(--muted-foreground))' }}
+            tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 11 }}
+            minTickGap={16}
           />
-          <YAxis 
+          <YAxis
+            width={108}
+            tickMargin={10}
             stroke="hsl(var(--muted-foreground))"
-            tick={{ fill: 'hsl(var(--muted-foreground))' }}
-            domain={['auto', 'auto']}
+            tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 11 }}
+            domain={chartDomain}
+            tickFormatter={(value: number) => formatPortfolioChartTick(value, chartDomain[1] - chartDomain[0])}
           />
           <Tooltip 
             contentStyle={{ 
@@ -90,34 +98,22 @@ export function PortfolioChart({ currentValue, history, account, receivedAt }: {
           />
           
           {/* Stop Loss Line */}
-          {showStopLoss && (
+          {hasHistory && showStopLoss && referenceInView && (
             <ReferenceLine
               y={stopLossValue}
               stroke="hsl(var(--destructive))"
               strokeDasharray="5 5"
               strokeWidth={2}
-              label={{
-                value: `Reference: $${stopLossValue.toFixed(0)}`,
-                position: 'right',
-                fill: 'hsl(var(--destructive))',
-                fontSize: 12,
-              }}
             />
           )}
           
           {/* Initial Value Line */}
-          <ReferenceLine
+          {hasHistory && <ReferenceLine
             y={initialValue}
             stroke="hsl(var(--muted-foreground))"
             strokeDasharray="3 3"
             strokeWidth={1}
-            label={{
-              value: `First snapshot: $${initialValue.toFixed(0)}`,
-              position: 'left',
-              fill: 'hsl(var(--muted-foreground))',
-              fontSize: 12,
-            }}
-          />
+          />}
           
           <Line 
             type="monotone" 
@@ -128,7 +124,19 @@ export function PortfolioChart({ currentValue, history, account, receivedAt }: {
             activeDot={{ r: 6 }}
           />
         </LineChart>
-      </ResponsiveContainer>}
+        </ResponsiveContainer>
+        {hasHistory && <div className="mt-4 space-y-2 border-t border-border/50 pt-3 text-xs text-muted-foreground">
+          <p>First saved observation: <strong className="font-medium text-foreground">{initialValue.toLocaleString("en-US", { style: "currency", currency: "USD" })}</strong></p>
+          <p role="status" aria-live="polite" data-portfolio-reference-status>
+            {showStopLoss
+              ? <>10% downside reference: <strong className="font-medium text-foreground">{stopLossValue.toLocaleString("en-US", { style: "currency", currency: "USD" })}</strong>. {referenceInView
+                  ? "The dashed reference line is visible on the chart."
+                  : "The reference is below this chart's visible scale; it is shown here without flattening your actual portfolio changes."}</>
+              : "10% downside reference hidden."}
+          </p>
+          <p>This is an educational comparison, not a stop-loss order.</p>
+        </div>}
+      </div>}
     </Card>
   );
 }

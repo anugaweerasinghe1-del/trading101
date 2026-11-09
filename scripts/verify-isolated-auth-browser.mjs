@@ -744,7 +744,9 @@ async function main(){
     portfolioReadFailure=false;
     await refreshPortfolio();
     await wait(()=>devtools.evaluate(chartValue+"==='$99999.85' && "+accountValue+"==='$99999.85'"),'Both account displays use the same server valuation');
-    await wait(()=>devtools.evaluate("document.body.textContent.includes('History is unavailable on this device')"),'Missing account history is stated explicitly');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('One real portfolio observation is available.')"),'One real account observation is explained');
+    await wait(()=>devtools.evaluate("!!document.querySelector('[data-portfolio-chart-state=single-observation] .recharts-wrapper')"),'A single real point has an accessible chart container');
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('since first saved snapshot')"),false,'A single observation never invents historical performance');
     assert.ok(portfolioReads>0);
     const initCount=portfolioInitialized;
     portfolioReadFailure=true;await refreshPortfolio();
@@ -753,6 +755,22 @@ async function main(){
     portfolioReadFailure=false;portfolioPrice=110;portfolioQuoteVersion=10;await refreshPortfolio();
     await wait(()=>devtools.evaluate(chartValue+"==='$100004.85' && "+accountValue+"==='$100004.85'"),'A new crypto quote changes both views with previous close for equities');
     await wait(()=>devtools.evaluate("!document.body.textContent.includes('Account refresh failed.')"),'Successful refresh clears the failure');
+    await wait(()=>devtools.evaluate("!!document.querySelector('[data-portfolio-chart-state=trend] [data-portfolio-reference-status]')"),'Two genuine account observations form a trend');
+    await wait(()=>devtools.evaluate("document.querySelector('[data-portfolio-reference-status]')?.textContent.includes('below this chart')"),'Off-range reference is explained rather than flattening the scale');
+    assert.equal(await devtools.evaluate("document.querySelector('[data-portfolio-chart-state=trend] .recharts-reference-line-label')"),null,
+      'Comparison labels must not overlap the Y-axis or data points');
+    assert.equal(await devtools.evaluate(`(()=>{
+      const chart=document.querySelector('[data-portfolio-chart-state=trend] .recharts-wrapper');
+      if(!chart)return false;
+      const frame=chart.getBoundingClientRect();
+      const ticks=[...chart.querySelectorAll('.recharts-yAxis .recharts-cartesian-axis-tick-value')];
+      return ticks.length>0&&ticks.every(el=>{const r=el.getBoundingClientRect();return r.left>=frame.left-1 && r.right<=frame.right+1;});
+    })()`),true,'Portfolio Y-axis labels must stay within the chart frame');
+    await devtools.evaluate("document.querySelector('button[aria-label=\"Toggle 10% downside reference\"]')?.click()");
+    await wait(()=>devtools.evaluate("document.querySelector('[data-portfolio-reference-status]')?.textContent.includes('reference hidden.') && document.querySelector('button[aria-label=\"Toggle 10% downside reference\"]')?.getAttribute('aria-pressed')==='false'"),'Downside reference toggle changes visible status and pressed state');
+    await devtools.evaluate("document.querySelector('button[aria-label=\"Toggle 10% downside reference\"]')?.click()");
+    await wait(()=>devtools.evaluate("document.querySelector('[data-portfolio-reference-status]')?.textContent.includes('below this chart') && document.querySelector('button[aria-label=\"Toggle 10% downside reference\"]')?.getAttribute('aria-pressed')==='true'"),'Downside reference restores its actual value and status');
+
     portfolioPrice=100;portfolioQuoteVersion=0;await refreshPortfolio();
     await wait(()=>devtools.evaluate("!document.querySelector('[aria-label=\"Refresh portfolio and available quotes\"]')?.disabled"),'Old quote response settled');
     assert.equal(await devtools.evaluate(chartValue),'$100004.85','Delayed quote must not roll back the account valuation');
