@@ -69,7 +69,8 @@ assert.match(start,/Your next step/, "Completed first-trade pathway has one prim
 assert.match(start,/Other activities \(optional\)/, "Secondary activities are progressively disclosed");
 assert.doesNotMatch(start,/Next lesson: risk/, "No competing hard-coded risk lesson after completing the guided trade");
 const dailyPage=read("src/pages/Daily.tsx");
-assert.match(dailyPage,/!readJourney\(\)\.lessonCompleted/, "Daily completion guides first-time learners back into education");
+assert.match(dailyPage,/guidedStage < 4/, "Daily completion guides learners by their saved journey stage");
+assert.match(dailyPage,/guidedStage === 1 \? "\/trade\?journey=1" : "\/start"/, "Only first-order stage may target the guided virtual terminal");
 assert.match(dailyPage,/Continue guided learning/, "The Daily next-step CTA is obvious");
 assert.doesNotMatch(dailyPage,/Practice This Trade Now/, "Daily no longer offers conflicting trade-first CTA");
 const lessonPage=read("src/pages/CourseLesson.tsx");
