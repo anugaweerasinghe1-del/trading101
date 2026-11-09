@@ -30,13 +30,10 @@ export async function verifyMobileRetentionUx({send,evaluate,waitUntil,origin,de
   await waitUntil("!!document.querySelector('[data-testid=continue-banner]')",
     "Returning visitor resume banner appears without truncation");
 
-  // The prompt appears only when browser notifications are supported and
-  // permission has not previously been granted or declined.
-  const canPrompt=await evaluate("typeof Notification !== 'undefined' && Notification.permission === 'default'");
-  if (canPrompt) {
-    await waitUntil("!!document.querySelector('[data-testid=notification-prompt]')",
-      "Returning-visitor permission prompt opens above mobile bar");
-  }
+  // Priority 1: never interrupt a visitor with permission for alerts
+  // that TradeHQ does not currently deliver.
+  assert.equal(await evaluate("!!document.querySelector('[data-testid=notification-prompt]')"),false,
+    "Unsolicited browser permission prompt is not mounted");
   for (const [width,height] of [[320,640],[360,780],[390,844]]) {
     await send("Emulation.setDeviceMetricsOverride",{width,height,deviceScaleFactor:1,mobile:true});
     await evaluate("document.fonts.ready.then(()=>window.__retentionFonts=true);true");
@@ -66,33 +63,13 @@ export async function verifyMobileRetentionUx({send,evaluate,waitUntil,origin,de
     assert.ok(banner.close.bottom<=banner.link.top||banner.close.top>=banner.link.bottom,
       `Dismiss and Continue do not overlap at ${width}px`);
     assert.equal(banner.hasOverflow,false,`No horizontal overflow at ${width}px`);
-    if (canPrompt) {
-      const overlay=await evaluate(`(()=>{
-        const p=document.querySelector('[data-testid=notification-prompt]');
-        const n=document.querySelector('nav[aria-label="Mobile navigation"]');
-        if(!p||!n)return null;
-        const box=x=>{const r=x.getBoundingClientRect();return {top:r.top,bottom:r.bottom,left:r.left,right:r.right,width:r.width,height:r.height}};
-        const buttons=[...p.querySelectorAll('button')];
-        return {prompt:box(p),navigation:box(n),
-          overflow:getComputedStyle(p).overflowY,
-          buttons:buttons.map(x=>({text:x.textContent,aria:x.getAttribute('aria-label'),rect:box(x)}))};
-      })()`);
-      assert.ok(overlay,`Permission prompt and mobile navigation present at ${width}px`);
-      assert.ok(overlay.prompt.top>=0 && overlay.prompt.left>=0 &&
-        overlay.prompt.right<=width+1 && overlay.prompt.bottom<=overlay.navigation.top-6,
-        `Permission prompt must stay entirely above fixed mobile navigation at ${width}px`);
-      assert.ok(["auto","scroll"].includes(overlay.overflow),
-        "Prompt is independently scrollable on short displays");
-      assert.ok(overlay.buttons.some(x=>x.text?.includes("Enable")) &&
-        overlay.buttons.some(x=>x.text?.includes("Not now")), "Both permission decisions remain available");
-      assert.ok(overlay.buttons.every(x=>x.rect.height>=44 && x.rect.width>=44),
-        `Prompt decision and dismissal controls have 44px touch targets at ${width}px`);
-    }
+    assert.equal(await evaluate("!!document.querySelector('[data-testid=notification-prompt]')"),false,
+      `No permission prompt interrupts the journey at ${width}px`);
   }
   await evaluate(`(()=>{
     for (const key of ["tradehq_course_progress_v1","tradehq_previous_visit_at",
       "tradehq_last_visit_at","tradehq_continue_dismissed_at","tradehq_push_state"]) localStorage.removeItem(key);
     return true;
   })()`);
-  console.log("PASS returning guest resume wraps, CTA and dismiss remain separate, prompt clears mobile nav at 320/360/390px");
+  console.log("PASS returning guest resume wraps, CTA and dismiss remain separate, no unsolicited browser permission dialog at 320/360/390px");
 }
