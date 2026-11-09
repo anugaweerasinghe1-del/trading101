@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { ArrowRight, BookOpen, CheckCircle2, ClipboardList, Compass, RotateCcw, ShieldCheck, Wallet } from "lucide-react";
+import { ArrowRight, BookOpen, CheckCircle2, Compass, RotateCcw, ShieldCheck } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { MegaFooter } from "@/components/MegaFooter";
 import { Button } from "@/components/ui/button";
