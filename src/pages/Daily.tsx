@@ -19,6 +19,7 @@ import {
 } from "@/lib/dailyChallenge";
 import { DailyPractice } from "@/components/DailyPractice";
 import { GuidedNextLesson } from "@/components/GuidedNextLesson";
+import { readJourney } from "@/lib/beginnerJourney";
 import { practiceDate } from "../../supabase/functions/_shared/dailyPractice";
 import { cn } from "@/lib/utils";
 
@@ -320,22 +321,15 @@ export default function Daily() {
                 </div>
               )}
 
-              {submitted && (
-                <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                  <Link to="/trade" className="flex-1">
-                    <button className="w-full h-12 rounded-xl bg-primary font-bold text-sm flex items-center justify-center gap-2 active:scale-[0.97] transition-transform" style={{ color: "#000", boxShadow: "0 0 24px hsl(168 100% 50% / 0.3)" }}>
-                      Practice This Trade Now <ArrowRight className="w-4 h-4" />
-                    </button>
+              {submitted && !readJourney().lessonCompleted && (
+                <section aria-label="Your recommended next step" className="rounded-2xl border border-primary/40 bg-primary/5 p-5 space-y-3">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-primary">Next: Learn</p>
+                  <h3 className="text-lg font-semibold">Understand your first virtual order</h3>
+                  <p className="text-sm text-foreground/70">You've tried a daily scenario. Continue the guided explanation, then place your first virtual trade when you're ready.</p>
+                  <Link to="/start" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground">
+                    Continue guided learning <ArrowRight className="w-4 h-4" />
                   </Link>
-                  <a href="#deeper-practice" onClick={() => setDeeperOpen(true)} aria-expanded={deeperOpen} aria-controls="deeper-practice" className="flex-1 h-12 rounded-xl bg-primary/10 border border-primary/40 font-semibold text-sm text-primary flex items-center justify-center gap-2">
-                    Go Deeper <Brain className="w-4 h-4" />
-                  </a>
-                  <Link to="/learn" className="flex-1">
-                    <button className="w-full h-12 rounded-xl bg-white/[0.05] border border-white/[0.1] font-semibold text-sm text-foreground active:scale-[0.97] transition-transform">
-                      Learn More Concepts
-                    </button>
-                  </Link>
-                </div>
+                </section>
               )}
 
               <p className="text-[10px] text-foreground/45 text-center mt-6">
@@ -345,7 +339,7 @@ export default function Daily() {
 
             <DailyPractice key={date} date={date} open={deeperOpen} onOpen={() => setDeeperOpen(true)} onClose={() => setDeeperOpen(false)} onComplete={() => setStreak(recordChallenge(0, "hold"))} />
 
-            {streak?.lastCompletedDate === date && (
+            {streak?.lastCompletedDate === date && readJourney().lessonCompleted && (
               <section aria-labelledby="daily-next-lesson" className="mb-8 space-y-3">
                 <h2 id="daily-next-lesson" className="text-xl font-bold">Keep learning at your pace</h2>
                 <p className="text-sm text-muted-foreground">Continue your lesson now or pick up where you left off after tomorrow’s challenge.</p>
