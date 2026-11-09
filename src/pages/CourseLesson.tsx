@@ -296,6 +296,22 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
             )}
           </div>
 
+          <div className="mt-5">
+            {submitted && (
+              <section aria-label="Next learning step" className="rounded-2xl border border-primary/35 bg-primary/5 p-5">
+                <p className="text-xs uppercase tracking-widest font-semibold text-primary mb-2">Your next step</p>
+                <p className="text-sm text-muted-foreground mb-4">
+                  {next ? "Build on what you just learned with the next lesson." : "You've completed this lesson. Choose another approved course or continue your daily practice."}
+                </p>
+                <Button asChild size="lg" className="w-full sm:w-auto">
+                  <Link to={next ? `/courses/${track.slug}/${next.slug}` : "/courses"}>
+                    {next ? "Continue to next lesson" : "Explore next course"} <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </section>
+            )}
+          </div>
+
           {integratedLesson && <section aria-label="Lesson answer notes" className="mt-8">
             <h2 className="text-xl font-bold mb-3">Answer notes</h2>
             <ul className="space-y-4 text-sm text-muted-foreground list-disc pl-5">
@@ -325,19 +341,6 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
           {/* A clear next step after quiz completion; historical lesson navigation
               remains accessible without competing with the primary action. */}
           <nav aria-label="Lesson navigation" className="mt-8 space-y-3">
-            {submitted && (
-              <section aria-label="Next learning step" className="rounded-2xl border border-primary/35 bg-primary/5 p-5">
-                <p className="text-xs uppercase tracking-widest font-semibold text-primary mb-2">Your next step</p>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {next ? "Build on what you just learned with the next lesson." : "You've completed this lesson. Choose another approved course or continue your daily practice."}
-                </p>
-                <Button asChild size="lg" className="w-full sm:w-auto">
-                  <Link to={next ? `/courses/${track.slug}/${next.slug}` : "/courses"}>
-                    {next ? "Continue to next lesson" : "Explore next course"} <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </section>
-            )}
             <div className="flex flex-wrap items-center justify-between gap-3 text-sm">
               {prev ? <Link to={`/courses/${track.slug}/${prev.slug}`} className="text-muted-foreground hover:text-foreground underline underline-offset-4 inline-flex items-center gap-1"><ArrowLeft className="w-4 h-4" /> Previous lesson</Link> : <span />}
               {!submitted && (next ? <Link to={`/courses/${track.slug}/${next.slug}`} className="text-primary underline underline-offset-4">Next lesson <ArrowRight className="w-4 h-4 inline" /></Link> : <Link to={`/courses/${track.slug}`} className="text-primary underline underline-offset-4">Back to course <ArrowRight className="w-4 h-4 inline" /></Link>)}
