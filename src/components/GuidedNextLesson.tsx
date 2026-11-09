@@ -36,8 +36,15 @@ export function GuidedNextLesson() {
   if (!next) {
     return isPending ? null : (
       <Card className="p-5 border border-border">
-        <p className="text-sm text-muted-foreground">You've completed all currently published lessons. New approved courses will appear automatically.</p>
-        <Link to="/courses" className="mt-2 inline-flex items-center gap-2 text-sm text-primary font-semibold">Browse courses <ArrowRight className="w-4 h-4" /></Link>
+        <p className="text-sm text-muted-foreground">You've finished the currently available lessons. Keep building your skills through a new daily scenario, practice trading or reflecting on your portfolio. New approved courses will appear automatically.</p>
+        <Link to="/daily" className="mt-3 inline-flex min-h-11 items-center gap-2 rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground">Continue with Daily Practice <ArrowRight className="w-4 h-4" /></Link>
+        <details className="mt-3 text-sm text-muted-foreground">
+          <summary className="cursor-pointer py-2">Other ways to practise</summary>
+          <nav aria-label="Other mastery activities" className="mt-2 flex flex-wrap gap-4">
+            <Link to="/portfolio" className="underline">Review portfolio</Link>
+            <Link to="/practice" className="underline">Practice Arena</Link>
+          </nav>
+        </details>
       </Card>
     );
   }
