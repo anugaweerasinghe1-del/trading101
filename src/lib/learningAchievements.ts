@@ -43,7 +43,9 @@ export function buildPersonalTrophyCabinet(
   let completedCourses = 0;
 
   for (const track of catalog) {
-    if (!track || typeof track.slug !== "string" || !track.slug.trim() || known.has(track.slug)) continue;
+    if (!track || typeof track.slug !== "string" || !track.slug.trim() || known.has(track.slug) ||
+      typeof track.title !== "string" || !track.title.trim() ||
+      !track.badge || typeof track.badge.name !== "string" || !track.badge.name.trim()) continue;
     // Reject empty/invalid catalog entries before reserving a course slug. A
     // malformed first duplicate must not hide a later valid published course.
     const lessons = [...new Set((Array.isArray(track.lessons) ? track.lessons : [])
