@@ -19,7 +19,7 @@ import {
 } from "@/lib/dailyChallenge";
 import { DailyPractice } from "@/components/DailyPractice";
 import { GuidedNextLesson } from "@/components/GuidedNextLesson";
-import { readJourney } from "@/lib/beginnerJourney";
+import { journeyStage, readJourney } from "@/lib/beginnerJourney";
 import { practiceDate } from "../../supabase/functions/_shared/dailyPractice";
 import { cn } from "@/lib/utils";
 
@@ -38,6 +38,7 @@ export default function Daily() {
   const [selected, setSelected] = useState<ChallengeDecision | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [bonusPick, setBonusPick] = useState<number | null>(null);
+  const guidedStage = journeyStage(readJourney());
 
   useEffect(() => {
     setDeeperOpen(false);
@@ -316,13 +317,17 @@ export default function Daily() {
                 </div>
               )}
 
-              {submitted && !readJourney().lessonCompleted && (
+              {submitted && guidedStage < 4 && (
                 <section aria-label="Your recommended next step" className="rounded-2xl border border-primary/40 bg-primary/5 p-5 space-y-3">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-primary">Next: Learn</p>
-                  <h3 className="text-lg font-semibold">Understand your first virtual order</h3>
-                  <p className="text-sm text-foreground/70">You've tried a daily scenario. Continue the guided explanation, then place your first virtual trade when you're ready.</p>
-                  <Link to="/start" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground">
-                    Continue guided learning <ArrowRight className="w-4 h-4" />
+                  <p className="text-xs font-semibold uppercase tracking-widest text-primary">Your next step</p>
+                  <h3 className="text-lg font-semibold">
+                    {guidedStage === 0 ? "Understand your first virtual order" : guidedStage === 1 ? "Try your first virtual trade" : "Reflect on your first virtual trade"}
+                  </h3>
+                  <p className="text-sm text-foreground/70">
+                    {guidedStage === 0 ? "You've tried a daily scenario. Continue the guided explanation before placing a virtual trade." : guidedStage === 1 ? "Your first explanation is complete. You can now explore a voluntary virtual order, with no real money involved." : "Review the saved transaction and record what you learned before moving to another lesson."}
+                  </p>
+                  <Link to={guidedStage === 1 ? "/trade?journey=1" : "/start"} className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground">
+                    {guidedStage === 0 ? "Continue guided learning" : guidedStage === 1 ? "Open guided trading terminal" : "Continue guided reflection"} <ArrowRight className="w-4 h-4" />
                   </Link>
                 </section>
               )}
@@ -337,7 +342,7 @@ export default function Daily() {
             {streak?.lastCompletedDate === date && (
               <section aria-labelledby="daily-next-lesson" className="mb-8 space-y-3">
                 <h2 id="daily-next-lesson" className="text-xl font-bold">Keep learning at your pace</h2>
-                {readJourney().lessonCompleted ? (
+                {guidedStage >= 4 ? (
                   <>
                     <p className="text-sm text-muted-foreground">Continue your lesson now or return after tomorrow's challenge.</p>
                     <GuidedNextLesson />
