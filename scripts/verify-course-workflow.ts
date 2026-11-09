@@ -10,11 +10,18 @@ import { checkCourseDemand } from "../supabase/functions/_shared/courseDemandChe
 import { renderApprovedCourse } from "../src/lib/courseHtml.ts";
 import { sharedQuote } from "../supabase/functions/_shared/sharedQuote.ts";
 import { readCoursePublicationHistory } from "../src/lib/coursePublicationHistory.ts";
-import { parseCourseProgress } from "../src/lib/courseProgress.ts";
+import { parseCourseProgress, trackCompletionPct } from "../src/lib/courseProgress.ts";
 
 for (const raw of [null, 'null', '[]', '42', '{broken', '{"v":2,"tracks":{}}', '{"v":1,"tracks":null}', '{"v":1,"tracks":[]}']) {
   assert.equal(Object.keys(parseCourseProgress(raw).tracks).length, 0, 'Malformed progress must recover without a render crash');
 }
+const oldLessons = parseCourseProgress(JSON.stringify({ v: 1, tracks: { sample: { lessons: { one: { status: "completed" }, two: { status: "completed" } } } } }));
+assert.equal(trackCompletionPct("sample", 1, oldLessons), 100);
+assert.equal(trackCompletionPct("sample", 3, oldLessons), 67);
+assert.equal(trackCompletionPct("sample", 0, oldLessons), 0);
+assert.equal(trackCompletionPct("sample", -1, oldLessons), 0);
+assert.equal(trackCompletionPct("sample", Number.NaN, oldLessons), 0);
+assert.equal(trackCompletionPct("unknown", 3, oldLessons), 0);
 const completedLesson = { status: 'completed', score: 4, completedAt: '2026-10-09T15:45:01Z', scrolledPct: 100 };
 const recovered = parseCourseProgress(JSON.stringify({ v: 1, updatedAt: 'bad date', tracks: {
   good: { lessons: { completed: completedLesson, broken: null, badStatus: { status: 'unknown' }, arrayStatus: { status: ['completed'] }, objectStatus: { status: { toString: 'completed' } }, badScore: { status: 'in-progress', score: '4', scrolledPct: -1 } }, badgeEarnedAt: '2026-10-09T15:46:01Z' },
