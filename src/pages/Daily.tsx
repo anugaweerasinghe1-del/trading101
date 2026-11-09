@@ -334,11 +334,20 @@ export default function Daily() {
 
             <DailyPractice key={date} date={date} open={deeperOpen} onOpen={() => setDeeperOpen(true)} onClose={() => setDeeperOpen(false)} onComplete={() => setStreak(recordChallenge(0, "hold"))} />
 
-            {streak?.lastCompletedDate === date && readJourney().lessonCompleted && (
+            {streak?.lastCompletedDate === date && (
               <section aria-labelledby="daily-next-lesson" className="mb-8 space-y-3">
                 <h2 id="daily-next-lesson" className="text-xl font-bold">Keep learning at your pace</h2>
-                <p className="text-sm text-muted-foreground">Continue your lesson now or pick up where you left off after tomorrow’s challenge.</p>
-                <GuidedNextLesson />
+                {readJourney().lessonCompleted ? (
+                  <>
+                    <p className="text-sm text-muted-foreground">Continue your lesson now or return after tomorrow's challenge.</p>
+                    <GuidedNextLesson />
+                  </>
+                ) : (
+                  <details className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
+                    <summary className="cursor-pointer font-medium text-foreground">Explore approved course lessons (optional)</summary>
+                    <div className="mt-4"><GuidedNextLesson /></div>
+                  </details>
+                )}
               </section>
             )}
 
