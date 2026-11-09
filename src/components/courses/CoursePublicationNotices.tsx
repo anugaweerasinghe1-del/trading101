@@ -2,10 +2,8 @@ import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { BookOpen, X } from "lucide-react";
-import { createClient } from "@supabase/supabase-js";
-import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY } from "@/integrations/supabase/config";
+import { readPublicCoursePublications } from "@/lib/publicCoursePublications";
 import { readCoursePublicationHistory } from "@/lib/coursePublicationHistory";
-const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, { auth: { persistSession: false, autoRefreshToken: false } });
 
 type PublishedCourse = { slug: string; published_at: string; title: string | null };
 const STORAGE_KEY = "tradehq-seen-course-publications-v1";
@@ -22,9 +20,7 @@ export function CoursePublicationNotices() {
       checking.current = true;
       try {
         const cutoff = new Date(Date.now() - RECENT_DAYS * 86400000).toISOString();
-        const { data, error } = await supabase.from("published_courses")
-          .select("slug,published_at,title:document->>title")
-          .gte("published_at", cutoff).order("published_at", { ascending: true }).limit(20);
+        const { data, error } = await readPublicCoursePublications({ since: cutoff });
         if (!active || error || !Array.isArray(data)) return;
         let seen: Record<string, boolean> = {};
         try { seen = readCoursePublicationHistory(localStorage.getItem(STORAGE_KEY)); }

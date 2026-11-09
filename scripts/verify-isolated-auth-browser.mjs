@@ -79,7 +79,7 @@ async function main(){
   const fxDate=new Date(Date.now()-3*86400000).toISOString().slice(0,10);
   const fxBatch={kind:'daily_fx_reference',source:'Frankfurter blended daily reference',requestedDate:fxDate,
     rates:{eurusd:{rate:1.234567,date:fxDate},gbpusd:{rate:1.345678,date:fxDate}}};
-  let showPublications=false,publicationReads=0;
+  let showPublications=false,publicationReads=0,whatsNewCourseUnavailable=false;
   let learningWrites=0, learningReads=0, savedLearning=null;
   let privateTradeReads=0, privateTradeRejected=0;
   let foundationsReads=0, foundationsGradeCalls=0, foundationsPassed=false, malformedFoundationsProgress=true, inconsistentFoundationsProgress=true, inconsistentFoundationsReplySent=false, certificateIssues=0;
@@ -565,7 +565,12 @@ async function main(){
       if(route.startsWith("/rest/v1/")){
         if(!["GET","HEAD"].includes(req.method||"")){dataWrites++;rejectedWrites.push(route);return json(403,{error:"fixture_never_mutates"})}
         if(route==='/rest/v1/published_courses' && parsed.searchParams.get('select')?.includes('published_at')){
-          publicationReads++;return json(200,showPublications?publications:[]);
+          publicationReads++;
+          if(parsed.searchParams.get('limit')==='40'){
+            if(whatsNewCourseUnavailable)return json(503,{message:'Fixture course feed unavailable'});
+            return json(200,showPublications?[...publications,{slug:'../admin',published_at:new Date().toISOString(),title:'Invalid publication fixture'}]:[]);
+          }
+          return json(200,showPublications?publications:[]);
         }
         if(route==="/rest/v1/profiles")
           return json(200,[{id:USER_ID,username:"isolated",country:null,bio:null,is_public:false}]);
@@ -1184,6 +1189,19 @@ async function main(){
     await loadDocument();await wait(async()=>await noticeCount()===1,'announcement recovered from array history');
     assert.equal(dataWrites,0,'Unexpected fixture writes: '+rejectedWrites.join(', '));
     console.log('ISOLATED_COURSE_NOTICES_BROWSER_PASS: malformed null/array history recovered, seen revision persisted, reload/focus deduplicated; fixture only.');
+    whatsNewCourseUnavailable=true;
+    await loadDocument(origin+'/roadmap');
+    const whatsNewLink="document.querySelector('main a[href=\"/whats-new\"]')";
+    await wait(()=>devtools.evaluate("!!"+whatsNewLink),'Roadmap exposes What’s New');
+    await devtools.evaluate(whatsNewLink+'.click()');
+    await wait(()=>devtools.evaluate("location.pathname==='/whats-new' && document.body.textContent.includes('Course updates are temporarily unavailable.')"),'What’s New renders a recoverable course outage');
+    assert.equal(await devtools.evaluate("document.querySelector('ol[aria-label=\"TradeHQ releases\"]').textContent.includes('Twenty trophies for learning and practice')"),true,'Shipped updates stay available during a course outage');
+    whatsNewCourseUnavailable=false;
+    await devtools.evaluate("[...document.querySelectorAll('main button')].find(button=>button.textContent.includes('Retry course updates')).click()");
+    await wait(()=>devtools.evaluate("!!document.querySelector('ol a[href=\"/courses/isolated-publication\"]')"),'An approved publication joins the timeline without a build');
+    assert.equal(await devtools.evaluate("document.querySelector('ol[aria-label=\"TradeHQ releases\"]').textContent.includes('Invalid publication fixture')"),false,'Malformed course records are ignored');
+    assert.equal(await devtools.evaluate("!!document.querySelector('main a[href=\"/roadmap\"]')"),true,'What’s New links back to the Roadmap');
+    console.log('ISOLATED_WHATS_NEW_PASS: Roadmap discovery, release notes through course outage, live publication retry and safe route validation.');
     const progressKey='tradehq_course_progress_v1';
     const coursePath='/courses/options-trading-fundamentals';
     const savedLesson={status:'completed',score:4,completedAt:'2026-10-09T15:45:01Z'};

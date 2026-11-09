@@ -21,7 +21,7 @@ assert.deepEqual(sectionLabels,["Explore","Community","Company","Legal & Trust"]
 const secondary = [...more.matchAll(/to: "([^"]+)", label: "([^"]+)"/g)].map(m=>m[1]);
 assert.deepEqual(secondary, [
   "/start","/practice","/courses","/ai-mentor","/markets","/daily",
-  "/leaderboard","/reviews","/about","/contact","/roadmap",
+  "/leaderboard","/reviews","/about","/contact","/whats-new","/roadmap",
   "/privacy","/terms","/about#disclaimer"
 ], "All useful secondary pages remain discoverable inside More");
 

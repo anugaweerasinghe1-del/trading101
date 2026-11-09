@@ -333,11 +333,21 @@ export function buildRoutes(): RouteMeta[] {
   });
 
   routes.push({
+    path: "/whats-new",
+    title: "What’s New | TradeHQ",
+    description: "See the latest TradeHQ improvements, newly published courses, and Trophy Cabinet updates.",
+    h1: "What’s New",
+    summary: "Read about recent improvements to TradeHQ’s learning tools, practice portfolios, and Trophy Cabinet. Newly published courses appear on the interactive page.",
+    priority: "0.5",
+    changefreq: "weekly",
+  });
+
+  routes.push({
     path: "/roadmap",
     title: "TradeHQ Roadmap — What's Shipping Next | TradeHQ",
-    description: `Review existing TradeHQ features and proposals for portfolio projections and embeddable price widgets. Planned features have no confirmed release date.`,
+    description: "See what TradeHQ is working on next and the status of its learning and simulator improvements.",
     h1: "TradeHQ Roadmap",
-    summary: `The TradeHQ roadmap separates implemented features from proposals for portfolio projections and embeddable price widgets. Planned features have no confirmed release date; account features depend on backend availability.`,
+    summary: "See the status of TradeHQ’s plans for learning, accessibility and feedback. Visit What’s New for recent releases.",
     priority: "0.5",
     changefreq: "weekly",
   });

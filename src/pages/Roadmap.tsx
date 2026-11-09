@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { MegaFooter } from "@/components/MegaFooter";
 import { Card } from "@/components/ui/card";
@@ -15,14 +16,14 @@ interface RoadmapItem {
 }
 
 const ITEMS: RoadmapItem[] = [
+  { icon: LineChart, title: "Better Educational Examples", desc: "Improve explanations, sourced examples, calculation clarity, simulated-data labels and useful exercises that readers can check independently.", status: "in-progress", eta: "Target · 21 Nov 2026" },
+  { icon: Users2, title: "Contact and Feedback Improvements", desc: "Make contact and reporting confusing pages easier. Use actual reader feedback to identify, prioritize and fix friction.", status: "in-progress", eta: "Target · 21 Nov 2026" },
+  { icon: Globe2, title: "Comfortable on Every Screen", desc: "Review desktop, tablet and mobile navigation, readable type, keyboard access, working deep links, and consistent page footers, validated before Cloudflare releases.", status: "in-progress", eta: "Target · 21 Nov 2026" },
   { icon: Bell, title: "TradeHQ Newsletter", desc: "Free original beginner lessons. Voluntary subscription, confirmation and unsubscribe; only editor-approved issues are published. See /newsletter.", status: "shipped", eta: "Live · Oct 2026" },
   { icon: GraduationCap, title: "Clearer Navigation", desc: "Home, Learn, Trade, Portfolio and Newsletter are front and centre. Everything else is accessible from More, on desktop and mobile.", status: "shipped", eta: "Live · Oct 2026" },
   { icon: BookOpenCheck, title: "Courses and Learning Tools", desc: "Structured tracks, the trading guide, practice lessons and local progress tracking are already available.", status: "shipped", eta: "Already available" },
   { icon: Trophy, title: "Virtual Trading and Daily Practice", desc: "Practice with virtual funds, review your portfolio, try daily exercises and optionally challenge a friend.", status: "shipped", eta: "Already available" },
   { icon: Sparkles, title: "One Beginner Journey", desc: "The /start pathway connects a sourced lesson, voluntary virtual trade, portfolio explanation, private reflection, next lesson, and Daily Practice. Browser-stored progress resumes on return without requiring an account.", status: "shipped", eta: "Live · Oct 2026" },
-  { icon: LineChart, title: "Better Educational Examples", desc: "Improve explanations, sourced examples, calculation clarity, simulated-data labels and useful exercises that readers can check independently.", status: "in-progress", eta: "Target · 21 Nov 2026" },
-  { icon: Users2, title: "Contact and Feedback Improvements", desc: "Make contact and reporting confusing pages easier. Use actual reader feedback to identify, prioritize and fix friction.", status: "in-progress", eta: "Target · 21 Nov 2026" },
-  { icon: Globe2, title: "Comfortable on Every Screen", desc: "Review desktop, tablet and mobile navigation, readable type, keyboard access, working deep links, and consistent page footers, validated before Cloudflare releases.", status: "in-progress", eta: "Target · 21 Nov 2026" },
   { icon: BarChart3, title: "Portfolio Backups & Recovery", desc: "Guest practice portfolios retain browser-local recovery copies and offer a portable download and explicit restore. Account portfolios stay server-authoritative; local progress is not a cloud backup.", status: "shipped", eta: "Live · Oct 2026" },
   { icon: Trophy, title: "Community Practice Board", desc: "Simplified simulated return rankings and separate unranked learners. Public trade histories require an independent, off-by-default opt-in; private journals never appear.", status: "shipped", eta: "Live · Oct 2026" },
 ];
@@ -73,8 +74,11 @@ export default function Roadmap() {
               Learn. Practise. Grow.
             </h1>
             <p className="mt-5 text-lg text-muted-foreground max-w-2xl mx-auto">
-              Our public product roadmap: what works today and what we aim to improve by 21 November 2026. Always focused on learning with virtual funds.
+              See what we’re working on next, followed by the tools already available for learning with virtual funds.
             </p>
+            <Link to="/whats-new" className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold text-primary hover:underline">
+              See what’s new on TradeHQ →
+            </Link>
           </header>
 
           <div className="grid md:grid-cols-2 gap-4">

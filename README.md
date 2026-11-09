@@ -73,6 +73,10 @@ To connect a domain, navigate to Project > Settings > Domains and click Connect 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
 
 
+## Publishing What’s New
+
+Approved course publications appear automatically from the public course catalog. For a user-facing site change, add a dated entry to [releaseNotes.ts](src/lib/releaseNotes.ts) in the same pull request as the change. Write the benefit in plain language and link to the affected page. The normal site deployment publishes the entry in both the interactive timeline and prerendered page.
+
 ## Advertising audience decision required before activation
 
 N-M04 remains an owner decision, not a finding that TradeHQ is automatically child-directed.

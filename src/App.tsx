@@ -52,6 +52,7 @@ const AdminNewsletter = lazy(() => import("./pages/AdminNewsletter"));
 const NewsletterPage = lazy(() => import("./pages/NewsletterPage"));
 const AdminAIAssistant = lazy(() => import("./pages/AdminAIAssistant"));
 const Roadmap = lazy(() => import("./pages/Roadmap"));
+const WhatsNew = lazy(() => import("./pages/WhatsNew"));
 const Compare = lazy(() => import("./pages/Compare"));
 const CompareIndex = lazy(() => import("./pages/Compare").then(m => ({ default: m.CompareIndex })));
 const HowToTrade = lazy(() => import("./pages/HowToTrade"));
@@ -202,6 +203,7 @@ function AnimatedRoutes() {
           <Route path="/practice" element={<PracticeArena />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/roadmap" element={<Roadmap />} />
+          <Route path="/whats-new" element={<WhatsNew />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/compare" element={<CompareIndex />} />

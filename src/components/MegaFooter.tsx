@@ -109,6 +109,7 @@ export function MegaFooter() {
   const companyLinks = [
     { to: "/about", label: "About", icon: Info },
     { to: "/contact", label: "Contact", icon: Mail },
+    { to: "/whats-new", label: "What’s New", icon: BookOpen },
     { to: "/roadmap", label: "Roadmap", icon: BookOpen },
     { to: "/privacy", label: "Privacy Policy", icon: Shield },
     { to: "/terms", label: "Terms of Service", icon: BookOpen },
