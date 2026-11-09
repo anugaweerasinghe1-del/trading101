@@ -18,6 +18,7 @@ import {
   type StreakState,
 } from "@/lib/dailyChallenge";
 import { DailyPractice } from "@/components/DailyPractice";
+import { GuidedNextLesson } from "@/components/GuidedNextLesson";
 import { practiceDate } from "../../supabase/functions/_shared/dailyPractice";
 import { cn } from "@/lib/utils";
 
@@ -343,6 +344,14 @@ export default function Daily() {
             </article>
 
             <DailyPractice key={date} date={date} open={deeperOpen} onOpen={() => setDeeperOpen(true)} onClose={() => setDeeperOpen(false)} onComplete={() => setStreak(recordChallenge(0, "hold"))} />
+
+            {streak?.lastCompletedDate === date && (
+              <section aria-labelledby="daily-next-lesson" className="mb-8 space-y-3">
+                <h2 id="daily-next-lesson" className="text-xl font-bold">Keep learning at your pace</h2>
+                <p className="text-sm text-muted-foreground">Continue your lesson now or pick up where you left off after tomorrow’s challenge.</p>
+                <GuidedNextLesson />
+              </section>
+            )}
 
             <div className="rounded-2xl border border-primary/25 bg-primary/5 p-5">
               <p className="font-semibold text-sm">Want a saved educational trophy?</p>

@@ -1030,6 +1030,8 @@ async function main(){
       }else if(i<9){await dailyClick("Next question");}
     }
     await wait(()=>devtools.evaluate("document.querySelector('#deeper-practice').textContent.includes('Case complete')"),"completed case score");
+    const dailyNextLesson = "document.querySelector('section[aria-labelledby=daily-next-lesson] a[href^=\"/courses/\"]')";
+    await wait(()=>devtools.evaluate("!!"+dailyNextLesson),"Daily completion offers the next approved lesson");
     const complete=await stored();assert.equal(complete.answers.length,10);assert.equal(complete.answers[0],1);assert.ok(complete.answers.slice(1).every(a=>a===0));
     const streakKey=await devtools.evaluate("Object.keys(localStorage).find(k=>{try{const v=JSON.parse(localStorage.getItem(k));return v && v.totalCompleted===1 && Array.isArray(v.history)}catch{return false}})");
     assert.ok(streakKey,"Daily completion must persist one streak entry");
@@ -1037,6 +1039,7 @@ async function main(){
     await dailyBankReady();
     await wait(()=>devtools.evaluate("[...document.querySelectorAll('#deeper-practice button')].some(e=>e.textContent.includes('Review case study'))"),"completed case restored");
     assert.deepEqual(await stored(),complete,"Completed answers cannot be rewritten by reload");
+    await wait(()=>devtools.evaluate("!!"+dailyNextLesson),"Next approved lesson remains available after a reload");
     await dailyClick("Review case study");
     await wait(()=>devtools.evaluate("!!document.querySelector('#case-study-content fieldset') && document.querySelector('#case-study-content fieldset').disabled"),"completed review opened with locked answers");
     await devtools.evaluate("document.querySelector('article button:not([disabled])').click()");
