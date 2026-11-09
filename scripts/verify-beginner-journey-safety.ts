@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { BACKUP_FORMAT, exportPracticeBackup, parsePracticeBackup, parsePracticePortfolio, readRecoveryPortfolio, writeRecoveryPortfolio } from "../src/lib/portfolioRecovery.ts";
 import { JOURNEY_KEY, journeyStage, readJourney, saveJourney, markJourneyTrade } from "../src/lib/beginnerJourney.ts";
+import { chooseMasteryNextAction } from "../src/lib/masteryNextAction.ts";
 
 const memory = new Map<string,string>();
 Object.defineProperty(globalThis, "localStorage", { configurable:true, value:{
@@ -26,6 +27,9 @@ assert.equal(parsePracticePortfolio({cash:"invalid",totalValue:1,positions:[],tr
 assert.throws(()=>parsePracticeBackup('{"format":"foreign","version":1}'),/not a TradeHQ/);
 assert.throws(()=>parsePracticeBackup('{"format":'),/valid JSON/);
 
+assert.equal(chooseMasteryNextAction(false,true).href,"/daily","New daily scenario comes first after course completion");
+assert.equal(chooseMasteryNextAction(true,false).href,"/trade","Scenario completed but no simulated trade suggests safe virtual practice");
+assert.equal(chooseMasteryNextAction(true,true).href,"/portfolio","After practice and a trade, reflect instead of repeating lessons");
 const empty = readJourney();
 assert.equal(journeyStage(empty),0);
 markJourneyTrade(restored.trades[0]);
