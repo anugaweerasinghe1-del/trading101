@@ -222,6 +222,10 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
             </ul>
           </Card>
 
+          <Link to="/ai-mentor" target="_blank" rel="noopener" className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline">
+            <Bot className="w-4 h-4" /> Ask the learning mentor (opens in a new tab)
+          </Link>
+
           {/* Quiz */}
           <div className="mt-10">
             <h2 className="text-2xl font-bold mb-1">Check Your Understanding</h2>
@@ -287,11 +291,6 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
                     <div className="font-semibold">Lesson complete — {score}/{lesson.quiz.length}</div>
                     <div className="text-xs text-muted-foreground">Progress saved to your browser. Come back anytime.</div>
                   </div>
-                  <Button variant="outline" size="sm" className="gap-1" asChild>
-<Link to="/ai-mentor">
-                      <Bot className="w-4 h-4" /> Ask the AI mentor
-                    </Link>
-</Button>
                 </div>
               </Card>
             )}

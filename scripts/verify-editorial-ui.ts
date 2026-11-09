@@ -44,6 +44,13 @@ for(const reply of mentorReplies) {
   assert.ok(reply.endsWith('(Educational simulation only — not financial advice.)'));
 }
 console.log('PASS authored mentor topics, greeting/fallback and portfolio branches preserve disclaimers without literal formatting markers.');
+assert.match(getSmartMentorReply("What is the exact method?"), /I don't have a curated lesson/);
+assert.match(getSmartMentorReply("Could you give me a reminder?"), /I don't have a curated lesson/);
+assert.match(getSmartMentorReply("What is ETH?"), /Cryptocurrencies have different network designs/);
+assert.match(getSmartMentorReply("What are stop-losses?"), /A stop order uses a trigger price/);
+assert.match(getSmartMentorReply("Can you explain market orders?"), /A buy limit at \$50/);
+assert.match(getSmartMentorReply("What is the bid–ask spread?"), /spread is \$0\.20/);
+assert.match(getSmartMentorReply("What is drawdown?"), /or 10%/);
 const portfolio = getPortfolioMentorReply('my portfolio',context);
 assert.ok(portfolio.includes('percentage unavailable') && portfolio.includes('Realized win rate: unavailable') && portfolio.includes('not a realized win rate'));
 assert.ok(!/NaN|Infinity/.test(portfolio));

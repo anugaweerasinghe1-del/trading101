@@ -20,8 +20,32 @@ const DISCLAIMER = "\n\n(Educational simulation only — not financial advice.)"
 
 export const MENTOR_TOPICS: MentorTopic[] = [
   {
+    id: "market-order",
+    keywords: ["market order", "market orders", "limit order", "limit orders"],
+    title: "Market and Limit Orders",
+    answer:
+      "A market order asks to trade at the available price. A limit order sets the highest price you will pay to buy or the lowest price you will accept to sell, and it may go unfilled.\n\n" +
+      "Practice example: If an asset last traded at $50 and the next available sell price is $51, a market buy could fill at $51. A buy limit at $50 would wait for a seller at $50 or less. TradeHQ executes simulated market orders.",
+  },
+  {
+    id: "spread-slippage",
+    keywords: ["bid ask spread", "spread", "slippage"],
+    title: "Spread and Slippage",
+    answer:
+      "The bid is the best available buy price and the ask is the best available sell price. If the bid is $49.90 and the ask is $50.10, their spread is $0.20.\n\n" +
+      "Slippage is the difference between the expected price and the actual fill. If you expect to buy at $50.10 and fill at $50.25, that is $0.15 of adverse slippage per unit. A last traded price, an available quote and a fill can each be different.",
+  },
+  {
+    id: "drawdown",
+    keywords: ["drawdown", "drawdowns", "peak to trough"],
+    title: "Drawdown",
+    answer:
+      "Drawdown measures how far an account has fallen from an earlier peak. If your simulated portfolio reaches $110,000 and then falls to $99,000, the drawdown is $11,000 divided by $110,000, or 10%.\n\n" +
+      "Return and drawdown answer different questions. That same account is down 1% from a $100,000 starting balance while it is down 10% from its peak.",
+  },
+  {
     id: "stop-loss",
-    keywords: ["stop loss", "stop-loss", "stoploss", "sl ", "protective stop"],
+    keywords: ["stop loss", "stop-losses", "stoploss", "sl", "protective stop"],
     title: "Stop-Loss Orders",
     answer:
       "A stop order uses a trigger price; it does not cap the final loss or guarantee a fill. Gaps and liquidity can produce a worse execution. For a hypothetical $100,000 account, a chosen 1% or 2% loss assumption is $1,000 or $2,000, but those are arbitrary practice settings. TradeHQ executes market orders; stop mechanics are conceptual. Record an exit assumption and compare it with the actual practice result.",
@@ -67,14 +91,14 @@ export const MENTOR_TOPICS: MentorTopic[] = [
   },
   {
     id: "moving-average",
-    keywords: ["moving average", "ma ", "sma", "ema", "20 day", "50 day", "200 day"],
+    keywords: ["moving average", "moving averages", "ma", "sma", "ema", "20 day", "50 day", "200 day"],
     title: "Moving Averages",
     answer:
       "A moving average summarizes a specified historical price series. Different periods and SMA/EMA methods produce different values. A shorter average crossing a longer one describes that series and lags price changes; it does not prove an entry, support level or future direction. Compare settings and record where their descriptions differ.",
   },
   {
     id: "candlestick",
-    keywords: ["candlestick", "candle", "doji", "hammer", "engulfing"],
+    keywords: ["candlestick", "candlesticks", "candle", "candles", "doji", "hammer", "engulfing"],
     title: "Candlestick Patterns",
     answer:
       "A candlestick shows open, high, low and close for a stated interval. Doji, hammer and engulfing names describe shapes, not guaranteed reversals. Inspect the data source and interval before interpreting the chart. TradeHQ can show provider candles or generated practice candles, and neither shape establishes the next move.",
@@ -94,7 +118,7 @@ export const MENTOR_TOPICS: MentorTopic[] = [
   },
   {
     id: "diversification",
-    keywords: ["diversif", "portfolio allocation", "asset allocation"],
+    keywords: ["diversification", "diversify", "diversified", "portfolio allocation", "asset allocation"],
     title: "Diversification",
     answer:
       "Diversification compares exposure to different holdings and their shared drivers.\n\n" +
@@ -113,21 +137,21 @@ export const MENTOR_TOPICS: MentorTopic[] = [
   },
   {
     id: "crypto-basics",
-    keywords: ["bitcoin", "btc", "ethereum", "eth", "crypto", "altcoin", "defi"],
+    keywords: ["bitcoin", "btc", "ethereum", "eth", "crypto", "cryptocurrency", "cryptocurrencies", "altcoin", "defi"],
     title: "Crypto Basics",
     answer:
       "Cryptocurrencies have different network designs, issuance, custody and operational risks. Volatility and correlation depend on the asset and observation period; neither market-cap rank nor a halving schedule establishes a safe tier or a predictable four-year return cycle. Compare equal hypothetical exposures rather than presume a universal daily move or a reliable price forecast.",
   },
   {
     id: "etfs",
-    keywords: ["etf", "spy", "qqq", "index fund", "vti"],
+    keywords: ["etf", "etfs", "spy", "qqq", "index fund", "index funds", "vti"],
     title: "ETFs & Index Funds",
     answer:
       "An ETF provides the exposure defined by its objective and holdings. Fees, leverage, concentration and overlaps vary by fund. SPY and QQQ illustrate different index exposures, but no fund is universally beginner-friendly or assuredly low risk. Use current fund documents and compare hypothetical positions without a claimed outperformance rate.",
   },
   {
     id: "tax",
-    keywords: ["tax", "capital gains", "wash sale", "tax loss"],
+    keywords: ["tax", "taxes", "capital gains", "wash sale", "tax loss"],
     title: "Trading & Taxes",
     answer:
       "Tax treatment depends on the country, asset, account type, holding period and the rules in force at the time. TradeHQ cannot determine what tax rate, loss rule or reporting requirement applies to a specific user.\n\n" +
@@ -154,11 +178,11 @@ const GREETING_RESPONSE =
 
 const FALLBACK_RESPONSE =
   "I don't have a curated lesson for that exact phrase yet, but here's what I can help with:\n\n" +
-  "Strategy & risk: stop-losses, position sizing, risk-reward, diversification.\n" +
+  "Orders & risk: market orders, spread, drawdown, stop-loss orders, position sizing, diversification.\n" +
   "Technicals: RSI, moving averages, candlestick patterns, support/resistance.\n" +
   "Psychology: FOMO, revenge trading, discipline.\n" +
   "Markets: bull/bear markets, leverage, crypto, ETFs.\n\n" +
-  "Try rephrasing, or pick a topic chip below — I'll give you a deep, actionable answer.";
+  "Try asking about one term from your lesson at a time, or use the Learning Center link to find a related guide.";
 
 /**
  * Match an input string to the best-fit mentor topic.
@@ -174,12 +198,16 @@ export function getSmartMentorReply(input: string): string {
     return GREETING_RESPONSE + DISCLAIMER;
   }
 
-  // Score topics by keyword overlap
+  // Match whole words and phrases so acronyms such as ETH and EMA
+  // cannot turn unrelated prompts about a method or a reminder into lessons.
+  const normalize = (value: string) => value.replace(/[^a-z0-9]+/g, " ").trim();
+  const words = ` ${normalize(text)} `;
   let best: { topic: MentorTopic; score: number } | null = null;
   for (const topic of MENTOR_TOPICS) {
     let score = 0;
-    for (const kw of topic.keywords) {
-      if (text.includes(kw)) score += kw.length; // longer matches win
+    for (const keyword of topic.keywords) {
+      const phrase = normalize(keyword);
+      if (words.includes(` ${phrase} `)) score = Math.max(score, phrase.length);
     }
     if (score > 0 && (!best || score > best.score)) {
       best = { topic, score };
@@ -200,6 +228,8 @@ export const MENTOR_SUGGESTIONS = [
   "What is dollar-cost averaging?",
   "Explain RSI",
   "How does leverage work?",
+  "What is slippage?",
+  "What is drawdown?",
 ];
 
 /** Built-in authored answers: no network calls or AI credits for mentor chat. */

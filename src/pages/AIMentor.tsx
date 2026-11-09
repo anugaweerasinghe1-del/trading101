@@ -27,7 +27,7 @@ export default function AIMentor() {
     {
       role: "assistant",
       content:
-        "Hey! I'm your Smart Mentor — a curated trading-knowledge engine built from real strategy, risk, and psychology lessons. Ask me anything about trading, or tap a topic below."
+        "Ask about a term from a lesson, such as drawdown or slippage, or choose a question below. The mentor explains supported concepts with built-in examples."
     }
   ]);
   const [input, setInput] = useState("");
