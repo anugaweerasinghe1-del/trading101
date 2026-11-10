@@ -358,10 +358,16 @@ const Index = () => {
               <Link to="/markets" className="inline-flex items-center px-5 py-2.5 text-sm font-semibold rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-primary/30 transition-all">Markets</Link>
               <Link to="/courses" className="inline-flex items-center px-5 py-2.5 text-sm font-semibold rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-primary/30 transition-all">Learn Trading</Link>
               <Link to="/portfolio" className="inline-flex items-center px-5 py-2.5 text-sm font-semibold rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-primary/30 transition-all">Portfolio</Link>
-              <Link to="/leaderboard" className="inline-flex items-center px-5 py-2.5 text-sm font-semibold rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-primary/30 transition-all">Leaderboard</Link>
               <Link to="/ai-mentor" className="inline-flex items-center px-5 py-2.5 text-sm font-semibold rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-primary/30 transition-all">AI Mentor</Link>
               <Link to="/learn-trading-guide" className="inline-flex items-center px-5 py-2.5 text-sm font-semibold rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-primary/30 transition-all">Trading Guide</Link>
             </div>
+            <Link to="/leaderboard" className="group mt-5 flex min-h-11 items-center justify-between gap-4 border-t border-border pt-4 focus-visible:ring-2 focus-visible:ring-ring">
+              <span>
+                <span className="block text-sm font-semibold group-hover:text-primary">Practice leaderboard</span>
+                <span className="mt-1 block text-sm text-muted-foreground">Explore public practice profiles and rankings based on eligible virtual trades.</span>
+              </span>
+              <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0 text-primary" />
+            </Link>
           </div>
 
         </section>

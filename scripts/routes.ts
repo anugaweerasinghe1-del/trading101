@@ -224,7 +224,7 @@ export function buildRoutes(): RouteMeta[] {
     title: "Start Here — Beginner Practice Trading Journey | TradeHQ",
     description: "Learn how virtual trading works, practise an order, understand its costs, review your portfolio and continue with daily exercises.",
     h1: "Your First Virtual Trade, Explained",
-    summary: "A guided five-step educational exercise: understand the order and fees, place a voluntary simulated trade, review cash and holdings, reflect, and continue with Daily Practice. No account or real money is required. Progress is stored in your browser.",
+    summary: "Try an optional Daily Practice scenario, then follow five guided steps to understand an order, place a voluntary simulated trade, review cash and holdings, reflect, and choose what to learn next. No account or real money is required.",
     priority: "0.8",
     changefreq: "weekly",
   });
