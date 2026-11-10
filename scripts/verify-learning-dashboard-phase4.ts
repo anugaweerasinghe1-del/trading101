@@ -12,6 +12,10 @@ const journey:BeginnerJourneyProgress={version:1,lessonCompleted:false,tradeId:n
 let summary=buildLearningOverview(tracks,course,journey);
 assert.deepEqual([summary.lessonsDone,summary.lessonsTotal,summary.lessonsInProgress,summary.journeyDone],[0,3,0,0]);
 assert.equal(summary.next?.href,"/courses/trading-psychology-mastery/one");
+const visitedOnly = { ...course, lastLesson: { track: "risk", lesson: "one", at: course.updatedAt } };
+const visitedSummary = buildLearningOverview(tracks, visitedOnly, journey);
+assert.equal(visitedSummary.next?.href, "/courses/risk/one");
+assert.equal(visitedSummary.next?.inProgress, true, "Opening a valid lesson is enough to resume before quiz or scroll progress");
 course.tracks["trading-psychology-mastery"]={lessons:{one:{status:"completed",score:2,completedAt:"2026-10-30T12:00:00Z"},two:{status:"in-progress",scrolledPct:45,quizAnswers:{"0":1}}}};
 course.lastLesson={track:"trading-psychology-mastery",lesson:"two",at:"2026-10-31T00:00:00Z"};
 summary=buildLearningOverview(tracks,course,journey);
@@ -37,6 +41,12 @@ assert.equal(course.tracks["trading-psychology-mastery"].lessons.two.status,"com
 const page=readFileSync("src/pages/Learn.tsx","utf8");
 const component=readFileSync("src/components/LearningJourneyDashboard.tsx","utf8");
 assert.match(page,/<LearningJourneyDashboard tracks=\{tracks\} \/>/);
+assert.doesNotMatch(page,/<GuidedNextLesson\s*\/>/, "Learning hub should not render a second competing recommendation");
+assert.match(component,/data-testid="learning-primary-next-step"/, "One prominent recommendation exists");
+assert.match(component,/Other learning activities \(optional\)/, "Other actions remain available but optional");
+assert.match(readFileSync("src/pages/BeginnerJourney.tsx","utf8"),/Courses added to your journey \(optional\)/, "Course release catalog stays discoverable but collapsed below primary next action");
+assert.match(component,/hasCourseHistory && !overview\.next/, "All-courses-complete learner proceeds to mastery rather than being forced into beginner journey");
+
 assert.match(component,/COURSE_PROGRESS_EVENT/);
 assert.match(component,/JOURNEY_EVENT/);
 assert.match(component,/role="progressbar"/);

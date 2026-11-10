@@ -323,7 +323,7 @@ try {
   await verifyHowToArticle({send,evaluate,waitUntil,origin,delay,dist});
   await verifyCourseLessonArticle({send,evaluate,waitUntil,origin,delay,dist});
   await verifyBeginnerGuide({send,evaluate,waitUntil,origin,delay});
-  await verifyGuidedLesson({send,evaluate,waitUntil,origin,delay});
+  await verifyGuidedLesson({send,evaluate,waitUntil,origin,delay,publishedTracks:docs.map(row=>row.document)});
   await verifyMarketsSidebar({send,evaluate,waitUntil,origin,delay});
   await verifyMobileNavigation({send,evaluate,waitUntil,origin,delay});
   await verifyMobileRetentionUx({send,evaluate,waitUntil,origin,delay});

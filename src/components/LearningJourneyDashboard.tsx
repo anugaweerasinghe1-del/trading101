@@ -33,10 +33,20 @@ export function LearningJourneyDashboard({ tracks }: { tracks: LearningTrack[] }
   const overview = buildLearningOverview(tracks, snapshot.course, snapshot.journey);
   const journeyPercent = overview.journeyDone * 20;
   const coursePercent = overview.lessonsTotal ? Math.round(overview.lessonsDone * 100 / overview.lessonsTotal) : 0;
-  const hasCourseHistory = overview.lessonsDone > 0 || overview.lessonsInProgress > 0;
+  const hasCourseHistory = overview.lessonsDone > 0 || overview.lessonsInProgress > 0 || overview.next?.inProgress === true;
   const mastery = typeof window !== "undefined"
     ? chooseMasteryNextAction(hasPlayedQuickToday(), getPortfolio().trades.length > 0)
     : chooseMasteryNextAction(false, false);
+  // A single primary action. The learner's other progress remains visible
+  // without requiring a choice between competing equally prominent CTAs.
+  const action = overview.next && (hasCourseHistory || overview.journeyFinished)
+    ? { href: overview.next.href, title: overview.next.title, label: overview.next.inProgress ? "Resume your saved lesson" : "Continue to your next lesson", reason: overview.next.reason }
+    : hasCourseHistory && !overview.next
+    ? { href: mastery.href, label: mastery.label, reason: mastery.reason }
+    : !overview.journeyFinished
+    ? { href: "/start", label: overview.journeyDone ? "Continue your first-trade journey" : "Start your learning journey", reason: "Begin with Daily Practice, learn an order, and reflect on your first voluntary virtual trade." }
+    : { href: "/daily", label: "Open Daily Practice", reason: "Start a general trading scenario and build understanding at your own pace." };
+
 
   return (
     <section aria-label="Continue Learning dashboard" className="mb-9 rounded-3xl border border-border bg-card/80 p-5 sm:p-7">
@@ -53,6 +63,15 @@ export function LearningJourneyDashboard({ tracks }: { tracks: LearningTrack[] }
         </Link>
       </div>
 
+      <div data-testid="learning-primary-next-step" className="mb-6 rounded-2xl border border-primary/40 bg-primary/5 p-5 sm:p-6">
+        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">Your recommended next step</p>
+        <h3 className="mt-2 text-lg sm:text-xl font-semibold text-foreground">{("title" in action && action.title) || action.label}</h3>
+        <p className="mt-2 mb-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">{action.reason}</p>
+        <Link to={action.href} className="inline-flex min-h-11 w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+          {action.label} <ArrowRight className="w-4 h-4" />
+        </Link>
+      </div>
+
       <div className="grid md:grid-cols-2 gap-4">
         <div className="rounded-2xl border border-border bg-background/70 p-5 flex flex-col">
           <div className="flex items-center justify-between gap-3"><h3 className="font-semibold flex gap-2 items-center"><Compass className="w-5 h-5 text-primary" /> First virtual trade</h3><span className="text-sm tabular-nums text-muted-foreground">{overview.journeyDone}/5</span></div>
@@ -60,9 +79,7 @@ export function LearningJourneyDashboard({ tracks }: { tracks: LearningTrack[] }
           <p className="mt-3 mb-5 text-sm text-muted-foreground flex-1">
             {overview.journeyFinished ? "Journey complete. Review your portfolio or continue learning about risk." : overview.journeyDone ? "Continue from step " + (overview.journeyStage + 1) + " without repeating earlier steps." : "Understand an order, place an optional virtual trade, inspect your portfolio and reflect."}
           </p>
-          <Link to="/start" className="inline-flex items-center gap-2 font-semibold text-sm text-primary underline underline-offset-4">
-            {overview.journeyFinished ? "Review my five-step journey" : overview.journeyDone ? "Resume my journey" : "Begin my five-step journey"} <ArrowRight className="w-4 h-4" />
-          </Link>
+          <p className="text-xs text-muted-foreground">Full step-by-step guidance remains available in Start Here.</p>
         </div>
 
         <div className="rounded-2xl border border-border bg-background/70 p-5 flex flex-col">
@@ -78,11 +95,20 @@ export function LearningJourneyDashboard({ tracks }: { tracks: LearningTrack[] }
           ) : (
             <p className="mt-4 flex-1 text-sm text-muted-foreground">{hasCourseHistory ? "All available course lessons completed." : "Explore an introductory course when you're ready."}</p>
           )}
-          <Link to={overview.next?.href ?? (hasCourseHistory ? mastery.href : "/courses")} className="mt-4 inline-flex min-h-11 items-center gap-2 font-semibold text-sm text-primary underline underline-offset-4">
-            {overview.next ? (overview.next.inProgress ? "Resume saved lesson" : "Open next lesson") : hasCourseHistory ? mastery.label : "Browse courses"} <ArrowRight className="w-4 h-4" />
-          </Link>
+          <p className="mt-4 text-xs text-muted-foreground">Your next action is highlighted above; these figures are for progress review.</p>
         </div>
       </div>
+
+      <details className="mt-4 text-sm text-muted-foreground">
+        <summary className="min-h-11 cursor-pointer py-3 font-medium text-foreground">Other learning activities (optional)</summary>
+        <nav aria-label="Optional learning activities" className="mt-2 flex flex-wrap gap-x-5 gap-y-3">
+          <Link to="/start" className="underline underline-offset-4">Start Here</Link>
+          <Link to="/daily" className="underline underline-offset-4">Daily Practice</Link>
+          <Link to="/courses" className="underline underline-offset-4">Courses</Link>
+          <Link to="/practice" className="underline underline-offset-4">Practice Arena</Link>
+          <Link to="/portfolio" className="underline underline-offset-4">Portfolio</Link>
+        </nav>
+      </details>
 
       <p className="mt-4 flex gap-2 items-start text-xs text-muted-foreground">
         <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0" />

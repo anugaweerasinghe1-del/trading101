@@ -11,7 +11,6 @@ import { LEARN_ARTICLES } from "@/lib/learnArticles";
 import { SEOSection } from "@/components/SEOSection";
 import { useCourseCatalog } from "@/hooks/useCourseCatalog";
 import { LearningJourneyDashboard } from "@/components/LearningJourneyDashboard";
-import { GuidedNextLesson } from "@/components/GuidedNextLesson";
 import { COUNTRY_GUIDES } from "@/lib/countryGuides";
 import tradingBasics from "@/assets/course-trading-basics.jpg";
 import riskManagement from "@/assets/course-risk-management.jpg";
@@ -141,10 +140,7 @@ export default function Learn() {
               <span className="text-foreground font-medium">Learning</span>
             </nav>
 
-            {/* Keep the existing accessible next-lesson recommendation before the unified summary. */}
-            <div className="mb-8">
-              <GuidedNextLesson />
-            </div>
+            {/* One recommendation hub; course progress and optional paths stay available below it. */}
             <LearningJourneyDashboard tracks={tracks} />
 
             <Link to="/achievements" className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between

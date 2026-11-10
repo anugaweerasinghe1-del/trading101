@@ -182,7 +182,7 @@ const Index = () => {
             <div>
               <p className="text-xs font-semibold text-primary uppercase tracking-wider">New to TradeHQ? Start here</p>
               <h2 className="mt-1 text-xl font-semibold">Your first practice trade, step by step</h2>
-              <p className="mt-1 text-sm text-muted-foreground">Learn, place one virtual order, understand your portfolio, reflect and build a Daily Practice habit. No account needed.</p>
+              <p className="mt-1 text-sm text-muted-foreground">Start with Daily Practice, then learn, make a voluntary virtual trade and review what happened. No account needed.</p>
             </div>
             <span className="flex items-center gap-2 text-primary font-semibold text-sm shrink-0">Start or continue <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" /></span>
           </Link>
