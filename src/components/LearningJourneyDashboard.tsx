@@ -41,10 +41,10 @@ export function LearningJourneyDashboard({ tracks }: { tracks: LearningTrack[] }
   // without requiring a choice between competing equally prominent CTAs.
   const action = overview.next && (hasCourseHistory || overview.journeyFinished)
     ? { href: overview.next.href, label: overview.next.inProgress ? "Resume your saved lesson" : "Continue to your next lesson", reason: overview.next.reason }
+    : hasCourseHistory && !overview.next
+    ? { href: mastery.href, label: mastery.label, reason: mastery.reason }
     : !overview.journeyFinished
     ? { href: "/start", label: overview.journeyDone ? "Continue your first-trade journey" : "Start your learning journey", reason: "Begin with Daily Practice, learn an order, and reflect on your first voluntary virtual trade." }
-    : hasCourseHistory
-    ? { href: mastery.href, label: mastery.label, reason: mastery.reason }
     : { href: "/daily", label: "Open Daily Practice", reason: "Start a general trading scenario and build understanding at your own pace." };
 
 
