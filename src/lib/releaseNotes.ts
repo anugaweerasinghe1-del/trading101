@@ -10,7 +10,7 @@ export type ReleaseNote = {
   action: string;
 };
 
-export const RELEASE_NOTES: readonly ReleaseNote[] = [
+const ARCHIVED_RELEASE_NOTES: readonly ReleaseNote[] = [
   {
     id: "whats-new",
     date: "2026-11-09",
@@ -51,6 +51,9 @@ export const RELEASE_NOTES: readonly ReleaseNote[] = [
 
 // Approved entries ship with the production build. Routine deploys add none.
 export const APPROVED_RELEASES = approvedReleases as readonly (ReleaseNote & { announce: boolean })[];
+
+export const RELEASE_NOTES: readonly ReleaseNote[] = [...APPROVED_RELEASES, ...ARCHIVED_RELEASE_NOTES]
+  .sort((first, second) => Date.parse(second.date) - Date.parse(first.date));
 
 export function publishedCourseRelease(row: unknown): ReleaseNote | null {
   if (!row || typeof row !== "object") return null;

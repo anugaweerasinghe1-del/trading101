@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { SITE_DOMAIN } from "@/lib/constants";
 import { readPublicCoursePublications } from "@/lib/publicCoursePublications";
-import { APPROVED_RELEASES, publishedCourseRelease, RELEASE_NOTES, releaseNoticesDisabled, setReleaseNoticesDisabled, type ReleaseNote } from "@/lib/releaseNotes";
+import { publishedCourseRelease, RELEASE_NOTES, releaseNoticesDisabled, setReleaseNoticesDisabled, type ReleaseNote } from "@/lib/releaseNotes";
 
 const TITLE = "What’s New | TradeHQ";
 const DESCRIPTION = "See the latest TradeHQ improvements, newly published courses, and Trophy Cabinet updates.";
@@ -32,7 +32,7 @@ export default function WhatsNew() {
       return data.map(publishedCourseRelease).filter((release): release is ReleaseNote => release !== null);
     },
   });
-  const updates = [...APPROVED_RELEASES, ...RELEASE_NOTES, ...(courses.data ?? [])]
+  const updates = [...RELEASE_NOTES, ...(courses.data ?? [])]
     .sort((first, second) => Date.parse(second.date) - Date.parse(first.date));
 
   return (

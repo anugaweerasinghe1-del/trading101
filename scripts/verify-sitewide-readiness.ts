@@ -11,11 +11,9 @@ import { APPROVED_RELEASES, RELEASE_NOTES } from "../src/lib/releaseNotes";
 
 const routes = uniqueRoutes();
 const manifest = new Map(routes.map(route => [route.path, route]));
-const releaseIds = new Set(RELEASE_NOTES.map(release => release.id));
+assert.equal(new Set(RELEASE_NOTES.map(release => release.id)).size, RELEASE_NOTES.length, "Duplicate release IDs");
 for (const release of APPROVED_RELEASES) {
   assert.match(release.id, /^release-[a-z0-9]+(?:-[a-z0-9]+)*$/);
-  assert.ok(!releaseIds.has(release.id), `Duplicate release ID: ${release.id}`);
-  releaseIds.add(release.id);
   assert.match(release.date, /^\d{4}-\d{2}-\d{2}$/);
   assert.equal(new Date(release.date).toISOString().slice(0, 10), release.date);
   assert.ok(["Site", "Learning", "Rewards", "Portfolio", "Course"].includes(release.category));
@@ -24,6 +22,9 @@ for (const release of APPROVED_RELEASES) {
   assert.ok(manifest.get(release.href) && !manifest.get(release.href)?.noindex, `Release needs a public destination: ${release.href}`);
 }
 const content = await buildContentMap();
+for (const release of APPROVED_RELEASES) {
+  assert.ok(content.get("/whats-new")?.sections.some(section => section.h === release.title), `Release is missing from the static history: ${release.id}`);
+}
 const data = await loadSiteData();
 const sitemap = readFileSync("dist/sitemap.xml", "utf8");
 const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
