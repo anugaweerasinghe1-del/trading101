@@ -7,9 +7,22 @@ import { loadSiteData } from "./loadData";
 import { GLOSSARY_WORKSHEETS } from "../src/lib/glossaryWorksheets";
 import { isClientFallbackRoute } from "../src/lib/clientFallbackRoutes";
 import { starterPracticeBank } from "../src/lib/dailyPracticeBank";
+import { APPROVED_RELEASES, RELEASE_NOTES } from "../src/lib/releaseNotes";
 
 const routes = uniqueRoutes();
 const manifest = new Map(routes.map(route => [route.path, route]));
+const releaseIds = new Set(RELEASE_NOTES.map(release => release.id));
+for (const release of APPROVED_RELEASES) {
+  assert.match(release.id, /^release-[a-z0-9]+(?:-[a-z0-9]+)*$/);
+  assert.ok(!releaseIds.has(release.id), `Duplicate release ID: ${release.id}`);
+  releaseIds.add(release.id);
+  assert.match(release.date, /^\d{4}-\d{2}-\d{2}$/);
+  assert.equal(new Date(release.date).toISOString().slice(0, 10), release.date);
+  assert.ok(["Site", "Learning", "Rewards", "Portfolio", "Course"].includes(release.category));
+  assert.ok(release.title.trim() && release.summary.trim() && release.action.trim());
+  assert.equal(typeof release.announce, "boolean");
+  assert.ok(manifest.get(release.href) && !manifest.get(release.href)?.noindex, `Release needs a public destination: ${release.href}`);
+}
 const content = await buildContentMap();
 const data = await loadSiteData();
 const sitemap = readFileSync("dist/sitemap.xml", "utf8");

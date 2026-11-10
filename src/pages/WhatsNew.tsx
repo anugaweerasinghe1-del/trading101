@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Helmet } from "react-helmet-async";
@@ -9,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { SITE_DOMAIN } from "@/lib/constants";
 import { readPublicCoursePublications } from "@/lib/publicCoursePublications";
-import { RELEASE_NOTES, type ReleaseNote } from "@/lib/releaseNotes";
+import { APPROVED_RELEASES, publishedCourseRelease, RELEASE_NOTES, releaseNoticesDisabled, setReleaseNoticesDisabled, type ReleaseNote } from "@/lib/releaseNotes";
 
 const TITLE = "What’s New | TradeHQ";
 const DESCRIPTION = "See the latest TradeHQ improvements, newly published courses, and Trophy Cabinet updates.";
@@ -18,6 +19,8 @@ const dateLabel = new Intl.DateTimeFormat("en-GB", {
 });
 
 export default function WhatsNew() {
+  const [noticesDisabled, setNoticesDisabled] = useState(releaseNoticesDisabled);
+  const [preferenceFailed, setPreferenceFailed] = useState(false);
   const courses = useQuery({
     queryKey: ["whats-new-course-publications"],
     staleTime: 30_000,
@@ -26,25 +29,10 @@ export default function WhatsNew() {
     queryFn: async ({ signal }): Promise<ReleaseNote[]> => {
       const { data, error } = await readPublicCoursePublications({ signal });
       if (error || !Array.isArray(data)) throw new Error("Course updates are unavailable.");
-      return data.flatMap(row => {
-        if (!row || typeof row !== "object") return [];
-        const { slug, published_at, title } = row;
-        if (typeof slug !== "string" || slug.length > 80 || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug) ||
-            typeof published_at !== "string" || !Number.isFinite(Date.parse(published_at)) ||
-            typeof title !== "string" || !title.trim()) return [];
-        return [{
-          id: `course-${slug}`,
-          date: published_at,
-          category: "Course",
-          title: title.trim(),
-          summary: "A newly published course is available in the TradeHQ learning library.",
-          href: `/courses/${slug}`,
-          action: "Open course",
-        }];
-      });
+      return data.map(publishedCourseRelease).filter((release): release is ReleaseNote => release !== null);
     },
   });
-  const updates = [...RELEASE_NOTES, ...(courses.data ?? [])]
+  const updates = [...APPROVED_RELEASES, ...RELEASE_NOTES, ...(courses.data ?? [])]
     .sort((first, second) => Date.parse(second.date) - Date.parse(first.date));
 
   return (
@@ -70,6 +58,16 @@ export default function WhatsNew() {
             <Link to="/roadmap" className="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-primary hover:underline">
               See what’s planned on the Roadmap <ArrowRight aria-hidden="true" className="h-4 w-4" />
             </Link>
+            <label className="mt-2 flex min-h-11 w-fit items-center gap-2 text-sm text-muted-foreground">
+              <input type="checkbox" checked={noticesDisabled} onChange={event => {
+                const disabled = event.currentTarget.checked;
+                const saved = setReleaseNoticesDisabled(disabled);
+                setPreferenceFailed(!saved);
+                if (saved) setNoticesDisabled(disabled);
+              }} />
+              Hide release announcements on this browser
+            </label>
+            {preferenceFailed && <p role="status" className="text-sm text-muted-foreground">This browser couldn’t save your announcement preference.</p>}
           </header>
 
           {courses.isError && (

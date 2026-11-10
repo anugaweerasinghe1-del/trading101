@@ -1,3 +1,5 @@
+import approvedReleases from "../content/releases/approved.json";
+
 export type ReleaseNote = {
   id: string;
   date: string;
@@ -46,3 +48,36 @@ export const RELEASE_NOTES: readonly ReleaseNote[] = [
     action: "Explore the Trophy Cabinet",
   },
 ];
+
+// Approved entries ship with the production build. Routine deploys add none.
+export const APPROVED_RELEASES = approvedReleases as readonly (ReleaseNote & { announce: boolean })[];
+
+export function publishedCourseRelease(row: unknown): ReleaseNote | null {
+  if (!row || typeof row !== "object") return null;
+  const { slug, published_at, title } = row as Record<string, unknown>;
+  if (typeof slug !== "string" || slug.length > 80 || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug) ||
+      typeof published_at !== "string" || !Number.isFinite(Date.parse(published_at)) ||
+      typeof title !== "string" || !title.trim()) return null;
+  return {
+    id: `course-${slug}`,
+    date: published_at,
+    category: "Course",
+    title: title.trim(),
+    summary: "A newly published course is available in the TradeHQ learning library.",
+    href: `/courses/${slug}`,
+    action: "Open course",
+  };
+}
+
+export const RELEASE_NOTICES_PREFERENCE = "tradehq-release-notices-disabled";
+
+export function releaseNoticesDisabled() {
+  try { return localStorage.getItem(RELEASE_NOTICES_PREFERENCE) === "1"; }
+  catch { return false; }
+}
+
+export function setReleaseNoticesDisabled(disabled: boolean) {
+  try { localStorage.setItem(RELEASE_NOTICES_PREFERENCE, disabled ? "1" : "0"); }
+  catch { return false; }
+  return true;
+}
