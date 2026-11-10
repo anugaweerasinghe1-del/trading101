@@ -41,7 +41,7 @@ export function ReleaseNotices() {
           const date = Date.parse(release.date);
           return date >= cutoff && date <= now && seen[marker] !== true && !sessionSeen.current.has(marker);
         };
-        let next = APPROVED_RELEASES.filter(release => release.announce === true)
+        let next: { release: ReleaseNote; marker: string } | undefined = APPROVED_RELEASES.filter(release => release.announce === true)
           .map(release => ({ release, marker: `${release.id}:${release.date}` })).find(eligible);
         if (!next) {
           const { data, error } = await readPublicCoursePublications({
