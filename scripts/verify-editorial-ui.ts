@@ -51,6 +51,15 @@ assert.match(getSmartMentorReply("What are stop-losses?"), /A stop order uses a 
 assert.match(getSmartMentorReply("Can you explain market orders?"), /A buy limit at \$50/);
 assert.match(getSmartMentorReply("What is the bid–ask spread?"), /spread is \$0\.20/);
 assert.match(getSmartMentorReply("What is drawdown?"), /or 10%/);
+assert.match(getSmartMentorReply("Hi, what is slippage?"), /\$0\.15 of adverse slippage/);
+assert.match(getSmartMentorReply("Hello there!"), /Try asking me about/);
+assert.match(getSmartMentorReply("Hey, is today the right time to buy?"), /I don't have a curated lesson/);
+const stopLoss = getSmartMentorReply("Explain stop-loss orders");
+assert.ok(stopLoss.includes(`lose $${10 * (50 - 45)}`) && stopLoss.includes(`loss is $${10 * (50 - 42)}`));
+const leverage = getSmartMentorReply("How does leverage work?");
+assert.ok(leverage.includes(`$${100 * 10 * 0.05} loss`) && leverage.includes(`$${100 * 0.05} loss`));
+assert.match(getSmartMentorReply("Explain RSI"), /50 is the midpoint/);
+assert.doesNotMatch(getSmartMentorReply("Explain RSI"), /trend reset/);
 const portfolio = getPortfolioMentorReply('my portfolio',context);
 assert.ok(portfolio.includes('percentage unavailable') && portfolio.includes('Realized win rate: unavailable') && portfolio.includes('not a realized win rate'));
 assert.ok(!/NaN|Infinity/.test(portfolio));

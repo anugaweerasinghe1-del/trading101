@@ -48,7 +48,8 @@ export const MENTOR_TOPICS: MentorTopic[] = [
     keywords: ["stop loss", "stop-losses", "stoploss", "sl", "protective stop"],
     title: "Stop-Loss Orders",
     answer:
-      "A stop order uses a trigger price; it does not cap the final loss or guarantee a fill. Gaps and liquidity can produce a worse execution. For a hypothetical $100,000 account, a chosen 1% or 2% loss assumption is $1,000 or $2,000, but those are arbitrary practice settings. TradeHQ executes market orders; stop mechanics are conceptual. Record an exit assumption and compare it with the actual practice result.",
+      "A stop order uses a trigger price. When a standard stop triggers, it becomes a market order and can fill at a different price.\n\n" +
+      "Practice example: You bought 10 units at $50 and set a stop at $45. A fill at $45 would lose $50 before fees. If the market gaps and the order fills at $42, the loss is $80. The trigger is separate from the execution price. TradeHQ’s practice orders are market orders, so this example is conceptual.",
   },
   {
     id: "dca",
@@ -86,8 +87,8 @@ export const MENTOR_TOPICS: MentorTopic[] = [
       "RSI is a momentum oscillator scaled 0–100 measuring speed and change of price moves.\n\n" +
       "• >70 = overbought (potential pullback)\n" +
       "• <30 = oversold (potential bounce)\n" +
-      "• 50 = neutral / trend reset\n\n" +
-      "Reality check: RSI alone is not a buy/sell signal. In strong trends, RSI can stay overbought (or oversold) for weeks. Use it with price action, volume, and support/resistance — not as a standalone trigger.",
+      "• 50 is the midpoint of the scale.\n\n" +
+      "Practice example: If an asset is rising and its RSI moves from 72 to 76, both readings are above the traditional 70 threshold. A strong trend can keep RSI elevated. The readings describe recent momentum, so check the price history before drawing conclusions about a reversal. RSI alone is not a buy/sell signal.",
   },
   {
     id: "moving-average",
@@ -133,7 +134,8 @@ export const MENTOR_TOPICS: MentorTopic[] = [
     keywords: ["leverage", "margin", "10x", "100x", "liquidation"],
     title: "Leverage & Margin",
     answer:
-      "Leverage increases gains and losses relative to funds committed. In simplified arithmetic, a ten-percent adverse move on ten-times exposure equals the original funds before costs, but actual margin calls and liquidation may occur earlier and losses can exceed a deposit. Requirements depend on the product and provider. TradeHQ spot practice does not implement futures margin or leverage.",
+      "Leverage magnifies gains and losses relative to the amount committed.\n\n" +
+      "Practice example: With $100 committed at 10× leverage, the exposure is $1,000. A 5% drop means a $50 loss before costs, or half the amount committed. A 5% drop on $100 without leverage means a $5 loss. Actual margin calls or liquidation may happen earlier, and losses can exceed a deposit depending on the product. TradeHQ spot practice uses no leverage.",
   },
   {
     id: "crypto-basics",
@@ -193,11 +195,6 @@ export function getSmartMentorReply(input: string): string {
 
   if (!text) return GREETING_RESPONSE + DISCLAIMER;
 
-  // Greetings
-  if (/^(hi|hey|hello|sup|yo|hola)\b/.test(text)) {
-    return GREETING_RESPONSE + DISCLAIMER;
-  }
-
   // Match whole words and phrases so acronyms such as ETH and EMA
   // cannot turn unrelated prompts about a method or a reminder into lessons.
   const normalize = (value: string) => value.replace(/[^a-z0-9]+/g, " ").trim();
@@ -215,6 +212,7 @@ export function getSmartMentorReply(input: string): string {
   }
 
   if (best) return best.topic.answer + DISCLAIMER;
+  if (/^(hi|hey|hello|sup|yo|hola)( there)?$/.test(normalize(text))) return GREETING_RESPONSE + DISCLAIMER;
   return FALLBACK_RESPONSE + DISCLAIMER;
 }
 
