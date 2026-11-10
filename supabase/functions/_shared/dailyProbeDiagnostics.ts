@@ -1,4 +1,4 @@
-import { assembleDailyExercises } from "./dailyPracticeGenerator.ts";
+import { assembleDailyExercises } from "./dailyPractice.ts";
 
 /** Fixed classifications and numeric measurements only; never retain model prose. */
 export const PROBE_FINISH_REASONS = ['STOP', 'MAX_TOKENS', 'SAFETY', 'RECITATION', 'OTHER', 'NOT_REPORTED', 'UNRECOGNIZED'] as const;

@@ -1,4 +1,4 @@
-import { DAILY_CATEGORIES, normalized, validateExercises, type DailyExercise } from './dailyPractice.ts';
+import { DAILY_CATEGORIES, assembleDailyExercises, normalized, validateExercises, type DailyExercise } from './dailyPractice.ts';
 import { hasRepeatedPracticeCase } from './dailyPracticeReview.ts';
 import { readCourseReferences, readGenerationResponse, GENERATION_READ_LIMITS, safeGeminiRejectionDetails } from './courseGenerator.ts';
 export interface PracticeClaim {
@@ -11,28 +11,6 @@ const guideParts = 'Write two distinct sentences, each about 90–145 characters
 // Keep the provider schema small; enforce all structural and editorial constraints locally.
 const obj = (properties: Record<string, unknown>) => ({ type: 'object', properties, required: Object.keys(properties) });
 const pair = (description: string) => ({ type: 'array', items: str, minItems: 2, maxItems: 2, description });
-
-function joinReasoning(value: unknown): string {
-  if (!Array.isArray(value) || value.length !== 2 || !value.every(part => typeof part === 'string' && part.trim())) return '';
-  const [first, second] = value.map(part => part.trim());
-  return normalized(first) === normalized(second) ? '' : first + ' ' + second;
-}
-
-/** Convert provider-only sentence pairs to the existing stored exercise format. */
-export function assembleDailyExercises(items: unknown): unknown {
-  if (!Array.isArray(items)) return items;
-  return items.map(exercise => {
-    if (!exercise || typeof exercise !== 'object' || Array.isArray(exercise)) return exercise;
-    return {
-      ...exercise,
-      reflectionGuide: joinReasoning(exercise.reflectionGuide),
-      questions: Array.isArray(exercise.questions) ? exercise.questions.map(question =>
-        question && typeof question === 'object' && !Array.isArray(question)
-          ? { ...question, explanation: joinReasoning(question.explanation) }
-          : question) : exercise.questions,
-    };
-  });
-}
 
 export async function generatePractice(claim: PracticeClaim, fetcher = fetch) {
   if (!claim.apiKey) throw new Error('Add a free Gemini API key in course settings.');

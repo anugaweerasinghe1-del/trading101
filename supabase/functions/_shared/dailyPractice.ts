@@ -10,6 +10,28 @@ export interface DailyExercise {
 export interface DailyBatch { id: string; effectiveFrom: string; exercises: DailyExercise[]; reviewer?: string; reviewedAt?: string }
 const text = (v: unknown, min: number, max: number) => typeof v === "string" && v.trim().length >= min && v.length <= max;
 export const normalized = (s: string) => s.toLowerCase().replace(/−/g, "-").replace(/[^a-z0-9+.-]+/g, " ").trim();
+function joinReasoning(value: unknown): string {
+  if (!Array.isArray(value) || value.length !== 2 || !value.every(part => typeof part === 'string' && part.trim())) return '';
+  const [first, second] = value.map(part => part.trim());
+  return normalized(first) === normalized(second) ? '' : first + ' ' + second;
+}
+
+/** Convert provider-only sentence pairs to the existing stored exercise format. */
+export function assembleDailyExercises(items: unknown): unknown {
+  if (!Array.isArray(items)) return items;
+  return items.map(exercise => {
+    if (!exercise || typeof exercise !== 'object' || Array.isArray(exercise)) return exercise;
+    return {
+      ...exercise,
+      reflectionGuide: joinReasoning(exercise.reflectionGuide),
+      questions: Array.isArray(exercise.questions) ? exercise.questions.map(question =>
+        question && typeof question === 'object' && !Array.isArray(question)
+          ? { ...question, explanation: joinReasoning(question.explanation) }
+          : question) : exercise.questions,
+    };
+  });
+}
+
 export function validateExercises(value: unknown, count = 50, questionCount?: number): string[] {
   const errors: string[] = [];
   if (!Array.isArray(value) || value.length !== count) return [`A batch needs exactly ${count} exercises.`];
