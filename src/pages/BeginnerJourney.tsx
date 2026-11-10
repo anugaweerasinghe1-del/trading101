@@ -71,7 +71,7 @@ export default function BeginnerJourney() {
   const trade = portfolio.trades.find(t => t.id === progress.tradeId);
   const gross = trade ? trade.quantity * trade.price : 0;
   const estimatedFee = trade ? Math.abs(trade.total - gross) : 0;
-  const totalSteps = stage === 4 && progress.completedAt ? 5 : stage;
+  const totalSteps = stage === 4 ? 5 : stage;
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -226,7 +226,6 @@ export default function BeginnerJourney() {
           {stage === 4 && <>
             <h2 className="text-2xl font-bold">You've completed your first learning journey.</h2>
             <p className="text-muted-foreground">Finishing one practice trade doesn't establish real-world readiness. Keep improving the process: revisit costs, risk, diversification and your own assumptions.</p>
-            {!progress.completedAt && <Button onClick={() => update({ completedAt: new Date().toISOString() })}>Mark learning journey complete</Button>}
             <section aria-label="Your recommended next step" className="rounded-2xl border border-primary/40 bg-primary/5 p-5 space-y-3">
               <p className="text-xs font-semibold uppercase tracking-widest text-primary">Your next step</p>
               <h3 className="text-xl font-semibold">{recentCourse ? "Continue learning" : "Keep practising what you've learned"}</h3>
