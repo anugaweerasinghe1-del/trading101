@@ -75,6 +75,7 @@ assert.match(dailyPage,/Continue guided learning/, "The Daily next-step CTA is o
 assert.doesNotMatch(dailyPage,/Practice This Trade Now/, "Daily no longer offers conflicting trade-first CTA");
 const lessonPage=read("src/pages/CourseLesson.tsx");
 assert.match(lessonPage,/Continue to next lesson/, "Completed quizzes expose a prominent onward lesson action");
+assert.match(lessonPage,/doneCount === track\.lessons\.length && !progress\.badgeEarnedAt/, "Repeat completed MCQs must not celebrate an already-issued course badge");
 const appPage=read("src/App.tsx");
 assert.doesNotMatch(appPage,/<PushNotificationPrompt\s*\/>/, "No unsolicited permission popup for currently unavailable scheduled alerts");
 
