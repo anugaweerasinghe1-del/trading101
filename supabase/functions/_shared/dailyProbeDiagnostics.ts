@@ -1,3 +1,5 @@
+import { assembleDailyExercises } from "./dailyPractice.ts";
+
 /** Fixed classifications and numeric measurements only; never retain model prose. */
 export const PROBE_FINISH_REASONS = ['STOP', 'MAX_TOKENS', 'SAFETY', 'RECITATION', 'OTHER', 'NOT_REPORTED', 'UNRECOGNIZED'] as const;
 export const PROBE_STAGES = ['RESPONSE_ENVELOPE', 'MODEL_JSON', 'EXERCISE_STRUCTURE', 'SOURCE_ALLOWLIST', 'CATEGORY_COVERAGE', 'REPETITION'] as const;
@@ -23,7 +25,7 @@ export function providerDiagnostics(raw: string): ProbeDiagnostics {
     totalTokens: count(usage?.totalTokenCount), textChars: text === null ? null : text.length,
   } };
   try {
-    const items: unknown = JSON.parse(text ?? '').exercises;
+    const items = assembleDailyExercises(JSON.parse(text ?? '').exercises);
     if (Array.isArray(items)) {
       const first = items.slice(0, 10);
       const length = (value: unknown) => typeof value === 'string' ? value.trim().length : 0;

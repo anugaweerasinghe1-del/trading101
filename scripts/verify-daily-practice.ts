@@ -1,3 +1,4 @@
+import { dailyProviderExercises } from "./daily-provider-fixture";
 import assert from 'node:assert/strict';
 import './verify-daily-correlation-visual.ts';
 import './verify-daily-chart-units.ts';
@@ -158,11 +159,12 @@ const fetcher = (async (url: string | URL | Request, init?: RequestInit) => {
   const b = JSON.parse(String(init?.body)); assert.ok(b.generationConfig.responseJsonSchema); assert.equal(b.contents.length, 1);
   // Google's direct REST ThinkingLevel enum uses uppercase names.
   assert.equal(b.generationConfig.thinkingConfig.thinkingLevel, 'LOW');
-  return new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: JSON.stringify({ exercises: chunk(0) }) }] } }],
+  return new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: JSON.stringify({ exercises: dailyProviderExercises(chunk(0)) }) }] } }],
     usageMetadata: { promptTokenCount: 512, candidatesTokenCount: 2048, totalTokenCount: 2560 } })); }
  return new Response('<main>' + 'Trusted test reference. '.repeat(120) + '</main>', { headers: { 'Content-Type': 'text/html' } });
 }) as typeof fetch;
 const observedPart = await generatePractice(claim, fetcher);
+assert.deepEqual(observedPart.exercises, chunk(0), 'Provider sentence pairs round-trip into the unchanged stored shape');
 assert.equal(observedPart.exercises.length, 10); assert.equal(calls, 1);
 assert.deepEqual(observedPart.research.usage, { scope: 'this_generated_part_only', part: 1,
   inputTokens: 512, outputTokens: 2048, totalTokens: 2560 });
@@ -175,7 +177,7 @@ for (const reworded of [false, true]) {
  await assert.rejects(generatePractice(claim, (async (url, init) => {
   if (!String(url).includes('generativelanguage')) return fetcher(url, init);
   attempts++;
-  return new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: JSON.stringify({ exercises: repeated }) }] } }] }));
+  return new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: JSON.stringify({ exercises: dailyProviderExercises(repeated) }) }] } }] }));
  }) as typeof fetch), /repeats an exercise in this part/);
  assert.equal(attempts, 1, 'Rejected quality must not trigger another model request');
 }
