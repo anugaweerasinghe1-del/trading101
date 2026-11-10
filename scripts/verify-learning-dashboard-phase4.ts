@@ -34,7 +34,7 @@ journey.lessonCompleted=true;
 journey.tradeId="sample";
 journey.portfolioExplained=true;
 journey.reflection="I checked the quote and simulated cost.";
-assert.equal(buildLearningOverview(tracks,course,journey).journeyDone,4);
+assert.equal(buildLearningOverview(tracks,course,journey).journeyDone,3,"A saved reflection draft is not a completed step");
 journey.completedAt="2026-10-31T08:00:00Z";
 assert.equal(buildLearningOverview(tracks,course,journey).journeyDone,5);
 assert.equal(course.tracks["trading-psychology-mastery"].lessons.two.status,"completed","overview is read only");

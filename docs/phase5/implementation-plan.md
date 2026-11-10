@@ -796,3 +796,14 @@ accepted. Partial live and fixture outcomes are credited as evidence below.
 - Native release evidence in the read-only release/recovery job for that SHA confirms **Cloudflare Pages active production** deployment `b18e3a44-c789-41cb-be1f-2e853240356e` on branch `main`, status `success`, and **Vercel active production** deployment `dpl_8HWLLNViEg9QeNztzbEXB71Bz4oV` at alias `thetradehq.com`, state `READY`. These resolve the pending exact-SHA deployment check for #393; neither constitutes all Phase 5 owner acceptance.
 - A separate read-only production policy inspection confirms the `public.profiles` SELECT RLS still permits `is_public=true` or own `auth.uid()`, and the `tradehq_private.public_members`/ `previous_results` functions filter `is_public` without an account-confirmation or post-default-change consent attestation. Issue #335 documents the historical default-public cohort including 13 unconfirmed profiles. The evidence is a **release privacy acceptance blocker**, not authorization to rewrite users' visibility or to close #335.
 - Remaining non-code gates include genuine authenticated editorial/moderation/delivery/provider acceptance (#321/#332/#335), permitted traditional quote coverage, proof of any leaderboard/signup impact, and six additional distinct qualifying Sri Lanka dates for the seven-day award. Never substitute fixture results, fake activity, unapproved provider credentials or bulk privacy toggles for these requirements. **Phase 5 not fully accepted** at this checkpoint; no production mutation was performed by this evidence recovery.
+
+### What’s New release announcements
+
+For a major learner-facing change, include one reviewed JSON entry in
+`src/content/releases/approved.json` with a stable release ID, release date,
+category, title, short summary, internal link and action. Set `announce` to `true`
+for a popup. Keep the ID and date stable across edits. The
+active production build picks up the entry automatically. Approved course
+publications come from the public catalog. Routine changes and Daily Practice
+rotation need no entry. Popups are recent-only, and the timeline retains the
+release history.

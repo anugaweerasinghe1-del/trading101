@@ -59,11 +59,30 @@ export default function TrophyCabinet() {
             </div>
             <h1 className="mt-4 text-3xl sm:text-5xl font-bold tracking-tight">My Trophy Cabinet</h1>
             <p className="mt-3 max-w-2xl text-muted-foreground leading-relaxed">
-              Celebrate understanding, not simulated profits. These milestones are a personal reflection of your saved
-              course lessons. Keep learning at your own pace.
+              Earn trophies through scored challenges and practice milestones. Course certificates have their own
+              completion requirements, and your personal lesson progress is shown separately.
             </p>
           </header>
 
+          <nav aria-label="Trophy Cabinet sections" className="mb-8 flex flex-wrap gap-2">
+            {[
+              ["trophy-challenges", "Trophies and earning rules"],
+              ["course-certificates", "Course certificates"],
+              ["personal-progress", "Personal learning progress"],
+            ].map(([id, label]) => (
+              <a key={id} href={`#${id}`} className="inline-flex min-h-11 items-center rounded-xl border border-border px-4 text-sm font-medium hover:border-primary/40 focus-visible:ring-2 focus-visible:ring-ring">
+                {label}
+              </a>
+            ))}
+          </nav>
+
+          <VerifiedTrophyChallenges key={user?.id ?? "guest"} />
+
+          <div id="course-certificates" className="scroll-mt-28">
+            <FoundationsProgrammePanel />
+          </div>
+
+          <h2 id="personal-progress" className="mb-4 scroll-mt-28 text-2xl font-bold tracking-tight">Personal learning progress</h2>
           <div className="mb-8 flex gap-3 rounded-2xl border border-border bg-card/70 p-4 sm:p-5" role="note">
             <LockKeyhole className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
             <div>
@@ -90,11 +109,7 @@ export default function TrophyCabinet() {
             ))}
           </div>
 
-          <FoundationsProgrammePanel />
-
           <FirstRecordedTradeMilestone />
-
-          <VerifiedTrophyChallenges key={user?.id ?? "guest"} />
 
           <section aria-labelledby="milestone-heading" className="mb-12">
             <div className="flex items-start justify-between gap-3 flex-wrap mb-5">

@@ -12,7 +12,7 @@ import { AuthProvider } from "@/hooks/useAuth";
 import { recordVisit } from "@/lib/lastVisit";
 import { snapshotWatchlist } from "@/lib/watchlistDiff";
 import { ConsentBanner } from "@/components/ConsentBanner";
-import { CoursePublicationNotices } from "@/components/courses/CoursePublicationNotices";
+import { ReleaseNotices } from "@/components/ReleaseNotices";
 import { CloudLearningProgressSync } from "@/components/courses/CloudLearningProgressSync";
 import { PortfolioLiveUpdates } from "@/components/PortfolioLiveUpdates";
 
@@ -271,7 +271,8 @@ function WatchlistSnapshot() {
 
 function AppRuntime() {
   const { pathname } = useLocation();
-  if (pathname.replace(/\/+$/, "") === "/certificate/verify") return <AnimatedRoutes />;
+  const route = pathname.replace(/\/+$/, "").toLowerCase();
+  if (route === "/certificate/verify") return <AnimatedRoutes />;
   return <AuthProvider>
     <RouteScrollManager />
     <CrossTabPortfolioSync />
@@ -281,7 +282,7 @@ function AppRuntime() {
     <BackgroundMusic />
     <WatchlistSnapshot />
     <ConsentBanner />
-    <CoursePublicationNotices />
+    {!/^\/(?:admin|auth|reset-password|newsletter\/(?:confirm|unsubscribe)|whats-new)(?:\/|$)/.test(route) && <ReleaseNotices />}
     <CloudLearningProgressSync />
     <PortfolioLiveUpdates />
   </AuthProvider>;

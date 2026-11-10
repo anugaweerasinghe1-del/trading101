@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import { BACKUP_FORMAT, exportPracticeBackup, parsePracticeBackup, parsePracticePortfolio, readRecoveryPortfolio, writeRecoveryPortfolio } from "../src/lib/portfolioRecovery.ts";
 import { JOURNEY_KEY, journeyStage, readJourney, saveJourney, markJourneyTrade } from "../src/lib/beginnerJourney.ts";
 import { chooseMasteryNextAction } from "../src/lib/masteryNextAction.ts";
+import { STATIC_COPY } from "./staticCopy";
 
 const memory = new Map<string,string>();
 Object.defineProperty(globalThis, "localStorage", { configurable:true, value:{
@@ -41,11 +42,13 @@ assert.equal(journeyStage(readJourney()),2);
 saveJourney({ portfolioExplained:true });
 assert.equal(journeyStage(readJourney()),3);
 saveJourney({ reflection:"I learned that virtual order fees affect my cash and that price isn't guaranteed." });
-assert.equal(journeyStage(readJourney()),4);
+assert.equal(journeyStage(readJourney()),3,"A saved reflection draft stays editable until explicit completion");
 assert.ok(localStorage.getItem(JOURNEY_KEY));
 const before = readJourney();
 saveJourney({ completedAt:new Date().toISOString() });
+assert.equal(journeyStage(readJourney()),4);
 assert.equal(readJourney().tradeId,before.tradeId);
+assert.equal(readJourney().reflection,before.reflection);
 
 const read=(path:string)=>readFileSync(path,"utf8");
 const app=read("src/App.tsx"), trade=read("src/pages/Trade.tsx");
@@ -103,4 +106,8 @@ assert.match(migration,/t\.cycle_id = pp\.cycle_id/);
 assert.match(migration,/LIMIT GREATEST\(1, LEAST\(COALESCE\(p_limit, 20\), 20\)\)/);
 assert.doesNotMatch(migration,/t\\.journal|t\\.notes/i,"Private notes must not be projected into public trade RPC");
 assert.match(privacy,/off by default/i);
+const startNotes = STATIC_COPY["/start"].sections.flatMap(section => section.p ?? []).join(" ");
+assert.match(startNotes, /optional Daily Practice scenario comes first/);
+assert.match(startNotes, /New reflection text stays in the browser even when signed in/);
+assert.doesNotMatch(startNotes, /signed-in journey reflections may sync/);
 console.log("PASS portable guest recovery, resilient journey progress, voluntary orders, daily habit and private-by-default public history");

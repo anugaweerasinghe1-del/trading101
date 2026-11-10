@@ -97,7 +97,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
       {
         h: "Step 1 — Understand an order before placing one",
         p: [
-          "TradeHQ's starter exercise begins with the difference between a displayed quote and an actual execution price. Consider two fictional shares showing $50 each. Their quoted purchase value is $100, and a 0.1% simulated fee adds $0.10. The estimated debit is therefore $100.10, assuming a $50 fill. The U.S. Securities and Exchange Commission's Investor.gov guidance explains that a real market order's execution price is not guaranteed by the last quote. The simulator is simpler, and must not be mistaken for a live brokerage.",
+          "The optional Daily Practice scenario comes first. In the guided lesson that follows, compare a displayed quote with the execution price. Consider two fictional shares showing $50 each. Their quoted purchase value is $100, and a 0.1% simulated fee adds $0.10. The estimated debit is therefore $100.10, assuming a $50 fill. The U.S. Securities and Exchange Commission's Investor.gov guidance explains that a real market order's execution price is not guaranteed by the last quote. The simulator is simpler, and must not be mistaken for a live brokerage.",
           "The learner answers a short understanding check before entering the trading desk. The exercise presents an invented scenario for reading costs and uncertainty, not a stock recommendation or a return promise.",
         ],
       },
@@ -112,7 +112,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
       {
         h: "Steps 4 and 5 — Reflect and return for daily practice",
         p: [
-          "Learners write a private reflection explaining what surprised them about the price or fee and what they will check before another exercise. Guest reflections remain in the browser; signed-in journey reflections may sync privately to the user's account, but are never posted to a public leaderboard. TradeHQ then recommends a risk-management lesson and the existing Daily Practice exercises; completion does not certify readiness to risk real money.",
+          "Learners write a private reflection explaining what surprised them about the price or fee and what they will check before another exercise. New reflection text stays in the browser even when signed in. Only the completed step can sync with the account. Older reflections that already synced remain private. TradeHQ then recommends a risk-management lesson and the existing Daily Practice exercises; completion does not certify readiness to risk real money.",
           "The journey records completed steps in browser storage so guest visitors can return later on the same browser. Signed-in members can also privately sync supported lessons, quiz drafts, reading position and journey progress between devices when online. A course's most-recent-lesson record helps resume the right lesson. Clearing guest browser data can remove that guest's progress; portfolio backups do not include learning records.",
         ],
       },
