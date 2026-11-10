@@ -250,7 +250,9 @@ export default function BeginnerJourney() {
           </>}
         </Card>
 
-        <section className="mt-6 rounded-2xl border border-border bg-card/80 p-5 sm:p-6" aria-label="Approved course releases in your journey">
+        <details className="mt-6 rounded-2xl border border-border bg-card/80 p-4 sm:p-5">
+          <summary className="min-h-11 cursor-pointer py-3 text-sm font-semibold text-foreground">Courses added to your journey (optional)</summary>
+        <section className="mt-3 p-2 sm:p-3" aria-label="Approved course releases in your journey">
           <div className="flex items-start justify-between gap-3 flex-wrap">
             <div>
               <h2 className="font-semibold text-lg flex items-center gap-2"><BookOpen className="w-5 h-5 text-primary" /> Courses added to your journey</h2>
@@ -275,6 +277,7 @@ export default function BeginnerJourney() {
             </div>
           ) : !courseCatalogError ? <p className="mt-4 text-sm text-muted-foreground">No newly published catalog additions loaded yet. Your existing courses and progress remain available.</p> : null}
         </section>
+        </details>
         <p className="mt-6 text-xs text-muted-foreground flex gap-2 items-center"><ShieldCheck className="h-4 w-4" /> TradeHQ is educational simulation software. No investment returns or market execution are promised.</p>
       </main>
       <MegaFooter />
