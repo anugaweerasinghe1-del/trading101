@@ -644,7 +644,7 @@ async function main(){
     // a visible, accessible loading screen and then resolve to actual Learn.
     await devtools.send("Page.navigate",{url:origin+"/learn"});
     await wait(()=>releaseLearnModules.length===1,"held lazy Learn module");
-    await wait(()=>devtools.evaluate("document.querySelector('[role=status]')?.textContent.includes('Loading your page')"),"visible route loading status",3000);
+    await wait(()=>devtools.evaluate("document.querySelector('[data-route-loading] [role=status]')?.textContent.includes('Loading your page')"),"visible route loading status",3000);
     assert.ok(await devtools.evaluate("document.querySelector('#root')?.innerText.length>60"),"Pending route must not leave a blank root");
     holdLearnModule=false;releaseLearnModules.splice(0).forEach(release=>release());
     await wait(()=>devtools.evaluate("[...document.querySelectorAll('h1')].some(e=>e.textContent.includes('Learn Trading')) && !document.querySelector('[data-route-loading]')"),"Learn after delayed module release");
@@ -1178,7 +1178,7 @@ async function main(){
     const {identifier:noticeClock}=await devtools.send('Page.addScriptToEvaluateOnNewDocument',{source:`Date.now=()=>${releaseTime}`});
     const noticeKey='tradehq-seen-course-publications-v1';
     const notice='document.querySelector("[data-release-notice]")';
-    const noticeTitle=()=>devtools.evaluate(`${notice}?.querySelector('[role=status]')?.textContent`);
+    const noticeTitle=()=>devtools.evaluate(`${notice}?.querySelector('p')?.textContent`);
     const dismiss=`document.querySelector('button[aria-label="Dismiss release announcement"]')`;
     await devtools.evaluate(`localStorage.setItem(${JSON.stringify(noticeKey)}, 'null')`);
     await devtools.send('Emulation.setDeviceMetricsOverride',{width:320,height:740,deviceScaleFactor:1,mobile:true});
@@ -1186,6 +1186,7 @@ async function main(){
     await wait(async()=>await noticeTitle()===release.title,'major release announcement with an empty publication feed');
     await wait(()=>devtools.evaluate(`(()=>{const r=${notice}.getBoundingClientRect();return r.left>=0 && r.right<=innerWidth+1;})()`),'announcement fits narrow screen');
     assert.equal(await devtools.evaluate(`${notice}.querySelector('a').getAttribute('href')`),'/whats-new');
+    assert.equal(await devtools.evaluate(`${notice}.closest('[aria-live]')?.getAttribute('aria-live')`),'polite');
     await devtools.evaluate(`${dismiss}.focus()`);
     await devtools.send('Input.dispatchKeyEvent',{type:'keyDown',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});
     await devtools.send('Input.dispatchKeyEvent',{type:'keyUp',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});

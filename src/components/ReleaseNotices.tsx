@@ -71,7 +71,7 @@ export function ReleaseNotices() {
           <div data-release-notice className="flex w-[min(340px,calc(100vw-32px))] items-start gap-3 rounded-2xl border border-border bg-card p-4 text-foreground shadow-xl">
             <Sparkles aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
             <div className="min-w-0 flex-1">
-              <p role="status" className="break-words text-sm font-semibold">{title}</p>
+              <p className="break-words text-sm font-semibold">{title}</p>
               <a href="/whats-new" onClick={clearToast} className="inline-flex min-h-11 items-center text-sm text-primary underline underline-offset-4">See What’s New</a>
             </div>
             <button type="button" className="grid h-11 w-11 shrink-0 place-items-center rounded hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring" aria-label="Dismiss release announcement" onClick={clearToast}>
