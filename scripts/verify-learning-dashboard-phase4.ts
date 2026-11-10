@@ -40,6 +40,7 @@ assert.match(page,/<LearningJourneyDashboard tracks=\{tracks\} \/>/);
 assert.doesNotMatch(page,/<GuidedNextLesson\s*\/>/, "Learning hub should not render a second competing recommendation");
 assert.match(component,/data-testid="learning-primary-next-step"/, "One prominent recommendation exists");
 assert.match(component,/Other learning activities \(optional\)/, "Other actions remain available but optional");
+assert.match(readFileSync("src/pages/BeginnerJourney.tsx","utf8"),/Courses added to your journey \(optional\)/, "Course release catalog stays discoverable but collapsed below primary next action");
 assert.match(component,/hasCourseHistory && !overview\.next/, "All-courses-complete learner proceeds to mastery rather than being forced into beginner journey");
 
 assert.match(component,/COURSE_PROGRESS_EVENT/);
