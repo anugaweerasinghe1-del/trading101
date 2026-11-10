@@ -37,6 +37,11 @@ assert.equal(course.tracks["trading-psychology-mastery"].lessons.two.status,"com
 const page=readFileSync("src/pages/Learn.tsx","utf8");
 const component=readFileSync("src/components/LearningJourneyDashboard.tsx","utf8");
 assert.match(page,/<LearningJourneyDashboard tracks=\{tracks\} \/>/);
+assert.doesNotMatch(page,/<GuidedNextLesson\s*\/>/, "Learning hub should not render a second competing recommendation");
+assert.match(component,/data-testid="learning-primary-next-step"/, "One prominent recommendation exists");
+assert.match(component,/Other learning activities \(optional\)/, "Other actions remain available but optional");
+assert.match(component,/hasCourseHistory && !overview\.next/, "All-courses-complete learner proceeds to mastery rather than being forced into beginner journey");
+
 assert.match(component,/COURSE_PROGRESS_EVENT/);
 assert.match(component,/JOURNEY_EVENT/);
 assert.match(component,/role="progressbar"/);
