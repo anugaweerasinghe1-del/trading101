@@ -56,7 +56,7 @@ export function buildLearningOverview(
     const lesson = track?.lessons.find(l => l.slug === course.lastLesson?.lesson);
     if (track && lesson) {
       if (course.tracks[track.slug]?.lessons[lesson.slug]?.status !== "completed") {
-        next = pick(track, lesson, "Resume your unfinished lesson");
+        next = { ...pick(track, lesson, "Resume your unfinished lesson"), inProgress: true };
       } else {
         const following = track.lessons.find(l => course.tracks[track.slug]?.lessons[l.slug]?.status !== "completed");
         if (following) next = pick(track, following, "Next lesson in your current course");

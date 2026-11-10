@@ -33,14 +33,14 @@ export function LearningJourneyDashboard({ tracks }: { tracks: LearningTrack[] }
   const overview = buildLearningOverview(tracks, snapshot.course, snapshot.journey);
   const journeyPercent = overview.journeyDone * 20;
   const coursePercent = overview.lessonsTotal ? Math.round(overview.lessonsDone * 100 / overview.lessonsTotal) : 0;
-  const hasCourseHistory = overview.lessonsDone > 0 || overview.lessonsInProgress > 0;
+  const hasCourseHistory = overview.lessonsDone > 0 || overview.lessonsInProgress > 0 || overview.next?.inProgress === true;
   const mastery = typeof window !== "undefined"
     ? chooseMasteryNextAction(hasPlayedQuickToday(), getPortfolio().trades.length > 0)
     : chooseMasteryNextAction(false, false);
   // A single primary action. The learner's other progress remains visible
   // without requiring a choice between competing equally prominent CTAs.
   const action = overview.next && (hasCourseHistory || overview.journeyFinished)
-    ? { href: overview.next.href, label: overview.next.inProgress ? "Resume your saved lesson" : "Continue to your next lesson", reason: overview.next.reason }
+    ? { href: overview.next.href, title: overview.next.title, label: overview.next.inProgress ? "Resume your saved lesson" : "Continue to your next lesson", reason: overview.next.reason }
     : hasCourseHistory && !overview.next
     ? { href: mastery.href, label: mastery.label, reason: mastery.reason }
     : !overview.journeyFinished
@@ -65,7 +65,7 @@ export function LearningJourneyDashboard({ tracks }: { tracks: LearningTrack[] }
 
       <div data-testid="learning-primary-next-step" className="mb-6 rounded-2xl border border-primary/40 bg-primary/5 p-5 sm:p-6">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">Your recommended next step</p>
-        <h3 className="mt-2 text-lg sm:text-xl font-semibold text-foreground">{action.label}</h3>
+        <h3 className="mt-2 text-lg sm:text-xl font-semibold text-foreground">{("title" in action && action.title) || action.label}</h3>
         <p className="mt-2 mb-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">{action.reason}</p>
         <Link to={action.href} className="inline-flex min-h-11 w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
           {action.label} <ArrowRight className="w-4 h-4" />
