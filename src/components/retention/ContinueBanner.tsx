@@ -28,15 +28,20 @@ export function ContinueBanner() {
     const prog = loadProgress();
     if (prog.lastLesson) {
       const t = getTrack(prog.lastLesson.track);
-      const l = t?.lessons.find((x) => x.slug === prog.lastLesson!.lesson);
-      if (t && l) {
+      const last = t?.lessons.find((x) => x.slug === prog.lastLesson!.lesson);
+      // A completed lesson is not an unfinished task. Never keep returning
+      // learners stuck on the same MCQ after they already passed it.
+      const lesson = t && last && prog.tracks[t.slug]?.lessons[last.slug]?.status !== "completed"
+        ? last
+        : t ? t.lessons.find(x => prog.tracks[t.slug]?.lessons[x.slug]?.status !== "completed") : undefined;
+      if (t && lesson) {
         const dismissedAt = localStorage.getItem(DISMISS_KEY);
         if (dismissedAt) {
           const hrs = (Date.now() - new Date(dismissedAt).getTime()) / 36e5;
           if (hrs < 24) return;
         }
-        setRoute(`/courses/${t.slug}/${l.slug}`);
-        setLabel(`your lesson — ${l.title}`);
+        setRoute(`/courses/${t.slug}/${lesson.slug}`);
+        setLabel(`your next lesson — ${lesson.title}`);
         setShow(true);
         return;
       }

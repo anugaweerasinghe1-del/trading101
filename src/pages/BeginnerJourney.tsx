@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { ArrowRight, BookOpen, CheckCircle2, ClipboardList, Compass, RotateCcw, ShieldCheck, Wallet } from "lucide-react";
+import { ArrowRight, BookOpen, CheckCircle2, Compass, RotateCcw, ShieldCheck } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { MegaFooter } from "@/components/MegaFooter";
 import { Button } from "@/components/ui/button";
@@ -12,6 +12,7 @@ import { JOURNEY_EVENT, journeyStage, readJourney, saveJourney } from "@/lib/beg
 import { COURSE_PROGRESS_EVENT, COURSE_PROGRESS_KEY, loadProgress } from "@/lib/courseProgress";
 import { buildLearningOverview } from "@/lib/learningOverview";
 import { useCourseCatalog } from "@/hooks/useCourseCatalog";
+import { hasPlayedQuickToday } from "@/lib/dailyChallenge";
 import type { Portfolio } from "@/lib/types";
 
 const steps = [
@@ -89,6 +90,23 @@ export default function BeginnerJourney() {
             Every example is educational. No brokerage account or real money is involved.
           </p>
         </header>
+        {stage === 0 && (
+          <section aria-label="Begin with Daily Practice" className="mb-6 rounded-2xl border border-primary/40 bg-primary/5 p-5 sm:p-6 space-y-3">
+            <p className="text-xs font-semibold uppercase tracking-widest text-primary">First: Daily Practice</p>
+            <h2 className="text-xl font-semibold">Start with a short trading scenario</h2>
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              The daily exercise is a general scenario for everyone, not a personalized test of courses you've completed.
+              Afterwards, come back here to learn how your first virtual order works.
+              You can continue learning as much as you like today.
+            </p>
+            {hasPlayedQuickToday() ? (
+              <p role="status" className="text-sm text-primary font-medium">You've already completed today's quick scenario. Your next step is the first-trade explanation below.</p>
+            ) : (
+              <Button asChild size="lg"><Link to="/daily">Try today's Daily Practice <ArrowRight className="ml-2 h-4 w-4" /></Link></Button>
+            )}
+            <p className="text-xs text-muted-foreground">Daily Practice is optional. You can continue directly to the lesson below.</p>
+          </section>
+        )}
         <Card className="p-4 sm:p-6 mb-6">
           <div className="flex items-center justify-between gap-3 mb-3">
             <h2 className="font-semibold">Your progress</h2>
@@ -209,29 +227,29 @@ export default function BeginnerJourney() {
             <h2 className="text-2xl font-bold">You've completed your first learning journey.</h2>
             <p className="text-muted-foreground">Finishing one practice trade doesn't establish real-world readiness. Keep improving the process: revisit costs, risk, diversification and your own assumptions.</p>
             {!progress.completedAt && <Button onClick={() => update({ completedAt: new Date().toISOString() })}>Mark learning journey complete</Button>}
-            <div className="grid sm:grid-cols-2 gap-3">
-              <Link to="/learn/article/risk-management-in-trading" className="rounded-xl border border-border p-4 hover:border-primary/60"><BookOpen className="w-5 h-5 text-primary mb-2" /><strong>Next lesson: risk</strong><p className="text-sm text-muted-foreground mt-1">Learn why an exit price is not always guaranteed.</p></Link>
-              <Link to="/daily" className="rounded-xl border border-primary/50 p-4 bg-primary/5 hover:bg-primary/10"><ClipboardList className="w-5 h-5 text-primary mb-2" /><strong>Try today's Daily Practice</strong><p className="text-sm text-muted-foreground mt-1">Build a habit using short educational challenges.</p></Link>
-              <Link to="/practice" className="rounded-xl border border-border p-4 hover:border-primary/60 transition-colors"><RotateCcw className="w-5 h-5 text-primary mb-2" /><strong>Practice Arena: decide and reveal</strong><p className="text-sm text-muted-foreground mt-1">Try small fictional market decisions without changing your real practice portfolio.</p></Link>
-            </div>
-            <Button variant="outline" asChild><Link to="/portfolio"><Wallet className="w-4 h-4 mr-2" /> Review my portfolio again</Link></Button>
+            <section aria-label="Your recommended next step" className="rounded-2xl border border-primary/40 bg-primary/5 p-5 space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary">Your next step</p>
+              <h3 className="text-xl font-semibold">{recentCourse ? "Continue learning" : "Keep practising what you've learned"}</h3>
+              <p className="text-sm text-muted-foreground">
+                {recentCourse ? `Your next approved lesson is ${recentCourse.title}. Return here whenever you need a reminder of your first trade.` : "You've finished the currently available lessons. Keep improving through practice and review, without repeating completed courses."}
+              </p>
+              <Button asChild size="lg" className="w-full sm:w-auto">
+                <Link to={recentCourse?.href ?? "/daily"}>
+                  {recentCourse ? "Continue to my next lesson" : "Open Daily Practice"} <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <details className="pt-2 text-sm text-muted-foreground">
+                <summary className="cursor-pointer min-h-10 py-2 font-medium text-foreground">Other activities (optional)</summary>
+                <nav aria-label="Other learning activities" className="mt-2 flex flex-wrap gap-4">
+                  <Link className="underline underline-offset-4" to="/daily">Daily Practice</Link>
+                  <Link className="underline underline-offset-4" to="/practice">Practice Arena</Link>
+                  <Link className="underline underline-offset-4" to="/portfolio">Review my portfolio</Link>
+                </nav>
+              </details>
+            </section>
           </>}
         </Card>
 
-        <section className="mt-6 grid md:grid-cols-2 gap-4">
-          <Card className="p-5">
-            <h2 className="font-semibold flex gap-2 items-center"><RotateCcw className="w-4 h-4 text-primary" /> Resume a course</h2>
-            <p className="mt-2 text-sm text-muted-foreground">Resume your unfinished lesson, or follow the next approved course in your learning path. When a new course is published, this recommendation refreshes automatically without erasing your saved progress.</p>
-            <Link className="mt-3 inline-flex gap-1 text-sm font-semibold text-primary" to={recentCourse?.href ?? "/courses"}>
-              {recentCourse ? `${recentCourse.inProgress ? "Resume" : "Next lesson"}: ${recentCourse.title}` : "Browse structured courses"} <ArrowRight className="w-4 h-4" />
-            </Link>
-          </Card>
-          <Card className="p-5">
-            <h2 className="font-semibold flex gap-2 items-center"><ClipboardList className="w-4 h-4 text-primary" /> Come back every day</h2>
-            <p className="mt-2 text-sm text-muted-foreground">Daily Practice is available throughout the journey, not only after completion. Use its short exercises to reinforce lessons.</p>
-            <Link className="mt-3 inline-flex gap-1 text-sm font-semibold text-primary" to="/daily">Open Daily Practice <ArrowRight className="w-4 h-4" /></Link>
-          </Card>
-        </section>
         <section className="mt-6 rounded-2xl border border-border bg-card/80 p-5 sm:p-6" aria-label="Approved course releases in your journey">
           <div className="flex items-start justify-between gap-3 flex-wrap">
             <div>

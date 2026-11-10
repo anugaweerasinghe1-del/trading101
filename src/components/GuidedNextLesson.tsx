@@ -6,6 +6,9 @@ import { useCourseCatalog } from "@/hooks/useCourseCatalog";
 import { COURSE_PROGRESS_EVENT, COURSE_PROGRESS_KEY, loadProgress } from "@/lib/courseProgress";
 import { buildLearningOverview } from "@/lib/learningOverview";
 import { readJourney } from "@/lib/beginnerJourney";
+import { chooseMasteryNextAction } from "@/lib/masteryNextAction";
+import { hasPlayedQuickToday } from "@/lib/dailyChallenge";
+import { getPortfolio } from "@/lib/portfolio";
 
 /** Always choose from the *published* catalog, never the generated-draft queue.
  * Recompute on new lessons and preserved progress, including partial quizzes.
@@ -31,13 +34,24 @@ export function GuidedNextLesson() {
   const next = buildLearningOverview(tracks, progress, readJourney()).next;
   const hasCourseActivity = Object.values(progress.tracks).some(track =>
     Object.values(track.lessons).some(lesson => lesson.status === "completed" || lesson.status === "in-progress"));
+  const mastery = typeof window !== "undefined"
+    ? chooseMasteryNextAction(hasPlayedQuickToday(), getPortfolio().trades.length > 0)
+    : chooseMasteryNextAction(false, false);
   const action = next?.reason === "Resume your unfinished lesson" ? "Continue lesson"
     : hasCourseActivity ? "Take next lesson" : "Start your first lesson";
   if (!next) {
     return isPending ? null : (
       <Card className="p-5 border border-border">
-        <p className="text-sm text-muted-foreground">You've completed all currently published lessons. New approved courses will appear automatically.</p>
-        <Link to="/courses" className="mt-2 inline-flex items-center gap-2 text-sm text-primary font-semibold">Browse courses <ArrowRight className="w-4 h-4" /></Link>
+        <p className="text-sm text-muted-foreground">You've finished the currently available lessons. New approved courses will appear automatically. Until then, learning continues through practice, virtual trading and reflection.</p>
+        <p className="mt-2 text-sm text-muted-foreground">{mastery.reason}</p>
+        <Link to={mastery.href} className="mt-3 inline-flex min-h-11 items-center gap-2 rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground">{mastery.label} <ArrowRight className="w-4 h-4" /></Link>
+        <details className="mt-3 text-sm text-muted-foreground">
+          <summary className="cursor-pointer py-2">Other ways to practise</summary>
+          <nav aria-label="Other mastery activities" className="mt-2 flex flex-wrap gap-4">
+            <Link to="/portfolio" className="underline">Review portfolio</Link>
+            <Link to="/practice" className="underline">Practice Arena</Link>
+          </nav>
+        </details>
       </Card>
     );
   }

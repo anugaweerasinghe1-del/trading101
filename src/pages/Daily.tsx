@@ -19,6 +19,7 @@ import {
 } from "@/lib/dailyChallenge";
 import { DailyPractice } from "@/components/DailyPractice";
 import { GuidedNextLesson } from "@/components/GuidedNextLesson";
+import { journeyStage, readJourney } from "@/lib/beginnerJourney";
 import { practiceDate } from "../../supabase/functions/_shared/dailyPractice";
 import { cn } from "@/lib/utils";
 
@@ -37,6 +38,7 @@ export default function Daily() {
   const [selected, setSelected] = useState<ChallengeDecision | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [bonusPick, setBonusPick] = useState<number | null>(null);
+  const guidedStage = journeyStage(readJourney());
 
   useEffect(() => {
     setDeeperOpen(false);
@@ -125,14 +127,9 @@ export default function Daily() {
               </p>
             </header>
 
-            <Link to="/practice" className="group mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 rounded-[24px] border border-primary/30 bg-primary/[0.045] p-5 sm:p-6 hover:border-primary/60 hover:bg-primary/[0.07] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary" aria-label="Open the free TradeHQ Practice Arena">
-              <div>
-                <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[.15em] font-semibold text-primary"><Sparkles className="h-4 w-4" /> New · Interactive Practice Arena</span>
-                <h2 className="text-lg sm:text-xl font-semibold mt-2 tracking-tight">Don't just answer a scenario. Make the decisions.</h2>
-                <p className="mt-1 text-sm text-muted-foreground leading-relaxed max-w-lg">Reveal one fictional price at a time, practise a virtual choice and understand what changed. Free, private, no signup.</p>
-              </div>
-              <span className="shrink-0 inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground group-hover:brightness-105 transition-all">Open Arena <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" /></span>
-            </Link>
+            <p className="mb-7 text-sm text-muted-foreground">
+              Start with the scenario below. <Link to="/practice" className="underline underline-offset-4 hover:text-foreground">Practice Arena</Link> is always available as an optional activity.
+            </p>
 
             {/* Streak stats — premium */}
             {streak && (
@@ -320,22 +317,19 @@ export default function Daily() {
                 </div>
               )}
 
-              {submitted && (
-                <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                  <Link to="/trade" className="flex-1">
-                    <button className="w-full h-12 rounded-xl bg-primary font-bold text-sm flex items-center justify-center gap-2 active:scale-[0.97] transition-transform" style={{ color: "#000", boxShadow: "0 0 24px hsl(168 100% 50% / 0.3)" }}>
-                      Practice This Trade Now <ArrowRight className="w-4 h-4" />
-                    </button>
+              {submitted && guidedStage < 4 && (
+                <section aria-label="Your recommended next step" className="rounded-2xl border border-primary/40 bg-primary/5 p-5 space-y-3">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-primary">Your next step</p>
+                  <h3 className="text-lg font-semibold">
+                    {guidedStage === 0 ? "Understand your first virtual order" : guidedStage === 1 ? "Try your first virtual trade" : "Reflect on your first virtual trade"}
+                  </h3>
+                  <p className="text-sm text-foreground/70">
+                    {guidedStage === 0 ? "You've tried a daily scenario. Continue the guided explanation before placing a virtual trade." : guidedStage === 1 ? "Your first explanation is complete. You can now explore a voluntary virtual order, with no real money involved." : "Review the saved transaction and record what you learned before moving to another lesson."}
+                  </p>
+                  <Link to={guidedStage === 1 ? "/trade?journey=1" : "/start"} className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground">
+                    {guidedStage === 0 ? "Continue guided learning" : guidedStage === 1 ? "Open guided trading terminal" : "Continue guided reflection"} <ArrowRight className="w-4 h-4" />
                   </Link>
-                  <a href="#deeper-practice" onClick={() => setDeeperOpen(true)} aria-expanded={deeperOpen} aria-controls="deeper-practice" className="flex-1 h-12 rounded-xl bg-primary/10 border border-primary/40 font-semibold text-sm text-primary flex items-center justify-center gap-2">
-                    Go Deeper <Brain className="w-4 h-4" />
-                  </a>
-                  <Link to="/learn" className="flex-1">
-                    <button className="w-full h-12 rounded-xl bg-white/[0.05] border border-white/[0.1] font-semibold text-sm text-foreground active:scale-[0.97] transition-transform">
-                      Learn More Concepts
-                    </button>
-                  </Link>
-                </div>
+                </section>
               )}
 
               <p className="text-[10px] text-foreground/45 text-center mt-6">
@@ -348,8 +342,17 @@ export default function Daily() {
             {streak?.lastCompletedDate === date && (
               <section aria-labelledby="daily-next-lesson" className="mb-8 space-y-3">
                 <h2 id="daily-next-lesson" className="text-xl font-bold">Keep learning at your pace</h2>
-                <p className="text-sm text-muted-foreground">Continue your lesson now or pick up where you left off after tomorrow’s challenge.</p>
-                <GuidedNextLesson />
+                {guidedStage >= 4 ? (
+                  <>
+                    <p className="text-sm text-muted-foreground">Continue your lesson now or return after tomorrow's challenge.</p>
+                    <GuidedNextLesson />
+                  </>
+                ) : (
+                  <details className="rounded-xl border border-border p-4 text-sm text-muted-foreground">
+                    <summary className="cursor-pointer font-medium text-foreground">Explore approved course lessons (optional)</summary>
+                    <div className="mt-4"><GuidedNextLesson /></div>
+                  </details>
+                )}
               </section>
             )}
 

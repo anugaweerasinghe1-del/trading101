@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { BACKUP_FORMAT, exportPracticeBackup, parsePracticeBackup, parsePracticePortfolio, readRecoveryPortfolio, writeRecoveryPortfolio } from "../src/lib/portfolioRecovery.ts";
 import { JOURNEY_KEY, journeyStage, readJourney, saveJourney, markJourneyTrade } from "../src/lib/beginnerJourney.ts";
+import { chooseMasteryNextAction } from "../src/lib/masteryNextAction.ts";
 
 const memory = new Map<string,string>();
 Object.defineProperty(globalThis, "localStorage", { configurable:true, value:{
@@ -26,6 +27,9 @@ assert.equal(parsePracticePortfolio({cash:"invalid",totalValue:1,positions:[],tr
 assert.throws(()=>parsePracticeBackup('{"format":"foreign","version":1}'),/not a TradeHQ/);
 assert.throws(()=>parsePracticeBackup('{"format":'),/valid JSON/);
 
+assert.equal(chooseMasteryNextAction(false,true).href,"/daily","New daily scenario comes first after course completion");
+assert.equal(chooseMasteryNextAction(true,false).href,"/trade","Scenario completed but no simulated trade suggests safe virtual practice");
+assert.equal(chooseMasteryNextAction(true,true).href,"/portfolio","After practice and a trade, reflect instead of repeating lessons");
 const empty = readJourney();
 assert.equal(journeyStage(empty),0);
 markJourneyTrade(restored.trades[0]);
@@ -60,6 +64,20 @@ assert.match(start,/useCourseCatalog\(\)/);
 assert.match(start,/buildLearningOverview\(tracks, courseProgress, progress\)/);
 assert.match(start,/COURSE_PROGRESS_EVENT/);
 assert.match(start,/to="\/daily"/);
+assert.match(start,/hasPlayedQuickToday\(\)/, "New learners start with general Daily Practice before the guided lesson");
+assert.match(start,/Your next step/, "Completed first-trade pathway has one primary action");
+assert.match(start,/Other activities \(optional\)/, "Secondary activities are progressively disclosed");
+assert.doesNotMatch(start,/Next lesson: risk/, "No competing hard-coded risk lesson after completing the guided trade");
+const dailyPage=read("src/pages/Daily.tsx");
+assert.match(dailyPage,/guidedStage < 4/, "Daily completion guides learners by their saved journey stage");
+assert.match(dailyPage,/guidedStage === 1 \? "\/trade\?journey=1" : "\/start"/, "Only first-order stage may target the guided virtual terminal");
+assert.match(dailyPage,/Continue guided learning/, "The Daily next-step CTA is obvious");
+assert.doesNotMatch(dailyPage,/Practice This Trade Now/, "Daily no longer offers conflicting trade-first CTA");
+const lessonPage=read("src/pages/CourseLesson.tsx");
+assert.match(lessonPage,/Continue to next lesson/, "Completed quizzes expose a prominent onward lesson action");
+const appPage=read("src/App.tsx");
+assert.doesNotMatch(appPage,/<PushNotificationPrompt\s*\/>/, "No unsolicited permission popup for currently unavailable scheduled alerts");
+
 assert.match(start,/to="\/trade\?journey=1"/);
 assert.match(start,/investor\.gov/);
 assert.doesNotMatch(start,/executeTrade\(/,"Journey must never execute an order directly");
