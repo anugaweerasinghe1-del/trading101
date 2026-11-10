@@ -49,8 +49,9 @@ export async function verifyGuidedLesson({send,evaluate,waitUntil,origin,delay,p
     await waitUntil(`!!document.querySelector('#journey-reflection')`,'Reflection field renders for an unfinished journey');
     await evaluate(`(()=>{const field=document.querySelector('#journey-reflection');Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype,'value').set.call(field,${JSON.stringify(draft)});field.dispatchEvent(new Event('input',{bubbles:true}));return true;})()`);
     await waitUntil(`document.querySelector('#journey-reflection')?.value===${JSON.stringify(draft)} && JSON.parse(localStorage.getItem(${JSON.stringify(journeyKey)})).reflection===${JSON.stringify(draft)}`,'A full reflection remains editable after autosave');
+    await evaluate(`window.__reflectionFixtureReload=true;true`);
     await send('Page.reload');
-    await waitUntil(`document.querySelector('#journey-reflection')?.value===${JSON.stringify(draft)}&&!document.querySelector('#prerender-seo')`,'Draft resumes after reload');
+    await waitUntil(`!window.__reflectionFixtureReload&&document.querySelector('#journey-reflection')?.value===${JSON.stringify(draft)}&&!document.querySelector('#prerender-seo')`,'Draft resumes after reload');
     await evaluate(`[...document.querySelectorAll('main button')].find(button=>button.textContent.trim()==='Complete my first journey').click();true`);
     await waitUntil(`!document.querySelector('#journey-reflection') && document.querySelector('main')?.textContent.includes('5 of 5 steps completed')`,'Only explicit completion advances to the next step');
   } finally {
