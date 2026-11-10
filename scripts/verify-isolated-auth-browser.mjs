@@ -1187,8 +1187,8 @@ async function main(){
     await wait(()=>devtools.evaluate(`(()=>{const r=${notice}.getBoundingClientRect();return r.left>=0 && r.right<=innerWidth+1;})()`),'announcement fits narrow screen');
     assert.equal(await devtools.evaluate(`${notice}.querySelector('a').getAttribute('href')`),'/whats-new');
     await devtools.evaluate(`${dismiss}.focus()`);
-    await devtools.send('Input.dispatchKeyEvent',{type:'keyDown',key:'Enter',code:'Enter'});
-    await devtools.send('Input.dispatchKeyEvent',{type:'keyUp',key:'Enter',code:'Enter'});
+    await devtools.send('Input.dispatchKeyEvent',{type:'keyDown',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});
+    await devtools.send('Input.dispatchKeyEvent',{type:'keyUp',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});
     await wait(async()=>!await noticeTitle(),'keyboard dismissal');
     showPublications=true;
     await devtools.evaluate("window.dispatchEvent(new Event('focus'))");
