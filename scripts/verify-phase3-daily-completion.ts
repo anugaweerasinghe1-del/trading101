@@ -24,4 +24,6 @@ assert.match(start,/hasPlayedToday\(\)/, "Start Here accepts either form of toda
 assert.match(start,/DAILY_PROGRESS_EVENT/, "Start Here refreshes when practice completes in the same tab");
 assert.match(start,/DAILY_PROGRESS_KEY/, "Start Here refreshes from another tab");
 assert.match(practice,/if \(savedPracticeComplete\(saved\)\) onComplete\(\)/, "Case study credits only durable completion");
+assert.match(practice,/if \(result.saved\) setProgress\(result.progress\)/, "Failed persistence must not advance the rendered answer count");
+assert.match(practice,/if \(saved.saved\) setPick\(null\)/, "Keep the answer selected for retry after storage recovery");
 console.log("PASS Phase 3 Daily handoff: quick or deep practice, stored streak only, and cross-tab continuity");

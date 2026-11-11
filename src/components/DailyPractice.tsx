@@ -43,14 +43,16 @@ export function DailyPractice({ date, open, onOpen, onClose, onComplete }: { dat
   useEffect(() => {
     if (open) { heading.current?.focus({ preventScroll: true }); heading.current?.scrollIntoView({ block: 'start', behavior: 'instant' }); }
   }, [open]);
-  const persist = (next: typeof progress) => { const result = savePractice(next); setStorageOk(result.saved); setProgress(result.progress); return result; };
+  const persist = (next: typeof progress) => { const result = savePractice(next); setStorageOk(result.saved); if (result.saved) setProgress(result.progress); return result; };
   const exercise = progress.exercise, answered = progress.answers.length, total = exercise.questions.length, done = answered === total;
   const index = Math.min(question, answered, total - 1), q = exercise.questions[index], reviewed = index < answered;
   const score = progress.answers.filter((a, i) => a === exercise.questions[i].correctAnswer).length;
   const move = (i: number) => { setQuestion(i); setPick(null); };
   const submit = () => {
     if (pick === null || reviewed || done || date !== practiceDate() || progress.date !== date) return;
-    const saved = persist({ ...progress, answers: [...progress.answers, pick] }); setPick(null);
+    const saved = persist({ ...progress, answers: [...progress.answers, pick] });
+    // Keep the selection and unfinished question available for a retry if storage fails.
+    if (saved.saved) setPick(null);
     if (savedPracticeComplete(saved)) onComplete();
   };
   return <section id="deeper-practice" aria-labelledby="deeper-title" className="scroll-mt-24 rounded-[24px] border border-primary/20 bg-gradient-to-br from-primary/[0.06] to-white/[0.02] p-6 md:p-8 mb-8">
