@@ -1,8 +1,9 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { courseTracks } from "../src/lib/coursesData";
+import { loadSiteData } from "./loadData";
 import { getMentorTeachingReply } from "../src/lib/mentorTeaching";
 
+const { courseTracks } = await loadSiteData();
 const track = courseTracks.find(t => t.slug === "options-trading-fundamentals");
 assert.ok(track);
 const lesson = track.lessons.find(l => l.slug === "what-is-an-option");
