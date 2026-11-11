@@ -3,7 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { BookOpen, CheckCircle2, ArrowRight, ArrowLeft, ChevronDown } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { starterPracticeBank } from '@/lib/dailyPracticeBank';
-import { newPractice, readPractice, savePractice, upgradePractice } from '@/lib/dailyPracticeProgress';
+import { newPractice, readPractice, savePractice, savedPracticeComplete, upgradePractice } from '@/lib/dailyPracticeProgress';
 import { practiceDate, validateBatch, type DailyBatch, type DailyExercise } from '../../supabase/functions/_shared/dailyPractice';
 
 export function PracticeVisual({ exercise }: { exercise: DailyExercise }) {
@@ -43,15 +43,15 @@ export function DailyPractice({ date, open, onOpen, onClose, onComplete }: { dat
   useEffect(() => {
     if (open) { heading.current?.focus({ preventScroll: true }); heading.current?.scrollIntoView({ block: 'start', behavior: 'instant' }); }
   }, [open]);
-  const persist = (next: typeof progress) => { const result = savePractice(next); setStorageOk(result.saved); setProgress(result.progress); return result.progress; };
+  const persist = (next: typeof progress) => { const result = savePractice(next); setStorageOk(result.saved); setProgress(result.progress); return result; };
   const exercise = progress.exercise, answered = progress.answers.length, total = exercise.questions.length, done = answered === total;
   const index = Math.min(question, answered, total - 1), q = exercise.questions[index], reviewed = index < answered;
   const score = progress.answers.filter((a, i) => a === exercise.questions[i].correctAnswer).length;
   const move = (i: number) => { setQuestion(i); setPick(null); };
   const submit = () => {
     if (pick === null || reviewed || done || date !== practiceDate() || progress.date !== date) return;
-    const next = persist({ ...progress, answers: [...progress.answers, pick] }); setPick(null);
-    if (next.answers.length === next.exercise.questions.length) onComplete();
+    const saved = persist({ ...progress, answers: [...progress.answers, pick] }); setPick(null);
+    if (savedPracticeComplete(saved)) onComplete();
   };
   return <section id="deeper-practice" aria-labelledby="deeper-title" className="scroll-mt-24 rounded-[24px] border border-primary/20 bg-gradient-to-br from-primary/[0.06] to-white/[0.02] p-6 md:p-8 mb-8">
     <div className="flex flex-wrap justify-between gap-3 mb-5"><p className="flex items-center gap-2 text-xs uppercase tracking-widest text-primary"><BookOpen className="w-4 h-4" />Daily case study</p><span className="text-xs text-muted-foreground">{total === 10 ? '8–12 minutes' : 'Saved shorter attempt'} · {answered}/{total} reviewed</span></div>

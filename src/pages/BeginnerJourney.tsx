@@ -12,7 +12,7 @@ import { JOURNEY_EVENT, journeyStage, readJourney, saveJourney } from "@/lib/beg
 import { COURSE_PROGRESS_EVENT, COURSE_PROGRESS_KEY, loadProgress } from "@/lib/courseProgress";
 import { buildLearningOverview } from "@/lib/learningOverview";
 import { useCourseCatalog } from "@/hooks/useCourseCatalog";
-import { hasPlayedQuickToday } from "@/lib/dailyChallenge";
+import { DAILY_PROGRESS_EVENT, DAILY_PROGRESS_KEY, hasPlayedToday } from "@/lib/dailyChallenge";
 import type { Portfolio } from "@/lib/types";
 
 const steps = [
@@ -51,16 +51,18 @@ export default function BeginnerJourney() {
       setCourseProgress(loadProgress());
     };
     const onStorage = (event: StorageEvent) => {
-      if (!event.key || [COURSE_PROGRESS_KEY, "tradehq:beginner-journey:v1"].includes(event.key)) refresh();
+      if (!event.key || [COURSE_PROGRESS_KEY, "tradehq:beginner-journey:v1", DAILY_PROGRESS_KEY].includes(event.key)) refresh();
     };
     window.addEventListener(JOURNEY_EVENT, refresh);
     window.addEventListener(COURSE_PROGRESS_EVENT, refresh);
+    window.addEventListener(DAILY_PROGRESS_EVENT, refresh);
     window.addEventListener("tradehq:portfolio-updated", refresh);
     window.addEventListener("focus", refresh);
     window.addEventListener("storage", onStorage);
     return () => {
       window.removeEventListener(JOURNEY_EVENT, refresh);
       window.removeEventListener(COURSE_PROGRESS_EVENT, refresh);
+      window.removeEventListener(DAILY_PROGRESS_EVENT, refresh);
       window.removeEventListener("tradehq:portfolio-updated", refresh);
       window.removeEventListener("focus", refresh);
       window.removeEventListener("storage", onStorage);
@@ -99,8 +101,8 @@ export default function BeginnerJourney() {
               Afterwards, come back here to learn how your first virtual order works.
               You can continue learning as much as you like today.
             </p>
-            {hasPlayedQuickToday() ? (
-              <p role="status" className="text-sm text-primary font-medium">You've already completed today's quick scenario. Your next step is the first-trade explanation below.</p>
+            {hasPlayedToday() ? (
+              <p role="status" className="text-sm text-primary font-medium">You've already completed Daily Practice today. Your next step is the first-trade explanation below.</p>
             ) : (
               <Button asChild size="lg"><Link to="/daily">Try today's Daily Practice <ArrowRight className="ml-2 h-4 w-4" /></Link></Button>
             )}

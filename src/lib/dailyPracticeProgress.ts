@@ -44,3 +44,8 @@ export function savePractice(progress: PracticeProgress, storage?: Pick<Storage,
     return { progress: next, saved: true };
   } catch { return { progress, saved: false }; }
 }
+
+/** The UI must not credit a Daily streak if the final answer was never persisted. */
+export function savedPracticeComplete(result: ReturnType<typeof savePractice>): boolean {
+  return result.saved && result.progress.answers.length === result.progress.exercise.questions.length;
+}
