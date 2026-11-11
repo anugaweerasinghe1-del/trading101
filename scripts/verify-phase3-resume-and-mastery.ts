@@ -40,6 +40,8 @@ const hook=readFileSync("src/hooks/useMasteryNextAction.ts","utf8");
 const courses=readFileSync("src/pages/Courses.tsx","utf8");
 const banner=readFileSync("src/components/retention/ContinueBanner.tsx","utf8");
 const daily=readFileSync("src/lib/dailyChallenge.ts","utf8");
+const lastVisit=readFileSync("src/lib/lastVisit.ts","utf8");
+assert.match(lastVisit,/if \(pathname !== "\/"\) localStorage\.setItem\(ROUTE_KEY, pathname\)/,"Home navigation must preserve last meaningful resume route");
 assert.match(dashboard,/useMasteryNextAction\(\)/);
 assert.match(guided,/useMasteryNextAction\(\)/);
 assert.match(hook,/getAccountPortfolio\(user\?\.id\)/);

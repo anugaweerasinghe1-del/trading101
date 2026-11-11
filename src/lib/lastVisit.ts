@@ -11,7 +11,8 @@ let recordedThisSession = false;
 
 export function recordVisit(pathname: string) {
   try {
-    localStorage.setItem(ROUTE_KEY, pathname);
+    // Home is a landing page, not a replacement for the last meaningful destination.
+    if (pathname !== "/") localStorage.setItem(ROUTE_KEY, pathname);
     const previous = localStorage.getItem(VISIT_KEY);
     if (!recordedThisSession) {
       if (previous) localStorage.setItem(PREVIOUS_VISIT_KEY, previous);
