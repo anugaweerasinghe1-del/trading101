@@ -1,4 +1,4 @@
-import { DAILY_CATEGORIES, assembleDailyExercises, normalized, validateExercises, type DailyExercise } from './dailyPractice.ts';
+import { DAILY_CATEGORIES, DAILY_VISUAL_LIMITS, assembleDailyExercises, normalized, validateExercises, type DailyExercise } from './dailyPractice.ts';
 import { hasRepeatedPracticeCase } from './dailyPracticeReview.ts';
 import { readCourseReferences, readGenerationResponse, GENERATION_READ_LIMITS, safeGeminiRejectionDetails } from './courseGenerator.ts';
 export interface PracticeClaim {
@@ -8,9 +8,12 @@ export interface PracticeClaim {
 const str = { type: 'string' };
 const explanationParts = 'Write two distinct sentences, each about 75–125 characters. First explain why the answer is correct, with inputs and arithmetic when relevant. Then explain what the result means or why a plausible alternative is wrong.';
 const guideParts = 'Write two distinct sentences, each about 90–145 characters. First walk through the reasoning for the reflection. Then identify a case-specific limitation, trade-off or follow-up check.';
-// Keep the provider schema small; enforce all structural and editorial constraints locally.
+// Gemini enforces numeric/array bounds, but ignores string minLength/maxLength.
+// Describe text limits explicitly and keep local validation authoritative.
 const obj = (properties: Record<string, unknown>) => ({ type: 'object', properties, required: Object.keys(properties) });
 const pair = (description: string) => ({ type: 'array', items: str, minItems: 2, maxItems: 2, description });
+const boundedText = (min: number, max: number, description: string) => ({ ...str, description: `${description} Use ${min}–${max} characters, with no surrounding whitespace.` });
+const visualLimits = DAILY_VISUAL_LIMITS;
 
 export async function generatePractice(claim: PracticeClaim, fetcher = fetch) {
   if (!claim.apiKey) throw new Error('Add a free Gemini API key in course settings.');
@@ -34,14 +37,20 @@ export async function generatePractice(claim: PracticeClaim, fetcher = fetch) {
       'Provider marks are periodic snapshots; unsupported assets use fixed simulator values. Quote observation time differs from page fetch time. Shared server price refresh is not automatic trading. Local journal and Daily progress are browser-specific.',
       'Do not ask learners to predict market direction or treat RSI, volume or price patterns as guarantees. Reflect uncertainty, costs, exposure, sample limitations and alternative explanations.',
       'Diversification does not prevent all losses. Recompute total value before allocation percentages. Planned risk/reward differs from realized returns. A return rank is not a verified skill rating.',
-      'Visual bars show two to six nonnegative finite inputs, with a short unit and precise labels. Caption explicitly says hypothetical, not live data. No invented photographs or market charts.',
+      `Visual bars show ${visualLimits.barsMin}–${visualLimits.barsMax} nonnegative finite inputs from ${visualLimits.valueMin} to ${visualLimits.valueMax}. Use positive prices, balances, costs or exposure amounts; show losses as before/after balances, never negative return bars or absolute values that hide a loss. All bars share one unit. Caption is ${visualLimits.captionMin}–${visualLimits.captionMax} characters and explicitly says hypothetical, not live data; unit is ${visualLimits.unitMin}–${visualLimits.unitMax} characters (e.g. USD or %); labels are ${visualLimits.labelMin}–${visualLimits.labelMax} characters. No invented photographs or market charts.`,
       'Return only the structured object. Unique hyphenated IDs include the period and part; keep all titles and prompts distinct from every previous item. No reviewer metadata: owner approval happens separately.',
     ],
   };
   const schema = obj({ exercises: { type: 'array', items: obj({
-    id: str, title: str, category: { ...str, enum: [...DAILY_CATEGORIES] }, scenario: str,
-    visual: obj({ caption: str, unit: str, bars: { type: 'array', items: obj({ label: str, value: { type: 'number' } }) } }),
-    questions: { type: 'array', items: obj({ prompt: str, options: { type: 'array', items: str }, correctAnswer: { type: 'integer' }, explanation: pair(explanationParts) }) },
+    id: boundedText(1, 90, 'Unique lowercase letters, digits and hyphens only.'), title: boundedText(8, 120, 'Distinct case title.'), category: { ...str, enum: [...DAILY_CATEGORIES] }, scenario: boundedText(180, 5000, 'Substantial hypothetical case following the scenario word target.'),
+    visual: obj({
+      caption: boundedText(visualLimits.captionMin, visualLimits.captionMax, 'Short caption identifying hypothetical inputs, not live data.'),
+      unit: boundedText(visualLimits.unitMin, visualLimits.unitMax, 'One shared unit, e.g. USD or %; do not put a sentence here.'),
+      bars: { type: 'array', minItems: visualLimits.barsMin, maxItems: visualLimits.barsMax,
+        items: obj({ label: boundedText(visualLimits.labelMin, visualLimits.labelMax, 'Precise short bar label.'),
+          value: { type: 'number', minimum: visualLimits.valueMin, maximum: visualLimits.valueMax } }) },
+    }),
+    questions: { type: 'array', items: obj({ prompt: boundedText(12, 450, 'Distinct scored question.'), options: { type: 'array', items: boundedText(1, 350, 'Distinct answer option.') }, correctAnswer: { type: 'integer', minimum: 0, maximum: 2 }, explanation: pair(explanationParts) }) },
     reflection: { ...str, description: "One case-specific reflection question, about 50–120 characters." }, reflectionGuide: pair(guideParts), sources: { type: 'array', items: obj({ label: str, url: str }) },
   }) } });
   const response = await fetcher('https://generativelanguage.googleapis.com/v1beta/models/' + encodeURIComponent(claim.model) + ':generateContent', {

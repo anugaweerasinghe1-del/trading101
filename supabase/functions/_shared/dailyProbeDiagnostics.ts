@@ -3,7 +3,7 @@ import { assembleDailyExercises } from "./dailyPractice.ts";
 /** Fixed classifications and numeric measurements only; never retain model prose. */
 export const PROBE_FINISH_REASONS = ['STOP', 'MAX_TOKENS', 'SAFETY', 'RECITATION', 'OTHER', 'NOT_REPORTED', 'UNRECOGNIZED'] as const;
 export const PROBE_STAGES = ['RESPONSE_ENVELOPE', 'MODEL_JSON', 'EXERCISE_STRUCTURE', 'SOURCE_ALLOWLIST', 'CATEGORY_COVERAGE', 'REPETITION'] as const;
-export const PROBE_RULES = ['EXERCISE_COUNT', 'ID', 'TITLE', 'CATEGORY', 'SCENARIO', 'VISUAL', 'QUESTION_COUNT', 'QUESTION_FIELDS', 'DUPLICATE_QUESTION', 'REFLECTION', 'CITATION'] as const;
+export const PROBE_RULES = ['EXERCISE_COUNT', 'ID', 'TITLE', 'CATEGORY', 'SCENARIO', 'VISUAL', 'VISUAL_CAPTION', 'VISUAL_UNIT', 'VISUAL_BAR_COUNT', 'VISUAL_BAR_LABEL', 'VISUAL_BAR_VALUE', 'QUESTION_COUNT', 'QUESTION_FIELDS', 'DUPLICATE_QUESTION', 'REFLECTION', 'CITATION'] as const;
 export interface ProbeDiagnostics {
   provider?: { finishReason: typeof PROBE_FINISH_REASONS[number]; inputTokens: number | null; outputTokens: number | null; totalTokens: number | null; textChars: number | null };
   validation?: { stage: typeof PROBE_STAGES[number]; rules: typeof PROBE_RULES[number][]; exercise: number | null; question: number | null };
@@ -49,7 +49,10 @@ export function validationDiagnostics(message: string): ProbeDiagnostics['valida
   if (!stage) return undefined;
   const rules: [RegExp, typeof PROBE_RULES[number]][] = [
     [/exactly \d+ exercises/, 'EXERCISE_COUNT'], [/unique ID/, 'ID'], [/distinct title/, 'TITLE'], [/supported category/, 'CATEGORY'],
-    [/substantial scenario/, 'SCENARIO'], [/nonnegative illustration/, 'VISUAL'], [/needs \d+ questions/, 'QUESTION_COUNT'],
+    [/substantial scenario/, 'SCENARIO'],
+    [/VISUAL_CAPTION/, 'VISUAL_CAPTION'], [/VISUAL_UNIT/, 'VISUAL_UNIT'], [/VISUAL_BAR_COUNT/, 'VISUAL_BAR_COUNT'],
+    [/VISUAL_BAR_LABEL/, 'VISUAL_BAR_LABEL'], [/VISUAL_BAR_VALUE/, 'VISUAL_BAR_VALUE'],
+    [/nonnegative illustration(?! \(VISUAL_)/, 'VISUAL'], [/needs \d+ questions/, 'QUESTION_COUNT'],
     [/question \d+ is incomplete/, 'QUESTION_FIELDS'], [/repeats a question/, 'DUPLICATE_QUESTION'], [/reflection and a useful review guide/, 'REFLECTION'], [/supported primary source/, 'CITATION'],
   ];
   const index = /Exercise (\d+)(?:, question (\d+))?/.exec(message);
