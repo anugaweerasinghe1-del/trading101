@@ -42,10 +42,13 @@ function groundedPassage(question: string, lesson: MentorLessonContext): string 
   if (!tokens.length) return undefined;
   let best: string | undefined;
   let bestScore = 0;
-  for (const paragraph of lesson.body ?? []) {
+  for (const [index, paragraph] of (lesson.body ?? []).entries()) {
     if (paragraph.startsWith("> ") || paragraph.length < 70 || /not financial advice/i.test(paragraph)) continue;
     const content = ` ${normalize(paragraph)} `;
-    const score = tokens.reduce((sum, word) => sum + (content.includes(` ${word} `) ? 1 : 0), 0);
+    const heading = lesson.body?.[index - 1] ?? "";
+    const headingText = ` ${normalize(heading)} `;
+    const score = tokens.reduce((sum, word) => sum + (content.includes(` ${word} `) ? 1 : 0)
+      + (heading.startsWith("## ") && headingText.includes(` ${word} `) ? 2 : 0), 0);
     if (score > bestScore) { best = paragraph.replace(/^## /, ""); bestScore = score; }
   }
   return bestScore > 0 ? best?.slice(0, 1050) : undefined;
