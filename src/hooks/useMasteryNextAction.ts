@@ -1,12 +1,12 @@
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { useAuth } from "@/hooks/useAuth";
-import { hasPlayedQuickToday, DAILY_PROGRESS_EVENT } from "@/lib/dailyChallenge";
+import { hasPlayedToday, DAILY_PROGRESS_EVENT } from "@/lib/dailyChallenge";
 import { getPortfolio } from "@/lib/portfolio";
 import { getAccountPortfolio, subscribeAccountPortfolio } from "@/lib/cloudPortfolio";
 import { chooseMasteryNextActionForTradeCount } from "@/lib/masteryNextAction";
 
 function readLocalActivity() {
-  return { playedToday: hasPlayedQuickToday(), guestTrades: getPortfolio().trades.length };
+  return { playedToday: hasPlayedToday(), guestTrades: getPortfolio().trades.length };
 }
 
 /** One account-aware, reactive mastery recommendation for Learn and Daily pages. */
