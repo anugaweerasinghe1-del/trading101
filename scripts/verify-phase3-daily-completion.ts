@@ -13,7 +13,7 @@ const storage = {
   setItem: (key:string, value:string) => { memory.set(key, value); },
 };
 assert.equal(savedPracticeComplete(savePractice(complete, storage)), true, "Completed, persisted case earns a Daily completion");
-assert.equal(savedPracticeComplete(savePractice({ ...original, answers: answers.slice(0, -1) }, storage)), false, "Incomplete case never earns a completion");
+assert.equal(savedPracticeComplete(savePractice({ ...original, answers: answers.slice(0, -1) }, { getItem: () => null, setItem: () => {} })), false, "Incomplete case never earns a completion");
 const failedStorage = { getItem: (_key:string) => "[]", setItem: (_key:string, _value:string) => { throw new Error("quota full"); } };
 assert.equal(savedPracticeComplete(savePractice(complete, failedStorage)), false, "A failed save must never produce a completed streak");
 const daily = readFileSync("src/pages/Daily.tsx", "utf8");
