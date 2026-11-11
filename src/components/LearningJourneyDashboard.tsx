@@ -5,9 +5,7 @@ import { COURSE_PROGRESS_EVENT, COURSE_PROGRESS_KEY, loadProgress } from "@/lib/
 import { JOURNEY_EVENT, JOURNEY_KEY, readJourney } from "@/lib/beginnerJourney";
 import { buildLearningOverview, type LearningTrack } from "@/lib/learningOverview";
 import { useAuth } from "@/hooks/useAuth";
-import { chooseMasteryNextAction } from "@/lib/masteryNextAction";
-import { hasPlayedQuickToday } from "@/lib/dailyChallenge";
-import { getPortfolio } from "@/lib/portfolio";
+import { useMasteryNextAction } from "@/hooks/useMasteryNextAction";
 
 /** One read-only dashboard for previously saved journey and structured-course progress. */
 export function LearningJourneyDashboard({ tracks }: { tracks: LearningTrack[] }) {
@@ -34,9 +32,7 @@ export function LearningJourneyDashboard({ tracks }: { tracks: LearningTrack[] }
   const journeyPercent = overview.journeyDone * 20;
   const coursePercent = overview.lessonsTotal ? Math.round(overview.lessonsDone * 100 / overview.lessonsTotal) : 0;
   const hasCourseHistory = overview.lessonsDone > 0 || overview.lessonsInProgress > 0 || overview.next?.inProgress === true;
-  const mastery = typeof window !== "undefined"
-    ? chooseMasteryNextAction(hasPlayedQuickToday(), getPortfolio().trades.length > 0)
-    : chooseMasteryNextAction(false, false);
+  const mastery = useMasteryNextAction();
   // A single primary action. The learner's other progress remains visible
   // without requiring a choice between competing equally prominent CTAs.
   const action = overview.next && (hasCourseHistory || overview.journeyFinished)

@@ -400,7 +400,9 @@ export function getChallengeCount(): number {
 // STREAK ENGINE (localStorage)
 // ───────────────────────────────────────────
 
-const STORAGE_KEY = "tradehq:daily-streak";
+export const DAILY_PROGRESS_KEY = "tradehq:daily-streak";
+export const DAILY_PROGRESS_EVENT = "tradehq:daily-progress-updated";
+const STORAGE_KEY = DAILY_PROGRESS_KEY;
 
 export interface StreakState {
   current: number;
@@ -475,7 +477,10 @@ export function recordChallenge(challengeId: number, decision: ChallengeDecision
     // A later quick scenario fills in its real choice without counting another day.
     if (challengeId > 0 && prev.history.some(h => h.date === todayKey && h.challengeId === 0)) {
       const next = { ...prev, history: prev.history.map(h => h.date === todayKey && h.challengeId === 0 ? { ...h, challengeId, decision } : h) };
-      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(next)); } catch {}
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+        if (typeof window !== "undefined") window.dispatchEvent(new Event(DAILY_PROGRESS_EVENT));
+      } catch {}
       return next;
     }
     return prev;
@@ -494,6 +499,7 @@ export function recordChallenge(challengeId: number, decision: ChallengeDecision
   };
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+    if (typeof window !== "undefined") window.dispatchEvent(new Event(DAILY_PROGRESS_EVENT));
   } catch {}
   return next;
 }

@@ -21,6 +21,8 @@ import {
 import { useCourseCatalog } from "@/hooks/useCourseCatalog";
 import { useCourseProgress } from "@/hooks/useCourseProgress";
 import { trackCompletionPct } from "@/lib/courseProgress";
+import { readJourney } from "@/lib/beginnerJourney";
+import { chooseCourseContinuation } from "@/lib/learnerResume";
 import { EducationalDisclaimer } from "@/components/EducationalDisclaimer";
 import { AIAnswerBlock } from "@/components/seo/AIAnswerBlock";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
@@ -101,7 +103,7 @@ export default function Courses() {
   const { tracks: courseTracks } = useCourseCatalog();
   const lessonCount = courseTracks.reduce((total, track) => total + track.lessons.length, 0);
   const progress = useCourseProgress();
-  const resume = progress.lastLesson;
+  const resume = chooseCourseContinuation(courseTracks, progress, readJourney());
 
   const title = "Free Trading Courses — Options, Futures, Macro & Psychology | TradeHQ";
   const description =
@@ -224,17 +226,17 @@ export default function Courses() {
             <Card className="p-5 mb-10 border-emerald-500/30 bg-emerald-500/5 flex items-center justify-between gap-4 flex-wrap">
               <div className="text-sm">
                 <div className="text-emerald-400 uppercase text-[10px] tracking-widest mb-1">
-                  Continue where you left off
+                  {resume.inProgress ? "Continue where you left off" : "Recommended next lesson"}
                 </div>
                 <div className="text-foreground font-medium">
-                  Resume: {resume.track.replace(/-/g, " ")} · {resume.lesson.replace(/-/g, " ")}
+                  {resume.trackTitle} · {resume.title}
                 </div>
               </div>
               <Link
-                to={`/courses/${resume.track}/${resume.lesson}`}
+                to={resume.href}
                 className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-400 hover:text-emerald-300"
               >
-                Resume lesson <ArrowRight className="w-4 h-4" />
+                {resume.inProgress ? "Resume lesson" : "Take next lesson"} <ArrowRight className="w-4 h-4" />
               </Link>
             </Card>
           )}
@@ -333,7 +335,7 @@ export default function Courses() {
                             {pct}% complete
                           </span>
                           <span className="text-emerald-400 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                            Start course <ArrowRight className="w-3.5 h-3.5" />
+                            {pct === 100 ? "Review course" : pct > 0 ? "Continue course" : "Explore course"} <ArrowRight className="w-3.5 h-3.5" />
                           </span>
                         </div>
                         <div className="mt-3 h-1 rounded-full bg-white/5 overflow-hidden">
