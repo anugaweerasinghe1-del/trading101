@@ -1,0 +1,83 @@
+/**
+ * Context-aware, authored teaching help. No network requests or generative AI.
+ * Published lesson text is the source of truth; never invent quiz explanations.
+ */
+import { MENTOR_TOPICS, getSmartMentorReply } from "./smartMentor";
+
+export type MentorLevel = "Beginner" | "Intermediate" | "Advanced";
+
+export interface MentorLessonContext {
+  trackTitle: string;
+  lessonTitle: string;
+  summary: string;
+  takeaways: string[];
+  workedExample?: string;
+  quiz?: { question: string; explanation: string };
+}
+
+const DISCLAIMER = "\n\n(Educational simulation only — not financial advice.)";
+const normalize = (text: string) => text.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+
+function matchingTopic(input: string) {
+  const words = ` ${normalize(input)} `;
+  let best: (typeof MENTOR_TOPICS)[number] | undefined;
+  let score = 0;
+  for (const topic of MENTOR_TOPICS) {
+    for (const keyword of topic.keywords) {
+      const term = normalize(keyword);
+      if (term && words.includes(` ${term} `) && term.length > score) {
+        best = topic;
+        score = term.length;
+      }
+    }
+  }
+  return best;
+}
+
+function learningPrompt(level: MentorLevel, lesson?: MentorLessonContext): string {
+  const check = lesson?.quiz?.question ?? "What assumption would change the outcome of this example?";
+  if (level === "Beginner") return `\n\nCheck your understanding: ${check} Explain your answer in your own words.`;
+  if (level === "Intermediate") return `\n\nApply it: What would change in a hypothetical virtual trade if one assumption differed? Use the lesson's figures, and explain why.\nSelf-check: ${check}`;
+  return `\n\nAdvanced review: Identify the assumptions, costs and failure cases; distinguish the observed result from a prediction.\nSelf-check: ${check}`;
+}
+
+/** The selected level is user-controlled; do not imply the app inferred proficiency. */
+export function getMentorTeachingReply(
+  input: string,
+  level: MentorLevel,
+  lesson?: MentorLessonContext,
+): string {
+  const question = input.trim().slice(0, 500);
+  if (!question) return "Ask about a trading concept or choose a lesson question." + DISCLAIMER;
+  const normalized = normalize(question);
+  const validLevel: MentorLevel = ["Beginner", "Intermediate", "Advanced"].includes(level) ? level : "Beginner";
+  const asksQuiz = /\b(quiz|answer|option|choice|wrong|correct|question)\b/.test(normalized);
+  const asksLesson = /\b(this lesson|the lesson|summari[sz]e|recap|key takeaway|explain this|simpler words|simple words)\b/.test(normalized);
+  const topic = matchingTopic(question);
+
+  if (lesson && asksQuiz && lesson.quiz) {
+    return `From "${lesson.lessonTitle}" (authored course material):\n\nQuiz question: ${lesson.quiz.question}\n\nPublished explanation: ${lesson.quiz.explanation}\n\nI can explain the stated reasoning, but this library cannot independently judge every alternative answer.` + learningPrompt(validLevel, lesson) + DISCLAIMER;
+  }
+  if (lesson && (asksLesson || (!topic && /\b(help|confus|understand|stuck)\b/.test(normalized)))) {
+    const sections = [
+      `From "${lesson.lessonTitle}" in ${lesson.trackTitle}:`,
+      `Core idea: ${lesson.summary}`,
+      ...(lesson.takeaways.length ? [`Key takeaway: ${lesson.takeaways[0]}`] : []),
+      ...(lesson.workedExample ? [`Example from the published lesson: ${lesson.workedExample}`] : []),
+      ...(lesson.quiz ? [`Quiz guidance: ${lesson.quiz.explanation}`] : []),
+    ];
+    return sections.join("\n\n") + learningPrompt(validLevel, lesson) + DISCLAIMER;
+  }
+  if (topic) {
+    const lead = validLevel === "Beginner" ? `In plain language — ${topic.title}:\n\n`
+      : validLevel === "Intermediate" ? `Concept and worked application — ${topic.title}:\n\n`
+        : `Advanced assumptions and limitations — ${topic.title}:\n\n`;
+    const connection = lesson && normalize(lesson.summary).includes(normalize(topic.title).split(" ")[0])
+      ? `\n\nConnection to "${lesson.lessonTitle}": ${lesson.summary}` : "";
+    return lead + topic.answer + connection + learningPrompt(validLevel, lesson) + DISCLAIMER;
+  }
+  if (lesson && /\b(what|how|why)\b/.test(normalized)) {
+    return `I don't have a verified authored answer to that exact question. The published "${lesson.lessonTitle}" lesson says: ${lesson.summary}\n\nTry naming a specific term, or ask "Explain this lesson" for its written example. I won't invent a missing explanation.` + DISCLAIMER;
+  }
+  return getSmartMentorReply(question);
+}
