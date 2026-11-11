@@ -12,6 +12,7 @@ export interface MentorLessonContext {
   summary: string;
   takeaways: string[];
   workedExample?: string;
+  body?: string[];
   quiz?: { question: string; explanation: string };
 }
 
@@ -34,6 +35,21 @@ function matchingTopic(input: string) {
   return best;
 }
 
+/** Retrieve only exact excerpts from a published lesson for unanswered subtopics. */
+function groundedPassage(question: string, lesson: MentorLessonContext): string | undefined {
+  const ignored = new Set(["what", "does", "this", "that", "with", "from", "when", "where", "which", "would", "could", "should", "have", "there", "explain", "understand", "lesson", "about", "because", "more", "some", "please", "mean", "simple", "example"]);
+  const tokens = [...new Set(normalize(question).split(" ").filter(word => word.length >= 4 && !ignored.has(word)))];
+  if (!tokens.length) return undefined;
+  let best: string | undefined;
+  let bestScore = 0;
+  for (const paragraph of lesson.body ?? []) {
+    if (paragraph.startsWith("> ") || paragraph.length < 70 || /not financial advice/i.test(paragraph)) continue;
+    const content = ` ${normalize(paragraph)} `;
+    const score = tokens.reduce((sum, word) => sum + (content.includes(` ${word} `) ? 1 : 0), 0);
+    if (score > bestScore) { best = paragraph.replace(/^## /, ""); bestScore = score; }
+  }
+  return bestScore > 0 ? best?.slice(0, 1050) : undefined;
+}
 function learningPrompt(level: MentorLevel, lesson?: MentorLessonContext): string {
   const check = lesson?.quiz?.question ?? "What assumption would change the outcome of this example?";
   if (level === "Beginner") return `\n\nCheck your understanding: ${check} Explain your answer in your own words.`;
@@ -46,6 +62,7 @@ export function getMentorTeachingReply(
   input: string,
   level: MentorLevel,
   lesson?: MentorLessonContext,
+  history: { role: "user" | "assistant"; content: string }[] = [],
 ): string {
   const question = input.trim().slice(0, 500);
   if (!question) return "Ask about a trading concept or choose a lesson question." + DISCLAIMER;
@@ -53,7 +70,13 @@ export function getMentorTeachingReply(
   const validLevel: MentorLevel = ["Beginner", "Intermediate", "Advanced"].includes(level) ? level : "Beginner";
   const asksQuiz = /\b(quiz|answer|option|choice|wrong|correct|question)\b/.test(normalized);
   const asksLesson = /\b(this lesson|the lesson|summari[sz]e|recap|key takeaway|explain this|simpler words|simple words)\b/.test(normalized);
-  const topic = matchingTopic(question);
+  const followUp = /\b(it|that|again|simpler|different example|another example|more detail)\b/.test(normalized)
+    && /\b(explain|example|clarify|mean|understand|simplify|detail)\b/.test(normalized);
+  const previousTopic = followUp
+    ? history.filter(message => message.role === "user").slice(-5).reverse().map(message => matchingTopic(message.content)).find(Boolean)
+    : undefined;
+  const topic = matchingTopic(question) ?? previousTopic;
+  const passage = lesson ? groundedPassage(question, lesson) : undefined;
 
   if (lesson && asksQuiz && lesson.quiz) {
     return `From "${lesson.lessonTitle}" (authored course material):\n\nQuiz question: ${lesson.quiz.question}\n\nPublished explanation: ${lesson.quiz.explanation}\n\nI can explain the stated reasoning, but this library cannot independently judge every alternative answer.` + learningPrompt(validLevel, lesson) + DISCLAIMER;
@@ -72,9 +95,14 @@ export function getMentorTeachingReply(
     const lead = validLevel === "Beginner" ? `In plain language — ${topic.title}:\n\n`
       : validLevel === "Intermediate" ? `Concept and worked application — ${topic.title}:\n\n`
         : `Advanced assumptions and limitations — ${topic.title}:\n\n`;
-    const connection = lesson && normalize(lesson.summary).includes(normalize(topic.title).split(" ")[0])
-      ? `\n\nConnection to "${lesson.lessonTitle}": ${lesson.summary}` : "";
+    const connection = passage
+      ? `\n\nRelated passage from the published "${lesson!.lessonTitle}" lesson: ${passage}`
+      : lesson && normalize(lesson.summary).includes(normalize(topic.title).split(" ")[0])
+        ? `\n\nConnection to "${lesson.lessonTitle}": ${lesson.summary}` : "";
     return lead + topic.answer + connection + learningPrompt(validLevel, lesson) + DISCLAIMER;
+  }
+  if (lesson && passage) {
+    return `From the published "${lesson.lessonTitle}" lesson (this is an excerpt, not a newly generated answer):\n\n${passage}` + learningPrompt(validLevel, lesson) + DISCLAIMER;
   }
   if (lesson && /\b(what|how|why)\b/.test(normalized)) {
     return `I don't have a verified authored answer to that exact question. The published "${lesson.lessonTitle}" lesson says: ${lesson.summary}\n\nTry naming a specific term, or ask "Explain this lesson" for its written example. I won't invent a missing explanation.` + DISCLAIMER;
