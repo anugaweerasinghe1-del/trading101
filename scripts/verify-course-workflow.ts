@@ -22,6 +22,13 @@ assert.equal(trackCompletionPct("sample", 0, oldLessons), 0);
 assert.equal(trackCompletionPct("sample", -1, oldLessons), 0);
 assert.equal(trackCompletionPct("sample", Number.NaN, oldLessons), 0);
 assert.equal(trackCompletionPct("unknown", 3, oldLessons), 0);
+
+// A completed retired lesson cannot substitute for an unfinished current lesson.
+assert.equal(trackCompletionPct("sample", 1, oldLessons, ["newly-published"]), 0, "Retired lessons must not inflate a published syllabus");
+assert.equal(trackCompletionPct("sample", 2, oldLessons, ["one", "newly-published"]), 50, "Only currently approved completed slugs count");
+assert.equal(trackCompletionPct("sample", 2, oldLessons, ["one", "two"]), 100, "Current completed lessons retain their progress");
+assert.equal(trackCompletionPct("sample", 2, oldLessons, ["one"]), 0, "A stale mismatched syllabus cannot invent a percentage");
+
 const completedLesson = { status: 'completed', score: 4, completedAt: '2026-10-09T15:45:01Z', scrolledPct: 100 };
 const recovered = parseCourseProgress(JSON.stringify({ v: 1, updatedAt: 'bad date', tracks: {
   good: { lessons: { completed: completedLesson, broken: null, badStatus: { status: 'unknown' }, arrayStatus: { status: ['completed'] }, objectStatus: { status: { toString: 'completed' } }, badScore: { status: 'in-progress', score: '4', scrolledPct: -1 } }, badgeEarnedAt: '2026-10-09T15:46:01Z' },
