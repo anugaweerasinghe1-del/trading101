@@ -180,11 +180,19 @@ export function isLessonCompleted(track: string, lesson: string): boolean {
   return getTrackProgress(track).lessons[lesson]?.status === "completed";
 }
 
-export function trackCompletionPct(track: string, totalLessons: number, progress = loadProgress()): number {
-  const p = getTrackProgress(track, progress);
-  const done = Object.values(p.lessons).filter((l) => l.status === "completed").length;
-  // Imported or retired lessons may remain in saved progress. They must not
-  // produce impossible percentages (e.g. 150%) in the learner UI.
+export function trackCompletionPct(
+  track: string,
+  totalLessons: number,
+  progress = loadProgress(),
+  currentLessonSlugs?: readonly string[],
+): number {
   if (!Number.isSafeInteger(totalLessons) || totalLessons <= 0) return 0;
+  if (currentLessonSlugs && currentLessonSlugs.length !== totalLessons) return 0;
+  const p = getTrackProgress(track, progress);
+  // A retired or edited lesson stays in private history, but cannot complete
+  // a currently published lesson or inflate this syllabus's percentage.
+  const done = currentLessonSlugs
+    ? [...new Set(currentLessonSlugs)].filter(slug => p.lessons[slug]?.status === "completed").length
+    : Object.values(p.lessons).filter(lesson => lesson.status === "completed").length;
   return Math.min(100, Math.round((done / totalLessons) * 100));
 }

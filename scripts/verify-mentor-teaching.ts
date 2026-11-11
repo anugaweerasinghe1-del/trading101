@@ -23,6 +23,18 @@ assert.ok(beginner.includes(lesson.summary));
 assert.match(beginner, /Check your understanding:/);
 const quizHelp = getMentorTeachingReply("Why was the quiz answer correct?", "Beginner", context);
 assert.ok(quizHelp.includes(lesson.quiz[0].question) && quizHelp.includes(lesson.quiz[0].explanation));
+
+const optionConcept = getMentorTeachingReply("What is a call option?", "Beginner", context);
+assert.doesNotMatch(optionConcept, /Quiz question:|Published explanation:/, "An option-contract question must not be treated as a quiz-answer request");
+assert.match(optionConcept, /option/i, "The answer must address the published option lesson");
+const mechanics = getMentorTeachingReply("Will a stop-loss order execute if a stock's price falls tomorrow?", "Beginner", context);
+assert.match(mechanics, /stop|trigger|market order/i, "Conditional order mechanics are educational, not a forecast");
+assert.doesNotMatch(mechanics, /don't have a verified authored answer to a future price/, "Do not refuse legitimate mechanics questions");
+const prediction = getMentorTeachingReply("Will Bitcoin rise tomorrow?", "Advanced", context);
+assert.match(prediction, /don't have a verified authored answer to a future price/, "Real asset direction predictions remain unsupported");
+const explanation = getMentorTeachingReply("Explain option premium, not my quiz answer", "Intermediate", context);
+assert.doesNotMatch(explanation, /Quiz question:/, "The user expressly declined quiz help");
+
 const intermediate = getMentorTeachingReply("Explain stop-loss orders", "Intermediate");
 assert.match(intermediate, /stop at \$45/i);
 assert.match(intermediate, /Apply it:/);

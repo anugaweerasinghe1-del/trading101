@@ -272,7 +272,7 @@ export default function Courses() {
 
             <div className="grid md:grid-cols-2 gap-6">
               {courseTracks.map((track) => {
-                const pct = trackCompletionPct(track.slug, track.lessons.length, progress);
+                const pct = trackCompletionPct(track.slug, track.lessons.length, progress, track.lessons.map(lesson => lesson.slug));
                 return (
                   <Card
                     key={track.slug}

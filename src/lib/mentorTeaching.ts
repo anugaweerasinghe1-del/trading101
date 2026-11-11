@@ -35,6 +35,25 @@ function matchingTopic(input: string) {
   return best;
 }
 
+
+/** Option contracts and ordinary questions must not be confused with quiz answers. */
+function asksForQuizHelp(text: string): boolean {
+  if (/\bnot (?:my |the |this )?(?:quiz|answer)\b/.test(text)) return false;
+  return /\bquiz\b|\b(?:correct|wrong|incorrect|my|the|this|that) answer\b|\b(?:this|that|my) question\b|\bwhich (?:answer|option|choice)\b|\b(?:correct|wrong|incorrect) (?:choice|option)\b|\boption [a-d0-9]\b|\banswer (?:was|is) (?:right|wrong|incorrect|correct)\b/.test(text);
+}
+
+/** A conditional order question about tomorrow is not a request to predict a price. */
+function asksForPricePrediction(text: string): boolean {
+  const asset = /\b(price|worth|stock|token|asset|bitcoin|ethereum|crypto|coin|btc|eth)\b/.test(text);
+  if (!asset) return false;
+  const future = /\b(tomorrow|next week|next month|next year|future|soon)\b/.test(text);
+  const explicit = /\b(predict|forecast|price target)\b/.test(text);
+  const futureValue = /\b(?:what|where|how much|how high|how low) (?:will|would) (?:the )?(?:[a-z0-9]+ ){0,3}(?:price|stock|token|asset|bitcoin|ethereum|coin|btc|eth) (?:of [a-z0-9]+ )?(?:be|cost|trade|go|reach|worth)\b/.test(text);
+  const futureDirection = /\b(?:will|would) (?:the )?(?:[a-z0-9]+ ){0,3}(?:price|stock|token|asset|bitcoin|ethereum|coin|btc|eth) (?:rise|fall|drop|increase|decrease|go up|go down)\b/.test(text);
+  const investmentCall = /\bshould i (?:buy|sell|trade)\b/.test(text);
+  return explicit || (future && (futureValue || futureDirection || investmentCall));
+}
+
 /** Retrieve only exact excerpts from a published lesson for unanswered subtopics. */
 function groundedPassage(question: string, lesson: MentorLessonContext): string | undefined {
   const ignored = new Set(["what", "will", "does", "this", "that", "with", "from", "when", "where", "which", "would", "could", "should", "have", "there", "explain", "understand", "lesson", "about", "because", "more", "some", "please", "mean", "simple", "example"]);
@@ -71,12 +90,11 @@ export function getMentorTeachingReply(
   if (!question) return "Ask about a trading concept or choose a lesson question." + DISCLAIMER;
   const normalized = normalize(question);
   // A quoted passage must not be mistaken for a forecast or a trade signal.
-  if (/\b(tomorrow|next week|next month|next year|price target|forecast|predict)\b/.test(normalized)
-      && /\b(price|worth|rise|fall|buy|sell|stock|token|asset|bitcoin)\b/.test(normalized)) {
+  if (asksForPricePrediction(normalized)) {
     return "I don\x27t have a verified authored answer to a future price or trade prediction. A historical example is not a forecast. Ask about risk, order mechanics or an assumption to test with virtual funds." + DISCLAIMER;
   }
   const validLevel: MentorLevel = ["Beginner", "Intermediate", "Advanced"].includes(level) ? level : "Beginner";
-  const asksQuiz = /\b(quiz|answer|option|choice|wrong|correct|question)\b/.test(normalized);
+  const asksQuiz = asksForQuizHelp(normalized);
   const asksLesson = /\b(this lesson|the lesson|summari[sz]e|recap|key takeaway|explain this|simpler words|simple words)\b/.test(normalized);
   const followUp = /\b(it|that|again|simpler|different example|another example|more detail)\b/.test(normalized)
     && /\b(explain|example|clarify|mean|understand|simplify|detail)\b/.test(normalized);

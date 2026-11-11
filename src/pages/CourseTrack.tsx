@@ -53,7 +53,7 @@ function CourseTrackContent({ track }: { track: Track }) {
   };
   const snapshot = useCourseProgress();
   const progress = getTrackProgress(track.slug, snapshot);
-  const pct = trackCompletionPct(track.slug, track.lessons.length, snapshot);
+  const pct = trackCompletionPct(track.slug, track.lessons.length, snapshot, track.lessons.map(lesson => lesson.slug));
 
   return (
     <>
