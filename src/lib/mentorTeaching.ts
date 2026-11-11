@@ -37,7 +37,7 @@ function matchingTopic(input: string) {
 
 /** Retrieve only exact excerpts from a published lesson for unanswered subtopics. */
 function groundedPassage(question: string, lesson: MentorLessonContext): string | undefined {
-  const ignored = new Set(["what", "does", "this", "that", "with", "from", "when", "where", "which", "would", "could", "should", "have", "there", "explain", "understand", "lesson", "about", "because", "more", "some", "please", "mean", "simple", "example"]);
+  const ignored = new Set(["what", "will", "does", "this", "that", "with", "from", "when", "where", "which", "would", "could", "should", "have", "there", "explain", "understand", "lesson", "about", "because", "more", "some", "please", "mean", "simple", "example"]);
   const tokens = [...new Set(normalize(question).split(" ").filter(word => word.length >= 4 && !ignored.has(word)))];
   if (!tokens.length) return undefined;
   let best: string | undefined;
@@ -70,6 +70,11 @@ export function getMentorTeachingReply(
   const question = input.trim().slice(0, 500);
   if (!question) return "Ask about a trading concept or choose a lesson question." + DISCLAIMER;
   const normalized = normalize(question);
+  // A quoted passage must not be mistaken for a forecast or a trade signal.
+  if (/\b(tomorrow|next week|next month|next year|price target|forecast|predict)\b/.test(normalized)
+      && /\b(price|worth|rise|fall|buy|sell|stock|token|asset|bitcoin)\b/.test(normalized)) {
+    return "I don\x27t have a verified authored answer to a future price or trade prediction. A historical example is not a forecast. Ask about risk, order mechanics or an assumption to test with virtual funds." + DISCLAIMER;
+  }
   const validLevel: MentorLevel = ["Beginner", "Intermediate", "Advanced"].includes(level) ? level : "Beginner";
   const asksQuiz = /\b(quiz|answer|option|choice|wrong|correct|question)\b/.test(normalized);
   const asksLesson = /\b(this lesson|the lesson|summari[sz]e|recap|key takeaway|explain this|simpler words|simple words)\b/.test(normalized);
