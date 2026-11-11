@@ -41,6 +41,7 @@ export default function AIMentor() {
     summary: lesson.summary,
     takeaways: lesson.keyTakeaways,
     workedExample: lesson.body.find(paragraph => /\b(example|imagine|suppose|hypothetical)\b/i.test(paragraph))?.slice(0, 900),
+    body: lesson.body,
     quiz: quiz ? { question: quiz.question, explanation: quiz.explanation } : undefined,
   } : undefined;
   const [level, setLevel] = useState<MentorLevel>("Beginner");
@@ -70,7 +71,7 @@ export default function AIMentor() {
     setInput("");
     setIsLoading(true);
 
-    const reply = getMentorTeachingReply(messageText, level, lessonContext);
+    const reply = getMentorTeachingReply(messageText, level, lessonContext, messages);
     setMessages(prev => [...prev, { role: "assistant", content: reply }]);
     setIsLoading(false);
   };
