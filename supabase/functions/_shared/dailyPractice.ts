@@ -1,5 +1,7 @@
 export const DAILY_CATEGORIES = ["Portfolio arithmetic", "Costs and orders", "Price data", "Risk and uncertainty", "Decision habits"] as const;
 export const MIN_DAILY_EXPLANATION_CHARS = 100;
+export const DAILY_VISUAL_LIMITS = Object.freeze({ captionMin: 10, captionMax: 240, unitMin: 1, unitMax: 30,
+  barsMin: 2, barsMax: 6, labelMin: 1, labelMax: 50, valueMin: 0, valueMax: 1e9 });
 export interface PracticeQuestion { prompt: string; options: string[]; correctAnswer: number; explanation: string }
 export interface DailyExercise {
   id: string; title: string; category: string; scenario: string;
@@ -46,8 +48,16 @@ export function validateExercises(value: unknown, count = 50, questionCount?: nu
     if (!(DAILY_CATEGORIES as readonly string[]).includes(e.category)) errors.push(`${label} needs a supported category.`);
     if (!text(e.scenario, 180, 5000)) errors.push(`${label} needs a substantial scenario.`);
     const v = e.visual;
-    if (!v || !text(v.caption, 10, 240) || !text(v.unit, 1, 30) || !Array.isArray(v.bars) || v.bars.length < 2 || v.bars.length > 6
-      || v.bars.some((b: { label: string; value: number }) => !b || !text(b.label, 1, 50) || !Number.isFinite(b.value) || b.value < 0 || b.value > 1e9)) errors.push(`${label} needs a labelled nonnegative illustration.`);
+    const limits = DAILY_VISUAL_LIMITS;
+    // Fixed field codes only: identify failures without retaining generated prose.
+    const visualRules = [
+      !text(v?.caption, limits.captionMin, limits.captionMax) && 'VISUAL_CAPTION',
+      !text(v?.unit, limits.unitMin, limits.unitMax) && 'VISUAL_UNIT',
+      (!Array.isArray(v?.bars) || v.bars.length < limits.barsMin || v.bars.length > limits.barsMax) && 'VISUAL_BAR_COUNT',
+      Array.isArray(v?.bars) && v.bars.some((b: { label?: unknown } | null) => !text(b?.label, limits.labelMin, limits.labelMax)) && 'VISUAL_BAR_LABEL',
+      Array.isArray(v?.bars) && v.bars.some((b: { value?: unknown } | null) => typeof b?.value !== 'number' || !Number.isFinite(b.value) || b.value < limits.valueMin || b.value > limits.valueMax) && 'VISUAL_BAR_VALUE',
+    ].filter(Boolean);
+    if (visualRules.length) errors.push(`${label} needs a labelled nonnegative illustration (${visualRules.join(', ')}).`);
     if (!Array.isArray(e.questions) || (questionCount ? e.questions.length !== questionCount : ![3, 10].includes(e.questions.length))) errors.push(`${label} needs ${questionCount ?? 'three saved or ten new'} questions.`);
     else e.questions.forEach((q: PracticeQuestion, n: number) => {
       if (!q || !text(q.prompt, 12, 450) || !text(q.explanation, MIN_DAILY_EXPLANATION_CHARS, 2000) || !Array.isArray(q.options) || q.options.length !== 3

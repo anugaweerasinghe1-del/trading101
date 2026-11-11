@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs';
 import { createDailyProbeHandler } from '../supabase/functions/_shared/dailyPracticeProbe';
 import { providerDiagnostics, validationDiagnostics, validProbeDiagnostics } from '../supabase/functions/_shared/dailyProbeDiagnostics';
 import { starterPracticeBank } from '../src/lib/dailyPracticeBank';
+import { DAILY_VISUAL_LIMITS, validateExercises } from '../supabase/functions/_shared/dailyPractice';
 const KEY = 'PRIVATE_KEY_FIXTURE_SENTINEL';
 const req = (body: unknown = { confirmFreeTier: true }, key = KEY, token = 'owner-fixture') => new Request('https://example.test', {
   method: 'POST', headers: { 'x-admin-key': key, Authorization: 'Bearer ' + token }, body: JSON.stringify(body),
@@ -23,6 +24,16 @@ const upstream: typeof fetch = async (input, init) => {
     const prompt = JSON.parse(body.contents[0].parts[0].text);
     assert.deepEqual(prompt.previous, [], 'Test uses no user data or live private drafts');
     const explanation = body.generationConfig.responseJsonSchema.properties.exercises.items.properties.questions.items.properties.explanation;
+    const visual = body.generationConfig.responseJsonSchema.properties.exercises.items.properties.visual.properties;
+    assert.equal(visual.bars.minItems, DAILY_VISUAL_LIMITS.barsMin);
+    assert.equal(visual.bars.maxItems, DAILY_VISUAL_LIMITS.barsMax);
+    assert.equal(visual.bars.items.properties.value.minimum, 0);
+    assert.equal(visual.bars.items.properties.value.maximum, DAILY_VISUAL_LIMITS.valueMax);
+    assert.match(visual.caption.description, /10–240 characters/);
+    assert.match(visual.unit.description, /1–30 characters/);
+    assert.match(visual.bars.items.properties.label.description, /1–50 characters/);
+    assert.ok(prompt.instructions.some((s: string) => s.includes('never negative return bars')));
+    assert.doesNotMatch(JSON.stringify(body.generationConfig.responseJsonSchema), /minLength|maxLength/, 'Unsupported string constraints must not masquerade as enforced bounds');
     assert.equal(explanation.minItems, 2);
     assert.equal(explanation.maxItems, 2);
     const guide = body.generationConfig.responseJsonSchema.properties.exercises.items.properties.reflectionGuide;
@@ -131,3 +142,44 @@ assert.equal((await (await reportFailure(req())).json()).data.outcome, 'passed',
 assert.equal((await createDailyProbeHandler(options)(req())).status, 429, 'New handler instance cannot bypass existing admission');
 assert.match(runtime, /daily-practice-test-one-per-utc-day-v1/);
 console.log('PASS private Daily diagnostics: envelope/JSON/schema/source/category/repetition stages, truncation/token metadata, no prose/keys in logs or UI data, unchanged allowance and validation gates.');
+
+// Exercise 6 must reject every kind of malformed visual without losing which
+// field failed. Run through the real generator/probe with fixture HTTP only.
+const visualCases: [string, (visual: any) => void][] = [
+  ['VISUAL_CAPTION', v => { v.caption = 'short'; }],
+  ['VISUAL_CAPTION', v => { v.caption = 'x'.repeat(241); }],
+  ['VISUAL_UNIT', v => { v.unit = ''; }],
+  ['VISUAL_UNIT', v => { v.unit = 'x'.repeat(31); }],
+  ['VISUAL_BAR_COUNT', v => { v.bars = v.bars.slice(0, 1); }],
+  ['VISUAL_BAR_COUNT', v => { v.bars = Array.from({ length: 7 }, () => v.bars[0]); }],
+  ['VISUAL_BAR_LABEL', v => { v.bars[0].label = 'x'.repeat(51); }],
+  ['VISUAL_BAR_LABEL', v => { v.bars[0] = null; }],
+  ['VISUAL_BAR_VALUE', v => { v.bars[0].value = -0.01; }],
+  ['VISUAL_BAR_VALUE', v => { v.bars[0].value = 1e9 + 1; }],
+  ['VISUAL_BAR_VALUE', v => { v.bars[0].value = '100'; }],
+];
+for (const [rule, mutate] of visualCases) {
+  const items = structuredClone(exercises);
+  mutate(items[5].visual);
+  let calls = 0;
+  const diagnostic = createDailyProbeHandler({ ...options, admit: async () => true,
+    fetcher: async (input, init) => {
+      if (!String(input).includes('generativelanguage')) return upstream(input, init);
+      calls++;
+      return Response.json({ candidates: [{ finishReason: 'STOP', content: { parts: [{ text: JSON.stringify({ exercises: dailyProviderExercises(items) }) }] } }] });
+    } });
+  const result = await (await diagnostic(req())).json();
+  assert.equal(result.data.code, 'OUTPUT_VALIDATION_FAILED');
+  assert.equal(result.data.diagnostics.validation.exercise, 6);
+  assert.ok(result.data.diagnostics.validation.rules.includes(rule));
+  assert.ok(validProbeDiagnostics(result.data.diagnostics));
+  assert.equal(calls, 1, 'Invalid chart never triggers another provider call');
+  assert.equal(result.data.saved, false);
+  assert.doesNotMatch(JSON.stringify(result), /PRIVATE|Trusted fixture source text/);
+}
+const boundaryItems = structuredClone(exercises);
+boundaryItems[5].visual = { caption: 'Hypothetic', unit: '%', bars: [
+  { label: 'A', value: 0 }, { label: 'B', value: 1e9 },
+] };
+assert.deepEqual(validateExercises(boundaryItems, 10, 10), [], 'Zero and the upper chart limit remain valid');
+console.log('PASS Daily visual contract: caption/unit/count/label/value regressions at exercise 6, exact safe diagnostics, numeric boundary acceptance; fixture network only.');
