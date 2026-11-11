@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Flame, Trophy, ArrowRight, Sparkles } from "lucide-react";
-import { getTodayChallenge, getStreak, hasPlayedToday, getNextBadge, type StreakState } from "@/lib/dailyChallenge";
+import { getTodayChallenge, getStreak, hasPlayedToday, getNextBadge, DAILY_PROGRESS_EVENT, DAILY_PROGRESS_KEY, type StreakState } from "@/lib/dailyChallenge";
 import { cn } from "@/lib/utils";
 
 /**
@@ -14,8 +14,19 @@ export function DailyChallengeCard() {
   const challenge = getTodayChallenge();
 
   useEffect(() => {
-    setStreak(getStreak());
-    setPlayed(hasPlayedToday());
+    const refresh = () => { setStreak(getStreak()); setPlayed(hasPlayedToday()); };
+    const onStorage = (event: StorageEvent) => {
+      if (!event.key || event.key === DAILY_PROGRESS_KEY) refresh();
+    };
+    refresh();
+    window.addEventListener(DAILY_PROGRESS_EVENT, refresh);
+    window.addEventListener("storage", onStorage);
+    window.addEventListener("focus", refresh);
+    return () => {
+      window.removeEventListener(DAILY_PROGRESS_EVENT, refresh);
+      window.removeEventListener("storage", onStorage);
+      window.removeEventListener("focus", refresh);
+    };
   }, []);
 
   const nextBadge = streak ? getNextBadge(streak.longest) : null;

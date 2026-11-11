@@ -6,9 +6,7 @@ import { useCourseCatalog } from "@/hooks/useCourseCatalog";
 import { COURSE_PROGRESS_EVENT, COURSE_PROGRESS_KEY, loadProgress } from "@/lib/courseProgress";
 import { buildLearningOverview } from "@/lib/learningOverview";
 import { readJourney } from "@/lib/beginnerJourney";
-import { chooseMasteryNextAction } from "@/lib/masteryNextAction";
-import { hasPlayedQuickToday } from "@/lib/dailyChallenge";
-import { getPortfolio } from "@/lib/portfolio";
+import { useMasteryNextAction } from "@/hooks/useMasteryNextAction";
 
 /** Always choose from the *published* catalog, never the generated-draft queue.
  * Recompute on new lessons and preserved progress, including partial quizzes.
@@ -34,9 +32,7 @@ export function GuidedNextLesson() {
   const next = buildLearningOverview(tracks, progress, readJourney()).next;
   const hasCourseActivity = Object.values(progress.tracks).some(track =>
     Object.values(track.lessons).some(lesson => lesson.status === "completed" || lesson.status === "in-progress"));
-  const mastery = typeof window !== "undefined"
-    ? chooseMasteryNextAction(hasPlayedQuickToday(), getPortfolio().trades.length > 0)
-    : chooseMasteryNextAction(false, false);
+  const mastery = useMasteryNextAction();
   const action = next?.reason === "Resume your unfinished lesson" ? "Continue lesson"
     : hasCourseActivity ? "Take next lesson" : "Start your first lesson";
   if (!next) {

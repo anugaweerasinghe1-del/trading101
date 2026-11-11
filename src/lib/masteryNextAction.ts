@@ -16,3 +16,12 @@ export function chooseMasteryNextAction(playedToday: boolean, hasPracticeTrade: 
     reason: "You've practised today. Reflect on simulated positions and decisions before your next session.",
   };
 }
+
+/** An unavailable signed-in snapshot is not proof the learner has never traded. */
+export function chooseMasteryNextActionForTradeCount(playedToday: boolean, tradeCount: number | null): MasteryNextAction {
+  if (tradeCount === null && playedToday) return {
+    href: "/portfolio", label: "Check your saved portfolio",
+    reason: "Your account trade history is not yet available. Review it before choosing another virtual trade.",
+  };
+  return chooseMasteryNextAction(playedToday, (tradeCount ?? 0) > 0);
+}
