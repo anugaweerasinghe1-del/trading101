@@ -33,14 +33,14 @@ export default function AIMentor() {
   const { track, isPending: lessonPending } = useCourseDocument(trackSlug);
   const lesson = track?.lessons.find(item => item.slug === lessonSlug);
   const rawQuestion = searchParams.get("question");
-  const questionIndex = rawQuestion !== null && /^\\d{1,2}$/.test(rawQuestion) ? Number(rawQuestion) : -1;
+  const questionIndex = rawQuestion !== null && /^\d{1,2}$/.test(rawQuestion) ? Number(rawQuestion) : -1;
   const quiz = questionIndex >= 0 ? lesson?.quiz[questionIndex] : undefined;
   const lessonContext: MentorLessonContext | undefined = track && lesson ? {
     trackTitle: track.title,
     lessonTitle: lesson.title,
     summary: lesson.summary,
     takeaways: lesson.keyTakeaways,
-    workedExample: lesson.body.find(paragraph => /\\b(example|imagine|suppose|hypothetical)\\b/i.test(paragraph))?.slice(0, 900),
+    workedExample: lesson.body.find(paragraph => /\b(example|imagine|suppose|hypothetical)\b/i.test(paragraph))?.slice(0, 900),
     quiz: quiz ? { question: quiz.question, explanation: quiz.explanation } : undefined,
   } : undefined;
   const [level, setLevel] = useState<MentorLevel>("Beginner");
