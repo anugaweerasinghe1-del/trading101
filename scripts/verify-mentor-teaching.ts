@@ -14,6 +14,7 @@ const context = {
   summary: lesson.summary,
   takeaways: lesson.keyTakeaways,
   workedExample: lesson.body.find(text => /\b(example|imagine|suppose|hypothetical)\b/i.test(text)),
+  body: lesson.body,
   quiz: { question: lesson.quiz[0].question, explanation: lesson.quiz[0].explanation },
 };
 const beginner = getMentorTeachingReply("Explain this lesson in simple words", "Beginner", context);
@@ -29,16 +30,28 @@ const advanced = getMentorTeachingReply("Explain leverage", "Advanced");
 assert.match(advanced, /\$100 committed at 10× leverage/);
 assert.match(advanced, /assumptions, costs and failure cases/i);
 assert.match(advanced, /no leverage/i);
+const greeks = track.lessons.find(l => l.slug === "the-greeks-delta-gamma-theta-vega");
+assert.ok(greeks);
+const grounded = getMentorTeachingReply("What does gamma mean?", "Advanced", {
+  trackTitle: track.title, lessonTitle: greeks.title, summary: greeks.summary,
+  takeaways: greeks.keyTakeaways, body: greeks.body,
+});
+assert.match(grounded, /published .* lesson/i);
+assert.match(grounded, /Gamma measures how delta changes/i);
+const followUp = getMentorTeachingReply("Explain it more simply", "Beginner", undefined, [
+  {role:"user",content:"What is slippage?"},{role:"assistant",content:"A spread example"},
+]);
+assert.match(followUp, /\$50\.25/);
 const unknown = getMentorTeachingReply("What will MYX token be worth tomorrow?", "Advanced", context);
 assert.match(unknown, /don't have a verified authored answer/);
 assert.doesNotMatch(unknown, /will (rise|fall) tomorrow/i);
-for (const result of [beginner,quizHelp,intermediate,advanced,unknown]) {
+for (const result of [beginner,quizHelp,intermediate,advanced,grounded,followUp,unknown]) {
   assert.match(result, /not financial advice/);
 }
 const mentorPage = readFileSync("src/pages/AIMentor.tsx","utf8");
 const lessonPage = readFileSync("src/pages/CourseLesson.tsx","utf8");
 assert.match(mentorPage,/useCourseDocument\(trackSlug\)/);
-assert.match(mentorPage,/getMentorTeachingReply\(messageText, level, lessonContext\)/);
+assert.match(mentorPage,/getMentorTeachingReply\(messageText, level, lessonContext, messages\)/);
 assert.match(mentorPage,/You choose your level/);
 assert.match(lessonPage,/question=\$\{qi\}/);
 assert.match(lessonPage,/to=\{mentorPath\}/);
