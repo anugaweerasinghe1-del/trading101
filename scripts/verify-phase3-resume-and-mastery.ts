@@ -17,6 +17,7 @@ const journey: BeginnerJourneyProgress = {
 };
 assert.equal(chooseCourseContinuation(tracks,progress,journey),null,"No fake resume on a fresh account");
 assert.equal(chooseReturnDestination(tracks,progress,journey,"/portfolio")?.href,"/portfolio");
+assert.equal(chooseReturnDestination(tracks,progress,journey,"/trade")?.href,"/trade","Remember the main practice terminal");
 assert.equal(chooseReturnDestination(tracks,progress,journey,"//phishing.example"),null);
 assert.equal(chooseReturnDestination(tracks,progress,journey,"/courses/removed/quiz")?.href,"/courses");
 progress.tracks.base = { lessons: { one: { status:"completed" }, two: { status:"in-progress",scrolledPct:60 } } };

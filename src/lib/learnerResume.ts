@@ -21,7 +21,7 @@ export function chooseCourseContinuation(
 export interface ReturnDestination { href: string; label: string }
 
 function safePreviousRoute(path: string): boolean {
-  return /^\/(?:trade\/[a-z0-9-]+|wiki\/[a-z0-9-]+|learn(?:\/[a-z0-9-]+)?|portfolio|leaderboard|markets|daily|practice|start|ai-mentor)$/i.test(path);
+  return /^\/(?:trade(?:\/[a-z0-9-]+)?|wiki\/[a-z0-9-]+|learn(?:\/[a-z0-9-]+)?|portfolio|leaderboard|markets|daily|practice|start|ai-mentor)$/i.test(path);
 }
 
 /** An old route can disappear; course links must always use the current approved catalog. */
@@ -47,7 +47,7 @@ export function chooseReturnDestination(
   if (previousRoute.startsWith("/wiki/")) return { href: previousRoute, label: "the wiki entry you were reading" };
   if (previousRoute.startsWith("/learn")) return { href: previousRoute, label: "your learning page" };
   const labels: Record<string, string> = {
-    "/portfolio": "your portfolio", "/leaderboard": "the leaderboard", "/markets": "the markets page",
+    "/trade": "the virtual trading terminal", "/portfolio": "your portfolio", "/leaderboard": "the leaderboard", "/markets": "the markets page",
     "/daily": "Daily Practice", "/practice": "Practice Arena", "/start": "Start Here",
     "/ai-mentor": "the learning Mentor",
   };
