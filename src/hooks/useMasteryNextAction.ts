@@ -33,7 +33,7 @@ export function useMasteryNextAction() {
       window.removeEventListener("storage", onStorage);
       window.removeEventListener("focus", refresh);
     };
-  }, []);
+  }, [user?.id]);
 
   const tradeCount = user ? (account?.portfolio?.trades.length ?? null) : localActivity.guestTrades;
   return chooseMasteryNextActionForTradeCount(localActivity.playedToday, tradeCount);

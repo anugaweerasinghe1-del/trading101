@@ -45,6 +45,7 @@ assert.match(guided,/useMasteryNextAction\(\)/);
 assert.match(hook,/getAccountPortfolio\(user\?\.id\)/);
 assert.match(hook,/subscribeAccountPortfolio/);
 assert.match(hook,/DAILY_PROGRESS_EVENT/);
+assert.match(hook,/hasPlayedToday\(\)/, "Completed long case study counts as today's practice");
 assert.match(daily,/window\.dispatchEvent\(new Event\(DAILY_PROGRESS_EVENT\)\)/);
 assert.match(courses,/to=\{resume\.href\}/);
 assert.match(banner,/chooseReturnDestination/);
