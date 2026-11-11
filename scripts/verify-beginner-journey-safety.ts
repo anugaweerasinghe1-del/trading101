@@ -67,7 +67,7 @@ assert.match(start,/useCourseCatalog\(\)/);
 assert.match(start,/buildLearningOverview\(tracks, courseProgress, progress\)/);
 assert.match(start,/COURSE_PROGRESS_EVENT/);
 assert.match(start,/to="\/daily"/);
-assert.match(start,/hasPlayedQuickToday\(\)/, "New learners start with general Daily Practice before the guided lesson");
+assert.match(start,/hasPlayedToday\(\)/, "Both quick and full Daily Practice count before the guided lesson");
 assert.match(start,/Your next step/, "Completed first-trade pathway has one primary action");
 assert.match(start,/Other activities \(optional\)/, "Secondary activities are progressively disclosed");
 assert.doesNotMatch(start,/Next lesson: risk/, "No competing hard-coded risk lesson after completing the guided trade");

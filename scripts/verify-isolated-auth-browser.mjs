@@ -1035,6 +1035,8 @@ async function main(){
       }else if(i<9){await dailyClick("Next question");}
     }
     await wait(()=>devtools.evaluate("document.querySelector('#deeper-practice').textContent.includes('Case complete')"),"completed case score");
+    const dailyGuide = "document.querySelector('section[aria-label=\\\"Your recommended next step\\\"] a[href=\\\"/start\\\"]')";
+    await wait(()=>devtools.evaluate("!!"+dailyGuide),"Completed full Daily case must offer Start Here as the primary guided next step");
     const dailyNextLesson = "document.querySelector('section[aria-labelledby=daily-next-lesson] a[href^=\"/courses/\"]')";
     await wait(()=>devtools.evaluate("!!"+dailyNextLesson),"Daily completion offers the next approved lesson");
     const complete=await stored();assert.equal(complete.answers.length,10);assert.equal(complete.answers[0],1);assert.ok(complete.answers.slice(1).every(a=>a===0));

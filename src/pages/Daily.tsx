@@ -317,14 +317,14 @@ export default function Daily() {
                 </div>
               )}
 
-              {submitted && guidedStage < 4 && (
+              {streak?.lastCompletedDate === date && guidedStage < 4 && (
                 <section aria-label="Your recommended next step" className="rounded-2xl border border-primary/40 bg-primary/5 p-5 space-y-3">
                   <p className="text-xs font-semibold uppercase tracking-widest text-primary">Your next step</p>
                   <h3 className="text-lg font-semibold">
                     {guidedStage === 0 ? "Understand your first virtual order" : guidedStage === 1 ? "Try your first virtual trade" : "Reflect on your first virtual trade"}
                   </h3>
                   <p className="text-sm text-foreground/70">
-                    {guidedStage === 0 ? "You've tried a daily scenario. Continue the guided explanation before placing a virtual trade." : guidedStage === 1 ? "Your first explanation is complete. You can now explore a voluntary virtual order, with no real money involved." : "Review the saved transaction and record what you learned before moving to another lesson."}
+                    {guidedStage === 0 ? "You've completed Daily Practice. Continue the guided explanation before placing a virtual trade." : guidedStage === 1 ? "Your first explanation is complete. You can now explore a voluntary virtual order, with no real money involved." : "Review the saved transaction and record what you learned before moving to another lesson."}
                   </p>
                   <Link to={guidedStage === 1 ? "/trade?journey=1" : "/start"} className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground">
                     {guidedStage === 0 ? "Continue guided learning" : guidedStage === 1 ? "Open guided trading terminal" : "Continue guided reflection"} <ArrowRight className="w-4 h-4" />
