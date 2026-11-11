@@ -42,5 +42,15 @@ export async function verifyMentorCopy({send,evaluate,waitUntil,origin,delay}) {
       if(path==='/trade/btc') await evaluate(`document.querySelector('button[aria-label="Close portfolio educational mentor"]').click();true`);
     }
   }
+  // Phase 2: a public, approved course hands off real lesson and quiz context.
+  await send('Page.navigate',{url:origin+'/ai-mentor?track=options-trading-fundamentals&lesson=what-is-an-option&question=0'});
+  await waitUntil(`!!document.querySelector('input[aria-label="Trading concept question"]') && document.querySelector('main')?.innerText.includes('Studying: What Is an Option?')`,'Published lesson mentor handoff');
+  assert.equal(await evaluate(`document.querySelector('[aria-label="Current lesson help"]')?.innerText.includes('Options Trading Fundamentals')`),true);
+  await evaluate(`[...document.querySelectorAll('main button')].find(b=>b.innerText.includes('Explain my quiz question')).click();true`);
+  await waitUntil(`document.querySelector('main')?.innerText.includes('A standard unadjusted US equity option generally covers 100 shares')`,'Authored quiz reasoning travels into mentor');
+  await send('Emulation.setDeviceMetricsOverride',{width:360,height:800,deviceScaleFactor:1,mobile:true});
+  await waitUntil(`innerWidth===360`,'Context mentor mobile viewport');
+  assert.equal(await evaluate(`document.documentElement.scrollWidth>innerWidth+1`),false,'Context mentor must fit a 360px viewport');
+  checked++;
   console.log('PASS mentor plain-text copy: '+checked+' public/portfolio width/theme states; disclaimers and numeric labels preserved; no trade/account action');
 }

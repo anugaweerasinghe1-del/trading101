@@ -6,9 +6,11 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Send, Bot, User, Sparkles, TrendingUp, BookOpen, Shield, Brain } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
+import { useCourseDocument } from "@/hooks/useCourseCatalog";
+import { getMentorTeachingReply, type MentorLevel, type MentorLessonContext } from "@/lib/mentorTeaching";
 import { SEOSection } from "@/components/SEOSection";
-import { getAIReply, MENTOR_SUGGESTIONS } from "@/lib/smartMentor";
+import { MENTOR_SUGGESTIONS } from "@/lib/smartMentor";
 import { EducationalDisclaimer } from "@/components/EducationalDisclaimer";
 
 interface Message {
@@ -23,6 +25,27 @@ const SUGGESTED_QUESTIONS = MENTOR_SUGGESTIONS.map((text, i) => ({
 }));
 
 export default function AIMentor() {
+  const [searchParams] = useSearchParams();
+  const rawTrackSlug = searchParams.get("track") ?? "";
+  const trackSlug = /^[a-z0-9-]{1,90}$/.test(rawTrackSlug) ? rawTrackSlug : undefined;
+  const rawLessonSlug = searchParams.get("lesson") ?? "";
+  const lessonSlug = /^[a-z0-9-]{1,90}$/.test(rawLessonSlug) ? rawLessonSlug : undefined;
+  const { track, isPending: lessonPending } = useCourseDocument(trackSlug);
+  const lesson = track?.lessons.find(item => item.slug === lessonSlug);
+  const rawQuestion = searchParams.get("question");
+  const questionIndex = rawQuestion !== null && /^\d{1,2}$/.test(rawQuestion) ? Number(rawQuestion) : -1;
+  const quiz = questionIndex >= 0 ? lesson?.quiz[questionIndex] : undefined;
+  const lessonContext: MentorLessonContext | undefined = track && lesson ? {
+    trackTitle: track.title,
+    lessonTitle: lesson.title,
+    summary: lesson.summary,
+    takeaways: lesson.keyTakeaways,
+    workedExample: lesson.body.find(paragraph => /\b(example|imagine|suppose|hypothetical)\b/i.test(paragraph))?.slice(0, 900),
+    body: lesson.body,
+    quiz: quiz ? { question: quiz.question, explanation: quiz.explanation } : undefined,
+  } : undefined;
+  const [level, setLevel] = useState<MentorLevel>("Beginner");
+  useEffect(() => { if (track?.level) setLevel(track.level); }, [track?.level]);
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
@@ -44,12 +67,11 @@ export default function AIMentor() {
     if (!messageText.trim() || isLoading) return;
 
     const userMessage: Message = { role: "user", content: messageText };
-    const history = messages.map((m) => ({ role: m.role, content: m.content }));
     setMessages(prev => [...prev, userMessage]);
     setInput("");
     setIsLoading(true);
 
-    const reply = await getAIReply(messageText, { history });
+    const reply = getMentorTeachingReply(messageText, level, lessonContext, messages);
     setMessages(prev => [...prev, { role: "assistant", content: reply }]);
     setIsLoading(false);
   };
@@ -98,6 +120,33 @@ export default function AIMentor() {
             </p>
           </div>
 
+          {/* Lessons are retrieved from approved public course documents, not query-string text. */}
+          {trackSlug && (
+            <section aria-label="Current lesson help" className="mb-5 rounded-xl border border-border bg-muted/30 p-4 text-sm">
+              {lessonPending && !lesson ? <p role="status">Loading approved lesson context…</p> : lesson && track ? (
+                <>
+                  <p className="font-semibold">Studying: {lesson.title}</p>
+                  <p className="text-muted-foreground mt-1">{track.title} · {track.level} course</p>
+                  <div className="flex flex-wrap items-center gap-3 mt-3">
+                    <Button type="button" size="sm" variant="outline" onClick={() => void sendMessage(quiz ? "Explain this quiz answer" : "Explain this lesson in simple words")}>
+                      {quiz ? "Explain my quiz question" : "Explain this lesson"}
+                    </Button>
+                    <Link className="text-primary underline underline-offset-4" to={`/courses/${track.slug}/${lesson.slug}`}>Return to lesson</Link>
+                  </div>
+                </>
+              ) : <p role="status">That lesson is unavailable or not published. You can still ask about supported trading concepts.</p>}
+            </section>
+          )}
+          <div className="mb-4 flex flex-wrap items-center gap-3">
+            <label htmlFor="mentor-explanation-level" className="text-sm font-medium">Explanation depth</label>
+            <select id="mentor-explanation-level" value={level} onChange={event => setLevel(event.target.value as MentorLevel)}
+              className="rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground min-h-11">
+              <option value="Beginner">Beginner · plain language</option>
+              <option value="Intermediate">Intermediate · application</option>
+              <option value="Advanced">Advanced · assumptions</option>
+            </select>
+            <span className="text-xs text-muted-foreground">You choose your level; no proficiency is inferred.</span>
+          </div>
           {/* Chat Area */}
           <Card className="flex-1 flex flex-col glass-panel border-white/10 overflow-hidden animate-scale-in">
             <ScrollArea className="flex-1 p-4" ref={scrollRef}>
@@ -209,12 +258,12 @@ export default function AIMentor() {
               {
                 question: "What is the TradeHQ AI Mentor?",
                 answer:
-                  "An educational mentor using a labelled built-in library of authored answers and topic matching. It makes no AI API request. It explains trading concepts; it does not assess whether a real-money trade suits you.",
+                  "An educational mentor using a built-in library of authored answers and topic matching. Open it from a published lesson or quiz to use that context and choose an explanation level. It makes no AI API request or real-money trade recommendations.",
               },
               {
                 question: "Can the AI Mentor predict prices?",
                 answer:
-                  "No. This chat matches questions to a built-in educational answer library. It does not read your journal or trade history, forecast prices or assess whether an investment suits you.",
+                  "No. This chat uses predefined explanations and approved public lesson text when opened from a lesson. It does not read your private journal or trade history, forecast prices or assess whether an investment suits you.",
               },
               {
                 question: "Is the AI Mentor free?",

@@ -59,6 +59,7 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
   }, [track.slug, lesson.slug]);
 
   const path = `/courses/${track.slug}/${lesson.slug}`;
+  const mentorPath = `/ai-mentor?track=${encodeURIComponent(track.slug)}&lesson=${encodeURIComponent(lesson.slug)}`;
   const integratedLesson = hasIntegratedCourseLesson(path);
   const url = `${DOMAIN}${path}`;
   const title = `${lesson.title} — ${track.title} | TradeHQ`;
@@ -222,7 +223,7 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
             </ul>
           </Card>
 
-          <Link to="/ai-mentor" target="_blank" rel="noopener" className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline">
+          <Link to={mentorPath} target="_blank" rel="noopener" className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline">
             <Bot className="w-4 h-4" /> Ask the learning mentor (opens in a new tab)
           </Link>
 
@@ -268,6 +269,10 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
                   {submitted && (
                     <p className="mt-3 text-xs text-muted-foreground">
                       <strong className="text-foreground">Explanation:</strong> {q.explanation}
+                      <Link to={`${mentorPath}&question=${qi}`} target="_blank" rel="noopener"
+                        className="mt-2 block text-primary underline underline-offset-4">
+                        Need a simpler explanation? Ask the learning mentor
+                      </Link>
                     </p>
                   )}
                 </Card>
