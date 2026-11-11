@@ -38,6 +38,7 @@ function matchingTopic(input: string) {
 
 /** Option contracts and ordinary questions must not be confused with quiz answers. */
 function asksForQuizHelp(text: string): boolean {
+  if (/\bnot (?:my |the |this )?(?:quiz|answer)\b/.test(text)) return false;
   return /\bquiz\b|\b(?:correct|wrong|incorrect|my|the|this|that) answer\b|\b(?:this|that|my) question\b|\bwhich (?:answer|option|choice)\b|\b(?:correct|wrong|incorrect) (?:choice|option)\b|\boption [a-d0-9]\b|\banswer (?:was|is) (?:right|wrong|incorrect|correct)\b/.test(text);
 }
 
