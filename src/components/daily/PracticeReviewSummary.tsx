@@ -24,7 +24,7 @@ export function PracticeReviewSummary({ exercises, historicalExercises = [], onI
     <div><h2 className="font-semibold">Review overview</h2><p className="mt-1 text-sm text-muted-foreground">{exercises.length} exercises · {exercises.reduce((total, exercise) => total + exercise.questions.length, 0)} scored questions · {findings.length} wording checks to inspect</p></div>
     <ul className="flex flex-wrap gap-x-5 gap-y-2 text-xs text-muted-foreground" aria-label="Category coverage">{DAILY_CATEGORIES.map(category => <li key={category}>{category}: {exercises.filter(exercise => exercise.category === category).length}</li>)}</ul>
     <p className="text-xs text-muted-foreground leading-relaxed">These local wording checks can miss duplicates or flag useful repetition. They do not verify facts, calculations, source relevance or correct answers. Review each answer beside its explanation before approval.</p>
-    {historicalMatches.length > 0 && <aside role="status" className="rounded-xl border border-amber-500/25 p-3 space-y-2">
+    {historicalMatches.length > 0 && <div role="status" className="rounded-xl border border-amber-500/25 p-3 space-y-2">
       <p className="text-sm font-semibold">Historical question wording: {historicalMatches.length} exact matches</p>
       <p className="text-xs text-muted-foreground">These are editorial flags, not automatic proof that the case or answer is duplicated. Compare each question with earlier approved practice and edit if it repeats the same teaching point.</p>
       <ul className="space-y-1">{(showAllHistory ? historicalMatches : historicalMatches.slice(0, 8)).map(match =>
@@ -33,7 +33,7 @@ export function PracticeReviewSummary({ exercises, historicalExercises = [], onI
       )}</ul>
       {historicalMatches.length > 8 && <button type="button" className="text-xs text-primary underline"
         onClick={() => setShowAllHistory(!showAllHistory)}>{showAllHistory ? 'Show fewer matches' : 'Show all ' + historicalMatches.length + ' matches'}</button>}
-    </aside>}
+    </div>}
     {findings.length ? <><ul className="space-y-3">{(showAll ? findings : findings.slice(0, 8)).map((finding, i) => <li key={i} className="text-sm border-t border-white/10 pt-3">
       <button type="button" className="text-primary underline text-left" onClick={() => onInspect(finding.exerciseIndex)}>Inspect exercise {finding.exerciseIndex + 1}: {exercises[finding.exerciseIndex].title}</button>
       <p className="mt-1 text-muted-foreground">{describe(finding)}</p>
