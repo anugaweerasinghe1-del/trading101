@@ -92,9 +92,13 @@ export async function generatePractice(claim: PracticeClaim, fetcher = fetch) {
   if (repeated) throw new Error('Daily content repeats an exercise in this part or an existing bank (' +
     'case ' + (repeated.caseIndex + 1) + ', ' + repeated.kind + ', ' + repeated.location +
     ' #' + (repeated.relatedIndex + 1) + '). No content was saved.');
-  const repeatedQuestion = items.findIndex(e => e.questions.some(q => prompts.has(normalized(q.prompt))));
-  if (repeatedQuestion !== -1) throw new Error('Daily content repeats a historical question prompt (case ' +
-    (repeatedQuestion + 1) + '). No content was saved.');
+  // Reused general question wording across old banks is an editorial concern,
+  // not grounds to discard 100 otherwise-valid questions and spend another
+  // provider request. Exact repeats *within this new part* still fail the
+  // structural validator. Case/title near-copies still fail above.
+  const historicalQuestionMatches = items.flatMap((exercise, caseIndex) =>
+    exercise.questions.flatMap((question, questionIndex) =>
+      prompts.has(normalized(question.prompt)) ? [{ caseIndex: caseIndex + 1, questionIndex: questionIndex + 1 }] : []));
   // Provider usage applies only to this successful ten-exercise part. Earlier parts
   // are not included in the final draft's research record; never report a cycle total.
   const usage = output.usageMetadata;
@@ -106,5 +110,10 @@ export async function generatePractice(claim: PracticeClaim, fetcher = fetch) {
   return { exercises: items, research: { model: claim.model, generatedAt: new Date().toISOString(), aiAssisted: true,
     usage: recordedUsage,
     sources: references.map(({ label, url, checkedAt }) => ({ label, url, checkedAt })),
-    checks: ['Structure, lengths, source allowlist, answer bounds and repetition checks passed.', 'Owner must review facts, originality, arithmetic and answer agreement before publishing.'] } };
+    checks: ['Structure, lengths, source allowlist, answer bounds and case near-copy checks passed.',
+      historicalQuestionMatches.length
+        ? 'Editorial warning: ' + historicalQuestionMatches.length + ' question prompts match historical wording in this part (cases/questions ' +
+          historicalQuestionMatches.map(match => match.caseIndex + '/' + match.questionIndex).join(', ') + '). Review and edit any reused teaching points before approval.'
+        : 'No exact historical question wording matches in this part.',
+      'Owner must review facts, originality, arithmetic, question reuse and answer agreement before publishing.'] } };
 }
