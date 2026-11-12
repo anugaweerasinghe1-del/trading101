@@ -111,7 +111,7 @@ export async function generatePractice(claim: PracticeClaim, fetcher = fetch) {
       'Return only the structured object. Unique hyphenated IDs include the period and part; keep all titles and prompts distinct from every previous item. No reviewer metadata: owner approval happens separately.',
     ],
   };
-  const schema = obj({ exercises: { type: 'array', items: obj({
+  const schema = obj({ exercises: { type: 'array', minItems: 10, maxItems: 10, items: obj({
     id: boundedText(1, 90, 'Unique lowercase letters, digits and hyphens only.'), title: boundedText(8, 120, 'Distinct case title.'), category: { ...str, enum: [...DAILY_CATEGORIES] }, scenario: boundedText(180, 5000, 'Substantial hypothetical case following the scenario word target.'),
     visual: obj({
       caption: boundedText(visualLimits.captionMin, visualLimits.captionMax, 'Short caption identifying hypothetical inputs, not live data.'),
@@ -120,7 +120,7 @@ export async function generatePractice(claim: PracticeClaim, fetcher = fetch) {
         items: obj({ label: boundedText(visualLimits.labelMin, visualLimits.labelMax, 'Precise short bar label.'),
           value: { type: 'number', minimum: visualLimits.valueMin, maximum: visualLimits.valueMax } }) },
     }),
-    questions: { type: 'array', items: obj({ prompt: boundedText(12, 450, 'Distinct scored question.'), options: { type: 'array', items: boundedText(1, 350, 'Distinct answer option.') }, correctAnswer: { type: 'integer', minimum: 0, maximum: 2 }, explanation: pair(explanationParts) }) },
+    questions: { type: 'array', minItems: 10, maxItems: 10, items: obj({ prompt: boundedText(12, 450, 'Distinct scored question.'), options: { type: 'array', minItems: 3, maxItems: 3, items: boundedText(1, 350, 'Distinct answer option.') }, correctAnswer: { type: 'integer', minimum: 0, maximum: 2 }, explanation: pair(explanationParts) }) },
     reflection: { ...str, description: "One case-specific reflection question, about 50–120 characters." }, reflectionGuide: pair(guideParts),
     // The provider may SELECT a source but cannot invent its URL. The enum comes
     // from the subset that was actually fetched successfully for this request.
