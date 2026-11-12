@@ -157,6 +157,10 @@ const claim = { lease: id, effectiveFrom: '2026-12-09', apiKey: 'test-only', mod
 const fetcher = (async (url: string | URL | Request, init?: RequestInit) => {
  if (String(url).includes('generativelanguage')) { calls++; assert.ok(!String(url).includes(claim.apiKey)); assert.equal(init?.redirect, 'error');
   const b = JSON.parse(String(init?.body)); assert.ok(b.generationConfig.responseJsonSchema); assert.equal(b.contents.length, 1);
+  const sourceEnum = b.generationConfig.responseJsonSchema.properties.exercises.items.properties.sources.items.properties.url.enum;
+  assert.ok(Array.isArray(sourceEnum) && sourceEnum.length >= 2);
+  assert.ok(sourceEnum.includes('https://www.investor.gov/introduction-investing'));
+  assert.equal(new Set(sourceEnum).size, sourceEnum.length, 'Only unique reachable canonical URLs belong in the provider schema');
   // Google's direct REST ThinkingLevel enum uses uppercase names.
   assert.equal(b.generationConfig.thinkingConfig.thinkingLevel, 'LOW');
   return new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: JSON.stringify({ exercises: dailyProviderExercises(chunk(0)) }) }] } }],
