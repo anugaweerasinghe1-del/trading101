@@ -75,7 +75,7 @@ Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/c
 
 ## Publishing What’s New
 
-Approved course publications appear automatically from the public course catalog. For a user-facing site change, add a dated entry to [releaseNotes.ts](src/lib/releaseNotes.ts) in the same pull request as the change. Write the benefit in plain language and link to the affected page. The normal site deployment publishes the entry in both the interactive timeline and prerendered page.
+Approved published courses flow into the journey and What’s New automatically from the public catalog; unapproved AI drafts never appear. Major user-facing product releases use the owner-reviewed [approved release manifest](src/content/releases/approved.json), which is bundled only by the deployment containing that change. Set `announce: true` for a recent, dismissible once-per-browser popup; otherwise the entry remains in the timeline without a popup. Keep a stable ID, date, plain-language benefit, valid page link, and action. Routine fixes, individual daily exercises and unpublished features are not announced. Never infer approvals from every code commit. Older entries remain in [releaseNotes.ts](src/lib/releaseNotes.ts).
 
 ## Advertising audience decision required before activation
 

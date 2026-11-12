@@ -1,4 +1,5 @@
 import type { Trade } from "./types";
+import { trackConsentedJourneyProgress } from "./journeyTelemetry";
 
 export const JOURNEY_KEY = "tradehq:beginner-journey:v1";
 export const JOURNEY_EVENT = "tradehq:journey-updated";
@@ -46,9 +47,13 @@ export function replaceJourneySnapshot(data: BeginnerJourneyProgress) {
 }
 
 export function saveJourney(patch: Partial<BeginnerJourneyProgress>) {
-  const next = { ...readJourney(), ...patch, version: 1 as const, updatedAt: new Date().toISOString() };
-  try { localStorage.setItem(JOURNEY_KEY, JSON.stringify(next)); }
+  const previous = readJourney();
+  const next = { ...previous, ...patch, version: 1 as const, updatedAt: new Date().toISOString() };
+  let saved = false;
+  try { localStorage.setItem(JOURNEY_KEY, JSON.stringify(next)); saved = true; }
   catch { /* Browser storage could be disabled; don't misrepresent durability. */ }
+  // Never count a failed write as a completed learning milestone.
+  if (saved) trackConsentedJourneyProgress(previous, next);
   if (typeof window !== "undefined") window.dispatchEvent(new Event(JOURNEY_EVENT));
   return next;
 }

@@ -3,10 +3,11 @@ import { useAuth } from "@/hooks/useAuth";
 import { hasPlayedToday, DAILY_PROGRESS_EVENT } from "@/lib/dailyChallenge";
 import { getPortfolio } from "@/lib/portfolio";
 import { getAccountPortfolio, subscribeAccountPortfolio } from "@/lib/cloudPortfolio";
-import { chooseMasteryNextActionForTradeCount } from "@/lib/masteryNextAction";
+import { chooseMasteryNextActionForTradeCount, missedDailyCaseAnswers } from "@/lib/masteryNextAction";
+import { readPractice } from "@/lib/dailyPracticeProgress";
 
 function readLocalActivity() {
-  return { playedToday: hasPlayedToday(), guestTrades: getPortfolio().trades.length };
+  return { playedToday: hasPlayedToday(), guestTrades: getPortfolio().trades.length, reviewMistakes: missedDailyCaseAnswers(readPractice()) };
 }
 
 /** One account-aware, reactive mastery recommendation for Learn and Daily pages. */
@@ -36,5 +37,5 @@ export function useMasteryNextAction() {
   }, [user?.id]);
 
   const tradeCount = user ? (account?.portfolio?.trades.length ?? null) : localActivity.guestTrades;
-  return chooseMasteryNextActionForTradeCount(localActivity.playedToday, tradeCount);
+  return { ...chooseMasteryNextActionForTradeCount(localActivity.playedToday, tradeCount), reviewMistakes: localActivity.reviewMistakes };
 }
