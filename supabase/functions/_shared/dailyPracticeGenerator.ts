@@ -82,6 +82,30 @@ export async function generatePractice(claim: PracticeClaim, fetcher = fetch) {
   let items: DailyExercise[];
   try { items = assembleDailyExercises(JSON.parse(output.candidates?.[0]?.content?.parts?.filter((p: { thought?: boolean }) => !p.thought).map((p: { text?: string }) => p.text ?? '').join('') ?? '').exercises) as DailyExercise[]; }
   catch { throw new Error('Gemini returned incomplete output. No content was published.'); }
+  // Distinct scenarios may use a common generic question. Contextualize an
+  // identical cross-case prompt with the unique scenario title so it refers
+  // clearly to its own numerical case. Repeated questions WITHIN the same case
+  // remain unchanged and must fail the validator below.
+  const seenPrompts = new Map<string, string>();
+  for (const prior of claim.exercises) {
+    for (const question of prior.questions) seenPrompts.set(normalized(question.prompt), prior.id);
+  }
+  const contextualizedQuestions: { caseIndex: number; questionIndex: number }[] = [];
+  for (const [caseIndex, exercise] of items.entries()) {
+    const localPrompts = new Set<string>();
+    for (const [questionIndex, question] of exercise.questions.entries()) {
+      const key = normalized(question.prompt);
+      if (localPrompts.has(key)) continue; // Same-case repeats must be rejected.
+      localPrompts.add(key);
+      if (seenPrompts.has(key)) {
+        const contextualized = 'For the "' + exercise.title + '" case: ' + question.prompt;
+        if (contextualized.length <= 450 && normalized(contextualized) !== key)
+          question.prompt = contextualized;
+        contextualizedQuestions.push({ caseIndex: caseIndex + 1, questionIndex: questionIndex + 1 });
+      }
+      seenPrompts.set(normalized(question.prompt), exercise.id);
+    }
+  }
   const errors = validateExercises(items, 10, 10);
   if (errors.length) throw new Error('Daily validation failed: ' + errors.slice(0, 2).join(' '));
   const urls = new Set(references.map(r => r.url));
@@ -111,6 +135,10 @@ export async function generatePractice(claim: PracticeClaim, fetcher = fetch) {
     usage: recordedUsage,
     sources: references.map(({ label, url, checkedAt }) => ({ label, url, checkedAt })),
     checks: ['Structure, lengths, source allowlist, answer bounds and case near-copy checks passed.',
+      contextualizedQuestions.length
+        ? 'Editorial warning: ' + contextualizedQuestions.length + ' cross-case question prompts required case-specific context (cases/questions ' +
+          contextualizedQuestions.map(match => match.caseIndex + '/' + match.questionIndex).join(', ') + '). Compare teaching points before approval.'
+        : 'No cross-case question prompts required contextualization.',
       historicalQuestionMatches.length
         ? 'Editorial warning: ' + historicalQuestionMatches.length + ' question prompts match historical wording in this part (cases/questions ' +
           historicalQuestionMatches.map(match => match.caseIndex + '/' + match.questionIndex).join(', ') + '). Review and edit any reused teaching points before approval.'
