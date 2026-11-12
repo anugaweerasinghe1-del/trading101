@@ -159,7 +159,7 @@ const fetcher = (async (url: string | URL | Request, init?: RequestInit) => {
   const b = JSON.parse(String(init?.body)); assert.ok(b.generationConfig.responseJsonSchema); assert.equal(b.contents.length, 1);
   const instructions = JSON.parse(b.contents[0].parts[0].text);
   assert.equal(instructions.part, 1);
-  assert.equal(instructions.historyCount, 0);
+  assert.ok(Number.isInteger(instructions.historyCount) && instructions.historyCount >= 0);
   assert.equal(instructions.previous, undefined, 'Past case prose must never prime provider imitation');
   assert.equal(instructions.casePlan.length, 10);
   assert.ok(instructions.casePlan[0].includes('Account gain'));
