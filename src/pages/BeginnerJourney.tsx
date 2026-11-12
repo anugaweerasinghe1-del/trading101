@@ -10,8 +10,6 @@ import { getPortfolio } from "@/lib/portfolio";
 import { loadArena } from "@/lib/practiceArena";
 import { JOURNEY_EVENT, journeyStage, readJourney, saveJourney } from "@/lib/beginnerJourney";
 import { COURSE_PROGRESS_EVENT, COURSE_PROGRESS_KEY, loadProgress } from "@/lib/courseProgress";
-import { ARENA_READY_EVENT } from "@/lib/arenaTelemetry";
-import { recordConsentedJourneyVisit } from "@/lib/journeyTelemetry";
 import { buildLearningOverview } from "@/lib/learningOverview";
 import { useCourseCatalog } from "@/hooks/useCourseCatalog";
 import { DAILY_PROGRESS_EVENT, DAILY_PROGRESS_KEY, hasPlayedToday } from "@/lib/dailyChallenge";
@@ -43,13 +41,6 @@ export default function BeginnerJourney() {
   const beginnerWarmupCompleted = Boolean(arenaWarmup.completions["first-order"]);
   const beginnerWarmupInProgress = Boolean(arenaWarmup.active?.scenarioId === "first-order" &&
     !arenaWarmup.active.finishedAt && arenaWarmup.active.decisions.length > 0);
-
-  useEffect(() => {
-    const report = () => { recordConsentedJourneyVisit(); };
-    report();
-    window.addEventListener(ARENA_READY_EVENT, report);
-    return () => window.removeEventListener(ARENA_READY_EVENT, report);
-  }, []);
 
   useEffect(() => {
     const refresh = () => {
