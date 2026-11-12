@@ -11,20 +11,45 @@ export interface PracticeReviewFinding {
 
 const words = (value: string) => new Set(normalized(value).split(' ').filter(word => word.length > 3));
 const overlap = (a: Set<string>, b: Set<string>) => [...a].filter(word => b.has(word)).length / Math.max(a.size, b.size, 1);
-/** Wording overlap, not a factual, mathematical or semantic quality judgement. */
+const phrases = (value: string) => {
+  const tokens = normalized(value).split(' ').filter(word => word.length > 3);
+  return new Set(tokens.slice(1).map((word, index) => tokens[index] + ' ' + word));
+};
+/** Wording overlap for editorial triage, NOT an automatic rejection criterion. */
 export function similarPracticeScenarios(a: string, b: string): boolean {
   return overlap(words(a), words(b)) > 0.72;
 }
-
-/** Checks the new part against history AND its own earlier cases. No extra model call. */
-export function hasRepeatedPracticeCase(items: Case[], previous: Case[] = []): boolean {
-  const seen = previous.map(item => ({ title: normalized(item.title), scenario: words(item.scenario) }));
-  for (const item of items) {
-    const candidate = { title: normalized(item.title), scenario: words(item.scenario) };
-    if (seen.some(other => candidate.title === other.title || overlap(candidate.scenario, other.scenario) > 0.72)) return true;
+export interface PracticeRepeat {
+  caseIndex: number; relatedIndex: number; location: 'history' | 'part'; kind: 'title' | 'near-copy';
+}
+/** The hard gate rejects exact titles and near-verbatim scenarios, not shared finance vocabulary.
+ * High bag-of-words overlap alone is merely a human-review finding: two different
+ * numerical lessons may naturally use the same financial terms. */
+export function findRepeatedPracticeCase(items: Case[], previous: Case[] = []): PracticeRepeat | null {
+  const seen = previous.map(item => ({
+    title: normalized(item.title), text: normalized(item.scenario),
+    words: words(item.scenario), phrases: phrases(item.scenario),
+  }));
+  for (const [caseIndex, item] of items.entries()) {
+    const candidate = {
+      title: normalized(item.title), text: normalized(item.scenario),
+      words: words(item.scenario), phrases: phrases(item.scenario),
+    };
+    for (const [relatedIndex, other] of seen.entries()) {
+      const kind = candidate.title === other.title ? 'title'
+        : candidate.text === other.text ||
+          (overlap(candidate.words, other.words) > 0.72 &&
+            overlap(candidate.phrases, other.phrases) > 0.55) ? 'near-copy' : null;
+      if (kind) return { caseIndex, relatedIndex: relatedIndex < previous.length ? relatedIndex : relatedIndex - previous.length,
+        location: relatedIndex < previous.length ? 'history' : 'part', kind };
+    }
     seen.push(candidate);
   }
-  return false;
+  return null;
+}
+/** Compatibility wrapper for callers checking only whether a hard duplicate exists. */
+export function hasRepeatedPracticeCase(items: Case[], previous: Case[] = []): boolean {
+  return findRepeatedPracticeCase(items, previous) !== null;
 }
 
 /** Local editorial triage only. A finding never approves, rejects or publishes content. */
