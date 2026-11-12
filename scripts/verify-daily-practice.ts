@@ -170,6 +170,14 @@ const fetcher = (async (url: string | URL | Request, init?: RequestInit) => {
 const observedPart = await generatePractice(claim, fetcher);
 assert.deepEqual(observedPart.exercises, chunk(0), 'Provider sentence pairs round-trip into the unchanged stored shape');
 assert.equal(observedPart.exercises.length, 10); assert.equal(calls, 1);
+// A repeated title with a genuinely different scenario should remain a
+// reviewable, distinct draft; a copied scenario still fails later.
+const reusedHeading = { title: chunk(0)[0].title, scenario: 'Another financial worksheet studies a distinct context.', questions: [] };
+const titlePart = await generatePractice({ ...claim, existing: [reusedHeading] }, fetcher);
+assert.ok(titlePart.exercises[0].title.startsWith(chunk(0)[0].title));
+assert.notEqual(titlePart.exercises[0].title, reusedHeading.title);
+assert.ok(titlePart.research.checks.some(note => note.includes('titles were differentiated')));
+assert.deepEqual(titlePart.exercises[0].questions, chunk(0)[0].questions);
 // A generic question shared by DIFFERENT scenarios can be made specific to
 // each scenario, retaining the original answer/options and audit evidence.
 const repeatedAcrossCases = chunk(0);
