@@ -22,7 +22,9 @@ const upstream: typeof fetch = async (input, init) => {
     assert.equal(body.generationConfig.maxOutputTokens, 32768);
     assert.equal(body.generationConfig.thinkingConfig.thinkingLevel, 'LOW');
     const prompt = JSON.parse(body.contents[0].parts[0].text);
-    assert.deepEqual(prompt.previous, [], 'Test uses no user data or live private drafts');
+    assert.equal(prompt.previous, undefined, 'No historical case prose is sent to Gemini');
+    assert.equal(prompt.historyCount, 0, 'Private test uses no user data or live private drafts');
+    assert.equal(prompt.casePlan.length, 10);
     const explanation = body.generationConfig.responseJsonSchema.properties.exercises.items.properties.questions.items.properties.explanation;
     const visual = body.generationConfig.responseJsonSchema.properties.exercises.items.properties.visual.properties;
     assert.equal(visual.bars.minItems, DAILY_VISUAL_LIMITS.barsMin);
