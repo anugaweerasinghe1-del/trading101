@@ -11,7 +11,7 @@ import { newPractice, readPractice, savePractice, upgradePractice, validProgress
 import { createCourseAdminHandler } from '../supabase/functions/_shared/courseAdmin.ts';
 import { generatePractice } from '../supabase/functions/_shared/dailyPracticeGenerator.ts';
 import { checkGeminiModelMetadata } from '../supabase/functions/_shared/geminiModelPreflight.ts';
-import { hasRepeatedPracticeCase, reviewPracticeExercises } from '../supabase/functions/_shared/dailyPracticeReview.ts';
+import { findRepeatedPracticeCase, hasRepeatedPracticeCase, similarPracticeScenarios, reviewPracticeExercises } from '../supabase/functions/_shared/dailyPracticeReview.ts';
 import { readGenerationResponse, GENERATION_READ_LIMITS } from '../supabase/functions/_shared/courseGenerator.ts';
 import { createServer } from 'node:http';
 import { dailyGenerationReadiness, type DailyGenerationStatus } from '../src/lib/dailyGenerationStatus.ts';
@@ -183,6 +183,21 @@ for (const reworded of [false, true]) {
 }
 assert.equal(hasRepeatedPracticeCase(chunk(0)), false);
 assert.equal(hasRepeatedPracticeCase(chunk(0), [chunk(0)[0]]), true);
+assert.deepEqual(findRepeatedPracticeCase([chunk(0)[0]], [chunk(0)[0]]), {
+ caseIndex: 0, relatedIndex: 0, location: 'history', kind: 'title',
+});
+// The old word-set-only gate rejected unrelated cases that share financial terms.
+// Preserve that overlap as an editorial finding, but require near-verbatim phrases
+// or an identical title to automatically reject a provider's full ten-case batch.
+const familiarTerms = 'A hypothetical investor studies cash portfolio balance price changes fees trade orders risk and uncertainty across a comparison of market data snapshots';
+const scrambledTerms = familiarTerms.split(' ').reverse().join(' ');
+assert.ok(similarPracticeScenarios(familiarTerms, scrambledTerms));
+assert.equal(hasRepeatedPracticeCase([{ title: 'Independent learning example', scenario: scrambledTerms }],
+ [{ title: 'Earlier financial lesson', scenario: familiarTerms }]), false);
+assert.equal(hasRepeatedPracticeCase([{ title: 'Earlier financial lesson', scenario: scrambledTerms }],
+ [{ title: 'Earlier financial lesson', scenario: familiarTerms }]), true, 'Matching titles always block');
+assert.equal(hasRepeatedPracticeCase([{ title: 'A distinct title', scenario: familiarTerms + ' An extra comparison is included.' }],
+ [{ title: 'Original title', scenario: familiarTerms }]), true, 'Near-verbatim copying still blocks');
 const reviewFixture = chunk(0), unmodified = JSON.stringify(reviewFixture);
 assert.ok(!reviewPracticeExercises(reviewFixture).some(finding => finding.kind === 'similar-case'));
 assert.equal(JSON.stringify(reviewFixture), unmodified, 'Editorial triage is read-only');
