@@ -170,6 +170,27 @@ const fetcher = (async (url: string | URL | Request, init?: RequestInit) => {
 const observedPart = await generatePractice(claim, fetcher);
 assert.deepEqual(observedPart.exercises, chunk(0), 'Provider sentence pairs round-trip into the unchanged stored shape');
 assert.equal(observedPart.exercises.length, 10); assert.equal(calls, 1);
+// A generic question shared by DIFFERENT scenarios can be made specific to
+// each scenario, retaining the original answer/options and audit evidence.
+const repeatedAcrossCases = chunk(0);
+repeatedAcrossCases[7].questions[2].prompt = repeatedAcrossCases[0].questions[0].prompt;
+const contextPart = await generatePractice(claim, (async (url, init) => {
+ if (!String(url).includes('generativelanguage')) return fetcher(url, init);
+ return Response.json({ candidates: [{ content: { parts: [
+  { text: JSON.stringify({ exercises: dailyProviderExercises(repeatedAcrossCases) }) },
+ ] } }] });
+}) as typeof fetch);
+assert.match(contextPart.exercises[7].questions[2].prompt, /For the "Private test part 0 case 7" case:/);
+assert.equal(contextPart.exercises[7].questions[2].correctAnswer, repeatedAcrossCases[7].questions[2].correctAnswer);
+assert.ok(contextPart.research.checks.some(note => note.includes('cross-case question prompts required case-specific context')));
+const repeatedWithinCase = chunk(0);
+repeatedWithinCase[7].questions[2].prompt = repeatedWithinCase[7].questions[1].prompt;
+await assert.rejects(generatePractice(claim, (async (url, init) => {
+ if (!String(url).includes('generativelanguage')) return fetcher(url, init);
+ return Response.json({ candidates: [{ content: { parts: [
+  { text: JSON.stringify({ exercises: dailyProviderExercises(repeatedWithinCase) }) },
+ ] } }] });
+}) as typeof fetch), /repeats a question/);
 assert.deepEqual(observedPart.research.usage, { scope: 'this_generated_part_only', part: 1,
   inputTokens: 512, outputTokens: 2048, totalTokens: 2560 });
 await assert.rejects(generatePractice({ ...claim, existing: chunk(0) }, fetcher), /repeats/);
