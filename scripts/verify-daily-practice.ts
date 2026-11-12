@@ -173,6 +173,13 @@ assert.equal(observedPart.exercises.length, 10); assert.equal(calls, 1);
 assert.deepEqual(observedPart.research.usage, { scope: 'this_generated_part_only', part: 1,
   inputTokens: 512, outputTokens: 2048, totalTokens: 2560 });
 await assert.rejects(generatePractice({ ...claim, existing: chunk(0) }, fetcher), /repeats/);
+// A single generic historical question match is not an excuse to discard the
+// other 99 scored questions. It must be tracked for owner editorial review.
+const historicalPrompt = { title: 'An unrelated earlier archived case', scenario: 'Earlier archive about a separate lesson.',
+ questions: [{ ...chunk(0)[7].questions[2] }] };
+const withEditorialFlag = await generatePractice({ ...claim, existing: [historicalPrompt] }, fetcher);
+assert.equal(withEditorialFlag.exercises.length, 10);
+assert.ok(withEditorialFlag.research.checks.some(note => note.includes('Editorial warning: 1 question prompts match historical wording')));
 // Distinct IDs, titles and prompts must not hide copied scenarios in the SAME response.
 for (const reworded of [false, true]) {
  const repeated = chunk(0);
