@@ -157,6 +157,12 @@ const claim = { lease: id, effectiveFrom: '2026-12-09', apiKey: 'test-only', mod
 const fetcher = (async (url: string | URL | Request, init?: RequestInit) => {
  if (String(url).includes('generativelanguage')) { calls++; assert.ok(!String(url).includes(claim.apiKey)); assert.equal(init?.redirect, 'error');
   const b = JSON.parse(String(init?.body)); assert.ok(b.generationConfig.responseJsonSchema); assert.equal(b.contents.length, 1);
+  const instructions = JSON.parse(b.contents[0].parts[0].text);
+  assert.equal(instructions.part, 1);
+  assert.equal(instructions.historyCount, 0);
+  assert.equal(instructions.previous, undefined, 'Past case prose must never prime provider imitation');
+  assert.equal(instructions.casePlan.length, 10);
+  assert.ok(instructions.casePlan[0].includes('Account gain'));
   const sourceEnum = b.generationConfig.responseJsonSchema.properties.exercises.items.properties.sources.items.properties.url.enum;
   assert.ok(Array.isArray(sourceEnum) && sourceEnum.length >= 2);
   assert.ok(sourceEnum.includes('https://www.investor.gov/introduction-investing'));
@@ -223,6 +229,23 @@ for (const reworded of [false, true]) {
 }
 assert.equal(hasRepeatedPracticeCase(chunk(0)), false);
 assert.equal(hasRepeatedPracticeCase(chunk(0), [chunk(0)[0]]), true);
+// Later parts get their own specific mechanisms; only the history COUNT is
+// supplied to the model, and historical prose remains server-side.
+let fourthPartPrompt: any;
+const partFour = await generatePractice({ ...claim, exercises: [...chunk(0), ...chunk(1), ...chunk(2)] }, (async (url, init) => {
+ if (String(url).includes('generativelanguage')) {
+  fourthPartPrompt = JSON.parse(JSON.parse(String(init?.body)).contents[0].parts[0].text);
+  return Response.json({ candidates: [{ content: { parts: [
+   { text: JSON.stringify({ exercises: dailyProviderExercises(chunk(3)) }) },
+  ] } }] });
+ }
+ return fetcher(url, init);
+}) as typeof fetch).catch(() => null);
+assert.equal(fourthPartPrompt.part, 4);
+assert.equal(fourthPartPrompt.historyCount, 30);
+assert.equal(fourthPartPrompt.previous, undefined);
+assert.equal(fourthPartPrompt.casePlan.length, 10);
+assert.ok(fourthPartPrompt.casePlan[0].includes('cash flow ledger'));
 assert.deepEqual(findRepeatedPracticeCase([chunk(0)[0]], [chunk(0)[0]]), {
  caseIndex: 0, relatedIndex: 0, location: 'history', kind: 'title',
 });
