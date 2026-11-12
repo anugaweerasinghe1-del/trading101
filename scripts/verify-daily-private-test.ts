@@ -25,6 +25,12 @@ const upstream: typeof fetch = async (input, init) => {
     assert.equal(prompt.previous, undefined, 'No historical case prose is sent to Gemini');
     assert.equal(prompt.historyCount, 0, 'Private test uses no user data or live private drafts');
     assert.equal(prompt.casePlan.length, 10);
+    assert.equal(body.generationConfig.responseJsonSchema.properties.exercises.minItems, 10);
+    assert.equal(body.generationConfig.responseJsonSchema.properties.exercises.maxItems, 10);
+    const scored = body.generationConfig.responseJsonSchema.properties.exercises.items.properties.questions;
+    assert.equal(scored.minItems, 10); assert.equal(scored.maxItems, 10);
+    assert.equal(scored.items.properties.options.minItems, 3);
+    assert.equal(scored.items.properties.options.maxItems, 3);
     const explanation = body.generationConfig.responseJsonSchema.properties.exercises.items.properties.questions.items.properties.explanation;
     const visual = body.generationConfig.responseJsonSchema.properties.exercises.items.properties.visual.properties;
     assert.equal(visual.bars.minItems, DAILY_VISUAL_LIMITS.barsMin);
