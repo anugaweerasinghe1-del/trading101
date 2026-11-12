@@ -25,3 +25,20 @@ export function chooseMasteryNextActionForTradeCount(playedToday: boolean, trade
   };
   return chooseMasteryNextAction(playedToday, (tradeCount ?? 0) > 0);
 }
+
+/**
+ * Read-only signals from the longer Daily case. This never assigns proficiency:
+ * a missed answer merely suggests explanations worth revisiting.
+ */
+export function missedDailyCaseAnswers(practice: {
+  answers: number[];
+  exercise: { questions: Array<{ correctAnswer: number }> };
+} | null): number {
+  if (!practice || !Array.isArray(practice.answers) ||
+      !Array.isArray(practice.exercise?.questions) ||
+      practice.exercise.questions.length === 0 ||
+      practice.answers.length !== practice.exercise.questions.length) return 0;
+  return practice.answers.reduce(
+    (missed, answer, index) => missed + (answer === practice.exercise.questions[index].correctAnswer ? 0 : 1), 0,
+  );
+}
