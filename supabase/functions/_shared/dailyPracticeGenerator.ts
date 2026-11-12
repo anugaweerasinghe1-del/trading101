@@ -82,6 +82,31 @@ export async function generatePractice(claim: PracticeClaim, fetcher = fetch) {
   let items: DailyExercise[];
   try { items = assembleDailyExercises(JSON.parse(output.candidates?.[0]?.content?.parts?.filter((p: { thought?: boolean }) => !p.thought).map((p: { text?: string }) => p.text ?? '').join('') ?? '').exercises) as DailyExercise[]; }
   catch { throw new Error('Gemini returned incomplete output. No content was published.'); }
+  // AI can reuse a heading from an unrelated earlier case. Preserve the
+  // actual scenario and teaching content, and give such a draft a specific
+  // headline derived from its own labelled inputs. Near-copied SCENARIOS are
+  // still rejected by findRepeatedPracticeCase; a heading change cannot bypass
+  // that check. The owner sees the disambiguation in the research warnings.
+  const seenTitles = new Set(previous.map(exercise => normalized(exercise.title)));
+  const contextualizedTitles: number[] = [];
+  for (const [caseIndex, exercise] of items.entries()) {
+    const original = normalized(exercise.title);
+    if (seenTitles.has(original)) {
+      const labels = exercise.visual?.bars?.slice(0, 2)
+        .map(bar => bar.label.trim()).filter(Boolean).join(' and ') || exercise.category;
+      const variant = ' — ' + labels.slice(0, 45);
+      let candidate = exercise.title.slice(0, 120 - variant.length).trim() + variant;
+      if (seenTitles.has(normalized(candidate))) {
+        const suffix = ' — Case ' + (claim.exercises.length + caseIndex + 1) + ': ' + labels.slice(0, 30);
+        candidate = exercise.title.slice(0, 120 - suffix.length).trim() + suffix;
+      }
+      if (candidate.length <= 120 && candidate.length >= 8 && !seenTitles.has(normalized(candidate))) {
+        exercise.title = candidate;
+        contextualizedTitles.push(caseIndex + 1);
+      }
+    }
+    seenTitles.add(normalized(exercise.title));
+  }
   // Distinct scenarios may use a common generic question. Contextualize an
   // identical cross-case prompt with the unique scenario title so it refers
   // clearly to its own numerical case. Repeated questions WITHIN the same case
@@ -135,6 +160,10 @@ export async function generatePractice(claim: PracticeClaim, fetcher = fetch) {
     usage: recordedUsage,
     sources: references.map(({ label, url, checkedAt }) => ({ label, url, checkedAt })),
     checks: ['Structure, lengths, source allowlist, answer bounds and case near-copy checks passed.',
+      contextualizedTitles.length
+        ? 'Editorial warning: duplicate historical or within-part titles were differentiated with scenario-specific input labels in cases ' +
+          contextualizedTitles.join(', ') + '. Verify these are genuinely distinct lessons before approval.'
+        : 'No historical or within-part titles required disambiguation.',
       contextualizedQuestions.length
         ? 'Editorial warning: ' + contextualizedQuestions.length + ' cross-case question prompts required case-specific context (cases/questions ' +
           contextualizedQuestions.map(match => match.caseIndex + '/' + match.questionIndex).join(', ') + '). Compare teaching points before approval.'
