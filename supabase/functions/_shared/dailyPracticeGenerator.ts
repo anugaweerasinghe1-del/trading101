@@ -55,7 +55,11 @@ export async function generatePractice(claim: PracticeClaim, fetcher = fetch) {
           value: { type: 'number', minimum: visualLimits.valueMin, maximum: visualLimits.valueMax } }) },
     }),
     questions: { type: 'array', items: obj({ prompt: boundedText(12, 450, 'Distinct scored question.'), options: { type: 'array', items: boundedText(1, 350, 'Distinct answer option.') }, correctAnswer: { type: 'integer', minimum: 0, maximum: 2 }, explanation: pair(explanationParts) }) },
-    reflection: { ...str, description: "One case-specific reflection question, about 50–120 characters." }, reflectionGuide: pair(guideParts), sources: { type: 'array', items: obj({ label: str, url: str }) },
+    reflection: { ...str, description: "One case-specific reflection question, about 50–120 characters." }, reflectionGuide: pair(guideParts),
+    // The provider may SELECT a source but cannot invent its URL. The enum comes
+    // from the subset that was actually fetched successfully for this request.
+    sources: { type: 'array', minItems: 1, maxItems: 4,
+      items: obj({ label: str, url: { type: 'string', enum: references.map(source => source.url) } }) },
   }) } });
   const response = await fetcher('https://generativelanguage.googleapis.com/v1beta/models/' + encodeURIComponent(claim.model) + ':generateContent', {
     method: 'POST', redirect: 'error', headers: { 'Content-Type': 'application/json', 'x-goog-api-key': claim.apiKey },
