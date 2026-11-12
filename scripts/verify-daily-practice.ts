@@ -163,6 +163,12 @@ const fetcher = (async (url: string | URL | Request, init?: RequestInit) => {
   assert.equal(instructions.previous, undefined, 'Past case prose must never prime provider imitation');
   assert.equal(instructions.casePlan.length, 10);
   assert.ok(instructions.casePlan[0].includes('Account gain'));
+  assert.equal(b.generationConfig.responseJsonSchema.properties.exercises.minItems, 10);
+  assert.equal(b.generationConfig.responseJsonSchema.properties.exercises.maxItems, 10);
+  const questionArray = b.generationConfig.responseJsonSchema.properties.exercises.items.properties.questions;
+  assert.equal(questionArray.minItems, 10); assert.equal(questionArray.maxItems, 10);
+  assert.equal(questionArray.items.properties.options.minItems, 3);
+  assert.equal(questionArray.items.properties.options.maxItems, 3);
   const sourceEnum = b.generationConfig.responseJsonSchema.properties.exercises.items.properties.sources.items.properties.url.enum;
   assert.ok(Array.isArray(sourceEnum) && sourceEnum.length >= 2);
   assert.ok(sourceEnum.includes('https://www.investor.gov/introduction-investing'));
