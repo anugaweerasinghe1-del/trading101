@@ -13,8 +13,46 @@ export function readPractice(date = practiceDate(), storage?: Pick<Storage, 'get
     return Array.isArray(rows) ? rows.find(p => validProgress(p) && p.date === date) ?? null : null;
   } catch { return null; }
 }
-export function newPractice(bank: DailyBatch, date = practiceDate()): PracticeProgress {
-  return { date, bankId: bank.id, exercise: exerciseForDate(bank, date), answers: [], reflection: '' };
+/** Read only complete past case attempts from this browser. No analytics or account transfer. */
+export function readPracticeHistory(beforeDate = practiceDate(), storage?: Pick<Storage, 'getItem'>): PracticeProgress[] {
+  try {
+    const raw: unknown = JSON.parse((storage ?? globalThis.localStorage).getItem(KEY) ?? '[]');
+    if (!Array.isArray(raw)) return [];
+    return raw.filter((p): p is PracticeProgress => validProgress(p)
+      && p.date < beforeDate && p.answers.length === p.exercise.questions.length)
+      .sort((a, b) => b.date.localeCompare(a.date)).slice(0, 30);
+  } catch { return []; }
+}
+
+/** Select a reviewed case in a recently missed category; never change a saved day's case. */
+export function choosePracticeExercise(bank: DailyBatch, date: string, history: readonly PracticeProgress[] = []): DailyExercise {
+  const usual = exerciseForDate(bank, date);
+  const day = Date.parse(date + 'T12:00:00Z');
+  if (!Number.isFinite(day)) return usual;
+  const recent = history.filter(p => validProgress(p) && p.date < date
+    && p.answers.length === p.exercise.questions.length
+    && day - Date.parse(p.date + 'T12:00:00Z') <= 30 * 86400000)
+    .sort((a, b) => b.date.localeCompare(a.date)).slice(0, 14);
+  const missed = new Map<string, { count: number; last: string }>();
+  for (const entry of recent) {
+    const errors = entry.answers.filter((answer, index) => answer !== entry.exercise.questions[index].correctAnswer).length;
+    if (!errors) continue;
+    const previous = missed.get(entry.exercise.category);
+    missed.set(entry.exercise.category, { count: (previous?.count ?? 0) + errors,
+      last: previous?.last && previous.last > entry.date ? previous.last : entry.date });
+  }
+  const topic = [...missed.entries()].sort((a, b) => b[1].count - a[1].count
+    || b[1].last.localeCompare(a[1].last) || a[0].localeCompare(b[0]))[0]?.[0];
+  if (!topic) return usual;
+  const alreadySeen = new Set(recent.filter(p => p.bankId === bank.id).map(p => p.exercise.id));
+  const fresh = bank.exercises.filter(e => e.category === topic && !alreadySeen.has(e.id));
+  if (!fresh.length) return usual;
+  const seed = Number(date.replace(/-/g, ''));
+  return fresh[Number.isFinite(seed) ? seed % fresh.length : 0];
+}
+
+export function newPractice(bank: DailyBatch, date = practiceDate(), history: readonly PracticeProgress[] = []): PracticeProgress {
+  return { date, bankId: bank.id, exercise: choosePracticeExercise(bank, date, history), answers: [], reflection: '' };
 }
 /** Extend the original three questions only when their exact snapshot still matches. */
 export function canExtendPractice(old: PracticeProgress, next: PracticeProgress) {
