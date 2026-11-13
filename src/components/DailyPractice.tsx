@@ -16,9 +16,14 @@ export function PracticeVisual({ exercise }: { exercise: DailyExercise }) {
     </div>)}</div>
   </figure>;
 }
-export function DailyPractice({ date, open, onOpen, onClose, onComplete }: { date: string; open: boolean; onOpen: () => void; onClose: () => void; onComplete: () => void }) {
+export function DailyPractice({ date, reviewMissed = false, open, onOpen, onClose, onComplete }: { date: string; reviewMissed?: boolean; open: boolean; onOpen: () => void; onClose: () => void; onComplete: () => void }) {
   const [progress, setProgress] = useState(() => upgradePractice(readPractice(date) ?? newPractice(starterPracticeBank, date, readPracticeHistory(date)), starterPracticeBank));
-  const [question, setQuestion] = useState(() => Math.min(progress.answers.length, progress.exercise.questions.length - 1));
+  const [question, setQuestion] = useState(() => {
+    const firstMiss = reviewMissed && progress.answers.length === progress.exercise.questions.length
+      ? progress.answers.findIndex((answer, i) => answer !== progress.exercise.questions[i].correctAnswer)
+      : -1;
+    return firstMiss >= 0 ? firstMiss : Math.min(progress.answers.length, progress.exercise.questions.length - 1);
+  });
   const [pick, setPick] = useState<number | null>(null), [storageOk, setStorageOk] = useState(true);
   const heading = useRef<HTMLHeadingElement>(null);
   const ownedProgress = useRef(progress); ownedProgress.current = progress;
@@ -40,6 +45,11 @@ export function DailyPractice({ date, open, onOpen, onClose, onComplete }: { dat
     const sync = () => { const saved = readPractice(date); if (saved) { setProgress(upgradePractice(saved, bank ?? starterPracticeBank)); setPick(null); } };
     window.addEventListener('storage', sync); return () => window.removeEventListener('storage', sync);
   }, [date, bank]);
+  useEffect(() => {
+    if (!reviewMissed || progress.answers.length !== progress.exercise.questions.length) return;
+    const firstMiss = progress.answers.findIndex((answer, i) => answer !== progress.exercise.questions[i].correctAnswer);
+    if (firstMiss >= 0) setQuestion(firstMiss);
+  }, [reviewMissed, progress.date, progress.answers.length, progress.exercise.id]);
   useEffect(() => {
     if (open) { heading.current?.focus({ preventScroll: true }); heading.current?.scrollIntoView({ block: 'start', behavior: 'instant' }); }
   }, [open]);
