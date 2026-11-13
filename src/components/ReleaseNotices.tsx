@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import { readCoursePublicationHistory } from "@/lib/coursePublicationHistory";
 import { SITE_DOMAIN } from "@/lib/constants";
 import { readPublicCoursePublications } from "@/lib/publicCoursePublications";
-import { APPROVED_RELEASES, publishedCourseRelease, RELEASE_NOTICES_PREFERENCE, releaseNoticesDisabled, type ReleaseNote } from "@/lib/releaseNotes";
+import { APPROVED_RELEASES, publishedCourseRelease, latestUnseenRelease, RELEASE_NOTICES_PREFERENCE, releaseNoticesDisabled, type ReleaseCandidate } from "@/lib/releaseNotes";
 
 const HISTORY_KEY = "tradehq-seen-course-publications-v1";
 const RECENT_MS = 7 * 86400000;
@@ -37,26 +37,25 @@ export function ReleaseNotices() {
         let seen: Record<string, boolean> = {};
         try { seen = readCoursePublicationHistory(localStorage.getItem(HISTORY_KEY), now); }
         catch { /* Session deduplication still applies. */ }
-        const eligible = ({ release, marker }: { release: ReleaseNote; marker: string }) => {
-          const date = Date.parse(release.date);
-          return date >= cutoff && date <= now && seen[marker] !== true && !sessionSeen.current.has(marker);
-        };
-        let next: { release: ReleaseNote; marker: string } | undefined = APPROVED_RELEASES.filter(release => release.announce === true)
-          .map(release => ({ release, marker: `${release.id}:${release.date}` })).find(eligible);
-        if (!next) {
+        const candidates: ReleaseCandidate[] = APPROVED_RELEASES.filter(release => release.announce === true)
+          .map(release => ({ release, marker: `${release.id}:${release.date}` }));
+        try {
           const { data, error } = await readPublicCoursePublications({
             since: new Date(cutoff).toISOString(), signal: abort.signal,
           });
-          if (abort.signal.aborted || document.hidden || releaseNoticesDisabled() || error || !Array.isArray(data)) return;
-          // Another tab may have shown the notice while the feed was loading.
-          try { seen = readCoursePublicationHistory(localStorage.getItem(HISTORY_KEY), now); }
-          catch { /* Session deduplication still applies. */ }
-          next = data.map(publishedCourseRelease).flatMap(release => release ? [{
-            release,
-            // Preserve markers written by the existing course notices.
-            marker: `${release.id.slice("course-".length)}:${release.date}`,
-          }] : []).find(eligible);
-        }
+          if (!error && Array.isArray(data)) {
+            candidates.push(...data.map(publishedCourseRelease).flatMap(release => release ? [{
+              release,
+              // Preserve markers already written by the earlier course notices.
+              marker: `${release.id.slice("course-".length)}:${release.date}`,
+            }] : []));
+          }
+        } catch { /* A course-feed outage must not hide an already approved feature release. */ }
+        if (abort.signal.aborted || document.hidden || releaseNoticesDisabled()) return;
+        // Re-read in case another tab displayed a notice during the course fetch.
+        try { seen = readCoursePublicationHistory(localStorage.getItem(HISTORY_KEY), now); }
+        catch { /* Session deduplication still applies. */ }
+        const next = latestUnseenRelease(candidates, seen, sessionSeen.current, cutoff, now);
         if (!next) return;
         sessionSeen.current.add(next.marker);
         seen[next.marker] = true;
