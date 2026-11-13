@@ -3,7 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { BookOpen, CheckCircle2, ArrowRight, ArrowLeft, ChevronDown } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { starterPracticeBank } from '@/lib/dailyPracticeBank';
-import { newPractice, readPractice, savePractice, savedPracticeComplete, upgradePractice } from '@/lib/dailyPracticeProgress';
+import { newPractice, readPractice, readPracticeHistory, savePractice, savedPracticeComplete, upgradePractice } from '@/lib/dailyPracticeProgress';
 import { practiceDate, validateBatch, type DailyBatch, type DailyExercise } from '../../supabase/functions/_shared/dailyPractice';
 
 export function PracticeVisual({ exercise }: { exercise: DailyExercise }) {
@@ -17,7 +17,7 @@ export function PracticeVisual({ exercise }: { exercise: DailyExercise }) {
   </figure>;
 }
 export function DailyPractice({ date, open, onOpen, onClose, onComplete }: { date: string; open: boolean; onOpen: () => void; onClose: () => void; onComplete: () => void }) {
-  const [progress, setProgress] = useState(() => upgradePractice(readPractice(date) ?? newPractice(starterPracticeBank, date), starterPracticeBank));
+  const [progress, setProgress] = useState(() => upgradePractice(readPractice(date) ?? newPractice(starterPracticeBank, date, readPracticeHistory(date)), starterPracticeBank));
   const [question, setQuestion] = useState(() => Math.min(progress.answers.length, progress.exercise.questions.length - 1));
   const [pick, setPick] = useState<number | null>(null), [storageOk, setStorageOk] = useState(true);
   const heading = useRef<HTMLHeadingElement>(null);
@@ -30,7 +30,7 @@ export function DailyPractice({ date, open, onOpen, onClose, onComplete }: { dat
   });
   useEffect(() => {
     const saved = readPractice(date), prev = ownedProgress.current;
-    const owned = saved ?? (prev.date === date && prev.answers.length > 0 ? prev : newPractice(bank ?? starterPracticeBank, date));
+    const owned = saved ?? (prev.date === date && prev.answers.length > 0 ? prev : newPractice(bank ?? starterPracticeBank, date, readPracticeHistory(date)));
     const next = upgradePractice(owned, bank ?? starterPracticeBank);
     if (next !== owned) { const stored = savePractice(next); setStorageOk(stored.saved); setProgress(stored.progress); }
     else setProgress(next);
@@ -96,7 +96,7 @@ export function DailyPractice({ date, open, onOpen, onClose, onComplete }: { dat
       </div>}
       <div className="mt-6 border-t border-border/70 pt-4"><p className="text-xs text-muted-foreground">Further reading</p><ul className="mt-2 space-y-1">{exercise.sources.map(s => <li key={s.url}><a href={s.url} target="_blank" rel="noopener noreferrer" className="text-xs text-primary underline underline-offset-4">{s.label}</a></li>)}</ul></div>
     </div>}
-    <p className="text-xs leading-relaxed text-muted-foreground mt-5">50 rotating cases. New banks are prepared every two months and wait for owner approval; revisits are review practice. Answers stay on this browser. {bank?.reviewer ? `Bank reviewed by ${bank.reviewer}.` : 'Authored starter bank.'}</p>
+    <p className="text-xs leading-relaxed text-muted-foreground mt-5">50 reviewed cases. When you have saved earlier case-study mistakes on this browser, a new day can prioritize one of those topics; otherwise cases rotate by date. New banks require owner approval. Answers stay on this browser. {bank?.reviewer ? `Bank reviewed by ${bank.reviewer}.` : 'Authored starter bank.'}</p>
     {!storageOk && <p role="alert" className="text-xs text-amber-400 mt-2">Browser storage is unavailable. This attempt may not survive a refresh.</p>}
   </section>;
 }
