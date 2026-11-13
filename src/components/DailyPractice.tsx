@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
+import { Link } from 'react-router-dom';
 import { BookOpen, CheckCircle2, ArrowRight, ArrowLeft, ChevronDown } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { starterPracticeBank } from '@/lib/dailyPracticeBank';
+import { DAILY_PROGRESS_EVENT } from '@/lib/dailyChallenge';
+import { acknowledgeDailyMistakes, hasReviewedDailyMistakes } from '@/lib/dailyPracticeReviewReceipt';
 import { newPractice, readPractice, readPracticeHistory, savePractice, savedPracticeComplete, upgradePractice } from '@/lib/dailyPracticeProgress';
 import { practiceDate, validateBatch, type DailyBatch, type DailyExercise } from '../../supabase/functions/_shared/dailyPractice';
 
@@ -25,6 +28,7 @@ export function DailyPractice({ date, reviewMissed = false, open, onOpen, onClos
     return firstMiss >= 0 ? firstMiss : Math.min(progress.answers.length, progress.exercise.questions.length - 1);
   });
   const [pick, setPick] = useState<number | null>(null), [storageOk, setStorageOk] = useState(true);
+  const [reviewAcknowledged, setReviewAcknowledged] = useState(() => hasReviewedDailyMistakes(progress));
   const heading = useRef<HTMLHeadingElement>(null);
   const ownedProgress = useRef(progress); ownedProgress.current = progress;
   const { data: bank } = useQuery({ queryKey: ['daily-practice-bank', date], staleTime: 300000,
@@ -39,10 +43,11 @@ export function DailyPractice({ date, reviewMissed = false, open, onOpen, onClos
     const next = upgradePractice(owned, bank ?? starterPracticeBank);
     if (next !== owned) { const stored = savePractice(next); setStorageOk(stored.saved); setProgress(stored.progress); }
     else setProgress(next);
+    setReviewAcknowledged(hasReviewedDailyMistakes(next));
     setPick(null);
   }, [date, bank]);
   useEffect(() => {
-    const sync = () => { const saved = readPractice(date); if (saved) { setProgress(upgradePractice(saved, bank ?? starterPracticeBank)); setPick(null); } };
+    const sync = () => { const saved = readPractice(date); if (saved) { setProgress(upgradePractice(saved, bank ?? starterPracticeBank)); setReviewAcknowledged(hasReviewedDailyMistakes(saved)); setPick(null); } };
     window.addEventListener('storage', sync); return () => window.removeEventListener('storage', sync);
   }, [date, bank]);
   useEffect(() => {
@@ -102,6 +107,16 @@ export function DailyPractice({ date, reviewMissed = false, open, onOpen, onClos
         <p className="flex gap-2 items-center font-semibold text-primary" role="status"><CheckCircle2 className="w-5 h-5" />Case complete · {score}/{total} correct</p>
         <p className="text-sm text-muted-foreground">Your original answers stay recorded. Review the explanations for anything you missed; this is practice, not a trading qualification.</p>
         <nav aria-label="Review case answers" className="flex flex-wrap gap-2">{exercise.questions.map((item, i) => <button key={i} onClick={() => move(i)} aria-label={`Review question ${i + 1}: ${progress.answers[i] === item.correctAnswer ? 'correct' : 'needs review'}`} className={`w-9 h-9 rounded-lg text-sm border ${progress.answers[i] === item.correctAnswer ? 'border-primary/40 text-primary' : 'border-amber-400/40 text-amber-300'}`}>{i + 1}</button>)}</nav>
+        {score < total && <div className="space-y-2 rounded-xl border border-border/70 p-4">
+          <p className="text-sm text-muted-foreground">Use the numbered questions above to read the explanations you missed. When you are done, note the review so your next recommendation can move forward. This does not change your score.</p>
+          {reviewAcknowledged ? <Link to="/learn" className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-primary underline underline-offset-4">Review noted — return to Learn <ArrowRight className="h-4 w-4" /></Link>
+            : <button type="button" className="min-h-11 rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground" onClick={() => {
+              if (acknowledgeDailyMistakes(progress)) {
+                setReviewAcknowledged(true);
+                window.dispatchEvent(new Event(DAILY_PROGRESS_EVENT));
+              } else setStorageOk(false);
+            }}>I've reviewed my missed answers</button>}
+        </div>}
         <p className="text-sm font-medium">Case takeaway</p><p className="text-sm text-muted-foreground leading-relaxed">{exercise.reflectionGuide}</p>
       </div>}
       <div className="mt-6 border-t border-border/70 pt-4"><p className="text-xs text-muted-foreground">Further reading</p><ul className="mt-2 space-y-1">{exercise.sources.map(s => <li key={s.url}><a href={s.url} target="_blank" rel="noopener noreferrer" className="text-xs text-primary underline underline-offset-4">{s.label}</a></li>)}</ul></div>
