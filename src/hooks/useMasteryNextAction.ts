@@ -37,5 +37,5 @@ export function useMasteryNextAction() {
   }, [user?.id]);
 
   const tradeCount = user ? (account?.portfolio?.trades.length ?? null) : localActivity.guestTrades;
-  return { ...chooseMasteryNextActionForTradeCount(localActivity.playedToday, tradeCount), reviewMistakes: localActivity.reviewMistakes };
+  return { ...chooseMasteryNextActionForTradeCount(localActivity.playedToday, tradeCount, localActivity.reviewMistakes), reviewMistakes: localActivity.reviewMistakes };
 }
