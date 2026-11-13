@@ -30,11 +30,12 @@ const upstream: typeof fetch = async (input, init) => {
     assert.equal(exercisesArray.maxItems, undefined);
     assert.match(exercisesArray.description, /Exactly 10 complete/);
     const scored = exercisesArray.items.properties.questions;
-    assert.equal(scored.minItems, undefined); assert.equal(scored.maxItems, undefined);
-    assert.match(scored.description, /Exactly 10 distinct/);
-    assert.equal(scored.items.properties.options.maxItems, undefined);
-    assert.match(scored.items.properties.options.description, /Exactly 3/);
-    const explanation = body.generationConfig.responseJsonSchema.properties.exercises.items.properties.questions.items.properties.explanation;
+    assert.equal(scored.type, 'object');
+    assert.deepEqual(scored.required, Array.from({ length: 10 }, (_, index) => 'q' + (index + 1)));
+    assert.deepEqual(Object.keys(scored.properties), scored.required);
+    assert.equal(scored.properties.q7.properties.options.maxItems, undefined);
+    assert.match(scored.properties.q7.properties.options.description, /Exactly 3/);
+    const explanation = scored.properties.q7.properties.explanation;
     const visual = body.generationConfig.responseJsonSchema.properties.exercises.items.properties.visual.properties;
     assert.equal(visual.bars.minItems, DAILY_VISUAL_LIMITS.barsMin);
     assert.equal(visual.bars.maxItems, DAILY_VISUAL_LIMITS.barsMax);
@@ -143,6 +144,27 @@ for (const [stage, response] of stages) {
     assert.equal(result.data.diagnostics.structure.minExplanationChars, 93);
   }
 }
+// Mirror the observed live failure: 10 cases but exercise 7 lacks q10.
+const nineQuestionCases = structuredClone(exercises);
+nineQuestionCases[6].questions.pop();
+let nineCalls = 0;
+const nineQuestionProbe = createDailyProbeHandler({ ...options, admit: async () => true,
+  fetcher: async (input, init) => {
+    if (!String(input).includes('generativelanguage')) return upstream(input, init);
+    nineCalls++;
+    return Response.json({ candidates: [{ finishReason: 'STOP', content: { parts: [
+      { text: JSON.stringify({ exercises: dailyProviderExercises(nineQuestionCases) }) },
+    ] } }] });
+  } });
+const nineResponse = await (await nineQuestionProbe(req())).json();
+assert.equal(nineResponse.data.outcome, 'failed');
+assert.equal(nineResponse.data.code, 'OUTPUT_VALIDATION_FAILED');
+assert.deepEqual(nineResponse.data.diagnostics.validation.rules, ['QUESTION_COUNT']);
+assert.equal(nineResponse.data.diagnostics.validation.exercise, 7);
+assert.equal(nineResponse.data.diagnostics.structure.questionCounts[6], null);
+assert.equal(nineResponse.data.productionCycleChanged, false);
+assert.equal(nineResponse.data.saved, false); assert.equal(nineResponse.data.published, false);
+assert.equal(nineCalls, 1, 'Missing question cannot silently retry or change the cycle');
 assert.equal(validationDiagnostics('PRIVATE unknown failure'), undefined);
 assert.equal(providerDiagnostics(JSON.stringify({ candidates: [{ finishReason: KEY }] })).provider?.finishReason, 'UNRECOGNIZED');
 for (const invalid of [{ provider: { finishReason: KEY } }, { validation: { stage: KEY } }, { rawText: KEY }]) assert.equal(validProbeDiagnostics(invalid), false);
