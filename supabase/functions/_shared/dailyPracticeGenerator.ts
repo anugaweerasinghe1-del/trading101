@@ -149,6 +149,12 @@ export async function generatePractice(claim: PracticeClaim, fetcher = fetch) {
   let items: DailyExercise[];
   try { items = assembleDailyExercises(JSON.parse(output.candidates?.[0]?.content?.parts?.filter((p: { thought?: boolean }) => !p.thought).map((p: { text?: string }) => p.text ?? '').join('') ?? '').exercises) as DailyExercise[]; }
   catch { throw new Error('Gemini returned incomplete output. No content was published.'); }
+  // Validate question cardinality *before* later title/prompt processing, which
+  // iterates questions and must never throw a generic error on a missing q10.
+  // Do not pad missing slots: any malformed provider response fails this part.
+  if (!Array.isArray(items)) throw new Error('Daily validation failed: A batch needs exactly 10 exercises.');
+  const missingQuestions = items.findIndex(exercise => !Array.isArray(exercise?.questions) || exercise.questions.length !== 10);
+  if (missingQuestions >= 0) throw new Error('Daily validation failed: Exercise ' + (missingQuestions + 1) + ' needs 10 questions.');
   // AI can reuse a heading from an unrelated earlier case. Preserve the
   // actual scenario and teaching content, and give such a draft a specific
   // headline derived from its own labelled inputs. Near-copied SCENARIOS are
