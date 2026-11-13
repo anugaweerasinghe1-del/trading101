@@ -5,9 +5,15 @@ import { getPortfolio } from "@/lib/portfolio";
 import { getAccountPortfolio, subscribeAccountPortfolio } from "@/lib/cloudPortfolio";
 import { chooseMasteryNextActionForTradeCount, missedDailyCaseAnswers } from "@/lib/masteryNextAction";
 import { readPractice } from "@/lib/dailyPracticeProgress";
+import { hasReviewedDailyMistakes } from "@/lib/dailyPracticeReviewReceipt";
 
 function readLocalActivity() {
-  return { playedToday: hasPlayedToday(), guestTrades: getPortfolio().trades.length, reviewMistakes: missedDailyCaseAnswers(readPractice()) };
+  const practice = readPractice();
+  return {
+    playedToday: hasPlayedToday(),
+    guestTrades: getPortfolio().trades.length,
+    reviewMistakes: hasReviewedDailyMistakes(practice) ? 0 : missedDailyCaseAnswers(practice),
+  };
 }
 
 /** One account-aware, reactive mastery recommendation for Learn and Daily pages. */
