@@ -10,6 +10,8 @@ export interface DailyExercise {
   sources: { label: string; url: string }[];
 }
 export interface DailyBatch { id: string; effectiveFrom: string; exercises: DailyExercise[]; reviewer?: string; reviewedAt?: string }
+// Required provider object keys prevent a completed response silently omitting question ten.
+export const DAILY_QUESTION_SLOTS = Object.freeze(Array.from({ length: 10 }, (_, i) => `q${i + 1}`));
 const text = (v: unknown, min: number, max: number) => typeof v === "string" && v.trim().length >= min && v.length <= max;
 export const normalized = (s: string) => s.toLowerCase().replace(/−/g, "-").replace(/[^a-z0-9+.-]+/g, " ").trim();
 function joinReasoning(value: unknown): string {
@@ -23,13 +25,21 @@ export function assembleDailyExercises(items: unknown): unknown {
   if (!Array.isArray(items)) return items;
   return items.map(exercise => {
     if (!exercise || typeof exercise !== 'object' || Array.isArray(exercise)) return exercise;
+    const rawQuestions = exercise.questions;
+    const completeSlots = rawQuestions && typeof rawQuestions === 'object' && !Array.isArray(rawQuestions)
+      && Object.keys(rawQuestions).length === DAILY_QUESTION_SLOTS.length
+      && DAILY_QUESTION_SLOTS.every(slot => Object.prototype.hasOwnProperty.call(rawQuestions, slot));
+    // If even one slot is absent or an unexpected slot exists, retain the invalid
+    // provider object so validation rejects the whole part. Never fill with dummy content.
+    const orderedQuestions = completeSlots
+      ? DAILY_QUESTION_SLOTS.map(slot => (rawQuestions as Record<string, unknown>)[slot]) : rawQuestions;
     return {
       ...exercise,
       reflectionGuide: joinReasoning(exercise.reflectionGuide),
-      questions: Array.isArray(exercise.questions) ? exercise.questions.map(question =>
+      questions: Array.isArray(orderedQuestions) ? orderedQuestions.map(question =>
         question && typeof question === 'object' && !Array.isArray(question)
           ? { ...question, explanation: joinReasoning(question.explanation) }
-          : question) : exercise.questions,
+          : question) : orderedQuestions,
     };
   });
 }
