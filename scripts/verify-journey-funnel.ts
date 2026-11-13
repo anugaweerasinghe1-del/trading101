@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { missedDailyCaseAnswers } from "../src/lib/masteryNextAction.ts";
 import { latestUnseenRelease } from "../src/lib/releaseNoticeSelection.ts";
+import { acknowledgeDailyMistakes, hasReviewedDailyMistakes } from "../src/lib/dailyPracticeReviewReceipt.ts";
+import type { PracticeProgress } from "../src/lib/dailyPracticeProgress.ts";
 
 const source = (path: string) => readFileSync(path, "utf8");
 const daily = {
@@ -34,6 +36,26 @@ assert.match(source("src/pages/Daily.tsx"), /reviewMissed=\{reviewMistakes\}/,
   "The linked Daily route needs to pass focused review into the case study");
 assert.match(source("src/components/DailyPractice.tsx"), /firstMiss/,
   "Review must focus the first saved incorrect answer rather than restarting the quiz");
+const reviewFixture = {
+  date: "2026-11-13", bankId: "approved-fixture",
+  exercise: { id: 7, questions: [{ correctAnswer: 0 }, { correctAnswer: 1 }] },
+  answers: [2, 1],
+} as unknown as PracticeProgress;
+const stored = new Map<string, string>();
+const fake = { getItem: (key: string) => stored.get(key) ?? null, setItem: (key: string, val: string) => { stored.set(key, val); } };
+assert.equal(hasReviewedDailyMistakes(reviewFixture, fake), false);
+assert.equal(acknowledgeDailyMistakes(reviewFixture, fake), true);
+assert.equal(hasReviewedDailyMistakes(reviewFixture, fake), true, "Acknowledged saved mistakes should stop recurring");
+assert.equal(hasReviewedDailyMistakes({ ...reviewFixture, date: "2026-11-14" }, fake), false,
+  "A prior day's review cannot dismiss tomorrow's learning");
+assert.equal(hasReviewedDailyMistakes({ ...reviewFixture, bankId: "new-approved-bank" }, fake), false,
+  "Reviewing a different published case cannot be inferred");
+assert.equal(acknowledgeDailyMistakes({ ...reviewFixture, answers: [2] }, fake), false,
+  "An incomplete case cannot be falsely marked reviewed");
+assert.deepEqual(reviewFixture.answers, [2, 1], "Acknowledging review must not rewrite scores");
+assert.match(source("src/components/DailyPractice.tsx"), /I've reviewed my missed answers/);
+assert.match(source("src/hooks/useMasteryNextAction.ts"), /hasReviewedDailyMistakes\(practice\) \? 0/,
+  "A confirmed review must allow the next learner activity instead of a repeated prompt");
 
 const now = Date.parse("2026-11-13T10:00:00Z");
 const recent = now - 7 * 86400000;
