@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { missedDailyCaseAnswers } from "../src/lib/masteryNextAction.ts";
+import { latestUnseenRelease } from "../src/lib/releaseNoticeSelection.ts";
 
 const source = (path: string) => readFileSync(path, "utf8");
 const daily = {
@@ -27,6 +28,33 @@ assert.doesNotMatch(page, /journeyTelemetry|recordConsentedJourneyVisit/,
 assert.match(page, /View Trophy Cabinet/);
 assert.match(dashboard, /mastery\.reviewMistakes > 0/);
 assert.match(dashboard, /Review the worked explanations/);
+assert.match(dashboard, /\/daily\?review=mistakes#deeper-practice/,
+  "Missed-answer suggestion should open the actual case and its explanations");
+assert.match(source("src/pages/Daily.tsx"), /reviewMissed=\{reviewMistakes\}/,
+  "The linked Daily route needs to pass focused review into the case study");
+assert.match(source("src/components/DailyPractice.tsx"), /firstMiss/,
+  "Review must focus the first saved incorrect answer rather than restarting the quiz");
+
+const now = Date.parse("2026-11-13T10:00:00Z");
+const recent = now - 7 * 86400000;
+const releases = [
+  { marker: "older-approved:2026-11-10", release: { date: "2026-11-10", title: "Earlier feature" } },
+  { marker: "new-course:2026-11-13T08:00:00Z", release: { date: "2026-11-13T08:00:00Z", title: "New approved course" } },
+  { marker: "future:2026-11-14", release: { date: "2026-11-14", title: "Not released yet" } },
+  { marker: "invalid:wat", release: { date: "not a date", title: "Malformed" } },
+];
+assert.equal(latestUnseenRelease(releases, {}, new Set(), recent, now)?.release.title, "New approved course",
+  "A fresh published course must outrank older feature manifest announcements");
+assert.equal(latestUnseenRelease(releases, { "new-course:2026-11-13T08:00:00Z": true }, new Set(), recent, now)?.release.title,
+  "Earlier feature", "Previously shown courses must not keep replaying");
+assert.equal(latestUnseenRelease(releases, {}, new Set(["new-course:2026-11-13T08:00:00Z"]), recent, now)?.release.title,
+  "Earlier feature", "Session deduplication works when browser storage is unavailable");
+assert.equal(latestUnseenRelease(releases, { "new-course:2026-11-13T08:00:00Z": true,
+  "older-approved:2026-11-10": true }, new Set(), recent, now), undefined);
+assert.match(source("src/components/ReleaseNotices.tsx"), /latestUnseenRelease\(candidates/,
+  "The popup must use the tested newest-unseen selection");
+assert.match(source("src/lib/publicCoursePublications.ts"), /order\("published_at", \{ ascending: false \}\)/,
+  "A bounded course notice feed must fetch the newest launches first");
 
 assert.match(banner, /STORAGE_KEY = "tradehq_consent_v3"/);
 assert.match(banner, /if \(choice === "accepted"\) loadConsentedAnalytics\(\)/);
