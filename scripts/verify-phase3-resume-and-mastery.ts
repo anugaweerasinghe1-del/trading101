@@ -35,6 +35,15 @@ assert.equal(chooseMasteryNextActionForTradeCount(true,2).href,"/portfolio","Rec
 assert.equal(chooseMasteryNextActionForTradeCount(true,0).href,"/trade");
 assert.equal(chooseMasteryNextActionForTradeCount(true,null).href,"/portfolio","Unknown account snapshot is not zero trades");
 assert.equal(chooseMasteryNextActionForTradeCount(false,null).href,"/daily");
+assert.equal(chooseMasteryNextActionForTradeCount(true,2,3).href,"/daily?review=mistakes#deeper-practice",
+  "After completing Daily, review actual saved mistakes before offering the portfolio");
+assert.equal(chooseMasteryNextActionForTradeCount(true,0,1).label,"Review missed case answers");
+assert.equal(chooseMasteryNextActionForTradeCount(true,null,1).href,"/daily?review=mistakes#deeper-practice",
+  "A private saved review does not require a portfolio service snapshot");
+assert.equal(chooseMasteryNextActionForTradeCount(false,2,3).href,"/daily",
+  "No stale review recommendation before today's practice is complete");
+assert.equal(chooseMasteryNextActionForTradeCount(true,2,0).href,"/portfolio",
+  "An all-correct case retains the existing trade/portfolio rotation");
 const dashboard=readFileSync("src/components/LearningJourneyDashboard.tsx","utf8");
 const guided=readFileSync("src/components/GuidedNextLesson.tsx","utf8");
 const hook=readFileSync("src/hooks/useMasteryNextAction.ts","utf8");
@@ -49,6 +58,8 @@ assert.match(hook,/getAccountPortfolio\(user\?\.id\)/);
 assert.match(hook,/subscribeAccountPortfolio/);
 assert.match(hook,/DAILY_PROGRESS_EVENT/);
 assert.match(hook,/hasPlayedToday\(\)/, "Completed long case study counts as today's practice");
+assert.match(hook,/chooseMasteryNextActionForTradeCount\(localActivity.playedToday, tradeCount, localActivity.reviewMistakes\)/,
+  "Saved errors must actually reach the shared mastery decision");
 assert.match(daily,/window\.dispatchEvent\(new Event\(DAILY_PROGRESS_EVENT\)\)/);
 assert.match(courses,/to=\{resume\.href\}/);
 assert.match(banner,/chooseReturnDestination/);

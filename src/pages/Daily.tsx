@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { MegaFooter } from "@/components/MegaFooter";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Flame, Trophy, Check, ArrowRight, Sparkles, TrendingUp, Brain, Lock, X } from "lucide-react";
 import {
   getTodayChallenge,
@@ -30,7 +30,9 @@ const dailyDarkPalette = {
 } as CSSProperties;
 
 export default function Daily() {
-  const [deeperOpen, setDeeperOpen] = useState(false);
+  const location = useLocation();
+  const reviewMistakes = new URLSearchParams(location.search).get("review") === "mistakes";
+  const [deeperOpen, setDeeperOpen] = useState(reviewMistakes);
   const [date, setDate] = useState(practiceDate);
   const challenge = getTodayChallenge();
   const bonus = getTodayBonus();
@@ -41,10 +43,14 @@ export default function Daily() {
   const guidedStage = journeyStage(readJourney());
 
   useEffect(() => {
-    setDeeperOpen(false);
+    setDeeperOpen(reviewMistakes);
     setStreak(getStreak());
     setSubmitted(hasPlayedQuickToday()); setSelected(null); setBonusPick(null);
   }, [date]);
+
+  useEffect(() => {
+    if (reviewMistakes) setDeeperOpen(true);
+  }, [reviewMistakes]);
 
   useEffect(() => {
     const tick = () => setDate(practiceDate());
@@ -337,7 +343,7 @@ export default function Daily() {
               </p>
             </article>
 
-            <DailyPractice key={date} date={date} open={deeperOpen} onOpen={() => setDeeperOpen(true)} onClose={() => setDeeperOpen(false)} onComplete={() => setStreak(recordChallenge(0, "hold"))} />
+            <DailyPractice key={date} date={date} reviewMissed={reviewMistakes} open={deeperOpen} onOpen={() => setDeeperOpen(true)} onClose={() => setDeeperOpen(false)} onComplete={() => setStreak(recordChallenge(0, "hold"))} />
 
             {streak?.lastCompletedDate === date && (
               <section aria-labelledby="daily-next-lesson" className="mb-8 space-y-3">

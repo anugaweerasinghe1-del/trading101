@@ -1,6 +1,9 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { missedDailyCaseAnswers } from "../src/lib/masteryNextAction.ts";
+import { latestUnseenRelease } from "../src/lib/releaseNoticeSelection.ts";
+import { acknowledgeDailyMistakes, hasReviewedDailyMistakes } from "../src/lib/dailyPracticeReviewReceipt.ts";
+import type { PracticeProgress } from "../src/lib/dailyPracticeProgress.ts";
 
 const source = (path: string) => readFileSync(path, "utf8");
 const daily = {
@@ -27,6 +30,53 @@ assert.doesNotMatch(page, /journeyTelemetry|recordConsentedJourneyVisit/,
 assert.match(page, /View Trophy Cabinet/);
 assert.match(dashboard, /mastery\.reviewMistakes > 0/);
 assert.match(dashboard, /Review the worked explanations/);
+assert.match(dashboard, /\/daily\?review=mistakes#deeper-practice/,
+  "Missed-answer suggestion should open the actual case and its explanations");
+assert.match(source("src/pages/Daily.tsx"), /reviewMissed=\{reviewMistakes\}/,
+  "The linked Daily route needs to pass focused review into the case study");
+assert.match(source("src/components/DailyPractice.tsx"), /firstMiss/,
+  "Review must focus the first saved incorrect answer rather than restarting the quiz");
+const reviewFixture = {
+  date: "2026-11-13", bankId: "approved-fixture",
+  exercise: { id: 7, questions: [{ correctAnswer: 0 }, { correctAnswer: 1 }] },
+  answers: [2, 1],
+} as unknown as PracticeProgress;
+const stored = new Map<string, string>();
+const fake = { getItem: (key: string) => stored.get(key) ?? null, setItem: (key: string, val: string) => { stored.set(key, val); } };
+assert.equal(hasReviewedDailyMistakes(reviewFixture, fake), false);
+assert.equal(acknowledgeDailyMistakes(reviewFixture, fake), true);
+assert.equal(hasReviewedDailyMistakes(reviewFixture, fake), true, "Acknowledged saved mistakes should stop recurring");
+assert.equal(hasReviewedDailyMistakes({ ...reviewFixture, date: "2026-11-14" }, fake), false,
+  "A prior day's review cannot dismiss tomorrow's learning");
+assert.equal(hasReviewedDailyMistakes({ ...reviewFixture, bankId: "new-approved-bank" }, fake), false,
+  "Reviewing a different published case cannot be inferred");
+assert.equal(acknowledgeDailyMistakes({ ...reviewFixture, answers: [2] }, fake), false,
+  "An incomplete case cannot be falsely marked reviewed");
+assert.deepEqual(reviewFixture.answers, [2, 1], "Acknowledging review must not rewrite scores");
+assert.match(source("src/components/DailyPractice.tsx"), /I've reviewed my missed answers/);
+assert.match(source("src/hooks/useMasteryNextAction.ts"), /hasReviewedDailyMistakes\(practice\) \? 0/,
+  "A confirmed review must allow the next learner activity instead of a repeated prompt");
+
+const now = Date.parse("2026-11-13T10:00:00Z");
+const recent = now - 7 * 86400000;
+const releases = [
+  { marker: "older-approved:2026-11-10", release: { date: "2026-11-10", title: "Earlier feature" } },
+  { marker: "new-course:2026-11-13T08:00:00Z", release: { date: "2026-11-13T08:00:00Z", title: "New approved course" } },
+  { marker: "future:2026-11-14", release: { date: "2026-11-14", title: "Not released yet" } },
+  { marker: "invalid:wat", release: { date: "not a date", title: "Malformed" } },
+];
+assert.equal(latestUnseenRelease(releases, {}, new Set(), recent, now)?.release.title, "New approved course",
+  "A fresh published course must outrank older feature manifest announcements");
+assert.equal(latestUnseenRelease(releases, { "new-course:2026-11-13T08:00:00Z": true }, new Set(), recent, now)?.release.title,
+  "Earlier feature", "Previously shown courses must not keep replaying");
+assert.equal(latestUnseenRelease(releases, {}, new Set(["new-course:2026-11-13T08:00:00Z"]), recent, now)?.release.title,
+  "Earlier feature", "Session deduplication works when browser storage is unavailable");
+assert.equal(latestUnseenRelease(releases, { "new-course:2026-11-13T08:00:00Z": true,
+  "older-approved:2026-11-10": true }, new Set(), recent, now), undefined);
+assert.match(source("src/components/ReleaseNotices.tsx"), /latestUnseenRelease\(candidates/,
+  "The popup must use the tested newest-unseen selection");
+assert.match(source("src/lib/publicCoursePublications.ts"), /order\("published_at", \{ ascending: false \}\)/,
+  "A bounded course notice feed must fetch the newest launches first");
 
 assert.match(banner, /STORAGE_KEY = "tradehq_consent_v3"/);
 assert.match(banner, /if \(choice === "accepted"\) loadConsentedAnalytics\(\)/);

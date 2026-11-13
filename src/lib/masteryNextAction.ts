@@ -1,7 +1,7 @@
 /** Read-only selection for learners who have completed every available lesson.
  * Never infer competence, place orders, or write any portfolio or learning data.
  */
-export type MasteryNextAction = { href: "/daily" | "/trade" | "/portfolio"; label: string; reason: string };
+export type MasteryNextAction = { href: "/daily" | "/daily?review=mistakes#deeper-practice" | "/trade" | "/portfolio"; label: string; reason: string };
 export function chooseMasteryNextAction(playedToday: boolean, hasPracticeTrade: boolean): MasteryNextAction {
   if (!playedToday) return {
     href: "/daily", label: "Try today's Daily Practice",
@@ -18,7 +18,14 @@ export function chooseMasteryNextAction(playedToday: boolean, hasPracticeTrade: 
 }
 
 /** An unavailable signed-in snapshot is not proof the learner has never traded. */
-export function chooseMasteryNextActionForTradeCount(playedToday: boolean, tradeCount: number | null): MasteryNextAction {
+export function chooseMasteryNextActionForTradeCount(playedToday: boolean, tradeCount: number | null, reviewMistakes = 0): MasteryNextAction {
+  // Recent saved errors are a concrete learning opportunity, not a performance grade.
+  // Prefer finishing that review before offering another trade or generic portfolio task.
+  if (playedToday && reviewMistakes > 0) return {
+    href: "/daily?review=mistakes#deeper-practice",
+    label: "Review missed case answers",
+    reason: `You have ${reviewMistakes} ${reviewMistakes === 1 ? "answer" : "answers"} to revisit in today's case study. Read the worked explanations before moving on.`,
+  };
   if (tradeCount === null && playedToday) return {
     href: "/portfolio", label: "Check your saved portfolio",
     reason: "Your account trade history is not yet available. Review it before choosing another virtual trade.",
