@@ -66,10 +66,10 @@ export function LearningJourneyDashboard({ tracks }: { tracks: LearningTrack[] }
         <Link to={action.href} className="inline-flex min-h-11 w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
           {action.label} <ArrowRight className="w-4 h-4" />
         </Link>
-        {!overview.next && hasCourseHistory && mastery.reviewMistakes > 0 && (
+        {!overview.next && hasCourseHistory && mastery.reviewMistakes > 0 && mastery.href !== "/daily?review=mistakes#deeper-practice" && (
           <p className="mt-3 text-sm text-muted-foreground">
             You have {mastery.reviewMistakes} {mastery.reviewMistakes === 1 ? "answer" : "answers"} to revisit in today's case study.{" "}
-            <Link to="/daily" className="text-primary underline underline-offset-4">
+            <Link to="/daily?review=mistakes#deeper-practice" className="text-primary underline underline-offset-4">
               Review the worked explanations
             </Link>
             . This is a study suggestion, not a measure of trading ability.
