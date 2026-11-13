@@ -1,7 +1,7 @@
 import { DailyGenerationTest } from "@/components/daily/DailyGenerationTest";
 import { Link } from "react-router-dom";
 import { useAdminDraftNavigation } from "@/hooks/useAdminDraftNavigation";
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { toast } from 'sonner';
 import { supabase } from '@/integrations/supabase/client';
@@ -95,6 +95,8 @@ export default function AdminDaily() {
     setSelected(row); setDoc(structuredClone(row.document)); setReviewed(false); await refreshAfterWrite();
     toast.success(action === 'publish' ? 'Approved snapshot saved. It becomes available on its start date.' : action === 'reject' ? 'Draft rejected. Existing approved practice continues.' : 'Private draft saved. Approval is required for edited content.');
   };
+  const historicalExercises = useMemo(() => rows.filter(row => row.id !== selected?.id)
+    .flatMap(row => row.document?.exercises ?? []), [rows, selected?.id]);
   const errors = doc ? validateExercises(doc.exercises) : [], e = doc?.exercises[index];
   return <main className="min-h-screen bg-background text-foreground px-5 py-10"><Helmet><title>Daily Practice Administration | TradeHQ</title><meta name="robots" content="noindex, nofollow" /></Helmet><div className="max-w-6xl mx-auto space-y-6">
     <header className="flex flex-wrap justify-between gap-4"><div><h1 className="text-2xl font-bold">Daily practice</h1><p className="text-sm text-muted-foreground mt-1">50 deeper exercises · a new private bank every two months</p></div><nav className="flex flex-wrap gap-4 text-sm"><Link to="/admin" className="text-primary">Dashboard</Link><Link to="/admin/courses" className="text-primary">Courses</Link><Link to="/admin/reviews" className="text-primary">Reviews</Link>{unlocked && <button onClick={() => { if (dirty && !confirm('Discard unsaved edits and lock?')) return; scope.invalidate(); pending.current = false; setBusy(false); setCheckedAt(null); setRefreshError(''); setReviewed(false); setKey(''); setUnlocked(false); setDoc(null); setSelected(null); setRows([]); setStatus(null); setModelCheck(null); }}>Lock</button>}</nav></header>
@@ -127,7 +129,7 @@ export default function AdminDaily() {
         {rows.filter(row => filter === 'all' || row.status === filter).map(row => <button key={row.id} disabled={busy} className={`w-full text-left rounded-xl border p-3 ${selected?.id === row.id ? 'border-primary/40 bg-primary/5' : 'border-border'}`} onClick={() => choose(row)}><span className="block text-sm">{row.document.effectiveFrom}</span><span className="text-xs text-muted-foreground">{row.status === 'draft' ? 'Awaiting review' : row.status === 'published' ? 'Approved' : row.status} · revision {row.revision}</span></button>)}
         {!rows.some(row => filter === 'all' || row.status === filter) && <p className="text-sm text-muted-foreground py-3">No banks in this view. Previously approved practice stays available.</p>}</aside>
       {doc && e && <section className="min-w-0 space-y-5">
-        <PracticeReviewSummary exercises={doc.exercises} onInspect={exerciseIndex => { setIndex(exerciseIndex); setPreview(true); requestAnimationFrame(() => { exercisePanel.current?.scrollIntoView({ block: 'start' }); exercisePanel.current?.focus({ preventScroll: true }); }); }} />
+        <PracticeReviewSummary exercises={doc.exercises} historicalExercises={historicalExercises} onInspect={exerciseIndex => { setIndex(exerciseIndex); setPreview(true); requestAnimationFrame(() => { exercisePanel.current?.scrollIntoView({ block: 'start' }); exercisePanel.current?.focus({ preventScroll: true }); }); }} />
         {selected?.research && (selected.research.model || selected.research.usage || selected.research.checks?.length) ? <aside aria-label="Daily generation provenance" className="rounded-xl border border-border bg-card/50 p-4 space-y-2 text-xs text-muted-foreground">
           <h2 className="font-semibold text-sm text-foreground">Generation evidence for editorial review</h2>
           {selected.research.model && <p>Recorded model: {selected.research.model}</p>}

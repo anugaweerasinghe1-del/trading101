@@ -11,7 +11,7 @@ import { newPractice, readPractice, savePractice, upgradePractice, validProgress
 import { createCourseAdminHandler } from '../supabase/functions/_shared/courseAdmin.ts';
 import { generatePractice } from '../supabase/functions/_shared/dailyPracticeGenerator.ts';
 import { checkGeminiModelMetadata } from '../supabase/functions/_shared/geminiModelPreflight.ts';
-import { hasRepeatedPracticeCase, reviewPracticeExercises } from '../supabase/functions/_shared/dailyPracticeReview.ts';
+import { findRepeatedPracticeCase, hasRepeatedPracticeCase, similarPracticeScenarios, reviewPracticeExercises } from '../supabase/functions/_shared/dailyPracticeReview.ts';
 import { readGenerationResponse, GENERATION_READ_LIMITS } from '../supabase/functions/_shared/courseGenerator.ts';
 import { createServer } from 'node:http';
 import { dailyGenerationReadiness, type DailyGenerationStatus } from '../src/lib/dailyGenerationStatus.ts';
@@ -157,6 +157,25 @@ const claim = { lease: id, effectiveFrom: '2026-12-09', apiKey: 'test-only', mod
 const fetcher = (async (url: string | URL | Request, init?: RequestInit) => {
  if (String(url).includes('generativelanguage')) { calls++; assert.ok(!String(url).includes(claim.apiKey)); assert.equal(init?.redirect, 'error');
   const b = JSON.parse(String(init?.body)); assert.ok(b.generationConfig.responseJsonSchema); assert.equal(b.contents.length, 1);
+  const instructions = JSON.parse(b.contents[0].parts[0].text);
+  assert.equal(instructions.part, 1);
+  assert.ok(Number.isInteger(instructions.historyCount) && instructions.historyCount >= 0);
+  assert.equal(instructions.previous, undefined, 'Past case prose must never prime provider imitation');
+  assert.equal(instructions.casePlan.length, 10);
+  assert.ok(instructions.casePlan[0].includes('Account gain'));
+  const exercisesArray = b.generationConfig.responseJsonSchema.properties.exercises;
+  assert.equal(exercisesArray.minItems, undefined, 'Avoid a provider schema complexity 400');
+  assert.equal(exercisesArray.maxItems, undefined);
+  assert.match(exercisesArray.description, /Exactly 10 complete/);
+  const questionArray = exercisesArray.items.properties.questions;
+  assert.equal(questionArray.minItems, undefined); assert.equal(questionArray.maxItems, undefined);
+  assert.match(questionArray.description, /Exactly 10 distinct/);
+  assert.equal(questionArray.items.properties.options.maxItems, undefined);
+  assert.match(questionArray.items.properties.options.description, /Exactly 3/);
+  const sourceEnum = b.generationConfig.responseJsonSchema.properties.exercises.items.properties.sources.items.properties.url.enum;
+  assert.ok(Array.isArray(sourceEnum) && sourceEnum.length >= 2);
+  assert.ok(sourceEnum.includes('https://www.investor.gov/introduction-investing'));
+  assert.equal(new Set(sourceEnum).size, sourceEnum.length, 'Only unique reachable canonical URLs belong in the provider schema');
   // Google's direct REST ThinkingLevel enum uses uppercase names.
   assert.equal(b.generationConfig.thinkingConfig.thinkingLevel, 'LOW');
   return new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: JSON.stringify({ exercises: dailyProviderExercises(chunk(0)) }) }] } }],
@@ -166,9 +185,45 @@ const fetcher = (async (url: string | URL | Request, init?: RequestInit) => {
 const observedPart = await generatePractice(claim, fetcher);
 assert.deepEqual(observedPart.exercises, chunk(0), 'Provider sentence pairs round-trip into the unchanged stored shape');
 assert.equal(observedPart.exercises.length, 10); assert.equal(calls, 1);
+// A repeated title with a genuinely different scenario should remain a
+// reviewable, distinct draft; a copied scenario still fails later.
+const reusedHeading = { title: chunk(0)[0].title, scenario: 'Another financial worksheet studies a distinct context.', questions: [] };
+const titlePart = await generatePractice({ ...claim, existing: [reusedHeading] }, fetcher);
+assert.ok(titlePart.exercises[0].title.startsWith(chunk(0)[0].title));
+assert.notEqual(titlePart.exercises[0].title, reusedHeading.title);
+assert.ok(titlePart.research.checks.some(note => note.includes('titles were differentiated')));
+assert.deepEqual(titlePart.exercises[0].questions, chunk(0)[0].questions);
+// A generic question shared by DIFFERENT scenarios can be made specific to
+// each scenario, retaining the original answer/options and audit evidence.
+const repeatedAcrossCases = chunk(0);
+repeatedAcrossCases[7].questions[2].prompt = repeatedAcrossCases[0].questions[0].prompt;
+const contextPart = await generatePractice(claim, (async (url, init) => {
+ if (!String(url).includes('generativelanguage')) return fetcher(url, init);
+ return Response.json({ candidates: [{ content: { parts: [
+  { text: JSON.stringify({ exercises: dailyProviderExercises(repeatedAcrossCases) }) },
+ ] } }] });
+}) as typeof fetch);
+assert.match(contextPart.exercises[7].questions[2].prompt, /For the "Private test part 0 case 7" case:/);
+assert.equal(contextPart.exercises[7].questions[2].correctAnswer, repeatedAcrossCases[7].questions[2].correctAnswer);
+assert.ok(contextPart.research.checks.some(note => note.includes('cross-case question prompts required case-specific context')));
+const repeatedWithinCase = chunk(0);
+repeatedWithinCase[7].questions[2].prompt = repeatedWithinCase[7].questions[1].prompt;
+await assert.rejects(generatePractice(claim, (async (url, init) => {
+ if (!String(url).includes('generativelanguage')) return fetcher(url, init);
+ return Response.json({ candidates: [{ content: { parts: [
+  { text: JSON.stringify({ exercises: dailyProviderExercises(repeatedWithinCase) }) },
+ ] } }] });
+}) as typeof fetch), /repeats a question/);
 assert.deepEqual(observedPart.research.usage, { scope: 'this_generated_part_only', part: 1,
   inputTokens: 512, outputTokens: 2048, totalTokens: 2560 });
 await assert.rejects(generatePractice({ ...claim, existing: chunk(0) }, fetcher), /repeats/);
+// A single generic historical question match is not an excuse to discard the
+// other 99 scored questions. It must be tracked for owner editorial review.
+const historicalPrompt = { title: 'An unrelated earlier archived case', scenario: 'Earlier archive about a separate lesson.',
+ questions: [{ ...chunk(0)[7].questions[2] }] };
+const withEditorialFlag = await generatePractice({ ...claim, existing: [historicalPrompt] }, fetcher);
+assert.equal(withEditorialFlag.exercises.length, 10);
+assert.ok(withEditorialFlag.research.checks.some(note => note.includes('Editorial warning: 1 question prompts match historical wording')));
 // Distinct IDs, titles and prompts must not hide copied scenarios in the SAME response.
 for (const reworded of [false, true]) {
  const repeated = chunk(0);
@@ -183,6 +238,38 @@ for (const reworded of [false, true]) {
 }
 assert.equal(hasRepeatedPracticeCase(chunk(0)), false);
 assert.equal(hasRepeatedPracticeCase(chunk(0), [chunk(0)[0]]), true);
+// Later parts get their own specific mechanisms; only the history COUNT is
+// supplied to the model, and historical prose remains server-side.
+let fourthPartPrompt: any;
+const partFour = await generatePractice({ ...claim, exercises: [...chunk(0), ...chunk(1), ...chunk(2)] }, (async (url, init) => {
+ if (String(url).includes('generativelanguage')) {
+  fourthPartPrompt = JSON.parse(JSON.parse(String(init?.body)).contents[0].parts[0].text);
+  return Response.json({ candidates: [{ content: { parts: [
+   { text: JSON.stringify({ exercises: dailyProviderExercises(chunk(3)) }) },
+  ] } }] });
+ }
+ return fetcher(url, init);
+}) as typeof fetch).catch(() => null);
+assert.equal(fourthPartPrompt.part, 4);
+assert.equal(fourthPartPrompt.historyCount, 30);
+assert.equal(fourthPartPrompt.previous, undefined);
+assert.equal(fourthPartPrompt.casePlan.length, 10);
+assert.ok(fourthPartPrompt.casePlan[0].includes('cash flow ledger'));
+assert.deepEqual(findRepeatedPracticeCase([chunk(0)[0]], [chunk(0)[0]]), {
+ caseIndex: 0, relatedIndex: 0, location: 'history', kind: 'title',
+});
+// The old word-set-only gate rejected unrelated cases that share financial terms.
+// Preserve that overlap as an editorial finding, but require near-verbatim phrases
+// or an identical title to automatically reject a provider's full ten-case batch.
+const familiarTerms = 'A hypothetical investor studies cash portfolio balance price changes fees trade orders risk and uncertainty across a comparison of market data snapshots';
+const scrambledTerms = familiarTerms.split(' ').reverse().join(' ');
+assert.ok(similarPracticeScenarios(familiarTerms, scrambledTerms));
+assert.equal(hasRepeatedPracticeCase([{ title: 'Independent learning example', scenario: scrambledTerms }],
+ [{ title: 'Earlier financial lesson', scenario: familiarTerms }]), false);
+assert.equal(hasRepeatedPracticeCase([{ title: 'Earlier financial lesson', scenario: scrambledTerms }],
+ [{ title: 'Earlier financial lesson', scenario: familiarTerms }]), true, 'Matching titles always block');
+assert.equal(hasRepeatedPracticeCase([{ title: 'A distinct title', scenario: familiarTerms + ' An extra comparison is included.' }],
+ [{ title: 'Original title', scenario: familiarTerms }]), true, 'Near-verbatim copying still blocks');
 const reviewFixture = chunk(0), unmodified = JSON.stringify(reviewFixture);
 assert.ok(!reviewPracticeExercises(reviewFixture).some(finding => finding.kind === 'similar-case'));
 assert.equal(JSON.stringify(reviewFixture), unmodified, 'Editorial triage is read-only');
