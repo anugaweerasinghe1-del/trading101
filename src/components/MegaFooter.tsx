@@ -205,7 +205,11 @@ export function MegaFooter() {
                 </li>
               ))}
             </ul>
-            <AdvertisingPrivacyChoices className="mt-4 text-sm text-muted-foreground hover:text-primary transition-colors duration-200" />
+            <button type="button" className="mt-4 block text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+              onClick={() => window.dispatchEvent(new Event("tradehq:open-consent"))}>
+              Optional analytics settings
+            </button>
+            <AdvertisingPrivacyChoices className="mt-2 block text-sm text-muted-foreground hover:text-primary transition-colors duration-200" />
           </div>
 
           {/* Learn Links */}
