@@ -1215,7 +1215,13 @@ async function main(){
     await wait(()=>devtools.evaluate(`${noticePreference}?.checked`),'saved preference persists across reload');
     await devtools.evaluate(`${noticePreference}.click()`);
     await loadDocument(origin+'/courses');
-    await wait(async()=>await noticeTitle()===release.title,'re-enabled browser recovers from array history');
+    await wait(async()=>await noticeTitle()===publications[0].title,
+      're-enabled browser recovers from array history and shows the newest approved course first');
+    await devtools.evaluate(`${dismiss}.click()`);
+    await wait(async()=>!await noticeTitle(),'newest release dismissed after restoring preference');
+    await devtools.evaluate("window.dispatchEvent(new Event('focus'))");
+    await wait(async()=>await noticeTitle()===release.title,
+      'older approved feature follows without replaying the dismissed course');
     await devtools.evaluate(`${notice}.querySelector('a').click()`);
     await wait(()=>devtools.evaluate("location.pathname==='/whats-new' && !!document.querySelector('ol[aria-label=\"TradeHQ releases\"]')"),'popup opens permanent release history');
     await devtools.send('Page.removeScriptToEvaluateOnNewDocument',{identifier:noticeClock});
