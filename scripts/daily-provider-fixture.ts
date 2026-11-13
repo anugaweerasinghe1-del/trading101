@@ -9,6 +9,6 @@ export function dailyProviderExercises(exercises: DailyExercise[]) {
   return exercises.map(exercise => ({
     ...exercise,
     reflectionGuide: splitText(exercise.reflectionGuide),
-    questions: exercise.questions.map(question => ({ ...question, explanation: splitText(question.explanation) })),
+    questions: Object.fromEntries(exercise.questions.map((question, index) => [`q${index + 1}`, { ...question, explanation: splitText(question.explanation) }])),
   }));
 }

@@ -1,4 +1,4 @@
-import { DAILY_CATEGORIES, DAILY_VISUAL_LIMITS, assembleDailyExercises, normalized, validateExercises, type DailyExercise } from './dailyPractice.ts';
+import { DAILY_CATEGORIES, DAILY_VISUAL_LIMITS, DAILY_QUESTION_SLOTS, assembleDailyExercises, normalized, validateExercises, type DailyExercise } from './dailyPractice.ts';
 import { findRepeatedPracticeCase } from './dailyPracticeReview.ts';
 import { readCourseReferences, readGenerationResponse, GENERATION_READ_LIMITS, safeGeminiRejectionDetails } from './courseGenerator.ts';
 export interface PracticeClaim {
@@ -108,9 +108,10 @@ export async function generatePractice(claim: PracticeClaim, fetcher = fetch) {
       'Do not ask learners to predict market direction or treat RSI, volume or price patterns as guarantees. Reflect uncertainty, costs, exposure, sample limitations and alternative explanations.',
       'Diversification does not prevent all losses. Recompute total value before allocation percentages. Planned risk/reward differs from realized returns. A return rank is not a verified skill rating.',
       `Visual bars show ${visualLimits.barsMin}–${visualLimits.barsMax} nonnegative finite inputs from ${visualLimits.valueMin} to ${visualLimits.valueMax}. Use positive prices, balances, costs or exposure amounts; show losses as before/after balances, never negative return bars or absolute values that hide a loss. All bars share one unit. Caption is ${visualLimits.captionMin}–${visualLimits.captionMax} characters and explicitly says hypothetical, not live data; unit is ${visualLimits.unitMin}–${visualLimits.unitMax} characters (e.g. USD or %); labels are ${visualLimits.labelMin}–${visualLimits.labelMax} characters. No invented photographs or market charts.`,
-      'Return only a complete structured object with EXACTLY 10 exercises, EXACTLY 10 scored questions per exercise, and EXACTLY 3 options per question; omit no exercise or question even if the response is long. All 100 questions need full worked explanations. Unique hyphenated IDs include the period and part; keep all titles and prompts distinct from every previous item. No reviewer metadata: owner approval happens separately.',
+      'Return a complete structured object with EXACTLY 10 exercises. Each exercise MUST have a questions OBJECT with every required q1 through q10 field (not a question array), with one distinct scored question per slot and EXACTLY 3 options per question. Never omit q10 or any other slot even if the response is long. All 100 questions need full worked explanations. Unique hyphenated IDs include the period and part; keep all titles and prompts distinct from every previous item. No reviewer metadata: owner approval happens separately.',
     ],
   };
+  const scoredQuestion = obj({ prompt: boundedText(12, 450, 'Distinct scored question.'), options: { type: 'array', description: 'Exactly 3 plausible and distinct choices.', items: boundedText(1, 350, 'Distinct answer option.') }, correctAnswer: { type: 'integer', minimum: 0, maximum: 2 }, explanation: pair(explanationParts) });
   const schema = obj({ exercises: { type: 'array', description: 'Exactly 10 complete exercises are required; incomplete batches fail application validation.', items: obj({
     id: boundedText(1, 90, 'Unique lowercase letters, digits and hyphens only.'), title: boundedText(8, 120, 'Distinct case title.'), category: { ...str, enum: [...DAILY_CATEGORIES] }, scenario: boundedText(180, 5000, 'Substantial hypothetical case following the scenario word target.'),
     visual: obj({
@@ -120,7 +121,7 @@ export async function generatePractice(claim: PracticeClaim, fetcher = fetch) {
         items: obj({ label: boundedText(visualLimits.labelMin, visualLimits.labelMax, 'Precise short bar label.'),
           value: { type: 'number', minimum: visualLimits.valueMin, maximum: visualLimits.valueMax } }) },
     }),
-    questions: { type: 'array', description: 'Exactly 10 distinct scored questions per exercise are required.', items: obj({ prompt: boundedText(12, 450, 'Distinct scored question.'), options: { type: 'array', description: 'Exactly 3 plausible and distinct choices.', items: boundedText(1, 350, 'Distinct answer option.') }, correctAnswer: { type: 'integer', minimum: 0, maximum: 2 }, explanation: pair(explanationParts) }) },
+    questions: { type: 'object', description: 'Exactly ten distinct scored question slots, numbered q1 through q10. All ten are mandatory.', properties: Object.fromEntries(DAILY_QUESTION_SLOTS.map(slot => [slot, scoredQuestion])), required: [...DAILY_QUESTION_SLOTS] },
     reflection: { ...str, description: "One case-specific reflection question, about 50–120 characters." }, reflectionGuide: pair(guideParts),
     // The provider may SELECT a source but cannot invent its URL. The enum comes
     // from the subset that was actually fetched successfully for this request.
@@ -148,6 +149,12 @@ export async function generatePractice(claim: PracticeClaim, fetcher = fetch) {
   let items: DailyExercise[];
   try { items = assembleDailyExercises(JSON.parse(output.candidates?.[0]?.content?.parts?.filter((p: { thought?: boolean }) => !p.thought).map((p: { text?: string }) => p.text ?? '').join('') ?? '').exercises) as DailyExercise[]; }
   catch { throw new Error('Gemini returned incomplete output. No content was published.'); }
+  // Validate question cardinality *before* later title/prompt processing, which
+  // iterates questions and must never throw a generic error on a missing q10.
+  // Do not pad missing slots: any malformed provider response fails this part.
+  if (!Array.isArray(items)) throw new Error('Daily validation failed: A batch needs exactly 10 exercises.');
+  const missingQuestions = items.findIndex(exercise => !Array.isArray(exercise?.questions) || exercise.questions.length !== 10);
+  if (missingQuestions >= 0) throw new Error('Daily validation failed: Exercise ' + (missingQuestions + 1) + ' needs 10 questions.');
   // AI can reuse a heading from an unrelated earlier case. Preserve the
   // actual scenario and teaching content, and give such a draft a specific
   // headline derived from its own labelled inputs. Near-copied SCENARIOS are

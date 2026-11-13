@@ -168,11 +168,12 @@ const fetcher = (async (url: string | URL | Request, init?: RequestInit) => {
   assert.equal(exercisesArray.minItems, undefined, 'Avoid a provider schema complexity 400');
   assert.equal(exercisesArray.maxItems, undefined);
   assert.match(exercisesArray.description, /Exactly 10 complete/);
-  const questionArray = exercisesArray.items.properties.questions;
-  assert.equal(questionArray.minItems, undefined); assert.equal(questionArray.maxItems, undefined);
-  assert.match(questionArray.description, /Exactly 10 distinct/);
-  assert.equal(questionArray.items.properties.options.maxItems, undefined);
-  assert.match(questionArray.items.properties.options.description, /Exactly 3/);
+  const requiredQuestions = exercisesArray.items.properties.questions;
+  assert.equal(requiredQuestions.type, 'object', 'Avoid Gemini nested-array length bounds');
+  assert.deepEqual(requiredQuestions.required, Array.from({ length: 10 }, (_, index) => 'q' + (index + 1)));
+  assert.deepEqual(Object.keys(requiredQuestions.properties), requiredQuestions.required);
+  assert.equal(requiredQuestions.properties.q10.properties.options.maxItems, undefined);
+  assert.match(requiredQuestions.properties.q10.properties.options.description, /Exactly 3/);
   const sourceEnum = b.generationConfig.responseJsonSchema.properties.exercises.items.properties.sources.items.properties.url.enum;
   assert.ok(Array.isArray(sourceEnum) && sourceEnum.length >= 2);
   assert.ok(sourceEnum.includes('https://www.investor.gov/introduction-investing'));
@@ -186,6 +187,20 @@ const fetcher = (async (url: string | URL | Request, init?: RequestInit) => {
 const observedPart = await generatePractice(claim, fetcher);
 assert.deepEqual(observedPart.exercises, chunk(0), 'Provider sentence pairs round-trip into the unchanged stored shape');
 assert.equal(observedPart.exercises.length, 10); assert.equal(calls, 1);
+// A provider that returns nine questions and STOP must fail rather than saving
+// an incomplete exercise or silently inventing an answer. The schema now makes
+// all ten keys mandatory, even though this fixture simulates a rogue response.
+const nineQuestionCases = chunk(0);
+nineQuestionCases[6].questions.pop();
+let invalidQuestionCalls = 0;
+await assert.rejects(generatePractice(claim, (async (url, init) => {
+ if (!String(url).includes('generativelanguage')) return fetcher(url, init);
+ invalidQuestionCalls++;
+ return Response.json({ candidates: [{ finishReason: 'STOP', content: { parts: [
+  { text: JSON.stringify({ exercises: dailyProviderExercises(nineQuestionCases) }) },
+ ] } }] });
+}) as typeof fetch), /Exercise 7 needs 10 questions/);
+assert.equal(invalidQuestionCalls, 1, 'Never retry an incomplete provider response automatically');
 // A repeated title with a genuinely different scenario should remain a
 // reviewable, distinct draft; a copied scenario still fails later.
 const reusedHeading = { title: chunk(0)[0].title, scenario: 'Another financial worksheet studies a distinct context.', questions: [] };
