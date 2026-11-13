@@ -55,6 +55,26 @@ export const APPROVED_RELEASES = approvedReleases as readonly (ReleaseNote & { a
 export const RELEASE_NOTES: readonly ReleaseNote[] = [...APPROVED_RELEASES, ...ARCHIVED_RELEASE_NOTES]
   .sort((first, second) => Date.parse(second.date) - Date.parse(first.date));
 
+export type ReleaseCandidate = { release: ReleaseNote; marker: string };
+
+/** Newest unseen approved announcement wins, whether it came from the build
+ * manifest or the live published-course feed. Neither routine commits nor
+ * unapproved course drafts enter this list. */
+export function latestUnseenRelease(
+  candidates: readonly ReleaseCandidate[],
+  seen: Readonly<Record<string, boolean>>,
+  sessionSeen: ReadonlySet<string>,
+  cutoff: number,
+  now: number,
+): ReleaseCandidate | undefined {
+  return candidates.filter(({ release, marker }) => {
+    const date = Date.parse(release.date);
+    return Number.isFinite(date) && date >= cutoff && date <= now
+      && seen[marker] !== true && !sessionSeen.has(marker);
+  }).sort((first, second) => Date.parse(second.release.date) - Date.parse(first.release.date)
+    || first.marker.localeCompare(second.marker))[0];
+}
+
 export function publishedCourseRelease(row: unknown): ReleaseNote | null {
   if (!row || typeof row !== "object") return null;
   const { slug, published_at, title } = row as Record<string, unknown>;
