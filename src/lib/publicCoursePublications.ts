@@ -8,7 +8,7 @@ const reader = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
 export function readPublicCoursePublications({ since, signal }: { since?: string; signal?: AbortSignal } = {}) {
   let query = reader.from("published_courses").select("slug,published_at,title:document->>title");
   if (since) query = query.gte("published_at", since);
-  const ordered = query.order("published_at", { ascending: Boolean(since) })
+  const ordered = query.order("published_at", { ascending: false })
     .order("slug").limit(since ? 20 : 40);
   return signal ? ordered.abortSignal(signal) : ordered;
 }
