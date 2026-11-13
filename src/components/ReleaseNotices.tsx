@@ -4,7 +4,8 @@ import { toast } from "sonner";
 import { readCoursePublicationHistory } from "@/lib/coursePublicationHistory";
 import { SITE_DOMAIN } from "@/lib/constants";
 import { readPublicCoursePublications } from "@/lib/publicCoursePublications";
-import { APPROVED_RELEASES, publishedCourseRelease, latestUnseenRelease, RELEASE_NOTICES_PREFERENCE, releaseNoticesDisabled, type ReleaseCandidate } from "@/lib/releaseNotes";
+import { APPROVED_RELEASES, publishedCourseRelease, RELEASE_NOTICES_PREFERENCE, releaseNoticesDisabled, type ReleaseNote } from "@/lib/releaseNotes";
+import { latestUnseenRelease, type ReleaseCandidate } from "@/lib/releaseNoticeSelection";
 
 const HISTORY_KEY = "tradehq-seen-course-publications-v1";
 const RECENT_MS = 7 * 86400000;
@@ -37,7 +38,7 @@ export function ReleaseNotices() {
         let seen: Record<string, boolean> = {};
         try { seen = readCoursePublicationHistory(localStorage.getItem(HISTORY_KEY), now); }
         catch { /* Session deduplication still applies. */ }
-        const candidates: ReleaseCandidate[] = APPROVED_RELEASES.filter(release => release.announce === true)
+        const candidates: ReleaseCandidate<ReleaseNote>[] = APPROVED_RELEASES.filter(release => release.announce === true)
           .map(release => ({ release, marker: `${release.id}:${release.date}` }));
         try {
           const { data, error } = await readPublicCoursePublications({
