@@ -165,6 +165,28 @@ assert.equal(nineResponse.data.diagnostics.structure.questionCounts[6], null);
 assert.equal(nineResponse.data.productionCycleChanged, false);
 assert.equal(nineResponse.data.saved, false); assert.equal(nineResponse.data.published, false);
 assert.equal(nineCalls, 1, 'Missing question cannot silently retry or change the cycle');
+// The real Nov 14 response had twelve complete exercises and STOP. The private
+// test must validate the safely selected ten without retaining or publishing
+// the two extras; raw provider diagnostics must still show twelve received.
+const surplusRaw = [...exercises, ...exercises.slice(0, 2)];
+let surplusProviderCalls = 0;
+const surplusProbe = createDailyProbeHandler({ ...options, admit: async () => true,
+  fetcher: async (input, init) => {
+    if (!String(input).includes('generativelanguage')) return upstream(input, init);
+    surplusProviderCalls++;
+    return Response.json({ candidates: [{ finishReason: 'STOP', content: { parts: [
+      { text: JSON.stringify({ exercises: dailyProviderExercises(surplusRaw) }) },
+    ] } }] });
+  } });
+const surplusResult = await (await surplusProbe(req())).json();
+assert.equal(surplusResult.data.outcome, 'passed');
+assert.equal(surplusResult.data.exercises, 10);
+assert.equal(surplusResult.data.questions, 100);
+assert.equal(surplusResult.data.diagnostics.structure.exerciseCount, 12);
+assert.equal(surplusResult.data.productionCycleChanged, false);
+assert.equal(surplusResult.data.saved, false);
+assert.equal(surplusResult.data.published, false);
+assert.equal(surplusProviderCalls, 1);
 assert.equal(validationDiagnostics('PRIVATE unknown failure'), undefined);
 assert.equal(providerDiagnostics(JSON.stringify({ candidates: [{ finishReason: KEY }] })).provider?.finishReason, 'UNRECOGNIZED');
 for (const invalid of [{ provider: { finishReason: KEY } }, { validation: { stage: KEY } }, { rawText: KEY }]) assert.equal(validProbeDiagnostics(invalid), false);
