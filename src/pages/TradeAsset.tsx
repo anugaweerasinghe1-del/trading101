@@ -296,7 +296,7 @@ export default function TradeAsset() {
             "@type": "Organization",
             "name": "TradeHQ",
             "url": "https://www.thetradehq.com/",
-            "logo": "https://www.thetradehq.com/og-image.png"
+            "logo": "https://www.thetradehq.com/logo.png"
           },
           "offers": {
             "@type": "Offer",
@@ -334,7 +334,7 @@ export default function TradeAsset() {
     "@type": "Organization",
     "name": "TradeHQ",
     "url": "https://www.thetradehq.com/",
-    "logo": "https://www.thetradehq.com/og-image.png",
+    "logo": "https://www.thetradehq.com/logo.png",
     
   };
 

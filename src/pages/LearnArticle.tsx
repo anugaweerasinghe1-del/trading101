@@ -53,7 +53,7 @@ export default function LearnArticle() {
       "@type": "Organization",
       name: "TradeHQ",
       url: `${DOMAIN}/`,
-      logo: { "@type": "ImageObject", url: `${DOMAIN}/og-image.png` },
+      logo: { "@type": "ImageObject", url: `${DOMAIN}/logo.png` },
     },
   };
 
