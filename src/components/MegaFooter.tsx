@@ -13,9 +13,8 @@ import {
   LineChart,
   Globe,
   Gem,
-  Twitter,
-  Linkedin,
-  Github,
+  Instagram,
+  Phone,
   Shield,
   Award,
   CheckCircle2,
@@ -189,7 +188,39 @@ export function MegaFooter() {
               and study stocks, crypto, forex, and commodities without spending real money.
             </p>
 
-            <Link to="/contact" className="text-sm text-primary hover:underline">Contact TradeHQ</Link>
+            <div className="space-y-2">
+              <Link to="/contact" className="inline-block text-sm text-primary hover:underline">Contact TradeHQ</Link>
+              <a href="mailto:anugaweerasinghe1@gmail.com" className="flex min-w-0 items-center gap-2 text-xs text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm">
+                <Mail className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                <span className="break-all">anugaweerasinghe1@gmail.com</span>
+              </a>
+              <a href="tel:+94714897346" className="flex items-center gap-2 text-xs text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm">
+                <Phone className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                +94 71 489 7346
+              </a>
+            </div>
+            <div aria-label="TradeHQ and founder social profiles" className="mt-5 space-y-3 border-t border-border/50 pt-4">
+              <div>
+                <p className="mb-1 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">Follow TradeHQ</p>
+                <a href="https://www.instagram.com/thetradehq_1/" target="_blank" rel="noopener noreferrer" aria-label="TradeHQ on Instagram, @thetradehq_1" className="inline-flex min-h-9 items-center gap-2 rounded-md text-sm text-foreground/80 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                  <Instagram className="h-4 w-4" aria-hidden="true" />
+                  @thetradehq_1
+                </a>
+              </div>
+              <div>
+                <p className="mb-1 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">Founder · personal accounts</p>
+                <div className="flex flex-wrap gap-x-4 gap-y-1">
+                  <a href="https://www.instagram.com/anw_008/" target="_blank" rel="noopener noreferrer" aria-label="Founder's personal Instagram, @anw_008" className="inline-flex min-h-9 items-center gap-2 rounded-md text-xs text-foreground/70 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                    <Instagram className="h-4 w-4" aria-hidden="true" />
+                    Instagram
+                  </a>
+                  <a href="https://bsky.app/profile/anugaweerasinghe.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="Founder's personal Bluesky, @anugaweerasinghe.bsky.social" className="inline-flex min-h-9 items-center gap-2 rounded-md text-xs text-foreground/70 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                    <Globe className="h-4 w-4" aria-hidden="true" />
+                    Bluesky
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Platform Links */}

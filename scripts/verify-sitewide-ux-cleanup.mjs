@@ -33,6 +33,22 @@ assert.match(footer, /mailto:anugaweerasinghe1@gmail\.com/);
 assert.match(footer, /<NewsletterSignup\s*\/>/);
 assert.match(footer, /to="\/privacy"/);
 assert.match(footer, /to="\/terms"/);
+const socialProfiles = [
+  "https://www.instagram.com/thetradehq_1/",
+  "https://www.instagram.com/anw_008/",
+  "https://bsky.app/profile/anugaweerasinghe.bsky.social",
+];
+for (const url of socialProfiles) {
+  assert.ok(footer.includes(`href="${url}"`), `Footer social link missing: ${url}`);
+  assert.ok(home.includes(`href="${url}"`), `Homepage social link missing: ${url}`);
+}
+assert.match(footer, /tel:\+94714897346/);
+assert.match(footer, /Founder · personal accounts/);
+assert.match(home, /Founder · personal:/);
+assert.match(home, /aria-labelledby="follow-tradehq-heading"/);
+assert.equal((home.match(/id="follow-tradehq-heading"/g) || []).length, 1, "Only one homepage follow section");
+assert.doesNotMatch(read("index.html"), /<meta\s+name="twitter:creator"\s+content="@tradehq"/, "Do not assert an unverified X account");
+
 
 assert.match(calculator, /window\.location\.hash !== "#compound-initial-capital"/);
 assert.match(calculator, /requestAnimationFrame/);
