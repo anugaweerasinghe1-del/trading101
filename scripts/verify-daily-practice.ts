@@ -187,6 +187,40 @@ const fetcher = (async (url: string | URL | Request, init?: RequestInit) => {
 const observedPart = await generatePractice(claim, fetcher);
 assert.deepEqual(observedPart.exercises, chunk(0), 'Provider sentence pairs round-trip into the unchanged stored shape');
 assert.equal(observedPart.exercises.length, 10); assert.equal(calls, 1);
+// Mirror the Nov 14 real STOP output: twelve complete cases, ten questions
+// each. Only bonus cases beyond two per category may be discarded, never any
+// valid scored question or mandatory category. No provider retry is allowed.
+const overproduced = [...chunk(0), ...chunk(0).slice(0, 2)];
+let surplusCalls = 0;
+const overproducedPart = await generatePractice(claim, (async (url, init) => {
+ if (!String(url).includes('generativelanguage')) return fetcher(url, init);
+ surplusCalls++;
+ return Response.json({ candidates: [{ finishReason: 'STOP', content: { parts: [
+  { text: JSON.stringify({ exercises: dailyProviderExercises(overproduced) }) },
+ ] } }] });
+}) as typeof fetch);
+assert.equal(surplusCalls, 1, 'Never retry to correct over-generation');
+assert.deepEqual(overproducedPart.exercises, chunk(0), 'Only the ten original valid cases survive');
+assert.ok(overproducedPart.research.checks.some(note => note.includes('returned 12 exercises')));
+assert.ok(overproducedPart.research.checks.some(note => note.includes('discarded 2 surplus')));
+// An incomplete category allocation cannot be repaired by dropping extra cases.
+const missingCategory = [...chunk(0).slice(0, 9), ...chunk(0).slice(0, 3)];
+await assert.rejects(generatePractice(claim, (async (url, init) => {
+ if (!String(url).includes('generativelanguage')) return fetcher(url, init);
+ return Response.json({ candidates: [{ finishReason: 'STOP', content: { parts: [
+  { text: JSON.stringify({ exercises: dailyProviderExercises(missingCategory) }) },
+ ] } }] });
+}) as typeof fetch), /exactly 10 exercises/);
+// A selected case with an incomplete answer must remain invalid, even when
+// otherwise valid extra cases could have filled the numerical quota.
+const incompleteOverproduction = structuredClone(overproduced);
+incompleteOverproduction[0].questions[0].explanation = 'Short';
+await assert.rejects(generatePractice(claim, (async (url, init) => {
+ if (!String(url).includes('generativelanguage')) return fetcher(url, init);
+ return Response.json({ candidates: [{ finishReason: 'STOP', content: { parts: [
+  { text: JSON.stringify({ exercises: dailyProviderExercises(incompleteOverproduction) }) },
+ ] } }] });
+}) as typeof fetch), /question 1 is incomplete/);
 // A provider that returns nine questions and STOP must fail rather than saving
 // an incomplete exercise or silently inventing an answer. The schema now makes
 // all ten keys mandatory, even though this fixture simulates a rogue response.
