@@ -1,0 +1,102 @@
+{
+  "observedAt": "2026-11-14T17:20:25.959Z",
+  "rows": [
+    {
+      "width": 360,
+      "interaction": "Real keyboard Enter opens mobile menu; real Learn link navigates and renders",
+      "outcome": "PASS"
+    },
+    {
+      "width": 360,
+      "path": "/auth",
+      "http": 200,
+      "adLoader": false
+    },
+    {
+      "width": 360,
+      "path": "/portfolio",
+      "http": 200,
+      "adLoader": false
+    },
+    {
+      "width": 360,
+      "path": "/reviews",
+      "http": 200,
+      "adLoader": false
+    },
+    {
+      "width": 360,
+      "path": "/admin",
+      "http": 200,
+      "adLoader": false
+    },
+    {
+      "width": 360,
+      "path": "/courses/bitcoin-simulator-practice-trading",
+      "http": 200,
+      "adLoader": false
+    },
+    {
+      "width": 360,
+      "path": "/missing-adsense-audit-probe",
+      "http": 404,
+      "adLoader": false
+    },
+    {
+      "width": 360,
+      "path": "/privacy",
+      "http": 200,
+      "adLoader": false
+    },
+    {
+      "width": 1280,
+      "interaction": "Real desktop Learn link navigates and renders",
+      "outcome": "PASS"
+    },
+    {
+      "width": 1280,
+      "path": "/auth",
+      "http": 200,
+      "adLoader": false
+    },
+    {
+      "width": 1280,
+      "path": "/portfolio",
+      "http": 200,
+      "adLoader": false
+    },
+    {
+      "width": 1280,
+      "path": "/reviews",
+      "http": 200,
+      "adLoader": false
+    },
+    {
+      "width": 1280,
+      "path": "/admin",
+      "http": 200,
+      "adLoader": false
+    },
+    {
+      "width": 1280,
+      "path": "/courses/bitcoin-simulator-practice-trading",
+      "http": 200,
+      "adLoader": false
+    },
+    {
+      "width": 1280,
+      "path": "/missing-adsense-audit-probe",
+      "http": 404,
+      "adLoader": false
+    },
+    {
+      "width": 1280,
+      "path": "/privacy",
+      "http": 200,
+      "adLoader": false
+    }
+  ],
+  "adRequests": [],
+  "runtimeErrors": [],
+  "scope": "Live guest browser only. No sign-in, accounts, forms, emails, simulated orders or model requests. Only optional analytics rejection and navigation."
+}

@@ -1,0 +1,452 @@
+[
+  {
+    "case": 1,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "22000;102000;21.5686%;19800;99800;-0.2%;20400;1600;2.1569%",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-01",
+    "title": "A rising coin, a mostly cash account"
+  },
+  {
+    "case": 2,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "1;1001;999;-2;2000;10 transactions;10 fees",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-11",
+    "title": "The unchanged-price round trip"
+  },
+  {
+    "case": 3,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "3min;6min;1min;observation vs fetch preserved",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-21",
+    "title": "A snapshot has an observation time"
+  },
+  {
+    "case": 4,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "800;2800;28%;400+160=560;5.6%",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-31",
+    "title": "An ETF can overlap a stock you own"
+  },
+  {
+    "case": 5,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "3 documented vs0;100 outcome gap;process not profit",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-41",
+    "title": "A good process can have a losing outcome"
+  },
+  {
+    "case": 6,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "1500+2000=3500;96500;29925;9600;99525",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-02",
+    "title": "Two unequal positions fall together"
+  },
+  {
+    "case": 7,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "2.20;2197.80;195.80;4.20;9.7802%;1800 branch loss203.80",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-12",
+    "title": "A sale fee uses the exit value"
+  },
+  {
+    "case": 8,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "equal101;75/25 gives100.50;2%;not executable",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-22",
+    "title": "An aggregate is not one exchange’s last trade"
+  },
+  {
+    "case": 9,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "3 opposite signs;30+40=70;3.5%;no correlation guarantee",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-32",
+    "title": "Correlation can change when you need it"
+  },
+  {
+    "case": 10,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "10%;400;440;40 gain;causation unresolved",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-42",
+    "title": "Write the thesis before the price moves"
+  },
+  {
+    "case": 11,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "2002;7998;9998;2200;2.20;10195.80;1.958%",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-03",
+    "title": "Cash after a fee-paying buy"
+  },
+  {
+    "case": 12,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "1001;shortfall1;900.90;99.10;100.10;9.99001units",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-13",
+    "title": "An affordable quantity still needs fee room"
+  },
+  {
+    "case": 13,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "101.20;1.20;90.909EUR;1.2%;99.36;0.64;1.08696",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-23",
+    "title": "Currency mismatch looks like a price error"
+  },
+  {
+    "case": 14,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "1200-600=600;40%;60;alternative200-50=150",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-33",
+    "title": "A planned payoff ratio is not a realized result"
+  },
+  {
+    "case": 15,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "40%decline;66.6667%recovery;1200;1500;25%;16.6667%loss",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-43",
+    "title": "The old high is a reference, not a promise"
+  },
+  {
+    "case": 16,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "500proceeds;400cost;100realized;450remaining;50unrealized;950total;150gross",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-04",
+    "title": "Selling half is not selling the gain"
+  },
+  {
+    "case": 17,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "1020;1021.02;1001prior;20.02difference;2%;980.98alternative",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-14",
+    "title": "The quote changes before you submit"
+  },
+  {
+    "case": 18,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "48hours under fixed worksheet;2min crypto;cache cannot create trade",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-24",
+    "title": "A closed market can have a fresh fetch"
+  },
+  {
+    "case": 19,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "80-120=-40;80%;-4average;1:6;alternative20-10=10",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-34",
+    "title": "A high win rate can lose money"
+  },
+  {
+    "case": 20,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "one origin despite4reposts;silent primary document does not resolve;Q08 grammar THQ-430-011",
+    "finding": "THQ-430-011",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-44",
+    "title": "One rumor is not three independent sources"
+  },
+  {
+    "case": 21,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "96000;25%recoverfrom80000;-4%;4.1667%recoverfrom96000;100800/91200branches",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-05",
+    "title": "A rebound that does not restore the balance"
+  },
+  {
+    "case": 22,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "bid99 ask101 midpoint100;1010debit990credit;20loss/1010=1.9802%",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-15",
+    "title": "A spread is not a commission"
+  },
+  {
+    "case": 23,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "20correctmark;200wrongmark;180overstatement;10x;preserveAunits",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-25",
+    "title": "A ticker can identify more than one asset"
+  },
+  {
+    "case": 24,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "3*20=60;3/4=75%;60-80=-20;-5average;selectionbias",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-35",
+    "title": "A few winners do not establish an edge"
+  },
+  {
+    "case": 25,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "10%;10000virtual;8500alternative;8.5%;not readiness",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-45",
+    "title": "Paper results omit some real-money pressures"
+  },
+  {
+    "case": 26,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "50000+60000=110000;45.4545%;5.4545pp;44000target;6000move;66000B",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-06",
+    "title": "Allocation drift uses a new total"
+  },
+  {
+    "case": 27,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "50lossplanned;500mark;450/430branches;70loss;0.43fee;429.57proceeds",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-16",
+    "title": "The planned exit is only a worksheet"
+  },
+  {
+    "case": 28,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "100fixed+900provider=1000;1090later;9%;mixed pricing",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-26",
+    "title": "Unsupported does not mean real-time"
+  },
+  {
+    "case": 29,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "A20% B15%;35%/5%start-low;53.8462%/5.2632%recover;need full path formaxDD",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-36",
+    "title": "Rank reflects return, not a complete risk record"
+  },
+  {
+    "case": 30,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "40*.5min=20min;2*5=10min;10min gap;0new observations",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-46",
+    "title": "A review rule beats checking from boredom"
+  },
+  {
+    "case": 31,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "200+130=330;110weightedentry;360value;30gain;9.0909%;.33+.36fees;29.31net",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-07",
+    "title": "Two buys, one weighted entry price"
+  },
+  {
+    "case": 32,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "1000*.001=1;8xnetworkcost;5000*.001=5;8000*.001=8;distinctactivities",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-17",
+    "title": "A network fee is a different charge"
+  },
+  {
+    "case": 33,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "10*50=500lastknown;10*48=480;20loss;4%;timeoutnozero",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-27",
+    "title": "A timeout is not a new zero price"
+  },
+  {
+    "case": 34,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "midpoint100;equalEV100;25/75EV110;40range;20%down;assumptionsnotestimated",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-37",
+    "title": "A scenario is not a probability estimate"
+  },
+  {
+    "case": 35,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "4%price decline;500to480;20loss;50%volume rise;participantidentityunproven",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-47",
+    "title": "Separate observation from interpretation"
+  },
+  {
+    "case": 36,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "2500loss;97500equity;2.5641%weight;500furtherloss;100%recoverto5000",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-08",
+    "title": "A small position loses half its value"
+  },
+  {
+    "case": 37,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "10000turnover;10fees;8-10=-2;10roundtrips;.4grossavg;.5feeavg;40txnet-12;alt+2",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-18",
+    "title": "Turnover adds up across many small trades"
+  },
+  {
+    "case": 38,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "200/220/180holding;1000/1020/980equity;-2%;0new trades",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-28",
+    "title": "Offline valuation is not an offline trade"
+  },
+  {
+    "case": 39,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "10longunits;900longvalue;1100shortcover;100loss each;-200;bothrise0gross",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-38",
+    "title": "A pair trade can still lose together"
+  },
+  {
+    "case": 40,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "Alead40at4;Blead40at10;Ainterval-60;B+20;costs not supplied",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-48",
+    "title": "Precommit a fair comparison window"
+  },
+  {
+    "case": 41,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "A20%;B100investmentgain;B10%;wealth gap400;datedflows required",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-09",
+    "title": "Comparing returns after adding money"
+  },
+  {
+    "case": 42,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "spot sale200;.20fee;199.80proceeds;oneunitremains;90later;10loss;no short",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-19",
+    "title": "A short thesis does not create a short position"
+  },
+  {
+    "case": 43,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "4min separation;5min/1minages;3%gap;.20matchedtimegap;.1923%;methodstillneeded",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-29",
+    "title": "Comparing prices from different minutes"
+  },
+  {
+    "case": 44,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "15%reportedgrowth;20/10expectations;-5/+5pp;stock-4%;causeunresolved",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-39",
+    "title": "The same headline can fit several explanations"
+  },
+  {
+    "case": 45,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "objectivecalculation distinctdirection;one localdaystreak;answers no trade;scoreconcepts",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-49",
+    "title": "A reflection can be useful without a forecast score"
+  },
+  {
+    "case": 46,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "40*25=5*200=1000;10%each;1100+900+8000=10000;8AsharesperBshare",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-10",
+    "title": "A position value is not a share price"
+  },
+  {
+    "case": 47,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "0.025*40000=1000;1001debit;2.5%coin;1100exit;1.10fee;1098.90proceeds;97.90net",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-20",
+    "title": "Small decimal quantities still need units"
+  },
+  {
+    "case": 48,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "100to110+10%;120to110-8.3333%;105to110+4.7619%;9.0909%recover;windows differ",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-30",
+    "title": "Price-change percentages need a window"
+  },
+  {
+    "case": 49,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "1000loss9000left;2500loss7500left;100%spotlosszero;scenariosno likelihood",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-40",
+    "title": "A single stress test is not the worst case"
+  },
+  {
+    "case": 50,
+    "pass1": "Fresh scenario paragraphs, visual inputs, every question, all three choices, correct key and explanation read.",
+    "pass2": "0.001;tenfold error;2.50vs25;22.50difference;.0001;.25;retain recorded answer",
+    "finding": "NO-ISSUE",
+    "source": "live-daily-bank.json",
+    "caseId": "practice-50",
+    "title": "Review an error without rewriting the score"
+  }
+]

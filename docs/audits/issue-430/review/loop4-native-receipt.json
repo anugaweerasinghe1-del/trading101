@@ -1,0 +1,23 @@
+{
+  "schema": "tradehq-cloudflare-account-observation-v1",
+  "observedAt": "2026-11-14T17:37:09.528Z",
+  "project": "tradehq-preview",
+  "nativeTokenActive": true,
+  "activeProduction": {
+    "id": "cc298d18-580d-4fa1-a9cf-7066b3c3e42f",
+    "sha": "8b6c39978e2d8cfea8f9ffdfe8986e77523dfbbc",
+    "environment": "production",
+    "branch": "main",
+    "status": "success",
+    "createdAt": "2026-11-14T17:27:23.193447Z"
+  },
+  "previousSuccessfulProduction": {
+    "id": "b4c2880d-d4c2-4ee3-ae0e-9b3a114a5538",
+    "sha": "12e2fe829de5f771c9a06b42c835d891c42436aa",
+    "environment": "production",
+    "branch": "main",
+    "status": "success",
+    "createdAt": "2026-11-14T17:03:34.511807Z"
+  },
+  "source": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43621197017/job/132529757658"
+}

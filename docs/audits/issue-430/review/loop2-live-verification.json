@@ -1,0 +1,17 @@
+{
+  "scope": "Independent fresh production captures on merge37aed15c; paragraphs and metadata re-read after repair. Native identity verified separately.",
+  "checks": {
+    "003_about": true,
+    "004_decimal_metadata": true,
+    "005_comparison_scope": true,
+    "006_badge": true,
+    "006_questions": true,
+    "007_conversion": true,
+    "008_grammar": true,
+    "009_roadmap": true,
+    "010_IV": true,
+    "ads_disabled": true
+  },
+  "captureEvidence": "final/pages",
+  "nativeEvidence": "loop2-native-receipt.json"
+}

@@ -1,0 +1,29 @@
+{
+  "review_date": "2026-11-14",
+  "reviewer": "Codex; same assistant performed content review and skeptical second pass, not an independent human reviewer",
+  "canonical_urls": 163,
+  "all_urls": 480,
+  "extracted_blocks": 114635,
+  "pass1_reviewed_blocks": 114635,
+  "pass2_reviewed_blocks": 114635,
+  "canonical_statuses": {
+    "FIXED-RECHECKED": 63,
+    "PASS": 85,
+    "HUMAN-REVIEW": 15
+  },
+  "all_statuses": {
+    "FIXED-RECHECKED": 199,
+    "PASS": 234,
+    "HUMAN-REVIEW": 40,
+    "BLOCKED": 7
+  },
+  "review_modes": {
+    "fresh-paragraph-review": 11047,
+    "dynamic-snapshot-check": 6231,
+    "fresh-identical-text-reference": 63038,
+    "metadata-and-link-check": 27920,
+    "fresh-parameterized-template": 5819,
+    "answer-key-check": 580
+  },
+  "meaning": "Coverage of fresh captured text, metadata and enumerated authored supplements. Counts do not prove financial correctness, legal compliance, visual perfection or Google acceptance."
+}

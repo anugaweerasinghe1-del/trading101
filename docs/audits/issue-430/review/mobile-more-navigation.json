@@ -1,0 +1,7 @@
+{
+  "observedAt": "2026-11-14T17:20:29.158Z",
+  "width": 360,
+  "outcome": "PASS",
+  "interaction": "Keyboard opens menu and expands More; real About link navigates to /about with no ad loader.",
+  "setupNote": "Initial smoke attempts targeted secondary About/Courses links before expanding More and timed out. That was a test setup error, not a reproduced production defect. This test opens the actual disclosure before following About."
+}

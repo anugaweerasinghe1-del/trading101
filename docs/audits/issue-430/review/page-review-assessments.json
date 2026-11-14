@@ -1,0 +1,2343 @@
+{
+  "001": {
+    "pass1": "Read metadata, homepage sections, simulator claims, hypothetical Google scenario, tickers, newsletter, learning notes and common navigation/footer. Weekend clock defect 001; Tokyo schedule defect 002.",
+    "pass2": "Hypothetical exercise disclaimer precedes Google scenario; 30% legal odds is an exercise input, not a sourced prediction. Simulator momentum expressly internal. Profit and capability limits present. Recheck clocks after deployment. FAQ answers not captured yet.",
+    "status": "REVIEWED",
+    "issues": [
+      "THQ-430-001",
+      "THQ-430-002"
+    ],
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/001.json",
+      "settled/pages/001.json",
+      "final/pages/001.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "002": {
+    "pass1": "Read terminal empty state, metadata and all published learning-note paragraphs and lists; market-only, 0.1% fee, no shorts/resting orders match described model.",
+    "pass2": "No financial readiness promise. Entry-timing exercise must not imply actual spread/slippage simulation; limitations paragraph states missing execution costs. Collapsed FAQs need additional reading.",
+    "status": "REVIEWED",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/002.json",
+      "settled/pages/002.json",
+      "final/pages/002.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "004": {
+    "pass1": "Read guest portfolio zero-state, snapshot metrics, isolated scenario assumptions, backup disclosures and all notes. No Sharpe claim remains.",
+    "pass2": "1000 independent random paths are expressly uncalibrated; sampling uncertainty approximate 3pp is reasonable for p=.5. Unrealized P&L wording 'not money until close' colloquial and should not imply realized virtual money becomes real. Account recovery scope explicit. Other tabs/FAQs and populated states still need capture.",
+    "status": "REVIEWED",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/004.json",
+      "settled/pages/004.json",
+      "final/pages/004.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "005": {
+    "pass1": "Read first-step worked fee arithmetic and full five-step learning notes. 2*50*.001=.10, total 100.10.",
+    "pass2": "Private reflection text remains local vs sync of completed-step distinction explicit; no competence certification. Journey steps beyond initial quiz require fresh walkthrough.",
+    "status": "REVIEWED",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/005.json",
+      "settled/pages/005.json",
+      "final/pages/005.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "006": {
+    "pass1": "Read current Learn dashboard, all course/article/theme summaries, six quick reads, glossary list, image alts and learning notes.",
+    "pass2": "Advanced/Confident marketing can suggest proficiency but no investment-readiness promise; specific 21 featured glossary terms vs full 49 glossary is internally distinguished. Dynamic catalog not yet settled; FAQs hidden.",
+    "status": "REVIEWED",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/006.json",
+      "settled/pages/006.json",
+      "final/pages/006.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "007": {
+    "pass1": "Read practice guide dashboard and all notes, including compound calculator assumptions, example quotes, chart pattern quiz choices and fee worked example.",
+    "pass2": "$500.50 cost, $459.54 sale net, $40.96 loss; alternative $38.96 gain correct. Five 30 wins and five 20 losses less 20 fees =30. Sentiment expressly fictional. Need module/quiz answers and actual calculator defaults for full block coverage.",
+    "status": "REVIEWED",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/007.json",
+      "settled/pages/007.json",
+      "final/pages/007.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "008": {
+    "pass1": "Read leaderboard visible error state, ranking disclosures and all notes.",
+    "pass2": "Read-only public RPC denial by initial collector is not evidence of production outage. 60% gain/40% drawdown 'fragile method' is an uncalibrated quality judgment, not a quantitative proof. Public member and previous/duel tabs pending.",
+    "status": "REVIEWED",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/008.json",
+      "settled/pages/008.json",
+      "final/pages/008.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "009": {
+    "pass1": "Read mentor metadata, authored-library explanation, suggested questions and all notes.",
+    "pass2": "No model call or predictions claimed; capabilities need matching against actual replies rather than treating suggested question as supported individualized analysis. FAQ and authored replies pending.",
+    "status": "REVIEWED",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/009.json",
+      "settled/pages/009.json",
+      "final/pages/009.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "010": {
+    "pass1": "Read Daily current hypothetical scenario, choices, case summary, streaks, all notes and metadata.",
+    "pass2": "Exercise legal odds expressly hypothetical; not current news. Streak habit claims are heuristic, not established financial skill. Rotating 50 vs 30 quick scenarios distinguished. Full 50 cases, answers and quick feedback pending.",
+    "status": "REVIEWED",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/010.json",
+      "settled/pages/010.json",
+      "final/pages/010.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "011": {
+    "pass1": "Read Arena landing, all three path summaries, local/private notes, ledger example and research-pilot disclosure.",
+    "pass2": "10000-100-.10=9899.90; marked equity9999.90 then10001.90 at102 correct. Price-effect distinguished from realization. Each path round/review text and pilot questions pending.",
+    "status": "REVIEWED",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/011.json",
+      "settled/pages/011.json",
+      "final/pages/011.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "012": {
+    "pass1": "Read newsletter landing, consent copy and all learning notes.",
+    "pass2": "Headline 'every week' qualified by intended frequency/provider/editorial delays below. No automatic distribution, account requirement or returns. Actual delivery/confirmation remains separate non-reader account gate.",
+    "status": "REVIEWED",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/012.json",
+      "settled/pages/012.json",
+      "final/pages/012.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "013": {
+    "pass1": "Read review loading state, submission labels and all notes.",
+    "pass2": "Moderation claims not identity verification. 'only thing at stake is your time' understates optional personal-data processing but context is absence of real funds; plausible quality risk, not demonstrated policy violation. Actual approved review texts still pending public read.",
+    "status": "REVIEWED",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/013.json",
+      "settled/pages/013.json",
+      "final/pages/013.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "014": {
+    "pass1": "Read all eight visible release entries, dated claims and corresponding learning notes.",
+    "pass2": "Release entries use concrete capabilities without performance claims. All dynamic newly published course entries not yet loaded; complete gate stays open.",
+    "status": "REVIEWED",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/014.json",
+      "settled/pages/014.json",
+      "final/pages/014.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "015": {
+    "pass1": "Read all roadmap cards, status dates, target disclaimer and learning notes.",
+    "pass2": "Target21Nov explicitly non-guaranteed. Browser/account scope paragraph first distinguishes synced lessons then says course progress remains browser-held; ambiguous legacy scope flagged for source comparison. No blanket rewrite of owner priorities.",
+    "status": "REVIEWED",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/015.json",
+      "settled/pages/015.json",
+      "final/pages/015.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "016": {
+    "pass1": "Read About mission, technology, editorial disclosure, all lists and notes.",
+    "pass2": "Stale 'AI mentor' label contradicts local authored library; 'including advertising' implies current service despite disabled serving. Generalized advertising-origin claim lacks source: quality risk, not proven Google violation. FAQ answers pending.",
+    "status": "REVIEWED",
+    "issues": [
+      "THQ-430-003",
+      "THQ-430-R01"
+    ],
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/016.json",
+      "settled/pages/016.json",
+      "final/pages/016.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "021": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "21m cap is qualified by current consensus; halving approximately four years. Unsupported weekend liquidity generalization needs a source. Practice is spot, not BTC ownership.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/021.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/021.json",
+      "settled/pages/021.json",
+      "final/pages/021.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "022": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Gas, staking and spot holdings distinguished. Staking withdrawal delay needs current protocol source; no permanent lock claim. Price-from-blockspace explanation is interpretive, not quantified.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/022.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/022.json",
+      "settled/pages/022.json",
+      "final/pages/022.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "023": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "No permanent volatility ranking or forecast; hypothetical usage/price mismatch exercise has distinct value. Smaller-cap liquidity statement conditional, not measured SOL slippage.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/023.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/023.json",
+      "settled/pages/023.json",
+      "final/pages/023.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "024": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Token vs equity correctly distinguished. Single-organization concentration wording is interpretive and should be checked against decentralized chain governance, not assumed proven.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/024.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/024.json",
+      "settled/pages/024.json",
+      "final/pages/024.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "025": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "XRP vs Ripple ownership distinguished. RPCA label and historical sharpest-moves claim require primary-source scope; no future-direction guarantee.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/025.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/025.json",
+      "settled/pages/025.json",
+      "final/pages/025.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "026": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Revenue vs margin worksheet adds concrete analytical value. Autumn event calendar requires dated company source, not guaranteed scheduling. Simulator cannot reproduce earnings reaction.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/026.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/026.json",
+      "settled/pages/026.json",
+      "final/pages/026.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "027": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Recurring contracts explicitly do not imply lower share-price risk. SaaS/cloud worksheet separates costs/revenue. Universal access wording means simulator, not broker eligibility.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/027.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/027.json",
+      "settled/pages/027.json",
+      "final/pages/027.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "028": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Share classes and voting-rights research not conflated with price forecasts. Advertising-majority claim needs dated company reporting. Product popularity not a forecast.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/028.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/028.json",
+      "settled/pages/028.json",
+      "final/pages/028.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "029": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "AWS margin division requires same period and units. Earnings gap hypothetical, not actual historical event. Exit-rule prompt cannot execute resting stops; limits elsewhere state this.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/029.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/029.json",
+      "settled/pages/029.json",
+      "final/pages/029.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "030": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Company theme bellwether is qualitative. 10% hypothetical gap is a sizing input, not maximum loss or protection from larger gap. No actual earnings evidence from simulated charts.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/030.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/030.json",
+      "settled/pages/030.json",
+      "final/pages/030.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "031": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Deliveries/revenue/profit differ; equal exposure worksheet avoids nominal-unit comparison. Tesla volatility/slippage generalization needs sample qualification; no fixed risk ranking.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/031.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/031.json",
+      "settled/pages/031.json",
+      "final/pages/031.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "032": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Company segment worksheet distinguishes revenue from cost/loss. Historical decline/recovery no figures provided. Maximum drawdown decision is a practice assumption, not implemented guaranteed exit.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/032.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/032.json",
+      "settled/pages/032.json",
+      "final/pages/032.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "033": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "SPY is fund units, not direct index ownership. Roughly500 companies differs from number of securities. Expense ratio mentioned without invented fixed amount. Comparing QQQ cannot by itself isolate technology effect.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/033.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/033.json",
+      "settled/pages/033.json",
+      "final/pages/033.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "034": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Nasdaq100 expressly nonfinancial rather than technology-only. Relative comparison uses same window. Rates sensitivity and concentration do not establish actual future decline or required holding choice.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/034.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/034.json",
+      "settled/pages/034.json",
+      "final/pages/034.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "035": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "USD per EUR and reciprocal arithmetic correct:1000*1.10=1100;1000*1.12=1120. Metadata decimal truncation confirmed430004. No leverage in engine.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/035.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/035.json",
+      "settled/pages/035.json",
+      "final/pages/035.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "036": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "GBP base and USD quote correct;1000*1.20=1200,1000*1.25=1250. Calendar overlap varies with DST. Current rate is not an executable price.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/036.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/036.json",
+      "settled/pages/036.json",
+      "final/pages/036.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "037": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Gold practice feed expressly PAXG proxy, not gold spot data. Proxy token volume not total gold market volume. Physical/fund/futures costs separated; no guaranteed hedge.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/037.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/037.json",
+      "settled/pages/037.json",
+      "final/pages/037.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "038": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "WTI benchmark and no deliverable contract explicit. Futures use/roll generalization needs exchange context, but no automatic contract execution promised. Oil supply-chain worksheet distinct.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/038.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/038.json",
+      "settled/pages/038.json",
+      "final/pages/038.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "039": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "49 glossary entries enumerated; category list in notes is a subset vs complete runtime list. Expert explanation phrase is a credibility risk without credential claim, not proved violation.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/039.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/039.json",
+      "settled/pages/039.json",
+      "final/pages/039.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "040": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "10*(28-20)=80 loss correct excluding borrow fees. Short interest is periodic and days-to-cover is contextual; old20–30% trigger absent. TradeHQ cannot short.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/040.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/040.json",
+      "settled/pages/040.json",
+      "final/pages/040.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "041": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "50/200 convention not mandatory. Averages historical and lagging; no fund-position inference. Worksheet includes failed crosses and freezes parameters.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/041.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/041.json",
+      "settled/pages/041.json",
+      "final/pages/041.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "042": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Downward crossing describes history; key-point signal means named event, not validated forecast in surrounding text. No predictive slope claim or timing guarantee.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/042.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/042.json",
+      "settled/pages/042.json",
+      "final/pages/042.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "043": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "10000*.05=500 loss before costs. Either-side forced reductions and venue differences explicit. Often creates wicks is qualitative and not a forensic signature; requires event-specific evidence.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/043.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/043.json",
+      "settled/pages/043.json",
+      "final/pages/043.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "044": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "120-(120-80)*.618=95.28,midpoint100. 50% expressly not Fibonacci ratio. Levels not reversal probabilities; no golden-ratio magic claim.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/044.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/044.json",
+      "settled/pages/044.json",
+      "final/pages/044.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "045": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Given25/32 RSI inputs not computed from two prices;100to95 lower low and RSI higher low correct. Contrasting105/85 outcomes show nonprediction. Local RSI-style display clearly distinguished.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/045.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/045.json",
+      "settled/pages/045.json",
+      "final/pages/045.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "046": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "2-1.5=.5 and2-1.8=.2 correct; bars do not imply acceleration. Defaults12/26EMAs,9signal match common convention. No MACD overlay promised.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/046.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/046.json",
+      "settled/pages/046.json",
+      "final/pages/046.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "047": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "20SMA and2SD conventional not universal; no normal-distribution coverage guarantee. Bandwidth sample specified. Energy metaphor expressly rejected.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/047.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/047.json",
+      "settled/pages/047.json",
+      "final/pages/047.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "048": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Order block author-dependent; institutions or unfilled inventory not proven by candles. Red-candle convention label does not establish a trade. External order source scope explicit.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/048.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/048.json",
+      "settled/pages/048.json",
+      "final/pages/048.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "049": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Upward non-overlap firsthigh100<thirdlow102 correct. Range not economic fair value, market inefficiency or guaranteed fill. ICT terminology contextual, no invented exchange standard.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/049.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/049.json",
+      "settled/pages/049.json",
+      "final/pages/049.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "050": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "50→52→49 retrospective breakout/reversal; loss depends on actual entry and fill. Confirmation is chart criteria, not certainty about future. Do not infer intent.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/050.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/050.json",
+      "settled/pages/050.json",
+      "final/pages/050.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "051": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "40→38→42 retrospective breakdown/rebound; no motive inference. Short-sale worksheet separate because engine cannot short. No guaranteed buffer.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/051.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/051.json",
+      "settled/pages/051.json",
+      "final/pages/051.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "052": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Large position/transfer alone no wrongdoing; spoofing needs intent, washtrading false activity separate. Legal conclusion deferred to evidence/rules; no allegation about named person.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/052.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/052.json",
+      "settled/pages/052.json",
+      "final/pages/052.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "053": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Support/resistance selected historical zones and tolerance, not guaranteed barrier. No claim higher interval automatically more reliable. Worksheet avoids lookahead.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/053.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/053.json",
+      "settled/pages/053.json",
+      "final/pages/053.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "054": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Body100to104,wicks98/106; OHLC cannot reveal intrabar order. Engulfing needs two candles. Subject-verb heading grammar may warrant copy polish but definitions correct.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/054.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/054.json",
+      "settled/pages/054.json",
+      "final/pages/054.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "055": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "55-46=9;46-9=37 projection correct, not forecast. Psychological certainty in detailed-definition block remains quality risk430R02 despite caveats.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/055.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/055.json",
+      "settled/pages/055.json",
+      "final/pages/055.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "056": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "35-30=5 and35+5=40 projection correct. Selling-conviction inference not established by volume; quality risk430R02. Tolerance needed for equal lows.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/056.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/056.json",
+      "settled/pages/056.json",
+      "final/pages/056.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "057": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "105-102=3;3-2=1 histogram with price units correct. Shared MACD terminology consistent with histogram entry, distinct worksheet inputs. No implemented overlay claimed.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/057.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/057.json",
+      "settled/pages/057.json",
+      "final/pages/057.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "058": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Limit constrains worst eligible price, may improve or remain unfilled; exact price control phrase read in context as limit boundary. Market prioritizes execution, no guarantee of full quantity.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/058.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/058.json",
+      "settled/pages/058.json",
+      "final/pages/058.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "059": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Suspected stops not public verified inventory; competing liquidity explanation maintained. Market vs stop-limit tradeoffs clear. No resting stops or forensic manipulation claim.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/059.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/059.json",
+      "settled/pages/059.json",
+      "final/pages/059.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "060": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "1000→10000 ratio10;3%of10000=300;1500-300=1200;10000/1500=6.67. Exposure/equity denominator distinguished from posted margin. No universal liquidation formula.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/060.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/060.json",
+      "settled/pages/060.json",
+      "final/pages/060.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "061": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "FOMO definition contextual and nondiagnostic. Plans/alerts suggested heuristics, not proven treatment or higher returns. Selected public gains omit unknown losses.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/061.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/061.json",
+      "settled/pages/061.json",
+      "final/pages/061.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "062": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "FUD label neither disproves statement nor proves bad intent. Primary-source checking useful but official claims themselves still need interpretation; no forecast promised.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/062.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/062.json",
+      "settled/pages/062.json",
+      "final/pages/062.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "063": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "2013typo origin needs historical primary post; whitepaper only supports protocol.1400/600/0 illustrate gains/loss/permanent loss. Strong conviction is a heuristic, not suitability.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/063.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/063.json",
+      "settled/pages/063.json",
+      "final/pages/063.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "064": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Pseudonym not verified individual; no exact wallet/wealth total.31Oct2008 publication date needs contemporary archive beyond undatedPDF. Introduced decentralized money is broad historical framing, not first-ever proof.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/064.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/064.json",
+      "settled/pages/064.json",
+      "final/pages/064.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "065": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "10000-6000=4000;8000-6000=2000;2000/8000=.25. Maintenance/house terms separated; no guaranteed call deadline. Futures margin differs from share loan.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/065.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/065.json",
+      "settled/pages/065.json",
+      "final/pages/065.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "066": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Liquidation threshold not actual execution price; mark/collateral/tiers qualified. Higher leverage closer to entry holds other inputs fixed, not universal cross-account guarantee. Venue-specific reference not universal derivatives formula.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/066.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/066.json",
+      "settled/pages/066.json",
+      "final/pages/066.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "067": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "100/10+100/20=15,200/15=13.33. Adverse example10+20=30units;at5=150<200,loss50. DCA differs from discretionary averaging-down and cannot guarantee cost advantage.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/067.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/067.json",
+      "settled/pages/067.json",
+      "final/pages/067.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "068": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "20*(50-45)=100loss versus20*(50-48)=40 planned. Crossing sessions leaves gaps; no job/school suitability assertion. No resting stop or guaranteed review schedule.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/068.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/068.json",
+      "settled/pages/068.json",
+      "final/pages/068.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "069": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "100*(20.10-20)=10,minus12cost=-2. No fixed daytrader loss statistic asserted. Regulatory current requirements require own jurisdiction/source rather than universal threshold.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/069.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/069.json",
+      "settled/pages/069.json",
+      "final/pages/069.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "070": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "10*(2-3)=-10; costs can dominate small targets. Transaction count no competence proof; real queue/latency omitted explicit. No universal minimum win rate.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/070.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/070.json",
+      "settled/pages/070.json",
+      "final/pages/070.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "071": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "20+50+30=100units,highestbin11.70%volume share not oneSD or fair value. No ability to identify current holders or required next price.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/071.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/071.json",
+      "settled/pages/071.json",
+      "final/pages/071.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "072": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "(10*100+30*104)/40=103 vs simplemean102. Trade-weighting not participant P&L, venue/window coverage matters. No standard VWAP series implemented.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/072.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/072.json",
+      "settled/pages/072.json",
+      "final/pages/072.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "073": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "9/26/52 high-low midpoints and26plot offset conventional. Forward plotting not future information. Bullish alignment expressly unverified strongest-signal claim; component support labels interpretive.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/073.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/073.json",
+      "settled/pages/073.json",
+      "final/pages/073.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "074": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Five/three wave idealization not all sequences or guaranteed forecast; competing counts and hindsight explicitly taught. Ratio not reversal chance.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/074.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/074.json",
+      "settled/pages/074.json",
+      "final/pages/074.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "075": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Price/volume phase vocabulary not actual ownership evidence. Springs not highest-probability trade. Distinct exercise asks evidence for participant holdings.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/075.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/075.json",
+      "settled/pages/075.json",
+      "final/pages/075.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "076": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "100*.02=2gross only if both fills. Spread not guaranteed net income. AMM algorithm distinction simplifying automated dealer quotes too; no human-only claim in detailed definition.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/076.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/076.json",
+      "settled/pages/076.json",
+      "final/pages/076.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "077": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Dark pools vs all off-exchange prints distinguished. Pretrade visibility vs posttrade reporting correct scoped to jurisdiction. No venue-share numeric claim or motive inferred.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/077.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/077.json",
+      "settled/pages/077.json",
+      "final/pages/077.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "078": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "100*(10.05-10)=5adverse;100*(10-9.98)=2favorable. Side/time/reference necessary, fees separate. No fill assurance from limit.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/078.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/078.json",
+      "settled/pages/078.json",
+      "final/pages/078.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "079": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Full-range fee-free constant-product assumptions explicit.2sqrt2/3-1=-5.72%;2sqrt5/6-1=-25.46%.282.84vs300 correct; relative loss not necessarily absolute loss; withdrawal not cause.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/079.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/079.json",
+      "settled/pages/079.json",
+      "final/pages/079.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "080": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Liquidity provision/lending/incentive schemes distinguished. Token rewards not equivalent net return; fee-free AMM arithmetic not all products. Contract and withdrawal risks explicit, no promised APR.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/080.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/080.json",
+      "settled/pages/080.json",
+      "final/pages/080.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "081": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Rapid decline not guaranteed rebound. No unverified historical event totals. Actual order fills/causes require external evidence, not candlestick inference.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/081.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/081.json",
+      "settled/pages/081.json",
+      "final/pages/081.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "082": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "5000*.93=4650;.87=4350;.8=4000.7/13% before15:25=15min;20%=restofday per cited NYSE rules needs fresh source. LULD distinct; venue controls not universal.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/082.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/082.json",
+      "settled/pages/082.json",
+      "final/pages/082.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "083": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Fraud mechanism not allegation about specific token. No fixed5stage timeline or peak sale. Evidence and law separate; educational fraud explanation is not promotion.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/083.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/083.json",
+      "settled/pages/083.json",
+      "final/pages/083.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "084": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "200+.20=200.20;190-.19=189.81;loss10.39.10*(20-18)=20mark loss prefees. No competence result from simulated success.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/084.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/084.json",
+      "settled/pages/084.json",
+      "final/pages/084.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "085": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "+.3? Actual worksheet .25*3-.75=0;addingcost negative.1:2breakeven1/3,1:3=.25 correct fixedpayoffs. Plannedloss not guarantee or professional minimum.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/085.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/085.json",
+      "settled/pages/085.json",
+      "final/pages/085.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "086": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "100to80=-20%;80to100=+25%;50%loss needs100%gain. Sampledmax not worstfuture, deposits and fees need stated series. No tolerance diagnosis.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/086.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/086.json",
+      "settled/pages/086.json",
+      "final/pages/086.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "087": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Historical execution hypothetical, bias definitions distinct. Heldout success no future proof. No universal required years/trades. Simulator generated candles not backtest evidence.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/087.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/087.json",
+      "settled/pages/087.json",
+      "final/pages/087.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "088": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Correlation linear sample relationship and undefinedconstant-series caveat. Return intervals/date alignment not rawprice inference. No permanent relation/reversion promise; TradeHQ cannot short leg.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/088.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/088.json",
+      "settled/pages/088.json",
+      "final/pages/088.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "089": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "No mandatory practice duration or readiness guarantee. Market-only engine correctly distinguished from conceptual exits. Origin-of-paper-trading statement historical without specific source, quality not certified history.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/089.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/089.json",
+      "settled/pages/089.json",
+      "final/pages/089.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "090": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "OHLC and common color convention coherent, though chart colors can vary. Mostpopular claim unsourced quality risk; indicators explicitly not forecasts. Only historical conceptual chart terms, no trading validation.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/090.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/090.json",
+      "settled/pages/090.json",
+      "final/pages/090.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "091": {
+    "pass1": "Freshly read every non-template block displayed by read-pages.py for this capture; no prior audit text-match used. Template navigation/footer and consent repeat are tracked separately.",
+    "pass2": "Listedshare ownership not direct issuer assets; dividends not guaranteed. NYSE regular9:30–16ET scoped holidays. Continuous crypto venue access may fail. Equal exposure comparison avoids unitprice fallacy.",
+    "status": "REVIEWED",
+    "sourceCapture": "pages/091.json",
+    "scope": "Unique rendered initial-state publisher text only; settled, hidden/interactive and source verification supplements pending.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/091.json",
+      "settled/pages/091.json",
+      "final/pages/091.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "092": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "Five hypotheses not prescribed methods; DCA distinguishes timing/costs. Buffett-parenthetical attribution unsupported, quality-review flag. No returns promised.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/092.json",
+      "settled/pages/092.json",
+      "final/pages/092.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "093": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "Index vs fund vs total-return series distinguished. SPY/QQQ/DIA mappings and floatcap/priceweight need current methodologies.60/20/20 sums100 and explicitly arbitrary; overlapping securities not independent.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/093.json",
+      "settled/pages/093.json",
+      "final/pages/093.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "094": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "25%*30%*100000=7500.60/30/10normalized, not recommended. Rebalance can cost and underperform; age alone cannot determine allocation. No safe-haven guarantee.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/094.json",
+      "settled/pages/094.json",
+      "final/pages/094.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "095": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "0.4*2-.6=.2R.1000/5=200shares;fee20+19→1039total.1000/5.195floor192;192*5.195=997.44. Gap can exceed budget, no auto stop. Planned vs realized payoff separated.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/095.json",
+      "settled/pages/095.json",
+      "final/pages/095.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "096": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "Market seekingexecution not quote guarantee;limit maxbuy/minsell may improve or notfill. BTC68000/65000 expressly hypothetical;charttouch not quantity priority. No pendinglimit feature promised.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/096.json",
+      "settled/pages/096.json",
+      "final/pages/096.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "097": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "SMAequalweights vsEMA recency;RSI Wilder smoothing details need primary guide, not simple finitewindow average. MACD12/26/9 correct. Simplified RSI and absent MACD overlay disclosed.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/097.json",
+      "settled/pages/097.json",
+      "final/pages/097.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "098": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "Distinct network/staking/supply questions, no comparative price forecast. BTC/ETH two names not diversification;network fees separate virtual0.1%. Example no unstated rewards.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/098.json",
+      "settled/pages/098.json",
+      "final/pages/098.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "099": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "Reporting periods, margin definitions and deliverycount vs compute revenue separated. Benchmark-dependent beta not permanent risk label. No AI theme trade recommendation.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/099.json",
+      "settled/pages/099.json",
+      "final/pages/099.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "100": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "GLD units not physicalgold;no assured hedge or token upside. Productcosts/custody/dates explicit. Digitalstoreofvalue label is narrative not guaranteed purchasing power in full text.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/100.json",
+      "settled/pages/100.json",
+      "final/pages/100.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "101": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "Revenue vsper-share metrics and sharecount differentiated. Both capitalreturns need company disclosures;no largest-buyback ranking. Comparable periods required and real holdings overlap warning.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/101.json",
+      "settled/pages/101.json",
+      "final/pages/101.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "102": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "TPS definitions,votes,rollups,confirmation and observationwindow required. Token rewards not realcashreturn;subtractingissuance alone insufficient. No permanent reliability or marketshare ranking.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/102.json",
+      "settled/pages/102.json",
+      "final/pages/102.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "103": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "SPY/BTC examples not entire categories. Company/fund/token ownership distinguished. Pricevsreinvestedtotalreturn correct;no universal allocation or maximumdrawdown claim.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/103.json",
+      "settled/pages/103.json",
+      "final/pages/103.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "104": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "Vendorbenchmarks distinguished from independentlyreproduced tests;workload,version,precision,batchsize required. No guaranteedhedge or stockre-rating from hardware result. Missingdata left unresolved.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/104.json",
+      "settled/pages/104.json",
+      "final/pages/104.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "105": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "USDperEUR vscurrency/share correct units. Leverage not safety;macro/company research not universal edge. Forexcategory has no single tradable FXticker;links correctly browse named instruments.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/105.json",
+      "settled/pages/105.json",
+      "final/pages/105.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "106": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "Directory currently promises returns breakdowns but pages emphasize structures, worksheets and research;safe copyalignment proposed. Reused comparison caveats are substantial template repetition;unique worksheets add value, no official minimumwordcount.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/106.json",
+      "settled/pages/106.json",
+      "final/pages/106.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "107": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": ".05*50000=2500,fee2.50;10%shock→250gross.10000holding+90000cash→101000 on10%rise;11000/101000=10.89%;buyfee10gives100990equity. No requiredBTC allocation.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/107.json",
+      "settled/pages/107.json",
+      "final/pages/107.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "108": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": ".5*3200=1600fee1.60.2*2500=5000fee5;mark4800→205equityreduction;exitfee4.80. Gasunits distinct from ETHfee;no blockchain transaction orstaking.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/108.json",
+      "settled/pages/108.json",
+      "final/pages/108.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "109": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "4*200=800fee.80;4*(200-180)=80.20sharesnotional4000fee4;gap180loss400vsplanned190loss200. Realopeningfills not replicated;no shareholder rights from virtual stock.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/109.json",
+      "settled/pages/109.json",
+      "final/pages/109.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "110": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "5*120=600fee.60.2000direct+8000*.10=2800of10000=28%;10%shock→280loss under stated assumptions. Hypothetical10%fundweight not current factual holding.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/110.json",
+      "settled/pages/110.json",
+      "final/pages/110.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "111": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "20*50=2*500=1000fee1;10*500=5000,2%loss100;cash94995+4900=99895. Distribution and expenses not silentlycredited. ETFunits not directcompanyregister ownership.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/111.json",
+      "settled/pages/111.json",
+      "final/pages/111.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "112": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "40*125=5000fee5;40*130=5200exitfee5.20;net189.80.115mark4600grossloss400beforefees. SOLtoken and Solana network distinct, no staking/short permission.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/112.json",
+      "settled/pages/112.json",
+      "final/pages/112.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "113": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "All six guide summaries and notes read. No profitabletiming or realwallet/eligibility claim. Return-nextday is an arbitrary study suggestion, not evidence-backed optimal interval.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/113.json",
+      "settled/pages/113.json",
+      "final/pages/113.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "114": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "95210-95120=90gross;fees95.12+95.21→-100.33.95080case=-230.20.95215.12/.999=95310.43break-even. Tinygrossprofit explicitly not validated strategy.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/114.json",
+      "settled/pages/114.json",
+      "final/pages/114.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "115": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "145→138loss7;165targetgain20 beforecost. .47*2-.53=.41R and1000*.41=410. Sample/independence caveats for losingruns;no normalrun forecast.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/115.json",
+      "settled/pages/115.json",
+      "final/pages/115.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "116": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": ".52*1.5-.48=.30R;500*.30=150;fiveexpected750choseninputs. VWAP worksheet not implemented indicator. Intradayclosing assumption can fail;no universal realizedreturn.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/116.json",
+      "settled/pages/116.json",
+      "final/pages/116.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "117": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "100/10+100/8+100/12=30.8333;*12=370;300/units=9.7297. Lump300at10→360. Same funding/enddate/cost assumptions explicit; no timingadvantage guarantee.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/117.json",
+      "settled/pages/117.json",
+      "final/pages/117.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "118": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": ".57*1.2-.43=.254R;.32*1.2-.68=-.296R. Given RSI26 not computed from pricepoint;hypotheticalbuy not live recommendation. Shared priceinputs not independentconfirmation.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/118.json",
+      "settled/pages/118.json",
+      "final/pages/118.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "119": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": ".43*2.5-.57=.505Rcorrect. Prices130/124/165 fictional,not observed. Bars forming vsclosed distinguished;no MACD overlay/shorts claimed. No universal6–8loss run.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/119.json",
+      "settled/pages/119.json",
+      "final/pages/119.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "120": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "Six different conceptual questions not comparable expectedreturn scores. DCA cashflow not activeentrysignal. No arbitrary30/100observation validationthreshold;generatedcandles not real history.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/120.json",
+      "settled/pages/120.json",
+      "final/pages/120.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "121": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "Bundled4/20 notes explicitly separated from publishedadditions. Initial4catalog capture unsettled,not defectproof. Completesignupfree badges not credentials;realconsent/ownerpublication remains external. Recallbeatsrereading unsupported and internallyodd instruction reread thenclaimrecall.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/121.json",
+      "settled/pages/121.json",
+      "final/pages/121.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "122": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "Standard100share option scope and intactspreadpayoff caveats, no simulatoroptions. Course not incomeguarantee. Hourpractice recommendation arbitrary not masteryclaim.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/122.json",
+      "settled/pages/122.json",
+      "final/pages/122.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "123": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "2.50*100=250;185+3=188breakeven. Longcallpremium bound expressly excludescost/exercise-createdstock. All4choices/correctanswers/explanations freshly read. Quickheading appends unnecessary? punctuation defect.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/123.json",
+      "settled/pages/123.json",
+      "final/pages/123.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "124": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": ".50*$1=.50pershare,$50per100sharecontract. Greeks are model partialsensitivities not realworldprobabilities. All4quizanswers coherent;IVcrush not inevitable. Fourseparatebets/speed metaphor is a quality risk for gamma.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/124.json",
+      "settled/pages/124.json",
+      "final/pages/124.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "125": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "(4-2)*100=200debit;5*100-200=300maxgain;182intrinsic200→0. Costs8give-208,-8,+292at175/182/190. Assignmentcanleavestock,notguaranteedaccountloss. All4quizanswers reviewed.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/125.json",
+      "settled/pages/125.json",
+      "final/pages/125.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "126": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "ModeldependentIV not forecast;rankrange vspercentilefrequency differs. Wording stocktradedbelowIV dimensionallywrong, primaryOICdefinition check needed. IVrank80 highrange not80%profitable. All4answerkeys coherent.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/126.json",
+      "settled/pages/126.json",
+      "final/pages/126.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "127": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "1%of100000=1000. Rollcloses/reopens,not erasedloss. Standaloneanswer says budgetlimitsloss despite gap/assignment caveats elsewhere:humanfinancialreview. Metadata cuts final example(s) byslice155:confirmed430004secondroot. All4quizzesread.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/127.json",
+      "settled/pages/127.json",
+      "final/pages/127.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "128": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "Futuresnotional/margin distinct;no permitted leverage orsurvivalrate. Contractsize andinstrument-specific margin explicit. No backendderivativesexecution claimed.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/128.json",
+      "settled/pages/128.json",
+      "final/pages/128.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "129": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "50*5000=250000. Cashsettled/physical distinct,clearingreducesnoteliminatescounterpartyrisk. Shortfuture noassetborrow;permissions still apply. All4quizzesread;double? headingconfirmed.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/129.json",
+      "settled/pages/129.json",
+      "final/pages/129.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "130": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "1%of5000=50points,*50=2500;2500/13000=19.23%margin not totalaccountreturn. Requirements notfixed75%orresponseperiod. All4quizzesread;additionalfunds orreduction/liquidation—not oneguaranteedaction.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/130.json",
+      "settled/pages/130.json",
+      "final/pages/130.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "131": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "Differentdeliverydates neednotuniformcurve. Rollnotautomaticcashlossequalpricegap. Quiz storagepushesup/hedgerspay explanatoryshorthand oversimplifies convenienceyield andconstraints; humanrisk,notnewpolicyviolation. All4quizzesread.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/131.json",
+      "settled/pages/131.json",
+      "final/pages/131.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "132": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "50m/250k=200on1:1assumption,notguaranteedhedgeneutralization. Jetfuel/crude basis andcashmargin risk explicit. Producerlong/short context simplified, no leveragedorderinstructions. All4quizzesread.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/132.json",
+      "settled/pages/132.json",
+      "final/pages/132.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "133": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "MES5vsES50,quarterpointticks1.25vs12.50.5000*5=25000.10MESsameindexexposure1ESbeforecost;notallmicroproducts1/10. All4quizzesread. Beginner-micro wording no suitabilityguarantee.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/133.json",
+      "settled/pages/133.json",
+      "final/pages/133.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "134": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "CPIcomponents,expectations,curve andFX sourcecontext,notmacroforecast. GDPvssurvey andfrequency distinction. Courseobjectives describe connections without measured causalpriceclaims.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/134.json",
+      "settled/pages/134.json",
+      "final/pages/134.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "135": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "CPIUurban,coreexcludesfoodenergy andPCE2%FOMCgoal distinct.8:30generallycalendar-scoped. Quiz foodenergytoovolatiletosignaltrend overstates exclusionbenefit;source/humanreview. All4quizzesread.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/135.json",
+      "settled/pages/135.json",
+      "final/pages/135.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "136": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "8regularmeetings mayadditional;4projections. Dotplotindividualparticipants notonlyvoters/committeepromises. FedWatchfuturesimplied notcertainty. All4quizzesread.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/136.json",
+      "settled/pages/136.json",
+      "final/pages/136.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "137": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "Inversionselectedshort>long,10y3mNYFedmodel distinct10y2yFREDseries. Historicalassociation nottimeforecast. Normalupwardcurve not universal. All4quizzesread.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/137.json",
+      "settled/pages/137.json",
+      "final/pages/137.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "138": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "57.6+13.6+11.9+9.1+4.2+3.6=100. SixcurrencyDXY notallFX. EUR1m*1.10vs1=100000difference. FXmismatch costs/revenues/hedges qualified, not universalEPSimpact. All4quizzesread.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/138.json",
+      "settled/pages/138.json",
+      "final/pages/138.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "139": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "Quadgrowth/inflationdirections notlevels,stagflationweakgrowthhighinflation. Observation/release/revisiondates distinct/lookaheadrisk. FREDnotownerforecast. All4quizzesread.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/139.json",
+      "settled/pages/139.json",
+      "final/pages/139.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "140": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "Psychologynotclinicalsupportorprofitmethod. BadgedescriptionretainsoldMasterytitle aftertitlechange:stalecopyconfirmed. Selfbiasnamingobjective notdiagnosis in body; humanjudgment for suitability.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/140.json",
+      "settled/pages/140.json",
+      "final/pages/140.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "141": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "1992lossparameter notuniversal2xemotionalpain;2024metaanalysis source required. Anchoringreflection not automaticexit. All4questionchoices/keys/explanations read and internallycoherent.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/141.json",
+      "settled/pages/141.json",
+      "final/pages/141.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "142": {
+    "pass1": "Fresh reading of all unique non-template blocks displayed for this page; includes metadata, references, worked examples, available quiz choices and answer notes.",
+    "pass2": "3%*100000=3000arbitrary;5sec10%within5min cooldown scope needs currentsourcecheck,not24hlockout. Tiltdefinitionnarrower summary vsbroaderbody—notclinicaldiagnosis. All4quizzesread.",
+    "status": "REVIEWED",
+    "scope": "Settled/hidden supplements, template review and fresh source checks remain separate.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/142.json",
+      "settled/pages/142.json",
+      "final/pages/142.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "143": {
+    "pass1": "Fresh read of all unique non-template blocks displayed for this page, including metadata, every body paragraph, lists, available questions/choices and image alt.",
+    "pass2": "2*100+.001*200=200.20,mark210→10gross. Recordnotcausalproof/sampleedge.4quizkeysread;nofixed30trade threshold.",
+    "status": "REVIEWED",
+    "scope": "Template, structured/hidden supplement and source/release checks separate; no historical evidence reused.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/143.json",
+      "settled/pages/143.json",
+      "final/pages/143.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "144": {
+    "pass1": "Fresh read of all unique non-template blocks displayed for this page, including metadata, every body paragraph, lists, available questions/choices and image alt.",
+    "pass2": "10*50=500fee.50. Optionalroutine nocredential/timeprescription,scriptwrittenstopnotorder.4quizzesread;participation distinctfromskill.",
+    "status": "REVIEWED",
+    "scope": "Template, structured/hidden supplement and source/release checks separate; no historical evidence reused.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/144.json",
+      "settled/pages/144.json",
+      "final/pages/144.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "145": {
+    "pass1": "Fresh read of all unique non-template blocks displayed for this page, including metadata, every body paragraph, lists, available questions/choices and image alt.",
+    "pass2": "100k→90k10%;recovery11.11%;20%decline25%recovery.10%weight*20%shock2%account.4quizzesread;nohealthdiagnosis.",
+    "status": "REVIEWED",
+    "scope": "Template, structured/hidden supplement and source/release checks separate; no historical evidence reused.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/145.json",
+      "settled/pages/145.json",
+      "final/pages/145.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "146": {
+    "pass1": "Fresh read of all unique non-template blocks displayed for this page, including metadata, every body paragraph, lists, available questions/choices and image alt.",
+    "pass2": "Fivecountry-specific exercises not brokerrecommendations;taxandremittancerulesseparate. Registrybyactivitynotgenerallicense. No demographicuserdata orrealstartingcapitalclaim.",
+    "status": "REVIEWED",
+    "scope": "Template, structured/hidden supplement and source/release checks separate; no historical evidence reused.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/146.json",
+      "settled/pages/146.json",
+      "final/pages/146.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "147": {
+    "pass1": "Fresh read of all unique non-template blocks displayed for this page, including metadata, every body paragraph, lists, available questions/choices and image alt.",
+    "pass2": "USDLKR onlytranslatesUSD—notanyforeignholding;universalUSDquoteFAQconfirmed430007. LocalworksheetUSD100 translationlogic sound. No legaleligibilitypromise,professionalreviewexplicitlynotclaimed.",
+    "status": "REVIEWED",
+    "scope": "Template, structured/hidden supplement and source/release checks separate; no historical evidence reused.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/147.json",
+      "settled/pages/147.json",
+      "final/pages/147.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "148": {
+    "pass1": "Fresh read of all unique non-template blocks displayed for this page, including metadata, every body paragraph, lists, available questions/choices and image alt.",
+    "pass2": "93%FY22–24derivativessample scopednotallinvestors orfutureperiod. INRanyforeignholdingoverbroad430007;plannedtickersunsupportedroadmappromise430009. Taxminimumseligibilitynotcertified.",
+    "status": "REVIEWED",
+    "scope": "Template, structured/hidden supplement and source/release checks separate; no historical evidence reused.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/148.json",
+      "settled/pages/148.json",
+      "final/pages/148.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "149": {
+    "pass1": "Fresh read of all unique non-template blocks displayed for this page, including metadata, every body paragraph, lists, available questions/choices and image alt.",
+    "pass2": "Philippinesgrammarmissingarticle430008. Under18siteFAQanswersbrokerageconditions notguest/account/analytics—humanrisk430R04. PHPperUSD100remittanceworksheetnotinvestmentforecast. SECroot403buteRAMPaccessible.",
+    "status": "REVIEWED",
+    "scope": "Template, structured/hidden supplement and source/release checks separate; no historical evidence reused.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/149.json",
+      "settled/pages/149.json",
+      "final/pages/149.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "150": {
+    "pass1": "Fresh read of all unique non-template blocks displayed for this page, including metadata, every body paragraph, lists, available questions/choices and image alt.",
+    "pass2": "Dollarpricedoilworksheetseparatesprice/FXchanges notinflationforecast. PKRstatementoverbroad430007;PSXroadmappromise430009. No regulatorendorsement/brokerrecommendation.",
+    "status": "REVIEWED",
+    "scope": "Template, structured/hidden supplement and source/release checks separate; no historical evidence reused.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/150.json",
+      "settled/pages/150.json",
+      "final/pages/150.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "151": {
+    "pass1": "Fresh read of all unique non-template blocks displayed for this page, including metadata, every body paragraph, lists, available questions/choices and image alt.",
+    "pass2": "NGNtranslationnotmeasuredinflationcause;oilnationalrevenueimportancequalitativeneedsdatedscope. SECoperatorchecknotcertification. NGXnotavailable stated,nofakereleasedate.",
+    "status": "REVIEWED",
+    "scope": "Template, structured/hidden supplement and source/release checks separate; no historical evidence reused.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/151.json",
+      "settled/pages/151.json",
+      "final/pages/151.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "152": {
+    "pass1": "Fresh read of all unique non-template blocks displayed for this page, including metadata, every body paragraph, lists, available questions/choices and image alt.",
+    "pass2": "ThreeBitcoinlessons spotfees/observationtimestamps/drawdownnotreturn. Overviewdoesnotdisplayreviewattributionwhilelessonsdo; checkmetadataandtransformation. Badgenotrealownership.",
+    "status": "REVIEWED",
+    "scope": "Template, structured/hidden supplement and source/release checks separate; no historical evidence reused.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/152.json",
+      "settled/pages/152.json",
+      "final/pages/152.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "153": {
+    "pass1": "Fresh read of all unique non-template blocks displayed for this page, including metadata, every body paragraph, lists, available questions/choices and image alt.",
+    "pass2": "2*40000=80000fee80cash19920mark99920;41000mark82000equity101920.4quizchoicesread;answerexplanationsstillneedsnapshotread. HabittranslationclaimhumanriskR05,notverified psychologicalbenefit.",
+    "status": "REVIEWED",
+    "scope": "Template, structured/hidden supplement and source/release checks separate; no historical evidence reused.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/153.json",
+      "settled/pages/153.json",
+      "final/pages/153.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "154": {
+    "pass1": "Fresh read of all unique non-template blocks displayed for this page, including metadata, every body paragraph, lists, available questions/choices and image alt.",
+    "pass2": ".1*50000=5000fee5cash94995equity99995.51000sale net5094.90gain89.90;49000net4895.10loss109.90. RebalancingvitalforallportfoliosovergeneralizationR05.4quizchoicesread,keysupplementpending.",
+    "status": "REVIEWED",
+    "scope": "Template, structured/hidden supplement and source/release checks separate; no historical evidence reused.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/154.json",
+      "settled/pages/154.json",
+      "final/pages/154.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "155": {
+    "pass1": "Fresh read of all unique non-template blocks displayed for this page, including metadata, every body paragraph, lists, available questions/choices and image alt.",
+    "pass2": "110000→88000drawdown20%,starting100000return-12%.121000alternativeillustratessampling. Morningstar403referenceaccesslimit notpageblocked;mathindependent. GenericcompetenceclaimR05.4quizchoicesread,keyspending.",
+    "status": "REVIEWED",
+    "scope": "Template, structured/hidden supplement and source/release checks separate; no historical evidence reused.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/155.json",
+      "settled/pages/155.json",
+      "final/pages/155.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "156": {
+    "pass1": "Fresh read of all unique non-template blocks displayed for this page, including metadata, every body paragraph, lists, available questions/choices and image alt.",
+    "pass2": "Priceaggregation/currentmethodscopeclearlyseparateHFTarbitrage. CryptoDataSpecialistbadgecanoverstatecredential unlesscompletionlimitkept. Missingoverviewattributionneedscheck.3lessons8minestimatesnotvalidatedreadingstandard.",
+    "status": "REVIEWED",
+    "scope": "Template, structured/hidden supplement and source/release checks separate; no historical evidence reused.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/156.json",
+      "settled/pages/156.json",
+      "final/pages/156.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "157": {
+    "pass1": "Fresh read of all unique non-template blocks displayed for this page, including metadata, every body paragraph, lists, available questions/choices and image alt.",
+    "pass2": "(10*1000+11*100)/1100=10.0909→10.09;(5*50+5.2*30+4.8*20)/100=5.02.Quiz100*10+200*13over300=12. Unitsnotturnover andmissingnotzero.4quizchoicesread,keyspending.",
+    "status": "REVIEWED",
+    "scope": "Template, structured/hidden supplement and source/release checks separate; no historical evidence reused.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/157.json",
+      "settled/pages/157.json",
+      "final/pages/157.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "158": {
+    "pass1": "Fresh read of all unique non-template blocks displayed for this page, including metadata, every body paragraph, lists, available questions/choices and image alt.",
+    "pass2": "100*11.5=1150vs100*12=1200diff50;50*8=400paper.1%adversebuy10→10.10separatefee. Agereshape notsmoothing/guaranteedconvergence.4quizchoicesread,keyspending.",
+    "status": "REVIEWED",
+    "scope": "Template, structured/hidden supplement and source/release checks separate; no historical evidence reused.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/158.json",
+      "settled/pages/158.json",
+      "final/pages/158.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "159": {
+    "pass1": "Fresh read of all unique non-template blocks displayed for this page, including metadata, every body paragraph, lists, available questions/choices and image alt.",
+    "pass2": "40/40/20arbitrary.80kinvested+20kcash→108kvs110kon+10%;92kvs90kon-10%.10000salefee10gives49990cash,50.005%holding. ExactS=10000/.9995=10005.0025.4choicesread,keyspending.",
+    "status": "REVIEWED",
+    "scope": "Template, structured/hidden supplement and source/release checks separate; no historical evidence reused.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/159.json",
+      "settled/pages/159.json",
+      "final/pages/159.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "160": {
+    "pass1": "Fresh read of all unique non-template blocks displayed for this page, including metadata, every body paragraph, lists, available questions/choices and image alt.",
+    "pass2": "Allocationobjectives virtualnotrealsuitability. PortfolioArchitectbadge named butnocertifiedprofessionalclaim. Exactweightsrequirefee-awaredenominator,notquantitiesalone. Missingoverviewreviewattributionneedscheck.",
+    "status": "REVIEWED",
+    "scope": "Template, structured/hidden supplement and source/release checks separate; no historical evidence reused.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/160.json",
+      "settled/pages/160.json",
+      "final/pages/160.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "161": {
+    "pass1": "Fresh read of all unique non-template blocks displayed for this page, including metadata, every body paragraph, lists, available questions/choices and image alt.",
+    "pass2": "15000/300=50pre-feeshares.25kfee25→cash74975total99975weight25.006%;B25000/1.00025=24993.7516,qty99.975006.20k/100k20%;30/10/60normalized.4quizchoicesread,keyspending.",
+    "status": "REVIEWED",
+    "scope": "Template, structured/hidden supplement and source/release checks separate; no historical evidence reused.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/161.json",
+      "settled/pages/161.json",
+      "final/pages/161.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "162": {
+    "pass1": "Fresh read of all unique non-template blocks displayed for this page, including metadata, every body paragraph, lists, available questions/choices and image alt.",
+    "pass2": ".8*.5=.4accountloss.50k+75k=125kweights40/60.45k+35k+40k=120kweights37.5/29.1667/33.3333;20→33.3333=13.3333pp. EarlierwordingreferenceinproductR05.4quizchoicesread,keyspending.",
+    "status": "REVIEWED",
+    "scope": "Template, structured/hidden supplement and source/release checks separate; no historical evidence reused.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/162.json",
+      "settled/pages/162.json",
+      "final/pages/162.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "163": {
+    "pass1": "Fresh read of all unique non-template blocks displayed for this page, including metadata, every body paragraph, lists, available questions/choices and image alt.",
+    "pass2": "Naive10ksale/10kbuyfees20→cash19980,total99980,weights40.008/40.008/19.984. Exact10008sale9992buy→39992eachcash19996=40/40/20.60000/(99990)=60.006%;exactS10000/.9994=10006.0036.4quizchoicesread,keyspending.",
+    "status": "REVIEWED",
+    "scope": "Template, structured/hidden supplement and source/release checks separate; no historical evidence reused.",
+    "initial_status": "INCOMPLETE",
+    "completion_evidence": [
+      "pages/163.json",
+      "settled/pages/163.json",
+      "final/pages/163.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "003": {
+    "pass1": "Read all 170 instrument names, categories, quote units, generated prices, synthetic activity and controls; not represented as real-market observations.",
+    "pass2": "Rechecked distinction between practice change and historical return; no inference about actual liquidity from demo activity.",
+    "status": "REVIEWED",
+    "initial_status": "REVIEWED",
+    "completion_evidence": [
+      "pages/003.json",
+      "settled/pages/003.json",
+      "final/pages/003.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "017": {
+    "pass1": "Read contact purposes, channels, limitations and optional email disclosures.",
+    "pass2": "No message was sent; mail delivery and owner response remain external, not failed public-page checks.",
+    "status": "REVIEWED",
+    "initial_status": "REVIEWED",
+    "completion_evidence": [
+      "pages/017.json",
+      "settled/pages/017.json",
+      "final/pages/017.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "018": {
+    "pass1": "Read every disclaimer paragraph, publisher notes and metadata.",
+    "pass2": "Educational disclaimer does not cure unsupported claims elsewhere; checked against actual manual spot mechanics.",
+    "status": "REVIEWED",
+    "initial_status": "REVIEWED",
+    "completion_evidence": [
+      "pages/018.json",
+      "settled/pages/018.json",
+      "final/pages/018.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "019": {
+    "pass1": "Read all privacy paragraphs including cookies, providers, local/optional cloud state, moderation, account access and third-party disclosures.",
+    "pass2": "Compared visible guest consent and read-only requests; owner retention/account/CMP legality require separate attestation.",
+    "status": "REVIEWED",
+    "initial_status": "REVIEWED",
+    "completion_evidence": [
+      "pages/019.json",
+      "settled/pages/019.json",
+      "final/pages/019.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  },
+  "020": {
+    "pass1": "Read all terms paragraphs and publisher notes.",
+    "pass2": "No professional credential or real-money entitlement inferred from site terms; actual legal acceptance is owner scope.",
+    "status": "REVIEWED",
+    "initial_status": "REVIEWED",
+    "completion_evidence": [
+      "pages/020.json",
+      "settled/pages/020.json",
+      "final/pages/020.json"
+    ],
+    "supplement_review": "Fresh settled deltas and runtime FAQ answers read in this run; shared navigation/footer/consent reviewed fresh once and referenced by text hash. Dynamic numeric display sampled; no claim to review every future price tick.",
+    "completion_note": "Initial pending-state statements above were resolved by fresh settled captures, runtime schema review, interactive walks and re-reading, except explicit external/owner gates recorded separately."
+  }
+}

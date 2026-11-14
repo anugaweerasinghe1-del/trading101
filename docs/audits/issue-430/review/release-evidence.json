@@ -1,0 +1,253 @@
+{
+  "finalizedAtUTC": "2026-11-14T17:40:32.579883+00:00",
+  "all_confirmed_fixes_rechecked": true,
+  "fixed_issue_ids": [
+    "THQ-430-001",
+    "THQ-430-002",
+    "THQ-430-003",
+    "THQ-430-004",
+    "THQ-430-005",
+    "THQ-430-006",
+    "THQ-430-007",
+    "THQ-430-008",
+    "THQ-430-009",
+    "THQ-430-010",
+    "THQ-430-011",
+    "THQ-430-012",
+    "THQ-430-013",
+    "THQ-430-014",
+    "THQ-430-015",
+    "THQ-430-016"
+  ],
+  "loops": [
+    {
+      "loop": 1,
+      "pr": 433,
+      "pr_url": "https://github.com/anugaweerasinghe1-del/trading101/pull/433",
+      "pr_head_sha": "0f9d6b93336ff41c093750fb415cd5073f8836ac",
+      "merge_sha": "ad251521ac4ff1b200723f6336f50e914b7e38bb",
+      "fixed_issue_ids": [
+        "THQ-430-001",
+        "THQ-430-002",
+        "THQ-430-003"
+      ],
+      "exact_head_checks_passed": true,
+      "exact_head_check_evidence": "pr433-before-merge.json",
+      "required_checks": [
+        {
+          "name": "TradeHQ Disposable PostgreSQL controls",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43612905537/job/132501629265"
+        },
+        {
+          "name": "TradeHQ Phase 3 tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43612905561/job/132501629365"
+        },
+        {
+          "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43612905561/job/132501629735"
+        },
+        {
+          "name": "TradeHQ Required validation",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43612905561/job/132504494368"
+        },
+        {
+          "name": "Cloudflare Pages",
+          "conclusion": "SUCCESS",
+          "url": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/566456bc-a810-4d05-ab03-60df36adc009"
+        }
+      ],
+      "protected_merge": true,
+      "merge_method": "normal protected squash merge with matched full head SHA; no admin override",
+      "live_recheck_passed": true,
+      "live_recheck_evidence": "loop1-live.json",
+      "native_production": {
+        "id": "390d24fb-2152-4e0c-b3c9-0d91c145de9c",
+        "sha": "ad251521ac4ff1b200723f6336f50e914b7e38bb",
+        "environment": "production",
+        "branch": "main",
+        "status": "success",
+        "createdAt": "2026-11-14T16:09:50.661495Z"
+      },
+      "native_receipt": "loop1-native-receipt.json",
+      "native_source": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43614087186/job/132508427490"
+    },
+    {
+      "loop": 2,
+      "pr": 434,
+      "pr_url": "https://github.com/anugaweerasinghe1-del/trading101/pull/434",
+      "pr_head_sha": "789c9a2123c7ca28aeecbb45821de972365e0a24",
+      "merge_sha": "37aed15ce462a16fbf4c3d422960278d5add4a02",
+      "fixed_issue_ids": [
+        "THQ-430-003",
+        "THQ-430-004",
+        "THQ-430-005",
+        "THQ-430-006",
+        "THQ-430-007",
+        "THQ-430-008",
+        "THQ-430-009",
+        "THQ-430-010"
+      ],
+      "exact_head_checks_passed": true,
+      "exact_head_check_evidence": "pr434-before-merge.json",
+      "required_checks": [
+        {
+          "name": "TradeHQ Disposable PostgreSQL controls",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43614909126/job/132507741344"
+        },
+        {
+          "name": "TradeHQ Phase 3 tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43614909125/job/132507741159"
+        },
+        {
+          "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43614909125/job/132507741383"
+        },
+        {
+          "name": "TradeHQ Required validation",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43614909125/job/132510864893"
+        },
+        {
+          "name": "Cloudflare Pages",
+          "conclusion": "SUCCESS",
+          "url": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/51bf32fa-0242-4c35-b9a7-d427c8ff656f"
+        }
+      ],
+      "protected_merge": true,
+      "merge_method": "normal protected squash merge with matched full head SHA; no admin override",
+      "live_recheck_passed": true,
+      "live_recheck_evidence": "loop2-live-verification.json",
+      "native_production": {
+        "id": "0f4d020a-1395-49df-9746-e740d54dd611",
+        "sha": "37aed15ce462a16fbf4c3d422960278d5add4a02",
+        "environment": "production",
+        "branch": "main",
+        "status": "success",
+        "createdAt": "2026-11-14T16:30:54.415209Z"
+      },
+      "native_receipt": "loop2-native-receipt.json",
+      "native_source": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43616010003/job/132513795361"
+    },
+    {
+      "loop": 3,
+      "pr": 435,
+      "pr_url": "https://github.com/anugaweerasinghe1-del/trading101/pull/435",
+      "pr_head_sha": "633d8b897c68c8d65d72fe8b55b324d6b346013f",
+      "merge_sha": "12e2fe829de5f771c9a06b42c835d891c42436aa",
+      "fixed_issue_ids": [
+        "THQ-430-011",
+        "THQ-430-012",
+        "THQ-430-013",
+        "THQ-430-014",
+        "THQ-430-015"
+      ],
+      "exact_head_checks_passed": true,
+      "exact_head_check_evidence": "pr435-before-merge.json",
+      "required_checks": [
+        {
+          "name": "TradeHQ Disposable PostgreSQL controls",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43617972561/job/132517101986"
+        },
+        {
+          "name": "TradeHQ Phase 3 tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43617972515/job/132517101913"
+        },
+        {
+          "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43617972515/job/132517102064"
+        },
+        {
+          "name": "TradeHQ Required validation",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43617972515/job/132519832818"
+        },
+        {
+          "name": "Cloudflare Pages",
+          "conclusion": "SUCCESS",
+          "url": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/5a3beabf-1241-4abb-9072-1b0c7cb7d146"
+        }
+      ],
+      "protected_merge": true,
+      "merge_method": "normal protected squash merge with matched full head SHA; no admin override",
+      "live_recheck_passed": true,
+      "live_recheck_evidence": "loop3-live.json",
+      "native_production": {
+        "id": "b4c2880d-d4c2-4ee3-ae0e-9b3a114a5538",
+        "sha": "12e2fe829de5f771c9a06b42c835d891c42436aa",
+        "environment": "production",
+        "branch": "main",
+        "status": "success",
+        "createdAt": "2026-11-14T17:03:34.511807Z"
+      },
+      "native_receipt": "loop3-native-receipt.json",
+      "native_source": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43618999806/job/132523509654"
+    },
+    {
+      "loop": 4,
+      "pr": 436,
+      "pr_url": "https://github.com/anugaweerasinghe1-del/trading101/pull/436",
+      "pr_head_sha": "c4fd8db9187769aeda5229b75d2b59cce576beda",
+      "merge_sha": "8b6c39978e2d8cfea8f9ffdfe8986e77523dfbbc",
+      "fixed_issue_ids": [
+        "THQ-430-016"
+      ],
+      "exact_head_checks_passed": true,
+      "exact_head_check_evidence": "pr436-before-merge.json",
+      "required_checks": [
+        {
+          "name": "TradeHQ Disposable PostgreSQL controls",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43620117226/job/132523691448"
+        },
+        {
+          "name": "TradeHQ Phase 3 tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43620117250/job/132523691681"
+        },
+        {
+          "name": "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43620117250/job/132523691738"
+        },
+        {
+          "name": "TradeHQ Required validation",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43620117250/job/132526718690"
+        },
+        {
+          "name": "Cloudflare Pages",
+          "conclusion": "SUCCESS",
+          "url": "https://dash.cloudflare.com/?to=/01087d56e4cb7b728a7a9ddbcb12b9bb/pages/view/tradehq-preview/7ee66e92-d27c-4790-bb1b-c5af68f7c4e5"
+        }
+      ],
+      "protected_merge": true,
+      "merge_method": "normal protected squash merge with matched full head SHA; no admin override",
+      "live_recheck_passed": true,
+      "live_recheck_evidence": "loop4-live.json",
+      "native_production": {
+        "id": "cc298d18-580d-4fa1-a9cf-7066b3c3e42f",
+        "sha": "8b6c39978e2d8cfea8f9ffdfe8986e77523dfbbc",
+        "environment": "production",
+        "branch": "main",
+        "status": "success",
+        "createdAt": "2026-11-14T17:27:23.193447Z"
+      },
+      "native_receipt": "loop4-native-receipt.json",
+      "native_source": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43621197017/job/132529757658"
+    }
+  ],
+  "production_code_sha": "8b6c39978e2d8cfea8f9ffdfe8986e77523dfbbc",
+  "ad_serving": "DISABLED",
+  "issue_closure": "OPEN \u2014 owner/access gates remain",
+  "scope": "Native Cloudflare production identities, exact-head required checks, protected code merges and independent live re-reading. Not native Vercel, quota, rollback, legal or Google acceptance verification."
+}
