@@ -139,7 +139,7 @@ export default function Auth() {
         <main className="flex-1 container mx-auto px-4 pt-28 pb-20 max-w-md">
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-2xs uppercase tracking-widest text-primary mb-4">
-              <Sparkles className="h-3 w-3" /> Optional — everything works signed out
+              <Sparkles className="h-3 w-3" /> Optional account — core practice is free
             </div>
             <h1 className="text-3xl font-bold tracking-tight">
               {mode === "signin" ? "Welcome back" : "Create your free account"}
@@ -147,7 +147,7 @@ export default function Auth() {
             <p className="text-sm text-muted-foreground mt-2">
               An account adds optional community features such as the leaderboard, profile visibility and friend
               challenges. New profiles start private. You can choose to publish your profile later using a separate control on your profile page.
-              Trading, courses and tools never require an account.
+              The core simulator and public lessons work without an account. Saved, server-scored trophy challenges and certificate checkpoints require sign-in.
             </p>
           </div>
 
