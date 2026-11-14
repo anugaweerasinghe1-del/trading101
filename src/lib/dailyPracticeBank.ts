@@ -2605,7 +2605,7 @@ export const starterPracticeBank: DailyBatch = {
           "explanation": "Dependence matters: the messages reproduce one origin rather than three separate observations. This does not prove falsity, but it prevents treating the count as corroboration."
         },
         {
-          "prompt": "How should a unresolved claim appear in a practice journal?",
+          "prompt": "How should an unresolved claim appear in a practice journal?",
           "options": [
             "Attributed and explicitly unverified",
             "Presented as a confirmed company event",

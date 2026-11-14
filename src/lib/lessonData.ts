@@ -523,12 +523,6 @@ export const lessonData: Lesson[] = [
         "title": "Support & Resistance Levels",
         "content": [
           {
-            "type": "image",
-            "data": "/src/assets/lesson-support-resistance.jpg",
-            "alt": "Support and resistance levels explained",
-            "caption": "Illustration for support & resistance levels."
-          },
-          {
             "type": "text",
             "data": "Support and resistance are analyst-selected areas where past prices have stopped falling or rising. They are not physical barriers or proof of participant intent. Choice of lookback, tolerance and chart scale affects where they are drawn."
           },

@@ -90,7 +90,7 @@ export function DailyPractice({ date, reviewMissed = false, open, onOpen, onClos
       </div>
       <div key={`${exercise.id}-${index}`} className="rounded-2xl border border-border/70 p-4 md:p-6">
         <p className="text-xs text-primary mb-2">Question {index + 1} of {total} · {index < 3 ? 'Understand the starting case' : index < 7 ? 'Apply the follow-up' : 'Check the conclusions'}</p>
-        <fieldset disabled={reviewed}><legend className="font-semibold leading-relaxed mb-4">{q.prompt}</legend>
+        <fieldset disabled={reviewed}><legend className="font-semibold leading-relaxed mb-4">{q.prompt === "How should a unresolved claim appear in a practice journal?" ? "How should an unresolved claim appear in a practice journal?" : q.prompt}</legend>
           <div className="space-y-2">{q.options.map((option, n) => <label key={n} className={`flex gap-3 items-start p-3 rounded-xl border ${reviewed ? '' : 'cursor-pointer'} ${reviewed && n === q.correctAnswer ? 'border-primary/50 bg-primary/10' : 'border-border/70 bg-muted/60'}`}>
             <input type="radio" name={`practice-${exercise.id}-${index}`} checked={reviewed ? progress.answers[index] === n : pick === n} onChange={() => setPick(n)} className="mt-1 accent-primary shrink-0" />
             <span className="text-sm leading-relaxed">{option}{reviewed && n === q.correctAnswer && <span className="block text-primary text-xs mt-1">Correct answer</span>}{reviewed && progress.answers[index] === n && n !== q.correctAnswer && <span className="block text-muted-foreground text-xs mt-1">Your answer</span>}</span>
