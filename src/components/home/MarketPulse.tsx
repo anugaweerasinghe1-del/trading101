@@ -2,6 +2,7 @@ import { useEffect, useState, useMemo } from "react";
 import { Activity, TrendingUp, TrendingDown, Clock } from "lucide-react";
 import { ASSETS } from "@/lib/assets";
 import { getPersistedPrices } from "@/lib/pricePersistence";
+import { MARKET_SESSIONS, sessionStatus } from "@/lib/marketSessions";
 import { cn } from "@/lib/utils";
 
 type MomentumLabel = "Strong Downside" | "Downside" | "Neutral" | "Upside" | "Strong Upside";
@@ -25,39 +26,6 @@ function computeMomentumScore(prices: Record<string, { changePercent: number }>)
   // Map avg% [-5..+5] → [0..100], clamp
   const score = Math.max(0, Math.min(100, 50 + avg * 10));
   return Math.round(score);
-}
-
-interface MarketSession {
-  name: string;
-  flag: string;
-  tz: string;
-  openH: number; // regular weekday local-hour schedule only
-  closeH: number;
-}
-
-const SESSIONS: MarketSession[] = [
-  { name: "NYSE", flag: "🇺🇸", tz: "America/New_York", openH: 9.5, closeH: 16 },
-  { name: "LSE", flag: "🇬🇧", tz: "Europe/London", openH: 8, closeH: 16.5 },
-  { name: "TSE", flag: "🇯🇵", tz: "Asia/Tokyo", openH: 9, closeH: 15 },
-  { name: "SGX", flag: "🇸🇬", tz: "Asia/Singapore", openH: 9, closeH: 17 },
-];
-
-function sessionStatus(s: MarketSession): { open: boolean; nextEventInMin: number } {
-  const now = new Date();
-  const local = new Date(now.toLocaleString("en-US", { timeZone: s.tz }));
-  const day = local.getDay();
-  const isWeekday = day !== 0 && day !== 6;
-  const hours = local.getHours() + local.getMinutes() / 60;
-  const open = isWeekday && hours >= s.openH && hours < s.closeH;
-  let nextMin: number;
-  if (open) {
-    nextMin = (s.closeH - hours) * 60;
-  } else {
-    // Approximate regular-hours countdown; exchange holidays/special sessions are not modeled.
-    const delta = hours < s.openH ? s.openH - hours : 24 - hours + s.openH;
-    nextMin = delta * 60;
-  }
-  return { open, nextEventInMin: Math.round(nextMin) };
 }
 
 function formatTimeLeft(min: number): string {
@@ -101,7 +69,7 @@ export function MarketPulse() {
   const losers = ranked.filter((a) => a.changePercent < 0).slice(0, 3);
 
   // Sessions
-  const sessions = SESSIONS.map((s) => ({ ...s, ...sessionStatus(s) }));
+  const sessions = MARKET_SESSIONS.map((s) => ({ ...s, ...sessionStatus(s) }));
 
   // Dial geometry
   const r = 70;
