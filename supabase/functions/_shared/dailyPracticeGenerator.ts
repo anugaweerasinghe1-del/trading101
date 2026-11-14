@@ -108,7 +108,7 @@ export async function generatePractice(claim: PracticeClaim, fetcher = fetch) {
       'Do not ask learners to predict market direction or treat RSI, volume or price patterns as guarantees. Reflect uncertainty, costs, exposure, sample limitations and alternative explanations.',
       'Diversification does not prevent all losses. Recompute total value before allocation percentages. Planned risk/reward differs from realized returns. A return rank is not a verified skill rating.',
       `Visual bars show ${visualLimits.barsMin}–${visualLimits.barsMax} nonnegative finite inputs from ${visualLimits.valueMin} to ${visualLimits.valueMax}. Use positive prices, balances, costs or exposure amounts; show losses as before/after balances, never negative return bars or absolute values that hide a loss. All bars share one unit. Caption is ${visualLimits.captionMin}–${visualLimits.captionMax} characters and explicitly says hypothetical, not live data; unit is ${visualLimits.unitMin}–${visualLimits.unitMax} characters (e.g. USD or %); labels are ${visualLimits.labelMin}–${visualLimits.labelMax} characters. No invented photographs or market charts.`,
-      'Return a complete structured object with EXACTLY 10 exercises. Each exercise MUST have a questions OBJECT with every required q1 through q10 field (not a question array), with one distinct scored question per slot and EXACTLY 3 options per question. Never omit q10 or any other slot even if the response is long. All 100 questions need full worked explanations. Unique hyphenated IDs include the period and part; keep all titles and prompts distinct from every previous item. No reviewer metadata: owner approval happens separately.',
+      'Return a complete structured object with EXACTLY 10 exercises and NO bonus, alternative or appendix exercises. Follow the casePlan order and include exactly two exercises in each of five categories. If you have more than ten ideas, choose only the ten required cases. Each exercise MUST have a questions OBJECT with every required q1 through q10 field (not a question array), with one distinct scored question per slot and EXACTLY 3 options per question. Never omit q10 or any other slot even if the response is long. All 100 questions need full worked explanations. Unique hyphenated IDs include the period and part; keep all titles and prompts distinct from every previous item. No reviewer metadata: owner approval happens separately.',
     ],
   };
   const scoredQuestion = obj({ prompt: boundedText(12, 450, 'Distinct scored question.'), options: { type: 'array', description: 'Exactly 3 plausible and distinct choices.', items: boundedText(1, 350, 'Distinct answer option.') }, correctAnswer: { type: 'integer', minimum: 0, maximum: 2 }, explanation: pair(explanationParts) });
@@ -149,6 +149,29 @@ export async function generatePractice(claim: PracticeClaim, fetcher = fetch) {
   let items: DailyExercise[];
   try { items = assembleDailyExercises(JSON.parse(output.candidates?.[0]?.content?.parts?.filter((p: { thought?: boolean }) => !p.thought).map((p: { text?: string }) => p.text ?? '').join('') ?? '').exercises) as DailyExercise[]; }
   catch { throw new Error('Gemini returned incomplete output. No content was published.'); }
+  // A completed Gemini response can contain bonus cases even when the schema
+  // describes exactly ten (Nov 14 live response contained twelve). Avoid adding
+  // nested provider array bounds that previously triggered HTTP 400. Salvage a
+  // bounded surplus only when the original response contains the required two
+  // cases in EACH supported category. Preserve first-occurrence order and never
+  // fabricate a missing case or question; the unchanged validators still run.
+  const providerExerciseCount = Array.isArray(items) ? items.length : 0;
+  let surplusExercisesDiscarded = 0;
+  if (Array.isArray(items) && items.length > 10 && items.length <= 20) {
+    const keptByCategory = new Map<string, number>();
+    const selected = items.filter(exercise => {
+      const category = exercise?.category;
+      if (!DAILY_CATEGORIES.some(allowed => allowed === category)) return false;
+      const alreadyKept = keptByCategory.get(category) ?? 0;
+      if (alreadyKept >= 2) return false;
+      keptByCategory.set(category, alreadyKept + 1);
+      return true;
+    });
+    if (selected.length === 10) {
+      items = selected;
+      surplusExercisesDiscarded = providerExerciseCount - 10;
+    }
+  }
   // Validate question cardinality *before* later title/prompt processing, which
   // iterates questions and must never throw a generic error on a missing q10.
   // Do not pad missing slots: any malformed provider response fails this part.
@@ -233,6 +256,9 @@ export async function generatePractice(claim: PracticeClaim, fetcher = fetch) {
     usage: recordedUsage,
     sources: references.map(({ label, url, checkedAt }) => ({ label, url, checkedAt })),
     checks: ['Structure, lengths, source allowlist, answer bounds and case near-copy checks passed.',
+      surplusExercisesDiscarded
+        ? 'Editorial warning: Gemini returned ' + providerExerciseCount + ' exercises instead of 10. Kept the first two cases per supported category and discarded ' + surplusExercisesDiscarded + ' surplus cases. Review ordering and adherence to the assigned case plan before approval.'
+        : 'Gemini returned exactly 10 exercises, with no surplus cases discarded.',
       contextualizedTitles.length
         ? 'Editorial warning: duplicate historical or within-part titles were differentiated with scenario-specific input labels in cases ' +
           contextualizedTitles.join(', ') + '. Verify these are genuinely distinct lessons before approval.'
