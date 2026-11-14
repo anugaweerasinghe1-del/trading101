@@ -105,7 +105,7 @@ export function CredibilityFooter() {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><Link to="/wiki" className="hover:text-primary transition-colors">Trading Glossary</Link></li>
               <li><Link to="/markets" className="hover:text-primary transition-colors">Market Guides</Link></li>
-              <li><Link to="/ai-mentor" className="hover:text-primary transition-colors">AI Mentor</Link></li>
+              <li><Link to="/ai-mentor" className="hover:text-primary transition-colors">Learning Mentor</Link></li>
               <li><Link to="/learn-trading-guide" className="hover:text-primary transition-colors">Market Learning Guide</Link></li>
             </ul>
           </div>

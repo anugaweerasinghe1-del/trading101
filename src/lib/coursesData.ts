@@ -195,7 +195,7 @@ const optionsTrack: CourseTrack = {
         "## What implied volatility actually is",
         "Implied volatility (IV) is the volatility figure that, plugged into an option pricing model, would produce the option's current market price. It is not a prediction any single person makes — it emerges from the aggregate bids and offers of every participant. Changes can reflect expected uncertainty, demand for protection and risk premiums. IV is model-dependent and need not equal later realised volatility.",
         "## IV rank vs IV percentile",
-        "The raw IV number is meaningless without context. IV rank compares today's IV to the highest and lowest reading of the last 12 months on a 0-100 scale. IV percentile tells you what fraction of the last year the stock traded below today's IV. Neither an IV-rank threshold nor an IV-percentile threshold establishes a buy or sell rule. Compare the chosen lookback, option expiry, price source and costs before interpreting either measure.",
+        "The raw IV number is meaningless without context. IV rank compares today's IV to the highest and lowest reading of the last 12 months on a 0-100 scale. IV percentile tells you the fraction of observed trading days over the last year when implied volatility was below today's IV. Neither an IV-rank threshold nor an IV-percentile threshold establishes a buy or sell rule. Compare the chosen lookback, option expiry, price source and costs before interpreting either measure.",
         "## The earnings trap",
         "Implied volatility often rises before earnings and can fall sharply afterwards. A trader can be directionally correct and still lose on a long option if the volatility drop and time decay outweigh the price move.",
         "## Comparing hypothetical earnings payoffs",
@@ -665,7 +665,7 @@ const psychologyTrack: CourseTrack = {
     "This educational track examines research on decision biases alongside fictional trading examples. It introduces optional records and checklists that can support reflection, without claiming professional consensus or a link to profitable performance.",
   hero: psychologyHero,
   level: "Beginner",
-  badge: { name: "Trading Psychology Completion", description: "Awarded after completing every lesson in the Trading Psychology Mastery track." },
+  badge: { name: "Trading Psychology Completion", description: "Awarded after completing every lesson in the Trading Decisions and Behaviour track." },
   outcomes: [
     "Name the specific biases most likely to affect your own decisions, with an example from your own trade log.",
     "Recognise when a fictional trading scenario invites an impulsive decision and consider alternatives including not trading.",

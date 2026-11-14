@@ -906,23 +906,16 @@ export function generateAssetMetaTitle(asset: Asset): string {
   return title.length > 60 ? `${label} Practice | TradeHQ` : title;
 }
 
-// Truncate meta description safely at 155 chars (no mid-sentence cuts)
+// Prefer complete sentences; search snippets do not have a mandatory character limit.
 export function truncateMetaDescription(text: string, maxLength: number = 155): string {
-  if (text.length <= maxLength) return text;
-
-  const truncated = text.slice(0, maxLength);
-  const lastPeriod = truncated.lastIndexOf('.');
-  const lastQuestion = truncated.lastIndexOf('?');
-  const lastExclamation = truncated.lastIndexOf('!');
-
-  const lastBoundary = Math.max(lastPeriod, lastQuestion, lastExclamation);
-
-  if (lastBoundary > maxLength * 0.5) {
-    return text.slice(0, lastBoundary + 1);
-  }
-
-  const lastSpace = truncated.lastIndexOf(' ');
-  return text.slice(0, lastSpace) + '...';
+  const normalized = text.replace(/\s+/g, ' ').trim();
+  if (normalized.length <= maxLength) return normalized;
+  const sentences = [...normalized.matchAll(/.+?[.!?](?=\s|$)/g)];
+  const withinLimit = sentences.filter(match => match.index! + match[0].length <= maxLength);
+  const last = withinLimit[withinLimit.length - 1];
+  if (last) return normalized.slice(0, last.index! + last[0].length).trim();
+  // Preserve the first complete sentence even when it exceeds the preferred size.
+  return sentences[0]?.[0].trim() || normalized;
 }
 
 // Generate meta description (120-155 chars) - Custom for top 5, fallback for others
