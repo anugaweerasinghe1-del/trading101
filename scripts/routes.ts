@@ -357,7 +357,7 @@ export function buildRoutes(): RouteMeta[] {
     title: "About TradeHQ — Built by Anuga Weerasinghe | TradeHQ",
     description: `TradeHQ is a free educational trading simulator built by Anuga Weerasinghe. No brokerage, no real money, no signup — just ${BALANCE} virtual cash to learn with.`,
     h1: "About TradeHQ",
-    summary: `TradeHQ is a free educational trading simulator built by Anuga Weerasinghe. It is not a brokerage and uses virtual money. Core simulator features work without signup; the site also uses third-party services including advertising.`,
+    summary: `TradeHQ is a free educational trading simulator built by Anuga Weerasinghe. It is not a brokerage and uses virtual money. Core simulator features work without signup; optional third-party services are described in the privacy policy. Ad serving is currently disabled.`,
     priority: "0.6",
     changefreq: "monthly",
   });

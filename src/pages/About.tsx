@@ -25,7 +25,7 @@ const sections = [
     icon: GraduationCap,
     title: "Educational Philosophy",
     body:
-      "Learning by doing beats learning by reading. Every feature — the $100,000 virtual portfolio, the AI mentor, the daily challenge, the wiki and the compound growth simulator — exists to turn abstract concepts (risk, position sizing, diversification, psychology) into things you can feel through hands-on practice.",
+      "Learning by doing beats learning by reading. Every feature — the $100,000 virtual portfolio, the educational mentor, the daily challenge, the wiki and the compound growth simulator — exists to turn abstract concepts (risk, position sizing, diversification, psychology) into things you can feel through hands-on practice.",
   },
   {
     icon: Compass,
@@ -162,7 +162,7 @@ export default function About() {
               {
                 question: "Does TradeHQ give financial advice?",
                 answer:
-                  "No. Nothing on TradeHQ — including the AI mentor and market commentary — constitutes financial, investment, legal or tax advice.",
+                  "No. Nothing on TradeHQ — including the educational mentor and market commentary — constitutes financial, investment, legal or tax advice.",
               },
             ]}
           />
