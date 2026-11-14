@@ -10,6 +10,8 @@ import { AIAnswerBlock } from "@/components/seo/AIAnswerBlock";
 import { getCountryGuide, COUNTRY_GUIDES } from "@/lib/countryGuides";
 import { Globe2, GraduationCap, ShieldCheck, Building2, Landmark, ArrowRight } from "lucide-react";
 
+import { countryLocationName } from "@/lib/countryDisplay";
+
 const DOMAIN = "https://www.thetradehq.com";
 
 export default function CountryGuide() {
@@ -18,8 +20,9 @@ export default function CountryGuide() {
   if (!guide) return <NotFound />;
 
   const path = `/learn/country/${guide.slug}`;
-  const title = `Learn Trading in ${guide.country} — Free Guide for ${guide.country} Students | TradeHQ`;
-  const description = `Free trading education for ${guide.country}. Practice with $100,000 virtual cash, learn how global markets work, and understand local rules from ${guide.regulator.name}. Educational simulation only — not financial advice.`;
+  const locationName = countryLocationName(guide.country);
+  const title = `Learn Trading in ${locationName} — Free Guide for Students in ${locationName} | TradeHQ`;
+  const description = `Free trading education for learners in ${locationName}. Practice with $100,000 virtual cash, learn how global markets work, and understand local rules from ${guide.regulator.name}. Educational simulation only — not financial advice.`;
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -57,7 +60,7 @@ export default function CountryGuide() {
           <header className="my-8 text-center">
             <div className="text-6xl mb-4" aria-hidden>{guide.flag}</div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-              Learn Trading in {guide.country}
+              Learn Trading in {locationName}
             </h1>
             <p className="mt-4 text-muted-foreground max-w-2xl mx-auto leading-relaxed">{guide.intro}</p>
             <p className="mt-3 text-xs text-muted-foreground italic">Educational simulation only — not financial advice.</p>
@@ -65,8 +68,8 @@ export default function CountryGuide() {
 
           <AIAnswerBlock
             className="mb-10"
-            question={`Is TradeHQ suitable for ${guide.country} traders?`}
-            answer={`Yes. TradeHQ is a free educational trading simulator accessible from ${guide.country} with no required signup or payment. TradeHQ is a virtual practice tool, not a broker, and does not execute real trades. This page does not determine your legal eligibility or a provider’s regulatory status. Every account starts with $100,000 in virtual cash for an educational worksheet; access does not establish eligibility for a real account. Educational simulation only — not financial advice.`}
+            question={`Is TradeHQ suitable for learners in ${locationName}?`}
+            answer={`Yes. TradeHQ is a free educational trading simulator accessible from ${locationName} with no required signup or payment. TradeHQ is a virtual practice tool, not a broker, and does not execute real trades. This page does not determine your legal eligibility or a provider’s regulatory status. Every account starts with $100,000 in virtual cash for an educational worksheet; access does not establish eligibility for a real account. Educational simulation only — not financial advice.`}
           />
 
           <section className="mb-10 text-sm text-muted-foreground" aria-label="Publisher and regulatory references">
@@ -102,7 +105,7 @@ export default function CountryGuide() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold mb-3">How market access actually works in {guide.country}</h2>
+            <h2 className="text-2xl font-bold mb-3">How market access actually works in {locationName}</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">{guide.marketAccess}</p>
           </section>
 
@@ -112,7 +115,7 @@ export default function CountryGuide() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold mb-3">What to follow from {guide.country}</h2>
+            <h2 className="text-2xl font-bold mb-3">What to follow from {locationName}</h2>
             <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1.5">
               {guide.localAssets.map((a) => (
                 <li key={a}>{a}</li>
@@ -124,7 +127,7 @@ export default function CountryGuide() {
             <h2 className="text-2xl font-bold mb-3">Country-specific practice worksheet</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">{guide.practicePlan}</p>
             <p className="mt-3 text-xs text-muted-foreground italic">
-              Educational simulation only — not financial, tax or legal advice. Confirm all local rules with a licensed professional in {guide.country}.
+              Educational simulation only — not financial, tax or legal advice. Confirm all local rules with a licensed professional in {locationName}.
             </p>
           </section>
 
@@ -148,7 +151,7 @@ export default function CountryGuide() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold mb-4">FAQ for {guide.country} learners</h2>
+            <h2 className="text-2xl font-bold mb-4">FAQ for learners in {locationName}</h2>
             <div className="space-y-2">
               {guide.faqs.map((f) => (
                 <details key={f.q} className="p-4 rounded-xl bg-white/[0.02] border border-white/10 group open:border-emerald-500/30">

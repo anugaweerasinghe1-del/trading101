@@ -16,6 +16,7 @@ import { tradingGlossary } from "../src/lib/tradingGlossary";
 import { LEARN_ARTICLES } from "../src/lib/learnArticles";
 import { lessonData } from "../src/lib/lessonData";
 import { COMPARE_PAIRS, HOWTO_ASSETS, STRATEGIES } from "../src/lib/seoData";
+import { countryLocationName } from "../src/lib/countryDisplay";
 import { starterPracticeBank } from "../src/lib/dailyPracticeBank";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -621,12 +622,13 @@ function extraRoutes(): RouteMeta[] {
     changefreq: "monthly",
   });
   for (const c of COUNTRIES) {
+    const locationName = countryLocationName(c.name);
     out.push({
       path: `/learn/country/${c.slug}`,
-      title: `Learn Trading in ${c.name} — Free Guide for ${c.name} Students | TradeHQ`,
-      description: `Free trading education for ${c.name}. Practise with ${BALANCE} virtual cash, learn how global markets work, and understand local rules. Educational simulation only.`,
-      h1: `Learn Trading in ${c.name}`,
-      summary: `A localised free guide for ${c.name} learners — local regulator, local exchange, tax note and the same ${BALANCE} virtual practice account.`,
+      title: `Learn Trading in ${locationName} — Free Guide for Students in ${locationName} | TradeHQ`,
+      description: `Free trading education for learners in ${locationName}. Practise with ${BALANCE} virtual cash, learn how global markets work, and understand local rules. Educational simulation only.`,
+      h1: `Learn Trading in ${locationName}`,
+      summary: `A localised free guide for learners in ${locationName} — local regulator, local exchange, tax note and the same ${BALANCE} virtual practice account.`,
       priority: "0.6",
       changefreq: "monthly",
     });

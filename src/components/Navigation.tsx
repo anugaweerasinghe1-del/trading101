@@ -85,7 +85,7 @@ export function Navigation() {
       { to: "/start", label: "Start Here", icon: GraduationCap },
       { to: "/practice", label: "Practice Arena", icon: Target },
       { to: "/courses", label: "Courses", icon: BookOpen },
-      { to: "/ai-mentor", label: "AI Mentor", icon: Bot },
+      { to: "/ai-mentor", label: "Learning Mentor", icon: Bot },
       { to: "/markets", label: "Markets", icon: TrendingUp },
       { to: "/daily", label: "Daily Practice", icon: CalendarCheck },
     ] },

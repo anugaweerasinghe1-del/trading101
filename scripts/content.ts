@@ -4,6 +4,7 @@
  * the React app renders at runtime.
  */
 
+import { countryLocationName } from "../src/lib/countryDisplay";
 import { loadSiteData } from "./loadData";
 import { STATIC_COPY, DISCLAIMER } from "./staticCopy";
 import { EXTRA_SECTIONS } from "./staticCopyExtra";
@@ -529,13 +530,13 @@ export async function buildContentMap(): Promise<Map<string, PageContent>> {
         ],
       },
     ],
-    links: countries.map((c) => ({ href: `/learn/country/${c.slug}`, label: `Learn trading in ${c.country}` })),
+    links: countries.map((c) => ({ href: `/learn/country/${c.slug}`, label: `Learn trading in ${countryLocationName(c.country)}` })),
   });
 
   for (const c of countries) {
     map.set(`/learn/country/${c.slug}`, {
       sections: [
-        { h: `Trading from ${c.country}`, p: [c.intro] },
+        { h: `Trading from ${countryLocationName(c.country)}`, p: [c.intro] },
         { h: "Publisher and source-check scope", p: [`Published by TradeHQ; site creator: Anuga Weerasinghe. Regulatory source check: ${c.sourceCheck.date}. ${c.sourceCheck.scope}`] },
         { h: "Why practise first", p: [c.whyPractice] },
         { h: "How market access works here", p: [c.marketAccess] },

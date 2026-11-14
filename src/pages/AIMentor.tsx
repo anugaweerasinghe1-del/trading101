@@ -252,21 +252,21 @@ export default function AIMentor() {
 
           <SEOSection
             path="/ai-mentor"
-            faqHeading="AI Mentor"
-            breadcrumbs={[{ label: "AI Mentor" }]}
+            faqHeading="Learning Mentor"
+            breadcrumbs={[{ label: "Learning Mentor" }]}
             faqs={[
               {
-                question: "What is the TradeHQ AI Mentor?",
+                question: "What is the TradeHQ Learning Mentor?",
                 answer:
                   "An educational mentor using a built-in library of authored answers and topic matching. Open it from a published lesson or quiz to use that context and choose an explanation level. It makes no AI API request or real-money trade recommendations.",
               },
               {
-                question: "Can the AI Mentor predict prices?",
+                question: "Can the Learning Mentor predict prices?",
                 answer:
                   "No. This chat uses predefined explanations and approved public lesson text when opened from a lesson. It does not read your private journal or trade history, forecast prices or assess whether an investment suits you.",
               },
               {
-                question: "Is the AI Mentor free?",
+                question: "Is the Learning Mentor free?",
                 answer:
                   "Yes — it is included free with every TradeHQ account, no signup or payment required.",
               },

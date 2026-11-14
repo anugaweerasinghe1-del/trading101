@@ -51,7 +51,7 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
       "TradeHQ does not publish a real-money starting amount because broker requirements and personal circumstances vary. If you ever consider a real account, check the provider's current terms and use the simulator first to understand the mechanics without risking money.",
     localAssets: [
       "The All Share Price Index and the S&P SL20 as a daily read on local sentiment",
-      "USD/LKR, because it silently determines the rupee value of any foreign asset you hold",
+      "USD/LKR, which changes the rupee equivalent of a USD-denominated amount",
       "Oil and food-price observations as context; local inflation also depends on currency, costs and policy",
       "US company reporting, studied independently of whether a particular overseas brokerage route is available",
     ],
@@ -60,7 +60,7 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
     faqs: [
       { q: "What should Sri Lankan users know about regulation?", a: "TradeHQ is an educational simulator and does not execute real-money trades. Financial-market rules can change, so for questions about investing, brokerage access or local regulation, check current guidance from the Securities and Exchange Commission of Sri Lanka and other relevant authorities." },
       { q: "Can I convert my paper gains to real money?", a: "No. Paper trades are simulated only. Real-money trading uses separate regulated providers, and eligibility or account requirements should be checked with the relevant regulator and provider." },
-      { q: "Do prices show in LKR?", a: "No. Prices are shown in USD to match global exchanges. To estimate LKR exposure, multiply by the current USD/LKR rate." },
+      { q: "Do prices show in LKR?", a: "The virtual account is denominated in USD. Each instrument labels its quote units; a currency pair may use another quote currency. For a USD-denominated amount, multiply by a dated USD/LKR rate to estimate its rupee equivalent." },
     ],
   },
   {
@@ -87,7 +87,7 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
       "TradeHQ does not recommend a minimum real-money starting amount. Broker charges, product access and account requirements can change, so check current official/provider information if you ever consider funding an account. SEBI has separately published research showing substantial losses among individual equity-derivatives traders, which is one reason this guide keeps practice separate from real-money claims.",
     localAssets: [
       "Nifty 50 and Bank Nifty as the reference indices for Indian equity sentiment",
-      "USD/INR, which affects the rupee return on any foreign holding",
+      "USD/INR, which changes the rupee equivalent of a USD-denominated amount",
       "Gold as a worksheet for distinguishing a dollar price from its rupee translation",
       "US technology large-caps, widely followed by Indian retail investors through international platforms",
     ],
@@ -95,7 +95,7 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
       "Optional study worksheet: read the linked SEBI FY22–FY24 derivatives study and record its population, dates and definition of loss. Compare a virtual share purchase with the leverage and contract obligations discussed in the futures course. Do not apply the study percentage to every investor, cash-equity holder or later period. Use the journal to distinguish observed sample results from an individual prediction; successful simulation does not validate a real-money strategy.",
     faqs: [
       { q: "Is TradeHQ SEBI-registered?", a: "TradeHQ is a free educational simulator and does not execute trades or hold client funds. For the activities and entities that require SEBI registration, use SEBI's current rules and recognised-intermediary registry." },
-      { q: "Can I paper trade Indian stocks like Reliance or TCS?", a: "The current TradeHQ catalogue focuses on US and global tickers. Indian-listed tickers are planned but not yet live." },
+      { q: "Can I paper trade Indian stocks like Reliance or TCS?", a: "The current TradeHQ catalogue focuses on US and global tickers. Check Markets for available instruments; no Indian-listed release date is confirmed." },
       { q: "Does the app work offline?", a: "Initial pages, scripts and provider quotes can require a network connection. Existing browser-held records do not guarantee that every page or feature works offline." },
     ],
   },
@@ -161,7 +161,7 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
       "TradeHQ does not publish a real-money starting amount because broker requirements, charges and personal circumstances vary. Verify any current minimum or eligibility rule directly with a licensed provider if you ever consider a real account.",
     localAssets: [
       "The KSE-100 as the headline domestic index",
-      "USD/PKR, which drives imported inflation and the local value of foreign holdings",
+      "USD/PKR as a currency-translation worksheet input for USD-denominated amounts",
       "Dated PSX constituent and sector information to distinguish index weights from a claim about what caused a move",
       "Global oil prices, given their outsized effect on the Pakistani import bill",
     ],
@@ -169,7 +169,7 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
       "Optional study worksheet: assume a fictional dollar-priced oil import and two hypothetical PKR-per-USD rates. Calculate the rupee cost with the dollar oil price fixed, then change the oil price while holding the exchange rate constant. This isolates two arithmetic effects rather than predicting inflation or policy. Compare the assumptions with separately dated official observations and record any differences. The exercise does not establish permission to open or fund a foreign-market account.",
     faqs: [
       { q: "Can I use TradeHQ without a Pakistani bank account?", a: "Yes. TradeHQ never asks for any payment or bank details — it is 100% free and simulated." },
-      { q: "Do you cover PSX-listed shares?", a: "Not yet. The current catalogue focuses on US and global tickers. Local coverage is on the roadmap." },
+      { q: "Do you cover PSX-listed shares?", a: "Not yet. The current catalogue focuses on US and global tickers. Check Markets for available instruments; no PSX-listed release date is confirmed." },
     ],
   },
   {

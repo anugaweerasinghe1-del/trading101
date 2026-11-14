@@ -163,7 +163,7 @@ export default function Compare() {
               { label: `${pair.a.name} vs ${pair.b.name}` },
             ]}
             faqs={[
-              { question: `Is ${pair.a.name} better than ${pair.b.name}?`, answer: pair.verdict },
+              { question: `How do ${pair.a.name} and ${pair.b.name} compare?`, answer: pair.verdict },
               { question: `What can I practise from this comparison on TradeHQ?`, answer: categoryComparison
                 ? `Forex and equities are categories, not ticker symbols. Browse the practice terminal to choose supported instruments such as EUR/USD and AAPL. Virtual spot exercises use simplified data and fills; they do not reproduce every real product or execution condition.`
                 : `The terminal has practice routes for ${pair.a.symbol} and ${pair.b.symbol} with virtual funds. Those named examples do not represent every product in their categories. Guest practice is available; TradeHQ does not deliver physical assets, stake tokens, place resting stop orders or open short positions.` },
@@ -180,7 +180,7 @@ export default function Compare() {
 
 export function CompareIndex() {
   const title = "Asset Comparisons — Crypto, Stocks & ETFs Side-by-Side | TradeHQ";
-  const description = "Compare Bitcoin vs Ethereum, Tesla vs Nvidia, stocks vs crypto and more. Side-by-side breakdowns of returns, risk and use cases. Compare both in a virtual-money simulation.";
+  const description = "Compare asset structures, risks and research questions with worksheets and sources. Practise supported named instruments using virtual money.";
   return (
     <>
       <Helmet>
@@ -192,7 +192,7 @@ export function CompareIndex() {
         <Navigation />
         <main className="[.light_&_.text-emerald-400]:text-emerald-800 [.light_&_.text-rose-400]:text-rose-800 flex-1 container mx-auto px-4 pt-24 pb-12 max-w-5xl">
           <h1 className="text-4xl font-bold mb-2">Asset Comparisons</h1>
-          <p className="text-muted-foreground mb-8">Pick a head-to-head. Each comparison is built around real differences in returns, risk and use case.</p>
+          <p className="text-muted-foreground mb-8">Pick a comparison to explore instrument structures, risks, research questions and a hypothetical worksheet.</p>
 
           <section className="mb-10 max-w-3xl space-y-4">
             <p className="text-sm leading-relaxed text-muted-foreground">

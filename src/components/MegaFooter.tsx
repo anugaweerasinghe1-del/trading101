@@ -102,7 +102,7 @@ export function MegaFooter() {
     { to: "/courses/macro-reading-for-traders", label: "Macro Reading", icon: BookOpen },
     { to: "/courses/trading-psychology-mastery", label: "Trading Psychology", icon: BookOpen },
     { to: "/learn-trading-guide", label: "Trading Guide", icon: BookOpen },
-    { to: "/ai-mentor", label: "AI Mentor", icon: Bot },
+    { to: "/ai-mentor", label: "Learning Mentor", icon: Bot },
   ];
 
   const companyLinks = [

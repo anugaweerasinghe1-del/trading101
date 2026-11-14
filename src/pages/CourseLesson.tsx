@@ -63,7 +63,7 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
   const integratedLesson = hasIntegratedCourseLesson(path);
   const url = `${DOMAIN}${path}`;
   const title = `${lesson.title} — ${track.title} | TradeHQ`;
-  const description = lesson.summary.slice(0, 155);
+  const description = lesson.summary;
 
   const prev = index > 0 ? track.lessons[index - 1] : null;
   const next = index < track.lessons.length - 1 ? track.lessons[index + 1] : null;
@@ -204,7 +204,7 @@ function CourseLessonContent({ track, lesson, index }: { track: Track; lesson: L
             <img src={track.hero} alt={`${lesson.title} — illustration`} width={1200} height={675} className="w-full h-full object-cover opacity-80" />
           </div>
 
-          <AIAnswerBlock className="mb-8" question={lesson.title + "?"} answer={lesson.summary + " " + lesson.keyTakeaways.slice(0, 2).join(" ")} />
+          <AIAnswerBlock className="mb-8" question={lesson.title} answer={lesson.summary + " " + lesson.keyTakeaways.slice(0, 2).join(" ")} />
 
           <article className="prose prose-invert max-w-none">{renderBody()}</article>
 
