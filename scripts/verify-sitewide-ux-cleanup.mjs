@@ -47,6 +47,17 @@ assert.match(footer, /Founder · personal accounts/);
 assert.match(home, /Founder · personal:/);
 assert.match(home, /aria-labelledby="follow-tradehq-heading"/);
 assert.equal((home.match(/id="follow-tradehq-heading"/g) || []).length, 1, "Only one homepage follow section");
+const followSectionPosition = home.indexOf('aria-labelledby="follow-tradehq-heading"');
+assert.ok(
+  followSectionPosition > home.indexOf("<PremiumFeatures />") &&
+  followSectionPosition < home.indexOf("<TopAssetsGrid />"),
+  "Homepage follow invitation belongs after core product features and before long exploration links"
+);
+assert.ok(
+  home.indexOf('aria-label="Guided beginner journey"') < followSectionPosition &&
+  home.indexOf('aria-label="Daily engagement"') < followSectionPosition,
+  "Beginner journey and Daily Practice must remain ahead of social promotion"
+);
 assert.doesNotMatch(read("index.html"), /<meta\s+name="twitter:creator"\s+content="@tradehq"/, "Do not assert an unverified X account");
 
 
