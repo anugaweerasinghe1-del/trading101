@@ -36,6 +36,10 @@
     "THQ-ADS-002",
     "THQ-ADS-003"
   ],
-  "publicReadRecheckStatus": "BLOCKED_WORKSPACE_PROXY_503",
-  "countsAreScopeNotApprovalPrediction": true
+  "publicReadRecheckStatus": "VERIFIED_PUBLIC_READS_AND_SETTLED_UI",
+  "countsAreScopeNotApprovalPrediction": true,
+  "additionalSettledPublicDataUrls": 81,
+  "additionalSettledPublicDataViewportObservations": 162,
+  "publicApiResponses200": 322,
+  "remainingCoverage": "Authenticated owner/admin acceptance only; Google account gate separate"
 }

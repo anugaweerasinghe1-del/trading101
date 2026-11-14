@@ -1,6 +1,6 @@
 # TradeHQ public-scope AdSense readiness report
 
-14 November 2026. **One confirmed site-control defect is repaired and verified in production. Full readiness remains conditional on the external account and live-feature coverage gates below. Do not interpret this report as AdSense approval, a specific Google rejection diagnosis or a resubmission.**
+14 November 2026. **One confirmed site-control defect is repaired and verified in production. Full readiness remains conditional on the external account and authenticated owner acceptance gates below. Do not interpret this report as AdSense approval, a specific Google rejection diagnosis or a resubmission.**
 
 ## Verified scope and results
 
@@ -23,7 +23,7 @@ No other independent confirmed defect was substantiated in this scope. Confirmed
 
 The focused bootstrap assertion failed on the original executable tag. After correction, the full Cloudflare build/postbuild gates, 358 compiled HTML checks, TypeScript, course fixtures and disposable owner/review/publication workflow passed. Local Chromium passed **636 compiled visits (159 fixture URLs × desktop/mobile × JS on/off)** and existing interaction assertions. Exact-head protected CI, disposable PostgreSQL controls and exact Pages preview passed before the normal merge. Main release validation and native provider checks passed afterward.
 
-A separate live guest smoke passed keyboard activation of the mobile menu and its primary Learn link, desktop Learn navigation, guest utility/editorial/error routes and zero observed ad-network requests. Initial attempts incorrectly targeted secondary links without opening More; they are not product defect evidence. A separate More-menu follow-up did not finish its settled assertion and is NOT VERIFIED; the subsequent workspace 503 is documented below. One initial arithmetic probe encountered binary floating-point representation; exact integer-cent recalculation passed and is retained in the collector.
+A separate live guest smoke passed keyboard activation of the mobile menu and its primary Learn link, desktop Learn navigation, guest utility/editorial/error routes and zero observed ad-network requests. Initial attempts incorrectly targeted secondary links without opening More; they are not product defect evidence. An initial More follow-up encountered a transition/transport failure; after access recovered, keyboard expansion of More and real About navigation passed. Those earlier failures remain documented as test timing/access limits rather than product defects. One initial arithmetic probe encountered binary floating-point representation; exact integer-cent recalculation passed and is retained in the collector.
 
 ## Dynamic publication
 
@@ -31,10 +31,14 @@ All three public published documents validate and their nine lessons and three o
 
 A new approved publication inherits **disabled ad serving**. Publication is not advertising suitability approval. Before a future advertising release, each proposed inventory item needs an explicit suitability decision plus verified site approval, applicable CMP/consent and placement controls; Search indexability is not that decision. The crawler automatically discovers the current published-course sitemap; the CSV is a dated evidence snapshot, not an automatically renewed editorial attestation.
 
+## Additional public-data verification after workspace recovery
+
+The collector’s original denied public POST reads were corrected after inspecting their source. Once stable access returned, **81 affected URLs were rechecked at both widths (162 additional viewport observations)**. All **322 observed Supabase responses returned HTTP 200**, including the Daily bank, review engagement, public member/history reads and public trophy endpoints. There were no prevented Supabase reads, pending requests, uncaught exceptions, ad loaders or measured overflows. Trophies were paced below their public rate limit. The successful recheck discovered no additional URLs. Earlier 503/fallback captures are preserved separately; they are not silently relabelled passed. This closes the transient public-data coverage gap, without certifying every scenario’s semantics or an authenticated owner workflow.
+
 ## Remaining gates and recommendation
 
 1. **THQ-ADS-002 — BLOCKED:** verify the actual AdSense account holder's eligibility, ownership, current site state, exact latest message and traffic/invalid-activity evidence. No authenticated account access was available; no account settings or application changed. Applicable certified CMP and placement behavior must be checked before future ads are enabled. A regional CMP is not asserted as a universal prerequisite to asking Google for review.
-2. **THQ-ADS-003 — BLOCKED/UNVERIFIED:** the first collector denied read-only public POSTs for the Daily bank, review totals and shared trophies. It recorded fallback states, not fully tested data features. The corrected allowlist was prepared after inspecting source; its follow-up navigations then received proxy-level 503 before application HTML, also affecting curl, Node, Chromium and git. Hosted production evidence remained independently healthy. Rerun those public-data checks when workspace access returns. Signed-in owner/admin/learning/publication acceptance also remains separate from passing isolated fixtures; see existing issues #406/#335/#321.
+2. **THQ-ADS-003 — Authenticated owner acceptance BLOCKED/UNVERIFIED:** the public-data follow-up is now verified as described above. Signed-in owner/admin/learning/publication acceptance remains separate from passing isolated fixtures, and actual backend deployment identity was not certified by a frontend build. See existing issues #406/#335/#321. No owner-only course publication, user-data mutation or real-message send was attempted.
 3. **Human judgment:** assess whether the original educational value and credibility meet Google's site-level expectations. No audit can certify all financial claims, rights ownership, legal compliance or the approval result.
 
 **Recommendation:** keep ad serving disabled. Use this evidence for an owner-led manual resubmission-readiness review, and resolve the two recorded verification gates before calling the full mission complete. The verified public URL/ad-control work is complete; broader functional/account acceptance is not. No AdSense application was submitted.
