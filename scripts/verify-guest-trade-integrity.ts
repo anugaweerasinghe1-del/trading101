@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { totalTradedNotional } from '../src/lib/tradeNotional.ts';
 import { executeGuestTrade, getPortfolio, savePortfolio } from '../src/lib/portfolio.ts';
 import { exportPracticeBackup, parsePracticeBackup } from '../src/lib/portfolioRecovery.ts';
 import { calculateRealizedPnL } from '../src/lib/portfolio.ts';
@@ -28,6 +29,8 @@ assert.ok(second.portfolio!.trades[0].timestamp > second.portfolio!.trades[1].ti
 assert.deepEqual(getPortfolio(), second.portfolio, 'refresh retains cash, positions and trades');
 const sold = executeGuestTrade({ ...asset, price: 200 }, 'sell', 5).portfolio!;
 close(sold.cash, 98997);
+close(totalTradedNotional(sold.trades), 3000); // three $1,000 transactions; fees affect cash, not turnover
+close(totalTradedNotional([]), 0);
 close(sold.positions[0].avgPrice, 2002 / 15);
 close(sold.positions[0].currentValue, 2000);
 close(calculateRealizedPnL(sold), 999 - (2002 / 15) * 5);

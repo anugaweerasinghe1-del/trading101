@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { formatPrice } from "@/lib/assets";
 import { Trade } from "@/lib/types";
+import { totalTradedNotional } from "@/lib/tradeNotional";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -46,7 +47,7 @@ export function TradeHistory({ trades }: TradeHistoryProps) {
 
   const totalBuys = trades.filter(t => t.type === 'buy').length;
   const totalSells = trades.filter(t => t.type === 'sell').length;
-  const totalVolume = trades.reduce((sum, t) => sum + t.total, 0);
+  const totalVolume = totalTradedNotional(trades);
 
   return (
     <div className="space-y-6">
@@ -62,7 +63,7 @@ export function TradeHistory({ trades }: TradeHistoryProps) {
               <ArrowDownLeft className="w-4 h-4 text-destructive" />
               {totalSells} Sells
             </span>
-            <span>Total Volume: ${totalVolume.toLocaleString('en-US', { minimumFractionDigits: 2 })}</span>
+            <span>Traded notional (before fees): ${totalVolume.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
           </div>
         </div>
       </div>
