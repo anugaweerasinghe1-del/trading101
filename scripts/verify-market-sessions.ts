@@ -22,3 +22,13 @@ console.log("Regular weekday session countdowns, Friday close, weekend, Monday o
 const tokyo = MARKET_SESSIONS[2];
 assert.deepEqual(sessionStatus(tokyo, new Date("2026-11-16T03:00:00Z")), {open:false,nextEventInMin:30});
 assert.deepEqual(sessionStatus(tokyo, new Date("2026-11-16T06:15:00Z")), {open:true,nextEventInMin:15});
+
+// SGX-ST Practice Note 8.2.1, sections 2.3 and 2.3A: normal-day noon break.
+const singapore = MARKET_SESSIONS[3];
+for (const [time, open, nextEventInMin] of [
+  ["2026-11-16T03:59:00Z", true, 1],
+  ["2026-11-16T04:00:00Z", false, 60],
+  ["2026-11-16T04:59:00Z", false, 1],
+  ["2026-11-16T05:00:00Z", true, 240],
+] as const) assert.deepEqual(sessionStatus(singapore, new Date(time)), { open, nextEventInMin });
+console.log("SGX noon break, 12:59 wait and 13:00 reopening boundaries pass.");

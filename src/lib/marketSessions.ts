@@ -13,7 +13,7 @@ export const MARKET_SESSIONS: MarketSession[] = [
   { name: "NYSE", flag: "🇺🇸", tz: "America/New_York", openH: 9.5, closeH: 16 },
   { name: "LSE", flag: "🇬🇧", tz: "Europe/London", openH: 8, closeH: 16.5 },
   { name: "TSE", flag: "🇯🇵", tz: "Asia/Tokyo", openH: 9, closeH: 15.5, breakStartH: 11.5, breakEndH: 12.5 },
-  { name: "SGX", flag: "🇸🇬", tz: "Asia/Singapore", openH: 9, closeH: 17 },
+  { name: "SGX", flag: "🇸🇬", tz: "Asia/Singapore", openH: 9, closeH: 17, breakStartH: 12, breakEndH: 13 },
 ];
 
 function localParts(date: Date, timeZone: string) {
