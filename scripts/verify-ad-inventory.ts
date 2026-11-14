@@ -10,6 +10,8 @@ for (const state of [{ siteApproved: false }, { publishedPublisherContent: false
   assert.equal(isEligibleAdScreen({ ...article, ...state }), false);
 }
 assert.equal(isEligibleAdScreen({ pathname: article.pathname }), false);
+assert.equal(isEligibleAdScreen({ pathname: "/courses/new-owner-approved-course", publishedPublisherContent: true }), false,
+  "Publication alone is not verified site approval or advertising suitability");
 const ads = readFileSync("public/ads.txt", "utf8").trim();
 assert.equal(ads, "google.com, pub-4160578126993254, DIRECT, f08c47fec0942fa0");
 const shell = readFileSync("index.html", "utf8");

@@ -1,0 +1,307 @@
+
+> vite_react_shadcn_ts@0.0.0 build:cloudflare
+> npm run build && node scripts/prepare-cloudflare.mjs && node --import tsx scripts/verify-cloudflare-canonicals.ts
+
+
+> vite_react_shadcn_ts@0.0.0 prebuild
+> node --import tsx scripts/generate-sitemap.ts
+
+✅ Sitemap: 151 URLs → public/sitemap.xml
+
+> vite_react_shadcn_ts@0.0.0 build
+> vite build
+
+vite v5.4.21 building for production...
+transforming...
+
+warn - The class `duration-[2500ms]` is ambiguous and matches multiple utilities.
+warn - If this is content and not a class, replace it with `duration-&lsqb;2500ms&rsqb;` to silence this warning.
+../../trading101/node_modules/zod/v4/core/regexes.js (74:0): A comment
+
+"/** Anchors a pattern source. The interpolation lives here rather than at the call site because
+ * esbuild will not drop a `@__PURE__` call whose own argument interpolates a variable, but it
+ * will drop `anchor(dateSource)`. Keeping it inline pinned `date` into every bundle. */"
+
+in "../../trading101/node_modules/zod/v4/core/regexes.js" contains an annotation that Rollup cannot interpret due to the position of the comment. The comment will be removed to avoid issues.
+../../trading101/node_modules/zod/v4/core/util.js (400:0): A comment
+
+"// Wrapped in a `@__PURE__` IIFE: esbuild never tree-shakes a top-level initializer that contains a member access on `Number`, so the bare object literal survived into every bundle."
+
+in "../../trading101/node_modules/zod/v4/core/util.js" contains an annotation that Rollup cannot interpret due to the position of the comment. The comment will be removed to avoid issues.
+✓ 3682 modules transformed.
+rendering chunks...
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /workspace/work/tradehq-adsense/src/integrations/supabase/client.ts is dynamically imported by /workspace/work/tradehq-adsense/src/lib/portfolio.ts but also statically imported by /workspace/work/tradehq-adsense/src/components/AdminChatPilot.tsx, /workspace/work/tradehq-adsense/src/components/AdminCodeQueue.tsx, /workspace/work/tradehq-adsense/src/components/AdminRepairControls.tsx, /workspace/work/tradehq-adsense/src/components/DailyPractice.tsx, /workspace/work/tradehq-adsense/src/components/NewsletterSignup.tsx, /workspace/work/tradehq-adsense/src/components/PortfolioLiveUpdates.tsx, /workspace/work/tradehq-adsense/src/components/RecentAnalysis.tsx, /workspace/work/tradehq-adsense/src/components/achievements/FirstRecordedTradeMilestone.tsx, /workspace/work/tradehq-adsense/src/components/achievements/FoundationsProgrammePanel.tsx, /workspace/work/tradehq-adsense/src/components/achievements/PublicTrophies.tsx, /workspace/work/tradehq-adsense/src/components/courses/CloudLearningProgressSync.tsx, /workspace/work/tradehq-adsense/src/components/daily/DailyGenerationTest.tsx, /workspace/work/tradehq-adsense/src/components/portfolio/VerifiedAccountRecovery.tsx, /workspace/work/tradehq-adsense/src/hooks/useAuth.tsx, /workspace/work/tradehq-adsense/src/lib/cloudPortfolio.ts, /workspace/work/tradehq-adsense/src/lib/traderSync.ts, /workspace/work/tradehq-adsense/src/lib/trophyEvidenceClient.ts, /workspace/work/tradehq-adsense/src/pages/AdminAIAssistant.tsx, /workspace/work/tradehq-adsense/src/pages/AdminCourses.tsx, /workspace/work/tradehq-adsense/src/pages/AdminDaily.tsx, /workspace/work/tradehq-adsense/src/pages/AdminDashboard.tsx, /workspace/work/tradehq-adsense/src/pages/AdminNewsletter.tsx, /workspace/work/tradehq-adsense/src/pages/AdminReviews.tsx, /workspace/work/tradehq-adsense/src/pages/Auth.tsx, /workspace/work/tradehq-adsense/src/pages/Challenge.tsx, /workspace/work/tradehq-adsense/src/pages/Leaderboard.tsx, /workspace/work/tradehq-adsense/src/pages/NewsletterPage.tsx, /workspace/work/tradehq-adsense/src/pages/PublicTrader.tsx, /workspace/work/tradehq-adsense/src/pages/ResetPassword.tsx, /workspace/work/tradehq-adsense/src/pages/Reviews.tsx, /workspace/work/tradehq-adsense/src/pages/TraderProfile.tsx, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /workspace/work/tradehq-adsense/src/lib/cloudPortfolio.ts is dynamically imported by /workspace/work/tradehq-adsense/src/lib/portfolio.ts, /workspace/work/tradehq-adsense/src/lib/traderSync.ts but also statically imported by /workspace/work/tradehq-adsense/src/components/PortfolioLiveUpdates.tsx, /workspace/work/tradehq-adsense/src/components/portfolio/VerifiedAccountRecovery.tsx, /workspace/work/tradehq-adsense/src/hooks/useAuth.tsx, /workspace/work/tradehq-adsense/src/hooks/useMasteryNextAction.ts, /workspace/work/tradehq-adsense/src/pages/Leaderboard.tsx, /workspace/work/tradehq-adsense/src/pages/Portfolio.tsx, dynamic import will not move module into another chunk.
+
+computing gzip size...
+dist/index.html                                                6.37 kB │ gzip:   2.32 kB
+dist/assets/options-hero-DeA_XZdf.jpg                         26.99 kB
+dist/assets/psychology-hero-BjxsBmgY.jpg                      36.36 kB
+dist/assets/macro-hero-BIhE6gYh.jpg                           39.98 kB
+dist/assets/course-risk-management-Bl31WepL.jpg               46.79 kB
+dist/assets/lesson-candlestick-DmRwGOPR.jpg                   59.12 kB
+dist/assets/lesson-moving-averages-D8BJJV00.jpg               59.27 kB
+dist/assets/course-goals-DUiNfiqI.jpg                         62.09 kB
+dist/assets/course-diversification-DMCc5i8A.jpg               63.03 kB
+dist/assets/lesson-asset-allocation-chart-DVtqTXKu.jpg        65.76 kB
+dist/assets/course-market-trends-7Z9slysK.jpg                 67.99 kB
+dist/assets/lesson-risk-shield-DM8vDWpa.jpg                   69.19 kB
+dist/assets/futures-hero-DsjhfM9Q.jpg                         71.93 kB
+dist/assets/lesson-technical-indicators-CivyU1aX.jpg          73.35 kB
+dist/assets/lesson-risk-management-DjODmvm4.jpg               73.72 kB
+dist/assets/course-trading-basics-DwSXdGM_.jpg                75.38 kB
+dist/assets/lesson-support-resistance-Bd1RO3it.jpg            76.47 kB
+dist/assets/lesson-market-trends-arrows-MNr4ZbbV.jpg          77.99 kB
+dist/assets/lesson-etf-diversification-B9k2yzv8.jpg           78.59 kB
+dist/assets/lesson-portfolio-allocation-BnShfUC6.jpg          84.51 kB
+dist/assets/lesson-goals-roadmap-DT54pOzB.jpg                 85.73 kB
+dist/assets/lesson-order-types-ZAuK3Qm7.jpg                   92.38 kB
+dist/assets/lesson-stocks-basics-DaVSsi2z.jpg                125.72 kB
+dist/assets/course-technical-analysis-KE1-DUmL.jpg           148.26 kB
+dist/assets/lesson-trading-workspace-Ci3rhx2L.jpg            199.88 kB
+dist/assets/core-studies-certificate-preview-Dh0Uaz-F.png  1,602.22 kB
+dist/assets/first-course-certificate-preview-D9C2onb6.png  1,608.76 kB
+dist/assets/foundations-certificate-preview-BFDZnUdw.png   1,610.41 kB
+dist/assets/PracticeArena-Xsuaontq.css                         2.23 kB │ gzip:   0.91 kB
+dist/assets/index-C2wP2UQ4.css                               140.36 kB │ gzip:  23.01 kB
+dist/assets/index-BdQq_4o_.js                                  0.06 kB │ gzip:   0.08 kB
+dist/assets/AdminEditor-DuZjmm6r.js                            0.13 kB │ gzip:   0.14 kB
+dist/assets/index-BxrgVyz1.js                                  0.23 kB │ gzip:   0.17 kB
+dist/assets/quoteDisplay-DKGhBPLb.js                           0.29 kB │ gzip:   0.19 kB
+dist/assets/loader-circle-Cn_DQrk3.js                          0.31 kB │ gzip:   0.26 kB
+dist/assets/arrow-left-BiC-M1vU.js                             0.33 kB │ gzip:   0.26 kB
+dist/assets/arrow-up-right-CeIVvr4v.js                         0.33 kB │ gzip:   0.26 kB
+dist/assets/search-Dqzi9I9E.js                                 0.34 kB │ gzip:   0.27 kB
+dist/assets/message-square-D3QKqEEC.js                         0.35 kB │ gzip:   0.27 kB
+dist/assets/useCourseProgress-YQgbi8gY.js                      0.35 kB │ gzip:   0.23 kB
+dist/assets/circle-check-big-B5sYrXmL.js                       0.36 kB │ gzip:   0.28 kB
+dist/assets/user-Dixk1Y7M.js                                   0.37 kB │ gzip:   0.28 kB
+dist/assets/pendingRedirect-ZrT5yuhv.js                        0.37 kB │ gzip:   0.22 kB
+dist/assets/useAdminDraftNavigation-XcO2d6s3.js                0.37 kB │ gzip:   0.28 kB
+dist/assets/lock-DMdzQQic.js                                   0.38 kB │ gzip:   0.29 kB
+dist/assets/circle-x-BdKlLL5R.js                               0.38 kB │ gzip:   0.28 kB
+dist/assets/bell-2twnTJ_1.js                                   0.38 kB │ gzip:   0.29 kB
+dist/assets/copy-BqC3_Pmz.js                                   0.41 kB │ gzip:   0.31 kB
+dist/assets/circle-help-DF8UO788.js                            0.41 kB │ gzip:   0.30 kB
+dist/assets/external-link-BLl0inv9.js                          0.42 kB │ gzip:   0.30 kB
+dist/assets/compass-CtYJcF64.js                                0.42 kB │ gzip:   0.31 kB
+dist/assets/triangle-alert-XiAk6vhV.js                         0.43 kB │ gzip:   0.31 kB
+dist/assets/chart-pie-B4vbfHAL.js                              0.44 kB │ gzip:   0.33 kB
+dist/assets/users-BJ6gusm-.js                                  0.47 kB │ gzip:   0.33 kB
+dist/assets/textarea-CX4s1MvC.js                               0.48 kB │ gzip:   0.32 kB
+dist/assets/shield-check-CwNECtuq.js                           0.49 kB │ gzip:   0.35 kB
+dist/assets/refresh-cw-DqlA5cYA.js                             0.49 kB │ gzip:   0.33 kB
+dist/assets/save-vcvwMFhA.js                                   0.50 kB │ gzip:   0.33 kB
+dist/assets/file-text-Ckoy5skh.js                              0.50 kB │ gzip:   0.32 kB
+dist/assets/book-open-check-D9W7jTia.js                        0.50 kB │ gzip:   0.33 kB
+dist/assets/shield-alert-DppFj9sj.js                           0.52 kB │ gzip:   0.36 kB
+dist/assets/share-2-upPS2Tl2.js                                0.53 kB │ gzip:   0.33 kB
+dist/assets/label-Dng3z11c.js                                  0.56 kB │ gzip:   0.38 kB
+dist/assets/quote-DR94cwaW.js                                  0.56 kB │ gzip:   0.30 kB
+dist/assets/earth-CjWsG4IW.js                                  0.56 kB │ gzip:   0.37 kB
+dist/assets/input-CbZFfuGD.js                                  0.58 kB │ gzip:   0.36 kB
+dist/assets/AdminFreshness-XqCUUirE.js                         0.59 kB │ gzip:   0.40 kB
+dist/assets/building-2-BhzyQqnV.js                             0.61 kB │ gzip:   0.35 kB
+dist/assets/swords-CaQoRTXf.js                                 0.71 kB │ gzip:   0.38 kB
+dist/assets/adminGithubList-CD7TNUM6.js                        0.75 kB │ gzip:   0.48 kB
+dist/assets/Breadcrumbs-CZGtfZ3z.js                            0.92 kB │ gzip:   0.53 kB
+dist/assets/SEOSection-CLPRnE2W.js                             1.08 kB │ gzip:   0.61 kB
+dist/assets/Breadcrumb-Q9cvJGQ2.js                             1.39 kB │ gzip:   0.51 kB
+dist/assets/adminFunctionError-BJQ783jn.js                     1.40 kB │ gzip:   0.74 kB
+dist/assets/practicePricing-CJIPDAak.js                        1.42 kB │ gzip:   0.75 kB
+dist/assets/useAdminRefresh-ClH1v5EM.js                        1.52 kB │ gzip:   0.77 kB
+dist/assets/progress-CKJwIILT.js                               1.88 kB │ gzip:   0.94 kB
+dist/assets/NotFound-DXf5IfHO.js                               1.88 kB │ gzip:   0.94 kB
+dist/assets/useMasteryNextAction-CX_HnJ1K.js                   2.13 kB │ gzip:   0.97 kB
+dist/assets/switch-DtSvBuTb.js                                 2.48 kB │ gzip:   1.24 kB
+dist/assets/PublicTrophies-Cs80Fcug.js                         2.59 kB │ gzip:   1.34 kB
+dist/assets/ResetPassword-DaP-lSf2.js                          2.62 kB │ gzip:   1.29 kB
+dist/assets/NewsletterPage-BpbA9gpd.js                         2.63 kB │ gzip:   1.29 kB
+dist/assets/CertificateVerification-BMnf8jSz.js                2.66 kB │ gzip:   1.21 kB
+dist/assets/tabs-CBe4uvkC.js                                   3.20 kB │ gzip:   1.35 kB
+dist/assets/nicheData-EqqS7XB9.js                              3.26 kB │ gzip:   1.66 kB
+dist/assets/WikiIndex-0Z39dUC3.js                              3.27 kB │ gzip:   1.40 kB
+dist/assets/AdminValidator-GmUouJ22.js                         3.39 kB │ gzip:   1.50 kB
+dist/assets/WhatsNew-CgYfJL1G.js                               3.50 kB │ gzip:   1.48 kB
+dist/assets/foundationsCertificatePdf-I4e2W5o5.js              4.08 kB │ gzip:   2.18 kB
+dist/assets/index-CRZn_k6I.js                                  5.21 kB │ gzip:   1.99 kB
+dist/assets/SEOAudit-Ci46wO00.js                               5.88 kB │ gzip:   2.53 kB
+dist/assets/dailyPracticeReviewReceipt-BIQwfbEu.js             6.88 kB │ gzip:   2.70 kB
+dist/assets/ContextualLinks-CGjK4j-S.js                        6.88 kB │ gzip:   2.04 kB
+dist/assets/Auth-CRPAnTSE.js                                   7.25 kB │ gzip:   3.05 kB
+dist/assets/NicheAsset-ClgQHM5_.js                             7.37 kB │ gzip:   2.45 kB
+dist/assets/AssetFAQSection-Wr97hZPT.js                        7.58 kB │ gzip:   2.81 kB
+dist/assets/CourseTrack-BapoR_Z0.js                            7.91 kB │ gzip:   2.87 kB
+dist/assets/About-Bq8C80TZ.js                                  8.33 kB │ gzip:   3.17 kB
+dist/assets/slider-BjqVMZZy.js                                 8.38 kB │ gzip:   3.39 kB
+dist/assets/LearnArticle-DJxNS-0x.js                           8.55 kB │ gzip:   3.17 kB
+dist/assets/TraderProfile-A2pymrXe.js                          8.82 kB │ gzip:   3.26 kB
+dist/assets/SectorPillar-Ckei8fQt.js                           8.92 kB │ gzip:   3.51 kB
+dist/assets/Roadmap-CH4MIAYW.js                                8.93 kB │ gzip:   3.42 kB
+dist/assets/PublicTrader-C0vUHGE0.js                           9.55 kB │ gzip:   3.62 kB
+dist/assets/Strategy-D6KxMz8n.js                              10.10 kB │ gzip:   3.20 kB
+dist/assets/Terms-D15jqFYF.js                                 10.10 kB │ gzip:   3.89 kB
+dist/assets/HowToTrade-ChNpXFuI.js                            10.77 kB │ gzip:   3.18 kB
+dist/assets/AdminReviews-DcbTgoTO.js                          10.89 kB │ gzip:   3.75 kB
+dist/assets/Reviews-CfH4gHT0.js                               11.06 kB │ gzip:   4.21 kB
+dist/assets/CountryGuide-CJY8dteo.js                          11.12 kB │ gzip:   3.23 kB
+dist/assets/Compare-DkvUeJbz.js                               11.89 kB │ gzip:   3.80 kB
+dist/assets/practiceArena-XGH3pF5t.js                         11.99 kB │ gzip:   4.81 kB
+dist/assets/scroll-area-BQRGSYOt.js                           12.49 kB │ gzip:   3.93 kB
+dist/assets/CourseLesson-BO9LMS7v.js                          13.94 kB │ gzip:   5.00 kB
+dist/assets/AIMentor-4IIxrWae.js                              15.71 kB │ gzip:   5.79 kB
+dist/assets/Challenge-Qe7tS9Qj.js                             16.12 kB │ gzip:   5.39 kB
+dist/assets/smartMentor-DQ7UmHYK.js                           16.12 kB │ gzip:   6.68 kB
+dist/assets/Contact-C8Ak36ro.js                               16.91 kB │ gzip:   6.21 kB
+dist/assets/BeginnerJourney-D2IYhkhV.js                       17.72 kB │ gzip:   5.89 kB
+dist/assets/Courses-DxtHwWY1.js                               18.04 kB │ gzip:   5.93 kB
+dist/assets/countryGuides-uEB0OY8r.js                         18.35 kB │ gzip:   5.32 kB
+dist/assets/Daily-DxuejzhK.js                                 18.85 kB │ gzip:   5.96 kB
+dist/assets/Markets-DmMS7q_c.js                               21.41 kB │ gzip:   6.73 kB
+dist/assets/AdminNewsletter-CsyuzOwX.js                       22.77 kB │ gzip:   7.12 kB
+dist/assets/Privacy-DFMW5yL_.js                               22.86 kB │ gzip:   7.96 kB
+dist/assets/WikiTerm-DFy2EFN7.js                              27.81 kB │ gzip:  10.10 kB
+dist/assets/LearnTradingGuide-5h26giw5.js                     33.34 kB │ gzip:   9.60 kB
+dist/assets/AdminDaily-BcH3Q22T.js                            33.96 kB │ gzip:  10.83 kB
+dist/assets/Leaderboard-D7l_1tFQ.js                           34.40 kB │ gzip:  10.19 kB
+dist/assets/AdminCourses-DaZAQ79y.js                          34.52 kB │ gzip:  10.63 kB
+dist/assets/Learn-CZOmw9LM.js                                 35.09 kB │ gzip:   9.95 kB
+dist/assets/AdminDashboard-BeZ7pMi8.js                        36.13 kB │ gzip:  10.56 kB
+dist/assets/learnArticles-CeIoKq2Y.js                         37.74 kB │ gzip:  12.86 kB
+dist/assets/AdminAIAssistant-xfXanH_h.js                      45.37 kB │ gzip:  13.99 kB
+dist/assets/PracticeArena-B_dHksxu.js                         52.67 kB │ gzip:  14.78 kB
+dist/assets/TrophyCabinet-CFNEuhLq.js                         53.85 kB │ gzip:  15.76 kB
+dist/assets/LessonDetail-Dx3bXf_x.js                          59.80 kB │ gzip:  19.39 kB
+dist/assets/MobileOrderDrawer-C8G5a_bH.js                     75.01 kB │ gzip:  22.07 kB
+dist/assets/schemas-DYzsbuUe.js                               82.28 kB │ gzip:  23.88 kB
+dist/assets/TradeAsset-Biz4hV16.js                           111.62 kB │ gzip:  32.91 kB
+dist/assets/Portfolio-BwEYD8SM.js                            170.76 kB │ gzip:  45.07 kB
+dist/assets/Trade-BzfsjrA_.js                                184.49 kB │ gzip:  59.76 kB
+dist/assets/DailyPractice-D3SGCtUC.js                        252.15 kB │ gzip:  72.43 kB
+dist/assets/generateCategoricalChart-fW-nYtk4.js             377.56 kB │ gzip: 104.41 kB
+dist/assets/index-CCSKuzKh.js                              1,243.82 kB │ gzip: 378.12 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 27.98s
+
+> vite_react_shadcn_ts@0.0.0 postbuild
+> node --import tsx scripts/prerender.ts && node --import tsx scripts/generate-sitemap.ts && node scripts/verify-seo.mjs && node --import tsx scripts/verify-publisher-content.ts && node --import tsx scripts/verify-editorial-inventory.ts && node scripts/verify-privacy-moderation-defaults.mjs && node scripts/verify-newsletter-boundaries.mjs && node --import tsx scripts/verify-newsletter-original-lessons.mjs && node scripts/verify-newsletter-test-send.mjs && node scripts/verify-newsletter-audience-legacy.mjs && node scripts/verify-newsletter-public.mjs && node --import tsx scripts/verify-newsletter-owner-gate.ts && node scripts/verify-journey-navigation.mjs && node --import tsx scripts/verify-mentor-teaching.ts && node scripts/verify-sitewide-ux-cleanup.mjs && node --import tsx scripts/verify-beginner-journey-safety.ts && node --import tsx scripts/verify-portfolio-recovery-phase1.ts && node --import tsx scripts/verify-guest-trade-integrity.ts && node --import tsx scripts/verify-portfolio-owner-isolation.ts && node --import tsx scripts/verify-admin-github-partial.ts && node --import tsx scripts/verify-admin-request-scope.ts && node --import tsx scripts/verify-admin-editorial-safety.ts && node scripts/verify-admin-theme-contrast.mjs && node --import tsx scripts/verify-learning-resume-phase3.ts && node --import tsx scripts/verify-learning-dashboard-phase4.ts && node --import tsx scripts/verify-phase3-resume-and-mastery.ts && node --import tsx scripts/verify-journey-funnel.ts && node --import tsx scripts/verify-phase3-daily-completion.ts && node --import tsx scripts/verify-trophy-cabinet.ts && node --import tsx scripts/verify-foundations-programme.ts && node --import tsx scripts/verify-foundations-certificate-storage.ts && node --import tsx scripts/verify-verified-account-recovery.ts && node --import tsx scripts/verify-newsletter-auth-ui.mjs && node --import tsx scripts/verify-contact-api.ts && node scripts/verify-ad-bootstrap.mjs && node --import tsx scripts/verify-ad-inventory.ts && node --import tsx scripts/verify-adsense-editorial.ts && node --import tsx scripts/verify-sitewide-readiness.ts && node --import tsx scripts/verify-course-editorial.ts && node --import tsx scripts/verify-live-portfolio-course-journey.ts && node --import tsx scripts/verify-portfolio-quote-provenance.ts && node --import tsx scripts/verify-fx-reference.ts && node --import tsx scripts/verify-daily-private-test.ts && node --import tsx scripts/verify-account-learning-progress.ts && node --import tsx scripts/verify-phase2-learning-concurrency.ts && npm run verify:practice-arena && node --import tsx scripts/verify-leaderboard-funnel.ts
+
+✅ Prerendered 357 routes (151 indexable, 206 noindex)
+✅ Canonical uniqueness confirmed (357 unique URLs)
+✅ Every indexable route has authored content; no arbitrary minimum word count
+✅ Sitemap: 151 URLs → public/sitemap.xml
+
+| Route | Title | Description | Canonical | H1 | No $10K |
+|-------|-------|-------------|-----------|----|---------|
+| `/` | ✅ unique | ✅ unique | ✅ self | ✅ | ✅ |
+| `/markets` | ✅ unique | ✅ unique | ✅ self | ✅ | ✅ |
+| `/wiki/macd` | ✅ unique | ✅ unique | ✅ self | ✅ | ✅ |
+| `/wiki/bollinger-band-squeeze` | ✅ unique | ✅ unique | ✅ self | ✅ | ✅ |
+| `/learn-trading-guide` | ✅ unique | ✅ unique | ✅ self | ✅ | ✅ |
+| `/privacy` | ✅ unique | ✅ unique | ✅ self | ✅ | ✅ |
+| `/terms` | ✅ unique | ✅ unique | ✅ self | ✅ | ✅ |
+| `/about` | ✅ unique | ✅ unique | ✅ self | ✅ | ✅ |
+| `/newsletter` | ✅ unique | ✅ unique | ✅ self | ✅ | ✅ |
+| `/practice` | ✅ unique | ✅ unique | ✅ self | ✅ | ✅ |
+
+**Sitemap presence:**
+- `/` → ✅ in sitemap
+- `/markets` → ✅ in sitemap
+- `/wiki/macd` → ✅ in sitemap
+- `/wiki/bollinger-band-squeeze` → ✅ in sitemap
+- `/learn-trading-guide` → ✅ in sitemap
+- `/privacy` → ✅ in sitemap
+- `/terms` → ✅ in sitemap
+- `/about` → ✅ in sitemap
+- `/newsletter` → ✅ in sitemap
+- `/practice` → ✅ in sitemap
+
+**Stale domain guard:**
+- ✅ no legacy hosts (tradinghq.vercel.app, lovable.app) in build output
+
+🟢 SEO verification passed
+PASS publisher content equivalence: 151 indexable snapshots and navigation payloads; utility exclusion and short-squeeze metadata
+PASS real 404 fallbacks, preserved 170 catalog assets/client states and valid legacy redirects
+PASS all static article source checks are scoped and references retained
+PASS curated FOMO and paper trading references are non-empty and HTTPS
+PASS all glossary exercises and visible HTTPS references
+PASS narrow, truthful dated glossary checks
+PASS complete published course manifest/quizzes, individual asset references/worksheets and scoped country sourcing
+PASS: new-account and new-review defaults; existing rows preserved
+PASS weekly private AI draft boundaries: explicit approval, no legacy import or email sends
+PASS original educational newsletter labs, SEC source allowlist, safe revisions and no email sending
+PASS retired test-only sender, retained receipt history, real confirmed-only newsletter
+PASS legacy newsletter audience: valid 204 preflight, master-key + registered owner JWT, no reads before authorization, bounded unconfirmed records, backend failure and rate-limit recovery.
+PASS public confirmed-only newsletter, unsubscribe, owner publishing limits, signed bounce handling and privacy
+PASS actual newsletter HTTP lifecycle: consent, hash/expiry/single-use confirmation, no GET mutation, one-click/idempotent unsubscribe, no resubscribe, provider/config/database/quota failures, private headers excluded; synthetic storage and non-network email sink only.
+PASS actual newsletter status handler: exact counts, real zeros, count errors/null/invalid totals fail closed, denied key before reads, zero sends.
+PASS no-send newsletter owner readiness, authenticated send ordering, and fail-closed owner checks
+PASS beginner-first nav, grouped More with legal policies, footer legal links, mobile disclosure, account controls
+PASS mentor contextual lesson and quiz handoff, levels, worked examples, fallback and disclaimers
+PASS consistent desktop/mobile navigation, single newsletter form per route, contact footer, calculator deep link, market percent units and public November roadmap
+PASS portable guest recovery, resilient journey progress, voluntary orders, daily habit and private-by-default public history
+PASS guest preview, rollback, unverified import flag, malformed file rejection and account separation
+PASS guest sequential orders, fee costs, immutable snapshots, refresh, backup round-trip, rejected orders, corrupt chart and account cache guard
+PASS account/guest switch, sign-out/sign-in recovery, private journal/chart/undo isolation, restore guard, late notes, failed storage and cross-tab owner mismatch
+Admin GitHub bounded partial-page tests passed
+PASS admin lock/key-change/unmount response fencing and independent latest-read channels
+ADMIN_EDITORIAL_SAFETY_PASS: unsaved editorial review, saved-only generation, owner sign-out late-response fencing and independent newsletter totals
+ADMIN_FUNCTION_ERRORS_PASS: HTTP response-body codes, owner/quota/revision/review denials, malformed/transport failures, no raw provider payload exposure.
+ADMIN_GITHUB_HISTORY_PASS: older requests, bounded partial lists, page errors, malformed data, fixed-origin pagination, no credentials and lock cancellation.
+ADMIN_DAILY_THEME_CONTRAST_PASS: theme-aware borders and warnings
+PASS legacy migration, partial quizzes, reading position, completion safety and resumable browser learning
+PASS combined dashboard for fresh/partial/completed learners, correct lesson progression and browser-only safety
+PASS Phase 3: skip completed lessons, resume approved courses, safe return destinations, account-accurate mastery, reactive Daily updates
+PASS private journey, opt-in analytics, optional feedback, simpler consent and mastery review
+PASS Phase 3 Daily handoff: quick or deep practice, stored streak only, and cross-tab continuity
+PASS private Trophy Cabinet: known-course milestones, legacy progress integrity, noindex, discovery and no public claims
+Foundations v1 eligibility passed: one course, three courses, and four courses plus final case.
+Private issuance policy passed: trusted evidence, account scope, immutable retry and Unicode name.
+Certificate handler passed: session binding, forged inputs, throttling, body bounds, outages and private repeat download metadata.
+Assessment handler passed: answer-key omission, strict version and shape, server scoring, wrong-account protection, and unavailable evidence.
+Certificate correction handler passed: authenticated ownership, immutable ID, retries, stale conflicts and repeat reads.
+Certificate verification handler passed: explicit consent, hash-only storage, minimal proof, throttling and withdrawal.
+FOUNDATIONS_STORAGE_PASS: disposable PostgreSQL, role denial, scoring bounds, policy parity, immutable retry, isolation, evidence and account erasure.
+FOUNDATIONS_STORAGE_CAPACITY_FIXTURE: 200 isolated issuances and 200 repeat reads in 105ms; no hosted capacity claim.
+PASS authenticated read-only snapshot, private HMAC signing key, user-bound signature verification and no ranked account imports
+PASS newsletter admin auth differentiates invalid key, missing config and network errors without weakening access control
+PASS contact delivery stays disabled without secrets, rejects abuse, and only confirms provider-accepted mail
+PASS disabled advertising bootstrap, retained publisher verification; compiled HTML checked: 358
+PASS manual ad-inventory default denial, utility/error/loading exclusion and unchanged publisher identity; no ads enabled
+PASS scoped source-fit regression: five asset classes, core hubs, portfolio articles and six glossary topics; no AdSense approval implied
+PASS published hubs: simulator-only derivatives, qualified editorial scope and virtual-only challenges
+PASS editorial audit: eight critical pages, six how-to sources, DCA and psychology consistency
+PASS public mentor, duel, publisher and hub claim consistency
+PASS residual glossary/hub/quiz claims, catalogue schema and independent strategy/payoff/fee arithmetic
+{"routes":357,"sitemapURLs":151,"intentionallyNoindex":206,"internalLinks":738,"worksheets":49,"calculations":9,"checks":"PASS","scope":"compiled metadata, content graph, duplicate paragraphs, reference presence, quiz structure and known numerical examples; not financial-source validation or browser proof"}
+PASS both published course fixtures, six lesson render/bootstrap pairs, idempotence, later-edit preservation, fee-aware examples and corrected quiz wording; no database writes
+PASS exact fee-aware targets, explicit course exclusion heading and preservation of later paragraph edits
+PASS live portfolio delivery boundaries and dynamic published-course journey with preserved partial progress
+PASS quote provenance: provider, close, delayed, stale and simulator fallback are distinct
+PASS daily FX reference: all 15 pairs, date/future/mixed/partial/duplicate validation, fixed private-header-free GET, cache/coalescing/cooldown, both hosting adapters; no trade-price writes or real provider calls.
+PASS private Daily test: real generator/source/schema checks, master+owner gates, explicit free-tier confirmation, one-call admission under racing callers, request byte cap, errors consume budget, no raw data/key disclosure or production-cycle writes; fixture network only.
+PASS private Daily diagnostics: envelope/JSON/schema/source/category/repetition stages, truncation/token metadata, no prose/keys in logs or UI data, unchanged allowance and validation gates.
+PASS Daily visual contract: caption/unit/count/label/value regressions at exercise 6, exact safe diagnostics, numeric boundary acceptance; fixture network only.
+PASS cross-device learning merge, saved drafts, completed steps and owner-only boundaries
+PASS beginner journey reflection stays on-device, completion syncs, and the database protects new and legacy records
+PASS concurrent account lesson progress: retry merges both devices and fails closed
+
+> vite_react_shadcn_ts@0.0.0 verify:practice-arena
+> node --import tsx scripts/verify-practice-arena.ts
+
+PASS Practice Arena: fictional data integrity, fees, no short sells, completed-state persistence, idempotence, privacy, route discovery, Newsletter rename, accessible UI, reduced motion.
+PASS consented leaderboard funnel: renewed adult opt-in, no old consent, no PII properties, verified new account only, same-browser TTL, dedupe, rejection, and auth wiring
+Cloudflare preview prepared: prerendered static routes retained; narrow Functions routing.
+PASS Cloudflare flat output, 356 served route fixtures, slash redirects with query preservation, preview noindex, 404 and Vercel slash setting. Real Pages preview still required.
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice

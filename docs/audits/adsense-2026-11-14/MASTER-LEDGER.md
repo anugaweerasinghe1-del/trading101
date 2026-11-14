@@ -20,9 +20,9 @@ Google supplied a generic site-readiness rejection, according to the owner's req
 - Root cause: HTML bootstrap executes before React and never evaluates the unused placement helper. Certificate verification is the sole explicit script-removal exception.
 - Planned correction: remove executable ad-serving bootstrap while the site lacks verified approval/consent/placement readiness; retain publisher verification meta and ads.txt. Preserve optional analytics choices independently. Require future advertising release to wire reviewed inventory and applicable CMP before enabling requests. Do not change Google account settings.
 - Pre-fix test: actual loader present on five HTTP 200 responses and one HTTP 404; see linked JSON. Focused negative regression will be run before editing.
-- Fix: NOT IMPLEMENTED.
-- Regression tests: NOT TESTED.
+- Fix: removed executable global ad loader; publisher meta/ads.txt retained. Updated shared rendered/static privacy copy to explain disabled serving and future approval/consent gates. Added source/compiled HTML and approved dynamic-course serving regressions.
+- Regression tests: [pre-fix assertion fails](evidence/ad-bootstrap-failing-test.txt); [358 compiled HTML shells deny serving](evidence/ad-bootstrap-build-pass.txt); [full Cloudflare build and mandatory postbuild gates pass](evidence/ad-bootstrap-cloudflare-build.txt); [safe disposable course workflow](evidence/course-workflow-pass.txt) and [published-course fixtures](evidence/course-editorial-pass.txt) pass. `tsc --noEmit` exits 0. Browser/live remediation checks pending.
 - PR / merge SHA: UNKNOWN / NOT MERGED.
 - Cloudflare deployment / active SHA: no remediation release yet. Baseline Pages check reports deployment `29642090-0653-42c0-978f-21ff466325c6` for `01f338cfb2140f75dc61db09433e84e9d6d74bf6`; authenticated CI observation at 04:18 UTC confirms that production binding. Direct local provider API returned 401.
 - Post-deployment verification: NOT TESTED.
-- Status: RECORDED BEFORE CORRECTION. Account approval, regional consent and actual placements remain external verification gates.
+- Status: IMPLEMENTED; NOT YET MERGED OR VERIFIED ON PRODUCTION. Discovery was published in commit `863af5ea` before correction. Account approval, regional consent and actual placements remain external verification gates.

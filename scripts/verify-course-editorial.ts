@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
 import { applyCourseEditorialCorrections } from "../src/lib/courseEditorialCorrections";
 import { renderApprovedCourse } from "../src/lib/courseHtml";
 import { validateCourseDocument, type CourseDocument } from "../supabase/functions/_shared/courseDocument";
@@ -18,6 +18,15 @@ for (const row of rows) {
     assert.match(html, /rel="canonical"[^>]*data-static-head/, "Initial native canonical must be retired when Helmet paints");
     assert.ok(!/establish your target weight perfectly|achieving your target allocation perfectly|distribution perfectly/.test(html), lesson.slug);
     for (const question of lesson.quiz) assert.ok(!question.options[question.correctAnswer].includes("undervalued"), lesson.slug + ": underweight is not undervalued");
+  }
+  // Approved publication must inherit the same disabled serving boundary as
+  // static pages, including when the dynamic renderer uses the shared SPA shell.
+  if (existsSync("dist/app-shell.html")) {
+    for (const lessonSlug of [undefined, ...candidate.lessons.map(lesson => lesson.slug)]) {
+      const publishedHtml = renderApprovedCourse(readFileSync("dist/app-shell.html", "utf8"), candidate, lessonSlug)!;
+      assert.doesNotMatch(publishedHtml, /<script\b[^>]*src=["'][^"']*(?:googlesyndication|doubleclick)/i,
+        candidate.slug + ": publication must not enable ad serving");
+    }
   }
   const newer = structuredClone(row.document);
   newer.tagline = "A later owner edit to the course tagline";

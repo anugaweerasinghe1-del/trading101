@@ -1,0 +1,133 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: index.html: ad-serving script bypasses disabled inventory
+    at verify (file:///workspace/work/tradehq-adsense/scripts/verify-ad-bootstrap.mjs:6:67)
+    at file:///workspace/work/tradehq-adsense/scripts/verify-ad-bootstrap.mjs:7:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: '<!doctype html>\n' +
+    '<html lang="en">\n' +
+    '  <head>\n' +
+    '    <meta charset="UTF-8" />\n' +
+    '    <meta name="viewport" content="width=device-width, initial-scale=1.0" />\n' +
+    '    <!-- Apply the saved colour scheme before styles and React load to prevent a\n' +
+    "         bright/dark flash and keep the browser's native controls in sync. -->\n" +
+    '    <script>\n' +
+    '      try {\n' +
+    "        if (localStorage.getItem('theme') === 'light') {\n" +
+    "          document.documentElement.classList.add('light');\n" +
+    '        }\n' +
+    '      } catch (_) { /* Storage may be unavailable in private contexts. */ }\n' +
+    '    </script>\n' +
+    '\n' +
+    '    <!-- ULTIMATE TITLE & META (max CTR + ranking) -->\n' +
+    '    <title>TradeHQ — Free Paper Trading Simulator | $100K Virtual Cash (No Signup)</title>\n' +
+    '    <meta data-static-head name="description" content="Practice stock, crypto, ETF, forex & commodities trading with $100,000 virtual cash. No signup. Rule-based educational mentor, simulated charts, portfolio tracking & 170 assets. Free educational trading simulator.">\n' +
+    '\n' +
+    '    <meta name="author" content="TradeHQ" />\n' +
+    '    <meta name="google-adsense-account" content="ca-pub-4160578126993254" />\n' +
+    '    <!-- Google CMP messages are published in AdSense. The tag must load independently\n' +
+    '         of the optional Amplitude choice so rejecting analytics cannot hide the CMP. -->\n' +
+    '    <script async id="tradehq-adsense" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4160578126993254"></script>\n' +
+    '    <meta data-static-head name="robots" content="index, follow" />\n' +
+    '    <meta name="google-site-verification" content="I9Z6Vo-t00zuqHRrR_RFgAZ14hsA5YzA0gHeK2POL-I" />\n' +
+    '    <meta name="google-site-verification" content="wfxqgl9e278vAqA_wBc3C8b_nxqZ-bauE-8-8G86kJk" />\n' +
+    '\n' +
+    '    <!-- PRELOAD CRITICAL RESOURCES (Lighthouse boost) -->\n' +
+    '    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>\n' +
+    '    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n' +
+    '    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" as="style">\n' +
+    '    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">\n' +
+    '\n' +
+    '    <!-- CANONICAL: injected per-route by prerender (scripts/prerender.ts).\n' +
+    '         Homepage canonical is added by the prerender pass; do NOT hardcode\n' +
+    '         here or every subroute inherits it and dedupes to the homepage. -->\n' +
+    '    <link rel="manifest" href="/manifest.json" />\n' +
+    '    <link rel="icon" href="/logo.svg" type="image/svg+xml" />\n' +
+    '    <link rel="apple-touch-icon" href="/logo.svg" />\n' +
+    '    <meta name="theme-color" content="#0A0A0F" />\n' +
+    '\n' +
+    '    <!-- OPEN GRAPH (maximum shares) -->\n' +
+    '    <meta data-static-head property="og:type" content="website" />\n' +
+    '    <meta data-static-head property="og:site_name" content="TradeHQ" />\n' +
+    '    <meta data-static-head property="og:url" content="https://www.thetradehq.com/" />\n' +
+    '    <meta data-static-head property="og:title" content="TradeHQ — Free Paper Trading Simulator | $100K Virtual Cash (No Signup)" />\n' +
+    '    <meta data-static-head property="og:description" content="Practice stocks, crypto, forex & ETFs with $100,000 virtual money. Rule-based mentor + simulated charts. Core simulator features work without signup." />\n' +
+    '    <meta data-static-head property="og:image" content="https://www.thetradehq.com/tradehq-preview-2026.png" />\n' +
+    '    <meta property="og:image:width" content="1200" />\n' +
+    '    <meta property="og:image:height" content="630" />\n' +
+    '    <meta data-static-head property="og:locale" content="en_US" />\n' +
+    '\n' +
+    '    <!-- TWITTER CARD -->\n' +
+    '    <meta data-static-head name="twitter:card" content="summary_large_image" />\n' +
+    '    <meta name="twitter:creator" content="@tradehq" />\n' +
+    '    <meta data-static-head name="twitter:title" content="TradeHQ — Free Paper Trading Simulator | $100K Virtual Cash" />\n' +
+    '    <meta data-static-head name="twitter:description" content="Practise stocks & crypto with $100K virtual cash, simulated charts and educational mentor explanations. No real trades." />\n' +
+    '    <meta data-static-head name="twitter:image" content="https://www.thetradehq.com/tradehq-preview-2026.png" />\n' +
+    '\n' +
+    '    <!-- ==================== STRUCTURED DATA (maximum rich results) ==================== -->\n' +
+    '\n' +
+    '    <!-- SoftwareApplication -->\n' +
+    '    <script type="application/ld+json">\n' +
+    '    {\n' +
+    '      "@context": "https://schema.org",\n' +
+    '      "@type": "SoftwareApplication",\n' +
+    '      "name": "TradeHQ",\n' +
+    '      "applicationCategory": "FinanceApplication",\n' +
+    '      "operatingSystem": "Web Browser",\n' +
+    '      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },\n' +
+    '      "description": "Free paper trading simulator with $100,000 virtual cash for stocks, crypto, ETFs, forex and commodities.",\n' +
+    '      "featureList": [\n' +
+    '        "$100,000 virtual trading capital",\n' +
+    '        "170 simulated practice assets (stocks, crypto, ETFs, forex, commodities)",\n' +
+    '        "Rule-based educational mentor",\n' +
+    '        "Portfolio performance tracking",\n' +
+    '        "Leaderboard competition",\n' +
+    '        "Technical analysis indicators",\n' +
+    '        "market education hub"\n' +
+    '      ],\n' +
+    '      "url": "https://www.thetradehq.com/",\n' +
+    '      "author": { "@type": "Person", "name": "Anuga Weerasinghe", "url": "https://www.thetradehq.com/about" },\n' +
+    '      "publisher": { "@type": "Organization", "name": "TradeHQ", "url": "https://www.thetradehq.com/" }\n' +
+    '    }\n' +
+    '    </script>\n' +
+    '\n' +
+    '    <!-- EducationalOrganization (kept — gives Google rich education cards) -->\n' +
+    '    <script type="application/ld+json">\n' +
+    '    {\n' +
+    '      "@context": "https://schema.org",\n' +
+    '      "@type": "EducationalOrganization",\n' +
+    '      "name": "TradeHQ",\n' +
+    '      "url": "https://www.thetradehq.com/",\n' +
+    '      "logo": "https://www.thetradehq.com/logo.png",\n' +
+    '      "description": "Interactive financial education platform teaching stock trading, crypto investment, and portfolio management through interactive simulation.",\n' +
+    '      "areaServed": "Worldwide",\n' +
+    '      "teaches": [\n' +
+    '        "Stock Trading",\n' +
+    '        "Cryptocurrency Investment",\n' +
+    '        "Technical Analysis",\n' +
+    '        "Risk Management",\n' +
+    '        "Portfolio Diversification",\n' +
+    '        "Asset Class Allocation"\n' +
+    '      ]\n' +
+    '    }\n' +
+    '    </script>\n' +
+    '\n' +
+    '  </head>\n' +
+    '\n' +
+    '  <body>\n' +
+    '    <div id="root"></div>\n' +
+    '    <script type="module" src="/src/main.tsx"></script>\n' +
+    '  </body>\n' +
+    '</html>\n',
+  expected: /<script\b[^>]*\bsrc\s*=\s*["'][^"']*(?:googlesyndication\.com|doubleclick\.net)[^"']*["'][^>]*>/i,
+  operator: 'doesNotMatch',
+  diff: 'simple'
+}
+
+Node.js v24.19.0
