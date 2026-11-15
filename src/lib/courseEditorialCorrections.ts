@@ -796,6 +796,53 @@ corrections.push(...[
   }
 ]);
 
+corrections.push(...[
+  {
+    "slug": "bitcoin-simulator-practice-trading",
+    "path": [
+      "lessons",
+      0,
+      "body",
+      2
+    ],
+    "expected": "Virtual balances allow no direct exposure to real-money losses, which fundamentally alters how participants test new market strategies. Without the emotional burden of losing actual savings, learners can comfortably explore unfamiliar asset classes and test long-term hypotheses. However, this detachment can occasionally encourage reckless decision-making if users fail to impose personal discipline on their simulated trades. Maintaining a serious mindset while managing virtual funds is essential for developing sustainable analytical habits that translate effectively into future decision-making processes.",
+    "replacement": "Virtual practice avoids real-money exposure and can help a learner inspect order mechanics and assumptions. It does not reproduce every emotional or financial constraint of a real account. Record what the exercise tested and its limitations rather than treating a practice habit as evidence of future trading ability."
+  },
+  {
+    "slug": "bitcoin-simulator-practice-trading",
+    "path": [
+      "lessons",
+      1,
+      "body",
+      5
+    ],
+    "expected": "Maintaining diverse spot holdings requires regular evaluation of individual asset weights relative to your total virtual capital base. If a single asset appreciates rapidly, its percentage share of your portfolio will expand, creating potential concentration imbalances. Recognizing these shifts allows you to practice systematic rebalancing by selling portions of overweight holdings to restore equilibrium. This active maintenance is a vital skill for managing any diversified spot portfolio successfully.",
+    "replacement": "A price change can alter portfolio weights. Rebalancing is one possible worksheet rule: compare it with leaving weights unchanged under the same price path, costs and chosen targets. Neither approach is universally required or guarantees a successful portfolio."
+  },
+  {
+    "slug": "bitcoin-simulator-practice-trading",
+    "path": [
+      "lessons",
+      2,
+      "body",
+      11
+    ],
+    "expected": "Furthermore, remember that simulators operate on simplified models that do not capture every nuance of global liquidity and exchange connectivity. Price feeds may reflect aggregated averages that differ slightly from the execution prices available on specific retail platforms. Understanding these discrepancies prevents overconfidence and encourages continuous learning even after you complete your simulator training. True trading competence is built on a lifelong commitment to rigorous analysis and risk awareness.",
+    "replacement": "Simulator models do not reproduce every execution, liquidity or custody condition. State the source and observation time of a price input and distinguish an aggregate reference from an available execution quote. A completed lesson or favorable simulated result does not certify trading competence."
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "lessons",
+      1,
+      "body",
+      5
+    ],
+    "expected": "A price change alters marked weights even without an order. A hypothetical drift threshold can be used as a manual review condition, but a breach is not automatically an instruction to trade. Consider the original assumptions, current exposures and transaction costs. TradeHQ does not provide the automatic allocation alert implied by the earlier wording; use a separate calculation and record any decision. No universal percentage threshold fits every portfolio or ensures a particular risk profile.",
+    "replacement": "A price change alters marked weights even without an order. A hypothetical drift threshold can be a manual review condition; a breach is not automatically an instruction to trade. Consider the assumptions, exposures and costs. TradeHQ does not provide automatic allocation alerts; use a separate calculation and record any decision. No threshold fits every portfolio or ensures a particular outcome."
+  }
+]);
+
 export function applyCourseEditorialCorrections<T extends { slug: string }>(document: T): T {
   const applicable = corrections.filter(patch => patch.slug === document.slug);
   if (!applicable.length) return document;

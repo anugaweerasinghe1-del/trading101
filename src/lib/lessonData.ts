@@ -293,7 +293,7 @@ export const lessonData: Lesson[] = [
     "id": 2,
     "title": "Risk Management",
     "category": "Strategy",
-    "description": "Essential strategies to protect your capital and manage trading risk.",
+    "description": "Compare hypothetical losses, position sizes and the limits of risk controls.",
     "subtopics": [
       {
         "title": "Position Sizing & The 2% Rule",
@@ -480,7 +480,7 @@ export const lessonData: Lesson[] = [
     "id": 3,
     "title": "Technical Analysis Basics",
     "category": "Analysis",
-    "description": "Learn to read charts and identify trading opportunities using technical indicators.",
+    "description": "Describe historical chart patterns and calculate indicators without treating them as forecasts.",
     "subtopics": [
       {
         "title": "Candlestick Patterns",
@@ -847,7 +847,7 @@ export const lessonData: Lesson[] = [
     "id": 5,
     "title": "Setting Trading Goals",
     "category": "Basics",
-    "description": "Define clear objectives and develop a trading plan that works for you.",
+    "description": "Record practice objectives, assumptions and a plan for reviewing simulated decisions.",
     "subtopics": [
       {
         "title": "Short-term vs Long-term Strategies",

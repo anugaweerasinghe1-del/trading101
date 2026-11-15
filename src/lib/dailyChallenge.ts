@@ -582,7 +582,7 @@ const BONUS_BANK: BonusQuestion[] = [
     options: [
       { label: "Single-asset blow-up risk", correct: true, explain: "Spreading exposure can reduce concentration in one asset, but correlated holdings can still lose together and no allocation prevents every loss." },
       { label: "All market crashes", correct: false, explain: "In a broad crash, most assets fall together — diversification helps but isn't bulletproof." },
-      { label: "Inflation", correct: false, explain: "Inflation needs hedges (commodities, TIPS), not just diversification." },
+      { label: "Inflation", correct: false, explain: "Diversification alone does not guarantee protection against inflation. Any proposed inflation-sensitive exposure needs its own assumptions, costs and risks." },
     ],
   },
   {

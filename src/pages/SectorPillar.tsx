@@ -14,7 +14,7 @@ const SECTORS = {
   "ai-tech": {
     name: "AI & Technology",
     slug: "ai-tech",
-    description: "Artificial intelligence and technology sector leaders driving computing and software development. From GPU manufacturers to cloud platforms, these companies are at the forefront of AI innovation.",
+    description: "Selected companies involved in processors, software and cloud services. Compare their business segments and dated reports; an AI-related product does not establish market leadership or future returns.",
     icon: Cpu,
     assetIds: ["nvda", "msft", "googl", "meta", "amd", "intc"],
     keywords: ["AI stocks", "technology investing", "semiconductor stocks", "cloud computing"],
@@ -23,7 +23,7 @@ const SECTORS = {
   "crypto-defi": {
     name: "Crypto & DeFi",
     slug: "crypto-defi", 
-    description: "Decentralized finance and cryptocurrency assets reshaping global finance. From Bitcoin's store of value to Ethereum's smart contract ecosystem, explore the digital asset revolution.",
+    description: "Selected cryptocurrencies and smart-contract networks for virtual practice. Their designs, uses and risks differ; a network narrative does not establish token value or investment suitability.",
     icon: Coins,
     assetIds: ["btc", "eth", "sol", "xrp", "bnb", "ada", "avax", "dot", "matic", "link", "doge", "ltc"],
     keywords: ["cryptocurrency trading", "DeFi investing", "Bitcoin", "Ethereum", "altcoins"],
@@ -41,7 +41,7 @@ const SECTORS = {
   "tech-giants": {
     name: "Tech Giants",
     slug: "tech-giants",
-    description: "The technology sector titans shaping our digital future. From search and social media to cloud computing and e-commerce, these companies participate in different parts of the technology sector.",
+    description: "Selected companies operating in search, social media, cloud computing and e-commerce. Compare their distinct business segments rather than treating technology companies as one uniform exposure.",
     icon: Building2,
     assetIds: ["aapl", "msft", "googl", "amzn", "meta", "nflx", "orcl", "adbe", "crm", "csco"],
     keywords: ["tech stocks", "big tech investing", "technology giants", "FAANG+"],
@@ -50,7 +50,7 @@ const SECTORS = {
   "forex-currencies": {
     name: "Forex & Currencies",
     slug: "forex-currencies",
-    description: "Global currency markets reflecting macroeconomic conditions and central bank policies. Master forex trading with major pairs driven by Fed, ECB, and BOJ decisions.",
+    description: "Use major currency pairs to calculate exchange-rate changes and compare hypothetical policy scenarios. Central-bank announcements do not determine the next move; practice does not certify trading mastery.",
     icon: Globe,
     assetIds: ["eurusd", "gbpusd", "usdjpy", "usdchf", "audusd"],
     keywords: ["forex trading", "currency pairs", "EUR/USD", "central bank policy"],
@@ -59,7 +59,7 @@ const SECTORS = {
   "commodities": {
     name: "Commodities",
     slug: "commodities",
-    description: "Physical commodities from precious metals to energy. Gold for inflation hedging, oil for energy exposure, and industrial metals as economic indicators.",
+    description: "Compare precious metals, energy and industrial commodities under stated supply, demand and price assumptions. Gold is not a guaranteed inflation hedge, and commodity prices do not establish future economic conditions.",
     icon: Gem,
     assetIds: ["gold", "silver", "oil", "natgas", "copper"],
     keywords: ["commodity trading", "gold investing", "oil trading", "precious metals"],

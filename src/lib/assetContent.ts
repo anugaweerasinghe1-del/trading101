@@ -511,7 +511,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   doge: {
-    whatIs: "Dogecoin (DOGE) started as a meme cryptocurrency but has grown into a widely-accepted payment method. It features fast transaction times, low fees, and a passionate community.",
+    whatIs: "Dogecoin (DOGE) is a cryptocurrency using proof of work. Payment acceptance, fees and confirmation times depend on the merchant, network conditions and observation time; this simulator does not establish real-world acceptance.",
     strategy: "Separate reported news, social-media promotion and observed volume. A pullback need not hold, and social attention does not establish a price forecast. Educational simulation only; not financial advice.",
     category: "Cryptocurrency",
     keywords: ["Dogecoin trading", "DOGE practice", "meme coin", "payments"],
@@ -559,7 +559,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   link: {
-    whatIs: "Chainlink (LINK) is the leading decentralized oracle network, connecting smart contracts with real-world data. It's essential infrastructure for DeFi applications requiring price feeds and external data.",
+    whatIs: "Chainlink provides oracle services that connect smart contracts with external data. LINK is its network token. A service integration does not establish the value or future return of the token.",
     strategy: "Compare an announced integration with evidence of actual usage. Announcements do not establish the timing or direction of a LINK price response. Educational simulation only; not financial advice.",
     category: "Cryptocurrency",
     keywords: ["Chainlink trading", "LINK practice", "oracle network", "DeFi infrastructure"],
@@ -607,8 +607,8 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   crm: {
-    whatIs: "Salesforce Inc. (CRM) is the world's leading customer relationship management platform. It helps businesses manage sales, marketing, and customer service in the cloud with AI-powered analytics.",
-    strategy: "CRM is a SaaS bellwether. Practice trading around tech sector rotation and use it as a gauge for enterprise software spending trends. (Educational simulation only — not financial advice.)",
+    whatIs: "Salesforce Inc. (CRM) provides cloud software for customer relationship management, including sales, marketing and customer service. Compare dated company reports rather than inferring market leadership or share returns from the product description.",
+    strategy: "Compare reported subscription revenue and costs over matching periods. One company’s results do not establish industry-wide spending or the next share-price move. Educational simulation only; not financial advice.",
     category: "Technology Stock",
     keywords: ["Salesforce stock trading", "CRM practice", "enterprise software", "SaaS"],
     stats: {
@@ -631,7 +631,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   jpm: {
-    whatIs: "JPMorgan Chase is America's largest bank by assets, operating in consumer banking, investment banking, and asset management. It's a bellwether for the financial sector and economic health.",
+    whatIs: "JPMorgan Chase provides consumer banking, investment banking and asset-management services. Its own results do not represent every bank or establish the direction of the economy.",
     strategy: "Practice correlating Fed announcements with bank stock movements to understand macro trading and interest rate sensitivity. (Educational simulation only — not financial advice.)",
     category: "Financial Stock",
     keywords: ["JPMorgan stock trading", "JPM practice", "banking", "financial sector"],
@@ -643,7 +643,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   v: {
-    whatIs: "Visa operates the world's largest electronic payments network, processing billions of transactions annually. It benefits from the global shift from cash to digital payments.",
+    whatIs: "Visa operates an electronic payments network. Transaction counts, payment volumes, revenue and share returns are different measures; compare their definitions and reporting periods.",
     strategy: "Compare payment volume, cross-border activity and business costs in reported results. Those factors do not guarantee steady compounding or a suitable long-term position. Educational simulation only; not financial advice.",
     category: "Financial Stock",
     keywords: ["Visa stock trading", "V simulator", "payments", "fintech"],
@@ -655,7 +655,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   ma: {
-    whatIs: "Mastercard is the second-largest payment processor globally, operating in over 210 countries. It continues growing with digital payment adoption and fintech partnerships.",
+    whatIs: "Mastercard operates an electronic payments network. Study dated transaction, revenue and cost disclosures; a partnership or increased adoption alone does not establish future profits or share returns.",
     strategy: "Compare Mastercard and Visa using the same observation period. Similar businesses can diverge, and a relative-price gap need not revert. Educational simulation only; not financial advice.",
     category: "Financial Stock",
     keywords: ["Mastercard stock trading", "MA practice", "credit cards", "payments"],
@@ -787,7 +787,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   silver: {
-    whatIs: "Both a precious metal and industrial commodity, used in electronics, solar panels, medicine, and as a store of value. Silver is more volatile than gold and often amplifies gold's movements.",
+    whatIs: "Silver is a precious metal with industrial uses, including electronics and solar panels. A volatility comparison with gold needs a stated sample, return interval and calculation; their prices need not move together.",
     strategy: "Compare industrial demand, monetary conditions and the gold-silver ratio over a defined sample. A ratio above 80 does not establish future silver outperformance. Educational simulation only; not financial advice.",
     category: "Commodity",
     keywords: ["silver trading", "XAG practice", "precious metals", "industrial"],
@@ -800,7 +800,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
   },
   natgas: {
     whatIs: "Natural Gas is a major energy source for heating and electricity generation. Its price is highly seasonal, influenced by weather patterns, storage levels, and LNG export demand.",
-    strategy: "Natural gas is extremely volatile seasonally. Practice trading around winter heating demand (Nov-Feb) and summer cooling patterns (Jun-Aug). (Educational simulation only — not financial advice.)",
+    strategy: "Compare hypothetical heating demand, cooling demand and supply scenarios over a stated region and period. Seasonal demand does not determine the next price move. Educational simulation only; not financial advice.",
     category: "Commodity",
     keywords: ["natural gas trading", "NG practice", "energy", "utilities"],
     stats: {
@@ -811,7 +811,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   copper: {
-    whatIs: "Copper is called 'Dr. Copper' because its price is considered a leading indicator of economic health. It's essential for construction, electronics, EVs, and renewable energy infrastructure.",
+    whatIs: "Copper is used in construction, electrical equipment and other industrial applications. Its price reflects supply and demand conditions but does not establish future economic growth or market direction.",
     strategy: "Compare industrial demand and supply assumptions with alternative macroeconomic scenarios. Copper prices are not a reliable advance signal of a broader market rally. Educational simulation only; not financial advice.",
     category: "Commodity",
     keywords: ["copper trading", "HG practice", "industrial metals", "economic indicator"],

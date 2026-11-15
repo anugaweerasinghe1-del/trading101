@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import { portfolioExposureSummary } from '../src/lib/portfolioExposure';
+import type { Portfolio } from '../src/lib/types';
+const position = {asset:{id:'aapl',symbol:'AAPL',name:'Example',type:'stock' as const,price:255.25,change:0,changePercent:0},quantity:1,avgPrice:255.25,currentValue:255.25,profitLoss:0,profitLossPercent:0};
+const small: Portfolio = {cash:99744.49475,totalValue:99999.74475,positions:[position],trades:[]};
+const text=portfolioExposureSummary(small)!;
+assert.match(text,/100.0% of invested holdings and 0.26% of total account/);
+assert.match(text,/\$25.53 \(0.026%\)/);
+assert.doesNotMatch(text,/oversized|adding variety/i);
+const fullyInvested={...small,cash:0,totalValue:255.25};
+assert.match(portfolioExposureSummary(fullyInvested)!,/100.00% of total account/);
+assert.match(portfolioExposureSummary(fullyInvested)!,/10.000%/);
+assert.equal(portfolioExposureSummary({...small,positions:[]}),null);
+assert.equal(portfolioExposureSummary({...small,cash:NaN}),null);
+assert.equal(portfolioExposureSummary({...small,cash:-1000}),null);
+assert.match(portfolioExposureSummary({...small,positions:[position,{...position,asset:{...position.asset,symbol:'OTHER'},currentValue:744.75}],cash:99000})!,/OTHER is 74.5% of invested holdings and 0.74% of total account/);
+console.log('PASS account-inclusive weights and independent hypothetical shock calculations; small, fully invested, empty and invalid accounts');
