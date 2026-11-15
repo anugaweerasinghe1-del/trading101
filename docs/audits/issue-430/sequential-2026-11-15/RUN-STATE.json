@@ -1,6 +1,6 @@
 {
   "createdAtUTC": "2026-11-15T06:11:06.375162+00:00",
-  "phase": "SOURCE-PUBLICATION-REVIEW-SERVICE-CONTRACT-REPAIR",
+  "phase": "SOURCE-PUBLICATION-OWNER-RETRY-PENDING",
   "prior19status": "18 verified public remedies; R07 drafts9/5/5 saved, Bitcoin source newly corrected; actual publication and live parity still pending",
   "expectedDraftRevisions": {
     "bitcoin-simulator-practice-trading": 9,
@@ -18,7 +18,7 @@
   "queueStatuses": "QUEUED-UNREAD",
   "doNotAdvanceUntil": "Actual source publication and live verification establish19/19; then begin the first page loop",
   "reviewer": "Codex assistant; prior contributor; no claim of independent human/Google review",
-  "updatedAtUTC": "2026-11-15T10:58:16.069270+00:00",
+  "updatedAtUTC": "2026-11-15T11:24:46.864Z",
   "ownerRetryResult": "2026-11-15T08:59:23.219Z COURSE_REVIEW_BLOCKED; former handler discarded individual findings",
   "approvedDiagnostic": {
     "requestsAuthorized": 1,
@@ -27,5 +27,38 @@
     "publicationPerformed": false,
     "result": "HTTP200/STOP; PASS with three positive findings violates old local contract despite satisfying old provider schema",
     "remainingDiagnosticRequestsAuthorized": 0
-  }
+  },
+  "prerequisiteRepairRelease": {
+    "pullRequest": 441,
+    "mergeSHA": "b9b6a147304eed200a51d2bfbd09492a85544588",
+    "nativeCloudflareProduction": "b51bbdfc-afe5-4971-8ddd-edeccbf29705",
+    "nativeCloudflareVerified": true,
+    "supabaseFunctionVersion": 21,
+    "deployedSourceFilesMatched": 12,
+    "normalOwnerPublicationRetryRevision9": "PENDING",
+    "postFixStandaloneLiveModelProbePerformed": false
+  },
+  "actualPublishedState": [
+    {
+      "slug": "bitcoin-simulator-practice-trading",
+      "published_revision": 6,
+      "published_at": "2026-11-02 15:57:48.755407+00",
+      "draft_revision": 9,
+      "status": "draft"
+    },
+    {
+      "slug": "cryptocurrency-price-feeds-and-valuation",
+      "published_revision": 3,
+      "published_at": "2026-10-09 15:47:17.970732+00",
+      "draft_revision": 5,
+      "status": "draft"
+    },
+    {
+      "slug": "diversification-and-position-sizing",
+      "published_revision": 3,
+      "published_at": "2026-10-09 15:45:01.003475+00",
+      "draft_revision": 5,
+      "status": "draft"
+    }
+  ]
 }

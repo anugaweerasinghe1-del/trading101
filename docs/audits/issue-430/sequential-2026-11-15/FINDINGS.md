@@ -51,3 +51,11 @@ Repair: request a documented property-level anyOf union with two explicit branch
 Tests use the actual approved response as a minimal fixture to show old-schema acceptance and new-contract rejection. They cover valid empty PASS, nonempty BLOCK, contradictions, truncation, malformed envelopes/JSON, credential exclusion, and safe handler/client propagation. Current official Gemini structured-output documentation was read for anyOf/enum/cardinality and its unenforced string-length limits. The client’s existing600-character limit remains enforced. No token budget/model, publication identity gate or paid fallback was changed. No further real model calls are authorized by this diagnostic consent.
 
 Status: code/tests complete, protected merge/deployed-source/native Cloudflare verification pending. Stored source remains draft9/5/5 versus published6/3/3;19-proposal completion remains18/19 and the new page queue remains unread.
+
+## PR441 release checkpoint
+
+PR441 merged as `b9b6a147304eed200a51d2bfbd09492a85544588`, after five required checks succeeded on exact head `fa91c3028a759862a4d8b57d59d505141ca5466f`. Backend admin-courses version21 is ACTIVE; all12 files match merged source. Native Cloudflare deployment `b51bbdfc-afe5-4971-8ddd-edeccbf29705` is verified production/main/success at that merged SHA. See [release-441/REPORT.md](release-441/REPORT.md).
+
+The actual production error adapter passed eight existing failure fixtures, structured concern preservation and three precise diagnostic fixtures. Standalone real diagnostic requests: exactly1 authorized and1 made; no additional live validation request was made. The captured positive checklist is not promoted into an approval attestation. The normal owner publication flow remains the required final live check.
+
+At11:24:46.864UTC, stored sources remain published6/3/3 versus prepared drafts9/5/5. One Bitcoin9 owner attempt is pending. The original19-proposal total remains18/19, and the new strict-audit queue remains unread.

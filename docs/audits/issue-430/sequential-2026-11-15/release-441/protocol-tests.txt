@@ -1,0 +1,2 @@
+{"event":"course_admin_failure","code":"COURSE_REVIEW_UNAVAILABLE"}
+PASS actual approved-probe mismatch reproduced; conditional schema separates PASS/empty and BLOCK/nonempty; contradictions, truncation and malformed data remain blocked; bounded diagnostics reach the browser without credentials. All tests offline; no model call.

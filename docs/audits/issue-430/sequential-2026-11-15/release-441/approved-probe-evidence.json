@@ -1,0 +1,28 @@
+{
+  "recordedAtUTC": "2026-11-15T10:51:19.030Z",
+  "requestId": 11247,
+  "model": "gemini-3.5-flash-lite",
+  "draftRevision": 9,
+  "documentDigest": "c15a4157769f12fa783255cdf4ab4af751f6616a3fbbff39adf8c9523e1073af",
+  "userConsent": "Approve one Gemini diagnostic request",
+  "requestsMade": 1,
+  "publicationPerformed": false,
+  "credentialsReturned": false,
+  "status": 200,
+  "timedOut": false,
+  "usage": {
+    "serviceTier": "standard",
+    "totalTokenCount": 7542,
+    "promptTokenCount": 7444,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 7444
+      }
+    ],
+    "candidatesTokenCount": 98
+  },
+  "finishReason": "STOP",
+  "output": "{\n  \"verdict\": \"PASS\",\n  \"findings\": [\n    \"All core claims in lessons and quizzes are well-supported by the provided reference excerpts and ground truth constraints.\",\n    \"Arithmetic examples, including fee-inclusive purchase costs, percentages, and drawdowns, were independently verified and are correct.\",\n    \"The content maintains appropriate disclaimer boundaries, explicitly emphasizing virtual mechanics and educational safety without making real-world earnings or performance guarantees.\"\n  ]\n}",
+  "scope": "Controlled diagnostic using stored revision9 and two captured available reference excerpts; original failed attempt response/excerpts were not retained. Provider opinion does not certify AdSense or permit publication."
+}

@@ -1,0 +1,25 @@
+{
+  "observedAtUTC": "2026-11-15T11:15:01.821480+00:00",
+  "checks": [
+    {
+      "method": "GET",
+      "status": 405,
+      "expected": 405,
+      "credentialsSupplied": false
+    },
+    {
+      "method": "OPTIONS",
+      "status": 200,
+      "expected": 200,
+      "credentialsSupplied": false
+    },
+    {
+      "method": "POST",
+      "status": 401,
+      "expected": 401,
+      "credentialsSupplied": false
+    }
+  ],
+  "modelRequestMade": false,
+  "publicationAuthorized": false
+}
