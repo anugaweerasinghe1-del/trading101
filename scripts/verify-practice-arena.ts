@@ -232,7 +232,8 @@ assert.match(consent, /autocapture: false/, "Automatic page, click and form capt
 assert.match(consent, /fetchRemoteConfig: false/, "Remote project config must not re-enable autocapture.");
 assert.doesNotMatch(consent, /sessionReplay\.plugin|engagement\.plugin|sampleRate:\s*1/, "No session replay, including when consent is granted.");
 assert.match(consent, /trackingOptions: \{ ipAddress: false/, "Explicit IP property must be suppressed.");
-assert.match(consent, /if \(next === "accepted" && !isAdult\) return;/, "Age self-confirmation required before analytics opt-in.");
+assert.match(consent, /if \(next === "accepted" && !adultConfirmed\) return;/, "Age self-confirmation required before analytics opt-in.");
+assert.match(consent, /onClick=\{\(\) => save\("accepted", true\)\}/, "Age confirmation must be an explicit action on Accept.");
 assert.match(consent, /if \(next === "rejected" && previous === "accepted"\)/, "Revoke must immediately shut down active SDK.");
 assert.match(study, /const \[adultParticipant, setAdultParticipant\]/, "Research must be limited to adult volunteers.");
 assert.match(study, /const canShare = adultParticipant && finished/, "Non-confirming visitors cannot prepare survey submissions.");
