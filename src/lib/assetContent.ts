@@ -523,7 +523,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   avax: {
-    whatIs: "Avalanche (AVAX) is a layer-1 blockchain platform known for its speed and low transaction costs. It uses a unique consensus mechanism and supports multiple virtual machines for flexibility.",
+    whatIs: "Avalanche (AVAX) is a blockchain network supporting smart contracts. Compare the relevant network documentation and observations rather than assuming fixed fees or confirmation times.",
     strategy: "Compare network-specific developments with broader crypto movements over a defined period. A decline in BTC dominance does not establish that AVAX will outperform. Educational simulation only; not financial advice.",
     category: "Cryptocurrency",
     keywords: ["Avalanche trading", "AVAX simulator", "layer-1 blockchain", "DeFi"],
@@ -571,7 +571,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   ltc: {
-    whatIs: "Litecoin (LTC) is one of the oldest cryptocurrencies, created as a 'lighter' version of Bitcoin. It offers faster transaction confirmations (2.5 min blocks) and uses the Scrypt hashing algorithm.",
+    whatIs: "Litecoin (LTC) is a proof-of-work cryptocurrency using the Scrypt hashing algorithm. Block targets are protocol parameters; actual confirmation times and transaction costs depend on network conditions.",
     strategy: "Compare price variability over a stated period rather than treating LTC as a safe haven. A lower historical fluctuation does not remove cryptocurrency loss risk. Educational simulation only; not financial advice.",
     category: "Cryptocurrency",
     keywords: ["Litecoin trading", "LTC simulator", "Bitcoin alternative", "faster transactions"],
@@ -619,7 +619,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   intc: {
-    whatIs: "Intel Corporation is a semiconductor giant known for PC processors. It's undergoing a major transformation to compete in AI and regain manufacturing leadership with its foundry services.",
+    whatIs: "Intel (INTC) designs semiconductors and operates chip-manufacturing businesses. Use company reports to separate current results from stated foundry plans; a turnaround hypothesis is not a price forecast.",
     strategy: "Separate reported operating results from a turnaround hypothesis. A longer holding period does not ensure that the hypothesis succeeds or losses recover. Educational simulation only; not financial advice.",
     category: "Technology Stock",
     keywords: ["Intel stock trading", "INTC simulator", "processors", "foundry"],
@@ -703,7 +703,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   voo: {
-    whatIs: "Vanguard S&P 500 ETF is a low-cost alternative to SPY, tracking the same S&P 500 index. Popular for long-term investors due to its minimal expense ratio.",
+    whatIs: "Vanguard S&P 500 ETF (VOO) seeks to track the S&P 500 Index. Compare dated fund disclosures for objectives, holdings and costs rather than assuming a permanent cost advantage.",
     strategy: "Compare fund objectives, costs and reported holdings with SPY. Similar index exposure does not make their prices, distributions or execution conditions identical. Educational simulation only; not financial advice.",
     category: "ETF",
     keywords: ["VOO ETF trading", "Vanguard practice", "low-cost index"],
@@ -739,7 +739,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   usdjpy: {
-    whatIs: "The US Dollar against the Japanese Yen—a key carry trade indicator and risk sentiment gauge. USD/JPY reflects interest rate differentials between the Fed and Bank of Japan.",
+    whatIs: "USD/JPY quotes Japanese yen per US dollar. Changes can be compared with stated interest-rate assumptions, but the pair alone does not identify carry positions or establish market-wide risk sentiment.",
     strategy: "Practice understanding how interest rate differentials drive currency flows. Monitor BOJ intervention levels and Fed policy statements. (Educational simulation only — not financial advice.)",
     category: "Forex",
     keywords: ["USD/JPY trading", "Yen practice", "carry trade", "BOJ"],
@@ -906,38 +906,50 @@ export function generateAssetMetaTitle(asset: Asset): string {
   return title.length > 60 ? `${label} Practice | TradeHQ` : title;
 }
 
-// Prefer complete sentences; search snippets do not have a mandatory character limit.
+// Corporate suffixes and initialisms are not reliable sentence boundaries.
+// Keeping two sentences together is preferable to publishing a company-name fragment.
+function descriptionSentences(text: string): string[] {
+  const normalized = text.replace(/\s+/g, ' ').trim();
+  const sentences: string[] = [];
+  let start = 0;
+  for (const match of normalized.matchAll(/[.!?](?=\s|$)/g)) {
+    const end = match.index! + 1;
+    const token = normalized.slice(0, end).match(/(?:[A-Za-z]+\.)+$/)?.[0] ?? '';
+    if (match[0] === '.' && end < normalized.length &&
+      (/^(?:Inc|Corp|Co|Ltd|LLC|Dr|Mr|Mrs|Ms|Prof|St|vs|etc|e\.g|i\.e)\.$/i.test(token) || /^(?:[A-Za-z]\.){2,}$/.test(token))) continue;
+    sentences.push(normalized.slice(start, end).trim());
+    start = end;
+  }
+  if (start < normalized.length) sentences.push(normalized.slice(start).trim());
+  return sentences.filter(Boolean);
+}
+
+// Preferred size only: search snippets have no mandatory character cap.
 export function truncateMetaDescription(text: string, maxLength: number = 155): string {
   const normalized = text.replace(/\s+/g, ' ').trim();
   if (normalized.length <= maxLength) return normalized;
-  const sentences = [...normalized.matchAll(/.+?[.!?](?=\s|$)/g)];
-  const withinLimit = sentences.filter(match => match.index! + match[0].length <= maxLength);
-  const last = withinLimit[withinLimit.length - 1];
-  if (last) return normalized.slice(0, last.index! + last[0].length).trim();
-  // Preserve the first complete sentence even when it exceeds the preferred size.
-  return sentences[0]?.[0].trim() || normalized;
+  const sentences = descriptionSentences(normalized);
+  let result = '';
+  for (const sentence of sentences) {
+    const candidate = result ? `${result} ${sentence}` : sentence;
+    if (candidate.length > maxLength) break;
+    result = candidate;
+  }
+  return result || sentences[0] || normalized;
 }
 
-// Generate meta description (120-155 chars) - Custom for top 5, fallback for others
 export function generateAssetMetaDescription(asset: Asset): string {
-  // Priority assets get custom CTR-optimized descriptions - ensure 155 char truncation
   if (CUSTOM_META_DESCRIPTIONS[asset.id]) {
     return truncateMetaDescription(CUSTOM_META_DESCRIPTIONS[asset.id], 155);
   }
-
-  // Fallback for other assets
   const content = ASSET_CONTENT[asset.id];
-  const typeLabel = asset.type === 'crypto' ? 'cryptocurrency' : asset.type;
-
-  let description: string;
   if (content) {
-    description = `Practise ${asset.symbol} with $100K virtual cash. ${content.whatIs}`;
-  } else {
-    description = `Trade ${asset.name} (${asset.symbol}) in our free simulator. Get $100K demo cash, simulated charts, and educational mentor explanations. No signup needed!`;
+    // Preserve one useful complete fact, including any corporate abbreviation,
+    // even when the simulator prefix plus that fact exceeds a preferred length.
+    const fact = descriptionSentences(content.whatIs)[0] || content.whatIs;
+    return `Practise ${asset.symbol} with $100K virtual cash. ${fact}`;
   }
-
-  // ALWAYS enforce 155 character limit
-  return truncateMetaDescription(description, 155);
+  return truncateMetaDescription(`Trade ${asset.name} (${asset.symbol}) in our free simulator. Get $100K demo cash, simulated charts, and educational mentor explanations. No signup needed!`, 155);
 }
 
 // Explain the available exercise without generating interchangeable market analysis.
