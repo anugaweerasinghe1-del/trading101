@@ -843,6 +843,29 @@ corrections.push(...[
   }
 ]);
 
+corrections.push({
+  "slug": "bitcoin-simulator-practice-trading",
+  "path": [
+    "lessons",
+    1,
+    "body",
+    11
+  ],
+  "expected": "Simulated environments cannot replicate the psychological pressure of managing real capital during extreme market volatility and sudden downturns. While you can practice the mechanical steps of buying and selling, the emotional stakes remain entirely artificial throughout the process. Acknowledging this psychological gap helps keep your educational progress in proper perspective as you refine your analytical skills. Use the simulator to master mechanics, not as a definitive test of emotional resilience.",
+  "replacement": "Virtual trading can still involve real feelings, but the fictional balance does not expose the learner’s savings to market losses. That difference limits what a practice result can establish about decisions under real financial pressure. Use the exercise to check order mechanics and the cash ledger, rather than to certify emotional resilience. In a written debrief, describe what you actually observed and which circumstances the simulator left out. A confident practice decision or a completed worksheet does not demonstrate that the same response would occur when real money is at risk."
+},
+{
+  "slug": "bitcoin-simulator-practice-trading",
+  "path": [
+    "lessons",
+    2,
+    "body",
+    1
+  ],
+  "expected": "Evaluating your simulator performance requires calculating the percentage change between your initial capital and current portfolio value. This calculation must account for both uninvested virtual cash and the fluctuating market value of your active spot holdings. Recomputing your total portfolio value after every major price move ensures your performance metrics remain accurate and up to date. Regular valuation checks prevent small calculation errors from compounding into misleading performance reports over time.",
+  "replacement": "For a hypothetical account with no deposits, withdrawals or resets during the measured interval, starting-balance return is the change in marked equity divided by starting equity. Include remaining virtual cash, marked holdings and the recorded transaction fees when reconciling those totals. Check the observation timestamps as well as the arithmetic: recalculating a delayed quote does not turn it into a current or executable price. Use the same account and stated observation times for each comparison, and label missing observations rather than inventing them. This worksheet describes the sampled account values, not every intraperiod move or a real investment return."
+});
+
 export function applyCourseEditorialCorrections<T extends { slug: string }>(document: T): T {
   const applicable = corrections.filter(patch => patch.slug === document.slug);
   if (!applicable.length) return document;

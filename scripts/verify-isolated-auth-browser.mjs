@@ -105,7 +105,7 @@ async function main(){
   let dashboardHold=false,dashboardHeldRequests=0;
   let courseDeskFixture=false,reviewDeskFixture=false,courseDeskWrites=0,reviewDeskWrites=0;
   let reviewCountUnavailable=false,reviewListRequests=0;
-  let courseMutationFixture=false,reviewMutationFixture=false;
+  let courseMutationFixture=false,reviewMutationFixture=false,courseReviewBlockedFixture=false;
   let reviewListUnavailable=false;
   let courseDeskRows=[],courseWriteLog=[],reviewWriteLog=[];
   let courseListUnavailable=false,courseFailRefreshAfterSave=false;
@@ -295,6 +295,7 @@ async function main(){
             courseDeskWrites++;courseWriteLog.push(body.action);
             if(courseMutationFixture && body.action==='publish'){
               assert.equal(req.headers.authorization,'Bearer '+JWT,'Owner UI must attach its current session for publication');
+              if(courseReviewBlockedFixture)return json(409,{code:'COURSE_REVIEW_BLOCKED',error:'Independent course quality review blocked this draft.',reviewFindings:['Fixture reviewer concern: verify the fee calculation. <img src=x onerror="window.REVIEW_INJECTED=true">']});
               return json(403,{error:'Fixture registered-owner denial'});
             }
             if(courseMutationFixture && body.action==='save' && body.document){
@@ -1618,7 +1619,16 @@ async function main(){
     await adminClick('Approve and publish');
     await wait(()=>devtools.evaluate("document.body.textContent.includes('No publication was authorized.')"),'Registered-owner denial displayed from HTTP 403');
     assert.equal(courseDeskRows[0].status,'draft','Unauthorized fixture publication must stay private');
+    const writesBeforeReview=courseDeskWrites;courseReviewBlockedFixture=true;
+    await adminClick('Approve and publish');
+    await wait(()=>devtools.evaluate("document.body.textContent.includes('Review concerns · saved revision 1')"),'Structured review concerns appear in compiled owner UI');
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('Fixture reviewer concern: verify the fee calculation.')"),true);
+    assert.equal(await devtools.evaluate("window.REVIEW_INJECTED===undefined && !document.querySelector('img[onerror]')"),true,'Reviewer text is escaped, never executable HTML');
+    assert.equal(courseDeskWrites,writesBeforeReview+1,'Review rejection must not automatically retry');
+    assert.equal(courseDeskRows[0].status,'draft','Rejected content remains private');
+    courseReviewBlockedFixture=false;
     await adminInput('section fieldset input',reviewedCourse.title+' edited');
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('Your current changes have not received a new review.')"),true,'Old concerns must not claim a review of unsaved changes');
     assert.equal(await devtools.evaluate("document.querySelector('input[type=checkbox]').checked"),false,'Course edit clears prior exact-revision approval');
     courseFailRefreshAfterSave=true;
     await adminClick('Save draft');
@@ -1636,7 +1646,8 @@ async function main(){
     assert.equal(await devtools.evaluate("document.documentElement.scrollWidth <= innerWidth+1"),true,'Course desk fits a 320px viewport');
     await devtools.send('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false});
     await adminClick('Lock');courseMutationFixture=false;courseDeskFixture=false;
-    console.log('ISOLATED_ADMIN_COURSE_REVISION_RECOVERY_PASS: owner-denied publish with JWT; edit clears approval; confirmed private save survives inbox outage; stale revision blocks publication; 320px layout. Fixture only.');
+    assert.equal(await devtools.evaluate("document.body.textContent.includes('Fixture reviewer concern:')"),false,'Lock removes private reviewer concerns');
+    console.log('ISOLATED_ADMIN_COURSE_REVISION_RECOVERY_PASS: owner-denied publish with JWT; structured concerns render as escaped text, no retry, old revision labelled and lock clears; edit clears approval; confirmed private save survives inbox outage; stale revision blocks publication; 320px layout. Fixture only.');
 
 
     // The Reviews desk is also exercised with a real rendered review, an

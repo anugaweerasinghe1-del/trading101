@@ -23,3 +23,17 @@ Repair: return bounded diagnostic codes for changed revision, validation, review
 - Added concrete, explicitly hypothetical exercises and arithmetic, preserving lesson URLs and quiz keys. First refinement-save confirmation expired; a smaller guarded save succeeded as draft8/5/5. Stored documents match the prepared candidate and pass schema/quality/renderer checks.
 - User supplied an actual publication failure screenshot; read-only logs show409 from function18. Exact original cause remains unresolved. No direct SQL publication, fabricated review attestation, credential extraction or gate bypass was used.
 - All480 new audit queue rows remain QUEUED-UNREAD. The policy baseline and technical regression work do not count as new page-level editorial passes.
+
+## Owner retry and prerequisite follow-up — 15 November
+
+The owner supplied a second screenshot showing the newly specific rejection message. Function logs at2026-11-15T08:59:23.219Z confirm COURSE_REVIEW_BLOCKED. The previous implementation discarded the structured response findings, so the exact verdict/reasons cannot be recovered. Its broad predicate also classified some malformed verdicts as rejection. Do not fabricate the lost review or claim that an assistant-discovered issue is the model’s reason.
+
+STRICT-PRE-003 — CONFIRMED BUG: reviewer concerns were discarded. Repair preserves bounded, credential-redacted findings in private function logs with the exact document digest, returns only designated concerns through the authenticated handler, and displays them as unverified automated feedback in the course desk. Malformed verdicts remain fail-closed and are classified as unavailable. No approval attestation is created.
+
+STRICT-PRE-004 — CONFIRMED BUG: the publication reviewer used the fixed generation reference pool, which excludes this course’s cited Morningstar drawdown source. Repair selects the course’s actual cited references from an exact URL allowlist, attempts the additional citation, and records availability. Generation’s existing pool is unchanged; arbitrary draft URLs never become network requests. A citation’s inclusion in the allowlist does not prove reachability or support.
+
+R07 extension — CONFIRMED EDITORIAL OVERSTATEMENTS in Bitcoin draft8: Lesson2 body11 calls emotional stakes “entirely artificial” and promises “master mechanics”; Lesson3 body1 says recalculation “ensures” metrics are “accurate and up to date” despite delayed quote inputs. The fresh source review read the entire course document, all24 body paragraphs,12 section headings and12 questions including options/keys/explanations. The repairs distinguish real feelings from fictional monetary exposure and qualify returns to a no-cash-flow, same-account, timestamped worksheet. They preserve all lesson URLs and quiz keys. These are factual/teaching corrections, not asserted Google violations or proven reasons for the model rejection.
+
+Source-access limits: fresh CoinGecko methodology and API documentation requests succeeded and their relevant price aggregation/freshness sections were read. FINRA returned403 to this reviewer; Morningstar returned403 through CloudFront (browser navigation failed). These are genuinely blocked source-verification checks, not proof that the citations are false or that the Supabase reviewer encountered the same response. Preserve them separately from the content findings.
+
+This is still the source-synchronization prerequisite. No queued page receives new-audit completion credit.

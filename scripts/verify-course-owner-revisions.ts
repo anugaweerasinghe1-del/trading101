@@ -9,7 +9,7 @@ const corrected=applyCourseEditorialCorrections(document);
 assert.equal(JSON.stringify(document),original);
 assert.deepEqual(validateCourseDocument(corrected,true),[]);
 assert.deepEqual(applyCourseEditorialCorrections(corrected),corrected);
-for(const [lessonIndex,paragraphIndex] of [[0,2],[1,5],[2,11]]){
+for(const [lessonIndex,paragraphIndex] of [[0,2],[1,5],[2,11],[1,11],[2,1]]){
  const lesson=corrected.lessons[lessonIndex];
  assert.notEqual(lesson.body[paragraphIndex],document.lessons[lessonIndex].body[paragraphIndex]);
  const rendered=renderApprovedCourse('<html><head></head><body><div id="root"></div></body></html>',document,lesson.slug)!;
@@ -22,4 +22,6 @@ for(const [lessonIndex,paragraphIndex] of [[0,2],[1,5],[2,11]]){
 assert.match(corrected.lessons[0].body[2],/does not reproduce every emotional/);
 assert.match(corrected.lessons[1].body[5],/Neither approach is universally required/);
 assert.match(corrected.lessons[2].body[11],/does not certify trading competence/);
-console.log('PASS approved Bitcoin revisions: three SSR/bootstrap pairs, validity, idempotence, immutable source and later-edit guards');
+assert.doesNotMatch(corrected.lessons[1].body[11],/emotional stakes remain entirely artificial|master mechanics/);
+assert.match(corrected.lessons[2].body[1],/recalculating a delayed quote does not turn it into a current or executable price/);
+console.log('PASS approved Bitcoin revisions: five SSR/bootstrap pairs, qualified emotional/valuation claims, validity, idempotence, immutable source and later-edit guards');
