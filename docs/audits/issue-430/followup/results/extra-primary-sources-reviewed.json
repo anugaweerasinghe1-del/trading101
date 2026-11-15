@@ -1,0 +1,42 @@
+[
+  {
+    "source": "Avalanche",
+    "url": "https://build.avax.network/docs/quick-start/primary-network",
+    "status": 200,
+    "checkedAtUTC": "2026-11-15T03:43:58.112541+00:00",
+    "reviewedSupport": "Smart contract deployment/execution is supported on its documented C-Chain; no fixed speed/fee promise.",
+    "limitedExcerpt": "supports the deployment and execution of smart contracts written in Solidity."
+  },
+  {
+    "source": "Intel",
+    "url": "https://www.intel.com/content/www/us/en/company-overview/company-overview.html",
+    "status": 200,
+    "checkedAtUTC": "2026-11-15T03:35:51.623694+00:00",
+    "reviewedSupport": "Issuer confirms design/manufacturing and foundry activities; no turnaround or investment forecast.",
+    "limitedExcerpt": "We design and manufacture technology"
+  },
+  {
+    "source": "Vanguard",
+    "url": "https://investor.vanguard.com/investment-products/etfs/profile/voo",
+    "status": 200,
+    "checkedAtUTC": "2026-11-15T03:35:51.630695+00:00",
+    "reviewedSupport": "VOO seeks to track the S&P500 Index; no permanent cost advantage claimed.",
+    "limitedExcerpt": "Vanguard S&P 500 ETF seeks to track the investment performance of the S&P 500 Index"
+  },
+  {
+    "source": "Litecoin primary implementation",
+    "url": "https://raw.githubusercontent.com/litecoin-project/litecoin/master/src/primitives/block.cpp",
+    "status": 200,
+    "checkedAtUTC": "2026-11-15T03:35:52.297479+00:00",
+    "reviewedSupport": "Proof-of-work hash function uses Scrypt; no faster/cheaper guarantee.",
+    "limitedExcerpt": "uint256 CBlockHeader::GetPoWHash() const { uint256 thash; scrypt_1024_1_1_256(BEGIN(nVersion), BEGIN(thash)); return thash; }"
+  },
+  {
+    "url": "https://www.boj.or.jp/en/statistics/market/forex/fxdaily/fxlist/fx261113.pdf",
+    "status": 200,
+    "checkedAtUTC": "2026-11-15T03:39:37.709907+00:00",
+    "source": "Bank of Japan current FX release",
+    "reviewedSupport": "The13Nov2026 table labels US dollar/yen spot rates in Yen, supporting yen-per-US-dollar quotation. No rate forecast or hidden carry-position inference.",
+    "limitedExcerpt": "US dollar/yen — Spot rate — Yen; At9:00JST 159.88–90."
+  }
+]

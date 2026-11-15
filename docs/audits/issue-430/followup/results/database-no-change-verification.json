@@ -1,0 +1,35 @@
+{
+  "observedAtUTC": "2026-11-15T03:02:11.369Z",
+  "operationRequested": "Save corrected drafts for three existing published courses via the normal save_course_draft function, with exact document/revision guards. No publish, delete, drop or truncate call.",
+  "attempts": [
+    {
+      "status": "expired",
+      "message": "This confirmation expired after 2 minutes. Call `execute_sql` again to get a new confirmation."
+    },
+    {
+      "status": "expired",
+      "message": "This confirmation expired after 2 minutes. Call `execute_sql` again to get a new confirmation."
+    }
+  ],
+  "verifiedRows": [
+    {
+      "slug": "bitcoin-simulator-practice-trading",
+      "status": "published",
+      "draft_revision": 6,
+      "published_revision": 6
+    },
+    {
+      "slug": "cryptocurrency-price-feeds-and-valuation",
+      "status": "published",
+      "draft_revision": 3,
+      "published_revision": 3
+    },
+    {
+      "slug": "diversification-and-position-sizing",
+      "status": "published",
+      "draft_revision": 3,
+      "published_revision": 3
+    }
+  ],
+  "outcome": "No draft save or publication took effect; all three courses remain published at unchanged draft/published revisions 6/6,3/3,3/3. Further database writes stopped after the user queried the warning."
+}

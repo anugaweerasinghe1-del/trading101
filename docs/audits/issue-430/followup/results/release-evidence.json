@@ -1,0 +1,69 @@
+{
+  "finalizedAtUTC": "2026-11-15T04:08:11.424730+00:00",
+  "pr": 438,
+  "prURL": "https://github.com/anugaweerasinghe1-del/trading101/pull/438",
+  "headSHA": "412697a747c4f84314bea952661cc04db210f1c0",
+  "mergeSHA": "bac6d8e8304355ad45ee3dec4040c023d41786e3",
+  "exactHeadRequiredChecks": [
+    "TradeHQ Required validation",
+    "TradeHQ Phase 3 tests",
+    "TradeHQ Cloudflare compatibility / Cloudflare build and SEO",
+    "TradeHQ Disposable PostgreSQL controls",
+    "Cloudflare Pages"
+  ],
+  "protectedMerge": true,
+  "nativeProduction": {
+    "id": "0cfe5f4c-0c31-40b7-b7b4-f2e87acf27d1",
+    "sha": "bac6d8e8304355ad45ee3dec4040c023d41786e3",
+    "environment": "production",
+    "branch": "main",
+    "status": "success",
+    "createdAt": "2026-11-15T03:51:17.696669Z"
+  },
+  "nativeSource": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43674197024/job/132693099792",
+  "liveChecks": {
+    "runtimeDesktopMobile": 68,
+    "nativeJavaScriptDisabled": 34,
+    "interactive": 11,
+    "metadataExtension": 177,
+    "mobileIntroSupplement": 5
+  },
+  "publicProposalItemsFixed": 18,
+  "sourceSyncPreparedButBlocked": 1,
+  "additionalConfirmedBug": "THQ-430-017",
+  "ads": "DISABLED",
+  "databaseWritesApplied": false,
+  "issueState": "OPEN \u2014 actual source-publication/account/access gates remain",
+  "loops": [
+    {
+      "pr": 437,
+      "headSHA": "027620842380f82a7533ff630743e50f6ed4088d",
+      "mergeSHA": "8ec7b4dbffca60ab306d99936a00e349b670c13d",
+      "nativeProduction": {
+        "id": "4b7694c1-fa34-44f0-a3cb-712cf28c8c77",
+        "sha": "8ec7b4dbffca60ab306d99936a00e349b670c13d",
+        "environment": "production",
+        "branch": "main",
+        "status": "success",
+        "createdAt": "2026-11-15T03:11:58.587873Z"
+      },
+      "nativeSource": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43671260446/job/132684048671",
+      "checksFile": "pr437-before-merge.json"
+    },
+    {
+      "pr": 438,
+      "headSHA": "412697a747c4f84314bea952661cc04db210f1c0",
+      "mergeSHA": "bac6d8e8304355ad45ee3dec4040c023d41786e3",
+      "nativeProduction": {
+        "id": "0cfe5f4c-0c31-40b7-b7b4-f2e87acf27d1",
+        "sha": "bac6d8e8304355ad45ee3dec4040c023d41786e3",
+        "environment": "production",
+        "branch": "main",
+        "status": "success",
+        "createdAt": "2026-11-15T03:51:17.696669Z"
+      },
+      "nativeSource": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43674197024/job/132693099792",
+      "checksFile": "pr438-before-merge.json"
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+[
+  {
+    "file": "scripts/staticCopyExtra.ts",
+    "before": "Most people meet trading through advertising: a broker campaign, an influencer's screenshot, or an app that makes placing an order feel like a game. Almost none of that explains what an order actually does, what position sizing is, or how quickly leverage removes an account. TradeHQ exists to be the boring middle step between that advertising and someone's savings.",
+    "after": "TradeHQ explains order mechanics, costs and the limits of simulation through worked examples and virtual practice."
+  },
+  {
+    "file": "src/pages/About.tsx",
+    "before": "Learning by doing beats learning by reading. Every feature",
+    "after": "Worked examples and virtual exercises complement reading. Every feature"
+  },
+  {
+    "file": "src/lib/tradingGlossary.ts",
+    "before": "The psychology behind the formation tells a story of changing market sentiment across five phases.",
+    "after": "The conventional description follows five price phases; these observations do not establish participant motives."
+  },
+  {
+    "file": "src/lib/tradingGlossary.ts",
+    "before": "a critical sign that buying enthusiasm is waning",
+    "after": "a lower peak that some analysts interpret as weakening upward momentum"
+  },
+  {
+    "file": "src/lib/tradingGlossary.ts",
+    "before": "Ideally, volume is highest during the left shoulder's formation, decreases during the head, and is lowest during the right shoulder — showing diminishing participation in each successive rally. The neckline break should occur on increasing volume.",
+    "after": "Some descriptions compare volume across the shoulders, head and neckline break. State the observation window and volume source; a lower volume does not by itself establish participants’ conviction or predict the next move."
+  },
+  {
+    "file": "src/lib/tradingGlossary.ts",
+    "before": "The formation process tells a clear narrative.",
+    "after": "The conventional description records a sequence of price observations."
+  },
+  {
+    "file": "src/lib/tradingGlossary.ts",
+    "before": "Ideally, volume is highest during the first decline, diminishes during the second decline (showing reduced selling conviction), and expands significantly on the neckline breakout.",
+    "after": "Some descriptions compare volume during the two declines and the neckline break. Lower reported volume is an observation, not proof of reduced selling conviction or a future rebound."
+  },
+  {
+    "file": "src/lib/coursesData.ts",
+    "before": "> Every option position is really four separate bets: on direction, on the speed of that direction, on time, and on volatility.",
+    "after": "> Options have several model sensitivities: delta describes underlying-price sensitivity, gamma describes how delta changes with the underlying price, and theta and vega describe time and volatility sensitivities. Hold other model inputs fixed when interpreting each measure."
+  },
+  {
+    "file": "src/lib/coursesData.ts",
+    "before": "To control the potential effect of one loss",
+    "after": "To define a planned exposure or loss assumption"
+  },
+  {
+    "file": "src/lib/coursesData.ts",
+    "before": "A predefined risk budget limits how much one trade can affect the practice account; there is no universal percentage that fits every trader or strategy.",
+    "after": "A risk budget records a planned exposure or loss assumption. It does not cap actual losses: gaps, execution, costs and contract obligations can produce a different result. No percentage fits every situation."
+  },
+  {
+    "file": "src/lib/coursesData.ts",
+    "before": "question: \"Contango is typical for:\", options: [\"Perishables\", \"Storable commodities in normal markets\", \"Only metals\", \"Only ags\"], correctAnswer: 1, explanation: \"Storage costs push distant deliveries up.\"",
+    "after": "question: \"Which factor can contribute to contango in a storable-commodity example?\", options: [\"A guaranteed shortage\", \"Carrying costs\", \"The ticker symbol alone\", \"A universal price rule\"], correctAnswer: 1, explanation: \"Carrying costs can contribute to higher deferred futures prices. Convenience yield and other conditions can offset those costs; storable commodities are not always in contango.\""
+  },
+  {
+    "file": "src/lib/coursesData.ts",
+    "before": "Hedgers pay for immediate supply.",
+    "after": "Immediate demand for physical supply and convenience yield can contribute to backwardation. The curve alone does not prove a shortage or identify participants’ motives."
+  },
+  {
+    "file": "src/lib/coursesData.ts",
+    "before": "question: \"Why core over headline?\", options: [\"Core is higher\", \"Food/energy too volatile to signal trend\", \"Headline not reported\", \"Only economists care\"], correctAnswer: 1, explanation: \"Stripping volatile components isolates trend.\"",
+    "after": "question: \"What distinguishes core CPI from headline CPI?\", options: [\"Core is always higher\", \"Core excludes food and energy\", \"Headline CPI is not reported\", \"Core predicts future inflation\"], correctAnswer: 1, explanation: \"Core CPI excludes food and energy, whose prices can be volatile. It offers one view of underlying inflation; headline CPI covers the full specified basket. Neither series alone establishes future inflation.\""
+  },
+  {
+    "file": "src/pages/Reviews.tsx",
+    "before": "Submissions are moderated and duplicate-limited, but identity and usage are not independently verified.",
+    "after": "Submissions are moderated and duplicate-limited, but identity and usage are not independently verified. A visitor’s confidence or simulated result is not evidence of readiness for real-money investing."
+  },
+  {
+    "file": "src/lib/dailyChallenge.ts",
+    "before": "Inflation needs hedges (commodities, TIPS), not just diversification.",
+    "after": "Diversification alone does not guarantee protection against inflation. Any proposed inflation-sensitive exposure needs its own assumptions, costs and risks."
+  },
+  {
+    "file": "src/lib/lessonData.ts",
+    "before": "Essential strategies to protect your capital and manage trading risk.",
+    "after": "Compare hypothetical losses, position sizes and the limits of risk controls."
+  },
+  {
+    "file": "src/lib/lessonData.ts",
+    "before": "Learn to read charts and identify trading opportunities using technical indicators.",
+    "after": "Describe historical chart patterns and calculate indicators without treating them as forecasts."
+  },
+  {
+    "file": "src/lib/lessonData.ts",
+    "before": "Define clear objectives and develop a trading plan that works for you.",
+    "after": "Record practice objectives, assumptions and a plan for reviewing simulated decisions."
+  },
+  {
+    "file": "src/components/Quiz.tsx",
+    "before": "Excellent work! You've mastered this lesson.",
+    "after": "Your quiz result is recorded. Review the explanations and test the concepts with another example."
+  },
+  {
+    "file": "src/lib/countryGuides.ts",
+    "before": "q: \"Can Filipino students under 18 use TradeHQ?\", a: \"TradeHQ is a simulated educational site and does not execute real-money trades. Eligibility for a real brokerage account depends on the provider and applicable rules, so check current official/provider requirements rather than relying on this guide.\"",
+    "after": "q: \"Does guest practice establish age eligibility for an account?\", a: \"Public lessons and guest virtual exercises do not require a brokerage account. This is separate from eligibility for a TradeHQ account or a real brokerage account. Optional analytics require confirmation that you are at least 18; visitors under 18 should choose Reject and can still use guest practice. This guide does not grant legal permission to register or establish a guardian-consent process. Check the site terms and current provider requirements for the account involved.\""
+  },
+  {
+    "file": "src/lib/courseEditorialCorrections.ts",
+    "before": "Virtual balances allow no direct exposure to real-money losses, which fundamentally alters how participants test new market strategies. Without the emotional burden of losing actual savings, learners can comfortably explore unfamiliar asset classes and test long-term hypotheses. However, this detachment can occasionally encourage reckless decision-making if users fail to impose personal discipline on their simulated trades. Maintaining a serious mindset while managing virtual funds is essential for developing sustainable analytical habits that translate effectively into future decision-making processes.",
+    "after": "Virtual practice avoids real-money exposure and can help a learner inspect order mechanics and assumptions. It does not reproduce every emotional or financial constraint of a real account. Record what the exercise tested and its limitations rather than treating a practice habit as evidence of future trading ability."
+  },
+  {
+    "file": "src/lib/courseEditorialCorrections.ts",
+    "before": "Maintaining diverse spot holdings requires regular evaluation of individual asset weights relative to your total virtual capital base. If a single asset appreciates rapidly, its percentage share of your portfolio will expand, creating potential concentration imbalances. Recognizing these shifts allows you to practice systematic rebalancing by selling portions of overweight holdings to restore equilibrium. This active maintenance is a vital skill for managing any diversified spot portfolio successfully.",
+    "after": "A price change can alter portfolio weights. Rebalancing is one possible worksheet rule: compare it with leaving weights unchanged under the same price path, costs and chosen targets. Neither approach is universally required or guarantees a successful portfolio."
+  },
+  {
+    "file": "src/lib/courseEditorialCorrections.ts",
+    "before": "Furthermore, remember that simulators operate on simplified models that do not capture every nuance of global liquidity and exchange connectivity. Price feeds may reflect aggregated averages that differ slightly from the execution prices available on specific retail platforms. Understanding these discrepancies prevents overconfidence and encourages continuous learning even after you complete your simulator training. True trading competence is built on a lifelong commitment to rigorous analysis and risk awareness.",
+    "after": "Simulator models do not reproduce every execution, liquidity or custody condition. State the source and observation time of a price input and distinguish an aggregate reference from an available execution quote. A completed lesson or favorable simulated result does not certify trading competence."
+  },
+  {
+    "file": "src/lib/courseEditorialCorrections.ts",
+    "before": "A price change alters marked weights even without an order. A hypothetical drift threshold can be used as a manual review condition, but a breach is not automatically an instruction to trade. Consider the original assumptions, current exposures and transaction costs. TradeHQ does not provide the automatic allocation alert implied by the earlier wording; use a separate calculation and record any decision. No universal percentage threshold fits every portfolio or ensures a particular risk profile.",
+    "after": "A price change alters marked weights even without an order. A hypothetical drift threshold can be a manual review condition; a breach is not automatically an instruction to trade. Consider the assumptions, exposures and costs. TradeHQ does not provide automatic allocation alerts; use a separate calculation and record any decision. No threshold fits every portfolio or ensures a particular outcome."
+  },
+  {
+    "file": "src/lib/assetContent.ts",
+    "before": "Dogecoin (DOGE) started as a meme cryptocurrency but has grown into a widely-accepted payment method. It features fast transaction times, low fees, and a passionate community.",
+    "after": "Dogecoin (DOGE) is a cryptocurrency using proof of work. Payment acceptance, fees and confirmation times depend on the merchant, network conditions and observation time; this simulator does not establish real-world acceptance."
+  },
+  {
+    "file": "src/lib/assetContent.ts",
+    "before": "Chainlink (LINK) is the leading decentralized oracle network, connecting smart contracts with real-world data. It's essential infrastructure for DeFi applications requiring price feeds and external data.",
+    "after": "Chainlink provides oracle services that connect smart contracts with external data. LINK is its network token. A service integration does not establish the value or future return of the token."
+  },
+  {
+    "file": "src/lib/assetContent.ts",
+    "before": "Salesforce Inc. (CRM) is the world's leading customer relationship management platform. It helps businesses manage sales, marketing, and customer service in the cloud with AI-powered analytics.",
+    "after": "Salesforce Inc. (CRM) provides cloud software for customer relationship management, including sales, marketing and customer service. Compare dated company reports rather than inferring market leadership or share returns from the product description."
+  },
+  {
+    "file": "src/lib/assetContent.ts",
+    "before": "JPMorgan Chase is America's largest bank by assets, operating in consumer banking, investment banking, and asset management. It's a bellwether for the financial sector and economic health.",
+    "after": "JPMorgan Chase provides consumer banking, investment banking and asset-management services. Its own results do not represent every bank or establish the direction of the economy."
+  },
+  {
+    "file": "src/lib/assetContent.ts",
+    "before": "Visa operates the world's largest electronic payments network, processing billions of transactions annually. It benefits from the global shift from cash to digital payments.",
+    "after": "Visa operates an electronic payments network. Transaction counts, payment volumes, revenue and share returns are different measures; compare their definitions and reporting periods."
+  },
+  {
+    "file": "src/lib/assetContent.ts",
+    "before": "Mastercard is the second-largest payment processor globally, operating in over 210 countries. It continues growing with digital payment adoption and fintech partnerships.",
+    "after": "Mastercard operates an electronic payments network. Study dated transaction, revenue and cost disclosures; a partnership or increased adoption alone does not establish future profits or share returns."
+  },
+  {
+    "file": "src/lib/assetContent.ts",
+    "before": "Both a precious metal and industrial commodity, used in electronics, solar panels, medicine, and as a store of value. Silver is more volatile than gold and often amplifies gold's movements.",
+    "after": "Silver is a precious metal with industrial uses, including electronics and solar panels. A volatility comparison with gold needs a stated sample, return interval and calculation; their prices need not move together."
+  },
+  {
+    "file": "src/lib/assetContent.ts",
+    "before": "Copper is called 'Dr. Copper' because its price is considered a leading indicator of economic health. It's essential for construction, electronics, EVs, and renewable energy infrastructure.",
+    "after": "Copper is used in construction, electrical equipment and other industrial applications. Its price reflects supply and demand conditions but does not establish future economic growth or market direction."
+  },
+  {
+    "file": "src/lib/assetContent.ts",
+    "before": "Natural gas is extremely volatile seasonally. Practice trading around winter heating demand (Nov-Feb) and summer cooling patterns (Jun-Aug). (Educational simulation only — not financial advice.)",
+    "after": "Compare hypothetical heating demand, cooling demand and supply scenarios over a stated region and period. Seasonal demand does not determine the next price move. Educational simulation only; not financial advice."
+  },
+  {
+    "file": "src/lib/assetContent.ts",
+    "before": "CRM is a SaaS bellwether. Practice trading around tech sector rotation and use it as a gauge for enterprise software spending trends. (Educational simulation only — not financial advice.)",
+    "after": "Compare reported subscription revenue and costs over matching periods. One company’s results do not establish industry-wide spending or the next share-price move. Educational simulation only; not financial advice."
+  },
+  {
+    "file": "src/pages/SectorPillar.tsx",
+    "before": "Artificial intelligence and technology sector leaders driving computing and software development. From GPU manufacturers to cloud platforms, these companies are at the forefront of AI innovation.",
+    "after": "Selected companies involved in processors, software and cloud services. Compare their business segments and dated reports; an AI-related product does not establish market leadership or future returns."
+  },
+  {
+    "file": "src/pages/SectorPillar.tsx",
+    "before": "Decentralized finance and cryptocurrency assets reshaping global finance. From Bitcoin's store of value to Ethereum's smart contract ecosystem, explore the digital asset revolution.",
+    "after": "Selected cryptocurrencies and smart-contract networks for virtual practice. Their designs, uses and risks differ; a network narrative does not establish token value or investment suitability."
+  },
+  {
+    "file": "src/pages/SectorPillar.tsx",
+    "before": "The technology sector titans shaping our digital future. From search and social media to cloud computing and e-commerce, these companies participate in different parts of the technology sector.",
+    "after": "Selected companies operating in search, social media, cloud computing and e-commerce. Compare their distinct business segments rather than treating technology companies as one uniform exposure."
+  },
+  {
+    "file": "src/pages/SectorPillar.tsx",
+    "before": "Global currency markets reflecting macroeconomic conditions and central bank policies. Master forex trading with major pairs driven by Fed, ECB, and BOJ decisions.",
+    "after": "Use major currency pairs to calculate exchange-rate changes and compare hypothetical policy scenarios. Central-bank announcements do not determine the next move; practice does not certify trading mastery."
+  },
+  {
+    "file": "src/pages/SectorPillar.tsx",
+    "before": "Physical commodities from precious metals to energy. Gold for inflation hedging, oil for energy exposure, and industrial metals as economic indicators.",
+    "after": "Compare precious metals, energy and industrial commodities under stated supply, demand and price assumptions. Gold is not a guaranteed inflation hedge, and commodity prices do not establish future economic conditions."
+  },
+  {
+    "file": "src/lib/countryGuides.ts",
+    "evidence": "Final guarded PR diff; source text and functional tests",
+    "scope": "Owner-authorized clarification / account-inclusive exposure / in-chart tooltip"
+  },
+  {
+    "file": "src/pages/Privacy.tsx",
+    "evidence": "Final guarded PR diff; source text and functional tests",
+    "scope": "Owner-authorized clarification / account-inclusive exposure / in-chart tooltip"
+  },
+  {
+    "file": "src/lib/portfolioExposure.ts",
+    "evidence": "Final guarded PR diff; source text and functional tests",
+    "scope": "Owner-authorized clarification / account-inclusive exposure / in-chart tooltip"
+  },
+  {
+    "file": "src/components/portfolio/AIInsightSummary.tsx",
+    "evidence": "Final guarded PR diff; source text and functional tests",
+    "scope": "Owner-authorized clarification / account-inclusive exposure / in-chart tooltip"
+  },
+  {
+    "file": "src/components/PortfolioChart.tsx",
+    "evidence": "Final guarded PR diff; source text and functional tests",
+    "scope": "Owner-authorized clarification / account-inclusive exposure / in-chart tooltip"
+  }
+]
