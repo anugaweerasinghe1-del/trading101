@@ -48,20 +48,21 @@ function loadConsentedAnalytics() {
 
 export function ConsentBanner() {
   const [choice, setChoice] = useState<ConsentChoice | null>(readChoice);
-  const [isAdult, setIsAdult] = useState(false);
 
   useEffect(() => {
     if (choice === "accepted") loadConsentedAnalytics();
   }, [choice]);
 
   useEffect(() => {
-    const reopen = () => { setIsAdult(false); setChoice(null); };
+    const reopen = () => setChoice(null);
     window.addEventListener("tradehq:open-consent", reopen);
     return () => window.removeEventListener("tradehq:open-consent", reopen);
   }, []);
 
-  const save = (next: ConsentChoice) => {
-    if (next === "accepted" && !isAdult) return;
+  // The accept button explicitly confirms adulthood and optional analytics
+  // consent in one action; Reject never asks for an age declaration.
+  const save = (next: ConsentChoice, adultConfirmed = false) => {
+    if (next === "accepted" && !adultConfirmed) return;
     const previous = readChoice();
     try {
       window.localStorage.setItem(STORAGE_KEY, next);
@@ -74,7 +75,6 @@ export function ConsentBanner() {
       if (next === "accepted") return;
     }
     setChoice(next);
-    setIsAdult(false);
     if (next === "rejected" && previous === "accepted") {
       (window as any).amplitude?.setOptOut?.(true);
       // Unload initialized SDK listeners; deleting its script would not stop it.
@@ -85,36 +85,24 @@ export function ConsentBanner() {
   if (choice) return null;
 
   return (
-    <div role="dialog" aria-label="Optional analytics choices"
-      className="fixed inset-x-3 bottom-[calc(5rem+env(safe-area-inset-bottom,0px))] z-[120] mx-auto max-h-[65dvh] overflow-y-auto rounded-2xl border border-border bg-background/95 p-3 shadow-2xl backdrop-blur-xl md:inset-x-auto md:bottom-5 md:right-5 md:mx-0 md:w-[min(25rem,calc(100vw-2.5rem))] md:p-4">
-      <p className="text-sm font-semibold text-foreground">Help improve TradeHQ? (optional)</p>
-      <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-        If you opt in, Amplitude measures limited Practice Arena activity and whether a
-        leaderboard visit leads to a new account within seven days. It uses a browser
-        identifier and network metadata, but receives no answers, portfolio data,
-        names or emails from our events. There is no session replay or automatic
-        click recording. You can decline without losing any features.
-        {" "}<Link to="/privacy" className="text-primary underline">Privacy details</Link>.
+    <section role="region" aria-label="Optional analytics choices"
+      className="fixed inset-x-3 bottom-[calc(5rem+env(safe-area-inset-bottom,0px))] z-[120] mx-auto max-w-[22rem] rounded-xl border border-border bg-background/95 p-2.5 shadow-lg backdrop-blur-xl md:inset-x-auto md:bottom-4 md:right-4 md:mx-0 md:w-[22rem]">
+      <p className="text-[11px] leading-4 text-muted-foreground">
+        <strong className="font-semibold text-foreground">Optional analytics.</strong>{" "}
+        Help improve practice and sign-ups using a browser ID. No answers or trades.{" "}
+        <Link to="/privacy" className="font-medium text-primary underline underline-offset-2">Details</Link>
       </p>
-      <label className="mt-3 flex cursor-pointer items-start gap-2.5 rounded-xl border border-border bg-muted/30 p-3 text-xs leading-relaxed">
-        <input type="checkbox" checked={isAdult} onChange={e => setIsAdult(e.target.checked)}
-          className="mt-0.5 h-4 w-4 accent-primary" />
-        <span>I am 18 or older and agree to this optional analytics. Under 18? Choose Reject; TradeHQ still works.</span>
-      </label>
-      <div className="mt-3 flex flex-wrap gap-2">
+      <div className="mt-2 flex gap-2">
         <button type="button" onClick={() => save("rejected")}
-          className="min-h-11 rounded-lg border border-border px-4 py-2 text-xs font-semibold text-foreground hover:bg-muted">
-          Reject analytics
+          className="min-h-10 flex-1 rounded-lg border border-border px-2 text-xs font-semibold text-foreground hover:bg-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
+          Reject
         </button>
-        <button type="button" disabled={!isAdult} onClick={() => save("accepted")}
-          className="min-h-11 rounded-lg bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-40">
-          Accept optional analytics
+        <button type="button" onClick={() => save("accepted", true)}
+          aria-label="I confirm I am 18 or older and consent to optional analytics"
+          className="min-h-10 flex-[2] rounded-lg bg-primary px-2 text-xs font-semibold text-primary-foreground hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
+          I'm 18+ · Accept analytics
         </button>
       </div>
-      <p className="mt-2 text-[10px] leading-relaxed text-muted-foreground">
-        Your choice is saved in this browser. Change it later from the footer.
-        Advertising privacy choices are separate where legally required.
-      </p>
-    </div>
+    </section>
   );
 }
