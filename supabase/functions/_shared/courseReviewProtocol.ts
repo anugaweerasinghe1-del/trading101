@@ -21,7 +21,9 @@ export function parseCourseReviewResponse(raw: string): { verdict: "PASS" | "BLO
   for (const [key, field] of [["inputTokens", "promptTokenCount"], ["outputTokens", "candidatesTokenCount"]] as const)
     if (typeof usage?.[field] === "number" && Number.isSafeInteger(usage[field])) details[key] = usage[field] as number;
   const fail = (code: CourseReviewDiagnostics["code"]): never => { throw new CourseReviewResponseError({ ...details, code }); };
-  const candidate = Array.isArray(envelope.candidates) ? envelope.candidates[0] : null;
+  if (!Array.isArray(envelope.candidates) || !envelope.candidates.length) return fail("NO_CANDIDATE");
+  if (envelope.candidates.length !== 1) return fail("INVALID_ENVELOPE");
+  const candidate = envelope.candidates[0];
   if (!candidate || typeof candidate !== "object") return fail("NO_CANDIDATE");
   const finish = candidate.finishReason;
   if (["STOP", "MAX_TOKENS", "SAFETY", "RECITATION", "OTHER"].includes(finish)) details.finishReason = finish;
