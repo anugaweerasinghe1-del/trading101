@@ -1,6 +1,6 @@
 import { validateBatch, validateExercises } from "./dailyPractice.ts";
 import { validateCourseDocument } from "./courseDocument.ts";
-import { CourseReviewBlockedError } from "./courseReviewFeedback.ts";
+import { CourseReviewBlockedError, CourseReviewResponseError } from "./courseReviewFeedback.ts";
 
 export interface CourseAdminStore {
   daily?: (action: string, body: Record<string, unknown>) => Promise<unknown>;
@@ -117,7 +117,8 @@ export function createCourseAdminHandler(options: {
       const known = ["Course changed", "Course URL", "Published lesson", "Course is incomplete", "Course not found", "Daily bank",
         "Independent course review", "Independent course quality review", "Free AI quota", "Course publication configuration", "Too few verified sources"];
       return response({ code, error: known.some(s => message.startsWith(s)) ? message : "Could not save the course. Please retry.",
-        ...(error instanceof CourseReviewBlockedError ? { reviewFindings: error.findings } : {}) }, 409);
+        ...(error instanceof CourseReviewBlockedError ? { reviewFindings: error.findings } : {}),
+        ...(error instanceof CourseReviewResponseError ? { reviewDiagnostics: error.diagnostics } : {}) }, 409);
     }
   };
 }

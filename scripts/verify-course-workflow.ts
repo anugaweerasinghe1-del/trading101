@@ -283,7 +283,7 @@ const fetcher = (async (url: string | URL | Request, init?: RequestInit) => {
       return new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: JSON.stringify(generatedFixture) }] } }] }));
     }
     assert.ok(prompt.task.includes("Independent"));
-    return new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: JSON.stringify({ verdict: "PASS", findings: [] }) }] } }] }));
+    return new Response(JSON.stringify({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: JSON.stringify({ decision: { verdict: "PASS", findings: [] } }) }] } }] }));
   }
   return new Response("<main>" + "Trusted test-only reference. ".repeat(100) + "</main>", { headers: { "Content-Type": "text/html" } });
 }) as typeof fetch;
