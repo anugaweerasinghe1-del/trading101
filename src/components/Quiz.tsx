@@ -64,7 +64,7 @@ export function Quiz({ lesson, onComplete }: QuizProps) {
           <div className="text-6xl font-bold text-primary mb-2">{percentage}%</div>
           <p className="text-muted-foreground">
             {percentage >= 80
-              ? "You answered these questions correctly. Review the explanations and test the concepts with another example."
+              ? "Your quiz result is recorded. Review the explanations and test the concepts with another example."
               : percentage >= 60
               ? "Good job! Review the material for better retention."
               : "Keep learning! Try reviewing the lesson again."}
