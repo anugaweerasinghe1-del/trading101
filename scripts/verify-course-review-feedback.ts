@@ -1,13 +1,13 @@
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {independentCourseReview,readCoursePublicationReferences} from '../supabase/functions/_shared/courseGenerator';
-import {CourseReviewBlockedError,readCourseReviewFindings} from '../supabase/functions/_shared/courseReviewFeedback';
+import {CourseReviewBlockedError,CourseReviewResponseError,readCourseReviewFindings} from '../supabase/functions/_shared/courseReviewFeedback';
 import {createCourseAdminHandler} from '../supabase/functions/_shared/courseAdmin';
 import {adminFailureDetails} from '../src/lib/adminFunctionError';
 import {requireExactRevisionReview} from '../supabase/functions/_shared/coursePublicationGate';
 const document=JSON.parse(readFileSync('scripts/fixtures/bitcoin-editorial.json','utf8')).document;
 const findings=['Lesson 2: qualify the statement about emotional stakes.','Lesson 3: verify the cited drawdown definition.'];
-const responseFor=(decision:unknown):typeof fetch=>async()=>new Response(JSON.stringify({candidates:[{content:{parts:[{text:JSON.stringify(decision)}]}}]}));
+const responseFor=(decision:unknown):typeof fetch=>async()=>new Response(JSON.stringify({candidates:[{finishReason:"STOP",content:{parts:[{text:JSON.stringify({decision})}]}}]}));
 let blocked:CourseReviewBlockedError|undefined;
 try{await independentCourseReview(document,[],{model:'test-only',apiKey:'PRIVATE_TEST_KEY'},responseFor({verdict:'BLOCK',findings}));}catch(error){assert.ok(error instanceof CourseReviewBlockedError);blocked=error;}
 assert.deepEqual(blocked?.findings,findings);
@@ -17,7 +17,7 @@ assert.equal(result.status,409);const wire=await result.json();assert.equal(wire
 assert.deepEqual((await adminFailureDetails({context:new Response(JSON.stringify(wire),{status:409})})).reviewFindings,findings);
 await assert.rejects(requireExactRevisionReview(document,{},async()=>{throw blocked;}),error=>error===blocked,'Exact-revision gate must preserve structured rejection');
 for(const invalid of [null,{},[],{verdict:['PASS'],findings:[]},{verdict:{toString:'PASS'},findings:[]},{verdict:'UNKNOWN',findings:[]},{verdict:'BLOCK',findings:[]},{verdict:'PASS',findings:['conflicting result']},{verdict:'BLOCK',findings:[null]},{verdict:'BLOCK',findings:['\u0000']},{verdict:'BLOCK',findings:['x'.repeat(601)]}]){
- await assert.rejects(independentCourseReview(document,[],{model:'fixture',apiKey:'fixture'},responseFor(invalid)),/review returned malformed data/);
+ await assert.rejects(independentCourseReview(document,[],{model:'fixture',apiKey:'fixture'},responseFor(invalid)),error=>error instanceof CourseReviewResponseError);
 }
 await independentCourseReview(document,[],{model:'fixture',apiKey:'fixture'},responseFor({verdict:'PASS',findings:[]}));
 assert.deepEqual(readCourseReviewFindings(['x'.repeat(601)]),[]);assert.deepEqual(readCourseReviewFindings(Array(9).fill('x')),[]);

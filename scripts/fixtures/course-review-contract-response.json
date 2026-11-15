@@ -1,0 +1,57 @@
+{
+  "scope": "One explicitly approved diagnostic, request11247; demonstrates the old response-contract mismatch. Not a publication/content approval attestation.",
+  "oldSchema": {
+    "type": "object",
+    "properties": {
+      "verdict": {
+        "type": "string",
+        "enum": [
+          "PASS",
+          "BLOCK"
+        ]
+      },
+      "findings": {
+        "type": "array",
+        "maxItems": 8,
+        "items": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 600
+        }
+      }
+    },
+    "required": [
+      "verdict",
+      "findings"
+    ],
+    "additionalProperties": false
+  },
+  "providerEnvelope": {
+    "candidates": [
+      {
+        "finishReason": "STOP",
+        "content": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "{\n  \"verdict\": \"PASS\",\n  \"findings\": [\n    \"All core claims in lessons and quizzes are well-supported by the provided reference excerpts and ground truth constraints.\",\n    \"Arithmetic examples, including fee-inclusive purchase costs, percentages, and drawdowns, were independently verified and are correct.\",\n    \"The content maintains appropriate disclaimer boundaries, explicitly emphasizing virtual mechanics and educational safety without making real-world earnings or performance guarantees.\"\n  ]\n}",
+              "thoughtSignature": "EmAKXgFpFH0ThOoPYG/VW2425eMzkBLajdzzMMkjH6yUZ5h0Dy5L9wZgglgTIYXLSf/Qm5MsBjJHdB+ey+qbv7J+YniefqFi/umwWf/2i9qLHjbqWhg34Kn/vK+RiCSUw2s="
+            }
+          ]
+        }
+      }
+    ],
+    "usageMetadata": {
+      "serviceTier": "standard",
+      "totalTokenCount": 7542,
+      "promptTokenCount": 7444,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 7444
+        }
+      ],
+      "candidatesTokenCount": 98
+    }
+  }
+}

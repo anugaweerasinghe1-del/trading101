@@ -1,6 +1,6 @@
 {
   "createdAtUTC": "2026-11-15T06:11:06.375162+00:00",
-  "phase": "SOURCE-SYNCHRONIZATION-PREREQUISITE",
+  "phase": "SOURCE-PUBLICATION-REVIEW-SERVICE-CONTRACT-REPAIR",
   "prior19status": "18 verified public remedies; R07 drafts9/5/5 saved, Bitcoin source newly corrected; actual publication and live parity still pending",
   "expectedDraftRevisions": {
     "bitcoin-simulator-practice-trading": 9,
@@ -18,6 +18,14 @@
   "queueStatuses": "QUEUED-UNREAD",
   "doNotAdvanceUntil": "Actual source publication and live verification establish19/19; then begin the first page loop",
   "reviewer": "Codex assistant; prior contributor; no claim of independent human/Google review",
-  "updatedAtUTC": "2026-11-15T09:21:24.064622+00:00",
-  "ownerRetryResult": "2026-11-15T08:59:23.219Z COURSE_REVIEW_BLOCKED; former handler discarded individual findings"
+  "updatedAtUTC": "2026-11-15T10:58:16.069270+00:00",
+  "ownerRetryResult": "2026-11-15T08:59:23.219Z COURSE_REVIEW_BLOCKED; former handler discarded individual findings",
+  "approvedDiagnostic": {
+    "requestsAuthorized": 1,
+    "requestsMade": 1,
+    "requestId": 11247,
+    "publicationPerformed": false,
+    "result": "HTTP200/STOP; PASS with three positive findings violates old local contract despite satisfying old provider schema",
+    "remainingDiagnosticRequestsAuthorized": 0
+  }
 }

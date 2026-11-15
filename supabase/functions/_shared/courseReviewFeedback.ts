@@ -14,3 +14,36 @@ export class CourseReviewBlockedError extends Error {
     this.findings = readCourseReviewFindings(findings);
   }
 }
+
+export const reviewFailureCodes = ["REQUEST_FAILED", "REQUEST_TIMEOUT", "HTTP_ERROR", "READ_FAILED", "INVALID_ENVELOPE", "NO_CANDIDATE", "OUTPUT_TRUNCATED", "PROVIDER_BLOCKED", "INCOMPLETE_RESPONSE", "INVALID_JSON", "MISSING_DECISION", "INVALID_VERDICT", "INVALID_FINDINGS", "PASS_WITH_FINDINGS", "BLOCK_WITHOUT_FINDINGS"] as const;
+export interface CourseReviewDiagnostics {
+  code: typeof reviewFailureCodes[number];
+  httpStatus?: number;
+  finishReason?: "STOP" | "MAX_TOKENS" | "SAFETY" | "RECITATION" | "OTHER";
+  outputCharacters?: number;
+  findingCount?: number;
+  inputTokens?: number;
+  outputTokens?: number;
+}
+export function readCourseReviewDiagnostics(value: unknown): CourseReviewDiagnostics | null {
+  if (!value || typeof value !== "object") return null;
+  const input = value as Record<string, unknown>;
+  if (!reviewFailureCodes.includes(input.code as CourseReviewDiagnostics["code"])) return null;
+  const result: CourseReviewDiagnostics = { code: input.code as CourseReviewDiagnostics["code"] };
+  for (const key of ["httpStatus", "outputCharacters", "findingCount", "inputTokens", "outputTokens"] as const) {
+    const n = input[key];
+    if (typeof n === "number" && Number.isSafeInteger(n) && n >= 0 && n <= 1e9
+      && (key !== "httpStatus" || (n >= 100 && n <= 599))) result[key] = n;
+  }
+  if (typeof input.finishReason === "string" && ["STOP", "MAX_TOKENS", "SAFETY", "RECITATION", "OTHER"].includes(input.finishReason))
+    result.finishReason = input.finishReason as CourseReviewDiagnostics["finishReason"];
+  return result;
+}
+export class CourseReviewResponseError extends Error {
+  readonly diagnostics: CourseReviewDiagnostics;
+  constructor(diagnostics: CourseReviewDiagnostics) {
+    super("Independent course review unavailable. Draft withheld" + (diagnostics.httpStatus ? " (HTTP " + diagnostics.httpStatus + ")" : "") + ".");
+    this.name = "CourseReviewResponseError";
+    this.diagnostics = readCourseReviewDiagnostics(diagnostics)!;
+  }
+}

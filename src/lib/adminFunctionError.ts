@@ -1,8 +1,8 @@
-import { readCourseReviewFindings } from "../../supabase/functions/_shared/courseReviewFeedback";
+import { readCourseReviewFindings, readCourseReviewDiagnostics, type CourseReviewDiagnostics } from "../../supabase/functions/_shared/courseReviewFeedback";
 /** Read only bounded, structured failure metadata; never display raw provider payloads. */
-export async function adminFailureDetails(error: unknown, data?: unknown): Promise<{ status?: number; code: string; reason: string; reviewFindings: string[] }> {
+export async function adminFailureDetails(error: unknown, data?: unknown): Promise<{ status?: number; code: string; reason: string; reviewFindings: string[]; reviewDiagnostics: CourseReviewDiagnostics | null }> {
   const context = (error as { context?: Response } | null)?.context;
-  let body = data as { code?: unknown; error?: unknown; reviewFindings?: unknown } | null;
+  let body = data as { code?: unknown; error?: unknown; reviewFindings?: unknown; reviewDiagnostics?: unknown } | null;
   if (context && typeof context.clone === 'function') {
     try {
       const raw = await context.clone().text();
@@ -12,11 +12,12 @@ export async function adminFailureDetails(error: unknown, data?: unknown): Promi
   return { status: context?.status,
     code: typeof body?.code === 'string' ? body.code : '',
     reason: typeof body?.error === 'string' ? body.error : '',
-    reviewFindings: body?.code === 'COURSE_REVIEW_BLOCKED' ? readCourseReviewFindings(body?.reviewFindings) : [] };
+    reviewFindings: body?.code === 'COURSE_REVIEW_BLOCKED' ? readCourseReviewFindings(body?.reviewFindings) : [],
+    reviewDiagnostics: body?.code === 'COURSE_REVIEW_UNAVAILABLE' ? readCourseReviewDiagnostics(body?.reviewDiagnostics) : null };
 }
 
 export async function courseAdminError(error: unknown, data?: unknown): Promise<string> {
-  const { status, code, reason } = await adminFailureDetails(error, data);
+  const { status, code, reason, reviewDiagnostics } = await adminFailureDetails(error, data);
   if (status === 401) return 'The admin master key was rejected. Lock this desk and unlock with the current key.';
   if (status === 403) return 'This action requires the registered owner’s current website login alongside the admin key. No publication was authorized.';
   if (status === 429) return 'The service is rate-limited. Wait before trying again; no automatic retry was made.';
@@ -32,6 +33,12 @@ export async function courseAdminError(error: unknown, data?: unknown): Promise<
     if (code === 'COURSE_REVIEW_QUOTA' || reason.startsWith('Free AI quota'))
       return 'The free review service has exhausted its quota. Publication is blocked. Keep the draft private and wait for quota recovery; no paid fallback was used.';
     if (code === 'COURSE_REVIEW_UNAVAILABLE' || reason.startsWith('Independent course review')) {
+      if (reviewDiagnostics?.code === 'PASS_WITH_FINDINGS')
+        return 'The reviewer combined PASS with findings, which violates its response contract. Publication is blocked; no finding was ignored.';
+      if (reviewDiagnostics?.code === 'OUTPUT_TRUNCATED')
+        return 'The review response reached its output limit before completion. Publication is blocked until a complete verdict is returned.';
+      if (reviewDiagnostics && !['REQUEST_FAILED', 'REQUEST_TIMEOUT', 'HTTP_ERROR'].includes(reviewDiagnostics.code))
+        return 'The review response failed validation (' + reviewDiagnostics.code + '). Publication is blocked. Keep the draft private; this is a service-response error.';
       const httpStatus = reason.match(/\(HTTP ([45]\d{2})\)/)?.[1];
       return 'The independent review service ' + (httpStatus ? 'returned HTTP ' + httpStatus : 'is unavailable or returned an invalid response')
         + '. Publication is blocked. Keep the draft private and check the configured model and service before retrying.';

@@ -1,0 +1,29 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {fromJSONSchema} from 'zod';
+import {courseReviewResponseSchema,parseCourseReviewResponse} from '../supabase/functions/_shared/courseReviewProtocol';
+import {CourseReviewResponseError,readCourseReviewDiagnostics} from '../supabase/functions/_shared/courseReviewFeedback';
+import {createCourseAdminHandler} from '../supabase/functions/_shared/courseAdmin';
+import {adminFailureDetails,courseAdminError} from '../src/lib/adminFunctionError';
+const probe=JSON.parse(readFileSync('scripts/fixtures/course-review-contract-response.json','utf8'));
+const actual=JSON.parse(probe.providerEnvelope.candidates[0].content.parts[0].text);
+assert.equal(fromJSONSchema(probe.oldSchema).safeParse(actual).success,true,'The actual contradictory response was permitted by the old provider schema');
+const valid=fromJSONSchema(courseReviewResponseSchema);
+assert.equal(valid.safeParse({decision:actual}).success,false,'PASS with positive notes must be structurally impossible under the new contract');
+for(const decision of [{verdict:'PASS',findings:[]},{verdict:'BLOCK',findings:['Lesson 2: verify the fee arithmetic.']}])assert.equal(valid.safeParse({decision}).success,true);
+for(const decision of [{verdict:'PASS',findings:['Even positive notes are not an empty concerns list.']},{verdict:'BLOCK',findings:[]},{verdict:['PASS'],findings:[]}])assert.equal(valid.safeParse({decision}).success,false);
+const envelope=(value:unknown,finishReason='STOP')=>JSON.stringify({candidates:[{finishReason,content:{parts:[{text:JSON.stringify(value)}]}}],usageMetadata:{promptTokenCount:100,candidatesTokenCount:50}});
+assert.deepEqual(parseCourseReviewResponse(envelope({decision:{verdict:'PASS',findings:[]}})),{verdict:'PASS',findings:[]});
+assert.equal(parseCourseReviewResponse(envelope({decision:{verdict:'BLOCK',findings:['A specific concern.']}})).verdict,'BLOCK');
+for(const [raw,code] of [[envelope({decision:actual}),'PASS_WITH_FINDINGS'],[envelope({decision:{verdict:'BLOCK',findings:[]}}),'BLOCK_WITHOUT_FINDINGS'],[envelope({decision:{verdict:'PASS',findings:[]}},'MAX_TOKENS'),'OUTPUT_TRUNCATED'],[envelope({decision:{verdict:'PASS',findings:[]}},'SAFETY'),'PROVIDER_BLOCKED'],[JSON.stringify({candidates:[]}),'NO_CANDIDATE'],['not json','INVALID_ENVELOPE'],[JSON.stringify({candidates:[{finishReason:'STOP',content:{parts:[{text:'not json'}]}}]}),'INVALID_JSON']]){
+ assert.throws(()=>parseCourseReviewResponse(raw),error=>error instanceof CourseReviewResponseError&&error.diagnostics.code===code,code);
+}
+assert.throws(()=>parseCourseReviewResponse(JSON.stringify(probe.providerEnvelope)),error=>error instanceof CourseReviewResponseError&&error.diagnostics.code==='MISSING_DECISION','Legacy responses are never silently converted into approvals');
+const failure=new CourseReviewResponseError({code:'PASS_WITH_FINDINGS',findingCount:3,finishReason:'STOP'});
+const handler=createCourseAdminHandler({getKey:()=> 'fixture-key',rateLimit:async()=>true,authorizePublish:async()=>true,store:{list:async()=>[],save:async()=>({}),publish:async()=>{throw failure;},reject:async()=>({}),settings:async()=>({}),configure:async()=>({}),run:async()=>({})}});
+const response=await handler(new Request('https://example.test',{method:'POST',headers:{'x-admin-key':'fixture-key'},body:JSON.stringify({action:'publish',id:'12345678-1234-1234-1234-123456789012',revision:9,reviewed:true,reviewer:'Fixture'})}));
+assert.equal(response.status,409);const wire=await response.json();assert.equal(wire.code,'COURSE_REVIEW_UNAVAILABLE');assert.equal(wire.reviewDiagnostics.code,'PASS_WITH_FINDINGS');
+const error={context:new Response(JSON.stringify(wire),{status:409})};assert.equal((await adminFailureDetails(error)).reviewDiagnostics?.findingCount,3);assert.match(await courseAdminError(error),/combined PASS with findings/);
+assert.match(await courseAdminError(null,{...wire,reviewDiagnostics:{code:'OUTPUT_TRUNCATED'}}),/could not confirm/,'Transport uncertainty cannot be rewritten as a known HTTP result');
+assert.equal(readCourseReviewDiagnostics({code:'PRIVATE_KEY'}),null);assert.deepEqual(readCourseReviewDiagnostics({code:'INVALID_JSON',apiKey:'PRIVATE_KEY',finishReason:['STOP'],outputTokens:-1}),{code:'INVALID_JSON'});
+console.log('PASS actual approved-probe mismatch reproduced; conditional schema separates PASS/empty and BLOCK/nonempty; contradictions, truncation and malformed data remain blocked; bounded diagnostics reach the browser without credentials. All tests offline; no model call.');
