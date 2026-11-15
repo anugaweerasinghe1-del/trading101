@@ -1,0 +1,26 @@
+{
+  "schema": "tradehq-cloudflare-account-observation-v1",
+  "observedAt": "2026-11-15T09:45:21.112Z",
+  "project": "tradehq-preview",
+  "nativeTokenActive": true,
+  "activeProduction": {
+    "id": "e6d2862f-4a0e-4871-9426-c01c3d96f745",
+    "sha": "7845da3df1ded6324dfff31bc70300e19e9ef404",
+    "environment": "production",
+    "branch": "main",
+    "status": "success",
+    "createdAt": "2026-11-15T09:35:04.619002Z"
+  },
+  "previousSuccessfulProduction": {
+    "id": "e02ddc5e-2a68-482f-8c70-efa81943b19b",
+    "sha": "cee844f7cc5093896b63ce01f4dcb8f14808f43d",
+    "environment": "production",
+    "branch": "main",
+    "status": "success",
+    "createdAt": "2026-11-15T08:39:12.673131Z"
+  },
+  "sourceGitHubRun": 43699948723,
+  "sourceGitHubJob": 132771107116,
+  "sourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43699948723/job/132771107116",
+  "note": "Filtered deployment identity proof; account billing/usage data excluded."
+}

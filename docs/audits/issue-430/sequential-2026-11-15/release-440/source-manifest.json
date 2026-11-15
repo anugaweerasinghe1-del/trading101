@@ -1,0 +1,30 @@
+{
+  "retrievedAtUTC": "2026-11-15T09:04:38.828Z",
+  "sources": [
+    {
+      "sourceURL": "https://www.morningstar.com/investing-terms/maximum-drawdown",
+      "error": "page.goto: net::ERR_HTTP_RESPONSE_CODE_FAILURE at https://www.morningstar.com/investing-terms/maximum-drawdown\nCall log:\n\u001b[2m  - navigating to \"https://www.morningstar.com/investing-terms/maximum-drawdown\", waiting until \"domcontentloaded\"\u001b[22m\n"
+    },
+    {
+      "sourceURL": "https://www.finra.org/investors/investing/investment-products/crypto-assets",
+      "finalURL": "https://www.finra.org/investors/investing/investment-products/crypto-assets",
+      "status": 403,
+      "characters": 690,
+      "textSHA256": "787489a0bb12de4eadedb4b903d5a7a6a85b941d4864a34a01f82613d3f18645"
+    },
+    {
+      "sourceURL": "https://www.coingecko.com/en/methodology",
+      "finalURL": "https://www.coingecko.com/en/methodology",
+      "status": 200,
+      "characters": 13565,
+      "textSHA256": "f32dfeb3fdfb736c30b6d48d7623d2f45d039b1b85809ed57a1030d2b8402a40"
+    },
+    {
+      "sourceURL": "https://docs.coingecko.com/reference/simple-price",
+      "finalURL": "https://docs.coingecko.com/reference/simple-price",
+      "status": 200,
+      "characters": 3387,
+      "textSHA256": "d002408cb2e4a0085df8d36812c1a7b55c4cf3b190e92191f27459dae87818ef"
+    }
+  ]
+}

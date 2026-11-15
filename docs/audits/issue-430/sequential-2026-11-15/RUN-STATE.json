@@ -18,6 +18,38 @@
   "queueStatuses": "QUEUED-UNREAD",
   "doNotAdvanceUntil": "Actual source publication and live verification establish19/19; then begin the first page loop",
   "reviewer": "Codex assistant; prior contributor; no claim of independent human/Google review",
-  "updatedAtUTC": "2026-11-15T09:21:24.064622+00:00",
-  "ownerRetryResult": "2026-11-15T08:59:23.219Z COURSE_REVIEW_BLOCKED; former handler discarded individual findings"
+  "updatedAtUTC": "2026-11-15T09:46:10.480Z",
+  "ownerRetryResult": "2026-11-15T08:59:23.219Z COURSE_REVIEW_BLOCKED; former handler discarded individual findings",
+  "prerequisiteRepairRelease": {
+    "pullRequest": 440,
+    "mergeSHA": "7845da3df1ded6324dfff31bc70300e19e9ef404",
+    "nativeCloudflareProduction": "e6d2862f-4a0e-4871-9426-c01c3d96f745",
+    "nativeCloudflareVerified": true,
+    "supabaseFunctionVersion": 20,
+    "deployedSourceFilesMatched": 11,
+    "positiveOwnerRetryRevision9": "PENDING"
+  },
+  "actualPublishedState": [
+    {
+      "slug": "bitcoin-simulator-practice-trading",
+      "published_revision": 6,
+      "published_at": "2026-11-02 15:57:48.755407+00",
+      "draft_revision": 9,
+      "status": "draft"
+    },
+    {
+      "slug": "cryptocurrency-price-feeds-and-valuation",
+      "published_revision": 3,
+      "published_at": "2026-10-09 15:47:17.970732+00",
+      "draft_revision": 5,
+      "status": "draft"
+    },
+    {
+      "slug": "diversification-and-position-sizing",
+      "published_revision": 3,
+      "published_at": "2026-10-09 15:45:01.003475+00",
+      "draft_revision": 5,
+      "status": "draft"
+    }
+  ]
 }

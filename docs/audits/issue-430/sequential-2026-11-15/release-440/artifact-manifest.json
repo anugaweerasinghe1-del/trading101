@@ -1,0 +1,290 @@
+{
+  "scope": "PR440 technical/source-text prerequisite evidence; zero new-audit URLs completed.",
+  "files": [
+    {
+      "path": "REPORT.md",
+      "bytes": 5990,
+      "sha256": "f178ab00c5cf8b81bb0b9a420acaca1f4be8f49cacdcdc7714191a642a9468d3"
+    },
+    {
+      "path": "additional-source-manifest.json",
+      "bytes": 383,
+      "sha256": "323f5da9de63dc4d800f12d1e9b7bc01f5ab0ca5f219bf8c291c6439f27d7d2d"
+    },
+    {
+      "path": "admin-tests.txt",
+      "bytes": 462,
+      "sha256": "3f883c6c5fa7fc553220c05a5e56fe9a39dc525efc1a03be4f5aa7afc3052d10"
+    },
+    {
+      "path": "adminFunctionError-SZZrNVon.js",
+      "bytes": 3347,
+      "sha256": "b3868a137ccf1c0f1001d9936d00b406395d6725ac3299d6121d910d298e24b4"
+    },
+    {
+      "path": "allocation-source-manifest.json",
+      "bytes": 422,
+      "sha256": "b8b67a7f7dea3a5a38f7b806b9664f1fb7b87db96ae118312b4afa2db9592e0a"
+    },
+    {
+      "path": "backend-deployment-receipt.json",
+      "bytes": 556,
+      "sha256": "0187c42e44522c30a10c64dd3c7825c0fb92323c88be35a28d7adfd20ad81a3b"
+    },
+    {
+      "path": "backend-runtime-verification.json",
+      "bytes": 543,
+      "sha256": "133ba1084cc34a4a04efd6ef8061b4a0cfae871673451d72dadf14eafca8c9be"
+    },
+    {
+      "path": "bitcoin-document-binding.json",
+      "bytes": 530,
+      "sha256": "3ecbebb384c936ea0cacdb362db12f41a808d50b391442ade1cdd7104fc0af96"
+    },
+    {
+      "path": "bitcoin-source-review.json",
+      "bytes": 45731,
+      "sha256": "7a5a44fbad8d89d425e6b3ae4bcf158fa63adf23dcd0faf077e4f0f9984970ef"
+    },
+    {
+      "path": "browser-tests.txt",
+      "bytes": 6629,
+      "sha256": "fc070d387f9b2ddef4e17b4eee0a2bbbd81b955e686776efe40c53c5b77809ef"
+    },
+    {
+      "path": "cloudflare-provider-status.json",
+      "bytes": 1065,
+      "sha256": "463f5531798215b4e477840cf5173cfe8b9ec46ca58c5300fec2140bb227555c"
+    },
+    {
+      "path": "feedback-tests.txt",
+      "bytes": 1528,
+      "sha256": "2b5c1776b455967b92c78d876ea857ae7ad33d8e2bd6cf726002771768379041"
+    },
+    {
+      "path": "final-publication-state.json",
+      "bytes": 802,
+      "sha256": "ff6cd935b382a922e4e5abbf519a23525eebc3c59452c1a38bac94f4e1d2b06d"
+    },
+    {
+      "path": "function-source-binding.json",
+      "bytes": 1748,
+      "sha256": "4382fd45f1a32e058b1baa3cdab081da2da7c443dfa5af46cd9788b6752aea5c"
+    },
+    {
+      "path": "hosted-compiled-owner-check.json",
+      "bytes": 619,
+      "sha256": "beddb6810a8b854b47baf6c8180d302fa2b421ceb0467d1467e34a4cbc622ee8"
+    },
+    {
+      "path": "native-production-receipt.json",
+      "bytes": 966,
+      "sha256": "f66d40fd41fe3784a7ab0fa7282842e74c3117798b2523954a1a23d786918192"
+    },
+    {
+      "path": "owner-revision-tests.txt",
+      "bytes": 159,
+      "sha256": "cc7e90811044526e101125b8a31aa51886998e5b559ec66852ab32f91276a7ae"
+    },
+    {
+      "path": "pr440-checks.json",
+      "bytes": 2699,
+      "sha256": "5bdcd8dc00ff45b33f4021916e04519380d11efd31f587490b0ccccd52480996"
+    },
+    {
+      "path": "preview440-bitcoin-release.json",
+      "bytes": 6219,
+      "sha256": "dd8165039ab953ef4bc207a23d3aa116eb030c0b5e7d7b878dc6acb857565a26"
+    },
+    {
+      "path": "preview440-lesson2-1280.html",
+      "bytes": 34050,
+      "sha256": "0c3e748f6030e68c24e143e1e57dacf27b7bbb6b0afe419698ae9906d5a58754"
+    },
+    {
+      "path": "preview440-lesson2-1280.png",
+      "bytes": 1069043,
+      "sha256": "2378d1829aa5e32334cc6d80b61ec8603c829e79a6d89f1900331f6d09e81b34"
+    },
+    {
+      "path": "preview440-lesson2-1280.txt",
+      "bytes": 10425,
+      "sha256": "ec946da8b8106d1dd61f45f3be3177e42bcb80d2e093fa3d0c56e63808407d8b"
+    },
+    {
+      "path": "preview440-lesson2-390.html",
+      "bytes": 34050,
+      "sha256": "0c3e748f6030e68c24e143e1e57dacf27b7bbb6b0afe419698ae9906d5a58754"
+    },
+    {
+      "path": "preview440-lesson2-390.png",
+      "bytes": 803322,
+      "sha256": "1df7dba1f20d2fffb93d35e0ffee373876a8ae2a769757c2bc0169ce98ed6cfd"
+    },
+    {
+      "path": "preview440-lesson2-390.txt",
+      "bytes": 10216,
+      "sha256": "aee5f477e7268c44f21cf3636446a3d6e9c7430ae97c43dfa3154a86729a5e27"
+    },
+    {
+      "path": "preview440-lesson3-1280.html",
+      "bytes": 34554,
+      "sha256": "0729ee225d1700b5072550eba67824b414cdfeb5fae7b882aa68cc31907a674b"
+    },
+    {
+      "path": "preview440-lesson3-1280.png",
+      "bytes": 1089296,
+      "sha256": "4b54f461a1c7c5ca0f18df68276b83d1dc63f635e0179bb792d18799d134aab4"
+    },
+    {
+      "path": "preview440-lesson3-1280.txt",
+      "bytes": 10722,
+      "sha256": "cd89d875bfa4aae9183a40953209d7d7c1d15165c5efcde8ef35f3294613be17"
+    },
+    {
+      "path": "preview440-lesson3-390.html",
+      "bytes": 34554,
+      "sha256": "0729ee225d1700b5072550eba67824b414cdfeb5fae7b882aa68cc31907a674b"
+    },
+    {
+      "path": "preview440-lesson3-390.png",
+      "bytes": 850605,
+      "sha256": "cae417ef95fb1b2c2982332c32deca7468262e7afab962e3e9d0e968416d4935"
+    },
+    {
+      "path": "preview440-lesson3-390.txt",
+      "bytes": 10513,
+      "sha256": "69b165626f9bffbed11f3760e50b2682da5a8dc65b4ec061c7285191aecc2e3d"
+    },
+    {
+      "path": "production440-admin-mobile.png",
+      "bytes": 68834,
+      "sha256": "5684a406c51f3f0c90d0b6eb1e656c81359ba685d02a9c8b1d055f47ca96dcfc"
+    },
+    {
+      "path": "production440-admin-native.html",
+      "bytes": 7783,
+      "sha256": "d974fbd238d14d876a9e98ade7f6201ec211df841200550972c197574a75c892"
+    },
+    {
+      "path": "production440-admin-release.json",
+      "bytes": 3044,
+      "sha256": "389ea85e93fd07803b79eb2ad0b16f490fd8e05089946430c8fe648fcbd8c570"
+    },
+    {
+      "path": "production440-admin-rendered.txt",
+      "bytes": 910,
+      "sha256": "9dd699b770786518dc3add89b6e281a7333b3dfd46a326c97595a7a1099c1b1a"
+    },
+    {
+      "path": "production440-bitcoin-release.json",
+      "bytes": 6139,
+      "sha256": "daccd0cb615757085a78c2fff49d16f4f3c4ba12fed7b1f3d4d52a4fa4f9f1d5"
+    },
+    {
+      "path": "production440-lesson2-1280.html",
+      "bytes": 34050,
+      "sha256": "0c3e748f6030e68c24e143e1e57dacf27b7bbb6b0afe419698ae9906d5a58754"
+    },
+    {
+      "path": "production440-lesson2-1280.png",
+      "bytes": 1069043,
+      "sha256": "2378d1829aa5e32334cc6d80b61ec8603c829e79a6d89f1900331f6d09e81b34"
+    },
+    {
+      "path": "production440-lesson2-1280.txt",
+      "bytes": 10425,
+      "sha256": "ec946da8b8106d1dd61f45f3be3177e42bcb80d2e093fa3d0c56e63808407d8b"
+    },
+    {
+      "path": "production440-lesson2-390.html",
+      "bytes": 34050,
+      "sha256": "0c3e748f6030e68c24e143e1e57dacf27b7bbb6b0afe419698ae9906d5a58754"
+    },
+    {
+      "path": "production440-lesson2-390.png",
+      "bytes": 803322,
+      "sha256": "1df7dba1f20d2fffb93d35e0ffee373876a8ae2a769757c2bc0169ce98ed6cfd"
+    },
+    {
+      "path": "production440-lesson2-390.txt",
+      "bytes": 10216,
+      "sha256": "aee5f477e7268c44f21cf3636446a3d6e9c7430ae97c43dfa3154a86729a5e27"
+    },
+    {
+      "path": "production440-lesson3-1280.html",
+      "bytes": 34554,
+      "sha256": "0729ee225d1700b5072550eba67824b414cdfeb5fae7b882aa68cc31907a674b"
+    },
+    {
+      "path": "production440-lesson3-1280.png",
+      "bytes": 1089296,
+      "sha256": "4b54f461a1c7c5ca0f18df68276b83d1dc63f635e0179bb792d18799d134aab4"
+    },
+    {
+      "path": "production440-lesson3-1280.txt",
+      "bytes": 10722,
+      "sha256": "cd89d875bfa4aae9183a40953209d7d7c1d15165c5efcde8ef35f3294613be17"
+    },
+    {
+      "path": "production440-lesson3-390.html",
+      "bytes": 34554,
+      "sha256": "0729ee225d1700b5072550eba67824b414cdfeb5fae7b882aa68cc31907a674b"
+    },
+    {
+      "path": "production440-lesson3-390.png",
+      "bytes": 850605,
+      "sha256": "cae417ef95fb1b2c2982332c32deca7468262e7afab962e3e9d0e968416d4935"
+    },
+    {
+      "path": "production440-lesson3-390.txt",
+      "bytes": 10513,
+      "sha256": "69b165626f9bffbed11f3760e50b2682da5a8dc65b4ec061c7285191aecc2e3d"
+    },
+    {
+      "path": "production440-visible-bitcoin-release.json",
+      "bytes": 1706,
+      "sha256": "818bb190b718fde62ddc5c14bb2cd75e3bcf644557eb9926dc360f4d1ff0f3f0"
+    },
+    {
+      "path": "production440-visible-lesson2-390.html",
+      "bytes": 34050,
+      "sha256": "0c3e748f6030e68c24e143e1e57dacf27b7bbb6b0afe419698ae9906d5a58754"
+    },
+    {
+      "path": "production440-visible-lesson2-390.png",
+      "bytes": 100546,
+      "sha256": "ae5908f6a1fa49aec09d72b6d9c5f12e1c5fb7be00c9bb5ab1c92c9a888a913b"
+    },
+    {
+      "path": "production440-visible-lesson2-390.txt",
+      "bytes": 9515,
+      "sha256": "7ff4864e8ad9cc5509f872c63fd5428834da2efc1cc2ecf09f4318a414234e1e"
+    },
+    {
+      "path": "served-module-manifest.json",
+      "bytes": 365,
+      "sha256": "36d76bd576a38caba7e7a8fe98dc2f8e9402d55f3bbfdd527de82770f32f3546"
+    },
+    {
+      "path": "source-manifest.json",
+      "bytes": 1350,
+      "sha256": "0ba006aa0c5a4c9ca97dd5f80b205fe6735c7fe8a3fec55cf17d14d10126609a"
+    },
+    {
+      "path": "verify-admin-release.mjs",
+      "bytes": 5297,
+      "sha256": "9b2f2daf8bb14ee0ce0fc2b703ea6d00699339c6875fdc6f7b645a10af30f007"
+    },
+    {
+      "path": "verify-bitcoin-release.mjs",
+      "bytes": 3521,
+      "sha256": "c72d97d4cfdcbcf7925a9823abe96609c99a43cf0661e503bf5d6fa2e2089222"
+    },
+    {
+      "path": "workflow-tests.txt",
+      "bytes": 212,
+      "sha256": "09a4e5ace04462e5d7ad735f08a5d95b09a981d8e098372a2e934746226fd249"
+    }
+  ]
+}

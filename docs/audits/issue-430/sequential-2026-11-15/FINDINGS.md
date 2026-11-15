@@ -37,3 +37,11 @@ R07 extension — CONFIRMED EDITORIAL OVERSTATEMENTS in Bitcoin draft8: Lesson2 
 Source-access limits: fresh CoinGecko methodology and API documentation requests succeeded and their relevant price aggregation/freshness sections were read. FINRA returned403 to this reviewer; Morningstar returned403 through CloudFront (browser navigation failed). These are genuinely blocked source-verification checks, not proof that the citations are false or that the Supabase reviewer encountered the same response. Preserve them separately from the content findings.
 
 This is still the source-synchronization prerequisite. No queued page receives new-audit completion credit.
+
+## PR440 release checkpoint
+
+PR440 merged as `7845da3df1ded6324dfff31bc70300e19e9ef404` after all five required checks passed on exact head `62f1edf2f2779302d69a2e4e93aa2d580ee66d60`. Native Cloudflare deployment `e6d2862f-4a0e-4871-9426-c01c3d96f745` is verified production/main/success on the merged SHA. Supabase admin-courses version20 is ACTIVE; all11 source files match merged source.
+
+Both additional Bitcoin passages pass native HTML/bootstrap/hydrated copy checks on desktop/mobile, preserving all12 quiz objects. Structured feedback is preserved by the actual served adapter; the exact-head compiled isolated owner UI passed escaped concerns, no retry, older-report labels and lock cleanup. See [release-440/REPORT.md](release-440/REPORT.md) and its raw captures/hashes. These fixture concerns are not the lost real reviewer findings.
+
+The final independent source read still shows draft9/5/5 and published6/3/3. A single owner attempt for Bitcoin9 is pending. Source definition verification remains access-blocked for FINRA/Morningstar; an unused alternate returned402. The19-proposal total remains18 verified and1 incomplete. No new strict-audit page has been closed.

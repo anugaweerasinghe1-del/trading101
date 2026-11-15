@@ -1,0 +1,811 @@
+{
+  "recordedAtUTC": "2026-11-15T09:27:44.183050+00:00",
+  "scope": "Fresh Bitcoin source-text review during R07 publication prerequisite; not a completed new-audit URL or human/Google review.",
+  "reviewer": "Codex assistant; prior contributor",
+  "reviewedSnapshotRevision": 8,
+  "correctedStoredDraftRevision": 9,
+  "publishedSourceRevision": 6,
+  "fullReadingEvidence": "bitcoin-revision8-full.txt lines1-94 in work archive; all88 authored field/list blocks read, including24 prose paragraphs,12 section headings and12 questions with all options/keys/explanations.",
+  "independentArithmeticChecked": true,
+  "lostModelReasonsRecovered": false,
+  "newAuditPagesCompleted": 0,
+  "blocks": [
+    {
+      "blockId": "hero",
+      "beforeSHA256": "bcc6181883b45e49531a151c35efe7441735cbd1abc43646662f33a4b8d4fc80",
+      "afterSHA256": "bcc6181883b45e49531a151c35efe7441735cbd1abc43646662f33a4b8d4fc80",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "MEDIA-CHECK-NOT-IN-SCOPE",
+      "reasoning": "Asset path read; actual image rights/visual audit is outside this prerequisite source-text review."
+    },
+    {
+      "blockId": "slug",
+      "beforeSHA256": "674460a9fef3da6bedb9580c0676de67da5b794e9f6b9a6e0cee21a6dd53ac20",
+      "afterSHA256": "674460a9fef3da6bedb9580c0676de67da5b794e9f6b9a6e0cee21a6dd53ac20",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Read course identity, beginner level and simulation-focused description in context; no unsupported credentials, executable prices or promised returns."
+    },
+    {
+      "blockId": "badge",
+      "beforeSHA256": "59a76a4feb737d8e42f65c460bb8a052c4878dcf9e75bba273a31eff4643874c",
+      "afterSHA256": "59a76a4feb737d8e42f65c460bb8a052c4878dcf9e75bba273a31eff4643874c",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Completion only, explicitly not competence certification."
+    },
+    {
+      "blockId": "level",
+      "beforeSHA256": "c865ebb3052c863b4aea0f38f327e5522d9da1516fb3ac5d9d6b77e50cc74dc8",
+      "afterSHA256": "c865ebb3052c863b4aea0f38f327e5522d9da1516fb3ac5d9d6b77e50cc74dc8",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Read course identity, beginner level and simulation-focused description in context; no unsupported credentials, executable prices or promised returns."
+    },
+    {
+      "blockId": "title",
+      "beforeSHA256": "1c6b214635985e4ebd3e61a0429efcb779e52c66dc0926895c42426a69a03cc7",
+      "afterSHA256": "1c6b214635985e4ebd3e61a0429efcb779e52c66dc0926895c42426a69a03cc7",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Read course identity, beginner level and simulation-focused description in context; no unsupported credentials, executable prices or promised returns."
+    },
+    {
+      "blockId": "notFor",
+      "beforeSHA256": "e6a8f5131dfb35d3469908fecb487385327317d6afba1f769f493657acf3e459",
+      "afterSHA256": "e6a8f5131dfb35d3469908fecb487385327317d6afba1f769f493657acf3e459",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Excludes real-money recommendations and unsupported execution/products."
+    },
+    {
+      "blockId": "tagline",
+      "beforeSHA256": "da4aa95292ea63c9bfe908087ca665d3422ebc429411c5890ef940902c0b6f39",
+      "afterSHA256": "da4aa95292ea63c9bfe908087ca665d3422ebc429411c5890ef940902c0b6f39",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Read course identity, beginner level and simulation-focused description in context; no unsupported credentials, executable prices or promised returns."
+    },
+    {
+      "blockId": "outcomes",
+      "beforeSHA256": "87fa7191c0f50ff1a861eedda8dfb7d0a0a755265f0f481a63bf53bce4434a62",
+      "afterSHA256": "87fa7191c0f50ff1a861eedda8dfb7d0a0a755265f0f481a63bf53bce4434a62",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Four teachable objectives, not guarantees of profits or psychological improvement."
+    },
+    {
+      "blockId": "description",
+      "beforeSHA256": "4c3257d0cd52e7dcf1f934bf7f9ae77b8ae5976529a9a3f5d47bc91cb98c8c20",
+      "afterSHA256": "4c3257d0cd52e7dcf1f934bf7f9ae77b8ae5976529a9a3f5d47bc91cb98c8c20",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Read course identity, beginner level and simulation-focused description in context; no unsupported credentials, executable prices or promised returns."
+    },
+    {
+      "blockId": "progression",
+      "beforeSHA256": "78b123a62531cf7bcf030f74bc45593972ed68189d56ca5875c8ae24753ab6c6",
+      "afterSHA256": "78b123a62531cf7bcf030f74bc45593972ed68189d56ca5875c8ae24753ab6c6",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Sequence of accounting, timestamps and return/drawdown exercises."
+    },
+    {
+      "blockId": "prerequisites",
+      "beforeSHA256": "f3fb451963abee06f69adb6071500fd3caf0aff18ab5a844b924ece5678541a0",
+      "afterSHA256": "f3fb451963abee06f69adb6071500fd3caf0aff18ab5a844b924ece5678541a0",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Reader prerequisites; no account age or access requirement."
+    },
+    {
+      "blockId": "lessons[0].body[0]",
+      "beforeSHA256": "16335613de650bd3eb7054cd51dfcb1352ef30d473d3b3228a62fbdf6e8202d5",
+      "afterSHA256": "16335613de650bd3eb7054cd51dfcb1352ef30d473d3b3228a62fbdf6e8202d5",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Section heading accurately introduces the following two paragraphs; no standalone performance promise."
+    },
+    {
+      "blockId": "lessons[0].body[1]",
+      "beforeSHA256": "fe3fe6495136ad1a44d7c5bdd741ce09f807deb418bb6ad8bbd913e49a8d4c52",
+      "afterSHA256": "fe3fe6495136ad1a44d7c5bdd741ce09f807deb418bb6ad8bbd913e49a8d4c52",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Fictional funds and no withdrawal are current product boundaries; no claim of financial gain. Read the absolute withdrawal wording within this fictional ledger, not as a statement about real exchanges."
+    },
+    {
+      "blockId": "lessons[0].body[2]",
+      "beforeSHA256": "29dec87ae735e6fcf3639c1c28d5bf6fb3c10697cf712ecdf683289ac1788b85",
+      "afterSHA256": "29dec87ae735e6fcf3639c1c28d5bf6fb3c10697cf712ecdf683289ac1788b85",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Limits psychological transfer and future skill; independently recomputed $100 x0.001=$0.10, debit$100.10. Practice usefulness is conditional, not an outcome promise."
+    },
+    {
+      "blockId": "lessons[0].body[3]",
+      "beforeSHA256": "f6d24fde38215188d9999afa82cf17b8ad9e0c8bbf8a856cde002ada0c7a9e79",
+      "afterSHA256": "f6d24fde38215188d9999afa82cf17b8ad9e0c8bbf8a856cde002ada0c7a9e79",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Section heading accurately introduces the following two paragraphs; no standalone performance promise."
+    },
+    {
+      "blockId": "lessons[0].body[4]",
+      "beforeSHA256": "2fa5c766a0897438c599f858bfa3f5d00ff9f00e322b4ff66a2daf0dd53979a8",
+      "afterSHA256": "2fa5c766a0897438c599f858bfa3f5d00ff9f00e322b4ff66a2daf0dd53979a8",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Reference quotes are distinguished from executable offers/global indexes. Asset/source/time matching is consistent with the freshly read CoinGecko methodology."
+    },
+    {
+      "blockId": "lessons[0].body[5]",
+      "beforeSHA256": "1ce8d88e92fa0c8c6c2fe0e352bf14dc33e1eb44cf77491baa8915bbd29d1ddb",
+      "afterSHA256": "1ce8d88e92fa0c8c6c2fe0e352bf14dc33e1eb44cf77491baa8915bbd29d1ddb",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Successful fetch is separated from underlying observation age; absent values are not zero. CoinGecko API timestamp parameter was freshly read; no invented observation time."
+    },
+    {
+      "blockId": "lessons[0].body[6]",
+      "beforeSHA256": "460859439d5ffa3d4dc6289886728ef66118cf636792ea588b201e452e31a676",
+      "afterSHA256": "460859439d5ffa3d4dc6289886728ef66118cf636792ea588b201e452e31a676",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Section heading accurately introduces the following two paragraphs; no standalone performance promise."
+    },
+    {
+      "blockId": "lessons[0].body[7]",
+      "beforeSHA256": "3b00a9f24af8a0bf33b33d8e12e4e1ab4f317eb4c70acaf7e264c731d8c8253f",
+      "afterSHA256": "3b00a9f24af8a0bf33b33d8e12e4e1ab4f317eb4c70acaf7e264c731d8c8253f",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Virtual buy/sell and unsupported derivatives/order types match current product code. The design rationale is editorial explanation, not demonstrated educational efficacy."
+    },
+    {
+      "blockId": "lessons[0].body[8]",
+      "beforeSHA256": "59f5c2828f1bc63911f82890d0aaff944f876496800b5a8932c522059b76f26a",
+      "afterSHA256": "59f5c2828f1bc63911f82890d0aaff944f876496800b5a8932c522059b76f26a",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Recalculated2x40000=80000, fee80, cash19920, equity99920 then101920. Prices are explicitly hypothetical; fee is a cash expense."
+    },
+    {
+      "blockId": "lessons[0].body[9]",
+      "beforeSHA256": "d938008d1fc56ec20b366e4b654d3291453da05f8a1a864f3cfce7838e5e0754",
+      "afterSHA256": "d938008d1fc56ec20b366e4b654d3291453da05f8a1a864f3cfce7838e5e0754",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Section heading accurately introduces the following two paragraphs; no standalone performance promise."
+    },
+    {
+      "blockId": "lessons[0].body[10]",
+      "beforeSHA256": "47b59068b985a95762f107e28cd0888f20b7db7088e065e89c087a3e7a73ca10",
+      "afterSHA256": "47b59068b985a95762f107e28cd0888f20b7db7088e065e89c087a3e7a73ca10",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Suggests a written benchmark/process, without establishing that performance or psychology improves. Later paragraph expressly limits the inference."
+    },
+    {
+      "blockId": "lessons[0].body[11]",
+      "beforeSHA256": "cdf7e15827022a0e5fdc145d7cef18743277418ed86cf2ae75a571b8faeea996",
+      "afterSHA256": "cdf7e15827022a0e5fdc145d7cef18743277418ed86cf2ae75a571b8faeea996",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Requires a learning goal and falling-price countercase; no skill, strategy or psychological benefit is certified. Fee application is explicit."
+    },
+    {
+      "blockId": "lessons[0].quiz[0]",
+      "beforeSHA256": "4f7734913ccdd837653047639c7b04b18fa7adf32db369febaaf43988d0d86e0",
+      "afterSHA256": "4f7734913ccdd837653047639c7b04b18fa7adf32db369febaaf43988d0d86e0",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Key1: fictional, nonwithdrawable practice accounting; the three real-money/ownership/interest distractors are false."
+    },
+    {
+      "blockId": "lessons[0].quiz[1]",
+      "beforeSHA256": "ac56762499c3de3cdd4cf8415339d66c82983a45fbe7ac82daf3a810477e57e1",
+      "afterSHA256": "ac56762499c3de3cdd4cf8415339d66c82983a45fbe7ac82daf3a810477e57e1",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Key2: snapshots/fixed prices need source checking; executable/every-second/on-chain alternatives are false."
+    },
+    {
+      "blockId": "lessons[0].quiz[2]",
+      "beforeSHA256": "dd92c9cec4a9a3bdf84144b609fd8451a68e3a7a10376fbf33baf25af89feb04",
+      "afterSHA256": "dd92c9cec4a9a3bdf84144b609fd8451a68e3a7a10376fbf33baf25af89feb04",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Key2: spot market orders; leveraged, conditional stop/limit and short-sale alternatives unsupported."
+    },
+    {
+      "blockId": "lessons[0].quiz[3]",
+      "beforeSHA256": "8909b3128db26da5e5c75896f9a551a82a58d5406368651c638385314a3c60d8",
+      "afterSHA256": "8909b3128db26da5e5c75896f9a551a82a58d5406368651c638385314a3c60d8",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Key2:2x40000x0.001=80; checked all four dollar choices and explanation."
+    },
+    {
+      "blockId": "lessons[0].slug",
+      "beforeSHA256": "c4588e2f96d2ecdf34f4f653f805ecdcb9a112dacb99652dd8c5285961d5fb70",
+      "afterSHA256": "c4588e2f96d2ecdf34f4f653f805ecdcb9a112dacb99652dd8c5285961d5fb70",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Lesson title, route or summary read against the complete lesson; lesson routes preserved."
+    },
+    {
+      "blockId": "lessons[0].title",
+      "beforeSHA256": "9b2338a52fbe3908fb23f386b5aa8ba6c305a8170409b754323fd76609cf7353",
+      "afterSHA256": "9b2338a52fbe3908fb23f386b5aa8ba6c305a8170409b754323fd76609cf7353",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Lesson title, route or summary read against the complete lesson; lesson routes preserved."
+    },
+    {
+      "blockId": "lessons[0].sources[0]",
+      "beforeSHA256": "c0165c12153e76211eaab96cf7d8738df3607267d83cbb98774162aa903ad1ad",
+      "afterSHA256": "c0165c12153e76211eaab96cf7d8738df3607267d83cbb98774162aa903ad1ad",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "SOURCE-ACCESS-BLOCKED",
+      "reasoning": "Citation label/URL read. Fresh verification blocked by remote403; source contents/support are not certified."
+    },
+    {
+      "blockId": "lessons[0].sources[1]",
+      "beforeSHA256": "7abf1bbecc732182abb8dbe27b1ded38628f9d68cff9a3a66ef4b0062d847947",
+      "afterSHA256": "7abf1bbecc732182abb8dbe27b1ded38628f9d68cff9a3a66ef4b0062d847947",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "REFERENCE-SECTION-READ",
+      "reasoning": "Citation label/URL read. Fresh primary-source relevant sections read; applicability limited to provider pricing/freshness or allocation, not all simulator claims."
+    },
+    {
+      "blockId": "lessons[0].sources[2]",
+      "beforeSHA256": "3df5f2ebfaa630d69c9cb0732407f3360b6341d62fe599f1bc4fc7854b76a18d",
+      "afterSHA256": "3df5f2ebfaa630d69c9cb0732407f3360b6341d62fe599f1bc4fc7854b76a18d",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "REFERENCE-SECTION-READ",
+      "reasoning": "Citation label/URL read. Fresh primary-source relevant sections read; applicability limited to provider pricing/freshness or allocation, not all simulator claims."
+    },
+    {
+      "blockId": "lessons[0].summary",
+      "beforeSHA256": "049fd86d03fe8d319c608dbca0ccd1876d8904687e5624b9675921e608fb1365",
+      "afterSHA256": "049fd86d03fe8d319c608dbca0ccd1876d8904687e5624b9675921e608fb1365",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Lesson title, route or summary read against the complete lesson; lesson routes preserved."
+    },
+    {
+      "blockId": "lessons[0].keyTakeaways[0]",
+      "beforeSHA256": "3ec0c62c1ba6259ef33d9504c37b54a5e8f508b0c02a2b66ba11bbafb2596af8",
+      "afterSHA256": "3ec0c62c1ba6259ef33d9504c37b54a5e8f508b0c02a2b66ba11bbafb2596af8",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Takeaway read against the complete lesson and supported scope; no guaranteed skill/returns or executable quote claim."
+    },
+    {
+      "blockId": "lessons[0].keyTakeaways[1]",
+      "beforeSHA256": "88a8b229fba86a0a21b582b42242081f294a844ef4de0c30be16f169e35faeee",
+      "afterSHA256": "88a8b229fba86a0a21b582b42242081f294a844ef4de0c30be16f169e35faeee",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Takeaway read against the complete lesson and supported scope; no guaranteed skill/returns or executable quote claim."
+    },
+    {
+      "blockId": "lessons[0].keyTakeaways[2]",
+      "beforeSHA256": "fe75531b8e936ea2da814bab8a499e21ce28a82fa50090191e0108d06133cc49",
+      "afterSHA256": "fe75531b8e936ea2da814bab8a499e21ce28a82fa50090191e0108d06133cc49",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Takeaway read against the complete lesson and supported scope; no guaranteed skill/returns or executable quote claim."
+    },
+    {
+      "blockId": "lessons[0].readingMinutes",
+      "beforeSHA256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683",
+      "afterSHA256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Reading time is an estimate including exercises."
+    },
+    {
+      "blockId": "lessons[1].body[0]",
+      "beforeSHA256": "a59c9eb1e6ca3d1ccf944613a2c4c413b3e5e4e712601103cdbad86fbba2bc6d",
+      "afterSHA256": "a59c9eb1e6ca3d1ccf944613a2c4c413b3e5e4e712601103cdbad86fbba2bc6d",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Section heading accurately introduces the following two paragraphs; no standalone performance promise."
+    },
+    {
+      "blockId": "lessons[1].body[1]",
+      "beforeSHA256": "9917f7baabb247d4d2eac1215604d9c7d78c5120a8cd0087a1bfd259bd7da4ae",
+      "afterSHA256": "9917f7baabb247d4d2eac1215604d9c7d78c5120a8cd0087a1bfd259bd7da4ae",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Market input, virtual exposure and fee-inclusive debit are distinguished from on-chain ownership and actual exchange execution."
+    },
+    {
+      "blockId": "lessons[1].body[2]",
+      "beforeSHA256": "aaab417b3f70cd6be5ff85d5a3bce9e7ec7347e5a73cf56203a109bd8940b680",
+      "afterSHA256": "aaab417b3f70cd6be5ff85d5a3bce9e7ec7347e5a73cf56203a109bd8940b680",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Recalculated0.1x50000=5000, fee5, cash94995, marked equity99995. Quote is a fictional fixed worksheet input."
+    },
+    {
+      "blockId": "lessons[1].body[3]",
+      "beforeSHA256": "62fd7a90308d980e4e8fe5c65851340264f29f7c96916c804453757745f20787",
+      "afterSHA256": "62fd7a90308d980e4e8fe5c65851340264f29f7c96916c804453757745f20787",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Section heading accurately introduces the following two paragraphs; no standalone performance promise."
+    },
+    {
+      "blockId": "lessons[1].body[4]",
+      "beforeSHA256": "4d6dff5656d2b8b8d866097a09ef2e2f76b08b77e1074533aae3c8dd604b5ab5",
+      "afterSHA256": "4d6dff5656d2b8b8d866097a09ef2e2f76b08b77e1074533aae3c8dd604b5ab5",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Holdings/quantity/valuation are explained in the virtual-ledger context; “settles” is not given a real exchange settlement promise. No leverage is implied."
+    },
+    {
+      "blockId": "lessons[1].body[5]",
+      "beforeSHA256": "15011d531592e68f59a64511f7ccb886bf76fcaec7fa5c2bc3a1449161f4847d",
+      "afterSHA256": "15011d531592e68f59a64511f7ccb886bf76fcaec7fa5c2bc3a1449161f4847d",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Recalculated90/(90+40)=69.230769%. Rebalancing is optional; a rising weight alone is not an order instruction. Investor.gov allocation section read freshly."
+    },
+    {
+      "blockId": "lessons[1].body[6]",
+      "beforeSHA256": "b21e1a3794ddf067a12eedd14b62f9d69c8285d29d9756030cf3f3d091eb45a6",
+      "afterSHA256": "b21e1a3794ddf067a12eedd14b62f9d69c8285d29d9756030cf3f3d091eb45a6",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Section heading accurately introduces the following two paragraphs; no standalone performance promise."
+    },
+    {
+      "blockId": "lessons[1].body[7]",
+      "beforeSHA256": "200676d1b27b5cc50e649eddc831760caece2af893a79242b2b823c50d2344bf",
+      "afterSHA256": "200676d1b27b5cc50e649eddc831760caece2af893a79242b2b823c50d2344bf",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Net sale proceeds include the0.1% fee; no actual real-market liquidity or instant fill guarantee."
+    },
+    {
+      "blockId": "lessons[1].body[8]",
+      "beforeSHA256": "f92221259d117898292f3fc26cbb9f7f1d7895298a1ea4ed02ae4b3d2a9a2e72",
+      "afterSHA256": "f92221259d117898292f3fc26cbb9f7f1d7895298a1ea4ed02ae4b3d2a9a2e72",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Hold/sell comparison is conditional and cost-aware; unavailable stop-loss/limit orders are identified. No mandatory exit strategy."
+    },
+    {
+      "blockId": "lessons[1].body[9]",
+      "beforeSHA256": "978af2a838152b2c08d439ea3fcb52fc9620839a1df66a704b29b546c610092c",
+      "afterSHA256": "978af2a838152b2c08d439ea3fcb52fc9620839a1df66a704b29b546c610092c",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Section heading accurately introduces the following two paragraphs; no standalone performance promise."
+    },
+    {
+      "blockId": "lessons[1].body[10]",
+      "beforeSHA256": "2a32809667aa2566cee8373d571dffb1a784ce28d36cb0d7bde4b230becf68cf",
+      "afterSHA256": "2a32809667aa2566cee8373d571dffb1a784ce28d36cb0d7bde4b230becf68cf",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Recalculated5100-5.10-5005=89.90;4900-4.90-5005=-109.90. Partial fills/slippage/depth are not claimed to be simulated."
+    },
+    {
+      "blockId": "lessons[1].body[11]",
+      "beforeSHA256": "ba09c1c39a3ffb0eae604ec1897d96db8fb33f4579a1082ce2046d15254b71e8",
+      "afterSHA256": "4c3f63758f85d1de038c512224699354cd7e05479d69444b80facb11b088ac97",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "FIXED-IN-DRAFT-RELEASE-PENDING",
+      "reasoning": "CONFIRMED overstatement in revision8: emotional stakes called entirely artificial and “master mechanics”. Revision9 acknowledges real feelings while distinguishing fictional monetary exposure; no resilience certification."
+    },
+    {
+      "blockId": "lessons[1].quiz[0]",
+      "beforeSHA256": "2b557b3b331b87fd0513f6e5f3c6dd94a55ea86675627aad2a1656fbfc999a41",
+      "afterSHA256": "2b557b3b331b87fd0513f6e5f3c6dd94a55ea86675627aad2a1656fbfc999a41",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Key1: virtual units and notional plus fee; no withdrawal, leverage or limit trigger."
+    },
+    {
+      "blockId": "lessons[1].quiz[1]",
+      "beforeSHA256": "589febf2dbcfdc5289921bc7785c36ca57faf092aeac4408371d28a7dbea818e",
+      "afterSHA256": "589febf2dbcfdc5289921bc7785c36ca57faf092aeac4408371d28a7dbea818e",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Key1: simulated ledger position; no transferable token, future or bank deposit."
+    },
+    {
+      "blockId": "lessons[1].quiz[2]",
+      "beforeSHA256": "a2ca9a1e2fe6dbf8326428d69887cd21c79216d1ca301f4bdcdcc00705364ca6",
+      "afterSHA256": "a2ca9a1e2fe6dbf8326428d69887cd21c79216d1ca301f4bdcdcc00705364ca6",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Key0: concentration relative to a target; no law/interest/short-selling unlock. Overweight is not overvalued."
+    },
+    {
+      "blockId": "lessons[1].quiz[3]",
+      "beforeSHA256": "4dcc3255c831bebcdab5ba75475f0073711988d82e2016de0d4c4adc2913f6ca",
+      "afterSHA256": "4dcc3255c831bebcdab5ba75475f0073711988d82e2016de0d4c4adc2913f6ca",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Key2:0.1% virtual fee; real queue/slippage/blockchain costs are excluded."
+    },
+    {
+      "blockId": "lessons[1].slug",
+      "beforeSHA256": "9805a6a8c5d74c8c1496dbb4e582d2eb5fa6d8e9a9336e122c2492af81c00aff",
+      "afterSHA256": "9805a6a8c5d74c8c1496dbb4e582d2eb5fa6d8e9a9336e122c2492af81c00aff",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Lesson title, route or summary read against the complete lesson; lesson routes preserved."
+    },
+    {
+      "blockId": "lessons[1].title",
+      "beforeSHA256": "3e2a89974b7c2534cbd031caedae80ad9d0ce423d1ba3563769c23446603422e",
+      "afterSHA256": "3e2a89974b7c2534cbd031caedae80ad9d0ce423d1ba3563769c23446603422e",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Lesson title, route or summary read against the complete lesson; lesson routes preserved."
+    },
+    {
+      "blockId": "lessons[1].sources[0]",
+      "beforeSHA256": "c0165c12153e76211eaab96cf7d8738df3607267d83cbb98774162aa903ad1ad",
+      "afterSHA256": "c0165c12153e76211eaab96cf7d8738df3607267d83cbb98774162aa903ad1ad",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "SOURCE-ACCESS-BLOCKED",
+      "reasoning": "Citation label/URL read. Fresh verification blocked by remote403; source contents/support are not certified."
+    },
+    {
+      "blockId": "lessons[1].sources[1]",
+      "beforeSHA256": "3df5f2ebfaa630d69c9cb0732407f3360b6341d62fe599f1bc4fc7854b76a18d",
+      "afterSHA256": "3df5f2ebfaa630d69c9cb0732407f3360b6341d62fe599f1bc4fc7854b76a18d",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "REFERENCE-SECTION-READ",
+      "reasoning": "Citation label/URL read. Fresh primary-source relevant sections read; applicability limited to provider pricing/freshness or allocation, not all simulator claims."
+    },
+    {
+      "blockId": "lessons[1].summary",
+      "beforeSHA256": "868dd0cfec98151910d931cc860dda4e1aace65e328919e078ef730f22f04e43",
+      "afterSHA256": "868dd0cfec98151910d931cc860dda4e1aace65e328919e078ef730f22f04e43",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Lesson title, route or summary read against the complete lesson; lesson routes preserved."
+    },
+    {
+      "blockId": "lessons[1].keyTakeaways[0]",
+      "beforeSHA256": "18e280085034a8773f8fc2bc86f8bfc5a434e5ec32dc73fa3647575cbca0f76f",
+      "afterSHA256": "18e280085034a8773f8fc2bc86f8bfc5a434e5ec32dc73fa3647575cbca0f76f",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Takeaway read against the complete lesson and supported scope; no guaranteed skill/returns or executable quote claim."
+    },
+    {
+      "blockId": "lessons[1].keyTakeaways[1]",
+      "beforeSHA256": "307c3ee00bd1cbc0d0c04c4f2d17a9c5f05ee32198103f856125a15dacae763b",
+      "afterSHA256": "307c3ee00bd1cbc0d0c04c4f2d17a9c5f05ee32198103f856125a15dacae763b",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Takeaway read against the complete lesson and supported scope; no guaranteed skill/returns or executable quote claim."
+    },
+    {
+      "blockId": "lessons[1].keyTakeaways[2]",
+      "beforeSHA256": "37055e42a63e783bf2bef05f2d4177e103c3fb176e507e94cbd0d0135fd281e1",
+      "afterSHA256": "37055e42a63e783bf2bef05f2d4177e103c3fb176e507e94cbd0d0135fd281e1",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Takeaway read against the complete lesson and supported scope; no guaranteed skill/returns or executable quote claim."
+    },
+    {
+      "blockId": "lessons[1].readingMinutes",
+      "beforeSHA256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683",
+      "afterSHA256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Reading time is an estimate including exercises."
+    },
+    {
+      "blockId": "lessons[2].body[0]",
+      "beforeSHA256": "fe050d354eaf7c831e3ba57d66465025096f02029d96c94569f374c17cfd12f6",
+      "afterSHA256": "fe050d354eaf7c831e3ba57d66465025096f02029d96c94569f374c17cfd12f6",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Section heading accurately introduces the following two paragraphs; no standalone performance promise."
+    },
+    {
+      "blockId": "lessons[2].body[1]",
+      "beforeSHA256": "29acdbd023ffd0745c751f6e85e2cee1a749a99535f1083ab933e65ccfbbe941",
+      "afterSHA256": "707a4c0702c9b27831902e91bc628735c1818dd9fc3053181f9123a2f30afbd1",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "FIXED-IN-DRAFT-RELEASE-PENDING",
+      "reasoning": "CONFIRMED overstatement in revision8: recalculation said to ensure accurate/current metrics. Revision9 gives a no-cash-flow same-account return worksheet and explicitly states that delayed quotes remain delayed."
+    },
+    {
+      "blockId": "lessons[2].body[2]",
+      "beforeSHA256": "823285f8bbf99c043d21c907716f969d9dd4cc22c2c23520c9e978057694ede0",
+      "afterSHA256": "823285f8bbf99c043d21c907716f969d9dd4cc22c2c23520c9e978057694ede0",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Broad-market context does not isolate skill or prove a sound strategy. Read with the benchmark question/explanation, which expressly rejects conclusive attribution."
+    },
+    {
+      "blockId": "lessons[2].body[3]",
+      "beforeSHA256": "f7cb8d1953046e3951bf393e242c29df6f2a4b18220150659707df9b351ec2fa",
+      "afterSHA256": "f7cb8d1953046e3951bf393e242c29df6f2a4b18220150659707df9b351ec2fa",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Section heading accurately introduces the following two paragraphs; no standalone performance promise."
+    },
+    {
+      "blockId": "lessons[2].body[4]",
+      "beforeSHA256": "327b75e55757308db8b266e9fc602e217e0db1b27dbc4ac18746ab09a89d8a36",
+      "afterSHA256": "327b75e55757308db8b266e9fc602e217e0db1b27dbc4ac18746ab09a89d8a36",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Recalculated22000/110000=20% observed drawdown,12000/100000=12% starting loss. Independent arithmetic is checked; cited external drawdown definition remains access-blocked."
+    },
+    {
+      "blockId": "lessons[2].body[5]",
+      "beforeSHA256": "59083ee1560f4746c2d65f44cbf652dfeb1f55ba8ee5dc3e8bdec1844016202b",
+      "afterSHA256": "59083ee1560f4746c2d65f44cbf652dfeb1f55ba8ee5dc3e8bdec1844016202b",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Observed drawdown is distinguished from future worst loss/recovery probability/emotional response. Missing intraperiod marks and fees are explicit."
+    },
+    {
+      "blockId": "lessons[2].body[6]",
+      "beforeSHA256": "c96e80dbca00bdd012d7eb809ed609263651562735d335d8c84c4fc72ca30be2",
+      "afterSHA256": "c96e80dbca00bdd012d7eb809ed609263651562735d335d8c84c4fc72ca30be2",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Section heading accurately introduces the following two paragraphs; no standalone performance promise."
+    },
+    {
+      "blockId": "lessons[2].body[7]",
+      "beforeSHA256": "d5391cdc46c600a4e4d162a9ae95e01951fb3c51633e07006e07a9731e308680",
+      "afterSHA256": "d5391cdc46c600a4e4d162a9ae95e01951fb3c51633e07006e07a9731e308680",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Journal records observations and assumptions; it does not establish eliminated bias, future success or financial advice."
+    },
+    {
+      "blockId": "lessons[2].body[8]",
+      "beforeSHA256": "3ca702ec352c9e5f1eddc4456d7fe0b7c5a55c7161d61b96a70c66df408e041d",
+      "afterSHA256": "3ca702ec352c9e5f1eddc4456d7fe0b7c5a55c7161d61b96a70c66df408e041d",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Checked start100000, observed peak110000, end88000. Alternate121000 is a comparison path, not a forecast; sampled values do not establish intraperiod moves."
+    },
+    {
+      "blockId": "lessons[2].body[9]",
+      "beforeSHA256": "32f63016da1f6aea88f7010b93d41ea0c8c518561982986fa61e78cc6ebb5b88",
+      "afterSHA256": "32f63016da1f6aea88f7010b93d41ea0c8c518561982986fa61e78cc6ebb5b88",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Section heading accurately introduces the following two paragraphs; no standalone performance promise."
+    },
+    {
+      "blockId": "lessons[2].body[10]",
+      "beforeSHA256": "3ff34ae6461f07f33fc68d6f359db363d1937d97efbad429120485b43ad76214",
+      "afterSHA256": "3ff34ae6461f07f33fc68d6f359db363d1937d97efbad429120485b43ad76214",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Simulator fees and simplified execution agree with product code; skill/suitability/profit are not inferred from completion."
+    },
+    {
+      "blockId": "lessons[2].body[11]",
+      "beforeSHA256": "965e865de0cf7fdfcf5262bbbab24b8001978c7e7c639bd92a6c410be12a9fed",
+      "afterSHA256": "965e865de0cf7fdfcf5262bbbab24b8001978c7e7c639bd92a6c410be12a9fed",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Recalculated2x50=100, buy fee0.10. Provenance is required and missing timestamps must not be fabricated; no execution price promise."
+    },
+    {
+      "blockId": "lessons[2].quiz[0]",
+      "beforeSHA256": "958b0938d0672f97d59f1ba104a30a1b32a3681e8ea3c15e09f69069612f57f5",
+      "afterSHA256": "958b0938d0672f97d59f1ba104a30a1b32a3681e8ea3c15e09f69069612f57f5",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Key1:20% drawdown;12% is a different start-based loss, and25/40% do not fit the stated denominator."
+    },
+    {
+      "blockId": "lessons[2].quiz[1]",
+      "beforeSHA256": "6c7539a62f1d7212039a53e6e453d923544604df7bd84aa0617fbde8c7867afa",
+      "afterSHA256": "6c7539a62f1d7212039a53e6e453d923544604df7bd84aa0617fbde8c7867afa",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Key1: benchmark supplies context; no skill proof/certification/future prediction. Explanation limits causal attribution."
+    },
+    {
+      "blockId": "lessons[2].quiz[2]",
+      "beforeSHA256": "a2cbde0cb2811c644018295c91221309496a0705c841ad21d4dbdad0632906aa",
+      "afterSHA256": "a2cbde0cb2811c644018295c91221309496a0705c841ad21d4dbdad0632906aa",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Key0: reasoning/orders/arithmetic are documentable; bias elimination, real success and certification are not."
+    },
+    {
+      "blockId": "lessons[2].quiz[3]",
+      "beforeSHA256": "6c4cf1d754e3f3a470b61a37540d41a32bc4bac8f90459439207a2e95e431692",
+      "afterSHA256": "6c4cf1d754e3f3a470b61a37540d41a32bc4bac8f90459439207a2e95e431692",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Key1: virtual results exclude real risks/execution. All-spot-impossible, leveraged-real-order and historical-executable alternatives are false."
+    },
+    {
+      "blockId": "lessons[2].slug",
+      "beforeSHA256": "9c2e902e63ef912d46a8ce73b74afafd7335fd7805e992a759b317a35bd21c4f",
+      "afterSHA256": "9c2e902e63ef912d46a8ce73b74afafd7335fd7805e992a759b317a35bd21c4f",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Lesson title, route or summary read against the complete lesson; lesson routes preserved."
+    },
+    {
+      "blockId": "lessons[2].title",
+      "beforeSHA256": "32c8482f3bb495b6503ae557339efe2d2ee1c5eb390d4adffc5fbca09d8c1bcc",
+      "afterSHA256": "32c8482f3bb495b6503ae557339efe2d2ee1c5eb390d4adffc5fbca09d8c1bcc",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Lesson title, route or summary read against the complete lesson; lesson routes preserved."
+    },
+    {
+      "blockId": "lessons[2].sources[0]",
+      "beforeSHA256": "4c918a72b0d2283414e3dc038d3bbf631e5e69e14b824e1b785aad2339538c3b",
+      "afterSHA256": "4c918a72b0d2283414e3dc038d3bbf631e5e69e14b824e1b785aad2339538c3b",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "SOURCE-ACCESS-BLOCKED",
+      "reasoning": "Citation label/URL read. Fresh verification blocked by remote403; source contents/support are not certified."
+    },
+    {
+      "blockId": "lessons[2].sources[1]",
+      "beforeSHA256": "5c2e873192266f4927e279ea17eb5a671f7010f68df5a5ee29a94f7ba68cac1c",
+      "afterSHA256": "5c2e873192266f4927e279ea17eb5a671f7010f68df5a5ee29a94f7ba68cac1c",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "REFERENCE-SECTION-READ",
+      "reasoning": "Citation label/URL read. Fresh primary-source relevant sections read; applicability limited to provider pricing/freshness or allocation, not all simulator claims."
+    },
+    {
+      "blockId": "lessons[2].sources[2]",
+      "beforeSHA256": "c0165c12153e76211eaab96cf7d8738df3607267d83cbb98774162aa903ad1ad",
+      "afterSHA256": "c0165c12153e76211eaab96cf7d8738df3607267d83cbb98774162aa903ad1ad",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "SOURCE-ACCESS-BLOCKED",
+      "reasoning": "Citation label/URL read. Fresh verification blocked by remote403; source contents/support are not certified."
+    },
+    {
+      "blockId": "lessons[2].summary",
+      "beforeSHA256": "ae4ed692ca61ec134dd8f0cf039157e66a0f2c79b2b66e882bb5a6542b381496",
+      "afterSHA256": "ae4ed692ca61ec134dd8f0cf039157e66a0f2c79b2b66e882bb5a6542b381496",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Lesson title, route or summary read against the complete lesson; lesson routes preserved."
+    },
+    {
+      "blockId": "lessons[2].keyTakeaways[0]",
+      "beforeSHA256": "9b840256ec0fbdb4f3e3408d6e4eb18fafdda890a977997deb95b803e73c6211",
+      "afterSHA256": "9b840256ec0fbdb4f3e3408d6e4eb18fafdda890a977997deb95b803e73c6211",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Takeaway read against the complete lesson and supported scope; no guaranteed skill/returns or executable quote claim."
+    },
+    {
+      "blockId": "lessons[2].keyTakeaways[1]",
+      "beforeSHA256": "0f1e98becd876057e261a6e5c649bcb1c6cc4f689eb0f632d29127273b9d8b60",
+      "afterSHA256": "0f1e98becd876057e261a6e5c649bcb1c6cc4f689eb0f632d29127273b9d8b60",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Takeaway read against the complete lesson and supported scope; no guaranteed skill/returns or executable quote claim."
+    },
+    {
+      "blockId": "lessons[2].keyTakeaways[2]",
+      "beforeSHA256": "bd3178219c40f15351b4beb2ebf2b9a72674e5d2c4468d31078e3dd78a144493",
+      "afterSHA256": "bd3178219c40f15351b4beb2ebf2b9a72674e5d2c4468d31078e3dd78a144493",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Takeaway read against the complete lesson and supported scope; no guaranteed skill/returns or executable quote claim."
+    },
+    {
+      "blockId": "lessons[2].readingMinutes",
+      "beforeSHA256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683",
+      "afterSHA256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683",
+      "pass1": "READ-IN-CONTEXT",
+      "pass2": "SKEPTICAL-CHALLENGE-RECORDED",
+      "disposition": "NO-CONFIRMED-DEFECT-IN-TEXT-SCOPE",
+      "reasoning": "Reading time is an estimate including exercises."
+    }
+  ],
+  "limits": [
+    "FINRA and Morningstar returned access blocks; alternative Investopedia returned402 and was not adopted.",
+    "Image appearance/licensing not freshly checked by this source-text prerequisite review.",
+    "Native/interactive course release checks and actual owner publication remain separate pending gates."
+  ]
+}
