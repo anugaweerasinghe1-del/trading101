@@ -1,0 +1,476 @@
+GDPR overview and guidance
+Google consent management requirements for serving ads in the EEA, the UK, and Switzerland (for publishers)
+Next: Google consent management requirements for serving ads in the EEA, the UK, and Switzerland (for CMPs)
+This help center article is for publishers looking for more information on certified CMPs.
+If you are an advertiser or CMP for advertisers, please find more information here for advertisers.
+To comply with the EU User Consent Policy, partners using our publisher products—Google AdSense, Ad Manager, or AdMob—are required to use a consent management platform (CMP) that has been certified by Google and integrates with the IAB's Transparency and Consent Framework (TCF) when serving personalized ads to users in the following regions:
+EEA and UK: As of 16 January 2024, a certified CMP integrated with the TCF is required when serving personalized ads to users in the EEA and UK.
+Switzerland: As of 31 July 2024, a certified CMP integrated with the TCF is required when serving personalized ads to users in Switzerland.
+Learn about these requirements.
+Note: Publishers should review the list of certified CMPs and decide which CMP is most suitable for them taking into account the location of their traffic and the functionality offered by each CMP.
+IAB TCF requirement
+Publishers will need to ensure they are working with a certified CMP when serving personalized ads to users in the EEA, the UK, or Switzerland. Certified CMPs are assessed by Google against certification criteria focused on TCF compliance. If publishers using the TCF also work with ad technology providers that are not registered with the TCF, Google supports that today—through our Additional Consent specification—and will continue to do so. Our CMP assessments will check that CMPs supporting our Additional Consent specification can do so correctly. Successful review of a CMP against the Google certification criteria will make that CMP available in our list of certified CMPs. Google does not check CMPs for full compliance with the TCF or applicable privacy laws.
+Additionally, please note the following:
+Certified CMP traffic: Only traffic from a certified CMP is eligible for personalized ads. Traffic from a certified CMP will continue to be eligible for personalized ads, non-personalized ads, and limited ads (including programmatic limited ads) where supported.
+Traffic from a non-certified CMP: Traffic from a non-certified CMP may be eligible for non-personalized ads or limited ads (including programmatic limited ads) where supported.
+CTV inventory: Earlier this year, we shared that a certified CMP would also be required for CTV inventory, with enforcement planned for July 2024.
+In light of publisher feedback about the challenges of implementing the TCF in a CTV environment, we are granting an enforcement extension until July 2025. Please note that regulatory requirements around privacy and consent frequently develop, so we may need to revisit this extension prior to July 2025 if necessary. As such, we continue to encourage our CTV partners to adopt a certified CMP as soon as they are able.
+If you work with an existing CMP that is not included on the following list of certified CMPs, please contact your CMP to understand if they intend to be certified.
+In 2020, we integrated our ads systems with the TCF. You can learn more about IAB TCF and AdSense’s integration in our publisher integration help center article. The IAB TCF requirement is a continuation of our 2020 commitment to support industry efforts aimed at managing user transparency and consent through a standardized framework.
+Certified CMPs
+This list is updated weekly as we continue to certify new CMPs. We encourage publishers to check back regularly.
+Guide to the information in this list
+Certified CMP: The name of the certified CMP.
+TCF CMP ID: The unique identifier assigned to a TCF-validated CMP by the IAB.
+Platform: The environments in which the CMP offers support and in which Google has certified the CMP.
+List of certified CMPs
+Certified CMP
+TCF CMP ID
+Platform
+1&1 Mail & Media GmbH CMP (Private)
+167
+Web and app
+Adlane LTD CMP
+396
+Web and CTV
+AdMetricsPro CMP
+77
+Web
+Admiral CMP
+9
+Web
+AdOcean CMP
+104
+Web
+AdOpt
+430
+Web
+Aiara Privacy Suite
+507
+Web
+Allegro Sp. z o.o. CMP (Private)
+220
+Web and app
+ALPRED SL CMP (Private)
+237
+Web and app
+AppConsent by SFBX®
+2
+Web, app, and CTV
+Appodeal Inc CMP
+432
+App
+Associated Newspapers Ltd CMP
+27
+Web and app
+Atolls Germany GmbH CMP (Private)
+438
+Web
+Automattic, Inc. CMP (Private)
+258
+Web and app
+AutoScout24 GmbH CMP (Private)
+397
+Web
+AVACY CMP
+297
+Web, app, and CTV
+AVADA GROUP COMPANY LIMITED CMP
+454
+Web
+Axel Springer Deutschland GmbH CMP (Private)
+345
+Web, app, and CTV
+Axeptio
+260
+Web and app
+Big Crunch, Inc.
+501
+Web
+BigID Inc.
+452
+Web
+Blasting SA CMP (Private)
+292
+Web
+Borlabs Cookie CMP
+323
+Web
+BurdaForward GmbH CMP (Private)
+35
+Web and app
+CCM19 CMP
+343
+Web
+Ceneo.pl sp. z o.o. (Private)
+434
+Web
+Ciao people s.r.l. CMP (Private)
+58
+Web
+CIVIC COMPUTING LTD CMP
+259
+Web
+Clarip CMP
+458
+Web
+Clickio CMP
+63
+Web and app
+Clym Inc.
+213
+Web
+Commanders Act CMP
+90
+Web and app
+Complianz CMP
+332
+Web
+ConsentBit
+502
+Web
+Consentik.com CMP
+451
+Web
+Consentmanager CMP
+31
+Web, app, and CTV
+Consentmo
+435
+Web
+Conzent ApS
+446
+Web
+Cookie Script CMP
+374
+Web
+Cookiebot CMP
+134
+Web
+CookieFirst CMP
+382
+Web
+CookieHub CMP
+354
+Web
+CookieMan
+429
+Web
+CookieYes CMP
+401
+Web and app
+Crownpeak Technology Inc. CMP
+18
+Web
+Dailymotion CMP (Private)
+105
+Web, app, and CTV
+DataReporter GmbH CMP
+426
+Web
+Deezer CMP (Private)
+59
+Web and app
+Didomi CMP
+7
+Web, app, and CTV
+Dorik, Inc.
+472
+Web
+DPG Media CMP (Private)
+411
+Web and app
+Easybrain CMP (Private)
+350
+App
+Ebay CMP (Private)
+125
+Web and app
+eBay Kleinanzeigen GmbH CMP (Private)
+309
+Web and app
+Enzuzo, Inc.
+418
+Web
+Ethyca Inc CMP
+407
+Web and app
+Ezoic CMP
+299
+Web
+FastCMP
+388
+Web
+FFALCON OVERSEAS MARKETING LIMITED CMP (Private)
+493
+CTV
+Flexy Consent
+317
+Web
+freenet.de GmbH CMP (Private)
+385
+App
+Gaijin Network CMP (Private)
+492
+App
+Geek Software GmbH CMP (Private)
+423
+Web
+Google LLC CMP
+300
+Web and app
+Gravito CMP
+302
+Web and app
+Grupa RMF CMP (Private)
+330
+Web
+Guardian News and Media CMP (Private)
+112
+Web and app
+Guitar Tabs LLC CMP (Private)
+384
+Web
+HB Digital INC CMP
+449
+Web
+ILOVEPDF SL CMP (Private)
+417
+Web
+Impala CMP (Private)
+303
+App
+Infor Biznes Sp. Z o.o. CMP (Private)
+294
+Web
+InMobi Choice CMP
+10
+Web and app
+Interia CMP (Private)
+231
+Web
+Internetowy Dom Mediowy net S.A. CMP (Private)
+225
+Web
+Iubenda CMP
+123
+Web and app
+Kayak Software Corporation CMP (Private)
+413
+Web
+Ketch CMP
+340
+Web, app, and CTV
+Kixell Tag
+443
+Web
+Lawwwing CMP
+405
+Web
+Learnings CMP
+387
+App
+legal web GmbH
+410
+Web
+LegalBlink
+428
+Web
+Legally ok CMP
+420
+Web
+Match Group LLC CMP (Private)
+415
+App
+MBEX LTD CMP (Private)
+414
+App
+Meru Data CMP
+437
+Web
+Microsoft CMP (Private)
+483
+Web
+Microsoft Corporation CMP (Private)
+198
+App
+mobile.de CMP (Private)
+306
+Web and app
+Moonee Publishing LTD CMP (Private)
+421
+App
+My Agile Privacy CMP
+403
+Web
+NextRoll, Inc CMP
+54
+Web
+NitroPay CMP
+242
+Web
+One AM SRL (Private)
+453
+Web
+One Consent CMP
+273
+App
+Onesecondbefore B.V. CMP
+355
+Web and app
+Onetrust / Cookiepro CMP
+28
+Web, app, and CTV
+Osano CMP
+279
+Web
+Outfit7 CMP (Private)
+348
+App
+Overwolf Ltd. CMP (Private)
+246
+Web
+Pandectes CMP
+445
+Web
+Paruvendu CMP (Private)
+222
+Web
+Podravka d.d. CMP (Private)
+441
+Web
+PrivacyHub
+480
+Web
+PrivacyPillar CMP
+335
+Web
+Proximus SA CMP (Private)
+488
+App and CTV
+Pubtech CMP
+352
+Web and app
+RCS CMP
+218
+Web
+Real Cookie Banner CMP
+367
+Web
+RevIQ Inc. CMP
+511
+Web
+Ringier Axel Springer Polska (Private)
+280
+Web and app
+Secure Privacy CMP
+264
+Web
+Securiti, Inc. CMP
+312
+Web
+Setupad CMP
+379
+Web
+Seven.One Entertainment Group GmbH CMP (Private)
+318
+Web, app, and CTV
+Seznam.cz CMP
+247
+Web
+SFR CMP (Private)
+79
+Web and app
+Singlespot
+212
+App
+Sirdata CMP
+92
+Web
+Site Trust, LLC dba SiteTrust CMP
+519
+Web
+Snigel Adconsent CMP
+229
+Web
+Société Éditrice du Monde (Private)
+371
+Web and app
+Sourcepoint Dialogue CMP
+6
+Web, app, and CTV
+Springer Nature AG & Co. KGAA CMP (Private)
+416
+Web
+Syrenis Limited CMP
+200
+Web
+Termly CMP
+412
+Web
+Traffective (ShowHeroes SE)
+21
+Web and app
+Transcend CMP
+399
+Web and app
+Tri-table Sp. z o.o. CMP
+61
+Web
+TRUENDO CMP
+304
+Web
+Trustarc CMP
+47
+Web and app
+Truyo CMP
+462
+Web
+TVP S.A. CMP (Private)
+351
+Web, app, and CTV
+Uber CMP (Private)
+459
+App
+Uniconsent CMP
+68
+Web and app
+UserCentrics CMP
+5
+Web, app, and CTV
+Viber Media CMP (Private)
+171
+App
+WebAds CMP
+236
+Web
+WebToffee GDPR Cookie Consent
+404
+Web
+wetter.com GmbH CMP (Private)
+329
+App
+Wirtualna Polska Media S.A. CMP
+72
+Web and app
+X-FLOW LTD CMP (Private)
+436
+App
+Yahoo EMEA CMP (Private)
+14
+Web and app
+Consent management requirements for Search Ads publishers (AFS/AFD/ProSE)
+Beginning February 1, 2024, we will begin enforcing new consent management requirements for partners using our Search Ads publisher products (AdSense for Search, AdSense for Domains or Programmable Search Engine). Publishers may meet those requirements by implementing a certified CMP that integrates with IAB Europe’s Transparency and Consent Framework (TCF) to collect consent when serving ads to users in the European Economic Area (EEA) or the UK.
+Once enforcement begins, if you send our Search Ads publisher products an ad request for EEA or UK traffic, and it does not use a Google-certified TCF CMP, the product will serve ads only if you have implemented a new parameter in your ad request that indicates that you wish to allow ads that use an invalid traffic-only cookie & local storage on both consented and unconsented traffic. Partners are legally responsible for the tools they use to gather consent, including consent for how they use cookies & local storage in online advertising. Implementing this parameter is optional. You should consider whether to implement the new parameter, taking into account legal advice, relevant regulations and applicable regulator guidance. You can learn more about implementing the new parameter called "ivt" via the AdSense Custom Search Ads for Web developer site, beginning January 10, 2024.
+Partners who choose to implement the new parameter instead of a certified CMP may see a decrease in their EEA and UK revenue. If neither a Google-certified TCF CMP nor the new parameter is present, then our Search Ads publisher products will not serve any ads. As a reminder, as of November 2023, we have begun the process of no longer serving personalized ads.
+Next steps
+Publishers already working with a CMP: If you work with an existing CMP that is not included on the list of certified CMPs, please contact your CMP to understand if they intend to be certified.
+Publishers with their own CMP: Publishers who have their own CMPs can register their interest in completing certification for their CMP. Learn more about CMP certification
+Publishers who need to find a CMP: For publishers seeking a new CMP partner, they can consider the list of certified CMPs above. We will regularly add other CMPs as they become certified.
+Publishers using Google’s Privacy & messaging European regulations messages: We encourage publishers to consider which CMP solution is best for them. To support publishers, the European regulations message available to Ad Manager, AdSense, and AdMob publishers in the "Privacy & messaging" tab are certified in accordance with the new TCF requirement. Learn more about Privacy & Messaging GDPR support and integration with TCF
+App publishers: In addition to the features above, Google offers app publishers the User Messaging Platform (UMP) SDK. Learn more about adding the Google User Messaging Platform (UMP) SDK to your apps (Ad Manager, AdMob) and creating a European regulations message for apps (Ad Manager, AdMob).
+Next: Google consent management requirements for serving ads in the EEA, the UK, and Switzerland (for CMPs)
+Was this helpful?
+How can we improve it?
+YesNo
+Submit
