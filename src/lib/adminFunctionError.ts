@@ -1,7 +1,8 @@
+import { readCourseReviewFindings } from "../../supabase/functions/_shared/courseReviewFeedback";
 /** Read only bounded, structured failure metadata; never display raw provider payloads. */
-export async function adminFailureDetails(error: unknown, data?: unknown): Promise<{ status?: number; code: string; reason: string }> {
+export async function adminFailureDetails(error: unknown, data?: unknown): Promise<{ status?: number; code: string; reason: string; reviewFindings: string[] }> {
   const context = (error as { context?: Response } | null)?.context;
-  let body = data as { code?: unknown; error?: unknown } | null;
+  let body = data as { code?: unknown; error?: unknown; reviewFindings?: unknown } | null;
   if (context && typeof context.clone === 'function') {
     try {
       const raw = await context.clone().text();
@@ -10,7 +11,8 @@ export async function adminFailureDetails(error: unknown, data?: unknown): Promi
   }
   return { status: context?.status,
     code: typeof body?.code === 'string' ? body.code : '',
-    reason: typeof body?.error === 'string' ? body.error : '' };
+    reason: typeof body?.error === 'string' ? body.error : '',
+    reviewFindings: body?.code === 'COURSE_REVIEW_BLOCKED' ? readCourseReviewFindings(body?.reviewFindings) : [] };
 }
 
 export async function courseAdminError(error: unknown, data?: unknown): Promise<string> {

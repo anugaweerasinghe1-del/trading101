@@ -3,7 +3,7 @@ import { createCourseAdminHandler } from "../_shared/courseAdmin.ts";
 import { validateBatch } from "../_shared/dailyPractice.ts";
 import { validateCourseDocument } from "../_shared/courseDocument.ts";
 import { reviewCourseQuality } from "../_shared/courseQualityGate.ts";
-import { independentCourseReview, readCourseReferences } from "../_shared/courseGenerator.ts";
+import { independentCourseReview, readCoursePublicationReferences } from "../_shared/courseGenerator.ts";
 import { requireExactRevisionReview, verifyCoursePublicationOwner } from "../_shared/coursePublicationGate.ts";
 import type { CourseDocument } from "../_shared/courseDocument.ts";
 import { checkGeminiModelMetadata } from "../_shared/geminiModelPreflight.ts";
@@ -91,10 +91,10 @@ Deno.serve(createCourseAdminHandler({
         if (!cfg?.freeConfirmed || !cfg.apiKey ||
           !["gemini-3.5-flash", "gemini-3.5-flash-lite"].includes(cfg.model ?? ""))
           throw new Error("Course publication configuration requires a verified free Gemini model.");
-        const sources = await readCourseReferences();
+        const sources = await readCoursePublicationReferences(document as CourseDocument);
         if (sources.length < 2) throw new Error("Too few verified sources for independent course review.");
         await independentCourseReview(document as CourseDocument, sources,
-          { model: cfg.model!, apiKey: cfg.apiKey });
+          { model: cfg.model!, apiKey: cfg.apiKey, revision });
       });
       // Optimistic revision check inside the RPC prevents concurrent edits
       // between the source read, external review and final publication.
