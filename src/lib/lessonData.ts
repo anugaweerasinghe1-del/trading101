@@ -666,7 +666,7 @@ export const lessonData: Lesson[] = [
     "id": 4,
     "title": "Portfolio Diversification",
     "category": "Strategy",
-    "description": "Build a balanced portfolio across different asset classes and sectors.",
+    "description": "Compare asset weights, hypothetical losses and correlations under stated assumptions.",
     "subtopics": [
       {
         "title": "Asset Allocation Strategies",
@@ -1025,7 +1025,7 @@ export const lessonData: Lesson[] = [
     "id": 6,
     "title": "Market Trends & Patterns",
     "category": "Analysis",
-    "description": "Identify market trends and learn how to trade with momentum.",
+    "description": "Describe historical trends, volume and sentiment measures without treating them as forecasts.",
     "subtopics": [
       {
         "title": "Bull Markets vs Bear Markets",

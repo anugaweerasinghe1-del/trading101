@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { BookOpen, TrendingUp, Shield, PieChart, LineChart, Target, ArrowRight, Zap, Coins, Brain, ChevronRight, Home, Clock, GraduationCap, Trophy } from "lucide-react";
 import { Link } from "react-router-dom";
+import { lessonData } from "@/lib/lessonData";
 import { LEARN_ARTICLES } from "@/lib/learnArticles";
 import { SEOSection } from "@/components/SEOSection";
 import { useCourseCatalog } from "@/hooks/useCourseCatalog";
@@ -20,13 +21,16 @@ import goals from "@/assets/course-goals.jpg";
 import marketTrends from "@/assets/course-market-trends.jpg";
 
 const lessons = [
-  { id: 1, title: "Getting Started with Trading", category: "Basics", icon: BookOpen, image: tradingBasics, description: "Learn the fundamentals of trading, key terminology, and how markets work.", difficulty: "Beginner", readTime: "15 min", tier: "foundations" as const, content: ["Understanding stocks, ETFs, and other securities", "How to read stock quotes and charts", "Market orders vs. limit orders", "Trading hours and market sessions"] },
-  { id: 5, title: "Setting Trading Goals", category: "Basics", icon: Target, image: goals, description: "Separate hypothetical return arithmetic from reviewable practice goals.", difficulty: "Beginner", readTime: "12 min", tier: "foundations" as const, content: ["Short-term vs. long-term strategies", "Return assumptions and practice goals", "Creating a trading journal", "Evaluating your performance"] },
-  { id: 2, title: "Risk Management", category: "Strategy", icon: Shield, image: riskManagement, description: "Calculate hypothetical exposure, costs and losses, including worse-than-planned exits.", difficulty: "Intermediate", readTime: "18 min", tier: "strategy" as const, content: ["Position sizing assumptions and their limits", "Stop-loss orders and take-profit targets", "Understanding risk-reward ratios", "Diversification strategies"] },
-  { id: 3, title: "Technical Analysis Basics", category: "Analysis", icon: LineChart, image: technicalAnalysis, description: "Read chart observations and indicator calculations without treating them as forecasts.", difficulty: "Intermediate", readTime: "20 min", tier: "strategy" as const, content: ["Candlestick patterns and what they mean", "Support and resistance levels", "Moving averages (SMA and EMA)", "RSI and MACD indicators"] },
-  { id: 6, title: "Market Trends & Patterns", category: "Analysis", icon: TrendingUp, image: marketTrends, description: "Describe trends, volume and sentiment measures, and test their limitations.", difficulty: "Intermediate", readTime: "18 min", tier: "strategy" as const, content: ["Bull markets vs. bear markets", "Identifying trend reversals", "Volume analysis", "Market sentiment indicators"] },
-  { id: 4, title: "Portfolio Diversification", category: "Strategy", icon: PieChart, image: diversification, description: "Build a balanced portfolio across different asset classes and sectors.", difficulty: "Advanced", readTime: "22 min", tier: "advanced" as const, content: ["Asset allocation strategies", "Balancing stocks, ETFs, and crypto", "Sector diversification", "Rebalancing your portfolio"] },
-];
+  { id: 1, title: "Getting Started with Trading", category: "Basics", icon: BookOpen, image: tradingBasics, difficulty: "Beginner", readTime: "15 min", tier: "foundations" as const, content: ["Understanding stocks, ETFs, and other securities", "How to read stock quotes and charts", "Market orders vs. limit orders", "Trading hours and market sessions"] },
+  { id: 5, title: "Setting Trading Goals", category: "Basics", icon: Target, image: goals, difficulty: "Beginner", readTime: "12 min", tier: "foundations" as const, content: ["Short-term vs. long-term strategies", "Return assumptions and practice goals", "Creating a trading journal", "Evaluating your performance"] },
+  { id: 2, title: "Risk Management", category: "Strategy", icon: Shield, image: riskManagement, difficulty: "Intermediate", readTime: "18 min", tier: "strategy" as const, content: ["Position sizing assumptions and their limits", "Stop-loss orders and take-profit targets", "Understanding risk-reward ratios", "Diversification strategies"] },
+  { id: 3, title: "Technical Analysis Basics", category: "Analysis", icon: LineChart, image: technicalAnalysis, difficulty: "Intermediate", readTime: "20 min", tier: "strategy" as const, content: ["Candlestick patterns and what they mean", "Support and resistance levels", "Moving averages (SMA and EMA)", "RSI and MACD indicators"] },
+  { id: 6, title: "Market Trends & Patterns", category: "Analysis", icon: TrendingUp, image: marketTrends, difficulty: "Intermediate", readTime: "18 min", tier: "strategy" as const, content: ["Bull markets vs. bear markets", "Identifying trend reversals", "Volume analysis", "Market sentiment indicators"] },
+  { id: 4, title: "Portfolio Diversification", category: "Strategy", icon: PieChart, image: diversification, difficulty: "Advanced", readTime: "22 min", tier: "advanced" as const, content: ["Asset allocation strategies", "Balancing stocks, ETFs, and crypto", "Sector diversification", "Rebalancing your portfolio"] },
+].map(lesson => ({
+  ...lesson,
+  description: lessonData.find(item => item.id === lesson.id)?.description ?? "",
+}));
 
 const trendingTopics = [
   { id: "bitcoin-practice", title: "Bitcoin Practice", subtitle: "BTC simulator", description: "Practice Bitcoin order entry and portfolio tracking with virtual cash.", icon: Zap, badge: "Practice", href: "/trade/btc" },

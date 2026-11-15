@@ -25,3 +25,5 @@ Historical evidence remains in the `issue-430-editorial-evidence` branch. Its ow
 Additional finding THQ-430-017: a single-observation portfolio chart tooltip overflowed a 360px viewport to 455px during the populated guest check. Fixed tooltip positioning and wrapping are under browser recheck. The same test also checks partial-score completion language at 4/5, not just a perfect score.
 
 Two source-draft save attempts returned confirmation-expired errors. A subsequent read confirms all three draft and published revision pairs are unchanged at 6/6, 3/3, 3/3. No draft save or publication succeeded; no deletion statement was submitted. Further database writes stopped after the user queried the tool warning.
+
+The legacy hub and lesson detail pages maintained separate descriptions. They now share lessonData descriptions; diversification and trend summaries also describe observable comparison/description tasks. This prevents the hub retaining different copy after a lesson edit. Legacy completion checks cover all six routes, including a 4/5 partial score.
