@@ -107,6 +107,8 @@ assert.match(await courseAdminError(failed(409, { error: 'Independent course qua
 assert.match(await courseAdminError(failed(409, { code: 'COURSE_REVIEW_CONFIG' })), /refreshing cannot fix/);
 assert.match(await courseAdminError(failed(409, { code: 'COURSE_SOURCES_UNAVAILABLE' })), /reference sources/);
 assert.match(await courseAdminError(failed(409, { code: 'COURSE_VALIDATION' })), /server’s content checks/);
+assert.match(await courseAdminError(failed(409, { code: 'COURSE_REVIEW_QUOTA' })), /exhausted its quota/);
+assert.match(await courseAdminError(failed(409, { error: 'Independent course review unavailable. Draft withheld (HTTP 404).' })), /returned HTTP 404/);
 assert.doesNotMatch(await courseAdminError(failed(409, { error: 'unknown internal failure' })), /saved revision changed|Refresh and reopen/);
 assert.match(await courseAdminError(failed(429, {})), /rate-limited/);
 assert.match(await courseAdminError(new Error('network failed')), /could not confirm/);

@@ -27,8 +27,13 @@ export async function courseAdminError(error: unknown, data?: unknown): Promise<
       return 'The saved draft failed the server’s content checks. Publication is blocked. Reopen the latest draft and resolve its validation issues before publishing.';
     if (code === 'COURSE_REVIEW_BLOCKED' || reason.startsWith('Independent course quality review'))
       return 'The independent content review rejected this revision. Nothing was published. Keep the draft private and investigate the review before retrying.';
-    if (code === 'COURSE_REVIEW_UNAVAILABLE' || code === 'COURSE_REVIEW_QUOTA' || /^(Independent course review|Free AI quota)/.test(reason))
-      return 'Independent course review did not pass or its free-tier quota is unavailable. Publication is blocked. Keep the draft private and review its sources before retrying.';
+    if (code === 'COURSE_REVIEW_QUOTA' || reason.startsWith('Free AI quota'))
+      return 'The free review service has exhausted its quota. Publication is blocked. Keep the draft private and wait for quota recovery; no paid fallback was used.';
+    if (code === 'COURSE_REVIEW_UNAVAILABLE' || reason.startsWith('Independent course review')) {
+      const httpStatus = reason.match(/\(HTTP ([45]\d{2})\)/)?.[1];
+      return 'The independent review service ' + (httpStatus ? 'returned HTTP ' + httpStatus : 'is unavailable or returned an invalid response')
+        + '. Publication is blocked. Keep the draft private and check the configured model and service before retrying.';
+    }
     if (code === 'COURSE_CHANGED' || reason.startsWith('Course changed'))
       return 'The saved revision changed. Refresh and reopen the latest revision before retrying. Your local edits are preserved.';
     return 'The server could not complete this action. Your local edits are preserved. Check the saved state and server diagnostics before retrying.';
