@@ -1,0 +1,10 @@
+PASS word-number/digit/decimal inputs; vague prose and missing-operation negatives; existing missing-example and paragraph gates remain active
+{"event":"course_admin_failure","code":"COURSE_CHANGED"}
+{"event":"course_admin_failure","code":"COURSE_VALIDATION"}
+{"event":"course_admin_failure","code":"COURSE_REVIEW_BLOCKED"}
+{"event":"course_admin_failure","code":"COURSE_REVIEW_UNAVAILABLE"}
+{"event":"course_admin_failure","code":"COURSE_REVIEW_QUOTA"}
+{"event":"course_admin_failure","code":"COURSE_REVIEW_CONFIG"}
+{"event":"course_admin_failure","code":"COURSE_SOURCES_UNAVAILABLE"}
+{"event":"course_admin_failure","code":"COURSE_WRITE_FAILED"}
+PASS handler-to-browser failure categories: changed revision, validation, review rejection, unavailable review, quota, configuration, sources and sanitized unknown failure

@@ -31,6 +31,8 @@ The source prerequisite remains incomplete until stored published documents matc
 
 The new strict audit still has0 newly completed editorial pages. All480 queued URLs, including163 current sitemap URLs, remain unread. Policy-source reading, builds, route tests and completeness-check fixtures do not count as paragraph-level page review. Reviewer is Codex, a prior contributor; no independent human or Google acceptance is claimed.
 
+The final authenticated owner retry is the remaining operational blocker. The original19-proposal remediation remains18/19; the fresh sequential audit remains0 completed pages.
+
 ## Evidence index
 
 - `pr439-checks.json`: exact-head required CI results.
@@ -38,5 +40,5 @@ The new strict audit still has0 newly completed editorial pages. All480 queued U
 - `backend-runtime-verification.json`: unauthenticated runtime denials/method handling.
 - `publication-phase-diagnosis.json`: sanitized phase correlation and its limits.
 - `production439-admin-release.json`, `preview439-compiled-admin-release.json`: actual served module hashes and explicitly synthetic adapter checks.
-- `review-checks.log`, `admin-editorial.log`, `course-workflow.log`, `daily-practice.log`: meaningful local regression results.
+- `review-checks.txt`, `admin-editorial.txt`, `course-workflow.txt`, `daily-practice.txt`: meaningful local regression results.
 - `validate-page-record.py`, `page-completeness-negative-controls.json`: preparatory record gate. It checks completeness/integrity, not whether a reviewer judged correctly. No actual page record has been accepted by this gate yet.

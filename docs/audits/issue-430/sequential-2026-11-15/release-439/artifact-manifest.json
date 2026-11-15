@@ -1,0 +1,130 @@
+{
+  "scope": "PR439 technical release evidence; no new editorial-page credit",
+  "files": [
+    {
+      "path": "REPORT.md",
+      "bytes": 4992,
+      "sha256": "89c11d77f82ab1cd8889a1dfca4704f96b9ce17ef5a12541b935f0f915f4367a"
+    },
+    {
+      "path": "admin-editorial.txt",
+      "bytes": 462,
+      "sha256": "3f883c6c5fa7fc553220c05a5e56fe9a39dc525efc1a03be4f5aa7afc3052d10"
+    },
+    {
+      "path": "backend-deployment-receipt.json",
+      "bytes": 520,
+      "sha256": "7b289a596d92e2bcc3a800023a3df759230dbe0a15e9c9f633a74a0185f290ec"
+    },
+    {
+      "path": "backend-runtime-verification.json",
+      "bytes": 657,
+      "sha256": "7f093dbc0f909e95babfe114581de0ba9bf2561d4c258dc2930cdf00d001eeb1"
+    },
+    {
+      "path": "cloudflare439-provider-status.json",
+      "bytes": 1021,
+      "sha256": "562786230ec1bdb2a6d661d921299948b3dfff02135945e12e769e82da670f3c"
+    },
+    {
+      "path": "course-workflow.txt",
+      "bytes": 212,
+      "sha256": "09a4e5ace04462e5d7ad735f08a5d95b09a981d8e098372a2e934746226fd249"
+    },
+    {
+      "path": "daily-practice.txt",
+      "bytes": 740,
+      "sha256": "2fbf95701006b398b34aeb03b8779affa45ff80356f0795acf33faee71c4299a"
+    },
+    {
+      "path": "final-publication-state.json",
+      "bytes": 767,
+      "sha256": "32eb12d5d416490056f53bfe5105f8ec7b60b6bf18d2de977b4c04c66879a3ec"
+    },
+    {
+      "path": "function-source-binding.json",
+      "bytes": 2316,
+      "sha256": "e346c2460e24e16b70415799a96233938f0e4cdc694e576ce6868354dca9ffcd"
+    },
+    {
+      "path": "native-production-receipt.json",
+      "bytes": 972,
+      "sha256": "f1b5b1be8065452bcc0956e10da33adff0cc5e048df7ba828479157262e2d1f9"
+    },
+    {
+      "path": "page-completeness-negative-controls.json",
+      "bytes": 1080,
+      "sha256": "4f141f1bbfc44ece0897fe396a5204f756d963137f8d3f789429beff9b351c33"
+    },
+    {
+      "path": "pr439-checks.json",
+      "bytes": 2699,
+      "sha256": "534b57add1f2e7328a02530a09c731e33bb4d610f36d7b9d2dec3de1baa11d8b"
+    },
+    {
+      "path": "preview439-compiled-admin-mobile.png",
+      "bytes": 68834,
+      "sha256": "5684a406c51f3f0c90d0b6eb1e656c81359ba685d02a9c8b1d055f47ca96dcfc"
+    },
+    {
+      "path": "preview439-compiled-admin-native.html",
+      "bytes": 7783,
+      "sha256": "9f13bdec6720c419a141a3f1f31b6d6c5c6d2e09dd1a3fba2864e8e8c3f6d4ae"
+    },
+    {
+      "path": "preview439-compiled-admin-release.json",
+      "bytes": 3135,
+      "sha256": "8dac3fc251c447bd51faabb5f2cce02924c55403f3a18d56d02d1b658fb5a482"
+    },
+    {
+      "path": "preview439-compiled-admin-rendered.txt",
+      "bytes": 910,
+      "sha256": "9dd699b770786518dc3add89b6e281a7333b3dfd46a326c97595a7a1099c1b1a"
+    },
+    {
+      "path": "production439-admin-mobile.png",
+      "bytes": 68834,
+      "sha256": "5684a406c51f3f0c90d0b6eb1e656c81359ba685d02a9c8b1d055f47ca96dcfc"
+    },
+    {
+      "path": "production439-admin-native.html",
+      "bytes": 7783,
+      "sha256": "9f13bdec6720c419a141a3f1f31b6d6c5c6d2e09dd1a3fba2864e8e8c3f6d4ae"
+    },
+    {
+      "path": "production439-admin-release.json",
+      "bytes": 3087,
+      "sha256": "f83913b282ba262436b85c15a4b1b7c4a9c23c3d9395575a08b66d2cd188d04d"
+    },
+    {
+      "path": "production439-admin-rendered.txt",
+      "bytes": 910,
+      "sha256": "9dd699b770786518dc3add89b6e281a7333b3dfd46a326c97595a7a1099c1b1a"
+    },
+    {
+      "path": "publication-phase-diagnosis.json",
+      "bytes": 1085,
+      "sha256": "4d6f25a3704388b63688f3f3faf0b253f79d5638fcdea363283adbec35c7f8a7"
+    },
+    {
+      "path": "review-checks.txt",
+      "bytes": 820,
+      "sha256": "4328a1d662eaba0e9017c2a8d3494326526a7e156debe444a9736b579d6aaedf"
+    },
+    {
+      "path": "served-adminFunctionError.js",
+      "bytes": 2887,
+      "sha256": "582b1a07bbfb940e8f7857d9bffd2ed656f5ad9e039ed2f5d1ee33947defa3f6"
+    },
+    {
+      "path": "validate-page-record.py",
+      "bytes": 4478,
+      "sha256": "e43442b6db2aafa91446776508e01493b43c5d52c2e3a67a034f4c0bb0940833"
+    },
+    {
+      "path": "verify-admin-release.mjs",
+      "bytes": 4505,
+      "sha256": "eea02a82ce22bb365772715497918bcb5676fa37a2ac0349caf2cf03b5b9b937"
+    }
+  ]
+}
