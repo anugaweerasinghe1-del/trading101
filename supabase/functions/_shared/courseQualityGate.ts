@@ -1,5 +1,16 @@
 import type { CourseDocument } from "./courseDocument.ts";
 
+/** Recognize quantified inputs without requiring authors to replace clear number words.
+ * This is a structural signal for owner review, not proof of mathematical accuracy.
+ */
+export function hasQuantifiedWorkedExample(text: string): boolean {
+  const operation = /\b(?:calculate|divide|multiply|subtract|sum|equals|computed|amount|percent|percentage)\b/i.test(text);
+  const digits = /(?:\$\s?\d|\d+(?:\.\d+)?%)/.test(text);
+  const numberWord = "(?:zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred|thousand|million)";
+  const wordsWithUnit = new RegExp(`\\b${numberWord}(?:[ -]+(?:${numberWord}|and))*[ -]+(?:dollars?|cents?|units?|shares?|percent|per cent)\\b`, "i").test(text);
+  return operation && (digits || wordsWithUnit);
+}
+
 /**
  * Fail-closed, provider-independent review of a course's factual hygiene and
  * instructional value. This cannot prove financial accuracy or policy approval;
@@ -45,7 +56,7 @@ export function reviewCourseQuality(
     const paragraphs = lesson.body.filter(s => !s.trimStart().startsWith("## "));
     if (paragraphs.some(p => p.trim().split(/\s+/).length < 65))
       issues.push(id + ": a body paragraph is too brief to teach the concept.");
-    if (!/\b(?:calculate|divide|multiply|subtract|sum|equals|computed|amount|percent|percentage)\b/i.test(prose[i]) || !/(?:\$\s?\d|\d+(?:\.\d+)?%)/.test(prose[i]))
+    if (!hasQuantifiedWorkedExample(prose[i]))
       issues.push(id + ": missing a quantified worked example.");
     if (!/\b(?:practice|exercise|worksheet|debrief|try this|worked example)\b/i.test(prose[i]))
       issues.push(id + ": missing a concrete practice exercise or debrief.");

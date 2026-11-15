@@ -103,9 +103,19 @@ export function createCourseAdminHandler(options: {
       return response({ error: "Unknown action." }, 400);
     } catch (error) {
       const message = error instanceof Error ? error.message : "";
+      // Emit only a bounded category, never draft text, credentials or provider payloads.
+      const code = message.startsWith("Course changed") ? "COURSE_CHANGED"
+        : message.startsWith("Course is incomplete") ? "COURSE_VALIDATION"
+        : message.startsWith("Independent course quality review") ? "COURSE_REVIEW_BLOCKED"
+        : message.startsWith("Independent course review") ? "COURSE_REVIEW_UNAVAILABLE"
+        : message.startsWith("Free AI quota") ? "COURSE_REVIEW_QUOTA"
+        : message.startsWith("Course publication configuration") ? "COURSE_REVIEW_CONFIG"
+        : message.startsWith("Too few verified sources") ? "COURSE_SOURCES_UNAVAILABLE"
+        : "COURSE_WRITE_FAILED";
+      console.warn(JSON.stringify({ event: "course_admin_failure", code }));
       const known = ["Course changed", "Course URL", "Published lesson", "Course is incomplete", "Course not found", "Daily bank",
-        "Independent course review", "Free AI quota", "Course publication configuration", "Too few verified sources"];
-      return response({ error: known.some(s => message.startsWith(s)) ? message : "Could not save the course. Please retry." }, 409);
+        "Independent course review", "Independent course quality review", "Free AI quota", "Course publication configuration", "Too few verified sources"];
+      return response({ code, error: known.some(s => message.startsWith(s)) ? message : "Could not save the course. Please retry." }, 409);
     }
   };
 }

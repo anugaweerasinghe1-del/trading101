@@ -28,7 +28,15 @@ export async function requireExactRevisionReview(
     return "original_review_verified";
   // Edited, preexisting, or unverifiable research MUST receive new independent
   // critical assessment before publication. Any error or quota outage aborts.
-  await independentlyReview(document);
+  try {
+    await independentlyReview(document);
+  } catch (error) {
+    // Fetch/timeouts and malformed provider streams must be identified as review
+    // outages, not revision conflicts. Never propagate arbitrary provider text.
+    if (error instanceof Error && /^(Independent course (?:quality )?review|Free AI quota|Course publication configuration|Too few verified sources)/.test(error.message))
+      throw error;
+    throw new Error("Independent course review unavailable. Draft withheld.");
+  }
   return "fresh_review_passed";
 }
 

@@ -1,0 +1,51 @@
+{
+  "observedAtUTC": "2026-11-15T08:22:37.410694+00:00",
+  "kind": "read-only-database-and-deployed-function-diagnosis",
+  "function": {
+    "slug": "admin-courses",
+    "observedVersion": 18,
+    "bundleSHA256": "e94de3647111a1bea0a2844949324d37d8e9f3c403ea30c3320c2145a26992d6"
+  },
+  "courses": [
+    {
+      "slug": "bitcoin-simulator-practice-trading",
+      "draftRevision": 8,
+      "publishedRevision": 6,
+      "status": "draft",
+      "databaseSchemaValid": true,
+      "deployedQualityCheckerIssues": []
+    },
+    {
+      "slug": "cryptocurrency-price-feeds-and-valuation",
+      "draftRevision": 5,
+      "publishedRevision": 3,
+      "status": "draft",
+      "databaseSchemaValid": true,
+      "deployedQualityCheckerIssues": []
+    },
+    {
+      "slug": "diversification-and-position-sizing",
+      "draftRevision": 5,
+      "publishedRevision": 3,
+      "status": "draft",
+      "databaseSchemaValid": true,
+      "deployedQualityCheckerIssues": []
+    }
+  ],
+  "ownerAttempt": {
+    "observedAtUTC": "2026-11-15T08:16:42.367Z",
+    "httpStatus": 409,
+    "functionVersion": 18,
+    "screenshot": "User supplied Screenshot_20261115-134643.jpg; generic changed-revision/review error.",
+    "exactServerFailureCause": "UNRESOLVED: previous handler does not emit a diagnostic category; screenshot cannot distinguish causes."
+  },
+  "configurationRead": {
+    "model": "gemini-3.5-flash-lite",
+    "freeConfirmed": true,
+    "apiKeyConfigured": true,
+    "modelAvailabilityOrQuotaVerified": false,
+    "apiKeyReadOrPrinted": false
+  },
+  "publicationPerformedByAssistant": false,
+  "freshSequentialEditorialPagesCompleted": 0
+}

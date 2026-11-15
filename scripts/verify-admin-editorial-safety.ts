@@ -103,6 +103,11 @@ assert.equal((await adminFailureDetails(failed(429, { code: 'DAILY_LIMIT' }), nu
 assert.match(await courseAdminError(failed(403, { error: 'private provider payload' })), /registered owner/);
 assert.match(await courseAdminError(failed(409, { error: 'Independent course review failed' })), /Publication is blocked/);
 assert.match(await courseAdminError(failed(409, { error: 'Course changed since review' })), /saved revision changed/);
+assert.match(await courseAdminError(failed(409, { error: 'Independent course quality review blocked this draft.' })), /rejected this revision/);
+assert.match(await courseAdminError(failed(409, { code: 'COURSE_REVIEW_CONFIG' })), /refreshing cannot fix/);
+assert.match(await courseAdminError(failed(409, { code: 'COURSE_SOURCES_UNAVAILABLE' })), /reference sources/);
+assert.match(await courseAdminError(failed(409, { code: 'COURSE_VALIDATION' })), /server’s content checks/);
+assert.doesNotMatch(await courseAdminError(failed(409, { error: 'unknown internal failure' })), /saved revision changed|Refresh and reopen/);
 assert.match(await courseAdminError(failed(429, {})), /rate-limited/);
 assert.match(await courseAdminError(new Error('network failed')), /could not confirm/);
 for (const status of [400, 401, 403, 409, 422, 429, 503])
