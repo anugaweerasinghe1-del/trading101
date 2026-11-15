@@ -80,11 +80,13 @@ assert.match(source("src/lib/publicCoursePublications.ts"), /order\("published_a
 
 assert.match(banner, /STORAGE_KEY = "tradehq_consent_v3"/);
 assert.match(banner, /if \(choice === "accepted"\) loadConsentedAnalytics\(\)/);
-assert.match(banner, /if \(next === "accepted" && !isAdult\) return/);
+assert.match(banner, /if \(next === "accepted" && !adultConfirmed\) return/);
 assert.match(banner, /autocapture: false/);
 assert.match(banner, /fetchRemoteConfig: false/);
-assert.match(banner, /Accept optional analytics/);
-assert.match(banner, /Reject analytics/);
+assert.match(banner, /I.m 18\+ · Accept analytics/);
+assert.match(banner, /onClick=\{\(\) => save\("accepted", true\)\}/);
+assert.doesNotMatch(banner, /type="checkbox"/, "Compact consent must not require a separate age checkbox");
+assert.match(banner, /onClick=\{\(\) => save\("rejected"\)\}/);
 assert.match(footer, /tradehq:open-consent/);
 assert.match(footer, /AdvertisingPrivacyChoices/);
 assert.doesNotMatch(banner, /engagementPlugin|sessionReplayPlugin/,
