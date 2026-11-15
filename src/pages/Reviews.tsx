@@ -207,7 +207,7 @@ export default function Reviews() {
             </div>
             <h1 className="text-3xl md:text-5xl font-bold mb-3">What Traders Say About TradeHQ</h1>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              User-submitted feedback about the free $100,000 practice simulator. Submissions are moderated and duplicate-limited, but identity and usage are not independently verified.
+              User-submitted feedback about the free $100,000 practice simulator. Submissions are moderated and duplicate-limited, but identity and usage are not independently verified. A visitor’s confidence or simulated result is not evidence of readiness for real-money investing.
             </p>
             {stats.count > 0 && (
               <div className="mt-5 inline-flex items-center gap-3 px-5 py-3 rounded-2xl bg-card border border-border">

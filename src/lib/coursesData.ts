@@ -126,7 +126,7 @@ const optionsTrack: CourseTrack = {
         "Theta estimates an option value change as time passes under a model, holding other inputs fixed. State whether the quote is per share or per contract and whether a calendar or trading-day convention is used. Purchased options commonly have negative theta, but realised profit also depends on price, volatility and costs. Selling premium is not a guaranteed collection of that estimate.",
         "## Vega — volatility sensitivity",
         "Vega estimates sensitivity to a one-percentage-point change in implied volatility, with other inputs held fixed. Implied volatility can change around earnings, but it need not rise before every release or fall afterwards. A long option can lose despite a favorable underlying move if time decay and a volatility decline offset that move.",
-        "> Every option position is really four separate bets: on direction, on the speed of that direction, on time, and on volatility.",
+        "> Options have several model sensitivities: delta describes underlying-price sensitivity, gamma describes how delta changes with the underlying price, and theta and vega describe time and volatility sensitivities. Hold other model inputs fixed when interpreting each measure.",
         DISC,
       ],
       keyTakeaways: [
@@ -250,7 +250,7 @@ const optionsTrack: CourseTrack = {
         { label: "OIC — Options Basics", url: "https://www.optionseducation.org/optionsoverview/options-basics" },
       ],
       quiz: [
-        { question: "Why define a risk budget before a simulated options trade?", options: ["To guarantee profit", "To control the potential effect of one loss", "To predict volatility", "To avoid all drawdowns"], correctAnswer: 1, explanation: "A predefined risk budget limits how much one trade can affect the practice account; there is no universal percentage that fits every trader or strategy." },
+        { question: "Why define a risk budget before a simulated options trade?", options: ["To guarantee profit", "To define a planned exposure or loss assumption", "To predict volatility", "To avoid all drawdowns"], correctAnswer: 1, explanation: "A risk budget records a planned exposure or loss assumption. It does not cap actual losses: gaps, execution, costs and contract obligations can produce a different result. No percentage fits every situation." },
         { question: "What should be compared when evaluating a roll?", options: ["Only whether it creates a credit", "Only the new expiry", "The new risk, break-even points, cost and time remaining", "Nothing — rolling is always better"], correctAnswer: 2, explanation: "A roll changes several dimensions of the position, so the full risk profile matters more than credit versus debit alone." },
         { question: "How can a hypothetical options exit rule be studied outside TradeHQ’s spot engine?", options: ["Assume one percentage always works", "Use a separate options-data worksheet with explicit fills and costs", "Change the rule after every loss", "Ignore position size"], correctAnswer: 1, explanation: "TradeHQ cannot execute an options backtest. A separate worksheet needs actual options observations and assumptions; a selected sample cannot validate future performance." },
         { question: "Why journal every trade?", options: ["Tax only", "Review recorded assumptions and mistakes", "Required by regulators", "Boosts win rate automatically"], correctAnswer: 1, explanation: "A journal records assumptions and observed mistakes. It does not prove a statistical edge or predict future profits." },
@@ -382,8 +382,8 @@ const futuresTrack: CourseTrack = {
       quiz: [
         { question: "Further-dated below front month =", options: ["Contango", "Backwardation", "Equilibrium", "Rollover"], correctAnswer: 1, explanation: "Backwardation describes relative delivery prices; it does not by itself prove a shortage." },
         { question: "Which factor can make a futures fund differ from spot performance?", options: ["Guaranteed gains", "Contract selection and rolling methodology", "No costs", "Identical exposure"], correctAnswer: 1, explanation: "Methodology, contract price changes, collateral returns and costs affect fund performance." },
-        { question: "Contango is typical for:", options: ["Perishables", "Storable commodities in normal markets", "Only metals", "Only ags"], correctAnswer: 1, explanation: "Storage costs push distant deliveries up." },
-        { question: "Which condition can contribute to backwardation, without being proven by the curve alone?", options: ["Quiet market", "Physical shortage", "Delisting", "Low vol"], correctAnswer: 1, explanation: "Hedgers pay for immediate supply." },
+        { question: "Which factor can contribute to contango in a storable-commodity example?", options: ["A guaranteed shortage", "Carrying costs", "The ticker symbol alone", "A universal price rule"], correctAnswer: 1, explanation: "Carrying costs can contribute to higher deferred futures prices. Convenience yield and other conditions can offset those costs; storable commodities are not always in contango." },
+        { question: "Which condition can contribute to backwardation, without being proven by the curve alone?", options: ["Quiet market", "Physical shortage", "Delisting", "Low vol"], correctAnswer: 1, explanation: "Immediate demand for physical supply and convenience yield can contribute to backwardation. The curve alone does not prove a shortage or identify participants’ motives." },
       ],
     },
     {
@@ -507,7 +507,7 @@ const macroTrack: CourseTrack = {
       quiz: [
         { question: "The Fed's 2% longer-run inflation goal is measured using:", options: ["Headline CPI", "Core CPI", "PCE price index", "PPI"], correctAnswer: 2, explanation: "The FOMC states its 2% longer-run inflation goal in terms of the annual change in the PCE price index." },
         { question: "CPI is released at:", options: ["8:00 AM ET", "8:30 AM ET", "10:00 AM ET", "2:00 PM ET"], correctAnswer: 1, explanation: "8:30 AM Eastern." },
-        { question: "Why core over headline?", options: ["Core is higher", "Food/energy too volatile to signal trend", "Headline not reported", "Only economists care"], correctAnswer: 1, explanation: "Stripping volatile components isolates trend." },
+        { question: "What distinguishes core CPI from headline CPI?", options: ["Core is always higher", "Core excludes food and energy", "Headline CPI is not reported", "Core predicts future inflation"], correctAnswer: 1, explanation: "Core CPI excludes food and energy, whose prices can be volatile. It offers one view of underlying inflation; headline CPI covers the full specified basket. Neither series alone establishes future inflation." },
         { question: "A CPI result above one survey’s median forecast establishes:", options: ["The next stock return", "A difference from that specified forecast", "A guaranteed rate increase", "Which participant moved the market"], correctAnswer: 1, explanation: "A forecast difference alone does not identify market participants or determine the next price move." },
       ],
     },

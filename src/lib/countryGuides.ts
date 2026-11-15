@@ -131,7 +131,7 @@ export const COUNTRY_GUIDES: CountryGuide[] = [
       "Optional study worksheet: assume a fictional USD 100 remittance and choose two hypothetical PHP-per-USD rates. Calculate the peso receipt under each before fees. Then add an explicit fee assumption and compare the net receipts. This separates currency translation and transaction costs from an investment return. It does not forecast USD/PHP or establish a bank or brokerage route. Select a study schedule that fits school or work rather than following a foreign market overnight.",
     faqs: [
       { q: "Do I need to register with SEC Philippines to use TradeHQ?", a: "TradeHQ is a free educational simulator with no real-money trades. For account eligibility or activities that require registration, check current Philippine SEC rules and the provider involved." },
-      { q: "Can Filipino students under 18 use TradeHQ?", a: "TradeHQ is a simulated educational site and does not execute real-money trades. Eligibility for a real brokerage account depends on the provider and applicable rules, so check current official/provider requirements rather than relying on this guide." },
+      { q: "Does the 18+ analytics choice restrict access to TradeHQ?", a: "The 18+ confirmation applies to optional analytics, not to public lessons, guest practice or TradeHQ sign-in. Visitors under 18 should choose Reject analytics; TradeHQ still works. This guide does not introduce a new account-age restriction or guardian-verification process. TradeHQ executes no real-money trades; a real brokerage account has separate provider and legal eligibility requirements." },
     ],
   },
   {

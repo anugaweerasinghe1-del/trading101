@@ -113,7 +113,7 @@ export default function Privacy() {
               },
               {
                 question: "Does TradeHQ use analytics or advertising cookies?",
-                answer: "Optional Arena and leaderboard new-account registration analytics use a pseudonymous browser identifier only after renewed consent from a visitor confirming they are at least 18; no account ID, email or portfolio is included in the custom funnel events. The site's replay and automatic interaction capture are disabled. Google provides separate regional advertising privacy messages and controls. You can change analytics choices here and use Advertising privacy choices when Google's European message applies, or its Do Not Sell or Share link in supported US states.",
+                answer: "Optional Arena and leaderboard new-account registration analytics use a pseudonymous browser identifier only after renewed consent from a visitor confirming they are at least 18; no account ID, email or portfolio is included in the custom funnel events. The 18+ confirmation is for optional analytics; it is not an age restriction on lessons, guest practice or sign-in. Visitors under 18 should reject optional analytics. The site's replay and automatic interaction capture are disabled. Google provides separate regional advertising privacy messages and controls. You can change analytics choices here and use Advertising privacy choices when Google's European message applies, or its Do Not Sell or Share link in supported US states.",
               },
             ]}
           />

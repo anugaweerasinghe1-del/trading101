@@ -25,7 +25,7 @@ const sections = [
     icon: GraduationCap,
     title: "Educational Philosophy",
     body:
-      "Learning by doing beats learning by reading. Every feature — the $100,000 virtual portfolio, the educational mentor, the daily challenge, the wiki and the compound growth simulator — exists to turn abstract concepts (risk, position sizing, diversification, psychology) into things you can feel through hands-on practice.",
+      "Worked examples and virtual exercises complement reading. Every feature — the $100,000 virtual portfolio, the educational mentor, the daily challenge, the wiki and the compound growth simulator — exists to turn abstract concepts (risk, position sizing, diversification, psychology) into things you can feel through hands-on practice.",
   },
   {
     icon: Compass,

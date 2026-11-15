@@ -88,7 +88,9 @@ export function PortfolioChart({ currentValue, history, account, receivedAt }: {
             domain={chartDomain}
             tickFormatter={(value: number) => formatPortfolioChartTick(value, chartDomain[1] - chartDomain[0])}
           />
-          <Tooltip 
+          <Tooltip
+            position={{ x: 0, y: 0 }}
+            wrapperStyle={{ maxWidth: '100%', whiteSpace: 'normal' }}
             contentStyle={{ 
               backgroundColor: 'hsl(var(--card))',
               border: '1px solid hsl(var(--border))',
