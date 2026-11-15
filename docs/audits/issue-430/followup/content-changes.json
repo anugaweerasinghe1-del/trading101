@@ -92,7 +92,7 @@
   {
     "file": "src/components/Quiz.tsx",
     "before": "Excellent work! You've mastered this lesson.",
-    "after": "You answered these questions correctly. Review the explanations and test the concepts with another example."
+    "after": "Your quiz result is recorded. Review the explanations and test the concepts with another example."
   },
   {
     "file": "src/lib/countryGuides.ts",
@@ -193,5 +193,30 @@
     "file": "src/pages/SectorPillar.tsx",
     "before": "Physical commodities from precious metals to energy. Gold for inflation hedging, oil for energy exposure, and industrial metals as economic indicators.",
     "after": "Compare precious metals, energy and industrial commodities under stated supply, demand and price assumptions. Gold is not a guaranteed inflation hedge, and commodity prices do not establish future economic conditions."
+  },
+  {
+    "file": "src/lib/countryGuides.ts",
+    "evidence": "Final guarded PR diff; source text and functional tests",
+    "scope": "Owner-authorized clarification / account-inclusive exposure / in-chart tooltip"
+  },
+  {
+    "file": "src/pages/Privacy.tsx",
+    "evidence": "Final guarded PR diff; source text and functional tests",
+    "scope": "Owner-authorized clarification / account-inclusive exposure / in-chart tooltip"
+  },
+  {
+    "file": "src/lib/portfolioExposure.ts",
+    "evidence": "Final guarded PR diff; source text and functional tests",
+    "scope": "Owner-authorized clarification / account-inclusive exposure / in-chart tooltip"
+  },
+  {
+    "file": "src/components/portfolio/AIInsightSummary.tsx",
+    "evidence": "Final guarded PR diff; source text and functional tests",
+    "scope": "Owner-authorized clarification / account-inclusive exposure / in-chart tooltip"
+  },
+  {
+    "file": "src/components/PortfolioChart.tsx",
+    "evidence": "Final guarded PR diff; source text and functional tests",
+    "scope": "Owner-authorized clarification / account-inclusive exposure / in-chart tooltip"
   }
 ]
