@@ -523,7 +523,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   avax: {
-    whatIs: "Avalanche (AVAX) is a layer-1 blockchain platform known for its speed and low transaction costs. It uses a unique consensus mechanism and supports multiple virtual machines for flexibility.",
+    whatIs: "Avalanche (AVAX) is a blockchain network supporting smart contracts. Compare the relevant network documentation and observations rather than assuming fixed fees or confirmation times.",
     strategy: "Compare network-specific developments with broader crypto movements over a defined period. A decline in BTC dominance does not establish that AVAX will outperform. Educational simulation only; not financial advice.",
     category: "Cryptocurrency",
     keywords: ["Avalanche trading", "AVAX simulator", "layer-1 blockchain", "DeFi"],
@@ -571,7 +571,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   ltc: {
-    whatIs: "Litecoin (LTC) is one of the oldest cryptocurrencies, created as a 'lighter' version of Bitcoin. It offers faster transaction confirmations (2.5 min blocks) and uses the Scrypt hashing algorithm.",
+    whatIs: "Litecoin (LTC) is a proof-of-work cryptocurrency using the Scrypt hashing algorithm. Block targets are protocol parameters; actual confirmation times and transaction costs depend on network conditions.",
     strategy: "Compare price variability over a stated period rather than treating LTC as a safe haven. A lower historical fluctuation does not remove cryptocurrency loss risk. Educational simulation only; not financial advice.",
     category: "Cryptocurrency",
     keywords: ["Litecoin trading", "LTC simulator", "Bitcoin alternative", "faster transactions"],
@@ -619,7 +619,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   intc: {
-    whatIs: "Intel Corporation is a semiconductor giant known for PC processors. It's undergoing a major transformation to compete in AI and regain manufacturing leadership with its foundry services.",
+    whatIs: "Intel (INTC) designs semiconductors and operates chip-manufacturing businesses. Use company reports to separate current results from stated foundry plans; a turnaround hypothesis is not a price forecast.",
     strategy: "Separate reported operating results from a turnaround hypothesis. A longer holding period does not ensure that the hypothesis succeeds or losses recover. Educational simulation only; not financial advice.",
     category: "Technology Stock",
     keywords: ["Intel stock trading", "INTC simulator", "processors", "foundry"],
@@ -703,7 +703,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   voo: {
-    whatIs: "Vanguard S&P 500 ETF is a low-cost alternative to SPY, tracking the same S&P 500 index. Popular for long-term investors due to its minimal expense ratio.",
+    whatIs: "Vanguard S&P 500 ETF (VOO) seeks to track the S&P 500 Index. Compare dated fund disclosures for objectives, holdings and costs rather than assuming a permanent cost advantage.",
     strategy: "Compare fund objectives, costs and reported holdings with SPY. Similar index exposure does not make their prices, distributions or execution conditions identical. Educational simulation only; not financial advice.",
     category: "ETF",
     keywords: ["VOO ETF trading", "Vanguard practice", "low-cost index"],
@@ -739,7 +739,7 @@ export const ASSET_CONTENT: Record<string, AssetContent> = {
     }
   },
   usdjpy: {
-    whatIs: "The US Dollar against the Japanese Yen—a key carry trade indicator and risk sentiment gauge. USD/JPY reflects interest rate differentials between the Fed and Bank of Japan.",
+    whatIs: "USD/JPY quotes Japanese yen per US dollar. Changes can be compared with stated interest-rate assumptions, but the pair alone does not identify carry positions or establish market-wide risk sentiment.",
     strategy: "Practice understanding how interest rate differentials drive currency flows. Monitor BOJ intervention levels and Fed policy statements. (Educational simulation only — not financial advice.)",
     category: "Forex",
     keywords: ["USD/JPY trading", "Yen practice", "carry trade", "BOJ"],
