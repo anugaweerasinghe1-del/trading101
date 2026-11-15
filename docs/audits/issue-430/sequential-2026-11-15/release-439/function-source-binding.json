@@ -1,0 +1,72 @@
+{
+  "mergedSourceSHA": "cee844f7cc5093896b63ce01f4dcb8f14808f43d",
+  "function": "admin-courses",
+  "expectedPreviousVersion": 18,
+  "verifyJWT": false,
+  "verifyJWTSettingPreserved": true,
+  "files": [
+    {
+      "name": "admin-courses/index.ts",
+      "sha256": "bff2978c97d9591f2fc7b5f199b776ebcc96208ee2ec5a54200e09a9a1464ce3"
+    },
+    {
+      "name": "_shared/courseAdmin.ts",
+      "sha256": "0e3b9f9e980b83d9a038177aed2bb7e97a37d4d13325cfd5134ccb96282e3d5d"
+    },
+    {
+      "name": "_shared/dailyPractice.ts",
+      "sha256": "d33e0d5f582ad5f52fe8ea6ca28cf3055cb61ed6467309a5002a98acf0bdc020"
+    },
+    {
+      "name": "_shared/courseDocument.ts",
+      "sha256": "22547129fcf9cbcf3f1ab8ad891cbe37b83885495ed9a692d031be7e3df55c55"
+    },
+    {
+      "name": "_shared/courseQualityGate.ts",
+      "sha256": "d7872c6f57cea6d538d38bbdabf3af4ae488b50acff7d8e6dfe0dfd5cc414b27"
+    },
+    {
+      "name": "_shared/courseGenerator.ts",
+      "sha256": "da122e5658b95dfd0a4f0216de8f894726a15c65ea2e220033319d24f624eaab"
+    },
+    {
+      "name": "_shared/coursePublicationGate.ts",
+      "sha256": "55d0a0bde2510f1e50f582c010f9e3e5517ee99de60bcdfe623f6452e5457cb0"
+    },
+    {
+      "name": "_shared/geminiModelPreflight.ts",
+      "sha256": "220bdb74f1537e5e9f20c98adb3f07365ad41c5b4323eaf86a88fb6bd708df94"
+    },
+    {
+      "name": "_shared/rateLimit.ts",
+      "sha256": "b4b364b0b619968eb37578e58ea67606b27f9ee7705fc3609ef21f69b8f8d183"
+    },
+    {
+      "name": "_shared/rateLimitPolicy.ts",
+      "sha256": "68873fbda5b550cdf33a63f3884f6e8952c82c2f6fb633981043abeefd4bf0d2"
+    }
+  ],
+  "changesFromPreviouslyDeployed": [
+    {
+      "name": "_shared/courseAdmin.ts",
+      "localBytes": 9273,
+      "deployedBytes": 8451
+    },
+    {
+      "name": "_shared/dailyPractice.ts",
+      "localBytes": 7449,
+      "deployedBytes": 4712
+    },
+    {
+      "name": "_shared/courseQualityGate.ts",
+      "localBytes": 6609,
+      "deployedBytes": 5848
+    },
+    {
+      "name": "_shared/coursePublicationGate.ts",
+      "localBytes": 2973,
+      "deployedBytes": 2507
+    }
+  ],
+  "note": "dailyPractice.ts already differs on protected main; its existing validator semantics are preserved and full Daily regressions pass. No credentials, model calls or document publication in this deployment payload."
+}

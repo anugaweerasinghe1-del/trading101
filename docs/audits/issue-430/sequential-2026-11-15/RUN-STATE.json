@@ -17,5 +17,38 @@
   "newAuditPagesCompleted": 0,
   "queueStatuses": "QUEUED-UNREAD",
   "doNotAdvanceUntil": "Actual source publication and live verification establish19/19; then begin the first page loop",
-  "reviewer": "Codex assistant; prior contributor; no claim of independent human/Google review"
+  "reviewer": "Codex assistant; prior contributor; no claim of independent human/Google review",
+  "updatedAtUTC": "2026-11-15T08:51:02.084Z",
+  "prerequisiteRepairRelease": {
+    "pullRequest": 439,
+    "mergeSHA": "cee844f7cc5093896b63ce01f4dcb8f14808f43d",
+    "nativeCloudflareProduction": "e02ddc5e-2a68-482f-8c70-efa81943b19b",
+    "nativeCloudflareVerified": true,
+    "supabaseFunctionVersion": 19,
+    "deployedSourceFilesMatched": 10,
+    "positiveOwnerRetry": "PENDING"
+  },
+  "actualPublishedState": [
+    {
+      "slug": "bitcoin-simulator-practice-trading",
+      "published_revision": 6,
+      "published_at": "2026-11-02 15:57:48.755407+00",
+      "draft_revision": 8,
+      "status": "draft"
+    },
+    {
+      "slug": "cryptocurrency-price-feeds-and-valuation",
+      "published_revision": 3,
+      "published_at": "2026-10-09 15:47:17.970732+00",
+      "draft_revision": 5,
+      "status": "draft"
+    },
+    {
+      "slug": "diversification-and-position-sizing",
+      "published_revision": 3,
+      "published_at": "2026-10-09 15:45:01.003475+00",
+      "draft_revision": 5,
+      "status": "draft"
+    }
+  ]
 }

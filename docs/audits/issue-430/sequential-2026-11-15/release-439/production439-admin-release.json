@@ -1,0 +1,72 @@
+{
+  "observedAtUTC": "2026-11-15T08:40:30.432Z",
+  "origin": "https://www.thetradehq.com",
+  "url": "https://www.thetradehq.com/admin/courses",
+  "status": 200,
+  "state": "New isolated guest context; locked course desk; no admin key or owner session supplied.",
+  "nativeHTMLSHA256": "9f13bdec6720c419a141a3f1f31b6d6c5c6d2e09dd1a3fba2864e8e8c3f6d4ae",
+  "renderedTextSHA256": "9dd699b770786518dc3add89b6e281a7333b3dfd46a326c97595a7a1099c1b1a",
+  "loadedErrorModules": [
+    {
+      "url": "https://www.thetradehq.com/assets/adminFunctionError-7AFuF7wk.js",
+      "status": 200,
+      "sha256": "582b1a07bbfb940e8f7857d9bffd2ed656f5ad9e039ed2f5d1ee33947defa3f6",
+      "hasSpecificQuotaMessage": true,
+      "hasSpecificServiceMessage": true,
+      "hasSpecificRejectionMessage": true
+    }
+  ],
+  "compiledAdapterChecks": [
+    {
+      "code": "COURSE_CHANGED",
+      "passed": true,
+      "displayed": "The saved revision changed. Refresh and reopen the latest revision before retrying. Your local edits are preserved."
+    },
+    {
+      "code": "COURSE_VALIDATION",
+      "passed": true,
+      "displayed": "The saved draft failed the server\u2019s content checks. Publication is blocked. Reopen the latest draft and resolve its validation issues before publishing."
+    },
+    {
+      "code": "COURSE_REVIEW_BLOCKED",
+      "passed": true,
+      "displayed": "The independent content review rejected this revision. Nothing was published. Keep the draft private and investigate the review before retrying."
+    },
+    {
+      "code": "COURSE_REVIEW_UNAVAILABLE",
+      "passed": true,
+      "displayed": "The independent review service returned HTTP 404. Publication is blocked. Keep the draft private and check the configured model and service before retrying."
+    },
+    {
+      "code": "COURSE_REVIEW_QUOTA",
+      "passed": true,
+      "displayed": "The free review service has exhausted its quota. Publication is blocked. Keep the draft private and wait for quota recovery; no paid fallback was used."
+    },
+    {
+      "code": "COURSE_REVIEW_CONFIG",
+      "passed": true,
+      "displayed": "Publication is blocked because the server\u2019s free review model is not configured. Your draft is preserved; refreshing cannot fix this configuration."
+    },
+    {
+      "code": "COURSE_SOURCES_UNAVAILABLE",
+      "passed": true,
+      "displayed": "Publication is blocked because too few reference sources could be read. Your draft is preserved; check source availability before retrying."
+    },
+    {
+      "code": "COURSE_WRITE_FAILED",
+      "passed": true,
+      "displayed": "The server could not complete this action. Your local edits are preserved. Check the saved state and server diagnostics before retrying."
+    }
+  ],
+  "nonReadRequests": [
+    {
+      "method": "POST",
+      "url": "https://cloudflareinsights.com/cdn-cgi/rum",
+      "blocked": true
+    }
+  ],
+  "publicationAttempted": false,
+  "editorialPageReview": false,
+  "compiledAdapterChecksUseOnlySyntheticFailureFixtures": true,
+  "actualOwnerFailureCause": "Not established by these fixture tests."
+}

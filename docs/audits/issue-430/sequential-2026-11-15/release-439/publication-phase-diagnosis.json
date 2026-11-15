@@ -1,0 +1,31 @@
+{
+  "windowUTC": [
+    "2026-11-15T08:15:50Z",
+    "2026-11-15T08:16:50Z"
+  ],
+  "observations": [
+    {
+      "timeUTC": "2026-11-15T08:16:05.432Z",
+      "phase": "course-draft-read",
+      "status": 200
+    },
+    {
+      "timeUTC": "2026-11-15T08:16:06.138Z",
+      "phase": "review-configuration-read",
+      "status": 200
+    },
+    {
+      "timeUTC": "2026-11-15T08:16:39.592Z",
+      "phase": "course-draft-read",
+      "status": 200
+    },
+    {
+      "timeUTC": "2026-11-15T08:16:39.821Z",
+      "phase": "review-configuration-read",
+      "status": 200
+    }
+  ],
+  "inference": "Both publication attempts reached the independent-review configuration stage, after revision/schema/quality checks. The configuration read succeeded. No publication RPC observed in this window. Failure occurred before final publication; exact source/review/provider cause is not retained by the previous generic handler.",
+  "limits": "Correlated log timing and deployed control flow; external provider response and exact rejection findings were not logged.",
+  "noCredentialsIncluded": true
+}

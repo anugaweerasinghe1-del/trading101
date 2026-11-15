@@ -1,0 +1,27 @@
+{
+  "observedAtUTC": "2026-11-15T08:40:11.920102+00:00",
+  "function": "admin-courses",
+  "checks": [
+    {
+      "method": "GET",
+      "status": 405,
+      "expectedStatus": 405,
+      "noCredentialsSupplied": true
+    },
+    {
+      "method": "OPTIONS",
+      "status": 200,
+      "expectedStatus": 200,
+      "noCredentialsSupplied": true
+    },
+    {
+      "method": "POST",
+      "status": 401,
+      "expectedStatus": 401,
+      "noCredentialsSupplied": true
+    }
+  ],
+  "publicationAuthorized": false,
+  "modelCallAuthorized": false,
+  "note": "GET/OPTIONS and one missing-key rejection only; no owner session, admin key or database publication."
+}

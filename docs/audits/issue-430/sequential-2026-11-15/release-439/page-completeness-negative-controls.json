@@ -1,0 +1,46 @@
+{
+  "testOnly": true,
+  "actualPagesReviewed": 0,
+  "validFixtureAccepted": true,
+  "negativeControls": {
+    "missing-second-pass": {
+      "rejected": true,
+      "errors": [
+        "pass2 block coverage incomplete"
+      ]
+    },
+    "changed-paragraph": {
+      "rejected": true,
+      "errors": [
+        "block hash mismatch: fixture-p1"
+      ]
+    },
+    "wrong-native-sha": {
+      "rejected": true,
+      "errors": [
+        "native merged SHA mismatch"
+      ]
+    },
+    "unresolved-finding": {
+      "rejected": true,
+      "errors": [
+        "finding unresolved: fixture-error",
+        "missing original finding evidence",
+        "missing fix/release evidence"
+      ]
+    },
+    "unreviewed-rule-domain": {
+      "rejected": true,
+      "errors": [
+        "policy-domain coverage incomplete"
+      ]
+    },
+    "false-human-identity": {
+      "rejected": true,
+      "errors": [
+        "reviewer identity must not imply independent human or Google review"
+      ]
+    }
+  },
+  "limitation": "Checks evidence completeness, not truth of editorial judgments."
+}

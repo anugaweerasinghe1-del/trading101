@@ -23,3 +23,11 @@ Repair: return bounded diagnostic codes for changed revision, validation, review
 - Added concrete, explicitly hypothetical exercises and arithmetic, preserving lesson URLs and quiz keys. First refinement-save confirmation expired; a smaller guarded save succeeded as draft8/5/5. Stored documents match the prepared candidate and pass schema/quality/renderer checks.
 - User supplied an actual publication failure screenshot; read-only logs show409 from function18. Exact original cause remains unresolved. No direct SQL publication, fabricated review attestation, credential extraction or gate bypass was used.
 - All480 new audit queue rows remain QUEUED-UNREAD. The policy baseline and technical regression work do not count as new page-level editorial passes.
+
+## Release checkpoint — PR439
+
+PR439 merged as `cee844f7cc5093896b63ce01f4dcb8f14808f43d` after all five required checks succeeded on exact head `64653d22c812b4a788f05fbc8b318ef3e589a50e`. Native Cloudflare production `e02ddc5e-2a68-482f-8c70-efa81943b19b` was verified successful on main and that merged SHA. Supabase admin-courses version19 was independently read back; all10 source files match merged source. See [release-439/REPORT.md](release-439/REPORT.md).
+
+STRICT-PRE-001 is FIXED-RECHECKED through regression tests, deployed-source equality and release verification. STRICT-PRE-002 is implemented, merged, deployed and technically verified: handler-to-client fixtures, the actual served compiled module's eight synthetic failure cases and credential-free runtime denial pass. Its positive owner-flow recheck remains pending, together with the actual source-publication gate. Do not turn synthetic HTTP404/quota/rejection fixtures into a claim about the real original failure.
+
+The final source-state read still shows published6/3/3 versus draft8/5/5. The prior19-proposal status remains18/19 pending exact source publication/live parity. No new editorial page has been reviewed or closed.
