@@ -68,9 +68,14 @@ function linkList(links: { href: string; label: string }[]): string {
 function renderBody(r: RouteMeta, content: PageContent | undefined): string {
   const page = publisherPage(r, content);
   const notes = page ? renderToStaticMarkup(React.createElement(PublisherNotes, { page })) : "";
+  // Cloudflare's email decoder requires JavaScript. Preserve the intentionally
+  // public Contact action in this native fallback using its documented opt-out.
+  const nativeNotes = r.path === "/contact" && notes
+    ? `<!--email_off-->${notes}<!--/email_off-->`
+    : notes;
   return `<div id="prerender-seo" style="background:#0A0A0F;color:#e6e7ea;font-family:Inter,system-ui,sans-serif;padding:24px;">
     <nav aria-label="Main"><ul style="display:flex;flex-wrap:wrap;gap:14px;list-style:none;padding:0;">${linkList(NAV)}</ul></nav>
-    <main><h1>${esc(r.h1)}</h1>${notes || `<p>${esc(r.summary)}</p>`}</main>
+    <main><h1>${esc(r.h1)}</h1>${nativeNotes || `<p>${esc(r.summary)}</p>`}</main>
     <footer><ul style="display:flex;flex-wrap:wrap;gap:14px;list-style:none;padding:0;">${linkList(FOOTER)}</ul></footer>
   </div>`;
 }
