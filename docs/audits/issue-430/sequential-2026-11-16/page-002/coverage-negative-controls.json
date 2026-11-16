@@ -1,0 +1,51 @@
+{
+  "scope": "Mechanical completeness only, not truth of editorial judgment or actual reading",
+  "validOriginalPassed": true,
+  "negativeControls": [
+    {
+      "case": "missing-second-pass-block",
+      "rejected": true,
+      "errors": [
+        "pass2 block coverage incomplete"
+      ]
+    },
+    {
+      "case": "corrupt-block-hash",
+      "rejected": true,
+      "errors": [
+        "block hash mismatch: ABOUT-0001",
+        "record differs from captured index: ABOUT-0001",
+        "pass1 reviewed hash mismatch",
+        "pass2 reviewed hash mismatch"
+      ]
+    },
+    {
+      "case": "missing-native-deployment-id",
+      "rejected": true,
+      "errors": [
+        "missing native deployment ID"
+      ]
+    },
+    {
+      "case": "wrong-native-production-sha",
+      "rejected": true,
+      "errors": [
+        "native merged SHA mismatch"
+      ]
+    },
+    {
+      "case": "missing-native-source-url",
+      "rejected": true,
+      "errors": [
+        "missing live re-read or native receipt source"
+      ]
+    },
+    {
+      "case": "omitted-captured-block-from-all-record-lists",
+      "rejected": true,
+      "errors": [
+        "record omits or invents captured blocks"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "observedAtUTC": "2026-11-16T14:17:06.042Z",
+  "source": "Read-only wallet and profile lookup for the connected TradeHQ owner account",
+  "browserProfileExists": true,
+  "availableBrowserCreditInsufficient": true,
+  "autoReloadState": "unconfigured",
+  "pendingTopUp": false,
+  "purchasesOrBillingChanges": 0,
+  "browserAutomationStarted": false,
+  "diagnosticModelCalls": 0,
+  "detail": "The earlier omitted connector-link argument was resolved from the tool declaration. Fresh wallet evidence still prevents starting the owner browser; no purchase, billing change or retry loop was attempted. User's prior statement that the profile is signed in to TradeHQ is retained, not contradicted by incomplete signed-in-site metadata."
+}

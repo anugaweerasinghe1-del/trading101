@@ -1,0 +1,26 @@
+{
+  "schema": "tradehq-cloudflare-account-observation-v1",
+  "observedAt": "2026-11-16T14:28:55.227Z",
+  "project": "tradehq-preview",
+  "nativeTokenActive": true,
+  "activeProduction": {
+    "id": "d012adbf-9216-4cb3-acd9-ee6e20878aad",
+    "sha": "710bb67d8b4440004d63deaf894af9ed9977c98c",
+    "environment": "production",
+    "branch": "main",
+    "status": "success",
+    "createdAt": "2026-11-16T14:17:56.381889Z"
+  },
+  "previousSuccessfulProduction": {
+    "id": "0c1bc07e-cb80-4223-97cc-a9a95640f104",
+    "sha": "bfb4d0ee904ecce2298a56d81e95ede1fc5891f7",
+    "environment": "production",
+    "branch": "main",
+    "status": "success",
+    "createdAt": "2026-11-16T11:08:53.217299Z"
+  },
+  "sourceGitHubRun": 43884255296,
+  "sourceGitHubJob": 133364517393,
+  "sourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43884255296/job/133364517393",
+  "note": "Only native release identity retained; billing/account usage omitted."
+}

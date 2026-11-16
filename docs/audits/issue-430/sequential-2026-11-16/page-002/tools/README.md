@@ -1,0 +1,1 @@
+The Python completeness/negative-control checks use only the standard library. Browser capture/check scripts retain this audit environment's Playwright/workspace paths; adjust those paths to reproduce them elsewhere. They capture text/verify rendering and do not perform editorial judgment. No real email, signup or authenticated owner action is used by these scripts.
