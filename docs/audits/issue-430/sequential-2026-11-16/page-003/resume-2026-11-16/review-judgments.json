@@ -1,0 +1,106 @@
+{
+  "reviewedAtUTC": "2026-11-16T17:31:56.826922+00:00",
+  "method": "Full current route-owned policy source plus complete unique normalized text from actual desktop/mobile/native captures read in bounded outputs. The second pass challenged privacy claims against inspected code, focused tests and accessible primary policy/provider material. Per-group judgments propagate only to the explicitly read same-page occurrences matched by normalized text hash. Repetition is not additional independent reading.",
+  "groups": {
+    "OPTIONAL-ANALYTICS": {
+      "classification": "NO NEW ISSUE FOUND IN INSPECTED IMPLEMENTATION",
+      "pass1": "Compared limited purposes and consent wording with ConsentBanner, leaderboardFunnelTelemetry and arenaTelemetry. Narrow explicit properties, refreshed consent and seven-day marker behavior agree with inspected source.",
+      "pass2": "Challenged anonymity, age assurance and expired-marker assumptions. Copy expressly rejects anonymity and verified-age claims and explains expired-marker cleanup. The real loaded bundle has the pin and SRI. Existing isolated SDK fixtures remain distinct from these blocked-third-party captures.",
+      "sources": [
+        "src/components/ConsentBanner.tsx",
+        "src/lib/leaderboardFunnelTelemetry.ts",
+        "src/lib/arenaTelemetry.ts",
+        "page-003/local-sdk-final-pass.json"
+      ],
+      "findingRefs": [
+        "STRICT-PRIVACY-003"
+      ]
+    },
+    "PUBLIC-SHARING": {
+      "classification": "NO NEW ISSUE FOUND IN INSPECTED SOURCE; PRIVATE LIVE STATE NOT VERIFIED",
+      "pass1": "Compared sharing wording with public-trade migration response projection, separate show_public_trades default, profile visibility checks and 20-entry cap. The disclosure now includes total, realized_pnl and price_source.",
+      "pass2": "Distinguished public response fields from narrower visible rows and virtual results from verified real-money performance. Source verification does not establish each deployed private account setting.",
+      "sources": [
+        "supabase/migrations/20261031185000_public_practice_trade_history_opt_in.sql",
+        "page-003/deployed-public-trade-projection.json",
+        "page-003/deployed-sharing-defaults.json"
+      ],
+      "findingRefs": [
+        "STRICT-PRIVACY-002"
+      ]
+    },
+    "PROVIDER-DISCLOSURE": {
+      "classification": "REVIEWED WITH EXTERNAL SOURCE/CONFIGURATION LIMITS",
+      "pass1": "Read separate performance/font disclosures, rejection scope and provider links. Native and interactive wording disclose processing before an optional Amplitude choice. Cloudflare official About and Privacy first sections corroborate the performance and client-state statements.",
+      "pass2": "No inference that cookie-free processing avoids all privacy rules. Current Google Fonts FAQ returned no readable body in the web reader; prior same-day retrieval receipt is historical support, not a newly read primary source. Regional provider settings remain unverified.",
+      "sources": [
+        "https://www.cloudflare.com/web-analytics/",
+        "https://developers.cloudflare.com/web-analytics/about/",
+        "https://fonts.google.com/faq#privacy",
+        "page-003/google-fonts-privacy-receipt.json"
+      ],
+      "findingRefs": [
+        "STRICT-PRIVACY-001"
+      ],
+      "externalGates": [
+        "PROVIDER-SOURCE-AND-CONFIGURATION"
+      ]
+    },
+    "ACCOUNT-RETENTION-RIGHTS": {
+      "classification": "REVIEWED; EXTERNAL/PRIVATE OPERATION GATE",
+      "pass1": "Read storage, newsletter, contact, deletion, retention and non-sale commitments in context. These are not automatically policy violations. Guest behavior, source defaults and migrations provide bounded corroboration.",
+      "pass2": "A code review cannot establish historical deletions, inbox retention, private provider settings or the publisher\u2019s organizational conduct. No live private account write, request for deletion, email send or sale/retention certification was performed.",
+      "sources": [
+        "src/lib/privacyCopy.ts",
+        "page-003/deployed-signup-defaults.json",
+        "scripts/verify-privacy-moderation-defaults.mjs"
+      ],
+      "findingRefs": [],
+      "externalGates": [
+        "PRIVATE-RETENTION-DELETION-AND-OWNER-OPERATIONS"
+      ]
+    },
+    "ADVERTISING-AGE-JURISDICTION": {
+      "classification": "REVIEWED; PRIVATE ACCOUNT/LEGAL GATE",
+      "pass1": "Read disabled-serving status, regional choice descriptions, adult-only optional analytics declaration and qualified rights language. Optional analytics and advertising decisions are separately described.",
+      "pass2": "Distinguished Google eligibility from visitor age and self-declaration from age assurance. The official CMP page addresses certified CMPs for personalized advertising; no advertising activation, account approval or universal legal compliance is inferred.",
+      "sources": [
+        "https://support.google.com/adsense/answer/13554116",
+        "https://support.google.com/publisherpolicies/answer/10437794",
+        "src/components/AdvertisingPrivacyChoices.tsx",
+        "index.html"
+      ],
+      "findingRefs": [],
+      "externalGates": [
+        "PRIVATE-ADSENSE-CMP-AND-LEGAL-REVIEW"
+      ]
+    },
+    "SIMULATION-STORAGE-COPY": {
+      "classification": "NO NEW COPY DEFECT FOUND; PRIVATE IMPLEMENTATION LIMITS CARRIED",
+      "pass1": "Read guest/server storage distinctions, unverified import warning, hypothetical results and payment/brokerage disclaimers. No guaranteed return, Google endorsement or real-money simulation claim found.",
+      "pass2": "Checked that clearing browser data is distinguished from deleting server records, signed exports are distinguished from unverified guest imports and simulated ranks are not presented as brokerage statements. Private restoration/history claims remain outside live signed-in verification.",
+      "sources": [
+        "src/lib/privacyCopy.ts",
+        "src/pages/Privacy.tsx",
+        "page-003/LOCAL-REVIEW-CHECKPOINT.json"
+      ],
+      "findingRefs": []
+    },
+    "NAVIGATION-SHARED-PRESENTATION": {
+      "classification": "NO NEW ISSUE FOUND IN THIS PAGE CONTEXT",
+      "pass1": "Read visible navigation labels, shared footer/newsletter/disclaimers, contact text, source attribution and provider links in actual page context.",
+      "pass2": "Repeated labels do not give editorial credit to linked destinations. Contact publication was not separately authorized by this audit; raw personal text is retained locally and omitted from public records. No whole-destination review or independent financial-source verification is inferred from labels.",
+      "sources": [
+        "src/pages/Privacy.tsx",
+        "src/components/MegaFooter.tsx"
+      ],
+      "findingRefs": []
+    }
+  },
+  "uniqueNormalizedTextUnits": 259,
+  "DOMOccurrences": 595,
+  "metadataScope": "Current head/schema/FAQ metadata and route-owned source controls read separately. These are not included in the 259 normalized body-text units.",
+  "unverifiedScope": "Private provider/account operations, inaccessible Google Fonts source-body recheck, geographic CMP state and all unreviewed destination pages remain explicitly unverified.",
+  "pageStatus": "REVIEWED-WITH-EXTERNAL-GATES; NOT FULLY CLOSED",
+  "emailGate": "Owner explicitly accepted the Cloudflare preview-success email plus separate native exact-SHA production proof in this conversation. No separate production-success email is claimed."
+}
