@@ -1,13 +1,14 @@
 {
   "status": "LOCAL-REVIEWED-RELEASE-PENDING",
-  "recordedAtUTC": "2026-11-16T15:11:27.585360+00:00",
+  "recordedAtUTC": "2026-11-16T15:20:43.272931+00:00",
   "reviewer": "Codex assistant; prior contributor",
   "guestBlocksRead": 376,
   "nativeNoJSBlocksRead": 158,
   "policyParagraphsIncludingIndividualBullets": 33,
   "readingBasis": "Fresh actual full original and updated body in bounded chunks, each metadata/structured string, attribute and 3 opened FAQ answers. Native policy body also appears in the actual rendered learning notes and was fully read there; native-only navigation and head/schema were separately read. Logical paragraphs preserve individual bullet granularity; capture counts do not themselves prove reading.",
   "findingIds": [
-    "STRICT-PRIVACY-001"
+    "STRICT-PRIVACY-001",
+    "STRICT-PRIVACY-002"
   ],
   "checks": {
     "cloudflareBuildAndPostbuild": "PASS",
@@ -17,12 +18,14 @@
     "liveReread": "PENDING"
   },
   "beforeManifestSHA256": "da7fbe00ea12690e7e224639ac287141bedc95a94353b4afc9c7c1ffadedf3a0",
-  "currentManifestSHA256": "58cc4878f922432dc9820dccd8eaa989c19daff2020b37e3b80a2257f66b2c63",
+  "currentManifestSHA256": "c0ba48eefe47077df13b3d90f759f30560e030bd12bea357fe206dd60ec025d8",
   "limits": [
     "Private Google AdSense identity/approval/traffic/CMP configuration unavailable; no Google approval or legal certification inferred.",
     "No actual account creation/deletion/export, email subscription or send, external analytics acceptance or user-record change during these checks.",
     "Current signup trigger freshly read without mutations: profiles forced private. Source/migration corroboration does not prove every private account screen, historical deletion or external provider retention.",
     "Owner browser cannot run on existing credit; alternative desktop lacks exposed interactive controls. Diversification6 publication remains separate18/19 blocker.",
     "No destination body review credit from links, shared assets, build checks or prior verdicts."
-  ]
+  ],
+  "supplementedTotalAssessmentBlocks": 573,
+  "dependencyFix": "TraderProfile sharing permission copy now describes all public-response fields. Source-only review; no extra completed profile page credit or assertion of a real owner UI run."
 }

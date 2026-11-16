@@ -160,7 +160,7 @@ export default function TraderProfile() {
                 <div>
                   <h2 className="font-semibold">Share my recent simulated trades</h2>
                   <p className="text-xs text-muted-foreground mt-1 max-w-2xl leading-relaxed">
-                    Separate optional permission, off by default. With a public profile enabled, the most recent 20 current-cycle server-recorded practice orders can show asset, buy/sell, quantity, simulated execution price, fee and time.
+                    Separate optional permission, off by default. With a public profile enabled, the most recent 20 current-cycle server-recorded practice orders can show asset, buy/sell, quantity, simulated execution price, fee and time. The public data response also exposes trade total, simulated realised profit/loss where recorded, and price-source information, even when the visible row shows fewer fields.
                     Private journal notes, older cycles and browser-only guest history are never shared. Turning your profile private hides this history too.
                   </p>
                 </div>
