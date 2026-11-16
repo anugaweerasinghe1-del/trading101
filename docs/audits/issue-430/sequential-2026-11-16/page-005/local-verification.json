@@ -1,0 +1,55 @@
+{
+  "sourceBase": "2b0d073d4b9b77356dac971edb4032a06fc91301",
+  "finding": "STRICT-CONTACT-001",
+  "buildCloudflare": "PASS: full build and postbuild checks",
+  "contactAPIRegression": "PASS: isolated configured/unconfigured/abuse/provider-response fixtures; no external delivery",
+  "browser": [
+    {
+      "mode": "desktop",
+      "http": 200,
+      "contactTargetsMatchInteractiveSource": true,
+      "draftDescriptionAccurate": true,
+      "overflow": false,
+      "runtimeExceptions": [],
+      "captureAtUTC": "2026-11-16T18:08:30.903Z",
+      "textSHA256": "eaef8e5e9f7bf2702e87da4996ab819ea4e839b30675e57857c2291a085c9804",
+      "domFragments": 248
+    },
+    {
+      "mode": "mobile",
+      "http": 200,
+      "contactTargetsMatchInteractiveSource": true,
+      "draftDescriptionAccurate": true,
+      "overflow": false,
+      "runtimeExceptions": [],
+      "captureAtUTC": "2026-11-16T18:08:37.819Z",
+      "textSHA256": "8f6739e48f2e9fe2f77e7149f6931c1642838f0b577f75ee14dd1ce530c4c6d5",
+      "domFragments": 224
+    },
+    {
+      "mode": "native",
+      "http": 200,
+      "contactTargetsMatchInteractiveSource": true,
+      "draftDescriptionAccurate": true,
+      "overflow": false,
+      "runtimeExceptions": [],
+      "captureAtUTC": "2026-11-16T18:08:42.925Z",
+      "textSHA256": "5f313e745730f2784be1740f8054576e275df73c9b644118e26d3339cab05477",
+      "domFragments": 51
+    }
+  ],
+  "fixtureCorrection": "Initial browser fixture attempted controls before hydration completed. A diagnostic rerun showed healthy page state, and fixture readiness now waits for hydrated controls and the existing spam-delay guard. The initial failed fixture is not called a PASS or a production defect.",
+  "networkScope": "Isolated compiled static server; GET only; contact config stub mirrors observed production disabled state. All non-local requests and every mutation blocked. Synthetic form inputs and explicit clipboard-denied fixture only. No email, call or real message delivery.",
+  "publicationScope": "Repair duplicates only the maintainer contact targets already intentionally present in the public source Contact.tsx and current production interactive Contact page. Raw contact addresses, phone values and page captures omitted from audit files.",
+  "release": "PR, exact-head hosted checks, merge, native production, success notification and live reread remain pending.",
+  "existingPublicContactProvenance": {
+    "sourceURL": "https://github.com/anugaweerasinghe1-del/trading101/blob/2b0d073d4b9b77356dac971edb4032a06fc91301/src/pages/Contact.tsx",
+    "productionPage": "https://www.thetradehq.com/contact",
+    "alreadyPublishedMaintainerEmailMatchesRepair": true,
+    "alreadyPublishedMaintainerPhoneMatchesRepair": true,
+    "newContactValuesIntroduced": false,
+    "note": "The exact same maintainer contact targets are already intentionally published in this same public GitHub repository and on this same public Contact route. The repair makes the existing contact actions available to visitors without JavaScript. No private mailbox contents, new recipient, third-party contact data or account setting is being published.",
+    "authenticatedGitHubOwnerMatchesRepositoryOwner": true,
+    "repositoryAlreadyPublic": true
+  }
+}

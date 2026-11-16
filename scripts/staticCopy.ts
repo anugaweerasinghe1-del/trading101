@@ -567,7 +567,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
       {
         h: "Getting in touch",
         p: [
-          "The contact page lists email and phone details for the maintainer. Its form opens your own email client with a prepared draft; it does not send a message automatically or store submissions on TradeHQ. Response times vary with request volume. For a bug report, include the page URL and reproducible steps so the current build can be checked.",
+          "Use the email or phone link below to contact the maintainer. With JavaScript enabled, the contact form also offers email-app and webmail drafts. Those draft options do not send a message automatically or submit it to TradeHQ's servers. Response times vary with request volume. For a bug report, include the page URL and reproducible steps so the current build can be checked.",
         ],
       },
       {
@@ -589,6 +589,8 @@ export const STATIC_COPY: Record<string, PageContent> = {
       },
     ],
     links: [
+      { href: "mailto:anugaweerasinghe1@gmail.com", label: "Email TradeHQ" },
+      { href: "tel:+94714897346", label: "Phone TradeHQ" },
       { href: "/about", label: "About TradeHQ" },
       { href: "/privacy", label: "Privacy policy" },
       { href: "/terms", label: "Terms of service" },
