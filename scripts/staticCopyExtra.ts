@@ -397,7 +397,7 @@ export const EXTRA_SECTIONS: Record<string, PageSection[]> = {
     {
       h: "Content, accounts and acceptable use",
       list: [
-        "Lessons, guides and glossary entries are original work and remain the property of TradeHQ; short quotations with attribution are fine, wholesale republication is not.",
+        "TradeHQ claims rights in its original educational writing to the extent those rights belong to its publisher. Third-party material retains its owners’ rights and applicable licenses. Reuse must respect the applicable rights and license terms.",
         "Accounts may be removed for abuse, spam, or attempts to present the simulator as a real trading record to third parties.",
         "Automated scraping that degrades the service for others is not permitted.",
         "These terms may change; material changes are reflected on this page.",

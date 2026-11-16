@@ -194,7 +194,7 @@ Reuse must respect the applicable rights and license terms. This statement does 
               {
                 question: "Can I use TradeHQ commercially?",
                 answer:
-                  "No, not without prior written permission. The service is licensed for personal, educational use only. Scraping, reverse engineering and bot use are prohibited.",
+                  "No, not without prior written permission. The service is licensed for personal, educational use only. Reverse engineering is prohibited. Scraping requires permission, and automated systems or bots require authorization.",
               },
               {
                 question: "Who is TradeHQ for?",
