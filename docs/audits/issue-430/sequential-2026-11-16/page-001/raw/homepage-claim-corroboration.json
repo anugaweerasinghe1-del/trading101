@@ -1,0 +1,88 @@
+{
+  "recordedAtUTC": "2026-11-16T11:01:48.831400+00:00",
+  "scope": "Scoped corroboration of homepage claims, not fresh destination article review",
+  "claims": [
+    {
+      "claim": "170 practice instruments,100000 initial virtual cash",
+      "evidence": "Current unique asset catalogue and actual fresh/migrated guest portfolio functions; numeric fixtures recorded. Practice identifiers do not certify current exchange listing for every legacy symbol."
+    },
+    {
+      "claim": "49 glossary entries with worksheets,4 named core tracks",
+      "evidence": "Current source count/presence checks and freshly read catalogue/track labels. Destination body correctness remains separately queued."
+    },
+    {
+      "claim": "Rule-based mentor, educational prompts rather than personal buy/sell calls",
+      "evidence": "Freshly read topic-library definition, matching/forecast refusal and actual portfolio-response branches in smartMentor.ts243\u2013315 and mentorTeaching.ts44\u2013110. Hypothetical cash/concentration alternatives are explicitly not universal prescriptions. Full mentor response library/page remains separately queued; no generative API used."
+    },
+    {
+      "claim": "Journal and30-day friend duel exist",
+      "evidence": "Fresh source route/feature corroboration: Trade.tsx saves JournalEntry through saveTradeJournal; App.tsx declares /challenge and /challenge/:code; Challenge.tsx carries30-day timing, server-recorded starting value/deadline and practice disclaimer. No real challenge was created."
+    },
+    {
+      "claim": "Daily badge/streak numbers are educational progress",
+      "evidence": "recordChallenge accepts quick reasoning or case study; five thresholds3/7/14/30/100 read in source and rendered. Navigation tooltip clarified to practice streak."
+    },
+    {
+      "claim": "Data-source, freshness and market session qualifiers",
+      "evidence": "Fresh production cache-null and midnight failures retained; corrected local/preview labels and conditional fixtures pass. NYSE/JPX/SGX/LSE primary hours tables read; homepage clock is an approximate weekday model."
+    },
+    {
+      "claim": "Optional18+ analytics, newsletter double opt-in, core no-signup access",
+      "evidence": "Fresh full consent/signup/source reads, actual guest rendering and reject/reopen checks. No actual analytics acceptance, subscription, email delivery or private account identity verification is asserted."
+    }
+  ],
+  "currentSources": [
+    {
+      "path": "src/lib/assets.ts",
+      "sha256": "ad0ec056e7656d24aa32636f4f6b8b0b875232b1f981b745d404b16f939b2ada"
+    },
+    {
+      "path": "src/lib/portfolio.ts",
+      "sha256": "48cf971d0f9884186043817945a76fc57e76601ee91bf2c221c7c7738357b0ab"
+    },
+    {
+      "path": "src/lib/smartMentor.ts",
+      "sha256": "4893d97c22cf45d93950d5eb91404b2ffd56c0511667d4907993a92c77263db9"
+    },
+    {
+      "path": "src/lib/mentorTeaching.ts",
+      "sha256": "17485ad23e6c911542ccd52d6e3562547132edb440fd5d73c14a8be4ca35d494"
+    },
+    {
+      "path": "src/lib/coursesData.ts",
+      "sha256": "c5b12f90b389f3f239d094260c850bdc1312c8b0a5e6355ec3c72f5898918cf8"
+    },
+    {
+      "path": "src/lib/watchlistDiff.ts",
+      "sha256": "3aa9aa043f207994e64665556349ade1c3f39a585c7b77bb42b8a4ccefc3a6c6"
+    },
+    {
+      "path": "src/lib/dailyChallenge.ts",
+      "sha256": "0967328597dd56946896b4b08ff90ed891ec7d76d1936de81c4f93bdb9239629"
+    },
+    {
+      "path": "src/lib/marketSessions.ts",
+      "sha256": "e544d2c52deb00a519b01d58e0033081fdddbd999e5d6bee7beaf4c63115127b"
+    },
+    {
+      "path": "src/lib/learnerResume.ts",
+      "sha256": "c4dab6c936871f688e0a720ddbd8252df90295e61563635dd28b4fe194a69aa4"
+    },
+    {
+      "path": "src/components/NewsletterSignup.tsx",
+      "sha256": "f3d5c6afa7f734b7cf2848acb1d1efbc75dc01b289355567c16bb397f5849290"
+    },
+    {
+      "path": "src/components/ConsentBanner.tsx",
+      "sha256": "b04809281046f6cb3833f86a61e2e29566ac6627a6ca331295f22f0294a11313"
+    },
+    {
+      "path": "src/components/BackgroundMusic.tsx",
+      "sha256": "d0269fd62c09a006a38f3b01a259715aadaa05b534aa3292dad9661ef676f3e9"
+    },
+    {
+      "path": "src/components/badges/StreakBadge.tsx",
+      "sha256": "e109cb324db7ec0a505b84bb034c32ae6823079746dce7c1d0ba3cf4af27ab54"
+    }
+  ]
+}

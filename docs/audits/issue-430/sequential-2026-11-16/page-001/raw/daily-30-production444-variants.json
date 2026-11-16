@@ -1,0 +1,218 @@
+{
+  "observedAtUTC": "2026-11-16T11:22:29.661Z",
+  "origin": "https://www.thetradehq.com",
+  "caption": "Hypothetical exercise — figures, quotes and events are invented assumptions, not current market news.",
+  "scope": "Current authored30 homepage variants under controlled dates; no claim of real events or review of daily-page answers",
+  "variants": [
+    {
+      "caseId": 14,
+      "scenario": "OPEC+ surprise production cut of 1M bpd.",
+      "context": "Crude jumps 4% on the announcement. Inventories have been building for 6 weeks.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 15,
+      "scenario": "Binance announces a major token burn.",
+      "context": "12% of supply removed. Volume already 3x average.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 16,
+      "scenario": "China announces 200% tariff on US chips.",
+      "context": "NVDA -8% premarket. China is ~12% of NVDA revenue. Datacenter demand globally remains insatiable.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 17,
+      "scenario": "BTC funding rates spike to +0.15% (4-hour).",
+      "context": "Price flat. Open interest at record highs. Spot volume below average.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 18,
+      "scenario": "Tesla unveils a sub-$25K model.",
+      "context": "Stock spikes 9% on the news. Margins guidance unclear. Production starts in 18 months.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 19,
+      "scenario": "SPY tests the 200-day MA after a 10% correction.",
+      "context": "VIX at 28 (elevated). Breadth: only 35% of stocks above their 50-day. Put/call ratio at 1.4.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 20,
+      "scenario": "Ethereum staking yield drops below 2.5%.",
+      "context": "Validator queue is full. Restaking protocols (EigenLayer) absorbing capital. ETH spot ETF flows turned negative.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 21,
+      "scenario": "BoJ intervenes verbally. USD/JPY at 158.",
+      "context": "Last actual intervention was at 152. MoF officials called move 'one-sided.' Carry trade flows still strong.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 22,
+      "scenario": "NVDA splits 10-for-1.",
+      "context": "Retail interest surges. Options activity hits records. Stock up 4% on the announcement.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 23,
+      "scenario": "BTC halving happens this week.",
+      "context": "In this invented scenario, price is already up 80% year to date. Compare possible price rises and falls after the event; the halving does not establish either outcome.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 24,
+      "scenario": "Apple beats earnings but guides Q1 lower.",
+      "context": "Stock down 4% after-hours. Services revenue grew 18%. iPhone guidance cut on China softness.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 25,
+      "scenario": "10-year yield crosses above 5%.",
+      "context": "QQQ down 2% intraday. Tech leadership weakening. Equal-weight QQQ outperforming.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 26,
+      "scenario": "Robotaxi event delivers underwhelming demo.",
+      "context": "Stock down 9% the next session. Demo lacked details on regulatory path. But FSD subscription revenue grew 60% QoQ in background.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 27,
+      "scenario": "Gold breaks $2,800 to new all-time highs.",
+      "context": "Central bank buying + retail FOMO + miner shares lagging.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 28,
+      "scenario": "Meta reports record ad revenue. Stock unchanged.",
+      "context": "Beat top + bottom line by 8%. CEO commentary muted. Sector peers underperforming.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 29,
+      "scenario": "Solana memecoin volume crashes 70% in a week.",
+      "context": "Network revenue down 50%. Validators struggling. Real-app usage still growing.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 30,
+      "scenario": "First red Monday after 8 green weeks.",
+      "context": "SPY -1.2%. Breadth -3:1 negative. No specific catalyst. Bond yields stable.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 1,
+      "scenario": "NVDA reports earnings tonight. Implied move is ±8%.",
+      "context": "Street expects $0.85 EPS on $36B revenue. Whisper number is $0.92. AI capex guidance from hyperscalers came in strong this week.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 2,
+      "scenario": "BTC breaks $100K resistance on heavy volume.",
+      "context": "Funding rates are still neutral, open interest just hit ATH, and spot ETF inflows posted $1.2B yesterday.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 3,
+      "scenario": "Tesla drops 12% on a weak delivery number.",
+      "context": "Q3 deliveries missed by 4%. Stock gapped down at the open and is now consolidating at the day's low.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 4,
+      "scenario": "ETH/BTC ratio breaks a 6-month downtrend.",
+      "context": "ETH has been underperforming BTC for half a year. Today the ratio crossed back above its 50-day MA.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 5,
+      "scenario": "Apple announces a $90B buyback expansion.",
+      "context": "Stock is up 2% premarket. RSI on the daily is already 71. iPhone unit growth has been flat for 4 quarters.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 6,
+      "scenario": "Fed pauses rate cuts. SPY drops 1.5% intraday.",
+      "context": "Powell signaled 'higher for longer.' VIX spiked to 22. Volume is 1.4x the 20-day average.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 7,
+      "scenario": "Solana network outage for 4 hours.",
+      "context": "Validator software bug. Price down 7%. Devs say a patch is rolling out within 24h.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 8,
+      "scenario": "DXY dollar index breaks below a 2-year support.",
+      "context": "Real yields are falling. Central banks added a record amount of gold to reserves last quarter.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 9,
+      "scenario": "Meta announces $50B+ AI capex for next year.",
+      "context": "Stock down 6% on the news. Wall Street worries about ROI. But internal metrics show Reels engagement up 40% YoY thanks to AI ranking.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 10,
+      "scenario": "ECB hawkish surprise: Lagarde signals one more hike.",
+      "context": "EUR/USD spikes 80 pips in 5 minutes. Pre-news positioning was net short EUR.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 11,
+      "scenario": "Microsoft adds OpenAI o4 to all Copilot tiers.",
+      "context": "Stock flat on the news. Enterprise Copilot adoption was already accelerating (40% QoQ).",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 12,
+      "scenario": "DOJ proposes forcing Google to sell Chrome.",
+      "context": "Stock down 5% premarket. Legal experts give it 30% odds of happening. Process would take 3+ years.",
+      "rendered": true,
+      "clockControlled": true
+    },
+    {
+      "caseId": 13,
+      "scenario": "QQQ goes 5 days straight up. RSI hits 78.",
+      "context": "AI-driven rally. No pullback in 2 weeks.",
+      "rendered": true,
+      "clockControlled": true
+    }
+  ]
+}

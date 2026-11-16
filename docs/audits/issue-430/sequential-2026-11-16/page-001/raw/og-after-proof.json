@@ -1,0 +1,20 @@
+{
+  "tool": "image_gen image edit",
+  "generatedOriginalPreserved": "/workspace/generated_images/exec-e3720ffe-635e-4396-bf5b-d1e5c50d5759.png",
+  "file": "public/tradehq-preview-2026.png",
+  "sha256": "9f5bb8c2a8c07fd7d91f1792e4d70b7cc2d73ed9293256032fa3e7c8f51ccf3a",
+  "width": 1731,
+  "height": 909,
+  "visualReview": "All text read: factual virtual-cash headline; illustrative-interface labels; numbers100000/170 match implemented defaults; no performance-return box or risk-free slogan",
+  "dimensionHandling": "Update hardcoded shared-card runtime dimensions. Remove optional generic static-shell dimensions so page-specific images do not inherit the wrong size. Version the homepage/default-shell share URL.",
+  "changedSharedDimensionFiles": [
+    "src/pages/AIMentor.tsx",
+    "src/pages/Trade.tsx",
+    "src/pages/Portfolio.tsx",
+    "src/pages/Markets.tsx",
+    "src/pages/Learn.tsx",
+    "src/pages/Index.tsx",
+    "src/pages/Leaderboard.tsx",
+    "src/pages/TradeAsset.tsx"
+  ]
+}

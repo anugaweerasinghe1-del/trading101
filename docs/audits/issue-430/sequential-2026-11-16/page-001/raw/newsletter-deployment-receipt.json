@@ -1,0 +1,29 @@
+{
+  "observedAtUTC": "2026-11-16T11:10:22.360Z",
+  "mergedSHA": "bfb4d0ee904ecce2298a56d81e95ede1fc5891f7",
+  "function": "newsletter-public",
+  "priorVersion": 4,
+  "version": 5,
+  "status": "ACTIVE",
+  "verify_jwt": false,
+  "ezbr_sha256": "96a5fbe991b278e2c09c9f044e3bc7573852f58237599043bfe9280bd340e38e",
+  "files": [
+    {
+      "name": "newsletter-public/index.ts",
+      "exact": true
+    },
+    {
+      "name": "_shared/rateLimit.ts",
+      "exact": true
+    },
+    {
+      "name": "_shared/rateLimitPolicy.ts",
+      "exact": true
+    }
+  ],
+  "allFilesMatchMergedSource": true,
+  "expectedDelta": "Remove duplicated newsletter word from HTML template; normalize its missing final newline to repository source. Other two files unchanged.",
+  "preflightNote": "An initial strict source comparison stopped before deployment on the pre-existing missing final newline. Exact bounded difference was checked; no unexpected code drift was accepted.",
+  "emailsSent": 0,
+  "subscriptionsCreated": 0
+}

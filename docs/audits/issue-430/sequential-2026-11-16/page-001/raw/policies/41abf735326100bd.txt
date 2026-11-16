@@ -1,0 +1,72 @@
+Manage your sites
+Add a new site to your AdSense sites list
+Next: Check the status of your AdSense sites
+To make your site available for site-related actions, such as showing ads on a new site or setting up site-level blocking rules, you first need to add the site to your sites list.
+New site-level approval process for AdSense for Search (AFS) sites
+Starting March 4, 2024, before you can show ads via AdSense for Search (AFS) on a new site, you'll need to add your site to the Sites page in your AdSense account. Each new site will go through a verification process that checks that you own the domain or have the ability to modify its content. The process will also review your site for compliance with the AdSense Program policies and Google Publisher policies. After checks are completed, your site will be marked as "Ready" and you can start showing AFS ads.
+Checking your site is ready to show ads
+When you add a new site, we run some checks to make sure it's ready to show ads. We verify you're the site owner and that your site complies with the AdSense Program policies. This usually takes a few days, but in some cases can take 2-4 weeks. We'll let you know when we've completed the checks and your site is ready to show ads.
+Welcome to the AdSense Site Approvals series
+To view subtitles in your language, turn on YouTube captions. Select the Settings icon at the top right corner of the video player, select Captions, and then specify your language.
+Tip: Learn more about the site approvals process through our AdSense Site Approvals video series.
+How to add a new site
+Sign in to your AdSense account.
+Click Sites.
+Click +New site.
+Enter the URL of your site.
+Note: If your site is on one of our host partner sites (like Blogger), you'll need to go to your host partner to add your site to AdSense. If your site is on YouTube, you’ll need to go to YouTube Studio to add your site to AdSense for YouTube.
+Click Save.
+Your site is added to your Sites page with a status of "Requires review".
+Select a verification method to connect your site to AdSense:
+AdSense code snippet
+Copy and paste the code into the HTML of your page, between the <head> and </head> tags. Make sure you place the code on every page you want ads to appear. Learn more about pasting ad code in our Code implementation guide.
+Tip: WordPress user? Learn how to insert ad code in your WordPress site.
+View an example HTML page with the AdSense code added
+<html>
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1234567890123456" crossorigin="anonymous"></script>
+This is the head of your page.
+<title>Example HTML page</title>
+</head>
+<body>
+This is the body of your page.
+</body>
+</html>
+Ads.txt code snippet
+Copy and paste the code into your ads.txt file, and upload the ads.txt file to your site's root directory. If you have an existing ads.txt file, paste the code into each ads.txt file. Learn more about creating an ads.txt file.
+View an example ads.txt file
+Your ads.txt file should look like this, where pub-0000000000000000 is your own publisher ID:
+google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+Meta tag
+You might want to use this method if you don't want to place the AdSense code snippet on your homepage.
+Copy and paste the code into the HTML of your page, between the <head> and </head> tags.
+View an example HTML page with the meta tag added
+<html>
+<head>
+<meta name="google-adsense-account" content="ca-pub-0000000000000000">
+This is the head of your page.
+<title>Example HTML page</title>
+</head>
+<body>
+This is the body of your page.
+</body>
+</html>
+If your site is linked with a platform
+To connect a site that's linked with a platform:
+Depending on the platform, either copy and paste your publisher ID into the platform's setup page, or make sure that your setup is complete on the platform.
+Confirm you've completed your setup on the platform, and then click Next.
+Select the check box to confirm you've finished, then click Verify.
+We verify your site. If your site can't be verified, make sure the changes you made to your site are published and accessible by the AdSense ads crawler (Mediapartners-Google and Google-Display-Ads-Bot). If you're still having issues, you can try a different verification method.
+Click Request review.
+We'll check that your site is ready to show ads.
+After our checks are complete, your site will be ready to show ads. Learn how to set up ads on your site.
+How to get your site approved?
+To view subtitles in your language, turn on YouTube captions. Select the Settings icon at the top right corner of the video player, select Captions, and then specify your language.
+(Optional) Once you have requested the site review, select a consent management platform (CMP) option and click Submit.
+If you choose to use Google's CMP, we will automatically create a European regulations message for this site and any sites you add going forward. You can choose from a two-button configuration ("Consent," "Manage options") or a three-button configuration ("Consent," "Manage options," "Do not consent"). To customize the new message, go to Privacy & messaging, click Manage on the European regulations message type card, then click the message you want to edit. The automatically created messages will have all default message settings applied.
+Alternatively, you may choose to use a certified third-party CMP. A European regulations message won't be automatically generated for your site if you select this option.
+Next: Check the status of your AdSense sites
+Was this helpful?
+How can we improve it?
+YesNo
+Submit

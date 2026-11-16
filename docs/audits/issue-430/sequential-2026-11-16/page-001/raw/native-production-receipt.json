@@ -1,0 +1,26 @@
+{
+  "schema": "tradehq-cloudflare-account-observation-v1",
+  "observedAt": "2026-11-16T11:20:27.362Z",
+  "project": "tradehq-preview",
+  "nativeTokenActive": true,
+  "activeProduction": {
+    "id": "0c1bc07e-cb80-4223-97cc-a9a95640f104",
+    "sha": "bfb4d0ee904ecce2298a56d81e95ede1fc5891f7",
+    "environment": "production",
+    "branch": "main",
+    "status": "success",
+    "createdAt": "2026-11-16T11:08:53.217299Z"
+  },
+  "previousSuccessfulProduction": {
+    "id": "dfb4fb9f-7e76-442d-b973-25cd6e2dd76f",
+    "sha": "6d1346afdc4ee4ba272c9617a0dabe77ab24e91e",
+    "environment": "production",
+    "branch": "main",
+    "status": "success",
+    "createdAt": "2026-11-16T01:29:20.028579Z"
+  },
+  "sourceGitHubRun": 43855145903,
+  "sourceGitHubJob": 133263198907,
+  "sourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43855145903/job/133263198907",
+  "note": "Filtered native deployment identity; account billing/usage data omitted."
+}

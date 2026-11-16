@@ -1,0 +1,24 @@
+{
+  "observedAtUTC": "2026-11-16T11:12:05.851Z",
+  "origin": "https://www.thetradehq.com",
+  "syntheticGuestState": true,
+  "externalWritesBlocked": true,
+  "attributionVisibleWithSourceAndLicenseLinks": true,
+  "cases": [
+    {
+      "case": "cash-migration",
+      "recapText": "RECENT BALANCE CHANGE\n+900.00%+$90000.00 over 2 snapshots\nView full portfolio\n\nChange between the first and last saved snapshots in the past 7 days. Cash changes are included; this is not an investment return.",
+      "passed": true
+    },
+    {
+      "case": "balance-decline",
+      "recapText": "RECENT BALANCE CHANGE\n-10.00%$-1000.00 over 2 snapshots\nView full portfolio\n\nChange between the first and last saved snapshots in the past 7 days. Cash changes are included; this is not an investment return.",
+      "passed": true
+    },
+    {
+      "case": "insufficient-snapshots",
+      "suppressed": true,
+      "passed": true
+    }
+  ]
+}

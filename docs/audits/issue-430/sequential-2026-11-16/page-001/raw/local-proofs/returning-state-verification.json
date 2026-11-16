@@ -1,0 +1,201 @@
+{
+  "observedAtUTC": "2026-11-16T10:45:43.848Z",
+  "origin": "http://127.0.0.1:4173",
+  "syntheticGuestOnly": true,
+  "externalWritesBlocked": true,
+  "cases": [
+    {
+      "fixture": {
+        "name": "ten-minutes-up",
+        "age": 600000,
+        "price": 110,
+        "elapsed": "under 1h ago",
+        "move": "+10.00%"
+      },
+      "watchText": "Watchlist changes since your saved visit (under 1h ago)\nSee all →\nBTC\nBitcoin\n+10.00%\n\nSimulated market moves — educational only, not financial advice.",
+      "resumeText": "Welcome back — jump straight to your last trade — BTC.\n\nContinue",
+      "resumeDismissed": true,
+      "cardText": "TODAY'S CHALLENGE\nRotates at local midnight\n\nHypothetical exercise — figures, quotes and events are invented assumptions, not current market news.\n\nOIL\nPRO\nOPEC+ surprise production cut of 1M bpd.\n\nCrude jumps 4% on the announcement. Inventories have been building for 6 weeks.\n\n0\nSTREAK\n0\nBEST\n0\nTOTAL\nPlay Today's Challenge\n\n✨ Next badge: Spark at 3-day streak\n\nQuick scenario + 10-question case study · virtual learning only.",
+      "passed": true
+    },
+    {
+      "fixture": {
+        "name": "two-hours-down",
+        "age": 7200000,
+        "price": 90,
+        "elapsed": "about 2h ago",
+        "move": "-10.00%"
+      },
+      "watchText": "Watchlist changes since your saved visit (about 2h ago)\nSee all →\nBTC\nBitcoin\n-10.00%\n\nSimulated market moves — educational only, not financial advice.",
+      "resumeText": "Welcome back — jump straight to your last trade — BTC.\n\nContinue",
+      "resumeDismissed": true,
+      "cardText": "TODAY'S CHALLENGE\nRotates at local midnight\n\nHypothetical exercise — figures, quotes and events are invented assumptions, not current market news.\n\nOIL\nPRO\nOPEC+ surprise production cut of 1M bpd.\n\nCrude jumps 4% on the announcement. Inventories have been building for 6 weeks.\n\n0\nSTREAK\n0\nBEST\n0\nTOTAL\nPlay Today's Challenge\n\n✨ Next badge: Spark at 3-day streak\n\nQuick scenario + 10-question case study · virtual learning only.",
+      "passed": true
+    },
+    {
+      "fixture": {
+        "name": "two-days-up",
+        "age": 172800000,
+        "price": 110,
+        "elapsed": "about 2d ago",
+        "move": "+10.00%"
+      },
+      "watchText": "Watchlist changes since your saved visit (about 2d ago)\nSee all →\nBTC\nBitcoin\n+10.00%\n\nSimulated market moves — educational only, not financial advice.",
+      "resumeText": "Welcome back — jump straight to your last trade — BTC.\n\nContinue",
+      "resumeDismissed": true,
+      "cardText": "TODAY'S CHALLENGE\nRotates at local midnight\n\nHypothetical exercise — figures, quotes and events are invented assumptions, not current market news.\n\nOIL\nPRO\nOPEC+ surprise production cut of 1M bpd.\n\nCrude jumps 4% on the announcement. Inventories have been building for 6 weeks.\n\n0\nSTREAK\n0\nBEST\n0\nTOTAL\nPlay Today's Challenge\n\n✨ Next badge: Spark at 3-day streak\n\nQuick scenario + 10-question case study · virtual learning only.",
+      "passed": true
+    },
+    {
+      "fixture": {
+        "name": "invalid-time",
+        "age": "invalid",
+        "price": 110,
+        "hidden": true
+      },
+      "watchText": null,
+      "resumeText": "Welcome back — jump straight to your last trade — BTC.\n\nContinue",
+      "resumeDismissed": true,
+      "cardText": "TODAY'S CHALLENGE\nRotates at local midnight\n\nHypothetical exercise — figures, quotes and events are invented assumptions, not current market news.\n\nOIL\nPRO\nOPEC+ surprise production cut of 1M bpd.\n\nCrude jumps 4% on the announcement. Inventories have been building for 6 weeks.\n\n0\nSTREAK\n0\nBEST\n0\nTOTAL\nPlay Today's Challenge\n\n✨ Next badge: Spark at 3-day streak\n\nQuick scenario + 10-question case study · virtual learning only.",
+      "passed": true
+    },
+    {
+      "fixture": {
+        "name": "future-time",
+        "age": -3600000,
+        "price": 110,
+        "hidden": true
+      },
+      "watchText": null,
+      "resumeText": "Welcome back — jump straight to your last trade — BTC.\n\nContinue",
+      "resumeDismissed": true,
+      "cardText": "TODAY'S CHALLENGE\nRotates at local midnight\n\nHypothetical exercise — figures, quotes and events are invented assumptions, not current market news.\n\nOIL\nPRO\nOPEC+ surprise production cut of 1M bpd.\n\nCrude jumps 4% on the announcement. Inventories have been building for 6 weeks.\n\n0\nSTREAK\n0\nBEST\n0\nTOTAL\nPlay Today's Challenge\n\n✨ Next badge: Spark at 3-day streak\n\nQuick scenario + 10-question case study · virtual learning only.",
+      "passed": true
+    },
+    {
+      "fixture": {
+        "name": "no-move",
+        "age": 600000,
+        "price": 100,
+        "hidden": true
+      },
+      "watchText": null,
+      "resumeText": "Welcome back — jump straight to your last trade — BTC.\n\nContinue",
+      "resumeDismissed": true,
+      "cardText": "TODAY'S CHALLENGE\nRotates at local midnight\n\nHypothetical exercise — figures, quotes and events are invented assumptions, not current market news.\n\nOIL\nPRO\nOPEC+ surprise production cut of 1M bpd.\n\nCrude jumps 4% on the announcement. Inventories have been building for 6 weeks.\n\n0\nSTREAK\n0\nBEST\n0\nTOTAL\nPlay Today's Challenge\n\n✨ Next badge: Spark at 3-day streak\n\nQuick scenario + 10-question case study · virtual learning only.",
+      "passed": true
+    },
+    {
+      "fixture": {
+        "name": "badge-0",
+        "age": 600000,
+        "price": 110,
+        "elapsed": "under 1h ago",
+        "move": "+10.00%",
+        "longest": 0,
+        "badge": "Spark"
+      },
+      "watchText": "Watchlist changes since your saved visit (under 1h ago)\nSee all →\nBTC\nBitcoin\n+10.00%\n\nSimulated market moves — educational only, not financial advice.",
+      "resumeText": "Welcome back — jump straight to your last trade — BTC.\n\nContinue",
+      "resumeDismissed": true,
+      "cardText": "TODAY'S CHALLENGE\nRotates at local midnight\n\nHypothetical exercise — figures, quotes and events are invented assumptions, not current market news.\n\nOIL\nPRO\nOPEC+ surprise production cut of 1M bpd.\n\nCrude jumps 4% on the announcement. Inventories have been building for 6 weeks.\n\n0\nSTREAK\n0\nBEST\n0\nTOTAL\nPlay Today's Challenge\n\n✨ Next badge: Spark at 3-day streak\n\nQuick scenario + 10-question case study · virtual learning only.",
+      "passed": true
+    },
+    {
+      "fixture": {
+        "name": "badge-3",
+        "age": 600000,
+        "price": 110,
+        "elapsed": "under 1h ago",
+        "move": "+10.00%",
+        "longest": 3,
+        "badge": "Iron Hand"
+      },
+      "watchText": "Watchlist changes since your saved visit (under 1h ago)\nSee all →\nBTC\nBitcoin\n+10.00%\n\nSimulated market moves — educational only, not financial advice.",
+      "resumeText": "Welcome back — jump straight to your last trade — BTC.\n\nContinue",
+      "resumeDismissed": true,
+      "cardText": "TODAY'S CHALLENGE\nRotates at local midnight\n3-day streak\n\nHypothetical exercise — figures, quotes and events are invented assumptions, not current market news.\n\nOIL\nPRO\nOPEC+ surprise production cut of 1M bpd.\n\nCrude jumps 4% on the announcement. Inventories have been building for 6 weeks.\n\n3\nSTREAK\n3\nBEST\n3\nTOTAL\nPlay Today's Challenge\n\n🛡️ Next badge: Iron Hand at 7-day streak\n\nQuick scenario + 10-question case study · virtual learning only.",
+      "passed": true
+    },
+    {
+      "fixture": {
+        "name": "badge-7",
+        "age": 600000,
+        "price": 110,
+        "elapsed": "under 1h ago",
+        "move": "+10.00%",
+        "longest": 7,
+        "badge": "Steel Mind"
+      },
+      "watchText": "Watchlist changes since your saved visit (under 1h ago)\nSee all →\nBTC\nBitcoin\n+10.00%\n\nSimulated market moves — educational only, not financial advice.",
+      "resumeText": "Welcome back — jump straight to your last trade — BTC.\n\nContinue",
+      "resumeDismissed": true,
+      "cardText": "TODAY'S CHALLENGE\nRotates at local midnight\n7-day streak\n\nHypothetical exercise — figures, quotes and events are invented assumptions, not current market news.\n\nOIL\nPRO\nOPEC+ surprise production cut of 1M bpd.\n\nCrude jumps 4% on the announcement. Inventories have been building for 6 weeks.\n\n7\nSTREAK\n7\nBEST\n7\nTOTAL\nPlay Today's Challenge\n\n⚔️ Next badge: Steel Mind at 14-day streak\n\nQuick scenario + 10-question case study · virtual learning only.",
+      "passed": true
+    },
+    {
+      "fixture": {
+        "name": "badge-14",
+        "age": 600000,
+        "price": 110,
+        "elapsed": "under 1h ago",
+        "move": "+10.00%",
+        "longest": 14,
+        "badge": "Diamond Hands"
+      },
+      "watchText": "Watchlist changes since your saved visit (under 1h ago)\nSee all →\nBTC\nBitcoin\n+10.00%\n\nSimulated market moves — educational only, not financial advice.",
+      "resumeText": "Welcome back — jump straight to your last trade — BTC.\n\nContinue",
+      "resumeDismissed": true,
+      "cardText": "TODAY'S CHALLENGE\nRotates at local midnight\n14-day streak\n\nHypothetical exercise — figures, quotes and events are invented assumptions, not current market news.\n\nOIL\nPRO\nOPEC+ surprise production cut of 1M bpd.\n\nCrude jumps 4% on the announcement. Inventories have been building for 6 weeks.\n\n14\nSTREAK\n14\nBEST\n14\nTOTAL\nPlay Today's Challenge\n\n💎 Next badge: Diamond Hands at 30-day streak\n\nQuick scenario + 10-question case study · virtual learning only.",
+      "passed": true
+    },
+    {
+      "fixture": {
+        "name": "badge-30",
+        "age": 600000,
+        "price": 110,
+        "elapsed": "under 1h ago",
+        "move": "+10.00%",
+        "longest": 30,
+        "badge": "Legend"
+      },
+      "watchText": "Watchlist changes since your saved visit (under 1h ago)\nSee all →\nBTC\nBitcoin\n+10.00%\n\nSimulated market moves — educational only, not financial advice.",
+      "resumeText": "Welcome back — jump straight to your last trade — BTC.\n\nContinue",
+      "resumeDismissed": true,
+      "cardText": "TODAY'S CHALLENGE\nRotates at local midnight\n30-day streak\n\nHypothetical exercise — figures, quotes and events are invented assumptions, not current market news.\n\nOIL\nPRO\nOPEC+ surprise production cut of 1M bpd.\n\nCrude jumps 4% on the announcement. Inventories have been building for 6 weeks.\n\n30\nSTREAK\n30\nBEST\n30\nTOTAL\nPlay Today's Challenge\n\n👑 Next badge: Legend at 100-day streak\n\nQuick scenario + 10-question case study · virtual learning only.",
+      "passed": true
+    },
+    {
+      "fixture": {
+        "name": "badge-100",
+        "age": 600000,
+        "price": 110,
+        "elapsed": "under 1h ago",
+        "move": "+10.00%",
+        "longest": 100,
+        "badge": null
+      },
+      "watchText": "Watchlist changes since your saved visit (under 1h ago)\nSee all →\nBTC\nBitcoin\n+10.00%\n\nSimulated market moves — educational only, not financial advice.",
+      "resumeText": "Welcome back — jump straight to your last trade — BTC.\n\nContinue",
+      "resumeDismissed": true,
+      "cardText": "TODAY'S CHALLENGE\nRotates at local midnight\n100-day streak\n\nHypothetical exercise — figures, quotes and events are invented assumptions, not current market news.\n\nOIL\nPRO\nOPEC+ surprise production cut of 1M bpd.\n\nCrude jumps 4% on the announcement. Inventories have been building for 6 weeks.\n\n100\nSTREAK\n100\nBEST\n100\nTOTAL\nPlay Today's Challenge\n\nQuick scenario + 10-question case study · virtual learning only.",
+      "passed": true
+    },
+    {
+      "fixture": {
+        "name": "played-today",
+        "age": 600000,
+        "price": 110,
+        "elapsed": "under 1h ago",
+        "move": "+10.00%",
+        "longest": 7,
+        "played": true
+      },
+      "watchText": "Watchlist changes since your saved visit (under 1h ago)\nSee all →\nBTC\nBitcoin\n+10.00%\n\nSimulated market moves — educational only, not financial advice.",
+      "resumeText": "Welcome back — jump straight to your last trade — BTC.\n\nContinue",
+      "resumeDismissed": true,
+      "cardText": "TODAY'S CHALLENGE\nRotates at local midnight\n7-day streak\n\nHypothetical exercise — figures, quotes and events are invented assumptions, not current market news.\n\nOIL\nPRO\nOPEC+ surprise production cut of 1M bpd.\n\nCrude jumps 4% on the announcement. Inventories have been building for 6 weeks.\n\n7\nSTREAK\n7\nBEST\n7\nTOTAL\nPlayed — Streak Secured\n\nQuick scenario + 10-question case study · virtual learning only.",
+      "passed": true
+    }
+  ]
+}
