@@ -1,0 +1,9 @@
+{
+  "build": "npm run build:cloudflare passed",
+  "markedHTML": [
+    "contact.html"
+  ],
+  "compiledContactTargetsMatchExistingSource": true,
+  "scope": "Contact native fallback only; no zone/account settings changed",
+  "productionGate": "Pending deployed custom-domain no-JavaScript link verification; local markup is not proof of edge behavior"
+}
