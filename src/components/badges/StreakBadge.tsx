@@ -36,7 +36,7 @@ export function StreakBadge({ className }: { className?: string }) {
           : "bg-white/[0.05] text-muted-foreground border border-white/[0.08] hover:text-foreground hover:border-white/20",
         className,
       )}
-      title={hasStreak ? `${count}-day trading streak` : "Start your daily streak"}
+      title={hasStreak ? `${count}-day practice streak` : "Start your daily streak"}
     >
       <Flame className={cn("w-3.5 h-3.5", hasStreak && "animate-pulse")} />
       <span>{hasStreak ? count : "Daily"}</span>
