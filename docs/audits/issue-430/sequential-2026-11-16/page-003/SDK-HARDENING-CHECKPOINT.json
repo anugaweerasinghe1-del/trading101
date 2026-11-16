@@ -1,0 +1,16 @@
+{
+  "recordedAtUTC": "2026-11-16T15:49:47.533230+00:00",
+  "risk": "Project-controlled tag initializes an additional experimentation library and loads replay-plugin code plus fallback capture configuration. No unwanted event delivery or replay recording was observed.",
+  "sourceEvidence": {
+    "projectLoaderSHA256": "3d1d89358ae7bfa4216538fc2a2f252b291f55b02deef7f951a94fcc941ef289",
+    "projectAsyncLoaderSHA256": "0731a679b6cadd40d7655cb8645d511994758f157e513e49e9a8eaaa45089ca9",
+    "observedInitializers": [
+      "WebExperiment.initialize with initialFlags[]",
+      "plugin-session-replay-browser with sampleRate0",
+      "fallback init autocapture.elementInteractions=true when no queued init"
+    ]
+  },
+  "fix": "Exact core SDK2.42.4 with verified vendor SHA384 integrity and anonymous CORS; no dependency changes. Existing consent and event restrictions retained.",
+  "runtime": "Fresh isolated unset/rejected/accepted fixture states using actual vetted SDK bytes and browser SRI. Unset/rejected never requested SDK; accepted Privacy interactions generated zero automatic events; actual Arena view produced only TradeHQ Arena Viewed; withdrawal cleared active SDK after reload. All external requests fulfilled locally; zero delivered.",
+  "classification": "Conservative privacy-risk correction, not a confirmed Google/legal violation or proof the previous tag recorded replay."
+}

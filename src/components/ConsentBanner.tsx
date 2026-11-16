@@ -38,9 +38,13 @@ function loadConsentedAnalytics() {
     window.dispatchEvent(new Event("tradehq:analytics-ready"));
   };
   if (document.getElementById("tradehq-amplitude")) { initialize(); return; }
+  // Load only the pinned core SDK. Project tags can independently initialize
+  // experiments, replay plugins and fallback automatic-capture settings.
   const script = document.createElement("script");
   script.id = "tradehq-amplitude";
-  script.src = `https://cdn.amplitude.com/script/${AMPLITUDE_API_KEY}.js`;
+  script.src = "https://cdn.amplitude.com/libs/analytics-browser-2.42.4-min.js.gz";
+  script.integrity = "sha384-lKBFu+lrE+l3rHaNqttqd3e3ga1kwCKyeO1JiVVq2NlrrkHTdt8SobN3bqqLSKSw";
+  script.crossOrigin = "anonymous";
   script.async = true;
   script.onload = initialize;
   document.head.appendChild(script);
