@@ -1,0 +1,57 @@
+{
+  "sourceSHA": "6d1346afdc4ee4ba272c9617a0dabe77ab24e91e",
+  "function": "admin-courses",
+  "expectedPreviousVersion": 21,
+  "verifyJWT": false,
+  "authenticationSettingPreserved": true,
+  "files": [
+    {
+      "name": "admin-courses/index.ts",
+      "sha256": "2d9db040944216d2a8dde04c84792140cc36048e4cfbc42a2bd231e133a7d86f"
+    },
+    {
+      "name": "_shared/courseAdmin.ts",
+      "sha256": "186de189dc8c727294571ad7d86022433b9f73262f669aa245c23c8c970b2a9c"
+    },
+    {
+      "name": "_shared/dailyPractice.ts",
+      "sha256": "d33e0d5f582ad5f52fe8ea6ca28cf3055cb61ed6467309a5002a98acf0bdc020"
+    },
+    {
+      "name": "_shared/courseDocument.ts",
+      "sha256": "22547129fcf9cbcf3f1ab8ad891cbe37b83885495ed9a692d031be7e3df55c55"
+    },
+    {
+      "name": "_shared/courseReviewFeedback.ts",
+      "sha256": "dea41269cdc0f30822608607e133d87e1bfa01c3c1692b3a75c7d88cb0f7ff6e"
+    },
+    {
+      "name": "_shared/courseQualityGate.ts",
+      "sha256": "d7872c6f57cea6d538d38bbdabf3af4ae488b50acff7d8e6dfe0dfd5cc414b27"
+    },
+    {
+      "name": "_shared/courseGenerator.ts",
+      "sha256": "33e209d197767dc7038a78af353692fb43494db397eec6e8734e11b268de990c"
+    },
+    {
+      "name": "_shared/coursePublicationGate.ts",
+      "sha256": "55d0a0bde2510f1e50f582c010f9e3e5517ee99de60bcdfe623f6452e5457cb0"
+    },
+    {
+      "name": "_shared/courseReviewProtocol.ts",
+      "sha256": "8f7f87c7d60f971e1735634aaa03b92919ca92e52b0a0ce4e59b0f39bdb1e393"
+    },
+    {
+      "name": "_shared/geminiModelPreflight.ts",
+      "sha256": "220bdb74f1537e5e9f20c98adb3f07365ad41c5b4323eaf86a88fb6bd708df94"
+    },
+    {
+      "name": "_shared/rateLimit.ts",
+      "sha256": "b4b364b0b619968eb37578e58ea67606b27f9ee7705fc3609ef21f69b8f8d183"
+    },
+    {
+      "name": "_shared/rateLimitPolicy.ts",
+      "sha256": "68873fbda5b550cdf33a63f3884f6e8952c82c2f6fb633981043abeefd4bf0d2"
+    }
+  ]
+}

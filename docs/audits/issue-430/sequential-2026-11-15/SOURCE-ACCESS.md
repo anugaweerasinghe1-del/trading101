@@ -1,6 +1,6 @@
 # Diversification publication prerequisite
 
-Status: code and draft repair complete; protected merge/deployment pending. Original remediation remains 18/19. No new exhaustive page review is complete.
+Status: code/draft repair, protected merge, backend readback and native Cloudflare deployment verified; owner publication remains pending. Original remediation remains 18/19. No new exhaustive page review is complete.
 
 ## Confirmed source access failure (STRICT-PRE-006)
 
@@ -21,3 +21,5 @@ Independently recomputed examples include $24,993.751562 purchase notional for a
 ## Publication checkpoint
 
 Bitcoin revision 9 and Price Feeds revision 5 match their saved source documents and all four live routes each (HTTP 200, complete native bootstrap parity, every lesson body paragraph rendered, all 12 quiz objects per course preserved). Diversification remains draft 6/published 3. Revision 6 must use the normal authenticated owner publishing flow after protected merge, backend readback and native Cloudflare production verification. Only then verify the final four routes and reassess the original 19-proposal count.
+
+2026-11-16 release checkpoint: [PR 443 report](release-443/REPORT.md) records all required exact-head checks, protected merge, backend 22 readback, native production identity and affected-passage live rechecks. The remaining source publication is Diversification revision 6 through the owner workflow.

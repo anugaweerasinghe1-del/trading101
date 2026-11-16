@@ -1,0 +1,24 @@
+{
+  "observedAtUTC": "2026-11-16T01:31:59.945Z",
+  "scope": "Affected-passage release verification; not a complete fresh AdSense page audit or final draft6 publication parity check",
+  "routes": [
+    {
+      "url": "https://www.thetradehq.com/courses/diversification-and-position-sizing/foundations-of-asset-allocation",
+      "status": 200,
+      "nativeHTMLSHA256": "12ae6c280cfa97f5b7b2bc4637357d117693fb7856898ff58684b0cdb9514f27",
+      "renderedTextSHA256": "19fdac322e75e828c9940b2b674d7fb3cae213fc4230df122df048ac2771bd8c",
+      "allThreeCorrectionsInNativeBootstrap": true,
+      "affectedBodyParagraphRendered": true,
+      "all12QuizAnswerKeysPreserved": true
+    },
+    {
+      "url": "https://www.thetradehq.com/courses/diversification-and-position-sizing/managing-concentration-risk",
+      "status": 200,
+      "nativeHTMLSHA256": "0ab193c508beb1efe15575a8cd6bb6ebb96c8fc8affd5b829c0125f937208007",
+      "renderedTextSHA256": "86b4416f2aecd05422b58add70e7e492b202743e8bf8e8308db84ec230acee10",
+      "allThreeCorrectionsInNativeBootstrap": true,
+      "affectedBodyParagraphRendered": true,
+      "all12QuizAnswerKeysPreserved": true
+    }
+  ]
+}

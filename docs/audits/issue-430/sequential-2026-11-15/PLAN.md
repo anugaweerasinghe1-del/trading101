@@ -6,7 +6,7 @@ Run date: 15 November 2026 (Asia/Colombo). User directive: finish source synchro
 
 R07 is not complete merely because a database save or a Publish-button click is reported. The three exact prepared documents must pass schema, publication-quality and renderer checks, be published through the authenticated owner workflow, match stored published sources, and be verified on the live Cloudflare course/lesson responses.
 
-Current independently verified state: Bitcoin draft8/published6; Price Feeds draft5/published3; Diversification draft5/published3. Draft8/5/5 passes the existing schema and course-quality checks. The owner publication step is pending. No course was deleted. Do not mark19/19 until the actual published records and live copies match.
+Initial 15 November checkpoint (superseded by the dated release report below): Bitcoin draft8/published6; Price Feeds draft5/published3; Diversification draft5/published3. Draft8/5/5 passes the existing schema and course-quality checks. The owner publication step is pending. No course was deleted. Do not mark19/19 until the actual published records and live copies match.
 
 The first refinement save expired; the smaller, version/fingerprint-guarded paragraph transaction succeeded. No publication identity check was bypassed. Preserve both results in the append-only journal.
 
@@ -67,3 +67,7 @@ The existing course desk has its own65-word paragraph heuristic. That is an inte
 The selected connected profile is reported by the user as signed in to TradeHQ. Its browser provider declined to start because of insufficient account credits. No credits were purchased. The existing administrator credential had returned401; the publication handler still requires the registered owner session plus administrator authorization. Do not extract or print session credentials.
 
 Account access stays unchanged; the18+ analytics rule applies to optional analytics. No guardian feature, AdSense application, ad activation, account/CMP change, real-money trade, bulk publication or review/account mutation is authorized by an audit pass. Existing source revisions may be published through their owner workflow as explicitly requested. Ads remain disabled.
+
+## 16 November prerequisite checkpoint
+
+See [release443 report](release-443/REPORT.md) and RUN-STATE.json for current status: Bitcoin9 and PriceFeeds5 published/verified; Diversification6 saved but published3. PR443, backend22 and native Cloudflare production are verified. Original remediation18/19; new page queue remains unread. Owner publication and final parity precede the homepage review.

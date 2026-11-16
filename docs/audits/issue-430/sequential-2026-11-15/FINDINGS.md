@@ -51,3 +51,16 @@ Repair: request a documented property-level anyOf union with two explicit branch
 Tests use the actual approved response as a minimal fixture to show old-schema acceptance and new-contract rejection. They cover valid empty PASS, nonempty BLOCK, contradictions, truncation, malformed envelopes/JSON, credential exclusion, and safe handler/client propagation. Current official Gemini structured-output documentation was read for anyOf/enum/cardinality and its unenforced string-length limits. The client’s existing600-character limit remains enforced. No token budget/model, publication identity gate or paid fallback was changed. No further real model calls are authorized by this diagnostic consent.
 
 Status: code/tests complete, protected merge/deployed-source/native Cloudflare verification pending. Stored source remains draft9/5/5 versus published6/3/3;19-proposal completion remains18/19 and the new page queue remains unread.
+
+
+## 2026-11-16 source-publication checkpoint — STRICT-PRE-006/007
+
+Append-only update: PR441's contract repair is merged and verified. Bitcoin revision9 and Price Feeds revision5 are now independently verified in storage and all eight live course/lesson routes. This supersedes the earlier pending-publication checkpoint without changing its historical evidence.
+
+STRICT-PRE-006 — CONFIRMED integration/source-access failure: Diversification revision5 cites two Investor.gov pages; both and robots.txt returned explicit403 from Supabase. No false citation or Google rejection cause is inferred. Freshly read ASIC Moneysmart references were added as exact publication-allowlisted citations; no generation-pool change, cached PASS or retrieval bypass. Investor.gov retrieval remains an external blocked check.
+
+STRICT-PRE-007 — CONFIRMED factual copy inconsistencies: lesson1 body4 continuous simulator prices; lesson1 quiz4 explanation omits fixed simulator inputs; lesson2 body4 unconditional crypto drift outcome. Three exact corrections saved as revision6, preserving URLs/answer indices and later owner edits. Fresh full source-document read and arithmetic are recorded with field hashes; this is not new live-page AdSense credit.
+
+PR443 head bd7693f899e7f6c3792b07070bde14c2c692377f passed all five required checks, protected merge6d1346afdc4ee4ba272c9617a0dabe77ab24e91e. Backend22's12 files match the merge. Native Cloudflare deploymentdfb4fb9f-7e76-442d-b973-25cd6e2dd76f is production/main/success for that SHA; main workflow43786546879 and readiness pass. Two affected live lesson bodies and all three native-data corrections were rechecked. Full receipts: [release443 report](release-443/REPORT.md).
+
+Final stored source is Bitcoin9/9, PriceFeeds5/5, Diversification draft6/published3. Original remediation remains18/19, new exhaustive audit remains0 completed pages. Normal owner publication and final four-route source parity are still required; no extra standalone model request was made.

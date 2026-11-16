@@ -1,0 +1,29 @@
+{
+  "localValidation": {
+    "typescriptApp": {
+      "exitCode": 0
+    },
+    "cloudflareBuildAndPostbuild": {
+      "exitCode": 0,
+      "logSHA256": "916e0a25f4827c1553ab9a58f8d5b69e9593da592fc9be25c746b4f3b9ef8bf6"
+    },
+    "reviewFeedbackFixtures": {
+      "exitCode": 0,
+      "logSHA256": "6a728254955938261024fa0c70dc02c7659b93e11c6998ac14f049dda25dd507"
+    }
+  },
+  "beforeDeployment": {
+    "version": 21,
+    "status": "ACTIVE",
+    "verifyJWT": false,
+    "all12FilesMatchPR441Merge": true,
+    "onlyChangedBackendFile": "_shared/courseGenerator.ts"
+  },
+  "savedDiversification": {
+    "revision": 6,
+    "status": "draft",
+    "publishedRevision": 3,
+    "matchesGuardedIntendedDocument": true
+  },
+  "additionalOperatorModelCalls": 0
+}

@@ -1,0 +1,25 @@
+{
+  "observedAtUTC": "2026-11-16T01:30:23.125148+00:00",
+  "checks": [
+    {
+      "method": "GET",
+      "status": 405,
+      "requestContainsCredentials": false,
+      "body": "{\"error\":\"Method not allowed\"}"
+    },
+    {
+      "method": "OPTIONS",
+      "status": 200,
+      "requestContainsCredentials": false,
+      "body": ""
+    },
+    {
+      "method": "POST",
+      "status": 401,
+      "requestContainsCredentials": false,
+      "body": "{\"error\":\"Incorrect master key.\"}"
+    }
+  ],
+  "publicationAttemptWithOwnerCredentials": false,
+  "modelRequests": 0
+}
