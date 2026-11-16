@@ -13,7 +13,7 @@ const sections = [
     icon: Target,
     title: "Mission",
     body:
-      "Make financial literacy practical. TradeHQ lets anyone learn how markets work by doing — users manually place simulated market buys and sells, watch portfolios respond to news and price action, and study the outcomes without risking a single dollar.",
+      "Make financial literacy practical. TradeHQ lets learners place simulated market buys and sells, observe how orders and labelled practice prices affect portfolio value, and study the outcomes using virtual money.",
   },
   {
     icon: Eye,

@@ -550,7 +550,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
       {
         h: "How the project is funded",
         p: [
-          "TradeHQ is free to use with no subscription and no paid tier. It is not funded by broker referrals or by payment for asset coverage, and no company pays to appear in a lesson, comparison or guide.",
+          "TradeHQ is free to use with no paid subscription or paid tier. The optional newsletter is also free. TradeHQ is not funded by broker referrals or by payment for asset coverage, and no company pays to appear in a lesson, comparison or guide.",
         ],
       },
     ],
