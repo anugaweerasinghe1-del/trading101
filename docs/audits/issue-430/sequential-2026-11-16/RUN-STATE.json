@@ -1,20 +1,23 @@
 {
-  "updatedAtUTC": "2026-11-16T10:54:32.949663+00:00",
-  "phase": "HOMEPAGE-FRESH-REVIEW-IN-PROGRESS",
-  "currentPage": "https://www.thetradehq.com/",
-  "newAuditCompletedPages": 0,
+  "updatedAtUTC": "2026-11-16T13:51:16.251292+00:00",
+  "phase": "ABOUT-FRESH-REVIEW-IN-PROGRESS",
+  "currentPage": "https://www.thetradehq.com/about",
+  "newAuditCompletedPages": 1,
   "publisherPageBaseline": 163,
+  "publisherPagesStillQueued": 162,
   "totalURLBaseline": 480,
-  "priorRemediation": "18/19; Diversification6 remains draft/published3; owner publication separate",
-  "latestOwnerDirective": "Continue accessible pages using inspect/log/fix/check/merge/native deployment/live reread; retain separate blocked checks",
-  "sequence": "Do not advance to the next editorial page until homepage closure",
-  "completedPrerequisiteException": "Owner-only course publication does not stop independent accessible-page review; it is not marked complete",
-  "reviewer": "Codex assistant; prior contributor; not an independent human or Google reviewer",
-  "standaloneModelCallsThisReview": 0,
+  "totalURLNote": "Discovery union, including nonpublisher/alias/redirect routes requiring reconciliation; not480 completed or unique publisher pages.",
+  "priorRemediation": "18/19; Diversification draft6/published3 remains normal owner-publication pending.",
   "homepageFindings": {
     "confirmed": 5,
     "qualityRisks": 3,
-    "auxiliary": 1
+    "auxiliary": 1,
+    "closed": 9
   },
-  "freshCompletedPages": 0
+  "closedPageRecord": "https://github.com/anugaweerasinghe1-del/trading101/blob/49c8b29df8aa8eb697c5a991ef152329a7e57eca/docs/audits/issue-430/sequential-2026-11-16/page-001/PAGE-RECORD.json",
+  "homepageCodeMergeSHA": "bfb4d0ee904ecce2298a56d81e95ede1fc5891f7",
+  "nativeCloudflareId": "0c1bc07e-cb80-4223-97cc-a9a95640f104",
+  "reviewer": "Codex assistant; prior contributor; not an independent human or Google reviewer",
+  "standaloneModelCallsThisReview": 0,
+  "nextStep": "Fresh paragraph-level About review; log before edits, fix on that page, protected merge/native deployment/live recheck before advancement."
 }
