@@ -11,10 +11,20 @@ import { cn } from "@/lib/utils";
 export function DailyChallengeCard() {
   const [streak, setStreak] = useState<StreakState | null>(null);
   const [played, setPlayed] = useState(false);
-  const challenge = getTodayChallenge();
+  const [challenge, setChallenge] = useState(() => getTodayChallenge());
 
   useEffect(() => {
-    const refresh = () => { setStreak(getStreak()); setPlayed(hasPlayedToday()); };
+    let midnightTimer: ReturnType<typeof setTimeout> | undefined;
+    const refresh = () => {
+      setStreak(getStreak());
+      setPlayed(hasPlayedToday());
+      setChallenge(getTodayChallenge());
+      clearTimeout(midnightTimer);
+      const nextMidnight = new Date();
+      nextMidnight.setHours(24, 0, 0, 25);
+      midnightTimer = setTimeout(refresh, Math.max(1, nextMidnight.getTime() - Date.now()));
+    };
+    const onVisibility = () => { if (document.visibilityState === "visible") refresh(); };
     const onStorage = (event: StorageEvent) => {
       if (!event.key || event.key === DAILY_PROGRESS_KEY) refresh();
     };
@@ -22,10 +32,13 @@ export function DailyChallengeCard() {
     window.addEventListener(DAILY_PROGRESS_EVENT, refresh);
     window.addEventListener("storage", onStorage);
     window.addEventListener("focus", refresh);
+    document.addEventListener("visibilitychange", onVisibility);
     return () => {
       window.removeEventListener(DAILY_PROGRESS_EVENT, refresh);
       window.removeEventListener("storage", onStorage);
       window.removeEventListener("focus", refresh);
+      document.removeEventListener("visibilitychange", onVisibility);
+      clearTimeout(midnightTimer);
     };
   }, []);
 

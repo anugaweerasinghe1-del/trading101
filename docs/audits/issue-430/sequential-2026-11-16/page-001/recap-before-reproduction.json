@@ -1,0 +1,17 @@
+{
+  "scenario": "Actual legacy guest cash migration, no positions and no investment trades",
+  "startingCash": 10000,
+  "endingCash": 100000,
+  "positions": 0,
+  "trades": 0,
+  "reportedRecap": {
+    "hasData": true,
+    "startValue": 10000,
+    "endValue": 100000,
+    "changePct": 900,
+    "changeAbs": 90000,
+    "snapshots": 2
+  },
+  "existingUILabel": "Simulated portfolio performance",
+  "interpretation": "900% is a change in recorded balance caused by added virtual cash; no investment gain occurred"
+}

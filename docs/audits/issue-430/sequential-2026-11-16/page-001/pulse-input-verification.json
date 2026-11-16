@@ -1,0 +1,36 @@
+{
+  "observedAtUTC": "2026-11-16T09:49:30.463Z",
+  "origin": "http://127.0.0.1:4173",
+  "controlledGuestFixtures": true,
+  "externalWritesBlocked": true,
+  "cases": [
+    {
+      "case": "empty",
+      "savedLabels": 0,
+      "fixedLabels": 6,
+      "pulseText": "MARKET PULSE\nSIMULATOR • REFRESH 30S\n57\nSIMULATOR MOMENTUM\nNeutral\n\nIllustrative score from up to 30 saved or fixed practice inputs\n\nGLOBAL SESSIONS · APPROXIMATE\n\nRegular weekday hours only; exchange holidays and special sessions are not included.\n\n🇺🇸\nNYSE\nSCHEDULED CLOSED\napprox. opens 4h 42m\n🇬🇧\nLSE\nSCHEDULED OPEN\napprox. closes 6h 42m\n🇯🇵\nTSE\nSCHEDULED CLOSED\napprox. opens 14h 12m\n🇸🇬\nSGX\nSCHEDULED CLOSED\napprox. opens 15h 12m\nPRACTICE CHANGES\nGAINERS\nTIA\nFixed example\n+9.83%\nSUI\nFixed example\n+9.02%\nSEI\nFixed example\n+8.33%\nLOSERS\nICP\nFixed example\n-6.39%\nALGO\nFixed example\n-3.32%\nADA\nFixed example\n-3.00%\n\nEducational simulation only — not financial advice. Saved practice inputs are used when available; other figures are fixed examples. Not guaranteed live or executable, and not trading signals.",
+      "noUncaughtErrors": true
+    },
+    {
+      "case": "saved-positive",
+      "savedLabels": 1,
+      "fixedLabels": 5,
+      "pulseText": "MARKET PULSE\nSIMULATOR • REFRESH 30S\n73\nSIMULATOR MOMENTUM\nUpside\n\nIllustrative score from up to 30 saved or fixed practice inputs\n\nGLOBAL SESSIONS · APPROXIMATE\n\nRegular weekday hours only; exchange holidays and special sessions are not included.\n\n🇺🇸\nNYSE\nSCHEDULED CLOSED\napprox. opens 4h 42m\n🇬🇧\nLSE\nSCHEDULED OPEN\napprox. closes 6h 42m\n🇯🇵\nTSE\nSCHEDULED CLOSED\napprox. opens 14h 12m\n🇸🇬\nSGX\nSCHEDULED CLOSED\napprox. opens 15h 12m\nPRACTICE CHANGES\nGAINERS\nBTC\nSaved input\n+50.00%\nTIA\nFixed example\n+9.83%\nSUI\nFixed example\n+9.02%\nLOSERS\nICP\nFixed example\n-6.39%\nALGO\nFixed example\n-3.32%\nADA\nFixed example\n-3.00%\n\nEducational simulation only — not financial advice. Saved practice inputs are used when available; other figures are fixed examples. Not guaranteed live or executable, and not trading signals.",
+      "noUncaughtErrors": true
+    },
+    {
+      "case": "saved-negative",
+      "savedLabels": 1,
+      "fixedLabels": 5,
+      "pulseText": "MARKET PULSE\nSIMULATOR • REFRESH 30S\n39\nSIMULATOR MOMENTUM\nDownside\n\nIllustrative score from up to 30 saved or fixed practice inputs\n\nGLOBAL SESSIONS · APPROXIMATE\n\nRegular weekday hours only; exchange holidays and special sessions are not included.\n\n🇺🇸\nNYSE\nSCHEDULED CLOSED\napprox. opens 4h 42m\n🇬🇧\nLSE\nSCHEDULED OPEN\napprox. closes 6h 42m\n🇯🇵\nTSE\nSCHEDULED CLOSED\napprox. opens 14h 12m\n🇸🇬\nSGX\nSCHEDULED CLOSED\napprox. opens 15h 12m\nPRACTICE CHANGES\nGAINERS\nTIA\nFixed example\n+9.83%\nSUI\nFixed example\n+9.02%\nSEI\nFixed example\n+8.33%\nLOSERS\nBTC\nSaved input\n-50.00%\nICP\nFixed example\n-6.39%\nALGO\nFixed example\n-3.32%\n\nEducational simulation only — not financial advice. Saved practice inputs are used when available; other figures are fixed examples. Not guaranteed live or executable, and not trading signals.",
+      "noUncaughtErrors": true
+    },
+    {
+      "case": "invalid-saved-change",
+      "savedLabels": 0,
+      "fixedLabels": 6,
+      "pulseText": "MARKET PULSE\nSIMULATOR • REFRESH 30S\n56\nSIMULATOR MOMENTUM\nNeutral\n\nIllustrative score from up to 30 saved or fixed practice inputs\n\nGLOBAL SESSIONS · APPROXIMATE\n\nRegular weekday hours only; exchange holidays and special sessions are not included.\n\n🇺🇸\nNYSE\nSCHEDULED CLOSED\napprox. opens 4h 41m\n🇬🇧\nLSE\nSCHEDULED OPEN\napprox. closes 6h 41m\n🇯🇵\nTSE\nSCHEDULED CLOSED\napprox. opens 14h 11m\n🇸🇬\nSGX\nSCHEDULED CLOSED\napprox. opens 15h 11m\nPRACTICE CHANGES\nGAINERS\nTIA\nFixed example\n+9.83%\nSUI\nFixed example\n+9.02%\nSEI\nFixed example\n+8.33%\nLOSERS\nICP\nFixed example\n-6.39%\nALGO\nFixed example\n-3.32%\nADA\nFixed example\n-3.00%\n\nEducational simulation only — not financial advice. Saved practice inputs are used when available; other figures are fixed examples. Not guaranteed live or executable, and not trading signals.",
+      "noUncaughtErrors": true
+    }
+  ]
+}

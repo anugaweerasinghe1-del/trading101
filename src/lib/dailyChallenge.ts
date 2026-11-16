@@ -287,7 +287,7 @@ const CHALLENGES: DailyChallenge[] = [
   {
     id: 23, asset: "BTC", assetName: "Bitcoin",
     scenario: "BTC halving happens this week.",
-    context: "Price already up 80% YTD. Last 3 halvings saw the major rally AFTER, not before.",
+    context: "In this invented scenario, price is already up 80% year to date. Compare possible price rises and falls after the event; the halving does not establish either outcome.",
     options: [
       { label: "Hold through the event", value: "hold", rationale: "Avoid timing" },
       { label: "Buy more", value: "long", rationale: "Halving narrative" },

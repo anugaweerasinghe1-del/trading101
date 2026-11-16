@@ -9,7 +9,7 @@ export interface WeeklyRecap {
   snapshots: number;
 }
 
-/** Compute a rough weekly performance summary from local portfolio history. */
+/** Compare recorded balances within seven days; cash flows are not adjusted. */
 export function getWeeklyRecap(): WeeklyRecap {
   try {
     const history = getPortfolioHistory();

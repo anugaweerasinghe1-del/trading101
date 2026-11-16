@@ -330,6 +330,10 @@ export function MegaFooter() {
           <p className="text-xs text-muted-foreground/60 text-center">
             © {new Date().getFullYear()} TradeHQ · Built by Anuga Weerasinghe · Educational Use Only
           </p>
+          <p className="mt-3 text-xs text-muted-foreground text-center">
+            Music: <a href="https://incompetech.com/music/royalty-free/?isrc=USUAN1100588" className="underline hover:text-primary">Long Road Ahead by Kevin MacLeod (incompetech.com)</a>
+            {" · "}<a href="https://creativecommons.org/licenses/by/4.0/" className="underline hover:text-primary">Creative Commons Attribution 4.0</a>.
+          </p>
         </div>
       </div>
     </footer>
