@@ -866,6 +866,43 @@ corrections.push({
   "replacement": "For a hypothetical account with no deposits, withdrawals or resets during the measured interval, starting-balance return is the change in marked equity divided by starting equity. Include remaining virtual cash, marked holdings and the recorded transaction fees when reconciling those totals. Check the observation timestamps as well as the arithmetic: recalculating a delayed quote does not turn it into a current or executable price. Use the same account and stated observation times for each comparison, and label missing observations rather than inventing them. This worksheet describes the sampled account values, not every intraperiod move or a real investment return."
 });
 
+corrections.push(...[
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "lessons",
+      0,
+      "body",
+      4
+    ],
+    "expected": "Calculating portfolio weights requires dividing the current market value of an individual position by the total value of your entire portfolio. This total value includes both the market value of all held assets and your remaining virtual cash balance. In a spot paper trading environment, asset prices fluctuate continuously, which directly alters their respective weights. If your total portfolio value is $100,000 and your Bitcoin position is worth $20,000, your current allocation weight for that specific asset is exactly twenty percent of your overall holding.",
+    "replacement": "Portfolio weight is the marked value of a holding divided by total marked holdings plus available virtual cash. If the account total is $100,000 and its Bitcoin holding is marked at $20,000, that holding represents 20% of the total. A later change in a price input can change both the holding value and the denominator. TradeHQ inputs may be provider observations, cached or delayed values, or fixed simulator prices; they do not continuously track an executable market. Use observations from the same valuation time when comparing weights."
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "lessons",
+      1,
+      "body",
+      4
+    ],
+    "expected": "Portfolio drift is the natural change in asset weights caused by varying market performances over time. When certain spot assets outperform others, their market values increase, which automatically expands their percentage weights within your overall portfolio. Conversely, underperforming assets will shrink in weight. For instance, if you start with equal allocations in stocks and crypto, a major bull market in digital assets will quickly distort your balance, making your portfolio heavily weighted toward highly volatile cryptocurrency assets.",
+    "replacement": "Portfolio drift is a change in relative weights as holding values change. If one holding rises while every other holding and cash stays unchanged, its weight increases; a decline reduces its weight under those same assumptions. Starting with equal marked stock and crypto holdings does not mean any crypto price rise creates a heavily crypto-weighted portfolio. The result depends on their relative changes, cash flows and costs. The worked example below fixes those inputs so that the new weights can be calculated, rather than predicting a market path."
+  },
+  {
+    "slug": "diversification-and-position-sizing",
+    "path": [
+      "lessons",
+      0,
+      "quiz",
+      3,
+      "explanation"
+    ],
+    "expected": "TradeHQ executes market orders at periodic snapshot prices without simulating real-world order book liquidity or price slippage.",
+    "replacement": "TradeHQ uses displayed practice price inputs, which may be provider observations, cached or delayed values, or fixed simulator values. Its market-order engine does not model real exchange order-book liquidity or calibrated slippage."
+  }
+]);
+
 export function applyCourseEditorialCorrections<T extends { slug: string }>(document: T): T {
   const applicable = corrections.filter(patch => patch.slug === document.slug);
   if (!applicable.length) return document;

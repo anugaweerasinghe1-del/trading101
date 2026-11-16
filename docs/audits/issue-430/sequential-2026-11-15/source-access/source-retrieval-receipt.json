@@ -1,0 +1,79 @@
+{
+  "blockedSources": {
+    "dateUTC": "2026-11-16",
+    "requests": [
+      {
+        "id": 11420,
+        "url": "https://www.investor.gov/robots.txt",
+        "status": 403
+      },
+      {
+        "id": 11421,
+        "url": "https://www.investor.gov/introduction-investing/getting-started/asset-allocation",
+        "status": 403
+      },
+      {
+        "id": 11422,
+        "url": "https://www.investor.gov/additional-resources/general-resources/publications-research/info-sheets/beginners-guide-asset",
+        "status": 403
+      }
+    ],
+    "response": "Access Denied; no retries or bypass"
+  },
+  "alternateLocalCaptures": [
+    {
+      "url": "https://moneysmart.gov.au/robots.txt",
+      "finalURL": "https://moneysmart.gov.au/robots.txt",
+      "status": 200,
+      "bytes": 35,
+      "sha256": "60cabf0de8d020f7ac7fed5bb6ed54f2ef2e17ec8de1e9a54c37f5b372410b59"
+    },
+    {
+      "url": "https://moneysmart.gov.au/how-to-invest/diversification",
+      "finalURL": "https://moneysmart.gov.au/how-to-invest/investment-diversification",
+      "status": 200,
+      "bytes": 86090,
+      "sha256": "98aac2da114bbb1766de3b79b76e247301be97c89ca78019bd9993bce7114d22"
+    },
+    {
+      "url": "https://moneysmart.gov.au/how-to-invest/choose-your-investments",
+      "finalURL": "https://moneysmart.gov.au/how-to-invest/choose-your-investments",
+      "status": 200,
+      "bytes": 90250,
+      "sha256": "040b0c3344cf2d1155f8020f08be3e7b8b9b8140162d45f7d1e91a5733b7a664"
+    }
+  ],
+  "alternateSupabaseFetches": [
+    {
+      "id": 11424,
+      "url": "https://moneysmart.gov.au/robots.txt",
+      "status": 200,
+      "contentType": "text/plain",
+      "robots": "User-agent: *; Disallow: /ms-private"
+    },
+    {
+      "id": 11425,
+      "url": "https://moneysmart.gov.au/how-to-invest/investment-diversification",
+      "status": 200,
+      "contentType": "text/html"
+    },
+    {
+      "id": 11426,
+      "url": "https://moneysmart.gov.au/how-to-invest/choose-your-investments",
+      "status": 200,
+      "contentType": "text/html"
+    }
+  ],
+  "retrievalLimit": "Database pg_net reachability and local captured HTML parsing verified. These are not an Edge-worker execution or a model verdict. Normal owner publication still required.",
+  "privateTextSentToModel": false,
+  "sourceCaptureHashes": [
+    {
+      "file": "candidate-1.txt",
+      "sha256": "89ab7234d2fe7113ed8c36e6af4c5bf2188bcf23d4ffe73a2c5edd5333abc672"
+    },
+    {
+      "file": "candidate-2.txt",
+      "sha256": "339318ec6361aace99a1c759c8f12be945bbd240683ecf55eceb4b97c7912f23"
+    }
+  ]
+}
