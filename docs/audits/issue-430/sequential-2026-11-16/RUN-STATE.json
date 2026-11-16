@@ -1,10 +1,10 @@
 {
-  "updatedAtUTC": "2026-11-16T13:51:16.251292+00:00",
-  "phase": "ABOUT-FRESH-REVIEW-IN-PROGRESS",
-  "currentPage": "https://www.thetradehq.com/about",
-  "newAuditCompletedPages": 1,
+  "updatedAtUTC": "2026-11-16T15:20:43.272931+00:00",
+  "phase": "PRIVACY-FIXED-LOCAL-RELEASE-PENDING",
+  "currentPage": "https://www.thetradehq.com/privacy",
+  "newAuditCompletedPages": 2,
   "publisherPageBaseline": 163,
-  "publisherPagesStillQueued": 162,
+  "publisherPagesStillQueued": 161,
   "totalURLBaseline": 480,
   "totalURLNote": "Discovery union, including nonpublisher/alias/redirect routes requiring reconciliation; not480 completed or unique publisher pages.",
   "priorRemediation": "18/19; Diversification draft6/published3 remains normal owner-publication pending.",
@@ -16,8 +16,20 @@
   },
   "closedPageRecord": "https://github.com/anugaweerasinghe1-del/trading101/blob/49c8b29df8aa8eb697c5a991ef152329a7e57eca/docs/audits/issue-430/sequential-2026-11-16/page-001/PAGE-RECORD.json",
   "homepageCodeMergeSHA": "bfb4d0ee904ecce2298a56d81e95ede1fc5891f7",
-  "nativeCloudflareId": "0c1bc07e-cb80-4223-97cc-a9a95640f104",
+  "nativeCloudflareId": "d012adbf-9216-4cb3-acd9-ee6e20878aad",
   "reviewer": "Codex assistant; prior contributor; not an independent human or Google reviewer",
   "standaloneModelCallsThisReview": 0,
-  "nextStep": "Fresh paragraph-level About review; log before edits, fix on that page, protected merge/native deployment/live recheck before advancement."
+  "nextStep": "Open Privacy disclosure PR, verify required checks/real preview, merge normally, verify native Cloudflare production exact SHA, fresh complete live reread and coverage ledger before Terms.",
+  "aboutFindings": {
+    "confirmed": 0,
+    "qualityRisks": 2,
+    "closed": 2
+  },
+  "freshReviewTotalClosedCases": 11,
+  "latestClosedPageRecord": "https://github.com/anugaweerasinghe1-del/trading101/blob/47282297d515a53f61f8df838bbf2c957b14d035/docs/audits/issue-430/sequential-2026-11-16/page-002/PAGE-RECORD.json",
+  "latestCodeMergeSHA": "710bb67d8b4440004d63deaf894af9ed9977c98c",
+  "privacyFindings": {
+    "confirmedDisclosureGaps": 2,
+    "closed": 0
+  }
 }

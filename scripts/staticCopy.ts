@@ -5,7 +5,7 @@
  */
 
 import type { PageContent } from "./content";
-import { PRIVACY_SECTIONS, PRIVACY_REFERENCES } from "../src/lib/privacyCopy";
+import { PRIVACY_SECTIONS, PRIVACY_REFERENCES, PRIVACY_UPDATED } from "../src/lib/privacyCopy";
 import { RELEASE_NOTES } from "../src/lib/releaseNotes";
 
 const D = "Educational simulation only — not financial advice.";
@@ -596,7 +596,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
   },
 
   "/privacy": {
-    sections: PRIVACY_SECTIONS.map(section => ({ h: section.title, p: section.content.split("\n\n") })),
+    sections: [{ h: "Policy update", p: [`Last Updated: ${PRIVACY_UPDATED}`] }, ...PRIVACY_SECTIONS.map(section => ({ h: section.title, p: section.content.split("\n\n") }))],
     links: [...PRIVACY_REFERENCES, { href: "/terms", label: "Terms of service" }, { href: "/contact", label: "Contact TradeHQ" }],
   },
 

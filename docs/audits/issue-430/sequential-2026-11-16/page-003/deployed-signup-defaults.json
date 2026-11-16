@@ -1,0 +1,6 @@
+{
+  "observedAtUTC": "2026-11-16T15:10:09.198Z",
+  "scope": "Read-only deployed signup trigger; no account or data mutations",
+  "newProfileForcedPrivate": true,
+  "signupDefinition": "CREATE OR REPLACE FUNCTION public.handle_new_user()\n RETURNS trigger\n LANGUAGE plpgsql\n SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\nDECLARE\n  base text;\n  candidate text;\n  n integer := 0;\nBEGIN\n  base := regexp_replace(lower(COALESCE(\n    NEW.raw_user_meta_data->>'username', split_part(NEW.email, '@', 1), 'trader'\n  )), '[^a-z0-9_-]+', '-', 'g');\n  IF base = '' OR base IS NULL THEN base := 'trader'; END IF;\n  candidate := base;\n  WHILE EXISTS (SELECT 1 FROM public.profiles WHERE username = candidate) LOOP\n    n := n + 1;\n    candidate := base || '-' || n::text;\n  END LOOP;\n  INSERT INTO public.profiles(id, username, is_public)\n  VALUES (NEW.id, candidate, false);\n  INSERT INTO public.trader_stats(user_id) VALUES (NEW.id);\n  RETURN NEW;\nEND;\n$function$\n"
+}

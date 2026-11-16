@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { MegaFooter } from "@/components/MegaFooter";
 import { Shield, Lock, Eye, Database, Globe, Mail } from "lucide-react";
-import { PRIVACY_SECTIONS, PRIVACY_REFERENCES } from "@/lib/privacyCopy";
+import { PRIVACY_SECTIONS, PRIVACY_REFERENCES, PRIVACY_UPDATED } from "@/lib/privacyCopy";
 import { SEOSection } from "@/components/SEOSection";
 import { AdvertisingPrivacyChoices } from "@/components/AdvertisingPrivacyChoices";
 
@@ -34,7 +34,7 @@ export default function Privacy() {
               This policy describes the data flows used by the current TradeHQ website, including optional analytics and advertising.
             </p>
             <p className="text-sm text-muted-foreground mt-4">
-              Last Updated: November 8, 2026
+              Last Updated: {PRIVACY_UPDATED}
             </p>
           </div>
 
@@ -48,6 +48,7 @@ export default function Privacy() {
               <li className="flex items-start gap-2"><span className="text-profit">✓</span><span>Guest portfolios stay in your browser; account cash, positions and server-recorded trades restore from Supabase.</span></li>
               <li className="flex items-start gap-2"><span className="text-profit">✓</span><span>Optional accounts and community features can store data with Supabase.</span></li>
               <li className="flex items-start gap-2"><span className="text-profit">✓</span><span>Optional Arena and leaderboard-to-registration analytics require fresh adult opt-in; session replay and automatic interaction capture are disabled. Google advertising has separate privacy choices.</span></li>
+              <li className="flex items-start gap-2"><span className="text-profit">✓</span><span>Cloudflare performance measurement and Google Fonts requests are separate from the optional Amplitude choice and can run before a choice or after rejection.</span></li>
               <li className="flex items-start gap-2"><span className="text-profit">✓</span><span>No real-money deposit or brokerage account is required for simulated trading.</span></li>
             </ul>
           </div>
@@ -68,8 +69,8 @@ export default function Privacy() {
             ))}
           </div>
 
-          <section className="mt-8 glass-liquid-card p-6" aria-label="Advertising information and opt-outs">
-            <h2 className="text-xl font-semibold mb-3">Google advertising information and opt-outs</h2>
+          <section className="mt-8 glass-liquid-card p-6" aria-label="Provider privacy information and advertising opt-outs">
+            <h2 className="text-xl font-semibold mb-3">Provider privacy information and advertising opt-outs</h2>
             <ul className="list-disc pl-5 space-y-2">{PRIVACY_REFERENCES.map(link => <li key={link.href}><a className="text-primary underline" href={link.href}>{link.label}</a></li>)}</ul>
           </section>
 
@@ -113,7 +114,7 @@ export default function Privacy() {
               },
               {
                 question: "Does TradeHQ use analytics or advertising cookies?",
-                answer: "Optional Arena and leaderboard new-account registration analytics use a pseudonymous browser identifier only after renewed consent from a visitor confirming they are at least 18; no account ID, email or portfolio is included in the custom funnel events. The 18+ confirmation is for optional analytics; it is not an age restriction on lessons, guest practice or sign-in. Visitors under 18 should reject optional analytics. The site's replay and automatic interaction capture are disabled. Google provides separate regional advertising privacy messages and controls. You can change analytics choices here and use Advertising privacy choices when Google's European message applies, or its Do Not Sell or Share link in supported US states.",
+                answer: "Optional Arena and leaderboard new-account registration analytics use a pseudonymous browser identifier only after renewed consent from a visitor confirming they are at least 18; no account ID, email or portfolio is included in the custom funnel events. The 18+ confirmation is for optional analytics; it is not an age restriction on lessons, guest practice or sign-in. Visitors under 18 should reject optional analytics. Amplitude replay and automatic interaction capture are disabled. Cloudflare Web Analytics performance beacons and Google Fonts requests are separate from that choice and can run before a choice or after rejection; the policy above describes their data. Ad-serving scripts are currently disabled. Before any future advertising release, Google regional messages and controls must be verified. You can change analytics choices here and use Advertising privacy choices when Google's European message applies, or its Do Not Sell or Share link in supported US states.",
               },
             ]}
           />
