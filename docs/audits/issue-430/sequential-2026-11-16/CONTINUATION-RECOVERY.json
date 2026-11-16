@@ -1,0 +1,85 @@
+{
+  "schema": "tradehq-audit-continuation-recovery-v1",
+  "status": "CONTACT-MERGED-PRODUCTION-VERIFICATION-PENDING-WORKSPACE-STARTING",
+  "canonicalPublisherPages": 163,
+  "broaderDiscoveryURLs": 480,
+  "publicScopeClosedPages": 3,
+  "closedPages": [
+    "/",
+    "/about",
+    "/privacy"
+  ],
+  "humanReviewPage": {
+    "url": "https://www.thetradehq.com/terms",
+    "finding": "STRICT-TERMS-004",
+    "reason": "Native contract-age wording differs from interactive Terms. No eligibility/account-age rule changed."
+  },
+  "privacy": {
+    "repairPRs": [
+      446,
+      447
+    ],
+    "repairMergeSHA": "4b6906fd81d74589d0565bcf22755c8742f38908",
+    "repairNativeDeployment": "8fc93f27-f044-477c-83c9-caa3b88326c8",
+    "latestVerifiedSourceParitySHA": "2b0d073d4b9b77356dac971edb4032a06fc91301",
+    "bodyAndFAQUnits": 261,
+    "bodyDOMOccurrences": 595,
+    "googleFontsSourceAccess": "Resolved by fresh anonymous rendered primary-source reading at https://fonts.google.com/faq#privacy; declarations match.",
+    "limits": "Private owner/account/retention/CMP and legal-operation gates remain external; no Google approval or legal certification."
+  },
+  "terms": {
+    "pr": 448,
+    "mergeSHA": "2b0d073d4b9b77356dac971edb4032a06fc91301",
+    "nativeDeployment": "4d19f0dc-90e2-40f1-9845-f93b753d4cbc",
+    "nativeObservedAtUTC": "2026-11-16T17:42:06.119Z",
+    "run": 43918943781,
+    "job": 133488232479,
+    "allMainJobs": "success",
+    "finalLiveRereadAtUTC": "2026-11-16T17:43:53.834Z",
+    "fixedRechecked": [
+      "STRICT-TERMS-001",
+      "STRICT-TERMS-002",
+      "STRICT-TERMS-003"
+    ],
+    "bodyAndFAQUnits": 267,
+    "DOMOccurrences": 496,
+    "headOccurrences": 59
+  },
+  "contact": {
+    "finding": "STRICT-CONTACT-001",
+    "classification": "CONFIRMED TECHNICAL DEFECT, not an established Google policy violation",
+    "problem": "Real HTTP200 Contact with JavaScript disabled describes contact methods but exposes no mailto/tel action.",
+    "fix": "Reuse the exact contact actions already intentionally public in interactive Contact; clarify JavaScript-dependent draft controls.",
+    "pr": 449,
+    "headSHA": "90ac16afe598f85a4514230d5e303ed0bf344af8",
+    "mergeSHA": "2fc71ef58ef9cb58405e57061b07194d355b132b",
+    "prValidationRun": 43926568592,
+    "requiredExactHeadChecks": "success",
+    "preview": "88bdab39-de28-4289-af85-11f1e220e3b3",
+    "previewURL": "https://88bdab39.tradehq-preview.pages.dev",
+    "previewBrowserChecks": "PASS desktop/mobile/native contacts, text, FAQ and safe draft fixtures",
+    "emailSuccessObserved": true,
+    "emailEvidenceEnvironment": "preview",
+    "emailPublicProvenance": "https://github.com/anugaweerasinghe1-del/trading101/pull/449#issuecomment-6924996259",
+    "productionVerification": "PENDING: discover main workflow run for merged SHA, inspect native production receipt and final live reread before closure or Learn."
+  },
+  "emailRule": "Owner explicitly accepts a Cloudflare success notification received in Gmail plus separate native exact-merged-SHA production proof. Do not call the preview notification a production email.",
+  "guardrails": {
+    "adServing": "disabled",
+    "realEmailsOrCallsSentByAudit": false,
+    "privateUserDataOrAccountChanges": false,
+    "standalonePrivateDraftModelCalls": 0,
+    "branchProtectionBypassed": false
+  },
+  "evidence": {
+    "previousEvidenceCommit": "38df6ad42e3486e405b54bcf625a7ece90dcaf24",
+    "branch": "issue-430-resume-privacy-20261116",
+    "rawCaptures": "Kept in workspace; not uploaded. Public artifacts use hashes and sanitized deployment evidence.",
+    "workspaceRoot": "/workspace/work/tradehq-audit",
+    "preparedFinalRecordsScript": "close-prior-pages.py",
+    "contactCodeWorktree": "/workspace/work/tradehq-audit/code",
+    "contactSourceAndBeforeFinding": "Already durable in merged PR449",
+    "note": "Final Privacy/Terms closure records and refreshed policy baseline were prepared locally; publish sanitized versions after workspace returns. This checkpoint does not replace full ledgers or turn captures into review credit."
+  },
+  "next": "Wait for the starting workspace. Finish Contact native production and live verification, persist its ledger and final prior-page records, then continue sequentially with /learn."
+}
