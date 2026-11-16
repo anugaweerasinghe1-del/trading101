@@ -30,7 +30,7 @@ export function WatchlistAlerts() {
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
             <Eye className="w-4 h-4 text-primary" />
-            Your watchlist moved since {sinceHours < 24 ? `${sinceHours}h ago` : `${Math.round(sinceHours / 24)}d ago`}
+            Watchlist changes since your saved visit ({sinceHours < 1 ? "under 1h ago" : sinceHours < 24 ? `about ${Math.round(sinceHours)}h ago` : `about ${Math.round(sinceHours / 24)}d ago`})
           </div>
           <Link to="/markets" className="text-xs text-primary hover:underline">See all →</Link>
         </div>

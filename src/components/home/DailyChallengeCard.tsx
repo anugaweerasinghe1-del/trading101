@@ -11,10 +11,20 @@ import { cn } from "@/lib/utils";
 export function DailyChallengeCard() {
   const [streak, setStreak] = useState<StreakState | null>(null);
   const [played, setPlayed] = useState(false);
-  const challenge = getTodayChallenge();
+  const [challenge, setChallenge] = useState(() => getTodayChallenge());
 
   useEffect(() => {
-    const refresh = () => { setStreak(getStreak()); setPlayed(hasPlayedToday()); };
+    let midnightTimer: ReturnType<typeof setTimeout> | undefined;
+    const refresh = () => {
+      setStreak(getStreak());
+      setPlayed(hasPlayedToday());
+      setChallenge(getTodayChallenge());
+      clearTimeout(midnightTimer);
+      const nextMidnight = new Date();
+      nextMidnight.setHours(24, 0, 0, 25);
+      midnightTimer = setTimeout(refresh, Math.max(1, nextMidnight.getTime() - Date.now()));
+    };
+    const onVisibility = () => { if (document.visibilityState === "visible") refresh(); };
     const onStorage = (event: StorageEvent) => {
       if (!event.key || event.key === DAILY_PROGRESS_KEY) refresh();
     };
@@ -22,10 +32,13 @@ export function DailyChallengeCard() {
     window.addEventListener(DAILY_PROGRESS_EVENT, refresh);
     window.addEventListener("storage", onStorage);
     window.addEventListener("focus", refresh);
+    document.addEventListener("visibilitychange", onVisibility);
     return () => {
       window.removeEventListener(DAILY_PROGRESS_EVENT, refresh);
       window.removeEventListener("storage", onStorage);
       window.removeEventListener("focus", refresh);
+      document.removeEventListener("visibilitychange", onVisibility);
+      clearTimeout(midnightTimer);
     };
   }, []);
 
@@ -49,7 +62,7 @@ export function DailyChallengeCard() {
           </div>
           <div>
             <div className="text-[10px] uppercase tracking-widest text-primary font-bold">Today's Challenge</div>
-            <div className="text-xs text-muted-foreground">New at local midnight</div>
+            <div className="text-xs text-muted-foreground">Rotates at local midnight</div>
           </div>
         </div>
         {streak && streak.current > 0 && (
@@ -62,7 +75,7 @@ export function DailyChallengeCard() {
 
       {/* Challenge */}
       <div className="mb-5">
-        <p className="text-xs text-muted-foreground mb-2">Hypothetical exercise — figures and events are not current market data.</p>
+        <p className="text-xs text-muted-foreground mb-2">Hypothetical exercise — figures, quotes and events are invented assumptions, not current market news.</p>
         <div className="flex items-center gap-2 mb-2">
           <span className="text-[10px] font-bold tracking-wider px-2 py-0.5 rounded bg-foreground/10 text-foreground/80">
             {challenge.asset}

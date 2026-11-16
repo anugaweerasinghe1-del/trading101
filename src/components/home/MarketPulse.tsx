@@ -41,7 +41,7 @@ function formatTimeLeft(min: number): string {
  */
 export function MarketPulse() {
   const [prices, setPrices] = useState<Record<string, { price: number; change: number; changePercent: number }>>({});
-  const [tick, setTick] = useState(0);
+  const [, setTick] = useState(0);
 
   useEffect(() => {
     setPrices(getPersistedPrices());
@@ -58,10 +58,12 @@ export function MarketPulse() {
   // Movers
   const ranked = ASSETS.map((a) => {
     const p = prices[a.id];
+    const hasSavedChange = typeof p?.changePercent === "number" && Number.isFinite(p.changePercent);
     return {
       ...a,
-      changePercent: p?.changePercent ?? a.changePercent,
+      changePercent: hasSavedChange ? p.changePercent : a.changePercent,
       price: p?.price ?? a.price,
+      inputOrigin: hasSavedChange ? "Saved input" : "Fixed example",
     };
   }).sort((a, b) => Math.abs(b.changePercent) - Math.abs(a.changePercent));
 
@@ -117,7 +119,7 @@ export function MarketPulse() {
           </div>
           <div className="mt-3 text-sm font-bold" style={{ color: momentum.color }}>{momentum.label}</div>
           <p className="text-[11px] text-muted-foreground text-center mt-1 max-w-[200px]">
-            Internal practice score from recent simulator price changes across 30 assets
+            Illustrative score from up to 30 saved or fixed practice inputs
           </p>
         </div>
 
@@ -151,7 +153,7 @@ export function MarketPulse() {
 
           {/* Movers */}
           <div className="p-3 rounded-2xl bg-black/40 border border-white/[0.04]">
-            <div className="text-[10px] uppercase tracking-widest text-muted-foreground mb-2">What's Moving</div>
+            <div className="text-[10px] uppercase tracking-widest text-muted-foreground mb-2">Practice changes</div>
             <div className="grid grid-cols-2 gap-3">
               <div>
                 <div className="flex items-center gap-1 text-[10px] font-bold text-success mb-1.5">
@@ -159,7 +161,10 @@ export function MarketPulse() {
                 </div>
                 {gainers.map((a) => (
                   <div key={a.id} className="flex items-center justify-between py-0.5">
-                    <span className="text-xs font-semibold text-foreground">{a.symbol}</span>
+                    <span>
+                      <span className="block text-xs font-semibold text-foreground">{a.symbol}</span>
+                      <span className="block text-[10px] text-muted-foreground">{a.inputOrigin}</span>
+                    </span>
                     <span className="text-[11px] font-bold text-success tabular-nums">+{a.changePercent.toFixed(2)}%</span>
                   </div>
                 ))}
@@ -170,7 +175,10 @@ export function MarketPulse() {
                 </div>
                 {losers.map((a) => (
                   <div key={a.id} className="flex items-center justify-between py-0.5">
-                    <span className="text-xs font-semibold text-foreground">{a.symbol}</span>
+                    <span>
+                      <span className="block text-xs font-semibold text-foreground">{a.symbol}</span>
+                      <span className="block text-[10px] text-muted-foreground">{a.inputOrigin}</span>
+                    </span>
                     <span className="text-[11px] font-bold text-destructive tabular-nums">{a.changePercent.toFixed(2)}%</span>
                   </div>
                 ))}
@@ -181,7 +189,7 @@ export function MarketPulse() {
       </div>
 
       <p className="text-[10px] text-muted-foreground/60 text-center mt-4">
-        Educational simulation only — not financial advice. Prices shown here come from the simulator's persisted practice data. {tick > 0 ? `· refreshed ${tick * 30}s` : ""}
+        Educational simulation only — not financial advice. Price-change figures use saved practice inputs when available and fixed examples otherwise. Not guaranteed live or executable, and not trading signals.
       </p>
     </div>
   );
