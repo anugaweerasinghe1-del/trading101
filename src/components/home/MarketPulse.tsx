@@ -189,7 +189,7 @@ export function MarketPulse() {
       </div>
 
       <p className="text-[10px] text-muted-foreground/60 text-center mt-4">
-        Educational simulation only — not financial advice. Saved practice inputs are used when available; other figures are fixed examples. Not guaranteed live or executable, and not trading signals.
+        Educational simulation only — not financial advice. Price-change figures use saved practice inputs when available and fixed examples otherwise. Not guaranteed live or executable, and not trading signals.
       </p>
     </div>
   );

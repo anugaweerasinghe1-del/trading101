@@ -62,7 +62,7 @@ export function DailyChallengeCard() {
           </div>
           <div>
             <div className="text-[10px] uppercase tracking-widest text-primary font-bold">Today's Challenge</div>
-            <div className="text-xs text-muted-foreground">New at local midnight</div>
+            <div className="text-xs text-muted-foreground">Rotates at local midnight</div>
           </div>
         </div>
         {streak && streak.current > 0 && (
@@ -75,7 +75,7 @@ export function DailyChallengeCard() {
 
       {/* Challenge */}
       <div className="mb-5">
-        <p className="text-xs text-muted-foreground mb-2">Hypothetical exercise — figures and events are not current market data.</p>
+        <p className="text-xs text-muted-foreground mb-2">Hypothetical exercise — figures, quotes and events are invented assumptions, not current market news.</p>
         <div className="flex items-center gap-2 mb-2">
           <span className="text-[10px] font-bold tracking-wider px-2 py-0.5 rounded bg-foreground/10 text-foreground/80">
             {challenge.asset}

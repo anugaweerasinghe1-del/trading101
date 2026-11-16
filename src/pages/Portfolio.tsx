@@ -346,8 +346,8 @@ export default function Portfolio() {
           property="og:image"
           content="https://www.thetradehq.com/tradehq-preview-2026.png"
         />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+        <meta property="og:image:width" content="1731" />
+        <meta property="og:image:height" content="909" />
         <meta property="og:site_name" content="TradeHQ" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Portfolio Dashboard — TradeHQ" />

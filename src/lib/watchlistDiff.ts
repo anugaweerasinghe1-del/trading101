@@ -43,7 +43,9 @@ export function getWatchlistMoves(): { sinceHours: number; moves: WatchlistMove[
     const raw = localStorage.getItem(SNAPSHOT_KEY);
     if (!raw) return null;
     const snap: Snap = JSON.parse(raw);
-    const hours = Math.max(1, Math.round((Date.now() - new Date(snap.at).getTime()) / 36e5));
+    const elapsed = Date.now() - new Date(snap.at).getTime();
+    if (!Number.isFinite(elapsed) || elapsed < 0) return null;
+    const hours = elapsed / 36e5;
     const favs = getFavorites();
     const current = getPersistedPrices();
     const moves: WatchlistMove[] = [];

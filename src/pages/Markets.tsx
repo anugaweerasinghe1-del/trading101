@@ -135,8 +135,8 @@ export default function Markets() {
         <meta property="og:description" content="Explore simulated, cached or delayed market data across stocks, crypto, ETFs, forex and commodities." />
         <meta property="og:url" content="https://www.thetradehq.com/markets" />
         <meta property="og:image" content="https://www.thetradehq.com/tradehq-preview-2026.png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+        <meta property="og:image:width" content="1731" />
+        <meta property="og:image:height" content="909" />
         <meta property="og:site_name" content="TradeHQ" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Practice Markets — 170 Assets | TradeHQ" />
