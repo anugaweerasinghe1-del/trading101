@@ -1,0 +1,95 @@
+{
+  "recordedAtUTC": "2026-11-16T17:21:20.744947+00:00",
+  "mainSHA": "4b6906fd81d74589d0565bcf22755c8742f38908",
+  "historicalCompletedPublisherPages": 2,
+  "publisherPageBaseline": 163,
+  "baselineDenominatorReconciledAgainstCurrentLiveInventory": false,
+  "currentPage": "https://www.thetradehq.com/privacy",
+  "currentPageStatus": "RELEASE-RECONCILED-COVERAGE-AND-EMAIL-GATE-PENDING",
+  "mergeAlreadyCompleted": {
+    "pr": 447,
+    "headSHA": "ea6c3f49be47eef5fabc60297e3347f6521edd7c",
+    "mergeSHA": "4b6906fd81d74589d0565bcf22755c8742f38908",
+    "mergedAtUTC": "2026-11-16T16:01:05Z"
+  },
+  "mainCI": {
+    "run": 43902790180,
+    "phase3": "success",
+    "cloudflareBuildAndSEO": "success",
+    "requiredValidation": "success",
+    "readOnlyReleaseSignals": "success",
+    "readOnlyNativeProductionObservation": "success"
+  },
+  "localChecks": {
+    "applicationTypeScript": "PASS",
+    "privacyModerationDefaults": "PASS",
+    "disabledAdvertisingSourceBootstrap": "PASS",
+    "compiledAdvertisingHTML": "NOT-RUN: no local dist; source-only check reported compiledHTMLCount=0"
+  },
+  "captures": [
+    {
+      "mode": "desktop",
+      "captureAtUTC": "2026-11-16T17:17:05.288Z",
+      "capturedDOMTextFragments": 272,
+      "textSHA256": "af9859f451736513900bc0f9c6573a7f32783d0ecddb5149c11050e15f52103b",
+      "horizontalOverflow": false,
+      "faqStates": 3,
+      "runtimeExceptions": [],
+      "bundleReceipts": [
+        {
+          "url": "https://www.thetradehq.com/assets/index-CE51s1lC.js",
+          "sha256": "f2763cf0c142e62aa9e54f3456d7b06b3288db7dfcb966e32d9b41b269cdc9e6",
+          "bytes": 1262381,
+          "pinnedSdk": true,
+          "pinnedSRI": true
+        }
+      ]
+    },
+    {
+      "mode": "mobile",
+      "captureAtUTC": "2026-11-16T17:17:12.011Z",
+      "capturedDOMTextFragments": 248,
+      "textSHA256": "6e82edeeb6f747c0f82efc302b856c49533e1ab9808ac2a83e8836db2c30609a",
+      "horizontalOverflow": false,
+      "faqStates": 3,
+      "runtimeExceptions": [],
+      "bundleReceipts": [
+        {
+          "url": "https://www.thetradehq.com/assets/index-CE51s1lC.js",
+          "sha256": "f2763cf0c142e62aa9e54f3456d7b06b3288db7dfcb966e32d9b41b269cdc9e6",
+          "bytes": 1262381,
+          "pinnedSdk": true,
+          "pinnedSRI": true
+        }
+      ]
+    },
+    {
+      "mode": "native",
+      "captureAtUTC": "2026-11-16T17:17:17.158Z",
+      "capturedDOMTextFragments": 75,
+      "textSHA256": "8a5caa1d7935213539de5168f74edbb8c8106decbaad8e70ddc50380cb2b12e4",
+      "horizontalOverflow": false,
+      "faqStates": 0,
+      "runtimeExceptions": [],
+      "bundleReceipts": []
+    }
+  ],
+  "newDefectsClaimed": 0,
+  "sourceChangesThisContinuation": 0,
+  "newMergesThisContinuation": 0,
+  "passLimit": "This continuation read route-owned Privacy copy, consent controls, metadata, captured live copy and each opened FAQ. It reconciled the already merged SDK change and its existing isolated-runtime evidence. It does not claim a fresh independent factual verification of every private backend/provider operation or a completed new two-pass ledger for all captured fragments.",
+  "externalGates": [
+    "Email criterion: a preview success notice exists; no separate production-success email was found for the merged SHA/deployment. Owner clarification requested without changing notification settings.",
+    "Private AdSense/account/CMP state remains unverified; actual serving stays disabled.",
+    "Private historical retention/deletion and owner-session flows were not exercised.",
+    "Prior Diversification draft6/published3 owner-publication gate is carried forward, not reverified through database access."
+  ],
+  "nextExistingPR": {
+    "number": 448,
+    "headSHA": "d3fab9ebe074c3b5f39baaf8cd92d3cda9c96032",
+    "status": "open",
+    "note": "Read-only preflight reviewed the existing diff, Terms source and exact-head successful checks. No merge or completed Terms review is claimed."
+  },
+  "networkScope": "Same-origin GET resources allowed, third parties and mutations blocked. No actual analytics acceptance, user-account writes, newsletter submission or email delivery. Fonts and external provider behavior are outside this restricted rendering check.",
+  "nativeHTTPSourceLimitation": "A separate urllib GET of the bundle returned HTTP403; actual Chromium loaded it successfully and Page.getResourceContent supplied the captured bundle bytes. The failed source fetch was not called a PASS."
+}

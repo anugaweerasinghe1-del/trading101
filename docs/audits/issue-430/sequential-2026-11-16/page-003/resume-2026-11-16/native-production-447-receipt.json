@@ -1,0 +1,18 @@
+{
+  "schema": "tradehq-cloudflare-account-observation-v1",
+  "observedAt": "2026-11-16T16:13:07.746Z",
+  "project": "tradehq-preview",
+  "nativeTokenActive": true,
+  "activeProduction": {
+    "id": "8fc93f27-f044-477c-83c9-caa3b88326c8",
+    "sha": "4b6906fd81d74589d0565bcf22755c8742f38908",
+    "environment": "production",
+    "branch": "main",
+    "status": "success",
+    "createdAt": "2026-11-16T16:01:07.699901Z"
+  },
+  "sourceGitHubRun": 43902790180,
+  "sourceGitHubJob": 133431343700,
+  "sourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/43902790180/job/133431343700",
+  "note": "Native Cloudflare response collected by the existing read-only release workflow; billing and account usage omitted."
+}
