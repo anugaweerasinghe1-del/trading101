@@ -620,7 +620,7 @@ export const STATIC_COPY: Record<string, PageContent> = {
       {
         h: "Liability and accuracy",
         p: [
-          "Market data may be delayed, incomplete or simulated between refreshes, and lessons may contain errors. We make no warranty of accuracy and accept no liability for decisions made using this site. Past simulated performance does not predict future real-world performance.",
+          "Market data may be delayed, incomplete or simulated between refreshes, and lessons may contain errors. We make no warranty of accuracy. The limitations in these Terms apply only to the extent permitted by law and are subject to mandatory rights that apply in your location. Past simulated performance does not predict future real-world performance.",
         ],
       },
     ],
