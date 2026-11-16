@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {independentCourseReview,readCoursePublicationReferences} from '../supabase/functions/_shared/courseGenerator';
+import {independentCourseReview,readCoursePublicationReferences,courseReferences} from '../supabase/functions/_shared/courseGenerator';
 import {CourseReviewBlockedError,CourseReviewResponseError,readCourseReviewFindings} from '../supabase/functions/_shared/courseReviewFeedback';
 import {createCourseAdminHandler} from '../supabase/functions/_shared/courseAdmin';
 import {adminFailureDetails} from '../src/lib/adminFunctionError';
@@ -29,5 +29,22 @@ await readCoursePublicationReferences(course,async input=>{fetched.push(String(i
 assert.ok(fetched.includes('https://www.morningstar.com/investing-terms/maximum-drawdown'));
 assert.ok(!fetched.some(url=>url.includes('169.254.169.254')),'Draft citations must not turn into arbitrary network requests');
 assert.ok(!fetched.some(url=>url.includes('federalreserve.gov')),'Uncited general sources must not replace lesson citations');
+const alternatives = [
+ {label:'ASIC Moneysmart — Investment diversification',url:'https://moneysmart.gov.au/how-to-invest/investment-diversification'},
+ {label:'ASIC Moneysmart — Choose your investments',url:'https://moneysmart.gov.au/how-to-invest/choose-your-investments'},
+];
+const allocation=structuredClone(document);
+for(const lesson of allocation.lessons) lesson.sources=structuredClone(alternatives);
+allocation.lessons[0].sources.push({label:'Unapproved path',url:alternatives[0].url+'?redirect=http://169.254.169.254'});
+const alternateFetches:string[]=[];
+const available=await readCoursePublicationReferences(allocation,async(input,init)=>{
+ alternateFetches.push(String(input));assert.equal(init?.redirect,'error','Do not follow source redirects');
+ return new Response('<main>'+Array(110).fill('Allocation and diversification.').join(' ')+'</main>',{headers:{'Content-Type':'text/html'}});
+});
+assert.deepEqual(alternateFetches,alternatives.map(s=>s.url),'Fetch only exact, cited canonical source URLs once');
+assert.deepEqual(available.map(s=>s.url),alternateFetches);
+assert.ok(!courseReferences.some(s=>s.url.includes('moneysmart')),'Publication additions must not alter generation inputs');
+const unavailable=await readCoursePublicationReferences(allocation,async()=>new Response('Access denied',{status:403}));
+assert.deepEqual(unavailable,[],'Blocked sources must never become verified references or cached approvals');
 const page=readFileSync('src/pages/AdminCourses.tsx','utf8');assert.match(page,/reviewReport\.findings\.map/);assert.match(page,/not verified facts or an AdSense decision/);assert.doesNotMatch(page,/dangerouslySetInnerHTML/);assert.match(page,/setReviewed\(false\); setReviewReport\(null\)/);
 console.log('PASS structured reviewer findings reach owner adapter; malformed verdicts remain unavailable; exact-revision rejection survives; credentials/envelopes withheld; cited allowlisted references fetched with no SSRF; owner panel labels unverified concerns and clears on sign-out. Fixtures only; no model requests.');

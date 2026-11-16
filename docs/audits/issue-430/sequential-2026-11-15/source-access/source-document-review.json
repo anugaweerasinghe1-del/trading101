@@ -1,0 +1,877 @@
+{
+  "observedAtUTC": "2026-11-16T01:12:54.338Z",
+  "scope": "Fresh complete source-document factual review and source support; no new live-page AdSense audit credit",
+  "reviewer": "Codex; prior contributor; not independent human or Google reviewer",
+  "draftRevision": 6,
+  "bodyParagraphs": 24,
+  "sectionHeadings": 12,
+  "quizQuestions": 12,
+  "quizAnswerOptions": 48,
+  "quizExplanations": 12,
+  "correctAnswerIndicesPreserved": true,
+  "confirmedCopyFindings": [
+    {
+      "path": "lessons.0.body.4",
+      "beforeSHA256": "7be51142ff40d9804a89f70ea90cce4f945f76afd98703e219a487d0b100146c",
+      "afterSHA256": "3868cfa505d8b2d89f0f64f07e49690b268558da4925b660cbcda864b7cc7b9f"
+    },
+    {
+      "path": "lessons.1.body.4",
+      "beforeSHA256": "f935cf43a7189f5b7b1ba3e175ef22c0f2d8e8373edf85e311760817d9b7625b",
+      "afterSHA256": "5a3d6965078fb9a682ef973ea53bae31ca98cf5ff5478dc96c26b519a3a08834"
+    },
+    {
+      "path": "lessons.0.quiz.3.explanation",
+      "beforeSHA256": "233155314895367f294bff0d25a875b74812640c45336dca136757d673a3fa79",
+      "afterSHA256": "8df6c724fd49d2e1b89422fe2ef0fe058af9b2ec93124586d554fce235e163a3"
+    }
+  ],
+  "remainingParagraphsAndQuizItems": "Read afresh; no further confirmed factual defect identified",
+  "arithmetic": {
+    "purchaseNotional": 24993.75156210947,
+    "saleNotional": 10006.003602161298,
+    "exact40_40_20": {
+      "sale": 10008,
+      "purchase": 9992,
+      "fees": 20,
+      "stock": 39992,
+      "bonds": 39992,
+      "cash": 19996,
+      "total": 99980
+    },
+    "otherExamples": "Recomputed weights, drift percentages, concentration loss and all numeric quiz keys"
+  },
+  "sourceSupport": {
+    "diversification": "ASIC diversification: cross-asset/within-asset exposures; drift and rebalancing",
+    "investmentChoices": "ASIC choose investments: risks, asset classes, fees, cash; does not remove loss risk",
+    "simulator": "Existing order-engine implementation/ground-truth contract; not asserted by ASIC",
+    "arithmetic": "Explicit hypothetical worksheet assumptions; independently recomputed"
+  },
+  "blocks": [
+    {
+      "path": "hero",
+      "sha256": "bcc6181883b45e49531a151c35efe7441735cbd1abc43646662f33a4b8d4fc80",
+      "words": 1
+    },
+    {
+      "path": "slug",
+      "sha256": "2708224159b031d2d735a1a000f62d8c8f046c1754c55bb2ef77b38535d1c797",
+      "words": 1
+    },
+    {
+      "path": "badge.name",
+      "sha256": "ecae9ab9b400bbf50884bced292ba64d2808d6998dca1f22f2a5322968d301c6",
+      "words": 3
+    },
+    {
+      "path": "badge.description",
+      "sha256": "21804effeecef5e15685341e38b7b8798e838936d4740a9092b6371d09e9996a",
+      "words": 15
+    },
+    {
+      "path": "level",
+      "sha256": "c865ebb3052c863b4aea0f38f327e5522d9da1516fb3ac5d9d6b77e50cc74dc8",
+      "words": 1
+    },
+    {
+      "path": "title",
+      "sha256": "87450fd4677cf8566f154e33fefd8a44f035048286e655be0ac4198ac8c1d229",
+      "words": 8
+    },
+    {
+      "path": "notFor",
+      "sha256": "9837b8784d5d8ce7418571d4ab804662a39c80c947a6336329b427b2365010b2",
+      "words": 12
+    },
+    {
+      "path": "lessons.0.body.0",
+      "sha256": "3679b55ca033774e721e121a4ea4a103ac10207651234f052223df7a163d885e",
+      "words": 6
+    },
+    {
+      "path": "lessons.0.body.1",
+      "sha256": "f9eeb8f18a7564ccb35a5a1353d0f39a1fd7330718ad0b063d2dcffc9e48792b",
+      "words": 83
+    },
+    {
+      "path": "lessons.0.body.2",
+      "sha256": "861a52828660c84f8b009f0211b6a267ef88369886292f93ff9c25762c7c5aa3",
+      "words": 93
+    },
+    {
+      "path": "lessons.0.body.3",
+      "sha256": "294eed7b34e13f340f16cf91209e111e0d0506c7142f1268bd6697d904d6c508",
+      "words": 6
+    },
+    {
+      "path": "lessons.0.body.4",
+      "sha256": "3868cfa505d8b2d89f0f64f07e49690b268558da4925b660cbcda864b7cc7b9f",
+      "words": 87
+    },
+    {
+      "path": "lessons.0.body.5",
+      "sha256": "c3461dd3532da0972d185519731d03cd5c034140ad51c5cef09838d91f26cbc5",
+      "words": 87
+    },
+    {
+      "path": "lessons.0.body.6",
+      "sha256": "131c672cd9ac90e12c9ecb9a1423ed56583b7671ed403301cd6873853ec19bf3",
+      "words": 6
+    },
+    {
+      "path": "lessons.0.body.7",
+      "sha256": "50f4f875b88ca55bca8cfb06a0a8cbc3329430cf2c1135b657530ed244477dda",
+      "words": 76
+    },
+    {
+      "path": "lessons.0.body.8",
+      "sha256": "7080caed062bb64b8aa2d9da9808770e9e493204646b1c989a7d452cc86a6d10",
+      "words": 88
+    },
+    {
+      "path": "lessons.0.body.9",
+      "sha256": "5d47cd5bf752864a6c56f4b94aa7c4a2fd94afb89550a3c11b9548723dda193d",
+      "words": 7
+    },
+    {
+      "path": "lessons.0.body.10",
+      "sha256": "cb40085f7c674934befabcbbce99ea490d5cddb260b1fa8376d3e7ce983e3f27",
+      "words": 84
+    },
+    {
+      "path": "lessons.0.body.11",
+      "sha256": "a6d6ae2fabbabd9f63ab6b36550a75673156490df38a2a3177057a88c74178f5",
+      "words": 124
+    },
+    {
+      "path": "lessons.0.quiz.0.options.0",
+      "sha256": "1dcc7619134cdb1de916b106a96326de3a8ac9eb25d79c57ce00de777b3203e1",
+      "words": 1
+    },
+    {
+      "path": "lessons.0.quiz.0.options.1",
+      "sha256": "b08622c3255596a642de67b20552046a35198df5775dd4042eb6b81dc1185d7a",
+      "words": 1
+    },
+    {
+      "path": "lessons.0.quiz.0.options.2",
+      "sha256": "5d2cfac292b314c822f9a87ddfa0488b2d9b6e11e6a6bc4b3206ad575868b841",
+      "words": 1
+    },
+    {
+      "path": "lessons.0.quiz.0.options.3",
+      "sha256": "38f1defd84f62a3d821cf82e00ba4f8e81f9201dd9a1b3d4d86416f0419ca81f",
+      "words": 1
+    },
+    {
+      "path": "lessons.0.quiz.0.question",
+      "sha256": "ff0f1eb804a5cd45c0f472ee39851b186fd15738648488a30017db7b83603fb5",
+      "words": 23
+    },
+    {
+      "path": "lessons.0.quiz.0.explanation",
+      "sha256": "457be9a9b2cafd060c4294540532f9cc62c74d918989be964ceb5ad6225c06e0",
+      "words": 23
+    },
+    {
+      "path": "lessons.0.quiz.1.options.0",
+      "sha256": "c1b783012373672f96fcc280d021079ae75b9542dede22320acb4a3acb1f3f1b",
+      "words": 9
+    },
+    {
+      "path": "lessons.0.quiz.1.options.1",
+      "sha256": "3b5ed87cde45654b8a3e3e30e7a18d3955410bd5efb954beee1be855ba357fe5",
+      "words": 9
+    },
+    {
+      "path": "lessons.0.quiz.1.options.2",
+      "sha256": "3b7a5f3d77ab8e3294c92458f969e17bdcf1ce107fc2638f4d91a09c59658935",
+      "words": 10
+    },
+    {
+      "path": "lessons.0.quiz.1.options.3",
+      "sha256": "25eaad1435e81f876d0af5ad86d3c2ffbba36f2628db0cc9f361faa23be56d25",
+      "words": 9
+    },
+    {
+      "path": "lessons.0.quiz.1.question",
+      "sha256": "5084547442971edb565f1407d10f03167117a665188c162becf7cc4834441078",
+      "words": 14
+    },
+    {
+      "path": "lessons.0.quiz.1.explanation",
+      "sha256": "2fb658216ce760b189adc3e0fa840e245e94a6cedd7d7929b363802878da5f03",
+      "words": 24
+    },
+    {
+      "path": "lessons.0.quiz.2.options.0",
+      "sha256": "46d8a664824293764d18947895dc3f5e876fa8765756de877479d18b48293a39",
+      "words": 5
+    },
+    {
+      "path": "lessons.0.quiz.2.options.1",
+      "sha256": "5a000e6185c667027901b8681ea6f690f5f34f820e940772492b364283daf468",
+      "words": 5
+    },
+    {
+      "path": "lessons.0.quiz.2.options.2",
+      "sha256": "d852aa1836123e36806934ca667892ec62dc6d01752609a7983c3de90819f6ad",
+      "words": 9
+    },
+    {
+      "path": "lessons.0.quiz.2.options.3",
+      "sha256": "90e46ba6f076d92ea30989d0231cb383ef5e59ef60f966381091dbf4d67547fb",
+      "words": 6
+    },
+    {
+      "path": "lessons.0.quiz.2.question",
+      "sha256": "26e6835ca54afd1457d840dee1c774927116111293c7a6d07fddcd491d775925",
+      "words": 13
+    },
+    {
+      "path": "lessons.0.quiz.2.explanation",
+      "sha256": "65d4d0c13048935014eaae967c57f5c737fa5a5429802e4183dd0aab0a3186b8",
+      "words": 35
+    },
+    {
+      "path": "lessons.0.quiz.3.options.0",
+      "sha256": "0be470b23c755f13541ba7e3da39c3e6149a4848ce5f0205603454fd26b1ef10",
+      "words": 8
+    },
+    {
+      "path": "lessons.0.quiz.3.options.1",
+      "sha256": "dda0deac67f1291c52a04a74f18d5d7697763e3a51965b82b1fbee00481e4436",
+      "words": 9
+    },
+    {
+      "path": "lessons.0.quiz.3.options.2",
+      "sha256": "b1f6b0f1fe8ab7f600ac7c332e389edee8e2dc25d24b8720ac13d0575575d5b5",
+      "words": 8
+    },
+    {
+      "path": "lessons.0.quiz.3.options.3",
+      "sha256": "fc7af94918c85606c60c1bea889419bca54f9a3cb57d31fef962c6a4373b6917",
+      "words": 10
+    },
+    {
+      "path": "lessons.0.quiz.3.question",
+      "sha256": "956a1890a5a3d1ee8cc6079be3fe555489265389906b9f83c8446a56bd408c93",
+      "words": 11
+    },
+    {
+      "path": "lessons.0.quiz.3.explanation",
+      "sha256": "8df6c724fd49d2e1b89422fe2ef0fe058af9b2ec93124586d554fce235e163a3",
+      "words": 32
+    },
+    {
+      "path": "lessons.0.slug",
+      "sha256": "6e6ec7199a30f0c9f2fdf209430485deea78909cc82b5847dd15f5e8b7935035",
+      "words": 1
+    },
+    {
+      "path": "lessons.0.title",
+      "sha256": "eb8c8a0da99bc2069b458e5ecd30b02968f14f95b4e802a6d8844ee2c3d38651",
+      "words": 7
+    },
+    {
+      "path": "lessons.0.sources.0.url",
+      "sha256": "69a55aa75b68a61323e215123f3a57a6f4f4264eee6517273014b46ef955a527",
+      "words": 1
+    },
+    {
+      "path": "lessons.0.sources.0.label",
+      "sha256": "2d6987bfb81009a796c71b1250dc66284c6e65ea43f7f9bf6b15ee8c60c6982f",
+      "words": 7
+    },
+    {
+      "path": "lessons.0.sources.1.url",
+      "sha256": "e0ed0bfa3170aa7728e9cc4e79591e3bf58b2f928c183746f4403bdb0ebec513",
+      "words": 1
+    },
+    {
+      "path": "lessons.0.sources.1.label",
+      "sha256": "3748d8e6b7a7816940643aa99780fa3a5816191b7cc4ed37ff6efdd04187463d",
+      "words": 6
+    },
+    {
+      "path": "lessons.0.sources.2.label",
+      "sha256": "1f1bee7c0434b31db7e221f0436af136f1bfcef30f5f60b7acac368f7ca88aee",
+      "words": 5
+    },
+    {
+      "path": "lessons.0.sources.2.url",
+      "sha256": "00f5b9e86ad7d88cabb243240c5bc47edd775ec15f86554768755a81c3c88185",
+      "words": 1
+    },
+    {
+      "path": "lessons.0.sources.3.label",
+      "sha256": "a8be651ec3f9434fbb86c26caa2ee5a32a65b5f39d8530610d83f7852d24f4e0",
+      "words": 6
+    },
+    {
+      "path": "lessons.0.sources.3.url",
+      "sha256": "9a8e8a5688b3fdc269ec963000fd8295d949f5c35e38d8572d9847022aa41651",
+      "words": 1
+    },
+    {
+      "path": "lessons.0.summary",
+      "sha256": "3fb335e551d805d9ea62b753a086ac9c5b0951b880b9fb90e0902fc9bf2a68be",
+      "words": 16
+    },
+    {
+      "path": "lessons.0.keyTakeaways.0",
+      "sha256": "aa605e78e0093fe86fa73556e5706f9c683922736c716584b6f473b44f9c45b6",
+      "words": 13
+    },
+    {
+      "path": "lessons.0.keyTakeaways.1",
+      "sha256": "eb52907ea274e9621018496572cb8f54a4af29b968b98a9ff2331e28ddb44a9f",
+      "words": 13
+    },
+    {
+      "path": "lessons.0.keyTakeaways.2",
+      "sha256": "92caf3fb2832b4cd9fdd3f685b22fe48585174cea469f292e10673745155b18f",
+      "words": 14
+    },
+    {
+      "path": "lessons.1.body.0",
+      "sha256": "7b78b052e72cdb944eaf987eeed18b1ff1df968aeb8205d07d48d693839b726c",
+      "words": 4
+    },
+    {
+      "path": "lessons.1.body.1",
+      "sha256": "aaeb11fc567478344d23a56e4b7527df1abecbb6629cc87ffe57e26b405eb3ed",
+      "words": 77
+    },
+    {
+      "path": "lessons.1.body.2",
+      "sha256": "56300dbe38822cda2ba07f38b93d37538c7313243eabcd5c10a2ae3eafcce838",
+      "words": 75
+    },
+    {
+      "path": "lessons.1.body.3",
+      "sha256": "15808931d4f5d58c89a57c39c8ce525860268d8c1aa98df14aa2590b274afed2",
+      "words": 6
+    },
+    {
+      "path": "lessons.1.body.4",
+      "sha256": "5a3d6965078fb9a682ef973ea53bae31ca98cf5ff5478dc96c26b519a3a08834",
+      "words": 88
+    },
+    {
+      "path": "lessons.1.body.5",
+      "sha256": "46cda95cd4928e5a605ad71b325bad0c8af755a5556096654a84fa307adc76e5",
+      "words": 111
+    },
+    {
+      "path": "lessons.1.body.6",
+      "sha256": "98b253fb15d7dcf0b29b8804b9a4da714e9390e80ea5a72a94c3a18158f1b996",
+      "words": 6
+    },
+    {
+      "path": "lessons.1.body.7",
+      "sha256": "f84630ee10006c8edec3a2ac1172f0fef90935f1369df493d8514c77f60c2afa",
+      "words": 81
+    },
+    {
+      "path": "lessons.1.body.8",
+      "sha256": "52d327e5516eb898e5f406fe71b8aa984ac9bd50e598ec4cf67a403a8e4dbe59",
+      "words": 69
+    },
+    {
+      "path": "lessons.1.body.9",
+      "sha256": "5844e058ce3ba4d54743b6011a9536f56ce9b9d3f71a4c31d9b5998b56872e5c",
+      "words": 6
+    },
+    {
+      "path": "lessons.1.body.10",
+      "sha256": "80a59fb05d2a56c6c776ed6f595461f7a4cc2c8cc4cb50ac827d5e347514ed57",
+      "words": 78
+    },
+    {
+      "path": "lessons.1.body.11",
+      "sha256": "ce05e5ff6c966a7e1996a92fc2034dde5ee3b34ba2c23bc0f5b7be4ca0b21eee",
+      "words": 89
+    },
+    {
+      "path": "lessons.1.quiz.0.options.0",
+      "sha256": "700d9023bed3c98659aaf81f47460289ad37217d4507aec79842e751891c4cb1",
+      "words": 9
+    },
+    {
+      "path": "lessons.1.quiz.0.options.1",
+      "sha256": "82c57ab5f4a7c0d320f239a6230ac27cc86f994400c25f860e1872b424b14c75",
+      "words": 12
+    },
+    {
+      "path": "lessons.1.quiz.0.options.2",
+      "sha256": "9eb2528b4030737a40d7a37a270a9b8c19cc0371856c2bfd2800c5f51cabb534",
+      "words": 6
+    },
+    {
+      "path": "lessons.1.quiz.0.options.3",
+      "sha256": "536976876d090ff094a60ef2fb81beb751e55287c1b632a99d96d7df0bb7699a",
+      "words": 11
+    },
+    {
+      "path": "lessons.1.quiz.0.question",
+      "sha256": "1a4f1fcf67ad4f8489860e11e589b13dbebb89f3aea6ed5cc6b758e7e4871b6b",
+      "words": 8
+    },
+    {
+      "path": "lessons.1.quiz.0.explanation",
+      "sha256": "c01b9fed62781bfe3cdc301fd9e9880377677c09a076bac2410b6d90b6d706ea",
+      "words": 26
+    },
+    {
+      "path": "lessons.1.quiz.1.options.0",
+      "sha256": "034820384295ab1b6f5893c0cb0764f588555e1c4a8ff55ca2b38f9157e43444",
+      "words": 7
+    },
+    {
+      "path": "lessons.1.quiz.1.options.1",
+      "sha256": "e5ce0354d85f6ad0be03abc90653e0571264e922f1c0473281b55065a6f3fed6",
+      "words": 8
+    },
+    {
+      "path": "lessons.1.quiz.1.options.2",
+      "sha256": "778b0d841711681b24da106b9c7b7d30b40f2b9a0909eafad81b1564a78922c5",
+      "words": 9
+    },
+    {
+      "path": "lessons.1.quiz.1.options.3",
+      "sha256": "6593864c0b2d8566da4d2fb310f8c3553b93eb20e0145ac14ef3adacbdd84eb6",
+      "words": 8
+    },
+    {
+      "path": "lessons.1.quiz.1.question",
+      "sha256": "6aac95daf8ad96a29334b44a1565575a84573fc6081df8045c9df704584cbd03",
+      "words": 6
+    },
+    {
+      "path": "lessons.1.quiz.1.explanation",
+      "sha256": "c9a84059e65c10213eab70ba9913fc026055573ad20cc8af872ac4a48f40252c",
+      "words": 22
+    },
+    {
+      "path": "lessons.1.quiz.2.options.0",
+      "sha256": "b2e8652fe4df490d647a74b82b4f892107717669a8182a88847e6d94a043fc97",
+      "words": 10
+    },
+    {
+      "path": "lessons.1.quiz.2.options.1",
+      "sha256": "d6719c9486633b59f95e9a95a0bf1c667185c80059c046450242f76703222fed",
+      "words": 7
+    },
+    {
+      "path": "lessons.1.quiz.2.options.2",
+      "sha256": "5dabcf50e59f732ac6807e8deb562dd79d856e565c8c95d7ceb9a1aa29bdf980",
+      "words": 12
+    },
+    {
+      "path": "lessons.1.quiz.2.options.3",
+      "sha256": "8e9f07c2ce3ba27e1868629c9503529637f1ecd5e0c12c10e50ec586d34b67bb",
+      "words": 7
+    },
+    {
+      "path": "lessons.1.quiz.2.question",
+      "sha256": "998069d77402f4ba070426d07057b4017fad3ffc0fef056242e9ba390e8e1217",
+      "words": 24
+    },
+    {
+      "path": "lessons.1.quiz.2.explanation",
+      "sha256": "4864a8599a169458a04d2566c69c627667f384a248151657a5613a7f45695dd8",
+      "words": 26
+    },
+    {
+      "path": "lessons.1.quiz.3.options.0",
+      "sha256": "4a0baa6a02ce0f727220bbb0710ddbb4cd01e0fb1cd57327f6230c3aad46595e",
+      "words": 11
+    },
+    {
+      "path": "lessons.1.quiz.3.options.1",
+      "sha256": "3dc5b791e2cbc5017eb62deacfe23b888d1c5f1f1dc441f204455aa493c1d24a",
+      "words": 14
+    },
+    {
+      "path": "lessons.1.quiz.3.options.2",
+      "sha256": "214f33eaa31247bc9afa6d00c04e1c5f1e2e2a7b25e0c7b24318614e9d483aa8",
+      "words": 14
+    },
+    {
+      "path": "lessons.1.quiz.3.options.3",
+      "sha256": "c790bd0a46dfbe6e8413abc037da1754f0cac7a4b10c34422507f913f744d58c",
+      "words": 7
+    },
+    {
+      "path": "lessons.1.quiz.3.question",
+      "sha256": "f6774613294f132b2d70615db235de88c72b18c576948fe2f702662236c355d6",
+      "words": 14
+    },
+    {
+      "path": "lessons.1.quiz.3.explanation",
+      "sha256": "a107c2208762991e9a8c89d4be79c9b11a65f4dd9fc3477c779dc7495528c61a",
+      "words": 21
+    },
+    {
+      "path": "lessons.1.slug",
+      "sha256": "36b484758a0d567531ac23e1e3929f5a81626c71f79856d365a703b9b0543b05",
+      "words": 1
+    },
+    {
+      "path": "lessons.1.title",
+      "sha256": "81e05b06bbbbbf03eec3c60f46b8b3f37a26a9e1c892197bf22204e4d3af39b5",
+      "words": 6
+    },
+    {
+      "path": "lessons.1.sources.0.url",
+      "sha256": "69a55aa75b68a61323e215123f3a57a6f4f4264eee6517273014b46ef955a527",
+      "words": 1
+    },
+    {
+      "path": "lessons.1.sources.0.label",
+      "sha256": "2d6987bfb81009a796c71b1250dc66284c6e65ea43f7f9bf6b15ee8c60c6982f",
+      "words": 7
+    },
+    {
+      "path": "lessons.1.sources.1.url",
+      "sha256": "e0ed0bfa3170aa7728e9cc4e79591e3bf58b2f928c183746f4403bdb0ebec513",
+      "words": 1
+    },
+    {
+      "path": "lessons.1.sources.1.label",
+      "sha256": "3748d8e6b7a7816940643aa99780fa3a5816191b7cc4ed37ff6efdd04187463d",
+      "words": 6
+    },
+    {
+      "path": "lessons.1.sources.2.label",
+      "sha256": "1f1bee7c0434b31db7e221f0436af136f1bfcef30f5f60b7acac368f7ca88aee",
+      "words": 5
+    },
+    {
+      "path": "lessons.1.sources.2.url",
+      "sha256": "00f5b9e86ad7d88cabb243240c5bc47edd775ec15f86554768755a81c3c88185",
+      "words": 1
+    },
+    {
+      "path": "lessons.1.sources.3.label",
+      "sha256": "a8be651ec3f9434fbb86c26caa2ee5a32a65b5f39d8530610d83f7852d24f4e0",
+      "words": 6
+    },
+    {
+      "path": "lessons.1.sources.3.url",
+      "sha256": "9a8e8a5688b3fdc269ec963000fd8295d949f5c35e38d8572d9847022aa41651",
+      "words": 1
+    },
+    {
+      "path": "lessons.1.summary",
+      "sha256": "c4b8b6ffaf398ea48423fb4027d93cf909fe3f871d7026d1d0c4b9a239abb75b",
+      "words": 18
+    },
+    {
+      "path": "lessons.1.keyTakeaways.0",
+      "sha256": "3fa294a354cc0c7ff31eaa850148e49eb5efbde68f4640b587bf2d41118baac2",
+      "words": 16
+    },
+    {
+      "path": "lessons.1.keyTakeaways.1",
+      "sha256": "802d40d27f0f71f490b172fff0a6725a46594d8010fef67e8122fab787ff034a",
+      "words": 17
+    },
+    {
+      "path": "lessons.1.keyTakeaways.2",
+      "sha256": "1aa60e395bc06eed92f825cf2cd0135a403b31c4d478bec117ee7a1493347105",
+      "words": 13
+    },
+    {
+      "path": "lessons.2.body.0",
+      "sha256": "6b8a51ee5ac61c5245f29c2ac601217906f0920763162067e022a2ca8bb9880e",
+      "words": 5
+    },
+    {
+      "path": "lessons.2.body.1",
+      "sha256": "608a36804029838c5bced20e5dfcd97794e9daba0ac35b4836c51a628161b9d2",
+      "words": 71
+    },
+    {
+      "path": "lessons.2.body.2",
+      "sha256": "04b89d722ae6d255e546819b5b9047b39ee3773d7557e3b67ee7cd6b254bc625",
+      "words": 82
+    },
+    {
+      "path": "lessons.2.body.3",
+      "sha256": "476477c61651cf0a289ed3eacf37adf4a72188a3f019707fe9ea2356d927aec7",
+      "words": 7
+    },
+    {
+      "path": "lessons.2.body.4",
+      "sha256": "364d7bd4390f485dbe9349a6d432572f428a98b89e77084bcc7eb67f62f8d4a6",
+      "words": 95
+    },
+    {
+      "path": "lessons.2.body.5",
+      "sha256": "1aacec091f87f23b7eae4e3e9100b912f1f423cb0075bc368af28545b9ccae38",
+      "words": 74
+    },
+    {
+      "path": "lessons.2.body.6",
+      "sha256": "04425e41d2e81bd8dd5011c8c7661425c92bbf360e2ada5b7e6a30d71f766bc7",
+      "words": 6
+    },
+    {
+      "path": "lessons.2.body.7",
+      "sha256": "47bb6561d0f77a89b8cd36fc5f5de81dba798920fe913ebe071956a6d241af9b",
+      "words": 80
+    },
+    {
+      "path": "lessons.2.body.8",
+      "sha256": "3d18f69cb70e6a07e891615e861ba352d3863bf24bad5b0b895f7b4f6b868ce7",
+      "words": 119
+    },
+    {
+      "path": "lessons.2.body.9",
+      "sha256": "0b08b9d133be40549e279743deba74593593ecdd9b15219cdf63bddffc849e17",
+      "words": 6
+    },
+    {
+      "path": "lessons.2.body.10",
+      "sha256": "ce4c0b6effbbdd364d53c7131654f0264fa94992d78511d01cac1e29a1a5bde1",
+      "words": 76
+    },
+    {
+      "path": "lessons.2.body.11",
+      "sha256": "979143f1374ec0d460f7ad4e74233b31127a25654549325a11285cbddb43a37a",
+      "words": 131
+    },
+    {
+      "path": "lessons.2.quiz.0.options.0",
+      "sha256": "c15a88b1e33612045704c328abf573b462c1624f949f02ff16a3365eb5a73558",
+      "words": 9
+    },
+    {
+      "path": "lessons.2.quiz.0.options.1",
+      "sha256": "5c7ef08cb6cd0e433d92bd19fc37ead75e4a0f94bbbf1ccf0d28d06d6f093a88",
+      "words": 10
+    },
+    {
+      "path": "lessons.2.quiz.0.options.2",
+      "sha256": "c3ffc20c8f0c97480c795b3b430c44d8208633a5e7a67a063d57c6fe823d32e4",
+      "words": 8
+    },
+    {
+      "path": "lessons.2.quiz.0.options.3",
+      "sha256": "af63f97ee6a3867fa2cfde6605bb007e1b4e752257bd0d40bd325fdf2a000db3",
+      "words": 8
+    },
+    {
+      "path": "lessons.2.quiz.0.question",
+      "sha256": "53d9413d887350e472fc404c8ee1e329825d17321ff7beb9099acd1df892286a",
+      "words": 15
+    },
+    {
+      "path": "lessons.2.quiz.0.explanation",
+      "sha256": "c7c1d2d84809aeb1fe1fea469e43dd2b9362b33c976b130a75dbec9fdf7c9521",
+      "words": 26
+    },
+    {
+      "path": "lessons.2.quiz.1.options.0",
+      "sha256": "9d6c8e1fcf6c2aa8ff186eca4b128399714bbbe0cde57eab4065f3a74641c7d3",
+      "words": 7
+    },
+    {
+      "path": "lessons.2.quiz.1.options.1",
+      "sha256": "9f7542180e88c6be8256d83e14cffc31b3705a948c628a31336fa16b9fd0c9c3",
+      "words": 12
+    },
+    {
+      "path": "lessons.2.quiz.1.options.2",
+      "sha256": "50cf3ac0a28f61547780a95a6edb9fda0d263d3907810b4c06ef0c2b9a90205f",
+      "words": 10
+    },
+    {
+      "path": "lessons.2.quiz.1.options.3",
+      "sha256": "047ba7173936b9281d59669201a8df4650c5c3d1e042f5c3eaf64df2ba5b2f2a",
+      "words": 10
+    },
+    {
+      "path": "lessons.2.quiz.1.question",
+      "sha256": "4d17020f964008b6f10777f0e10531147ed94d01c5bd161f1fb7240a3297abec",
+      "words": 11
+    },
+    {
+      "path": "lessons.2.quiz.1.explanation",
+      "sha256": "6544117172cfd8b12da26ef324b7adc59ef5e7a09cb864c6440885edcbe31c6d",
+      "words": 23
+    },
+    {
+      "path": "lessons.2.quiz.2.options.0",
+      "sha256": "d57e61801e3ddb6b2e8c90502c03969bf76dd2c07c900b5df2ffa6f74aede73b",
+      "words": 8
+    },
+    {
+      "path": "lessons.2.quiz.2.options.1",
+      "sha256": "616f35f205b78471e2eeef3fc4b9c159bd62ec53662d368877a6f9fe0bd31a27",
+      "words": 11
+    },
+    {
+      "path": "lessons.2.quiz.2.options.2",
+      "sha256": "1cd0e6f28e8e49e32177eaa0e436699d6f0edcd99290e08648ccdf5d52f84b56",
+      "words": 12
+    },
+    {
+      "path": "lessons.2.quiz.2.options.3",
+      "sha256": "48e6aeafb6f562c1eb491337569eb8a7dcf3c1cc44eb46e5e5a84fd25e86ec7c",
+      "words": 11
+    },
+    {
+      "path": "lessons.2.quiz.2.question",
+      "sha256": "62397447032a32f284617cad1178923e646230bfb58d9dbc7e292e627395d22f",
+      "words": 12
+    },
+    {
+      "path": "lessons.2.quiz.2.explanation",
+      "sha256": "e3e45c4e54ca38023f4f9e493f8f72b314b3e8db62d91eda869fe26d181760db",
+      "words": 23
+    },
+    {
+      "path": "lessons.2.quiz.3.options.0",
+      "sha256": "faf256e323aea31596909cbaccbcc995f61e454d91d50ac71f24f4e358acb8ff",
+      "words": 7
+    },
+    {
+      "path": "lessons.2.quiz.3.options.1",
+      "sha256": "d9fcc7469a068687c00c59ff08ea574a5be6dedc4d19feb3a57e735dc49234c8",
+      "words": 9
+    },
+    {
+      "path": "lessons.2.quiz.3.options.2",
+      "sha256": "b1200224f95e497cffa53e3bb3964990c4961b0d5309e224eebd3c8fd0479783",
+      "words": 5
+    },
+    {
+      "path": "lessons.2.quiz.3.options.3",
+      "sha256": "f290b72ed94b19c8259b0e80193c87cbce8d14997ecb9bd1a84af371843fe29d",
+      "words": 9
+    },
+    {
+      "path": "lessons.2.quiz.3.question",
+      "sha256": "f570d6bb9a00a6a769a06aba9325b15b82a9f274dfead574f3238e566b9bebc3",
+      "words": 18
+    },
+    {
+      "path": "lessons.2.quiz.3.explanation",
+      "sha256": "30057453779c76152f4ac817d06a5ce5e1516c0454d8bb0b86d70c7c09d396f3",
+      "words": 20
+    },
+    {
+      "path": "lessons.2.slug",
+      "sha256": "ef4786242dffedec1360582aed62b0f3d82a83e4026dc39bcc21048b9e4fdcf5",
+      "words": 1
+    },
+    {
+      "path": "lessons.2.title",
+      "sha256": "fe6a0e765164722f395012bc39fe2b61f4537f594236d634a5efe92dd2a036ca",
+      "words": 5
+    },
+    {
+      "path": "lessons.2.sources.0.url",
+      "sha256": "69a55aa75b68a61323e215123f3a57a6f4f4264eee6517273014b46ef955a527",
+      "words": 1
+    },
+    {
+      "path": "lessons.2.sources.0.label",
+      "sha256": "2d6987bfb81009a796c71b1250dc66284c6e65ea43f7f9bf6b15ee8c60c6982f",
+      "words": 7
+    },
+    {
+      "path": "lessons.2.sources.1.url",
+      "sha256": "e0ed0bfa3170aa7728e9cc4e79591e3bf58b2f928c183746f4403bdb0ebec513",
+      "words": 1
+    },
+    {
+      "path": "lessons.2.sources.1.label",
+      "sha256": "3748d8e6b7a7816940643aa99780fa3a5816191b7cc4ed37ff6efdd04187463d",
+      "words": 6
+    },
+    {
+      "path": "lessons.2.sources.2.label",
+      "sha256": "1f1bee7c0434b31db7e221f0436af136f1bfcef30f5f60b7acac368f7ca88aee",
+      "words": 5
+    },
+    {
+      "path": "lessons.2.sources.2.url",
+      "sha256": "00f5b9e86ad7d88cabb243240c5bc47edd775ec15f86554768755a81c3c88185",
+      "words": 1
+    },
+    {
+      "path": "lessons.2.sources.3.label",
+      "sha256": "a8be651ec3f9434fbb86c26caa2ee5a32a65b5f39d8530610d83f7852d24f4e0",
+      "words": 6
+    },
+    {
+      "path": "lessons.2.sources.3.url",
+      "sha256": "9a8e8a5688b3fdc269ec963000fd8295d949f5c35e38d8572d9847022aa41651",
+      "words": 1
+    },
+    {
+      "path": "lessons.2.summary",
+      "sha256": "5b24450e80b14673645259f27b4a405aff412ff100a3c4493a543771801e6032",
+      "words": 13
+    },
+    {
+      "path": "lessons.2.keyTakeaways.0",
+      "sha256": "8bf51faffa0f0d2e4d1992ea2a9338858c9647871c36bf9584409ba185294c71",
+      "words": 14
+    },
+    {
+      "path": "lessons.2.keyTakeaways.1",
+      "sha256": "ef865eff3c687535257a1ee29da652e96283e90b3b00c8d753db366cdb38618f",
+      "words": 14
+    },
+    {
+      "path": "lessons.2.keyTakeaways.2",
+      "sha256": "ac3c657e94ee2fc33c1153c4cd110caeb0b57ab30414562a8531a5521db48dfd",
+      "words": 13
+    },
+    {
+      "path": "tagline",
+      "sha256": "f3dd26e759e91b4230b684bf00f02e37c7eca52713db2ab6a20fd14ca8893474",
+      "words": 11
+    },
+    {
+      "path": "outcomes.0",
+      "sha256": "a5aec5feac660ec2bd87bd10f8d9eae5d06535ee0c626c921928a5aced9d1f93",
+      "words": 13
+    },
+    {
+      "path": "outcomes.1",
+      "sha256": "5826e34f1bf8f140e89c10423c1b340efc54c6990f282ccdea511d21e3d95fc7",
+      "words": 11
+    },
+    {
+      "path": "outcomes.2",
+      "sha256": "320c15b83c0f172b3a61663c8fd45753f6cb9049bcfddc14100c160aedd8c8ad",
+      "words": 10
+    },
+    {
+      "path": "outcomes.3",
+      "sha256": "380d30f36236262a1cd18fe7dc4a0605274a40e764132244968c0250441ae083",
+      "words": 12
+    },
+    {
+      "path": "description",
+      "sha256": "757c76cf6c2992823aee659c215d29e264549e5b993a55454d090227d3c41c1f",
+      "words": 22
+    },
+    {
+      "path": "progression",
+      "sha256": "2a22aad5bea157949e2123b5dec6ea1b9d1cc8493485b4fd46062ca47e5ee380",
+      "words": 33
+    },
+    {
+      "path": "prerequisites",
+      "sha256": "f6ad93c1151cbff6336df6c1f36807a332196de750afa8f3a64120f273526bed",
+      "words": 8
+    }
+  ]
+}

@@ -10,6 +10,12 @@ for (const row of rows) {
   assert.equal(JSON.stringify(row.document), original, "Must not mutate publication data");
   assert.deepEqual(validateCourseDocument(candidate, true), [], row.slug + ": preserve document validity");
   assert.deepEqual(applyCourseEditorialCorrections(candidate), candidate, "Correction must be idempotent");
+  if (candidate.slug === 'diversification-and-position-sizing') {
+    assert.doesNotMatch(candidate.lessons[0].body[4], /prices fluctuate continuously/);
+    assert.match(candidate.lessons[0].body[4], /fixed simulator prices/);
+    assert.match(candidate.lessons[0].quiz[3].explanation, /fixed simulator values/);
+    assert.doesNotMatch(candidate.lessons[1].body[4], /will quickly distort/);
+  }
   for (const lesson of candidate.lessons) {
     const html = renderApprovedCourse('<html><head></head><body><div id="root"></div></body></html>', row.document, lesson.slug)!;
     const bootstrap = JSON.parse(html.match(/id="approved-course-bootstrap" type="application\/json">([\s\S]*?)<\/script>/)![1]);

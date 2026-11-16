@@ -18,6 +18,8 @@ export const courseReferences = [
 // does not use it. Exact URL allowlisting prevents draft URLs causing SSRF.
 export const publicationReferencePool = [...courseReferences,
   { label: "Morningstar — Maximum Drawdown Definition", url: "https://www.morningstar.com/investing-terms/maximum-drawdown" },
+  { label: "ASIC Moneysmart — Investment diversification", url: "https://moneysmart.gov.au/how-to-invest/investment-diversification" },
+  { label: "ASIC Moneysmart — Choose your investments", url: "https://moneysmart.gov.au/how-to-invest/choose-your-investments" },
 ];
 const stringSchema = { type: "string" };
 const stringArray = { type: "array", items: stringSchema };
