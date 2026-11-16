@@ -143,7 +143,7 @@ export default function Courses() {
     hasCourseInstance: {
       "@type": "CourseInstance",
       courseMode: "online",
-      courseWorkload: `PT${t.lessons.length * 15}M`,
+      courseWorkload: `Estimated reading: ${t.lessons.reduce((minutes, lesson) => minutes + lesson.readingMinutes, 0)} minutes; quizzes and worksheet exercises take additional time.`,
     },
     author: t.editorial ? { "@type": "Organization", name: "TradeHQ" } : { "@type": "Person", name: "Anuga Weerasinghe" },
   }));
@@ -295,7 +295,7 @@ export default function Courses() {
                             {track.level}
                           </Badge>
                           <span className="text-xs text-muted-foreground inline-flex items-center gap-1">
-                            <Clock className="w-3 h-3" /> {track.lessons.length * 12}–{track.lessons.length * 15} min
+                            <Clock className="w-3 h-3" /> Est. {track.lessons.reduce((minutes, lesson) => minutes + lesson.readingMinutes, 0)} min reading
                           </span>
                         </div>
                         <h3 className="text-xl font-semibold mb-1 group-hover:text-emerald-300 transition-colors">
