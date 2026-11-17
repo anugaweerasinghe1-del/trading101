@@ -1,6 +1,6 @@
 {
-  "updatedAtUTC": "2026-11-17T16:34:26.140367+00:00",
-  "phase": "GUIDE-LAYOUT-FOLLOWUP-PR459-MERGED-NATIVE-PENDING",
+  "updatedAtUTC": "2026-11-17T16:58:18.138108+00:00",
+  "phase": "GUIDE-ALL-RECORDED-TEXT-READ-TWICE-LAYOUT-MERGED-NATIVE-PENDING",
   "currentPage": "https://www.thetradehq.com/learn-trading-guide",
   "newAuditCompletedPages": 6,
   "publisherPageBaseline": 163,
@@ -19,7 +19,7 @@
   "nativeCloudflareId": "f96ebac7-2478-4e06-a853-7e6eb4292cbd",
   "reviewer": "Codex assistant; prior contributor; not an independent human or Google reviewer",
   "standaloneModelCallsThisReview": 0,
-  "nextStep": "Verify native Cloudflare95c328db and reread459 corrections. Validate dedicated Guide layout followup final head/merge/native deployment and actual mobile heading separation. Continue P08 pending537 second-pass records/source mapping; no strict closure credit.",
+  "nextStep": "Fetch native Cloudflare d3b21b84695465321987a660c496b50dae75bcc4 receipt from main44130013584; after observation run actual production layout, appearance/schema regression checks. Close003 only then. Recorded text822/822 both passes; extraction/control/attribute/state reconciliation still prevents P08 closure. Resume P08, not page1.",
   "aboutFindings": {
     "confirmed": 0,
     "qualityRisks": 2,
@@ -56,8 +56,8 @@
     "Private operations/account/CMP/owner legal gates remain separate"
   ],
   "latestPR": {
-    "number": 459,
-    "status": "MERGED95c328db; native production observation pending"
+    "number": 460,
+    "status": "MERGED d3b21b84695465321987a660c496b50dae75bcc4; native460/live verification pending"
   },
   "checkpointNote": "Recovered main certified2, later unmerged branch counter4 was not inherited; Privacy closure newly validated. Home/About evidence retained unchanged.",
   "termsFindings": {
@@ -121,23 +121,28 @@
     "currentPage": "STRICT-0008",
     "extractedCapturedTextOccurrences": 713,
     "pass1ReviewedCapturedOccurrences": 713,
-    "pass2ReviewedCapturedOccurrences": 284,
+    "pass2ReviewedCapturedOccurrences": 713,
     "pageStatus": "PARTIAL-REVIEW",
     "limitations": [
       "Text/location/version records overlap;49 source-only card projections add zero glossary-page editorial credit.",
-      "Fresh second pass covers only exactly matched current body occurrences; other menu/quiz/progress/source alternatives remain pending.",
-      "Metadata values read and integrated as separate leaf records; fresh complete second metadata pass remains pending.",
+      "All822 recorded text/version/metadata/source-projection records received two separate same-agent text reads. This is not full-page extraction/state/source completion.",
+      "Metadata integration complete for captured values; broader feature/private-account behavior not certified. Original and corrected image leaves preserved separately.",
       "Social-image bytes, every numerical edge, exact source-line mapping and signed-in navigation not exhausted.",
-      "No unqualified closure claim; product fix release independent of page closure."
+      "No unqualified closure claim; product fix release independent of page closure.",
+      "Component/data source mapping now covers all822 records with before/after Git hashes. Exact expression/control-attribute/state extraction reconciliation remains unfinished; no full-page closure."
     ],
     "extractedSourceOnlyAlternatives": 49,
-    "totalRecordedBlocks": 821,
+    "totalRecordedBlocks": 822,
     "pass1ReviewedSourceOnlyAlternatives": 49,
-    "pass1ReviewedMetadataBlocks": 59
+    "pass1ReviewedMetadataBlocks": 60,
+    "pass2ReviewedSourceOnlyAlternatives": 49,
+    "pass2ReviewedMetadataBlocks": 60,
+    "totalPass2Reviewed": 822,
+    "pendingSecondPass": 0
   },
   "pendingLayoutFollowup": {
     "finding": "STRICT-GUIDE-003",
     "branch": "audit/issue430-guide-layout-20261117",
-    "status": "Local candidate; PR not yet opened"
+    "status": "Merged; native/live gate pending"
   }
 }

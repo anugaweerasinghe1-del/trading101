@@ -1,10 +1,9 @@
 {
-  "recordedBlocks": 821,
-  "firstPassReviewed": 821,
-  "secondPassReviewed": 284,
-  "pendingSecondPass": 537,
-  "hashAndUniqueIdChecks": "PASS",
-  "strictEqualityGatePass": false,
+  "recordedBlocks": 822,
+  "firstPassReviewed": 822,
+  "secondPassReviewed": 822,
+  "pendingSecondPass": 0,
+  "strictEqualityGatePass": true,
   "strictPageClosureAllowed": false,
-  "note": "Honest partial checkpoint; original capture boundaries/source mapping/state limits must also be satisfied, even after counts match."
+  "reason": "Counts reflect actual bounded second text reads. Source candidates, unintegrated control/attribute/media/state inventory and open layout003 prevent unqualified closure. No invented page-completion credit."
 }
