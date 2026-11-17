@@ -1,0 +1,15 @@
+{
+  "verificationRecordedAtUTC": "2026-11-17T03:07:53.528092+00:00",
+  "scope": "Read-only deployed function metadata and current source; no user rows, orders, account change or generation",
+  "project": "cbdktpjgczhthflspqjb",
+  "databaseFunction": "tradehq_private.record_trade",
+  "deployedExtractedFeeRate": "0.001",
+  "guestSource": "src/lib/portfolio.ts",
+  "guestFeeFormula": "total * 0.001",
+  "percentConversion": "0.001 * 100 = 0.1%",
+  "glossaryEntries": 49,
+  "visibleLearnWikiLinks": 21,
+  "availableStructuredTracks": 7,
+  "availableStructuredLessons": 29,
+  "numericExercise": "The native text asks the reader to calculate rather than giving a forecast or fixed profit. Fee rate corroborated without placing any order."
+}

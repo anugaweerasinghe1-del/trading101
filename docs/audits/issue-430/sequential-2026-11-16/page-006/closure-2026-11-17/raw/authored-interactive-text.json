@@ -1,0 +1,632 @@
+[
+  {
+    "id": "LEARN-SOURCE-001",
+    "location": "src/components/LearningJourneyDashboard.tsx",
+    "kind": "source-only-authored-state",
+    "text": "Resume your saved lesson",
+    "contextText": "Resume your saved lesson — Label when a known saved lesson is unfinished; points to current lesson, not proof of mastery.",
+    "sha256": "b8ccedc45d414d2dd8ffb98f59e5051d24884e062fc2d1fdf1ed950e1cfd1f30",
+    "assessment": "Resume your saved lesson — Label when a known saved lesson is unfinished; points to current lesson, not proof of mastery.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-002",
+    "location": "src/components/LearningJourneyDashboard.tsx",
+    "kind": "source-only-authored-state",
+    "text": "Continue to your next lesson",
+    "contextText": "Continue to your next lesson — Label when a next lesson is available; no guarantee of investment ability.",
+    "sha256": "46124b45192199a238712eb6dfd573b81314fb2193effc95384eb00e5b53c467",
+    "assessment": "Continue to your next lesson — Label when a next lesson is available; no guarantee of investment ability.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-003",
+    "location": "src/components/LearningJourneyDashboard.tsx",
+    "kind": "source-only-authored-state",
+    "text": "Continue your first-trade journey",
+    "contextText": "Continue your first-trade journey — Partial local journey handoff; no automatic order.",
+    "sha256": "0e0b5016f7571e06bee489a5a969e4bd003f763817711654fe827881c9dc4031",
+    "assessment": "Continue your first-trade journey — Partial local journey handoff; no automatic order.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-004",
+    "location": "src/components/LearningJourneyDashboard.tsx",
+    "kind": "source-only-authored-state",
+    "text": "Open Daily Practice",
+    "contextText": "Open Daily Practice — Optional general scenario fallback after the journey; no forced trade.",
+    "sha256": "ec7fbabe234dfcdb2fe6a2251df7cac4f5b770a4fcc9ac3e2453b43cd88f625b",
+    "assessment": "Open Daily Practice — Optional general scenario fallback after the journey; no forced trade.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-005",
+    "location": "src/components/LearningJourneyDashboard.tsx",
+    "kind": "source-only-authored-state",
+    "text": "Start a general trading scenario and build understanding at your own pace.",
+    "contextText": "Start a general trading scenario and build understanding at your own pace. — Fallback reason sets no calendar-to-proficiency guarantee.",
+    "sha256": "f62b8761d898b1143044aae4a3e6d11416c091b1e1a816594c637abc240e1cda",
+    "assessment": "Start a general trading scenario and build understanding at your own pace. — Fallback reason sets no calendar-to-proficiency guarantee.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-006",
+    "location": "src/components/LearningJourneyDashboard.tsx",
+    "kind": "source-only-authored-state",
+    "text": "Journey complete. Review your portfolio or continue learning about risk.",
+    "contextText": "Journey complete. Review your portfolio or continue learning about risk. — Completion is a private practice milestone, not a trading credential.",
+    "sha256": "c43658e14c3e06e8842a6f599563d17a991ea0218c84d8adb8181b3c0447e659",
+    "assessment": "Journey complete. Review your portfolio or continue learning about risk. — Completion is a private practice milestone, not a trading credential.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-007",
+    "location": "src/components/LearningJourneyDashboard.tsx",
+    "kind": "source-only-authored-state",
+    "text": "Continue from step ${overview.journeyStage + 1} without repeating earlier steps.",
+    "contextText": "Continue from step ${overview.journeyStage + 1} without repeating earlier steps. — Source template; current step comes from bounded journey projection, not a fixed displayed number.",
+    "sha256": "8355a7045b5652201c6a1e7f3c88fcbb054e4216bb9e8682eeb1f1290e1f8b2f",
+    "assessment": "Continue from step ${overview.journeyStage + 1} without repeating earlier steps. — Source template; current step comes from bounded journey projection, not a fixed displayed number.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-008",
+    "location": "src/components/LearningJourneyDashboard.tsx",
+    "kind": "source-only-authored-state",
+    "text": "All available course lessons completed.",
+    "contextText": "All available course lessons completed. — Conditional on known current course records; not all future courses or professional qualification.",
+    "sha256": "8f03419b2c018b83f3e5741712e6b8e6345ddad4d2bbb33f02b6fdfaa5aee54b",
+    "assessment": "All available course lessons completed. — Conditional on known current course records; not all future courses or professional qualification.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-009",
+    "location": "src/components/LearningJourneyDashboard.tsx",
+    "kind": "source-only-authored-state",
+    "text": "Explore an introductory course when you're ready.",
+    "contextText": "Explore an introductory course when you're ready. — Voluntary empty-history prompt; no account/transaction required to read.",
+    "sha256": "9d44e4d7de9363385498acc7f64665d658290fe93772668d45b0f7d0f04d88ad",
+    "assessment": "Explore an introductory course when you're ready. — Voluntary empty-history prompt; no account/transaction required to read.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-010",
+    "location": "src/components/LearningJourneyDashboard.tsx",
+    "kind": "source-only-authored-state",
+    "text": "Signed-in learning records can synchronize across devices while online; they are separate from server-verified trades and public rankings.",
+    "contextText": "Signed-in learning records can synchronize across devices while online; they are separate from server-verified trades and public rankings. — Authored signed-in copy; source and isolated regressions corroborate the design, actual private account synchronization is not exercised.",
+    "sha256": "3877dd690d099e2b9ecce2f314de09cb71d618d6e161fdd2d64a4c46e6e6903c",
+    "assessment": "Signed-in learning records can synchronize across devices while online; they are separate from server-verified trades and public rankings. — Authored signed-in copy; source and isolated regressions corroborate the design, actual private account synchronization is not exercised.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-011",
+    "location": "src/components/LearningJourneyDashboard.tsx",
+    "kind": "source-only-authored-state",
+    "text": "Review the worked explanations",
+    "contextText": "Review the worked explanations — Conditional missed-case review link, not a performance score.",
+    "sha256": "e8761759cdc5a5f74714df2f547272ad1dff011076af4578a5a42b4d67d1304f",
+    "assessment": "Review the worked explanations — Conditional missed-case review link, not a performance score.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-012",
+    "location": "src/components/LearningJourneyDashboard.tsx",
+    "kind": "source-only-authored-state",
+    "text": "This is a study suggestion, not a measure of trading ability.",
+    "contextText": "This is a study suggestion, not a measure of trading ability. — Explicitly limits the meaning of missed-answer recommendations.",
+    "sha256": "38ca5aa8fbfe00c032cad79017034f74f4895e3f8c5f5158f2cbde66bf9527ed",
+    "assessment": "This is a study suggestion, not a measure of trading ability. — Explicitly limits the meaning of missed-answer recommendations.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-013",
+    "location": "src/lib/masteryNextAction.ts",
+    "kind": "source-only-authored-state",
+    "text": "Try today's Daily Practice",
+    "contextText": "Readonly suggestion when no scenario played today.",
+    "sha256": "45cb07064d57c149e6b85279107209cd91dd8600ec1c35753be569a17dfb3052",
+    "assessment": "Readonly suggestion when no scenario played today.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-014",
+    "location": "src/lib/masteryNextAction.ts",
+    "kind": "source-only-authored-state",
+    "text": "A fresh scenario helps you apply what you've learned.",
+    "contextText": "Educational purpose, no outcome promise.",
+    "sha256": "bd44d2a18fe304c30b6082c7e8990796edcb900e1fd81000ebd40bae55819d24",
+    "assessment": "Educational purpose, no outcome promise.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-015",
+    "location": "src/lib/masteryNextAction.ts",
+    "kind": "source-only-authored-state",
+    "text": "Explore virtual trading",
+    "contextText": "Optional virtual activity, no real transaction.",
+    "sha256": "93852ec6368aecbf21fd1786c9281f453ab4cda51a33d719919893de0b629cac",
+    "assessment": "Optional virtual activity, no real transaction.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-016",
+    "location": "src/lib/masteryNextAction.ts",
+    "kind": "source-only-authored-state",
+    "text": "You've practised a scenario. Try an optional virtual trade without real money.",
+    "contextText": "Voluntary order invitation clearly virtual.",
+    "sha256": "38425621188264e5d62b0f48f21f877cafdcfbce5889d8b400d4ea64974768a1",
+    "assessment": "Voluntary order invitation clearly virtual.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-017",
+    "location": "src/lib/masteryNextAction.ts",
+    "kind": "source-only-authored-state",
+    "text": "Review your virtual portfolio",
+    "contextText": "Reflection suggestion after a practice trade.",
+    "sha256": "b153c099dcc593089c623c985fd32411af841556d45eb34034b546ba274ff6bc",
+    "assessment": "Reflection suggestion after a practice trade.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-018",
+    "location": "src/lib/masteryNextAction.ts",
+    "kind": "source-only-authored-state",
+    "text": "You've practised today. Reflect on simulated positions and decisions before your next session.",
+    "contextText": "Reflection on simulated data, not financial advice.",
+    "sha256": "3dbf4c98de72872f9b2c824c79aee4a737ce446c1de9d25be5c0b66c7feb94e1",
+    "assessment": "Reflection on simulated data, not financial advice.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-019",
+    "location": "src/lib/masteryNextAction.ts",
+    "kind": "source-only-authored-state",
+    "text": "Review missed case answers",
+    "contextText": "Study review prioritized over more trading; no mastery inference.",
+    "sha256": "672d6abe890d04216d5173d0ec87c3c6afe5c3ca163f236f4df1f58bfc1bb45e",
+    "assessment": "Study review prioritized over more trading; no mastery inference.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-020",
+    "location": "src/lib/masteryNextAction.ts",
+    "kind": "source-only-template",
+    "text": "You have ${reviewMistakes} ${reviewMistakes === 1 ? \"answer\" : \"answers\"} to revisit in today's case study. Read the worked explanations before moving on.",
+    "contextText": "Exact source template, not one fabricated rendered count; missed number is computed from completed local case answers.",
+    "sha256": "2009c990856e1d4c391c8557ccc0790eea27430569b328bdd09198d2654d1b73",
+    "assessment": "Exact source template, not one fabricated rendered count; missed number is computed from completed local case answers.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-021",
+    "location": "src/lib/masteryNextAction.ts",
+    "kind": "source-only-authored-state",
+    "text": "Check your saved portfolio",
+    "contextText": "Unavailable account snapshot does not establish zero prior trades.",
+    "sha256": "03b003298d6f89ff6de8e7f006460353430a5b4a250958a8841b98d240c7efb8",
+    "assessment": "Unavailable account snapshot does not establish zero prior trades.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-022",
+    "location": "src/lib/masteryNextAction.ts",
+    "kind": "source-only-authored-state",
+    "text": "Your account trade history is not yet available. Review it before choosing another virtual trade.",
+    "contextText": "Truthful unavailable-state copy; no new trade or reset demanded.",
+    "sha256": "e4d47c9ef2eb3d1998e8101ce95ed775891369025588a20d054023f434ab6e3a",
+    "assessment": "Truthful unavailable-state copy; no new trade or reset demanded.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-023",
+    "location": "src/lib/learningOverview.ts",
+    "kind": "source-only-authored-state",
+    "text": "Resume your unfinished lesson",
+    "contextText": "Readonly next-lesson reason based on known completion/partial records. No proficiency certification or automatic data reset.",
+    "sha256": "5cbbd4601a9b29e850a0a07186ee703b432496625e529268016b1280580222d9",
+    "assessment": "Readonly next-lesson reason based on known completion/partial records. No proficiency certification or automatic data reset.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-024",
+    "location": "src/lib/learningOverview.ts",
+    "kind": "source-only-authored-state",
+    "text": "Next lesson in your current course",
+    "contextText": "Readonly next-lesson reason based on known completion/partial records. No proficiency certification or automatic data reset.",
+    "sha256": "1a94115083b24ed8464d1d31ca4bc93a6ec921f5011f28f7ee451dd470c85c8f",
+    "assessment": "Readonly next-lesson reason based on known completion/partial records. No proficiency certification or automatic data reset.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-025",
+    "location": "src/lib/learningOverview.ts",
+    "kind": "source-only-authored-state",
+    "text": "Continue this course",
+    "contextText": "Readonly next-lesson reason based on known completion/partial records. No proficiency certification or automatic data reset.",
+    "sha256": "1e060ea8d7275396f91577c51a118d89e2d5f6f344a84ec4752025313446485e",
+    "assessment": "Readonly next-lesson reason based on known completion/partial records. No proficiency certification or automatic data reset.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-026",
+    "location": "src/lib/learningOverview.ts",
+    "kind": "source-only-authored-state",
+    "text": "Suggested structured course lesson",
+    "contextText": "Readonly next-lesson reason based on known completion/partial records. No proficiency certification or automatic data reset.",
+    "sha256": "13dcf96fce570a5b9270d6833b198985063a0cdce02b8f0f50a2a5c2ea6fa2ea",
+    "assessment": "Readonly next-lesson reason based on known completion/partial records. No proficiency certification or automatic data reset.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-027",
+    "location": "src/lib/coursesData.ts#options-trading-fundamentals/what-is-an-option",
+    "kind": "source-only-title-input",
+    "text": "What Is an Option? Calls & Puts Explained",
+    "contextText": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "sha256": "21e0b724eb22be7cd6dbeaf8491b5d5eac4da0d82a777a28d5641d9428ee96f3",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-028",
+    "location": "src/lib/coursesData.ts#options-trading-fundamentals/the-greeks-delta-gamma-theta-vega",
+    "kind": "source-only-title-input",
+    "text": "The Greeks — Delta, Gamma, Theta & Vega",
+    "contextText": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "sha256": "17251be74e011e187b0e6c549c5225eb7bdaaa9345e2c2b6c04a6b593c97c1a6",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-029",
+    "location": "src/lib/coursesData.ts#options-trading-fundamentals/defined-risk-spreads",
+    "kind": "source-only-title-input",
+    "text": "Defined-Risk Spreads — Verticals & Iron Condors",
+    "contextText": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "sha256": "903e0f28fcdb3fccd066eb9c4a56e4fda41a18b49dfee18cb05b84ba0241e510",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-030",
+    "location": "src/lib/coursesData.ts#options-trading-fundamentals/implied-volatility-and-earnings",
+    "kind": "source-only-title-input",
+    "text": "Implied Volatility & Trading Around Earnings",
+    "contextText": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "sha256": "05cf4032b04bddcaf37ce94e7148b09ec778777e20cfd4128542cbc3633be63f",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-031",
+    "location": "src/lib/coursesData.ts#options-trading-fundamentals/options-risk-management",
+    "kind": "source-only-title-input",
+    "text": "Options Risk Management — Sizing, Rolling & Cutting Losses",
+    "contextText": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "sha256": "c1cef7f571dd0006105db65a7f637fe6a76c0c8edcbe985a1441c90d39d2fd9b",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-032",
+    "location": "src/lib/coursesData.ts#futures-and-derivatives/what-is-a-futures-contract",
+    "kind": "source-only-title-input",
+    "text": "What Is a Futures Contract?",
+    "contextText": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "sha256": "c3381a2c8bf775ff6565315a8f07e6eab460f16b726bb0f4bb3f9eaf6dfa62b9",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-033",
+    "location": "src/lib/coursesData.ts#futures-and-derivatives/margin-and-leverage-in-futures",
+    "kind": "source-only-title-input",
+    "text": "Margin & Leverage in Futures",
+    "contextText": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "sha256": "031b9f1f2d4abf07d80c26dfa7953f50a1852395f8aa0a138c9906ec69060083",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-034",
+    "location": "src/lib/coursesData.ts#futures-and-derivatives/contango-and-backwardation",
+    "kind": "source-only-title-input",
+    "text": "Contango & Backwardation — Term Structure Explained",
+    "contextText": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "sha256": "ea6396a5f5722a71b53ce58b361fe798e1b9aa51efaa10f6107159cd1ac178ef",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-035",
+    "location": "src/lib/coursesData.ts#futures-and-derivatives/hedging-with-futures",
+    "kind": "source-only-title-input",
+    "text": "Hedging with Futures — The Original Use Case",
+    "contextText": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "sha256": "e39870a3b066c7a819b4574f042fc0b69c2b9b78348a7369883b009befdb8609",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-036",
+    "location": "src/lib/coursesData.ts#futures-and-derivatives/micro-futures-for-beginners",
+    "kind": "source-only-title-input",
+    "text": "Micro Futures — Contract Size and Risk",
+    "contextText": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "sha256": "2c05278f506f0834d8762eba6ff573ee1aecce77738d06492f7d48d951a1283e",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-037",
+    "location": "src/lib/coursesData.ts#macro-reading-for-traders/reading-cpi-and-inflation",
+    "kind": "source-only-title-input",
+    "text": "Reading CPI and Inflation Data",
+    "contextText": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "sha256": "32197901c710f8fdb04b71c213cc36e75fcbdda92abab20a4a60bc40644a1bcf",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-038",
+    "location": "src/lib/coursesData.ts#macro-reading-for-traders/the-fed-and-fomc-cycle",
+    "kind": "source-only-title-input",
+    "text": "The Fed & FOMC Cycle — How Rates Get Set",
+    "contextText": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "sha256": "127e288574790c43497dec05043acf38c088df6bf0a83b919345674bdd9c0162",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-039",
+    "location": "src/lib/coursesData.ts#macro-reading-for-traders/the-yield-curve-and-recession",
+    "kind": "source-only-title-input",
+    "text": "The Yield Curve and Recession-Risk Research",
+    "contextText": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "sha256": "e924e8db01398d9902680053d8ad73f58e4134493789c1e7fe3c0e1f53947e8e",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-040",
+    "location": "src/lib/coursesData.ts#macro-reading-for-traders/the-dollar-index-dxy",
+    "kind": "source-only-title-input",
+    "text": "The Dollar Index (DXY) — Reading Currency Context",
+    "contextText": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "sha256": "85e4231cc0fe4b40cdcf47c6f5e9d8be5de09136ec46fcc170f6ccf333e558c7",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-041",
+    "location": "src/lib/coursesData.ts#macro-reading-for-traders/putting-macro-signals-together",
+    "kind": "source-only-title-input",
+    "text": "Putting It Together — A Macro Dashboard for Traders",
+    "contextText": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "sha256": "3a002ee53b75ae8a4836918487249f59b47e7f936c62b6818bddf9f66dfa9d98",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-042",
+    "location": "src/lib/coursesData.ts#trading-psychology-mastery/cognitive-biases-in-trading",
+    "kind": "source-only-title-input",
+    "text": "Cognitive Biases in Trading Decisions",
+    "contextText": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "sha256": "50d88e5f6537c164830a7ca36edab6024666324abd6ce3d3ae34de69c30908c8",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-043",
+    "location": "src/lib/coursesData.ts#trading-psychology-mastery/revenge-trading-and-tilt",
+    "kind": "source-only-title-input",
+    "text": "Revenge Trading & Tilt — Recognising Unplanned Decisions",
+    "contextText": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "sha256": "0c3678d2e4cdf9253ad921365b6171f015617d02aaae1a236ef94f8a8e622ff1",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-044",
+    "location": "src/lib/coursesData.ts#trading-psychology-mastery/the-trading-journal",
+    "kind": "source-only-title-input",
+    "text": "A Trading Journal: Observations and Limits",
+    "contextText": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "sha256": "b268ae6d79c8c86f8ccbabc4a2bd6b328035d15aafa0cf89178e197a294efd71",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-045",
+    "location": "src/lib/coursesData.ts#trading-psychology-mastery/discipline-and-daily-rituals",
+    "kind": "source-only-title-input",
+    "text": "Optional Checklists for Practice Sessions",
+    "contextText": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "sha256": "be947c4652f1b33b23ec9dca9924643ceb957aa63edf9a16908b9d7effcae7d4",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-046",
+    "location": "src/lib/coursesData.ts#trading-psychology-mastery/handling-drawdowns",
+    "kind": "source-only-title-input",
+    "text": "Understanding Drawdowns in a Simulation",
+    "contextText": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "sha256": "9e8eefa5e861c33b8e54b5e0ffa09ade197c8227b54087ecfb222b6ece6c3b3a",
+    "assessment": "Current conditional next-lesson title input; only title/metadata read, not this destination lesson body or quiz.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-047",
+    "location": "published-course-catalog#bitcoin-simulator-practice-trading",
+    "kind": "source-only-title-input",
+    "text": "Setting Up Your Bitcoin Simulator Environment",
+    "contextText": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit.",
+    "sha256": "9b2338a52fbe3908fb23f386b5aa8ba6c305a8170409b754323fd76609cf7353",
+    "assessment": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-048",
+    "location": "published-course-catalog#bitcoin-simulator-practice-trading",
+    "kind": "source-only-title-input",
+    "text": "Executing Spot Trades in the Simulator",
+    "contextText": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit.",
+    "sha256": "3e2a89974b7c2534cbd031caedae80ad9d0ce423d1ba3563769c23446603422e",
+    "assessment": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-049",
+    "location": "published-course-catalog#bitcoin-simulator-practice-trading",
+    "kind": "source-only-title-input",
+    "text": "Evaluating Performance and Managing Drawdowns",
+    "contextText": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit.",
+    "sha256": "32c8482f3bb495b6503ae557339efe2d2ee1c5eb390d4adffc5fbca09d8c1bcc",
+    "assessment": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-050",
+    "location": "published-course-catalog#cryptocurrency-price-feeds-and-valuation",
+    "kind": "source-only-title-input",
+    "text": "Exchange Tickers and Price Aggregation Foundations",
+    "contextText": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit.",
+    "sha256": "a811a9575bfcd1f41d5e24af58df1df80f874aac3e66218a8ee1a1860b87c7c6",
+    "assessment": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-051",
+    "location": "published-course-catalog#cryptocurrency-price-feeds-and-valuation",
+    "kind": "source-only-title-input",
+    "text": "API Delays and Portfolio Valuation Mechanics",
+    "contextText": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit.",
+    "sha256": "89aa77d0e8fdd405a5fc651b7485172e608bc79a5961a8b714e3b00a0f280db3",
+    "assessment": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-052",
+    "location": "published-course-catalog#cryptocurrency-price-feeds-and-valuation",
+    "kind": "source-only-title-input",
+    "text": "Portfolio Rebalancing and Cash Drag Dynamics",
+    "contextText": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit.",
+    "sha256": "b46c800ec3fec0546ceca7a03e565c68f6aab1376b5219ad3aba741fa9cc7316",
+    "assessment": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-053",
+    "location": "published-course-catalog#diversification-and-position-sizing",
+    "kind": "source-only-title-input",
+    "text": "Foundations of Asset Allocation and Position Sizing",
+    "contextText": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit.",
+    "sha256": "eb8c8a0da99bc2069b458e5ecd30b02968f14f95b4e802a6d8844ee2c3d38651",
+    "assessment": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-054",
+    "location": "published-course-catalog#diversification-and-position-sizing",
+    "kind": "source-only-title-input",
+    "text": "Managing Concentration Risk and Portfolio Drift",
+    "contextText": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit.",
+    "sha256": "81e05b06bbbbbf03eec3c60f46b8b3f37a26a9e1c892197bf22204e4d3af39b5",
+    "assessment": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-055",
+    "location": "published-course-catalog#diversification-and-position-sizing",
+    "kind": "source-only-title-input",
+    "text": "Executing Rebalancing with Virtual Cash",
+    "contextText": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit.",
+    "sha256": "fe6a0e765164722f395012bc39fe2b61f4537f594236d634a5efe92dd2a036ca",
+    "assessment": "Current publicly published conditional next-lesson title input; no draft body or destination lesson/quiz review credit.",
+    "runtimeStatus": "Source-only unless independently captured; no real signed-in flow claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-056",
+    "location": "src/components/NewsletterSignup.tsx",
+    "kind": "source-only-authored-state",
+    "text": "Unable to sign up right now.",
+    "contextText": "Source-only generic error; no successful subscription or provider acceptance inferred.",
+    "assessment": "Source-only generic error; no successful subscription or provider acceptance inferred.",
+    "sha256": "08c75e0cdbe24c7c72581951964c40ad9fce5e67590bd193b6a130c916fcb1a7",
+    "runtimeStatus": "Source-only; real newsletter delivery or audio playback not claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-057",
+    "location": "src/components/NewsletterSignup.tsx",
+    "kind": "source-only-authored-state",
+    "text": "Check your inbox for a confirmation email.",
+    "contextText": "Conditional fallback confirmation instruction; signup still needs separate user confirmation. No actual email sent in this audit.",
+    "assessment": "Conditional fallback confirmation instruction; signup still needs separate user confirmation. No actual email sent in this audit.",
+    "sha256": "bee8ebbd82bf039c40631a6a62bbbea90cb2374e6bcd401de6270168142cf9a3",
+    "runtimeStatus": "Source-only; real newsletter delivery or audio playback not claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-058",
+    "location": "src/components/NewsletterSignup.tsx",
+    "kind": "source-only-authored-state",
+    "text": "Please try again later.",
+    "contextText": "Source-only transport/error fallback; real provider lifecycle not exercised.",
+    "assessment": "Source-only transport/error fallback; real provider lifecycle not exercised.",
+    "sha256": "386b9144ee2242027568f26dd82e080a231e52f011e15ddef4b0b3f85a678ccd",
+    "runtimeStatus": "Source-only; real newsletter delivery or audio playback not claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-059",
+    "location": "src/components/NewsletterSignup.tsx",
+    "kind": "source-only-authored-state",
+    "text": "Submitting…",
+    "contextText": "In-progress request label, not a success claim.",
+    "assessment": "In-progress request label, not a success claim.",
+    "sha256": "49195f559e4a9f5b08de63a11b91827883385c819ddd46b0d6f0ec9df8b5e4b0",
+    "runtimeStatus": "Source-only; real newsletter delivery or audio playback not claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-060",
+    "location": "src/components/BackgroundMusic.tsx",
+    "kind": "source-only-authored-state",
+    "text": "Mute background music",
+    "contextText": "Actual authored playing-state control label; no invented Pause label. Source read, playback not exercised here.",
+    "assessment": "Actual authored playing-state control label; no invented Pause label. Source read, playback not exercised here.",
+    "sha256": "7ab70b1caee4c6e9d8673f86568612f4df8108cc7e593eeb54d08bb05eedd6d1",
+    "runtimeStatus": "Source-only; real newsletter delivery or audio playback not claimed."
+  },
+  {
+    "id": "LEARN-SOURCE-061",
+    "location": "src/components/BackgroundMusic.tsx",
+    "kind": "source-only-authored-state",
+    "text": "Mute ambient music · Long Road Ahead · Kevin MacLeod (CC BY 4.0)",
+    "contextText": "Actual authored playing-state title/attribution. Existing shared music provenance retains its own date.",
+    "assessment": "Actual authored playing-state title/attribution. Existing shared music provenance retains its own date.",
+    "sha256": "1b9c0f44f3742b67c07cba478cf1c54f7a3b131ecced81b7fca9cd38353fbbf7",
+    "runtimeStatus": "Source-only; real newsletter delivery or audio playback not claimed."
+  },
+  {
+    "id": "LEARN-IMAGE-WORDS-001",
+    "kind": "manual-image-text",
+    "location": "https://www.thetradehq.com/assets/macro-hero-BIhE6gYh.jpg",
+    "text": "Macro Economics",
+    "contextText": "Macro Economics",
+    "sha256": "782655b750c152ec1b75e30afa2bb201083acbb0904468a3ccf0de3539599360",
+    "imageSHA256": "99703532b588ca1a25b70b1d3d16e12979c81dcd3be13aa000ce306d45ff1dac",
+    "readingBasis": "Actual visual inspection, manually transcribed legible words; not OCR or inferred garbled glyphs."
+  },
+  {
+    "id": "LEARN-IMAGE-WORDS-002",
+    "kind": "manual-image-text",
+    "location": "https://www.thetradehq.com/tradehq-preview-2026.png",
+    "text": "TradeHQ; Learn Trading. Use Virtual Cash.; Practice stocks, crypto, ETFs, forex & commodities with $100,000 virtual cash. No signup. No real money.; Start Trading Free; Explore Platform; Example interface; Practice portfolio; Market-order practice; Buy; Sell; Virtual cash; $100,000; Practice assets;170; Illustrative interface · Virtual money only.",
+    "contextText": "TradeHQ; Learn Trading. Use Virtual Cash.; Practice stocks, crypto, ETFs, forex & commodities with $100,000 virtual cash. No signup. No real money.; Start Trading Free; Explore Platform; Example interface; Practice portfolio; Market-order practice; Buy; Sell; Virtual cash; $100,000; Practice assets;170; Illustrative interface · Virtual money only.",
+    "sha256": "1dac3fd75fdffd5bb754bb61d563890864aed1eaf3402b1fc519414ced543121",
+    "imageSHA256": "9f5bb8c2a8c07fd7d91f1792e4d70b7cc2d73ed9293256032fa3e7c8f51ccf3a",
+    "readingBasis": "Actual visual inspection, manually transcribed legible words; not OCR or inferred garbled glyphs."
+  }
+]

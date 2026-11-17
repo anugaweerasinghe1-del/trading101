@@ -1,0 +1,39 @@
+{
+  "recordedAtUTC": "2026-11-17T03:22:01.208760+00:00",
+  "scope": "Explicit provenance clarification; original helper receipts kept unchanged. Candidate source files unchanged since the successful release build and loaded-state probe. Final preview/production probes must receive their exact SHA explicitly.",
+  "receipts": [
+    {
+      "artifact": "learn-light-local-after.json",
+      "originalArtifactSHA256": "577d216702c7294c6e67db2cefc722d20f9ea30f6ea138a5506d7a5abf7596cb",
+      "originalHelperSourceSHALabel": "c7ec39d6dad1717c241d604e0282b51c654ce229",
+      "correctMeaning": "Baseline production/source revisionc7; actual execution was the compiled local candidate, not a claim that fixes were deployed atc7. URL field already identifies loopback.",
+      "candidateSourceHashesAttachedAtUTC": "2026-11-17T03:22:01.208760+00:00",
+      "candidateSourceHashes": {
+        "src/pages/Learn.tsx": "1dd565dada3343b1bc6b22757e980b33739e07c291009cb16dbc1ce9ea168e57",
+        "src/lib/coursesData.ts": "0544d2ed6251409dd53cca1be1c0265160fbda36839cfa3e69a49d3c0598ac02"
+      }
+    },
+    {
+      "artifact": "learn-light-local-final.json",
+      "originalArtifactSHA256": "b10512c4989aab5972899a3ff3e091dca5c0810c7e91828f2e1b1c64fff4fc6c",
+      "originalHelperSourceSHALabel": "c7ec39d6dad1717c241d604e0282b51c654ce229",
+      "correctMeaning": "Baseline production/source revisionc7; actual execution was the compiled local candidate, not a claim that fixes were deployed atc7. URL field already identifies loopback.",
+      "candidateSourceHashesAttachedAtUTC": "2026-11-17T03:22:01.208760+00:00",
+      "candidateSourceHashes": {
+        "src/pages/Learn.tsx": "1dd565dada3343b1bc6b22757e980b33739e07c291009cb16dbc1ce9ea168e57",
+        "src/lib/coursesData.ts": "0544d2ed6251409dd53cca1be1c0265160fbda36839cfa3e69a49d3c0598ac02"
+      }
+    },
+    {
+      "artifact": "learn-light-local-loaded-final.json",
+      "originalArtifactSHA256": "49c8d2632c4e950002d9829a65fa3d023f72f141546bca3626df3c3dfce1301a",
+      "originalHelperSourceSHALabel": "c7ec39d6dad1717c241d604e0282b51c654ce229",
+      "correctMeaning": "Baseline production/source revisionc7; actual execution was the compiled local candidate, not a claim that fixes were deployed atc7. URL field already identifies loopback.",
+      "candidateSourceHashesAttachedAtUTC": "2026-11-17T03:22:01.208760+00:00",
+      "candidateSourceHashes": {
+        "src/pages/Learn.tsx": "1dd565dada3343b1bc6b22757e980b33739e07c291009cb16dbc1ce9ea168e57",
+        "src/lib/coursesData.ts": "0544d2ed6251409dd53cca1be1c0265160fbda36839cfa3e69a49d3c0598ac02"
+      }
+    }
+  ]
+}
