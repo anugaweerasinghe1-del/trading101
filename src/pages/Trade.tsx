@@ -419,7 +419,7 @@ export default function Trade() {
               {
                 question: "Is the TradeHQ trading simulator free to use?",
                 answer:
-                  "Yes. TradeHQ gives every user $100,000 in virtual cash with no signup, no credit card, and no hidden fees. (Educational simulation only — not financial advice.)",
+                  "Yes. TradeHQ lets guests practise with $100,000 in virtual cash without signup or a credit card. There are no real-money charges; simulated buy and sell orders include a 0.1% virtual transaction fee. (Educational simulation only — not financial advice.)",
               },
               {
                 question: "Are the prices on the trading simulator real?",
@@ -439,7 +439,7 @@ export default function Trade() {
               {
                 question: "How do I start practice trading?",
                 answer:
-                  "Pick any asset from the grid above, click it to open the trading terminal, set your order size and click Buy or Sell. Your portfolio updates instantly and is saved to your browser.",
+                  "Choose an asset from the market cards or asset selector, set a virtual order size, then select Buy or Sell. Guest orders are stored in this browser; signed-in account orders and cash/positions are server-recorded when the service is available.",
               },
             ]}
           />
