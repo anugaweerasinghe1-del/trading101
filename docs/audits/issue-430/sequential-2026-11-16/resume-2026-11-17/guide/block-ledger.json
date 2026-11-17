@@ -4987,7 +4987,10 @@
       "disposition": "NO NEW CONTENT ERROR FOUND",
       "evidence": "fresh-second-capture.json, full body reread after source/calculation crosscheck by same assistant",
       "reason": "Fresh complete body reread: hypothetical fee loss40.96/gain38.96 and expectancy30 recomputed; rate/deduction/contribution timing match calculator source and separate closed form; sample ticker/sentiment disclose invented data; practice limitations avoid future-performance promise. Text judgment does not close presentation defect before deployment."
-    }
+    },
+    "findingIds": [
+      "STRICT-GUIDE-001"
+    ]
   },
   {
     "id": "STRICT-0008-BLOCK-0115",
@@ -5116,7 +5119,10 @@
       "disposition": "NO NEW CONTENT ERROR FOUND",
       "evidence": "fresh-second-capture.json, full body reread after source/calculation crosscheck by same assistant",
       "reason": "Fresh complete body reread: hypothetical fee loss40.96/gain38.96 and expectancy30 recomputed; rate/deduction/contribution timing match calculator source and separate closed form; sample ticker/sentiment disclose invented data; practice limitations avoid future-performance promise. Text judgment does not close presentation defect before deployment."
-    }
+    },
+    "findingIds": [
+      "STRICT-GUIDE-001"
+    ]
   },
   {
     "id": "STRICT-0008-BLOCK-0118",
@@ -5286,7 +5292,10 @@
       "disposition": "NO NEW CONTENT ERROR FOUND",
       "evidence": "fresh-second-capture.json, full body reread after source/calculation crosscheck by same assistant",
       "reason": "Fresh complete body reread: hypothetical fee loss40.96/gain38.96 and expectancy30 recomputed; rate/deduction/contribution timing match calculator source and separate closed form; sample ticker/sentiment disclose invented data; practice limitations avoid future-performance promise. Text judgment does not close presentation defect before deployment."
-    }
+    },
+    "findingIds": [
+      "STRICT-GUIDE-001"
+    ]
   },
   {
     "id": "STRICT-0008-BLOCK-0122",
@@ -16399,7 +16408,10 @@
     "pass2": {
       "status": "PENDING",
       "reason": "No complete second pass on added menu/clipboard occurrences yet."
-    }
+    },
+    "findingIds": [
+      "STRICT-GUIDE-001"
+    ]
   },
   {
     "id": "STRICT-0008-BLOCK-0525",
@@ -16456,7 +16468,10 @@
     "pass2": {
       "status": "PENDING",
       "reason": "No complete second pass on added menu/clipboard occurrences yet."
-    }
+    },
+    "findingIds": [
+      "STRICT-GUIDE-001"
+    ]
   },
   {
     "id": "STRICT-0008-BLOCK-0528",
@@ -16532,7 +16547,10 @@
     "pass2": {
       "status": "PENDING",
       "reason": "No complete second pass on added menu/clipboard occurrences yet."
-    }
+    },
+    "findingIds": [
+      "STRICT-GUIDE-001"
+    ]
   },
   {
     "id": "STRICT-0008-BLOCK-0532",
@@ -21061,6 +21079,1188 @@
     "pass2": {
       "status": "PENDING",
       "reason": "Separate skeptical reread/crosscheck of all card alternatives not completed."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0763",
+    "text": "Beginner Trading Practice Guide | TradeHQ",
+    "sha256": "46854dda8454de173f73551ae3ee10dd508ffbbeb1d482580898ebacc10b2124",
+    "location": "head:title",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0764",
+    "text": "https://www.thetradehq.com/learn-trading-guide",
+    "sha256": "71167c0b990a748989fa64d56a64f02b2cd21aef9547dc7e9555d44c4cf9b786",
+    "location": "head:canonical",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0765",
+    "text": "width=device-width, initial-scale=1.0",
+    "sha256": "ede110c10283e66095fb9d4aae5c93d782b368cde15a194377d5453d5aeea9cf",
+    "location": "head:meta:viewport",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0766",
+    "text": "TradeHQ",
+    "sha256": "92012547c43025dde3af449481fb4b93da9063123a3fe4445d9a0db75c35fa18",
+    "location": "head:meta:author",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0767",
+    "text": "ca-pub-4160578126993254",
+    "sha256": "350fafb6cd030106e2a5565e8048d47bb3c96e4ac626c6f6ea82c2c1e840334f",
+    "location": "head:meta:google-adsense-account",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0768",
+    "text": "I9Z6Vo-t00zuqHRrR_RFgAZ14hsA5YzA0gHeK2POL-I",
+    "sha256": "a4a8c886baf1b96b50d3a70005e9a1830ba848030f65b84b9fd48e5f7b270c3f",
+    "location": "head:meta:google-site-verification",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0769",
+    "text": "wfxqgl9e278vAqA_wBc3C8b_nxqZ-bauE-8-8G86kJk",
+    "sha256": "2942834408e9feeb7389bc53553aca9720da2ec8f86b78bddb86293416999d5d",
+    "location": "head:meta:google-site-verification",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0770",
+    "text": "#0A0A0F",
+    "sha256": "f00afb959e3ffa81f726e8e2be278714b598806073a415c2bcfa7df5229e34fe",
+    "location": "head:meta:theme-color",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0771",
+    "text": "Study market mechanics, decision-making and hypothetical portfolio calculations with virtual cash. Simulated results do not predict investment outcomes.",
+    "sha256": "416abf7341ff566c899526782ce81e063efac4464b2c1a8646364e917af53bce",
+    "location": "head:meta:description",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0772",
+    "text": "index, follow",
+    "sha256": "4d2e338f8c5076a186364444af652746cee59ca87f143dc888aa9d890fa53309",
+    "location": "head:meta:robots",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0773",
+    "text": "https://schema.org",
+    "sha256": "32d2edc5b773e7139ba93f6b7f51b01ec01681fd4e0ec39922b76d81a8dba64a",
+    "location": "head:schemas[0].@context",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0774",
+    "text": "SoftwareApplication",
+    "sha256": "7fa408a1d90f66966c6706749a532665b93696afdddd9b4f6e44a8065e6c9cef",
+    "location": "head:schemas[0].@type",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0775",
+    "text": "TradeHQ",
+    "sha256": "92012547c43025dde3af449481fb4b93da9063123a3fe4445d9a0db75c35fa18",
+    "location": "head:schemas[0].name",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0776",
+    "text": "FinanceApplication",
+    "sha256": "05256daec5bc767361b67305e9306d6e4adbf45dd0f8c4eb3a6761168cb3cffc",
+    "location": "head:schemas[0].applicationCategory",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0777",
+    "text": "Web Browser",
+    "sha256": "649891a23a1c2f16bd1d4e051923188d9eafc52363f5f98df3bc8091766fdcc5",
+    "location": "head:schemas[0].operatingSystem",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0778",
+    "text": "Offer",
+    "sha256": "0cf57c63eb976556a273198f34e8816a586471aefa434f80dab8b77667c0a981",
+    "location": "head:schemas[0].offers.@type",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0779",
+    "text": "0",
+    "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+    "location": "head:schemas[0].offers.price",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0780",
+    "text": "USD",
+    "sha256": "a26cdf3a6e709124385d4d7eb9bff6b897a58ed5597fbab779b89849dbe81b21",
+    "location": "head:schemas[0].offers.priceCurrency",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0781",
+    "text": "Free paper trading simulator with $100,000 virtual cash for stocks, crypto, ETFs, forex and commodities.",
+    "sha256": "85bebbe5a58b290d4c379e8cfa96721c897a5900a02a0e3365a3dee9d3f44303",
+    "location": "head:schemas[0].description",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0782",
+    "text": "$100,000 virtual trading capital",
+    "sha256": "528a9cd01f7ff820e330149c84746a0ec6ea72229582ebd4ca2d2b4c6e416f56",
+    "location": "head:schemas[0].featureList[0]",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0783",
+    "text": "170 simulated practice assets (stocks, crypto, ETFs, forex, commodities)",
+    "sha256": "723bff62966208f5af5360d415b523a97a595cb0b73ec6f08ce4c793a235b49a",
+    "location": "head:schemas[0].featureList[1]",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0784",
+    "text": "Rule-based educational mentor",
+    "sha256": "70446a45b0fd0fc6ba01355cbc4eb4e9cd305b41ae7c561cac033a5057a4d3b3",
+    "location": "head:schemas[0].featureList[2]",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0785",
+    "text": "Portfolio performance tracking",
+    "sha256": "aa37c528d0101e7d3940990731505a32e6b32f4c006a2d4b028b9bc4751399c7",
+    "location": "head:schemas[0].featureList[3]",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0786",
+    "text": "Leaderboard competition",
+    "sha256": "128353530785f90749aac3c2416ad8dbac0ab8db0169296334db407ea5a53863",
+    "location": "head:schemas[0].featureList[4]",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0787",
+    "text": "Technical analysis indicators",
+    "sha256": "abecf0ec7a11dc1f7bf8efea023425cf14a4fc03ca2aed3dc3f3ea77f81ae848",
+    "location": "head:schemas[0].featureList[5]",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0788",
+    "text": "market education hub",
+    "sha256": "27f14394e905acad15a28cb5daf93a30bdd2783de95034bb69e12b331174a2c9",
+    "location": "head:schemas[0].featureList[6]",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0789",
+    "text": "https://www.thetradehq.com/",
+    "sha256": "dec8d3a5d0e28d9e0a445df9a5a192a5b9302277b9d08f59252b1a91311ddcc5",
+    "location": "head:schemas[0].url",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0790",
+    "text": "Person",
+    "sha256": "6007db63e18e532c7399975ed77d2e3900810aa75cad165b8d2e5d8b08085c3d",
+    "location": "head:schemas[0].author.@type",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0791",
+    "text": "Anuga Weerasinghe",
+    "sha256": "c668f0cd21167158a3dfca5fc158cca432040deb119efb4ffe158cbf23849ac9",
+    "location": "head:schemas[0].author.name",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0792",
+    "text": "https://www.thetradehq.com/about",
+    "sha256": "62130ab54e2652443778c6ad1fbcec12928fd1fe81a7839e7666be05dd057f4a",
+    "location": "head:schemas[0].author.url",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0793",
+    "text": "Organization",
+    "sha256": "d764d42592fc968709b4c6c25c6e6b77919295dfce2c57ead02bedac5ddb3218",
+    "location": "head:schemas[0].publisher.@type",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0794",
+    "text": "TradeHQ",
+    "sha256": "92012547c43025dde3af449481fb4b93da9063123a3fe4445d9a0db75c35fa18",
+    "location": "head:schemas[0].publisher.name",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0795",
+    "text": "https://www.thetradehq.com/",
+    "sha256": "dec8d3a5d0e28d9e0a445df9a5a192a5b9302277b9d08f59252b1a91311ddcc5",
+    "location": "head:schemas[0].publisher.url",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0796",
+    "text": "https://schema.org",
+    "sha256": "32d2edc5b773e7139ba93f6b7f51b01ec01681fd4e0ec39922b76d81a8dba64a",
+    "location": "head:schemas[1].@context",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0797",
+    "text": "EducationalOrganization",
+    "sha256": "1bc0c8250c2797d6fed42a2c0dc9e8a865c4d8b9e4290b85bb7d0cf410b3de88",
+    "location": "head:schemas[1].@type",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0798",
+    "text": "TradeHQ",
+    "sha256": "92012547c43025dde3af449481fb4b93da9063123a3fe4445d9a0db75c35fa18",
+    "location": "head:schemas[1].name",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0799",
+    "text": "https://www.thetradehq.com/",
+    "sha256": "dec8d3a5d0e28d9e0a445df9a5a192a5b9302277b9d08f59252b1a91311ddcc5",
+    "location": "head:schemas[1].url",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0800",
+    "text": "https://www.thetradehq.com/logo.png",
+    "sha256": "a8432f6b05588cee15a827a50fbc8541f36ae9cd7893b982941d41531d024ff9",
+    "location": "head:schemas[1].logo",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0801",
+    "text": "Interactive financial education platform teaching stock trading, crypto investment, and portfolio management through interactive simulation.",
+    "sha256": "a17a56e8ba49ecea812f1b8d7be350b4fab1038211550f9bc5e59955f324384d",
+    "location": "head:schemas[1].description",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0802",
+    "text": "Worldwide",
+    "sha256": "42605c01fa5d32a525bcc31c1e8956e6c63b39b4eff36a5ebf7d7045b2988f65",
+    "location": "head:schemas[1].areaServed",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0803",
+    "text": "Stock Trading",
+    "sha256": "18e2ab323b1750d305b2391ab2edca405d3f8cb3b4ccacdb925162d9f65c01d3",
+    "location": "head:schemas[1].teaches[0]",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0804",
+    "text": "Cryptocurrency Investment",
+    "sha256": "3ee697360862d70302634ab62106024342bd70f0cf4fe773cad02704ee272dbf",
+    "location": "head:schemas[1].teaches[1]",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0805",
+    "text": "Technical Analysis",
+    "sha256": "48b556e5ce67f3eddce62dc9f43495a7386168de6bec96b128182cfec13540c8",
+    "location": "head:schemas[1].teaches[2]",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0806",
+    "text": "Risk Management",
+    "sha256": "c463ddb110dfd2bdaa0972c85de17bb13b8f4f19d83b39b9da1af6fbf1e6272c",
+    "location": "head:schemas[1].teaches[3]",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0807",
+    "text": "Portfolio Diversification",
+    "sha256": "de1a13fbab80244a91f673ee528a4fff2eb7705016a386e0fb3bfbad1ca3b1bd",
+    "location": "head:schemas[1].teaches[4]",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0808",
+    "text": "Asset Class Allocation",
+    "sha256": "12e21980506a97981c5768741f0347fa8ed50d737bd6f36513088bbfd04115a9",
+    "location": "head:schemas[1].teaches[5]",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0809",
+    "text": "https://schema.org",
+    "sha256": "32d2edc5b773e7139ba93f6b7f51b01ec01681fd4e0ec39922b76d81a8dba64a",
+    "location": "head:schemas[2].@context",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0810",
+    "text": "TechArticle",
+    "sha256": "c243bdc5e0040ee1d6a05d74b95f5b924c4e0f18fedc04219b06f027722b02cb",
+    "location": "head:schemas[2].@type",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0811",
+    "text": "Beginner Trading Practice Guide",
+    "sha256": "b5233a459a60aff56a32593b25ebf99d4d28c382cbdb1001ce9c9589e7a57830",
+    "location": "head:schemas[2].headline",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0812",
+    "text": "Study order mechanics, risk examples and simulator limitations using virtual cash.",
+    "sha256": "48481bba0f00bf1d40e5cab25f6d321a56c5ebe74b0e9ebc4b3a3ef2f7d0f3b4",
+    "location": "head:schemas[2].description",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0813",
+    "text": "Organization",
+    "sha256": "d764d42592fc968709b4c6c25c6e6b77919295dfce2c57ead02bedac5ddb3218",
+    "location": "head:schemas[2].author.@type",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0814",
+    "text": "TradeHQ",
+    "sha256": "92012547c43025dde3af449481fb4b93da9063123a3fe4445d9a0db75c35fa18",
+    "location": "head:schemas[2].author.name",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0815",
+    "text": "https://www.thetradehq.com/og-image.jpg",
+    "sha256": "9e3f9d96c6e972a780aae13a5d54bd612d1b33102f8c7d4fe37c3171554b0ffc",
+    "location": "head:schemas[2].image",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [
+      "STRICT-GUIDE-002"
+    ],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "CONFIRMED PRODUCT ERROR",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0816",
+    "text": "https://schema.org",
+    "sha256": "32d2edc5b773e7139ba93f6b7f51b01ec01681fd4e0ec39922b76d81a8dba64a",
+    "location": "head:schemas[3].@context",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0817",
+    "text": "FAQPage",
+    "sha256": "3fa680a3b75b02b051a88c3a6fa1e2cf18ca4fc26da67c8acf4bee9f6e96876c",
+    "location": "head:schemas[3].@type",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0818",
+    "text": "Question",
+    "sha256": "289aff12b04274cb04b8f7dbf486ba8b3528c6fd16b60b9a31d31ce23b339236",
+    "location": "head:schemas[3].mainEntity[0].@type",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0819",
+    "text": "How do I start trading with no money?",
+    "sha256": "e3136d983eb0aab9d96aa9d1bc919409ceb737b699e235b434a9302bffac10ad",
+    "location": "head:schemas[3].mainEntity[0].name",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0820",
+    "text": "Answer",
+    "sha256": "b2a3aa602762a782e47a4f8e93bb5ae1b8819d1b92b7e6ceb3ef46a3c7077eb0",
+    "location": "head:schemas[3].mainEntity[0].acceptedAnswer.@type",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
+    }
+  },
+  {
+    "id": "STRICT-0008-BLOCK-0821",
+    "text": "One learning exercise is to use a simulator such as TradeHQ to study order entry and portfolio changes with $100,000 in virtual cash. Practice outcomes do not establish readiness for real trading.",
+    "sha256": "90ec4e4074265c6af6754d4e783a5b60de0003adede8af36cc6098e1102abab8",
+    "location": "head:schemas[3].mainEntity[0].acceptedAnswer.text",
+    "source": "index.html shared head/schema; LearnTradingGuide.tsx TechArticle/FAQ schema; captured hydrated head-review.json",
+    "captures": [
+      "head-review.json"
+    ],
+    "findingIds": [],
+    "pass1": {
+      "status": "REVIEWED",
+      "disposition": "NO ISSUE FOUND IN CAPTURED VALUE",
+      "reason": "Read exact metadata/schema values against authored source. Initial and hydrated descriptions differ in accurate scope, not a reproduced false claim. Original article image404 is separately logged and corrected;170 assets independently imported. Verification tags do not prove account approval."
+    },
+    "pass2": {
+      "status": "PENDING",
+      "reason": "Await fresh deployed head comparison and complete second metadata pass."
     }
   }
 ]
