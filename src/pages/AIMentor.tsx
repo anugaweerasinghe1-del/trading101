@@ -268,7 +268,7 @@ export default function AIMentor() {
               {
                 question: "Is the Learning Mentor free?",
                 answer:
-                  "Yes — it is included free with every TradeHQ account, no signup or payment required.",
+                  "Yes. You can use the Learning Mentor for free without creating an account or making a payment. Signed-in learners can use it too.",
               },
               {
                 question: "What questions should I ask?",
