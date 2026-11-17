@@ -16363,8 +16363,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 1: By accessing and using TradeHQ (\"the Service\"), you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the Service.",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "The acceptance clause is an express publisher condition, not evidence of professional advice or regulatory approval. Legal enforceability is unverified.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "25ffef641b38c190edd9f2cc33c7a976b807a000eb6f7d35e5fb854e87f2746d"
     },
     {
@@ -16374,8 +16375,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 1: TradeHQ is a trading simulation platform for educational purposes only. No real money is involved, and no actual financial transactions occur.",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Educational simulation describes virtual orders, not custody, deposits or real transactions. Read against the critical notice.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "6fdbd713b55fbf1d33a283d35aa9923e7bf990d5f6046f6e579e0d76963b69b3"
     },
     {
@@ -16385,8 +16387,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 2: SIMULATION ONLY: TradeHQ is a market simulation platform. All trades are executed with virtual currency only. No real money is at risk, and no actual securities transactions occur.",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Virtual-currency-only notice is clear about the absence of securities execution.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "6b804ab38db9fec3c7fcc292c203865ccbe9fd4a4ac6701f73856d4bbcfbaec7"
     },
     {
@@ -16396,8 +16399,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 2: NOT FINANCIAL ADVICE: Nothing on TradeHQ constitutes financial, investment, legal, or tax advice. We do not recommend any particular investment strategy or security.",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "No-advice disclosure names financial, investment, legal and tax advice and avoids an asset recommendation.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "4bcd382ccff314f40072adc5592d8c546867dcec652a86486f7ed8ffec7e7580"
     },
     {
@@ -16407,8 +16411,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 2: NO GUARANTEES: Past performance in our simulation does not guarantee future real-world results. Market simulations may not accurately reflect actual market conditions.",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Hypothetical performance is explicitly not a guarantee and market conditions may differ.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "d0bf071e00918ece9846b6c3ef33fce5099636680e890a69a12b8528bd540120"
     },
     {
@@ -16418,8 +16423,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 2: EDUCATIONAL PURPOSE: TradeHQ is designed solely for educational and entertainment purposes. Users should consult qualified financial advisors before making real investment decisions.",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Education/entertainment purpose is followed by a qualified-adviser referral for real decisions.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "5b06f238b5ca3f0c941301c82197161b699c03d550c4e5784c1903dea90ee378"
     },
     {
@@ -16429,8 +16435,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 3: When using TradeHQ, you agree to:",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Introductory text attaches the following bullets to user responsibilities.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "09136af42813d2de688deb632f550cabf3e55d23d44f999db9bbc90a3fd11acb"
     },
     {
@@ -16440,8 +16447,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 3: • Use the Service only for lawful purposes",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Requires lawful use; it does not instruct users to evade law.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "64ef9a4c8094475faa5bb1e9982dda6bf5757e50cbd3a9dd288cb67dc8399583"
     },
     {
@@ -16451,8 +16459,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 3: • Not attempt to manipulate or disrupt the simulation",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Prohibits disruption/manipulation of the simulator.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "6c014449aaf5667e34a43ea8e7bb1fbd5c00157697fca504ed57f09d7de16e3e"
     },
     {
@@ -16462,8 +16471,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 3: • Not use automated systems or bots without authorization",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Authorization exception is explicit for bots/automation.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "53fce4c50ac5069d4e0340049c2dc25ba989679429410bc8d80b2116973b0dc2"
     },
     {
@@ -16473,8 +16483,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 3: • Not reverse engineer or copy the Service",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Publisher prohibits reverse engineering/copying of its service.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "a5f70c37798528a72126fa9e18a988a788b5395124bdea5f19c6b3641e48ee80"
     },
     {
@@ -16484,8 +16495,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 3: • Not impersonate others or misrepresent your identity",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Prohibits impersonation and identity misrepresentation.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "18060549002823750b3bd47b761bc47e2d7a47cf6cdec696e503a812e355c9da"
     },
     {
@@ -16495,8 +16507,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 3: • Accept that virtual funds have no real monetary value",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Virtual funds have no real monetary value.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "53daef3101386e45f3243d2677b23452f906723684b244c2ffa0a250a613a227"
     },
     {
@@ -16506,8 +16519,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 3: You acknowledge that:",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Introductory acknowledgement labels the following hypothetical/risk/responsibility bullets.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "6ef815b65350f1249ad33ead52f46264e83ac4c8bfc8d4bbfec2bbaf41ff17a4"
     },
     {
@@ -16517,8 +16531,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 3: • Simulated trading results are hypothetical",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Simulation results are expressly hypothetical.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "6fca6c7d6634c2b57f340892afe02ebdefbf8c212b3717073a7ed872082308dd"
     },
     {
@@ -16528,8 +16543,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 3: • Real trading involves substantial risk of loss",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Real trading is described as carrying substantial risk of loss.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "5000d1b597a4258db9b883e50b93f081d7a92b62b9059a7f3f4158928bc9adc7"
     },
     {
@@ -16539,8 +16555,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 3: • You are responsible for your own investment decisions",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Users retain responsibility for real investment choices.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "bd380fec2fba38ddfe073ae5b93b06b3e9993bf6a3710bc9ae5134051d608d48"
     },
     {
@@ -16550,8 +16567,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 4: Users are prohibited from:",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Introduces the list of prohibited activities.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "e927620da62242460273a20f14344979ed86a6ba593bde298937e43cda4d1ac1"
     },
     {
@@ -16561,8 +16579,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 4: • Attempting to exploit bugs or vulnerabilities",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Disallows exploiting bugs/vulnerabilities.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "6c0b4a130093f6655e30fcde3e987896cd8c67e51b973529edf6492c471881b8"
     },
     {
@@ -16572,8 +16591,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 4: • Using the Service for any illegal purpose",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Disallows illegal use.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "82e76e571cbefd79283e764c2128dc21fcbc616aa9acf7f6d293c98dd9f940be"
     },
     {
@@ -16583,8 +16603,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 4: • Distributing malware or harmful code",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Disallows malware/harmful code.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "c88c53c35f18858ff312ab405e3a84bd33144cc7386840845bbdb3062cefdd80"
     },
     {
@@ -16594,8 +16615,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 4: • Scraping data without permission",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Scraping restriction explicitly includes a permission exception.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "450a76baa05b9890586a85ac64d220ef045538a7816049c1746eebd16fd8a0c7"
     },
     {
@@ -16605,8 +16627,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 4: • Creating multiple accounts to circumvent limits",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Disallows multiple accounts used to evade limits.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "584a31515187ab0b3c02abea5953e0ccdd23c707bf6156da6dacf24012ee5daf"
     },
     {
@@ -16616,8 +16639,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 4: • Commercial use without written authorization",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Commercial use requires written authorization.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "67ff224f93bfd72dcbefb6952c664cb9b2387103150677c87f79b1c34102ccef"
     },
     {
@@ -16627,8 +16651,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 4: • Misrepresenting TradeHQ or its simulation as real trading",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Disallows presenting simulated activity as real trading.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "2300aba543e3b9fbcfc14246acdfe6f14033b27f020d1a083c7d3653d96b73b4"
     },
     {
@@ -16638,8 +16663,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 5: TradeHQ reserves the right to:",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Introduces reserved service-change rights.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "8e86bb4c18c4daa8d9aed989544ce39d7ba1d46a97f13bc94a4cac03f63af1a4"
     },
     {
@@ -16649,8 +16675,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 5: • Modify or discontinue the Service at any time",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "States a reserved right to modify/discontinue service.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "b78b1914d7142abd7bddb51faedb9af26e6ed617f36ef30ae7f0fd41d71e8edc"
     },
     {
@@ -16660,8 +16687,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 5: • Change these Terms with reasonable notice",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Terms changes are qualified by reasonable notice.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "1e2e8bf3fa3f578391cbc0cb65112b66ce8955bb8c433f98975d4c2287c179dd"
     },
     {
@@ -16671,8 +16699,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 5: • Reset virtual portfolios and trading data",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Reserves resets of virtual portfolios/data as a term of use.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "3216632a68e994ab1bb9785898f9dc76f9ec841f4296d91a2eb00746e1c43bad"
     },
     {
@@ -16682,8 +16711,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 5: • Update simulation parameters and asset availability",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Reserves changes to simulator parameters and asset availability.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "b63b43f5ea2a7ac4054f223ac0e70b3fa050c926603cb23b71f4ff8201ef12da"
     },
     {
@@ -16693,8 +16723,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 5: • Limit access to certain features or regions",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Reserves feature/region limits.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "d7b078505e8b65d9a0279cc40e70b054b4377b381ddbf19c2f18a45ac8f2e699"
     },
     {
@@ -16704,8 +16735,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 5: We will make reasonable efforts to notify users of significant changes through the platform.",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Promises reasonable notification efforts, not guaranteed immediate delivery.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "d336331b72ab8c2dbf803096d39d080b8349acc566456acaea558050f4ff80e7"
     },
     {
@@ -16715,8 +16747,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 6: TradeHQ claims rights in its original educational writing, branding, interface contributions and simulation code to the extent those rights belong to its publisher.",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Ownership claim is expressly limited to rights belonging to the publisher.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "925f0b49ec5cb49f8680011b64de3941d94ca49b5509021b026018316ea5232a"
     },
     {
@@ -16726,8 +16759,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 6: Third-party libraries, data, images, music, quotations and user submissions retain their respective owners’ rights and applicable licenses. Inclusion on this site does not transfer their ownership to TradeHQ.",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Third-party libraries/data/images/music/quotes/user submissions retain owners and licenses.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "e3084fc6bed6c63ed2401611c9631d488c2717dd1445b754bec494bc8d281a72"
     },
     {
@@ -16737,8 +16771,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 6: Reuse must respect the applicable rights and license terms. This statement does not override permissions granted by an open-source or other third-party license.",
-      "reasoning": "Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Reuse must respect licenses and the statement expressly preserves open-source/third-party permissions.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "41e795bf4a61e659549ea41aa467c9f3a349366fa6586c22f76c002d92f1f041"
     }
   ],
@@ -22035,8 +22070,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 1: By accessing and using TradeHQ (\"the Service\"), you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the Service.",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Does the general acceptance wording settle the native capacity condition? No; TERMS004 remains an owner decision.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "25ffef641b38c190edd9f2cc33c7a976b807a000eb6f7d35e5fb854e87f2746d"
     },
     {
@@ -22046,8 +22082,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 1: TradeHQ is a trading simulation platform for educational purposes only. No real money is involved, and no actual financial transactions occur.",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Considered whether actual brokerage activity was promised; none in this wording or the simulator description.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "6fdbd713b55fbf1d33a283d35aa9923e7bf990d5f6046f6e579e0d76963b69b3"
     },
     {
@@ -22057,8 +22094,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 2: SIMULATION ONLY: TradeHQ is a market simulation platform. All trades are executed with virtual currency only. No real money is at risk, and no actual securities transactions occur.",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "The no-money-at-risk claim is scoped to simulated trades, not real investments made elsewhere.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "6b804ab38db9fec3c7fcc292c203865ccbe9fd4a4ac6701f73856d4bbcfbaec7"
     },
     {
@@ -22068,8 +22106,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 2: NOT FINANCIAL ADVICE: Nothing on TradeHQ constitutes financial, investment, legal, or tax advice. We do not recommend any particular investment strategy or security.",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Strategy education is not itself a personalized recommendation; this disclaimer cannot certify every linked lesson, which stays queued.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "4bcd382ccff314f40072adc5592d8c546867dcec652a86486f7ed8ffec7e7580"
     },
     {
@@ -22079,8 +22118,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 2: NO GUARANTEES: Past performance in our simulation does not guarantee future real-world results. Market simulations may not accurately reflect actual market conditions.",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "No return percentage or guaranteed success is concealed in the warning.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "d0bf071e00918ece9846b6c3ef33fce5099636680e890a69a12b8528bd540120"
     },
     {
@@ -22090,8 +22130,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 2: EDUCATIONAL PURPOSE: TradeHQ is designed solely for educational and entertainment purposes. Users should consult qualified financial advisors before making real investment decisions.",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "No broker referral, payment request or promise that practice assures success appears.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "5b06f238b5ca3f0c941301c82197161b699c03d550c4e5784c1903dea90ee378"
     },
     {
@@ -22101,8 +22142,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 3: When using TradeHQ, you agree to:",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Read together with each actual bullet rather than treating the heading as substantive policy compliance.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "09136af42813d2de688deb632f550cabf3e55d23d44f999db9bbc90a3fd11acb"
     },
     {
@@ -22112,8 +22154,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 3: • Use the Service only for lawful purposes",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "No new assertion about which jurisdictional laws apply is inferred.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "64ef9a4c8094475faa5bb1e9982dda6bf5757e50cbd3a9dd288cb67dc8399583"
     },
     {
@@ -22123,8 +22166,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 3: • Not attempt to manipulate or disrupt the simulation",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "This is an anti-abuse condition, not educational encouragement of market manipulation.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "6c014449aaf5667e34a43ea8e7bb1fbd5c00157697fca504ed57f09d7de16e3e"
     },
     {
@@ -22134,8 +22178,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 3: • Not use automated systems or bots without authorization",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Compared with the corrected commercial-use FAQ, which now preserves this same exception.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "53fce4c50ac5069d4e0340049c2dc25ba989679429410bc8d80b2116973b0dc2"
     },
     {
@@ -22145,8 +22190,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 3: • Not reverse engineer or copy the Service",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Section6 expressly preserves third-party/open-source license permissions; do not read this as overriding those licenses.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "a5f70c37798528a72126fa9e18a988a788b5395124bdea5f19c6b3641e48ee80"
     },
     {
@@ -22156,8 +22202,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 3: • Not impersonate others or misrepresent your identity",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "No demand for new personal identification or changed user permissions is introduced.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "18060549002823750b3bd47b761bc47e2d7a47cf6cdec696e503a812e355c9da"
     },
     {
@@ -22167,8 +22214,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 3: • Accept that virtual funds have no real monetary value",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "No redemption, withdrawal, real deposit or investment profit is offered.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "53daef3101386e45f3243d2677b23452f906723684b244c2ffa0a250a613a227"
     },
     {
@@ -22178,8 +22226,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 3: You acknowledge that:",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Each following statement is considered individually; this prefix adds no financial claim.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "6ef815b65350f1249ad33ead52f46264e83ac4c8bfc8d4bbfec2bbaf41ff17a4"
     },
     {
@@ -22189,8 +22238,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 3: • Simulated trading results are hypothetical",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Consistent with the no-guarantee warning; no live track record is claimed.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "6fca6c7d6634c2b57f340892afe02ebdefbf8c212b3717073a7ed872082308dd"
     },
     {
@@ -22200,8 +22250,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 3: • Real trading involves substantial risk of loss",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Does not invent a universal percentage or say every product loses more than a deposit.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "5000d1b597a4258db9b883e50b93f081d7a92b62b9059a7f3f4158928bc9adc7"
     },
     {
@@ -22211,8 +22262,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 3: • You are responsible for your own investment decisions",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Read alongside no-advice warnings and mandatory-rights qualification; legal effect is not certified.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "bd380fec2fba38ddfe073ae5b93b06b3e9993bf6a3710bc9ae5134051d608d48"
     },
     {
@@ -22222,8 +22274,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 4: Users are prohibited from:",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Following restrictions are publisher conditions, not an AdSense rulebook.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "e927620da62242460273a20f14344979ed86a6ba593bde298937e43cda4d1ac1"
     },
     {
@@ -22233,8 +22286,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 4: • Attempting to exploit bugs or vulnerabilities",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "No actionable exploit instruction or malicious software distribution appears.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "6c0b4a130093f6655e30fcde3e987896cd8c67e51b973529edf6492c471881b8"
     },
     {
@@ -22244,8 +22298,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 4: • Using the Service for any illegal purpose",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Does not establish jurisdiction-specific legal eligibility; owner capacity gate stays unresolved.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "82e76e571cbefd79283e764c2128dc21fcbc616aa9acf7f6d293c98dd9f940be"
     },
     {
@@ -22255,8 +22310,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 4: • Distributing malware or harmful code",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "The prohibited topic is named as a restriction, not promoted or supplied.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "c88c53c35f18858ff312ab405e3a84bd33144cc7386840845bbdb3062cefdd80"
     },
     {
@@ -22266,8 +22322,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 4: • Scraping data without permission",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Matches corrected FAQ and does not ban authorized automation by implication.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "450a76baa05b9890586a85ac64d220ef045538a7816049c1746eebd16fd8a0c7"
     },
     {
@@ -22277,8 +22334,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 4: • Creating multiple accounts to circumvent limits",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Does not prohibit ordinary account access or create a new age requirement.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "584a31515187ab0b3c02abea5953e0ccdd23c707bf6156da6dacf24012ee5daf"
     },
     {
@@ -22288,8 +22346,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 4: • Commercial use without written authorization",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Matches the FAQ permission exception; contact partnership inquiries are requests rather than automatic permission.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "67ff224f93bfd72dcbefb6952c664cb9b2387103150677c87f79b1c34102ccef"
     },
     {
@@ -22299,8 +22358,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 4: • Misrepresenting TradeHQ or its simulation as real trading",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Supports honest financial representation; does not claim simulations predict investment outcomes.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "2300aba543e3b9fbcfc14246acdfe6f14033b27f020d1a083c7d3653d96b73b4"
     },
     {
@@ -22310,8 +22370,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 5: TradeHQ reserves the right to:",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "This clause is publisher wording and does not authorize this audit to reset or delete user data.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "8e86bb4c18c4daa8d9aed989544ce39d7ba1d46a97f13bc94a4cac03f63af1a4"
     },
     {
@@ -22321,8 +22382,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 5: • Modify or discontinue the Service at any time",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Uninterrupted availability is separately disclaimed; enforceability remains a legal matter.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "b78b1914d7142abd7bddb51faedb9af26e6ed617f36ef30ae7f0fd41d71e8edc"
     },
     {
@@ -22332,8 +22394,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 5: • Change these Terms with reasonable notice",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Read with notification-efforts statement and native material-change summary; no notice delivery was tested.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "1e2e8bf3fa3f578391cbc0cb65112b66ce8955bb8c433f98975d4c2287c179dd"
     },
     {
@@ -22343,8 +22406,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 5: • Reset virtual portfolios and trading data",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "No reset, deletion or destructive action was performed, requested or inferred as audit authorization.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "3216632a68e994ab1bb9785898f9dc76f9ec841f4296d91a2eb00746e1c43bad"
     },
     {
@@ -22354,8 +22418,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 5: • Update simulation parameters and asset availability",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "No particular future catalog or performance result is guaranteed.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "b63b43f5ea2a7ac4054f223ac0e70b3fa050c926603cb23b71f4ff8201ef12da"
     },
     {
@@ -22365,8 +22430,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 5: • Limit access to certain features or regions",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "This is not proof that any current restriction or regulator approval exists; no access settings changed.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "d7b078505e8b65d9a0279cc40e70b054b4377b381ddbf19c2f18a45ac8f2e699"
     },
     {
@@ -22376,8 +22442,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 5: We will make reasonable efforts to notify users of significant changes through the platform.",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Private historic notification compliance is unverified; no real messages sent to test this statement.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "d336331b72ab8c2dbf803096d39d080b8349acc566456acaea558050f4ff80e7"
     },
     {
@@ -22387,8 +22454,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 6: TradeHQ claims rights in its original educational writing, branding, interface contributions and simulation code to the extent those rights belong to its publisher.",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Corrected native ownership summary preserves this qualification; whole-repository provenance is not certified.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "925f0b49ec5cb49f8680011b64de3941d94ca49b5509021b026018316ea5232a"
     },
     {
@@ -22398,8 +22466,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 6: Third-party libraries, data, images, music, quotations and user submissions retain their respective owners’ rights and applicable licenses. Inclusion on this site does not transfer their ownership to TradeHQ.",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Inclusion expressly does not transfer ownership; no exclusive TradeHQ claim invented.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "e3084fc6bed6c63ed2401611c9631d488c2717dd1445b754bec494bc8d281a72"
     },
     {
@@ -22409,8 +22478,9 @@
       "reviewerIdentity": "Codex assistant; prior contributor",
       "disposition": "CHECKED-NO-ISSUE",
       "contextChecked": "financial-education: Terms section 6: Reuse must respect the applicable rights and license terms. This statement does not override permissions granted by an open-source or other third-party license.",
-      "reasoning": "Skeptical recheck: considered whether disclaimer repetition concealed an outcome claim, whether ownership wording overrode licenses, or whether an age rule was implied. Owner eligibility remains explicitly unresolved. Simulation/advice/risk statement read in its section and surrounding disclaimers. It promises no investment outcome, executes no real transaction and does not establish a retail loss rate. The leverage statement is qualified by product/protection/rules; no financial arithmetic is asserted.",
+      "reasoning": "Read together with copying/scraping restrictions to avoid a false blanket-license-conflict finding.",
       "findingIds": [],
+      "assessmentBasis": "Individual actual paragraph/bullet wording read and assessed; no automatic detector supplies the judgment.",
       "originalReviewedBlockSHA256": "41e795bf4a61e659549ea41aa467c9f3a349366fa6586c22f76c002d92f1f041"
     }
   ],
@@ -22641,7 +22711,7 @@
   },
   "publicationProjection": {
     "type": "CONTACT-REDACTED",
-    "originalPrivateRecordSHA256": "a03f1c9f64a40e9bfe51c0222225c4a8c4a8e830865148bfcea45acf624ad178",
+    "originalPrivateRecordSHA256": "59715b827bcbc0ff1c99bf00e5578e0d1ef0f50563e43a74cc3db58689c1dea8",
     "originalCapturedBlockIndexSHA256": "9ed5fa6bd751a54582bafd375e45ac5e22eaab0111a8b1c7147e9c8a37f6ebab",
     "redactedBlockCount": 6,
     "originalRawArtifactsRetainedLocally": true,
