@@ -1,0 +1,49 @@
+{
+  "atUTC": "2026-11-17T08:48:20.897821+00:00",
+  "page": "https://www.thetradehq.com/courses",
+  "pass": "skeptical-original-plus-preview",
+  "notFinalProductionClosure": true,
+  "judgments": [
+    {
+      "candidate": "4–6 quiz questions versus4 actual",
+      "result": "FALSE-POSITIVE-REJECTED",
+      "reason": "4 is within the range; current20 bundled and9 published metadata independently have4 questions."
+    },
+    {
+      "candidate": "Four native versus seven hydrated tracks",
+      "result": "FALSE-POSITIVE-REJECTED",
+      "reason": "Native body explicitly scopes4bundled/20lessons and explains additional approved live courses. Native metadata describes that bundled scope; not used to credit full lesson review."
+    },
+    {
+      "candidate": "Intermediate options course offered as a beginner starting point",
+      "result": "NO-CONFIRMED-DEFECT",
+      "reason": "FAQ refers to first fundamentals lesson; course card explicitly warns contracts are intermediate theory and recommends spot practice first. No real/options execution or suitability promise."
+    },
+    {
+      "candidate": "Recall beats rereading",
+      "result": "NO-CONFIRMED-DEFECT",
+      "reason": "APS article supports practice retrieval/distribution as higher-utility techniques under studied conditions; treated as study guidance, not universal personal proficiency or financial success guarantee."
+    },
+    {
+      "candidate": "Free forever",
+      "result": "LIMITATION-RECORDED",
+      "reason": "Publisher promise/current free availability; future business policies cannot independently be proven. No invented subscription change or owner commitment rewrite."
+    },
+    {
+      "candidate": "No sources/quizzes in public catalog RPC",
+      "result": "FALSE-POSITIVE-REJECTED",
+      "reason": "RPC intentionally strips these for catalog projection; read-only published lesson metadata shows actual source/quiz arrays. No absent-content claim from projection."
+    },
+    {
+      "candidate": "Private progress synchronization",
+      "result": "SOURCE-DESIGN-ONLY; ACTUAL-PRIVATE-OPERATIONS-UNVERIFIED",
+      "reason": "Source and isolated regressions support optional design; no real private account flow or user mutation exercised."
+    },
+    {
+      "candidate": "Light course-title hover",
+      "result": "CONFIRMED-COURSES002-SCOPE-EXTENDED",
+      "reason": "Actual screenshot exposed pale settled hover despite earlier un-settled probe. Fresh production400ms timing reproduced. Candidate corrected and rebuilt; final-head CI/native/production still required."
+    }
+  ],
+  "reviewer": "Same Codex assistant/prior contributor, not human or Google reviewer."
+}

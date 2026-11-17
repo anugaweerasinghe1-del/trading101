@@ -1,0 +1,59 @@
+[
+  {
+    "text": "$320,505,899",
+    "width": 115,
+    "scrollWidth": 115,
+    "overflow": "hidden",
+    "whiteSpace": "nowrap",
+    "requestedInitial": 100000000,
+    "requestedMonthly": 1000000,
+    "inputs": [
+      {
+        "id": "compound-initial-capital",
+        "value": "100000000"
+      },
+      {
+        "id": "compound-monthly-add",
+        "value": "1000000"
+      }
+    ]
+  },
+  {
+    "text": "$0",
+    "width": 115,
+    "scrollWidth": 115,
+    "overflow": "hidden",
+    "whiteSpace": "nowrap",
+    "requestedInitial": -1,
+    "requestedMonthly": -1,
+    "inputs": [
+      {
+        "id": "compound-initial-capital",
+        "value": "0"
+      },
+      {
+        "id": "compound-monthly-add",
+        "value": "0"
+      }
+    ]
+  },
+  {
+    "text": "$0",
+    "width": 115,
+    "scrollWidth": 115,
+    "overflow": "hidden",
+    "whiteSpace": "nowrap",
+    "requestedInitial": 0,
+    "requestedMonthly": 0,
+    "inputs": [
+      {
+        "id": "compound-initial-capital",
+        "value": "0"
+      },
+      {
+        "id": "compound-monthly-add",
+        "value": "0"
+      }
+    ]
+  }
+]

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Apply the saved colour scheme before styles and React load to prevent a
+         bright/dark flash and keep the browser's native controls in sync. -->
+    <script>
+      try {
+        if (localStorage.getItem('theme') === 'light') {
+          document.documentElement.classList.add('light');
+        }
+      } catch (_) { /* Storage may be unavailable in private contexts. */ }
+    </script>
+
+    <!-- ULTIMATE TITLE & META (max CTR + ranking) -->
+    <title>Free Trading Courses — Options, Futures, Macro &amp; Psychology | TradeHQ</title>
+    <meta data-static-head name="description" content="Four structured trading courses with original lessons, quizzes and completion badges. Practise concepts with $100,000 virtual cash." />
+
+    <meta name="author" content="TradeHQ" />
+    <meta name="google-adsense-account" content="ca-pub-4160578126993254" />
+    <!-- Advertising requests are disabled pending verified site approval and a
+         reviewed inventory/consent/placement release. The account meta above
+         verifies ownership without executing ad code. Publication of a course
+         never enables ads. Optional analytics consent is a separate choice. -->
+    <meta data-static-head name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="google-site-verification" content="I9Z6Vo-t00zuqHRrR_RFgAZ14hsA5YzA0gHeK2POL-I" />
+    <meta name="google-site-verification" content="wfxqgl9e278vAqA_wBc3C8b_nxqZ-bauE-8-8G86kJk" />
+
+    <!-- PRELOAD CRITICAL RESOURCES (Lighthouse boost) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- CANONICAL: injected per-route by prerender (scripts/prerender.ts).
+         Homepage canonical is added by the prerender pass; do NOT hardcode
+         here or every subroute inherits it and dedupes to the homepage. -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/logo.svg" />
+    <meta name="theme-color" content="#0A0A0F" />
+
+    <!-- OPEN GRAPH (maximum shares) -->
+    <meta data-static-head property="og:type" content="website" />
+    <meta data-static-head property="og:site_name" content="TradeHQ" />
+    <meta data-static-head property="og:url" content="https://www.thetradehq.com/courses" />
+    <meta data-static-head property="og:title" content="Free Trading Courses — Options, Futures, Macro &amp; Psychology | TradeHQ" />
+    <meta data-static-head property="og:description" content="Four structured trading courses with original lessons, quizzes and completion badges. Practise concepts with $100,000 virtual cash." />
+    <meta data-static-head property="og:image" content="https://www.thetradehq.com/tradehq-preview-2026.png?editorial=20261116" />
+    <meta data-static-head property="og:locale" content="en_US" />
+
+    <!-- TWITTER CARD -->
+    <meta data-static-head name="twitter:card" content="summary_large_image" />
+    <meta data-static-head name="twitter:title" content="Free Trading Courses — Options, Futures, Macro &amp; Psychology | TradeHQ" />
+    <meta data-static-head name="twitter:description" content="Four structured trading courses with original lessons, quizzes and completion badges. Practise concepts with $100,000 virtual cash." />
+    <meta data-static-head name="twitter:image" content="https://www.thetradehq.com/tradehq-preview-2026.png?editorial=20261116" />
+
+    <!-- ==================== STRUCTURED DATA (maximum rich results) ==================== -->
+
+    <!-- SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "TradeHQ",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "Free paper trading simulator with $100,000 virtual cash for stocks, crypto, ETFs, forex and commodities.",
+      "featureList": [
+        "$100,000 virtual trading capital",
+        "170 simulated practice assets (stocks, crypto, ETFs, forex, commodities)",
+        "Rule-based educational mentor",
+        "Portfolio performance tracking",
+        "Leaderboard competition",
+        "Technical analysis indicators",
+        "market education hub"
+      ],
+      "url": "https://www.thetradehq.com/",
+      "author": { "@type": "Person", "name": "Anuga Weerasinghe", "url": "https://www.thetradehq.com/about" },
+      "publisher": { "@type": "Organization", "name": "TradeHQ", "url": "https://www.thetradehq.com/" }
+    }
+    </script>
+
+    <!-- EducationalOrganization (kept — gives Google rich education cards) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "TradeHQ",
+      "url": "https://www.thetradehq.com/",
+      "logo": "https://www.thetradehq.com/logo.png",
+      "description": "Interactive financial education platform teaching stock trading, crypto investment, and portfolio management through interactive simulation.",
+      "areaServed": "Worldwide",
+      "teaches": [
+        "Stock Trading",
+        "Cryptocurrency Investment",
+        "Technical Analysis",
+        "Risk Management",
+        "Portfolio Diversification",
+        "Asset Class Allocation"
+      ]
+    }
+    </script>
+
+    <script type="module" crossorigin src="/assets/index-BKHSQQvm.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DllA4li1.css">
+    <link rel="canonical" href="https://www.thetradehq.com/courses" data-static-head />
+  </head>
+
+  <body>
+    <div id="root"><div id="prerender-seo" style="background:#0A0A0F;color:#e6e7ea;font-family:Inter,system-ui,sans-serif;padding:24px;">
+    <nav aria-label="Main"><ul style="display:flex;flex-wrap:wrap;gap:14px;list-style:none;padding:0;"><li><a href="/" style="color:#00E396;">Home</a></li><li><a href="/markets" style="color:#00E396;">Markets</a></li><li><a href="/trade" style="color:#00E396;">Practice desk</a></li><li><a href="/courses" style="color:#00E396;">Courses</a></li><li><a href="/learn" style="color:#00E396;">Learn</a></li><li><a href="/wiki" style="color:#00E396;">Glossary</a></li><li><a href="/how-to-trade" style="color:#00E396;">Asset guides</a></li><li><a href="/strategy" style="color:#00E396;">Strategies</a></li><li><a href="/compare" style="color:#00E396;">Comparisons</a></li><li><a href="/about" style="color:#00E396;">About</a></li><li><a href="/contact" style="color:#00E396;">Contact</a></li></ul></nav>
+    <main><h1>Structured Trading Courses</h1><article data-publisher-notes="/courses" aria-label="Learning and reference notes" style="max-width:820px;margin:0 auto;padding:40px 24px 100px;color:hsl(var(--foreground, 220 10% 80%));line-height:1.7;overflow-wrap:anywhere"><h2 style="font-size:1.6rem;color:hsl(var(--foreground, 220 10% 96%))">Learning notes: Structured Trading Courses</h2><p>Four structured tracks — options, futures, macro reading, and trading psychology — each with quizzes and a completion badge. Practise supported spot instruments with $100,000 in virtual cash; derivatives contract exercises are conceptual.</p><p style="font-size:0.875rem">Published by TradeHQ, created by Anuga Weerasinghe. <a href="/about" style="text-decoration:underline">Publisher background and editorial approach</a>. No independent professional review is claimed; any recorded source-check scope appears on the page.</p><section><h3 style="font-size:1.2rem;margin:28px 0 12px;color:hsl(var(--foreground, 220 10% 96%))">4 bundled tracks, 20 bundled lessons</h3><p>These notes describe the bundled course inventory. Additional approved courses may appear in the live catalogue and its separate course sitemap. Courses on TradeHQ are sequential tracks. Each track states what you will be able to do at the end, what you need to know first, how the lessons build on one another, and who the track is not suitable for. Every lesson ends with key takeaways, cited sources and a short quiz, and each completed track awards a badge.</p></section><section><h3 style="font-size:1.2rem;margin:28px 0 12px;color:hsl(var(--foreground, 220 10% 96%))">Options Trading Fundamentals (Intermediate, 5 lessons)</h3><p>A structured introduction to listed options — from call contracts and the Greeks to defined-risk spread examples. Work through contract payoffs on paper; TradeHQ&#x27;s spot simulator does not execute options contracts.</p><ul style="padding-left:24px"><li>What Is an Option? Calls &amp; Puts Explained — A stock option gives its buyer a contractual right; contract size, exercise style and settlement terms determine what that right involves.</li><li>The Greeks — Delta, Gamma, Theta &amp; Vega — The four Greeks quantify how an option&#x27;s price reacts to stock moves, volatility, and the passage of time.</li><li>Defined-Risk Spreads — Verticals &amp; Iron Condors — Vertical spreads and iron condors illustrate bounded expiration payoffs, with execution and assignment risks to consider.</li><li>Implied Volatility &amp; Trading Around Earnings — Implied volatility is a model-implied input derived from option prices, with limits as a forecast of realised volatility.</li><li>Options Risk Management — Sizing, Rolling &amp; Cutting Losses — Options losses can be amplified by position size, leverage, volatility and time decay. This lesson measures those risks using hypothetical contract examples.</li></ul></section><section><h3 style="font-size:1.2rem;margin:28px 0 12px;color:hsl(var(--foreground, 220 10% 96%))">Futures &amp; Derivatives (Intermediate, 5 lessons)</h3><p>A ground-up guide to exchange-listed futures — how contracts are specified, how margin actually works, why term-structure matters, and how hedgers and speculators interact on the CME.</p><ul style="padding-left:24px"><li>What Is a Futures Contract? — A futures contract is a standardised, exchange-traded agreement to buy or sell a fixed quantity of an asset at a set price on a set future date.</li><li>Margin &amp; Leverage in Futures — Futures margin is collateral for contract obligations. Losses and variation-margin demands can exceed an initial margin deposit.</li><li>Contango &amp; Backwardation — Term Structure Explained — Compare prices across delivery dates and study carrying costs, supply conditions and the assumptions behind rolling exposure.</li><li>Hedging with Futures — The Original Use Case — Hedging is one use of futures. Airlines may hedge fuel, producers may hedge output, and funds may hedge equity beta.</li><li>Micro Futures — Contract Size and Risk — Compare Micro E-mini equity-index contracts with their E-mini counterparts, while checking each product’s specifications and risks.</li></ul></section><section><h3 style="font-size:1.2rem;margin:28px 0 12px;color:hsl(var(--foreground, 220 10% 96%))">Macro Reading for Traders (Intermediate, 5 lessons)</h3><p>An introduction to CPI releases, central-bank decisions, Treasury yields and the dollar index, with exercises for separating observed data from uncertain market interpretations.</p><ul style="padding-left:24px"><li>Reading CPI and Inflation Data — CPI measures selected consumer-price changes. Read the release, its definitions and components without assuming a predictable market response.</li><li>The Fed &amp; FOMC Cycle — How Rates Get Set — The FOMC has eight regularly scheduled meetings a year, and its decisions can affect market expectations.</li><li>The Yield Curve and Recession-Risk Research — Yield-curve inversion has historically been associated with elevated US recession risk, but timing varies and the signal is not a standalone forecast.</li><li>The Dollar Index (DXY) — Reading Currency Context — DXY tracks the dollar against six currencies and offers context for studying currency exposure, with important limits.</li><li>Putting It Together — A Macro Dashboard for Traders — Compare growth, inflation and financial indicators in a documented worksheet, without treating a regime label as a trading instruction.</li></ul></section><section><h3 style="font-size:1.2rem;margin:28px 0 12px;color:hsl(var(--foreground, 220 10% 96%))">Trading Decisions and Behaviour (Beginner, 5 lessons)</h3><p>This educational track examines research on decision biases alongside fictional trading examples. It introduces optional records and checklists that can support reflection, without claiming professional consensus or a link to profitable performance.</p><ul style="padding-left:24px"><li>Cognitive Biases in Trading Decisions — Confirmation bias, anchoring and loss aversion offer ways to examine decisions without assuming a universal emotional response.</li><li>Revenge Trading &amp; Tilt — Recognising Unplanned Decisions — Tilt is the emotional state where a trader tries to recover a loss immediately with larger, unplanned trades.</li><li>A Trading Journal: Observations and Limits — Use a decision record to review assumptions without claiming it proves profitable skill.</li><li>Optional Checklists for Practice Sessions — Prepare and review educational exercises without prescribing a professional routine or profitable outcome.</li><li>Understanding Drawdowns in a Simulation — Calculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions.</li></ul></section><section><h3 style="font-size:1.2rem;margin:28px 0 12px;color:hsl(var(--foreground, 220 10% 96%))">How to work through a track</h3><ul style="padding-left:24px"><li>Do one lesson per session and take the quiz before moving on.</li><li>Practise supported spot instruments with $100,000 of virtual cash. Work through options and futures contract examples in a separate worksheet.</li><li>Re-read the key takeaways a week later; recall beats re-reading for retention.</li><li>Nothing in these courses is a recommendation. Educational simulation only — not financial advice.</li></ul></section><nav aria-label="Learning notes references"><h3 style="font-size:1.2rem;margin-top:28px">References and related pages</h3><ul style="padding-left:24px"><li><a href="/courses/options-trading-fundamentals" style="color:inherit;text-decoration:underline">Options Trading Fundamentals</a></li><li><a href="/courses/futures-and-derivatives" style="color:inherit;text-decoration:underline">Futures &amp; Derivatives</a></li><li><a href="/courses/macro-reading-for-traders" style="color:inherit;text-decoration:underline">Macro Reading for Traders</a></li><li><a href="/courses/trading-psychology-mastery" style="color:inherit;text-decoration:underline">Trading Decisions and Behaviour</a></li></ul></nav><p style="font-size:0.875rem;margin-top:28px">Educational simulation only — not financial advice. Virtual money; no brokerage transactions. Quotes may be delayed, cached, unavailable or fixed simulator values; generated charts are labelled separately. Practice results do not predict investment outcomes.</p></article></main>
+    <footer><ul style="display:flex;flex-wrap:wrap;gap:14px;list-style:none;padding:0;"><li><a href="/about" style="color:#00E396;">About TradeHQ</a></li><li><a href="/contact" style="color:#00E396;">Contact</a></li><li><a href="/privacy" style="color:#00E396;">Privacy policy</a></li><li><a href="/terms" style="color:#00E396;">Terms of service</a></li><li><a href="/whats-new" style="color:#00E396;">What’s New</a></li><li><a href="/roadmap" style="color:#00E396;">Roadmap</a></li><li><a href="/learn/country" style="color:#00E396;">Country guides</a></li></ul></footer>
+  </div></div>
+  <script id="publisher-notes-data" type="application/json">{"path":"/courses","heading":"Structured Trading Courses","summary":"Four structured tracks — options, futures, macro reading, and trading psychology — each with quizzes and a completion badge. Practise supported spot instruments with $100,000 in virtual cash; derivatives contract exercises are conceptual.","sections":[{"h":"4 bundled tracks, 20 bundled lessons","p":["These notes describe the bundled course inventory. Additional approved courses may appear in the live catalogue and its separate course sitemap. Courses on TradeHQ are sequential tracks. Each track states what you will be able to do at the end, what you need to know first, how the lessons build on one another, and who the track is not suitable for. Every lesson ends with key takeaways, cited sources and a short quiz, and each completed track awards a badge."]},{"h":"Options Trading Fundamentals (Intermediate, 5 lessons)","p":["A structured introduction to listed options — from call contracts and the Greeks to defined-risk spread examples. Work through contract payoffs on paper; TradeHQ's spot simulator does not execute options contracts."],"list":["What Is an Option? Calls & Puts Explained — A stock option gives its buyer a contractual right; contract size, exercise style and settlement terms determine what that right involves.","The Greeks — Delta, Gamma, Theta & Vega — The four Greeks quantify how an option's price reacts to stock moves, volatility, and the passage of time.","Defined-Risk Spreads — Verticals & Iron Condors — Vertical spreads and iron condors illustrate bounded expiration payoffs, with execution and assignment risks to consider.","Implied Volatility & Trading Around Earnings — Implied volatility is a model-implied input derived from option prices, with limits as a forecast of realised volatility.","Options Risk Management — Sizing, Rolling & Cutting Losses — Options losses can be amplified by position size, leverage, volatility and time decay. This lesson measures those risks using hypothetical contract examples."]},{"h":"Futures & Derivatives (Intermediate, 5 lessons)","p":["A ground-up guide to exchange-listed futures — how contracts are specified, how margin actually works, why term-structure matters, and how hedgers and speculators interact on the CME."],"list":["What Is a Futures Contract? — A futures contract is a standardised, exchange-traded agreement to buy or sell a fixed quantity of an asset at a set price on a set future date.","Margin & Leverage in Futures — Futures margin is collateral for contract obligations. Losses and variation-margin demands can exceed an initial margin deposit.","Contango & Backwardation — Term Structure Explained — Compare prices across delivery dates and study carrying costs, supply conditions and the assumptions behind rolling exposure.","Hedging with Futures — The Original Use Case — Hedging is one use of futures. Airlines may hedge fuel, producers may hedge output, and funds may hedge equity beta.","Micro Futures — Contract Size and Risk — Compare Micro E-mini equity-index contracts with their E-mini counterparts, while checking each product’s specifications and risks."]},{"h":"Macro Reading for Traders (Intermediate, 5 lessons)","p":["An introduction to CPI releases, central-bank decisions, Treasury yields and the dollar index, with exercises for separating observed data from uncertain market interpretations."],"list":["Reading CPI and Inflation Data — CPI measures selected consumer-price changes. Read the release, its definitions and components without assuming a predictable market response.","The Fed & FOMC Cycle — How Rates Get Set — The FOMC has eight regularly scheduled meetings a year, and its decisions can affect market expectations.","The Yield Curve and Recession-Risk Research — Yield-curve inversion has historically been associated with elevated US recession risk, but timing varies and the signal is not a standalone forecast.","The Dollar Index (DXY) — Reading Currency Context — DXY tracks the dollar against six currencies and offers context for studying currency exposure, with important limits.","Putting It Together — A Macro Dashboard for Traders — Compare growth, inflation and financial indicators in a documented worksheet, without treating a regime label as a trading instruction."]},{"h":"Trading Decisions and Behaviour (Beginner, 5 lessons)","p":["This educational track examines research on decision biases alongside fictional trading examples. It introduces optional records and checklists that can support reflection, without claiming professional consensus or a link to profitable performance."],"list":["Cognitive Biases in Trading Decisions — Confirmation bias, anchoring and loss aversion offer ways to examine decisions without assuming a universal emotional response.","Revenge Trading & Tilt — Recognising Unplanned Decisions — Tilt is the emotional state where a trader tries to recover a loss immediately with larger, unplanned trades.","A Trading Journal: Observations and Limits — Use a decision record to review assumptions without claiming it proves profitable skill.","Optional Checklists for Practice Sessions — Prepare and review educational exercises without prescribing a professional routine or profitable outcome.","Understanding Drawdowns in a Simulation — Calculate declines from a previous portfolio peak and compare hypothetical sizing and recovery assumptions."]},{"h":"How to work through a track","list":["Do one lesson per session and take the quiz before moving on.","Practise supported spot instruments with $100,000 of virtual cash. Work through options and futures contract examples in a separate worksheet.","Re-read the key takeaways a week later; recall beats re-reading for retention.","Nothing in these courses is a recommendation. Educational simulation only — not financial advice."]}],"links":[{"href":"/courses/options-trading-fundamentals","label":"Options Trading Fundamentals"},{"href":"/courses/futures-and-derivatives","label":"Futures & Derivatives"},{"href":"/courses/macro-reading-for-traders","label":"Macro Reading for Traders"},{"href":"/courses/trading-psychology-mastery","label":"Trading Decisions and Behaviour"}]}</script><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1d431bc5969944b4b6489c3d4c788298"}'></script><!-- Cloudflare Pages Analytics --></body>
+</html>

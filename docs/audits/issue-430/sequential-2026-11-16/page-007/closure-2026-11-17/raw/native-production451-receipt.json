@@ -1,0 +1,26 @@
+{
+  "schema": "tradehq-cloudflare-account-observation-v1",
+  "observedAt": "2026-11-17T09:18:51.669Z",
+  "project": "tradehq-preview",
+  "nativeTokenActive": true,
+  "activeProduction": {
+    "id": "f96ebac7-2478-4e06-a853-7e6eb4292cbd",
+    "sha": "fa0b70c0d49db541bf5f87fd5305e8bf8f9bb6f1",
+    "environment": "production",
+    "branch": "main",
+    "status": "success",
+    "createdAt": "2026-11-17T09:08:28.740046Z"
+  },
+  "previousSuccessfulProduction": {
+    "id": "bd423e6b-e8ca-4aee-9f1a-a7032b987720",
+    "sha": "cd47c33b24baeada68dc2da1b4c06b3b78b7dbec",
+    "environment": "production",
+    "branch": "main",
+    "status": "success",
+    "createdAt": "2026-11-17T03:43:18.501164Z"
+  },
+  "sourceGitHubRun": 44052813944,
+  "sourceGitHubJob": 133939929412,
+  "sourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44052813944/job/133939929412",
+  "note": "Native account read-only observation; billing and usage omitted."
+}

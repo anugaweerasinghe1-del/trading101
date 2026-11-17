@@ -698,6 +698,15 @@ textarea:focus-visible {
     color: hsl(var(--destructive));
   }
 
+  /* The calculator retains its dark panel in both themes. */
+  .light .thq-trading-guide .thq-compound-calculator [class~="text-emerald-400"] {
+    color: rgb(52 211 153);
+  }
+
+  .light .thq-trading-guide .thq-compound-calculator [class~="text-red-400"] {
+    color: rgb(248 113 113);
+  }
+
   .light .thq-daily-challenge {
     background: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(169 43% 95%) 100%) !important;
     box-shadow: 0 14px 36px -22px hsl(169 40% 25% / .25) !important;

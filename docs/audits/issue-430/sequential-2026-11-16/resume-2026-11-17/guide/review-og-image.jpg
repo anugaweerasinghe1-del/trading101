@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Apply the saved colour scheme before styles and React load to prevent a
+         bright/dark flash and keep the browser's native controls in sync. -->
+    <script>
+      try {
+        if (localStorage.getItem('theme') === 'light') {
+          document.documentElement.classList.add('light');
+        }
+      } catch (_) { /* Storage may be unavailable in private contexts. */ }
+    </script>
+
+    <!-- ULTIMATE TITLE & META (max CTR + ranking) -->
+    <title>TradeHQ requested page</title>
+    <meta data-static-head name="description" content="Practice stock, crypto, ETF, forex & commodities trading with $100,000 virtual cash. No signup. Rule-based educational mentor, simulated charts, portfolio tracking & 170 assets. Free educational trading simulator.">
+
+    <meta name="author" content="TradeHQ" />
+    <meta name="google-adsense-account" content="ca-pub-4160578126993254" />
+    <!-- Advertising requests are disabled pending verified site approval and a
+         reviewed inventory/consent/placement release. The account meta above
+         verifies ownership without executing ad code. Publication of a course
+         never enables ads. Optional analytics consent is a separate choice. -->
+    
+    <meta name="google-site-verification" content="I9Z6Vo-t00zuqHRrR_RFgAZ14hsA5YzA0gHeK2POL-I" />
+    <meta name="google-site-verification" content="wfxqgl9e278vAqA_wBc3C8b_nxqZ-bauE-8-8G86kJk" />
+
+    <!-- PRELOAD CRITICAL RESOURCES (Lighthouse boost) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- CANONICAL: injected per-route by prerender (scripts/prerender.ts).
+         Homepage canonical is added by the prerender pass; do NOT hardcode
+         here or every subroute inherits it and dedupes to the homepage. -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/logo.svg" />
+    <meta name="theme-color" content="#0A0A0F" />
+
+    <!-- OPEN GRAPH (maximum shares) -->
+    <meta data-static-head property="og:type" content="website" />
+    <meta data-static-head property="og:site_name" content="TradeHQ" />
+    <meta data-static-head property="og:url" content="https://www.thetradehq.com/" />
+    <meta data-static-head property="og:title" content="TradeHQ — Free Paper Trading Simulator | $100K Virtual Cash (No Signup)" />
+    <meta data-static-head property="og:description" content="Practice stocks, crypto, forex & ETFs with $100,000 virtual money. Rule-based mentor + simulated charts. Core simulator features work without signup." />
+    <meta data-static-head property="og:image" content="https://www.thetradehq.com/tradehq-preview-2026.png?editorial=20261116" />
+    <meta data-static-head property="og:locale" content="en_US" />
+
+    <!-- TWITTER CARD -->
+    <meta data-static-head name="twitter:card" content="summary_large_image" />
+    <meta data-static-head name="twitter:title" content="TradeHQ — Free Paper Trading Simulator | $100K Virtual Cash" />
+    <meta data-static-head name="twitter:description" content="Practise stocks & crypto with $100K virtual cash, simulated charts and educational mentor explanations. No real trades." />
+    <meta data-static-head name="twitter:image" content="https://www.thetradehq.com/tradehq-preview-2026.png?editorial=20261116" />
+
+    <!-- ==================== STRUCTURED DATA (maximum rich results) ==================== -->
+
+    <!-- SoftwareApplication -->
+    
+
+    <!-- EducationalOrganization (kept — gives Google rich education cards) -->
+    
+
+    <script type="module" crossorigin src="/assets/index-BABz9bie.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DllA4li1.css">
+  <meta data-static-head name="robots" content="noindex, follow" /></head>
+
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

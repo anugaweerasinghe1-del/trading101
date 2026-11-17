@@ -1,0 +1,9 @@
+{
+  "atUTC": "2026-11-17T09:26:10.529858+00:00",
+  "result": "FAIL; not closure",
+  "errors": [
+    "missing original finding evidence"
+  ],
+  "cause": "Legacy Courses001 had its actual before label in evidence prose but lacked the validator-required beforeText field.",
+  "remedy": "Materialize already-quoted60\u201375min label as exact beforeText, preserve original pre-edit evidence/timestamp and separately dated fresh before capture provenance. Do not weaken validator or invent historical raw bytes."
+}

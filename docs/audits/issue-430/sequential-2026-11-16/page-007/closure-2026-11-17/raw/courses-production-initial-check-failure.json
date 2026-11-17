@@ -1,0 +1,9 @@
+{
+  "atUTC": "2026-11-17T09:22:56.788499+00:00",
+  "result": "FAIL; NOT CREDITED AS PASS",
+  "assertion": "Expected7cards, actual4",
+  "context": "Only the failing probe recorded actual4 versus expected7. Its response/body was not retained, so timing/API cause is not proven. Separate complete final capture has7tracks/29lessons in every captured state;721 records reflect captured occurrences/locations, not proof of a four-to-seven text transition.",
+  "remedy": "Explicitly await7card readiness and record actual RPC response status in a fresh bounded read-only probe. Retain all721 captured occurrences and original failed assertion; no application defect inferred without evidence.",
+  "correctionAtUTC": "2026-11-17T09:24:04.005901+00:00",
+  "originalProvenanceNoteRetained": "courses-production-initial-check-failure-original-note.json"
+}

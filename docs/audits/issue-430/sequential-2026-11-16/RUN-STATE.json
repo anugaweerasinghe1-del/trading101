@@ -1,10 +1,10 @@
 {
-  "updatedAtUTC": "2026-11-17T08:55:45.622272+00:00",
-  "phase": "COURSES-PR451-ATTRIBUTION-CLARIFIED-LOCAL-PASS",
-  "currentPage": "https://www.thetradehq.com/courses",
-  "newAuditCompletedPages": 5,
+  "updatedAtUTC": "2026-11-17T16:10:32.937997+00:00",
+  "phase": "GUIDE-TWO-PRODUCT-DEFECTS-FINAL-HEAD-VALIDATION-PENDING",
+  "currentPage": "https://www.thetradehq.com/learn-trading-guide",
+  "newAuditCompletedPages": 6,
   "publisherPageBaseline": 163,
-  "publisherPagesStillQueued": 158,
+  "publisherPagesStillQueued": 157,
   "totalURLBaseline": 480,
   "totalURLNote": "Discovery union, including nonpublisher/alias/redirect routes requiring reconciliation; not480 completed or unique publisher pages.",
   "priorRemediation": "18/19; Diversification draft6/public3 remains normal owner publication pending. Not19/19.",
@@ -16,18 +16,18 @@
   },
   "closedPageRecord": "https://github.com/anugaweerasinghe1-del/trading101/blob/49c8b29df8aa8eb697c5a991ef152329a7e57eca/docs/audits/issue-430/sequential-2026-11-16/page-001/PAGE-RECORD.json",
   "homepageCodeMergeSHA": "bfb4d0ee904ecce2298a56d81e95ede1fc5891f7",
-  "nativeCloudflareId": "bd423e6b-e8ca-4aee-9f1a-a7032b987720",
+  "nativeCloudflareId": "f96ebac7-2478-4e06-a853-7e6eb4292cbd",
   "reviewer": "Codex assistant; prior contributor; not an independent human or Google reviewer",
   "standaloneModelCallsThisReview": 0,
-  "nextStep": "Push final attribution precision to existing451, verify exact final head CI/preview, normal merge/native production then complete actual reread/coverage. Previous head checks never count for final head.",
+  "nextStep": "PR459 now includes missing schema-image fix. Validate exact updated final head, protected merge, native merged-SHA deployment and fresh live correction checks. P08 remains partial; complete all pending block/source/state/metadata passes before next page.",
   "aboutFindings": {
     "confirmed": 0,
     "qualityRisks": 2,
     "closed": 2
   },
-  "freshReviewTotalClosedCases": 23,
-  "latestClosedPageRecord": "page-006/closure-2026-11-17/PAGE-RECORD.json",
-  "latestCodeMergeSHA": "cd47c33b24baeada68dc2da1b4c06b3b78b7dbec",
+  "freshReviewTotalClosedCases": 26,
+  "latestClosedPageRecord": "page-007/closure-2026-11-17/PAGE-RECORD.json",
+  "latestCodeMergeSHA": "fa0b70c0d49db541bf5f87fd5305e8bf8f9bb6f1",
   "privacyFindings": {
     "confirmedDisclosureGaps": 2,
     "confirmedClosed": 2,
@@ -36,18 +36,18 @@
     "closed": 3
   },
   "production": {
-    "mergeSHA": "cd47c33b24baeada68dc2da1b4c06b3b78b7dbec",
+    "mergeSHA": "fa0b70c0d49db541bf5f87fd5305e8bf8f9bb6f1",
     "nativeCloudflare": {
-      "id": "bd423e6b-e8ca-4aee-9f1a-a7032b987720",
-      "sha": "cd47c33b24baeada68dc2da1b4c06b3b78b7dbec",
+      "id": "f96ebac7-2478-4e06-a853-7e6eb4292cbd",
+      "sha": "fa0b70c0d49db541bf5f87fd5305e8bf8f9bb6f1",
       "environment": "production",
       "branch": "main",
       "status": "success",
-      "createdAt": "2026-11-17T03:43:18.501164Z"
+      "createdAt": "2026-11-17T09:08:28.740046Z"
     },
-    "nativeObservedAtUTC": "2026-11-17T03:53:14.178Z",
-    "receiptSourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44012170553/job/133805120974",
-    "liveRereadAtUTC": "2026-11-17T08:28:01.597261+00:00"
+    "nativeObservedAtUTC": "2026-11-17T09:18:51.669Z",
+    "receiptSourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44052813944/job/133939929412",
+    "liveRereadAtUTC": "2026-11-17T09:25:20.285033+00:00"
   },
   "resumeRestrictions": [
     "Ad serving disabled",
@@ -56,8 +56,8 @@
     "Private operations/account/CMP/owner legal gates remain separate"
   ],
   "latestPR": {
-    "number": 451,
-    "status": "OPEN; updated head local checks passed"
+    "number": 459,
+    "status": "OPEN; updated source requires fresh exact-head checks"
   },
   "checkpointNote": "Recovered main certified2, later unmerged branch counter4 was not inherited; Privacy closure newly validated. Home/About evidence retained unchanged.",
   "termsFindings": {
@@ -81,13 +81,13 @@
     "fixedRechecked": 3,
     "pageStatus": "FIXED-RECHECKED"
   },
-  "publisherPagesRemaining": 158,
+  "publisherPagesRemaining": 157,
   "caseTotals": {
-    "confirmedFixedRechecked": 15,
-    "qualityRisksFixedRechecked": 7,
+    "confirmedFixedRechecked": 17,
+    "qualityRisksFixedRechecked": 8,
     "auxiliaryFixedRechecked": 1,
     "ownerDecisionOpen": 1,
-    "newCasesImplementedThisResume": 5
+    "newCasesImplementedThisResume": 7
   },
   "limitations": [
     "Original Terms historical raw full-body/event timing not recovered; exact pre-edit quotes/source revision retained; not invented.",
@@ -100,11 +100,38 @@
     "closed": 3,
     "record": "page-006/closure-2026-11-17/PAGE-RECORD.json"
   },
-  "candidatePullRequestBranch": "issue-430-courses-reading-time-20261116",
+  "candidatePullRequestBranch": "audit/issue430-resume-20261117",
   "coursesFindings": {
     "confirmed": 2,
     "qualityRisks": 1,
-    "fixedLocally": 3,
-    "closed": 0
+    "fixedRechecked": 3,
+    "closed": 3,
+    "record": "page-007/closure-2026-11-17/PAGE-RECORD.json"
+  },
+  "activeAssignment": {
+    "session": "audit/issue430-resume-20261117",
+    "page": "STRICT-0008",
+    "planComment": "https://github.com/anugaweerasinghe1-del/trading101/issues/430#issuecomment-6953065810"
+  },
+  "guideCoverage": {
+    "publisherPages": 163,
+    "widerDiscoveryURLs": 480,
+    "historicalClosuresRecovered": 6,
+    "newStrictClosuresThisSession": 0,
+    "currentPage": "STRICT-0008",
+    "extractedCapturedTextOccurrences": 713,
+    "pass1ReviewedCapturedOccurrences": 713,
+    "pass2ReviewedCapturedOccurrences": 284,
+    "pageStatus": "PARTIAL-REVIEW",
+    "limitations": [
+      "Text/location/version records overlap;49 source-only card projections add zero glossary-page editorial credit.",
+      "Fresh second pass covers only exactly matched current body occurrences; other menu/quiz/progress/source alternatives remain pending.",
+      "Metadata values were read but have not been fully integrated into this block manifest.",
+      "Social-image bytes, every numerical edge, exact source-line mapping and signed-in navigation not exhausted.",
+      "No unqualified closure claim; product fix release independent of page closure."
+    ],
+    "extractedSourceOnlyAlternatives": 49,
+    "totalRecordedBlocks": 762,
+    "pass1ReviewedSourceOnlyAlternatives": 49
   }
 }
