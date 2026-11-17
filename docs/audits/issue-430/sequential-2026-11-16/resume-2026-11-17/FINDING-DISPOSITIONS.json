@@ -16,5 +16,27 @@
     "status": "FIXED-RECHECKED",
     "policyViolation": false,
     "receipt": "RELEASE-460.json"
+  },
+  "STRICT-GUIDE-004": {
+    "classification": "CONFIRMED PRODUCT OR CONTENT ERROR",
+    "status": "FIXED-LOCAL-RECHECKED-RELEASE-PENDING",
+    "policyViolation": false,
+    "finding": "Toast dismiss button lacked a programmatic name in source, DOM and Chromium accessibility tree.",
+    "beforeEditIssueComment": 6955841776,
+    "evidence": "guide/toast-close-countercheck.json",
+    "remedy": "Default Dismiss notification name, caller override preserved; decorative X hidden from accessibility tree.",
+    "localVerification": "guide/local-credit-toast-credit-toast.json"
+  },
+  "STRICT-HOME-001-GUIDE-EXTENSION": {
+    "rootCase": "STRICT-HOME-001",
+    "classification": "SUBSTANTIATED QUALITY RISK",
+    "status": "FIXED-LOCAL-RECHECKED-RELEASE-PENDING",
+    "newUniqueRootCase": false,
+    "policyViolation": false,
+    "finding": "Guide custom footer omitted existing verified music creator/source/license links. Credits elsewhere prevent an infringement conclusion.",
+    "beforeEditIssueComment": 6955623270,
+    "evidence": "guide/music-credit-extension-before.json",
+    "remedy": "Reuse exact approved shared-footer attribution; no license decision or music bytes changed.",
+    "localVerification": "guide/local-credit-toast-credit-toast.json"
   }
 }

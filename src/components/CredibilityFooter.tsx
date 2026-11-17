@@ -120,6 +120,10 @@ export function CredibilityFooter() {
             all investors. Always conduct your own research and consult a licensed financial professional before making 
             investment decisions. © {new Date().getFullYear()} TradeHQ.
           </p>
+          <p className="mt-3 text-xs text-muted-foreground text-center">
+            Music: <a href="https://incompetech.com/music/royalty-free/?isrc=USUAN1100588" className="underline hover:text-primary">Long Road Ahead by Kevin MacLeod (incompetech.com)</a>
+            {" · "}<a href="https://creativecommons.org/licenses/by/4.0/" className="underline hover:text-primary">Creative Commons Attribution 4.0</a>.
+          </p>
         </div>
       </div>
     </footer>
