@@ -298,7 +298,7 @@ export default function Courses() {
                             <Clock className="w-3 h-3" /> Est. {track.lessons.reduce((minutes, lesson) => minutes + lesson.readingMinutes, 0)} min reading
                           </span>
                         </div>
-                        <h3 className="text-xl font-semibold mb-1 group-hover:text-emerald-300 transition-colors">
+                        <h3 className="text-xl font-semibold mb-1 group-hover:text-emerald-300 [.light_&]:group-hover:text-emerald-800 transition-colors">
                           {track.title}
                         </h3>
                         <p className="text-sm text-muted-foreground mb-4 leading-relaxed">

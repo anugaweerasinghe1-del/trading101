@@ -1,10 +1,11 @@
 {
-  "atUTC": "2026-11-17T08:35:57.307775+00:00",
+  "atUTC": "2026-11-17T08:47:00.430655+00:00",
   "baseProductionSHA": "cd47c33b24baeada68dc2da1b4c06b3b78b7dbec",
-  "build": "Full build:cloudflare and all existing postbuild checks PASS, latest attempt courses-build-final2.log",
-  "typescript": "npx tsc --noEmit -p tsconfig.app.json PASS",
-  "actualLocalBrowser": "7 cards and7 Course workload strings assert actual authored totals44/40/40/41/24/18/15; light warning color assertions rgb146,64,14 PASS",
+  "build": "Full build:cloudflare with all existing postbuild PASS (courses-build-final3.log)",
+  "typescript": "npx tsc --noEmit -p tsconfig.app.json PASS on final stable-hover candidate",
+  "actualLocalBrowser": "7 card/schema pairs match authored sums; both warning colors rgb146,64,14 and settled400ms hover title rgb6,95,70 asserted.",
   "initialRemedyFailure": "First unconfigured light: utility did not change actual color; retained failure, corrected to repository ancestor variant, rebuilt and rechecked.",
-  "candidateSourceSHA256": "e5558937596a34d63325bc45994359f51df7bf2d466af190771c6aa10149b4db",
-  "remaining": "Updated exact-head CI, real preview, normal protected merge, native exact-production receipt, full final live reread and both-pass coverage. Courses not counted yet."
+  "candidateSourceSHA256": "d9a5b41e7a2d503bd0fa502367e95d5b9f482badf1982cfc4b271aeba8d9f028",
+  "remaining": "Updated exact-head CI, real preview, normal protected merge, native exact-production receipt, full final live reread and both-pass coverage. Courses not counted yet.",
+  "skepticalRefinement": "Initial hover probe sampled before transition settled; actual screenshot and fresh settled production probe reproduced pale title. One additional scoped ancestor hover utility fixed same Courses002 case; full rebuild and exact updated-head checks required."
 }

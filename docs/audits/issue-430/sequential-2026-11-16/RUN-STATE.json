@@ -1,6 +1,6 @@
 {
-  "updatedAtUTC": "2026-11-17T08:35:57.307775+00:00",
-  "phase": "COURSES-PR451-UPDATED-LOCAL-PASS",
+  "updatedAtUTC": "2026-11-17T08:47:00.430655+00:00",
+  "phase": "COURSES-PR451-STABLE-HOVER-REFINED-LOCAL-PASS",
   "currentPage": "https://www.thetradehq.com/courses",
   "newAuditCompletedPages": 5,
   "publisherPageBaseline": 163,
@@ -19,7 +19,7 @@
   "nativeCloudflareId": "bd423e6b-e8ca-4aee-9f1a-a7032b987720",
   "reviewer": "Codex assistant; prior contributor; not an independent human or Google reviewer",
   "standaloneModelCallsThisReview": 0,
-  "nextStep": "Push existing PR451 updated head; verify all required CI and actual preview, merge normally, verify exact native Cloudflare production, reread and validate full coverage before closing Courses.",
+  "nextStep": "Push settled-hover refinement to existing451; require final-head CI/actual preview/native production then full live reread/coverage. Earlier head checks are not credit for final head.",
   "aboutFindings": {
     "confirmed": 0,
     "qualityRisks": 2,
