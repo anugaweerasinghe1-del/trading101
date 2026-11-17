@@ -1,5 +1,5 @@
 {
-  "updatedAtUTC": "2026-11-17T16:58:18.138108+00:00",
+  "updatedAtUTC": "2026-11-17T17:05:52.801822+00:00",
   "publisherInventory163": {
     "source": "Fresh live sitemap151+course-sitemap12 and480 initial HTML/head checks; no new canonical indexable publisher outside cohort (other310 noindex+7 article redirects).",
     "strictClosedHistoricalValidated": 6,
@@ -18,7 +18,7 @@
       "extractedCapturedTextOccurrences": 713,
       "pass1ReviewedCapturedOccurrences": 713,
       "pass2ReviewedCapturedOccurrences": 713,
-      "pageStatus": "PARTIAL-REVIEW",
+      "pageStatus": "PARTIAL-REVIEW-EXTRACTION-RECONCILIATION-PENDING",
       "limitations": [
         "Text/location/version records overlap;49 source-only card projections add zero glossary-page editorial credit.",
         "All822 recorded text/version/metadata/source-projection records received two separate same-agent text reads. This is not full-page extraction/state/source completion.",
@@ -61,13 +61,15 @@
     "confirmedPolicyIssues": 0,
     "confirmedProductErrors": 3,
     "qualityRisksLogged": 0,
-    "fixesMergedAndProductionVerified": 2,
-    "fixesAwaitingFinalHeadChecksMergeDeployment": 1,
+    "fixesMergedAndProductionVerified": 3,
+    "fixesAwaitingFinalHeadChecksMergeDeployment": 0,
     "pr": 459,
     "finalSourceHead": "f2c886c5f1318e45e70f14a24e066f390fa01b5f",
-    "pendingPR": 460,
-    "pendingHead": "8de4e617fda8e1041748178102b7806a31be477d",
-    "pendingMerge": "d3b21b84695465321987a660c496b50dae75bcc4"
+    "pendingPR": null,
+    "pendingHead": null,
+    "pendingMerge": null,
+    "lastCodePR": 460,
+    "lastVerifiedCodeMerge": "d3b21b84695465321987a660c496b50dae75bcc4"
   },
   "ownerProviderGates": [
     "Terms account-eligibility/legal wording",

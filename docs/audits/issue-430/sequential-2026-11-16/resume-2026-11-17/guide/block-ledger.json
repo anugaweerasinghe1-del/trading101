@@ -6021,7 +6021,8 @@
       "beforeGuideFixes": "a7a3a3de6ef4d1f015512cf1f09cac315e355778",
       "after459": "95c328db6cf8375c3aae21f248a80343b328adcf",
       "after460": "d3b21b84695465321987a660c496b50dae75bcc4"
-    }
+    },
+    "findingReleaseStatus": "FIXED-RECHECKED; RELEASE-459.json/RELEASE-460.json"
   },
   {
     "id": "STRICT-0008-BLOCK-0115",
@@ -6181,7 +6182,8 @@
       "beforeGuideFixes": "a7a3a3de6ef4d1f015512cf1f09cac315e355778",
       "after459": "95c328db6cf8375c3aae21f248a80343b328adcf",
       "after460": "d3b21b84695465321987a660c496b50dae75bcc4"
-    }
+    },
+    "findingReleaseStatus": "FIXED-RECHECKED; RELEASE-459.json/RELEASE-460.json"
   },
   {
     "id": "STRICT-0008-BLOCK-0118",
@@ -6391,7 +6393,8 @@
       "beforeGuideFixes": "a7a3a3de6ef4d1f015512cf1f09cac315e355778",
       "after459": "95c328db6cf8375c3aae21f248a80343b328adcf",
       "after460": "d3b21b84695465321987a660c496b50dae75bcc4"
-    }
+    },
+    "findingReleaseStatus": "FIXED-RECHECKED; RELEASE-459.json/RELEASE-460.json"
   },
   {
     "id": "STRICT-0008-BLOCK-0122",
@@ -6707,7 +6710,8 @@
       "beforeGuideFixes": "a7a3a3de6ef4d1f015512cf1f09cac315e355778",
       "after459": "95c328db6cf8375c3aae21f248a80343b328adcf",
       "after460": "d3b21b84695465321987a660c496b50dae75bcc4"
-    }
+    },
+    "findingReleaseStatus": "FIXED-RECHECKED; RELEASE-459.json/RELEASE-460.json"
   },
   {
     "id": "STRICT-0008-BLOCK-0128",
@@ -6747,9 +6751,10 @@
     },
     "pass2": {
       "status": "REVIEWED",
-      "disposition": "TEXT READ; PRESENTATION FINDING003 AWAITING RELEASE",
+      "disposition": "TEXT READ; PRESENTATION FINDING-RESOLVED",
       "evidence": "fresh-second-capture.json, full body reread after source/calculation crosscheck by same assistant",
-      "reason": "Fresh complete body reread: hypothetical fee loss40.96/gain38.96 and expectancy30 recomputed; rate/deduction/contribution timing match calculator source and separate closed form; sample ticker/sentiment disclose invented data; practice limitations avoid future-performance promise. Text judgment does not close presentation defect before deployment."
+      "reason": "Fresh complete body reread: hypothetical fee loss40.96/gain38.96 and expectancy30 recomputed; rate/deduction/contribution timing match calculator source and separate closed form; sample ticker/sentiment disclose invented data; practice limitations avoid future-performance promise. Text judgment does not close presentation defect before deployment.",
+      "releaseEvidence": "RELEASE-460.json; production460-layout.json"
     },
     "candidateSource": "src/pages/LearnTradingGuide.tsx + scripts/staticCopy.ts",
     "sourceMappingStatus": "VERIFIED-COMPONENT; EXPRESSION/ATTRIBUTE RECONCILIATION PENDING",
@@ -6764,7 +6769,8 @@
       "beforeGuideFixes": "a7a3a3de6ef4d1f015512cf1f09cac315e355778",
       "after459": "95c328db6cf8375c3aae21f248a80343b328adcf",
       "after460": "d3b21b84695465321987a660c496b50dae75bcc4"
-    }
+    },
+    "findingReleaseStatus": "FIXED-RECHECKED; RELEASE-459.json/RELEASE-460.json"
   },
   {
     "id": "STRICT-0008-BLOCK-0129",
@@ -6804,9 +6810,10 @@
     },
     "pass2": {
       "status": "REVIEWED",
-      "disposition": "TEXT READ; PRESENTATION FINDING003 AWAITING RELEASE",
+      "disposition": "TEXT READ; PRESENTATION FINDING-RESOLVED",
       "evidence": "fresh-second-capture.json, full body reread after source/calculation crosscheck by same assistant",
-      "reason": "Fresh complete body reread: hypothetical fee loss40.96/gain38.96 and expectancy30 recomputed; rate/deduction/contribution timing match calculator source and separate closed form; sample ticker/sentiment disclose invented data; practice limitations avoid future-performance promise. Text judgment does not close presentation defect before deployment."
+      "reason": "Fresh complete body reread: hypothetical fee loss40.96/gain38.96 and expectancy30 recomputed; rate/deduction/contribution timing match calculator source and separate closed form; sample ticker/sentiment disclose invented data; practice limitations avoid future-performance promise. Text judgment does not close presentation defect before deployment.",
+      "releaseEvidence": "RELEASE-460.json; production460-layout.json"
     },
     "candidateSource": "src/pages/LearnTradingGuide.tsx + scripts/staticCopy.ts",
     "sourceMappingStatus": "VERIFIED-COMPONENT; EXPRESSION/ATTRIBUTE RECONCILIATION PENDING",
@@ -6820,7 +6827,8 @@
       "beforeGuideFixes": "a7a3a3de6ef4d1f015512cf1f09cac315e355778",
       "after459": "95c328db6cf8375c3aae21f248a80343b328adcf",
       "after460": "d3b21b84695465321987a660c496b50dae75bcc4"
-    }
+    },
+    "findingReleaseStatus": "FIXED-RECHECKED; RELEASE-459.json/RELEASE-460.json"
   },
   {
     "id": "STRICT-0008-BLOCK-0130",
@@ -22105,7 +22113,8 @@
       "beforeGuideFixes": "a7a3a3de6ef4d1f015512cf1f09cac315e355778",
       "after459": "95c328db6cf8375c3aae21f248a80343b328adcf",
       "after460": "d3b21b84695465321987a660c496b50dae75bcc4"
-    }
+    },
+    "findingReleaseStatus": "FIXED-RECHECKED; RELEASE-459.json/RELEASE-460.json"
   },
   {
     "id": "STRICT-0008-BLOCK-0525",
@@ -22199,7 +22208,8 @@
       "beforeGuideFixes": "a7a3a3de6ef4d1f015512cf1f09cac315e355778",
       "after459": "95c328db6cf8375c3aae21f248a80343b328adcf",
       "after460": "d3b21b84695465321987a660c496b50dae75bcc4"
-    }
+    },
+    "findingReleaseStatus": "FIXED-RECHECKED; RELEASE-459.json/RELEASE-460.json"
   },
   {
     "id": "STRICT-0008-BLOCK-0528",
@@ -22323,7 +22333,8 @@
       "beforeGuideFixes": "a7a3a3de6ef4d1f015512cf1f09cac315e355778",
       "after459": "95c328db6cf8375c3aae21f248a80343b328adcf",
       "after460": "d3b21b84695465321987a660c496b50dae75bcc4"
-    }
+    },
+    "findingReleaseStatus": "FIXED-RECHECKED; RELEASE-459.json/RELEASE-460.json"
   },
   {
     "id": "STRICT-0008-BLOCK-0532",
@@ -22507,7 +22518,8 @@
       "beforeGuideFixes": "a7a3a3de6ef4d1f015512cf1f09cac315e355778",
       "after459": "95c328db6cf8375c3aae21f248a80343b328adcf",
       "after460": "d3b21b84695465321987a660c496b50dae75bcc4"
-    }
+    },
+    "findingReleaseStatus": "FIXED-RECHECKED; RELEASE-459.json/RELEASE-460.json"
   },
   {
     "id": "STRICT-0008-BLOCK-0538",
@@ -22524,9 +22536,10 @@
     },
     "pass2": {
       "status": "REVIEWED",
-      "disposition": "TEXT READ; PRESENTATION FINDING003 AWAITING RELEASE",
+      "disposition": "TEXT READ; PRESENTATION FINDING-RESOLVED",
       "evidence": "Three bounded exact-ID outputs covering all429 previously pending records, separate from first full-body/source read; retained original text/hash/captures",
-      "reason": "Second bounded exact-ID reread of full responsive-state text including ticker samples, curriculum, calculator, challenge, previews, footer, notes and consent labels. Sample quotes/sentiment expressly illustrative;170 source assets verified; default result9440.536 rounds9441 and net2440.536 rounds2441. Nominal12% compounds12.6825% before deductions. Virtual/no-forecast/cost exclusions preserved. Private/Google-account behavior and ownership contracts remain unverified, not inferred from labels."
+      "reason": "Second bounded exact-ID reread of full responsive-state text including ticker samples, curriculum, calculator, challenge, previews, footer, notes and consent labels. Sample quotes/sentiment expressly illustrative;170 source assets verified; default result9440.536 rounds9441 and net2440.536 rounds2441. Nominal12% compounds12.6825% before deductions. Virtual/no-forecast/cost exclusions preserved. Private/Google-account behavior and ownership contracts remain unverified, not inferred from labels.",
+      "releaseEvidence": "RELEASE-460.json; production460-layout.json"
     },
     "candidateSource": "src/components/Navigation.tsx or SocialShare.tsx; exact matching captured element path",
     "sourceMappingStatus": "VERIFIED-COMPONENT; EXPRESSION/ATTRIBUTE RECONCILIATION PENDING",
@@ -22541,7 +22554,8 @@
       "beforeGuideFixes": "a7a3a3de6ef4d1f015512cf1f09cac315e355778",
       "after459": "95c328db6cf8375c3aae21f248a80343b328adcf",
       "after460": "d3b21b84695465321987a660c496b50dae75bcc4"
-    }
+    },
+    "findingReleaseStatus": "FIXED-RECHECKED; RELEASE-459.json/RELEASE-460.json"
   },
   {
     "id": "STRICT-0008-BLOCK-0539",
@@ -22558,9 +22572,10 @@
     },
     "pass2": {
       "status": "REVIEWED",
-      "disposition": "TEXT READ; PRESENTATION FINDING003 AWAITING RELEASE",
+      "disposition": "TEXT READ; PRESENTATION FINDING-RESOLVED",
       "evidence": "Three bounded exact-ID outputs covering all429 previously pending records, separate from first full-body/source read; retained original text/hash/captures",
-      "reason": "Second bounded exact-ID reread of full responsive-state text including ticker samples, curriculum, calculator, challenge, previews, footer, notes and consent labels. Sample quotes/sentiment expressly illustrative;170 source assets verified; default result9440.536 rounds9441 and net2440.536 rounds2441. Nominal12% compounds12.6825% before deductions. Virtual/no-forecast/cost exclusions preserved. Private/Google-account behavior and ownership contracts remain unverified, not inferred from labels."
+      "reason": "Second bounded exact-ID reread of full responsive-state text including ticker samples, curriculum, calculator, challenge, previews, footer, notes and consent labels. Sample quotes/sentiment expressly illustrative;170 source assets verified; default result9440.536 rounds9441 and net2440.536 rounds2441. Nominal12% compounds12.6825% before deductions. Virtual/no-forecast/cost exclusions preserved. Private/Google-account behavior and ownership contracts remain unverified, not inferred from labels.",
+      "releaseEvidence": "RELEASE-460.json; production460-layout.json"
     },
     "candidateSource": "src/components/Navigation.tsx or SocialShare.tsx; exact matching captured element path",
     "sourceMappingStatus": "VERIFIED-COMPONENT; EXPRESSION/ATTRIBUTE RECONCILIATION PENDING",
@@ -22574,7 +22589,8 @@
       "beforeGuideFixes": "a7a3a3de6ef4d1f015512cf1f09cac315e355778",
       "after459": "95c328db6cf8375c3aae21f248a80343b328adcf",
       "after460": "d3b21b84695465321987a660c496b50dae75bcc4"
-    }
+    },
+    "findingReleaseStatus": "FIXED-RECHECKED; RELEASE-459.json/RELEASE-460.json"
   },
   {
     "id": "STRICT-0008-BLOCK-0540",
@@ -31296,7 +31312,8 @@
       "beforeGuideFixes": "a7a3a3de6ef4d1f015512cf1f09cac315e355778",
       "after459": "95c328db6cf8375c3aae21f248a80343b328adcf",
       "after460": "d3b21b84695465321987a660c496b50dae75bcc4"
-    }
+    },
+    "findingReleaseStatus": "FIXED-RECHECKED; RELEASE-459.json/RELEASE-460.json"
   },
   {
     "id": "STRICT-0008-BLOCK-0816",
@@ -31518,6 +31535,7 @@
       "beforeGuideFixes": "a7a3a3de6ef4d1f015512cf1f09cac315e355778",
       "after459": "95c328db6cf8375c3aae21f248a80343b328adcf",
       "after460": "d3b21b84695465321987a660c496b50dae75bcc4"
-    }
+    },
+    "findingReleaseStatus": "FIXED-RECHECKED; RELEASE-459.json/RELEASE-460.json"
   }
 ]

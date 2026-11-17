@@ -1,0 +1,33 @@
+{
+  "pullRequest": 460,
+  "branch": "audit/issue430-guide-layout-20261117",
+  "finalHeadSHA": "8de4e617fda8e1041748178102b7806a31be477d",
+  "requiredChecks": "5/5 exact-head success; pr460-final-head-checks.json",
+  "mergeSHA": "d3b21b84695465321987a660c496b50dae75bcc4",
+  "mergedTreeEqualsFinalHeadTree": "30261a0d248cdb8f6138f42d60c9ebcbf3cbbb3a",
+  "native": {
+    "schema": "tradehq-cloudflare-account-observation-v1",
+    "observedAt": "2026-11-17T17:00:40.526Z",
+    "project": "tradehq-preview",
+    "nativeTokenActive": true,
+    "activeProduction": {
+      "id": "64150b5f-7b05-4289-9dec-2466a58b5f85",
+      "sha": "d3b21b84695465321987a660c496b50dae75bcc4",
+      "environment": "production",
+      "branch": "main",
+      "status": "success",
+      "createdAt": "2026-11-17T16:48:48.660909Z"
+    },
+    "sourceGitHubRun": 44130013584,
+    "sourceGitHubJob": 134211841042,
+    "sourceURL": "https://github.com/anugaweerasinghe1-del/trading101/actions/runs/44130013584/job/134211841042",
+    "note": "Native Cloudflare account read in authenticated CI; unrelated account data omitted."
+  },
+  "productionURL": "https://www.thetradehq.com/learn-trading-guide",
+  "liveRereadAtUTC": "2026-11-17T17:03:00.125967+00:00",
+  "finding": "STRICT-GUIDE-003",
+  "before": "390px viewport: calculator bottom2974.5, Command Center top2943.5;31px overlap, screenshot and DOM corroborated.",
+  "after": "Actual production desktop light/dark57px and mobile light/dark45px gap; no overlap/horizontal overflow/runtime errors. Default calculation unchanged. Earlier459 colours/schema rechecked successfully on same production release.",
+  "status": "FIXED-RECHECKED",
+  "strictPageClosure": false
+}
